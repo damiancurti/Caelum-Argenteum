@@ -13,3 +13,6 @@ map_Kd src/models/caelum/inventory/consumables/materials.png
 newmtl red
 Kd 1 1 1
 map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl bronze
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/weapon_components/metals.png

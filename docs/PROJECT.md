@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.62** - 2026-11-15.
+Documentation version: **5.17.63** - 2026-11-15.
+
+## 5.17.63 - Corrected weapon references (#769)
+
+Seven sword/axe models now use effective TEXTURES references and sprite scales;
+the pickaxe stays byte-identical. Independent alias/envelope and cap-separation
+checks pass. Reused native fixtures pass2,188 continuity and 510 visual/control
+checks;35 changed-model views were inspected. ASSETS records simplifications,
+evidence reuse and performance limits. CA769-EFFECTIVE-WEAPON-REFERENCES-01
+and previous unconfirmed checks remain pending; broader3D/V5.16 is unfinished.
 
 ## 5.17.62 - Polearm/tool drops (#767)
 

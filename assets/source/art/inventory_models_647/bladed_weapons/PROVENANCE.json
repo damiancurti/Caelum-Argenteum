@@ -7,5 +7,7 @@
   "limitations": [
     "Simplified profiles, diagonal standing pickup orientation, generic metal trim and interpreted hidden thickness/back surfaces require author review.",
     "Original first-person art, gameplay, quest rules and shared quality appearance are preserved."
-  ]
+  ],
+  "correction_issue": 769,
+  "effective_world_reference_note": "Corrected under #769: effective TEXTURES aliases override the legacy physical sprite lumps used by the first candidate. World envelopes now follow current icon alpha and native sprite scale; greatsword RGB desaturation/blend leaves that alpha envelope unchanged. Original shared quality state, collision and actor scale remain unchanged. Simplified fittings, static tassels, plain steel without painted blade stains, omitted fine ornament/axe chain and hidden surfaces still require author review."
 }

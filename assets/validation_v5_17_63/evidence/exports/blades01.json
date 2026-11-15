@@ -1,0 +1,302 @@
+{
+  "schema_revision": 1,
+  "issue": 763,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "variants": {
+    "sword": {
+      "class": "CaelumWeaponPickup",
+      "parts": [
+        "blade",
+        "guard",
+        "grip",
+        "pommel",
+        "grip_band0",
+        "grip_band1",
+        "blue_tassel0",
+        "blue_tassel1",
+        "blue_tassel2"
+      ],
+      "closed_outward_components": 9,
+      "vertices": 908,
+      "triangles": 1408,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 192,
+          "triangles": 64
+        },
+        {
+          "material": "bronze",
+          "vertices": 308,
+          "triangles": 576
+        },
+        {
+          "material": "blue",
+          "vertices": 408,
+          "triangles": 768
+        }
+      ],
+      "reference_opaque_bounds": [
+        24,
+        19,
+        110,
+        106
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 87.0,
+      "native_bounds": [
+        {
+          "min": [
+            -16.175709777810354,
+            -3.1962117179820755,
+            0.0
+          ],
+          "max": [
+            45.683795440085476,
+            3.1962117179820755,
+            87.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.9988161618693985,
+        "floor": -26.406817226408922
+      }
+    },
+    "dagger": {
+      "class": "CaelumWeaponPickup",
+      "parts": [
+        "blade",
+        "guard",
+        "grip",
+        "pommel",
+        "grip_band0",
+        "grip_band1"
+      ],
+      "closed_outward_components": 6,
+      "vertices": 602,
+      "triangles": 832,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 192,
+          "triangles": 64
+        },
+        {
+          "material": "bronze",
+          "vertices": 308,
+          "triangles": 576
+        },
+        {
+          "material": "red",
+          "vertices": 102,
+          "triangles": 192
+        }
+      ],
+      "reference_opaque_bounds": [
+        18,
+        6,
+        109,
+        122
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 116.0,
+      "native_bounds": [
+        {
+          "min": [
+            -24.640054050256314,
+            -5.970522209256538,
+            0.0
+          ],
+          "max": [
+            51.41328946353004,
+            5.970522209256538,
+            116.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.865788190392668,
+        "floor": -18.073615104634953
+      }
+    },
+    "machete": {
+      "class": "CaelumWeaponPickup",
+      "parts": [
+        "blade",
+        "guard",
+        "grip",
+        "pommel",
+        "grip_band0",
+        "grip_band1"
+      ],
+      "closed_outward_components": 6,
+      "vertices": 614,
+      "triangles": 836,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 204,
+          "triangles": 68
+        },
+        {
+          "material": "bronze",
+          "vertices": 308,
+          "triangles": 576
+        },
+        {
+          "material": "blue",
+          "vertices": 102,
+          "triangles": 192
+        }
+      ],
+      "reference_opaque_bounds": [
+        17,
+        8,
+        110,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -70.37702514652607,
+            -4.862280351034379,
+            0.0
+          ],
+          "max": [
+            25.521952935875404,
+            4.862280351034379,
+            111.99999999999999
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.519462609698243,
+        "floor": -53.11493819937813
+      }
+    },
+    "greatsword": {
+      "class": "CaelumWeaponPickup",
+      "parts": [
+        "blade",
+        "guard",
+        "grip",
+        "pommel",
+        "grip_band0",
+        "grip_band1"
+      ],
+      "closed_outward_components": 6,
+      "vertices": 602,
+      "triangles": 832,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 192,
+          "triangles": 64
+        },
+        {
+          "material": "bronze",
+          "vertices": 308,
+          "triangles": 576
+        },
+        {
+          "material": "blue",
+          "vertices": 102,
+          "triangles": 192
+        }
+      ],
+      "reference_opaque_bounds": [
+        182,
+        75,
+        1098,
+        1180
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        9.796875,
+        9.796875
+      ],
+      "target_art_extent": 112.79106858054226,
+      "native_bounds": [
+        {
+          "min": [
+            -58.44838798250891,
+            -3.8368469197288984,
+            0.0
+          ],
+          "max": [
+            28.076921291864494,
+            3.8368469197288984,
+            112.79106858054226
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.1990146624152807,
+        "floor": -64.68947631383072
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "5ad3ceb50cc30818cf773acb27ee069fc00d6ee512d067961cd670f930ceebcc",
+    "PROVENANCE.json": "b5ebea0a46cdb02d4f39e0beec0c6cd30060e284fba95c58266605bc9d95969a"
+  },
+  "external_source_sha256": {
+    "src/sprites/caelum/weapons/physical/CSWDA0.png": "90ac1193867bd8a89f92e6eb58f78d50c68c4bb70bf8cdb03ceed9c820827ddc",
+    "src/sprites/caelum/weapons/physical/CDAGA0.png": "7ffc564bc4209379fb20bc96cdc29fa517b7707e4854716ecbc933f657c698e1",
+    "src/sprites/caelum/weapons/physical/CMACA0.png": "6cf5c815008a7d6e5e08210947cb2f4342b5cc7785e0aebef7b8e6ec1b5c0d33",
+    "src/sprites/caelum/weapons/physical/CGRSA0.png": "572f9b2774f30c5ac62fe255aab3954d94142c4858ab11b07093e983c7d91f86",
+    "src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/world/CaelumSecretPassage.zs": "93ea9d818194830719027edc43f05dbfcf04306ba3a93073bd53b6bcf18cb247",
+    "src/caelum/quests/CaelumMainM00RonnieTrial.zs": "069883e1d45396a0669b2a878a73f25211cf5d6a22f1117e1df69815ac76021d",
+    "src/caelum/data/CaelumSupportImplementData.zs": "a4b0381a2bf2f7ada432c44d81d6c987307a89172c5ce7b240486e8bbe406ad6",
+    "assets/generators/generate_inventory_hygiene_models.py": "b85d6bac14b35faf4cc2f232c6c0e2fa8d9e2f6d5633400adc929f452a2c0a8e",
+    "assets/generators/generate_inventory_weapon_components_models.py": "49db0176aef05d21f21f7a356e58c4623c285eac15d2d1537bc8ddc8ec227958",
+    "src/graphics/caelum/icons/ca_sword.png": "35080f0abcddb4a33337fbb2609244b86ff48d27e59b13673374e6a04ebacdef",
+    "src/graphics/caelum/icons/ca_dagger.png": "30ac5bf3f2f4d0b30910cd2f3cbe23b4a168ba34cbcc496539c25bc6f0e02c82",
+    "src/graphics/caelum/icons/ca_machete.png": "58b2cbf5d8aad9a1201b9050ecd8cb4f9758be756d452b544eea72dd1da91a5c",
+    "src/graphics/caelum/first_person/v5/greatsword_icon_t1_source.png": "6f435da5cdb388a78095a7c0609086b679e7c629294ae0935e4fcca5b7fca996",
+    "src/TEXTURES": "b18f53438055b5d13e985e550629be4578c2d9852888756d3eca9a8f3f58218e"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_bladed_weapons_models.py": "3a07f92caf8903cfe8ef1c608f1002ebb1c7762cc28e56d5e5207910f45d6df5"
+  },
+  "sha256": {
+    "models/caelum/inventory/bladed_weapons/sword.md3": "46844f62478c849ccfaecf25b55e6b085d2768b9cee3000f227761d8fa762b0e",
+    "editable/sword.obj": "ee45055b64fc54497f669dc795bb3d4835a60b412fa82827b5d4c77f82497e3b",
+    "models/caelum/inventory/bladed_weapons/dagger.md3": "b39719551ef46546eff4b3e31ae29340c4fef5f2be5de0246e572c6a6ad43645",
+    "editable/dagger.obj": "3759b0edceedd1dbd662fe4c3f40cf4a3c4453a40a0bd774be13bd6bd0a00003",
+    "models/caelum/inventory/bladed_weapons/machete.md3": "eef0b9c08a7bc814c8a8825b526f2d0d5fc6f9f98f750cfdc84f145b35d904f6",
+    "editable/machete.obj": "e53ab3e09cdc24ad0ca315c07edd11c389dca1ad82afb7f451bf8197a634e42b",
+    "models/caelum/inventory/bladed_weapons/greatsword.md3": "ebba688aba8be39c02fa534b9f7c24db6656a418210da2d79e234b5b1e25a59d",
+    "editable/greatsword.obj": "da356e3055ecd2312962fc0b8e0aeb1d0e4b6d68a40c676906141f688fd522fa",
+    "editable/bladed_weapons.mtl": "286e916a3b8f241d507f6f9d06ce43181f9b59d080d745744bcfaf345c084a15",
+    "caelum/data/inventory_bladed_weapons.modeldef": "047b6304b7ebd71267a293917304b2c91fc060056c777eff8fa16690779f7de6",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "editable/src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1"
+  },
+  "reuse_note": "Existing owned texture pixels are reused unchanged; no duplicate runtime textures."
+}

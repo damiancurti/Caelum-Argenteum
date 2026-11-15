@@ -1,0 +1,92 @@
+{
+  "issue": 769,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "reason": "Prior #763/#765 candidates followed legacy sprite lumps overridden by TEXTURES.",
+  "records": {
+    "sword": {
+      "previous_reference": "src/sprites/caelum/weapons/physical/CSWDA0.png",
+      "effective_reference": "src/graphics/caelum/icons/ca_sword.png",
+      "sprite": "CSWD",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "prior_runtime_sha256": "df3c87277f4c62f702dc16f496017f6e8e6e206daa795ed006fd81b9fe94ad9c"
+    },
+    "dagger": {
+      "previous_reference": "src/sprites/caelum/weapons/physical/CDAGA0.png",
+      "effective_reference": "src/graphics/caelum/icons/ca_dagger.png",
+      "sprite": "CDAG",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "prior_runtime_sha256": "d7e3cec7e77b3702cb41d537c1ae3b557a84e129ea3607bc85ae5ab40a98db81"
+    },
+    "machete": {
+      "previous_reference": "src/sprites/caelum/weapons/physical/CMACA0.png",
+      "effective_reference": "src/graphics/caelum/icons/ca_machete.png",
+      "sprite": "CMAC",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "prior_runtime_sha256": "d951ac23aa9a76b122981126b41fea057013ded6d0d8e94dfa097c0c7257d354"
+    },
+    "greatsword": {
+      "previous_reference": "src/sprites/caelum/weapons/physical/CGRSA0.png",
+      "effective_reference": "src/graphics/caelum/first_person/v5/greatsword_icon_t1_source.png",
+      "sprite": "CGRS",
+      "sprite_scale": [
+        9.796875,
+        9.796875
+      ],
+      "prior_runtime_sha256": "8d952e91ab738a2050cb77d0c2a1df853ac07f431312c57b9360216dacb170d8"
+    },
+    "hatchet": {
+      "previous_reference": "src/sprites/caelum/weapons/physical/CHATA0.png",
+      "effective_reference": "src/graphics/caelum/icons/ca_hatchet.png",
+      "sprite": "CHAT",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "prior_runtime_sha256": "8faabdb60ebd852a58300bb836461fbe0448f767c07f1e4aeef4294b521834ce"
+    },
+    "axe": {
+      "previous_reference": "src/sprites/caelum/weapons/physical/CAXEA0.png",
+      "effective_reference": "src/graphics/caelum/icons/ca_axe.png",
+      "sprite": "CAXE",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "prior_runtime_sha256": "d6ac47a1a39ca2509cf897cda3b64ec3573c1039c2ee72eeeca1db3d03a45e28"
+    },
+    "war_axe": {
+      "previous_reference": "src/sprites/caelum/weapons/physical/CWAXA0.png",
+      "effective_reference": "src/graphics/caelum/icons/ca_war_axe.png",
+      "sprite": "CWAX",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "prior_runtime_sha256": "ec6dd4b8760ac1bdf4d941a7fc9029ed3a4ebd5191d077b0abab28a2d3481bc4"
+    },
+    "pickaxe": {
+      "status": "already_correct_unchanged",
+      "reference": "src/graphics/caelum/icons/ca_pickaxe.png",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "runtime_sha256": "1f83989efa5fbc3171b086bc600908652ad0be868e8a613c3bb02cfbd5a6a149"
+    }
+  },
+  "source_sha256": {
+    "src/TEXTURES": "b18f53438055b5d13e985e550629be4578c2d9852888756d3eca9a8f3f58218e"
+  },
+  "greatsword": "CGRSA0 -> CA_GSICON1_M -> CA_GSICON1_M_D -> original tier1 source; Desaturate20 and Blend205,198,188 alter RGB only, X/YScale9.796875 determines extent. The model uses owned muted material pixels rather than editing that reference.",
+  "method": "No raster generation/editing or gameplay modification; correct reference data, fittings/handle colors and static tassels. Keep original exports/evidence in history. Pickaxe remains byte-identical."
+}

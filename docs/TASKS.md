@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.62** - 2026-11-15.
+Documentation version: **5.17.63** - 2026-11-15.
+
+## #769 - Effective sword/axe references (5.17.63)
+
+Corrected seven effective sources/envelopes, key grip/tassel colors and three
+coplanar axe caps. Pickaxe, gameplay and bindings are unchanged. Deterministic
+exports, independent geometry/reference checks, 2,188 continuity and 510 visual
+checks pass; 35 changed-model views were inspected. Author review remains in
+CA769-EFFECTIVE-WEAPON-REFERENCES-01 and the existing #763/#765 checks.
+Other physical drops, bestiary, #736 modular proposals and V5.16 remain pending.
 
 ## #767 - Polearm/tool drops (5.17.62)
 

@@ -1,5 +1,5 @@
 {
-  "schema_revision": 1,
+  "schema_revision": 2,
   "issue": 765,
   "parent_issue": 647,
   "status": "candidate_author_review_pending",
@@ -69,6 +69,19 @@
         430,
         406,
         824
+      ]
+    },
+    "bronze": {
+      "texture": "models/caelum/inventory/weapon_components/metals.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        639,
+        615,
+        1242
       ]
     }
   },
@@ -181,7 +194,7 @@
               2.5
             ],
             [
-              96,
+              95.5,
               0,
               0,
               2.6,
@@ -211,7 +224,7 @@
         {
           "part": "socket",
           "kind": "loft",
-          "material": "dark_iron",
+          "material": "bronze",
           "rows": [
             [
               84,
@@ -312,7 +325,7 @@
         {
           "part": "end_cap",
           "kind": "loft",
-          "material": "dark_iron",
+          "material": "bronze",
           "rows": [
             [
               -2,
@@ -515,6 +528,168 @@
               0.9396926207859084
             ]
           ]
+        },
+        {
+          "part": "red_tassel0",
+          "kind": "loft",
+          "material": "red",
+          "rows": [
+            [
+              48,
+              10,
+              0,
+              0.35,
+              0.3
+            ],
+            [
+              53,
+              11,
+              0,
+              1.9,
+              0.55
+            ],
+            [
+              65,
+              6.0,
+              0,
+              2.1,
+              0.6
+            ],
+            [
+              78,
+              0,
+              0,
+              1.5,
+              0.8
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "rotation": [
+            [
+              0.9396926207859084,
+              0,
+              0.3420201433256687
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.3420201433256687,
+              0,
+              0.9396926207859084
+            ]
+          ]
+        },
+        {
+          "part": "red_tassel1",
+          "kind": "loft",
+          "material": "red",
+          "rows": [
+            [
+              45,
+              16,
+              0,
+              0.35,
+              0.3
+            ],
+            [
+              50,
+              17,
+              0,
+              1.9,
+              0.55
+            ],
+            [
+              65,
+              9.6,
+              0,
+              2.1,
+              0.6
+            ],
+            [
+              78,
+              0,
+              0,
+              1.5,
+              0.8
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "rotation": [
+            [
+              0.9396926207859084,
+              0,
+              0.3420201433256687
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.3420201433256687,
+              0,
+              0.9396926207859084
+            ]
+          ]
+        },
+        {
+          "part": "red_tassel2",
+          "kind": "loft",
+          "material": "red",
+          "rows": [
+            [
+              39,
+              9,
+              0,
+              0.35,
+              0.3
+            ],
+            [
+              44,
+              10,
+              0,
+              1.9,
+              0.55
+            ],
+            [
+              65,
+              5.3999999999999995,
+              0,
+              2.1,
+              0.6
+            ],
+            [
+              78,
+              0,
+              0,
+              1.5,
+              0.8
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "rotation": [
+            [
+              0.9396926207859084,
+              0,
+              0.3420201433256687
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.3420201433256687,
+              0,
+              0.9396926207859084
+            ]
+          ]
         }
       ],
       "attachments": [
@@ -522,26 +697,26 @@
           "part": "shaft",
           "target": "head",
           "witness": [
-            30.781812899310186,
-            0,
-            84.57233587073176
+            30.78181289931019,
+            0.0,
+            84.57233587073178
           ]
         },
         {
           "part": "socket",
           "target": "shaft",
           "witness": [
-            30.781812899310186,
-            0,
-            84.57233587073176
+            30.78181289931019,
+            0.0,
+            84.57233587073178
           ]
         },
         {
           "part": "grip",
           "target": "shaft",
           "witness": [
-            6.840402866513374,
-            0,
+            6.840402866513376,
+            0.0,
             18.79385241571817
           ]
         },
@@ -550,7 +725,7 @@
           "target": "shaft",
           "witness": [
             0.3420201433256687,
-            0,
+            0.0,
             0.9396926207859084
           ]
         },
@@ -559,7 +734,7 @@
           "target": "grip",
           "witness": [
             2.7361611466053497,
-            0,
+            0.0,
             7.517540966287267
           ]
         },
@@ -568,7 +743,7 @@
           "target": "grip",
           "witness": [
             5.472322293210699,
-            0,
+            0.0,
             15.035081932574535
           ]
         },
@@ -577,7 +752,7 @@
           "target": "grip",
           "witness": [
             8.20848343981605,
-            0,
+            0.0,
             22.552622898861802
           ]
         },
@@ -586,8 +761,35 @@
           "target": "grip",
           "witness": [
             10.944644586421399,
-            0,
+            0.0,
             30.07016386514907
+          ]
+        },
+        {
+          "part": "red_tassel0",
+          "target": "shaft",
+          "witness": [
+            26.856872922640243,
+            0.0,
+            72.9115105920674
+          ]
+        },
+        {
+          "part": "red_tassel1",
+          "target": "shaft",
+          "witness": [
+            26.856872922640243,
+            0.0,
+            72.9115105920674
+          ]
+        },
+        {
+          "part": "red_tassel2",
+          "target": "shaft",
+          "witness": [
+            26.856872922640243,
+            0.0,
+            72.9115105920674
           ]
         }
       ],
@@ -655,9 +857,9 @@
           "edge_depth": 0.5,
           "rotation": [
             [
-              0.9396926207859084,
+              0.9063077870366499,
               0,
-              0.3420201433256687
+              0.42261826174069944
             ],
             [
               0,
@@ -665,9 +867,9 @@
               0
             ],
             [
-              -0.3420201433256687,
+              -0.42261826174069944,
               0,
-              0.9396926207859084
+              0.9063077870366499
             ]
           ]
         },
@@ -698,7 +900,7 @@
               2.5
             ],
             [
-              96,
+              95.5,
               0,
               0,
               2.6,
@@ -709,9 +911,9 @@
           "exponent": 1,
           "rotation": [
             [
-              0.9396926207859084,
+              0.9063077870366499,
               0,
-              0.3420201433256687
+              0.42261826174069944
             ],
             [
               0,
@@ -719,16 +921,16 @@
               0
             ],
             [
-              -0.3420201433256687,
+              -0.42261826174069944,
               0,
-              0.9396926207859084
+              0.9063077870366499
             ]
           ]
         },
         {
           "part": "socket",
           "kind": "loft",
-          "material": "dark_iron",
+          "material": "bronze",
           "rows": [
             [
               84,
@@ -756,9 +958,9 @@
           "exponent": 1,
           "rotation": [
             [
-              0.9396926207859084,
+              0.9063077870366499,
               0,
-              0.3420201433256687
+              0.42261826174069944
             ],
             [
               0,
@@ -766,16 +968,16 @@
               0
             ],
             [
-              -0.3420201433256687,
+              -0.42261826174069944,
               0,
-              0.9396926207859084
+              0.9063077870366499
             ]
           ]
         },
         {
           "part": "grip",
           "kind": "loft",
-          "material": "leather",
+          "material": "wood",
           "rows": [
             [
               4,
@@ -810,9 +1012,9 @@
           "exponent": 1,
           "rotation": [
             [
-              0.9396926207859084,
+              0.9063077870366499,
               0,
-              0.3420201433256687
+              0.42261826174069944
             ],
             [
               0,
@@ -820,16 +1022,16 @@
               0
             ],
             [
-              -0.3420201433256687,
+              -0.42261826174069944,
               0,
-              0.9396926207859084
+              0.9063077870366499
             ]
           ]
         },
         {
           "part": "end_cap",
           "kind": "loft",
-          "material": "dark_iron",
+          "material": "bronze",
           "rows": [
             [
               -2,
@@ -857,9 +1059,9 @@
           "exponent": 1,
           "rotation": [
             [
-              0.9396926207859084,
+              0.9063077870366499,
               0,
-              0.3420201433256687
+              0.42261826174069944
             ],
             [
               0,
@@ -867,16 +1069,16 @@
               0
             ],
             [
-              -0.3420201433256687,
+              -0.42261826174069944,
               0,
-              0.9396926207859084
+              0.9063077870366499
             ]
           ]
         },
         {
           "part": "grip_wrap0",
           "kind": "loft",
-          "material": "red",
+          "material": "bronze",
           "rows": [
             [
               7.35,
@@ -897,9 +1099,9 @@
           "exponent": 1,
           "rotation": [
             [
-              0.9396926207859084,
+              0.9063077870366499,
               0,
-              0.3420201433256687
+              0.42261826174069944
             ],
             [
               0,
@@ -907,16 +1109,16 @@
               0
             ],
             [
-              -0.3420201433256687,
+              -0.42261826174069944,
               0,
-              0.9396926207859084
+              0.9063077870366499
             ]
           ]
         },
         {
           "part": "grip_wrap1",
           "kind": "loft",
-          "material": "red",
+          "material": "bronze",
           "rows": [
             [
               15.35,
@@ -937,9 +1139,9 @@
           "exponent": 1,
           "rotation": [
             [
-              0.9396926207859084,
+              0.9063077870366499,
               0,
-              0.3420201433256687
+              0.42261826174069944
             ],
             [
               0,
@@ -947,16 +1149,16 @@
               0
             ],
             [
-              -0.3420201433256687,
+              -0.42261826174069944,
               0,
-              0.9396926207859084
+              0.9063077870366499
             ]
           ]
         },
         {
           "part": "grip_wrap2",
           "kind": "loft",
-          "material": "red",
+          "material": "bronze",
           "rows": [
             [
               23.35,
@@ -977,9 +1179,9 @@
           "exponent": 1,
           "rotation": [
             [
-              0.9396926207859084,
+              0.9063077870366499,
               0,
-              0.3420201433256687
+              0.42261826174069944
             ],
             [
               0,
@@ -987,16 +1189,16 @@
               0
             ],
             [
-              -0.3420201433256687,
+              -0.42261826174069944,
               0,
-              0.9396926207859084
+              0.9063077870366499
             ]
           ]
         },
         {
           "part": "grip_wrap3",
           "kind": "loft",
-          "material": "red",
+          "material": "bronze",
           "rows": [
             [
               31.35,
@@ -1017,9 +1219,9 @@
           "exponent": 1,
           "rotation": [
             [
-              0.9396926207859084,
+              0.9063077870366499,
               0,
-              0.3420201433256687
+              0.42261826174069944
             ],
             [
               0,
@@ -1027,9 +1229,9 @@
               0
             ],
             [
-              -0.3420201433256687,
+              -0.42261826174069944,
               0,
-              0.9396926207859084
+              0.9063077870366499
             ]
           ]
         }
@@ -1039,72 +1241,72 @@
           "part": "shaft",
           "target": "head",
           "witness": [
-            30.781812899310186,
-            0,
-            84.57233587073176
+            38.035643556662954,
+            0.0,
+            81.5677008332985
           ]
         },
         {
           "part": "socket",
           "target": "shaft",
           "witness": [
-            30.781812899310186,
-            0,
-            84.57233587073176
+            38.035643556662954,
+            0.0,
+            81.5677008332985
           ]
         },
         {
           "part": "grip",
           "target": "shaft",
           "witness": [
-            6.840402866513374,
-            0,
-            18.79385241571817
+            8.45236523481399,
+            0.0,
+            18.126155740733
           ]
         },
         {
           "part": "end_cap",
           "target": "shaft",
           "witness": [
-            0.3420201433256687,
-            0,
-            0.9396926207859084
+            0.42261826174069944,
+            0.0,
+            0.9063077870366499
           ]
         },
         {
           "part": "grip_wrap0",
           "target": "grip",
           "witness": [
-            2.7361611466053497,
-            0,
-            7.517540966287267
+            3.3809460939255955,
+            0.0,
+            7.2504622962931995
           ]
         },
         {
           "part": "grip_wrap1",
           "target": "grip",
           "witness": [
-            5.472322293210699,
-            0,
-            15.035081932574535
+            6.761892187851191,
+            0.0,
+            14.500924592586399
           ]
         },
         {
           "part": "grip_wrap2",
           "target": "grip",
           "witness": [
-            8.20848343981605,
-            0,
-            22.552622898861802
+            10.142838281776786,
+            0.0,
+            21.751386888879598
           ]
         },
         {
           "part": "grip_wrap3",
           "target": "grip",
           "witness": [
-            10.944644586421399,
-            0,
-            30.07016386514907
+            13.523784375702382,
+            0.0,
+            29.001849185172798
           ]
         }
       ],
@@ -1219,7 +1421,7 @@
               2.5
             ],
             [
-              96,
+              95.5,
               0,
               0,
               2.6,
@@ -1249,7 +1451,7 @@
         {
           "part": "socket",
           "kind": "loft",
-          "material": "dark_iron",
+          "material": "bronze",
           "rows": [
             [
               84,
@@ -1350,7 +1552,7 @@
         {
           "part": "end_cap",
           "kind": "loft",
-          "material": "dark_iron",
+          "material": "bronze",
           "rows": [
             [
               -2,
@@ -1553,6 +1755,168 @@
               0.9510565162951535
             ]
           ]
+        },
+        {
+          "part": "red_tassel0",
+          "kind": "loft",
+          "material": "red",
+          "rows": [
+            [
+              48,
+              10,
+              0,
+              0.35,
+              0.3
+            ],
+            [
+              53,
+              11,
+              0,
+              1.9,
+              0.55
+            ],
+            [
+              65,
+              6.0,
+              0,
+              2.1,
+              0.6
+            ],
+            [
+              78,
+              0,
+              0,
+              1.5,
+              0.8
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "rotation": [
+            [
+              0.9510565162951535,
+              0,
+              0.3090169943749474
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.3090169943749474,
+              0,
+              0.9510565162951535
+            ]
+          ]
+        },
+        {
+          "part": "red_tassel1",
+          "kind": "loft",
+          "material": "red",
+          "rows": [
+            [
+              45,
+              16,
+              0,
+              0.35,
+              0.3
+            ],
+            [
+              50,
+              17,
+              0,
+              1.9,
+              0.55
+            ],
+            [
+              65,
+              9.6,
+              0,
+              2.1,
+              0.6
+            ],
+            [
+              78,
+              0,
+              0,
+              1.5,
+              0.8
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "rotation": [
+            [
+              0.9510565162951535,
+              0,
+              0.3090169943749474
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.3090169943749474,
+              0,
+              0.9510565162951535
+            ]
+          ]
+        },
+        {
+          "part": "red_tassel2",
+          "kind": "loft",
+          "material": "red",
+          "rows": [
+            [
+              39,
+              9,
+              0,
+              0.35,
+              0.3
+            ],
+            [
+              44,
+              10,
+              0,
+              1.9,
+              0.55
+            ],
+            [
+              65,
+              5.3999999999999995,
+              0,
+              2.1,
+              0.6
+            ],
+            [
+              78,
+              0,
+              0,
+              1.5,
+              0.8
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "rotation": [
+            [
+              0.9510565162951535,
+              0,
+              0.3090169943749474
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.3090169943749474,
+              0,
+              0.9510565162951535
+            ]
+          ]
         }
       ],
       "attachments": [
@@ -1560,26 +1924,26 @@
           "part": "shaft",
           "target": "head",
           "witness": [
-            27.811529493745265,
-            0,
-            85.59508646656381
+            27.81152949374526,
+            0.0,
+            85.5950864665638
           ]
         },
         {
           "part": "socket",
           "target": "shaft",
           "witness": [
-            27.811529493745265,
-            0,
-            85.59508646656381
+            27.81152949374526,
+            0.0,
+            85.5950864665638
           ]
         },
         {
           "part": "grip",
           "target": "shaft",
           "witness": [
-            6.180339887498948,
-            0,
+            6.180339887498949,
+            0.0,
             19.02113032590307
           ]
         },
@@ -1587,45 +1951,72 @@
           "part": "end_cap",
           "target": "shaft",
           "witness": [
-            0.3090169943749474,
-            0,
-            0.9510565162951535
+            0.30901699437494734,
+            0.0,
+            0.9510565162951534
           ]
         },
         {
           "part": "grip_wrap0",
           "target": "grip",
           "witness": [
-            2.472135954999579,
-            0,
-            7.608452130361228
+            2.4721359549995787,
+            0.0,
+            7.608452130361227
           ]
         },
         {
           "part": "grip_wrap1",
           "target": "grip",
           "witness": [
-            4.944271909999158,
-            0,
-            15.216904260722456
+            4.944271909999157,
+            0.0,
+            15.216904260722455
           ]
         },
         {
           "part": "grip_wrap2",
           "target": "grip",
           "witness": [
-            7.416407864998737,
-            0,
-            22.825356391083684
+            7.416407864998735,
+            0.0,
+            22.82535639108368
           ]
         },
         {
           "part": "grip_wrap3",
           "target": "grip",
           "witness": [
-            9.888543819998317,
-            0,
-            30.433808521444913
+            9.888543819998315,
+            0.0,
+            30.43380852144491
+          ]
+        },
+        {
+          "part": "red_tassel0",
+          "target": "shaft",
+          "witness": [
+            24.295937417821957,
+            0.0,
+            73.80438621782093
+          ]
+        },
+        {
+          "part": "red_tassel1",
+          "target": "shaft",
+          "witness": [
+            24.295937417821957,
+            0.0,
+            73.80438621782093
+          ]
+        },
+        {
+          "part": "red_tassel2",
+          "target": "shaft",
+          "witness": [
+            24.295937417821957,
+            0.0,
+            73.80438621782093
           ]
         }
       ],
@@ -2223,7 +2614,7 @@
       "tier": "original",
       "item_type": 4,
       "essence": 0,
-      "reference": "src/sprites/caelum/weapons/physical/CHATA0.png",
+      "reference": "src/graphics/caelum/icons/ca_hatchet.png",
       "reference_axis": "height",
       "sprite_scale": [
         1,
@@ -2237,7 +2628,7 @@
       "tier": "original",
       "item_type": 7,
       "essence": 0,
-      "reference": "src/sprites/caelum/weapons/physical/CAXEA0.png",
+      "reference": "src/graphics/caelum/icons/ca_axe.png",
       "reference_axis": "height",
       "sprite_scale": [
         1,
@@ -2251,7 +2642,7 @@
       "tier": "original",
       "item_type": 11,
       "essence": 0,
-      "reference": "src/sprites/caelum/weapons/physical/CWAXA0.png",
+      "reference": "src/graphics/caelum/icons/ca_war_axe.png",
       "reference_axis": "height",
       "sprite_scale": [
         1,
@@ -2359,7 +2750,12 @@
     "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
     "src/caelum/equipment/CaelumWeaponModel.zs": "f1f3365b4286f384c8f017b1ac1dde41bdaac7cf005b88d6f10bc142ec1cad13",
     "assets/generators/generate_inventory_hygiene_models.py": "b85d6bac14b35faf4cc2f232c6c0e2fa8d9e2f6d5633400adc929f452a2c0a8e",
-    "assets/generators/generate_inventory_weapon_components_models.py": "49db0176aef05d21f21f7a356e58c4623c285eac15d2d1537bc8ddc8ec227958"
+    "assets/generators/generate_inventory_weapon_components_models.py": "49db0176aef05d21f21f7a356e58c4623c285eac15d2d1537bc8ddc8ec227958",
+    "src/graphics/caelum/icons/ca_hatchet.png": "8112f0cf14112dafd2097c4033a30fc2d67f5f3a2417feefcb8cc4b65a78dbb5",
+    "src/graphics/caelum/icons/ca_axe.png": "d3a1c36b2506b4b0bdc1d85e4e849040b54b4fa38749b668baa612911b20890c",
+    "src/graphics/caelum/icons/ca_war_axe.png": "d814932f5439709600ebd06b2a666ce053b06e04c621f1bc6bcc1c97a51dab53",
+    "src/TEXTURES": "b18f53438055b5d13e985e550629be4578c2d9852888756d3eca9a8f3f58218e"
   },
-  "dimensions_note": "Editable art follows owned sprite profiles; the #89 hybrid keeps its left axe blade/opposite curved mining point and wooden shaft. Original opaque sprite height controls display extent. Actor scale/collision and shared quality appearances remain unchanged; hidden thickness and simplified ornaments require author review."
+  "dimensions_note": "Corrected under #769: effective TEXTURES aliases override the legacy physical sprite lumps used by the first candidate. World envelopes now follow current icon alpha and native sprite scale; greatsword RGB desaturation/blend leaves that alpha envelope unchanged. Original shared quality state, collision and actor scale remain unchanged. Simplified fittings, static tassels, plain steel without painted blade stains, omitted fine ornament/axe chain and hidden surfaces still require author review.",
+  "correction_issue": 769
 }
