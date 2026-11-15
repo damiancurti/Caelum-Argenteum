@@ -1,0 +1,11 @@
+{
+  "issue": 771,
+  "mode": "built-in image_gen",
+  "date": "2026-11-15",
+  "intent": "new original opaque dark brown leather material",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: original square seamless albedo texture for a game material.\nPrimary request: a continuous close-up field of dark walnut-brown, naturally tanned leather. Fine compact leather grain with subtle shallow creases and restrained wear, sober nineteenth-century handmade material appearance. Dark neutral brown, not orange or saturated red. Uniform diffuse illumination with no directional shadow, no sheen hotspot, no vignette. The entire image is the flat material surface, edge to edge, fully opaque; no objects, seams, stitches, borders, labels or text. No embossed symbol or ornament. Consistent small-scale grain suitable for mapping onto small curved three-dimensional objects. Square composition.",
+  "transparent_background": false,
+  "source": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-5ce1b915-87ae-4072-a7ac-48bb126f09e0.png",
+  "processing": "Byte-for-byte copy; no raster edits.",
+  "status": "candidate_author_review_pending"
+}

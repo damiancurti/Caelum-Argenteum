@@ -1,6 +1,63 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.63** - 2026-11-15.
+Documentation version: **5.17.64** - 2026-11-15.
+
+## 5.17.64 - Flail, giant-gauntlet and bolas drops (#771)
+
+Three native assemblies replace CFLA, CGAU and CBOL only in
+CaelumWeaponPickup: flail type 8 and giant gauntlets type 13 retain three
+qualities each; bolas type 22 retains its single quality. Seven native cases
+preserve original icons, held artwork, projectile/restraint art, ammunition
+identity, recipes, weight, collision/scale, durability, essence and save rules.
+The actual bolas tool remains distinct from the #652 ammunition representation.
+
+Effective references follow CA-KP-247: icons/ca_flail.png; the RGB-muted
+gauntlet_icons/tier1.png at scale 10; and the last loaded bolas.textures
+CBOLA0 alias, using atlas cell [0,640,426,1280] at scale 5. No source image is
+edited. Display extents follow these scaled opaque envelopes. Shared quality
+appearances remain as in the existing world states.
+
+Editable DESIGN/OBJ/MTL sources and provenance are in inventory_models_647/
+articulated_weapons. The flail has seven closed rings with six independently
+verified links and native clearance. Both gauntlets have hollow cuffs and
+closed dark liners. The bolas assembly has three covered weights, simplified
+seams, a knot and separated coiled thongs. Across all three: 32,646 vertices,
+21,792 triangles, 70 closed components, 60 fixed attachment witnesses, six
+linked pairs and ten clear cuff rays. Serialized native triangles match the
+editable geometry; scaled envelopes, floor contact and material UVs pass.
+Sixteen generated outputs repeat byte-for-byte.
+
+One original opaque dark-brown leather image was generated with built-in
+image_gen, copied byte-for-byte to leather.png in the source folder and
+models/caelum/inventory/articulated_weapons/leather.png at runtime. Exact prompt
+and source location: LEATHER_PROMPT.json; SHA-256:
+261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df.
+The 1254-square image has fully opaque alpha. Existing metal, wood, red fabric
+and dark interior pixels remain unchanged. An earlier footwear leather sample
+had partial alpha and is recorded as a superseded attempt, not the final skin.
+
+Native review corrected hidden red ties, indistinct cuff interiors and overly
+orange leather. Earlier static checks also caught reversed tassel winding,
+boundary attachment witnesses, overlapping coil turns and a too-wide bolas
+envelope. Superseded evidence is retained. All fifteen final detail/underside
+views and the overview were inspected. Simplified chain/ties, finger shells,
+non-emissive diamond plates, omitted fine rivets/runes and rope braid, repeated
+grain, subdued shading and standing pickup orientation require author review.
+These are world-drop meshes, not modular wearable character equipment.
+
+The final isolated run passes 596 continuity assertions across fresh pickup,
+old-save adoption, native equip/toss, reload and rollback. Visual/control checks
+pass 141 assertions. Both seven-object, 700-tic presentation scenes were
+inspected: sprite/model queue rate 1053.78/1165.86 per second,
+p95 1.223/1.025 ms and p99 1.473/1.219 ms.
+This single sequential pair measures queue intervals, not GPU/display latency,
+repeatability or campaign/crowd performance. Projected footprints differ.
+Prepared native transactions do not prove ordinary menus, combat, bolas throw/
+restraint/recovery or author acceptance. Evidence:
+assets/validation_v5_17_64/evidence/SUMMARY.json.
+
+CA771-ARTICULATED-DROPS-01 remains pending. Four ranged weapon types, other
+characters/modular equipment and the broader V5.16 campaign remain unfinished.
 
 ## 5.17.63 - Effective sword/axe world references (#769)
 

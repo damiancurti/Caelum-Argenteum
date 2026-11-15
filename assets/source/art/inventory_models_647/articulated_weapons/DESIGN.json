@@ -1,0 +1,4709 @@
+{
+  "schema_revision": 1,
+  "issue": 771,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "model_path": "models/caelum/inventory/articulated_weapons",
+  "editable_materials_name": "articulated_weapons.mtl",
+  "materials": {
+    "steel": {
+      "texture": "models/caelum/inventory/weapon_components/metals.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        639,
+        12,
+        1242,
+        615
+      ]
+    },
+    "bronze": {
+      "texture": "models/caelum/inventory/weapon_components/metals.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        639,
+        615,
+        1242
+      ]
+    },
+    "dark_iron": {
+      "texture": "models/caelum/inventory/weapon_components/metals.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        639,
+        639,
+        1242,
+        1242
+      ]
+    },
+    "wood": {
+      "texture": "models/caelum/inventory/effigies/wood.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        12,
+        615,
+        1242
+      ]
+    },
+    "leather": {
+      "texture": "models/caelum/inventory/consumables/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        12,
+        302,
+        302
+      ]
+    },
+    "red": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        430,
+        406,
+        824
+      ]
+    },
+    "lining": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        848,
+        848,
+        1242,
+        1242
+      ]
+    },
+    "bolas_leather": {
+      "texture": "models/caelum/inventory/articulated_weapons/leather.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        12,
+        1242,
+        1242
+      ]
+    }
+  },
+  "tier_materials": {
+    "original": {}
+  },
+  "families": {
+    "flail": {
+      "roots": [
+        "shaft"
+      ],
+      "root": "shaft",
+      "parts": [
+        {
+          "part": "shaft",
+          "kind": "loft",
+          "material": "wood",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              2.3,
+              2.3
+            ],
+            [
+              2,
+              0,
+              0,
+              2.6,
+              2.6
+            ],
+            [
+              77,
+              0,
+              0,
+              2.2,
+              2.2
+            ],
+            [
+              80,
+              0,
+              0,
+              2.1,
+              2.1
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              0.8660254037844387,
+              0,
+              0.49999999999999994
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.49999999999999994,
+              0,
+              0.8660254037844387
+            ]
+          ]
+        },
+        {
+          "part": "grip",
+          "kind": "loft",
+          "material": "bolas_leather",
+          "rows": [
+            [
+              5,
+              0,
+              0,
+              2.7,
+              2.7
+            ],
+            [
+              7,
+              0,
+              0,
+              2.9,
+              2.9
+            ],
+            [
+              64,
+              0,
+              0,
+              2.9,
+              2.9
+            ],
+            [
+              66,
+              0,
+              0,
+              2.5,
+              2.5
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              0.8660254037844387,
+              0,
+              0.49999999999999994
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.49999999999999994,
+              0,
+              0.8660254037844387
+            ]
+          ]
+        },
+        {
+          "part": "band0",
+          "kind": "loft",
+          "material": "bronze",
+          "rows": [
+            [
+              2,
+              0,
+              0,
+              3,
+              3
+            ],
+            [
+              4,
+              0,
+              0,
+              3,
+              3
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              0.8660254037844387,
+              0,
+              0.49999999999999994
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.49999999999999994,
+              0,
+              0.8660254037844387
+            ]
+          ]
+        },
+        {
+          "part": "band1",
+          "kind": "loft",
+          "material": "bronze",
+          "rows": [
+            [
+              17,
+              0,
+              0,
+              3,
+              3
+            ],
+            [
+              19,
+              0,
+              0,
+              3,
+              3
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              0.8660254037844387,
+              0,
+              0.49999999999999994
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.49999999999999994,
+              0,
+              0.8660254037844387
+            ]
+          ]
+        },
+        {
+          "part": "band2",
+          "kind": "loft",
+          "material": "bronze",
+          "rows": [
+            [
+              34,
+              0,
+              0,
+              3,
+              3
+            ],
+            [
+              36,
+              0,
+              0,
+              3,
+              3
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              0.8660254037844387,
+              0,
+              0.49999999999999994
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.49999999999999994,
+              0,
+              0.8660254037844387
+            ]
+          ]
+        },
+        {
+          "part": "band3",
+          "kind": "loft",
+          "material": "bronze",
+          "rows": [
+            [
+              51,
+              0,
+              0,
+              3,
+              3
+            ],
+            [
+              53,
+              0,
+              0,
+              3,
+              3
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              0.8660254037844387,
+              0,
+              0.49999999999999994
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.49999999999999994,
+              0,
+              0.8660254037844387
+            ]
+          ]
+        },
+        {
+          "part": "band4",
+          "kind": "loft",
+          "material": "bronze",
+          "rows": [
+            [
+              66,
+              0,
+              0,
+              3,
+              3
+            ],
+            [
+              68,
+              0,
+              0,
+              3,
+              3
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              0.8660254037844387,
+              0,
+              0.49999999999999994
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.49999999999999994,
+              0,
+              0.8660254037844387
+            ]
+          ]
+        },
+        {
+          "part": "band5",
+          "kind": "loft",
+          "material": "bronze",
+          "rows": [
+            [
+              76,
+              0,
+              0,
+              3,
+              3
+            ],
+            [
+              78,
+              0,
+              0,
+              3,
+              3
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              0.8660254037844387,
+              0,
+              0.49999999999999994
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.49999999999999994,
+              0,
+              0.8660254037844387
+            ]
+          ]
+        },
+        {
+          "part": "tassel0",
+          "kind": "loft",
+          "material": "red",
+          "rows": [
+            [
+              48,
+              0,
+              -4.1,
+              0.6,
+              0.4
+            ],
+            [
+              55,
+              -1,
+              -3.8,
+              1,
+              0.5
+            ],
+            [
+              61,
+              -1.2,
+              -2.7,
+              1,
+              0.5
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              0.8660254037844387,
+              0,
+              0.49999999999999994
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.49999999999999994,
+              0,
+              0.8660254037844387
+            ]
+          ]
+        },
+        {
+          "part": "tassel1",
+          "kind": "loft",
+          "material": "red",
+          "rows": [
+            [
+              48,
+              2,
+              -4.1,
+              0.6,
+              0.4
+            ],
+            [
+              55,
+              1,
+              -3.8,
+              1,
+              0.5
+            ],
+            [
+              61,
+              0.0,
+              -2.7,
+              1,
+              0.5
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              0.8660254037844387,
+              0,
+              0.49999999999999994
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.49999999999999994,
+              0,
+              0.8660254037844387
+            ]
+          ]
+        },
+        {
+          "part": "tassel2",
+          "kind": "loft",
+          "material": "red",
+          "rows": [
+            [
+              48,
+              4,
+              -4.1,
+              0.6,
+              0.4
+            ],
+            [
+              55,
+              3,
+              -3.8,
+              1,
+              0.5
+            ],
+            [
+              61,
+              1.2,
+              -2.7,
+              1,
+              0.5
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              0.8660254037844387,
+              0,
+              0.49999999999999994
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.49999999999999994,
+              0,
+              0.8660254037844387
+            ]
+          ]
+        },
+        {
+          "part": "link0",
+          "kind": "ring",
+          "material": "dark_iron",
+          "radii": [
+            2.8,
+            4.5
+          ],
+          "wire": 0.55,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            40,
+            0,
+            72.0
+          ],
+          "genus": 1,
+          "chain_link": true
+        },
+        {
+          "part": "link1",
+          "kind": "ring",
+          "material": "dark_iron",
+          "radii": [
+            2.8,
+            4.5
+          ],
+          "wire": 0.55,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              6.123233995736766e-17,
+              -1.0,
+              0
+            ],
+            [
+              1.0,
+              6.123233995736766e-17,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            40,
+            0,
+            65.2
+          ],
+          "genus": 1,
+          "chain_link": true
+        },
+        {
+          "part": "link2",
+          "kind": "ring",
+          "material": "dark_iron",
+          "radii": [
+            2.8,
+            4.5
+          ],
+          "wire": 0.55,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            40,
+            0,
+            58.4
+          ],
+          "genus": 1,
+          "chain_link": true
+        },
+        {
+          "part": "link3",
+          "kind": "ring",
+          "material": "dark_iron",
+          "radii": [
+            2.8,
+            4.5
+          ],
+          "wire": 0.55,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              6.123233995736766e-17,
+              -1.0,
+              0
+            ],
+            [
+              1.0,
+              6.123233995736766e-17,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            40,
+            0,
+            51.6
+          ],
+          "genus": 1,
+          "chain_link": true
+        },
+        {
+          "part": "link4",
+          "kind": "ring",
+          "material": "dark_iron",
+          "radii": [
+            2.8,
+            4.5
+          ],
+          "wire": 0.55,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            40,
+            0,
+            44.8
+          ],
+          "genus": 1,
+          "chain_link": true
+        },
+        {
+          "part": "link5",
+          "kind": "ring",
+          "material": "dark_iron",
+          "radii": [
+            2.8,
+            4.5
+          ],
+          "wire": 0.55,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              6.123233995736766e-17,
+              -1.0,
+              0
+            ],
+            [
+              1.0,
+              6.123233995736766e-17,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            40,
+            0,
+            38.0
+          ],
+          "genus": 1,
+          "chain_link": true
+        },
+        {
+          "part": "link6",
+          "kind": "ring",
+          "material": "dark_iron",
+          "radii": [
+            2.8,
+            4.5
+          ],
+          "wire": 0.55,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            40,
+            0,
+            31.200000000000003
+          ],
+          "genus": 1,
+          "chain_link": true
+        },
+        {
+          "part": "head",
+          "kind": "ellipsoid",
+          "material": "dark_iron",
+          "center": [
+            40,
+            0,
+            21.5
+          ],
+          "radii": [
+            9,
+            9,
+            9
+          ],
+          "latitudes": 12,
+          "longitudes": 24
+        },
+        {
+          "part": "spike0",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2,
+          "height": 5.5,
+          "segments": 12,
+          "rotation": [
+            [
+              0.0,
+              -0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "offset": [
+            47.8,
+            0.0,
+            21.5
+          ]
+        },
+        {
+          "part": "spike1",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2,
+          "height": 5.5,
+          "segments": 12,
+          "rotation": [
+            [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "offset": [
+            32.2,
+            0.0,
+            21.5
+          ]
+        },
+        {
+          "part": "spike2",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2,
+          "height": 5.5,
+          "segments": 12,
+          "rotation": [
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "offset": [
+            40.0,
+            7.8,
+            21.5
+          ]
+        },
+        {
+          "part": "spike3",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2,
+          "height": 5.5,
+          "segments": 12,
+          "rotation": [
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "offset": [
+            40.0,
+            -7.8,
+            21.5
+          ]
+        },
+        {
+          "part": "spike4",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2,
+          "height": 5.5,
+          "segments": 12,
+          "rotation": [
+            [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0
+            ]
+          ],
+          "offset": [
+            40.0,
+            0.0,
+            13.7
+          ]
+        },
+        {
+          "part": "spike5",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2,
+          "height": 5.5,
+          "segments": 12,
+          "rotation": [
+            [
+              0.7071067811865476,
+              -0.4082482904638631,
+              0.5773502691896258
+            ],
+            [
+              0.0,
+              0.8164965809277261,
+              0.5773502691896258
+            ],
+            [
+              -0.7071067811865476,
+              -0.4082482904638631,
+              0.5773502691896258
+            ]
+          ],
+          "offset": [
+            44.503332099679085,
+            4.503332099679081,
+            26.00333209967908
+          ]
+        },
+        {
+          "part": "spike6",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2,
+          "height": 5.5,
+          "segments": 12,
+          "rotation": [
+            [
+              0.7071067811865476,
+              0.4082482904638631,
+              -0.5773502691896258
+            ],
+            [
+              -0.0,
+              0.8164965809277261,
+              0.5773502691896258
+            ],
+            [
+              0.7071067811865476,
+              -0.4082482904638631,
+              0.5773502691896258
+            ]
+          ],
+          "offset": [
+            35.496667900320915,
+            4.503332099679081,
+            26.00333209967908
+          ]
+        },
+        {
+          "part": "spike7",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2,
+          "height": 5.5,
+          "segments": 12,
+          "rotation": [
+            [
+              0.7071067811865476,
+              0.4082482904638631,
+              0.5773502691896258
+            ],
+            [
+              0.0,
+              0.8164965809277261,
+              -0.5773502691896258
+            ],
+            [
+              -0.7071067811865476,
+              0.4082482904638631,
+              0.5773502691896258
+            ]
+          ],
+          "offset": [
+            44.503332099679085,
+            -4.503332099679081,
+            26.00333209967908
+          ]
+        },
+        {
+          "part": "spike8",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2,
+          "height": 5.5,
+          "segments": 12,
+          "rotation": [
+            [
+              0.7071067811865476,
+              -0.4082482904638631,
+              -0.5773502691896258
+            ],
+            [
+              -0.0,
+              0.8164965809277261,
+              -0.5773502691896258
+            ],
+            [
+              0.7071067811865476,
+              0.4082482904638631,
+              0.5773502691896258
+            ]
+          ],
+          "offset": [
+            35.496667900320915,
+            -4.503332099679081,
+            26.00333209967908
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "part": "grip",
+          "target": "shaft",
+          "witness": [
+            14.999999999999998,
+            0,
+            25.98076211353316
+          ]
+        },
+        {
+          "part": "band0",
+          "target": "shaft",
+          "witness": [
+            1.4999999999999998,
+            0,
+            2.598076211353316
+          ]
+        },
+        {
+          "part": "band1",
+          "target": "shaft",
+          "witness": [
+            8.999999999999998,
+            0,
+            15.588457268119896
+          ]
+        },
+        {
+          "part": "band2",
+          "target": "shaft",
+          "witness": [
+            17.499999999999996,
+            0,
+            30.310889132455355
+          ]
+        },
+        {
+          "part": "band3",
+          "target": "shaft",
+          "witness": [
+            25.999999999999996,
+            0,
+            45.03332099679081
+          ]
+        },
+        {
+          "part": "band4",
+          "target": "shaft",
+          "witness": [
+            33.49999999999999,
+            0,
+            58.02370205355739
+          ]
+        },
+        {
+          "part": "band5",
+          "target": "shaft",
+          "witness": [
+            38.49999999999999,
+            0,
+            66.68395609140178
+          ]
+        },
+        {
+          "part": "tassel0",
+          "target": "grip",
+          "witness": [
+            29.360769515458667,
+            -2.4,
+            53.254344550093876
+          ]
+        },
+        {
+          "part": "tassel1",
+          "target": "grip",
+          "witness": [
+            30.399999999999995,
+            -2.4,
+            52.654344550093874
+          ]
+        },
+        {
+          "part": "tassel2",
+          "target": "grip",
+          "witness": [
+            31.439230484541323,
+            -2.4,
+            52.05434455009387
+          ]
+        },
+        {
+          "part": "link0",
+          "target": "shaft",
+          "witness": [
+            40,
+            0,
+            68
+          ]
+        },
+        {
+          "part": "head",
+          "target": "link6",
+          "witness": [
+            40,
+            0,
+            26.8
+          ]
+        },
+        {
+          "part": "spike0",
+          "target": "head",
+          "witness": [
+            48.0,
+            0.0,
+            21.5
+          ]
+        },
+        {
+          "part": "spike1",
+          "target": "head",
+          "witness": [
+            32.0,
+            0.0,
+            21.5
+          ]
+        },
+        {
+          "part": "spike2",
+          "target": "head",
+          "witness": [
+            40.0,
+            8.0,
+            21.5
+          ]
+        },
+        {
+          "part": "spike3",
+          "target": "head",
+          "witness": [
+            40.0,
+            -8.0,
+            21.5
+          ]
+        },
+        {
+          "part": "spike4",
+          "target": "head",
+          "witness": [
+            40.0,
+            0.0,
+            13.5
+          ]
+        },
+        {
+          "part": "spike5",
+          "target": "head",
+          "witness": [
+            44.61880215351701,
+            4.618802153517007,
+            26.118802153517006
+          ]
+        },
+        {
+          "part": "spike6",
+          "target": "head",
+          "witness": [
+            35.38119784648299,
+            4.618802153517007,
+            26.118802153517006
+          ]
+        },
+        {
+          "part": "spike7",
+          "target": "head",
+          "witness": [
+            44.61880215351701,
+            -4.618802153517007,
+            26.118802153517006
+          ]
+        },
+        {
+          "part": "spike8",
+          "target": "head",
+          "witness": [
+            35.38119784648299,
+            -4.618802153517007,
+            26.118802153517006
+          ]
+        }
+      ],
+      "openings": [],
+      "links": [
+        [
+          "link0",
+          "link1"
+        ],
+        [
+          "link1",
+          "link2"
+        ],
+        [
+          "link2",
+          "link3"
+        ],
+        [
+          "link3",
+          "link4"
+        ],
+        [
+          "link4",
+          "link5"
+        ],
+        [
+          "link5",
+          "link6"
+        ]
+      ]
+    },
+    "giant_gauntlets": {
+      "roots": [
+        "left_shell",
+        "right_shell"
+      ],
+      "root": "left_shell",
+      "parts": [
+        {
+          "part": "left_shell",
+          "kind": "loft",
+          "material": "dark_iron",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              11,
+              8
+            ],
+            [
+              8,
+              0,
+              0,
+              12,
+              9
+            ],
+            [
+              18,
+              0,
+              0,
+              9,
+              7
+            ],
+            [
+              40,
+              0,
+              0,
+              12,
+              9
+            ],
+            [
+              45,
+              0,
+              0,
+              13,
+              10
+            ],
+            [
+              45,
+              0,
+              0,
+              10,
+              7
+            ],
+            [
+              18,
+              0,
+              0,
+              6,
+              4
+            ],
+            [
+              8,
+              0,
+              0,
+              7,
+              5
+            ],
+            [
+              4,
+              0,
+              0,
+              7,
+              4
+            ],
+            [
+              4,
+              0,
+              0,
+              0.5,
+              0.5
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              -0.90630778703665,
+              0.0,
+              -0.4226182617406993
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.4226182617406993,
+              0.0,
+              -0.90630778703665
+            ]
+          ],
+          "offset": [
+            -30.0,
+            0,
+            43.0
+          ]
+        },
+        {
+          "part": "left_finger0",
+          "kind": "loft",
+          "material": "dark_iron",
+          "rows": [
+            [
+              -10,
+              -8.4,
+              -2,
+              1.3,
+              1.3
+            ],
+            [
+              -8,
+              -8.4,
+              -3,
+              2.7,
+              4
+            ],
+            [
+              -2,
+              -8.4,
+              -4,
+              2.7,
+              4.6
+            ],
+            [
+              5,
+              -8.4,
+              -3,
+              2.7,
+              3.7
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              -0.90630778703665,
+              0.0,
+              -0.4226182617406993
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.4226182617406993,
+              0.0,
+              -0.90630778703665
+            ]
+          ],
+          "offset": [
+            -30.0,
+            0,
+            43.0
+          ]
+        },
+        {
+          "part": "left_finger1",
+          "kind": "loft",
+          "material": "dark_iron",
+          "rows": [
+            [
+              -10,
+              -2.8,
+              -2,
+              1.3,
+              1.3
+            ],
+            [
+              -8,
+              -2.8,
+              -3,
+              2.7,
+              4
+            ],
+            [
+              -2,
+              -2.8,
+              -4,
+              2.7,
+              4.6
+            ],
+            [
+              5,
+              -2.8,
+              -3,
+              2.7,
+              3.7
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              -0.90630778703665,
+              0.0,
+              -0.4226182617406993
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.4226182617406993,
+              0.0,
+              -0.90630778703665
+            ]
+          ],
+          "offset": [
+            -30.0,
+            0,
+            43.0
+          ]
+        },
+        {
+          "part": "left_finger2",
+          "kind": "loft",
+          "material": "dark_iron",
+          "rows": [
+            [
+              -10,
+              2.8,
+              -2,
+              1.3,
+              1.3
+            ],
+            [
+              -8,
+              2.8,
+              -3,
+              2.7,
+              4
+            ],
+            [
+              -2,
+              2.8,
+              -4,
+              2.7,
+              4.6
+            ],
+            [
+              5,
+              2.8,
+              -3,
+              2.7,
+              3.7
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              -0.90630778703665,
+              0.0,
+              -0.4226182617406993
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.4226182617406993,
+              0.0,
+              -0.90630778703665
+            ]
+          ],
+          "offset": [
+            -30.0,
+            0,
+            43.0
+          ]
+        },
+        {
+          "part": "left_finger3",
+          "kind": "loft",
+          "material": "dark_iron",
+          "rows": [
+            [
+              -10,
+              8.4,
+              -2,
+              1.3,
+              1.3
+            ],
+            [
+              -8,
+              8.4,
+              -3,
+              2.7,
+              4
+            ],
+            [
+              -2,
+              8.4,
+              -4,
+              2.7,
+              4.6
+            ],
+            [
+              5,
+              8.4,
+              -3,
+              2.7,
+              3.7
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              -0.90630778703665,
+              0.0,
+              -0.4226182617406993
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.4226182617406993,
+              0.0,
+              -0.90630778703665
+            ]
+          ],
+          "offset": [
+            -30.0,
+            0,
+            43.0
+          ]
+        },
+        {
+          "part": "left_thumb",
+          "kind": "tube",
+          "material": "dark_iron",
+          "rows": [
+            [
+              -9,
+              -1,
+              11,
+              3.5,
+              4
+            ],
+            [
+              -14,
+              -2,
+              7,
+              3.4,
+              4
+            ],
+            [
+              -15,
+              -5,
+              0,
+              3.4,
+              3.5
+            ],
+            [
+              -11,
+              -7,
+              -4,
+              3.0,
+              3
+            ],
+            [
+              -7,
+              -7,
+              -3,
+              1.5,
+              1.5
+            ]
+          ],
+          "segments": 12,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              -0.90630778703665,
+              0.0,
+              -0.4226182617406993
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.4226182617406993,
+              0.0,
+              -0.90630778703665
+            ]
+          ],
+          "offset": [
+            -30.0,
+            0,
+            43.0
+          ]
+        },
+        {
+          "part": "left_trim0",
+          "kind": "ring",
+          "material": "bronze",
+          "radii": [
+            11.8,
+            9.0
+          ],
+          "wire": 0.8,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              -0.90630778703665,
+              0.4226182617406993,
+              0.0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0.4226182617406993,
+              0.90630778703665,
+              0.0
+            ]
+          ],
+          "offset": [
+            -34.22618261740699,
+            0,
+            33.9369221296335
+          ],
+          "genus": 1,
+          "chain_link": false
+        },
+        {
+          "part": "left_trim1",
+          "kind": "ring",
+          "material": "bronze",
+          "radii": [
+            10.8,
+            8.2
+          ],
+          "wire": 0.8,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              -0.90630778703665,
+              0.4226182617406993,
+              0.0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0.4226182617406993,
+              0.90630778703665,
+              0.0
+            ]
+          ],
+          "offset": [
+            -41.83331132873958,
+            0,
+            17.6233819629738
+          ],
+          "genus": 1,
+          "chain_link": false
+        },
+        {
+          "part": "left_trim2",
+          "kind": "ring",
+          "material": "bronze",
+          "radii": [
+            13.0,
+            10.1
+          ],
+          "wire": 0.8,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              -0.90630778703665,
+              0.4226182617406993,
+              0.0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0.4226182617406993,
+              0.90630778703665,
+              0.0
+            ]
+          ],
+          "offset": [
+            -48.17258525485007,
+            0,
+            4.028765157424047
+          ],
+          "genus": 1,
+          "chain_link": false
+        },
+        {
+          "part": "left_mark0",
+          "kind": "bevel",
+          "material": "bronze",
+          "outline": [
+            [
+              -6.3,
+              20
+            ],
+            [
+              -5,
+              18
+            ],
+            [
+              -3.7,
+              20
+            ],
+            [
+              -5,
+              22
+            ]
+          ],
+          "bevel_center": [
+            -5,
+            20
+          ],
+          "inner_scale": 0.75,
+          "depth": 1.8,
+          "edge_depth": 0.5,
+          "offset": [
+            -30.0,
+            -6.348295337318487,
+            43.0
+          ],
+          "rotation": [
+            [
+              -0.90630778703665,
+              0.0,
+              -0.4226182617406993
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.4226182617406993,
+              0.0,
+              -0.90630778703665
+            ]
+          ]
+        },
+        {
+          "part": "left_mark1",
+          "kind": "bevel",
+          "material": "bronze",
+          "outline": [
+            [
+              -1.3,
+              21
+            ],
+            [
+              0,
+              19
+            ],
+            [
+              1.3,
+              21
+            ],
+            [
+              0,
+              23
+            ]
+          ],
+          "bevel_center": [
+            0,
+            21
+          ],
+          "inner_scale": 0.75,
+          "depth": 1.8,
+          "edge_depth": 0.5,
+          "offset": [
+            -30.0,
+            -7.572727272727272,
+            43.0
+          ],
+          "rotation": [
+            [
+              -0.90630778703665,
+              0.0,
+              -0.4226182617406993
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.4226182617406993,
+              0.0,
+              -0.90630778703665
+            ]
+          ]
+        },
+        {
+          "part": "left_mark2",
+          "kind": "bevel",
+          "material": "bronze",
+          "outline": [
+            [
+              3.7,
+              20
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              6.3,
+              20
+            ],
+            [
+              5,
+              22
+            ]
+          ],
+          "bevel_center": [
+            5,
+            20
+          ],
+          "inner_scale": 0.75,
+          "depth": 1.8,
+          "edge_depth": 0.5,
+          "offset": [
+            -30.0,
+            -6.348295337318487,
+            43.0
+          ],
+          "rotation": [
+            [
+              -0.90630778703665,
+              0.0,
+              -0.4226182617406993
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.4226182617406993,
+              0.0,
+              -0.90630778703665
+            ]
+          ]
+        },
+        {
+          "part": "left_mark3",
+          "kind": "bevel",
+          "material": "bronze",
+          "outline": [
+            [
+              -1.3,
+              35
+            ],
+            [
+              0,
+              33
+            ],
+            [
+              1.3,
+              35
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "bevel_center": [
+            0,
+            35
+          ],
+          "inner_scale": 0.75,
+          "depth": 1.8,
+          "edge_depth": 0.5,
+          "offset": [
+            -30.0,
+            -8.845454545454546,
+            43.0
+          ],
+          "rotation": [
+            [
+              -0.90630778703665,
+              0.0,
+              -0.4226182617406993
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.4226182617406993,
+              0.0,
+              -0.90630778703665
+            ]
+          ]
+        },
+        {
+          "part": "right_shell",
+          "kind": "loft",
+          "material": "dark_iron",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              11,
+              8
+            ],
+            [
+              8,
+              0,
+              0,
+              12,
+              9
+            ],
+            [
+              18,
+              0,
+              0,
+              9,
+              7
+            ],
+            [
+              40,
+              0,
+              0,
+              12,
+              9
+            ],
+            [
+              45,
+              0,
+              0,
+              13,
+              10
+            ],
+            [
+              45,
+              0,
+              0,
+              10,
+              7
+            ],
+            [
+              18,
+              0,
+              0,
+              6,
+              4
+            ],
+            [
+              8,
+              0,
+              0,
+              7,
+              5
+            ],
+            [
+              4,
+              0,
+              0,
+              7,
+              4
+            ],
+            [
+              4,
+              0,
+              0,
+              0.5,
+              0.5
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              -0.9063077870366499,
+              0.0,
+              0.4226182617406995
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.4226182617406995,
+              0.0,
+              -0.9063077870366499
+            ]
+          ],
+          "offset": [
+            30.0,
+            0,
+            43.0
+          ]
+        },
+        {
+          "part": "right_finger0",
+          "kind": "loft",
+          "material": "dark_iron",
+          "rows": [
+            [
+              -10,
+              -8.4,
+              -2,
+              1.3,
+              1.3
+            ],
+            [
+              -8,
+              -8.4,
+              -3,
+              2.7,
+              4
+            ],
+            [
+              -2,
+              -8.4,
+              -4,
+              2.7,
+              4.6
+            ],
+            [
+              5,
+              -8.4,
+              -3,
+              2.7,
+              3.7
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              -0.9063077870366499,
+              0.0,
+              0.4226182617406995
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.4226182617406995,
+              0.0,
+              -0.9063077870366499
+            ]
+          ],
+          "offset": [
+            30.0,
+            0,
+            43.0
+          ]
+        },
+        {
+          "part": "right_finger1",
+          "kind": "loft",
+          "material": "dark_iron",
+          "rows": [
+            [
+              -10,
+              -2.8,
+              -2,
+              1.3,
+              1.3
+            ],
+            [
+              -8,
+              -2.8,
+              -3,
+              2.7,
+              4
+            ],
+            [
+              -2,
+              -2.8,
+              -4,
+              2.7,
+              4.6
+            ],
+            [
+              5,
+              -2.8,
+              -3,
+              2.7,
+              3.7
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              -0.9063077870366499,
+              0.0,
+              0.4226182617406995
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.4226182617406995,
+              0.0,
+              -0.9063077870366499
+            ]
+          ],
+          "offset": [
+            30.0,
+            0,
+            43.0
+          ]
+        },
+        {
+          "part": "right_finger2",
+          "kind": "loft",
+          "material": "dark_iron",
+          "rows": [
+            [
+              -10,
+              2.8,
+              -2,
+              1.3,
+              1.3
+            ],
+            [
+              -8,
+              2.8,
+              -3,
+              2.7,
+              4
+            ],
+            [
+              -2,
+              2.8,
+              -4,
+              2.7,
+              4.6
+            ],
+            [
+              5,
+              2.8,
+              -3,
+              2.7,
+              3.7
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              -0.9063077870366499,
+              0.0,
+              0.4226182617406995
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.4226182617406995,
+              0.0,
+              -0.9063077870366499
+            ]
+          ],
+          "offset": [
+            30.0,
+            0,
+            43.0
+          ]
+        },
+        {
+          "part": "right_finger3",
+          "kind": "loft",
+          "material": "dark_iron",
+          "rows": [
+            [
+              -10,
+              8.4,
+              -2,
+              1.3,
+              1.3
+            ],
+            [
+              -8,
+              8.4,
+              -3,
+              2.7,
+              4
+            ],
+            [
+              -2,
+              8.4,
+              -4,
+              2.7,
+              4.6
+            ],
+            [
+              5,
+              8.4,
+              -3,
+              2.7,
+              3.7
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              -0.9063077870366499,
+              0.0,
+              0.4226182617406995
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.4226182617406995,
+              0.0,
+              -0.9063077870366499
+            ]
+          ],
+          "offset": [
+            30.0,
+            0,
+            43.0
+          ]
+        },
+        {
+          "part": "right_thumb",
+          "kind": "tube",
+          "material": "dark_iron",
+          "rows": [
+            [
+              9,
+              -1,
+              11,
+              3.5,
+              4
+            ],
+            [
+              14,
+              -2,
+              7,
+              3.4,
+              4
+            ],
+            [
+              15,
+              -5,
+              0,
+              3.4,
+              3.5
+            ],
+            [
+              11,
+              -7,
+              -4,
+              3.0,
+              3
+            ],
+            [
+              7,
+              -7,
+              -3,
+              1.5,
+              1.5
+            ]
+          ],
+          "segments": 12,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              -0.9063077870366499,
+              0.0,
+              0.4226182617406995
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.4226182617406995,
+              0.0,
+              -0.9063077870366499
+            ]
+          ],
+          "offset": [
+            30.0,
+            0,
+            43.0
+          ]
+        },
+        {
+          "part": "right_trim0",
+          "kind": "ring",
+          "material": "bronze",
+          "radii": [
+            11.8,
+            9.0
+          ],
+          "wire": 0.8,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              -0.9063077870366499,
+              -0.4226182617406995,
+              0.0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -0.4226182617406995,
+              0.9063077870366499,
+              0.0
+            ]
+          ],
+          "offset": [
+            34.22618261740699,
+            0,
+            33.9369221296335
+          ],
+          "genus": 1,
+          "chain_link": false
+        },
+        {
+          "part": "right_trim1",
+          "kind": "ring",
+          "material": "bronze",
+          "radii": [
+            10.8,
+            8.2
+          ],
+          "wire": 0.8,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              -0.9063077870366499,
+              -0.4226182617406995,
+              0.0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -0.4226182617406995,
+              0.9063077870366499,
+              0.0
+            ]
+          ],
+          "offset": [
+            41.83331132873958,
+            0,
+            17.623381962973802
+          ],
+          "genus": 1,
+          "chain_link": false
+        },
+        {
+          "part": "right_trim2",
+          "kind": "ring",
+          "material": "bronze",
+          "radii": [
+            13.0,
+            10.1
+          ],
+          "wire": 0.8,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              -0.9063077870366499,
+              -0.4226182617406995,
+              0.0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              -0.4226182617406995,
+              0.9063077870366499,
+              0.0
+            ]
+          ],
+          "offset": [
+            48.17258525485008,
+            0,
+            4.028765157424054
+          ],
+          "genus": 1,
+          "chain_link": false
+        },
+        {
+          "part": "right_mark0",
+          "kind": "bevel",
+          "material": "bronze",
+          "outline": [
+            [
+              -6.3,
+              20
+            ],
+            [
+              -5,
+              18
+            ],
+            [
+              -3.7,
+              20
+            ],
+            [
+              -5,
+              22
+            ]
+          ],
+          "bevel_center": [
+            -5,
+            20
+          ],
+          "inner_scale": 0.75,
+          "depth": 1.8,
+          "edge_depth": 0.5,
+          "offset": [
+            30.0,
+            -6.348295337318487,
+            43.0
+          ],
+          "rotation": [
+            [
+              -0.9063077870366499,
+              0.0,
+              0.4226182617406995
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.4226182617406995,
+              0.0,
+              -0.9063077870366499
+            ]
+          ]
+        },
+        {
+          "part": "right_mark1",
+          "kind": "bevel",
+          "material": "bronze",
+          "outline": [
+            [
+              -1.3,
+              21
+            ],
+            [
+              0,
+              19
+            ],
+            [
+              1.3,
+              21
+            ],
+            [
+              0,
+              23
+            ]
+          ],
+          "bevel_center": [
+            0,
+            21
+          ],
+          "inner_scale": 0.75,
+          "depth": 1.8,
+          "edge_depth": 0.5,
+          "offset": [
+            30.0,
+            -7.572727272727272,
+            43.0
+          ],
+          "rotation": [
+            [
+              -0.9063077870366499,
+              0.0,
+              0.4226182617406995
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.4226182617406995,
+              0.0,
+              -0.9063077870366499
+            ]
+          ]
+        },
+        {
+          "part": "right_mark2",
+          "kind": "bevel",
+          "material": "bronze",
+          "outline": [
+            [
+              3.7,
+              20
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              6.3,
+              20
+            ],
+            [
+              5,
+              22
+            ]
+          ],
+          "bevel_center": [
+            5,
+            20
+          ],
+          "inner_scale": 0.75,
+          "depth": 1.8,
+          "edge_depth": 0.5,
+          "offset": [
+            30.0,
+            -6.348295337318487,
+            43.0
+          ],
+          "rotation": [
+            [
+              -0.9063077870366499,
+              0.0,
+              0.4226182617406995
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.4226182617406995,
+              0.0,
+              -0.9063077870366499
+            ]
+          ]
+        },
+        {
+          "part": "right_mark3",
+          "kind": "bevel",
+          "material": "bronze",
+          "outline": [
+            [
+              -1.3,
+              35
+            ],
+            [
+              0,
+              33
+            ],
+            [
+              1.3,
+              35
+            ],
+            [
+              0,
+              37
+            ]
+          ],
+          "bevel_center": [
+            0,
+            35
+          ],
+          "inner_scale": 0.75,
+          "depth": 1.8,
+          "edge_depth": 0.5,
+          "offset": [
+            30.0,
+            -8.845454545454546,
+            43.0
+          ],
+          "rotation": [
+            [
+              -0.9063077870366499,
+              0.0,
+              0.4226182617406995
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.4226182617406995,
+              0.0,
+              -0.9063077870366499
+            ]
+          ]
+        },
+        {
+          "part": "left_lining",
+          "kind": "loft",
+          "material": "lining",
+          "rows": [
+            [
+              4.2,
+              0,
+              0,
+              0.5,
+              0.5
+            ],
+            [
+              4.2,
+              0,
+              0,
+              6.85,
+              3.85
+            ],
+            [
+              8,
+              0,
+              0,
+              7.07,
+              5.07
+            ],
+            [
+              18,
+              0,
+              0,
+              6.07,
+              4.07
+            ],
+            [
+              45,
+              0,
+              0,
+              10.07,
+              7.07
+            ],
+            [
+              45,
+              0,
+              0,
+              9.75,
+              6.75
+            ],
+            [
+              18,
+              0,
+              0,
+              5.75,
+              3.75
+            ],
+            [
+              8,
+              0,
+              0,
+              6.75,
+              4.75
+            ],
+            [
+              4.6,
+              0,
+              0,
+              6.5,
+              3.5
+            ],
+            [
+              4.6,
+              0,
+              0,
+              0.5,
+              0.5
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              -0.90630778703665,
+              0.0,
+              -0.4226182617406993
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.4226182617406993,
+              0.0,
+              -0.90630778703665
+            ]
+          ],
+          "offset": [
+            -30.0,
+            0,
+            43.0
+          ]
+        },
+        {
+          "part": "right_lining",
+          "kind": "loft",
+          "material": "lining",
+          "rows": [
+            [
+              4.2,
+              0,
+              0,
+              0.5,
+              0.5
+            ],
+            [
+              4.2,
+              0,
+              0,
+              6.85,
+              3.85
+            ],
+            [
+              8,
+              0,
+              0,
+              7.07,
+              5.07
+            ],
+            [
+              18,
+              0,
+              0,
+              6.07,
+              4.07
+            ],
+            [
+              45,
+              0,
+              0,
+              10.07,
+              7.07
+            ],
+            [
+              45,
+              0,
+              0,
+              9.75,
+              6.75
+            ],
+            [
+              18,
+              0,
+              0,
+              5.75,
+              3.75
+            ],
+            [
+              8,
+              0,
+              0,
+              6.75,
+              4.75
+            ],
+            [
+              4.6,
+              0,
+              0,
+              6.5,
+              3.5
+            ],
+            [
+              4.6,
+              0,
+              0,
+              0.5,
+              0.5
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true,
+          "rotation": [
+            [
+              -0.9063077870366499,
+              0.0,
+              0.4226182617406995
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.4226182617406995,
+              0.0,
+              -0.9063077870366499
+            ]
+          ],
+          "offset": [
+            30.0,
+            0,
+            43.0
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "part": "left_finger0",
+          "target": "left_shell",
+          "witness": [
+            -23.654869374114238,
+            -3.0,
+            36.73108324026818
+          ]
+        },
+        {
+          "part": "left_finger1",
+          "target": "left_shell",
+          "witness": [
+            -28.73019298151948,
+            -3.0,
+            39.09774550601609
+          ]
+        },
+        {
+          "part": "left_finger2",
+          "target": "left_shell",
+          "witness": [
+            -33.80551658892472,
+            -3.0,
+            41.46440777176401
+          ]
+        },
+        {
+          "part": "left_finger3",
+          "target": "left_shell",
+          "witness": [
+            -38.880840196329956,
+            -3.0,
+            43.83107003751192
+          ]
+        },
+        {
+          "part": "left_thumb",
+          "target": "left_shell",
+          "witness": [
+            -26.069412534077145,
+            -1,
+            30.133357773967205
+          ]
+        },
+        {
+          "part": "left_trim0",
+          "target": "left_shell",
+          "witness": [
+            -44.46746061092114,
+            0.0,
+            38.7125084873034
+          ]
+        },
+        {
+          "part": "left_trim1",
+          "target": "left_shell",
+          "witness": [
+            -51.168281535217076,
+            0.0,
+            21.976350058903
+          ]
+        },
+        {
+          "part": "left_trim2",
+          "target": "left_shell",
+          "witness": [
+            -59.50143259280819,
+            0.0,
+            9.31149342918279
+          ]
+        },
+        {
+          "part": "left_mark0",
+          "target": "left_shell",
+          "witness": [
+            -33.92082629963073,
+            -5.948295337318487,
+            22.760752950563504
+          ]
+        },
+        {
+          "part": "left_mark1",
+          "target": "left_shell",
+          "witness": [
+            -38.874983496554684,
+            -7.172727272727272,
+            23.96753647223035
+          ]
+        },
+        {
+          "part": "left_mark2",
+          "target": "left_shell",
+          "witness": [
+            -42.98390416999723,
+            -5.948295337318487,
+            26.986935567970495
+          ]
+        },
+        {
+          "part": "left_mark3",
+          "target": "left_shell",
+          "witness": [
+            -44.791639160924476,
+            -8.445454545454545,
+            11.279227453717247
+          ]
+        },
+        {
+          "part": "right_finger0",
+          "target": "right_shell",
+          "witness": [
+            38.880840196329956,
+            -3.0,
+            43.83107003751193
+          ]
+        },
+        {
+          "part": "right_finger1",
+          "target": "right_shell",
+          "witness": [
+            33.80551658892472,
+            -3.0,
+            41.46440777176401
+          ]
+        },
+        {
+          "part": "right_finger2",
+          "target": "right_shell",
+          "witness": [
+            28.73019298151948,
+            -3.0,
+            39.09774550601609
+          ]
+        },
+        {
+          "part": "right_finger3",
+          "target": "right_shell",
+          "witness": [
+            23.654869374114238,
+            -3.0,
+            36.73108324026818
+          ]
+        },
+        {
+          "part": "right_thumb",
+          "target": "right_shell",
+          "witness": [
+            26.069412534077145,
+            -1,
+            30.133357773967205
+          ]
+        },
+        {
+          "part": "right_trim0",
+          "target": "right_shell",
+          "witness": [
+            23.98490462389285,
+            0.0,
+            29.161335771963596
+          ]
+        },
+        {
+          "part": "right_trim1",
+          "target": "right_shell",
+          "witness": [
+            32.49834112226209,
+            0.0,
+            13.270413867044596
+          ]
+        },
+        {
+          "part": "right_trim2",
+          "target": "right_shell",
+          "witness": [
+            36.84373791689195,
+            0.0,
+            -1.253963114334688
+          ]
+        },
+        {
+          "part": "right_mark0",
+          "target": "right_shell",
+          "witness": [
+            42.98390416999724,
+            -5.948295337318487,
+            26.986935567970498
+          ]
+        },
+        {
+          "part": "right_mark1",
+          "target": "right_shell",
+          "witness": [
+            38.87498349655469,
+            -7.172727272727272,
+            23.96753647223035
+          ]
+        },
+        {
+          "part": "right_mark2",
+          "target": "right_shell",
+          "witness": [
+            33.92082629963074,
+            -5.948295337318487,
+            22.760752950563507
+          ]
+        },
+        {
+          "part": "right_mark3",
+          "target": "right_shell",
+          "witness": [
+            44.79163916092448,
+            -8.445454545454545,
+            11.279227453717251
+          ]
+        },
+        {
+          "part": "left_lining",
+          "target": "left_shell",
+          "witness": [
+            -39.752289836793246,
+            0.0,
+            38.72054408374392
+          ]
+        },
+        {
+          "part": "right_lining",
+          "target": "right_shell",
+          "witness": [
+            27.009602351057946,
+            0.0,
+            32.77853132366968
+          ]
+        }
+      ],
+      "openings": [
+        {
+          "point": [
+            -46.90473046962797,
+            0,
+            6.747688518533998
+          ],
+          "normal": [
+            -0.4226182617406993,
+            0,
+            -0.90630778703665
+          ],
+          "axis_u": [
+            -0.90630778703665,
+            0,
+            0.4226182617406993
+          ],
+          "axis_v": [
+            0.0,
+            1,
+            0.0
+          ],
+          "clearance": 3,
+          "signs": [
+            1
+          ]
+        },
+        {
+          "point": [
+            46.90473046962798,
+            0,
+            6.747688518534005
+          ],
+          "normal": [
+            0.4226182617406995,
+            0,
+            -0.9063077870366499
+          ],
+          "axis_u": [
+            -0.9063077870366499,
+            0,
+            -0.4226182617406995
+          ],
+          "axis_v": [
+            0.0,
+            1,
+            0.0
+          ],
+          "clearance": 3,
+          "signs": [
+            1
+          ]
+        }
+      ],
+      "links": []
+    },
+    "bolas": {
+      "roots": [
+        "coil"
+      ],
+      "root": "coil",
+      "parts": [
+        {
+          "part": "coil",
+          "kind": "tube",
+          "material": "bolas_leather",
+          "rows": [
+            [
+              -16.222661741907398,
+              -6.0,
+              55.509263611023016,
+              1.4,
+              1.4
+            ],
+            [
+              -18.810027092306175,
+              -5.875,
+              52.37251935042616,
+              1.4,
+              1.4
+            ],
+            [
+              -20.67453365033235,
+              -5.75,
+              48.837164988168276,
+              1.4,
+              1.4
+            ],
+            [
+              -21.7445294745883,
+              -5.625,
+              45.03906220974139,
+              1.4,
+              1.4
+            ],
+            [
+              -21.97889522560844,
+              -5.5,
+              41.12416997491987,
+              1.4,
+              1.4
+            ],
+            [
+              -21.368624359014895,
+              -5.375,
+              37.24293539679104,
+              1.4,
+              1.4
+            ],
+            [
+              -19.937169241967005,
+              -5.25,
+              33.54451214357097,
+              1.4,
+              1.4
+            ],
+            [
+              -17.739539891843645,
+              -5.125,
+              30.171028546781237,
+              1.4,
+              1.4
+            ],
+            [
+              -14.860189972125323,
+              -5.0,
+              27.25212568917509,
+              1.4,
+              1.4
+            ],
+            [
+              -11.409771285468773,
+              -4.875,
+              24.899975370630752,
+              1.4,
+              1.4
+            ],
+            [
+              -7.520881486985105,
+              -4.75,
+              23.20496940878877,
+              1.4,
+              1.4
+            ],
+            [
+              -3.342968430715529,
+              -4.625,
+              22.232245932192455,
+              1.4,
+              1.4
+            ],
+            [
+              0.9634130275881322,
+              -4.5,
+              22.01918615853778,
+              1.4,
+              1.4
+            ],
+            [
+              5.232771063529851,
+              -4.375,
+              22.573977855441004,
+              1.4,
+              1.4
+            ],
+            [
+              9.301036642071937,
+              -4.25,
+              23.875300689120905,
+              1.4,
+              1.4
+            ],
+            [
+              13.01186859854064,
+              -4.125,
+              25.873145552869413,
+              1.4,
+              1.4
+            ],
+            [
+              16.222661741907405,
+              -4.0,
+              28.490736388976984,
+              1.4,
+              1.4
+            ],
+            [
+              18.81002709230617,
+              -3.875,
+              31.62748064957384,
+              1.4,
+              1.4
+            ],
+            [
+              20.67453365033235,
+              -3.75,
+              35.162835011831724,
+              1.4,
+              1.4
+            ],
+            [
+              21.7445294745883,
+              -3.625,
+              38.96093779025861,
+              1.4,
+              1.4
+            ],
+            [
+              21.97889522560844,
+              -3.5,
+              42.87583002508012,
+              1.4,
+              1.4
+            ],
+            [
+              21.368624359014888,
+              -3.375,
+              46.757064603208974,
+              1.4,
+              1.4
+            ],
+            [
+              19.937169241967005,
+              -3.25,
+              50.45548785642903,
+              1.4,
+              1.4
+            ],
+            [
+              17.73953989184366,
+              -3.125,
+              53.82897145321875,
+              1.4,
+              1.4
+            ],
+            [
+              14.860189972125319,
+              -3.0,
+              56.74787431082491,
+              1.4,
+              1.4
+            ],
+            [
+              11.409771285468775,
+              -2.875,
+              59.100024629369244,
+              1.4,
+              1.4
+            ],
+            [
+              7.520881486985127,
+              -2.75,
+              60.79503059121122,
+              1.4,
+              1.4
+            ],
+            [
+              3.3429684307155316,
+              -2.625,
+              61.767754067807545,
+              1.4,
+              1.4
+            ],
+            [
+              -0.9634130275881294,
+              -2.5,
+              61.98081384146222,
+              1.4,
+              1.4
+            ],
+            [
+              -5.232771063529829,
+              -2.375,
+              61.426022144559,
+              1.4,
+              1.4
+            ],
+            [
+              -9.301036642071935,
+              -2.25,
+              60.124699310879095,
+              1.4,
+              1.4
+            ],
+            [
+              -13.011868598540623,
+              -2.125,
+              58.1268544471306,
+              1.4,
+              1.4
+            ],
+            [
+              -16.2226617419074,
+              -2.0,
+              55.509263611023016,
+              1.4,
+              1.4
+            ],
+            [
+              -18.81002709230617,
+              -1.875,
+              52.37251935042616,
+              1.4,
+              1.4
+            ],
+            [
+              -20.674533650332343,
+              -1.75,
+              48.8371649881683,
+              1.4,
+              1.4
+            ],
+            [
+              -21.7445294745883,
+              -1.625,
+              45.039062209741395,
+              1.4,
+              1.4
+            ],
+            [
+              -21.97889522560844,
+              -1.5,
+              41.12416997491988,
+              1.4,
+              1.4
+            ],
+            [
+              -21.36862435901489,
+              -1.375,
+              37.24293539679103,
+              1.4,
+              1.4
+            ],
+            [
+              -19.937169241967005,
+              -1.25,
+              33.54451214357097,
+              1.4,
+              1.4
+            ],
+            [
+              -17.73953989184366,
+              -1.125,
+              30.171028546781255,
+              1.4,
+              1.4
+            ],
+            [
+              -14.860189972125347,
+              -1.0,
+              27.252125689175113,
+              1.4,
+              1.4
+            ],
+            [
+              -11.409771285468779,
+              -0.875,
+              24.899975370630756,
+              1.4,
+              1.4
+            ],
+            [
+              -7.520881486985092,
+              -0.75,
+              23.204969408788767,
+              1.4,
+              1.4
+            ],
+            [
+              -3.342968430715534,
+              -0.625,
+              22.232245932192455,
+              1.4,
+              1.4
+            ],
+            [
+              0.9634130275881657,
+              -0.5,
+              22.01918615853778,
+              1.4,
+              1.4
+            ],
+            [
+              5.2327710635298645,
+              -0.375,
+              22.573977855441008,
+              1.4,
+              1.4
+            ],
+            [
+              9.301036642071931,
+              -0.25,
+              23.875300689120902,
+              1.4,
+              1.4
+            ],
+            [
+              13.011868598540621,
+              -0.125,
+              25.873145552869403,
+              1.4,
+              1.4
+            ],
+            [
+              16.222661741907398,
+              0.0,
+              28.49073638897698,
+              1.4,
+              1.4
+            ],
+            [
+              18.81002709230619,
+              0.125,
+              31.62748064957387,
+              1.4,
+              1.4
+            ],
+            [
+              20.674533650332357,
+              0.25,
+              35.16283501183173,
+              1.4,
+              1.4
+            ],
+            [
+              21.7445294745883,
+              0.375,
+              38.960937790258605,
+              1.4,
+              1.4
+            ],
+            [
+              21.97889522560844,
+              0.5,
+              42.87583002508011,
+              1.4,
+              1.4
+            ],
+            [
+              21.36862435901489,
+              0.625,
+              46.75706460320897,
+              1.4,
+              1.4
+            ],
+            [
+              19.93716924196701,
+              0.75,
+              50.45548785642903,
+              1.4,
+              1.4
+            ],
+            [
+              17.739539891843663,
+              0.875,
+              53.82897145321874,
+              1.4,
+              1.4
+            ],
+            [
+              14.86018997212532,
+              1.0,
+              56.74787431082491,
+              1.4,
+              1.4
+            ],
+            [
+              11.40977128546878,
+              1.125,
+              59.100024629369244,
+              1.4,
+              1.4
+            ],
+            [
+              7.5208814869851315,
+              1.25,
+              60.795030591211216,
+              1.4,
+              1.4
+            ],
+            [
+              3.342968430715498,
+              1.375,
+              61.76775406780755,
+              1.4,
+              1.4
+            ],
+            [
+              -0.9634130275881629,
+              1.5,
+              61.98081384146222,
+              1.4,
+              1.4
+            ],
+            [
+              -5.232771063529862,
+              1.625,
+              61.42602214455899,
+              1.4,
+              1.4
+            ],
+            [
+              -9.30103664207193,
+              1.75,
+              60.124699310879095,
+              1.4,
+              1.4
+            ],
+            [
+              -13.01186859854065,
+              1.875,
+              58.12685444713058,
+              1.4,
+              1.4
+            ],
+            [
+              -16.222661741907398,
+              2.0,
+              55.50926361102302,
+              1.4,
+              1.4
+            ],
+            [
+              -18.810027092306168,
+              2.125,
+              52.37251935042617,
+              1.4,
+              1.4
+            ],
+            [
+              -20.674533650332354,
+              2.25,
+              48.83716498816827,
+              1.4,
+              1.4
+            ],
+            [
+              -21.744529474588298,
+              2.375,
+              45.039062209741395,
+              1.4,
+              1.4
+            ],
+            [
+              -21.97889522560844,
+              2.5,
+              41.12416997491989,
+              1.4,
+              1.4
+            ],
+            [
+              -21.368624359014902,
+              2.625,
+              37.24293539679107,
+              1.4,
+              1.4
+            ],
+            [
+              -19.93716924196699,
+              2.75,
+              33.54451214357094,
+              1.4,
+              1.4
+            ],
+            [
+              -17.739539891843638,
+              2.875,
+              30.17102854678123,
+              1.4,
+              1.4
+            ],
+            [
+              -14.860189972125323,
+              3.0,
+              27.252125689175095,
+              1.4,
+              1.4
+            ],
+            [
+              -11.409771285468782,
+              3.125,
+              24.899975370630756,
+              1.4,
+              1.4
+            ],
+            [
+              -7.520881486985134,
+              3.25,
+              23.20496940878878,
+              1.4,
+              1.4
+            ],
+            [
+              -3.342968430715578,
+              3.375,
+              22.232245932192463,
+              1.4,
+              1.4
+            ],
+            [
+              0.9634130275880822,
+              3.5,
+              22.01918615853778,
+              1.4,
+              1.4
+            ],
+            [
+              5.232771063529859,
+              3.625,
+              22.573977855441008,
+              1.4,
+              1.4
+            ],
+            [
+              9.301036642071928,
+              3.75,
+              23.8753006891209,
+              1.4,
+              1.4
+            ],
+            [
+              13.011868598540616,
+              3.875,
+              25.873145552869396,
+              1.4,
+              1.4
+            ],
+            [
+              16.22266174190737,
+              4.0,
+              28.490736388976952,
+              1.4,
+              1.4
+            ],
+            [
+              18.81002709230619,
+              4.125,
+              31.62748064957386,
+              1.4,
+              1.4
+            ],
+            [
+              20.674533650332325,
+              4.25,
+              35.16283501183166,
+              1.4,
+              1.4
+            ],
+            [
+              21.744529474588287,
+              4.375,
+              38.96093779025853,
+              1.4,
+              1.4
+            ],
+            [
+              21.97889522560844,
+              4.5,
+              42.875830025080106,
+              1.4,
+              1.4
+            ],
+            [
+              21.368624359014902,
+              4.625,
+              46.757064603208924,
+              1.4,
+              1.4
+            ],
+            [
+              19.937169241967027,
+              4.75,
+              50.45548785642899,
+              1.4,
+              1.4
+            ],
+            [
+              17.739539891843688,
+              4.875,
+              53.82897145321871,
+              1.4,
+              1.4
+            ],
+            [
+              14.860189972125326,
+              5.0,
+              56.747874310824905,
+              1.4,
+              1.4
+            ],
+            [
+              11.409771285468786,
+              5.125,
+              59.100024629369244,
+              1.4,
+              1.4
+            ],
+            [
+              7.520881486985137,
+              5.25,
+              60.795030591211216,
+              1.4,
+              1.4
+            ],
+            [
+              3.342968430715581,
+              5.375,
+              61.76775406780754,
+              1.4,
+              1.4
+            ],
+            [
+              -0.9634130275880797,
+              5.5,
+              61.98081384146222,
+              1.4,
+              1.4
+            ],
+            [
+              -5.23277106352978,
+              5.625,
+              61.42602214455901,
+              1.4,
+              1.4
+            ],
+            [
+              -9.301036642071853,
+              5.75,
+              60.12469931087913,
+              1.4,
+              1.4
+            ],
+            [
+              -13.011868598540614,
+              5.875,
+              58.126854447130604,
+              1.4,
+              1.4
+            ],
+            [
+              -16.22266174190737,
+              6.0,
+              55.50926361102305,
+              1.4,
+              1.4
+            ]
+          ],
+          "segments": 12,
+          "uv_projection": "box"
+        },
+        {
+          "part": "knot",
+          "kind": "ellipsoid",
+          "material": "bolas_leather",
+          "center": [
+            -16.222661741907398,
+            0,
+            55.509263611023016
+          ],
+          "radii": [
+            3.4,
+            8,
+            4
+          ],
+          "latitudes": 12,
+          "longitudes": 24
+        },
+        {
+          "part": "thong0",
+          "kind": "tube",
+          "material": "bolas_leather",
+          "rows": [
+            [
+              -16.222661741907398,
+              0,
+              55.509263611023016,
+              1.5,
+              1.5
+            ],
+            [
+              -23.1113308709537,
+              0,
+              42,
+              1.4,
+              1.4
+            ],
+            [
+              -26,
+              0,
+              25,
+              1.4,
+              1.4
+            ],
+            [
+              -24,
+              0,
+              13,
+              1.8,
+              1.8
+            ]
+          ],
+          "segments": 12,
+          "uv_projection": "box"
+        },
+        {
+          "part": "weight0",
+          "kind": "ellipsoid",
+          "material": "bolas_leather",
+          "center": [
+            -24,
+            0,
+            6
+          ],
+          "radii": [
+            8,
+            7,
+            9
+          ],
+          "latitudes": 12,
+          "longitudes": 24
+        },
+        {
+          "part": "seam0",
+          "kind": "ring",
+          "material": "bolas_leather",
+          "radii": [
+            8,
+            9
+          ],
+          "wire": 0.32,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            -24,
+            0,
+            6
+          ],
+          "genus": 1,
+          "chain_link": false
+        },
+        {
+          "part": "binding0",
+          "kind": "loft",
+          "material": "bolas_leather",
+          "rows": [
+            [
+              12,
+              -24,
+              0,
+              2,
+              2
+            ],
+            [
+              14,
+              -24,
+              0,
+              2.6,
+              2.6
+            ],
+            [
+              17,
+              -24,
+              0,
+              2,
+              2
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true
+        },
+        {
+          "part": "thong1",
+          "kind": "tube",
+          "material": "bolas_leather",
+          "rows": [
+            [
+              -16.222661741907398,
+              0,
+              55.509263611023016,
+              1.5,
+              1.5
+            ],
+            [
+              -11.111330870953699,
+              -3,
+              42,
+              1.4,
+              1.4
+            ],
+            [
+              -2,
+              -3,
+              25,
+              1.4,
+              1.4
+            ],
+            [
+              0,
+              -3,
+              5,
+              1.8,
+              1.8
+            ]
+          ],
+          "segments": 12,
+          "uv_projection": "box"
+        },
+        {
+          "part": "weight1",
+          "kind": "ellipsoid",
+          "material": "bolas_leather",
+          "center": [
+            0,
+            -3,
+            -2
+          ],
+          "radii": [
+            8,
+            7,
+            9
+          ],
+          "latitudes": 12,
+          "longitudes": 24
+        },
+        {
+          "part": "seam1",
+          "kind": "ring",
+          "material": "bolas_leather",
+          "radii": [
+            8,
+            9
+          ],
+          "wire": 0.32,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            0,
+            -3,
+            -2
+          ],
+          "genus": 1,
+          "chain_link": false
+        },
+        {
+          "part": "binding1",
+          "kind": "loft",
+          "material": "bolas_leather",
+          "rows": [
+            [
+              4,
+              0,
+              -3,
+              2,
+              2
+            ],
+            [
+              6,
+              0,
+              -3,
+              2.6,
+              2.6
+            ],
+            [
+              9,
+              0,
+              -3,
+              2,
+              2
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true
+        },
+        {
+          "part": "thong2",
+          "kind": "tube",
+          "material": "bolas_leather",
+          "rows": [
+            [
+              -16.222661741907398,
+              0,
+              55.509263611023016,
+              1.5,
+              1.5
+            ],
+            [
+              0.8886691290463009,
+              0,
+              42,
+              1.4,
+              1.4
+            ],
+            [
+              22,
+              0,
+              25,
+              1.4,
+              1.4
+            ],
+            [
+              24,
+              0,
+              13,
+              1.8,
+              1.8
+            ]
+          ],
+          "segments": 12,
+          "uv_projection": "box"
+        },
+        {
+          "part": "weight2",
+          "kind": "ellipsoid",
+          "material": "bolas_leather",
+          "center": [
+            24,
+            0,
+            6
+          ],
+          "radii": [
+            8,
+            7,
+            9
+          ],
+          "latitudes": 12,
+          "longitudes": 24
+        },
+        {
+          "part": "seam2",
+          "kind": "ring",
+          "material": "bolas_leather",
+          "radii": [
+            8,
+            9
+          ],
+          "wire": 0.32,
+          "segments": 32,
+          "wire_segments": 10,
+          "phase": 0.09817477042468103,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "offset": [
+            24,
+            0,
+            6
+          ],
+          "genus": 1,
+          "chain_link": false
+        },
+        {
+          "part": "binding2",
+          "kind": "loft",
+          "material": "bolas_leather",
+          "rows": [
+            [
+              12,
+              24,
+              0,
+              2,
+              2
+            ],
+            [
+              14,
+              24,
+              0,
+              2.6,
+              2.6
+            ],
+            [
+              17,
+              24,
+              0,
+              2,
+              2
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box",
+          "normalize_uv": true
+        }
+      ],
+      "attachments": [
+        {
+          "part": "knot",
+          "target": "coil",
+          "witness": [
+            -16.86950307950709,
+            -5.96875,
+            54.7250775458738
+          ]
+        },
+        {
+          "part": "thong0",
+          "target": "knot",
+          "witness": [
+            -16.567095198359713,
+            0.0,
+            54.83380043047187
+          ]
+        },
+        {
+          "part": "weight0",
+          "target": "thong0",
+          "witness": [
+            -24,
+            0,
+            13.5
+          ]
+        },
+        {
+          "part": "seam0",
+          "target": "weight0",
+          "witness": [
+            -16.15,
+            0,
+            6
+          ]
+        },
+        {
+          "part": "binding0",
+          "target": "weight0",
+          "witness": [
+            -24,
+            0,
+            13
+          ]
+        },
+        {
+          "part": "thong1",
+          "target": "knot",
+          "witness": [
+            -15.967095198359713,
+            -0.15000000000000002,
+            54.83380043047187
+          ]
+        },
+        {
+          "part": "weight1",
+          "target": "thong1",
+          "witness": [
+            0,
+            -3,
+            5.5
+          ]
+        },
+        {
+          "part": "seam1",
+          "target": "weight1",
+          "witness": [
+            7.85,
+            -3,
+            -2
+          ]
+        },
+        {
+          "part": "binding1",
+          "target": "weight1",
+          "witness": [
+            0,
+            -3,
+            5
+          ]
+        },
+        {
+          "part": "thong2",
+          "target": "knot",
+          "witness": [
+            -15.367095198359713,
+            0.0,
+            54.83380043047187
+          ]
+        },
+        {
+          "part": "weight2",
+          "target": "thong2",
+          "witness": [
+            24,
+            0,
+            13.5
+          ]
+        },
+        {
+          "part": "seam2",
+          "target": "weight2",
+          "witness": [
+            31.85,
+            0,
+            6
+          ]
+        },
+        {
+          "part": "binding2",
+          "target": "weight2",
+          "witness": [
+            24,
+            0,
+            13
+          ]
+        }
+      ],
+      "openings": [],
+      "links": []
+    }
+  },
+  "variants": {
+    "flail": {
+      "class": "CaelumWeaponPickup",
+      "sprite": "CFLA",
+      "family": "flail",
+      "tier": "original",
+      "item_type": 8,
+      "essence": 0,
+      "reference": "src/graphics/caelum/icons/ca_flail.png",
+      "reference_axis": "height",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "giant_gauntlets": {
+      "class": "CaelumWeaponPickup",
+      "sprite": "CGAU",
+      "family": "giant_gauntlets",
+      "tier": "original",
+      "item_type": 13,
+      "essence": 0,
+      "reference": "src/graphics/caelum/gauntlet_icons/tier1.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        10,
+        10
+      ]
+    },
+    "bolas": {
+      "class": "CaelumWeaponPickup",
+      "sprite": "CBOL",
+      "family": "bolas",
+      "tier": "original",
+      "item_type": 22,
+      "essence": 0,
+      "reference": "src/graphics/caelum/bolas/atlas.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        5,
+        5
+      ],
+      "reference_crop": [
+        0,
+        640,
+        426,
+        1280
+      ]
+    }
+  },
+  "runtime_cases": [
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 8,
+      "tier": 1,
+      "essence": 0,
+      "sprite": "CFLA"
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 8,
+      "tier": 2,
+      "essence": 0,
+      "sprite": "CFLA"
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 8,
+      "tier": 3,
+      "essence": 0,
+      "sprite": "CFLA"
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 13,
+      "tier": 1,
+      "essence": 0,
+      "sprite": "CGAU"
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 13,
+      "tier": 2,
+      "essence": 0,
+      "sprite": "CGAU"
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 13,
+      "tier": 3,
+      "essence": 0,
+      "sprite": "CGAU"
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 22,
+      "tier": 1,
+      "essence": 0,
+      "sprite": "CBOL"
+    }
+  ],
+  "source_sha256": {
+    "src/graphics/caelum/icons/ca_flail.png": "325a1bcd3210780ebbec0fd33f420e5292f4b9609141dad8f75c6b19a373040b",
+    "src/graphics/caelum/gauntlet_icons/tier1.png": "122d5fba58368a40d93e3ea6844a872f39f0192bbfb69bcd3e0e962970f96382",
+    "src/graphics/caelum/bolas/atlas.png": "fb78f0ab7883e2fcb806fa5feaf035b09ecec762526ae7b4415fc07314e99b6e",
+    "src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1",
+    "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "src/TEXTURES": "b18f53438055b5d13e985e550629be4578c2d9852888756d3eca9a8f3f58218e",
+    "src/graphics/caelum/bolas/bolas.textures": "1d49d551002a883feff4fc741986c0d139a8435e76f3617cbfab7fa14f8f1642",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumWeaponModel.zs": "f1f3365b4286f384c8f017b1ac1dde41bdaac7cf005b88d6f10bc142ec1cad13",
+    "assets/generators/generate_inventory_polearms_models.py": "9d5b1879039fa565d35876af7dc99a2a717c698bcfdd68ad8a664cbef55f947e",
+    "assets/generators/generate_inventory_chains_models.py": "cd9296836666c78bd555c76e3de56d0ccc345c40ecb94a15d5e78f159719f94f",
+    "assets/generators/generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "src/models/caelum/inventory/footwear/bc.png": "ca1aaa283b521171b98d705cdb38bfc95db1eff7544ae958890f1f7e2e14f89d",
+    "src/models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df"
+  },
+  "dimensions_note": "Effective scaled world images determine display envelopes. Original dimensional design below is editable art only: it changes no item, actor, collision or recipe values. Gauntlet backs/cuffs and simplified fittings require author review."
+}

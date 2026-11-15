@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.63** - 2026-11-15.
+Documentation version: **5.17.64** - 2026-11-15.
+
+## 5.17.64 - Three further native weapon drops (#771)
+
+Flail, giant gauntlets and bolas now have original native world-drop candidates
+for seven existing type/tier cases. Their effective TEXTURES art, identities
+and mechanics are preserved. One opaque original leather material accompanies
+portable meshes; held/projectile/restraint art remains unchanged. Sixteen
+exports repeat; independent geometry, 596 native continuity assertions and
+141 visual/control assertions pass. Fifteen detail views were inspected.
+ASSETS records measurements and visual qualifications. CA771-ARTICULATED-DROPS-01
+awaits author acceptance. Four ranged types and wider 3D/V5.16 remain pending.
 
 ## 5.17.63 - Corrected weapon references (#769)
 
