@@ -1,0 +1,30 @@
+{
+  "issue": 799,
+  "active_design_files": 22,
+  "sweeps": 186,
+  "sweeps_by_source": {
+    "assets/source/art/apparitions_797/chancho_lata.json": 2,
+    "assets/source/art/apparitions_797/mulanima.json": 15,
+    "assets/source/art/basilisco_738/basilisco.json": 1,
+    "assets/source/art/hybrid_serpents_727/mboi_tui.json": 35,
+    "assets/source/art/hybrid_serpents_727/mboi_yagua.json": 32,
+    "assets/source/art/kasogonaga_795/kasogonaga.json": 31,
+    "assets/source/art/quadrupeds_787/ao_ao.json": 3,
+    "assets/source/art/quadrupeds_787/familiar.json": 17,
+    "assets/source/art/serpents_720/mboi_tata.json": 23,
+    "assets/source/art/serpents_720/monai.json": 3,
+    "assets/source/art/teju_791/teju_jagua.json": 24
+  },
+  "old_invalid_grids_rejected": [
+    "Sweep samples must be positive integers divisible by positive integer UV repeats to stay inside their material cell: assets/source/art/quadrupeds_787/ao_ao.json/left_curled_horn (samples=64, uv_repeats=3)",
+    "Sweep samples must be positive integers divisible by positive integer UV repeats to stay inside their material cell: assets/source/art/quadrupeds_787/ao_ao.json/right_curled_horn (samples=64, uv_repeats=3)",
+    "Sweep samples must be positive integers divisible by positive integer UV repeats to stay inside their material cell: assets/source/art/quadrupeds_787/ao_ao.json/short_tail (samples=20, uv_repeats=3)",
+    "Sweep samples must be positive integers divisible by positive integer UV repeats to stay inside their material cell: assets/source/art/kasogonaga_795/kasogonaga.json/back_lock_0 (samples=15, uv_repeats=2)",
+    "Sweep samples must be positive integers divisible by positive integer UV repeats to stay inside their material cell: assets/source/art/kasogonaga_795/kasogonaga.json/back_lock_1 (samples=15, uv_repeats=2)",
+    "Sweep samples must be positive integers divisible by positive integer UV repeats to stay inside their material cell: assets/source/art/kasogonaga_795/kasogonaga.json/back_lock_2 (samples=15, uv_repeats=2)",
+    "Sweep samples must be positive integers divisible by positive integer UV repeats to stay inside their material cell: assets/source/art/kasogonaga_795/kasogonaga.json/back_lock_3 (samples=15, uv_repeats=2)",
+    "Sweep samples must be positive integers divisible by positive integer UV repeats to stay inside their material cell: assets/source/art/kasogonaga_795/kasogonaga.json/back_lock_4 (samples=15, uv_repeats=2)",
+    "Sweep samples must be positive integers divisible by positive integer UV repeats to stay inside their material cell: assets/source/art/kasogonaga_795/kasogonaga.json/back_lock_5 (samples=15, uv_repeats=2)"
+  ],
+  "passed": true
+}

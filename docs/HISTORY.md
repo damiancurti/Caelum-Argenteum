@@ -1,8 +1,17 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.77** - 2026-11-15.
+Documentation version: **5.17.78** - 2026-11-15.
 
-## 5.17.77 - Native apparition quadrupeds (#797, 2026-11-15)
+## 5.17.78 - Ao Ao/Kasogonaga material-cell repair (#799)
+
+Changed only the nine nonintegral sampling grids and required exports, adding a
+shared regression guard. Native before/after UV evidence preserves the defect;
+21 exports repeat and563 engine assertions pass. ASSETS records exact sampling
+and bounded presentation results. CA-KP-249 records prevention. CA799-UV-01
+originates here and remains pending alongside existing art checks. No author
+acceptance was inferred and no pending test was removed.
+
+## 5.17.78 - Native apparition quadrupeds (#797, 2026-11-15)
 
 Added distinct native Mulanima and Chancho de Lata, editable sources, inherited
 combat-state bindings, original atlas and retained provenance. Twelve exports

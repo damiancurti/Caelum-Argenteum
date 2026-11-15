@@ -1,0 +1,80 @@
+{
+  "issue": 799,
+  "version": "5.17.78",
+  "baseline_commit": "0e9593b7bbaf3056cbe1b9a5075ad44a85799bd9",
+  "changes": [
+    {
+      "source": "assets/source/art/quadrupeds_787/ao_ao.json",
+      "shape": "left_curled_horn",
+      "before": 64,
+      "after": 66,
+      "uv_repeats": 3,
+      "before_source_sha256": "9b26ae9ef9060091d7bc68b0c680f833d324447d10fe2eeac1b911e5692cc56b"
+    },
+    {
+      "source": "assets/source/art/quadrupeds_787/ao_ao.json",
+      "shape": "right_curled_horn",
+      "before": 64,
+      "after": 66,
+      "uv_repeats": 3,
+      "before_source_sha256": "9b26ae9ef9060091d7bc68b0c680f833d324447d10fe2eeac1b911e5692cc56b"
+    },
+    {
+      "source": "assets/source/art/quadrupeds_787/ao_ao.json",
+      "shape": "short_tail",
+      "before": 20,
+      "after": 21,
+      "uv_repeats": 3,
+      "before_source_sha256": "9b26ae9ef9060091d7bc68b0c680f833d324447d10fe2eeac1b911e5692cc56b"
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_0",
+      "before": 15,
+      "after": 16,
+      "uv_repeats": 2,
+      "before_source_sha256": "af2d356e2fbfe69d3508e962ec1e04f21ffec955563709ddfdccd174c39b1960"
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_1",
+      "before": 15,
+      "after": 16,
+      "uv_repeats": 2,
+      "before_source_sha256": "af2d356e2fbfe69d3508e962ec1e04f21ffec955563709ddfdccd174c39b1960"
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_2",
+      "before": 15,
+      "after": 16,
+      "uv_repeats": 2,
+      "before_source_sha256": "af2d356e2fbfe69d3508e962ec1e04f21ffec955563709ddfdccd174c39b1960"
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_3",
+      "before": 15,
+      "after": 16,
+      "uv_repeats": 2,
+      "before_source_sha256": "af2d356e2fbfe69d3508e962ec1e04f21ffec955563709ddfdccd174c39b1960"
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_4",
+      "before": 15,
+      "after": 16,
+      "uv_repeats": 2,
+      "before_source_sha256": "af2d356e2fbfe69d3508e962ec1e04f21ffec955563709ddfdccd174c39b1960"
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_5",
+      "before": 15,
+      "after": 16,
+      "uv_repeats": 2,
+      "before_source_sha256": "af2d356e2fbfe69d3508e962ec1e04f21ffec955563709ddfdccd174c39b1960"
+    }
+  ],
+  "scope": "Only sweep sampling changes; control points, materials and gameplay remain exact."
+}

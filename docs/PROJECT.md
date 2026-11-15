@@ -1,8 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.77** - 2026-11-15.
+Documentation version: **5.17.78** - 2026-11-15.
 
-## 5.17.77 - Two apparition model candidates (#797)
+## 5.17.78 - Swept texture repair (#799)
+
+Nine Ao Ao/Kasogonaga curves now keep their texture repeats inside the authored
+atlas cell. Native UV, deterministic geometry,563 engine assertions and bounded
+presentation evidence are recorded in ASSETS and validation_v5_17_78.
+CA799-UV-01 and all earlier checks remain pending; the full batch is incomplete.
+
+## 5.17.78 - Two apparition model candidates (#797)
 
 Native Mulanima and Chancho de Lata replace only CaelumBestiary029/030 visual
 states. Twelve exports repeat; geometry and364 native continuity/action/loot

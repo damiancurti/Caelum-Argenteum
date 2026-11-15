@@ -855,7 +855,7 @@
         ]
       ],
       "material": "horn",
-      "samples": 64,
+      "samples": 66,
       "segments": 16,
       "uv_repeats": 3,
       "tip_pole": true
@@ -1219,7 +1219,7 @@
         ]
       ],
       "material": "horn",
-      "samples": 64,
+      "samples": 66,
       "segments": 16,
       "uv_repeats": 3,
       "tip_pole": true
@@ -1440,7 +1440,7 @@
         ]
       ],
       "material": "wool",
-      "samples": 20,
+      "samples": 21,
       "segments": 12,
       "uv_repeats": 3,
       "tip_pole": true
