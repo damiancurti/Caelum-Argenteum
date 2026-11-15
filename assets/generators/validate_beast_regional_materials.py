@@ -12,9 +12,14 @@ def validate(root=ROOT):
     try:
         gallery=json.loads((root/'assets/source/art/regional_gallery_682/GALLERY.json').read_text())
         models={}
+        selectors=gallery.get('model_species',{})
+        assert isinstance(selectors,dict) and set(selectors)<=set(gallery['model_exports']),'Unknown model selection export'
         for name in gallery['model_exports']:
             export=json.loads((root/name).read_text())
-            for kind,item in export['species'].items():
+            selected=selectors.get(name,list(export['species']))
+            assert isinstance(selected,list) and selected and len(selected)==len(set(selected)) and set(selected)<=set(export['species']),'Invalid model species selection'
+            for kind in selected:
+                item=export['species'][kind]
                 assert kind not in models,'Duplicate model species'
                 models[kind]=item
         actors={item['catalogue_id']:item['actor'] for item in models.values()}
@@ -37,7 +42,7 @@ def validate(root=ROOT):
         assert gallery['walkway_y'][1]==gallery['plot_y'][0],'Walkway is disconnected'
         assert sum(bool(row.get('control')) for row in gallery['views'])==1,'Expected one player-control view'
         keys=[row.get('key','F'+str(index+1)) for index,row in enumerate(gallery['views'])]
-        assert len(keys)==len(set(keys)) and all(re.fullmatch(r'(?:F(?:[1-9]|1[0-2])|[0-9jk])',key) for key in keys),'Invalid or duplicate gallery key (expected F1-F12, digits, j or k)'
+        assert len(keys)==len(set(keys)) and all(re.fullmatch(r'(?:F(?:[1-9]|1[0-2])|[0-9jkl])',key) for key in keys),'Invalid or duplicate gallery key (expected F1-F12, digits, j, k or l)'
     except (OSError,KeyError,ValueError,AssertionError) as exc:
         errors.append('Beast regional gallery: '+(str(exc) or 'Invalid display layout'))
     return errors

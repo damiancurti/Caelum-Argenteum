@@ -1,6 +1,6 @@
 {
   "schema_revision": 1,
-  "issue": 801,
+  "issue": 809,
   "status": "isolated_visual_inspection_not_campaign",
   "map": "CA682G",
   "title": "Regional bestiary inspection gallery",
@@ -287,6 +287,18 @@
       "position": [
         128,
         300,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-028",
+      "kind": "umita",
+      "class": "CaelumBestiary028",
+      "position": [
+        -64,
+        320,
         0
       ],
       "angle": 270
@@ -619,6 +631,20 @@
         26
       ],
       "key": "k"
+    },
+    {
+      "id": "umita",
+      "position": [
+        -64,
+        210,
+        60
+      ],
+      "target": [
+        -64,
+        320,
+        26
+      ],
+      "key": "l"
     }
   ],
   "notes": [
@@ -626,7 +652,7 @@
     "Existing native actors/models with the established diagnostic passive-AI flag and protected observer. No new production behavior.",
     "Ground studies do not fix a campaign biome or mandatory creature habitat.",
     "Original CA463G and its three visual pilots remain intact.",
-    "Eighteen diagnostic displays cover every approved allocation of these thirteen candidate species. Repeated displays compare regional associations; the two Yastay copies do not authorize duplicate campaign identities."
+    "Nineteen diagnostic displays cover every approved allocation of fourteen selected candidate species. Repeated displays compare regional associations; the two Yastay copies do not authorize duplicate campaign identities."
   ],
   "animation_sample_wait_tics": 11,
   "animation_sample_basis": "Existing MIID native idle states last10 tics; wait11 to cross at least one boundary.",
@@ -638,9 +664,15 @@
     "assets/source/art/basilisco_738/EXPORT.json",
     "assets/source/art/quadrupeds_787/EXPORT.json",
     "assets/source/art/teju_791/EXPORT.json",
-    "assets/source/art/apparitions_797/EXPORT.json"
+    "assets/source/art/apparitions_797/EXPORT.json",
+    "assets/source/art/heads_803/EXPORT.json"
   ],
-  "layout_basis": "Retain all fifteen earlier figures, five grounds, twenty-one controls and four-boundary crossing path. Add Mulanima/NOA and Chancho/Pampa/Litoral in free rear positions with keys0/J/K. Coordinates are diagnostic only.",
+  "layout_basis": "Retain all eighteen earlier figures, five grounds, twenty-four controls and the four-boundary crossing route. Add Umita/NOA in a free rear position with keyL. Select only Umita from the shared head export; Chonchon is inspected on Patagonia in CA709G. Coordinates are diagnostic only.",
   "silent_observer_steps": true,
-  "inspection_noise_basis": "Mute only the diagnostic observer movement-noise timer; native walking speed, figure idle animation and production perception remain unchanged. Friendly and NOTARGET do not suppress anonymous sound investigation."
+  "inspection_noise_basis": "Mute only the diagnostic observer movement-noise timer; native walking speed, figure idle animation and production perception remain unchanged. Friendly and NOTARGET do not suppress anonymous sound investigation.",
+  "model_species": {
+    "assets/source/art/heads_803/EXPORT.json": [
+      "umita"
+    ]
+  }
 }

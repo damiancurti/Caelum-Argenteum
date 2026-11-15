@@ -1,6 +1,50 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.82** - 2026-11-15.
+Documentation version: **5.17.83** - 2026-11-15.
+
+## 5.17.83 - Head apparition regional inspection (#809)
+
+The optional CA682G gallery adds Umita on Northwest Argentina with keyL;
+CA709G adds Chonchon on Patagonia with F10. The former now has nineteen
+figures/fourteen species/five grounds/twenty-five controls; the latter has
+fifteen figures/twelve species/four grounds/twenty-two controls. All32 previous
+figures,45 controls,nine grounds and both crossing routes remain exact.
+Sources remain regional_gallery_682/709/GALLERY.json. Both interactive runners
+are in assets/validation_v5_17_83: run_gallery.py and run_native_gallery.py.
+
+The shared head export contains species associated with different gallery
+regions. CA682G now selects only Umita through optional model_species data;
+unselected exports still default to their complete species list. CA709G uses
+its existing explicit Chonchon binding. Approved regional allocations, native
+body clearance and unique keys pass. Only required700/682 dependency pins and
+709 provenance refresh; all production artwork/materials remain exact.
+
+Eight fixture files repeat byte-for-byte. Native checks pass81 fresh/166 reload
+in CA682G and65 fresh/134 reload in CA709G:446 assertions, including native idle,
+saved references and crossing movement. Both engines register all47 keys.
+The two new closeups, expanded/reloaded overviews and presentation scenes were
+inspected. Native key queries do not substitute for author keypress review.
+No production stats, combat, collision, loot, flight, campaign or save schema
+change; only two required release diagnostics differ from #806. All18,584
+runtime package entries match src exactly.
+
+One700-tic distant-overview sample per gallery records:
+
+CA682G: 1454.38 queue presents/s; presentation intervals p95 0.8347ms, p99 0.9777ms, maximum 1.3562ms. Simulation mean 28.5706ms, p95 29.0548ms, p99 29.1644ms, maximum 29.4185ms.
+
+CA709G: 1463.02 queue presents/s; presentation intervals p95 0.8453ms, p99 0.9681ms, maximum 1.5702ms. Simulation mean 28.5714ms, p95 29.0593ms, p99 29.1777ms, maximum 29.3588ms.
+
+Environment: Windows11 Pro26200, Ryzen9 5950X/32GB/RTX3070Ti, GZDoom4.14.2,
+Vulkan1280x720, uncapped/no VSync, background unpaused with5% audio. These
+queue measurements do not establish GPU/display timing, repeatability,
+comparative gains, close-up cost or campaign/crowd performance.
+
+Evidence: assets/validation_v5_17_83/evidence/SUMMARY.json and its scope proof.
+CA809-HEAD-GALLERIES-01 retains framing, native walking and regional review;
+CA803-HEADS-01 retains model/combat review. All previous checks remain pending.
+27/56 creature candidates have models; the remaining29, named/modular characters,
+equipment fitting, first-person work and V5.16 progression/performance remain
+unfinished. The consolidated terminal is deferred until the full batch is ready.
 
 ## 5.17.82 - Restore the original apparition release label (#806)
 

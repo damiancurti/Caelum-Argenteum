@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.82** - 2026-11-15.
+Documentation version: **5.17.83** - 2026-11-15.
+
+## 5.17.83 - Head regional displays (#809)
+
+Umita/NOA and Chonchon/Patagonia now have optional native inspection views.
+Both galleries preserve their prior layouts/art and pass446 native assertions
+plus47 key registrations. ASSETS records bounded presentation evidence.
+CA809-HEAD-GALLERIES-01 and CA803-HEADS-01 await consolidated author review;
+the wider27/56 creature, character, equipment and V5.16 batch remains open.
 
 ## 5.17.82 - Historical release headings restored (#806)
 

@@ -1,0 +1,21 @@
+{
+  "issue": 809,
+  "dependencies": {
+    "700": {
+      "native_files_unchanged": 2,
+      "non_hash_design_unchanged": true
+    },
+    "682": {
+      "native_files_unchanged": 3,
+      "non_hash_design_unchanged": true
+    },
+    "709": {
+      "refreshed_pins": [
+        "assets/source/art/regional_gallery_682/GALLERY.json",
+        "assets/source/art/regional_gallery_682/EXPORT.json"
+      ],
+      "added_head_export": "assets/source/art/heads_803/EXPORT.json",
+      "previous_provenance": "provenance709-before.json"
+    }
+  }
+}
