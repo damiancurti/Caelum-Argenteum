@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.64** - 2026-11-15.
+Documentation version: **5.17.65** - 2026-11-15.
+
+## 5.17.65 - Four ranged-weapon world models (#773)
+
+Carbine, shotgun, longbow and crossbow now have original native drop candidates
+for twelve existing type/tier cases. Effective world artwork, identity and
+mechanics remain unchanged. An opaque original canvas texture accompanies
+portable editable meshes. Eighteen exports repeat; independent geometry,
+1,011 continuity and 236 visual/control assertions pass. Twenty detail views
+were inspected. ASSETS records measurements and visual qualifications.
+CA773-RANGED-DROPS-01 awaits author acceptance. Inventory-wide coverage requires
+an audit; other characters, modular equipment and wider V5.16 remain pending.
 
 ## 5.17.64 - Three further native weapon drops (#771)
 

@@ -1098,3 +1098,13 @@ assets/validation_v5_17_42/evidence/** -text -diff
 /assets/validation_v5_17_64/*.zs text eol=lf
 /assets/validation_v5_17_64/evidence/** -text -diff
 /src/caelum/data/inventory_articulated_weapons.modeldef text eol=lf
+
+# #773 ranged weapon sources and raw evidence.
+/assets/generators/generate_inventory_ranged_weapons_models.py text eol=lf
+/assets/generators/validate_inventory_ranged_weapons_models.py text eol=lf
+/assets/source/art/inventory_models_647/ranged_weapons/** text eol=lf
+/assets/source/art/inventory_models_647/ranged_weapons/**/*.png binary
+/assets/validation_v5_17_65/*.py text eol=lf
+/assets/validation_v5_17_65/*.zs text eol=lf
+/assets/validation_v5_17_65/evidence/** -text -diff
+/src/caelum/data/inventory_ranged_weapons.modeldef text eol=lf

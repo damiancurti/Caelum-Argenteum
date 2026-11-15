@@ -1,6 +1,53 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.64** - 2026-11-15.
+Documentation version: **5.17.65** - 2026-11-15.
+
+## 5.17.65 - Native ranged-weapon drops (#773)
+
+Four original assemblies replace CCAR, CSGN, CLBW and CCBW only in
+CaelumWeaponPickup: carbine type 2, shotgun 14, longbow 15 and crossbow 16.
+Each retains its three qualities and shared world appearance, for twelve
+native cases. Original icons, held artwork, firing/reload/aim rules, ammo,
+projectiles, recipes, weight, collision/scale, durability and saves are unchanged.
+Cosmetic cartridges and quiver arrows neither grant nor consume ammunition.
+
+CA-KP-247 effective references are icons/ca_carbine.png, ca_longbow.png and
+ca_crossbow.png at scale 1, and the shotgun.textures CSGNA0 crop
+[64,47,567,635] of shotgun/icons.png at scale 4.9. Existing source pixels remain
+unchanged. The four native envelopes follow their effective scaled silhouettes.
+Editable DESIGN/OBJ/MTL sources and provenance are in inventory_models_647/
+ranged_weapons. Reused geometry supports hollow muzzles, trigger guards,
+curved limbs, strings and the quiver. Independent serialized checks verify
+22,476 vertices, 9,092 triangles, 61 closed components, 59 fixed attachment
+witnesses and 65 clear opening rays. Eighteen exports repeat byte-for-byte;
+installed geometry, scaled extents, floor contact, UVs and exact states pass.
+
+One original opaque olive canvas material was generated with built-in image_gen,
+then copied byte-for-byte to source and runtime canvas.png. CANVAS_PROMPT.json
+records its exact prompt/source. The 1254-square image has opaque alpha and
+SHA-256 ceeffb856bf899c087753f86164dfea1b84dfc084fd9c33fe6c1c91fda94b042.
+Previously owned metal, wood, fabric and leather pixels remain unchanged.
+
+Initial static checks caught boundary barrel-attachment witnesses and a wide
+crossbow envelope. Corrected witnesses and assembly inclination pass independent
+checks; superseded evidence is retained. All twenty final detail/underside
+views and the overview were inspected. Simplified stock/barrel profiles,
+static strings/accessories, interpreted backs, omitted fine ornament, repeated
+grain, matte shading and standing pickup orientation require author review.
+These world-drop assemblies do not complete held or character equipment models.
+
+The isolated engine run passes 1,011 continuity assertions across native pickup,
+equip/toss, old-save adoption, reload and rollback. Visual/control checks pass
+236 assertions. Both twelve-object, 700-tic presentation scenes were inspected:
+sprite/model queue rate 1125.62/1105.57 per second,
+p95 1.066/1.077 ms and p99 1.298/1.287 ms.
+This single sequential pair measures queue intervals, not GPU/display latency,
+repeatability or campaign/crowd performance. Projected footprints differ.
+Prepared transactions do not establish normal menus, firing, reload, crafting
+or author acceptance. Evidence: assets/validation_v5_17_65/evidence/SUMMARY.json.
+
+CA773-RANGED-DROPS-01 remains pending. Inventory-wide coverage still needs an
+audit; remaining characters, modular equipment and V5.16 are unfinished.
 
 ## 5.17.64 - Flail, giant-gauntlet and bolas drops (#771)
 

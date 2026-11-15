@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.64** - 2026-11-15.
+Documentation version: **5.17.65** - 2026-11-15.
+
+## 5.17.65 - #773 ranged drops delivered; author review pending
+
+Four original assemblies cover carbine 2, shotgun 14, longbow 15 and crossbow 16
+with all twelve existing qualities. Independent topology, attachments, openings,
+UVs and effective aliases pass; eighteen exports repeat. Native continuity:
+1,011 assertions; visual/control: 236; twenty inspected detail views. Evidence:
+assets/validation_v5_17_65/evidence/SUMMARY.json. Author check:
+CA773-RANGED-DROPS-01. Audit inventory-wide class/state coverage next; remaining
+characters, modular equipment and V5.16 require further work.
 
 ## 5.17.64 - #771 world-drop candidate delivered; author review pending
 

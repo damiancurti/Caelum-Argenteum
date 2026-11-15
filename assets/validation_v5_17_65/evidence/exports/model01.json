@@ -1,0 +1,377 @@
+{
+  "schema_revision": 1,
+  "issue": 773,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "variants": {
+    "carbine": {
+      "class": "CaelumWeaponPickup",
+      "parts": [
+        "stock",
+        "butt_plate",
+        "receiver",
+        "trigger_guard",
+        "trigger",
+        "barrel0",
+        "fore_stock",
+        "hammer",
+        "sling",
+        "bandolier",
+        "cartridge0",
+        "blue_wrap0",
+        "cartridge1",
+        "blue_wrap1",
+        "cartridge2",
+        "blue_wrap2",
+        "cartridge3",
+        "blue_wrap3",
+        "cartridge4",
+        "blue_wrap4"
+      ],
+      "closed_outward_components": 20,
+      "vertices": 8276,
+      "triangles": 3292,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 2160,
+          "triangles": 720
+        },
+        {
+          "material": "dark_iron",
+          "vertices": 1760,
+          "triangles": 1120
+        },
+        {
+          "material": "wood",
+          "vertices": 1584,
+          "triangles": 528
+        },
+        {
+          "material": "blue",
+          "vertices": 1440,
+          "triangles": 480
+        },
+        {
+          "material": "socket_atlas",
+          "vertices": 960,
+          "triangles": 320
+        },
+        {
+          "material": "leather",
+          "vertices": 372,
+          "triangles": 124
+        }
+      ],
+      "reference_opaque_bounds": [
+        23,
+        8,
+        105,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -9.943820835848765,
+            -5.605067376408153,
+            0.0
+          ],
+          "max": [
+            53.16486093281491,
+            4.748112498898393,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0791164770223618,
+        "floor": -2.0896389199106085
+      }
+    },
+    "shotgun": {
+      "class": "CaelumWeaponPickup",
+      "parts": [
+        "stock",
+        "butt_plate",
+        "receiver",
+        "trigger_guard",
+        "trigger",
+        "barrel0",
+        "barrel1",
+        "fore_stock",
+        "hammer"
+      ],
+      "closed_outward_components": 9,
+      "vertices": 5264,
+      "triangles": 2288,
+      "surfaces": [
+        {
+          "material": "dark_iron",
+          "vertices": 1760,
+          "triangles": 1120
+        },
+        {
+          "material": "wood",
+          "vertices": 1584,
+          "triangles": 528
+        },
+        {
+          "material": "socket_atlas",
+          "vertices": 1920,
+          "triangles": 640
+        }
+      ],
+      "reference_opaque_bounds": [
+        0,
+        0,
+        503,
+        588
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        4.9,
+        4.9
+      ],
+      "target_art_extent": 119.99999999999999,
+      "native_bounds": [
+        {
+          "min": [
+            -10.45039425963466,
+            -6.761679689964879,
+            0.0
+          ],
+          "max": [
+            84.58634321808789,
+            5.72789115517169,
+            119.99999999999999
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.3017934443572021,
+        "floor": -2.4251660660719208
+      }
+    },
+    "longbow": {
+      "class": "CaelumWeaponPickup",
+      "parts": [
+        "bow",
+        "string",
+        "grip",
+        "quiver",
+        "strap",
+        "arrow0",
+        "feather0_0",
+        "feather0_1",
+        "arrow1",
+        "feather1_0",
+        "feather1_1",
+        "arrow2",
+        "feather2_0",
+        "feather2_1",
+        "arrow3",
+        "feather3_0",
+        "feather3_1",
+        "arrow4",
+        "feather4_0",
+        "feather4_1"
+      ],
+      "closed_outward_components": 20,
+      "vertices": 4368,
+      "triangles": 1456,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 504,
+          "triangles": 168
+        },
+        {
+          "material": "bronze",
+          "vertices": 216,
+          "triangles": 72
+        },
+        {
+          "material": "wood",
+          "vertices": 1872,
+          "triangles": 624
+        },
+        {
+          "material": "red",
+          "vertices": 336,
+          "triangles": 112
+        },
+        {
+          "material": "leather",
+          "vertices": 432,
+          "triangles": 144
+        },
+        {
+          "material": "canvas",
+          "vertices": 1008,
+          "triangles": 336
+        }
+      ],
+      "reference_opaque_bounds": [
+        21,
+        11,
+        108,
+        114
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 103.0,
+      "native_bounds": [
+        {
+          "min": [
+            -18.736641008574665,
+            -2.94212953527619,
+            0.0
+          ],
+          "max": [
+            62.02624987632469,
+            11.881676969384614,
+            103.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.1315882827985346,
+        "floor": -4.294218308079807
+      }
+    },
+    "crossbow": {
+      "class": "CaelumWeaponPickup",
+      "parts": [
+        "stock",
+        "butt_plate",
+        "receiver",
+        "trigger_guard",
+        "trigger",
+        "limbs",
+        "string",
+        "blue_binding0",
+        "blue_binding1",
+        "blue_binding2",
+        "rail0",
+        "rail1"
+      ],
+      "closed_outward_components": 12,
+      "vertices": 4568,
+      "triangles": 2056,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 896,
+          "triangles": 832
+        },
+        {
+          "material": "dark_iron",
+          "vertices": 1584,
+          "triangles": 528
+        },
+        {
+          "material": "wood",
+          "vertices": 1008,
+          "triangles": 336
+        },
+        {
+          "material": "blue",
+          "vertices": 864,
+          "triangles": 288
+        },
+        {
+          "material": "leather",
+          "vertices": 216,
+          "triangles": 72
+        }
+      ],
+      "reference_opaque_bounds": [
+        17,
+        10,
+        118,
+        116
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 106.0,
+      "native_bounds": [
+        {
+          "min": [
+            -10.324047768567173,
+            -4.887007514520369,
+            0.0
+          ],
+          "max": [
+            91.63892421521089,
+            4.887007514520369,
+            106.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.2860546090843077,
+        "floor": -2.4251660660719208
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "0f7393cf6373af1825a9043f96739eeb712f5867eeac9ba51722525f6bacbc8b",
+    "PROVENANCE.json": "fe26bd9c30abd124214c376f65245de3583958ec7563cb4c15b8f1697466f799",
+    "CANVAS_PROMPT.json": "71215e684bbabdcddb1d9ae7d41ee2d3b27f3649cbaa40442b8384d43b4bc274"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/ca_carbine.png": "5410eed4a48f1eee0fb6b558a428d691eff2471a7bdf0fd261646ab29abd8be8",
+    "src/graphics/caelum/shotgun/icons.png": "68b20fb01e0c15394ae832ad082d22d121a33f05e8a623685afa8389aa59e9dc",
+    "src/graphics/caelum/icons/ca_longbow.png": "a3524d6a9e7bcb82441726215483c4ce154ba0fd4286c79be99fdd0bd9772a17",
+    "src/graphics/caelum/icons/ca_crossbow.png": "0d9bbbc7370cc3aca90fab6ff56f5917b2ff0bfe898b31213c7200ba09f07f0c",
+    "src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1",
+    "src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "src/models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df",
+    "src/models/caelum/inventory/ranged_weapons/canvas.png": "ceeffb856bf899c087753f86164dfea1b84dfc084fd9c33fe6c1c91fda94b042",
+    "src/TEXTURES": "b18f53438055b5d13e985e550629be4578c2d9852888756d3eca9a8f3f58218e",
+    "src/graphics/caelum/shotgun.textures": "7b6208f1712678234bfffecb405d5d12ffaaec7cd2a6b272c5422f6b1393d04e",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumWeaponModel.zs": "f1f3365b4286f384c8f017b1ac1dde41bdaac7cf005b88d6f10bc142ec1cad13",
+    "assets/generators/generate_inventory_polearms_models.py": "9d5b1879039fa565d35876af7dc99a2a717c698bcfdd68ad8a664cbef55f947e",
+    "assets/generators/generate_inventory_articulated_weapons_models.py": "2dd9f7ddc4cf1ad708ee07b1e45d2d749934a1980125383b4e221f18a0a66efd"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_ranged_weapons_models.py": "11899ca8c271258f0b9dd4395477b1fd6177079d7c70e82b21b7d6809d53d353"
+  },
+  "sha256": {
+    "models/caelum/inventory/ranged_weapons/carbine.md3": "d362e926a5d54c7af3e419daafe2b34d5b2751fa204b893a8a84b65e2c78d3cd",
+    "editable/carbine.obj": "53ae0fe3f27c9446d5bc2754307519e16b3495cadc3931f01736a8ee117ecd15",
+    "models/caelum/inventory/ranged_weapons/shotgun.md3": "84c1e645ed203d54f319679502f0c26481e4e5b063a3a80f1a04bc5ef765b120",
+    "editable/shotgun.obj": "f9a01ab4bf000faccfd1ee96b4d69ba925b9ca4c88f157ee02f13bc3306d23f6",
+    "models/caelum/inventory/ranged_weapons/longbow.md3": "1bcdb9f884a053582c7ee1e0f3c0f210f6e6c0ecd1e68b0ce1963cee4e7b6cb9",
+    "editable/longbow.obj": "07004a47c246a4c903b212b5fea7906b33d805b51944c8926007a781865eff42",
+    "models/caelum/inventory/ranged_weapons/crossbow.md3": "52c893ca62192ee5aafecbc422fa819c22b9ff45427cc22e09d68a66c1f8e404",
+    "editable/crossbow.obj": "b19cc104e2c2eab08b737f55eec475e148ec15beefe4030884a8ab5ca497d573",
+    "editable/ranged_weapons.mtl": "80f94448c01ecd99b302a390e26a5c06b65bd2c8a321c57f65c16901fa13daa6",
+    "caelum/data/inventory_ranged_weapons.modeldef": "edf02b7778be21e6af55a8e9b84dafadcb1e39e065fe3488566e9554cc9ee37f",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "editable/src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "editable/src/models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df",
+    "editable/src/models/caelum/inventory/ranged_weapons/canvas.png": "ceeffb856bf899c087753f86164dfea1b84dfc084fd9c33fe6c1c91fda94b042",
+    "models/caelum/inventory/ranged_weapons/canvas.png": "ceeffb856bf899c087753f86164dfea1b84dfc084fd9c33fe6c1c91fda94b042"
+  },
+  "reuse_note": "Existing owned pixels remain unchanged; one original opaque canvas texture is added with its exact built-in generation prompt."
+}

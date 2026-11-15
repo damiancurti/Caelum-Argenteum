@@ -1,0 +1,134 @@
+"""Independently check four ranged assemblies, real openings and serialized native geometry."""
+import hashlib,json,math,struct
+from collections import Counter,defaultdict
+from PIL import Image
+try:
+    from .validate_inventory_ammunition_models import ROOT,validate as validate_family
+    from .validate_inventory_chainmail_models import sub,dot,cross,mean,length,segment_distance,link_number
+    from .validate_inventory_gloves_models import inside,ray_hits
+except ImportError:
+    from validate_inventory_ammunition_models import ROOT,validate as validate_family
+    from validate_inventory_chainmail_models import sub,dot,cross,mean,length,segment_distance,link_number
+    from validate_inventory_gloves_models import inside,ray_hits
+
+
+def inspect_geometry(root=ROOT,kind='carbine'):
+    source=root/'assets/source/art/inventory_models_647/ranged_weapons';config=json.loads((source/'DESIGN.json').read_text());report=json.loads((source/'EXPORT.json').read_text())
+    family=config['families'][kind];record=report['variants'][kind];points=[];groups=defaultdict(list);group=None;errors=[]
+    for line in (source/('editable/'+kind+'.obj')).read_text().splitlines():
+        row=line.split()
+        if not row:continue
+        if row[0]=='v':points.append(tuple(map(float,row[1:])))
+        elif row[0]=='g':group=row[1]
+        elif row[0]=='f':groups[group].append(tuple(int(v.split('/')[0])-1 for v in row[1:]))
+    declared={p['part']:p for p in family['parts']};native_triangles=Counter();loops={};radii={};bounds={};solids={}
+    if set(groups)!=set(declared):errors.append('Unexpected editable components')
+    for name,faces in groups.items():
+        edges=defaultdict(int);winding=defaultdict(int);volume=0;indices=sorted({i for tri in faces for i in tri});solids[name]=[]
+        for tri in faces:
+            a,b,c=[points[i] for i in tri];solids[name].append((a,b,c));volume+=dot(a,cross(b,c))/6
+            for u,v in [(a,b),(b,c),(c,a)]:
+                key=tuple(sorted((u,v)));edges[key]+=1;winding[key]+=1 if u<v else -1
+            native=tuple(tuple(round(v*64) for v in (points[i][0],-points[i][2],points[i][1])) for i in tri)
+            if not any(cross(sub(native[1],native[0]),sub(native[2],native[0]))):errors.append('Collapsed native triangle '+name)
+            native_triangles[native]+=1
+        if volume<=0 or any(v!=2 for v in edges.values()) or any(winding.values()):errors.append('Open or inward component '+name)
+        shape=declared[name]
+        unique={points[i] for i in indices}
+        if len(unique)-len(edges)+len(faces)!=2-2*shape.get('genus',0):errors.append('Unexpected closed topology '+name)
+        if not shape.get('chain_link',False):continue
+        n,m=shape['segments'],shape['wire_segments']
+        if len(indices)!=n*m:errors.append('Unexpected ring tessellation '+name);continue
+        rows=[[points[i] for i in indices[j*m:(j+1)*m]] for j in range(n)];loop=[mean(row) for row in rows];loops[name]=loop
+        radii[name]=max(length(sub(p,center)) for row,center in zip(rows,loop) for p in row)
+        center=mean(loop);radius=max(length(sub(p,center)) for p in loop);bounds[name]=(center,radius+radii[name])
+        if min(length(sub(p,center)) for p in loop)<=radii[name]:errors.append('Closed ring opening '+name)
+    margin=math.sqrt(3)/64+2e-6;actual=set();minimum=float('inf');checked=0;names=list(loops)
+    for i,a in enumerate(names):
+        for b in names[i+1:]:
+            ca,ra=bounds[a];cb,rb=bounds[b]
+            if length(sub(ca,cb))>ra+rb+margin:continue
+            checked+=1
+            distance=min(segment_distance(p,q,r,s) for p,q in zip(loops[a],loops[a][1:]+loops[a][:1]) for r,s in zip(loops[b],loops[b][1:]+loops[b][:1]))
+            clearance=distance-radii[a]-radii[b];minimum=min(minimum,clearance)
+            if clearance<=margin:errors.append('Ring surfaces lack native clearance '+a+'/'+b)
+            linked=link_number(loops[a],loops[b]);reverse=link_number(loops[b],loops[a])
+            if linked!=reverse or abs(linked)>1:errors.append('Invalid oriented linking number '+a+'/'+b)
+            if linked:actual.add(tuple(sorted((a,b))))
+    expected={tuple(sorted(link)) for link in family['links']}
+    if actual!=expected:errors.append('Interlaced links differ: missing='+str(sorted(expected-actual))+' extra='+str(sorted(actual-expected)))
+    transform=record['source_to_native'];factor=transform['factor'];floor=transform['floor'];connections=set(actual)
+    for attachment in family['attachments']:
+        x,y,z=attachment['witness'];p=(x*factor,(z-floor)*factor,-y*factor)
+        for name in [attachment['part'],attachment['target']]:
+            if not inside(p,solids[name]):errors.append('Detached solid attachment '+attachment['part']+' -> '+name)
+        connections.add(tuple(sorted((attachment['part'],attachment['target']))))
+    reached=set(family['roots'])
+    while True:
+        more={p for a,b in connections if a in reached or b in reached for p in (a,b)}
+        if more<=reached:break
+        reached|=more
+    if reached!=set(groups):errors.append('Disconnected assembly')
+    triangles=[tri for group in solids.values() for tri in group];opening_rays=0
+    for opening in family['openings']:
+        radius=opening['clearance'];normal=opening['normal'];direction=(normal[0],normal[2],-normal[1])
+        for du,dv in [(0,0),(radius,0),(-radius,0),(0,radius),(0,-radius)]:
+            source_point=[opening['point'][i]+du*opening['axis_u'][i]+dv*opening['axis_v'][i] for i in range(3)]
+            p=(source_point[0]*factor,(source_point[2]-floor)*factor,-source_point[1]*factor)
+            for sign in opening['signs']:
+                opening_rays+=1
+                if ray_hits(p,tuple(sign*v for v in direction),triangles):errors.append('Blocked ranged opening')
+
+    blob=(root/'src'/config['model_path']/(kind+'.md3')).read_bytes();head=struct.unpack_from('<4sI64s9I',blob);offset=head[10];actual_native=Counter()
+    for _ in range(head[6]):
+        h=struct.unpack_from('<4s64s10I',blob,offset);vertices=[struct.unpack_from('<3h',blob,offset+h[10]+i*8) for i in range(h[5])]
+        for i in range(h[6]):actual_native[tuple(vertices[k] for k in struct.unpack_from('<3I',blob,offset+h[7]+i*12))]+=1
+        offset+=h[-1]
+    if actual_native!=native_triangles:errors.append('Native triangles differ from quantized editable geometry')
+    native_bounds=record['native_bounds'][0];reference=record['reference_opaque_bounds']
+    if any(native_bounds['max'][axis]-native_bounds['min'][axis]>(reference[i+2]-reference[i])/config['variants'][kind]['sprite_scale'][i]+1/32 for axis,i in [(0,0),(2,1)]):errors.append('Model exceeds original sprite envelope')
+    return errors,dict(closed_components=len(groups),rings=len(loops),linked_pairs=len(actual),fixed_attachment_witnesses=len(family['attachments']),connected_components=len(reached),nearby_ring_pairs=checked,opening_rays=opening_rays,minimum_capsule_clearance=minimum if checked else None,quantization_margin=margin,native_triangles=sum(actual_native.values()))
+
+def validate(root=ROOT):
+    errors=validate_family(root,'ranged_weapons',4,distinct_classes=False)
+    try:
+        source=root/'assets/source/art/inventory_models_647/ranged_weapons';config=json.loads((source/'DESIGN.json').read_text());report=json.loads((source/'EXPORT.json').read_text())
+        identities=[(2,'CCAR'),(14,'CSGN'),(15,'CLBW'),(16,'CCBW')]
+        if [(v['item_type'],v['sprite']) for v in config['variants'].values()]!=identities:errors.append('Unexpected item identities')
+        cases=[dict(actor_class='CaelumWeaponPickup',item_type=n,tier=t,essence=0,sprite=s) for n,s in identities for t in [1,2,3]]
+        if config['runtime_cases']!=cases:errors.append('Changed twelve native type/tier cases')
+        expected=[]
+        for key,item in config['variants'].items():
+            expected.append(f'Model {item["class"]} {{ Path "{config["model_path"]}" Model 0 "{key}.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex {item["sprite"]} A 0 0 }}\n')
+            more,_=inspect_geometry(root,key);errors.extend(key+': '+v for v in more)
+        if (root/'src/caelum/data/inventory_ranged_weapons.modeldef').read_text()!=''.join(expected):errors.append('Unexpected world bindings')
+        definitions=(root/'src/TEXTURES').read_text(encoding='utf-8')
+        for key,sprite in [('carbine','CCAR'),('longbow','CLBW'),('crossbow','CCBW')]:
+            item=config['variants'][key];path='graphics/caelum/icons/ca_'+key+'.png'
+            if item['reference']!='src/'+path or item['sprite_scale']!=[1,1]:errors.append('Changed effective world reference: '+key)
+            if not any('Sprite "'+sprite+'A0"' in line and 'Patch "'+path+'", 0, 0' in line for line in definitions.splitlines()):errors.append('Missing effective world alias: '+key)
+        shotgun=config['variants']['shotgun']
+        if shotgun['reference']!='src/graphics/caelum/shotgun/icons.png' or shotgun['reference_crop']!=[64,47,567,635] or shotgun['sprite_scale']!=[4.9,4.9]:errors.append('Changed shotgun source/crop/scale')
+        shotgun_definition=(root/'src/graphics/caelum/shotgun.textures').read_text()
+        for token in ['Sprite "CSGNA0", 503, 588','XScale 4.900000000','YScale 4.900000000','Patch "graphics/caelum/shotgun/icons.png", -64, -47']:
+            if token not in shotgun_definition:errors.append('Changed effective shotgun alias')
+        for name,checksum in report['sha256'].items():
+            if name.startswith('editable/') and hashlib.sha256((source/name).read_bytes()).hexdigest()!=checksum:errors.append('Changed editable export: '+name)
+        for settings in config['materials'].values():
+            texture=settings['texture'];a,b,c,d=settings['rect_pixels']
+            if (source/'editable/src'/texture).read_bytes()!=(root/'src'/texture).read_bytes():errors.append('Changed portable material')
+            if Image.open(root/'src'/texture).convert('RGBA').getchannel('A').crop((a-1,b-1,c+1,d+1)).getextrema()!=(255,255):errors.append('Nonopaque material')
+        for key in config['variants']:
+            blob=(root/'src'/config['model_path']/(key+'.md3')).read_bytes();head=struct.unpack_from('<4sI64s9I',blob);offset=head[10]
+            for _ in range(head[6]):
+                h=struct.unpack_from('<4s64s10I',blob,offset);uv=[struct.unpack_from('<2f',blob,offset+h[9]+i*8) for i in range(h[5])]
+                for i in range(h[6]):
+                    a,b,c=[uv[k] for k in struct.unpack_from('<3I',blob,offset+h[7]+i*12)]
+                    if abs((b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]))<1e-12:errors.append('Collapsed native UV: '+key)
+                offset+=h[-1]
+    except (OSError,KeyError,ValueError,struct.error) as exc:errors.append(str(exc))
+    return errors
+
+
+if __name__=='__main__':
+    errors=validate();print(json.dumps(dict(errors=errors,geometry={k:inspect_geometry(ROOT,k)[1] for k in ['carbine','shotgun','longbow','crossbow']})));raise SystemExit(bool(errors))

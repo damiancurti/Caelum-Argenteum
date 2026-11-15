@@ -1,0 +1,18 @@
+{
+  "entries": 18535,
+  "exact": true,
+  "sha256": "3433d35f16181933a159ca9039810926a52e8e9a93962361bdc834db4614b841",
+  "added": [
+    "caelum/data/inventory_ranged_weapons.modeldef",
+    "models/caelum/inventory/ranged_weapons/canvas.png",
+    "models/caelum/inventory/ranged_weapons/carbine.md3",
+    "models/caelum/inventory/ranged_weapons/crossbow.md3",
+    "models/caelum/inventory/ranged_weapons/longbow.md3",
+    "models/caelum/inventory/ranged_weapons/shotgun.md3"
+  ],
+  "changed": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ]
+}

@@ -1,0 +1,813 @@
+{
+  "issue": 773,
+  "parent_issue": 647,
+  "version": "5.17.65",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Four original native carbine, shotgun, longbow and crossbow world drops, four exact state bindings and twelve native cases. One original opaque olive canvas texture is added. Existing icons, held/projectile art, ammo ownership, firing/reload, quality, collision/scale, size, durability, recipes and persistence remain unchanged.",
+  "runtime": {
+    "sha256": "3433d35f16181933a159ca9039810926a52e8e9a93962361bdc834db4614b841",
+    "source_entries": 18535,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "3db7e31d8e294f829920f47b629a0324a8c105bf71c62ba63ccac3d702fbf4c6",
+    "new_resources": [
+      "caelum/data/inventory_ranged_weapons.modeldef",
+      "models/caelum/inventory/ranged_weapons/canvas.png",
+      "models/caelum/inventory/ranged_weapons/carbine.md3",
+      "models/caelum/inventory/ranged_weapons/crossbow.md3",
+      "models/caelum/inventory/ranged_weapons/longbow.md3",
+      "models/caelum/inventory/ranged_weapons/shotgun.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 18,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "carbine": {
+        "closed_components": 20,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 19,
+        "connected_components": 20,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 15,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 3292
+      },
+      "shotgun": {
+        "closed_components": 9,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 8,
+        "connected_components": 9,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 20,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 2288
+      },
+      "longbow": {
+        "closed_components": 20,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 20,
+        "connected_components": 20,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 10,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 1456
+      },
+      "crossbow": {
+        "closed_components": 12,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 12,
+        "connected_components": 12,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 20,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 2056
+      }
+    },
+    "variants": {
+      "carbine": {
+        "class": "CaelumWeaponPickup",
+        "parts": [
+          "stock",
+          "butt_plate",
+          "receiver",
+          "trigger_guard",
+          "trigger",
+          "barrel0",
+          "fore_stock",
+          "hammer",
+          "sling",
+          "bandolier",
+          "cartridge0",
+          "blue_wrap0",
+          "cartridge1",
+          "blue_wrap1",
+          "cartridge2",
+          "blue_wrap2",
+          "cartridge3",
+          "blue_wrap3",
+          "cartridge4",
+          "blue_wrap4"
+        ],
+        "closed_outward_components": 20,
+        "vertices": 8276,
+        "triangles": 3292,
+        "surfaces": [
+          {
+            "material": "bronze",
+            "vertices": 2160,
+            "triangles": 720
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 1760,
+            "triangles": 1120
+          },
+          {
+            "material": "wood",
+            "vertices": 1584,
+            "triangles": 528
+          },
+          {
+            "material": "blue",
+            "vertices": 1440,
+            "triangles": 480
+          },
+          {
+            "material": "socket_atlas",
+            "vertices": 960,
+            "triangles": 320
+          },
+          {
+            "material": "leather",
+            "vertices": 372,
+            "triangles": 124
+          }
+        ],
+        "reference_opaque_bounds": [
+          23,
+          8,
+          105,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -9.943820835848765,
+              -5.605067376408153,
+              0.0
+            ],
+            "max": [
+              53.16486093281491,
+              4.748112498898393,
+              112.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.0791164770223618,
+          "floor": -2.0896389199106085
+        }
+      },
+      "shotgun": {
+        "class": "CaelumWeaponPickup",
+        "parts": [
+          "stock",
+          "butt_plate",
+          "receiver",
+          "trigger_guard",
+          "trigger",
+          "barrel0",
+          "barrel1",
+          "fore_stock",
+          "hammer"
+        ],
+        "closed_outward_components": 9,
+        "vertices": 5264,
+        "triangles": 2288,
+        "surfaces": [
+          {
+            "material": "dark_iron",
+            "vertices": 1760,
+            "triangles": 1120
+          },
+          {
+            "material": "wood",
+            "vertices": 1584,
+            "triangles": 528
+          },
+          {
+            "material": "socket_atlas",
+            "vertices": 1920,
+            "triangles": 640
+          }
+        ],
+        "reference_opaque_bounds": [
+          0,
+          0,
+          503,
+          588
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          4.9,
+          4.9
+        ],
+        "target_art_extent": 119.99999999999999,
+        "native_bounds": [
+          {
+            "min": [
+              -10.45039425963466,
+              -6.761679689964879,
+              0.0
+            ],
+            "max": [
+              84.58634321808789,
+              5.72789115517169,
+              119.99999999999999
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.3017934443572021,
+          "floor": -2.4251660660719208
+        }
+      },
+      "longbow": {
+        "class": "CaelumWeaponPickup",
+        "parts": [
+          "bow",
+          "string",
+          "grip",
+          "quiver",
+          "strap",
+          "arrow0",
+          "feather0_0",
+          "feather0_1",
+          "arrow1",
+          "feather1_0",
+          "feather1_1",
+          "arrow2",
+          "feather2_0",
+          "feather2_1",
+          "arrow3",
+          "feather3_0",
+          "feather3_1",
+          "arrow4",
+          "feather4_0",
+          "feather4_1"
+        ],
+        "closed_outward_components": 20,
+        "vertices": 4368,
+        "triangles": 1456,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 504,
+            "triangles": 168
+          },
+          {
+            "material": "bronze",
+            "vertices": 216,
+            "triangles": 72
+          },
+          {
+            "material": "wood",
+            "vertices": 1872,
+            "triangles": 624
+          },
+          {
+            "material": "red",
+            "vertices": 336,
+            "triangles": 112
+          },
+          {
+            "material": "leather",
+            "vertices": 432,
+            "triangles": 144
+          },
+          {
+            "material": "canvas",
+            "vertices": 1008,
+            "triangles": 336
+          }
+        ],
+        "reference_opaque_bounds": [
+          21,
+          11,
+          108,
+          114
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 103.0,
+        "native_bounds": [
+          {
+            "min": [
+              -18.736641008574665,
+              -2.94212953527619,
+              0.0
+            ],
+            "max": [
+              62.02624987632469,
+              11.881676969384614,
+              103.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.1315882827985346,
+          "floor": -4.294218308079807
+        }
+      },
+      "crossbow": {
+        "class": "CaelumWeaponPickup",
+        "parts": [
+          "stock",
+          "butt_plate",
+          "receiver",
+          "trigger_guard",
+          "trigger",
+          "limbs",
+          "string",
+          "blue_binding0",
+          "blue_binding1",
+          "blue_binding2",
+          "rail0",
+          "rail1"
+        ],
+        "closed_outward_components": 12,
+        "vertices": 4568,
+        "triangles": 2056,
+        "surfaces": [
+          {
+            "material": "bronze",
+            "vertices": 896,
+            "triangles": 832
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 1584,
+            "triangles": 528
+          },
+          {
+            "material": "wood",
+            "vertices": 1008,
+            "triangles": 336
+          },
+          {
+            "material": "blue",
+            "vertices": 864,
+            "triangles": 288
+          },
+          {
+            "material": "leather",
+            "vertices": 216,
+            "triangles": 72
+          }
+        ],
+        "reference_opaque_bounds": [
+          17,
+          10,
+          118,
+          116
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 106.0,
+        "native_bounds": [
+          {
+            "min": [
+              -10.603418043672047,
+              -4.823488483732692,
+              0.0
+            ],
+            "max": [
+              88.19357459038008,
+              4.823488483732692,
+              106.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.269339074666498,
+          "floor": -2.3318220360093997
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 773,
+    "kind": "ranged_weapons",
+    "scope": "Native pickup/toss, quantity and saved ownership for ranged_weapons; no normal menu or author acceptance.",
+    "baseline_sha256": "3db7e31d8e294f829920f47b629a0324a8c105bf71c62ba63ccac3d702fbf4c6",
+    "runtime_sha256": "3433d35f16181933a159ca9039810926a52e8e9a93962361bdc834db4614b841",
+    "model_sha256": null,
+    "fixture_sha256": "612235f78ccae29cc87eacf633c3b15a336cb888ed88843af80a384be80d693f",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 229
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 189
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 229
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 182
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 182
+      }
+    ],
+    "captures": {
+      "baseline.png": "4de5ce5d7a2cf6b71ddbacc6af825f167a1e7c7051332cb67508e36007eaa20c",
+      "candidate-0.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+      "candidate-1.png": "316167e61cb2f01a720a5e08cea9a44133f04f5cc1993a283f1574b80f5be064",
+      "candidate-2.png": "23efd7ef5a1146831e6c3ec62b2e1dbedf510c4f5ba60cb237f4e3d0781f7232",
+      "candidate-3.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+      "candidate-5.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+      "candidate-6.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+      "candidate-7.png": "172919a28258d6ad9ac4e4fda0ebc2e1d337e2878d1e9898c0ac18f2d2456b43",
+      "detail-0-0.png": "5333a173adf59a60d3105ec669ad71e612f2cd92d1a589bcf7b9cbab3168bd01",
+      "detail-0-160.png": "170747cf1ffb8f107eb7cbbcc564a5015fa6f938075c135da8532e8f8e29f7a0",
+      "detail-0-225.png": "bff05dbbe6a9d2a8f318cf86ffc4af6ca546e20202139e9783566b3567ac29cd",
+      "detail-0-270.png": "6c0700a15fe6161cef97fd11394a9adcbb23b490de035974245ffeea6ecbb638",
+      "detail-0-90.png": "fa2ad4050c11a454f59f8336ca431d271a6736e8c5e62019c705610f11004ceb",
+      "detail-1-0.png": "9cb288a37eb0f2c787b6ccb659173b453801a71d00551d5b28196e85cc5ec127",
+      "detail-1-160.png": "d53faa79bf80e762e6bef491a7c00408ea02c9439f0efc3d5265d9b0cf4b0721",
+      "detail-1-225.png": "da141acb24aafde3dc5464929093264a2547d084832a8b4586a29093c60f9986",
+      "detail-1-270.png": "196230e690054d1085d92b8aed5d35e55f3ea5174ddfc900df2918efda651473",
+      "detail-1-90.png": "b8b25e42e2bf8ffbb0d1897fadf47ddee95e61df4a1dbde9c2bbdc7b5f225daf",
+      "detail-2-0.png": "34c045335f2a554dc17f45373d7defebc22a2b43165dbad23f4bbcaa84f18bb7",
+      "detail-2-160.png": "c34ee579e588ce43ac0c83e76956f566cf415323eaeee237986453cb53e906c1",
+      "detail-2-225.png": "90bf4ee8a571f6511c93a4a2c5dc2b956a60d5a6aaf2acec2a0b6cbace6dd7e5",
+      "detail-2-270.png": "8dce5ed607fd17805c6b31bb18c2363fe3181ea728ff626b40b0f5a4e31d63bd",
+      "detail-2-90.png": "a2c61235b15548d417669533d2e3643b97008176423bd20c130cfae0c43a0b73",
+      "detail-3-0.png": "6073d7c9ada9648169a8e8406b89e0b1c3257c802aaf266f912a0d0d0eaf240b",
+      "detail-3-160.png": "e842161f0281f763bde0f3da4ba8aaa6e009f4fcdb0c1e56b99deeaffd8fab86",
+      "detail-3-225.png": "27dc020789ab6f42b2547bd55277a64b36f5c1c01f581503657b6117cc075fa0",
+      "detail-3-270.png": "03b108f0ff80100adc9fb7e3546cd8fdfefa95824d96be5e333c77f9948c1bd4",
+      "detail-3-90.png": "b450334792e63771f8de157bf48f4d26abf1f2124ef3d7178128083f5c696f85"
+    }
+  },
+  "visual": {
+    "issue": 773,
+    "kind": "ranged_weapons",
+    "scope": "Native pickup/toss, quantity and saved ownership for ranged_weapons; no normal menu or author acceptance.",
+    "baseline_sha256": "3db7e31d8e294f829920f47b629a0324a8c105bf71c62ba63ccac3d702fbf4c6",
+    "runtime_sha256": "3db7e31d8e294f829920f47b629a0324a8c105bf71c62ba63ccac3d702fbf4c6",
+    "model_sha256": "d55e7fc012306674bb54a54aedd01b3bec007acc74f6a8631826b0fb7762406c",
+    "fixture_sha256": "612235f78ccae29cc87eacf633c3b15a336cb888ed88843af80a384be80d693f",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "visual",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 236
+      }
+    ],
+    "captures": {
+      "candidate-0.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+      "candidate-1.png": "316167e61cb2f01a720a5e08cea9a44133f04f5cc1993a283f1574b80f5be064",
+      "candidate-2.png": "23efd7ef5a1146831e6c3ec62b2e1dbedf510c4f5ba60cb237f4e3d0781f7232",
+      "candidate-3.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+      "candidate-5.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+      "candidate-6.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+      "candidate-7.png": "172919a28258d6ad9ac4e4fda0ebc2e1d337e2878d1e9898c0ac18f2d2456b43",
+      "detail-0-0.png": "5333a173adf59a60d3105ec669ad71e612f2cd92d1a589bcf7b9cbab3168bd01",
+      "detail-0-160.png": "170747cf1ffb8f107eb7cbbcc564a5015fa6f938075c135da8532e8f8e29f7a0",
+      "detail-0-225.png": "bff05dbbe6a9d2a8f318cf86ffc4af6ca546e20202139e9783566b3567ac29cd",
+      "detail-0-270.png": "6c0700a15fe6161cef97fd11394a9adcbb23b490de035974245ffeea6ecbb638",
+      "detail-0-90.png": "fa2ad4050c11a454f59f8336ca431d271a6736e8c5e62019c705610f11004ceb",
+      "detail-1-0.png": "9cb288a37eb0f2c787b6ccb659173b453801a71d00551d5b28196e85cc5ec127",
+      "detail-1-160.png": "d53faa79bf80e762e6bef491a7c00408ea02c9439f0efc3d5265d9b0cf4b0721",
+      "detail-1-225.png": "da141acb24aafde3dc5464929093264a2547d084832a8b4586a29093c60f9986",
+      "detail-1-270.png": "196230e690054d1085d92b8aed5d35e55f3ea5174ddfc900df2918efda651473",
+      "detail-1-90.png": "b8b25e42e2bf8ffbb0d1897fadf47ddee95e61df4a1dbde9c2bbdc7b5f225daf",
+      "detail-2-0.png": "34c045335f2a554dc17f45373d7defebc22a2b43165dbad23f4bbcaa84f18bb7",
+      "detail-2-160.png": "c34ee579e588ce43ac0c83e76956f566cf415323eaeee237986453cb53e906c1",
+      "detail-2-225.png": "90bf4ee8a571f6511c93a4a2c5dc2b956a60d5a6aaf2acec2a0b6cbace6dd7e5",
+      "detail-2-270.png": "8dce5ed607fd17805c6b31bb18c2363fe3181ea728ff626b40b0f5a4e31d63bd",
+      "detail-2-90.png": "a2c61235b15548d417669533d2e3643b97008176423bd20c130cfae0c43a0b73",
+      "detail-3-0.png": "6073d7c9ada9648169a8e8406b89e0b1c3257c802aaf266f912a0d0d0eaf240b",
+      "detail-3-160.png": "e842161f0281f763bde0f3da4ba8aaa6e009f4fcdb0c1e56b99deeaffd8fab86",
+      "detail-3-225.png": "27dc020789ab6f42b2547bd55277a64b36f5c1c01f581503657b6117cc075fa0",
+      "detail-3-270.png": "03b108f0ff80100adc9fb7e3546cd8fdfefa95824d96be5e333c77f9948c1bd4",
+      "detail-3-90.png": "b450334792e63771f8de157bf48f4d26abf1f2124ef3d7178128083f5c696f85"
+    }
+  },
+  "presentation": {
+    "issue": 773,
+    "kind": "ranged_weapons",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "3db7e31d8e294f829920f47b629a0324a8c105bf71c62ba63ccac3d702fbf4c6",
+    "runtime_sha256": "3433d35f16181933a159ca9039810926a52e8e9a93962361bdc834db4614b841",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 12,
+        "pid": 25728,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 342547707.6254,
+          "END": 342567728.7528
+        },
+        "fixture_sha256": "6a08133ea11e835f8d9429e6ed064c8750b469e4375a35fa297a67e6ca2fc68f",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            12,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571569714285715,
+          "p50_ms": 28.5669,
+          "p95_ms": 29.1807,
+          "p99_ms": 29.414,
+          "max_ms": 29.6342
+        },
+        "presentation": {
+          "pid": 25728,
+          "trace_sha256": "6d05336b1b70f9799cdb2876de8897b53051c771809e481fe009b49e6d7f1cee",
+          "rows": 28829,
+          "scene_presents": 19722,
+          "mean_present_fps": 1125.617439348965,
+          "present_intervals": {
+            "samples": 19721,
+            "mean_ms": 0.8884013031802176,
+            "p50_ms": 0.8616999983787537,
+            "p95_ms": 1.0664000511169434,
+            "p99_ms": 1.2982999682426453,
+            "max_ms": 2.0871999859809875
+          },
+          "native_call_duration": {
+            "samples": 19722,
+            "mean_ms": 0.07627234562525775,
+            "p50_ms": 0.07569998502731323,
+            "p95_ms": 0.09999996423721313,
+            "p99_ms": 0.1329999566078186,
+            "max_ms": 0.32910001277923584
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 12,
+        "pid": 48836,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 342582287.9601,
+          "END": 342602307.7699
+        },
+        "fixture_sha256": "6a08133ea11e835f8d9429e6ed064c8750b469e4375a35fa297a67e6ca2fc68f",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            12,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.572117285714288,
+          "p50_ms": 28.569,
+          "p95_ms": 29.2403,
+          "p99_ms": 29.4065,
+          "max_ms": 29.7759
+        },
+        "presentation": {
+          "pid": 48836,
+          "trace_sha256": "c2a53267617c450efd442c30b30e6e079c1737c1da1dbdbcc39b1bc662183192",
+          "rows": 28424,
+          "scene_presents": 19370,
+          "mean_present_fps": 1105.5713438188332,
+          "present_intervals": {
+            "samples": 19369,
+            "mean_ms": 0.9045096959060357,
+            "p50_ms": 0.8797000050544739,
+            "p95_ms": 1.0769000053405762,
+            "p99_ms": 1.2872000336647034,
+            "max_ms": 1.7910999655723572
+          },
+          "native_call_duration": {
+            "samples": 19370,
+            "mean_ms": 0.07553610248115177,
+            "p50_ms": 0.07539999485015869,
+            "p95_ms": 0.0988999605178833,
+            "p99_ms": 0.125,
+            "max_ms": 0.36309999227523804
+          }
+        }
+      }
+    ]
+  },
+  "art": {
+    "inspected_views": [
+      "visual/detail-0-0.png",
+      "visual/detail-0-90.png",
+      "visual/detail-0-160.png",
+      "visual/detail-0-225.png",
+      "visual/detail-0-270.png",
+      "visual/detail-1-0.png",
+      "visual/detail-1-90.png",
+      "visual/detail-1-160.png",
+      "visual/detail-1-225.png",
+      "visual/detail-1-270.png",
+      "visual/detail-2-0.png",
+      "visual/detail-2-90.png",
+      "visual/detail-2-160.png",
+      "visual/detail-2-225.png",
+      "visual/detail-2-270.png",
+      "visual/detail-3-0.png",
+      "visual/detail-3-90.png",
+      "visual/detail-3-160.png",
+      "visual/detail-3-225.png",
+      "visual/detail-3-270.png"
+    ],
+    "overview": "visual/candidate-0.png",
+    "author_check": "CA773-RANGED-DROPS-01"
+  },
+  "iterations": [
+    "Initial static checks caught barrel attachment witnesses on cap boundaries or outside the receiver and a crossbow silhouette wider than the effective artwork. Corrected witness locations and assembly inclination; no gameplay or original image changed."
+  ],
+  "environment": {
+    "os": "Windows11 Pro26200",
+    "cpu": "Ryzen9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX3070Ti",
+    "engine": "GZDoom4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "All twenty final detail/underside views, the overview and both presentation scenes were inspected. Sixty-one closed components, fifty-nine fixed contacts and sixty-five opening rays pass independent checks.",
+    "Simplified stock/barrel profiles, static strings and accessories, interpreted backs, omitted ornament, repeated grain, matte shading and standing pickup orientation require author review. Cosmetic ammo grants or consumes no inventory ammo.",
+    "One sequential700-tic twelve-object pair measures queue intervals only, not GPU/display latency, repeatability or campaign/crowd performance. Projected footprints differ.",
+    "Native APIs and prepared metadata do not prove ordinary menus, firing/reload, crafting or author acceptance. Visual overlay model02 is byte-identical to the final native model03.",
+    "Inventory-wide coverage needs auditing; other characters, modular equipment and V5.16 remain unfinished. No executable, IWAD, compiled test package, DLL or save committed."
+  ],
+  "files": {
+    "build01.log": "671bd4fde975381d97ad51b5f96effbb62af3800edd7362260189486194b45cc",
+    "continuity/baseline-process.log": "10b4709a9b44ef3270bde8fce79c10c7434a086b5f266df24a0b6ca5c4706041",
+    "continuity/baseline.cfg": "fcc7985bf5d74b93ed6b607de46ff1edabd4ae0b309f77d176d95463d3bb9201",
+    "continuity/baseline.log": "9f7a9abd341150e18d14e1adc6836a9ef136f222aeb7d1d50754d671779578e3",
+    "continuity/baseline.png": "4de5ce5d7a2cf6b71ddbacc6af825f167a1e7c7051332cb67508e36007eaa20c",
+    "continuity/candidate-0.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+    "continuity/candidate-1.png": "316167e61cb2f01a720a5e08cea9a44133f04f5cc1993a283f1574b80f5be064",
+    "continuity/candidate-2.png": "23efd7ef5a1146831e6c3ec62b2e1dbedf510c4f5ba60cb237f4e3d0781f7232",
+    "continuity/candidate-3.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+    "continuity/candidate-5.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+    "continuity/candidate-6.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+    "continuity/candidate-7.png": "172919a28258d6ad9ac4e4fda0ebc2e1d337e2878d1e9898c0ac18f2d2456b43",
+    "continuity/candidate-fresh-process.log": "a5d6f1f96cb50d81d9ce9529b8cafdc74678c2b4d765ed77eb8c0ff7c95e163e",
+    "continuity/candidate-fresh.cfg": "a23013dea9f64e83a1250c4603ae5d15e46f9cc9b9bbfe5df3a7e4910e22f60b",
+    "continuity/candidate-fresh.log": "be8b276e370bac7e07f89102b919e101aae9d3b1a30ba39515397cc5e83fade9",
+    "continuity/candidate-reload-process.log": "8ddbf2f8c17636c1c1dfa1b7446351d16edf61f7cb62b9b104340837df63e708",
+    "continuity/candidate-reload.cfg": "40d35fd981542cfb0aa05a209459c83fe03f5051988ea21b9f86316c54a08a09",
+    "continuity/candidate-reload.log": "39180fb891a8d37b698895b152609f2c5a366c6ecae2d75167b7bdae41da05dc",
+    "continuity/detail-0-0.png": "5333a173adf59a60d3105ec669ad71e612f2cd92d1a589bcf7b9cbab3168bd01",
+    "continuity/detail-0-160.png": "170747cf1ffb8f107eb7cbbcc564a5015fa6f938075c135da8532e8f8e29f7a0",
+    "continuity/detail-0-225.png": "bff05dbbe6a9d2a8f318cf86ffc4af6ca546e20202139e9783566b3567ac29cd",
+    "continuity/detail-0-270.png": "6c0700a15fe6161cef97fd11394a9adcbb23b490de035974245ffeea6ecbb638",
+    "continuity/detail-0-90.png": "fa2ad4050c11a454f59f8336ca431d271a6736e8c5e62019c705610f11004ceb",
+    "continuity/detail-1-0.png": "9cb288a37eb0f2c787b6ccb659173b453801a71d00551d5b28196e85cc5ec127",
+    "continuity/detail-1-160.png": "d53faa79bf80e762e6bef491a7c00408ea02c9439f0efc3d5265d9b0cf4b0721",
+    "continuity/detail-1-225.png": "da141acb24aafde3dc5464929093264a2547d084832a8b4586a29093c60f9986",
+    "continuity/detail-1-270.png": "196230e690054d1085d92b8aed5d35e55f3ea5174ddfc900df2918efda651473",
+    "continuity/detail-1-90.png": "b8b25e42e2bf8ffbb0d1897fadf47ddee95e61df4a1dbde9c2bbdc7b5f225daf",
+    "continuity/detail-2-0.png": "34c045335f2a554dc17f45373d7defebc22a2b43165dbad23f4bbcaa84f18bb7",
+    "continuity/detail-2-160.png": "c34ee579e588ce43ac0c83e76956f566cf415323eaeee237986453cb53e906c1",
+    "continuity/detail-2-225.png": "90bf4ee8a571f6511c93a4a2c5dc2b956a60d5a6aaf2acec2a0b6cbace6dd7e5",
+    "continuity/detail-2-270.png": "8dce5ed607fd17805c6b31bb18c2363fe3181ea728ff626b40b0f5a4e31d63bd",
+    "continuity/detail-2-90.png": "a2c61235b15548d417669533d2e3643b97008176423bd20c130cfae0c43a0b73",
+    "continuity/detail-3-0.png": "6073d7c9ada9648169a8e8406b89e0b1c3257c802aaf266f912a0d0d0eaf240b",
+    "continuity/detail-3-160.png": "e842161f0281f763bde0f3da4ba8aaa6e009f4fcdb0c1e56b99deeaffd8fab86",
+    "continuity/detail-3-225.png": "27dc020789ab6f42b2547bd55277a64b36f5c1c01f581503657b6117cc075fa0",
+    "continuity/detail-3-270.png": "03b108f0ff80100adc9fb7e3546cd8fdfefa95824d96be5e333c77f9948c1bd4",
+    "continuity/detail-3-90.png": "b450334792e63771f8de157bf48f4d26abf1f2124ef3d7178128083f5c696f85",
+    "continuity/fixture-source/MAPINFO.txt": "9567f717ec8b9f27bb8ac57c7b92ac81289e916c9b9920966d2c580a4eef4ed1",
+    "continuity/fixture-source/ZSCRIPT.txt": "7492c7c973719b1da36678cc567fa16959f6a8bbf7f871184c177581325c367a",
+    "continuity/fixture.zs": "5b86d881bd9ca522bb5a454251538d9b12de69785d2fd5530f69e531a41ab417",
+    "continuity/old-save-load-part-1.cfg": "c5d1f7e56e7059b325b7395f9ce90a55e60fc8e81c6ea48d1e068d0956b8b35d",
+    "continuity/old-save-load-process.log": "2068051a87a80d5fa05e0f25eb61d26092ab3333447915fd33056b128e9d443c",
+    "continuity/old-save-load.cfg": "55deb8f044e6bf50bea586ba3fdf5ac0c61a349421a837d1f24c645784434e2a",
+    "continuity/old-save-load.log": "1786107fdacf1afaf68d7e42697182463b352fd2c01bcff5a591d73445627317",
+    "continuity/RESULTS.json": "66058c7a2a1a1749df5ab6e3325614da276ba575d5941a0f67348af816edcbbc",
+    "continuity/rollback-load-process.log": "a498144d7cdd9797e771ae50d07e8a518f934a4e5b8b3e72cd252395a914fb31",
+    "continuity/rollback-load.cfg": "40d35fd981542cfb0aa05a209459c83fe03f5051988ea21b9f86316c54a08a09",
+    "continuity/rollback-load.log": "70119ead2c1aae6610a2fbef5141fe61460c9acb8e349ee55ab72b662e2c910c",
+    "continuity/session.ini": "0f5f4d5d33f86c3fe0a91e4a5ca3cd02ec1aaa7568ce42afbf537b68c96e0531",
+    "export-check.log": "7cc2f5374fcb64c5acf0e16e65bd4a3260934c8bc176d89be4ef32624b7cfc24",
+    "exports/model01.json": "1736888b603ddb09b19c267e8206600cad079f70ded7b5f7ee9af4bb24c50c71",
+    "exports/model02.json": "130c5965773e6c2918d6eaf63f2694b68a0ee5e957047a7b16dc93d087a50e3f",
+    "exports/model03.json": "130c5965773e6c2918d6eaf63f2694b68a0ee5e957047a7b16dc93d087a50e3f",
+    "exports/model04.json": "130c5965773e6c2918d6eaf63f2694b68a0ee5e957047a7b16dc93d087a50e3f",
+    "geometry01.log": "85365bc39502897a8bcafcdb88c0d57ba578def2307805d00f1977689470ca52",
+    "geometry02.log": "7f7e2a5eab0ae1a0443ec3a13b55041e21931516d493dea9991ae0f9df3445b0",
+    "geometry03.log": "7f7e2a5eab0ae1a0443ec3a13b55041e21931516d493dea9991ae0f9df3445b0",
+    "presentation/models-12/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-12/engine.log": "0766cd6a6fcf1b0e7f60903d84ee9729f92ba0cf8830cae1a706f9e7c9871c3b",
+    "presentation/models-12/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-12/fixture-source/ZSCRIPT.txt": "fb05a406262df43c8d88ee9c8f26729b9876bb77e1b9fd725b27ed7305f242f8",
+    "presentation/models-12/presents.csv": "c2a53267617c450efd442c30b30e6e079c1737c1da1dbdbcc39b1bc662183192",
+    "presentation/models-12/process.log": "72b34fe056d9370e38adf61238a1ad05f56964320b79750d6d9178a743862abd",
+    "presentation/models-12/scene.png": "b0a7d50c88c551839a07d97e3ef610fdab1ca092d0beeb87cdfab3f4392341d6",
+    "presentation/models-12/session.ini": "883cfa3b2742bbdd398cf763972c8ba37cc3123ca186f0f598652857a3d60c55",
+    "presentation/RESULTS.json": "0f5126960e24de757f71584ba37f9e516ab2894dd28c10221f16f0fd7bc22659",
+    "presentation/sprites-12/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-12/engine.log": "55763fc0799ebe78e1be3018e8a1524b83996e231bdc8d4a90d466a5dfa8dc78",
+    "presentation/sprites-12/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-12/fixture-source/ZSCRIPT.txt": "fb05a406262df43c8d88ee9c8f26729b9876bb77e1b9fd725b27ed7305f242f8",
+    "presentation/sprites-12/presents.csv": "6d05336b1b70f9799cdb2876de8897b53051c771809e481fe009b49e6d7f1cee",
+    "presentation/sprites-12/process.log": "77fba4e7d9ed2e95ddbe90a0eeba0d3e604ded434b60943ca108ae16dd8951c9",
+    "presentation/sprites-12/scene.png": "097b133f26fc42f9135e2d7bdae3d8948a0e0bcbc4ddd3fc854c2960fa00d2e7",
+    "presentation/sprites-12/session.ini": "1cd571f2ca9d066b5bd1358095e1a572f84bc7009fd58c9e61bca76751246df9",
+    "repeat03-04.json": "d1ae345ef44854bb84b4c8326154aba46d0c7272189e1d6fc61887f6eb9b97c1",
+    "runtime-parity.json": "53c957d660c6a69d895f4a8b7548dddc17496e8b02ef4ad89bbfe6bcfe35d9bf",
+    "visual/candidate-0.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+    "visual/candidate-1.png": "316167e61cb2f01a720a5e08cea9a44133f04f5cc1993a283f1574b80f5be064",
+    "visual/candidate-2.png": "23efd7ef5a1146831e6c3ec62b2e1dbedf510c4f5ba60cb237f4e3d0781f7232",
+    "visual/candidate-3.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+    "visual/candidate-5.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+    "visual/candidate-6.png": "2bd9a619cb13a3ccd028ff590fb45769854ac42ab1229591dde94080b40e1dae",
+    "visual/candidate-7.png": "172919a28258d6ad9ac4e4fda0ebc2e1d337e2878d1e9898c0ac18f2d2456b43",
+    "visual/detail-0-0.png": "5333a173adf59a60d3105ec669ad71e612f2cd92d1a589bcf7b9cbab3168bd01",
+    "visual/detail-0-160.png": "170747cf1ffb8f107eb7cbbcc564a5015fa6f938075c135da8532e8f8e29f7a0",
+    "visual/detail-0-225.png": "bff05dbbe6a9d2a8f318cf86ffc4af6ca546e20202139e9783566b3567ac29cd",
+    "visual/detail-0-270.png": "6c0700a15fe6161cef97fd11394a9adcbb23b490de035974245ffeea6ecbb638",
+    "visual/detail-0-90.png": "fa2ad4050c11a454f59f8336ca431d271a6736e8c5e62019c705610f11004ceb",
+    "visual/detail-1-0.png": "9cb288a37eb0f2c787b6ccb659173b453801a71d00551d5b28196e85cc5ec127",
+    "visual/detail-1-160.png": "d53faa79bf80e762e6bef491a7c00408ea02c9439f0efc3d5265d9b0cf4b0721",
+    "visual/detail-1-225.png": "da141acb24aafde3dc5464929093264a2547d084832a8b4586a29093c60f9986",
+    "visual/detail-1-270.png": "196230e690054d1085d92b8aed5d35e55f3ea5174ddfc900df2918efda651473",
+    "visual/detail-1-90.png": "b8b25e42e2bf8ffbb0d1897fadf47ddee95e61df4a1dbde9c2bbdc7b5f225daf",
+    "visual/detail-2-0.png": "34c045335f2a554dc17f45373d7defebc22a2b43165dbad23f4bbcaa84f18bb7",
+    "visual/detail-2-160.png": "c34ee579e588ce43ac0c83e76956f566cf415323eaeee237986453cb53e906c1",
+    "visual/detail-2-225.png": "90bf4ee8a571f6511c93a4a2c5dc2b956a60d5a6aaf2acec2a0b6cbace6dd7e5",
+    "visual/detail-2-270.png": "8dce5ed607fd17805c6b31bb18c2363fe3181ea728ff626b40b0f5a4e31d63bd",
+    "visual/detail-2-90.png": "a2c61235b15548d417669533d2e3643b97008176423bd20c130cfae0c43a0b73",
+    "visual/detail-3-0.png": "6073d7c9ada9648169a8e8406b89e0b1c3257c802aaf266f912a0d0d0eaf240b",
+    "visual/detail-3-160.png": "e842161f0281f763bde0f3da4ba8aaa6e009f4fcdb0c1e56b99deeaffd8fab86",
+    "visual/detail-3-225.png": "27dc020789ab6f42b2547bd55277a64b36f5c1c01f581503657b6117cc075fa0",
+    "visual/detail-3-270.png": "03b108f0ff80100adc9fb7e3546cd8fdfefa95824d96be5e333c77f9948c1bd4",
+    "visual/detail-3-90.png": "b450334792e63771f8de157bf48f4d26abf1f2124ef3d7178128083f5c696f85",
+    "visual/fixture-source/MAPINFO.txt": "9567f717ec8b9f27bb8ac57c7b92ac81289e916c9b9920966d2c580a4eef4ed1",
+    "visual/fixture-source/ZSCRIPT.txt": "7492c7c973719b1da36678cc567fa16959f6a8bbf7f871184c177581325c367a",
+    "visual/fixture.zs": "5b86d881bd9ca522bb5a454251538d9b12de69785d2fd5530f69e531a41ab417",
+    "visual/RESULTS.json": "8d184cea207a49ba704838ed596ff91dd9c7b058585be0aec73baff59290e1d8",
+    "visual/session.ini": "9b38134ca17215208a2ff4d79829c95cc8ff68ff40d1c2b199ff7dc325adca9b",
+    "visual/visual-part-1.cfg": "879b7aba1781f024e4b7337dc70bafd255600bcd9f7e89d7f2f116efaf99ec0c",
+    "visual/visual-process.log": "59983a2be558a99cb180f10bf0c2afe085c93a66330e20f853d7401e3246fa64",
+    "visual/visual.cfg": "ac67dc02567ce7fca35cbebbe423cdbeb2c92103c6be0428bcceafe23dac7c9b",
+    "visual/visual.log": "7fe8a6a1abd8095780e738f462962467949282a08c970946c3c7707c2b3a32bc",
+    "validation-final.json": "76f006127abfa4cfa4b8d8b2c6052bb76e62e920964e9042dba7a9532ff955d6"
+  }
+}

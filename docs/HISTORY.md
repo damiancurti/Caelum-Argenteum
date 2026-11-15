@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.64** - 2026-11-15.
+Documentation version: **5.17.65** - 2026-11-15.
+
+## 5.17.65 - Carbine, shotgun, longbow and crossbow drops (#773), 2026-11-15
+
+Delivered four original native world-drop assemblies and one original opaque
+canvas texture with its exact built-in image_gen prompt. Existing references,
+twelve type/tier cases, held art, ammunition ownership and gameplay are preserved.
+Independent checks verify 61 closed components, 59 fixed contacts and 65 opening
+rays; eighteen exports repeat. Engine checks pass 1,011 continuity and 236
+visual/control assertions. Twenty detail views and the overview were inspected.
+Initial boundary attachment witnesses and a wide crossbow envelope were corrected;
+superseded evidence remains. ASSETS records performance and art qualifications.
+Evidence: assets/validation_v5_17_65/evidence/SUMMARY.json.
+CA773-RANGED-DROPS-01 originates here and remains pending. No prior author check
+was accepted or removed. The broader V5.16/3D request is unfinished.
 
 ## 5.17.64 - Flail, giant-gauntlet and bolas world models (#771), 2026-11-15
 

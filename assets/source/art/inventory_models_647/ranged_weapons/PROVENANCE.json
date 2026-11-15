@@ -1,0 +1,11 @@
+{
+  "issue": 773,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "method": "Original native geometry reuses unchanged owned materials. One opaque olive canvas texture generated through built-in image_gen is copied unchanged; CANVAS_PROMPT.json records the exact prompt.",
+  "canvas_sha256": "ceeffb856bf899c087753f86164dfea1b84dfc084fd9c33fe6c1c91fda94b042",
+  "limitations": [
+    "Simplified static accessories, barrel/stock profiles, strings, ornaments and hidden surfaces require author review.",
+    "Shared world appearances remain independent of held quality art. Cosmetic cartridges and quiver arrows grant or consume no ammunition; gameplay and saved state remain unchanged."
+  ]
+}
