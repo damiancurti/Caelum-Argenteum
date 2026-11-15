@@ -986,3 +986,13 @@ assets/validation_v5_17_42/evidence/** -text -diff
 /assets/validation_v5_17_51/*.py text eol=lf
 /assets/validation_v5_17_51/*.json text eol=lf
 /assets/validation_v5_17_51/evidence/** -text -diff
+
+# #747 native cartridge-kit sources and evidence.
+/assets/generators/*inventory_cartridge_kits_models.py text eol=lf
+/assets/source/art/inventory_models_647/cartridge_kits/** text eol=lf
+/assets/source/art/inventory_models_647/cartridge_kits/**/*.png binary
+/assets/validation_v5_17_52/*.py text eol=lf
+/assets/validation_v5_17_52/*.zs text eol=lf
+/assets/validation_v5_17_52/evidence/** -text -diff
+/src/models/caelum/inventory/cartridge_kits/** -text -diff
+/src/caelum/data/inventory_cartridge_kits.modeldef text eol=lf

@@ -1,0 +1,14 @@
+{
+  "byte_identical": true,
+  "files": [
+    "manifest.json",
+    "preview.pk3",
+    "editable\\carbine_kit.obj",
+    "editable\\cartridge_kits.mtl",
+    "editable\\shotgun_kit.obj",
+    "caelum\\data\\inventory_cartridge_kits.modeldef",
+    "models\\caelum\\inventory\\cartridge_kits\\carbine_kit.md3",
+    "models\\caelum\\inventory\\cartridge_kits\\shotgun_kit.md3"
+  ],
+  "visual02_mesh_bytes_match_final": true
+}

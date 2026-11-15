@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.51** - 2026-11-14.
+Documentation version: **5.17.52** - 2026-11-14.
+
+## #747 - Prepared-kit world drops (5.17.52)
+
+Two existing untiered kits have closed native candidate models. Geometry,
+contacts, mouth rays, projected UVs, eight repeated outputs and300 live checks
+pass. CA747-CARTRIDGE-KIT-DROPS-01 retains art and ordinary inventory/crafting
+review. #749 separately tracks a pre-existing incorrect hide assertion count
+in the shared runner; kit and kitchen navigation coverage are preserved.
+Other #647 inventory, characters and campaign work remain separate.
 
 ## #745 - Review-fixture underside controls (5.17.51)
 

@@ -1,0 +1,2 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/cartridge_kits" Model 0 "carbine_kit.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M079 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/cartridge_kits" Model 0 "shotgun_kit.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M080 A 0 0 }

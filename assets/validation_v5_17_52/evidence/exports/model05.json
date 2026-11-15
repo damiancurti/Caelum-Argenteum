@@ -1,0 +1,173 @@
+{
+  "schema_revision": 1,
+  "issue": 747,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "variants": {
+    "carbine_kit": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "wrapper",
+        "case",
+        "projectile",
+        "sealed_packet"
+      ],
+      "closed_outward_components": 4,
+      "vertices": 4826,
+      "triangles": 3360,
+      "surfaces": [
+        {
+          "material": "paper",
+          "vertices": 3744,
+          "triangles": 1248
+        },
+        {
+          "material": "bronze",
+          "vertices": 443,
+          "triangles": 864
+        },
+        {
+          "material": "lead",
+          "vertices": 639,
+          "triangles": 1248
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        23,
+        120,
+        97
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 111.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.15819986389368,
+            -37.336987298577405,
+            0.0
+          ],
+          "max": [
+            54.841800136106315,
+            37.30580878468538,
+            21.69321942591286
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.1631753043384911,
+        "floor": 0.0
+      }
+    },
+    "shotgun_kit": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "wrapper",
+        "case_base",
+        "paper_case",
+        "sealed_packet",
+        "shot_0",
+        "shot_1",
+        "shot_2",
+        "shot_3",
+        "shot_4",
+        "shot_5",
+        "shot_6",
+        "shot_7",
+        "shot_8",
+        "shot_9"
+      ],
+      "closed_outward_components": 14,
+      "vertices": 8595,
+      "triangles": 10080,
+      "surfaces": [
+        {
+          "material": "paper",
+          "vertices": 4094,
+          "triangles": 1842
+        },
+        {
+          "material": "paper",
+          "vertices": 234,
+          "triangles": 78
+        },
+        {
+          "material": "bronze",
+          "vertices": 247,
+          "triangles": 480
+        },
+        {
+          "material": "lead",
+          "vertices": 4020,
+          "triangles": 7680
+        }
+      ],
+      "reference_opaque_bounds": [
+        12,
+        11,
+        118,
+        112
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 106.0,
+      "native_bounds": [
+        {
+          "min": [
+            -53.62855122137595,
+            -35.65514102386672,
+            0.0
+          ],
+          "max": [
+            52.37144877862405,
+            35.625366947537394,
+            25.547940468263437
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.11078002035928,
+        "floor": 0.0
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "2c1fc5c1a0db3705f3a288819b7281298365398b329f370095f6910bfbe408a0",
+    "PROVENANCE.json": "ca99f85b5de5fdd6992bbc20d5b43971e50e034c6a8871a3feb7e8ed3499556d"
+  },
+  "external_source_sha256": {
+    "assets/art_source/cartridge_kits/carbine-kit-v1.png": "3eb8041ffd888ec066281dab564fbb97e0bea15a00fa0abf0c8d64394214b4fa",
+    "assets/art_source/cartridge_kits/shotgun-kit-v1.png": "ee796fe58b297521cd9f5c09b9c668502180920e855d67aba884e3b03965067e",
+    "assets/art_source/cartridge_kits/manifest.json": "bb90d48d07c9a37647186d549b97a50283559d33d97fcb74633f3a2f76b6de41",
+    "assets/art_source/cartridge_kits/exports.json": "9daf0443cd6c6ad68de9bf60fbb270b5b89f8bbec926f59e9bf2b5b2d86d5e7d",
+    "src/caelum/data/cartridge_kits.textures": "392dde666b7c61eb158c0479f468dd7b1520acc805a120da21bb7bb07280b1dd",
+    "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04",
+    "src/graphics/caelum/icons/materials/ca_material_carbine_kit.png": "c5e64dbd0438bc9b045f59481474be710b03c9f237ab8a542f7e801c8fd1e438",
+    "src/graphics/caelum/icons/materials/ca_material_shotgun_kit.png": "6415614d13d84ceb61209271ab2b44eed508ecda132c0d2871791cc80292a923",
+    "src/models/caelum/inventory/kitchen_ingredients/materials.png": "a217d7e4b5d5355377429079a36fe1d338bb78a3a25ba7b268b48780a52c9637",
+    "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_cartridge_kits_models.py": "89fb25651d858bb8cfbcc5a3f4b4ae09576f7c2a4bf25567c9db561f46b8e8a8"
+  },
+  "sha256": {
+    "models/caelum/inventory/cartridge_kits/carbine_kit.md3": "b925efd26703dbf2d9bfbabf43ba81f80de0ce209593ba1faa853c8e6ed24e15",
+    "editable/carbine_kit.obj": "79a56076d6a33a10cb1fab3b30335164d0bef27afc381300f16698624204210a",
+    "models/caelum/inventory/cartridge_kits/shotgun_kit.md3": "03621069cc846526796adf6d576d8ce616591f38159f345775fffb269fa32d63",
+    "editable/shotgun_kit.obj": "7b3299a31dcb3a992c5a26ad56f5a185f76b63c29407d848f5820f5d5a32608a",
+    "editable/cartridge_kits.mtl": "7d3b53b0353412c0ae1fbfdd8650924e78b2c821c5a20bc74e9fd26b76f720f7",
+    "caelum/data/inventory_cartridge_kits.modeldef": "01e77148354a37e3bee96702a659657576260d3d84b1bce9eaf9eb8be8bd1e14"
+  }
+}
