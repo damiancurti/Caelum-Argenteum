@@ -1,0 +1,4 @@
+Model CaelumArmorPickup { Path "models/caelum/inventory/armor_torso" Model 0 "magic.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CAMA A 0 0 }
+Model CaelumArmorPickup { Path "models/caelum/inventory/armor_torso" Model 0 "light.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CALI A 0 0 }
+Model CaelumArmorPickup { Path "models/caelum/inventory/armor_torso" Model 0 "medium.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CMAR A 0 0 }
+Model CaelumArmorPickup { Path "models/caelum/inventory/armor_torso" Model 0 "heavy.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CAHV A 0 0 }

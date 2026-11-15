@@ -1,6 +1,55 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.69** - 2026-11-15.
+Documentation version: **5.17.70** - 2026-11-15.
+
+## 5.17.70 - Native torso armor drops (#783)
+
+Four original cuirasses replace only CAMA, CALI, CMAR and CAHV in the torso
+slot of CaelumArmorPickup. Magic/light/medium/heavy retain three qualities each,
+for twelve cases. The effective references remain ca_armor_magic.png,
+ca_armor_light.png, ca_armor_medium.png and ca_armor_heavy.png. Inventory art,
+protection, scale/collision, size, weight, durability, crafting and persistence
+are unchanged. Earlier helmet/hand/foot models and the medium Anima potion's
+separate CAMD identity are retained. These drops do not deliver worn fitting.
+
+Editable DESIGN/OBJ/MTL and provenance: inventory_models_647/armor_torso.
+Original closed, thin-walled cuirasses have real neck, waist and arm apertures;
+fixed plates, shoulders, belts, trim, rivets, scarf and cape follow the owned
+icon distinctions. Independent checks verify 135,452 vertices, 53,620 triangles,
+119 closed components, 115 fixed attachments and 80 opening rays. Twenty-one
+exports repeat byte-for-byte. No shared geometry generator changed.
+
+One new opaque cream/beige fur material, fur.png, was generated with built-in
+image_gen and copied unchanged to the source and runtime folders. FUR_BRIEF.json
+and FUR_PROMPT.json record the brief, exact prompt, tool and original path.
+Its SHA256 is e677512823f47e67853da3384d24be09fde84862066a35221da8632b2c1d2329.
+All existing raster pixels remain unchanged. Red/navy icon samples retain their
+original minimum alpha 253/252. The new fur is fully opaque.
+
+Initial checks corrected shell-rim UV collapse and a cape witness on its boundary.
+Native review improved plate/material separation, trim, rivets and the light strap;
+rounded clumps and then pointed tufts were replaced with a continuous curved fur
+mantle. Superseded evidence is retained. Twenty inspected detail/underside views
+cover the final models: ten new medium/heavy views, and ten earlier magic/light
+views reused only after their final MD3 bytes were proven identical. The final
+overview was inspected. Shared simplified cuirass outlines, disc-like shoulders,
+faceted trim, static cape/scarf, repeated matte materials, simplified fur patches,
+interpreted backs and omitted ornament remain author-review qualifications.
+
+GZDoom 4.14.2 passes 1,011 native pickup/equip/toss and old-save/reload/rollback
+assertions, plus 236 visual/control assertions. A 157-assertion regression checks
+the earlier medium armor slots and separate Anima potion; its overview was
+inspected. Prepared API transactions do not prove ordinary menus, crafting,
+manual handling or author acceptance.
+
+Both twelve-object, 700-tic presentation scenes were inspected. Sprite/model
+queue rates were 1129.21/1063.21 per second, p95 1.071/1.108ms
+and p99 1.315/1.231ms. This single sequential pair measures queue
+intervals, not GPU/display latency, repeatability or campaign performance.
+Projected footprints differ. Evidence: assets/validation_v5_17_70/evidence/SUMMARY.json.
+CA783-TORSO-ARMOR-01 remains pending. All sixteen regular armor states now have
+model candidates; ancestor-only pickup bindings still need audit. Other characters,
+modular equipment and the wider V5.16 request remain unfinished.
 
 ## 5.17.69 - Native foot armor drops (#781)
 

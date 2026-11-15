@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.69** - 2026-11-15.
+Documentation version: **5.17.70** - 2026-11-15.
+
+## 5.17.70 - #783 torso armor delivered; author review pending
+
+Four cuirasses cover twelve cases. Twenty-one exports repeat; 119 closed parts,
+115 attachments and 80 opening rays pass. Native continuity: 1,011; visual: 236;
+earlier armor/Anima regression: 157. Twenty inspected views cover the final models;
+ten reused views have byte-identical model evidence. Evidence:
+assets/validation_v5_17_70/evidence/SUMMARY.json. Author check: CA783-TORSO-ARMOR-01.
+Next: audit ancestor-only pickup bindings and final inventory state coverage.
+Other characters, modular fitting and wider V5.16 remain unfinished.
 
 ## 5.17.69 - #781 foot armor delivered; author review pending
 

@@ -1,0 +1,17 @@
+{
+  "sha256": "1c883a38c616428c38f2655d0ad7628afd1f0f0bc95e78f0ae28068108956963",
+  "entries": 18557,
+  "added": [
+    "caelum/data/inventory_armor_torso.modeldef",
+    "models/caelum/inventory/armor_torso/fur.png",
+    "models/caelum/inventory/armor_torso/heavy.md3",
+    "models/caelum/inventory/armor_torso/light.md3",
+    "models/caelum/inventory/armor_torso/magic.md3",
+    "models/caelum/inventory/armor_torso/medium.md3"
+  ],
+  "changed": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ]
+}

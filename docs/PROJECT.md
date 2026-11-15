@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.69** - 2026-11-15.
+Documentation version: **5.17.70** - 2026-11-15.
+
+## 5.17.70 - Four torso armor world models (#783)
+
+Four original cuirasses cover twelve native cases and complete model candidates
+for the sixteen regular armor states. One new generated fur material is recorded
+with its exact prompt; all prior pixels remain unchanged. Twenty-one exports
+repeat; topology, attachments and apertures pass. Native continuity: 1,011;
+visual/control: 236; earlier armor/Anima regression: 157. Twenty inspected views
+cover final models, including ten reused after byte-identical model verification.
+ASSETS records measurements and visual limitations. CA783-TORSO-ARMOR-01 awaits
+author review. Ancestor-only bindings, other characters, modular fitting and
+the wider V5.16 request remain unfinished.
 
 ## 5.17.69 - Four foot armor world models (#781)
 
