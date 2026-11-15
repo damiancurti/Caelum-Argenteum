@@ -1,0 +1,6 @@
+Model CaelumWeaponPickup { Path "models/caelum/inventory/bladed_weapons" Model 0 "sword.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSWD A 0 0 }
+Model CA_LimboRonnieSword { Path "models/caelum/inventory/bladed_weapons" Model 0 "sword.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSWD A 0 0 }
+Model CaelumM01SwordPickup { Path "models/caelum/inventory/bladed_weapons" Model 0 "sword.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSWD A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/bladed_weapons" Model 0 "dagger.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CDAG A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/bladed_weapons" Model 0 "machete.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CMAC A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/bladed_weapons" Model 0 "greatsword.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CGRS A 0 0 }
