@@ -1,0 +1,91 @@
+{
+  "staff": [
+    [
+      "Detached attachment scroll-1 -> head",
+      "Detached attachment scroll1 -> head"
+    ],
+    {
+      "closed_components": 16,
+      "fixed_attachment_witnesses": 15,
+      "connected_components": 16,
+      "opening_probes": 0,
+      "opening_rays": 0,
+      "native_triangles": 8352
+    }
+  ],
+  "bell": [
+    [],
+    {
+      "closed_components": 7,
+      "fixed_attachment_witnesses": 6,
+      "connected_components": 7,
+      "opening_probes": 2,
+      "opening_rays": 10,
+      "native_triangles": 4392
+    }
+  ],
+  "statuette": [
+    [
+      "Detached attachment sleeve-1 -> sleeve-1",
+      "Detached attachment hand-1 -> sleeve-1",
+      "Detached attachment robe_fold-1 -> robe",
+      "Detached attachment sleeve1 -> sleeve1",
+      "Detached attachment hand1 -> sleeve1",
+      "Detached attachment robe_fold1 -> robe"
+    ],
+    {
+      "closed_components": 16,
+      "fixed_attachment_witnesses": 15,
+      "connected_components": 16,
+      "opening_probes": 0,
+      "opening_rays": 0,
+      "native_triangles": 8112
+    }
+  ],
+  "seal": [
+    [
+      "Detached attachment oval_frame -> oval_frame",
+      "Detached attachment oval_frame -> pedestal",
+      "Detached attachment crown-1 -> rear_neck",
+      "Detached attachment crown1 -> rear_neck",
+      "Model exceeds original sprite envelope"
+    ],
+    {
+      "closed_components": 8,
+      "fixed_attachment_witnesses": 7,
+      "connected_components": 8,
+      "opening_probes": 0,
+      "opening_rays": 0,
+      "native_triangles": 4872
+    }
+  ],
+  "censer": [
+    [
+      "Detached attachment foot -> shell",
+      "Detached attachment lid_knob -> shell"
+    ],
+    {
+      "closed_components": 6,
+      "fixed_attachment_witnesses": 5,
+      "connected_components": 6,
+      "opening_probes": 4,
+      "opening_rays": 20,
+      "native_triangles": 16512
+    }
+  ],
+  "scepter": [
+    [
+      "Detached attachment head -> head",
+      "Detached attachment scroll-1 -> head",
+      "Detached attachment scroll1 -> head"
+    ],
+    {
+      "closed_components": 16,
+      "fixed_attachment_witnesses": 15,
+      "connected_components": 16,
+      "opening_probes": 0,
+      "opening_rays": 0,
+      "native_triangles": 8352
+    }
+  ]
+}

@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.55** - 2026-11-15.
+Documentation version: **5.17.56** - 2026-11-15.
+
+## 5.17.56 - Native magical material drops (#755)
+
+Six models cover the remaining magical crafting bases and eighteen tier cases.
+Closed geometry, seventeen repeated outputs, 2,604 installed continuity checks
+and 494 visual/control checks pass. ASSETS records the visual refinements,
+qualified presentation measurements and remaining art limitations. Original
+gameplay and weapon/held states are unchanged. CA755-MAGIC-BASE-DROPS-01 retains
+author acceptance; other weapons, characters and V5.16 campaign are incomplete.
 
 ## 5.17.55 - Native Orb drop models (#753)
 

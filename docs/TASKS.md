@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.55** - 2026-11-15.
+Documentation version: **5.17.56** - 2026-11-15.
+
+## #755 - Six magical crafting bases (5.17.56)
+
+Staff36, bell37, statuette39, seal44, censer89 and scepter90 now have closed native
+drop meshes. Seventeen deterministic outputs, 2,604 installed continuity checks
+and 494 visual/control checks pass. CA755-MAGIC-BASE-DROPS-01 retains visual and
+ordinary gameplay acceptance. Their weapon counterparts remain separate work.
+The #736 modular style proposals still need the requested author visual review;
+remaining bestiary models, weapon drops and V5.16 campaign work continue.
 
 ## #753 - Baseless Orb world drops (5.17.55)
 

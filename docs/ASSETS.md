@@ -1,6 +1,59 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.55** - 2026-11-15.
+Documentation version: **5.17.56** - 2026-11-15.
+
+## 5.17.56 - Native magical crafting bases (#755, parent #647)
+
+Six original meshes cover CaelumMaterialPickup states CSTF/CBEL/CSTA A and
+M044/M089/M090 A: staff36, bell37, statuette39, seal44, censer89 and scepter90.
+All eighteen existing material/tier cases keep their shared world appearance.
+Icons, scale/collision, weights, quantities, recipes, provenance/contamination
+and persistence are unchanged. This patch does not replace weapon or held
+states or enable the rejected #479 procedural support models.
+
+Editable sources and OBJ/MTL live in
+assets/source/art/inventory_models_647/magic_bases. A new opaque 3x3 material
+atlas is copied byte-for-byte from image_gen.imagegen with its exact prompt,
+hash and provenance. Original painted designs remain unchanged. Shafts,
+ornament, cloth, sculpted figure, blank seal face, bell cavity/clapper and the
+censer's 48 apertures are volumetric. The export contains 31,309 vertices,
+50,896 triangles and 72 closed components. Independent winding, volume, genus,
+66 attachment witnesses, 30 cavity rays, quantized native/editable triangles,
+floor contact, icon envelopes, opacity and per-triangle atlas-region checks
+pass. Seventeen outputs, including the preview package, repeat byte-for-byte.
+Regenerate with python assets/generators/generate_inventory_magic_bases_models.py
+--output build/magic-bases --install.
+
+Native review refined pointed crests, facial/robe detail and aperture size.
+Dark cavity material separates the bell/censer interiors; duplicated lip
+vertices prevent atlas interpolation through unrelated tiles. The seal's
+radial cap seam was replaced with planar UVs. Thirty visual03 detail/underside
+views were inspected; the five revised seal views and floor overview were
+checked in the final installed continuity run. The other five mesh bytes are
+unchanged. Simplified facial sculpture, static ribbons, strong painted ornament,
+subdued depth in ambient lighting and newly interpreted hidden surfaces remain
+author-review qualifications. Existing 2D approval is not native3D acceptance.
+
+The installed package passes 2,604 native assertions: 487 baseline, 548 old-save
+adoption, 487 fresh, 541 reload and 541 rollback. Pickup/toss, split/merge,
+identity/tier, weight, metadata, original icon/scale and prepared Box/quest
+guards pass. Visual03 also passes 494 fresh/control checks. Ordinary menus and
+real crafting remain author checks. All 18,498 package
+entries match src; only eight new resources, MODELDEF and two release diagnostic
+strings differ from #753.
+
+One sequential 700-tic six-object sprite/model pair records
+686.29/676.16 queue presents/s, p95
+3.1130/3.4596 ms and p99
+5.2976/5.2405 ms.
+Both scenes were inspected. Windows 11, Ryzen 9 5950X, RTX 3070 Ti, GZDoom 4.14.2,
+Vulkan 1280x720, uncapped/vsync off, background unpaused/audio5%. Queue timing
+and unequal projected footprints do not establish GPU/display timing,
+repeatability or campaign/crowd performance.
+
+Evidence: assets/validation_v5_17_56/evidence/SUMMARY.json.
+CA755-MAGIC-BASE-DROPS-01 retains author art and ordinary gameplay acceptance.
+Other weapons, characters, modular equipment and V5.16 campaign remain pending.
 
 ## 5.17.55 - Native baseless Orb drops (#753, parent #647)
 

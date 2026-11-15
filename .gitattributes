@@ -1019,3 +1019,13 @@ assets/validation_v5_17_42/evidence/** -text -diff
 /assets/validation_v5_17_55/evidence/** -text -diff
 /src/models/caelum/inventory/orbs/** -text -diff
 /src/caelum/data/inventory_orbs.modeldef text eol=lf
+
+# #755 native magical crafting bases and evidence.
+/assets/generators/*inventory_magic_bases_models.py text eol=lf
+/assets/source/art/inventory_models_647/magic_bases/** text eol=lf
+/assets/source/art/inventory_models_647/magic_bases/**/*.png binary
+/assets/validation_v5_17_56/*.py text eol=lf
+/assets/validation_v5_17_56/*.zs text eol=lf
+/assets/validation_v5_17_56/evidence/** -text -diff
+/src/models/caelum/inventory/magic_bases/** -text -diff
+/src/caelum/data/inventory_magic_bases.modeldef text eol=lf
