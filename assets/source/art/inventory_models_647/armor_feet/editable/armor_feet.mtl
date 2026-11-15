@@ -1,0 +1,18 @@
+newmtl steel
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/weapon_components/metals.png
+newmtl dark_iron
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/weapon_components/metals.png
+newmtl leather
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/articulated_weapons/leather.png
+newmtl gold
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/armor_helmets/gold.png
+newmtl lining
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl blue
+Kd 1 1 1
+map_Kd src/graphics/caelum/icons/ca_boots.png

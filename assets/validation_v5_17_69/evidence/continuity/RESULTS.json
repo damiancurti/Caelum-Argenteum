@@ -1,0 +1,77 @@
+{
+  "issue": 781,
+  "kind": "armor_feet",
+  "scope": "Native pickup/toss, quantity and saved ownership for armor_feet; no normal menu or author acceptance.",
+  "baseline_sha256": "8fc5cd6b16c0ca5ed14fd30ce0a92cae79242dbe617cb69ff66193ab3063889b",
+  "runtime_sha256": "7679bbbf25ab7569967b6e027a02a6fd2395afc2729afe6d71c02c221e71eb64",
+  "model_sha256": null,
+  "fixture_sha256": "e12c51523e746fc6d25b94f5c1c248eb85631e4afa9038773075bd0804f3416f",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 229
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 189
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 229
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 182
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 182
+    }
+  ],
+  "captures": {
+    "baseline.png": "b20ee70bc033af6f3ab8dd5848f5e3bb26fed6c44fd8299023b46de3acc90ddd",
+    "candidate-0.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+    "candidate-1.png": "5ed291eacdff218b5c63034b7fd3085a53adf634af8700b63916e34aceb7bb0a",
+    "candidate-2.png": "8229b9e1c5d6aca2a8d0445c314ef506708856cd7b8d3e95f363c64298692e1b",
+    "candidate-3.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+    "candidate-5.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+    "candidate-6.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+    "candidate-7.png": "26f21e0eb8affdaa111b684e7ad76b406935e3562053be817176198ba0d813be",
+    "detail-0-0.png": "c4673f0cd60c58ff22d1b62b88f902d5c88a54b36046765ebfe8b6dd07ec4a8e",
+    "detail-0-160.png": "4cb2835487421088fe4cbd477eafa0c022133638486ca8abde647483720791e2",
+    "detail-0-225.png": "7e26de4262f5e1781a9f4fc157ab0f89695f01c014590404f7d8a79771449d48",
+    "detail-0-270.png": "fe2897b5a1bc8b0ce4490cb90f7b77c437d41002c9279802eb29229930678122",
+    "detail-0-90.png": "1941dd0bf1ddcc7f948edc06ed2339705c46b71786e773ca7ed2dc0cce168f05",
+    "detail-1-0.png": "3ce72cdfc7c4d5d945b0ab2ff54a8ce98aca387f45adbbcc907d9326c2d40303",
+    "detail-1-160.png": "70163b41f9522e763e7147a1445fe125f83db3c414f1db27db7897a2f3d57ef1",
+    "detail-1-225.png": "7b30e0df41da6584df5ab5b6b790f05a7b6ae4df38b08b5d3a441dbb5cb6c775",
+    "detail-1-270.png": "260106803cfe2535ba39bb8ebe98bdaa52a4c8204fcb294bbeafb46526e163c0",
+    "detail-1-90.png": "0e3cd8f6287444be3020bd318c6a71db0381a1c47f63c64aade3eea1a993d3eb",
+    "detail-2-0.png": "f7828ba51a72afe44c996f0a3b6b7db2a20103176a1a0c350cc0370b13cf5f2d",
+    "detail-2-160.png": "b238353e6a4eb34129a5f85ae9d031bb6debbb8abab2ee7169afffb8654e39de",
+    "detail-2-225.png": "efa00ce4f6a7a79d0fe3465b1fda0097575ba279f78e88970d9faa37c1eac084",
+    "detail-2-270.png": "596bc7aaee5f85ac1bd15b02a8490bed182a7baa3e872a9b42b7fcfc501b8350",
+    "detail-2-90.png": "a215a08ecb8c87d2539f6c54e6687ddd44a164cf2a7f672866ae3c7bd3892842",
+    "detail-3-0.png": "b76f1b07508dd3d5f7d24a44e4d831dfbbc163377489873810dfaac8cb170980",
+    "detail-3-160.png": "127fade2776201122ab8778132e4512eacd92a8f8cc768b9a82fb5c17e39866b",
+    "detail-3-225.png": "98a555f71e6ce9ab1630bc3a90df548c1477b04ff2508a3638e7356fe324b5e0",
+    "detail-3-270.png": "e0320e448abe124dd7515874f807c2d1f313bcf84adcf481073a72a153f02bfb",
+    "detail-3-90.png": "b8ebad11b512ed46e394d6c0a64464124fc8fd391289ae8b9f06abe33b7bd209"
+  }
+}

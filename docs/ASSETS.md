@@ -1,6 +1,48 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.68** - 2026-11-15.
+Documentation version: **5.17.69** - 2026-11-15.
+
+## 5.17.69 - Native foot armor drops (#781)
+
+Four original boot pairs replace only CBOM, CBLT, CBMD and CBHV in the foot
+slot of CaelumArmorPickup. Magic/light/medium/heavy retain three qualities each,
+for twelve cases. Effective references are the unchanged ca_boots.png,
+ca_boots_light.png, ca_boots_medium.png and ca_boots_heavy.png aliases.
+Inventory art, protection, scale/collision, size, weight, durability, crafting
+and persistence are unchanged. Clothing footwear retains its own models.
+These world drops do not deliver worn modular fitting.
+
+Editable DESIGN/OBJ/MTL and provenance: inventory_models_647/armor_feet.
+The original owned hollow footwear anatomy supplies soles, heels and lining.
+New fixed toe caps, straps, open buckle frames/pins, curved shin plates, gold
+trim and blue cloth adapt the existing armor references. All raster pixels
+remain unchanged; the blue sample comes from the original magic-boot icon.
+Independent checks verify 121,020 vertices, 53,432 triangles, 120 closed
+components, 112 fixed attachments, 40 opening rays, eight shaft-depth probes
+and eight lining-visibility probes. Seventeen exports repeat byte-for-byte.
+
+Initial geometry exceeded the magic reference width by 2.65 source-scale pixels;
+a 3% horizontal fit corrected the envelope without changing actor scale/collision.
+Native review replaced solid light buckles with open frames and improved curved
+shin-plate subdivisions/clearance and raised gold attachment. Superseded evidence
+is retained. All twenty final detail/underside views and the overview were inspected.
+Simplified elongated profiles, rounded toe caps, understated leather straps,
+faceted plate edges, static flat cloth, repeated materials, matte shading,
+interpreted backs/soles and omitted fine ornament require author review.
+
+GZDoom 4.14.2 passes 1,011 native pickup/equip/toss and old-save/reload/rollback
+assertions, plus 236 visual/control assertions. Another 236-assertion hand-armor
+regression preserves the earlier bindings in the same class; its overview was
+inspected. These prepared API transactions do not prove ordinary menus,
+crafting, manual handling or author acceptance.
+
+Both twelve-object, 700-tic presentation scenes were inspected. Sprite/model
+queue rates were 1157.23/1098.11 per second, p95 1.037/1.065 ms
+and p99 1.288/1.163 ms. This single sequential pair measures queue
+intervals, not GPU/display latency, repeatability or campaign performance.
+Projected footprints differ. Evidence: assets/validation_v5_17_69/evidence/SUMMARY.json.
+CA781-FOOT-ARMOR-01 remains pending. Four torso armor states, ancestor-only
+pickup bindings, other characters, modular equipment and V5.16 remain unfinished.
 
 ## 5.17.68 - Native hand armor drops (#779)
 

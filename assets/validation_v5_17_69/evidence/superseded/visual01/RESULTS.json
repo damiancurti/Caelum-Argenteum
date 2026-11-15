@@ -1,0 +1,48 @@
+{
+  "issue": 781,
+  "kind": "armor_feet",
+  "scope": "Native pickup/toss, quantity and saved ownership for armor_feet; no normal menu or author acceptance.",
+  "baseline_sha256": "8fc5cd6b16c0ca5ed14fd30ce0a92cae79242dbe617cb69ff66193ab3063889b",
+  "runtime_sha256": "8fc5cd6b16c0ca5ed14fd30ce0a92cae79242dbe617cb69ff66193ab3063889b",
+  "model_sha256": "3f6b6bca86d34511b19c7fcd6be6e5e79cacf2dce38a6940ce6105a86b9132df",
+  "fixture_sha256": "e12c51523e746fc6d25b94f5c1c248eb85631e4afa9038773075bd0804f3416f",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 236
+    }
+  ],
+  "captures": {
+    "candidate-0.png": "d07aefe2c29ab45226a449b5d5e1d1bf569cc94c26238551b253798de721f820",
+    "candidate-1.png": "545211b713537d5be60399a0ed2c1a8cf0450c01dc0b8051e28f91ac1d2a4f9b",
+    "candidate-2.png": "857394bb204e5184671cc4433433408fe15ea6e105a7f2cc6b5d7e429db2eca4",
+    "candidate-3.png": "d07aefe2c29ab45226a449b5d5e1d1bf569cc94c26238551b253798de721f820",
+    "candidate-5.png": "d07aefe2c29ab45226a449b5d5e1d1bf569cc94c26238551b253798de721f820",
+    "candidate-6.png": "d07aefe2c29ab45226a449b5d5e1d1bf569cc94c26238551b253798de721f820",
+    "candidate-7.png": "3d3cdba80f82472172fa89e0a05d3ecf658248ed958f269673a4b58514f7c805",
+    "detail-0-0.png": "c4673f0cd60c58ff22d1b62b88f902d5c88a54b36046765ebfe8b6dd07ec4a8e",
+    "detail-0-160.png": "4cb2835487421088fe4cbd477eafa0c022133638486ca8abde647483720791e2",
+    "detail-0-225.png": "7e26de4262f5e1781a9f4fc157ab0f89695f01c014590404f7d8a79771449d48",
+    "detail-0-270.png": "fe2897b5a1bc8b0ce4490cb90f7b77c437d41002c9279802eb29229930678122",
+    "detail-0-90.png": "1941dd0bf1ddcc7f948edc06ed2339705c46b71786e773ca7ed2dc0cce168f05",
+    "detail-1-0.png": "e2806f4c950e894147e1f1b0bcdca9513f71e9f10ab2753a0564084558a09282",
+    "detail-1-160.png": "b1017948038e909e4ebb9f959bf18c2b4d08b568a72c91a1416f4664e2218d29",
+    "detail-1-225.png": "0f20cc53c7a15ccfc99676f1d06de311bc03d1f47276b9c062d0bdbe360d4002",
+    "detail-1-270.png": "260106803cfe2535ba39bb8ebe98bdaa52a4c8204fcb294bbeafb46526e163c0",
+    "detail-1-90.png": "132cf2a6aceae669d30600acd98f899bd31668058d4e28e03423f42ff9c84e37",
+    "detail-2-0.png": "ae64c5a279b47f51f5ddb27d3f40247b7e491bc666f9774f803bec8337240001",
+    "detail-2-160.png": "466961d961b96caeea30fa6197af752416c483b3c9fe4df5855e1e500c2646f9",
+    "detail-2-225.png": "57aa27c3d80f466a2a6c5c55209c12a47fa6541d8d36553d9d7e826b1340a99f",
+    "detail-2-270.png": "bb580d3d17888483e0236b74719cdafe1f99e91b24b7156ae9b0f54fb36bab5b",
+    "detail-2-90.png": "0436370f683f3c1b49943503a2f32869765ad4476871bafd959b23df530f8153",
+    "detail-3-0.png": "ce040df506a581ce5eaf3431ca094b324a99ad9899ff6df57f08dbbd14f5e5b8",
+    "detail-3-160.png": "ccde469503cfb7fc03d56faf296abc788474356246af0df9bc4221c478673cfa",
+    "detail-3-225.png": "6de0bcb31573a92ae9a4b9b201223292dfb5853314abc0a8cbdce55dd099e40e",
+    "detail-3-270.png": "cfbd54edf0bc938d26fa19af161682ecf6216ee4c27b919a6e222fbf73aed4c4",
+    "detail-3-90.png": "1db7ac7b8d865e524e088c30dcf2d99f76a34306cea8aa590dae373c568aae43"
+  }
+}
