@@ -4817,3 +4817,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/quadruped_combat.modeldef"
 #include "caelum/data/teju_combat.modeldef"
 #include "caelum/data/kasogonaga_combat.modeldef"
+#include "caelum/data/apparition_combat.modeldef"

@@ -1,0 +1,21 @@
+{
+  "sha256": "7ad0cc7fa0027113ce87bb1d8b1e2e45365f1b3c96a522428f621f4ff6355d2a",
+  "source_entries": 18580,
+  "exact_source_bytes": true,
+  "baseline_sha256": "08dec7bb57872676b07e4b304b2d30c1dbd0249f15881c1629bc6e79d8018dc2",
+  "added": [
+    "caelum/data/apparition_combat.modeldef",
+    "models/caelum/folklore/apparitions/chancho_lata.md3",
+    "models/caelum/folklore/apparitions/dark.png",
+    "models/caelum/folklore/apparitions/iris.png",
+    "models/caelum/folklore/apparitions/materials.png",
+    "models/caelum/folklore/apparitions/mulanima.md3"
+  ],
+  "changed": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "removed": [],
+  "unrelated_runtime_bytes_identical": true
+}

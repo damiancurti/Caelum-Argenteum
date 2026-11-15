@@ -1,6 +1,17 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.76** - 2026-11-15.
+Documentation version: **5.17.77** - 2026-11-15.
+
+## 5.17.77 - Native apparition quadrupeds (#797, 2026-11-15)
+
+Added distinct native Mulanima and Chancho de Lata, editable sources, inherited
+combat-state bindings, original atlas and retained provenance. Twelve exports
+repeat; geometry checks pass172 closed components,170 rooted witnesses and1,360
+posed contacts. Native continuity passes230 assertions and actions/loot134.
+ASSETS records reviewed views, bounded timing and candidate limitations. Evidence:
+assets/validation_v5_17_77/evidence/SUMMARY.json. New flame-tail UV overflow was
+corrected; #799 tracks the related older Ao Ao/Kasogonaga repair and shared guard.
+CA797-APPARITIONS-01 originates here and remains pending. No prior test was removed.
 
 ## 5.17.76 - Kasogonaga native candidate (#795, 2026-11-15)
 

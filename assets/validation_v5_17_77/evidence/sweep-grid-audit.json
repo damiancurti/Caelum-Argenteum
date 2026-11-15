@@ -1,0 +1,21 @@
+[
+  {
+    "path": "assets/source/art/kasogonaga_795/kasogonaga.json",
+    "shapes": [
+      "back_lock_0",
+      "back_lock_1",
+      "back_lock_2",
+      "back_lock_3",
+      "back_lock_4",
+      "back_lock_5"
+    ]
+  },
+  {
+    "path": "assets/source/art/quadrupeds_787/ao_ao.json",
+    "shapes": [
+      "left_curled_horn",
+      "right_curled_horn",
+      "short_tail"
+    ]
+  }
+]

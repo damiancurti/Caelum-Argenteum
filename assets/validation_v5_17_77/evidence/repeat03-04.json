@@ -1,0 +1,18 @@
+{
+  "files": 12,
+  "all_byte_identical": true,
+  "sha256": {
+    "manifest.json": "52b06061bcd4a4e9db7714711e3fd9f96187719e4b263ac59aedeccf5a04671d",
+    "preview.pk3": "a92db540bbb6107d698c834bc492c852b406aafcc88cd7e8afa10effc8ce2abc",
+    "editable/chancho_lata.mtl": "fb37701d541bc6275e3c8a65ab5749d401b62f97e43468d340fc1b2e995b4084",
+    "editable/chancho_lata.obj": "ed53b835b0e6fc40ee24fd085db848316ed165d53f6c0bf71372229b0db1ea4f",
+    "editable/mulanima.mtl": "fb37701d541bc6275e3c8a65ab5749d401b62f97e43468d340fc1b2e995b4084",
+    "editable/mulanima.obj": "99ab9d6808e9a4f6f8aef8d46ad638aef3e0021e191da361e331d4105abde665",
+    "caelum/data/apparition_combat.modeldef": "5daa5ac100de6404f0c6d4e375d405a6d251d5ecdc596500c1b198f9cb634878",
+    "models/caelum/folklore/apparitions/chancho_lata.md3": "168ff703b54d1e0a33f62ded23248efdf0cff7d87d42150669fa71197a99e77c",
+    "models/caelum/folklore/apparitions/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "models/caelum/folklore/apparitions/iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+    "models/caelum/folklore/apparitions/materials.png": "e4dde1a5fc04882282444f42d151c528859ea20c412dfefef95005a6146c26a0",
+    "models/caelum/folklore/apparitions/mulanima.md3": "7da37acb954a911eab045d0770d034478718752441a54dc21b811853827f1af7"
+  }
+}

@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.76** - 2026-11-15.
+Documentation version: **5.17.77** - 2026-11-15.
+
+## 5.17.77 - Two apparition candidates; UV follow-up remains (#797/#799)
+
+Mulanima and Chancho de Lata have distinct native models with closed anatomy,
+deterministic exports and364 native continuity/action/loot assertions. Evidence:
+assets/validation_v5_17_77/evidence/SUMMARY.json. CA797-APPARITIONS-01 retains
+art/combat review for the consolidated terminal. Next, repair nonintegral swept
+UV grids in Ao Ao/Kasogonaga and add the shared guard under #799. Then continue
+regional views, remaining bestiary, named/modular characters and V5.16 work.
+Campaign gaps and siege rendering remain unresolved; no author acceptance occurs
+until the requested final handoff.
 
 ## 5.17.76 - Kasogonaga candidate; author review pending (#795)
 

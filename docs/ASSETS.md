@@ -1,6 +1,59 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.76** - 2026-11-15.
+Documentation version: **5.17.77** - 2026-11-15.
+
+## 5.17.77 - Native mule and plated-boar apparitions (#797)
+
+CaelumBestiary029/030 now use distinct editable native candidates from the owned
+Mulanima and Chancho de Lata concepts. Mulanima has a dark equine torso/neck,
+downward muzzle, upright long ears, four undivided hooves and mane/tail ember
+forms. Chancho de Lata has a plated torso and snout, rivets, pointed ears,
+upward tusks, cloven hooves and a curled metal tail. Closed radial shell patches
+give the plates actual thickness. Geometry, hierarchy, materials, contacts,
+animation controls and portable OBJ/MTL are in assets/source/art/apparitions_797.
+The original built-in image_gen nine-cell atlas is unchanged; its exact prompt
+and original path are in MATERIALS_PROMPT.json. Owned quadruped motion, Ao Ao
+limb topology and iris/dark pixels retain provenance.
+
+- mulanima: 11,862 vertices, 21,172 triangles, 48 closed components, 47 rooted witnesses and 376 independent posed contacts
+- chancho_lata: 20,392 vertices, 32,184 triangles, 124 closed components, 123 rooted witnesses and 984 independent posed contacts
+
+Both models cover23 inherited combat frames with floor support and no collapsed
+native triangles. Twelve artifacts regenerate byte-identically. The existing
+provisional Mandinga behavior, collision, state timing, scale policy, statistics,
+loot, identity and save fields remain unchanged. Ember shapes add no flame/light
+system or damage; metal panels add no armor bonus. Conceptual metre sizes are
+not adopted, and no campaign encounter or apparition power is added.
+
+The18,580-entry tested package matches src exactly; all
+unrelated runtime bytes match5.17.76. Each species passes115 baseline/old-save/
+fresh/reload/rollback assertions. Joint action/loot/reload passes134 more, with
+nine actual cases including the existing Mandinga control:364 native assertions
+total. All46 pose captures contain their model. Final fronts/sides/rears,
+heads/tails, hooves/plates and selected locomotion, attack, pain and lying poses
+were inspected. Source refinements followed the first native review.
+
+An odd tessellation/repeat ratio initially put new flame-tail UVs beyond their
+atlas cell. Integral sampling repaired these new curves; the final checks pass.
+The bounded audit also found older Ao Ao/Kasogonaga curves requiring a separate
+#799 correction and shared validation guard before the final author handoff.
+
+One sequential700-tic sprite/model pair per species on Windows11 Pro26200,
+Ryzen9 5950X/32GB/RTX3070Ti, GZDoom4.14.2 Vulkan1280x720, uncapped/no VSync,
+background unpaused and5% audio observes:
+
+- mulanima/sprite: 1898.07 queue presents/s, p95 0.6238ms, p99 0.7691ms, maximum 1.0883ms
+- mulanima/model: 1832.79 queue presents/s, p95 0.6668ms, p99 0.7894ms, maximum 1.6027ms
+- chancho_lata/sprite: 1887.80 queue presents/s, p95 0.6770ms, p99 0.7835ms, maximum 1.1447ms
+- chancho_lata/model: 1817.32 queue presents/s, p95 0.6565ms, p99 0.7920ms, maximum 1.0833ms
+
+Queue timing does not establish GPU/display latency, repeatability, campaign or
+crowd budgets; sprite/model footprints differ. Siege performance is unresolved.
+Evidence: assets/validation_v5_17_77/evidence/SUMMARY.json.
+CA797-APPARITIONS-01 retains author review of anatomy, material readability,
+opaque ember forms, plate/tusk silhouettes and rigid fall/rest articulation.
+Native candidates cover25 of56 provisional classes;31 remain. Regional placement,
+other characters, modular fitting and V5.16 progression remain unfinished.
 
 ## 5.17.76 - Native Kasogonaga candidate (#795)
 

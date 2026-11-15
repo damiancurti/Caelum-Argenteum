@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.76** - 2026-11-15.
+Documentation version: **5.17.77** - 2026-11-15.
+
+## 5.17.77 - Two apparition model candidates (#797)
+
+Native Mulanima and Chancho de Lata replace only CaelumBestiary029/030 visual
+states. Twelve exports repeat; geometry and364 native continuity/action/loot
+assertions pass. ASSETS records source provenance, visual limits and qualified
+timing. CA797-APPARITIONS-01 remains pending consolidated author review.
+Candidates cover25 of56 provisional classes;31 remain. #799 repairs a newly
+identified atlas-cell issue in earlier Ao Ao/Kasogonaga curves before handoff.
+The full character/campaign batch remains incomplete.
 
 ## 5.17.76 - Kasogonaga model candidate (#795)
 
