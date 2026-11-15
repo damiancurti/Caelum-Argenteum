@@ -1,6 +1,55 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.60** - 2026-11-15.
+Documentation version: **5.17.61** - 2026-11-15.
+
+## 5.17.61 - Hatchet, axe, war axe and pickaxe drops (#765)
+
+Four original native handle/head assemblies replace CHAT, CAXE, CWAX and CPIK
+world drops in CaelumWeaponPickup. Ten cases retain the three existing
+qualities of hatchet4, axe7 and war axe11, and the single-quality pickaxe20.
+The #89 hybrid retains its left chopping blade, opposite curved mining point,
+wooden shaft and wrapped grip. Existing icons, first-person art/rest pose,
+shared quality appearance, item/tool rules, gathering behavior, durability,
+size, weight, scale/collision, recipes and saves remain unchanged.
+
+Editable sources and provenance: assets/source/art/inventory_models_647/axes.
+Portable OBJ/MTL sources reuse unchanged owned #723 metal, #761 wood,
+#647 leather and #755 red texture pixels. No raster editing or generation.
+Regenerate with python assets/generators/generate_inventory_axes_models.py
+--output build/axes --install. Sixteen outputs repeat byte-for-byte. The four
+models total 3,399 vertices and 4,800 triangles, with 37 closed components and
+33 independently verified attachment witnesses. Topology/winding, quantized
+native faces, noncollapsed UV triangles, opaque texture regions, original
+sprite envelopes and floor contact pass. The first mining-pick witness fell
+outside the curved prong despite overlapping solids; only that test-data
+point was moved into both volumes. Geometry and texture bytes did not change.
+
+All twenty native front, side, rear and raised underside detail views and the
+floor overview were inspected. Simplified heads/fittings, matte gray steel,
+repeating grain, warm grip colors, static wraps, standing pickup orientation
+and interpreted hidden surfaces remain author-review qualifications.
+Prior 2D approval does not establish native3D acceptance.
+
+Ten cases pass 845 installed continuity assertions: 191 baseline, 159 old-save
+adoption, 191 fresh, 152 reload and 152 rollback. The visual/control run passes
+198 checks. Native pickup/equip/unequip/toss, repickup, identity, essence,
+size, weight, durability, provenance and prepared Box/quest guards pass.
+Ordinary menus, combat, chopping/mining and crafting remain author checks.
+Package parity and bounded presentation evidence are recorded in
+assets/validation_v5_17_61/evidence/SUMMARY.json.
+
+One sequential 700-tic ten-object sprite/model pair records
+955.65/836.48 queue presents/s, p95
+1.2665/2.0292 ms and p99
+1.5576/2.4947 ms. Windows11, Ryzen9 5950X, RTX3070Ti, GZDoom4.14.2,
+Vulkan1280x720, uncapped/vsync off, background unpaused/audio5%. Both scenes
+were inspected. Unequal projected footprints and queue intervals do not prove
+GPU/display timing, repeatability or campaign/crowd performance. All
+18,519 packaged entries match src; only four new models, the binding
+definition, MODELDEF and two diagnostic release strings differ from #763.
+
+CA765-AXE-DROPS-01 retains author visual and ordinary gameplay review.
+Other weapons, characters, modular equipment and V5.16 remain unfinished.
 
 ## 5.17.60 - Sword, dagger, machete and greatsword drops (#763)
 

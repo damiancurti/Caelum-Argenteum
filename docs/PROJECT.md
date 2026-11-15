@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.60** - 2026-11-15.
+Documentation version: **5.17.61** - 2026-11-15.
+
+## 5.17.61 - Native axe/tool drops (#765)
+
+Four native hatchet, axe, war axe and pickaxe models cover ten existing
+quality cases. Sixteen deterministic outputs, independent geometry/UV
+checks, 845 native continuity assertions and 198 visual/control checks pass.
+Twenty detail views were inspected. ASSETS records art qualifications and
+bounded presentation evidence. CA765-AXE-DROPS-01 retains author acceptance;
+other weapons, characters, modular equipment and V5.16 remain unfinished.
 
 ## 5.17.60 - Native physical blade drops (#763)
 

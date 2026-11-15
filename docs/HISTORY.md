@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.60** - 2026-11-15.
+Documentation version: **5.17.61** - 2026-11-15.
+
+## 5.17.61 - Axe/tool drops (#765, 2026-11-15)
+
+Added four closed head/handle assemblies using unchanged owned textures and
+four exact state bindings. Corrected an attachment witness inside the curved
+mining pick without changing geometry. Sixteen deterministic outputs,
+independent geometry/UV checks, 845 continuity assertions and 198 visual/control
+checks pass. Twenty detail views and the floor overview were inspected.
+ASSETS records art/performance qualifications; evidence:
+assets/validation_v5_17_61/evidence/SUMMARY.json.
+CA765-AXE-DROPS-01 originates here and remains pending. No author check was
+accepted or removed. Broader3D and V5.16 remain incomplete.
 
 ## 5.17.60 - Physical blade drops (#763, 2026-11-15)
 
