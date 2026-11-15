@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.75** - 2026-11-15.
+Documentation version: **5.17.76** - 2026-11-15.
+
+## 5.17.76 - Kasogonaga model candidate (#795)
+
+An editable native anteater replaces only CaelumBestiary057 visual states.
+Save/rollback, animation, action and loot checks pass195 assertions; nine
+exports repeat. ASSETS records source provenance, geometry and bounded timing.
+CA795-KASOGONAGA-01 remains pending consolidated author review. Models cover23
+of56 provisional classes;33 remain. The full character/campaign batch is unfinished.
 
 ## 5.17.75 - Teju regional display (#793)
 

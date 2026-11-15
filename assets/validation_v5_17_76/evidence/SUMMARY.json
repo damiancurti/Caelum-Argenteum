@@ -1,0 +1,892 @@
+{
+  "issue": 795,
+  "parent_issue": 461,
+  "version": "5.17.76",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Editable anteater-like Kasogonaga for the existing CaelumBestiary057 native combat states. No new gameplay or regional placement.",
+  "runtime": {
+    "sha256": "08dec7bb57872676b07e4b304b2d30c1dbd0249f15881c1629bc6e79d8018dc2",
+    "source_entries": 18574,
+    "exact_source_bytes": true,
+    "baseline_sha256": "888114a6c08ae2e0df83cf726024c76eef571804e771ded312b9a7ae7c4c1405",
+    "added": [
+      "caelum/data/kasogonaga_combat.modeldef",
+      "models/caelum/folklore/kasogonaga/dark.png",
+      "models/caelum/folklore/kasogonaga/iris.png",
+      "models/caelum/folklore/kasogonaga/kasogonaga.md3",
+      "models/caelum/folklore/kasogonaga/materials.png"
+    ],
+    "changed": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "removed": [],
+    "unrelated_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_artifacts": 9,
+    "repeat_byte_identical": true,
+    "geometry": {
+      "kasogonaga": {
+        "closed_components": 75,
+        "attachment_witnesses": 74,
+        "rooted_components": 75,
+        "combat_frames": 23,
+        "collapsed_native_triangles": 0,
+        "native_pose_floor_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "independent_posed_attachment_checks": 592,
+        "attachment_frames": [
+          0,
+          10,
+          17,
+          22
+        ]
+      }
+    },
+    "models": {
+      "kasogonaga": {
+        "actor": "CaelumBestiary057",
+        "catalogue_id": "CA-FOLK-057",
+        "vertices": 17063,
+        "triangles": 29036,
+        "hierarchical_parts": 88,
+        "surfaces": [
+          {
+            "material": "iris",
+            "vertices": 184,
+            "triangles": 336
+          },
+          {
+            "material": "dark",
+            "vertices": 460,
+            "triangles": 832
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7178
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7136
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7142
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 6395
+          },
+          {
+            "material": "atlas",
+            "vertices": 21,
+            "triangles": 17
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -121.34737106875946,
+              -29.643529710448174,
+              0.0
+            ],
+            "max": [
+              98.8244262625282,
+              29.643529710448174,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -122.21622237139741,
+              -29.643529710448174,
+              0.0
+            ],
+            "max": [
+              97.12061961904456,
+              32.50946797991912,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -29.643529710448174,
+              0.0
+            ],
+            "max": [
+              98.8244262625282,
+              29.643529710448174,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -122.45445222231032,
+              -33.96311639876696,
+              0.0
+            ],
+            "max": [
+              97.78404379816837,
+              29.643529710448174,
+              100.30719892652546
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -29.643529710448174,
+              0.0
+            ],
+            "max": [
+              98.8244262625282,
+              29.643529710448174,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -122.45445222231032,
+              -29.643529710448174,
+              0.0
+            ],
+            "max": [
+              99.84288889245934,
+              33.96311639876696,
+              100.30719892652546
+            ]
+          },
+          {
+            "min": [
+              -122.45445222231032,
+              -33.96311639876696,
+              0.0
+            ],
+            "max": [
+              97.78404379816837,
+              29.643529710448174,
+              100.30719892652546
+            ]
+          },
+          {
+            "min": [
+              -122.45445222231032,
+              -29.643529710448174,
+              0.0
+            ],
+            "max": [
+              99.84288889245934,
+              33.96311639876696,
+              100.30719892652546
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -31.039333102322672,
+              0.0
+            ],
+            "max": [
+              103.42713898703079,
+              29.643529710448174,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -29.643529710448174,
+              0.0
+            ],
+            "max": [
+              104.66670293043563,
+              29.643529710448174,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -29.643529710448174,
+              0.0
+            ],
+            "max": [
+              89.20793327494319,
+              29.643529710448174,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -29.643529710448174,
+              0.0
+            ],
+            "max": [
+              103.42713898703079,
+              31.039333102322672,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -28.56219774472969,
+              0.0
+            ],
+            "max": [
+              98.27554385846186,
+              34.54338639082773,
+              102.03898989295269
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -27.245974629214995,
+              0.0
+            ],
+            "max": [
+              97.0638739869587,
+              46.14548950854334,
+              101.74429573654507
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -34.793320448885595,
+              0.0
+            ],
+            "max": [
+              95.56072950234176,
+              56.42341368617816,
+              91.21673413506376
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -42.50762251900379,
+              0.0
+            ],
+            "max": [
+              93.97538192390172,
+              61.774991900447915,
+              73.94493577012378
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -45.678585192591534,
+              0.0
+            ],
+            "max": [
+              92.7335836789924,
+              61.109581618626635,
+              64.38421339481829
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -46.06783508055135,
+              0.0
+            ],
+            "max": [
+              91.88105121916514,
+              58.352176969516435,
+              59.287059420896355
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -29.643529710448174,
+              0.0
+            ],
+            "max": [
+              102.02691815089595,
+              29.643529710448174,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -29.643529710448174,
+              0.0
+            ],
+            "max": [
+              98.8244262625282,
+              29.643529710448174,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -29.643529710448174,
+              0.0
+            ],
+            "max": [
+              96.69589629079042,
+              29.643529710448174,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -29.643529710448174,
+              0.0
+            ],
+            "max": [
+              98.8244262625282,
+              29.643529710448174,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -121.34737106875946,
+              -46.06783508055135,
+              0.0
+            ],
+            "max": [
+              91.88105121916514,
+              58.352176969516435,
+              59.287059420896355
+            ]
+          }
+        ],
+        "modeldef_scale": 1.652622208,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 130.16515375860152,
+        "maximum_authored_height": 102.03898989295269,
+        "source_sha256": "e18edcee3802d75dd9f88c51a7397789454e5be32501b099e359b33c303f7b72"
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 795,
+    "species": "kasogonaga",
+    "studio": false,
+    "runtime_sha256": "08dec7bb57872676b07e4b304b2d30c1dbd0249f15881c1629bc6e79d8018dc2",
+    "baseline_sha256": "888114a6c08ae2e0df83cf726024c76eef571804e771ded312b9a7ae7c4c1405",
+    "fixture_sha256": "e1c120f5cb6eda45bea8f82d4a86069c16224b99f4b77baab6e44299fc0b9eb8",
+    "model_overlay_sha256": null,
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "assertions": 16,
+        "expected_assertions": 16,
+        "errors": [],
+        "captures": {}
+      },
+      {
+        "phase": "old-save-model",
+        "exit_code": 0,
+        "passed": true,
+        "assertions": 16,
+        "expected_assertions": 16,
+        "errors": [],
+        "captures": {}
+      },
+      {
+        "phase": "fresh-model",
+        "exit_code": 0,
+        "passed": true,
+        "assertions": 51,
+        "expected_assertions": 51,
+        "errors": [],
+        "captures": {
+          "empty-view-0.png": "cc4b1e9b0647846e6d89f48eaaa85925a93afdf8bdf1a89240bc41a390e7dc31",
+          "empty-view-6.png": "85874da62a5d0dfd8f058dfa7ddb2c3e12b7029dbd8c09a9f991641e98bef8fd",
+          "empty.png": "cc4b1e9b0647846e6d89f48eaaa85925a93afdf8bdf1a89240bc41a390e7dc31",
+          "pose-00-idle.png": "1a79a9314512022bc1178ceb4c3817d0d947eefee053bfcae0d19e032cd3c872",
+          "pose-01-idle.png": "5daab9327f5f6ca540af72ab50c6461779b72dfa120225952f1061a30c55996f",
+          "pose-02-run.png": "1a79a9314512022bc1178ceb4c3817d0d947eefee053bfcae0d19e032cd3c872",
+          "pose-03-run.png": "b884c55bfac22fba62d495de3a6a926c2357898ab9119f6e73beddba79c5189e",
+          "pose-04-run.png": "1a79a9314512022bc1178ceb4c3817d0d947eefee053bfcae0d19e032cd3c872",
+          "pose-05-run.png": "eef689b1a8d80a3a3e264de2965ff69e879775234df7ba29c7e62611dd5b360a",
+          "pose-06-walk.png": "b884c55bfac22fba62d495de3a6a926c2357898ab9119f6e73beddba79c5189e",
+          "pose-07-walk.png": "eef689b1a8d80a3a3e264de2965ff69e879775234df7ba29c7e62611dd5b360a",
+          "pose-08-stun.png": "2d31eccf86bdbd7786169cbaf6965cbd6be36be6701ef765459295b37b12734c",
+          "pose-09-attack_prepare.png": "58f013bae7bdb49e200d3b8b2fbffe8f42a8226391d817939bf8305ffd1aed39",
+          "pose-10-attack_release.png": "68bf622373cd2a7167fe6b1db78f4e6281e6538213f60258dfb5c41ca733e58d",
+          "pose-11-pain.png": "43f7076eaf7d8d3c44fbf4087a366ada4a7e8386aaad49a0dab2dd9672fb84a6",
+          "pose-12-death.png": "c8f3b0ec51e1f427714e6e71685626b82d6119ddadb4ac9c8553257f7c4a309c",
+          "pose-13-death.png": "b2e2095c3728556a828e60bc66ac1051c3060a1faa3a002fff720457d0eb2c7e",
+          "pose-14-death.png": "afeb50326efeefd240cae8757eda1911996410c0d9c032e4c7d25f19739afcfd",
+          "pose-15-death.png": "a84ad60abf830d95c0d9174ce459a7fa738e31ea0ff0de4247ff5f43a6854cbf",
+          "pose-16-death.png": "9267214006d2595cbba7c5475160dc6b9d11f9dac9fd6161684714bc8aadad4e",
+          "pose-17-death.png": "aba7484954ea365d3e1a786dbbd3c0fe034f4dc182994761feebb49ffee6cf0f",
+          "pose-18-breath.png": "70ae4017ed6300ce6abc2664a50722836e59735f0be298931c746dd651de7bf1",
+          "pose-19-breath.png": "1a79a9314512022bc1178ceb4c3817d0d947eefee053bfcae0d19e032cd3c872",
+          "pose-20-breath.png": "f793bac5a97472ce416a4530081b5fa8b75cab30403f145f7bb45df147dae64f",
+          "pose-21-breath.png": "1a79a9314512022bc1178ceb4c3817d0d947eefee053bfcae0d19e032cd3c872",
+          "pose-22-rest.png": "aba7484954ea365d3e1a786dbbd3c0fe034f4dc182994761feebb49ffee6cf0f",
+          "view-front.png": "738d86b3f32e2dfdabf52c618ad4fdb8e20e1a7156fd0da4db8c91129a55382e",
+          "view-head-front.png": "3bf91f13f47edc57659ae7d676aca0922f4290673fbc799685f9958ba4994011",
+          "view-head-oblique.png": "900aaa371e545bdc05504978827b98ad84f3bcd8df9c833b0d8fb41f3ee9306c",
+          "view-lying-oblique.png": "aba7484954ea365d3e1a786dbbd3c0fe034f4dc182994761feebb49ffee6cf0f",
+          "view-rear.png": "f9264abc9c66e1a4d222c1c5f71c6d388de472d23903d7c12594362a2c5d9c93",
+          "view-side.png": "83f4d1480d4268f5e5356a4a3a92747d8531b598d225952c5787f8f67a6e5429",
+          "view-snout-detail.png": "7b343172a8b33636d4898a071fc2c8f22b4cc02f8597ec8b07867dd506e4aa9a",
+          "view-tail-detail.png": "133bcdc89901258c6575c6a22ba373b345c666842b5b7bdd03b04eba7de99713"
+        },
+        "visible_pose_pixels": {
+          "pose-00-idle.png": 7283,
+          "pose-01-idle.png": 7049,
+          "pose-02-run.png": 7283,
+          "pose-03-run.png": 7260,
+          "pose-04-run.png": 7283,
+          "pose-05-run.png": 7162,
+          "pose-06-walk.png": 7260,
+          "pose-07-walk.png": 7162,
+          "pose-08-stun.png": 7114,
+          "pose-09-attack_prepare.png": 7065,
+          "pose-10-attack_release.png": 7463,
+          "pose-11-pain.png": 7091,
+          "pose-12-death.png": 21399,
+          "pose-13-death.png": 19082,
+          "pose-14-death.png": 15534,
+          "pose-15-death.png": 14858,
+          "pose-16-death.png": 15611,
+          "pose-17-death.png": 17139,
+          "pose-18-breath.png": 7148,
+          "pose-19-breath.png": 7283,
+          "pose-20-breath.png": 7334,
+          "pose-21-breath.png": 7283,
+          "pose-22-rest.png": 17139
+        },
+        "distinct_pose_captures": 16
+      },
+      {
+        "phase": "model-reload",
+        "exit_code": 0,
+        "passed": true,
+        "assertions": 16,
+        "expected_assertions": 16,
+        "errors": [],
+        "captures": {}
+      },
+      {
+        "phase": "rollback",
+        "exit_code": 0,
+        "passed": true,
+        "assertions": 16,
+        "expected_assertions": 16,
+        "errors": [],
+        "captures": {}
+      }
+    ]
+  },
+  "actions": {
+    "issue": 795,
+    "runtime_sha256": "08dec7bb57872676b07e4b304b2d30c1dbd0249f15881c1629bc6e79d8018dc2",
+    "source_probe_sha256": "bf298e7c4b3ca7f0285f81c089b18f686ba0a114f65697252662af8b0121b65a",
+    "fixture_sha256": "1855452c7ac5889012d1a810d2ae80599a3b41d05edddef565b20a8e1b64ff3d",
+    "runs": [
+      {
+        "phase": "actions",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 40,
+        "actions": [
+          "CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=56 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=56 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=56 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1"
+        ],
+        "loot_audits": 0
+      },
+      {
+        "phase": "loot",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 28,
+        "actions": [],
+        "loot_audits": 2
+      },
+      {
+        "phase": "loot-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 12,
+        "actions": [],
+        "loot_audits": 2
+      }
+    ]
+  },
+  "presentation": {
+    "issue": 795,
+    "species": "kasogonaga",
+    "scope": "Measure one 700-tic sprite/model pair for a real Kasogonaga; no campaign or crowd budget.",
+    "baseline_sha256": "888114a6c08ae2e0df83cf726024c76eef571804e771ded312b9a7ae7c4c1405",
+    "runtime_sha256": "08dec7bb57872676b07e4b304b2d30c1dbd0249f15881c1629bc6e79d8018dc2",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprite",
+        "pid": 30820,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 389383261.66429996,
+          "END": 389403272.8255
+        },
+        "fixture_sha256": "224e5f932a19a774334a00f183da50ce35c1a468f2574ac67f06da0405c9ed67",
+        "bench_sha256": "876cb0702052508c022a5f3e90d3a5bbc9a6ed112bf6a87c1c518f8c0174cdfd",
+        "passed": true,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571730857142857,
+          "p50_ms": 28.5787,
+          "p95_ms": 28.9443,
+          "p99_ms": 29.0487,
+          "max_ms": 29.4424
+        },
+        "presentation": {
+          "pid": 30820,
+          "trace_sha256": "212c7f7d2c3ccbd56df0797c15ac5996300062d0eb9138da95b54fe599ed78da",
+          "rows": 46638,
+          "scene_presents": 32659,
+          "mean_present_fps": 1865.0540906535832,
+          "present_intervals": {
+            "samples": 32658,
+            "mean_ms": 0.536177478718359,
+            "p50_ms": 0.5131000280380249,
+            "p95_ms": 0.7348999977111816,
+            "p99_ms": 0.8048999905586243,
+            "max_ms": 1.5089000463485718
+          },
+          "native_call_duration": {
+            "samples": 32659,
+            "mean_ms": 0.06395301764752868,
+            "p50_ms": 0.059300005435943604,
+            "p95_ms": 0.08779996633529663,
+            "p99_ms": 0.11020004749298096,
+            "max_ms": 0.44510000944137573
+          }
+        }
+      },
+      {
+        "kind": "model",
+        "pid": 27204,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 389417989.8119,
+          "END": 389437903.74009997
+        },
+        "fixture_sha256": "224e5f932a19a774334a00f183da50ce35c1a468f2574ac67f06da0405c9ed67",
+        "bench_sha256": "876cb0702052508c022a5f3e90d3a5bbc9a6ed112bf6a87c1c518f8c0174cdfd",
+        "passed": true,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571759714285715,
+          "p50_ms": 28.5778,
+          "p95_ms": 28.9443,
+          "p99_ms": 29.0716,
+          "max_ms": 29.3006
+        },
+        "presentation": {
+          "pid": 27204,
+          "trace_sha256": "92e2fdd72444b7f68bf1af49663c9f0bd074e18b2e4f40806ade9cdcc840e419",
+          "rows": 45244,
+          "scene_presents": 32110,
+          "mean_present_fps": 1843.926847842803,
+          "present_intervals": {
+            "samples": 32109,
+            "mean_ms": 0.5423208633085922,
+            "p50_ms": 0.5238000154495239,
+            "p95_ms": 0.6815000176429749,
+            "p99_ms": 0.8188000321388245,
+            "max_ms": 1.3091000318527222
+          },
+          "native_call_duration": {
+            "samples": 32110,
+            "mean_ms": 0.06373044861250302,
+            "p50_ms": 0.0591999888420105,
+            "p95_ms": 0.0875999927520752,
+            "p99_ms": 0.10809999704360962,
+            "max_ms": 0.48019999265670776
+          }
+        }
+      }
+    ]
+  },
+  "final_camera_visual": {
+    "issue": 795,
+    "species": "kasogonaga",
+    "studio": false,
+    "runtime_sha256": "08dec7bb57872676b07e4b304b2d30c1dbd0249f15881c1629bc6e79d8018dc2",
+    "baseline_sha256": "08dec7bb57872676b07e4b304b2d30c1dbd0249f15881c1629bc6e79d8018dc2",
+    "fixture_sha256": "224e5f932a19a774334a00f183da50ce35c1a468f2574ac67f06da0405c9ed67",
+    "model_overlay_sha256": null,
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "visual",
+        "exit_code": 0,
+        "passed": true,
+        "assertions": 51,
+        "expected_assertions": 51,
+        "errors": [],
+        "captures": {
+          "empty-view-0.png": "bbef0691b942825e188da15633eb0bf6f00900c1e68817d82f9b2701a4569896",
+          "empty-view-6.png": "85874da62a5d0dfd8f058dfa7ddb2c3e12b7029dbd8c09a9f991641e98bef8fd",
+          "empty.png": "bbef0691b942825e188da15633eb0bf6f00900c1e68817d82f9b2701a4569896",
+          "pose-00-idle.png": "e7145af291c57bd44dd0f825f9940b07894d7bcd76d59232703ec71661205adc",
+          "pose-01-idle.png": "3aa904394a039c50513f6857aa2250fea29f5d71f380e827de560f181ebd67e2",
+          "pose-02-run.png": "e7145af291c57bd44dd0f825f9940b07894d7bcd76d59232703ec71661205adc",
+          "pose-03-run.png": "119f4705f9590f5e596f36679afb4c73250b0fb345bf21ca7a6cea6549d54ac1",
+          "pose-04-run.png": "e7145af291c57bd44dd0f825f9940b07894d7bcd76d59232703ec71661205adc",
+          "pose-05-run.png": "f131e45e15d4928a2b0d4e7fb62025587633cdf147ca4335972cb336cd021391",
+          "pose-06-walk.png": "119f4705f9590f5e596f36679afb4c73250b0fb345bf21ca7a6cea6549d54ac1",
+          "pose-07-walk.png": "f131e45e15d4928a2b0d4e7fb62025587633cdf147ca4335972cb336cd021391",
+          "pose-08-stun.png": "0110e1245e3b4b7961c35ed6864a97c6dfeea78161c5d9f9fa0c847670812e3a",
+          "pose-09-attack_prepare.png": "0c9b032f0bbc5a2bdc27d9a253e5aa2b610039628e3ca1d3e0721425d980018b",
+          "pose-10-attack_release.png": "ea30c9685960d5dcc8d5208bb8de00c7d32a21616788c3afedb42c4f1f64834b",
+          "pose-11-pain.png": "03f311574a852698a5aa6fe2ae8d6ce0334d33592029d169fb4745ebb301cea8",
+          "pose-12-death.png": "c8f3b0ec51e1f427714e6e71685626b82d6119ddadb4ac9c8553257f7c4a309c",
+          "pose-13-death.png": "b2e2095c3728556a828e60bc66ac1051c3060a1faa3a002fff720457d0eb2c7e",
+          "pose-14-death.png": "afeb50326efeefd240cae8757eda1911996410c0d9c032e4c7d25f19739afcfd",
+          "pose-15-death.png": "a84ad60abf830d95c0d9174ce459a7fa738e31ea0ff0de4247ff5f43a6854cbf",
+          "pose-16-death.png": "9267214006d2595cbba7c5475160dc6b9d11f9dac9fd6161684714bc8aadad4e",
+          "pose-17-death.png": "aba7484954ea365d3e1a786dbbd3c0fe034f4dc182994761feebb49ffee6cf0f",
+          "pose-18-breath.png": "7afb1f6541bd30d5bc20ecb3a154a812f0999d50c6e8bc2e405d1387ab78fe74",
+          "pose-19-breath.png": "e7145af291c57bd44dd0f825f9940b07894d7bcd76d59232703ec71661205adc",
+          "pose-20-breath.png": "df4f5add8698caab011e814d54439e5ee7899c01c149113f7a85f57dc954c44c",
+          "pose-21-breath.png": "e7145af291c57bd44dd0f825f9940b07894d7bcd76d59232703ec71661205adc",
+          "pose-22-rest.png": "aba7484954ea365d3e1a786dbbd3c0fe034f4dc182994761feebb49ffee6cf0f",
+          "view-front.png": "053a27261a9383addfa4a4860ad5d84adfcdd071c070ba2dfcf827c8e898c1c3",
+          "view-head-front.png": "3d2ee8c4ec44f8fce4b61fe48c9a5ac8821ec8b917ce8f79625b8b38fb23f401",
+          "view-head-oblique.png": "7f2323bcf8c5fd0c0d7e45ced37ebb128aae576b730ca26d10660c94be238690",
+          "view-lying-oblique.png": "aba7484954ea365d3e1a786dbbd3c0fe034f4dc182994761feebb49ffee6cf0f",
+          "view-rear.png": "b431558927552813a685133fe6b0948176ed1284da23c1929e2d93f43625299d",
+          "view-side.png": "83f4d1480d4268f5e5356a4a3a92747d8531b598d225952c5787f8f67a6e5429",
+          "view-snout-detail.png": "452ff7237d751c5cfc43095232b5086ed46dadd4074fb056c0cc8f604e54c087",
+          "view-tail-detail.png": "a542f3064f9863e8ae73c47f0d9220e85e5214a6cd1de5757d31059609874c8d"
+        },
+        "visible_pose_pixels": {
+          "pose-00-idle.png": 34560,
+          "pose-01-idle.png": 33335,
+          "pose-02-run.png": 34560,
+          "pose-03-run.png": 35143,
+          "pose-04-run.png": 34560,
+          "pose-05-run.png": 33271,
+          "pose-06-walk.png": 35143,
+          "pose-07-walk.png": 33271,
+          "pose-08-stun.png": 34156,
+          "pose-09-attack_prepare.png": 34609,
+          "pose-10-attack_release.png": 34111,
+          "pose-11-pain.png": 34841,
+          "pose-12-death.png": 21399,
+          "pose-13-death.png": 19082,
+          "pose-14-death.png": 15534,
+          "pose-15-death.png": 14858,
+          "pose-16-death.png": 15611,
+          "pose-17-death.png": 17139,
+          "pose-18-breath.png": 34642,
+          "pose-19-breath.png": 34560,
+          "pose-20-breath.png": 34371,
+          "pose-21-breath.png": 34560,
+          "pose-22-rest.png": 17139
+        },
+        "distinct_pose_captures": 16
+      }
+    ]
+  },
+  "art": {
+    "source": "assets/source/art/kasogonaga_795",
+    "generated_atlas": "assets/source/art/kasogonaga_795/materials.png",
+    "atlas_sha256": "c4b9a4c7c72d9ae69177314580e2e6cdba1c861317e2e13ddd7c55bbe8afaac0",
+    "prompt": "assets/source/art/kasogonaga_795/MATERIALS_PROMPT.json",
+    "mode": "built-in image_gen",
+    "author_check": "CA795-KASOGONAGA-01"
+  },
+  "iterations": [
+    "Initial ear contacts failed independent closed-mesh/posed tests; adjusted new ear geometry and interior witnesses. All final contacts pass.",
+    "Native visual review led to smaller eyes, grey face/snout and authored ivory face markings, plus a wider front camera. Original generated atlas pixels remain unchanged. Final inspection cameras were adjusted after the first continuity run; only the export manifest changed, while all native/editable files remained byte-identical. A 51-assertion visual pass and fresh presentation pair cover the final cameras."
+  ],
+  "reviewed": "Final front, side, rear, face, snout and tail views; locomotion, attack, pain and lying poses; both presentation scenes.",
+  "qualifications": [
+    "Candidate rounded component anatomy, coarse triangular fur markings, crest/brush locks and rigid fall/rest poses await author review; not every concept detail is reproduced.",
+    "Unchanged inherited collision and provisional size; extended snout/tail and lying silhouette are visual. Conceptual metres, weather abilities and species-specific combat are not implemented.",
+    "One sequential700-tic sprite/model pair measures queue presentation and simulation spacing. It does not establish GPU/display latency, repeatability or campaign/crowd budgets; footprints differ.",
+    "23 of56 provisional creature classes have native candidates;33 remain. Other characters, modular fitting, campaign progression and siege performance remain unfinished.",
+    "All author tests remain pending the requested consolidated final handoff. No terminal opened or acceptance inferred."
+  ],
+  "files": {
+    "actions/actions/commands.cfg": "00058a065382c31371e58b37e853be224e863ef171d21548f135ec7bf565e6f1",
+    "actions/actions/engine.log": "a9fcce25b06c00f7f5197e1a44e84e71cca8d90862819d7bdee346782198c5d0",
+    "actions/actions/process.log": "0b15987b43a1815f3f85c82ae12bdd2ed54821751edc42701ec8ee376bb5285b",
+    "actions/actions/session.ini": "83053f438833f9895fee1893413917204a66c7d71c21de8fe6a5463119ab8d5f",
+    "actions/fixture.zs": "53797e8c5445c202f193061c9cebc9f3c17e0a755f73acb134d85e30f408709d",
+    "actions/loot/commands.cfg": "c7131f87f9df9188e2301d6730516e731540216e6417b470aab866467fbd8ad7",
+    "actions/loot/engine.log": "e162651727b67ff551cb055166a2d4f2a1e99738c479bc1a795e1d533b2509f5",
+    "actions/loot/process.log": "64c27a592840e064a1513d3e43a13662bcef8c825e41650a5ae9cb43e2ad72a9",
+    "actions/loot/session.ini": "369635d43e307c83bf4746ad898652ee7d65c6ae4a86efcdf8496d6f5f3c1ae9",
+    "actions/loot-reload/commands.cfg": "ad82c3110081fb6cd15b9a00885b6cc0747127803c4e52c0e06a730955dcf399",
+    "actions/loot-reload/engine.log": "30ae9284a5feff798309bae795c00cddbb2bb0e47c313d7e12c90b54db2bc95f",
+    "actions/loot-reload/process.log": "53194e1a20ca93c8a3dcac1c10a9d693362dbc9812520f6942df630e7700bb9a",
+    "actions/loot-reload/session.ini": "02d9d1f5c28b48167bbf4f6c486521d11d7e6d06f7e7271a1ad75b1b4792b47a",
+    "actions/MAPINFO.txt": "44a0d13eb839f7de1f5dc729620771e92032566515001f6914ed3d25e6c0f660",
+    "actions/RESULTS.json": "e2195b6f893489ecbe2cde56f087ab227862f17a6cfdac073acc4e94abab44c9",
+    "actions/ZSCRIPT.txt": "e79542a61b21ab57407b894774ecdf56fcc047a2419b3f4c5d0b58e8d8f84e7e",
+    "build01.log": "f705c7847a4175d54574d1d79527f995754c65becc73b85995c844cb8deaf922",
+    "continuity/baseline/commands.cfg": "92e45077b6a3c9ecfe08cb0e42f3b40a2e48ba0989640e28e41f8acbf7609f49",
+    "continuity/baseline/engine.log": "337801730f6bb238853f4fc01fa9a5f2360f3139feb514d98c73f22bd3c2a906",
+    "continuity/baseline/process.log": "4f6fd4c9933a7d17e70554e0923c84a5208fea548dd17885a3f1a7519d4a3c64",
+    "continuity/baseline/session.ini": "22e658ef2f46cb0f4df57039c50c2a93b73797e725fdc41a5a32fe911b30cbe6",
+    "continuity/fixture.zs": "e36d392eed4087c76fd7e0cb110632c472c349533ac6d4b3ba842b4ccafbfd49",
+    "continuity/fresh-model/commands.cfg": "3ad40a2511c30da38f8322656a6cacacc52203bf286d5ce72a1a737619183c65",
+    "continuity/fresh-model/engine.log": "d3bf3aca44fcec0796587d71e5ca81a50e291db4a5aad9c9a3f1132c54ea20b9",
+    "continuity/fresh-model/process.log": "dbfb2a87882d884d600cf3473a066b2846d7b304d06e9606e19e5de7f01d121a",
+    "continuity/fresh-model/session.ini": "1f326a053c93942c9f311b7a3c3641db044f001c1642717b07de901289fc147b",
+    "continuity/MAPINFO.txt": "7be263b04a8d6ee0b60855154b8f61a941ef9d998905063ee1d06447d411fa34",
+    "continuity/model-reload/commands.cfg": "3a77f2c90530ab7ed45b828a39fe47314d0564122626553031bc73e7e4f69e48",
+    "continuity/model-reload/engine.log": "dc227ead8b8db8c10c73ee4c35cba0f02026b9fd4ea298db8c0ed2ea8cea71ab",
+    "continuity/model-reload/process.log": "b678c9248b793b2d7633ea9cf8f73f98d947658c43620ba3d08dd4dca014d8da",
+    "continuity/model-reload/session.ini": "282b941ba0eeae636ecb7b20acf6f960ceb280d872daace8bde8f302843d4870",
+    "continuity/old-save-model/commands.cfg": "3a77f2c90530ab7ed45b828a39fe47314d0564122626553031bc73e7e4f69e48",
+    "continuity/old-save-model/engine.log": "9779debe99653b9c6a8eaaff4d1f86ab3f4bc0c616194089a0dc7f5f48924d44",
+    "continuity/old-save-model/process.log": "3cdc1366e639bbd2316a9eab10d35ed19b0df306e74eff5adfc7a52a9e90729d",
+    "continuity/old-save-model/session.ini": "86122ea119baeae9f7c074ab547a1a55b6571462a5ea5c4d6c93fa387dc4d9be",
+    "continuity/RESULTS.json": "8237ef3d6f7888de4223bb731f668dd4bf61d347aa55b651e04fee977e4e0dd7",
+    "continuity/rollback/commands.cfg": "3a77f2c90530ab7ed45b828a39fe47314d0564122626553031bc73e7e4f69e48",
+    "continuity/rollback/engine.log": "9858c736c55e8daa6dfba11807f7af62ecba949bd32030c5c2620f059b7946e8",
+    "continuity/rollback/process.log": "da9a99412eb7b37e91a134d1d94a6e366d3d874eb5f7b01d56b737ed5b8a2b81",
+    "continuity/rollback/session.ini": "441caeba3b17df268e13cef1394dec5d8da781524ee90179e1cea5f0f3c279d3",
+    "continuity/ZSCRIPT.txt": "c31576b484e8ea2f4ded467359b582652d6018392595f36cd644537e1ce2c3f9",
+    "export01.json": "9f206a51ec916aedf30bce625dd54a9b8c04c01e2e5b3ac8603480052376947e",
+    "export02.json": "5ae6e768a56c166159654b44cc85233f12125755292291a110d0177065b064d9",
+    "export03.json": "ba72f9ea748a0104e89704b204912f5655daa51a8c12a533129e0eec2d643ede",
+    "export04.json": "ba72f9ea748a0104e89704b204912f5655daa51a8c12a533129e0eec2d643ede",
+    "export05.json": "ecf7f8410884b20e76d0bf7809887abec5e2a536e5fe4fe55b741a21ac8cd0db",
+    "export06.json": "ecf7f8410884b20e76d0bf7809887abec5e2a536e5fe4fe55b741a21ac8cd0db",
+    "geometry01.json": "103ee176324c7745252498f55b5d909a34748612b77ab779ff39e82b32c7c9c4",
+    "geometry02.json": "0583782cf35e2ac4c046178f6abb8e27829b477ad2ffd8a5905f2a4e7a52e734",
+    "geometry03.json": "0583782cf35e2ac4c046178f6abb8e27829b477ad2ffd8a5905f2a4e7a52e734",
+    "presentation/model/commands.cfg": "77127972141ab784c49dbc36288b898e879a7b9f5c603d75070c6e382be48319",
+    "presentation/model/engine.log": "4b8a08365103bdb03ffb58faa3142b87492129a5c1bbb9661365b5a42ade337c",
+    "presentation/model/fixture.zs": "f98f0682488204d7b8e45e99ecf6dd4591836065ac58e0c2ada7be831b92026d",
+    "presentation/model/MAPINFO.txt": "7be263b04a8d6ee0b60855154b8f61a941ef9d998905063ee1d06447d411fa34",
+    "presentation/model/presents.csv": "92e2fdd72444b7f68bf1af49663c9f0bd074e18b2e4f40806ade9cdcc840e419",
+    "presentation/model/process.log": "2df2ac5c9b350b4d2787bfbb4a423500e9caefd1706bbd9b3dc1058c3172b278",
+    "presentation/model/scene.png": "e7145af291c57bd44dd0f825f9940b07894d7bcd76d59232703ec71661205adc",
+    "presentation/model/session.ini": "06fe7418f4d2ccdae83cee7dfaea4e1825adab8e423972c616acd029faf7b213",
+    "presentation/model/ZSCRIPT.txt": "893825007aa7f48ee1bf87cf7efb28b005ea4fee7f469a621811ae6cd0d80bf9",
+    "presentation/RESULTS.json": "fa2018dd8bc32d7c0a2a5ef3a39a1484503b5a26126da3a92a1a339e6d448cf8",
+    "presentation/sprite/commands.cfg": "77127972141ab784c49dbc36288b898e879a7b9f5c603d75070c6e382be48319",
+    "presentation/sprite/engine.log": "8455a75fdb7a2eb3758eca0d03bfd9d11472992f57d8998e62024a30380d8f80",
+    "presentation/sprite/fixture.zs": "f98f0682488204d7b8e45e99ecf6dd4591836065ac58e0c2ada7be831b92026d",
+    "presentation/sprite/MAPINFO.txt": "7be263b04a8d6ee0b60855154b8f61a941ef9d998905063ee1d06447d411fa34",
+    "presentation/sprite/presents.csv": "212c7f7d2c3ccbd56df0797c15ac5996300062d0eb9138da95b54fe599ed78da",
+    "presentation/sprite/process.log": "84d4a4afed8dcb5eda37dda11b608ac6ec965e7e74ed328966d29d7ee01559ee",
+    "presentation/sprite/scene.png": "ad146efcf7d6493c316e75a48343897c275d4900cbdff6fc5850d139337bf2c9",
+    "presentation/sprite/session.ini": "df2d385961db4617c83ed8f75011de8be432ca3b0e8e4cdf8c06e061408afd5d",
+    "presentation/sprite/ZSCRIPT.txt": "893825007aa7f48ee1bf87cf7efb28b005ea4fee7f469a621811ae6cd0d80bf9",
+    "repeat05-06.json": "85d19e626335c38a2fc614feddbf10fdbec2a0f2d8426c75f672aa972029c54d",
+    "runtime-parity.json": "971f8bb78bdbb80ce9a7cd2696703f408450bd73d3d36739e5be4d1a3ceaa66a",
+    "superseded/visual01/fixture.zs": "64a6ca9f917681adb725173e9ca9565b5db7ec85ff067161c148ec22ad9618fd",
+    "superseded/visual01/MAPINFO.txt": "7be263b04a8d6ee0b60855154b8f61a941ef9d998905063ee1d06447d411fa34",
+    "superseded/visual01/RESULTS.json": "9fb787d4db95c732f974624763392155f7fa087fba2eee255c8c93d862d37bd4",
+    "superseded/visual01/visual/commands.cfg": "3ad40a2511c30da38f8322656a6cacacc52203bf286d5ce72a1a737619183c65",
+    "superseded/visual01/visual/engine.log": "583595dc023307307e30a7c7e47929f90b7226f1cc15138621dff4ea540f218e",
+    "superseded/visual01/visual/process.log": "8329436fa3e4c3b77486d4302cd8ac2d2a03ac8b5ec523a3e507d37682f6ea25",
+    "superseded/visual01/visual/session.ini": "a16a466ce2f45ca89d87f1ad78683bf26dd9ab10e0292df33eb0017bc9044f5a",
+    "superseded/visual01/ZSCRIPT.txt": "594ae8f297b77bb0c0fd29bf6436a5d3acda0eb56bd83bb52c26da7247b43ec8",
+    "visual-final/fixture.zs": "f98f0682488204d7b8e45e99ecf6dd4591836065ac58e0c2ada7be831b92026d",
+    "visual-final/MAPINFO.txt": "7be263b04a8d6ee0b60855154b8f61a941ef9d998905063ee1d06447d411fa34",
+    "visual-final/RESULTS.json": "2b1bae73f8e70f3ca41eeabefbf88c3da833e482c5fa81ed894a94a6304a8244",
+    "visual-final/visual/commands.cfg": "3ad40a2511c30da38f8322656a6cacacc52203bf286d5ce72a1a737619183c65",
+    "visual-final/visual/empty-view-0.png": "bbef0691b942825e188da15633eb0bf6f00900c1e68817d82f9b2701a4569896",
+    "visual-final/visual/empty-view-6.png": "85874da62a5d0dfd8f058dfa7ddb2c3e12b7029dbd8c09a9f991641e98bef8fd",
+    "visual-final/visual/empty.png": "bbef0691b942825e188da15633eb0bf6f00900c1e68817d82f9b2701a4569896",
+    "visual-final/visual/engine.log": "2d85a9a6157a3fa67fd23d8cddedd89fc939fbb5f141004e39473822da247ffa",
+    "visual-final/visual/pose-00-idle.png": "e7145af291c57bd44dd0f825f9940b07894d7bcd76d59232703ec71661205adc",
+    "visual-final/visual/pose-01-idle.png": "3aa904394a039c50513f6857aa2250fea29f5d71f380e827de560f181ebd67e2",
+    "visual-final/visual/pose-02-run.png": "e7145af291c57bd44dd0f825f9940b07894d7bcd76d59232703ec71661205adc",
+    "visual-final/visual/pose-03-run.png": "119f4705f9590f5e596f36679afb4c73250b0fb345bf21ca7a6cea6549d54ac1",
+    "visual-final/visual/pose-04-run.png": "e7145af291c57bd44dd0f825f9940b07894d7bcd76d59232703ec71661205adc",
+    "visual-final/visual/pose-05-run.png": "f131e45e15d4928a2b0d4e7fb62025587633cdf147ca4335972cb336cd021391",
+    "visual-final/visual/pose-06-walk.png": "119f4705f9590f5e596f36679afb4c73250b0fb345bf21ca7a6cea6549d54ac1",
+    "visual-final/visual/pose-07-walk.png": "f131e45e15d4928a2b0d4e7fb62025587633cdf147ca4335972cb336cd021391",
+    "visual-final/visual/pose-08-stun.png": "0110e1245e3b4b7961c35ed6864a97c6dfeea78161c5d9f9fa0c847670812e3a",
+    "visual-final/visual/pose-09-attack_prepare.png": "0c9b032f0bbc5a2bdc27d9a253e5aa2b610039628e3ca1d3e0721425d980018b",
+    "visual-final/visual/pose-10-attack_release.png": "ea30c9685960d5dcc8d5208bb8de00c7d32a21616788c3afedb42c4f1f64834b",
+    "visual-final/visual/pose-11-pain.png": "03f311574a852698a5aa6fe2ae8d6ce0334d33592029d169fb4745ebb301cea8",
+    "visual-final/visual/pose-12-death.png": "c8f3b0ec51e1f427714e6e71685626b82d6119ddadb4ac9c8553257f7c4a309c",
+    "visual-final/visual/pose-13-death.png": "b2e2095c3728556a828e60bc66ac1051c3060a1faa3a002fff720457d0eb2c7e",
+    "visual-final/visual/pose-14-death.png": "afeb50326efeefd240cae8757eda1911996410c0d9c032e4c7d25f19739afcfd",
+    "visual-final/visual/pose-15-death.png": "a84ad60abf830d95c0d9174ce459a7fa738e31ea0ff0de4247ff5f43a6854cbf",
+    "visual-final/visual/pose-16-death.png": "9267214006d2595cbba7c5475160dc6b9d11f9dac9fd6161684714bc8aadad4e",
+    "visual-final/visual/pose-17-death.png": "aba7484954ea365d3e1a786dbbd3c0fe034f4dc182994761feebb49ffee6cf0f",
+    "visual-final/visual/pose-18-breath.png": "7afb1f6541bd30d5bc20ecb3a154a812f0999d50c6e8bc2e405d1387ab78fe74",
+    "visual-final/visual/pose-19-breath.png": "e7145af291c57bd44dd0f825f9940b07894d7bcd76d59232703ec71661205adc",
+    "visual-final/visual/pose-20-breath.png": "df4f5add8698caab011e814d54439e5ee7899c01c149113f7a85f57dc954c44c",
+    "visual-final/visual/pose-21-breath.png": "e7145af291c57bd44dd0f825f9940b07894d7bcd76d59232703ec71661205adc",
+    "visual-final/visual/pose-22-rest.png": "aba7484954ea365d3e1a786dbbd3c0fe034f4dc182994761feebb49ffee6cf0f",
+    "visual-final/visual/process.log": "0afd5746b2f61bd740001ea96f21c1bfff011ca2ae43aac7e67467fece5cf26f",
+    "visual-final/visual/session.ini": "af910874fd78b1e899f48719a9271d4137fe9a02da7c43f268835118e410c63c",
+    "visual-final/visual/view-front.png": "053a27261a9383addfa4a4860ad5d84adfcdd071c070ba2dfcf827c8e898c1c3",
+    "visual-final/visual/view-head-front.png": "3d2ee8c4ec44f8fce4b61fe48c9a5ac8821ec8b917ce8f79625b8b38fb23f401",
+    "visual-final/visual/view-head-oblique.png": "7f2323bcf8c5fd0c0d7e45ced37ebb128aae576b730ca26d10660c94be238690",
+    "visual-final/visual/view-lying-oblique.png": "aba7484954ea365d3e1a786dbbd3c0fe034f4dc182994761feebb49ffee6cf0f",
+    "visual-final/visual/view-rear.png": "b431558927552813a685133fe6b0948176ed1284da23c1929e2d93f43625299d",
+    "visual-final/visual/view-side.png": "83f4d1480d4268f5e5356a4a3a92747d8531b598d225952c5787f8f67a6e5429",
+    "visual-final/visual/view-snout-detail.png": "452ff7237d751c5cfc43095232b5086ed46dadd4074fb056c0cc8f604e54c087",
+    "visual-final/visual/view-tail-detail.png": "a542f3064f9863e8ae73c47f0d9220e85e5214a6cd1de5757d31059609874c8d",
+    "visual-final/ZSCRIPT.txt": "893825007aa7f48ee1bf87cf7efb28b005ea4fee7f469a621811ae6cd0d80bf9",
+    "validation-final.json": "ba26cee5c9946ef2dc6dc9526a8f663e0ddf9c235c6ec01c141494681f4479d2"
+  }
+}

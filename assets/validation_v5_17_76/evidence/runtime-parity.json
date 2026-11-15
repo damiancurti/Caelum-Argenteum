@@ -1,0 +1,20 @@
+{
+  "sha256": "08dec7bb57872676b07e4b304b2d30c1dbd0249f15881c1629bc6e79d8018dc2",
+  "source_entries": 18574,
+  "exact_source_bytes": true,
+  "baseline_sha256": "888114a6c08ae2e0df83cf726024c76eef571804e771ded312b9a7ae7c4c1405",
+  "added": [
+    "caelum/data/kasogonaga_combat.modeldef",
+    "models/caelum/folklore/kasogonaga/dark.png",
+    "models/caelum/folklore/kasogonaga/iris.png",
+    "models/caelum/folklore/kasogonaga/kasogonaga.md3",
+    "models/caelum/folklore/kasogonaga/materials.png"
+  ],
+  "changed": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "removed": [],
+  "unrelated_runtime_bytes_identical": true
+}

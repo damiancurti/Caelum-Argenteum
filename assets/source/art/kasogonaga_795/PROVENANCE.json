@@ -1,0 +1,22 @@
+{
+  "issue": 795,
+  "parent_issue": 461,
+  "ownership": "Owned Kasogonaga concept; original anteater anatomy, shaggy brush tail and body markings. Owned joint/limb topology reused from Familiar.",
+  "references": {
+    "assets/source/bestiary_453/imagenes/05_Bestias_magicas/57_kasogonaga.png": "e18edcee3802d75dd9f88c51a7397789454e5be32501b099e359b33c303f7b72"
+  },
+  "material": {
+    "mode": "built-in image_gen",
+    "prompt": "MATERIALS_PROMPT.json",
+    "sha256": "c4b9a4c7c72d9ae69177314580e2e6cdba1c861317e2e13ddd7c55bbe8afaac0",
+    "processing": "Unchanged generated pixels"
+  },
+  "reused": {
+    "assets/source/art/quadrupeds_787/familiar.json": "461db1cddb707866dafbd22ea54f865e4059f384a0450572f656e83872ee7435",
+    "assets/source/art/quadrupeds_787/CONTACTS.json": "e4a04e53a5d10b3116d8db120f3c3f74b23df8725469fa4aeb2c3238ad3a7ef1",
+    "assets/source/art/quadrupeds_787/ANIMATION.json": "54001962cf4ce865d07311b6b9451f9336a78eea9c8f1bf65d245efca261e067",
+    "assets/source/art/quadrupeds_787/iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+    "assets/source/art/quadrupeds_787/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4"
+  },
+  "limits": "Provisional Mandinga combat, collision and state timing unchanged; conceptual metres are not runtime scale; no weather or campaign behavior. Author review pending."
+}

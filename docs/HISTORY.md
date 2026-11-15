@@ -1,6 +1,16 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.75** - 2026-11-15.
+Documentation version: **5.17.76** - 2026-11-15.
+
+## 5.17.76 - Kasogonaga native candidate (#795, 2026-11-15)
+
+Added reference-led anteater geometry, editable material/animation/contact sources
+and native combat-state bindings. Existing gameplay and saves remain unchanged.
+Nine exports repeat;75 closed components,74 witnesses and592 posed contacts pass.
+Native continuity passes115 assertions and actions/loot80. ASSETS records the
+qualified presentation sample and candidate-art limitations. Evidence is in
+assets/validation_v5_17_76/evidence/SUMMARY.json. CA795-KASOGONAGA-01 originates
+here, pending the consolidated author test. No earlier author check was removed.
 
 ## 5.17.75 - Teju regional gallery (#793, 2026-11-15)
 
