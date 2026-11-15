@@ -1,0 +1,112 @@
+{
+  "issue": 805,
+  "version": "5.17.81",
+  "author_accepted": false,
+  "metadata": {
+    "issue": 805,
+    "baseline_commit": "f52a98c22e07063c33bbde1b16c70189928ab75c",
+    "models": {
+      "teju_791": {
+        "old_policy": "Only CaelumBestiary043 and050 are bound; approved Northwest Argentina/Selva allocations and named identities remain unchanged.",
+        "new_policy": "Only CaelumBestiary047 (Teju Jagua) is bound. Preserve its documented Selva association and protected named identities; no campaign placement.",
+        "non_policy_data_unchanged": true,
+        "native_artifacts_unchanged": 5,
+        "editable_artifacts_unchanged": 2,
+        "repeated_artifacts": 8,
+        "all_byte_identical": true
+      },
+      "kasogonaga_795": {
+        "old_policy": "Only CaelumBestiary043 and050 are bound; approved Northwest Argentina/Selva allocations and named identities remain unchanged.",
+        "new_policy": "Only CaelumBestiary057 (Kasogonaga) is bound. Preserve its documented Chaco association and protected named identities; no campaign placement.",
+        "non_policy_data_unchanged": true,
+        "native_artifacts_unchanged": 5,
+        "editable_artifacts_unchanged": 2,
+        "repeated_artifacts": 8,
+        "all_byte_identical": true
+      },
+      "apparitions_797": {
+        "old_policy": "Only CaelumBestiary043 and050 are bound; approved Northwest Argentina/Selva allocations and named identities remain unchanged.",
+        "new_policy": "Only CaelumBestiary029 (Mulanima) and CaelumBestiary030 (Chancho de Lata) are bound. Preserve Northwest Argentina for Mulanima and Pampa/Litoral for Chancho de Lata, plus protected named identities; no campaign placement.",
+        "non_policy_data_unchanged": true,
+        "native_artifacts_unchanged": 6,
+        "editable_artifacts_unchanged": 4,
+        "repeated_artifacts": 11,
+        "all_byte_identical": true
+      }
+    },
+    "changed_source_files": [
+      "assets/source/art/teju_791/ANIMATION.json",
+      "assets/source/art/teju_791/EXPORT.json",
+      "assets/source/art/kasogonaga_795/ANIMATION.json",
+      "assets/source/art/kasogonaga_795/EXPORT.json",
+      "assets/source/art/apparitions_797/ANIMATION.json",
+      "assets/source/art/apparitions_797/EXPORT.json"
+    ],
+    "gallery_fixture_bytes_identical": true,
+    "gallery_fixture_sha256": "db2dde11793ed1d1d83985feb85ca0ec5e8568c6f7d5dd018a5acc5a574bf77a",
+    "historical_head_provenance_unchanged": true,
+    "author_accepted": false
+  },
+  "audit": {
+    "issue": 805,
+    "passed": true,
+    "baseline_commit": "f52a98c22e07063c33bbde1b16c70189928ab75c",
+    "models": {
+      "teju_791": {
+        "original_policy_rejected": true,
+        "current_policy_passes": true,
+        "other_metadata_unchanged": true,
+        "source_bytes_only_policy_changed": true,
+        "unchanged_artifacts": 7
+      },
+      "kasogonaga_795": {
+        "original_policy_rejected": true,
+        "current_policy_passes": true,
+        "other_metadata_unchanged": true,
+        "source_bytes_only_policy_changed": true,
+        "unchanged_artifacts": 7
+      },
+      "apparitions_797": {
+        "original_policy_rejected": true,
+        "current_policy_passes": true,
+        "other_metadata_unchanged": true,
+        "source_bytes_only_policy_changed": true,
+        "unchanged_artifacts": 10
+      }
+    },
+    "runtime_sha256": "a1025d627195d6bea7cbf15a70ad5bd48215ba3dc11cd821cc694e724518b317",
+    "baseline_runtime_sha256": "88a1fe950851eac01569b21ed3e90ed30f86350be4a97217ac7d7738a58875b7",
+    "source_entries": 18584,
+    "exact_source_bytes": true,
+    "changed_runtime_members": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "runtime_behavior_and_art_unchanged": true,
+    "pending_author_tests_unchanged": true,
+    "historical_provenance_unchanged": true
+  },
+  "scope": "Correct copied identity_policy descriptions for Teju Jagua047, Kasogonaga057 and Mulanima029/Chancho030. Actual classes and regional associations were already correct.",
+  "reuse": "All native/editable artwork and gallery fixture bytes are exact. Prior native evidence remains applicable; no new engine or author acceptance is claimed. Only two required runtime diagnostic version strings change.",
+  "qualifications": [
+    "Three model export manifests refresh their own ANIMATION source hashes. Other report values remain exact. No dependent canonical pins require changes.",
+    "The heads_803 provenance retains the original inherited-animation snapshot hash. Historical provenance is not silently repinned.",
+    "All pending author tests remain byte-identical. #806 and the remaining creature/character/modular/campaign work precede the consolidated terminal."
+  ],
+  "files": {
+    "apparitions_797-before.json": "da2a24652b292335362decee3d398e72f8ed6bf71dab291fd8218f6c6e9629f6",
+    "apparitions_797-export.json": "f7a43078e3e6da8aa0294d0a78a76ac24882039cd759637a143451b4ea8487c8",
+    "audit.json": "95a224a58587347208375b181d22dbb34722acba32f4e7285060214aa8a69d8b",
+    "build01.log": "374c31d1319456852e5dd4ca7f4492604c7907c3057c431ba8806aa0dff48c4d",
+    "gallery-after.json": "afd92e6e8c5ccf828856dbfb15826f5dfa335b1d88683189d4c662ffd800111b",
+    "gallery-before.json": "d29b5439f94cc4231875e8c1846be9523e6bcad569f6dd787727655afcf558e3",
+    "kasogonaga_795-before.json": "2938e125a7c9f8d9bbdc1a2192094efcb0ff05705eafb6a22e7d1df8f981cd48",
+    "kasogonaga_795-export.json": "e99f4cfb1471c062f4b3f4d7697b1f3fa38834cee9907a86a15599c4b0fec63c",
+    "metadata-proof.json": "d9837eaa3369388ac2621fc44ee6e442023802a12a0f5caf083c939bbdd98704",
+    "policy-regression.json": "e3f757abd85e86afb16de039762ac009afe5596c519a144bd1b3f0dc69ec1181",
+    "teju_791-before.json": "7c2746ffc00e54a4054dbbdb9f008166c488db2a637a9891886d31da3f52c659",
+    "teju_791-export.json": "e220ac202566296f90f41d613aa75a06e06e6127384f6edd3358b529c68ab0a4",
+    "validation-final.json": "f998ddd844a5b1e1251d40e3c9c093d6b43ab4afe2ddd5f7f8006bbf4ae5fccb"
+  },
+  "project_validation_passed": true
+}

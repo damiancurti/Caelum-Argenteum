@@ -1,0 +1,17 @@
+{
+  "issue": 805,
+  "checks": {
+    "teju_791": {
+      "original_mismatch_rejected": true,
+      "corrected_policy_passes": true
+    },
+    "kasogonaga_795": {
+      "original_mismatch_rejected": true,
+      "corrected_policy_passes": true
+    },
+    "apparitions_797": {
+      "original_mismatch_rejected": true,
+      "corrected_policy_passes": true
+    }
+  }
+}

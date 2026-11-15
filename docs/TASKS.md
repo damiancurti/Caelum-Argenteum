@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.80** - 2026-11-15.
+Documentation version: **5.17.81** - 2026-11-15.
+
+## 5.17.81 - Identity metadata corrected; history follow-up next (#805)
+
+The three copied policy strings now match their configured classes and documented
+regions. Native/editable art and regional fixture bytes remain exact, with a
+narrow preventive validator and original-mismatch regression evidence. Continue
+#806, regional head inspection, remaining creatures/named/modular characters,
+equipment fitting, 75 campaign assignments and siege rendering. Preserve every
+pending author check and defer the terminal until the requested batch is complete.
 
 ## 5.17.80 - Head candidates verified; batch remains (#803)
 

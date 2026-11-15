@@ -4,13 +4,13 @@ import math
 import struct
 from collections import Counter,defaultdict
 try:
-    from .validate_beast_men_models import ROOT,validate as shared_validate
+    from .validate_beast_men_models import ROOT,validate as shared_validate,identity_policy_errors
     from .generate_beast_men_models import prepared_design
     from .generate_apparition_models import geometry
     from .validate_inventory_chainmail_models import dot,cross,sub
     from .validate_inventory_gloves_models import inside
 except ImportError:
-    from validate_beast_men_models import ROOT,validate as shared_validate
+    from validate_beast_men_models import ROOT,validate as shared_validate,identity_policy_errors
     from generate_beast_men_models import prepared_design
     from generate_apparition_models import geometry
     from validate_inventory_chainmail_models import dot,cross,sub
@@ -116,6 +116,7 @@ def validate(root=ROOT):
     errors=shared_validate(root,'assets/source/art/apparitions_797','models/caelum/folklore/apparitions','caelum/data/apparition_combat.modeldef',geometry,frame_mapping_only=True)
     try:
         config=json.loads((root/'assets/source/art/apparitions_797/ANIMATION.json').read_text())
+        errors.extend(identity_policy_errors(config))
         expected=[('mulanima','CaelumBestiary029','CA-FOLK-029'),('chancho_lata','CaelumBestiary030','CA-FOLK-030')]
         if [(k,v['actor'],v['catalogue_id']) for k,v in config['species'].items()]!=expected:errors.append('Unexpected Mulanima/Chancho de Lata class binding')
         for species,_,_ in expected:
