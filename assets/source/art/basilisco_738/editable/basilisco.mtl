@@ -1,0 +1,9 @@
+newmtl atlas
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/basilisco/materials.png
+newmtl iris
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/basilisco/iris.png
+newmtl dark
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/basilisco/dark.png

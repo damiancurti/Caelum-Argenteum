@@ -1,0 +1,1043 @@
+{
+  "issue": 738,
+  "species": {
+    "basilisco": [
+      {
+        "part": "neck",
+        "target": "trunk",
+        "witness": [
+          0.4,
+          0,
+          45
+        ]
+      },
+      {
+        "part": "cranium",
+        "target": "neck",
+        "witness": [
+          11,
+          0,
+          63
+        ]
+      },
+      {
+        "part": "upper_beak",
+        "target": "cranium",
+        "witness": [
+          17.6,
+          0,
+          67.8
+        ]
+      },
+      {
+        "part": "lower_beak",
+        "target": "cranium",
+        "witness": [
+          16.5,
+          0,
+          64.9
+        ]
+      },
+      {
+        "part": "left_haunch",
+        "target": "trunk",
+        "witness": [
+          -3,
+          -5,
+          28
+        ]
+      },
+      {
+        "part": "left_tarsus",
+        "target": "left_haunch",
+        "witness": [
+          -1.8,
+          -5,
+          17
+        ]
+      },
+      {
+        "part": "left_foot",
+        "target": "left_tarsus",
+        "witness": [
+          1.3,
+          -5,
+          4.8
+        ]
+      },
+      {
+        "part": "left_toe_0",
+        "target": "left_foot",
+        "witness": [
+          4.7,
+          -6.4,
+          3.85
+        ]
+      },
+      {
+        "part": "left_toe_0_talon",
+        "target": "left_toe_0",
+        "witness": [
+          9.8,
+          -8,
+          2.5
+        ]
+      },
+      {
+        "part": "left_toe_1",
+        "target": "left_foot",
+        "witness": [
+          4.7,
+          -5.0,
+          3.85
+        ]
+      },
+      {
+        "part": "left_toe_1_talon",
+        "target": "left_toe_1",
+        "witness": [
+          9.8,
+          -5,
+          2.5
+        ]
+      },
+      {
+        "part": "left_toe_2",
+        "target": "left_foot",
+        "witness": [
+          4.7,
+          -3.6,
+          3.85
+        ]
+      },
+      {
+        "part": "left_toe_2_talon",
+        "target": "left_toe_2",
+        "witness": [
+          9.8,
+          -2,
+          2.5
+        ]
+      },
+      {
+        "part": "left_rear_toe",
+        "target": "left_foot",
+        "witness": [
+          -0.4,
+          -5,
+          3.9
+        ]
+      },
+      {
+        "part": "left_rear_talon",
+        "target": "left_rear_toe",
+        "witness": [
+          -5.8,
+          -5,
+          2.3
+        ]
+      },
+      {
+        "part": "left_eye",
+        "target": "cranium",
+        "witness": [
+          14,
+          -4.7,
+          69
+        ]
+      },
+      {
+        "part": "left_iris",
+        "target": "left_eye",
+        "witness": [
+          14,
+          -5.55,
+          69
+        ]
+      },
+      {
+        "part": "left_pupil",
+        "target": "left_iris",
+        "witness": [
+          14,
+          -5.9,
+          69
+        ]
+      },
+      {
+        "part": "left_wing_upper",
+        "target": "trunk",
+        "witness": [
+          -0.1,
+          -4.891,
+          43.5
+        ]
+      },
+      {
+        "part": "left_wing_fore",
+        "target": "left_wing_upper",
+        "witness": [
+          -3,
+          -15.41,
+          52
+        ]
+      },
+      {
+        "part": "left_secondary_0",
+        "target": "left_wing_upper",
+        "witness": [
+          -0.8954,
+          -6.407210000000001,
+          44.10039999999999
+        ]
+      },
+      {
+        "part": "left_covert_0",
+        "target": "left_wing_upper",
+        "witness": [
+          0.7064000000000001,
+          -6.4454,
+          44.526399999999995
+        ]
+      },
+      {
+        "part": "left_secondary_1",
+        "target": "left_wing_upper",
+        "witness": [
+          -1.0744,
+          -7.414220000000001,
+          44.8944
+        ]
+      },
+      {
+        "part": "left_covert_1",
+        "target": "left_wing_upper",
+        "witness": [
+          0.5064,
+          -7.4504,
+          45.3264
+        ]
+      },
+      {
+        "part": "left_secondary_2",
+        "target": "left_wing_upper",
+        "witness": [
+          -1.2534,
+          -8.421230000000001,
+          45.688399999999994
+        ]
+      },
+      {
+        "part": "left_covert_2",
+        "target": "left_wing_upper",
+        "witness": [
+          0.3064,
+          -8.4554,
+          46.1264
+        ]
+      },
+      {
+        "part": "left_secondary_3",
+        "target": "left_wing_upper",
+        "witness": [
+          -1.4324000000000001,
+          -9.42824,
+          46.4824
+        ]
+      },
+      {
+        "part": "left_covert_3",
+        "target": "left_wing_upper",
+        "witness": [
+          0.10639999999999997,
+          -9.460400000000002,
+          46.9264
+        ]
+      },
+      {
+        "part": "left_secondary_4",
+        "target": "left_wing_upper",
+        "witness": [
+          -1.6114000000000002,
+          -10.43525,
+          47.2764
+        ]
+      },
+      {
+        "part": "left_covert_4",
+        "target": "left_wing_upper",
+        "witness": [
+          -0.09359999999999999,
+          -10.4654,
+          47.7264
+        ]
+      },
+      {
+        "part": "left_secondary_5",
+        "target": "left_wing_upper",
+        "witness": [
+          -1.7904,
+          -11.442260000000001,
+          48.0704
+        ]
+      },
+      {
+        "part": "left_covert_5",
+        "target": "left_wing_upper",
+        "witness": [
+          -0.2935999999999999,
+          -11.4704,
+          48.526399999999995
+        ]
+      },
+      {
+        "part": "left_secondary_6",
+        "target": "left_wing_upper",
+        "witness": [
+          -1.9693999999999998,
+          -12.44927,
+          48.8644
+        ]
+      },
+      {
+        "part": "left_covert_6",
+        "target": "left_wing_upper",
+        "witness": [
+          -0.49359999999999987,
+          -12.475400000000002,
+          49.3264
+        ]
+      },
+      {
+        "part": "left_secondary_7",
+        "target": "left_wing_upper",
+        "witness": [
+          -2.1484,
+          -13.456280000000001,
+          49.6584
+        ]
+      },
+      {
+        "part": "left_covert_7",
+        "target": "left_wing_upper",
+        "witness": [
+          -0.6936,
+          -13.4804,
+          50.1264
+        ]
+      },
+      {
+        "part": "left_secondary_8",
+        "target": "left_wing_upper",
+        "witness": [
+          -2.3274,
+          -14.46329,
+          50.4524
+        ]
+      },
+      {
+        "part": "left_covert_8",
+        "target": "left_wing_upper",
+        "witness": [
+          -0.8936,
+          -14.485400000000002,
+          50.9264
+        ]
+      },
+      {
+        "part": "left_primary_0",
+        "target": "left_wing_fore",
+        "witness": [
+          -3.9844,
+          -17.19086,
+          48.8794
+        ]
+      },
+      {
+        "part": "left_primary_1",
+        "target": "left_wing_fore",
+        "witness": [
+          -4.384399999999999,
+          -18.16102,
+          47.8484
+        ]
+      },
+      {
+        "part": "left_primary_2",
+        "target": "left_wing_fore",
+        "witness": [
+          -4.7844,
+          -19.13118,
+          46.8174
+        ]
+      },
+      {
+        "part": "left_primary_3",
+        "target": "left_wing_fore",
+        "witness": [
+          -5.184399999999999,
+          -20.10134,
+          45.7864
+        ]
+      },
+      {
+        "part": "left_primary_4",
+        "target": "left_wing_fore",
+        "witness": [
+          -5.5844,
+          -21.0715,
+          44.755399999999995
+        ]
+      },
+      {
+        "part": "left_primary_5",
+        "target": "left_wing_fore",
+        "witness": [
+          -5.9844,
+          -22.04166,
+          43.724399999999996
+        ]
+      },
+      {
+        "part": "left_primary_6",
+        "target": "left_wing_fore",
+        "witness": [
+          -6.3843999999999985,
+          -23.01182,
+          42.6934
+        ]
+      },
+      {
+        "part": "left_primary_7",
+        "target": "left_wing_fore",
+        "witness": [
+          -6.7844,
+          -23.98198,
+          41.662400000000005
+        ]
+      },
+      {
+        "part": "left_primary_8",
+        "target": "left_wing_fore",
+        "witness": [
+          -7.184399999999999,
+          -24.952140000000004,
+          40.6314
+        ]
+      },
+      {
+        "part": "right_haunch",
+        "target": "trunk",
+        "witness": [
+          -3,
+          5,
+          28
+        ]
+      },
+      {
+        "part": "right_tarsus",
+        "target": "right_haunch",
+        "witness": [
+          -1.8,
+          5,
+          17
+        ]
+      },
+      {
+        "part": "right_foot",
+        "target": "right_tarsus",
+        "witness": [
+          1.3,
+          5,
+          4.8
+        ]
+      },
+      {
+        "part": "right_toe_0",
+        "target": "right_foot",
+        "witness": [
+          4.7,
+          3.6,
+          3.85
+        ]
+      },
+      {
+        "part": "right_toe_0_talon",
+        "target": "right_toe_0",
+        "witness": [
+          9.8,
+          2,
+          2.5
+        ]
+      },
+      {
+        "part": "right_toe_1",
+        "target": "right_foot",
+        "witness": [
+          4.7,
+          5.0,
+          3.85
+        ]
+      },
+      {
+        "part": "right_toe_1_talon",
+        "target": "right_toe_1",
+        "witness": [
+          9.8,
+          5,
+          2.5
+        ]
+      },
+      {
+        "part": "right_toe_2",
+        "target": "right_foot",
+        "witness": [
+          4.7,
+          6.4,
+          3.85
+        ]
+      },
+      {
+        "part": "right_toe_2_talon",
+        "target": "right_toe_2",
+        "witness": [
+          9.8,
+          8,
+          2.5
+        ]
+      },
+      {
+        "part": "right_rear_toe",
+        "target": "right_foot",
+        "witness": [
+          -0.4,
+          5,
+          3.9
+        ]
+      },
+      {
+        "part": "right_rear_talon",
+        "target": "right_rear_toe",
+        "witness": [
+          -5.8,
+          5,
+          2.3
+        ]
+      },
+      {
+        "part": "right_eye",
+        "target": "cranium",
+        "witness": [
+          14,
+          4.7,
+          69
+        ]
+      },
+      {
+        "part": "right_iris",
+        "target": "right_eye",
+        "witness": [
+          14,
+          5.55,
+          69
+        ]
+      },
+      {
+        "part": "right_pupil",
+        "target": "right_iris",
+        "witness": [
+          14,
+          5.9,
+          69
+        ]
+      },
+      {
+        "part": "right_wing_upper",
+        "target": "trunk",
+        "witness": [
+          -0.1,
+          4.891,
+          43.5
+        ]
+      },
+      {
+        "part": "right_wing_fore",
+        "target": "right_wing_upper",
+        "witness": [
+          -3,
+          15.41,
+          52
+        ]
+      },
+      {
+        "part": "right_secondary_0",
+        "target": "right_wing_upper",
+        "witness": [
+          -0.8954,
+          6.407210000000001,
+          44.10039999999999
+        ]
+      },
+      {
+        "part": "right_covert_0",
+        "target": "right_wing_upper",
+        "witness": [
+          0.7064000000000001,
+          6.4454,
+          44.526399999999995
+        ]
+      },
+      {
+        "part": "right_secondary_1",
+        "target": "right_wing_upper",
+        "witness": [
+          -1.0744,
+          7.414220000000001,
+          44.8944
+        ]
+      },
+      {
+        "part": "right_covert_1",
+        "target": "right_wing_upper",
+        "witness": [
+          0.5064,
+          7.4504,
+          45.3264
+        ]
+      },
+      {
+        "part": "right_secondary_2",
+        "target": "right_wing_upper",
+        "witness": [
+          -1.2534,
+          8.421230000000001,
+          45.688399999999994
+        ]
+      },
+      {
+        "part": "right_covert_2",
+        "target": "right_wing_upper",
+        "witness": [
+          0.3064,
+          8.4554,
+          46.1264
+        ]
+      },
+      {
+        "part": "right_secondary_3",
+        "target": "right_wing_upper",
+        "witness": [
+          -1.4324000000000001,
+          9.42824,
+          46.4824
+        ]
+      },
+      {
+        "part": "right_covert_3",
+        "target": "right_wing_upper",
+        "witness": [
+          0.10639999999999997,
+          9.460400000000002,
+          46.9264
+        ]
+      },
+      {
+        "part": "right_secondary_4",
+        "target": "right_wing_upper",
+        "witness": [
+          -1.6114000000000002,
+          10.43525,
+          47.2764
+        ]
+      },
+      {
+        "part": "right_covert_4",
+        "target": "right_wing_upper",
+        "witness": [
+          -0.09359999999999999,
+          10.4654,
+          47.7264
+        ]
+      },
+      {
+        "part": "right_secondary_5",
+        "target": "right_wing_upper",
+        "witness": [
+          -1.7904,
+          11.442260000000001,
+          48.0704
+        ]
+      },
+      {
+        "part": "right_covert_5",
+        "target": "right_wing_upper",
+        "witness": [
+          -0.2935999999999999,
+          11.4704,
+          48.526399999999995
+        ]
+      },
+      {
+        "part": "right_secondary_6",
+        "target": "right_wing_upper",
+        "witness": [
+          -1.9693999999999998,
+          12.44927,
+          48.8644
+        ]
+      },
+      {
+        "part": "right_covert_6",
+        "target": "right_wing_upper",
+        "witness": [
+          -0.49359999999999987,
+          12.475400000000002,
+          49.3264
+        ]
+      },
+      {
+        "part": "right_secondary_7",
+        "target": "right_wing_upper",
+        "witness": [
+          -2.1484,
+          13.456280000000001,
+          49.6584
+        ]
+      },
+      {
+        "part": "right_covert_7",
+        "target": "right_wing_upper",
+        "witness": [
+          -0.6936,
+          13.4804,
+          50.1264
+        ]
+      },
+      {
+        "part": "right_secondary_8",
+        "target": "right_wing_upper",
+        "witness": [
+          -2.3274,
+          14.46329,
+          50.4524
+        ]
+      },
+      {
+        "part": "right_covert_8",
+        "target": "right_wing_upper",
+        "witness": [
+          -0.8936,
+          14.485400000000002,
+          50.9264
+        ]
+      },
+      {
+        "part": "right_primary_0",
+        "target": "right_wing_fore",
+        "witness": [
+          -3.9844,
+          17.19086,
+          48.8794
+        ]
+      },
+      {
+        "part": "right_primary_1",
+        "target": "right_wing_fore",
+        "witness": [
+          -4.384399999999999,
+          18.16102,
+          47.8484
+        ]
+      },
+      {
+        "part": "right_primary_2",
+        "target": "right_wing_fore",
+        "witness": [
+          -4.7844,
+          19.13118,
+          46.8174
+        ]
+      },
+      {
+        "part": "right_primary_3",
+        "target": "right_wing_fore",
+        "witness": [
+          -5.184399999999999,
+          20.10134,
+          45.7864
+        ]
+      },
+      {
+        "part": "right_primary_4",
+        "target": "right_wing_fore",
+        "witness": [
+          -5.5844,
+          21.0715,
+          44.755399999999995
+        ]
+      },
+      {
+        "part": "right_primary_5",
+        "target": "right_wing_fore",
+        "witness": [
+          -5.9844,
+          22.04166,
+          43.724399999999996
+        ]
+      },
+      {
+        "part": "right_primary_6",
+        "target": "right_wing_fore",
+        "witness": [
+          -6.3843999999999985,
+          23.01182,
+          42.6934
+        ]
+      },
+      {
+        "part": "right_primary_7",
+        "target": "right_wing_fore",
+        "witness": [
+          -6.7844,
+          23.98198,
+          41.662400000000005
+        ]
+      },
+      {
+        "part": "right_primary_8",
+        "target": "right_wing_fore",
+        "witness": [
+          -7.184399999999999,
+          24.952140000000004,
+          40.6314
+        ]
+      },
+      {
+        "part": "comb",
+        "target": "cranium",
+        "witness": [
+          10,
+          0,
+          72
+        ]
+      },
+      {
+        "part": "left_wattle",
+        "target": "cranium",
+        "witness": [
+          17,
+          -1.5,
+          65.3
+        ]
+      },
+      {
+        "part": "left_hackle_0",
+        "target": "cranium",
+        "witness": [
+          8.3736,
+          -2.09,
+          66.38655999999999
+        ]
+      },
+      {
+        "part": "left_hackle_1",
+        "target": "cranium",
+        "witness": [
+          8.2071,
+          -2.2229,
+          66.02006
+        ]
+      },
+      {
+        "part": "left_hackle_2",
+        "target": "cranium",
+        "witness": [
+          8.040599999999998,
+          -2.3558,
+          65.65356
+        ]
+      },
+      {
+        "part": "left_hackle_3",
+        "target": "cranium",
+        "witness": [
+          7.8741,
+          -2.4886999999999997,
+          65.28706
+        ]
+      },
+      {
+        "part": "left_hackle_4",
+        "target": "cranium",
+        "witness": [
+          7.7076,
+          -2.6216,
+          64.92056
+        ]
+      },
+      {
+        "part": "left_hackle_5",
+        "target": "cranium",
+        "witness": [
+          7.5411,
+          -2.7544999999999997,
+          64.55405999999999
+        ]
+      },
+      {
+        "part": "left_hackle_6",
+        "target": "cranium",
+        "witness": [
+          7.3746,
+          -2.8874,
+          64.18756
+        ]
+      },
+      {
+        "part": "right_wattle",
+        "target": "cranium",
+        "witness": [
+          17,
+          1.5,
+          65.3
+        ]
+      },
+      {
+        "part": "right_hackle_0",
+        "target": "cranium",
+        "witness": [
+          8.3736,
+          2.09,
+          66.38655999999999
+        ]
+      },
+      {
+        "part": "right_hackle_1",
+        "target": "cranium",
+        "witness": [
+          8.2071,
+          2.2229,
+          66.02006
+        ]
+      },
+      {
+        "part": "right_hackle_2",
+        "target": "cranium",
+        "witness": [
+          8.040599999999998,
+          2.3558,
+          65.65356
+        ]
+      },
+      {
+        "part": "right_hackle_3",
+        "target": "cranium",
+        "witness": [
+          7.8741,
+          2.4886999999999997,
+          65.28706
+        ]
+      },
+      {
+        "part": "right_hackle_4",
+        "target": "cranium",
+        "witness": [
+          7.7076,
+          2.6216,
+          64.92056
+        ]
+      },
+      {
+        "part": "right_hackle_5",
+        "target": "cranium",
+        "witness": [
+          7.5411,
+          2.7544999999999997,
+          64.55405999999999
+        ]
+      },
+      {
+        "part": "right_hackle_6",
+        "target": "cranium",
+        "witness": [
+          7.3746,
+          2.8874,
+          64.18756
+        ]
+      },
+      {
+        "part": "serpent_tail",
+        "target": "trunk",
+        "witness": [
+          -9,
+          0,
+          27
+        ]
+      },
+      {
+        "part": "tail_plume_0",
+        "target": "serpent_tail",
+        "witness": [
+          -20.15,
+          0.0,
+          27.9772
+        ]
+      },
+      {
+        "part": "tail_plume_1",
+        "target": "serpent_tail",
+        "witness": [
+          -34.15,
+          0.0,
+          27.287599999999998
+        ]
+      },
+      {
+        "part": "tail_plume_2",
+        "target": "serpent_tail",
+        "witness": [
+          -46.15,
+          0.0,
+          35.873839999999994
+        ]
+      },
+      {
+        "part": "tail_plume_3",
+        "target": "serpent_tail",
+        "witness": [
+          -51.15,
+          0.0,
+          49.32216
+        ]
+      },
+      {
+        "part": "tail_plume_4",
+        "target": "serpent_tail",
+        "witness": [
+          -45.15,
+          0.0,
+          61.701519999999995
+        ]
+      },
+      {
+        "part": "tail_plume_5",
+        "target": "serpent_tail",
+        "witness": [
+          -33.15,
+          0.0,
+          64.08088
+        ]
+      },
+      {
+        "part": "tail_plume_6",
+        "target": "serpent_tail",
+        "witness": [
+          -27.15,
+          0.0,
+          55.39128
+        ]
+      }
+    ]
+  },
+  "status": "Source witnesses require independent neutral and posed serialized validation."
+}
