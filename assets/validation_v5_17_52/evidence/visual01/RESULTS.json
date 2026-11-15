@@ -1,0 +1,38 @@
+{
+  "issue": 747,
+  "kind": "cartridge_kits",
+  "scope": "Native pickup/toss, quantity and saved ownership for cartridge_kits; no normal menu or author acceptance.",
+  "baseline_sha256": "eff8a6732a61060e9dfa6508a70778083363bf5eb8bf8d083aa8d2641cd70f69",
+  "runtime_sha256": "eff8a6732a61060e9dfa6508a70778083363bf5eb8bf8d083aa8d2641cd70f69",
+  "model_sha256": "cbb8d2ab35075096cd89924a9004d34d14da79540b770cec93a975a92b67da83",
+  "fixture_sha256": "c294046b6e10f209b01c23b22554ed7c16bd90596d9d05f3a9e3a910247a042b",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 62
+    }
+  ],
+  "captures": {
+    "candidate-0.png": "93131664363db1b80573312202ef8b42b8fa5a8fa2cd00f3de83e8fcb48f5e36",
+    "candidate-1.png": "d3461dfd2194b3b634c90f61623699a04263c4072bc87710ebbc4d4d0edbf95c",
+    "candidate-2.png": "8eb2f68d6453ce067c085776f936ca10267147ae698ee5bd90c462053878469d",
+    "candidate-3.png": "e98822245bcbb89cd35bcadd7228c8d5152a46d0d28d34a137f2ffe679b7defe",
+    "candidate-5.png": "0febc355c61e8e3652a5470aff85331defd8ba146428dc6daa20d0432b8eb843",
+    "candidate-6.png": "0febc355c61e8e3652a5470aff85331defd8ba146428dc6daa20d0432b8eb843",
+    "candidate-7.png": "73d2283b10861e5f69d0586ce726ae597d15ee3ac320bd5d48cd281ebe60c02a",
+    "detail-0-0.png": "86dd6c10bc6e8fc8a25d2c9ef82c86502dcc0cb4eaf37466b0adbaaaed126bda",
+    "detail-0-160.png": "0b2bf46aaf6f38127e7e7f0458326eb9de41129511b07ae884ecf561aeea6d82",
+    "detail-0-225.png": "0c9e523f137d35824fada9b7cbd1d0be66d179a4c2625974724d686773d24d8d",
+    "detail-0-270.png": "51d6dd6775b4c9046afac5bd78ea0213bf50b509178e0878b5e9b607fbd43881",
+    "detail-0-90.png": "fa8437253162a46a292c74a4db8e75668cda1c04da10c29cc29ebc4b66d2cef3",
+    "detail-1-0.png": "5ba8be3b97ab7be0673d2e56b4f11a7eac6fce0fc1c45ed90335912ace5a6079",
+    "detail-1-160.png": "29115be98d2663cfa9617bbe4297d6310be01cd2f111a5b16756c968faffb84d",
+    "detail-1-225.png": "65dbaf60c49aee8843e65acb3245a2c80ed67fe1dced6bc1736407e977213557",
+    "detail-1-270.png": "6eb7705736141a5058074b6a52d88186b887b68bf938de05660c2fa081e57065",
+    "detail-1-90.png": "613bc0d4533469830d057c23a24abdca319e8d554084c20233ba161f6e51666a"
+  }
+}

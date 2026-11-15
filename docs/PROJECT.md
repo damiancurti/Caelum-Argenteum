@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.51** - 2026-11-14.
+Documentation version: **5.17.52** - 2026-11-14.
+
+## 5.17.52 - Prepared-kit drop models (#747)
+
+Carbine and shotgun kits79/80 gain native candidate volumes from their accepted
+#380 references.18 closed components,16 contacts, ten mouth rays,2,592 projected
+UV triangles, eight repeated outputs and300 native continuity/control checks
+pass. ASSETS records the bounded presentation pair and art qualifications.
+CA747-CARTRIDGE-KIT-DROPS-01 retains author visual/ordinary crafting review;
+accepted icons, quantities and all chemistry rules remain unchanged. Other
+inventory, character, modular and campaign work is still incomplete.
 
 ## 5.17.51 - Review controls corrected (#745)
 

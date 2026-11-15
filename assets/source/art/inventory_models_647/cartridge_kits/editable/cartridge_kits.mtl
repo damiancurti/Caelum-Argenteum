@@ -1,0 +1,9 @@
+newmtl paper
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl bronze
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/consumables/materials.png
+newmtl lead
+Kd 1 1 1
+map_Kd src/models/caelum/actors/training/ca_training_dummy.png

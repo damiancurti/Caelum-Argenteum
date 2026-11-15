@@ -1,6 +1,62 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.51** - 2026-11-14.
+Documentation version: **5.17.52** - 2026-11-14.
+
+## 5.17.52 - Native cartridge-kit drops (#747, parent #647)
+
+The two untiered prepared kits79/80 gain exact M079/M080 A native bindings.
+The owned #380 concepts guide bronze case/projectile versus paper case/shot,
+sealed abstract packets and folded wrappers. CA380-01 accepted those icons on
+2026-10-21; it does not accept these meshes. The kit remains one indivisible
+input under #379. Visible pieces do not encode Amount, actual loading ratios,
+new component products or the shotgun's gameplay pellet count. Icons, tier1,
+weight, Actor.Scale0.25/collision, lots/provenance, workbench/chemistry recipes,
+ammunition and save rules are unchanged.
+
+Both meshes total13,421 vertices and13,440 triangles:18 independently closed
+components,16 contact witnesses, ten clear case-mouth rays and2,592 projected
+UV triangles pass. Eight outputs repeat byte-for-byte, including the local
+preview package. Native/editable quantized triangles, floor bounds and original
+icon envelopes pass. Sources and portable OBJ/MTL textures are in
+assets/source/art/inventory_models_647/cartridge_kits. Regenerate with python
+assets/generators/generate_inventory_cartridge_kits_models.py
+--output build/cartridge-kits --install.
+
+Existing opaque #743 paper and #652 bronze/iron pixels are reused unchanged.
+Initial sampling found near-opaque alpha in the original kit concepts and the
+earlier ammunition paper region, so those were not installed as new textures.
+No image generation or raster editing occurred. Initial checks found out-of-
+region recessed-case UVs and a wrapper obstructing mouth rays; both were
+corrected. Native preview prompted less regular wrapper folds and gathered or
+folded packet closures. Earlier logs, manifests and selected source iterations
+are retained. The final ten detail views, floor overview and presentation scenes
+were inspected. Visual qualifications remain: regular wrapper shape, pale paper
+contrast, coarse bronze mottling, simple gray shot and projected/wrap seams.
+Flat ambient light reduces the legibility of shallow mouths and paper folds.
+
+The installed build passes300 native checks:55 baseline,68 old-save adoption
+(including seven navigation probes),55 fresh,61 reload and61 rollback. The
+final-byte visual run passes62. API pickup/toss, split/merge, lots/provenance
+and prepared Box/quest guards do not establish ordinary menus or real crafting.
+One sequential700-tic two-object sprite/model pair measures
+1014.61/992.93 queue presents/s,
+p95 1.1430/1.1611 ms and
+p99 1.3558/1.3785 ms.
+Windows11, Ryzen9 5950X, RTX3070Ti, GZDoom4.14.2 Vulkan1280x720,
+uncapped/vsync off, background unpaused/audio5%. Queue-only timing, unequal
+projected footprints and one pair do not establish GPU/display timing,
+repeatability or crowd/campaign performance. All18,474 package entries match
+src. Only two meshes, one definition, MODELDEF and two release diagnostic
+strings differ from #745; no texture or gameplay bytes change.
+
+Evidence: assets/validation_v5_17_52/evidence/SUMMARY.json.
+Final packaging restores MODELDEF to its existing CRLF checkout policy.
+Only those line endings differ from the tested package; normalized content
+and every other entry are identical. Full validation preceded that correction;
+package/source and filtered checkout bytes were verified afterward.
+
+CA747-CARTRIDGE-KIT-DROPS-01 retains author art and ordinary inventory/crafting
+review. Other inventory, characters, modular equipment and campaign work remain.
 
 ## 5.17.51 - Restore review-fixture underside controls (#745)
 

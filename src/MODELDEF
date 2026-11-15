@@ -4792,3 +4792,5 @@ Model CaelumBarricadeVisual
 #include "caelum/data/basilisco_combat.modeldef"
 #include "caelum/data/inventory_hygiene.modeldef"
 #include "caelum/data/inventory_kitchen_ingredients.modeldef"
+
+#include "caelum/data/inventory_cartridge_kits.modeldef"
