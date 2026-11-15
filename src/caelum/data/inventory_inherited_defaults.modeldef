@@ -1,0 +1,3 @@
+// #785: estados exactos observados como sprites sin la vinculaci?n expl?cita.
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/bladed_weapons" Model 0 "sword.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSWD A 0 0 }
+Model CaelumJavelinAmmo { Path "models/caelum/inventory/ammunition" Model 0 "carbine.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CCAA A 0 0 }

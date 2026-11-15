@@ -4811,3 +4811,5 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_armor_hands.modeldef"
 #include "caelum/data/inventory_armor_feet.modeldef"
 #include "caelum/data/inventory_armor_torso.modeldef"
+
+#include "caelum/data/inventory_inherited_defaults.modeldef"

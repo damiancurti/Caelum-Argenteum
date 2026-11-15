@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.70** - 2026-11-15.
+Documentation version: **5.17.71** - 2026-11-15.
+
+## 5.17.71 - #785 inventory state audit delivered
+
+Two inherited defaults now render their existing parent models through explicit
+class/state bindings. All 856 observed rows resolve directly; 597 default classes
+are enumerated. Repeated fixture/data checks and 32 native metadata/camera checks
+pass. Twelve final detail views and the overview were inspected. Evidence:
+assets/validation_v5_17_71/evidence/SUMMARY.json. Existing family author checks
+remain pending; this does not certify future/custom classes or ordinary handling.
+Next: remaining bestiary/character models and regional galleries. Modular style
+proposals await author review; unauthored V5.16 decisions and siege performance
+remain unresolved. Do not infer author acceptance from these isolated checks.
 
 ## 5.17.70 - #783 torso armor delivered; author review pending
 

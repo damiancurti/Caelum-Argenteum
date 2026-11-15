@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.70** - 2026-11-15.
+Documentation version: **5.17.71** - 2026-11-15.
+
+## 5.17.71 - Inventory coverage and two default-state repairs (#785)
+
+The current package audit observes 597 Inventory classes and 856 default/catalogue
+rows, all directly bound to native models. Two child defaults had still rendered
+sprites despite parent models; exact aliases fix both without new art/gameplay.
+Repeated fixtures/data and 32 native visual/control checks pass; twelve detail
+views and an overview were inspected. ASSETS defines the bounded coverage.
+Existing author reviews, other characters, modular fitting and V5.16 remain open.
 
 ## 5.17.70 - Four torso armor world models (#783)
 

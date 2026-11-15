@@ -51,6 +51,7 @@ from assets.generators.validate_inventory_polearms_models import validate as pol
 from assets.generators.validate_inventory_articulated_weapons_models import validate as articulated_weapon_problems
 from assets.generators.validate_inventory_ranged_weapons_models import validate as ranged_weapon_problems
 from assets.generators.validate_inventory_armor_torso_models import validate as armor_torso_problems
+from assets.generators.validate_inventory_default_models import validate as inventory_default_model_problems
 from assets.generators.validate_inventory_armor_feet_models import validate as armor_foot_problems
 from assets.generators.validate_inventory_armor_hands_models import validate as armor_hand_problems
 from assets.generators.validate_inventory_armor_helmets_models import validate as armor_helmet_problems
@@ -186,6 +187,7 @@ def validate(root):
     errors.extend(armor_hand_problems(root))
     errors.extend(armor_foot_problems(root))
     errors.extend(armor_torso_problems(root))
+    errors.extend(inventory_default_model_problems(root))
     errors.extend(armor_world_alias_problems(root))
     errors.extend(effective_weapon_reference_problems(root))
     errors.extend(inventory_ingot_problems(root))

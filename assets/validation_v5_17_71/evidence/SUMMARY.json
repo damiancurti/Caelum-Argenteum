@@ -1,0 +1,201 @@
+{
+  "issue": 785,
+  "parent_issue": 647,
+  "version": "5.17.71",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "runtime": {
+    "entries": 18558,
+    "sha256": "29b1bb85919155984d68c4232d242725020fb82460d67deeabc14b88ecb23708",
+    "added": [
+      "caelum/data/inventory_inherited_defaults.modeldef"
+    ],
+    "changed": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_bytes_identical": true
+  },
+  "scope": "Exact default-state MODELDEF aliases for CA_LimboMagicImplement CSWD A and CaelumJavelinAmmo CCAA A. Existing parent models, scales, sprites, classes and inventory gameplay remain unchanged.",
+  "audit": {
+    "default_classes": 597,
+    "visible_droppable_defaults": 87,
+    "rows": 856,
+    "all_direct": true,
+    "families": {
+      "amulet": {
+        "rows": 12,
+        "states": 4,
+        "missing_states": 0
+      },
+      "armor": {
+        "rows": 48,
+        "states": 16,
+        "missing_states": 0
+      },
+      "clothing": {
+        "rows": 25,
+        "states": 25,
+        "missing_states": 0
+      },
+      "default": {
+        "rows": 87,
+        "states": 87,
+        "missing_states": 0
+      },
+      "material": {
+        "rows": 342,
+        "states": 114,
+        "missing_states": 0
+      },
+      "seal": {
+        "rows": 15,
+        "states": 5,
+        "missing_states": 0
+      },
+      "shield": {
+        "rows": 12,
+        "states": 4,
+        "missing_states": 0
+      },
+      "weapon": {
+        "rows": 315,
+        "states": 35,
+        "missing_states": 0
+      }
+    },
+    "source_files": 714,
+    "fixture_sha256": "0a4dd73f5e8d36f63bd5877d33739c8de750fb27b4a3ff457d6109adb6d0a727",
+    "repeated_fixture_bytes_identical": true,
+    "repeated_rows_and_census_identical": true
+  },
+  "native": {
+    "assertions": 32,
+    "fixture_sha256": "0afa4ff729de0827ec557f5b1b8e25843f7b42a6df8987cc24a99449ca9a8ac4",
+    "baseline_fixture_identical": true,
+    "inspected_views": [
+      "detail-0-90.png",
+      "detail-0-160.png",
+      "detail-0-270.png",
+      "detail-1-90.png",
+      "detail-1-160.png",
+      "detail-1-270.png",
+      "detail-2-90.png",
+      "detail-2-160.png",
+      "detail-2-270.png",
+      "detail-3-90.png",
+      "detail-3-160.png",
+      "detail-3-270.png",
+      "overview.png"
+    ],
+    "baseline_inspected": [
+      "superseded/inherited01/detail-0-90.png",
+      "superseded/inherited01/detail-1-90.png",
+      "superseded/inherited01/detail-2-90.png",
+      "superseded/inherited01/detail-3-90.png",
+      "superseded/inherited02/detail-1-90.png",
+      "superseded/inherited02/detail-3-90.png"
+    ]
+  },
+  "findings": [
+    "Both child default states rendered sprites in the baseline while their parent controls rendered the existing models. Exact child bindings fix both in all three inspected directions.",
+    "Initial String[] class-name matching admitted only three of597 project Inventory classes; direct Name[] matching fixes the census. An attempted String(...) conversion failed compilation. Native required-family guards now reject an incomplete census.",
+    "Four initial metadata failures were strict floating-point scale comparisons: settled0.100000000 versus declared0.100000001. A1e-6 comparison preserves amount/radius/height/ownership checks; baseline and final fixtures each pass32."
+  ],
+  "qualifications": [
+    "The catalogue audit observes this supplied package using current public update functions and legal-essence filters. Normalized material inputs may share the same effective identity.",
+    "This is an isolated once-only AllActorClasses census, not a production live-actor scan. No save or campaign mutation is installed.",
+    "All856 observed rows have explicit class/sprite/frame bindings. This does not prove visibility of every future, external or dynamically customized subclass, ordinary play, art quality or author acceptance.",
+    "No new geometry, pixels, gameplay, schema or migration. Existing family-specific continuity evidence and author checks remain; no new performance claim is made. Wider V5.16, remaining characters and modular fitting are unfinished."
+  ],
+  "files": {
+    "audit04/audit.zs": "fcd0609e2e23dc1d3f40ffe9cbf318255ecbf472d2550d0cd9f99d95c3fc67d2",
+    "audit04/commands.cfg": "b2a1af1cd2dbfee20f7aee89d9748e97cb13dd2dd42782851ac89cdd8e190417",
+    "audit04/engine.log": "01581b86cd6623d0c173ef4b55a47193f637253d6415be2ac792387ea047f69f",
+    "audit04/MAPINFO.txt": "6b8a9baf61c46350a595ebf26ab76fdf74d57a95ee6514e10d31665ee6f5eedf",
+    "audit04/process.log": "36f2e6d29ed3477a043fa029d7bae250f7ccaba6aaa189c2018df349b8d0fbba",
+    "audit04/RESULTS.json": "be3fdd422aea241eee30de5d17b47d5115a8603934d365e62508ca086938bf75",
+    "audit04/session.ini": "3c22e22a6021af500c0e95bc0d1285714cdf13d6ba00fb5939c657e92018777d",
+    "audit04/ZSCRIPT.txt": "b100e5bb3ddc38e5bf1b4f7770c58e39a74f027129b6dee3e0ba8daea3c48419",
+    "audit05/audit.zs": "fcd0609e2e23dc1d3f40ffe9cbf318255ecbf472d2550d0cd9f99d95c3fc67d2",
+    "audit05/commands.cfg": "b2a1af1cd2dbfee20f7aee89d9748e97cb13dd2dd42782851ac89cdd8e190417",
+    "audit05/engine.log": "764de4ec16d7c54aa00dc465e0ba4fc42ce9552d96c48c7014784b99467e24d7",
+    "audit05/MAPINFO.txt": "6b8a9baf61c46350a595ebf26ab76fdf74d57a95ee6514e10d31665ee6f5eedf",
+    "audit05/process.log": "2988499d011736270637ad44c20d4764584690d9bcdba84c88d227ca3d8f1605",
+    "audit05/RESULTS.json": "be3fdd422aea241eee30de5d17b47d5115a8603934d365e62508ca086938bf75",
+    "audit05/session.ini": "72ba420328b8afc9eba6207e5d13e987db734cf094b9dc65e59bc5442586525e",
+    "audit05/ZSCRIPT.txt": "b100e5bb3ddc38e5bf1b4f7770c58e39a74f027129b6dee3e0ba8daea3c48419",
+    "build01.log": "61c7007f44231418f5d566a039eec0e523869d3d718a455a3aaeff31e0d535ea",
+    "runtime-parity.json": "64f6cee4657ce6d6304af1c756a5628daf494086cbd436e32923cb2af98ad414",
+    "superseded/audit01/audit.zs": "442d03fcab02a8b60713da25d309094bdba9c77da481a19f1f5e0b56657adcab",
+    "superseded/audit01/commands.cfg": "b2a1af1cd2dbfee20f7aee89d9748e97cb13dd2dd42782851ac89cdd8e190417",
+    "superseded/audit01/engine.log": "b66afc7a269c6baeed732b3751d6bbcc593a91585414df2998f9d1be2b4daff5",
+    "superseded/audit01/MAPINFO.txt": "6b8a9baf61c46350a595ebf26ab76fdf74d57a95ee6514e10d31665ee6f5eedf",
+    "superseded/audit01/process.log": "bf97a60c08239e85a83b74e4819870eaa88490914cd34c0cc0a3795b18b26767",
+    "superseded/audit01/RESULTS.json": "af616fbcd2955a0ad552db73668e085e6f430cf586f90043b44236c8ae27ace8",
+    "superseded/audit01/session.ini": "21bc614f7779ea82dfebc058f8c6d2d086f42883c1d4bf05bb02a500b217321d",
+    "superseded/audit01/ZSCRIPT.txt": "2812c5731f91d56cf686c2d041a887827f457294ea6ce7b1042dadf401772c5e",
+    "superseded/audit02/audit.zs": "c782f6a844302d06c75abbc075bfa9591552c1cf232bf0c5b0e15e0975588c95",
+    "superseded/audit02/commands.cfg": "b2a1af1cd2dbfee20f7aee89d9748e97cb13dd2dd42782851ac89cdd8e190417",
+    "superseded/audit02/engine.log": "fb7deb1b201c41ffdc6ce80654f9822a3aec63efe07d55252b4d450eaeaf8073",
+    "superseded/audit02/MAPINFO.txt": "6b8a9baf61c46350a595ebf26ab76fdf74d57a95ee6514e10d31665ee6f5eedf",
+    "superseded/audit02/process.log": "c87af95b8cae30397fcdf7bdaee7dc3ebeb24a6d189ff4fdd95e535db52a9f77",
+    "superseded/audit02/RESULTS.json": "4e267cb50b75c4dccf29f4df89052e937ad52faa3aef57bc27bf00561e6c155a",
+    "superseded/audit02/session.ini": "5b6b70ebc461e577bf7f980434835c7b11567520cc53926654cee091bd9e6b37",
+    "superseded/audit02/ZSCRIPT.txt": "b76556702ceafbb13ac102c2542093781dc6976022072312c7eebe2aef664033",
+    "superseded/audit03/audit.zs": "fcd0609e2e23dc1d3f40ffe9cbf318255ecbf472d2550d0cd9f99d95c3fc67d2",
+    "superseded/audit03/commands.cfg": "b2a1af1cd2dbfee20f7aee89d9748e97cb13dd2dd42782851ac89cdd8e190417",
+    "superseded/audit03/engine.log": "3698248c87c30851d7dc745979e1b51b84044985ce8c5c57691cf7c046805019",
+    "superseded/audit03/MAPINFO.txt": "6b8a9baf61c46350a595ebf26ab76fdf74d57a95ee6514e10d31665ee6f5eedf",
+    "superseded/audit03/process.log": "f4dc34b193b3959e52ae531a5391ebaa88401cfe1763b5cd723abc57ecd8bc35",
+    "superseded/audit03/RESULTS.json": "3bd9ccf395135bdfe30027aff999c02ebbe25dd1a549f80d46cdac6d0f90f305",
+    "superseded/audit03/session.ini": "6846c5a5c4e9b1f2f47f809b263d31c7c11f2c2dcf3a31d7dc4604e3c748eee8",
+    "superseded/audit03/ZSCRIPT.txt": "b100e5bb3ddc38e5bf1b4f7770c58e39a74f027129b6dee3e0ba8daea3c48419",
+    "superseded/inherited01/audit.zs": "28ef0c22eb9661cba1f8fb0b8138de209fa1fd0c4b0f300def4a8f8081eda3b0",
+    "superseded/inherited01/commands.cfg": "4c00719b82ea1c0b33161051a935b4bb35493f3744e478398bd506a1e208dbb3",
+    "superseded/inherited01/detail-0-90.png": "57175a6a49c2c529f98acf711cdb337574765e1d6b8f71f22fb7677486768446",
+    "superseded/inherited01/detail-1-90.png": "0a17a9cfa2a2be6778e341a5cc6967f9b4d9d4f69d2cca89b4709c41bf5a570f",
+    "superseded/inherited01/detail-2-90.png": "ba610c32b2af7b550a3891d4903939fc6cd274f0cfabac76b339e6bf9b92a16d",
+    "superseded/inherited01/detail-3-90.png": "e00b6b19b0c7d864de06735d3a91fe69cd365c0e9756ce41abc163c46c6d0ebd",
+    "superseded/inherited01/engine.log": "a99dd4cbdccc8f45768f113452c0cd43f57dbbcfe727681cfccdc3a13d2c32e6",
+    "superseded/inherited01/MAPINFO.txt": "c7cf2057262d7cb693c9f4e69211c1b5b49ddea6ca78d7b3195a0bbf55418923",
+    "superseded/inherited01/process.log": "c24afab852f65c04724c7b8eb8ca2abdd38525aa0a9242f2c5d621cffea746b5",
+    "superseded/inherited01/RESULTS.json": "bafe8fd1aa369be9113d2c765c3d70b61e93b133757cc8096582c493f4eea38b",
+    "superseded/inherited01/session.ini": "377324301285e4a6f5467dcf02b5170b8850ed0b2342d804d823faa90d3765f6",
+    "superseded/inherited01/ZSCRIPT.txt": "e42e5181163bf1092abc62eacf7344732486eb674bdb8e4a143cc6122affd37c",
+    "superseded/inherited02/audit.zs": "5a6f1eed5b907ccb40c4ce6f1ef9442190158b88200c1485dcbdb44d593c1011",
+    "superseded/inherited02/commands.cfg": "4c00719b82ea1c0b33161051a935b4bb35493f3744e478398bd506a1e208dbb3",
+    "superseded/inherited02/detail-1-90.png": "0a17a9cfa2a2be6778e341a5cc6967f9b4d9d4f69d2cca89b4709c41bf5a570f",
+    "superseded/inherited02/detail-3-90.png": "e00b6b19b0c7d864de06735d3a91fe69cd365c0e9756ce41abc163c46c6d0ebd",
+    "superseded/inherited02/engine.log": "6286ccc9d412e17f1abf353ae8154fb973481a91324b852d01d9cba6047ee62c",
+    "superseded/inherited02/MAPINFO.txt": "c7cf2057262d7cb693c9f4e69211c1b5b49ddea6ca78d7b3195a0bbf55418923",
+    "superseded/inherited02/process.log": "b5f12053fe0667c4a71c63b5f0012bda22b8dc6afbb0904ccf4c584d6a6d0081",
+    "superseded/inherited02/RESULTS.json": "e4da28b3934087d2bfa210e82995cbfb0e391cee2e612f6fe12de47497750b9b",
+    "superseded/inherited02/session.ini": "7df1f17b70117e5b136d3f7a8dac61e1528ad70f63a9ee6957054fea493f2183",
+    "superseded/inherited02/ZSCRIPT.txt": "2efe0f6b7fcfc5589fc2bb0a1d9193125b294bbf13abb5718d3dc90212c9c655",
+    "visual/audit.zs": "5a6f1eed5b907ccb40c4ce6f1ef9442190158b88200c1485dcbdb44d593c1011",
+    "visual/commands.cfg": "4c00719b82ea1c0b33161051a935b4bb35493f3744e478398bd506a1e208dbb3",
+    "visual/detail-0-160.png": "0b7c524ebccc970260a5bde5088d254c86396f193d006aa535a1b3d57fd0fd1e",
+    "visual/detail-0-270.png": "f9d576e933102658e598424ce033bd6f2b1ff66100e7a82df876d1af4abc5072",
+    "visual/detail-0-90.png": "57175a6a49c2c529f98acf711cdb337574765e1d6b8f71f22fb7677486768446",
+    "visual/detail-1-160.png": "371c4ddb8ae0cf01ec3ad149b3d4be89eaeffdd1042e921d5d8af4869a58085b",
+    "visual/detail-1-270.png": "4a2863ee12791527ccb5f09c0330463ad9edce25ecbd31758d2329c0d28dd5be",
+    "visual/detail-1-90.png": "2218b8b02c04c5b82c54fb6b76305ed3432fcb82b3fd9e10d7131c3fd31d8006",
+    "visual/detail-2-160.png": "0d2d296f297115ae4147f7cb2d1d84316ab88a7157aa89f9538960e83a668a81",
+    "visual/detail-2-270.png": "153c37c8ff3d06597dd2a97aed53156ee80c01740d812276bcde1af71f96e288",
+    "visual/detail-2-90.png": "ba610c32b2af7b550a3891d4903939fc6cd274f0cfabac76b339e6bf9b92a16d",
+    "visual/detail-3-160.png": "9b670f9348822de49c365e2708ad560c5f8d386f1b3e2e047c90e94e5a4957f6",
+    "visual/detail-3-270.png": "3926aeef654a20d82ec661de7ab43a03c6b277c0ceded875b6905bb319bbe615",
+    "visual/detail-3-90.png": "dde6e673f09c5807a4bc0a4a00ee6917b4ef8d7d7150b91b64813c81fd23c07f",
+    "visual/engine.log": "ba685ecd7a57553ba1597e7a7892d4684742d9e39148a481c48401c421799792",
+    "visual/MAPINFO.txt": "c7cf2057262d7cb693c9f4e69211c1b5b49ddea6ca78d7b3195a0bbf55418923",
+    "visual/overview.png": "aee71e9eed5bda002bfb920da44e015e98fa3bdb3bd51af6e47bb0e3b76844a4",
+    "visual/process.log": "10cd5ae30a1fd5d867f74ef11557f7bb06a2f49dc042046b3c03c7919acd0db6",
+    "visual/RESULTS.json": "b5f5830e678eb9b83687e70be86a7648899b64bcb10f0c5f2ba179bcfbd7a830",
+    "visual/session.ini": "a6c5c7c40f74ff31cef30eb3c18ac13e23040d2588517a0d43a344cb10af22b1",
+    "visual/ZSCRIPT.txt": "2efe0f6b7fcfc5589fc2bb0a1d9193125b294bbf13abb5718d3dc90212c9c655",
+    "validation-final.json": "e57792b0e247b10ee597ca9f0f92bd3146b932b4621ee577e3f7b0dee8396e5d"
+  },
+  "project_validation_passed": true
+}
