@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.71** - 2026-11-15.
+Documentation version: **5.17.72** - 2026-11-15.
+
+## 5.17.72 - #787 Familiar and Ao Ao models (2026-11-15)
+
+Added original native quadruped candidates for CaelumBestiary043/050. Existing
+Mandinga gameplay and saved identities are unchanged. Twelve deterministic
+artifacts repeat;113 closed components,111 rooted attachments and888 independent
+posed checks pass. Native baseline/old-save/fresh/reload/rollback:230 assertions;
+action/death/loot/reload:134. Thirty-six final views and four bounded presentation
+scenes were inspected. Early missing UV settings and zero-radius sweep endpoints
+were fixed; eye/muzzle/horn anatomy, wool repetition and camera framing were
+refined before final tests. ASSETS records materials, measurements and limits.
+Evidence: assets/validation_v5_17_72/evidence/SUMMARY.json.
+CA787-QUADRUPEDS-01 originates here and remains pending. No author check was
+accepted or removed. Regional gallery updates and wider work remain unfinished.
 
 ## 5.17.71 - #785 inventory model coverage and default-state aliases (2026-11-15)
 

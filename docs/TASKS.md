@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.71** - 2026-11-15.
+Documentation version: **5.17.72** - 2026-11-15.
+
+## 5.17.72 - #787 quadrupeds delivered; author review pending
+
+Familiar and Ao Ao have native model candidates with23 existing states each.
+Twelve artifacts repeat;113 closed components,111 attachments and888 posed
+attachment checks pass. Native continuity:230; actions/death/loot/reload:134.
+Thirty-six final views and four presentation scenes were inspected. Evidence:
+assets/validation_v5_17_72/evidence/SUMMARY.json. CA787-QUADRUPEDS-01 awaits author
+art/ordinary-gameplay review. Gallery additions remain separate;35 of56 new
+catalogue classes still need models. Modular style approval, named characters,
+worn fitting, unauthored V5.16 progression and siege performance remain open.
 
 ## 5.17.71 - #785 inventory state audit delivered
 

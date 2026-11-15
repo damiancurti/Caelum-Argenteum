@@ -1,0 +1,1581 @@
+{
+  "issue": 787,
+  "parent_issue": 461,
+  "version": "5.17.72",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Reference-based native Familiar and Ao Ao quadruped candidates with separate editable anatomical/pose parts. Exact inherited combat states and approved provisional rules are preserved. Regional galleries are a separate issue.",
+  "runtime": {
+    "entries": 18564,
+    "sha256": "bce035906abe541f93bed3aef4eeac349c738063fa28fb3636a5490724c9ebe8",
+    "added": [
+      "caelum/data/quadruped_combat.modeldef",
+      "models/caelum/folklore/quadrupeds/ao_ao.md3",
+      "models/caelum/folklore/quadrupeds/dark.png",
+      "models/caelum/folklore/quadrupeds/familiar.md3",
+      "models/caelum/folklore/quadrupeds/iris.png",
+      "models/caelum/folklore/quadrupeds/materials.png"
+    ],
+    "changed": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_bytes_identical": true
+  },
+  "baseline": {
+    "sha256": "29b1bb85919155984d68c4232d242725020fb82460d67deeabc14b88ecb23708",
+    "all_unrelated_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_artifacts": 12,
+    "repeat_byte_identical": true,
+    "installed_source_export_check_passed": true,
+    "geometry": {
+      "familiar": {
+        "closed_components": 65,
+        "attachment_witnesses": 64,
+        "rooted_components": 65,
+        "combat_frames": 23,
+        "collapsed_native_triangles": 0,
+        "native_pose_floor_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "independent_posed_attachment_checks": 512,
+        "attachment_frames": [
+          0,
+          10,
+          17,
+          22
+        ]
+      },
+      "ao_ao": {
+        "closed_components": 48,
+        "attachment_witnesses": 47,
+        "rooted_components": 48,
+        "combat_frames": 23,
+        "collapsed_native_triangles": 0,
+        "native_pose_floor_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "independent_posed_attachment_checks": 376,
+        "attachment_frames": [
+          0,
+          10,
+          17,
+          22
+        ]
+      }
+    },
+    "models": {
+      "familiar": {
+        "actor": "CaelumBestiary043",
+        "catalogue_id": "CA-FOLK-043",
+        "vertices": 13034,
+        "triangles": 23136,
+        "hierarchical_parts": 78,
+        "surfaces": [
+          {
+            "material": "iris",
+            "vertices": 424,
+            "triangles": 800
+          },
+          {
+            "material": "dark",
+            "vertices": 1272,
+            "triangles": 2400
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7356
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7146
+          },
+          {
+            "material": "atlas",
+            "vertices": 3232,
+            "triangles": 5434
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -66.67661283279365,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              65.67551025478451,
+              21.807823256008884,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -66.06899499864033,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              63.80942077762743,
+              21.807823256008884,
+              100.2918668760666
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              65.67551025478451,
+              21.807823256008884,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -66.85762785801612,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              66.16749168935996,
+              21.807823256008884,
+              99.62244021361607
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              65.67551025478451,
+              21.807823256008884,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -65.92753727724379,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              65.17036321214566,
+              21.807823256008884,
+              100.61956869083039
+            ]
+          },
+          {
+            "min": [
+              -66.85762785801612,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              66.16749168935996,
+              21.807823256008884,
+              99.62244021361607
+            ]
+          },
+          {
+            "min": [
+              -65.92753727724379,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              65.17036321214566,
+              21.807823256008884,
+              100.61956869083039
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              63.20100871645291,
+              21.807823256008884,
+              101.66378944795804
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              62.652927261921064,
+              21.807823256008884,
+              102.07389882855243
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              67.84352470510179,
+              21.807823256008884,
+              96.55250197906335
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              63.20100871645291,
+              21.807823256008884,
+              101.66378944795804
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -23.48543758212362,
+              0.0
+            ],
+            "max": [
+              65.87845866612197,
+              24.75257237349274,
+              100.6733609846881
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -34.10309100338649,
+              0.0
+            ],
+            "max": [
+              66.28244554549258,
+              35.74581123779008,
+              98.3518029579379
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -43.525162218980725,
+              0.0
+            ],
+            "max": [
+              66.70983235254131,
+              45.82797745505545,
+              89.35313967403619
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -47.693953071247186,
+              0.0
+            ],
+            "max": [
+              67.08495174191631,
+              50.9722403089504,
+              69.90195088625794
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -49.65479476216445,
+              0.0
+            ],
+            "max": [
+              67.33171345151048,
+              51.135128551079426,
+              50.69581371651482
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -49.75961567029092,
+              0.0
+            ],
+            "max": [
+              67.4796597823302,
+              49.293057795093524,
+              43.615646512017776
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              64.31836713716865,
+              21.807823256008884,
+              101.11823864231044
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              65.67551025478451,
+              21.807823256008884,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              66.39416492419438,
+              21.807823256008884,
+              99.20666130739612
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -21.807823256008884,
+              0.0
+            ],
+            "max": [
+              65.67551025478451,
+              21.807823256008884,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -66.67661283279365,
+              -49.75961567029092,
+              0.0
+            ],
+            "max": [
+              67.4796597823302,
+              49.293057795093524,
+              43.615646512017776
+            ]
+          }
+        ],
+        "modeldef_scale": 1.652622208,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 73.01425016602037,
+        "maximum_authored_height": 102.07389882855243,
+        "source_sha256": "8d051140b6e03ea69da2e08efa626fbdd5d2130d49c0671abfc79122b2c3b8e1"
+      },
+      "ao_ao": {
+        "actor": "CaelumBestiary050",
+        "catalogue_id": "CA-FOLK-050",
+        "vertices": 23766,
+        "triangles": 24240,
+        "hierarchical_parts": 61,
+        "surfaces": [
+          {
+            "material": "iris",
+            "vertices": 424,
+            "triangles": 800
+          },
+          {
+            "material": "dark",
+            "vertices": 1272,
+            "triangles": 2400
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 4550
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 4476
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 5785
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 3498
+          },
+          {
+            "material": "atlas",
+            "vertices": 4095,
+            "triangles": 1951
+          },
+          {
+            "material": "atlas",
+            "vertices": 1656,
+            "triangles": 780
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -37.46021273355844,
+              -29.657155330900498,
+              0.0
+            ],
+            "max": [
+              55.44467579866442,
+              29.657155330900498,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -37.39419124466987,
+              -28.945383602958884,
+              0.0
+            ],
+            "max": [
+              53.97803143708955,
+              28.945383602958884,
+              100.16664758272205
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -29.657155330900498,
+              0.0
+            ],
+            "max": [
+              55.44467579866442,
+              29.657155330900498,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -37.37037980781631,
+              -29.657155330900498,
+              0.0
+            ],
+            "max": [
+              55.6770883394663,
+              29.657155330900498,
+              100.0497294317618
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -29.657155330900498,
+              0.0
+            ],
+            "max": [
+              55.44467579866442,
+              29.657155330900498,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -37.37037980781631,
+              -29.657155330900498,
+              0.0
+            ],
+            "max": [
+              55.2041614924403,
+              29.657155330900498,
+              100.5707567002244
+            ]
+          },
+          {
+            "min": [
+              -37.37037980781631,
+              -29.657155330900498,
+              0.0
+            ],
+            "max": [
+              55.6770883394663,
+              29.657155330900498,
+              100.0497294317618
+            ]
+          },
+          {
+            "min": [
+              -37.37037980781631,
+              -29.657155330900498,
+              0.0
+            ],
+            "max": [
+              55.2041614924403,
+              29.657155330900498,
+              100.5707567002244
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -32.225325142223156,
+              0.0
+            ],
+            "max": [
+              54.10803620034604,
+              27.353717420815116,
+              100.87229374763713
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -29.657155330900498,
+              0.0
+            ],
+            "max": [
+              53.831179802326204,
+              29.657155330900498,
+              101.02952151754634
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -29.657155330900498,
+              0.0
+            ],
+            "max": [
+              57.77798240467127,
+              29.657155330900498,
+              97.9379111839694
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -27.353717420815116,
+              0.0
+            ],
+            "max": [
+              54.10803620034604,
+              32.225325142223156,
+              100.87229374763713
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -36.180447752597814,
+              0.0
+            ],
+            "max": [
+              55.54266829770405,
+              22.882920160727522,
+              104.22496109787238
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -48.430387780475,
+              0.0
+            ],
+            "max": [
+              55.72863310351633,
+              32.47517940675764,
+              107.14973346184851
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -58.0549452221394,
+              0.0
+            ],
+            "max": [
+              55.908460923185146,
+              41.37327730015773,
+              99.42822252229713
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -61.35966298054677,
+              0.0
+            ],
+            "max": [
+              56.222961928698766,
+              45.740495234034576,
+              80.7964977982108
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -59.37260419193393,
+              0.0
+            ],
+            "max": [
+              56.672843942870216,
+              45.58048773673496,
+              61.47414626411463
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -56.18153626572446,
+              0.0
+            ],
+            "max": [
+              56.96556743409698,
+              43.80656300231372,
+              59.314310661800995
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -29.657155330900498,
+              0.0
+            ],
+            "max": [
+              54.76575607264751,
+              29.657155330900498,
+              100.57576660288397
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -29.657155330900498,
+              0.0
+            ],
+            "max": [
+              55.44467579866442,
+              29.657155330900498,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -29.657155330900498,
+              0.0
+            ],
+            "max": [
+              55.77754636847963,
+              29.657155330900498,
+              99.60936115816288
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -29.657155330900498,
+              0.0
+            ],
+            "max": [
+              55.44467579866442,
+              29.657155330900498,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -37.46021273355844,
+              -56.18153626572446,
+              0.0
+            ],
+            "max": [
+              56.96556743409698,
+              43.80656300231372,
+              59.314310661800995
+            ]
+          }
+        ],
+        "modeldef_scale": 1.652622208,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 74.08521567756218,
+        "maximum_authored_height": 107.14973346184851,
+        "source_sha256": "dbd5d81273e6970420b92da45db5d6bd3fa00f0461164b944d328681d0d30308"
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "familiar": {
+      "issue": 787,
+      "species": "familiar",
+      "studio": false,
+      "runtime_sha256": "bce035906abe541f93bed3aef4eeac349c738063fa28fb3636a5490724c9ebe8",
+      "baseline_sha256": "29b1bb85919155984d68c4232d242725020fb82460d67deeabc14b88ecb23708",
+      "fixture_sha256": "6a751d19b983e3764a68336c227711121d4b24c0f88b3519cc5283dc3e96e315",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "empty-view-6.png": "483f86768cac9a38ab0ea69b8f64ed606d36f2ea681e31984ef8f5e8a4e1b124",
+            "empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "pose-00-idle.png": "d832ec32903e09dc7a01a1235cf95b7267b3db1e81645e99ae2b3f5b4a618e65",
+            "pose-01-idle.png": "27731766680b0be0bc5025b6b8820d49d1389a2bb6e222de080e0f8c44c63d9f",
+            "pose-02-run.png": "d832ec32903e09dc7a01a1235cf95b7267b3db1e81645e99ae2b3f5b4a618e65",
+            "pose-03-run.png": "22286ed164bdfa4cc7777f10b9d018f61753ba141ca2bfceca0dccdf70353f30",
+            "pose-04-run.png": "d832ec32903e09dc7a01a1235cf95b7267b3db1e81645e99ae2b3f5b4a618e65",
+            "pose-05-run.png": "aac6d141634966837c46697e3c0ed5c9d3090403a5b463d82d3dccb301385d85",
+            "pose-06-walk.png": "22286ed164bdfa4cc7777f10b9d018f61753ba141ca2bfceca0dccdf70353f30",
+            "pose-07-walk.png": "aac6d141634966837c46697e3c0ed5c9d3090403a5b463d82d3dccb301385d85",
+            "pose-08-stun.png": "3706205dade36d02c3268d3372210fa966ec0a130fabaaf13dd32bcbe4c7b1c2",
+            "pose-09-attack_prepare.png": "ff04d5441d9314bf1b73bd5baf2dc01a835afe41cc0808ac61c2116f29ea2a4c",
+            "pose-10-attack_release.png": "b2a4ac6d57be575f9500951833f65b1dc60639d87b576380b47a11aeb972fb02",
+            "pose-11-pain.png": "fe19996d5193547b29b7e88fac61a804cf6609cfd2173169c75952a7c2ad6bc3",
+            "pose-12-death.png": "f92cd635434a4aab8a55c7f4475896a38d8f207c5fef6e283cee964fb5836752",
+            "pose-13-death.png": "79429ad1c621209e138451958cf9aa6cf54853037d0eb5af050d7f55838d4fd9",
+            "pose-14-death.png": "e9f4ed27c87d260a17a80e74a1271cb38d772df0e641f0cbe434855dc18c018f",
+            "pose-15-death.png": "4e59c441d974c618fe6ec0f76ca4ac7f805c2c20f67a8eef2e1ff746280d4b2d",
+            "pose-16-death.png": "15d583eaef671ec2c96b7f83897d75b08dd73715f7b1a8524e14901e007021c1",
+            "pose-17-death.png": "95266f55846b7e3557eb2e82634791c804e32b815445695e8bb9bdee59a3a46e",
+            "pose-18-breath.png": "b20190ca92c65fbc21a6b5cee2cf4ad06ce5345bf3307a25720dec8f7d97a3ed",
+            "pose-19-breath.png": "5403d8f1e04867dd89ca03b67d80f7f314099cc9a61768b681a1a05124205d85",
+            "pose-20-breath.png": "d57b90d037486863fa942c78b8e23e3a54d4031789a07c41d3bf77a96936a0f8",
+            "pose-21-breath.png": "f166112bae35fb3c45c6e2fa37230a30aeafcfc28dd4e327b32625e985161fc6",
+            "pose-22-rest.png": "95266f55846b7e3557eb2e82634791c804e32b815445695e8bb9bdee59a3a46e",
+            "view-feet-detail.png": "d116800ac0ac2a3b1b1077dcceed7b24532bb650902fd817771bb214197ef85e",
+            "view-front.png": "3e83c682e63044c52571904ac2589920a031465eb5407e07f3f8aaa33cc8b672",
+            "view-head-front.png": "35b6bb7f88546af573252b6cbb81eec93bc39609cfa2b05784d5c3214870b5a4",
+            "view-head-oblique.png": "b3a2f385c414bdbc06d1e157bcc852f4173dec0b094b929adc877a900247ca7f",
+            "view-lying-oblique.png": "95266f55846b7e3557eb2e82634791c804e32b815445695e8bb9bdee59a3a46e",
+            "view-rear.png": "e0c8ab41c210128e67db46562d1b3f09ba75cc90430b0cb5e59f3d0094758d4e",
+            "view-side.png": "8101e6b72979bbb33dd3a64c2282539236c19be20a9bd391149e6856b52aaa9f",
+            "view-tail-detail.png": "189e1c130693b3039fe59e6fdc179b6d98d14d95b1fe8f2acdc4ff7fec1ea202"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 32476,
+            "pose-01-idle.png": 31558,
+            "pose-02-run.png": 32476,
+            "pose-03-run.png": 32136,
+            "pose-04-run.png": 32476,
+            "pose-05-run.png": 31149,
+            "pose-06-walk.png": 32136,
+            "pose-07-walk.png": 31149,
+            "pose-08-stun.png": 32104,
+            "pose-09-attack_prepare.png": 32448,
+            "pose-10-attack_release.png": 33401,
+            "pose-11-pain.png": 32325,
+            "pose-12-death.png": 20198,
+            "pose-13-death.png": 17387,
+            "pose-14-death.png": 12956,
+            "pose-15-death.png": 12093,
+            "pose-16-death.png": 14397,
+            "pose-17-death.png": 16183,
+            "pose-18-breath.png": 32607,
+            "pose-19-breath.png": 32945,
+            "pose-20-breath.png": 33170,
+            "pose-21-breath.png": 32876,
+            "pose-22-rest.png": 16183
+          },
+          "distinct_pose_captures": 18
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    },
+    "ao_ao": {
+      "issue": 787,
+      "species": "ao_ao",
+      "studio": false,
+      "runtime_sha256": "bce035906abe541f93bed3aef4eeac349c738063fa28fb3636a5490724c9ebe8",
+      "baseline_sha256": "29b1bb85919155984d68c4232d242725020fb82460d67deeabc14b88ecb23708",
+      "fixture_sha256": "78aac5e686a605261bffa7ad2f3331c045c5fb7c3f71dbed6a7a29f150195c8f",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "empty-view-6.png": "483f86768cac9a38ab0ea69b8f64ed606d36f2ea681e31984ef8f5e8a4e1b124",
+            "empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "pose-00-idle.png": "eadf309c92e8f62c318e94928c4c67e49f249cfa64ca77298c3ab207a7c2e262",
+            "pose-01-idle.png": "1b2b578ca920079034f9f07121178d35de8fd43d6047b971bfa44206fbdfea9e",
+            "pose-02-run.png": "eadf309c92e8f62c318e94928c4c67e49f249cfa64ca77298c3ab207a7c2e262",
+            "pose-03-run.png": "30510ed0465363113d3c092b7480c8f8562d72ab9de2854a1b9f904a6edb9c94",
+            "pose-04-run.png": "eadf309c92e8f62c318e94928c4c67e49f249cfa64ca77298c3ab207a7c2e262",
+            "pose-05-run.png": "4a64215f36575828e232e20f645e2d491b8fcc89349300e71ad87efafece2430",
+            "pose-06-walk.png": "30510ed0465363113d3c092b7480c8f8562d72ab9de2854a1b9f904a6edb9c94",
+            "pose-07-walk.png": "4a64215f36575828e232e20f645e2d491b8fcc89349300e71ad87efafece2430",
+            "pose-08-stun.png": "d6d990e55834cbbc41dffcc46d2331d9ae040994c89feb33c5c6afed3dd22a56",
+            "pose-09-attack_prepare.png": "6d6b2a65e72886ad71677fef79d622bad3763911da788765bfd7ea19dc61f660",
+            "pose-10-attack_release.png": "41bfa4d5edee3c120471a11486dc2b7b13ffd12aa1f8cf894de8c9ec4c1bc6f3",
+            "pose-11-pain.png": "a2cc2714b1ca379a5735a2bfdd2d78542cbe220b8309f6c81cc7d18f6a7e7348",
+            "pose-12-death.png": "3468c1f4f5c56644737ce94c721e628d34d1daac860348be5d22e7f6bc30fd38",
+            "pose-13-death.png": "f9794210e68cfabbd25ffad8a69fa4cdc24adaa6be7cf69f49982508c8d8ba9f",
+            "pose-14-death.png": "9f33be907fd95cc8bc4b55b9b18683edad2080220ac374cc746658c81c1a79a7",
+            "pose-15-death.png": "0bd26af9599965ec23d5afe338394c5c68a8a9108d81399d17416314b0e88844",
+            "pose-16-death.png": "dcc9187b3c8aae5b50124d63eba569b48ce9b1d9acd0f646fffcf3cd60025e6a",
+            "pose-17-death.png": "9f50dbc7388ce9419d4e6abd8f2f3fd54bb736fe0c1a381062dce47c06a3d2fd",
+            "pose-18-breath.png": "21bd86f8e5a3b45a7cd4ee8a8bde87c6bd1143f70c752ff2a193acb66914d8fc",
+            "pose-19-breath.png": "a9a59f586fc8e2b2ab8a16f821c86cfeed92a242fcb1d9bdcfd49685f7e5b446",
+            "pose-20-breath.png": "bba70c02c4bc887bf46d3c8a3cde3ad2b5588952662f5e1f57679064d4404983",
+            "pose-21-breath.png": "ba9577e3b1cad180576dee607a00d79052adefed41ebebfb7c0e3ef76c84ac95",
+            "pose-22-rest.png": "9f50dbc7388ce9419d4e6abd8f2f3fd54bb736fe0c1a381062dce47c06a3d2fd",
+            "view-feet-detail.png": "ee92facd70e4d9225bb46bbb91fd07a4ceb54dd2e6803b0ddd54fb2ef5184fe2",
+            "view-front.png": "96cc93b72571cef42857f1d52aee0bbba582b08d60d4bdd1032fa70cbeb2614c",
+            "view-head-front.png": "c52231ebc2c86f92a5a90697fedd5a4310e97ba835f726eeef73bf6d27dd2590",
+            "view-head-oblique.png": "a8519eb2005b8120f515861b87c683d5f771e53ae930a272c1f79d3c81cd8f27",
+            "view-lying-oblique.png": "9f50dbc7388ce9419d4e6abd8f2f3fd54bb736fe0c1a381062dce47c06a3d2fd",
+            "view-rear.png": "857a42ba8e05042711879c037fe926bd708480b81a501dbcad384ddd4112507f",
+            "view-side.png": "5fac1f29bc6955eb65d5c1e36395ed9d589652a06978800cec266a9c5a912b0a",
+            "view-tail-detail.png": "36f9ba89673324a641e44599a2de4a619ec94317cd7999a0007e4b29f031e5a4"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 34001,
+            "pose-01-idle.png": 33033,
+            "pose-02-run.png": 34001,
+            "pose-03-run.png": 34039,
+            "pose-04-run.png": 34001,
+            "pose-05-run.png": 33427,
+            "pose-06-walk.png": 34039,
+            "pose-07-walk.png": 33427,
+            "pose-08-stun.png": 33711,
+            "pose-09-attack_prepare.png": 33591,
+            "pose-10-attack_release.png": 34904,
+            "pose-11-pain.png": 33482,
+            "pose-12-death.png": 20798,
+            "pose-13-death.png": 18208,
+            "pose-14-death.png": 18107,
+            "pose-15-death.png": 16081,
+            "pose-16-death.png": 15695,
+            "pose-17-death.png": 17758,
+            "pose-18-breath.png": 33837,
+            "pose-19-breath.png": 34132,
+            "pose-20-breath.png": 34371,
+            "pose-21-breath.png": 34083,
+            "pose-22-rest.png": 17758
+          },
+          "distinct_pose_captures": 18
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    }
+  },
+  "actions": {
+    "issue": 787,
+    "runtime_sha256": "bce035906abe541f93bed3aef4eeac349c738063fa28fb3636a5490724c9ebe8",
+    "source_probe_sha256": "bf298e7c4b3ca7f0285f81c089b18f686ba0a114f65697252662af8b0121b65a",
+    "fixture_sha256": "c409418a58985357ac3448e131c2935e390b9796b117fe282d404c5318216db1",
+    "runs": [
+      {
+        "phase": "actions",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 65,
+        "actions": [
+          "CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=2 breath=0",
+          "CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=42 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=42 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=42 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=49 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=49 mode=1 damage=1 air=0 anima=1 projectiles=2 breath=0",
+          "CA455 ACTION PASS index=49 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1"
+        ],
+        "loot_audits": 0
+      },
+      {
+        "phase": "loot",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 49,
+        "actions": [],
+        "loot_audits": 2
+      },
+      {
+        "phase": "loot-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 20,
+        "actions": [],
+        "loot_audits": 2
+      }
+    ]
+  },
+  "presentation": {
+    "familiar": {
+      "issue": 787,
+      "species": "familiar",
+      "scope": "Measure one 700-tic sprite/model pair for a real Familiar/Ao Ao; no campaign or crowd budget.",
+      "baseline_sha256": "29b1bb85919155984d68c4232d242725020fb82460d67deeabc14b88ecb23708",
+      "runtime_sha256": "bce035906abe541f93bed3aef4eeac349c738063fa28fb3636a5490724c9ebe8",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 27272,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 354437671.7929,
+            "END": 354457688.2793
+          },
+          "fixture_sha256": "6a751d19b983e3764a68336c227711121d4b24c0f88b3519cc5283dc3e96e315",
+          "bench_sha256": "050aa4ed3a9ca753eb898423789b8bcf78c52be4b80328550b24cad1b438f045",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57145728571429,
+            "p50_ms": 28.5716,
+            "p95_ms": 28.9078,
+            "p99_ms": 29.0474,
+            "max_ms": 29.5285
+          },
+          "presentation": {
+            "pid": 27272,
+            "trace_sha256": "12873c8e501f65cd9cbe3bc7a7b12adcbe81a2bbacc0e064ed2a9a118f45a053",
+            "rows": 46536,
+            "scene_presents": 33389,
+            "mean_present_fps": 1906.142595895648,
+            "present_intervals": {
+              "samples": 33388,
+              "mean_ms": 0.5246197226551802,
+              "p50_ms": 0.5069999694824219,
+              "p95_ms": 0.6470999717712402,
+              "p99_ms": 0.8224000334739685,
+              "max_ms": 1.2518999576568604
+            },
+            "native_call_duration": {
+              "samples": 33389,
+              "mean_ms": 0.07262152488556772,
+              "p50_ms": 0.06709998846054077,
+              "p95_ms": 0.09640002250671387,
+              "p99_ms": 0.12239998579025269,
+              "max_ms": 0.49010002613067627
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 14984,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 354472311.78290004,
+            "END": 354492330.8314
+          },
+          "fixture_sha256": "6a751d19b983e3764a68336c227711121d4b24c0f88b3519cc5283dc3e96e315",
+          "bench_sha256": "050aa4ed3a9ca753eb898423789b8bcf78c52be4b80328550b24cad1b438f045",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57114342857143,
+            "p50_ms": 28.5664,
+            "p95_ms": 28.9374,
+            "p99_ms": 29.0993,
+            "max_ms": 29.3155
+          },
+          "presentation": {
+            "pid": 14984,
+            "trace_sha256": "846f44634295a75ded0298cd7ad250d0317a4ad515369c8b149dc833367914dc",
+            "rows": 45998,
+            "scene_presents": 32957,
+            "mean_present_fps": 1881.204472039736,
+            "present_intervals": {
+              "samples": 32956,
+              "mean_ms": 0.531574326375978,
+              "p50_ms": 0.5128999948501587,
+              "p95_ms": 0.6648000478744507,
+              "p99_ms": 0.7958999872207642,
+              "max_ms": 1.1987000107765198
+            },
+            "native_call_duration": {
+              "samples": 32957,
+              "mean_ms": 0.07452563950024166,
+              "p50_ms": 0.07319998741149902,
+              "p95_ms": 0.09710001945495605,
+              "p99_ms": 0.12330001592636108,
+              "max_ms": 0.632599949836731
+            }
+          }
+        }
+      ]
+    },
+    "ao_ao": {
+      "issue": 787,
+      "species": "ao_ao",
+      "scope": "Measure one 700-tic sprite/model pair for a real Familiar/Ao Ao; no campaign or crowd budget.",
+      "baseline_sha256": "29b1bb85919155984d68c4232d242725020fb82460d67deeabc14b88ecb23708",
+      "runtime_sha256": "bce035906abe541f93bed3aef4eeac349c738063fa28fb3636a5490724c9ebe8",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 4984,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 354508741.3316,
+            "END": 354528761.6042
+          },
+          "fixture_sha256": "78aac5e686a605261bffa7ad2f3331c045c5fb7c3f71dbed6a7a29f150195c8f",
+          "bench_sha256": "050aa4ed3a9ca753eb898423789b8bcf78c52be4b80328550b24cad1b438f045",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57094414285714,
+            "p50_ms": 28.5646,
+            "p95_ms": 28.9565,
+            "p99_ms": 29.0811,
+            "max_ms": 29.4533
+          },
+          "presentation": {
+            "pid": 4984,
+            "trace_sha256": "a53bd950773b83f9da89e44f6d0baee1041446307e4cbe29e188d063a0f9b0bd",
+            "rows": 44595,
+            "scene_presents": 31389,
+            "mean_present_fps": 1791.5887624548288,
+            "present_intervals": {
+              "samples": 31388,
+              "mean_ms": 0.5581638046388522,
+              "p50_ms": 0.531000018119812,
+              "p95_ms": 0.7533000111579895,
+              "p99_ms": 0.8949000239372253,
+              "max_ms": 1.387499988079071
+            },
+            "native_call_duration": {
+              "samples": 31389,
+              "mean_ms": 0.07535346146847308,
+              "p50_ms": 0.07449996471405029,
+              "p95_ms": 0.09930002689361572,
+              "p99_ms": 0.13050001859664917,
+              "max_ms": 0.5008999705314636
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 29636,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 354543470.40250003,
+            "END": 354563491.10580003
+          },
+          "fixture_sha256": "78aac5e686a605261bffa7ad2f3331c045c5fb7c3f71dbed6a7a29f150195c8f",
+          "bench_sha256": "050aa4ed3a9ca753eb898423789b8bcf78c52be4b80328550b24cad1b438f045",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.569688999999997,
+            "p50_ms": 28.5704,
+            "p95_ms": 28.9525,
+            "p99_ms": 29.085,
+            "max_ms": 29.4198
+          },
+          "presentation": {
+            "pid": 29636,
+            "trace_sha256": "56bac2c8eb26388044ee3294765e838580bc5dd9973014c092512a472db735b9",
+            "rows": 44631,
+            "scene_presents": 32293,
+            "mean_present_fps": 1843.1251105136305,
+            "present_intervals": {
+              "samples": 32292,
+              "mean_ms": 0.5425567663832253,
+              "p50_ms": 0.5234999656677246,
+              "p95_ms": 0.6764000058174133,
+              "p99_ms": 0.8050000071525574,
+              "max_ms": 1.2545999884605408
+            },
+            "native_call_duration": {
+              "samples": 32293,
+              "mean_ms": 0.07441373066937156,
+              "p50_ms": 0.07319998741149902,
+              "p95_ms": 0.0965999960899353,
+              "p99_ms": 0.1226000189781189,
+              "max_ms": 0.4039999842643738
+            }
+          }
+        }
+      ]
+    }
+  },
+  "art": {
+    "inspected_views": {
+      "familiar": [
+        "continuity/familiar/fresh-model/view-front.png",
+        "continuity/familiar/fresh-model/view-side.png",
+        "continuity/familiar/fresh-model/view-rear.png",
+        "continuity/familiar/fresh-model/view-head-front.png",
+        "continuity/familiar/fresh-model/view-head-oblique.png",
+        "continuity/familiar/fresh-model/view-lying-oblique.png",
+        "continuity/familiar/fresh-model/view-feet-detail.png",
+        "continuity/familiar/fresh-model/view-tail-detail.png",
+        "continuity/familiar/fresh-model/pose-00-idle.png",
+        "continuity/familiar/fresh-model/pose-03-run.png",
+        "continuity/familiar/fresh-model/pose-08-stun.png",
+        "continuity/familiar/fresh-model/pose-09-attack_prepare.png",
+        "continuity/familiar/fresh-model/pose-10-attack_release.png",
+        "continuity/familiar/fresh-model/pose-11-pain.png",
+        "continuity/familiar/fresh-model/pose-14-death.png",
+        "continuity/familiar/fresh-model/pose-17-death.png",
+        "continuity/familiar/fresh-model/pose-18-breath.png",
+        "continuity/familiar/fresh-model/pose-22-rest.png"
+      ],
+      "ao_ao": [
+        "continuity/ao_ao/fresh-model/view-front.png",
+        "continuity/ao_ao/fresh-model/view-side.png",
+        "continuity/ao_ao/fresh-model/view-rear.png",
+        "continuity/ao_ao/fresh-model/view-head-front.png",
+        "continuity/ao_ao/fresh-model/view-head-oblique.png",
+        "continuity/ao_ao/fresh-model/view-lying-oblique.png",
+        "continuity/ao_ao/fresh-model/view-feet-detail.png",
+        "continuity/ao_ao/fresh-model/view-tail-detail.png",
+        "continuity/ao_ao/fresh-model/pose-00-idle.png",
+        "continuity/ao_ao/fresh-model/pose-03-run.png",
+        "continuity/ao_ao/fresh-model/pose-08-stun.png",
+        "continuity/ao_ao/fresh-model/pose-09-attack_prepare.png",
+        "continuity/ao_ao/fresh-model/pose-10-attack_release.png",
+        "continuity/ao_ao/fresh-model/pose-11-pain.png",
+        "continuity/ao_ao/fresh-model/pose-14-death.png",
+        "continuity/ao_ao/fresh-model/pose-17-death.png",
+        "continuity/ao_ao/fresh-model/pose-18-breath.png",
+        "continuity/ao_ao/fresh-model/pose-22-rest.png"
+      ]
+    },
+    "inspected_presentation": [
+      "presentation/familiar/sprite/scene.png",
+      "presentation/familiar/model/scene.png",
+      "presentation/ao_ao/sprite/scene.png",
+      "presentation/ao_ao/model/scene.png"
+    ],
+    "generated_atlas_sha256": "b63c9fa16efda5e0ffb4f30dde62eb3dc1ff4d76be178c30c3c024a578c3bb5c",
+    "mode": "built-in image_gen",
+    "prompt": "assets/source/art/quadrupeds_787/MATERIALS_PROMPT.json",
+    "source_path": "assets/source/art/quadrupeds_787/materials.png",
+    "author_check": "CA787-QUADRUPEDS-01"
+  },
+  "iterations": [
+    "Initial source omitted required UV rectangles for reused iris/dark materials; generation stopped before output.",
+    "First exported zero-radius sweep tips lacked tip_pole flags, leaving collapsed triangles and invalid closed topology. Explicit pole fans corrected all claws/tails/horns before native review. The initial geometry report also preceded the native include.",
+    "First native review exposed eye bulges, a contrasting mastiff muzzle and high ram horns. Refinements recessed then brought forward the irises, darkened the mastiff muzzle, differentiated ram muzzle/hooves, lowered horn coils and reduced wool locks.",
+    "Explicit2x2 wool UV repeats split seams without editing pixels. Neutral-compatible idle phase/offset changes produce distinct native idle samples. Final nose taper and wider head/lying cameras preceded all final package tests."
+  ],
+  "environment": {
+    "os": "Windows11 Pro26200",
+    "cpu": "Ryzen9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX3070Ti",
+    "engine": "GZDoom4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Thirty-six inspected captures cover eight directions/detail views and ten action samples per model. Native state/pixel checks cover all23 frames; this is not ordinary gameplay or author acceptance.",
+    "Simplified rounded anatomy, broad/faceted noses and horns, repeated matte fur/wool, simple joint rotations and rigid falling/rest poses remain candidates. Conceptual metre sizes and species behavior were not introduced. Horizontal silhouettes and lying poses extend beyond unchanged collision.",
+    "One sequential700-tic sprite/model pair per species measures queue intervals, not GPU/display latency, repeatability or campaign/crowd budget. Projected footprints differ. No siege performance improvement is inferred.",
+    "Twenty-one of56 provisional new catalogue classes now have direct native models;35 remain. Named characters, modular style/fitting and unauthored V5.16 progression remain open.",
+    "No executable, DLL, IWAD, compiled test package or save is committed. Private preview.pk3 is included only in repeat hashes."
+  ],
+  "files": {
+    "actions/actions/commands.cfg": "671c45e5076411f8004231dfb2e42c42ffaad70828a189d89074ab177aa6a155",
+    "actions/actions/engine.log": "fa115da6f9a8279a3d5834386f7ea99cea74aba0e81894c3e8abacac7141d7fc",
+    "actions/actions/process.log": "543d80ae30591db5fc2da80f72c18474816a11a5ff993417f8e3a1633bf8ba82",
+    "actions/actions/session.ini": "9eb18f953c479d070610c53cd2ee201d9c8a580196f374d20c1f0b600575536e",
+    "actions/fixture.zs": "6d0bbbbcd1a91a9f497877e2af26a716083f51b09b1b26f9cdac111eee94b7bb",
+    "actions/loot/commands.cfg": "c7131f87f9df9188e2301d6730516e731540216e6417b470aab866467fbd8ad7",
+    "actions/loot/engine.log": "0d347d461c057d80e99fae29828ebaae1319a4d92efc7bb95f9ea9d76f8092b6",
+    "actions/loot/process.log": "27771129db42add0579e659cad511314c12a1c424faefebb23bcc9a0d7374d00",
+    "actions/loot/session.ini": "098bf0b8599743117ae49e5251bc867930c821a6d28fa0c43fa6b706fd152a05",
+    "actions/loot-reload/commands.cfg": "ad82c3110081fb6cd15b9a00885b6cc0747127803c4e52c0e06a730955dcf399",
+    "actions/loot-reload/engine.log": "16606c34ad37af598e6fc579333761b1c316de4399cdec0a030ba7528d7f9c2b",
+    "actions/loot-reload/process.log": "db959dbd63067b8425859889ab719dcef6c945cc17c2ee179a0463c42e03f8d8",
+    "actions/loot-reload/session.ini": "245202038e7285ebe721574f9c24910b579653628f1e193d443efd1b1b352fca",
+    "actions/MAPINFO.txt": "3d154887c8c3b0c67a493d99d70dd236a6b1eb63f6315e48f440ff83559ef484",
+    "actions/RESULTS.json": "0db156b8ff829472b0b79c21103031a71ebdd58d517581420a33706bbeb46c7c",
+    "actions/ZSCRIPT.txt": "c1de24928fcb0b5f8a5089a9ab42835a2f29666407574112e7efa11421b3e702",
+    "build01.log": "f57292805bbec13ac4f52ea614d11fe25c7f80fecb0fd84ce0721525c12b0c01",
+    "continuity/ao_ao/baseline/commands.cfg": "263f22050cdd700578cc7a4bc07909da7acfdc3b2a20cbc83f667dd2f2b21159",
+    "continuity/ao_ao/baseline/engine.log": "2db292d7a098d4e24fa041644df30f32898f8e463f469c02caa77795e6157807",
+    "continuity/ao_ao/baseline/process.log": "59c306ebdbdc88d119ed60790e6c80ee03574af7871e2e9e05915ccd304a2e75",
+    "continuity/ao_ao/baseline/session.ini": "77acdbf01dea3fb4b0d5c6d48c897a836d98dadf933b37dbc089b07aec60eb53",
+    "continuity/ao_ao/fixture.zs": "8bc6ae648ccf0f1f306dd436379b7e168d21853a207ba27803c886a7f25fa4c3",
+    "continuity/ao_ao/fresh-model/commands.cfg": "7a47491f079f7095b94c32efffdb82edd05f9068ad3df4c953d6a9e9dabd3ad8",
+    "continuity/ao_ao/fresh-model/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "continuity/ao_ao/fresh-model/empty-view-6.png": "483f86768cac9a38ab0ea69b8f64ed606d36f2ea681e31984ef8f5e8a4e1b124",
+    "continuity/ao_ao/fresh-model/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "continuity/ao_ao/fresh-model/engine.log": "8bd8b2214addc8aaf23e71a73b159ea38965b77d63981b8ff9f0351863424ea6",
+    "continuity/ao_ao/fresh-model/pose-00-idle.png": "eadf309c92e8f62c318e94928c4c67e49f249cfa64ca77298c3ab207a7c2e262",
+    "continuity/ao_ao/fresh-model/pose-01-idle.png": "1b2b578ca920079034f9f07121178d35de8fd43d6047b971bfa44206fbdfea9e",
+    "continuity/ao_ao/fresh-model/pose-02-run.png": "eadf309c92e8f62c318e94928c4c67e49f249cfa64ca77298c3ab207a7c2e262",
+    "continuity/ao_ao/fresh-model/pose-03-run.png": "30510ed0465363113d3c092b7480c8f8562d72ab9de2854a1b9f904a6edb9c94",
+    "continuity/ao_ao/fresh-model/pose-04-run.png": "eadf309c92e8f62c318e94928c4c67e49f249cfa64ca77298c3ab207a7c2e262",
+    "continuity/ao_ao/fresh-model/pose-05-run.png": "4a64215f36575828e232e20f645e2d491b8fcc89349300e71ad87efafece2430",
+    "continuity/ao_ao/fresh-model/pose-06-walk.png": "30510ed0465363113d3c092b7480c8f8562d72ab9de2854a1b9f904a6edb9c94",
+    "continuity/ao_ao/fresh-model/pose-07-walk.png": "4a64215f36575828e232e20f645e2d491b8fcc89349300e71ad87efafece2430",
+    "continuity/ao_ao/fresh-model/pose-08-stun.png": "d6d990e55834cbbc41dffcc46d2331d9ae040994c89feb33c5c6afed3dd22a56",
+    "continuity/ao_ao/fresh-model/pose-09-attack_prepare.png": "6d6b2a65e72886ad71677fef79d622bad3763911da788765bfd7ea19dc61f660",
+    "continuity/ao_ao/fresh-model/pose-10-attack_release.png": "41bfa4d5edee3c120471a11486dc2b7b13ffd12aa1f8cf894de8c9ec4c1bc6f3",
+    "continuity/ao_ao/fresh-model/pose-11-pain.png": "a2cc2714b1ca379a5735a2bfdd2d78542cbe220b8309f6c81cc7d18f6a7e7348",
+    "continuity/ao_ao/fresh-model/pose-12-death.png": "3468c1f4f5c56644737ce94c721e628d34d1daac860348be5d22e7f6bc30fd38",
+    "continuity/ao_ao/fresh-model/pose-13-death.png": "f9794210e68cfabbd25ffad8a69fa4cdc24adaa6be7cf69f49982508c8d8ba9f",
+    "continuity/ao_ao/fresh-model/pose-14-death.png": "9f33be907fd95cc8bc4b55b9b18683edad2080220ac374cc746658c81c1a79a7",
+    "continuity/ao_ao/fresh-model/pose-15-death.png": "0bd26af9599965ec23d5afe338394c5c68a8a9108d81399d17416314b0e88844",
+    "continuity/ao_ao/fresh-model/pose-16-death.png": "dcc9187b3c8aae5b50124d63eba569b48ce9b1d9acd0f646fffcf3cd60025e6a",
+    "continuity/ao_ao/fresh-model/pose-17-death.png": "9f50dbc7388ce9419d4e6abd8f2f3fd54bb736fe0c1a381062dce47c06a3d2fd",
+    "continuity/ao_ao/fresh-model/pose-18-breath.png": "21bd86f8e5a3b45a7cd4ee8a8bde87c6bd1143f70c752ff2a193acb66914d8fc",
+    "continuity/ao_ao/fresh-model/pose-19-breath.png": "a9a59f586fc8e2b2ab8a16f821c86cfeed92a242fcb1d9bdcfd49685f7e5b446",
+    "continuity/ao_ao/fresh-model/pose-20-breath.png": "bba70c02c4bc887bf46d3c8a3cde3ad2b5588952662f5e1f57679064d4404983",
+    "continuity/ao_ao/fresh-model/pose-21-breath.png": "ba9577e3b1cad180576dee607a00d79052adefed41ebebfb7c0e3ef76c84ac95",
+    "continuity/ao_ao/fresh-model/pose-22-rest.png": "9f50dbc7388ce9419d4e6abd8f2f3fd54bb736fe0c1a381062dce47c06a3d2fd",
+    "continuity/ao_ao/fresh-model/process.log": "df4994f0a333e01330637ac7429ad04ac5df37fc6b7069ea34e186a1f51d0db9",
+    "continuity/ao_ao/fresh-model/session.ini": "7a98d97443b375160689aa8029e1d51a48acb8f85f464713d9ccfc2af37453aa",
+    "continuity/ao_ao/fresh-model/view-feet-detail.png": "ee92facd70e4d9225bb46bbb91fd07a4ceb54dd2e6803b0ddd54fb2ef5184fe2",
+    "continuity/ao_ao/fresh-model/view-front.png": "96cc93b72571cef42857f1d52aee0bbba582b08d60d4bdd1032fa70cbeb2614c",
+    "continuity/ao_ao/fresh-model/view-head-front.png": "c52231ebc2c86f92a5a90697fedd5a4310e97ba835f726eeef73bf6d27dd2590",
+    "continuity/ao_ao/fresh-model/view-head-oblique.png": "a8519eb2005b8120f515861b87c683d5f771e53ae930a272c1f79d3c81cd8f27",
+    "continuity/ao_ao/fresh-model/view-lying-oblique.png": "9f50dbc7388ce9419d4e6abd8f2f3fd54bb736fe0c1a381062dce47c06a3d2fd",
+    "continuity/ao_ao/fresh-model/view-rear.png": "857a42ba8e05042711879c037fe926bd708480b81a501dbcad384ddd4112507f",
+    "continuity/ao_ao/fresh-model/view-side.png": "5fac1f29bc6955eb65d5c1e36395ed9d589652a06978800cec266a9c5a912b0a",
+    "continuity/ao_ao/fresh-model/view-tail-detail.png": "36f9ba89673324a641e44599a2de4a619ec94317cd7999a0007e4b29f031e5a4",
+    "continuity/ao_ao/MAPINFO.txt": "b91388ebc22fdcee491d3523af78887155825cc800a1daadb5e1c57ac57082bd",
+    "continuity/ao_ao/model-reload/commands.cfg": "bfeed71634eaaca7f94dc00bd3d000924601163e0464160fe747cfe86ef22001",
+    "continuity/ao_ao/model-reload/engine.log": "0335e683606b4a60acd15d7c30f7ad128b1682ab3d04a48725a5a01eab0300ad",
+    "continuity/ao_ao/model-reload/process.log": "6c87c8a424c0c7843b7ec1d2e39e5618b5ec04fd2b648b7ef30794f44b632d3d",
+    "continuity/ao_ao/model-reload/session.ini": "abd9e755bda69f4041677e05f709fa76ebf45f1d03e01157776b4e03f9f33bd2",
+    "continuity/ao_ao/old-save-model/commands.cfg": "bfeed71634eaaca7f94dc00bd3d000924601163e0464160fe747cfe86ef22001",
+    "continuity/ao_ao/old-save-model/engine.log": "3478bade86d1a65a43e8873b1649bc895cfbf636fa810dc4da8008ac38194ab3",
+    "continuity/ao_ao/old-save-model/process.log": "c9c69e4358f08bbb88fc81769fdbda70d400562ec692679d26a630fe365d164c",
+    "continuity/ao_ao/old-save-model/session.ini": "1cb2bba21d007446b122d10c79294b180a15a79eccfdcaac7c85a032e6cb65af",
+    "continuity/ao_ao/RESULTS.json": "54a7a6a82f52a404eb9a929a9fe39dd80bc645b8905d4cab19c50c1908063a7e",
+    "continuity/ao_ao/rollback/commands.cfg": "bfeed71634eaaca7f94dc00bd3d000924601163e0464160fe747cfe86ef22001",
+    "continuity/ao_ao/rollback/engine.log": "60ce2b9a6799402efbdca6c68a08248e2e0f86f37f113cc3ee3cf5c81e866ea9",
+    "continuity/ao_ao/rollback/process.log": "6ab39005cd578003d72386f11c90745d66b14a2f6d53855a526584b8d6c67731",
+    "continuity/ao_ao/rollback/session.ini": "2dbb35abe0bfcbda28a6727b2929a4d7596153efda3c2a57d7738c57dc778b77",
+    "continuity/ao_ao/ZSCRIPT.txt": "59045fc58ae38299d5be84f56ee040373d16dc678db6e4e6b2638260e545063b",
+    "continuity/familiar/baseline/commands.cfg": "263f22050cdd700578cc7a4bc07909da7acfdc3b2a20cbc83f667dd2f2b21159",
+    "continuity/familiar/baseline/engine.log": "0e7c7ab80fc6c5725a7b7d359350538084e883ac0248f6a61860b569109c66e5",
+    "continuity/familiar/baseline/process.log": "4c2f0824e47b2ac70bff002168eafd51f0fdb569bb741b8263e7f144c407c89f",
+    "continuity/familiar/baseline/session.ini": "9cc1232ddfd4ed606585cf472586836b564d859ceb97c080e45c496399dfdde4",
+    "continuity/familiar/fixture.zs": "882efb35e48902e834994696c7db9853f8fac0c00db01dcaad4cefc54da6c178",
+    "continuity/familiar/fresh-model/commands.cfg": "7a47491f079f7095b94c32efffdb82edd05f9068ad3df4c953d6a9e9dabd3ad8",
+    "continuity/familiar/fresh-model/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "continuity/familiar/fresh-model/empty-view-6.png": "483f86768cac9a38ab0ea69b8f64ed606d36f2ea681e31984ef8f5e8a4e1b124",
+    "continuity/familiar/fresh-model/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "continuity/familiar/fresh-model/engine.log": "695ebb53df1c3829e090e36543341690099d937fc525c6ad56ce3f8e680e5953",
+    "continuity/familiar/fresh-model/pose-00-idle.png": "d832ec32903e09dc7a01a1235cf95b7267b3db1e81645e99ae2b3f5b4a618e65",
+    "continuity/familiar/fresh-model/pose-01-idle.png": "27731766680b0be0bc5025b6b8820d49d1389a2bb6e222de080e0f8c44c63d9f",
+    "continuity/familiar/fresh-model/pose-02-run.png": "d832ec32903e09dc7a01a1235cf95b7267b3db1e81645e99ae2b3f5b4a618e65",
+    "continuity/familiar/fresh-model/pose-03-run.png": "22286ed164bdfa4cc7777f10b9d018f61753ba141ca2bfceca0dccdf70353f30",
+    "continuity/familiar/fresh-model/pose-04-run.png": "d832ec32903e09dc7a01a1235cf95b7267b3db1e81645e99ae2b3f5b4a618e65",
+    "continuity/familiar/fresh-model/pose-05-run.png": "aac6d141634966837c46697e3c0ed5c9d3090403a5b463d82d3dccb301385d85",
+    "continuity/familiar/fresh-model/pose-06-walk.png": "22286ed164bdfa4cc7777f10b9d018f61753ba141ca2bfceca0dccdf70353f30",
+    "continuity/familiar/fresh-model/pose-07-walk.png": "aac6d141634966837c46697e3c0ed5c9d3090403a5b463d82d3dccb301385d85",
+    "continuity/familiar/fresh-model/pose-08-stun.png": "3706205dade36d02c3268d3372210fa966ec0a130fabaaf13dd32bcbe4c7b1c2",
+    "continuity/familiar/fresh-model/pose-09-attack_prepare.png": "ff04d5441d9314bf1b73bd5baf2dc01a835afe41cc0808ac61c2116f29ea2a4c",
+    "continuity/familiar/fresh-model/pose-10-attack_release.png": "b2a4ac6d57be575f9500951833f65b1dc60639d87b576380b47a11aeb972fb02",
+    "continuity/familiar/fresh-model/pose-11-pain.png": "fe19996d5193547b29b7e88fac61a804cf6609cfd2173169c75952a7c2ad6bc3",
+    "continuity/familiar/fresh-model/pose-12-death.png": "f92cd635434a4aab8a55c7f4475896a38d8f207c5fef6e283cee964fb5836752",
+    "continuity/familiar/fresh-model/pose-13-death.png": "79429ad1c621209e138451958cf9aa6cf54853037d0eb5af050d7f55838d4fd9",
+    "continuity/familiar/fresh-model/pose-14-death.png": "e9f4ed27c87d260a17a80e74a1271cb38d772df0e641f0cbe434855dc18c018f",
+    "continuity/familiar/fresh-model/pose-15-death.png": "4e59c441d974c618fe6ec0f76ca4ac7f805c2c20f67a8eef2e1ff746280d4b2d",
+    "continuity/familiar/fresh-model/pose-16-death.png": "15d583eaef671ec2c96b7f83897d75b08dd73715f7b1a8524e14901e007021c1",
+    "continuity/familiar/fresh-model/pose-17-death.png": "95266f55846b7e3557eb2e82634791c804e32b815445695e8bb9bdee59a3a46e",
+    "continuity/familiar/fresh-model/pose-18-breath.png": "b20190ca92c65fbc21a6b5cee2cf4ad06ce5345bf3307a25720dec8f7d97a3ed",
+    "continuity/familiar/fresh-model/pose-19-breath.png": "5403d8f1e04867dd89ca03b67d80f7f314099cc9a61768b681a1a05124205d85",
+    "continuity/familiar/fresh-model/pose-20-breath.png": "d57b90d037486863fa942c78b8e23e3a54d4031789a07c41d3bf77a96936a0f8",
+    "continuity/familiar/fresh-model/pose-21-breath.png": "f166112bae35fb3c45c6e2fa37230a30aeafcfc28dd4e327b32625e985161fc6",
+    "continuity/familiar/fresh-model/pose-22-rest.png": "95266f55846b7e3557eb2e82634791c804e32b815445695e8bb9bdee59a3a46e",
+    "continuity/familiar/fresh-model/process.log": "e1bd082517e572a53997d935b8e66cafa31b59c227b8356b70bfd7bdc33f1180",
+    "continuity/familiar/fresh-model/session.ini": "5f34c8efaa8ec084bb1035c80456c06f011cd5a8adb2696580355df5fc442ba5",
+    "continuity/familiar/fresh-model/view-feet-detail.png": "d116800ac0ac2a3b1b1077dcceed7b24532bb650902fd817771bb214197ef85e",
+    "continuity/familiar/fresh-model/view-front.png": "3e83c682e63044c52571904ac2589920a031465eb5407e07f3f8aaa33cc8b672",
+    "continuity/familiar/fresh-model/view-head-front.png": "35b6bb7f88546af573252b6cbb81eec93bc39609cfa2b05784d5c3214870b5a4",
+    "continuity/familiar/fresh-model/view-head-oblique.png": "b3a2f385c414bdbc06d1e157bcc852f4173dec0b094b929adc877a900247ca7f",
+    "continuity/familiar/fresh-model/view-lying-oblique.png": "95266f55846b7e3557eb2e82634791c804e32b815445695e8bb9bdee59a3a46e",
+    "continuity/familiar/fresh-model/view-rear.png": "e0c8ab41c210128e67db46562d1b3f09ba75cc90430b0cb5e59f3d0094758d4e",
+    "continuity/familiar/fresh-model/view-side.png": "8101e6b72979bbb33dd3a64c2282539236c19be20a9bd391149e6856b52aaa9f",
+    "continuity/familiar/fresh-model/view-tail-detail.png": "189e1c130693b3039fe59e6fdc179b6d98d14d95b1fe8f2acdc4ff7fec1ea202",
+    "continuity/familiar/MAPINFO.txt": "b91388ebc22fdcee491d3523af78887155825cc800a1daadb5e1c57ac57082bd",
+    "continuity/familiar/model-reload/commands.cfg": "bfeed71634eaaca7f94dc00bd3d000924601163e0464160fe747cfe86ef22001",
+    "continuity/familiar/model-reload/engine.log": "12f04f418cf05dc850e2ebaa8fb915fc87a8dbb777f9392b657951efe4b67906",
+    "continuity/familiar/model-reload/process.log": "fc5738eaad7bfddb4fa18ad2eef31abc5c3066d12cb8a35bd7c1b1e38368bfd7",
+    "continuity/familiar/model-reload/session.ini": "346a537d2b294e07d9ffb27de526f042b7fb17adf50896a69042ea53d0a23936",
+    "continuity/familiar/old-save-model/commands.cfg": "bfeed71634eaaca7f94dc00bd3d000924601163e0464160fe747cfe86ef22001",
+    "continuity/familiar/old-save-model/engine.log": "b258f8c40f5ae996b771226c7969b9ab0cb461574d254f7479497f31ce6bf176",
+    "continuity/familiar/old-save-model/process.log": "1bb816b83c5ec7089665d332d473073e087b7c9557fe19af83169b19d990bdb6",
+    "continuity/familiar/old-save-model/session.ini": "b7d9e3a7d6335470e2adaf1afe4dfc4a259d2e6cbacaf12a92e88ac0ce5bf204",
+    "continuity/familiar/RESULTS.json": "aa58b3fa641858cbc4571442508ef34f6630ca886806b9c24f9164b306d80bc2",
+    "continuity/familiar/rollback/commands.cfg": "bfeed71634eaaca7f94dc00bd3d000924601163e0464160fe747cfe86ef22001",
+    "continuity/familiar/rollback/engine.log": "2cd67f678086f5bd31109409a08c57f2320e652846c69bbfa1578f142a4d38dd",
+    "continuity/familiar/rollback/process.log": "748b86f6fbacd4783648f7f8cf358e7fdf3823e710a1ce1d7c90a2ad55e60d62",
+    "continuity/familiar/rollback/session.ini": "bb022c936a8769239a0d2c91b8173985fc0690e410c8018744c39f285319c07d",
+    "continuity/familiar/ZSCRIPT.txt": "57aacaf922a9e32b47e5424a855a6a68180649ea17b3b058a1f875685f07c386",
+    "export-check01.log": "ceba62b2d7ab41412277559fe2f6edd313d9696c25f7bcdf35a1842026259be0",
+    "exports/model02.json": "a9547ad8fcde8c516f73add3b3a8e00c94dfa5218472bc2da83d924deca1bfe7",
+    "exports/model03.json": "41596662a6549f77d7d3fc6e814f19060525ca02532af4cad8b525ce8a7a258c",
+    "exports/model04.json": "9085f63e1ae267f85286aa0a46cb0774eb11b3868a31967879d94fb594bcc7e9",
+    "exports/model05.json": "a24cbef9397484c0806eee4a966d58f7b2600a6305800f2d4a3b7f354c100d24",
+    "exports/model06.json": "82be5af2de32f2650b7d7f8cace0dd8b9e0e0930021e32dff1434403c97d7bd6",
+    "exports/model07.json": "e0997c7b96e9282452c6374a25aafb0f1ab146d18cf9489619d0bcce8dcf20a8",
+    "exports/model08.json": "e0997c7b96e9282452c6374a25aafb0f1ab146d18cf9489619d0bcce8dcf20a8",
+    "geometry01.log": "fa2379dd6f0078073fd469f85b60a30dc1b0c950866a18e8cece9142d47fcf20",
+    "geometry02.log": "97be19545b941c13d84f3669699a28788b2034733586d43acc74e19f279cfb5a",
+    "geometry03.log": "97be19545b941c13d84f3669699a28788b2034733586d43acc74e19f279cfb5a",
+    "geometry04.log": "97be19545b941c13d84f3669699a28788b2034733586d43acc74e19f279cfb5a",
+    "geometry05.log": "97be19545b941c13d84f3669699a28788b2034733586d43acc74e19f279cfb5a",
+    "presentation/ao_ao/model/commands.cfg": "7844ac9660d2f374de3e0bc0bc0be344bca76b231615275158059d0042a71569",
+    "presentation/ao_ao/model/engine.log": "a815b99b82a1dbbc6f4bdb8e6026891bd8a54b79153653338d4639b160c3a602",
+    "presentation/ao_ao/model/fixture.zs": "8bc6ae648ccf0f1f306dd436379b7e168d21853a207ba27803c886a7f25fa4c3",
+    "presentation/ao_ao/model/MAPINFO.txt": "b91388ebc22fdcee491d3523af78887155825cc800a1daadb5e1c57ac57082bd",
+    "presentation/ao_ao/model/presents.csv": "56bac2c8eb26388044ee3294765e838580bc5dd9973014c092512a472db735b9",
+    "presentation/ao_ao/model/process.log": "af3cb13541bd621362b3c92f76557403d8a3c271e0c8b0810b067bb3e2c386f1",
+    "presentation/ao_ao/model/scene.png": "eadf309c92e8f62c318e94928c4c67e49f249cfa64ca77298c3ab207a7c2e262",
+    "presentation/ao_ao/model/session.ini": "931107dd634953c232dda7be4012fe606b8ffffe40875b8a33512ce6357e6b3d",
+    "presentation/ao_ao/model/ZSCRIPT.txt": "59045fc58ae38299d5be84f56ee040373d16dc678db6e4e6b2638260e545063b",
+    "presentation/ao_ao/RESULTS.json": "9a32a5a105a695ccca9466419b72095b0b9a74f94175bbaae5161bf0d54bc261",
+    "presentation/ao_ao/sprite/commands.cfg": "7844ac9660d2f374de3e0bc0bc0be344bca76b231615275158059d0042a71569",
+    "presentation/ao_ao/sprite/engine.log": "1dda167306188fb4276140d9f4c1a6de24f3894948d03d3c53d4dde7e5245425",
+    "presentation/ao_ao/sprite/fixture.zs": "8bc6ae648ccf0f1f306dd436379b7e168d21853a207ba27803c886a7f25fa4c3",
+    "presentation/ao_ao/sprite/MAPINFO.txt": "b91388ebc22fdcee491d3523af78887155825cc800a1daadb5e1c57ac57082bd",
+    "presentation/ao_ao/sprite/presents.csv": "a53bd950773b83f9da89e44f6d0baee1041446307e4cbe29e188d063a0f9b0bd",
+    "presentation/ao_ao/sprite/process.log": "5cef67bbd5da6a98f8b79ee825cfcf14d746f20acc0b17854c07336b02099d87",
+    "presentation/ao_ao/sprite/scene.png": "0605f2270fd9d84c44e66ad2f90d5b98c47cc6f531e4f7bfe38bf03b59f89921",
+    "presentation/ao_ao/sprite/session.ini": "6bc9a0266275c9653dfb4f1261f1e7fd2672c71ae59b60a57ec34fe16284b3a2",
+    "presentation/ao_ao/sprite/ZSCRIPT.txt": "59045fc58ae38299d5be84f56ee040373d16dc678db6e4e6b2638260e545063b",
+    "presentation/familiar/model/commands.cfg": "7844ac9660d2f374de3e0bc0bc0be344bca76b231615275158059d0042a71569",
+    "presentation/familiar/model/engine.log": "43cbc97ff5355facdf84e48d99a4b3d0500929e4a52ccdef5170225238e3bb77",
+    "presentation/familiar/model/fixture.zs": "882efb35e48902e834994696c7db9853f8fac0c00db01dcaad4cefc54da6c178",
+    "presentation/familiar/model/MAPINFO.txt": "b91388ebc22fdcee491d3523af78887155825cc800a1daadb5e1c57ac57082bd",
+    "presentation/familiar/model/presents.csv": "846f44634295a75ded0298cd7ad250d0317a4ad515369c8b149dc833367914dc",
+    "presentation/familiar/model/process.log": "ccb14d2b07c04e19b34dcaee318e8f824cafb83c77c9df6b256fc624fff52500",
+    "presentation/familiar/model/scene.png": "d832ec32903e09dc7a01a1235cf95b7267b3db1e81645e99ae2b3f5b4a618e65",
+    "presentation/familiar/model/session.ini": "5e79b7acbdc5b3c7dffff696f4927ce7c7a72c9c7fa32daca29fbf1554f4e9db",
+    "presentation/familiar/model/ZSCRIPT.txt": "57aacaf922a9e32b47e5424a855a6a68180649ea17b3b058a1f875685f07c386",
+    "presentation/familiar/RESULTS.json": "6caabc60f76a1283b724fc668e1e1cefd5dde311a184294cc7159ffd0da8929c",
+    "presentation/familiar/sprite/commands.cfg": "7844ac9660d2f374de3e0bc0bc0be344bca76b231615275158059d0042a71569",
+    "presentation/familiar/sprite/engine.log": "9229f3cd3c6e48e4de3983ea1ee117077624bf735b6fec9dd5675e40511a1291",
+    "presentation/familiar/sprite/fixture.zs": "882efb35e48902e834994696c7db9853f8fac0c00db01dcaad4cefc54da6c178",
+    "presentation/familiar/sprite/MAPINFO.txt": "b91388ebc22fdcee491d3523af78887155825cc800a1daadb5e1c57ac57082bd",
+    "presentation/familiar/sprite/presents.csv": "12873c8e501f65cd9cbe3bc7a7b12adcbe81a2bbacc0e064ed2a9a118f45a053",
+    "presentation/familiar/sprite/process.log": "45a1965a07258c48473447d23eabf0da7d56fcdb00707b32d332d43b2254d2eb",
+    "presentation/familiar/sprite/scene.png": "0605f2270fd9d84c44e66ad2f90d5b98c47cc6f531e4f7bfe38bf03b59f89921",
+    "presentation/familiar/sprite/session.ini": "0ac671020c9c5293621e98fb576005b3e67b22dc1e475719f61be8016a6f3167",
+    "presentation/familiar/sprite/ZSCRIPT.txt": "57aacaf922a9e32b47e5424a855a6a68180649ea17b3b058a1f875685f07c386",
+    "repeat07-08.json": "d1d428b2e375cd45656efd79715c74d540211ff65d194ff9b7f012ca83fe6ed6",
+    "runtime-parity.json": "4abf32f0a03c100df759e915a1bade29d095e3b733b07d591108a1a78a27e2e1",
+    "superseded/design01/ANIMATION.json": "ccc108bee54f3c5d571699fadda019c493e816224e87360f1ca8ff59ea5ec138",
+    "superseded/design01/ao_ao.json": "94ecfc0c56d03ba6ee82b35deae03c0229eb6a9ec413b50e60717ca553945ac2",
+    "superseded/design01/CONTACTS.json": "277495e3f7855bdc3f7eb7ebbe70168bd9cb3dc12f1b517ed9db0f992580d61e",
+    "superseded/design01/familiar.json": "6f90977459beed53b7fb27e358d39d4ca099e677b70488d2ed1d0c99f0520e5b",
+    "superseded/design01/PROVENANCE.json": "714188e9a1c2bf7d4fa9b43bf39f4107ff497180671a3c88dfb0ee8f65178dd1",
+    "superseded/design02/ANIMATION.json": "ec20b530d1afc8437236187c51c4a1c4481c22df4fb478a19883fc06b4364e0b",
+    "superseded/design02/ao_ao.json": "72b1f6b84cc3a1579eaa561e3c25f8f76a6b49357796bf7b9f9cc7195041a09d",
+    "superseded/design02/CONTACTS.json": "1823113c2c3e0a2bfa1c882a4d8675bd3996ccc54b2579af651a162275572f74",
+    "superseded/design02/familiar.json": "353c6a451de739d4429927130703c7c91e2b7d001e6ea1b6ea3b31c91cdbf5ed",
+    "superseded/design02/PROVENANCE.json": "714188e9a1c2bf7d4fa9b43bf39f4107ff497180671a3c88dfb0ee8f65178dd1",
+    "superseded/visual01/ao_ao/fixture.zs": "0465dfc00443225b20f9bd068c657975e12ba94227e13c168fa0a0d0f9255428",
+    "superseded/visual01/ao_ao/MAPINFO.txt": "b91388ebc22fdcee491d3523af78887155825cc800a1daadb5e1c57ac57082bd",
+    "superseded/visual01/ao_ao/RESULTS.json": "289698a1e564f4f2d1c0efdd13621836218aad70ddf4d29f8f7496e8759b4218",
+    "superseded/visual01/ao_ao/view-front.png": "095a5ebc2a28e74cf10c4874ce819355f36e9de5046178f7cb29c7a64dceff3a",
+    "superseded/visual01/ao_ao/view-side.png": "a8ab726cc2f217491ee5ea6d6ea42eff243999a438da33394fe508de0a0f115c",
+    "superseded/visual01/ao_ao/visual/commands.cfg": "7a47491f079f7095b94c32efffdb82edd05f9068ad3df4c953d6a9e9dabd3ad8",
+    "superseded/visual01/ao_ao/visual/engine.log": "6465d272879951e004b0fed89c201bbecee7cc3134a8adc3204dc0b9c2c6d5db",
+    "superseded/visual01/ao_ao/visual/process.log": "e0d2f3efede02734fae35c1d3ecfb8cb40d2afd4380591a6918da8d8e1d678f2",
+    "superseded/visual01/ao_ao/visual/session.ini": "04aa800fbe2c5d40c438cbe321f5aabfba3fdcfa0c4da1de0122f6fc2294c540",
+    "superseded/visual01/ao_ao/ZSCRIPT.txt": "de4b75d462a2b742b81f67572a502427dc70fa051ba149cb33a3f1eee22d5368",
+    "superseded/visual01/familiar/fixture.zs": "266db16f7e8fad2b9454e3fdb686e1e8a6fc9046b5081f39ae30d4ee0d5a2e1e",
+    "superseded/visual01/familiar/MAPINFO.txt": "b91388ebc22fdcee491d3523af78887155825cc800a1daadb5e1c57ac57082bd",
+    "superseded/visual01/familiar/RESULTS.json": "23feb836afc8c5e33e671992184bb9ad58718a4de7fba8dbdd60faf57e70ae6d",
+    "superseded/visual01/familiar/view-front.png": "f2b5a92a48ec2460039b765965bc2bcb5aa0e6f542258f1bc63570c24d8434ba",
+    "superseded/visual01/familiar/view-side.png": "9d6ff2d4c4eedc4bec994c81acb968c7ffbdd99a4e0989d08f99186586e07272",
+    "superseded/visual01/familiar/visual/commands.cfg": "7a47491f079f7095b94c32efffdb82edd05f9068ad3df4c953d6a9e9dabd3ad8",
+    "superseded/visual01/familiar/visual/engine.log": "0ec065a9ff558ba0aa9f5155bd21316d00e6037660089f9f38b5481dae04ae0f",
+    "superseded/visual01/familiar/visual/process.log": "f3fd1421d57a30393f841484763267cb6e2ce70685849717f0841b3c9bb02f1a",
+    "superseded/visual01/familiar/visual/session.ini": "a54fb49f6ec45424c6612c64ef65ef11a617610950f2ee99b9117e09b973c4b7",
+    "superseded/visual01/familiar/ZSCRIPT.txt": "8a22134faa9cba95f5a5a2dd2e3f6b1232a86f5427b737dbeafe44bafd4673f9",
+    "superseded/visual02/ao_ao/fixture.zs": "0465dfc00443225b20f9bd068c657975e12ba94227e13c168fa0a0d0f9255428",
+    "superseded/visual02/ao_ao/MAPINFO.txt": "b91388ebc22fdcee491d3523af78887155825cc800a1daadb5e1c57ac57082bd",
+    "superseded/visual02/ao_ao/RESULTS.json": "b31b6f53b8eabe6467ccde7e55a8d2b5bbeac7321bc2d62ce915adfd98532b70",
+    "superseded/visual02/ao_ao/view-front.png": "fa96385641998fe80ddea47e16d37a47f618bf0134b41b7985852f3c991e81ab",
+    "superseded/visual02/ao_ao/view-side.png": "608b0ee6f78b2869c502afea070a0852a8e22b17694ab1c3ae5327a53658cacb",
+    "superseded/visual02/ao_ao/visual/commands.cfg": "7a47491f079f7095b94c32efffdb82edd05f9068ad3df4c953d6a9e9dabd3ad8",
+    "superseded/visual02/ao_ao/visual/engine.log": "fe53351703ff40a57854d66fa82f4a7d9ef5777c83b465440792abc597d42a58",
+    "superseded/visual02/ao_ao/visual/process.log": "8946d360d0304e6a164438d63bcf7a3df27504a14046375560ff3b4ee652de1b",
+    "superseded/visual02/ao_ao/visual/session.ini": "be5ea864a9897b7f09dc01ee68d8e3c465d3f2c2a9671f945892c1c5ccaa89eb",
+    "superseded/visual02/ao_ao/ZSCRIPT.txt": "de4b75d462a2b742b81f67572a502427dc70fa051ba149cb33a3f1eee22d5368",
+    "superseded/visual02/familiar/fixture.zs": "266db16f7e8fad2b9454e3fdb686e1e8a6fc9046b5081f39ae30d4ee0d5a2e1e",
+    "superseded/visual02/familiar/MAPINFO.txt": "b91388ebc22fdcee491d3523af78887155825cc800a1daadb5e1c57ac57082bd",
+    "superseded/visual02/familiar/RESULTS.json": "751fc3c0c78799e807636b6759fe18e567983d1b2b8664c22ad212c146cc4606",
+    "superseded/visual02/familiar/view-front.png": "f3dffa5016a915eb55cfc2536181ca773d2a962b046e90ff70c86c906ca006ef",
+    "superseded/visual02/familiar/view-side.png": "a6b8c6ca9c8c198ffb6b07850e5d789550a602cac9e7022a1b1202498831f7d2",
+    "superseded/visual02/familiar/visual/commands.cfg": "7a47491f079f7095b94c32efffdb82edd05f9068ad3df4c953d6a9e9dabd3ad8",
+    "superseded/visual02/familiar/visual/engine.log": "9000bb78a88852f6f1d3cbf6336b7eb79a9c033df2a68a9b3e5615bd4c3fd9ef",
+    "superseded/visual02/familiar/visual/process.log": "3df88eda3000c244d6f71e395753032a3d8434d890c24c0081ad27f5c0027099",
+    "superseded/visual02/familiar/visual/session.ini": "fdf47828e0f439ae62c6a97a310b79a5ee804d22d6aa6516f529f1e7661987e3",
+    "superseded/visual02/familiar/ZSCRIPT.txt": "8a22134faa9cba95f5a5a2dd2e3f6b1232a86f5427b737dbeafe44bafd4673f9",
+    "validation-final.json": "bc46986620cdbf79a619dd74d92087b8c87a998bd011674a9010bba8302d62ce"
+  }
+}

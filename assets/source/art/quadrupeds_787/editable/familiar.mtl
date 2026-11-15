@@ -1,0 +1,9 @@
+newmtl iris
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/quadrupeds/iris.png
+newmtl dark
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/quadrupeds/dark.png
+newmtl atlas
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/quadrupeds/materials.png
