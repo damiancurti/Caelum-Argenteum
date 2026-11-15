@@ -1,0 +1,18 @@
+{
+  "entries": 18564,
+  "sha256": "bce035906abe541f93bed3aef4eeac349c738063fa28fb3636a5490724c9ebe8",
+  "added": [
+    "caelum/data/quadruped_combat.modeldef",
+    "models/caelum/folklore/quadrupeds/ao_ao.md3",
+    "models/caelum/folklore/quadrupeds/dark.png",
+    "models/caelum/folklore/quadrupeds/familiar.md3",
+    "models/caelum/folklore/quadrupeds/iris.png",
+    "models/caelum/folklore/quadrupeds/materials.png"
+  ],
+  "changed": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "all_other_bytes_identical": true
+}

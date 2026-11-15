@@ -1,0 +1,50 @@
+{
+  "issue": 787,
+  "purpose": "Inspect native quadruped paws/hooves, tails and lying poses.",
+  "additional_views": [
+    {
+      "name": "lying-oblique",
+      "position": [
+        60,
+        -75,
+        60
+      ],
+      "target": [
+        0,
+        -5,
+        15
+      ],
+      "default_pose": 22
+    },
+    {
+      "name": "feet-detail",
+      "position": [
+        29,
+        -24,
+        9
+      ],
+      "target": [
+        13,
+        -6,
+        3
+      ]
+    },
+    {
+      "name": "tail-detail",
+      "position": [
+        -55,
+        -30,
+        30
+      ],
+      "target": [
+        -22,
+        0,
+        24
+      ]
+    }
+  ],
+  "action_views": {
+    "death": 6,
+    "rest": 6
+  }
+}
