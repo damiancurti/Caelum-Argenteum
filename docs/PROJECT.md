@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.83** - 2026-11-15.
+Documentation version: **5.17.84** - 2026-11-15.
+
+## 5.17.84 - Three period apparition candidates (#811)
+
+Viuda, Llorona and Futre have native models; coverage reaches 30/56 provisional
+classes. Fourteen exports repeat, geometry/stride checks pass and 686 native
+assertions have bounded final-package applicability. ASSETS records visual,
+save and presentation evidence and its limits. CA811-PERIOD-01 remains pending.
+The 26 remaining creatures, regional views, named/modular characters, equipment
+fitting, 75 campaign assignments and siege rendering keep the wider batch open.
+The author's terminal remains deferred until all requested work is complete.
 
 ## 5.17.83 - Head regional displays (#809)
 

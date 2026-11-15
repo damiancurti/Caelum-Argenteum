@@ -1,0 +1,63 @@
+{
+  "issue": 811,
+  "purpose": "Native period silhouettes, face/hair, attached cloth/hands and empty Futre collar; inherited behavior only.",
+  "additional_views": [
+    {
+      "name": "lying-oblique",
+      "position": [
+        65,
+        -65,
+        63
+      ],
+      "target": [
+        0,
+        0,
+        12
+      ],
+      "default_pose": 22
+    },
+    {
+      "name": "face-detail",
+      "position": [
+        27,
+        -6,
+        47
+      ],
+      "target": [
+        2,
+        0,
+        44
+      ]
+    },
+    {
+      "name": "garment-rear",
+      "position": [
+        -50,
+        -35,
+        35
+      ],
+      "target": [
+        0,
+        0,
+        26
+      ]
+    },
+    {
+      "name": "collar-top",
+      "position": [
+        28,
+        -12,
+        68
+      ],
+      "target": [
+        0,
+        0,
+        46
+      ]
+    }
+  ],
+  "action_views": {
+    "death": 6,
+    "rest": 6
+  }
+}

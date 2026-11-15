@@ -6,16 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.83.** Obtain and update the complete repository,
+**Current release: 5.17.84.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#811 adds native Viuda/Llorona/Futre candidates; 30/56 provisional creatures now have models. Geometry, stride, continuity and combat checks pass within their recorded scope. The full batch and consolidated author review remain pending.
+
+Earlier candidate deliveries and their recorded scope:
 
 #809 adds Umita/NOA and Chonchon/Patagonia regional views;446 native checks and47 key registrations pass. The full batch and consolidated author review remain pending.
 
 #806 restores four historical release labels after #805 corrected model-identity descriptions. Native artwork and behavior remain unchanged. The full batch and consolidated author review remain pending.
 
 #803 adds native Umita/Chonchon head candidates; 27/56 provisional creature classes now have models. Geometry, save and combat checks pass. The wider batch and consolidated author review remain pending.
-
-Earlier candidate deliveries and their recorded scope:
 
 #801 adds Mulanima/NOA and Chancho de Lata/Pampa/Litoral to the regional inspection gallery. Native checks pass; consolidated author review remains pending.
 

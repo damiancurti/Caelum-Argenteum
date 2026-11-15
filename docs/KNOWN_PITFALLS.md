@@ -211,6 +211,16 @@ serialized geometry again. Extended thumb roots and new interior witnesses pass
 CA803-HEADS-01. A zero mesh-local floor did not prevent a wing-tip perch;
 progressive death/rest wing folding fixes that appearance in the final captures.
 
+Extension #811, 2026-11-15: closed clothing and valid attachment witnesses
+did not detect legs emerging through long skirts during the extreme stride.
+Inspect camera-matched native poses and test actual quantized leg vertices
+against serialized opaque garment triangles, including the clothed pelvis.
+Waist-anchored lower-cloth expansion and a gentler visual gait now contain1488
+above-hem samples in the two extreme poses. Bare feet below the hem are excluded
+deliberately. This proves those samples, not every interpolation or future outfit.
+Evidence: assets/validation_v5_17_84/evidence/SUMMARY.json; STATIC-VERIFIED coverage,
+ENGINE-OBSERVED candidate correction; author check CA811-PERIOD-01 pending.
+
 Native functional assertions do not establish distinct or grounded art.
 Peuchen's first 51-assertion preview repeats idle endpoints, attack poses and
 all death stages. A death-letter offset assumed A but the actual sequence
