@@ -1,6 +1,17 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.52** - 2026-11-14.
+Documentation version: **5.17.53** - 2026-11-14.
+
+## 5.17.53 - Restore hide assertion counts (#749, 2026-11-14)
+
+Repaired the shared runner's hide-only expectation inherited during #743.
+Before: all native checks pass, but Python expects170 instead of163 in visual
+mode and188 instead of181 in old-save mode. After:163 visual and869 continuity
+checks pass with unchanged fixture and runtime checksums. No native assertion
+is removed and kitchen/kit navigation probes remain. ASSETS records package
+byte-verification and reuse boundaries. Evidence:
+assets/validation_v5_17_53/evidence/SUMMARY.json.
+No author test was accepted or removed; CA731-HIDE-DROPS-01 remains pending.
 
 ## 5.17.52 - Native prepared-kit models (#747, 2026-11-14)
 

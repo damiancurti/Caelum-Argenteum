@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.52** - 2026-11-14.
+Documentation version: **5.17.53** - 2026-11-14.
+
+## 5.17.53 - Hide regression runner repaired (#749)
+
+Restored the hide fixture's original163/181 phase counts after reproducing
+false expectations of170/188. The unchanged native fixture passes163 visual
+and869 continuity checks. No gameplay/art change or author acceptance;
+inventory, character, modular and campaign work remains incomplete.
 
 ## 5.17.52 - Prepared-kit drop models (#747)
 

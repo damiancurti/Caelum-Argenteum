@@ -263,7 +263,7 @@ def main(default_kind='coins'):
             if assertions != expected:
                 errors.append(f'Expected {expected} native assertions, observed {assertions}');passed=False
         if args.kind == 'hides':
-            expected = 170 if label == 'visual' else 188 if label == 'old-save-load' else 163 if label in ('baseline', 'candidate-fresh') else 181
+            expected = 163 if label in ('baseline', 'candidate-fresh', 'visual') else 181
             if assertions != expected:
                 errors.append(f'Expected {expected} native assertions, observed {assertions}');passed=False
         if args.kind == 'cartridge_kits':
