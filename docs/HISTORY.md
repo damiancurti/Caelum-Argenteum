@@ -1,6 +1,16 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.74** - 2026-11-15.
+Documentation version: **5.17.75** - 2026-11-15.
+
+## 5.17.75 - Teju regional gallery (#793, 2026-11-15)
+
+Added Teju Jagua/Selva to optional CA682G, preserving fourteen previous figures,
+twenty controls, five grounds and the crossing path. Refreshed dependent source
+pins only; production artwork and model bytes remain exact. Four fixture files
+repeat, and fresh/reload/idle/walking passes65/134 native assertions. ASSETS
+records qualified700-tic overview timing. Evidence:
+assets/validation_v5_17_75/evidence/SUMMARY.json. CA793-TEJU-GALLERY-01 originates
+here and remains pending. No author acceptance or prior test removal occurred.
 
 ## 5.17.74 - Teju Jagua native candidate (#791, 2026-11-15)
 

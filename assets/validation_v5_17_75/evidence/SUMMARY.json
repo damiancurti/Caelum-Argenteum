@@ -1,0 +1,229 @@
+{
+  "issue": 793,
+  "parent_issue": 463,
+  "version": "5.17.75",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Optional CA682G adds Teju Jagua on the approved Selva ground. Fifteen figures, eleven species, five plots and twenty-one controls. Prior fourteen figures, twenty controls and four-boundary crossing path remain exact.",
+  "runtime": {
+    "sha256": "888114a6c08ae2e0df83cf726024c76eef571804e771ded312b9a7ae7c4c1405",
+    "source_entries": 18569,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "85c6ec686efbb73ccf05c49d32cc89bb58073ebe41586b4b5be8435698325d6e",
+    "changed_resources": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_gallery_files": 4,
+    "repeat_byte_identical": true,
+    "approved_allocations_complete": true,
+    "nonoverlapping_native_bodies": true,
+    "exact_model_and_material_reuse": true,
+    "dependency_proof": {
+      "700": {
+        "native_files_unchanged": 2,
+        "non_hash_design_unchanged": true
+      },
+      "682": {
+        "native_files_unchanged": 3,
+        "non_hash_design_unchanged": true
+      },
+      "709": {
+        "metadata_only_refreshed_sources": [
+          "assets/source/art/regional_gallery_682/GALLERY.json",
+          "assets/source/art/regional_gallery_682/EXPORT.json"
+        ],
+        "layout_unchanged": true
+      }
+    },
+    "project_validation_passed": true
+  },
+  "native": {
+    "issue": 793,
+    "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+    "runtime_sha256": "888114a6c08ae2e0df83cf726024c76eef571804e771ded312b9a7ae7c4c1405",
+    "materials_sha256": null,
+    "fixture_sha256": "230fc5e85fd6d710fe424d5b0ef6b0d9dd686583ba68230c62a4763173661746",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 65,
+        "expected_assertions": 65
+      },
+      {
+        "phase": "reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 134,
+        "expected_assertions": 134
+      }
+    ],
+    "captures": {
+      "ao_ao.png": "ce69128ef62b87e48725a44a5a4fdb44b80be2cdc168ae0e2acf2b6688edc764",
+      "basilisco-litoral.png": "425021395e696919ccd70857ef436fa36dc740ad81dc3c41adfa1fab5a256542",
+      "basilisco-pampa.png": "a181aa8aea0fb1af11d7b33c379ad556fc78ced762740f0cdb84a2cd50f7de37",
+      "coquena.png": "9540198d24d38f4fe4376630803e41812a85fba37b4765704d0275fac87ee844",
+      "cuyo-tiles.png": "c4e1d5ce0c6913d74dc05b124cdb066b4867a48fd71f870806a49dc29aa69310",
+      "cuyo-yastay.png": "a3a667164891d96177b2d15ec9628738084a50e87a0c46c865842695936feb11",
+      "familiar.png": "7ef4c946b9e6712e83a37182f5293e8407c55a30201f158e1713df81bc04a6be",
+      "litoral-tiles.png": "c9ec25364ad03552e9a0ff39c2ff76eaf8b2bdf1cd9d766066b8540da5033727",
+      "litoral.png": "ee43331862dabeccb1303fec0ac2b07dc3ba8e33c5023a40809ac3d9b2c4cf4a",
+      "mikilo.png": "b352b7efb944d6028b51165b625a5c298f855c97ce556c07255068dfc184653e",
+      "noa-tiles.png": "6dfe9052a5da67c85cb1e177af3e330d7d01f0f1756cc75f313b8f114b73f536",
+      "noa.png": "ae6b73f3aed771a7dea344f94509f2318977a1efcdbd72a6a060d53227813ffa",
+      "overview.png": "6ec29bffa37b8bca37c5ada2d6cf3b8fa607d3312517c073b2643a26de9c26bc",
+      "pampa-tiles.png": "58f96a40c3408e670cf5746b16abbc6973f0bc197d34505e2fd8e3ce25b99d12",
+      "pampa.png": "b921b0481b710b6eb55afa304062130b4b0586471e0597e8a644a28a1d5ae949",
+      "reload.png": "96a4c932f201714af1734077a26e5897734c7ff92ef1cc929c605f60dfe18bf4",
+      "selva-tiles.png": "a91556c9d7b3dfb011708f84f5ca4c285f81b836918a186ce6d9964a87ecf04c",
+      "selva.png": "ddb6693f46df46c474db05fd0b34e26ccb7d6fc5b977ffbf9159b7b7e1503dd3",
+      "teju-jagua.png": "47741a06e815876ef19cab1d84f0e21b8ac59068e5466ffa2ad0d61a36f7e9d4",
+      "yasi-litoral.png": "4ad18658664782e49a4b851c663a119b3280d5bca04bf00158a13469750ed067",
+      "yastay-noa.png": "afc3d32c1acd6698f3363ffc3b95867bec5b474e9b44b7e7fdeecd35cc56849e"
+    }
+  },
+  "presentation": {
+    "issue": 793,
+    "scope": "One isolated regional gallery cohort; no comparison, repeatability or campaign acceptance.",
+    "baseline_sha256": "888114a6c08ae2e0df83cf726024c76eef571804e771ded312b9a7ae7c4c1405",
+    "runtime_sha256": "888114a6c08ae2e0df83cf726024c76eef571804e771ded312b9a7ae7c4c1405",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "regional-materials",
+        "pid": 29700,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 388381074.53,
+          "END": 388400989.56700003
+        },
+        "fixture_sha256": "230fc5e85fd6d710fe424d5b0ef6b0d9dd686583ba68230c62a4763173661746",
+        "bench_sha256": "db471b2cf7558fde31633a03401c5adad534018fb95ae26d014d269592132015",
+        "passed": true,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57137242857143,
+          "p50_ms": 28.5687,
+          "p95_ms": 29.0322,
+          "p99_ms": 29.1943,
+          "max_ms": 29.2629
+        },
+        "presentation": {
+          "pid": 29700,
+          "trace_sha256": "4cc4be8da0b1ab2cd43f34012150d7cadfcf436bcc5798ea19e9d947495e833f",
+          "rows": 36458,
+          "scene_presents": 26250,
+          "mean_present_fps": 1507.3349483150482,
+          "present_intervals": {
+            "samples": 26249,
+            "mean_ms": 0.6634225532406285,
+            "p50_ms": 0.6394999623298645,
+            "p95_ms": 0.8116999864578247,
+            "p99_ms": 0.9660999774932861,
+            "max_ms": 1.5062000155448914
+          },
+          "native_call_duration": {
+            "samples": 26250,
+            "mean_ms": 0.06449916204270863,
+            "p50_ms": 0.059599995613098145,
+            "p95_ms": 0.08930003643035889,
+            "p99_ms": 0.11670005321502686,
+            "max_ms": 0.5876999497413635
+          }
+        }
+      }
+    ]
+  },
+  "reviewed": "Added seven-headed subject closeup, expanded overview, Selva ground repeats, reloaded overview and presentation cohort. Identical prior model/ground bytes reuse their existing evidence.",
+  "dependencies": "Cuyo700 INVENTORY refreshes only the CA682G source hash and regenerates its manifest;682 refreshes the resulting700 export pin and manifest. All five native material bytes remain exact. CA709G provenance refreshes those two borrowed source pins; its layout and generated behavior are unchanged.",
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Optional diagnostic display, not campaign placement or population rules. No gameplay, balance, save schema or routine actor scan added.",
+    "One700-tic distant-overview cohort measures queue presentation, not GPU/display timing, repeatability, comparison, close-up cost or campaign/crowd acceptance.",
+    "Fresh/save/reload applies to this isolated fixture, not migration of older optional gallery checkpoints.",
+    "Friendly/passive subjects advance native idle states; only diagnostic observer noise is suppressed. Native speed and production perception are unchanged.",
+    "CA791-TEJU-01 retains model art/ordinary-combat review; CA793-TEJU-GALLERY-01 retains regional fixture review. All prior author checks remain pending.",
+    "No new imagery or meshes; all production models/materials are byte-identical. Other inventory, characters, modular equipment and the V5.16 campaign remain incomplete. No PK3/WAD/IWAD, executable, DLL or save is committed."
+  ],
+  "files": {
+    "GALLERY_MANIFEST.json": "8b3180edfe9406ab8f27b890ea8b5304cea014622f4ae2f2ffeccb019f1a9341",
+    "issue793-build01.log": "dbdf03bfe4d66afe097984edda015f0e2fb7303d2023264cdebdb49e987f7939",
+    "issue793-dependency-proof.json": "8cf5719d3477e29b5a09b00c656a7443b2efb9d86aa0202428d91cae653d65d1",
+    "issue793-previous-gallery.json": "60b737b67958a6283a82d28d119138020562b26e50689e956c2ca3cdd6d8d302",
+    "issue793-repeat-final.json": "ba6f3fa64449bf3dd595d6481bd09f134bbfe97330d6b0598561599483c2942f",
+    "native/ao_ao.png": "ce69128ef62b87e48725a44a5a4fdb44b80be2cdc168ae0e2acf2b6688edc764",
+    "native/basilisco-litoral.png": "425021395e696919ccd70857ef436fa36dc740ad81dc3c41adfa1fab5a256542",
+    "native/basilisco-pampa.png": "a181aa8aea0fb1af11d7b33c379ad556fc78ced762740f0cdb84a2cd50f7de37",
+    "native/coquena.png": "9540198d24d38f4fe4376630803e41812a85fba37b4765704d0275fac87ee844",
+    "native/cuyo-tiles.png": "c4e1d5ce0c6913d74dc05b124cdb066b4867a48fd71f870806a49dc29aa69310",
+    "native/cuyo-yastay.png": "a3a667164891d96177b2d15ec9628738084a50e87a0c46c865842695936feb11",
+    "native/familiar.png": "7ef4c946b9e6712e83a37182f5293e8407c55a30201f158e1713df81bc04a6be",
+    "native/fixture-source/MAPINFO.txt": "015398f03aa8d078a9d9248228ff4770d2332e5d09bf0de87ae56c6d3cb6c34b",
+    "native/fixture-source/ZSCRIPT.txt": "3387f6859c0456c540d5c7520e30ba0881c84eb04bab73703ac8445297c171e7",
+    "native/fresh-process.log": "9c8f02a19ba323f4784ca70fa8b2cf558505ed8d96f307ad8018a8549ae7ec70",
+    "native/fresh.cfg": "bb21a587d1a998d692c6f6fd8fa6a76e94896f2be90dbfdb26e029e22df6c13a",
+    "native/fresh.log": "4565022413cafa4950073624f0567749b56a70d8703bb13d2527666678000ca3",
+    "native/gallery.zs": "4826541f4295da00109cc282c47bc04fe8897f9a24790aaaa53825decf1f738a",
+    "native/GALLERY_MANIFEST.json": "8b3180edfe9406ab8f27b890ea8b5304cea014622f4ae2f2ffeccb019f1a9341",
+    "native/litoral-tiles.png": "c9ec25364ad03552e9a0ff39c2ff76eaf8b2bdf1cd9d766066b8540da5033727",
+    "native/litoral.png": "ee43331862dabeccb1303fec0ac2b07dc3ba8e33c5023a40809ac3d9b2c4cf4a",
+    "native/mikilo.png": "b352b7efb944d6028b51165b625a5c298f855c97ce556c07255068dfc184653e",
+    "native/noa-tiles.png": "6dfe9052a5da67c85cb1e177af3e330d7d01f0f1756cc75f313b8f114b73f536",
+    "native/noa.png": "ae6b73f3aed771a7dea344f94509f2318977a1efcdbd72a6a060d53227813ffa",
+    "native/overview.png": "6ec29bffa37b8bca37c5ada2d6cf3b8fa607d3312517c073b2643a26de9c26bc",
+    "native/pampa-tiles.png": "58f96a40c3408e670cf5746b16abbc6973f0bc197d34505e2fd8e3ce25b99d12",
+    "native/pampa.png": "b921b0481b710b6eb55afa304062130b4b0586471e0597e8a644a28a1d5ae949",
+    "native/reload-process.log": "181168aa065e58fdf7c7541240e622318799346b712f970a1bc8dd1630c3364b",
+    "native/reload.cfg": "3fb2f93afbd8fb7d1e92f88f08ba0fcbe62465c2409ac43b5716d79b719e5eff",
+    "native/reload.log": "67b9b7a7b74a80acd6863a9587a32d26fc0e3f80e84a8c3c9849dc160cae9d0d",
+    "native/reload.png": "96a4c932f201714af1734077a26e5897734c7ff92ef1cc929c605f60dfe18bf4",
+    "native/RESULTS.json": "1313ad91fb57f51e885cb56325343d0f7e0b125bbe22a18b0d4e3b1ba117ea6c",
+    "native/selva-tiles.png": "a91556c9d7b3dfb011708f84f5ca4c285f81b836918a186ce6d9964a87ecf04c",
+    "native/selva.png": "ddb6693f46df46c474db05fd0b34e26ccb7d6fc5b977ffbf9159b7b7e1503dd3",
+    "native/session.ini": "c1d7f53f6a7758132a098c232c1e400ade6e69d504069ec1da60f04569a5b13f",
+    "native/teju-jagua.png": "47741a06e815876ef19cab1d84f0e21b8ac59068e5466ffa2ad0d61a36f7e9d4",
+    "native/TEXTMAP.txt": "a02a2243b19412edc767aabcd06d9aa7e9ba997fbf063730d6d1457912f68411",
+    "native/yasi-litoral.png": "4ad18658664782e49a4b851c663a119b3280d5bca04bf00158a13469750ed067",
+    "native/yastay-noa.png": "afc3d32c1acd6698f3363ffc3b95867bec5b474e9b44b7e7fdeecd35cc56849e",
+    "presentation/regional-materials/commands.cfg": "91a227051d3d24fb6aad5465a0109d6900ac0d6829faa33a77d37b649d354c8a",
+    "presentation/regional-materials/engine.log": "5ef377070686364e01a6c7e6a4742c386d4452c66fa85ebbe9312c7cb4638ad3",
+    "presentation/regional-materials/fixture-source/MAPINFO.txt": "015398f03aa8d078a9d9248228ff4770d2332e5d09bf0de87ae56c6d3cb6c34b",
+    "presentation/regional-materials/fixture-source/ZSCRIPT.txt": "3387f6859c0456c540d5c7520e30ba0881c84eb04bab73703ac8445297c171e7",
+    "presentation/regional-materials/gallery.zs": "4826541f4295da00109cc282c47bc04fe8897f9a24790aaaa53825decf1f738a",
+    "presentation/regional-materials/GALLERY_MANIFEST.json": "8b3180edfe9406ab8f27b890ea8b5304cea014622f4ae2f2ffeccb019f1a9341",
+    "presentation/regional-materials/presents.csv": "4cc4be8da0b1ab2cd43f34012150d7cadfcf436bcc5798ea19e9d947495e833f",
+    "presentation/regional-materials/process.log": "a3eb3ef232069de40c021f982aa905c1283db4c96e8c32ebc9915e39504710e8",
+    "presentation/regional-materials/scene.png": "6ec29bffa37b8bca37c5ada2d6cf3b8fa607d3312517c073b2643a26de9c26bc",
+    "presentation/regional-materials/session.ini": "5286e52bad5e6b4e603ee059366a1d637b4d8c48a234a4746d121bd3534aabd1",
+    "presentation/regional-materials/TEXTMAP.txt": "a02a2243b19412edc767aabcd06d9aa7e9ba997fbf063730d6d1457912f68411",
+    "presentation/RESULTS.json": "12d764dc08e85c0a226089b5829f701da1573d1ead5e77d1385eb6af6957a3b4",
+    "validation-final.json": "6c82594b1070cea51d338f1b390bfd2647b9f7f8135acaff99008f7023de818a"
+  }
+}

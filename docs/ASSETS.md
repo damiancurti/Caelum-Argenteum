@@ -1,6 +1,42 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.74** - 2026-11-15.
+Documentation version: **5.17.75** - 2026-11-15.
+
+## 5.17.75 - Teju Jagua regional inspection (#793)
+
+The optional CA682G gallery adds native Teju Jagua on its approved Selva plot.
+Fifteen figures cover eleven species across five existing grounds. Key9 shows
+all seven heads from the front; the fourteen previous positions, twenty controls
+and four-boundary crossing path remain exact. The authoritative source remains
+assets/source/art/regional_gallery_682/GALLERY.json; the current runner is
+assets/validation_v5_17_75/run_gallery.py. No production model, ground, campaign
+placement, balance, behavior or saved field changes.
+
+The approved allocation and nonoverlapping native bodies pass. Four fixture
+files repeat byte-for-byte. Only dependent source pins/manifests change in
+regional_gallery_700/682 and CA709G provenance; all five native materials and
+the CA709G layout remain exact. GZDoom passes65 fresh and134 reload/idle/walking
+assertions. The added closeup, overview, Selva ground, reloaded overview and
+presentation scene were inspected. Existing subjects retain their original
+positions and passive native idle animations; the diagnostic observer remains
+silent, with production perception and speed unchanged.
+
+One700-tic distant overview observes 1507.33 queue presents/s,
+p95 0.8117ms, p99 0.9661ms,
+maximum 1.5062ms. Windows11 Pro26200,
+Ryzen9 5950X/32GB/RTX3070Ti, GZDoom4.14.2 Vulkan1280x720, uncapped/no VSync,
+background unpaused,5% audio. This single cohort does not establish display/GPU
+timing, comparative gains, repeatability, close-up cost or campaign/crowd
+performance. All18,569 package entries match src; only two release diagnostics
+differ from the #791 package.
+
+Evidence: assets/validation_v5_17_75/evidence/SUMMARY.json.
+CA793-TEJU-GALLERY-01 awaits the consolidated author review of framing, ground
+transitions and walking; CA791-TEJU-01 retains separate model/combat review.
+No author check is removed. Thirty-four of56 provisional catalogue models,
+other characters, modular conversion/fitting, remaining V5.16 progression and
+siege performance remain unfinished. The final author terminal stays deferred
+until the requested batch is complete.
 
 ## 5.17.74 - Native seven-headed Teju Jagua (#791)
 
