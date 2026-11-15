@@ -1,0 +1,50 @@
+{
+  "issue": 738,
+  "purpose": "Inspection-only views of curled tail, talons and lying poses.",
+  "additional_views": [
+    {
+      "name": "lying-oblique",
+      "position": [
+        45,
+        -60,
+        38
+      ],
+      "target": [
+        -10,
+        0,
+        12
+      ],
+      "default_pose": 22
+    },
+    {
+      "name": "feet-detail",
+      "position": [
+        22,
+        -24,
+        9
+      ],
+      "target": [
+        4,
+        -3,
+        3
+      ]
+    },
+    {
+      "name": "tail-detail",
+      "position": [
+        -52,
+        -35,
+        32
+      ],
+      "target": [
+        -23,
+        0,
+        25
+      ]
+    }
+  ],
+  "action_views": {
+    "death": 6,
+    "rest": 6
+  }
+}

@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.46** - 2026-11-14.
+Documentation version: **5.17.47** - 2026-11-14.
+
+## #738 - Basilisco native art (5.17.47)
+
+CA-FOLK-044 has a native candidate with 154 closed components, 153 rooted
+contacts, 1,224 independent posed checks and nine repeatable exports.
+115 native continuity and 80 inherited combat/loot assertions pass.
+CA738-BASILISCO-01 retains author review of face/comb, feather layers, belly
+boundaries and tail repetition, plus ordinary combat/save behavior. Add the
+approved Pampa/Litoral gallery entries separately; broader work remains open.
 
 ## #736 - Modular visual direction (5.17.46)
 
