@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.78** - 2026-11-15.
+Documentation version: **5.17.79** - 2026-11-15.
+
+## 5.17.79 - Apparition regional displays (#801)
+
+CA682G adds Mulanima/NOA and Chancho de Lata/Pampa/Litoral using exact existing
+model/material bytes. Eighteen figures, thirteen species and twenty-four controls
+cover five grounds. Four fixture files repeat;235 native assertions pass. ASSETS
+records bounded presentation evidence. CA801-APPARITIONS-GALLERY-01 and
+CA797-APPARITIONS-01 remain pending consolidated review; the full batch is open.
 
 ## 5.17.78 - Swept texture repair (#799)
 

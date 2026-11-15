@@ -1,6 +1,43 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.78** - 2026-11-15.
+Documentation version: **5.17.79** - 2026-11-15.
+
+## 5.17.79 - Apparition regional inspection (#801)
+
+The optional CA682G gallery adds Mulanima on the existing Northwest Argentina
+plot and Chancho de Lata on Pampa/Litoral, following REGION_PROPOSAL.json.
+Eighteen figures cover thirteen species across five existing grounds. Key0
+shows Mulanima; J and K show the Pampa/Litoral boar displays. All fifteen
+previous figures, twenty-one controls, grounds and the four-boundary crossing
+path remain exact. The diagnostic key validator now also admits J/K; GZDoom registration/query
+checks all24 bindings. Interactive keypress acceptance remains pending.
+Current source: assets/source/art/regional_gallery_682/
+GALLERY.json; runner: assets/validation_v5_17_79/run_gallery.py.
+
+No production model, image, material, balance, behavior, campaign placement or
+saved field changes. Only source pins/manifests in regional_gallery_700/682
+and CA709G provenance refresh. All native artwork and the CA709G layout remain
+exact. Approved allocations and nonoverlapping native bodies pass. Four fixture
+files repeat byte-for-byte. Fresh checks pass77 assertions and reload/native
+idle/walking158. Three added closeups, the expanded overview, retained grounds,
+reloaded overview and presentation scene were inspected. Diagnostic observer
+silence does not change production perception or native motion speed.
+
+One700-tic distant overview observes1452.86 queue presents/s,
+p95 0.8448ms, p99 0.9950ms,
+maximum 1.2845ms. Windows11 Pro26200,
+Ryzen9 5950X/32GB/RTX3070Ti, GZDoom4.14.2 Vulkan1280x720, uncapped/no VSync,
+background unpaused at5% audio. This single cohort does not establish display/
+GPU timing, comparative gains, repeatability, close-up cost or campaign/crowd
+performance. All18,580 package entries match src;
+only two release diagnostics differ from #799.
+
+Evidence: assets/validation_v5_17_79/evidence/SUMMARY.json.
+CA801-APPARITIONS-GALLERY-01 retains framing, ground and walking review;
+CA797-APPARITIONS-01 retains model/combat review. All prior author checks remain.
+Thirty-one of56 provisional creature models, named/modular characters, fitting,
+V5.16 progression and siege performance remain unfinished. The requested
+consolidated terminal is deferred until the full batch is complete.
 
 ## 5.17.78 - Keep swept textures inside their material cells (#799)
 

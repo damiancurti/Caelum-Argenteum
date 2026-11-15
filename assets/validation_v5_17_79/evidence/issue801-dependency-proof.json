@@ -1,0 +1,17 @@
+{
+  "700": {
+    "native_files_unchanged": 2,
+    "non_hash_design_unchanged": true
+  },
+  "682": {
+    "native_files_unchanged": 3,
+    "non_hash_design_unchanged": true
+  },
+  "709": {
+    "metadata_only_refreshed_sources": [
+      "assets/source/art/regional_gallery_682/GALLERY.json",
+      "assets/source/art/regional_gallery_682/EXPORT.json"
+    ],
+    "layout_unchanged": true
+  }
+}

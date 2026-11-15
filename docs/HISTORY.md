@@ -1,6 +1,16 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.78** - 2026-11-15.
+Documentation version: **5.17.79** - 2026-11-15.
+
+## 5.17.79 - Apparition regional gallery (#801)
+
+Added Mulanima/NOA and Chancho de Lata/Pampa/Litoral to optional CA682G. Exact
+existing artwork, fifteen previous figures, twenty-one controls, five grounds
+and the crossing path remain; only required dependency pins refresh. Four
+fixture exports repeat and77 fresh plus158 reload/idle/walking checks pass.
+The narrowly expanded J/K whitelist and24 native bind/query checks also pass.
+ASSETS records qualified overview timing and evidence. CA801-APPARITIONS-GALLERY-01
+originates here and remains pending; no earlier author check was removed.
 
 ## 5.17.78 - Ao Ao/Kasogonaga material-cell repair (#799)
 
