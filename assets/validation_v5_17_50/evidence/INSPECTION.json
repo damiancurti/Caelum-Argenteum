@@ -1,0 +1,216 @@
+{
+  "observed_native_views": [
+    {
+      "kind": "flour",
+      "angle": 0,
+      "path": "visual05/detail-0-0.png",
+      "model_matches_final": true,
+      "model_sha256": "3c6873be7518b40499819f5dbba6ecff3724ddfb746a86049d74c15ae483c1c7"
+    },
+    {
+      "kind": "flour",
+      "angle": 90,
+      "path": "visual05/detail-0-90.png",
+      "model_matches_final": true,
+      "model_sha256": "3c6873be7518b40499819f5dbba6ecff3724ddfb746a86049d74c15ae483c1c7"
+    },
+    {
+      "kind": "flour",
+      "angle": 160,
+      "path": "visual05/detail-0-160.png",
+      "model_matches_final": true,
+      "model_sha256": "3c6873be7518b40499819f5dbba6ecff3724ddfb746a86049d74c15ae483c1c7"
+    },
+    {
+      "kind": "flour",
+      "angle": 225,
+      "path": "visual05/detail-0-225.png",
+      "model_matches_final": true,
+      "model_sha256": "3c6873be7518b40499819f5dbba6ecff3724ddfb746a86049d74c15ae483c1c7"
+    },
+    {
+      "kind": "flour",
+      "angle": 270,
+      "path": "visual05/detail-0-270.png",
+      "model_matches_final": true,
+      "model_sha256": "3c6873be7518b40499819f5dbba6ecff3724ddfb746a86049d74c15ae483c1c7"
+    },
+    {
+      "kind": "beef",
+      "angle": 0,
+      "path": "visual04/detail-1-0.png",
+      "model_matches_final": true,
+      "model_sha256": "38991fb6b0fb1dd4ddd0f370a0263d88d7b07c7a22fe4a5b12ceee8a959c550b"
+    },
+    {
+      "kind": "beef",
+      "angle": 90,
+      "path": "visual04/detail-1-90.png",
+      "model_matches_final": true,
+      "model_sha256": "38991fb6b0fb1dd4ddd0f370a0263d88d7b07c7a22fe4a5b12ceee8a959c550b"
+    },
+    {
+      "kind": "beef",
+      "angle": 160,
+      "path": "visual04/detail-1-160.png",
+      "model_matches_final": true,
+      "model_sha256": "38991fb6b0fb1dd4ddd0f370a0263d88d7b07c7a22fe4a5b12ceee8a959c550b"
+    },
+    {
+      "kind": "beef",
+      "angle": 225,
+      "path": "visual04/detail-1-225.png",
+      "model_matches_final": true,
+      "model_sha256": "38991fb6b0fb1dd4ddd0f370a0263d88d7b07c7a22fe4a5b12ceee8a959c550b"
+    },
+    {
+      "kind": "beef",
+      "angle": 270,
+      "path": "visual05/detail-1-270.png",
+      "model_matches_final": true,
+      "model_sha256": "38991fb6b0fb1dd4ddd0f370a0263d88d7b07c7a22fe4a5b12ceee8a959c550b"
+    },
+    {
+      "kind": "fish",
+      "angle": 0,
+      "path": "visual05/detail-2-0.png",
+      "model_matches_final": true,
+      "model_sha256": "1cda61099bdbe0c01d404559f96cfd913d4ec5d7f549a84ec205c37f56db17d5"
+    },
+    {
+      "kind": "fish",
+      "angle": 90,
+      "path": "visual03/detail-2-90.png",
+      "model_matches_final": true,
+      "model_sha256": "1cda61099bdbe0c01d404559f96cfd913d4ec5d7f549a84ec205c37f56db17d5"
+    },
+    {
+      "kind": "fish",
+      "angle": 160,
+      "path": "visual05/detail-2-160.png",
+      "model_matches_final": true,
+      "model_sha256": "1cda61099bdbe0c01d404559f96cfd913d4ec5d7f549a84ec205c37f56db17d5"
+    },
+    {
+      "kind": "fish",
+      "angle": 225,
+      "path": "visual03/detail-2-225.png",
+      "model_matches_final": true,
+      "model_sha256": "1cda61099bdbe0c01d404559f96cfd913d4ec5d7f549a84ec205c37f56db17d5"
+    },
+    {
+      "kind": "fish",
+      "angle": 270,
+      "path": "visual05/detail-2-270.png",
+      "model_matches_final": true,
+      "model_sha256": "1cda61099bdbe0c01d404559f96cfd913d4ec5d7f549a84ec205c37f56db17d5"
+    },
+    {
+      "kind": "vegetables",
+      "angle": 0,
+      "path": "visual07/detail-3-0.png",
+      "model_matches_final": true,
+      "model_sha256": "0e85e821068504c9a9fa8db4c2b242817e5ba367efee3e5f490a248048575c60"
+    },
+    {
+      "kind": "vegetables",
+      "angle": 90,
+      "path": "visual07/detail-3-90.png",
+      "model_matches_final": true,
+      "model_sha256": "0e85e821068504c9a9fa8db4c2b242817e5ba367efee3e5f490a248048575c60"
+    },
+    {
+      "kind": "vegetables",
+      "angle": 160,
+      "path": "visual07/detail-3-160.png",
+      "model_matches_final": true,
+      "model_sha256": "0e85e821068504c9a9fa8db4c2b242817e5ba367efee3e5f490a248048575c60"
+    },
+    {
+      "kind": "vegetables",
+      "angle": 225,
+      "path": "visual07/detail-3-225.png",
+      "model_matches_final": true,
+      "model_sha256": "0e85e821068504c9a9fa8db4c2b242817e5ba367efee3e5f490a248048575c60"
+    },
+    {
+      "kind": "vegetables",
+      "angle": 270,
+      "path": "visual07/detail-3-270.png",
+      "model_matches_final": true,
+      "model_sha256": "0e85e821068504c9a9fa8db4c2b242817e5ba367efee3e5f490a248048575c60"
+    },
+    {
+      "kind": "salt",
+      "angle": 0,
+      "path": "visual06/detail-4-0.png",
+      "model_matches_final": true,
+      "model_sha256": "a833f5e888902ca71cc548b109c79f590579e329dbe1ade350133a93b835fa09"
+    },
+    {
+      "kind": "salt",
+      "angle": 90,
+      "path": "visual06/detail-4-90.png",
+      "model_matches_final": true,
+      "model_sha256": "a833f5e888902ca71cc548b109c79f590579e329dbe1ade350133a93b835fa09"
+    },
+    {
+      "kind": "salt",
+      "angle": 160,
+      "path": "visual06/detail-4-160.png",
+      "model_matches_final": true,
+      "model_sha256": "a833f5e888902ca71cc548b109c79f590579e329dbe1ade350133a93b835fa09"
+    },
+    {
+      "kind": "salt",
+      "angle": 225,
+      "path": "visual06/detail-4-225.png",
+      "model_matches_final": true,
+      "model_sha256": "a833f5e888902ca71cc548b109c79f590579e329dbe1ade350133a93b835fa09"
+    },
+    {
+      "kind": "salt",
+      "angle": 270,
+      "path": "visual06/detail-4-270.png",
+      "model_matches_final": true,
+      "model_sha256": "a833f5e888902ca71cc548b109c79f590579e329dbe1ade350133a93b835fa09"
+    },
+    {
+      "kind": "dough",
+      "angle": 0,
+      "path": "visual05/detail-5-0.png",
+      "model_matches_final": true,
+      "model_sha256": "61908fe0ad32efe2ce9f79d2aeefd34e9708f90d1d11c62819072d8e5ef85d96"
+    },
+    {
+      "kind": "dough",
+      "angle": 90,
+      "path": "visual06/detail-5-90.png",
+      "model_matches_final": true,
+      "model_sha256": "61908fe0ad32efe2ce9f79d2aeefd34e9708f90d1d11c62819072d8e5ef85d96"
+    },
+    {
+      "kind": "dough",
+      "angle": 160,
+      "path": "visual05/detail-5-160.png",
+      "model_matches_final": true,
+      "model_sha256": "61908fe0ad32efe2ce9f79d2aeefd34e9708f90d1d11c62819072d8e5ef85d96"
+    },
+    {
+      "kind": "dough",
+      "angle": 225,
+      "path": "visual05/detail-5-225.png",
+      "model_matches_final": true,
+      "model_sha256": "61908fe0ad32efe2ce9f79d2aeefd34e9708f90d1d11c62819072d8e5ef85d96"
+    },
+    {
+      "kind": "dough",
+      "angle": 270,
+      "path": "visual06/detail-5-270.png",
+      "model_matches_final": true,
+      "model_sha256": "61908fe0ad32efe2ce9f79d2aeefd34e9708f90d1d11c62819072d8e5ef85d96"
+    }
+  ],
+  "overview": "visual07/candidate-0.png",
+  "note": "Inspected source references, atlas, selected earlier failures, the thirty listed final-byte detail views and both presentation scenes. Reused views match the final installed model bytes, as independently checked above."
+}

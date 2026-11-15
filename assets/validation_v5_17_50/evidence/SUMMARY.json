@@ -1,0 +1,1032 @@
+{
+  "issue": 743,
+  "parent_issue": 647,
+  "version": "5.17.50",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Six existing untiered CaelumMaterialPickup IDs108\u2013113: flour, raw beef, raw hake, vegetables, culinary salt and proofed dough. Exact world states, original icons, native scale/collision and all gameplay unchanged. Sacks and paper are presentation only.",
+  "runtime": {
+    "sha256": "3a3e6f95119d28e21635dd10b2978da22427ab4fcfc304edf70952065ba64d21",
+    "source_entries": 18471,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "1202ac5b7b23c6ac2631cec7bfa986ae5d9a598227c163e025932f2cf07e4bee",
+    "new_resources": [
+      "caelum/data/inventory_kitchen_ingredients.modeldef",
+      "models/caelum/inventory/kitchen_ingredients/beef.md3",
+      "models/caelum/inventory/kitchen_ingredients/dough.md3",
+      "models/caelum/inventory/kitchen_ingredients/fish.md3",
+      "models/caelum/inventory/kitchen_ingredients/flour.md3",
+      "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "models/caelum/inventory/kitchen_ingredients/salt.md3",
+      "models/caelum/inventory/kitchen_ingredients/vegetables.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 17,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "flour": {
+        "closed_components": 2,
+        "fixed_attachment_witnesses": 1,
+        "connected_components": 2,
+        "opening_probes": 1,
+        "opening_rays": 5,
+        "native_triangles": 4224
+      },
+      "beef": {
+        "closed_components": 2,
+        "fixed_attachment_witnesses": 1,
+        "connected_components": 2,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 4608
+      },
+      "fish": {
+        "closed_components": 2,
+        "fixed_attachment_witnesses": 1,
+        "connected_components": 2,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 2208
+      },
+      "vegetables": {
+        "closed_components": 77,
+        "fixed_attachment_witnesses": 76,
+        "connected_components": 77,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 19544
+      },
+      "salt": {
+        "closed_components": 13,
+        "fixed_attachment_witnesses": 12,
+        "connected_components": 13,
+        "opening_probes": 1,
+        "opening_rays": 5,
+        "native_triangles": 3280
+      },
+      "dough": {
+        "closed_components": 1,
+        "fixed_attachment_witnesses": 0,
+        "connected_components": 1,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 2304
+      }
+    },
+    "noncollapsed_projected_uv_triangles": 15080,
+    "contained_fill_vertices": 1483,
+    "containment_directions": [
+      "radial",
+      "down"
+    ],
+    "variants": {
+      "flour": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "sack",
+          "flour"
+        ],
+        "closed_outward_components": 2,
+        "vertices": 12672,
+        "triangles": 4224,
+        "surfaces": [
+          {
+            "material": "burlap",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "burlap",
+            "vertices": 1665,
+            "triangles": 555
+          },
+          {
+            "material": "flour",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "flour",
+            "vertices": 2817,
+            "triangles": 939
+          }
+        ],
+        "reference_opaque_bounds": [
+          6,
+          11,
+          122,
+          122
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 116.0,
+        "native_bounds": [
+          {
+            "min": [
+              -57.7095274350636,
+              -45.26191479499468,
+              0.0
+            ],
+            "max": [
+              58.290472564936394,
+              44.69695030866246,
+              87.43673149089253
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.808179234390933,
+          "floor": -1.1692965895914564
+        }
+      },
+      "beef": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "steak",
+          "fat_edge"
+        ],
+        "closed_outward_components": 2,
+        "vertices": 13824,
+        "triangles": 4608,
+        "surfaces": [
+          {
+            "material": "beef",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "beef",
+            "vertices": 2817,
+            "triangles": 939
+          },
+          {
+            "material": "fat",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "fat",
+            "vertices": 2817,
+            "triangles": 939
+          }
+        ],
+        "reference_opaque_bounds": [
+          6,
+          42,
+          122,
+          122
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 116.0,
+        "native_bounds": [
+          {
+            "min": [
+              -57.11189772084224,
+              -32.077359241929415,
+              0.0
+            ],
+            "max": [
+              58.88810227915774,
+              31.81616489582213,
+              30.807709889199053
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.5883853799373526,
+          "floor": -0.00022074462513543835
+        }
+      },
+      "fish": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "skin",
+          "fillet"
+        ],
+        "closed_outward_components": 2,
+        "vertices": 2802,
+        "triangles": 2208,
+        "surfaces": [
+          {
+            "material": "fish",
+            "vertices": 2016,
+            "triangles": 672
+          },
+          {
+            "material": "skin",
+            "vertices": 786,
+            "triangles": 1536
+          }
+        ],
+        "reference_opaque_bounds": [
+          6,
+          63,
+          122,
+          122
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 116.0,
+        "native_bounds": [
+          {
+            "min": [
+              -57.24675324675325,
+              -22.5974025974026,
+              0.0
+            ],
+            "max": [
+              58.753246753246756,
+              22.5974025974026,
+              15.818181818181818
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.5064935064935066,
+          "floor": 0.7000000000000002
+        }
+      },
+      "vegetables": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "squash_rind",
+          "squash_flesh",
+          "potato",
+          "carrot",
+          "corn",
+          "corn_end",
+          "carrot_stem",
+          "kernel_0_0",
+          "kernel_0_1",
+          "kernel_0_2",
+          "kernel_0_3",
+          "kernel_0_4",
+          "kernel_0_5",
+          "kernel_0_6",
+          "kernel_0_7",
+          "kernel_0_8",
+          "kernel_0_9",
+          "kernel_1_0",
+          "kernel_1_1",
+          "kernel_1_2",
+          "kernel_1_3",
+          "kernel_1_4",
+          "kernel_1_5",
+          "kernel_1_6",
+          "kernel_1_7",
+          "kernel_1_8",
+          "kernel_1_9",
+          "kernel_2_0",
+          "kernel_2_1",
+          "kernel_2_2",
+          "kernel_2_3",
+          "kernel_2_4",
+          "kernel_2_5",
+          "kernel_2_6",
+          "kernel_2_7",
+          "kernel_2_8",
+          "kernel_2_9",
+          "kernel_3_0",
+          "kernel_3_1",
+          "kernel_3_2",
+          "kernel_3_3",
+          "kernel_3_4",
+          "kernel_3_5",
+          "kernel_3_6",
+          "kernel_3_7",
+          "kernel_3_8",
+          "kernel_3_9",
+          "kernel_4_0",
+          "kernel_4_1",
+          "kernel_4_2",
+          "kernel_4_3",
+          "kernel_4_4",
+          "kernel_4_5",
+          "kernel_4_6",
+          "kernel_4_7",
+          "kernel_4_8",
+          "kernel_4_9",
+          "kernel_5_0",
+          "kernel_5_1",
+          "kernel_5_2",
+          "kernel_5_3",
+          "kernel_5_4",
+          "kernel_5_5",
+          "kernel_5_6",
+          "kernel_5_7",
+          "kernel_5_8",
+          "kernel_5_9",
+          "kernel_6_0",
+          "kernel_6_1",
+          "kernel_6_2",
+          "kernel_6_3",
+          "kernel_6_4",
+          "kernel_6_5",
+          "kernel_6_6",
+          "kernel_6_7",
+          "kernel_6_8",
+          "kernel_6_9"
+        ],
+        "closed_outward_components": 77,
+        "vertices": 16264,
+        "triangles": 19544,
+        "surfaces": [
+          {
+            "material": "potato",
+            "vertices": 1178,
+            "triangles": 2304
+          },
+          {
+            "material": "squash",
+            "vertices": 1188,
+            "triangles": 396
+          },
+          {
+            "material": "carrot",
+            "vertices": 248,
+            "triangles": 480
+          },
+          {
+            "material": "rind",
+            "vertices": 1188,
+            "triangles": 396
+          },
+          {
+            "material": "core",
+            "vertices": 3072,
+            "triangles": 1024
+          },
+          {
+            "material": "stem",
+            "vertices": 530,
+            "triangles": 1024
+          },
+          {
+            "material": "kernel",
+            "vertices": 4096,
+            "triangles": 5284
+          },
+          {
+            "material": "kernel",
+            "vertices": 4096,
+            "triangles": 7392
+          },
+          {
+            "material": "kernel",
+            "vertices": 701,
+            "triangles": 1244
+          }
+        ],
+        "reference_opaque_bounds": [
+          6,
+          30,
+          122,
+          122
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 116.0,
+        "native_bounds": [
+          {
+            "min": [
+              -61.25256472798524,
+              -33.66170560084401,
+              0.0
+            ],
+            "max": [
+              54.74743527201476,
+              32.860236419871526,
+              49.577260490372296
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.6029383619449526,
+          "floor": -0.0004065975345017847
+        }
+      },
+      "salt": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "paper",
+          "salt",
+          "crystal_0",
+          "crystal_1",
+          "crystal_2",
+          "crystal_3",
+          "crystal_4",
+          "crystal_5",
+          "crystal_6",
+          "crystal_7",
+          "crystal_8",
+          "crystal_9",
+          "crystal_10"
+        ],
+        "closed_outward_components": 13,
+        "vertices": 9840,
+        "triangles": 3280,
+        "surfaces": [
+          {
+            "material": "paper",
+            "vertices": 3456,
+            "triangles": 1152
+          },
+          {
+            "material": "salt",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "salt",
+            "vertices": 2289,
+            "triangles": 763
+          }
+        ],
+        "reference_opaque_bounds": [
+          6,
+          28,
+          122,
+          122
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 116.0,
+        "native_bounds": [
+          {
+            "min": [
+              -58.0,
+              -50.20937527824095,
+              0.0
+            ],
+            "max": [
+              58.0,
+              50.20937527824095,
+              58.82006312611856
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.8416769224316658,
+          "floor": -2.2102869285528164
+        }
+      },
+      "dough": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "dough"
+        ],
+        "closed_outward_components": 1,
+        "vertices": 1178,
+        "triangles": 2304,
+        "surfaces": [
+          {
+            "material": "dough",
+            "vertices": 1178,
+            "triangles": 2304
+          }
+        ],
+        "reference_opaque_bounds": [
+          6,
+          37,
+          122,
+          122
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 116.0,
+        "native_bounds": [
+          {
+            "min": [
+              -58.0,
+              -47.45548279596756,
+              0.0
+            ],
+            "max": [
+              58.0,
+              47.45548279596756,
+              52.15364430837363
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.760772533854062,
+          "floor": 0.0
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 743,
+    "kind": "kitchen_ingredients",
+    "scope": "Native pickup/toss, quantity and saved ownership for kitchen_ingredients; no normal menu or author acceptance.",
+    "baseline_sha256": "1202ac5b7b23c6ac2631cec7bfa986ae5d9a598227c163e025932f2cf07e4bee",
+    "runtime_sha256": "3a3e6f95119d28e21635dd10b2978da22427ab4fcfc304edf70952065ba64d21",
+    "model_sha256": null,
+    "fixture_sha256": "5632e8e33e54c5dc23461597b3034d56fa13459b233c73d4dc8bb5b5f2fae212",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 163
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 188
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 163
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 181
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 181
+      }
+    ],
+    "captures": {
+      "baseline.png": "2cecc83637a45a697856164fddfbbd2dfe87290887f063709c118852701655ad",
+      "candidate-0.png": "13ac46b0859e8edcdd0f180abe1bd7d233d0f98f853aa243b5dce9d4b1e5cf8f",
+      "candidate-1.png": "ec422ef3788c90fb0ac0b833eb355dfed5d23249adbad0800fca2354223fa651",
+      "candidate-2.png": "371e11ec8558bd08e4a3cea8f9cda6fd886f1bb0c0a7b351fa76f5b6969789e3",
+      "candidate-3.png": "18da07b1ea037f68cf3ed0f7577d1baeb714bda9504cb172074f737a7ddbabaf",
+      "candidate-5.png": "a30686ec146c0a572a47b8480568ba339fa972adeacfa42699d6e88fd51d589a",
+      "candidate-6.png": "ae0125a79ff91840db02f0a0b564175ba53ddbb0aae23ef5805c99b9d0aaf1d4",
+      "candidate-7.png": "e15698b911af19c68ee768f5bc612421515b9f2901e715e5e0a6842497a18f4f",
+      "detail-0-0.png": "0fa39ef06e7456eb6d7af56df56c1c3bc6f78a8a88950b00ac87c3757642d29e",
+      "detail-0-160.png": "dd39427a5edcc7b75c2f7b581fe620d2a79b89a0b2c1c497f25961c41e12aa6d",
+      "detail-0-225.png": "630f67218e5439cbbf059d1576f2cc7cf40c19a6306a58809b771112862ea5f4",
+      "detail-0-270.png": "b1b11f56236146a50df57e1c07dcb792e75a60b107b82d4a6408de30d01b9e93",
+      "detail-0-90.png": "64ae6548e7c7f5eb07dfbe8656b4163a6fe6e5b370683f0d21f646b02554034d",
+      "detail-1-0.png": "79d6ee5f10af43fe431d11aee03055119c793c8e3f4e83d8ebeb489db760d068",
+      "detail-1-160.png": "25eff1ef46070f315b9031ecfe06377b4b5fc7d42850245582c69213cc48dc87",
+      "detail-1-225.png": "cfd33f24e7711081a3541e30ee7960ac0fec1195a2378c92fb8498c8589e9ac9",
+      "detail-1-270.png": "9a56eb6f9f03d95c802be96fe2ea178b8bb52c45fdd1da22fda316fb5af0c622",
+      "detail-1-90.png": "ab12eb94059bb1c1699a9fb088e895f6c24afdc819b7f424d43c07af800c66c8",
+      "detail-2-0.png": "e2f587662cd8c3d00347be818f60647aeaf0f84393689cbe47d9730e2a2f316e",
+      "detail-2-160.png": "63664a50c883ffe080467bcfc8062f71bbd7a2fd8b5a2781b2b757c110afcf16",
+      "detail-2-225.png": "d1bdb58a907e92dd337eebdfbb3b01768553d0448729a0873b3518128a067d19",
+      "detail-2-270.png": "52bf483d390ed7f4132c67f46cbf9347bbb278ca2600a6766add41e88693b024",
+      "detail-2-90.png": "e6f501f6595f70a670f334fbcd88eeb7a14c43a893c54002062678f9f55b3cf0",
+      "detail-3-0.png": "30ac6f7aaae336f225681aaf3e433823f8226d7c0fadb77b2c9bcbef9b6e4e88",
+      "detail-3-160.png": "d90713b73e42e964b8c85eba441fb98586d7214a50e55ca619d173d09743434f",
+      "detail-3-225.png": "31aff7c2c2268d0782896afe1083ac16aedfcf1e9bcedc81ccaa2a2c8ca54275",
+      "detail-3-270.png": "daa761227381f86b759fc0184d5d1bc752d2f2d8b0bbbcffadc24e4fce7936eb",
+      "detail-3-90.png": "dbb2a3f3f17db8dfe4421eb4afb3a1a4886d2313e6a32ff4825dbc51e517c108",
+      "detail-4-0.png": "6a26fed6f2ae3f06126923d1f553aaffe36c48df37ad3e6ec68987e8343b82f2",
+      "detail-4-160.png": "86c1097b0243a25473ad3b5d7f413a670639150bf7812be66b43a65323799ac3",
+      "detail-4-225.png": "73dd36e7023979d125973baccba3cf444a3d8fa85e81ae3d7abe8d9697d7c598",
+      "detail-4-270.png": "2692e037bb25aea4df67ac5da4d71e0df7a6df6ad818e523f69eac479db6030e",
+      "detail-4-90.png": "7a48f52e34c70708ffc91f10d51dc60f38560165efcf7c108ba08dd3b2a1a387",
+      "detail-5-0.png": "6610278682d87df82c7d1a56cea4713c01edbb337ad728b297db4fc032ff829d",
+      "detail-5-160.png": "6f87b693f86cffe90f1bc41cdeec1ab5aa166a94b20b78dde6fd0ded9220006f",
+      "detail-5-225.png": "e110a53ec0f3d8ef6e8474c6b80f724e1f16be4804d1cea06a2f04a716416480",
+      "detail-5-270.png": "2e47f1aebf11793ab65c5da60d57d520e795c0584f30013dc2fa1e5830ce6d5f",
+      "detail-5-90.png": "366e3ffc34fba8e11e353c4c3b88b0264cb2b4665522e5be3aff82de1d6b0a87"
+    }
+  },
+  "presentation": {
+    "issue": 743,
+    "kind": "kitchen_ingredients",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "1202ac5b7b23c6ac2631cec7bfa986ae5d9a598227c163e025932f2cf07e4bee",
+    "runtime_sha256": "3a3e6f95119d28e21635dd10b2978da22427ab4fcfc304edf70952065ba64d21",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 6,
+        "pid": 12960,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 321530126.49340004,
+          "END": 321550157.3131
+        },
+        "fixture_sha256": "65d0e274d2fb72668c41f2999963c9c35391a98cc95887c6666d67033412a882",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            6,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571119714285715,
+          "p50_ms": 28.5831,
+          "p95_ms": 29.3228,
+          "p99_ms": 29.4992,
+          "max_ms": 29.664
+        },
+        "presentation": {
+          "pid": 12960,
+          "trace_sha256": "ac19b732ccf150490149772c78925a56b973c9faf39c12b8914b3b512951c07b",
+          "rows": 24481,
+          "scene_presents": 16524,
+          "mean_present_fps": 942.5882680902097,
+          "present_intervals": {
+            "samples": 16523,
+            "mean_ms": 1.060908600131543,
+            "p50_ms": 1.0446999669075012,
+            "p95_ms": 1.2236999869346619,
+            "p99_ms": 1.4461999535560608,
+            "max_ms": 1.9814000129699707
+          },
+          "native_call_duration": {
+            "samples": 16524,
+            "mean_ms": 0.09213852572530559,
+            "p50_ms": 0.0878000259399414,
+            "p95_ms": 0.11039996147155762,
+            "p99_ms": 0.15789997577667236,
+            "max_ms": 0.4847000241279602
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 6,
+        "pid": 44072,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 321564731.9246,
+          "END": 321584663.3343
+        },
+        "fixture_sha256": "65d0e274d2fb72668c41f2999963c9c35391a98cc95887c6666d67033412a882",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            6,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571468285714285,
+          "p50_ms": 28.5752,
+          "p95_ms": 29.3037,
+          "p99_ms": 29.4844,
+          "max_ms": 29.8605
+        },
+        "presentation": {
+          "pid": 44072,
+          "trace_sha256": "92e78938921bec16dab228b3dc04f68eac2b7c47474e986999161efa05d5a0c8",
+          "rows": 23901,
+          "scene_presents": 16007,
+          "mean_present_fps": 918.2585208222436,
+          "present_intervals": {
+            "samples": 16006,
+            "mean_ms": 1.0890179370234017,
+            "p50_ms": 1.0703999996185303,
+            "p95_ms": 1.235099971294403,
+            "p99_ms": 1.4738999605178833,
+            "max_ms": 2.0622000098228455
+          },
+          "native_call_duration": {
+            "samples": 16007,
+            "mean_ms": 0.09231632424374989,
+            "p50_ms": 0.08789998292922974,
+            "p95_ms": 0.11010003089904785,
+            "p99_ms": 0.15710002183914185,
+            "max_ms": 0.645300030708313
+          }
+        }
+      }
+    ]
+  },
+  "iterations": "Retained model01/02 flat steak/fillet, compressed sack and packet UVs; model03 planar package UVs, rounder steak and flesh, with visibly separated skin slab and potato/dough projection seams; model04 narrows skin to an overlapping strip, restores spherical potato/dough mapping and adds kernel volumes; model05 fills corn gaps with wider overlapping kernels. Exact captures remain evidence of candidate limitations. Model07 reduces and raises the flour fill after oblique inspection found powder protruding through a folded sack wall. Model08 raises the lower salt fill after underside inspection found a small white patch through the wavy packet base. Independent radial/downward containment rays are checked on serialized vertices. Model09 insets the squash flesh on both outer and inner arcs after rear inspection found angular flesh protrusions through the rind. The first cloned validator read the old source family and was corrected before geometry02; geometry02 then found an incorrect corn contact witness, corrected for geometry03. The first visual fixture inherited a wrong F4 condition and rotation limit; corrected before visual02. Explicit native F9/F10 cycle probes were added before visual04. Direct build script launch was denied by the local PowerShell execution policy; a process-scoped Bypass launch built the package. No machine policy was changed.",
+  "art": {
+    "source": "assets/source/art/inventory_models_647/kitchen_ingredients",
+    "mode": "built-in image_gen",
+    "image": "materials.png",
+    "prompt": "MATERIALS_PROMPT.json",
+    "original_pixels_preserved": true,
+    "reviewed_views": "INSPECTION.json",
+    "author_check": "CA743-KITCHEN-DROPS-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Candidate art: coarse sack weave and regular packet folds, steak/fat edge and visible projection seams, narrow hake skin strip, thick squash rind, regular rounded corn kernels and dough wrap seam/underside swirl require author review.",
+    "The original five ingredient icons were accepted; dough is still an existing candidate, and neither establishes acceptance of these six models.",
+    "One sequential700-tic six-object sprite/model pair measures queue intervals, not GPU/display timing, repeatability or campaign/crowd acceptance. Projected footprints differ.",
+    "Native pickup/toss API probes and prepared Box/quest states do not establish ordinary menus, cooking/preparation or author acceptance.",
+    "No recipe, tier normalization, amount, weight, ownership, contamination lots, collision, actor scale, save schema or routine actor scan changes. Containers are presentation only.",
+    "Other inventory, characters, modular equipment and the V5.16 campaign remain unfinished. No executable, IWAD, compiled fixture, PK3/WAD, DLL or save is committed."
+  ],
+  "files": {
+    "containment-regression/RESULTS.json": "ff6d0fd5a057ec4c74dcdebaf5429325aade51d89b7a25c14978957145a15777",
+    "containment-regression/source-before/assets/source/art/inventory_models_647/kitchen_ingredients/DESIGN.json": "2cf48a35191d46381a6baeb6992e0e3904f3c490af5bab7b9054d4d413954533",
+    "containment-regression/source-before/assets/source/art/inventory_models_647/kitchen_ingredients/editable/flour.obj": "350ea1bd6bb968860a02e9e281b06d01837908272481513d0b43d27c080c7105",
+    "containment-regression/source-before/assets/source/art/inventory_models_647/kitchen_ingredients/editable/salt.obj": "268426cddcaae2cc33b5d67495ec27e1dc0d9969c32d2748a3911e9a4e9e128d",
+    "containment-regression/source-before/assets/source/art/inventory_models_647/kitchen_ingredients/EXPORT.json": "6e0e20ecf00ce9e41ca2bfc7174b1c640bf2394760d05aaf3464fe7096a39375",
+    "continuity/baseline-process.log": "6611295985459782f9353fb727826766da3d8d3fb264ce99fbcd43a642ad22b5",
+    "continuity/baseline.cfg": "13cf24e7744345461b27c6270afefd883f6433e6a916977f1fe3b7b6c43139cb",
+    "continuity/baseline.log": "c50a1cc6d3e416b569a961bcdf944d5b038660877cb9b91adf188da770197f8d",
+    "continuity/baseline.png": "2cecc83637a45a697856164fddfbbd2dfe87290887f063709c118852701655ad",
+    "continuity/candidate-0.png": "13ac46b0859e8edcdd0f180abe1bd7d233d0f98f853aa243b5dce9d4b1e5cf8f",
+    "continuity/candidate-1.png": "ec422ef3788c90fb0ac0b833eb355dfed5d23249adbad0800fca2354223fa651",
+    "continuity/candidate-2.png": "371e11ec8558bd08e4a3cea8f9cda6fd886f1bb0c0a7b351fa76f5b6969789e3",
+    "continuity/candidate-3.png": "18da07b1ea037f68cf3ed0f7577d1baeb714bda9504cb172074f737a7ddbabaf",
+    "continuity/candidate-5.png": "a30686ec146c0a572a47b8480568ba339fa972adeacfa42699d6e88fd51d589a",
+    "continuity/candidate-6.png": "ae0125a79ff91840db02f0a0b564175ba53ddbb0aae23ef5805c99b9d0aaf1d4",
+    "continuity/candidate-7.png": "e15698b911af19c68ee768f5bc612421515b9f2901e715e5e0a6842497a18f4f",
+    "continuity/candidate-fresh-process.log": "a488fdd707727edf5c17aca2cc1dfda4635c3b608585cba622ac9b3c3789f93a",
+    "continuity/candidate-fresh.cfg": "274bc0bb206139e1781e2b91fe73ddfa304a0bfce3d568ca4f51e5f27144f458",
+    "continuity/candidate-fresh.log": "1cbe184184493e8d837acefc1d3a24e1c6abf892289368747d110f908f9fbee9",
+    "continuity/candidate-reload-process.log": "1d28e6b3e00510e1887bc3de0f3bdbd65b774f17fbb118e6d5d3cef62c308434",
+    "continuity/candidate-reload.cfg": "c998af08d238b3038d9482048341a8b35bbc31f258b003edb05b2c5510b33b24",
+    "continuity/candidate-reload.log": "92d995ebf769e9a991ee4b38f3758f80bed584d6f2bcc7abde65dfbfbca979e4",
+    "continuity/detail-0-0.png": "0fa39ef06e7456eb6d7af56df56c1c3bc6f78a8a88950b00ac87c3757642d29e",
+    "continuity/detail-0-160.png": "dd39427a5edcc7b75c2f7b581fe620d2a79b89a0b2c1c497f25961c41e12aa6d",
+    "continuity/detail-0-225.png": "630f67218e5439cbbf059d1576f2cc7cf40c19a6306a58809b771112862ea5f4",
+    "continuity/detail-0-270.png": "b1b11f56236146a50df57e1c07dcb792e75a60b107b82d4a6408de30d01b9e93",
+    "continuity/detail-0-90.png": "64ae6548e7c7f5eb07dfbe8656b4163a6fe6e5b370683f0d21f646b02554034d",
+    "continuity/detail-1-0.png": "79d6ee5f10af43fe431d11aee03055119c793c8e3f4e83d8ebeb489db760d068",
+    "continuity/detail-1-160.png": "25eff1ef46070f315b9031ecfe06377b4b5fc7d42850245582c69213cc48dc87",
+    "continuity/detail-1-225.png": "cfd33f24e7711081a3541e30ee7960ac0fec1195a2378c92fb8498c8589e9ac9",
+    "continuity/detail-1-270.png": "9a56eb6f9f03d95c802be96fe2ea178b8bb52c45fdd1da22fda316fb5af0c622",
+    "continuity/detail-1-90.png": "ab12eb94059bb1c1699a9fb088e895f6c24afdc819b7f424d43c07af800c66c8",
+    "continuity/detail-2-0.png": "e2f587662cd8c3d00347be818f60647aeaf0f84393689cbe47d9730e2a2f316e",
+    "continuity/detail-2-160.png": "63664a50c883ffe080467bcfc8062f71bbd7a2fd8b5a2781b2b757c110afcf16",
+    "continuity/detail-2-225.png": "d1bdb58a907e92dd337eebdfbb3b01768553d0448729a0873b3518128a067d19",
+    "continuity/detail-2-270.png": "52bf483d390ed7f4132c67f46cbf9347bbb278ca2600a6766add41e88693b024",
+    "continuity/detail-2-90.png": "e6f501f6595f70a670f334fbcd88eeb7a14c43a893c54002062678f9f55b3cf0",
+    "continuity/detail-3-0.png": "30ac6f7aaae336f225681aaf3e433823f8226d7c0fadb77b2c9bcbef9b6e4e88",
+    "continuity/detail-3-160.png": "d90713b73e42e964b8c85eba441fb98586d7214a50e55ca619d173d09743434f",
+    "continuity/detail-3-225.png": "31aff7c2c2268d0782896afe1083ac16aedfcf1e9bcedc81ccaa2a2c8ca54275",
+    "continuity/detail-3-270.png": "daa761227381f86b759fc0184d5d1bc752d2f2d8b0bbbcffadc24e4fce7936eb",
+    "continuity/detail-3-90.png": "dbb2a3f3f17db8dfe4421eb4afb3a1a4886d2313e6a32ff4825dbc51e517c108",
+    "continuity/detail-4-0.png": "6a26fed6f2ae3f06126923d1f553aaffe36c48df37ad3e6ec68987e8343b82f2",
+    "continuity/detail-4-160.png": "86c1097b0243a25473ad3b5d7f413a670639150bf7812be66b43a65323799ac3",
+    "continuity/detail-4-225.png": "73dd36e7023979d125973baccba3cf444a3d8fa85e81ae3d7abe8d9697d7c598",
+    "continuity/detail-4-270.png": "2692e037bb25aea4df67ac5da4d71e0df7a6df6ad818e523f69eac479db6030e",
+    "continuity/detail-4-90.png": "7a48f52e34c70708ffc91f10d51dc60f38560165efcf7c108ba08dd3b2a1a387",
+    "continuity/detail-5-0.png": "6610278682d87df82c7d1a56cea4713c01edbb337ad728b297db4fc032ff829d",
+    "continuity/detail-5-160.png": "6f87b693f86cffe90f1bc41cdeec1ab5aa166a94b20b78dde6fd0ded9220006f",
+    "continuity/detail-5-225.png": "e110a53ec0f3d8ef6e8474c6b80f724e1f16be4804d1cea06a2f04a716416480",
+    "continuity/detail-5-270.png": "2e47f1aebf11793ab65c5da60d57d520e795c0584f30013dc2fa1e5830ce6d5f",
+    "continuity/detail-5-90.png": "366e3ffc34fba8e11e353c4c3b88b0264cb2b4665522e5be3aff82de1d6b0a87",
+    "continuity/fixture-source/MAPINFO.txt": "264e725d04196216dbc48c5f63630987d52748131b2fa8cbec3db8bf95278cd5",
+    "continuity/fixture-source/ZSCRIPT.txt": "67e541fc5fc6f50551b8bd7c22a31dc76839fea35fd4b8d8d6e7f9468aa6d25a",
+    "continuity/fixture.zs": "a8cd8c032fe94cc7c9b3d56d58db4b333d2b00807befad15e9d1b5c0f84d5d80",
+    "continuity/old-save-load-part-1.cfg": "704a638327e90fe77a03e46c6ddd9338dac94c1024d443e445464b2790abf43a",
+    "continuity/old-save-load-part-2.cfg": "c4bfeedcd18a3dd6f705c20f976a315a5aa9e5a50cc7d3bb7d274fcebdc452ae",
+    "continuity/old-save-load-process.log": "8995aec4ede40b850275ed1ad5b6274a149c1fbb6c9c518052734e8222a18070",
+    "continuity/old-save-load.cfg": "f811d687244c60fbf11daac88592120b71dff836b0de3cf4f9903418f52abdfb",
+    "continuity/old-save-load.log": "97a9a57231f6bac4d847de5916cfd67c4f43b3a49ba8eb605b1493d917417f73",
+    "continuity/RESULTS.json": "b2fcc09ebb2c30348cf2ae91b0988c225e8a81958241728282662ec4d06f8c4d",
+    "continuity/rollback-load-process.log": "f0655b0776f1ba8773f608287f4fc752538024ae778a52d00bc3abded8c7ef7b",
+    "continuity/rollback-load.cfg": "c998af08d238b3038d9482048341a8b35bbc31f258b003edb05b2c5510b33b24",
+    "continuity/rollback-load.log": "2b9cef68935c5b930cdae6b7ab9e18d13813a408881cd5d104c60707774def98",
+    "continuity/session.ini": "0fa07529cf360cc08a6c255da7080971f451bfb78bb4a0b12ab0eb4130ab70f1",
+    "exports/model01.json": "6f2a4ebb846ccb5c47506381b01d854ac133d37736b7030c6eb4965647dbce5e",
+    "exports/model02.json": "133116af9af249147791893389be9f84ec4d855443fe89817782315dbfa17123",
+    "exports/model03.json": "e77195229bf5fefc939c94fae212356b102d1af1262178d8f9ac8d0fac802f8d",
+    "exports/model04.json": "bbe90437deebb3d9d168da62d0d204209ae4de52953e10a11f9ac0bbd61fa314",
+    "exports/model05.json": "6e0e20ecf00ce9e41ca2bfc7174b1c640bf2394760d05aaf3464fe7096a39375",
+    "exports/model06.json": "6e0e20ecf00ce9e41ca2bfc7174b1c640bf2394760d05aaf3464fe7096a39375",
+    "exports/model07.json": "2c10b42acd7f06abe123d1b750d36d8a150238adbcacf2c2d0d062011416f219",
+    "exports/model08.json": "0bf8f6757613c7cfcc5247cd1cef19e26e561ee04717376cfeb057913cc923f3",
+    "exports/model09.json": "7b897bf54452c77e4af51b3f047c6316acd84342e09382aa563bac4a68896a40",
+    "exports/model10.json": "7b897bf54452c77e4af51b3f047c6316acd84342e09382aa563bac4a68896a40",
+    "INSPECTION.json": "301ebfc645d8dcc134354b7634ee620b584409452b2e0b8c6dfb39df12effc85",
+    "issue743-build02.log": "7e12672ee0c6bfe0b8d32d1141f316c15efef61ebde00d73b3403303f02385e2",
+    "issue743-build03.log": "10397ae8ab2862192bb9726d72bdac80738de04af7d09ababc9c583dc66f2e20",
+    "issue743-installed-check-final.log": "693ee5cbab08967a94c9fee25a76989075ac42cecd1f53c185d882f319368cf2",
+    "issue743-repeat05-06.json": "e64942bec748c8eb3dab18c4692322341c3e460d1e6aff47cf7085fefe704c1f",
+    "issue743-repeat09-10.json": "e64942bec748c8eb3dab18c4692322341c3e460d1e6aff47cf7085fefe704c1f",
+    "iterations/issue743-geometry01.log": "5a6f41a678a9abc920444414ba508b6ffe942a3cc9a1bf37813385be08c951f2",
+    "iterations/issue743-geometry02.log": "2a703734d5a83fd90ea8f1aa4737e4495f7040924737db586c7ff0a06c580105",
+    "iterations/issue743-geometry03.log": "0186b39b7c1040236be196d215b7e252c12cc59e5991b7ad318d77731069dedc",
+    "iterations/issue743-geometry04.log": "37c158c12d647a1f913bde774865dd9d766b6b5d95b39bf4ec16f8664ab02660",
+    "iterations/issue743-geometry05.log": "9b6aba1def158f23413fa84df6f96e29eb8ee46b3e3a0605057f44b55355e039",
+    "iterations/issue743-geometry06.log": "9b6aba1def158f23413fa84df6f96e29eb8ee46b3e3a0605057f44b55355e039",
+    "iterations/issue743-geometry07.log": "fbdd3e47c72ea22632690a9f9c9f2fd05fb6de099e2aba395f70f286d6bb5247",
+    "iterations/issue743-geometry08.log": "fbdd3e47c72ea22632690a9f9c9f2fd05fb6de099e2aba395f70f286d6bb5247",
+    "iterations/issue743-geometry09.log": "03a4e54c86dabcc7d73f81548eec7526a5f619af5e90d0a1f4b5dd7e21974300",
+    "iterations/issue743-geometry10.log": "51fb0d935d33a6f77a6d82ee17987d83faab37427c2a2ac4d5a03ecaaa7d25d5",
+    "iterations/issue743-geometry11.log": "51fb0d935d33a6f77a6d82ee17987d83faab37427c2a2ac4d5a03ecaaa7d25d5",
+    "iterations/issue743-geometry12.log": "b2667ce835b8f36839a36f13f79416ca5ad2879613da7fdc84d7cb08f1940fbf",
+    "iterations/source01/DESIGN.json": "88cc1911dd2a2e288b55d7134dc99f34549d460ea37cbfc3f937da321fe4e8dd",
+    "iterations/source01/EXPORT.json": "6f2a4ebb846ccb5c47506381b01d854ac133d37736b7030c6eb4965647dbce5e",
+    "iterations/source01/PROVENANCE.json": "2fd9a0a7b8abac75b6a855e2da3ecb591208faf4b6b162b5485d7d54fe56391e",
+    "iterations/source02/DESIGN.json": "4e43093ce3232e2ad39e662d238790d17c95c814ce884867431c8edd0d78ff52",
+    "iterations/source02/EXPORT.json": "133116af9af249147791893389be9f84ec4d855443fe89817782315dbfa17123",
+    "iterations/source02/PROVENANCE.json": "2fd9a0a7b8abac75b6a855e2da3ecb591208faf4b6b162b5485d7d54fe56391e",
+    "iterations/source03/DESIGN.json": "3037156315ce24a8edba9f1dcce0499c4066741f17929606c5afeed296ea34e0",
+    "iterations/source03/EXPORT.json": "e77195229bf5fefc939c94fae212356b102d1af1262178d8f9ac8d0fac802f8d",
+    "iterations/source03/PROVENANCE.json": "2fd9a0a7b8abac75b6a855e2da3ecb591208faf4b6b162b5485d7d54fe56391e",
+    "iterations/source04/DESIGN.json": "251e4387c6dc5944e97d0e8b824541147aaea0e5883f23cd78d07f2428699520",
+    "iterations/source04/EXPORT.json": "bbe90437deebb3d9d168da62d0d204209ae4de52953e10a11f9ac0bbd61fa314",
+    "iterations/source04/PROVENANCE.json": "2fd9a0a7b8abac75b6a855e2da3ecb591208faf4b6b162b5485d7d54fe56391e",
+    "iterations/source05/DESIGN.json": "d42fd1418be7c2d4c710b3818b67c6e38c9d46af38c065cba684ce32d524957c",
+    "iterations/source05/EXPORT.json": "6e0e20ecf00ce9e41ca2bfc7174b1c640bf2394760d05aaf3464fe7096a39375",
+    "iterations/source05/PROVENANCE.json": "e86c77aef805c224d62198ce70a1ea8465180cc756c4ce71f59d38dc90272d51",
+    "iterations/source07/DESIGN.json": "d38558ce870040929affc58bb4a23ff073a03c99074cfca2a56abe8fd5e977c2",
+    "iterations/source07/EXPORT.json": "2c10b42acd7f06abe123d1b750d36d8a150238adbcacf2c2d0d062011416f219",
+    "iterations/source07/PROVENANCE.json": "2cf1806b939cfbbb0fbc348055f8c2f91c2b036a2bd9361ed8a1f88e56f754c7",
+    "iterations/source08/DESIGN.json": "881926f789b54537b6e252081d767bb9be674afaef1584ce0eb7a9e5d362f498",
+    "iterations/source08/EXPORT.json": "0bf8f6757613c7cfcc5247cd1cef19e26e561ee04717376cfeb057913cc923f3",
+    "iterations/source08/PROVENANCE.json": "a472abc4d11270092f5f6b193ee4b6d6ff9eabc65c71c59876d98448d619af30",
+    "presentation/models-6/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-6/engine.log": "2bf2cd529b51c68b48e5c414cf2d2ccab96e9487c04427c1ca801b2e9400987e",
+    "presentation/models-6/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-6/fixture-source/ZSCRIPT.txt": "8f11179ecb468b3f6d3c5ecf8952526545f3d2e007c33c82ef8a6c7875180634",
+    "presentation/models-6/presents.csv": "92e78938921bec16dab228b3dc04f68eac2b7c47474e986999161efa05d5a0c8",
+    "presentation/models-6/process.log": "82a9a295f41df49d1691e48d0e7a78d74633ac38576337eee28c346bd2f96f1a",
+    "presentation/models-6/scene.png": "aef81df016d306012a6ed24781a099fc76c95e7dd34be9156db9ecfb1b7e0b83",
+    "presentation/models-6/session.ini": "718dbc50634156b851be33760ece378b7d324314218d1d4d1e8730487df8701b",
+    "presentation/RESULTS.json": "9cf860354aefda7e314618660668b373bd91744663896fbf9981245b1cf91021",
+    "presentation/sprites-6/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-6/engine.log": "a0d6be6a610949e1106e047c9b9e37b111bc73c827b072e151c039ea9c822244",
+    "presentation/sprites-6/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-6/fixture-source/ZSCRIPT.txt": "8f11179ecb468b3f6d3c5ecf8952526545f3d2e007c33c82ef8a6c7875180634",
+    "presentation/sprites-6/presents.csv": "ac19b732ccf150490149772c78925a56b973c9faf39c12b8914b3b512951c07b",
+    "presentation/sprites-6/process.log": "76e0b00d928a47fe943245536b4f3b2b856a079a0628d70552fa2b9df1ae3ee0",
+    "presentation/sprites-6/scene.png": "3470b99444fc9c295a0d3aa70e945323a0e86f66a5354f70558eca02fbfcbcdd",
+    "presentation/sprites-6/session.ini": "3c51ca260a775ebfe9b6c169ba55e0082178c522c3ad015b493d2bb81d64184f",
+    "visual01/detail-0-90.png": "35deae559b8ce411076c0dd8d45d4f4f7442693476673e20d5b1845efbd63ab1",
+    "visual01/detail-1-90.png": "a68f4c8472490aad9cbe1ed19a09eaac2254a967895cbcb3ce19f9ecce7f3d1b",
+    "visual01/detail-2-90.png": "0e3caf541975e5f6890ff5c5b46f4171c5bb5ceeb4e18f47cd4eed4d24cbf27e",
+    "visual01/detail-3-90.png": "454f337427d0ffd3b00c0dea0823fec58baf2b1d3c8acfa366a28c19f3b2c221",
+    "visual01/detail-4-90.png": "0d8a7fc234c4d23fea06bf70753d4cc7c61760e653e337fd2453e3fe93537881",
+    "visual01/detail-5-90.png": "366e3ffc34fba8e11e353c4c3b88b0264cb2b4665522e5be3aff82de1d6b0a87",
+    "visual01/fixture-source/MAPINFO.txt": "264e725d04196216dbc48c5f63630987d52748131b2fa8cbec3db8bf95278cd5",
+    "visual01/fixture-source/ZSCRIPT.txt": "7fd028e3456db7aeaf410ef005ba4c27b78d85286127ca1cde3ce11d9dee1150",
+    "visual01/fixture.zs": "cbdd98f275a416b9dd252cb06607f8a0bf1112d3190de78b514acccac707dc56",
+    "visual01/RESULTS.json": "308fcaf5994ea87adc7413079c67ebd721d5e00a71bc5c7bd5053a739b231a5e",
+    "visual01/session.ini": "e2125c264026c63b604da47e72e0ec6b2e93b00394fd0f524d35e777329d561b",
+    "visual01/visual-part-1.cfg": "7ee4d962dbdb5194f8b58480af206d5703c4952638444aec46f74b0dd6e326e4",
+    "visual01/visual-process.log": "0ba666b8fe5d832b9b20adf53edcef5e43be9cd0a6eaf65cb11eb443a09d05a1",
+    "visual01/visual.cfg": "38a9f1651fa08edb335f651ec0e642861d7f1f557efe132c382cc270eafa8415",
+    "visual01/visual.log": "cbaaf2d52abb3024fc7319a56d0962b206619ccf499d9215691335dcd145233d",
+    "visual02/detail-0-90.png": "9d4b138c1c3f01d66eebb5b27f70133620656cbf17dddc890baf3aefae56156a",
+    "visual02/detail-1-90.png": "ab12eb94059bb1c1699a9fb088e895f6c24afdc819b7f424d43c07af800c66c8",
+    "visual02/detail-2-90.png": "7d7fc1f8a971877f1d660ccf300e36050110c369a61ee4cfb406048d351b4c40",
+    "visual02/detail-3-90.png": "668056c17dd86bf68a442234f2607f7b92e5e763ce3a511a646769c9532f3bb6",
+    "visual02/detail-4-90.png": "4f7ac89f67ed86f0378f777573ac204f780d71ab7f37711dd1f73970e68e7861",
+    "visual02/detail-5-90.png": "f1565c0d4bb196d223ef25f76fae9e9ad5c55c22ac89f196d4b449a9f753dc8d",
+    "visual02/fixture-source/MAPINFO.txt": "264e725d04196216dbc48c5f63630987d52748131b2fa8cbec3db8bf95278cd5",
+    "visual02/fixture-source/ZSCRIPT.txt": "09ea18ab3d9f4b195faff912c3a6ad5c6dffac6800dee73f3ff8f478dd9a204e",
+    "visual02/fixture.zs": "944bbed28c5314cc7bbc3a98b90a969b2f8781ecff8b53e759da231263c89738",
+    "visual02/RESULTS.json": "ae9f194953c41f84d96b240e0e4c74d6960038de1f8e71a16457ae33343e9649",
+    "visual02/session.ini": "40dc8db95f3b1a585a0edea15637f5117cef42bb031740efcf8beff114a8de52",
+    "visual02/visual-part-1.cfg": "7ee4d962dbdb5194f8b58480af206d5703c4952638444aec46f74b0dd6e326e4",
+    "visual02/visual-process.log": "66fd317bc08329689a4f963b7196f36596ac09127c12a0131f9e91ce6ca71e70",
+    "visual02/visual.cfg": "abff8253526a3bc56f67cc32fcbf16e704001f1edf148031123291502ee09267",
+    "visual02/visual.log": "050b54296c7d06a97dfafefa3c6d2cedd338b293e44a5cdf9211a9c3b5273aba",
+    "visual03/detail-2-225.png": "d1bdb58a907e92dd337eebdfbb3b01768553d0448729a0873b3518128a067d19",
+    "visual03/detail-2-90.png": "e6f501f6595f70a670f334fbcd88eeb7a14c43a893c54002062678f9f55b3cf0",
+    "visual03/detail-3-90.png": "85bfb4088ed7c21f2fb65062c6cfd386b1b4b43d2e6fe5122a4146e9381688dd",
+    "visual03/fixture-source/MAPINFO.txt": "264e725d04196216dbc48c5f63630987d52748131b2fa8cbec3db8bf95278cd5",
+    "visual03/fixture-source/ZSCRIPT.txt": "3b3a8676eabb4da361a3a1b11ae0b0b7e986a82bbaa5ef09b8263bfa529e6baf",
+    "visual03/fixture.zs": "b7bb1739be199d16719afb54f530b99fd04d5fa98c71c2ba6cf5d4687e2ec18c",
+    "visual03/RESULTS.json": "96db42d27227360af332ece73311ebfaa30ebf3bb19866cb41fbab6d5d3575d4",
+    "visual03/session.ini": "225d62af0d6f637b5f1ce8b37e7331f1a545e164b26fbf1fe0cb2b25f30b329c",
+    "visual03/visual-part-1.cfg": "7ee4d962dbdb5194f8b58480af206d5703c4952638444aec46f74b0dd6e326e4",
+    "visual03/visual-process.log": "ee10781bdcdaef177ddadfaa867064e6d84306782cba4d68fb41e7ee08af3eaa",
+    "visual03/visual.cfg": "c5c3494212147a96493701b54b9346e94ed6ad17ea7fcafed77d25d4aead534d",
+    "visual03/visual.log": "966b17a33e18927e709f571c72cc483fbcda34a164da49029712f097f9d7f85c",
+    "visual04/detail-0-160.png": "73c0546dd092cc988d1bf8326cd4de0621ae01a9bdff38d83e276abcdae4c0b8",
+    "visual04/detail-0-225.png": "e02e32cbe96527aa61f2fa85d7ff9779a0563f5373836a3cc69d887cda8a6476",
+    "visual04/detail-1-0.png": "79d6ee5f10af43fe431d11aee03055119c793c8e3f4e83d8ebeb489db760d068",
+    "visual04/detail-1-160.png": "25eff1ef46070f315b9031ecfe06377b4b5fc7d42850245582c69213cc48dc87",
+    "visual04/detail-1-225.png": "cfd33f24e7711081a3541e30ee7960ac0fec1195a2378c92fb8498c8589e9ac9",
+    "visual04/detail-1-90.png": "ab12eb94059bb1c1699a9fb088e895f6c24afdc819b7f424d43c07af800c66c8",
+    "visual04/detail-4-0.png": "86bf8a8c539a4ba3f68825e96d2df4566d24d0e523c2cbc3d1d8ca48d479faa3",
+    "visual04/fixture-source/MAPINFO.txt": "264e725d04196216dbc48c5f63630987d52748131b2fa8cbec3db8bf95278cd5",
+    "visual04/fixture-source/ZSCRIPT.txt": "d5932c62eb2faca11c3c92ad0e819666319390bc14323c5f0c73210a2890eace",
+    "visual04/fixture.zs": "a2f532491f7a53284a33a0c7fe31271a9d2d13264eb9ebc6a514ee9c9e849575",
+    "visual04/RESULTS.json": "f253c5c7a17656b95180deb770edb0bbf50df77ef53dfbb0ca3cb75dfe22f019",
+    "visual04/session.ini": "6adb3bbc72d60756647e32bba5e6382078c802e84af3ca4ecd50b050685ef0ab",
+    "visual04/visual-part-1.cfg": "4b2b0bf323647988cc2d1430ea36e3ec5c7a77fdbb5175ba289e3b1cde92b95c",
+    "visual04/visual-part-2.cfg": "2d5ff53c3b9632b8ef3dcb9e24095f08f78c9f4f21a36e0722d83258ee2849cd",
+    "visual04/visual-process.log": "148989b51edb9872a7184d1734c883a3b9716a0be102653cd09297ba62e9b6f4",
+    "visual04/visual.cfg": "504903f526fd2d19e9995d234e7cadf0d372259cf55c0da0a9a062d4264e3423",
+    "visual04/visual.log": "a9d3f12722e7adeafc9763f5a6e5a6e033fc91341c00bd3f20436c8652d06bf2",
+    "visual05/detail-0-0.png": "0fa39ef06e7456eb6d7af56df56c1c3bc6f78a8a88950b00ac87c3757642d29e",
+    "visual05/detail-0-160.png": "dd39427a5edcc7b75c2f7b581fe620d2a79b89a0b2c1c497f25961c41e12aa6d",
+    "visual05/detail-0-225.png": "630f67218e5439cbbf059d1576f2cc7cf40c19a6306a58809b771112862ea5f4",
+    "visual05/detail-0-270.png": "b1b11f56236146a50df57e1c07dcb792e75a60b107b82d4a6408de30d01b9e93",
+    "visual05/detail-0-90.png": "64ae6548e7c7f5eb07dfbe8656b4163a6fe6e5b370683f0d21f646b02554034d",
+    "visual05/detail-1-270.png": "9a56eb6f9f03d95c802be96fe2ea178b8bb52c45fdd1da22fda316fb5af0c622",
+    "visual05/detail-2-0.png": "e2f587662cd8c3d00347be818f60647aeaf0f84393689cbe47d9730e2a2f316e",
+    "visual05/detail-2-160.png": "63664a50c883ffe080467bcfc8062f71bbd7a2fd8b5a2781b2b757c110afcf16",
+    "visual05/detail-2-270.png": "52bf483d390ed7f4132c67f46cbf9347bbb278ca2600a6766add41e88693b024",
+    "visual05/detail-3-160.png": "989756a0be0262a82839e578b536c4262e498a81c291b078e645136b7b8d17a6",
+    "visual05/detail-3-225.png": "e67416ff8152993aa4fbc7a62aeffcb3fe343113e39401f14e95b7fee5db2168",
+    "visual05/detail-3-270.png": "47f8273742386bd74d97d90da300d6df9d58e2924b8ce4221a073bc6d291f2b7",
+    "visual05/detail-5-0.png": "6610278682d87df82c7d1a56cea4713c01edbb337ad728b297db4fc032ff829d",
+    "visual05/detail-5-160.png": "6f87b693f86cffe90f1bc41cdeec1ab5aa166a94b20b78dde6fd0ded9220006f",
+    "visual05/detail-5-225.png": "e110a53ec0f3d8ef6e8474c6b80f724e1f16be4804d1cea06a2f04a716416480",
+    "visual05/fixture-source/MAPINFO.txt": "264e725d04196216dbc48c5f63630987d52748131b2fa8cbec3db8bf95278cd5",
+    "visual05/fixture-source/ZSCRIPT.txt": "d5932c62eb2faca11c3c92ad0e819666319390bc14323c5f0c73210a2890eace",
+    "visual05/fixture.zs": "a2f532491f7a53284a33a0c7fe31271a9d2d13264eb9ebc6a514ee9c9e849575",
+    "visual05/RESULTS.json": "79f74538afdf21f286537d66578ac028d2ed8e29112e7cc7ee752765f4e32443",
+    "visual05/session.ini": "604c2bd0ea76ce0f199c5a471f280c4fff576ef2eadce22becaeec2011b80497",
+    "visual05/visual-part-1.cfg": "5da054bd19c1cd50799e63b2a539f0c9fe29af82b6ac5b074a880f542cc934ad",
+    "visual05/visual-part-2.cfg": "2d5ff53c3b9632b8ef3dcb9e24095f08f78c9f4f21a36e0722d83258ee2849cd",
+    "visual05/visual-process.log": "8bae2d62984da171821398df9d26ce573c25976a3c76315d8cdb49f3598b9de8",
+    "visual05/visual.cfg": "97b07d2b7a713f4bc66ee4310630e27365bef976d402243bf8ba70e96add0227",
+    "visual05/visual.log": "e7b464e5afab6281534f9317489102f4ca51bb8b4b50c5c82757043ce8a75566",
+    "visual06/candidate-0.png": "ab804615876f2e5f6e8240f98db57dab0d36e013a89dfc3b53aba5655ae9a56d",
+    "visual06/detail-4-0.png": "6a26fed6f2ae3f06126923d1f553aaffe36c48df37ad3e6ec68987e8343b82f2",
+    "visual06/detail-4-160.png": "86c1097b0243a25473ad3b5d7f413a670639150bf7812be66b43a65323799ac3",
+    "visual06/detail-4-225.png": "73dd36e7023979d125973baccba3cf444a3d8fa85e81ae3d7abe8d9697d7c598",
+    "visual06/detail-4-270.png": "2692e037bb25aea4df67ac5da4d71e0df7a6df6ad818e523f69eac479db6030e",
+    "visual06/detail-4-90.png": "7a48f52e34c70708ffc91f10d51dc60f38560165efcf7c108ba08dd3b2a1a387",
+    "visual06/detail-5-270.png": "2e47f1aebf11793ab65c5da60d57d520e795c0584f30013dc2fa1e5830ce6d5f",
+    "visual06/detail-5-90.png": "366e3ffc34fba8e11e353c4c3b88b0264cb2b4665522e5be3aff82de1d6b0a87",
+    "visual06/fixture-source/MAPINFO.txt": "264e725d04196216dbc48c5f63630987d52748131b2fa8cbec3db8bf95278cd5",
+    "visual06/fixture-source/ZSCRIPT.txt": "d5932c62eb2faca11c3c92ad0e819666319390bc14323c5f0c73210a2890eace",
+    "visual06/fixture.zs": "a2f532491f7a53284a33a0c7fe31271a9d2d13264eb9ebc6a514ee9c9e849575",
+    "visual06/RESULTS.json": "256ce3bfb9db5d6bc6362ec622c39375ba3f34c6a6bcbf35624dac155b31d34e",
+    "visual06/session.ini": "01e62ea6ea8387601d2dd5527e8ad2c1eea4779f54c56d16b054e0dc2deeff8d",
+    "visual06/visual-part-1.cfg": "0e85a6da1cbe39b2fbb0286b04c517493c315a873df9cf40a0a830daef7831ef",
+    "visual06/visual-part-2.cfg": "2d5ff53c3b9632b8ef3dcb9e24095f08f78c9f4f21a36e0722d83258ee2849cd",
+    "visual06/visual-process.log": "f6ee07521b282d522593066abf12e79a09676dab9e0d5281344a3cd3b2eaa848",
+    "visual06/visual.cfg": "c7497caefc91006620df1fe3334a2180bf3749f2f7e3ec706c5637ff01572ea7",
+    "visual06/visual.log": "c48156ea38e3c70b8d05ed54a4070ede9bba6d1e2b78ec557bfd84243fd7adc2",
+    "visual07/candidate-0.png": "13ac46b0859e8edcdd0f180abe1bd7d233d0f98f853aa243b5dce9d4b1e5cf8f",
+    "visual07/detail-3-0.png": "30ac6f7aaae336f225681aaf3e433823f8226d7c0fadb77b2c9bcbef9b6e4e88",
+    "visual07/detail-3-160.png": "d90713b73e42e964b8c85eba441fb98586d7214a50e55ca619d173d09743434f",
+    "visual07/detail-3-225.png": "31aff7c2c2268d0782896afe1083ac16aedfcf1e9bcedc81ccaa2a2c8ca54275",
+    "visual07/detail-3-270.png": "daa761227381f86b759fc0184d5d1bc752d2f2d8b0bbbcffadc24e4fce7936eb",
+    "visual07/detail-3-90.png": "dbb2a3f3f17db8dfe4421eb4afb3a1a4886d2313e6a32ff4825dbc51e517c108",
+    "visual07/fixture-source/MAPINFO.txt": "264e725d04196216dbc48c5f63630987d52748131b2fa8cbec3db8bf95278cd5",
+    "visual07/fixture-source/ZSCRIPT.txt": "67e541fc5fc6f50551b8bd7c22a31dc76839fea35fd4b8d8d6e7f9468aa6d25a",
+    "visual07/fixture.zs": "a8cd8c032fe94cc7c9b3d56d58db4b333d2b00807befad15e9d1b5c0f84d5d80",
+    "visual07/RESULTS.json": "2c4b1efb2cbb3534d65e19982e2ba93e3bef4db0340d41728f7fe6b2e8fb8b64",
+    "visual07/session.ini": "fd348dd16def065f37e488b025332a87ffdd4bcce744b2d3dee830b46083277c",
+    "visual07/visual-part-1.cfg": "0c5ef6ddd8c844e0727ec9d58f57bc02563c776c2d73b5a00a6b7f2a746657b2",
+    "visual07/visual-part-2.cfg": "2d5ff53c3b9632b8ef3dcb9e24095f08f78c9f4f21a36e0722d83258ee2849cd",
+    "visual07/visual-process.log": "c55411a2409d162ecb9c338cc2cc4e6f0dc7071b2e0147f374dae4b1ea32b5fb",
+    "visual07/visual.cfg": "3e86686c1bf1139a9fe8f8d08678f14a3219d100fe40c09dba169cbceb6712eb",
+    "visual07/visual.log": "bc5ccf50fa8816235202d10bb8859e313df020d1a91182411b2fe0895e499c57",
+    "validation-final.json": "594dd25e6c89796de3b172dac6efb009008e378bb8e69e7bad9757ca16aae314"
+  }
+}

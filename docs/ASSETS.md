@@ -1,6 +1,73 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.49** - 2026-11-14.
+Documentation version: **5.17.50** - 2026-11-14.
+
+## 5.17.50 - Native kitchen ingredient drops (#743, parent #647)
+
+Six untiered CaelumMaterialPickup identities gain exact M108–M113 A native
+bindings: flour, raw beef, raw hake fillet, vegetable mix, culinary salt and
+proofed dough. Owned #410 sources guide the fabric flour sack, fat-edged steak,
+pale tapered hake with skin, potato/squash/carrot/sweetcorn, open paper salt
+packet and flour-dusted dough. The five ingredient icons were accepted under
+CA410-INGREDIENTS-01 on 2026-10-26; dough remains an existing candidate. Neither
+constitutes acceptance of these models. All icons, recipes, cooking stations,
+amounts, normalized tier1, weight, Actor.Scale0.25, collision, provenance,
+contamination lots and save rules are unchanged. Containers are presentation.
+
+The six models contain 56,580 vertices and 36,168 triangles, with97 closed
+components and91 independently verified contact witnesses. Corn has70 joined
+kernel volumes. Sack and paper have continuous outer/inner walls, real mouths
+and full bases. Ten opening rays,15,080 projected UV triangles and radial/down
+containment rays from1,483 serialized fill vertices pass. Seventeen exported
+files repeat byte-for-byte; editable/native quantized triangles, original
+sprite envelopes and floor bounds also pass.
+
+Native iterations repaired stretched package UVs, flattened steak/fish forms,
+the separated hake skin slab, powder leaking through the sack, a salt patch
+under the packet and squash flesh crossing the rear rind. Earlier sources,
+manifests, failure logs and selected inspected images remain evidence. A
+cloned validator first read the wrong source family; its corrected check then
+identified one inaccurate corn contact witness. A copied fixture's F4/F10
+limits were corrected, and the final live fixture explicitly checks item
+cycling, every rotation and the raised underside state. The separate #745
+tracks the same rotation typo in earlier hide/textile/hygiene review fixtures.
+
+Thirty recorded native detail views cover all six final-byte models, including
+their undersides. Reused views are checked against the final mesh hashes in
+INSPECTION.json; the final floor overview and both presentation scenes were
+also inspected. Art remains provisional: coarse sack weave, regular paper
+folds, a simple fat edge, visible projection/wrap seams, narrow hake skin,
+thick squash rind, regular rounded corn kernels and dough underside swirl
+need author review. Flat ambient lighting limits form readability.
+
+Editable OBJ/MTL, data, owned reference hashes and portable texture:
+assets/source/art/inventory_models_647/kitchen_ingredients. Built-in image_gen
+produced the opaque4x4 materials.png atlas; MATERIALS_PROMPT.json keeps the
+exact prompt and PROVENANCE.json the original path/hash. Pixels are copied
+unchanged. Regenerate with python
+assets/generators/generate_inventory_kitchen_ingredients_models.py
+--output build/kitchen-ingredients --install.
+
+The final installed build passes876 native checks:163 baseline,188 old-save
+adoption including seven interactive-control checks,163 fresh,181 reload and
+181 rollback. The isolated final visual run passes170. API pickup/toss,
+split/merge, lots/provenance and prepared Box/quest guards do not establish
+ordinary menus, real cooking/preparation or author acceptance.
+One sequential700-tic six-object sprite/model pair records
+942.59/918.26 queue presents/s,
+p95 1.2237/1.2351 ms and
+p99 1.4462/1.4739 ms.
+Environment: Windows11, Ryzen9 5950X, RTX3070Ti, GZDoom4.14.2 Vulkan,
+1280x720, uncapped/vsync off, background unpaused/audio5%. Queue-only timing,
+unequal projected footprints and one pair do not establish GPU/display timing,
+repeatability or crowd/campaign performance. All18,471 package entries match
+src; six meshes, one atlas, one definition, MODELDEF and two release diagnostic
+strings are the only runtime differences from #741.
+
+Evidence: assets/validation_v5_17_50/evidence/SUMMARY.json.
+CA743-KITCHEN-DROPS-01 retains author art and ordinary inventory/cooking checks.
+Other materials, weapons, armor, characters, modular equipment and the original
+V5.16 campaign remain unfinished.
 
 ## 5.17.49 - Native hygiene crafting drops (#741, parent #647)
 

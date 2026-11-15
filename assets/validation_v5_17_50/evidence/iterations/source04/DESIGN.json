@@ -1,0 +1,4050 @@
+{
+  "schema_revision": 1,
+  "issue": 743,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "model_path": "models/caelum/inventory/kitchen_ingredients",
+  "editable_materials_name": "kitchen.mtl",
+  "tier_materials": {
+    "original": {}
+  },
+  "materials": {
+    "burlap": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        9,
+        9,
+        304,
+        304
+      ]
+    },
+    "flour": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        322,
+        9,
+        618,
+        304
+      ]
+    },
+    "beef": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        636,
+        9,
+        932,
+        304
+      ]
+    },
+    "fat": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        950,
+        9,
+        1245,
+        304
+      ]
+    },
+    "fish": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        9,
+        322,
+        304,
+        618
+      ]
+    },
+    "skin": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        322,
+        322,
+        618,
+        618
+      ]
+    },
+    "paper": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        636,
+        322,
+        932,
+        618
+      ]
+    },
+    "salt": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        950,
+        322,
+        1245,
+        618
+      ]
+    },
+    "potato": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        9,
+        636,
+        304,
+        932
+      ]
+    },
+    "squash": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        322,
+        636,
+        618,
+        932
+      ]
+    },
+    "carrot": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        636,
+        636,
+        932,
+        932
+      ]
+    },
+    "corn": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        950,
+        636,
+        1245,
+        932
+      ]
+    },
+    "dough": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        9,
+        950,
+        304,
+        1245
+      ]
+    },
+    "rind": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        322,
+        950,
+        618,
+        1245
+      ]
+    },
+    "core": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        636,
+        950,
+        932,
+        1245
+      ]
+    },
+    "stem": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        950,
+        950,
+        1245,
+        1245
+      ]
+    },
+    "kernel": {
+      "texture": "models/caelum/inventory/kitchen_ingredients/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        1030,
+        650,
+        1070,
+        690
+      ]
+    }
+  },
+  "source_sha256": {
+    "src/graphics/caelum/icons/kitchen/flour.png": "c6416ed7786f7e246dd2a17ac75ee24285dd45e585320e5ce7fcedb35ba8fb4d",
+    "assets/art_source/cooking_ingredients/flour.png": "9e43730d2b862bf5ee672f6e11d701ebd5312660cd2748621c23157675ab7da9",
+    "src/graphics/caelum/icons/kitchen/beef.png": "9a3db9cdc181a8d53693839a1d9ccb34152065e4264146865e46af1b2fa67a0f",
+    "assets/art_source/cooking_ingredients/beef.png": "6f25dd4e295d96ff6c14f9c15fc3e31c96654ba3a72b48b77a3e2e92b08e884f",
+    "src/graphics/caelum/icons/kitchen/fish.png": "a39d4fd7f83d8055cc2e45fa3188a4abe56657f0ff0914d6cc6a54f35034a8d9",
+    "assets/art_source/cooking_ingredients/fish.png": "acb807dfaae913b3233b7b19a2c1dea2837eb12e67e3f64d7a2cf16a6d715fac",
+    "src/graphics/caelum/icons/kitchen/vegetables.png": "d658753a05cb84736ee774164f9d53589e9776e6094e99117d126220afa730a2",
+    "assets/art_source/cooking_ingredients/vegetables.png": "7fe007e94b88272e28933b8c84ab174273f446bdb10c8ba806e7cbee26bcb898",
+    "src/graphics/caelum/icons/kitchen/salt.png": "0d34f55bcdddc490f9afeda4ce0d8856f847f1956a81777fa81cd5cbe91ad520",
+    "assets/art_source/cooking_ingredients/salt.png": "655582191cf2c39b286edbd33cba71a4cf4e0d8a10a38682eea9e17d999e2f2a",
+    "src/graphics/caelum/icons/kitchen/dough.png": "af11f95c33cd354a6a9dde681d062c6fbef96d1ba935f84c1cf0db069514beb9",
+    "assets/art_source/kitchen_dough/dough.png": "2f943563130b818e50fb0847a04a8e5f89a52d5dc8904c74f97a4e6d2c594d59",
+    "src/caelum/data/CaelumCookingData.zs": "8ba3dc105b33a6923979723d90b842843f297ae408e628bd43d76e560a949a66",
+    "src/caelum/data/CaelumMealData.zs": "5e9a81e5db1f7984a2ecde447031104b9fc6140888434c1c84881b59aa175517",
+    "assets/art_source/cooking_ingredients/PROMPTS.json": "8c19c3b8c301a269cf935fffff9a2c106620d0c272f5d3d829aba77ef872c11a",
+    "assets/art_source/cooking_ingredients/EXPORT.json": "c6b75f44cd2414c3986442848ceba0a8cc74c0a536fb9785a6e76dc512409a1d",
+    "assets/art_source/kitchen_dough/PROMPT.json": "d9af090f83eae8ff6349fd63c60d94cc14412fe4f9cae68a63ad637d95ad277e",
+    "assets/art_source/kitchen_dough/EXPORT.json": "728471f7e2c44b6a595c201e9216b1e94c7d5acc31c15cc32ca8975ed1d9575f",
+    "assets/generators/generate_inventory_hygiene_models.py": "b85d6bac14b35faf4cc2f232c6c0e2fa8d9e2f6d5633400adc929f452a2c0a8e",
+    "assets/generators/generate_inventory_weapon_components_models.py": "49db0176aef05d21f21f7a356e58c4623c285eac15d2d1537bc8ddc8ec227958",
+    "assets/generators/generate_inventory_chains_models.py": "cd9296836666c78bd555c76e3de56d0ccc345c40ecb94a15d5e78f159719f94f",
+    "assets/generators/generate_peuchen_model.py": "0f1873c9fd1da0be0f965ea73ff2cc5c35dc25a35ac9da2df4692b50cef30812"
+  },
+  "variants": {
+    "flour": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M108",
+      "item_type": 108,
+      "family": "flour",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/kitchen/flour.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "beef": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M109",
+      "item_type": 109,
+      "family": "beef",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/kitchen/beef.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "fish": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M110",
+      "item_type": 110,
+      "family": "fish",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/kitchen/fish.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "vegetables": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M111",
+      "item_type": 111,
+      "family": "vegetables",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/kitchen/vegetables.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "salt": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M112",
+      "item_type": 112,
+      "family": "salt",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/kitchen/salt.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "dough": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M113",
+      "item_type": 113,
+      "family": "dough",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/kitchen/dough.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    }
+  },
+  "families": {
+    "flour": {
+      "root": "sack",
+      "parts": [
+        {
+          "part": "sack",
+          "kind": "loft",
+          "material": "burlap",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              24,
+              19
+            ],
+            [
+              2,
+              0,
+              0,
+              29,
+              23
+            ],
+            [
+              9,
+              0,
+              0,
+              31,
+              24
+            ],
+            [
+              20,
+              0,
+              0,
+              30,
+              23
+            ],
+            [
+              31,
+              0,
+              0,
+              27,
+              22
+            ],
+            [
+              38,
+              0,
+              0,
+              26,
+              21
+            ],
+            [
+              40,
+              0,
+              0,
+              28,
+              23
+            ],
+            [
+              43,
+              0,
+              0,
+              29,
+              24
+            ],
+            [
+              45,
+              0,
+              0,
+              28,
+              23
+            ],
+            [
+              46,
+              0,
+              0,
+              26,
+              21
+            ],
+            [
+              45,
+              0,
+              0,
+              24,
+              19
+            ],
+            [
+              41,
+              0,
+              0,
+              23,
+              18
+            ],
+            [
+              35,
+              0,
+              0,
+              24,
+              19
+            ],
+            [
+              15,
+              0,
+              0,
+              27,
+              20
+            ],
+            [
+              5,
+              0,
+              0,
+              24,
+              18
+            ]
+          ],
+          "segments": 64,
+          "exponent": 0.72,
+          "surface_wave": [
+            {
+              "axis": 0,
+              "amplitude": 0.7,
+              "frequency": 0.19,
+              "phase": 0.2
+            },
+            {
+              "axis": 1,
+              "amplitude": 0.5,
+              "frequency": 0.22,
+              "phase": 0.8
+            }
+          ],
+          "planar_uv": true,
+          "radial_folds": {
+            "amplitude": 0.045,
+            "count": 7,
+            "phase": 0.3
+          }
+        },
+        {
+          "part": "flour",
+          "kind": "organic",
+          "center": [
+            0,
+            0,
+            30
+          ],
+          "radii": [
+            27,
+            21,
+            14
+          ],
+          "material": "flour",
+          "latitudes": 24,
+          "longitudes": 48,
+          "axis_powers": [
+            0.86,
+            0.88,
+            0.82
+          ],
+          "bumps": [],
+          "waves": [],
+          "top_relief": [
+            {
+              "amplitude": 2.5,
+              "center": [
+                -8,
+                -2
+              ],
+              "radii": [
+                13,
+                12
+              ]
+            },
+            {
+              "amplitude": -2,
+              "center": [
+                11,
+                3
+              ],
+              "radii": [
+                7,
+                15
+              ]
+            }
+          ],
+          "planar_uv": true
+        }
+      ],
+      "attachments": [
+        {
+          "part": "flour",
+          "target": "sack",
+          "witness": [
+            26,
+            0,
+            30
+          ]
+        }
+      ],
+      "openings": [
+        {
+          "point": [
+            0,
+            0,
+            46
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "axis_u": [
+            1,
+            0,
+            0
+          ],
+          "axis_v": [
+            0,
+            1,
+            0
+          ],
+          "clearance": 16,
+          "signs": [
+            1
+          ]
+        }
+      ]
+    },
+    "beef": {
+      "root": "steak",
+      "parts": [
+        {
+          "part": "steak",
+          "kind": "organic",
+          "center": [
+            0,
+            0,
+            9
+          ],
+          "radii": [
+            36,
+            20,
+            9
+          ],
+          "material": "beef",
+          "latitudes": 24,
+          "longitudes": 48,
+          "axis_powers": [
+            0.62,
+            0.8,
+            0.65
+          ],
+          "bumps": [
+            {
+              "amplitude": 0.08,
+              "direction": [
+                0.75,
+                0.5,
+                0.1
+              ],
+              "width": 0.25
+            }
+          ],
+          "waves": [],
+          "top_relief": [
+            {
+              "amplitude": 1.5,
+              "center": [
+                -10,
+                4
+              ],
+              "radii": [
+                14,
+                12
+              ]
+            }
+          ],
+          "planar_uv": true
+        },
+        {
+          "part": "fat_edge",
+          "kind": "organic",
+          "center": [
+            0,
+            -17,
+            8
+          ],
+          "radii": [
+            29,
+            3.2,
+            6.7
+          ],
+          "material": "fat",
+          "latitudes": 24,
+          "longitudes": 48,
+          "axis_powers": [
+            0.6,
+            0.8,
+            0.8
+          ],
+          "bumps": [],
+          "waves": [],
+          "top_relief": [],
+          "planar_uv": true
+        }
+      ],
+      "attachments": [
+        {
+          "part": "fat_edge",
+          "target": "steak",
+          "witness": [
+            0,
+            -16.6,
+            8
+          ]
+        }
+      ],
+      "openings": []
+    },
+    "fish": {
+      "root": "skin",
+      "parts": [
+        {
+          "part": "skin",
+          "kind": "ellipsoid",
+          "material": "skin",
+          "center": [
+            -5,
+            7,
+            3.7
+          ],
+          "radii": [
+            32,
+            4,
+            3
+          ],
+          "latitudes": 16,
+          "longitudes": 48
+        },
+        {
+          "part": "fillet",
+          "kind": "loft",
+          "material": "fish",
+          "rows": [
+            [
+              -38,
+              0,
+              0,
+              9,
+              1.4
+            ],
+            [
+              -32,
+              0,
+              0,
+              14,
+              4
+            ],
+            [
+              -20,
+              0,
+              0,
+              15,
+              5
+            ],
+            [
+              -5,
+              0,
+              0,
+              13,
+              4.8
+            ],
+            [
+              10,
+              0,
+              0,
+              10,
+              3.8
+            ],
+            [
+              25,
+              0,
+              0,
+              6,
+              2.5
+            ],
+            [
+              39,
+              0,
+              0,
+              1.3,
+              0.7
+            ]
+          ],
+          "segments": 48,
+          "rotation": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            6.2
+          ],
+          "planar_uv": true
+        }
+      ],
+      "attachments": [
+        {
+          "part": "fillet",
+          "target": "skin",
+          "witness": [
+            -5,
+            7,
+            5
+          ]
+        }
+      ],
+      "openings": []
+    },
+    "vegetables": {
+      "root": "squash_rind",
+      "parts": [
+        {
+          "part": "squash_rind",
+          "kind": "bevel",
+          "material": "rind",
+          "outline": [
+            [
+              -25.376618037026198,
+              24.166688671260413
+            ],
+            [
+              -24.146260136962802,
+              21.824030142592676
+            ],
+            [
+              -22.700254280765943,
+              19.607975854441662
+            ],
+            [
+              -21.051514609411363,
+              17.53831717719807
+            ],
+            [
+              -19.214765860324544,
+              15.633538035954643
+            ],
+            [
+              -17.2064118621491,
+              13.910649832326555
+            ],
+            [
+              -15.044389033711072,
+              12.385039517239203
+            ],
+            [
+              -12.748006195565775,
+              11.070332171530712
+            ],
+            [
+              -10.33777212475516,
+              9.97826932164897
+            ],
+            [
+              -7.835212392867779,
+              9.118604077194
+            ],
+            [
+              -5.262677123203139,
+              8.49901402682234
+            ],
+            [
+              -2.643141383943115,
+              8.125032670431931
+            ],
+            [
+              1.7145055188062944e-15,
+              8.0
+            ],
+            [
+              2.643141383943125,
+              8.125032670431931
+            ],
+            [
+              5.2626771232031295,
+              8.499014026822337
+            ],
+            [
+              7.835212392867777,
+              9.118604077193996
+            ],
+            [
+              10.337772124755169,
+              9.978269321648973
+            ],
+            [
+              12.748006195565772,
+              11.070332171530712
+            ],
+            [
+              15.044389033711068,
+              12.385039517239203
+            ],
+            [
+              17.206411862149096,
+              13.910649832326555
+            ],
+            [
+              19.214765860324537,
+              15.633538035954636
+            ],
+            [
+              21.051514609411367,
+              17.538317177198074
+            ],
+            [
+              22.700254280765947,
+              19.60797585444167
+            ],
+            [
+              24.146260136962802,
+              21.824030142592676
+            ],
+            [
+              25.376618037026198,
+              24.166688671260417
+            ],
+            [
+              10.875693444439799,
+              30.928580859111605
+            ],
+            [
+              10.348397201555487,
+              29.924584346825434
+            ],
+            [
+              9.728680406042548,
+              28.974846794760715
+            ],
+            [
+              9.022077689747729,
+              28.087850218799176
+            ],
+            [
+              8.234899654424801,
+              27.271516301123416
+            ],
+            [
+              7.374176512349614,
+              26.533135642425666
+            ],
+            [
+              6.447595300161886,
+              25.87930265024537
+            ],
+            [
+              5.463431226671045,
+              25.315856644941732
+            ],
+            [
+              4.430473767752216,
+              24.84782970927813
+            ],
+            [
+              3.3579481683719044,
+              24.479401747368854
+            ],
+            [
+              2.255433052801341,
+              24.21386315435243
+            ],
+            [
+              1.1327748788327678,
+              24.053585430185112
+            ],
+            [
+              7.347880794884119e-16,
+              24.0
+            ],
+            [
+              -1.1327748788327636,
+              24.053585430185112
+            ],
+            [
+              -2.2554330528013455,
+              24.21386315435243
+            ],
+            [
+              -3.3579481683719052,
+              24.479401747368858
+            ],
+            [
+              -4.430473767752211,
+              24.84782970927813
+            ],
+            [
+              -5.463431226671046,
+              25.315856644941732
+            ],
+            [
+              -6.447595300161888,
+              25.87930265024537
+            ],
+            [
+              -7.374176512349615,
+              26.533135642425666
+            ],
+            [
+              -8.234899654424805,
+              27.27151630112342
+            ],
+            [
+              -9.022077689747727,
+              28.087850218799172
+            ],
+            [
+              -9.728680406042546,
+              28.974846794760712
+            ],
+            [
+              -10.348397201555487,
+              29.924584346825434
+            ],
+            [
+              -10.875693444439799,
+              30.928580859111605
+            ]
+          ],
+          "bevel_center": [
+            -2.6509293708616584e-17,
+            20.334713799922355
+          ],
+          "inner_scale": 0.94,
+          "depth": 19,
+          "edge_depth": 10.450000000000001,
+          "offset": [
+            7,
+            11,
+            0
+          ],
+          "planar_uv": true
+        },
+        {
+          "part": "squash_flesh",
+          "kind": "bevel",
+          "material": "squash",
+          "outline": [
+            [
+              -23.854020954804625,
+              24.87668735098479
+            ],
+            [
+              -22.697484528745033,
+              22.674588334037118
+            ],
+            [
+              -21.338239023919986,
+              20.591497303175164
+            ],
+            [
+              -19.78842373284668,
+              18.64601814656619
+            ],
+            [
+              -18.06187990870507,
+              16.855525753797366
+            ],
+            [
+              -16.17402715042015,
+              15.236010842386964
+            ],
+            [
+              -14.141725691688407,
+              13.801937146204853
+            ],
+            [
+              -11.983125823831829,
+              12.56611224123887
+            ],
+            [
+              -9.71750579726985,
+              11.539573162350035
+            ],
+            [
+              -7.365099649295711,
+              10.731487832562362
+            ],
+            [
+              -4.94691649581095,
+              10.149073185213002
+            ],
+            [
+              -2.484552900906528,
+              9.797530710206019
+            ],
+            [
+              1.6116351876779167e-15,
+              9.68
+            ],
+            [
+              2.4845529009065372,
+              9.797530710206019
+            ],
+            [
+              4.9469164958109415,
+              10.149073185212998
+            ],
+            [
+              7.3650996492957095,
+              10.731487832562358
+            ],
+            [
+              9.717505797269858,
+              11.539573162350035
+            ],
+            [
+              11.983125823831825,
+              12.56611224123887
+            ],
+            [
+              14.141725691688404,
+              13.801937146204853
+            ],
+            [
+              16.174027150420148,
+              15.236010842386964
+            ],
+            [
+              18.061879908705063,
+              16.85552575379736
+            ],
+            [
+              19.788423732846685,
+              18.646018146566192
+            ],
+            [
+              21.33823902391999,
+              20.59149730317517
+            ],
+            [
+              22.697484528745033,
+              22.674588334037118
+            ],
+            [
+              23.854020954804625,
+              24.876687350984792
+            ],
+            [
+              10.22315183777341,
+              31.23286600756491
+            ],
+            [
+              9.727493369462158,
+              30.289109286015908
+            ],
+            [
+              9.144959581679995,
+              29.396355987075072
+            ],
+            [
+              8.480753028362864,
+              28.562579205671227
+            ],
+            [
+              7.740805675159312,
+              27.795225323056012
+            ],
+            [
+              6.931725921608637,
+              27.101147503880128
+            ],
+            [
+              6.060739582152173,
+              26.48654449123065
+            ],
+            [
+              5.1356253530707825,
+              25.956905246245228
+            ],
+            [
+              4.164645341687082,
+              25.51695992672144
+            ],
+            [
+              3.15647127826959,
+              25.17063764252672
+            ],
+            [
+              2.1201070696332605,
+              24.921031365091288
+            ],
+            [
+              1.0648083861028017,
+              24.770370304374005
+            ],
+            [
+              6.907007947191072e-16,
+              24.72
+            ],
+            [
+              -1.0648083861027977,
+              24.770370304374005
+            ],
+            [
+              -2.120107069633265,
+              24.921031365091288
+            ],
+            [
+              -3.1564712782695907,
+              25.170637642526728
+            ],
+            [
+              -4.164645341687078,
+              25.51695992672144
+            ],
+            [
+              -5.135625353070783,
+              25.956905246245228
+            ],
+            [
+              -6.060739582152174,
+              26.48654449123065
+            ],
+            [
+              -6.9317259216086375,
+              27.101147503880128
+            ],
+            [
+              -7.740805675159316,
+              27.795225323056016
+            ],
+            [
+              -8.480753028362862,
+              28.56257920567122
+            ],
+            [
+              -9.144959581679993,
+              29.39635598707507
+            ],
+            [
+              -9.727493369462158,
+              30.289109286015908
+            ],
+            [
+              -10.22315183777341,
+              31.23286600756491
+            ]
+          ],
+          "bevel_center": [
+            -2.5007553928069503e-17,
+            21.274630971927014
+          ],
+          "inner_scale": 0.94,
+          "depth": 18,
+          "edge_depth": 9.9,
+          "offset": [
+            7,
+            10,
+            0
+          ],
+          "planar_uv": true
+        },
+        {
+          "part": "potato",
+          "kind": "organic",
+          "center": [
+            -19,
+            -1,
+            14
+          ],
+          "radii": [
+            19,
+            15,
+            14
+          ],
+          "material": "potato",
+          "latitudes": 24,
+          "longitudes": 48,
+          "axis_powers": [
+            0.86,
+            0.88,
+            0.82
+          ],
+          "bumps": [
+            {
+              "amplitude": 0.06,
+              "direction": [
+                -0.7,
+                -0.6,
+                0.2
+              ],
+              "width": 0.3
+            }
+          ],
+          "waves": [],
+          "top_relief": []
+        },
+        {
+          "part": "carrot",
+          "kind": "loft",
+          "material": "carrot",
+          "rows": [
+            [
+              -22,
+              0,
+              0,
+              1.6,
+              1.6
+            ],
+            [
+              -17,
+              0,
+              0,
+              3,
+              3
+            ],
+            [
+              -7,
+              0,
+              0,
+              5,
+              5
+            ],
+            [
+              5,
+              0,
+              0,
+              7,
+              7
+            ],
+            [
+              15,
+              0,
+              0,
+              8,
+              8
+            ],
+            [
+              19,
+              0,
+              0,
+              6,
+              6
+            ]
+          ],
+          "segments": 40,
+          "rotation": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            -4,
+            -13,
+            8
+          ]
+        },
+        {
+          "part": "corn",
+          "kind": "loft",
+          "material": "core",
+          "rows": [
+            [
+              -20,
+              0,
+              0,
+              7.5,
+              7.5
+            ],
+            [
+              -17,
+              0,
+              0,
+              8.5,
+              8.5
+            ],
+            [
+              -8,
+              0,
+              0,
+              9,
+              9
+            ],
+            [
+              5,
+              0,
+              0,
+              8.8,
+              8.8
+            ],
+            [
+              14,
+              0,
+              0,
+              8,
+              8
+            ],
+            [
+              18,
+              0,
+              0,
+              6.7,
+              6.7
+            ]
+          ],
+          "segments": 40,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            23,
+            0,
+            12
+          ],
+          "planar_uv": true
+        },
+        {
+          "part": "corn_end",
+          "kind": "ellipsoid",
+          "center": [
+            23,
+            -20,
+            12
+          ],
+          "radii": [
+            7.5,
+            1,
+            7.5
+          ],
+          "material": "core",
+          "latitudes": 16,
+          "longitudes": 32,
+          "planar_uv": true
+        },
+        {
+          "part": "carrot_stem",
+          "kind": "ellipsoid",
+          "center": [
+            15,
+            -13,
+            8
+          ],
+          "radii": [
+            2.2,
+            5,
+            5
+          ],
+          "material": "stem",
+          "latitudes": 16,
+          "longitudes": 32
+        },
+        {
+          "part": "kernel_0_0",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            31.2,
+            -16,
+            12.0
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_0_1",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            29.633939353874567,
+            -16,
+            16.81983906879828
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_0_2",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            25.53393935387457,
+            -16,
+            19.79866343362026
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_0_3",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            20.46606064612543,
+            -16,
+            19.79866343362026
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_0_4",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            16.366060646125433,
+            -16,
+            16.81983906879828
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_0_5",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            14.8,
+            -16,
+            12.000000000000002
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_0_6",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            16.366060646125433,
+            -16,
+            7.180160931201722
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_0_7",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            20.46606064612543,
+            -16,
+            4.201336566379742
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_0_8",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            25.533939353874565,
+            -16,
+            4.201336566379741
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_0_9",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            29.633939353874567,
+            -16,
+            7.180160931201719
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_1_0",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            31.198360054665937,
+            -11,
+            12.163989066885332
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_1_1",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            29.536222255177066,
+            -11,
+            16.951545075118275
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_1_2",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            25.377469712234042,
+            -11,
+            19.84777916148319
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_1_3",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            20.31060454644105,
+            -11,
+            19.746428344364674
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_1_4",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            16.270997034718132,
+            -11,
+            16.68620519111443
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_1_5",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            14.801639945334063,
+            -11,
+            11.83601093311467
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_1_6",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            16.463777744822934,
+            -11,
+            7.048454924881726
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_1_7",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            20.622530287765954,
+            -11,
+            4.152220838516813
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_1_8",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            25.689395453558948,
+            -11,
+            4.253571655635325
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_1_9",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            29.729002965281865,
+            -11,
+            7.313794808885567
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_2_0",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            31.2,
+            -6,
+            12.0
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_2_1",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            29.633939353874567,
+            -6,
+            16.81983906879828
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_2_2",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            25.53393935387457,
+            -6,
+            19.79866343362026
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_2_3",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            20.46606064612543,
+            -6,
+            19.79866343362026
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_2_4",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            16.366060646125433,
+            -6,
+            16.81983906879828
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_2_5",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            14.8,
+            -6,
+            12.000000000000002
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_2_6",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            16.366060646125433,
+            -6,
+            7.180160931201722
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_2_7",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            20.46606064612543,
+            -6,
+            4.201336566379742
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_2_8",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            25.533939353874565,
+            -6,
+            4.201336566379741
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_2_9",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            29.633939353874567,
+            -6,
+            7.180160931201719
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_3_0",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            31.198360054665937,
+            -1,
+            12.163989066885332
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_3_1",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            29.536222255177066,
+            -1,
+            16.951545075118275
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_3_2",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            25.377469712234042,
+            -1,
+            19.84777916148319
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_3_3",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            20.31060454644105,
+            -1,
+            19.746428344364674
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_3_4",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            16.270997034718132,
+            -1,
+            16.68620519111443
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_3_5",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            14.801639945334063,
+            -1,
+            11.83601093311467
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_3_6",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            16.463777744822934,
+            -1,
+            7.048454924881726
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_3_7",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            20.622530287765954,
+            -1,
+            4.152220838516813
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_3_8",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            25.689395453558948,
+            -1,
+            4.253571655635325
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_3_9",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            29.729002965281865,
+            -1,
+            7.313794808885567
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_4_0",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            31.2,
+            4,
+            12.0
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_4_1",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            29.633939353874567,
+            4,
+            16.81983906879828
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_4_2",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            25.53393935387457,
+            4,
+            19.79866343362026
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_4_3",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            20.46606064612543,
+            4,
+            19.79866343362026
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_4_4",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            16.366060646125433,
+            4,
+            16.81983906879828
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_4_5",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            14.8,
+            4,
+            12.000000000000002
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_4_6",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            16.366060646125433,
+            4,
+            7.180160931201722
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_4_7",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            20.46606064612543,
+            4,
+            4.201336566379742
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_4_8",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            25.533939353874565,
+            4,
+            4.201336566379741
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_4_9",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            29.633939353874567,
+            4,
+            7.180160931201719
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_5_0",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            30.498500049999333,
+            9,
+            12.149990000199999
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_5_1",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            28.97825206266195,
+            9,
+            16.52885220285208
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_5_2",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            25.17451498070187,
+            9,
+            19.177846794039503
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_5_3",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            20.540187085159495,
+            9,
+            19.0851478759433
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_5_4",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            16.845424117120242,
+            9,
+            16.28616328455588
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_5_5",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            15.501499950000667,
+            9,
+            11.850009999800003
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_5_6",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            17.02174793733805,
+            9,
+            7.47114779714792
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_5_7",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            20.825485019298128,
+            9,
+            4.8221532059604995
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_5_8",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            25.4598129148405,
+            9,
+            4.914852124056699
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_5_9",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            29.154575882879755,
+            9,
+            7.713836715444116
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_6_0",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            30.5,
+            14,
+            12.0
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_6_1",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            29.067627457812108,
+            14,
+            16.40838939219355
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_6_2",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            25.317627457812105,
+            14,
+            19.132923872213652
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_6_3",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            20.682372542187895,
+            14,
+            19.132923872213652
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_6_4",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            16.932372542187895,
+            14,
+            16.40838939219355
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_6_5",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            15.5,
+            14,
+            12.000000000000002
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_6_6",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            16.932372542187892,
+            14,
+            7.5916106078064525
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_6_7",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            20.682372542187892,
+            14,
+            4.867076127786349
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_6_8",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            25.317627457812105,
+            14,
+            4.867076127786348
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        },
+        {
+          "part": "kernel_6_9",
+          "kind": "ellipsoid",
+          "material": "kernel",
+          "center": [
+            29.067627457812105,
+            14,
+            7.59161060780645
+          ],
+          "radii": [
+            2.5,
+            2.6,
+            2.5
+          ],
+          "latitudes": 8,
+          "longitudes": 12
+        }
+      ],
+      "attachments": [
+        {
+          "part": "squash_flesh",
+          "target": "squash_rind",
+          "witness": [
+            7,
+            11,
+            14
+          ]
+        },
+        {
+          "part": "potato",
+          "target": "squash_rind",
+          "witness": [
+            -3,
+            4,
+            15
+          ]
+        },
+        {
+          "part": "carrot",
+          "target": "potato",
+          "witness": [
+            -15,
+            -11,
+            10
+          ]
+        },
+        {
+          "part": "corn",
+          "target": "squash_flesh",
+          "witness": [
+            22,
+            7,
+            17
+          ]
+        },
+        {
+          "part": "corn_end",
+          "target": "corn",
+          "witness": [
+            23,
+            -19.7,
+            12
+          ]
+        },
+        {
+          "part": "carrot_stem",
+          "target": "carrot",
+          "witness": [
+            14,
+            -13,
+            8
+          ]
+        },
+        {
+          "part": "kernel_0_0",
+          "target": "corn",
+          "witness": [
+            30.5,
+            -16,
+            12.0
+          ]
+        },
+        {
+          "part": "kernel_0_1",
+          "target": "corn",
+          "witness": [
+            29.067627457812105,
+            -16,
+            16.40838939219355
+          ]
+        },
+        {
+          "part": "kernel_0_2",
+          "target": "corn",
+          "witness": [
+            25.317627457812105,
+            -16,
+            19.132923872213652
+          ]
+        },
+        {
+          "part": "kernel_0_3",
+          "target": "corn",
+          "witness": [
+            20.682372542187895,
+            -16,
+            19.132923872213652
+          ]
+        },
+        {
+          "part": "kernel_0_4",
+          "target": "corn",
+          "witness": [
+            16.932372542187895,
+            -16,
+            16.40838939219355
+          ]
+        },
+        {
+          "part": "kernel_0_5",
+          "target": "corn",
+          "witness": [
+            15.5,
+            -16,
+            12.000000000000002
+          ]
+        },
+        {
+          "part": "kernel_0_6",
+          "target": "corn",
+          "witness": [
+            16.932372542187895,
+            -16,
+            7.5916106078064525
+          ]
+        },
+        {
+          "part": "kernel_0_7",
+          "target": "corn",
+          "witness": [
+            20.682372542187892,
+            -16,
+            4.8670761277863495
+          ]
+        },
+        {
+          "part": "kernel_0_8",
+          "target": "corn",
+          "witness": [
+            25.317627457812105,
+            -16,
+            4.867076127786349
+          ]
+        },
+        {
+          "part": "kernel_0_9",
+          "target": "corn",
+          "witness": [
+            29.067627457812105,
+            -16,
+            7.591610607806451
+          ]
+        },
+        {
+          "part": "kernel_1_0",
+          "target": "corn",
+          "witness": [
+            30.498500049999333,
+            -11,
+            12.149990000199999
+          ]
+        },
+        {
+          "part": "kernel_1_1",
+          "target": "corn",
+          "witness": [
+            28.978252062661948,
+            -11,
+            16.52885220285208
+          ]
+        },
+        {
+          "part": "kernel_1_2",
+          "target": "corn",
+          "witness": [
+            25.17451498070187,
+            -11,
+            19.1778467940395
+          ]
+        },
+        {
+          "part": "kernel_1_3",
+          "target": "corn",
+          "witness": [
+            20.540187085159495,
+            -11,
+            19.0851478759433
+          ]
+        },
+        {
+          "part": "kernel_1_4",
+          "target": "corn",
+          "witness": [
+            16.845424117120245,
+            -11,
+            16.28616328455588
+          ]
+        },
+        {
+          "part": "kernel_1_5",
+          "target": "corn",
+          "witness": [
+            15.501499950000667,
+            -11,
+            11.850009999800003
+          ]
+        },
+        {
+          "part": "kernel_1_6",
+          "target": "corn",
+          "witness": [
+            17.02174793733805,
+            -11,
+            7.471147797147921
+          ]
+        },
+        {
+          "part": "kernel_1_7",
+          "target": "corn",
+          "witness": [
+            20.825485019298128,
+            -11,
+            4.8221532059605
+          ]
+        },
+        {
+          "part": "kernel_1_8",
+          "target": "corn",
+          "witness": [
+            25.4598129148405,
+            -11,
+            4.9148521240567
+          ]
+        },
+        {
+          "part": "kernel_1_9",
+          "target": "corn",
+          "witness": [
+            29.154575882879755,
+            -11,
+            7.713836715444117
+          ]
+        },
+        {
+          "part": "kernel_2_0",
+          "target": "corn",
+          "witness": [
+            30.5,
+            -6,
+            12.0
+          ]
+        },
+        {
+          "part": "kernel_2_1",
+          "target": "corn",
+          "witness": [
+            29.067627457812105,
+            -6,
+            16.40838939219355
+          ]
+        },
+        {
+          "part": "kernel_2_2",
+          "target": "corn",
+          "witness": [
+            25.317627457812105,
+            -6,
+            19.132923872213652
+          ]
+        },
+        {
+          "part": "kernel_2_3",
+          "target": "corn",
+          "witness": [
+            20.682372542187895,
+            -6,
+            19.132923872213652
+          ]
+        },
+        {
+          "part": "kernel_2_4",
+          "target": "corn",
+          "witness": [
+            16.932372542187895,
+            -6,
+            16.40838939219355
+          ]
+        },
+        {
+          "part": "kernel_2_5",
+          "target": "corn",
+          "witness": [
+            15.5,
+            -6,
+            12.000000000000002
+          ]
+        },
+        {
+          "part": "kernel_2_6",
+          "target": "corn",
+          "witness": [
+            16.932372542187895,
+            -6,
+            7.5916106078064525
+          ]
+        },
+        {
+          "part": "kernel_2_7",
+          "target": "corn",
+          "witness": [
+            20.682372542187892,
+            -6,
+            4.8670761277863495
+          ]
+        },
+        {
+          "part": "kernel_2_8",
+          "target": "corn",
+          "witness": [
+            25.317627457812105,
+            -6,
+            4.867076127786349
+          ]
+        },
+        {
+          "part": "kernel_2_9",
+          "target": "corn",
+          "witness": [
+            29.067627457812105,
+            -6,
+            7.591610607806451
+          ]
+        },
+        {
+          "part": "kernel_3_0",
+          "target": "corn",
+          "witness": [
+            30.498500049999333,
+            -1,
+            12.149990000199999
+          ]
+        },
+        {
+          "part": "kernel_3_1",
+          "target": "corn",
+          "witness": [
+            28.978252062661948,
+            -1,
+            16.52885220285208
+          ]
+        },
+        {
+          "part": "kernel_3_2",
+          "target": "corn",
+          "witness": [
+            25.17451498070187,
+            -1,
+            19.1778467940395
+          ]
+        },
+        {
+          "part": "kernel_3_3",
+          "target": "corn",
+          "witness": [
+            20.540187085159495,
+            -1,
+            19.0851478759433
+          ]
+        },
+        {
+          "part": "kernel_3_4",
+          "target": "corn",
+          "witness": [
+            16.845424117120245,
+            -1,
+            16.28616328455588
+          ]
+        },
+        {
+          "part": "kernel_3_5",
+          "target": "corn",
+          "witness": [
+            15.501499950000667,
+            -1,
+            11.850009999800003
+          ]
+        },
+        {
+          "part": "kernel_3_6",
+          "target": "corn",
+          "witness": [
+            17.02174793733805,
+            -1,
+            7.471147797147921
+          ]
+        },
+        {
+          "part": "kernel_3_7",
+          "target": "corn",
+          "witness": [
+            20.825485019298128,
+            -1,
+            4.8221532059605
+          ]
+        },
+        {
+          "part": "kernel_3_8",
+          "target": "corn",
+          "witness": [
+            25.4598129148405,
+            -1,
+            4.9148521240567
+          ]
+        },
+        {
+          "part": "kernel_3_9",
+          "target": "corn",
+          "witness": [
+            29.154575882879755,
+            -1,
+            7.713836715444117
+          ]
+        },
+        {
+          "part": "kernel_4_0",
+          "target": "corn",
+          "witness": [
+            30.5,
+            4,
+            12.0
+          ]
+        },
+        {
+          "part": "kernel_4_1",
+          "target": "corn",
+          "witness": [
+            29.067627457812105,
+            4,
+            16.40838939219355
+          ]
+        },
+        {
+          "part": "kernel_4_2",
+          "target": "corn",
+          "witness": [
+            25.317627457812105,
+            4,
+            19.132923872213652
+          ]
+        },
+        {
+          "part": "kernel_4_3",
+          "target": "corn",
+          "witness": [
+            20.682372542187895,
+            4,
+            19.132923872213652
+          ]
+        },
+        {
+          "part": "kernel_4_4",
+          "target": "corn",
+          "witness": [
+            16.932372542187895,
+            4,
+            16.40838939219355
+          ]
+        },
+        {
+          "part": "kernel_4_5",
+          "target": "corn",
+          "witness": [
+            15.5,
+            4,
+            12.000000000000002
+          ]
+        },
+        {
+          "part": "kernel_4_6",
+          "target": "corn",
+          "witness": [
+            16.932372542187895,
+            4,
+            7.5916106078064525
+          ]
+        },
+        {
+          "part": "kernel_4_7",
+          "target": "corn",
+          "witness": [
+            20.682372542187892,
+            4,
+            4.8670761277863495
+          ]
+        },
+        {
+          "part": "kernel_4_8",
+          "target": "corn",
+          "witness": [
+            25.317627457812105,
+            4,
+            4.867076127786349
+          ]
+        },
+        {
+          "part": "kernel_4_9",
+          "target": "corn",
+          "witness": [
+            29.067627457812105,
+            4,
+            7.591610607806451
+          ]
+        },
+        {
+          "part": "kernel_5_0",
+          "target": "corn",
+          "witness": [
+            29.79864004533273,
+            9,
+            12.135990933514664
+          ]
+        },
+        {
+          "part": "kernel_5_1",
+          "target": "corn",
+          "witness": [
+            28.420281870146834,
+            9,
+            16.106159330585886
+          ]
+        },
+        {
+          "part": "kernel_5_2",
+          "target": "corn",
+          "witness": [
+            24.971560249169695,
+            9,
+            18.507914426595814
+          ]
+        },
+        {
+          "part": "kernel_5_3",
+          "target": "corn",
+          "witness": [
+            20.76976962387794,
+            9,
+            18.423867407521925
+          ]
+        },
+        {
+          "part": "kernel_5_4",
+          "target": "corn",
+          "witness": [
+            17.419851199522356,
+            9,
+            15.886121377997332
+          ]
+        },
+        {
+          "part": "kernel_5_5",
+          "target": "corn",
+          "witness": [
+            16.20135995466727,
+            9,
+            11.864009066485336
+          ]
+        },
+        {
+          "part": "kernel_5_6",
+          "target": "corn",
+          "witness": [
+            17.579718129853166,
+            9,
+            7.893840669414114
+          ]
+        },
+        {
+          "part": "kernel_5_7",
+          "target": "corn",
+          "witness": [
+            21.0284397508303,
+            9,
+            5.492085573404186
+          ]
+        },
+        {
+          "part": "kernel_5_8",
+          "target": "corn",
+          "witness": [
+            25.230230376122055,
+            9,
+            5.576132592478074
+          ]
+        },
+        {
+          "part": "kernel_5_9",
+          "target": "corn",
+          "witness": [
+            28.580148800477644,
+            9,
+            8.113878622002666
+          ]
+        },
+        {
+          "part": "kernel_6_0",
+          "target": "corn",
+          "witness": [
+            29.8,
+            14,
+            12.0
+          ]
+        },
+        {
+          "part": "kernel_6_1",
+          "target": "corn",
+          "witness": [
+            28.501315561749642,
+            14,
+            15.996939715588818
+          ]
+        },
+        {
+          "part": "kernel_6_2",
+          "target": "corn",
+          "witness": [
+            25.101315561749644,
+            14,
+            18.467184310807042
+          ]
+        },
+        {
+          "part": "kernel_6_3",
+          "target": "corn",
+          "witness": [
+            20.898684438250356,
+            14,
+            18.467184310807045
+          ]
+        },
+        {
+          "part": "kernel_6_4",
+          "target": "corn",
+          "witness": [
+            17.498684438250358,
+            14,
+            15.996939715588818
+          ]
+        },
+        {
+          "part": "kernel_6_5",
+          "target": "corn",
+          "witness": [
+            16.2,
+            14,
+            12.0
+          ]
+        },
+        {
+          "part": "kernel_6_6",
+          "target": "corn",
+          "witness": [
+            17.498684438250358,
+            14,
+            8.003060284411184
+          ]
+        },
+        {
+          "part": "kernel_6_7",
+          "target": "corn",
+          "witness": [
+            20.898684438250356,
+            14,
+            5.532815689192956
+          ]
+        },
+        {
+          "part": "kernel_6_8",
+          "target": "corn",
+          "witness": [
+            25.10131556174964,
+            14,
+            5.532815689192955
+          ]
+        },
+        {
+          "part": "kernel_6_9",
+          "target": "corn",
+          "witness": [
+            28.501315561749642,
+            14,
+            8.00306028441118
+          ]
+        }
+      ],
+      "openings": []
+    },
+    "salt": {
+      "root": "paper",
+      "parts": [
+        {
+          "part": "paper",
+          "kind": "loft",
+          "material": "paper",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              25,
+              21
+            ],
+            [
+              2,
+              0,
+              0,
+              28,
+              24
+            ],
+            [
+              7,
+              0,
+              0,
+              29,
+              25
+            ],
+            [
+              15,
+              0,
+              0,
+              30,
+              26
+            ],
+            [
+              22,
+              0,
+              0,
+              30,
+              26
+            ],
+            [
+              25,
+              0,
+              0,
+              31,
+              27
+            ],
+            [
+              27,
+              0,
+              0,
+              30,
+              26
+            ],
+            [
+              28,
+              0,
+              0,
+              28,
+              24
+            ],
+            [
+              26,
+              0,
+              0,
+              26.5,
+              22.5
+            ],
+            [
+              23,
+              0,
+              0,
+              27,
+              23
+            ],
+            [
+              16,
+              0,
+              0,
+              27,
+              23
+            ],
+            [
+              6,
+              0,
+              0,
+              25,
+              21
+            ]
+          ],
+          "segments": 48,
+          "exponent": 0.25,
+          "surface_wave": [
+            {
+              "axis": 0,
+              "amplitude": 1.4,
+              "frequency": 0.14,
+              "phase": 0.7
+            },
+            {
+              "axis": 1,
+              "amplitude": 0.9,
+              "frequency": 0.19,
+              "phase": 0.3
+            }
+          ],
+          "planar_uv": true,
+          "radial_folds": {
+            "amplitude": 0.025,
+            "count": 4,
+            "phase": 0.4
+          }
+        },
+        {
+          "part": "salt",
+          "kind": "ellipsoid",
+          "center": [
+            0,
+            0,
+            13
+          ],
+          "radii": [
+            28,
+            24,
+            12
+          ],
+          "material": "salt",
+          "latitudes": 20,
+          "longitudes": 40,
+          "planar_uv": true
+        },
+        {
+          "part": "crystal_0",
+          "kind": "loft",
+          "material": "salt",
+          "rows": [
+            [
+              18.484078726457852,
+              -16,
+              -10,
+              2.5,
+              2.5
+            ],
+            [
+              20.484078726457852,
+              -16,
+              -10,
+              3.3,
+              3
+            ],
+            [
+              22.484078726457852,
+              -15.7,
+              -10,
+              2.5,
+              2
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.35,
+          "planar_uv": true
+        },
+        {
+          "part": "crystal_1",
+          "kind": "loft",
+          "material": "salt",
+          "rows": [
+            [
+              19.508320738453563,
+              -5,
+              -14,
+              2.5,
+              2.5
+            ],
+            [
+              21.508320738453563,
+              -5,
+              -14,
+              3.3,
+              3
+            ],
+            [
+              23.508320738453563,
+              -4.7,
+              -14,
+              2.5,
+              2
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.35,
+          "planar_uv": true
+        },
+        {
+          "part": "crystal_2",
+          "kind": "loft",
+          "material": "salt",
+          "rows": [
+            [
+              19.810448407651084,
+              8,
+              -12,
+              2.5,
+              2.5
+            ],
+            [
+              21.810448407651084,
+              8,
+              -12,
+              3.3,
+              3
+            ],
+            [
+              23.810448407651084,
+              8.3,
+              -12,
+              2.5,
+              2
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.35,
+          "planar_uv": true
+        },
+        {
+          "part": "crystal_3",
+          "kind": "loft",
+          "material": "salt",
+          "rows": [
+            [
+              18.499399738709045,
+              18,
+              -7,
+              2.5,
+              2.5
+            ],
+            [
+              20.499399738709045,
+              18,
+              -7,
+              3.3,
+              3
+            ],
+            [
+              22.499399738709045,
+              18.3,
+              -7,
+              2.5,
+              2
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.35,
+          "planar_uv": true
+        },
+        {
+          "part": "crystal_4",
+          "kind": "loft",
+          "material": "salt",
+          "rows": [
+            [
+              18.685843514076247,
+              -19,
+              3,
+              2.5,
+              2.5
+            ],
+            [
+              20.685843514076247,
+              -19,
+              3,
+              3.3,
+              3
+            ],
+            [
+              22.685843514076247,
+              -18.7,
+              3,
+              2.5,
+              2
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.35,
+          "planar_uv": true
+        },
+        {
+          "part": "crystal_5",
+          "kind": "loft",
+          "material": "salt",
+          "rows": [
+            [
+              21.618950038622252,
+              -7,
+              0,
+              2.5,
+              2.5
+            ],
+            [
+              23.618950038622252,
+              -7,
+              0,
+              3.3,
+              3
+            ],
+            [
+              25.618950038622252,
+              -6.7,
+              0,
+              2.5,
+              2
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.35,
+          "planar_uv": true
+        },
+        {
+          "part": "crystal_6",
+          "kind": "loft",
+          "material": "salt",
+          "rows": [
+            [
+              21.76469987995045,
+              5,
+              2,
+              2.5,
+              2.5
+            ],
+            [
+              23.76469987995045,
+              5,
+              2,
+              3.3,
+              3
+            ],
+            [
+              25.76469987995045,
+              5.3,
+              2,
+              2.5,
+              2
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.35,
+          "planar_uv": true
+        },
+        {
+          "part": "crystal_7",
+          "kind": "loft",
+          "material": "salt",
+          "rows": [
+            [
+              19.201541574482984,
+              17,
+              5,
+              2.5,
+              2.5
+            ],
+            [
+              21.201541574482984,
+              17,
+              5,
+              3.3,
+              3
+            ],
+            [
+              23.201541574482984,
+              17.3,
+              5,
+              2.5,
+              2
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.35,
+          "planar_uv": true
+        },
+        {
+          "part": "crystal_8",
+          "kind": "loft",
+          "material": "salt",
+          "rows": [
+            [
+              18.677616055585965,
+              -12,
+              13,
+              2.5,
+              2.5
+            ],
+            [
+              20.677616055585965,
+              -12,
+              13,
+              3.3,
+              3
+            ],
+            [
+              22.677616055585965,
+              -11.7,
+              13,
+              2.5,
+              2
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.35,
+          "planar_uv": true
+        },
+        {
+          "part": "crystal_9",
+          "kind": "loft",
+          "material": "salt",
+          "rows": [
+            [
+              19.74679434480896,
+              0,
+              14,
+              2.5,
+              2.5
+            ],
+            [
+              21.74679434480896,
+              0,
+              14,
+              3.3,
+              3
+            ],
+            [
+              23.74679434480896,
+              0.3,
+              14,
+              2.5,
+              2
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.35,
+          "planar_uv": true
+        },
+        {
+          "part": "crystal_10",
+          "kind": "loft",
+          "material": "salt",
+          "rows": [
+            [
+              19.261506907846133,
+              11,
+              12,
+              2.5,
+              2.5
+            ],
+            [
+              21.261506907846133,
+              11,
+              12,
+              3.3,
+              3
+            ],
+            [
+              23.261506907846133,
+              11.3,
+              12,
+              2.5,
+              2
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.35,
+          "planar_uv": true
+        }
+      ],
+      "attachments": [
+        {
+          "part": "salt",
+          "target": "paper",
+          "witness": [
+            27.5,
+            0,
+            14
+          ]
+        },
+        {
+          "part": "crystal_0",
+          "target": "salt",
+          "witness": [
+            -16,
+            -10,
+            19.484078726457852
+          ]
+        },
+        {
+          "part": "crystal_1",
+          "target": "salt",
+          "witness": [
+            -5,
+            -14,
+            20.508320738453563
+          ]
+        },
+        {
+          "part": "crystal_2",
+          "target": "salt",
+          "witness": [
+            8,
+            -12,
+            20.810448407651084
+          ]
+        },
+        {
+          "part": "crystal_3",
+          "target": "salt",
+          "witness": [
+            18,
+            -7,
+            19.499399738709045
+          ]
+        },
+        {
+          "part": "crystal_4",
+          "target": "salt",
+          "witness": [
+            -19,
+            3,
+            19.685843514076247
+          ]
+        },
+        {
+          "part": "crystal_5",
+          "target": "salt",
+          "witness": [
+            -7,
+            0,
+            22.618950038622252
+          ]
+        },
+        {
+          "part": "crystal_6",
+          "target": "salt",
+          "witness": [
+            5,
+            2,
+            22.76469987995045
+          ]
+        },
+        {
+          "part": "crystal_7",
+          "target": "salt",
+          "witness": [
+            17,
+            5,
+            20.201541574482984
+          ]
+        },
+        {
+          "part": "crystal_8",
+          "target": "salt",
+          "witness": [
+            -12,
+            13,
+            19.677616055585965
+          ]
+        },
+        {
+          "part": "crystal_9",
+          "target": "salt",
+          "witness": [
+            0,
+            14,
+            20.74679434480896
+          ]
+        },
+        {
+          "part": "crystal_10",
+          "target": "salt",
+          "witness": [
+            11,
+            12,
+            20.261506907846133
+          ]
+        }
+      ],
+      "openings": [
+        {
+          "point": [
+            0,
+            0,
+            29
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "axis_u": [
+            1,
+            0,
+            0
+          ],
+          "axis_v": [
+            0,
+            1,
+            0
+          ],
+          "clearance": 17,
+          "signs": [
+            1
+          ]
+        }
+      ]
+    },
+    "dough": {
+      "root": "dough",
+      "parts": [
+        {
+          "part": "dough",
+          "kind": "organic",
+          "center": [
+            0,
+            0,
+            14
+          ],
+          "radii": [
+            33,
+            27,
+            14
+          ],
+          "material": "dough",
+          "latitudes": 24,
+          "longitudes": 48,
+          "axis_powers": [
+            0.92,
+            0.91,
+            0.8
+          ],
+          "bumps": [],
+          "waves": [],
+          "top_relief": [
+            {
+              "amplitude": 2.7,
+              "center": [
+                -14,
+                -3
+              ],
+              "radii": [
+                9,
+                20
+              ]
+            },
+            {
+              "amplitude": 2.1,
+              "center": [
+                9,
+                1
+              ],
+              "radii": [
+                9,
+                22
+              ]
+            },
+            {
+              "amplitude": -2.2,
+              "center": [
+                -2,
+                4
+              ],
+              "radii": [
+                3.5,
+                17
+              ]
+            },
+            {
+              "amplitude": -1.7,
+              "center": [
+                18,
+                4
+              ],
+              "radii": [
+                3,
+                14
+              ]
+            },
+            {
+              "amplitude": -1.7,
+              "center": [
+                -12,
+                9
+              ],
+              "radii": [
+                3,
+                3
+              ]
+            },
+            {
+              "amplitude": -1.2,
+              "center": [
+                10,
+                12
+              ],
+              "radii": [
+                3,
+                3
+              ]
+            }
+          ]
+        }
+      ],
+      "attachments": [],
+      "openings": []
+    }
+  },
+  "runtime_cases": [
+    {
+      "item_type": 108,
+      "tier": 1
+    },
+    {
+      "item_type": 109,
+      "tier": 1
+    },
+    {
+      "item_type": 110,
+      "tier": 1
+    },
+    {
+      "item_type": 111,
+      "tier": 1
+    },
+    {
+      "item_type": 112,
+      "tier": 1
+    },
+    {
+      "item_type": 113,
+      "tier": 1
+    }
+  ],
+  "scale_policy": "Match owned icon width. Retain native Actor.Scale0.25, collision, normalized tier1 and floor. Presentation dimensions do not change gameplay; sacks and paper are not recoverable containers."
+}

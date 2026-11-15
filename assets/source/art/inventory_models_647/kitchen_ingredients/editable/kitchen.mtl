@@ -1,0 +1,51 @@
+newmtl burlap
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl flour
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl beef
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl fat
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl fish
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl skin
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl paper
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl salt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl potato
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl squash
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl carrot
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl corn
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl dough
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl rind
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl core
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl stem
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png
+newmtl kernel
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/kitchen_ingredients/materials.png

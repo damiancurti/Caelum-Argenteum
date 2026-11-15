@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.49** - 2026-11-14.
+Documentation version: **5.17.50** - 2026-11-14.
+
+## 5.17.50 - Kitchen ingredient models (#743, 2026-11-14)
+
+Added native flour, raw beef, raw hake, vegetables, salt and dough drops,
+preserving original #410 icons and existing material/cooking rules. Retained
+the built-in image_gen atlas, exact prompt/provenance and editable sources.
+Native revisions repaired package UVs, meat/fillet forms, skin separation,
+flour/salt containment and squash/rind overlap; corn has70 closed joined kernels.
+Final97 closed solids,91 contacts, ten opening rays,15,080 projected UV triangles
+and1,483 contained fill vertices pass.17 exports repeat; the final build passes
+876 continuity/control assertions. ASSETS records the qualified six-object
+presentation pair and remaining art limitations. Evidence:
+assets/validation_v5_17_50/evidence/SUMMARY.json.
+CA743-KITCHEN-DROPS-01 originates here and remains pending. No author test is
+removed or accepted. The broader 3D conversion and campaign work continue.
 
 ## 5.17.49 - Hygiene drop models (#741, 2026-11-14)
 

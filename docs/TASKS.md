@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.49** - 2026-11-14.
+Documentation version: **5.17.50** - 2026-11-14.
+
+## #743 - Kitchen ingredient world drops (5.17.50)
+
+Six untiered material identities have closed native candidate models.
+Independent geometry/contact/opening/UV/containment checks,17 repeated outputs
+and876 native continuity/control checks pass. CA743-KITCHEN-DROPS-01 retains
+visual and ordinary inventory/cooking checks; accepted icons and recipes remain
+unchanged. #745 separately tracks the discovered F10 errors in earlier review
+fixtures. Other #647 inventory and character/modular work remain separate.
 
 ## #741 - Hygiene world drops (5.17.49)
 
