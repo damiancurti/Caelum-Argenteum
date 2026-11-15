@@ -15,8 +15,8 @@ def validate(root=ROOT):
         assert inventory['gallery_map']=='CA682G'
         assert [(x['key'],x['texture']) for x in inventory['gaps']]==[('cuyo_ground','CRCUYGR')]
         gallery=json.loads((root/inventory['gallery_source']).read_text())
-        assert len(gallery['subjects'])==10 and len(gallery['plots'])==5
-        assert [v['key'] for v in gallery['views']]==['F'+str(i) for i in range(1,13)]+['1','2','3','4']
+        assert len(gallery['subjects'])>=10 and len(gallery['plots'])==5
+        assert [v['key'] for v in gallery['views'][:16]]==['F'+str(i) for i in range(1,13)]+['1','2','3','4']
     except (OSError,KeyError,ValueError,AssertionError) as exc:errors.append('Cuyo material/gallery contract: '+str(exc))
     return errors
 

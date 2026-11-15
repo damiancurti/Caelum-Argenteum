@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.47** - 2026-11-14.
+Documentation version: **5.17.48** - 2026-11-14.
+
+## 5.17.48 - Basilisco regional display (#739)
+
+The optional five-region CA682G gallery adds the native Basilisco in Pampa
+and Litoral, retaining all previous figures, controls and grounds. Twelve
+figures, eight species, four deterministic fixture files and 163 native
+fresh/reload/idle/walking checks pass. ASSETS records the qualified isolated
+presentation sample. CA739-BASILISCO-GALLERY-01 retains author review;
+campaign placement and broader 3D/campaign work remain incomplete.
 
 ## 5.17.47 - Basilisco native model (#738)
 
