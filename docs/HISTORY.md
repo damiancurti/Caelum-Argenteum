@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.68** - 2026-11-15.
+Documentation version: **5.17.69** - 2026-11-15.
+
+## 5.17.69 - Magic, light, medium and heavy foot armor (#781), 2026-11-15
+
+Delivered four original paired boot world models using owned hollow footwear
+anatomy and unchanged raster sources. All twelve identities and gameplay remain
+unchanged. Seventeen exports repeat; independent checks pass 120 closed
+components, 112 attachments, 40 opening rays, eight shaft-depth and eight
+lining probes. Engine checks pass 1,011 continuity, 236 visual/control and
+236 prior-hand-armor assertions. Twenty final detail views, overview, hand-armor
+overview and both presentation scenes were inspected. A wide magic silhouette,
+solid buckle plates and curved plate intersections were corrected before delivery;
+superseded evidence remains. ASSETS records art limitations and measured intervals.
+Evidence: assets/validation_v5_17_69/evidence/SUMMARY.json.
+CA781-FOOT-ARMOR-01 originates here and remains pending. No author check was
+accepted or removed. The broader V5.16/3D request remains unfinished.
 
 ## 5.17.68 - Magic, light, medium and heavy hand armor (#779), 2026-11-15
 

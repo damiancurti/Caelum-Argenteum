@@ -1,0 +1,16 @@
+{
+  "issue": 781,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "method": "Original closed boot pairs adapt the existing owned hollow footwear anatomy with original soles, heels and exposed lining. Original armor cap/strap/trim/cloth shapes reuse owned leather, metal, gold and a fully opaque blue sample from the original magic-boot icon. No raster generation/edit.",
+  "references": [
+    "src/graphics/caelum/icons/ca_boots.png",
+    "src/graphics/caelum/icons/ca_boots_light.png",
+    "src/graphics/caelum/icons/ca_boots_medium.png",
+    "src/graphics/caelum/icons/ca_boots_heavy.png"
+  ],
+  "limitations": [
+    "Simplified caps, straps, buckles, trim and static blue cloth; fixed paired pose; omitted fine ornament; no worn modular fitting or author acceptance."
+  ],
+  "iterations": "Independent geometry checks caught a magic-boot pair 2.65 source-scale pixels wider than its effective sprite. A 3% horizontal fit of that pair brings the model within the unchanged artwork envelope; collision and scale remain unchanged. Native review also replaced solid buckle plates with open frames/pins and increased curved shin-plate subdivisions/clearance, attaching raised gold marks to the plates instead of hiding them against the underlying upper."
+}
