@@ -1168,3 +1168,6 @@ assets/validation_v5_17_72/*.py text eol=lf
 assets/validation_v5_17_72/*.json text eol=lf
 assets/validation_v5_17_72/evidence/** -text -diff
 src/caelum/data/quadruped_combat.modeldef text eol=lf
+
+/assets/validation_v5_17_73/*.py text eol=lf
+/assets/validation_v5_17_73/evidence/** -text -diff

@@ -1,0 +1,48 @@
+{
+  "issue": 790,
+  "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+  "runtime_sha256": "4c9aa95dead81c6f55729701dbef8803d3412eeb9fc12b0f6d508c20a5122e77",
+  "materials_sha256": null,
+  "fixture_sha256": "11bd3b7e9c38604782ad4a5395246967fee01dee9049450bfde5c7d27954db25",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 61,
+      "expected_assertions": 61
+    },
+    {
+      "phase": "reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 126,
+      "expected_assertions": 126
+    }
+  ],
+  "captures": {
+    "ao_ao.png": "411f33595c8e9a4fd1c13df6058431f428d5119fe62007d113e317b4fddf85c1",
+    "basilisco-litoral.png": "425021395e696919ccd70857ef436fa36dc740ad81dc3c41adfa1fab5a256542",
+    "basilisco-pampa.png": "50e9f7bf3ece299e6067be37f38d33f1f28c12a2f5f735b65bad7d1f30d8d6fe",
+    "coquena.png": "9540198d24d38f4fe4376630803e41812a85fba37b4765704d0275fac87ee844",
+    "cuyo-tiles.png": "c4e1d5ce0c6913d74dc05b124cdb066b4867a48fd71f870806a49dc29aa69310",
+    "cuyo-yastay.png": "41f42e27140814c000fbbc3eeab8769d203733f4279cdd5a3a40c3682c962247",
+    "familiar.png": "7ef4c946b9e6712e83a37182f5293e8407c55a30201f158e1713df81bc04a6be",
+    "litoral-tiles.png": "c9ec25364ad03552e9a0ff39c2ff76eaf8b2bdf1cd9d766066b8540da5033727",
+    "litoral.png": "ee43331862dabeccb1303fec0ac2b07dc3ba8e33c5023a40809ac3d9b2c4cf4a",
+    "mikilo.png": "b352b7efb944d6028b51165b625a5c298f855c97ce556c07255068dfc184653e",
+    "noa-tiles.png": "6dfe9052a5da67c85cb1e177af3e330d7d01f0f1756cc75f313b8f114b73f536",
+    "noa.png": "ae6b73f3aed771a7dea344f94509f2318977a1efcdbd72a6a060d53227813ffa",
+    "overview.png": "9e35ce636540d90f728a3df645ff994f1d1e27cc1c57a3252e6fa62d4e78dbfb",
+    "pampa-tiles.png": "58f96a40c3408e670cf5746b16abbc6973f0bc197d34505e2fd8e3ce25b99d12",
+    "pampa.png": "b921b0481b710b6eb55afa304062130b4b0586471e0597e8a644a28a1d5ae949",
+    "reload.png": "9e35ce636540d90f728a3df645ff994f1d1e27cc1c57a3252e6fa62d4e78dbfb",
+    "selva-tiles.png": "a91556c9d7b3dfb011708f84f5ca4c285f81b836918a186ce6d9964a87ecf04c",
+    "selva.png": "5fa20e3c25f4e7d30a92bab7dc1c11b4f9a7ce23ffa65c8f8a8e0c23c40fe607",
+    "yasi-litoral.png": "4ad18658664782e49a4b851c663a119b3280d5bca04bf00158a13469750ed067",
+    "yastay-noa.png": "afc3d32c1acd6698f3363ffc3b95867bec5b474e9b44b7e7fdeecd35cc56849e"
+  }
+}

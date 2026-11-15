@@ -1,6 +1,42 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.72** - 2026-11-15.
+Documentation version: **5.17.73** - 2026-11-15.
+
+## 5.17.73 - Familiar and Ao Ao regional inspection (#790)
+
+The optional CA682G gallery adds the native Familiar on the approved Northwest
+Argentina plot and Ao Ao in Selva. Fourteen figures cover ten species across
+five existing grounds. Keys7/8 inspect the new figures; the twelve prior positions,
+eighteen controls and four-boundary crossing path remain exact. The source stays
+assets/source/art/regional_gallery_682/GALLERY.json; regenerate with
+assets/validation_v5_17_73/build_gallery.py. No production model, texture, map,
+encounter, balance, saved field or actor behavior changes.
+
+All approved associations and nonoverlapping native bodies pass. Four fixture
+outputs repeat byte-for-byte. Source hash changes refresh Cuyo700 and Pampa/NOA682
+INVENTORY/EXPORT metadata and two CA709G provenance pins. All five generated
+material resources remain exact; the CA709G layout is unchanged. The native
+engine passes61 fresh and126 reload/idle/walking assertions. Both added closeups,
+overview, NOA/Selva ground repeats, reloaded overview and presentation scene were
+inspected. Earlier unchanged artwork retains its evidence. Friendly/passive
+native figures advance existing idle states; only this diagnostic observer's
+footstep noise is suppressed. Production perception and speed remain unchanged.
+
+One700-tic overview cohort observes 1576.72 queue presents/s,
+p95 0.8202ms, p99 0.9466ms,
+maximum 1.2676ms. Windows11 Pro26200,
+Ryzen9 5950X/32GB/RTX3070Ti, GZDoom4.14.2 Vulkan1280x720, uncapped/no VSync,
+background unpaused,5% audio. This distant-overview sample does not establish
+comparison gains, close-up cost, repeatability, GPU/display timing or campaign
+and crowded-map performance. All18,564 package entries match src; only two
+release diagnostics differ from the #787 package.
+
+Evidence: assets/validation_v5_17_73/evidence/SUMMARY.json.
+CA790-QUADRUPED-GALLERY-01 retains author framing, ground-transition and walking
+review. CA787-QUADRUPEDS-01 separately retains model art and ordinary combat
+review. All earlier author checks remain pending. Thirty-five of56 provisional
+catalogue models, other characters, modular style/fitting, unauthored V5.16
+progression and siege performance remain unfinished.
 
 ## 5.17.72 - Familiar and Ao Ao quadruped candidates (#787)
 

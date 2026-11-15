@@ -1,6 +1,16 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.72** - 2026-11-15.
+Documentation version: **5.17.73** - 2026-11-15.
+
+## 5.17.73 - Quadruped regional gallery (#790, 2026-11-15)
+
+Added Familiar/NOA and Ao Ao/Selva to optional CA682G. Preserved twelve previous
+figures, eighteen controls, all five grounds and the crossing path. Refreshed
+only dependent source/manifest hashes, with all production artwork unchanged.
+Four fixture files repeat; native fresh/reload/idle/walking passes61/126 checks.
+ASSETS records the qualified700-tic overview presentation sample. Evidence:
+assets/validation_v5_17_73/evidence/SUMMARY.json. CA790-QUADRUPED-GALLERY-01
+originates here and remains pending. No prior author check was removed.
 
 ## 5.17.72 - #787 Familiar and Ao Ao models (2026-11-15)
 

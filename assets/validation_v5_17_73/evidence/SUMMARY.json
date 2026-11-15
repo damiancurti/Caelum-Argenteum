@@ -1,0 +1,227 @@
+{
+  "issue": 790,
+  "parent_issue": 463,
+  "version": "5.17.73",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Optional CA682G adds Familiar on the approved NOA ground and Ao Ao on Selva. Fourteen figures, ten species, five plots and twenty controls. Prior twelve figures, eighteen controls and four-boundary crossing path remain exact.",
+  "runtime": {
+    "sha256": "4c9aa95dead81c6f55729701dbef8803d3412eeb9fc12b0f6d508c20a5122e77",
+    "source_entries": 18564,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "bce035906abe541f93bed3aef4eeac349c738063fa28fb3636a5490724c9ebe8",
+    "changed_resources": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_gallery_files": 4,
+    "repeat_byte_identical": true,
+    "approved_allocations_complete": true,
+    "nonoverlapping_native_bodies": true,
+    "exact_model_and_material_reuse": true,
+    "dependency_proof": {
+      "700": {
+        "native_files_unchanged": 2,
+        "non_hash_design_unchanged": true
+      },
+      "682": {
+        "native_files_unchanged": 3,
+        "non_hash_design_unchanged": true
+      },
+      "709": {
+        "metadata_only_refreshed_sources": [
+          "assets/source/art/regional_gallery_682/GALLERY.json",
+          "assets/source/art/regional_gallery_682/EXPORT.json"
+        ],
+        "layout_unchanged": true
+      }
+    },
+    "project_validation_passed": true
+  },
+  "native": {
+    "issue": 790,
+    "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+    "runtime_sha256": "4c9aa95dead81c6f55729701dbef8803d3412eeb9fc12b0f6d508c20a5122e77",
+    "materials_sha256": null,
+    "fixture_sha256": "11bd3b7e9c38604782ad4a5395246967fee01dee9049450bfde5c7d27954db25",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 61,
+        "expected_assertions": 61
+      },
+      {
+        "phase": "reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 126,
+        "expected_assertions": 126
+      }
+    ],
+    "captures": {
+      "ao_ao.png": "411f33595c8e9a4fd1c13df6058431f428d5119fe62007d113e317b4fddf85c1",
+      "basilisco-litoral.png": "425021395e696919ccd70857ef436fa36dc740ad81dc3c41adfa1fab5a256542",
+      "basilisco-pampa.png": "50e9f7bf3ece299e6067be37f38d33f1f28c12a2f5f735b65bad7d1f30d8d6fe",
+      "coquena.png": "9540198d24d38f4fe4376630803e41812a85fba37b4765704d0275fac87ee844",
+      "cuyo-tiles.png": "c4e1d5ce0c6913d74dc05b124cdb066b4867a48fd71f870806a49dc29aa69310",
+      "cuyo-yastay.png": "41f42e27140814c000fbbc3eeab8769d203733f4279cdd5a3a40c3682c962247",
+      "familiar.png": "7ef4c946b9e6712e83a37182f5293e8407c55a30201f158e1713df81bc04a6be",
+      "litoral-tiles.png": "c9ec25364ad03552e9a0ff39c2ff76eaf8b2bdf1cd9d766066b8540da5033727",
+      "litoral.png": "ee43331862dabeccb1303fec0ac2b07dc3ba8e33c5023a40809ac3d9b2c4cf4a",
+      "mikilo.png": "b352b7efb944d6028b51165b625a5c298f855c97ce556c07255068dfc184653e",
+      "noa-tiles.png": "6dfe9052a5da67c85cb1e177af3e330d7d01f0f1756cc75f313b8f114b73f536",
+      "noa.png": "ae6b73f3aed771a7dea344f94509f2318977a1efcdbd72a6a060d53227813ffa",
+      "overview.png": "9e35ce636540d90f728a3df645ff994f1d1e27cc1c57a3252e6fa62d4e78dbfb",
+      "pampa-tiles.png": "58f96a40c3408e670cf5746b16abbc6973f0bc197d34505e2fd8e3ce25b99d12",
+      "pampa.png": "b921b0481b710b6eb55afa304062130b4b0586471e0597e8a644a28a1d5ae949",
+      "reload.png": "9e35ce636540d90f728a3df645ff994f1d1e27cc1c57a3252e6fa62d4e78dbfb",
+      "selva-tiles.png": "a91556c9d7b3dfb011708f84f5ca4c285f81b836918a186ce6d9964a87ecf04c",
+      "selva.png": "5fa20e3c25f4e7d30a92bab7dc1c11b4f9a7ce23ffa65c8f8a8e0c23c40fe607",
+      "yasi-litoral.png": "4ad18658664782e49a4b851c663a119b3280d5bca04bf00158a13469750ed067",
+      "yastay-noa.png": "afc3d32c1acd6698f3363ffc3b95867bec5b474e9b44b7e7fdeecd35cc56849e"
+    }
+  },
+  "presentation": {
+    "issue": 790,
+    "scope": "One isolated regional gallery cohort; no comparison, repeatability or campaign acceptance.",
+    "baseline_sha256": "4c9aa95dead81c6f55729701dbef8803d3412eeb9fc12b0f6d508c20a5122e77",
+    "runtime_sha256": "4c9aa95dead81c6f55729701dbef8803d3412eeb9fc12b0f6d508c20a5122e77",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "regional-materials",
+        "pid": 21368,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 355471199.4317,
+          "END": 355491210.2783
+        },
+        "fixture_sha256": "11bd3b7e9c38604782ad4a5395246967fee01dee9049450bfde5c7d27954db25",
+        "bench_sha256": "db471b2cf7558fde31633a03401c5adad534018fb95ae26d014d269592132015",
+        "passed": true,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571341428571426,
+          "p50_ms": 28.57,
+          "p95_ms": 29.0357,
+          "p99_ms": 29.1686,
+          "max_ms": 29.3992
+        },
+        "presentation": {
+          "pid": 21368,
+          "trace_sha256": "29febc4040ec87aab83a87a67c3cb2531d847d6b1630837467d0b06bac62f9d8",
+          "rows": 38070,
+          "scene_presents": 27609,
+          "mean_present_fps": 1576.7238641019692,
+          "present_intervals": {
+            "samples": 27608,
+            "mean_ms": 0.6342264633443313,
+            "p50_ms": 0.6110000014305115,
+            "p95_ms": 0.8202000260353088,
+            "p99_ms": 0.9466000199317932,
+            "max_ms": 1.2675999999046326
+          },
+          "native_call_duration": {
+            "samples": 27609,
+            "mean_ms": 0.06875172235294834,
+            "p50_ms": 0.06040000915527344,
+            "p95_ms": 0.09670001268386841,
+            "p99_ms": 0.12240004539489746,
+            "max_ms": 0.35839998722076416
+          }
+        }
+      }
+    ]
+  },
+  "reviewed": "Two added closeups, expanded overview, NOA/Selva ground repeats, reloaded overview and presentation cohort. Identical prior model/ground bytes reuse their existing evidence.",
+  "dependencies": "Cuyo700 INVENTORY refreshes only the CA682G source hash and regenerates its manifest;682 refreshes the resulting700 export pin and manifest. All five native material bytes remain exact. CA709G provenance refreshes those two borrowed source pins; its layout and generated behavior are unchanged.",
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Optional diagnostic display, not campaign placement or population rules. No gameplay, balance, save schema or routine actor scan added.",
+    "One700-tic distant-overview cohort measures queue presentation, not GPU/display timing, repeatability, comparison, close-up cost or campaign/crowd acceptance.",
+    "Fresh/save/reload applies to this isolated fixture, not migration of older optional gallery checkpoints.",
+    "Friendly/passive subjects advance native idle states; only diagnostic observer noise is suppressed. Native speed and production perception are unchanged.",
+    "CA787-QUADRUPEDS-01 retains model art/ordinary-combat review; CA790-QUADRUPED-GALLERY-01 retains regional fixture review. All prior author checks remain pending.",
+    "No new imagery or meshes; all production models/materials are byte-identical. Other inventory, characters, modular equipment and the V5.16 campaign remain incomplete. No PK3/WAD/IWAD, executable, DLL or save is committed."
+  ],
+  "files": {
+    "GALLERY_MANIFEST.json": "377f63f92f05d719df7f679e98d1379043a597746816a4d3cc416289a783bfb9",
+    "issue790-build01.log": "4e6d88dcefbd83866724fc5139facfb3b5187702c9d639f8a0f423674deb77e4",
+    "issue790-dependency-proof.json": "8cf5719d3477e29b5a09b00c656a7443b2efb9d86aa0202428d91cae653d65d1",
+    "issue790-previous-gallery.json": "f66ad63f0fc56835403161cd9cd0041d513d0006ae34be22fb0f18ca72fafad1",
+    "issue790-repeat-final.json": "006939db9751c7e9e740ca7de5dfe35089370d583e8f8c5b4cf86cae352215b0",
+    "native/ao_ao.png": "411f33595c8e9a4fd1c13df6058431f428d5119fe62007d113e317b4fddf85c1",
+    "native/basilisco-litoral.png": "425021395e696919ccd70857ef436fa36dc740ad81dc3c41adfa1fab5a256542",
+    "native/basilisco-pampa.png": "50e9f7bf3ece299e6067be37f38d33f1f28c12a2f5f735b65bad7d1f30d8d6fe",
+    "native/coquena.png": "9540198d24d38f4fe4376630803e41812a85fba37b4765704d0275fac87ee844",
+    "native/cuyo-tiles.png": "c4e1d5ce0c6913d74dc05b124cdb066b4867a48fd71f870806a49dc29aa69310",
+    "native/cuyo-yastay.png": "41f42e27140814c000fbbc3eeab8769d203733f4279cdd5a3a40c3682c962247",
+    "native/familiar.png": "7ef4c946b9e6712e83a37182f5293e8407c55a30201f158e1713df81bc04a6be",
+    "native/fixture-source/MAPINFO.txt": "015398f03aa8d078a9d9248228ff4770d2332e5d09bf0de87ae56c6d3cb6c34b",
+    "native/fixture-source/ZSCRIPT.txt": "16d0153f594882db7ab84f390cdf5da2ac31fdf4fb19619cbb2766a659013c1b",
+    "native/fresh-process.log": "8c5d53e7e64169a04eb99a9fa533890003809a9bb971b3bbaa3e8ad1153d0ef6",
+    "native/fresh.cfg": "5ab3ef40163d11695f41362fa411ef5352b8ec469dbefb126ceac89fb4707291",
+    "native/fresh.log": "49ed393b8993d9e8d1009cb7d20e21526573635cfe781b3a03ba977a2499379c",
+    "native/gallery.zs": "edcf442a3a9eae8da51d79c23daa1ff04c1ee0045f192433cfa97fa05b375f44",
+    "native/GALLERY_MANIFEST.json": "377f63f92f05d719df7f679e98d1379043a597746816a4d3cc416289a783bfb9",
+    "native/litoral-tiles.png": "c9ec25364ad03552e9a0ff39c2ff76eaf8b2bdf1cd9d766066b8540da5033727",
+    "native/litoral.png": "ee43331862dabeccb1303fec0ac2b07dc3ba8e33c5023a40809ac3d9b2c4cf4a",
+    "native/mikilo.png": "b352b7efb944d6028b51165b625a5c298f855c97ce556c07255068dfc184653e",
+    "native/noa-tiles.png": "6dfe9052a5da67c85cb1e177af3e330d7d01f0f1756cc75f313b8f114b73f536",
+    "native/noa.png": "ae6b73f3aed771a7dea344f94509f2318977a1efcdbd72a6a060d53227813ffa",
+    "native/overview.png": "9e35ce636540d90f728a3df645ff994f1d1e27cc1c57a3252e6fa62d4e78dbfb",
+    "native/pampa-tiles.png": "58f96a40c3408e670cf5746b16abbc6973f0bc197d34505e2fd8e3ce25b99d12",
+    "native/pampa.png": "b921b0481b710b6eb55afa304062130b4b0586471e0597e8a644a28a1d5ae949",
+    "native/reload-process.log": "23d42d84d95f4e1999e317ae2412d1e7acf5a45479e257deb876fadecfb021e2",
+    "native/reload.cfg": "3fb2f93afbd8fb7d1e92f88f08ba0fcbe62465c2409ac43b5716d79b719e5eff",
+    "native/reload.log": "53f622b46ac461f51e6df82b683ecc15b30eb977997196821ac3e3dc85fedae6",
+    "native/reload.png": "9e35ce636540d90f728a3df645ff994f1d1e27cc1c57a3252e6fa62d4e78dbfb",
+    "native/RESULTS.json": "3d63585d67df2b827a41f61699c9df569fa72a31216aab8d230c6edecba5b317",
+    "native/selva-tiles.png": "a91556c9d7b3dfb011708f84f5ca4c285f81b836918a186ce6d9964a87ecf04c",
+    "native/selva.png": "5fa20e3c25f4e7d30a92bab7dc1c11b4f9a7ce23ffa65c8f8a8e0c23c40fe607",
+    "native/session.ini": "40811af8ba56cf7133a608c98f9ea3e13d064c8c9b08eb5a7e4f92bcc67a6427",
+    "native/TEXTMAP.txt": "a02a2243b19412edc767aabcd06d9aa7e9ba997fbf063730d6d1457912f68411",
+    "native/yasi-litoral.png": "4ad18658664782e49a4b851c663a119b3280d5bca04bf00158a13469750ed067",
+    "native/yastay-noa.png": "afc3d32c1acd6698f3363ffc3b95867bec5b474e9b44b7e7fdeecd35cc56849e",
+    "presentation/regional-materials/commands.cfg": "91a227051d3d24fb6aad5465a0109d6900ac0d6829faa33a77d37b649d354c8a",
+    "presentation/regional-materials/engine.log": "0e4cdb569b8edc1a79ed3d51c714306102f097e060fb4f517f17482345ca4f13",
+    "presentation/regional-materials/fixture-source/MAPINFO.txt": "015398f03aa8d078a9d9248228ff4770d2332e5d09bf0de87ae56c6d3cb6c34b",
+    "presentation/regional-materials/fixture-source/ZSCRIPT.txt": "16d0153f594882db7ab84f390cdf5da2ac31fdf4fb19619cbb2766a659013c1b",
+    "presentation/regional-materials/gallery.zs": "edcf442a3a9eae8da51d79c23daa1ff04c1ee0045f192433cfa97fa05b375f44",
+    "presentation/regional-materials/GALLERY_MANIFEST.json": "377f63f92f05d719df7f679e98d1379043a597746816a4d3cc416289a783bfb9",
+    "presentation/regional-materials/presents.csv": "29febc4040ec87aab83a87a67c3cb2531d847d6b1630837467d0b06bac62f9d8",
+    "presentation/regional-materials/process.log": "b739e6c3832ea6e3fc092116830d46df311aa6aed7d04bdd72aa7584a27ee18e",
+    "presentation/regional-materials/scene.png": "9e35ce636540d90f728a3df645ff994f1d1e27cc1c57a3252e6fa62d4e78dbfb",
+    "presentation/regional-materials/session.ini": "d71d69afac94bf621c0cf2843140db918babe4fdf377767099d4a086a896d0d2",
+    "presentation/regional-materials/TEXTMAP.txt": "a02a2243b19412edc767aabcd06d9aa7e9ba997fbf063730d6d1457912f68411",
+    "presentation/RESULTS.json": "bc4fe4cda3b9d82a41334fadd1b01ca18a2daa6e45f7d0c7d17d4e3f7edb2306",
+    "validation-final.json": "8968f2d88abc1ee0239ed78aedf9ed91f564f887e7f4530102ea2c102a7979be"
+  }
+}
