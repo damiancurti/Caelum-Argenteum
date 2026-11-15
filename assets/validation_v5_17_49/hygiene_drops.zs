@@ -111,7 +111,7 @@ class CA741HygieneEvents : EventHandler
             if(Drops.Size()==0)return;
             if(e.Name=="ca741_detail"){DetailIndex=e.Args[0];DetailAngle=e.Args[1];}
             if(e.Name=="ca741_next")DetailIndex=(DetailIndex+1)%3;
-            if(e.Name=="ca741_rotate")DetailAngle=DetailAngle==90?160:DetailAngle==160?225:DetailAngle==225?270:DetailAngle==30?0:90;
+            if(e.Name=="ca741_rotate")DetailAngle=DetailAngle==90?160:DetailAngle==160?225:DetailAngle==225?270:DetailAngle==270?0:90;
             if(DetailIndex<0 || DetailIndex>=3)return;
             static const double extents[]={DETAIL_EXTENTS};static const double heights[]={DETAIL_HEIGHTS};
             for(int i=0;i<Drops.Size();i++){Drops[i].bInvisible=i!=DetailIndex;Drops[i].bNOGRAVITY=false;Drops[i].Vel=(0,0,0);Drops[i].SetOrigin(((i%3-1)*44,(i/3)*50,0),false);}

@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.50** - 2026-11-14.
+Documentation version: **5.17.51** - 2026-11-14.
+
+## 5.17.51 - Review controls corrected (#745)
+
+Three diagnostic review rooms now reach the raised underside with F10.
+The native regression reproduces26 failures before the correction and passes
+all78 checks afterward. No gameplay or art changes; existing author checks and
+the broader inventory, character, modular and campaign work remain pending.
 
 ## 5.17.50 - Kitchen ingredient drop models (#743)
 

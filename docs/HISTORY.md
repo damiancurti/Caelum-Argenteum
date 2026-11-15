@@ -1,6 +1,16 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.50** - 2026-11-14.
+Documentation version: **5.17.51** - 2026-11-14.
+
+## 5.17.51 - Restore review underside controls (#745, 2026-11-14)
+
+Repaired F10 terminal comparisons in #731, #733 and #741 diagnostic fixtures.
+The original native event cycles reproduce26 failures across78 checks;
+the corrected cycles pass78. Representative before/after views were inspected.
+Prior direct-angle captures remain valid. ASSETS and CA-KP-245 record the test
+boundary. Evidence: assets/validation_v5_17_51/evidence/SUMMARY.json.
+Existing author IDs, originating versions and pending status are preserved.
+No author test was accepted or removed; production gameplay/art is unchanged.
 
 ## 5.17.50 - Kitchen ingredient models (#743, 2026-11-14)
 
