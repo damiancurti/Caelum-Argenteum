@@ -1,0 +1,4 @@
+Model CaelumWeaponPickup { Path "models/caelum/inventory/axes" Model 0 "hatchet.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CHAT A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/axes" Model 0 "axe.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CAXE A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/axes" Model 0 "war_axe.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CWAX A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/axes" Model 0 "pickaxe.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CPIK A 0 0 }

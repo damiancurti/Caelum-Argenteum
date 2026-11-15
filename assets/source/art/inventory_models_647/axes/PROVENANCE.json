@@ -1,0 +1,11 @@
+{
+  "issue": 765,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "authority": "Author requires native3D inventory drops; continued implementation by separate issue.",
+  "method": "Original closed handle/head sculptures use unchanged owned #723 metal, #761 wood, #647 leather and #755 red texture pixels. No raster generation or editing. #89 owned pickaxe source provenance is retained separately.",
+  "limitations": [
+    "Simplified head profiles, grips, collars and hidden back surfaces require author review.",
+    "World display only; first-person pose, combat, mining/chopping, tool rules, tiers and saves are unchanged."
+  ]
+}

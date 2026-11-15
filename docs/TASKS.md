@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.60** - 2026-11-15.
+Documentation version: **5.17.61** - 2026-11-15.
+
+## #765 - Axe/tool drops (5.17.61)
+
+Four exact model bindings cover hatchet, axe, war axe and hybrid pickaxe.
+Sixteen repeated outputs, 845 continuity and 198 visual/control checks pass.
+Twenty detail views were inspected. CA765-AXE-DROPS-01 retains art, ordinary
+menus/combat/crafting and chopping/mining checks. Other physical weapon drops,
+remaining bestiary, #736 modular visual proposals and V5.16 remain pending.
 
 ## #763 - Physical blade drops (5.17.60)
 
