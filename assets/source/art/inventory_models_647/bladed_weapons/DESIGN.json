@@ -1880,7 +1880,7 @@
     "src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
     "src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
     "src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1",
-    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
     "src/caelum/world/CaelumSecretPassage.zs": "93ea9d818194830719027edc43f05dbfcf04306ba3a93073bd53b6bcf18cb247",
     "src/caelum/quests/CaelumMainM00RonnieTrial.zs": "069883e1d45396a0669b2a878a73f25211cf5d6a22f1117e1df69815ac76021d",
     "src/caelum/data/CaelumSupportImplementData.zs": "a4b0381a2bf2f7ada432c44d81d6c987307a89172c5ce7b240486e8bbe406ad6",
@@ -1890,7 +1890,7 @@
     "src/graphics/caelum/icons/ca_dagger.png": "30ac5bf3f2f4d0b30910cd2f3cbe23b4a168ba34cbcc496539c25bc6f0e02c82",
     "src/graphics/caelum/icons/ca_machete.png": "58b2cbf5d8aad9a1201b9050ecd8cb4f9758be756d452b544eea72dd1da91a5c",
     "src/graphics/caelum/first_person/v5/greatsword_icon_t1_source.png": "6f435da5cdb388a78095a7c0609086b679e7c629294ae0935e4fcca5b7fca996",
-    "src/TEXTURES": "b18f53438055b5d13e985e550629be4578c2d9852888756d3eca9a8f3f58218e"
+    "src/TEXTURES": "fe101bef213d375ca30330deb1f01a3c595caf63d753ed9e5ba505318fc3c6ad"
   },
   "dimensions_note": "Corrected under #769: effective TEXTURES aliases override the legacy physical sprite lumps used by the first candidate. World envelopes now follow current icon alpha and native sprite scale; greatsword RGB desaturation/blend leaves that alpha envelope unchanged. Original shared quality state, collision and actor scale remain unchanged. Simplified fittings, static tassels, plain steel without painted blade stains, omitted fine ornament/axe chain and hidden surfaces still require author review.",
   "correction_issue": 769

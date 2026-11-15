@@ -1,0 +1,23 @@
+{
+  "issue": 775,
+  "scope": "Check the medium-armor alias and native save/pickup continuity for #775.",
+  "baseline_sha256": "3433d35f16181933a159ca9039810926a52e8e9a93962361bdc834db4614b841",
+  "runtime_sha256": "ab26a3d671dcc8dafd43d10caa127369386286b7978e72632f729256803d8ece",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "fixture_sha256": "923a46b1487591b8ee49cd92b89c023570aa04453e1fa6698b1fa445bf16853a",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "errors": [
+        "CA775 FAIL potion world identity and quantity"
+      ],
+      "assertions": 154,
+      "expected_assertions": 157,
+      "completions": [
+        "1"
+      ],
+      "passed": false
+    }
+  ]
+}

@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.65** - 2026-11-15.
+Documentation version: **5.17.66** - 2026-11-15.
+
+## 5.17.66 - Correct medium-armor world identity (#775)
+
+Medium torso armor now resolves its original armor image through a separate
+sprite identifier. The Anima potion keeps CAMD. Existing saves refresh the
+world appearance through the existing Tick path; no schema or balance changes.
+All meshes/images remain byte-identical. Static alias checks and 1,193 native
+continuity assertions pass; author check CA775-ARMOR-ALIAS-01 remains pending.
+The audit found sixteen armor world states awaiting 3D models. Remaining
+characters, modular equipment and V5.16 are also unfinished.
 
 ## 5.17.65 - Four ranged-weapon world models (#773)
 

@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.65** - 2026-11-15.
+Documentation version: **5.17.66** - 2026-11-15.
+
+## 5.17.66 - #775 alias corrected; armor models remain pending
+
+The duplicate armor/potion CAMD binding is separated: medium torso armor uses
+CMAR with its existing image, while the potion remains CAMD. Fifteen armor cases
+and one potion stack pass 1,193 native checks, including old-save/reload/rollback.
+Evidence: assets/validation_v5_17_66/evidence/SUMMARY.json. Author check:
+CA775-ARMOR-ALIAS-01. The discovery audit resolves all 315 legal weapon and 342
+material cases but identifies sixteen armor states without model bindings;
+it is not a native visibility or gameplay certification. Implement those models
+in focused patches and verify ancestor-only default cases separately. Other
+characters, modular equipment and V5.16 remain unfinished.
 
 ## 5.17.65 - #773 ranged drops delivered; author review pending
 
