@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.62** - 2026-11-15.
+Documentation version: **5.17.63** - 2026-11-15.
+
+## 5.17.63 - Effective weapon-reference correction (#769, 2026-11-15)
+
+Corrected the seven #763/#765 candidates that used physical sprite images
+overridden by TEXTURES. Current aliases/scales and distinctive grip/tassel
+colors now guide their simplified art; the pickaxe remains byte-identical.
+Corrected three coplanar axe caps found in oblique review. Independent checks,
+31 repeated outputs,2,188 applicable native continuity and 510 visual/control
+checks pass; 35 changed-model detail views were inspected. ASSETS qualifies
+the simplified art and runtime01 blade evidence reused after the isolated
+three-mesh cap correction. CA-KP-247 records source-resolution guidance.
+Evidence: assets/validation_v5_17_63/evidence/SUMMARY.json.
+CA769-EFFECTIVE-WEAPON-REFERENCES-01 originates here and remains pending;
+no previous author check was accepted or removed. Broader work is unfinished.
 
 ## 5.17.62 - Polearm/tool drops (#767, 2026-11-15)
 

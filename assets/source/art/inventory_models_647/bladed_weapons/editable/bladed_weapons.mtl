@@ -13,3 +13,6 @@ map_Kd src/models/caelum/inventory/magic_bases/materials.png
 newmtl wood
 Kd 1 1 1
 map_Kd src/models/caelum/inventory/effigies/wood.png
+newmtl red
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png

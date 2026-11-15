@@ -1,0 +1,45 @@
+{
+  "blades": {
+    "files": 15,
+    "byte_identical": true,
+    "sha256": {
+      "manifest.json": "e374d12063470838b1307e3a3053b46690e3fe80b7d84e1aea0356b6f7b59788",
+      "preview.pk3": "146e7af6a01fd6d76b38731dc0baa2a4ad380fe0dcb8dc3764d8c7d84cd107a4",
+      "editable/bladed_weapons.mtl": "286e916a3b8f241d507f6f9d06ce43181f9b59d080d745744bcfaf345c084a15",
+      "editable/dagger.obj": "3759b0edceedd1dbd662fe4c3f40cf4a3c4453a40a0bd774be13bd6bd0a00003",
+      "editable/greatsword.obj": "da356e3055ecd2312962fc0b8e0aeb1d0e4b6d68a40c676906141f688fd522fa",
+      "editable/machete.obj": "36cfef7beee0cfbfb2b5be9c5afda665539564b613d4a8fc7bddddc0919a1f68",
+      "editable/sword.obj": "acb8a667b290effa82f3ac39f049ae78421c4828dcae14d27ee9c1b6da3aef58",
+      "caelum/data/inventory_bladed_weapons.modeldef": "047b6304b7ebd71267a293917304b2c91fc060056c777eff8fa16690779f7de6",
+      "editable/src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1",
+      "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+      "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+      "models/caelum/inventory/bladed_weapons/dagger.md3": "b39719551ef46546eff4b3e31ae29340c4fef5f2be5de0246e572c6a6ad43645",
+      "models/caelum/inventory/bladed_weapons/greatsword.md3": "ebba688aba8be39c02fa534b9f7c24db6656a418210da2d79e234b5b1e25a59d",
+      "models/caelum/inventory/bladed_weapons/machete.md3": "76c01a6085dece070ee24d17f1d8a7b42322746a1e37d07c396325d864a71136",
+      "models/caelum/inventory/bladed_weapons/sword.md3": "b8cfa644764c7074a3ecf45fe6c8d48b847cf357857c4729ec8ac3c5d8a75481"
+    }
+  },
+  "axes": {
+    "files": 16,
+    "byte_identical": true,
+    "sha256": {
+      "manifest.json": "8dc52d0adb79e814e59e18a775bba0ca0b42a806d6e3d6298b7a1a9a3fb15a88",
+      "preview.pk3": "68fbd9c211148c9f39f6ea33a9899cdc0eef16ad8b23004a5af26f5d454b12b0",
+      "editable/axe.obj": "a48a8d2d4d653cb4cbaafac01b7e6bc5f2bebc9446c750cf632ed4015a406128",
+      "editable/axes.mtl": "f32c548f44e8df9db19d35313298a97ad92a9a376a41a9b689177b02603d9789",
+      "editable/hatchet.obj": "c62bd54afadb0a2c1ea55bd4e21265a9d428f96426100daf8edc74de6ccedad0",
+      "editable/pickaxe.obj": "80a9c30b638c1924ebc870ab79931df091418fca23569cc57a761d965eba1eb7",
+      "editable/war_axe.obj": "cf8a6bece7ce598aa95267a0c076c37c27b06cfc5fc2de14e12f165ec6bcd00b",
+      "caelum/data/inventory_axes.modeldef": "04ddd888e848925c1bec6438abe650e9bd48f426f786752b8abe4ee486da501b",
+      "editable/src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+      "editable/src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1",
+      "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+      "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+      "models/caelum/inventory/axes/axe.md3": "ab8f3e0592561f2efb30d1660f0440f2816e9bbf2b125eb44838ec3fdb32b990",
+      "models/caelum/inventory/axes/hatchet.md3": "fe9a12fa11b675aa3fa1d12ca36828a1fb930dc0fcbe7be4bab3c1c13bc63e27",
+      "models/caelum/inventory/axes/pickaxe.md3": "1f83989efa5fbc3171b086bc600908652ad0be868e8a613c3bb02cfbd5a6a149",
+      "models/caelum/inventory/axes/war_axe.md3": "ce8477a7da14899cfb17ff119ffc4828f22c3a957a614d32145f4e2c03a28898"
+    }
+  }
+}

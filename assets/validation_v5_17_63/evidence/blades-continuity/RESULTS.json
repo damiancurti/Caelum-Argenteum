@@ -1,0 +1,77 @@
+{
+  "issue": 763,
+  "kind": "bladed_weapons",
+  "scope": "Native pickup/toss, quantity and saved ownership for bladed_weapons; no normal menu or author acceptance.",
+  "baseline_sha256": "08be9d369f4c35c72c133e1ed44288edbbde09d5b8b30adaf8f46845fb4bf954",
+  "runtime_sha256": "ef21100739dd544857a4daa40589716e847d8573296bc466b4910a90e015ac34",
+  "model_sha256": null,
+  "fixture_sha256": "c784978159d9b7b01a71a0de2f06c06fd15f9c590bf72bf28fa2f3240e3c19e5",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 305
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 249
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 305
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 242
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 242
+    }
+  ],
+  "captures": {
+    "baseline.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+    "candidate-0.png": "4b344970f652e244f92af26f61b82ce7d92dc026794bb8fa3b7ba3c465281d86",
+    "candidate-1.png": "f7af94f03484600c26289e8f20a1668d7cecb839e6cf30527807ca795e19d35c",
+    "candidate-2.png": "ec092e93e92378107f8a9e2cafac28dc801dc1fbccad1e83993bc187033000e5",
+    "candidate-3.png": "4b344970f652e244f92af26f61b82ce7d92dc026794bb8fa3b7ba3c465281d86",
+    "candidate-5.png": "4b344970f652e244f92af26f61b82ce7d92dc026794bb8fa3b7ba3c465281d86",
+    "candidate-6.png": "4b344970f652e244f92af26f61b82ce7d92dc026794bb8fa3b7ba3c465281d86",
+    "candidate-7.png": "5ea61143b2a6c2949cdae1d324970ccd31efd819c9e673c7efa0880eeece0215",
+    "detail-0-0.png": "a5dff209dab5cb9bb64fb883c019ab2a7e4ed852a071990c5e3dd9a1729932c6",
+    "detail-0-160.png": "125b5685dcf0a6ab12287a2dfaa11a8376fd33020401fe1015d9189e2b05d7ef",
+    "detail-0-225.png": "8646041d58f607b74e5d10323ad3867eecedaa7ef5a9a817166d68558ed7ae3c",
+    "detail-0-270.png": "ef196f1c396bfa9459473a038c0236d260345c188bd55d5ea3348d28603897ec",
+    "detail-0-90.png": "2ed52b9026d2fd306f04d5903a4f1cc3606164e9763a6d90f7a50af0fe8f6c3a",
+    "detail-1-0.png": "65a5eafeb8d7a6e1dd7ce237762d09f8ffaa4c8c193dbc70178f41e2844dfa95",
+    "detail-1-160.png": "47a1329b9704733dd573b4850d45d6d7060d3df2a1f94d3eba447983b1ddd15e",
+    "detail-1-225.png": "b7b8279f053a1fddb1ba33a8e508a68fd7083103c63fb8539d573e95b13790de",
+    "detail-1-270.png": "05e2d056b99dbebbae10fd918391d21a4a04ce3bbf625da320568f7fe783018d",
+    "detail-1-90.png": "ae3ab4f97bbad51dda6988f9eeb1456b7988de7da954f6e829c8f2d8d51d15a5",
+    "detail-2-0.png": "e3388bc8dc8d182b8bdf5f2cf0efb61e603da27796d0ce25cbac390d7f8eb6cd",
+    "detail-2-160.png": "a001fc1b82ce1edc938181ed5436dd9c3a56351ff2480f6e3ea1de31bad64bc1",
+    "detail-2-225.png": "8ade09b79207845525ade16bcebee2c8236ddaa732e0350d57c514d68fa88c92",
+    "detail-2-270.png": "203dd9cfcf23953034059f8db117e147d3a2720a4803e4efa12cf978093a36ff",
+    "detail-2-90.png": "ed6f59f608732ccfe01ed95d6276b1bed84b7663c00cb7296e9b62d3c7d05d95",
+    "detail-3-0.png": "3eb2575d97c6fdd6e21e3c749b1ad38e5b1bccda81d40935d3a8ee49265bd2ad",
+    "detail-3-160.png": "be43ccd24847b301690fd27793e4d1396aa96f89c8b2a859165a8ececaeaddb7",
+    "detail-3-225.png": "aef24daa37306717ff0e2b22f8ee9233d85cf38b08ed91f408d21a5f1af8b26b",
+    "detail-3-270.png": "2963636913fead636f5bac76bf6fdb79ad3f3a9905396521e6e1271ca1b37be9",
+    "detail-3-90.png": "29c7f45b1414e50a4b7c77e37429e02942713f0118c85727ec57da9f19b6b7dc"
+  }
+}

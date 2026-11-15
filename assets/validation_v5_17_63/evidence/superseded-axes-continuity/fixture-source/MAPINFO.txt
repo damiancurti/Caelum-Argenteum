@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA765AxeEvents" }
+map CA455V "Inventory drop inspection" { sky1="CABASKY",0 nointermission }
