@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "files": [
+    "manifest.json",
+    "preview.pk3",
+    "editable/beef.obj",
+    "editable/dough.obj",
+    "editable/fish.obj",
+    "editable/flour.obj",
+    "editable/kitchen.mtl",
+    "editable/salt.obj",
+    "editable/vegetables.obj",
+    "caelum/data/inventory_kitchen_ingredients.modeldef",
+    "models/caelum/inventory/kitchen_ingredients/beef.md3",
+    "models/caelum/inventory/kitchen_ingredients/dough.md3",
+    "models/caelum/inventory/kitchen_ingredients/fish.md3",
+    "models/caelum/inventory/kitchen_ingredients/flour.md3",
+    "models/caelum/inventory/kitchen_ingredients/materials.png",
+    "models/caelum/inventory/kitchen_ingredients/salt.md3",
+    "models/caelum/inventory/kitchen_ingredients/vegetables.md3"
+  ]
+}

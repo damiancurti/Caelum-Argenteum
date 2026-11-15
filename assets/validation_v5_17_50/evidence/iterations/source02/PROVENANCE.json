@@ -1,0 +1,24 @@
+{
+  "issue": 743,
+  "owner": "Dami\u00e1n Curti / Caelum Argenteum",
+  "references": {
+    "flour": "assets/art_source/cooking_ingredients/flour.png",
+    "beef": "assets/art_source/cooking_ingredients/beef.png",
+    "fish": "assets/art_source/cooking_ingredients/fish.png",
+    "vegetables": "assets/art_source/cooking_ingredients/vegetables.png",
+    "salt": "assets/art_source/cooking_ingredients/salt.png",
+    "dough": "assets/art_source/kitchen_dough/dough.png"
+  },
+  "accepted_art": "Five original #410 ingredient sprites accepted under CA410-INGREDIENTS-01 on2026-10-26. Dough is an existing candidate source; its author acceptance is not implied. No icon pixels replaced.",
+  "method": "Closed volumes derived from observed owned ingredient references; thick continuously closed sack/paper walls with actual openings, ingredient clusters, steak fat edge and hake skin. Shared closed geometry and planar bevel UVs. No raster editing.",
+  "generated_images": {
+    "materials.png": {
+      "tool": "built-in image_gen",
+      "prompt": "MATERIALS_PROMPT.json",
+      "original_output": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-c907f6c7-ed42-4893-8d17-d4073cb5db7f.png",
+      "sha256": "a217d7e4b5d5355377429079a36fe1d338bb78a3a25ba7b268b48780a52c9637",
+      "copied_without_raster_edits": true
+    }
+  },
+  "limits": "Six native untiered material identities only. Recipes, preparation/cooking, amounts, lot/provenance behavior, weight, collision, scale and saves stay unchanged. Sacks and wrapping are presentation only. Static art approximation is subject to native and author review."
+}

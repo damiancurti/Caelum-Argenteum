@@ -1,0 +1,513 @@
+{
+  "schema_revision": 1,
+  "issue": 743,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "variants": {
+    "flour": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "sack",
+        "flour"
+      ],
+      "closed_outward_components": 2,
+      "vertices": 12672,
+      "triangles": 4224,
+      "surfaces": [
+        {
+          "material": "burlap",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "burlap",
+          "vertices": 1665,
+          "triangles": 555
+        },
+        {
+          "material": "flour",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "flour",
+          "vertices": 2817,
+          "triangles": 939
+        }
+      ],
+      "reference_opaque_bounds": [
+        6,
+        11,
+        122,
+        122
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 116.0,
+      "native_bounds": [
+        {
+          "min": [
+            -57.7095274350636,
+            -45.26191479499468,
+            0.0
+          ],
+          "max": [
+            58.290472564936394,
+            44.69695030866246,
+            87.43673149089253
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.808179234390933,
+        "floor": -1.1692965895914564
+      }
+    },
+    "beef": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "steak",
+        "fat_edge"
+      ],
+      "closed_outward_components": 2,
+      "vertices": 13824,
+      "triangles": 4608,
+      "surfaces": [
+        {
+          "material": "beef",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "beef",
+          "vertices": 2817,
+          "triangles": 939
+        },
+        {
+          "material": "fat",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "fat",
+          "vertices": 2817,
+          "triangles": 939
+        }
+      ],
+      "reference_opaque_bounds": [
+        6,
+        42,
+        122,
+        122
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 116.0,
+      "native_bounds": [
+        {
+          "min": [
+            -57.11189772084224,
+            -32.077359241929415,
+            0.0
+          ],
+          "max": [
+            58.88810227915774,
+            31.81616489582213,
+            30.807709889199053
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.5883853799373526,
+        "floor": -0.00022074462513543835
+      }
+    },
+    "fish": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "skin",
+        "fillet"
+      ],
+      "closed_outward_components": 2,
+      "vertices": 2802,
+      "triangles": 2208,
+      "surfaces": [
+        {
+          "material": "fish",
+          "vertices": 2016,
+          "triangles": 672
+        },
+        {
+          "material": "skin",
+          "vertices": 786,
+          "triangles": 1536
+        }
+      ],
+      "reference_opaque_bounds": [
+        6,
+        63,
+        122,
+        122
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 116.0,
+      "native_bounds": [
+        {
+          "min": [
+            -57.24675324675325,
+            -22.5974025974026,
+            0.0
+          ],
+          "max": [
+            58.753246753246756,
+            22.5974025974026,
+            15.818181818181818
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.5064935064935066,
+        "floor": 0.7000000000000002
+      }
+    },
+    "vegetables": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "squash_rind",
+        "squash_flesh",
+        "potato",
+        "carrot",
+        "corn",
+        "corn_end",
+        "carrot_stem",
+        "kernel_0_0",
+        "kernel_0_1",
+        "kernel_0_2",
+        "kernel_0_3",
+        "kernel_0_4",
+        "kernel_0_5",
+        "kernel_0_6",
+        "kernel_0_7",
+        "kernel_0_8",
+        "kernel_0_9",
+        "kernel_1_0",
+        "kernel_1_1",
+        "kernel_1_2",
+        "kernel_1_3",
+        "kernel_1_4",
+        "kernel_1_5",
+        "kernel_1_6",
+        "kernel_1_7",
+        "kernel_1_8",
+        "kernel_1_9",
+        "kernel_2_0",
+        "kernel_2_1",
+        "kernel_2_2",
+        "kernel_2_3",
+        "kernel_2_4",
+        "kernel_2_5",
+        "kernel_2_6",
+        "kernel_2_7",
+        "kernel_2_8",
+        "kernel_2_9",
+        "kernel_3_0",
+        "kernel_3_1",
+        "kernel_3_2",
+        "kernel_3_3",
+        "kernel_3_4",
+        "kernel_3_5",
+        "kernel_3_6",
+        "kernel_3_7",
+        "kernel_3_8",
+        "kernel_3_9",
+        "kernel_4_0",
+        "kernel_4_1",
+        "kernel_4_2",
+        "kernel_4_3",
+        "kernel_4_4",
+        "kernel_4_5",
+        "kernel_4_6",
+        "kernel_4_7",
+        "kernel_4_8",
+        "kernel_4_9",
+        "kernel_5_0",
+        "kernel_5_1",
+        "kernel_5_2",
+        "kernel_5_3",
+        "kernel_5_4",
+        "kernel_5_5",
+        "kernel_5_6",
+        "kernel_5_7",
+        "kernel_5_8",
+        "kernel_5_9",
+        "kernel_6_0",
+        "kernel_6_1",
+        "kernel_6_2",
+        "kernel_6_3",
+        "kernel_6_4",
+        "kernel_6_5",
+        "kernel_6_6",
+        "kernel_6_7",
+        "kernel_6_8",
+        "kernel_6_9"
+      ],
+      "closed_outward_components": 77,
+      "vertices": 16264,
+      "triangles": 19544,
+      "surfaces": [
+        {
+          "material": "potato",
+          "vertices": 1178,
+          "triangles": 2304
+        },
+        {
+          "material": "squash",
+          "vertices": 1188,
+          "triangles": 396
+        },
+        {
+          "material": "carrot",
+          "vertices": 248,
+          "triangles": 480
+        },
+        {
+          "material": "rind",
+          "vertices": 1188,
+          "triangles": 396
+        },
+        {
+          "material": "core",
+          "vertices": 3072,
+          "triangles": 1024
+        },
+        {
+          "material": "stem",
+          "vertices": 530,
+          "triangles": 1024
+        },
+        {
+          "material": "kernel",
+          "vertices": 4096,
+          "triangles": 5284
+        },
+        {
+          "material": "kernel",
+          "vertices": 4096,
+          "triangles": 7392
+        },
+        {
+          "material": "kernel",
+          "vertices": 701,
+          "triangles": 1244
+        }
+      ],
+      "reference_opaque_bounds": [
+        6,
+        30,
+        122,
+        122
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 116.0,
+      "native_bounds": [
+        {
+          "min": [
+            -61.25256472798524,
+            -33.66170560084401,
+            0.0
+          ],
+          "max": [
+            54.74743527201476,
+            32.860236419871526,
+            50.06501082779821
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.6029383619449526,
+        "floor": -0.0004065975345017847
+      }
+    },
+    "salt": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "paper",
+        "salt",
+        "crystal_0",
+        "crystal_1",
+        "crystal_2",
+        "crystal_3",
+        "crystal_4",
+        "crystal_5",
+        "crystal_6",
+        "crystal_7",
+        "crystal_8",
+        "crystal_9",
+        "crystal_10"
+      ],
+      "closed_outward_components": 13,
+      "vertices": 9840,
+      "triangles": 3280,
+      "surfaces": [
+        {
+          "material": "paper",
+          "vertices": 3456,
+          "triangles": 1152
+        },
+        {
+          "material": "salt",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "salt",
+          "vertices": 2289,
+          "triangles": 763
+        }
+      ],
+      "reference_opaque_bounds": [
+        6,
+        28,
+        122,
+        122
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 116.0,
+      "native_bounds": [
+        {
+          "min": [
+            -58.0,
+            -50.20937527824095,
+            0.0
+          ],
+          "max": [
+            58.0,
+            50.20937527824095,
+            58.82006312611856
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.8416769224316658,
+        "floor": -2.2102869285528164
+      }
+    },
+    "dough": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "dough"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 1178,
+      "triangles": 2304,
+      "surfaces": [
+        {
+          "material": "dough",
+          "vertices": 1178,
+          "triangles": 2304
+        }
+      ],
+      "reference_opaque_bounds": [
+        6,
+        37,
+        122,
+        122
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 116.0,
+      "native_bounds": [
+        {
+          "min": [
+            -58.0,
+            -47.45548279596756,
+            0.0
+          ],
+          "max": [
+            58.0,
+            47.45548279596756,
+            52.15364430837363
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.760772533854062,
+        "floor": 0.0
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "881926f789b54537b6e252081d767bb9be674afaef1584ce0eb7a9e5d362f498",
+    "PROVENANCE.json": "a472abc4d11270092f5f6b193ee4b6d6ff9eabc65c71c59876d98448d619af30",
+    "MATERIALS_PROMPT.json": "e3bb4037193efbedacb2c24ded2c2efcee6d57d04cfd22e545827fe563cb86e7"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/kitchen/flour.png": "c6416ed7786f7e246dd2a17ac75ee24285dd45e585320e5ce7fcedb35ba8fb4d",
+    "assets/art_source/cooking_ingredients/flour.png": "9e43730d2b862bf5ee672f6e11d701ebd5312660cd2748621c23157675ab7da9",
+    "src/graphics/caelum/icons/kitchen/beef.png": "9a3db9cdc181a8d53693839a1d9ccb34152065e4264146865e46af1b2fa67a0f",
+    "assets/art_source/cooking_ingredients/beef.png": "6f25dd4e295d96ff6c14f9c15fc3e31c96654ba3a72b48b77a3e2e92b08e884f",
+    "src/graphics/caelum/icons/kitchen/fish.png": "a39d4fd7f83d8055cc2e45fa3188a4abe56657f0ff0914d6cc6a54f35034a8d9",
+    "assets/art_source/cooking_ingredients/fish.png": "acb807dfaae913b3233b7b19a2c1dea2837eb12e67e3f64d7a2cf16a6d715fac",
+    "src/graphics/caelum/icons/kitchen/vegetables.png": "d658753a05cb84736ee774164f9d53589e9776e6094e99117d126220afa730a2",
+    "assets/art_source/cooking_ingredients/vegetables.png": "7fe007e94b88272e28933b8c84ab174273f446bdb10c8ba806e7cbee26bcb898",
+    "src/graphics/caelum/icons/kitchen/salt.png": "0d34f55bcdddc490f9afeda4ce0d8856f847f1956a81777fa81cd5cbe91ad520",
+    "assets/art_source/cooking_ingredients/salt.png": "655582191cf2c39b286edbd33cba71a4cf4e0d8a10a38682eea9e17d999e2f2a",
+    "src/graphics/caelum/icons/kitchen/dough.png": "af11f95c33cd354a6a9dde681d062c6fbef96d1ba935f84c1cf0db069514beb9",
+    "assets/art_source/kitchen_dough/dough.png": "2f943563130b818e50fb0847a04a8e5f89a52d5dc8904c74f97a4e6d2c594d59",
+    "src/caelum/data/CaelumCookingData.zs": "8ba3dc105b33a6923979723d90b842843f297ae408e628bd43d76e560a949a66",
+    "src/caelum/data/CaelumMealData.zs": "5e9a81e5db1f7984a2ecde447031104b9fc6140888434c1c84881b59aa175517",
+    "assets/art_source/cooking_ingredients/PROMPTS.json": "8c19c3b8c301a269cf935fffff9a2c106620d0c272f5d3d829aba77ef872c11a",
+    "assets/art_source/cooking_ingredients/EXPORT.json": "c6b75f44cd2414c3986442848ceba0a8cc74c0a536fb9785a6e76dc512409a1d",
+    "assets/art_source/kitchen_dough/PROMPT.json": "d9af090f83eae8ff6349fd63c60d94cc14412fe4f9cae68a63ad637d95ad277e",
+    "assets/art_source/kitchen_dough/EXPORT.json": "728471f7e2c44b6a595c201e9216b1e94c7d5acc31c15cc32ca8975ed1d9575f",
+    "assets/generators/generate_inventory_hygiene_models.py": "b85d6bac14b35faf4cc2f232c6c0e2fa8d9e2f6d5633400adc929f452a2c0a8e",
+    "assets/generators/generate_inventory_weapon_components_models.py": "49db0176aef05d21f21f7a356e58c4623c285eac15d2d1537bc8ddc8ec227958",
+    "assets/generators/generate_inventory_chains_models.py": "cd9296836666c78bd555c76e3de56d0ccc345c40ecb94a15d5e78f159719f94f",
+    "assets/generators/generate_peuchen_model.py": "0f1873c9fd1da0be0f965ea73ff2cc5c35dc25a35ac9da2df4692b50cef30812"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_kitchen_ingredients_models.py": "82d2b26de948d90ce8abe6a2ee0b0bbc52d8f89a956aa610668221f63c67e746"
+  },
+  "sha256": {
+    "models/caelum/inventory/kitchen_ingredients/flour.md3": "3c6873be7518b40499819f5dbba6ecff3724ddfb746a86049d74c15ae483c1c7",
+    "editable/flour.obj": "9775a4a54b5597af108358aaab241da552d87e92573b39781c048d2747c7e94c",
+    "models/caelum/inventory/kitchen_ingredients/beef.md3": "38991fb6b0fb1dd4ddd0f370a0263d88d7b07c7a22fe4a5b12ceee8a959c550b",
+    "editable/beef.obj": "b131e127bb8a965274f08524134e3b0a75d8f20a140adcad891d6f9525a44002",
+    "models/caelum/inventory/kitchen_ingredients/fish.md3": "1cda61099bdbe0c01d404559f96cfd913d4ec5d7f549a84ec205c37f56db17d5",
+    "editable/fish.obj": "5629ebff947e7d647a1d5b904683c1b809ac971ccf50a8a547fb530d47ce6582",
+    "models/caelum/inventory/kitchen_ingredients/vegetables.md3": "f23c04989654fdc9bec17a6450498e12d4897bae3105fb0db3bdf75cc53c9020",
+    "editable/vegetables.obj": "de9fbb1450422123aee9d189254d77d55d3fdfcc1a29407d565f6e38d45d1426",
+    "models/caelum/inventory/kitchen_ingredients/salt.md3": "a833f5e888902ca71cc548b109c79f590579e329dbe1ade350133a93b835fa09",
+    "editable/salt.obj": "870e89d93f7afdb07b5e3ccfc00e7c8609d9c18032b9aea11a4547e3da79eff1",
+    "models/caelum/inventory/kitchen_ingredients/dough.md3": "61908fe0ad32efe2ce9f79d2aeefd34e9708f90d1d11c62819072d8e5ef85d96",
+    "editable/dough.obj": "7df33b68ed1313cdd7e3f4178c2a3989cbbbc88ad401ca3cd2580d297012004f",
+    "editable/kitchen.mtl": "d21e54a1fd4f8abd600353ed650616d63f35e45320d40150b55c1878cbeaa0bb",
+    "caelum/data/inventory_kitchen_ingredients.modeldef": "ca08a8e9eade4ec44093b87e91895583e1918b212254f8fbbc605d0aef01089a",
+    "models/caelum/inventory/kitchen_ingredients/materials.png": "a217d7e4b5d5355377429079a36fe1d338bb78a3a25ba7b268b48780a52c9637"
+  }
+}
