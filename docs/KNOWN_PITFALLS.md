@@ -4,6 +4,24 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-246 - Keep aggregate fixture counts specific to their phase
+
+Status/evidence: ENGINE-OBSERVED and STATIC-VERIFIED, #749, 2026-11-14.
+The #743 shared inventory runner copied kitchen-only navigation counts into
+the hide branch. The hide fixture was unchanged: all163 visual assertions and
+181 old-save assertions passed, while the Python wrapper expected170/188.
+This produced false negatives without a native error. Compare actual fixture
+events and per-phase assertions before changing a shared aggregate contract;
+do not delete native Check calls to match a mistaken expected total.
+
+One hide-only source replacement restores the original163/181 contract.
+Before/after use the same GZDoom4.14.2/Vulkan package and identical fixture
+checksums.163 visual plus869 continuity checks pass afterward, including the
+previously failing old-save phase. Other branches, including kitchen/kit
+navigation probes, are byte-identical. Evidence:
+assets/validation_v5_17_53/evidence/SUMMARY.json. This is diagnostic coverage,
+not author art or ordinary inventory acceptance.
+
 ## CA-KP-245 - Direct view captures do not verify interactive navigation
 
 Status/evidence: ENGINE-OBSERVED and STATIC-VERIFIED, #745, 2026-11-14.
