@@ -1,0 +1,294 @@
+{
+  "issue": 801,
+  "parent_issue": 463,
+  "version": "5.17.79",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Optional CA682G adds Mulanima/NOA and Chancho de Lata/Pampa/Litoral. Eighteen figures, thirteen species, five plots and twenty-four controls. Prior fifteen figures, twenty-one controls and four-boundary crossing path remain exact.",
+  "runtime": {
+    "sha256": "85e741fefa72cedb48265a83ecaab977f2804327480d59e856f5146af1fc8822",
+    "source_entries": 18580,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "9baec78a48d422cf9a947640b289c2af27915bcee624f166b5fdca16b3fac828",
+    "changed_resources": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_gallery_files": 4,
+    "repeat_byte_identical": true,
+    "approved_allocations_complete": true,
+    "nonoverlapping_native_bodies": true,
+    "exact_model_and_material_reuse": true,
+    "dependency_proof": {
+      "700": {
+        "native_files_unchanged": 2,
+        "non_hash_design_unchanged": true
+      },
+      "682": {
+        "native_files_unchanged": 3,
+        "non_hash_design_unchanged": true
+      },
+      "709": {
+        "metadata_only_refreshed_sources": [
+          "assets/source/art/regional_gallery_682/GALLERY.json",
+          "assets/source/art/regional_gallery_682/EXPORT.json"
+        ],
+        "layout_unchanged": true
+      }
+    },
+    "project_validation_passed": true
+  },
+  "native": {
+    "issue": 801,
+    "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+    "runtime_sha256": "85e741fefa72cedb48265a83ecaab977f2804327480d59e856f5146af1fc8822",
+    "materials_sha256": null,
+    "fixture_sha256": "db2dde11793ed1d1d83985feb85ca0ec5e8568c6f7d5dd018a5acc5a574bf77a",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 77,
+        "expected_assertions": 77
+      },
+      {
+        "phase": "reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 158,
+        "expected_assertions": 158
+      }
+    ],
+    "captures": {
+      "ao_ao.png": "afe1e69b39bfb16a7cfa0639ad455cf29ae741ec5082fe029d8f763a14db3b46",
+      "basilisco-litoral.png": "35085582175ed5a64d4999b2f0f68b8d5948e6a00f7eeeae57559936c2348245",
+      "basilisco-pampa.png": "76a54a3962405cb4181066796999e29e54ba018083e66909bbc96e91bdcd5b52",
+      "chancho-litoral.png": "7e96d6543daf481657c2fd2be1410f7f903e88a39b7a2bdc1ea3fc9b0bad96eb",
+      "chancho-pampa.png": "a88c80dbb43d68c1f25a013d85a486cf5ef33e22352bc1d6d4d33d475288b700",
+      "coquena.png": "221b68e390558ee064abb491c4bf89e13c0eae4222af8c5a3b14d4681f41c374",
+      "cuyo-tiles.png": "c4e1d5ce0c6913d74dc05b124cdb066b4867a48fd71f870806a49dc29aa69310",
+      "cuyo-yastay.png": "3a0285b575004420d6097d2293120cf404092d5af41fe5aa95d7b2308a0799e7",
+      "familiar.png": "cacce5f12f5201f0f59f55c68b8a2ec178a1e6ee3277f26722a5440c201819ce",
+      "litoral-tiles.png": "c9ec25364ad03552e9a0ff39c2ff76eaf8b2bdf1cd9d766066b8540da5033727",
+      "litoral.png": "7ed46861abeb76019d671c0086ac3424f2acdf31599d7faa7f83eb44a46b044e",
+      "mikilo.png": "7f207b9344263451f7f091b3981bfd044af3194251e226ac3a33ad15413c7b1a",
+      "mulanima.png": "e40b60ef4fcc636f2cd17be166da27292725e3da779134f8e2a72aa8d4fac579",
+      "noa-tiles.png": "6dfe9052a5da67c85cb1e177af3e330d7d01f0f1756cc75f313b8f114b73f536",
+      "noa.png": "61113c5646f1d5336d28b340d7ba82a6e833fca3ea7004cdf5dcb9fe9bf44544",
+      "overview.png": "473ff4d27e358eee7ba171f1c22c517a70e7986ec9f2ee4d8619c03d9e0af9c2",
+      "pampa-tiles.png": "58f96a40c3408e670cf5746b16abbc6973f0bc197d34505e2fd8e3ce25b99d12",
+      "pampa.png": "24dad35c8d0e7f79c8fb21805811b59792daeb7089cf3933049b9d6dc7feb653",
+      "reload.png": "cb892e3d00259b6928d02444f0066c62d63293e33355fbf894d8827a6d4847e4",
+      "selva-tiles.png": "a91556c9d7b3dfb011708f84f5ca4c285f81b836918a186ce6d9964a87ecf04c",
+      "selva.png": "c798fdf9775f1e957383a93d4f500fbae0cd358683b837a3874c732757cd582d",
+      "teju-jagua.png": "5fcdeccadb3316d2e8b83641abada64bb03074ec143cb5c00916f4a6b82d7100",
+      "yasi-litoral.png": "ff2acf05bba591298a7c39fb3f33085863abd4ac0a49a5e0aefc9288d24cfb2e",
+      "yastay-noa.png": "c64bc937232a03da7e52aaed74ba882a0435aecad14c46d7db977432bc9a9958"
+    }
+  },
+  "presentation": {
+    "issue": 801,
+    "scope": "One isolated regional gallery cohort; no comparison, repeatability or campaign acceptance.",
+    "baseline_sha256": "85e741fefa72cedb48265a83ecaab977f2804327480d59e856f5146af1fc8822",
+    "runtime_sha256": "85e741fefa72cedb48265a83ecaab977f2804327480d59e856f5146af1fc8822",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "regional-materials",
+        "pid": 12988,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 392848558.2507,
+          "END": 392868568.4861
+        },
+        "fixture_sha256": "db2dde11793ed1d1d83985feb85ca0ec5e8568c6f7d5dd018a5acc5a574bf77a",
+        "bench_sha256": "db471b2cf7558fde31633a03401c5adad534018fb95ae26d014d269592132015",
+        "passed": true,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.570933142857143,
+          "p50_ms": 28.5786,
+          "p95_ms": 29.0525,
+          "p99_ms": 29.1909,
+          "max_ms": 29.9116
+        },
+        "presentation": {
+          "pid": 12988,
+          "trace_sha256": "e809de3fc1888d23d67676b2d1985d4f872ff72288da196f0ea1716a732b63b7",
+          "rows": 35529,
+          "scene_presents": 25440,
+          "mean_present_fps": 1452.8568179991703,
+          "present_intervals": {
+            "samples": 25439,
+            "mean_ms": 0.6882990722906674,
+            "p50_ms": 0.6651999950408936,
+            "p95_ms": 0.8447999954223633,
+            "p99_ms": 0.9950000047683716,
+            "max_ms": 1.2844999432563782
+          },
+          "native_call_duration": {
+            "samples": 25440,
+            "mean_ms": 0.06490963445097771,
+            "p50_ms": 0.05940002202987671,
+            "p95_ms": 0.08980000019073486,
+            "p99_ms": 0.12120002508163452,
+            "max_ms": 0.4715999960899353
+          }
+        }
+      }
+    ]
+  },
+  "reviewed": "Three added apparition closeups, expanded overview, retained NOA/Pampa/Litoral grounds, reloaded overview and presentation cohort. Identical prior model/ground bytes reuse their existing evidence.",
+  "dependencies": "Cuyo700 INVENTORY refreshes only the CA682G source hash and regenerates its manifest;682 refreshes the resulting700 export pin and manifest. All five native material bytes remain exact. CA709G provenance refreshes those two borrowed source pins; its layout and generated behavior are unchanged.",
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Optional diagnostic display, not campaign placement or population rules. No gameplay, balance, save schema or routine actor scan added.",
+    "One700-tic distant-overview cohort measures queue presentation, not GPU/display timing, repeatability, comparison, close-up cost or campaign/crowd acceptance.",
+    "Fresh/save/reload applies to this isolated fixture, not migration of older optional gallery checkpoints.",
+    "Friendly/passive subjects advance native idle states; only diagnostic observer noise is suppressed. Native speed and production perception are unchanged.",
+    "CA797-APPARITIONS-01 retains model art/ordinary-combat review; CA801-APPARITIONS-GALLERY-01 retains regional fixture review. All prior author checks remain pending.",
+    "No new imagery or meshes; all production models/materials are byte-identical. Other inventory, characters, modular equipment and the V5.16 campaign remain incomplete. No PK3/WAD/IWAD, executable, DLL or save is committed."
+  ],
+  "files": {
+    "GALLERY_MANIFEST.json": "6902886a3aca2b7a0628825ce2913628ae18a679b3f33a56cee93f65b8dd8880",
+    "issue801-build01.log": "14397219a8119b9b38245175a5beb1f59f9104b30c27823ca11b1c60b83f97d4",
+    "issue801-dependency-proof.json": "8cf5719d3477e29b5a09b00c656a7443b2efb9d86aa0202428d91cae653d65d1",
+    "issue801-previous-gallery.json": "135a43eda211be4bf15b469b5f7f1cc2c84983d067f534a3f246cadd776b950b",
+    "issue801-repeat-final.json": "384958db8d3599387a5cceac536f1491d50667f07597d0df8eca30b8f9de6963",
+    "native/ao_ao.png": "afe1e69b39bfb16a7cfa0639ad455cf29ae741ec5082fe029d8f763a14db3b46",
+    "native/basilisco-litoral.png": "35085582175ed5a64d4999b2f0f68b8d5948e6a00f7eeeae57559936c2348245",
+    "native/basilisco-pampa.png": "76a54a3962405cb4181066796999e29e54ba018083e66909bbc96e91bdcd5b52",
+    "native/chancho-litoral.png": "7e96d6543daf481657c2fd2be1410f7f903e88a39b7a2bdc1ea3fc9b0bad96eb",
+    "native/chancho-pampa.png": "a88c80dbb43d68c1f25a013d85a486cf5ef33e22352bc1d6d4d33d475288b700",
+    "native/coquena.png": "221b68e390558ee064abb491c4bf89e13c0eae4222af8c5a3b14d4681f41c374",
+    "native/cuyo-tiles.png": "c4e1d5ce0c6913d74dc05b124cdb066b4867a48fd71f870806a49dc29aa69310",
+    "native/cuyo-yastay.png": "3a0285b575004420d6097d2293120cf404092d5af41fe5aa95d7b2308a0799e7",
+    "native/familiar.png": "cacce5f12f5201f0f59f55c68b8a2ec178a1e6ee3277f26722a5440c201819ce",
+    "native/fixture-source/MAPINFO.txt": "015398f03aa8d078a9d9248228ff4770d2332e5d09bf0de87ae56c6d3cb6c34b",
+    "native/fixture-source/ZSCRIPT.txt": "1e354b8e7264e4a81daae5e6e41a2da1b84f173c8e7aeed72da8a3fa69b21089",
+    "native/fresh-process.log": "b7a810ac53258e871ebd1fe9a1b67d904c4e2bfe1fe6928a87b2f003106e884e",
+    "native/fresh.cfg": "21536df7d658a10a86ce47196444671f68d18857a38101d6c37906299da2eae2",
+    "native/fresh.log": "78cacb8d4b1512b72200deb07380f7dbdadf1b27d35e7c95a02f92c4cfdffc54",
+    "native/gallery.zs": "2be2b5c71ee3ac272792121156ffaee36a1c1800254e2f2a4c76fcaed7abd849",
+    "native/GALLERY_MANIFEST.json": "6902886a3aca2b7a0628825ce2913628ae18a679b3f33a56cee93f65b8dd8880",
+    "native/litoral-tiles.png": "c9ec25364ad03552e9a0ff39c2ff76eaf8b2bdf1cd9d766066b8540da5033727",
+    "native/litoral.png": "7ed46861abeb76019d671c0086ac3424f2acdf31599d7faa7f83eb44a46b044e",
+    "native/mikilo.png": "7f207b9344263451f7f091b3981bfd044af3194251e226ac3a33ad15413c7b1a",
+    "native/mulanima.png": "e40b60ef4fcc636f2cd17be166da27292725e3da779134f8e2a72aa8d4fac579",
+    "native/noa-tiles.png": "6dfe9052a5da67c85cb1e177af3e330d7d01f0f1756cc75f313b8f114b73f536",
+    "native/noa.png": "61113c5646f1d5336d28b340d7ba82a6e833fca3ea7004cdf5dcb9fe9bf44544",
+    "native/overview.png": "473ff4d27e358eee7ba171f1c22c517a70e7986ec9f2ee4d8619c03d9e0af9c2",
+    "native/pampa-tiles.png": "58f96a40c3408e670cf5746b16abbc6973f0bc197d34505e2fd8e3ce25b99d12",
+    "native/pampa.png": "24dad35c8d0e7f79c8fb21805811b59792daeb7089cf3933049b9d6dc7feb653",
+    "native/reload-process.log": "5a040b543838a06bea13ae52213b6436aed56b501a4ecd6ba206210e5c06363a",
+    "native/reload.cfg": "3fb2f93afbd8fb7d1e92f88f08ba0fcbe62465c2409ac43b5716d79b719e5eff",
+    "native/reload.log": "693c34e6c94659d70286025779292b97b66c2c1d9b9617d4171ce61b8c407fc5",
+    "native/reload.png": "cb892e3d00259b6928d02444f0066c62d63293e33355fbf894d8827a6d4847e4",
+    "native/RESULTS.json": "4bcc9459f14d38a1ee98da36b6f3cc1be37a8e0fc55734facf6929c19d800954",
+    "native/selva-tiles.png": "a91556c9d7b3dfb011708f84f5ca4c285f81b836918a186ce6d9964a87ecf04c",
+    "native/selva.png": "c798fdf9775f1e957383a93d4f500fbae0cd358683b837a3874c732757cd582d",
+    "native/session.ini": "2a71842ae5530978658a4a698e09f61d5bdd99cda572e4934c885f1ebb8d5d64",
+    "native/teju-jagua.png": "5fcdeccadb3316d2e8b83641abada64bb03074ec143cb5c00916f4a6b82d7100",
+    "native/TEXTMAP.txt": "a02a2243b19412edc767aabcd06d9aa7e9ba997fbf063730d6d1457912f68411",
+    "native/yasi-litoral.png": "ff2acf05bba591298a7c39fb3f33085863abd4ac0a49a5e0aefc9288d24cfb2e",
+    "native/yastay-noa.png": "c64bc937232a03da7e52aaed74ba882a0435aecad14c46d7db977432bc9a9958",
+    "presentation/regional-materials/commands.cfg": "91a227051d3d24fb6aad5465a0109d6900ac0d6829faa33a77d37b649d354c8a",
+    "presentation/regional-materials/engine.log": "89c1b7641955a90eb39e44d2b5b78b00f5a0798ed3f35195d2769644f095db64",
+    "presentation/regional-materials/fixture-source/MAPINFO.txt": "015398f03aa8d078a9d9248228ff4770d2332e5d09bf0de87ae56c6d3cb6c34b",
+    "presentation/regional-materials/fixture-source/ZSCRIPT.txt": "1e354b8e7264e4a81daae5e6e41a2da1b84f173c8e7aeed72da8a3fa69b21089",
+    "presentation/regional-materials/gallery.zs": "2be2b5c71ee3ac272792121156ffaee36a1c1800254e2f2a4c76fcaed7abd849",
+    "presentation/regional-materials/GALLERY_MANIFEST.json": "6902886a3aca2b7a0628825ce2913628ae18a679b3f33a56cee93f65b8dd8880",
+    "presentation/regional-materials/presents.csv": "e809de3fc1888d23d67676b2d1985d4f872ff72288da196f0ea1716a732b63b7",
+    "presentation/regional-materials/process.log": "12f4d0fbcc520718dee83121ba42fc141e9c4da61c743c0000358689f571d264",
+    "presentation/regional-materials/scene.png": "473ff4d27e358eee7ba171f1c22c517a70e7986ec9f2ee4d8619c03d9e0af9c2",
+    "presentation/regional-materials/session.ini": "7fac53f4756f3e670cc8a868bec9e5493ade207577477e9048d342533dec070c",
+    "presentation/regional-materials/TEXTMAP.txt": "a02a2243b19412edc767aabcd06d9aa7e9ba997fbf063730d6d1457912f68411",
+    "presentation/RESULTS.json": "f3ffc0bf5fee7801d816baba17b3ddeb384deaff07de2245d47f5ab214260228",
+    "keys01/commands.cfg": "5ac4aa6cf4d683e5db6322b0e2ed1487e6d2986cedf0eb42ccd2b7fd39a1073e",
+    "keys01/engine.log": "ac0bea0651725a2d5363304cabfc1e2fb8f9b18989a79009c4648a74aec6afbc",
+    "keys01/gallery.zs": "2be2b5c71ee3ac272792121156ffaee36a1c1800254e2f2a4c76fcaed7abd849",
+    "keys01/GALLERY_MANIFEST.json": "6902886a3aca2b7a0628825ce2913628ae18a679b3f33a56cee93f65b8dd8880",
+    "keys01/process.log": "d3b12c334b884102b39db577bee70279506742f1079c4b7c93b3adfa6e410a80",
+    "keys01/RESULTS.json": "91c76475b78d91f2145b0a9f4a218174d72bee64dd771f0d486671bd137b91c5",
+    "keys01/session.ini": "f7e68fafcb6ec76c34936e50757345cf720c017209a343c430995b5df0a366ab",
+    "keys01/TEXTMAP.txt": "a02a2243b19412edc767aabcd06d9aa7e9ba997fbf063730d6d1457912f68411",
+    "keys01/fixture-source/ZSCRIPT.txt": "1e354b8e7264e4a81daae5e6e41a2da1b84f173c8e7aeed72da8a3fa69b21089",
+    "keys01/fixture-source/MAPINFO.txt": "015398f03aa8d078a9d9248228ff4770d2332e5d09bf0de87ae56c6d3cb6c34b",
+    "keys02/commands.cfg": "5ac4aa6cf4d683e5db6322b0e2ed1487e6d2986cedf0eb42ccd2b7fd39a1073e",
+    "keys02/engine.log": "c967695f0a85d155d1b8cc81404efe2a12ecb6516d9e7f9c161697022d124f01",
+    "keys02/gallery.zs": "2be2b5c71ee3ac272792121156ffaee36a1c1800254e2f2a4c76fcaed7abd849",
+    "keys02/GALLERY_MANIFEST.json": "6902886a3aca2b7a0628825ce2913628ae18a679b3f33a56cee93f65b8dd8880",
+    "keys02/process.log": "afbdd23b69d6319f5c9599d6300a922f0bad6df1b65810f0effe783f73a58914",
+    "keys02/RESULTS.json": "dd201e3e9c80a75e204b0352407edba7c88d10bc3c4964cb7e73039c6abecece",
+    "keys02/session.ini": "2e82d522a13cc580e5e8bb4989c7914763a45e76c98ac589130807198e934bba",
+    "keys02/TEXTMAP.txt": "a02a2243b19412edc767aabcd06d9aa7e9ba997fbf063730d6d1457912f68411",
+    "keys02/fixture-source/ZSCRIPT.txt": "1e354b8e7264e4a81daae5e6e41a2da1b84f173c8e7aeed72da8a3fa69b21089",
+    "keys02/fixture-source/MAPINFO.txt": "015398f03aa8d078a9d9248228ff4770d2332e5d09bf0de87ae56c6d3cb6c34b",
+    "validation-initial.json": "487309d414eee61ac1bcdecf456f2fae8a600f817c97bf833457010071c13835",
+    "validation-final.json": "9179a2267c1d7ec5ec3ed341688d0c98783dbc94fd2de40446f99a0d3cb695bc"
+  },
+  "key_registration": {
+    "issue": 801,
+    "runtime_sha256": "85e741fefa72cedb48265a83ecaab977f2804327480d59e856f5146af1fc8822",
+    "exit_code": 0,
+    "errors": [],
+    "recorded": [
+      "\"F1\" = \"netevent ca682_view 0\"",
+      "\"F2\" = \"netevent ca682_view 1\"",
+      "\"F3\" = \"netevent ca682_view 2\"",
+      "\"F4\" = \"netevent ca682_view 3\"",
+      "\"F5\" = \"netevent ca682_view 4\"",
+      "\"F6\" = \"netevent ca682_view 5\"",
+      "\"F7\" = \"netevent ca682_view 6\"",
+      "\"F8\" = \"netevent ca682_view 7\"",
+      "\"F9\" = \"netevent ca682_view 8\"",
+      "\"F10\" = \"netevent ca682_view 9\"",
+      "\"F11\" = \"netevent ca682_view 10\"",
+      "\"F12\" = \"netevent ca682_view 11\"",
+      "\"1\" = \"netevent ca682_view 12\"",
+      "\"2\" = \"netevent ca682_view 13\"",
+      "\"3\" = \"netevent ca682_view 14\"",
+      "\"4\" = \"netevent ca682_view 15\"",
+      "\"5\" = \"netevent ca682_view 16\"",
+      "\"6\" = \"netevent ca682_view 17\"",
+      "\"7\" = \"netevent ca682_view 18\"",
+      "\"8\" = \"netevent ca682_view 19\"",
+      "\"9\" = \"netevent ca682_view 20\"",
+      "\"0\" = \"netevent ca682_view 21\"",
+      "\"j\" = \"netevent ca682_view 22\"",
+      "\"k\" = \"netevent ca682_view 23\""
+    ],
+    "missing": [],
+    "passed": true,
+    "scope": "Native bind registration and query; author interactive keypress acceptance remains pending."
+  },
+  "iterations": [
+    "The existing static gallery-key whitelist allowed only F1-F12/digits. Extended it narrowly to j/k for the new views; native registration/query verifies all24 bindings. The first probe parser omitted the quotes GZDoom prints around key names; corrected that parser and retained its earlier report. No runtime package or visual fixture bytes changed."
+  ]
+}
