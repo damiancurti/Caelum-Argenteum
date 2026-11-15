@@ -1,0 +1,15 @@
+newmtl fire
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/essences/fire.png
+newmtl water
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/essences/water.png
+newmtl earth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/essences/earth.png
+newmtl wind
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/essences/wind.png
+newmtl quintessence
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/essences/quintessence.png

@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.53** - 2026-11-14.
+Documentation version: **5.17.54** - 2026-11-15.
+
+## 5.17.54 - Elemental material drop models (#751)
+
+Five existing crafting essences gain native candidate volumes across fifteen
+type/tier cases. Forty closed components, nineteen repeated outputs, 2,172
+installed continuity checks and 413 final visual/control checks pass. ASSETS
+records the presentation pair and art qualifications. CA751-ELEMENTAL-DROPS-01
+retains author visual and ordinary crafting review. These are crafting materials,
+not Tarot essences. Other inventory, character, modular and campaign work remains.
 
 ## 5.17.53 - Hide regression runner repaired (#749)
 

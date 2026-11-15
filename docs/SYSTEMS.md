@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.53** - 2026-11-14.
+Documentation version: **5.17.54** - 2026-11-15.
 
 ## 5.17.43 - Hybrid serpent inspection controls (#729)
 
