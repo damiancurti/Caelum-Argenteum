@@ -1,0 +1,4 @@
+Model CaelumWeaponPickup { Path "models/caelum/inventory/polearms" Model 0 "javelin.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CJAV A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/polearms" Model 0 "spear.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSPR A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/polearms" Model 0 "halberd.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CHAL A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/polearms" Model 0 "utility_staff.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CUST A 0 0 }

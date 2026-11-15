@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.61** - 2026-11-15.
+Documentation version: **5.17.62** - 2026-11-15.
+
+## #767 - Polearm/tool drops (5.17.62)
+
+Four exact states cover javelin, spear, halberd and utility staff. Effective
+world references,16 repeated outputs,853 continuity and199 visual/control
+checks pass;20 detail views and the nozzle close-up were inspected.
+CA767-POLEARM-DROPS-01 retains visual, ordinary menus/combat/throwing/utility
+use checks. #769 corrects earlier sword/axe references. Other physical drops,
+remaining bestiary, #736 modular visual proposals and V5.16 stay pending.
 
 ## #765 - Axe/tool drops (5.17.61)
 

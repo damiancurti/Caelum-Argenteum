@@ -1,0 +1,22 @@
+{
+  "count": 16,
+  "byte_identical": true,
+  "sha256": {
+    "manifest.json": "2bbfe74b7b0c7dc910e7ad08ba63b8fc1935a7a43f7175302ec278afa7ae37f8",
+    "preview.pk3": "ec21d3d83f4d9a2e75d2b50ecbff747913fddb5220db749ef5643c4492771cbc",
+    "editable/halberd.obj": "65b59b00fc6cbd905ae42971bff1af6a9488155f3df04705c0717a4f9d400b80",
+    "editable/javelin.obj": "fdf9bbc6fd0f52d6b6ca4871db81e9375cbf0b39c0802cf2669b4956fc981449",
+    "editable/polearms.mtl": "f98eed1948c85c994c49e25c574f2c9ce087b607f81b399405d6827d49d854eb",
+    "editable/spear.obj": "c08adeec8cfcd279ca94c2d48d1e22b81e298390ee472dfc42b00b839241e664",
+    "editable/utility_staff.obj": "99932494979ccdca5e5c960d106080902960eded1c114e49a378c29eb555497a",
+    "caelum/data/inventory_polearms.modeldef": "d1f837cb3e295398f68ed354a3af6c04bd094ab8389fea6bd00e91ed2447b9e8",
+    "editable/src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "editable/src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "models/caelum/inventory/polearms/halberd.md3": "9412ea1d3a4413eac1ba4eeca46f7acfa57a446c14500376e5ba0c4b132ebe1d",
+    "models/caelum/inventory/polearms/javelin.md3": "5166b267445fa7bfe23d74d745a3794eaf8326c8f3ba2c9ab8b1621cb934939d",
+    "models/caelum/inventory/polearms/spear.md3": "0560ed13b519908f6a4ee56979fc0f864e1aad65057a80c698855e53813f0264",
+    "models/caelum/inventory/polearms/utility_staff.md3": "43ec6167ae51d13a0da406cdeb7064f681b1cfec5af5cfe6612806c983ba6ad5"
+  }
+}

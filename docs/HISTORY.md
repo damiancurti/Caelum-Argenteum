@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.61** - 2026-11-15.
+Documentation version: **5.17.62** - 2026-11-15.
+
+## 5.17.62 - Polearm/tool drops (#767, 2026-11-15)
+
+Added four complete assemblies and exact world bindings. Corrected the
+prototype's legacy polearm references to effective TEXTURES aliases and its
+utility-staff lean to the scaled source envelope. Retained superseded evidence;
+#769 owns earlier sword/axe reference corrections. Sixteen repeated exports,
+independent geometry/UV checks,853 final continuity assertions and199 visual
+checks pass. Twenty final detail views, overview and nozzle close-up were
+inspected. Evidence: assets/validation_v5_17_62/evidence/SUMMARY.json.
+ASSETS records visual/performance qualifications. CA767-POLEARM-DROPS-01
+originates here and remains pending; no author check was accepted or removed.
+Broader3D and V5.16 remain incomplete.
 
 ## 5.17.61 - Axe/tool drops (#765, 2026-11-15)
 
