@@ -1,0 +1,11 @@
+{
+  "issue": 763,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "authority": "Author requests native3D for every inventory drop and continued issue-separated implementation.",
+  "method": "Original closed beveled blade/hilt assemblies use unchanged owned #723 steel/bronze, #755 blue and #761 wood textures. No raster generation or editing.",
+  "limitations": [
+    "Simplified profiles, diagonal standing pickup orientation, generic metal trim and interpreted hidden thickness/back surfaces require author review.",
+    "Original first-person art, gameplay, quest rules and shared quality appearance are preserved."
+  ]
+}

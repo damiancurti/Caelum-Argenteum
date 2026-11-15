@@ -1,6 +1,68 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.59** - 2026-11-15.
+Documentation version: **5.17.60** - 2026-11-15.
+
+## 5.17.60 - Sword, dagger, machete and greatsword drops (#763)
+
+Four original native blade/hilt assemblies replace CSWD, CDAG, CMAC and CGRS
+world drops in CaelumWeaponPickup. The same sword model is explicitly bound
+to CA_LimboRonnieSword and CaelumM01SwordPickup. Six exact bindings cover
+sixteen native cases: twelve normal type/tier combinations, three Ronnie
+sword qualities and the tutorial's enforced T1 sword. Existing shared quality
+appearance, source icons, held/first-person art, essence rules, statistics,
+size, durability, weight, scale/collision, recipes, quest acquisition and
+persistence remain unchanged.
+
+Sources: assets/source/art/inventory_models_647/bladed_weapons. Editable
+OBJ/MTL sources include unchanged original texture copies: #723 steel/bronze,
+#755 blue cloth and #761 wood. No raster edits or new image generation.
+Regenerate with python assets/generators/generate_inventory_bladed_weapons_models.py
+--output build/bladed-weapons --install. Fifteen outputs repeat byte-for-byte.
+The four models total 2,420 vertices and 3,332 triangles, with 24 independently
+closed components and 20 verified attachment witnesses. Topology/winding,
+quantized native faces, opaque material regions, noncollapsed triangle UVs,
+original icon envelopes and floor contact pass independent checks.
+
+The first candidate passed 312 visual/control checks. Narrow blade edges/caps
+then received per-face texture projection so they sample real texture areas.
+All twenty final native front, side, rear and raised underside views plus the
+overview were inspected. Simplified profiles/guards, matte gray steel,
+repeating grain, diagonal standing pickup orientation and interpreted hidden
+thickness/back surfaces remain explicit author-review qualifications. Native
+models do not inherit acceptance from the old 2D sprites.
+
+The initial visual scripts also requested unsupported detail indices4..15;
+the fixture ignored them. Only valid0..3 sets are archived/reviewed. Capture
+bounds were corrected before installed continuity tests, which request the
+four actual designs. This changes test tooling only.
+
+The first old-save run passed all 249 actual checks but failed an incorrect
+259-count expectation. The runner now derives phase totals from the sixteen
+cases; the full sequence was repeated. Raw failed-gate evidence is retained.
+
+Sixteen cases pass 1,343 installed continuity assertions: 305 baseline,
+249 old-save adoption, 305 fresh, 242 reload and 242 rollback. The final
+visual/control run passes 312 checks. Native pickup/equip/unequip/toss,
+repickup, identity, essence, size, weight, durability, provenance and prepared
+Box/quest guards pass. The tutorial pickup overrides deliberately incorrect
+pre-acquisition type/tier/essence to its authoritative sword T1 values.
+Ordinary menus, combat, quest progression and crafting remain author checks.
+Package parity and bounded presentation evidence are recorded in
+assets/validation_v5_17_60/evidence/SUMMARY.json.
+
+One sequential 700-tic sixteen-object sprite/model pair records
+942.68/916.86 queue presents/s, p95
+1.2811/1.3321 ms and p99
+1.5559/1.6330 ms. Windows11, Ryzen9 5950X, RTX3070Ti, GZDoom4.14.2,
+Vulkan1280x720, uncapped/vsync off, background unpaused/audio5%. Both scenes
+were inspected. Unequal projected footprints and queue intervals do not prove
+GPU/display timing, repeatability or campaign/crowd performance. All
+18,514 packaged entries match src; only four new models, the binding
+definition, MODELDEF and two diagnostic release strings differ from #761.
+
+CA763-BLADED-WEAPON-DROPS-01 retains author visual and ordinary gameplay review.
+Other physical weapons, characters, modular equipment and V5.16 campaign
+remain unfinished.
 
 ## 5.17.59 - Hooded effigy quality drops (#761, parent #647)
 

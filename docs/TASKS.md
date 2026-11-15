@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.59** - 2026-11-15.
+Documentation version: **5.17.60** - 2026-11-15.
+
+## #763 - Physical blade drops (5.17.60)
+
+Four original models and six exact bindings cover sword, dagger, machete and
+greatsword drops, including Ronnie/tutorial sword classes. Fifteen repeated
+outputs, 1,343 installed continuity and 312 final visual/control assertions
+pass; twenty final detail views were inspected. The capture loop now bounds
+requests to the four actual designs. CA763-BLADED-WEAPON-DROPS-01 retains art,
+ordinary menus/combat/crafting and quest review. Other physical weapon drops,
+remaining bestiary, #736 modular visual proposals and V5.16 remain pending.
 
 ## #761 - Hooded effigy drops (5.17.59)
 
