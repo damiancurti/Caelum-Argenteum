@@ -1,0 +1,175 @@
+{
+  "schema_revision": 1,
+  "issue": 753,
+  "parent_issue": 647,
+  "status": "native_candidate_pending_author_review",
+  "variants": {
+    "orb_t1": {
+      "class": "CaelumWeaponPickup",
+      "parts": {
+        "carved_orb": 686270.6286248813
+      },
+      "closed_outward_components": 1,
+      "vertices": 3010,
+      "triangles": 6016,
+      "surfaces": [
+        {
+          "material": "orb_t1",
+          "vertices": 3010,
+          "triangles": 6016
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -55.55856403792886,
+            -57.39233676222527,
+            0.0
+          ],
+          "max": [
+            55.44143596207115,
+            57.39233676222527,
+            111.85947340783623
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        8,
+        119,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.0238484621952444,
+      "source_to_native": {
+        "factor": 1.0238484621952444,
+        "floor": -54.21367529955332
+      }
+    },
+    "orb_t2": {
+      "class": "CaelumWeaponPickup",
+      "parts": {
+        "carved_orb": 682765.9878656561
+      },
+      "closed_outward_components": 1,
+      "vertices": 3010,
+      "triangles": 6016,
+      "surfaces": [
+        {
+          "material": "orb_t2",
+          "vertices": 3010,
+          "triangles": 6016
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -54.73130321738603,
+            -56.47824510892203,
+            0.0
+          ],
+          "max": [
+            54.393315689296315,
+            56.478245108922025,
+            110.00000000000001
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        9,
+        120,
+        119
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.00697534325972,
+      "source_to_native": {
+        "factor": 1.00697534325972,
+        "floor": -54.32503635538676
+      }
+    },
+    "orb_t3": {
+      "class": "CaelumWeaponPickup",
+      "parts": {
+        "carved_orb": 689680.8670005712
+      },
+      "closed_outward_components": 1,
+      "vertices": 3010,
+      "triangles": 6016,
+      "surfaces": [
+        {
+          "material": "orb_t3",
+          "vertices": 3010,
+          "triangles": 6016
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -55.90200936783283,
+            -56.21039776787558,
+            0.0
+          ],
+          "max": [
+            56.09799063216717,
+            56.21039776787557,
+            109.39463171066836
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        8,
+        120,
+        119
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 0.9999004363011028,
+      "source_to_native": {
+        "factor": 0.9999004363011028,
+        "floor": -54.4225
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "3b008670f50d3ef0f6c315875fa5bbb5797014dd6913cbd251199cd6827f85a9",
+    "PROVENANCE.json": "df4cc1bde2cd442c7911d3cbee3ad9a22e91ca74629b0f5f60d1ad5873640178"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/support_sprites/orb_t1.png": "0b83ebd3f25cf1764e72f24158d51626e2680e68877b8a6b7853ceabe87df41d",
+    "src/graphics/caelum/icons/support_sprites/orb_t2.png": "6e196d5ec6c84db0449b5570a05e0574b046506c1f95a12091f7f97e9eb02fac",
+    "src/graphics/caelum/icons/support_sprites/orb_t3.png": "06e36df489a2eae9e9b6ce7199a2ee776198dfb46ece68ee9820525f0176d146",
+    "assets/art_source/support_sprites/orb-floating-source.png": "d469a1838ea4b13200c09af34a2e643405a93c5c3d039554904ede07cc092eac",
+    "assets/art_source/support_sprites/ORB_EDIT.json": "d1927441607103b86eeed4ae5e075b9efb7aadf1e37e5f4cfaf79c7e9e4f3ffa",
+    "assets/art_source/support_sprites/MANIFEST.json": "78b6dc20c1426ea759fb1484696795f18d2c7174bec0e9643e7b68a720bfa6f3",
+    "src/caelum/equipment/CaelumSupportArt.zs": "5933f0ea55b94e5d30894501d7e1ac590a03ef35844a3677370328d79d474762",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04"
+  },
+  "generator_sha256": {
+    "generate_inventory_orbs_models.py": "bd8127ec54c2d6bb51e6d63d1194776ca15457b1fa091f381d415b70fcdc698c",
+    "generate_inventory_jewelry_models.py": "2d2942e5c68ae1f5311377cbc85ec153347e4e569acf7468d56bee3c94620c3a",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2"
+  },
+  "sha256": {
+    "models/caelum/inventory/orbs/atlas.png": "d469a1838ea4b13200c09af34a2e643405a93c5c3d039554904ede07cc092eac",
+    "models/caelum/inventory/orbs/orb_t1.md3": "ba421207968a053fcb0cbdb68f499e1a31730ca14a5d3f53182f188914316d35",
+    "editable/orb_t1.obj": "c1d1e5976c5f23854a4cb89c5bb2770247e72a3cd0f1572f4f2efcce20c6c615",
+    "models/caelum/inventory/orbs/orb_t2.md3": "5b2077a82256fb2aa880c50d9b04f937ad8e535e8e2438dcff834757457fd001",
+    "editable/orb_t2.obj": "c52d2f82eb561e8a8259b18d830e53a18a4e353f347cc06edbed1881f9f57977",
+    "models/caelum/inventory/orbs/orb_t3.md3": "4595c999ce43de71580debc57208b83944e9e72e395e257527549c3cec348d68",
+    "editable/orb_t3.obj": "17a0f7fb02931032f31e265109711d2a010238654420882936cd70b5c96ace13",
+    "editable/orbs.mtl": "e1c999fd279a1b775696648f4b6815130a9a1dc826946f73bfdcc2e3288b9b4c",
+    "caelum/data/inventory_orbs.modeldef": "085ac9b35d1b98044e1879c722b4603c2ff348f37f3dc19eda8b20432756dd56"
+  }
+}

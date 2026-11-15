@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.54** - 2026-11-15.
+Documentation version: **5.17.55** - 2026-11-15.
+
+## 5.17.55 - Native Orb drop models (#753)
+
+Three baseless Orb meshes cover seven exact class/frame bindings and nine
+weapon/material tier cases. Closed native geometry, eleven repeated outputs,
+720 installed continuity checks and 167 final visual/control checks pass.
+ASSETS records the corrected invalid test essence and projection, presentation
+limits and art qualifications. CA753-ORB-DROPS-01 retains author acceptance.
+Existing offensive essence rules and held art remain unchanged. Broader 3D,
+modular and campaign work is still incomplete.
 
 ## 5.17.54 - Elemental material drop models (#751)
 

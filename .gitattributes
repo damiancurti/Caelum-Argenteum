@@ -1009,3 +1009,13 @@ assets/validation_v5_17_42/evidence/** -text -diff
 /assets/validation_v5_17_54/evidence/** -text -diff
 /src/models/caelum/inventory/essences/** -text -diff
 /src/caelum/data/inventory_elemental_essences.modeldef text eol=lf
+
+# #753 native baseless orb sources and evidence.
+/assets/generators/*inventory_orbs_models.py text eol=lf
+/assets/source/art/inventory_models_647/orbs/** text eol=lf
+/assets/source/art/inventory_models_647/orbs/**/*.png binary
+/assets/validation_v5_17_55/*.py text eol=lf
+/assets/validation_v5_17_55/*.zs text eol=lf
+/assets/validation_v5_17_55/evidence/** -text -diff
+/src/models/caelum/inventory/orbs/** -text -diff
+/src/caelum/data/inventory_orbs.modeldef text eol=lf

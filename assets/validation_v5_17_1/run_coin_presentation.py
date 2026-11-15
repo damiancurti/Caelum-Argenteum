@@ -28,14 +28,14 @@ def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main(default_kind='coins'):
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ['baseline','runtime','presentation-layer','output']:parser.add_argument('--'+name,type=Path,required=True)
-    parser.add_argument('--kind',choices=('coins','consumables','water','food','ammunition','documents','ingots','camp','furniture','waterskin','mates','locks','jewelry','books','gems','ores','headwear','gloves','footwear','clothing','shields','plates','chainmail','chains','wood_components','weapon_components','assembly_components','hides','textiles','hygiene','kitchen_ingredients','cartridge_kits','elemental_essences'),default=default_kind)
+    parser.add_argument('--kind',choices=('coins','consumables','water','food','ammunition','documents','ingots','camp','furniture','waterskin','mates','locks','jewelry','books','gems','ores','headwear','gloves','footwear','clothing','shields','plates','chainmail','chains','wood_components','weapon_components','assembly_components','hides','textiles','hygiene','kitchen_ingredients','cartridge_kits','elemental_essences','orbs'),default=default_kind)
     args=parser.parse_args();baseline=args.baseline.resolve(strict=True);runtime=args.runtime.resolve(strict=True);layer=args.presentation_layer.resolve(strict=True)
     existing=subprocess.check_output(['tasklist','/FI','IMAGENAME eq gzdoom.exe','/FO','CSV','/NH']).decode(errors='replace')
     if '"gzdoom.exe"' in existing.lower():parser.error('Another native engine is running.')
     out=args.output.resolve();out.relative_to(ROOT/'build');out.mkdir(parents=True,exist_ok=False)
-    report={'issue':751 if args.kind=='elemental_essences' else 747 if args.kind=='cartridge_kits' else 743 if args.kind=='kitchen_ingredients' else 741 if args.kind=='hygiene' else 733 if args.kind=='textiles' else 731 if args.kind=='hides' else 725 if args.kind=='assembly_components' else 723 if args.kind=='weapon_components' else 717 if args.kind=='wood_components' else 716 if args.kind=='chains' else 706 if args.kind=='chainmail' else 704 if args.kind=='plates' else 702 if args.kind=='shields' else 696 if args.kind=='clothing' else 694 if args.kind=='footwear' else 688 if args.kind=='gloves' else 686 if args.kind=='headwear' else 684 if args.kind=='ores' else 678 if args.kind=='gems' else 676 if args.kind=='books' else 674 if args.kind=='jewelry' else 672 if args.kind=='locks' else 670 if args.kind=='mates' else 668 if args.kind=='waterskin' else 666 if args.kind=='furniture' else 664 if args.kind=='camp' else 658 if args.kind=='ingots' else 656 if args.kind=='documents' else 652 if args.kind=='ammunition' else 647,'kind':args.kind,'scope':__doc__.strip(),'baseline_sha256':digest(baseline),'runtime_sha256':digest(runtime),'engine_sha256':digest(ENGINE),
+    report={'issue':753 if args.kind=='orbs' else 751 if args.kind=='elemental_essences' else 747 if args.kind=='cartridge_kits' else 743 if args.kind=='kitchen_ingredients' else 741 if args.kind=='hygiene' else 733 if args.kind=='textiles' else 731 if args.kind=='hides' else 725 if args.kind=='assembly_components' else 723 if args.kind=='weapon_components' else 717 if args.kind=='wood_components' else 716 if args.kind=='chains' else 706 if args.kind=='chainmail' else 704 if args.kind=='plates' else 702 if args.kind=='shields' else 696 if args.kind=='clothing' else 694 if args.kind=='footwear' else 688 if args.kind=='gloves' else 686 if args.kind=='headwear' else 684 if args.kind=='ores' else 678 if args.kind=='gems' else 676 if args.kind=='books' else 674 if args.kind=='jewelry' else 672 if args.kind=='locks' else 670 if args.kind=='mates' else 668 if args.kind=='waterskin' else 666 if args.kind=='furniture' else 664 if args.kind=='camp' else 658 if args.kind=='ingots' else 656 if args.kind=='documents' else 652 if args.kind=='ammunition' else 647,'kind':args.kind,'scope':__doc__.strip(),'baseline_sha256':digest(baseline),'runtime_sha256':digest(runtime),'engine_sha256':digest(ENGINE),
             'layer_sha256':digest(layer/'ca_presentation.dll'),'runs':[]}
-    count={'coins':15,'consumables':9,'water':6,'food':6,'ammunition':7,'documents':6,'ingots':7,'camp':2,'furniture':17,'waterskin':2,'mates':3,'locks':16,'jewelry':9,'books':9,'gems':14,'ores':6,'headwear':5,'gloves':4,'footwear':5,'clothing':11,'shields':4,'plates':6,'chainmail':1,'chains':2,'wood_components':6,'weapon_components':8,'assembly_components':9,'hides':4,'textiles':6,'hygiene':3,'kitchen_ingredients':6,'cartridge_kits':2,'elemental_essences':5}[args.kind]
+    count={'coins':15,'consumables':9,'water':6,'food':6,'ammunition':7,'documents':6,'ingots':7,'camp':2,'furniture':17,'waterskin':2,'mates':3,'locks':16,'jewelry':9,'books':9,'gems':14,'ores':6,'headwear':5,'gloves':4,'footwear':5,'clothing':11,'shields':4,'plates':6,'chainmail':1,'chains':2,'wood_components':6,'weapon_components':8,'assembly_components':9,'hides':4,'textiles':6,'hygiene':3,'kitchen_ingredients':6,'cartridge_kits':2,'elemental_essences':5,'orbs':9}[args.kind]
     for kind in ['sprites','models']:
         folder=out/f'{kind}-{count}';folder.mkdir()
         if args.kind=='coins':
@@ -46,6 +46,7 @@ def main(default_kind='coins'):
             variants=[*config['variants'].values(),*config.get('reused_variants',[])]
             extras=[binding for item in config['variants'].values() for binding in item.get('additional_bindings',[]) if binding.get('inventory')]
             kinds=','.join("'%s'"%item['class'] for item in variants+extras)
+        if args.kind=='orbs':kinds="'CaelumWeaponPickup','CA_LimboMagicImplement','CaelumMaterialPickup'"
         source="""class CA647BenchCamera : Actor
 {Default {+NOINTERACTION +NOGRAVITY CameraHeight 0;} States {Spawn:TNT1 A -1;Stop;}}
 class CA647Bench : EventHandler
@@ -78,7 +79,7 @@ class CA647Bench : EventHandler
         if args.kind=='mates':
             source=source.replace('(0,-100,110)','(0,-36,25)').replace('camera.Pitch=47','camera.Pitch=30').replace('(index%5-2)*20,(index/5-1)*20','(index-1)*12,0')
         if args.kind in ('ingots','gems','ores','plates','chainmail','chains','wood_components','weapon_components','assembly_components','hides','textiles','hygiene','kitchen_ingredients','cartridge_kits','elemental_essences'):
-            ids=','.join(str(item['item_type'] if args.kind in ('gems','ores','plates','chainmail','chains','wood_components','weapon_components','assembly_components','hides','textiles','hygiene','kitchen_ingredients','cartridge_kits','elemental_essences') else item['material_id']) for item in config['variants'].values())
+            ids=','.join(str(item['item_type'] if args.kind in ('gems','ores','plates','chainmail','chains','wood_components','weapon_components','assembly_components','hides','textiles','hygiene','kitchen_ingredients','cartridge_kits','elemental_essences','orbs') else item['material_id']) for item in config['variants'].values())
             source=source.replace("static const class<Inventory> kinds[]={KINDS};".replace('KINDS',kinds), 'static const int materialIds[]={'+ids+'};')
             source=source.replace('index<kinds.Size()', 'index<materialIds.Size()')
             source=source.replace("Bodies.Push(Actor.Spawn(kinds[index],((index%5-2)*20,(index/5-1)*20,0),NO_REPLACE));", "{let item=CaelumMaterialPickup(Actor.Spawn('CaelumMaterialPickup',((index%5-2)*20,(index/5-1)*20,0),NO_REPLACE));item.args[0]=materialIds[index];item.args[1]=2;item.UpdateMaterialVisuals();Bodies.Push(item);}")
@@ -117,6 +118,9 @@ class CA647Bench : EventHandler
         if args.kind=='books':
             source=source.replace('index<kinds.Size()','index<9').replace('Bodies.Push(Actor.Spawn(kinds[index],((index%3-1)*55,(index/3-1)*55,0),NO_REPLACE));',
                 '{let item=Actor.Spawn(kinds[index/3],((index%3-1)*40,(index/3-1)*48,0),NO_REPLACE);item.args[0]=index<6?CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK:CaelumConstants.MATERIAL_BOOK_BASE;item.args[1]=index%3+1;item.args[4]=CaelumConstants.ESSENCE_QUINTESSENCE+1;if(index<6)CaelumEquipmentItem(item).UpdateWorldSprite();else CaelumMaterialPickup(item).UpdateMaterialVisuals();Bodies.Push(item);}')
+        if args.kind=='orbs':
+            source=source.replace('index<kinds.Size()','index<9').replace('Bodies.Push(Actor.Spawn(kinds[index],((index%3-1)*55,(index/3-1)*55,0),NO_REPLACE));',
+                '{let item=Actor.Spawn(kinds[index/3],((index%3-1)*40,(index/3-1)*48,0),NO_REPLACE);item.args[0]=index<6?CaelumConstants.WEAPON_TYPE_ORB:CaelumConstants.MATERIAL_ORB_BASE;item.args[1]=index%3+1;item.args[4]=CaelumConstants.ESSENCE_WATER+1;if(index<6)CaelumEquipmentItem(item).UpdateWorldSprite();else CaelumMaterialPickup(item).UpdateMaterialVisuals();Bodies.Push(item);}')
         fixture=folder/'fixture.pk3'
         with zipfile.ZipFile(fixture,'w') as package:
             for name,blob in {'ZSCRIPT':('version "4.14.2"\n'+source).encode(),'maps/CA455V.wad':wad(224),
@@ -146,7 +150,7 @@ class CA647Bench : EventHandler
         samples=[float(value) for value in re.findall(r'CA647 TIC ([\d.]+)',log)]
         result={'kind':kind,'bodies':count,'pid':process.pid,'exit_code':process.returncode,'errors':errors,'markers_qpc_ms':markers,
             'fixture_sha256':digest(fixture),'passed':process.returncode==0 and not errors and len(samples)==700 and set(markers)=={'BEGIN','END'}}
-        if args.kind in ('gems','ores','headwear','gloves','footwear','clothing','shields','plates','chainmail','chains','wood_components','weapon_components','assembly_components','hides','textiles','hygiene','kitchen_ingredients','cartridge_kits','elemental_essences'):
+        if args.kind in ('gems','ores','headwear','gloves','footwear','clothing','shields','plates','chainmail','chains','wood_components','weapon_components','assembly_components','hides','textiles','hygiene','kitchen_ingredients','cartridge_kits','elemental_essences','orbs'):
             observed=[tuple(map(int,values)) for values in re.findall(r'CA647 COMPLETE bodies=(\d+) samples=(\d+)',log)]
             result['observed_completion_counts']=observed
             if observed!=[(count,700)]:

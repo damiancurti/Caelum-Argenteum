@@ -1,0 +1,17 @@
+{
+  "files": 11,
+  "byte_identical": true,
+  "sha256": {
+    "caelum/data/inventory_orbs.modeldef": "085ac9b35d1b98044e1879c722b4603c2ff348f37f3dc19eda8b20432756dd56",
+    "editable/orb_t1.obj": "ca96c05ec00fe4893bfacc526ea5bac2700a2e7518f5296aeb6b3b2ff97a067a",
+    "editable/orb_t2.obj": "0a06ee858b94efad28b0431a1e82aef0708f4b346759e2a5af8779ba56f252f8",
+    "editable/orb_t3.obj": "1dcd3979b31b6c30d337197981a8eff703662c6b94cb95b260fabe92abe2813d",
+    "editable/orbs.mtl": "e1c999fd279a1b775696648f4b6815130a9a1dc826946f73bfdcc2e3288b9b4c",
+    "manifest.json": "e17659e148191d06a11fd4c1e631d426ef91c0d7124f2cca498386b9d0041ba3",
+    "models/caelum/inventory/orbs/atlas.png": "d469a1838ea4b13200c09af34a2e643405a93c5c3d039554904ede07cc092eac",
+    "models/caelum/inventory/orbs/orb_t1.md3": "5775729b313e50cb0a994ebe5b09b02aad4e6bcac60b612ce30503d9a8cc17ba",
+    "models/caelum/inventory/orbs/orb_t2.md3": "cc2ad91d93735ca7f5177a59d11cbf6945e8b0d1eb2f45e820b4f4faf5a1665b",
+    "models/caelum/inventory/orbs/orb_t3.md3": "623644c624f72cf1f9d5f057287c0ef24df1c27b85996e6660a09f8c94b955c2",
+    "preview.pk3": "41f151bea769d0bd5277c5e265141a8748d8d764db693e3e54df22f2c7e1a5df"
+  }
+}

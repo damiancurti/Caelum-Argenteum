@@ -1,0 +1,32 @@
+{
+  "scope": "Replay the final runner count-check block against unchanged native presentation01 logs; no new engine run.",
+  "runner_sha256": "41050b461115a24e3f8f45643d7f53bfbfa232ffcacd0cb8818c76c420e31da8",
+  "runs": [
+    {
+      "kind": "sprites",
+      "log_sha256": "e232821269dee6d3aed59427c0099aaa60e475b266d928f5050a1cec35cc0db7",
+      "result": {
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            9,
+            700
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "models",
+      "log_sha256": "2fcc9f40584bf5d0fe3b05fb87f648be8fe039afc1a195868907161a450fb09b",
+      "result": {
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            9,
+            700
+          ]
+        ]
+      }
+    }
+  ]
+}

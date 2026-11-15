@@ -1,0 +1,18 @@
+{
+  "issue": 753,
+  "author_accepted": false,
+  "reference_acceptance": "Baseless Orb accepted2026-10-22 under #479; new native meshes remain pending.",
+  "method": "Copy the original high-resolution orb-floating-source.png byte-for-byte. Project its three cells onto fully closed sphere surfaces with shallow radial wood relief derived from the same owned pixels. No raster editing or new image generation. Front/rear material repetition remains a review qualification.",
+  "source_sha256": {
+    "src/graphics/caelum/icons/support_sprites/orb_t1.png": "0b83ebd3f25cf1764e72f24158d51626e2680e68877b8a6b7853ceabe87df41d",
+    "src/graphics/caelum/icons/support_sprites/orb_t2.png": "6e196d5ec6c84db0449b5570a05e0574b046506c1f95a12091f7f97e9eb02fac",
+    "src/graphics/caelum/icons/support_sprites/orb_t3.png": "06e36df489a2eae9e9b6ce7199a2ee776198dfb46ece68ee9820525f0176d146",
+    "assets/art_source/support_sprites/orb-floating-source.png": "d469a1838ea4b13200c09af34a2e643405a93c5c3d039554904ede07cc092eac",
+    "assets/art_source/support_sprites/ORB_EDIT.json": "d1927441607103b86eeed4ae5e075b9efb7aadf1e37e5f4cfaf79c7e9e4f3ffa",
+    "assets/art_source/support_sprites/MANIFEST.json": "78b6dc20c1426ea759fb1484696795f18d2c7174bec0e9643e7b68a720bfa6f3",
+    "src/caelum/equipment/CaelumSupportArt.zs": "5933f0ea55b94e5d30894501d7e1ac590a03ef35844a3677370328d79d474762",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04"
+  },
+  "iterations": "Initial native candidate; geometry and live review pending. Native visual01 copied the book fixture with quintessence, which the existing Orb ValidEssence rule rejects; migration retired those invalid test items, then a count mismatch caused a fixture null dereference. Use the already-supported water essence and guard incomplete fixture arrays. Preserve the rejection/crash evidence; no production migration or gameplay change."
+}

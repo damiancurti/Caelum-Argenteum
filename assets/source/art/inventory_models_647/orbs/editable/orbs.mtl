@@ -1,0 +1,9 @@
+newmtl orb_t1
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/orbs/atlas.png
+newmtl orb_t2
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/orbs/atlas.png
+newmtl orb_t3
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/orbs/atlas.png
