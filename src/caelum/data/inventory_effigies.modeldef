@@ -1,0 +1,6 @@
+Model CaelumWeaponPickup { Path "models/caelum/inventory/effigies" Model 0 "effigy_t1.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 P 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/effigies" Model 0 "effigy_t1.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 P 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/effigies" Model 0 "effigy_t2.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 Q 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/effigies" Model 0 "effigy_t2.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 Q 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/effigies" Model 0 "effigy_t3.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 R 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/effigies" Model 0 "effigy_t3.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 R 0 0 }

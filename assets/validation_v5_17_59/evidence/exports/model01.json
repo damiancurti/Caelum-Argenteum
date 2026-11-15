@@ -1,0 +1,271 @@
+{
+  "schema_revision": 1,
+  "issue": 761,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "variants": {
+    "effigy_t1": {
+      "class": "CaelumWeaponPickup",
+      "parts": [
+        "robe",
+        "base",
+        "base_band",
+        "hood",
+        "sleeve-1",
+        "chest_cord-1",
+        "sleeve1",
+        "chest_cord1",
+        "waist_cord",
+        "knot",
+        "hanging_cord-1",
+        "cord_tip-1",
+        "hanging_cord1",
+        "cord_tip1"
+      ],
+      "closed_outward_components": 14,
+      "vertices": 4812,
+      "triangles": 9072,
+      "surfaces": [
+        {
+          "material": "wood",
+          "vertices": 1364,
+          "triangles": 2688
+        },
+        {
+          "material": "blue",
+          "vertices": 2168,
+          "triangles": 4176
+        },
+        {
+          "material": "hood_surface",
+          "vertices": 1280,
+          "triangles": 2208
+        }
+      ],
+      "reference_opaque_bounds": [
+        43,
+        8,
+        85,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -18.404458099854253,
+            -17.42222222222222,
+            0.0
+          ],
+          "max": [
+            18.404458099854253,
+            17.42222222222222,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.9572649572649573,
+        "floor": 0.0
+      }
+    },
+    "effigy_t2": {
+      "class": "CaelumWeaponPickup",
+      "parts": [
+        "robe",
+        "base",
+        "base_band",
+        "hood",
+        "sleeve-1",
+        "chest_cord-1",
+        "sleeve1",
+        "chest_cord1",
+        "waist_cord",
+        "knot",
+        "hanging_cord-1",
+        "cord_tip-1",
+        "hanging_cord1",
+        "cord_tip1",
+        "medallion"
+      ],
+      "closed_outward_components": 15,
+      "vertices": 5214,
+      "triangles": 9840,
+      "surfaces": [
+        {
+          "material": "wood",
+          "vertices": 788,
+          "triangles": 1536
+        },
+        {
+          "material": "blue",
+          "vertices": 1364,
+          "triangles": 2640
+        },
+        {
+          "material": "silver",
+          "vertices": 1782,
+          "triangles": 3456
+        },
+        {
+          "material": "hood_surface",
+          "vertices": 1280,
+          "triangles": 2208
+        }
+      ],
+      "reference_opaque_bounds": [
+        43,
+        8,
+        85,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -18.404458099854253,
+            -17.42222222222222,
+            0.0
+          ],
+          "max": [
+            18.404458099854253,
+            17.42222222222222,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.9572649572649573,
+        "floor": 0.0
+      }
+    },
+    "effigy_t3": {
+      "class": "CaelumWeaponPickup",
+      "parts": [
+        "robe",
+        "base",
+        "base_band",
+        "hood",
+        "sleeve-1",
+        "chest_cord-1",
+        "sleeve1",
+        "chest_cord1",
+        "waist_cord",
+        "knot",
+        "hanging_cord-1",
+        "cord_tip-1",
+        "hanging_cord1",
+        "cord_tip1",
+        "medallion"
+      ],
+      "closed_outward_components": 15,
+      "vertices": 5214,
+      "triangles": 9840,
+      "surfaces": [
+        {
+          "material": "wood",
+          "vertices": 788,
+          "triangles": 1536
+        },
+        {
+          "material": "blue",
+          "vertices": 1364,
+          "triangles": 2640
+        },
+        {
+          "material": "gold",
+          "vertices": 1782,
+          "triangles": 3456
+        },
+        {
+          "material": "hood_surface",
+          "vertices": 1280,
+          "triangles": 2208
+        }
+      ],
+      "reference_opaque_bounds": [
+        43,
+        8,
+        85,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -18.404458099854253,
+            -17.42222222222222,
+            0.0
+          ],
+          "max": [
+            18.404458099854253,
+            17.42222222222222,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.9572649572649573,
+        "floor": 0.0
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "d2cd5f185705678fc40012b3e811e04f2a153770a4114ce13d5275190b4d8258",
+    "PROVENANCE.json": "80521dddb4453c8030e9bc06398ee9503f5da3b8cb5e3a2867a1d0b65e58715c"
+  },
+  "external_source_sha256": {
+    "assets/art_source/support_sprites/REGISTRATION.json": "f3acb57ca1b76a064dde32d3a939e4d020ee704cdfe1a92067ccb7feefb07a5a",
+    "assets/art_source/support_sprites/effigy-source.png": "ba44d95c36c51a5db2fe39410b211fc7a4563028b5c13be9ca4cdabef7789592",
+    "assets/generators/generate_inventory_chains_models.py": "cd9296836666c78bd555c76e3de56d0ccc345c40ecb94a15d5e78f159719f94f",
+    "assets/generators/generate_inventory_hygiene_models.py": "b85d6bac14b35faf4cc2f232c6c0e2fa8d9e2f6d5633400adc929f452a2c0a8e",
+    "assets/generators/generate_inventory_magic_bases_models.py": "f6043b6b6f1f24f12c8fe1ad67a03bcb6ad1d6f1529354384bf6505df95dbd74",
+    "assets/generators/generate_inventory_weapon_components_models.py": "49db0176aef05d21f21f7a356e58c4623c285eac15d2d1537bc8ddc8ec227958",
+    "assets/generators/generate_peuchen_model.py": "0f1873c9fd1da0be0f965ea73ff2cc5c35dc25a35ac9da2df4692b50cef30812",
+    "assets/source/art/inventory_models_647/magic_bases/PROVENANCE.json": "8f7978aa6fcd0af91b2fcde121c23ae6a36a49c0bbaf0b491f5bd7967210e34d",
+    "assets/source/art/inventory_models_647/weapon_components/PROVENANCE.json": "45898ee185960bad1b569b37f0175a51bd6e4cde1c30c910fa352dc20c2fb230",
+    "src/caelum/data/CaelumSupportImplementData.zs": "a4b0381a2bf2f7ada432c44d81d6c987307a89172c5ce7b240486e8bbe406ad6",
+    "src/caelum/data/support_sprites.textures": "40854287c9d22184a896d952227e3f19ff195f2f9b95ebf88cf264228d169c1f",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumSupportArt.zs": "5933f0ea55b94e5d30894501d7e1ac590a03ef35844a3677370328d79d474762",
+    "src/graphics/caelum/icons/support_sprites/effigy_t1.png": "8d8aa932c6210656272d05ca36ada0cb603a587162a61729413465edc3420fa4",
+    "src/graphics/caelum/icons/support_sprites/effigy_t2.png": "f9bdea1862d7586d0fc0bc21784a436917cf747a8c96c5d4d3518cccfb29e5ef",
+    "src/graphics/caelum/icons/support_sprites/effigy_t3.png": "ac055d968849b5566a892d8fed6b3ad541192aa35a726c1b35a4b406b508727e",
+    "src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_effigies_models.py": "6ba9eb4ed1b800d89ce132b80ba64ffbab235a27278b50934f067c22cfebfe22"
+  },
+  "sha256": {
+    "models/caelum/inventory/effigies/effigy_t1.md3": "80589e1c8e9b558be2d30f272cc2bbe97c18bf062476a3e5da17f95ff0d1b8fd",
+    "editable/effigy_t1.obj": "a59b22209a6e120f357767f3fe0481a18dc7d52c12897fa2e0790f6d68ee7717",
+    "models/caelum/inventory/effigies/effigy_t2.md3": "7f83423f35dd28d4581248dbe1f270e01cc3dbb23a476bc9b5ea99fbb524d911",
+    "editable/effigy_t2.obj": "a875354e5a40b833d9c7a1a9da155233ab2a35d2d1529194cc4c53c4177e7918",
+    "models/caelum/inventory/effigies/effigy_t3.md3": "04944acf0d5036dd783c9fc09c72c4e9ebe835e5030ee270d0a3fb2dcbca0233",
+    "editable/effigy_t3.obj": "b2f09c6b76515c5a8e525e7326dd4c8a23b8e43433ae35fd91ce157fed5f7ad0",
+    "editable/effigies.mtl": "eb1849a838eda4b4df93092809a670c05ff989d85c17a3c880f7a2df5c0f9cf9",
+    "caelum/data/inventory_effigies.modeldef": "3bc206f47fc798952d4cb83890636570603f9b776e87cf395b9dc136d6acadd8",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291"
+  },
+  "reuse_note": "All runtime texture bytes remain owned by #755 and #723. Three original hooded sculpture variants and six exact bindings are installed."
+}
