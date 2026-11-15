@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.74** - 2026-11-15.
+Documentation version: **5.17.75** - 2026-11-15.
+
+## 5.17.75 - Teju regional display (#793)
+
+CA682G adds Teju Jagua/Selva with exact existing native models and materials.
+Fifteen figures, eleven species, five plots and twenty-one controls are present.
+Four fixture files repeat;199 fresh/reload/idle/walking assertions pass. ASSETS
+records the bounded presentation sample. CA793-TEJU-GALLERY-01 and the earlier
+CA791-TEJU-01 remain pending consolidated author review. The broader character,
+modular and V5.16 campaign work remains incomplete.
 
 ## 5.17.74 - Teju Jagua model candidate (#791)
 

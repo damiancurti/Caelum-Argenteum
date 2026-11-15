@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.74** - 2026-11-15.
+Documentation version: **5.17.75** - 2026-11-15.
+
+## #793 - Teju regional gallery (5.17.75)
+
+Teju Jagua is displayed in its approved Selva plot with direct key9 inspection.
+Prior fourteen figures/twenty controls and all five grounds remain exact.
+Four fixture outputs repeat and199 native assertions pass. CA793-TEJU-GALLERY-01
+retains gallery review; CA791-TEJU-01 retains model art and ordinary combat.
+Continue remaining creatures, characters, modular conversion/fitting and
+campaign work. The author requested one final test terminal after the full
+batch, and has not accepted any new candidate through that instruction.
 
 ## 5.17.74 - Teju Jagua delivered; author review pending (#791)
 

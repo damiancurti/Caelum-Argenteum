@@ -1179,3 +1179,6 @@ assets/validation_v5_17_74/*.json text eol=lf
 assets/validation_v5_17_74/evidence/** -text -diff
 src/caelum/data/teju_combat.modeldef text eol=lf
 src/MODELDEF text eol=lf
+
+/assets/validation_v5_17_75/*.py text eol=lf
+/assets/validation_v5_17_75/evidence/** -text -diff
