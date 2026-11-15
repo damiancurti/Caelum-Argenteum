@@ -1,0 +1,3 @@
+Model CaelumWeaponPickup { Path "models/caelum/inventory/articulated_weapons" Model 0 "flail.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CFLA A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/articulated_weapons" Model 0 "giant_gauntlets.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CGAU A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/articulated_weapons" Model 0 "bolas.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CBOL A 0 0 }

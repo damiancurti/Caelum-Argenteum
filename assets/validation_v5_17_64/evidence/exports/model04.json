@@ -1,0 +1,312 @@
+{
+  "schema_revision": 1,
+  "issue": 771,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "variants": {
+    "flail": {
+      "class": "CaelumWeaponPickup",
+      "parts": [
+        "shaft",
+        "grip",
+        "band0",
+        "band1",
+        "band2",
+        "band3",
+        "band4",
+        "band5",
+        "tassel0",
+        "tassel1",
+        "tassel2",
+        "link0",
+        "link1",
+        "link2",
+        "link3",
+        "link4",
+        "link5",
+        "link6",
+        "head",
+        "spike0",
+        "spike1",
+        "spike2",
+        "spike3",
+        "spike4",
+        "spike5",
+        "spike6",
+        "spike7",
+        "spike8"
+      ],
+      "closed_outward_components": 28,
+      "vertices": 7366,
+      "triangles": 6664,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 648,
+          "triangles": 216
+        },
+        {
+          "material": "bronze",
+          "vertices": 1728,
+          "triangles": 576
+        },
+        {
+          "material": "dark_iron",
+          "vertices": 2542,
+          "triangles": 5056
+        },
+        {
+          "material": "wood",
+          "vertices": 576,
+          "triangles": 192
+        },
+        {
+          "material": "red",
+          "vertices": 1296,
+          "triangles": 432
+        },
+        {
+          "material": "bolas_leather",
+          "vertices": 576,
+          "triangles": 192
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        17,
+        119,
+        111
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 94.0,
+      "native_bounds": [
+        {
+          "min": [
+            -2.39517637373636,
+            -15.99302707041143,
+            0.0
+          ],
+          "max": [
+            64.09235660548339,
+            15.99302707041143,
+            94.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.2024832383767992,
+        "floor": -1.1499999999999997
+      }
+    },
+    "giant_gauntlets": {
+      "class": "CaelumWeaponPickup",
+      "parts": [
+        "left_shell",
+        "left_finger0",
+        "left_finger1",
+        "left_finger2",
+        "left_finger3",
+        "left_thumb",
+        "left_trim0",
+        "left_trim1",
+        "left_trim2",
+        "left_mark0",
+        "left_mark1",
+        "left_mark2",
+        "left_mark3",
+        "right_shell",
+        "right_finger0",
+        "right_finger1",
+        "right_finger2",
+        "right_finger3",
+        "right_thumb",
+        "right_trim0",
+        "right_trim1",
+        "right_trim2",
+        "right_mark0",
+        "right_mark1",
+        "right_mark2",
+        "right_mark3",
+        "left_lining",
+        "right_lining"
+      ],
+      "closed_outward_components": 28,
+      "vertices": 13968,
+      "triangles": 7856,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 2592,
+          "triangles": 4064
+        },
+        {
+          "material": "dark_iron",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "dark_iron",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "dark_iron",
+          "vertices": 306,
+          "triangles": 102
+        },
+        {
+          "material": "lining",
+          "vertices": 2880,
+          "triangles": 960
+        }
+      ],
+      "reference_opaque_bounds": [
+        74,
+        349,
+        1179,
+        914
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        10,
+        10
+      ],
+      "target_art_extent": 110.5,
+      "native_bounds": [
+        {
+          "min": [
+            -55.24999999999999,
+            -9.85873132123617,
+            0.0
+          ],
+          "max": [
+            55.25,
+            9.85873132123617,
+            54.0146316831628
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.9087197505671578,
+        "floor": -3.277887819278341
+      }
+    },
+    "bolas": {
+      "class": "CaelumWeaponPickup",
+      "parts": [
+        "coil",
+        "knot",
+        "thong0",
+        "weight0",
+        "seam0",
+        "binding0",
+        "thong1",
+        "weight1",
+        "seam1",
+        "binding1",
+        "thong2",
+        "weight2",
+        "seam2",
+        "binding2"
+      ],
+      "closed_outward_components": 14,
+      "vertices": 11312,
+      "triangles": 7272,
+      "surfaces": [
+        {
+          "material": "bolas_leather",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "bolas_leather",
+          "vertices": 4096,
+          "triangles": 2819
+        },
+        {
+          "material": "bolas_leather",
+          "vertices": 3143,
+          "triangles": 3088
+        }
+      ],
+      "reference_opaque_bounds": [
+        40,
+        97,
+        395,
+        518
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        5,
+        5
+      ],
+      "target_art_extent": 71.0,
+      "native_bounds": [
+        {
+          "min": [
+            -35.5,
+            -10.941305054072176,
+            0.0
+          ],
+          "max": [
+            35.5,
+            8.733799961699281,
+            82.08328942416007
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0997433625284345,
+        "floor": -11.274716082014635
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "83f053447c255f75ab6628087cbd7b531845605a3501b12417c8f2187bfe8b2f",
+    "PROVENANCE.json": "0e825f8c41779f9a55bda21770b9bc6671c1c237a5c89a97e637c5263cf66ce7"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/ca_flail.png": "325a1bcd3210780ebbec0fd33f420e5292f4b9609141dad8f75c6b19a373040b",
+    "src/graphics/caelum/gauntlet_icons/tier1.png": "122d5fba58368a40d93e3ea6844a872f39f0192bbfb69bcd3e0e962970f96382",
+    "src/graphics/caelum/bolas/atlas.png": "fb78f0ab7883e2fcb806fa5feaf035b09ecec762526ae7b4415fc07314e99b6e",
+    "src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1",
+    "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "src/TEXTURES": "b18f53438055b5d13e985e550629be4578c2d9852888756d3eca9a8f3f58218e",
+    "src/graphics/caelum/bolas/bolas.textures": "1d49d551002a883feff4fc741986c0d139a8435e76f3617cbfab7fa14f8f1642",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumWeaponModel.zs": "f1f3365b4286f384c8f017b1ac1dde41bdaac7cf005b88d6f10bc142ec1cad13",
+    "assets/generators/generate_inventory_polearms_models.py": "9d5b1879039fa565d35876af7dc99a2a717c698bcfdd68ad8a664cbef55f947e",
+    "assets/generators/generate_inventory_chains_models.py": "cd9296836666c78bd555c76e3de56d0ccc345c40ecb94a15d5e78f159719f94f",
+    "assets/generators/generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "src/models/caelum/inventory/footwear/bc.png": "ca1aaa283b521171b98d705cdb38bfc95db1eff7544ae958890f1f7e2e14f89d"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_articulated_weapons_models.py": "a965b09bbd0a286c0551c254dfbedcb079c8face44663c7fbe06115358add4dd"
+  },
+  "sha256": {
+    "models/caelum/inventory/articulated_weapons/flail.md3": "82de8dc009238e351cf01d627a79e4cc711158c74de8e36c7187b71f63847833",
+    "editable/flail.obj": "92658fa94e02db72bea9662c8d8dfc57546ac5bbabbb4799a004bf9be8291fb8",
+    "models/caelum/inventory/articulated_weapons/giant_gauntlets.md3": "c2a22b164b3b3360487e2fd5c19385faefab0d6f4f96d8c24d5d6f4e4e91ee77",
+    "editable/giant_gauntlets.obj": "dc81ee6cab3811c3a4975ab0cd4db60f82b3f17949ec59f8178276afcaa7e58f",
+    "models/caelum/inventory/articulated_weapons/bolas.md3": "d7eca1034da17d9e8770e5706b03373a6735db9b57bedd006edef1c88ca519d9",
+    "editable/bolas.obj": "c58fbc27342ff217858079a3a9b133b0340f034b69a7e35798c1bcf35c9dbf73",
+    "editable/articulated_weapons.mtl": "0fb8e6534d3ab3e02360455fd19cccbf60fd7214b6e38e8f034b4e3ecb4e9fa0",
+    "caelum/data/inventory_articulated_weapons.modeldef": "0e94fe3e87856658715759c87feb91536dc61ee7c9176ccef033940d90fc8014",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "editable/src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1",
+    "editable/src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "editable/src/models/caelum/inventory/footwear/bc.png": "ca1aaa283b521171b98d705cdb38bfc95db1eff7544ae958890f1f7e2e14f89d"
+  },
+  "reuse_note": "Existing owned texture pixels are reused unchanged; no duplicate runtime textures."
+}

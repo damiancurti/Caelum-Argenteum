@@ -1,0 +1,43 @@
+{
+  "issue": 771,
+  "kind": "articulated_weapons",
+  "scope": "Native pickup/toss, quantity and saved ownership for articulated_weapons; no normal menu or author acceptance.",
+  "baseline_sha256": "2398bbca2c6a2c70f15cebe816e496239248470f1831f9edd63d89d6f52f0b0d",
+  "runtime_sha256": "2398bbca2c6a2c70f15cebe816e496239248470f1831f9edd63d89d6f52f0b0d",
+  "model_sha256": "730e99ff2eeadb05dbf1df2c7da7bcab4db503808056862d2d1394ad84d8b3e7",
+  "fixture_sha256": "9e3403ce4da4ba198c56b086fbaec99299012d09f4894f17d791cf02dbc2d0b8",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 141
+    }
+  ],
+  "captures": {
+    "candidate-0.png": "79608bc570b73e414220db053aa4a2224ca354508f140c7bb55ef23963aff1ac",
+    "candidate-1.png": "124e7a489d10fecd4d3d4f47f2ca725d7476f87f9b66f44f90b76fd8c870bbd7",
+    "candidate-2.png": "ed5a38d027dc4b36eae954a98ecf9c2472407b2a0a36e9f31356cacd40db15f6",
+    "candidate-3.png": "79608bc570b73e414220db053aa4a2224ca354508f140c7bb55ef23963aff1ac",
+    "candidate-5.png": "79608bc570b73e414220db053aa4a2224ca354508f140c7bb55ef23963aff1ac",
+    "candidate-6.png": "79608bc570b73e414220db053aa4a2224ca354508f140c7bb55ef23963aff1ac",
+    "candidate-7.png": "83c9c71adba9215cf0bcd43de2f5289606450e103f29129525971d39b97a1169",
+    "detail-0-0.png": "301ce77b1664cb0a861212b40dc2b837798234ea4ce186fcfebaa4a903c8e817",
+    "detail-0-160.png": "fb5c1f4b3c9a43f9f44195ba91ff7eaa6b683550dea1472dfcdc1d8ab0a56362",
+    "detail-0-225.png": "ccd543ac561bfacea0ba510bdfd7917b1f589656d64bf3deb0b0232fb4465481",
+    "detail-0-270.png": "3754018503a189da458a380836f285e8581ca59e49aff1eb3bc60f70d35ce4c3",
+    "detail-0-90.png": "06b6a9101a04d93a2b130b835f76c74e2dd845d18452f2f7704c107f78c70011",
+    "detail-1-0.png": "46a297d37908b78b4d2d674a2f82a1f9664cdffd294f106b4b67175091b326b5",
+    "detail-1-160.png": "e439fd98095f5b0b03b66b9526cc11cce7ce70ea10c2cc0bf22a668f703fd83e",
+    "detail-1-225.png": "87a8248bcb8b255b10fe03ba511590ff7a63b5e8951ce02eeb8ad56f999373ce",
+    "detail-1-270.png": "7c76b1b544d456be78c031687339cd4a714404cffb29c618099e55586cca8970",
+    "detail-1-90.png": "9e28259abcf120ff877e2c92bc78f16c55f370cdd61cc9bbe398700dd27c6945",
+    "detail-2-0.png": "cd22538b406281be59d8777f9346c1daa289902261d21ff24b125216bb654bf1",
+    "detail-2-160.png": "9bf6b616a43bc2c31e2a997ee76d757b8f7cefda36ac1f485b58414a39d2b82f",
+    "detail-2-225.png": "3319e23bec05cc1b7fa4993bca0c2119790eaabd6071b9edd947efaf9f0ddf18",
+    "detail-2-270.png": "7979338e69022c24769fcdd76c7286c6348160e6b70714deccfba3841965f084",
+    "detail-2-90.png": "788b87d351127535ad609eb8fae0d23188ae0d557d3e0940c5809632a8385f7a"
+  }
+}
