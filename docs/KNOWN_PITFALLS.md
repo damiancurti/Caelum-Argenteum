@@ -31,6 +31,12 @@ Author acceptance remains PENDING: CA799-UV-01 and the earlier two art checks.
 This addresses integer swept grids only; other UV layouts need their own cell
 ownership and seam checks. Do not silently repin historical source provenance.
 
+Extension #803, 2026-11-15: the head validator matches all native triangles to
+serialized OBJ shape/material ownership, then checks both atlas tiles and
+authored face rectangles. Global bounds alone would miss the first export's 20
+out-of-cell vertices per head. Final export: 28,414 checked native material UV
+vertices, zero overflow. This validates these two head models, not every atlas.
+
 ## CA-KP-248 - Verify exact native model states and typed diagnostic censuses
 
 Status/evidence: STATIC-VERIFIED and ENGINE-OBSERVED, #785, 2026-11-15.
@@ -194,6 +200,16 @@ strict checks; a point on a capped tube's boundary can look inside to a ray
 filter that ignores zero-distance hits. The final 85 witnesses must lie inside
 both serialized solids with two independent directions and clearance above
 native quantization. Two wing roots needed actual geometry changes.
+
+Extension #803, 2026-11-15: true pole fans also support continuously deformed
+facial crania. The clipped-ring first export collapsed 3430/2698 native triangles
+across the 23 poses; the final Umita/Chonchon export has none. Reusing transformed
+wing topology does not validate old contact witnesses: check the smoothed,
+serialized geometry again. Extended thumb roots and new interior witnesses pass
+504 posed checks. Evidence: assets/validation_v5_17_80/evidence/SUMMARY.json;
+364 native assertions plus 51 final-pose checks, visual candidates still pending
+CA803-HEADS-01. A zero mesh-local floor did not prevent a wing-tip perch;
+progressive death/rest wing folding fixes that appearance in the final captures.
 
 Native functional assertions do not establish distinct or grounded art.
 Peuchen's first 51-assertion preview repeats idle endpoints, attack poses and

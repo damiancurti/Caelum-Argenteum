@@ -1,0 +1,577 @@
+{
+  "schema_revision": 1,
+  "issue": 803,
+  "species": {
+    "umita": [
+      {
+        "part": "scalp",
+        "target": "cranium",
+        "witness": [
+          -7,
+          0,
+          65
+        ]
+      },
+      {
+        "part": "left_ear",
+        "target": "cranium",
+        "witness": [
+          -0.5,
+          -17,
+          55
+        ]
+      },
+      {
+        "part": "right_ear",
+        "target": "cranium",
+        "witness": [
+          -0.5,
+          17,
+          55
+        ]
+      },
+      {
+        "part": "hair_lock_00",
+        "target": "scalp",
+        "witness": [
+          1.155942793236533,
+          12.892228270596345,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_01",
+        "target": "scalp",
+        "witness": [
+          -1.2774409965012261,
+          13.866269649895834,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_02",
+        "target": "scalp",
+        "witness": [
+          -3.8319025544420255,
+          14.223649652764772,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_03",
+        "target": "scalp",
+        "witness": [
+          -6.393839749650056,
+          13.94847485941238,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_04",
+        "target": "scalp",
+        "witness": [
+          -8.84931799430793,
+          13.052982855801732,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_05",
+        "target": "scalp",
+        "witness": [
+          -11.089137147903646,
+          11.576998003168523,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_06",
+        "target": "scalp",
+        "witness": [
+          -13.013687870860986,
+          9.586160367211482,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_07",
+        "target": "scalp",
+        "witness": [
+          -14.537381455633202,
+          7.169006570096199,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_08",
+        "target": "scalp",
+        "witness": [
+          -15.592456131609469,
+          4.4330323857552685,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_09",
+        "target": "scalp",
+        "witness": [
+          -16.131990569668705,
+          1.4999121829261037,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_10",
+        "target": "scalp",
+        "witness": [
+          -16.131990569668705,
+          -1.4999121829261004,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_11",
+        "target": "scalp",
+        "witness": [
+          -15.59245613160947,
+          -4.433032385755265,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_12",
+        "target": "scalp",
+        "witness": [
+          -14.537381455633199,
+          -7.169006570096207,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_13",
+        "target": "scalp",
+        "witness": [
+          -13.013687870860986,
+          -9.586160367211484,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_14",
+        "target": "scalp",
+        "witness": [
+          -11.089137147903644,
+          -11.576998003168525,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_15",
+        "target": "scalp",
+        "witness": [
+          -8.84931799430793,
+          -13.052982855801732,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_16",
+        "target": "scalp",
+        "witness": [
+          -6.3938397496500565,
+          -13.94847485941238,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_17",
+        "target": "scalp",
+        "witness": [
+          -3.8319025544420287,
+          -14.223649652764772,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_18",
+        "target": "scalp",
+        "witness": [
+          -1.2774409965012314,
+          -13.866269649895836,
+          74.575
+        ]
+      },
+      {
+        "part": "hair_lock_19",
+        "target": "scalp",
+        "witness": [
+          1.1559427932365347,
+          -12.892228270596343,
+          74.575
+        ]
+      },
+      {
+        "part": "beard_lock_0",
+        "target": "cranium",
+        "witness": [
+          10.175,
+          -7.0175,
+          36.8
+        ]
+      },
+      {
+        "part": "beard_lock_1",
+        "target": "cranium",
+        "witness": [
+          10.175,
+          -3.50875,
+          36.8
+        ]
+      },
+      {
+        "part": "beard_lock_2",
+        "target": "cranium",
+        "witness": [
+          10.175,
+          0.0,
+          36.8
+        ]
+      },
+      {
+        "part": "beard_lock_3",
+        "target": "cranium",
+        "witness": [
+          10.175,
+          3.50875,
+          36.8
+        ]
+      },
+      {
+        "part": "beard_lock_4",
+        "target": "cranium",
+        "witness": [
+          10.175,
+          7.0175,
+          36.8
+        ]
+      }
+    ],
+    "chonchon": [
+      {
+        "part": "scalp",
+        "target": "cranium",
+        "witness": [
+          -7,
+          0,
+          61
+        ]
+      },
+      {
+        "part": "hair_lock_00",
+        "target": "scalp",
+        "witness": [
+          1.1453773366930156,
+          12.869570575920429,
+          70.675
+        ]
+      },
+      {
+        "part": "hair_lock_01",
+        "target": "scalp",
+        "witness": [
+          -2.451367085337639,
+          14.084658717224814,
+          70.675
+        ]
+      },
+      {
+        "part": "hair_lock_02",
+        "target": "scalp",
+        "witness": [
+          -6.194605085384302,
+          13.967402678649439,
+          70.675
+        ]
+      },
+      {
+        "part": "hair_lock_03",
+        "target": "scalp",
+        "witness": [
+          -9.730243499857025,
+          12.528894344185826,
+          70.675
+        ]
+      },
+      {
+        "part": "hair_lock_04",
+        "target": "scalp",
+        "witness": [
+          -12.723827134756595,
+          9.905210011145128,
+          70.675
+        ]
+      },
+      {
+        "part": "hair_lock_05",
+        "target": "scalp",
+        "witness": [
+          -14.892176694580169,
+          6.344538195923089,
+          70.675
+        ]
+      },
+      {
+        "part": "hair_lock_06",
+        "target": "scalp",
+        "witness": [
+          -16.030176246171152,
+          2.183702137528775,
+          70.675
+        ]
+      },
+      {
+        "part": "hair_lock_07",
+        "target": "scalp",
+        "witness": [
+          -16.030176246171152,
+          -2.1837021375287713,
+          70.675
+        ]
+      },
+      {
+        "part": "hair_lock_08",
+        "target": "scalp",
+        "witness": [
+          -14.89217669458017,
+          -6.344538195923086,
+          70.675
+        ]
+      },
+      {
+        "part": "hair_lock_09",
+        "target": "scalp",
+        "witness": [
+          -12.723827134756595,
+          -9.905210011145122,
+          70.675
+        ]
+      },
+      {
+        "part": "hair_lock_10",
+        "target": "scalp",
+        "witness": [
+          -9.730243499857023,
+          -12.528894344185828,
+          70.675
+        ]
+      },
+      {
+        "part": "hair_lock_11",
+        "target": "scalp",
+        "witness": [
+          -6.194605085384294,
+          -13.96740267864944,
+          70.675
+        ]
+      },
+      {
+        "part": "hair_lock_12",
+        "target": "scalp",
+        "witness": [
+          -2.451367085337634,
+          -14.084658717224812,
+          70.675
+        ]
+      },
+      {
+        "part": "hair_lock_13",
+        "target": "scalp",
+        "witness": [
+          1.1453773366930173,
+          -12.869570575920427,
+          70.675
+        ]
+      },
+      {
+        "part": "left_wing_arm",
+        "target": "cranium",
+        "witness": [
+          -2.9,
+          -16.6,
+          60.6
+        ]
+      },
+      {
+        "part": "left_wing_thumb",
+        "target": "left_wing_arm",
+        "witness": [
+          2.6,
+          -44.05,
+          83.7
+        ]
+      },
+      {
+        "part": "left_wing_finger_0",
+        "target": "left_wing_arm",
+        "witness": [
+          2.3899999999999997,
+          -44.05,
+          83.85
+        ]
+      },
+      {
+        "part": "left_wing_finger_1",
+        "target": "left_wing_arm",
+        "witness": [
+          2.3899999999999997,
+          -44.05,
+          83.85
+        ]
+      },
+      {
+        "part": "left_wing_finger_2",
+        "target": "left_wing_arm",
+        "witness": [
+          2.3899999999999997,
+          -44.05,
+          83.85
+        ]
+      },
+      {
+        "part": "left_wing_finger_3",
+        "target": "left_wing_arm",
+        "witness": [
+          2.3899999999999997,
+          -44.05,
+          83.85
+        ]
+      },
+      {
+        "part": "left_wing_panel_0",
+        "target": "left_wing_arm",
+        "witness": [
+          2.138,
+          -44.7375,
+          82.9905
+        ]
+      },
+      {
+        "part": "left_wing_panel_1",
+        "target": "left_wing_arm",
+        "witness": [
+          2.2482499999999996,
+          -44.28925,
+          83.256
+        ]
+      },
+      {
+        "part": "left_wing_panel_2",
+        "target": "left_wing_arm",
+        "witness": [
+          2.25875,
+          -43.99225000000001,
+          83.229
+        ]
+      },
+      {
+        "part": "left_wing_root_web",
+        "target": "left_wing_arm",
+        "witness": [
+          -3.0,
+          -17.98,
+          63.15
+        ]
+      },
+      {
+        "part": "right_wing_arm",
+        "target": "cranium",
+        "witness": [
+          -2.9,
+          16.6,
+          60.6
+        ]
+      },
+      {
+        "part": "right_wing_thumb",
+        "target": "right_wing_arm",
+        "witness": [
+          2.6,
+          44.05,
+          83.7
+        ]
+      },
+      {
+        "part": "right_wing_finger_0",
+        "target": "right_wing_arm",
+        "witness": [
+          2.3899999999999997,
+          44.05,
+          83.85
+        ]
+      },
+      {
+        "part": "right_wing_finger_1",
+        "target": "right_wing_arm",
+        "witness": [
+          2.3899999999999997,
+          44.05,
+          83.85
+        ]
+      },
+      {
+        "part": "right_wing_finger_2",
+        "target": "right_wing_arm",
+        "witness": [
+          2.3899999999999997,
+          44.05,
+          83.85
+        ]
+      },
+      {
+        "part": "right_wing_finger_3",
+        "target": "right_wing_arm",
+        "witness": [
+          2.3899999999999997,
+          44.05,
+          83.85
+        ]
+      },
+      {
+        "part": "right_wing_panel_0",
+        "target": "right_wing_arm",
+        "witness": [
+          2.138,
+          44.7375,
+          82.9905
+        ]
+      },
+      {
+        "part": "right_wing_panel_1",
+        "target": "right_wing_arm",
+        "witness": [
+          2.2482499999999996,
+          44.28925,
+          83.256
+        ]
+      },
+      {
+        "part": "right_wing_panel_2",
+        "target": "right_wing_arm",
+        "witness": [
+          2.25875,
+          43.99225000000001,
+          83.229
+        ]
+      },
+      {
+        "part": "right_wing_root_web",
+        "target": "right_wing_arm",
+        "witness": [
+          -3.0,
+          17.98,
+          63.15
+        ]
+      }
+    ]
+  }
+}
