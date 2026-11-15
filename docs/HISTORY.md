@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.83** - 2026-11-15.
+Documentation version: **5.17.84** - 2026-11-15.
+
+## 5.17.84 - Viuda, Llorona and Futre candidates (#811, 2026-11-15)
+
+Added distinct native period apparitions, editable sources, original generated
+materials, provenance and inherited combat mappings. Fourteen exports repeat;
+geometry, joint and stride-coverage checks pass. Native evidence totals 686
+qualified assertions with explicit package/frame bounds for reuse. Final-package
+presentation pairs and reviewed captures remain isolated evidence. Early contact,
+face/cloth and skirt-stride defects retain diagnostics. ASSETS and
+assets/validation_v5_17_84/evidence/SUMMARY.json record details and limits.
+CA811-PERIOD-01 originates here and remains pending. No previous author check
+was removed or accepted. Native creature coverage reaches 30/56; the wider batch
+and final consolidated review remain unfinished.
 
 ## 5.17.83 - Umita and Chonchon regional galleries (#809)
 

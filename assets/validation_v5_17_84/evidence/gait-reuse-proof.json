@@ -1,0 +1,146 @@
+{
+  "issue": 811,
+  "final_runtime_sha256": "63040843cdb73fce9700872a700498a78982efd0a3834e2ce35cf10be4188dcb",
+  "comparisons": {
+    "02": {
+      "runtime_sha256": "8d7852904ec8f5cd0b2dae2e771d871d1d4e522f29a19cb90c1f109b00be990b",
+      "changed_resources": [
+        "models/caelum/folklore/periodapparitions/llorona.md3",
+        "models/caelum/folklore/periodapparitions/viuda.md3"
+      ],
+      "changed_native_frames": {},
+      "all_other_runtime_bytes_identical": true,
+      "all_bindings_and_futre_exact": true
+    },
+    "03": {
+      "runtime_sha256": "f6e58ba59b2987634f2f423aa75cd07b8487481e359c56e98597a1d019e257cd",
+      "changed_resources": [
+        "models/caelum/folklore/periodapparitions/llorona.md3",
+        "models/caelum/folklore/periodapparitions/viuda.md3"
+      ],
+      "changed_native_frames": {
+        "models/caelum/folklore/periodapparitions/llorona.md3": {
+          "changed_frames": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "position_changes": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "normals_only_counts": {
+            "2": 5,
+            "4": 4
+          }
+        },
+        "models/caelum/folklore/periodapparitions/viuda.md3": {
+          "changed_frames": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "position_changes": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "normals_only_counts": {
+            "2": 4,
+            "4": 3
+          }
+        }
+      },
+      "all_other_runtime_bytes_identical": true,
+      "all_bindings_and_futre_exact": true
+    },
+    "04": {
+      "runtime_sha256": "6bcb287be40752f15a4a80e06b23a4d728fb64288eafd40cca293d132da83a58",
+      "changed_resources": [
+        "models/caelum/folklore/periodapparitions/llorona.md3",
+        "models/caelum/folklore/periodapparitions/viuda.md3"
+      ],
+      "changed_native_frames": {
+        "models/caelum/folklore/periodapparitions/llorona.md3": {
+          "changed_frames": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "position_changes": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "normals_only_counts": {
+            "2": 5,
+            "4": 4
+          }
+        },
+        "models/caelum/folklore/periodapparitions/viuda.md3": {
+          "changed_frames": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "position_changes": [
+            3,
+            5,
+            6,
+            7
+          ],
+          "normals_only_counts": {
+            "2": 4,
+            "4": 3
+          }
+        }
+      },
+      "all_other_runtime_bytes_identical": true,
+      "all_bindings_and_futre_exact": true
+    }
+  },
+  "reused_evidence": {
+    "viuda-continuity": {
+      "path": "build/issue811-viuda-native02/RESULTS.json",
+      "assertions": 115,
+      "runtime_version": "03"
+    },
+    "llorona-continuity": {
+      "path": "build/issue811-llorona-native02/RESULTS.json",
+      "assertions": 115,
+      "runtime_version": "03"
+    },
+    "futre-continuity": {
+      "path": "build/issue811-futre-native01/RESULTS.json",
+      "assertions": 115,
+      "runtime_version": "02"
+    },
+    "actions-loot": {
+      "path": "build/issue811-actions01/RESULTS.json",
+      "assertions": 188,
+      "runtime_version": "04"
+    },
+    "futre-final-camera": {
+      "path": "build/issue811-futre-visual02/RESULTS.json",
+      "assertions": 51,
+      "runtime_version": "03"
+    }
+  },
+  "qualification": "Final art changes from period03/04 are only female MD3 walk/run frames2..7: positions change in3/5/6/7;2/4 retain exact positions/bounds and differ only in a few encoded normals after floating-point gait transforms. Native states, timings, classes, collision, save fields, loot, all bindings, all textures, all topology/UVs and the other17 animation frames are exact. Futre is byte-identical even to period02. Final-package female visual checks and final presentation cohorts complement this bounded functional reuse; no campaign or author acceptance."
+}

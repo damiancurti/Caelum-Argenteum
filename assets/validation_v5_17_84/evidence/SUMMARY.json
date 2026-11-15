@@ -1,0 +1,4228 @@
+{
+  "issue": 811,
+  "parent_issue": 461,
+  "version": "5.17.84",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Native Viuda/Llorona/Futre candidates, inherited gameplay and save fields unchanged.",
+  "runtime": {
+    "issue": 811,
+    "runtime_sha256": "63040843cdb73fce9700872a700498a78982efd0a3834e2ce35cf10be4188dcb",
+    "baseline_sha256": "7bc1583b95bc30fdc6a8b9b04d4afba4de73de4461872f53cb5cbab07a55f539",
+    "package_exact_source_bytes": true,
+    "source_entries": 18590,
+    "added_resources": [
+      "caelum/data/period_apparition_combat.modeldef",
+      "models/caelum/folklore/periodapparitions/fine-cloth.png",
+      "models/caelum/folklore/periodapparitions/futre.md3",
+      "models/caelum/folklore/periodapparitions/llorona.md3",
+      "models/caelum/folklore/periodapparitions/materials.png",
+      "models/caelum/folklore/periodapparitions/viuda.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true,
+    "repeated_files": 14,
+    "export_sha256": {
+      "caelum/data/period_apparition_combat.modeldef": "ee4dfe8135de04fb942a82c920feae73036743bbbfb4fb0616e9e10a41a2a1f3",
+      "editable/futre.mtl": "5575112d33d455be956be68efcd8026031218ee35f7ba91bd27ce13c9cf8dfe8",
+      "editable/futre.obj": "391e2d3c3fff47c4a240a91cb87de49c1bb5a19584516a59877d3afa5c4e7527",
+      "editable/llorona.mtl": "5575112d33d455be956be68efcd8026031218ee35f7ba91bd27ce13c9cf8dfe8",
+      "editable/llorona.obj": "f65497f43e8b53355ac30e59272522b65e2564c4ecbd1c27a7eb48ef84ea7ea0",
+      "editable/viuda.mtl": "5575112d33d455be956be68efcd8026031218ee35f7ba91bd27ce13c9cf8dfe8",
+      "editable/viuda.obj": "ca17e6188aa1554422d7d52d4e8e6266f7c8ae92596f65b699ed7127e6f1586c",
+      "manifest.json": "e1ff8ee62c5ad5cd13274c617785c728027c17e8b5dac7b8fe614b9d814af627",
+      "models/caelum/folklore/periodapparitions/fine-cloth.png": "0464311a9011e636d6c70befd93640f32205d88978748e7f271123014b589e5a",
+      "models/caelum/folklore/periodapparitions/futre.md3": "7ffacef4f5cee12195ac78118b55c97fbbc37a547ec4e734ec2ecb3c6abcdc68",
+      "models/caelum/folklore/periodapparitions/llorona.md3": "12735c2174a2775e02d5ad2c28962efffcb6dcbea547fc7bb7f0316eabc52b3d",
+      "models/caelum/folklore/periodapparitions/materials.png": "101d1fd458732f45e887a24d8a0ea77d8864c8269b2b5dd11ba7c51fd3bf1a8e",
+      "models/caelum/folklore/periodapparitions/viuda.md3": "243ee5be009baba55b3244aed006d53ae4cec9b5b8b7ac057401a1b8609206da",
+      "preview.pk3": "e786258be659328f45e59452a80d763f39739e374d71ae7b0354e71c18d14cce"
+    }
+  },
+  "geometry": {
+    "viuda": {
+      "closed_components": 50,
+      "attachment_witnesses": 49,
+      "rooted_components": 50,
+      "combat_frames": 23,
+      "collapsed_native_triangles": 0,
+      "native_pose_floor_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "independent_posed_attachment_checks": 392,
+      "attachment_frames": [
+        0,
+        10,
+        17,
+        22
+      ],
+      "native_material_uv_vertices": 7957,
+      "native_uv_outside_material_cell": 0,
+      "authored_render_offset": [
+        0,
+        0,
+        0
+      ],
+      "critical_component_floors": {
+        "0": {
+          "left_thigh": 29.6875,
+          "left_shin": 6.9375,
+          "left_foot": 0.0,
+          "left_hand": 39.921875,
+          "left_finger_0": 38.421875,
+          "left_finger_1": 37.671875,
+          "left_finger_2": 37.953125,
+          "left_finger_3": 38.78125,
+          "left_thumb": 41.0,
+          "right_thigh": 29.6875,
+          "right_shin": 6.9375,
+          "right_foot": 0.0,
+          "right_hand": 39.921875,
+          "right_finger_0": 38.421875,
+          "right_finger_1": 37.671875,
+          "right_finger_2": 37.953125,
+          "right_finger_3": 38.78125,
+          "right_thumb": 41.0,
+          "neck": 78.953125,
+          "head": 84.28125,
+          "left_ear": 90.125,
+          "right_ear": 90.125,
+          "hair_mass": 86.984375,
+          "hair_lock_00": 80.921875,
+          "hair_lock_01": 79.859375,
+          "hair_lock_02": 77.640625,
+          "hair_lock_03": 76.3125,
+          "hair_lock_04": 77.09375,
+          "hair_lock_05": 79.265625,
+          "hair_lock_06": 80.84375,
+          "hair_lock_07": 80.359375,
+          "hair_lock_08": 78.265625,
+          "hair_lock_09": 76.484375,
+          "brooch": 74.09375,
+          "hair_crown": 95.359375,
+          "left_temple_lock": 85.546875,
+          "right_temple_lock": 85.546875,
+          "pelvis": 46.1875,
+          "torso": 54.625,
+          "left_upper": 59.875,
+          "left_fore": 45.25,
+          "left_cuff": 45.390625,
+          "right_upper": 59.875,
+          "right_fore": 45.25,
+          "right_cuff": 45.390625,
+          "skirt": 7.9375,
+          "lower_flounce": 8.9375,
+          "overskirt": 29.796875,
+          "veil": 46.15625,
+          "mourning_collar": 79.75
+        },
+        "10": {
+          "left_thigh": 29.6875,
+          "left_shin": 6.9375,
+          "left_foot": 0.0,
+          "left_hand": 58.375,
+          "left_finger_0": 58.609375,
+          "left_finger_1": 58.515625,
+          "left_finger_2": 58.609375,
+          "left_finger_3": 58.609375,
+          "left_thumb": 59.421875,
+          "right_thigh": 29.6875,
+          "right_shin": 6.9375,
+          "right_foot": 0.0,
+          "right_hand": 64.390625,
+          "right_finger_0": 64.765625,
+          "right_finger_1": 64.765625,
+          "right_finger_2": 64.765625,
+          "right_finger_3": 64.765625,
+          "right_thumb": 65.328125,
+          "neck": 78.0625,
+          "head": 83.765625,
+          "left_ear": 89.671875,
+          "right_ear": 89.671875,
+          "hair_mass": 87.0,
+          "hair_lock_00": 81.09375,
+          "hair_lock_01": 80.25,
+          "hair_lock_02": 78.296875,
+          "hair_lock_03": 77.171875,
+          "hair_lock_04": 78.046875,
+          "hair_lock_05": 80.1875,
+          "hair_lock_06": 81.640625,
+          "hair_lock_07": 80.96875,
+          "hair_lock_08": 78.6875,
+          "hair_lock_09": 76.71875,
+          "brooch": 72.6875,
+          "hair_crown": 94.703125,
+          "left_temple_lock": 85.078125,
+          "right_temple_lock": 85.078125,
+          "pelvis": 46.1875,
+          "torso": 53.484375,
+          "left_upper": 63.34375,
+          "left_fore": 58.71875,
+          "left_cuff": 59.109375,
+          "right_upper": 67.53125,
+          "right_fore": 64.3125,
+          "right_cuff": 64.578125,
+          "skirt": 7.9375,
+          "lower_flounce": 8.9375,
+          "overskirt": 29.796875,
+          "veil": 45.796875,
+          "mourning_collar": 78.78125
+        },
+        "17": {
+          "left_thigh": 12.59375,
+          "left_shin": 12.46875,
+          "left_foot": 14.3125,
+          "left_hand": 14.03125,
+          "left_finger_0": 14.6875,
+          "left_finger_1": 14.6875,
+          "left_finger_2": 14.6875,
+          "left_finger_3": 14.6875,
+          "left_thumb": 14.859375,
+          "right_thigh": 14.03125,
+          "right_shin": 14.015625,
+          "right_foot": 14.890625,
+          "right_hand": 15.796875,
+          "right_finger_0": 16.53125,
+          "right_finger_1": 16.53125,
+          "right_finger_2": 16.53125,
+          "right_finger_3": 16.53125,
+          "right_thumb": 16.546875,
+          "neck": 16.03125,
+          "head": 13.453125,
+          "left_ear": 18.671875,
+          "right_ear": 18.671875,
+          "hair_mass": 12.875,
+          "hair_lock_00": 14.671875,
+          "hair_lock_01": 13.25,
+          "hair_lock_02": 11.671875,
+          "hair_lock_03": 10.46875,
+          "hair_lock_04": 10.015625,
+          "hair_lock_05": 10.3125,
+          "hair_lock_06": 11.09375,
+          "hair_lock_07": 12.046875,
+          "hair_lock_08": 13.03125,
+          "hair_lock_09": 14.0625,
+          "brooch": 24.984375,
+          "hair_crown": 15.828125,
+          "left_temple_lock": 18.5625,
+          "right_temple_lock": 18.5625,
+          "pelvis": 11.375,
+          "torso": 10.875,
+          "left_upper": 14.484375,
+          "left_fore": 13.453125,
+          "left_cuff": 13.515625,
+          "right_upper": 14.71875,
+          "right_fore": 15.046875,
+          "right_cuff": 15.03125,
+          "skirt": 1.828125,
+          "lower_flounce": 1.34375,
+          "overskirt": 6.0,
+          "veil": 0.0,
+          "mourning_collar": 15.59375
+        },
+        "22": {
+          "left_thigh": 8.375,
+          "left_shin": 8.171875,
+          "left_foot": 15.203125,
+          "left_hand": 28.28125,
+          "left_finger_0": 29.5,
+          "left_finger_1": 29.5,
+          "left_finger_2": 29.5,
+          "left_finger_3": 29.5,
+          "left_thumb": 29.0,
+          "right_thigh": 10.125,
+          "right_shin": 9.9375,
+          "right_foot": 16.984375,
+          "right_hand": 25.609375,
+          "right_finger_0": 26.625,
+          "right_finger_1": 26.625,
+          "right_finger_2": 26.625,
+          "right_finger_3": 26.625,
+          "right_thumb": 26.25,
+          "neck": 17.3125,
+          "head": 14.953125,
+          "left_ear": 20.171875,
+          "right_ear": 20.171875,
+          "hair_mass": 14.4375,
+          "hair_lock_00": 15.875,
+          "hair_lock_01": 14.421875,
+          "hair_lock_02": 12.765625,
+          "hair_lock_03": 11.53125,
+          "hair_lock_04": 11.109375,
+          "hair_lock_05": 11.484375,
+          "hair_lock_06": 12.3125,
+          "hair_lock_07": 13.25,
+          "hair_lock_08": 14.140625,
+          "hair_lock_09": 15.109375,
+          "brooch": 26.265625,
+          "hair_crown": 17.546875,
+          "left_temple_lock": 19.859375,
+          "right_temple_lock": 19.859375,
+          "pelvis": 12.640625,
+          "torso": 12.140625,
+          "left_upper": 17.125,
+          "left_fore": 22.0,
+          "left_cuff": 26.203125,
+          "right_upper": 17.0625,
+          "right_fore": 20.765625,
+          "right_cuff": 23.765625,
+          "skirt": 3.109375,
+          "lower_flounce": 2.609375,
+          "overskirt": 7.28125,
+          "veil": 0.0,
+          "mourning_collar": 16.859375
+        }
+      }
+    },
+    "llorona": {
+      "closed_components": 59,
+      "attachment_witnesses": 58,
+      "rooted_components": 59,
+      "combat_frames": 23,
+      "collapsed_native_triangles": 0,
+      "native_pose_floor_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "independent_posed_attachment_checks": 464,
+      "attachment_frames": [
+        0,
+        10,
+        17,
+        22
+      ],
+      "native_material_uv_vertices": 8084,
+      "native_uv_outside_material_cell": 0,
+      "authored_render_offset": [
+        0,
+        0,
+        0
+      ],
+      "critical_component_floors": {
+        "0": {
+          "torso": 54.625,
+          "left_thigh": 29.6875,
+          "left_shin": 6.9375,
+          "left_foot": 0.0,
+          "left_hand": 39.921875,
+          "left_finger_0": 38.421875,
+          "left_finger_1": 37.671875,
+          "left_finger_2": 37.953125,
+          "left_finger_3": 38.78125,
+          "left_thumb": 41.0,
+          "right_thigh": 29.6875,
+          "right_shin": 6.9375,
+          "right_foot": 0.0,
+          "right_hand": 39.921875,
+          "right_finger_0": 38.421875,
+          "right_finger_1": 37.671875,
+          "right_finger_2": 37.953125,
+          "right_finger_3": 38.78125,
+          "right_thumb": 41.0,
+          "neck": 78.953125,
+          "head": 84.28125,
+          "left_ear": 90.125,
+          "right_ear": 90.125,
+          "hair_mass": 86.984375,
+          "hair_lock_00": 70.859375,
+          "hair_lock_01": 69.78125,
+          "hair_lock_02": 67.5625,
+          "hair_lock_03": 66.234375,
+          "hair_lock_04": 67.015625,
+          "hair_lock_05": 69.203125,
+          "hair_lock_06": 70.765625,
+          "hair_lock_07": 70.28125,
+          "hair_lock_08": 68.1875,
+          "hair_lock_09": 66.421875,
+          "hair_crown": 95.359375,
+          "left_temple_lock": 85.546875,
+          "right_temple_lock": 85.546875,
+          "left_toe_0": 1.4375,
+          "left_toe_1": 1.4375,
+          "left_toe_2": 1.4375,
+          "left_toe_3": 1.4375,
+          "left_toe_4": 1.4375,
+          "right_toe_0": 1.4375,
+          "right_toe_1": 1.4375,
+          "right_toe_2": 1.4375,
+          "right_toe_3": 1.4375,
+          "right_toe_4": 1.4375,
+          "pelvis": 46.1875,
+          "left_upper": 59.875,
+          "left_fore": 44.890625,
+          "left_cuff": 45.390625,
+          "right_upper": 59.875,
+          "right_fore": 44.890625,
+          "right_cuff": 45.390625,
+          "skirt": 7.9375,
+          "lower_flounce": 8.9375,
+          "overskirt": 29.796875,
+          "brooch": 74.09375,
+          "dress_knot": 51.25
+        },
+        "10": {
+          "torso": 53.484375,
+          "left_thigh": 29.6875,
+          "left_shin": 6.9375,
+          "left_foot": 0.0,
+          "left_hand": 58.375,
+          "left_finger_0": 58.609375,
+          "left_finger_1": 58.515625,
+          "left_finger_2": 58.609375,
+          "left_finger_3": 58.609375,
+          "left_thumb": 59.421875,
+          "right_thigh": 29.6875,
+          "right_shin": 6.9375,
+          "right_foot": 0.0,
+          "right_hand": 64.390625,
+          "right_finger_0": 64.765625,
+          "right_finger_1": 64.765625,
+          "right_finger_2": 64.765625,
+          "right_finger_3": 64.765625,
+          "right_thumb": 65.328125,
+          "neck": 78.0625,
+          "head": 83.765625,
+          "left_ear": 89.671875,
+          "right_ear": 89.671875,
+          "hair_mass": 87.0,
+          "hair_lock_00": 71.171875,
+          "hair_lock_01": 70.34375,
+          "hair_lock_02": 68.375,
+          "hair_lock_03": 67.25,
+          "hair_lock_04": 68.125,
+          "hair_lock_05": 70.28125,
+          "hair_lock_06": 71.71875,
+          "hair_lock_07": 71.0625,
+          "hair_lock_08": 68.765625,
+          "hair_lock_09": 66.796875,
+          "hair_crown": 94.703125,
+          "left_temple_lock": 85.078125,
+          "right_temple_lock": 85.078125,
+          "left_toe_0": 1.4375,
+          "left_toe_1": 1.4375,
+          "left_toe_2": 1.4375,
+          "left_toe_3": 1.4375,
+          "left_toe_4": 1.4375,
+          "right_toe_0": 1.4375,
+          "right_toe_1": 1.4375,
+          "right_toe_2": 1.4375,
+          "right_toe_3": 1.4375,
+          "right_toe_4": 1.4375,
+          "pelvis": 46.1875,
+          "left_upper": 63.34375,
+          "left_fore": 57.0625,
+          "left_cuff": 59.109375,
+          "right_upper": 67.53125,
+          "right_fore": 62.59375,
+          "right_cuff": 64.578125,
+          "skirt": 7.9375,
+          "lower_flounce": 8.9375,
+          "overskirt": 29.796875,
+          "brooch": 72.6875,
+          "dress_knot": 51.25
+        },
+        "17": {
+          "torso": 9.53125,
+          "left_thigh": 11.265625,
+          "left_shin": 11.125,
+          "left_foot": 12.984375,
+          "left_hand": 12.703125,
+          "left_finger_0": 13.34375,
+          "left_finger_1": 13.34375,
+          "left_finger_2": 13.34375,
+          "left_finger_3": 13.34375,
+          "left_thumb": 13.53125,
+          "right_thigh": 12.6875,
+          "right_shin": 12.671875,
+          "right_foot": 13.546875,
+          "right_hand": 14.46875,
+          "right_finger_0": 15.203125,
+          "right_finger_1": 15.203125,
+          "right_finger_2": 15.203125,
+          "right_finger_3": 15.203125,
+          "right_thumb": 15.203125,
+          "neck": 14.703125,
+          "head": 12.125,
+          "left_ear": 17.34375,
+          "right_ear": 17.34375,
+          "hair_mass": 11.546875,
+          "hair_lock_00": 11.9375,
+          "hair_lock_01": 10.515625,
+          "hair_lock_02": 8.9375,
+          "hair_lock_03": 7.734375,
+          "hair_lock_04": 7.28125,
+          "hair_lock_05": 7.578125,
+          "hair_lock_06": 8.359375,
+          "hair_lock_07": 9.3125,
+          "hair_lock_08": 10.296875,
+          "hair_lock_09": 11.3125,
+          "hair_crown": 14.484375,
+          "left_temple_lock": 17.21875,
+          "right_temple_lock": 17.21875,
+          "left_toe_0": 21.390625,
+          "left_toe_1": 21.421875,
+          "left_toe_2": 21.453125,
+          "left_toe_3": 21.421875,
+          "left_toe_4": 21.390625,
+          "right_toe_0": 21.921875,
+          "right_toe_1": 21.953125,
+          "right_toe_2": 21.984375,
+          "right_toe_3": 21.953125,
+          "right_toe_4": 21.921875,
+          "pelvis": 10.03125,
+          "left_upper": 13.140625,
+          "left_fore": 10.359375,
+          "left_cuff": 12.1875,
+          "right_upper": 13.375,
+          "right_fore": 11.9375,
+          "right_cuff": 13.6875,
+          "skirt": 0.5,
+          "lower_flounce": 0.0,
+          "overskirt": 4.671875,
+          "brooch": 23.65625,
+          "dress_knot": 22.578125
+        },
+        "22": {
+          "torso": 9.53125,
+          "left_thigh": 5.765625,
+          "left_shin": 5.5625,
+          "left_foot": 12.59375,
+          "left_hand": 25.671875,
+          "left_finger_0": 26.890625,
+          "left_finger_1": 26.890625,
+          "left_finger_2": 26.890625,
+          "left_finger_3": 26.890625,
+          "left_thumb": 26.390625,
+          "right_thigh": 7.515625,
+          "right_shin": 7.328125,
+          "right_foot": 14.375,
+          "right_hand": 23.0,
+          "right_finger_0": 24.015625,
+          "right_finger_1": 24.015625,
+          "right_finger_2": 24.015625,
+          "right_finger_3": 24.015625,
+          "right_thumb": 23.640625,
+          "neck": 14.703125,
+          "head": 12.34375,
+          "left_ear": 17.5625,
+          "right_ear": 17.5625,
+          "hair_mass": 11.828125,
+          "hair_lock_00": 11.515625,
+          "hair_lock_01": 10.0625,
+          "hair_lock_02": 8.421875,
+          "hair_lock_03": 7.171875,
+          "hair_lock_04": 6.75,
+          "hair_lock_05": 7.125,
+          "hair_lock_06": 7.953125,
+          "hair_lock_07": 8.890625,
+          "hair_lock_08": 9.78125,
+          "hair_lock_09": 10.75,
+          "hair_crown": 14.9375,
+          "left_temple_lock": 17.25,
+          "right_temple_lock": 17.25,
+          "left_toe_0": 21.140625,
+          "left_toe_1": 21.171875,
+          "left_toe_2": 21.21875,
+          "left_toe_3": 21.171875,
+          "left_toe_4": 21.140625,
+          "right_toe_0": 22.921875,
+          "right_toe_1": 22.953125,
+          "right_toe_2": 22.984375,
+          "right_toe_3": 22.953125,
+          "right_toe_4": 22.921875,
+          "pelvis": 10.03125,
+          "left_upper": 14.515625,
+          "left_fore": 19.390625,
+          "left_cuff": 23.59375,
+          "right_upper": 14.453125,
+          "right_fore": 18.15625,
+          "right_cuff": 21.15625,
+          "skirt": 0.5,
+          "lower_flounce": 0.0,
+          "overskirt": 4.671875,
+          "brooch": 23.65625,
+          "dress_knot": 22.578125
+        }
+      }
+    },
+    "futre": {
+      "closed_components": 35,
+      "attachment_witnesses": 34,
+      "rooted_components": 35,
+      "combat_frames": 23,
+      "collapsed_native_triangles": 0,
+      "native_pose_floor_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "independent_posed_attachment_checks": 272,
+      "attachment_frames": [
+        0,
+        10,
+        17,
+        22
+      ],
+      "native_material_uv_vertices": 4434,
+      "native_uv_outside_material_cell": 0,
+      "authored_render_offset": [
+        0,
+        0,
+        0
+      ],
+      "critical_component_floors": {
+        "0": {
+          "left_thigh": 34.359375,
+          "left_shin": 8.03125,
+          "left_foot": 0.0,
+          "left_hand": 46.203125,
+          "left_finger_0": 44.46875,
+          "left_finger_1": 43.59375,
+          "left_finger_2": 43.9375,
+          "left_finger_3": 44.890625,
+          "left_thumb": 47.4375,
+          "right_thigh": 34.359375,
+          "right_shin": 8.03125,
+          "right_foot": 0.0,
+          "right_hand": 46.203125,
+          "right_finger_0": 44.46875,
+          "right_finger_1": 43.59375,
+          "right_finger_2": 43.9375,
+          "right_finger_3": 44.890625,
+          "right_thumb": 47.4375,
+          "sash": 58.625,
+          "sash_tail": 25.21875,
+          "button_0": 69.65625,
+          "button_1": 74.828125,
+          "button_2": 80.0,
+          "pelvis": 53.453125,
+          "torso": 63.21875,
+          "left_upper": 69.296875,
+          "left_fore": 52.375,
+          "left_cuff": 52.53125,
+          "right_upper": 69.296875,
+          "right_fore": 52.375,
+          "right_cuff": 52.53125,
+          "coat_tails": 20.6875,
+          "empty_collar": 90.796875,
+          "cravat_band": 92.0625,
+          "cravat_front": 81.15625
+        },
+        "10": {
+          "left_thigh": 34.359375,
+          "left_shin": 8.03125,
+          "left_foot": 0.0,
+          "left_hand": 67.5625,
+          "left_finger_0": 67.828125,
+          "left_finger_1": 67.71875,
+          "left_finger_2": 67.84375,
+          "left_finger_3": 67.828125,
+          "left_thumb": 68.765625,
+          "right_thigh": 34.359375,
+          "right_shin": 8.03125,
+          "right_foot": 0.0,
+          "right_hand": 74.515625,
+          "right_finger_0": 74.953125,
+          "right_finger_1": 74.953125,
+          "right_finger_2": 74.953125,
+          "right_finger_3": 74.953125,
+          "right_thumb": 75.609375,
+          "sash": 58.625,
+          "sash_tail": 25.21875,
+          "button_0": 68.359375,
+          "button_1": 73.328125,
+          "button_2": 78.296875,
+          "pelvis": 53.453125,
+          "torso": 61.890625,
+          "left_upper": 73.3125,
+          "left_fore": 67.96875,
+          "left_cuff": 68.40625,
+          "right_upper": 78.15625,
+          "right_fore": 74.4375,
+          "right_cuff": 74.734375,
+          "coat_tails": 19.265625,
+          "empty_collar": 89.625,
+          "cravat_band": 90.75,
+          "cravat_front": 79.828125
+        },
+        "17": {
+          "left_thigh": 9.875,
+          "left_shin": 9.71875,
+          "left_foot": 11.859375,
+          "left_hand": 11.53125,
+          "left_finger_0": 12.28125,
+          "left_finger_1": 12.28125,
+          "left_finger_2": 12.28125,
+          "left_finger_3": 12.296875,
+          "left_thumb": 12.5,
+          "right_thigh": 11.53125,
+          "right_shin": 11.515625,
+          "right_foot": 12.515625,
+          "right_hand": 13.578125,
+          "right_finger_0": 14.4375,
+          "right_finger_1": 14.4375,
+          "right_finger_2": 14.4375,
+          "right_finger_3": 14.4375,
+          "right_thumb": 14.4375,
+          "sash": 7.9375,
+          "sash_tail": 23.171875,
+          "button_0": 23.625,
+          "button_1": 24.3125,
+          "button_2": 25.0,
+          "pelvis": 8.453125,
+          "torso": 7.875,
+          "left_upper": 12.390625,
+          "left_fore": 10.875,
+          "left_cuff": 10.9375,
+          "right_upper": 12.671875,
+          "right_fore": 12.703125,
+          "right_cuff": 12.6875,
+          "coat_tails": 0.0,
+          "empty_collar": 12.234375,
+          "cravat_band": 12.703125,
+          "cravat_front": 21.78125
+        },
+        "22": {
+          "left_thigh": 3.515625,
+          "left_shin": 3.28125,
+          "left_foot": 11.421875,
+          "left_hand": 26.546875,
+          "left_finger_0": 27.953125,
+          "left_finger_1": 27.953125,
+          "left_finger_2": 27.953125,
+          "left_finger_3": 27.953125,
+          "left_thumb": 27.390625,
+          "right_thigh": 5.546875,
+          "right_shin": 5.328125,
+          "right_foot": 13.46875,
+          "right_hand": 23.453125,
+          "right_finger_0": 24.625,
+          "right_finger_1": 24.625,
+          "right_finger_2": 24.625,
+          "right_finger_3": 24.625,
+          "right_thumb": 24.203125,
+          "sash": 7.9375,
+          "sash_tail": 23.171875,
+          "button_0": 23.625,
+          "button_1": 24.3125,
+          "button_2": 25.0,
+          "pelvis": 8.453125,
+          "torso": 7.875,
+          "left_upper": 13.640625,
+          "left_fore": 19.28125,
+          "left_cuff": 24.15625,
+          "right_upper": 13.5625,
+          "right_fore": 17.859375,
+          "right_cuff": 21.328125,
+          "coat_tails": 0.0,
+          "empty_collar": 12.234375,
+          "cravat_band": 12.703125,
+          "cravat_front": 21.78125
+        }
+      }
+    }
+  },
+  "stride": {
+    "viuda": {
+      "3": {
+        "tested_leg_vertices": 372,
+        "outside_envelope": 0,
+        "examples": []
+      },
+      "5": {
+        "tested_leg_vertices": 372,
+        "outside_envelope": 0,
+        "examples": []
+      }
+    },
+    "llorona": {
+      "3": {
+        "tested_leg_vertices": 372,
+        "outside_envelope": 0,
+        "examples": []
+      },
+      "5": {
+        "tested_leg_vertices": 372,
+        "outside_envelope": 0,
+        "examples": []
+      }
+    }
+  },
+  "export": {
+    "schema_revision": 1,
+    "issue": 811,
+    "parent_issue": 461,
+    "status": "candidate_author_review_pending",
+    "frames": [
+      {
+        "sprite": "MIID",
+        "letter": "A",
+        "action": "idle",
+        "cycle": "idle",
+        "sample": 0
+      },
+      {
+        "sprite": "MIID",
+        "letter": "B",
+        "action": "idle",
+        "cycle": "idle",
+        "sample": 8
+      },
+      {
+        "sprite": "MIRN",
+        "letter": "A",
+        "action": "run",
+        "cycle": "walk",
+        "sample": 0
+      },
+      {
+        "sprite": "MIRN",
+        "letter": "B",
+        "action": "run",
+        "cycle": "walk",
+        "sample": 6
+      },
+      {
+        "sprite": "MIRN",
+        "letter": "C",
+        "action": "run",
+        "cycle": "walk",
+        "sample": 12
+      },
+      {
+        "sprite": "MIRN",
+        "letter": "D",
+        "action": "run",
+        "cycle": "walk",
+        "sample": 18
+      },
+      {
+        "sprite": "MIWK",
+        "letter": "A",
+        "action": "walk",
+        "cycle": "walk",
+        "sample": 6
+      },
+      {
+        "sprite": "MIWK",
+        "letter": "B",
+        "action": "walk",
+        "cycle": "walk",
+        "sample": 18
+      },
+      {
+        "sprite": "MNDG",
+        "letter": "A",
+        "action": "stun",
+        "transforms": [
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 6
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 12
+          }
+        ]
+      },
+      {
+        "sprite": "MNDG",
+        "letter": "D",
+        "action": "attack_prepare",
+        "transforms": [
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -125
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -30
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "z",
+            "angle": -12
+          }
+        ]
+      },
+      {
+        "sprite": "MNDG",
+        "letter": "E",
+        "action": "attack_release",
+        "transforms": [
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -75
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -55
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -25
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 10
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "z",
+            "angle": 10
+          }
+        ]
+      },
+      {
+        "sprite": "MNDG",
+        "letter": "F",
+        "action": "pain",
+        "transforms": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -8
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -12
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ]
+      },
+      {
+        "sprite": "MNDG",
+        "letter": "G",
+        "action": "death",
+        "transforms": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -50
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -55
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 30
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ]
+      },
+      {
+        "sprite": "MNDG",
+        "letter": "H",
+        "action": "death",
+        "transforms": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -30
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -50
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -55
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 30
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ]
+      },
+      {
+        "sprite": "MNDG",
+        "letter": "I",
+        "action": "death",
+        "transforms": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -55
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -50
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -55
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 30
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ]
+      },
+      {
+        "sprite": "MNDG",
+        "letter": "J",
+        "action": "death",
+        "transforms": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -78
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -50
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -55
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 30
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ]
+      },
+      {
+        "sprite": "MNDG",
+        "letter": "K",
+        "action": "death",
+        "transforms": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -88
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -3
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 6
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 10
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 14
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 8
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 12
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -12
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -18
+          }
+        ]
+      },
+      {
+        "sprite": "MNDG",
+        "letter": "L",
+        "action": "death",
+        "transforms": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -90
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 8
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 5
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 8
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 6
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 10
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -8
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -14
+          }
+        ]
+      },
+      {
+        "sprite": "MDBR",
+        "letter": "A",
+        "action": "breath",
+        "transforms": [
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 8.0
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10.0
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          }
+        ]
+      },
+      {
+        "sprite": "MDBR",
+        "letter": "B",
+        "action": "breath",
+        "transforms": [
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 9.0
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -9.0
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          }
+        ]
+      },
+      {
+        "sprite": "MDBR",
+        "letter": "C",
+        "action": "breath",
+        "transforms": [
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 8.0
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10.0
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          }
+        ]
+      },
+      {
+        "sprite": "MDBR",
+        "letter": "D",
+        "action": "breath",
+        "transforms": [
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 7.0
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -11.0
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          }
+        ]
+      },
+      {
+        "sprite": "SLMD",
+        "letter": "A",
+        "action": "rest",
+        "transforms": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -90
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 10
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 20
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ]
+      }
+    ],
+    "species": {
+      "viuda": {
+        "actor": "CaelumBestiary031",
+        "catalogue_id": "CA-FOLK-031",
+        "vertices": 8180,
+        "triangles": 14864,
+        "hierarchical_parts": 50,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7433
+          },
+          {
+            "material": "atlas",
+            "vertices": 335,
+            "triangles": 575
+          },
+          {
+            "material": "cloth",
+            "vertices": 3526,
+            "triangles": 6856
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -17.876651107359223,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              22.7430727976959,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              22.7430727976959,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              22.7430727976959,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -29.249244045870725,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              25.66968766574466,
+              22.7430727976959,
+              97.8435203990043
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              22.7430727976959,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -29.249244045870725,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              25.66968766574466,
+              22.7430727976959,
+              97.82549490803378
+            ]
+          },
+          {
+            "min": [
+              -29.249244045870725,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              25.66968766574466,
+              22.7430727976959,
+              97.8435203990043
+            ]
+          },
+          {
+            "min": [
+              -29.249244045870725,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              25.66968766574466,
+              22.7430727976959,
+              97.82549490803378
+            ]
+          },
+          {
+            "min": [
+              -22.31525861756299,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              22.7430727976959,
+              100.04282564127617
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -25.84009039513648,
+              0.0
+            ],
+            "max": [
+              25.02497509550227,
+              22.7430727976959,
+              107.45935741680513
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              39.916119663804295,
+              28.072988353819774,
+              99.74416176020351
+            ]
+          },
+          {
+            "min": [
+              -23.902062190588694,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              27.074100728440897,
+              22.7430727976959,
+              95.42366484949369
+            ]
+          },
+          {
+            "min": [
+              -22.60812941518628,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              30.921834923371694,
+              22.7430727976959,
+              93.91655749342274
+            ]
+          },
+          {
+            "min": [
+              -34.134578782597934,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              36.17379457608382,
+              22.7430727976959,
+              83.69932702586948
+            ]
+          },
+          {
+            "min": [
+              -43.32461872231754,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              46.25228801344208,
+              22.7430727976959,
+              77.41970330832336
+            ]
+          },
+          {
+            "min": [
+              -46.05368645428677,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              49.441928602033045,
+              22.7430727976959,
+              63.354917840257315
+            ]
+          },
+          {
+            "min": [
+              -46.41319070541528,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              53.25760506614805,
+              22.7430727976959,
+              33.798428209060496
+            ]
+          },
+          {
+            "min": [
+              -46.49931972917941,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              53.449862877742596,
+              22.7430727976959,
+              35.10356679829076
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              22.7430727976959,
+              99.69813427580804
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              22.7430727976959,
+              99.64699810604988
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              22.7430727976959,
+              99.69813427580804
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              22.7430727976959,
+              99.72978980291083
+            ]
+          },
+          {
+            "min": [
+              -46.549803006144074,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              51.05383179335399,
+              22.7430727976959,
+              36.37631369596911
+            ]
+          }
+        ],
+        "modeldef_scale": 1.652622208,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 53.803371734076535,
+        "maximum_authored_height": 107.45935741680513,
+        "source_sha256": "20056af4424bdabfebc4027aa3a3ac4e5e32b627405d9754ab1b4dde7468c19c",
+        "garment_stride_clearance": {
+          "root": "skirt",
+          "waist_z": 55,
+          "hem_z": 8,
+          "maximum_depth_expansion": 0.65,
+          "basis": "Shorter reference-dress visual stride and anchored-waist lower-cloth expansion keep legs enclosed; unchanged native speed, timing, collision and gameplay."
+        }
+      },
+      "llorona": {
+        "actor": "CaelumBestiary032",
+        "catalogue_id": "CA-FOLK-032",
+        "vertices": 8330,
+        "triangles": 14904,
+        "hierarchical_parts": 59,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7413
+          },
+          {
+            "material": "atlas",
+            "vertices": 957,
+            "triangles": 1664
+          },
+          {
+            "material": "cloth",
+            "vertices": 3031,
+            "triangles": 5827
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -17.876651107359223,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              23.85575463324075,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              23.85575463324075,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              23.85575463324075,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -29.249244045870725,
+              -24.11644588158347,
+              0.0
+            ],
+            "max": [
+              25.66968766574466,
+              24.23058190115683,
+              98.08633570303658
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              23.85575463324075,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -29.249244045870725,
+              -24.23058190115683,
+              0.0
+            ],
+            "max": [
+              25.66968766574466,
+              24.11644588158347,
+              98.06831021206605
+            ]
+          },
+          {
+            "min": [
+              -29.249244045870725,
+              -24.11644588158347,
+              0.0
+            ],
+            "max": [
+              25.66968766574466,
+              24.23058190115683,
+              98.08633570303658
+            ]
+          },
+          {
+            "min": [
+              -29.249244045870725,
+              -24.23058190115683,
+              0.0
+            ],
+            "max": [
+              25.66968766574466,
+              24.11644588158347,
+              98.06831021206605
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              23.85575463324075,
+              100.04282564127617
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -26.99454153192228,
+              0.0
+            ],
+            "max": [
+              25.631679413776258,
+              22.7430727976959,
+              107.45935741680513
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -22.7430727976959,
+              0.0
+            ],
+            "max": [
+              39.916119663804295,
+              29.0015439633261,
+              99.74416176020351
+            ]
+          },
+          {
+            "min": [
+              -23.902062190588694,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              27.074100728440897,
+              23.85575463324075,
+              95.42366484949369
+            ]
+          },
+          {
+            "min": [
+              -22.60812941518628,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              30.921834923371694,
+              23.85575463324075,
+              93.91655749342274
+            ]
+          },
+          {
+            "min": [
+              -34.134578782597934,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              36.17379457608382,
+              23.85575463324075,
+              83.69932702586948
+            ]
+          },
+          {
+            "min": [
+              -43.32461872231754,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              46.25228801344208,
+              23.85575463324075,
+              77.41970330832336
+            ]
+          },
+          {
+            "min": [
+              -46.05368645428677,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              49.441928602033045,
+              23.85575463324075,
+              63.354917840257315
+            ]
+          },
+          {
+            "min": [
+              -46.41319070541528,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              53.25760506614805,
+              23.85575463324075,
+              33.798428209060496
+            ]
+          },
+          {
+            "min": [
+              -46.49931972917941,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              53.449862877742596,
+              23.85575463324075,
+              33.76700764723408
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              23.85575463324075,
+              99.69813427580804
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              23.85575463324075,
+              99.64699810604988
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              23.85575463324075,
+              99.69813427580804
+            ]
+          },
+          {
+            "min": [
+              -17.876651107359223,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              15.890356539874864,
+              23.85575463324075,
+              99.72978980291083
+            ]
+          },
+          {
+            "min": [
+              -46.549803006144074,
+              -23.85575463324075,
+              0.0
+            ],
+            "max": [
+              51.05383179335399,
+              23.85575463324075,
+              33.76700764723408
+            ]
+          }
+        ],
+        "modeldef_scale": 1.652622208,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 53.803371734076535,
+        "maximum_authored_height": 107.45935741680513,
+        "source_sha256": "a061df9b00fcf7e51d2331cd0fd23c5bbd38ed8b450ccbb643de3c67a7d3f9e3",
+        "garment_stride_clearance": {
+          "root": "skirt",
+          "waist_z": 55,
+          "hem_z": 8,
+          "maximum_depth_expansion": 0.65,
+          "basis": "Shorter reference-dress visual stride and anchored-waist lower-cloth expansion keep legs enclosed; unchanged native speed, timing, collision and gameplay."
+        }
+      },
+      "futre": {
+        "actor": "CaelumBestiary033",
+        "catalogue_id": "CA-FOLK-033",
+        "vertices": 4434,
+        "triangles": 8360,
+        "hierarchical_parts": 36,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 1991,
+            "triangles": 3664
+          },
+          {
+            "material": "cloth",
+            "vertices": 2443,
+            "triangles": 4696
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -17.528735632183906,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              12.150026006416102,
+              25.530183643886353,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -17.528735632183906,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              12.150026006416102,
+              25.530183643886353,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -17.528735632183906,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              12.150026006416102,
+              25.530183643886353,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -36.96397457421874,
+              -25.826499798625317,
+              0.0
+            ],
+            "max": [
+              28.107889121140296,
+              25.95372594591035,
+              95.43536662497397
+            ]
+          },
+          {
+            "min": [
+              -17.528735632183906,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              12.150026006416102,
+              25.530183643886353,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -36.96397457421874,
+              -25.95372594591035,
+              0.0
+            ],
+            "max": [
+              28.107889121140296,
+              25.826499798625317,
+              95.43536662497397
+            ]
+          },
+          {
+            "min": [
+              -36.96397457421874,
+              -25.826499798625317,
+              0.0
+            ],
+            "max": [
+              28.107889121140296,
+              25.95372594591035,
+              95.43536662497397
+            ]
+          },
+          {
+            "min": [
+              -36.96397457421874,
+              -25.95372594591035,
+              0.0
+            ],
+            "max": [
+              28.107889121140296,
+              25.826499798625317,
+              95.43536662497397
+            ]
+          },
+          {
+            "min": [
+              -22.118470082534085,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              11.404495252998045,
+              25.530183643886353,
+              100.36377907135564
+            ]
+          },
+          {
+            "min": [
+              -17.301406995614837,
+              -29.90619197570451,
+              0.0
+            ],
+            "max": [
+              28.9628131306451,
+              20.75060882633732,
+              124.36876664710469
+            ]
+          },
+          {
+            "min": [
+              -24.764788876302656,
+              -21.101364548802806,
+              0.0
+            ],
+            "max": [
+              46.197173436189125,
+              32.490450544208194,
+              100.39426920417715
+            ]
+          },
+          {
+            "min": [
+              -18.820431590160496,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              31.334381636169123,
+              25.530183643886353,
+              98.19197937876406
+            ]
+          },
+          {
+            "min": [
+              -17.36107458435176,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              35.78758113142869,
+              25.530183643886353,
+              96.23748471505355
+            ]
+          },
+          {
+            "min": [
+              -27.939577849360315,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              36.39793896087995,
+              25.530183643886353,
+              89.42818707074434
+            ]
+          },
+          {
+            "min": [
+              -36.31118821606171,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              47.95101131109748,
+              25.530183643886353,
+              83.09432063234831
+            ]
+          },
+          {
+            "min": [
+              -38.01920149150091,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              57.22192863147939,
+              25.530183643886353,
+              64.10977195005444
+            ]
+          },
+          {
+            "min": [
+              -38.0079349917076,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              61.63802590931549,
+              25.530183643886353,
+              29.674241419450155
+            ]
+          },
+          {
+            "min": [
+              -37.93103448275862,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              61.860536702987375,
+              25.530183643886353,
+              29.678761638600008
+            ]
+          },
+          {
+            "min": [
+              -23.596941362932757,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              14.495200001097984,
+              25.530183643886353,
+              100.40027393869356
+            ]
+          },
+          {
+            "min": [
+              -24.325507276603282,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              14.133761116715599,
+              25.530183643886353,
+              100.40258477820596
+            ]
+          },
+          {
+            "min": [
+              -23.596941362932757,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              14.495200001097984,
+              25.530183643886353,
+              100.40027393869356
+            ]
+          },
+          {
+            "min": [
+              -22.861187592334378,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              14.852223507141877,
+              25.530183643886353,
+              100.38733738954406
+            ]
+          },
+          {
+            "min": [
+              -37.93103448275862,
+              -25.530183643886353,
+              0.0
+            ],
+            "max": [
+              59.08747498014728,
+              25.530183643886353,
+              31.07774609016866
+            ]
+          }
+        ],
+        "modeldef_scale": 1.652622208,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 62.26967241269156,
+        "maximum_authored_height": 124.36876664710469,
+        "source_sha256": "b7b16e44dd3b6c8eeabbc2916fe69d2b8ee9093f209a42f77e9b3c4e2592be3b"
+      }
+    },
+    "source_sha256": {
+      "assets/source/bestiary_453/imagenes/04_Apariciones/31_viuda.png": "20056af4424bdabfebc4027aa3a3ac4e5e32b627405d9754ab1b4dde7468c19c",
+      "assets/source/bestiary_453/imagenes/04_Apariciones/32_llorona.png": "a061df9b00fcf7e51d2331cd0fd23c5bbd38ed8b450ccbb643de3c67a7d3f9e3",
+      "assets/source/bestiary_453/imagenes/04_Apariciones/33_futre.png": "b7b16e44dd3b6c8eeabbc2916fe69d2b8ee9093f209a42f77e9b3c4e2592be3b",
+      "assets/source/art/period_apparitions_811/materials.png": "101d1fd458732f45e887a24d8a0ea77d8864c8269b2b5dd11ba7c51fd3bf1a8e",
+      "assets/source/art/period_apparitions_811/fine-cloth.png": "0464311a9011e636d6c70befd93640f32205d88978748e7f271123014b589e5a",
+      "assets/source/art/period_apparitions_811/ANIMATION.json": "976bd4baec9750768fb967990a545f38ce8c10ad279d652d0dada610d3b2569f",
+      "assets/source/art/period_apparitions_811/PROVENANCE.json": "612e29869332915456c26ea458ed0f7ea29add3af34a37841193971c70d8cbf8",
+      "assets/source/art/period_apparitions_811/viuda.json": "e76374f9e2900de4223d960a0265766d9535fd74b18580720df43c8b4bb677ca",
+      "assets/source/art/period_apparitions_811/llorona.json": "e6d69347b270bace28662df6988a37876a212cd50d7ceea7b8dd4f785943940b",
+      "assets/source/art/period_apparitions_811/futre.json": "f18f5f68a3b6f585a8cbae8ca15c5598c8d60d7937b5bf5cfb44fc603d20d981",
+      "assets/generators/generate_beast_men_models.py": "326327fa90dd2bca5648a6725aa064400d2eae6f71a35ade88ea2a2ba1f13eb7",
+      "assets/generators/generate_period_apparition_models.py": "005e5b4a071e1d8b638be8890ec8816c10067141c3f4d8fa00381c429b9124ae",
+      "assets/generators/generate_head_apparition_models.py": "eb2e99ee0a9b479894d886c03566c7a3597b0f818b28d0984fcc9ad09983fb1d",
+      "assets/generators/generate_quadruped_models.py": "b4293a90aff2245b4aabde2597ae04754316b5b5515219819fb06fed88b468ce",
+      "assets/generators/generate_basilisco_model.py": "bcf59c6ff5c70dc95ace4818cdf91b0dc553e2d4dddbeb9062e65d9f60f5dd22",
+      "assets/generators/generate_serpent_models.py": "e4f9abc0a3c372551fe555a232c4799a05d6aa57703fb865c6393f4236151cca",
+      "assets/generators/generate_avian_models.py": "5a450ac72d03eef12cafd06fbaefff515ae7e370bc13a46dd8036a050259e4e6",
+      "assets/generators/generate_peuchen_model.py": "0f1873c9fd1da0be0f965ea73ff2cc5c35dc25a35ac9da2df4692b50cef30812",
+      "assets/generators/generate_guardian_models.py": "2f105629523a71735d388b430ac87801bd8bb687177e9fa84ca0edd451051951",
+      "assets/generators/generate_duende_models.py": "243d46cee79b1723f6b7ac9bd0b8c0c4f87b37f463cf8540cd7d51be2800511f",
+      "assets/generators/generate_inventory_clothing_models.py": "105e9107d4b0ec4c82a6a168127fb3968f8d19ca72bf48320cb01c90062217d3",
+      "assets/generators/generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+      "assets/generators/generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281"
+    },
+    "sha256": {
+      "models/caelum/folklore/periodapparitions/materials.png": "101d1fd458732f45e887a24d8a0ea77d8864c8269b2b5dd11ba7c51fd3bf1a8e",
+      "models/caelum/folklore/periodapparitions/fine-cloth.png": "0464311a9011e636d6c70befd93640f32205d88978748e7f271123014b589e5a",
+      "models/caelum/folklore/periodapparitions/viuda.md3": "243ee5be009baba55b3244aed006d53ae4cec9b5b8b7ac057401a1b8609206da",
+      "editable/viuda.obj": "ca17e6188aa1554422d7d52d4e8e6266f7c8ae92596f65b699ed7127e6f1586c",
+      "editable/viuda.mtl": "5575112d33d455be956be68efcd8026031218ee35f7ba91bd27ce13c9cf8dfe8",
+      "models/caelum/folklore/periodapparitions/llorona.md3": "12735c2174a2775e02d5ad2c28962efffcb6dcbea547fc7bb7f0316eabc52b3d",
+      "editable/llorona.obj": "f65497f43e8b53355ac30e59272522b65e2564c4ecbd1c27a7eb48ef84ea7ea0",
+      "editable/llorona.mtl": "5575112d33d455be956be68efcd8026031218ee35f7ba91bd27ce13c9cf8dfe8",
+      "models/caelum/folklore/periodapparitions/futre.md3": "7ffacef4f5cee12195ac78118b55c97fbbc37a547ec4e734ec2ecb3c6abcdc68",
+      "editable/futre.obj": "391e2d3c3fff47c4a240a91cb87de49c1bb5a19584516a59877d3afa5c4e7527",
+      "editable/futre.mtl": "5575112d33d455be956be68efcd8026031218ee35f7ba91bd27ce13c9cf8dfe8",
+      "caelum/data/period_apparition_combat.modeldef": "ee4dfe8135de04fb942a82c920feae73036743bbbfb4fb0616e9e10a41a2a1f3"
+    }
+  },
+  "continuity": {
+    "viuda": {
+      "issue": 811,
+      "species": "viuda",
+      "studio": false,
+      "runtime_sha256": "f6e58ba59b2987634f2f423aa75cd07b8487481e359c56e98597a1d019e257cd",
+      "baseline_sha256": "7bc1583b95bc30fdc6a8b9b04d4afba4de73de4461872f53cb5cbab07a55f539",
+      "fixture_sha256": "03d904afebdcc9b720e61102a50f9b86df695e774455ac2f5dbb4c3d33ce62e5",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+            "empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+            "empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+            "pose-00-idle.png": "394d447dc6550e7c6b06080d8874aaf988e3065ae613e2b2fd9e9c151ec931a9",
+            "pose-01-idle.png": "394d447dc6550e7c6b06080d8874aaf988e3065ae613e2b2fd9e9c151ec931a9",
+            "pose-02-run.png": "ed9aa597f618f02f3cab5875b555f97bceca5441f5fa8a20a0717b596ee2065b",
+            "pose-03-run.png": "7a1d67c19764bbfd3a4c67d8395eeb11118bea4e45f2d52c3223dec9c52ac96b",
+            "pose-04-run.png": "ed9aa597f618f02f3cab5875b555f97bceca5441f5fa8a20a0717b596ee2065b",
+            "pose-05-run.png": "79691670aad8e0f7299e92d7dc0d62ec498e8d0e6db7d816f35798f0712aafb9",
+            "pose-06-walk.png": "7a1d67c19764bbfd3a4c67d8395eeb11118bea4e45f2d52c3223dec9c52ac96b",
+            "pose-07-walk.png": "79691670aad8e0f7299e92d7dc0d62ec498e8d0e6db7d816f35798f0712aafb9",
+            "pose-08-stun.png": "ac0368d330362eebf3f4005e95603d05ba14a1eacf3ad5346046c3ee19175a42",
+            "pose-09-attack_prepare.png": "dc9f6a047081a0da952a9216395f4081fffbd5691d3cee6908578c391b4151ca",
+            "pose-10-attack_release.png": "e896383866aaca7176dc69d5473e960ebc8549149a84ecc5d1b4d8a2bff01843",
+            "pose-11-pain.png": "7783346cebddd7046656b0e74fbc8174b69b8e65a9ae65f007975d27b06950b2",
+            "pose-12-death.png": "8e09df47a885a3f25dc9f6a071ed9d446e83d9f632305c973947ce6fa911ceee",
+            "pose-13-death.png": "23f9b50e127ebf8e548f43623c427a5cf02044e1e9503c658331dbde285c0ed0",
+            "pose-14-death.png": "0b353bc19f673bc5fb7c53b5fc2482e3fe508851c6c91107bd58aa6635849207",
+            "pose-15-death.png": "055b9e6d9a1f09f76241799066af6f24e03ee9581254f160eb814d25cd0b37c9",
+            "pose-16-death.png": "98730555bff9560ac3c8e1be80f22131ab9609060acd5ba011d0829e18528313",
+            "pose-17-death.png": "a5a5a6838ecfbb1b2843d9545631aeb6e9cbfbd54a05a87e28baea364ad3d9a9",
+            "pose-18-breath.png": "0d7ca8c8dcbfcfcd4e6d2287ec1e9a1df4c71df9ebec26aff0c79c06dca189aa",
+            "pose-19-breath.png": "9c4a98fab57515368cc47c0a89fa78c994a33ac651144b1f517713e9945bfff3",
+            "pose-20-breath.png": "0d7ca8c8dcbfcfcd4e6d2287ec1e9a1df4c71df9ebec26aff0c79c06dca189aa",
+            "pose-21-breath.png": "50ffddab4673e4d97c97be1d4a621722a072f1564d9e51f0db4c7cf5fb0ca310",
+            "pose-22-rest.png": "f0b2687fa2abb3c9e2537537932e6bc51ee4dcb144d5795559f75edbda8fc8fe",
+            "view-collar-top.png": "c0c9d26e2689be2da4ebac1ba9ba1df1be58f11b508cd61ce81c0f4a2a8bdb8a",
+            "view-face-detail.png": "1aae2e7bf61204825302b2853e7394bacdfb7afb09438d37cd5ab1c9b908c438",
+            "view-front.png": "347e1a015c78f61e8332c8b0b1c29930b31ade0ec841d7f5c21fde9c5ea77c05",
+            "view-garment-rear.png": "07d81f24fe4f8683e11425d49b3400bb42bd179af37e25c83342706cc6697f52",
+            "view-head-front.png": "648c9579bbc3574a04f5fb2400141675fe0ff49247e61adeaac858a7f640bc3e",
+            "view-head-oblique.png": "5a7ae6c2a5df403ae9beb7fbbb2b5b34d8818f057a387b8d77f812219b533e81",
+            "view-lying-oblique.png": "f0b2687fa2abb3c9e2537537932e6bc51ee4dcb144d5795559f75edbda8fc8fe",
+            "view-rear.png": "4eccedf666382968ce353ddac0d56db786395e9ec4a02ee8570ccb81e0819bc4",
+            "view-side.png": "cb937406f35dcfa9a81c99c1b8f351a6a8fc8138fd7e8feac828c372ad8eb1ff"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 22589,
+            "pose-01-idle.png": 22589,
+            "pose-02-run.png": 22589,
+            "pose-03-run.png": 23126,
+            "pose-04-run.png": 22589,
+            "pose-05-run.png": 21546,
+            "pose-06-walk.png": 23126,
+            "pose-07-walk.png": 21546,
+            "pose-08-stun.png": 22643,
+            "pose-09-attack_prepare.png": 22526,
+            "pose-10-attack_release.png": 22205,
+            "pose-11-pain.png": 21717,
+            "pose-12-death.png": 10714,
+            "pose-13-death.png": 10230,
+            "pose-14-death.png": 8623,
+            "pose-15-death.png": 7611,
+            "pose-16-death.png": 8218,
+            "pose-17-death.png": 8202,
+            "pose-18-breath.png": 22301,
+            "pose-19-breath.png": 22318,
+            "pose-20-breath.png": 22301,
+            "pose-21-breath.png": 22327,
+            "pose-22-rest.png": 8347
+          },
+          "distinct_pose_captures": 18
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    },
+    "llorona": {
+      "issue": 811,
+      "species": "llorona",
+      "studio": false,
+      "runtime_sha256": "f6e58ba59b2987634f2f423aa75cd07b8487481e359c56e98597a1d019e257cd",
+      "baseline_sha256": "7bc1583b95bc30fdc6a8b9b04d4afba4de73de4461872f53cb5cbab07a55f539",
+      "fixture_sha256": "06a5c2ab7fe3e4d0f9af624573c5e86c905e2d122d71bd42cb9ad3a6ffe3a3ef",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+            "empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+            "empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+            "pose-00-idle.png": "3fabffa1261dda847dcb2ea7258709e0c74806fbc2ce608fe49ac7f795bf8a6c",
+            "pose-01-idle.png": "3fabffa1261dda847dcb2ea7258709e0c74806fbc2ce608fe49ac7f795bf8a6c",
+            "pose-02-run.png": "f4b725fd32fb923ab7ad8abdeb2f198409effea6d64bf41f0d4c2ea4c17a37ee",
+            "pose-03-run.png": "4fee7acb33e5eb51d8d1e1af1d3ff6906f004bbbc975820b12dd3260887d5bcf",
+            "pose-04-run.png": "f4b725fd32fb923ab7ad8abdeb2f198409effea6d64bf41f0d4c2ea4c17a37ee",
+            "pose-05-run.png": "c70d6f85d4155d654a4ea66b8bf1338df3e692958e4a82c35695757ddaec7353",
+            "pose-06-walk.png": "4fee7acb33e5eb51d8d1e1af1d3ff6906f004bbbc975820b12dd3260887d5bcf",
+            "pose-07-walk.png": "c70d6f85d4155d654a4ea66b8bf1338df3e692958e4a82c35695757ddaec7353",
+            "pose-08-stun.png": "34bed01c839933eac639760cb90265fb8efd010c1d88469498052ec3cff3e063",
+            "pose-09-attack_prepare.png": "fef2e2ce851780497d538fb14d36355ff56ced5c04b382a5c9c248a4917f6e75",
+            "pose-10-attack_release.png": "a2d261372aec3913dc66ea3a605126b0ec3169b47d06a8409a8e6effdf3ee64d",
+            "pose-11-pain.png": "0145f226d83cb7b1e242834880d9aaf2ba394d20b81dc0a4782eb5bc79a25a7a",
+            "pose-12-death.png": "a6f82e17f9a22c7640418a8c9079b8a22737c8d18ae31d78d5360a61b2094896",
+            "pose-13-death.png": "9c2dc44f8e3a61fc49a12b1e83d8aafc5f16930cd735821d27bb2fa593e8c4e4",
+            "pose-14-death.png": "d748e83f91305a404e47c2f93f2b489d9c49446d5c6c3f5e4312a001905ad04e",
+            "pose-15-death.png": "cc0be6126a204b77f24f297f7b48df8d0f442ca572b033e27ae10ab8a6c3b306",
+            "pose-16-death.png": "c7b39c1c20f3e39ac6939c0ad4733cf0a0c6df8e63a58cfb05445e639b2e453a",
+            "pose-17-death.png": "997c019339d9d3d0a5572a51f0eec02f9b98a2f28e95e8e2cf0c02f5d1a07ce1",
+            "pose-18-breath.png": "3ae678e72f92d780bbd0c0ae8da72123bc8c2fb4638640460a110670d075b6cb",
+            "pose-19-breath.png": "b36a81afe005fbf37bcc0067edd9f0666ad238b3024131dce1560c402ab1dcf5",
+            "pose-20-breath.png": "3ae678e72f92d780bbd0c0ae8da72123bc8c2fb4638640460a110670d075b6cb",
+            "pose-21-breath.png": "d6b78fee809828066a9dcec61f7132dc9ea1ebabc7acfebd80a4cf473a0794a6",
+            "pose-22-rest.png": "0a154fc5eac5aa76b88233847d59a8fd39a4056028f96ce64317c1246016ad3b",
+            "view-collar-top.png": "586e2d1824863402cbb153a30d72d03b6fb79c7a12bcf4e5737ed46e933751e3",
+            "view-face-detail.png": "ee7123279bb603a9806e065f9d840eaf34057d9eb0d5562ab7132cb647bc5c7e",
+            "view-front.png": "bfc79cd0a8c2eef232719c7ad5511133fe488fd136cd69fe76215c8af71d0a97",
+            "view-garment-rear.png": "d898e15b64583edbca1095141bc1f43b3ee2cab09b9a49b6e88c91108ad89db4",
+            "view-head-front.png": "a1b5b0b4ae18e78aee15c23878ef0a2a66f3015f4f5689971a3869db8dd337d8",
+            "view-head-oblique.png": "e2296d6ce97216ce900e7a0f5ae3ea0405c6d49b6a8e7ccd58a8be866cef9ddb",
+            "view-lying-oblique.png": "0a154fc5eac5aa76b88233847d59a8fd39a4056028f96ce64317c1246016ad3b",
+            "view-rear.png": "efb146dab2a08869f4d8f74fa036f8d3f8907f84ad04fa84a670520e4da7e8d8",
+            "view-side.png": "e7c11ceee30ee5ee14bd3ea46d0b56549d1010a5b9e627bfff54b8e9ab66a736"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 30118,
+            "pose-01-idle.png": 30118,
+            "pose-02-run.png": 30084,
+            "pose-03-run.png": 30646,
+            "pose-04-run.png": 30084,
+            "pose-05-run.png": 29375,
+            "pose-06-walk.png": 30646,
+            "pose-07-walk.png": 29375,
+            "pose-08-stun.png": 30269,
+            "pose-09-attack_prepare.png": 30583,
+            "pose-10-attack_release.png": 28789,
+            "pose-11-pain.png": 27837,
+            "pose-12-death.png": 13262,
+            "pose-13-death.png": 13333,
+            "pose-14-death.png": 12588,
+            "pose-15-death.png": 11903,
+            "pose-16-death.png": 11859,
+            "pose-17-death.png": 11914,
+            "pose-18-breath.png": 29297,
+            "pose-19-breath.png": 29347,
+            "pose-20-breath.png": 29297,
+            "pose-21-breath.png": 29284,
+            "pose-22-rest.png": 11732
+          },
+          "distinct_pose_captures": 18
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    },
+    "futre": {
+      "issue": 811,
+      "species": "futre",
+      "studio": false,
+      "runtime_sha256": "8d7852904ec8f5cd0b2dae2e771d871d1d4e522f29a19cb90c1f109b00be990b",
+      "baseline_sha256": "7bc1583b95bc30fdc6a8b9b04d4afba4de73de4461872f53cb5cbab07a55f539",
+      "fixture_sha256": "575cbb1126920a1ea1f12abcb8bdfc0bf361b618705562aced5bdfb0a683f92a",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+            "empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+            "empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+            "pose-00-idle.png": "3ffa4a4bedf8b10174a8bfd40500bd270d4c6d98fac6c309620c96b0009f25b5",
+            "pose-01-idle.png": "3ffa4a4bedf8b10174a8bfd40500bd270d4c6d98fac6c309620c96b0009f25b5",
+            "pose-02-run.png": "c3078025637366ece3d2fcec60fb95b0e26ef702dba27ad67f2fee8b5485f1ac",
+            "pose-03-run.png": "783279b13d290bf329794e01cf8e83c0cfe2dfcc954cd19198ef1fe60eb4beef",
+            "pose-04-run.png": "c3078025637366ece3d2fcec60fb95b0e26ef702dba27ad67f2fee8b5485f1ac",
+            "pose-05-run.png": "38b6f3caf133207b32a71b2fa972a8c20a8856b6d35ffecd3d615109334552b8",
+            "pose-06-walk.png": "783279b13d290bf329794e01cf8e83c0cfe2dfcc954cd19198ef1fe60eb4beef",
+            "pose-07-walk.png": "38b6f3caf133207b32a71b2fa972a8c20a8856b6d35ffecd3d615109334552b8",
+            "pose-08-stun.png": "9cf82def83236172b96ee5d6eed0389545a8340e13d8c863213972c9b76ff891",
+            "pose-09-attack_prepare.png": "157205c6e276ffc21b975c732b123c41a2055ad64f2f60f2d988980b717d8fa7",
+            "pose-10-attack_release.png": "a414532be69b4cb6422733c5b732f1b17bba1cfb11b6fa53c8a936ab51049471",
+            "pose-11-pain.png": "fd43115622fc7a1e82ff8a6963de378569924c8879b1375bbc49fdf368ab9bac",
+            "pose-12-death.png": "62ec03113ab6590917e58fdfafea75139636079b67e4b86056bb16a55b9918ad",
+            "pose-13-death.png": "f6c19881b9396f6bbfcb03e7167bab588dc88a55573603d9bfa1775474ba6792",
+            "pose-14-death.png": "fe51d6430aef9f377d410ae6f8e9fde5039c374d2650d82380194264b1c88354",
+            "pose-15-death.png": "c3fc5bee69dcff10cd82da750cc10d2b926a78d6df1ccf811e08e548edef0c7a",
+            "pose-16-death.png": "c5b2f4e2171e41bf25f7a8e56191dfc52dc6bee9c26f7cc6eb6f50fe3761864b",
+            "pose-17-death.png": "651d32dc5f33a963480f9ed4a02ab70c7caa16afd5a3a22e1039be29d2ae7bf1",
+            "pose-18-breath.png": "86b8564214c3bcf4578b4dc1ff062a8a4e047c54f974c1ecd9a0bb29c9d958d6",
+            "pose-19-breath.png": "9cbc6aa70a51f3590ca8291a2519e3aaad9e714f9870eaf380fb919bef25f696",
+            "pose-20-breath.png": "86b8564214c3bcf4578b4dc1ff062a8a4e047c54f974c1ecd9a0bb29c9d958d6",
+            "pose-21-breath.png": "86ec274ea89ee9790dee012d3d3419da9c40ba078308279849248223535b6735",
+            "pose-22-rest.png": "8a36b6eac58fcdd092b3df505b228ad99fe448ad67615a05b72bc634642f022b",
+            "view-face-detail.png": "35778f18eb354d8099a870f398b32ee89cf4f0a97e33d1e0d8401d099c57be19",
+            "view-front.png": "a29ac895f71878ba20e58f73c2e75efc9f90d2f3a1ca91d9b7a7c20abb567b98",
+            "view-garment-rear.png": "abab239afdd019c77c68ad2efb50f799bd3f8221bb064a654b82332581d2f6c0",
+            "view-head-front.png": "8686094368be5e82f5b3b75dc46ffc6fc1d58acfa007810f316844ffb9a3695b",
+            "view-head-oblique.png": "9a0f5c7f167e6304eec553a97b543e4a596030a9e880effbc39591b29de82ef7",
+            "view-lying-oblique.png": "8a36b6eac58fcdd092b3df505b228ad99fe448ad67615a05b72bc634642f022b",
+            "view-rear.png": "f05d6b886e708486cde06445ed128d0ff7e8bc8b252852516ec2688621fd534f",
+            "view-side.png": "24ade9e9ea39f39ffb39dd37025f84c92c676e37e2afa9c7ac3f7fd64742ceb5"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 15829,
+            "pose-01-idle.png": 15829,
+            "pose-02-run.png": 15795,
+            "pose-03-run.png": 15687,
+            "pose-04-run.png": 15795,
+            "pose-05-run.png": 14561,
+            "pose-06-walk.png": 15687,
+            "pose-07-walk.png": 14561,
+            "pose-08-stun.png": 15887,
+            "pose-09-attack_prepare.png": 16202,
+            "pose-10-attack_release.png": 15080,
+            "pose-11-pain.png": 14844,
+            "pose-12-death.png": 8429,
+            "pose-13-death.png": 8382,
+            "pose-14-death.png": 7417,
+            "pose-15-death.png": 5998,
+            "pose-16-death.png": 5380,
+            "pose-17-death.png": 5452,
+            "pose-18-breath.png": 15147,
+            "pose-19-breath.png": 15154,
+            "pose-20-breath.png": 15147,
+            "pose-21-breath.png": 15028,
+            "pose-22-rest.png": 5529
+          },
+          "distinct_pose_captures": 18
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    }
+  },
+  "actions": {
+    "issue": 811,
+    "runtime_sha256": "6bcb287be40752f15a4a80e06b23a4d728fb64288eafd40cca293d132da83a58",
+    "source_probe_sha256": "bf298e7c4b3ca7f0285f81c089b18f686ba0a114f65697252662af8b0121b65a",
+    "fixture_sha256": "7ff9f5b259c5ba814639727ad3cb5dfd72800c66de971dcc9619f1237dcfd5c2",
+    "runs": [
+      {
+        "phase": "actions",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 90,
+        "actions": [
+          "CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=0",
+          "CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=30 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=30 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=30 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=31 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=31 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=31 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=32 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=32 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=32 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1"
+        ],
+        "loot_audits": 0
+      },
+      {
+        "phase": "loot",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 70,
+        "actions": [],
+        "loot_audits": 2
+      },
+      {
+        "phase": "loot-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 28,
+        "actions": [],
+        "loot_audits": 2
+      }
+    ]
+  },
+  "final_views": {
+    "viuda": {
+      "issue": 811,
+      "species": "viuda",
+      "studio": false,
+      "runtime_sha256": "63040843cdb73fce9700872a700498a78982efd0a3834e2ce35cf10be4188dcb",
+      "baseline_sha256": "63040843cdb73fce9700872a700498a78982efd0a3834e2ce35cf10be4188dcb",
+      "fixture_sha256": "03d904afebdcc9b720e61102a50f9b86df695e774455ac2f5dbb4c3d33ce62e5",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "visual",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+            "empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+            "empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+            "pose-00-idle.png": "394d447dc6550e7c6b06080d8874aaf988e3065ae613e2b2fd9e9c151ec931a9",
+            "pose-01-idle.png": "394d447dc6550e7c6b06080d8874aaf988e3065ae613e2b2fd9e9c151ec931a9",
+            "pose-02-run.png": "ed9aa597f618f02f3cab5875b555f97bceca5441f5fa8a20a0717b596ee2065b",
+            "pose-03-run.png": "0a266e887da0d1abab40a5ce012c05f2c09dc99ef5ea1fb3d24f5bc75ff133b8",
+            "pose-04-run.png": "ed9aa597f618f02f3cab5875b555f97bceca5441f5fa8a20a0717b596ee2065b",
+            "pose-05-run.png": "95384887bc951070952638a35cba20984ab355cdefbda3fbdd1b07006abe8243",
+            "pose-06-walk.png": "0a266e887da0d1abab40a5ce012c05f2c09dc99ef5ea1fb3d24f5bc75ff133b8",
+            "pose-07-walk.png": "95384887bc951070952638a35cba20984ab355cdefbda3fbdd1b07006abe8243",
+            "pose-08-stun.png": "ac0368d330362eebf3f4005e95603d05ba14a1eacf3ad5346046c3ee19175a42",
+            "pose-09-attack_prepare.png": "dc9f6a047081a0da952a9216395f4081fffbd5691d3cee6908578c391b4151ca",
+            "pose-10-attack_release.png": "e896383866aaca7176dc69d5473e960ebc8549149a84ecc5d1b4d8a2bff01843",
+            "pose-11-pain.png": "7783346cebddd7046656b0e74fbc8174b69b8e65a9ae65f007975d27b06950b2",
+            "pose-12-death.png": "8e09df47a885a3f25dc9f6a071ed9d446e83d9f632305c973947ce6fa911ceee",
+            "pose-13-death.png": "23f9b50e127ebf8e548f43623c427a5cf02044e1e9503c658331dbde285c0ed0",
+            "pose-14-death.png": "0b353bc19f673bc5fb7c53b5fc2482e3fe508851c6c91107bd58aa6635849207",
+            "pose-15-death.png": "055b9e6d9a1f09f76241799066af6f24e03ee9581254f160eb814d25cd0b37c9",
+            "pose-16-death.png": "98730555bff9560ac3c8e1be80f22131ab9609060acd5ba011d0829e18528313",
+            "pose-17-death.png": "a5a5a6838ecfbb1b2843d9545631aeb6e9cbfbd54a05a87e28baea364ad3d9a9",
+            "pose-18-breath.png": "0d7ca8c8dcbfcfcd4e6d2287ec1e9a1df4c71df9ebec26aff0c79c06dca189aa",
+            "pose-19-breath.png": "9c4a98fab57515368cc47c0a89fa78c994a33ac651144b1f517713e9945bfff3",
+            "pose-20-breath.png": "0d7ca8c8dcbfcfcd4e6d2287ec1e9a1df4c71df9ebec26aff0c79c06dca189aa",
+            "pose-21-breath.png": "50ffddab4673e4d97c97be1d4a621722a072f1564d9e51f0db4c7cf5fb0ca310",
+            "pose-22-rest.png": "f0b2687fa2abb3c9e2537537932e6bc51ee4dcb144d5795559f75edbda8fc8fe",
+            "view-collar-top.png": "c0c9d26e2689be2da4ebac1ba9ba1df1be58f11b508cd61ce81c0f4a2a8bdb8a",
+            "view-face-detail.png": "1aae2e7bf61204825302b2853e7394bacdfb7afb09438d37cd5ab1c9b908c438",
+            "view-front.png": "347e1a015c78f61e8332c8b0b1c29930b31ade0ec841d7f5c21fde9c5ea77c05",
+            "view-garment-rear.png": "07d81f24fe4f8683e11425d49b3400bb42bd179af37e25c83342706cc6697f52",
+            "view-head-front.png": "648c9579bbc3574a04f5fb2400141675fe0ff49247e61adeaac858a7f640bc3e",
+            "view-head-oblique.png": "5a7ae6c2a5df403ae9beb7fbbb2b5b34d8818f057a387b8d77f812219b533e81",
+            "view-lying-oblique.png": "f0b2687fa2abb3c9e2537537932e6bc51ee4dcb144d5795559f75edbda8fc8fe",
+            "view-rear.png": "4eccedf666382968ce353ddac0d56db786395e9ec4a02ee8570ccb81e0819bc4",
+            "view-side.png": "cb937406f35dcfa9a81c99c1b8f351a6a8fc8138fd7e8feac828c372ad8eb1ff"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 22589,
+            "pose-01-idle.png": 22589,
+            "pose-02-run.png": 22589,
+            "pose-03-run.png": 26645,
+            "pose-04-run.png": 22589,
+            "pose-05-run.png": 24482,
+            "pose-06-walk.png": 26645,
+            "pose-07-walk.png": 24482,
+            "pose-08-stun.png": 22643,
+            "pose-09-attack_prepare.png": 22526,
+            "pose-10-attack_release.png": 22205,
+            "pose-11-pain.png": 21717,
+            "pose-12-death.png": 10714,
+            "pose-13-death.png": 10230,
+            "pose-14-death.png": 8623,
+            "pose-15-death.png": 7611,
+            "pose-16-death.png": 8218,
+            "pose-17-death.png": 8202,
+            "pose-18-breath.png": 22301,
+            "pose-19-breath.png": 22318,
+            "pose-20-breath.png": 22301,
+            "pose-21-breath.png": 22327,
+            "pose-22-rest.png": 8347
+          },
+          "distinct_pose_captures": 18
+        }
+      ]
+    },
+    "llorona": {
+      "issue": 811,
+      "species": "llorona",
+      "studio": false,
+      "runtime_sha256": "63040843cdb73fce9700872a700498a78982efd0a3834e2ce35cf10be4188dcb",
+      "baseline_sha256": "63040843cdb73fce9700872a700498a78982efd0a3834e2ce35cf10be4188dcb",
+      "fixture_sha256": "06a5c2ab7fe3e4d0f9af624573c5e86c905e2d122d71bd42cb9ad3a6ffe3a3ef",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "visual",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+            "empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+            "empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+            "pose-00-idle.png": "3fabffa1261dda847dcb2ea7258709e0c74806fbc2ce608fe49ac7f795bf8a6c",
+            "pose-01-idle.png": "3fabffa1261dda847dcb2ea7258709e0c74806fbc2ce608fe49ac7f795bf8a6c",
+            "pose-02-run.png": "f4b725fd32fb923ab7ad8abdeb2f198409effea6d64bf41f0d4c2ea4c17a37ee",
+            "pose-03-run.png": "552bea1f41e8f57a813f50f927f940008b691bc44cc9d3be73bd72b712196baf",
+            "pose-04-run.png": "f4b725fd32fb923ab7ad8abdeb2f198409effea6d64bf41f0d4c2ea4c17a37ee",
+            "pose-05-run.png": "fad133119e3aba692456db9011f965e8e1783197b7d94939556a72050033b044",
+            "pose-06-walk.png": "552bea1f41e8f57a813f50f927f940008b691bc44cc9d3be73bd72b712196baf",
+            "pose-07-walk.png": "fad133119e3aba692456db9011f965e8e1783197b7d94939556a72050033b044",
+            "pose-08-stun.png": "34bed01c839933eac639760cb90265fb8efd010c1d88469498052ec3cff3e063",
+            "pose-09-attack_prepare.png": "fef2e2ce851780497d538fb14d36355ff56ced5c04b382a5c9c248a4917f6e75",
+            "pose-10-attack_release.png": "a2d261372aec3913dc66ea3a605126b0ec3169b47d06a8409a8e6effdf3ee64d",
+            "pose-11-pain.png": "0145f226d83cb7b1e242834880d9aaf2ba394d20b81dc0a4782eb5bc79a25a7a",
+            "pose-12-death.png": "a6f82e17f9a22c7640418a8c9079b8a22737c8d18ae31d78d5360a61b2094896",
+            "pose-13-death.png": "9c2dc44f8e3a61fc49a12b1e83d8aafc5f16930cd735821d27bb2fa593e8c4e4",
+            "pose-14-death.png": "d748e83f91305a404e47c2f93f2b489d9c49446d5c6c3f5e4312a001905ad04e",
+            "pose-15-death.png": "cc0be6126a204b77f24f297f7b48df8d0f442ca572b033e27ae10ab8a6c3b306",
+            "pose-16-death.png": "c7b39c1c20f3e39ac6939c0ad4733cf0a0c6df8e63a58cfb05445e639b2e453a",
+            "pose-17-death.png": "997c019339d9d3d0a5572a51f0eec02f9b98a2f28e95e8e2cf0c02f5d1a07ce1",
+            "pose-18-breath.png": "3ae678e72f92d780bbd0c0ae8da72123bc8c2fb4638640460a110670d075b6cb",
+            "pose-19-breath.png": "b36a81afe005fbf37bcc0067edd9f0666ad238b3024131dce1560c402ab1dcf5",
+            "pose-20-breath.png": "3ae678e72f92d780bbd0c0ae8da72123bc8c2fb4638640460a110670d075b6cb",
+            "pose-21-breath.png": "d6b78fee809828066a9dcec61f7132dc9ea1ebabc7acfebd80a4cf473a0794a6",
+            "pose-22-rest.png": "0a154fc5eac5aa76b88233847d59a8fd39a4056028f96ce64317c1246016ad3b",
+            "view-collar-top.png": "586e2d1824863402cbb153a30d72d03b6fb79c7a12bcf4e5737ed46e933751e3",
+            "view-face-detail.png": "ee7123279bb603a9806e065f9d840eaf34057d9eb0d5562ab7132cb647bc5c7e",
+            "view-front.png": "bfc79cd0a8c2eef232719c7ad5511133fe488fd136cd69fe76215c8af71d0a97",
+            "view-garment-rear.png": "d898e15b64583edbca1095141bc1f43b3ee2cab09b9a49b6e88c91108ad89db4",
+            "view-head-front.png": "a1b5b0b4ae18e78aee15c23878ef0a2a66f3015f4f5689971a3869db8dd337d8",
+            "view-head-oblique.png": "e2296d6ce97216ce900e7a0f5ae3ea0405c6d49b6a8e7ccd58a8be866cef9ddb",
+            "view-lying-oblique.png": "0a154fc5eac5aa76b88233847d59a8fd39a4056028f96ce64317c1246016ad3b",
+            "view-rear.png": "efb146dab2a08869f4d8f74fa036f8d3f8907f84ad04fa84a670520e4da7e8d8",
+            "view-side.png": "e7c11ceee30ee5ee14bd3ea46d0b56549d1010a5b9e627bfff54b8e9ab66a736"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 30118,
+            "pose-01-idle.png": 30118,
+            "pose-02-run.png": 30084,
+            "pose-03-run.png": 33872,
+            "pose-04-run.png": 30084,
+            "pose-05-run.png": 31892,
+            "pose-06-walk.png": 33872,
+            "pose-07-walk.png": 31892,
+            "pose-08-stun.png": 30269,
+            "pose-09-attack_prepare.png": 30583,
+            "pose-10-attack_release.png": 28789,
+            "pose-11-pain.png": 27837,
+            "pose-12-death.png": 13262,
+            "pose-13-death.png": 13333,
+            "pose-14-death.png": 12588,
+            "pose-15-death.png": 11903,
+            "pose-16-death.png": 11859,
+            "pose-17-death.png": 11914,
+            "pose-18-breath.png": 29297,
+            "pose-19-breath.png": 29347,
+            "pose-20-breath.png": 29297,
+            "pose-21-breath.png": 29284,
+            "pose-22-rest.png": 11732
+          },
+          "distinct_pose_captures": 18
+        }
+      ]
+    },
+    "futre": {
+      "issue": 811,
+      "species": "futre",
+      "studio": false,
+      "runtime_sha256": "f6e58ba59b2987634f2f423aa75cd07b8487481e359c56e98597a1d019e257cd",
+      "baseline_sha256": "f6e58ba59b2987634f2f423aa75cd07b8487481e359c56e98597a1d019e257cd",
+      "fixture_sha256": "8fe77646a8c871f1722f2075e11e0406a16cf9e892283a64bf8e240192306db9",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "visual",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+            "empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+            "empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+            "pose-00-idle.png": "3ffa4a4bedf8b10174a8bfd40500bd270d4c6d98fac6c309620c96b0009f25b5",
+            "pose-01-idle.png": "3ffa4a4bedf8b10174a8bfd40500bd270d4c6d98fac6c309620c96b0009f25b5",
+            "pose-02-run.png": "c3078025637366ece3d2fcec60fb95b0e26ef702dba27ad67f2fee8b5485f1ac",
+            "pose-03-run.png": "783279b13d290bf329794e01cf8e83c0cfe2dfcc954cd19198ef1fe60eb4beef",
+            "pose-04-run.png": "c3078025637366ece3d2fcec60fb95b0e26ef702dba27ad67f2fee8b5485f1ac",
+            "pose-05-run.png": "38b6f3caf133207b32a71b2fa972a8c20a8856b6d35ffecd3d615109334552b8",
+            "pose-06-walk.png": "783279b13d290bf329794e01cf8e83c0cfe2dfcc954cd19198ef1fe60eb4beef",
+            "pose-07-walk.png": "38b6f3caf133207b32a71b2fa972a8c20a8856b6d35ffecd3d615109334552b8",
+            "pose-08-stun.png": "9cf82def83236172b96ee5d6eed0389545a8340e13d8c863213972c9b76ff891",
+            "pose-09-attack_prepare.png": "157205c6e276ffc21b975c732b123c41a2055ad64f2f60f2d988980b717d8fa7",
+            "pose-10-attack_release.png": "a414532be69b4cb6422733c5b732f1b17bba1cfb11b6fa53c8a936ab51049471",
+            "pose-11-pain.png": "fd43115622fc7a1e82ff8a6963de378569924c8879b1375bbc49fdf368ab9bac",
+            "pose-12-death.png": "62ec03113ab6590917e58fdfafea75139636079b67e4b86056bb16a55b9918ad",
+            "pose-13-death.png": "f6c19881b9396f6bbfcb03e7167bab588dc88a55573603d9bfa1775474ba6792",
+            "pose-14-death.png": "fe51d6430aef9f377d410ae6f8e9fde5039c374d2650d82380194264b1c88354",
+            "pose-15-death.png": "c3fc5bee69dcff10cd82da750cc10d2b926a78d6df1ccf811e08e548edef0c7a",
+            "pose-16-death.png": "c5b2f4e2171e41bf25f7a8e56191dfc52dc6bee9c26f7cc6eb6f50fe3761864b",
+            "pose-17-death.png": "651d32dc5f33a963480f9ed4a02ab70c7caa16afd5a3a22e1039be29d2ae7bf1",
+            "pose-18-breath.png": "86b8564214c3bcf4578b4dc1ff062a8a4e047c54f974c1ecd9a0bb29c9d958d6",
+            "pose-19-breath.png": "9cbc6aa70a51f3590ca8291a2519e3aaad9e714f9870eaf380fb919bef25f696",
+            "pose-20-breath.png": "86b8564214c3bcf4578b4dc1ff062a8a4e047c54f974c1ecd9a0bb29c9d958d6",
+            "pose-21-breath.png": "86ec274ea89ee9790dee012d3d3419da9c40ba078308279849248223535b6735",
+            "pose-22-rest.png": "8a36b6eac58fcdd092b3df505b228ad99fe448ad67615a05b72bc634642f022b",
+            "view-collar-top.png": "9aa408e95768f999c14a246838964e7a9d04b44c13dd84a1330c27188e306394",
+            "view-face-detail.png": "35778f18eb354d8099a870f398b32ee89cf4f0a97e33d1e0d8401d099c57be19",
+            "view-front.png": "a29ac895f71878ba20e58f73c2e75efc9f90d2f3a1ca91d9b7a7c20abb567b98",
+            "view-garment-rear.png": "abab239afdd019c77c68ad2efb50f799bd3f8221bb064a654b82332581d2f6c0",
+            "view-head-front.png": "8686094368be5e82f5b3b75dc46ffc6fc1d58acfa007810f316844ffb9a3695b",
+            "view-head-oblique.png": "9a0f5c7f167e6304eec553a97b543e4a596030a9e880effbc39591b29de82ef7",
+            "view-lying-oblique.png": "8a36b6eac58fcdd092b3df505b228ad99fe448ad67615a05b72bc634642f022b",
+            "view-rear.png": "f05d6b886e708486cde06445ed128d0ff7e8bc8b252852516ec2688621fd534f",
+            "view-side.png": "24ade9e9ea39f39ffb39dd37025f84c92c676e37e2afa9c7ac3f7fd64742ceb5"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 15829,
+            "pose-01-idle.png": 15829,
+            "pose-02-run.png": 15795,
+            "pose-03-run.png": 15687,
+            "pose-04-run.png": 15795,
+            "pose-05-run.png": 14561,
+            "pose-06-walk.png": 15687,
+            "pose-07-walk.png": 14561,
+            "pose-08-stun.png": 15887,
+            "pose-09-attack_prepare.png": 16202,
+            "pose-10-attack_release.png": 15080,
+            "pose-11-pain.png": 14844,
+            "pose-12-death.png": 8429,
+            "pose-13-death.png": 8382,
+            "pose-14-death.png": 7417,
+            "pose-15-death.png": 5998,
+            "pose-16-death.png": 5380,
+            "pose-17-death.png": 5452,
+            "pose-18-breath.png": 15147,
+            "pose-19-breath.png": 15154,
+            "pose-20-breath.png": 15147,
+            "pose-21-breath.png": 15028,
+            "pose-22-rest.png": 5529
+          },
+          "distinct_pose_captures": 18
+        }
+      ]
+    }
+  },
+  "presentation": {
+    "viuda": {
+      "issue": 811,
+      "species": "viuda",
+      "scope": "Measure one 700-tic sprite/model pair for a real Viuda/Llorona/Futre; no campaign or crowd budget.",
+      "baseline_sha256": "7bc1583b95bc30fdc6a8b9b04d4afba4de73de4461872f53cb5cbab07a55f539",
+      "runtime_sha256": "63040843cdb73fce9700872a700498a78982efd0a3834e2ce35cf10be4188dcb",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 10084,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 400567487.7524,
+            "END": 400587504.4728
+          },
+          "fixture_sha256": "03d904afebdcc9b720e61102a50f9b86df695e774455ac2f5dbb4c3d33ce62e5",
+          "bench_sha256": "7ecab4a156398bcddf7d4bf08660c0de3b266645724d3ea489e88c3b19891494",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.571212857142854,
+            "p50_ms": 28.5656,
+            "p95_ms": 28.92,
+            "p99_ms": 29.0579,
+            "max_ms": 29.1479
+          },
+          "presentation": {
+            "pid": 10084,
+            "trace_sha256": "36dc754df51a846cb8968590c6caa0853e2ae3b58eac139ea83e8e088e4f402e",
+            "rows": 46566,
+            "scene_presents": 33083,
+            "mean_present_fps": 1888.6198409044484,
+            "present_intervals": {
+              "samples": 33082,
+              "mean_ms": 0.5294871833608961,
+              "p50_ms": 0.5080000162124634,
+              "p95_ms": 0.6967999935150146,
+              "p99_ms": 0.8216000199317932,
+              "max_ms": 1.5740000009536743
+            },
+            "native_call_duration": {
+              "samples": 33083,
+              "mean_ms": 0.0637119305168772,
+              "p50_ms": 0.05900001525878906,
+              "p95_ms": 0.08799999952316284,
+              "p99_ms": 0.10890001058578491,
+              "max_ms": 0.47839999198913574
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 29768,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 400602325.5319,
+            "END": 400622336.8379
+          },
+          "fixture_sha256": "03d904afebdcc9b720e61102a50f9b86df695e774455ac2f5dbb4c3d33ce62e5",
+          "bench_sha256": "7ecab4a156398bcddf7d4bf08660c0de3b266645724d3ea489e88c3b19891494",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57090357142857,
+            "p50_ms": 28.5598,
+            "p95_ms": 28.9482,
+            "p99_ms": 29.057,
+            "max_ms": 29.1643
+          },
+          "presentation": {
+            "pid": 29768,
+            "trace_sha256": "0b20a5e342ade3f6ffedd00ce9d62af19b7342a49f0fee75f912b47fe9cbf6c8",
+            "rows": 44941,
+            "scene_presents": 31952,
+            "mean_present_fps": 1824.6601062987604,
+            "present_intervals": {
+              "samples": 31951,
+              "mean_ms": 0.5480472755161258,
+              "p50_ms": 0.5268999934196472,
+              "p95_ms": 0.7225000262260437,
+              "p99_ms": 0.8210000395774841,
+              "max_ms": 1.8080999851226807
+            },
+            "native_call_duration": {
+              "samples": 31952,
+              "mean_ms": 0.06388400099951444,
+              "p50_ms": 0.059300005435943604,
+              "p95_ms": 0.08730000257492065,
+              "p99_ms": 0.10839998722076416,
+              "max_ms": 1.473800003528595
+            }
+          }
+        }
+      ]
+    },
+    "llorona": {
+      "issue": 811,
+      "species": "llorona",
+      "scope": "Measure one 700-tic sprite/model pair for a real Viuda/Llorona/Futre; no campaign or crowd budget.",
+      "baseline_sha256": "7bc1583b95bc30fdc6a8b9b04d4afba4de73de4461872f53cb5cbab07a55f539",
+      "runtime_sha256": "63040843cdb73fce9700872a700498a78982efd0a3834e2ce35cf10be4188dcb",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 36068,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 400638958.1694,
+            "END": 400658967.26559997
+          },
+          "fixture_sha256": "06a5c2ab7fe3e4d0f9af624573c5e86c905e2d122d71bd42cb9ad3a6ffe3a3ef",
+          "bench_sha256": "7ecab4a156398bcddf7d4bf08660c0de3b266645724d3ea489e88c3b19891494",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.571335428571427,
+            "p50_ms": 28.5694,
+            "p95_ms": 28.9428,
+            "p99_ms": 29.0284,
+            "max_ms": 29.2496
+          },
+          "presentation": {
+            "pid": 36068,
+            "trace_sha256": "93b744be870dd4684935fb49fbda6bf817a2084147785a95b78723ba1d0b3348",
+            "rows": 45693,
+            "scene_presents": 32319,
+            "mean_present_fps": 1845.867103955837,
+            "present_intervals": {
+              "samples": 32318,
+              "mean_ms": 0.5417508106932087,
+              "p50_ms": 0.527899980545044,
+              "p95_ms": 0.6370000243186951,
+              "p99_ms": 0.7771999835968018,
+              "max_ms": 1.2857000231742859
+            },
+            "native_call_duration": {
+              "samples": 32319,
+              "mean_ms": 0.06360618524974243,
+              "p50_ms": 0.0591999888420105,
+              "p95_ms": 0.08689999580383301,
+              "p99_ms": 0.10769999027252197,
+              "max_ms": 0.4353000521659851
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 48532,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 400673790.348,
+            "END": 400693801.424
+          },
+          "fixture_sha256": "06a5c2ab7fe3e4d0f9af624573c5e86c905e2d122d71bd42cb9ad3a6ffe3a3ef",
+          "bench_sha256": "7ecab4a156398bcddf7d4bf08660c0de3b266645724d3ea489e88c3b19891494",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.572072285714285,
+            "p50_ms": 28.578,
+            "p95_ms": 28.9198,
+            "p99_ms": 29.0209,
+            "max_ms": 29.361
+          },
+          "presentation": {
+            "pid": 48532,
+            "trace_sha256": "743f9e630c5389633e586cf7a0233389d23db370c58cfd9815665b1d65a1ab53",
+            "rows": 46709,
+            "scene_presents": 33245,
+            "mean_present_fps": 1898.4783938961411,
+            "present_intervals": {
+              "samples": 33244,
+              "mean_ms": 0.5267376248342526,
+              "p50_ms": 0.5110000371932983,
+              "p95_ms": 0.6412999629974365,
+              "p99_ms": 0.7824999690055847,
+              "max_ms": 1.1686000227928162
+            },
+            "native_call_duration": {
+              "samples": 33245,
+              "mean_ms": 0.06371620705762758,
+              "p50_ms": 0.0591999888420105,
+              "p95_ms": 0.08740001916885376,
+              "p99_ms": 0.10690003633499146,
+              "max_ms": 0.47749996185302734
+            }
+          }
+        }
+      ]
+    },
+    "futre": {
+      "issue": 811,
+      "species": "futre",
+      "scope": "Measure one 700-tic sprite/model pair for a real Viuda/Llorona/Futre; no campaign or crowd budget.",
+      "baseline_sha256": "7bc1583b95bc30fdc6a8b9b04d4afba4de73de4461872f53cb5cbab07a55f539",
+      "runtime_sha256": "63040843cdb73fce9700872a700498a78982efd0a3834e2ce35cf10be4188dcb",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 37596,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 400710510.3657,
+            "END": 400730527.4583
+          },
+          "fixture_sha256": "8fe77646a8c871f1722f2075e11e0406a16cf9e892283a64bf8e240192306db9",
+          "bench_sha256": "7ecab4a156398bcddf7d4bf08660c0de3b266645724d3ea489e88c3b19891494",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57100642857143,
+            "p50_ms": 28.583,
+            "p95_ms": 28.9632,
+            "p99_ms": 29.1179,
+            "max_ms": 29.4332
+          },
+          "presentation": {
+            "pid": 37596,
+            "trace_sha256": "32f1d5c23ecff8d02e1c123d74627a1df491f58cf02ca3a1cd52245173d68785",
+            "rows": 43589,
+            "scene_presents": 31398,
+            "mean_present_fps": 1792.3840615296265,
+            "present_intervals": {
+              "samples": 31397,
+              "mean_ms": 0.5579161416703274,
+              "p50_ms": 0.5357000231742859,
+              "p95_ms": 0.7206000089645386,
+              "p99_ms": 0.8057999610900879,
+              "max_ms": 1.714900016784668
+            },
+            "native_call_duration": {
+              "samples": 31398,
+              "mean_ms": 0.06458995155494178,
+              "p50_ms": 0.059800028800964355,
+              "p95_ms": 0.08899998664855957,
+              "p99_ms": 0.11009997129440308,
+              "max_ms": 0.44609999656677246
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 11348,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 400745325.2849,
+            "END": 400765242.6729
+          },
+          "fixture_sha256": "8fe77646a8c871f1722f2075e11e0406a16cf9e892283a64bf8e240192306db9",
+          "bench_sha256": "7ecab4a156398bcddf7d4bf08660c0de3b266645724d3ea489e88c3b19891494",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.571413857142854,
+            "p50_ms": 28.5597,
+            "p95_ms": 28.9539,
+            "p99_ms": 29.0883,
+            "max_ms": 29.3095
+          },
+          "presentation": {
+            "pid": 11348,
+            "trace_sha256": "7e90cf37dae68bef23309083f381a2cc8562c12dec02331e72444b5801987405",
+            "rows": 43349,
+            "scene_presents": 30774,
+            "mean_present_fps": 1766.8565466613907,
+            "present_intervals": {
+              "samples": 30773,
+              "mean_ms": 0.5659769050801412,
+              "p50_ms": 0.5398999452590942,
+              "p95_ms": 0.7700000405311584,
+              "p99_ms": 0.8382999897003174,
+              "max_ms": 1.6015999913215637
+            },
+            "native_call_duration": {
+              "samples": 30774,
+              "mean_ms": 0.06450945953958068,
+              "p50_ms": 0.05979996919631958,
+              "p95_ms": 0.08849996328353882,
+              "p99_ms": 0.11379998922348022,
+              "max_ms": 0.40209996700286865
+            }
+          }
+        }
+      ]
+    }
+  },
+  "evidence_reuse": {
+    "issue": 811,
+    "final_runtime_sha256": "63040843cdb73fce9700872a700498a78982efd0a3834e2ce35cf10be4188dcb",
+    "comparisons": {
+      "02": {
+        "runtime_sha256": "8d7852904ec8f5cd0b2dae2e771d871d1d4e522f29a19cb90c1f109b00be990b",
+        "changed_resources": [
+          "models/caelum/folklore/periodapparitions/llorona.md3",
+          "models/caelum/folklore/periodapparitions/viuda.md3"
+        ],
+        "changed_native_frames": {},
+        "all_other_runtime_bytes_identical": true,
+        "all_bindings_and_futre_exact": true
+      },
+      "03": {
+        "runtime_sha256": "f6e58ba59b2987634f2f423aa75cd07b8487481e359c56e98597a1d019e257cd",
+        "changed_resources": [
+          "models/caelum/folklore/periodapparitions/llorona.md3",
+          "models/caelum/folklore/periodapparitions/viuda.md3"
+        ],
+        "changed_native_frames": {
+          "models/caelum/folklore/periodapparitions/llorona.md3": {
+            "changed_frames": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "position_changes": [
+              3,
+              5,
+              6,
+              7
+            ],
+            "normals_only_counts": {
+              "2": 5,
+              "4": 4
+            }
+          },
+          "models/caelum/folklore/periodapparitions/viuda.md3": {
+            "changed_frames": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "position_changes": [
+              3,
+              5,
+              6,
+              7
+            ],
+            "normals_only_counts": {
+              "2": 4,
+              "4": 3
+            }
+          }
+        },
+        "all_other_runtime_bytes_identical": true,
+        "all_bindings_and_futre_exact": true
+      },
+      "04": {
+        "runtime_sha256": "6bcb287be40752f15a4a80e06b23a4d728fb64288eafd40cca293d132da83a58",
+        "changed_resources": [
+          "models/caelum/folklore/periodapparitions/llorona.md3",
+          "models/caelum/folklore/periodapparitions/viuda.md3"
+        ],
+        "changed_native_frames": {
+          "models/caelum/folklore/periodapparitions/llorona.md3": {
+            "changed_frames": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "position_changes": [
+              3,
+              5,
+              6,
+              7
+            ],
+            "normals_only_counts": {
+              "2": 5,
+              "4": 4
+            }
+          },
+          "models/caelum/folklore/periodapparitions/viuda.md3": {
+            "changed_frames": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "position_changes": [
+              3,
+              5,
+              6,
+              7
+            ],
+            "normals_only_counts": {
+              "2": 4,
+              "4": 3
+            }
+          }
+        },
+        "all_other_runtime_bytes_identical": true,
+        "all_bindings_and_futre_exact": true
+      }
+    },
+    "reused_evidence": {
+      "viuda-continuity": {
+        "path": "build/issue811-viuda-native02/RESULTS.json",
+        "assertions": 115,
+        "runtime_version": "03"
+      },
+      "llorona-continuity": {
+        "path": "build/issue811-llorona-native02/RESULTS.json",
+        "assertions": 115,
+        "runtime_version": "03"
+      },
+      "futre-continuity": {
+        "path": "build/issue811-futre-native01/RESULTS.json",
+        "assertions": 115,
+        "runtime_version": "02"
+      },
+      "actions-loot": {
+        "path": "build/issue811-actions01/RESULTS.json",
+        "assertions": 188,
+        "runtime_version": "04"
+      },
+      "futre-final-camera": {
+        "path": "build/issue811-futre-visual02/RESULTS.json",
+        "assertions": 51,
+        "runtime_version": "03"
+      }
+    },
+    "qualification": "Final art changes from period03/04 are only female MD3 walk/run frames2..7: positions change in3/5/6/7;2/4 retain exact positions/bounds and differ only in a few encoded normals after floating-point gait transforms. Native states, timings, classes, collision, save fields, loot, all bindings, all textures, all topology/UVs and the other17 animation frames are exact. Futre is byte-identical even to period02. Final-package female visual checks and final presentation cohorts complement this bounded functional reuse; no campaign or author acceptance."
+  },
+  "qualified_native_assertions": 686,
+  "art": {
+    "source": "assets/source/art/period_apparitions_811",
+    "generated_images": {
+      "materials-initial.png": "5570b222676ba8709ae26539c75a7bb34ab0b7cfa0495a2317ac43eb146c103b",
+      "materials.png": "101d1fd458732f45e887a24d8a0ea77d8864c8269b2b5dd11ba7c51fd3bf1a8e",
+      "fine-cloth.png": "0464311a9011e636d6c70befd93640f32205d88978748e7f271123014b589e5a"
+    },
+    "mode": "built-in image_gen",
+    "author_check": "CA811-PERIOD-01"
+  },
+  "iterations": [
+    "Initial joint witnesses, collar/sash/button intersections and duplicated death endpoints were corrected; earlier geometry diagnostics remain.",
+    "Refined face atlas preserves complete chins; a second finer cloth strip corrects oversized visible patterning. Every generated original remains unchanged, including the unused initial atlas. The edited atlas does not claim identity of untouched cells.",
+    "Native inspection led to shorter crania, closed crown/temple hair, a mourning collar, scooped Llorona neckline/flared sleeves and ten toes. These are visual source dimensions, not balance or metric scale adoption.",
+    "Closed meshes and rooted joints did not catch legs penetrating skirts. Waist-anchored skirt expansion and a gentler visual stride correct the observed protrusions. Independent serialized triangle coverage now contains all1488 above-hem leg-vertex samples in the two extreme poses. Superseded stride captures remain.",
+    "Binary audit bounds reused native evidence: only female walk/run frames2..7 differ from period03/04;2/4 differ only in a few encoded normals with exact positions/bounds. Futre is unchanged since period02. Final female visual checks and all final-package presentation pairs complement the reuse."
+  ],
+  "reviewed": "Final front/side/rear, face/hair/neck/collar details, extreme strides, attack, pain, intermediate death and oblique rest views; both presentation scenes per species.",
+  "qualifications": [
+    "Stylized closed component anatomy, painted facial detail, opaque hair and rigid fall/rest poses remain author-review candidates. Clothing is fixed species art, not equipped modular inventory.",
+    "Inherited actor scale, collision, combat, stats, loot, save fields and all unrelated runtime bytes remain exact except two required release diagnostics. Concept metre heights, powers, population and campaign placement are not added.",
+    "One700-tic sprite/model pair per species measures queue intervals and simulation spacing, not GPU/display latency, repeatability, an optimization, or campaign/crowd acceptance.",
+    "Thirty of56 provisional classes now have native candidates;26 remain. Regional displays, other characters, modular fitting,75 campaign assignments and siege rendering remain unfinished. No author tests removed or accepted; final terminal deferred until the complete batch."
+  ],
+  "files": {
+    "actions/actions/commands.cfg": "97dba2099b0538b599dabfd25a822317c75b4947e8cdc20d4bffd45b6bea1177",
+    "actions/actions/engine.log": "b292d4ab1ded5bbe8169bd4e3643fb78c9ccdfdc5e1d4d6c25031b48f322b330",
+    "actions/actions/process.log": "61dcbd1dc942f76df54a89dbcc35b1b0d26bc4bbcd1219fbdbe8bce7df168894",
+    "actions/actions/session.ini": "f54069cfc1827b933ab7b473ae8355c8818168454b1d3b444e247e3247691220",
+    "actions/fixture.zs": "08f9bef0333d272193e9b4fa127abe3b895ecf2cca9bf9b4d53f7fcb5213cd65",
+    "actions/loot/commands.cfg": "c7131f87f9df9188e2301d6730516e731540216e6417b470aab866467fbd8ad7",
+    "actions/loot/engine.log": "96d91cfbd856479d7a13526aa29fab8667ca95a5bbfed4a123895b65e584fd34",
+    "actions/loot/process.log": "0b348e2e492951815c2753a0cec40864417b18a0678c867b25275e6ebd087e95",
+    "actions/loot/session.ini": "6cb27ba316022a29a19fe10909f6ab0e6c45a23ea987d53dc0af4812a481f120",
+    "actions/loot-reload/commands.cfg": "ad82c3110081fb6cd15b9a00885b6cc0747127803c4e52c0e06a730955dcf399",
+    "actions/loot-reload/engine.log": "ddc5729c707955b0625f3e20d2342a23027dc19e1d9a456b763b67bb947938be",
+    "actions/loot-reload/process.log": "a67b126108bff75f215c9d7a7dd09d82bec4dac7263908ac3625af0e09322060",
+    "actions/loot-reload/session.ini": "a07024134e9fb14af44d9fcd798334a543539f86aef2fe62bf9e40c84a04c710",
+    "actions/MAPINFO.txt": "9f98c3fbba8eef31f4dee01efd126ea93b4dc8552be788a13610df121320a49b",
+    "actions/RESULTS.json": "6341c28dda34d4ffe6f4ce218e3960c7a2c08dcfe082d4f19cbb972c979296bd",
+    "actions/ZSCRIPT.txt": "4be0f91ad78f2741a3f9c5d8a61c62aa5e50e2e60c248a9d30f709ca912589dc",
+    "continuity/futre/baseline/commands.cfg": "a494d7383ac2d45e034b9a7e476011919bf94027da227c5cff13ce39825e6aef",
+    "continuity/futre/baseline/engine.log": "e838157856cb14edc9ab1c26f204602c7f2f098b9817dfda5f4e77bced61e1e9",
+    "continuity/futre/baseline/process.log": "c3744f7cb4b6659988eff2db7bf1f43a0df61a04461a727cbd726d6ff5238c27",
+    "continuity/futre/baseline/session.ini": "5cecb1145bde402f31eda8ad3ce8da6ee07defcf0ad67d034c7b1a6db057906c",
+    "continuity/futre/fixture.zs": "2b76fe50073fbca77e7bceac6c771fccb50b5ffd486cdb2b850ecc7633323ed6",
+    "continuity/futre/fresh-model/commands.cfg": "5c650e308b433c1210ac4e6296fc16b55e765e863235edf7529f00a93002f8aa",
+    "continuity/futre/fresh-model/empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "continuity/futre/fresh-model/empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+    "continuity/futre/fresh-model/empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "continuity/futre/fresh-model/engine.log": "e7279539af7e82b32be62d38e67989f3f0436566968d9d666c65bf908d509280",
+    "continuity/futre/fresh-model/pose-00-idle.png": "3ffa4a4bedf8b10174a8bfd40500bd270d4c6d98fac6c309620c96b0009f25b5",
+    "continuity/futre/fresh-model/pose-01-idle.png": "3ffa4a4bedf8b10174a8bfd40500bd270d4c6d98fac6c309620c96b0009f25b5",
+    "continuity/futre/fresh-model/pose-02-run.png": "c3078025637366ece3d2fcec60fb95b0e26ef702dba27ad67f2fee8b5485f1ac",
+    "continuity/futre/fresh-model/pose-03-run.png": "783279b13d290bf329794e01cf8e83c0cfe2dfcc954cd19198ef1fe60eb4beef",
+    "continuity/futre/fresh-model/pose-04-run.png": "c3078025637366ece3d2fcec60fb95b0e26ef702dba27ad67f2fee8b5485f1ac",
+    "continuity/futre/fresh-model/pose-05-run.png": "38b6f3caf133207b32a71b2fa972a8c20a8856b6d35ffecd3d615109334552b8",
+    "continuity/futre/fresh-model/pose-06-walk.png": "783279b13d290bf329794e01cf8e83c0cfe2dfcc954cd19198ef1fe60eb4beef",
+    "continuity/futre/fresh-model/pose-07-walk.png": "38b6f3caf133207b32a71b2fa972a8c20a8856b6d35ffecd3d615109334552b8",
+    "continuity/futre/fresh-model/pose-08-stun.png": "9cf82def83236172b96ee5d6eed0389545a8340e13d8c863213972c9b76ff891",
+    "continuity/futre/fresh-model/pose-09-attack_prepare.png": "157205c6e276ffc21b975c732b123c41a2055ad64f2f60f2d988980b717d8fa7",
+    "continuity/futre/fresh-model/pose-10-attack_release.png": "a414532be69b4cb6422733c5b732f1b17bba1cfb11b6fa53c8a936ab51049471",
+    "continuity/futre/fresh-model/pose-11-pain.png": "fd43115622fc7a1e82ff8a6963de378569924c8879b1375bbc49fdf368ab9bac",
+    "continuity/futre/fresh-model/pose-12-death.png": "62ec03113ab6590917e58fdfafea75139636079b67e4b86056bb16a55b9918ad",
+    "continuity/futre/fresh-model/pose-13-death.png": "f6c19881b9396f6bbfcb03e7167bab588dc88a55573603d9bfa1775474ba6792",
+    "continuity/futre/fresh-model/pose-14-death.png": "fe51d6430aef9f377d410ae6f8e9fde5039c374d2650d82380194264b1c88354",
+    "continuity/futre/fresh-model/pose-15-death.png": "c3fc5bee69dcff10cd82da750cc10d2b926a78d6df1ccf811e08e548edef0c7a",
+    "continuity/futre/fresh-model/pose-16-death.png": "c5b2f4e2171e41bf25f7a8e56191dfc52dc6bee9c26f7cc6eb6f50fe3761864b",
+    "continuity/futre/fresh-model/pose-17-death.png": "651d32dc5f33a963480f9ed4a02ab70c7caa16afd5a3a22e1039be29d2ae7bf1",
+    "continuity/futre/fresh-model/pose-18-breath.png": "86b8564214c3bcf4578b4dc1ff062a8a4e047c54f974c1ecd9a0bb29c9d958d6",
+    "continuity/futre/fresh-model/pose-19-breath.png": "9cbc6aa70a51f3590ca8291a2519e3aaad9e714f9870eaf380fb919bef25f696",
+    "continuity/futre/fresh-model/pose-20-breath.png": "86b8564214c3bcf4578b4dc1ff062a8a4e047c54f974c1ecd9a0bb29c9d958d6",
+    "continuity/futre/fresh-model/pose-21-breath.png": "86ec274ea89ee9790dee012d3d3419da9c40ba078308279849248223535b6735",
+    "continuity/futre/fresh-model/pose-22-rest.png": "8a36b6eac58fcdd092b3df505b228ad99fe448ad67615a05b72bc634642f022b",
+    "continuity/futre/fresh-model/process.log": "f91a3d81f57f016474568860725b4b41cffa925299926a56c371ca1c9d7a8a1e",
+    "continuity/futre/fresh-model/session.ini": "eba474a508c2908fd1a3a6454e293aa2a93fc14374fe0f5ad8474116d3af98aa",
+    "continuity/futre/fresh-model/view-face-detail.png": "35778f18eb354d8099a870f398b32ee89cf4f0a97e33d1e0d8401d099c57be19",
+    "continuity/futre/fresh-model/view-front.png": "a29ac895f71878ba20e58f73c2e75efc9f90d2f3a1ca91d9b7a7c20abb567b98",
+    "continuity/futre/fresh-model/view-garment-rear.png": "abab239afdd019c77c68ad2efb50f799bd3f8221bb064a654b82332581d2f6c0",
+    "continuity/futre/fresh-model/view-head-front.png": "8686094368be5e82f5b3b75dc46ffc6fc1d58acfa007810f316844ffb9a3695b",
+    "continuity/futre/fresh-model/view-head-oblique.png": "9a0f5c7f167e6304eec553a97b543e4a596030a9e880effbc39591b29de82ef7",
+    "continuity/futre/fresh-model/view-lying-oblique.png": "8a36b6eac58fcdd092b3df505b228ad99fe448ad67615a05b72bc634642f022b",
+    "continuity/futre/fresh-model/view-rear.png": "f05d6b886e708486cde06445ed128d0ff7e8bc8b252852516ec2688621fd534f",
+    "continuity/futre/fresh-model/view-side.png": "24ade9e9ea39f39ffb39dd37025f84c92c676e37e2afa9c7ac3f7fd64742ceb5",
+    "continuity/futre/MAPINFO.txt": "d326412d415bf024c6b0a9ea582023e721084551bfbca8750eab88b1519c4648",
+    "continuity/futre/model-reload/commands.cfg": "2c96bf001369522f097a05f908a6eadcc266aa94867b3c4cf2a48490292496e6",
+    "continuity/futre/model-reload/engine.log": "aac3eb7f24614ff426c0d7590be6344750a64ecbc809bbafca9f971d7e005b9e",
+    "continuity/futre/model-reload/process.log": "6abbf0c9a91e8847858c6e6201c231da7ea332a87e5b2f0e8f7acc3db01e1109",
+    "continuity/futre/model-reload/session.ini": "983588348cceba8224776b161d042b370780ab8bcd5e148d22705417ba78b455",
+    "continuity/futre/old-save-model/commands.cfg": "2c96bf001369522f097a05f908a6eadcc266aa94867b3c4cf2a48490292496e6",
+    "continuity/futre/old-save-model/engine.log": "e30305613de12bda8b576d50f58292da0ae268aea6b50e2feff1c7652540b2c4",
+    "continuity/futre/old-save-model/process.log": "d71bde2be904ca2becbae5346f8ab95c935b7036b7bd063438cc914b25d936ee",
+    "continuity/futre/old-save-model/session.ini": "b49c47debdb1aa869443da9cee8d96156a1d141976d36daa8690944a7df5ce88",
+    "continuity/futre/RESULTS.json": "f68e48a51edbaf4b9d2932447de778e36aeb6c67595aaea0bc5faa3fdcd9afc8",
+    "continuity/futre/rollback/commands.cfg": "2c96bf001369522f097a05f908a6eadcc266aa94867b3c4cf2a48490292496e6",
+    "continuity/futre/rollback/engine.log": "86538f4064293fb3b2132b12f605699e5395c5a5b8a223131a97aeb570e11f7e",
+    "continuity/futre/rollback/process.log": "4a54a565e181d0931640562aa1a37e5cf72406c35a724915e2c39e451da5fff9",
+    "continuity/futre/rollback/session.ini": "6520f0b879b5c2e031b6dd78fd49e5d02b466bc75d54adff90f9bd098d1e0538",
+    "continuity/futre/ZSCRIPT.txt": "1da09171fe67a8f3125a3fcd1f494746771cc9598909832fcfd2bfd8c2f2b3a8",
+    "continuity/llorona/baseline/commands.cfg": "a494d7383ac2d45e034b9a7e476011919bf94027da227c5cff13ce39825e6aef",
+    "continuity/llorona/baseline/engine.log": "6b98ac6a625ac06ee85c334f21e6377da022957a6742376a59b2e706bcf2f28b",
+    "continuity/llorona/baseline/process.log": "231252bec6ee3b221671b36244107782180f4d3bce04fd6b22ec097e4dc73a88",
+    "continuity/llorona/baseline/session.ini": "996f1df5e1fbeec53f5282ae6c4341bb4911b2b6787821a638c371e151e85add",
+    "continuity/llorona/fixture.zs": "636134fac9186e6398838d1786984f2f753965f8bfa0579dbb63350f594e5fff",
+    "continuity/llorona/fresh-model/commands.cfg": "8bb3fe113e4ef96ea1771ee8497c57a30cbc9433171159275311fdd418126dba",
+    "continuity/llorona/fresh-model/empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "continuity/llorona/fresh-model/empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+    "continuity/llorona/fresh-model/empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "continuity/llorona/fresh-model/engine.log": "95522d7f14c7a60a54e31fe23ecc12ca9f25afc03b439f2d8d294c0925bccd5e",
+    "continuity/llorona/fresh-model/pose-00-idle.png": "3fabffa1261dda847dcb2ea7258709e0c74806fbc2ce608fe49ac7f795bf8a6c",
+    "continuity/llorona/fresh-model/pose-01-idle.png": "3fabffa1261dda847dcb2ea7258709e0c74806fbc2ce608fe49ac7f795bf8a6c",
+    "continuity/llorona/fresh-model/pose-02-run.png": "f4b725fd32fb923ab7ad8abdeb2f198409effea6d64bf41f0d4c2ea4c17a37ee",
+    "continuity/llorona/fresh-model/pose-03-run.png": "4fee7acb33e5eb51d8d1e1af1d3ff6906f004bbbc975820b12dd3260887d5bcf",
+    "continuity/llorona/fresh-model/pose-04-run.png": "f4b725fd32fb923ab7ad8abdeb2f198409effea6d64bf41f0d4c2ea4c17a37ee",
+    "continuity/llorona/fresh-model/pose-05-run.png": "c70d6f85d4155d654a4ea66b8bf1338df3e692958e4a82c35695757ddaec7353",
+    "continuity/llorona/fresh-model/pose-06-walk.png": "4fee7acb33e5eb51d8d1e1af1d3ff6906f004bbbc975820b12dd3260887d5bcf",
+    "continuity/llorona/fresh-model/pose-07-walk.png": "c70d6f85d4155d654a4ea66b8bf1338df3e692958e4a82c35695757ddaec7353",
+    "continuity/llorona/fresh-model/pose-08-stun.png": "34bed01c839933eac639760cb90265fb8efd010c1d88469498052ec3cff3e063",
+    "continuity/llorona/fresh-model/pose-09-attack_prepare.png": "fef2e2ce851780497d538fb14d36355ff56ced5c04b382a5c9c248a4917f6e75",
+    "continuity/llorona/fresh-model/pose-10-attack_release.png": "a2d261372aec3913dc66ea3a605126b0ec3169b47d06a8409a8e6effdf3ee64d",
+    "continuity/llorona/fresh-model/pose-11-pain.png": "0145f226d83cb7b1e242834880d9aaf2ba394d20b81dc0a4782eb5bc79a25a7a",
+    "continuity/llorona/fresh-model/pose-12-death.png": "a6f82e17f9a22c7640418a8c9079b8a22737c8d18ae31d78d5360a61b2094896",
+    "continuity/llorona/fresh-model/pose-13-death.png": "9c2dc44f8e3a61fc49a12b1e83d8aafc5f16930cd735821d27bb2fa593e8c4e4",
+    "continuity/llorona/fresh-model/pose-14-death.png": "d748e83f91305a404e47c2f93f2b489d9c49446d5c6c3f5e4312a001905ad04e",
+    "continuity/llorona/fresh-model/pose-15-death.png": "cc0be6126a204b77f24f297f7b48df8d0f442ca572b033e27ae10ab8a6c3b306",
+    "continuity/llorona/fresh-model/pose-16-death.png": "c7b39c1c20f3e39ac6939c0ad4733cf0a0c6df8e63a58cfb05445e639b2e453a",
+    "continuity/llorona/fresh-model/pose-17-death.png": "997c019339d9d3d0a5572a51f0eec02f9b98a2f28e95e8e2cf0c02f5d1a07ce1",
+    "continuity/llorona/fresh-model/pose-18-breath.png": "3ae678e72f92d780bbd0c0ae8da72123bc8c2fb4638640460a110670d075b6cb",
+    "continuity/llorona/fresh-model/pose-19-breath.png": "b36a81afe005fbf37bcc0067edd9f0666ad238b3024131dce1560c402ab1dcf5",
+    "continuity/llorona/fresh-model/pose-20-breath.png": "3ae678e72f92d780bbd0c0ae8da72123bc8c2fb4638640460a110670d075b6cb",
+    "continuity/llorona/fresh-model/pose-21-breath.png": "d6b78fee809828066a9dcec61f7132dc9ea1ebabc7acfebd80a4cf473a0794a6",
+    "continuity/llorona/fresh-model/pose-22-rest.png": "0a154fc5eac5aa76b88233847d59a8fd39a4056028f96ce64317c1246016ad3b",
+    "continuity/llorona/fresh-model/process.log": "5cd61a7ba65c267252c6c9031ea0cd6a55217cfc8890a7f7e7b49608d5b57cf4",
+    "continuity/llorona/fresh-model/session.ini": "196757fb9a98ec4211436d72e4f4456a7867827e68b6cea0fd69b94a977f9209",
+    "continuity/llorona/fresh-model/view-collar-top.png": "586e2d1824863402cbb153a30d72d03b6fb79c7a12bcf4e5737ed46e933751e3",
+    "continuity/llorona/fresh-model/view-face-detail.png": "ee7123279bb603a9806e065f9d840eaf34057d9eb0d5562ab7132cb647bc5c7e",
+    "continuity/llorona/fresh-model/view-front.png": "bfc79cd0a8c2eef232719c7ad5511133fe488fd136cd69fe76215c8af71d0a97",
+    "continuity/llorona/fresh-model/view-garment-rear.png": "d898e15b64583edbca1095141bc1f43b3ee2cab09b9a49b6e88c91108ad89db4",
+    "continuity/llorona/fresh-model/view-head-front.png": "a1b5b0b4ae18e78aee15c23878ef0a2a66f3015f4f5689971a3869db8dd337d8",
+    "continuity/llorona/fresh-model/view-head-oblique.png": "e2296d6ce97216ce900e7a0f5ae3ea0405c6d49b6a8e7ccd58a8be866cef9ddb",
+    "continuity/llorona/fresh-model/view-lying-oblique.png": "0a154fc5eac5aa76b88233847d59a8fd39a4056028f96ce64317c1246016ad3b",
+    "continuity/llorona/fresh-model/view-rear.png": "efb146dab2a08869f4d8f74fa036f8d3f8907f84ad04fa84a670520e4da7e8d8",
+    "continuity/llorona/fresh-model/view-side.png": "e7c11ceee30ee5ee14bd3ea46d0b56549d1010a5b9e627bfff54b8e9ab66a736",
+    "continuity/llorona/MAPINFO.txt": "d326412d415bf024c6b0a9ea582023e721084551bfbca8750eab88b1519c4648",
+    "continuity/llorona/model-reload/commands.cfg": "2c96bf001369522f097a05f908a6eadcc266aa94867b3c4cf2a48490292496e6",
+    "continuity/llorona/model-reload/engine.log": "aa37678d0d7d4dfe478797050de0ada592100e8998ea414bbf992ce472c46427",
+    "continuity/llorona/model-reload/process.log": "c632052ae38c58be76c8f893baada61e5d3a876958dd45ceaf3eda92096e14d1",
+    "continuity/llorona/model-reload/session.ini": "ea3930ca7f54877bb04d4daa8dc4e55392f81a3aee711f2ce6fb1e7ebebf9f78",
+    "continuity/llorona/old-save-model/commands.cfg": "2c96bf001369522f097a05f908a6eadcc266aa94867b3c4cf2a48490292496e6",
+    "continuity/llorona/old-save-model/engine.log": "d24d389adf4e8044107932373a664c6d6c1b3d6c24909e24ff407d16dc61fc2c",
+    "continuity/llorona/old-save-model/process.log": "25237bd69bd4d7ca6fb39df202f31956f49a18c6db1f7d6cc2e0b7a14bac7b34",
+    "continuity/llorona/old-save-model/session.ini": "ff154cc24aa1a43b1b05f76aa35aeb00fa4ed93b88e8db82e9ea1d8ea0620b17",
+    "continuity/llorona/RESULTS.json": "582f07d48ea1d3ffe0fb1886e123d5b1b69a1b01f1c422bf1e3425392b7ba761",
+    "continuity/llorona/rollback/commands.cfg": "2c96bf001369522f097a05f908a6eadcc266aa94867b3c4cf2a48490292496e6",
+    "continuity/llorona/rollback/engine.log": "55eb7590c83e413c5558d4848ec0a08dda4fda33dfcbc069e6d6e6cd245bbbbc",
+    "continuity/llorona/rollback/process.log": "e2bae67fc51616c42ec73d78c189330db39a0af05ef61ced5faae7509cdc0e0e",
+    "continuity/llorona/rollback/session.ini": "5b42e38c760921ec74f5349ff9ce2918ff028484ef38c7edd99074e92047c97d",
+    "continuity/llorona/ZSCRIPT.txt": "10022717d00be4a58f58bfd04733302c0a989df7eeda1df7b69a4752137bd7e7",
+    "continuity/viuda/baseline/commands.cfg": "a494d7383ac2d45e034b9a7e476011919bf94027da227c5cff13ce39825e6aef",
+    "continuity/viuda/baseline/engine.log": "df9dac65d2079c75f06214587ae80047bfca104a9feab49a317282ec9ecbdc83",
+    "continuity/viuda/baseline/process.log": "23cd615162ee21803893d9f1382964d88f5b27e9eb6316dc8cfb7e760465507a",
+    "continuity/viuda/baseline/session.ini": "c4221359786963ec45872e85ed75d8041b6c9763a958f30096698a3cb6f6e6d9",
+    "continuity/viuda/fixture.zs": "8eb2b068198ef877eccc8960b923558e9535ff5d51c7c0932d5df6a99b35f05d",
+    "continuity/viuda/fresh-model/commands.cfg": "8bb3fe113e4ef96ea1771ee8497c57a30cbc9433171159275311fdd418126dba",
+    "continuity/viuda/fresh-model/empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "continuity/viuda/fresh-model/empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+    "continuity/viuda/fresh-model/empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "continuity/viuda/fresh-model/engine.log": "7bf0de404a12f7b69752290bd394027a3e3d7bdb5573a413036c20a5f48798f7",
+    "continuity/viuda/fresh-model/pose-00-idle.png": "394d447dc6550e7c6b06080d8874aaf988e3065ae613e2b2fd9e9c151ec931a9",
+    "continuity/viuda/fresh-model/pose-01-idle.png": "394d447dc6550e7c6b06080d8874aaf988e3065ae613e2b2fd9e9c151ec931a9",
+    "continuity/viuda/fresh-model/pose-02-run.png": "ed9aa597f618f02f3cab5875b555f97bceca5441f5fa8a20a0717b596ee2065b",
+    "continuity/viuda/fresh-model/pose-03-run.png": "7a1d67c19764bbfd3a4c67d8395eeb11118bea4e45f2d52c3223dec9c52ac96b",
+    "continuity/viuda/fresh-model/pose-04-run.png": "ed9aa597f618f02f3cab5875b555f97bceca5441f5fa8a20a0717b596ee2065b",
+    "continuity/viuda/fresh-model/pose-05-run.png": "79691670aad8e0f7299e92d7dc0d62ec498e8d0e6db7d816f35798f0712aafb9",
+    "continuity/viuda/fresh-model/pose-06-walk.png": "7a1d67c19764bbfd3a4c67d8395eeb11118bea4e45f2d52c3223dec9c52ac96b",
+    "continuity/viuda/fresh-model/pose-07-walk.png": "79691670aad8e0f7299e92d7dc0d62ec498e8d0e6db7d816f35798f0712aafb9",
+    "continuity/viuda/fresh-model/pose-08-stun.png": "ac0368d330362eebf3f4005e95603d05ba14a1eacf3ad5346046c3ee19175a42",
+    "continuity/viuda/fresh-model/pose-09-attack_prepare.png": "dc9f6a047081a0da952a9216395f4081fffbd5691d3cee6908578c391b4151ca",
+    "continuity/viuda/fresh-model/pose-10-attack_release.png": "e896383866aaca7176dc69d5473e960ebc8549149a84ecc5d1b4d8a2bff01843",
+    "continuity/viuda/fresh-model/pose-11-pain.png": "7783346cebddd7046656b0e74fbc8174b69b8e65a9ae65f007975d27b06950b2",
+    "continuity/viuda/fresh-model/pose-12-death.png": "8e09df47a885a3f25dc9f6a071ed9d446e83d9f632305c973947ce6fa911ceee",
+    "continuity/viuda/fresh-model/pose-13-death.png": "23f9b50e127ebf8e548f43623c427a5cf02044e1e9503c658331dbde285c0ed0",
+    "continuity/viuda/fresh-model/pose-14-death.png": "0b353bc19f673bc5fb7c53b5fc2482e3fe508851c6c91107bd58aa6635849207",
+    "continuity/viuda/fresh-model/pose-15-death.png": "055b9e6d9a1f09f76241799066af6f24e03ee9581254f160eb814d25cd0b37c9",
+    "continuity/viuda/fresh-model/pose-16-death.png": "98730555bff9560ac3c8e1be80f22131ab9609060acd5ba011d0829e18528313",
+    "continuity/viuda/fresh-model/pose-17-death.png": "a5a5a6838ecfbb1b2843d9545631aeb6e9cbfbd54a05a87e28baea364ad3d9a9",
+    "continuity/viuda/fresh-model/pose-18-breath.png": "0d7ca8c8dcbfcfcd4e6d2287ec1e9a1df4c71df9ebec26aff0c79c06dca189aa",
+    "continuity/viuda/fresh-model/pose-19-breath.png": "9c4a98fab57515368cc47c0a89fa78c994a33ac651144b1f517713e9945bfff3",
+    "continuity/viuda/fresh-model/pose-20-breath.png": "0d7ca8c8dcbfcfcd4e6d2287ec1e9a1df4c71df9ebec26aff0c79c06dca189aa",
+    "continuity/viuda/fresh-model/pose-21-breath.png": "50ffddab4673e4d97c97be1d4a621722a072f1564d9e51f0db4c7cf5fb0ca310",
+    "continuity/viuda/fresh-model/pose-22-rest.png": "f0b2687fa2abb3c9e2537537932e6bc51ee4dcb144d5795559f75edbda8fc8fe",
+    "continuity/viuda/fresh-model/process.log": "5315b4f2bae70c99568c06e1d6df055f92e6c3995cde8e3ee1abe2e51839ee98",
+    "continuity/viuda/fresh-model/session.ini": "faa7fb1b670ce64b58ec9b3a5b35df449d836a0a44bfd4f9e182703ea0ed6fa2",
+    "continuity/viuda/fresh-model/view-collar-top.png": "c0c9d26e2689be2da4ebac1ba9ba1df1be58f11b508cd61ce81c0f4a2a8bdb8a",
+    "continuity/viuda/fresh-model/view-face-detail.png": "1aae2e7bf61204825302b2853e7394bacdfb7afb09438d37cd5ab1c9b908c438",
+    "continuity/viuda/fresh-model/view-front.png": "347e1a015c78f61e8332c8b0b1c29930b31ade0ec841d7f5c21fde9c5ea77c05",
+    "continuity/viuda/fresh-model/view-garment-rear.png": "07d81f24fe4f8683e11425d49b3400bb42bd179af37e25c83342706cc6697f52",
+    "continuity/viuda/fresh-model/view-head-front.png": "648c9579bbc3574a04f5fb2400141675fe0ff49247e61adeaac858a7f640bc3e",
+    "continuity/viuda/fresh-model/view-head-oblique.png": "5a7ae6c2a5df403ae9beb7fbbb2b5b34d8818f057a387b8d77f812219b533e81",
+    "continuity/viuda/fresh-model/view-lying-oblique.png": "f0b2687fa2abb3c9e2537537932e6bc51ee4dcb144d5795559f75edbda8fc8fe",
+    "continuity/viuda/fresh-model/view-rear.png": "4eccedf666382968ce353ddac0d56db786395e9ec4a02ee8570ccb81e0819bc4",
+    "continuity/viuda/fresh-model/view-side.png": "cb937406f35dcfa9a81c99c1b8f351a6a8fc8138fd7e8feac828c372ad8eb1ff",
+    "continuity/viuda/MAPINFO.txt": "d326412d415bf024c6b0a9ea582023e721084551bfbca8750eab88b1519c4648",
+    "continuity/viuda/model-reload/commands.cfg": "2c96bf001369522f097a05f908a6eadcc266aa94867b3c4cf2a48490292496e6",
+    "continuity/viuda/model-reload/engine.log": "8201fad7c422aee6994c5f8f934c451f3edd664f428db69ca1df153cf104c06f",
+    "continuity/viuda/model-reload/process.log": "972685c665269812cb1f2442ac2282f0921c2b0357d2e3ba1562c2a520742fd0",
+    "continuity/viuda/model-reload/session.ini": "946510bc5182a01e67020ee2ae6c73305ab3e9524349772e61881b8ad10c322c",
+    "continuity/viuda/old-save-model/commands.cfg": "2c96bf001369522f097a05f908a6eadcc266aa94867b3c4cf2a48490292496e6",
+    "continuity/viuda/old-save-model/engine.log": "427bbd716a95af35d69847ffadfce4870138d0b82765a30c295b27018c9b097b",
+    "continuity/viuda/old-save-model/process.log": "d15bf73b9e2a45b9dccc5d79156f3671f7c3c1f85b1c0c65c3380377599ebdff",
+    "continuity/viuda/old-save-model/session.ini": "00a658b338ca14b264dafb2e65ec40a4c1286f5eb73632ebf22af8e532309ce7",
+    "continuity/viuda/RESULTS.json": "6c10cbd34bcdcf3379268e2a537ea309389da114caec16eb5a853aa8faca7b21",
+    "continuity/viuda/rollback/commands.cfg": "2c96bf001369522f097a05f908a6eadcc266aa94867b3c4cf2a48490292496e6",
+    "continuity/viuda/rollback/engine.log": "c9fefeb831ea40309f8de817b88aa069593f35d7dcb979365377f0f7a14dc9f6",
+    "continuity/viuda/rollback/process.log": "bac98a3696d92c0a71f87c85f2fd45931e82197e38a7062870f7827384ab79a4",
+    "continuity/viuda/rollback/session.ini": "059ef3a602947cd2045dbf0e87dfe6b25ee966db604882a7199fb0e51fe4fad9",
+    "continuity/viuda/ZSCRIPT.txt": "a32678005c6b4064e8de36981eb834aaf3c60c8054a5cf452e9283ec29334cda",
+    "export01.json": "43931f74f4694aa61ad48459147c29094de65ff6d17e97a8f03463376b923353",
+    "export02.json": "33780d0167e34f37d73e27188d22465b4132a695b1047081cfd40d3af64382f8",
+    "export03.json": "6e995eb39001dd0f1b72e13e58e3b31e37a9d1d66a75f6348881124c242f7b1d",
+    "export04.json": "6e995eb39001dd0f1b72e13e58e3b31e37a9d1d66a75f6348881124c242f7b1d",
+    "export05.json": "8e2d06c6a264d200ba9e56a4f313029e1c6bb0d1876c225b419366bb188aca41",
+    "export06.json": "8e2d06c6a264d200ba9e56a4f313029e1c6bb0d1876c225b419366bb188aca41",
+    "export07.json": "fb99551d22ded6ab2b4c34f62bfbc55b838b4911107d62f690a71a9737b24371",
+    "export08.json": "e1ff8ee62c5ad5cd13274c617785c728027c17e8b5dac7b8fe614b9d814af627",
+    "export09.json": "e1ff8ee62c5ad5cd13274c617785c728027c17e8b5dac7b8fe614b9d814af627",
+    "final-views/futre/fixture.zs": "18d70530fc9303825ed35c1873b05659f5662b2f972778073d81d4d3664c5904",
+    "final-views/futre/MAPINFO.txt": "d326412d415bf024c6b0a9ea582023e721084551bfbca8750eab88b1519c4648",
+    "final-views/futre/RESULTS.json": "be722c2799f5dfaf7216a436a1a8692c40c93a1d11b51183b7a5f52a93121ad5",
+    "final-views/futre/visual/commands.cfg": "8bb3fe113e4ef96ea1771ee8497c57a30cbc9433171159275311fdd418126dba",
+    "final-views/futre/visual/empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "final-views/futre/visual/empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+    "final-views/futre/visual/empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "final-views/futre/visual/engine.log": "3473863f0a4619cf2e89ce39e5e8bca1aad1fd92bda28bf2e9a34d1dacc43e8c",
+    "final-views/futre/visual/pose-00-idle.png": "3ffa4a4bedf8b10174a8bfd40500bd270d4c6d98fac6c309620c96b0009f25b5",
+    "final-views/futre/visual/pose-01-idle.png": "3ffa4a4bedf8b10174a8bfd40500bd270d4c6d98fac6c309620c96b0009f25b5",
+    "final-views/futre/visual/pose-02-run.png": "c3078025637366ece3d2fcec60fb95b0e26ef702dba27ad67f2fee8b5485f1ac",
+    "final-views/futre/visual/pose-03-run.png": "783279b13d290bf329794e01cf8e83c0cfe2dfcc954cd19198ef1fe60eb4beef",
+    "final-views/futre/visual/pose-04-run.png": "c3078025637366ece3d2fcec60fb95b0e26ef702dba27ad67f2fee8b5485f1ac",
+    "final-views/futre/visual/pose-05-run.png": "38b6f3caf133207b32a71b2fa972a8c20a8856b6d35ffecd3d615109334552b8",
+    "final-views/futre/visual/pose-06-walk.png": "783279b13d290bf329794e01cf8e83c0cfe2dfcc954cd19198ef1fe60eb4beef",
+    "final-views/futre/visual/pose-07-walk.png": "38b6f3caf133207b32a71b2fa972a8c20a8856b6d35ffecd3d615109334552b8",
+    "final-views/futre/visual/pose-08-stun.png": "9cf82def83236172b96ee5d6eed0389545a8340e13d8c863213972c9b76ff891",
+    "final-views/futre/visual/pose-09-attack_prepare.png": "157205c6e276ffc21b975c732b123c41a2055ad64f2f60f2d988980b717d8fa7",
+    "final-views/futre/visual/pose-10-attack_release.png": "a414532be69b4cb6422733c5b732f1b17bba1cfb11b6fa53c8a936ab51049471",
+    "final-views/futre/visual/pose-11-pain.png": "fd43115622fc7a1e82ff8a6963de378569924c8879b1375bbc49fdf368ab9bac",
+    "final-views/futre/visual/pose-12-death.png": "62ec03113ab6590917e58fdfafea75139636079b67e4b86056bb16a55b9918ad",
+    "final-views/futre/visual/pose-13-death.png": "f6c19881b9396f6bbfcb03e7167bab588dc88a55573603d9bfa1775474ba6792",
+    "final-views/futre/visual/pose-14-death.png": "fe51d6430aef9f377d410ae6f8e9fde5039c374d2650d82380194264b1c88354",
+    "final-views/futre/visual/pose-15-death.png": "c3fc5bee69dcff10cd82da750cc10d2b926a78d6df1ccf811e08e548edef0c7a",
+    "final-views/futre/visual/pose-16-death.png": "c5b2f4e2171e41bf25f7a8e56191dfc52dc6bee9c26f7cc6eb6f50fe3761864b",
+    "final-views/futre/visual/pose-17-death.png": "651d32dc5f33a963480f9ed4a02ab70c7caa16afd5a3a22e1039be29d2ae7bf1",
+    "final-views/futre/visual/pose-18-breath.png": "86b8564214c3bcf4578b4dc1ff062a8a4e047c54f974c1ecd9a0bb29c9d958d6",
+    "final-views/futre/visual/pose-19-breath.png": "9cbc6aa70a51f3590ca8291a2519e3aaad9e714f9870eaf380fb919bef25f696",
+    "final-views/futre/visual/pose-20-breath.png": "86b8564214c3bcf4578b4dc1ff062a8a4e047c54f974c1ecd9a0bb29c9d958d6",
+    "final-views/futre/visual/pose-21-breath.png": "86ec274ea89ee9790dee012d3d3419da9c40ba078308279849248223535b6735",
+    "final-views/futre/visual/pose-22-rest.png": "8a36b6eac58fcdd092b3df505b228ad99fe448ad67615a05b72bc634642f022b",
+    "final-views/futre/visual/process.log": "6c1353c40fcf3dd022dc0a937e9bdb45d8dc2ca7dabf08e67263d9d5d3199aa2",
+    "final-views/futre/visual/session.ini": "a7c20231db69b009a3ce586ec1c463d3ee25e61ff847346dcd1cd226843a1c63",
+    "final-views/futre/visual/view-collar-top.png": "9aa408e95768f999c14a246838964e7a9d04b44c13dd84a1330c27188e306394",
+    "final-views/futre/visual/view-face-detail.png": "35778f18eb354d8099a870f398b32ee89cf4f0a97e33d1e0d8401d099c57be19",
+    "final-views/futre/visual/view-front.png": "a29ac895f71878ba20e58f73c2e75efc9f90d2f3a1ca91d9b7a7c20abb567b98",
+    "final-views/futre/visual/view-garment-rear.png": "abab239afdd019c77c68ad2efb50f799bd3f8221bb064a654b82332581d2f6c0",
+    "final-views/futre/visual/view-head-front.png": "8686094368be5e82f5b3b75dc46ffc6fc1d58acfa007810f316844ffb9a3695b",
+    "final-views/futre/visual/view-head-oblique.png": "9a0f5c7f167e6304eec553a97b543e4a596030a9e880effbc39591b29de82ef7",
+    "final-views/futre/visual/view-lying-oblique.png": "8a36b6eac58fcdd092b3df505b228ad99fe448ad67615a05b72bc634642f022b",
+    "final-views/futre/visual/view-rear.png": "f05d6b886e708486cde06445ed128d0ff7e8bc8b252852516ec2688621fd534f",
+    "final-views/futre/visual/view-side.png": "24ade9e9ea39f39ffb39dd37025f84c92c676e37e2afa9c7ac3f7fd64742ceb5",
+    "final-views/futre/ZSCRIPT.txt": "dc69dcd3775376ef8bc061a3385badc471632d035ed429d6f3c085db227b96a2",
+    "final-views/llorona/fixture.zs": "636134fac9186e6398838d1786984f2f753965f8bfa0579dbb63350f594e5fff",
+    "final-views/llorona/MAPINFO.txt": "d326412d415bf024c6b0a9ea582023e721084551bfbca8750eab88b1519c4648",
+    "final-views/llorona/RESULTS.json": "01672ad45c7e1e63689d98629aee00ddf438a6c198c3654904f366b95d55d0c1",
+    "final-views/llorona/visual/commands.cfg": "8bb3fe113e4ef96ea1771ee8497c57a30cbc9433171159275311fdd418126dba",
+    "final-views/llorona/visual/empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "final-views/llorona/visual/empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+    "final-views/llorona/visual/empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "final-views/llorona/visual/engine.log": "f13ded9e02b7048c1b1a01125a2e1b7aef70cc63babcc55c69a57dbc49329af9",
+    "final-views/llorona/visual/pose-00-idle.png": "3fabffa1261dda847dcb2ea7258709e0c74806fbc2ce608fe49ac7f795bf8a6c",
+    "final-views/llorona/visual/pose-01-idle.png": "3fabffa1261dda847dcb2ea7258709e0c74806fbc2ce608fe49ac7f795bf8a6c",
+    "final-views/llorona/visual/pose-02-run.png": "f4b725fd32fb923ab7ad8abdeb2f198409effea6d64bf41f0d4c2ea4c17a37ee",
+    "final-views/llorona/visual/pose-03-run.png": "552bea1f41e8f57a813f50f927f940008b691bc44cc9d3be73bd72b712196baf",
+    "final-views/llorona/visual/pose-04-run.png": "f4b725fd32fb923ab7ad8abdeb2f198409effea6d64bf41f0d4c2ea4c17a37ee",
+    "final-views/llorona/visual/pose-05-run.png": "fad133119e3aba692456db9011f965e8e1783197b7d94939556a72050033b044",
+    "final-views/llorona/visual/pose-06-walk.png": "552bea1f41e8f57a813f50f927f940008b691bc44cc9d3be73bd72b712196baf",
+    "final-views/llorona/visual/pose-07-walk.png": "fad133119e3aba692456db9011f965e8e1783197b7d94939556a72050033b044",
+    "final-views/llorona/visual/pose-08-stun.png": "34bed01c839933eac639760cb90265fb8efd010c1d88469498052ec3cff3e063",
+    "final-views/llorona/visual/pose-09-attack_prepare.png": "fef2e2ce851780497d538fb14d36355ff56ced5c04b382a5c9c248a4917f6e75",
+    "final-views/llorona/visual/pose-10-attack_release.png": "a2d261372aec3913dc66ea3a605126b0ec3169b47d06a8409a8e6effdf3ee64d",
+    "final-views/llorona/visual/pose-11-pain.png": "0145f226d83cb7b1e242834880d9aaf2ba394d20b81dc0a4782eb5bc79a25a7a",
+    "final-views/llorona/visual/pose-12-death.png": "a6f82e17f9a22c7640418a8c9079b8a22737c8d18ae31d78d5360a61b2094896",
+    "final-views/llorona/visual/pose-13-death.png": "9c2dc44f8e3a61fc49a12b1e83d8aafc5f16930cd735821d27bb2fa593e8c4e4",
+    "final-views/llorona/visual/pose-14-death.png": "d748e83f91305a404e47c2f93f2b489d9c49446d5c6c3f5e4312a001905ad04e",
+    "final-views/llorona/visual/pose-15-death.png": "cc0be6126a204b77f24f297f7b48df8d0f442ca572b033e27ae10ab8a6c3b306",
+    "final-views/llorona/visual/pose-16-death.png": "c7b39c1c20f3e39ac6939c0ad4733cf0a0c6df8e63a58cfb05445e639b2e453a",
+    "final-views/llorona/visual/pose-17-death.png": "997c019339d9d3d0a5572a51f0eec02f9b98a2f28e95e8e2cf0c02f5d1a07ce1",
+    "final-views/llorona/visual/pose-18-breath.png": "3ae678e72f92d780bbd0c0ae8da72123bc8c2fb4638640460a110670d075b6cb",
+    "final-views/llorona/visual/pose-19-breath.png": "b36a81afe005fbf37bcc0067edd9f0666ad238b3024131dce1560c402ab1dcf5",
+    "final-views/llorona/visual/pose-20-breath.png": "3ae678e72f92d780bbd0c0ae8da72123bc8c2fb4638640460a110670d075b6cb",
+    "final-views/llorona/visual/pose-21-breath.png": "d6b78fee809828066a9dcec61f7132dc9ea1ebabc7acfebd80a4cf473a0794a6",
+    "final-views/llorona/visual/pose-22-rest.png": "0a154fc5eac5aa76b88233847d59a8fd39a4056028f96ce64317c1246016ad3b",
+    "final-views/llorona/visual/process.log": "a0d7646cbb59e8336f7895555d7b1c5a7981b728b927aba2c4482b87b6168345",
+    "final-views/llorona/visual/session.ini": "369a90338f9a9d36019c6a5b07296daac8a130c81d07231644f94d9aaf09fba3",
+    "final-views/llorona/visual/view-collar-top.png": "586e2d1824863402cbb153a30d72d03b6fb79c7a12bcf4e5737ed46e933751e3",
+    "final-views/llorona/visual/view-face-detail.png": "ee7123279bb603a9806e065f9d840eaf34057d9eb0d5562ab7132cb647bc5c7e",
+    "final-views/llorona/visual/view-front.png": "bfc79cd0a8c2eef232719c7ad5511133fe488fd136cd69fe76215c8af71d0a97",
+    "final-views/llorona/visual/view-garment-rear.png": "d898e15b64583edbca1095141bc1f43b3ee2cab09b9a49b6e88c91108ad89db4",
+    "final-views/llorona/visual/view-head-front.png": "a1b5b0b4ae18e78aee15c23878ef0a2a66f3015f4f5689971a3869db8dd337d8",
+    "final-views/llorona/visual/view-head-oblique.png": "e2296d6ce97216ce900e7a0f5ae3ea0405c6d49b6a8e7ccd58a8be866cef9ddb",
+    "final-views/llorona/visual/view-lying-oblique.png": "0a154fc5eac5aa76b88233847d59a8fd39a4056028f96ce64317c1246016ad3b",
+    "final-views/llorona/visual/view-rear.png": "efb146dab2a08869f4d8f74fa036f8d3f8907f84ad04fa84a670520e4da7e8d8",
+    "final-views/llorona/visual/view-side.png": "e7c11ceee30ee5ee14bd3ea46d0b56549d1010a5b9e627bfff54b8e9ab66a736",
+    "final-views/llorona/ZSCRIPT.txt": "10022717d00be4a58f58bfd04733302c0a989df7eeda1df7b69a4752137bd7e7",
+    "final-views/viuda/fixture.zs": "8eb2b068198ef877eccc8960b923558e9535ff5d51c7c0932d5df6a99b35f05d",
+    "final-views/viuda/MAPINFO.txt": "d326412d415bf024c6b0a9ea582023e721084551bfbca8750eab88b1519c4648",
+    "final-views/viuda/RESULTS.json": "19bf11232c6d71024f696390e70844fd91208a58464e1b6c3a89408062dfdcfd",
+    "final-views/viuda/visual/commands.cfg": "8bb3fe113e4ef96ea1771ee8497c57a30cbc9433171159275311fdd418126dba",
+    "final-views/viuda/visual/empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "final-views/viuda/visual/empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+    "final-views/viuda/visual/empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "final-views/viuda/visual/engine.log": "b815a9427eeeca3ff328e25f6e1d1066471b1cc2f90aa9334df658c32c28bb7f",
+    "final-views/viuda/visual/pose-00-idle.png": "394d447dc6550e7c6b06080d8874aaf988e3065ae613e2b2fd9e9c151ec931a9",
+    "final-views/viuda/visual/pose-01-idle.png": "394d447dc6550e7c6b06080d8874aaf988e3065ae613e2b2fd9e9c151ec931a9",
+    "final-views/viuda/visual/pose-02-run.png": "ed9aa597f618f02f3cab5875b555f97bceca5441f5fa8a20a0717b596ee2065b",
+    "final-views/viuda/visual/pose-03-run.png": "0a266e887da0d1abab40a5ce012c05f2c09dc99ef5ea1fb3d24f5bc75ff133b8",
+    "final-views/viuda/visual/pose-04-run.png": "ed9aa597f618f02f3cab5875b555f97bceca5441f5fa8a20a0717b596ee2065b",
+    "final-views/viuda/visual/pose-05-run.png": "95384887bc951070952638a35cba20984ab355cdefbda3fbdd1b07006abe8243",
+    "final-views/viuda/visual/pose-06-walk.png": "0a266e887da0d1abab40a5ce012c05f2c09dc99ef5ea1fb3d24f5bc75ff133b8",
+    "final-views/viuda/visual/pose-07-walk.png": "95384887bc951070952638a35cba20984ab355cdefbda3fbdd1b07006abe8243",
+    "final-views/viuda/visual/pose-08-stun.png": "ac0368d330362eebf3f4005e95603d05ba14a1eacf3ad5346046c3ee19175a42",
+    "final-views/viuda/visual/pose-09-attack_prepare.png": "dc9f6a047081a0da952a9216395f4081fffbd5691d3cee6908578c391b4151ca",
+    "final-views/viuda/visual/pose-10-attack_release.png": "e896383866aaca7176dc69d5473e960ebc8549149a84ecc5d1b4d8a2bff01843",
+    "final-views/viuda/visual/pose-11-pain.png": "7783346cebddd7046656b0e74fbc8174b69b8e65a9ae65f007975d27b06950b2",
+    "final-views/viuda/visual/pose-12-death.png": "8e09df47a885a3f25dc9f6a071ed9d446e83d9f632305c973947ce6fa911ceee",
+    "final-views/viuda/visual/pose-13-death.png": "23f9b50e127ebf8e548f43623c427a5cf02044e1e9503c658331dbde285c0ed0",
+    "final-views/viuda/visual/pose-14-death.png": "0b353bc19f673bc5fb7c53b5fc2482e3fe508851c6c91107bd58aa6635849207",
+    "final-views/viuda/visual/pose-15-death.png": "055b9e6d9a1f09f76241799066af6f24e03ee9581254f160eb814d25cd0b37c9",
+    "final-views/viuda/visual/pose-16-death.png": "98730555bff9560ac3c8e1be80f22131ab9609060acd5ba011d0829e18528313",
+    "final-views/viuda/visual/pose-17-death.png": "a5a5a6838ecfbb1b2843d9545631aeb6e9cbfbd54a05a87e28baea364ad3d9a9",
+    "final-views/viuda/visual/pose-18-breath.png": "0d7ca8c8dcbfcfcd4e6d2287ec1e9a1df4c71df9ebec26aff0c79c06dca189aa",
+    "final-views/viuda/visual/pose-19-breath.png": "9c4a98fab57515368cc47c0a89fa78c994a33ac651144b1f517713e9945bfff3",
+    "final-views/viuda/visual/pose-20-breath.png": "0d7ca8c8dcbfcfcd4e6d2287ec1e9a1df4c71df9ebec26aff0c79c06dca189aa",
+    "final-views/viuda/visual/pose-21-breath.png": "50ffddab4673e4d97c97be1d4a621722a072f1564d9e51f0db4c7cf5fb0ca310",
+    "final-views/viuda/visual/pose-22-rest.png": "f0b2687fa2abb3c9e2537537932e6bc51ee4dcb144d5795559f75edbda8fc8fe",
+    "final-views/viuda/visual/process.log": "850351c07fe98d8b60ef5e57494b93c6b683e5834b80ec489a513d38fae468eb",
+    "final-views/viuda/visual/session.ini": "debeb809dd0b2d680d3b857cfc1c77b4bb9e45e0335aef8c214107832acdbe3c",
+    "final-views/viuda/visual/view-collar-top.png": "c0c9d26e2689be2da4ebac1ba9ba1df1be58f11b508cd61ce81c0f4a2a8bdb8a",
+    "final-views/viuda/visual/view-face-detail.png": "1aae2e7bf61204825302b2853e7394bacdfb7afb09438d37cd5ab1c9b908c438",
+    "final-views/viuda/visual/view-front.png": "347e1a015c78f61e8332c8b0b1c29930b31ade0ec841d7f5c21fde9c5ea77c05",
+    "final-views/viuda/visual/view-garment-rear.png": "07d81f24fe4f8683e11425d49b3400bb42bd179af37e25c83342706cc6697f52",
+    "final-views/viuda/visual/view-head-front.png": "648c9579bbc3574a04f5fb2400141675fe0ff49247e61adeaac858a7f640bc3e",
+    "final-views/viuda/visual/view-head-oblique.png": "5a7ae6c2a5df403ae9beb7fbbb2b5b34d8818f057a387b8d77f812219b533e81",
+    "final-views/viuda/visual/view-lying-oblique.png": "f0b2687fa2abb3c9e2537537932e6bc51ee4dcb144d5795559f75edbda8fc8fe",
+    "final-views/viuda/visual/view-rear.png": "4eccedf666382968ce353ddac0d56db786395e9ec4a02ee8570ccb81e0819bc4",
+    "final-views/viuda/visual/view-side.png": "cb937406f35dcfa9a81c99c1b8f351a6a8fc8138fd7e8feac828c372ad8eb1ff",
+    "final-views/viuda/ZSCRIPT.txt": "a32678005c6b4064e8de36981eb834aaf3c60c8054a5cf452e9283ec29334cda",
+    "gait-reuse-proof.json": "0381901c9e810965240694571794428e0660955e644a758f224977550ede311c",
+    "geometry01.json": "71fec9dff4e0abdcedf9010d719a1e46354ae5ee5f0c738e14b18779c0d76705",
+    "geometry02.json": "47b3ac2ee1a74092f858d1f360e8e426b17ebe993a2c8ccd442e644a33502976",
+    "geometry03.json": "67f4e838941311b07dde0b9eb01016110abdcc509a20441da5af0bc2a355645b",
+    "geometry04.json": "86e23e03f0ccba130411f9a10e14d6e7f3f09e1979989d8f4a5353fdbe7592e7",
+    "geometry05.json": "86e23e03f0ccba130411f9a10e14d6e7f3f09e1979989d8f4a5353fdbe7592e7",
+    "geometry06.json": "86e23e03f0ccba130411f9a10e14d6e7f3f09e1979989d8f4a5353fdbe7592e7",
+    "presentation/futre/model/commands.cfg": "0fb3086cc4975d3c5ca06aaba866f007a999ca3f07a53f4d74bd5800eda81375",
+    "presentation/futre/model/engine.log": "b31954000b1a0da9360cef3369afb22279350eeb2311f54796bb17832a0bf237",
+    "presentation/futre/model/fixture.zs": "18d70530fc9303825ed35c1873b05659f5662b2f972778073d81d4d3664c5904",
+    "presentation/futre/model/MAPINFO.txt": "d326412d415bf024c6b0a9ea582023e721084551bfbca8750eab88b1519c4648",
+    "presentation/futre/model/presents.csv": "7e90cf37dae68bef23309083f381a2cc8562c12dec02331e72444b5801987405",
+    "presentation/futre/model/process.log": "911adf111f52bfb61490149e50358f30c1cbf59f9ec15f713b3453f21f912fb2",
+    "presentation/futre/model/scene.png": "3ffa4a4bedf8b10174a8bfd40500bd270d4c6d98fac6c309620c96b0009f25b5",
+    "presentation/futre/model/session.ini": "79623fc5e4ac976c74d99c1ca838309216386f6516cb54eee88ced39aad24f34",
+    "presentation/futre/model/ZSCRIPT.txt": "dc69dcd3775376ef8bc061a3385badc471632d035ed429d6f3c085db227b96a2",
+    "presentation/futre/RESULTS.json": "1928de3db39e0df9391613a60a35c8e92eef37f88a785140c35e0d78f5a25f45",
+    "presentation/futre/sprite/commands.cfg": "0fb3086cc4975d3c5ca06aaba866f007a999ca3f07a53f4d74bd5800eda81375",
+    "presentation/futre/sprite/engine.log": "2d2e599c13709a43bf0282b712ee28cf90ef3094a453d2b6e793b93973b07bf1",
+    "presentation/futre/sprite/fixture.zs": "18d70530fc9303825ed35c1873b05659f5662b2f972778073d81d4d3664c5904",
+    "presentation/futre/sprite/MAPINFO.txt": "d326412d415bf024c6b0a9ea582023e721084551bfbca8750eab88b1519c4648",
+    "presentation/futre/sprite/presents.csv": "32f1d5c23ecff8d02e1c123d74627a1df491f58cf02ca3a1cd52245173d68785",
+    "presentation/futre/sprite/process.log": "d3f6c4ad1db133c4abdf36274ea9871dbb6ab021043f57e554aeda0c950dcc1d",
+    "presentation/futre/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "presentation/futre/sprite/session.ini": "470867810c21c0ab92ce47ed3c77769889f6d3b3ed7cabc72fc171f4a72c904d",
+    "presentation/futre/sprite/ZSCRIPT.txt": "dc69dcd3775376ef8bc061a3385badc471632d035ed429d6f3c085db227b96a2",
+    "presentation/llorona/model/commands.cfg": "0fb3086cc4975d3c5ca06aaba866f007a999ca3f07a53f4d74bd5800eda81375",
+    "presentation/llorona/model/engine.log": "ae044ecf79b59bb96d9e8ebae5719ae5041b95935df57bdfe2a5f2e834f89e4a",
+    "presentation/llorona/model/fixture.zs": "636134fac9186e6398838d1786984f2f753965f8bfa0579dbb63350f594e5fff",
+    "presentation/llorona/model/MAPINFO.txt": "d326412d415bf024c6b0a9ea582023e721084551bfbca8750eab88b1519c4648",
+    "presentation/llorona/model/presents.csv": "743f9e630c5389633e586cf7a0233389d23db370c58cfd9815665b1d65a1ab53",
+    "presentation/llorona/model/process.log": "374fcd29af205fa53a55a9a999540146a9ba564f0be95b49979da8acdff81f58",
+    "presentation/llorona/model/scene.png": "3fabffa1261dda847dcb2ea7258709e0c74806fbc2ce608fe49ac7f795bf8a6c",
+    "presentation/llorona/model/session.ini": "5707dcdcff6a1bb080d415277f171ab6b037cee1b089a27780088a108dc3b9f3",
+    "presentation/llorona/model/ZSCRIPT.txt": "10022717d00be4a58f58bfd04733302c0a989df7eeda1df7b69a4752137bd7e7",
+    "presentation/llorona/RESULTS.json": "6d3469c73b8be8c475e1d55aea6d0cd1a1bcf3753c04d559a67c3011cd4c9d2c",
+    "presentation/llorona/sprite/commands.cfg": "0fb3086cc4975d3c5ca06aaba866f007a999ca3f07a53f4d74bd5800eda81375",
+    "presentation/llorona/sprite/engine.log": "8e11b5d33be4509ac91e394ffaa122ae8b1f798c563713d6adf53c90bb27da60",
+    "presentation/llorona/sprite/fixture.zs": "636134fac9186e6398838d1786984f2f753965f8bfa0579dbb63350f594e5fff",
+    "presentation/llorona/sprite/MAPINFO.txt": "d326412d415bf024c6b0a9ea582023e721084551bfbca8750eab88b1519c4648",
+    "presentation/llorona/sprite/presents.csv": "93b744be870dd4684935fb49fbda6bf817a2084147785a95b78723ba1d0b3348",
+    "presentation/llorona/sprite/process.log": "6cbb67d602faeeeb09012018c8c7d108736ff1b7674352a44616681cc6168948",
+    "presentation/llorona/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "presentation/llorona/sprite/session.ini": "77d62e03bcc7fb2717c02f49bdb1ce1956f5e19b56c54aa35b8ed45bdb5a31e0",
+    "presentation/llorona/sprite/ZSCRIPT.txt": "10022717d00be4a58f58bfd04733302c0a989df7eeda1df7b69a4752137bd7e7",
+    "presentation/viuda/model/commands.cfg": "0fb3086cc4975d3c5ca06aaba866f007a999ca3f07a53f4d74bd5800eda81375",
+    "presentation/viuda/model/engine.log": "bdfc14f848a2cf7f37bef195daa023916dd96d79f2b2f41605679ae46ddf4a3a",
+    "presentation/viuda/model/fixture.zs": "8eb2b068198ef877eccc8960b923558e9535ff5d51c7c0932d5df6a99b35f05d",
+    "presentation/viuda/model/MAPINFO.txt": "d326412d415bf024c6b0a9ea582023e721084551bfbca8750eab88b1519c4648",
+    "presentation/viuda/model/presents.csv": "0b20a5e342ade3f6ffedd00ce9d62af19b7342a49f0fee75f912b47fe9cbf6c8",
+    "presentation/viuda/model/process.log": "906b375fdffaacb95a661d0853e4eb1ce79d4d6d45ef3b9475d3a9f1ca30b269",
+    "presentation/viuda/model/scene.png": "394d447dc6550e7c6b06080d8874aaf988e3065ae613e2b2fd9e9c151ec931a9",
+    "presentation/viuda/model/session.ini": "590872a318e9e6315c3ad658cf0b5803b484ba71fd1e2950b665e0db92e8dd2a",
+    "presentation/viuda/model/ZSCRIPT.txt": "a32678005c6b4064e8de36981eb834aaf3c60c8054a5cf452e9283ec29334cda",
+    "presentation/viuda/RESULTS.json": "e9472e593718392e48c2f0b002b1470a0e16344824a16730da0ba1761b896791",
+    "presentation/viuda/sprite/commands.cfg": "0fb3086cc4975d3c5ca06aaba866f007a999ca3f07a53f4d74bd5800eda81375",
+    "presentation/viuda/sprite/engine.log": "cd8f06aef5c254c91df5753ede263f52284327a7687c2edfa8854ad095c5675b",
+    "presentation/viuda/sprite/fixture.zs": "8eb2b068198ef877eccc8960b923558e9535ff5d51c7c0932d5df6a99b35f05d",
+    "presentation/viuda/sprite/MAPINFO.txt": "d326412d415bf024c6b0a9ea582023e721084551bfbca8750eab88b1519c4648",
+    "presentation/viuda/sprite/presents.csv": "36dc754df51a846cb8968590c6caa0853e2ae3b58eac139ea83e8e088e4f402e",
+    "presentation/viuda/sprite/process.log": "e515659382c510ff778068a35539a1662cde40889d09143a43f0ee08afe63da4",
+    "presentation/viuda/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "presentation/viuda/sprite/session.ini": "96d9c41736ec220a9b2c23a0935d65903cc114ca995bc18ffaec9e2ddb05e250",
+    "presentation/viuda/sprite/ZSCRIPT.txt": "a32678005c6b4064e8de36981eb834aaf3c60c8054a5cf452e9283ec29334cda",
+    "scope-proof03.json": "cf5e23776a7b5c50e19bee1620cdd55bb1a49c35a6f83f25fd4896416f104294",
+    "stride01.json": "5b2d39f961be07e8983088c278723b0165c7c22f18400d2c84caff41d8dc84ea",
+    "stride02.json": "1fcd9fc3ceb2d8cadb765fc3c9b1b77a0b8f3cf66fdc230b47a888475d8a8fd0",
+    "stride03.json": "d42075ff6910c25277762f05857294da6e51fcdb848d84f231c3c987f424020c",
+    "stride04.json": "e052c30a201b14fbfb3698cfa6b4bcb54afbb3335937450269236c457181b369",
+    "superseded-stride/llorona/fixture.zs": "636134fac9186e6398838d1786984f2f753965f8bfa0579dbb63350f594e5fff",
+    "superseded-stride/llorona/MAPINFO.txt": "d326412d415bf024c6b0a9ea582023e721084551bfbca8750eab88b1519c4648",
+    "superseded-stride/llorona/RESULTS.json": "1c4ce91c1afc7fab49809e4b492197beb7fbc051c96a961e0e0e68cea3f531ad",
+    "superseded-stride/llorona/visual/commands.cfg": "8bb3fe113e4ef96ea1771ee8497c57a30cbc9433171159275311fdd418126dba",
+    "superseded-stride/llorona/visual/empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "superseded-stride/llorona/visual/empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+    "superseded-stride/llorona/visual/empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "superseded-stride/llorona/visual/engine.log": "916a542db1d1fce07ef3f4083ca8b2c1203f011975dba1fdd5b4a5c6c475603d",
+    "superseded-stride/llorona/visual/pose-00-idle.png": "3fabffa1261dda847dcb2ea7258709e0c74806fbc2ce608fe49ac7f795bf8a6c",
+    "superseded-stride/llorona/visual/pose-01-idle.png": "3fabffa1261dda847dcb2ea7258709e0c74806fbc2ce608fe49ac7f795bf8a6c",
+    "superseded-stride/llorona/visual/pose-02-run.png": "f4b725fd32fb923ab7ad8abdeb2f198409effea6d64bf41f0d4c2ea4c17a37ee",
+    "superseded-stride/llorona/visual/pose-03-run.png": "77f4c58f8579838e5419e5d861b7dd932a402930e07741561110e91e212d6733",
+    "superseded-stride/llorona/visual/pose-04-run.png": "f4b725fd32fb923ab7ad8abdeb2f198409effea6d64bf41f0d4c2ea4c17a37ee",
+    "superseded-stride/llorona/visual/pose-05-run.png": "79521c7fe0a5fd84c4a931f8b302751722220558267801c7c217642441247599",
+    "superseded-stride/llorona/visual/pose-06-walk.png": "77f4c58f8579838e5419e5d861b7dd932a402930e07741561110e91e212d6733",
+    "superseded-stride/llorona/visual/pose-07-walk.png": "79521c7fe0a5fd84c4a931f8b302751722220558267801c7c217642441247599",
+    "superseded-stride/llorona/visual/pose-08-stun.png": "34bed01c839933eac639760cb90265fb8efd010c1d88469498052ec3cff3e063",
+    "superseded-stride/llorona/visual/pose-09-attack_prepare.png": "fef2e2ce851780497d538fb14d36355ff56ced5c04b382a5c9c248a4917f6e75",
+    "superseded-stride/llorona/visual/pose-10-attack_release.png": "a2d261372aec3913dc66ea3a605126b0ec3169b47d06a8409a8e6effdf3ee64d",
+    "superseded-stride/llorona/visual/pose-11-pain.png": "0145f226d83cb7b1e242834880d9aaf2ba394d20b81dc0a4782eb5bc79a25a7a",
+    "superseded-stride/llorona/visual/pose-12-death.png": "a6f82e17f9a22c7640418a8c9079b8a22737c8d18ae31d78d5360a61b2094896",
+    "superseded-stride/llorona/visual/pose-13-death.png": "9c2dc44f8e3a61fc49a12b1e83d8aafc5f16930cd735821d27bb2fa593e8c4e4",
+    "superseded-stride/llorona/visual/pose-14-death.png": "d748e83f91305a404e47c2f93f2b489d9c49446d5c6c3f5e4312a001905ad04e",
+    "superseded-stride/llorona/visual/pose-15-death.png": "cc0be6126a204b77f24f297f7b48df8d0f442ca572b033e27ae10ab8a6c3b306",
+    "superseded-stride/llorona/visual/pose-16-death.png": "c7b39c1c20f3e39ac6939c0ad4733cf0a0c6df8e63a58cfb05445e639b2e453a",
+    "superseded-stride/llorona/visual/pose-17-death.png": "997c019339d9d3d0a5572a51f0eec02f9b98a2f28e95e8e2cf0c02f5d1a07ce1",
+    "superseded-stride/llorona/visual/pose-18-breath.png": "3ae678e72f92d780bbd0c0ae8da72123bc8c2fb4638640460a110670d075b6cb",
+    "superseded-stride/llorona/visual/pose-19-breath.png": "b36a81afe005fbf37bcc0067edd9f0666ad238b3024131dce1560c402ab1dcf5",
+    "superseded-stride/llorona/visual/pose-20-breath.png": "3ae678e72f92d780bbd0c0ae8da72123bc8c2fb4638640460a110670d075b6cb",
+    "superseded-stride/llorona/visual/pose-21-breath.png": "d6b78fee809828066a9dcec61f7132dc9ea1ebabc7acfebd80a4cf473a0794a6",
+    "superseded-stride/llorona/visual/pose-22-rest.png": "0a154fc5eac5aa76b88233847d59a8fd39a4056028f96ce64317c1246016ad3b",
+    "superseded-stride/llorona/visual/process.log": "e38cef7a6a2fcebcd41ba0a75e54aa6b7a26d3cba0ffd459a8bb8e8a4853b84c",
+    "superseded-stride/llorona/visual/session.ini": "e380400c1d81e05570e9d58967667f1b0f0e92c9bbd78071e3bf53243ee41712",
+    "superseded-stride/llorona/visual/view-collar-top.png": "586e2d1824863402cbb153a30d72d03b6fb79c7a12bcf4e5737ed46e933751e3",
+    "superseded-stride/llorona/visual/view-face-detail.png": "ee7123279bb603a9806e065f9d840eaf34057d9eb0d5562ab7132cb647bc5c7e",
+    "superseded-stride/llorona/visual/view-front.png": "bfc79cd0a8c2eef232719c7ad5511133fe488fd136cd69fe76215c8af71d0a97",
+    "superseded-stride/llorona/visual/view-garment-rear.png": "d898e15b64583edbca1095141bc1f43b3ee2cab09b9a49b6e88c91108ad89db4",
+    "superseded-stride/llorona/visual/view-head-front.png": "a1b5b0b4ae18e78aee15c23878ef0a2a66f3015f4f5689971a3869db8dd337d8",
+    "superseded-stride/llorona/visual/view-head-oblique.png": "e2296d6ce97216ce900e7a0f5ae3ea0405c6d49b6a8e7ccd58a8be866cef9ddb",
+    "superseded-stride/llorona/visual/view-lying-oblique.png": "0a154fc5eac5aa76b88233847d59a8fd39a4056028f96ce64317c1246016ad3b",
+    "superseded-stride/llorona/visual/view-rear.png": "efb146dab2a08869f4d8f74fa036f8d3f8907f84ad04fa84a670520e4da7e8d8",
+    "superseded-stride/llorona/visual/view-side.png": "e7c11ceee30ee5ee14bd3ea46d0b56549d1010a5b9e627bfff54b8e9ab66a736",
+    "superseded-stride/llorona/ZSCRIPT.txt": "10022717d00be4a58f58bfd04733302c0a989df7eeda1df7b69a4752137bd7e7",
+    "superseded-stride/viuda/fixture.zs": "8eb2b068198ef877eccc8960b923558e9535ff5d51c7c0932d5df6a99b35f05d",
+    "superseded-stride/viuda/MAPINFO.txt": "d326412d415bf024c6b0a9ea582023e721084551bfbca8750eab88b1519c4648",
+    "superseded-stride/viuda/RESULTS.json": "afe1ec1426515138e90921938e89ff6db6e719966fdd878ce387938277f6e193",
+    "superseded-stride/viuda/visual/commands.cfg": "8bb3fe113e4ef96ea1771ee8497c57a30cbc9433171159275311fdd418126dba",
+    "superseded-stride/viuda/visual/empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "superseded-stride/viuda/visual/empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+    "superseded-stride/viuda/visual/empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+    "superseded-stride/viuda/visual/engine.log": "c4f5e8835f1579ee1e99e7d438711baa2bcaab9581673f686ac42ab6034cc6c8",
+    "superseded-stride/viuda/visual/pose-00-idle.png": "394d447dc6550e7c6b06080d8874aaf988e3065ae613e2b2fd9e9c151ec931a9",
+    "superseded-stride/viuda/visual/pose-01-idle.png": "394d447dc6550e7c6b06080d8874aaf988e3065ae613e2b2fd9e9c151ec931a9",
+    "superseded-stride/viuda/visual/pose-02-run.png": "ed9aa597f618f02f3cab5875b555f97bceca5441f5fa8a20a0717b596ee2065b",
+    "superseded-stride/viuda/visual/pose-03-run.png": "5b55a64e42e44eb36412ae7c2bed2cd8a3021f3bb272b771049e722631930816",
+    "superseded-stride/viuda/visual/pose-04-run.png": "ed9aa597f618f02f3cab5875b555f97bceca5441f5fa8a20a0717b596ee2065b",
+    "superseded-stride/viuda/visual/pose-05-run.png": "85965e8ad21bf729a33cb1e883b0caa9314f2f8a20a41a089acbf0ea188f19f6",
+    "superseded-stride/viuda/visual/pose-06-walk.png": "5b55a64e42e44eb36412ae7c2bed2cd8a3021f3bb272b771049e722631930816",
+    "superseded-stride/viuda/visual/pose-07-walk.png": "85965e8ad21bf729a33cb1e883b0caa9314f2f8a20a41a089acbf0ea188f19f6",
+    "superseded-stride/viuda/visual/pose-08-stun.png": "ac0368d330362eebf3f4005e95603d05ba14a1eacf3ad5346046c3ee19175a42",
+    "superseded-stride/viuda/visual/pose-09-attack_prepare.png": "dc9f6a047081a0da952a9216395f4081fffbd5691d3cee6908578c391b4151ca",
+    "superseded-stride/viuda/visual/pose-10-attack_release.png": "e896383866aaca7176dc69d5473e960ebc8549149a84ecc5d1b4d8a2bff01843",
+    "superseded-stride/viuda/visual/pose-11-pain.png": "7783346cebddd7046656b0e74fbc8174b69b8e65a9ae65f007975d27b06950b2",
+    "superseded-stride/viuda/visual/pose-12-death.png": "8e09df47a885a3f25dc9f6a071ed9d446e83d9f632305c973947ce6fa911ceee",
+    "superseded-stride/viuda/visual/pose-13-death.png": "23f9b50e127ebf8e548f43623c427a5cf02044e1e9503c658331dbde285c0ed0",
+    "superseded-stride/viuda/visual/pose-14-death.png": "0b353bc19f673bc5fb7c53b5fc2482e3fe508851c6c91107bd58aa6635849207",
+    "superseded-stride/viuda/visual/pose-15-death.png": "055b9e6d9a1f09f76241799066af6f24e03ee9581254f160eb814d25cd0b37c9",
+    "superseded-stride/viuda/visual/pose-16-death.png": "98730555bff9560ac3c8e1be80f22131ab9609060acd5ba011d0829e18528313",
+    "superseded-stride/viuda/visual/pose-17-death.png": "a5a5a6838ecfbb1b2843d9545631aeb6e9cbfbd54a05a87e28baea364ad3d9a9",
+    "superseded-stride/viuda/visual/pose-18-breath.png": "0d7ca8c8dcbfcfcd4e6d2287ec1e9a1df4c71df9ebec26aff0c79c06dca189aa",
+    "superseded-stride/viuda/visual/pose-19-breath.png": "9c4a98fab57515368cc47c0a89fa78c994a33ac651144b1f517713e9945bfff3",
+    "superseded-stride/viuda/visual/pose-20-breath.png": "0d7ca8c8dcbfcfcd4e6d2287ec1e9a1df4c71df9ebec26aff0c79c06dca189aa",
+    "superseded-stride/viuda/visual/pose-21-breath.png": "50ffddab4673e4d97c97be1d4a621722a072f1564d9e51f0db4c7cf5fb0ca310",
+    "superseded-stride/viuda/visual/pose-22-rest.png": "f0b2687fa2abb3c9e2537537932e6bc51ee4dcb144d5795559f75edbda8fc8fe",
+    "superseded-stride/viuda/visual/process.log": "3e7f6abb77970c99e889f0288a297cfb57c0e0a0e5940400939ba56c153a20bc",
+    "superseded-stride/viuda/visual/session.ini": "8d9407273e920c86ac3f578d42c4c87884189d0dd70542ee58a2d4e1d8ad86b9",
+    "superseded-stride/viuda/visual/view-collar-top.png": "c0c9d26e2689be2da4ebac1ba9ba1df1be58f11b508cd61ce81c0f4a2a8bdb8a",
+    "superseded-stride/viuda/visual/view-face-detail.png": "1aae2e7bf61204825302b2853e7394bacdfb7afb09438d37cd5ab1c9b908c438",
+    "superseded-stride/viuda/visual/view-front.png": "347e1a015c78f61e8332c8b0b1c29930b31ade0ec841d7f5c21fde9c5ea77c05",
+    "superseded-stride/viuda/visual/view-garment-rear.png": "07d81f24fe4f8683e11425d49b3400bb42bd179af37e25c83342706cc6697f52",
+    "superseded-stride/viuda/visual/view-head-front.png": "648c9579bbc3574a04f5fb2400141675fe0ff49247e61adeaac858a7f640bc3e",
+    "superseded-stride/viuda/visual/view-head-oblique.png": "5a7ae6c2a5df403ae9beb7fbbb2b5b34d8818f057a387b8d77f812219b533e81",
+    "superseded-stride/viuda/visual/view-lying-oblique.png": "f0b2687fa2abb3c9e2537537932e6bc51ee4dcb144d5795559f75edbda8fc8fe",
+    "superseded-stride/viuda/visual/view-rear.png": "4eccedf666382968ce353ddac0d56db786395e9ec4a02ee8570ccb81e0819bc4",
+    "superseded-stride/viuda/visual/view-side.png": "cb937406f35dcfa9a81c99c1b8f351a6a8fc8138fd7e8feac828c372ad8eb1ff",
+    "superseded-stride/viuda/ZSCRIPT.txt": "a32678005c6b4064e8de36981eb834aaf3c60c8054a5cf452e9283ec29334cda",
+    "validation-final.json": "2fb593bbf30a006ceda97e4e168189c138b5668c5f5e49368aa67c86dc7d8179"
+  },
+  "project_validation_passed": true
+}

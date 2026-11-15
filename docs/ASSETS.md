@@ -1,6 +1,65 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.83** - 2026-11-15.
+Documentation version: **5.17.84** - 2026-11-15.
+
+## 5.17.84 - Native period apparition candidates (#811)
+
+Viuda 031, Llorona 032 and Futre 033 now use distinct closed native models based on
+their owned apparition concepts. Viuda has dark mourning lace, veil, high collar
+and boots; Llorona has distressed ivory cloth, a scooped neckline, flared sleeves,
+long dark hair and bare feet with toes; Futre is headless with an open collar,
+brocade coat, cravat, sash, gloves and boots. Clothing is fixed species art, not
+new inventory or modular equipment. Editable anatomy, hierarchy, material cells,
+animation, contact witnesses and portable OBJ/MTL live in
+assets/source/art/period_apparitions_811. Built-in image_gen originals and exact
+prompts/provenance are retained unchanged, including the unused first atlas.
+The refined atlas and finer cloth strip are separate generated sources.
+
+Fourteen exports repeat byte-for-byte. The three models contain 144 closed
+components with 141 rooted witnesses and 1128 independent posed contact checks.
+All 23 inherited native frames have noncollapsed triangles, valid material cells
+and grounded mesh-local bounds. Static geometry checks alone missed legs emerging
+through skirts. A waist-anchored lower-cloth expansion and gentler visual gait
+correct the native capture defect; independent ray intersections against the
+serialized clothing triangles now contain 1488 above-hem leg samples in the two
+extreme strides. Earlier failed checks and superseded captures remain evidence.
+This bounded check does not establish every interpolation or garment fit.
+
+The 18,590-entry final package matches src exactly. It adds six model/material/
+binding resources and one MODELDEF include; only two required current-version
+diagnostics change elsewhere. Actor scale, collision, statistics, combat timing,
+loot, identity and saved fields are unchanged. No metric-scale adoption,
+apparition power, population or campaign placement is introduced.
+
+Native continuity checks pass 345 assertions; actual actions/loot/reload 188;
+final views 153. The 686 qualified assertions include 584 reused checks bounded by
+an exact package/MD3 audit. Relative to the earlier women's continuity and action
+packages, only their six walk/run frames differ: positions change in 3/5/6/7;
+2/4 retain exact positions/bounds with a few encoded-normal differences after
+floating-point transforms. The other 17 frames, topology, UVs, all bindings and
+gameplay bytes are exact. Futre is unchanged from its continuity package.
+The final women's captures add 102 assertions on the final package. All three
+presentation pairs use that final package. Front, profile, rear, face/hair/collar,
+extreme stride, attack, pain, intermediate death and lying views were inspected.
+
+One sequential 700-tic sprite/model pair per species on Windows 11 Pro 26200,
+Ryzen 9 5950X / 32 GB/RTX 3070 Ti, GZDoom 4.14.2 Vulkan 1280x720, uncapped/no VSync,
+unpaused in the background at 5% audio records:
+
+- viuda/sprite: 1888.62 queue presents/s; presentation p95/p99/max 0.6968/0.8216/1.5740 ms; simulation mean/p95/p99/max 28.5712/28.9200/29.0579/29.1479 ms
+- viuda/model: 1824.66 queue presents/s; presentation p95/p99/max 0.7225/0.8210/1.8081 ms; simulation mean/p95/p99/max 28.5709/28.9482/29.0570/29.1643 ms
+- llorona/sprite: 1845.87 queue presents/s; presentation p95/p99/max 0.6370/0.7772/1.2857 ms; simulation mean/p95/p99/max 28.5713/28.9428/29.0284/29.2496 ms
+- llorona/model: 1898.48 queue presents/s; presentation p95/p99/max 0.6413/0.7825/1.1686 ms; simulation mean/p95/p99/max 28.5721/28.9198/29.0209/29.3610 ms
+- futre/sprite: 1792.38 queue presents/s; presentation p95/p99/max 0.7206/0.8058/1.7149 ms; simulation mean/p95/p99/max 28.5710/28.9632/29.1179/29.4332 ms
+- futre/model: 1766.86 queue presents/s; presentation p95/p99/max 0.7700/0.8383/1.6016 ms; simulation mean/p95/p99/max 28.5714/28.9539/29.0883/29.3095 ms
+
+These queue intervals are not GPU/display latency or a campaign/crowd budget.
+One pair does not establish repeatability or an optimization. Simplified anatomy,
+painted facial detail, opaque hair and rigid fall/rest articulation remain
+candidates. CA811-PERIOD-01 retains author review for the consolidated handoff.
+Evidence: assets/validation_v5_17_84/evidence/SUMMARY.json. Native coverage is now
+30/56 provisional classes; 26 remain alongside the character, modular, campaign
+and performance work. The complete batch remains unfinished.
 
 ## 5.17.83 - Head apparition regional inspection (#809)
 

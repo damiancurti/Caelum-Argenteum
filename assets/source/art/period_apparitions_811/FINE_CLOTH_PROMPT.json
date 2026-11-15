@@ -1,0 +1,14 @@
+{
+  "issue": 811,
+  "tool": "built-in image_gen",
+  "prompt": "Use case: stylized-concept. Create a new opaque albedo fabric strip for three nineteenth-century dark-fantasy character models. The attached atlas is a color/material reference only; output is a NEW wide 3:1 image with exactly THREE equal square cells in one horizontal row and no gaps or borders. Left cell: near-black charcoal mourning lace over fully opaque near-black fabric, VERY FINE restrained floral embroidery with at least 25 tiny flower motifs across the cell and 25 down, low contrast, no large roses or high-contrast net holes. Center cell: weathered warm ivory dress damask, equally fine small floral woven pattern, at least25 tiny motifs across/down, subtle low contrast. Right cell: dark charcoal-brown coat brocade, restrained faded antique gold small floral embroidery, at least25 motifs across/down, avoid bright metallic outlines. Materials are continuous flat-on fine fabric swatches, even diffuse albedo lighting, no folds, no garments, no faces, no objects, no shadows, no letters. No frame or grid lines. All pixels opaque; motifs must read as intricate textile grain at game scale, not giant flowers, chainmail, rocks or armor. Each square cell must have uniform tonal character and the same fine motif scale throughout.",
+  "reference": "assets/source/art/period_apparitions_811/materials.png",
+  "reason": "Native Viuda closeup shows oversized lace motifs. Add a finer fabric strip while retaining original face/skin/hair atlas pixels.",
+  "output": "fine-cloth.png",
+  "sha256": "0464311a9011e636d6c70befd93640f32205d88978748e7f271123014b589e5a",
+  "image_size": [
+    2172,
+    724
+  ],
+  "review": "Three opaque square swatches; smaller motifs and restrained lace contrast. Original face/skin/hair atlas bytes remain exact. No pixel edits."
+}

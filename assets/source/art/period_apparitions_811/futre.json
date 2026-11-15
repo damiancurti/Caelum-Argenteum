@@ -1,0 +1,1537 @@
+{
+  "schema_revision": 1,
+  "issue": 811,
+  "catalogue_id": "CA-FOLK-033",
+  "species": "futre",
+  "status": "candidate_author_review_pending",
+  "attachment_root": "pelvis",
+  "reference": "assets/source/bestiary_453/imagenes/04_Apariciones/33_futre.png",
+  "preview": {
+    "height_map_units": 100,
+    "model_offset": [
+      0,
+      0,
+      0
+    ],
+    "scale_authority": "Dimensionless editing coordinates, fitted to unchanged provisional native Height; no metric gameplay scale."
+  },
+  "atlas": {
+    "source_file": "materials.png",
+    "columns": 4,
+    "rows": 3,
+    "inset": 0.025,
+    "image_size": [
+      1448,
+      1086
+    ]
+  },
+  "materials": {
+    "widow_face": {
+      "tile": [
+        0,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "weeping_face": {
+      "tile": [
+        1,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "skin": {
+      "tile": [
+        2,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "hair": {
+      "tile": [
+        3,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "black_lace": {
+      "uv_rect": [
+        0.004,
+        0.012,
+        0.3293333333333333,
+        0.988
+      ],
+      "native_batch": "cloth"
+    },
+    "ivory_damask": {
+      "uv_rect": [
+        0.3373333333333333,
+        0.012,
+        0.6626666666666666,
+        0.988
+      ],
+      "native_batch": "cloth"
+    },
+    "brocade": {
+      "uv_rect": [
+        0.6706666666666666,
+        0.012,
+        0.996,
+        0.988
+      ],
+      "native_batch": "cloth"
+    },
+    "wool": {
+      "tile": [
+        3,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "burgundy": {
+      "tile": [
+        0,
+        2
+      ],
+      "native_batch": "atlas"
+    },
+    "ivory_lace": {
+      "uv_rect": [
+        0.3373333333333333,
+        0.012,
+        0.6626666666666666,
+        0.988
+      ],
+      "native_batch": "cloth"
+    },
+    "leather": {
+      "tile": [
+        2,
+        2
+      ],
+      "native_batch": "atlas"
+    },
+    "brass": {
+      "tile": [
+        3,
+        2
+      ],
+      "native_batch": "atlas"
+    }
+  },
+  "parts": {
+    "head": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        84
+      ]
+    },
+    "pelvis": {
+      "parent": null,
+      "pivot": [
+        0,
+        0,
+        54
+      ]
+    },
+    "torso": {
+      "parent": "pelvis",
+      "pivot": [
+        0,
+        0,
+        57
+      ]
+    },
+    "left_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        0,
+        -5.2,
+        53
+      ]
+    },
+    "left_shin": {
+      "parent": "left_thigh",
+      "pivot": [
+        0.3,
+        -6.2,
+        31
+      ]
+    },
+    "left_foot": {
+      "parent": "left_shin",
+      "pivot": [
+        0,
+        -6.2,
+        7.8
+      ]
+    },
+    "left_upper": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        -10.6,
+        77
+      ]
+    },
+    "left_fore": {
+      "parent": "left_upper",
+      "pivot": [
+        0.4,
+        -17,
+        62
+      ]
+    },
+    "left_hand": {
+      "parent": "left_fore",
+      "pivot": [
+        0.5,
+        -20,
+        46.3
+      ]
+    },
+    "left_finger_0": {
+      "parent": "left_hand",
+      "pivot": [
+        0.75,
+        -18.75,
+        42
+      ]
+    },
+    "left_finger_1": {
+      "parent": "left_hand",
+      "pivot": [
+        0.75,
+        -19.650000000000002,
+        42
+      ]
+    },
+    "left_finger_2": {
+      "parent": "left_hand",
+      "pivot": [
+        0.75,
+        -20.55,
+        42
+      ]
+    },
+    "left_finger_3": {
+      "parent": "left_hand",
+      "pivot": [
+        0.75,
+        -21.450000000000003,
+        42
+      ]
+    },
+    "left_thumb": {
+      "parent": "left_hand",
+      "pivot": [
+        0.9,
+        -18.6,
+        44
+      ]
+    },
+    "left_cuff": {
+      "parent": "left_fore",
+      "pivot": [
+        0.5,
+        -19.7,
+        48.1
+      ]
+    },
+    "right_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        0,
+        5.2,
+        53
+      ]
+    },
+    "right_shin": {
+      "parent": "right_thigh",
+      "pivot": [
+        0.3,
+        6.2,
+        31
+      ]
+    },
+    "right_foot": {
+      "parent": "right_shin",
+      "pivot": [
+        0,
+        6.2,
+        7.8
+      ]
+    },
+    "right_upper": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        10.6,
+        77
+      ]
+    },
+    "right_fore": {
+      "parent": "right_upper",
+      "pivot": [
+        0.4,
+        17,
+        62
+      ]
+    },
+    "right_hand": {
+      "parent": "right_fore",
+      "pivot": [
+        0.5,
+        20,
+        46.3
+      ]
+    },
+    "right_finger_0": {
+      "parent": "right_hand",
+      "pivot": [
+        0.75,
+        18.75,
+        42
+      ]
+    },
+    "right_finger_1": {
+      "parent": "right_hand",
+      "pivot": [
+        0.75,
+        19.650000000000002,
+        42
+      ]
+    },
+    "right_finger_2": {
+      "parent": "right_hand",
+      "pivot": [
+        0.75,
+        20.55,
+        42
+      ]
+    },
+    "right_finger_3": {
+      "parent": "right_hand",
+      "pivot": [
+        0.75,
+        21.450000000000003,
+        42
+      ]
+    },
+    "right_thumb": {
+      "parent": "right_hand",
+      "pivot": [
+        0.9,
+        18.6,
+        44
+      ]
+    },
+    "right_cuff": {
+      "parent": "right_fore",
+      "pivot": [
+        0.5,
+        19.7,
+        48.1
+      ]
+    },
+    "coat_tails": {
+      "parent": "torso",
+      "pivot": [
+        -6.2,
+        0,
+        77.4
+      ]
+    },
+    "empty_collar": {
+      "parent": "torso",
+      "pivot": [
+        3.7,
+        0,
+        79.8
+      ]
+    },
+    "cravat_band": {
+      "parent": "empty_collar",
+      "pivot": [
+        4.05,
+        0,
+        81
+      ]
+    },
+    "cravat_front": {
+      "parent": "cravat_band",
+      "pivot": [
+        5.4,
+        0,
+        76.6
+      ]
+    },
+    "sash": {
+      "parent": "pelvis",
+      "pivot": [
+        7.6,
+        0,
+        54
+      ]
+    },
+    "sash_tail": {
+      "parent": "sash",
+      "pivot": [
+        6.7,
+        6.4,
+        54
+      ]
+    },
+    "button_0": {
+      "parent": "torso",
+      "pivot": [
+        6.2,
+        0,
+        61.5
+      ]
+    },
+    "button_1": {
+      "parent": "torso",
+      "pivot": [
+        7.4,
+        0,
+        66
+      ]
+    },
+    "button_2": {
+      "parent": "torso",
+      "pivot": [
+        7.4,
+        0,
+        70.5
+      ]
+    }
+  },
+  "shapes": [
+    {
+      "kind": "ellipsoid",
+      "center": [
+        0,
+        0,
+        54
+      ],
+      "radii": [
+        7.9,
+        10.8,
+        7.5
+      ],
+      "material": "brocade",
+      "latitudes": 15,
+      "longitudes": 32,
+      "name": "pelvis",
+      "part": "pelvis"
+    },
+    {
+      "kind": "loft",
+      "rows": [
+        [
+          55,
+          0,
+          0,
+          6.8,
+          9.2
+        ],
+        [
+          59,
+          0,
+          0,
+          5.8,
+          8
+        ],
+        [
+          65,
+          0,
+          0,
+          6.2,
+          8.5
+        ],
+        [
+          72,
+          0,
+          0,
+          8.4,
+          11.5
+        ],
+        [
+          77,
+          0,
+          0,
+          7.1,
+          11.4
+        ],
+        [
+          81,
+          0,
+          0,
+          4.4,
+          6.4
+        ]
+      ],
+      "material": "brocade",
+      "segments": 32,
+      "cap": true,
+      "curve_steps": 2,
+      "name": "torso",
+      "part": "torso"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          -5.2,
+          55,
+          4.1,
+          4.3
+        ],
+        [
+          0,
+          -5.8,
+          44,
+          4.3,
+          4.5
+        ],
+        [
+          0.3,
+          -6.2,
+          30,
+          3,
+          3.1
+        ]
+      ],
+      "material": "wool",
+      "segments": 16,
+      "name": "left_thigh",
+      "part": "left_thigh"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.3,
+          -6.2,
+          32,
+          3.1,
+          3.2
+        ],
+        [
+          0,
+          -6.3,
+          21,
+          3,
+          3.2
+        ],
+        [
+          0,
+          -6.2,
+          7,
+          1.8,
+          2
+        ]
+      ],
+      "material": "leather",
+      "segments": 16,
+      "name": "left_shin",
+      "part": "left_shin"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        2.4,
+        -6.2,
+        4
+      ],
+      "radii": [
+        5.4,
+        2.4,
+        4
+      ],
+      "material": "leather",
+      "latitudes": 11,
+      "longitudes": 20,
+      "name": "left_foot",
+      "part": "left_foot"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          -10.8,
+          77,
+          3.5,
+          3.8
+        ],
+        [
+          0,
+          -14,
+          72,
+          3.8,
+          4.5
+        ],
+        [
+          0.4,
+          -17,
+          61,
+          2.5,
+          2.7
+        ]
+      ],
+      "material": "brocade",
+      "segments": 16,
+      "name": "left_upper",
+      "part": "left_upper"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.4,
+          -17,
+          63,
+          2.6,
+          2.8
+        ],
+        [
+          0.7,
+          -18.2,
+          55,
+          2.2,
+          2.4
+        ],
+        [
+          0.5,
+          -20,
+          46,
+          2,
+          2.2
+        ]
+      ],
+      "material": "brocade",
+      "segments": 16,
+      "name": "left_fore",
+      "part": "left_fore"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        0.8,
+        -20.1,
+        43.7
+      ],
+      "radii": [
+        1.3,
+        2.05,
+        3.5
+      ],
+      "material": "leather",
+      "latitudes": 11,
+      "longitudes": 20,
+      "name": "left_hand",
+      "part": "left_hand"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          -18.75,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          -18.75,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          -18.75,
+          38.8,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "leather",
+      "segments": 8,
+      "name": "left_finger_0",
+      "part": "left_finger_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          -19.650000000000002,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          -19.650000000000002,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          -19.650000000000002,
+          38,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "leather",
+      "segments": 8,
+      "name": "left_finger_1",
+      "part": "left_finger_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          -20.55,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          -20.55,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          -20.55,
+          38.3,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "leather",
+      "segments": 8,
+      "name": "left_finger_2",
+      "part": "left_finger_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          -21.450000000000003,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          -21.450000000000003,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          -21.450000000000003,
+          39.2,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "leather",
+      "segments": 8,
+      "name": "left_finger_3",
+      "part": "left_finger_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.8,
+          -18.7,
+          44.5,
+          0.65,
+          0.65
+        ],
+        [
+          1,
+          -17.9,
+          42.8,
+          0.55,
+          0.55
+        ],
+        [
+          1.5,
+          -17.7,
+          41.4,
+          0.35,
+          0.35
+        ]
+      ],
+      "material": "leather",
+      "segments": 10,
+      "name": "left_thumb",
+      "part": "left_thumb"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        0.5,
+        -19.7,
+        48.1
+      ],
+      "radii": [
+        2.2,
+        2.55,
+        2.4
+      ],
+      "material": "ivory_lace",
+      "latitudes": 8,
+      "longitudes": 16,
+      "name": "left_cuff",
+      "part": "left_cuff"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          5.2,
+          55,
+          4.1,
+          4.3
+        ],
+        [
+          0,
+          5.8,
+          44,
+          4.3,
+          4.5
+        ],
+        [
+          0.3,
+          6.2,
+          30,
+          3,
+          3.1
+        ]
+      ],
+      "material": "wool",
+      "segments": 16,
+      "name": "right_thigh",
+      "part": "right_thigh"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.3,
+          6.2,
+          32,
+          3.1,
+          3.2
+        ],
+        [
+          0,
+          6.3,
+          21,
+          3,
+          3.2
+        ],
+        [
+          0,
+          6.2,
+          7,
+          1.8,
+          2
+        ]
+      ],
+      "material": "leather",
+      "segments": 16,
+      "name": "right_shin",
+      "part": "right_shin"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        2.4,
+        6.2,
+        4
+      ],
+      "radii": [
+        5.4,
+        2.4,
+        4
+      ],
+      "material": "leather",
+      "latitudes": 11,
+      "longitudes": 20,
+      "name": "right_foot",
+      "part": "right_foot"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          10.8,
+          77,
+          3.5,
+          3.8
+        ],
+        [
+          0,
+          14,
+          72,
+          3.8,
+          4.5
+        ],
+        [
+          0.4,
+          17,
+          61,
+          2.5,
+          2.7
+        ]
+      ],
+      "material": "brocade",
+      "segments": 16,
+      "name": "right_upper",
+      "part": "right_upper"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.4,
+          17,
+          63,
+          2.6,
+          2.8
+        ],
+        [
+          0.7,
+          18.2,
+          55,
+          2.2,
+          2.4
+        ],
+        [
+          0.5,
+          20,
+          46,
+          2,
+          2.2
+        ]
+      ],
+      "material": "brocade",
+      "segments": 16,
+      "name": "right_fore",
+      "part": "right_fore"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        0.8,
+        20.1,
+        43.7
+      ],
+      "radii": [
+        1.3,
+        2.05,
+        3.5
+      ],
+      "material": "leather",
+      "latitudes": 11,
+      "longitudes": 20,
+      "name": "right_hand",
+      "part": "right_hand"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          18.75,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          18.75,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          18.75,
+          38.8,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "leather",
+      "segments": 8,
+      "name": "right_finger_0",
+      "part": "right_finger_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          19.650000000000002,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          19.650000000000002,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          19.650000000000002,
+          38,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "leather",
+      "segments": 8,
+      "name": "right_finger_1",
+      "part": "right_finger_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          20.55,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          20.55,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          20.55,
+          38.3,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "leather",
+      "segments": 8,
+      "name": "right_finger_2",
+      "part": "right_finger_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          21.450000000000003,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          21.450000000000003,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          21.450000000000003,
+          39.2,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "leather",
+      "segments": 8,
+      "name": "right_finger_3",
+      "part": "right_finger_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.8,
+          18.7,
+          44.5,
+          0.65,
+          0.65
+        ],
+        [
+          1,
+          17.9,
+          42.8,
+          0.55,
+          0.55
+        ],
+        [
+          1.5,
+          17.7,
+          41.4,
+          0.35,
+          0.35
+        ]
+      ],
+      "material": "leather",
+      "segments": 10,
+      "name": "right_thumb",
+      "part": "right_thumb"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        0.5,
+        19.7,
+        48.1
+      ],
+      "radii": [
+        2.2,
+        2.55,
+        2.4
+      ],
+      "material": "ivory_lace",
+      "latitudes": 8,
+      "longitudes": 16,
+      "name": "right_cuff",
+      "part": "right_cuff"
+    },
+    {
+      "kind": "open_mantle",
+      "rows": [
+        [
+          18,
+          -1,
+          0,
+          14,
+          17
+        ],
+        [
+          38,
+          -0.5,
+          0,
+          11.5,
+          14
+        ],
+        [
+          58,
+          0,
+          0,
+          8.5,
+          11
+        ],
+        [
+          78,
+          0,
+          0,
+          6.2,
+          10.2
+        ]
+      ],
+      "material": "brocade",
+      "arc_degrees": [
+        35,
+        325
+      ],
+      "thickness": 0.9,
+      "fold_amplitude": 0.25,
+      "fold_count": 12,
+      "segments": 58,
+      "front_lift": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "name": "coat_tails",
+      "part": "coat_tails"
+    },
+    {
+      "kind": "open_mantle",
+      "rows": [
+        [
+          79,
+          0,
+          0,
+          4,
+          5.2
+        ],
+        [
+          82,
+          0,
+          0,
+          4,
+          5
+        ],
+        [
+          87,
+          -0.2,
+          0,
+          4.4,
+          5.2
+        ]
+      ],
+      "material": "brocade",
+      "arc_degrees": [
+        0,
+        360
+      ],
+      "thickness": 1,
+      "fold_amplitude": 0,
+      "fold_count": 12,
+      "segments": 40,
+      "front_lift": [
+        0,
+        0,
+        0
+      ],
+      "name": "empty_collar",
+      "part": "empty_collar"
+    },
+    {
+      "kind": "open_mantle",
+      "rows": [
+        [
+          80.1,
+          0.2,
+          0,
+          4.4,
+          5.3
+        ],
+        [
+          82.2,
+          0.2,
+          0,
+          4.4,
+          5.3
+        ]
+      ],
+      "material": "ivory_lace",
+      "arc_degrees": [
+        0,
+        360
+      ],
+      "thickness": 0.7,
+      "fold_amplitude": 0,
+      "fold_count": 12,
+      "segments": 40,
+      "front_lift": [
+        0,
+        0
+      ],
+      "name": "cravat_band",
+      "part": "cravat_band"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        5.4,
+        0,
+        76.6
+      ],
+      "radii": [
+        1.7,
+        2.5,
+        6
+      ],
+      "material": "ivory_lace",
+      "latitudes": 11,
+      "longitudes": 18,
+      "name": "cravat_front",
+      "part": "cravat_front"
+    },
+    {
+      "kind": "open_mantle",
+      "rows": [
+        [
+          51,
+          0,
+          0,
+          8.2,
+          11
+        ],
+        [
+          57,
+          0,
+          0,
+          7.8,
+          10.9
+        ]
+      ],
+      "material": "burgundy",
+      "arc_degrees": [
+        0,
+        360
+      ],
+      "thickness": 1.2,
+      "fold_amplitude": 0.15,
+      "fold_count": 12,
+      "segments": 48,
+      "front_lift": [
+        0,
+        0
+      ],
+      "name": "sash",
+      "part": "sash"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          6.6,
+          6.2,
+          55,
+          1.7,
+          2.3
+        ],
+        [
+          7.3,
+          7.7,
+          48,
+          1.5,
+          2.2
+        ],
+        [
+          7.3,
+          8,
+          34,
+          1.4,
+          2
+        ],
+        [
+          6.6,
+          8.3,
+          22,
+          0.8,
+          1.8
+        ]
+      ],
+      "material": "burgundy",
+      "segments": 16,
+      "name": "sash_tail",
+      "part": "sash_tail"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        6.2,
+        0,
+        61.5
+      ],
+      "radii": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "material": "brass",
+      "latitudes": 7,
+      "longitudes": 12,
+      "name": "button_0",
+      "part": "button_0"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        6.8,
+        0,
+        66
+      ],
+      "radii": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "material": "brass",
+      "latitudes": 7,
+      "longitudes": 12,
+      "name": "button_1",
+      "part": "button_1"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        7.4,
+        0,
+        70.5
+      ],
+      "radii": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "material": "brass",
+      "latitudes": 7,
+      "longitudes": 12,
+      "name": "button_2",
+      "part": "button_2"
+    }
+  ],
+  "motion": {
+    "idle": {
+      "frames": 16,
+      "tics": 6,
+      "transforms": {
+        "torso": [
+          {
+            "kind": "scale_xy",
+            "amplitude": 0.014
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 0.65,
+            "phase": 0
+          }
+        ]
+      }
+    },
+    "walk": {
+      "frames": 24,
+      "tics": 2,
+      "transforms": {
+        "pelvis": [
+          {
+            "kind": "translate_z",
+            "amplitude": 0.8,
+            "frequency": 2
+          }
+        ],
+        "torso": [
+          {
+            "kind": "rotate",
+            "axis": "z",
+            "amplitude": 2.2
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 1.3,
+            "phase": 0
+          }
+        ],
+        "left_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -20,
+            "phase": 0
+          }
+        ],
+        "left_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 32,
+            "phase": 3.141592653589793,
+            "positive_only": true
+          }
+        ],
+        "left_foot": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -8,
+            "phase": 0
+          }
+        ],
+        "left_upper": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 20,
+            "phase": 0
+          }
+        ],
+        "left_fore": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -6,
+            "phase": 0,
+            "offset": -4
+          }
+        ],
+        "right_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -20,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 32,
+            "phase": 6.283185307179586,
+            "positive_only": true
+          }
+        ],
+        "right_foot": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -8,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_upper": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 20,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_fore": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -6,
+            "phase": 3.141592653589793,
+            "offset": -4
+          }
+        ]
+      }
+    }
+  },
+  "visual_contract": "Reference-led closed anatomy and fixed period clothing. Opaque albedo only; no new stats, body scale, flight, collision, loot or modular inventory authorizations."
+}

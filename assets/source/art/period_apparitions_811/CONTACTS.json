@@ -1,0 +1,1281 @@
+{
+  "issue": 811,
+  "basis": "Authored interior overlap points, independently checked against serialized neutral and transformed native components.",
+  "species": {
+    "viuda": [
+      {
+        "part": "torso",
+        "target": "pelvis",
+        "witness": [
+          0,
+          0,
+          57
+        ]
+      },
+      {
+        "part": "left_thigh",
+        "target": "pelvis",
+        "witness": [
+          0,
+          -5.2,
+          53
+        ]
+      },
+      {
+        "part": "left_shin",
+        "target": "left_thigh",
+        "witness": [
+          0.3,
+          -6.2,
+          31
+        ]
+      },
+      {
+        "part": "left_foot",
+        "target": "left_shin",
+        "witness": [
+          0,
+          -6.2,
+          7.3
+        ]
+      },
+      {
+        "part": "left_upper",
+        "target": "torso",
+        "witness": [
+          0,
+          -11,
+          76.6
+        ]
+      },
+      {
+        "part": "left_fore",
+        "target": "left_upper",
+        "witness": [
+          0.4,
+          -17,
+          62
+        ]
+      },
+      {
+        "part": "left_hand",
+        "target": "left_fore",
+        "witness": [
+          0.5,
+          -20,
+          46.3
+        ]
+      },
+      {
+        "part": "left_finger_0",
+        "target": "left_hand",
+        "witness": [
+          0.75,
+          -18.75,
+          42
+        ]
+      },
+      {
+        "part": "left_finger_1",
+        "target": "left_hand",
+        "witness": [
+          0.75,
+          -19.650000000000002,
+          42
+        ]
+      },
+      {
+        "part": "left_finger_2",
+        "target": "left_hand",
+        "witness": [
+          0.75,
+          -20.55,
+          42
+        ]
+      },
+      {
+        "part": "left_finger_3",
+        "target": "left_hand",
+        "witness": [
+          0.75,
+          -21.450000000000003,
+          42
+        ]
+      },
+      {
+        "part": "left_thumb",
+        "target": "left_hand",
+        "witness": [
+          0.9,
+          -18.6,
+          44
+        ]
+      },
+      {
+        "part": "left_cuff",
+        "target": "left_fore",
+        "witness": [
+          0.5,
+          -19.5,
+          49
+        ]
+      },
+      {
+        "part": "right_thigh",
+        "target": "pelvis",
+        "witness": [
+          0,
+          5.2,
+          53
+        ]
+      },
+      {
+        "part": "right_shin",
+        "target": "right_thigh",
+        "witness": [
+          0.3,
+          6.2,
+          31
+        ]
+      },
+      {
+        "part": "right_foot",
+        "target": "right_shin",
+        "witness": [
+          0,
+          6.2,
+          7.3
+        ]
+      },
+      {
+        "part": "right_upper",
+        "target": "torso",
+        "witness": [
+          0,
+          11,
+          76.6
+        ]
+      },
+      {
+        "part": "right_fore",
+        "target": "right_upper",
+        "witness": [
+          0.4,
+          17,
+          62
+        ]
+      },
+      {
+        "part": "right_hand",
+        "target": "right_fore",
+        "witness": [
+          0.5,
+          20,
+          46.3
+        ]
+      },
+      {
+        "part": "right_finger_0",
+        "target": "right_hand",
+        "witness": [
+          0.75,
+          18.75,
+          42
+        ]
+      },
+      {
+        "part": "right_finger_1",
+        "target": "right_hand",
+        "witness": [
+          0.75,
+          19.650000000000002,
+          42
+        ]
+      },
+      {
+        "part": "right_finger_2",
+        "target": "right_hand",
+        "witness": [
+          0.75,
+          20.55,
+          42
+        ]
+      },
+      {
+        "part": "right_finger_3",
+        "target": "right_hand",
+        "witness": [
+          0.75,
+          21.450000000000003,
+          42
+        ]
+      },
+      {
+        "part": "right_thumb",
+        "target": "right_hand",
+        "witness": [
+          0.9,
+          18.6,
+          44
+        ]
+      },
+      {
+        "part": "right_cuff",
+        "target": "right_fore",
+        "witness": [
+          0.5,
+          19.5,
+          49
+        ]
+      },
+      {
+        "part": "neck",
+        "target": "torso",
+        "witness": [
+          0,
+          0,
+          80.2
+        ]
+      },
+      {
+        "part": "head",
+        "target": "neck",
+        "witness": [
+          0,
+          0,
+          86.65
+        ]
+      },
+      {
+        "part": "left_ear",
+        "target": "head",
+        "witness": [
+          -0.4,
+          -5.4,
+          92.5
+        ]
+      },
+      {
+        "part": "right_ear",
+        "target": "head",
+        "witness": [
+          -0.4,
+          5.4,
+          92.5
+        ]
+      },
+      {
+        "part": "hair_mass",
+        "target": "head",
+        "witness": [
+          -3.5,
+          0,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_00",
+        "target": "hair_mass",
+        "witness": [
+          -1.7321452147779017,
+          4.531538935183249,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_01",
+        "target": "hair_mass",
+        "witness": [
+          -3.029088365057935,
+          4.999764957536131,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_02",
+        "target": "hair_mass",
+        "witness": [
+          -4.320339936012915,
+          4.48971121731844,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_03",
+        "target": "hair_mass",
+        "witness": [
+          -5.353246994758727,
+          3.1011774563412993,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_04",
+        "target": "hair_mass",
+        "witness": [
+          -5.925705626257479,
+          1.105851341834438,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_05",
+        "target": "hair_mass",
+        "witness": [
+          -5.925705626257479,
+          -1.105851341834439,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_06",
+        "target": "hair_mass",
+        "witness": [
+          -5.3532469947587265,
+          -3.1011774563413015,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_07",
+        "target": "hair_mass",
+        "witness": [
+          -4.320339936012916,
+          -4.48971121731844,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_08",
+        "target": "hair_mass",
+        "witness": [
+          -3.029088365057935,
+          -4.999764957536131,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_09",
+        "target": "hair_mass",
+        "witness": [
+          -1.7321452147779013,
+          -4.531538935183249,
+          96.4
+        ]
+      },
+      {
+        "part": "skirt",
+        "target": "pelvis",
+        "witness": [
+          6.7,
+          0,
+          54.5
+        ]
+      },
+      {
+        "part": "lower_flounce",
+        "target": "skirt",
+        "witness": [
+          12.82,
+          0,
+          23.5
+        ]
+      },
+      {
+        "part": "overskirt",
+        "target": "skirt",
+        "witness": [
+          7.15,
+          0,
+          53.5
+        ]
+      },
+      {
+        "part": "brooch",
+        "target": "torso",
+        "witness": [
+          6.2,
+          0,
+          76.5
+        ]
+      },
+      {
+        "part": "veil",
+        "target": "hair_mass",
+        "witness": [
+          -5.7,
+          0,
+          96.79
+        ]
+      },
+      {
+        "part": "hair_crown",
+        "target": "hair_mass",
+        "witness": [
+          -2.7,
+          0,
+          97.96
+        ]
+      },
+      {
+        "part": "left_temple_lock",
+        "target": "head",
+        "witness": [
+          1.1,
+          -4.5,
+          95.62
+        ]
+      },
+      {
+        "part": "right_temple_lock",
+        "target": "head",
+        "witness": [
+          1.1,
+          4.5,
+          95.62
+        ]
+      },
+      {
+        "part": "mourning_collar",
+        "target": "neck",
+        "witness": [
+          2.95,
+          0,
+          83
+        ]
+      }
+    ],
+    "llorona": [
+      {
+        "part": "torso",
+        "target": "pelvis",
+        "witness": [
+          0,
+          0,
+          57
+        ]
+      },
+      {
+        "part": "left_thigh",
+        "target": "pelvis",
+        "witness": [
+          0,
+          -5.2,
+          53
+        ]
+      },
+      {
+        "part": "left_shin",
+        "target": "left_thigh",
+        "witness": [
+          0.3,
+          -6.2,
+          31
+        ]
+      },
+      {
+        "part": "left_foot",
+        "target": "left_shin",
+        "witness": [
+          0,
+          -6.2,
+          7.3
+        ]
+      },
+      {
+        "part": "left_upper",
+        "target": "torso",
+        "witness": [
+          0,
+          -11,
+          76.6
+        ]
+      },
+      {
+        "part": "left_fore",
+        "target": "left_upper",
+        "witness": [
+          0.4,
+          -17,
+          62
+        ]
+      },
+      {
+        "part": "left_hand",
+        "target": "left_fore",
+        "witness": [
+          0.5,
+          -20,
+          46.3
+        ]
+      },
+      {
+        "part": "left_finger_0",
+        "target": "left_hand",
+        "witness": [
+          0.75,
+          -18.75,
+          42
+        ]
+      },
+      {
+        "part": "left_finger_1",
+        "target": "left_hand",
+        "witness": [
+          0.75,
+          -19.650000000000002,
+          42
+        ]
+      },
+      {
+        "part": "left_finger_2",
+        "target": "left_hand",
+        "witness": [
+          0.75,
+          -20.55,
+          42
+        ]
+      },
+      {
+        "part": "left_finger_3",
+        "target": "left_hand",
+        "witness": [
+          0.75,
+          -21.450000000000003,
+          42
+        ]
+      },
+      {
+        "part": "left_thumb",
+        "target": "left_hand",
+        "witness": [
+          0.9,
+          -18.6,
+          44
+        ]
+      },
+      {
+        "part": "left_cuff",
+        "target": "left_fore",
+        "witness": [
+          0.5,
+          -19.5,
+          49
+        ]
+      },
+      {
+        "part": "right_thigh",
+        "target": "pelvis",
+        "witness": [
+          0,
+          5.2,
+          53
+        ]
+      },
+      {
+        "part": "right_shin",
+        "target": "right_thigh",
+        "witness": [
+          0.3,
+          6.2,
+          31
+        ]
+      },
+      {
+        "part": "right_foot",
+        "target": "right_shin",
+        "witness": [
+          0,
+          6.2,
+          7.3
+        ]
+      },
+      {
+        "part": "right_upper",
+        "target": "torso",
+        "witness": [
+          0,
+          11,
+          76.6
+        ]
+      },
+      {
+        "part": "right_fore",
+        "target": "right_upper",
+        "witness": [
+          0.4,
+          17,
+          62
+        ]
+      },
+      {
+        "part": "right_hand",
+        "target": "right_fore",
+        "witness": [
+          0.5,
+          20,
+          46.3
+        ]
+      },
+      {
+        "part": "right_finger_0",
+        "target": "right_hand",
+        "witness": [
+          0.75,
+          18.75,
+          42
+        ]
+      },
+      {
+        "part": "right_finger_1",
+        "target": "right_hand",
+        "witness": [
+          0.75,
+          19.650000000000002,
+          42
+        ]
+      },
+      {
+        "part": "right_finger_2",
+        "target": "right_hand",
+        "witness": [
+          0.75,
+          20.55,
+          42
+        ]
+      },
+      {
+        "part": "right_finger_3",
+        "target": "right_hand",
+        "witness": [
+          0.75,
+          21.450000000000003,
+          42
+        ]
+      },
+      {
+        "part": "right_thumb",
+        "target": "right_hand",
+        "witness": [
+          0.9,
+          18.6,
+          44
+        ]
+      },
+      {
+        "part": "right_cuff",
+        "target": "right_fore",
+        "witness": [
+          0.5,
+          19.5,
+          49
+        ]
+      },
+      {
+        "part": "neck",
+        "target": "torso",
+        "witness": [
+          0,
+          0,
+          80.2
+        ]
+      },
+      {
+        "part": "head",
+        "target": "neck",
+        "witness": [
+          0,
+          0,
+          86.65
+        ]
+      },
+      {
+        "part": "left_ear",
+        "target": "head",
+        "witness": [
+          -0.4,
+          -5.4,
+          92.5
+        ]
+      },
+      {
+        "part": "right_ear",
+        "target": "head",
+        "witness": [
+          -0.4,
+          5.4,
+          92.5
+        ]
+      },
+      {
+        "part": "hair_mass",
+        "target": "head",
+        "witness": [
+          -3.5,
+          0,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_00",
+        "target": "hair_mass",
+        "witness": [
+          -1.7321452147779017,
+          4.531538935183249,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_01",
+        "target": "hair_mass",
+        "witness": [
+          -3.029088365057935,
+          4.999764957536131,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_02",
+        "target": "hair_mass",
+        "witness": [
+          -4.320339936012915,
+          4.48971121731844,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_03",
+        "target": "hair_mass",
+        "witness": [
+          -5.353246994758727,
+          3.1011774563412993,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_04",
+        "target": "hair_mass",
+        "witness": [
+          -5.925705626257479,
+          1.105851341834438,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_05",
+        "target": "hair_mass",
+        "witness": [
+          -5.925705626257479,
+          -1.105851341834439,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_06",
+        "target": "hair_mass",
+        "witness": [
+          -5.3532469947587265,
+          -3.1011774563413015,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_07",
+        "target": "hair_mass",
+        "witness": [
+          -4.320339936012916,
+          -4.48971121731844,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_08",
+        "target": "hair_mass",
+        "witness": [
+          -3.029088365057935,
+          -4.999764957536131,
+          96.4
+        ]
+      },
+      {
+        "part": "hair_lock_09",
+        "target": "hair_mass",
+        "witness": [
+          -1.7321452147779013,
+          -4.531538935183249,
+          96.4
+        ]
+      },
+      {
+        "part": "skirt",
+        "target": "pelvis",
+        "witness": [
+          6.7,
+          0,
+          54.5
+        ]
+      },
+      {
+        "part": "lower_flounce",
+        "target": "skirt",
+        "witness": [
+          12.82,
+          0,
+          23.5
+        ]
+      },
+      {
+        "part": "overskirt",
+        "target": "skirt",
+        "witness": [
+          7.15,
+          0,
+          53.5
+        ]
+      },
+      {
+        "part": "brooch",
+        "target": "torso",
+        "witness": [
+          6.2,
+          0,
+          76.5
+        ]
+      },
+      {
+        "part": "dress_knot",
+        "target": "pelvis",
+        "witness": [
+          5.5,
+          5.5,
+          54
+        ]
+      },
+      {
+        "part": "hair_crown",
+        "target": "hair_mass",
+        "witness": [
+          -2.7,
+          0,
+          97.96
+        ]
+      },
+      {
+        "part": "left_temple_lock",
+        "target": "head",
+        "witness": [
+          1.1,
+          -4.5,
+          95.62
+        ]
+      },
+      {
+        "part": "right_temple_lock",
+        "target": "head",
+        "witness": [
+          1.1,
+          4.5,
+          95.62
+        ]
+      },
+      {
+        "part": "left_toe_0",
+        "target": "left_foot",
+        "witness": [
+          6.3,
+          -5.0,
+          2.3
+        ]
+      },
+      {
+        "part": "left_toe_1",
+        "target": "left_foot",
+        "witness": [
+          6.3,
+          -5.6000000000000005,
+          2.3
+        ]
+      },
+      {
+        "part": "left_toe_2",
+        "target": "left_foot",
+        "witness": [
+          6.3,
+          -6.2,
+          2.3
+        ]
+      },
+      {
+        "part": "left_toe_3",
+        "target": "left_foot",
+        "witness": [
+          6.3,
+          -6.8,
+          2.3
+        ]
+      },
+      {
+        "part": "left_toe_4",
+        "target": "left_foot",
+        "witness": [
+          6.3,
+          -7.4,
+          2.3
+        ]
+      },
+      {
+        "part": "right_toe_0",
+        "target": "right_foot",
+        "witness": [
+          6.3,
+          5.0,
+          2.3
+        ]
+      },
+      {
+        "part": "right_toe_1",
+        "target": "right_foot",
+        "witness": [
+          6.3,
+          5.6000000000000005,
+          2.3
+        ]
+      },
+      {
+        "part": "right_toe_2",
+        "target": "right_foot",
+        "witness": [
+          6.3,
+          6.2,
+          2.3
+        ]
+      },
+      {
+        "part": "right_toe_3",
+        "target": "right_foot",
+        "witness": [
+          6.3,
+          6.8,
+          2.3
+        ]
+      },
+      {
+        "part": "right_toe_4",
+        "target": "right_foot",
+        "witness": [
+          6.3,
+          7.4,
+          2.3
+        ]
+      }
+    ],
+    "futre": [
+      {
+        "part": "torso",
+        "target": "pelvis",
+        "witness": [
+          0,
+          0,
+          57
+        ]
+      },
+      {
+        "part": "left_thigh",
+        "target": "pelvis",
+        "witness": [
+          0,
+          -5.2,
+          53
+        ]
+      },
+      {
+        "part": "left_shin",
+        "target": "left_thigh",
+        "witness": [
+          0.3,
+          -6.2,
+          31
+        ]
+      },
+      {
+        "part": "left_foot",
+        "target": "left_shin",
+        "witness": [
+          0,
+          -6.2,
+          7.3
+        ]
+      },
+      {
+        "part": "left_upper",
+        "target": "torso",
+        "witness": [
+          0,
+          -11,
+          76.6
+        ]
+      },
+      {
+        "part": "left_fore",
+        "target": "left_upper",
+        "witness": [
+          0.4,
+          -17,
+          62
+        ]
+      },
+      {
+        "part": "left_hand",
+        "target": "left_fore",
+        "witness": [
+          0.5,
+          -20,
+          46.3
+        ]
+      },
+      {
+        "part": "left_finger_0",
+        "target": "left_hand",
+        "witness": [
+          0.75,
+          -18.75,
+          42
+        ]
+      },
+      {
+        "part": "left_finger_1",
+        "target": "left_hand",
+        "witness": [
+          0.75,
+          -19.650000000000002,
+          42
+        ]
+      },
+      {
+        "part": "left_finger_2",
+        "target": "left_hand",
+        "witness": [
+          0.75,
+          -20.55,
+          42
+        ]
+      },
+      {
+        "part": "left_finger_3",
+        "target": "left_hand",
+        "witness": [
+          0.75,
+          -21.450000000000003,
+          42
+        ]
+      },
+      {
+        "part": "left_thumb",
+        "target": "left_hand",
+        "witness": [
+          0.9,
+          -18.6,
+          44
+        ]
+      },
+      {
+        "part": "left_cuff",
+        "target": "left_fore",
+        "witness": [
+          0.5,
+          -19.5,
+          49
+        ]
+      },
+      {
+        "part": "right_thigh",
+        "target": "pelvis",
+        "witness": [
+          0,
+          5.2,
+          53
+        ]
+      },
+      {
+        "part": "right_shin",
+        "target": "right_thigh",
+        "witness": [
+          0.3,
+          6.2,
+          31
+        ]
+      },
+      {
+        "part": "right_foot",
+        "target": "right_shin",
+        "witness": [
+          0,
+          6.2,
+          7.3
+        ]
+      },
+      {
+        "part": "right_upper",
+        "target": "torso",
+        "witness": [
+          0,
+          11,
+          76.6
+        ]
+      },
+      {
+        "part": "right_fore",
+        "target": "right_upper",
+        "witness": [
+          0.4,
+          17,
+          62
+        ]
+      },
+      {
+        "part": "right_hand",
+        "target": "right_fore",
+        "witness": [
+          0.5,
+          20,
+          46.3
+        ]
+      },
+      {
+        "part": "right_finger_0",
+        "target": "right_hand",
+        "witness": [
+          0.75,
+          18.75,
+          42
+        ]
+      },
+      {
+        "part": "right_finger_1",
+        "target": "right_hand",
+        "witness": [
+          0.75,
+          19.650000000000002,
+          42
+        ]
+      },
+      {
+        "part": "right_finger_2",
+        "target": "right_hand",
+        "witness": [
+          0.75,
+          20.55,
+          42
+        ]
+      },
+      {
+        "part": "right_finger_3",
+        "target": "right_hand",
+        "witness": [
+          0.75,
+          21.450000000000003,
+          42
+        ]
+      },
+      {
+        "part": "right_thumb",
+        "target": "right_hand",
+        "witness": [
+          0.9,
+          18.6,
+          44
+        ]
+      },
+      {
+        "part": "right_cuff",
+        "target": "right_fore",
+        "witness": [
+          0.5,
+          19.5,
+          49
+        ]
+      },
+      {
+        "part": "coat_tails",
+        "target": "torso",
+        "witness": [
+          -6.2,
+          0,
+          77.4
+        ]
+      },
+      {
+        "part": "empty_collar",
+        "target": "torso",
+        "witness": [
+          3.7,
+          0,
+          79.8
+        ]
+      },
+      {
+        "part": "cravat_band",
+        "target": "empty_collar",
+        "witness": [
+          3.94,
+          0,
+          81
+        ]
+      },
+      {
+        "part": "cravat_front",
+        "target": "cravat_band",
+        "witness": [
+          4.5,
+          0,
+          81
+        ]
+      },
+      {
+        "part": "sash",
+        "target": "pelvis",
+        "witness": [
+          7.6,
+          0,
+          54
+        ]
+      },
+      {
+        "part": "sash_tail",
+        "target": "sash",
+        "witness": [
+          6.45,
+          6.2,
+          54
+        ]
+      },
+      {
+        "part": "button_0",
+        "target": "torso",
+        "witness": [
+          5.7,
+          0,
+          61.5
+        ]
+      },
+      {
+        "part": "button_1",
+        "target": "torso",
+        "witness": [
+          6.1,
+          0,
+          66
+        ]
+      },
+      {
+        "part": "button_2",
+        "target": "torso",
+        "witness": [
+          6.7,
+          0,
+          70.5
+        ]
+      }
+    ]
+  }
+}
