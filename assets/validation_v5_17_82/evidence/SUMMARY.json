@@ -1,0 +1,39 @@
+{
+  "issue": 806,
+  "version": "5.17.82",
+  "author_accepted": false,
+  "audit": {
+    "issue": 806,
+    "passed": true,
+    "baseline_commit": "f399df2f059349685b6ebfa52a380edffb525adb",
+    "authenticated_headings": 40,
+    "restored_headings": 4,
+    "historical_content_preserved": [
+      "docs/ASSETS.md",
+      "docs/HISTORY.md",
+      "docs/PROJECT.md",
+      "docs/TASKS.md"
+    ],
+    "pending_author_tests_unchanged": true,
+    "art_sources_and_models_unchanged": true,
+    "runtime_sha256": "aae1e6116c92a4ab6e0289c8b2baceb3458a82c44fe26722b75b1443d26da34b",
+    "baseline_runtime_sha256": "a1025d627195d6bea7cbf15a70ad5bd48215ba3dc11cd821cc694e724518b317",
+    "source_entries": 18584,
+    "exact_source_bytes": true,
+    "changed_runtime_members": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "runtime_behavior_and_art_unchanged": true
+  },
+  "scope": "Restore four #797 headings to their original5.17.77 release, verified against forty headings from ten original delivery commits.",
+  "reuse": "All art and runtime behavior are byte-identical except the two required diagnostic release strings. Prior native evidence remains applicable; no new engine or author acceptance is claimed.",
+  "pending": "All pending author checks remain exact. Regional head inspection, remaining creatures/characters, modular fitting,75 assignments and siege rendering still precede the consolidated terminal.",
+  "files": {
+    "audit.json": "34678605da8d28df9ea51ca3d0c6a22821761aadd126a528303cb2bad75c6aeb",
+    "build01.log": "d083f46d452ee3102154c79cbb5d17109f5a81c640897c1e8ffd71ab827408eb",
+    "heading-audit.json": "fdab7382c946be2ed2b8445defdd5b40a33c47ddad31c17e1fdaf5379a5e6c40",
+    "validation-final.json": "284aab9a6738d25f0b0c9693e77f03cbb383e3af24814c9888357364d5744a57"
+  },
+  "project_validation_passed": true
+}

@@ -6,10 +6,10 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.81.** Obtain and update the complete repository,
+**Current release: 5.17.82.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
-#805 corrects three inherited model-identity descriptions; native artwork, bindings and behavior remain unchanged. Validation passes; the full batch and consolidated author review remain pending.
+#806 restores four historical release labels after #805 corrected model-identity descriptions. Native artwork and behavior remain unchanged. The full batch and consolidated author review remain pending.
 
 #803 adds native Umita/Chonchon head candidates; 27/56 provisional creature classes now have models. Geometry, save and combat checks pass. The wider batch and consolidated author review remain pending.
 

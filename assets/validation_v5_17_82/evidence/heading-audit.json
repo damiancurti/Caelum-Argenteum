@@ -1,0 +1,410 @@
+{
+  "issue": 806,
+  "baseline_commit": "f399df2f059349685b6ebfa52a380edffb525adb",
+  "rows": [
+    {
+      "document": "docs/ASSETS.md",
+      "issue": 787,
+      "original_commit": "29d59b82d80e26ef3d021d7375d22b627f0e7b13",
+      "original_heading": "## 5.17.72 - Familiar and Ao Ao quadruped candidates (#787)",
+      "before_heading": "## 5.17.72 - Familiar and Ao Ao quadruped candidates (#787)",
+      "original_version": "5.17.72",
+      "before_version": "5.17.72"
+    },
+    {
+      "document": "docs/ASSETS.md",
+      "issue": 790,
+      "original_commit": "76d7d5edbd26130e502ac2d579946af764319781",
+      "original_heading": "## 5.17.73 - Familiar and Ao Ao regional inspection (#790)",
+      "before_heading": "## 5.17.73 - Familiar and Ao Ao regional inspection (#790)",
+      "original_version": "5.17.73",
+      "before_version": "5.17.73"
+    },
+    {
+      "document": "docs/ASSETS.md",
+      "issue": 791,
+      "original_commit": "61df328f516bde02f0d019902035e46765afbc45",
+      "original_heading": "## 5.17.74 - Native seven-headed Teju Jagua (#791)",
+      "before_heading": "## 5.17.74 - Native seven-headed Teju Jagua (#791)",
+      "original_version": "5.17.74",
+      "before_version": "5.17.74"
+    },
+    {
+      "document": "docs/ASSETS.md",
+      "issue": 793,
+      "original_commit": "43e3c5756facba09b75f6df166d8c81177d40bd4",
+      "original_heading": "## 5.17.75 - Teju Jagua regional inspection (#793)",
+      "before_heading": "## 5.17.75 - Teju Jagua regional inspection (#793)",
+      "original_version": "5.17.75",
+      "before_version": "5.17.75"
+    },
+    {
+      "document": "docs/ASSETS.md",
+      "issue": 795,
+      "original_commit": "2054d4f4046b78399bbe531eb3b7af457ee3605f",
+      "original_heading": "## 5.17.76 - Native Kasogonaga candidate (#795)",
+      "before_heading": "## 5.17.76 - Native Kasogonaga candidate (#795)",
+      "original_version": "5.17.76",
+      "before_version": "5.17.76"
+    },
+    {
+      "document": "docs/ASSETS.md",
+      "issue": 797,
+      "original_commit": "0e9593b7bbaf3056cbe1b9a5075ad44a85799bd9",
+      "original_heading": "## 5.17.77 - Native mule and plated-boar apparitions (#797)",
+      "before_heading": "## 5.17.78 - Native mule and plated-boar apparitions (#797)",
+      "original_version": "5.17.77",
+      "before_version": "5.17.78"
+    },
+    {
+      "document": "docs/ASSETS.md",
+      "issue": 799,
+      "original_commit": "32458abc60799341b770376e41efa009e7986e32",
+      "original_heading": "## 5.17.78 - Keep swept textures inside their material cells (#799)",
+      "before_heading": "## 5.17.78 - Keep swept textures inside their material cells (#799)",
+      "original_version": "5.17.78",
+      "before_version": "5.17.78"
+    },
+    {
+      "document": "docs/ASSETS.md",
+      "issue": 801,
+      "original_commit": "7065ccc75e8a9742827ffe141b0b5f07d7dd5111",
+      "original_heading": "## 5.17.79 - Apparition regional inspection (#801)",
+      "before_heading": "## 5.17.79 - Apparition regional inspection (#801)",
+      "original_version": "5.17.79",
+      "before_version": "5.17.79"
+    },
+    {
+      "document": "docs/ASSETS.md",
+      "issue": 803,
+      "original_commit": "f52a98c22e07063c33bbde1b16c70189928ab75c",
+      "original_heading": "## 5.17.80 - Native Umita and Chonchon head candidates (#803)",
+      "before_heading": "## 5.17.80 - Native Umita and Chonchon head candidates (#803)",
+      "original_version": "5.17.80",
+      "before_version": "5.17.80"
+    },
+    {
+      "document": "docs/ASSETS.md",
+      "issue": 805,
+      "original_commit": "f399df2f059349685b6ebfa52a380edffb525adb",
+      "original_heading": "## 5.17.81 - Correct descriptive model identities (#805)",
+      "before_heading": "## 5.17.81 - Correct descriptive model identities (#805)",
+      "original_version": "5.17.81",
+      "before_version": "5.17.81"
+    },
+    {
+      "document": "docs/HISTORY.md",
+      "issue": 787,
+      "original_commit": "29d59b82d80e26ef3d021d7375d22b627f0e7b13",
+      "original_heading": "## 5.17.72 - #787 Familiar and Ao Ao models (2026-11-15)",
+      "before_heading": "## 5.17.72 - #787 Familiar and Ao Ao models (2026-11-15)",
+      "original_version": "5.17.72",
+      "before_version": "5.17.72"
+    },
+    {
+      "document": "docs/HISTORY.md",
+      "issue": 790,
+      "original_commit": "76d7d5edbd26130e502ac2d579946af764319781",
+      "original_heading": "## 5.17.73 - Quadruped regional gallery (#790, 2026-11-15)",
+      "before_heading": "## 5.17.73 - Quadruped regional gallery (#790, 2026-11-15)",
+      "original_version": "5.17.73",
+      "before_version": "5.17.73"
+    },
+    {
+      "document": "docs/HISTORY.md",
+      "issue": 791,
+      "original_commit": "61df328f516bde02f0d019902035e46765afbc45",
+      "original_heading": "## 5.17.74 - Teju Jagua native candidate (#791, 2026-11-15)",
+      "before_heading": "## 5.17.74 - Teju Jagua native candidate (#791, 2026-11-15)",
+      "original_version": "5.17.74",
+      "before_version": "5.17.74"
+    },
+    {
+      "document": "docs/HISTORY.md",
+      "issue": 793,
+      "original_commit": "43e3c5756facba09b75f6df166d8c81177d40bd4",
+      "original_heading": "## 5.17.75 - Teju regional gallery (#793, 2026-11-15)",
+      "before_heading": "## 5.17.75 - Teju regional gallery (#793, 2026-11-15)",
+      "original_version": "5.17.75",
+      "before_version": "5.17.75"
+    },
+    {
+      "document": "docs/HISTORY.md",
+      "issue": 795,
+      "original_commit": "2054d4f4046b78399bbe531eb3b7af457ee3605f",
+      "original_heading": "## 5.17.76 - Kasogonaga native candidate (#795, 2026-11-15)",
+      "before_heading": "## 5.17.76 - Kasogonaga native candidate (#795, 2026-11-15)",
+      "original_version": "5.17.76",
+      "before_version": "5.17.76"
+    },
+    {
+      "document": "docs/HISTORY.md",
+      "issue": 797,
+      "original_commit": "0e9593b7bbaf3056cbe1b9a5075ad44a85799bd9",
+      "original_heading": "## 5.17.77 - Native apparition quadrupeds (#797, 2026-11-15)",
+      "before_heading": "## 5.17.78 - Native apparition quadrupeds (#797, 2026-11-15)",
+      "original_version": "5.17.77",
+      "before_version": "5.17.78"
+    },
+    {
+      "document": "docs/HISTORY.md",
+      "issue": 799,
+      "original_commit": "32458abc60799341b770376e41efa009e7986e32",
+      "original_heading": "## 5.17.78 - Ao Ao/Kasogonaga material-cell repair (#799)",
+      "before_heading": "## 5.17.78 - Ao Ao/Kasogonaga material-cell repair (#799)",
+      "original_version": "5.17.78",
+      "before_version": "5.17.78"
+    },
+    {
+      "document": "docs/HISTORY.md",
+      "issue": 801,
+      "original_commit": "7065ccc75e8a9742827ffe141b0b5f07d7dd5111",
+      "original_heading": "## 5.17.79 - Apparition regional gallery (#801)",
+      "before_heading": "## 5.17.79 - Apparition regional gallery (#801)",
+      "original_version": "5.17.79",
+      "before_version": "5.17.79"
+    },
+    {
+      "document": "docs/HISTORY.md",
+      "issue": 803,
+      "original_commit": "f52a98c22e07063c33bbde1b16c70189928ab75c",
+      "original_heading": "## 5.17.80 - Umita and Chonchon native candidates (#803, 2026-11-15)",
+      "before_heading": "## 5.17.80 - Umita and Chonchon native candidates (#803, 2026-11-15)",
+      "original_version": "5.17.80",
+      "before_version": "5.17.80"
+    },
+    {
+      "document": "docs/HISTORY.md",
+      "issue": 805,
+      "original_commit": "f399df2f059349685b6ebfa52a380edffb525adb",
+      "original_heading": "## 5.17.81 - Descriptive identity-policy correction (#805, 2026-11-15)",
+      "before_heading": "## 5.17.81 - Descriptive identity-policy correction (#805, 2026-11-15)",
+      "original_version": "5.17.81",
+      "before_version": "5.17.81"
+    },
+    {
+      "document": "docs/PROJECT.md",
+      "issue": 787,
+      "original_commit": "29d59b82d80e26ef3d021d7375d22b627f0e7b13",
+      "original_heading": "## 5.17.72 - Familiar and Ao Ao native candidates (#787)",
+      "before_heading": "## 5.17.72 - Familiar and Ao Ao native candidates (#787)",
+      "original_version": "5.17.72",
+      "before_version": "5.17.72"
+    },
+    {
+      "document": "docs/PROJECT.md",
+      "issue": 790,
+      "original_commit": "76d7d5edbd26130e502ac2d579946af764319781",
+      "original_heading": "## 5.17.73 - Quadruped regional display (#790)",
+      "before_heading": "## 5.17.73 - Quadruped regional display (#790)",
+      "original_version": "5.17.73",
+      "before_version": "5.17.73"
+    },
+    {
+      "document": "docs/PROJECT.md",
+      "issue": 791,
+      "original_commit": "61df328f516bde02f0d019902035e46765afbc45",
+      "original_heading": "## 5.17.74 - Teju Jagua model candidate (#791)",
+      "before_heading": "## 5.17.74 - Teju Jagua model candidate (#791)",
+      "original_version": "5.17.74",
+      "before_version": "5.17.74"
+    },
+    {
+      "document": "docs/PROJECT.md",
+      "issue": 793,
+      "original_commit": "43e3c5756facba09b75f6df166d8c81177d40bd4",
+      "original_heading": "## 5.17.75 - Teju regional display (#793)",
+      "before_heading": "## 5.17.75 - Teju regional display (#793)",
+      "original_version": "5.17.75",
+      "before_version": "5.17.75"
+    },
+    {
+      "document": "docs/PROJECT.md",
+      "issue": 795,
+      "original_commit": "2054d4f4046b78399bbe531eb3b7af457ee3605f",
+      "original_heading": "## 5.17.76 - Kasogonaga model candidate (#795)",
+      "before_heading": "## 5.17.76 - Kasogonaga model candidate (#795)",
+      "original_version": "5.17.76",
+      "before_version": "5.17.76"
+    },
+    {
+      "document": "docs/PROJECT.md",
+      "issue": 797,
+      "original_commit": "0e9593b7bbaf3056cbe1b9a5075ad44a85799bd9",
+      "original_heading": "## 5.17.77 - Two apparition model candidates (#797)",
+      "before_heading": "## 5.17.78 - Two apparition model candidates (#797)",
+      "original_version": "5.17.77",
+      "before_version": "5.17.78"
+    },
+    {
+      "document": "docs/PROJECT.md",
+      "issue": 799,
+      "original_commit": "32458abc60799341b770376e41efa009e7986e32",
+      "original_heading": "## 5.17.78 - Swept texture repair (#799)",
+      "before_heading": "## 5.17.78 - Swept texture repair (#799)",
+      "original_version": "5.17.78",
+      "before_version": "5.17.78"
+    },
+    {
+      "document": "docs/PROJECT.md",
+      "issue": 801,
+      "original_commit": "7065ccc75e8a9742827ffe141b0b5f07d7dd5111",
+      "original_heading": "## 5.17.79 - Apparition regional displays (#801)",
+      "before_heading": "## 5.17.79 - Apparition regional displays (#801)",
+      "original_version": "5.17.79",
+      "before_version": "5.17.79"
+    },
+    {
+      "document": "docs/PROJECT.md",
+      "issue": 803,
+      "original_commit": "f52a98c22e07063c33bbde1b16c70189928ab75c",
+      "original_heading": "## 5.17.80 - Two native head-apparition candidates (#803)",
+      "before_heading": "## 5.17.80 - Two native head-apparition candidates (#803)",
+      "original_version": "5.17.80",
+      "before_version": "5.17.80"
+    },
+    {
+      "document": "docs/PROJECT.md",
+      "issue": 805,
+      "original_commit": "f399df2f059349685b6ebfa52a380edffb525adb",
+      "original_heading": "## 5.17.81 - Model identity descriptions aligned (#805)",
+      "before_heading": "## 5.17.81 - Model identity descriptions aligned (#805)",
+      "original_version": "5.17.81",
+      "before_version": "5.17.81"
+    },
+    {
+      "document": "docs/TASKS.md",
+      "issue": 787,
+      "original_commit": "29d59b82d80e26ef3d021d7375d22b627f0e7b13",
+      "original_heading": "## 5.17.72 - #787 quadrupeds delivered; author review pending",
+      "before_heading": "## 5.17.72 - #787 quadrupeds delivered; author review pending",
+      "original_version": "5.17.72",
+      "before_version": "5.17.72"
+    },
+    {
+      "document": "docs/TASKS.md",
+      "issue": 790,
+      "original_commit": "76d7d5edbd26130e502ac2d579946af764319781",
+      "original_heading": "## #790 - Quadruped regional gallery (5.17.73)",
+      "before_heading": "## #790 - Quadruped regional gallery (5.17.73)",
+      "original_version": "5.17.73",
+      "before_version": "5.17.73"
+    },
+    {
+      "document": "docs/TASKS.md",
+      "issue": 791,
+      "original_commit": "61df328f516bde02f0d019902035e46765afbc45",
+      "original_heading": "## 5.17.74 - Teju Jagua delivered; author review pending (#791)",
+      "before_heading": "## 5.17.74 - Teju Jagua delivered; author review pending (#791)",
+      "original_version": "5.17.74",
+      "before_version": "5.17.74"
+    },
+    {
+      "document": "docs/TASKS.md",
+      "issue": 793,
+      "original_commit": "43e3c5756facba09b75f6df166d8c81177d40bd4",
+      "original_heading": "## #793 - Teju regional gallery (5.17.75)",
+      "before_heading": "## #793 - Teju regional gallery (5.17.75)",
+      "original_version": "5.17.75",
+      "before_version": "5.17.75"
+    },
+    {
+      "document": "docs/TASKS.md",
+      "issue": 795,
+      "original_commit": "2054d4f4046b78399bbe531eb3b7af457ee3605f",
+      "original_heading": "## 5.17.76 - Kasogonaga candidate; author review pending (#795)",
+      "before_heading": "## 5.17.76 - Kasogonaga candidate; author review pending (#795)",
+      "original_version": "5.17.76",
+      "before_version": "5.17.76"
+    },
+    {
+      "document": "docs/TASKS.md",
+      "issue": 797,
+      "original_commit": "0e9593b7bbaf3056cbe1b9a5075ad44a85799bd9",
+      "original_heading": "## 5.17.77 - Two apparition candidates; UV follow-up remains (#797/#799)",
+      "before_heading": "## 5.17.78 - Two apparition candidates; UV follow-up remains (#797/#799)",
+      "original_version": "5.17.77",
+      "before_version": "5.17.78"
+    },
+    {
+      "document": "docs/TASKS.md",
+      "issue": 799,
+      "original_commit": "32458abc60799341b770376e41efa009e7986e32",
+      "original_heading": "## 5.17.78 - UV follow-up implemented; full batch remains (#799)",
+      "before_heading": "## 5.17.78 - UV follow-up implemented; full batch remains (#799)",
+      "original_version": "5.17.78",
+      "before_version": "5.17.78"
+    },
+    {
+      "document": "docs/TASKS.md",
+      "issue": 801,
+      "original_commit": "7065ccc75e8a9742827ffe141b0b5f07d7dd5111",
+      "original_heading": "## 5.17.79 - Apparition gallery implemented; batch remains (#801)",
+      "before_heading": "## 5.17.79 - Apparition gallery implemented; batch remains (#801)",
+      "original_version": "5.17.79",
+      "before_version": "5.17.79"
+    },
+    {
+      "document": "docs/TASKS.md",
+      "issue": 803,
+      "original_commit": "f52a98c22e07063c33bbde1b16c70189928ab75c",
+      "original_heading": "## 5.17.80 - Head candidates verified; batch remains (#803)",
+      "before_heading": "## 5.17.80 - Head candidates verified; batch remains (#803)",
+      "original_version": "5.17.80",
+      "before_version": "5.17.80"
+    },
+    {
+      "document": "docs/TASKS.md",
+      "issue": 805,
+      "original_commit": "f399df2f059349685b6ebfa52a380edffb525adb",
+      "original_heading": "## 5.17.81 - Identity metadata corrected; history follow-up next (#805)",
+      "before_heading": "## 5.17.81 - Identity metadata corrected; history follow-up next (#805)",
+      "original_version": "5.17.81",
+      "before_version": "5.17.81"
+    }
+  ],
+  "repairs": [
+    {
+      "document": "docs/ASSETS.md",
+      "issue": 797,
+      "original_commit": "0e9593b7bbaf3056cbe1b9a5075ad44a85799bd9",
+      "original_heading": "## 5.17.77 - Native mule and plated-boar apparitions (#797)",
+      "before_heading": "## 5.17.78 - Native mule and plated-boar apparitions (#797)",
+      "original_version": "5.17.77",
+      "before_version": "5.17.78",
+      "after_heading": "## 5.17.77 - Native mule and plated-boar apparitions (#797)"
+    },
+    {
+      "document": "docs/HISTORY.md",
+      "issue": 797,
+      "original_commit": "0e9593b7bbaf3056cbe1b9a5075ad44a85799bd9",
+      "original_heading": "## 5.17.77 - Native apparition quadrupeds (#797, 2026-11-15)",
+      "before_heading": "## 5.17.78 - Native apparition quadrupeds (#797, 2026-11-15)",
+      "original_version": "5.17.77",
+      "before_version": "5.17.78",
+      "after_heading": "## 5.17.77 - Native apparition quadrupeds (#797, 2026-11-15)"
+    },
+    {
+      "document": "docs/PROJECT.md",
+      "issue": 797,
+      "original_commit": "0e9593b7bbaf3056cbe1b9a5075ad44a85799bd9",
+      "original_heading": "## 5.17.77 - Two apparition model candidates (#797)",
+      "before_heading": "## 5.17.78 - Two apparition model candidates (#797)",
+      "original_version": "5.17.77",
+      "before_version": "5.17.78",
+      "after_heading": "## 5.17.77 - Two apparition model candidates (#797)"
+    },
+    {
+      "document": "docs/TASKS.md",
+      "issue": 797,
+      "original_commit": "0e9593b7bbaf3056cbe1b9a5075ad44a85799bd9",
+      "original_heading": "## 5.17.77 - Two apparition candidates; UV follow-up remains (#797/#799)",
+      "before_heading": "## 5.17.78 - Two apparition candidates; UV follow-up remains (#797/#799)",
+      "original_version": "5.17.77",
+      "before_version": "5.17.78",
+      "after_heading": "## 5.17.77 - Two apparition candidates; UV follow-up remains (#797/#799)"
+    }
+  ],
+  "verified_mismatches": 4,
+  "all_other_audited_versions_unchanged": true
+}
