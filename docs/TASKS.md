@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.45** - 2026-11-14.
+Documentation version: **5.17.46** - 2026-11-14.
+
+## #736 - Modular visual direction (5.17.46)
+
+Seven family boards and a six-module construction contract are ready for
+author review through assets/source/art/modular_proposals_736/review.html.
+CA736-MODULAR-STYLE-01 retains per-family visual acceptance. Do not treat
+these concepts as approved native models or approval of unseen face/hair
+options. After direction is settled, #458 still needs actual modular bodies,
+attachments, animation, save checks and performance evidence; #459 retains
+garment fitting. Independent inventory/bestiary/campaign work remains open.
 
 ## #733 - Textile world drops (5.17.45)
 

@@ -1,6 +1,44 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.45** - 2026-11-14.
+Documentation version: **5.17.46** - 2026-11-14.
+
+## 5.17.46 - Modular anatomy/style proposals (#736, parent #458)
+
+The author chose to review visual proposals before approving broad modular
+conversion. Seven review-only boards cover human, goblin, Caelith and wolf,
+bear, puma and jaguar Beast Man families, each with male/female front,
+profile and back views. The source set and single review surface are
+[modular_proposals_736/review.html](../assets/source/art/modular_proposals_736/review.html).
+These are concept images, not native meshes or completed modular characters.
+
+The plain cream shirt, charcoal trousers, brown belt/gloves/boots follow
+owned appearance_5213 references. Heads retain natural goblin skin,
+pointed goblin/Caelith ears and animal species identity. Green/white Caelith
+is one skin/hair example, not a reduction of RGB skin or six hair colors.
+The accepted Domingo pilot guides grounded materials and adult proportions.
+Caelith v1 understated ear length; v2 restores longer pointed ears while
+retaining the first image. No previous assets were replaced.
+
+REVIEW.json records family-specific review notes, all seven pending
+decisions and separate body, head/face, hair, hands, clothing and equipment
+requirements. The boards show one face/hair example per humanoid sex;
+the required four distinct faces and four hairstyles per sex remain
+separate work. Clothing conceals body surfaces, hands and feet. Head size,
+neck transitions, bear torso mass and sex silhouettes require author
+review; no exact heights, stats, new tails or limb configurations are set.
+Painted views are not projections from one geometric model.
+
+Built-in image_gen created eight retained images. PROMPT.json and the
+Caelith REVISION_PROMPT.json preserve exact generation/edit prompts.
+PROVENANCE.json records every owned reference hash, original generated
+path and unchanged-copy output hash. The saved artifacts are reproducible;
+AI generation itself is not claimed deterministic. All eight outputs and
+seven selected boards were visually inspected; static provenance, links,
+version headers and document-index checks are recorded under
+assets/validation_v5_17_46/evidence. Browser captures review the page layout.
+No new engine test is claimed: the only src edits update the two mandated
+diagnostic release labels. Runtime geometry, animation and behavior are
+unchanged. CA736-MODULAR-STYLE-01 awaits the author's visual direction.
 
 ## 5.17.45 - Fabric, fibers and rope world models (#733, parent #647)
 

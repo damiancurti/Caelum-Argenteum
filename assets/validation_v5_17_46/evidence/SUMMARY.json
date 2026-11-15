@@ -1,0 +1,62 @@
+{
+  "issue": 736,
+  "parent_issue": 458,
+  "release": "5.17.46",
+  "base_commit": "b96256ab7d305ace1429f41d832b9937b1e8fe87",
+  "static": {
+    "project_validation_passed": true,
+    "unchanged_copy_hashes": 8,
+    "reference_hashes": 14,
+    "html_links": 32,
+    "selected_family_count": 7,
+    "variant_count": 14,
+    "views_per_variant": 3,
+    "runtime_scope": "Only the two required diagnostic release labels change. Byte-normalized comparison proves no other src edits.",
+    "no_files_deleted": true
+  },
+  "visual": {
+    "author_acceptance": false,
+    "all_eight_generated_images_inspected": true,
+    "selected_seven_boards_inspected": true,
+    "browser_captures_inspected": [
+      "page-top.png",
+      "page-jaguar-cdp.png",
+      "page-modules-cdp.png"
+    ],
+    "initial_capture_failure": "Both CLI hash-fragment bottom captures were blank and are retained. CDP navigation after all images loaded and two animation frames produced inspected jaguar/module captures; all seven navigation targets and loaded images were confirmed.",
+    "limitations": "Concept artwork only; no native models, unseen variants, covered anatomy, animation, garment fitting, performance or save evidence in this patch."
+  },
+  "native_test": "Not run: no geometry/behavior change. Prior native evidence is not relabeled as testing this artwork patch.",
+  "pending_author_test": "CA736-MODULAR-STYLE-01",
+  "source_files": {
+    "bear/PROMPT.json": "68345584e47b6d7f728e041698dc8bbd96255d71ae415ae973a1242da389cb76",
+    "bear/proposal-v1.png": "539c8655ade499ead1fbbfcc03a7742f5ec1b2fd9e961701e408571f84c7923c",
+    "caelith/PROMPT.json": "ac709e752e7a98511d6077b41ab097d632dbd894fd80eb4413279f0076a377fd",
+    "caelith/proposal-v1.png": "5d3f913ad7ad9613f26309a91324580ad861bbce3a9990574e0fd07e03cca5e4",
+    "caelith/proposal-v2.png": "08e00c5aef68cc64a03a084e6da99b89e2e81feffbc8e4f708177788841bb89a",
+    "caelith/REVISION_PROMPT.json": "ccee840c8db80963295eefeb72c10c1b18c998c10f4ec16d51ed57faf9b980ec",
+    "goblin/PROMPT.json": "94e9664a5d8ba359d0ef96bc5e9fb62d210e4b7a66ec43d4d62800da929240df",
+    "goblin/proposal-v1.png": "b4735070005c8105f0e4def0b0e3d95d5bdbd77fd255728c7326290b24aff6fb",
+    "human/PROMPT.json": "826e783329defc4345b321ebc8b1a7b9ba94c7d5c69228e230e6738b20a1fb90",
+    "human/proposal-v1.png": "9a1d84c4113a7acba1c6d03847e982f4a8dd836957d0e7a8c818a1f0ec1d8e5c",
+    "jaguar/PROMPT.json": "ec1848e45bd6379794138d9d475080344a861501434bc703bb10fb14eec3d29c",
+    "jaguar/proposal-v1.png": "e0b5b16ba6c7dc1aacaeb768b1591f52006dc9e9ab33a2edea474f9c1316fed0",
+    "PROVENANCE.json": "7d78b7c24f94785932d853862b5dcb4a8accb186a5432786b4d5f683809c6862",
+    "puma/PROMPT.json": "6860bd431a07fbe7fee320a71c15e3e19d71d283a00ec9f3bd82b29329a836bc",
+    "puma/proposal-v1.png": "db756248e31dda331817f70d6fb0c7ec95312aea95aad8118c2176778973dd6a",
+    "review.html": "b0e890792d548048856a6f68bf3652a31d1aa2aceac863e0c5ea76741760f4cc",
+    "REVIEW.json": "a1e11b73a535f6b0e954f796e01b4872ba2e65bf69ab91daf75a94183bc55ca0",
+    "wolf/PROMPT.json": "70a9df8aca629edc3ad80d620283acc17bcb6c0378c55ee5f0bbb4572a36aa3e",
+    "wolf/proposal-v1.png": "1f14ceef4b8411da4023b8ac330b338526ce59b858213a3d194f4580dcc5e8d0"
+  },
+  "evidence_files": {
+    "browser-check.json": "065e5efda7db2f33211d8921d66c527c319786aae1d19d125113f3cf0286fc24",
+    "page-bottom.png": "9604919f2f7c714356d6efdcf85b7d6e6ae74f2ce009b8d4a1e19863b36795c9",
+    "page-bottom02.png": "9604919f2f7c714356d6efdcf85b7d6e6ae74f2ce009b8d4a1e19863b36795c9",
+    "page-jaguar-cdp.png": "62e42e45872bccb8da83490e6e8c458379d27353d24a407fd92e7905cbc5608c",
+    "page-modules-cdp.png": "7d5042c2248a022a80a7cc531ce84458a84d73b47ac2aa0e86a40bcab75d1602",
+    "page-top.png": "47068604dfe96e2fd7d7614c0ff394db56247d31a05b8d1c393846809907454d",
+    "validation-final.json": "ff44b402c517a1ef879d3070b5578fc92f59a91529ef89979b131493218e778f",
+    "visual-review.json": "4c3e3769190a78b7dd9def1012692a19d24b3befd6e3620d00989e786fe6c41b"
+  }
+}

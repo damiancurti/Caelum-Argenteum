@@ -1,0 +1,10 @@
+{
+  "mode": "built-in image_gen",
+  "intent": "edit: restore referenced ear silhouette",
+  "prompt": "Use case: precise-object-edit. Image 1 is the edit target: the CAELITH / STYLE PROPOSAL board. Images 2 and 3 are supporting owned male/female Caelith anatomy references. Change ONLY the ear anatomy in all six full-body views of image 1: restore the notably long, narrow, pointed ears of images 2 and 3, extending sideways and slightly upward, with visible inner cartilage and a tip projecting roughly half a face-width beyond each temple in frontal view. Preserve the referenced ear angle in profile; the ear tips must remain clearly visible outside the hair in back views. The current short ears in image 1 understate the established Caelith silhouette. Preserve every other aspect exactly: all six figures and their scale, faces, green skin, white hair, clothes, pose, anatomy, layout, studio background, shadows and exact typography. Do not add accessories, horns or markings. This remains a review-only concept board, not an approved native model.",
+  "reference_images": [
+    "assets/source/art/modular_proposals_736/caelith/proposal-v1.png",
+    "assets/source/art/appearance_5213/caelith_male_head_green_v1.png",
+    "assets/source/art/appearance_5213/caelith_female_head_green_v1.png"
+  ]
+}

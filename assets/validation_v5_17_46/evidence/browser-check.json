@@ -1,0 +1,87 @@
+{
+  "images": [
+    {
+      "src": "human/proposal-v1.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "src": "goblin/proposal-v1.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "src": "caelith/proposal-v2.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "src": "wolf/proposal-v1.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "src": "bear/proposal-v1.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "src": "puma/proposal-v1.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "src": "jaguar/proposal-v1.png",
+      "width": 1536,
+      "height": 1024
+    }
+  ],
+  "navigation": [
+    {
+      "href": "#human",
+      "target": true
+    },
+    {
+      "href": "#goblin",
+      "target": true
+    },
+    {
+      "href": "#caelith",
+      "target": true
+    },
+    {
+      "href": "#wolf",
+      "target": true
+    },
+    {
+      "href": "#bear",
+      "target": true
+    },
+    {
+      "href": "#puma",
+      "target": true
+    },
+    {
+      "href": "#jaguar",
+      "target": true
+    }
+  ],
+  "views": [
+    {
+      "anchor": "jaguar",
+      "scrollY": 6053,
+      "innerHeight": 1200,
+      "height": 7837,
+      "section": "<p>Golden coat, dark rosettes and a broad feline muzzle. Review jaguar identity, head scale and whether rosettes remain readable at gameplay distance.</p>",
+      "screenshot": "page-jaguar-cdp.png"
+    },
+    {
+      "anchor": "modules",
+      "scrollY": 6637,
+      "innerHeight": 1200,
+      "height": 7837,
+      "section": "<img src=\"jaguar/proposal-v1.png\" alt=\"Jaguar concept: male and female, front, profile and back\" width=\"1536\" height=\"1024\">",
+      "screenshot": "page-modules-cdp.png"
+    }
+  ]
+}
