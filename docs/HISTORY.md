@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.47** - 2026-11-14.
+Documentation version: **5.17.48** - 2026-11-14.
+
+## 5.17.48 - Basilisco regional gallery (#739, 2026-11-14)
+
+Added native Basilisco appearances on the approved Pampa/Litoral plots of
+optional CA682G. Retained ten previous figures, sixteen previous controls,
+five grounds and the crossing path. Refreshed only dependent material/source
+manifest hashes, proving all production artwork bytes unchanged. Four fixture
+files repeat exactly; actual engine fresh/reload/idle/walking passes 53/110
+assertions. ASSETS records the qualified overview presentation sample.
+Evidence: assets/validation_v5_17_48/evidence/SUMMARY.json.
+CA739-BASILISCO-GALLERY-01 originates here and remains pending. No prior
+author check was removed; model acceptance and the wider delivery continue.
 
 ## 5.17.47 - Basilisco native model (#738, 2026-11-14)
 

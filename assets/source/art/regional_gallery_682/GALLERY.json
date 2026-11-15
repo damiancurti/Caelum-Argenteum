@@ -1,6 +1,6 @@
 {
   "schema_revision": 1,
-  "issue": 700,
+  "issue": 739,
   "status": "isolated_visual_inspection_not_campaign",
   "map": "CA682G",
   "title": "Regional bestiary inspection gallery",
@@ -191,6 +191,30 @@
       "position": [
         1280,
         0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Pampa",
+      "catalogue_id": "CA-FOLK-044",
+      "kind": "basilisco",
+      "class": "CaelumBestiary044",
+      "position": [
+        -896,
+        180,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-044",
+      "kind": "basilisco",
+      "class": "CaelumBestiary044",
+      "position": [
+        448,
+        180,
         0
       ],
       "angle": 270
@@ -411,6 +435,34 @@
         -280,
         0
       ]
+    },
+    {
+      "id": "basilisco-pampa",
+      "position": [
+        -896,
+        70,
+        60
+      ],
+      "target": [
+        -896,
+        180,
+        26
+      ],
+      "key": "5"
+    },
+    {
+      "id": "basilisco-litoral",
+      "position": [
+        448,
+        70,
+        60
+      ],
+      "target": [
+        448,
+        180,
+        26
+      ],
+      "key": "6"
     }
   ],
   "notes": [
@@ -418,7 +470,7 @@
     "Existing native actors/models with the established diagnostic passive-AI flag and protected observer. No new production behavior.",
     "Ground studies do not fix a campaign biome or mandatory creature habitat.",
     "Original CA463G and its three visual pilots remain intact.",
-    "Ten diagnostic displays cover every approved allocation of these seven candidate species. Two Yastay copies compare the same unique catalogue identity in separate approved regions; this does not authorize duplicate campaign characters."
+    "Twelve diagnostic displays cover every approved allocation of these eight candidate species. Repeated displays compare regional associations; the two Yastay copies do not authorize duplicate campaign identities."
   ],
   "animation_sample_wait_tics": 11,
   "animation_sample_basis": "Existing MIID native idle states last10 tics; wait11 to cross at least one boundary.",
@@ -426,9 +478,10 @@
   "model_exports": [
     "assets/source/art/beast_men_680/EXPORT.json",
     "assets/source/art/duendes_690/EXPORT.json",
-    "assets/source/art/guardians_698/EXPORT.json"
+    "assets/source/art/guardians_698/EXPORT.json",
+    "assets/source/art/basilisco_738/EXPORT.json"
   ],
-  "layout_basis": "Retain seven earlier figures and original F1-F12 functions. Add two unobstructed rear-row positions and one contiguous Cuyo plot; number keys1-4 inspect new displays/material. Overview frames all five plots. Coordinates are diagnostic only.",
+  "layout_basis": "Retain all ten earlier figures, five grounds, sixteen controls and four-boundary crossing path. Add Basilisco to the free western Pampa and eastern Litoral rear-row positions, with keys5/6. All coordinates are diagnostic only.",
   "silent_observer_steps": true,
   "inspection_noise_basis": "Mute only the diagnostic observer movement-noise timer; native walking speed, figure idle animation and production perception remain unchanged. Friendly and NOTARGET do not suppress anonymous sound investigation."
 }
