@@ -1,0 +1,50 @@
+{
+  "issue": 809,
+  "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+  "runtime_sha256": "7bc1583b95bc30fdc6a8b9b04d4afba4de73de4461872f53cb5cbab07a55f539",
+  "materials_sha256": null,
+  "fixture_sha256": "b1e8ecdf743a32a1682c102463554dc1b6de8c9c6c0be1fba74a334b84116ca1",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 65,
+      "expected_assertions": 65
+    },
+    {
+      "phase": "reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 134,
+      "expected_assertions": 134
+    }
+  ],
+  "captures": {
+    "cachiru.png": "dc70e720568fd574139f43af7d8d9cb3a9a3b06bd62597a03c698fc234ecda5f",
+    "chonchon.png": "4906f19867ff3129dc106ea124d52cf5375eb875da05a835d5f6f7eaa4ad93ad",
+    "cuero.png": "4e2fb79630bf0ca80156162573eddcb469729ca498b780d349a07c3a7d00ccbe",
+    "kakuy.png": "6e5d2c8655e21a994bc1fe5ec0585c8ea46551ba35cb80359069a7db8f1a0595",
+    "kelenken.png": "40aa6db6fb9aef77bdef4aceb2b8e41f44a4f6d9b639d59023a24486d689c1af",
+    "litoral-tiles.png": "8f4c447278acf37ca33fe800d2557650784a87f265d06c12b65f59495c0ea142",
+    "litoral.png": "249c1f53d3d0d40da4fcbab4ec69d5607551ab312451541236eb4c4ae7380f6a",
+    "mboi_tata-litoral.png": "2b425e3b972d247a11e661289265ad8977345d56bab8bcec21b57f894f26c1d1",
+    "mboi_tata-selva.png": "62a32139c370c8497a2145764da215e6675efbe16f51e44154ed31b36f8eaec4",
+    "mboi_tui-litoral.png": "282133c62c59e1f8224a6ff6e3a72606c0a40a5ea7d236a3bca8bb253d322613",
+    "mboi_yagua-litoral.png": "968307f98dd55933aff85bc62673c261733a9b881fcdefdc57947ef270745f7b",
+    "mboi_yagua-selva.png": "4308307b86bb0d146a1a281bf8a396ddd2e4d9944ef1d21835665caf0026e573",
+    "monai-selva.png": "8f6590971d8d817ff596aaffa55a6b229a012355d7aca2d686b06d8ed31922ba",
+    "nahuelito.png": "3f77291d8fbba464eab1a09442969e499e96a9e65b59b4e924d32806e9c7db46",
+    "noa-tiles.png": "1e0956a422d07c8bf8faaca30bbac9a7cafab1e66bb59a8d7e4999ba110658ca",
+    "overview.png": "e66f81132784d91c8461ab0c546b316927fee54f398d4d215d570cb89b196b1d",
+    "patagonia-tiles.png": "bcb0580b6d883f78b6198ac0a8fc4af17d8221861fe1ef339cd52883ef8cb294",
+    "patagonia.png": "b3f83760d80ba490350d564236a085f0dee8320948f5087a71a7516669fdb982",
+    "peuchen.png": "5dda8308ed78fbf89b4d70109ef2002b9f53f185da760b9316482ed7c44abf81",
+    "reload.png": "07d5286387476c6efd4499b721a4ca0f8c197b4b8dd135ef79859dda5ca425dc",
+    "selva-tiles.png": "e8c3bcfe31e3c73f69552af8367d8f0c17cbd7b305097ce3443cce412b84aacc",
+    "selva.png": "2dd8f1fed0994b6eb9224558634562cb3c4d2381a0d804d8958da8476650504b"
+  }
+}

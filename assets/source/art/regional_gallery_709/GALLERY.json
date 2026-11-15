@@ -1,6 +1,6 @@
 {
   "schema_revision": 1,
-  "issue": 729,
+  "issue": 809,
   "status": "isolated_visual_inspection_not_campaign",
   "map": "CA709G",
   "title": "Native NOA, Litoral, Selva and Patagonia inspection",
@@ -231,6 +231,18 @@
       "position": [
         -384,
         -160,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-035",
+      "kind": "chonchon",
+      "class": "CaelumBestiary035",
+      "position": [
+        256,
+        256,
         0
       ],
       "angle": 270
@@ -521,11 +533,25 @@
         26
       ],
       "key": "0"
+    },
+    {
+      "id": "chonchon",
+      "position": [
+        256,
+        146,
+        60
+      ],
+      "target": [
+        256,
+        256,
+        26
+      ],
+      "key": "F10"
     }
   ],
   "notes": [
-    "Fourteen diagnostic displays cover the approved allocations of eleven native candidates.",
-    "Original CA463G pilot and CA682G other native gallery remain unchanged.",
+    "Fifteen diagnostic displays cover the approved allocations of twelve selected native candidates.",
+    "Original CA463G remains intact. All preceding CA682G/CA709G figures, views and grounds are preserved while the two head views are appended.",
     "Regional textures and native model bytes are reused; no campaign encounters, balance, new effects or save fields.",
     "Repeated regional displays compare approved appearances, not campaign population or unique-encounter rules."
   ],
@@ -536,7 +562,8 @@
     "assets/source/art/peuchen_708/EXPORT.json",
     "assets/source/art/avian_711/EXPORT.json",
     "assets/source/art/serpents_720/EXPORT.json",
-    "assets/source/art/hybrid_serpents_727/EXPORT.json"
+    "assets/source/art/hybrid_serpents_727/EXPORT.json",
+    "assets/source/art/heads_803/EXPORT.json"
   ],
   "model_bindings": [
     {
@@ -604,6 +631,12 @@
       "catalogue_id": "CA-FOLK-052",
       "actor": "CaelumBestiary052",
       "export": "assets/source/art/hybrid_serpents_727/EXPORT.json"
+    },
+    {
+      "kind": "chonchon",
+      "catalogue_id": "CA-FOLK-035",
+      "actor": "CaelumBestiary035",
+      "export": "assets/source/art/heads_803/EXPORT.json"
     }
   ],
   "animation_sample_wait_tics": 11,
@@ -611,5 +644,5 @@
   "silent_observer_steps": true,
   "inspection_noise_basis": "Reuse the proven #692 observer-only movement-noise suppression, preserving native movement and production perception.",
   "inspection_staging": "Native classes with fixture-only Friendly flag and existing diagnostic passive AI. Original idle states advance; no forced positions.",
-  "layout_basis": "Retain all previous plots, eleven figure positions, eighteen controls and the three-boundary crossing path. Add Tu\u2019i in the free western Litoral column and Yagua in the eastern Litoral column and foreground Selva row. All new coordinates/views are diagnostic only."
+  "layout_basis": "Retain all fourteen earlier figures, four grounds, twenty-one controls and the three-boundary crossing route. Add Chonchon/Patagonia in a free rear position with F10. Coordinates are diagnostic only."
 }
