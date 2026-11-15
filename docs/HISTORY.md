@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.65** - 2026-11-15.
+Documentation version: **5.17.66** - 2026-11-15.
+
+## 5.17.66 - Medium torso armor no longer uses potion art (#775), 2026-11-15
+
+Separated the existing medium-armor alias to CMAR while retaining CAMD for the
+Anima potion. Preserved images, models, stats, inventory icons and schema. Shared
+source metadata hashes are refreshed without geometry or material changes.
+The existing world Tick refreshes old saves; rollback retains native identity
+and restores the previous display. Static checks and 1,193 engine assertions
+pass for fifteen armor cases and one split potion stack. Five phase captures
+were inspected. Superseded evidence retains two fixture faults (case-insensitive
+field shadowing and a queued verification lost at immediate exit), both fixed.
+Evidence: assets/validation_v5_17_66/evidence/SUMMARY.json.
+CA775-ARMOR-ALIAS-01 originates here and remains pending. No prior author check
+was accepted or removed. Sixteen armor world states and wider 3D/V5.16 remain.
 
 ## 5.17.65 - Carbine, shotgun, longbow and crossbow drops (#773), 2026-11-15
 

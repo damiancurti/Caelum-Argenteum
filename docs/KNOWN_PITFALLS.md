@@ -30,6 +30,16 @@ checker: assets/generators/validate_effective_weapon_references.py. This bounded
 check covers these known definitions, not arbitrary future TEXTURES graphs,
 exact painted-art reproduction, ordinary gameplay or author acceptance.
 
+Follow-up #775 (2026-11-15), STATIC-VERIFIED and ENGINE-OBSERVED: CAMDA0
+was declared for both medium torso armor and the Anima potion. Native audit
+resolved the armor to the later potion alias even though inventory transactions
+passed. The fix registers CMAR for the existing armor pixels and preserves CAMD
+for the potion. Fifteen armor cases and a split potion stack pass 1,193 checks,
+including old-save refresh and rollback without a schema change. See
+assets/validation_v5_17_66/evidence/SUMMARY.json and
+assets/generators/validate_armor_world_aliases.py. This is a bounded known-alias
+regression check; the separate armor model conversion remains unfinished.
+
 ## CA-KP-246 - Keep aggregate fixture counts specific to their phase
 
 Status/evidence: ENGINE-OBSERVED and STATIC-VERIFIED, #749, 2026-11-14.

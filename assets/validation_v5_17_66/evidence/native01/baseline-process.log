@@ -1,0 +1,217 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-15 04:47:07
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue773-ranged01.pk3, 18535 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue775-native01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2511.42 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Medium armor alias
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA775 PASS armor 0 native pickup
+CA775 PASS armor 0 native ownership
+CA775 PASS armor 0 native toss
+CA775 PASS armor 1 native pickup
+CA775 PASS armor 1 native ownership
+CA775 PASS armor 1 native toss
+CA775 PASS armor 2 native pickup
+CA775 PASS armor 2 native ownership
+CA775 PASS armor 2 native toss
+CA775 PASS armor 3 native pickup
+CA775 PASS armor 3 native ownership
+CA775 PASS armor 3 native toss
+CA775 PASS armor 4 native pickup
+CA775 PASS armor 4 native ownership
+CA775 PASS armor 4 native toss
+CA775 PASS armor 5 native pickup
+CA775 PASS armor 5 native ownership
+CA775 PASS armor 5 native toss
+CA775 PASS armor 6 native pickup
+CA775 PASS armor 6 native ownership
+CA775 PASS armor 6 native toss
+CA775 PASS armor 7 native pickup
+CA775 PASS armor 7 native ownership
+CA775 PASS armor 7 native toss
+CA775 PASS armor 8 native pickup
+CA775 PASS armor 8 native ownership
+CA775 PASS armor 8 native toss
+CA775 PASS armor 9 native pickup
+CA775 PASS armor 9 native ownership
+CA775 PASS armor 9 native toss
+CA775 PASS armor 10 native pickup
+CA775 PASS armor 10 native ownership
+CA775 PASS armor 10 native toss
+CA775 PASS armor 11 native pickup
+CA775 PASS armor 11 native ownership
+CA775 PASS armor 11 native toss
+CA775 PASS armor 12 native pickup
+CA775 PASS armor 12 native ownership
+CA775 PASS armor 12 native toss
+CA775 PASS armor 13 native pickup
+CA775 PASS armor 13 native ownership
+CA775 PASS armor 13 native toss
+CA775 PASS armor 14 native pickup
+CA775 PASS armor 14 native ownership
+CA775 PASS armor 14 native toss
+CA775 PASS potion native pickup
+CA775 PASS potion native stack
+CA775 PASS potion native toss
+Game saved.
+CA775 PASS all fifteen armor cases retained
+CA775 PASS armor 0 saved world reference
+CA775 PASS armor 0 exact world texture
+CA775 PASS armor 0 independent world identity
+CA775 PASS armor 0 unchanged equipment type slot tier
+CA775 PASS armor 0 unchanged durability mass and icon
+CA775 PASS armor 0 unchanged collision scale and floor
+CA775 PASS armor 0 unchanged world flags
+CA775 PASS armor 1 saved world reference
+CA775 PASS armor 1 exact world texture
+CA775 PASS armor 1 independent world identity
+CA775 PASS armor 1 unchanged equipment type slot tier
+CA775 PASS armor 1 unchanged durability mass and icon
+CA775 PASS armor 1 unchanged collision scale and floor
+CA775 PASS armor 1 unchanged world flags
+CA775 PASS armor 2 saved world reference
+CA775 PASS armor 2 exact world texture
+CA775 PASS armor 2 independent world identity
+CA775 PASS armor 2 unchanged equipment type slot tier
+CA775 PASS armor 2 unchanged durability mass and icon
+CA775 PASS armor 2 unchanged collision scale and floor
+CA775 PASS armor 2 unchanged world flags
+CA775 PASS armor 3 saved world reference
+CA775 PASS armor 3 exact world texture
+CA775 PASS armor 3 independent world identity
+CA775 PASS armor 3 unchanged equipment type slot tier
+CA775 PASS armor 3 unchanged durability mass and icon
+CA775 PASS armor 3 unchanged collision scale and floor
+CA775 PASS armor 3 unchanged world flags
+CA775 PASS armor 4 saved world reference
+CA775 PASS armor 4 exact world texture
+CA775 PASS armor 4 independent world identity
+CA775 PASS armor 4 unchanged equipment type slot tier
+CA775 PASS armor 4 unchanged durability mass and icon
+CA775 PASS armor 4 unchanged collision scale and floor
+CA775 PASS armor 4 unchanged world flags
+CA775 PASS armor 5 saved world reference
+CA775 PASS armor 5 exact world texture
+CA775 PASS armor 5 independent world identity
+CA775 PASS armor 5 unchanged equipment type slot tier
+CA775 PASS armor 5 unchanged durability mass and icon
+CA775 PASS armor 5 unchanged collision scale and floor
+CA775 PASS armor 5 unchanged world flags
+CA775 PASS armor 6 saved world reference
+CA775 PASS armor 6 exact world texture
+CA775 PASS armor 6 independent world identity
+CA775 PASS armor 6 unchanged equipment type slot tier
+CA775 PASS armor 6 unchanged durability mass and icon
+CA775 PASS armor 6 unchanged collision scale and floor
+CA775 PASS armor 6 unchanged world flags
+CA775 PASS armor 7 saved world reference
+CA775 PASS armor 7 exact world texture
+CA775 PASS armor 7 independent world identity
+CA775 PASS armor 7 unchanged equipment type slot tier
+CA775 PASS armor 7 unchanged durability mass and icon
+CA775 PASS armor 7 unchanged collision scale and floor
+CA775 PASS armor 7 unchanged world flags
+CA775 PASS armor 8 saved world reference
+CA775 PASS armor 8 exact world texture
+CA775 PASS armor 8 independent world identity
+CA775 PASS armor 8 unchanged equipment type slot tier
+CA775 PASS armor 8 unchanged durability mass and icon
+CA775 PASS armor 8 unchanged collision scale and floor
+CA775 PASS armor 8 unchanged world flags
+CA775 PASS armor 9 saved world reference
+CA775 PASS armor 9 exact world texture
+CA775 PASS armor 9 independent world identity
+CA775 PASS armor 9 unchanged equipment type slot tier
+CA775 PASS armor 9 unchanged durability mass and icon
+CA775 PASS armor 9 unchanged collision scale and floor
+CA775 PASS armor 9 unchanged world flags
+CA775 PASS armor 10 saved world reference
+CA775 PASS armor 10 exact world texture
+CA775 PASS armor 10 independent world identity
+CA775 PASS armor 10 unchanged equipment type slot tier
+CA775 PASS armor 10 unchanged durability mass and icon
+CA775 PASS armor 10 unchanged collision scale and floor
+CA775 PASS armor 10 unchanged world flags
+CA775 PASS armor 11 saved world reference
+CA775 PASS armor 11 exact world texture
+CA775 PASS armor 11 independent world identity
+CA775 PASS armor 11 unchanged equipment type slot tier
+CA775 PASS armor 11 unchanged durability mass and icon
+CA775 PASS armor 11 unchanged collision scale and floor
+CA775 PASS armor 11 unchanged world flags
+CA775 PASS armor 12 saved world reference
+CA775 PASS armor 12 exact world texture
+CA775 PASS armor 12 independent world identity
+CA775 PASS armor 12 unchanged equipment type slot tier
+CA775 PASS armor 12 unchanged durability mass and icon
+CA775 PASS armor 12 unchanged collision scale and floor
+CA775 PASS armor 12 unchanged world flags
+CA775 PASS armor 13 saved world reference
+CA775 PASS armor 13 exact world texture
+CA775 PASS armor 13 independent world identity
+CA775 PASS armor 13 unchanged equipment type slot tier
+CA775 PASS armor 13 unchanged durability mass and icon
+CA775 PASS armor 13 unchanged collision scale and floor
+CA775 PASS armor 13 unchanged world flags
+CA775 PASS armor 14 saved world reference
+CA775 PASS armor 14 exact world texture
+CA775 PASS armor 14 independent world identity
+CA775 PASS armor 14 unchanged equipment type slot tier
+CA775 PASS armor 14 unchanged durability mass and icon
+CA775 PASS armor 14 unchanged collision scale and floor
+CA775 PASS armor 14 unchanged world flags
+CA775 FAIL potion world identity and quantity
+CA775 COMPLETE failures=1
+Captured baseline.png
+Game saved.

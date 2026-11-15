@@ -233,7 +233,7 @@
     }
   },
   "source_sha256": {
-    "DESIGN.json": "0a4ab4051b982e88da4a703cfc09d76fbacf2f0c752b01b8058c6ad4d0ef438f",
+    "DESIGN.json": "93cc96a12abf2a51541e96215b40e1644c61c1b522901871784beced5b4fe87d",
     "PROVENANCE.json": "9a444e7766034d80db7f40166a9d839ad1c7271c70a56f973866605f714bd0fb"
   },
   "external_source_sha256": {
@@ -241,7 +241,7 @@
     "assets/source/art/inventory_models_647/magic_bases/DESIGN.json": "5802c3563f1afc965e8100777bb452d0d35104b41dbd5275bef65ce76ac0a757",
     "assets/source/art/inventory_models_647/magic_bases/PROVENANCE.json": "8f7978aa6fcd0af91b2fcde121c23ae6a36a49c0bbaf0b491f5bd7967210e34d",
     "src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
-    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
     "src/caelum/equipment/CaelumSupportArt.zs": "5933f0ea55b94e5d30894501d7e1ac590a03ef35844a3677370328d79d474762",
     "src/caelum/data/CaelumSupportImplementData.zs": "a4b0381a2bf2f7ada432c44d81d6c987307a89172c5ce7b240486e8bbe406ad6",
     "src/graphics/caelum/icons/ca_staff.png": "e639347898daa83f4b76a63937ae84b99bb5f04e5d9b63d9db4c4848a80fc04c",

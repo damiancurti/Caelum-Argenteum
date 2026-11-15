@@ -764,7 +764,7 @@ Sprite "CCAAA0", 128, 128 { Offset 64, 104 Patch "graphics/caelum/icons/ca_carbi
 Sprite "CAHVA0", 128, 128 { Offset 64, 119 Patch "graphics/caelum/icons/ca_armor_heavy.png", 0, 0 }
 Sprite "CALIA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_armor_light.png", 0, 0 }
 Sprite "CAMAA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_armor_magic.png", 0, 0 }
-Sprite "CAMDA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_armor_medium.png", 0, 0 }
+Sprite "CMARA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_armor_medium.png", 0, 0 }
 Sprite "CBHVA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_boots_heavy.png", 0, 0 }
 Sprite "CBLTA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_boots_light.png", 0, 0 }
 Sprite "CBMDA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_boots_medium.png", 0, 0 }

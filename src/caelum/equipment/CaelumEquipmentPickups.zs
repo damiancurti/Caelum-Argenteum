@@ -115,6 +115,7 @@ class CaelumWorldSpriteRegistry : Actor
         CAGN ABCDEF 1;
         CAGC ABCD 1;
         SHGW ABCDEF 1;
+        CMAR A 1;
         Stop;
     }
 }
@@ -647,7 +648,7 @@ class CaelumArmorPickup : CaelumEquipmentItem
             if (slot == CaelumConstants.ARMOR_SLOT_HEAD) visual = "CHMD";
             else if (slot == CaelumConstants.ARMOR_SLOT_HANDS) visual = "CGMD";
             else if (slot == CaelumConstants.ARMOR_SLOT_FEET) visual = "CBMD";
-            else visual = "CAMD";
+            else visual = "CMAR";
         }
         else if (armorType == CaelumConstants.ARMOR_TYPE_HEAVY)
         {
