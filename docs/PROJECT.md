@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.61** - 2026-11-15.
+Documentation version: **5.17.62** - 2026-11-15.
+
+## 5.17.62 - Polearm/tool drops (#767)
+
+Four native javelin, spear, halberd and utility-staff models cover ten existing
+quality cases. Effective TEXTURES references,16 repeated exports, independent
+geometry/UV checks,853 native continuity assertions and199 visual/control
+checks pass. Utility fractional contact wear survives drops and saves.
+ASSETS records visual/performance qualifications. CA767-POLEARM-DROPS-01
+retains author review; #769 corrects prior sword/axe reference selection.
+Other drops, characters, modular equipment and V5.16 remain unfinished.
 
 ## 5.17.61 - Native axe/tool drops (#765)
 

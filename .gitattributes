@@ -1073,3 +1073,12 @@ assets/validation_v5_17_42/evidence/** -text -diff
 /assets/validation_v5_17_61/*.zs text eol=lf
 /assets/validation_v5_17_61/evidence/** -text -diff
 /src/caelum/data/inventory_axes.modeldef text eol=lf
+
+# #767 polearm/tool assemblies, portable sources and raw evidence.
+/assets/generators/*inventory_polearms_models.py text eol=lf
+/assets/source/art/inventory_models_647/polearms/** text eol=lf
+/assets/source/art/inventory_models_647/polearms/**/*.png binary
+/assets/validation_v5_17_62/*.py text eol=lf
+/assets/validation_v5_17_62/*.zs text eol=lf
+/assets/validation_v5_17_62/evidence/** -text -diff
+/src/caelum/data/inventory_polearms.modeldef text eol=lf

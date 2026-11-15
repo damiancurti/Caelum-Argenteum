@@ -1,6 +1,68 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.61** - 2026-11-15.
+Documentation version: **5.17.62** - 2026-11-15.
+
+## 5.17.62 - Polearm and utility-staff drops (#767)
+
+Four native models replace CJAV, CSPR, CHAL and CUST in CaelumWeaponPickup:
+javelin6, spear9 and halberd12 retain three qualities each; utility staff21
+retains its single quality. Existing icons, held artwork/effects, projectiles,
+combat/tool rules, Anima costs, fractional contact wear, size, durability,
+weight, collision/scale, recipes and saves remain unchanged.
+
+Effective TEXTURES aliases, not superseded physical sprite lumps, define the
+three polearm references: graphics/caelum/icons/ca_javelin.png, ca_spear.png
+and ca_halberd.png. Javelin/halberd have red ties, spear blue ties, and the
+shafts have bronze fittings. The initial prototype used the older images;
+its retained results establish API continuity only, not current-art fidelity.
+The corrected models include simplified static tassels and current display
+envelopes. #769 separately corrects the affected prior sword/axe candidates.
+
+The utility staff uses #162's accepted ready cell, the first627x627 crop of
+graphics/caelum/utility_staff/atlas.png, divided by its4.8984375 TEXTURES scale.
+Its bronze nozzle has a real open cavity and dark interior, attached to the
+walnut shaft; the wrapped grip and lower bronze fitting remain separate
+closed parts. An initial excessive lean was reduced to respect the scaled
+width as well as height. Original2D acceptance does not accept this3D model.
+
+Editable OBJ/MTL, reference resolution and provenance are in
+assets/source/art/inventory_models_647/polearms. Unchanged owned #723 metals,
+#761 wood, #647 leather and #755 red/blue pixels supply the materials. No
+raster edits or generation. Regenerate with python
+assets/generators/generate_inventory_polearms_models.py --output build/polearms
+--install. Sixteen outputs repeat byte-for-byte. The final models total6,039
+vertices and6,384 triangles,48 closed components,44 verified attachment
+witnesses and five clear nozzle rays. Independent topology/winding, exact
+quantized faces, noncollapsed UVs, opaque regions, scaled effective sprite
+envelopes and floor contact pass. Planar UVs keep the nozzle rim triangles
+noncollapsed without altering the shared generator or existing texture pixels.
+
+Twenty final detail/underside views, the overview and nozzle close-up were
+inspected. Simplified matte heads/fittings, static tassels, repeating grain,
+warm grip colors, subdued bronze depth, standing orientation and interpreted
+backs remain author-review qualifications. World footprints differ from
+view-facing sprites. Small parts need ordinary in-game readability review.
+
+Ten cases pass853 final installed continuity assertions:192 baseline,
+161 old-save adoption,192 fresh,154 reload and154 rollback. The final visual
+run passes199 checks. Native pickup/equip/unequip/toss, exact identity,
+quality/essence, size, durability, weight, provenance and prepared Box/quest
+guards pass. A nonzero utility contact remainder survives drops, repickup
+and saves. This fixture does not establish ordinary menu operation, combat,
+throwing or sustained fire/ice use. Evidence and bounded presentation timing:
+assets/validation_v5_17_62/evidence/SUMMARY.json.
+
+The bounded comparison uses ten objects and700 tics per scene. Queue
+presentation rates are1148.55 sprites versus1158.85 models per second;
+p95 intervals1.0314 versus1.0366 ms and p99 intervals1.2506 versus1.2660 ms.
+This single sequential pair is neither GPU/display timing nor repeatability,
+campaign/crowd performance or author acceptance. Both scenes were inspected;
+projected footprints differ. The final package contains18,524 source entries
+verified byte-for-byte; only four models, one binding file, MODELDEF and two
+version diagnostics differ from the prior runtime.
+
+CA767-POLEARM-DROPS-01 retains author visual and ordinary gameplay review.
+Other physical drops, characters, modular equipment and V5.16 remain pending.
 
 ## 5.17.61 - Hatchet, axe, war axe and pickaxe drops (#765)
 
