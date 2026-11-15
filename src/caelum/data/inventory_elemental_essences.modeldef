@@ -1,0 +1,5 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/essences" Model 0 "fire.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M020 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/essences" Model 0 "water.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M021 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/essences" Model 0 "earth.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M022 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/essences" Model 0 "wind.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M023 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/essences" Model 0 "quintessence.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M024 A 0 0 }

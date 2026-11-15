@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.53** - 2026-11-14.
+Documentation version: **5.17.54** - 2026-11-15.
+
+## #751 - Elemental crafting material drops (5.17.54)
+
+Five closed native candidate models preserve all fifteen type/tier cases.
+Geometry, deterministic exports and 2,172 installed continuity checks pass;
+final visual03 passes 413 checks. CA751-ELEMENTAL-DROPS-01 retains art and
+ordinary inventory/crafting review. The seven remaining material bases and
+other weapon/character models remain separate work; modular style still awaits
+review of the #736 proposals. Campaign completion is not claimed.
 
 ## #749 - Hide assertion-count regression (5.17.53)
 

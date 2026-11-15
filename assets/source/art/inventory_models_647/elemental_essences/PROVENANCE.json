@@ -1,0 +1,16 @@
+{
+  "issue": 751,
+  "source_art": "Existing owned material icons; assets/manifests/sprites_v4.json records their retained provenance.",
+  "method": "Reuse original icon pixels byte-for-byte, closed projected faceted crystals with nested opaque cores, and actual3D closed elemental curves/orbit. No new raster generation or editing.",
+  "author_accepted": false,
+  "source_sha256": {
+    "src/graphics/caelum/icons/materials/ca_material_fire_essence.png": "1214dd4981b3b64c68c6f544eb4a7a49d0ff848a0494b24cf135a1c9fe90f497",
+    "src/graphics/caelum/icons/materials/ca_material_water_essence.png": "d84544e63a0cd382f830f1d3a1c9ae5245860f40a22ea3b9bbfc8db3c73453ab",
+    "src/graphics/caelum/icons/materials/ca_material_earth_essence.png": "ac52a4ee2797f831542797e2fcfa9c76a3a9aed8522e9c341d342b5fedd4ec0a",
+    "src/graphics/caelum/icons/materials/ca_material_wind_essence.png": "1101f4a264224ba2c0d5c695c901026bae02cba2eb584dff010583e0cdf5b036",
+    "src/graphics/caelum/icons/materials/ca_material_quintessence.png": "98b59cad87ddeba0859e583b83f426430da0f6dabf4baab1c647f40f016675a8",
+    "assets/manifests/sprites_v4.json": "1eb337e47bda4d1fafd976001512da49f43c891ce80360580b0c7a0a90238e48",
+    "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04"
+  },
+  "iterations": "Initial candidate; native visual/geometry review pending. Native visual01 revealed flat single-color elemental curves and a white rather than golden orbit. Map opaque-region detail from the same original icons onto those volumes without changing raster pixels. The first navigation probe also copied an incorrect expected second item index4; actual second selection was1. Correct only that expectation; preserve all seven checks. Native visual02 passes413 checks but earth leaves read as dark detached diamonds. Refine them to thin curved eight-point leaves, move their depth into the root/vine and reuse the opaque green region of the same original icon. Static elemental surrounds remain stylized and require author review."
+}
