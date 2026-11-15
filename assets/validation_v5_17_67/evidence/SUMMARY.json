@@ -1,0 +1,940 @@
+{
+  "issue": 777,
+  "parent_issue": 647,
+  "version": "5.17.67",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Four original hollow head armor world drops, twelve native type/tier cases and one original opaque gold material. Inventory art, identity, protection, scale/collision, size, durability, recipes and persistence are unchanged. Worn modular fitting is not delivered.",
+  "runtime": {
+    "sha256": "aeaca60139f3a21444bb51c8f865ccd26e1d98265bf329d9d17121635fa91aaf",
+    "source_entries": 18541,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "f57402ca8a76ba8e4b1dcf06a51b99e4f3392539a4c8cfb675a4c15511b491aa",
+    "new_resources": [
+      "caelum/data/inventory_armor_helmets.modeldef",
+      "models/caelum/inventory/armor_helmets/gold.png",
+      "models/caelum/inventory/armor_helmets/heavy.md3",
+      "models/caelum/inventory/armor_helmets/light.md3",
+      "models/caelum/inventory/armor_helmets/magic.md3",
+      "models/caelum/inventory/armor_helmets/medium.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 19,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "magic": {
+        "closed_components": 32,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 31,
+        "connected_components": 32,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 25,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 9168
+      },
+      "light": {
+        "closed_components": 24,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 23,
+        "connected_components": 24,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 25,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 3720
+      },
+      "medium": {
+        "closed_components": 42,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 41,
+        "connected_components": 42,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 25,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 9480
+      },
+      "heavy": {
+        "closed_components": 32,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 31,
+        "connected_components": 32,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 25,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 9168
+      }
+    },
+    "variants": {
+      "magic": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "hollow_crown",
+          "rear_shell",
+          "brow",
+          "visor_bar_0",
+          "visor_bar_1",
+          "visor_bar_2",
+          "visor_bar_3",
+          "visor_bar_4",
+          "visor_bar_5",
+          "visor_bar_6",
+          "lower_visor",
+          "left_cheek",
+          "right_cheek",
+          "brow_trim",
+          "jaw_trim",
+          "neck_curtain",
+          "crown_ridge",
+          "hinge_-1",
+          "hinge_1",
+          "plume_mount",
+          "plume_0",
+          "plume_1",
+          "plume_2",
+          "plume_3",
+          "plume_4",
+          "plume_5",
+          "plume_6",
+          "visor_slat_0",
+          "visor_slat_1",
+          "visor_slat_2",
+          "visor_slat_3",
+          "inner_rear_lining"
+        ],
+        "closed_outward_components": 32,
+        "vertices": 12444,
+        "triangles": 9168,
+        "surfaces": [
+          {
+            "material": "leather",
+            "vertices": 744,
+            "triangles": 248
+          },
+          {
+            "material": "gold",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "gold",
+            "vertices": 4094,
+            "triangles": 2397
+          },
+          {
+            "material": "gold",
+            "vertices": 114,
+            "triangles": 38
+          },
+          {
+            "material": "purple_plume",
+            "vertices": 2653,
+            "triangles": 4872
+          },
+          {
+            "material": "lining",
+            "vertices": 744,
+            "triangles": 248
+          }
+        ],
+        "reference_opaque_bounds": [
+          14,
+          9,
+          114,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 111.0,
+        "native_bounds": [
+          {
+            "min": [
+              -40.274596981383965,
+              -37.38701461094242,
+              0.0
+            ],
+            "max": [
+              40.274596981383965,
+              48.82240250422738,
+              111.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.1794010918278368,
+          "floor": 5.0
+        }
+      },
+      "light": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "hollow_crown",
+          "rear_shell",
+          "brow",
+          "visor_bar_0",
+          "visor_bar_1",
+          "visor_bar_2",
+          "visor_bar_3",
+          "visor_bar_4",
+          "visor_bar_5",
+          "visor_bar_6",
+          "lower_visor",
+          "left_cheek",
+          "right_cheek",
+          "brow_trim",
+          "jaw_trim",
+          "neck_curtain",
+          "crown_ridge",
+          "hinge_-1",
+          "hinge_1",
+          "visor_slat_0",
+          "visor_slat_1",
+          "visor_slat_2",
+          "visor_slat_3",
+          "inner_rear_lining"
+        ],
+        "closed_outward_components": 24,
+        "vertices": 9489,
+        "triangles": 3720,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "steel",
+            "vertices": 1977,
+            "triangles": 659
+          },
+          {
+            "material": "bronze",
+            "vertices": 1929,
+            "triangles": 1200
+          },
+          {
+            "material": "leather",
+            "vertices": 744,
+            "triangles": 248
+          },
+          {
+            "material": "lining",
+            "vertices": 744,
+            "triangles": 248
+          }
+        ],
+        "reference_opaque_bounds": [
+          18,
+          8,
+          108,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -41.45923894143142,
+              -38.486720867208675,
+              0.0
+            ],
+            "max": [
+              41.45923894143142,
+              38.8509485094851,
+              112.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.5176151761517616,
+          "floor": 5.0
+        }
+      },
+      "medium": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "hollow_crown",
+          "rear_shell",
+          "brow",
+          "visor_bar_0",
+          "visor_bar_1",
+          "visor_bar_2",
+          "visor_bar_3",
+          "visor_bar_4",
+          "visor_bar_5",
+          "visor_bar_6",
+          "lower_visor",
+          "left_cheek",
+          "right_cheek",
+          "brow_trim",
+          "jaw_trim",
+          "neck_curtain",
+          "crown_ridge",
+          "hinge_-1",
+          "hinge_1",
+          "mail_loop_0_0",
+          "mail_loop_0_1",
+          "mail_loop_0_2",
+          "mail_loop_0_3",
+          "mail_loop_0_4",
+          "mail_loop_0_5",
+          "mail_loop_0_6",
+          "mail_loop_0_7",
+          "mail_loop_0_8",
+          "mail_loop_1_0",
+          "mail_loop_1_1",
+          "mail_loop_1_2",
+          "mail_loop_1_3",
+          "mail_loop_1_4",
+          "mail_loop_1_5",
+          "mail_loop_1_6",
+          "mail_loop_1_7",
+          "mail_loop_1_8",
+          "visor_slat_0",
+          "visor_slat_1",
+          "visor_slat_2",
+          "visor_slat_3",
+          "inner_rear_lining"
+        ],
+        "closed_outward_components": 42,
+        "vertices": 12369,
+        "triangles": 9480,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 2880,
+            "triangles": 5760
+          },
+          {
+            "material": "bronze",
+            "vertices": 1929,
+            "triangles": 1200
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 2721,
+            "triangles": 907
+          },
+          {
+            "material": "lining",
+            "vertices": 744,
+            "triangles": 248
+          }
+        ],
+        "reference_opaque_bounds": [
+          18,
+          8,
+          109,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -41.45923894143142,
+              -38.486720867208675,
+              0.0
+            ],
+            "max": [
+              41.45923894143142,
+              38.8509485094851,
+              112.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.5176151761517616,
+          "floor": 5.0
+        }
+      },
+      "heavy": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "hollow_crown",
+          "rear_shell",
+          "brow",
+          "visor_bar_0",
+          "visor_bar_1",
+          "visor_bar_2",
+          "visor_bar_3",
+          "visor_bar_4",
+          "visor_bar_5",
+          "visor_bar_6",
+          "lower_visor",
+          "left_cheek",
+          "right_cheek",
+          "brow_trim",
+          "jaw_trim",
+          "neck_curtain",
+          "crown_ridge",
+          "hinge_-1",
+          "hinge_1",
+          "plume_mount",
+          "plume_0",
+          "plume_1",
+          "plume_2",
+          "plume_3",
+          "plume_4",
+          "plume_5",
+          "plume_6",
+          "visor_slat_0",
+          "visor_slat_1",
+          "visor_slat_2",
+          "visor_slat_3",
+          "inner_rear_lining"
+        ],
+        "closed_outward_components": 32,
+        "vertices": 12444,
+        "triangles": 9168,
+        "surfaces": [
+          {
+            "material": "dark_iron",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 1977,
+            "triangles": 659
+          },
+          {
+            "material": "leather",
+            "vertices": 744,
+            "triangles": 248
+          },
+          {
+            "material": "gold",
+            "vertices": 2231,
+            "triangles": 1776
+          },
+          {
+            "material": "blue_plume",
+            "vertices": 2653,
+            "triangles": 4872
+          },
+          {
+            "material": "lining",
+            "vertices": 744,
+            "triangles": 248
+          }
+        ],
+        "reference_opaque_bounds": [
+          15,
+          8,
+          112,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -40.63743118842346,
+              -37.72383456239236,
+              0.0
+            ],
+            "max": [
+              40.63743118842346,
+              49.262243968229434,
+              112.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.190026326889349,
+          "floor": 5.0
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 777,
+    "kind": "armor_helmets",
+    "scope": "Native pickup/toss, quantity and saved ownership for armor_helmets; no normal menu or author acceptance.",
+    "baseline_sha256": "f57402ca8a76ba8e4b1dcf06a51b99e4f3392539a4c8cfb675a4c15511b491aa",
+    "runtime_sha256": "aeaca60139f3a21444bb51c8f865ccd26e1d98265bf329d9d17121635fa91aaf",
+    "model_sha256": null,
+    "fixture_sha256": "f0a5022d5a6a69e15cb16f6a4edf1ab9b132fcc4648298e98ce8af1e37b6e83f",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 229
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 189
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 229
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 182
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 182
+      }
+    ],
+    "captures": {
+      "baseline.png": "67b243139cd51b7a8879b6a3537817020f694a0149f1e96bdc51d8de2eb1421b",
+      "candidate-0.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+      "candidate-1.png": "dac1b59b4c7aa1afa1533b246e43a26ab977d25baf32d72924d68eaca8d5d152",
+      "candidate-2.png": "dfa77650418c165e52bc0fa128ef7a940db4d9b7d676fc8e3a701393b20df067",
+      "candidate-3.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+      "candidate-5.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+      "candidate-6.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+      "candidate-7.png": "df7c924ec4d4d940a77f70394ae575e514e306ba6e24fd0239d4c770bad60b10",
+      "detail-0-0.png": "84908fc6ec3735ad16ef71513271354d6270b887f253dfcefb70f29e2818e2a0",
+      "detail-0-160.png": "fa671b8f3fc3fdb2437760909015dfe50d8de04c2d518acb0c36300d2c144a8c",
+      "detail-0-225.png": "b09588e5bd44072a74babf3fcea59d3be8cf5ec8c7c3e0e09d8cb41c209c0eed",
+      "detail-0-270.png": "c51b5ff75682263c7c9c538f4387da03aa168bbc6dbb7ea822404089ed4686d6",
+      "detail-0-90.png": "7d246e5f39b4b88e9f3cff27ddea309d1093faa762c9881c85f23ea00ba14e5d",
+      "detail-1-0.png": "a939a6800f22324c247f3cefb1d736a737a7b28257b802977d593ffa451d5f31",
+      "detail-1-160.png": "d2c4de0b32127671260f2dfeed435f77191ebb76085b8e65d28269ce4919c5ab",
+      "detail-1-225.png": "96fe5260d8f7d46c4b2e6b506952675f10524ade0f72e0f34ba7c75b59554367",
+      "detail-1-270.png": "e05fc356885f506a5da9a85292ea43438410167373c8aa0f103cb45422393139",
+      "detail-1-90.png": "f8116fbe6b25339d7f634cee35d8b41cbcd1060ac24d3e007bb0698ef1aa3274",
+      "detail-2-0.png": "798400e43a1be32f0ac6f0a6c7bfe0e9e18d9f7371d555b7e4a8d5e0002e8162",
+      "detail-2-160.png": "facf3866346f8a9126e5f21fd2f5dc4e6490b7ba71983af07fe71d26486e056e",
+      "detail-2-225.png": "cd999389bc197a150a9e38200f0ff27d28560e53cbdfa04fd13cd97ed99369fc",
+      "detail-2-270.png": "3f353ce2d72a0b1c9cb8ebee195eda5225890c13b38be2f09575af08c083e5a5",
+      "detail-2-90.png": "b90d6faa8f8841971216faea8a0f86509ce25b55a5aca0d36b3a703557c6efc9",
+      "detail-3-0.png": "2aad4ed92055008ff697918e62ed53356d80d296e03356a9f5ed93f29912f706",
+      "detail-3-160.png": "2ffef269a32ad304da70baa9657b4ec93f5f6cd5e4ef7866b704b327c5fd88a2",
+      "detail-3-225.png": "5dd80340b3018e4ed721e801691cf071f6834f9bcf28b6e837eb56d8c96d95c2",
+      "detail-3-270.png": "6cbf009cb4a23ff3ae5d13568eff64456020f2699c1e014c33c7dbae7f22d27a",
+      "detail-3-90.png": "877c64149686137b52dd1cce31b87a83317a770cfb10814961c7a6183623493d"
+    }
+  },
+  "visual": {
+    "issue": 777,
+    "kind": "armor_helmets",
+    "scope": "Native pickup/toss, quantity and saved ownership for armor_helmets; no normal menu or author acceptance.",
+    "baseline_sha256": "f57402ca8a76ba8e4b1dcf06a51b99e4f3392539a4c8cfb675a4c15511b491aa",
+    "runtime_sha256": "f57402ca8a76ba8e4b1dcf06a51b99e4f3392539a4c8cfb675a4c15511b491aa",
+    "model_sha256": "efcae4219e67f4caef7269091fe16c45cec426e2ecca4cae0eb49c1c7618e493",
+    "fixture_sha256": "f0a5022d5a6a69e15cb16f6a4edf1ab9b132fcc4648298e98ce8af1e37b6e83f",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "visual",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 236
+      }
+    ],
+    "captures": {
+      "candidate-0.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+      "candidate-1.png": "dac1b59b4c7aa1afa1533b246e43a26ab977d25baf32d72924d68eaca8d5d152",
+      "candidate-2.png": "dfa77650418c165e52bc0fa128ef7a940db4d9b7d676fc8e3a701393b20df067",
+      "candidate-3.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+      "candidate-5.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+      "candidate-6.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+      "candidate-7.png": "df7c924ec4d4d940a77f70394ae575e514e306ba6e24fd0239d4c770bad60b10",
+      "detail-0-0.png": "84908fc6ec3735ad16ef71513271354d6270b887f253dfcefb70f29e2818e2a0",
+      "detail-0-160.png": "fa671b8f3fc3fdb2437760909015dfe50d8de04c2d518acb0c36300d2c144a8c",
+      "detail-0-225.png": "b09588e5bd44072a74babf3fcea59d3be8cf5ec8c7c3e0e09d8cb41c209c0eed",
+      "detail-0-270.png": "c51b5ff75682263c7c9c538f4387da03aa168bbc6dbb7ea822404089ed4686d6",
+      "detail-0-90.png": "7d246e5f39b4b88e9f3cff27ddea309d1093faa762c9881c85f23ea00ba14e5d",
+      "detail-1-0.png": "a939a6800f22324c247f3cefb1d736a737a7b28257b802977d593ffa451d5f31",
+      "detail-1-160.png": "d2c4de0b32127671260f2dfeed435f77191ebb76085b8e65d28269ce4919c5ab",
+      "detail-1-225.png": "96fe5260d8f7d46c4b2e6b506952675f10524ade0f72e0f34ba7c75b59554367",
+      "detail-1-270.png": "e05fc356885f506a5da9a85292ea43438410167373c8aa0f103cb45422393139",
+      "detail-1-90.png": "f8116fbe6b25339d7f634cee35d8b41cbcd1060ac24d3e007bb0698ef1aa3274",
+      "detail-2-0.png": "798400e43a1be32f0ac6f0a6c7bfe0e9e18d9f7371d555b7e4a8d5e0002e8162",
+      "detail-2-160.png": "facf3866346f8a9126e5f21fd2f5dc4e6490b7ba71983af07fe71d26486e056e",
+      "detail-2-225.png": "cd999389bc197a150a9e38200f0ff27d28560e53cbdfa04fd13cd97ed99369fc",
+      "detail-2-270.png": "3f353ce2d72a0b1c9cb8ebee195eda5225890c13b38be2f09575af08c083e5a5",
+      "detail-2-90.png": "b90d6faa8f8841971216faea8a0f86509ce25b55a5aca0d36b3a703557c6efc9",
+      "detail-3-0.png": "2aad4ed92055008ff697918e62ed53356d80d296e03356a9f5ed93f29912f706",
+      "detail-3-160.png": "2ffef269a32ad304da70baa9657b4ec93f5f6cd5e4ef7866b704b327c5fd88a2",
+      "detail-3-225.png": "5dd80340b3018e4ed721e801691cf071f6834f9bcf28b6e837eb56d8c96d95c2",
+      "detail-3-270.png": "6cbf009cb4a23ff3ae5d13568eff64456020f2699c1e014c33c7dbae7f22d27a",
+      "detail-3-90.png": "877c64149686137b52dd1cce31b87a83317a770cfb10814961c7a6183623493d"
+    }
+  },
+  "armor_regression": {
+    "issue": 777,
+    "scope": "Check unaffected medium torso armor and Anima potion after helmet MODELDEF addition for #777.",
+    "baseline_sha256": "f57402ca8a76ba8e4b1dcf06a51b99e4f3392539a4c8cfb675a4c15511b491aa",
+    "runtime_sha256": "aeaca60139f3a21444bb51c8f865ccd26e1d98265bf329d9d17121635fa91aaf",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "fixture_sha256": "c4df7ef654594506c332c034b4604f1c3a6340bc1a5bf07777fbc3307e11105b",
+    "runs": [
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "errors": [],
+        "assertions": 157,
+        "expected_assertions": 157,
+        "completions": [
+          "0"
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "presentation": {
+    "issue": 777,
+    "kind": "armor_helmets",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "f57402ca8a76ba8e4b1dcf06a51b99e4f3392539a4c8cfb675a4c15511b491aa",
+    "runtime_sha256": "aeaca60139f3a21444bb51c8f865ccd26e1d98265bf329d9d17121635fa91aaf",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 12,
+        "pid": 22168,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 346168004.5313,
+          "END": 346188026.827
+        },
+        "fixture_sha256": "f6d7c6ad710ca2c8bc4643feaa5e0ed38a3e12bf0978ce2e6049d5c01df74f4e",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            12,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571909428571427,
+          "p50_ms": 28.5838,
+          "p95_ms": 29.1133,
+          "p99_ms": 29.3071,
+          "max_ms": 29.621
+        },
+        "presentation": {
+          "pid": 22168,
+          "trace_sha256": "95c8aa7eb70953bd7264a383c1f1a37142667b5ffcfa16c36e4013f6f1687e6e",
+          "rows": 31950,
+          "scene_presents": 21708,
+          "mean_present_fps": 1238.8688289193863,
+          "present_intervals": {
+            "samples": 21707,
+            "mean_ms": 0.8071879578020043,
+            "p50_ms": 0.7962999939918518,
+            "p95_ms": 1.0144000053405762,
+            "p99_ms": 1.2171000242233276,
+            "max_ms": 1.7706000208854675
+          },
+          "native_call_duration": {
+            "samples": 21708,
+            "mean_ms": 0.07603633693728808,
+            "p50_ms": 0.07610005140304565,
+            "p95_ms": 0.09900003671646118,
+            "p99_ms": 0.1345999836921692,
+            "max_ms": 0.4453999996185303
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 12,
+        "pid": 18412,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 346202596.1512,
+          "END": 346222619.60550004
+        },
+        "fixture_sha256": "f6d7c6ad710ca2c8bc4643feaa5e0ed38a3e12bf0978ce2e6049d5c01df74f4e",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            12,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571462999999998,
+          "p50_ms": 28.566,
+          "p95_ms": 29.267,
+          "p99_ms": 29.4857,
+          "max_ms": 29.7505
+        },
+        "presentation": {
+          "pid": 18412,
+          "trace_sha256": "8de21bce6f0d597ce650b813b8f96b5312967012bb7b1004ef6d4e7f67007ae0",
+          "rows": 26580,
+          "scene_presents": 17598,
+          "mean_present_fps": 1004.2208033253681,
+          "present_intervals": {
+            "samples": 17597,
+            "mean_ms": 0.995796936977016,
+            "p50_ms": 0.9736000299453735,
+            "p95_ms": 1.246999979019165,
+            "p99_ms": 1.4342000484466553,
+            "max_ms": 2.42739999294281
+          },
+          "native_call_duration": {
+            "samples": 17598,
+            "mean_ms": 0.07813373645647965,
+            "p50_ms": 0.07600003480911255,
+            "p95_ms": 0.10269999504089355,
+            "p99_ms": 0.15289998054504395,
+            "max_ms": 0.450700044631958
+          }
+        }
+      }
+    ]
+  },
+  "art": {
+    "inspected_views": [
+      "visual/detail-0-0.png",
+      "visual/detail-0-90.png",
+      "visual/detail-0-160.png",
+      "visual/detail-0-225.png",
+      "visual/detail-0-270.png",
+      "visual/detail-1-0.png",
+      "visual/detail-1-90.png",
+      "visual/detail-1-160.png",
+      "visual/detail-1-225.png",
+      "visual/detail-1-270.png",
+      "visual/detail-2-0.png",
+      "visual/detail-2-90.png",
+      "visual/detail-2-160.png",
+      "visual/detail-2-225.png",
+      "visual/detail-2-270.png",
+      "visual/detail-3-0.png",
+      "visual/detail-3-90.png",
+      "visual/detail-3-160.png",
+      "visual/detail-3-225.png",
+      "visual/detail-3-270.png"
+    ],
+    "overview": "visual/candidate-0.png",
+    "author_check": "CA777-ARMOR-HELMETS-01"
+  },
+  "iterations": [
+    "Narrowed/lengthened visor slots, smoothed/tapered plume strands, darkened medium/heavy metal and added a rear liner. Prior engraved gold and cropped samples still produced stretched wood-like marks. New original uniform gold replaces only this material.",
+    "Initial geometry report failed only because the production MODELDEF include had not yet been wired; the completed include and final geometry pass.",
+    "Final tool runner uses an explicit zero essence only for helmets; replacing the prior default preserves identical helmet and existing weapon fixture values."
+  ],
+  "environment": {
+    "os": "Windows11 Pro26200",
+    "cpu": "Ryzen9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX3070Ti",
+    "engine": "GZDoom4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "All twenty final detail/underside views, overview, regression and both presentation scenes were inspected. 130 closed components,126 fixed contacts and100 opening rays pass independent checks.",
+    "The shared simplified visor, static ribbon-like plumes, fixed medium mail relief, rust-toned metal, flat matte gold, repeated color samples, interpreted backs and omitted fine ornament require author review.",
+    "One sequential700-tic twelve-object pair measures queue intervals only. Models cost more in this pair; it does not establish GPU/display latency, repeatability or campaign/crowd performance. Projected footprints differ.",
+    "Native APIs and prepared metadata do not establish normal menus, crafting, ordinary handling or author acceptance. Final overlay model06 has byte-identical runtime entries to model07/08.",
+    "Twelve other armor states, ancestor-only pickup bindings, other characters, modular equipment and V5.16 remain unfinished. No executable, IWAD, compiled test package, DLL or save is committed."
+  ],
+  "files": {
+    "armor-regression/candidate-fresh-process.log": "2227b0c45dc0f1d0d98d9aeb4e9c222aea462f805cedd4f86fd838802972baeb",
+    "armor-regression/candidate-fresh.cfg": "ced84578d7ab32e6d69192498eb265d52a610eecaf21137a0fc075636811fc78",
+    "armor-regression/candidate-fresh.log": "3926dd3ffc3ae53e31a2a64d1d634d84fc238bd55cd1db1623827281a9b40d0a",
+    "armor-regression/candidate-fresh.png": "d5d3d324e865d57564d2ce0262870391067322011e3f526c6a6f45ac27f85245",
+    "armor-regression/fixture-source/MAPINFO.txt": "c8743364bd5ffe9a61d13c7cd61210e4a6adecca23b6f47f9dfe36f6fd9c1001",
+    "armor-regression/fixture-source/ZSCRIPT.txt": "4c27601e1198323b5c1459643dae4b4940915a0de62e5f6718b5ee8497784429",
+    "armor-regression/fixture.zs": "89c6d4c776ebd670035e3d500205f945da6989bcefedd0ee4be19717426c5268",
+    "armor-regression/RESULTS.json": "31bacff11720e0a9882fcd7cb90dc5ba3df485739aa6a9ea1a00f724319f58e0",
+    "armor-regression/run.py": "2c38a1392eed1f388f785d51f99e2b2f2d05f4d7c6f15a573f05018c76704227",
+    "armor-regression/session.ini": "7d322413df4372866f1f2fc101b69abe183e6d67522168c5b98619ef0d032cd3",
+    "build02.log": "325ec45dcacaab4c5334d3017713690b37de8873455a4e377e6895b83f23752f",
+    "continuity/baseline-process.log": "27c4bdf3439640c2fe00369b65b20e9796c512693e2c6bd281e0eae9e10013e5",
+    "continuity/baseline.cfg": "3e9057c45c409e675c08dbcdeeff32c1ebd9506577487f0139196538574ef608",
+    "continuity/baseline.log": "5446b5c6283b9866807f795a4fe623778b19b126c591b0aedda84bb94bbe456f",
+    "continuity/candidate-fresh-process.log": "023c53f3a202fdef3fc79a4915544fdd707c9e492296a43009c9af3283cbd7c4",
+    "continuity/candidate-fresh.cfg": "6fdf46c13aef3f57c655d1675da83013dbe9e32b467d445147d5d2f8284351b2",
+    "continuity/candidate-fresh.log": "8b1cc4d491c9c5714ec17334bb164b1c5c650f9d7f4798bd7b8b20750bc2bfa4",
+    "continuity/candidate-reload-process.log": "b0c9c9b61f80fe2e23b6c458713f11056aac92d0a45ada393b343fd28d264d1a",
+    "continuity/candidate-reload.cfg": "3c0b49cf8e4babcd2369b4d1e2d6d4fb5dae93c93f6b8939184a2bd8323e407a",
+    "continuity/candidate-reload.log": "4ed1e9250d97adcdd09e727dc54cce2407b69e379edc50f7fb64e882857ed901",
+    "continuity/fixture-source/MAPINFO.txt": "dd65192dda1ff2c6aca59a683d7c48807202cce22bb43e5b189a75425124c179",
+    "continuity/fixture-source/ZSCRIPT.txt": "e8bb9ac3d21ecbb7191c2a848ff66ece8b52d65f64901894a98029d362025804",
+    "continuity/fixture.zs": "ba815305a1bfed6a8c0552ed79b6480dc31620e50c0b04851d3553619c1907c0",
+    "continuity/old-save-load-part-1.cfg": "9aab471938f54723fee6d04ec118a6f0f928c93f7a8580eebfb44e01f65f1e39",
+    "continuity/old-save-load-process.log": "eacfa2e20b2a8c91234de714951a15180fd5852ab8bbf9b1f27633e5a8476584",
+    "continuity/old-save-load.cfg": "05957a3b67ad117ab12af70f520187bd7b39b223c0f289c97bb35ab0856b09f7",
+    "continuity/old-save-load.log": "3831570e9e676d6fc94ea14516b244fb13a5221a7fb83950b4f5f59f740a66fe",
+    "continuity/RESULTS.json": "030725cb1a3249bf67c68f4d5848c475838ec034f635fc84d8e3ce1748485c0f",
+    "continuity/rollback-load-process.log": "4de89faa10c59d62d57906abfe6ae7d4e80b3d5606ba32a9ac8dd26675d6d48a",
+    "continuity/rollback-load.cfg": "3c0b49cf8e4babcd2369b4d1e2d6d4fb5dae93c93f6b8939184a2bd8323e407a",
+    "continuity/rollback-load.log": "67bb458d1ebd60a81a7426f4ed8cd1887bb14ac9e71a5f92cb81819ee905487f",
+    "continuity/session.ini": "1ee829fa38fb58c04c8b5b1d9ba24a39bf9a16a6161e4a350c45f27e07fd704f",
+    "export-check-final.log": "4bafbdab69c9c9476144512cebcab0832e57fc1a9963d0b442a09e73b4f785f4",
+    "exports/model01.json": "c1fd18795a6595c51b7516bda9691c6c0c524b9b85df19aff805de5df5dd6429",
+    "exports/model02.json": "7549035908f47d588c0f211273a3e4d73bdd63945a55bbf9d3edbe11040e1672",
+    "exports/model03.json": "766598bea75caa7537f4f6692fd25b6b8997012687a2ba29d783c45f245f2ace",
+    "exports/model04.json": "766598bea75caa7537f4f6692fd25b6b8997012687a2ba29d783c45f245f2ace",
+    "exports/model05.json": "766598bea75caa7537f4f6692fd25b6b8997012687a2ba29d783c45f245f2ace",
+    "exports/model06.json": "7f35eb52cc7dfc275e2e2eeba52656186c9c481f888e80ceff919dc457a96b3f",
+    "exports/model07.json": "c51a3ae68c9803989dcde7b64c5a9da2f0b7b8eae00c59c3f3badb7f3b0a3f66",
+    "exports/model08.json": "c51a3ae68c9803989dcde7b64c5a9da2f0b7b8eae00c59c3f3badb7f3b0a3f66",
+    "geometry01.log": "ed9dde3ff42f73ab5073fbaa2472409c41e1d03bfcae14db4334944fe887feb8",
+    "geometry02.log": "35633a6bbe303fe2fb6c1438d76d9b6ed82164f6beb4a3b180b8267490c13eb7",
+    "geometry03.log": "cf05f5a7428f1a1d1faa46b00832ad4cef5cd3cb4190470c348f12b947cce84e",
+    "geometry04.log": "dbc6b0ee1d324a7b0f213fb6d3f128991168d0431ee61e01a6a18ecfd3453b43",
+    "geometry05.log": "dbc6b0ee1d324a7b0f213fb6d3f128991168d0431ee61e01a6a18ecfd3453b43",
+    "presentation/models-12/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-12/engine.log": "66396cea69321ef8c76b37f59be2146658ee6dbaadb3a03b72f4ee78dbe9a8d4",
+    "presentation/models-12/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-12/fixture-source/ZSCRIPT.txt": "38bdffd940108716895642d1b2a59373777fcaf341fc86a6b3c9ddfb36df72d8",
+    "presentation/models-12/presents.csv": "8de21bce6f0d597ce650b813b8f96b5312967012bb7b1004ef6d4e7f67007ae0",
+    "presentation/models-12/process.log": "d3dace3d4acfc8030e6050c7d50ce6421a989e3042bb4874af624ed55b583e7b",
+    "presentation/models-12/scene.png": "1edab13ce7c8f0a566a96e4eea8fa921597756663a2be6143508cd3b9bd48fa6",
+    "presentation/models-12/session.ini": "2c29b22a61c6d57b0424e63f7d307d259aa56bcef78cb8c59a8d63d937bfba6e",
+    "presentation/RESULTS.json": "b5b0159f99c1cd6108e672285c95c1c0b17879d474ff60ea0a5988a65706eeb2",
+    "presentation/sprites-12/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-12/engine.log": "d75bc66e1f2d4bc5f72dc17cb86923aa7a2384a7340ba6e637428aa48424a7ed",
+    "presentation/sprites-12/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-12/fixture-source/ZSCRIPT.txt": "38bdffd940108716895642d1b2a59373777fcaf341fc86a6b3c9ddfb36df72d8",
+    "presentation/sprites-12/presents.csv": "95c8aa7eb70953bd7264a383c1f1a37142667b5ffcfa16c36e4013f6f1687e6e",
+    "presentation/sprites-12/process.log": "cf8617d259bee99eb2efb5f31a9edaf922f9ae26c2ec38f50ae135fefad2eb2a",
+    "presentation/sprites-12/scene.png": "cfd8207fd312c2da24fc4ae550cdd11fae90f2796d8973a99368df1f09e307df",
+    "presentation/sprites-12/session.ini": "f9e11aa02e7903c975fe5f3679198563fa508d22ba1f6d2f10ffe61ae860aade",
+    "repeat07-08.json": "3548eb6a97dd7a55005f8552e4abb6b17f5822c2e288d05569325316b5fd3ea5",
+    "runtime-parity.json": "0ae1a119b2977ebbd7312b4b80992d84a5c86f92192043c49a38c8e518c5130d",
+    "superseded/visual01/detail-0-90.png": "ba52d8ef9ff5b876a57fdaf2374de156d2f2756bdbb76f6e216575df3b18590d",
+    "superseded/visual01/detail-1-90.png": "17e50faf1e4de1a0fd2da4abdf072cfdcfeee1439da577ce369598f276c0a14d",
+    "superseded/visual01/detail-2-90.png": "09d445a7b0942ef388933033c87233a1df8f536021c6df79db4bd89df5b308e7",
+    "superseded/visual01/detail-3-90.png": "12828e155c3abc997a81506c3786a8e75b1cc2069d088c2cdf23f2895bfefaca",
+    "superseded/visual01/fixture-source/MAPINFO.txt": "dd65192dda1ff2c6aca59a683d7c48807202cce22bb43e5b189a75425124c179",
+    "superseded/visual01/fixture-source/ZSCRIPT.txt": "03edd00595b4e901ba4e1e1275210cf9668be59dd2ffd2ca8c1925cae3f3f325",
+    "superseded/visual01/fixture.zs": "5b4c438c9e7ef5eef05a5f27a4f0e998a104e651b0a13fac4dba96963eba9877",
+    "superseded/visual01/RESULTS.json": "62422dc7e0f1fbcad8a749254eeddbd62f6896c459304fac2b0e91c1ecd8d289",
+    "superseded/visual01/session.ini": "dd825ec1db53ff5b1be64b8f9a0ab2ad568e007a5789f2b1309db739ea3f0932",
+    "superseded/visual01/visual-part-1.cfg": "f0aa323897d52a83ce799bd8d7966344e6a0a088e141497f0bc9279a9d23ad60",
+    "superseded/visual01/visual-process.log": "d23d9d67d07bd3280b8af26db8ba2959e14f5e86f7971a53df6ef8350fa63acf",
+    "superseded/visual01/visual.cfg": "176f1489e2ee120153e4020875be867c2ad0f4d69ce7abd22385b68583c2d229",
+    "superseded/visual01/visual.log": "e9cfb33f2a420b0d78cb6c45d8d7de43ad723c32fed4b5638fb39ecc47fbea5c",
+    "superseded/visual02/detail-0-90.png": "7b35c302cace93603d0605b7fd714b7a603d33afea1058e0f364861ba6263ac0",
+    "superseded/visual02/detail-1-90.png": "414bb8beee5ffecd0cf267d31962b027b96f1b281ddae72fdc38ce73c1bbc3e5",
+    "superseded/visual02/detail-2-90.png": "1e108ba64990265bd0733274669649114045f4aae996caeeb77af5b2bf1c0372",
+    "superseded/visual02/detail-3-90.png": "69328f9031b7fe4efb1ae488b66a2d807baa62d8001c2b3c47af0acf424b986a",
+    "superseded/visual02/fixture-source/MAPINFO.txt": "dd65192dda1ff2c6aca59a683d7c48807202cce22bb43e5b189a75425124c179",
+    "superseded/visual02/fixture-source/ZSCRIPT.txt": "e8bb9ac3d21ecbb7191c2a848ff66ece8b52d65f64901894a98029d362025804",
+    "superseded/visual02/fixture.zs": "ba815305a1bfed6a8c0552ed79b6480dc31620e50c0b04851d3553619c1907c0",
+    "superseded/visual02/RESULTS.json": "2e3689de6f93d7937c31d0ee8f08ef661cb2ad4a0984adf16a4ee5d01cc320f4",
+    "superseded/visual02/session.ini": "1358a78d04f0c5552b4b931956c959236dff8667f27acb79fa2f5b04269a75cd",
+    "superseded/visual02/visual-part-1.cfg": "f0aa323897d52a83ce799bd8d7966344e6a0a088e141497f0bc9279a9d23ad60",
+    "superseded/visual02/visual-process.log": "ed8230ef60cfa4edba6a67c1187abf55aab8f70c1b5db78f679e92c49dc7a6a3",
+    "superseded/visual02/visual.cfg": "9e01e6f00e2dea244042445fab828c8493b632ab652abbbce994c129e1b827d0",
+    "superseded/visual02/visual.log": "9635aeb83946ae1ca77f8a2e4fd239b6f069488d64dd1cfbcff3f1bdb137d9d1",
+    "superseded/visual03/detail-0-0.png": "d9ed9e15299ce6a0eaab64379b042878afc937b704c7aae0cadc6751a56daeda",
+    "superseded/visual03/detail-0-90.png": "7b35c302cace93603d0605b7fd714b7a603d33afea1058e0f364861ba6263ac0",
+    "superseded/visual03/fixture-source/MAPINFO.txt": "dd65192dda1ff2c6aca59a683d7c48807202cce22bb43e5b189a75425124c179",
+    "superseded/visual03/fixture-source/ZSCRIPT.txt": "e8bb9ac3d21ecbb7191c2a848ff66ece8b52d65f64901894a98029d362025804",
+    "superseded/visual03/fixture.zs": "ba815305a1bfed6a8c0552ed79b6480dc31620e50c0b04851d3553619c1907c0",
+    "superseded/visual03/RESULTS.json": "7199389537626a2797f43354c8fefc084b1d5532f36c079079d5fb0de21c999d",
+    "superseded/visual03/session.ini": "cf9579cda120801aa58f294fa91e876af930a5b8f0b8b5d00891021c59d93ab3",
+    "superseded/visual03/visual-part-1.cfg": "f0aa323897d52a83ce799bd8d7966344e6a0a088e141497f0bc9279a9d23ad60",
+    "superseded/visual03/visual-process.log": "f554ed648042431d677cc4eddae767e3b2815e9d279957418b99459e2fabb3ef",
+    "superseded/visual03/visual.cfg": "05b991262c6dd7012e4fb694b66e236a37e5c16853880bc62a52b8ff9efe641b",
+    "superseded/visual03/visual.log": "baee7db7ccee67bf0097394ad9cd23c05b62e8f5f9fa90d2cfd10aeb28127a56",
+    "visual/candidate-0.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+    "visual/candidate-1.png": "dac1b59b4c7aa1afa1533b246e43a26ab977d25baf32d72924d68eaca8d5d152",
+    "visual/candidate-2.png": "dfa77650418c165e52bc0fa128ef7a940db4d9b7d676fc8e3a701393b20df067",
+    "visual/candidate-3.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+    "visual/candidate-5.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+    "visual/candidate-6.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+    "visual/candidate-7.png": "df7c924ec4d4d940a77f70394ae575e514e306ba6e24fd0239d4c770bad60b10",
+    "visual/detail-0-0.png": "84908fc6ec3735ad16ef71513271354d6270b887f253dfcefb70f29e2818e2a0",
+    "visual/detail-0-160.png": "fa671b8f3fc3fdb2437760909015dfe50d8de04c2d518acb0c36300d2c144a8c",
+    "visual/detail-0-225.png": "b09588e5bd44072a74babf3fcea59d3be8cf5ec8c7c3e0e09d8cb41c209c0eed",
+    "visual/detail-0-270.png": "c51b5ff75682263c7c9c538f4387da03aa168bbc6dbb7ea822404089ed4686d6",
+    "visual/detail-0-90.png": "7d246e5f39b4b88e9f3cff27ddea309d1093faa762c9881c85f23ea00ba14e5d",
+    "visual/detail-1-0.png": "a939a6800f22324c247f3cefb1d736a737a7b28257b802977d593ffa451d5f31",
+    "visual/detail-1-160.png": "d2c4de0b32127671260f2dfeed435f77191ebb76085b8e65d28269ce4919c5ab",
+    "visual/detail-1-225.png": "96fe5260d8f7d46c4b2e6b506952675f10524ade0f72e0f34ba7c75b59554367",
+    "visual/detail-1-270.png": "e05fc356885f506a5da9a85292ea43438410167373c8aa0f103cb45422393139",
+    "visual/detail-1-90.png": "f8116fbe6b25339d7f634cee35d8b41cbcd1060ac24d3e007bb0698ef1aa3274",
+    "visual/detail-2-0.png": "798400e43a1be32f0ac6f0a6c7bfe0e9e18d9f7371d555b7e4a8d5e0002e8162",
+    "visual/detail-2-160.png": "facf3866346f8a9126e5f21fd2f5dc4e6490b7ba71983af07fe71d26486e056e",
+    "visual/detail-2-225.png": "cd999389bc197a150a9e38200f0ff27d28560e53cbdfa04fd13cd97ed99369fc",
+    "visual/detail-2-270.png": "3f353ce2d72a0b1c9cb8ebee195eda5225890c13b38be2f09575af08c083e5a5",
+    "visual/detail-2-90.png": "b90d6faa8f8841971216faea8a0f86509ce25b55a5aca0d36b3a703557c6efc9",
+    "visual/detail-3-0.png": "2aad4ed92055008ff697918e62ed53356d80d296e03356a9f5ed93f29912f706",
+    "visual/detail-3-160.png": "2ffef269a32ad304da70baa9657b4ec93f5f6cd5e4ef7866b704b327c5fd88a2",
+    "visual/detail-3-225.png": "5dd80340b3018e4ed721e801691cf071f6834f9bcf28b6e837eb56d8c96d95c2",
+    "visual/detail-3-270.png": "6cbf009cb4a23ff3ae5d13568eff64456020f2699c1e014c33c7dbae7f22d27a",
+    "visual/detail-3-90.png": "877c64149686137b52dd1cce31b87a83317a770cfb10814961c7a6183623493d",
+    "visual/fixture-source/MAPINFO.txt": "dd65192dda1ff2c6aca59a683d7c48807202cce22bb43e5b189a75425124c179",
+    "visual/fixture-source/ZSCRIPT.txt": "e8bb9ac3d21ecbb7191c2a848ff66ece8b52d65f64901894a98029d362025804",
+    "visual/fixture.zs": "ba815305a1bfed6a8c0552ed79b6480dc31620e50c0b04851d3553619c1907c0",
+    "visual/RESULTS.json": "a8b8b3bf9df30741786b91a936228d33a6e1c94afb8f0890b524ee58e5b81887",
+    "visual/session.ini": "3638336da964e1fccf6aa278c63c0afaccd3dcbf011f900003c60db6af634d4c",
+    "visual/visual-part-1.cfg": "f0aa323897d52a83ce799bd8d7966344e6a0a088e141497f0bc9279a9d23ad60",
+    "visual/visual-process.log": "0dc5a93a7504b6a37ea71e76f516b85240486fb4c867467a8c33efad453dcb02",
+    "visual/visual.cfg": "e5e25624410331a1240658a87e0556020fa3a922430298373951c411c8fc66de",
+    "visual/visual.log": "4fabbed557a9a2808fa6a5029c92878c7ea1fc7609504b0f75e3f7d77f1170c9",
+    "validation-final.json": "9b702629fc6b6a3d8675c1a6fa66df5cfcd3c6484d62ee09e2b7dcfe681b7961"
+  }
+}
