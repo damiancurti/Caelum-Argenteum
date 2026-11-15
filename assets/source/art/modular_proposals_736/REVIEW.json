@@ -1,0 +1,90 @@
+{
+  "issue": 736,
+  "release": "5.17.46",
+  "state": "Awaiting author review",
+  "selected": {
+    "human": "human/proposal-v1.png",
+    "goblin": "goblin/proposal-v1.png",
+    "caelith": "caelith/proposal-v2.png",
+    "wolf": "wolf/proposal-v1.png",
+    "bear": "bear/proposal-v1.png",
+    "puma": "puma/proposal-v1.png",
+    "jaguar": "jaguar/proposal-v1.png"
+  },
+  "observed": [
+    "All eight generated boards were inspected inline, including retained Caelith v1 and revised v2.",
+    "All seven selected boards contain two adult variants with front, profile and back views.",
+    "Plain clothing, natural beast heads and distinct species palettes are visible."
+  ],
+  "families": {
+    "human": {
+      "image": "human/proposal-v1.png",
+      "review_note": "Grounded adult proportions and plain garments. Male facial hair and female shoulder-length hair are examples only; the four faces and four hairstyles per sex remain separate work.",
+      "author_accepted": false
+    },
+    "goblin": {
+      "image": "goblin/proposal-v1.png",
+      "review_note": "Natural tan skin and pointed ears preserve the owned references. Review whether the body silhouette and ear-to-head proportions distinguish this family enough from humans.",
+      "author_accepted": false
+    },
+    "caelith": {
+      "image": "caelith/proposal-v2.png",
+      "review_note": "Green skin with white hair is one example of independent skin/hair choices. Version 1 shortened the ears; version 2 restores the longer pointed silhouette. Skin RGB and all six hair colors remain required.",
+      "author_accepted": false
+    },
+    "wolf": {
+      "image": "wolf/proposal-v1.png",
+      "review_note": "Gray/brown/cream fur and a full animal muzzle. Review the neck ruff and transition into the collar, head scale and male/female body distinction.",
+      "author_accepted": false
+    },
+    "bear": {
+      "image": "bear/proposal-v1.png",
+      "review_note": "Brown fur, round ears and a broad animal muzzle. The clothed body remains close to the common humanoid base; review whether the shoulder/torso mass is sufficient for the intended bear form.",
+      "author_accepted": false
+    },
+    "puma": {
+      "image": "puma/proposal-v1.png",
+      "review_note": "Unspotted tawny coat and a feline muzzle, using the corrected puma_head_v2 reference. Review head scale, muzzle depth and collar transition.",
+      "author_accepted": false
+    },
+    "jaguar": {
+      "image": "jaguar/proposal-v1.png",
+      "review_note": "Golden coat, dark rosettes and a broad feline muzzle. Review jaguar identity, head scale and whether rosettes remain readable at gameplay distance.",
+      "author_accepted": false
+    }
+  },
+  "module_contract": [
+    {
+      "module": "Body",
+      "requirement": "Race/sex anatomy and shared animation landmarks; clothing must not be baked into the body. Covered anatomy is not validated by these images."
+    },
+    {
+      "module": "Head / face",
+      "requirement": "Separate head with a clean neck join. Four distinct faces per humanoid sex remain required; beast heads retain their animal identity."
+    },
+    {
+      "module": "Hair",
+      "requirement": "Separate interchangeable scalp/hair modules. Four styles and six colors per humanoid sex remain required. Animal fur does not become a human hairstyle."
+    },
+    {
+      "module": "Hands",
+      "requirement": "Independent skin/fur hands and equipment attachment. Gloves in these boards conceal fingers; exposed hands still need actual model review."
+    },
+    {
+      "module": "Clothing",
+      "requirement": "Shirt, trousers, belt, gloves and boots are separate garments with compatible attachments and coverage. These boards do not demonstrate interchangeable meshes."
+    },
+    {
+      "module": "Equipment",
+      "requirement": "Weapons, shields and armor attach independently and must fit the approved bodies. No outfit Cartesian-product meshes; no new equipment is granted by appearance."
+    }
+  ],
+  "limitations": [
+    "Concept images are not 3D files or native runtime captures.",
+    "Clothing hides the underlying body, fingers and feet; no attachment, topology or animation proof is claimed.",
+    "Face/hair catalogs, palette masking, garment fitting and native performance remain unimplemented by this patch.",
+    "Each board is independently framed; apparent size differences do not define numeric height, collision or balance.",
+    "No tail or new limb configuration is proposed here; any anatomy beyond existing references remains unauthored.",
+    "Painted views are an artist brief, not geometrically identical projections from one model."
+  ]
+}

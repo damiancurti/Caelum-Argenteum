@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.45** - 2026-11-14.
+Documentation version: **5.17.46** - 2026-11-14.
+
+## 5.17.46 - Modular style proposals before conversion (#736, 2026-11-14)
+
+The author answered "Revisar propuestas visuales antes" to the #458 style
+proposal. Prepared seven concept boards for human/goblin/Caelith and four
+animal forms, fourteen sex variants, using owned references. Preserved all
+eight generated images, including the Caelith ear-length correction.
+Recorded exact built-in image_gen prompts, provenance, hashes and a single
+review surface. Static checks and page captures are retained under
+assets/validation_v5_17_46/evidence; no new engine test or author acceptance
+is claimed. Only the two required release diagnostics change in src.
+CA736-MODULAR-STYLE-01 originates here and remains pending.
 
 ## 5.17.45 - Fabric, raw fibers and rope drops (#733, 2026-11-14)
 
