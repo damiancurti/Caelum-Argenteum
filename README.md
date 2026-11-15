@@ -6,8 +6,10 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.75.** Obtain and update the complete repository,
+**Current release: 5.17.76.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#795 adds a native Kasogonaga candidate; geometry, save and combat checks pass. Consolidated author review remains pending.
 
 #793 adds Teju Jagua to the Selva inspection gallery; native checks pass and consolidated author review remains pending.
 

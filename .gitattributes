@@ -1182,3 +1182,10 @@ src/MODELDEF text eol=lf
 
 /assets/validation_v5_17_75/*.py text eol=lf
 /assets/validation_v5_17_75/evidence/** -text -diff
+
+assets/source/art/kasogonaga_795/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+assets/generators/*kasogonaga*.py text eol=lf
+assets/validation_v5_17_76/*.py text eol=lf
+assets/validation_v5_17_76/*.json text eol=lf
+assets/validation_v5_17_76/evidence/** -text -diff
+src/caelum/data/kasogonaga_combat.modeldef text eol=lf
