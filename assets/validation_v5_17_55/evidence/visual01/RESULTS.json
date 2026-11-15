@@ -1,0 +1,39 @@
+{
+  "issue": 753,
+  "kind": "orbs",
+  "scope": "Native pickup/toss, quantity and saved ownership for orbs; no normal menu or author acceptance.",
+  "baseline_sha256": "f505521decdef1a2f575b9034083884968086855de2308d18e9fc7418bc68a19",
+  "runtime_sha256": "f505521decdef1a2f575b9034083884968086855de2308d18e9fc7418bc68a19",
+  "model_sha256": "580ec438008cdfa94400e99c21a36baf7ea50bde533525007d1a341190a521fd",
+  "fixture_sha256": "9176e559f1016e0616d10363a8870d41cb2293c8171359d3aefc96d2c9ad0215",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 1,
+      "passed": false,
+      "errors": [
+        "CA753 FAIL orb 0 native pickup",
+        "CA753 FAIL orb 0 exact native ownership",
+        "CA753 FAIL orb 1 native pickup",
+        "CA753 FAIL orb 1 exact native ownership",
+        "CA753 FAIL orb 2 native pickup",
+        "CA753 FAIL orb 2 exact native ownership",
+        "CA753 FAIL orb 3 native pickup",
+        "CA753 FAIL orb 3 exact native ownership",
+        "CA753 FAIL orb 4 native pickup",
+        "CA753 FAIL orb 4 exact native ownership",
+        "CA753 FAIL orb 5 native pickup",
+        "CA753 FAIL orb 5 exact native ownership",
+        "CA753 FAIL three native orb classes and all qualities retained",
+        "CA753 FAIL orb 0 original world quantity and ownership",
+        "CA753 FAIL orb 0 unchanged icon and orb state",
+        "CA753 FAIL orb 0 copied provenance",
+        "VM execution aborted: tried to read from address zero.",
+        "Expected 167 native assertions, observed 20"
+      ],
+      "assertions": 20
+    }
+  ],
+  "captures": {}
+}

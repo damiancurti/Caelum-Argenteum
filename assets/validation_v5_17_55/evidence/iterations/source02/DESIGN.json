@@ -1,0 +1,246 @@
+{
+  "schema_revision": 1,
+  "issue": 753,
+  "parent_issue": 647,
+  "status": "native_candidate_pending_author_review",
+  "model_path": "models/caelum/inventory/orbs",
+  "materials": {
+    "orb_t1": {
+      "texture": "models/caelum/inventory/orbs/atlas.png",
+      "original_source": "assets/art_source/support_sprites/orb-floating-source.png",
+      "image_size": [
+        2172,
+        724
+      ],
+      "rect_pixels": [
+        0,
+        0,
+        724,
+        724
+      ]
+    },
+    "orb_t2": {
+      "texture": "models/caelum/inventory/orbs/atlas.png",
+      "original_source": "assets/art_source/support_sprites/orb-floating-source.png",
+      "image_size": [
+        2172,
+        724
+      ],
+      "rect_pixels": [
+        724,
+        0,
+        1448,
+        724
+      ]
+    },
+    "orb_t3": {
+      "texture": "models/caelum/inventory/orbs/atlas.png",
+      "original_source": "assets/art_source/support_sprites/orb-floating-source.png",
+      "image_size": [
+        2172,
+        724
+      ],
+      "rect_pixels": [
+        1448,
+        0,
+        2172,
+        724
+      ]
+    }
+  },
+  "variants": {
+    "orb_t1": {
+      "class": "CaelumWeaponPickup",
+      "sprite": "S479",
+      "frame": "D",
+      "item_type": 19,
+      "tier": 1,
+      "reference": "src/graphics/caelum/icons/support_sprites/orb_t1.png",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "metal": "orb_t1",
+      "additional_bindings": [
+        {
+          "class": "CA_LimboMagicImplement",
+          "sprite": "S479",
+          "frame": "D"
+        },
+        {
+          "class": "CaelumMaterialPickup",
+          "sprite": "M091",
+          "frame": "A"
+        }
+      ],
+      "parts": [
+        {
+          "kind": "spherical_relief",
+          "part": "carved_orb",
+          "rings": 48,
+          "segments": 64,
+          "radius": 54,
+          "relief_depth": 3.0,
+          "source_center": [
+            408.5,
+            321.0
+          ],
+          "source_radii": [
+            231.5,
+            234.0
+          ],
+          "alpha_floor": 250,
+          "uv_edge_inset": 0.985,
+          "uv_inward_step": 0.995,
+          "sample_radius": 2,
+          "wood_color_span": 150
+        }
+      ]
+    },
+    "orb_t2": {
+      "class": "CaelumWeaponPickup",
+      "sprite": "S479",
+      "frame": "E",
+      "item_type": 19,
+      "tier": 2,
+      "reference": "src/graphics/caelum/icons/support_sprites/orb_t2.png",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "metal": "orb_t2",
+      "additional_bindings": [
+        {
+          "class": "CA_LimboMagicImplement",
+          "sprite": "S479",
+          "frame": "E"
+        }
+      ],
+      "parts": [
+        {
+          "kind": "spherical_relief",
+          "part": "carved_orb",
+          "rings": 48,
+          "segments": 64,
+          "radius": 54,
+          "relief_depth": 3.0,
+          "source_center": [
+            1088.5,
+            320.0
+          ],
+          "source_radii": [
+            237.5,
+            234.0
+          ],
+          "alpha_floor": 250,
+          "uv_edge_inset": 0.985,
+          "uv_inward_step": 0.995,
+          "sample_radius": 2,
+          "wood_color_span": 150
+        }
+      ]
+    },
+    "orb_t3": {
+      "class": "CaelumWeaponPickup",
+      "sprite": "S479",
+      "frame": "F",
+      "item_type": 19,
+      "tier": 3,
+      "reference": "src/graphics/caelum/icons/support_sprites/orb_t3.png",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "metal": "orb_t3",
+      "additional_bindings": [
+        {
+          "class": "CA_LimboMagicImplement",
+          "sprite": "S479",
+          "frame": "F"
+        }
+      ],
+      "parts": [
+        {
+          "kind": "spherical_relief",
+          "part": "carved_orb",
+          "rings": 48,
+          "segments": 64,
+          "radius": 54,
+          "relief_depth": 3.0,
+          "source_center": [
+            1766.5,
+            320.5
+          ],
+          "source_radii": [
+            236.5,
+            234.5
+          ],
+          "alpha_floor": 250,
+          "uv_edge_inset": 0.985,
+          "uv_inward_step": 0.995,
+          "sample_radius": 2,
+          "wood_color_span": 150
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "src/graphics/caelum/icons/support_sprites/orb_t1.png": "0b83ebd3f25cf1764e72f24158d51626e2680e68877b8a6b7853ceabe87df41d",
+    "src/graphics/caelum/icons/support_sprites/orb_t2.png": "6e196d5ec6c84db0449b5570a05e0574b046506c1f95a12091f7f97e9eb02fac",
+    "src/graphics/caelum/icons/support_sprites/orb_t3.png": "06e36df489a2eae9e9b6ce7199a2ee776198dfb46ece68ee9820525f0176d146",
+    "assets/art_source/support_sprites/orb-floating-source.png": "d469a1838ea4b13200c09af34a2e643405a93c5c3d039554904ede07cc092eac",
+    "assets/art_source/support_sprites/ORB_EDIT.json": "d1927441607103b86eeed4ae5e075b9efb7aadf1e37e5f4cfaf79c7e9e4f3ffa",
+    "assets/art_source/support_sprites/MANIFEST.json": "78b6dc20c1426ea759fb1484696795f18d2c7174bec0e9643e7b68a720bfa6f3",
+    "src/caelum/equipment/CaelumSupportArt.zs": "5933f0ea55b94e5d30894501d7e1ac590a03ef35844a3677370328d79d474762",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04"
+  },
+  "runtime_cases": [
+    {
+      "class": "CaelumWeaponPickup",
+      "item_type": 19,
+      "tier": 1
+    },
+    {
+      "class": "CaelumWeaponPickup",
+      "item_type": 19,
+      "tier": 2
+    },
+    {
+      "class": "CaelumWeaponPickup",
+      "item_type": 19,
+      "tier": 3
+    },
+    {
+      "class": "CA_LimboMagicImplement",
+      "item_type": 19,
+      "tier": 1
+    },
+    {
+      "class": "CA_LimboMagicImplement",
+      "item_type": 19,
+      "tier": 2
+    },
+    {
+      "class": "CA_LimboMagicImplement",
+      "item_type": 19,
+      "tier": 3
+    },
+    {
+      "class": "CaelumMaterialPickup",
+      "item_type": 91,
+      "tier": 1
+    },
+    {
+      "class": "CaelumMaterialPickup",
+      "item_type": 91,
+      "tier": 2
+    },
+    {
+      "class": "CaelumMaterialPickup",
+      "item_type": 91,
+      "tier": 3
+    }
+  ],
+  "dimensions_note": "Editable art coordinates only. The accepted baseless #479 orb supplies sphere silhouette, wood scrollwork and blue insets; tiers2/3 retain their painted silver/gold bands. Radial relief is derived from the owned color regions, not a billboard. Native fit follows each unchanged128px icon envelope. The material base keeps its current T1 representation for all three material tiers. No held sprite, hand, physics or gameplay change."
+}

@@ -40,6 +40,7 @@ from assets.generators.validate_inventory_hygiene_models import validate as inve
 from assets.generators.validate_inventory_kitchen_ingredients_models import validate as kitchen_ingredient_problems
 from assets.generators.validate_inventory_cartridge_kits_models import validate as cartridge_kit_problems
 from assets.generators.validate_inventory_elemental_essences_models import validate as elemental_essence_problems
+from assets.generators.validate_inventory_orbs_models import validate as orb_problems
 from assets.generators.validate_inventory_gems_models import validate as inventory_gem_problems
 from assets.generators.validate_inventory_book_bindings import validate as inventory_book_problems
 from assets.generators.validate_inventory_jewelry_models import validate as inventory_jewelry_problems
@@ -156,6 +157,7 @@ def validate(root):
     errors.extend(kitchen_ingredient_problems(root))
     errors.extend(cartridge_kit_problems(root))
     errors.extend(elemental_essence_problems(root))
+    errors.extend(orb_problems(root))
     errors.extend(inventory_ingot_problems(root))
     errors.extend(regional_material_problems(root))
     errors.extend(beast_regional_material_problems(root))

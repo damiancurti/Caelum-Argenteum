@@ -1,0 +1,72 @@
+{
+  "issue": 753,
+  "kind": "orbs",
+  "scope": "Native pickup/toss, quantity and saved ownership for orbs; no normal menu or author acceptance.",
+  "baseline_sha256": "f505521decdef1a2f575b9034083884968086855de2308d18e9fc7418bc68a19",
+  "runtime_sha256": "80d4a83e2ce5721866389a7712d245e4383406895ce44d4bb6806a00345854c1",
+  "model_sha256": null,
+  "fixture_sha256": "69edddeb80fdec2e5a8a876e0365344c969044b93156b66814d695b621a09136",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 160
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 138
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 160
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 131
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 131
+    }
+  ],
+  "captures": {
+    "baseline.png": "85710b819f11d03f2ba07fdf9c209fdcc2e2694d129f80c18c9b9ccb0cbf7378",
+    "candidate-0.png": "f3b1b2ad691012714aeedc1454474924e41c839eeea615eabd0def7a07024725",
+    "candidate-1.png": "1621416ae520d3b263884a07e16efd09bd29179257aa4b85e77cb270eb76bc6c",
+    "candidate-2.png": "3cf78572a9b457adb791e89d46eb1ac144a55bcaaf18b96753c85a9e25c00145",
+    "candidate-3.png": "f3b1b2ad691012714aeedc1454474924e41c839eeea615eabd0def7a07024725",
+    "candidate-5.png": "f3b1b2ad691012714aeedc1454474924e41c839eeea615eabd0def7a07024725",
+    "candidate-6.png": "f3b1b2ad691012714aeedc1454474924e41c839eeea615eabd0def7a07024725",
+    "candidate-7.png": "ce55f834649b51896285179e28e8d11d5e8c01411ad9d3be925897bcbd91a7ba",
+    "detail-0-0.png": "96284f0956ea750450f1a264d74602a37099fc1cd97d7c2689b7c7e6fa12a87d",
+    "detail-0-160.png": "68c56e0c1e5b22884d27021ba402b3d3bd81df77762992297882c1b3e38fd7d8",
+    "detail-0-225.png": "301ec1816582ed707a67d540841539b70fc94bd5387999cfb3ac0a46ffdaa686",
+    "detail-0-270.png": "e2d595559eba8d1b64c8284166f4fb0e1456f78f18e10e94c8eab53eea793723",
+    "detail-0-90.png": "5e019f0047c5f8f6dbb8c416d4f24a1e9a1285b2aab7bd725bede0a759826e93",
+    "detail-1-0.png": "d88b2c35dbbe901b4b3f1126891a7a4bdcef8cc465138dbe8b84673088c5aa9b",
+    "detail-1-160.png": "8ddd4be3cc5dc5217e86b66324d4116ff57b81b097934e1dc02ec0a6e6893eed",
+    "detail-1-225.png": "bcf599ed173057b65e71de037c1e09156e7b314dca22ac9fe21fe4146eb9197d",
+    "detail-1-270.png": "79eb33e6ab527dce86398f89c13f2a371747c02e49cbe9c0a30ff419dafac034",
+    "detail-1-90.png": "715ffbe4b9ef91d053880fecfd402c83f45a5e947084715be1b12c46f7a2c86e",
+    "detail-2-0.png": "50ec9c35982f702c78efe25c4c3ea4ebd8fc2919674e6650c7d0014de8d9a205",
+    "detail-2-160.png": "de9bcc04d5ca3ed9aac3cafc7633b235f9f47f4713306fbbbe99521996ec950f",
+    "detail-2-225.png": "b23c7c156c6aaccef949b6717997011e4431c626c8d561993aa784b8d5375202",
+    "detail-2-270.png": "07cab1de03d2e693961fe4e466b8cc16751737159606c37ae85e59afe79af7da",
+    "detail-2-90.png": "3e672d48ae9b4e3aad1863f0cbc58fc7bb08d0d00b878a2b97130c9b2bd76e6b"
+  }
+}
