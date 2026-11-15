@@ -4,6 +4,34 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-248 - Verify exact native model states and typed diagnostic censuses
+
+Status/evidence: STATIC-VERIFIED and ENGINE-OBSERVED, #785, 2026-11-15.
+GZDoom4.14.2 rendered CA_LimboMagicImplement CSWD A and CaelumJavelinAmmo CCAA A
+as sprites while their parent controls rendered existing models. Finding a
+MODELDEF on an ancestor was insufficient. Exact child/state aliases corrected
+both without changing class identity, geometry, sprites or gameplay. Keep
+ancestor matches as candidates until native inspection; class-only coverage
+cannot establish the current state's model. Do not generalize these two cases
+into an untested universal engine inheritance rule.
+
+The initial isolated AllActorClasses census compared GetClassName() against a
+String[] and admitted only3 of597 project Inventory classes. String(...) then
+failed compilation. Direct Name[] matching enumerates597 and the diagnostic now
+requires known inventory families. Exact engine types and census completeness
+must be checked before interpreting a small result as success. This is a
+once-only class registry diagnostic, not a production scan of live actors.
+
+A separate initial scale equality failed on0.100000000 versus0.100000001 after
+native ammo Tick. A1e-6 comparison tests scale while exact ownership, amount,
+radius and height checks remain. Baseline/final identical fixtures pass32 checks;
+12 final detail views and an overview were inspected. Two audit runs repeat
+fixture bytes, census and856 directly bound rows. Evidence:
+assets/validation_v5_17_71/evidence/SUMMARY.json. This establishes bounded native
+binding behavior, not ordinary handling, every possible subclass, art acceptance
+or a campaign performance result.
+
+
 ## CA-KP-247 - Resolve effective TEXTURES art before sizing native models
 
 Status/evidence: STATIC-VERIFIED and ENGINE-OBSERVED, #769, 2026-11-15.

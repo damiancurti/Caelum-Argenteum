@@ -1,0 +1,13 @@
+{
+  "entries": 18558,
+  "sha256": "29b1bb85919155984d68c4232d242725020fb82460d67deeabc14b88ecb23708",
+  "added": [
+    "caelum/data/inventory_inherited_defaults.modeldef"
+  ],
+  "changed": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "all_other_bytes_identical": true
+}
