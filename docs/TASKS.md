@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.72** - 2026-11-15.
+Documentation version: **5.17.73** - 2026-11-15.
+
+## #790 - Quadruped regional gallery (5.17.73)
+
+Familiar and Ao Ao are displayed in their approved NOA/Selva plots of CA682G.
+Fourteen figures, five plots, twenty controls and187 native checks pass; four
+fixture files repeat. CA790-QUADRUPED-GALLERY-01 retains author review of framing,
+ground transitions and walking. Art/gameplay acceptance remains separate under
+CA787-QUADRUPEDS-01. Continue remaining bestiary/named characters and campaign
+work; modular proposals still await the requested visual review.
 
 ## 5.17.72 - #787 quadrupeds delivered; author review pending
 

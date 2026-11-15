@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.72** - 2026-11-15.
+Documentation version: **5.17.73** - 2026-11-15.
+
+## 5.17.73 - Quadruped regional display (#790)
+
+CA682G adds Familiar/NOA and Ao Ao/Selva using exact existing models and grounds.
+Fourteen figures, ten species, five plots and twenty controls are available.
+Four fixture files repeat;187 fresh/reload/idle/walking assertions pass. ASSETS
+records bounded presentation evidence. CA790-QUADRUPED-GALLERY-01 awaits author
+review; ordinary creature art/combat remains separate under CA787-QUADRUPEDS-01.
+The broader character conversion and V5.16 campaign remain incomplete.
 
 ## 5.17.72 - Familiar and Ao Ao native candidates (#787)
 
