@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.58** - 2026-11-15.
+Documentation version: **5.17.59** - 2026-11-15.
+
+## 5.17.59 - Hooded effigy drops (#761, 2026-11-15)
+
+Added three original hooded sculptures and six exact support-weapon bindings.
+Native inspection prompted a new wood/deep-recess texture, with its full
+image-generation prompt and unchanged output retained. Fourteen deterministic
+exports, closed geometry, 513 installed continuity assertions and 122 final
+visual/control assertions pass. Fifteen final detail views and the overview
+were inspected. ASSETS records the art and presentation limitations.
+Evidence: assets/validation_v5_17_59/evidence/SUMMARY.json.
+CA761-EFFIGY-DROPS-01 originates here and remains pending. No author check was
+accepted or removed. Broader 3D and V5.16 work remains incomplete.
 
 ## 5.17.58 - Scepter/censer quality models (#759, 2026-11-15)
 

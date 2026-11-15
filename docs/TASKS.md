@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.58** - 2026-11-15.
+Documentation version: **5.17.59** - 2026-11-15.
+
+## #761 - Hooded effigy drops (5.17.59)
+
+S479 PQR have native sculptures in both weapon classes, with original icon
+and support rules preserved. Fourteen repeated outputs, 513 installed
+continuity and 122 final visual/control assertions pass. Fifteen detail
+views were inspected after improving hood/recess contrast. Author check
+CA761-EFFIGY-DROPS-01 remains pending. Physical weapon drops and remaining
+bestiary are separate tasks; #736 modular visual proposals await author
+review and the V5.16 campaign remains incomplete.
 
 ## #759 - Scepter/censer quality drops (5.17.58)
 

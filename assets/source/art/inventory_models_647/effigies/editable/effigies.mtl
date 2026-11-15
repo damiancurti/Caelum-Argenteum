@@ -1,0 +1,18 @@
+newmtl wood
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/effigies/wood.png
+newmtl blue
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl bronze
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl gold
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl silver
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/weapon_components/metals.png
+newmtl hood_surface
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/effigies/wood.png

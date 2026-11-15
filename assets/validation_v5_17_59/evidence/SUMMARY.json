@@ -1,0 +1,695 @@
+{
+  "issue": 761,
+  "parent_issue": 647,
+  "version": "5.17.59",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Six exact S479 PQR bindings for support effigy26 in CaelumWeaponPickup and CA_LimboMagicImplement. Three native hooded figures follow the owned quality reference, with closed carving, real hood/sleeve recesses, blue cords and silver/gold fittings. A new opaque walnut/deep-recess atlas is recorded with its exact prompt and hash. Existing icons, held art, quintessence rules, tier statistics, scale/collision, durability, recipes and persistence remain unchanged.",
+  "runtime": {
+    "sha256": "04670ba48dde811c5ad9286803f61c57eaa4c10882671d56ce7df9f9cdfb0e82",
+    "source_entries": 18509,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "1805cceb9e89b859b5897543a16340ab4e3f7b8c68cafe261d4c65babc08ede3",
+    "new_resources": [
+      "caelum/data/inventory_effigies.modeldef",
+      "models/caelum/inventory/effigies/effigy_t1.md3",
+      "models/caelum/inventory/effigies/effigy_t2.md3",
+      "models/caelum/inventory/effigies/effigy_t3.md3",
+      "models/caelum/inventory/effigies/wood.png"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 14,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "effigy_t1": {
+        "closed_components": 14,
+        "fixed_attachment_witnesses": 13,
+        "connected_components": 14,
+        "opening_probes": 3,
+        "opening_rays": 15,
+        "native_triangles": 9072
+      },
+      "effigy_t2": {
+        "closed_components": 15,
+        "fixed_attachment_witnesses": 14,
+        "connected_components": 15,
+        "opening_probes": 3,
+        "opening_rays": 15,
+        "native_triangles": 9840
+      },
+      "effigy_t3": {
+        "closed_components": 15,
+        "fixed_attachment_witnesses": 14,
+        "connected_components": 15,
+        "opening_probes": 3,
+        "opening_rays": 15,
+        "native_triangles": 9840
+      }
+    },
+    "variants": {
+      "effigy_t1": {
+        "class": "CaelumWeaponPickup",
+        "parts": [
+          "robe",
+          "base",
+          "base_band",
+          "hood",
+          "sleeve-1",
+          "chest_cord-1",
+          "sleeve1",
+          "chest_cord1",
+          "waist_cord",
+          "knot",
+          "hanging_cord-1",
+          "cord_tip-1",
+          "hanging_cord1",
+          "cord_tip1"
+        ],
+        "closed_outward_components": 14,
+        "vertices": 4812,
+        "triangles": 9072,
+        "surfaces": [
+          {
+            "material": "wood",
+            "vertices": 1364,
+            "triangles": 2688
+          },
+          {
+            "material": "blue",
+            "vertices": 2168,
+            "triangles": 4176
+          },
+          {
+            "material": "hood_surface",
+            "vertices": 1280,
+            "triangles": 2208
+          }
+        ],
+        "reference_opaque_bounds": [
+          43,
+          8,
+          85,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -18.404458099854253,
+              -17.42222222222222,
+              0.0
+            ],
+            "max": [
+              18.404458099854253,
+              17.42222222222222,
+              112.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 0.9572649572649573,
+          "floor": 0.0
+        }
+      },
+      "effigy_t2": {
+        "class": "CaelumWeaponPickup",
+        "parts": [
+          "robe",
+          "base",
+          "base_band",
+          "hood",
+          "sleeve-1",
+          "chest_cord-1",
+          "sleeve1",
+          "chest_cord1",
+          "waist_cord",
+          "knot",
+          "hanging_cord-1",
+          "cord_tip-1",
+          "hanging_cord1",
+          "cord_tip1",
+          "medallion"
+        ],
+        "closed_outward_components": 15,
+        "vertices": 5214,
+        "triangles": 9840,
+        "surfaces": [
+          {
+            "material": "wood",
+            "vertices": 788,
+            "triangles": 1536
+          },
+          {
+            "material": "blue",
+            "vertices": 1364,
+            "triangles": 2640
+          },
+          {
+            "material": "silver",
+            "vertices": 1782,
+            "triangles": 3456
+          },
+          {
+            "material": "hood_surface",
+            "vertices": 1280,
+            "triangles": 2208
+          }
+        ],
+        "reference_opaque_bounds": [
+          43,
+          8,
+          85,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -18.404458099854253,
+              -17.42222222222222,
+              0.0
+            ],
+            "max": [
+              18.404458099854253,
+              17.42222222222222,
+              112.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 0.9572649572649573,
+          "floor": 0.0
+        }
+      },
+      "effigy_t3": {
+        "class": "CaelumWeaponPickup",
+        "parts": [
+          "robe",
+          "base",
+          "base_band",
+          "hood",
+          "sleeve-1",
+          "chest_cord-1",
+          "sleeve1",
+          "chest_cord1",
+          "waist_cord",
+          "knot",
+          "hanging_cord-1",
+          "cord_tip-1",
+          "hanging_cord1",
+          "cord_tip1",
+          "medallion"
+        ],
+        "closed_outward_components": 15,
+        "vertices": 5214,
+        "triangles": 9840,
+        "surfaces": [
+          {
+            "material": "wood",
+            "vertices": 788,
+            "triangles": 1536
+          },
+          {
+            "material": "blue",
+            "vertices": 1364,
+            "triangles": 2640
+          },
+          {
+            "material": "gold",
+            "vertices": 1782,
+            "triangles": 3456
+          },
+          {
+            "material": "hood_surface",
+            "vertices": 1280,
+            "triangles": 2208
+          }
+        ],
+        "reference_opaque_bounds": [
+          43,
+          8,
+          85,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -18.404458099854253,
+              -17.42222222222222,
+              0.0
+            ],
+            "max": [
+              18.404458099854253,
+              17.42222222222222,
+              112.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 0.9572649572649573,
+          "floor": 0.0
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 761,
+    "kind": "effigies",
+    "scope": "Native pickup/toss, quantity and saved ownership for effigies; no normal menu or author acceptance.",
+    "baseline_sha256": "1805cceb9e89b859b5897543a16340ab4e3f7b8c68cafe261d4c65babc08ede3",
+    "runtime_sha256": "04670ba48dde811c5ad9286803f61c57eaa4c10882671d56ce7df9f9cdfb0e82",
+    "model_sha256": null,
+    "fixture_sha256": "d114ae8ff9ccf81b6666590f5d1d4f3e17c143db526bae2a917fa7e31d40b5e2",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 115
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 99
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 115
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 92
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 92
+      }
+    ],
+    "captures": {
+      "baseline.png": "eb7796ecc296b1f32c2f7668d238dd738a83b0e893610d7098a73b7038368c11",
+      "candidate-0.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+      "candidate-1.png": "0de3396516730b17fa10cba2817310b57739d98d3ef45a1a4ffbf2e269b70fe7",
+      "candidate-2.png": "6e6da305caf4995e53366bf2bd89288a59e9b1093ab121907618b852d9754d80",
+      "candidate-3.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+      "candidate-5.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+      "candidate-6.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+      "candidate-7.png": "07b764242dfc09e89814e50a13eb9a85377bd1832ad58258d6a8ec32770ceec3",
+      "detail-0-0.png": "c530cb61ddd8ed5735addec17daf8e7922d920b5ef0e5542e12538a83ee1734f",
+      "detail-0-160.png": "bad13174f660afbc8e82b6daab36051ae4c718139b2d0dcbfaf6f5917affc1c4",
+      "detail-0-225.png": "77392c277efdcc78f29e7c84cc378e7f504f163f4875ba320192834f42311f97",
+      "detail-0-270.png": "9eae58c991e685e32cdfb608831b34798a96b0d4712465012ec6066a097e5e64",
+      "detail-0-90.png": "4211c8a29bdf7183d1361c26509e7adf75ee78704f6992513406b4580b5bea32",
+      "detail-1-0.png": "9db4bb2ff96b27b21162dde59bcad93825c25ec6360b70fa5471638282325810",
+      "detail-1-160.png": "8b135ce42a6d14c10c4b98c84e1d18263bcd915df1524e5118eca4336b046fb8",
+      "detail-1-225.png": "1973e6ce708aa100f225aa8389d3db76fa18820ff6ceccaa07ac9302d0c0b708",
+      "detail-1-270.png": "7926383e807a7cc8f6b7df6e4be656f9dfeff3c6ba6d99c9cc93e69df5dd5b5b",
+      "detail-1-90.png": "bbac0b7956b462097fd5da57f4d56128e2d5f89570c5ff64d65fefdd03c47dfc",
+      "detail-2-0.png": "0afc65294a39915ba271ace620f91fa38e4c36fcd4f7d668058ff217978fa28d",
+      "detail-2-160.png": "157eb06dae0aa46b38a45f3eb924448149ec35c573066372872f8141e2ba3973",
+      "detail-2-225.png": "14e24a5600ddf9075318e883ebf4d3b9220dc445bbb439f91fa60cc0dc986628",
+      "detail-2-270.png": "2dd57d758d671030cace9c409a30006625f5f6d7489a723d5fcb2120b7a267d0",
+      "detail-2-90.png": "b9198f4d321a5690ef07041f7801432c51fef0855ff40d94b3b97dbaa22fe687"
+    }
+  },
+  "visual": {
+    "issue": 761,
+    "kind": "effigies",
+    "scope": "Native pickup/toss, quantity and saved ownership for effigies; no normal menu or author acceptance.",
+    "baseline_sha256": "1805cceb9e89b859b5897543a16340ab4e3f7b8c68cafe261d4c65babc08ede3",
+    "runtime_sha256": "1805cceb9e89b859b5897543a16340ab4e3f7b8c68cafe261d4c65babc08ede3",
+    "model_sha256": "d7a7546d9284c737cfa0a141ed3dc04ca008e4796750658cb1c5fe848d8c6b89",
+    "fixture_sha256": "d114ae8ff9ccf81b6666590f5d1d4f3e17c143db526bae2a917fa7e31d40b5e2",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "visual",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 122
+      }
+    ],
+    "captures": {
+      "candidate-0.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+      "candidate-1.png": "0de3396516730b17fa10cba2817310b57739d98d3ef45a1a4ffbf2e269b70fe7",
+      "candidate-2.png": "6e6da305caf4995e53366bf2bd89288a59e9b1093ab121907618b852d9754d80",
+      "candidate-3.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+      "candidate-5.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+      "candidate-6.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+      "candidate-7.png": "07b764242dfc09e89814e50a13eb9a85377bd1832ad58258d6a8ec32770ceec3",
+      "detail-0-0.png": "c530cb61ddd8ed5735addec17daf8e7922d920b5ef0e5542e12538a83ee1734f",
+      "detail-0-160.png": "bad13174f660afbc8e82b6daab36051ae4c718139b2d0dcbfaf6f5917affc1c4",
+      "detail-0-225.png": "77392c277efdcc78f29e7c84cc378e7f504f163f4875ba320192834f42311f97",
+      "detail-0-270.png": "9eae58c991e685e32cdfb608831b34798a96b0d4712465012ec6066a097e5e64",
+      "detail-0-90.png": "4211c8a29bdf7183d1361c26509e7adf75ee78704f6992513406b4580b5bea32",
+      "detail-1-0.png": "9db4bb2ff96b27b21162dde59bcad93825c25ec6360b70fa5471638282325810",
+      "detail-1-160.png": "8b135ce42a6d14c10c4b98c84e1d18263bcd915df1524e5118eca4336b046fb8",
+      "detail-1-225.png": "1973e6ce708aa100f225aa8389d3db76fa18820ff6ceccaa07ac9302d0c0b708",
+      "detail-1-270.png": "7926383e807a7cc8f6b7df6e4be656f9dfeff3c6ba6d99c9cc93e69df5dd5b5b",
+      "detail-1-90.png": "bbac0b7956b462097fd5da57f4d56128e2d5f89570c5ff64d65fefdd03c47dfc",
+      "detail-2-0.png": "0afc65294a39915ba271ace620f91fa38e4c36fcd4f7d668058ff217978fa28d",
+      "detail-2-160.png": "157eb06dae0aa46b38a45f3eb924448149ec35c573066372872f8141e2ba3973",
+      "detail-2-225.png": "14e24a5600ddf9075318e883ebf4d3b9220dc445bbb439f91fa60cc0dc986628",
+      "detail-2-270.png": "2dd57d758d671030cace9c409a30006625f5f6d7489a723d5fcb2120b7a267d0",
+      "detail-2-90.png": "b9198f4d321a5690ef07041f7801432c51fef0855ff40d94b3b97dbaa22fe687"
+    }
+  },
+  "presentation": {
+    "issue": 761,
+    "kind": "effigies",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "1805cceb9e89b859b5897543a16340ab4e3f7b8c68cafe261d4c65babc08ede3",
+    "runtime_sha256": "04670ba48dde811c5ad9286803f61c57eaa4c10882671d56ce7df9f9cdfb0e82",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 6,
+        "pid": 31948,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 334501212.37,
+          "END": 334521161.79550004
+        },
+        "fixture_sha256": "cf221fe7cc58a03f3388cbe99f84b4250c7c3a5ad2e79a26c2691d346fc21cb9",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            6,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.56979385714286,
+          "p50_ms": 28.6197,
+          "p95_ms": 30.7828,
+          "p99_ms": 31.4295,
+          "max_ms": 32.4224
+        },
+        "presentation": {
+          "pid": 31948,
+          "trace_sha256": "f8636976c3f1f305430166edafc39b0353d57f1ca0a6d0b81978e3b702930d54",
+          "rows": 17665,
+          "scene_presents": 11910,
+          "mean_present_fps": 682.5384842478203,
+          "present_intervals": {
+            "samples": 11909,
+            "mean_ms": 1.4651188512865068,
+            "p50_ms": 1.0853999853134155,
+            "p95_ms": 4.26010000705719,
+            "p99_ms": 5.164200007915497,
+            "max_ms": 9.660099983215332
+          },
+          "native_call_duration": {
+            "samples": 11910,
+            "mean_ms": 0.12762431557893153,
+            "p50_ms": 0.10969996452331543,
+            "p95_ms": 0.22780001163482666,
+            "p99_ms": 0.33799999952316284,
+            "max_ms": 0.7847999930381775
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 6,
+        "pid": 46272,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 334537480.8053,
+          "END": 334557434.8636
+        },
+        "fixture_sha256": "cf221fe7cc58a03f3388cbe99f84b4250c7c3a5ad2e79a26c2691d346fc21cb9",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            6,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571959428571425,
+          "p50_ms": 28.5799,
+          "p95_ms": 30.92,
+          "p99_ms": 31.5468,
+          "max_ms": 33.9919
+        },
+        "presentation": {
+          "pid": 46272,
+          "trace_sha256": "36c2f7d22ca443f981020249a1a0a69e69459162ab86292d10ba6ea0ba97c784",
+          "rows": 17797,
+          "scene_presents": 12172,
+          "mean_present_fps": 697.3942112537592,
+          "present_intervals": {
+            "samples": 12171,
+            "mean_ms": 1.4339092350683886,
+            "p50_ms": 1.0600000023841858,
+            "p95_ms": 4.266400039196014,
+            "p99_ms": 5.402300000190735,
+            "max_ms": 9.978500008583069
+          },
+          "native_call_duration": {
+            "samples": 12172,
+            "mean_ms": 0.12230230047637759,
+            "p50_ms": 0.10509997606277466,
+            "p95_ms": 0.2150999903678894,
+            "p99_ms": 0.308199942111969,
+            "max_ms": 0.7139000296592712
+          }
+        }
+      }
+    ]
+  },
+  "art": {
+    "inspected_views": [
+      "visual02/detail-0-0.png",
+      "visual02/detail-0-90.png",
+      "visual02/detail-0-160.png",
+      "visual02/detail-0-225.png",
+      "visual02/detail-0-270.png",
+      "visual02/detail-1-0.png",
+      "visual02/detail-1-90.png",
+      "visual02/detail-1-160.png",
+      "visual02/detail-1-225.png",
+      "visual02/detail-1-270.png",
+      "visual02/detail-2-0.png",
+      "visual02/detail-2-90.png",
+      "visual02/detail-2-160.png",
+      "visual02/detail-2-225.png",
+      "visual02/detail-2-270.png"
+    ],
+    "overview": "visual02/candidate-0.png",
+    "source_geometry_review": "assets/validation_v5_17_56/evidence/SUMMARY.json",
+    "author_check": "CA761-EFFIGY-DROPS-01"
+  },
+  "iterations": [
+    "Visual01 passed122 native/control checks and all geometry checks. Front and side inspection showed the recess too similar to exterior wood. Added a new two-region opaque wood atlas to distinguish outer grain and deep cavity; geometry remains unchanged."
+  ],
+  "environment": {
+    "os": "Windows11 Pro26200",
+    "cpu": "Ryzen9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX3070Ti",
+    "engine": "GZDoom4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "All fifteen final native detail/underside views and the floor overview were inspected. New two-region wood atlas after visual01 showed weak hood contrast. Geometry remains identical between those visual candidates.",
+    "The carved profile is simplified and symmetric, cords are static, medallions and base trim are plain, and matte wood remains dark. Unseen rear/underside surfaces are interpretations. Existing 2D approval is not native3D acceptance.",
+    "One sequential700-tic six-object pair measures queue intervals only, not GPU/display timing, repeatability or campaign/crowd performance. Both scenes were inspected; projected sprite/model footprints differ.",
+    "Native pickup/equip/unequip/toss APIs and prepared Box/quest/provenance state do not prove ordinary menus, casting, crafting or author acceptance.",
+    "Other weapon states, characters, modular equipment and V5.16 campaign remain unfinished. No executable, IWAD, compiled test package, DLL or save committed."
+  ],
+  "files": {
+    "build01.log": "7b6e85a4e77b9c3083c4e42755daa576c216f229f76ab7196f9e5296359e7603",
+    "continuity/baseline-process.log": "a334d5f219b173fdb4fe58b9fe016e7c5e4e74096011ed25169bf116afd4dac0",
+    "continuity/baseline.cfg": "38411d815ade5a2ceb9d932cfdd8081bfe67961bdac5c86848f672108c7ef7f7",
+    "continuity/baseline.log": "b755ed200e0506d777bcedcfee0f52b0e80681789ba5f4f57ef331118c2d0216",
+    "continuity/baseline.png": "eb7796ecc296b1f32c2f7668d238dd738a83b0e893610d7098a73b7038368c11",
+    "continuity/candidate-0.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+    "continuity/candidate-1.png": "0de3396516730b17fa10cba2817310b57739d98d3ef45a1a4ffbf2e269b70fe7",
+    "continuity/candidate-2.png": "6e6da305caf4995e53366bf2bd89288a59e9b1093ab121907618b852d9754d80",
+    "continuity/candidate-3.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+    "continuity/candidate-5.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+    "continuity/candidate-6.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+    "continuity/candidate-7.png": "07b764242dfc09e89814e50a13eb9a85377bd1832ad58258d6a8ec32770ceec3",
+    "continuity/candidate-fresh-process.log": "b1c3122c31c9b349dbf2c1af425f12c32dd5bf127fe26a0879e9e2d07aebf209",
+    "continuity/candidate-fresh.cfg": "f259132480763b5e71930dbc8ea0d76f016ea1e727ee6b21574c32ea553716aa",
+    "continuity/candidate-fresh.log": "6122b47af3e7070d71434a6d2c3cc93f840e087009d6e8cf87ce4bdc30e4a33e",
+    "continuity/candidate-reload-process.log": "879c12391f08991f3bac66d684ae8582d4e656cb3861ff27e1e1771a89feaf59",
+    "continuity/candidate-reload.cfg": "9df5ccc7c397c04c63dbf7d108f0571f544753b00f28626d6b5e141ed38208fb",
+    "continuity/candidate-reload.log": "58592f5a16fc6fbea05fba785b53d5693a2b8eb550591204b33c10105f699fe1",
+    "continuity/detail-0-0.png": "c530cb61ddd8ed5735addec17daf8e7922d920b5ef0e5542e12538a83ee1734f",
+    "continuity/detail-0-160.png": "bad13174f660afbc8e82b6daab36051ae4c718139b2d0dcbfaf6f5917affc1c4",
+    "continuity/detail-0-225.png": "77392c277efdcc78f29e7c84cc378e7f504f163f4875ba320192834f42311f97",
+    "continuity/detail-0-270.png": "9eae58c991e685e32cdfb608831b34798a96b0d4712465012ec6066a097e5e64",
+    "continuity/detail-0-90.png": "4211c8a29bdf7183d1361c26509e7adf75ee78704f6992513406b4580b5bea32",
+    "continuity/detail-1-0.png": "9db4bb2ff96b27b21162dde59bcad93825c25ec6360b70fa5471638282325810",
+    "continuity/detail-1-160.png": "8b135ce42a6d14c10c4b98c84e1d18263bcd915df1524e5118eca4336b046fb8",
+    "continuity/detail-1-225.png": "1973e6ce708aa100f225aa8389d3db76fa18820ff6ceccaa07ac9302d0c0b708",
+    "continuity/detail-1-270.png": "7926383e807a7cc8f6b7df6e4be656f9dfeff3c6ba6d99c9cc93e69df5dd5b5b",
+    "continuity/detail-1-90.png": "bbac0b7956b462097fd5da57f4d56128e2d5f89570c5ff64d65fefdd03c47dfc",
+    "continuity/detail-2-0.png": "0afc65294a39915ba271ace620f91fa38e4c36fcd4f7d668058ff217978fa28d",
+    "continuity/detail-2-160.png": "157eb06dae0aa46b38a45f3eb924448149ec35c573066372872f8141e2ba3973",
+    "continuity/detail-2-225.png": "14e24a5600ddf9075318e883ebf4d3b9220dc445bbb439f91fa60cc0dc986628",
+    "continuity/detail-2-270.png": "2dd57d758d671030cace9c409a30006625f5f6d7489a723d5fcb2120b7a267d0",
+    "continuity/detail-2-90.png": "b9198f4d321a5690ef07041f7801432c51fef0855ff40d94b3b97dbaa22fe687",
+    "continuity/fixture-source/MAPINFO.txt": "5cad1bb27cf6bc799defdb189aa521b36cdc0d09cf663d985440c441d215cb21",
+    "continuity/fixture-source/ZSCRIPT.txt": "977b4d063016c10cac3e08c045f1fdc99e1a23f55caf5a53692077e656c60d04",
+    "continuity/fixture.zs": "e1ca6f3169f40dc29892aa2b923fcc19f85579dd406ccac5b5dd515f3519c1c6",
+    "continuity/old-save-load-part-1.cfg": "5872e1a68ce458c1947aa4818e205b2f91b1797bb7a4adf30b9af3da01d708dc",
+    "continuity/old-save-load-process.log": "6a274a6a9544ec81bf5bf82dbbc5f3fb38731bbf3f6c6f7cbeb51f799834c499",
+    "continuity/old-save-load.cfg": "28a9f0e1a0d238ead69142f45ebdcc81bfddc72b73cff13867372eeb7495c1b6",
+    "continuity/old-save-load.log": "85b7518161bcc7c35131b391e6f20928f9a25883129d51761238b2221bcebb00",
+    "continuity/RESULTS.json": "23eb19095d9abb59a7e358e710cae790195392df3bf5fff9109b6090ffc47063",
+    "continuity/rollback-load-process.log": "76f2b8645e33e5976c567f8faa06dc3e2e00ae5aac7d063cd34c33a07bee0b8f",
+    "continuity/rollback-load.cfg": "9df5ccc7c397c04c63dbf7d108f0571f544753b00f28626d6b5e141ed38208fb",
+    "continuity/rollback-load.log": "cbcab156efd6f96b10fbba1e8a675efe79fb1615e947dd34a6d256f01348d5a4",
+    "continuity/session.ini": "4ac43da1a824fc162b831e824b3f4c51a30cd4413a2b3dc8bbae8a1ffb8c4e56",
+    "export-check.log": "805611d08f5666b0a5ce5203888b340fcb4b82dcf4cd36cb606619f8a97f8dc4",
+    "exports/model01.json": "969e6bb4afb6d7c74977e437a34ee86576cebfab06f027da7b509a853db02f84",
+    "exports/model02.json": "5c56cf1fbe7723115783b30558ab7778b77cd381dfea61d914b2e189df3968fe",
+    "exports/model03.json": "5c56cf1fbe7723115783b30558ab7778b77cd381dfea61d914b2e189df3968fe",
+    "geometry-final.log": "b130a7df205d941c1e248d49fa3532e3ee7580829b929d2838e91caaa68dc98c",
+    "geometry01.log": "b130a7df205d941c1e248d49fa3532e3ee7580829b929d2838e91caaa68dc98c",
+    "geometry02.log": "b130a7df205d941c1e248d49fa3532e3ee7580829b929d2838e91caaa68dc98c",
+    "iterations/source01/DESIGN.json": "d2cd5f185705678fc40012b3e811e04f2a153770a4114ce13d5275190b4d8258",
+    "iterations/source01/generate_inventory_effigies_models.py": "6ba9eb4ed1b800d89ce132b80ba64ffbab235a27278b50934f067c22cfebfe22",
+    "iterations/source01/PROVENANCE.json": "80521dddb4453c8030e9bc06398ee9503f5da3b8cb5e3a2867a1d0b65e58715c",
+    "iterations/source01/validate_inventory_effigies_models.py": "6169af99aac697573831ec8db62ad0a0e9005d2a1578a0172b7c6265f61b23d1",
+    "presentation/models-6/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-6/engine.log": "31c89b7881026040c83488bcbb20063c1c7bedca7828ea46a174ca3ca7fde50a",
+    "presentation/models-6/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-6/fixture-source/ZSCRIPT.txt": "d95952d7f4ebd4cafd5d80eb5686c6d3f350ccbd9c8a5736719f857b423cd7fe",
+    "presentation/models-6/presents.csv": "36c2f7d22ca443f981020249a1a0a69e69459162ab86292d10ba6ea0ba97c784",
+    "presentation/models-6/process.log": "51e14823d85fe03d4311f2ae809e87bf1888ec0ba2c8a3e8d3b7782e74c48d7e",
+    "presentation/models-6/scene.png": "6c9893c035c746ae30b6f5c850c8d1f5a2580eb8f4bcc6f10b1c7a6bb54f8a4e",
+    "presentation/models-6/session.ini": "ab96d8e7e6df29fc01fc5a8a5038e6c83cd4307238fb18f4250f082888dddd5e",
+    "presentation/RESULTS.json": "31ee8899afa13891ae007798e23115939110754c6bcbc18ab3c914e97b3578b0",
+    "presentation/sprites-6/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-6/engine.log": "eb3b724101337be11414fd984db9e5fb82ea62787f2aba05a89bed558f9f72b6",
+    "presentation/sprites-6/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-6/fixture-source/ZSCRIPT.txt": "d95952d7f4ebd4cafd5d80eb5686c6d3f350ccbd9c8a5736719f857b423cd7fe",
+    "presentation/sprites-6/presents.csv": "f8636976c3f1f305430166edafc39b0353d57f1ca0a6d0b81978e3b702930d54",
+    "presentation/sprites-6/process.log": "4cc986c0ecd7ddce8bc8fdcb7bd6bca1728e2d109896fe1e0128aa779a3630d1",
+    "presentation/sprites-6/scene.png": "c648b7ecd4ee74f916cfd1ddc29744cc8da15a115d3d1bea301ce9d8ae91c713",
+    "presentation/sprites-6/session.ini": "dfb6167bde6851bf817abf2ce1a63656bca9c07a6e939fea06d0c4b457fc79a1",
+    "repeat02-03.json": "a822cd44532a65879a58a02f9d29877500ad4d8cc70bf518b7312121356f9f97",
+    "visual01/candidate-0.png": "592ffc525ea6a5e4e93d6ef47ee1420347d2e9271363ffbb58ae0229094370c4",
+    "visual01/candidate-1.png": "1ade03408ed68e2146ed9d1733ac6bc9fd557aba9f74b880fe3daf2a0f5cd4ff",
+    "visual01/candidate-2.png": "d9967d90464c83c5509cd9a702f06fa5844da1a68bcb9202f62125fc3054234a",
+    "visual01/candidate-3.png": "592ffc525ea6a5e4e93d6ef47ee1420347d2e9271363ffbb58ae0229094370c4",
+    "visual01/candidate-5.png": "592ffc525ea6a5e4e93d6ef47ee1420347d2e9271363ffbb58ae0229094370c4",
+    "visual01/candidate-6.png": "592ffc525ea6a5e4e93d6ef47ee1420347d2e9271363ffbb58ae0229094370c4",
+    "visual01/candidate-7.png": "3c13a929417f793c5bc09f611c0cb12f4f57cacd552b6410326ec0b041b9d8f9",
+    "visual01/detail-0-0.png": "7c1112d121c344207e675ba42b89c2ccb5b4d6531678f25ba0b0f4f1e3a69a55",
+    "visual01/detail-0-160.png": "5f5bfb6c6e334c9ead653c822b8a3394ba90e7cd7ecf8279946fded741bdcb1d",
+    "visual01/detail-0-225.png": "d75dfb155dfbe53acd3f08ed93b6359ffadfabd1dc508615a88495b1f9d4c845",
+    "visual01/detail-0-270.png": "f6702b09596e80d46f2e36e5ee7dceb0e6a90e28468d43f50b4e4732f43ad71a",
+    "visual01/detail-0-90.png": "7fdc07a6f568fbddbdb0840f0abbd6977dd9d2fe6139f55c7ff470a40f3e987a",
+    "visual01/detail-1-0.png": "0d3c72579f0cf174ecfa474ba62329897518c7860d40c8499d6859492ea7decc",
+    "visual01/detail-1-160.png": "9a3e38756c9c2541061ced54401a3317db894c605e74803aae3a3a952ef84b71",
+    "visual01/detail-1-225.png": "90cf58b0f306726ac735b474d65f222b7844821efbe6a41c647337eb802f4b5b",
+    "visual01/detail-1-270.png": "5200d40d4fb984935ee743514b2d2edd6a355d7553c1f1c13392f20867c6849f",
+    "visual01/detail-1-90.png": "18de543a13c4ea85b4cfc16a976a7f2a848adca07f8de32f487db7d9c60920c4",
+    "visual01/detail-2-0.png": "15c147f61d9846ba199b7ac13c64e7b6e043877194b6ce2b84c78d7d34b5db03",
+    "visual01/detail-2-160.png": "aaae7048a7fc49852fc368f0ddd96827fa9764625d483c132f999c7699e435f7",
+    "visual01/detail-2-225.png": "12598e60afcefbe1247d439c24c8f1e2bf48e921cf2b9415504c48da225186dc",
+    "visual01/detail-2-270.png": "87ed5bee3b96fec75330648ecb28bf1a9b6f132068955833e9989c3321bc4221",
+    "visual01/detail-2-90.png": "efa62542895d49d2a22b2bf1dbea5bc218eb778803d8af44efe6f71b89a1bb00",
+    "visual01/fixture-source/MAPINFO.txt": "5cad1bb27cf6bc799defdb189aa521b36cdc0d09cf663d985440c441d215cb21",
+    "visual01/fixture-source/ZSCRIPT.txt": "977b4d063016c10cac3e08c045f1fdc99e1a23f55caf5a53692077e656c60d04",
+    "visual01/fixture.zs": "e1ca6f3169f40dc29892aa2b923fcc19f85579dd406ccac5b5dd515f3519c1c6",
+    "visual01/RESULTS.json": "51ed15790866d842c31915acbe9c5e8a843f04af1f0109394b1760da6f8b2040",
+    "visual01/session.ini": "49ca110e32b9e6d26b2472e09db238dedcda2734914b45d8467279036700a716",
+    "visual01/visual-part-1.cfg": "3f97bbbb0e54cd964dae693be0d5e7409d3e985d17be8ae874ba6deaa767c339",
+    "visual01/visual-process.log": "4dfaa90c86b53ec113ad8b8e4a12293f2486fedc2f170ecc657cbfe967deb543",
+    "visual01/visual.cfg": "6f48c5fca4e9346dea8ddb69eb1745ce4dac7e08abc1d4586144579f43cdad9f",
+    "visual01/visual.log": "147e512c9b6781b04fa9e5d99730959b071630da10afe6e4843dd5396a8b077e",
+    "visual02/candidate-0.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+    "visual02/candidate-1.png": "0de3396516730b17fa10cba2817310b57739d98d3ef45a1a4ffbf2e269b70fe7",
+    "visual02/candidate-2.png": "6e6da305caf4995e53366bf2bd89288a59e9b1093ab121907618b852d9754d80",
+    "visual02/candidate-3.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+    "visual02/candidate-5.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+    "visual02/candidate-6.png": "9d8f05b2772902adcee55cca1cde2621dfc838090d74a3e5e1b38037bed1e3a3",
+    "visual02/candidate-7.png": "07b764242dfc09e89814e50a13eb9a85377bd1832ad58258d6a8ec32770ceec3",
+    "visual02/detail-0-0.png": "c530cb61ddd8ed5735addec17daf8e7922d920b5ef0e5542e12538a83ee1734f",
+    "visual02/detail-0-160.png": "bad13174f660afbc8e82b6daab36051ae4c718139b2d0dcbfaf6f5917affc1c4",
+    "visual02/detail-0-225.png": "77392c277efdcc78f29e7c84cc378e7f504f163f4875ba320192834f42311f97",
+    "visual02/detail-0-270.png": "9eae58c991e685e32cdfb608831b34798a96b0d4712465012ec6066a097e5e64",
+    "visual02/detail-0-90.png": "4211c8a29bdf7183d1361c26509e7adf75ee78704f6992513406b4580b5bea32",
+    "visual02/detail-1-0.png": "9db4bb2ff96b27b21162dde59bcad93825c25ec6360b70fa5471638282325810",
+    "visual02/detail-1-160.png": "8b135ce42a6d14c10c4b98c84e1d18263bcd915df1524e5118eca4336b046fb8",
+    "visual02/detail-1-225.png": "1973e6ce708aa100f225aa8389d3db76fa18820ff6ceccaa07ac9302d0c0b708",
+    "visual02/detail-1-270.png": "7926383e807a7cc8f6b7df6e4be656f9dfeff3c6ba6d99c9cc93e69df5dd5b5b",
+    "visual02/detail-1-90.png": "bbac0b7956b462097fd5da57f4d56128e2d5f89570c5ff64d65fefdd03c47dfc",
+    "visual02/detail-2-0.png": "0afc65294a39915ba271ace620f91fa38e4c36fcd4f7d668058ff217978fa28d",
+    "visual02/detail-2-160.png": "157eb06dae0aa46b38a45f3eb924448149ec35c573066372872f8141e2ba3973",
+    "visual02/detail-2-225.png": "14e24a5600ddf9075318e883ebf4d3b9220dc445bbb439f91fa60cc0dc986628",
+    "visual02/detail-2-270.png": "2dd57d758d671030cace9c409a30006625f5f6d7489a723d5fcb2120b7a267d0",
+    "visual02/detail-2-90.png": "b9198f4d321a5690ef07041f7801432c51fef0855ff40d94b3b97dbaa22fe687",
+    "visual02/fixture-source/MAPINFO.txt": "5cad1bb27cf6bc799defdb189aa521b36cdc0d09cf663d985440c441d215cb21",
+    "visual02/fixture-source/ZSCRIPT.txt": "977b4d063016c10cac3e08c045f1fdc99e1a23f55caf5a53692077e656c60d04",
+    "visual02/fixture.zs": "e1ca6f3169f40dc29892aa2b923fcc19f85579dd406ccac5b5dd515f3519c1c6",
+    "visual02/RESULTS.json": "6aeee27c0b0bc4b669c61cebf350a10618453804b1f66fc088bec4a2abedd2c8",
+    "visual02/session.ini": "312dfb191e25f96d95523270aae5c1f05b326cb9016e28c283d146d2b31f6e06",
+    "visual02/visual-part-1.cfg": "3f97bbbb0e54cd964dae693be0d5e7409d3e985d17be8ae874ba6deaa767c339",
+    "visual02/visual-process.log": "a2fbaac04c92093bfd312109e8fb42736051aa2a1183ab7902cbe358be587b8d",
+    "visual02/visual.cfg": "aca83b56985b14b3e9ce7010a5cb95f45c769783f371f4338306fabfc7cb4a92",
+    "visual02/visual.log": "a5fd5c4b8b63f90d19df5267ef32cf46b822368f8d74540e8e3561dfcb9074ad",
+    "validation-final.json": "a9eaf778a7f068d3eb296abe3b93d788db51711a6d40581d6518a5674b398801"
+  }
+}

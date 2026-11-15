@@ -1,6 +1,61 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.58** - 2026-11-15.
+Documentation version: **5.17.59** - 2026-11-15.
+
+## 5.17.59 - Hooded effigy quality drops (#761, parent #647)
+
+Six exact S479 PQR bindings cover support effigy26 in CaelumWeaponPickup and
+CA_LimboMagicImplement. Three original closed sculptures follow the owned
+effigy-source.png: carved robe and pedestal/grip, actual hollow hood and
+sleeves, blue crossing cords, belt, knot and hanging cords. Tier I uses plain
+wood and blue cords; tiers II/III add silver-colored/gold medallions and trim.
+The source icons, held art, quintessence rules, support behavior, statistics,
+weight, durability, scale/collision, recipes and persistence are unchanged.
+Rejected #479 procedural models remain inactive.
+
+Editable sources and provenance: assets/source/art/inventory_models_647/effigies.
+Existing blue/gold (#755) and silver-colored (#723) textures are reused
+unchanged. A new opaque walnut/deep-recess wood.png was generated with the
+built-in image_gen.imagegen tool, copied byte-for-byte, and recorded with its
+full prompt, output provenance and SHA256 in MATERIALS_PROMPT.json. No raster
+retouching was applied. Portable OBJ/MTL sources include their texture copies.
+Regenerate with python assets/generators/generate_inventory_effigies_models.py
+--output build/effigies --install. Fourteen outputs repeat byte-for-byte.
+The three meshes total 15,240 vertices, 28,752 triangles, 44 closed components,
+41 attachment witnesses and 45 cavity rays. Independent topology/winding,
+quantized native faces, opaque UV regions, reference envelopes and floor
+contact checks pass.
+
+Visual01 passed 122 native/control checks, but front/side inspection showed
+weak contrast inside the hood. The new two-region atlas distinguishes the
+wood exterior from deep hood/sleeve recesses without changing geometry.
+All fifteen final detail, side, rear and raised underside views plus the
+floor overview were inspected. The profile is simplified and symmetric,
+cords are static, medallions/base trim are plain, and matte wood remains dark.
+Hidden surfaces are interpretations. These require author visual review;
+accepted 2D source art does not establish acceptance of the native models.
+
+Six class/tier cases pass 513 installed continuity assertions: 115 baseline,
+99 old-save adoption, 115 fresh, 92 reload and 92 rollback. The final visual
+run adds 122 passing checks. Native pickup/equip/unequip/toss, repickup,
+identity, essence, weight, durability, provenance and prepared Box/quest
+guards pass. Ordinary menus, support casting and crafting remain author
+checks. The packaged source parity and bounded presentation measurements are
+recorded in assets/validation_v5_17_59/evidence/SUMMARY.json.
+
+One sequential 700-tic six-object sprite/model pair records 682.54/697.39
+queue presents/s, p95 4.2601/4.2664 ms and p99
+5.1642/5.4023 ms. Windows11, Ryzen9 5950X, RTX3070Ti, GZDoom4.14.2,
+Vulkan1280x720, uncapped/vsync off, background unpaused/audio5%. Both scenes
+were inspected. Unequal projected footprints and queue timing do not establish
+GPU/display timing, repeatability or campaign/crowd performance. All
+18,509 packaged entries match src; only three new models, one new
+texture, the binding definition, MODELDEF and two diagnostic release strings
+differ from #759.
+
+CA761-EFFIGY-DROPS-01 retains author visual and ordinary gameplay review.
+Physical weapons, characters, modular equipment and V5.16 campaign remain
+unfinished.
 
 ## 5.17.58 - Scepter and censer quality models (#759, parent #647)
 

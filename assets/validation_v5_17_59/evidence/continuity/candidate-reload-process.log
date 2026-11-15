@@ -1,0 +1,150 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-15 02:22:06
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue761-effigies01.pk3, 18509 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue761-native01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2994.10 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+CA761 PASS all six weapon cases retained
+CA761 PASS magic weapon 0 saved reference
+CA761 PASS magic weapon 0 original world quantity and ownership
+CA761 PASS magic weapon 0 exact native class, state and original icon
+CA761 PASS magic weapon 0 original scale, collision and floor contact
+CA761 PASS magic weapon 0 copied provenance
+CA761 PASS magic weapon 0 native type, quality and valid essence
+CA761 PASS magic weapon 0 original weight
+CA761 PASS magic weapon 0 independent saved identity
+CA761 PASS magic weapon 0 original world flags
+CA761 PASS magic weapon 0 native durability and size
+CA761 PASS magic weapon 1 saved reference
+CA761 PASS magic weapon 1 original world quantity and ownership
+CA761 PASS magic weapon 1 exact native class, state and original icon
+CA761 PASS magic weapon 1 original scale, collision and floor contact
+CA761 PASS magic weapon 1 copied provenance
+CA761 PASS magic weapon 1 native type, quality and valid essence
+CA761 PASS magic weapon 1 original weight
+CA761 PASS magic weapon 1 independent saved identity
+CA761 PASS magic weapon 1 original world flags
+CA761 PASS magic weapon 1 native durability and size
+CA761 PASS magic weapon 2 saved reference
+CA761 PASS magic weapon 2 original world quantity and ownership
+CA761 PASS magic weapon 2 exact native class, state and original icon
+CA761 PASS magic weapon 2 original scale, collision and floor contact
+CA761 PASS magic weapon 2 copied provenance
+CA761 PASS magic weapon 2 native type, quality and valid essence
+CA761 PASS magic weapon 2 original weight
+CA761 PASS magic weapon 2 independent saved identity
+CA761 PASS magic weapon 2 original world flags
+CA761 PASS magic weapon 2 native durability and size
+CA761 PASS magic weapon 3 saved reference
+CA761 PASS magic weapon 3 original world quantity and ownership
+CA761 PASS magic weapon 3 exact native class, state and original icon
+CA761 PASS magic weapon 3 original scale, collision and floor contact
+CA761 PASS magic weapon 3 copied provenance
+CA761 PASS magic weapon 3 native type, quality and valid essence
+CA761 PASS magic weapon 3 original weight
+CA761 PASS magic weapon 3 independent saved identity
+CA761 PASS magic weapon 3 original world flags
+CA761 PASS magic weapon 3 native durability and size
+CA761 PASS magic weapon 4 saved reference
+CA761 PASS magic weapon 4 original world quantity and ownership
+CA761 PASS magic weapon 4 exact native class, state and original icon
+CA761 PASS magic weapon 4 original scale, collision and floor contact
+CA761 PASS magic weapon 4 copied provenance
+CA761 PASS magic weapon 4 native type, quality and valid essence
+CA761 PASS magic weapon 4 original weight
+CA761 PASS magic weapon 4 independent saved identity
+CA761 PASS magic weapon 4 original world flags
+CA761 PASS magic weapon 4 native durability and size
+CA761 PASS magic weapon 5 saved reference
+CA761 PASS magic weapon 5 original world quantity and ownership
+CA761 PASS magic weapon 5 exact native class, state and original icon
+CA761 PASS magic weapon 5 original scale, collision and floor contact
+CA761 PASS magic weapon 5 copied provenance
+CA761 PASS magic weapon 5 native type, quality and valid essence
+CA761 PASS magic weapon 5 original weight
+CA761 PASS magic weapon 5 independent saved identity
+CA761 PASS magic weapon 5 original world flags
+CA761 PASS magic weapon 5 native durability and size
+CA761 COMPLETE failures=0
+CA761 PASS magic weapon 0 native repickup
+CA761 PASS magic weapon 0 recovered exact metadata
+CA761 PASS magic weapon 0 native equip and unchanged essence
+CA761 PASS magic weapon 0 native unequip
+CA761 PASS magic weapon 0 second weapon toss
+CA761 PASS magic weapon 1 native repickup
+CA761 PASS magic weapon 1 recovered exact metadata
+CA761 PASS magic weapon 1 native equip and unchanged essence
+CA761 PASS magic weapon 1 native unequip
+CA761 PASS magic weapon 1 second weapon toss
+CA761 PASS magic weapon 2 native repickup
+CA761 PASS magic weapon 2 recovered exact metadata
+CA761 PASS magic weapon 2 native equip and unchanged essence
+CA761 PASS magic weapon 2 native unequip
+CA761 PASS magic weapon 2 second weapon toss
+CA761 PASS magic weapon 3 native repickup
+CA761 PASS magic weapon 3 recovered exact metadata
+CA761 PASS magic weapon 3 native equip and unchanged essence
+CA761 PASS magic weapon 3 native unequip
+CA761 PASS magic weapon 3 second weapon toss
+CA761 PASS magic weapon 4 native repickup
+CA761 PASS magic weapon 4 recovered exact metadata
+CA761 PASS magic weapon 4 native equip and unchanged essence
+CA761 PASS magic weapon 4 native unequip
+CA761 PASS magic weapon 4 second weapon toss
+CA761 PASS magic weapon 5 native repickup
+CA761 PASS magic weapon 5 recovered exact metadata
+CA761 PASS magic weapon 5 native equip and unchanged essence
+CA761 PASS magic weapon 5 native unequip
+CA761 PASS magic weapon 5 second weapon toss
+CA761 PASS all weapon representations retained after native use
+CA761 COMPLETE failures=0
