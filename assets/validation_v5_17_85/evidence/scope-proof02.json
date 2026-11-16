@@ -1,0 +1,40 @@
+{
+  "issue": 813,
+  "runtime_sha256": "468e4f0e4861915ad0c1cb66608d63f9462b3af471dce6aa1871ed43a8e86282",
+  "baseline_sha256": "63040843cdb73fce9700872a700498a78982efd0a3834e2ce35cf10be4188dcb",
+  "package_exact_source_bytes": true,
+  "source_entries": 18596,
+  "added_resources": [
+    "caelum/data/forest_guardian_combat.modeldef",
+    "models/caelum/folklore/forestguardians/caapora.md3",
+    "models/caelum/folklore/forestguardians/caayari.md3",
+    "models/caelum/folklore/forestguardians/materials.png",
+    "models/caelum/folklore/forestguardians/sachayoj.md3",
+    "models/caelum/folklore/forestguardians/zapamzucum.md3"
+  ],
+  "changed_resources": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "all_other_runtime_bytes_identical": true,
+  "repeated_files": 16,
+  "export_sha256": {
+    "caelum/data/forest_guardian_combat.modeldef": "c61d0e89abdcf43620bc423aa1d758ff85b2b178638a1b2c1da0491568bbfd43",
+    "editable/caapora.mtl": "32e75c24f22f403e0991760d61a9bdbeef1218cf5d358e710348fa3db0d7466f",
+    "editable/caapora.obj": "245961d8bb2b8f84e59b8f775e64fccc22259e11629809f694728082ab3ddefa",
+    "editable/caayari.mtl": "32e75c24f22f403e0991760d61a9bdbeef1218cf5d358e710348fa3db0d7466f",
+    "editable/caayari.obj": "b4157b02c55f79498ed407e51fde1cf9916c2d45045e34c56c9d6dbefe7b9755",
+    "editable/sachayoj.mtl": "32e75c24f22f403e0991760d61a9bdbeef1218cf5d358e710348fa3db0d7466f",
+    "editable/sachayoj.obj": "007ec7c6366aace98a1d1b58aa9d5542468cee7999eb2693ed2e695b067e4d97",
+    "editable/zapamzucum.mtl": "32e75c24f22f403e0991760d61a9bdbeef1218cf5d358e710348fa3db0d7466f",
+    "editable/zapamzucum.obj": "d754d82b972fe210e9aac6328f5be072dce1724f88a27cbc359a988f1e159b91",
+    "manifest.json": "cc4f9fbf6c59d4021226aa511ca7df51445bcbb1af86bac51f16be3152dfca05",
+    "models/caelum/folklore/forestguardians/caapora.md3": "af999d65cc5d6a5e9e7070cc9a3fcfd97248fb3c393dad629f7f16ed15f68571",
+    "models/caelum/folklore/forestguardians/caayari.md3": "96ffac86a48fab48512c5dd18150c91b2e11a76ea8c24c4f7412d367a98c9535",
+    "models/caelum/folklore/forestguardians/materials.png": "66f109f0473beb6c6bea8c8c027d66d69a182cea6e470711f9bd89871aa27af8",
+    "models/caelum/folklore/forestguardians/sachayoj.md3": "81fb3399f39d0a5037d287f915ac789159c42cc93b8cb03f502412d76d41b2c3",
+    "models/caelum/folklore/forestguardians/zapamzucum.md3": "b0e47006c4c99f0a31a8cb968507195cd830964c061ef67d120039c456920e33",
+    "preview.pk3": "f9d37cafffba09cf18357e04cbcfd9f169d77e26bedc5bf2a2b62fce5ea66fb5"
+  }
+}

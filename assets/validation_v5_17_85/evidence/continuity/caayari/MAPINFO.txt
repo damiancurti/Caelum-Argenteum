@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA813Events" }
+map CA455V "Sachayoj/Caa Pora/Caa Yari/Zapam Zucum inherited combat model" { sky1="CABASKY",0 nointermission }

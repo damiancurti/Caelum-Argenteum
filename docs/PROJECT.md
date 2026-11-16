@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.84** - 2026-11-15.
+Documentation version: **5.17.85** - 2026-11-15.
+
+## 5.17.85 - Four forest guardian candidates (#813)
+
+Sachayoj, Caa Pora, Caa Yari and Zapam Zucum have native model candidates;
+coverage reaches 34/56 provisional classes. Deterministic exports, closed and
+posed geometry, garment samples and 702 final-package native assertions pass.
+ASSETS records visual, save and presentation evidence with its limits.
+CA813-FOREST-01 remains pending. The 22 remaining creatures, regional views,
+named/modular characters, equipment fitting, 75 exact campaign acquisitions and
+siege rendering keep the full batch and final author terminal unfinished.
 
 ## 5.17.84 - Three period apparition candidates (#811)
 

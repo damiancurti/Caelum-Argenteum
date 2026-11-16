@@ -1,0 +1,99 @@
+{
+  "issue": 813,
+  "species": "zapamzucum",
+  "scope": "Measure one 700-tic sprite/model pair for a real Sachayoj/Caa Pora/Caa Yari/Zapam Zucum; no campaign or crowd budget.",
+  "baseline_sha256": "63040843cdb73fce9700872a700498a78982efd0a3834e2ce35cf10be4188dcb",
+  "runtime_sha256": "468e4f0e4861915ad0c1cb66608d63f9462b3af471dce6aa1871ed43a8e86282",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "sprite",
+      "pid": 46972,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 403463056.4617,
+        "END": 403483075.1441
+      },
+      "fixture_sha256": "6b22e44813ef4112bb57c4ccb017f5c376ce3dcd32a71c0de960ac8f863de2fb",
+      "bench_sha256": "221ce43772fd82c7664d6437b404626def292fcf89a2d25d1e05973048ab1a3b",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57075642857143,
+        "p50_ms": 28.5766,
+        "p95_ms": 28.924,
+        "p99_ms": 29.0484,
+        "max_ms": 29.2496
+      },
+      "presentation": {
+        "pid": 46972,
+        "trace_sha256": "a9edf4b016e7eb5df43aea6b6dfbaf8d80aaa5cd6a4ed05f181feb4603d708c2",
+        "rows": 46105,
+        "scene_presents": 33193,
+        "mean_present_fps": 1894.7493346050057,
+        "present_intervals": {
+          "samples": 33192,
+          "mean_ms": 0.5277742980226289,
+          "p50_ms": 0.5045999884605408,
+          "p95_ms": 0.6999000310897827,
+          "p99_ms": 0.8125,
+          "max_ms": 1.7055000066757202
+        },
+        "native_call_duration": {
+          "samples": 33193,
+          "mean_ms": 0.09012423101827752,
+          "p50_ms": 0.08619999885559082,
+          "p95_ms": 0.10670000314712524,
+          "p99_ms": 0.1590999960899353,
+          "max_ms": 0.6555999517440796
+        }
+      }
+    },
+    {
+      "kind": "model",
+      "pid": 49216,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 403497998.139,
+        "END": 403518022.6528
+      },
+      "fixture_sha256": "6b22e44813ef4112bb57c4ccb017f5c376ce3dcd32a71c0de960ac8f863de2fb",
+      "bench_sha256": "221ce43772fd82c7664d6437b404626def292fcf89a2d25d1e05973048ab1a3b",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.570897714285717,
+        "p50_ms": 28.5705,
+        "p95_ms": 28.956,
+        "p99_ms": 29.0942,
+        "max_ms": 30.2353
+      },
+      "presentation": {
+        "pid": 49216,
+        "trace_sha256": "7bf1864dcdbd07a1e1a217605291bc6aaa29c00ff1e373b40e040d06f1ccf9ce",
+        "rows": 45254,
+        "scene_presents": 32497,
+        "mean_present_fps": 1854.3281548992968,
+        "present_intervals": {
+          "samples": 32496,
+          "mean_ms": 0.539278874323249,
+          "p50_ms": 0.5194000005722046,
+          "p95_ms": 0.7285000085830688,
+          "p99_ms": 0.8410000205039978,
+          "max_ms": 2.323899984359741
+        },
+        "native_call_duration": {
+          "samples": 32497,
+          "mean_ms": 0.09074723494949057,
+          "p50_ms": 0.08660000562667847,
+          "p95_ms": 0.10740000009536743,
+          "p99_ms": 0.1622999906539917,
+          "max_ms": 0.775600016117096
+        }
+      }
+    }
+  ]
+}
