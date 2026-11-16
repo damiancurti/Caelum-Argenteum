@@ -1,0 +1,36 @@
+{
+  "issue": 815,
+  "before_sha256": "d04b2a03ae9d5edab2b9649ef5b93efa77050f7ae5e5d9a1d42e2008afe23e9c",
+  "final_sha256": "d2cdb71531a4f94fa2fe2d9e26e865dd7b9951756df67006523d81ef63c5b4bb",
+  "visual_before_sha256": "8f28dd1df3b698837fecc97c82555874d353ab47d5291b3e4e93020a476fe322",
+  "changed_resources": [
+    "models/caelum/folklore/australfigures/halahaches.md3"
+  ],
+  "earlier_visual_changed_resources": [
+    "models/caelum/folklore/australfigures/halahaches.md3",
+    "models/caelum/folklore/australfigures/tanu.md3"
+  ],
+  "reused_continuity": [
+    "shoort",
+    "tanu",
+    "matan",
+    "ulen"
+  ],
+  "reused_visual02": [
+    "shoort",
+    "matan",
+    "ulen"
+  ],
+  "reused_visual03": [
+    "tanu"
+  ],
+  "scope": "Only Halahaches model geometry changed after native01. Unaffected model/material/binding, actor code, save definitions, maps and all other runtime bytes are identical. Reuse four species continuity results and their static art views; rerun Halahaches continuity/art and all native actions on the final package. Presentation uses the final package for every species.",
+  "resource_hashes": {
+    "models/caelum/folklore/australfigures/halahaches.md3": "2f6898e9cb3daa07d3ee1f6525804227d60c6498ee6df7077691c62821b24c77",
+    "models/caelum/folklore/australfigures/matan.md3": "ab4be529cbf18bf9ab236de32792c2d491909975c83bdfa80e90f82303df89e1",
+    "models/caelum/folklore/australfigures/materials.png": "a5f58f3de714fe906bdd2156f542bf6806146177d8f926baf775ddd443b13e4a",
+    "models/caelum/folklore/australfigures/shoort.md3": "da29f953d240ab327bb52e50a1d4202c1a95f2ac341a2da7404d87b22c2de0eb",
+    "models/caelum/folklore/australfigures/tanu.md3": "c09157a73a358f7a4cdf75d9894ab03eb8acf35c3b99a3e7b39d0f9e43ecc8c8",
+    "models/caelum/folklore/australfigures/ulen.md3": "e230ce943306156bff6b2834d4feed17ddabd093128c699c58aef3d9dc22ecec"
+  }
+}

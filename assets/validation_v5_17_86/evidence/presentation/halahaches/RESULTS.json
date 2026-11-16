@@ -1,0 +1,99 @@
+{
+  "issue": 815,
+  "species": "halahaches",
+  "scope": "Measure one 700-tic sprite/model pair for a real Shoort/Tanu/Halahaches/Matan/Ulen; no campaign or crowd budget.",
+  "baseline_sha256": "468e4f0e4861915ad0c1cb66608d63f9462b3af471dce6aa1871ed43a8e86282",
+  "runtime_sha256": "d2cdb71531a4f94fa2fe2d9e26e865dd7b9951756df67006523d81ef63c5b4bb",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "sprite",
+      "pid": 49104,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 407753115.2059,
+        "END": 407773050.2533
+      },
+      "fixture_sha256": "e73dfc95b4e051e9d5cea98bafd5fc03a347ed66fbf30789fedd05ea0a2e7e66",
+      "bench_sha256": "69e2b42f0ceeee3d9027708f71065c8a5e1e6831b2dc0bbf6371d5c4e2f1aef6",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57145057142857,
+        "p50_ms": 28.5745,
+        "p95_ms": 29.1385,
+        "p99_ms": 29.2936,
+        "max_ms": 29.4199
+      },
+      "presentation": {
+        "pid": 49104,
+        "trace_sha256": "564d570be1b7e606bb9605a95530bc636fe16c704f5294b03486de2e1bb29e70",
+        "rows": 32016,
+        "scene_presents": 22197,
+        "mean_present_fps": 1273.1052382933058,
+        "present_intervals": {
+          "samples": 22196,
+          "mean_ms": 0.785481019103005,
+          "p50_ms": 0.7627000212669373,
+          "p95_ms": 1.001800000667572,
+          "p99_ms": 1.2490999698638916,
+          "max_ms": 2.3788999915122986
+        },
+        "native_call_duration": {
+          "samples": 22197,
+          "mean_ms": 0.09411094733206556,
+          "p50_ms": 0.08810001611709595,
+          "p95_ms": 0.11710000038146973,
+          "p99_ms": 0.17820000648498535,
+          "max_ms": 0.567300021648407
+        }
+      }
+    },
+    {
+      "kind": "model",
+      "pid": 25988,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 407788141.696,
+        "END": 407808080.962
+      },
+      "fixture_sha256": "e73dfc95b4e051e9d5cea98bafd5fc03a347ed66fbf30789fedd05ea0a2e7e66",
+      "bench_sha256": "69e2b42f0ceeee3d9027708f71065c8a5e1e6831b2dc0bbf6371d5c4e2f1aef6",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57075114285714,
+        "p50_ms": 28.5726,
+        "p95_ms": 29.1751,
+        "p99_ms": 29.4002,
+        "max_ms": 29.5209
+      },
+      "presentation": {
+        "pid": 25988,
+        "trace_sha256": "47e81aa9593a4a70c0ce71fa2b80e0561eb62973f2d49141b7cb4ab5b1adf30e",
+        "rows": 32174,
+        "scene_presents": 22262,
+        "mean_present_fps": 1276.5006049913588,
+        "present_intervals": {
+          "samples": 22261,
+          "mean_ms": 0.7833917164549792,
+          "p50_ms": 0.7576000094413757,
+          "p95_ms": 0.9914999604225159,
+          "p99_ms": 1.231499969959259,
+          "max_ms": 2.093400001525879
+        },
+        "native_call_duration": {
+          "samples": 22262,
+          "mean_ms": 0.09396032246175925,
+          "p50_ms": 0.08799999952316284,
+          "p95_ms": 0.11690002679824829,
+          "p99_ms": 0.17479997873306274,
+          "max_ms": 0.66839998960495
+        }
+      }
+    }
+  ]
+}

@@ -564,6 +564,15 @@ Evidence: assets/validation_v5_17_5/evidence/SUMMARY.json retains initial compil
 initialization and empty/wrong-pose failures. Final checks pass without changing
 gameplay ZScript. This is an inspection technique, not a production freeze rule.
 
+Extension #815, 2026-11-15: a native screenshot was logged before its queued
+pose18 VIEW event. Longer barriers alone are insufficient proof: retain the
+selected pose index, assert the requested index, and require VIEW -> indexed PASS
+-> screenshot before the next VIEW for every captured frame. The first parser
+incorrectly selected Prepare's pose0; locate the last matching indexed check and
+VIEW relative to each screenshot instead. Failed original logs and corrected
+23-frame ordering checks: assets/validation_v5_17_86/evidence/SUMMARY.json.
+ENGINE-VERIFIED fixture correction; no production synchronization rule changes.
+
 ## CA-KP-229 - Wait for the last diagnostic network event before quitting
 
 Status/evidence: ENGINE-VERIFIED fixture correction, #463, 2026-11-13.
