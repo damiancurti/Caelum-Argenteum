@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.89** - 2026-11-16.
+Documentation version: **5.17.90** - 2026-11-16.
+
+## 5.17.90 - Four distinct forms verified; full batch remains (#822)
+
+Xalpen/Luz Mala/Anchimallen/Huayrapuca pass 16-file repeated export,
+304 closed components, 300 rooted contacts, 2,400 posed attachment
+checks and 702 final-package native assertions. Preserve CA822-FORMS-01 and
+every earlier unconfirmed check. All 56 provisional classes have candidates;
+protected identities 018/019 remain unchanged. Complete regional displays,
+other characters/modular fitting and V5.16 progression/performance work before
+the consolidated author terminal. No intermediate author acceptance is inferred.
 
 ## 5.17.89 - Four figures verified; full batch remains (#821)
 

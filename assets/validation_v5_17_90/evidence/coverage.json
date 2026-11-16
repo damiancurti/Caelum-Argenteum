@@ -1,0 +1,180 @@
+{
+  "issue": 822,
+  "provisional_classes": 56,
+  "native_modelled": 56,
+  "missing": [],
+  "protected_catalogue_ids_without_provisional_classes": [
+    "CA-FOLK-018",
+    "CA-FOLK-019"
+  ],
+  "bindings": {
+    "CaelumBestiary029": [
+      "src/caelum/data/apparition_combat.modeldef"
+    ],
+    "CaelumBestiary030": [
+      "src/caelum/data/apparition_combat.modeldef"
+    ],
+    "CaelumBestiary022": [
+      "src/caelum/data/austral_figure_combat.modeldef"
+    ],
+    "CaelumBestiary023": [
+      "src/caelum/data/austral_figure_combat.modeldef"
+    ],
+    "CaelumBestiary024": [
+      "src/caelum/data/austral_figure_combat.modeldef"
+    ],
+    "CaelumBestiary025": [
+      "src/caelum/data/austral_figure_combat.modeldef"
+    ],
+    "CaelumBestiary026": [
+      "src/caelum/data/austral_figure_combat.modeldef"
+    ],
+    "CaelumBestiary045": [
+      "src/caelum/data/avian_combat.modeldef"
+    ],
+    "CaelumBestiary046": [
+      "src/caelum/data/avian_combat.modeldef"
+    ],
+    "CaelumBestiary058": [
+      "src/caelum/data/avian_combat.modeldef"
+    ],
+    "CaelumBestiary044": [
+      "src/caelum/data/basilisco_combat.modeldef"
+    ],
+    "CaelumBestiary003": [
+      "src/caelum/data/beast_men_combat.modeldef"
+    ],
+    "CaelumBestiary004": [
+      "src/caelum/data/beast_men_combat.modeldef"
+    ],
+    "CaelumBestiary005": [
+      "src/caelum/data/beast_men_combat.modeldef"
+    ],
+    "CaelumBestiary008": [
+      "src/caelum/data/bestiary_figure_combat.modeldef"
+    ],
+    "CaelumBestiary036": [
+      "src/caelum/data/bestiary_figure_combat.modeldef"
+    ],
+    "CaelumBestiary040": [
+      "src/caelum/data/bestiary_figure_combat.modeldef"
+    ],
+    "CaelumBestiary042": [
+      "src/caelum/data/bestiary_figure_combat.modeldef"
+    ],
+    "CaelumBestiary053": [
+      "src/caelum/data/cuero_combat.modeldef"
+    ],
+    "CaelumBestiary021": [
+      "src/caelum/data/distinct_form_combat.modeldef"
+    ],
+    "CaelumBestiary027": [
+      "src/caelum/data/distinct_form_combat.modeldef"
+    ],
+    "CaelumBestiary034": [
+      "src/caelum/data/distinct_form_combat.modeldef"
+    ],
+    "CaelumBestiary056": [
+      "src/caelum/data/distinct_form_combat.modeldef"
+    ],
+    "CaelumBestiary009": [
+      "src/caelum/data/duende_combat.modeldef"
+    ],
+    "CaelumBestiary010": [
+      "src/caelum/data/duende_combat.modeldef"
+    ],
+    "CaelumBestiary012": [
+      "src/caelum/data/forest_guardian_combat.modeldef"
+    ],
+    "CaelumBestiary013": [
+      "src/caelum/data/forest_guardian_combat.modeldef"
+    ],
+    "CaelumBestiary014": [
+      "src/caelum/data/forest_guardian_combat.modeldef"
+    ],
+    "CaelumBestiary015": [
+      "src/caelum/data/forest_guardian_combat.modeldef"
+    ],
+    "CaelumBestiary007": [
+      "src/caelum/data/guardian_combat.modeldef"
+    ],
+    "CaelumBestiary011": [
+      "src/caelum/data/guardian_combat.modeldef"
+    ],
+    "CaelumBestiary028": [
+      "src/caelum/data/head_apparition_combat.modeldef"
+    ],
+    "CaelumBestiary035": [
+      "src/caelum/data/head_apparition_combat.modeldef"
+    ],
+    "CaelumBestiary048": [
+      "src/caelum/data/hybrid_serpent_combat.modeldef"
+    ],
+    "CaelumBestiary052": [
+      "src/caelum/data/hybrid_serpent_combat.modeldef"
+    ],
+    "CaelumBestiary057": [
+      "src/caelum/data/kasogonaga_combat.modeldef"
+    ],
+    "CaelumBestiary020": [
+      "src/caelum/data/land_figure_combat.modeldef"
+    ],
+    "CaelumBestiary037": [
+      "src/caelum/data/land_figure_combat.modeldef"
+    ],
+    "CaelumBestiary038": [
+      "src/caelum/data/land_figure_combat.modeldef"
+    ],
+    "CaelumBestiary039": [
+      "src/caelum/data/land_figure_combat.modeldef"
+    ],
+    "CaelumBestiary041": [
+      "src/caelum/data/land_figure_combat.modeldef"
+    ],
+    "CaelumBestiary055": [
+      "src/caelum/data/nahuelito_combat.modeldef"
+    ],
+    "CaelumBestiary031": [
+      "src/caelum/data/period_apparition_combat.modeldef"
+    ],
+    "CaelumBestiary032": [
+      "src/caelum/data/period_apparition_combat.modeldef"
+    ],
+    "CaelumBestiary033": [
+      "src/caelum/data/period_apparition_combat.modeldef"
+    ],
+    "CaelumBestiary054": [
+      "src/caelum/data/peuchen_combat.modeldef"
+    ],
+    "CaelumBestiary006": [
+      "src/caelum/data/pombero_combat.modeldef"
+    ],
+    "CaelumBestiary043": [
+      "src/caelum/data/quadruped_combat.modeldef"
+    ],
+    "CaelumBestiary050": [
+      "src/caelum/data/quadruped_combat.modeldef"
+    ],
+    "CaelumBestiary049": [
+      "src/caelum/data/serpent_combat.modeldef"
+    ],
+    "CaelumBestiary051": [
+      "src/caelum/data/serpent_combat.modeldef"
+    ],
+    "CaelumBestiary047": [
+      "src/caelum/data/teju_combat.modeldef"
+    ],
+    "CaelumBestiary001": [
+      "src/caelum/data/witch_figure_combat.modeldef"
+    ],
+    "CaelumBestiary002": [
+      "src/caelum/data/witch_figure_combat.modeldef"
+    ],
+    "CaelumBestiary016": [
+      "src/caelum/data/witch_figure_combat.modeldef"
+    ],
+    "CaelumBestiary017": [
+      "src/caelum/data/witch_figure_combat.modeldef"
+    ]
+  }
+}

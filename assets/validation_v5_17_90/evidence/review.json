@@ -1,0 +1,84 @@
+{
+  "issue": 822,
+  "reviewed": {
+    "xalpen": {
+      "build/issue822-xalpen-native02/fresh-model/view-front.png": "d9af0a7697beb552e78695e31026a798afc874d0da11c43f2784f621e4b46b04",
+      "build/issue822-xalpen-native02/fresh-model/view-face-detail.png": "9cd96d5f31690bc976787e727bbadc446a193c6e1216089714fa9f81c41b0f4f",
+      "build/issue822-xalpen-native02/fresh-model/view-side.png": "8cc489e98eda180f4cc30ebaa2bce69e2bd1f57ab8877bdfb1bafd1164f1e09d",
+      "build/issue822-xalpen-native02/fresh-model/view-rear.png": "7f018adaa6927ae20bef96e6c97cddca49b210e52947c4983fcf9aa86dffe6d9",
+      "build/issue822-xalpen-native02/fresh-model/pose-03-run.png": "b46d65dc3650b7b997f96415559734b7e769f5a9ad7210bac0e8e829306cfcaa",
+      "build/issue822-xalpen-native02/fresh-model/pose-05-run.png": "17a84e5ab2489005beb753b48e69ab39bfbea584becab46f32f3b824cf0e4e7b",
+      "build/issue822-xalpen-native02/fresh-model/pose-10-attack_release.png": "586c3095239fca763336addb4a0df2863b481607537dc27ee0aac27146bc82f7",
+      "build/issue822-xalpen-native02/fresh-model/pose-11-pain.png": "0af4d46b32ebf1e712b17fa159ef4be9b332da6a0e12cd7951bb7d728ea45031",
+      "build/issue822-xalpen-native02/fresh-model/pose-15-death.png": "78d07753a30eea729f255daa5b1e63a56921b02cb7c53490b249f451453a283c",
+      "build/issue822-xalpen-native02/fresh-model/view-lying-oblique.png": "6a6dc3b2112c93026bec24ac4c137840a6c2848cc3c44a92d88f56ec093cbce5"
+    },
+    "luzmala": {
+      "build/issue822-luzmala-native02/fresh-model/view-front.png": "6cff671f55d544164965c0ff44aeda8011374a0c35adc470541cf3755ef9c833",
+      "build/issue822-luzmala-native02/fresh-model/view-face-detail.png": "ad4d7743f1b84f4ca8f9ae1dba2580c8774d8951eea0e35c6e0dbf7be9415f0b",
+      "build/issue822-luzmala-native02/fresh-model/view-side.png": "e1f5e0b09d5520cfbfa7d5583e4612d3693422f2e12be7e4a60300d48fecf604",
+      "build/issue822-luzmala-native02/fresh-model/view-rear.png": "cf145b089e62ed0f640e5524bd3a21e61fec84d3993c4dbfd65e51d55b1d25df",
+      "build/issue822-luzmala-native02/fresh-model/pose-03-run.png": "04f424def57684db5c301a33f8e33252b9caa1dfad0a6c02faf47d1dc1e884ec",
+      "build/issue822-luzmala-native02/fresh-model/pose-05-run.png": "77c81fc1044a0ca90ceb47df2b33b358a69d9da4a736fcd10eeb4f1298c2402e",
+      "build/issue822-luzmala-native02/fresh-model/pose-10-attack_release.png": "5db28c2ddc05b49047a5fe7d5e5efdf345d9488017482c9fc150138a18bc0921",
+      "build/issue822-luzmala-native02/fresh-model/pose-11-pain.png": "2238c778fbc3d0532be877c5f8f7c959f1bd5c693064e45773ce2fcf73782d2d",
+      "build/issue822-luzmala-native02/fresh-model/pose-15-death.png": "d346ce76ca06e47d2ddf234a47d4a3c0e7ba06a67fb87a62644c6d7260f1f731",
+      "build/issue822-luzmala-native02/fresh-model/view-lying-oblique.png": "dd15547dc21e4c245d8c0ca66fd49c08d88db5f7010e9a72e9fcc0e7d0efbb15"
+    },
+    "anchimallen": {
+      "build/issue822-anchimallen-native02/fresh-model/view-front.png": "d782a1e81661081e85f81776901a1a13a0a852f17f3207b2e10d58af1a60d432",
+      "build/issue822-anchimallen-native02/fresh-model/view-face-detail.png": "a5e8f4e5c900c5101a72d6f60729706b148adf70bff27bc842eac592d1d2f541",
+      "build/issue822-anchimallen-native02/fresh-model/view-side.png": "4e6298880f7ae185eaeeecf1b8660c824ec45849b5ad657afa78078a01705a39",
+      "build/issue822-anchimallen-native02/fresh-model/view-rear.png": "75900e33225d8fb56ded3e5b23b73bd0e07271e25c3a0a6b4bc509cc1272fecc",
+      "build/issue822-anchimallen-native02/fresh-model/pose-03-run.png": "173646bd45d395c1c0f408dc0f4b4769c9472929fb1b327dbcb40d103921e5c2",
+      "build/issue822-anchimallen-native02/fresh-model/pose-05-run.png": "ef5d357e6adaafc334cf58cf9e61398e8e7ea32f2f66f47f4fd16a00378c01d8",
+      "build/issue822-anchimallen-native02/fresh-model/pose-10-attack_release.png": "3c6ddd39c48cf82439076d491ddd9ecf67b3b53303f432dedd62b3a168de8941",
+      "build/issue822-anchimallen-native02/fresh-model/pose-11-pain.png": "97fcf0fa5e3114b953510d905e434c7af4cfd8a7ed13d5ffaa9e0ccb04ada5c8",
+      "build/issue822-anchimallen-native02/fresh-model/pose-15-death.png": "07a5f3b43d008f167db34349d4709ae99ad850958e0113b6bf7e49c211576803",
+      "build/issue822-anchimallen-native02/fresh-model/view-lying-oblique.png": "59393c42d155e1d15e4d67a1103d05d5bbe12ab3799d0ab92bb36f41c0b08012"
+    },
+    "huayrapuca": {
+      "build/issue822-huayrapuca-native02/fresh-model/view-front.png": "688cd43f605b4e44451832f763703a78f2aabdce1120ed6a71a7257b1d781cd5",
+      "build/issue822-huayrapuca-native02/fresh-model/view-face-detail.png": "18f45a285b1c30a0fd9351c4914850d101825aeb07e5181d184623c0948550b1",
+      "build/issue822-huayrapuca-native02/fresh-model/view-side.png": "4d2f09de69684300d66fbdec4c17f4f20e19282529c9503b1c63d52f029ee40e",
+      "build/issue822-huayrapuca-native02/fresh-model/view-rear.png": "1572009a294545ccf751bd655428da792a7e82bd89c21ef3a7adbea06af1b830",
+      "build/issue822-huayrapuca-native02/fresh-model/pose-03-run.png": "1b2c7a74c49f2884acd35d0bb211b202fa7e66c05f0ebb83f9fd9352ff650c2f",
+      "build/issue822-huayrapuca-native02/fresh-model/pose-05-run.png": "90288f1fa366367c976f4d68972f1185baac7bfc5e8f530301f5f6a866bc042b",
+      "build/issue822-huayrapuca-native02/fresh-model/pose-10-attack_release.png": "340cf3e0c0f9532a2042d992b15a9dba5c2f50f7cf930e615d63ea87beeb4fa8",
+      "build/issue822-huayrapuca-native02/fresh-model/pose-11-pain.png": "25377064d2d167a18ccde11e1650ac4089ffe8eae324576f9a991de80ac0d354",
+      "build/issue822-huayrapuca-native02/fresh-model/pose-15-death.png": "9ead4176927894c79bc49473c8804be9941efdc2bb9dcfef64c9f0f8a7ac8987",
+      "build/issue822-huayrapuca-native02/fresh-model/view-lying-oblique.png": "72d089579f7289250a85c91bb00010e9f7601f8a0b884746857e96806c245c0a"
+    }
+  },
+  "presentation": {
+    "build/issue822-xalpen-presentation01/sprite/scene.png": "b393943bf3f61cd66f6337ff0a9ec40e2794eb0a4bb5febe645c87a783c92f98",
+    "build/issue822-xalpen-presentation01/model/scene.png": "18caf2218219bb62b32a64578d7f0d04edd59080544b4187b7de2c44f9aec277",
+    "build/issue822-luzmala-presentation01/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build/issue822-luzmala-presentation01/model/scene.png": "af7462ad98df8fc6a09732187eb4d614b5817e0c7988e0a00720abfd26bfcf60",
+    "build/issue822-anchimallen-presentation01/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build/issue822-anchimallen-presentation01/model/scene.png": "bc839fb13c62fa09e74db66fbf5bf9e9b48db1b1dffccfc2576ee5f16eafd1ce",
+    "build/issue822-huayrapuca-presentation01/sprite/scene.png": "3667ef0b24cbb117213bd9f25be3223ab3dc074faf182d16c180413d0fb687e3",
+    "build/issue822-huayrapuca-presentation01/model/scene.png": "ef0c2726a4300caf259bebfd884686dab8dc899844edcb90f554d3956f3bd2d4"
+  },
+  "iterations": {
+    "build/issue822-xalpen-native01/fresh-model/view-front.png": "270d685b00169e59236fbc100c2758759b5864094794a66a1397783af6e98e05",
+    "build/issue822-xalpen-native01/fresh-model/view-face-detail.png": "62d15f99bdad28e8d5ca7dbc78dd33859497de0ac230fe0675c5f6f0d32da685",
+    "build/issue822-xalpen-native01/fresh-model/view-side.png": "0158fb854327772d9a0fe761294cfa2432adb99c32bfee33aa29b425dba4ddb1",
+    "build/issue822-xalpen-native01/fresh-model/view-rear.png": "dfd709d344bde28eb86084513190a6bcd8451661d38433df4616501011ddd510",
+    "build/issue822-xalpen-native01/fresh-model/pose-03-run.png": "de2be312a6788d9e8dda4dc297227959bfd9917dcb3c46c670d408c9b0756fe6",
+    "build/issue822-xalpen-native01/fresh-model/view-lying-oblique.png": "170dd86a8edcc66fd4486add614e7e9d8dc8fb6bd385c985b05b654863cbc9a5",
+    "build/issue822-luzmala-native01/fresh-model/view-front.png": "e8ceac4cdd1236ad4bf9cb03514cd413a26119651a6091587ef4e8c2a9c68965",
+    "build/issue822-luzmala-native01/fresh-model/view-face-detail.png": "846e1dbdaab48f0f925a008a6dc515f1e3b2b444bc420af25a59106e9177e180",
+    "build/issue822-luzmala-native01/fresh-model/view-side.png": "f10ff58cc09919a801da4bdc65ec02ea9eb387bc63874730cc8dd3a628675325",
+    "build/issue822-luzmala-native01/fresh-model/view-rear.png": "6ec6a3f484b23c5281c16b0892bcf9a1bc049f4eacd774235087025465d928aa",
+    "build/issue822-anchimallen-native01/fresh-model/view-front.png": "eea16a7c5beae77cd75ac416a00141e9aaf729fb2904f12251732383d07c7cd6",
+    "build/issue822-anchimallen-native01/fresh-model/view-face-detail.png": "bb59aaba91a92c366ec55d442b69d4c1564038a1d1f289307f46a5bbe18f527c",
+    "build/issue822-anchimallen-native01/fresh-model/view-side.png": "a4ae67b5acdb9fb86442c16bb4e398ad49f3720e946d25a59fbb8ce11e84f0ad",
+    "build/issue822-anchimallen-native01/fresh-model/view-rear.png": "741e386c6035e0ba820dc4f8b5cc479d93d9be2e16899cecc0431c7a0b7494d4",
+    "build/issue822-huayrapuca-native01/fresh-model/view-front.png": "2d0b25de9d38828af551605f19b8948a2bdfe0bcd09d420265d057e376f419ac",
+    "build/issue822-huayrapuca-native01/fresh-model/view-face-detail.png": "3709042184c2cec7347e159f6e93af86493d3f821c6467584d2f02983793dc53",
+    "build/issue822-huayrapuca-native01/fresh-model/view-side.png": "4497182473dfc4b573c222f6f0c810bcad3c8417a77daf8bf7ed92e4532be893",
+    "build/issue822-huayrapuca-native01/fresh-model/view-rear.png": "5382a4d3a61711f3fc3485a86ec1962b79666ae7007e7a789d3aadf40d3c4272"
+  },
+  "review_notes": "Final native02 front, face, side, rear, stride, release, pain, death and lying views inspected. Xalpen rounded ears and leather bodice; smoother Luz Mala flame curves and face boundary; Anchimallen short hair, small ears and continuous rope belt; Huayrapuca broad feather vanes and ivory throat. Candidate geometry only; author acceptance pending."
+}

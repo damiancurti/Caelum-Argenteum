@@ -1,6 +1,72 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.89** - 2026-11-16.
+Documentation version: **5.17.90** - 2026-11-16.
+
+## 5.17.90 - Xalpen, Luz Mala, Anchimallen and Huayrapuca candidates (#822)
+
+Four distinct owned references now have native candidates on their existing
+provisional classes 021/027/034/056. Xalpen combines an adult gray woman,
+rounded ears, dark braided hair and leather/bronze clothing with a four-legged
+reptilian lower body, claws and long armored tail. Luz Mala has a pale green
+skull orb and six curling flames. Anchimallen has a childlike amber body,
+short dark hair, small pointed ears, bare feet and a ragged ivory tunic with
+a rope belt. Huayrapuca has a female face, golden eyes, long neck and hair,
+swept horns, an ivory throat, four reptilian legs, a long tail and two broad
+feathered wings. These are separate reference identities; no shared taxonomy,
+new cultural claims or modular inventory are adopted.
+
+Editable anatomy, OBJ/MTL, animation, contact controls, original RGB 1122x1402
+atlas, exact built-in ImageGen prompt and provenance are retained in
+assets/source/art/distinct_forms_822. Atlas pixels remain unchanged.
+Sixteen export files repeat byte for byte. Independent serialized checks verify
+304 closed components, 300 rooted contacts, 2,400 posed attachments,
+all 23 inherited frames, noncollapsed triangles and material-cell UV bounds.
+Initial root/cap and child clothing witnesses failed; subsequent controls
+corrected their locations. Native review then corrected Xalpen's inherited
+pointed ears and coin-like chest patches, angular flames and a serrated orb
+boundary, interrupted child cord and hair coverage, and edge-on throat/wing
+surfaces. The quadrupeds fall onto a flank through data-owned visual pose
+overrides. A visual model offset centers the skull orb without changing its
+existing actor profile. Source iterations and failed diagnostics are retained.
+
+The 18,628-entry runtime matches src exactly. Against #821, six new resources,
+one MODELDEF include and two version diagnostics explain every runtime change.
+All other bytes are identical. Provisional collision/scale, statistics, powers,
+action timing, loot, identity and saved fields remain authoritative. No metric
+reference dimensions, campaign placements or new abilities are adopted.
+
+The final package passes 702 native assertions: 460 previous-package baseline,
+old-save, fresh-model, reload and rollback assertions plus 242 actual action,
+loot and loot-reload assertions. Forty final front/profile/rear, detail, extreme
+stride, attack, pain, intermediate death and lying captures were inspected.
+Each captured pose verifies ordered VIEW -> indexed pose PASS -> screenshot.
+
+One sequential 700-tic sprite/model pair per form ran on Windows 11 Pro 26200,
+Ryzen 9 5950X/32GB/RTX 3070 Ti driver 32.0.16.1088 with the Parsec adapter,
+GZDoom 4.14.2 Vulkan 1280x720, uncapped without VSync, unpaused in the background
+at 5% audio:
+
+| Form / scene | Queue presents/s | Present p95 / p99 / max (ms) | Simulation mean / p95 / p99 / max (ms) |
+| --- | ---: | --- | --- |
+| xalpen / sprite | 1923.89 | 0.7093 / 0.7849 / 1.6111 | 28.5711 / 28.9390 / 29.0412 / 29.1892 |
+| xalpen / model | 1908.68 | 0.7163 / 0.8093 / 1.6129 | 28.5718 / 28.9445 / 29.0583 / 29.3322 |
+| luzmala / sprite | 1929.80 | 0.6990 / 0.7927 / 1.8588 | 28.5714 / 28.9378 / 29.0595 / 29.9257 |
+| luzmala / model | 1865.26 | 0.7293 / 0.8332 / 1.6245 | 28.5710 / 28.9744 / 29.0729 / 29.2502 |
+| anchimallen / sprite | 1826.63 | 0.7441 / 0.8522 / 1.4249 | 28.5717 / 28.9545 / 29.0914 / 29.4550 |
+| anchimallen / model | 1982.62 | 0.6394 / 0.7601 / 1.1414 | 28.5714 / 28.9185 / 29.0181 / 29.2930 |
+| huayrapuca / sprite | 1885.42 | 0.7152 / 0.8155 / 1.3400 | 28.5712 / 28.9471 / 29.0651 / 29.2464 |
+| huayrapuca / model | 1802.36 | 0.7383 / 0.8286 / 1.5046 | 28.5714 / 28.9301 / 29.0288 / 29.2774 |
+
+Queue intervals do not establish GPU/display latency, repeatability, optimization
+or campaign/crowd performance. Sprite and model screen coverage differs.
+Stylized component anatomy, painted faces, opaque flames/hair/feathers and rigid
+fall/rest remain candidates. Broad silhouettes can exceed provisional collision.
+The flame material does not add an illumination mechanic. CA822-FORMS-01 remains
+pending. Evidence: assets/validation_v5_17_90/evidence/SUMMARY.json.
+
+Coverage reaches 56/56 provisional classes; protected identities 018/019 remain
+unchanged. Regional displays, other characters, modular fitting, campaign
+authoring and siege rendering still prevent the complete batch handoff.
 
 ## 5.17.89 - Curupi, Gualicho, Uritu Orko and Maip candidates (#821)
 

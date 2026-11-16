@@ -1,0 +1,40 @@
+{
+  "issue": 822,
+  "runtime_sha256": "2a888a2adfbab292c650053ce350a7e91cbbfe20072206191a3b4d35c518a473",
+  "baseline_sha256": "76b90a267723491bf9d738470d89d21f5a3d625c318ef56494477177583dbad7",
+  "package_exact_source_bytes": true,
+  "source_entries": 18628,
+  "added_resources": [
+    "caelum/data/distinct_form_combat.modeldef",
+    "models/caelum/folklore/distinctforms/anchimallen.md3",
+    "models/caelum/folklore/distinctforms/huayrapuca.md3",
+    "models/caelum/folklore/distinctforms/luzmala.md3",
+    "models/caelum/folklore/distinctforms/materials.png",
+    "models/caelum/folklore/distinctforms/xalpen.md3"
+  ],
+  "changed_resources": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "all_other_runtime_bytes_identical": true,
+  "repeated_files": 16,
+  "export_sha256": {
+    "caelum/data/distinct_form_combat.modeldef": "2052d89ea1b72351139f8e59ac75aa6ef7ad83b20c390bcc35f3ac96a0f16be0",
+    "editable/anchimallen.mtl": "7858932c38c409b01445f521a2ceaff1f6dca9ec0487d3c151e9c214d360d7ee",
+    "editable/anchimallen.obj": "a79775a278d76692ea56ac02e236b0cf0c42d5bd5333e7e70a8c30dd71b7ab05",
+    "editable/huayrapuca.mtl": "7858932c38c409b01445f521a2ceaff1f6dca9ec0487d3c151e9c214d360d7ee",
+    "editable/huayrapuca.obj": "18a7686c7370de10c788589005324c621826b4e856b9fe53f0996c6ae0392b1b",
+    "editable/luzmala.mtl": "7858932c38c409b01445f521a2ceaff1f6dca9ec0487d3c151e9c214d360d7ee",
+    "editable/luzmala.obj": "73fdf18e596e3d8ac761138d3d4d57168f25eda5e57886ce617f058948de8296",
+    "editable/xalpen.mtl": "7858932c38c409b01445f521a2ceaff1f6dca9ec0487d3c151e9c214d360d7ee",
+    "editable/xalpen.obj": "8fa7fcecec0a431ecbcb18e83eb157e48efe941bbc9fa656976381671c15b21a",
+    "manifest.json": "506c790b7fd11ad63b05be634d20c4d86a9a78b252fecc8b9b3758b75ebd1efa",
+    "models/caelum/folklore/distinctforms/anchimallen.md3": "6b4453282cd109f3057a2ffc9eb4ce7b37e1c946d9bd04e5f9748cbb7749e621",
+    "models/caelum/folklore/distinctforms/huayrapuca.md3": "d6125cdd52cd9b7a8a41f0520811efc3b33f1aa02d49d5877f5d6d6cca61a0df",
+    "models/caelum/folklore/distinctforms/luzmala.md3": "3cfb0ba853b2a36ad8b9bebb40155618f891c1b8f82797c547d0379288b9fb8b",
+    "models/caelum/folklore/distinctforms/materials.png": "3e8a12a81b250a1587a2ec4607b9249b3645ab1d8f0d5de03f5f1f72194660a2",
+    "models/caelum/folklore/distinctforms/xalpen.md3": "c16b2d1f3a245ced17b90b1e25f2c6be84c061bbb0bfede095eb3b12b418a56e",
+    "preview.pk3": "09eda1cddc2794504e62c4e5580ccf22b42ee35e386cecd5700adb11d957eff4"
+  }
+}
