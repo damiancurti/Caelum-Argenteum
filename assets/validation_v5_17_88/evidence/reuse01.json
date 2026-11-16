@@ -1,0 +1,39 @@
+{
+  "issue": 819,
+  "from_sha256": "d167f78bb72a8558afaab52742472ae3ec4bc7dd559e59c2d6ea42b062021f1b",
+  "to_sha256": "6b3adc713584c69d7afdb9165bd1a435779046990a32b780570e3e2cb54acb38",
+  "changed_entries": [
+    "models/caelum/folklore/landfigures/mayumaman.md3"
+  ],
+  "unchanged_model_resources": {
+    "models/caelum/folklore/landfigures/materials.png": "dc28009fb7f2e1eed91f542152535ddddcffe3ec77315471d75a98f543240a8a",
+    "models/caelum/folklore/landfigures/noshtex.md3": "6b4bd2c6ad89c3fd68cf17f472b6d1e77c332a278c890822033b06b799770d60",
+    "models/caelum/folklore/landfigures/nowet.md3": "4aee54c78dd1762601f073ba46b09280a23edc9d8f15181394aae32704198786",
+    "models/caelum/folklore/landfigures/orkomaman.md3": "8d29c2332fa051588c336a154968541658a9a93fe090c4177aae1920f93ab7a9",
+    "models/caelum/folklore/landfigures/pampayoj.md3": "4de84fb92b964253c9d30a6ca4665bd45ae51269c22f4a2ea166c594c2c4cd05"
+  },
+  "reused": {
+    "noshtex": {
+      "fixture_sha256": "5de5548fc9ef6d50bd97bf41d2775ba6b06dd9a85d22b4e4fbe1c41d756c528f",
+      "assertions": 115,
+      "original_report": "issue819-noshtex-native02/RESULTS.json"
+    },
+    "pampayoj": {
+      "fixture_sha256": "71e68010a0038202fe608be0f09cc2dce70c75e63732b580d6a5941fdcf4e41b",
+      "assertions": 115,
+      "original_report": "issue819-pampayoj-native02/RESULTS.json"
+    },
+    "orkomaman": {
+      "fixture_sha256": "8fc982d3d3ae986403640e70c0ca4f898808cdcfb70c04c7df08386c040866e6",
+      "assertions": 115,
+      "original_report": "issue819-orkomaman-native02/RESULTS.json"
+    },
+    "nowet": {
+      "fixture_sha256": "278b2e10e0518cdbfbdb972f9eb51ccf1e62456e34fbe68845175a4a59088375",
+      "assertions": 115,
+      "original_report": "issue819-nowet-native02/RESULTS.json"
+    }
+  },
+  "reused_assertions": 460,
+  "qualification": "Only Mayu Maman material UV assignment changed; four other models and every other runtime byte plus their regenerated isolated fixtures match. Reuse excludes Mayu Maman; actions and all presentation runs use the final package."
+}

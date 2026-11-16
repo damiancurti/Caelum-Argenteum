@@ -1,6 +1,81 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.87** - 2026-11-15.
+Documentation version: **5.17.88** - 2026-11-16.
+
+## 5.17.88 - Five native land and river figure candidates (#819)
+
+Noshtex 020, Pampayoj 037, Mayu Maman 038, Orko Maman 039 and Nowet 041
+have distinct native candidates based on their owned references. Noshtex has
+a broad gray stone body, dark hair/beard and rough loincloth. Pampayoj is lean,
+with straw hair, ochre crossed poncho and ivory clothing. Mayu Maman has blue-gray
+skin, dark flowing hair and ivory/teal layered clothing with gold leaves.
+Orko Maman has warm stone skin, chestnut hair and stone/cloth layers. Nowet has
+an older brown face, silver hair and pale/dark wraps with cords and bronze.
+Fixed clothing and ornaments are art; no modular inventory is added.
+Editable controls, OBJ/MTL, animations, contacts, original atlas, prompt and
+provenance remain in assets/source/art/land_figures_819. Atlas pixels are unchanged.
+
+Nineteen exports repeat byte-for-byte. Independent serialized checks verify
+380 closed components, 375 rooted contacts, 3,000 posed attachment checks,
+all 23 inherited frames, noncollapsed triangles and material-cell UV bounds.
+Native review corrected pointed inherited ears, long beards, sparse shoulder
+hair, leg volumes and incomplete front clothing. Failed contact diagnostics and
+source/capture iterations are preserved. The garments have intentional front
+openings and layered panels; this does not claim closed-skirt containment.
+
+The 18,616-entry package matches src exactly. Against #817 it adds seven
+model/material/binding resources and one MODELDEF include; two release diagnostics
+change elsewhere. Every other runtime byte is unchanged. Collision, scale,
+statistics, action timing, powers, loot, identity and saved fields are preserved.
+No reference metric dimensions, campaign placement or new cultural claims are adopted.
+
+The evidence totals 871 qualified native assertions: 575 previous-package
+baseline, old-save, fresh-model, reload and rollback assertions plus 296
+actual action, loot and loot-reload assertions. Of these, 460 continuity assertions
+are reused only for four byte-identical models and regenerated fixtures from
+land03; reuse01 proves that the sole final runtime change is Mayu Maman's MD3.
+Her 115 continuity assertions, all 296 action assertions and every presentation
+pair use final land04. Her torso/sash material assignment now makes the ivory
+bodice continuous. Front/profile/rear, face/hair/clothing, both
+extreme strides, attack, pain, intermediate death and lying captures were inspected.
+Each captured frame verifies ordered VIEW -> indexed pose PASS -> screenshot.
+Earlier visual01 runs are diagnostic iterations, not final evidence.
+
+One sequential 700-tic sprite/model pair per figure ran on Windows 11 Pro 26200,
+Ryzen 9 5950X / 32 GB / RTX 3070 Ti driver32.0.16.1088 with the Parsec adapter,
+GZDoom 4.14.2 Vulkan1280x720, uncapped without VSync, unpaused in the background
+at 5% audio:
+
+| Figure / scene | Queue presents/s | Present p95 / p99 / max (ms) | Simulation mean / p95 / p99 / max (ms) |
+| --- | ---: | --- | --- |
+| noshtex / sprite | 1973.43 | 0.6627 / 0.7569 / 1.1323 | 28.5713 / 28.9332 / 29.0299 / 29.1626 |
+| noshtex / model | 1920.59 | 0.6643 / 0.7990 / 1.8496 | 28.5710 / 28.9198 / 29.0242 / 29.1537 |
+| pampayoj / sprite | 1913.33 | 0.7202 / 0.8134 / 1.4007 | 28.5719 / 28.9300 / 29.0672 / 29.2465 |
+| pampayoj / model | 1988.40 | 0.6430 / 0.7589 / 1.0261 | 28.5718 / 28.9324 / 29.0121 / 29.1942 |
+| mayumaman / sprite | 2035.17 | 0.6082 / 0.7379 / 1.0608 | 28.5715 / 28.9075 / 29.0018 / 29.1234 |
+| mayumaman / model | 1927.40 | 0.6611 / 0.7923 / 1.6176 | 28.5716 / 28.9305 / 29.0361 / 29.2946 |
+| orkomaman / sprite | 1910.02 | 0.7065 / 0.8306 / 2.1102 | 28.5715 / 28.9637 / 29.1209 / 29.7228 |
+| orkomaman / model | 1941.71 | 0.6919 / 0.7823 / 1.3860 | 28.5718 / 28.9183 / 29.0521 / 29.1663 |
+| nowet / sprite | 1929.31 | 0.6886 / 0.7878 / 1.5662 | 28.5710 / 28.9461 / 29.0518 / 29.1096 |
+| nowet / model | 1579.04 | 0.8481 / 1.4233 / 296.5928 | 28.5711 / 29.0901 / 38.0471 / 221.4049 |
+
+Nowet's first model run had a 296.5928 ms queue-presentation tail and a 221.4049 ms simulation interval. One bounded sequential sprite/model repeat, with no native or validation job in parallel, records a model maximum of 1.5232 ms and simulation maximum of 29.2955 ms. Both runs are retained. The repeat does not identify the cause or establish repeatability or a performance improvement.
+
+| Repeat / scene | Queue presents/s | Present p95 / p99 / max (ms) | Simulation mean / p95 / p99 / max (ms) |
+| --- | ---: | --- | --- |
+| nowet02 / sprite | 2017.09 | 0.6271 / 0.7595 / 1.0623 | 28.5713 / 28.9134 / 29.0201 / 29.3273 |
+| nowet02 / model | 1898.60 | 0.6987 / 0.8002 / 1.5232 | 28.5720 / 28.9356 / 29.0640 / 29.2955 |
+
+These queue intervals do not establish GPU/display latency, repeatability, an
+optimization or campaign/crowd performance. The sprite baseline occupies different
+screen coverage. Stylized component anatomy, painted faces, opaque hair and rigid
+fall/rest remain candidates; broad silhouettes can exceed provisional collision.
+CA819-LAND-01 remains pending. Evidence:
+assets/validation_v5_17_88/evidence/SUMMARY.json.
+
+Coverage reaches48/56 provisional classes;8 remain. Regional displays, other
+characters, modular fitting, campaign authoring and siege rendering keep the full
+batch unfinished. The consolidated author terminal remains deferred until completion.
 
 ## 5.17.87 - Native witch and rural figure candidates (#817)
 

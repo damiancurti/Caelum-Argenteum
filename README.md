@@ -6,12 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.87.** Obtain and update the complete repository,
+**Current release: 5.17.88.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
-#817 adds native witch/Salamanca/Pericana/Solapa candidates; 43/56 provisional creatures now have models. Geometry, stride, continuity and action checks pass within their recorded scope. The full batch and consolidated author review remain pending.
+#819 adds native Noshtex/Pampayoj/Mayu Maman/Orko Maman/Nowet candidates;48/56 provisional creatures have models. Geometry, continuity and action checks pass within their recorded scope. The full batch and consolidated author review remain pending.
 
 Earlier candidate deliveries and their recorded scope:
+
+#817 adds native witch/Salamanca/Pericana/Solapa candidates; 43/56 provisional creatures now have models. Geometry, stride, continuity and action checks pass within their recorded scope. The full batch and consolidated author review remain pending.
 
 #815 adds native Shoort/Tanu/Halahaches/Matan/Ulen candidates; 39/56 provisional creatures now have models. Geometry, qualified continuity and action checks pass. The complete batch and consolidated author review remain pending.
 

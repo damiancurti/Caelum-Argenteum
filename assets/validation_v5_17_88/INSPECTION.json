@@ -1,0 +1,50 @@
+{
+  "issue": 819,
+  "purpose": "Five distinct reference silhouettes, face/hair, stone/skin, fixed layered clothing and ornaments, inherited actions and lying views.",
+  "additional_views": [
+    {
+      "name": "lying-oblique",
+      "position": [
+        65,
+        -65,
+        63
+      ],
+      "target": [
+        0,
+        0,
+        12
+      ],
+      "default_pose": 22
+    },
+    {
+      "name": "face-detail",
+      "position": [
+        27,
+        -6,
+        47
+      ],
+      "target": [
+        2,
+        0,
+        44
+      ]
+    },
+    {
+      "name": "garment-rear",
+      "position": [
+        -50,
+        -35,
+        35
+      ],
+      "target": [
+        0,
+        0,
+        26
+      ]
+    }
+  ],
+  "action_views": {
+    "death": 6,
+    "rest": 6
+  }
+}
