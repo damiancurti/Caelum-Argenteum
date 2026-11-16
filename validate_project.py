@@ -80,6 +80,7 @@ from assets.generators.validate_kasogonaga_model import validate as kasogonaga_m
 from assets.generators.validate_apparition_models import validate as apparition_model_problems
 from assets.generators.validate_head_apparition_models import validate as head_apparition_model_problems
 from assets.generators.validate_period_apparition_models import validate as period_apparition_model_problems
+from assets.generators.validate_forest_guardian_models import validate as forest_guardian_model_problems
 from assets.generators.validate_serpent_models import validate as serpent_problems
 from assets.generators.validate_hybrid_serpent_models import validate as hybrid_serpent_problems
 from assets.generators.validate_native_regional_gallery import validate as native_regional_gallery_problems
@@ -213,6 +214,7 @@ def validate(root):
     errors.extend(apparition_model_problems(root))
     errors.extend(head_apparition_model_problems(root))
     errors.extend(period_apparition_model_problems(root))
+    errors.extend(forest_guardian_model_problems(root))
     errors.extend(serpent_problems(root))
     errors.extend(hybrid_serpent_problems(root))
     errors.extend(native_regional_gallery_problems(root))

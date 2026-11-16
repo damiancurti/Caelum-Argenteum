@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.84** - 2026-11-15.
+Documentation version: **5.17.85** - 2026-11-15.
+
+## 5.17.85 - Four forest guardian candidates (#813, 2026-11-15)
+
+Added distinct native Sachayoj, Caa Pora, Caa Yari and Zapam Zucum models,
+editable sources, original generated material atlas and inherited combat mappings.
+Sixteen exports repeat. Geometry, posed contacts and closed-skirt coverage pass;
+702 final-package native assertions cover continuity, actual actions and loot.
+Final captures and four isolated presentation pairs were reviewed. Earlier
+witness, shawl, silhouette and beard defects retain diagnostics and source states.
+ASSETS and assets/validation_v5_17_85/evidence/SUMMARY.json record details and
+limitations. CA813-FOREST-01 originates here and remains pending; no previous
+author check was accepted or removed. Coverage reaches 34/56; the wider batch
+and consolidated author review remain unfinished.
 
 ## 5.17.84 - Viuda, Llorona and Futre candidates (#811, 2026-11-15)
 

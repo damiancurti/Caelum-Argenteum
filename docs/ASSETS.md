@@ -1,6 +1,64 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.84** - 2026-11-15.
+Documentation version: **5.17.85** - 2026-11-15.
+
+## 5.17.85 - Native forest guardian candidates (#813)
+
+Sachayoj 012, Caa Pora 013, Caa Yari 014 and Zapam Zucum 015 now use distinct
+native models derived from their owned concepts. Sachayoj has bark, moss, leaves
+and a long green-gray beard; Caa Pora has a broad furred body, long dark beard,
+hand and toe claws, and a leather wrap. Caa Yari has long hair, a leaf-green
+open-front dress and bare feet. Zapam Zucum has a shawl, ivory blouse, bare arms,
+layered green/ivory skirt and boots. Their pointed ears, hair, anatomy and fixed
+clothing belong to species art, not modular equipment or new inventory.
+Editable controls, closed meshes, animation, contacts, OBJ/MTL and the unchanged
+built-in image_gen material atlas and exact prompt/provenance live in
+assets/source/art/forest_guardians_813.
+
+Sixteen exported files repeat byte-for-byte. The four meshes contain 290 closed
+components with 286 rooted witnesses and 2,288 independent posed contact checks.
+All 23 inherited frames have noncollapsed triangles and valid material cells.
+Independent serialized triangle coverage contains all 332 above-hem leg samples
+for Zapam Zucum's two extreme strides; the other three designs have deliberately
+open wraps or a front slit. This sample check does not certify all interpolation.
+Native review corrected thin male limbs, short hair, obscured beards and Zapam
+Zucum's clothing/boot silhouette. Initial failed witnesses, actual shawl overlap
+correction, source revisions and superseded captures remain evidence.
+
+The final 18,596-entry package matches src exactly, adds six model/material/
+binding resources and one MODELDEF include, and changes only the two required
+release diagnostics elsewhere. Existing actor scale, collision, statistics,
+timing, abilities, loot, identity and saved fields remain unchanged. Concept
+metre dimensions, new powers, population and campaign placement are not adopted.
+
+All final-package native tests pass: 460 continuity assertions across baseline,
+old save, fresh model, reload and rollback; 242 actual action/loot/reload checks.
+Front, profile, rear, face/ear/hair/beard/clothing details, extreme strides,
+attack, pain, intermediate death and oblique lying captures were inspected.
+The 408 assertions from earlier visual iterations remain diagnostic evidence
+and are not counted in the final 702.
+
+One sequential 700-tic sprite/model pair per species ran on Windows 11 Pro 26200,
+Ryzen 9 5950X / 32 GB / RTX 3070 Ti, GZDoom 4.14.2 Vulkan at 1280x720, uncapped
+without VSync, unpaused in the background at 5% audio:
+
+- sachayoj/sprite: 1819.21 queue presents/s; presentation p95/p99/max 0.7383/0.8492/1.3365 ms; simulation mean/p95/p99/max 28.5705/28.9449/29.0633/29.1984 ms.
+- sachayoj/model: 1825.51 queue presents/s; presentation p95/p99/max 0.7039/0.8233/1.2877 ms; simulation mean/p95/p99/max 28.5716/28.9670/29.0958/29.3134 ms.
+- caapora/sprite: 1853.29 queue presents/s; presentation p95/p99/max 0.7254/0.8055/1.3537 ms; simulation mean/p95/p99/max 28.5719/28.9752/29.0734/29.2233 ms.
+- caapora/model: 1946.53 queue presents/s; presentation p95/p99/max 0.6948/0.8259/1.5661 ms; simulation mean/p95/p99/max 28.5711/28.9445/29.0645/29.1669 ms.
+- caayari/sprite: 1897.88 queue presents/s; presentation p95/p99/max 0.6732/0.7847/1.2942 ms; simulation mean/p95/p99/max 28.5714/28.9516/29.0723/29.4205 ms.
+- caayari/model: 1788.50 queue presents/s; presentation p95/p99/max 0.7230/0.8064/1.1650 ms; simulation mean/p95/p99/max 28.5719/28.9498/29.0541/29.1773 ms.
+- zapamzucum/sprite: 1894.75 queue presents/s; presentation p95/p99/max 0.6999/0.8125/1.7055 ms; simulation mean/p95/p99/max 28.5708/28.9240/29.0484/29.2496 ms.
+- zapamzucum/model: 1854.33 queue presents/s; presentation p95/p99/max 0.7285/0.8410/2.3239 ms; simulation mean/p95/p99/max 28.5709/28.9560/29.0942/30.2353 ms.
+
+These queue intervals do not measure GPU/display latency, establish repeatability
+or an optimization, or certify a campaign/crowd budget. Simplified closed anatomy,
+painted faces, opaque hair/foliage and rigid fall/rest poses remain candidates;
+wide silhouettes may exceed provisional collision. CA813-FOREST-01 remains
+pending for the consolidated handoff. Evidence:
+assets/validation_v5_17_85/evidence/SUMMARY.json. Native coverage reaches 34/56
+provisional classes; 22 remain, alongside regional views, other characters,
+modular fitting, authored campaign acquisitions and siege rendering.
 
 ## 5.17.84 - Native period apparition candidates (#811)
 

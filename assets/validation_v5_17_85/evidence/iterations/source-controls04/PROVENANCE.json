@@ -1,0 +1,15 @@
+{
+  "issue": 813,
+  "parent_issue": 461,
+  "status": "candidate_author_review_pending",
+  "author": "Damian Curti",
+  "reference_images": {
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/12_sachayoj.png": "fbea4f6bceb121bc7b828fb7ab1a9fa360e5836870df8b854cd575c4a6a1db12",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/13_caa_pora.png": "4cff72140077b4e8663fe7603504cd13cafcbc4e6ae89edcb8f60022da816ee9",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/14_caa_yari.png": "a20e1a16cf0c33f138d7dcd1d5772d252d0124a17fe1e77d95af8069d9cdf639",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/15_zapam_zucum.png": "9323cf2b081117cb8c1a4030e445e40f8a87f3155c520d6eb6beacd80cae0083"
+  },
+  "material_source": "MATERIALS_PROMPT.json",
+  "geometry": "Original dimensionless controls using owned anatomy, closed cloth, face and native animation tools.",
+  "limits": "Reference-led bark, shaggy, leaf-clad and shawled forest identities. Native candidate art only; fixed clothing adds no modular inventory, new powers, balance or metric scale."
+}

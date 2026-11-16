@@ -1,0 +1,3009 @@
+{
+  "schema_revision": 1,
+  "issue": 813,
+  "catalogue_id": "CA-FOLK-012",
+  "species": "sachayoj",
+  "status": "candidate_author_review_pending",
+  "attachment_root": "pelvis",
+  "reference": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/12_sachayoj.png",
+  "preview": {
+    "height_map_units": 100,
+    "model_offset": [
+      0,
+      0,
+      0
+    ],
+    "scale_authority": "Dimensionless editing coordinates, fitted to unchanged provisional native Height; no metric gameplay scale."
+  },
+  "atlas": {
+    "source_file": "materials.png",
+    "columns": 4,
+    "rows": 4,
+    "inset": 0.025,
+    "image_size": [
+      1254,
+      1254
+    ]
+  },
+  "materials": {
+    "face": {
+      "tile": [
+        0,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "skin": {
+      "tile": [
+        0,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "hair": {
+      "tile": [
+        1,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "bark": {
+      "tile": [
+        0,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "fur": {
+      "tile": [
+        2,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "leaf_cloth": {
+      "tile": [
+        1,
+        2
+      ],
+      "native_batch": "atlas"
+    },
+    "ivory": {
+      "tile": [
+        2,
+        2
+      ],
+      "native_batch": "atlas"
+    },
+    "leather": {
+      "tile": [
+        3,
+        2
+      ],
+      "native_batch": "atlas"
+    },
+    "vine": {
+      "tile": [
+        0,
+        3
+      ],
+      "native_batch": "atlas"
+    },
+    "leaf": {
+      "tile": [
+        1,
+        3
+      ],
+      "native_batch": "atlas"
+    },
+    "moss": {
+      "tile": [
+        2,
+        3
+      ],
+      "native_batch": "atlas"
+    },
+    "bronze": {
+      "tile": [
+        3,
+        3
+      ],
+      "native_batch": "atlas"
+    }
+  },
+  "parts": {
+    "head": {
+      "parent": "neck",
+      "pivot": [
+        0.0,
+        0.0,
+        85.87
+      ]
+    },
+    "pelvis": {
+      "parent": null,
+      "pivot": [
+        0.0,
+        0.0,
+        54
+      ]
+    },
+    "torso": {
+      "parent": "pelvis",
+      "pivot": [
+        0.0,
+        0.0,
+        57
+      ]
+    },
+    "left_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        0.0,
+        -5.9799999999999995,
+        53
+      ]
+    },
+    "left_shin": {
+      "parent": "left_thigh",
+      "pivot": [
+        0.324,
+        -7.13,
+        31
+      ]
+    },
+    "left_foot": {
+      "parent": "left_shin",
+      "pivot": [
+        0.0,
+        -7.13,
+        7.8
+      ]
+    },
+    "left_upper": {
+      "parent": "torso",
+      "pivot": [
+        0.0,
+        -12.19,
+        77
+      ]
+    },
+    "left_fore": {
+      "parent": "left_upper",
+      "pivot": [
+        0.43200000000000005,
+        -19.549999999999997,
+        62
+      ]
+    },
+    "left_hand": {
+      "parent": "left_fore",
+      "pivot": [
+        0.54,
+        -23.0,
+        46.3
+      ]
+    },
+    "left_finger_0": {
+      "parent": "left_hand",
+      "pivot": [
+        0.81,
+        -21.5625,
+        42
+      ]
+    },
+    "left_finger_1": {
+      "parent": "left_hand",
+      "pivot": [
+        0.81,
+        -22.5975,
+        42
+      ]
+    },
+    "left_finger_2": {
+      "parent": "left_hand",
+      "pivot": [
+        0.81,
+        -23.6325,
+        42
+      ]
+    },
+    "left_finger_3": {
+      "parent": "left_hand",
+      "pivot": [
+        0.81,
+        -24.6675,
+        42
+      ]
+    },
+    "left_thumb": {
+      "parent": "left_hand",
+      "pivot": [
+        0.9720000000000001,
+        -21.39,
+        44
+      ]
+    },
+    "left_cuff": {
+      "parent": "left_fore",
+      "pivot": [
+        0.54,
+        -22.654999999999998,
+        48.1
+      ]
+    },
+    "right_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        0.0,
+        5.9799999999999995,
+        53
+      ]
+    },
+    "right_shin": {
+      "parent": "right_thigh",
+      "pivot": [
+        0.324,
+        7.13,
+        31
+      ]
+    },
+    "right_foot": {
+      "parent": "right_shin",
+      "pivot": [
+        0.0,
+        7.13,
+        7.8
+      ]
+    },
+    "right_upper": {
+      "parent": "torso",
+      "pivot": [
+        0.0,
+        12.19,
+        77
+      ]
+    },
+    "right_fore": {
+      "parent": "right_upper",
+      "pivot": [
+        0.43200000000000005,
+        19.549999999999997,
+        62
+      ]
+    },
+    "right_hand": {
+      "parent": "right_fore",
+      "pivot": [
+        0.54,
+        23.0,
+        46.3
+      ]
+    },
+    "right_finger_0": {
+      "parent": "right_hand",
+      "pivot": [
+        0.81,
+        21.5625,
+        42
+      ]
+    },
+    "right_finger_1": {
+      "parent": "right_hand",
+      "pivot": [
+        0.81,
+        22.5975,
+        42
+      ]
+    },
+    "right_finger_2": {
+      "parent": "right_hand",
+      "pivot": [
+        0.81,
+        23.6325,
+        42
+      ]
+    },
+    "right_finger_3": {
+      "parent": "right_hand",
+      "pivot": [
+        0.81,
+        24.6675,
+        42
+      ]
+    },
+    "right_thumb": {
+      "parent": "right_hand",
+      "pivot": [
+        0.9720000000000001,
+        21.39,
+        44
+      ]
+    },
+    "right_cuff": {
+      "parent": "right_fore",
+      "pivot": [
+        0.54,
+        22.654999999999998,
+        48.1
+      ]
+    },
+    "neck": {
+      "parent": "torso",
+      "pivot": [
+        0.0,
+        0.0,
+        81
+      ]
+    },
+    "left_ear": {
+      "parent": "head",
+      "pivot": [
+        -0.324,
+        -6.4975,
+        92.5
+      ]
+    },
+    "right_ear": {
+      "parent": "head",
+      "pivot": [
+        -0.324,
+        6.4975,
+        92.5
+      ]
+    },
+    "hair_mass": {
+      "parent": "head",
+      "pivot": [
+        -3.24,
+        0.0,
+        94.06
+      ]
+    },
+    "hair_lock_00": {
+      "parent": "hair_mass",
+      "pivot": [
+        -1.870716831960134,
+        5.211269775460736,
+        96.4
+      ]
+    },
+    "hair_lock_01": {
+      "parent": "hair_mass",
+      "pivot": [
+        -3.27141543426257,
+        5.74972970116655,
+        96.4
+      ]
+    },
+    "hair_lock_02": {
+      "parent": "hair_mass",
+      "pivot": [
+        -4.665967130893948,
+        5.163167899916206,
+        96.4
+      ]
+    },
+    "hair_lock_03": {
+      "parent": "hair_mass",
+      "pivot": [
+        -5.781506754339426,
+        3.566354074792494,
+        96.4
+      ]
+    },
+    "hair_lock_04": {
+      "parent": "hair_mass",
+      "pivot": [
+        -6.399762076358078,
+        1.2717290431096036,
+        96.4
+      ]
+    },
+    "hair_lock_05": {
+      "parent": "hair_mass",
+      "pivot": [
+        -6.399762076358078,
+        -1.2717290431096047,
+        96.4
+      ]
+    },
+    "hair_lock_06": {
+      "parent": "hair_mass",
+      "pivot": [
+        -5.781506754339425,
+        -3.566354074792496,
+        96.4
+      ]
+    },
+    "hair_lock_07": {
+      "parent": "hair_mass",
+      "pivot": [
+        -4.665967130893949,
+        -5.163167899916206,
+        96.4
+      ]
+    },
+    "hair_lock_08": {
+      "parent": "hair_mass",
+      "pivot": [
+        -3.27141543426257,
+        -5.74972970116655,
+        96.4
+      ]
+    },
+    "hair_lock_09": {
+      "parent": "hair_mass",
+      "pivot": [
+        -1.8707168319601335,
+        -5.211269775460736,
+        96.4
+      ]
+    },
+    "hair_crown": {
+      "parent": "head",
+      "pivot": [
+        0.0,
+        0.0,
+        96.4
+      ]
+    },
+    "left_temple_lock": {
+      "parent": "head",
+      "pivot": [
+        1.08,
+        -5.06,
+        96.4
+      ]
+    },
+    "right_temple_lock": {
+      "parent": "head",
+      "pivot": [
+        1.08,
+        5.06,
+        96.4
+      ]
+    },
+    "left_toe_0": {
+      "parent": "left_foot",
+      "pivot": [
+        6.804,
+        -5.75,
+        2.3
+      ]
+    },
+    "left_toe_1": {
+      "parent": "left_foot",
+      "pivot": [
+        6.804,
+        -6.44,
+        2.3
+      ]
+    },
+    "left_toe_2": {
+      "parent": "left_foot",
+      "pivot": [
+        6.804,
+        -7.13,
+        2.3
+      ]
+    },
+    "left_toe_3": {
+      "parent": "left_foot",
+      "pivot": [
+        6.804,
+        -7.819999999999999,
+        2.3
+      ]
+    },
+    "left_toe_4": {
+      "parent": "left_foot",
+      "pivot": [
+        6.804,
+        -8.51,
+        2.3
+      ]
+    },
+    "right_toe_0": {
+      "parent": "right_foot",
+      "pivot": [
+        6.804,
+        5.75,
+        2.3
+      ]
+    },
+    "right_toe_1": {
+      "parent": "right_foot",
+      "pivot": [
+        6.804,
+        6.44,
+        2.3
+      ]
+    },
+    "right_toe_2": {
+      "parent": "right_foot",
+      "pivot": [
+        6.804,
+        7.13,
+        2.3
+      ]
+    },
+    "right_toe_3": {
+      "parent": "right_foot",
+      "pivot": [
+        6.804,
+        7.819999999999999,
+        2.3
+      ]
+    },
+    "right_toe_4": {
+      "parent": "right_foot",
+      "pivot": [
+        6.804,
+        8.51,
+        2.3
+      ]
+    },
+    "beard_0": {
+      "parent": "head",
+      "pivot": [
+        4.482000000000001,
+        -4.3125,
+        88.7
+      ]
+    },
+    "beard_1": {
+      "parent": "head",
+      "pivot": [
+        4.482000000000001,
+        -2.875,
+        88.7
+      ]
+    },
+    "beard_2": {
+      "parent": "head",
+      "pivot": [
+        4.482000000000001,
+        -1.4375,
+        88.7
+      ]
+    },
+    "beard_3": {
+      "parent": "head",
+      "pivot": [
+        4.482000000000001,
+        0.0,
+        88.7
+      ]
+    },
+    "beard_4": {
+      "parent": "head",
+      "pivot": [
+        4.482000000000001,
+        1.4375,
+        88.7
+      ]
+    },
+    "beard_5": {
+      "parent": "head",
+      "pivot": [
+        4.482000000000001,
+        2.875,
+        88.7
+      ]
+    },
+    "beard_6": {
+      "parent": "head",
+      "pivot": [
+        4.482000000000001,
+        4.3125,
+        88.7
+      ]
+    },
+    "forest_wrap": {
+      "parent": "pelvis",
+      "pivot": [
+        7.668,
+        0.0,
+        54.4
+      ]
+    },
+    "waist_band": {
+      "parent": "pelvis",
+      "pivot": [
+        8.208,
+        0.0,
+        54
+      ]
+    },
+    "left_shoulder_leaf_0": {
+      "parent": "torso",
+      "pivot": [
+        1.836,
+        -7.475,
+        77.5
+      ]
+    },
+    "left_shoulder_leaf_1": {
+      "parent": "torso",
+      "pivot": [
+        1.836,
+        -9.545,
+        76.6
+      ]
+    },
+    "left_shoulder_leaf_2": {
+      "parent": "torso",
+      "pivot": [
+        1.836,
+        -11.614999999999998,
+        75.7
+      ]
+    },
+    "right_shoulder_leaf_0": {
+      "parent": "torso",
+      "pivot": [
+        1.836,
+        7.475,
+        77.5
+      ]
+    },
+    "right_shoulder_leaf_1": {
+      "parent": "torso",
+      "pivot": [
+        1.836,
+        9.545,
+        76.6
+      ]
+    },
+    "right_shoulder_leaf_2": {
+      "parent": "torso",
+      "pivot": [
+        1.836,
+        11.614999999999998,
+        75.7
+      ]
+    },
+    "waist_leaf_0": {
+      "parent": "waist_band",
+      "pivot": [
+        6.647402306769441,
+        -6.8999999999999995,
+        53.5
+      ]
+    },
+    "waist_leaf_1": {
+      "parent": "waist_band",
+      "pivot": [
+        7.761030712457578,
+        -3.4499999999999997,
+        53.5
+      ]
+    },
+    "waist_leaf_2": {
+      "parent": "waist_band",
+      "pivot": [
+        8.100000000000001,
+        0.0,
+        53.5
+      ]
+    },
+    "waist_leaf_3": {
+      "parent": "waist_band",
+      "pivot": [
+        7.761030712457578,
+        3.4499999999999997,
+        53.5
+      ]
+    },
+    "waist_leaf_4": {
+      "parent": "waist_band",
+      "pivot": [
+        6.647402306769441,
+        6.8999999999999995,
+        53.5
+      ]
+    },
+    "belt_medallion": {
+      "parent": "waist_band",
+      "pivot": [
+        8.424,
+        0.0,
+        54
+      ]
+    }
+  },
+  "shapes": [
+    {
+      "kind": "ellipsoid",
+      "center": [
+        0,
+        0,
+        54
+      ],
+      "radii": [
+        7.9,
+        10.8,
+        7.5
+      ],
+      "material": "skin",
+      "latitudes": 15,
+      "longitudes": 32,
+      "name": "pelvis",
+      "part": "pelvis"
+    },
+    {
+      "kind": "loft",
+      "rows": [
+        [
+          55,
+          0,
+          0,
+          8,
+          10
+        ],
+        [
+          59,
+          0,
+          0,
+          7.5,
+          9.5
+        ],
+        [
+          65,
+          0,
+          0,
+          8.2,
+          10.5
+        ],
+        [
+          72,
+          0,
+          0,
+          9.8,
+          12.2
+        ],
+        [
+          77,
+          0,
+          0,
+          8.4,
+          12
+        ],
+        [
+          81,
+          0,
+          0,
+          4.8,
+          6.8
+        ]
+      ],
+      "material": "skin",
+      "segments": 32,
+      "cap": true,
+      "curve_steps": 2,
+      "name": "torso",
+      "part": "torso"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          -5.2,
+          55,
+          4.1,
+          4.3
+        ],
+        [
+          0,
+          -5.8,
+          44,
+          4.3,
+          4.5
+        ],
+        [
+          0.3,
+          -6.2,
+          30,
+          3,
+          3.1
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_thigh",
+      "part": "left_thigh"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.3,
+          -6.2,
+          32,
+          3.1,
+          3.2
+        ],
+        [
+          0,
+          -6.3,
+          21,
+          3,
+          3.2
+        ],
+        [
+          0,
+          -6.2,
+          7,
+          1.8,
+          2
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_shin",
+      "part": "left_shin"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        2.4,
+        -6.2,
+        4
+      ],
+      "radii": [
+        5.4,
+        2.4,
+        4
+      ],
+      "material": "skin",
+      "latitudes": 11,
+      "longitudes": 20,
+      "name": "left_foot",
+      "part": "left_foot"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          -10.8,
+          77,
+          3.5,
+          3.8
+        ],
+        [
+          0,
+          -14,
+          72,
+          4.1,
+          4.5
+        ],
+        [
+          0.4,
+          -17,
+          61,
+          2.5,
+          2.7
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_upper",
+      "part": "left_upper"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.4,
+          -17,
+          63,
+          2.6,
+          2.8
+        ],
+        [
+          0.7,
+          -18.2,
+          55,
+          2.2,
+          2.4
+        ],
+        [
+          0.5,
+          -20,
+          46,
+          3.8,
+          4.1
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_fore",
+      "part": "left_fore"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        0.8,
+        -20.1,
+        43.7
+      ],
+      "radii": [
+        1.3,
+        2.05,
+        3.5
+      ],
+      "material": "skin",
+      "latitudes": 11,
+      "longitudes": 20,
+      "name": "left_hand",
+      "part": "left_hand"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          -18.75,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          -18.75,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          -18.75,
+          38.8,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "skin",
+      "segments": 8,
+      "name": "left_finger_0",
+      "part": "left_finger_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          -19.650000000000002,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          -19.650000000000002,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          -19.650000000000002,
+          38,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "skin",
+      "segments": 8,
+      "name": "left_finger_1",
+      "part": "left_finger_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          -20.55,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          -20.55,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          -20.55,
+          38.3,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "skin",
+      "segments": 8,
+      "name": "left_finger_2",
+      "part": "left_finger_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          -21.450000000000003,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          -21.450000000000003,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          -21.450000000000003,
+          39.2,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "skin",
+      "segments": 8,
+      "name": "left_finger_3",
+      "part": "left_finger_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.8,
+          -18.7,
+          44.5,
+          0.65,
+          0.65
+        ],
+        [
+          1,
+          -17.9,
+          42.8,
+          0.55,
+          0.55
+        ],
+        [
+          1.5,
+          -17.7,
+          41.4,
+          0.35,
+          0.35
+        ]
+      ],
+      "material": "skin",
+      "segments": 10,
+      "name": "left_thumb",
+      "part": "left_thumb"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        0.5,
+        -19.7,
+        48.1
+      ],
+      "radii": [
+        2.2,
+        2.55,
+        2.4
+      ],
+      "material": "vine",
+      "latitudes": 8,
+      "longitudes": 16,
+      "name": "left_cuff",
+      "part": "left_cuff"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          5.2,
+          55,
+          4.1,
+          4.3
+        ],
+        [
+          0,
+          5.8,
+          44,
+          4.3,
+          4.5
+        ],
+        [
+          0.3,
+          6.2,
+          30,
+          3,
+          3.1
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_thigh",
+      "part": "right_thigh"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.3,
+          6.2,
+          32,
+          3.1,
+          3.2
+        ],
+        [
+          0,
+          6.3,
+          21,
+          3,
+          3.2
+        ],
+        [
+          0,
+          6.2,
+          7,
+          1.8,
+          2
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_shin",
+      "part": "right_shin"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        2.4,
+        6.2,
+        4
+      ],
+      "radii": [
+        5.4,
+        2.4,
+        4
+      ],
+      "material": "skin",
+      "latitudes": 11,
+      "longitudes": 20,
+      "name": "right_foot",
+      "part": "right_foot"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          10.8,
+          77,
+          3.5,
+          3.8
+        ],
+        [
+          0,
+          14,
+          72,
+          4.1,
+          4.5
+        ],
+        [
+          0.4,
+          17,
+          61,
+          2.5,
+          2.7
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_upper",
+      "part": "right_upper"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.4,
+          17,
+          63,
+          2.6,
+          2.8
+        ],
+        [
+          0.7,
+          18.2,
+          55,
+          2.2,
+          2.4
+        ],
+        [
+          0.5,
+          20,
+          46,
+          3.8,
+          4.1
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_fore",
+      "part": "right_fore"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        0.8,
+        20.1,
+        43.7
+      ],
+      "radii": [
+        1.3,
+        2.05,
+        3.5
+      ],
+      "material": "skin",
+      "latitudes": 11,
+      "longitudes": 20,
+      "name": "right_hand",
+      "part": "right_hand"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          18.75,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          18.75,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          18.75,
+          38.8,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "skin",
+      "segments": 8,
+      "name": "right_finger_0",
+      "part": "right_finger_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          19.650000000000002,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          19.650000000000002,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          19.650000000000002,
+          38,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "skin",
+      "segments": 8,
+      "name": "right_finger_1",
+      "part": "right_finger_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          20.55,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          20.55,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          20.55,
+          38.3,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "skin",
+      "segments": 8,
+      "name": "right_finger_2",
+      "part": "right_finger_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.7,
+          21.450000000000003,
+          43,
+          0.43,
+          0.43
+        ],
+        [
+          1,
+          21.450000000000003,
+          40,
+          0.4,
+          0.4
+        ],
+        [
+          1.5,
+          21.450000000000003,
+          39.2,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "skin",
+      "segments": 8,
+      "name": "right_finger_3",
+      "part": "right_finger_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.8,
+          18.7,
+          44.5,
+          0.65,
+          0.65
+        ],
+        [
+          1,
+          17.9,
+          42.8,
+          0.55,
+          0.55
+        ],
+        [
+          1.5,
+          17.7,
+          41.4,
+          0.35,
+          0.35
+        ]
+      ],
+      "material": "skin",
+      "segments": 10,
+      "name": "right_thumb",
+      "part": "right_thumb"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        0.5,
+        19.7,
+        48.1
+      ],
+      "radii": [
+        2.2,
+        2.55,
+        2.4
+      ],
+      "material": "vine",
+      "latitudes": 8,
+      "longitudes": 16,
+      "name": "right_cuff",
+      "part": "right_cuff"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          0,
+          79.5,
+          3.2,
+          3.5
+        ],
+        [
+          0,
+          0,
+          84.5,
+          3,
+          3.2
+        ],
+        [
+          0,
+          0,
+          88,
+          3,
+          3.2
+        ]
+      ],
+      "material": "skin",
+      "segments": 12,
+      "name": "neck",
+      "part": "neck"
+    },
+    {
+      "kind": "face",
+      "center": [
+        0,
+        0,
+        92.5
+      ],
+      "radii": [
+        6.968000000000001,
+        6.2540000000000004,
+        7.644000000000001
+      ],
+      "material": "skin",
+      "latitudes": 23,
+      "longitudes": 40,
+      "front_deformation": [
+        {
+          "depth": 1.9549999999999998,
+          "y": 0,
+          "z": 91.72,
+          "width_y": 1.1,
+          "width_z": 2.028
+        },
+        {
+          "depth": 0.6325,
+          "y": 0,
+          "z": 88.99,
+          "width_y": 2.1,
+          "width_z": 0.7020000000000001
+        },
+        {
+          "depth": 0.5,
+          "y": -2.9,
+          "z": 91.954,
+          "width_y": 1.3,
+          "width_z": 1.56
+        },
+        {
+          "depth": 0.5,
+          "y": 2.9,
+          "z": 91.954,
+          "width_y": 1.3,
+          "width_z": 1.56
+        }
+      ],
+      "front_projection": {
+        "material": "face",
+        "minimum_x": 1.7,
+        "y_bounds": [
+          -7.8,
+          7.8
+        ],
+        "z_bounds": [
+          83.14,
+          101.47
+        ]
+      },
+      "name": "head",
+      "part": "head"
+    },
+    {
+      "name": "left_ear",
+      "part": "left_ear",
+      "kind": "tube",
+      "rows": [
+        [
+          -0.4,
+          -5.1,
+          92.5,
+          0.9,
+          1.65
+        ],
+        [
+          -1.1,
+          -7,
+          93.7,
+          0.65,
+          1.25
+        ],
+        [
+          -1.7,
+          -9,
+          95.6,
+          0.18,
+          0.28
+        ]
+      ],
+      "material": "skin",
+      "segments": 12
+    },
+    {
+      "name": "right_ear",
+      "part": "right_ear",
+      "kind": "tube",
+      "rows": [
+        [
+          -0.4,
+          5.1,
+          92.5,
+          0.9,
+          1.65
+        ],
+        [
+          -1.1,
+          7,
+          93.7,
+          0.65,
+          1.25
+        ],
+        [
+          -1.7,
+          9,
+          95.6,
+          0.18,
+          0.28
+        ]
+      ],
+      "material": "skin",
+      "segments": 12
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        -3,
+        0,
+        94.06
+      ],
+      "radii": [
+        4.5,
+        6.4,
+        6.474000000000001
+      ],
+      "material": "hair",
+      "latitudes": 17,
+      "longitudes": 28,
+      "name": "hair_mass",
+      "part": "hair_mass"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -1.7321452147779017,
+          4.531538935183249,
+          97.18,
+          1.25,
+          1.2
+        ],
+        [
+          -1.7321452147779017,
+          4.531538935183249,
+          95.62,
+          1.5,
+          1.45
+        ],
+        [
+          -2.832145214777902,
+          6.117577562497387,
+          88.6,
+          1.5,
+          1.3
+        ],
+        [
+          -3.2321452147779017,
+          7.023885349534036,
+          78.0,
+          1,
+          0.8
+        ],
+        [
+          -2.832145214777902,
+          6.797308402774874,
+          76.44,
+          0.35,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "hair_lock_00",
+      "part": "hair_lock_00"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -3.029088365057935,
+          4.999764957536131,
+          97.18,
+          1.25,
+          1.2
+        ],
+        [
+          -3.029088365057935,
+          4.999764957536131,
+          95.62,
+          1.5,
+          1.45
+        ],
+        [
+          -4.129088365057935,
+          6.749682692673778,
+          88.6,
+          1.5,
+          1.3
+        ],
+        [
+          -4.529088365057936,
+          7.749635684181004,
+          76.92430739573145,
+          1,
+          0.8
+        ],
+        [
+          -4.129088365057935,
+          7.499647436304197,
+          75.36430739573144,
+          0.35,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "hair_lock_01",
+      "part": "hair_lock_01"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -4.320339936012915,
+          4.48971121731844,
+          97.18,
+          1.25,
+          1.2
+        ],
+        [
+          -4.320339936012915,
+          4.48971121731844,
+          95.62,
+          1.5,
+          1.45
+        ],
+        [
+          -5.420339936012915,
+          6.061110143379895,
+          88.6,
+          1.5,
+          1.3
+        ],
+        [
+          -5.820339936012915,
+          6.959052386843583,
+          74.68621640247969,
+          1,
+          0.8
+        ],
+        [
+          -5.4203399360129145,
+          6.7345668259776605,
+          73.12621640247968,
+          0.35,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "hair_lock_02",
+      "part": "hair_lock_02"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -5.353246994758727,
+          3.1011774563412993,
+          97.18,
+          1.25,
+          1.2
+        ],
+        [
+          -5.353246994758727,
+          3.1011774563412993,
+          95.62,
+          1.5,
+          1.45
+        ],
+        [
+          -6.453246994758727,
+          4.186589566060754,
+          88.6,
+          1.5,
+          1.3
+        ],
+        [
+          -6.853246994758727,
+          4.806825057329014,
+          73.34341755795495,
+          1,
+          0.8
+        ],
+        [
+          -6.453246994758727,
+          4.651766184511949,
+          71.78341755795495,
+          0.35,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "hair_lock_03",
+      "part": "hair_lock_03"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -5.925705626257479,
+          1.105851341834438,
+          97.18,
+          1.25,
+          1.2
+        ],
+        [
+          -5.925705626257479,
+          1.105851341834438,
+          95.62,
+          1.5,
+          1.45
+        ],
+        [
+          -7.02570562625748,
+          1.4928993114764915,
+          88.6,
+          1.5,
+          1.3
+        ],
+        [
+          -7.425705626257479,
+          1.714069579843379,
+          74.13047392717914,
+          1,
+          0.8
+        ],
+        [
+          -7.025705626257479,
+          1.658777012751657,
+          72.57047392717914,
+          0.35,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "hair_lock_04",
+      "part": "hair_lock_04"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -5.925705626257479,
+          -1.105851341834439,
+          97.18,
+          1.25,
+          1.2
+        ],
+        [
+          -5.925705626257479,
+          -1.105851341834439,
+          95.62,
+          1.5,
+          1.45
+        ],
+        [
+          -7.02570562625748,
+          -1.4928993114764926,
+          88.6,
+          1.5,
+          1.3
+        ],
+        [
+          -7.425705626257479,
+          -1.7140695798433803,
+          76.32376951398396,
+          1,
+          0.8
+        ],
+        [
+          -7.025705626257479,
+          -1.6587770127516583,
+          74.76376951398396,
+          0.35,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "hair_lock_05",
+      "part": "hair_lock_05"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -5.3532469947587265,
+          -3.1011774563413015,
+          97.18,
+          1.25,
+          1.2
+        ],
+        [
+          -5.3532469947587265,
+          -3.1011774563413015,
+          95.62,
+          1.5,
+          1.45
+        ],
+        [
+          -6.453246994758727,
+          -4.186589566060757,
+          88.6,
+          1.5,
+          1.3
+        ],
+        [
+          -6.8532469947587265,
+          -4.806825057329018,
+          77.90679847076186,
+          1,
+          0.8
+        ],
+        [
+          -6.453246994758726,
+          -4.651766184511953,
+          76.34679847076185,
+          0.35,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "hair_lock_06",
+      "part": "hair_lock_06"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -4.320339936012916,
+          -4.48971121731844,
+          97.18,
+          1.25,
+          1.2
+        ],
+        [
+          -4.320339936012916,
+          -4.48971121731844,
+          95.62,
+          1.5,
+          1.45
+        ],
+        [
+          -5.420339936012915,
+          -6.061110143379895,
+          88.6,
+          1.5,
+          1.3
+        ],
+        [
+          -5.820339936012916,
+          -6.959052386843583,
+          77.42413127516333,
+          1,
+          0.8
+        ],
+        [
+          -5.420339936012915,
+          -6.7345668259776605,
+          75.86413127516334,
+          0.35,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "hair_lock_07",
+      "part": "hair_lock_07"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -3.029088365057935,
+          -4.999764957536131,
+          97.18,
+          1.25,
+          1.2
+        ],
+        [
+          -3.029088365057935,
+          -4.999764957536131,
+          95.62,
+          1.5,
+          1.45
+        ],
+        [
+          -4.129088365057935,
+          -6.749682692673778,
+          88.6,
+          1.5,
+          1.3
+        ],
+        [
+          -4.529088365057936,
+          -7.749635684181004,
+          75.31952992088785,
+          1,
+          0.8
+        ],
+        [
+          -4.129088365057935,
+          -7.499647436304197,
+          73.75952992088784,
+          0.35,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "hair_lock_08",
+      "part": "hair_lock_08"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -1.7321452147779013,
+          -4.531538935183249,
+          97.18,
+          1.25,
+          1.2
+        ],
+        [
+          -1.7321452147779013,
+          -4.531538935183249,
+          95.62,
+          1.5,
+          1.45
+        ],
+        [
+          -2.8321452147779014,
+          -6.117577562497387,
+          88.6,
+          1.5,
+          1.3
+        ],
+        [
+          -3.2321452147779013,
+          -7.023885349534036,
+          73.52795518718986,
+          1,
+          0.8
+        ],
+        [
+          -2.8321452147779014,
+          -6.797308402774874,
+          71.96795518718986,
+          0.35,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "hair_lock_09",
+      "part": "hair_lock_09"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        -0.4,
+        0,
+        98.35
+      ],
+      "radii": [
+        4.8,
+        5.3,
+        2.34
+      ],
+      "latitudes": 11,
+      "longitudes": 24,
+      "material": "hair",
+      "name": "hair_crown",
+      "part": "hair_crown"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          1,
+          -4.3,
+          97.18,
+          1.1,
+          1.1
+        ],
+        [
+          1.2,
+          -5.1,
+          94.06,
+          1.15,
+          1
+        ],
+        [
+          0.8,
+          -5.3,
+          90.16,
+          0.9,
+          0.8
+        ],
+        [
+          -0.3,
+          -5.5,
+          86.26,
+          0.45,
+          0.4
+        ]
+      ],
+      "segments": 12,
+      "material": "hair",
+      "name": "left_temple_lock",
+      "part": "left_temple_lock"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          1,
+          4.3,
+          97.18,
+          1.1,
+          1.1
+        ],
+        [
+          1.2,
+          5.1,
+          94.06,
+          1.15,
+          1
+        ],
+        [
+          0.8,
+          5.3,
+          90.16,
+          0.9,
+          0.8
+        ],
+        [
+          -0.3,
+          5.5,
+          86.26,
+          0.45,
+          0.4
+        ]
+      ],
+      "segments": 12,
+      "material": "hair",
+      "name": "right_temple_lock",
+      "part": "right_temple_lock"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        6.9399999999999995,
+        -5.0,
+        2.2
+      ],
+      "radii": [
+        1.5999999999999999,
+        0.48,
+        0.75
+      ],
+      "latitudes": 6,
+      "longitudes": 10,
+      "material": "skin",
+      "name": "left_toe_0",
+      "part": "left_toe_0"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        7.12,
+        -5.6000000000000005,
+        2.2
+      ],
+      "radii": [
+        1.75,
+        0.48,
+        0.75
+      ],
+      "latitudes": 6,
+      "longitudes": 10,
+      "material": "skin",
+      "name": "left_toe_1",
+      "part": "left_toe_1"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        7.3,
+        -6.2,
+        2.2
+      ],
+      "radii": [
+        1.9,
+        0.48,
+        0.75
+      ],
+      "latitudes": 6,
+      "longitudes": 10,
+      "material": "skin",
+      "name": "left_toe_2",
+      "part": "left_toe_2"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        7.12,
+        -6.8,
+        2.2
+      ],
+      "radii": [
+        1.75,
+        0.48,
+        0.75
+      ],
+      "latitudes": 6,
+      "longitudes": 10,
+      "material": "skin",
+      "name": "left_toe_3",
+      "part": "left_toe_3"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        6.9399999999999995,
+        -7.4,
+        2.2
+      ],
+      "radii": [
+        1.5999999999999999,
+        0.48,
+        0.75
+      ],
+      "latitudes": 6,
+      "longitudes": 10,
+      "material": "skin",
+      "name": "left_toe_4",
+      "part": "left_toe_4"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        6.9399999999999995,
+        5.0,
+        2.2
+      ],
+      "radii": [
+        1.5999999999999999,
+        0.48,
+        0.75
+      ],
+      "latitudes": 6,
+      "longitudes": 10,
+      "material": "skin",
+      "name": "right_toe_0",
+      "part": "right_toe_0"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        7.12,
+        5.6000000000000005,
+        2.2
+      ],
+      "radii": [
+        1.75,
+        0.48,
+        0.75
+      ],
+      "latitudes": 6,
+      "longitudes": 10,
+      "material": "skin",
+      "name": "right_toe_1",
+      "part": "right_toe_1"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        7.3,
+        6.2,
+        2.2
+      ],
+      "radii": [
+        1.9,
+        0.48,
+        0.75
+      ],
+      "latitudes": 6,
+      "longitudes": 10,
+      "material": "skin",
+      "name": "right_toe_2",
+      "part": "right_toe_2"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        7.12,
+        6.8,
+        2.2
+      ],
+      "radii": [
+        1.75,
+        0.48,
+        0.75
+      ],
+      "latitudes": 6,
+      "longitudes": 10,
+      "material": "skin",
+      "name": "right_toe_3",
+      "part": "right_toe_3"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        6.9399999999999995,
+        7.4,
+        2.2
+      ],
+      "radii": [
+        1.5999999999999999,
+        0.48,
+        0.75
+      ],
+      "latitudes": 6,
+      "longitudes": 10,
+      "material": "skin",
+      "name": "right_toe_4",
+      "part": "right_toe_4"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          4.1,
+          -3.75,
+          88.7,
+          1.1,
+          1.3
+        ],
+        [
+          5.4,
+          -4.3125,
+          85.5,
+          1.25,
+          1.6
+        ],
+        [
+          5.1,
+          -4.5,
+          80.5,
+          0.9,
+          1.1
+        ],
+        [
+          4.7,
+          -4.387499999999999,
+          78.5,
+          0.3,
+          0.4
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "beard_0",
+      "part": "beard_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          4.1,
+          -2.5,
+          88.7,
+          1.1,
+          1.3
+        ],
+        [
+          5.4,
+          -2.875,
+          85.5,
+          1.25,
+          1.6
+        ],
+        [
+          5.1,
+          -3.0,
+          79.0,
+          0.9,
+          1.1
+        ],
+        [
+          4.7,
+          -2.925,
+          77.0,
+          0.3,
+          0.4
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "beard_1",
+      "part": "beard_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          4.1,
+          -1.25,
+          88.7,
+          1.1,
+          1.3
+        ],
+        [
+          5.4,
+          -1.4375,
+          85.5,
+          1.25,
+          1.6
+        ],
+        [
+          5.1,
+          -1.5,
+          77.5,
+          0.9,
+          1.1
+        ],
+        [
+          4.7,
+          -1.4625,
+          75.5,
+          0.3,
+          0.4
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "beard_2",
+      "part": "beard_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          4.1,
+          0.0,
+          88.7,
+          1.1,
+          1.3
+        ],
+        [
+          5.4,
+          0.0,
+          85.5,
+          1.25,
+          1.6
+        ],
+        [
+          5.1,
+          0.0,
+          76.0,
+          0.9,
+          1.1
+        ],
+        [
+          4.7,
+          0.0,
+          74.0,
+          0.3,
+          0.4
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "beard_3",
+      "part": "beard_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          4.1,
+          1.25,
+          88.7,
+          1.1,
+          1.3
+        ],
+        [
+          5.4,
+          1.4375,
+          85.5,
+          1.25,
+          1.6
+        ],
+        [
+          5.1,
+          1.5,
+          77.5,
+          0.9,
+          1.1
+        ],
+        [
+          4.7,
+          1.4625,
+          75.5,
+          0.3,
+          0.4
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "beard_4",
+      "part": "beard_4"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          4.1,
+          2.5,
+          88.7,
+          1.1,
+          1.3
+        ],
+        [
+          5.4,
+          2.875,
+          85.5,
+          1.25,
+          1.6
+        ],
+        [
+          5.1,
+          3.0,
+          79.0,
+          0.9,
+          1.1
+        ],
+        [
+          4.7,
+          2.925,
+          77.0,
+          0.3,
+          0.4
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "beard_5",
+      "part": "beard_5"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          4.1,
+          3.75,
+          88.7,
+          1.1,
+          1.3
+        ],
+        [
+          5.4,
+          4.3125,
+          85.5,
+          1.25,
+          1.6
+        ],
+        [
+          5.1,
+          4.5,
+          80.5,
+          0.9,
+          1.1
+        ],
+        [
+          4.7,
+          4.387499999999999,
+          78.5,
+          0.3,
+          0.4
+        ]
+      ],
+      "material": "hair",
+      "segments": 12,
+      "name": "beard_6",
+      "part": "beard_6"
+    },
+    {
+      "kind": "open_mantle",
+      "rows": [
+        [
+          34,
+          0,
+          0,
+          9.5,
+          12.7
+        ],
+        [
+          44,
+          0,
+          0,
+          8.6,
+          11.5
+        ],
+        [
+          55,
+          0,
+          0,
+          7.5,
+          10.4
+        ]
+      ],
+      "material": "bark",
+      "arc_degrees": [
+        28,
+        332
+      ],
+      "thickness": 1,
+      "fold_amplitude": 0.2,
+      "fold_count": 12,
+      "segments": 48,
+      "front_lift": [
+        6,
+        2,
+        0
+      ],
+      "name": "forest_wrap",
+      "part": "forest_wrap"
+    },
+    {
+      "kind": "open_mantle",
+      "rows": [
+        [
+          51.5,
+          0,
+          0,
+          8,
+          10.8
+        ],
+        [
+          56.5,
+          0,
+          0,
+          7.8,
+          10.7
+        ]
+      ],
+      "material": "vine",
+      "arc_degrees": [
+        0,
+        360
+      ],
+      "thickness": 1,
+      "fold_amplitude": 0.2,
+      "fold_count": 12,
+      "segments": 48,
+      "front_lift": [
+        0,
+        0
+      ],
+      "name": "waist_band",
+      "part": "waist_band"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        2.1,
+        -7,
+        78.0
+      ],
+      "radii": [
+        2.3,
+        2.1,
+        3
+      ],
+      "material": "leaf",
+      "latitudes": 9,
+      "longitudes": 16,
+      "name": "left_shoulder_leaf_0",
+      "part": "left_shoulder_leaf_0"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        2.1,
+        -9,
+        77.1
+      ],
+      "radii": [
+        2.3,
+        2.1,
+        3
+      ],
+      "material": "leaf",
+      "latitudes": 9,
+      "longitudes": 16,
+      "name": "left_shoulder_leaf_1",
+      "part": "left_shoulder_leaf_1"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        2.1,
+        -11,
+        76.2
+      ],
+      "radii": [
+        2.3,
+        2.1,
+        3
+      ],
+      "material": "leaf",
+      "latitudes": 9,
+      "longitudes": 16,
+      "name": "left_shoulder_leaf_2",
+      "part": "left_shoulder_leaf_2"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        2.1,
+        7,
+        78.0
+      ],
+      "radii": [
+        2.3,
+        2.1,
+        3
+      ],
+      "material": "leaf",
+      "latitudes": 9,
+      "longitudes": 16,
+      "name": "right_shoulder_leaf_0",
+      "part": "right_shoulder_leaf_0"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        2.1,
+        9,
+        77.1
+      ],
+      "radii": [
+        2.3,
+        2.1,
+        3
+      ],
+      "material": "leaf",
+      "latitudes": 9,
+      "longitudes": 16,
+      "name": "right_shoulder_leaf_1",
+      "part": "right_shoulder_leaf_1"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        2.1,
+        11,
+        76.2
+      ],
+      "radii": [
+        2.3,
+        2.1,
+        3
+      ],
+      "material": "leaf",
+      "latitudes": 9,
+      "longitudes": 16,
+      "name": "right_shoulder_leaf_2",
+      "part": "right_shoulder_leaf_2"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        5.955002135897631,
+        -6,
+        51.5
+      ],
+      "radii": [
+        1.2,
+        2,
+        4.3
+      ],
+      "material": "leaf",
+      "latitudes": 11,
+      "longitudes": 16,
+      "name": "waist_leaf_0",
+      "part": "waist_leaf_0"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        6.986139548571832,
+        -3,
+        51.5
+      ],
+      "radii": [
+        1.2,
+        2,
+        4.3
+      ],
+      "material": "leaf",
+      "latitudes": 11,
+      "longitudes": 16,
+      "name": "waist_leaf_1",
+      "part": "waist_leaf_1"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        7.300000000000001,
+        0,
+        51.5
+      ],
+      "radii": [
+        1.2,
+        2,
+        4.3
+      ],
+      "material": "leaf",
+      "latitudes": 11,
+      "longitudes": 16,
+      "name": "waist_leaf_2",
+      "part": "waist_leaf_2"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        6.986139548571832,
+        3,
+        51.5
+      ],
+      "radii": [
+        1.2,
+        2,
+        4.3
+      ],
+      "material": "leaf",
+      "latitudes": 11,
+      "longitudes": 16,
+      "name": "waist_leaf_3",
+      "part": "waist_leaf_3"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        5.955002135897631,
+        6,
+        51.5
+      ],
+      "radii": [
+        1.2,
+        2,
+        4.3
+      ],
+      "material": "leaf",
+      "latitudes": 11,
+      "longitudes": 16,
+      "name": "waist_leaf_4",
+      "part": "waist_leaf_4"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        8.2,
+        0,
+        54
+      ],
+      "radii": [
+        1,
+        2.5,
+        2.5
+      ],
+      "material": "bronze",
+      "latitudes": 11,
+      "longitudes": 20,
+      "name": "belt_medallion",
+      "part": "belt_medallion"
+    }
+  ],
+  "motion": {
+    "idle": {
+      "frames": 16,
+      "tics": 6,
+      "transforms": {
+        "torso": [
+          {
+            "kind": "scale_xy",
+            "amplitude": 0.014
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 0.65,
+            "phase": 0
+          }
+        ]
+      }
+    },
+    "walk": {
+      "frames": 24,
+      "tics": 2,
+      "transforms": {
+        "pelvis": [
+          {
+            "kind": "translate_z",
+            "amplitude": 0.8,
+            "frequency": 2
+          }
+        ],
+        "torso": [
+          {
+            "kind": "rotate",
+            "axis": "z",
+            "amplitude": 2.2
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 1.3,
+            "phase": 0
+          }
+        ],
+        "left_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -14,
+            "phase": 0
+          }
+        ],
+        "left_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 18,
+            "phase": 3.141592653589793,
+            "positive_only": true
+          }
+        ],
+        "left_foot": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -5,
+            "phase": 0
+          }
+        ],
+        "left_upper": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 20,
+            "phase": 0
+          }
+        ],
+        "left_fore": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -6,
+            "phase": 0,
+            "offset": -4
+          }
+        ],
+        "right_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -14,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 18,
+            "phase": 6.283185307179586,
+            "positive_only": true
+          }
+        ],
+        "right_foot": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -5,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_upper": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 20,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_fore": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -6,
+            "phase": 3.141592653589793,
+            "offset": -4
+          }
+        ]
+      }
+    }
+  },
+  "visual_contract": "Reference-led bark, shaggy, leaf-clad and shawled forest identities. Native candidate art only; fixed clothing adds no modular inventory, new powers, balance or metric scale.",
+  "native_refinement": "Reference-led shorter cranial proportion, closed crown and temple framing. Llorona retains the concept scooped neckline and flared lower sleeves; no gameplay body scale change.",
+  "anatomy_scale": [
+    1.08,
+    1.15,
+    1
+  ]
+}
