@@ -1257,3 +1257,10 @@ assets/validation_v5_17_88/*.json -text
 assets/source/art/land_figures_819/** -text
 assets/generators/*land_figure*.py text eol=lf
 src/caelum/data/land_figure_combat.modeldef text eol=lf
+
+assets/validation_v5_17_89/*.py text eol=lf
+assets/validation_v5_17_89/evidence/** -text -diff
+assets/validation_v5_17_89/*.json -text
+assets/source/art/bestiary_figures_821/** -text
+assets/generators/*bestiary_figure*.py text eol=lf
+src/caelum/data/bestiary_figure_combat.modeldef text eol=lf

@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.88** - 2026-11-16.
+Documentation version: **5.17.89** - 2026-11-16.
+
+## 5.17.89 - Curupi, Gualicho, Uritu Orko and Maip candidates (#821, 2026-11-16)
+
+Added four distinct owned-reference native candidates, original materials,
+editable geometry/animation and inherited combat mappings. Sixteen exports repeat;
+closed/posed geometry and 702 final-package native assertions pass. Native
+review corrected inherited wrist flares; independent tests corrected contact
+witnesses on feather/spike caps and two outer roots. Earlier diagnostics remain.
+ASSETS and assets/validation_v5_17_89/evidence/SUMMARY.json retain scope and
+presentation evidence. CA821-FIGURES-01 originates here and remains pending;
+no author check was accepted or removed. Coverage reaches52/56. The complete
+batch and consolidated review remain unfinished.
 
 ## 5.17.88 - Five land and river figure candidates (#819, 2026-11-16)
 

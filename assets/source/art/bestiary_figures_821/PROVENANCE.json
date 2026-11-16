@@ -1,0 +1,15 @@
+{
+  "issue": 821,
+  "parent_issue": 461,
+  "status": "candidate_author_review_pending",
+  "author": "Damian Curti",
+  "reference_images": {
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/08_curupi.png": "be0f78746b0cb2900b2cca0e48e2be81b96210cf2708993f710b416c326090f0",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/36_gualicho.png": "2698d606ffe37a6f8238e74c706f431923ad8347ebf69e0e071410ef5bf4e565",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/40_uritu_orko.png": "49884fa7680e9524c09c44c07ef28bc79a23c00ca56013bfbbee2b7618fc092b",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/42_maip.png": "5af7918077c697dfde9974acc7182e1ab9a4a3b09a339cf04ef9cf7009e70d1f"
+  },
+  "material_source": "MATERIALS_PROMPT.json",
+  "geometry": "Original dimensionless controls and owned closed anatomy/garment/native animation tools.",
+  "limits": "Four distinct owned-reference candidates: stocky adult Curupi with pointed ears, dark braids and rough leaf/bark clothing; gaunt ash Gualicho with long mask-like face, twigs, ribs, claws and ragged geometric cloth; human-avian Uritu Orko with beak-like nose, slate/ivory feathers, arm wing-feathers and talons; bony Maip with bird-like skull/beak, long hair, ribs, spikes and long claws. Fixed ornaments/clothes are art only; no shared taxonomy, metric scale, powers, rules, inventory or cultural claims."
+}

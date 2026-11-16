@@ -1,0 +1,79 @@
+{
+  "issue": 821,
+  "reviewed": {
+    "curupi": {
+      "build/issue821-curupi-native02/fresh-model/view-front.png": "b94941ba477018aff658fe132c5f52eaeb6fccce420786b59be428b111195e7c",
+      "build/issue821-curupi-native02/fresh-model/view-face-detail.png": "5fc813ed6154cbb770a731f9c60b2a1e4a29293b9acff7601043a2d4f39b3608",
+      "build/issue821-curupi-native02/fresh-model/view-side.png": "2e02aa4f818b3c9e6a6b8e43d4883b25f3530ead130521e77781977c57b091af",
+      "build/issue821-curupi-native02/fresh-model/view-rear.png": "bc1b334bef470d41be75e974a17f018117f280fccf143e0a8096e933078ba3bb",
+      "build/issue821-curupi-native02/fresh-model/pose-03-run.png": "a5340d91051195a5e8ec1c7e0651b6ad70b6c7b86689bb7e9cb93647483a4987",
+      "build/issue821-curupi-native02/fresh-model/pose-05-run.png": "ebd1b32f7c4afbf5f259c63ba91dac64a01bf505f3930d0f878d27279fcb70b7",
+      "build/issue821-curupi-native02/fresh-model/pose-10-attack_release.png": "dbdd5ff88667033f4468bea70f0f4cbefcb1f796155d7b7593dcf4699e8c38dc",
+      "build/issue821-curupi-native02/fresh-model/pose-11-pain.png": "b7b13f26e2c943204f7b44a183d9e194b9e2006af71d107979a3c7929447048c",
+      "build/issue821-curupi-native02/fresh-model/pose-15-death.png": "703169e4b9ac2c0378fd384bdc8973a5b21a63da8140c9326e2ccfc3fb63d326",
+      "build/issue821-curupi-native02/fresh-model/view-lying-oblique.png": "7f51e5c639d240176749b06b3bcc95ae7ceeda5484aaab415b5dd87b5bf1c770"
+    },
+    "gualicho": {
+      "build/issue821-gualicho-native02/fresh-model/view-front.png": "6c9a55de98cd149c4836f8b68faecda08fe9b9594bca6b15d946b69e59b73d29",
+      "build/issue821-gualicho-native02/fresh-model/view-face-detail.png": "a16bb73dd866d4e2e1e950b1e4546a26d8e9144486daa4173e00af1c70100134",
+      "build/issue821-gualicho-native02/fresh-model/view-side.png": "61e152f9a12eb5d8d20abb9e77ec0a09c2c852da73b7e3f81c45b5e2ee137e1b",
+      "build/issue821-gualicho-native02/fresh-model/view-rear.png": "9462672d975c8f1edb98a7a7a5d76b8e5da59caa59bc356c26ca68aa253e102b",
+      "build/issue821-gualicho-native02/fresh-model/pose-03-run.png": "46eb2fe7a86377098c52086bb093cda7c5901121f2597aaa85152ba21cd6d5cc",
+      "build/issue821-gualicho-native02/fresh-model/pose-05-run.png": "ddbdf8f788a01035ffb74c0e7a73d749a276c51f0e3ae47a1cf99451f277da46",
+      "build/issue821-gualicho-native02/fresh-model/pose-10-attack_release.png": "3826b57558e1a457c40cca59d37761541eb096420a3147211d1d2a9887234f9c",
+      "build/issue821-gualicho-native02/fresh-model/pose-11-pain.png": "ecbcb45eff5fef89a493dd4576b6df61e1dd04cfd54ed6887e866d3a58e1eae7",
+      "build/issue821-gualicho-native02/fresh-model/pose-15-death.png": "48c17b7de18b86751e0145b01566c3472ca7e7d890279af52eed1f7ed17daccd",
+      "build/issue821-gualicho-native02/fresh-model/view-lying-oblique.png": "dc7144f78d690637634f882b3ae76b71f806f3e5d7da4a288dc304423b812710"
+    },
+    "urituorko": {
+      "build/issue821-urituorko-native02/fresh-model/view-front.png": "a591799ec9ff84c1c1ac648cc5b433ba0a31f178001c402f18e6a5df8b26565b",
+      "build/issue821-urituorko-native02/fresh-model/view-face-detail.png": "b723c446e6ee6e824ad71a2d1afea3008ec424935859c04d228244cf05a67fd7",
+      "build/issue821-urituorko-native02/fresh-model/view-side.png": "b4af03d97b49c61bb51809ecd3cf044e4e32f0a9d1536ecfc9bb7bd1d7e03987",
+      "build/issue821-urituorko-native02/fresh-model/view-rear.png": "0404ce9d9ed56d9f8ac9bf7c1f471a46d06b682d9a843e6a66872cbea5a62895",
+      "build/issue821-urituorko-native02/fresh-model/pose-03-run.png": "d24f9e52156ebb29d1a414fd47d861e4f74eacc22247e4aee7a0f700e7d0bb06",
+      "build/issue821-urituorko-native02/fresh-model/pose-05-run.png": "15641eaedc2e52fc767048068a25bffcfc493cc23abec02782be95e3c62bf949",
+      "build/issue821-urituorko-native02/fresh-model/pose-10-attack_release.png": "47c6da135499d3137002516e8955a1037071997d372b08a7127d3bb9b731d7c4",
+      "build/issue821-urituorko-native02/fresh-model/pose-11-pain.png": "caae6be15305d53feb8a4fee1c522cf0e5f319945af68651186f1132838230d0",
+      "build/issue821-urituorko-native02/fresh-model/pose-15-death.png": "1e8ae20bceadf19ade4f94c76fd037bac4a65453e0576e8a0b4b52857dc5611d",
+      "build/issue821-urituorko-native02/fresh-model/view-lying-oblique.png": "3ddd222724eb0d357a00585818146ad18fbfa02ac12d8415a4707a43e8abbd0e"
+    },
+    "maip": {
+      "build/issue821-maip-native02/fresh-model/view-front.png": "3958ed109c200e73764314d003d1e390e5ae8d591651dd672c31582c3e73b5a3",
+      "build/issue821-maip-native02/fresh-model/view-face-detail.png": "b7c701cc1f873eba9b313a00d5064fcf1a45fc36c46dc29f73877f9a7e5b3e2d",
+      "build/issue821-maip-native02/fresh-model/view-side.png": "1ea45f41c43cf8d3c2f3ade8b9dccf887905fefd399553a642e311bd23d3deb8",
+      "build/issue821-maip-native02/fresh-model/view-rear.png": "cce9465ff44402df5bc3056f7fd0fbe27c2a7a0482cf7d25842d9dd0e5fc8e7d",
+      "build/issue821-maip-native02/fresh-model/pose-03-run.png": "ffd4ef1613a4f4998208029470fd663921c421f57edb51036163ef817e214408",
+      "build/issue821-maip-native02/fresh-model/pose-05-run.png": "0ee0fa4965cff9af7e333de83096c64f537d195661c7dde5b559657b52993082",
+      "build/issue821-maip-native02/fresh-model/pose-10-attack_release.png": "ff45b86420ab065795deda5a598bfedc9d20df74fb410c926413436de1e45d6f",
+      "build/issue821-maip-native02/fresh-model/pose-11-pain.png": "f2926cfe92f9f49cb4c45e67a94bd08955422b63425a137c90c4399a676d5dee",
+      "build/issue821-maip-native02/fresh-model/pose-15-death.png": "3a75aa45f580d445e2d6340e596396d4dad0f10b8e02680ffd309394f13394a2",
+      "build/issue821-maip-native02/fresh-model/view-lying-oblique.png": "e448c4c67b438501c46b3cea11c7af1b0432a5cb25c938d65bb9195daeb2ac8d"
+    }
+  },
+  "presentation": {
+    "build/issue821-curupi-presentation01/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build/issue821-curupi-presentation01/model/scene.png": "071e5e52971ea900a35f3ead7bac15275b242778f6616165235fe0355823c5c9",
+    "build/issue821-gualicho-presentation01/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build/issue821-gualicho-presentation01/model/scene.png": "99bafa70a85b261f53d6e3d72e402e2144f1dda0b10a4cd6ee84cf8a612949d3",
+    "build/issue821-urituorko-presentation01/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build/issue821-urituorko-presentation01/model/scene.png": "b898e75ced3285737a7b2f584cc0ba8b66a3dce48a5a33eec02b917271de81b6",
+    "build/issue821-maip-presentation01/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build/issue821-maip-presentation01/model/scene.png": "5312528f4acdd83ad80a307cdf5c37d7a514d75108afa9fc5160200bde69b75a"
+  },
+  "iterations": {
+    "build/issue821-curupi-native01/fresh-model/view-front.png": "600b4e0e20aef660eb83d26eb2e49e6fb4b2a0beb8b1ec156a90e8af9d766121",
+    "build/issue821-curupi-native01/fresh-model/view-face-detail.png": "7ae1d5295dc3814a0e9f815cc724dd6ded11deb07e07d6ff913b70a5287d3500",
+    "build/issue821-curupi-native01/fresh-model/view-side.png": "5c122a4f1a11daf848088c5df879d3a74d3f9efcb5273d4a3e4cd62c8615cd79",
+    "build/issue821-curupi-native01/fresh-model/view-rear.png": "38bbf1944df5c84334191dfcb9819ec90602c0f915202551036ce81e685eff2d",
+    "build/issue821-gualicho-native01/fresh-model/view-front.png": "61b40312d4d0ee838ebec4cdf61c6c6bd0e0200259c88ad303585633344419ed",
+    "build/issue821-gualicho-native01/fresh-model/view-face-detail.png": "d7bbd640530d89eb560fc0386c7b99f47b41281c473711cb92ca1137a5e23ac1",
+    "build/issue821-urituorko-native01/fresh-model/view-front.png": "645eaba64a18fc9a9f6d63a658133877d9cfec4156f60421d69846191a4b2d1c",
+    "build/issue821-urituorko-native01/fresh-model/view-face-detail.png": "907f24304fa708cfb76f86aa6be76dbe0783c1e028677970c1d5b93e51de6f94",
+    "build/issue821-urituorko-native01/fresh-model/view-side.png": "44b77169ce3f77b9eadd20329ea66042ce889e519e8098edc83d729ec14a6a6d",
+    "build/issue821-urituorko-native01/fresh-model/view-rear.png": "53181b018e09b9eb263e977d444106121a1e5c6a0985edc239ea9fd2ebb93048",
+    "build/issue821-maip-native01/fresh-model/view-front.png": "b9b32526fc21297b14521121c1332b0eb0b40cb73129f7b6b1f9a26c35761018",
+    "build/issue821-maip-native01/fresh-model/view-face-detail.png": "6056c1e21b713308ca82cd8060af4182ce715f864ac107d8900ff69756df28d1",
+    "build/issue821-maip-native01/fresh-model/view-side.png": "f0d4ed8d5ad3ef1cc9e8b0098039e8d32c35644679a1d031bea4cad9bfaf829f",
+    "build/issue821-maip-native01/fresh-model/view-rear.png": "2edf45c6f4ba7728815c6fa3c689dd7bb5ef8651f954b6d754545c24ebf2c748"
+  }
+}

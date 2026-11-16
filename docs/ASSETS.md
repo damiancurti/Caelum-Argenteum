@@ -1,6 +1,72 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.88** - 2026-11-16.
+Documentation version: **5.17.89** - 2026-11-16.
+
+## 5.17.89 - Curupi, Gualicho, Uritu Orko and Maip candidates (#821)
+
+Four distinct owned references now have native candidates on their existing
+provisional classes008/036/040/042. Curupi has a stocky adult body, broad nose,
+pointed ears, dark hair/braids, rough sleeveless clothing, leaf layers and short
+trousers. Gualicho has an ash/bark body, long mask-like face, twig crest, ribs,
+ragged geometric cloth and long claws. Uritu Orko has a human-avian face and
+beak-like nose, swept crest, slate/ivory feathers, long arm wing-feathers and
+talons. Maip has a bony/stone body, bird-like skull/beak, long hair, rib forms,
+shoulder/forearm spikes, long claws and rough waist wrap. These are separate
+reference identities; no shared taxonomy or new cultural claims are adopted.
+Fixed clothing and ornaments do not create modular inventory.
+
+Editable anatomy, OBJ/MTL, animation, contact controls, original RGB1122x1402
+atlas, exact built-in ImageGen prompt and provenance are retained in
+assets/source/art/bestiary_figures_821. Atlas pixels remain unchanged.
+Sixteen export files repeat byte-for-byte. Independent serialized checks verify
+321 closed components, 317 rooted contacts, 2,536 posed attachments,
+all23 inherited frames, noncollapsed triangles and material-cell UV bounds.
+Initial feather/spike witnesses on tube caps failed; interior overlap witnesses
+and two outer attachment roots corrected those failures. Native review exposed
+inherited flared wrists, isolated rib plaques and a parallel feather crest over
+a bare scalp. Revised forearms taper toward their hands, ribs curve around the
+flanks, Maip has pointed skull ears, and Uritu has a feather crown/nape and
+varied swept crest. Source
+iterations, failed diagnostics and superseded native captures are retained.
+
+The18,622-entry runtime matches src exactly. Against #819, six new resources,
+one MODELDEF include and two version diagnostics explain every runtime change.
+All other bytes are identical. Provisional collision/scale, statistics, powers,
+action timing, loot, identity and saved fields remain authoritative. No metric
+reference dimensions, campaign placements or new abilities are adopted.
+
+The final package passes 702 native assertions:460 previous-package baseline,
+old-save, fresh-model, reload and rollback assertions plus 242 actual action,
+loot and loot-reload assertions. Forty final front/profile/rear, detail, extreme
+stride, attack, pain, intermediate death and lying captures were inspected.
+Each captured pose verifies ordered VIEW -> indexed pose PASS -> screenshot.
+
+One sequential700-tic sprite/model pair per figure ran on Windows11 Pro26200,
+Ryzen9 5950X/32GB/RTX3070Ti driver32.0.16.1088 with the Parsec adapter,
+GZDoom4.14.2 Vulkan1280x720, uncapped without VSync, unpaused in the background
+at5% audio:
+
+| Figure / scene | Queue presents/s | Present p95 / p99 / max (ms) | Simulation mean / p95 / p99 / max (ms) |
+| --- | ---: | --- | --- |
+| curupi / sprite | 1930.43 | 0.6955 / 0.7802 / 1.6689 | 28.5714 / 28.9328 / 29.0264 / 29.1544 |
+| curupi / model | 1935.15 | 0.6655 / 0.7866 / 1.6080 | 28.5715 / 28.9442 / 29.0882 / 29.2237 |
+| gualicho / sprite | 1986.59 | 0.6966 / 0.7594 / 1.4042 | 28.5710 / 28.9131 / 29.0300 / 29.1533 |
+| gualicho / model | 1960.59 | 0.6966 / 0.7819 / 1.3101 | 28.5713 / 28.9309 / 29.0091 / 29.2819 |
+| urituorko / sprite | 1954.27 | 0.6878 / 0.7715 / 1.8683 | 28.5717 / 28.9134 / 29.0628 / 29.1009 |
+| urituorko / model | 1905.07 | 0.6848 / 0.8103 / 1.3685 | 28.5712 / 28.9694 / 29.0950 / 29.2339 |
+| maip / sprite | 1939.68 | 0.6143 / 0.7709 / 1.0703 | 28.5716 / 28.9219 / 28.9955 / 29.1845 |
+| maip / model | 1954.52 | 0.6793 / 0.8014 / 1.6093 | 28.5715 / 28.9406 / 29.0815 / 29.2985 |
+
+Queue intervals do not establish GPU/display latency, repeatability, optimization
+or campaign/crowd performance. Sprite and model screen coverage differs.
+Stylized component anatomy, painted faces, opaque hair/feathers and rigid fall/rest
+remain candidates. Broad silhouettes can exceed provisional collision.
+CA821-FIGURES-01 remains pending. Evidence:
+assets/validation_v5_17_89/evidence/SUMMARY.json.
+
+Coverage reaches52/56 provisional classes. Xalpen, Luz Mala, Anchimallen and
+Huayrapuca remain under #822. Regional displays, other characters, modular fitting,
+campaign authoring and siege rendering still prevent the complete batch handoff.
 
 ## 5.17.88 - Five native land and river figure candidates (#819)
 
