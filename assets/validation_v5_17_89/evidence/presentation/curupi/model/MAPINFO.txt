@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA821Events" }
+map CA455V "Curupi/Gualicho/Uritu Orko/Maip inherited combat model" { sky1="CABASKY",0 nointermission }

@@ -1,0 +1,2795 @@
+{
+  "issue": 821,
+  "basis": "Interior overlap witnesses in authored affine coordinates, independently checked against serialized neutral and posed geometry.",
+  "species": {
+    "curupi": [
+      {
+        "part": "torso",
+        "target": "pelvis",
+        "witness": [
+          0.0,
+          0.0,
+          52.440000000000005
+        ]
+      },
+      {
+        "part": "left_thigh",
+        "target": "pelvis",
+        "witness": [
+          0.0,
+          -6.5,
+          48.760000000000005
+        ]
+      },
+      {
+        "part": "left_shin",
+        "target": "left_thigh",
+        "witness": [
+          0.354,
+          -7.75,
+          28.52
+        ]
+      },
+      {
+        "part": "left_foot",
+        "target": "left_shin",
+        "witness": [
+          0.0,
+          -7.75,
+          6.716
+        ]
+      },
+      {
+        "part": "left_upper",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -13.75,
+          70.472
+        ]
+      },
+      {
+        "part": "left_fore",
+        "target": "left_upper",
+        "witness": [
+          0.472,
+          -21.25,
+          57.04
+        ]
+      },
+      {
+        "part": "left_hand",
+        "target": "left_fore",
+        "witness": [
+          0.59,
+          -25.0,
+          42.596
+        ]
+      },
+      {
+        "part": "left_finger_0",
+        "target": "left_hand",
+        "witness": [
+          0.885,
+          -23.4375,
+          38.64
+        ]
+      },
+      {
+        "part": "left_finger_1",
+        "target": "left_hand",
+        "witness": [
+          0.885,
+          -24.562500000000004,
+          38.64
+        ]
+      },
+      {
+        "part": "left_finger_2",
+        "target": "left_hand",
+        "witness": [
+          0.885,
+          -25.6875,
+          38.64
+        ]
+      },
+      {
+        "part": "left_finger_3",
+        "target": "left_hand",
+        "witness": [
+          0.885,
+          -26.812500000000004,
+          38.64
+        ]
+      },
+      {
+        "part": "left_thumb",
+        "target": "left_hand",
+        "witness": [
+          1.062,
+          -23.25,
+          40.480000000000004
+        ]
+      },
+      {
+        "part": "right_thigh",
+        "target": "pelvis",
+        "witness": [
+          0.0,
+          6.5,
+          48.760000000000005
+        ]
+      },
+      {
+        "part": "right_shin",
+        "target": "right_thigh",
+        "witness": [
+          0.354,
+          7.75,
+          28.52
+        ]
+      },
+      {
+        "part": "right_foot",
+        "target": "right_shin",
+        "witness": [
+          0.0,
+          7.75,
+          6.716
+        ]
+      },
+      {
+        "part": "right_upper",
+        "target": "torso",
+        "witness": [
+          0.0,
+          13.75,
+          70.472
+        ]
+      },
+      {
+        "part": "right_fore",
+        "target": "right_upper",
+        "witness": [
+          0.472,
+          21.25,
+          57.04
+        ]
+      },
+      {
+        "part": "right_hand",
+        "target": "right_fore",
+        "witness": [
+          0.59,
+          25.0,
+          42.596
+        ]
+      },
+      {
+        "part": "right_finger_0",
+        "target": "right_hand",
+        "witness": [
+          0.885,
+          23.4375,
+          38.64
+        ]
+      },
+      {
+        "part": "right_finger_1",
+        "target": "right_hand",
+        "witness": [
+          0.885,
+          24.562500000000004,
+          38.64
+        ]
+      },
+      {
+        "part": "right_finger_2",
+        "target": "right_hand",
+        "witness": [
+          0.885,
+          25.6875,
+          38.64
+        ]
+      },
+      {
+        "part": "right_finger_3",
+        "target": "right_hand",
+        "witness": [
+          0.885,
+          26.812500000000004,
+          38.64
+        ]
+      },
+      {
+        "part": "right_thumb",
+        "target": "right_hand",
+        "witness": [
+          1.062,
+          23.25,
+          40.480000000000004
+        ]
+      },
+      {
+        "part": "neck",
+        "target": "torso",
+        "witness": [
+          0.0,
+          0.0,
+          73.784
+        ]
+      },
+      {
+        "part": "head",
+        "target": "neck",
+        "witness": [
+          0.0,
+          0.0,
+          79.718
+        ]
+      },
+      {
+        "part": "left_ear",
+        "target": "head",
+        "witness": [
+          -0.472,
+          -6.75,
+          85.10000000000001
+        ]
+      },
+      {
+        "part": "right_ear",
+        "target": "head",
+        "witness": [
+          -0.472,
+          6.75,
+          85.10000000000001
+        ]
+      },
+      {
+        "part": "hair_mass",
+        "target": "head",
+        "witness": [
+          -4.13,
+          0.0,
+          88.688
+        ]
+      },
+      {
+        "part": "hair_lock_00",
+        "target": "hair_mass",
+        "witness": [
+          -2.043931353437924,
+          5.664423668979062,
+          88.688
+        ]
+      },
+      {
+        "part": "hair_lock_01",
+        "target": "hair_mass",
+        "witness": [
+          -3.5743242707683636,
+          6.2497061969201635,
+          88.688
+        ]
+      },
+      {
+        "part": "hair_lock_02",
+        "target": "hair_mass",
+        "witness": [
+          -5.098001124495239,
+          5.6121390216480505,
+          88.688
+        ]
+      },
+      {
+        "part": "hair_lock_03",
+        "target": "hair_mass",
+        "witness": [
+          -6.316831453815298,
+          3.876471820426624,
+          88.688
+        ]
+      },
+      {
+        "part": "hair_lock_04",
+        "target": "hair_mass",
+        "witness": [
+          -6.992332638983825,
+          1.3823141772930474,
+          88.688
+        ]
+      },
+      {
+        "part": "hair_lock_05",
+        "target": "hair_mass",
+        "witness": [
+          -6.992332638983825,
+          -1.3823141772930487,
+          88.688
+        ]
+      },
+      {
+        "part": "hair_lock_06",
+        "target": "hair_mass",
+        "witness": [
+          -6.316831453815297,
+          -3.8764718204266266,
+          88.688
+        ]
+      },
+      {
+        "part": "hair_lock_07",
+        "target": "hair_mass",
+        "witness": [
+          -5.09800112449524,
+          -5.6121390216480505,
+          88.688
+        ]
+      },
+      {
+        "part": "hair_lock_08",
+        "target": "hair_mass",
+        "witness": [
+          -3.5743242707683636,
+          -6.2497061969201635,
+          88.688
+        ]
+      },
+      {
+        "part": "hair_lock_09",
+        "target": "hair_mass",
+        "witness": [
+          -2.0439313534379235,
+          -5.664423668979062,
+          88.688
+        ]
+      },
+      {
+        "part": "hair_crown",
+        "target": "hair_mass",
+        "witness": [
+          -3.186,
+          0.0,
+          90.1232
+        ]
+      },
+      {
+        "part": "left_temple_lock",
+        "target": "head",
+        "witness": [
+          1.298,
+          -5.625,
+          87.97040000000001
+        ]
+      },
+      {
+        "part": "right_temple_lock",
+        "target": "head",
+        "witness": [
+          1.298,
+          5.625,
+          87.97040000000001
+        ]
+      },
+      {
+        "part": "left_toe_0",
+        "target": "left_foot",
+        "witness": [
+          7.433999999999999,
+          -6.25,
+          2.116
+        ]
+      },
+      {
+        "part": "left_toe_1",
+        "target": "left_foot",
+        "witness": [
+          7.433999999999999,
+          -7.000000000000001,
+          2.116
+        ]
+      },
+      {
+        "part": "left_toe_2",
+        "target": "left_foot",
+        "witness": [
+          7.433999999999999,
+          -7.75,
+          2.116
+        ]
+      },
+      {
+        "part": "left_toe_3",
+        "target": "left_foot",
+        "witness": [
+          7.433999999999999,
+          -8.5,
+          2.116
+        ]
+      },
+      {
+        "part": "left_toe_4",
+        "target": "left_foot",
+        "witness": [
+          7.433999999999999,
+          -9.25,
+          2.116
+        ]
+      },
+      {
+        "part": "right_toe_0",
+        "target": "right_foot",
+        "witness": [
+          7.433999999999999,
+          6.25,
+          2.116
+        ]
+      },
+      {
+        "part": "right_toe_1",
+        "target": "right_foot",
+        "witness": [
+          7.433999999999999,
+          7.000000000000001,
+          2.116
+        ]
+      },
+      {
+        "part": "right_toe_2",
+        "target": "right_foot",
+        "witness": [
+          7.433999999999999,
+          7.75,
+          2.116
+        ]
+      },
+      {
+        "part": "right_toe_3",
+        "target": "right_foot",
+        "witness": [
+          7.433999999999999,
+          8.5,
+          2.116
+        ]
+      },
+      {
+        "part": "right_toe_4",
+        "target": "right_foot",
+        "witness": [
+          7.433999999999999,
+          9.25,
+          2.116
+        ]
+      },
+      {
+        "part": "forest_wrap",
+        "target": "pelvis",
+        "witness": [
+          -8.377999999999998,
+          0.0,
+          50.048
+        ]
+      },
+      {
+        "part": "waist_band",
+        "target": "pelvis",
+        "witness": [
+          8.968,
+          0.0,
+          49.68
+        ]
+      },
+      {
+        "part": "left_leaf_collar_0",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -7.5,
+          71.76
+        ]
+      },
+      {
+        "part": "left_leaf_collar_1",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -9.5,
+          71.116
+        ]
+      },
+      {
+        "part": "left_leaf_collar_2",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -11.5,
+          70.472
+        ]
+      },
+      {
+        "part": "left_leaf_collar_3",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -13.5,
+          69.828
+        ]
+      },
+      {
+        "part": "left_braid_0",
+        "target": "head",
+        "witness": [
+          1.18,
+          -5.375,
+          86.48
+        ]
+      },
+      {
+        "part": "left_braid_bead_0",
+        "target": "left_braid_0",
+        "witness": [
+          11.328,
+          -8.33125,
+          56.120000000000005
+        ]
+      },
+      {
+        "part": "left_braid_1",
+        "target": "head",
+        "witness": [
+          1.18,
+          -6.375,
+          86.48
+        ]
+      },
+      {
+        "part": "left_braid_bead_1",
+        "target": "left_braid_1",
+        "witness": [
+          11.328,
+          -9.88125,
+          56.120000000000005
+        ]
+      },
+      {
+        "part": "right_leaf_collar_0",
+        "target": "torso",
+        "witness": [
+          0.0,
+          7.5,
+          71.76
+        ]
+      },
+      {
+        "part": "right_leaf_collar_1",
+        "target": "torso",
+        "witness": [
+          0.0,
+          9.5,
+          71.116
+        ]
+      },
+      {
+        "part": "right_leaf_collar_2",
+        "target": "torso",
+        "witness": [
+          0.0,
+          11.5,
+          70.472
+        ]
+      },
+      {
+        "part": "right_leaf_collar_3",
+        "target": "torso",
+        "witness": [
+          0.0,
+          13.5,
+          69.828
+        ]
+      },
+      {
+        "part": "right_braid_0",
+        "target": "head",
+        "witness": [
+          1.18,
+          5.375,
+          86.48
+        ]
+      },
+      {
+        "part": "right_braid_bead_0",
+        "target": "right_braid_0",
+        "witness": [
+          11.328,
+          8.33125,
+          56.120000000000005
+        ]
+      },
+      {
+        "part": "right_braid_1",
+        "target": "head",
+        "witness": [
+          1.18,
+          6.375,
+          86.48
+        ]
+      },
+      {
+        "part": "right_braid_bead_1",
+        "target": "right_braid_1",
+        "witness": [
+          11.328,
+          9.88125,
+          56.120000000000005
+        ]
+      },
+      {
+        "part": "shirt_front",
+        "target": "torso",
+        "witness": [
+          8.732,
+          0.0,
+          55.2
+        ]
+      }
+    ],
+    "gualicho": [
+      {
+        "part": "torso",
+        "target": "pelvis",
+        "witness": [
+          0.0,
+          0.0,
+          60.99
+        ]
+      },
+      {
+        "part": "left_thigh",
+        "target": "pelvis",
+        "witness": [
+          0.0,
+          -4.264,
+          56.71
+        ]
+      },
+      {
+        "part": "left_shin",
+        "target": "left_thigh",
+        "witness": [
+          0.23399999999999999,
+          -5.084,
+          33.17
+        ]
+      },
+      {
+        "part": "left_foot",
+        "target": "left_shin",
+        "witness": [
+          0.0,
+          -5.084,
+          7.811
+        ]
+      },
+      {
+        "part": "left_upper",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -9.02,
+          81.962
+        ]
+      },
+      {
+        "part": "left_fore",
+        "target": "left_upper",
+        "witness": [
+          0.31200000000000006,
+          -13.94,
+          66.34
+        ]
+      },
+      {
+        "part": "left_hand",
+        "target": "left_fore",
+        "witness": [
+          0.39,
+          -16.4,
+          49.541
+        ]
+      },
+      {
+        "part": "left_finger_0",
+        "target": "left_hand",
+        "witness": [
+          0.585,
+          -15.374999999999998,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "left_finger_1",
+        "target": "left_hand",
+        "witness": [
+          0.585,
+          -16.113,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "left_finger_2",
+        "target": "left_hand",
+        "witness": [
+          0.585,
+          -16.851,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "left_finger_3",
+        "target": "left_hand",
+        "witness": [
+          0.585,
+          -17.589000000000002,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "left_thumb",
+        "target": "left_hand",
+        "witness": [
+          0.7020000000000002,
+          -15.252,
+          47.080000000000005
+        ]
+      },
+      {
+        "part": "right_thigh",
+        "target": "pelvis",
+        "witness": [
+          0.0,
+          4.264,
+          56.71
+        ]
+      },
+      {
+        "part": "right_shin",
+        "target": "right_thigh",
+        "witness": [
+          0.23399999999999999,
+          5.084,
+          33.17
+        ]
+      },
+      {
+        "part": "right_foot",
+        "target": "right_shin",
+        "witness": [
+          0.0,
+          5.084,
+          7.811
+        ]
+      },
+      {
+        "part": "right_upper",
+        "target": "torso",
+        "witness": [
+          0.0,
+          9.02,
+          81.962
+        ]
+      },
+      {
+        "part": "right_fore",
+        "target": "right_upper",
+        "witness": [
+          0.31200000000000006,
+          13.94,
+          66.34
+        ]
+      },
+      {
+        "part": "right_hand",
+        "target": "right_fore",
+        "witness": [
+          0.39,
+          16.4,
+          49.541
+        ]
+      },
+      {
+        "part": "right_finger_0",
+        "target": "right_hand",
+        "witness": [
+          0.585,
+          15.374999999999998,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "right_finger_1",
+        "target": "right_hand",
+        "witness": [
+          0.585,
+          16.113,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "right_finger_2",
+        "target": "right_hand",
+        "witness": [
+          0.585,
+          16.851,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "right_finger_3",
+        "target": "right_hand",
+        "witness": [
+          0.585,
+          17.589000000000002,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "right_thumb",
+        "target": "right_hand",
+        "witness": [
+          0.7020000000000002,
+          15.252,
+          47.080000000000005
+        ]
+      },
+      {
+        "part": "neck",
+        "target": "torso",
+        "witness": [
+          0.0,
+          0.0,
+          85.81400000000001
+        ]
+      },
+      {
+        "part": "head",
+        "target": "neck",
+        "witness": [
+          0.0,
+          0.0,
+          92.7155
+        ]
+      },
+      {
+        "part": "left_ear",
+        "target": "head",
+        "witness": [
+          -0.31200000000000006,
+          -4.428,
+          98.97500000000001
+        ]
+      },
+      {
+        "part": "right_ear",
+        "target": "head",
+        "witness": [
+          -0.31200000000000006,
+          4.428,
+          98.97500000000001
+        ]
+      },
+      {
+        "part": "left_toe_0",
+        "target": "left_foot",
+        "witness": [
+          4.914,
+          -4.1,
+          2.461
+        ]
+      },
+      {
+        "part": "left_toe_1",
+        "target": "left_foot",
+        "witness": [
+          4.914,
+          -4.5920000000000005,
+          2.461
+        ]
+      },
+      {
+        "part": "left_toe_2",
+        "target": "left_foot",
+        "witness": [
+          4.914,
+          -5.084,
+          2.461
+        ]
+      },
+      {
+        "part": "left_toe_3",
+        "target": "left_foot",
+        "witness": [
+          4.914,
+          -5.576,
+          2.461
+        ]
+      },
+      {
+        "part": "left_toe_4",
+        "target": "left_foot",
+        "witness": [
+          4.914,
+          -6.068,
+          2.461
+        ]
+      },
+      {
+        "part": "right_toe_0",
+        "target": "right_foot",
+        "witness": [
+          4.914,
+          4.1,
+          2.461
+        ]
+      },
+      {
+        "part": "right_toe_1",
+        "target": "right_foot",
+        "witness": [
+          4.914,
+          4.5920000000000005,
+          2.461
+        ]
+      },
+      {
+        "part": "right_toe_2",
+        "target": "right_foot",
+        "witness": [
+          4.914,
+          5.084,
+          2.461
+        ]
+      },
+      {
+        "part": "right_toe_3",
+        "target": "right_foot",
+        "witness": [
+          4.914,
+          5.576,
+          2.461
+        ]
+      },
+      {
+        "part": "right_toe_4",
+        "target": "right_foot",
+        "witness": [
+          4.914,
+          6.068,
+          2.461
+        ]
+      },
+      {
+        "part": "forest_wrap",
+        "target": "pelvis",
+        "witness": [
+          -5.538,
+          0.0,
+          58.208
+        ]
+      },
+      {
+        "part": "waist_band",
+        "target": "pelvis",
+        "witness": [
+          5.928,
+          0.0,
+          57.78
+        ]
+      },
+      {
+        "part": "left_claw_0",
+        "target": "left_finger_0",
+        "witness": [
+          1.209,
+          -15.374999999999998,
+          41.836999999999996
+        ]
+      },
+      {
+        "part": "left_claw_1",
+        "target": "left_finger_1",
+        "witness": [
+          1.209,
+          -16.113,
+          40.981
+        ]
+      },
+      {
+        "part": "left_claw_2",
+        "target": "left_finger_2",
+        "witness": [
+          1.209,
+          -16.851,
+          41.302
+        ]
+      },
+      {
+        "part": "left_claw_3",
+        "target": "left_finger_3",
+        "witness": [
+          1.209,
+          -17.589000000000002,
+          42.265
+        ]
+      },
+      {
+        "part": "right_claw_0",
+        "target": "right_finger_0",
+        "witness": [
+          1.209,
+          15.374999999999998,
+          41.836999999999996
+        ]
+      },
+      {
+        "part": "right_claw_1",
+        "target": "right_finger_1",
+        "witness": [
+          1.209,
+          16.113,
+          40.981
+        ]
+      },
+      {
+        "part": "right_claw_2",
+        "target": "right_finger_2",
+        "witness": [
+          1.209,
+          16.851,
+          41.302
+        ]
+      },
+      {
+        "part": "right_claw_3",
+        "target": "right_finger_3",
+        "witness": [
+          1.209,
+          17.589000000000002,
+          42.265
+        ]
+      },
+      {
+        "part": "left_toe_claw_0",
+        "target": "left_toe_0",
+        "witness": [
+          6.2244,
+          -4.1,
+          2.3326000000000002
+        ]
+      },
+      {
+        "part": "left_toe_claw_1",
+        "target": "left_toe_1",
+        "witness": [
+          6.44085,
+          -4.5920000000000005,
+          2.3326000000000002
+        ]
+      },
+      {
+        "part": "left_toe_claw_2",
+        "target": "left_toe_2",
+        "witness": [
+          6.6573,
+          -5.084,
+          2.3326000000000002
+        ]
+      },
+      {
+        "part": "left_toe_claw_3",
+        "target": "left_toe_3",
+        "witness": [
+          6.44085,
+          -5.576,
+          2.3326000000000002
+        ]
+      },
+      {
+        "part": "left_toe_claw_4",
+        "target": "left_toe_4",
+        "witness": [
+          6.2244,
+          -6.068,
+          2.3326000000000002
+        ]
+      },
+      {
+        "part": "right_toe_claw_0",
+        "target": "right_toe_0",
+        "witness": [
+          6.2244,
+          4.1,
+          2.3326000000000002
+        ]
+      },
+      {
+        "part": "right_toe_claw_1",
+        "target": "right_toe_1",
+        "witness": [
+          6.44085,
+          4.5920000000000005,
+          2.3326000000000002
+        ]
+      },
+      {
+        "part": "right_toe_claw_2",
+        "target": "right_toe_2",
+        "witness": [
+          6.6573,
+          5.084,
+          2.3326000000000002
+        ]
+      },
+      {
+        "part": "right_toe_claw_3",
+        "target": "right_toe_3",
+        "witness": [
+          6.44085,
+          5.576,
+          2.3326000000000002
+        ]
+      },
+      {
+        "part": "right_toe_claw_4",
+        "target": "right_toe_4",
+        "witness": [
+          6.2244,
+          6.068,
+          2.3326000000000002
+        ]
+      },
+      {
+        "part": "left_rib_0",
+        "target": "torso",
+        "witness": [
+          5.6160000000000005,
+          -3.1159999999999997,
+          68.48
+        ]
+      },
+      {
+        "part": "left_rib_1",
+        "target": "torso",
+        "witness": [
+          5.811000000000001,
+          -3.1159999999999997,
+          72.11800000000001
+        ]
+      },
+      {
+        "part": "left_rib_2",
+        "target": "torso",
+        "witness": [
+          6.006000000000001,
+          -3.1159999999999997,
+          75.756
+        ]
+      },
+      {
+        "part": "left_rib_3",
+        "target": "torso",
+        "witness": [
+          6.201000000000001,
+          -3.1159999999999997,
+          79.394
+        ]
+      },
+      {
+        "part": "right_rib_0",
+        "target": "torso",
+        "witness": [
+          5.6160000000000005,
+          3.1159999999999997,
+          68.48
+        ]
+      },
+      {
+        "part": "right_rib_1",
+        "target": "torso",
+        "witness": [
+          5.811000000000001,
+          3.1159999999999997,
+          72.11800000000001
+        ]
+      },
+      {
+        "part": "right_rib_2",
+        "target": "torso",
+        "witness": [
+          6.006000000000001,
+          3.1159999999999997,
+          75.756
+        ]
+      },
+      {
+        "part": "right_rib_3",
+        "target": "torso",
+        "witness": [
+          6.201000000000001,
+          3.1159999999999997,
+          79.394
+        ]
+      },
+      {
+        "part": "front_waist_rag",
+        "target": "waist_band",
+        "witness": [
+          6.084,
+          0.0,
+          56.71
+        ]
+      },
+      {
+        "part": "twig_crest_0",
+        "target": "head",
+        "witness": [
+          0.0,
+          -2.583,
+          104.325
+        ]
+      },
+      {
+        "part": "twig_crest_1",
+        "target": "head",
+        "witness": [
+          0.0,
+          -1.722,
+          104.325
+        ]
+      },
+      {
+        "part": "twig_crest_2",
+        "target": "head",
+        "witness": [
+          0.0,
+          -0.861,
+          104.325
+        ]
+      },
+      {
+        "part": "twig_crest_3",
+        "target": "head",
+        "witness": [
+          0.0,
+          0.0,
+          104.325
+        ]
+      },
+      {
+        "part": "twig_crest_4",
+        "target": "head",
+        "witness": [
+          0.0,
+          0.861,
+          104.325
+        ]
+      },
+      {
+        "part": "twig_crest_5",
+        "target": "head",
+        "witness": [
+          0.0,
+          1.722,
+          104.325
+        ]
+      },
+      {
+        "part": "twig_crest_6",
+        "target": "head",
+        "witness": [
+          0.0,
+          2.583,
+          104.325
+        ]
+      },
+      {
+        "part": "left_shoulder_rag",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -6.1499999999999995,
+          83.46000000000001
+        ]
+      },
+      {
+        "part": "right_shoulder_rag",
+        "target": "torso",
+        "witness": [
+          0.0,
+          6.1499999999999995,
+          83.46000000000001
+        ]
+      }
+    ],
+    "urituorko": [
+      {
+        "part": "torso",
+        "target": "pelvis",
+        "witness": [
+          0.0,
+          0.0,
+          58.71
+        ]
+      },
+      {
+        "part": "left_thigh",
+        "target": "pelvis",
+        "witness": [
+          0.0,
+          -5.096,
+          54.59
+        ]
+      },
+      {
+        "part": "left_shin",
+        "target": "left_thigh",
+        "witness": [
+          0.285,
+          -6.076,
+          31.93
+        ]
+      },
+      {
+        "part": "left_foot",
+        "target": "left_shin",
+        "witness": [
+          0.0,
+          -6.076,
+          7.519
+        ]
+      },
+      {
+        "part": "left_upper",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -10.78,
+          78.898
+        ]
+      },
+      {
+        "part": "left_fore",
+        "target": "left_upper",
+        "witness": [
+          0.38,
+          -16.66,
+          63.86
+        ]
+      },
+      {
+        "part": "left_hand",
+        "target": "left_fore",
+        "witness": [
+          0.475,
+          -19.6,
+          47.689
+        ]
+      },
+      {
+        "part": "left_finger_0",
+        "target": "left_hand",
+        "witness": [
+          0.7124999999999999,
+          -18.375,
+          43.26
+        ]
+      },
+      {
+        "part": "left_finger_1",
+        "target": "left_hand",
+        "witness": [
+          0.7124999999999999,
+          -19.257,
+          43.26
+        ]
+      },
+      {
+        "part": "left_finger_2",
+        "target": "left_hand",
+        "witness": [
+          0.7124999999999999,
+          -20.139,
+          43.26
+        ]
+      },
+      {
+        "part": "left_finger_3",
+        "target": "left_hand",
+        "witness": [
+          0.7124999999999999,
+          -21.021,
+          43.26
+        ]
+      },
+      {
+        "part": "left_thumb",
+        "target": "left_hand",
+        "witness": [
+          0.8550000000000001,
+          -18.228,
+          45.32
+        ]
+      },
+      {
+        "part": "right_thigh",
+        "target": "pelvis",
+        "witness": [
+          0.0,
+          5.096,
+          54.59
+        ]
+      },
+      {
+        "part": "right_shin",
+        "target": "right_thigh",
+        "witness": [
+          0.285,
+          6.076,
+          31.93
+        ]
+      },
+      {
+        "part": "right_foot",
+        "target": "right_shin",
+        "witness": [
+          0.0,
+          6.076,
+          7.519
+        ]
+      },
+      {
+        "part": "right_upper",
+        "target": "torso",
+        "witness": [
+          0.0,
+          10.78,
+          78.898
+        ]
+      },
+      {
+        "part": "right_fore",
+        "target": "right_upper",
+        "witness": [
+          0.38,
+          16.66,
+          63.86
+        ]
+      },
+      {
+        "part": "right_hand",
+        "target": "right_fore",
+        "witness": [
+          0.475,
+          19.6,
+          47.689
+        ]
+      },
+      {
+        "part": "right_finger_0",
+        "target": "right_hand",
+        "witness": [
+          0.7124999999999999,
+          18.375,
+          43.26
+        ]
+      },
+      {
+        "part": "right_finger_1",
+        "target": "right_hand",
+        "witness": [
+          0.7124999999999999,
+          19.257,
+          43.26
+        ]
+      },
+      {
+        "part": "right_finger_2",
+        "target": "right_hand",
+        "witness": [
+          0.7124999999999999,
+          20.139,
+          43.26
+        ]
+      },
+      {
+        "part": "right_finger_3",
+        "target": "right_hand",
+        "witness": [
+          0.7124999999999999,
+          21.021,
+          43.26
+        ]
+      },
+      {
+        "part": "right_thumb",
+        "target": "right_hand",
+        "witness": [
+          0.8550000000000001,
+          18.228,
+          45.32
+        ]
+      },
+      {
+        "part": "neck",
+        "target": "torso",
+        "witness": [
+          0.0,
+          0.0,
+          82.60600000000001
+        ]
+      },
+      {
+        "part": "head",
+        "target": "neck",
+        "witness": [
+          0.0,
+          0.0,
+          89.24950000000001
+        ]
+      },
+      {
+        "part": "left_claw_0",
+        "target": "left_finger_0",
+        "witness": [
+          1.4725,
+          -18.375,
+          40.272999999999996
+        ]
+      },
+      {
+        "part": "left_claw_1",
+        "target": "left_finger_1",
+        "witness": [
+          1.4725,
+          -19.257,
+          39.449
+        ]
+      },
+      {
+        "part": "left_claw_2",
+        "target": "left_finger_2",
+        "witness": [
+          1.4725,
+          -20.139,
+          39.757999999999996
+        ]
+      },
+      {
+        "part": "left_claw_3",
+        "target": "left_finger_3",
+        "witness": [
+          1.4725,
+          -21.021,
+          40.685
+        ]
+      },
+      {
+        "part": "right_claw_0",
+        "target": "right_finger_0",
+        "witness": [
+          1.4725,
+          18.375,
+          40.272999999999996
+        ]
+      },
+      {
+        "part": "right_claw_1",
+        "target": "right_finger_1",
+        "witness": [
+          1.4725,
+          19.257,
+          39.449
+        ]
+      },
+      {
+        "part": "right_claw_2",
+        "target": "right_finger_2",
+        "witness": [
+          1.4725,
+          20.139,
+          39.757999999999996
+        ]
+      },
+      {
+        "part": "right_claw_3",
+        "target": "right_finger_3",
+        "witness": [
+          1.4725,
+          21.021,
+          40.685
+        ]
+      },
+      {
+        "part": "left_talon_0",
+        "target": "left_foot",
+        "witness": [
+          4.75,
+          -7.742,
+          3.502
+        ]
+      },
+      {
+        "part": "left_talon_1",
+        "target": "left_foot",
+        "witness": [
+          4.75,
+          -6.076,
+          3.502
+        ]
+      },
+      {
+        "part": "left_talon_2",
+        "target": "left_foot",
+        "witness": [
+          4.75,
+          -4.41,
+          3.502
+        ]
+      },
+      {
+        "part": "left_rear_talon",
+        "target": "left_foot",
+        "witness": [
+          0.0,
+          -6.076,
+          3.9139999999999997
+        ]
+      },
+      {
+        "part": "right_talon_0",
+        "target": "right_foot",
+        "witness": [
+          4.75,
+          4.41,
+          3.502
+        ]
+      },
+      {
+        "part": "right_talon_1",
+        "target": "right_foot",
+        "witness": [
+          4.75,
+          6.076,
+          3.502
+        ]
+      },
+      {
+        "part": "right_talon_2",
+        "target": "right_foot",
+        "witness": [
+          4.75,
+          7.742,
+          3.502
+        ]
+      },
+      {
+        "part": "right_rear_talon",
+        "target": "right_foot",
+        "witness": [
+          0.0,
+          6.076,
+          3.9139999999999997
+        ]
+      },
+      {
+        "part": "crest_feather_0",
+        "target": "head",
+        "witness": [
+          0.0,
+          -2.94,
+          100.116
+        ]
+      },
+      {
+        "part": "crest_feather_1",
+        "target": "head",
+        "witness": [
+          0.0,
+          -2.205,
+          100.116
+        ]
+      },
+      {
+        "part": "crest_feather_2",
+        "target": "head",
+        "witness": [
+          0.0,
+          -1.47,
+          100.116
+        ]
+      },
+      {
+        "part": "crest_feather_3",
+        "target": "head",
+        "witness": [
+          0.0,
+          -0.735,
+          100.116
+        ]
+      },
+      {
+        "part": "crest_feather_4",
+        "target": "head",
+        "witness": [
+          0.0,
+          0.0,
+          100.116
+        ]
+      },
+      {
+        "part": "crest_feather_5",
+        "target": "head",
+        "witness": [
+          0.0,
+          0.735,
+          100.116
+        ]
+      },
+      {
+        "part": "crest_feather_6",
+        "target": "head",
+        "witness": [
+          0.0,
+          1.47,
+          100.116
+        ]
+      },
+      {
+        "part": "crest_feather_7",
+        "target": "head",
+        "witness": [
+          0.0,
+          2.205,
+          100.116
+        ]
+      },
+      {
+        "part": "crest_feather_8",
+        "target": "head",
+        "witness": [
+          0.0,
+          2.94,
+          100.116
+        ]
+      },
+      {
+        "part": "left_collar_feather_0",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -3.92,
+          79.31
+        ]
+      },
+      {
+        "part": "left_collar_feather_1",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -5.096,
+          78.589
+        ]
+      },
+      {
+        "part": "left_collar_feather_2",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -6.272,
+          77.868
+        ]
+      },
+      {
+        "part": "left_collar_feather_3",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -7.4479999999999995,
+          77.147
+        ]
+      },
+      {
+        "part": "left_collar_feather_4",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -8.624,
+          76.426
+        ]
+      },
+      {
+        "part": "left_collar_feather_5",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -9.8,
+          75.705
+        ]
+      },
+      {
+        "part": "left_wing_feather_0",
+        "target": "left_fore",
+        "witness": [
+          -0.38,
+          -19.11,
+          49.44
+        ]
+      },
+      {
+        "part": "left_wing_feather_1",
+        "target": "left_fore",
+        "witness": [
+          -0.38,
+          -18.9336,
+          51.294
+        ]
+      },
+      {
+        "part": "left_wing_feather_2",
+        "target": "left_fore",
+        "witness": [
+          -0.38,
+          -18.7572,
+          53.148
+        ]
+      },
+      {
+        "part": "left_wing_feather_3",
+        "target": "left_fore",
+        "witness": [
+          -0.38,
+          -18.5808,
+          55.002
+        ]
+      },
+      {
+        "part": "left_wing_feather_4",
+        "target": "left_fore",
+        "witness": [
+          -0.38,
+          -18.404400000000003,
+          56.856
+        ]
+      },
+      {
+        "part": "left_wing_feather_5",
+        "target": "left_fore",
+        "witness": [
+          -0.38,
+          -18.228,
+          58.71
+        ]
+      },
+      {
+        "part": "left_wing_feather_6",
+        "target": "left_fore",
+        "witness": [
+          -0.38,
+          -18.0516,
+          60.564
+        ]
+      },
+      {
+        "part": "left_wing_feather_7",
+        "target": "left_fore",
+        "witness": [
+          -0.38,
+          -17.8752,
+          62.418000000000006
+        ]
+      },
+      {
+        "part": "left_hip_feather_0",
+        "target": "pelvis",
+        "witness": [
+          4.75,
+          -2.94,
+          55.620000000000005
+        ]
+      },
+      {
+        "part": "left_hip_feather_1",
+        "target": "pelvis",
+        "witness": [
+          4.75,
+          -4.9,
+          55.620000000000005
+        ]
+      },
+      {
+        "part": "left_hip_feather_2",
+        "target": "pelvis",
+        "witness": [
+          4.75,
+          -6.859999999999999,
+          55.620000000000005
+        ]
+      },
+      {
+        "part": "left_hip_feather_3",
+        "target": "pelvis",
+        "witness": [
+          4.75,
+          -8.82,
+          55.620000000000005
+        ]
+      },
+      {
+        "part": "right_collar_feather_0",
+        "target": "torso",
+        "witness": [
+          0.0,
+          3.92,
+          79.31
+        ]
+      },
+      {
+        "part": "right_collar_feather_1",
+        "target": "torso",
+        "witness": [
+          0.0,
+          5.096,
+          78.589
+        ]
+      },
+      {
+        "part": "right_collar_feather_2",
+        "target": "torso",
+        "witness": [
+          0.0,
+          6.272,
+          77.868
+        ]
+      },
+      {
+        "part": "right_collar_feather_3",
+        "target": "torso",
+        "witness": [
+          0.0,
+          7.4479999999999995,
+          77.147
+        ]
+      },
+      {
+        "part": "right_collar_feather_4",
+        "target": "torso",
+        "witness": [
+          0.0,
+          8.624,
+          76.426
+        ]
+      },
+      {
+        "part": "right_collar_feather_5",
+        "target": "torso",
+        "witness": [
+          0.0,
+          9.8,
+          75.705
+        ]
+      },
+      {
+        "part": "right_wing_feather_0",
+        "target": "right_fore",
+        "witness": [
+          -0.38,
+          19.11,
+          49.44
+        ]
+      },
+      {
+        "part": "right_wing_feather_1",
+        "target": "right_fore",
+        "witness": [
+          -0.38,
+          18.9336,
+          51.294
+        ]
+      },
+      {
+        "part": "right_wing_feather_2",
+        "target": "right_fore",
+        "witness": [
+          -0.38,
+          18.7572,
+          53.148
+        ]
+      },
+      {
+        "part": "right_wing_feather_3",
+        "target": "right_fore",
+        "witness": [
+          -0.38,
+          18.5808,
+          55.002
+        ]
+      },
+      {
+        "part": "right_wing_feather_4",
+        "target": "right_fore",
+        "witness": [
+          -0.38,
+          18.404400000000003,
+          56.856
+        ]
+      },
+      {
+        "part": "right_wing_feather_5",
+        "target": "right_fore",
+        "witness": [
+          -0.38,
+          18.228,
+          58.71
+        ]
+      },
+      {
+        "part": "right_wing_feather_6",
+        "target": "right_fore",
+        "witness": [
+          -0.38,
+          18.0516,
+          60.564
+        ]
+      },
+      {
+        "part": "right_wing_feather_7",
+        "target": "right_fore",
+        "witness": [
+          -0.38,
+          17.8752,
+          62.418000000000006
+        ]
+      },
+      {
+        "part": "right_hip_feather_0",
+        "target": "pelvis",
+        "witness": [
+          4.75,
+          2.94,
+          55.620000000000005
+        ]
+      },
+      {
+        "part": "right_hip_feather_1",
+        "target": "pelvis",
+        "witness": [
+          4.75,
+          4.9,
+          55.620000000000005
+        ]
+      },
+      {
+        "part": "right_hip_feather_2",
+        "target": "pelvis",
+        "witness": [
+          4.75,
+          6.859999999999999,
+          55.620000000000005
+        ]
+      },
+      {
+        "part": "right_hip_feather_3",
+        "target": "pelvis",
+        "witness": [
+          4.75,
+          8.82,
+          55.620000000000005
+        ]
+      }
+    ],
+    "maip": [
+      {
+        "part": "torso",
+        "target": "pelvis",
+        "witness": [
+          0.0,
+          0.0,
+          60.99
+        ]
+      },
+      {
+        "part": "left_thigh",
+        "target": "pelvis",
+        "witness": [
+          0.0,
+          -4.524,
+          56.71
+        ]
+      },
+      {
+        "part": "left_shin",
+        "target": "left_thigh",
+        "witness": [
+          0.252,
+          -5.394,
+          33.17
+        ]
+      },
+      {
+        "part": "left_foot",
+        "target": "left_shin",
+        "witness": [
+          0.0,
+          -5.394,
+          7.811
+        ]
+      },
+      {
+        "part": "left_upper",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -9.57,
+          81.962
+        ]
+      },
+      {
+        "part": "left_fore",
+        "target": "left_upper",
+        "witness": [
+          0.336,
+          -14.79,
+          66.34
+        ]
+      },
+      {
+        "part": "left_hand",
+        "target": "left_fore",
+        "witness": [
+          0.42,
+          -17.4,
+          49.541
+        ]
+      },
+      {
+        "part": "left_finger_0",
+        "target": "left_hand",
+        "witness": [
+          0.63,
+          -16.3125,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "left_finger_1",
+        "target": "left_hand",
+        "witness": [
+          0.63,
+          -17.0955,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "left_finger_2",
+        "target": "left_hand",
+        "witness": [
+          0.63,
+          -17.8785,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "left_finger_3",
+        "target": "left_hand",
+        "witness": [
+          0.63,
+          -18.661500000000004,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "left_thumb",
+        "target": "left_hand",
+        "witness": [
+          0.7560000000000001,
+          -16.182000000000002,
+          47.080000000000005
+        ]
+      },
+      {
+        "part": "right_thigh",
+        "target": "pelvis",
+        "witness": [
+          0.0,
+          4.524,
+          56.71
+        ]
+      },
+      {
+        "part": "right_shin",
+        "target": "right_thigh",
+        "witness": [
+          0.252,
+          5.394,
+          33.17
+        ]
+      },
+      {
+        "part": "right_foot",
+        "target": "right_shin",
+        "witness": [
+          0.0,
+          5.394,
+          7.811
+        ]
+      },
+      {
+        "part": "right_upper",
+        "target": "torso",
+        "witness": [
+          0.0,
+          9.57,
+          81.962
+        ]
+      },
+      {
+        "part": "right_fore",
+        "target": "right_upper",
+        "witness": [
+          0.336,
+          14.79,
+          66.34
+        ]
+      },
+      {
+        "part": "right_hand",
+        "target": "right_fore",
+        "witness": [
+          0.42,
+          17.4,
+          49.541
+        ]
+      },
+      {
+        "part": "right_finger_0",
+        "target": "right_hand",
+        "witness": [
+          0.63,
+          16.3125,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "right_finger_1",
+        "target": "right_hand",
+        "witness": [
+          0.63,
+          17.0955,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "right_finger_2",
+        "target": "right_hand",
+        "witness": [
+          0.63,
+          17.8785,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "right_finger_3",
+        "target": "right_hand",
+        "witness": [
+          0.63,
+          18.661500000000004,
+          44.940000000000005
+        ]
+      },
+      {
+        "part": "right_thumb",
+        "target": "right_hand",
+        "witness": [
+          0.7560000000000001,
+          16.182000000000002,
+          47.080000000000005
+        ]
+      },
+      {
+        "part": "neck",
+        "target": "torso",
+        "witness": [
+          0.0,
+          0.0,
+          85.81400000000001
+        ]
+      },
+      {
+        "part": "head",
+        "target": "neck",
+        "witness": [
+          0.0,
+          0.0,
+          92.7155
+        ]
+      },
+      {
+        "part": "left_ear",
+        "target": "head",
+        "witness": [
+          -0.336,
+          -4.698,
+          98.97500000000001
+        ]
+      },
+      {
+        "part": "right_ear",
+        "target": "head",
+        "witness": [
+          -0.336,
+          4.698,
+          98.97500000000001
+        ]
+      },
+      {
+        "part": "hair_mass",
+        "target": "head",
+        "witness": [
+          -2.9400000000000004,
+          0.0,
+          103.14800000000001
+        ]
+      },
+      {
+        "part": "hair_lock_00",
+        "target": "hair_mass",
+        "witness": [
+          -1.4550019804134375,
+          3.942438873609427,
+          103.14800000000001
+        ]
+      },
+      {
+        "part": "hair_lock_01",
+        "target": "hair_mass",
+        "witness": [
+          -2.5444342266486655,
+          4.349795513056434,
+          103.14800000000001
+        ]
+      },
+      {
+        "part": "hair_lock_02",
+        "target": "hair_mass",
+        "witness": [
+          -3.6290855462508484,
+          3.906048759067043,
+          103.14800000000001
+        ]
+      },
+      {
+        "part": "hair_lock_03",
+        "target": "hair_mass",
+        "witness": [
+          -4.496727475597331,
+          2.6980243870169303,
+          103.14800000000001
+        ]
+      },
+      {
+        "part": "hair_lock_04",
+        "target": "hair_mass",
+        "witness": [
+          -4.977592726056282,
+          0.962090667395961,
+          103.14800000000001
+        ]
+      },
+      {
+        "part": "hair_lock_05",
+        "target": "hair_mass",
+        "witness": [
+          -4.977592726056282,
+          -0.9620906673959618,
+          103.14800000000001
+        ]
+      },
+      {
+        "part": "hair_lock_06",
+        "target": "hair_mass",
+        "witness": [
+          -4.49672747559733,
+          -2.6980243870169325,
+          103.14800000000001
+        ]
+      },
+      {
+        "part": "hair_lock_07",
+        "target": "hair_mass",
+        "witness": [
+          -3.629085546250849,
+          -3.906048759067043,
+          103.14800000000001
+        ]
+      },
+      {
+        "part": "hair_lock_08",
+        "target": "hair_mass",
+        "witness": [
+          -2.5444342266486655,
+          -4.349795513056434,
+          103.14800000000001
+        ]
+      },
+      {
+        "part": "hair_lock_09",
+        "target": "hair_mass",
+        "witness": [
+          -1.455001980413437,
+          -3.942438873609427,
+          103.14800000000001
+        ]
+      },
+      {
+        "part": "hair_crown",
+        "target": "hair_mass",
+        "witness": [
+          -2.2680000000000002,
+          0.0,
+          104.8172
+        ]
+      },
+      {
+        "part": "left_temple_lock",
+        "target": "head",
+        "witness": [
+          0.924,
+          -3.915,
+          102.31340000000002
+        ]
+      },
+      {
+        "part": "right_temple_lock",
+        "target": "head",
+        "witness": [
+          0.924,
+          3.915,
+          102.31340000000002
+        ]
+      },
+      {
+        "part": "forest_wrap",
+        "target": "pelvis",
+        "witness": [
+          -5.9639999999999995,
+          0.0,
+          58.208
+        ]
+      },
+      {
+        "part": "waist_band",
+        "target": "pelvis",
+        "witness": [
+          6.3839999999999995,
+          0.0,
+          57.78
+        ]
+      },
+      {
+        "part": "left_claw_0",
+        "target": "left_finger_0",
+        "witness": [
+          1.302,
+          -16.3125,
+          41.836999999999996
+        ]
+      },
+      {
+        "part": "left_claw_1",
+        "target": "left_finger_1",
+        "witness": [
+          1.302,
+          -17.0955,
+          40.981
+        ]
+      },
+      {
+        "part": "left_claw_2",
+        "target": "left_finger_2",
+        "witness": [
+          1.302,
+          -17.8785,
+          41.302
+        ]
+      },
+      {
+        "part": "left_claw_3",
+        "target": "left_finger_3",
+        "witness": [
+          1.302,
+          -18.661500000000004,
+          42.265
+        ]
+      },
+      {
+        "part": "right_claw_0",
+        "target": "right_finger_0",
+        "witness": [
+          1.302,
+          16.3125,
+          41.836999999999996
+        ]
+      },
+      {
+        "part": "right_claw_1",
+        "target": "right_finger_1",
+        "witness": [
+          1.302,
+          17.0955,
+          40.981
+        ]
+      },
+      {
+        "part": "right_claw_2",
+        "target": "right_finger_2",
+        "witness": [
+          1.302,
+          17.8785,
+          41.302
+        ]
+      },
+      {
+        "part": "right_claw_3",
+        "target": "right_finger_3",
+        "witness": [
+          1.302,
+          18.661500000000004,
+          42.265
+        ]
+      },
+      {
+        "part": "left_rib_0",
+        "target": "torso",
+        "witness": [
+          6.048,
+          -3.306,
+          68.48
+        ]
+      },
+      {
+        "part": "left_rib_1",
+        "target": "torso",
+        "witness": [
+          6.258000000000001,
+          -3.306,
+          72.11800000000001
+        ]
+      },
+      {
+        "part": "left_rib_2",
+        "target": "torso",
+        "witness": [
+          6.468000000000001,
+          -3.306,
+          75.756
+        ]
+      },
+      {
+        "part": "left_rib_3",
+        "target": "torso",
+        "witness": [
+          6.678000000000001,
+          -3.306,
+          79.394
+        ]
+      },
+      {
+        "part": "right_rib_0",
+        "target": "torso",
+        "witness": [
+          6.048,
+          3.306,
+          68.48
+        ]
+      },
+      {
+        "part": "right_rib_1",
+        "target": "torso",
+        "witness": [
+          6.258000000000001,
+          3.306,
+          72.11800000000001
+        ]
+      },
+      {
+        "part": "right_rib_2",
+        "target": "torso",
+        "witness": [
+          6.468000000000001,
+          3.306,
+          75.756
+        ]
+      },
+      {
+        "part": "right_rib_3",
+        "target": "torso",
+        "witness": [
+          6.678000000000001,
+          3.306,
+          79.394
+        ]
+      },
+      {
+        "part": "front_waist_rag",
+        "target": "waist_band",
+        "witness": [
+          6.552,
+          0.0,
+          56.71
+        ]
+      },
+      {
+        "part": "left_talon_0",
+        "target": "left_foot",
+        "witness": [
+          4.2,
+          -6.873,
+          3.638
+        ]
+      },
+      {
+        "part": "left_talon_1",
+        "target": "left_foot",
+        "witness": [
+          4.2,
+          -5.394,
+          3.638
+        ]
+      },
+      {
+        "part": "left_talon_2",
+        "target": "left_foot",
+        "witness": [
+          4.2,
+          -3.915,
+          3.638
+        ]
+      },
+      {
+        "part": "right_talon_0",
+        "target": "right_foot",
+        "witness": [
+          4.2,
+          3.915,
+          3.638
+        ]
+      },
+      {
+        "part": "right_talon_1",
+        "target": "right_foot",
+        "witness": [
+          4.2,
+          5.394,
+          3.638
+        ]
+      },
+      {
+        "part": "right_talon_2",
+        "target": "right_foot",
+        "witness": [
+          4.2,
+          6.873,
+          3.638
+        ]
+      },
+      {
+        "part": "left_shoulder_spike_0",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -8.7,
+          81.32000000000001
+        ]
+      },
+      {
+        "part": "left_shoulder_spike_1",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -9.744,
+          79.715
+        ]
+      },
+      {
+        "part": "left_shoulder_spike_2",
+        "target": "torso",
+        "witness": [
+          0.0,
+          -10.788,
+          78.11
+        ]
+      },
+      {
+        "part": "left_forearm_spike_0",
+        "target": "left_fore",
+        "witness": [
+          -0.168,
+          -16.704,
+          54.57
+        ]
+      },
+      {
+        "part": "left_forearm_spike_1",
+        "target": "left_fore",
+        "witness": [
+          -0.168,
+          -16.269,
+          58.85
+        ]
+      },
+      {
+        "part": "left_forearm_spike_2",
+        "target": "left_fore",
+        "witness": [
+          -0.168,
+          -15.834,
+          63.13
+        ]
+      },
+      {
+        "part": "right_shoulder_spike_0",
+        "target": "torso",
+        "witness": [
+          0.0,
+          8.7,
+          81.32000000000001
+        ]
+      },
+      {
+        "part": "right_shoulder_spike_1",
+        "target": "torso",
+        "witness": [
+          0.0,
+          9.744,
+          79.715
+        ]
+      },
+      {
+        "part": "right_shoulder_spike_2",
+        "target": "torso",
+        "witness": [
+          0.0,
+          10.788,
+          78.11
+        ]
+      },
+      {
+        "part": "right_forearm_spike_0",
+        "target": "right_fore",
+        "witness": [
+          -0.168,
+          16.704,
+          54.57
+        ]
+      },
+      {
+        "part": "right_forearm_spike_1",
+        "target": "right_fore",
+        "witness": [
+          -0.168,
+          16.269,
+          58.85
+        ]
+      },
+      {
+        "part": "right_forearm_spike_2",
+        "target": "right_fore",
+        "witness": [
+          -0.168,
+          15.834,
+          63.13
+        ]
+      }
+    ]
+  }
+}

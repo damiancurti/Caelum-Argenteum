@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.88** - 2026-11-16.
+Documentation version: **5.17.89** - 2026-11-16.
+
+## 5.17.89 - Four distinct bestiary figure candidates (#821)
+
+Curupi, Gualicho, Uritu Orko and Maip have native candidates;52/56 provisional
+classes now have models. Sixteen-file repeated export, closed/posed geometry
+and 702 final-package native assertions pass. ASSETS records reviewed art
+and isolated presentation results with their limits. CA821-FIGURES-01 remains
+pending. #822's four forms, regional displays, other characters/modular fitting,
+campaign authoring and siege rendering still prevent the final batch handoff.
 
 ## 5.17.88 - Five land and river figure candidates (#819)
 

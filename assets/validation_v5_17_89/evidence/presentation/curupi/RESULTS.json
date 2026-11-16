@@ -1,0 +1,99 @@
+{
+  "issue": 821,
+  "species": "curupi",
+  "scope": "Measure one 700-tic sprite/model pair for a real Curupi/Gualicho/Uritu Orko/Maip; no campaign or crowd budget.",
+  "baseline_sha256": "6b3adc713584c69d7afdb9165bd1a435779046990a32b780570e3e2cb54acb38",
+  "runtime_sha256": "76b90a267723491bf9d738470d89d21f5a3d625c318ef56494477177583dbad7",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "sprite",
+      "pid": 45952,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 419912904.1564,
+        "END": 419932917.9971
+      },
+      "fixture_sha256": "3eb453a4318e0736e57efc3f21fdcddf860d57ceef9a3cc55b0e5c7ee649db6d",
+      "bench_sha256": "e27f51df0fb8584d02140e227cee1dc9fb8547ceeb261d54c90314aecd5e29f8",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571373857142856,
+        "p50_ms": 28.572,
+        "p95_ms": 28.9328,
+        "p99_ms": 29.0264,
+        "max_ms": 29.1544
+      },
+      "presentation": {
+        "pid": 45952,
+        "trace_sha256": "b0979907c8ab8c503f8a513a6c1b4f66825caabb3825401585616da511eb22a3",
+        "rows": 48085,
+        "scene_presents": 33809,
+        "mean_present_fps": 1930.431591869525,
+        "present_intervals": {
+          "samples": 33808,
+          "mean_ms": 0.518018874230892,
+          "p50_ms": 0.4943999648094177,
+          "p95_ms": 0.6955000162124634,
+          "p99_ms": 0.7802000045776367,
+          "max_ms": 1.668899953365326
+        },
+        "native_call_duration": {
+          "samples": 33809,
+          "mean_ms": 0.06390647169380738,
+          "p50_ms": 0.05920004844665527,
+          "p95_ms": 0.08840000629425049,
+          "p99_ms": 0.11449998617172241,
+          "max_ms": 0.7702999711036682
+        }
+      }
+    },
+    {
+      "kind": "model",
+      "pid": 7320,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 419947827.4503,
+        "END": 419967841.2457
+      },
+      "fixture_sha256": "3eb453a4318e0736e57efc3f21fdcddf860d57ceef9a3cc55b0e5c7ee649db6d",
+      "bench_sha256": "e27f51df0fb8584d02140e227cee1dc9fb8547ceeb261d54c90314aecd5e29f8",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571527428571432,
+        "p50_ms": 28.5799,
+        "p95_ms": 28.9442,
+        "p99_ms": 29.0882,
+        "max_ms": 29.2237
+      },
+      "presentation": {
+        "pid": 7320,
+        "trace_sha256": "b3daec9e76a8cda6628d71f8127b3c1f8ef8250867323e89550a9c119ebcc0d6",
+        "rows": 48020,
+        "scene_presents": 33892,
+        "mean_present_fps": 1935.1537299515733,
+        "present_intervals": {
+          "samples": 33891,
+          "mean_ms": 0.5167548110118491,
+          "p50_ms": 0.4962000250816345,
+          "p95_ms": 0.6655000448226929,
+          "p99_ms": 0.7865999937057495,
+          "max_ms": 1.6079999804496765
+        },
+        "native_call_duration": {
+          "samples": 33892,
+          "mean_ms": 0.06414293626271242,
+          "p50_ms": 0.0591999888420105,
+          "p95_ms": 0.0886000394821167,
+          "p99_ms": 0.11549997329711914,
+          "max_ms": 0.6783000230789185
+        }
+      }
+    }
+  ]
+}

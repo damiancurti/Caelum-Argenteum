@@ -1,0 +1,40 @@
+{
+  "issue": 821,
+  "runtime_sha256": "28f15a6faac5f09ca6aded39d8beffba9c2a1ebf62256fe5c60867bbfc6f3fff",
+  "baseline_sha256": "6b3adc713584c69d7afdb9165bd1a435779046990a32b780570e3e2cb54acb38",
+  "package_exact_source_bytes": true,
+  "source_entries": 18622,
+  "added_resources": [
+    "caelum/data/bestiary_figure_combat.modeldef",
+    "models/caelum/folklore/bestiaryfigures/curupi.md3",
+    "models/caelum/folklore/bestiaryfigures/gualicho.md3",
+    "models/caelum/folklore/bestiaryfigures/maip.md3",
+    "models/caelum/folklore/bestiaryfigures/materials.png",
+    "models/caelum/folklore/bestiaryfigures/urituorko.md3"
+  ],
+  "changed_resources": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "all_other_runtime_bytes_identical": true,
+  "repeated_files": 16,
+  "export_sha256": {
+    "caelum/data/bestiary_figure_combat.modeldef": "f8b015717f6d1369570215d81d74596ea08a3097297f242272b7db3ce9b17979",
+    "editable/curupi.mtl": "fab7263e2ee354a6c058603871e39141fc6d8d0d8a11b186399c6247ce314ca1",
+    "editable/curupi.obj": "4d3bf211d17574894dc5dc6ca7ab90e6dceebdd6be3a3d34490332d015865ba9",
+    "editable/gualicho.mtl": "fab7263e2ee354a6c058603871e39141fc6d8d0d8a11b186399c6247ce314ca1",
+    "editable/gualicho.obj": "9c76ec05fb1a2b271ff6cdf27ce2d911565cbcda0a19d5cbdb7cd91239257697",
+    "editable/maip.mtl": "fab7263e2ee354a6c058603871e39141fc6d8d0d8a11b186399c6247ce314ca1",
+    "editable/maip.obj": "a6f2fb168b839765e64d02ee820b7e0c47e384888cc87058d1539c969668ca50",
+    "editable/urituorko.mtl": "fab7263e2ee354a6c058603871e39141fc6d8d0d8a11b186399c6247ce314ca1",
+    "editable/urituorko.obj": "7c5677187ce14e881e18737c18d37f12177810d2b35844196416cda491da6c82",
+    "manifest.json": "a03012a84b6c2ebde5a4f8b86f51d271f92fb4428a59fd766b301ca4a88aef0f",
+    "models/caelum/folklore/bestiaryfigures/curupi.md3": "ca3b700c73abdd0a88a99e0a2cd358dd79924ed4bc9db2865a661d2ba836ec32",
+    "models/caelum/folklore/bestiaryfigures/gualicho.md3": "dce081ff43c7fcd0344c986df8ee7e530fe82d31ce68d26860a143a907fbb210",
+    "models/caelum/folklore/bestiaryfigures/maip.md3": "609062fa49de005e9bbce933731a8ca4fdbdebc0585104c5b5cec61f9c6449c3",
+    "models/caelum/folklore/bestiaryfigures/materials.png": "0550864e23e7062e3f18d7394aebc20494e1fe1e5548dc88d47388c2f13d2c71",
+    "models/caelum/folklore/bestiaryfigures/urituorko.md3": "61b1df3744f0dedb9d75cefab0f0ac6800b189c570f74cbd620957d5755b67a5",
+    "preview.pk3": "5397a0c292b6e89ae54b50d76a314306b98b3510ff9a162625e36d1989161fee"
+  }
+}
