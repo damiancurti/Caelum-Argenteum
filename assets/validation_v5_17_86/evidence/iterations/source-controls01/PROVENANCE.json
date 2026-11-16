@@ -1,0 +1,16 @@
+{
+  "issue": 815,
+  "parent_issue": 461,
+  "status": "candidate_author_review_pending",
+  "author": "Damian Curti",
+  "reference_images": {
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/22_shoort.png": "2a52ffc0f8f7d68363042f8cbb0b147afc4232aace9a17793b7adbc5394b27a9",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/23_tanu.png": "ce7aa91769b1bf6342d467789ae54ff59e5295682942bcdb26ca00119a603ab3",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/24_halahaches.png": "3035a2925243086a40d32b916d92c8fd27a7c5327eb28e9b985177da8cd1d1c2",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/25_matan.png": "86477b201fc402ef1809d2de9a75a9b06f8f2edcc75571f467be53a764ca2398",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/26_ulen.png": "a4deb7e4db3ab372bdce95c23613201c2ebeb812c5f7dca735d56ddf43bd70ba"
+  },
+  "material_source": "MATERIALS_PROMPT.json",
+  "geometry": "Original dimensionless anatomy controls and owned closed mesh/native animation tools.",
+  "limits": "Reference-led southern creature anatomy, horns/crests/masks, body markings, fixed cloth and ornaments. Candidate species art only; no modular inventory, new powers, statistics, metric scale or invented cultural claims."
+}

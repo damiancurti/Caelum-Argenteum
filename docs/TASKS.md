@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.85** - 2026-11-15.
+Documentation version: **5.17.86** - 2026-11-15.
+
+## 5.17.86 - Austral candidates verified; complete batch remains (#815)
+
+Five austral figures pass 19-file deterministic export, 389 closed components,
+3,072 posed contacts and 871 qualified native assertions. Preserve the exact
+reuse audit for four unchanged species and the repeated final Halahaches/action
+runs. Retain CA815-AUSTRAL-01 and every earlier unconfirmed author check.
+Continue #817's witch, Salamanca, Pericana and Solapa, the remaining creatures,
+regional displays, other characters, modular fitting and V5.16 progression/
+performance work. The consolidated author terminal remains deferred until the
+requested complete batch is ready.
 
 ## 5.17.85 - Forest candidates verified; complete batch remains (#813)
 

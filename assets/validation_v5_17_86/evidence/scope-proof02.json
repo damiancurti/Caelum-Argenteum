@@ -1,0 +1,44 @@
+{
+  "issue": 815,
+  "runtime_sha256": "d2cdb71531a4f94fa2fe2d9e26e865dd7b9951756df67006523d81ef63c5b4bb",
+  "baseline_sha256": "468e4f0e4861915ad0c1cb66608d63f9462b3af471dce6aa1871ed43a8e86282",
+  "package_exact_source_bytes": true,
+  "source_entries": 18603,
+  "added_resources": [
+    "caelum/data/austral_figure_combat.modeldef",
+    "models/caelum/folklore/australfigures/halahaches.md3",
+    "models/caelum/folklore/australfigures/matan.md3",
+    "models/caelum/folklore/australfigures/materials.png",
+    "models/caelum/folklore/australfigures/shoort.md3",
+    "models/caelum/folklore/australfigures/tanu.md3",
+    "models/caelum/folklore/australfigures/ulen.md3"
+  ],
+  "changed_resources": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "all_other_runtime_bytes_identical": true,
+  "repeated_files": 19,
+  "export_sha256": {
+    "caelum/data/austral_figure_combat.modeldef": "3914071115943f0a565007f0206d7a13f862b3b158220eee12b96dbd10408e61",
+    "editable/halahaches.mtl": "37792c64f530825a9edc374c4d4f829f8ec94150b6814d35f0b17a219a7e9357",
+    "editable/halahaches.obj": "4e1c7077ab2f4a04d91f355b402387edf34036fb7bc4a7e8eb9afc45485a5ae7",
+    "editable/matan.mtl": "37792c64f530825a9edc374c4d4f829f8ec94150b6814d35f0b17a219a7e9357",
+    "editable/matan.obj": "9675b80055a1fa12eecdf4f66075e04061123ded8931dabad4da7ec42694063c",
+    "editable/shoort.mtl": "37792c64f530825a9edc374c4d4f829f8ec94150b6814d35f0b17a219a7e9357",
+    "editable/shoort.obj": "ff33e04bb5af5bee07e8a0decc47be5f86d9f5798a9242308397e50f987efdd8",
+    "editable/tanu.mtl": "37792c64f530825a9edc374c4d4f829f8ec94150b6814d35f0b17a219a7e9357",
+    "editable/tanu.obj": "b9f4896ef1aed862126a555a7a875df7053789fd351dfc99af33416e28208d9f",
+    "editable/ulen.mtl": "37792c64f530825a9edc374c4d4f829f8ec94150b6814d35f0b17a219a7e9357",
+    "editable/ulen.obj": "b87ccb5e2b2057622d4f6263821d8d34efb8ec3ec6f525d8f51be6d2f2b17b41",
+    "manifest.json": "edcd1edb5fc46e774e5ccf522b24255e85af14f14799a48675e90eb9fb47f98d",
+    "models/caelum/folklore/australfigures/halahaches.md3": "2f6898e9cb3daa07d3ee1f6525804227d60c6498ee6df7077691c62821b24c77",
+    "models/caelum/folklore/australfigures/matan.md3": "ab4be529cbf18bf9ab236de32792c2d491909975c83bdfa80e90f82303df89e1",
+    "models/caelum/folklore/australfigures/materials.png": "a5f58f3de714fe906bdd2156f542bf6806146177d8f926baf775ddd443b13e4a",
+    "models/caelum/folklore/australfigures/shoort.md3": "da29f953d240ab327bb52e50a1d4202c1a95f2ac341a2da7404d87b22c2de0eb",
+    "models/caelum/folklore/australfigures/tanu.md3": "c09157a73a358f7a4cdf75d9894ab03eb8acf35c3b99a3e7b39d0f9e43ecc8c8",
+    "models/caelum/folklore/australfigures/ulen.md3": "e230ce943306156bff6b2834d4feed17ddabd093128c699c58aef3d9dc22ecec",
+    "preview.pk3": "469067cfce960ad2d68ab78b5af65c7f73644caa6bfaaa0b9cce5dd2a1400cda"
+  }
+}

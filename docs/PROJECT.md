@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.85** - 2026-11-15.
+Documentation version: **5.17.86** - 2026-11-15.
+
+## 5.17.86 - Five austral figure candidates (#815)
+
+Shoort, Tanu, Halahaches, Matan and Ulen have native candidates; coverage reaches
+39/56 provisional classes. Deterministic exports, closed and posed geometry,
+and 871 qualified native assertions pass. ASSETS records final-package tests,
+strictly bounded reuse, visual review and presentation evidence with its limits.
+CA815-AUSTRAL-01 remains pending. The 17 remaining creatures, regional views,
+named/modular characters, equipment fitting, 75 exact campaign acquisitions and
+siege rendering keep the full batch and final author terminal unfinished.
 
 ## 5.17.85 - Four forest guardian candidates (#813)
 
