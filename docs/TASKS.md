@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.86** - 2026-11-15.
+Documentation version: **5.17.87** - 2026-11-15.
+
+## 5.17.87 - Witch candidates verified; full batch remains (#817)
+
+Four candidates pass 16-file repeated export, 274 closed components, 2,160 posed
+attachment checks, extreme-stride coverage and 702 native assertions. Preserve
+CA817-WITCH-01 and every earlier unconfirmed author check. Continue the remaining
+13 provisional creature models, regional displays, other characters, modular
+equipment fitting and V5.16 progression/performance work. The author will review
+the consolidated terminal only after the complete requested batch is ready.
 
 ## 5.17.86 - Austral candidates verified; complete batch remains (#815)
 

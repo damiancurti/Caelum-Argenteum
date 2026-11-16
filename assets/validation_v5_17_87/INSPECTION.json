@@ -1,0 +1,90 @@
+{
+  "issue": 817,
+  "purpose": "Four reference silhouettes, volumetric faces, gray hair/braids, shawls, poncho, straw hat, pouches, claws and inherited actions.",
+  "additional_views": [
+    {
+      "name": "lying-oblique",
+      "position": [
+        65,
+        -65,
+        63
+      ],
+      "target": [
+        0,
+        0,
+        12
+      ],
+      "default_pose": 22
+    },
+    {
+      "name": "face-detail",
+      "position": [
+        27,
+        -6,
+        47
+      ],
+      "target": [
+        2,
+        0,
+        44
+      ]
+    },
+    {
+      "name": "garment-rear",
+      "position": [
+        -50,
+        -35,
+        35
+      ],
+      "target": [
+        0,
+        0,
+        26
+      ]
+    }
+  ],
+  "action_views": {
+    "death": 6,
+    "rest": 6
+  },
+  "species_view_overrides": {
+    "solapa": {
+      "face-detail": {
+        "position": [
+          29,
+          -6,
+          40
+        ],
+        "target": [
+          8,
+          0,
+          40.3
+        ]
+      },
+      "head-front": {
+        "position": [
+          42,
+          0,
+          40.5
+        ],
+        "target": [
+          5,
+          0,
+          40.8
+        ]
+      },
+      "head-oblique": {
+        "position": [
+          40,
+          -22,
+          40.5
+        ],
+        "target": [
+          5,
+          0,
+          40.8
+        ]
+      }
+    }
+  }
+}

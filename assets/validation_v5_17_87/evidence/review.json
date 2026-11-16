@@ -1,0 +1,64 @@
+{
+  "issue": 817,
+  "author_accepted": false,
+  "reviewed": {
+    "witch": {
+      "build\\issue817-witch-native01\\fresh-model\\view-front.png": "04e1a6e7a8703e0c9b7f6b225b798a78bca8ebb45a2445ef3cb4f469d686ae75",
+      "build\\issue817-witch-native01\\fresh-model\\view-face-detail.png": "c479fb11d4ae9c7eac20dbd0d7ecf5b5684a129902ee4075ff019a1cec2d8d40",
+      "build\\issue817-witch-native01\\fresh-model\\view-side.png": "8fb0e6e95453462a3bbd07e6154e9607540cca9404dea2c5deaf03659df397bc",
+      "build\\issue817-witch-native01\\fresh-model\\view-rear.png": "a18d59f3e76049be64c04119b8f4c35a6d815d559080ff30b05ae95dd7218276",
+      "build\\issue817-witch-native01\\fresh-model\\pose-03-run.png": "4f9020d4a28487757ea9355cc74adb76b95f99d611d5a6eac9ffb6f7d8f48170",
+      "build\\issue817-witch-native01\\fresh-model\\pose-05-run.png": "89fe88f80d839299c5f384d8a46caf2d2819f056be085d537a89703a00acd11f",
+      "build\\issue817-witch-native01\\fresh-model\\pose-10-attack_release.png": "539af16e75a49fab33bd76e91854a6c0bf7f9427dec383c44d38385b2a674fab",
+      "build\\issue817-witch-native01\\fresh-model\\pose-11-pain.png": "d015391953c1c28604941101f6e85c45a6052ec7f11e93fcc38031e05af2bffb",
+      "build\\issue817-witch-native01\\fresh-model\\pose-15-death.png": "70c604c17c5ff6add567552e69fb4265dc17a2ecd994c1d3f6cabe6fd04043c4",
+      "build\\issue817-witch-native01\\fresh-model\\view-lying-oblique.png": "07ad5d73675415170797d68f5cf68fc976184d1bc18c18d3d10920c97b0de321"
+    },
+    "salamanca": {
+      "build\\issue817-salamanca-native01\\fresh-model\\view-front.png": "e40c208aff061db450bdd97a0d34565208df1a1869bc8db15daab3e7d1eecf43",
+      "build\\issue817-salamanca-native01\\fresh-model\\view-face-detail.png": "eac2f21a01605006d5e0880ca2e6259665e2d161dcc6e2c6d25c6c4ef73e35ac",
+      "build\\issue817-salamanca-native01\\fresh-model\\view-side.png": "284f8cc81e6d8a98497a92aecfe3ac7b6678b102aa39d8262ae31a570ec6db43",
+      "build\\issue817-salamanca-native01\\fresh-model\\view-rear.png": "e8c745bc8583c52714a9910d084da316a044589782351a306a3e478941ffc81b",
+      "build\\issue817-salamanca-native01\\fresh-model\\pose-03-run.png": "d00632425b31d6c2e55ef73f4c64c434592ac798f827908a17647c137ded608f",
+      "build\\issue817-salamanca-native01\\fresh-model\\pose-05-run.png": "17c2c1e451cb24b639f87c59c4c7f5f28749f865b703daf2861403abee77b9b9",
+      "build\\issue817-salamanca-native01\\fresh-model\\pose-10-attack_release.png": "a4e177b103f7dc8c91ada443f0f27f4cac8beb6f110b4c17d52e451b9e82170c",
+      "build\\issue817-salamanca-native01\\fresh-model\\pose-11-pain.png": "7cee01abfb8ed225b86dc38c56d72a2f3c929d5031542126041f8e921970210b",
+      "build\\issue817-salamanca-native01\\fresh-model\\pose-15-death.png": "80168a358fdbc9c1b56570dbccb80cdaa3ed4fee5cbf981af18b77ffdd16f2f5",
+      "build\\issue817-salamanca-native01\\fresh-model\\view-lying-oblique.png": "10cb4b376f2b83f77c6ed2cf7208a82d4b88c906d5ff7d1151a045f26dc44b26"
+    },
+    "pericana": {
+      "build\\issue817-pericana-native01\\fresh-model\\view-front.png": "c2a5c62ed7f4f60ebab4cf6c67e8ff6fc302233d713dab46d2ff50f96b6689c4",
+      "build\\issue817-pericana-native01\\fresh-model\\view-face-detail.png": "20a0d8e28dd42be1bd1857573caec704a099eb9002f04205cc6ccbfc6ad2d67e",
+      "build\\issue817-pericana-native01\\fresh-model\\view-side.png": "81c28ff7e98710111ce2838b393cd96a8de6974c47de6f326defdaa2c60c3a78",
+      "build\\issue817-pericana-native01\\fresh-model\\view-rear.png": "0652457c57fa376ba6842571de21f4d858fb380f5d25028d29a4bf2b80995477",
+      "build\\issue817-pericana-native01\\fresh-model\\pose-03-run.png": "7bc372233108e5fb69e89d9e2dc708eb2113f6bbb92699e4638abf930a188f1f",
+      "build\\issue817-pericana-native01\\fresh-model\\pose-05-run.png": "dd39d9be39cd57d562dc49fc406ba532f6a55b8b7767c56968f65a8dfdafdfaa",
+      "build\\issue817-pericana-native01\\fresh-model\\pose-10-attack_release.png": "f87cca340ab9b1b3bd003d8c8ed17b612c1da3cd762a75796da22cdd6bf5a4e7",
+      "build\\issue817-pericana-native01\\fresh-model\\pose-11-pain.png": "1c097ecbe02b5d390319ddfabfb2283e50bc495b86586a2ae71abf371c3b5a98",
+      "build\\issue817-pericana-native01\\fresh-model\\pose-15-death.png": "4d961f5570059f774ea61ca42f0d6e0f3fd7bbc5bb46e9737fc80e6ca63aec7d",
+      "build\\issue817-pericana-native01\\fresh-model\\view-lying-oblique.png": "f9f9b0ad5f49d1b96211a045a85621b3aebadd85a3d582254909753979735e24"
+    },
+    "solapa": {
+      "build\\issue817-solapa-native02\\fresh-model\\view-front.png": "03b148c99c0541d18f10adf4979ba84697716f766fa07d8a1ea788b7e25051e0",
+      "build\\issue817-solapa-native02\\fresh-model\\view-face-detail.png": "671f36adb28b2f7a0d81a1a5ca3ede5c88c834e7217589ac35d336941d5d0a4b",
+      "build\\issue817-solapa-native02\\fresh-model\\view-side.png": "f02f6825103931954d8f93515f4a3eff8c5477cd429c331c07c57dc7ee0441b9",
+      "build\\issue817-solapa-native02\\fresh-model\\view-rear.png": "5b82b5d60e8fb7da5d88717a793a4db3c19ef4cc093ba2929ec2b4a834c660dd",
+      "build\\issue817-solapa-native02\\fresh-model\\pose-03-run.png": "4abdd3ebcf2c87fcd0ee5d99fe27cf114c34fea37300eaf1f254e0d7c8813538",
+      "build\\issue817-solapa-native02\\fresh-model\\pose-05-run.png": "e447b57388940f1f05ad572dfabc434282a10039cab428ab032490b944dcb7e9",
+      "build\\issue817-solapa-native02\\fresh-model\\pose-10-attack_release.png": "d3889d8af9ee6752d3b91f4357201a7544b9e5cb6efd9cb8fdc6eaf70478c6f9",
+      "build\\issue817-solapa-native02\\fresh-model\\pose-11-pain.png": "d249f3f5687cdec394217e0dbd935872cabd90ae125b6dc121a099f0c253213a",
+      "build\\issue817-solapa-native02\\fresh-model\\pose-15-death.png": "88f66e20dfffd9cb369b0b8cde732edcd15ddab34cc20d59049f17e0000e0901",
+      "build\\issue817-solapa-native02\\fresh-model\\view-lying-oblique.png": "38755da14c26720be3b5fe68d23e7d3542f8ed5b3b6155d613b48ee9fc028f6d"
+    }
+  },
+  "presentation": {
+    "build\\issue817-witch-presentation01\\sprite\\scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build\\issue817-witch-presentation01\\model\\scene.png": "7f8617c454d3e8f02d1bd6a955722a3d10712735099081e7c7b9795a3a5ffad3",
+    "build\\issue817-salamanca-presentation01\\sprite\\scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build\\issue817-salamanca-presentation01\\model\\scene.png": "9ef74dc74a0de4d9e7019dc4b64a43e5abbeb64276597daf159daa626e6d3221",
+    "build\\issue817-pericana-presentation01\\sprite\\scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build\\issue817-pericana-presentation01\\model\\scene.png": "83dd7678259b0dec6d71c486cb0d1007084cd9bb90d6ebdbcf9cb9e69cad3840",
+    "build\\issue817-solapa-presentation01\\sprite\\scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build\\issue817-solapa-presentation01\\model\\scene.png": "9fc86dbaa630c62c989482531ebb3b7fe2e1624c8da0999c613c3f04d02d1d38"
+  }
+}

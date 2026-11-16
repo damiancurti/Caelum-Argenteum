@@ -1242,3 +1242,11 @@ assets/validation_v5_17_86/*.json -text
 assets/source/art/austral_figures_815/** -text
 assets/generators/*austral_figure*.py text eol=lf
 src/caelum/data/austral_figure_combat.modeldef text eol=lf
+
+assets/validation_v5_17_87/*.py text eol=lf
+assets/validation_v5_17_87/evidence/** -text -diff
+assets/validation_v5_17_87/*.json -text whitespace=cr-at-eol
+assets/source/art/witch_figures_817/** -text whitespace=cr-at-eol
+assets/generators/*witch_figure*.py text eol=lf
+src/caelum/data/witch_figure_combat.modeldef text eol=lf
+assets/generators/validate_witch_garment_stride.py text eol=lf

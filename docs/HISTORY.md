@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.86** - 2026-11-15.
+Documentation version: **5.17.87** - 2026-11-15.
+
+## 5.17.87 - Four witch and rural figure candidates (#817, 2026-11-15)
+
+Added editable native witch, Salamanca, Pericana and Solapa candidates, original
+generated materials and inherited combat mappings. Sixteen exports repeat;
+closed/posed geometry and skirt checks pass. The 702 qualified native assertions include exact-byte bounded reuse for
+three unchanged species; Solapa, actions and all four presentation pairs use the
+final package. Face projection and UV
+bounds, clothing/wrist visibility, hair/braids and straw-hat corrections retain
+their original diagnostics. ASSETS and assets/validation_v5_17_87/evidence/SUMMARY.json
+record scope, measurements and limits. CA817-WITCH-01 originates here and stays
+pending; no author check was accepted or removed. Coverage reaches 43/56;
+the wider batch and final consolidated review remain unfinished.
 
 ## 5.17.86 - Five austral figure candidates (#815, 2026-11-15)
 

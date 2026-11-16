@@ -1,0 +1,99 @@
+{
+  "issue": 817,
+  "species": "witch",
+  "scope": "Measure one 700-tic sprite/model pair for a real Witch/Salamanca/Pericana/Solapa; no campaign or crowd budget.",
+  "baseline_sha256": "d2cdb71531a4f94fa2fe2d9e26e865dd7b9951756df67006523d81ef63c5b4bb",
+  "runtime_sha256": "73f544ba7b08fb3a6f589e4b2e4a54b791e7fc534e880c6f8e2d4d54a3ac07fc",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "sprite",
+      "pid": 25868,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 411574144.7605,
+        "END": 411594081.9878
+      },
+      "fixture_sha256": "64c4532a4a5b95b3dc86148f6230441c864d13c92a53fdc609ec5c656a7f0cab",
+      "bench_sha256": "ae24d88bbb708668e5dee2b506706d952f1d7ebe1525d0863565d0eff2d58591",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571298428571428,
+        "p50_ms": 28.5645,
+        "p95_ms": 29.069,
+        "p99_ms": 29.2339,
+        "max_ms": 29.4063
+      },
+      "presentation": {
+        "pid": 25868,
+        "trace_sha256": "5958578c96ff969daac7db84170eb99314d0001105976e1252332094d23ff683",
+        "rows": 32556,
+        "scene_presents": 22530,
+        "mean_present_fps": 1292.0705488772921,
+        "present_intervals": {
+          "samples": 22529,
+          "mean_ms": 0.7739515468941859,
+          "p50_ms": 0.7544000148773193,
+          "p95_ms": 0.9645999670028687,
+          "p99_ms": 1.1769999861717224,
+          "max_ms": 2.0810999870300293
+        },
+        "native_call_duration": {
+          "samples": 22530,
+          "mean_ms": 0.09424651137363418,
+          "p50_ms": 0.08829998970031738,
+          "p95_ms": 0.11599999666213989,
+          "p99_ms": 0.18010002374649048,
+          "max_ms": 0.6360999941825867
+        }
+      }
+    },
+    {
+      "kind": "model",
+      "pid": 21480,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 411609091.919,
+        "END": 411629124.3751
+      },
+      "fixture_sha256": "64c4532a4a5b95b3dc86148f6230441c864d13c92a53fdc609ec5c656a7f0cab",
+      "bench_sha256": "ae24d88bbb708668e5dee2b506706d952f1d7ebe1525d0863565d0eff2d58591",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571381714285714,
+        "p50_ms": 28.5852,
+        "p95_ms": 29.0502,
+        "p99_ms": 29.1906,
+        "max_ms": 29.3116
+      },
+      "presentation": {
+        "pid": 21480,
+        "trace_sha256": "c4b959ea48a925c923ade820bf265de522787a3c7f16e9303782283efb88ac5f",
+        "rows": 34915,
+        "scene_presents": 24485,
+        "mean_present_fps": 1396.5043199433421,
+        "present_intervals": {
+          "samples": 24484,
+          "mean_ms": 0.7160736889382278,
+          "p50_ms": 0.6967999935150146,
+          "p95_ms": 0.8562000393867493,
+          "p99_ms": 1.0428000092506409,
+          "max_ms": 1.9631999731063843
+        },
+        "native_call_duration": {
+          "samples": 24485,
+          "mean_ms": 0.09134611800078692,
+          "p50_ms": 0.0867999792098999,
+          "p95_ms": 0.1106000542640686,
+          "p99_ms": 0.16619998216629028,
+          "max_ms": 0.663100004196167
+        }
+      }
+    }
+  ]
+}
