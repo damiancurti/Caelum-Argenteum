@@ -1,8 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.90** - 2026-11-16.
+Documentation version: **5.17.91** - 2026-11-16.
 
-## 5.17.90 - Four distinct forms verified; full batch remains (#822)
+## 5.17.91 - Regional diagnostic coverage verified (#825)
+
+All 78 approved pairs of 56 provisional classes are represented across the three
+native galleries. CA825G adds 44 pairs with 55 camera controls; 547 native
+fresh/reload assertions and key registration pass. Preserve CA825-REGIONS-01
+and every earlier unconfirmed check. Continue other characters/modular fitting,
+first-person equipment, campaign authoring and siege performance before the
+consolidated author terminal. No author acceptance is inferred from coverage.
+
+## 5.17.91 - Four distinct forms verified; full batch remains (#822)
 
 Xalpen/Luz Mala/Anchimallen/Huayrapuca pass 16-file repeated export,
 304 closed components, 300 rooted contacts, 2,400 posed attachment
@@ -984,7 +993,7 @@ There is no new actionable gameplay test for pending_test.txt in this delivery.
 | #452 | Regional chapter allocation approved 2026-11-12; opening graph audited. Basic finale and all-78/+250 requirements approved; one eligible participant admits the consenting group. Geographic/ability gates and exact revelations remain open. |
 | #453 | Catalogue complete for review: 58 verified references, all regional assignments approved; source/size qualifications retained. Actual 3D production belongs to the separate creature/art delivery. |
 | #454 | Approved sewer v2/Barracas v1 references recovered; four city gates and siege adaptation explicitly selected. Implement separately with ordinary routes, services and active/hub-save compatibility. |
-| #455 | 56 unplaced classes inherit the approved Mandinga combat template, preserving taxonomy/protected profiles. Three visual pilots remain unintegrated; 55 models, encounters and campaign uniqueness remain open. |
+| #455 | 56 unplaced classes inherit the approved Mandinga combat template, preserving taxonomy/protected profiles. All 56 now have native candidate models (#822); all 78 approved associations have diagnostic displays (#825). Author art acceptance, campaign encounters and placement of unique identities remain open. |
 | #456 | Assign the remaining 75 essences; preserve IDs 0/36/60, personal acquisition, interruption recovery and ability-gate reachability. |
 | #457 | Author memories, revelations, chapter ends and Selene encounter; retain Zupay's Chapter I retreat/Chapter II death boundary. |
 

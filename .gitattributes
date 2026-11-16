@@ -1271,3 +1271,9 @@ assets/validation_v5_17_90/*.json -text
 assets/source/art/distinct_forms_822/** -text
 assets/generators/*distinct_form*.py text eol=lf
 src/caelum/data/distinct_form_combat.modeldef text eol=lf
+
+# Preserve #825 diagnostic sources and evidence.
+assets/source/art/regional_gallery_825/** -text
+assets/validation_v5_17_91/*.py text eol=lf
+assets/validation_v5_17_91/evidence/** -text -diff
+assets/generators/validate_complete_regional_gallery.py text eol=lf

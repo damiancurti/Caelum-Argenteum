@@ -1,0 +1,369 @@
+{
+  "issue": 825,
+  "existing_pairs": [
+    [
+      "CA-FOLK-003",
+      "Litoral"
+    ],
+    [
+      "CA-FOLK-003",
+      "Pampa"
+    ],
+    [
+      "CA-FOLK-004",
+      "Litoral"
+    ],
+    [
+      "CA-FOLK-004",
+      "Selva"
+    ],
+    [
+      "CA-FOLK-005",
+      "Northwest Argentina"
+    ],
+    [
+      "CA-FOLK-006",
+      "Litoral"
+    ],
+    [
+      "CA-FOLK-006",
+      "Selva"
+    ],
+    [
+      "CA-FOLK-007",
+      "Litoral"
+    ],
+    [
+      "CA-FOLK-009",
+      "Northwest Argentina"
+    ],
+    [
+      "CA-FOLK-010",
+      "Northwest Argentina"
+    ],
+    [
+      "CA-FOLK-011",
+      "Cuyo"
+    ],
+    [
+      "CA-FOLK-011",
+      "Northwest Argentina"
+    ],
+    [
+      "CA-FOLK-028",
+      "Northwest Argentina"
+    ],
+    [
+      "CA-FOLK-029",
+      "Northwest Argentina"
+    ],
+    [
+      "CA-FOLK-030",
+      "Litoral"
+    ],
+    [
+      "CA-FOLK-030",
+      "Pampa"
+    ],
+    [
+      "CA-FOLK-035",
+      "Patagonia"
+    ],
+    [
+      "CA-FOLK-043",
+      "Northwest Argentina"
+    ],
+    [
+      "CA-FOLK-044",
+      "Litoral"
+    ],
+    [
+      "CA-FOLK-044",
+      "Pampa"
+    ],
+    [
+      "CA-FOLK-045",
+      "Northwest Argentina"
+    ],
+    [
+      "CA-FOLK-046",
+      "Northwest Argentina"
+    ],
+    [
+      "CA-FOLK-047",
+      "Selva"
+    ],
+    [
+      "CA-FOLK-048",
+      "Litoral"
+    ],
+    [
+      "CA-FOLK-049",
+      "Selva"
+    ],
+    [
+      "CA-FOLK-050",
+      "Selva"
+    ],
+    [
+      "CA-FOLK-051",
+      "Litoral"
+    ],
+    [
+      "CA-FOLK-051",
+      "Selva"
+    ],
+    [
+      "CA-FOLK-052",
+      "Litoral"
+    ],
+    [
+      "CA-FOLK-052",
+      "Selva"
+    ],
+    [
+      "CA-FOLK-053",
+      "Patagonia"
+    ],
+    [
+      "CA-FOLK-054",
+      "Patagonia"
+    ],
+    [
+      "CA-FOLK-055",
+      "Patagonia"
+    ],
+    [
+      "CA-FOLK-058",
+      "Patagonia"
+    ]
+  ],
+  "added_pairs": [
+    {
+      "id": "CA-FOLK-001",
+      "name": "Brujas y brujos",
+      "region": "Buenos Aires"
+    },
+    {
+      "id": "CA-FOLK-001",
+      "name": "Brujas y brujos",
+      "region": "Pampa"
+    },
+    {
+      "id": "CA-FOLK-001",
+      "name": "Brujas y brujos",
+      "region": "Litoral"
+    },
+    {
+      "id": "CA-FOLK-001",
+      "name": "Brujas y brujos",
+      "region": "Cuyo"
+    },
+    {
+      "id": "CA-FOLK-001",
+      "name": "Brujas y brujos",
+      "region": "Northwest Argentina"
+    },
+    {
+      "id": "CA-FOLK-001",
+      "name": "Brujas y brujos",
+      "region": "Chaco"
+    },
+    {
+      "id": "CA-FOLK-001",
+      "name": "Brujas y brujos",
+      "region": "Selva"
+    },
+    {
+      "id": "CA-FOLK-001",
+      "name": "Brujas y brujos",
+      "region": "Patagonia"
+    },
+    {
+      "id": "CA-FOLK-002",
+      "name": "Brujas y brujos de la Salamanca",
+      "region": "Northwest Argentina"
+    },
+    {
+      "id": "CA-FOLK-002",
+      "name": "Brujas y brujos de la Salamanca",
+      "region": "Supernatural domains"
+    },
+    {
+      "id": "CA-FOLK-008",
+      "name": "Curupí / Kurupí",
+      "region": "Selva"
+    },
+    {
+      "id": "CA-FOLK-012",
+      "name": "Sachayoj",
+      "region": "Chaco"
+    },
+    {
+      "id": "CA-FOLK-013",
+      "name": "Caá Porá",
+      "region": "Selva"
+    },
+    {
+      "id": "CA-FOLK-014",
+      "name": "Caá Yarí",
+      "region": "Selva"
+    },
+    {
+      "id": "CA-FOLK-015",
+      "name": "Zapam Zucum",
+      "region": "Cuyo"
+    },
+    {
+      "id": "CA-FOLK-016",
+      "name": "Pericana",
+      "region": "Cuyo"
+    },
+    {
+      "id": "CA-FOLK-017",
+      "name": "Solapa",
+      "region": "Pampa"
+    },
+    {
+      "id": "CA-FOLK-020",
+      "name": "Nóshtex / Nosjthej",
+      "region": "Chaco"
+    },
+    {
+      "id": "CA-FOLK-021",
+      "name": "Xalpen",
+      "region": "Patagonia"
+    },
+    {
+      "id": "CA-FOLK-022",
+      "name": "Shoort",
+      "region": "Patagonia"
+    },
+    {
+      "id": "CA-FOLK-023",
+      "name": "Tanu",
+      "region": "Patagonia"
+    },
+    {
+      "id": "CA-FOLK-024",
+      "name": "Halaháches / Kótaix",
+      "region": "Patagonia"
+    },
+    {
+      "id": "CA-FOLK-025",
+      "name": "Matan",
+      "region": "Patagonia"
+    },
+    {
+      "id": "CA-FOLK-026",
+      "name": "Ulen",
+      "region": "Patagonia"
+    },
+    {
+      "id": "CA-FOLK-027",
+      "name": "Luz Mala",
+      "region": "Pampa"
+    },
+    {
+      "id": "CA-FOLK-027",
+      "name": "Luz Mala",
+      "region": "Cuyo"
+    },
+    {
+      "id": "CA-FOLK-027",
+      "name": "Luz Mala",
+      "region": "Patagonia"
+    },
+    {
+      "id": "CA-FOLK-031",
+      "name": "La Viuda",
+      "region": "Buenos Aires"
+    },
+    {
+      "id": "CA-FOLK-031",
+      "name": "La Viuda",
+      "region": "Pampa"
+    },
+    {
+      "id": "CA-FOLK-031",
+      "name": "La Viuda",
+      "region": "Litoral"
+    },
+    {
+      "id": "CA-FOLK-031",
+      "name": "La Viuda",
+      "region": "Cuyo"
+    },
+    {
+      "id": "CA-FOLK-032",
+      "name": "La Llorona",
+      "region": "Buenos Aires"
+    },
+    {
+      "id": "CA-FOLK-032",
+      "name": "La Llorona",
+      "region": "Litoral"
+    },
+    {
+      "id": "CA-FOLK-033",
+      "name": "Futre",
+      "region": "Cuyo"
+    },
+    {
+      "id": "CA-FOLK-034",
+      "name": "Anchimallén",
+      "region": "Patagonia"
+    },
+    {
+      "id": "CA-FOLK-036",
+      "name": "Gualicho",
+      "region": "Patagonia"
+    },
+    {
+      "id": "CA-FOLK-037",
+      "name": "Pampayoj",
+      "region": "Pampa"
+    },
+    {
+      "id": "CA-FOLK-038",
+      "name": "Mayu Maman",
+      "region": "Northwest Argentina"
+    },
+    {
+      "id": "CA-FOLK-039",
+      "name": "Orko Maman",
+      "region": "Northwest Argentina"
+    },
+    {
+      "id": "CA-FOLK-040",
+      "name": "Uritu Orko",
+      "region": "Northwest Argentina"
+    },
+    {
+      "id": "CA-FOLK-041",
+      "name": "Nowet",
+      "region": "Chaco"
+    },
+    {
+      "id": "CA-FOLK-042",
+      "name": "Máip",
+      "region": "Patagonia"
+    },
+    {
+      "id": "CA-FOLK-056",
+      "name": "Huayrapuca",
+      "region": "Northwest Argentina"
+    },
+    {
+      "id": "CA-FOLK-057",
+      "name": "Kasogonaga",
+      "region": "Chaco"
+    }
+  ],
+  "provisional_classes": 56,
+  "expected_total_pairs": 78,
+  "protected_exclusions": [
+    "CA-FOLK-018",
+    "CA-FOLK-019"
+  ]
+}

@@ -89,6 +89,7 @@ from assets.generators.validate_bestiary_figure_models import validate as bestia
 from assets.generators.validate_serpent_models import validate as serpent_problems
 from assets.generators.validate_hybrid_serpent_models import validate as hybrid_serpent_problems
 from assets.generators.validate_native_regional_gallery import validate as native_regional_gallery_problems
+from assets.generators.validate_complete_regional_gallery import validate as complete_regional_gallery_problems
 from assets.generators.validate_pombero_combat_model import validate as pombero_combat_problems
 from assets.generators.validate_beast_regional_materials import validate as beast_regional_material_problems
 from assets.generators.validate_cuyo_regional_materials import validate as cuyo_regional_material_problems
@@ -228,6 +229,7 @@ def validate(root):
     errors.extend(serpent_problems(root))
     errors.extend(hybrid_serpent_problems(root))
     errors.extend(native_regional_gallery_problems(root))
+    errors.extend(complete_regional_gallery_problems(root))
     errors.extend(cuero_combat_problems(root))
     errors.extend(nahuelito_combat_problems(root))
     errors.extend(barracas_installation_problems(root))

@@ -1,8 +1,62 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.90** - 2026-11-16.
+Documentation version: **5.17.91** - 2026-11-16.
 
-## 5.17.90 - Xalpen, Luz Mala, Anchimallen and Huayrapuca candidates (#822)
+## 5.17.91 - Complete approved regional inspection coverage (#825)
+
+A third isolated native gallery adds the 44 approved catalogue/region pairs
+missing from galleries CA682G and CA709G. Its 30 existing candidate classes
+cover Buenos Aires, Pampa, Litoral, Cuyo, Northwest Argentina, Chaco, Selva,
+Patagonia and Supernatural domains. The three maintained galleries now cover
+all 78 approved associations of the 56 provisional classes exactly once.
+Protected identities 018/019 remain unchanged. Repeated unique identities are
+diagnostic displays; neither population counts nor campaign placements follow.
+
+CA825G uses six existing owned regional ground studies. Buenos Aires, Chaco
+and Supernatural domains use explicitly labelled neutral inspection flooring;
+no new biome artwork or mandatory habitat is implied. Existing models, animation,
+collision, combat, identity, loot and saved production fields remain unchanged.
+Passive friendly staging and silent observer steps exist only in this fixture.
+Original idle states advance, with no forced subject position resets.
+
+Editable gallery data and provenance live in assets/source/art/regional_gallery_825.
+The validator checks approved coverage, eight original model exports, exact actor
+bindings, source hashes, native collision/full-animation silhouette separation,
+camera bounds and unique keys while preserving WASD. Ten sectors, 30 vertices
+and 39 linedefs provide nine adjacent plots and a walkway. Four fixture files
+repeat byte for byte. Both earlier gallery sources remain byte-identical.
+The 18,628-entry package exactly matches src; only two version diagnostics
+differ from #822. No production art or behavior changes accompany this gallery.
+
+Native fresh/reload tests pass 547 assertions: 181 fresh and 366 after reload,
+including all 44 saved actors, inherited catalogue identities, idle advancement,
+silent observer movement and crossing all eight plot boundaries. All 55 camera
+keys register and query correctly. This is not author keypress acceptance.
+F1 shows the complete layout, F2 returns to walking, F3-F11 show regions, and
+the remaining listed controls show individual figures. Labels use canonical
+creature names and identify neutral flooring. The final 54 automatic views and
+one reload capture were inspected. Ordered native VIEW markers verify the
+capture sequence. Initial camera framing and aligned background silhouettes
+were corrected in data; earlier controls and captures remain in evidence.
+
+One sequential 700-tic neutral/regional-ground comparison ran with the same
+44 native subjects on Windows 11 Pro 26200, Ryzen 9 5950X/32GB/RTX 3070 Ti
+driver 32.0.16.1088 with the Parsec adapter, GZDoom 4.14.2 Vulkan 1280x720,
+uncapped without VSync, unpaused in the background at 5% audio:
+
+| Gallery floor | Queue presents/s | Present p95 / p99 / max (ms) | Simulation mean / p95 / p99 / max (ms) |
+| --- | ---: | --- | --- |
+| existing-material | 1093.73 | 1.1580 / 1.2897 / 1.6541 | 28.5719 / 29.2442 / 29.4114 / 29.6671 |
+| regional-materials | 1061.60 | 1.2176 / 1.3874 / 2.2800 | 28.5715 / 29.2467 / 29.4152 / 29.6001 |
+
+Queue intervals do not establish GPU/display latency, repeatability, optimization,
+or campaign/siege performance. The two presentation captures were inspected.
+Evidence: assets/validation_v5_17_91/evidence/SUMMARY.json.
+CA825-REGIONS-01 remains pending. Diagnostic regional coverage is complete;
+other characters, modular equipment, campaign authoring and siege rendering
+still prevent the complete batch handoff and consolidated author terminal.
+
+## 5.17.91 - Xalpen, Luz Mala, Anchimallen and Huayrapuca candidates (#822)
 
 Four distinct owned references now have native candidates on their existing
 provisional classes 021/027/034/056. Xalpen combines an adult gray woman,
