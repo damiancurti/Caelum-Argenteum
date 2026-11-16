@@ -1,0 +1,1866 @@
+{
+  "schema_revision": 1,
+  "issue": 825,
+  "status": "isolated_visual_inspection_not_campaign",
+  "map": "CA825G",
+  "title": "Remaining approved regional associations",
+  "ambient": 208,
+  "ceiling_height": 4096,
+  "outer_wall": "CACVROCK",
+  "walkway_flat": "CMST01",
+  "walkway_y": [
+    -640,
+    -512
+  ],
+  "plot_y": [
+    -512,
+    1280
+  ],
+  "player_start": [
+    128,
+    -576,
+    90
+  ],
+  "crossing_test": {
+    "start": [
+      128,
+      -384,
+      0
+    ],
+    "angle": 90,
+    "destination_plot": "Supernatural domains",
+    "input_tics": 1450,
+    "duration_basis": "Diagnostic distance scaled from the existing measured gallery crossing; verify actual native displacement and all eight boundaries."
+  },
+  "plots": [
+    {
+      "region": "Buenos Aires",
+      "x": [
+        0,
+        512
+      ],
+      "floor": "CMST01",
+      "floor_status": "neutral_inspection_floor_not_biome_art"
+    },
+    {
+      "region": "Pampa",
+      "x": [
+        512,
+        1024
+      ],
+      "floor": "CRPAMGR",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "region": "Litoral",
+      "x": [
+        1024,
+        1536
+      ],
+      "floor": "CRLITGR",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "region": "Cuyo",
+      "x": [
+        1536,
+        2048
+      ],
+      "floor": "CRCUYGR",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "region": "Northwest Argentina",
+      "x": [
+        2048,
+        2560
+      ],
+      "floor": "CRNOAGR",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "region": "Chaco",
+      "x": [
+        2560,
+        3072
+      ],
+      "floor": "CMST01",
+      "floor_status": "neutral_inspection_floor_not_biome_art"
+    },
+    {
+      "region": "Selva",
+      "x": [
+        3072,
+        3584
+      ],
+      "floor": "CRSELVG",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "region": "Patagonia",
+      "x": [
+        3584,
+        4608
+      ],
+      "floor": "CRPATGR",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "region": "Supernatural domains",
+      "x": [
+        4608,
+        5120
+      ],
+      "floor": "CMST01",
+      "floor_status": "neutral_inspection_floor_not_biome_art"
+    }
+  ],
+  "subjects": [
+    {
+      "region": "Buenos Aires",
+      "catalogue_id": "CA-FOLK-001",
+      "kind": "witch-1",
+      "class": "CaelumBestiary001",
+      "position": [
+        128,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Buenos Aires",
+      "catalogue_id": "CA-FOLK-031",
+      "kind": "viuda-1",
+      "class": "CaelumBestiary031",
+      "position": [
+        384,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Buenos Aires",
+      "catalogue_id": "CA-FOLK-032",
+      "kind": "llorona-1",
+      "class": "CaelumBestiary032",
+      "position": [
+        128,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Pampa",
+      "catalogue_id": "CA-FOLK-001",
+      "kind": "witch-2",
+      "class": "CaelumBestiary001",
+      "position": [
+        640,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Pampa",
+      "catalogue_id": "CA-FOLK-017",
+      "kind": "solapa-2",
+      "class": "CaelumBestiary017",
+      "position": [
+        896,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Pampa",
+      "catalogue_id": "CA-FOLK-027",
+      "kind": "luzmala-2",
+      "class": "CaelumBestiary027",
+      "position": [
+        640,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Pampa",
+      "catalogue_id": "CA-FOLK-031",
+      "kind": "viuda-2",
+      "class": "CaelumBestiary031",
+      "position": [
+        896,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Pampa",
+      "catalogue_id": "CA-FOLK-037",
+      "kind": "pampayoj-2",
+      "class": "CaelumBestiary037",
+      "position": [
+        640,
+        576,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-001",
+      "kind": "witch-3",
+      "class": "CaelumBestiary001",
+      "position": [
+        1152,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-031",
+      "kind": "viuda-3",
+      "class": "CaelumBestiary031",
+      "position": [
+        1408,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-032",
+      "kind": "llorona-3",
+      "class": "CaelumBestiary032",
+      "position": [
+        1152,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Cuyo",
+      "catalogue_id": "CA-FOLK-001",
+      "kind": "witch-4",
+      "class": "CaelumBestiary001",
+      "position": [
+        1664,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Cuyo",
+      "catalogue_id": "CA-FOLK-015",
+      "kind": "zapamzucum-4",
+      "class": "CaelumBestiary015",
+      "position": [
+        1920,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Cuyo",
+      "catalogue_id": "CA-FOLK-016",
+      "kind": "pericana-4",
+      "class": "CaelumBestiary016",
+      "position": [
+        1664,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Cuyo",
+      "catalogue_id": "CA-FOLK-027",
+      "kind": "luzmala-4",
+      "class": "CaelumBestiary027",
+      "position": [
+        1920,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Cuyo",
+      "catalogue_id": "CA-FOLK-031",
+      "kind": "viuda-4",
+      "class": "CaelumBestiary031",
+      "position": [
+        1664,
+        576,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Cuyo",
+      "catalogue_id": "CA-FOLK-033",
+      "kind": "futre-4",
+      "class": "CaelumBestiary033",
+      "position": [
+        1920,
+        576,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-001",
+      "kind": "witch-5",
+      "class": "CaelumBestiary001",
+      "position": [
+        2176,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-002",
+      "kind": "salamanca-5",
+      "class": "CaelumBestiary002",
+      "position": [
+        2432,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-038",
+      "kind": "mayumaman-5",
+      "class": "CaelumBestiary038",
+      "position": [
+        2176,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-039",
+      "kind": "orkomaman-5",
+      "class": "CaelumBestiary039",
+      "position": [
+        2432,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-040",
+      "kind": "urituorko-5",
+      "class": "CaelumBestiary040",
+      "position": [
+        2176,
+        576,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-056",
+      "kind": "huayrapuca-5",
+      "class": "CaelumBestiary056",
+      "position": [
+        2432,
+        576,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Chaco",
+      "catalogue_id": "CA-FOLK-001",
+      "kind": "witch-6",
+      "class": "CaelumBestiary001",
+      "position": [
+        2688,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Chaco",
+      "catalogue_id": "CA-FOLK-012",
+      "kind": "sachayoj-6",
+      "class": "CaelumBestiary012",
+      "position": [
+        2944,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Chaco",
+      "catalogue_id": "CA-FOLK-020",
+      "kind": "noshtex-6",
+      "class": "CaelumBestiary020",
+      "position": [
+        2688,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Chaco",
+      "catalogue_id": "CA-FOLK-041",
+      "kind": "nowet-6",
+      "class": "CaelumBestiary041",
+      "position": [
+        2944,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Chaco",
+      "catalogue_id": "CA-FOLK-057",
+      "kind": "kasogonaga-6",
+      "class": "CaelumBestiary057",
+      "position": [
+        2688,
+        576,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Selva",
+      "catalogue_id": "CA-FOLK-001",
+      "kind": "witch-7",
+      "class": "CaelumBestiary001",
+      "position": [
+        3200,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Selva",
+      "catalogue_id": "CA-FOLK-008",
+      "kind": "curupi-7",
+      "class": "CaelumBestiary008",
+      "position": [
+        3456,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Selva",
+      "catalogue_id": "CA-FOLK-013",
+      "kind": "caapora-7",
+      "class": "CaelumBestiary013",
+      "position": [
+        3200,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Selva",
+      "catalogue_id": "CA-FOLK-014",
+      "kind": "caayari-7",
+      "class": "CaelumBestiary014",
+      "position": [
+        3456,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-001",
+      "kind": "witch-8",
+      "class": "CaelumBestiary001",
+      "position": [
+        3755,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-021",
+      "kind": "xalpen-8",
+      "class": "CaelumBestiary021",
+      "position": [
+        4096,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-022",
+      "kind": "shoort-8",
+      "class": "CaelumBestiary022",
+      "position": [
+        4437,
+        -64,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-023",
+      "kind": "tanu-8",
+      "class": "CaelumBestiary023",
+      "position": [
+        3755,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-024",
+      "kind": "halahaches-8",
+      "class": "CaelumBestiary024",
+      "position": [
+        4096,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-025",
+      "kind": "matan-8",
+      "class": "CaelumBestiary025",
+      "position": [
+        4437,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-026",
+      "kind": "ulen-8",
+      "class": "CaelumBestiary026",
+      "position": [
+        3755,
+        576,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-027",
+      "kind": "luzmala-8",
+      "class": "CaelumBestiary027",
+      "position": [
+        4096,
+        576,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-034",
+      "kind": "anchimallen-8",
+      "class": "CaelumBestiary034",
+      "position": [
+        4437,
+        576,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-036",
+      "kind": "gualicho-8",
+      "class": "CaelumBestiary036",
+      "position": [
+        3755,
+        896,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-042",
+      "kind": "maip-8",
+      "class": "CaelumBestiary042",
+      "position": [
+        4096,
+        896,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Supernatural domains",
+      "catalogue_id": "CA-FOLK-002",
+      "kind": "salamanca-9",
+      "class": "CaelumBestiary002",
+      "position": [
+        4736,
+        -64,
+        0
+      ],
+      "angle": 270
+    }
+  ],
+  "views": [
+    {
+      "id": "overview",
+      "key": "F1",
+      "position": [
+        2560,
+        384,
+        2800
+      ],
+      "target": [
+        2560,
+        385,
+        0
+      ],
+      "display_name": "Regional overview"
+    },
+    {
+      "id": "player",
+      "control": true,
+      "key": "F2"
+    },
+    {
+      "id": "region-1",
+      "key": "F3",
+      "position": [
+        256.0,
+        96.0,
+        650
+      ],
+      "target": [
+        256.0,
+        97.0,
+        0
+      ],
+      "region": "Buenos Aires",
+      "floor_status": "neutral_inspection_floor_not_biome_art",
+      "display_name": "Regional overview"
+    },
+    {
+      "id": "region-2",
+      "key": "F4",
+      "position": [
+        768.0,
+        256.0,
+        650
+      ],
+      "target": [
+        768.0,
+        257.0,
+        0
+      ],
+      "region": "Pampa",
+      "floor_status": "existing_owned_regional_study",
+      "display_name": "Regional overview"
+    },
+    {
+      "id": "region-3",
+      "key": "F5",
+      "position": [
+        1280.0,
+        96.0,
+        650
+      ],
+      "target": [
+        1280.0,
+        97.0,
+        0
+      ],
+      "region": "Litoral",
+      "floor_status": "existing_owned_regional_study",
+      "display_name": "Regional overview"
+    },
+    {
+      "id": "region-4",
+      "key": "F6",
+      "position": [
+        1792.0,
+        256.0,
+        650
+      ],
+      "target": [
+        1792.0,
+        257.0,
+        0
+      ],
+      "region": "Cuyo",
+      "floor_status": "existing_owned_regional_study",
+      "display_name": "Regional overview"
+    },
+    {
+      "id": "region-5",
+      "key": "F7",
+      "position": [
+        2304.0,
+        256.0,
+        650
+      ],
+      "target": [
+        2304.0,
+        257.0,
+        0
+      ],
+      "region": "Northwest Argentina",
+      "floor_status": "existing_owned_regional_study",
+      "display_name": "Regional overview"
+    },
+    {
+      "id": "region-6",
+      "key": "F8",
+      "position": [
+        2816.0,
+        256.0,
+        650
+      ],
+      "target": [
+        2816.0,
+        257.0,
+        0
+      ],
+      "region": "Chaco",
+      "floor_status": "neutral_inspection_floor_not_biome_art",
+      "display_name": "Regional overview"
+    },
+    {
+      "id": "region-7",
+      "key": "F9",
+      "position": [
+        3328.0,
+        96.0,
+        650
+      ],
+      "target": [
+        3328.0,
+        97.0,
+        0
+      ],
+      "region": "Selva",
+      "floor_status": "existing_owned_regional_study",
+      "display_name": "Regional overview"
+    },
+    {
+      "id": "region-8",
+      "key": "F10",
+      "position": [
+        4096.0,
+        416.0,
+        950
+      ],
+      "target": [
+        4096.0,
+        417.0,
+        0
+      ],
+      "region": "Patagonia",
+      "floor_status": "existing_owned_regional_study",
+      "display_name": "Regional overview"
+    },
+    {
+      "id": "region-9",
+      "key": "F11",
+      "position": [
+        4736.0,
+        -64.0,
+        650
+      ],
+      "target": [
+        4736.0,
+        -63.0,
+        0
+      ],
+      "region": "Supernatural domains",
+      "floor_status": "neutral_inspection_floor_not_biome_art",
+      "display_name": "Regional overview"
+    },
+    {
+      "id": "witch-1",
+      "position": [
+        128,
+        -175,
+        44
+      ],
+      "target": [
+        128,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-001",
+      "region": "Buenos Aires",
+      "key": "F12",
+      "display_name": "Brujas y brujos",
+      "floor_status": "neutral_inspection_floor_not_biome_art"
+    },
+    {
+      "id": "viuda-1",
+      "position": [
+        384,
+        -175,
+        44
+      ],
+      "target": [
+        384,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-031",
+      "region": "Buenos Aires",
+      "key": "1",
+      "display_name": "La Viuda",
+      "floor_status": "neutral_inspection_floor_not_biome_art"
+    },
+    {
+      "id": "llorona-1",
+      "position": [
+        128,
+        145,
+        44
+      ],
+      "target": [
+        128,
+        256,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-032",
+      "region": "Buenos Aires",
+      "key": "2",
+      "display_name": "La Llorona",
+      "floor_status": "neutral_inspection_floor_not_biome_art"
+    },
+    {
+      "id": "witch-2",
+      "position": [
+        640,
+        -175,
+        44
+      ],
+      "target": [
+        640,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-001",
+      "region": "Pampa",
+      "key": "3",
+      "display_name": "Brujas y brujos",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "solapa-2",
+      "position": [
+        896,
+        -174,
+        41
+      ],
+      "target": [
+        896,
+        -64,
+        23
+      ],
+      "catalogue_id": "CA-FOLK-017",
+      "region": "Pampa",
+      "key": "4",
+      "display_name": "Solapa",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "luzmala-2",
+      "position": [
+        640,
+        146,
+        41
+      ],
+      "target": [
+        640,
+        256,
+        23
+      ],
+      "catalogue_id": "CA-FOLK-027",
+      "region": "Pampa",
+      "key": "5",
+      "display_name": "Luz Mala",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "viuda-2",
+      "position": [
+        896,
+        145,
+        44
+      ],
+      "target": [
+        896,
+        256,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-031",
+      "region": "Pampa",
+      "key": "6",
+      "display_name": "La Viuda",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "pampayoj-2",
+      "position": [
+        640,
+        465,
+        44
+      ],
+      "target": [
+        640,
+        576,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-037",
+      "region": "Pampa",
+      "key": "7",
+      "display_name": "Pampayoj",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "witch-3",
+      "position": [
+        1152,
+        -175,
+        44
+      ],
+      "target": [
+        1152,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-001",
+      "region": "Litoral",
+      "key": "8",
+      "display_name": "Brujas y brujos",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "viuda-3",
+      "position": [
+        1408,
+        -175,
+        44
+      ],
+      "target": [
+        1408,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-031",
+      "region": "Litoral",
+      "key": "9",
+      "display_name": "La Viuda",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "llorona-3",
+      "position": [
+        1152,
+        145,
+        44
+      ],
+      "target": [
+        1152,
+        256,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-032",
+      "region": "Litoral",
+      "key": "0",
+      "display_name": "La Llorona",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "witch-4",
+      "position": [
+        1664,
+        -175,
+        44
+      ],
+      "target": [
+        1664,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-001",
+      "region": "Cuyo",
+      "key": "b",
+      "display_name": "Brujas y brujos",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "zapamzucum-4",
+      "position": [
+        1920,
+        -175,
+        44
+      ],
+      "target": [
+        1920,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-015",
+      "region": "Cuyo",
+      "key": "c",
+      "display_name": "Zapam Zucum",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "pericana-4",
+      "position": [
+        1664,
+        143,
+        45
+      ],
+      "target": [
+        1664,
+        256,
+        26
+      ],
+      "catalogue_id": "CA-FOLK-016",
+      "region": "Cuyo",
+      "key": "e",
+      "display_name": "Pericana",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "luzmala-4",
+      "position": [
+        1920,
+        146,
+        41
+      ],
+      "target": [
+        1920,
+        256,
+        23
+      ],
+      "catalogue_id": "CA-FOLK-027",
+      "region": "Cuyo",
+      "key": "f",
+      "display_name": "Luz Mala",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "viuda-4",
+      "position": [
+        1664,
+        465,
+        44
+      ],
+      "target": [
+        1664,
+        576,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-031",
+      "region": "Cuyo",
+      "key": "g",
+      "display_name": "La Viuda",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "futre-4",
+      "position": [
+        1920,
+        447,
+        51
+      ],
+      "target": [
+        1920,
+        576,
+        29
+      ],
+      "catalogue_id": "CA-FOLK-033",
+      "region": "Cuyo",
+      "key": "h",
+      "display_name": "Futre",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "witch-5",
+      "position": [
+        2176,
+        -175,
+        44
+      ],
+      "target": [
+        2176,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-001",
+      "region": "Northwest Argentina",
+      "key": "i",
+      "display_name": "Brujas y brujos",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "salamanca-5",
+      "position": [
+        2432,
+        -175,
+        44
+      ],
+      "target": [
+        2432,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-002",
+      "region": "Northwest Argentina",
+      "key": "j",
+      "display_name": "Brujas y brujos de la Salamanca",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "mayumaman-5",
+      "position": [
+        2176,
+        145,
+        44
+      ],
+      "target": [
+        2176,
+        256,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-038",
+      "region": "Northwest Argentina",
+      "key": "k",
+      "display_name": "Mayu Maman",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "orkomaman-5",
+      "position": [
+        2432,
+        145,
+        44
+      ],
+      "target": [
+        2432,
+        256,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-039",
+      "region": "Northwest Argentina",
+      "key": "l",
+      "display_name": "Orko Maman",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "urituorko-5",
+      "position": [
+        2176,
+        464,
+        44
+      ],
+      "target": [
+        2176,
+        576,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-040",
+      "region": "Northwest Argentina",
+      "key": "m",
+      "display_name": "Uritu Orko",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "huayrapuca-5",
+      "position": [
+        2432,
+        411,
+        53
+      ],
+      "target": [
+        2432,
+        576,
+        30
+      ],
+      "catalogue_id": "CA-FOLK-056",
+      "region": "Northwest Argentina",
+      "key": "n",
+      "display_name": "Huayrapuca",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "witch-6",
+      "position": [
+        2688,
+        -175,
+        44
+      ],
+      "target": [
+        2688,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-001",
+      "region": "Chaco",
+      "key": "o",
+      "display_name": "Brujas y brujos",
+      "floor_status": "neutral_inspection_floor_not_biome_art"
+    },
+    {
+      "id": "sachayoj-6",
+      "position": [
+        2944,
+        -175,
+        44
+      ],
+      "target": [
+        2944,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-012",
+      "region": "Chaco",
+      "key": "p",
+      "display_name": "Sachayoj",
+      "floor_status": "neutral_inspection_floor_not_biome_art"
+    },
+    {
+      "id": "noshtex-6",
+      "position": [
+        2688,
+        145,
+        44
+      ],
+      "target": [
+        2688,
+        256,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-020",
+      "region": "Chaco",
+      "key": "q",
+      "display_name": "Nóshtex / Nosjthej",
+      "floor_status": "neutral_inspection_floor_not_biome_art"
+    },
+    {
+      "id": "nowet-6",
+      "position": [
+        2944,
+        145,
+        44
+      ],
+      "target": [
+        2944,
+        256,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-041",
+      "region": "Chaco",
+      "key": "r",
+      "display_name": "Nowet",
+      "floor_status": "neutral_inspection_floor_not_biome_art"
+    },
+    {
+      "id": "kasogonaga-6",
+      "position": [
+        2688,
+        389,
+        42
+      ],
+      "target": [
+        2688,
+        576,
+        24
+      ],
+      "catalogue_id": "CA-FOLK-057",
+      "region": "Chaco",
+      "key": "t",
+      "display_name": "Kasogonaga",
+      "floor_status": "neutral_inspection_floor_not_biome_art"
+    },
+    {
+      "id": "witch-7",
+      "position": [
+        3200,
+        -175,
+        44
+      ],
+      "target": [
+        3200,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-001",
+      "region": "Selva",
+      "key": "u",
+      "display_name": "Brujas y brujos",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "curupi-7",
+      "position": [
+        3456,
+        -176,
+        45
+      ],
+      "target": [
+        3456,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-008",
+      "region": "Selva",
+      "key": "v",
+      "display_name": "Curupí / Kurupí",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "caapora-7",
+      "position": [
+        3200,
+        144,
+        45
+      ],
+      "target": [
+        3200,
+        256,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-013",
+      "region": "Selva",
+      "key": "x",
+      "display_name": "Caá Porá",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "caayari-7",
+      "position": [
+        3456,
+        145,
+        44
+      ],
+      "target": [
+        3456,
+        256,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-014",
+      "region": "Selva",
+      "key": "y",
+      "display_name": "Caá Yarí",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "witch-8",
+      "position": [
+        3755,
+        -175,
+        44
+      ],
+      "target": [
+        3755,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-001",
+      "region": "Patagonia",
+      "key": "z",
+      "display_name": "Brujas y brujos",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "xalpen-8",
+      "position": [
+        4096,
+        -237,
+        46
+      ],
+      "target": [
+        4096,
+        -64,
+        26
+      ],
+      "catalogue_id": "CA-FOLK-021",
+      "region": "Patagonia",
+      "key": "home",
+      "display_name": "Xalpen",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "shoort-8",
+      "position": [
+        4437,
+        -178,
+        43
+      ],
+      "target": [
+        4437,
+        -64,
+        24
+      ],
+      "catalogue_id": "CA-FOLK-022",
+      "region": "Patagonia",
+      "key": "end",
+      "display_name": "Shoort",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "tanu-8",
+      "position": [
+        3755,
+        137,
+        43
+      ],
+      "target": [
+        3755,
+        256,
+        24
+      ],
+      "catalogue_id": "CA-FOLK-023",
+      "region": "Patagonia",
+      "key": "pgup",
+      "display_name": "Tanu",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "halahaches-8",
+      "position": [
+        4096,
+        145,
+        41
+      ],
+      "target": [
+        4096,
+        256,
+        23
+      ],
+      "catalogue_id": "CA-FOLK-024",
+      "region": "Patagonia",
+      "key": "pgdn",
+      "display_name": "Halaháches / Kótaix",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "matan-8",
+      "position": [
+        4437,
+        146,
+        44
+      ],
+      "target": [
+        4437,
+        256,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-025",
+      "region": "Patagonia",
+      "key": "ins",
+      "display_name": "Matan",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "ulen-8",
+      "position": [
+        3755,
+        466,
+        44
+      ],
+      "target": [
+        3755,
+        576,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-026",
+      "region": "Patagonia",
+      "key": "del",
+      "display_name": "Ulen",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "luzmala-8",
+      "position": [
+        4096,
+        466,
+        41
+      ],
+      "target": [
+        4096,
+        576,
+        23
+      ],
+      "catalogue_id": "CA-FOLK-027",
+      "region": "Patagonia",
+      "key": "[",
+      "display_name": "Luz Mala",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "anchimallen-8",
+      "position": [
+        4437,
+        466,
+        41
+      ],
+      "target": [
+        4437,
+        576,
+        23
+      ],
+      "catalogue_id": "CA-FOLK-034",
+      "region": "Patagonia",
+      "key": "]",
+      "display_name": "Anchimallén",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "gualicho-8",
+      "position": [
+        3755,
+        786,
+        44
+      ],
+      "target": [
+        3755,
+        896,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-036",
+      "region": "Patagonia",
+      "key": "-",
+      "display_name": "Gualicho",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "maip-8",
+      "position": [
+        4096,
+        777,
+        49
+      ],
+      "target": [
+        4096,
+        896,
+        28
+      ],
+      "catalogue_id": "CA-FOLK-042",
+      "region": "Patagonia",
+      "key": "=",
+      "display_name": "Máip",
+      "floor_status": "existing_owned_regional_study"
+    },
+    {
+      "id": "salamanca-9",
+      "position": [
+        4736,
+        -175,
+        44
+      ],
+      "target": [
+        4736,
+        -64,
+        25
+      ],
+      "catalogue_id": "CA-FOLK-002",
+      "region": "Supernatural domains",
+      "key": "/",
+      "display_name": "Brujas y brujos de la Salamanca",
+      "floor_status": "neutral_inspection_floor_not_biome_art"
+    }
+  ],
+  "model_bindings": [
+    {
+      "kind": "witch",
+      "catalogue_id": "CA-FOLK-001",
+      "actor": "CaelumBestiary001",
+      "export": "assets/source/art/witch_figures_817/EXPORT.json"
+    },
+    {
+      "kind": "salamanca",
+      "catalogue_id": "CA-FOLK-002",
+      "actor": "CaelumBestiary002",
+      "export": "assets/source/art/witch_figures_817/EXPORT.json"
+    },
+    {
+      "kind": "curupi",
+      "catalogue_id": "CA-FOLK-008",
+      "actor": "CaelumBestiary008",
+      "export": "assets/source/art/bestiary_figures_821/EXPORT.json"
+    },
+    {
+      "kind": "sachayoj",
+      "catalogue_id": "CA-FOLK-012",
+      "actor": "CaelumBestiary012",
+      "export": "assets/source/art/forest_guardians_813/EXPORT.json"
+    },
+    {
+      "kind": "caapora",
+      "catalogue_id": "CA-FOLK-013",
+      "actor": "CaelumBestiary013",
+      "export": "assets/source/art/forest_guardians_813/EXPORT.json"
+    },
+    {
+      "kind": "caayari",
+      "catalogue_id": "CA-FOLK-014",
+      "actor": "CaelumBestiary014",
+      "export": "assets/source/art/forest_guardians_813/EXPORT.json"
+    },
+    {
+      "kind": "zapamzucum",
+      "catalogue_id": "CA-FOLK-015",
+      "actor": "CaelumBestiary015",
+      "export": "assets/source/art/forest_guardians_813/EXPORT.json"
+    },
+    {
+      "kind": "pericana",
+      "catalogue_id": "CA-FOLK-016",
+      "actor": "CaelumBestiary016",
+      "export": "assets/source/art/witch_figures_817/EXPORT.json"
+    },
+    {
+      "kind": "solapa",
+      "catalogue_id": "CA-FOLK-017",
+      "actor": "CaelumBestiary017",
+      "export": "assets/source/art/witch_figures_817/EXPORT.json"
+    },
+    {
+      "kind": "noshtex",
+      "catalogue_id": "CA-FOLK-020",
+      "actor": "CaelumBestiary020",
+      "export": "assets/source/art/land_figures_819/EXPORT.json"
+    },
+    {
+      "kind": "xalpen",
+      "catalogue_id": "CA-FOLK-021",
+      "actor": "CaelumBestiary021",
+      "export": "assets/source/art/distinct_forms_822/EXPORT.json"
+    },
+    {
+      "kind": "shoort",
+      "catalogue_id": "CA-FOLK-022",
+      "actor": "CaelumBestiary022",
+      "export": "assets/source/art/austral_figures_815/EXPORT.json"
+    },
+    {
+      "kind": "tanu",
+      "catalogue_id": "CA-FOLK-023",
+      "actor": "CaelumBestiary023",
+      "export": "assets/source/art/austral_figures_815/EXPORT.json"
+    },
+    {
+      "kind": "halahaches",
+      "catalogue_id": "CA-FOLK-024",
+      "actor": "CaelumBestiary024",
+      "export": "assets/source/art/austral_figures_815/EXPORT.json"
+    },
+    {
+      "kind": "matan",
+      "catalogue_id": "CA-FOLK-025",
+      "actor": "CaelumBestiary025",
+      "export": "assets/source/art/austral_figures_815/EXPORT.json"
+    },
+    {
+      "kind": "ulen",
+      "catalogue_id": "CA-FOLK-026",
+      "actor": "CaelumBestiary026",
+      "export": "assets/source/art/austral_figures_815/EXPORT.json"
+    },
+    {
+      "kind": "luzmala",
+      "catalogue_id": "CA-FOLK-027",
+      "actor": "CaelumBestiary027",
+      "export": "assets/source/art/distinct_forms_822/EXPORT.json"
+    },
+    {
+      "kind": "viuda",
+      "catalogue_id": "CA-FOLK-031",
+      "actor": "CaelumBestiary031",
+      "export": "assets/source/art/period_apparitions_811/EXPORT.json"
+    },
+    {
+      "kind": "llorona",
+      "catalogue_id": "CA-FOLK-032",
+      "actor": "CaelumBestiary032",
+      "export": "assets/source/art/period_apparitions_811/EXPORT.json"
+    },
+    {
+      "kind": "futre",
+      "catalogue_id": "CA-FOLK-033",
+      "actor": "CaelumBestiary033",
+      "export": "assets/source/art/period_apparitions_811/EXPORT.json"
+    },
+    {
+      "kind": "anchimallen",
+      "catalogue_id": "CA-FOLK-034",
+      "actor": "CaelumBestiary034",
+      "export": "assets/source/art/distinct_forms_822/EXPORT.json"
+    },
+    {
+      "kind": "gualicho",
+      "catalogue_id": "CA-FOLK-036",
+      "actor": "CaelumBestiary036",
+      "export": "assets/source/art/bestiary_figures_821/EXPORT.json"
+    },
+    {
+      "kind": "pampayoj",
+      "catalogue_id": "CA-FOLK-037",
+      "actor": "CaelumBestiary037",
+      "export": "assets/source/art/land_figures_819/EXPORT.json"
+    },
+    {
+      "kind": "mayumaman",
+      "catalogue_id": "CA-FOLK-038",
+      "actor": "CaelumBestiary038",
+      "export": "assets/source/art/land_figures_819/EXPORT.json"
+    },
+    {
+      "kind": "orkomaman",
+      "catalogue_id": "CA-FOLK-039",
+      "actor": "CaelumBestiary039",
+      "export": "assets/source/art/land_figures_819/EXPORT.json"
+    },
+    {
+      "kind": "urituorko",
+      "catalogue_id": "CA-FOLK-040",
+      "actor": "CaelumBestiary040",
+      "export": "assets/source/art/bestiary_figures_821/EXPORT.json"
+    },
+    {
+      "kind": "nowet",
+      "catalogue_id": "CA-FOLK-041",
+      "actor": "CaelumBestiary041",
+      "export": "assets/source/art/land_figures_819/EXPORT.json"
+    },
+    {
+      "kind": "maip",
+      "catalogue_id": "CA-FOLK-042",
+      "actor": "CaelumBestiary042",
+      "export": "assets/source/art/bestiary_figures_821/EXPORT.json"
+    },
+    {
+      "kind": "huayrapuca",
+      "catalogue_id": "CA-FOLK-056",
+      "actor": "CaelumBestiary056",
+      "export": "assets/source/art/distinct_forms_822/EXPORT.json"
+    },
+    {
+      "kind": "kasogonaga",
+      "catalogue_id": "CA-FOLK-057",
+      "actor": "CaelumBestiary057",
+      "export": "assets/source/art/kasogonaga_795/EXPORT.json"
+    }
+  ],
+  "model_exports": [
+    "assets/source/art/witch_figures_817/EXPORT.json",
+    "assets/source/art/bestiary_figures_821/EXPORT.json",
+    "assets/source/art/forest_guardians_813/EXPORT.json",
+    "assets/source/art/land_figures_819/EXPORT.json",
+    "assets/source/art/distinct_forms_822/EXPORT.json",
+    "assets/source/art/austral_figures_815/EXPORT.json",
+    "assets/source/art/period_apparitions_811/EXPORT.json",
+    "assets/source/art/kasogonaga_795/EXPORT.json"
+  ],
+  "model_species": {
+    "assets/source/art/witch_figures_817/EXPORT.json": [
+      "witch",
+      "salamanca",
+      "pericana",
+      "solapa"
+    ],
+    "assets/source/art/bestiary_figures_821/EXPORT.json": [
+      "curupi",
+      "gualicho",
+      "urituorko",
+      "maip"
+    ],
+    "assets/source/art/forest_guardians_813/EXPORT.json": [
+      "sachayoj",
+      "caapora",
+      "caayari",
+      "zapamzucum"
+    ],
+    "assets/source/art/land_figures_819/EXPORT.json": [
+      "noshtex",
+      "pampayoj",
+      "mayumaman",
+      "orkomaman",
+      "nowet"
+    ],
+    "assets/source/art/distinct_forms_822/EXPORT.json": [
+      "xalpen",
+      "luzmala",
+      "anchimallen",
+      "huayrapuca"
+    ],
+    "assets/source/art/austral_figures_815/EXPORT.json": [
+      "shoort",
+      "tanu",
+      "halahaches",
+      "matan",
+      "ulen"
+    ],
+    "assets/source/art/period_apparitions_811/EXPORT.json": [
+      "viuda",
+      "llorona",
+      "futre"
+    ],
+    "assets/source/art/kasogonaga_795/EXPORT.json": [
+      "kasogonaga"
+    ]
+  },
+  "animation_sample_wait_tics": 11,
+  "animation_sample_basis": "Retain the proven 11-tic sample across native 10-tic idle states.",
+  "silent_observer_steps": true,
+  "inspection_staging": "Native classes with fixture-only Friendly and diagnostic passive AI, protected silent observer, unchanged native idle states; no forced position resets.",
+  "layout_basis": "Data-owned inspection coordinates only. Separate 512-unit plots, 1024-unit Patagonia, two or three columns spaced beyond existing collision and exported full-animation silhouettes. No campaign placements or population counts.",
+  "notes": [
+    "Complete the 44 missing approved catalogue/region pairs; preserve both earlier native galleries.",
+    "Buenos Aires, Chaco and Supernatural domains deliberately use neutral inspection flooring, not a proposed biome.",
+    "Repeated unique identities are diagnostic displays only.",
+    "Protected catalogue identities018/019 and campaign actors/maps remain unchanged."
+  ]
+}

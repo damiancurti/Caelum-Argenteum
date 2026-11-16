@@ -1,0 +1,113 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-16 03:21:20
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue825-gallery01.pk3, 18628 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue825-keys01/gallery.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2509.32 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA825G - Remaining approved regional associations
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+"F1" = "netevent ca825_view 0"
+"F2" = "netevent ca825_view 1"
+"F3" = "netevent ca825_view 2"
+"F4" = "netevent ca825_view 3"
+"F5" = "netevent ca825_view 4"
+"F6" = "netevent ca825_view 5"
+"F7" = "netevent ca825_view 6"
+"F8" = "netevent ca825_view 7"
+"F9" = "netevent ca825_view 8"
+"F10" = "netevent ca825_view 9"
+"F11" = "netevent ca825_view 10"
+"F12" = "netevent ca825_view 11"
+"1" = "netevent ca825_view 12"
+"2" = "netevent ca825_view 13"
+"3" = "netevent ca825_view 14"
+"4" = "netevent ca825_view 15"
+"5" = "netevent ca825_view 16"
+"6" = "netevent ca825_view 17"
+"7" = "netevent ca825_view 18"
+"8" = "netevent ca825_view 19"
+"9" = "netevent ca825_view 20"
+"0" = "netevent ca825_view 21"
+"b" = "netevent ca825_view 22"
+"c" = "netevent ca825_view 23"
+"e" = "netevent ca825_view 24"
+"f" = "netevent ca825_view 25"
+"g" = "netevent ca825_view 26"
+"h" = "netevent ca825_view 27"
+"i" = "netevent ca825_view 28"
+"j" = "netevent ca825_view 29"
+"k" = "netevent ca825_view 30"
+"l" = "netevent ca825_view 31"
+"m" = "netevent ca825_view 32"
+"n" = "netevent ca825_view 33"
+"o" = "netevent ca825_view 34"
+"p" = "netevent ca825_view 35"
+"q" = "netevent ca825_view 36"
+"r" = "netevent ca825_view 37"
+"t" = "netevent ca825_view 38"
+"u" = "netevent ca825_view 39"
+"v" = "netevent ca825_view 40"
+"x" = "netevent ca825_view 41"
+"y" = "netevent ca825_view 42"
+"z" = "netevent ca825_view 43"
+"home" = "netevent ca825_view 44"
+"end" = "netevent ca825_view 45"
+"pgup" = "netevent ca825_view 46"
+"pgdn" = "netevent ca825_view 47"
+"ins" = "netevent ca825_view 48"
+"del" = "netevent ca825_view 49"
+"[" = "netevent ca825_view 50"
+"]" = "netevent ca825_view 51"
+"-" = "netevent ca825_view 52"
+"=" = "netevent ca825_view 53"
+"/" = "netevent ca825_view 54"

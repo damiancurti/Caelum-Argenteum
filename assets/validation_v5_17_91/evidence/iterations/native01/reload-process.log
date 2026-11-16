@@ -1,0 +1,522 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-16 03:15:59
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue825-gallery01.pk3, 18628 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue825-native01/gallery.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2493.52 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA825G - Remaining approved regional associations
+
+CA825 PASS isolated gallery map
+CA825 PASS saved subject registry size
+CA825 PASS saved camera reference
+CA825 PASS inspection observer footsteps remain silent
+CA825 PASS subject 0 native class
+CA825 POSITION 0 xyz=(128.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 0 saved position
+CA825 PASS subject 0 initialized inspection catalogue identity
+CA825 PASS subject 1 native class
+CA825 POSITION 1 xyz=(384.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 1 saved position
+CA825 PASS subject 1 initialized inspection catalogue identity
+CA825 PASS subject 2 native class
+CA825 POSITION 2 xyz=(128.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 2 saved position
+CA825 PASS subject 2 initialized inspection catalogue identity
+CA825 PASS subject 3 native class
+CA825 POSITION 3 xyz=(640.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 3 saved position
+CA825 PASS subject 3 initialized inspection catalogue identity
+CA825 PASS subject 4 native class
+CA825 POSITION 4 xyz=(896.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 4 saved position
+CA825 PASS subject 4 initialized inspection catalogue identity
+CA825 PASS subject 5 native class
+CA825 POSITION 5 xyz=(640.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 5 saved position
+CA825 PASS subject 5 initialized inspection catalogue identity
+CA825 PASS subject 6 native class
+CA825 POSITION 6 xyz=(896.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 6 saved position
+CA825 PASS subject 6 initialized inspection catalogue identity
+CA825 PASS subject 7 native class
+CA825 POSITION 7 xyz=(640.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 7 saved position
+CA825 PASS subject 7 initialized inspection catalogue identity
+CA825 PASS subject 8 native class
+CA825 POSITION 8 xyz=(1152.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 8 saved position
+CA825 PASS subject 8 initialized inspection catalogue identity
+CA825 PASS subject 9 native class
+CA825 POSITION 9 xyz=(1408.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 9 saved position
+CA825 PASS subject 9 initialized inspection catalogue identity
+CA825 PASS subject 10 native class
+CA825 POSITION 10 xyz=(1152.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 10 saved position
+CA825 PASS subject 10 initialized inspection catalogue identity
+CA825 PASS subject 11 native class
+CA825 POSITION 11 xyz=(1664.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 11 saved position
+CA825 PASS subject 11 initialized inspection catalogue identity
+CA825 PASS subject 12 native class
+CA825 POSITION 12 xyz=(1920.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 12 saved position
+CA825 PASS subject 12 initialized inspection catalogue identity
+CA825 PASS subject 13 native class
+CA825 POSITION 13 xyz=(1664.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 13 saved position
+CA825 PASS subject 13 initialized inspection catalogue identity
+CA825 PASS subject 14 native class
+CA825 POSITION 14 xyz=(1920.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 14 saved position
+CA825 PASS subject 14 initialized inspection catalogue identity
+CA825 PASS subject 15 native class
+CA825 POSITION 15 xyz=(1664.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 15 saved position
+CA825 PASS subject 15 initialized inspection catalogue identity
+CA825 PASS subject 16 native class
+CA825 POSITION 16 xyz=(1920.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 16 saved position
+CA825 PASS subject 16 initialized inspection catalogue identity
+CA825 PASS subject 17 native class
+CA825 POSITION 17 xyz=(2176.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 17 saved position
+CA825 PASS subject 17 initialized inspection catalogue identity
+CA825 PASS subject 18 native class
+CA825 POSITION 18 xyz=(2432.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 18 saved position
+CA825 PASS subject 18 initialized inspection catalogue identity
+CA825 PASS subject 19 native class
+CA825 POSITION 19 xyz=(2176.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 19 saved position
+CA825 PASS subject 19 initialized inspection catalogue identity
+CA825 PASS subject 20 native class
+CA825 POSITION 20 xyz=(2432.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 20 saved position
+CA825 PASS subject 20 initialized inspection catalogue identity
+CA825 PASS subject 21 native class
+CA825 POSITION 21 xyz=(2176.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 21 saved position
+CA825 PASS subject 21 initialized inspection catalogue identity
+CA825 PASS subject 22 native class
+CA825 POSITION 22 xyz=(2432.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 22 saved position
+CA825 PASS subject 22 initialized inspection catalogue identity
+CA825 PASS subject 23 native class
+CA825 POSITION 23 xyz=(2688.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 23 saved position
+CA825 PASS subject 23 initialized inspection catalogue identity
+CA825 PASS subject 24 native class
+CA825 POSITION 24 xyz=(2944.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 24 saved position
+CA825 PASS subject 24 initialized inspection catalogue identity
+CA825 PASS subject 25 native class
+CA825 POSITION 25 xyz=(2688.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 25 saved position
+CA825 PASS subject 25 initialized inspection catalogue identity
+CA825 PASS subject 26 native class
+CA825 POSITION 26 xyz=(2944.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 26 saved position
+CA825 PASS subject 26 initialized inspection catalogue identity
+CA825 PASS subject 27 native class
+CA825 POSITION 27 xyz=(2688.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 27 saved position
+CA825 PASS subject 27 initialized inspection catalogue identity
+CA825 PASS subject 28 native class
+CA825 POSITION 28 xyz=(3200.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 28 saved position
+CA825 PASS subject 28 initialized inspection catalogue identity
+CA825 PASS subject 29 native class
+CA825 POSITION 29 xyz=(3456.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 29 saved position
+CA825 PASS subject 29 initialized inspection catalogue identity
+CA825 PASS subject 30 native class
+CA825 POSITION 30 xyz=(3200.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 30 saved position
+CA825 PASS subject 30 initialized inspection catalogue identity
+CA825 PASS subject 31 native class
+CA825 POSITION 31 xyz=(3456.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 31 saved position
+CA825 PASS subject 31 initialized inspection catalogue identity
+CA825 PASS subject 32 native class
+CA825 POSITION 32 xyz=(3755.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 32 saved position
+CA825 PASS subject 32 initialized inspection catalogue identity
+CA825 PASS subject 33 native class
+CA825 POSITION 33 xyz=(4096.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 33 saved position
+CA825 PASS subject 33 initialized inspection catalogue identity
+CA825 PASS subject 34 native class
+CA825 POSITION 34 xyz=(4437.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 34 saved position
+CA825 PASS subject 34 initialized inspection catalogue identity
+CA825 PASS subject 35 native class
+CA825 POSITION 35 xyz=(3755.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 35 saved position
+CA825 PASS subject 35 initialized inspection catalogue identity
+CA825 PASS subject 36 native class
+CA825 POSITION 36 xyz=(4096.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 36 saved position
+CA825 PASS subject 36 initialized inspection catalogue identity
+CA825 PASS subject 37 native class
+CA825 POSITION 37 xyz=(4437.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 37 saved position
+CA825 PASS subject 37 initialized inspection catalogue identity
+CA825 PASS subject 38 native class
+CA825 POSITION 38 xyz=(3755.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 38 saved position
+CA825 PASS subject 38 initialized inspection catalogue identity
+CA825 PASS subject 39 native class
+CA825 POSITION 39 xyz=(4096.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 39 saved position
+CA825 PASS subject 39 initialized inspection catalogue identity
+CA825 PASS subject 40 native class
+CA825 POSITION 40 xyz=(4437.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 40 saved position
+CA825 PASS subject 40 initialized inspection catalogue identity
+CA825 PASS subject 41 native class
+CA825 POSITION 41 xyz=(3755.00000,896.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 41 saved position
+CA825 PASS subject 41 initialized inspection catalogue identity
+CA825 PASS subject 42 native class
+CA825 POSITION 42 xyz=(4096.00000,896.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 42 saved position
+CA825 PASS subject 42 initialized inspection catalogue identity
+CA825 PASS subject 43 native class
+CA825 POSITION 43 xyz=(4736.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 43 saved position
+CA825 PASS subject 43 initialized inspection catalogue identity
+CA825 COMPLETE failures=0
+CA825 PASS animation snapshot registry
+CA825 PASS subject 0 native idle advancement
+CA825 PASS subject 1 native idle advancement
+CA825 PASS subject 2 native idle advancement
+CA825 PASS subject 3 native idle advancement
+CA825 PASS subject 4 native idle advancement
+CA825 PASS subject 5 native idle advancement
+CA825 PASS subject 6 native idle advancement
+CA825 PASS subject 7 native idle advancement
+CA825 PASS subject 8 native idle advancement
+CA825 PASS subject 9 native idle advancement
+CA825 PASS subject 10 native idle advancement
+CA825 PASS subject 11 native idle advancement
+CA825 PASS subject 12 native idle advancement
+CA825 PASS subject 13 native idle advancement
+CA825 PASS subject 14 native idle advancement
+CA825 PASS subject 15 native idle advancement
+CA825 PASS subject 16 native idle advancement
+CA825 PASS subject 17 native idle advancement
+CA825 PASS subject 18 native idle advancement
+CA825 PASS subject 19 native idle advancement
+CA825 PASS subject 20 native idle advancement
+CA825 PASS subject 21 native idle advancement
+CA825 PASS subject 22 native idle advancement
+CA825 PASS subject 23 native idle advancement
+CA825 PASS subject 24 native idle advancement
+CA825 PASS subject 25 native idle advancement
+CA825 PASS subject 26 native idle advancement
+CA825 PASS subject 27 native idle advancement
+CA825 PASS subject 28 native idle advancement
+CA825 PASS subject 29 native idle advancement
+CA825 PASS subject 30 native idle advancement
+CA825 PASS subject 31 native idle advancement
+CA825 PASS subject 32 native idle advancement
+CA825 PASS subject 33 native idle advancement
+CA825 PASS subject 34 native idle advancement
+CA825 PASS subject 35 native idle advancement
+CA825 PASS subject 36 native idle advancement
+CA825 PASS subject 37 native idle advancement
+CA825 PASS subject 38 native idle advancement
+CA825 PASS subject 39 native idle advancement
+CA825 PASS subject 40 native idle advancement
+CA825 PASS subject 41 native idle advancement
+CA825 PASS subject 42 native idle advancement
+CA825 PASS subject 43 native idle advancement
+CA825 COMPLETE failures=0
+CA825 VIEW index=1
+CA825 WALK start=(128.000,-576.000,-0.000) end=(128.000,-477.344,-0.000) angle=90.000
+CA825 PASS native player movement in gallery
+CA825 PASS player remains on the walkable floor
+CA825 COMPLETE failures=0
+CA825 CROSS START pos=(128.000,-384.000,0.000) angle=90.000
+CA825 CROSS END pos=(5103.989,-384.000,0.000) angle=90.000
+CA825 PASS native movement crosses all 8 regional boundaries
+CA825 PASS regional crossing stays on the floor
+CA825 COMPLETE failures=0
+CA825 PASS isolated gallery map
+CA825 PASS saved subject registry size
+CA825 PASS saved camera reference
+CA825 PASS inspection observer footsteps remain silent
+CA825 PASS subject 0 native class
+CA825 POSITION 0 xyz=(128.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 0 saved position
+CA825 PASS subject 0 initialized inspection catalogue identity
+CA825 PASS subject 1 native class
+CA825 POSITION 1 xyz=(384.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 1 saved position
+CA825 PASS subject 1 initialized inspection catalogue identity
+CA825 PASS subject 2 native class
+CA825 POSITION 2 xyz=(128.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 2 saved position
+CA825 PASS subject 2 initialized inspection catalogue identity
+CA825 PASS subject 3 native class
+CA825 POSITION 3 xyz=(640.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 3 saved position
+CA825 PASS subject 3 initialized inspection catalogue identity
+CA825 PASS subject 4 native class
+CA825 POSITION 4 xyz=(896.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 4 saved position
+CA825 PASS subject 4 initialized inspection catalogue identity
+CA825 PASS subject 5 native class
+CA825 POSITION 5 xyz=(640.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 5 saved position
+CA825 PASS subject 5 initialized inspection catalogue identity
+CA825 PASS subject 6 native class
+CA825 POSITION 6 xyz=(896.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 6 saved position
+CA825 PASS subject 6 initialized inspection catalogue identity
+CA825 PASS subject 7 native class
+CA825 POSITION 7 xyz=(640.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 7 saved position
+CA825 PASS subject 7 initialized inspection catalogue identity
+CA825 PASS subject 8 native class
+CA825 POSITION 8 xyz=(1152.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 8 saved position
+CA825 PASS subject 8 initialized inspection catalogue identity
+CA825 PASS subject 9 native class
+CA825 POSITION 9 xyz=(1408.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 9 saved position
+CA825 PASS subject 9 initialized inspection catalogue identity
+CA825 PASS subject 10 native class
+CA825 POSITION 10 xyz=(1152.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 10 saved position
+CA825 PASS subject 10 initialized inspection catalogue identity
+CA825 PASS subject 11 native class
+CA825 POSITION 11 xyz=(1664.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 11 saved position
+CA825 PASS subject 11 initialized inspection catalogue identity
+CA825 PASS subject 12 native class
+CA825 POSITION 12 xyz=(1920.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 12 saved position
+CA825 PASS subject 12 initialized inspection catalogue identity
+CA825 PASS subject 13 native class
+CA825 POSITION 13 xyz=(1664.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 13 saved position
+CA825 PASS subject 13 initialized inspection catalogue identity
+CA825 PASS subject 14 native class
+CA825 POSITION 14 xyz=(1920.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 14 saved position
+CA825 PASS subject 14 initialized inspection catalogue identity
+CA825 PASS subject 15 native class
+CA825 POSITION 15 xyz=(1664.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 15 saved position
+CA825 PASS subject 15 initialized inspection catalogue identity
+CA825 PASS subject 16 native class
+CA825 POSITION 16 xyz=(1920.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 16 saved position
+CA825 PASS subject 16 initialized inspection catalogue identity
+CA825 PASS subject 17 native class
+CA825 POSITION 17 xyz=(2176.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 17 saved position
+CA825 PASS subject 17 initialized inspection catalogue identity
+CA825 PASS subject 18 native class
+CA825 POSITION 18 xyz=(2432.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 18 saved position
+CA825 PASS subject 18 initialized inspection catalogue identity
+CA825 PASS subject 19 native class
+CA825 POSITION 19 xyz=(2176.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 19 saved position
+CA825 PASS subject 19 initialized inspection catalogue identity
+CA825 PASS subject 20 native class
+CA825 POSITION 20 xyz=(2432.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 20 saved position
+CA825 PASS subject 20 initialized inspection catalogue identity
+CA825 PASS subject 21 native class
+CA825 POSITION 21 xyz=(2176.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 21 saved position
+CA825 PASS subject 21 initialized inspection catalogue identity
+CA825 PASS subject 22 native class
+CA825 POSITION 22 xyz=(2432.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 22 saved position
+CA825 PASS subject 22 initialized inspection catalogue identity
+CA825 PASS subject 23 native class
+CA825 POSITION 23 xyz=(2688.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 23 saved position
+CA825 PASS subject 23 initialized inspection catalogue identity
+CA825 PASS subject 24 native class
+CA825 POSITION 24 xyz=(2944.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 24 saved position
+CA825 PASS subject 24 initialized inspection catalogue identity
+CA825 PASS subject 25 native class
+CA825 POSITION 25 xyz=(2688.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 25 saved position
+CA825 PASS subject 25 initialized inspection catalogue identity
+CA825 PASS subject 26 native class
+CA825 POSITION 26 xyz=(2944.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 26 saved position
+CA825 PASS subject 26 initialized inspection catalogue identity
+CA825 PASS subject 27 native class
+CA825 POSITION 27 xyz=(2688.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 27 saved position
+CA825 PASS subject 27 initialized inspection catalogue identity
+CA825 PASS subject 28 native class
+CA825 POSITION 28 xyz=(3200.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 28 saved position
+CA825 PASS subject 28 initialized inspection catalogue identity
+CA825 PASS subject 29 native class
+CA825 POSITION 29 xyz=(3456.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 29 saved position
+CA825 PASS subject 29 initialized inspection catalogue identity
+CA825 PASS subject 30 native class
+CA825 POSITION 30 xyz=(3200.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 30 saved position
+CA825 PASS subject 30 initialized inspection catalogue identity
+CA825 PASS subject 31 native class
+CA825 POSITION 31 xyz=(3456.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 31 saved position
+CA825 PASS subject 31 initialized inspection catalogue identity
+CA825 PASS subject 32 native class
+CA825 POSITION 32 xyz=(3755.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 32 saved position
+CA825 PASS subject 32 initialized inspection catalogue identity
+CA825 PASS subject 33 native class
+CA825 POSITION 33 xyz=(4096.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 33 saved position
+CA825 PASS subject 33 initialized inspection catalogue identity
+CA825 PASS subject 34 native class
+CA825 POSITION 34 xyz=(4437.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 34 saved position
+CA825 PASS subject 34 initialized inspection catalogue identity
+CA825 PASS subject 35 native class
+CA825 POSITION 35 xyz=(3755.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 35 saved position
+CA825 PASS subject 35 initialized inspection catalogue identity
+CA825 PASS subject 36 native class
+CA825 POSITION 36 xyz=(4096.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 36 saved position
+CA825 PASS subject 36 initialized inspection catalogue identity
+CA825 PASS subject 37 native class
+CA825 POSITION 37 xyz=(4437.00000,256.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 37 saved position
+CA825 PASS subject 37 initialized inspection catalogue identity
+CA825 PASS subject 38 native class
+CA825 POSITION 38 xyz=(3755.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 38 saved position
+CA825 PASS subject 38 initialized inspection catalogue identity
+CA825 PASS subject 39 native class
+CA825 POSITION 39 xyz=(4096.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 39 saved position
+CA825 PASS subject 39 initialized inspection catalogue identity
+CA825 PASS subject 40 native class
+CA825 POSITION 40 xyz=(4437.00000,576.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 40 saved position
+CA825 PASS subject 40 initialized inspection catalogue identity
+CA825 PASS subject 41 native class
+CA825 POSITION 41 xyz=(3755.00000,896.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 41 saved position
+CA825 PASS subject 41 initialized inspection catalogue identity
+CA825 PASS subject 42 native class
+CA825 POSITION 42 xyz=(4096.00000,896.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 42 saved position
+CA825 PASS subject 42 initialized inspection catalogue identity
+CA825 PASS subject 43 native class
+CA825 POSITION 43 xyz=(4736.00000,-64.00000,0.00000) velocity=(0.00000,0.00000,0.00000)
+CA825 PASS subject 43 saved position
+CA825 PASS subject 43 initialized inspection catalogue identity
+CA825 COMPLETE failures=0
+CA825 PASS animation snapshot registry
+CA825 PASS subject 0 native idle advancement
+CA825 PASS subject 1 native idle advancement
+CA825 PASS subject 2 native idle advancement
+CA825 PASS subject 3 native idle advancement
+CA825 PASS subject 4 native idle advancement
+CA825 PASS subject 5 native idle advancement
+CA825 PASS subject 6 native idle advancement
+CA825 PASS subject 7 native idle advancement
+CA825 PASS subject 8 native idle advancement
+CA825 PASS subject 9 native idle advancement
+CA825 PASS subject 10 native idle advancement
+CA825 PASS subject 11 native idle advancement
+CA825 PASS subject 12 native idle advancement
+CA825 PASS subject 13 native idle advancement
+CA825 PASS subject 14 native idle advancement
+CA825 PASS subject 15 native idle advancement
+CA825 PASS subject 16 native idle advancement
+CA825 PASS subject 17 native idle advancement
+CA825 PASS subject 18 native idle advancement
+CA825 PASS subject 19 native idle advancement
+CA825 PASS subject 20 native idle advancement
+CA825 PASS subject 21 native idle advancement
+CA825 PASS subject 22 native idle advancement
+CA825 PASS subject 23 native idle advancement
+CA825 PASS subject 24 native idle advancement
+CA825 PASS subject 25 native idle advancement
+CA825 PASS subject 26 native idle advancement
+CA825 PASS subject 27 native idle advancement
+CA825 PASS subject 28 native idle advancement
+CA825 PASS subject 29 native idle advancement
+CA825 PASS subject 30 native idle advancement
+CA825 PASS subject 31 native idle advancement
+CA825 PASS subject 32 native idle advancement
+CA825 PASS subject 33 native idle advancement
+CA825 PASS subject 34 native idle advancement
+CA825 PASS subject 35 native idle advancement
+CA825 PASS subject 36 native idle advancement
+CA825 PASS subject 37 native idle advancement
+CA825 PASS subject 38 native idle advancement
+CA825 PASS subject 39 native idle advancement
+CA825 PASS subject 40 native idle advancement
+CA825 PASS subject 41 native idle advancement
+CA825 PASS subject 42 native idle advancement
+CA825 PASS subject 43 native idle advancement
+CA825 COMPLETE failures=0
+CA825 VIEW index=0
+Captured reload.png

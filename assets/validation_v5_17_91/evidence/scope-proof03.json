@@ -1,0 +1,23 @@
+{
+  "issue": 825,
+  "base_commit": "160473b3d41426cc1821c2a7a566286dc3b9bfa4",
+  "runtime_sha256": "b4022453b6b17b6da5e73002d8b66eec71916ecf67395faea1473ca3ad290b89",
+  "source_entries": 18628,
+  "package_exact_source_bytes": true,
+  "retained_gallery_sha256": {
+    "assets/source/art/regional_gallery_682/GALLERY.json": "65485227785466d786943a70de0e5901f5071c42d27d4958ce7a886e29195fa5",
+    "assets/source/art/regional_gallery_709/GALLERY.json": "1b8363a09ed993b5e11cdb6287c12c54baec606fb21048efeb3ecc7fd9396fa2"
+  },
+  "repeated_files": 4,
+  "repeated_fixtures": {
+    "GALLERY_MANIFEST.json": "56ad58a3310bde2926a8a8037dd4a146c42b7cb6708168bc77b89da50c9f0baf",
+    "TEXTMAP.txt": "c9952076d4c84eda111b0b09f68551b6282b4f9aafe29cb0751b832ac3b5dd6b",
+    "gallery.pk3": "fd75c2a869cb8126882c03085b5a588a4d8414c5681ba2582c8258290b33cbe0",
+    "gallery.zs": "61b2dc220fa43f6eecb276bc8e4cf44c298d5bb4005b3d0939244fa49f4186ff"
+  },
+  "changed_runtime_resources": [
+    "src/caelum/world/CaelumPhysicalHazards.zs",
+    "src/caelum/world/CaelumSewerMaze.zs"
+  ],
+  "all_production_art_and_behavior_exact": true
+}

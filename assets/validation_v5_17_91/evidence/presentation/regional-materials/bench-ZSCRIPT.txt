@@ -1,0 +1,21 @@
+version "4.14.2"
+class CA825Bench : EventHandler
+{
+    int Age; double Previous; Array<double> Tics;
+    override bool InputProcess(InputEvent e) { return true; }
+    override void WorldTick()
+    {
+        Age++;
+        if(Age==175) Console.Printf("CA825 BEGIN");
+        if(Age<175 || Age>875) return;
+        double now=MSTimeF(); if(Previous>0) Tics.Push(now-Previous); Previous=now;
+        if(Age==875)
+        {
+            Console.Printf("CA825 END");
+            for(int i=0;i<Tics.Size();i++) Console.Printf("CA825 TIC %.6f",Tics[i]);
+            let gallery=CA825GalleryEvents(EventHandler.Find('CA825GalleryEvents'));
+            int visibleSubjects=0; if(gallery!=null) for(int i=0;i<gallery.Subjects.Size();i++) if(gallery.Subjects[i]!=null && !gallery.Subjects[i].bInvisible && gallery.Subjects[i].Alpha>0) visibleSubjects++;
+            Console.Printf("CA825 COMPLETE subjects=%d samples=%d",visibleSubjects,Tics.Size());
+        }
+    }
+}

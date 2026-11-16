@@ -1,8 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.90** - 2026-11-16.
+Documentation version: **5.17.91** - 2026-11-16.
 
-## 5.17.90 - Four distinct bestiary forms (#822, 2026-11-16)
+## 5.17.91 - Complete regional diagnostic gallery coverage (#825, 2026-11-16)
+
+Added CA825G for the 44 missing approved associations of 30 candidate classes,
+preserving earlier galleries and all production art/behavior. Neutral floors
+explicitly label the three regional concepts without owned ground studies.
+Four repeated fixture files, 547 native assertions, 55 registered keys and
+ordered capture checks pass. Reviewed camera framing and background silhouette
+overlap prompted data-only refinements; previous inputs and captures remain.
+ASSETS and assets/validation_v5_17_91/evidence/SUMMARY.json retain measured
+presentation/simulation tails and limitations. CA825-REGIONS-01 originates here
+and remains pending; no author check was accepted or removed. Full batch work
+and the final consolidated terminal remain unfinished.
+
+## 5.17.91 - Four distinct bestiary forms (#822, 2026-11-16)
 
 Added Xalpen, Luz Mala, Anchimallen and Huayrapuca owned-reference candidates,
 original materials, editable geometry/animation and inherited combat mappings.
