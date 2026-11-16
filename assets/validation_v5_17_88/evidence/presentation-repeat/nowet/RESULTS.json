@@ -1,0 +1,99 @@
+{
+  "issue": 819,
+  "species": "nowet",
+  "scope": "Measure one 700-tic sprite/model pair for a real Noshtex/Pampayoj/Mayu Maman/Orko Maman/Nowet; no campaign or crowd budget.",
+  "baseline_sha256": "73f544ba7b08fb3a6f589e4b2e4a54b791e7fc534e880c6f8e2d4d54a3ac07fc",
+  "runtime_sha256": "6b3adc713584c69d7afdb9165bd1a435779046990a32b780570e3e2cb54acb38",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "sprite",
+      "pid": 43196,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 417375989.9059,
+        "END": 417396000.8344
+      },
+      "fixture_sha256": "278b2e10e0518cdbfbdb972f9eb51ccf1e62456e34fbe68845175a4a59088375",
+      "bench_sha256": "5a9fc6dde4ea4b7c2f458f0cbd699a4f76472e02ef3aa66f5026926da0453cc9",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571255571428573,
+        "p50_ms": 28.5644,
+        "p95_ms": 28.9134,
+        "p99_ms": 29.0201,
+        "max_ms": 29.3273
+      },
+      "presentation": {
+        "pid": 43196,
+        "trace_sha256": "311b3c428120f299f546df3e3adee5f4a5a6001b49b04e56ca0bf7ec22da9cd8",
+        "rows": 49671,
+        "scene_presents": 35320,
+        "mean_present_fps": 2017.0863012193165,
+        "present_intervals": {
+          "samples": 35319,
+          "mean_ms": 0.4957646082844874,
+          "p50_ms": 0.4764999747276306,
+          "p95_ms": 0.6270999908447266,
+          "p99_ms": 0.7594999670982361,
+          "max_ms": 1.0622999668121338
+        },
+        "native_call_duration": {
+          "samples": 35320,
+          "mean_ms": 0.06332964593563588,
+          "p50_ms": 0.05899995565414429,
+          "p95_ms": 0.08739995956420898,
+          "p99_ms": 0.11399996280670166,
+          "max_ms": 0.44300001859664917
+        }
+      }
+    },
+    {
+      "kind": "model",
+      "pid": 10184,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 417411021.9096,
+        "END": 417431037.5703
+      },
+      "fixture_sha256": "278b2e10e0518cdbfbdb972f9eb51ccf1e62456e34fbe68845175a4a59088375",
+      "bench_sha256": "5a9fc6dde4ea4b7c2f458f0cbd699a4f76472e02ef3aa66f5026926da0453cc9",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.572033,
+        "p50_ms": 28.5825,
+        "p95_ms": 28.9356,
+        "p99_ms": 29.064,
+        "max_ms": 29.2955
+      },
+      "presentation": {
+        "pid": 10184,
+        "trace_sha256": "a95c0a23a850cee83acdc25728c2a1634c011ca0ffc837f00bca12c786946f3d",
+        "rows": 47063,
+        "scene_presents": 33255,
+        "mean_present_fps": 1898.6040390190765,
+        "present_intervals": {
+          "samples": 33254,
+          "mean_ms": 0.5267027665845772,
+          "p50_ms": 0.5060000419616699,
+          "p95_ms": 0.6987000107765198,
+          "p99_ms": 0.8001999855041504,
+          "max_ms": 1.5232000350952148
+        },
+        "native_call_duration": {
+          "samples": 33255,
+          "mean_ms": 0.06423436182456847,
+          "p50_ms": 0.05940002202987671,
+          "p95_ms": 0.08709996938705444,
+          "p99_ms": 0.11549997329711914,
+          "max_ms": 0.4985000491142273
+        }
+      }
+    }
+  ]
+}

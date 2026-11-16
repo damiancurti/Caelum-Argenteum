@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.87** - 2026-11-15.
+Documentation version: **5.17.88** - 2026-11-16.
+
+## 5.17.88 - Five land and river figure candidates (#819)
+
+Noshtex, Pampayoj, Mayu Maman, Orko Maman and Nowet now have native candidates;
+coverage reaches48/56 provisional classes. Nineteen-file repeated export,
+closed/posed geometry and 871 qualified native assertions pass, including
+460 reused only for unchanged models/fixtures. ASSETS records reviewed
+art and isolated presentation measurements with their limits. CA819-LAND-01 remains
+pending. Eight creatures, regional views, other characters, modular fitting,
+campaign authoring and siege rendering still prevent the final batch handoff.
 
 ## 5.17.87 - Four witch and rural figure candidates (#817)
 

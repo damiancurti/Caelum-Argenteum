@@ -1,0 +1,18 @@
+{
+  "issue": 819,
+  "reviewed": {
+    "noshtex": {
+      "build/issue819-noshtex-native01/fresh-model/view-front.png": "ee806b5cf143cf4bff90c407a92eaf9d21f4cd050b1c7c27349af838f69294c0",
+      "build/issue819-noshtex-native01/fresh-model/view-face-detail.png": "0937e7f5f19bdfc3814e886fceff750c870b4fb2b74ab2e088000215be1a7749",
+      "build/issue819-noshtex-native01/fresh-model/view-side.png": "fb277ff56f17766b2725848988941f47876d74f851d8906fab9eb9d8620e7aaf",
+      "build/issue819-noshtex-native01/fresh-model/view-rear.png": "4338d797978693ac00c35c3415af4f5063570864625f0fc05e826969e6a29277",
+      "build/issue819-noshtex-native01/fresh-model/pose-03-run.png": "c9ce7fdc7f16bd77ec2160f4ff659e43ae3eabe02299efd0ec8aabe01216936f",
+      "build/issue819-noshtex-native01/fresh-model/pose-05-run.png": "8978a546c960d566bbde60a44fa3d033b0eaff801b50cc4ab02eb7142aad19c8",
+      "build/issue819-noshtex-native01/fresh-model/pose-10-attack_release.png": "c35c168dccce3facc03abd188becc7df9f889828580052582bcce8f55dc38836",
+      "build/issue819-noshtex-native01/fresh-model/pose-11-pain.png": "3a160b03e25b05504d6ca99e2860ad718e2488d8d455f962192740ffdda43ba9",
+      "build/issue819-noshtex-native01/fresh-model/pose-15-death.png": "0408b09de7110472b649d5af07f4160628ff58bebaeee19a42e38c705cbbb984",
+      "build/issue819-noshtex-native01/fresh-model/view-lying-oblique.png": "a5af5d1dd1f26a64e3939dc11bef4b373b44446b7324cac7d7ec4c0aef0cbebe"
+    }
+  },
+  "presentation": {}
+}

@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.87** - 2026-11-15.
+Documentation version: **5.17.88** - 2026-11-16.
+
+## 5.17.88 - Five land and river figure candidates (#819, 2026-11-16)
+
+Added editable native Noshtex, Pampayoj, Mayu Maman, Orko Maman and Nowet candidates,
+original generated materials and inherited combat mappings. Nineteen exports repeat;
+closed/posed geometry and 871 qualified native assertions pass. Of these,
+460 continuity assertions are bounded reuse for unchanged models/fixtures;
+Mayu Maman, actual actions and all presentation pairs were rerun on final land04.
+Native-guided ear/beard/hair, limb and cloth corrections retain earlier diagnostics.
+ASSETS and assets/validation_v5_17_88/evidence/SUMMARY.json record scope and isolated
+presentation evidence, retaining the first Nowet tail and its bounded repeat without assigning a cause. CA819-LAND-01 originates here and remains pending; no author
+check was accepted or removed. Coverage reaches48/56; the full batch and final
+consolidated review remain unfinished.
 
 ## 5.17.87 - Four witch and rural figure candidates (#817, 2026-11-15)
 

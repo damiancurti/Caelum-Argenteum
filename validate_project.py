@@ -83,6 +83,7 @@ from assets.generators.validate_period_apparition_models import validate as peri
 from assets.generators.validate_forest_guardian_models import validate as forest_guardian_model_problems
 from assets.generators.validate_austral_figure_models import validate as austral_figure_model_problems
 from assets.generators.validate_witch_figure_models import validate as witch_figure_model_problems
+from assets.generators.validate_land_figure_models import validate as land_figure_model_problems
 from assets.generators.validate_serpent_models import validate as serpent_problems
 from assets.generators.validate_hybrid_serpent_models import validate as hybrid_serpent_problems
 from assets.generators.validate_native_regional_gallery import validate as native_regional_gallery_problems
@@ -219,6 +220,7 @@ def validate(root):
     errors.extend(forest_guardian_model_problems(root))
     errors.extend(austral_figure_model_problems(root))
     errors.extend(witch_figure_model_problems(root))
+    errors.extend(land_figure_model_problems(root))
     errors.extend(serpent_problems(root))
     errors.extend(hybrid_serpent_problems(root))
     errors.extend(native_regional_gallery_problems(root))
