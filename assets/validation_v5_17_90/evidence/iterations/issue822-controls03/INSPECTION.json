@@ -1,0 +1,226 @@
+{
+  "issue": 822,
+  "purpose": "Four distinct silhouettes: reptile centaur, skull orb, clothed childlike amber spirit and feathered serpent dragon. Inspect full body/head detail, quadruped gait or hovering forms, wings/tail, inherited actions and lying views.",
+  "additional_views": [
+    {
+      "name": "lying-oblique",
+      "position": [
+        65,
+        -65,
+        63
+      ],
+      "target": [
+        0,
+        0,
+        12
+      ],
+      "default_pose": 22
+    },
+    {
+      "name": "face-detail",
+      "position": [
+        27,
+        -6,
+        47
+      ],
+      "target": [
+        2,
+        0,
+        44
+      ]
+    },
+    {
+      "name": "garment-rear",
+      "position": [
+        -50,
+        -35,
+        35
+      ],
+      "target": [
+        0,
+        0,
+        26
+      ]
+    }
+  ],
+  "action_views": {
+    "death": 6,
+    "rest": 6
+  },
+  "species_view_overrides": {
+    "xalpen": {
+      "front-oblique": {
+        "position": [
+          80,
+          -100,
+          40
+        ],
+        "target": [
+          -18,
+          0,
+          25
+        ]
+      },
+      "front": {
+        "position": [
+          90,
+          0,
+          35
+        ],
+        "target": [
+          -15,
+          0,
+          25
+        ]
+      },
+      "side": {
+        "position": [
+          -20,
+          -105,
+          35
+        ],
+        "target": [
+          -20,
+          0,
+          25
+        ]
+      },
+      "rear": {
+        "position": [
+          -110,
+          0,
+          40
+        ],
+        "target": [
+          -20,
+          0,
+          25
+        ]
+      },
+      "lying-oblique": {
+        "position": [
+          70,
+          -100,
+          75
+        ],
+        "target": [
+          -20,
+          0,
+          12
+        ]
+      }
+    },
+    "huayrapuca": {
+      "front-oblique": {
+        "position": [
+          80,
+          -100,
+          40
+        ],
+        "target": [
+          -18,
+          0,
+          25
+        ]
+      },
+      "front": {
+        "position": [
+          90,
+          0,
+          35
+        ],
+        "target": [
+          -15,
+          0,
+          25
+        ]
+      },
+      "side": {
+        "position": [
+          -20,
+          -105,
+          35
+        ],
+        "target": [
+          -20,
+          0,
+          25
+        ]
+      },
+      "rear": {
+        "position": [
+          -110,
+          0,
+          40
+        ],
+        "target": [
+          -20,
+          0,
+          25
+        ]
+      },
+      "lying-oblique": {
+        "position": [
+          70,
+          -100,
+          75
+        ],
+        "target": [
+          -20,
+          0,
+          12
+        ]
+      },
+      "face-detail": {
+        "position": [
+          40,
+          -8,
+          51
+        ],
+        "target": [
+          15,
+          0,
+          46
+        ]
+      },
+      "head-front": {
+        "position": [
+          48,
+          0,
+          50
+        ],
+        "target": [
+          15,
+          0,
+          46
+        ]
+      },
+      "head-oblique": {
+        "position": [
+          43,
+          -20,
+          50
+        ],
+        "target": [
+          15,
+          0,
+          46
+        ]
+      }
+    },
+    "luzmala": {
+      "face-detail": {
+        "position": [
+          30,
+          -6,
+          40
+        ],
+        "target": [
+          0,
+          0,
+          35
+        ]
+      }
+    }
+  }
+}
