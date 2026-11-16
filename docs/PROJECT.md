@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.86** - 2026-11-15.
+Documentation version: **5.17.87** - 2026-11-15.
+
+## 5.17.87 - Four witch and rural figure candidates (#817)
+
+The witch, Salamanca, Pericana and Solapa have native candidates; coverage
+reaches 43/56 provisional classes. Deterministic export, geometry, skirt coverage
+and 702 qualified native assertions pass; the exact reuse audit bounds three
+unchanged species. ASSETS records reviewed art
+and isolated presentation evidence with its limits. CA817-WITCH-01 remains
+pending. The 13 remaining creatures, regional views, other characters, modular
+fitting, campaign authoring and siege rendering keep the batch unfinished.
 
 ## 5.17.86 - Five austral figure candidates (#815)
 

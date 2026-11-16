@@ -1,0 +1,988 @@
+{
+  "schema_revision": 1,
+  "issue": 817,
+  "parent_issue": 461,
+  "status": "candidate_author_review_pending",
+  "species": {
+    "witch": {
+      "catalogue_id": "CA-FOLK-001",
+      "actor": "CaelumBestiary001",
+      "design": "assets/source/art/witch_figures_817/witch.json",
+      "reference": "assets/source/bestiary_453/imagenes/01_Humanos/01_brujas_brujos.png",
+      "textures": {
+        "atlas": "assets/source/art/witch_figures_817/materials.png"
+      }
+    },
+    "salamanca": {
+      "catalogue_id": "CA-FOLK-002",
+      "actor": "CaelumBestiary002",
+      "design": "assets/source/art/witch_figures_817/salamanca.json",
+      "reference": "assets/source/bestiary_453/imagenes/01_Humanos/02_salamanca.png",
+      "textures": {
+        "atlas": "assets/source/art/witch_figures_817/materials.png"
+      }
+    },
+    "pericana": {
+      "catalogue_id": "CA-FOLK-016",
+      "actor": "CaelumBestiary016",
+      "design": "assets/source/art/witch_figures_817/pericana.json",
+      "reference": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/16_pericana.png",
+      "textures": {
+        "atlas": "assets/source/art/witch_figures_817/materials.png"
+      }
+    },
+    "solapa": {
+      "catalogue_id": "CA-FOLK-017",
+      "actor": "CaelumBestiary017",
+      "design": "assets/source/art/witch_figures_817/solapa.json",
+      "reference": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/17_solapa.png",
+      "textures": {
+        "atlas": "assets/source/art/witch_figures_817/materials.png"
+      }
+    }
+  },
+  "profile_source": "src/caelum/actors/CaelumFolkloreCharacters.zs",
+  "profile_class": "CaelumMandinga",
+  "frames": [
+    {
+      "sprite": "MIID",
+      "letter": "A",
+      "action": "idle",
+      "cycle": "idle",
+      "sample": 0
+    },
+    {
+      "sprite": "MIID",
+      "letter": "B",
+      "action": "idle",
+      "cycle": "idle",
+      "sample": 8
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "A",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 0
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "B",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 6
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "C",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 12
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "D",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 18
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "A",
+      "action": "walk",
+      "cycle": "walk",
+      "sample": 6
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "B",
+      "action": "walk",
+      "cycle": "walk",
+      "sample": 18
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "A",
+      "action": "stun",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 6
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 12
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "D",
+      "action": "attack_prepare",
+      "transforms": [
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -125
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -30
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": -12
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "E",
+      "action": "attack_release",
+      "transforms": [
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -75
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -25
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": 10
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "F",
+      "action": "pain",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -8
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -12
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "G",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -50
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 30
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "H",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -30
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -50
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 30
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "I",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -50
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 30
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "J",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -78
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -50
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 30
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "K",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -88
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -3
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 6
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 14
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 12
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -12
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -18
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "L",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -90
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 5
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 6
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -8
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -14
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "A",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8.0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10.0
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "B",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 9.0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -9.0
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "C",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8.0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10.0
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "D",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 7.0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -11.0
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        }
+      ]
+    },
+    {
+      "sprite": "SLMD",
+      "letter": "A",
+      "action": "rest",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -90
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 20
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    }
+  ],
+  "inspection": {
+    "views": [
+      {
+        "name": "front-oblique",
+        "position": [
+          55,
+          -48,
+          33
+        ],
+        "target": [
+          0,
+          0,
+          26
+        ]
+      },
+      {
+        "name": "front",
+        "position": [
+          60,
+          0,
+          30
+        ],
+        "target": [
+          0,
+          0,
+          26
+        ]
+      },
+      {
+        "name": "side",
+        "position": [
+          0,
+          -65,
+          30
+        ],
+        "target": [
+          0,
+          0,
+          26
+        ]
+      },
+      {
+        "name": "rear",
+        "position": [
+          -65,
+          0,
+          30
+        ],
+        "target": [
+          0,
+          0,
+          26
+        ]
+      },
+      {
+        "name": "head-front",
+        "position": [
+          40,
+          0,
+          48
+        ],
+        "target": [
+          0,
+          0,
+          43
+        ]
+      },
+      {
+        "name": "head-oblique",
+        "position": [
+          40,
+          -22,
+          46
+        ],
+        "target": [
+          0,
+          0,
+          43
+        ]
+      }
+    ],
+    "keys": [
+      0,
+      3,
+      8,
+      9,
+      10,
+      11,
+      14,
+      17,
+      18,
+      22
+    ],
+    "studio": {
+      "ambient": 128,
+      "lighting_basis": "Scaled from the existing #455 Pombero preview studio; inspection-only, not new campaign lighting.",
+      "lights": [
+        {
+          "position": [
+            29,
+            -35.5,
+            51.6
+          ],
+          "color": [
+            220,
+            215,
+            210
+          ],
+          "radius": 58.1
+        },
+        {
+          "position": [
+            -35.5,
+            40.3,
+            40.3
+          ],
+          "color": [
+            190,
+            205,
+            235
+          ],
+          "radius": 51.6
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "assets/source/bestiary_453/imagenes/01_Humanos/01_brujas_brujos.png": "8013d7ab5bd966e1f098e683356d77289784fc50bfbdf0fa674d4de557fce2ec",
+    "assets/source/bestiary_453/imagenes/01_Humanos/02_salamanca.png": "72bbb072494873b55220e3c11c903897711afcdb964c4fb26a5899eb6e76296c",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/16_pericana.png": "f859b4c8bb3f0da9f6f39e55f8a097d4c8fc5d5bf0c240f257e90eb4b3908982",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/17_solapa.png": "ee6b02e50e58b6bc31752f5c107ef24417d6b28cdd39d3b78f8e1751624d97ea",
+    "assets/source/art/witch_figures_817/materials.png": "5fdaa95ec35ea6db0aaea15c116749a4561b97a17d4a45a1b34975fa78969501"
+  },
+  "scale_policy": "Match neutral standing art height to the unchanged provisional native Height, divide out Actor.Scale, and report every posed bound. Moving arms and nonblocking horizontal death poses may exceed native Radius, as original biped art does; no collision or gameplay reach changes. Catalogue reference heights remain unauthorised.",
+  "timing_policy": "Only existing inherited sprite/frame bindings; no action, AI, state timing, saved field, spawn or loot change.",
+  "identity_policy": "Only CaelumBestiary001 Witch, CaelumBestiary002 Salamanca, CaelumBestiary016 Pericana and CaelumBestiary017 Solapa are bound. Preserve documented identity/taxonomy and all protected actors. No campaign placement.",
+  "art_policy": "Reference-led elderly witch, middle-aged poncho wearer and two distinct hags with fixed clothing, hair, hats, pouches and claws. Candidate species art only; no modular inventory, new powers, statistics, metric scale or invented cultural claims."
+}

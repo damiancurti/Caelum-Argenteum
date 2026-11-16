@@ -1,9 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.17.86** - 2026-11-15.
+Documentation version: **5.17.87** - 2026-11-15.
 
 **V5.17:** Native inventory/bestiary models and regional galleries are candidates.
-#815 adds austral figures;39/56 models. Review pending.
+#817 adds witch/rural figures;43/56 models. Review pending.
 #736 modular proposals await visual approval. Other characters and
 modular equipment remain unfinished. Issue-by-issue status/evidence: ASSETS/TASKS;
 author checks: pending_test.txt. Previous delivery details remain in HISTORY.

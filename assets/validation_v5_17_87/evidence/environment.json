@@ -1,0 +1,15 @@
+﻿{
+    "os":  "Microsoft Windows 11 Pro",
+    "build":  "26200",
+    "cpu":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+    "logical_processors":  32,
+    "ram_bytes":  34278645760,
+    "gpu":  [
+                "Parsec Virtual Display Adapter",
+                "NVIDIA GeForce RTX 3070 Ti"
+            ],
+    "gpu_driver":  [
+                       "0.45.0.0",
+                       "32.0.16.1088"
+                   ]
+}

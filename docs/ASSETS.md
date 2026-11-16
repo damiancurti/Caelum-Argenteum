@@ -1,6 +1,70 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.86** - 2026-11-15.
+Documentation version: **5.17.87** - 2026-11-15.
+
+## 5.17.87 - Native witch and rural figure candidates (#817)
+
+Brujas/Brujos 001, Salamanca 002, Pericana 016 and Solapa 017 have distinct
+native candidates based on their owned references. The elderly witch has gray
+braided hair, a dark shawl/dress, ivory sleeves, boots and an herb pouch.
+Salamanca has a middle-aged face, short gray hair/beard, a striped brown poncho,
+shirt, trousers and boots. Pericana has long gray hair, pointed ears, a hooked
+face, ragged layered clothes and claws. Solapa adds two braids, an apron and a
+broad uneven straw hat to her forward-bent silhouette. These fixed items do not
+create modular equipment or inventory. Editable controls, OBJ/MTL, animation,
+contacts and original generated atlas/prompt/provenance are retained in
+assets/source/art/witch_figures_817; texture pixels remain unchanged.
+
+Sixteen exported files repeat byte-for-byte. The four designs contain 274
+closed components, 270 rooted witnesses and 2,160 independent posed attachment
+checks. All 23 inherited frames have noncollapsed triangles and material-cell
+UV bounds. Serialized native checks verify the three closed skirts at both
+extreme strides. Native review corrected hidden eyes, a concealed boot hem,
+sleeve-shaped bare wrists and Salamanca's hair length. Closed braided strands,
+the uneven straw brim and a clearer hooked nose preserve recognizable features.
+Earlier source revisions, captures and failures remain in the evidence archive.
+
+The final 18,609-entry package matches src exactly. Against #815 it adds six
+model/material/binding resources and one MODELDEF include. Only two release
+diagnostics change elsewhere. Scale, collision, statistics, combat timing,
+abilities, loot, identity and saved fields remain unchanged. Reference metric
+dimensions, new powers, population and campaign placement are not adopted.
+
+Qualified evidence contains 702 native assertions: 460 continuity assertions
+across previous-package baseline, old save, fresh model, reload and rollback;
+242 actual action/loot/reload assertions. Solapa and all action tests use the
+final package. An exact ZIP comparison proves that only solapa.md3 changed after
+the three other continuity runs; their art, bindings, actor code, maps and saved
+fields are identical. Regenerated fixture hashes also match for those species.
+Front, profile, rear, face/hair/
+clothing details, extreme strides, attack, pain, intermediate death and lying
+poses were inspected. Final captures verify VIEW -> indexed pose PASS ->
+screenshot ordering for every frame. Earlier visual runs and Solapa's first continuity/camera captures are diagnostic
+only. Her final fitted hat band and lower face cameras have repeated native evidence.
+
+One sequential 700-tic sprite/model pair per species ran on Windows 11 Pro 26200,
+Ryzen 9 5950X / 32 GB / RTX 3070 Ti, GZDoom 4.14.2 Vulkan at 1280x720, uncapped
+without VSync, unpaused in the background at 5% audio:
+
+- witch/sprite: 1292.07 queue presents/s; presentation p95/p99/max 0.9646/1.1770/2.0811 ms; simulation mean/p95/p99/max 28.5713/29.0690/29.2339/29.4063 ms.
+- witch/model: 1396.50 queue presents/s; presentation p95/p99/max 0.8562/1.0428/1.9632 ms; simulation mean/p95/p99/max 28.5714/29.0502/29.1906/29.3116 ms.
+- salamanca/sprite: 1312.54 queue presents/s; presentation p95/p99/max 0.9249/1.1474/2.0708 ms; simulation mean/p95/p99/max 28.5709/29.1035/29.2253/29.5325 ms.
+- salamanca/model: 1259.60 queue presents/s; presentation p95/p99/max 1.0015/1.2394/2.1103 ms; simulation mean/p95/p99/max 28.5717/29.2348/29.6054/30.3949 ms.
+- pericana/sprite: 1312.94 queue presents/s; presentation p95/p99/max 0.9535/1.1786/2.1009 ms; simulation mean/p95/p99/max 28.5710/29.1460/29.2539/29.7363 ms.
+- pericana/model: 1293.63 queue presents/s; presentation p95/p99/max 0.9585/1.1640/2.0931 ms; simulation mean/p95/p99/max 28.5713/29.1141/29.2499/29.7169 ms.
+- solapa/sprite: 1289.88 queue presents/s; presentation p95/p99/max 0.9654/1.2013/2.3953 ms; simulation mean/p95/p99/max 28.5717/29.1243/29.2250/29.9983 ms.
+- solapa/model: 1230.72 queue presents/s; presentation p95/p99/max 1.0207/1.2803/2.9698 ms; simulation mean/p95/p99/max 28.5709/29.2158/29.6031/30.1685 ms.
+
+These queue intervals do not measure GPU/display latency, establish repeatability
+or an optimization, or certify campaign/crowd performance. Stylized component
+anatomy, painted faces, opaque hair and rigid fall/rest poses remain candidates;
+broad silhouettes can exceed provisional collision. CA817-WITCH-01 remains
+pending for the consolidated handoff. Evidence:
+assets/validation_v5_17_87/evidence/SUMMARY.json.
+
+Coverage reaches 43/56 provisional classes; 13 remain. Regional views, other
+characters, modular fitting, campaign authoring and siege rendering still need
+work before the complete batch and final author terminal are ready.
 
 ## 5.17.86 - Native austral figure candidates (#815)
 

@@ -1,0 +1,40 @@
+{
+  "issue": 817,
+  "runtime_sha256": "73f544ba7b08fb3a6f589e4b2e4a54b791e7fc534e880c6f8e2d4d54a3ac07fc",
+  "baseline_sha256": "d2cdb71531a4f94fa2fe2d9e26e865dd7b9951756df67006523d81ef63c5b4bb",
+  "package_exact_source_bytes": true,
+  "source_entries": 18609,
+  "added_resources": [
+    "caelum/data/witch_figure_combat.modeldef",
+    "models/caelum/folklore/witchfigures/materials.png",
+    "models/caelum/folklore/witchfigures/pericana.md3",
+    "models/caelum/folklore/witchfigures/salamanca.md3",
+    "models/caelum/folklore/witchfigures/solapa.md3",
+    "models/caelum/folklore/witchfigures/witch.md3"
+  ],
+  "changed_resources": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "all_other_runtime_bytes_identical": true,
+  "repeated_files": 16,
+  "export_sha256": {
+    "caelum/data/witch_figure_combat.modeldef": "576979906b7c1888a958a2fa2357ec2cc1303a639f4d824079d5d3671b396c64",
+    "editable/pericana.mtl": "0165b80cdcd40391d8213bcac4a6e3ea30860e6ee85a22a54d3c2afee33278d9",
+    "editable/pericana.obj": "a440be656e3f97bccec56937a750fe5c9ae4aaa7a63df88a859a7ab4caad5536",
+    "editable/salamanca.mtl": "0165b80cdcd40391d8213bcac4a6e3ea30860e6ee85a22a54d3c2afee33278d9",
+    "editable/salamanca.obj": "41d118b66f07ead220ed5ad5460efb51839b1e79314a8f175016f0a3c128e726",
+    "editable/solapa.mtl": "0165b80cdcd40391d8213bcac4a6e3ea30860e6ee85a22a54d3c2afee33278d9",
+    "editable/solapa.obj": "7fc08842021c098db56b59fa7b836c0ddd30d9ea625af9b50f6c1cbff73df94c",
+    "editable/witch.mtl": "0165b80cdcd40391d8213bcac4a6e3ea30860e6ee85a22a54d3c2afee33278d9",
+    "editable/witch.obj": "4c39de4b01a8836d63208aef6f6278f2e05c7acafa2e2a5ee4eef3f6b9d02906",
+    "manifest.json": "53cb945b610bf382c3fd8b4fc02403c19ef75675249d32fbde90fbe97133f8c3",
+    "models/caelum/folklore/witchfigures/materials.png": "5fdaa95ec35ea6db0aaea15c116749a4561b97a17d4a45a1b34975fa78969501",
+    "models/caelum/folklore/witchfigures/pericana.md3": "3963ef2225991df2d4a98607752c35e4b73cbdac6c8bbdb0c3a00306ba83ad63",
+    "models/caelum/folklore/witchfigures/salamanca.md3": "322a8f012c83846ef708cada0eb50ec12fd37a8ee5ee23df1ea03281b299bee6",
+    "models/caelum/folklore/witchfigures/solapa.md3": "0797287620adfd639e6214f8f5222f250ef317a41aba79a3574c662f98047240",
+    "models/caelum/folklore/witchfigures/witch.md3": "0182fa148e7baf3b7d7eaa03f64ca7b5fa0c83c73b54e809a628285a5c69c3c9",
+    "preview.pk3": "9dc575f0865e05bf31d957e87032e68000ee670df30eebb4a942e63b395a2b6a"
+  }
+}
