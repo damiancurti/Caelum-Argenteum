@@ -1,6 +1,63 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.100** - 2026-11-19.
+Documentation version: **5.17.101** - 2026-11-19.
+
+## 5.17.101 - Use the canonical mansion map for the Limbo query (#846, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+IsLimboMap now compares its input case-insensitively with the existing
+MapForLocation(LOCATION_MANSION) result. It avoids classifying every other
+location when only the mansion identity is needed. Both canonical mappings,
+map identities, time scales, arithmetic, fractions, migrations and saved fields
+remain unchanged. Ordinary callers, including offscreen environmental/contact
+work and the automatic high-density scene, use the same exact result.
+
+The original forward lookup returns the unique mansion ID only for its first
+case-insensitive MAP01 comparison; the unchanged reverse mapping returns MAP01.
+All other returned IDs differ. This proves equivalence for every string under
+the current catalogue, and the preparation tool checks those premises explicitly.
+
+Six bounded service scopes observe 239,600 timestamp/classification calls on
+42 sampled tics, with zero candidate differences. The classification leaf totals
+0.5388 ms per sampled tic, including timer overhead. Parent scopes include nested
+instrumentation and must not be added. An alternating-order, 160,000-call-per-side
+pure-predicate loop records 10.7010 ms original and 5.6850 ms candidate on MAP03;
+this is local query timing, not a whole-frame performance percentage.
+
+Six native control/final/upgrade/reload/rollback/Limbo runs pass 16,566 assertions;
+11,044 execute the final package. Each checks 552 canonical, packaged, house,
+case-variant and unknown names against the original predicate and time scales.
+Five map-name inputs and five clock seeds cover fractional/day rollovers, integer
+saturation, journey increments and saved clock references/fields. The outside-
+Limbo save matrix is complemented by a positive MAP01 boundary run. The first
+reference clone retained an old self-parameter type and failed compilation;
+renaming all self-type references fixes that private fixture. Its failed log
+and corrected sources remain available. Production clock code is unchanged.
+
+All 18,755 runtime members match source. Only the one equivalent return expression
+and two diagnostic version strings differ from 5.17.100. No mapping, registry,
+scan, cache, field, resource, collision or author-test entry changes.
+
+| Scene/package | Queue presents/s | Tic intervals mean / p95 / p99 / max (ms) | Present p95 / p99 / max (ms) |
+| --- | ---: | --- | --- |
+| siege_final | 1.9036 | 30.9983 / 46.1954 / 51.1827 / 60.8181 | 554.0410 / 555.5873 / 555.5873 |
+| siege_control | 1.9232 | 30.7061 / 45.4979 / 47.7319 / 60.1934 | 558.0180 / 559.2719 / 559.2719 |
+| mansion_final | 75.2180 | 28.5662 / 39.0400 / 40.8235 / 42.3173 | 14.9883 / 15.6800 / 16.6971 |
+| sewers_final | 192.6727 | 28.5686 / 32.2606 / 33.9802 / 43.9756 | 6.9044 / 7.9555 / 38.3743 |
+| city_final | 107.3154 | 28.5652 / 35.5719 / 37.1011 / 38.0136 | 10.3385 / 11.0505 / 13.5853 |
+| city_ground_final | 76.4820 | 28.5705 / 38.8202 / 40.0814 / 41.6109 | 14.9589 / 16.1939 / 18.3394 |
+
+All six production scenes run sequentially on Windows 11 / Ryzen 9 5950X /
+RTX 3070 Ti, native GZDoom 4.14.2, Vulkan 1280x720, unpaused background and 5% audio.
+Paired siege census, health and camera match: 988 attackers, 601 defenders and
+the player, 1,590 living bodies. Tic intervals include pacing/frame work and are
+not isolated CPU simulation. Queue presents are not monitor scanout. The mansion
+reference includes its opening conversation; entrance views are not full-map
+walkthroughs. Siege presentation remains poor. The complete V5.16/V5.17 batch,
+author acceptance and the single final test terminal remain pending.
+Evidence: assets/validation_v5_17_101; pending_test.txt is unchanged.
+
 
 ## 5.17.100 - Avoid empty inventory checks in physical contacts (#844, #454)
 

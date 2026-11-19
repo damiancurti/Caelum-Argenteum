@@ -1,0 +1,44 @@
+{
+  "runtime_sha256": "cec68c135d044bee1649bb81c1a5d1330a6b21cafa533b34572a8fb1a4df5374",
+  "overlay_sha256": "7c52bf81c3a9f22011489e58937a0dc5c1ef31e07b99087f6cc3b2ab21833ea6",
+  "originals_restored_exactly": {
+    "caelum/survival/CaelumThermalRuntime.zs": "fbb3936ca2d205d1baaa6329ff1bcf0c326d87af7ce2df025e5cfebb8e706904",
+    "caelum/survival/CaelumThermalEnvironment.zs": "5b0c5a25cef8adc120cc060a10e21fe23bb0791701dba1d9b7b8cf94da3dda80",
+    "caelum/world/CaelumWorldClock.zs": "df425dd3859f329b3b2137763bfac88d050a4536c15f2ba0584e570c328eaa2c",
+    "caelum/survival/CaelumContaminationObject.zs": "a396c2b1a99df2fa070b58d80afa95a5decf6854c89ee9bdbd2bd3e8148634c2"
+  },
+  "period": 17,
+  "metrics": [
+    {
+      "id": 0,
+      "path": "caelum/survival/CaelumThermalRuntime.zs",
+      "method": "Stamp"
+    },
+    {
+      "id": 1,
+      "path": "caelum/survival/CaelumThermalRuntime.zs",
+      "method": "WorldTicSeconds"
+    },
+    {
+      "id": 2,
+      "path": "caelum/survival/CaelumThermalEnvironment.zs",
+      "method": "Get"
+    },
+    {
+      "id": 3,
+      "path": "caelum/world/CaelumWorldClock.zs",
+      "method": "Get"
+    },
+    {
+      "id": 4,
+      "path": "caelum/survival/CaelumContaminationObject.zs",
+      "method": "SettleNow"
+    },
+    {
+      "id": 5,
+      "path": "caelum/world/CaelumWorldCatalogue.zs",
+      "method": "IsLimboMap_from_Stamp"
+    }
+  ],
+  "qualification": "Inclusive sampled bodies; nested wrapper overhead remains. The map-classification leaf is measured only when called from Stamp. A separate alternating-order pure-predicate loop is diagnostic, not production throughput."
+}

@@ -1,0 +1,20 @@
+{
+  "issue": 846,
+  "passed": true,
+  "runtime_sha256": "61ccaff36849395018bb7aa31a49e565f9727d9a6b9a9099c36c7f0a1786334d",
+  "baseline_sha256": "cec68c135d044bee1649bb81c1a5d1330a6b21cafa533b34572a8fb1a4df5374",
+  "candidate_source_sha256": "0a8cd27b4a71f2f872765948f7a16789cd41cbd4098b847810d02454a22c84ea",
+  "runtime_members": 18755,
+  "runtime_bytes": 1280986904,
+  "changed": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs",
+    "caelum/world/CaelumWorldCatalogue.zs"
+  ],
+  "no_added_or_removed_members": true,
+  "source_package_exact": true,
+  "prototype_source_exact": true,
+  "all_outside_predicate_exact": true,
+  "author_queue_unchanged": true,
+  "qualification": "Only the equivalent IsLimboMap return expression and two diagnostic version strings change. Canonical mappings, fields, time arithmetic, migration, callers, resources and all other runtime bytes remain exact."
+}

@@ -4,6 +4,34 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-260 - Use the canonical map for a Limbo-only query
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #846 / 5.17.101,
+2026-11-19, GZDoom 4.14.2. Native/static verification; author acceptance pending.
+
+A repeated timestamp helper asked for a complete location classification merely
+to identify the mansion. The forward lookup also handles unrelated locations
+and the fixed house catalogue. Compare case-insensitively with the existing
+MapForLocation(LOCATION_MANSION) value after proving that the forward lookup
+returns the mansion ID exactly for that name and no other returned ID aliases it.
+Both mappings remain authoritative and unchanged; no duplicate map literal or
+mutable cache is introduced. Revisit the proof if future design adds Limbo maps
+or changes forward/reverse mapping semantics.
+
+The sampled timestamp path performs 239,600 such queries in 42 tics. Native
+original-result comparisons, 552-name tests, time/fraction/day/saturation cases
+and reversible saved clocks agree; 16,566 assertions pass. Retain the original
+clock implementation as the oracle and consistently rename its self-types when
+cloning it for a private fixture. An unrelated self/parameter type is a fixture
+compile error, not evidence of a production clock failure.
+
+Inclusive scopes retain probe overhead, and a paired pure-query benchmark is
+not a whole-frame percentage. Preserve final/control native presentation and
+tic tails, including mansion/sewer/city/ground references. The result remains
+an incremental engineering improvement; overall siege presentation is unfinished.
+Evidence: assets/validation_v5_17_101; contract: SYSTEMS shared clock and Limbo time.
+
+
 ## CA-KP-259 - Profile empty dispatch and adapt retained fixtures to current contracts
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #844 / 5.17.100,
