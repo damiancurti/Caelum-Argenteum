@@ -44,14 +44,15 @@ class CaelumThermalShelter : Object play
         }
         // Tres segmentos arbitrarios no bastan: deben formar un recinto local
         // conectado. Se cuentan planos distintos, no subdivisiones de una pared.
-        for(int first=0;first<count;first++)
+        // En un grafo no dirigido hay un componente de al menos tres planos
+        // si y sólo si algún plano tiene dos vecinos distintos. Cada par se
+        // comprueba una sola vez; los ocho trazados y sus filtros no cambian.
+        int neighbors[8];
+        for(int first=0;first<count;first++)for(int second=first+1;second<count;second++)
         {
-            bool reached[8];reached[first]=true;int linked=1;
-            for(int pass=0;pass<count;pass++)for(int i=0;i<count;i++)
-                if(!reached[i])for(int j=0;j<count;j++)
-                    if(reached[j] && Connected(walls[i],walls[j]))
-                    {reached[i]=true;linked++;break;}
-            if(linked>=3)return true;
+            if(!Connected(walls[first],walls[second]))continue;
+            neighbors[first]++;neighbors[second]++;
+            if(neighbors[first]>=2 || neighbors[second]>=2)return true;
         }
         return false;
     }

@@ -4,6 +4,39 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-258 - Prove bounded connectivity and alternate paired timing order
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #842 / 5.17.99,
+2026-11-19, native GZDoom 4.14.2. Scoped engineering evidence; author acceptance
+and overall siege playability remain pending.
+
+Wind shelter sampled eight local rays, deduplicated wall planes, then repeatedly
+expanded reachability from each plane. For the existing threshold of three,
+an undirected component of sufficient size exists iff a vertex has two distinct
+neighbors. Count neighbors while checking each pair once (at most 28 pairs).
+This proof is specific to the approved three-plane rule; a different threshold
+requires a different algorithm/proof. Preserve all ray inputs, tolerances,
+deduplication and the independent roof/ranch shortcuts.
+
+Validate against an independent component algorithm and the exact native
+baseline. Here 54,864 graph cases and 264,662 live queries agree, with separate
+native geometry/save checks. The first paired run placed the candidate first;
+its timings were order-biased by repeated native tracing. Alternating order
+showed a local reduction, but this is not whole-frame throughput. Keep raw
+sampled and production measurements separate, and report their tails.
+
+The affected file retains an existing typed ranch census every TICRATE map tics
+in CaelumThermalWorld, owned by the shared Ranches list for roof queries. This
+patch adds no scan and does not alter that lifecycle. The prior same-scene
+WorldTick scope recorded total 8.4302 ms over 700 calls, maximum 0.6119 ms;
+that callback evidence does not bound arbitrary ranch populations. A general
+event-maintained replacement remains separate work; do not multiply this
+shared census per NPC or claim an unmeasured universal population bound.
+
+Evidence: assets/validation_v5_17_99; contract: SYSTEMS, "Clothing, water and
+shelter". Retain historical microclimate text while pointing to its newer rule.
+
+
 ## CA-KP-257 - First-use atlas clipping can stall before Vulkan calls
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #840, 2026-11-19,

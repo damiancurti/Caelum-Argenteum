@@ -1,0 +1,26 @@
+{
+  "issue": 842,
+  "runtime_sha256": "8261aeeef2567a32dcbe4f7b01cc9958a11e79d58de7b4c0998908001d4b6c0d",
+  "original_source_sha256": "6cb9afd8c4c68311fe6dcf9c01b8e203d20ec493a4532e855bf5e008564bd181",
+  "overlay_sha256": "079bcc9a6fbd7863611aab2f0ada6943c25d186acf9b053517a542765b85d9fd",
+  "exact_inverse_source_restoration": true,
+  "period": 17,
+  "metrics": {
+    "0": "empty",
+    "1": "entry_and_absence",
+    "2": "initialization",
+    "3": "demon_focus_altitude_breath",
+    "4": "recovery_communication_armor",
+    "5": "illness",
+    "6": "pre_native_physics",
+    "7": "native_actor_tick",
+    "8": "post_native_thermal",
+    "9": "potions",
+    "10": "elemental_and_impact",
+    "11": "health_effects",
+    "12": "offensive_statistics",
+    "13": "resource_recovery",
+    "14": "timers"
+  },
+  "qualification": "Sampled region timings include conditional/call overhead; metric0 measures an empty interval. Native Tick includes action functions. Original statement order and exits preserved. Diagnostic overhead prevents production performance claims."
+}

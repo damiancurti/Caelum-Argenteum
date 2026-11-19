@@ -1,6 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.98** - 2026-11-19.
+Documentation version: **5.17.99** - 2026-11-19.
+
+## 5.17.99 - Preserve shelter rules with bounded connectivity (#842, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Completed: sampled combat-tick/service diagnosis; one bounded wind-shelter
+connectivity reduction in ordinary production; independent graph proof; native
+original/candidate oracles; six-room/save matrix; exact package preservation;
+paired siege and final mansion/sewer/city/ground-facing reference measurements.
+The predicate retains every original trace and the approved three-plane rule.
+
+Remaining: overall siege simulation/presentation cost, authorized outstanding
+V5.16/V5.17 work, and consolidated author review. Body/species/style gates remain
+pending; this engineering patch does not approve artwork or add campaign design.
+All author checks remain in pending_test.txt. See HISTORY for measured results
+and assets/validation_v5_17_99 for source, traces and reproducible tools.
+
 
 ## 5.17.98 - Lossless projectile frames avoid atlas-loading stalls (#840, #454)
 

@@ -1,0 +1,1844 @@
+Log started: 2026-11-19 13:57:27
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 428 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue840-crops02.pk3, 18755 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue842-regions02/maintenance.pk3, 2 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/v516/barracas-profile-20261119-135727-380065/observer.pk3, 5 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_copy_memory_indirect VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_clamp_zero_one VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_internally_synchronized_queues VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance10 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_maintenance8 VK_KHR_maintenance9 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_id2 VK_KHR_present_mode_fifo_latest_ready VK_KHR_present_wait VK_KHR_present_wait2 VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_robustness2 VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_bfloat16 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_fma VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_shader_untyped_pointers VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_maintenance1 VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_unified_image_layouts VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_decode_vp9 VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_intra_refresh VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_custom_resolve VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_heap VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_decompression VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_present_timing VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_ray_tracing_invocation_reorder VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_64bit_indexing VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_long_vector VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_partitioned VK_EXT_shader_subgroup_vote VK_EXT_shader_uniform_buffer_unsized_array VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_EXT_zero_initialize_device_memory VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_occupancy_priority VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_compute_queue VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_push_constant_bank VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2472.86 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP03 - Barracas al Sud — fortified port
+
+CA435SYNC OK peer=0 map=MAP03 tic=0
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CITY133 housed=600 attackers=0 revision=3
+PORT16 deployed Mandingas=100 commander=1 defenders=600 hostileMachines=12 guns=42
+CA435SYNC OK peer=0 map=MAP03 tic=175
+CA435SYNC OK peer=0 map=MAP03 tic=350
+CA435SYNC OK peer=0 map=MAP03 tic=525
+CA435SYNC OK peer=0 map=MAP03 tic=700
+CA435SYNC OK peer=0 map=MAP03 tic=875
+CA435SYNC OK peer=0 map=MAP03 tic=1050
+CA435SYNC OK peer=0 map=MAP03 tic=1225
+CA435SYNC OK peer=0 map=MAP03 tic=1400
+CA435SYNC OK peer=0 map=MAP03 tic=1575
+CA435SYNC OK peer=0 map=MAP03 tic=1750
+CA435SYNC OK peer=0 map=MAP03 tic=1925
+CA435SYNC OK peer=0 map=MAP03 tic=2100
+CA435SYNC OK peer=0 map=MAP03 tic=2275
+CA435SYNC OK peer=0 map=MAP03 tic=2450
+CA435SYNC OK peer=0 map=MAP03 tic=2625
+CA435SYNC OK peer=0 map=MAP03 tic=2800
+CA435SYNC OK peer=0 map=MAP03 tic=2975
+CA435SYNC OK peer=0 map=MAP03 tic=3150
+CA435SYNC OK peer=0 map=MAP03 tic=3325
+CA435SYNC OK peer=0 map=MAP03 tic=3500
+CA435PERF STATE peer=0 tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1
+CA435PERF STATE peer=0 slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000
+CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0
+CA510 BEGIN map=MAP03 tic=3599 ms=114658.900800
+CA435SYNC OK peer=0 map=MAP03 tic=3675
+CA435SYNC OK peer=0 map=MAP03 tic=3850
+CA435SYNC OK peer=0 map=MAP03 tic=4025
+CA435SYNC OK peer=0 map=MAP03 tic=4200
+CA435PERF STATE peer=0 tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1
+CA435PERF STATE peer=0 slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000
+CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0
+CA510 PROFILE candidate_ms=0.000000 candidate_calls=0 noise_ms=0.000000 noise_calls=0 communication_ms=0.000000 communication_calls=0 acquire_ms=0.000000 acquire_calls=0
+CA510 END tic=4299 ms=137180.367800
+CA510 TIC 31.917100
+CA510 TIC 31.711200
+CA510 TIC 29.608100
+CA510 TIC 31.023000
+CA510 TIC 29.626000
+CA510 TIC 48.973900
+CA510 TIC 61.087600
+CA510 TIC 32.117200
+CA510 TIC 30.195900
+CA510 TIC 32.930800
+CA510 TIC 36.608300
+CA510 TIC 31.448700
+CA510 TIC 30.638800
+CA510 TIC 31.182400
+CA510 TIC 29.070700
+CA510 TIC 48.395200
+CA510 TIC 29.814200
+CA510 TIC 33.735900
+CA510 TIC 30.126500
+CA510 TIC 31.167000
+CA510 TIC 29.348500
+CA510 TIC 31.778900
+CA510 TIC 30.684800
+CA510 TIC 51.376000
+CA510 TIC 29.541600
+CA510 TIC 46.982700
+CA510 TIC 30.082000
+CA510 TIC 31.426500
+CA510 TIC 29.486200
+CA510 TIC 30.339100
+CA510 TIC 30.412600
+CA510 TIC 30.046200
+CA510 TIC 28.903400
+CA510 TIC 30.290700
+CA510 TIC 32.566900
+CA510 TIC 47.523700
+CA510 TIC 30.108700
+CA510 TIC 30.954700
+CA510 TIC 29.401600
+CA510 TIC 31.776600
+CA510 TIC 39.627800
+CA510 TIC 31.824800
+CA510 TIC 30.889000
+CA510 TIC 33.279600
+CA510 TIC 29.472000
+CA510 TIC 48.000800
+CA510 TIC 29.416300
+CA510 TIC 30.431600
+CA510 TIC 28.580300
+CA510 TIC 30.774200
+CA510 TIC 28.687500
+CA510 TIC 33.104900
+CA510 TIC 29.167500
+CA510 TIC 30.756800
+CA510 TIC 29.962000
+CA510 TIC 47.314900
+CA510 TIC 29.263100
+CA510 TIC 42.779400
+CA510 TIC 29.856200
+CA510 TIC 30.523200
+CA510 TIC 29.805900
+CA510 TIC 32.657600
+CA510 TIC 31.063300
+CA510 TIC 30.223300
+CA510 TIC 29.270700
+CA510 TIC 46.571200
+CA510 TIC 28.058300
+CA510 TIC 31.453300
+CA510 TIC 31.787200
+CA510 TIC 30.657800
+CA510 TIC 31.354100
+CA510 TIC 30.124400
+CA510 TIC 29.788700
+CA510 TIC 31.009000
+CA510 TIC 43.691700
+CA510 TIC 45.443700
+CA510 TIC 27.309700
+CA510 TIC 28.852300
+CA510 TIC 29.528600
+CA510 TIC 28.770300
+CA510 TIC 26.412600
+CA510 TIC 28.004200
+CA510 TIC 27.116300
+CA510 TIC 29.417300
+CA510 TIC 26.877200
+CA510 TIC 49.122000
+CA510 TIC 27.266000
+CA510 TIC 27.836100
+CA510 TIC 27.433800
+CA510 TIC 30.902900
+CA510 TIC 27.702300
+CA510 TIC 36.893500
+CA510 TIC 27.473900
+CA510 TIC 27.773800
+CA510 TIC 27.331300
+CA510 TIC 45.473600
+CA510 TIC 27.040700
+CA510 TIC 27.833400
+CA510 TIC 26.357300
+CA510 TIC 28.350200
+CA510 TIC 26.686200
+CA510 TIC 27.607500
+CA510 TIC 29.725900
+CA510 TIC 29.277700
+CA510 TIC 26.888900
+CA510 TIC 45.615100
+CA510 TIC 29.150400
+CA510 TIC 28.021000
+CA510 TIC 35.843500
+CA510 TIC 28.866000
+CA510 TIC 27.012400
+CA510 TIC 29.155400
+CA510 TIC 27.604200
+CA510 TIC 32.485300
+CA510 TIC 30.474900
+CA510 TIC 49.930800
+CA510 TIC 30.050900
+CA510 TIC 31.146700
+CA510 TIC 30.420700
+CA510 TIC 34.363200
+CA510 TIC 30.466400
+CA510 TIC 32.447000
+CA510 TIC 29.891900
+CA510 TIC 29.086200
+CA510 TIC 27.420900
+CA510 TIC 61.047100
+CA510 TIC 27.557700
+CA510 TIC 28.906300
+CA510 TIC 26.495300
+CA510 TIC 29.116300
+CA510 TIC 27.609500
+CA510 TIC 28.907800
+CA510 TIC 30.706900
+CA510 TIC 33.419100
+CA510 TIC 29.768300
+CA510 TIC 47.492300
+CA510 TIC 31.583600
+CA510 TIC 29.230400
+CA510 TIC 27.232400
+CA510 TIC 29.191700
+CA510 TIC 27.508900
+CA510 TIC 28.962700
+CA510 TIC 36.414700
+CA510 TIC 29.039400
+CA510 TIC 26.661000
+CA510 TIC 45.805200
+CA510 TIC 28.821600
+CA510 TIC 28.312700
+CA510 TIC 26.957500
+CA510 TIC 29.231800
+CA510 TIC 28.245700
+CA510 TIC 28.303100
+CA510 TIC 26.674100
+CA510 TIC 32.110500
+CA510 TIC 28.947700
+CA510 TIC 46.383100
+CA510 TIC 28.795500
+CA510 TIC 28.876700
+CA510 TIC 28.195100
+CA510 TIC 40.214100
+CA510 TIC 27.633700
+CA510 TIC 28.457800
+CA510 TIC 26.650500
+CA510 TIC 28.609900
+CA510 TIC 28.065700
+CA510 TIC 45.742700
+CA510 TIC 30.281900
+CA510 TIC 30.774900
+CA510 TIC 30.823400
+CA510 TIC 31.447500
+CA510 TIC 32.114400
+CA510 TIC 29.975800
+CA510 TIC 29.659200
+CA510 TIC 30.883300
+CA510 TIC 29.182500
+CA510 TIC 49.980800
+CA510 TIC 43.295600
+CA510 TIC 31.180300
+CA510 TIC 29.481100
+CA510 TIC 29.763100
+CA510 TIC 29.981200
+CA510 TIC 31.788500
+CA510 TIC 28.560400
+CA510 TIC 30.243200
+CA510 TIC 30.407200
+CA510 TIC 49.182600
+CA510 TIC 29.749200
+CA510 TIC 33.732300
+CA510 TIC 29.480600
+CA510 TIC 30.955700
+CA510 TIC 29.757400
+CA510 TIC 30.616500
+CA510 TIC 28.796300
+CA510 TIC 43.311600
+CA510 TIC 30.223000
+CA510 TIC 47.340900
+CA510 TIC 28.979500
+CA510 TIC 32.207200
+CA510 TIC 29.967000
+CA510 TIC 31.718100
+CA510 TIC 29.666200
+CA510 TIC 35.776600
+CA510 TIC 31.236300
+CA510 TIC 31.044800
+CA510 TIC 32.435100
+CA510 TIC 49.215700
+CA510 TIC 29.589800
+CA510 TIC 31.977500
+CA510 TIC 33.392100
+CA510 TIC 32.701100
+CA510 TIC 44.394200
+CA510 TIC 29.914200
+CA510 TIC 29.989000
+CA510 TIC 30.596400
+CA510 TIC 29.856200
+CA510 TIC 48.968900
+CA510 TIC 31.508000
+CA510 TIC 31.907000
+CA510 TIC 29.470800
+CA510 TIC 29.566900
+CA510 TIC 28.695000
+CA510 TIC 33.454600
+CA510 TIC 29.614100
+CA510 TIC 30.491500
+CA510 TIC 30.097800
+CA510 TIC 47.611000
+CA510 TIC 31.554200
+CA510 TIC 42.656200
+CA510 TIC 31.968500
+CA510 TIC 32.316200
+CA510 TIC 30.430300
+CA510 TIC 30.543600
+CA510 TIC 30.448100
+CA510 TIC 31.030500
+CA510 TIC 29.210400
+CA510 TIC 48.231500
+CA510 TIC 29.472600
+CA510 TIC 30.169000
+CA510 TIC 32.034500
+CA510 TIC 30.332300
+CA510 TIC 29.311900
+CA510 TIC 31.147000
+CA510 TIC 29.312400
+CA510 TIC 30.618000
+CA510 TIC 41.018400
+CA510 TIC 48.557100
+CA510 TIC 30.700200
+CA510 TIC 30.798100
+CA510 TIC 29.668400
+CA510 TIC 30.793200
+CA510 TIC 30.011200
+CA510 TIC 31.686600
+CA510 TIC 29.025800
+CA510 TIC 31.101500
+CA510 TIC 29.386000
+CA510 TIC 52.148900
+CA510 TIC 30.312300
+CA510 TIC 30.882000
+CA510 TIC 31.030900
+CA510 TIC 31.648700
+CA510 TIC 30.779500
+CA510 TIC 44.692400
+CA510 TIC 30.076000
+CA510 TIC 30.739300
+CA510 TIC 27.046600
+CA510 TIC 49.360800
+CA510 TIC 29.338900
+CA510 TIC 29.947400
+CA510 TIC 30.127800
+CA510 TIC 30.858100
+CA510 TIC 29.664200
+CA510 TIC 30.599800
+CA510 TIC 31.709200
+CA510 TIC 28.173700
+CA510 TIC 26.970100
+CA510 TIC 50.937800
+CA510 TIC 31.793700
+CA510 TIC 30.901700
+CA510 TIC 35.484600
+CA510 TIC 29.044000
+CA510 TIC 27.261600
+CA510 TIC 29.051100
+CA510 TIC 26.939300
+CA510 TIC 28.427100
+CA510 TIC 27.136000
+CA510 TIC 44.721500
+CA510 TIC 27.690200
+CA510 TIC 28.980900
+CA510 TIC 26.908600
+CA510 TIC 31.734600
+CA510 TIC 27.859500
+CA510 TIC 33.441800
+CA510 TIC 29.981300
+CA510 TIC 28.681400
+CA510 TIC 28.898400
+CA510 TIC 56.151000
+CA510 TIC 28.424700
+CA510 TIC 29.842700
+CA510 TIC 27.221700
+CA510 TIC 27.647900
+CA510 TIC 27.064200
+CA510 TIC 27.768200
+CA510 TIC 26.799800
+CA510 TIC 27.891200
+CA510 TIC 27.410100
+CA510 TIC 45.211100
+CA510 TIC 31.837900
+CA510 TIC 28.497400
+CA510 TIC 26.386000
+CA510 TIC 29.385100
+CA510 TIC 27.490300
+CA510 TIC 28.003900
+CA510 TIC 34.779500
+CA510 TIC 29.585300
+CA510 TIC 27.704000
+CA510 TIC 45.429600
+CA510 TIC 29.607400
+CA510 TIC 28.740200
+CA510 TIC 27.608700
+CA510 TIC 28.629900
+CA510 TIC 27.955400
+CA510 TIC 29.906100
+CA510 TIC 27.766000
+CA510 TIC 33.301100
+CA510 TIC 29.063200
+CA510 TIC 45.751600
+CA510 TIC 27.807800
+CA510 TIC 28.513000
+CA510 TIC 25.951100
+CA510 TIC 36.085900
+CA510 TIC 27.996100
+CA510 TIC 28.412500
+CA510 TIC 27.785800
+CA510 TIC 30.727000
+CA510 TIC 27.034500
+CA510 TIC 45.138300
+CA510 TIC 26.491300
+CA510 TIC 27.798200
+CA510 TIC 27.160900
+CA510 TIC 28.702000
+CA510 TIC 29.974200
+CA510 TIC 29.450200
+CA510 TIC 28.992800
+CA510 TIC 29.189500
+CA510 TIC 27.387700
+CA510 TIC 44.850400
+CA510 TIC 34.688300
+CA510 TIC 29.742100
+CA510 TIC 27.922300
+CA510 TIC 30.789200
+CA510 TIC 29.540400
+CA510 TIC 31.065900
+CA510 TIC 27.794100
+CA510 TIC 29.019800
+CA510 TIC 26.949800
+CA510 TIC 48.433600
+CA510 TIC 28.463900
+CA510 TIC 32.639100
+CA510 TIC 29.941000
+CA510 TIC 32.899800
+CA510 TIC 27.858600
+CA510 TIC 29.311600
+CA510 TIC 27.569800
+CA510 TIC 35.389800
+CA510 TIC 28.150600
+CA510 TIC 49.688100
+CA510 TIC 30.185700
+CA510 TIC 31.330600
+CA510 TIC 31.082300
+CA510 TIC 31.558800
+CA510 TIC 28.879800
+CA510 TIC 31.311100
+CA510 TIC 29.729000
+CA510 TIC 30.609100
+CA510 TIC 34.976900
+CA510 TIC 48.994700
+CA510 TIC 29.438800
+CA510 TIC 30.525000
+CA510 TIC 29.511300
+CA510 TIC 30.300100
+CA510 TIC 43.430000
+CA510 TIC 31.729700
+CA510 TIC 29.549300
+CA510 TIC 31.993600
+CA510 TIC 29.634000
+CA510 TIC 48.198800
+CA510 TIC 32.113800
+CA510 TIC 30.628200
+CA510 TIC 29.746300
+CA510 TIC 31.296600
+CA510 TIC 30.040300
+CA510 TIC 34.439000
+CA510 TIC 29.513200
+CA510 TIC 31.455400
+CA510 TIC 29.764800
+CA510 TIC 47.418200
+CA510 TIC 28.915900
+CA510 TIC 42.925300
+CA510 TIC 30.107700
+CA510 TIC 30.053700
+CA510 TIC 29.930000
+CA510 TIC 33.153600
+CA510 TIC 29.838900
+CA510 TIC 31.630300
+CA510 TIC 32.732700
+CA510 TIC 48.440400
+CA510 TIC 29.822800
+CA510 TIC 31.926000
+CA510 TIC 34.779300
+CA510 TIC 32.304300
+CA510 TIC 29.540700
+CA510 TIC 30.685300
+CA510 TIC 28.218600
+CA510 TIC 29.782000
+CA510 TIC 39.692900
+CA510 TIC 47.317700
+CA510 TIC 31.298100
+CA510 TIC 31.161300
+CA510 TIC 28.449200
+CA510 TIC 30.169400
+CA510 TIC 29.893800
+CA510 TIC 31.132800
+CA510 TIC 29.174600
+CA510 TIC 31.739200
+CA510 TIC 28.776300
+CA510 TIC 51.619700
+CA510 TIC 31.991600
+CA510 TIC 31.681600
+CA510 TIC 28.490600
+CA510 TIC 31.630900
+CA510 TIC 29.234300
+CA510 TIC 42.593800
+CA510 TIC 29.521200
+CA510 TIC 30.951600
+CA510 TIC 31.577000
+CA510 TIC 48.648400
+CA510 TIC 29.394400
+CA510 TIC 30.188100
+CA510 TIC 31.589900
+CA510 TIC 31.490000
+CA510 TIC 29.753800
+CA510 TIC 31.058600
+CA510 TIC 32.906900
+CA510 TIC 30.915300
+CA510 TIC 29.493500
+CA510 TIC 47.093200
+CA510 TIC 30.297800
+CA510 TIC 31.371800
+CA510 TIC 39.588100
+CA510 TIC 31.338400
+CA510 TIC 30.898100
+CA510 TIC 35.918200
+CA510 TIC 32.875900
+CA510 TIC 32.077000
+CA510 TIC 32.613200
+CA510 TIC 50.995700
+CA510 TIC 31.183800
+CA510 TIC 32.415400
+CA510 TIC 30.559900
+CA510 TIC 33.055400
+CA510 TIC 29.533200
+CA510 TIC 35.973700
+CA510 TIC 33.036300
+CA510 TIC 30.562700
+CA510 TIC 29.801300
+CA510 TIC 64.190500
+CA510 TIC 30.130100
+CA510 TIC 29.556900
+CA510 TIC 28.610700
+CA510 TIC 31.891000
+CA510 TIC 29.442200
+CA510 TIC 30.361900
+CA510 TIC 29.023700
+CA510 TIC 30.955200
+CA510 TIC 28.031000
+CA510 TIC 46.029500
+CA510 TIC 29.687700
+CA510 TIC 29.271400
+CA510 TIC 26.571700
+CA510 TIC 28.765600
+CA510 TIC 27.198000
+CA510 TIC 28.361800
+CA510 TIC 34.177100
+CA510 TIC 29.525900
+CA510 TIC 26.568400
+CA510 TIC 44.565700
+CA510 TIC 26.484000
+CA510 TIC 27.514200
+CA510 TIC 26.232400
+CA510 TIC 29.511200
+CA510 TIC 26.946200
+CA510 TIC 27.868700
+CA510 TIC 26.136500
+CA510 TIC 31.535600
+CA510 TIC 26.390100
+CA510 TIC 44.660800
+CA510 TIC 30.420700
+CA510 TIC 29.362800
+CA510 TIC 26.686700
+CA510 TIC 36.285300
+CA510 TIC 27.274400
+CA510 TIC 28.179700
+CA510 TIC 26.296500
+CA510 TIC 28.692400
+CA510 TIC 27.248300
+CA510 TIC 45.288100
+CA510 TIC 27.301500
+CA510 TIC 27.823200
+CA510 TIC 26.574800
+CA510 TIC 27.505800
+CA510 TIC 30.475200
+CA510 TIC 29.082800
+CA510 TIC 26.411800
+CA510 TIC 27.764300
+CA510 TIC 28.295800
+CA510 TIC 48.341800
+CA510 TIC 34.423800
+CA510 TIC 28.833200
+CA510 TIC 27.864200
+CA510 TIC 28.477000
+CA510 TIC 26.634800
+CA510 TIC 32.017000
+CA510 TIC 28.525300
+CA510 TIC 28.266200
+CA510 TIC 26.605800
+CA510 TIC 48.905500
+CA510 TIC 28.179100
+CA510 TIC 30.182200
+CA510 TIC 27.842700
+CA510 TIC 30.197900
+CA510 TIC 28.729200
+CA510 TIC 28.618900
+CA510 TIC 27.889400
+CA510 TIC 36.881200
+CA510 TIC 27.388400
+CA510 TIC 45.938300
+CA510 TIC 27.986800
+CA510 TIC 28.200300
+CA510 TIC 27.384500
+CA510 TIC 28.543900
+CA510 TIC 27.636500
+CA510 TIC 30.130000
+CA510 TIC 27.273700
+CA510 TIC 30.610400
+CA510 TIC 30.543500
+CA510 TIC 45.576300
+CA510 TIC 28.250500
+CA510 TIC 28.735700
+CA510 TIC 26.426600
+CA510 TIC 29.384600
+CA510 TIC 35.554600
+CA510 TIC 28.265900
+CA510 TIC 29.795100
+CA510 TIC 29.752600
+CA510 TIC 27.975700
+CA510 TIC 44.958400
+CA510 TIC 27.921800
+CA510 TIC 29.120900
+CA510 TIC 27.840600
+CA510 TIC 28.388600
+CA510 TIC 28.388400
+CA510 TIC 32.028200
+CA510 TIC 27.811000
+CA510 TIC 29.556700
+CA510 TIC 28.036300
+CA510 TIC 47.409500
+CA510 TIC 29.962300
+CA510 TIC 42.695200
+CA510 TIC 29.176700
+CA510 TIC 30.211600
+CA510 TIC 29.854600
+CA510 TIC 31.059600
+CA510 TIC 28.832200
+CA510 TIC 30.890500
+CA510 TIC 30.547700
+CA510 TIC 47.993300
+CA510 TIC 30.485300
+CA510 TIC 31.544700
+CA510 TIC 32.160600
+CA510 TIC 30.406000
+CA510 TIC 29.994500
+CA510 TIC 30.735400
+CA510 TIC 29.127300
+CA510 TIC 30.326100
+CA510 TIC 41.095000
+CA510 TIC 47.740500
+CA510 TIC 30.243600
+CA510 TIC 31.335600
+CA510 TIC 29.525800
+CA510 TIC 30.488900
+CA510 TIC 30.337400
+CA510 TIC 30.563700
+CA510 TIC 29.414700
+CA510 TIC 32.488200
+CA510 TIC 30.500000
+CA510 TIC 50.164300
+CA510 TIC 30.775100
+CA510 TIC 31.681300
+CA510 TIC 31.152100
+CA510 TIC 30.139200
+CA510 TIC 30.378300
+CA510 TIC 47.200700
+CA510 TIC 30.139100
+CA510 TIC 31.522600
+CA510 TIC 29.854100
+CA510 TIC 48.163000
+CA510 TIC 34.911400
+CA510 TIC 32.805900
+CA510 TIC 28.332300
+CA510 TIC 31.059000
+CA510 TIC 29.137400
+CA510 TIC 28.697300
+CA510 TIC 31.630400
+CA510 TIC 35.428900
+CA510 TIC 32.973900
+CA510 TIC 49.279900
+CA510 TIC 32.237800
+CA510 TIC 31.582000
+CA510 TIC 39.774400
+CA510 TIC 31.590900
+CA510 TIC 29.283700
+CA510 TIC 30.538800
+CA510 TIC 28.936400
+CA510 TIC 32.067200
+CA510 TIC 28.800600
+CA510 TIC 47.101700
+CA510 TIC 30.249300
+CA510 TIC 28.714400
+CA510 TIC 28.997800
+CA510 TIC 34.155700
+CA510 TIC 29.040800
+CA510 TIC 32.026300
+CA510 TIC 29.505500
+CA510 TIC 31.393300
+CA510 TIC 29.297800
+CA510 TIC 57.296400
+CA510 TIC 31.108300
+CA510 TIC 29.930200
+CA510 TIC 29.031100
+CA510 TIC 30.789800
+CA510 TIC 28.841000
+CA510 TIC 30.151100
+CA510 TIC 29.332400
+CA510 TIC 29.992800
+CA510 TIC 29.377300
+CA510 TIC 47.195000
+CA510 TIC 33.863600
+CA510 TIC 30.251600
+CA510 TIC 29.333300
+CA510 TIC 31.757900
+CA510 TIC 29.261200
+CA510 TIC 29.434500
+CA510 TIC 39.897200
+CA510 TIC 32.137500
+CA510 TIC 31.318500
+CA510 TIC 48.441800
+CA510 TIC 30.250200
+CA510 TIC 31.464300
+CA510 TIC 29.945300
+CA510 TIC 31.613700
+CA510 TIC 30.171700
+CA510 TIC 32.661700
+CA510 TIC 31.434000
+CA510 TIC 32.838400
+CA510 TIC 29.733400
+CA510 TIC 47.935900
+CA510 TIC 29.453700
+CA510 TIC 31.650400
+CA510 TIC 29.198500
+CA510 TIC 41.651700
+CA510 TIC 32.888800
+CA510 TIC 32.367800
+CA510 TIC 29.386500
+CA510 TIC 29.410700
+CA510 TIC 26.499000
+CA510 TIC 45.663500
+CA510 TIC 26.976400
+CA510 TIC 28.601400
+CA510 TIC 26.190500
+CA510 TIC 28.050800
+CA510 TIC 29.883800
+CA510 TIC 28.166000
+CA510 TIC 26.194100
+CA510 TIC 29.007500
+CA510 TIC 27.385900
+CA510 TIC 45.744800
+CA510 TIC 36.780000
+CA510 TIC 28.810000
+CA510 TIC 26.503800
+CA510 TIC 27.693900
+CA510 TIC 27.716800
+CA510 TIC 27.632000
+CA510 TIC 26.140600
+CA510 TIC 27.476600
+CA510 TIC 27.604300
+CA510 TIC 44.596000
+CA510 TIC 26.707300
+CA510 TIC 31.943600
+CA510 TIC 27.637500
+CA510 TIC 27.918500
+CA510 RESULT normal campaign window complete
+CA842 REGION tic=3599 metric=0 total=0.040000 maximum=0.000200 calls=1589
+CA842 REGION tic=3599 metric=1 total=0.275300 maximum=0.000600 calls=1589
+CA842 REGION tic=3599 metric=2 total=0.142300 maximum=0.000800 calls=1589
+CA842 REGION tic=3599 metric=3 total=0.794500 maximum=0.003000 calls=1589
+CA842 REGION tic=3599 metric=4 total=0.133000 maximum=0.000500 calls=1589
+CA842 REGION tic=3599 metric=5 total=0.539800 maximum=0.004200 calls=1589
+CA842 REGION tic=3599 metric=6 total=0.643000 maximum=0.003000 calls=1589
+CA842 REGION tic=3599 metric=7 total=3.726100 maximum=0.041300 calls=1589
+CA842 REGION tic=3599 metric=8 total=2.743700 maximum=0.086700 calls=1589
+CA842 REGION tic=3599 metric=9 total=0.104400 maximum=0.000400 calls=1589
+CA842 REGION tic=3599 metric=10 total=0.634700 maximum=0.001500 calls=1589
+CA842 REGION tic=3599 metric=11 total=0.805100 maximum=0.002100 calls=1589
+CA842 REGION tic=3599 metric=12 total=0.306800 maximum=0.001100 calls=1589
+CA842 REGION tic=3599 metric=13 total=0.496800 maximum=0.003500 calls=1589
+CA842 REGION tic=3599 metric=14 total=0.158300 maximum=0.000200 calls=1589
+CA842 REGION tic=3599 metric=15 total=0.101600 maximum=0.000500 calls=1589
+CA842 REGION tic=3599 metric=16 total=0.332400 maximum=0.000700 calls=1589
+CA842 REGION tic=3599 metric=17 total=0.971000 maximum=0.001400 calls=1589
+CA842 REGION tic=3599 metric=18 total=0.143300 maximum=0.000500 calls=1589
+CA842 REGION tic=3599 metric=19 total=2.053400 maximum=0.003700 calls=1589
+CA842 REGION tic=3599 metric=20 total=0.900300 maximum=0.003000 calls=1589
+CA842 REGION tic=3599 metric=21 total=0.062800 maximum=0.000100 calls=1589
+CA842 REGION tic=3599 metric=22 total=0.157000 maximum=0.002600 calls=1589
+CA842 REGION tic=3599 metric=23 total=0.117600 maximum=0.000400 calls=1589
+CA842 REGION tic=3616 metric=0 total=0.040800 maximum=0.000100 calls=1589
+CA842 REGION tic=3616 metric=1 total=0.269400 maximum=0.000600 calls=1589
+CA842 REGION tic=3616 metric=2 total=0.141000 maximum=0.000600 calls=1589
+CA842 REGION tic=3616 metric=3 total=0.780500 maximum=0.002700 calls=1589
+CA842 REGION tic=3616 metric=4 total=0.129300 maximum=0.000500 calls=1589
+CA842 REGION tic=3616 metric=5 total=0.538600 maximum=0.007100 calls=1589
+CA842 REGION tic=3616 metric=6 total=0.627800 maximum=0.001100 calls=1589
+CA842 REGION tic=3616 metric=7 total=5.685600 maximum=0.326300 calls=1589
+CA842 REGION tic=3616 metric=8 total=2.905500 maximum=0.109700 calls=1589
+CA842 REGION tic=3616 metric=9 total=0.118900 maximum=0.011500 calls=1589
+CA842 REGION tic=3616 metric=10 total=0.674900 maximum=0.001100 calls=1589
+CA842 REGION tic=3616 metric=11 total=0.840700 maximum=0.003800 calls=1589
+CA842 REGION tic=3616 metric=12 total=0.311300 maximum=0.000900 calls=1589
+CA842 REGION tic=3616 metric=13 total=0.493800 maximum=0.001200 calls=1589
+CA842 REGION tic=3616 metric=14 total=0.159300 maximum=0.000200 calls=1589
+CA842 REGION tic=3616 metric=15 total=0.089100 maximum=0.000400 calls=1589
+CA842 REGION tic=3616 metric=16 total=0.320900 maximum=0.005000 calls=1589
+CA842 REGION tic=3616 metric=17 total=1.010900 maximum=0.012700 calls=1589
+CA842 REGION tic=3616 metric=18 total=0.168100 maximum=0.026300 calls=1589
+CA842 REGION tic=3616 metric=19 total=2.008400 maximum=0.003800 calls=1589
+CA842 REGION tic=3616 metric=20 total=1.105100 maximum=0.211500 calls=1589
+CA842 REGION tic=3616 metric=21 total=0.060400 maximum=0.000100 calls=1589
+CA842 REGION tic=3616 metric=22 total=0.146300 maximum=0.000500 calls=1589
+CA842 REGION tic=3616 metric=23 total=0.129400 maximum=0.000400 calls=1589
+CA842 REGION tic=3633 metric=0 total=0.043800 maximum=0.000300 calls=1589
+CA842 REGION tic=3633 metric=1 total=0.293900 maximum=0.000600 calls=1589
+CA842 REGION tic=3633 metric=2 total=0.151400 maximum=0.000900 calls=1589
+CA842 REGION tic=3633 metric=3 total=0.788700 maximum=0.002900 calls=1589
+CA842 REGION tic=3633 metric=4 total=0.135100 maximum=0.000500 calls=1589
+CA842 REGION tic=3633 metric=5 total=0.547600 maximum=0.013300 calls=1589
+CA842 REGION tic=3633 metric=6 total=0.643100 maximum=0.004500 calls=1589
+CA842 REGION tic=3633 metric=7 total=3.925300 maximum=0.047300 calls=1589
+CA842 REGION tic=3633 metric=8 total=3.138100 maximum=0.085100 calls=1589
+CA842 REGION tic=3633 metric=9 total=0.100800 maximum=0.000400 calls=1589
+CA842 REGION tic=3633 metric=10 total=0.639900 maximum=0.001300 calls=1589
+CA842 REGION tic=3633 metric=11 total=0.826100 maximum=0.003200 calls=1589
+CA842 REGION tic=3633 metric=12 total=0.311000 maximum=0.001100 calls=1589
+CA842 REGION tic=3633 metric=13 total=0.494100 maximum=0.001600 calls=1589
+CA842 REGION tic=3633 metric=14 total=0.158300 maximum=0.000200 calls=1589
+CA842 REGION tic=3633 metric=15 total=0.109500 maximum=0.000500 calls=1589
+CA842 REGION tic=3633 metric=16 total=0.365300 maximum=0.002900 calls=1589
+CA842 REGION tic=3633 metric=17 total=0.978900 maximum=0.001600 calls=1589
+CA842 REGION tic=3633 metric=18 total=0.150400 maximum=0.000500 calls=1589
+CA842 REGION tic=3633 metric=19 total=2.097700 maximum=0.004000 calls=1589
+CA842 REGION tic=3633 metric=20 total=0.926700 maximum=0.003800 calls=1589
+CA842 REGION tic=3633 metric=21 total=0.061600 maximum=0.000100 calls=1589
+CA842 REGION tic=3633 metric=22 total=0.175000 maximum=0.000600 calls=1589
+CA842 REGION tic=3633 metric=23 total=0.119600 maximum=0.000400 calls=1589
+CA842 REGION tic=3650 metric=0 total=0.041300 maximum=0.000300 calls=1589
+CA842 REGION tic=3650 metric=1 total=0.280700 maximum=0.000900 calls=1589
+CA842 REGION tic=3650 metric=2 total=0.138300 maximum=0.000800 calls=1589
+CA842 REGION tic=3650 metric=3 total=0.796300 maximum=0.001100 calls=1589
+CA842 REGION tic=3650 metric=4 total=0.134100 maximum=0.000500 calls=1589
+CA842 REGION tic=3650 metric=5 total=0.548900 maximum=0.006800 calls=1589
+CA842 REGION tic=3650 metric=6 total=0.635200 maximum=0.000900 calls=1589
+CA842 REGION tic=3650 metric=7 total=5.300400 maximum=0.323800 calls=1589
+CA842 REGION tic=3650 metric=8 total=3.029300 maximum=0.131100 calls=1589
+CA842 REGION tic=3650 metric=9 total=0.103200 maximum=0.000400 calls=1589
+CA842 REGION tic=3650 metric=10 total=0.699200 maximum=0.037600 calls=1589
+CA842 REGION tic=3650 metric=11 total=0.843900 maximum=0.002100 calls=1589
+CA842 REGION tic=3650 metric=12 total=0.310900 maximum=0.001000 calls=1589
+CA842 REGION tic=3650 metric=13 total=0.493500 maximum=0.001500 calls=1589
+CA842 REGION tic=3650 metric=14 total=0.159100 maximum=0.000200 calls=1589
+CA842 REGION tic=3650 metric=15 total=0.096200 maximum=0.000500 calls=1589
+CA842 REGION tic=3650 metric=16 total=0.298900 maximum=0.000700 calls=1589
+CA842 REGION tic=3650 metric=17 total=0.999400 maximum=0.001600 calls=1589
+CA842 REGION tic=3650 metric=18 total=0.141100 maximum=0.000400 calls=1589
+CA842 REGION tic=3650 metric=19 total=2.054900 maximum=0.006900 calls=1589
+CA842 REGION tic=3650 metric=20 total=0.899800 maximum=0.004300 calls=1589
+CA842 REGION tic=3650 metric=21 total=0.059400 maximum=0.000100 calls=1589
+CA842 REGION tic=3650 metric=22 total=0.162500 maximum=0.000500 calls=1589
+CA842 REGION tic=3650 metric=23 total=0.125000 maximum=0.000400 calls=1589
+CA842 REGION tic=3667 metric=0 total=0.044100 maximum=0.000400 calls=1589
+CA842 REGION tic=3667 metric=1 total=0.272100 maximum=0.000600 calls=1589
+CA842 REGION tic=3667 metric=2 total=0.141200 maximum=0.000600 calls=1589
+CA842 REGION tic=3667 metric=3 total=0.783100 maximum=0.003500 calls=1589
+CA842 REGION tic=3667 metric=4 total=0.127400 maximum=0.000500 calls=1589
+CA842 REGION tic=3667 metric=5 total=0.533600 maximum=0.005400 calls=1589
+CA842 REGION tic=3667 metric=6 total=0.633200 maximum=0.001000 calls=1589
+CA842 REGION tic=3667 metric=7 total=3.799100 maximum=0.049900 calls=1589
+CA842 REGION tic=3667 metric=8 total=2.734300 maximum=0.079800 calls=1589
+CA842 REGION tic=3667 metric=9 total=0.097700 maximum=0.000400 calls=1589
+CA842 REGION tic=3667 metric=10 total=0.620700 maximum=0.001000 calls=1589
+CA842 REGION tic=3667 metric=11 total=0.808100 maximum=0.002000 calls=1589
+CA842 REGION tic=3667 metric=12 total=0.309500 maximum=0.001000 calls=1589
+CA842 REGION tic=3667 metric=13 total=0.490000 maximum=0.001600 calls=1589
+CA842 REGION tic=3667 metric=14 total=0.160400 maximum=0.000200 calls=1589
+CA842 REGION tic=3667 metric=15 total=0.095800 maximum=0.000500 calls=1589
+CA842 REGION tic=3667 metric=16 total=0.349400 maximum=0.000700 calls=1589
+CA842 REGION tic=3667 metric=17 total=0.969100 maximum=0.001400 calls=1589
+CA842 REGION tic=3667 metric=18 total=0.137500 maximum=0.000500 calls=1589
+CA842 REGION tic=3667 metric=19 total=2.023300 maximum=0.004600 calls=1589
+CA842 REGION tic=3667 metric=20 total=0.886100 maximum=0.003400 calls=1589
+CA842 REGION tic=3667 metric=21 total=0.062800 maximum=0.000100 calls=1589
+CA842 REGION tic=3667 metric=22 total=0.159700 maximum=0.000600 calls=1589
+CA842 REGION tic=3667 metric=23 total=0.123000 maximum=0.000400 calls=1589
+CA842 REGION tic=3684 metric=0 total=0.045900 maximum=0.000300 calls=1589
+CA842 REGION tic=3684 metric=1 total=0.269300 maximum=0.000600 calls=1589
+CA842 REGION tic=3684 metric=2 total=0.148300 maximum=0.000700 calls=1589
+CA842 REGION tic=3684 metric=3 total=0.817200 maximum=0.001000 calls=1589
+CA842 REGION tic=3684 metric=4 total=0.128900 maximum=0.000500 calls=1589
+CA842 REGION tic=3684 metric=5 total=0.602600 maximum=0.005400 calls=1589
+CA842 REGION tic=3684 metric=6 total=0.698200 maximum=0.000900 calls=1589
+CA842 REGION tic=3684 metric=7 total=21.716500 maximum=0.357200 calls=1589
+CA842 REGION tic=3684 metric=8 total=2.957300 maximum=0.111000 calls=1589
+CA842 REGION tic=3684 metric=9 total=0.108800 maximum=0.000200 calls=1589
+CA842 REGION tic=3684 metric=10 total=0.716200 maximum=0.001100 calls=1589
+CA842 REGION tic=3684 metric=11 total=0.896400 maximum=0.001800 calls=1589
+CA842 REGION tic=3684 metric=12 total=0.361500 maximum=0.002900 calls=1589
+CA842 REGION tic=3684 metric=13 total=0.568900 maximum=0.002700 calls=1589
+CA842 REGION tic=3684 metric=14 total=0.157400 maximum=0.000200 calls=1589
+CA842 REGION tic=3684 metric=15 total=0.089900 maximum=0.000500 calls=1589
+CA842 REGION tic=3684 metric=16 total=0.272600 maximum=0.002900 calls=1589
+CA842 REGION tic=3684 metric=17 total=1.106400 maximum=0.003600 calls=1589
+CA842 REGION tic=3684 metric=18 total=0.138300 maximum=0.000500 calls=1589
+CA842 REGION tic=3684 metric=19 total=2.079100 maximum=0.004100 calls=1589
+CA842 REGION tic=3684 metric=20 total=0.963000 maximum=0.004400 calls=1589
+CA842 REGION tic=3684 metric=21 total=0.059800 maximum=0.000200 calls=1589
+CA842 REGION tic=3684 metric=22 total=0.148800 maximum=0.000600 calls=1589
+CA842 REGION tic=3684 metric=23 total=0.347600 maximum=0.001200 calls=1589
+CA842 REGION tic=3701 metric=0 total=0.041800 maximum=0.000300 calls=1589
+CA842 REGION tic=3701 metric=1 total=0.273800 maximum=0.000600 calls=1589
+CA842 REGION tic=3701 metric=2 total=0.135300 maximum=0.000500 calls=1589
+CA842 REGION tic=3701 metric=3 total=0.775300 maximum=0.003400 calls=1589
+CA842 REGION tic=3701 metric=4 total=0.131700 maximum=0.000400 calls=1589
+CA842 REGION tic=3701 metric=5 total=0.534800 maximum=0.006500 calls=1589
+CA842 REGION tic=3701 metric=6 total=0.634200 maximum=0.001100 calls=1589
+CA842 REGION tic=3701 metric=7 total=3.868300 maximum=0.041700 calls=1589
+CA842 REGION tic=3701 metric=8 total=2.823500 maximum=0.066600 calls=1589
+CA842 REGION tic=3701 metric=9 total=0.103000 maximum=0.000400 calls=1589
+CA842 REGION tic=3701 metric=10 total=0.625100 maximum=0.003200 calls=1589
+CA842 REGION tic=3701 metric=11 total=0.807500 maximum=0.003900 calls=1589
+CA842 REGION tic=3701 metric=12 total=0.306200 maximum=0.000900 calls=1589
+CA842 REGION tic=3701 metric=13 total=0.487500 maximum=0.001000 calls=1589
+CA842 REGION tic=3701 metric=14 total=0.159100 maximum=0.002800 calls=1589
+CA842 REGION tic=3701 metric=15 total=0.096100 maximum=0.000500 calls=1589
+CA842 REGION tic=3701 metric=16 total=0.343700 maximum=0.002200 calls=1589
+CA842 REGION tic=3701 metric=17 total=0.975600 maximum=0.002300 calls=1589
+CA842 REGION tic=3701 metric=18 total=0.142300 maximum=0.003100 calls=1589
+CA842 REGION tic=3701 metric=19 total=2.014400 maximum=0.005500 calls=1589
+CA842 REGION tic=3701 metric=20 total=0.897600 maximum=0.004400 calls=1589
+CA842 REGION tic=3701 metric=21 total=0.062900 maximum=0.000100 calls=1589
+CA842 REGION tic=3701 metric=22 total=0.143400 maximum=0.000500 calls=1589
+CA842 REGION tic=3701 metric=23 total=0.120800 maximum=0.000400 calls=1589
+CA842 REGION tic=3718 metric=0 total=0.044400 maximum=0.000400 calls=1589
+CA842 REGION tic=3718 metric=1 total=0.325900 maximum=0.002900 calls=1589
+CA842 REGION tic=3718 metric=2 total=0.157100 maximum=0.001300 calls=1589
+CA842 REGION tic=3718 metric=3 total=0.807700 maximum=0.001200 calls=1589
+CA842 REGION tic=3718 metric=4 total=0.135600 maximum=0.000500 calls=1589
+CA842 REGION tic=3718 metric=5 total=0.586100 maximum=0.009900 calls=1589
+CA842 REGION tic=3718 metric=6 total=0.645900 maximum=0.001600 calls=1589
+CA842 REGION tic=3718 metric=7 total=5.869000 maximum=0.423100 calls=1589
+CA842 REGION tic=3718 metric=8 total=2.921700 maximum=0.092400 calls=1589
+CA842 REGION tic=3718 metric=9 total=0.099700 maximum=0.000400 calls=1589
+CA842 REGION tic=3718 metric=10 total=0.640400 maximum=0.002900 calls=1589
+CA842 REGION tic=3718 metric=11 total=0.831000 maximum=0.002100 calls=1589
+CA842 REGION tic=3718 metric=12 total=0.314400 maximum=0.001500 calls=1589
+CA842 REGION tic=3718 metric=13 total=0.503600 maximum=0.002000 calls=1589
+CA842 REGION tic=3718 metric=14 total=0.159900 maximum=0.000200 calls=1589
+CA842 REGION tic=3718 metric=15 total=0.103600 maximum=0.000900 calls=1589
+CA842 REGION tic=3718 metric=16 total=0.325400 maximum=0.000800 calls=1589
+CA842 REGION tic=3718 metric=17 total=1.037600 maximum=0.041700 calls=1589
+CA842 REGION tic=3718 metric=18 total=0.151200 maximum=0.000400 calls=1589
+CA842 REGION tic=3718 metric=19 total=2.150800 maximum=0.003900 calls=1589
+CA842 REGION tic=3718 metric=20 total=0.963800 maximum=0.005000 calls=1589
+CA842 REGION tic=3718 metric=21 total=0.063700 maximum=0.000100 calls=1589
+CA842 REGION tic=3718 metric=22 total=0.210900 maximum=0.000600 calls=1589
+CA842 REGION tic=3718 metric=23 total=0.119900 maximum=0.000400 calls=1589
+CA842 REGION tic=3735 metric=0 total=0.040600 maximum=0.000300 calls=1589
+CA842 REGION tic=3735 metric=1 total=0.338400 maximum=0.000700 calls=1589
+CA842 REGION tic=3735 metric=2 total=0.166200 maximum=0.001100 calls=1589
+CA842 REGION tic=3735 metric=3 total=0.810500 maximum=0.001900 calls=1589
+CA842 REGION tic=3735 metric=4 total=0.139800 maximum=0.000500 calls=1589
+CA842 REGION tic=3735 metric=5 total=0.575300 maximum=0.008900 calls=1589
+CA842 REGION tic=3735 metric=6 total=0.651100 maximum=0.001800 calls=1589
+CA842 REGION tic=3735 metric=7 total=4.084900 maximum=0.070500 calls=1589
+CA842 REGION tic=3735 metric=8 total=2.812600 maximum=0.084300 calls=1589
+CA842 REGION tic=3735 metric=9 total=0.103500 maximum=0.000500 calls=1589
+CA842 REGION tic=3735 metric=10 total=0.655200 maximum=0.002000 calls=1589
+CA842 REGION tic=3735 metric=11 total=0.850700 maximum=0.003100 calls=1589
+CA842 REGION tic=3735 metric=12 total=0.312900 maximum=0.001700 calls=1589
+CA842 REGION tic=3735 metric=13 total=0.507500 maximum=0.006800 calls=1589
+CA842 REGION tic=3735 metric=14 total=0.159300 maximum=0.000200 calls=1589
+CA842 REGION tic=3735 metric=15 total=0.117400 maximum=0.000600 calls=1589
+CA842 REGION tic=3735 metric=16 total=0.375600 maximum=0.002500 calls=1589
+CA842 REGION tic=3735 metric=17 total=1.010900 maximum=0.001800 calls=1589
+CA842 REGION tic=3735 metric=18 total=0.156600 maximum=0.000500 calls=1589
+CA842 REGION tic=3735 metric=19 total=2.199800 maximum=0.005900 calls=1589
+CA842 REGION tic=3735 metric=20 total=0.957200 maximum=0.006100 calls=1589
+CA842 REGION tic=3735 metric=21 total=0.060200 maximum=0.000100 calls=1589
+CA842 REGION tic=3735 metric=22 total=0.205700 maximum=0.000600 calls=1589
+CA842 REGION tic=3735 metric=23 total=0.124200 maximum=0.000400 calls=1589
+CA842 REGION tic=3752 metric=0 total=0.043900 maximum=0.000200 calls=1589
+CA842 REGION tic=3752 metric=1 total=0.272900 maximum=0.000600 calls=1589
+CA842 REGION tic=3752 metric=2 total=0.135700 maximum=0.000500 calls=1589
+CA842 REGION tic=3752 metric=3 total=0.781000 maximum=0.003000 calls=1589
+CA842 REGION tic=3752 metric=4 total=0.130400 maximum=0.000500 calls=1589
+CA842 REGION tic=3752 metric=5 total=0.587100 maximum=0.004500 calls=1589
+CA842 REGION tic=3752 metric=6 total=0.648600 maximum=0.001200 calls=1589
+CA842 REGION tic=3752 metric=7 total=5.833500 maximum=0.407000 calls=1589
+CA842 REGION tic=3752 metric=8 total=2.917700 maximum=0.136900 calls=1589
+CA842 REGION tic=3752 metric=9 total=0.105000 maximum=0.000400 calls=1589
+CA842 REGION tic=3752 metric=10 total=0.647000 maximum=0.002600 calls=1589
+CA842 REGION tic=3752 metric=11 total=0.848800 maximum=0.003000 calls=1589
+CA842 REGION tic=3752 metric=12 total=0.321600 maximum=0.001000 calls=1589
+CA842 REGION tic=3752 metric=13 total=0.522100 maximum=0.002200 calls=1589
+CA842 REGION tic=3752 metric=14 total=0.163600 maximum=0.000200 calls=1589
+CA842 REGION tic=3752 metric=15 total=0.095100 maximum=0.000400 calls=1589
+CA842 REGION tic=3752 metric=16 total=0.313400 maximum=0.000900 calls=1589
+CA842 REGION tic=3752 metric=17 total=0.986100 maximum=0.002400 calls=1589
+CA842 REGION tic=3752 metric=18 total=0.139000 maximum=0.000500 calls=1589
+CA842 REGION tic=3752 metric=19 total=2.025500 maximum=0.004500 calls=1589
+CA842 REGION tic=3752 metric=20 total=0.933000 maximum=0.004500 calls=1589
+CA842 REGION tic=3752 metric=21 total=0.059600 maximum=0.000200 calls=1589
+CA842 REGION tic=3752 metric=22 total=0.164800 maximum=0.000600 calls=1589
+CA842 REGION tic=3752 metric=23 total=0.134300 maximum=0.000600 calls=1589
+CA842 REGION tic=3769 metric=0 total=0.042700 maximum=0.000300 calls=1589
+CA842 REGION tic=3769 metric=1 total=0.272900 maximum=0.000600 calls=1589
+CA842 REGION tic=3769 metric=2 total=0.138400 maximum=0.000600 calls=1589
+CA842 REGION tic=3769 metric=3 total=0.767300 maximum=0.001100 calls=1589
+CA842 REGION tic=3769 metric=4 total=0.129600 maximum=0.000500 calls=1589
+CA842 REGION tic=3769 metric=5 total=0.529200 maximum=0.005200 calls=1589
+CA842 REGION tic=3769 metric=6 total=0.633700 maximum=0.003100 calls=1589
+CA842 REGION tic=3769 metric=7 total=3.988800 maximum=0.073900 calls=1589
+CA842 REGION tic=3769 metric=8 total=2.727100 maximum=0.064100 calls=1589
+CA842 REGION tic=3769 metric=9 total=0.100400 maximum=0.000300 calls=1589
+CA842 REGION tic=3769 metric=10 total=0.620200 maximum=0.001200 calls=1589
+CA842 REGION tic=3769 metric=11 total=0.807000 maximum=0.001700 calls=1589
+CA842 REGION tic=3769 metric=12 total=0.310400 maximum=0.001700 calls=1589
+CA842 REGION tic=3769 metric=13 total=0.494200 maximum=0.001700 calls=1589
+CA842 REGION tic=3769 metric=14 total=0.158200 maximum=0.000200 calls=1589
+CA842 REGION tic=3769 metric=15 total=0.094700 maximum=0.000500 calls=1589
+CA842 REGION tic=3769 metric=16 total=0.332400 maximum=0.001000 calls=1589
+CA842 REGION tic=3769 metric=17 total=0.965400 maximum=0.004700 calls=1589
+CA842 REGION tic=3769 metric=18 total=0.134800 maximum=0.000500 calls=1589
+CA842 REGION tic=3769 metric=19 total=1.980700 maximum=0.003800 calls=1589
+CA842 REGION tic=3769 metric=20 total=0.954200 maximum=0.064800 calls=1589
+CA842 REGION tic=3769 metric=21 total=0.060300 maximum=0.000100 calls=1589
+CA842 REGION tic=3769 metric=22 total=0.154300 maximum=0.000700 calls=1589
+CA842 REGION tic=3769 metric=23 total=0.122700 maximum=0.000400 calls=1589
+CA842 REGION tic=3786 metric=0 total=0.042900 maximum=0.000300 calls=1589
+CA842 REGION tic=3786 metric=1 total=0.276300 maximum=0.000600 calls=1589
+CA842 REGION tic=3786 metric=2 total=0.138200 maximum=0.000800 calls=1589
+CA842 REGION tic=3786 metric=3 total=0.788700 maximum=0.002200 calls=1589
+CA842 REGION tic=3786 metric=4 total=0.136400 maximum=0.000500 calls=1589
+CA842 REGION tic=3786 metric=5 total=0.531400 maximum=0.002900 calls=1589
+CA842 REGION tic=3786 metric=6 total=0.633300 maximum=0.002900 calls=1589
+CA842 REGION tic=3786 metric=7 total=5.392400 maximum=0.346500 calls=1589
+CA842 REGION tic=3786 metric=8 total=2.725300 maximum=0.091600 calls=1589
+CA842 REGION tic=3786 metric=9 total=0.099900 maximum=0.000400 calls=1589
+CA842 REGION tic=3786 metric=10 total=0.653600 maximum=0.001200 calls=1589
+CA842 REGION tic=3786 metric=11 total=0.843400 maximum=0.003100 calls=1589
+CA842 REGION tic=3786 metric=12 total=0.316600 maximum=0.003000 calls=1589
+CA842 REGION tic=3786 metric=13 total=0.494900 maximum=0.001300 calls=1589
+CA842 REGION tic=3786 metric=14 total=0.160300 maximum=0.000200 calls=1589
+CA842 REGION tic=3786 metric=15 total=0.093800 maximum=0.000400 calls=1589
+CA842 REGION tic=3786 metric=16 total=0.302100 maximum=0.000800 calls=1589
+CA842 REGION tic=3786 metric=17 total=0.993500 maximum=0.004300 calls=1589
+CA842 REGION tic=3786 metric=18 total=0.141900 maximum=0.000500 calls=1589
+CA842 REGION tic=3786 metric=19 total=2.021100 maximum=0.003900 calls=1589
+CA842 REGION tic=3786 metric=20 total=0.900900 maximum=0.005000 calls=1589
+CA842 REGION tic=3786 metric=21 total=0.061400 maximum=0.000100 calls=1589
+CA842 REGION tic=3786 metric=22 total=0.154700 maximum=0.000600 calls=1589
+CA842 REGION tic=3786 metric=23 total=0.123100 maximum=0.000400 calls=1589
+CA842 REGION tic=3803 metric=0 total=0.038900 maximum=0.002600 calls=1589
+CA842 REGION tic=3803 metric=1 total=0.285500 maximum=0.000800 calls=1589
+CA842 REGION tic=3803 metric=2 total=0.150500 maximum=0.002900 calls=1589
+CA842 REGION tic=3803 metric=3 total=0.787800 maximum=0.004800 calls=1589
+CA842 REGION tic=3803 metric=4 total=0.130700 maximum=0.000500 calls=1589
+CA842 REGION tic=3803 metric=5 total=0.559100 maximum=0.007600 calls=1589
+CA842 REGION tic=3803 metric=6 total=0.636100 maximum=0.000900 calls=1589
+CA842 REGION tic=3803 metric=7 total=3.833400 maximum=0.040300 calls=1589
+CA842 REGION tic=3803 metric=8 total=2.719800 maximum=0.095500 calls=1589
+CA842 REGION tic=3803 metric=9 total=0.098100 maximum=0.000300 calls=1589
+CA842 REGION tic=3803 metric=10 total=0.633800 maximum=0.001100 calls=1589
+CA842 REGION tic=3803 metric=11 total=0.814100 maximum=0.001800 calls=1589
+CA842 REGION tic=3803 metric=12 total=0.312300 maximum=0.000900 calls=1589
+CA842 REGION tic=3803 metric=13 total=0.496200 maximum=0.001600 calls=1589
+CA842 REGION tic=3803 metric=14 total=0.158700 maximum=0.000200 calls=1589
+CA842 REGION tic=3803 metric=15 total=0.098900 maximum=0.000500 calls=1589
+CA842 REGION tic=3803 metric=16 total=0.350400 maximum=0.002400 calls=1589
+CA842 REGION tic=3803 metric=17 total=0.986400 maximum=0.001300 calls=1589
+CA842 REGION tic=3803 metric=18 total=0.141300 maximum=0.000500 calls=1589
+CA842 REGION tic=3803 metric=19 total=2.020300 maximum=0.004900 calls=1589
+CA842 REGION tic=3803 metric=20 total=0.902200 maximum=0.004500 calls=1589
+CA842 REGION tic=3803 metric=21 total=0.057600 maximum=0.000100 calls=1589
+CA842 REGION tic=3803 metric=22 total=0.159100 maximum=0.000600 calls=1589
+CA842 REGION tic=3803 metric=23 total=0.117900 maximum=0.000400 calls=1589
+CA842 REGION tic=3820 metric=0 total=0.038900 maximum=0.000200 calls=1589
+CA842 REGION tic=3820 metric=1 total=0.273500 maximum=0.000600 calls=1589
+CA842 REGION tic=3820 metric=2 total=0.131600 maximum=0.000500 calls=1589
+CA842 REGION tic=3820 metric=3 total=0.774900 maximum=0.013000 calls=1589
+CA842 REGION tic=3820 metric=4 total=0.126900 maximum=0.000500 calls=1589
+CA842 REGION tic=3820 metric=5 total=0.535300 maximum=0.007300 calls=1589
+CA842 REGION tic=3820 metric=6 total=0.631500 maximum=0.003200 calls=1589
+CA842 REGION tic=3820 metric=7 total=5.511700 maximum=0.329700 calls=1589
+CA842 REGION tic=3820 metric=8 total=2.702200 maximum=0.079100 calls=1589
+CA842 REGION tic=3820 metric=9 total=0.101300 maximum=0.000200 calls=1589
+CA842 REGION tic=3820 metric=10 total=0.643600 maximum=0.027700 calls=1589
+CA842 REGION tic=3820 metric=11 total=0.813200 maximum=0.003200 calls=1589
+CA842 REGION tic=3820 metric=12 total=0.309900 maximum=0.000800 calls=1589
+CA842 REGION tic=3820 metric=13 total=0.494200 maximum=0.001500 calls=1589
+CA842 REGION tic=3820 metric=14 total=0.159200 maximum=0.000200 calls=1589
+CA842 REGION tic=3820 metric=15 total=0.091900 maximum=0.000400 calls=1589
+CA842 REGION tic=3820 metric=16 total=0.302600 maximum=0.000600 calls=1589
+CA842 REGION tic=3820 metric=17 total=0.970300 maximum=0.004400 calls=1589
+CA842 REGION tic=3820 metric=18 total=0.138100 maximum=0.000500 calls=1589
+CA842 REGION tic=3820 metric=19 total=2.002800 maximum=0.029100 calls=1589
+CA842 REGION tic=3820 metric=20 total=0.945300 maximum=0.051800 calls=1589
+CA842 REGION tic=3820 metric=21 total=0.058700 maximum=0.000100 calls=1589
+CA842 REGION tic=3820 metric=22 total=0.153900 maximum=0.000500 calls=1589
+CA842 REGION tic=3820 metric=23 total=0.128500 maximum=0.000400 calls=1589
+CA842 REGION tic=3837 metric=0 total=0.042000 maximum=0.000100 calls=1589
+CA842 REGION tic=3837 metric=1 total=0.277000 maximum=0.000900 calls=1589
+CA842 REGION tic=3837 metric=2 total=0.139200 maximum=0.000500 calls=1589
+CA842 REGION tic=3837 metric=3 total=0.803300 maximum=0.034500 calls=1589
+CA842 REGION tic=3837 metric=4 total=0.129800 maximum=0.000500 calls=1589
+CA842 REGION tic=3837 metric=5 total=0.552100 maximum=0.005600 calls=1589
+CA842 REGION tic=3837 metric=6 total=0.772400 maximum=0.143300 calls=1589
+CA842 REGION tic=3837 metric=7 total=3.846800 maximum=0.044100 calls=1589
+CA842 REGION tic=3837 metric=8 total=2.958800 maximum=0.083500 calls=1589
+CA842 REGION tic=3837 metric=9 total=0.100000 maximum=0.000300 calls=1589
+CA842 REGION tic=3837 metric=10 total=0.653900 maximum=0.002800 calls=1589
+CA842 REGION tic=3837 metric=11 total=0.837700 maximum=0.003500 calls=1589
+CA842 REGION tic=3837 metric=12 total=0.307000 maximum=0.001500 calls=1589
+CA842 REGION tic=3837 metric=13 total=0.487400 maximum=0.001200 calls=1589
+CA842 REGION tic=3837 metric=14 total=0.157800 maximum=0.000200 calls=1589
+CA842 REGION tic=3837 metric=15 total=0.099200 maximum=0.000500 calls=1589
+CA842 REGION tic=3837 metric=16 total=0.343100 maximum=0.011800 calls=1589
+CA842 REGION tic=3837 metric=17 total=0.983200 maximum=0.002800 calls=1589
+CA842 REGION tic=3837 metric=18 total=0.135500 maximum=0.000500 calls=1589
+CA842 REGION tic=3837 metric=19 total=2.009800 maximum=0.003900 calls=1589
+CA842 REGION tic=3837 metric=20 total=0.916200 maximum=0.031800 calls=1589
+CA842 REGION tic=3837 metric=21 total=0.062100 maximum=0.000100 calls=1589
+CA842 REGION tic=3837 metric=22 total=0.145000 maximum=0.000600 calls=1589
+CA842 REGION tic=3837 metric=23 total=0.119600 maximum=0.000500 calls=1589
+CA842 REGION tic=3854 metric=0 total=0.043100 maximum=0.000300 calls=1589
+CA842 REGION tic=3854 metric=1 total=0.300700 maximum=0.000600 calls=1589
+CA842 REGION tic=3854 metric=2 total=0.161600 maximum=0.001600 calls=1589
+CA842 REGION tic=3854 metric=3 total=0.840200 maximum=0.001800 calls=1589
+CA842 REGION tic=3854 metric=4 total=0.133000 maximum=0.000500 calls=1589
+CA842 REGION tic=3854 metric=5 total=0.589400 maximum=0.008200 calls=1589
+CA842 REGION tic=3854 metric=6 total=0.720800 maximum=0.001200 calls=1589
+CA842 REGION tic=3854 metric=7 total=21.690700 maximum=0.352400 calls=1589
+CA842 REGION tic=3854 metric=8 total=2.889000 maximum=0.091500 calls=1589
+CA842 REGION tic=3854 metric=9 total=0.111100 maximum=0.000400 calls=1589
+CA842 REGION tic=3854 metric=10 total=0.722900 maximum=0.003200 calls=1589
+CA842 REGION tic=3854 metric=11 total=0.907900 maximum=0.002400 calls=1589
+CA842 REGION tic=3854 metric=12 total=0.360300 maximum=0.001500 calls=1589
+CA842 REGION tic=3854 metric=13 total=0.573400 maximum=0.002100 calls=1589
+CA842 REGION tic=3854 metric=14 total=0.156900 maximum=0.000200 calls=1589
+CA842 REGION tic=3854 metric=15 total=0.094100 maximum=0.000600 calls=1589
+CA842 REGION tic=3854 metric=16 total=0.272800 maximum=0.000600 calls=1589
+CA842 REGION tic=3854 metric=17 total=1.129100 maximum=0.001700 calls=1589
+CA842 REGION tic=3854 metric=18 total=0.141600 maximum=0.000500 calls=1589
+CA842 REGION tic=3854 metric=19 total=2.118400 maximum=0.005500 calls=1589
+CA842 REGION tic=3854 metric=20 total=0.991000 maximum=0.007500 calls=1589
+CA842 REGION tic=3854 metric=21 total=0.055900 maximum=0.000100 calls=1589
+CA842 REGION tic=3854 metric=22 total=0.172900 maximum=0.000700 calls=1589
+CA842 REGION tic=3854 metric=23 total=0.339100 maximum=0.000400 calls=1589
+CA842 REGION tic=3871 metric=0 total=0.041900 maximum=0.000300 calls=1589
+CA842 REGION tic=3871 metric=1 total=0.318200 maximum=0.000700 calls=1589
+CA842 REGION tic=3871 metric=2 total=0.153700 maximum=0.000900 calls=1589
+CA842 REGION tic=3871 metric=3 total=0.804400 maximum=0.003000 calls=1589
+CA842 REGION tic=3871 metric=4 total=0.148800 maximum=0.012900 calls=1589
+CA842 REGION tic=3871 metric=5 total=0.569900 maximum=0.007700 calls=1589
+CA842 REGION tic=3871 metric=6 total=0.641600 maximum=0.002900 calls=1589
+CA842 REGION tic=3871 metric=7 total=4.087200 maximum=0.162500 calls=1589
+CA842 REGION tic=3871 metric=8 total=2.708800 maximum=0.080300 calls=1589
+CA842 REGION tic=3871 metric=9 total=0.099600 maximum=0.000300 calls=1589
+CA842 REGION tic=3871 metric=10 total=0.666700 maximum=0.001400 calls=1589
+CA842 REGION tic=3871 metric=11 total=0.847500 maximum=0.002600 calls=1589
+CA842 REGION tic=3871 metric=12 total=0.313200 maximum=0.001300 calls=1589
+CA842 REGION tic=3871 metric=13 total=0.497700 maximum=0.001800 calls=1589
+CA842 REGION tic=3871 metric=14 total=0.157400 maximum=0.000200 calls=1589
+CA842 REGION tic=3871 metric=15 total=0.109700 maximum=0.000500 calls=1589
+CA842 REGION tic=3871 metric=16 total=0.355500 maximum=0.000700 calls=1589
+CA842 REGION tic=3871 metric=17 total=1.032600 maximum=0.003300 calls=1589
+CA842 REGION tic=3871 metric=18 total=0.152500 maximum=0.000500 calls=1589
+CA842 REGION tic=3871 metric=19 total=2.138300 maximum=0.005000 calls=1589
+CA842 REGION tic=3871 metric=20 total=0.948100 maximum=0.013500 calls=1589
+CA842 REGION tic=3871 metric=21 total=0.060400 maximum=0.000100 calls=1589
+CA842 REGION tic=3871 metric=22 total=0.185800 maximum=0.000600 calls=1589
+CA842 REGION tic=3871 metric=23 total=0.120600 maximum=0.000500 calls=1589
+CA842 REGION tic=3888 metric=0 total=0.043200 maximum=0.000300 calls=1589
+CA842 REGION tic=3888 metric=1 total=0.280100 maximum=0.000600 calls=1589
+CA842 REGION tic=3888 metric=2 total=0.142200 maximum=0.000600 calls=1589
+CA842 REGION tic=3888 metric=3 total=0.794000 maximum=0.001000 calls=1589
+CA842 REGION tic=3888 metric=4 total=0.129700 maximum=0.000500 calls=1589
+CA842 REGION tic=3888 metric=5 total=0.557700 maximum=0.006600 calls=1589
+CA842 REGION tic=3888 metric=6 total=0.638900 maximum=0.001000 calls=1589
+CA842 REGION tic=3888 metric=7 total=5.695300 maximum=0.334700 calls=1589
+CA842 REGION tic=3888 metric=8 total=2.808600 maximum=0.073400 calls=1589
+CA842 REGION tic=3888 metric=9 total=0.100700 maximum=0.000200 calls=1589
+CA842 REGION tic=3888 metric=10 total=0.671100 maximum=0.001300 calls=1589
+CA842 REGION tic=3888 metric=11 total=0.847000 maximum=0.003700 calls=1589
+CA842 REGION tic=3888 metric=12 total=0.317200 maximum=0.001100 calls=1589
+CA842 REGION tic=3888 metric=13 total=0.501000 maximum=0.001600 calls=1589
+CA842 REGION tic=3888 metric=14 total=0.160700 maximum=0.000200 calls=1589
+CA842 REGION tic=3888 metric=15 total=0.094300 maximum=0.000400 calls=1589
+CA842 REGION tic=3888 metric=16 total=0.311400 maximum=0.000600 calls=1589
+CA842 REGION tic=3888 metric=17 total=1.002700 maximum=0.001300 calls=1589
+CA842 REGION tic=3888 metric=18 total=0.139900 maximum=0.000500 calls=1589
+CA842 REGION tic=3888 metric=19 total=2.034500 maximum=0.004000 calls=1589
+CA842 REGION tic=3888 metric=20 total=0.914700 maximum=0.004200 calls=1589
+CA842 REGION tic=3888 metric=21 total=0.064700 maximum=0.000100 calls=1589
+CA842 REGION tic=3888 metric=22 total=0.151500 maximum=0.000500 calls=1589
+CA842 REGION tic=3888 metric=23 total=0.127700 maximum=0.000400 calls=1589
+CA842 REGION tic=3905 metric=0 total=0.040000 maximum=0.000200 calls=1589
+CA842 REGION tic=3905 metric=1 total=0.318200 maximum=0.002800 calls=1589
+CA842 REGION tic=3905 metric=2 total=0.151000 maximum=0.000900 calls=1589
+CA842 REGION tic=3905 metric=3 total=0.813800 maximum=0.002700 calls=1589
+CA842 REGION tic=3905 metric=4 total=0.136800 maximum=0.000500 calls=1589
+CA842 REGION tic=3905 metric=5 total=0.590700 maximum=0.006500 calls=1589
+CA842 REGION tic=3905 metric=6 total=0.642700 maximum=0.000900 calls=1589
+CA842 REGION tic=3905 metric=7 total=4.115100 maximum=0.169700 calls=1589
+CA842 REGION tic=3905 metric=8 total=2.915800 maximum=0.081400 calls=1589
+CA842 REGION tic=3905 metric=9 total=0.103800 maximum=0.003600 calls=1589
+CA842 REGION tic=3905 metric=10 total=0.670400 maximum=0.001700 calls=1589
+CA842 REGION tic=3905 metric=11 total=0.859000 maximum=0.002300 calls=1589
+CA842 REGION tic=3905 metric=12 total=0.312800 maximum=0.001200 calls=1589
+CA842 REGION tic=3905 metric=13 total=0.500600 maximum=0.002800 calls=1589
+CA842 REGION tic=3905 metric=14 total=0.160400 maximum=0.000200 calls=1589
+CA842 REGION tic=3905 metric=15 total=0.104400 maximum=0.000400 calls=1589
+CA842 REGION tic=3905 metric=16 total=0.364300 maximum=0.002700 calls=1589
+CA842 REGION tic=3905 metric=17 total=1.026200 maximum=0.003300 calls=1589
+CA842 REGION tic=3905 metric=18 total=0.152100 maximum=0.000500 calls=1589
+CA842 REGION tic=3905 metric=19 total=2.120300 maximum=0.004000 calls=1589
+CA842 REGION tic=3905 metric=20 total=0.929900 maximum=0.005100 calls=1589
+CA842 REGION tic=3905 metric=21 total=0.060100 maximum=0.000100 calls=1589
+CA842 REGION tic=3905 metric=22 total=0.182400 maximum=0.000600 calls=1589
+CA842 REGION tic=3905 metric=23 total=0.119300 maximum=0.000500 calls=1589
+CA842 REGION tic=3922 metric=0 total=0.042500 maximum=0.000200 calls=1589
+CA842 REGION tic=3922 metric=1 total=0.297700 maximum=0.000900 calls=1589
+CA842 REGION tic=3922 metric=2 total=0.147900 maximum=0.000500 calls=1589
+CA842 REGION tic=3922 metric=3 total=0.832600 maximum=0.003500 calls=1589
+CA842 REGION tic=3922 metric=4 total=0.133400 maximum=0.000500 calls=1589
+CA842 REGION tic=3922 metric=5 total=0.583500 maximum=0.008000 calls=1589
+CA842 REGION tic=3922 metric=6 total=0.671400 maximum=0.007300 calls=1589
+CA842 REGION tic=3922 metric=7 total=5.684700 maximum=0.362500 calls=1589
+CA842 REGION tic=3922 metric=8 total=3.045800 maximum=0.101300 calls=1589
+CA842 REGION tic=3922 metric=9 total=0.105900 maximum=0.000500 calls=1589
+CA842 REGION tic=3922 metric=10 total=0.686400 maximum=0.003200 calls=1589
+CA842 REGION tic=3922 metric=11 total=1.030800 maximum=0.159400 calls=1589
+CA842 REGION tic=3922 metric=12 total=0.325200 maximum=0.001000 calls=1589
+CA842 REGION tic=3922 metric=13 total=0.520000 maximum=0.002000 calls=1589
+CA842 REGION tic=3922 metric=14 total=0.175100 maximum=0.013100 calls=1589
+CA842 REGION tic=3922 metric=15 total=0.102700 maximum=0.000500 calls=1589
+CA842 REGION tic=3922 metric=16 total=0.313600 maximum=0.004900 calls=1589
+CA842 REGION tic=3922 metric=17 total=1.056100 maximum=0.006600 calls=1589
+CA842 REGION tic=3922 metric=18 total=0.148700 maximum=0.000500 calls=1589
+CA842 REGION tic=3922 metric=19 total=2.154400 maximum=0.019400 calls=1589
+CA842 REGION tic=3922 metric=20 total=0.963300 maximum=0.007600 calls=1589
+CA842 REGION tic=3922 metric=21 total=0.064800 maximum=0.000100 calls=1589
+CA842 REGION tic=3922 metric=22 total=0.172100 maximum=0.000600 calls=1589
+CA842 REGION tic=3922 metric=23 total=0.125500 maximum=0.000700 calls=1589
+CA842 REGION tic=3939 metric=0 total=0.041800 maximum=0.000100 calls=1589
+CA842 REGION tic=3939 metric=1 total=0.284900 maximum=0.000600 calls=1589
+CA842 REGION tic=3939 metric=2 total=0.146500 maximum=0.000500 calls=1589
+CA842 REGION tic=3939 metric=3 total=0.780700 maximum=0.002900 calls=1589
+CA842 REGION tic=3939 metric=4 total=0.130400 maximum=0.000500 calls=1589
+CA842 REGION tic=3939 metric=5 total=0.535100 maximum=0.008100 calls=1589
+CA842 REGION tic=3939 metric=6 total=0.634300 maximum=0.000800 calls=1589
+CA842 REGION tic=3939 metric=7 total=3.733900 maximum=0.041600 calls=1589
+CA842 REGION tic=3939 metric=8 total=2.923700 maximum=0.156800 calls=1589
+CA842 REGION tic=3939 metric=9 total=0.103200 maximum=0.000200 calls=1589
+CA842 REGION tic=3939 metric=10 total=0.622200 maximum=0.001000 calls=1589
+CA842 REGION tic=3939 metric=11 total=0.812500 maximum=0.001600 calls=1589
+CA842 REGION tic=3939 metric=12 total=0.311700 maximum=0.001000 calls=1589
+CA842 REGION tic=3939 metric=13 total=0.495200 maximum=0.002900 calls=1589
+CA842 REGION tic=3939 metric=14 total=0.160700 maximum=0.000200 calls=1589
+CA842 REGION tic=3939 metric=15 total=0.099100 maximum=0.000500 calls=1589
+CA842 REGION tic=3939 metric=16 total=0.347400 maximum=0.000700 calls=1589
+CA842 REGION tic=3939 metric=17 total=0.970700 maximum=0.001300 calls=1589
+CA842 REGION tic=3939 metric=18 total=0.143800 maximum=0.000500 calls=1589
+CA842 REGION tic=3939 metric=19 total=2.014600 maximum=0.004000 calls=1589
+CA842 REGION tic=3939 metric=20 total=0.910300 maximum=0.004700 calls=1589
+CA842 REGION tic=3939 metric=21 total=0.065300 maximum=0.000100 calls=1589
+CA842 REGION tic=3939 metric=22 total=0.164900 maximum=0.000600 calls=1589
+CA842 REGION tic=3939 metric=23 total=0.121500 maximum=0.000400 calls=1589
+CA842 REGION tic=3956 metric=0 total=0.045200 maximum=0.000200 calls=1589
+CA842 REGION tic=3956 metric=1 total=0.273100 maximum=0.000600 calls=1589
+CA842 REGION tic=3956 metric=2 total=0.139800 maximum=0.000500 calls=1589
+CA842 REGION tic=3956 metric=3 total=0.809100 maximum=0.008300 calls=1589
+CA842 REGION tic=3956 metric=4 total=0.136700 maximum=0.000500 calls=1589
+CA842 REGION tic=3956 metric=5 total=0.556500 maximum=0.006400 calls=1589
+CA842 REGION tic=3956 metric=6 total=0.662800 maximum=0.027300 calls=1589
+CA842 REGION tic=3956 metric=7 total=5.817600 maximum=0.331200 calls=1589
+CA842 REGION tic=3956 metric=8 total=2.934600 maximum=0.072200 calls=1589
+CA842 REGION tic=3956 metric=9 total=0.097900 maximum=0.000200 calls=1589
+CA842 REGION tic=3956 metric=10 total=0.661400 maximum=0.001100 calls=1589
+CA842 REGION tic=3956 metric=11 total=0.908100 maximum=0.054000 calls=1589
+CA842 REGION tic=3956 metric=12 total=0.311500 maximum=0.000900 calls=1589
+CA842 REGION tic=3956 metric=13 total=0.498700 maximum=0.001100 calls=1589
+CA842 REGION tic=3956 metric=14 total=0.158100 maximum=0.000200 calls=1589
+CA842 REGION tic=3956 metric=15 total=0.093300 maximum=0.000400 calls=1589
+CA842 REGION tic=3956 metric=16 total=0.306500 maximum=0.002600 calls=1589
+CA842 REGION tic=3956 metric=17 total=1.015400 maximum=0.007400 calls=1589
+CA842 REGION tic=3956 metric=18 total=0.141200 maximum=0.000500 calls=1589
+CA842 REGION tic=3956 metric=19 total=2.028800 maximum=0.013200 calls=1589
+CA842 REGION tic=3956 metric=20 total=0.961300 maximum=0.046300 calls=1589
+CA842 REGION tic=3956 metric=21 total=0.060800 maximum=0.000100 calls=1589
+CA842 REGION tic=3956 metric=22 total=0.148900 maximum=0.000500 calls=1589
+CA842 REGION tic=3956 metric=23 total=0.134800 maximum=0.006900 calls=1589
+CA842 REGION tic=3973 metric=0 total=0.045900 maximum=0.000400 calls=1589
+CA842 REGION tic=3973 metric=1 total=0.338900 maximum=0.000700 calls=1589
+CA842 REGION tic=3973 metric=2 total=0.166100 maximum=0.001500 calls=1589
+CA842 REGION tic=3973 metric=3 total=0.809500 maximum=0.004400 calls=1589
+CA842 REGION tic=3973 metric=4 total=0.133700 maximum=0.000500 calls=1589
+CA842 REGION tic=3973 metric=5 total=0.580900 maximum=0.012100 calls=1589
+CA842 REGION tic=3973 metric=6 total=0.646100 maximum=0.001700 calls=1589
+CA842 REGION tic=3973 metric=7 total=4.122000 maximum=0.058000 calls=1589
+CA842 REGION tic=3973 metric=8 total=3.099000 maximum=0.100200 calls=1589
+CA842 REGION tic=3973 metric=9 total=0.101700 maximum=0.000400 calls=1589
+CA842 REGION tic=3973 metric=10 total=0.639800 maximum=0.003100 calls=1589
+CA842 REGION tic=3973 metric=11 total=0.822700 maximum=0.003300 calls=1589
+CA842 REGION tic=3973 metric=12 total=0.311200 maximum=0.001500 calls=1589
+CA842 REGION tic=3973 metric=13 total=0.501600 maximum=0.002000 calls=1589
+CA842 REGION tic=3973 metric=14 total=0.160100 maximum=0.000200 calls=1589
+CA842 REGION tic=3973 metric=15 total=0.117700 maximum=0.000600 calls=1589
+CA842 REGION tic=3973 metric=16 total=0.376000 maximum=0.000800 calls=1589
+CA842 REGION tic=3973 metric=17 total=0.993700 maximum=0.002900 calls=1589
+CA842 REGION tic=3973 metric=18 total=0.154500 maximum=0.000600 calls=1589
+CA842 REGION tic=3973 metric=19 total=2.169000 maximum=0.004300 calls=1589
+CA842 REGION tic=3973 metric=20 total=0.961200 maximum=0.005000 calls=1589
+CA842 REGION tic=3973 metric=21 total=0.059900 maximum=0.000100 calls=1589
+CA842 REGION tic=3973 metric=22 total=0.216800 maximum=0.000700 calls=1589
+CA842 REGION tic=3973 metric=23 total=0.126000 maximum=0.000600 calls=1589
+CA842 REGION tic=3990 metric=0 total=0.044200 maximum=0.000200 calls=1589
+CA842 REGION tic=3990 metric=1 total=0.300600 maximum=0.043900 calls=1589
+CA842 REGION tic=3990 metric=2 total=0.138100 maximum=0.000600 calls=1589
+CA842 REGION tic=3990 metric=3 total=0.774800 maximum=0.001000 calls=1589
+CA842 REGION tic=3990 metric=4 total=0.131300 maximum=0.000500 calls=1589
+CA842 REGION tic=3990 metric=5 total=0.561400 maximum=0.004900 calls=1589
+CA842 REGION tic=3990 metric=6 total=0.632700 maximum=0.002900 calls=1589
+CA842 REGION tic=3990 metric=7 total=5.243700 maximum=0.398700 calls=1589
+CA842 REGION tic=3990 metric=8 total=2.729900 maximum=0.072200 calls=1589
+CA842 REGION tic=3990 metric=9 total=0.100200 maximum=0.000200 calls=1589
+CA842 REGION tic=3990 metric=10 total=0.620200 maximum=0.002900 calls=1589
+CA842 REGION tic=3990 metric=11 total=0.813300 maximum=0.003300 calls=1589
+CA842 REGION tic=3990 metric=12 total=0.307300 maximum=0.001000 calls=1589
+CA842 REGION tic=3990 metric=13 total=0.492200 maximum=0.001300 calls=1589
+CA842 REGION tic=3990 metric=14 total=0.160100 maximum=0.002600 calls=1589
+CA842 REGION tic=3990 metric=15 total=0.090800 maximum=0.000400 calls=1589
+CA842 REGION tic=3990 metric=16 total=0.284600 maximum=0.000600 calls=1589
+CA842 REGION tic=3990 metric=17 total=0.965800 maximum=0.003300 calls=1589
+CA842 REGION tic=3990 metric=18 total=0.139600 maximum=0.000400 calls=1589
+CA842 REGION tic=3990 metric=19 total=1.971300 maximum=0.003500 calls=1589
+CA842 REGION tic=3990 metric=20 total=0.898900 maximum=0.005100 calls=1589
+CA842 REGION tic=3990 metric=21 total=0.060600 maximum=0.000100 calls=1589
+CA842 REGION tic=3990 metric=22 total=0.155200 maximum=0.000600 calls=1589
+CA842 REGION tic=3990 metric=23 total=0.120600 maximum=0.000700 calls=1589
+CA842 REGION tic=4007 metric=0 total=0.041700 maximum=0.000300 calls=1589
+CA842 REGION tic=4007 metric=1 total=0.295300 maximum=0.000600 calls=1589
+CA842 REGION tic=4007 metric=2 total=0.150700 maximum=0.000600 calls=1589
+CA842 REGION tic=4007 metric=3 total=0.829900 maximum=0.035100 calls=1589
+CA842 REGION tic=4007 metric=4 total=0.129000 maximum=0.000500 calls=1589
+CA842 REGION tic=4007 metric=5 total=0.549900 maximum=0.001000 calls=1589
+CA842 REGION tic=4007 metric=6 total=0.636300 maximum=0.001100 calls=1589
+CA842 REGION tic=4007 metric=7 total=3.804500 maximum=0.046500 calls=1589
+CA842 REGION tic=4007 metric=8 total=2.721000 maximum=0.093000 calls=1589
+CA842 REGION tic=4007 metric=9 total=0.103300 maximum=0.000500 calls=1589
+CA842 REGION tic=4007 metric=10 total=0.629900 maximum=0.003100 calls=1589
+CA842 REGION tic=4007 metric=11 total=0.820200 maximum=0.001900 calls=1589
+CA842 REGION tic=4007 metric=12 total=0.310600 maximum=0.001000 calls=1589
+CA842 REGION tic=4007 metric=13 total=0.495600 maximum=0.001400 calls=1589
+CA842 REGION tic=4007 metric=14 total=0.159500 maximum=0.000200 calls=1589
+CA842 REGION tic=4007 metric=15 total=0.104800 maximum=0.000500 calls=1589
+CA842 REGION tic=4007 metric=16 total=0.349800 maximum=0.000700 calls=1589
+CA842 REGION tic=4007 metric=17 total=0.983300 maximum=0.001400 calls=1589
+CA842 REGION tic=4007 metric=18 total=0.144900 maximum=0.000500 calls=1589
+CA842 REGION tic=4007 metric=19 total=2.062800 maximum=0.004100 calls=1589
+CA842 REGION tic=4007 metric=20 total=0.931600 maximum=0.004600 calls=1589
+CA842 REGION tic=4007 metric=21 total=0.060600 maximum=0.000100 calls=1589
+CA842 REGION tic=4007 metric=22 total=0.170300 maximum=0.000600 calls=1589
+CA842 REGION tic=4007 metric=23 total=0.122000 maximum=0.000400 calls=1589
+CA842 REGION tic=4024 metric=0 total=0.041200 maximum=0.000300 calls=1589
+CA842 REGION tic=4024 metric=1 total=0.275900 maximum=0.001500 calls=1589
+CA842 REGION tic=4024 metric=2 total=0.153900 maximum=0.000700 calls=1589
+CA842 REGION tic=4024 metric=3 total=0.840900 maximum=0.003600 calls=1589
+CA842 REGION tic=4024 metric=4 total=0.133000 maximum=0.000500 calls=1589
+CA842 REGION tic=4024 metric=5 total=0.625500 maximum=0.009100 calls=1589
+CA842 REGION tic=4024 metric=6 total=0.718900 maximum=0.005400 calls=1589
+CA842 REGION tic=4024 metric=7 total=21.796000 maximum=0.358400 calls=1589
+CA842 REGION tic=4024 metric=8 total=3.107900 maximum=0.091400 calls=1589
+CA842 REGION tic=4024 metric=9 total=0.109700 maximum=0.002600 calls=1589
+CA842 REGION tic=4024 metric=10 total=0.743700 maximum=0.005600 calls=1589
+CA842 REGION tic=4024 metric=11 total=0.941600 maximum=0.004700 calls=1589
+CA842 REGION tic=4024 metric=12 total=0.367600 maximum=0.002200 calls=1589
+CA842 REGION tic=4024 metric=13 total=0.583900 maximum=0.004100 calls=1589
+CA842 REGION tic=4024 metric=14 total=0.161200 maximum=0.000700 calls=1589
+CA842 REGION tic=4024 metric=15 total=0.090900 maximum=0.000500 calls=1589
+CA842 REGION tic=4024 metric=16 total=0.270000 maximum=0.000700 calls=1589
+CA842 REGION tic=4024 metric=17 total=1.140100 maximum=0.006600 calls=1589
+CA842 REGION tic=4024 metric=18 total=0.141700 maximum=0.000900 calls=1589
+CA842 REGION tic=4024 metric=19 total=2.075700 maximum=0.005900 calls=1589
+CA842 REGION tic=4024 metric=20 total=0.970400 maximum=0.004200 calls=1589
+CA842 REGION tic=4024 metric=21 total=0.061500 maximum=0.000100 calls=1589
+CA842 REGION tic=4024 metric=22 total=0.146200 maximum=0.001400 calls=1589
+CA842 REGION tic=4024 metric=23 total=0.346600 maximum=0.000600 calls=1589
+CA842 REGION tic=4041 metric=0 total=0.045700 maximum=0.000300 calls=1589
+CA842 REGION tic=4041 metric=1 total=0.298700 maximum=0.003000 calls=1589
+CA842 REGION tic=4041 metric=2 total=0.148200 maximum=0.000700 calls=1589
+CA842 REGION tic=4041 metric=3 total=0.792200 maximum=0.003400 calls=1589
+CA842 REGION tic=4041 metric=4 total=0.135000 maximum=0.000500 calls=1589
+CA842 REGION tic=4041 metric=5 total=0.565800 maximum=0.006200 calls=1589
+CA842 REGION tic=4041 metric=6 total=0.644500 maximum=0.001100 calls=1589
+CA842 REGION tic=4041 metric=7 total=3.964700 maximum=0.048500 calls=1589
+CA842 REGION tic=4041 metric=8 total=3.100500 maximum=0.110600 calls=1589
+CA842 REGION tic=4041 metric=9 total=0.105000 maximum=0.002600 calls=1589
+CA842 REGION tic=4041 metric=10 total=0.629300 maximum=0.001100 calls=1589
+CA842 REGION tic=4041 metric=11 total=0.833600 maximum=0.003000 calls=1589
+CA842 REGION tic=4041 metric=12 total=0.313400 maximum=0.001400 calls=1589
+CA842 REGION tic=4041 metric=13 total=0.503600 maximum=0.001800 calls=1589
+CA842 REGION tic=4041 metric=14 total=0.162500 maximum=0.000300 calls=1589
+CA842 REGION tic=4041 metric=15 total=0.101600 maximum=0.000400 calls=1589
+CA842 REGION tic=4041 metric=16 total=0.355800 maximum=0.002600 calls=1589
+CA842 REGION tic=4041 metric=17 total=0.999700 maximum=0.003000 calls=1589
+CA842 REGION tic=4041 metric=18 total=0.144800 maximum=0.000500 calls=1589
+CA842 REGION tic=4041 metric=19 total=2.064900 maximum=0.003800 calls=1589
+CA842 REGION tic=4041 metric=20 total=0.928000 maximum=0.004500 calls=1589
+CA842 REGION tic=4041 metric=21 total=0.062100 maximum=0.000100 calls=1589
+CA842 REGION tic=4041 metric=22 total=0.172600 maximum=0.000900 calls=1589
+CA842 REGION tic=4041 metric=23 total=0.122500 maximum=0.000500 calls=1589
+CA842 REGION tic=4058 metric=0 total=0.042100 maximum=0.000100 calls=1589
+CA842 REGION tic=4058 metric=1 total=0.274100 maximum=0.000600 calls=1589
+CA842 REGION tic=4058 metric=2 total=0.140700 maximum=0.000500 calls=1589
+CA842 REGION tic=4058 metric=3 total=0.783600 maximum=0.001000 calls=1589
+CA842 REGION tic=4058 metric=4 total=0.128600 maximum=0.000500 calls=1589
+CA842 REGION tic=4058 metric=5 total=0.583200 maximum=0.004100 calls=1589
+CA842 REGION tic=4058 metric=6 total=0.632900 maximum=0.001000 calls=1589
+CA842 REGION tic=4058 metric=7 total=5.302800 maximum=0.335600 calls=1589
+CA842 REGION tic=4058 metric=8 total=2.884400 maximum=0.088500 calls=1589
+CA842 REGION tic=4058 metric=9 total=0.102800 maximum=0.000200 calls=1589
+CA842 REGION tic=4058 metric=10 total=0.613100 maximum=0.002000 calls=1589
+CA842 REGION tic=4058 metric=11 total=0.822500 maximum=0.003100 calls=1589
+CA842 REGION tic=4058 metric=12 total=0.310400 maximum=0.001400 calls=1589
+CA842 REGION tic=4058 metric=13 total=0.498400 maximum=0.001700 calls=1589
+CA842 REGION tic=4058 metric=14 total=0.162700 maximum=0.000200 calls=1589
+CA842 REGION tic=4058 metric=15 total=0.098800 maximum=0.000500 calls=1589
+CA842 REGION tic=4058 metric=16 total=0.303400 maximum=0.003100 calls=1589
+CA842 REGION tic=4058 metric=17 total=0.961700 maximum=0.001400 calls=1589
+CA842 REGION tic=4058 metric=18 total=0.142600 maximum=0.002800 calls=1589
+CA842 REGION tic=4058 metric=19 total=1.991400 maximum=0.004300 calls=1589
+CA842 REGION tic=4058 metric=20 total=0.897200 maximum=0.004700 calls=1589
+CA842 REGION tic=4058 metric=21 total=0.063500 maximum=0.000100 calls=1589
+CA842 REGION tic=4058 metric=22 total=0.162400 maximum=0.000500 calls=1589
+CA842 REGION tic=4058 metric=23 total=0.126600 maximum=0.000600 calls=1589
+CA842 REGION tic=4075 metric=0 total=0.039500 maximum=0.000100 calls=1589
+CA842 REGION tic=4075 metric=1 total=0.285300 maximum=0.000600 calls=1589
+CA842 REGION tic=4075 metric=2 total=0.140200 maximum=0.000500 calls=1589
+CA842 REGION tic=4075 metric=3 total=0.784900 maximum=0.001100 calls=1589
+CA842 REGION tic=4075 metric=4 total=0.130900 maximum=0.000500 calls=1589
+CA842 REGION tic=4075 metric=5 total=0.565300 maximum=0.006700 calls=1589
+CA842 REGION tic=4075 metric=6 total=0.634900 maximum=0.000900 calls=1589
+CA842 REGION tic=4075 metric=7 total=3.740700 maximum=0.043700 calls=1589
+CA842 REGION tic=4075 metric=8 total=2.720300 maximum=0.076400 calls=1589
+CA842 REGION tic=4075 metric=9 total=0.103200 maximum=0.001600 calls=1589
+CA842 REGION tic=4075 metric=10 total=0.649700 maximum=0.001100 calls=1589
+CA842 REGION tic=4075 metric=11 total=0.848500 maximum=0.003300 calls=1589
+CA842 REGION tic=4075 metric=12 total=0.316300 maximum=0.004100 calls=1589
+CA842 REGION tic=4075 metric=13 total=0.495400 maximum=0.001500 calls=1589
+CA842 REGION tic=4075 metric=14 total=0.160600 maximum=0.000200 calls=1589
+CA842 REGION tic=4075 metric=15 total=0.094100 maximum=0.000500 calls=1589
+CA842 REGION tic=4075 metric=16 total=0.335900 maximum=0.000600 calls=1589
+CA842 REGION tic=4075 metric=17 total=1.015100 maximum=0.004900 calls=1589
+CA842 REGION tic=4075 metric=18 total=0.135800 maximum=0.000500 calls=1589
+CA842 REGION tic=4075 metric=19 total=2.013900 maximum=0.004600 calls=1589
+CA842 REGION tic=4075 metric=20 total=0.892100 maximum=0.004500 calls=1589
+CA842 REGION tic=4075 metric=21 total=0.061400 maximum=0.000100 calls=1589
+CA842 REGION tic=4075 metric=22 total=0.152800 maximum=0.000500 calls=1589
+CA842 REGION tic=4075 metric=23 total=0.123400 maximum=0.000400 calls=1589
+CA842 REGION tic=4092 metric=0 total=0.041900 maximum=0.000100 calls=1589
+CA842 REGION tic=4092 metric=1 total=0.281800 maximum=0.000800 calls=1589
+CA842 REGION tic=4092 metric=2 total=0.148800 maximum=0.000900 calls=1589
+CA842 REGION tic=4092 metric=3 total=0.774800 maximum=0.001300 calls=1589
+CA842 REGION tic=4092 metric=4 total=0.131500 maximum=0.000500 calls=1589
+CA842 REGION tic=4092 metric=5 total=0.584400 maximum=0.007400 calls=1589
+CA842 REGION tic=4092 metric=6 total=0.637700 maximum=0.001300 calls=1589
+CA842 REGION tic=4092 metric=7 total=5.545800 maximum=0.348600 calls=1589
+CA842 REGION tic=4092 metric=8 total=2.987700 maximum=0.077100 calls=1589
+CA842 REGION tic=4092 metric=9 total=0.100000 maximum=0.002200 calls=1589
+CA842 REGION tic=4092 metric=10 total=0.621300 maximum=0.001600 calls=1589
+CA842 REGION tic=4092 metric=11 total=0.822800 maximum=0.002800 calls=1589
+CA842 REGION tic=4092 metric=12 total=0.311200 maximum=0.002800 calls=1589
+CA842 REGION tic=4092 metric=13 total=0.494300 maximum=0.001800 calls=1589
+CA842 REGION tic=4092 metric=14 total=0.158200 maximum=0.000300 calls=1589
+CA842 REGION tic=4092 metric=15 total=0.095300 maximum=0.000500 calls=1589
+CA842 REGION tic=4092 metric=16 total=0.316900 maximum=0.000700 calls=1589
+CA842 REGION tic=4092 metric=17 total=0.975400 maximum=0.003100 calls=1589
+CA842 REGION tic=4092 metric=18 total=0.143200 maximum=0.000500 calls=1589
+CA842 REGION tic=4092 metric=19 total=2.010800 maximum=0.004400 calls=1589
+CA842 REGION tic=4092 metric=20 total=0.922000 maximum=0.004200 calls=1589
+CA842 REGION tic=4092 metric=21 total=0.060500 maximum=0.000100 calls=1589
+CA842 REGION tic=4092 metric=22 total=0.174600 maximum=0.000600 calls=1589
+CA842 REGION tic=4092 metric=23 total=0.131700 maximum=0.000400 calls=1589
+CA842 REGION tic=4109 metric=0 total=0.041500 maximum=0.000300 calls=1589
+CA842 REGION tic=4109 metric=1 total=0.292600 maximum=0.003800 calls=1589
+CA842 REGION tic=4109 metric=2 total=0.142500 maximum=0.000400 calls=1589
+CA842 REGION tic=4109 metric=3 total=0.784100 maximum=0.002700 calls=1589
+CA842 REGION tic=4109 metric=4 total=0.129600 maximum=0.000500 calls=1589
+CA842 REGION tic=4109 metric=5 total=0.571400 maximum=0.006400 calls=1589
+CA842 REGION tic=4109 metric=6 total=0.634500 maximum=0.001000 calls=1589
+CA842 REGION tic=4109 metric=7 total=3.851700 maximum=0.042500 calls=1589
+CA842 REGION tic=4109 metric=8 total=3.067900 maximum=0.118300 calls=1589
+CA842 REGION tic=4109 metric=9 total=0.107400 maximum=0.002800 calls=1589
+CA842 REGION tic=4109 metric=10 total=0.651900 maximum=0.003300 calls=1589
+CA842 REGION tic=4109 metric=11 total=0.857400 maximum=0.004100 calls=1589
+CA842 REGION tic=4109 metric=12 total=0.312700 maximum=0.000800 calls=1589
+CA842 REGION tic=4109 metric=13 total=0.500600 maximum=0.003000 calls=1589
+CA842 REGION tic=4109 metric=14 total=0.158200 maximum=0.000200 calls=1589
+CA842 REGION tic=4109 metric=15 total=0.103400 maximum=0.000400 calls=1589
+CA842 REGION tic=4109 metric=16 total=0.343000 maximum=0.000900 calls=1589
+CA842 REGION tic=4109 metric=17 total=0.999300 maximum=0.001300 calls=1589
+CA842 REGION tic=4109 metric=18 total=0.136100 maximum=0.000400 calls=1589
+CA842 REGION tic=4109 metric=19 total=2.027100 maximum=0.003600 calls=1589
+CA842 REGION tic=4109 metric=20 total=0.921200 maximum=0.005800 calls=1589
+CA842 REGION tic=4109 metric=21 total=0.062000 maximum=0.000100 calls=1589
+CA842 REGION tic=4109 metric=22 total=0.150700 maximum=0.000500 calls=1589
+CA842 REGION tic=4109 metric=23 total=0.123300 maximum=0.000400 calls=1589
+CA842 REGION tic=4126 metric=0 total=0.042600 maximum=0.000100 calls=1589
+CA842 REGION tic=4126 metric=1 total=0.260000 maximum=0.000600 calls=1589
+CA842 REGION tic=4126 metric=2 total=0.130000 maximum=0.000500 calls=1589
+CA842 REGION tic=4126 metric=3 total=0.771200 maximum=0.001000 calls=1589
+CA842 REGION tic=4126 metric=4 total=0.127900 maximum=0.000500 calls=1589
+CA842 REGION tic=4126 metric=5 total=0.557400 maximum=0.004100 calls=1589
+CA842 REGION tic=4126 metric=6 total=0.627400 maximum=0.003200 calls=1589
+CA842 REGION tic=4126 metric=7 total=5.071600 maximum=0.334800 calls=1589
+CA842 REGION tic=4126 metric=8 total=2.871900 maximum=0.084600 calls=1589
+CA842 REGION tic=4126 metric=9 total=0.102900 maximum=0.001500 calls=1589
+CA842 REGION tic=4126 metric=10 total=0.629600 maximum=0.001100 calls=1589
+CA842 REGION tic=4126 metric=11 total=0.821300 maximum=0.001600 calls=1589
+CA842 REGION tic=4126 metric=12 total=0.309000 maximum=0.000800 calls=1589
+CA842 REGION tic=4126 metric=13 total=0.492100 maximum=0.001100 calls=1589
+CA842 REGION tic=4126 metric=14 total=0.155600 maximum=0.000200 calls=1589
+CA842 REGION tic=4126 metric=15 total=0.091400 maximum=0.000400 calls=1589
+CA842 REGION tic=4126 metric=16 total=0.286200 maximum=0.000700 calls=1589
+CA842 REGION tic=4126 metric=17 total=0.976400 maximum=0.004200 calls=1589
+CA842 REGION tic=4126 metric=18 total=0.135100 maximum=0.000500 calls=1589
+CA842 REGION tic=4126 metric=19 total=1.951000 maximum=0.004800 calls=1589
+CA842 REGION tic=4126 metric=20 total=0.884600 maximum=0.004700 calls=1589
+CA842 REGION tic=4126 metric=21 total=0.059800 maximum=0.000100 calls=1589
+CA842 REGION tic=4126 metric=22 total=0.139600 maximum=0.000600 calls=1589
+CA842 REGION tic=4126 metric=23 total=0.126200 maximum=0.000400 calls=1589
+CA842 REGION tic=4143 metric=0 total=0.043100 maximum=0.000300 calls=1589
+CA842 REGION tic=4143 metric=1 total=0.293400 maximum=0.000700 calls=1589
+CA842 REGION tic=4143 metric=2 total=0.146900 maximum=0.000500 calls=1589
+CA842 REGION tic=4143 metric=3 total=0.792700 maximum=0.003000 calls=1589
+CA842 REGION tic=4143 metric=4 total=0.134700 maximum=0.000500 calls=1589
+CA842 REGION tic=4143 metric=5 total=0.564500 maximum=0.004200 calls=1589
+CA842 REGION tic=4143 metric=6 total=0.635000 maximum=0.001100 calls=1589
+CA842 REGION tic=4143 metric=7 total=3.968000 maximum=0.084000 calls=1589
+CA842 REGION tic=4143 metric=8 total=2.839400 maximum=0.103600 calls=1589
+CA842 REGION tic=4143 metric=9 total=0.099800 maximum=0.001600 calls=1589
+CA842 REGION tic=4143 metric=10 total=0.624900 maximum=0.001100 calls=1589
+CA842 REGION tic=4143 metric=11 total=0.829100 maximum=0.007200 calls=1589
+CA842 REGION tic=4143 metric=12 total=0.310800 maximum=0.000900 calls=1589
+CA842 REGION tic=4143 metric=13 total=0.493600 maximum=0.001600 calls=1589
+CA842 REGION tic=4143 metric=14 total=0.160900 maximum=0.000200 calls=1589
+CA842 REGION tic=4143 metric=15 total=0.102900 maximum=0.000500 calls=1589
+CA842 REGION tic=4143 metric=16 total=0.359400 maximum=0.000700 calls=1589
+CA842 REGION tic=4143 metric=17 total=0.987200 maximum=0.004200 calls=1589
+CA842 REGION tic=4143 metric=18 total=0.147500 maximum=0.000500 calls=1589
+CA842 REGION tic=4143 metric=19 total=2.026100 maximum=0.003700 calls=1589
+CA842 REGION tic=4143 metric=20 total=0.922100 maximum=0.004400 calls=1589
+CA842 REGION tic=4143 metric=21 total=0.064700 maximum=0.000100 calls=1589
+CA842 REGION tic=4143 metric=22 total=0.168400 maximum=0.000500 calls=1589
+CA842 REGION tic=4143 metric=23 total=0.120100 maximum=0.000400 calls=1589
+CA842 REGION tic=4160 metric=0 total=0.041300 maximum=0.000100 calls=1589
+CA842 REGION tic=4160 metric=1 total=0.285300 maximum=0.000700 calls=1589
+CA842 REGION tic=4160 metric=2 total=0.141600 maximum=0.000500 calls=1589
+CA842 REGION tic=4160 metric=3 total=0.789000 maximum=0.001200 calls=1589
+CA842 REGION tic=4160 metric=4 total=0.130800 maximum=0.000500 calls=1589
+CA842 REGION tic=4160 metric=5 total=0.491400 maximum=0.006700 calls=1589
+CA842 REGION tic=4160 metric=6 total=0.637200 maximum=0.000800 calls=1589
+CA842 REGION tic=4160 metric=7 total=5.649700 maximum=0.357300 calls=1589
+CA842 REGION tic=4160 metric=8 total=2.981100 maximum=0.075500 calls=1589
+CA842 REGION tic=4160 metric=9 total=0.100600 maximum=0.001800 calls=1589
+CA842 REGION tic=4160 metric=10 total=0.657600 maximum=0.001100 calls=1589
+CA842 REGION tic=4160 metric=11 total=0.842000 maximum=0.001600 calls=1589
+CA842 REGION tic=4160 metric=12 total=0.316500 maximum=0.002600 calls=1589
+CA842 REGION tic=4160 metric=13 total=0.540400 maximum=0.037500 calls=1589
+CA842 REGION tic=4160 metric=14 total=0.156400 maximum=0.000200 calls=1589
+CA842 REGION tic=4160 metric=15 total=0.094800 maximum=0.000400 calls=1589
+CA842 REGION tic=4160 metric=16 total=0.313300 maximum=0.000700 calls=1589
+CA842 REGION tic=4160 metric=17 total=1.223000 maximum=0.002300 calls=1589
+CA842 REGION tic=4160 metric=18 total=0.145100 maximum=0.000500 calls=1589
+CA842 REGION tic=4160 metric=19 total=2.018000 maximum=0.004300 calls=1589
+CA842 REGION tic=4160 metric=20 total=0.907800 maximum=0.004200 calls=1589
+CA842 REGION tic=4160 metric=21 total=0.061100 maximum=0.000100 calls=1589
+CA842 REGION tic=4160 metric=22 total=0.162600 maximum=0.000600 calls=1589
+CA842 REGION tic=4160 metric=23 total=0.127500 maximum=0.000500 calls=1589
+CA842 REGION tic=4177 metric=0 total=0.042400 maximum=0.000100 calls=1589
+CA842 REGION tic=4177 metric=1 total=0.277900 maximum=0.000600 calls=1589
+CA842 REGION tic=4177 metric=2 total=0.138700 maximum=0.000600 calls=1589
+CA842 REGION tic=4177 metric=3 total=0.781400 maximum=0.001100 calls=1589
+CA842 REGION tic=4177 metric=4 total=0.130000 maximum=0.000500 calls=1589
+CA842 REGION tic=4177 metric=5 total=0.559300 maximum=0.006700 calls=1589
+CA842 REGION tic=4177 metric=6 total=0.629600 maximum=0.000800 calls=1589
+CA842 REGION tic=4177 metric=7 total=3.911200 maximum=0.046800 calls=1589
+CA842 REGION tic=4177 metric=8 total=2.997600 maximum=0.102800 calls=1589
+CA842 REGION tic=4177 metric=9 total=0.102700 maximum=0.002700 calls=1589
+CA842 REGION tic=4177 metric=10 total=0.615300 maximum=0.001500 calls=1589
+CA842 REGION tic=4177 metric=11 total=0.814300 maximum=0.003900 calls=1589
+CA842 REGION tic=4177 metric=12 total=0.307900 maximum=0.001000 calls=1589
+CA842 REGION tic=4177 metric=13 total=0.489400 maximum=0.001300 calls=1589
+CA842 REGION tic=4177 metric=14 total=0.157200 maximum=0.000200 calls=1589
+CA842 REGION tic=4177 metric=15 total=0.100700 maximum=0.000500 calls=1589
+CA842 REGION tic=4177 metric=16 total=0.348300 maximum=0.000700 calls=1589
+CA842 REGION tic=4177 metric=17 total=0.979900 maximum=0.001700 calls=1589
+CA842 REGION tic=4177 metric=18 total=0.144400 maximum=0.000500 calls=1589
+CA842 REGION tic=4177 metric=19 total=1.997900 maximum=0.003600 calls=1589
+CA842 REGION tic=4177 metric=20 total=0.907200 maximum=0.005100 calls=1589
+CA842 REGION tic=4177 metric=21 total=0.064100 maximum=0.000100 calls=1589
+CA842 REGION tic=4177 metric=22 total=0.153000 maximum=0.000600 calls=1589
+CA842 REGION tic=4177 metric=23 total=0.121400 maximum=0.000400 calls=1589
+CA842 REGION tic=4194 metric=0 total=0.042700 maximum=0.000300 calls=1589
+CA842 REGION tic=4194 metric=1 total=0.264000 maximum=0.000600 calls=1589
+CA842 REGION tic=4194 metric=2 total=0.147400 maximum=0.000700 calls=1589
+CA842 REGION tic=4194 metric=3 total=0.814100 maximum=0.003400 calls=1589
+CA842 REGION tic=4194 metric=4 total=0.127500 maximum=0.000500 calls=1589
+CA842 REGION tic=4194 metric=5 total=0.627900 maximum=0.005200 calls=1589
+CA842 REGION tic=4194 metric=6 total=0.696000 maximum=0.001600 calls=1589
+CA842 REGION tic=4194 metric=7 total=20.889000 maximum=0.337000 calls=1589
+CA842 REGION tic=4194 metric=8 total=2.762400 maximum=0.082500 calls=1589
+CA842 REGION tic=4194 metric=9 total=0.110200 maximum=0.002000 calls=1589
+CA842 REGION tic=4194 metric=10 total=0.695000 maximum=0.001200 calls=1589
+CA842 REGION tic=4194 metric=11 total=0.892100 maximum=0.002500 calls=1589
+CA842 REGION tic=4194 metric=12 total=0.356000 maximum=0.001400 calls=1589
+CA842 REGION tic=4194 metric=13 total=0.567500 maximum=0.002800 calls=1589
+CA842 REGION tic=4194 metric=14 total=0.159000 maximum=0.000300 calls=1589
+CA842 REGION tic=4194 metric=15 total=0.087800 maximum=0.000400 calls=1589
+CA842 REGION tic=4194 metric=16 total=0.267600 maximum=0.000600 calls=1589
+CA842 REGION tic=4194 metric=17 total=1.088900 maximum=0.001300 calls=1589
+CA842 REGION tic=4194 metric=18 total=0.131600 maximum=0.000500 calls=1589
+CA842 REGION tic=4194 metric=19 total=2.007400 maximum=0.004500 calls=1589
+CA842 REGION tic=4194 metric=20 total=0.935400 maximum=0.004400 calls=1589
+CA842 REGION tic=4194 metric=21 total=0.058200 maximum=0.000100 calls=1589
+CA842 REGION tic=4194 metric=22 total=0.139600 maximum=0.000600 calls=1589
+CA842 REGION tic=4194 metric=23 total=0.339300 maximum=0.000400 calls=1589
+CA842 REGION tic=4211 metric=0 total=0.041100 maximum=0.000200 calls=1589
+CA842 REGION tic=4211 metric=1 total=0.270300 maximum=0.000600 calls=1589
+CA842 REGION tic=4211 metric=2 total=0.140000 maximum=0.000600 calls=1589
+CA842 REGION tic=4211 metric=3 total=0.766600 maximum=0.001000 calls=1589
+CA842 REGION tic=4211 metric=4 total=0.130200 maximum=0.000500 calls=1589
+CA842 REGION tic=4211 metric=5 total=0.538600 maximum=0.003700 calls=1589
+CA842 REGION tic=4211 metric=6 total=0.624900 maximum=0.001100 calls=1589
+CA842 REGION tic=4211 metric=7 total=3.670200 maximum=0.051000 calls=1589
+CA842 REGION tic=4211 metric=8 total=2.759900 maximum=0.111600 calls=1589
+CA842 REGION tic=4211 metric=9 total=0.103100 maximum=0.001600 calls=1589
+CA842 REGION tic=4211 metric=10 total=0.624600 maximum=0.002800 calls=1589
+CA842 REGION tic=4211 metric=11 total=0.828900 maximum=0.002500 calls=1589
+CA842 REGION tic=4211 metric=12 total=0.311100 maximum=0.001100 calls=1589
+CA842 REGION tic=4211 metric=13 total=0.554600 maximum=0.061700 calls=1589
+CA842 REGION tic=4211 metric=14 total=0.155100 maximum=0.000200 calls=1589
+CA842 REGION tic=4211 metric=15 total=0.096200 maximum=0.000400 calls=1589
+CA842 REGION tic=4211 metric=16 total=0.335200 maximum=0.002800 calls=1589
+CA842 REGION tic=4211 metric=17 total=0.960000 maximum=0.001500 calls=1589
+CA842 REGION tic=4211 metric=18 total=0.140100 maximum=0.002600 calls=1589
+CA842 REGION tic=4211 metric=19 total=1.944700 maximum=0.003200 calls=1589
+CA842 REGION tic=4211 metric=20 total=0.892300 maximum=0.004700 calls=1589
+CA842 REGION tic=4211 metric=21 total=0.060100 maximum=0.000100 calls=1589
+CA842 REGION tic=4211 metric=22 total=0.145800 maximum=0.000500 calls=1589
+CA842 REGION tic=4211 metric=23 total=0.124300 maximum=0.001100 calls=1589
+CA842 REGION tic=4228 metric=0 total=0.043200 maximum=0.000300 calls=1589
+CA842 REGION tic=4228 metric=1 total=0.263000 maximum=0.000900 calls=1589
+CA842 REGION tic=4228 metric=2 total=0.134100 maximum=0.000700 calls=1589
+CA842 REGION tic=4228 metric=3 total=0.772400 maximum=0.001200 calls=1589
+CA842 REGION tic=4228 metric=4 total=0.127500 maximum=0.000500 calls=1589
+CA842 REGION tic=4228 metric=5 total=0.575500 maximum=0.007500 calls=1589
+CA842 REGION tic=4228 metric=6 total=0.632000 maximum=0.000900 calls=1589
+CA842 REGION tic=4228 metric=7 total=5.628600 maximum=0.350400 calls=1589
+CA842 REGION tic=4228 metric=8 total=3.030600 maximum=0.080700 calls=1589
+CA842 REGION tic=4228 metric=9 total=0.103700 maximum=0.002000 calls=1589
+CA842 REGION tic=4228 metric=10 total=0.621700 maximum=0.001600 calls=1589
+CA842 REGION tic=4228 metric=11 total=0.822900 maximum=0.001900 calls=1589
+CA842 REGION tic=4228 metric=12 total=0.314300 maximum=0.002900 calls=1589
+CA842 REGION tic=4228 metric=13 total=0.492900 maximum=0.001600 calls=1589
+CA842 REGION tic=4228 metric=14 total=0.161700 maximum=0.000200 calls=1589
+CA842 REGION tic=4228 metric=15 total=0.091000 maximum=0.000400 calls=1589
+CA842 REGION tic=4228 metric=16 total=0.307400 maximum=0.000700 calls=1589
+CA842 REGION tic=4228 metric=17 total=0.969400 maximum=0.001500 calls=1589
+CA842 REGION tic=4228 metric=18 total=0.138400 maximum=0.000500 calls=1589
+CA842 REGION tic=4228 metric=19 total=2.013400 maximum=0.038800 calls=1589
+CA842 REGION tic=4228 metric=20 total=0.914400 maximum=0.004400 calls=1589
+CA842 REGION tic=4228 metric=21 total=0.060700 maximum=0.000100 calls=1589
+CA842 REGION tic=4228 metric=22 total=0.165700 maximum=0.000600 calls=1589
+CA842 REGION tic=4228 metric=23 total=0.132400 maximum=0.001300 calls=1589
+CA842 REGION tic=4245 metric=0 total=0.040400 maximum=0.000100 calls=1589
+CA842 REGION tic=4245 metric=1 total=0.317100 maximum=0.000600 calls=1589
+CA842 REGION tic=4245 metric=2 total=0.155400 maximum=0.000600 calls=1589
+CA842 REGION tic=4245 metric=3 total=0.812000 maximum=0.001200 calls=1589
+CA842 REGION tic=4245 metric=4 total=0.137800 maximum=0.000500 calls=1589
+CA842 REGION tic=4245 metric=5 total=0.584400 maximum=0.008100 calls=1589
+CA842 REGION tic=4245 metric=6 total=0.652900 maximum=0.003000 calls=1589
+CA842 REGION tic=4245 metric=7 total=4.105700 maximum=0.148400 calls=1589
+CA842 REGION tic=4245 metric=8 total=3.143600 maximum=0.115800 calls=1589
+CA842 REGION tic=4245 metric=9 total=0.104700 maximum=0.001600 calls=1589
+CA842 REGION tic=4245 metric=10 total=0.659600 maximum=0.004400 calls=1589
+CA842 REGION tic=4245 metric=11 total=0.853900 maximum=0.003100 calls=1589
+CA842 REGION tic=4245 metric=12 total=0.313800 maximum=0.003700 calls=1589
+CA842 REGION tic=4245 metric=13 total=0.491800 maximum=0.001600 calls=1589
+CA842 REGION tic=4245 metric=14 total=0.162100 maximum=0.002500 calls=1589
+CA842 REGION tic=4245 metric=15 total=0.105500 maximum=0.000500 calls=1589
+CA842 REGION tic=4245 metric=16 total=0.357400 maximum=0.000700 calls=1589
+CA842 REGION tic=4245 metric=17 total=1.021200 maximum=0.001500 calls=1589
+CA842 REGION tic=4245 metric=18 total=0.153700 maximum=0.002900 calls=1589
+CA842 REGION tic=4245 metric=19 total=2.102500 maximum=0.004100 calls=1589
+CA842 REGION tic=4245 metric=20 total=0.927700 maximum=0.004200 calls=1589
+CA842 REGION tic=4245 metric=21 total=0.061900 maximum=0.000100 calls=1589
+CA842 REGION tic=4245 metric=22 total=0.183200 maximum=0.000600 calls=1589
+CA842 REGION tic=4245 metric=23 total=0.122400 maximum=0.000400 calls=1589
+CA842 REGION tic=4262 metric=0 total=0.041500 maximum=0.000300 calls=1589
+CA842 REGION tic=4262 metric=1 total=0.273000 maximum=0.000800 calls=1589
+CA842 REGION tic=4262 metric=2 total=0.146500 maximum=0.000600 calls=1589
+CA842 REGION tic=4262 metric=3 total=0.784100 maximum=0.001000 calls=1589
+CA842 REGION tic=4262 metric=4 total=0.134300 maximum=0.000400 calls=1589
+CA842 REGION tic=4262 metric=5 total=0.568300 maximum=0.005100 calls=1589
+CA842 REGION tic=4262 metric=6 total=0.628200 maximum=0.001100 calls=1589
+CA842 REGION tic=4262 metric=7 total=5.185800 maximum=0.353900 calls=1589
+CA842 REGION tic=4262 metric=8 total=2.789100 maximum=0.085300 calls=1589
+CA842 REGION tic=4262 metric=9 total=0.102300 maximum=0.001800 calls=1589
+CA842 REGION tic=4262 metric=10 total=0.622700 maximum=0.001200 calls=1589
+CA842 REGION tic=4262 metric=11 total=0.812400 maximum=0.003000 calls=1589
+CA842 REGION tic=4262 metric=12 total=0.307200 maximum=0.001300 calls=1589
+CA842 REGION tic=4262 metric=13 total=0.496800 maximum=0.003000 calls=1589
+CA842 REGION tic=4262 metric=14 total=0.157000 maximum=0.000300 calls=1589
+CA842 REGION tic=4262 metric=15 total=0.098500 maximum=0.002800 calls=1589
+CA842 REGION tic=4262 metric=16 total=0.311500 maximum=0.002900 calls=1589
+CA842 REGION tic=4262 metric=17 total=0.957400 maximum=0.001600 calls=1589
+CA842 REGION tic=4262 metric=18 total=0.141400 maximum=0.000400 calls=1589
+CA842 REGION tic=4262 metric=19 total=2.009600 maximum=0.035800 calls=1589
+CA842 REGION tic=4262 metric=20 total=0.899000 maximum=0.005200 calls=1589
+CA842 REGION tic=4262 metric=21 total=0.061700 maximum=0.000100 calls=1589
+CA842 REGION tic=4262 metric=22 total=0.163000 maximum=0.000600 calls=1589
+CA842 REGION tic=4262 metric=23 total=0.122400 maximum=0.000400 calls=1589
+CA842 REGION tic=4279 metric=0 total=0.038900 maximum=0.000300 calls=1589
+CA842 REGION tic=4279 metric=1 total=0.288600 maximum=0.003100 calls=1589
+CA842 REGION tic=4279 metric=2 total=0.140500 maximum=0.000600 calls=1589
+CA842 REGION tic=4279 metric=3 total=0.785900 maximum=0.001000 calls=1589
+CA842 REGION tic=4279 metric=4 total=0.129700 maximum=0.000500 calls=1589
+CA842 REGION tic=4279 metric=5 total=0.560000 maximum=0.007400 calls=1589
+CA842 REGION tic=4279 metric=6 total=0.640800 maximum=0.002800 calls=1589
+CA842 REGION tic=4279 metric=7 total=3.809300 maximum=0.049400 calls=1589
+CA842 REGION tic=4279 metric=8 total=3.049500 maximum=0.114900 calls=1589
+CA842 REGION tic=4279 metric=9 total=0.099900 maximum=0.001600 calls=1589
+CA842 REGION tic=4279 metric=10 total=0.625900 maximum=0.003800 calls=1589
+CA842 REGION tic=4279 metric=11 total=0.819000 maximum=0.003100 calls=1589
+CA842 REGION tic=4279 metric=12 total=0.311000 maximum=0.000900 calls=1589
+CA842 REGION tic=4279 metric=13 total=0.493800 maximum=0.001700 calls=1589
+CA842 REGION tic=4279 metric=14 total=0.161700 maximum=0.000200 calls=1589
+CA842 REGION tic=4279 metric=15 total=0.102600 maximum=0.000500 calls=1589
+CA842 REGION tic=4279 metric=16 total=0.348900 maximum=0.000700 calls=1589
+CA842 REGION tic=4279 metric=17 total=0.972100 maximum=0.001300 calls=1589
+CA842 REGION tic=4279 metric=18 total=0.141400 maximum=0.002700 calls=1589
+CA842 REGION tic=4279 metric=19 total=2.021900 maximum=0.003900 calls=1589
+CA842 REGION tic=4279 metric=20 total=0.911600 maximum=0.004500 calls=1589
+CA842 REGION tic=4279 metric=21 total=0.062000 maximum=0.000100 calls=1589
+CA842 REGION tic=4279 metric=22 total=0.169700 maximum=0.000600 calls=1589
+CA842 REGION tic=4279 metric=23 total=0.122700 maximum=0.000400 calls=1589
+CA842 REGION tic=4296 metric=0 total=0.043300 maximum=0.000200 calls=1589
+CA842 REGION tic=4296 metric=1 total=0.280900 maximum=0.002600 calls=1589
+CA842 REGION tic=4296 metric=2 total=0.137000 maximum=0.000500 calls=1589
+CA842 REGION tic=4296 metric=3 total=0.781300 maximum=0.001100 calls=1589
+CA842 REGION tic=4296 metric=4 total=0.130200 maximum=0.000500 calls=1589
+CA842 REGION tic=4296 metric=5 total=0.576700 maximum=0.006200 calls=1589
+CA842 REGION tic=4296 metric=6 total=0.627100 maximum=0.003100 calls=1589
+CA842 REGION tic=4296 metric=7 total=5.557600 maximum=0.338500 calls=1589
+CA842 REGION tic=4296 metric=8 total=2.983500 maximum=0.075000 calls=1589
+CA842 REGION tic=4296 metric=9 total=0.105600 maximum=0.003600 calls=1589
+CA842 REGION tic=4296 metric=10 total=0.628400 maximum=0.001100 calls=1589
+CA842 REGION tic=4296 metric=11 total=0.835900 maximum=0.001800 calls=1589
+CA842 REGION tic=4296 metric=12 total=0.310400 maximum=0.000900 calls=1589
+CA842 REGION tic=4296 metric=13 total=0.491300 maximum=0.001400 calls=1589
+CA842 REGION tic=4296 metric=14 total=0.155900 maximum=0.000200 calls=1589
+CA842 REGION tic=4296 metric=15 total=0.093000 maximum=0.000400 calls=1589
+CA842 REGION tic=4296 metric=16 total=0.305500 maximum=0.000700 calls=1589
+CA842 REGION tic=4296 metric=17 total=0.992800 maximum=0.001500 calls=1589
+CA842 REGION tic=4296 metric=18 total=0.137200 maximum=0.000500 calls=1589
+CA842 REGION tic=4296 metric=19 total=1.989900 maximum=0.004100 calls=1589
+CA842 REGION tic=4296 metric=20 total=0.911800 maximum=0.004300 calls=1589
+CA842 REGION tic=4296 metric=21 total=0.065300 maximum=0.003900 calls=1589
+CA842 REGION tic=4296 metric=22 total=0.148800 maximum=0.000500 calls=1589
+CA842 REGION tic=4296 metric=23 total=0.127400 maximum=0.000400 calls=1589
+CA842 COMPLETE
+CA435SYNC OK peer=0 map=MAP03 tic=4375
+CA510 FRAME 524.367800
+CA510 FRAME 516.204200
+CA510 FRAME 558.906000
+CA510 FRAME 519.953200
+CA510 FRAME 534.120000
+CA510 FRAME 549.452800
+CA510 FRAME 546.973600
+CA510 FRAME 578.431800
+CA510 FRAME 569.777200
+CA510 FRAME 547.647000
+CA510 FRAME 572.602800
+CA510 FRAME 558.006100
+CA510 FRAME 531.228800
+CA510 FRAME 502.981700
+CA510 FRAME 529.639800
+CA510 FRAME 521.904000
+CA510 FRAME 525.563600
+CA510 FRAME 562.737700
+CA510 FRAME 571.040100
+CA510 FRAME 555.009600
+CA510 FRAME 564.214900
+CA510 FRAME 567.076100
+CA510 FRAME 592.186400
+CA510 FRAME 526.348400
+CA510 FRAME 515.492100
+CA510 FRAME 518.288400
+CA510 FRAME 513.351600
+CA510 FRAME 525.570900
+CA510 FRAME 537.118100
+CA510 FRAME 544.935900
+CA510 FRAME 571.105700
+CA510 FRAME 580.920700
+CA510 FRAME 558.430100
+CA510 FRAME 539.282600
+CA510 FRAME 572.710600
+CA510 FRAME 530.917700
+CA510 FRAMES_END count=36
+Captured scene.png

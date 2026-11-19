@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.98** - 2026-11-19.
+Documentation version: **5.17.99** - 2026-11-19.
+
+## 5.17.99 - Preserve shelter rules with bounded connectivity (#842, #454)
+
+No art, audio, models, textures or runtime asset identities change. The only
+gameplay-source edit simplifies connectivity after the existing thermal-shelter
+traces. assets/validation_v5_17_99 retains source/hash proofs, native geometry
+and save fixtures, timing traces and final reference captures. Private packages,
+engine binaries, IWADs and saves are excluded. Full results and limits are in
+HISTORY; existing artwork and author-review status remain unchanged.
+
 
 ## 5.17.98 - Lossless projectile frames avoid atlas-loading stalls (#840, #454)
 

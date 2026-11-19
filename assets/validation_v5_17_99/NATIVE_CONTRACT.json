@@ -1,0 +1,29 @@
+{
+  "issue": 842,
+  "version": "5.17.99",
+  "parent_commit": "df4444a3b34cceac1b2182636d1c12958cbc3507",
+  "baseline_sha256": "8261aeeef2567a32dcbe4f7b01cc9958a11e79d58de7b4c0998908001d4b6c0d",
+  "final_sha256": "c8fe17e1002348cae5d3eeab3345dc6b57768fce53a59caad71c4519d17cc402",
+  "candidate_source_sha256": "5b0c5a25cef8adc120cc060a10e21fe23bb0791701dba1d9b7b8cf94da3dda80",
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "presentation_layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "scene": "Approved normal1,000-attacker admission cap/600 defenders; same1590 living census, health and camera in paired siege.",
+  "timing": "Sampled15/24-region and9-service timings are diagnostic/inclusive. Same-call oracle01 uses candidate-first and is biased; oracle02 alternates order. Production comparisons contain neither probe. WorldTick-to-WorldTick intervals include engine pacing/frame work and are not isolated CPU simulation durations. Queue presents are not monitor scanout.",
+  "geometry": "54,864 graph cases; two132,331-call oracles; five canonical73-check native geometry/save cases plus one preliminary73-check candidate.",
+  "private_artifacts": "No engine, IWAD, runtime PK3, WAD, DLL or save is included.",
+  "reproduction": [
+    "python prepare_shelter.py --runtime <immutable5.17.98.pk3> --output <repo/build/new-candidate>",
+    "python verify_graph.py --candidate <candidate/shelter.pk3> --output <repo/build/graph.json>",
+    "python prepare_oracle.py --runtime <immutable5.17.98.pk3> --candidate <candidate/shelter.pk3> --output <repo/build/new-oracle>",
+    "python assets/validation_v5_16_2/run_barracas_presentation.py --runtime <runtime.pk3> --map MAP03 --players 1 --siege --presentation-layer <private-layer> [--overlay <oracle/oracle.pk3>]",
+    "python run_geometry.py --runtime <runtime.pk3> --reference-runtime <immutable5.17.98.pk3> --output <repo/build/new-fixture> [--load <private/shelter.zds>]",
+    "python check_preservation.py --runtime <final.pk3> --baseline <immutable5.17.98.pk3> --candidate <candidate/shelter.pk3> --output <repo/build/static.json>"
+  ],
+  "qualification": "Native/static verification only; no author acceptance, complete-map60FPS claim, new game rule or final batch handoff."
+}

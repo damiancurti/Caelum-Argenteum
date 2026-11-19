@@ -1,0 +1,20 @@
+{
+  "issue": 842,
+  "passed": true,
+  "runtime_sha256": "c8fe17e1002348cae5d3eeab3345dc6b57768fce53a59caad71c4519d17cc402",
+  "baseline_sha256": "8261aeeef2567a32dcbe4f7b01cc9958a11e79d58de7b4c0998908001d4b6c0d",
+  "candidate_source_sha256": "5b0c5a25cef8adc120cc060a10e21fe23bb0791701dba1d9b7b8cf94da3dda80",
+  "runtime_members": 18755,
+  "runtime_bytes": 1280986866,
+  "changed": [
+    "caelum/survival/CaelumThermalEnvironment.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "no_added_or_removed_members": true,
+  "source_package_exact": true,
+  "prototype_source_exact": true,
+  "all_outside_connectivity_block_exact": true,
+  "author_queue_unchanged": true,
+  "qualification": "Only the bounded connectivity implementation and two diagnostic version strings change. Every trace, plane-deduplication operation, caller, field declaration, save schema, thermal value and all other runtime members remain byte-identical."
+}

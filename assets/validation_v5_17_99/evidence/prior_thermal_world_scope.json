@@ -1,0 +1,15 @@
+{
+  "source": "../validation_v5_17_98/evidence/analysis/issue840-crops01-analysis.json",
+  "source_sha256": "5026ff44537229b37f6740f1c466f56cc7a6f877f4a82f7ef8ff3699099ecf9f",
+  "metric": {
+    "id": 12,
+    "path": "caelum/survival/CaelumThermalEnvironment.zs",
+    "class": "CaelumThermalWorld",
+    "method": "WorldTick",
+    "inclusive_ms": 8.4302,
+    "exclusive_ms": 8.4302,
+    "calls": 700,
+    "max_call_ms": 0.6119,
+    "max_tic_exclusive_ms": 0.6119
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "issue": 842,
+  "reviewed": [
+    {
+      "label": "siege_final",
+      "scene_sha256": "c2238d26d0a3f3efb45514bd601a50130063c657c2a23ecdf3cdaa9e61c6b090"
+    },
+    {
+      "label": "siege_control",
+      "scene_sha256": "7fac89c7dadff2c95bca4bb9ac04db44dd12146741357f702a74a3c565ccd3b4"
+    },
+    {
+      "label": "mansion_final",
+      "scene_sha256": "6bb41edf199385439cc6c839f6bbf5dc901be693b10075640029af1d13d7a2f1"
+    },
+    {
+      "label": "sewers_final",
+      "scene_sha256": "5ffd43d27bc19a424d04a3cedb9921e454124a88673afc4b492bc5580dd628ce"
+    },
+    {
+      "label": "city_final",
+      "scene_sha256": "09026899eff5ef8700d51728277f810738507a7a5a355bdcf87f40d4ac2f56bf"
+    },
+    {
+      "label": "city_ground_final",
+      "scene_sha256": "03f0bdb156ec97ccb1297e5f9fce02e455386afd33f46985b72416daac007051"
+    }
+  ],
+  "observations": [
+    "All six final/control scene captures were directly inspected.",
+    "Siege camera, ram/fortification view and HUD health match; animation phase/log text differ.",
+    "Mansion entrance includes opening conversation overlay; no free-roaming60FPS claim.",
+    "Sewer entrance remains dark, with visible contamination indicator; no visual acceptance inferred.",
+    "Peaceful city and ground-facing city use the corresponding quay/paving views."
+  ],
+  "qualification": "Camera/scene sanity review for an unchanged-art engineering patch; not complete-map traversal or author acceptance."
+}

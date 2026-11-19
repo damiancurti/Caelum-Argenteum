@@ -1,0 +1,86 @@
+[
+  {
+    "name": "open",
+    "center": [
+      -6000,
+      -3000
+    ],
+    "bounds": [
+      -2048,
+      -2048,
+      2048,
+      2048
+    ],
+    "expected": 0
+  },
+  {
+    "name": "two_parallel",
+    "center": [
+      0,
+      -3000
+    ],
+    "bounds": [
+      -128,
+      -2048,
+      128,
+      2048
+    ],
+    "expected": 0
+  },
+  {
+    "name": "three_connected",
+    "center": [
+      6000,
+      -3000
+    ],
+    "bounds": [
+      -128,
+      -128,
+      128,
+      2048
+    ],
+    "expected": 1
+  },
+  {
+    "name": "four_connected",
+    "center": [
+      -6000,
+      3000
+    ],
+    "bounds": [
+      -128,
+      -128,
+      128,
+      128
+    ],
+    "expected": 1
+  },
+  {
+    "name": "one_plane",
+    "center": [
+      0,
+      3000
+    ],
+    "bounds": [
+      -2048,
+      -2048,
+      128,
+      2048
+    ],
+    "expected": 0
+  },
+  {
+    "name": "segmented_planes",
+    "center": [
+      6000,
+      3000
+    ],
+    "bounds": [
+      -128,
+      -128,
+      128,
+      128
+    ],
+    "expected": -1
+  }
+]
