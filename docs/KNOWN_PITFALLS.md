@@ -4,6 +4,31 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-264 - Visual identification has effects before a later eligibility rejection
+
+Status/evidence: OPEN DEFECT, ENGINE-REPRODUCED in 5.17.104; #853 diagnosis /
+5.17.105, correction tracked in #855. GZDoom 4.14.2, 2026-11-19.
+
+An Identify call is not a read-only visibility predicate. CaelumVisualEvidence
+updates continuity, identified subject, visibility flags and memory. Rejecting a
+technical navigation marker later in CanReach can still erase recognition of a
+real target. The native reproduction observes one actual second, then invokes
+UpdateBreath with an excluded live marker: continuity falls from 35 to zero and
+two-second identification fails. Retain this failed baseline and fix the authored
+eligibility ordering in its own behavior patch. Inspect the analogous PaidTick
+ordering; the current baseline fixture establishes UpdateBreath, not every caller.
+
+Measure before introducing state caches. The native InStateSequence predicate
+already returns false for a null base, but repeated FindState scopes total only
+0.1794 ms per sampled tic here, including timer overhead. No rewrite is selected.
+Classify actual targets and retain original call effects during instrumentation;
+do not collapse visual checks indiscriminately because native CheckSight can use
+RNG for invisible subjects. Nested timers cannot be added into a frame budget.
+
+Evidence: assets/validation_v5_17_105. Contract: SYSTEMS demon navigation-target
+exclusion and visual recognition. Fix and author acceptance remain pending.
+
+
 ## CA-KP-263 - Measure local candidates separately and preserve ally evidence
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #851 / 5.17.104,

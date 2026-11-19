@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.104** - 2026-11-19.
+Documentation version: **5.17.105** - 2026-11-19.
+
+## 5.17.105 - Measure breath queries and reproduce route-induced recognition loss (#853, #855)
+
+No asset, map, model, animation or sound change. Diagnostic evidence in
+assets/validation_v5_17_105 retains bounded breath-state/status instrumentation,
+target classification, the failed recognition baseline and portable reproduction
+tools. Engine, IWAD, runtime packages, WADs and saves remain private. Previous
+visual candidates and the consolidated author review remain pending.
+
 
 ## 5.17.104 - Bound dense local perception and measure the remaining siege budget (#851, #454)
 

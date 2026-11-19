@@ -1,0 +1,171 @@
+{
+  "issue": 853,
+  "version": "5.17.105",
+  "baseline_version": "5.17.104",
+  "baseline_sha256": "1bf92c28f7317875e10aace435bc730507602e98c6dc4681c79f54a74e48f0cf",
+  "parent_commit": "4964bb3eddda73a27773e2999ce22646e4b7c079",
+  "production_change": "Only current-version diagnostics change; no gameplay, state schema, assets, cadence or behavior change.",
+  "exact_source_comparison": {
+    "members": 18755,
+    "changed": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "other_members_exact": true
+  },
+  "decision": "No state cache or duplicate-lookup rewrite selected. The two lookup scopes total0.1794ms per sampled tic, including timing overhead; the larger diagnosis reveals a reproduced visual-recognition regression, tracked separately in855.",
+  "metrics": [
+    {
+      "id": 12,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "UpdateBreath",
+      "mean_sampled_tic_ms": 2.053657142857143,
+      "max_sampled_tic_ms": 2.1646,
+      "calls": 66738,
+      "mean_call_us": 1.292421109412928
+    },
+    {
+      "id": 11,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "StopBreath",
+      "mean_sampled_tic_ms": 0.3654404761904762,
+      "max_sampled_tic_ms": 0.4054,
+      "calls": 41496,
+      "mean_call_us": 0.36987902448428767
+    },
+    {
+      "id": 9,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Visual_Identify",
+      "mean_sampled_tic_ms": 0.35081666666666667,
+      "max_sampled_tic_ms": 0.3956,
+      "calls": 39302,
+      "mean_call_us": 0.37489949620884433
+    },
+    {
+      "id": 5,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "BattleCry_Active",
+      "mean_sampled_tic_ms": 0.10665714285714285,
+      "max_sampled_tic_ms": 0.1227,
+      "calls": 82992,
+      "mean_call_us": 0.05397628687102371
+    },
+    {
+      "id": 0,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "FindState_Pain",
+      "mean_sampled_tic_ms": 0.09,
+      "max_sampled_tic_ms": 0.1337,
+      "calls": 82992,
+      "mean_call_us": 0.04554655870445344
+    },
+    {
+      "id": 1,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "FindState_RacialBreath",
+      "mean_sampled_tic_ms": 0.08940714285714287,
+      "max_sampled_tic_ms": 0.0986,
+      "calls": 82992,
+      "mean_call_us": 0.04524652978600347
+    },
+    {
+      "id": 6,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Telekinesis_Held",
+      "mean_sampled_tic_ms": 0.07303571428571429,
+      "max_sampled_tic_ms": 0.0789,
+      "calls": 41496,
+      "mean_call_us": 0.07392278773857722
+    },
+    {
+      "id": 7,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Bolas_Restrained",
+      "mean_sampled_tic_ms": 0.036007142857142856,
+      "max_sampled_tic_ms": 0.0419,
+      "calls": 41496,
+      "mean_call_us": 0.03644447657605552
+    },
+    {
+      "id": 3,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Sequence_RacialBreath",
+      "mean_sampled_tic_ms": 0.028002380952380952,
+      "max_sampled_tic_ms": 0.0331,
+      "calls": 41496,
+      "mean_call_us": 0.02834249084249084
+    },
+    {
+      "id": 2,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Sequence_Pain",
+      "mean_sampled_tic_ms": 0.02743571428571429,
+      "max_sampled_tic_ms": 0.0419,
+      "calls": 41496,
+      "mean_call_us": 0.027768941584731064
+    },
+    {
+      "id": 10,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Breath_CanReach",
+      "mean_sampled_tic_ms": 0.0035690476190476193,
+      "max_sampled_tic_ms": 0.0048,
+      "calls": 217,
+      "mean_call_us": 0.6907834101382488
+    },
+    {
+      "id": 4,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Sequence_attack",
+      "mean_sampled_tic_ms": 0.0,
+      "max_sampled_tic_ms": 0,
+      "calls": 0,
+      "mean_call_us": 0
+    },
+    {
+      "id": 8,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Bolas_Interrupted",
+      "mean_sampled_tic_ms": 0.0,
+      "max_sampled_tic_ms": 0,
+      "calls": 0,
+      "mean_call_us": 0
+    }
+  ],
+  "targets": [
+    {
+      "actor": "CaelumSewerEscapeTarget",
+      "calls": 39228,
+      "identified": 143
+    },
+    {
+      "actor": "CaelumPlayer",
+      "calls": 74,
+      "identified": 74
+    }
+  ],
+  "regression": {
+    "engine_exit_code": 0,
+    "setup_resource_passes": 6,
+    "expected_recognition_failures": [
+      "CA836 EDGE FAIL navigation: excluded navigation preserves ongoing recognition",
+      "CA836 EDGE FAIL navigation: real target identifies after two observed seconds"
+    ],
+    "before_tics": 35,
+    "after_tics": 0,
+    "previous_visible_after": false,
+    "followup_issue": 855,
+    "qualification": "Observed real elapsed seconds with frozen native Mandinga. Baseline conformance fails as expected; no compile/runtime error. This is not an accepted failure or a claimed fix."
+  },
+  "failed_attempts": [
+    "breath01 was not run: helper Find was renamed Lookup to avoid inherited-name conflict.",
+    "targets01 failed Name/String ternary inference; targets02 uses explicit Name assignment and passes. Failed source/log retained."
+  ],
+  "reproduction": [
+    "python prepare_breath.py --runtime <5.17.104.pk3> --output <repo/build/new-profile> [--targets]",
+    "Use assets/validation_v5_16_2/run_barracas_presentation.py with the profile overlay, then analyze_breath.py --profile <profile-dir> --run <run-dir> --output <report.json>.",
+    "python run_navigation.py --runtime <5.17.104.pk3> --output <repo/build/new-regression>; expect engineexit0,6PASS/2FAIL and recognition35to0."
+  ],
+  "qualification": "Nested scopes include instrumentation and cannot be summed. Native state-query times approach timer overhead and are not intrinsic-cost estimates. Earlier uninstrumented frame evidence remains in validation_v5_17_104; no new production FPS gain is claimed. No private engine/IWAD/package/WAD/save binaries are shipped. Author acceptance and the complete batch remain pending."
+}

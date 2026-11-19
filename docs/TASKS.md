@@ -1,6 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.104** - 2026-11-19.
+Documentation version: **5.17.105** - 2026-11-19.
+
+## 5.17.105 - Measure breath queries and reproduce route-induced recognition loss (#853, #855)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Completed #853 diagnosis: bounded state/status scopes, target-class counts,
+source inspection and native reproduction of route-induced visual-recognition
+loss. No state optimization is adopted. Only two current-version diagnostic
+strings change in src; all other packaged source remains exact.
+
+Next: #855 must preserve the existing breath-target exclusion before visual
+identification, pass the retained failed baseline fixture and cover legitimate
+targets, cold/bolas, interruptions, paid resources, state transitions and saves.
+This is a behavior correction and must not be represented as an equivalent
+performance comparison. Remaining batch/design/author gates still apply.
+HISTORY and assets/validation_v5_17_105 retain evidence; author queue unchanged.
+
 
 ## 5.17.104 - Bound dense local perception and measure the remaining siege budget (#851, #454)
 

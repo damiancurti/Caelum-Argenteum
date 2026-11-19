@@ -1365,3 +1365,8 @@ assets/validation_v5_17_103/*.json text eol=lf diff
 assets/validation_v5_17_104/** -text -diff
 assets/validation_v5_17_104/*.py text eol=lf diff
 assets/validation_v5_17_104/*.json text eol=lf diff
+
+# Retained issue853 diagnostic evidence.
+assets/validation_v5_17_105/** -text -diff
+assets/validation_v5_17_105/*.py text eol=lf diff
+assets/validation_v5_17_105/*.json text eol=lf diff
