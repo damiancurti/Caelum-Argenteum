@@ -1,0 +1,82 @@
+{
+  "issue": 840,
+  "native_passed": true,
+  "profile": "build\\issue840-vulkan03-analysis.json",
+  "run": "build\\v516\\barracas-profile-20261119-130312-930666",
+  "presents_sha256": "026ec50f5f62397ea34c825d1ce09e5a3e85121dced528479d17b01ea1a000e7",
+  "api_sha256": "a1606c999488c41fba1ff5a56b004c7edd8c5edef04114eded3d0c92945a1e97",
+  "alignment": {
+    "start": 2088,
+    "offset_low_ms": 718507965.3557,
+    "offset_high_ms": 718507968.5005001
+  },
+  "clock_offset_uncertainty_ms": 3.144800066947937,
+  "slow_api_calls": 1992,
+  "cropped_window_calls": 36,
+  "api_summary": {
+    "vkWaitForFences": {
+      "count": 36,
+      "total_ms": 93.69340014457703,
+      "max_ms": 4.327299952507019
+    }
+  },
+  "worst_frame_gaps": [
+    {
+      "tic": 3763,
+      "gap_ms": 176.45249999999942,
+      "certain_calls": [],
+      "possible_calls": [],
+      "certain_total_ms": 0
+    },
+    {
+      "tic": 3746,
+      "gap_ms": 88.27030000000377,
+      "certain_calls": [],
+      "possible_calls": [],
+      "certain_total_ms": 0
+    },
+    {
+      "tic": 3729,
+      "gap_ms": 87.11100000000442,
+      "certain_calls": [],
+      "possible_calls": [],
+      "certain_total_ms": 0
+    },
+    {
+      "tic": 3627,
+      "gap_ms": 15.33520000000135,
+      "certain_calls": [],
+      "possible_calls": [],
+      "certain_total_ms": 0
+    },
+    {
+      "tic": 3661,
+      "gap_ms": 12.212400000003981,
+      "certain_calls": [],
+      "possible_calls": [],
+      "certain_total_ms": 0
+    },
+    {
+      "tic": 3848,
+      "gap_ms": 7.439400000002934,
+      "certain_calls": [],
+      "possible_calls": [],
+      "certain_total_ms": 0
+    },
+    {
+      "tic": 3797,
+      "gap_ms": 7.351500000004307,
+      "certain_calls": [],
+      "possible_calls": [],
+      "certain_total_ms": 0
+    },
+    {
+      "tic": 3814,
+      "gap_ms": 6.722399999998743,
+      "certain_calls": [],
+      "possible_calls": [],
+      "certain_total_ms": 0
+    }
+  ],
+  "qualification": "Selected Vulkan API CPU durations >=1ms only; not GPU execution. Clock offset is bounded by all observed overlay/present/next-tic inequalities, not an assumed exact synchronization. Certain calls fit the gap for every admissible offset; possible calls overlap for at least one. Counts exclude faster calls."
+}

@@ -1,0 +1,47 @@
+{
+  "issue": 840,
+  "passed": false,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue838-relation02.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-pixels-base04\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-pixels-base04\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-pixels-base04",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-pixels-base04\\engine.log",
+    "+map",
+    "CA840P",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-pixels-base04\\commands.cfg"
+  ],
+  "exit_code": 4294967295,
+  "errors": [
+    "Script error",
+    "Missing black",
+    "Missing gray",
+    "Missing white"
+  ],
+  "captures": [],
+  "checks": [],
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue838-relation02.pk3": "6411c05ac7202c510238d989faf4193100015d75e527b898d77364d60512eda4",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-pixels-base04\\checks.pk3": "a7df82e6593f29bf5609fdb5b98c8cb716ea522724bc8266081b709d4276aaf3"
+  },
+  "qualification": "Same native frame renders original atlas aliases and candidates in paired positions on three opaque backgrounds. Actual unchanged-scale/offset metadata and rendered RGB cells are compared. Isolated compositing evidence, not author acceptance or combat/performance evidence.",
+  "reference_runtime_sha256": "6411c05ac7202c510238d989faf4193100015d75e527b898d77364d60512eda4",
+  "loaded_save_sha256": null,
+  "saved_sha256": null,
+  "saved_frame_checks": []
+}

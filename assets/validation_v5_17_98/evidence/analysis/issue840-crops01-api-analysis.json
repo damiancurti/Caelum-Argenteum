@@ -1,0 +1,536 @@
+{
+  "issue": 840,
+  "native_passed": true,
+  "profile": "build\\issue840-crops01-analysis.json",
+  "run": "build\\v516\\barracas-profile-20261119-131756-473926",
+  "presents_sha256": "85cafe0cc2882bd3a09788128954d3accd1b818579d29d53f6f2fe2a4494df23",
+  "api_sha256": "77baa597298e389034b425a9c6389ad0a016979b2dd9af5774841a2b51b1f2e6",
+  "alignment": {
+    "start": 2087,
+    "offset_low_ms": 719391504.0203,
+    "offset_high_ms": 719391507.4075
+  },
+  "clock_offset_uncertainty_ms": 3.3871999979019165,
+  "cropped_window_calls": 209,
+  "api_summary": {
+    "vkCreateBuffer": {
+      "count": 159,
+      "total_ms": 0.11080014705657959,
+      "max_ms": 0.0025000572204589844
+    },
+    "vkCreateImage": {
+      "count": 11,
+      "total_ms": 0.04780006408691406,
+      "max_ms": 0.007500052452087402
+    },
+    "vkWaitForFences": {
+      "count": 37,
+      "total_ms": 94.06419968605042,
+      "max_ms": 4.374799966812134
+    },
+    "vkCreateGraphicsPipelines": {
+      "count": 2,
+      "total_ms": 0.037600040435791016,
+      "max_ms": 0.026900053024291992
+    }
+  },
+  "worst_frame_gaps": [
+    {
+      "tic": 3618,
+      "gap_ms": 13.285900000002584,
+      "certain_calls": [
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateGraphicsPipelines",
+          "EntryQPCms": 719506150.7867,
+          "ReturnQPCms": 719506150.8271,
+          "Durationms": "0.040400",
+          "Result": "0",
+          "Detail": "",
+          "duration_ms": 0.040400028228759766
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateGraphicsPipelines",
+          "EntryQPCms": 719506150.8527,
+          "ReturnQPCms": 719506150.8621,
+          "Durationms": "0.009400",
+          "Result": "0",
+          "Detail": "",
+          "duration_ms": 0.009400010108947754
+        }
+      ],
+      "possible_calls": [
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateGraphicsPipelines",
+          "EntryQPCms": 719506150.7867,
+          "ReturnQPCms": 719506150.8271,
+          "Durationms": "0.040400",
+          "Result": "0",
+          "Detail": "",
+          "duration_ms": 0.040400028228759766
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateGraphicsPipelines",
+          "EntryQPCms": 719506150.8527,
+          "ReturnQPCms": 719506150.8621,
+          "Durationms": "0.009400",
+          "Result": "0",
+          "Detail": "",
+          "duration_ms": 0.009400010108947754
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719506155.0839,
+          "ReturnQPCms": 719506155.0855,
+          "Durationms": "0.001600",
+          "Result": "0",
+          "Detail": "bytes=698896 usage=1",
+          "duration_ms": 0.001600027084350586
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719506155.1577,
+          "ReturnQPCms": 719506155.1625,
+          "Durationms": "0.004800",
+          "Result": "0",
+          "Detail": "width=418 height=418 format=44 mips=9",
+          "duration_ms": 0.004800081253051758
+        }
+      ],
+      "certain_total_ms": 0.04980003833770752
+    },
+    {
+      "tic": 3669,
+      "gap_ms": 12.319999999992433,
+      "certain_calls": [],
+      "possible_calls": [
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719507831.9257,
+          "ReturnQPCms": 719507831.9276,
+          "Durationms": "0.001900",
+          "Result": "0",
+          "Detail": "bytes=698896 usage=1",
+          "duration_ms": 0.0019000768661499023
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719507831.9906,
+          "ReturnQPCms": 719507831.9971,
+          "Durationms": "0.006500",
+          "Result": "0",
+          "Detail": "width=418 height=418 format=44 mips=9",
+          "duration_ms": 0.0065000057220458984
+        }
+      ],
+      "certain_total_ms": 0
+    },
+    {
+      "tic": 3720,
+      "gap_ms": 11.490999999994528,
+      "certain_calls": [
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719509436.6698,
+          "ReturnQPCms": 719509436.6715,
+          "Durationms": "0.001700",
+          "Result": "0",
+          "Detail": "bytes=266256 usage=1",
+          "duration_ms": 0.0016999244689941406
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719509436.7039,
+          "ReturnQPCms": 719509436.7084,
+          "Durationms": "0.004500",
+          "Result": "0",
+          "Detail": "width=258 height=258 format=44 mips=9",
+          "duration_ms": 0.004500031471252441
+        }
+      ],
+      "possible_calls": [
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719509436.6698,
+          "ReturnQPCms": 719509436.6715,
+          "Durationms": "0.001700",
+          "Result": "0",
+          "Detail": "bytes=266256 usage=1",
+          "duration_ms": 0.0016999244689941406
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719509436.7039,
+          "ReturnQPCms": 719509436.7084,
+          "Durationms": "0.004500",
+          "Result": "0",
+          "Detail": "width=258 height=258 format=44 mips=9",
+          "duration_ms": 0.004500031471252441
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719509437.7262,
+          "ReturnQPCms": 719509437.7267,
+          "Durationms": "0.000500",
+          "Result": "0",
+          "Detail": "bytes=266256 usage=1",
+          "duration_ms": 0.0004999637603759766
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719509437.7495,
+          "ReturnQPCms": 719509437.7506,
+          "Durationms": "0.001100",
+          "Result": "0",
+          "Detail": "width=258 height=258 format=44 mips=9",
+          "duration_ms": 0.0010999441146850586
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719509438.6027,
+          "ReturnQPCms": 719509438.6033,
+          "Durationms": "0.000600",
+          "Result": "0",
+          "Detail": "bytes=185072 usage=1",
+          "duration_ms": 0.000599980354309082
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719509438.6194,
+          "ReturnQPCms": 719509438.6242,
+          "Durationms": "0.004800",
+          "Result": "0",
+          "Detail": "width=269 height=172 format=44 mips=9",
+          "duration_ms": 0.004799962043762207
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateGraphicsPipelines",
+          "EntryQPCms": 719509438.6658,
+          "ReturnQPCms": 719509438.6927,
+          "Durationms": "0.026900",
+          "Result": "0",
+          "Detail": "",
+          "duration_ms": 0.026900053024291992
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719509439.4679,
+          "ReturnQPCms": 719509439.4684,
+          "Durationms": "0.000500",
+          "Result": "0",
+          "Detail": "bytes=67600 usage=1",
+          "duration_ms": 0.0004999637603759766
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719509439.4771,
+          "ReturnQPCms": 719509439.4784,
+          "Durationms": "0.001300",
+          "Result": "0",
+          "Detail": "width=130 height=130 format=44 mips=8",
+          "duration_ms": 0.0012999773025512695
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateGraphicsPipelines",
+          "EntryQPCms": 719509439.5168,
+          "ReturnQPCms": 719509439.5275,
+          "Durationms": "0.010700",
+          "Result": "0",
+          "Detail": "",
+          "duration_ms": 0.010699987411499023
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719509440.2485,
+          "ReturnQPCms": 719509440.2491,
+          "Durationms": "0.000600",
+          "Result": "0",
+          "Detail": "bytes=169248 usage=1",
+          "duration_ms": 0.000599980354309082
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719509440.2634,
+          "ReturnQPCms": 719509440.2649,
+          "Durationms": "0.001500",
+          "Result": "0",
+          "Detail": "width=246 height=172 format=44 mips=8",
+          "duration_ms": 0.0015000104904174805
+        }
+      ],
+      "certain_total_ms": 0.006199955940246582
+    },
+    {
+      "tic": 3601,
+      "gap_ms": 11.133799999995972,
+      "certain_calls": [
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719505568.7392,
+          "ReturnQPCms": 719505568.7411,
+          "Durationms": "0.001900",
+          "Result": "0",
+          "Detail": "bytes=65536 usage=1",
+          "duration_ms": 0.0018999576568603516
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719505568.763,
+          "ReturnQPCms": 719505568.7712,
+          "Durationms": "0.008200",
+          "Result": "0",
+          "Detail": "width=128 height=128 format=44 mips=8",
+          "duration_ms": 0.008199930191040039
+        }
+      ],
+      "possible_calls": [
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719505568.7392,
+          "ReturnQPCms": 719505568.7411,
+          "Durationms": "0.001900",
+          "Result": "0",
+          "Detail": "bytes=65536 usage=1",
+          "duration_ms": 0.0018999576568603516
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719505568.763,
+          "ReturnQPCms": 719505568.7712,
+          "Durationms": "0.008200",
+          "Result": "0",
+          "Detail": "width=128 height=128 format=44 mips=8",
+          "duration_ms": 0.008199930191040039
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateGraphicsPipelines",
+          "EntryQPCms": 719505570.7392,
+          "ReturnQPCms": 719505570.772,
+          "Durationms": "0.032800",
+          "Result": "0",
+          "Detail": "",
+          "duration_ms": 0.03279995918273926
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719505572.5922,
+          "ReturnQPCms": 719505572.593,
+          "Durationms": "0.000800",
+          "Result": "0",
+          "Detail": "bytes=266256 usage=1",
+          "duration_ms": 0.000800013542175293
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719505572.6169,
+          "ReturnQPCms": 719505572.619,
+          "Durationms": "0.002100",
+          "Result": "0",
+          "Detail": "width=258 height=258 format=44 mips=9",
+          "duration_ms": 0.0020999908447265625
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719505573.0165,
+          "ReturnQPCms": 719505573.0169,
+          "Durationms": "0.000400",
+          "Result": "0",
+          "Detail": "bytes=94168 usage=1",
+          "duration_ms": 0.0003999471664428711
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719505573.0281,
+          "ReturnQPCms": 719505573.0307,
+          "Durationms": "0.002600",
+          "Result": "0",
+          "Detail": "width=149 height=158 format=44 mips=8",
+          "duration_ms": 0.002599954605102539
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateGraphicsPipelines",
+          "EntryQPCms": 719505573.0764,
+          "ReturnQPCms": 719505573.0865,
+          "Durationms": "0.010100",
+          "Result": "0",
+          "Detail": "",
+          "duration_ms": 0.010100007057189941
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateGraphicsPipelines",
+          "EntryQPCms": 719505573.0948,
+          "ReturnQPCms": 719505573.1013,
+          "Durationms": "0.006500",
+          "Result": "0",
+          "Detail": "",
+          "duration_ms": 0.0065000057220458984
+        }
+      ],
+      "certain_total_ms": 0.01009988784790039
+    },
+    {
+      "tic": 3805,
+      "gap_ms": 7.839099999997416,
+      "certain_calls": [],
+      "possible_calls": [
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719512111.957,
+          "ReturnQPCms": 719512111.9587,
+          "Durationms": "0.001700",
+          "Result": "0",
+          "Detail": "bytes=266256 usage=1",
+          "duration_ms": 0.0016999244689941406
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719512111.9908,
+          "ReturnQPCms": 719512111.9955,
+          "Durationms": "0.004700",
+          "Result": "0",
+          "Detail": "width=258 height=258 format=44 mips=9",
+          "duration_ms": 0.0046999454498291016
+        }
+      ],
+      "certain_total_ms": 0
+    },
+    {
+      "tic": 3788,
+      "gap_ms": 7.674400000003516,
+      "certain_calls": [],
+      "possible_calls": [
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719511543.9982,
+          "ReturnQPCms": 719511543.9998,
+          "Durationms": "0.001600",
+          "Result": "0",
+          "Detail": "bytes=266256 usage=1",
+          "duration_ms": 0.0015999078750610352
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719511544.0342,
+          "ReturnQPCms": 719511544.0417,
+          "Durationms": "0.007500",
+          "Result": "0",
+          "Detail": "width=258 height=258 format=44 mips=9",
+          "duration_ms": 0.007500052452087402
+        }
+      ],
+      "certain_total_ms": 0
+    },
+    {
+      "tic": 3856,
+      "gap_ms": 6.896999999997206,
+      "certain_calls": [],
+      "possible_calls": [
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateBuffer",
+          "EntryQPCms": 719513788.7021,
+          "ReturnQPCms": 719513788.7042,
+          "Durationms": "0.002100",
+          "Result": "0",
+          "Detail": "bytes=185760 usage=1",
+          "duration_ms": 0.0020999908447265625
+        },
+        {
+          "PID": "12688",
+          "Thread": "23020",
+          "API": "vkCreateImage",
+          "EntryQPCms": 719513788.7332,
+          "ReturnQPCms": 719513788.7374,
+          "Durationms": "0.004200",
+          "Result": "0",
+          "Detail": "width=270 height=172 format=44 mips=9",
+          "duration_ms": 0.004200100898742676
+        }
+      ],
+      "certain_total_ms": 0
+    },
+    {
+      "tic": 3873,
+      "gap_ms": 5.98420000000624,
+      "certain_calls": [],
+      "possible_calls": [],
+      "certain_total_ms": 0
+    }
+  ],
+  "qualification": "Selected Vulkan API CPU durations, not GPU execution. All intercepted creation/allocation calls, plus other selected calls >=1ms. Clock offset bounded by all observed overlay/present/next-tic inequalities. Certain calls fit the gap for every admissible offset; possible calls overlap for at least one.",
+  "recorded_api_calls": 11662
+}

@@ -4,6 +4,41 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-257 - First-use atlas clipping can stall before Vulkan calls
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #840, 2026-11-19,
+release 5.17.98, native GZDoom 4.14.2. Scoped diagnostic and production evidence;
+no author acceptance or universal performance claim.
+
+An unexplained post-tic pause is not automatically GPU work. Bound PlayerThink,
+end-of-P_Ticker and HUD callbacks first. The first RenderUnderlay follows the
+3D render; the last RenderOverlay only ends HUD callbacks. Native API timing
+starts after the caller's preparation. Correlate resource creation timestamps
+and dimensions with a bounded clock-offset interval before assigning a cause.
+
+FImageSource.GetCachedBitmap may create a full source bitmap outside its
+precaching block; FMultiPatchTexture.CopyPixels then applies the crop. Four
+first-use fire frames from the 1024x1536 atlas produced 85-169 ms gaps, although
+the associated Vulkan calls were fast. Temporary no-audio/general-precache
+comparisons did not remove them. Exact offline crop files reduced the largest
+diagnostic gap to 13.29 ms. Preserve the source atlas and every consumer; change
+only the patch source/origin while keeping all native texture metadata.
+
+Verify derived RGBA bytes independently and compare the original and candidate
+in the same native frame on black, gray and white backgrounds. Check actual
+background pixels: screenshot commands are queued, so changing the background
+immediately can capture the next state. Preserve native saved sprite/frame
+checks across fresh, upgrade, reload and rollback. Local WorldLoaded alone did
+not supply post-save-load verification in this fixture; its transient first
+WorldTick check does. Native success does not confirm campaign acceptance.
+
+Final/control queue tails and simulation intervals are recorded separately.
+The large loading stalls are reduced while overall siege rendering remains
+poor. Keep residual simulation work and wider-map performance open.
+Evidence: assets/validation_v5_17_98; native source hashes and boundaries are in
+its NATIVE_CONTRACT.json. No private engine, IWAD, package or save is distributed.
+
+
 ## CA-KP-256 - Preserve predicate side effects and measure unexplained residuals
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #838, 2026-11-19.

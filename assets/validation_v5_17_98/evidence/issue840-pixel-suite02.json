@@ -1,0 +1,26 @@
+[
+  {
+    "case": "upgrade03",
+    "result": "build/issue840-pixels-upgrade03/RESULTS.json",
+    "passed": true,
+    "exit_code": 0
+  },
+  {
+    "case": "final01",
+    "result": "build/issue840-pixels-final01/RESULTS.json",
+    "passed": true,
+    "exit_code": 0
+  },
+  {
+    "case": "reload01",
+    "result": "build/issue840-pixels-reload01/RESULTS.json",
+    "passed": true,
+    "exit_code": 0
+  },
+  {
+    "case": "rollback01",
+    "result": "build/issue840-pixels-rollback01/RESULTS.json",
+    "passed": true,
+    "exit_code": 0
+  }
+]

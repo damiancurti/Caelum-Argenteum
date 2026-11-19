@@ -1,0 +1,35 @@
+// Sustituye el status bar heredado de Doom. El HUD permanente se compone en
+// CaelumHUDOverlay mientras la migración a BaseStatusBar continúa por módulos.
+// Esta clase elimina de inmediato el rostro, las armas y la munición ajenas.
+class CaelumStatusBar : BaseStatusBar
+{
+    override void ShowPop(int popnum)
+    {
+        // Los comandos heredados llegan a las fuentes propias, sin pantallas Strife.
+        if(popnum==POP_Log)CaelumExplorationNavigation.OpenPage(4);
+        else if(popnum==POP_Keys)CaelumExplorationNavigation.Command("ca_keys_open");
+        else if(popnum==POP_Status)CaelumExplorationNavigation.OpenPage(1);
+    }
+    override void Init()
+    {
+        Super.Init();
+        SetSize(0, 640, 360);
+    }
+
+    ui void CA840UIBody_CaelumStatusBar(int state, double ticFraction)
+    {
+        // BaseStatusBar conserva la mira nativa, sin barras ni arte de Doom.
+        if(state!=HUD_AltHud && CaelumPresentation.CrosshairVisible())Super.Draw(HUD_Fullscreen,ticFraction);
+    }
+
+    override void Draw(int state, double ticFraction)
+    {
+        CA840BurstProfile probe=null;
+        if(level.time>=3600 && level.time<4300)probe=CA840BurstProfile(StaticEventHandler.Find('CA840BurstProfile'));
+        if(probe!=null)probe.BeginUI(4);
+        CA840UIBody_CaelumStatusBar(state,ticFraction);
+        if(probe!=null)probe.EndUI();
+    }
+
+    override void Tick() { Super.Tick(); let probe=CA840BurstProfile(StaticEventHandler.Find('CA840BurstProfile')); if(probe!=null)probe.MarkTicEnd(); }
+}

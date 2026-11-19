@@ -1,0 +1,230 @@
+// Vehículos estacionados y estructuras persistentes. El viaje usa la misma
+// transacción de provisiones, reloj y agenda que las rutas a pie.
+class CaelumVehiclePart : Actor
+{
+    CaelumTravelVehicle Vehicle;
+    Actor Structure;
+    override bool Used(Actor activator)
+    {
+        let user=CaelumPlayer(activator);
+        return Vehicle!=null && CaelumUseGeometry.AimedAt(user,self) && Vehicle.Board(user);
+    }
+    override void Tick(){Super.Tick();if(Vehicle==null && Structure==null)Destroy();}
+    Default { Radius 24; Height 64; +SOLID +ACTLIKEBRIDGE +NOLIFTDROP +CANPASS +NOGRAVITY +CANNOTPUSH +DONTTHRUST +INVULNERABLE RenderStyle "None"; }
+    States { Spawn: TNT1 A -1; Stop; }
+}
+
+class CaelumTravelVehicle : Actor
+{
+    bool Ready;
+    CaelumVehiclePart Parts[32];
+    vector3 BoardingPoint;
+    virtual clearscope int TravelMode(){return CaelumJourneyState.MODE_CART;}
+    clearscope int Connection(){return level.MapName=="MAP03"?10:level.MapName=="TCOAST"?11:0;}
+    bool CanBoard(CaelumPlayer user)
+    {
+        return Ready && CaelumTransportRules.NodeForMap(level.MapName)>=0 && user!=null && user.player!=null && user.health>0
+            && (user.Pos-BoardingPoint).Length()<=user.UseRange+48
+            && BoardingSight(user);
+    }
+    bool BoardingSight(CaelumPlayer user)
+    {
+        if(user.CheckSight(self,SF_IGNOREVISIBILITY))return true;
+        // Usar una pieza visible del casco/coche tambien es acceso real;
+        // su centro puede quedar oculto por un techo o por el propio muelle.
+        // Consulta solo al interactuar: hasta 32 piezas propias, sin censo.
+        for(int i=0;i<32;i++)if(Parts[i]!=null && user.CheckSight(Parts[i],SF_IGNOREVISIBILITY))return true;
+        return false;
+    }
+    bool Board(CaelumPlayer user)
+    {
+        if(!CaelumBattleConsequences.AllowDeparture(user) || !CanBoard(user))return false;
+        CaelumPoiKnowledge.RecordUse(user,self,CaelumPoiData.TRANSPORT);
+        return CaelumTransportSession.Show(user,self);
+    }
+    override bool Used(Actor activator)
+    {return CaelumUseGeometry.AimedAt(CaelumPlayer(activator),self) && Board(CaelumPlayer(activator));}
+    vector3 LocalPoint(double along,double across,double up)
+    {return Pos+(Cos(Angle)*along-Sin(Angle)*across,Sin(Angle)*along+Cos(Angle)*across,up);}
+    bool Part(int slot,double along,double across,double up,double radius,double tall)
+    {
+        if(Parts[slot]==null)Parts[slot]=CaelumVehiclePart(Spawn("CaelumVehiclePart",LocalPoint(along,across,up),NO_REPLACE));
+        if(Parts[slot]==null)return false;
+        Parts[slot].Vehicle=self;Parts[slot].A_SetSize(radius,tall,false);
+        Parts[slot].SetOrigin(LocalPoint(along,across,up),false);return true;
+    }
+    virtual bool Prepare()
+    {
+        bool ok=true;
+        for(int i=0;i<3;i++)if(!Part(i,i*40-40,0,0,27,64))ok=false;
+        for(int i=0;i<2;i++)if(!Part(3+i,-12,i==0?-38:38,0,5,58))ok=false;
+        for(int i=0;i<3;i++)if(!Part(5+i,72+i*20,0,28,4,8))ok=false;
+        // Segundo eje: ruedas delanteras sin rehacer las piezas existentes.
+        for(int i=0;i<2;i++)if(!Part(8+i,48,i==0?-38:38,0,5,50))ok=false;
+        BoardingPoint=LocalPoint(70,-48,0);Ready=ok;return ok;
+    }
+    override void OnDestroy(){for(int i=0;i<32;i++)if(Parts[i]!=null)Parts[i].Destroy();Super.OnDestroy();}
+    Default { Radius 1; Height 96; +CANPASS +NOGRAVITY +CANNOTPUSH +DONTTHRUST +INVULNERABLE Tag "$CA_JOURNEY_CART"; }
+    States { Spawn: CAHC A -1; Stop; }
+}
+
+class CaelumCoveredCart : CaelumTravelVehicle {}
+
+class CaelumMerchantShip : CaelumTravelVehicle
+{
+    override int TravelMode(){return CaelumJourneyState.MODE_SHIP;}
+    override bool Prepare()
+    {
+        bool ok=true;
+        for(int row=0;row<10;row++)
+        {
+            double along=-144+row*32;
+            double width=Abs(along)>128?16:Abs(along)>96?32:48;
+            for(int col=0;col<3;col++)
+                if(!Part(row*3+col,along,(col-1)*(width-16),-32,16,62))ok=false;
+        }
+        if(!Part(30,0,-72,24,12,76))ok=false;
+        // Volumen de Usar frente al casco, además del cartel. No es sólido:
+        // amplía la superficie apuntable sin crear una pared invisible.
+        if(!Part(31,0,-24,24,48,96))ok=false;
+        if(Parts[31]!=null)
+        {
+            Parts[31].bSOLID=false;
+            Parts[31].bACTLIKEBRIDGE=false;
+        }
+        BoardingPoint=LocalPoint(0,-104,24);Ready=ok;return ok;
+    }
+    Default { Height 312; Tag "$CA_JOURNEY_SHIP"; }
+}
+
+class CaelumVehicleStructure : Actor
+{
+    bool Ready;
+    CaelumVehiclePart Parts[64];
+    bool Part(int slot,vector3 offset,double radius,double tall)
+    {
+        offset=(Cos(Angle)*offset.X-Sin(Angle)*offset.Y,Sin(Angle)*offset.X+Cos(Angle)*offset.Y,offset.Z);
+        if(Parts[slot]==null)Parts[slot]=CaelumVehiclePart(Spawn("CaelumVehiclePart",Pos+offset,NO_REPLACE));
+        if(Parts[slot]==null)return false;
+        Parts[slot].Structure=self;Parts[slot].A_SetSize(radius,tall,false);
+        Parts[slot].SetOrigin(Pos+offset,false);return true;
+    }
+    virtual bool Prepare(){return true;}
+    override void OnDestroy(){for(int i=0;i<64;i++)if(Parts[i]!=null)Parts[i].Destroy();Super.OnDestroy();}
+    Default { Radius 1; Height 1; +NOBLOCKMAP +NOGRAVITY +NOTARGET }
+    States { Spawn: CAHC A -1; Stop; }
+}
+
+class CaelumVehicleRanch : CaelumVehicleStructure
+{
+    override bool Prepare()
+    {
+        bool ok=true;int index=0;
+        // Colisiones cuadradas pequeñas siguen las tres paredes del rancho.
+        for(int x=-120;x<=120;x+=16)
+            for(int side=0;side<2;side++)if(!Part(index++,(x,side==0?-94:94,0),8,124))ok=false;
+        for(int y=-80;y<=80;y+=16)if(!Part(index++,(-126,y,0),8,124))ok=false;
+        // Techo sólido a 123 MU: se puede pasar debajo sin bloquear la puerta.
+        for(int x=-96;x<=96;x+=64)
+            for(int y=-64;y<=64;y+=64)if(!Part(index++,(x,y,123),32,8))ok=false;
+        Ready=ok;return ok;
+    }
+    bool Covers(Actor user)
+    {
+        vector3 delta=user.Pos-Pos;
+        return Ready && Abs(delta.X*Cos(Angle)+delta.Y*Sin(Angle))<128
+            && Abs(-delta.X*Sin(Angle)+delta.Y*Cos(Angle))<94
+            && user.Pos.Z>=Pos.Z-1 && user.Pos.Z+user.Height<Pos.Z+123;
+    }
+}
+
+class CaelumVehicleDock : CaelumVehicleStructure
+{
+    override bool Prepare()
+    {
+        bool ok=true;
+        for(int x=0;x<9;x++)
+            for(int y=0;y<2;y++)if(!Part(x*2+y,(x*64-256,y==0?-32:32,-4),32,4))ok=false;
+        Ready=ok;return ok;
+    }
+}
+
+class CaelumVehicleWorld : StaticEventHandler
+{
+    bool Prepared;
+    static Actor SpawnPortAware(class<Actor> kind,vector3 point)
+    {
+        let body=Actor.Spawn(kind,CaelumBarracasData.CurrentPortPoint(point),NO_REPLACE);
+        if(body!=null)body.Angle=CaelumBarracasData.CurrentPortAngle(body.Angle);
+        return body;
+    }
+    override void WorldLoaded(WorldEvent event){Prepared=false;}
+    static Actor Find(class<Actor> kind)
+    {let it=ThinkerIterator.Create(kind);return Actor(it.Next());}
+    static bool Prepare()
+    {
+        if(CaelumTransportSceneData.IsStage(level.MapName) || CaelumTransportSceneData.IsRural(level.MapName))
+        {
+            let sign=Find('CaelumTransportAccess');
+            if(sign==null)
+            {
+                Actor.Spawn('CaelumTransportAccess',CaelumTransportSceneData.AccessPosition(),NO_REPLACE);
+                if(CaelumTransportSceneData.IsRural(level.MapName))
+                    for(int i=0;i<CaelumTransportSceneData.TreeCount();i++)Actor.Spawn('CaelumTreeCityJacaranda',CaelumTransportSceneData.Tree(i),NO_REPLACE);
+            }
+            return true;
+        }
+        int node=CaelumTransportRules.NodeForMap(level.MapName);
+        if(node>=0)
+        {
+            let horse=CaelumRidingHorse(Find('CaelumRidingHorse'));
+            if(horse==null)horse=CaelumRidingHorse(SpawnPortAware('CaelumRidingHorse',CaelumTransportVehicleData.Position(level.MapName,5)));
+            let train=CaelumSteamTrain(Find('CaelumSteamTrain'));
+            if(train==null)train=CaelumSteamTrain(SpawnPortAware('CaelumSteamTrain',CaelumTransportVehicleData.Position(level.MapName,6)));
+            if(horse==null || !horse.Prepare() || train==null || !train.Prepare())return false;
+        }
+        if(CaelumBuenosAiresData.IsMap(level.MapName))
+        {
+            let cart=CaelumCoveredCart(Find('CaelumCoveredCart'));
+            if(cart==null)cart=CaelumCoveredCart(Actor.Spawn('CaelumCoveredCart',CaelumTransportVehicleData.Position(level.MapName,3),NO_REPLACE));
+            let ship=CaelumMerchantShip(Find('CaelumMerchantShip'));
+            if(ship==null)ship=CaelumMerchantShip(Actor.Spawn('CaelumMerchantShip',CaelumTransportVehicleData.Position(level.MapName,4),NO_REPLACE));
+            return CaelumBuenosAiresContent.Prepare() && cart!=null && cart.Prepare() && ship!=null && ship.Prepare();
+        }
+        if(level.MapName!="MAP03" && level.MapName!="TCOAST")return true;
+        bool port=level.MapName=="MAP03";
+        vector3 ranchPos=port?(-640,192,0):(-512,384,0);
+        let ranch=CaelumVehicleRanch(Find("CaelumVehicleRanch"));
+        if(ranch==null)ranch=CaelumVehicleRanch(SpawnPortAware("CaelumVehicleRanch",ranchPos));
+        let cart=CaelumCoveredCart(Find("CaelumCoveredCart"));
+        if(cart==null)cart=CaelumCoveredCart(SpawnPortAware("CaelumCoveredCart",ranchPos));
+        let ship=CaelumMerchantShip(Find("CaelumMerchantShip"));
+        if(ship==null)ship=CaelumMerchantShip(SpawnPortAware("CaelumMerchantShip",port?(1536,768,-24):(1280,1440,-24)));
+        bool dockReady=true;
+        if(!port)
+        {
+            let dock=CaelumVehicleDock(Find("CaelumVehicleDock"));
+            if(dock==null)dock=CaelumVehicleDock(Actor.Spawn("CaelumVehicleDock",(1120,1312,0),NO_REPLACE));
+            dockReady=dock!=null && dock.Prepare();
+        }
+        return ranch!=null && ranch.Prepare() && cart!=null && cart.Prepare()
+            && ship!=null && ship.Prepare() && dockReady;
+    }
+    static bool UnderRoof(Actor user)
+    {
+        let it=ThinkerIterator.Create("CaelumVehicleRanch");CaelumVehicleRanch ranch;
+        while((ranch=CaelumVehicleRanch(it.Next()))!=null)if(ranch.Covers(user))return true;
+        return false;
+    }
+    void CA840Body_CaelumVehicleWorld_WorldTick(){if(!Prepared)Prepared=Prepare();}
+
+    override void WorldTick()
+    {
+        
+        CA840BurstProfile probe=null;
+        if(level.time>=3599 && level.time<4299)probe=CA840BurstProfile(StaticEventHandler.Find('CA840BurstProfile'));
+        if(probe!=null)probe.Begin(27);
+        CA840Body_CaelumVehicleWorld_WorldTick();
+        if(probe!=null)probe.End();
+    }
+}
