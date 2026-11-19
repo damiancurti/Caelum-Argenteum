@@ -1298,3 +1298,10 @@ src/licenses/WORN_CLOTHING_829.txt text eol=lf
 # Preserve #831 historical-label audit evidence.
 assets/validation_v5_17_94/*.py text eol=lf
 assets/validation_v5_17_94/evidence/** -text -diff
+
+# Preserve #834 native-format source and evidence bytes.
+assets/source/art/iqm_assessment_834/** -text
+assets/generators/*iqm*.py text eol=lf
+assets/validation_v5_17_95/*.py text eol=lf
+assets/validation_v5_17_95/*.zs text eol=lf
+assets/validation_v5_17_95/evidence/** -text -diff

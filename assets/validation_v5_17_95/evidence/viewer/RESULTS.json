@@ -1,0 +1,10 @@
+{
+  "issue": 834,
+  "runtime_sha256": "4bcf0a9ada804fd7ce1d3fe52f2f09222d6cd53498a001dbc28571a6a3d627c0",
+  "fixture_sha256": "b14321a25c805e67c0986743a6cc980ebe5f0ee26c1061e999c1412b40a7c72d",
+  "exit_code": 0,
+  "errors": [],
+  "assertions": 6,
+  "passed": true,
+  "qualification": "Automated bounded viewer smoke; not an author session or acceptance."
+}

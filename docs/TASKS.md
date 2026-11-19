@@ -1,6 +1,30 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.94** - 2026-11-19.
+Documentation version: **5.17.95** - 2026-11-19.
+
+## 5.17.95 - Skeletal native-format assessment (#834, parent #458)
+
+The isolated comparison does not support migrating production characters to
+this IQM export. It reduces the seven model files from 32,510,864 to 2,024,448
+bytes, but the matched 64-figure scene produces 236.24 queue presents/s versus
+873.40 for MD3. A hybrid retaining the original cape occupies 2,354,400 bytes
+and produces 246.13 queue presents/s. Production MD3 bindings remain unchanged.
+These measurements do not isolate the cause of the regression or establish a
+general engine-format ranking.
+
+Completed diagnostic scope: pinned native/specification provenance; repeated
+exports; independent 4,008,375-vertex reconstruction; final 269-check native
+pose/visibility/save comparison; six sequential 1/64-figure measurements; an
+isolated viewer with six automated checks. Source/runtime preservation is
+verified across 18,719 package entries. ASSETS and validation_v5_17_95 retain
+the final evidence and failed initial native compile rather than hiding it.
+
+Next: retain MD3 for current production characters; any revised skeletal
+implementation needs a focused measured follow-up before adoption. Remaining
+body/species/sex/style proposals, fitted equipment integration, first-person
+poses, regional scenery and city/siege performance remain under their parent
+issues. All previous author checks stay pending; CA834-FORMAT-01 is available
+only within the final consolidated session requested by the author.
 
 ## 5.17.94 - Historical release labels restored (#831)
 

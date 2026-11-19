@@ -1,6 +1,36 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.94** - 2026-11-19.
+Documentation version: **5.17.95** - 2026-11-19.
+
+## 5.17.95 - Skeletal native-format assessment (#834, parent #458)
+
+The isolated comparison does not support migrating production characters to
+this IQM export. It reduces the seven model files from 32,510,864 to 2,024,448
+bytes, but the matched 64-figure scene produces 236.24 queue presents/s versus
+873.40 for MD3. A hybrid retaining the original cape occupies 2,354,400 bytes
+and produces 246.13 queue presents/s. Production MD3 bindings remain unchanged.
+These measurements do not isolate the cause of the regression or establish a
+general engine-format ranking.
+
+On 2026-11-19, the assessment retained the accepted Domingo source, all seven
+MD3 resources, production bindings and saved ownership. Only two runtime
+diagnostic version strings changed. Complete export02/export03 repeats are
+byte-identical; the independent reader checks 4,008,375 sampled vertices. Pure
+IQM's cape thickness differs because the source modifier follows deformation;
+the retained-cape hybrid preserves the original samples. Source/encoding error
+measurements and their qualifications remain explicit.
+
+Native01 failed compilation on a sibling-pointer comparison; the Actor-cast
+correction is retained with that failed log. Preliminary native02/native03 used
+the earlier unchanged-model package and passed 42/81 assertions respectively.
+Final native04 uses the 5.17.95 package, passes 269 assertions and reproduces
+both saved images exactly after load. Twenty comparison views plus all six
+benchmark scenes and the walking viewer were inspected. Viewer01 adds six
+automated assertions. Final evidence, preservation checks, full project
+validation and performance tails are in assets/validation_v5_17_95/evidence;
+ASSETS records the comparison table and CA-KP-254 records the reusable lesson.
+CA834-FORMAT-01 remains pending. No earlier check is removed, no author acceptance
+is claimed and the final consolidated batch terminal has not been handed off.
 
 ## 5.17.94 - Historical release labels restored (#831)
 

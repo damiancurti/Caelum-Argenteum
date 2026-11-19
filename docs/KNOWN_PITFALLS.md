@@ -4,6 +4,43 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-254 - Smaller skeletal files can render slower and change modifier output
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #834, 2026-11-19.
+Scope: accepted Domingo source, seven diagnostic modules, GZDoom 4.14.2 Vulkan,
+RTX 3070 Ti, 1280x720; baseline d1d501e9. No production format migration.
+
+Retaining topology and bone transforms does not preserve all evaluated Blender
+geometry. The cape's Solidify follows its armature. Baking thickness into rest
+vertices before skeletal skinning changes positions by up to 0.511826 MU before
+native encoding. Separate pipeline error from quantized weight/channel error;
+check every source sample. The rigid shield's analogous modifier does not have
+the same nonrigid discrepancy. The hybrid keeps original MD3 cape samples.
+
+The seven IQM files shrink 32,510,864 raw MD3 bytes to 2,024,448; the hybrid is
+2,354,400 bytes. That does not imply faster rendering: the matched 64-body cases
+produce 873.40 queue presents/s (MD3), 236.24 (IQM) and 246.13 (hybrid), with
+presentation p99 intervals 1.4285/6.1660/5.5703 ms respectively. Simulation still
+averages about 35 tics/s; its p99 rises from 29.6561 to 32.4096/32.2385 ms.
+Retain the existing production format until a separate implementation resolves
+and measures the cost. This experiment does not isolate CPU/GPU causation or
+establish a ranking for other models, hardware, animations or campaign scenes.
+
+Preserve nonuniform sample timing in existing FrameIndex/state definitions;
+do not invent a uniform IQM animation rate. GZDoom's inspected loader reads
+adjacency and bounds, so provide explicit valid sections. Exclude authoring
+selection groups from deform weights, normalize the represented weights and
+reject excess influences rather than silently dropping them. Independently
+parse serialized data: source-side arithmetic alone cannot verify the bytes.
+An independent reader reconstructs all 4,008,375 sampled vertices here; sampled
+agreement does not establish identical fractional vertex/bone interpolation.
+
+Final native checks cover registered poses, module visibility, walking and two
+save/load images; 269 assertions pass and both restored images are identical.
+Twenty comparison views, six cohort scenes and a walking viewer were inspected.
+Measured limits, failed initial compile and raw presentation samples remain in
+assets/validation_v5_17_95/evidence/SUMMARY.json. Author acceptance is separate.
+
 ## CA-KP-253 - Nearest-surface weights can attach clothing to unrelated limbs
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #829, 2026-11-18.

@@ -1,0 +1,13 @@
+{
+  "issue": 834,
+  "reviewed": [
+    "issue834-native02/md3-pose00-view7.png",
+    "issue834-native02/iqm-pose00-view7.png",
+    "issue834-native02/md3-pose08-view7.png",
+    "issue834-native02/iqm-pose08-view7.png"
+  ],
+  "notes": [
+    "Both observed rear-quarter idle views assemble the same character, material, cape, armor, sword and hair silhouette without a visible gross transform/skin error. This is a preliminary visual check, not accepted equivalence or full pose coverage.",
+    "Observed seated rear-quarter pair preserves the same assembly and cape fold; small measured thickness/encoding differences remain, so no exact deformation equivalence is claimed."
+  ]
+}

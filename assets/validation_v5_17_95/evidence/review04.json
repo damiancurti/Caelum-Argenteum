@@ -1,0 +1,96 @@
+{
+  "issue": 834,
+  "native_run": "issue834-native04",
+  "directly_inspected": [
+    {
+      "file": "md3-pose00-view3.png",
+      "sha256": "d6dbe7623548aeb81ec1347c24b52dda5ff1de3f937ed7e8d27b3af5a04bee8e"
+    },
+    {
+      "file": "hybrid-pose00-view3.png",
+      "sha256": "60e87d8063851d69afe58b92d8eb291d85b33d1547f1bc1249b19b0cbb7505d8"
+    },
+    {
+      "file": "md3-pose03-view3.png",
+      "sha256": "dc1e406a6644170380880302db9465274f1c82139ff84fc4d8875f8698e228e4"
+    },
+    {
+      "file": "hybrid-pose03-view3.png",
+      "sha256": "be360ec76526f9313daba04d4f5f26cdb668d38c4b40008ab054f967ec521032"
+    },
+    {
+      "file": "md3-pose08-view7.png",
+      "sha256": "52db9cec6013d145f5784a0d7f03227d21e8863433f18fe41bf7c12bc6be0596"
+    },
+    {
+      "file": "iqm-pose08-view7.png",
+      "sha256": "924f656a771f734d72de108320f92e2f50286d5d7049454c817d526ec6de4952"
+    },
+    {
+      "file": "md3-pose06-view3.png",
+      "sha256": "8507d55a1b42c4c65a19a3c0d16cae04ccc4ba77ce328754e93bbd5e384d0b3c"
+    },
+    {
+      "file": "hybrid-pose06-view3.png",
+      "sha256": "7d13cdb45d1a7d366d678f7d49e884f1dad3f9135325fd8661d3a41ba4fee8cd"
+    },
+    {
+      "file": "md3-pose09-view3.png",
+      "sha256": "6b44474f23ea6ee8f6cc600701e67b46309113eaf271a0596468609a46a6863f"
+    },
+    {
+      "file": "hybrid-pose09-view3.png",
+      "sha256": "7991b630fbab01b86846a6fe1733fcf68ad1f768bd0828aae12aabdcbf4afbc7"
+    },
+    {
+      "file": "md3-pose10-view7.png",
+      "sha256": "fbcd0aefd1542d68cd0e146ef9cfe4e25e8a4792aaa168c00b24e1d3d91b63ed"
+    },
+    {
+      "file": "hybrid-pose10-view7.png",
+      "sha256": "496e4a2a6b574593d55496b70192ff1a66b981f943d5a4ba9eede4203e169ad2"
+    },
+    {
+      "file": "md3-pose17-view3.png",
+      "sha256": "8fcd06301f64834358e93a8eadb86f55079d707ab378872e6f54f43f3a80efeb"
+    },
+    {
+      "file": "hybrid-pose17-view3.png",
+      "sha256": "a5e6f732ae702e3abf627505f6bb80fd1d024c49ef70ee6bd1f732bf4331a203"
+    },
+    {
+      "file": "md3-pose20-view7.png",
+      "sha256": "b3593e5f59a84a2422d1ea4b0a487e10e10ee6966e4ff239f503f9ddbab74ec4"
+    },
+    {
+      "file": "iqm-pose20-view7.png",
+      "sha256": "aad2eae15b4532745fdf66ec319faa270b13a405cea0dc7f6c065d9942e4deb0"
+    },
+    {
+      "file": "md3-pose23-view3.png",
+      "sha256": "5504079f97745457080e69297edc9d9cf59d02918ae4afd8b264f310b6e10d4d"
+    },
+    {
+      "file": "hybrid-pose23-view3.png",
+      "sha256": "7ccb2ec25aea84b8f80a7ec7053d09129ca73b1064d8e1a214652f30bbd6cb52"
+    },
+    {
+      "file": "iqm-saved.png",
+      "sha256": "30cdc4f3b39ca3d0bbefe76b254d867e3f4f4396c11e7b517af658066905ffe8"
+    },
+    {
+      "file": "hybrid-reloaded.png",
+      "sha256": "ba9637b740abf9ec441250fa07a822b8bfa1514f9267e2afc6661b72715dcbf9"
+    }
+  ],
+  "finding": "Standing, melee, seated cape, death transition, horizontal sleeping and crouching remain coherently assembled in these inspected pairs. Pure IQM retains the separately measured cape thickness difference; images do not establish byte or geometric equivalence. No author acceptance. Jump preparation and running guard pairs were also directly inspected. Guard jump and saved hidden-hair/shield views were also inspected. All six benchmark scenes retain the intended visible cohort/camera; the bounded walking viewer and its controls label were inspected. Fractional interpolation and every image are not claimed pixel-equivalent.",
+  "other_directly_inspected": {
+    "issue834-presentation01/md3-1/scene.png": "43da5ba605351c059e699e3605a0fc78e50e515100b5b6dade1076314c752641",
+    "issue834-presentation01/iqm-1/scene.png": "f6d212ea0578a568c06d64c732d3ac6d6f184476723fad016d14ee2d22a2a5cf",
+    "issue834-presentation01/hybrid-1/scene.png": "920ff88aea7e964c7e271c578eed5f4a8593355ace9d60acd9e54c9423bd6e17",
+    "issue834-presentation01/hybrid-64/scene.png": "34b430bef284f132dbb2357cbf81472b1552e69eb73bfc658b09b76044990f5d",
+    "issue834-presentation01/iqm-64/scene.png": "1b694110a45ed8b0bf93e5a534ad80621e315ff40d15e558ab34ccbec75fe2d2",
+    "issue834-presentation01/md3-64/scene.png": "3afb3595c5e574579b4195d72089351c902182d89dc88cad01b929fa2dbbc847",
+    "issue834-viewer01/viewer.png": "7ec752c1dd647a47cc499ecee7f5ae181f21d903f7ed1d3de24fda2713fbcd46"
+  }
+}

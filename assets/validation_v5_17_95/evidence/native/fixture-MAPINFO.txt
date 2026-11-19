@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA834PreviewEvents" }
+map CA455V "Native skeletal format comparison" { sky1="CABASKY",0 nointermission }

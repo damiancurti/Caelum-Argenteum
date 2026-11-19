@@ -1,0 +1,281 @@
+{
+  "issue": 834,
+  "candidate_sha256": "8fdde85bbacad04dc2a96915ba12bbd8ba2a4c5611877fa0e837b3db83d13c36",
+  "manifest_sha256": "3b55385316199787d237943f7f914c255bcc9c9d9e44fbfc8121fe8b407cec6d",
+  "scope": "Compare identical peaceful cohorts using MD3, IQM and retained-cape hybrid bindings.\n\nThese are uncapped queue presentation measurements and simulation tails in an\nisolated room, not display latency, combat performance or author acceptance.",
+  "runtime_sha256": "4bcf0a9ada804fd7ce1d3fe52f2f09222d6cd53498a001dbc28571a6a3d627c0",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "md3",
+      "bodies": 1,
+      "pid": 17476,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 709840846.954,
+        "END": 709860874.9469999
+      },
+      "fixture_sha256": "ce508780df743baeb236e2724b8db9dc9ff43e5e4a1c8448fc381fdc010459c0",
+      "scene_sha256": "43da5ba605351c059e699e3605a0fc78e50e515100b5b6dade1076314c752641",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57184457142857,
+        "p50_ms": 28.5777,
+        "p95_ms": 29.1791,
+        "p99_ms": 29.28,
+        "max_ms": 29.6321
+      },
+      "presentation": {
+        "pid": 17476,
+        "trace_sha256": "bda2021d1224b90f8f0733740edb231e821e4f56c3af9fd8db620f947cc6d589",
+        "rows": 29265,
+        "scene_presents": 19928,
+        "mean_present_fps": 1136.9071237875535,
+        "present_intervals": {
+          "samples": 19927,
+          "mean_ms": 0.8795793245349244,
+          "p50_ms": 0.8561999797821045,
+          "p95_ms": 1.035599946975708,
+          "p99_ms": 1.2089999914169312,
+          "max_ms": 1.7343000173568726
+        },
+        "native_call_duration": {
+          "samples": 19928,
+          "mean_ms": 0.09179954867868335,
+          "p50_ms": 0.08749997615814209,
+          "p95_ms": 0.10950005054473877,
+          "p99_ms": 0.16199994087219238,
+          "max_ms": 0.7299998998641968
+        }
+      }
+    },
+    {
+      "kind": "iqm",
+      "bodies": 1,
+      "pid": 14084,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 709876044.243,
+        "END": 709896067.0189999
+      },
+      "fixture_sha256": "09511921aeb557ea5ea717a1adac40d3fe7c2d06a404a724d91ecf4878c726dd",
+      "scene_sha256": "f6d212ea0578a568c06d64c732d3ac6d6f184476723fad016d14ee2d22a2a5cf",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571359571428573,
+        "p50_ms": 28.5691,
+        "p95_ms": 29.1655,
+        "p99_ms": 29.3236,
+        "max_ms": 29.4318
+      },
+      "presentation": {
+        "pid": 14084,
+        "trace_sha256": "8acb9779a250e177d8294c478ef38e7e53b9aa91dc401b2b3e27513bc7aa6a4f",
+        "rows": 28490,
+        "scene_presents": 19271,
+        "mean_present_fps": 1099.761198868438,
+        "present_intervals": {
+          "samples": 19270,
+          "mean_ms": 0.9092883082517516,
+          "p50_ms": 0.8873000144958496,
+          "p95_ms": 1.0666999816894531,
+          "p99_ms": 1.236899971961975,
+          "max_ms": 2.0381999015808105
+        },
+        "native_call_duration": {
+          "samples": 19271,
+          "mean_ms": 0.09156097287450271,
+          "p50_ms": 0.0875999927520752,
+          "p95_ms": 0.10880005359649658,
+          "p99_ms": 0.16289997100830078,
+          "max_ms": 0.80840003490448
+        }
+      }
+    },
+    {
+      "kind": "hybrid",
+      "bodies": 1,
+      "pid": 41792,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 709911224.7878,
+        "END": 709931249.137
+      },
+      "fixture_sha256": "ba2e7ec085e49c15925120bdbf5d8fbe10dadd41bd18e3086a20dbf3ffdc81e1",
+      "scene_sha256": "920ff88aea7e964c7e271c578eed5f4a8593355ace9d60acd9e54c9423bd6e17",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571875428571428,
+        "p50_ms": 28.5863,
+        "p95_ms": 29.1726,
+        "p99_ms": 29.3355,
+        "max_ms": 29.5755
+      },
+      "presentation": {
+        "pid": 41792,
+        "trace_sha256": "cf435d252e1d1f4ab71b7228530634a6485533fff3b084de45b67e6bed5c446b",
+        "rows": 29168,
+        "scene_presents": 19734,
+        "mean_present_fps": 1126.1350334543292,
+        "present_intervals": {
+          "samples": 19733,
+          "mean_ms": 0.8879929762353453,
+          "p50_ms": 0.8657000064849854,
+          "p95_ms": 1.0536999702453613,
+          "p99_ms": 1.2517000436782837,
+          "max_ms": 2.1549999713897705
+        },
+        "native_call_duration": {
+          "samples": 19734,
+          "mean_ms": 0.09082237725998718,
+          "p50_ms": 0.08720004558563232,
+          "p95_ms": 0.10769999027252197,
+          "p99_ms": 0.15990006923675537,
+          "max_ms": 0.6082000732421875
+        }
+      }
+    },
+    {
+      "kind": "hybrid",
+      "bodies": 64,
+      "pid": 42856,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 709946637.386,
+        "END": 709966664.7671
+      },
+      "fixture_sha256": "8afa6942439d5d9569a356d6da6f3ddab2216a9231b99eb6d9dc41e053d4ac5b",
+      "scene_sha256": "34b430bef284f132dbb2357cbf81472b1552e69eb73bfc658b09b76044990f5d",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.570482714285713,
+        "p50_ms": 28.0168,
+        "p95_ms": 31.7668,
+        "p99_ms": 32.2385,
+        "max_ms": 33.4394
+      },
+      "presentation": {
+        "pid": 42856,
+        "trace_sha256": "8f8fd1a9624fd17e703b46411782c8a6d360bb704b5574ef35a452cdd3f33e65",
+        "rows": 6310,
+        "scene_presents": 4314,
+        "mean_present_fps": 246.12588975690323,
+        "present_intervals": {
+          "samples": 4313,
+          "mean_ms": 4.062961442161541,
+          "p50_ms": 3.9793999195098877,
+          "p95_ms": 4.961899995803833,
+          "p99_ms": 5.570299983024597,
+          "max_ms": 7.258900046348572
+        },
+        "native_call_duration": {
+          "samples": 4314,
+          "mean_ms": 0.0935978218533123,
+          "p50_ms": 0.08929991722106934,
+          "p95_ms": 0.11179995536804199,
+          "p99_ms": 0.1629999876022339,
+          "max_ms": 0.5787999629974365
+        }
+      }
+    },
+    {
+      "kind": "iqm",
+      "bodies": 64,
+      "pid": 37316,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 709981670.0677999,
+        "END": 710001691.8726
+      },
+      "fixture_sha256": "bc38787c4c6bf238e48caac6eb28b1ccec40116d1ca84899231c947b677bc355",
+      "scene_sha256": "1b694110a45ed8b0bf93e5a534ad80621e315ff40d15e558ab34ccbec75fe2d2",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571649714285716,
+        "p50_ms": 28.1549,
+        "p95_ms": 31.9702,
+        "p99_ms": 32.4096,
+        "max_ms": 33.9434
+      },
+      "presentation": {
+        "pid": 37316,
+        "trace_sha256": "c814e25404115a427382e8cf7c5eb685e9db8ce5ba4991013cc9431ab94f0c69",
+        "rows": 6010,
+        "scene_presents": 4139,
+        "mean_present_fps": 236.24141664579832,
+        "present_intervals": {
+          "samples": 4138,
+          "mean_ms": 4.232958023187445,
+          "p50_ms": 4.0375999212265015,
+          "p95_ms": 5.194400072097778,
+          "p99_ms": 6.166000008583069,
+          "max_ms": 8.009199976921082
+        },
+        "native_call_duration": {
+          "samples": 4139,
+          "mean_ms": 0.09320507423403644,
+          "p50_ms": 0.08920001983642578,
+          "p95_ms": 0.11170005798339844,
+          "p99_ms": 0.15119993686676025,
+          "max_ms": 0.6655000448226929
+        }
+      }
+    },
+    {
+      "kind": "md3",
+      "bodies": 64,
+      "pid": 49376,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 710016801.0268999,
+        "END": 710036817.6918999
+      },
+      "fixture_sha256": "f6568d2834b861a35f8192b880cb95eb5411be0401787ac836111d44c1ef6a77",
+      "scene_sha256": "3afb3595c5e574579b4195d72089351c902182d89dc88cad01b929fa2dbbc847",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571183142857144,
+        "p50_ms": 28.5722,
+        "p95_ms": 29.3526,
+        "p99_ms": 29.6561,
+        "max_ms": 29.9114
+      },
+      "presentation": {
+        "pid": 49376,
+        "trace_sha256": "29b6fe2b7a5b42e4822654c34550eb190dac26f133ecdc4f873af57a660efbd2",
+        "rows": 22071,
+        "scene_presents": 15299,
+        "mean_present_fps": 873.4032728910337,
+        "present_intervals": {
+          "samples": 15298,
+          "mean_ms": 1.1449464766601127,
+          "p50_ms": 1.1246000528335571,
+          "p95_ms": 1.2921000719070435,
+          "p99_ms": 1.4284999370574951,
+          "max_ms": 2.4733999967575073
+        },
+        "native_call_duration": {
+          "samples": 15299,
+          "mean_ms": 0.0918575400066918,
+          "p50_ms": 0.0875999927520752,
+          "p95_ms": 0.10900008678436279,
+          "p99_ms": 0.156499981880188,
+          "max_ms": 0.5293999910354614
+        }
+      }
+    }
+  ]
+}

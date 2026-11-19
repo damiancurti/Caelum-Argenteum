@@ -1,6 +1,24 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.94** - 2026-11-19.
+Documentation version: **5.17.95** - 2026-11-19.
+
+## 5.17.95 - Skeletal native-format assessment (#834, parent #458)
+
+The isolated comparison does not support migrating production characters to
+this IQM export. It reduces the seven model files from 32,510,864 to 2,024,448
+bytes, but the matched 64-figure scene produces 236.24 queue presents/s versus
+873.40 for MD3. A hybrid retaining the original cape occupies 2,354,400 bytes
+and produces 246.13 queue presents/s. Production MD3 bindings remain unchanged.
+These measurements do not isolate the cause of the regression or establish a
+general engine-format ranking.
+
+The accepted source remains unchanged. Repeated exports, independent binary
+reconstruction and 269 final native assertions establish the diagnostic pipeline;
+both saved/reloaded selections render identically. Twenty comparison images,
+six benchmark scenes and the walking viewer were inspected. The isolated viewer
+adds six automated checks. The full evidence and limitations are in ASSETS and
+assets/validation_v5_17_95/evidence. CA834-FORMAT-01 remains for final author
+review; #458's other variants and the full batch are unfinished.
 
 ## 5.17.94 - Historical release labels restored (#831)
 
