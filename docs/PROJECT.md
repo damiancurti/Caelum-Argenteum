@@ -1,6 +1,25 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.98** - 2026-11-19.
+Documentation version: **5.17.99** - 2026-11-19.
+
+## 5.17.99 - Preserve shelter rules with bounded connectivity (#842, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Replace repeated reachability expansion among at most eight wall planes with
+one pair traversal and neighbor counts. In an undirected graph, a connected
+component of at least three vertices exists exactly when some vertex has two
+distinct neighbors. The approved three-plane shelter rule, all eight local
+traces, 1024-MU range, plane deduplication, roof handling and callers remain.
+No cache, cadence, saved field, actor identity, thermal coefficient, collision,
+combat rule or population threshold changes. The normal production predicate
+serves every existing consumer, including offscreen bodies.
+
+Static preservation, 54,864 graph cases, 264,662 native oracle comparisons and
+365 boundary/save assertions pass. Final/control siege and four final reference
+views are recorded in HISTORY and assets/validation_v5_17_99. Overall siege
+performance and author acceptance remain open; no final batch handoff occurs.
+
 
 ## 5.17.98 - Lossless projectile frames avoid atlas-loading stalls (#840, #454)
 

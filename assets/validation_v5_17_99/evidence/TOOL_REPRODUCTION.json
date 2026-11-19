@@ -1,0 +1,26 @@
+[
+  {
+    "tool": "prepare_regions.py",
+    "output": "build/issue842-reproduce-regions03",
+    "equal": true,
+    "sha256": "3f45d372457d1d63c007e6097756b1048a2efc84daa6873e4b69d9ce2d164221"
+  },
+  {
+    "tool": "prepare_services.py",
+    "output": "build/issue842-reproduce-services02",
+    "equal": true,
+    "sha256": "83703b7aa6daf06a8a052fdfbfa7379589d5d331b57a37f4f125b0bf743a13b0"
+  },
+  {
+    "tool": "prepare_shelter.py",
+    "output": "build/issue842-reproduce-shelter03",
+    "equal": true,
+    "sha256": "b62e08404513b406c4cb4029189194021d1436315bbf6da06998358cac3802f0"
+  },
+  {
+    "tool": "prepare_oracle.py",
+    "output": "build/issue842-reproduce-oracle03",
+    "equal": true,
+    "sha256": "f2dcc9d01432651ebb4cdd7459e5ee97f18f642aca79bf9f525db1ee632cfe4f"
+  }
+]

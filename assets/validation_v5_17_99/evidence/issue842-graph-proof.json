@@ -1,0 +1,23 @@
+{
+  "issue": 842,
+  "passed": true,
+  "graphs": 53868,
+  "by_vertices": {
+    "0": 1,
+    "1": 1,
+    "2": 2,
+    "3": 8,
+    "4": 64,
+    "5": 1024,
+    "6": 32768,
+    "7": 10000,
+    "8": 10000
+  },
+  "exhaustive_through": 6,
+  "deterministic_random_seed": 842,
+  "positive": 53747,
+  "negative": 121,
+  "elapsed_seconds": 0.5779999999795109,
+  "candidate_source_sha256": "5b0c5a25cef8adc120cc060a10e21fe23bb0791701dba1d9b7b8cf94da3dda80",
+  "qualification": "For an undirected graph, a connected component with at least three vertices exists iff some vertex has two distinct neighbors. Independent union-find, original reachability and candidate degree tests agree; separate native oracle validates traced/deduplicated wall inputs. No geometry sampler or game threshold changes."
+}

@@ -1,6 +1,62 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.98** - 2026-11-19.
+Documentation version: **5.17.99** - 2026-11-19.
+
+## 5.17.99 - Preserve shelter rules with bounded connectivity (#842, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Replace repeated reachability expansion among at most eight wall planes with
+one pair traversal and neighbor counts. In an undirected graph, a connected
+component of at least three vertices exists exactly when some vertex has two
+distinct neighbors. The approved three-plane shelter rule, all eight local
+traces, 1024-MU range, plane deduplication, roof handling and callers remain.
+No cache, cadence, saved field, actor identity, thermal coefficient, collision,
+combat rule or population threshold changes. The normal production predicate
+serves every existing consumer, including offscreen bodies.
+
+Two native same-query oracles agree on 264,662 shelter evaluations with zero
+differences. The first run always evaluated the candidate first and exposed an
+order bias; the alternating-order run measures 973.9155 ms candidate versus
+1219.8756 ms reference over 132,331 calls. This approximately 20.16% reduction
+is local query time, not an equivalent whole-frame gain. No traces are removed.
+Independent union-find, original reachability and neighbor-count algorithms
+agree for 54,864 graphs: all graphs through six vertices, all negative cases
+through eight, and seeded larger samples.
+
+Five native control/fresh/upgrade/reload/rollback runs pass 365 assertions;
+219 execute the final package. The fixture covers open, one-plane, two-parallel,
+three-connected, four-connected and segmented rooms, moved body heights,
+repeated queries and saved identities/geometry. A preliminary candidate adds
+73 checks. Exact package/source preservation verifies all 18,755 members;
+only the shelter predicate and two diagnostic version strings change.
+
+| Scene/package | Queue presents/s | Tic intervals mean / p95 / p99 / max (ms) | Present p95 / p99 / max (ms) |
+| --- | ---: | --- | --- |
+| siege_final | 1.8814 | 31.3521 / 46.4554 / 50.2780 / 58.7869 | 562.8065 / 575.4701 / 575.4701 |
+| siege_control | 1.8467 | 31.8546 / 47.5971 / 52.3472 / 59.2085 | 589.2903 / 604.9254 / 604.9254 |
+| mansion_final | 74.3775 | 28.5645 / 39.3768 / 40.9848 / 42.7209 | 15.3097 / 16.4295 / 18.0168 |
+| sewers_final | 193.0399 | 28.5759 / 32.0912 / 33.9628 / 42.9384 | 7.0802 / 8.1062 / 39.0436 |
+| city_final | 102.8220 | 28.5686 / 34.0791 / 37.2370 / 38.5636 | 10.9918 / 12.1481 / 14.0345 |
+| city_ground_final | 76.8625 | 28.5781 / 38.7199 / 40.4367 / 42.8891 | 14.9453 / 16.0167 / 17.6688 |
+
+All six scenes run sequentially on Windows 11 / Ryzen 9 5950X / RTX 3070 Ti,
+native GZDoom 4.14.2, Vulkan, 1280x720, unpaused background execution and 5%
+audio. The paired siege observations preserve 988 attackers, 601 defenders
+including the subcaptain, the player, health and camera: 1,590 living bodies.
+Reference views include mansion, sewers, peaceful city and ground-facing city.
+The mansion capture includes its opening conversation overlay; it does not
+establish unobstructed free-roaming or indoor traversal performance.
+Queue presentation is not monitor scanout; entrance references are not complete
+walkthroughs. Tic intervals include engine pacing and frame work; they are not
+isolated CPU simulation durations. Siege rendering remains poor. Author acceptance and the complete
+V5.16/V5.17 delivery remain pending; pending_test.txt is unchanged.
+
+Evidence and reproducible tools: assets/validation_v5_17_99. CA-KP-258 records
+the graph proof, native timing-order caveat and existing scan boundary. The
+legacy 4.35 shelter description is retained and explicitly points to the newer
+thermal contract; no old rule is silently adopted as current behavior.
+
 
 ## 5.17.98 - Lossless projectile frames avoid atlas-loading stalls (#840, #454)
 
