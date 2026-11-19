@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.106** - 2026-11-19.
+Documentation version: **5.17.107** - 2026-11-19.
+
+## 5.17.107 - Bind the opt-in first-body wardrobe to owned clothing (#857)
+
+Full project validation passes with no errors; the generated document index is current.
+
+The default-off first-body wardrobe now follows actual native owned clothing.
+504 canonical native assertion lines pass (477
+on the final package), including equipment/ownership and reversible save/hub
+continuity. The native frame-order defect is corrected; item-specific hand/grip
+work continues in #859. HISTORY records fixed-view presentation/frame/tic tails
+and limitations. This is a reviewable opt-in candidate, not a default character
+conversion or author acceptance. Complete the remaining authorized batch before
+opening the consolidated test terminal.
 
 ## 5.17.106 - Preserve recognition when demon breath inspects a route marker (#855)
 

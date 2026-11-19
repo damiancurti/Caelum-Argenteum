@@ -1,0 +1,134 @@
+[
+  {
+    "label": "seed",
+    "code": 0,
+    "passed": true,
+    "errors": [],
+    "pass_lines": 19,
+    "fail_lines": 0,
+    "totals": [
+      "CA836 EDGE_RESULT checks=19 failures=0 result=PASS"
+    ],
+    "runtime": "baseline"
+  },
+  {
+    "label": "fresh",
+    "code": 0,
+    "passed": true,
+    "errors": [],
+    "pass_lines": 39,
+    "fail_lines": 0,
+    "totals": [
+      "CA836 EDGE_RESULT checks=39 failures=0 result=PASS"
+    ],
+    "runtime": "final"
+  },
+  {
+    "label": "upgrade",
+    "code": 0,
+    "passed": true,
+    "errors": [],
+    "pass_lines": 14,
+    "fail_lines": 0,
+    "totals": [
+      "CA836 EDGE_RESULT checks=33 failures=0 result=PASS"
+    ],
+    "runtime": "final"
+  },
+  {
+    "label": "reload",
+    "code": 0,
+    "passed": true,
+    "errors": [],
+    "pass_lines": 14,
+    "fail_lines": 0,
+    "totals": [
+      "CA836 EDGE_RESULT checks=53 failures=0 result=PASS"
+    ],
+    "runtime": "final"
+  },
+  {
+    "label": "hub",
+    "code": 0,
+    "passed": true,
+    "errors": [],
+    "pass_lines": 42,
+    "fail_lines": 0,
+    "totals": [
+      "CA836 EDGE_RESULT checks=81 failures=0 result=PASS"
+    ],
+    "runtime": "final"
+  },
+  {
+    "label": "disable",
+    "code": 0,
+    "passed": true,
+    "errors": [],
+    "pass_lines": 22,
+    "fail_lines": 0,
+    "totals": [
+      "CA836 EDGE_RESULT checks=75 failures=0 result=PASS"
+    ],
+    "runtime": "final"
+  },
+  {
+    "label": "rollback",
+    "code": 0,
+    "passed": true,
+    "errors": [],
+    "pass_lines": 8,
+    "fail_lines": 0,
+    "totals": [
+      "CA836 EDGE_RESULT checks=83 failures=0 result=PASS"
+    ],
+    "runtime": "baseline"
+  },
+  {
+    "label": "death",
+    "code": 0,
+    "passed": true,
+    "errors": [],
+    "pass_lines": 29,
+    "fail_lines": 0,
+    "totals": [
+      "CA836 EDGE_RESULT checks=29 failures=0 result=PASS"
+    ],
+    "runtime": "final"
+  },
+  {
+    "label": "dead-load",
+    "code": 0,
+    "passed": true,
+    "errors": [],
+    "pass_lines": 4,
+    "fail_lines": 0,
+    "totals": [
+      "CA836 EDGE_RESULT checks=33 failures=0 result=PASS"
+    ],
+    "runtime": "final"
+  },
+  {
+    "label": "ownership",
+    "code": 0,
+    "passed": true,
+    "errors": [],
+    "pass_lines": 281,
+    "fail_lines": 0,
+    "totals": [
+      "CA836 EDGE_RESULT checks=281 failures=0 result=PASS"
+    ],
+    "runtime": "final"
+  },
+  {
+    "label": "motion",
+    "code": 0,
+    "passed": true,
+    "errors": [],
+    "pass_lines": 32,
+    "fail_lines": 0,
+    "totals": [
+      "CA836 EDGE_RESULT checks=32 failures=0 result=PASS"
+    ],
+    "runtime": "final"
+  }
+]

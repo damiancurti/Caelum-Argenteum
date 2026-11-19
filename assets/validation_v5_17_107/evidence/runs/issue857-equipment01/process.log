@@ -1,0 +1,353 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-19 19:09:27
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue855-navigation02.pk3, 18755 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue857-prototype04/prototype.pk3, 7 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue857-equipment01/checks.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2528.71 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA836A - Candidate reach checks
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA836 EDGE PASS wardrobe: existing opt-in native player
+CA259 EQUIP action=2 compatible=1 id=5 selected=5 itemtier=1 modeltier=1 equipped=1
+CA836 EDGE PASS wardrobe: native sword/shield fixture equipped
+CA836 EDGE PASS wardrobe: unsupported armor removed through native equipment operation
+CA836 EDGE PASS wardrobe: unsupported armor removed through native equipment operation
+CA836 EDGE PASS wardrobe: unsupported armor removed through native equipment operation
+CA836 EDGE PASS wardrobe: unsupported armor removed through native equipment operation
+CA836 EDGE PASS wardrobe: explicit candidate activation
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual owned candidate selected
+CA857 EQUIPMENT type=0 region=1 expected=0 id=7 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=1 region=1 expected=1 id=8 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=2 region=1 expected=2 id=9 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=3 region=1 expected=3 id=10 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=4 region=1 expected=4 id=11 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=5 region=1 expected=5 id=12 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=6 region=1 expected=6 id=13 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=7 region=1 expected=7 id=14 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=8 region=1 expected=8 id=15 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=9 region=1 expected=9 id=16 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=10 region=1 expected=10 id=17 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=11 region=0 expected=0 id=18 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=12 region=0 expected=1 id=19 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=13 region=0 expected=2 id=20 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=14 region=0 expected=3 id=21 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=15 region=0 expected=4 id=22 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=16 region=2 expected=0 id=23 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=17 region=2 expected=1 id=24 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=18 region=2 expected=2 id=25 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=19 region=2 expected=3 id=26 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=20 region=3 expected=0 id=27 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=21 region=3 expected=1 id=28 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=22 region=3 expected=2 id=29 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=23 region=3 expected=3 id=30 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA857 EQUIPMENT type=24 region=3 expected=4 id=31 action=2
+CA836 EDGE PASS wardrobe: native equipped identity is authoritative
+CA836 EDGE PASS wardrobe: replacement unequips the previous item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: actual equipped catalogue entry selects its model
+CA836 EDGE PASS wardrobe: visual selection preserves the owned object and its data
+CA836 EDGE PASS wardrobe: bounded cache references the actual owned item
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native unequip removes the visible garment
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: reequip restores the same identity and appearance
+CA836 EDGE PASS wardrobe: all25 actual catalogue items exercised
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: native drop removes stale worn presentation
+CA836 EDGE PASS wardrobe: dropped object is no longer owned
+CA836 EDGE PASS wardrobe: visual refresh preserves owner resources, collision and equipment IDs
+CA836 EDGE PASS wardrobe: another retained garment can be equipped after drop
+CA836 EDGE_RESULT checks=265 failures=0 result=PASS
+Game saved.
+Game saved.

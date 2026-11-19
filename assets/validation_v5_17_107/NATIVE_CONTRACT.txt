@@ -1,0 +1,52 @@
+Issue857 - actual equipped clothing on the opt-in first-body candidate
+
+These tools are private diagnostic fixtures, not campaign content or the final
+author handoff. Use complete local GZDoom4.14.2 development dependencies. Run
+one engine at a time, unpaused in the background at5% audio. Each --output must
+be a new directory under build/. No engine, IWAD, WAD, PK3 or save is distributed.
+
+Production selection remains default-off: ca_wardrobe_candidate is a nosave,
+noarchive server CVAR on the existing CaelumDomingoPilotPlayer. No new player
+class or owned-item authority is introduced. Model selection reads actual
+equipped clothing IDs and checks the referenced object's current ownership.
+
+Deterministic binding output:
+python assets/validation_v5_17_107/prepare_wardrobe_data857.py --output build/wardrobe-binding-review
+
+Actual native equipment and ownership controls:
+python assets/validation_v5_17_107/run_wardrobe_ownership857.py --runtime build/caelum_argenteum_dev.pk3 --output build/wardrobe-ownership-review
+
+Continuity, native poses and optional presentation capture:
+python assets/validation_v5_17_107/run_wardrobe_continuity857.py --help
+The runner also accepts the shared --runtime, --candidate, --output and --load
+arguments. Modes: seed, fresh, load, hub, disable, rollback, death, dead-load,
+motion, bench. --baseline-fixture compiles only base-compatible diagnostic types
+and expects the existing presentation. seed creates a baseline save. fresh
+creates the equipped candidate and checks fallbacks. load/hub/disable accept
+the previous reach.zds through --load. rollback loads the disabled save on the
+complete earlier runtime using --baseline-fixture. Enable before candidate
+loads; the runner supplies the explicit session CVAR activation.
+
+death starts a fresh native one-player cooperative game (-host 1), kills the
+actual player and saves the retained outfit. dead-load reloads that save in the
+same mode. GZDoom deliberately rejects dead single-player saves. This test does
+not bypass that rule, emulate network peers or establish multiplayer gameplay.
+
+bench accepts --presentation-layer PATH and --scene CA836A/MAP01/MAP02/MAP03.
+It observes one actually equipped player in a fixed view, with the existing
+world rules. Do not run heavy builds, hashes or validators during its measured
+window. Queue-present intervals are not monitor scanout. WorldTick intervals
+include pacing/frame work; they are not isolated simulation CPU cost. No crowd
+or siege improvement follows from these measurements.
+
+The fixture retains the shared CA836 EDGE log protocol; RESULTS.json identifies
+issue857. Count actual PASS log lines in each process. EventHandler totals saved
+in reach.zds include earlier checks and must not be added as new assertions.
+
+Rejected attempts, corrected source and raw evidence remain under evidence/.
+FrameIndex parsing snapshots every model slot; append-only accessory groups
+were wrong. The final generator emits all17 slots together for all375 states.
+Corrected native captures restore pose agreement without editing meshes. The
+retained hands remain relaxed construction modules; item-specific grip and
+coverage review continues under #859/#462. Native checks are not author
+acceptance. All author checks remain deferred to the consolidated final session.

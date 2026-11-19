@@ -1,0 +1,298 @@
+[
+  {
+    "scene": "studio",
+    "kind": "control",
+    "directory": "build/issue857-bench-studio-control01",
+    "presentation": {
+      "pid": 10200,
+      "trace_sha256": "9b5b489d2712a81d03c5346c40d7521030d42678506c1b2bcaf37cbd37455ae8",
+      "rows": 29089,
+      "scene_presents": 17162,
+      "mean_present_fps": 977.1778215050331,
+      "present_intervals": {
+        "samples": 17161,
+        "mean_ms": 1.0233551949222677,
+        "p50_ms": 0.9924999475479126,
+        "p95_ms": 1.251499891281128,
+        "p99_ms": 1.4544999599456787,
+        "max_ms": 2.183300018310547
+      },
+      "native_call_duration": {
+        "samples": 17162,
+        "mean_ms": 0.09250145072551363,
+        "p50_ms": 0.08959996700286865,
+        "p95_ms": 0.12860000133514404,
+        "p99_ms": 0.16780006885528564,
+        "max_ms": 0.4406999349594116
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.57214757834758,
+      "p50_ms": 28.5765,
+      "p95_ms": 29.3015,
+      "p99_ms": 29.4903,
+      "max_ms": 29.6717
+    },
+    "reused_unchanged_control": true
+  },
+  {
+    "scene": "mansion",
+    "kind": "control",
+    "directory": "build/issue857-bench-mansion-control01",
+    "presentation": {
+      "pid": 6508,
+      "trace_sha256": "393eccbdf8acf5089eff39cb4844570a02bb44491fa853b01072e535dc042f54",
+      "rows": 3962,
+      "scene_presents": 2615,
+      "mean_present_fps": 148.83580762211164,
+      "present_intervals": {
+        "samples": 2614,
+        "mean_ms": 6.718813274685627,
+        "p50_ms": 6.445800065994263,
+        "p95_ms": 8.336899995803833,
+        "p99_ms": 9.206500053405762,
+        "max_ms": 11.142199993133545
+      },
+      "native_call_duration": {
+        "samples": 2615,
+        "mean_ms": 0.10148550588815664,
+        "p50_ms": 0.09739995002746582,
+        "p95_ms": 0.14820003509521484,
+        "p99_ms": 0.1940000057220459,
+        "max_ms": 0.42669999599456787
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.575704985754985,
+      "p50_ms": 27.9948,
+      "p95_ms": 33.2976,
+      "p99_ms": 34.6375,
+      "max_ms": 35.698
+    },
+    "reused_unchanged_control": true
+  },
+  {
+    "scene": "sewers",
+    "kind": "control",
+    "directory": "build/issue857-bench-sewers-control01",
+    "presentation": {
+      "pid": 41968,
+      "trace_sha256": "6afe972429dc5d26545ac61805ed1ee7ca1bdb402e8f3a3639b99cb0f8982af5",
+      "rows": 5112,
+      "scene_presents": 3222,
+      "mean_present_fps": 180.86188995209562,
+      "present_intervals": {
+        "samples": 3221,
+        "mean_ms": 5.529080782385207,
+        "p50_ms": 5.275599956512451,
+        "p95_ms": 7.051099896430969,
+        "p99_ms": 7.960500001907349,
+        "max_ms": 39.019999980926514
+      },
+      "native_call_duration": {
+        "samples": 3222,
+        "mean_ms": 0.10066806359886013,
+        "p50_ms": 0.09780001640319824,
+        "p95_ms": 0.14049994945526123,
+        "p99_ms": 0.1811000108718872,
+        "max_ms": 0.521399974822998
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.568260683760688,
+      "p50_ms": 28.2962,
+      "p95_ms": 32.5425,
+      "p99_ms": 34.154,
+      "max_ms": 41.2996
+    },
+    "reused_unchanged_control": true
+  },
+  {
+    "scene": "city",
+    "kind": "control",
+    "directory": "build/issue857-bench-city-control01",
+    "presentation": {
+      "pid": 13484,
+      "trace_sha256": "d48d1bf09b7caa3409ac765a372c991dc0cf8cbfb2c5c2fa9faec6ae753b1c82",
+      "rows": 2951,
+      "scene_presents": 1842,
+      "mean_present_fps": 104.84907255117626,
+      "present_intervals": {
+        "samples": 1841,
+        "mean_ms": 9.537518794092389,
+        "p50_ms": 9.378000020980835,
+        "p95_ms": 10.797599911689758,
+        "p99_ms": 11.758700013160706,
+        "max_ms": 14.307199954986572
+      },
+      "native_call_duration": {
+        "samples": 1842,
+        "mean_ms": 0.15583865339670586,
+        "p50_ms": 0.1502000093460083,
+        "p95_ms": 0.20969998836517334,
+        "p99_ms": 0.26559996604919434,
+        "max_ms": 0.4819999933242798
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.56974259259259,
+      "p50_ms": 28.3199,
+      "p95_ms": 35.9335,
+      "p99_ms": 37.3757,
+      "max_ms": 38.8176
+    },
+    "reused_unchanged_control": true
+  },
+  {
+    "scene": "studio",
+    "kind": "candidate",
+    "directory": "build/issue857-bench-studio-candidate02",
+    "presentation": {
+      "pid": 52580,
+      "trace_sha256": "c676a22473500dc048123f124b19725e7fe8095f997370db92b57006c31e8b78",
+      "rows": 29504,
+      "scene_presents": 18311,
+      "mean_present_fps": 1042.3451908288166,
+      "present_intervals": {
+        "samples": 18310,
+        "mean_ms": 0.9593750791950736,
+        "p50_ms": 0.9478999376296997,
+        "p95_ms": 1.1890000104904175,
+        "p99_ms": 1.382699966430664,
+        "max_ms": 1.9362000226974487
+      },
+      "native_call_duration": {
+        "samples": 18311,
+        "mean_ms": 0.08808959131973639,
+        "p50_ms": 0.08550000190734863,
+        "p95_ms": 0.1212000846862793,
+        "p99_ms": 0.15709996223449707,
+        "max_ms": 0.5550999641418457
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.57252207977208,
+      "p50_ms": 28.5466,
+      "p95_ms": 29.2715,
+      "p99_ms": 29.4989,
+      "max_ms": 29.8011
+    },
+    "reused_unchanged_control": false
+  },
+  {
+    "scene": "mansion",
+    "kind": "candidate",
+    "directory": "build/issue857-bench-mansion-candidate02",
+    "presentation": {
+      "pid": 45712,
+      "trace_sha256": "36ff5f550191eb47f00fc8ac11b109d5282c2d64d3f8b3c5cdc21ad31108ce3f",
+      "rows": 3853,
+      "scene_presents": 2509,
+      "mean_present_fps": 142.8444702515893,
+      "present_intervals": {
+        "samples": 2508,
+        "mean_ms": 7.000621012761072,
+        "p50_ms": 6.7829999923706055,
+        "p95_ms": 8.507500052452087,
+        "p99_ms": 9.500199913978577,
+        "max_ms": 12.369099974632263
+      },
+      "native_call_duration": {
+        "samples": 2509,
+        "mean_ms": 0.11293977691434492,
+        "p50_ms": 0.10979998111724854,
+        "p95_ms": 0.15570008754730225,
+        "p99_ms": 0.20000004768371582,
+        "max_ms": 0.361299991607666
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.57609373219373,
+      "p50_ms": 27.8119,
+      "p95_ms": 34.1849,
+      "p99_ms": 35.5321,
+      "max_ms": 37.6989
+    },
+    "reused_unchanged_control": false
+  },
+  {
+    "scene": "sewers",
+    "kind": "candidate",
+    "directory": "build/issue857-bench-sewers-candidate02",
+    "presentation": {
+      "pid": 53108,
+      "trace_sha256": "da88b5248ed6ec0c28de88313d75cd862d594ce9fa5b3e3011cc424a9cb35280",
+      "rows": 4242,
+      "scene_presents": 2539,
+      "mean_present_fps": 144.46953541658343,
+      "present_intervals": {
+        "samples": 2538,
+        "mean_ms": 6.921874546882578,
+        "p50_ms": 6.4013999700546265,
+        "p95_ms": 10.950000047683716,
+        "p99_ms": 13.069999933242798,
+        "max_ms": 52.794000029563904
+      },
+      "native_call_duration": {
+        "samples": 2539,
+        "mean_ms": 0.3012488776654322,
+        "p50_ms": 0.2501000165939331,
+        "p95_ms": 0.7165000438690186,
+        "p99_ms": 0.9779000282287598,
+        "max_ms": 1.5943999290466309
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.568344444444445,
+      "p50_ms": 28.4648,
+      "p95_ms": 34.1702,
+      "p99_ms": 36.6747,
+      "max_ms": 67.679
+    },
+    "reused_unchanged_control": false
+  },
+  {
+    "scene": "city",
+    "kind": "candidate",
+    "directory": "build/issue857-bench-city-candidate02",
+    "presentation": {
+      "pid": 17960,
+      "trace_sha256": "df4e618c6535ad10a2277175aaf8ee667e3b2ee5100757735e87a0a321596c35",
+      "rows": 2599,
+      "scene_presents": 1656,
+      "mean_present_fps": 94.23877002151201,
+      "present_intervals": {
+        "samples": 1655,
+        "mean_ms": 10.611343927469859,
+        "p50_ms": 10.14079999923706,
+        "p95_ms": 13.844499945640564,
+        "p99_ms": 15.913600087165833,
+        "max_ms": 20.352800011634827
+      },
+      "native_call_duration": {
+        "samples": 1656,
+        "mean_ms": 0.21877681294789061,
+        "p50_ms": 0.20029997825622559,
+        "p95_ms": 0.35759997367858887,
+        "p99_ms": 0.46999990940093994,
+        "max_ms": 0.99590003490448
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.589907264957265,
+      "p50_ms": 28.7755,
+      "p95_ms": 36.6985,
+      "p99_ms": 39.3814,
+      "max_ms": 41.9342
+    },
+    "reused_unchanged_control": false
+  }
+]

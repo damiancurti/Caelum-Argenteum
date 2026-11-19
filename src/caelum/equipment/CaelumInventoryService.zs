@@ -1673,6 +1673,7 @@ class CaelumInventoryService : Object play
     static void OnNativeInventoryChanged(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        CaelumWardrobeVisual.Invalidate(user);
         CaelumTarotStar.Changed(user);
         CaelumDiningSession.Invalidate(user);
         user.ApplyCharacterProfile();

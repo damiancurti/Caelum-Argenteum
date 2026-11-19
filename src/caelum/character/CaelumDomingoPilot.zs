@@ -104,6 +104,10 @@ class CaelumDomingoPilotPlayer : CaelumPlayer
 
     bool UpdatePilotVisual()
     {
+        bool wardrobeEnabled=CaelumWardrobeVisual.Enabled();
+        // Desactivar permite guardar sin referencias al tipo visual candidato.
+        if(!wardrobeEnabled && PilotBody is 'CaelumWardrobePilotBody')
+        {PilotBody.Destroy();PilotBody=null;}
         if(CurState==null || CharacterProfile==null)return false;
         EnsurePilotMotion();
         bool supported=CharacterProfile.Race==CaelumConstants.RACE_HUMAN
@@ -115,6 +119,7 @@ class CaelumDomingoPilotPlayer : CaelumPlayer
         if(health>0)PilotDeathPresentation=supported;
         else supported=PilotDeathPresentation || supported || (PilotBody!=null && !PilotBody.bInvisible);
         supported=supported && !(CurState.sprite==GetSpriteIndex('RSDO') && CurState.Frame>=2);
+        bool useWardrobe=wardrobeEnabled && CaelumWardrobeVisual.Supported(self,supported);
         // Las variantes sin geometría propia conservan la apariencia vigente.
         if(!supported)
         {
@@ -129,14 +134,19 @@ class CaelumDomingoPilotPlayer : CaelumPlayer
             if(PilotBody!=null)PilotBody.bInvisible=true;
             return true;
         }
+        if(PilotBody!=null && useWardrobe!=(PilotBody is 'CaelumWardrobePilotBody'))
+        {PilotBody.Destroy();PilotBody=null;}
         if(PilotBody==null)
         {
-            PilotBody=CaelumDomingoPilotBody(Actor.Spawn('CaelumDomingoPilotBody',Pos,NO_REPLACE));
+            Name bodyClass=useWardrobe?'CaelumWardrobePilotBody':'CaelumDomingoPilotBody';
+            PilotBody=CaelumDomingoPilotBody(Actor.Spawn(bodyClass,Pos,NO_REPLACE));
             if(PilotBody!=null)PilotBody.Master=self;
         }
         if(PilotBody!=null)
         {
             PilotBody.bInvisible=bInvisible;
+            let wardrobe=CaelumWardrobePilotBody(PilotBody);
+            if(wardrobe!=null)wardrobe.Sync(self);
             PilotBody.UpdateVisual();
             sprite=GetSpriteIndex('TNT1');frame=0;
             return true;
@@ -231,3 +241,6 @@ class CaelumDomingoPilotBody : CaelumDomingoPilotFrames
         +NOBLOCKMAP +NOINTERACTION +NOGRAVITY +MASTERNOSEE
     }
 }
+
+#include "caelum/data/CaelumWornClothingModelData.zs"
+#include "caelum/character/CaelumWardrobePilot.zs"

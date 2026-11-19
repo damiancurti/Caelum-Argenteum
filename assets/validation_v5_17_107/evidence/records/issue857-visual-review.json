@@ -1,0 +1,135 @@
+{
+  "issue": 857,
+  "reviewed_utc": "2026-11-19T22:43:00Z",
+  "method": "Direct view_image inspection of each listed native capture; no synthetic image edits.",
+  "images": [
+    {
+      "path": "build/issue857-bench-studio-candidate02/scene.png",
+      "sha256": "92879d748c0488258888c29b5bcae71a43ce6f552c94e881532a181a7855a08e",
+      "viewed": true,
+      "observation": "Private tiled room; diagnostic figure, no campaign population. Equipped clothing candidate; hands remain relaxed."
+    },
+    {
+      "path": "build/issue857-bench-studio-control01/scene.png",
+      "sha256": "40dcdd20f72725c66da9df5ca8fdc40a37e48bbd34ab089e629a1445a5a301c9",
+      "viewed": true,
+      "observation": "Private tiled room; diagnostic figure, no campaign population.Retained seven-module default comparison."
+    },
+    {
+      "path": "build/issue857-bench-mansion-candidate02/scene.png",
+      "sha256": "81414f8b0f6469c625a5b563526f80d4aeb798e54a7741781f11cb611d781d9b",
+      "viewed": true,
+      "observation": "Opening Unknown Voice dialogue in front of the mansion doors; not an interior walkthrough. Equipped clothing candidate; hands remain relaxed."
+    },
+    {
+      "path": "build/issue857-bench-mansion-control01/scene.png",
+      "sha256": "856d17283559d8e88c426863f00d12e3774f6ec7ddb04e1e802feb1739020d75",
+      "viewed": true,
+      "observation": "Opening Unknown Voice dialogue in front of the mansion doors; not an interior walkthrough.Retained seven-module default comparison."
+    },
+    {
+      "path": "build/issue857-bench-sewers-candidate02/scene.png",
+      "sha256": "7aa80c9e1f13fdd8e580517cd42adddcd1f55cb88bccbf4ba1c9e92fe82ad1ca",
+      "viewed": true,
+      "observation": "Dark flat-ceiling masonry entrance; one equipped figure, not a traversal or crowd. Equipped clothing candidate; hands remain relaxed."
+    },
+    {
+      "path": "build/issue857-bench-sewers-control01/scene.png",
+      "sha256": "21e50323304b5e04c677fb036c8521119521d2dc269a2d02a930fc87e5759479",
+      "viewed": true,
+      "observation": "Dark flat-ceiling masonry entrance; one equipped figure, not a traversal or crowd.Retained seven-module default comparison."
+    },
+    {
+      "path": "build/issue857-bench-city-candidate02/scene.png",
+      "sha256": "b30872242b8187f208256a83fee7fe65289239b9d3bd6b0a7e43898685eee4c5",
+      "viewed": true,
+      "observation": "Paved open area with the gate/mechanism background; peaceful fixed entrance view, no siege. Equipped clothing candidate; hands remain relaxed."
+    },
+    {
+      "path": "build/issue857-bench-city-control01/scene.png",
+      "sha256": "96f13423325c725290d0b8992c46ae4e19e501d36affc0c726987fb4b94794ca",
+      "viewed": true,
+      "observation": "Paved open area with the gate/mechanism background; peaceful fixed entrance view, no siege.Retained seven-module default comparison."
+    },
+    {
+      "path": "build/issue857-motion01/idle.png",
+      "sha256": "a5b8e994518a53fdf4e8a1eecd61263c9fa876f45f2595f7f0fdc81493df4c57",
+      "viewed": true,
+      "observation": "Rejected: body slots retained last frame374 while weapons animated; native pose assertions alone missed this binding-generation defect."
+    },
+    {
+      "path": "build/issue857-motion01/attack.png",
+      "sha256": "6ad726f21f0b07d446954a6ac783093c70ab3cd790832b6d4a5041fc7c5b243c",
+      "viewed": true,
+      "observation": "Rejected: body slots retained last frame374 while weapons animated; native pose assertions alone missed this binding-generation defect."
+    },
+    {
+      "path": "build/issue857-motion01/guard.png",
+      "sha256": "bdd4712649bc2db6e00edc91af25b0da36299ff77bb04254aeaef0663d23320e",
+      "viewed": true,
+      "observation": "Rejected: body slots retained last frame374 while weapons animated; native pose assertions alone missed this binding-generation defect."
+    },
+    {
+      "path": "build/issue857-motion01/jump-air.png",
+      "sha256": "3c02943679144ce0503b5ec02b3e3a83a296bbec488f6d9e4db4a8b91bb512aa",
+      "viewed": true,
+      "observation": "Rejected: body slots retained last frame374 while weapons animated; native pose assertions alone missed this binding-generation defect."
+    },
+    {
+      "path": "build/issue857-motion01/run.png",
+      "sha256": "4fedd3af3ff0a37d168417d7da3a7003320d4094725ba2a839bdbfaf247de0df",
+      "viewed": true,
+      "observation": "Rejected: body slots retained last frame374 while weapons animated; native pose assertions alone missed this binding-generation defect."
+    },
+    {
+      "path": "build/issue857-motion01/back.png",
+      "sha256": "080b8d7c760e96561a5bcedc56ebafc239513a81eff7c7bc8490c4707c67bf31",
+      "viewed": true,
+      "observation": "Rejected: body slots retained last frame374 while weapons animated; native pose assertions alone missed this binding-generation defect."
+    },
+    {
+      "path": "build/issue857-motion02/idle.png",
+      "sha256": "482e28c935cbca598b35bac7aef74fd1f07bdba9ec6181df0d5981294bab438c",
+      "viewed": true,
+      "observation": "Corrected contiguous frame groups restore body/accessory pose agreement. Relaxed fingers and item-specific glove/grip fit remain #859; close framing does not establish all-footwear or all-garment coverage."
+    },
+    {
+      "path": "build/issue857-motion02/attack.png",
+      "sha256": "23c31733ae849a93fbaa9230472ff29d84d52568975dfff3161769fe37b4919d",
+      "viewed": true,
+      "observation": "Corrected contiguous frame groups restore body/accessory pose agreement. Relaxed fingers and item-specific glove/grip fit remain #859; close framing does not establish all-footwear or all-garment coverage."
+    },
+    {
+      "path": "build/issue857-motion02/guard.png",
+      "sha256": "6830c986f281466f0f98c972b95c730d118f1ea257deeb4a709685eb01943624",
+      "viewed": true,
+      "observation": "Corrected contiguous frame groups restore body/accessory pose agreement. Relaxed fingers and item-specific glove/grip fit remain #859; close framing does not establish all-footwear or all-garment coverage."
+    },
+    {
+      "path": "build/issue857-motion02/jump-air.png",
+      "sha256": "0bd47b525e83ce2fb8e0c2e39d86287427ece85609d71f0e5095d283e549f5d6",
+      "viewed": true,
+      "observation": "Corrected contiguous frame groups restore body/accessory pose agreement. Relaxed fingers and item-specific glove/grip fit remain #859; close framing does not establish all-footwear or all-garment coverage."
+    },
+    {
+      "path": "build/issue857-motion02/run.png",
+      "sha256": "d0e6099b79230c5c70e52b1467c98becba2333bd04e5a72c1b9db5c4d87a0178",
+      "viewed": true,
+      "observation": "Corrected contiguous frame groups restore body/accessory pose agreement. Relaxed fingers and item-specific glove/grip fit remain #859; close framing does not establish all-footwear or all-garment coverage."
+    },
+    {
+      "path": "build/issue857-motion02/back.png",
+      "sha256": "5dd09fad57b4ebbf6a25e35c6ac63c102af1334ffd981a3b61b7b6529e0abc4a",
+      "viewed": true,
+      "observation": "Corrected contiguous frame groups restore body/accessory pose agreement. Relaxed fingers and item-specific glove/grip fit remain #859; close framing does not establish all-footwear or all-garment coverage."
+    }
+  ],
+  "limitations": [
+    "The walk-labelled capture was sampled at pose0 and is not a still-image proof of walking; native WorldTick records the actual walk pose separately.",
+    "Jump-preparation capture and complete feet were not used as visual acceptance evidence.",
+    "No author acceptance, other body/species conversion, all-equipment fitting or first-person acceptance.",
+    "The four control captures are reused because the frame-order correction only changes the candidate model definition."
+  ],
+  "corrected_runtime": "build/issue857-wardrobe02.pk3",
+  "corrected_runtime_sha256": "f4b41b9417deb39020fb884357027784bbfc3bafd419af028b34a101cea8a748"
+}

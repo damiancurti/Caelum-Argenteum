@@ -494,3 +494,8 @@ CA847-MATERIAL-01 | Origin: 5.17.102 / #847 (parent #463)
 Prerequisites: assets/source/art/sewer_material_847/review.html and its linked native images, source, prompt and inventory; review during the requested consolidated author session.
 Steps: compare the current/candidate entrance, junction, channel, refuge, locked boss access and short movement views. Inspect brick/paving scale, repeats, colour, route and object readability. Review the explicit texture cost and shared-alias scope.
 Expected: coherent period masonry and legible routes/objects under unchanged lighting. Confirm or request corrections to this visual candidate; this does not accept unrelated gates/props, full-map traversal, production-wide alias replacement or campaign gameplay.
+
+CA857-EQUIPMENT-01 | Origin 5.17.107 / #857 (parents #459/#462) | Pending
+Prerequisites: the final consolidated batch terminal; complete runtime and existing Domingo candidate. Review after the remaining equipment/grip work; no intermediate handoff is requested.
+Steps: enable the equipped first-body candidate, change each native clothing region, replace/unequip/re-equip garments and use native Box/coffer/drop operations. Compare supported clothing against armor/appearance fallback. Save/load, change maps and return. Disable the candidate before making a separate rollback save for an older build.
+Expected: the visible selection follows the actual owned/equipped object without changing inventory identity, stats, collision or resources; load/travel reconstructs the same outfit and disabling restores the existing presentation. Inspect attachments through the later equipment review. This check does not accept other bodies/species, first-person equipment, unmodeled armor, performance or the complete batch.

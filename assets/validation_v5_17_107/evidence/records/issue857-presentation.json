@@ -1,0 +1,290 @@
+[
+  {
+    "scene": "studio",
+    "kind": "candidate",
+    "directory": "build/issue857-bench-studio-candidate01",
+    "presentation": {
+      "pid": 52052,
+      "trace_sha256": "a63a159f46bf8969f0337910cdaf7c3accae0451726b08abd19c643421be3a51",
+      "rows": 28723,
+      "scene_presents": 17316,
+      "mean_present_fps": 985.839799096529,
+      "present_intervals": {
+        "samples": 17315,
+        "mean_ms": 1.0143635922555045,
+        "p50_ms": 0.9914999008178711,
+        "p95_ms": 1.2055000066757202,
+        "p99_ms": 1.381500005722046,
+        "max_ms": 1.8325999975204468
+      },
+      "native_call_duration": {
+        "samples": 17316,
+        "mean_ms": 0.09063666561895112,
+        "p50_ms": 0.08809995651245117,
+        "p95_ms": 0.12300002574920654,
+        "p99_ms": 0.15540003776550293,
+        "max_ms": 0.5786000490188599
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.571020797720795,
+      "p50_ms": 28.5641,
+      "p95_ms": 29.3323,
+      "p99_ms": 29.5043,
+      "max_ms": 29.65
+    }
+  },
+  {
+    "scene": "studio",
+    "kind": "control",
+    "directory": "build/issue857-bench-studio-control01",
+    "presentation": {
+      "pid": 10200,
+      "trace_sha256": "9b5b489d2712a81d03c5346c40d7521030d42678506c1b2bcaf37cbd37455ae8",
+      "rows": 29089,
+      "scene_presents": 17162,
+      "mean_present_fps": 977.1778215050331,
+      "present_intervals": {
+        "samples": 17161,
+        "mean_ms": 1.0233551949222677,
+        "p50_ms": 0.9924999475479126,
+        "p95_ms": 1.251499891281128,
+        "p99_ms": 1.4544999599456787,
+        "max_ms": 2.183300018310547
+      },
+      "native_call_duration": {
+        "samples": 17162,
+        "mean_ms": 0.09250145072551363,
+        "p50_ms": 0.08959996700286865,
+        "p95_ms": 0.12860000133514404,
+        "p99_ms": 0.16780006885528564,
+        "max_ms": 0.4406999349594116
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.57214757834758,
+      "p50_ms": 28.5765,
+      "p95_ms": 29.3015,
+      "p99_ms": 29.4903,
+      "max_ms": 29.6717
+    }
+  },
+  {
+    "scene": "mansion",
+    "kind": "candidate",
+    "directory": "build/issue857-bench-mansion-candidate01",
+    "presentation": {
+      "pid": 19140,
+      "trace_sha256": "504e79e9d15c442dd2dd862db21464e212824c373f3ca1783c65fc96519ecaa0",
+      "rows": 3807,
+      "scene_presents": 2484,
+      "mean_present_fps": 141.42839224533168,
+      "present_intervals": {
+        "samples": 2483,
+        "mean_ms": 7.0707160289663005,
+        "p50_ms": 6.82450008392334,
+        "p95_ms": 8.662000060081482,
+        "p99_ms": 9.584699988365173,
+        "max_ms": 12.424400091171265
+      },
+      "native_call_duration": {
+        "samples": 2484,
+        "mean_ms": 0.11609251300493877,
+        "p50_ms": 0.11160004138946533,
+        "p95_ms": 0.1640000343322754,
+        "p99_ms": 0.21830010414123535,
+        "max_ms": 0.507099986076355
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.57909316239316,
+      "p50_ms": 27.8421,
+      "p95_ms": 33.8804,
+      "p99_ms": 34.6595,
+      "max_ms": 35.7519
+    }
+  },
+  {
+    "scene": "mansion",
+    "kind": "control",
+    "directory": "build/issue857-bench-mansion-control01",
+    "presentation": {
+      "pid": 6508,
+      "trace_sha256": "393eccbdf8acf5089eff39cb4844570a02bb44491fa853b01072e535dc042f54",
+      "rows": 3962,
+      "scene_presents": 2615,
+      "mean_present_fps": 148.83580762211164,
+      "present_intervals": {
+        "samples": 2614,
+        "mean_ms": 6.718813274685627,
+        "p50_ms": 6.445800065994263,
+        "p95_ms": 8.336899995803833,
+        "p99_ms": 9.206500053405762,
+        "max_ms": 11.142199993133545
+      },
+      "native_call_duration": {
+        "samples": 2615,
+        "mean_ms": 0.10148550588815664,
+        "p50_ms": 0.09739995002746582,
+        "p95_ms": 0.14820003509521484,
+        "p99_ms": 0.1940000057220459,
+        "max_ms": 0.42669999599456787
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.575704985754985,
+      "p50_ms": 27.9948,
+      "p95_ms": 33.2976,
+      "p99_ms": 34.6375,
+      "max_ms": 35.698
+    }
+  },
+  {
+    "scene": "sewers",
+    "kind": "candidate",
+    "directory": "build/issue857-bench-sewers-candidate01",
+    "presentation": {
+      "pid": 18740,
+      "trace_sha256": "aaeb1b604df94be50175f8a9d818a1e306c28945086d9a6997895253a518a248",
+      "rows": 5025,
+      "scene_presents": 3132,
+      "mean_present_fps": 178.2632733332798,
+      "present_intervals": {
+        "samples": 3131,
+        "mean_ms": 5.609680453530138,
+        "p50_ms": 5.338799953460693,
+        "p95_ms": 7.157799959182739,
+        "p99_ms": 8.20959997177124,
+        "max_ms": 39.68219995498657
+      },
+      "native_call_duration": {
+        "samples": 3132,
+        "mean_ms": 0.10078400400102062,
+        "p50_ms": 0.09759998321533203,
+        "p95_ms": 0.13620007038116455,
+        "p99_ms": 0.17579996585845947,
+        "max_ms": 0.8035000562667847
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.565997435897437,
+      "p50_ms": 28.2364,
+      "p95_ms": 32.6278,
+      "p99_ms": 33.7355,
+      "max_ms": 47.6578
+    }
+  },
+  {
+    "scene": "sewers",
+    "kind": "control",
+    "directory": "build/issue857-bench-sewers-control01",
+    "presentation": {
+      "pid": 41968,
+      "trace_sha256": "6afe972429dc5d26545ac61805ed1ee7ca1bdb402e8f3a3639b99cb0f8982af5",
+      "rows": 5112,
+      "scene_presents": 3222,
+      "mean_present_fps": 180.86188995209562,
+      "present_intervals": {
+        "samples": 3221,
+        "mean_ms": 5.529080782385207,
+        "p50_ms": 5.275599956512451,
+        "p95_ms": 7.051099896430969,
+        "p99_ms": 7.960500001907349,
+        "max_ms": 39.019999980926514
+      },
+      "native_call_duration": {
+        "samples": 3222,
+        "mean_ms": 0.10066806359886013,
+        "p50_ms": 0.09780001640319824,
+        "p95_ms": 0.14049994945526123,
+        "p99_ms": 0.1811000108718872,
+        "max_ms": 0.521399974822998
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.568260683760688,
+      "p50_ms": 28.2962,
+      "p95_ms": 32.5425,
+      "p99_ms": 34.154,
+      "max_ms": 41.2996
+    }
+  },
+  {
+    "scene": "city",
+    "kind": "candidate",
+    "directory": "build/issue857-bench-city-candidate01",
+    "presentation": {
+      "pid": 23988,
+      "trace_sha256": "925a2bfc9d888e3c26b2f97015f32a5c2cad57740623fbfa94768373f4e2811d",
+      "rows": 2926,
+      "scene_presents": 1865,
+      "mean_present_fps": 106.1960344043954,
+      "present_intervals": {
+        "samples": 1864,
+        "mean_ms": 9.4165474785244,
+        "p50_ms": 9.29449999332428,
+        "p95_ms": 10.71119999885559,
+        "p99_ms": 11.950100064277649,
+        "max_ms": 15.511600017547607
+      },
+      "native_call_duration": {
+        "samples": 1865,
+        "mean_ms": 0.14802911377464478,
+        "p50_ms": 0.14019989967346191,
+        "p95_ms": 0.20850002765655518,
+        "p99_ms": 0.25310003757476807,
+        "max_ms": 0.41429996490478516
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.55975014245014,
+      "p50_ms": 28.2503,
+      "p95_ms": 35.5935,
+      "p99_ms": 37.2161,
+      "max_ms": 38.1171
+    }
+  },
+  {
+    "scene": "city",
+    "kind": "control",
+    "directory": "build/issue857-bench-city-control01",
+    "presentation": {
+      "pid": 13484,
+      "trace_sha256": "d48d1bf09b7caa3409ac765a372c991dc0cf8cbfb2c5c2fa9faec6ae753b1c82",
+      "rows": 2951,
+      "scene_presents": 1842,
+      "mean_present_fps": 104.84907255117626,
+      "present_intervals": {
+        "samples": 1841,
+        "mean_ms": 9.537518794092389,
+        "p50_ms": 9.378000020980835,
+        "p95_ms": 10.797599911689758,
+        "p99_ms": 11.758700013160706,
+        "max_ms": 14.307199954986572
+      },
+      "native_call_duration": {
+        "samples": 1842,
+        "mean_ms": 0.15583865339670586,
+        "p50_ms": 0.1502000093460083,
+        "p95_ms": 0.20969998836517334,
+        "p99_ms": 0.26559996604919434,
+        "max_ms": 0.4819999933242798
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.56974259259259,
+      "p50_ms": 28.3199,
+      "p95_ms": 35.9335,
+      "p99_ms": 37.3757,
+      "max_ms": 38.8176
+    }
+  }
+]
