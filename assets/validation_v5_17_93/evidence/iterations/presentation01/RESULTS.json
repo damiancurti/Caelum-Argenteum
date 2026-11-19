@@ -1,0 +1,53 @@
+{
+  "issue": 829,
+  "scope": "Compare the retained seven modules with fitted clothing on one and 64 figures.\n\nThe fitted cohort cycles all 11 ensembles and their matching headwear/gloves/shoes.\nQueue presentation intervals and simulation tails are not display latency or a\ncampaign, combat, siege, first-person or author acceptance result.",
+  "runtime_sha256": "b073da14f96bc9215a96c509e8c675fe43f2ded8622a2fb57fc3321b0362d7b3",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "seven",
+      "bodies": 1,
+      "pid": 49316,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 672240518.441,
+        "END": 672260542.4711
+      },
+      "fixture_sha256": "cac25c899da1f669ce74075faed90b2dc73c9e760dcce731a4dad7c81a4b3651",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.572081142857144,
+        "p50_ms": 28.5791,
+        "p95_ms": 29.1316,
+        "p99_ms": 29.2699,
+        "max_ms": 29.3962
+      },
+      "presentation": {
+        "pid": 49316,
+        "trace_sha256": "e19845cacdbdb97370b8f830fff443c49c9ad57112706072a2b2e294fc7695b8",
+        "rows": 30894,
+        "scene_presents": 21065,
+        "mean_present_fps": 1202.0666095305303,
+        "present_intervals": {
+          "samples": 21064,
+          "mean_ms": 0.8319006551480139,
+          "p50_ms": 0.8128000497817993,
+          "p95_ms": 0.9848999977111816,
+          "p99_ms": 1.090499997138977,
+          "max_ms": 1.675399899482727
+        },
+        "native_call_duration": {
+          "samples": 21065,
+          "mean_ms": 0.09138718228597073,
+          "p50_ms": 0.08720004558563232,
+          "p95_ms": 0.10880005359649658,
+          "p99_ms": 0.1696000099182129,
+          "max_ms": 0.49830007553100586
+        }
+      }
+    }
+  ]
+}

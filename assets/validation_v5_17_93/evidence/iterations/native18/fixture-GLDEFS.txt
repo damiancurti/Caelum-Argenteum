@@ -1,0 +1,4 @@
+pointlight CA829Key { color 1.0 0.9 0.8 size 220 }
+pointlight CA829Fill { color 0.6 0.7 1.0 size 180 }
+object CA829KeyLight { frame TNT1 { light CA829Key } }
+object CA829FillLight { frame TNT1 { light CA829Fill } }

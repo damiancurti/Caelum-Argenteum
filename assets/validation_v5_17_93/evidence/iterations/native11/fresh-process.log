@@ -1,0 +1,751 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-18 22:32:13
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue829-clothing03.pk3, 18664 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue829-native11/fixture.pk3, 5 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2505.94 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Worn garment fitting
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA829 VIEW outfit=2 pose=0 rotation=0
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured outfit-1-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured outfit-1-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=-1 pose=0 rotation=4
+Captured outfit-1-view4.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=-205.00 y=0.00 z=90.83 angle=360.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=-1 pose=0 rotation=6
+Captured outfit-1-view6.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=-205.00 z=90.83 angle=450.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=0 pose=0 rotation=0
+Captured outfit00-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=0 pose=0 rotation=2
+Captured outfit00-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=0 pose=0 rotation=4
+Captured outfit00-view4.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=-205.00 y=0.00 z=90.83 angle=360.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=0 pose=0 rotation=6
+Captured outfit00-view6.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=-205.00 z=90.83 angle=450.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=1 pose=0 rotation=0
+Captured outfit01-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=1 pose=0 rotation=2
+Captured outfit01-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=1 pose=0 rotation=4
+Captured outfit01-view4.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=-205.00 y=0.00 z=90.83 angle=360.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=1 pose=0 rotation=6
+Captured outfit01-view6.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=-205.00 z=90.83 angle=450.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=2 pose=0 rotation=0
+Captured outfit02-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=2 pose=0 rotation=2
+Captured outfit02-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=2 pose=0 rotation=4
+Captured outfit02-view4.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=-205.00 y=0.00 z=90.83 angle=360.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=2 pose=0 rotation=6
+Captured outfit02-view6.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=-205.00 z=90.83 angle=450.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=3 pose=0 rotation=0
+Captured outfit03-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=3 pose=0 rotation=2
+Captured outfit03-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=3 pose=0 rotation=4
+Captured outfit03-view4.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=-205.00 y=0.00 z=90.83 angle=360.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=3 pose=0 rotation=6
+Captured outfit03-view6.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=-205.00 z=90.83 angle=450.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=4 pose=0 rotation=0
+Captured outfit04-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=4 pose=0 rotation=2
+Captured outfit04-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=4 pose=0 rotation=4
+Captured outfit04-view4.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=-205.00 y=0.00 z=90.83 angle=360.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=4 pose=0 rotation=6
+Captured outfit04-view6.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=-205.00 z=90.83 angle=450.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=5 pose=0 rotation=0
+Captured outfit05-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=5 pose=0 rotation=2
+Captured outfit05-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=5 pose=0 rotation=4
+Captured outfit05-view4.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=-205.00 y=0.00 z=90.83 angle=360.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=5 pose=0 rotation=6
+Captured outfit05-view6.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=-205.00 z=90.83 angle=450.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=6 pose=0 rotation=0
+Captured outfit06-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=6 pose=0 rotation=2
+Captured outfit06-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=6 pose=0 rotation=4
+Captured outfit06-view4.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=-205.00 y=0.00 z=90.83 angle=360.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=6 pose=0 rotation=6
+Captured outfit06-view6.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=-205.00 z=90.83 angle=450.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=7 pose=0 rotation=0
+Captured outfit07-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=7 pose=0 rotation=2
+Captured outfit07-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=7 pose=0 rotation=4
+Captured outfit07-view4.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=-205.00 y=0.00 z=90.83 angle=360.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=7 pose=0 rotation=6
+Captured outfit07-view6.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=-205.00 z=90.83 angle=450.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=8 pose=0 rotation=0
+Captured outfit08-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=8 pose=0 rotation=2
+Captured outfit08-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=8 pose=0 rotation=4
+Captured outfit08-view4.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=-205.00 y=0.00 z=90.83 angle=360.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=8 pose=0 rotation=6
+Captured outfit08-view6.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=-205.00 z=90.83 angle=450.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=9 pose=0 rotation=0
+Captured outfit09-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=9 pose=0 rotation=2
+Captured outfit09-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=9 pose=0 rotation=4
+Captured outfit09-view4.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=-205.00 y=0.00 z=90.83 angle=360.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=9 pose=0 rotation=6
+Captured outfit09-view6.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=-205.00 z=90.83 angle=450.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=10 pose=0 rotation=0
+Captured outfit10-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=10 pose=0 rotation=2
+Captured outfit10-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=10 pose=0 rotation=4
+Captured outfit10-view4.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=-205.00 y=0.00 z=90.83 angle=360.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=10 pose=0 rotation=6
+Captured outfit10-view6.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=-205.00 z=90.83 angle=450.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=2 pose=0 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose00.png
+CA829 VIEW outfit=2 pose=0 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose01.png
+CA829 VIEW outfit=2 pose=1 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose02.png
+CA829 VIEW outfit=2 pose=2 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose03.png
+CA829 VIEW outfit=2 pose=3 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose04.png
+CA829 VIEW outfit=2 pose=4 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose05.png
+CA829 VIEW outfit=2 pose=5 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose06.png
+CA829 VIEW outfit=2 pose=6 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose07.png
+CA829 VIEW outfit=2 pose=7 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose08.png
+CA829 VIEW outfit=2 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose09.png
+CA829 VIEW outfit=2 pose=9 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose10.png
+CA829 VIEW outfit=2 pose=10 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose11.png
+CA829 VIEW outfit=2 pose=11 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose12.png
+CA829 VIEW outfit=2 pose=12 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose13.png
+CA829 VIEW outfit=2 pose=13 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose14.png
+CA829 VIEW outfit=2 pose=14 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose15.png
+CA829 VIEW outfit=2 pose=15 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose16.png
+CA829 VIEW outfit=2 pose=16 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose17.png
+CA829 VIEW outfit=2 pose=17 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose18.png
+CA829 VIEW outfit=2 pose=18 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose19.png
+CA829 VIEW outfit=2 pose=19 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose20.png
+CA829 VIEW outfit=2 pose=20 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose21.png
+CA829 VIEW outfit=2 pose=21 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose22.png
+CA829 VIEW outfit=2 pose=22 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose23.png
+CA829 VIEW outfit=0 pose=23 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose00.png
+CA829 VIEW outfit=0 pose=0 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose01.png
+CA829 VIEW outfit=0 pose=1 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose02.png
+CA829 VIEW outfit=0 pose=2 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose03.png
+CA829 VIEW outfit=0 pose=3 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose04.png
+CA829 VIEW outfit=0 pose=4 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose05.png
+CA829 VIEW outfit=0 pose=5 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose06.png
+CA829 VIEW outfit=0 pose=6 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose07.png
+CA829 VIEW outfit=0 pose=7 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose08.png
+CA829 VIEW outfit=0 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose09.png
+CA829 VIEW outfit=0 pose=9 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose10.png
+CA829 VIEW outfit=0 pose=10 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose11.png
+CA829 VIEW outfit=0 pose=11 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose12.png
+CA829 VIEW outfit=0 pose=12 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose13.png
+CA829 VIEW outfit=0 pose=13 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose14.png
+CA829 VIEW outfit=0 pose=14 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose15.png
+CA829 VIEW outfit=0 pose=15 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose16.png
+CA829 VIEW outfit=0 pose=16 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose17.png
+CA829 VIEW outfit=0 pose=17 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose18.png
+CA829 VIEW outfit=0 pose=18 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose19.png
+CA829 VIEW outfit=0 pose=19 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose20.png
+CA829 VIEW outfit=0 pose=20 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose21.png
+CA829 VIEW outfit=0 pose=21 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose22.png
+CA829 VIEW outfit=0 pose=22 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose23.png
+CA829 VIEW outfit=7 pose=23 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose00.png
+CA829 VIEW outfit=7 pose=0 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose01.png
+CA829 VIEW outfit=7 pose=1 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose02.png
+CA829 VIEW outfit=7 pose=2 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose03.png
+CA829 VIEW outfit=7 pose=3 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose04.png
+CA829 VIEW outfit=7 pose=4 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose05.png
+CA829 VIEW outfit=7 pose=5 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose06.png
+CA829 VIEW outfit=7 pose=6 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose07.png
+CA829 VIEW outfit=7 pose=7 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose08.png
+CA829 VIEW outfit=7 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose09.png
+CA829 VIEW outfit=7 pose=9 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose10.png
+CA829 VIEW outfit=7 pose=10 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose11.png
+CA829 VIEW outfit=7 pose=11 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose12.png
+CA829 VIEW outfit=7 pose=12 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose13.png
+CA829 VIEW outfit=7 pose=13 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose14.png
+CA829 VIEW outfit=7 pose=14 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose15.png
+CA829 VIEW outfit=7 pose=15 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose16.png
+CA829 VIEW outfit=7 pose=16 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose17.png
+CA829 VIEW outfit=7 pose=17 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose18.png
+CA829 VIEW outfit=7 pose=18 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose19.png
+CA829 VIEW outfit=7 pose=19 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose20.png
+CA829 VIEW outfit=7 pose=20 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose21.png
+CA829 VIEW outfit=7 pose=21 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose22.png
+CA829 VIEW outfit=7 pose=22 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose23.png
+CA829 VIEW outfit=1 pose=23 rotation=7
+CA829 PASS selected native pose
+Captured outfit01-pose02.png
+CA829 VIEW outfit=1 pose=2 rotation=7
+CA829 PASS selected native pose
+Captured outfit01-pose03.png
+CA829 VIEW outfit=1 pose=3 rotation=7
+CA829 PASS selected native pose
+Captured outfit01-pose08.png
+CA829 VIEW outfit=1 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit01-pose09.png
+CA829 VIEW outfit=1 pose=9 rotation=7
+CA829 PASS selected native pose
+Captured outfit01-pose10.png
+CA829 VIEW outfit=1 pose=10 rotation=7
+CA829 PASS selected native pose
+Captured outfit01-pose17.png
+CA829 VIEW outfit=3 pose=17 rotation=7
+CA829 PASS selected native pose
+Captured outfit03-pose02.png
+CA829 VIEW outfit=3 pose=2 rotation=7
+CA829 PASS selected native pose
+Captured outfit03-pose03.png
+CA829 VIEW outfit=3 pose=3 rotation=7
+CA829 PASS selected native pose
+Captured outfit03-pose08.png
+CA829 VIEW outfit=3 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit03-pose09.png
+CA829 VIEW outfit=3 pose=9 rotation=7
+CA829 PASS selected native pose
+Captured outfit03-pose10.png
+CA829 VIEW outfit=3 pose=10 rotation=7
+CA829 PASS selected native pose
+Captured outfit03-pose17.png
+CA829 VIEW outfit=4 pose=17 rotation=7
+CA829 PASS selected native pose
+Captured outfit04-pose02.png
+CA829 VIEW outfit=4 pose=2 rotation=7
+CA829 PASS selected native pose
+Captured outfit04-pose03.png
+CA829 VIEW outfit=4 pose=3 rotation=7
+CA829 PASS selected native pose
+Captured outfit04-pose08.png
+CA829 VIEW outfit=4 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit04-pose09.png
+CA829 VIEW outfit=4 pose=9 rotation=7
+CA829 PASS selected native pose
+Captured outfit04-pose10.png
+CA829 VIEW outfit=4 pose=10 rotation=7
+CA829 PASS selected native pose
+Captured outfit04-pose17.png
+CA829 VIEW outfit=5 pose=17 rotation=7
+CA829 PASS selected native pose
+Captured outfit05-pose02.png
+CA829 VIEW outfit=5 pose=2 rotation=7
+CA829 PASS selected native pose
+Captured outfit05-pose03.png
+CA829 VIEW outfit=5 pose=3 rotation=7
+CA829 PASS selected native pose
+Captured outfit05-pose08.png
+CA829 VIEW outfit=5 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit05-pose09.png
+CA829 VIEW outfit=5 pose=9 rotation=7
+CA829 PASS selected native pose
+Captured outfit05-pose10.png
+CA829 VIEW outfit=5 pose=10 rotation=7
+CA829 PASS selected native pose
+Captured outfit05-pose17.png
+CA829 VIEW outfit=6 pose=17 rotation=7
+CA829 PASS selected native pose
+Captured outfit06-pose02.png
+CA829 VIEW outfit=6 pose=2 rotation=7
+CA829 PASS selected native pose
+Captured outfit06-pose03.png
+CA829 VIEW outfit=6 pose=3 rotation=7
+CA829 PASS selected native pose
+Captured outfit06-pose08.png
+CA829 VIEW outfit=6 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit06-pose09.png
+CA829 VIEW outfit=6 pose=9 rotation=7
+CA829 PASS selected native pose
+Captured outfit06-pose10.png
+CA829 VIEW outfit=6 pose=10 rotation=7
+CA829 PASS selected native pose
+Captured outfit06-pose17.png
+CA829 VIEW outfit=8 pose=17 rotation=7
+CA829 PASS selected native pose
+Captured outfit08-pose02.png
+CA829 VIEW outfit=8 pose=2 rotation=7
+CA829 PASS selected native pose
+Captured outfit08-pose03.png
+CA829 VIEW outfit=8 pose=3 rotation=7
+CA829 PASS selected native pose
+Captured outfit08-pose08.png
+CA829 VIEW outfit=8 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit08-pose09.png
+CA829 VIEW outfit=8 pose=9 rotation=7
+CA829 PASS selected native pose
+Captured outfit08-pose10.png
+CA829 VIEW outfit=8 pose=10 rotation=7
+CA829 PASS selected native pose
+Captured outfit08-pose17.png
+CA829 VIEW outfit=9 pose=17 rotation=7
+CA829 PASS selected native pose
+Captured outfit09-pose02.png
+CA829 VIEW outfit=9 pose=2 rotation=7
+CA829 PASS selected native pose
+Captured outfit09-pose03.png
+CA829 VIEW outfit=9 pose=3 rotation=7
+CA829 PASS selected native pose
+Captured outfit09-pose08.png
+CA829 VIEW outfit=9 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit09-pose09.png
+CA829 VIEW outfit=9 pose=9 rotation=7
+CA829 PASS selected native pose
+Captured outfit09-pose10.png
+CA829 VIEW outfit=9 pose=10 rotation=7
+CA829 PASS selected native pose
+Captured outfit09-pose17.png
+CA829 VIEW outfit=10 pose=17 rotation=7
+CA829 PASS selected native pose
+Captured outfit10-pose02.png
+CA829 VIEW outfit=10 pose=2 rotation=7
+CA829 PASS selected native pose
+Captured outfit10-pose03.png
+CA829 VIEW outfit=10 pose=3 rotation=7
+CA829 PASS selected native pose
+Captured outfit10-pose08.png
+CA829 VIEW outfit=10 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit10-pose09.png
+CA829 VIEW outfit=10 pose=9 rotation=7
+CA829 PASS selected native pose
+Captured outfit10-pose10.png
+CA829 VIEW outfit=10 pose=10 rotation=7
+CA829 PASS selected native pose
+Captured outfit10-pose17.png
+CA829 VIEW outfit=2 pose=0 rotation=7
+CA829 PASS changing one garment selects the request and preserves other regions
+Captured region0-item-1.png
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+Captured region0-item10.png
+CA829 VIEW outfit=2 pose=0 rotation=7
+CA829 PASS changing one garment selects the request and preserves other regions
+Captured region1-item-1.png
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+Captured region1-item4.png
+CA829 VIEW outfit=2 pose=0 rotation=7
+CA829 PASS changing one garment selects the request and preserves other regions
+Captured region2-item-1.png
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+Captured region2-item3.png
+CA829 VIEW outfit=2 pose=0 rotation=7
+CA829 PASS changing one garment selects the request and preserves other regions
+Captured region3-item-1.png
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+Captured region3-item4.png
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS changing one garment selects the request and preserves other regions
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail1-item0-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail1-item0-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail1-item1-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail1-item1-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail1-item2-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail1-item2-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail1-item3-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail1-item3-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail1-item4-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail1-item4-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail2-item0-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail2-item0-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail2-item1-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail2-item1-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Game saved.
+Captured detail2-item2-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail2-item2-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail2-item3-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail2-item3-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail3-item0-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail3-item0-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail3-item1-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail3-item1-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail3-item2-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail3-item2-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail3-item3-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail3-item3-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail3-item4-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail3-item4-view2.png
+CA829 PASS native walking state advances
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured saved.png
+CA829 PASS saved subject/camera references
+CA829 PASS saved four garment selectors
+CA829 PASS saved covered-body and hair visibility
+CA829 PASS saved frozen pose
+CA829 PASS inspection has no gameplay collision
+CA829 COMPLETE failures=0 checks=235
+Game saved.

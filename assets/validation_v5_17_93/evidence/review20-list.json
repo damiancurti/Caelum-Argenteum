@@ -1,0 +1,17 @@
+{
+  "issue": 829,
+  "reviewed": [
+    "issue829-native20/outfit00-view0.png",
+    "issue829-native20/outfit00-pose02.png",
+    "issue829-native20/outfit00-pose08.png",
+    "issue829-native20/outfit00-pose10.png",
+    "issue829-native20/outfit01-pose08.png",
+    "issue829-native20/outfit07-pose10.png",
+    "issue829-native20/outfit07-pose17.png",
+    "issue829-native20/outfit00-pose09.png",
+    "issue829-native20/outfit01-pose09.png"
+  ],
+  "notes": [
+    "Source20 native views confirm repaired F/FW running/seated/crouched layering and RW crouch/jump; neutral formal silhouette retained. Horizontal coats remain rigid without physical cloth simulation. These9 inspected quick-run views are candidates pending full-package checks and author review."
+  ]
+}

@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.92** - 2026-11-18.
+Documentation version: **5.17.93** - 2026-11-19.
+
+## 5.17.93 - First-body garment candidates verified (#829)
+
+The 25 approved clothing identities have editable fitted candidates on the
+retained Domingo rig. Deterministic exports, geometry checks, 306 native
+selection/pose/save assertions and four rendering measurements have bounded
+evidence in ASSETS. Production owners and accepted artwork are unchanged.
+All-character fitting, actual equipment integration and first-person views remain
+unfinished. The author will review the complete batch in one final terminal;
+no intermediate acceptance is inferred.
 
 ## 5.17.92 - Anatomy available for modular fitting (#827)
 

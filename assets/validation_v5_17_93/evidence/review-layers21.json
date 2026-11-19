@@ -1,0 +1,13 @@
+{
+  "issue": 829,
+  "reviewed": [
+    "issue829-layers21-PW-whole-129.png",
+    "issue829-layers20-CW-whole-129.png",
+    "issue829-layers22-CW-whole-129.png",
+    "issue829-layers22-CW-whole-150.png"
+  ],
+  "notes": [
+    "Source21 PW seated diagnostic clears the trouser island while preserving its original coat/pants patches. Source20 CW seated diagnostic reveals a smaller trouser island at the side-front hem, so CW also needs the demonstrated fit. Blender colour diagnostics only, not native or author acceptance.",
+    "Source22 CW seated/crouched diagnostics remove the isolated green trouser island. Central inner vest/pants remain visible through the intended open front. Native confirmation remains required."
+  ]
+}

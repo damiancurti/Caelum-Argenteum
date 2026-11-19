@@ -1,0 +1,15 @@
+{
+  "os": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "AMD64 Family 25 Model 33 Stepping 0, AuthenticAMD",
+  "engine_environment": [
+    "GZDoom version g4.14.2",
+    "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+    "Vulkan version: 1.4.341 (api) 610.352.0 (driver)",
+    "Resolution: 1280 x 720",
+    "CPU speed: 3400 MHz",
+    "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+  ],
+  "native_settings": "1280x720 Vulkan; noautoload; unpaused hidden background; 5% audio. Preview capped60; presentation uncapped, vsync off.",
+  "measurement_isolation": "No heavy builds, generators or full project validation ran during native captures/presentation. Per-run system wake requests released in finally blocks."
+}

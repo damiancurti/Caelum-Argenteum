@@ -1,0 +1,40 @@
+{
+  "issue": 829,
+  "unchanged_native_modules": [
+    "base_arms",
+    "base_forearms",
+    "base_neck",
+    "CE",
+    "CS",
+    "CW",
+    "F",
+    "FW",
+    "GC",
+    "GF",
+    "GP",
+    "GW",
+    "hair_lower",
+    "HC",
+    "HF",
+    "HP",
+    "HR",
+    "HW",
+    "PE",
+    "PS",
+    "PW",
+    "RE",
+    "RS",
+    "RW"
+  ],
+  "changed_native_modules": [
+    "base_core",
+    "base_feet",
+    "BC",
+    "BF",
+    "BP",
+    "BR",
+    "BS"
+  ],
+  "before": "export08",
+  "after": "export10"
+}

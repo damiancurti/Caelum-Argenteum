@@ -6,8 +6,10 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.92.** Obtain and update the complete repository,
+**Current release: 5.17.93.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#829 adds fitted candidates for the 25 approved garments on the first modular body. Exports repeat exactly and 306 native checks pass; four presentation measurements record the rendering cost within the isolated scope. Production equipment integration and other character variants remain unfinished; author review stays reserved for the completed batch.
 
 #827 adds an editable Domingo body and independent hands for modular garment fitting. Native anatomy and save/rollback checks pass. Existing production characters retain their models; garment intersections, broader variants and first-person equipment remain unfinished. Author review stays reserved for the completed batch.
 

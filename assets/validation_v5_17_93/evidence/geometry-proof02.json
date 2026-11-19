@@ -1,0 +1,6 @@
+{
+  "issue": 829,
+  "geometry_exact_repeat": true,
+  "geometry_sha256": "1a1807d2d03366ce58e8f110202ab2043d0cd95298566bea64808d0d5252bdd2",
+  "qualification": "Deterministic claims cover intermediate geometry and native exports from the retained editable Blender checkpoint."
+}

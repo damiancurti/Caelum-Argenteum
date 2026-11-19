@@ -1,0 +1,108 @@
+{
+  "schema_revision": 1,
+  "issue": 829,
+  "body_absent_hidden": [
+    "body_item",
+    "trousers"
+  ],
+  "body_items_hidden": {
+    "F": [
+      "base_core",
+      "base_arms",
+      "base_forearms"
+    ],
+    "FW": [
+      "base_core",
+      "base_arms",
+      "base_forearms"
+    ],
+    "CS": [
+      "base_core",
+      "base_arms"
+    ],
+    "CE": [
+      "base_core",
+      "base_arms",
+      "base_forearms"
+    ],
+    "CW": [
+      "base_core",
+      "base_arms",
+      "base_forearms"
+    ],
+    "RS": [
+      "base_core",
+      "base_arms"
+    ],
+    "RE": [
+      "base_core",
+      "base_arms",
+      "base_forearms"
+    ],
+    "RW": [
+      "base_core",
+      "base_arms",
+      "base_forearms"
+    ],
+    "PS": [
+      "base_core",
+      "base_arms"
+    ],
+    "PE": [
+      "base_core",
+      "base_arms",
+      "base_forearms"
+    ],
+    "PW": [
+      "base_core",
+      "base_arms",
+      "base_forearms"
+    ]
+  },
+  "other_regions": {
+    "head": {
+      "absent_hidden": [
+        "hair_lower",
+        "head_item"
+      ],
+      "present_hidden": [
+        "hair"
+      ]
+    },
+    "hands": {
+      "absent_hidden": [
+        "hand_item"
+      ],
+      "present_hidden": [
+        "left_hand",
+        "right_hand"
+      ]
+    },
+    "feet": {
+      "absent_hidden": [
+        "foot_item"
+      ],
+      "present_hidden": [
+        "base_feet"
+      ]
+    }
+  },
+  "fixture_slots": [
+    "face",
+    "hair",
+    "hair_lower",
+    "base_core",
+    "base_arms",
+    "base_neck",
+    "base_feet",
+    "left_hand",
+    "right_hand",
+    "body_item",
+    "head_item",
+    "hand_item",
+    "foot_item",
+    "base_forearms",
+    "trousers"
+  ],
+  "scope": "First fitted body only; visibility metadata does not assign or own campaign equipment."
+}

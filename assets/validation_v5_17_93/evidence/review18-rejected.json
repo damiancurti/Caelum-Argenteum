@@ -1,0 +1,10 @@
+{
+  "issue": 829,
+  "reviewed": [
+    "issue829-native18/outfit00-pose02.png",
+    "issue829-native18/outfit00-pose08.png"
+  ],
+  "notes": [
+    "Running waistcoat island is removed by coupling all inner layers, but seated shirt/tie now shows sharp light strips at the abdomen. Reject this inner-layer deformation. Preserve clean RW source16 clearance and long-coat thigh fit; reduce F/FW inner-layer depth while restoring their original torso weights next."
+  ]
+}

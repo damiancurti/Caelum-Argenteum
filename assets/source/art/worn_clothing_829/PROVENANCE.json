@@ -1,0 +1,27 @@
+{
+  "issue": 829,
+  "parent_issue": 459,
+  "source_art_issue": 387,
+  "approved_scope": "CA387-01 approved object artwork on 2026-10-21; period cuts/garment catalogue remain authoritative. Worn meshes are new candidates.",
+  "owned_geometry_sources": {
+    "clothing": "assets/source/art/inventory_models_647/clothing",
+    "headwear": "assets/source/art/inventory_models_647/headwear",
+    "gloves": "assets/source/art/inventory_models_647/gloves",
+    "footwear": "assets/source/art/inventory_models_647/footwear"
+  },
+  "anatomy_source": "assets/source/art/underbody_827/underbody.blend",
+  "anatomy_license": "CC0-derived; retain MAKEHUMAN_CC0.txt and UNDERBODY_827.txt",
+  "modifications": [
+    "Retessellate owned closed garment components for articulated display.",
+    "Fit and weight to the retained construction anatomy/accepted rig.",
+    "Derive gloves and covered-body masks from retained anatomy.",
+    "Reuse exact owned source textures through new UV coordinates; no raster pixels edited.",
+    "Derive continuous fitted trousers from the retained CC0-derived lower-body surface; reuse each original pants material and fitted patches.",
+    "Split the worn poncho into open-sided front/back panels and apply a shared torso/thigh weight field to fabric, trim and fringe.",
+    "Restrict torso cloth and its attached details to semantic pelvis/spine/chest/thigh weights rather than nearby hands or shins.",
+    "Separate complete feet at the ankle; vertically sample shoe/boot lofts and expand their shared envelope against actual retained ankle/calf sections.",
+    "Separate each garment's trousers and retain five closed hem variants selected by footwear; preserve garment identity, fabric, patches and original vertex weights.",
+    "Fit the inner RW shirt and belt beneath the poncho. Add vertical samples to F/FW/CW/PW coats, localize thigh following below the waist, and taper their lower inner layers while retaining torso weights."
+  ],
+  "author_accepted": false
+}

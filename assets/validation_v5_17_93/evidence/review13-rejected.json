@@ -1,0 +1,15 @@
+{
+  "reviewed": [
+    "issue829-native13/detail3-item0-view2.png",
+    "issue829-native13/detail3-item1-view2.png",
+    "issue829-native13/detail3-item2-view2.png",
+    "issue829-native13/detail3-item2-view0.png",
+    "issue829-native13/outfit07-view0.png",
+    "issue829-native13/outfit07-pose08.png"
+  ],
+  "notes": [
+    "BF and BC side details show no heel protrusion after shared anatomy envelope fitting.",
+    "BR calf is enclosed from side/front; the former large skin penetration is absent.",
+    "REJECTED for combined clothing: BR tall boot now encloses calf correctly but intersects the full-length country trousers. Need footwear-dependent trouser hem modules; bare body/boot fit itself is improved."
+  ]
+}
