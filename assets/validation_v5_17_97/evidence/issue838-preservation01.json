@@ -1,0 +1,14 @@
+{
+  "issue": 838,
+  "passed": true,
+  "baseline_sha256": "cfb1853c9c01bddba58eb9f81bd0b0bcdbcbf4aed63bb17a6c00311812bebf18",
+  "runtime_sha256": "6411c05ac7202c510238d989faf4193100015d75e527b898d77364d60512eda4",
+  "runtime_bytes": 1276886710,
+  "members": 18719,
+  "changed_members": [
+    "caelum/actors/CaelumVisualPerception.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "scope": "Exact source/package equality. Only the read-only relationship guard/order and two diagnostic version strings differ from the parent. Inverse transformation restores original visual source. No data, clocks, scans, schema, saved fields or resource changes."
+}

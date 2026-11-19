@@ -1,6 +1,69 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.96** - 2026-11-19.
+Documentation version: **5.17.97** - 2026-11-19.
+
+## 5.17.97 - Skip unreachable read-only relationship queries (#838, #454)
+
+The production shared-candidate loop now rejects unreachable bodies before
+relationship queries only when the observer's relationship path reads state.
+Residents, summoned Zupays, tarot automatons and clones retain the previous
+relationship-before-bound order. In the final approved siege run, simulation
+p95/p99 are 46.3211/50.8397 ms and queue presentation is
+1.85 presents/s. Severe siege stalls remain; this patch
+does not establish fluent gameplay or author acceptance.
+
+On 2026-11-19, a complete 700-tic diagnostic balances 28 nested scopes with zero
+stack errors. Its largest wall interval is 202.2989 ms, with 178.9117 ms outside
+those measured game-code blocks. Those residuals include uninstrumented native,
+player and frame work; they do not prove a GPU bottleneck. Most periodic
+scripted bursts concentrate in combat-actor Tick, including state actions.
+Inclusive parent/child timings overlap and must not be added.
+
+A paired private GC diagnostic forces collection at tic 3200 in both runs, then
+disables new cycles only in one process. Long pauses remain; active objects at
+exit grow from 979,459 (control) to 3,617,130 (stop). No GC setting is adopted.
+The production change instead avoids relation work already ruled out by #836's
+conservative current-geometry bound. The source audit found a real side effect:
+resident reputation invokes GetPersistentCharacterState(false), which may
+maintain four material schemas. Delegated target lookup can reach that resident
+path too. Both families retain the original ordering; ordinary observer paths
+only read relation data. Every retained candidate uses the unchanged functions.
+
+The sampled same-scene oracle checks 2,066 queries/360,048 visits and identifies
+360,047 safely avoidable relation calls, with zero ordered nearest-target
+differences. The final/control fixture matrix passes 392 assertions (263 on final):
+null/dead/friendly/Emperor cases, equal-distance order, four fallback families,
+remote resident and delegated-automaton migrations, visibility/range/contact
+edges, linked portals, parent-save upgrade, reload and reverse loading.
+No saved fields or schema changes. Failed test-only syntax iterations remain
+in the evidence alongside the corrected passing fixture.
+
+All measurements use the approved normal 1,000-attacker-cap/600-defender scene,
+Vulkan 1280x720, uncapped, background unpaused and 5% audio. Each window has 700
+simulation intervals. Exact start/end census and registered health match:
+988 attacker NPCs + 601 defenders (including subcaptain) + player = 1,590 living;
+registered health 1,421,137 and player health 1,248. Machines retain cap slots.
+No heavy export/build/full validator overlaps the measurements.
+
+| Run | Queue presents/s | Present p95 / p99 / max ms | Simulation mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| gc-control | 1.7878 | 657.3421 / 748.0656 / 748.0656 | 32.6198 / 56.5253 / 61.3284 / 209.0236 |
+| gc-stop | 1.8513 | 622.1242 / 720.8970 / 720.8970 | 31.6635 / 54.7589 / 60.1791 / 242.8708 |
+| prototype | 1.8358 | 620.7692 / 678.3882 / 678.3882 | 32.0067 / 47.4840 / 56.1815 / 200.8025 |
+| final01 | 1.8514 | 638.4093 / 676.7848 / 676.7848 | 31.7699 / 46.3211 / 50.8397 / 203.0270 |
+| baseline01 | 1.8110 | 646.4109 / 688.7131 / 688.7131 | 32.4833 / 55.2242 / 62.0793 / 204.7061 |
+
+Queue intervals describe vkQueuePresentKHR calls, not display scanout, Internet
+latency or GPU execution time. GC rows are diagnostic ablations. Initial bench
+requests exited before its five-second native wait; the final/control adapter
+captures the unchanged scene/window first and allows 350 extra tics afterward.
+Those later native CPU snapshots do not replace whole-window/GPU measurement.
+The final package has 18,719 members and matches every src byte. Only the visual
+guard/order and two diagnostic version strings differ from parent 9387ab0e;
+the independent inverse transformation restores the parent's visual source.
+Full project validation and evidence hashes are recorded with this release.
+Prior mansion/sewer/city/ground evidence, historical headings and author tests
+are preserved. CA454-MAP03-01 remains pending for the consolidated author review.
 
 ## 5.17.96 - Conservative shared-candidate reach rejection (#836, #454)
 

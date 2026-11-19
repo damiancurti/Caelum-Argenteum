@@ -1,6 +1,25 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.96** - 2026-11-19.
+Documentation version: **5.17.97** - 2026-11-19.
+
+## 5.17.97 - Skip unreachable read-only relationship queries (#838, #454)
+
+The production shared-candidate loop now rejects unreachable bodies before
+relationship queries only when the observer's relationship path reads state.
+Residents, summoned Zupays, tarot automatons and clones retain the previous
+relationship-before-bound order. In the final approved siege run, simulation
+p95/p99 are 46.3211/50.8397 ms and queue presentation is
+1.85 presents/s. Severe siege stalls remain; this patch
+does not establish fluent gameplay or author acceptance.
+
+The unchanged conservative reach bound, linked-portal fallback, candidate order,
+private evidence and original visibility/relationship functions remain
+authoritative. The automatic whole-map >=500 census and individual offscreen
+combat/resources/collision are unchanged. No schema or saved-field changes.
+Native sampled equivalence and 392 final/control assertions pass, including
+resident/delegated schema side effects and upgrade/reload/rollback. Evidence:
+validation_v5_17_97; lesson CA-KP-256. CA454-MAP03-01 and the complete V5.16/V5.17
+author session remain pending; all other unfinished parent-issue scopes remain.
 
 ## 5.17.96 - Conservative shared-candidate reach rejection (#836, #454)
 

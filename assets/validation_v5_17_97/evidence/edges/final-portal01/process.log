@@ -1,0 +1,130 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-19 12:28:05
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue838-relation02.pk3, 18719 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue838-final-portal01/checks.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2491.85 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA836A - Candidate reach checks
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA836 EDGE PASS front visible
+CA836 EDGE PASS behind
+CA836 EDGE PASS inclusive field edge
+CA836 EDGE PASS inclusive range edge
+CA836 EDGE PASS outside range edge
+CA836 EDGE PASS insight changes immediately
+CA836 EDGE PASS darkness changes immediately
+CA836 EDGE PASS height changes immediately
+CA836 EDGE PASS full stealth
+CA836 EDGE PASS contact behind despite stealth
+CA836 EDGE PASS solid pillar
+CA836 EDGE PASS dormant
+CA836 EDGE PASS sleeping
+CA836 EDGE PASS stunned
+CA836 EDGE PASS dead observer
+CA836 EDGE PASS dead subject
+CA836 EDGE PASS conditions restored
+CA836 EDGE PASS far X beyond broadphase
+CA836 EDGE PASS far Y beyond broadphase
+CA836 EDGE PASS diagonal retained for exact distance
+CA836 EDGE PASS tall target retained immediately
+CA836 EDGE PASS target shrinks immediately
+CA836 EDGE PASS far target becomes visible after insight change
+CA836 EDGE PASS contact margin behind with minimal height
+CA836 EDGE PASS outside contact margin in full stealth
+CA836 EDGE PASS linked portal groups=3
+CA836 EDGE PASS native linked distance=496.000000 raw=6640.000000
+CA836 EDGE PASS visible through linked portal despite distant coordinates
+CA836 EDGE PASS linked portal behind
+CA836 EDGE PASS linked portal respects stealth
+CA836 EDGE_RESULT checks=30 failures=0 result=PASS
+CA836 EDGE PASS relation: null and remote candidate uses shared query
+CA836 EDGE PASS relation: null and remote candidate
+CA836 EDGE PASS relation: remote before visible opponent uses shared query
+CA836 EDGE PASS relation: remote before visible opponent
+CA836 EDGE PASS relation: visible before remote opponent uses shared query
+CA836 EDGE PASS relation: visible before remote opponent
+CA836 EDGE PASS relation: equal distance keeps first uses shared query
+CA836 EDGE PASS relation: equal distance keeps first
+CA836 EDGE PASS relation: equal distance reversed uses shared query
+CA836 EDGE PASS relation: equal distance reversed
+CA836 EDGE PASS relation: dead entry before living uses shared query
+CA836 EDGE PASS relation: dead entry before living
+CA836 EDGE PASS relation: friendly entry rejected uses shared query
+CA836 EDGE PASS relation: friendly entry rejected
+CA836 EDGE PASS relation: player relation remains exact uses shared query
+CA836 EDGE PASS relation: player relation remains exact
+CA836 EDGE PASS relation: theft target remains visible uses shared query
+CA836 EDGE PASS relation: theft target remains visible
+CA836 EDGE PASS relation: Emperor blocks player uses shared query
+CA836 EDGE PASS relation: Emperor blocks player
+CA836 EDGE PASS relation: fallback 0 remote uses shared query
+CA836 EDGE PASS relation: fallback 0 remote
+CA836 EDGE PASS relation: fallback 0 nearby uses shared query
+CA836 EDGE PASS relation: fallback 0 nearby
+CA836 EDGE PASS relation: fallback 1 remote uses shared query
+CA836 EDGE PASS relation: fallback 1 remote
+CA836 EDGE PASS relation: fallback 1 nearby uses shared query
+CA836 EDGE PASS relation: fallback 1 nearby
+CA836 EDGE PASS relation: fallback 2 remote uses shared query
+CA836 EDGE PASS relation: fallback 2 remote
+CA836 EDGE PASS relation: fallback 2 nearby uses shared query
+CA836 EDGE PASS relation: fallback 2 nearby
+CA836 EDGE PASS relation: fallback 3 remote uses shared query
+CA836 EDGE PASS relation: fallback 3 remote
+CA836 EDGE PASS relation: fallback 3 nearby uses shared query
+CA836 EDGE PASS relation: fallback 3 nearby
+CA836 EDGE PASS relation: resident migration prerequisite
+CA836 EDGE PASS relation: remote resident preserves material migration
+CA836 EDGE PASS relation: remote automaton delegation preserves migration
+CA836 EDGE_RESULT relation_checks=39 failures=0 result=PASS
+Game saved.

@@ -1,0 +1,668 @@
+{
+  "issue": 838,
+  "version": "5.17.97",
+  "parent_commit": "9387ab0eb2e2095c2d61019730a7a5086a3ff500",
+  "runtime": {
+    "issue": 838,
+    "passed": true,
+    "baseline_sha256": "cfb1853c9c01bddba58eb9f81bd0b0bcdbcbf4aed63bb17a6c00311812bebf18",
+    "runtime_sha256": "6411c05ac7202c510238d989faf4193100015d75e527b898d77364d60512eda4",
+    "runtime_bytes": 1276886710,
+    "members": 18719,
+    "changed_members": [
+      "caelum/actors/CaelumVisualPerception.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "scope": "Exact source/package equality. Only the read-only relationship guard/order and two diagnostic version strings differ from the parent. Inverse transformation restores original visual source. No data, clocks, scans, schema, saved fields or resource changes."
+  },
+  "decision": "Avoid only read-only relationship queries for candidates already outside the unchanged reach bound; preserve resident and delegated side-effect ordering. Severe siege stalls remain.",
+  "campaign_runs": [
+    {
+      "label": "post836-methods",
+      "directory": "build/v516/barracas-profile-20261119-114618-901118",
+      "runtime_sha256": "cfb1853c9c01bddba58eb9f81bd0b0bcdbcbf4aed63bb17a6c00311812bebf18",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 33.15411342857143,
+        "p95_ms": 58.2376,
+        "p99_ms": 67.7261,
+        "max_ms": 210.0388
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [
+        {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue836-profile03\\profile.pk3",
+          "sha256": "75cd7bd2ff82334e716b1cbf4bbfee70cfcefb4b495116484228cafeabd2d808"
+        }
+      ],
+      "presentation": {
+        "pid": 41416,
+        "trace_sha256": "af7b95e875b259c8090ebd8fb697bc02494ac76939204229d6f50d542b72f375",
+        "rows": 1980,
+        "scene_presents": 37,
+        "mean_present_fps": 1.771603010774435,
+        "present_intervals": {
+          "samples": 36,
+          "mean_ms": 564.4605444437927,
+          "p50_ms": 560.4086999893188,
+          "p95_ms": 661.0875999927521,
+          "p99_ms": 709.1118000745773,
+          "max_ms": 709.1118000745773
+        },
+        "native_call_duration": {
+          "samples": 37,
+          "mean_ms": 0.17718107313723178,
+          "p50_ms": 0.17499995231628418,
+          "p95_ms": 0.20840001106262207,
+          "p99_ms": 0.22679996490478516,
+          "max_ms": 0.22679996490478516
+        }
+      }
+    },
+    {
+      "label": "bursts",
+      "directory": "build/v516/barracas-profile-20261119-115926-994640",
+      "runtime_sha256": "cfb1853c9c01bddba58eb9f81bd0b0bcdbcbf4aed63bb17a6c00311812bebf18",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 33.18469328571428,
+        "p95_ms": 56.135,
+        "p99_ms": 62.3085,
+        "max_ms": 203.0122
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [
+        {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue838-bursts03\\bursts.pk3",
+          "sha256": "a7428b4efbadb22da89f81a57f5495e7c8a44120e3649224d43af2df3c419026"
+        }
+      ]
+    },
+    {
+      "label": "gc-control",
+      "directory": "build/v516/barracas-profile-20261119-120749-784295",
+      "runtime_sha256": "cfb1853c9c01bddba58eb9f81bd0b0bcdbcbf4aed63bb17a6c00311812bebf18",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 32.61983242857143,
+        "p95_ms": 56.5253,
+        "p99_ms": 61.3284,
+        "max_ms": 209.0236
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [],
+      "presentation": {
+        "pid": 27632,
+        "trace_sha256": "047c15f22acfefb2f8fc157d728d6d8779b3c744e67ed6edb3abc7a139abc4be",
+        "rows": 1961,
+        "scene_presents": 36,
+        "mean_present_fps": 1.7878484659725677,
+        "present_intervals": {
+          "samples": 35,
+          "mean_ms": 559.3315199988228,
+          "p50_ms": 558.139200091362,
+          "p95_ms": 657.342099905014,
+          "p99_ms": 748.0656000375748,
+          "max_ms": 748.0656000375748
+        },
+        "native_call_duration": {
+          "samples": 36,
+          "mean_ms": 0.17342778046925864,
+          "p50_ms": 0.1687999963760376,
+          "p95_ms": 0.1988999843597412,
+          "p99_ms": 0.23539996147155762,
+          "max_ms": 0.23539996147155762
+        }
+      }
+    },
+    {
+      "label": "gc-stop",
+      "directory": "build/v516/barracas-profile-20261119-121318-686480",
+      "runtime_sha256": "cfb1853c9c01bddba58eb9f81bd0b0bcdbcbf4aed63bb17a6c00311812bebf18",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 31.66345457142857,
+        "p95_ms": 54.7589,
+        "p99_ms": 60.1791,
+        "max_ms": 242.8708
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [],
+      "presentation": {
+        "pid": 4104,
+        "trace_sha256": "7a6542694054fe901209128b814e6568e92bc481143c2c7b376b492b07af28e4",
+        "rows": 2017,
+        "scene_presents": 36,
+        "mean_present_fps": 1.8513116116932462,
+        "present_intervals": {
+          "samples": 35,
+          "mean_ms": 540.1575800010136,
+          "p50_ms": 531.5274000167847,
+          "p95_ms": 622.1241999864578,
+          "p99_ms": 720.8970000743866,
+          "max_ms": 720.8970000743866
+        },
+        "native_call_duration": {
+          "samples": 36,
+          "mean_ms": 0.177252772781584,
+          "p50_ms": 0.17190003395080566,
+          "p95_ms": 0.2044999599456787,
+          "p99_ms": 0.2134000062942505,
+          "max_ms": 0.2134000062942505
+        }
+      }
+    },
+    {
+      "label": "prototype",
+      "directory": "build/v516/barracas-profile-20261119-121652-627327",
+      "runtime_sha256": "cfb1853c9c01bddba58eb9f81bd0b0bcdbcbf4aed63bb17a6c00311812bebf18",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 32.00670442857143,
+        "p95_ms": 47.484,
+        "p99_ms": 56.1815,
+        "max_ms": 200.8025
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [
+        {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue838-relation01\\prototype.pk3",
+          "sha256": "d1160fc412982da297de78e305eedbc56a7dcea8d7cbeb8648931369df6f3cbb"
+        }
+      ],
+      "presentation": {
+        "pid": 39476,
+        "trace_sha256": "8f38794a156b37dafbe1b552d0d403e07e2b422376248b4e8c8126cf6863c984",
+        "rows": 2119,
+        "scene_presents": 36,
+        "mean_present_fps": 1.8358474774941238,
+        "present_intervals": {
+          "samples": 35,
+          "mean_ms": 544.7075600011008,
+          "p50_ms": 542.7110999822617,
+          "p95_ms": 620.7691999673843,
+          "p99_ms": 678.388200044632,
+          "max_ms": 678.388200044632
+        },
+        "native_call_duration": {
+          "samples": 36,
+          "mean_ms": 0.20555833644337124,
+          "p50_ms": 0.2031000852584839,
+          "p95_ms": 0.25460004806518555,
+          "p99_ms": 0.2628999948501587,
+          "max_ms": 0.2628999948501587
+        }
+      }
+    },
+    {
+      "label": "oracle",
+      "directory": "build/v516/barracas-profile-20261119-121948-994314",
+      "runtime_sha256": "cfb1853c9c01bddba58eb9f81bd0b0bcdbcbf4aed63bb17a6c00311812bebf18",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 32.07587014285715,
+        "p95_ms": 47.2237,
+        "p99_ms": 58.7852,
+        "max_ms": 209.2135
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [
+        {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue838-oracle01\\oracle.pk3",
+          "sha256": "bc40ac5c974a98c62a04a0077c946f9ec1d4f3bf70282fba5741f9a429f40b2e"
+        }
+      ]
+    },
+    {
+      "label": "final01",
+      "directory": "build/v516/barracas-profile-20261119-122841-063582",
+      "runtime_sha256": "6411c05ac7202c510238d989faf4193100015d75e527b898d77364d60512eda4",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 31.76993442857143,
+        "p95_ms": 46.3211,
+        "p99_ms": 50.8397,
+        "max_ms": 203.027
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [],
+      "presentation": {
+        "pid": 50344,
+        "trace_sha256": "4dc8fcaf6ecee4ea47ec6151a7b0dcfbb9ba709d26b6f37d41c81ad186f49844",
+        "rows": 2187,
+        "scene_presents": 36,
+        "mean_present_fps": 1.8514287758878278,
+        "present_intervals": {
+          "samples": 35,
+          "mean_ms": 540.1233971425465,
+          "p50_ms": 535.1059999465942,
+          "p95_ms": 638.4092999696732,
+          "p99_ms": 676.7847999334335,
+          "max_ms": 676.7847999334335
+        },
+        "native_call_duration": {
+          "samples": 36,
+          "mean_ms": 0.17405554983350965,
+          "p50_ms": 0.17159998416900635,
+          "p95_ms": 0.19990003108978271,
+          "p99_ms": 0.20099997520446777,
+          "max_ms": 0.20099997520446777
+        }
+      }
+    },
+    {
+      "label": "baseline01",
+      "directory": "build/v516/barracas-profile-20261119-123112-828890",
+      "runtime_sha256": "cfb1853c9c01bddba58eb9f81bd0b0bcdbcbf4aed63bb17a6c00311812bebf18",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 32.483250285714284,
+        "p95_ms": 55.2242,
+        "p99_ms": 62.0793,
+        "max_ms": 204.7061
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [],
+      "presentation": {
+        "pid": 26832,
+        "trace_sha256": "bd1e508997e0ad22698d52bbe3e8c345fa67e160f30df24b4ae54d9f07abbf8f",
+        "rows": 2113,
+        "scene_presents": 36,
+        "mean_present_fps": 1.8110234399291327,
+        "present_intervals": {
+          "samples": 35,
+          "mean_ms": 552.173968570573,
+          "p50_ms": 543.8069999217987,
+          "p95_ms": 646.4108999967575,
+          "p99_ms": 688.7131000757217,
+          "max_ms": 688.7131000757217
+        },
+        "native_call_duration": {
+          "samples": 36,
+          "mean_ms": 0.17354167501131693,
+          "p50_ms": 0.16820001602172852,
+          "p95_ms": 0.22930002212524414,
+          "p99_ms": 0.25870001316070557,
+          "max_ms": 0.25870001316070557
+        }
+      }
+    }
+  ],
+  "oracle": "CA838 ORACLE queries=2066 candidates=360048 skipped_relations=360047 nearest_mismatch=0 result=PASS",
+  "edge_runs": [
+    {
+      "label": "prototype01",
+      "directory": "build/issue838-edges-prototype01",
+      "passed": false,
+      "pass_assertions": 0,
+      "loaded_save_sha256": null
+    },
+    {
+      "label": "prototype02",
+      "directory": "build/issue838-edges-prototype02",
+      "passed": false,
+      "pass_assertions": 0,
+      "loaded_save_sha256": null
+    },
+    {
+      "label": "prototype03",
+      "directory": "build/issue838-edges-prototype03",
+      "passed": true,
+      "pass_assertions": 64,
+      "loaded_save_sha256": null,
+      "output_save_sha256": "87f723d2c6fe5757433cea3bf35179bd92b0971d4aa729767efddbc7108eecc1"
+    },
+    {
+      "label": "base-flat01",
+      "directory": "build/issue838-base-flat01",
+      "passed": true,
+      "pass_assertions": 64,
+      "loaded_save_sha256": null,
+      "output_save_sha256": "255ecad6fafba1ce61dfe0ff6f155a8476000521d18900a02a4c6299a2e5a393"
+    },
+    {
+      "label": "final-flat01",
+      "directory": "build/issue838-final-flat01",
+      "passed": true,
+      "pass_assertions": 64,
+      "loaded_save_sha256": null,
+      "output_save_sha256": "63c059f122c4bc8df79d0db6ffef9c17f1ad3d26f1696f15463b3fcd26761be1"
+    },
+    {
+      "label": "upgrade-flat01",
+      "directory": "build/issue838-upgrade-flat01",
+      "passed": true,
+      "pass_assertions": 65,
+      "loaded_save_sha256": "255ecad6fafba1ce61dfe0ff6f155a8476000521d18900a02a4c6299a2e5a393",
+      "output_save_sha256": "fc1898e3689718482756aea79461fa690025dbcf33956f5dcca4e01114060cd0"
+    },
+    {
+      "label": "reload-flat01",
+      "directory": "build/issue838-reload-flat01",
+      "passed": true,
+      "pass_assertions": 65,
+      "loaded_save_sha256": "63c059f122c4bc8df79d0db6ffef9c17f1ad3d26f1696f15463b3fcd26761be1",
+      "output_save_sha256": "2b7fc335ebb78509f7821ccc00551c167483520c7c0132d7b8803854913ab05a"
+    },
+    {
+      "label": "rollback-flat01",
+      "directory": "build/issue838-rollback-flat01",
+      "passed": true,
+      "pass_assertions": 65,
+      "loaded_save_sha256": "63c059f122c4bc8df79d0db6ffef9c17f1ad3d26f1696f15463b3fcd26761be1",
+      "output_save_sha256": "e90939e72956b00d54f9827147328d130912c38c9bd7a951e71994ce8e1b2b91"
+    },
+    {
+      "label": "final-portal01",
+      "directory": "build/issue838-final-portal01",
+      "passed": true,
+      "pass_assertions": 69,
+      "loaded_save_sha256": null,
+      "output_save_sha256": "6d1ed866fb555035de9e544dcb90e839739a9f9ae390a37110c117e207526be5"
+    }
+  ],
+  "final_suite_assertions": 392,
+  "failed_iterations": [
+    "Burst profiler expected a Tick override on abstract CaelumFolkloreCombatActor; preparation assertions stopped before launching, and the actual eight Tick owners were used.",
+    "First relationship fixture used adjacent generic closing brackets unsupported by native4.14.2. Second fixture attempted readonly Radius assignment, String addition and an NPC TheftTarget. Corrected test-only syntax/types; original logs retained.",
+    "Initial post-window bench requests exited before its five-second wait, so no benchmarks were produced. Final/control adapter allows350 more tics after the unchanged measurement and capture."
+  ],
+  "qualifications": [
+    "28nested scopes over700tics exclude native/frame preparation work and include diagnostic overhead; never sum inclusive child/parent timings.",
+    "GC control and ablation both collect at tic3200, outside the window. Stopping cycles does not remove long stalls and grows active objects from979459(control) to3617130(stop) at exit. Not a production setting.",
+    "Only the approved normal1000attacker-cap/600defender scene; actual988attackers+601defenders+player=1590living. No retired6000case.",
+    "Queue presents are not display-scanout or GPU duration. Native bench is a later CPU snapshot, not the full-window GPU profile.",
+    "All earlier mansion/sewer/city/ground-facing evidence is preserved; this siege patch does not establish those views or author acceptance.",
+    "CA454-MAP03-01 and all author tests remain pending for the final consolidated batch; no partial terminal.",
+    "No private IWAD/engine/testWAD/PK3/save enters tracked evidence."
+  ],
+  "project_validation_passed": true,
+  "files": {
+    "campaign/baseline01/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/baseline01/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/baseline01/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/baseline01/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/baseline01/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/baseline01/peer0/benchmarks.txt": "a9317ac4d8a1c2fa638865566a32837e76f0a2ed47f72ae6bafb84af9c0edec6",
+    "campaign/baseline01/peer0/engine.log": "ad14c719cdec64301175b556f5039bfdcc40f7f292bffae5b0d8a19d035b77d1",
+    "campaign/baseline01/peer0/presents.csv": "bd1e508997e0ad22698d52bbe3e8c345fa67e160f30df24b4ae54d9f07abbf8f",
+    "campaign/baseline01/peer0/process.log": "edbc222734b42db555fa0f2c9d19456627a6ef50cea0e36c6f73d86fd87aa63a",
+    "campaign/baseline01/peer0/scene.png": "9f2ca765e328d57bdce3518d8825802f79fbd4017e6bee975b061314a5522d8b",
+    "campaign/baseline01/peer0/session.ini": "a3f0a31bd28e01370de80860159871d2676dc9a9251c4d641d50cf2ad1f0f90e",
+    "campaign/baseline01/peer0/start.cfg": "bc03a23944a34b9950ca19b5dce777c84c4b75851e734dd26c7fc9b8a78925c4",
+    "campaign/baseline01/presentation.json": "9d88a3b623f5a2f76ebb308172c88bbed0c8f64436d713aaf732eb7ad39f0bb8",
+    "campaign/baseline01/results.json": "5fbe4dc4c2e68e09b91a605185acd91efa6146191af9a1b611cb1243f53a6026",
+    "campaign/bursts/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/bursts/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/bursts/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/bursts/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/bursts/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/bursts/peer0/engine.log": "591cb906d559109ef54e3a5e2f1268fd6f9c6846113bc24cbf4fdd461751ab31",
+    "campaign/bursts/peer0/presents.csv": "943cbbb51d2171102b6a5e8b2eb571aaca37b7577f9e9e476b409772b0804b98",
+    "campaign/bursts/peer0/process.log": "ff75f3c7bfd9e27fdb33604c9ea83429010a3c424509a403badd472abfd3cd57",
+    "campaign/bursts/peer0/scene.png": "100fe0a93752534ce4f68c7315c51105f10392526a4456a939acff01c9fa2ffd",
+    "campaign/bursts/peer0/session.ini": "d07454e8ab30c81bb62e91a25c55467579030d9bab09d09893eefd361a1da2af",
+    "campaign/bursts/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "campaign/bursts/results.json": "70c4a9b2bd44eee60df7557b34b37d79f1f7585a314ef3c9107196ee2b8e3ce0",
+    "campaign/final01/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/final01/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/final01/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/final01/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/final01/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/final01/peer0/benchmarks.txt": "854e6b1078e8ff83174fe8e6cca4764cbfa99c52fce89b20307be177412ec553",
+    "campaign/final01/peer0/engine.log": "b8c022464e4ea5ab7cb57c350deaf2aa0b4d426073a428749016cf3200e1a129",
+    "campaign/final01/peer0/presents.csv": "4dc8fcaf6ecee4ea47ec6151a7b0dcfbb9ba709d26b6f37d41c81ad186f49844",
+    "campaign/final01/peer0/process.log": "39b34c4eed0f14cf8eb6cf919216a92b691e0d12841f0527e73dee934c12dfee",
+    "campaign/final01/peer0/scene.png": "40cbc32ace08a284d70fc6faefe60c6bb737ed4ae9b861aaae6bbc6536708426",
+    "campaign/final01/peer0/session.ini": "9889ca330d98a030f0551cdc65002978c79ef09478d61ca6d25278f5675d2db5",
+    "campaign/final01/peer0/start.cfg": "bc03a23944a34b9950ca19b5dce777c84c4b75851e734dd26c7fc9b8a78925c4",
+    "campaign/final01/presentation.json": "13006a779e04c7c08f9df0a6c19771215accf1e5f7738f5af53c5e8433091aea",
+    "campaign/final01/results.json": "f7ed82f266d627632c735a7c355dc82b681e94bd2130c00734e27e3bcbd31f90",
+    "campaign/gc-control/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/gc-control/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/gc-control/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/gc-control/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/gc-control/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/gc-control/peer0/engine.log": "7bb674a9a5231a066a70d8afb51e46deac20dc6c893d56dca0c62e2a1c810e2d",
+    "campaign/gc-control/peer0/presents.csv": "047c15f22acfefb2f8fc157d728d6d8779b3c744e67ed6edb3abc7a139abc4be",
+    "campaign/gc-control/peer0/process.log": "a94cd500b064183dfa17a3859149fe5ac0f30624f48b5b57a6e2d893ca567e9c",
+    "campaign/gc-control/peer0/scene.png": "2ea5d1cbb98fba400deae5a3b211e926684fa9955e8ebb2f3cfeb0c571644bf5",
+    "campaign/gc-control/peer0/session.ini": "7d90a0ccc49e2a81e26ad54df8a8139a45820cb07232310127aa28938db4f1fa",
+    "campaign/gc-control/peer0/start.cfg": "c36c9734e69b53d750519695c1724625bd3e405fc538d0deef7e3efba92076c7",
+    "campaign/gc-control/presentation.json": "d158d7fc5ea66fc1797058764009ae948d009b7815b49edf4ebfd8e0c7262201",
+    "campaign/gc-control/results.json": "6cd9baa144e73d144ce9ae9d0270048e8b38ae5e5d39ea7e91e8bd1be772a506",
+    "campaign/gc-stop/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/gc-stop/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/gc-stop/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/gc-stop/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/gc-stop/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/gc-stop/peer0/engine.log": "03c16a42fddced1f88f4529090bd3a48a9960cb8e2189823329bb41887f4cd58",
+    "campaign/gc-stop/peer0/presents.csv": "7a6542694054fe901209128b814e6568e92bc481143c2c7b376b492b07af28e4",
+    "campaign/gc-stop/peer0/process.log": "03ddf0cf9a6d47a1512cb56960ca80d4fdb78b5a27fb04c5b0eb2a19aef4026b",
+    "campaign/gc-stop/peer0/scene.png": "adee0489f37ff5ac9815944106d8e1ec6c6a4d2ad2b63aae63c6f03779bc2015",
+    "campaign/gc-stop/peer0/session.ini": "b38c06eb2d6a08f37e3e5c66218f520d4e5b30b2ccf7e234a81da6dc353443b0",
+    "campaign/gc-stop/peer0/start.cfg": "fa6e747e7299e1f69754b35447637fbfe3f448807af014c431ac4574e8d73535",
+    "campaign/gc-stop/presentation.json": "b4f710a705c7a6db885577c4868b1a3edd7fa8aa34344f1445b692214a072803",
+    "campaign/gc-stop/results.json": "e59db127155f1e10bbcde6cb695ae499c810ab426f19e3224bf59b08854f75eb",
+    "campaign/oracle/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/oracle/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/oracle/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/oracle/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/oracle/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/oracle/peer0/engine.log": "3a2c83ac9a20cc3c7fbdd1e7028caf11cbfffcc7f7631d1f164c1f6ae4208e43",
+    "campaign/oracle/peer0/presents.csv": "c6f14738b43b693c39abb7d96b452b0e3d6ab44442ef7acbb08a8d9db404c743",
+    "campaign/oracle/peer0/process.log": "a4c59c415e37e9197dd3e64f93f9d3812eb0713d75aa7b841c2c0c6cf14fbfc7",
+    "campaign/oracle/peer0/scene.png": "0c4b0e952a20c19d899946cfb313655d1e21fd6aaac806da07e004815e34ebda",
+    "campaign/oracle/peer0/session.ini": "a379ebf9905370c9685bab1e65c1093f7af4e90583c11e65f0b1d5a094a12238",
+    "campaign/oracle/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "campaign/oracle/results.json": "1ff9d6f67bb9cde40583eb9ca42114eb1338c3bd9863876ac0fdab0fec678712",
+    "campaign/post836-methods/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/post836-methods/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/post836-methods/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/post836-methods/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/post836-methods/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/post836-methods/peer0/engine.log": "1a9b196f96ae9b1c5c8753add1430bdb751565dfc43e574b141618dc24ede060",
+    "campaign/post836-methods/peer0/presents.csv": "af7b95e875b259c8090ebd8fb697bc02494ac76939204229d6f50d542b72f375",
+    "campaign/post836-methods/peer0/process.log": "62fe70f4d14b129829ecfb26ffe19f07cf53395a294a9195d451374770e618b0",
+    "campaign/post836-methods/peer0/scene.png": "b21928fb0080c698e7a169616bdd6447da1e6ae7026975ff57222f099b400a43",
+    "campaign/post836-methods/peer0/session.ini": "e6fb62f47b8f5cc622024a097d6c95e5c3de3a83082000929b04731cca13a2fa",
+    "campaign/post836-methods/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "campaign/post836-methods/presentation.json": "a49417c5c085fabe248116e791e88dc117365c1d3a671e6e6e8d9450aeb65dc1",
+    "campaign/post836-methods/results.json": "b8c737c2ba9fc20c29cf11b5555665a66bfd78fc58a43703bb899c0d36b40f77",
+    "campaign/prototype/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/prototype/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/prototype/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/prototype/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/prototype/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/prototype/peer0/engine.log": "e4665e6b9d6985993dc172034c979b301487975982c4506a261f558c17dd46a8",
+    "campaign/prototype/peer0/presents.csv": "8f38794a156b37dafbe1b552d0d403e07e2b422376248b4e8c8126cf6863c984",
+    "campaign/prototype/peer0/process.log": "09bec41b362ffb2c9e80002cf3b19da70f607a7de584f9870533c4cb43fffed8",
+    "campaign/prototype/peer0/scene.png": "886febdb3a21a738243154448408d58851a39692446b460374ced163da48f173",
+    "campaign/prototype/peer0/session.ini": "ca6468cbde6bb8caabaf762ff18715912460bf7a742643ae3e285a29351a8750",
+    "campaign/prototype/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "campaign/prototype/presentation.json": "35c23e071cfcb3f06dd23a6cc4214adb3f3b9bdfc007875e199a29786ec08987",
+    "campaign/prototype/results.json": "8434dab9930929f933ba9ca04e07ab2afde455262bbbedea757a9afcf5b4385e",
+    "edges/base-flat01/checks.zs": "6ecd2b09838d14900116633c131f20a773b42ef7213831f657c443821f929816",
+    "edges/base-flat01/commands.cfg": "41d3ba34ffb780e8b2fc6fe869e8bb9f44928d4e6d669854dc0bb02c772029e6",
+    "edges/base-flat01/engine.log": "9e9fc6fac99c99697cb09118ec207f7b70d1e12c5d1ded3390a35b3cbcc38be8",
+    "edges/base-flat01/fixture.txt": "7d7106f942a726bac8e7c8200b07fa98e734a797a0bf9e93ca53f534db23ff10",
+    "edges/base-flat01/process.log": "74374e888b7a2af11f7d2bd0325914df465b365d588216e58f9f6eb866751d16",
+    "edges/base-flat01/RESULTS.json": "4b15e724ac91b1c72af7c08fe0b61704149f39758001f06c87eea79957634c55",
+    "edges/base-flat01/session.ini": "0eed36bc304c9cb9b09d4e7ebf1639ef68d4434fe1c807e19c7d81f95bda75e1",
+    "edges/final-flat01/checks.zs": "6ecd2b09838d14900116633c131f20a773b42ef7213831f657c443821f929816",
+    "edges/final-flat01/commands.cfg": "41d3ba34ffb780e8b2fc6fe869e8bb9f44928d4e6d669854dc0bb02c772029e6",
+    "edges/final-flat01/engine.log": "757d369cb9a3748a59dbe1e320d52876890fe9d8bdcf9371b9b8d264bdbd8bdc",
+    "edges/final-flat01/fixture.txt": "7d7106f942a726bac8e7c8200b07fa98e734a797a0bf9e93ca53f534db23ff10",
+    "edges/final-flat01/process.log": "2f6ea021d6e1b48a39a62df7894fb27b675dca060093393302896775048b161d",
+    "edges/final-flat01/RESULTS.json": "1fc91640f731571ae78aed2dc8512b1709110536a91c19721b516d18c88504cf",
+    "edges/final-flat01/session.ini": "1fa595de4e90bcd953639cac99b62c4d37a3f89481a61938f56d330f08814ceb",
+    "edges/final-portal01/checks.zs": "7a06b6836cf7eb29e10cd66d13c168076ac9f65e588f273af7e063bab958417a",
+    "edges/final-portal01/commands.cfg": "41d3ba34ffb780e8b2fc6fe869e8bb9f44928d4e6d669854dc0bb02c772029e6",
+    "edges/final-portal01/engine.log": "eb94ed35b254efa7015ada7a010133873cbc78f7de666bc405ad03f86608d431",
+    "edges/final-portal01/fixture.txt": "20e11c99e53070823acf0aea02a3d60ff24516afe9f59b34a00d8fb5024aa50c",
+    "edges/final-portal01/process.log": "89484f53c50409915f5cdc81ef3b1c85e21f8a6be2e49e31e28bae48be2b7c1a",
+    "edges/final-portal01/RESULTS.json": "29aabaebc35f70db838e6db397d15f3180ff5837b6d40a6b097990f83070dbe6",
+    "edges/final-portal01/session.ini": "ec27c39b7d2dfb603cd997deeb067fea7f1ca18dd9881113981314b942a3ce42",
+    "edges/prototype01/checks.zs": "5854b80f0ce4be37a32bd01801cdfde32b78b4d7f82ea17a5286dc1df9613b5c",
+    "edges/prototype01/commands.cfg": "41d3ba34ffb780e8b2fc6fe869e8bb9f44928d4e6d669854dc0bb02c772029e6",
+    "edges/prototype01/engine.log": "9be336dc65952063100cf5ef51c8e64ed025af3d072caa7c26252d9ff2bd0069",
+    "edges/prototype01/fixture.txt": "7d7106f942a726bac8e7c8200b07fa98e734a797a0bf9e93ca53f534db23ff10",
+    "edges/prototype01/process.log": "9f11dc1f8e28241a20de6b2265002c08d55989b39c53e86e3c0c1e4f844d4da3",
+    "edges/prototype01/RESULTS.json": "49799277edb33da7dfdd14ca25b728eb2d16ef6043648a6c48bcc74c1c7e2967",
+    "edges/prototype01/session.ini": "020968854d3fd343aff98f56b68062d1723115bff8c5d61cee36b886a5ad0db4",
+    "edges/prototype02/checks.zs": "68a920d96a562097246406f5e35861d91e0dac4a2bd5fedf3f9725f264e88ce2",
+    "edges/prototype02/commands.cfg": "41d3ba34ffb780e8b2fc6fe869e8bb9f44928d4e6d669854dc0bb02c772029e6",
+    "edges/prototype02/engine.log": "2649b573030f7a5d8d77e743521ecceab1fc3852676559353a7445b2d46cb78f",
+    "edges/prototype02/fixture.txt": "7d7106f942a726bac8e7c8200b07fa98e734a797a0bf9e93ca53f534db23ff10",
+    "edges/prototype02/process.log": "cd98fd51b70bc5af2b0bb84705df746901dea03ca0e47e223e7087f9ac2621d3",
+    "edges/prototype02/RESULTS.json": "29a2870258c616939309db49e9dec425dc76b70133edc98fd892fedb2a4fdc4c",
+    "edges/prototype02/session.ini": "020968854d3fd343aff98f56b68062d1723115bff8c5d61cee36b886a5ad0db4",
+    "edges/prototype03/checks.zs": "6ecd2b09838d14900116633c131f20a773b42ef7213831f657c443821f929816",
+    "edges/prototype03/commands.cfg": "41d3ba34ffb780e8b2fc6fe869e8bb9f44928d4e6d669854dc0bb02c772029e6",
+    "edges/prototype03/engine.log": "ca8e0a2f6595071db2a99fe0e1731e831bc2eafdc3ba420d432336d80bb1dd14",
+    "edges/prototype03/fixture.txt": "7d7106f942a726bac8e7c8200b07fa98e734a797a0bf9e93ca53f534db23ff10",
+    "edges/prototype03/process.log": "74cd557b70cf7850a256eeb6c9ac16f921201f7bd4701e7665dd019f8e6478de",
+    "edges/prototype03/RESULTS.json": "88b843b6deb6f53070903072dae1cd2f2217dec6b1ebceb21e7263f15782ce12",
+    "edges/prototype03/session.ini": "4a74595c17c1d9c186e8c7facb36534080d633796007de036fa1105e680b0fc7",
+    "edges/reload-flat01/checks.zs": "6ecd2b09838d14900116633c131f20a773b42ef7213831f657c443821f929816",
+    "edges/reload-flat01/commands.cfg": "671c7dd6d343c28bafd3aef71d6afd8e5c1ad8352187dceec5c9973c7faff637",
+    "edges/reload-flat01/engine.log": "9adb263de3b24eeb127a1b209099d519358d19c506e1e5dd2e4354f56db8a68b",
+    "edges/reload-flat01/fixture.txt": "7d7106f942a726bac8e7c8200b07fa98e734a797a0bf9e93ca53f534db23ff10",
+    "edges/reload-flat01/process.log": "d3750f226e188f31a9fff92fcead1cb73186be7116633d11b527a2953f14fce1",
+    "edges/reload-flat01/RESULTS.json": "23e1a87a7c90780a4a839a2ab9effe71099b501edafdf3b45ade81e6f39f0630",
+    "edges/reload-flat01/session.ini": "8e32a3b766f93e7114ea313356062394efdaa11ec658afbc3dbf97e9126f57a3",
+    "edges/rollback-flat01/checks.zs": "6ecd2b09838d14900116633c131f20a773b42ef7213831f657c443821f929816",
+    "edges/rollback-flat01/commands.cfg": "671c7dd6d343c28bafd3aef71d6afd8e5c1ad8352187dceec5c9973c7faff637",
+    "edges/rollback-flat01/engine.log": "682791fc96163539121b9f9074d4a49a70d6a628dde0f654274cb1c00cd0e91d",
+    "edges/rollback-flat01/fixture.txt": "7d7106f942a726bac8e7c8200b07fa98e734a797a0bf9e93ca53f534db23ff10",
+    "edges/rollback-flat01/process.log": "b6c038929708055d4ac652f4be907f8863bd92fc07b58d9f65e828ed3d255961",
+    "edges/rollback-flat01/RESULTS.json": "483f177c19e3cda9c4f6ca75450bf70bfc34002f1327014c0b544bab322e6361",
+    "edges/rollback-flat01/session.ini": "67e412f72912acbe941b31d8dd3ec0ad8011bf8adb9eb618f73c143c0c360036",
+    "edges/upgrade-flat01/checks.zs": "6ecd2b09838d14900116633c131f20a773b42ef7213831f657c443821f929816",
+    "edges/upgrade-flat01/commands.cfg": "671c7dd6d343c28bafd3aef71d6afd8e5c1ad8352187dceec5c9973c7faff637",
+    "edges/upgrade-flat01/engine.log": "7e61b155f46f8f549f84ac92b4096afb7d291cdc7c7848094b446ab34a9ba575",
+    "edges/upgrade-flat01/fixture.txt": "7d7106f942a726bac8e7c8200b07fa98e734a797a0bf9e93ca53f534db23ff10",
+    "edges/upgrade-flat01/process.log": "15b4e580c9a559068a3df2cf552d2bb635f5f699a191b280f9774841abff48d8",
+    "edges/upgrade-flat01/RESULTS.json": "2fc005f5adfe6e6928233e8c058e45b4a40f1ed4f742060ddce2bc5386d7b2b4",
+    "edges/upgrade-flat01/session.ini": "b1c09586a719584aba0f004eee98d4798f99074ab7b4b20629dd492ff9908d0e",
+    "executed-helpers/adopt_relation838.py": "f1b4163b6c57a5d1c9ffe4b1b800fd90b8863744b7040e4b71206002ead8dfbd",
+    "executed-helpers/analyze_bursts838.py": "562c4f03bd5430f02b274faa097717af3397405ad294c0718ffb157f69e15a37",
+    "executed-helpers/archive_relation838.py": "9fbe4edbb94245e69ee953186f5bd94fa744bee69ee278bd4f7594a34ac9534a",
+    "executed-helpers/prepare_bursts838.py": "020d5cda629916e3dc7bcfd487d27cb30713247fecb9f847618becdfb918e846",
+    "executed-helpers/prepare_relation838.py": "41924fe0f537f1aee7ac8bfddc1078d72c5d85b1ba3e42d1609cb8d46b56dc80",
+    "executed-helpers/prepare_relation_oracle838.py": "b2dddbaa436af7906b4f1bc8218f3cc45aa652a1ae7baafc4a42876cde154e99",
+    "executed-helpers/relation_edges838.zs": "3cff612a4f01edff949b317828b0ac6d723aedb56d9119f746fc0886ee773d7c",
+    "executed-helpers/run_bench838.py": "d1486113286d6cf4fe3be89250c261586487ca0513fc41236108265fac7c089a",
+    "executed-helpers/run_gc838.py": "5086d7b439c60e24bfd1d50fb49837e54129f5fa272d9de88f16326c31d7ebbe",
+    "executed-helpers/run_presentation838.py": "e9324fbcdc5028e31caf24af08d6fa9ef494ddfc093eddf0bba3c0ddc8bc66bd",
+    "executed-helpers/run_relation_edges838.py": "9504bebc9a7006ba89326da5b2891eb256a3f1dc2f9f3e17cb778cbb0735b76d",
+    "executed-helpers/run_suite838.py": "32d57f8c81b277c4608d300527f140b408d34732f7c575909a4434d3a4da9e44",
+    "issue836-profile03-methods.json": "49f4a107de99d36a8d9c970db00aef8f5d2b74c54f6d89802557c051e21aefa4",
+    "issue838-bursts03-analysis.json": "bbde429742cd27d65bed97001728594b641810019570e191e9b3808398848446",
+    "issue838-presentation-final.json": "b68a323430d4fdf54fffa22244809bc6cdb51afeb5bc19628505c1eeb1531428",
+    "issue838-preservation01.json": "8752f518a48bf74ae5d8e27f632e18f6691d7b2b7765273d7119c60ab5fbb280",
+    "issue838-suite01.json": "e72be3fe89e07147e4abf2d57191d32649f72f1b8b42a5d945931fe5be59b820",
+    "overlays/issue836-profile03/manifest.json": "f14fa78d24119593b5629e83b14d46f758fbba36d49df4282700998e6b90be5a",
+    "overlays/issue836-profile03/source/caelum/actors/CaelumCombatActor.zs": "99c0aa7610d317f3cc7297805596cd64da92e91f87f1b3b2f7822ef67bbce153",
+    "overlays/issue836-profile03/source/caelum/actors/CaelumCommunication.zs": "0a17d8dc91f5c798069df5d17555ed62d8495de452ed835448697786b9b9a47a",
+    "overlays/issue836-profile03/source/caelum/actors/CaelumVisualPerception.zs": "8f8681e8d1d0efcaa4edf9ec5b7d96eb66c1ceb71be579c2546a8fb487caed03",
+    "overlays/issue836-profile03/source/caelum/survival/CaelumContaminationContact.zs": "fae3a73cf7de8f6eb8b78cef482fd4acd4fc7e9c533b281249f18ab429fde20a",
+    "overlays/issue836-profile03/source/caelum/survival/CaelumContaminationObject.zs": "4959f777b84dadb601cbd728f65b88e40872e2ecce99ea4eaa5528836c640ef5",
+    "overlays/issue836-profile03/source/caelum/survival/CaelumThermalRuntime.zs": "cf322403e510abe46d1ba3f171b1016599a558b34219f798cb405f5f55d43dc6",
+    "overlays/issue836-profile03/source/MAPINFO": "f1be9d3c7c30b778eab92766d80eda36bf1c7bac0df079f85ab661e9ad72e9c9",
+    "overlays/issue838-bursts03/manifest.json": "7916301b5fc97f0e09cde205d93c8c42eaa17a81dd8695bc7842e45de983c8d6",
+    "overlays/issue838-bursts03/source/caelum/actors/CaelumAnchoredResident.zs": "a74413f78634d3384449d9af333c1d53ed5b1ea10e1c85e290b4c93677ae6ef2",
+    "overlays/issue838-bursts03/source/caelum/actors/CaelumCombatActor.zs": "17905dd6242f6a6ba9cffa66f165b80136327c90752b7403f9d5d594fcf552c0",
+    "overlays/issue838-bursts03/source/caelum/actors/CaelumFolkloreCharacters.zs": "eb94d6e8e145331ae1c3c6d1484a0e89bd27f607b0a3fd72d8d91be47800d4d8",
+    "overlays/issue838-bursts03/source/caelum/actors/CaelumMassAIScheduler.zs": "ff98e9c6086e8b39301aff4de59c06645a356e940a4034b0cc7cae59d93ba9bf",
+    "overlays/issue838-bursts03/source/caelum/crafting/CaelumAlchemyPlacement.zs": "c1623851019f49e5577f77457ecf03ba63273ce22b1487fe9905c4223c1de12c",
+    "overlays/issue838-bursts03/source/caelum/crafting/CaelumFermentationPlacement.zs": "a974697ccfb584630700bee3e3289bd5d97c54d9113fc8c554838433e423487d",
+    "overlays/issue838-bursts03/source/caelum/hud/CaelumJournalOverlay.zs": "51154012c4a36cb8fb4d015675b3f5bbe168f68a42c7848dd58e98af420a21a3",
+    "overlays/issue838-bursts03/source/caelum/player/CaelumPlayer.zs": "adfa058da495cffe302efa7688352e42608ef49102eaf169bdf2e943f06c438c",
+    "overlays/issue838-bursts03/source/caelum/quests/CaelumMainM00QuestController.zs": "0f4db252df481b17cd7a0d686e6afc786b34186051d8c371a5fe6eb9582ed90a",
+    "overlays/issue838-bursts03/source/caelum/survival/CaelumContaminationContact.zs": "fef981f5a3a45ce99e3b0362c3cbfbe6301099243ca8bb1d0639fb766ccbb7e8",
+    "overlays/issue838-bursts03/source/caelum/survival/CaelumContaminationObject.zs": "1bc6b0f120e493179e503617796cb1e0e5c81ad6853a2518c2711092b110598d",
+    "overlays/issue838-bursts03/source/caelum/survival/CaelumThermalEnvironment.zs": "0043513997e78c090dec6b898f0c64b943e64bc26d9a99089a73a5181e4a67df",
+    "overlays/issue838-bursts03/source/caelum/ui/CaelumConversationResume.zs": "1427842f540f32cab1ebd00985a33943abaa10b4b8693863d228a4d05f86005d",
+    "overlays/issue838-bursts03/source/caelum/ui/CaelumMenuAudio.zs": "44cefc9ece81ac074c746be0a84c116a3e1df1bf197c14084cca75e206688bd4",
+    "overlays/issue838-bursts03/source/caelum/world/CaelumArenaMenu.zs": "9f190440ecb0db25d1dc8f6c8840bd7605538d8fd33638c69757f02d5624c121",
+    "overlays/issue838-bursts03/source/caelum/world/CaelumAutosaveEvents.zs": "3f8f6a9c7353477a1fa3a6d55bf8a4fe5c54ff071b90eddb945e6b7d4d499c3e",
+    "overlays/issue838-bursts03/source/caelum/world/CaelumHouseHub.zs": "672c7edeaceaf09876e43c98d229cb06b49b90fcf4b6d0e2d1d9a06d8af519a2",
+    "overlays/issue838-bursts03/source/caelum/world/CaelumLandSources.zs": "6109fc7923edf2abb74a825d9ba9055f8e4c3d4785f6d2a39fa6bff5a1b67f7a",
+    "overlays/issue838-bursts03/source/caelum/world/CaelumPortDefender.zs": "55a882d31523352bc2a5d88308f994310a3848317ef3e0035e4951658e441a88",
+    "overlays/issue838-bursts03/source/caelum/world/CaelumPortSiege.zs": "c1907bdf1e74664af7d48483494d66de14be12c10f71dbcf3a872e70003e144b",
+    "overlays/issue838-bursts03/source/caelum/world/CaelumProfileEvents.zs": "42a54a0cb22f66df2ec9d82543b74a738b148b80472d8c1bbad9355cfadf8d52",
+    "overlays/issue838-bursts03/source/caelum/world/CaelumProfileVacancy.zs": "078dcd04af6385fe5d4c92f02d5b14e045e71dcd0ab32844d845dfdd1f391ab5",
+    "overlays/issue838-bursts03/source/caelum/world/CaelumSessionIdentity.zs": "beb7773b51a091d83803743367aa58ac97b096a585d9dd1bc736f345547284d4",
+    "overlays/issue838-bursts03/source/caelum/world/CaelumSessionLifecycle.zs": "f42ca53c7cdf4f299b3ac2757c1dec9a367e86d502516ff1688b57aae631c114",
+    "overlays/issue838-bursts03/source/caelum/world/CaelumSiegeEncounter.zs": "2384275160d7455bfd30dd70128b9dee537c4cd24ff9dc69ce250b3239fbb829",
+    "overlays/issue838-bursts03/source/caelum/world/CaelumStandaloneMatch.zs": "8fb089ad3aef8088dba151eef48596b39393653decf26dad62a99adb2d75170a",
+    "overlays/issue838-bursts03/source/caelum/world/CaelumTravelVehicles.zs": "1948f616e017594aed459fc1d4816a9439884008b2eaa8c1da9886e433df0a84",
+    "overlays/issue838-bursts03/source/caelum/world/CaelumWorldClock.zs": "5ed86a89a3800d7b70852d1148f5029f10d53a11ac909ee2419e0f7b6341e9f1",
+    "overlays/issue838-bursts03/source/MAPINFO": "aa625b7e299fadda40bb0660a1cb922808254b04dd1bffd77d559dc4ad9e6dda",
+    "overlays/issue838-oracle01/manifest.json": "6aa9dcecb2c933da66e99b4a139f678a1c17c0ad3417311e992c862bdd8db7c8",
+    "overlays/issue838-oracle01/source/caelum/actors/CaelumVisualPerception.zs": "817797f607b146ea2129556e45450b3ddfd795591d27d24ebc0965a033cea248",
+    "overlays/issue838-oracle01/source/MAPINFO": "15968d4196b3180985f68b591007d728929f4fd1eee8deff9b0b0abc7c5ade66",
+    "overlays/issue838-relation01/manifest.json": "649a1c0bbfc595bdcaf95b98d03d4bc1f1356142999a215aea7f865ca3fe5e51",
+    "overlays/issue838-relation01/source/caelum/actors/CaelumVisualPerception.zs": "718f6f390831362aac29cdc8e21c3e2810c847458a728ec68db96471133300b5",
+    "executed-helpers/document_relation838.py": "887ca696b81e5f1ca345535b0b1cb466c8a05ebda4a73186eb72abf8501475cd",
+    "executed-helpers/record_contract838.py": "5b02936b4ceba482e93dba358bd86d4b27e093992296945ca786d8ff48fcdf74",
+    "executed-helpers/stage_relation838.py": "4036d901b6a568b8838669b6a8681fc97d8b1a2284b9fa167dce243b5006cc25",
+    "executed-helpers/finish_evidence838.py": "d164e4d6b3ca0e64749271bf4efaa4750e7e1cd1cb41c988a6fcd514745ff910",
+    "validation-final.json": "029bac0d584a906304e2f5fc878cb5079d65ce49bc52416b14a3704dd0f06add"
+  },
+  "directly_inspected_scenes": [
+    "bursts",
+    "gc-control",
+    "gc-stop",
+    "prototype",
+    "oracle",
+    "final01",
+    "baseline01"
+  ],
+  "native_bench_cpu_snapshot_ms": {
+    "final01": 5.701,
+    "baseline01": 5.823
+  }
+}

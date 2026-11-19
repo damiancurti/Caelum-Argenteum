@@ -1,0 +1,240 @@
+// Coordinador determinista de la IA masiva de TACTORS. El EventHandler existe
+// una sola vez por partida y permite imponer un techo real a A_Chase sin que
+// cada actor tenga que buscar o recorrer a los demas miembros del campo.
+// #128 reutiliza su ciclo de mapa para actualizar Population; las opciones
+// diagnósticas y sus atajos siguen separados de la IA normal.
+class CaelumMassAIScheduler : EventHandler
+{
+    CaelumPopulationState Population;
+
+    void RefreshPopulation()
+    {
+        if(Population==null)Population=new("CaelumPopulationState");
+        Population.Refresh();
+    }
+    bool MassAttacksEnabled;
+    bool MassLookEnabled;
+    bool MassChaseEnabled;
+    int MassAttackInterval;
+    int MassLookInterval;
+    int MassChaseInterval;
+    int MassLookBudgetPerTic;
+    int MassChaseBudgetPerTic;
+    int MassSquadSize;
+    bool MassFollowerMovementEnabled;
+    double MassFollowerSpeedScale;
+    bool SettingsInitialized;
+
+    // TACTORS usa un solo objetivo compartido para demostrar que los seguidores
+    // pueden adoptar la detección de su escuadra sin repetir A_Look. No es aún
+    // el registro definitivo por facción/zona de los mapas jugables.
+    Actor SharedMassTarget;
+    int SharedTargetPublicationsSinceReport;
+    int SharedTargetAdoptionsSinceReport;
+
+    int LookUpdatesThisTic;
+    int PeakLookUpdatesPerTic;
+    int LookBudgetDeferralsSinceReport;
+    int ChaseUpdatesThisTic;
+    int PeakChaseUpdatesPerTic;
+    int ChaseBudgetDeferralsSinceReport;
+
+    void RefreshSettings()
+    {
+        CVar attackSetting = CVar.GetCVar("ca_diag_mass_attacks");
+        MassAttacksEnabled = attackSetting == null
+            || attackSetting.GetBool();
+
+        CVar lookEnabledSetting = CVar.GetCVar(
+            "ca_diag_mass_look_enabled"
+        );
+        MassLookEnabled = lookEnabledSetting == null
+            || lookEnabledSetting.GetBool();
+
+        CVar chaseEnabledSetting = CVar.GetCVar(
+            "ca_diag_mass_chase_enabled"
+        );
+        MassChaseEnabled = chaseEnabledSetting == null
+            || chaseEnabledSetting.GetBool();
+
+        CVar attackInterval = CVar.GetCVar(
+            "ca_diag_mass_attack_stagger"
+        );
+        MassAttackInterval = attackInterval == null
+            ? 64 : Clamp(attackInterval.GetInt(), 1, 64);
+
+        CVar lookInterval = CVar.GetCVar("ca_diag_mass_look_stagger");
+        MassLookInterval = lookInterval == null
+            ? 7 : Clamp(lookInterval.GetInt(), 1, 31);
+
+        CVar chaseInterval = CVar.GetCVar(
+            "ca_diag_mass_chase_stagger"
+        );
+        MassChaseInterval = chaseInterval == null
+            ? 13 : Clamp(chaseInterval.GetInt(), 1, 31);
+
+        CVar lookBudget = CVar.GetCVar("ca_diag_mass_look_budget");
+        MassLookBudgetPerTic = lookBudget == null
+            ? 20 : Clamp(lookBudget.GetInt(), 1, 128);
+
+        CVar chaseBudget = CVar.GetCVar("ca_diag_mass_chase_budget");
+        MassChaseBudgetPerTic = chaseBudget == null
+            ? 10 : Clamp(chaseBudget.GetInt(), 1, 128);
+
+        CVar squadSize = CVar.GetCVar("ca_diag_mass_squad_size");
+        MassSquadSize = squadSize == null
+            ? 16 : Clamp(squadSize.GetInt(), 1, 128);
+
+        CVar followerMovement = CVar.GetCVar(
+            "ca_diag_mass_follower_movement"
+        );
+        MassFollowerMovementEnabled = followerMovement != null
+            && followerMovement.GetBool();
+
+        CVar followerSpeed = CVar.GetCVar(
+            "ca_diag_mass_follower_speed_percent"
+        );
+        MassFollowerSpeedScale = followerSpeed == null
+            ? 0.25 : Clamp(followerSpeed.GetInt(), 0, 100) / 100.0;
+
+        SettingsInitialized = true;
+    }
+
+    override void WorldLoaded(WorldEvent event)
+    {
+        RefreshPopulation();
+        RefreshSettings();
+        LookUpdatesThisTic = 0;
+        PeakLookUpdatesPerTic = 0;
+        LookBudgetDeferralsSinceReport = 0;
+        ChaseUpdatesThisTic = 0;
+        PeakChaseUpdatesPerTic = 0;
+        ChaseBudgetDeferralsSinceReport = 0;
+        SharedMassTarget = null;
+        SharedTargetPublicationsSinceReport = 0;
+        SharedTargetAdoptionsSinceReport = 0;
+    }
+
+    void CA838Body_CaelumMassAIScheduler_WorldTick()
+    {
+        RefreshPopulation();
+        // WorldTick corre antes de los Thinkers. Cerrar aqui el tic anterior
+        // mantiene un limite determinista y no depende de los FPS del cliente.
+        // La configuración es inmutable durante el mapa: no se consultan CVars
+        // 35 veces por segundo ni se propagan cambios parciales entre actores.
+        PeakLookUpdatesPerTic = Max(
+            PeakLookUpdatesPerTic,
+            LookUpdatesThisTic
+        );
+        LookUpdatesThisTic = 0;
+        PeakChaseUpdatesPerTic = Max(
+            PeakChaseUpdatesPerTic,
+            ChaseUpdatesThisTic
+        );
+        ChaseUpdatesThisTic = 0;
+    }
+
+    bool TryAdmitLook()
+    {
+        int budget = Max(1, MassLookBudgetPerTic);
+        if (LookUpdatesThisTic >= budget)
+        {
+            LookBudgetDeferralsSinceReport++;
+            return false;
+        }
+
+        LookUpdatesThisTic++;
+        return true;
+    }
+
+    bool TryAdmitChase()
+    {
+        int budget = Max(1, MassChaseBudgetPerTic);
+        if (ChaseUpdatesThisTic >= budget)
+        {
+            ChaseBudgetDeferralsSinceReport++;
+            return false;
+        }
+
+        ChaseUpdatesThisTic++;
+        return true;
+    }
+
+    int ReadAndResetPeakChaseUpdates()
+    {
+        int result = Max(PeakChaseUpdatesPerTic, ChaseUpdatesThisTic);
+        // Conservar el parcial actual evita perderlo si el monitor informa en
+        // medio del orden de Thinkers de este tic.
+        PeakChaseUpdatesPerTic = ChaseUpdatesThisTic;
+        return result;
+    }
+
+    int ReadAndResetPeakLookUpdates()
+    {
+        int result = Max(PeakLookUpdatesPerTic, LookUpdatesThisTic);
+        PeakLookUpdatesPerTic = LookUpdatesThisTic;
+        return result;
+    }
+
+    int ReadAndResetLookBudgetDeferrals()
+    {
+        int result = LookBudgetDeferralsSinceReport;
+        LookBudgetDeferralsSinceReport = 0;
+        return result;
+    }
+
+    int ReadAndResetBudgetDeferrals()
+    {
+        int result = ChaseBudgetDeferralsSinceReport;
+        ChaseBudgetDeferralsSinceReport = 0;
+        return result;
+    }
+
+    Actor GetSharedMassTarget()
+    {
+        if (SharedMassTarget != null
+            && (SharedMassTarget.health <= 0 || !SharedMassTarget.bShootable))
+        {
+            SharedMassTarget = null;
+        }
+        return SharedMassTarget;
+    }
+
+    void PublishSharedMassTarget(Actor candidate)
+    {
+        if (candidate == null || candidate.health <= 0) { return; }
+        if (SharedMassTarget != candidate)
+        {
+            SharedMassTarget = candidate;
+            SharedTargetPublicationsSinceReport++;
+        }
+    }
+
+    void RecordSharedTargetAdoption()
+    {
+        SharedTargetAdoptionsSinceReport++;
+    }
+
+    int ReadAndResetSharedTargetPublications()
+    {
+        int result = SharedTargetPublicationsSinceReport;
+        SharedTargetPublicationsSinceReport = 0;
+        return result;
+    }
+
+    int ReadAndResetSharedTargetAdoptions()
+    {
+        int result = SharedTargetAdoptionsSinceReport;
+        SharedTargetAdoptionsSinceReport = 0;
+        return result;
+    }
+
+    override void WorldTick()
+    {
+        CA838BurstProfile probe=null;
+        if(level.time>=3599 && level.time<4299)probe=CA838BurstProfile(StaticEventHandler.Find('CA838BurstProfile'));
+        if(probe!=null)probe.Begin(3);
+        CA838Body_CaelumMassAIScheduler_WorldTick();
+        if(probe!=null)probe.End();
+    }
+}

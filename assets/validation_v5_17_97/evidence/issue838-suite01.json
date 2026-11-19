@@ -1,0 +1,44 @@
+[
+  {
+    "name": "base-flat01",
+    "output": "build/issue838-base-flat01",
+    "passed": true,
+    "assertions": 64,
+    "result": "CA836 EDGE_RESULT relation_checks=39 failures=0 result=PASS"
+  },
+  {
+    "name": "final-flat01",
+    "output": "build/issue838-final-flat01",
+    "passed": true,
+    "assertions": 64,
+    "result": "CA836 EDGE_RESULT relation_checks=39 failures=0 result=PASS"
+  },
+  {
+    "name": "upgrade-flat01",
+    "output": "build/issue838-upgrade-flat01",
+    "passed": true,
+    "assertions": 65,
+    "result": "CA836 EDGE_RESULT relation_checks=78 failures=0 result=PASS"
+  },
+  {
+    "name": "reload-flat01",
+    "output": "build/issue838-reload-flat01",
+    "passed": true,
+    "assertions": 65,
+    "result": "CA836 EDGE_RESULT relation_checks=78 failures=0 result=PASS"
+  },
+  {
+    "name": "rollback-flat01",
+    "output": "build/issue838-rollback-flat01",
+    "passed": true,
+    "assertions": 65,
+    "result": "CA836 EDGE_RESULT relation_checks=78 failures=0 result=PASS"
+  },
+  {
+    "name": "final-portal01",
+    "output": "build/issue838-final-portal01",
+    "passed": true,
+    "assertions": 69,
+    "result": "CA836 EDGE_RESULT relation_checks=39 failures=0 result=PASS"
+  }
+]

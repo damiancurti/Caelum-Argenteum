@@ -1,0 +1,9 @@
+{
+  "issue": 838,
+  "source_path": "caelum/actors/CaelumVisualPerception.zs",
+  "baseline_source_sha256": "0325c735f34c281fe1e57fe8b9525cbfb4c550822871b7193503d1ff8f4d5401",
+  "candidate_source_sha256": "718f6f390831362aac29cdc8e21c3e2810c847458a728ec68db96471133300b5",
+  "overlay_sha256": "d1160fc412982da297de78e305eedbc56a7dcea8d7cbeb8648931369df6f3cbb",
+  "inverse_source_exact": true,
+  "qualification": "Diagnostic prototype; same reach bound and fallback ordering for residents, summoned bodies, automatons and clones. No production edit."
+}

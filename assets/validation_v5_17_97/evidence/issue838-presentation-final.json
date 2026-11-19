@@ -1,0 +1,72 @@
+[
+  {
+    "name": "final01",
+    "directory": "build/v516/barracas-profile-20261119-122841-063582",
+    "passed": true,
+    "simulation": {
+      "samples": 700,
+      "mean_ms": 31.76993442857143,
+      "p95_ms": 46.3211,
+      "p99_ms": 50.8397,
+      "max_ms": 203.027
+    },
+    "presentation": {
+      "pid": 50344,
+      "trace_sha256": "4dc8fcaf6ecee4ea47ec6151a7b0dcfbb9ba709d26b6f37d41c81ad186f49844",
+      "rows": 2187,
+      "scene_presents": 36,
+      "mean_present_fps": 1.8514287758878278,
+      "present_intervals": {
+        "samples": 35,
+        "mean_ms": 540.1233971425465,
+        "p50_ms": 535.1059999465942,
+        "p95_ms": 638.4092999696732,
+        "p99_ms": 676.7847999334335,
+        "max_ms": 676.7847999334335
+      },
+      "native_call_duration": {
+        "samples": 36,
+        "mean_ms": 0.17405554983350965,
+        "p50_ms": 0.17159998416900635,
+        "p95_ms": 0.19990003108978271,
+        "p99_ms": 0.20099997520446777,
+        "max_ms": 0.20099997520446777
+      }
+    }
+  },
+  {
+    "name": "baseline01",
+    "directory": "build/v516/barracas-profile-20261119-123112-828890",
+    "passed": true,
+    "simulation": {
+      "samples": 700,
+      "mean_ms": 32.483250285714284,
+      "p95_ms": 55.2242,
+      "p99_ms": 62.0793,
+      "max_ms": 204.7061
+    },
+    "presentation": {
+      "pid": 26832,
+      "trace_sha256": "bd1e508997e0ad22698d52bbe3e8c345fa67e160f30df24b4ae54d9f07abbf8f",
+      "rows": 2113,
+      "scene_presents": 36,
+      "mean_present_fps": 1.8110234399291327,
+      "present_intervals": {
+        "samples": 35,
+        "mean_ms": 552.173968570573,
+        "p50_ms": 543.8069999217987,
+        "p95_ms": 646.4108999967575,
+        "p99_ms": 688.7131000757217,
+        "max_ms": 688.7131000757217
+      },
+      "native_call_duration": {
+        "samples": 36,
+        "mean_ms": 0.17354167501131693,
+        "p50_ms": 0.16820001602172852,
+        "p95_ms": 0.22930002212524414,
+        "p99_ms": 0.25870001316070557,
+        "max_ms": 0.25870001316070557
+      }
+    }
+  }
+]
