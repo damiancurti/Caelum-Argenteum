@@ -1,6 +1,20 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.93** - 2026-11-19.
+Documentation version: **5.17.94** - 2026-11-19.
+
+## 5.17.94 - Historical release labels restored (#831)
+
+The four retained #822 headings in ASSETS, TASKS, PROJECT and HISTORY again
+identify their original release, 5.17.90. Comparison with the parent of
+b2f86002 records the accidental #825 substitutions and audits retained
+historical headings. Current headers advance only at their explicit marker.
+Gameplay and asset bytes are preserved; the two required diagnostic
+release strings follow 5.17.94. No author test is removed or added.
+The audit covers 1,063 retained historical headings and 18,719 runtime
+files. Only the two required diagnostic version strings differ. Scoped
+documentation/header/link/index checks pass; unchanged art/gameplay tests
+are retained from #829 rather than rerun. Evidence: assets/validation_v5_17_94.
+The V5.16/V5.17 batch and its final author terminal remain unfinished.
 
 ## 5.17.93 - Fitted first-body wardrobe candidates (#829, parent #459)
 
@@ -206,7 +220,7 @@ CA825-REGIONS-01 remains pending. Diagnostic regional coverage is complete;
 other characters, modular equipment, campaign authoring and siege rendering
 still prevent the complete batch handoff and consolidated author terminal.
 
-## 5.17.91 - Xalpen, Luz Mala, Anchimallen and Huayrapuca candidates (#822)
+## 5.17.90 - Xalpen, Luz Mala, Anchimallen and Huayrapuca candidates (#822)
 
 Four distinct owned references now have native candidates on their existing
 provisional classes 021/027/034/056. Xalpen combines an adult gray woman,

@@ -1,0 +1,26 @@
+{
+  "issue": 831,
+  "version": "5.17.94",
+  "context_words": 2490,
+  "documents": 11,
+  "errors": [],
+  "inputs": {
+    "README.md": "6f99e684a10a2bd2814f2b783b3273c1a65f8850964cadfded458a51958c3fa2",
+    "AGENTS.md": "f39c35ae209ba55161d7cfeb3cf30caba6f4840fc89fd42e1bf2cdcaf17c7f6b",
+    "docs/ASSETS.md": "b54b09d12e5d3fc6beb78dce81c48f7bcb8b4d14ccd0a94ddb0a60fd4f281ca9",
+    "docs/CONTEXT.md": "d7cda4c0a7f6ccc0372a06ac7db950c5a6511d5a5f311a0b55079ca8e2827482",
+    "docs/HISTORY.md": "93a499609ebceb77f46b2897cae50dd54df5e31bcff109e16d842d52ab1f7af2",
+    "docs/MAP01.txt": "a535b1053143d6b2d491a2246a813e214d77b2d80d1d482317e78fa5f4d26a42",
+    "docs/PROJECT.md": "f939d4c7ad40e043e77cd003c40372eb42838e93af824662a9a58f58acded8c8",
+    "docs/SPRITE_ART_DIRECTION.md": "7bb5ea5d881d4f0e795f5e747651ca9240ac70f47360705067ac294e7243f411",
+    "docs/SYSTEMS.md": "709d846d32ba1264b8731aa93d54f8b2c06e2b224f304fb7179b03c37222853f",
+    "docs/TASKS.md": "521df2c643e0e85bb6ea1d02bd0e47d3c535c0caea9e2ca3b72848e09544f7de",
+    "docs/DOCUMENT_INDEX.md": "b0c58fb19f427d5f6087a23abce35252232ffffd35158ffe20b15b7c90fd8a9d",
+    "docs/GZDOOM_DEVELOPMENT.md": "56e479e3893e27831a42d1dfe6ac0d5fcc80b556d6235ac8b9a076bb118376bb",
+    "docs/KNOWN_PITFALLS.md": "cc1c7e876ec159fc2878d4585ddae5707dda47fc0d786da2994e7e6a34b1b4cd",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "5670b681bf75d86fbf5e9622df1a3025e61de3eba01895343448e7f80487c98a",
+    "src/caelum/world/CaelumSewerMaze.zs": "ae7eda7d131ba5c07a1ccd670dfe6937270e2be204260b3badc6a84272144b54",
+    "pending_test.txt": "c66917972dc21007cdcfdbf01da9912c64f536faeb78e1770d48aedc322f59b4"
+  },
+  "qualification": "Scoped current-header, diagnostic-label, maintained-document, link and index checks. Runtime preservation and historical-heading audit are separate evidence; unchanged art/gameplay tests are not rerun."
+}
