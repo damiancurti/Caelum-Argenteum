@@ -1,0 +1,238 @@
+[
+  {
+    "run": "pilot03",
+    "records": [
+      {
+        "type": "CA849GateProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 37.01238768844863,
+          "Exposure": 283
+        }
+      },
+      {
+        "type": "CA849VehicleProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 38.0,
+          "Exposure": 284
+        }
+      },
+      {
+        "type": "CA849NpcProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 39.0
+        }
+      }
+    ]
+  },
+  {
+    "run": "pilot-reload01",
+    "records": [
+      {
+        "type": "CA849GateProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 37.22727360632839,
+          "Exposure": 283
+        }
+      },
+      {
+        "type": "CA849VehicleProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 41.63227636841411,
+          "Exposure": 284
+        }
+      },
+      {
+        "type": "CA849NpcProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 39.0
+        }
+      }
+    ]
+  },
+  {
+    "run": "pilot04",
+    "records": [
+      {
+        "type": "CA849GateProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 37.01238768844863,
+          "Exposure": 283
+        }
+      },
+      {
+        "type": "CA849VehicleProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 38.0,
+          "Exposure": 284
+        }
+      },
+      {
+        "type": "CA849NpcProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 39.0
+        }
+      }
+    ]
+  },
+  {
+    "run": "pilot-reload02",
+    "records": [
+      {
+        "type": "CA849GateProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 37.22727360632839,
+          "Exposure": 283
+        }
+      },
+      {
+        "type": "CA849VehicleProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 41.63227636841411,
+          "Exposure": 284
+        }
+      },
+      {
+        "type": "CA849NpcProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 39.0
+        }
+      }
+    ]
+  },
+  {
+    "run": "pilot05",
+    "records": [
+      {
+        "type": "CA849GateProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 37.0
+        }
+      },
+      {
+        "type": "CA849VehicleProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 38.0
+        }
+      },
+      {
+        "type": "CA849NpcProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 39.0
+        }
+      }
+    ]
+  },
+  {
+    "run": "pilot-reload03",
+    "records": [
+      {
+        "type": "CA849GateProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 37.0
+        }
+      },
+      {
+        "type": "CA849VehicleProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 38.0
+        }
+      },
+      {
+        "type": "CA849NpcProbe",
+        "state": {
+          "REVISION": 1,
+          "PhysiologyRevision": 1,
+          "DiseaseFraction": 0.25,
+          "DomesticTargetKey": 0,
+          "StackRevision": 0,
+          "Concentration": 39.0
+        }
+      }
+    ]
+  }
+]

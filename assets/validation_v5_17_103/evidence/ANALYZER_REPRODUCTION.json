@@ -1,0 +1,11 @@
+{
+  "category_report_exact": true,
+  "type_counts_exact": true,
+  "type_count": 25,
+  "portable_arguments": [
+    "directory",
+    "--profile",
+    "--output"
+  ],
+  "executed_original_preserved": "evidence/executed_helpers/analyze_storage849.py"
+}

@@ -26,6 +26,9 @@ class CaelumContaminationObject : Thinker
     {
         let rock=CaelumTarotRock(body);if(rock!=null && rock.Contained)return false;
         if(body==null || body.bDestroyed || body is 'CaelumPlayer' || body is 'CaelumCombatActor' || body.bMissile)return false;
+        // Estos cuerpos no pueden ser inventarios ni muebles con propietario delegado.
+        if(CaelumContaminationStorage.NativeCarrierBody(body))
+            return (body.bSolid || GetDefaultByType(body.GetClass()).bSolid) && body.Radius>0 && body.Height>0;
         let proxy=CaelumDiningBlock(body);
         if(proxy!=null)return proxy.Table!=null && proxy.Table.ContaminationMigrating;
         if(CaelumHouseStorageEntry.Remote(body)!=null)return false;
