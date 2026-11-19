@@ -1,0 +1,20 @@
+[
+  {
+    "label": "breath02",
+    "exact": true,
+    "sha256": "2791682157666ecc5898becc120a8b5d102759f10cb730f3433719aa3e6b47d7"
+  },
+  {
+    "label": "targets02",
+    "exact": true,
+    "sha256": "b0cb3aa12799078bfafa0b02fe44a8810986125e9d2dde7b0d467ef6124a2871"
+  },
+  {
+    "label": "portable_navigation_baseline",
+    "exact": true,
+    "engine_exit_code": 0,
+    "expected_regression": true,
+    "passing_setup_resource_checks": 6,
+    "failing_recognition_checks": 2
+  }
+]

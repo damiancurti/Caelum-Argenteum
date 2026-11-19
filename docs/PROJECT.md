@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.104** - 2026-11-19.
+Documentation version: **5.17.105** - 2026-11-19.
+
+## 5.17.105 - Measure breath queries and reproduce route-induced recognition loss (#853, #855)
+
+Full project validation passes with no errors; the generated document index is current.
+
+No gameplay change. Bounded breath-query diagnosis finds the repeated native
+state lookups are a small sampled cost and selects no cache/rewrite. It also
+reproduces a distinct defect: breath inspection of an excluded navigation marker
+resets ongoing visual recognition of a real target. The authored exclusion rule
+stands; correction is tracked in #855. HISTORY separates six passing setup/resource
+checks from the two expected failed baseline recognition checks and records the
+instrumentation limits. Evidence: assets/validation_v5_17_105.
+
+Overall siege performance, the authorized V5.16/V5.17 batch and consolidated
+author acceptance remain open. No pending author test is removed.
+
 
 ## 5.17.104 - Bound dense local perception and measure the remaining siege budget (#851, #454)
 

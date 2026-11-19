@@ -1,0 +1,82 @@
+{
+  "issue": 454,
+  "started_utc": "2026-11-19T20:55:31.209181+00:00",
+  "ended_utc": "2026-11-19T20:55:36.772118+00:00",
+  "environment_overrides": {
+    "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+  },
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "presentation_layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "runtime_sha256": "1bf92c28f7317875e10aace435bc730507602e98c6dc4681c79f54a74e48f0cf",
+  "commands": [
+    [
+      "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "-noautoload",
+      "-nomouse",
+      "-iwad",
+      "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+      "-file",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue851-local03.pk3",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue853-targets01\\services.pk3",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\v516\\barracas-profile-20261119-175531-209181\\observer.pk3",
+      "-config",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\v516\\barracas-profile-20261119-175531-209181\\peer0\\session.ini",
+      "-savedir",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\v516\\barracas-profile-20261119-175531-209181\\peer0",
+      "-rngseed",
+      "428",
+      "-warp",
+      "3",
+      "+logfile",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\v516\\barracas-profile-20261119-175531-209181\\peer0\\engine.log",
+      "+exec",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\v516\\barracas-profile-20261119-175531-209181\\peer0\\start.cfg"
+    ]
+  ],
+  "observed_before_cleanup": [
+    null
+  ],
+  "observer_sha256": "e989db766136b730893f5be9adb4bf06a1cb81675942e6f49431c015beb28811",
+  "overlays": [
+    {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue853-targets01\\services.pk3",
+      "sha256": "3ab82c45d5b96182298b42aaf750e319b18c33b065b1547b93be5886c4dc4722"
+    }
+  ],
+  "map": "MAP03",
+  "siege": true,
+  "settled_siege": false,
+  "direct_deployment": false,
+  "ground": false,
+  "players": 1,
+  "peers": [
+    {
+      "slot": 0,
+      "pid": 47504,
+      "exit_code": 1,
+      "window": {},
+      "simulation": null,
+      "render_callbacks": null,
+      "states": [],
+      "census": [],
+      "scopes": [],
+      "native_sync": false,
+      "passed": false,
+      "complete_window": false
+    }
+  ],
+  "same_state": true,
+  "scenario_valid": false,
+  "error": "Native error; retain the complete logs.",
+  "passed": false,
+  "performance_accepted": false,
+  "author_accepted": false,
+  "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+}
