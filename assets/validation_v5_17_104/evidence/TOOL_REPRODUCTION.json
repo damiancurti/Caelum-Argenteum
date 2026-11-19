@@ -1,0 +1,42 @@
+[
+  {
+    "label": "regions01",
+    "overlay_sha256": "83a0e2bc0efc632b23033af4df7b055fb41b0402f8703f934fe77fcc6a5dfffd",
+    "exact": true
+  },
+  {
+    "label": "environment01",
+    "overlay_sha256": "ce5d42849b6ef6ae4dfc34a4b3d8db53dda7f94be615a38c8a4d5a2972af2e30",
+    "exact": true
+  },
+  {
+    "label": "hot01",
+    "overlay_sha256": "ab9b2487cc706f1eb4f63a53d481422e7ac257bcb7c6d175dcc4c41a441aad8e",
+    "exact": true
+  },
+  {
+    "label": "candidates02",
+    "overlay_sha256": "0273be5dfd0344ddcf399e77b60478da87cbfde1b5450d8c1c5c31bd4356dcb0",
+    "exact": true
+  },
+  {
+    "label": "local02",
+    "overlay_sha256": "de83718e7d1ecf0b9b773c1dc26a7802938a0498d23b8d5040e143ac134e2e77",
+    "exact": true
+  },
+  {
+    "label": "local-regions02",
+    "overlay_sha256": "32d4314471eed5744e9eea134840866df2219210c4dfb84d0a1a72c65f94aa0b",
+    "exact": true
+  },
+  {
+    "label": "local-oracle02",
+    "overlay_sha256": "62a6b210c7588d338726fb8dc111b231852e4c86c9e032791cb3bca0e52712cc",
+    "exact": true
+  },
+  {
+    "label": "portable_native_fixture",
+    "exact": true,
+    "checks": 165
+  }
+]

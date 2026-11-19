@@ -1,0 +1,147 @@
+{
+  "issue": 851,
+  "version": "5.17.104",
+  "parent_commit": "c0ec3ccb8fea435683f5a49aad73985c309a30ea",
+  "baseline_sha256": "aa7e00e93eeaffe42e353ee116961021b8dad92a638146eee399f211be122f82",
+  "final_sha256": "1bf92c28f7317875e10aace435bc730507602e98c6dc4681c79f54a74e48f0cf",
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "presentation_layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "change": "Reuse the exact existing conservative reach bound in the local blockmap loop only when the shared HighDensity census is true and there is one portal group. The four relationship families with migrations keep Opponent before rejection. Group, unlinked-guard, nearest/tie order and observed-ally paths are unchanged.",
+  "source_proof": [
+    "The source transformation restores the original file exactly. No fields, schema, gameplay values or cadence are added.",
+    "With one portal group, exceeding either coordinate-axis bound exceeds both contact radius and maximum sight range. Illumination and stealth never expand the existing upper bound. Outside bodies cannot reach native CheckSight; original CanSee/Touching are false in the live oracle.",
+    "The existing #838 read-only relationship gate is reused. AnchoredResident, SummonedZupay, TarotAutomaton and TarotClone preserve Opponent first. Communication eligibility only reads relationships.",
+    "Derived keyed insight/stealth cache warming may occur at a different point; original results, saved identity, portal fallback and ally observations are tested."
+  ],
+  "proof": {
+    "issue": 851,
+    "runtime_sha256": "aa7e00e93eeaffe42e353ee116961021b8dad92a638146eee399f211be122f82",
+    "baseline_source_sha256": "718f6f390831362aac29cdc8e21c3e2810c847458a728ec68db96471133300b5",
+    "candidate_source_sha256": "dcc202ceeb14b156a0d723fec81745acb53d6576dd5c69150033cd775bdfb03e",
+    "overlay_sha256": "de83718e7d1ecf0b9b773c1dc26a7802938a0498d23b8d5040e143ac134e2e77",
+    "inverse_exact": true,
+    "no_new_fields_or_gameplay_data": true,
+    "qualification": "Prototype only. Local iterator order, group and unlinked-guard paths remain intact. Reuses the exact existing bound only with the shared HighDensity flag and one portal group. Read-only relationship paths may reject before Opponent; residents/summoned/automaton/clone observers retain Opponent first. Communication eligibility is read-only. Skipped bodies cannot pass the original contact or sight range tests; derived keyed insight/stealth cache warming may occur at a different point."
+  },
+  "oracle": {
+    "queries": 6305,
+    "candidates": 205202,
+    "pre_rejected": 99004,
+    "post_rejected": 0,
+    "unexpected_visible": 0,
+    "unexpected_contact": 0
+  },
+  "canonical_fixtures": [
+    {
+      "label": "base01",
+      "runtime": "build/issue849-carrier02.pk3",
+      "passed": true,
+      "assertions": 165,
+      "summaries": [
+        "CA836 EDGE_RESULT checks=75 failures=0 result=PASS",
+        "CA836 EDGE_RESULT relation_checks=90 failures=0 result=PASS"
+      ],
+      "directory": "build/issue851-edges-base01"
+    },
+    {
+      "label": "final01",
+      "runtime": "build/issue851-local03.pk3",
+      "passed": true,
+      "assertions": 165,
+      "summaries": [
+        "CA836 EDGE_RESULT checks=75 failures=0 result=PASS",
+        "CA836 EDGE_RESULT relation_checks=90 failures=0 result=PASS"
+      ],
+      "directory": "build/issue851-edges-final01"
+    },
+    {
+      "label": "upgrade01",
+      "runtime": "build/issue851-local03.pk3",
+      "passed": true,
+      "assertions": 166,
+      "summaries": [
+        "CA836 EDGE_RESULT checks=151 failures=0 result=PASS",
+        "CA836 EDGE_RESULT relation_checks=180 failures=0 result=PASS"
+      ],
+      "directory": "build/issue851-edges-upgrade01"
+    },
+    {
+      "label": "reload01",
+      "runtime": "build/issue851-local03.pk3",
+      "passed": true,
+      "assertions": 166,
+      "summaries": [
+        "CA836 EDGE_RESULT checks=151 failures=0 result=PASS",
+        "CA836 EDGE_RESULT relation_checks=180 failures=0 result=PASS"
+      ],
+      "directory": "build/issue851-edges-reload01"
+    },
+    {
+      "label": "rollback01",
+      "runtime": "build/issue849-carrier02.pk3",
+      "passed": true,
+      "assertions": 166,
+      "summaries": [
+        "CA836 EDGE_RESULT checks=227 failures=0 result=PASS",
+        "CA836 EDGE_RESULT relation_checks=270 failures=0 result=PASS"
+      ],
+      "directory": "build/issue851-edges-rollback01"
+    },
+    {
+      "label": "portal01",
+      "runtime": "build/issue851-local03.pk3",
+      "passed": true,
+      "assertions": 176,
+      "summaries": [
+        "CA836 EDGE_RESULT checks=86 failures=0 result=PASS",
+        "CA836 EDGE_RESULT relation_checks=90 failures=0 result=PASS"
+      ],
+      "directory": "build/issue851-edges-portal01"
+    },
+    {
+      "label": "portal-reload01",
+      "runtime": "build/issue851-local03.pk3",
+      "passed": true,
+      "assertions": 177,
+      "summaries": [
+        "CA836 EDGE_RESULT checks=173 failures=0 result=PASS",
+        "CA836 EDGE_RESULT relation_checks=180 failures=0 result=PASS"
+      ],
+      "directory": "build/issue851-edges-portal-reload01"
+    },
+    {
+      "label": "portal-rollback01",
+      "runtime": "build/issue849-carrier02.pk3",
+      "passed": true,
+      "assertions": 177,
+      "summaries": [
+        "CA836 EDGE_RESULT checks=260 failures=0 result=PASS",
+        "CA836 EDGE_RESULT relation_checks=270 failures=0 result=PASS"
+      ],
+      "directory": "build/issue851-edges-portal-rollback01"
+    }
+  ],
+  "fixture_coverage": "Retained group range/FOV/light/stealth/height/contact/pillar edges; original local target plus fresh ally evidence comparison in sparse/dense modes; ties/dead/friendly/player/theft/Emperor and four fallback families; explicit local resident/automaton migration; linked portals with native distance 496 and raw separation >6000; fresh/upgrade/reload/rollback.",
+  "diagnostic_notes": [
+    "One candidate-region preparation assertion failed because an unanchored substring also matched the group branch; fixed before native execution. Logs and source retained.",
+    "Prototype01/oracle01 were not executed: review caught a case-insensitive local name that could shadow Opponent. Prototype02 uses localOpponent.",
+    "Local-regions01 measured the loop without added setup. Local-regions02 includes that setup; the latter is the reported candidate cost.",
+    "Original/native thinker and renderer snapshots are separate instants after the primary window, not synchronized totals or GPU duration. Inclusive nested service scopes must not be added. Native Tick includes state actions."
+  ],
+  "reproduction": [
+    "python prepare_local_reach.py --runtime <5.17.103.pk3> --output <repo/build/new-candidate>",
+    "python prepare_local_oracle.py --candidate <candidate/prototype.pk3> --output <repo/build/new-oracle>",
+    "python prepare_candidates.py --runtime <baseline-or-candidate.pk3> --output <repo/build/new-profile>",
+    "python run_local_edges.py --baseline <5.17.103.pk3> --runtime <runtime.pk3> --output <repo/build/new-checks> [--candidate <prototype.pk3>] [--load <reach.zds>] [--portal]",
+    "python check_preservation.py --runtime <final.pk3> --baseline <5.17.103.pk3> --candidate <candidate/prototype.pk3> --output <repo/build/static.json>",
+    "Use the retained campaign runner with each overlay, then analyze_services.py --profile <overlay-dir> --run <run-dir> --output <report.json>. prepare_regions.py uses --detail; its analyzer is analyze_regions.py."
+  ],
+  "private_artifacts": "No engine/IWAD/runtime PK3/WAD/DLL/save is included.",
+  "qualification": "The local-loop improvement is not a whole-frame claim. Tic intervals include pacing/frame work; Vulkan queue presents are not monitor scanout. The native/static evidence is not author acceptance or complete batch delivery."
+}

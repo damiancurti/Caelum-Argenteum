@@ -1,6 +1,25 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.103** - 2026-11-19.
+Documentation version: **5.17.104** - 2026-11-19.
+
+## 5.17.104 - Bound dense local perception and measure the remaining siege budget (#851, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Dense local perception queries reuse the existing conservative sight/contact
+bound before expensive candidate work. The shared >=500 living-combatant census
+and a single portal group enable it. Residents, summoned bodies, automatons and
+clones retain relationship queries before rejection, preserving migration effects.
+Local iteration/tie order, group queries, unlinked guards, ally observations,
+individual resources/collision, offscreen behavior and all cadence remain intact.
+There are no new fields, schemas, balance values, scans or assets.
+
+Original-query, ally-memory, migration, portal and reversible-save checks pass
+1,358 native assertions. The bounded local region measures 1.6269 to
+1.2166 ms including setup. HISTORY retains the wider budget diagnosis, separate
+native snapshots and final/control frame tails. Overall siege performance and
+consolidated author acceptance remain open. Evidence: assets/validation_v5_17_104.
+
 
 ## 5.17.103 - Dispatch measured native contamination carriers directly (#849, #454)
 

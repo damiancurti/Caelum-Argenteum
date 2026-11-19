@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.103** - 2026-11-19.
+Documentation version: **5.17.104** - 2026-11-19.
+
+## 5.17.104 - Bound dense local perception and measure the remaining siege budget (#851, #454)
+
+No art, audio, model, texture or map changes. Existing individual resources and
+collision remain intact. assets/validation_v5_17_104 retains budget probes,
+original-query oracles, source/package proofs, portal/save fixtures, raw traces
+and native captures. Engine, IWAD, runtime packages and saves remain private.
+HISTORY records the measured local-query gain and unresolved scene-performance
+limits. Prior visual candidates still await the consolidated author review.
+
 
 ## 5.17.103 - Dispatch measured native contamination carriers directly (#849, #454)
 

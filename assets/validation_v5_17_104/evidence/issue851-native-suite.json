@@ -1,0 +1,90 @@
+[
+  {
+    "label": "base01",
+    "runtime": "build/issue849-carrier02.pk3",
+    "passed": true,
+    "assertions": 165,
+    "summaries": [
+      "CA836 EDGE_RESULT checks=75 failures=0 result=PASS",
+      "CA836 EDGE_RESULT relation_checks=90 failures=0 result=PASS"
+    ],
+    "directory": "build/issue851-edges-base01"
+  },
+  {
+    "label": "final01",
+    "runtime": "build/issue851-local03.pk3",
+    "passed": true,
+    "assertions": 165,
+    "summaries": [
+      "CA836 EDGE_RESULT checks=75 failures=0 result=PASS",
+      "CA836 EDGE_RESULT relation_checks=90 failures=0 result=PASS"
+    ],
+    "directory": "build/issue851-edges-final01"
+  },
+  {
+    "label": "upgrade01",
+    "runtime": "build/issue851-local03.pk3",
+    "passed": true,
+    "assertions": 166,
+    "summaries": [
+      "CA836 EDGE_RESULT checks=151 failures=0 result=PASS",
+      "CA836 EDGE_RESULT relation_checks=180 failures=0 result=PASS"
+    ],
+    "directory": "build/issue851-edges-upgrade01"
+  },
+  {
+    "label": "reload01",
+    "runtime": "build/issue851-local03.pk3",
+    "passed": true,
+    "assertions": 166,
+    "summaries": [
+      "CA836 EDGE_RESULT checks=151 failures=0 result=PASS",
+      "CA836 EDGE_RESULT relation_checks=180 failures=0 result=PASS"
+    ],
+    "directory": "build/issue851-edges-reload01"
+  },
+  {
+    "label": "rollback01",
+    "runtime": "build/issue849-carrier02.pk3",
+    "passed": true,
+    "assertions": 166,
+    "summaries": [
+      "CA836 EDGE_RESULT checks=227 failures=0 result=PASS",
+      "CA836 EDGE_RESULT relation_checks=270 failures=0 result=PASS"
+    ],
+    "directory": "build/issue851-edges-rollback01"
+  },
+  {
+    "label": "portal01",
+    "runtime": "build/issue851-local03.pk3",
+    "passed": true,
+    "assertions": 176,
+    "summaries": [
+      "CA836 EDGE_RESULT checks=86 failures=0 result=PASS",
+      "CA836 EDGE_RESULT relation_checks=90 failures=0 result=PASS"
+    ],
+    "directory": "build/issue851-edges-portal01"
+  },
+  {
+    "label": "portal-reload01",
+    "runtime": "build/issue851-local03.pk3",
+    "passed": true,
+    "assertions": 177,
+    "summaries": [
+      "CA836 EDGE_RESULT checks=173 failures=0 result=PASS",
+      "CA836 EDGE_RESULT relation_checks=180 failures=0 result=PASS"
+    ],
+    "directory": "build/issue851-edges-portal-reload01"
+  },
+  {
+    "label": "portal-rollback01",
+    "runtime": "build/issue849-carrier02.pk3",
+    "passed": true,
+    "assertions": 177,
+    "summaries": [
+      "CA836 EDGE_RESULT checks=260 failures=0 result=PASS",
+      "CA836 EDGE_RESULT relation_checks=270 failures=0 result=PASS"
+    ],
+    "directory": "build/issue851-edges-portal-rollback01"
+  }
+]

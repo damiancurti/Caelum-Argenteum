@@ -1,0 +1,12 @@
+{
+  "issue": 851,
+  "candidate_source_sha256": "fff547dba01003c92074180ff72dc940e0894363dd37e2eb39e58233606fcae4",
+  "overlay_sha256": "d6e99bb550fa48d2bc36137691f93414d88384d4f67a2ea4d0790b362afb1e93",
+  "inverse_exact": true,
+  "period": 17,
+  "window": [
+    3599,
+    4299
+  ],
+  "qualification": "Only rejected bodies receive diagnostic original CanSee and Touching calls. Source geometry proof says neither query can reach native CheckSight for these bodies. Positive visibility/contact fails the oracle. No production gain is inferred from instrumented runs."
+}

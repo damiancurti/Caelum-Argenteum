@@ -1,0 +1,1142 @@
+Log started: 2026-11-19 17:20:05
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 428 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue849-carrier02.pk3, 18755 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue851-local-regions01/services.pk3, 2 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/v516/barracas-profile-20261119-172005-295348/observer.pk3, 5 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_copy_memory_indirect VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_clamp_zero_one VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_internally_synchronized_queues VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance10 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_maintenance8 VK_KHR_maintenance9 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_id2 VK_KHR_present_mode_fifo_latest_ready VK_KHR_present_wait VK_KHR_present_wait2 VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_robustness2 VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_bfloat16 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_fma VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_shader_untyped_pointers VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_maintenance1 VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_unified_image_layouts VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_decode_vp9 VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_intra_refresh VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_custom_resolve VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_heap VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_decompression VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_present_timing VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_ray_tracing_invocation_reorder VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_64bit_indexing VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_long_vector VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_partitioned VK_EXT_shader_subgroup_vote VK_EXT_shader_uniform_buffer_unsized_array VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_EXT_zero_initialize_device_memory VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_occupancy_priority VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_compute_queue VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_push_constant_bank VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2487.59 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP03 - Barracas al Sud — fortified port
+
+CA435SYNC OK peer=0 map=MAP03 tic=0
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CITY133 housed=600 attackers=0 revision=3
+PORT16 deployed Mandingas=100 commander=1 defenders=600 hostileMachines=12 guns=42
+CA435SYNC OK peer=0 map=MAP03 tic=175
+CA435SYNC OK peer=0 map=MAP03 tic=350
+CA435SYNC OK peer=0 map=MAP03 tic=525
+CA435SYNC OK peer=0 map=MAP03 tic=700
+CA435SYNC OK peer=0 map=MAP03 tic=875
+CA435SYNC OK peer=0 map=MAP03 tic=1050
+CA435SYNC OK peer=0 map=MAP03 tic=1225
+CA435SYNC OK peer=0 map=MAP03 tic=1400
+CA435SYNC OK peer=0 map=MAP03 tic=1575
+CA435SYNC OK peer=0 map=MAP03 tic=1750
+CA435SYNC OK peer=0 map=MAP03 tic=1925
+CA435SYNC OK peer=0 map=MAP03 tic=2100
+CA435SYNC OK peer=0 map=MAP03 tic=2275
+CA435SYNC OK peer=0 map=MAP03 tic=2450
+CA435SYNC OK peer=0 map=MAP03 tic=2625
+CA435SYNC OK peer=0 map=MAP03 tic=2800
+CA435SYNC OK peer=0 map=MAP03 tic=2975
+CA435SYNC OK peer=0 map=MAP03 tic=3150
+CA435SYNC OK peer=0 map=MAP03 tic=3325
+CA435SYNC OK peer=0 map=MAP03 tic=3500
+CA435PERF STATE peer=0 tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1
+CA435PERF STATE peer=0 slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000
+CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0
+CA510 BEGIN map=MAP03 tic=3599 ms=112933.728500
+CA435SYNC OK peer=0 map=MAP03 tic=3675
+CA435SYNC OK peer=0 map=MAP03 tic=3850
+CA435SYNC OK peer=0 map=MAP03 tic=4025
+CA435SYNC OK peer=0 map=MAP03 tic=4200
+CA435PERF STATE peer=0 tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1
+CA435PERF STATE peer=0 slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000
+CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0
+CA510 PROFILE candidate_ms=0.000000 candidate_calls=0 noise_ms=0.000000 noise_calls=0 communication_ms=0.000000 communication_calls=0 acquire_ms=0.000000 acquire_calls=0
+CA510 END tic=4299 ms=133320.855300
+CA510 TIC 26.294300
+CA510 TIC 28.649900
+CA510 TIC 25.923500
+CA510 TIC 27.301000
+CA510 TIC 27.398400
+CA510 TIC 55.109700
+CA510 TIC 28.868000
+CA510 TIC 30.113800
+CA510 TIC 27.599900
+CA510 TIC 28.260100
+CA510 TIC 28.242100
+CA510 TIC 28.550900
+CA510 TIC 27.345000
+CA510 TIC 27.135200
+CA510 TIC 26.427300
+CA510 TIC 43.966300
+CA510 TIC 27.065600
+CA510 TIC 28.681300
+CA510 TIC 26.987800
+CA510 TIC 28.384900
+CA510 TIC 26.503000
+CA510 TIC 29.301200
+CA510 TIC 51.069400
+CA510 TIC 28.006700
+CA510 TIC 26.254900
+CA510 TIC 45.083300
+CA510 TIC 25.132900
+CA510 TIC 29.809600
+CA510 TIC 29.434900
+CA510 TIC 28.404700
+CA510 TIC 25.593900
+CA510 TIC 26.460900
+CA510 TIC 26.136000
+CA510 TIC 28.060000
+CA510 TIC 26.245300
+CA510 TIC 43.717400
+CA510 TIC 28.583700
+CA510 TIC 29.721100
+CA510 TIC 29.349800
+CA510 TIC 38.795400
+CA510 TIC 28.557700
+CA510 TIC 29.687800
+CA510 TIC 23.313100
+CA510 TIC 28.496000
+CA510 TIC 28.021100
+CA510 TIC 45.267900
+CA510 TIC 27.022200
+CA510 TIC 28.422300
+CA510 TIC 25.399500
+CA510 TIC 28.489000
+CA510 TIC 25.927500
+CA510 TIC 27.999900
+CA510 TIC 26.263200
+CA510 TIC 27.796600
+CA510 TIC 26.463200
+CA510 TIC 43.407700
+CA510 TIC 36.344600
+CA510 TIC 31.478400
+CA510 TIC 31.161900
+CA510 TIC 29.726300
+CA510 TIC 27.534100
+CA510 TIC 30.969200
+CA510 TIC 26.281000
+CA510 TIC 27.130600
+CA510 TIC 27.418600
+CA510 TIC 44.561500
+CA510 TIC 25.965500
+CA510 TIC 27.317900
+CA510 TIC 27.361200
+CA510 TIC 27.626300
+CA510 TIC 26.089600
+CA510 TIC 28.254200
+CA510 TIC 25.932200
+CA510 TIC 37.752800
+CA510 TIC 31.433900
+CA510 TIC 45.642500
+CA510 TIC 29.383100
+CA510 TIC 27.426800
+CA510 TIC 25.265200
+CA510 TIC 26.692900
+CA510 TIC 25.547600
+CA510 TIC 31.641300
+CA510 TIC 28.738500
+CA510 TIC 28.470300
+CA510 TIC 26.097300
+CA510 TIC 44.830000
+CA510 TIC 26.294000
+CA510 TIC 28.364300
+CA510 TIC 32.383900
+CA510 TIC 32.846300
+CA510 TIC 46.059500
+CA510 TIC 30.092500
+CA510 TIC 27.512700
+CA510 TIC 27.987600
+CA510 TIC 26.485400
+CA510 TIC 41.828400
+CA510 TIC 23.769500
+CA510 TIC 24.901600
+CA510 TIC 23.581100
+CA510 TIC 24.297200
+CA510 TIC 24.202800
+CA510 TIC 25.907500
+CA510 TIC 24.341800
+CA510 TIC 24.867200
+CA510 TIC 23.757200
+CA510 TIC 42.457300
+CA510 TIC 24.266100
+CA510 TIC 35.517800
+CA510 TIC 26.396200
+CA510 TIC 25.635800
+CA510 TIC 24.413700
+CA510 TIC 26.994600
+CA510 TIC 24.762900
+CA510 TIC 25.329600
+CA510 TIC 23.149700
+CA510 TIC 41.441100
+CA510 TIC 24.471200
+CA510 TIC 25.675200
+CA510 TIC 23.672200
+CA510 TIC 25.338300
+CA510 TIC 24.415900
+CA510 TIC 25.695000
+CA510 TIC 24.561100
+CA510 TIC 25.065400
+CA510 TIC 36.698100
+CA510 TIC 43.426800
+CA510 TIC 24.209400
+CA510 TIC 25.009800
+CA510 TIC 23.174400
+CA510 TIC 25.537500
+CA510 TIC 25.118700
+CA510 TIC 28.754200
+CA510 TIC 24.051000
+CA510 TIC 25.217100
+CA510 TIC 25.497800
+CA510 TIC 41.939300
+CA510 TIC 23.881300
+CA510 TIC 25.894700
+CA510 TIC 26.416600
+CA510 TIC 26.173200
+CA510 TIC 33.634800
+CA510 TIC 27.214700
+CA510 TIC 23.905200
+CA510 TIC 24.311400
+CA510 TIC 24.411600
+CA510 TIC 44.572500
+CA510 TIC 25.602800
+CA510 TIC 25.764500
+CA510 TIC 24.032000
+CA510 TIC 26.308900
+CA510 TIC 23.133100
+CA510 TIC 24.878500
+CA510 TIC 23.221000
+CA510 TIC 25.187600
+CA510 TIC 23.429300
+CA510 TIC 41.866500
+CA510 TIC 32.873800
+CA510 TIC 26.067300
+CA510 TIC 24.370700
+CA510 TIC 25.338500
+CA510 TIC 24.885600
+CA510 TIC 25.845200
+CA510 TIC 25.172200
+CA510 TIC 29.044100
+CA510 TIC 25.165800
+CA510 TIC 41.657500
+CA510 TIC 24.393000
+CA510 TIC 27.383200
+CA510 TIC 25.607900
+CA510 TIC 25.683100
+CA510 TIC 24.084200
+CA510 TIC 33.167200
+CA510 TIC 24.144300
+CA510 TIC 24.947100
+CA510 TIC 24.854400
+CA510 TIC 41.602600
+CA510 TIC 24.246300
+CA510 TIC 28.714200
+CA510 TIC 28.021500
+CA510 TIC 27.654400
+CA510 TIC 26.896300
+CA510 TIC 29.585400
+CA510 TIC 25.449300
+CA510 TIC 26.533100
+CA510 TIC 26.911500
+CA510 TIC 57.308700
+CA510 TIC 26.830300
+CA510 TIC 29.593700
+CA510 TIC 26.481500
+CA510 TIC 28.230400
+CA510 TIC 26.293500
+CA510 TIC 28.416700
+CA510 TIC 25.717900
+CA510 TIC 27.626700
+CA510 TIC 25.539700
+CA510 TIC 43.531800
+CA510 TIC 26.485300
+CA510 TIC 28.101200
+CA510 TIC 29.849500
+CA510 TIC 28.879500
+CA510 TIC 39.311000
+CA510 TIC 29.189800
+CA510 TIC 29.643300
+CA510 TIC 28.957400
+CA510 TIC 26.339600
+CA510 TIC 44.197600
+CA510 TIC 26.408100
+CA510 TIC 29.601300
+CA510 TIC 26.662700
+CA510 TIC 28.286200
+CA510 TIC 26.105200
+CA510 TIC 30.474100
+CA510 TIC 27.362000
+CA510 TIC 28.172000
+CA510 TIC 26.860700
+CA510 TIC 56.250000
+CA510 TIC 28.790800
+CA510 TIC 27.436800
+CA510 TIC 33.788200
+CA510 TIC 31.180000
+CA510 TIC 29.590000
+CA510 TIC 33.039300
+CA510 TIC 29.985900
+CA510 TIC 30.924100
+CA510 TIC 30.118000
+CA510 TIC 47.382600
+CA510 TIC 31.671500
+CA510 TIC 31.974900
+CA510 TIC 32.883200
+CA510 TIC 32.268800
+CA510 TIC 28.895400
+CA510 TIC 27.818000
+CA510 TIC 40.034900
+CA510 TIC 30.168400
+CA510 TIC 31.484500
+CA510 TIC 46.135600
+CA510 TIC 26.395200
+CA510 TIC 27.670100
+CA510 TIC 27.496700
+CA510 TIC 29.784600
+CA510 TIC 26.549800
+CA510 TIC 28.401400
+CA510 TIC 26.729300
+CA510 TIC 27.748100
+CA510 TIC 26.277000
+CA510 TIC 44.104300
+CA510 TIC 29.521500
+CA510 TIC 27.948100
+CA510 TIC 26.406300
+CA510 TIC 37.814800
+CA510 TIC 27.005000
+CA510 TIC 31.413000
+CA510 TIC 26.575000
+CA510 TIC 28.939600
+CA510 TIC 31.432900
+CA510 TIC 45.680400
+CA510 TIC 26.555400
+CA510 TIC 27.726700
+CA510 TIC 26.251800
+CA510 TIC 28.079500
+CA510 TIC 27.152400
+CA510 TIC 27.458300
+CA510 TIC 27.610400
+CA510 TIC 28.072300
+CA510 TIC 26.073600
+CA510 TIC 52.091500
+CA510 TIC 43.835800
+CA510 TIC 29.348400
+CA510 TIC 29.339600
+CA510 TIC 28.634300
+CA510 TIC 26.960700
+CA510 TIC 31.255900
+CA510 TIC 25.902200
+CA510 TIC 27.444300
+CA510 TIC 25.553100
+CA510 TIC 43.949500
+CA510 TIC 26.922900
+CA510 TIC 27.612300
+CA510 TIC 26.353400
+CA510 TIC 29.564300
+CA510 TIC 25.934300
+CA510 TIC 27.575500
+CA510 TIC 28.010900
+CA510 TIC 34.701200
+CA510 TIC 24.480200
+CA510 TIC 42.359900
+CA510 TIC 25.655900
+CA510 TIC 24.910200
+CA510 TIC 23.353400
+CA510 TIC 25.261500
+CA510 TIC 24.283400
+CA510 TIC 24.894000
+CA510 TIC 25.236700
+CA510 TIC 25.704700
+CA510 TIC 23.741900
+CA510 TIC 41.024000
+CA510 TIC 25.505500
+CA510 TIC 25.875500
+CA510 TIC 25.352400
+CA510 TIC 25.030000
+CA510 TIC 34.483600
+CA510 TIC 26.688700
+CA510 TIC 28.479200
+CA510 TIC 26.206200
+CA510 TIC 24.349500
+CA510 TIC 41.929000
+CA510 TIC 26.109300
+CA510 TIC 26.145700
+CA510 TIC 24.380100
+CA510 TIC 25.582600
+CA510 TIC 23.799600
+CA510 TIC 25.418800
+CA510 TIC 24.379300
+CA510 TIC 25.519200
+CA510 TIC 24.968200
+CA510 TIC 42.843200
+CA510 TIC 31.908600
+CA510 TIC 26.296600
+CA510 TIC 26.162500
+CA510 TIC 25.565200
+CA510 TIC 23.117800
+CA510 TIC 26.804300
+CA510 TIC 25.157500
+CA510 TIC 25.788200
+CA510 TIC 23.689900
+CA510 TIC 43.059400
+CA510 TIC 24.357000
+CA510 TIC 24.677100
+CA510 TIC 23.578400
+CA510 TIC 25.685300
+CA510 TIC 25.711200
+CA510 TIC 24.967900
+CA510 TIC 30.101700
+CA510 TIC 25.904000
+CA510 TIC 24.023800
+CA510 TIC 42.646300
+CA510 TIC 25.219300
+CA510 TIC 25.985400
+CA510 TIC 24.604900
+CA510 TIC 25.127700
+CA510 TIC 26.125100
+CA510 TIC 25.924200
+CA510 TIC 23.451100
+CA510 TIC 25.368200
+CA510 TIC 24.043700
+CA510 TIC 41.637200
+CA510 TIC 23.618800
+CA510 TIC 32.427600
+CA510 TIC 24.523900
+CA510 TIC 25.538000
+CA510 TIC 24.022700
+CA510 TIC 25.390200
+CA510 TIC 25.008200
+CA510 TIC 24.902500
+CA510 TIC 23.423100
+CA510 TIC 41.444100
+CA510 TIC 24.487800
+CA510 TIC 25.043200
+CA510 TIC 24.635600
+CA510 TIC 24.832700
+CA510 TIC 22.897300
+CA510 TIC 25.965300
+CA510 TIC 31.939000
+CA510 TIC 25.919300
+CA510 TIC 24.866100
+CA510 TIC 42.362900
+CA510 TIC 24.350600
+CA510 TIC 24.386800
+CA510 TIC 24.724400
+CA510 TIC 26.789600
+CA510 TIC 24.535600
+CA510 TIC 25.585800
+CA510 TIC 25.027000
+CA510 TIC 25.413900
+CA510 TIC 23.753000
+CA510 TIC 56.039900
+CA510 TIC 27.242500
+CA510 TIC 28.415000
+CA510 TIC 26.237100
+CA510 TIC 29.577200
+CA510 TIC 27.001000
+CA510 TIC 28.532400
+CA510 TIC 26.185100
+CA510 TIC 26.769100
+CA510 TIC 26.264500
+CA510 TIC 47.175600
+CA510 TIC 27.656000
+CA510 TIC 27.637200
+CA510 TIC 38.401200
+CA510 TIC 29.762200
+CA510 TIC 26.881300
+CA510 TIC 28.702300
+CA510 TIC 26.076800
+CA510 TIC 28.393100
+CA510 TIC 26.680100
+CA510 TIC 44.008300
+CA510 TIC 27.891700
+CA510 TIC 28.317600
+CA510 TIC 25.752700
+CA510 TIC 27.364500
+CA510 TIC 26.167700
+CA510 TIC 28.109400
+CA510 TIC 37.072900
+CA510 TIC 29.414500
+CA510 TIC 27.180900
+CA510 TIC 44.926500
+CA510 TIC 27.626100
+CA510 TIC 28.830700
+CA510 TIC 26.620700
+CA510 TIC 28.520900
+CA510 TIC 26.823800
+CA510 TIC 28.078600
+CA510 TIC 26.092100
+CA510 TIC 28.565800
+CA510 TIC 26.402900
+CA510 TIC 44.392200
+CA510 TIC 41.979800
+CA510 TIC 29.372000
+CA510 TIC 25.872500
+CA510 TIC 27.734900
+CA510 TIC 27.453300
+CA510 TIC 30.449600
+CA510 TIC 26.346000
+CA510 TIC 28.577900
+CA510 TIC 28.224200
+CA510 TIC 46.356500
+CA510 TIC 28.232500
+CA510 TIC 27.565600
+CA510 TIC 25.482000
+CA510 TIC 34.935500
+CA510 TIC 29.432900
+CA510 TIC 39.719900
+CA510 TIC 27.245000
+CA510 TIC 30.037700
+CA510 TIC 25.353300
+CA510 TIC 43.876800
+CA510 TIC 27.349800
+CA510 TIC 28.549200
+CA510 TIC 28.792400
+CA510 TIC 28.446900
+CA510 TIC 26.428500
+CA510 TIC 27.489700
+CA510 TIC 30.683900
+CA510 TIC 28.170700
+CA510 TIC 32.689500
+CA510 TIC 50.131500
+CA510 TIC 28.914100
+CA510 TIC 39.994200
+CA510 TIC 30.684200
+CA510 TIC 28.933800
+CA510 TIC 26.463200
+CA510 TIC 27.109700
+CA510 TIC 26.416200
+CA510 TIC 28.398800
+CA510 TIC 27.381400
+CA510 TIC 44.483400
+CA510 TIC 27.027100
+CA510 TIC 27.669500
+CA510 TIC 27.845900
+CA510 TIC 28.766000
+CA510 TIC 25.967500
+CA510 TIC 28.130500
+CA510 TIC 26.574900
+CA510 TIC 27.588900
+CA510 TIC 36.841100
+CA510 TIC 45.008800
+CA510 TIC 27.134700
+CA510 TIC 27.614800
+CA510 TIC 29.407500
+CA510 TIC 29.412200
+CA510 TIC 26.366900
+CA510 TIC 27.984100
+CA510 TIC 25.461900
+CA510 TIC 28.201800
+CA510 TIC 25.367800
+CA510 TIC 45.712100
+CA510 TIC 26.527500
+CA510 TIC 28.290500
+CA510 TIC 26.030700
+CA510 TIC 29.368300
+CA510 TIC 26.781300
+CA510 TIC 33.233700
+CA510 TIC 24.357500
+CA510 TIC 24.568100
+CA510 TIC 23.755300
+CA510 TIC 42.122400
+CA510 TIC 24.619000
+CA510 TIC 25.747400
+CA510 TIC 25.555200
+CA510 TIC 26.484600
+CA510 TIC 23.505800
+CA510 TIC 26.016400
+CA510 TIC 23.065600
+CA510 TIC 26.021400
+CA510 TIC 23.876400
+CA510 TIC 41.578100
+CA510 TIC 25.547200
+CA510 TIC 26.769500
+CA510 TIC 31.489500
+CA510 TIC 25.745100
+CA510 TIC 23.236700
+CA510 TIC 25.086600
+CA510 TIC 23.658600
+CA510 TIC 26.148400
+CA510 TIC 24.925300
+CA510 TIC 42.481000
+CA510 TIC 25.396900
+CA510 TIC 26.334400
+CA510 TIC 25.361000
+CA510 TIC 25.863700
+CA510 TIC 23.962100
+CA510 TIC 24.287700
+CA510 TIC 27.308200
+CA510 TIC 26.605600
+CA510 TIC 24.054400
+CA510 TIC 50.362500
+CA510 TIC 25.903500
+CA510 TIC 25.453300
+CA510 TIC 24.128000
+CA510 TIC 24.774800
+CA510 TIC 23.495500
+CA510 TIC 25.012600
+CA510 TIC 25.873200
+CA510 TIC 26.339100
+CA510 TIC 24.012500
+CA510 TIC 41.747400
+CA510 TIC 26.548200
+CA510 TIC 25.671700
+CA510 TIC 23.432800
+CA510 TIC 24.624600
+CA510 TIC 23.926300
+CA510 TIC 32.403800
+CA510 TIC 23.588800
+CA510 TIC 25.127200
+CA510 TIC 24.993700
+CA510 TIC 41.366000
+CA510 TIC 25.184900
+CA510 TIC 26.456400
+CA510 TIC 24.566500
+CA510 TIC 25.428600
+CA510 TIC 23.851700
+CA510 TIC 25.357400
+CA510 TIC 24.037000
+CA510 TIC 24.717800
+CA510 TIC 25.089500
+CA510 TIC 42.219300
+CA510 TIC 31.198900
+CA510 TIC 26.086900
+CA510 TIC 28.798500
+CA510 TIC 26.627600
+CA510 TIC 23.739000
+CA510 TIC 24.895900
+CA510 TIC 25.329300
+CA510 TIC 26.443100
+CA510 TIC 23.767800
+CA510 TIC 41.275900
+CA510 TIC 24.746500
+CA510 TIC 26.222800
+CA510 TIC 23.727600
+CA510 TIC 25.478000
+CA510 TIC 34.183900
+CA510 TIC 26.849100
+CA510 TIC 24.422000
+CA510 TIC 25.392300
+CA510 TIC 27.265000
+CA510 TIC 45.432900
+CA510 TIC 27.500300
+CA510 TIC 24.752400
+CA510 TIC 23.340300
+CA510 TIC 24.547600
+CA510 TIC 23.672900
+CA510 TIC 24.716200
+CA510 TIC 27.806700
+CA510 TIC 29.511300
+CA510 TIC 38.500800
+CA510 TIC 45.396500
+CA510 TIC 27.377900
+CA510 TIC 27.073200
+CA510 TIC 26.159200
+CA510 TIC 27.012500
+CA510 TIC 26.102300
+CA510 TIC 27.754600
+CA510 TIC 25.410000
+CA510 TIC 26.666000
+CA510 TIC 31.175800
+CA510 TIC 44.659800
+CA510 TIC 26.372400
+CA510 TIC 38.745400
+CA510 TIC 27.535400
+CA510 TIC 27.323700
+CA510 TIC 27.313100
+CA510 TIC 27.802700
+CA510 TIC 25.835800
+CA510 TIC 29.136200
+CA510 TIC 27.549000
+CA510 TIC 45.362600
+CA510 TIC 27.390300
+CA510 TIC 28.269900
+CA510 TIC 27.014100
+CA510 TIC 27.223500
+CA510 TIC 27.044400
+CA510 TIC 41.666200
+CA510 TIC 27.397500
+CA510 TIC 28.758800
+CA510 TIC 29.701800
+CA510 TIC 47.529700
+CA510 TIC 27.363800
+CA510 TIC 28.371600
+CA510 TIC 26.578300
+CA510 TIC 28.029400
+CA510 TIC 27.217500
+CA510 TIC 28.545300
+CA510 TIC 26.965700
+CA510 TIC 28.179400
+CA510 TIC 29.388200
+CA510 TIC 43.593300
+CA510 TIC 37.072500
+CA510 TIC 29.898600
+CA510 TIC 25.436500
+CA510 TIC 27.367300
+CA510 TIC 25.708900
+CA510 TIC 27.333600
+CA510 TIC 26.556300
+CA510 TIC 31.519400
+CA510 TIC 34.024600
+CA510 TIC 48.065100
+CA510 TIC 29.135000
+CA510 TIC 31.523000
+CA510 TIC 28.077300
+CA510 TIC 30.015100
+CA510 TIC 27.013400
+CA510 TIC 28.179800
+CA510 TIC 36.033900
+CA510 TIC 29.855300
+CA510 TIC 27.070500
+CA510 TIC 43.210200
+CA510 TIC 28.270700
+CA510 TIC 27.977600
+CA510 TIC 26.210700
+CA510 TIC 27.481800
+CA510 TIC 27.319200
+CA510 TIC 27.539700
+CA510 TIC 25.736400
+CA510 TIC 27.482700
+CA510 TIC 26.488600
+CA510 TIC 43.902600
+CA510 TIC 27.792800
+CA510 TIC 27.439300
+CA510 TIC 26.036400
+CA510 TIC 39.960900
+CA510 TIC 30.557400
+CA510 TIC 27.604300
+CA510 TIC 26.198100
+CA510 TIC 27.340500
+CA510 TIC 26.847300
+CA510 TIC 44.091600
+CA510 TIC 27.098600
+CA510 TIC 28.312400
+CA510 TIC 26.019900
+CA510 TIC 27.562700
+CA510 TIC 26.492800
+CA510 TIC 28.228400
+CA510 TIC 27.160000
+CA510 TIC 29.355200
+CA510 TIC 26.784500
+CA510 TIC 44.018300
+CA510 TIC 41.335200
+CA510 TIC 28.060300
+CA510 TIC 26.388600
+CA510 TIC 27.489900
+CA510 TIC 26.704100
+CA510 TIC 26.842800
+CA510 TIC 26.932700
+CA510 TIC 28.447800
+CA510 TIC 26.119600
+CA510 TIC 43.822900
+CA510 TIC 26.997300
+CA510 TIC 28.200200
+CA510 TIC 24.970900
+CA510 TIC 28.323000
+CA510 TIC 25.012300
+CA510 TIC 26.377300
+CA510 TIC 23.248700
+CA510 TIC 33.216400
+CA510 TIC 28.380200
+CA510 TIC 43.145900
+CA510 TIC 24.481700
+CA510 TIC 25.122900
+CA510 TIC 23.933500
+CA510 TIC 24.527300
+CA510 TIC 23.688400
+CA510 TIC 25.477300
+CA510 TIC 24.029300
+CA510 TIC 25.423500
+CA510 TIC 24.333900
+CA510 TIC 41.813600
+CA510 TIC 24.589700
+CA510 TIC 26.825400
+CA510 TIC 26.446900
+CA510 TIC 25.989600
+CA510 RESULT normal campaign window complete
+CA851 SERVICE tic=3599 metric=0 total=0.018300 maximum=0.000500 calls=151
+CA851 SERVICE tic=3599 metric=1 total=0.010900 maximum=0.000300 calls=151
+CA851 SERVICE tic=3599 metric=5 total=1.205300 maximum=0.053600 calls=151
+CA851 SERVICE tic=3599 metric=6 total=0.009400 maximum=0.000100 calls=151
+CA851 SERVICE tic=3599 metric=7 total=0.084700 maximum=0.001400 calls=151
+CA851 SERVICE tic=3616 metric=0 total=0.022100 maximum=0.000500 calls=184
+CA851 SERVICE tic=3616 metric=1 total=1.260600 maximum=0.280100 calls=184
+CA851 SERVICE tic=3616 metric=2 total=0.016900 maximum=0.004200 calls=34
+CA851 SERVICE tic=3616 metric=3 total=0.087100 maximum=0.006200 calls=34
+CA851 SERVICE tic=3616 metric=4 total=0.023800 maximum=0.001700 calls=34
+CA851 SERVICE tic=3616 metric=5 total=1.202900 maximum=0.022600 calls=150
+CA851 SERVICE tic=3616 metric=6 total=0.010200 maximum=0.000100 calls=150
+CA851 SERVICE tic=3616 metric=7 total=0.077400 maximum=0.001200 calls=150
+CA851 SERVICE tic=3633 metric=0 total=0.019800 maximum=0.000500 calls=151
+CA851 SERVICE tic=3633 metric=1 total=0.021300 maximum=0.010500 calls=151
+CA851 SERVICE tic=3633 metric=2 total=0.000100 maximum=0.000100 calls=1
+CA851 SERVICE tic=3633 metric=3 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=3633 metric=4 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=3633 metric=5 total=1.186800 maximum=0.017100 calls=150
+CA851 SERVICE tic=3633 metric=6 total=0.010700 maximum=0.000100 calls=150
+CA851 SERVICE tic=3633 metric=7 total=0.085500 maximum=0.001900 calls=150
+CA851 SERVICE tic=3650 metric=0 total=0.019300 maximum=0.000500 calls=155
+CA851 SERVICE tic=3650 metric=1 total=1.221900 maximum=0.279900 calls=155
+CA851 SERVICE tic=3650 metric=2 total=0.016000 maximum=0.003700 calls=5
+CA851 SERVICE tic=3650 metric=3 total=0.033900 maximum=0.008900 calls=5
+CA851 SERVICE tic=3650 metric=4 total=0.004500 maximum=0.001700 calls=5
+CA851 SERVICE tic=3650 metric=5 total=1.153200 maximum=0.016200 calls=150
+CA851 SERVICE tic=3650 metric=6 total=0.009900 maximum=0.000100 calls=150
+CA851 SERVICE tic=3650 metric=7 total=0.082200 maximum=0.001500 calls=150
+CA851 SERVICE tic=3667 metric=0 total=0.017700 maximum=0.000500 calls=150
+CA851 SERVICE tic=3667 metric=1 total=0.010000 maximum=0.000200 calls=150
+CA851 SERVICE tic=3667 metric=5 total=1.224900 maximum=0.019100 calls=150
+CA851 SERVICE tic=3667 metric=6 total=0.010200 maximum=0.000100 calls=150
+CA851 SERVICE tic=3667 metric=7 total=0.082400 maximum=0.001400 calls=150
+CA851 SERVICE tic=3684 metric=0 total=0.069500 maximum=0.000400 calls=1120
+CA851 SERVICE tic=3684 metric=1 total=2.471600 maximum=0.267800 calls=1120
+CA851 SERVICE tic=3684 metric=2 total=2.214400 maximum=0.005600 calls=970
+CA851 SERVICE tic=3684 metric=3 total=3.834300 maximum=0.009900 calls=970
+CA851 SERVICE tic=3684 metric=4 total=0.703300 maximum=0.003800 calls=970
+CA851 SERVICE tic=3684 metric=5 total=1.234200 maximum=0.018500 calls=150
+CA851 SERVICE tic=3684 metric=6 total=0.008800 maximum=0.000100 calls=150
+CA851 SERVICE tic=3684 metric=7 total=0.077500 maximum=0.001300 calls=150
+CA851 SERVICE tic=3701 metric=0 total=0.019500 maximum=0.000400 calls=151
+CA851 SERVICE tic=3701 metric=1 total=0.022900 maximum=0.011300 calls=151
+CA851 SERVICE tic=3701 metric=2 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=3701 metric=3 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=3701 metric=4 total=0.000100 maximum=0.000100 calls=1
+CA851 SERVICE tic=3701 metric=5 total=1.249700 maximum=0.021500 calls=150
+CA851 SERVICE tic=3701 metric=6 total=0.011500 maximum=0.000500 calls=150
+CA851 SERVICE tic=3701 metric=7 total=0.089400 maximum=0.001600 calls=150
+CA851 SERVICE tic=3718 metric=0 total=0.020100 maximum=0.000500 calls=155
+CA851 SERVICE tic=3718 metric=1 total=1.182500 maximum=0.282400 calls=155
+CA851 SERVICE tic=3718 metric=2 total=0.016000 maximum=0.003900 calls=5
+CA851 SERVICE tic=3718 metric=3 total=0.033200 maximum=0.009200 calls=5
+CA851 SERVICE tic=3718 metric=4 total=0.005900 maximum=0.001600 calls=5
+CA851 SERVICE tic=3718 metric=5 total=1.139100 maximum=0.015900 calls=150
+CA851 SERVICE tic=3718 metric=6 total=0.009600 maximum=0.000100 calls=150
+CA851 SERVICE tic=3718 metric=7 total=0.083800 maximum=0.001500 calls=150
+CA851 SERVICE tic=3735 metric=0 total=0.018900 maximum=0.000400 calls=150
+CA851 SERVICE tic=3735 metric=1 total=0.010800 maximum=0.000200 calls=150
+CA851 SERVICE tic=3735 metric=5 total=1.190400 maximum=0.016900 calls=150
+CA851 SERVICE tic=3735 metric=6 total=0.010000 maximum=0.000100 calls=150
+CA851 SERVICE tic=3735 metric=7 total=0.080300 maximum=0.001300 calls=150
+CA851 SERVICE tic=3752 metric=0 total=0.020500 maximum=0.000500 calls=182
+CA851 SERVICE tic=3752 metric=1 total=1.221900 maximum=0.282600 calls=182
+CA851 SERVICE tic=3752 metric=2 total=0.015400 maximum=0.004600 calls=32
+CA851 SERVICE tic=3752 metric=3 total=0.087600 maximum=0.005900 calls=32
+CA851 SERVICE tic=3752 metric=4 total=0.021300 maximum=0.001500 calls=32
+CA851 SERVICE tic=3752 metric=5 total=1.161300 maximum=0.016200 calls=150
+CA851 SERVICE tic=3752 metric=6 total=0.010500 maximum=0.000100 calls=150
+CA851 SERVICE tic=3752 metric=7 total=0.083300 maximum=0.003600 calls=150
+CA851 SERVICE tic=3769 metric=0 total=0.019300 maximum=0.000400 calls=152
+CA851 SERVICE tic=3769 metric=1 total=0.022500 maximum=0.010800 calls=152
+CA851 SERVICE tic=3769 metric=2 total=0.000100 maximum=0.000100 calls=1
+CA851 SERVICE tic=3769 metric=3 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=3769 metric=4 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=3769 metric=5 total=1.187300 maximum=0.015500 calls=151
+CA851 SERVICE tic=3769 metric=6 total=0.011000 maximum=0.000100 calls=151
+CA851 SERVICE tic=3769 metric=7 total=0.084100 maximum=0.001400 calls=151
+CA851 SERVICE tic=3786 metric=0 total=0.020400 maximum=0.000500 calls=155
+CA851 SERVICE tic=3786 metric=1 total=1.282800 maximum=0.302200 calls=155
+CA851 SERVICE tic=3786 metric=2 total=0.018500 maximum=0.004700 calls=5
+CA851 SERVICE tic=3786 metric=3 total=0.036800 maximum=0.009700 calls=5
+CA851 SERVICE tic=3786 metric=4 total=0.006800 maximum=0.002100 calls=5
+CA851 SERVICE tic=3786 metric=5 total=1.214100 maximum=0.015000 calls=150
+CA851 SERVICE tic=3786 metric=6 total=0.008600 maximum=0.000100 calls=150
+CA851 SERVICE tic=3786 metric=7 total=0.083500 maximum=0.001400 calls=150
+CA851 SERVICE tic=3803 metric=0 total=0.018800 maximum=0.000500 calls=150
+CA851 SERVICE tic=3803 metric=1 total=0.010900 maximum=0.000100 calls=150
+CA851 SERVICE tic=3803 metric=5 total=1.176500 maximum=0.018400 calls=150
+CA851 SERVICE tic=3803 metric=6 total=0.010200 maximum=0.000100 calls=150
+CA851 SERVICE tic=3803 metric=7 total=0.081400 maximum=0.001400 calls=150
+CA851 SERVICE tic=3820 metric=0 total=0.024300 maximum=0.000700 calls=182
+CA851 SERVICE tic=3820 metric=1 total=1.671500 maximum=0.362900 calls=182
+CA851 SERVICE tic=3820 metric=2 total=0.018300 maximum=0.006200 calls=32
+CA851 SERVICE tic=3820 metric=3 total=0.092700 maximum=0.008200 calls=32
+CA851 SERVICE tic=3820 metric=4 total=0.026700 maximum=0.002200 calls=32
+CA851 SERVICE tic=3820 metric=5 total=1.479900 maximum=0.026700 calls=150
+CA851 SERVICE tic=3820 metric=6 total=0.010500 maximum=0.000100 calls=150
+CA851 SERVICE tic=3820 metric=7 total=0.085900 maximum=0.001700 calls=150
+CA851 SERVICE tic=3837 metric=0 total=0.019300 maximum=0.000400 calls=151
+CA851 SERVICE tic=3837 metric=1 total=0.021200 maximum=0.011400 calls=151
+CA851 SERVICE tic=3837 metric=2 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=3837 metric=3 total=0.000100 maximum=0.000100 calls=1
+CA851 SERVICE tic=3837 metric=4 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=3837 metric=5 total=1.189400 maximum=0.019800 calls=150
+CA851 SERVICE tic=3837 metric=6 total=0.009800 maximum=0.000100 calls=150
+CA851 SERVICE tic=3837 metric=7 total=0.082500 maximum=0.001400 calls=150
+CA851 SERVICE tic=3854 metric=0 total=0.068400 maximum=0.000400 calls=1093
+CA851 SERVICE tic=3854 metric=1 total=2.492300 maximum=0.300400 calls=1093
+CA851 SERVICE tic=3854 metric=2 total=2.219600 maximum=0.006000 calls=943
+CA851 SERVICE tic=3854 metric=3 total=3.802100 maximum=0.011500 calls=943
+CA851 SERVICE tic=3854 metric=4 total=0.686600 maximum=0.003300 calls=943
+CA851 SERVICE tic=3854 metric=5 total=1.171400 maximum=0.015900 calls=150
+CA851 SERVICE tic=3854 metric=6 total=0.009200 maximum=0.000100 calls=150
+CA851 SERVICE tic=3854 metric=7 total=0.083700 maximum=0.001600 calls=150
+CA851 SERVICE tic=3871 metric=0 total=0.018200 maximum=0.000400 calls=150
+CA851 SERVICE tic=3871 metric=1 total=0.011300 maximum=0.000200 calls=150
+CA851 SERVICE tic=3871 metric=5 total=1.171000 maximum=0.019300 calls=150
+CA851 SERVICE tic=3871 metric=6 total=0.009200 maximum=0.000100 calls=150
+CA851 SERVICE tic=3871 metric=7 total=0.077700 maximum=0.001100 calls=150
+CA851 SERVICE tic=3888 metric=0 total=0.020600 maximum=0.000400 calls=182
+CA851 SERVICE tic=3888 metric=1 total=1.242900 maximum=0.291000 calls=182
+CA851 SERVICE tic=3888 metric=2 total=0.015300 maximum=0.004600 calls=32
+CA851 SERVICE tic=3888 metric=3 total=0.086500 maximum=0.006800 calls=32
+CA851 SERVICE tic=3888 metric=4 total=0.022200 maximum=0.001900 calls=32
+CA851 SERVICE tic=3888 metric=5 total=1.150600 maximum=0.016900 calls=150
+CA851 SERVICE tic=3888 metric=6 total=0.009500 maximum=0.000100 calls=150
+CA851 SERVICE tic=3888 metric=7 total=0.084000 maximum=0.001300 calls=150
+CA851 SERVICE tic=3905 metric=0 total=0.018600 maximum=0.000500 calls=151
+CA851 SERVICE tic=3905 metric=1 total=0.025700 maximum=0.015200 calls=151
+CA851 SERVICE tic=3905 metric=2 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=3905 metric=3 total=0.000100 maximum=0.000100 calls=1
+CA851 SERVICE tic=3905 metric=4 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=3905 metric=5 total=1.294600 maximum=0.021400 calls=150
+CA851 SERVICE tic=3905 metric=6 total=0.009600 maximum=0.000100 calls=150
+CA851 SERVICE tic=3905 metric=7 total=0.085600 maximum=0.001400 calls=150
+CA851 SERVICE tic=3922 metric=0 total=0.019600 maximum=0.000400 calls=155
+CA851 SERVICE tic=3922 metric=1 total=1.249800 maximum=0.290000 calls=155
+CA851 SERVICE tic=3922 metric=2 total=0.016100 maximum=0.003900 calls=5
+CA851 SERVICE tic=3922 metric=3 total=0.033000 maximum=0.008800 calls=5
+CA851 SERVICE tic=3922 metric=4 total=0.006400 maximum=0.001800 calls=5
+CA851 SERVICE tic=3922 metric=5 total=1.168000 maximum=0.020900 calls=150
+CA851 SERVICE tic=3922 metric=6 total=0.009400 maximum=0.000100 calls=150
+CA851 SERVICE tic=3922 metric=7 total=0.087800 maximum=0.004100 calls=150
+CA851 SERVICE tic=3939 metric=0 total=0.020400 maximum=0.000500 calls=151
+CA851 SERVICE tic=3939 metric=1 total=0.011100 maximum=0.000200 calls=151
+CA851 SERVICE tic=3939 metric=5 total=1.247400 maximum=0.021900 calls=151
+CA851 SERVICE tic=3939 metric=6 total=0.009700 maximum=0.000200 calls=151
+CA851 SERVICE tic=3939 metric=7 total=0.082400 maximum=0.001300 calls=151
+CA851 SERVICE tic=3956 metric=0 total=0.022100 maximum=0.000500 calls=182
+CA851 SERVICE tic=3956 metric=1 total=1.238800 maximum=0.292000 calls=182
+CA851 SERVICE tic=3956 metric=2 total=0.014700 maximum=0.004600 calls=32
+CA851 SERVICE tic=3956 metric=3 total=0.085400 maximum=0.007200 calls=32
+CA851 SERVICE tic=3956 metric=4 total=0.023100 maximum=0.001700 calls=32
+CA851 SERVICE tic=3956 metric=5 total=1.186800 maximum=0.016500 calls=150
+CA851 SERVICE tic=3956 metric=6 total=0.009300 maximum=0.000100 calls=150
+CA851 SERVICE tic=3956 metric=7 total=0.082700 maximum=0.001500 calls=150
+CA851 SERVICE tic=3973 metric=0 total=0.019400 maximum=0.000500 calls=151
+CA851 SERVICE tic=3973 metric=1 total=0.023100 maximum=0.012400 calls=151
+CA851 SERVICE tic=3973 metric=2 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=3973 metric=3 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=3973 metric=4 total=0.000100 maximum=0.000100 calls=1
+CA851 SERVICE tic=3973 metric=5 total=1.174200 maximum=0.016700 calls=150
+CA851 SERVICE tic=3973 metric=6 total=0.008300 maximum=0.000100 calls=150
+CA851 SERVICE tic=3973 metric=7 total=0.085200 maximum=0.003900 calls=150
+CA851 SERVICE tic=3990 metric=0 total=0.017900 maximum=0.000400 calls=155
+CA851 SERVICE tic=3990 metric=1 total=1.168400 maximum=0.279000 calls=155
+CA851 SERVICE tic=3990 metric=2 total=0.016000 maximum=0.003900 calls=5
+CA851 SERVICE tic=3990 metric=3 total=0.026400 maximum=0.006900 calls=5
+CA851 SERVICE tic=3990 metric=4 total=0.004100 maximum=0.001500 calls=5
+CA851 SERVICE tic=3990 metric=5 total=1.151000 maximum=0.019600 calls=150
+CA851 SERVICE tic=3990 metric=6 total=0.010600 maximum=0.000100 calls=150
+CA851 SERVICE tic=3990 metric=7 total=0.080500 maximum=0.001300 calls=150
+CA851 SERVICE tic=4007 metric=0 total=0.018700 maximum=0.000500 calls=150
+CA851 SERVICE tic=4007 metric=1 total=0.010800 maximum=0.000200 calls=150
+CA851 SERVICE tic=4007 metric=5 total=1.152700 maximum=0.018800 calls=150
+CA851 SERVICE tic=4007 metric=6 total=0.010000 maximum=0.000200 calls=150
+CA851 SERVICE tic=4007 metric=7 total=0.082000 maximum=0.001400 calls=150
+CA851 SERVICE tic=4024 metric=0 total=0.072600 maximum=0.000500 calls=1120
+CA851 SERVICE tic=4024 metric=1 total=2.698200 maximum=0.308800 calls=1120
+CA851 SERVICE tic=4024 metric=2 total=2.186700 maximum=0.007700 calls=970
+CA851 SERVICE tic=4024 metric=3 total=3.869000 maximum=0.010900 calls=970
+CA851 SERVICE tic=4024 metric=4 total=0.711200 maximum=0.002000 calls=970
+CA851 SERVICE tic=4024 metric=5 total=1.180200 maximum=0.017700 calls=150
+CA851 SERVICE tic=4024 metric=6 total=0.009700 maximum=0.000100 calls=150
+CA851 SERVICE tic=4024 metric=7 total=0.077700 maximum=0.001100 calls=150
+CA851 SERVICE tic=4041 metric=0 total=0.020600 maximum=0.000500 calls=151
+CA851 SERVICE tic=4041 metric=1 total=0.023800 maximum=0.012800 calls=151
+CA851 SERVICE tic=4041 metric=2 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=4041 metric=3 total=0.000100 maximum=0.000100 calls=1
+CA851 SERVICE tic=4041 metric=4 total=0.000100 maximum=0.000100 calls=1
+CA851 SERVICE tic=4041 metric=5 total=1.386300 maximum=0.024900 calls=150
+CA851 SERVICE tic=4041 metric=6 total=0.010900 maximum=0.000200 calls=150
+CA851 SERVICE tic=4041 metric=7 total=0.090400 maximum=0.001900 calls=150
+CA851 SERVICE tic=4058 metric=0 total=0.017400 maximum=0.000300 calls=155
+CA851 SERVICE tic=4058 metric=1 total=1.272500 maximum=0.295600 calls=155
+CA851 SERVICE tic=4058 metric=2 total=0.016000 maximum=0.003800 calls=5
+CA851 SERVICE tic=4058 metric=3 total=0.034900 maximum=0.009800 calls=5
+CA851 SERVICE tic=4058 metric=4 total=0.005800 maximum=0.001600 calls=5
+CA851 SERVICE tic=4058 metric=5 total=1.228500 maximum=0.019000 calls=150
+CA851 SERVICE tic=4058 metric=6 total=0.010000 maximum=0.000100 calls=150
+CA851 SERVICE tic=4058 metric=7 total=0.083300 maximum=0.001400 calls=150
+CA851 SERVICE tic=4075 metric=0 total=0.019300 maximum=0.000400 calls=150
+CA851 SERVICE tic=4075 metric=1 total=0.011100 maximum=0.000500 calls=150
+CA851 SERVICE tic=4075 metric=5 total=1.147200 maximum=0.017200 calls=150
+CA851 SERVICE tic=4075 metric=6 total=0.009100 maximum=0.000100 calls=150
+CA851 SERVICE tic=4075 metric=7 total=0.085600 maximum=0.001200 calls=150
+CA851 SERVICE tic=4092 metric=0 total=0.022300 maximum=0.000500 calls=182
+CA851 SERVICE tic=4092 metric=1 total=1.196800 maximum=0.296200 calls=182
+CA851 SERVICE tic=4092 metric=2 total=0.014900 maximum=0.004700 calls=32
+CA851 SERVICE tic=4092 metric=3 total=0.082500 maximum=0.006700 calls=32
+CA851 SERVICE tic=4092 metric=4 total=0.022600 maximum=0.001700 calls=32
+CA851 SERVICE tic=4092 metric=5 total=1.211300 maximum=0.054900 calls=150
+CA851 SERVICE tic=4092 metric=6 total=0.009800 maximum=0.000100 calls=150
+CA851 SERVICE tic=4092 metric=7 total=0.080300 maximum=0.001200 calls=150
+CA851 SERVICE tic=4109 metric=0 total=0.018900 maximum=0.000400 calls=152
+CA851 SERVICE tic=4109 metric=1 total=0.025300 maximum=0.015600 calls=152
+CA851 SERVICE tic=4109 metric=2 total=0.000100 maximum=0.000100 calls=1
+CA851 SERVICE tic=4109 metric=3 total=0.000100 maximum=0.000100 calls=1
+CA851 SERVICE tic=4109 metric=4 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=4109 metric=5 total=1.246200 maximum=0.058700 calls=151
+CA851 SERVICE tic=4109 metric=6 total=0.010500 maximum=0.000100 calls=151
+CA851 SERVICE tic=4109 metric=7 total=0.083900 maximum=0.001400 calls=151
+CA851 SERVICE tic=4126 metric=0 total=0.019200 maximum=0.000500 calls=155
+CA851 SERVICE tic=4126 metric=1 total=1.123200 maximum=0.267400 calls=155
+CA851 SERVICE tic=4126 metric=2 total=0.015100 maximum=0.003700 calls=5
+CA851 SERVICE tic=4126 metric=3 total=0.030800 maximum=0.007300 calls=5
+CA851 SERVICE tic=4126 metric=4 total=0.005400 maximum=0.001600 calls=5
+CA851 SERVICE tic=4126 metric=5 total=1.125600 maximum=0.017800 calls=150
+CA851 SERVICE tic=4126 metric=6 total=0.009900 maximum=0.000100 calls=150
+CA851 SERVICE tic=4126 metric=7 total=0.085600 maximum=0.001400 calls=150
+CA851 SERVICE tic=4143 metric=0 total=0.018200 maximum=0.000400 calls=150
+CA851 SERVICE tic=4143 metric=1 total=0.011800 maximum=0.000200 calls=150
+CA851 SERVICE tic=4143 metric=5 total=1.131200 maximum=0.018900 calls=150
+CA851 SERVICE tic=4143 metric=6 total=0.010200 maximum=0.000100 calls=150
+CA851 SERVICE tic=4143 metric=7 total=0.083300 maximum=0.001200 calls=150
+CA851 SERVICE tic=4160 metric=0 total=0.021800 maximum=0.000500 calls=182
+CA851 SERVICE tic=4160 metric=1 total=1.257700 maximum=0.303100 calls=182
+CA851 SERVICE tic=4160 metric=2 total=0.014600 maximum=0.004700 calls=32
+CA851 SERVICE tic=4160 metric=3 total=0.085200 maximum=0.006900 calls=32
+CA851 SERVICE tic=4160 metric=4 total=0.023300 maximum=0.001800 calls=32
+CA851 SERVICE tic=4160 metric=5 total=1.221900 maximum=0.019100 calls=150
+CA851 SERVICE tic=4160 metric=6 total=0.009900 maximum=0.000200 calls=150
+CA851 SERVICE tic=4160 metric=7 total=0.079600 maximum=0.001400 calls=150
+CA851 SERVICE tic=4177 metric=0 total=0.018300 maximum=0.000400 calls=151
+CA851 SERVICE tic=4177 metric=1 total=0.023400 maximum=0.013300 calls=151
+CA851 SERVICE tic=4177 metric=2 total=0.000100 maximum=0.000100 calls=1
+CA851 SERVICE tic=4177 metric=3 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=4177 metric=4 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=4177 metric=5 total=1.187500 maximum=0.021500 calls=150
+CA851 SERVICE tic=4177 metric=6 total=0.008700 maximum=0.000100 calls=150
+CA851 SERVICE tic=4177 metric=7 total=0.086000 maximum=0.001500 calls=150
+CA851 SERVICE tic=4194 metric=0 total=0.070500 maximum=0.000500 calls=1093
+CA851 SERVICE tic=4194 metric=1 total=2.436900 maximum=0.284100 calls=1093
+CA851 SERVICE tic=4194 metric=2 total=2.152700 maximum=0.010800 calls=943
+CA851 SERVICE tic=4194 metric=3 total=3.804800 maximum=0.010000 calls=943
+CA851 SERVICE tic=4194 metric=4 total=0.689000 maximum=0.002200 calls=943
+CA851 SERVICE tic=4194 metric=5 total=1.218200 maximum=0.019800 calls=150
+CA851 SERVICE tic=4194 metric=6 total=0.010400 maximum=0.000100 calls=150
+CA851 SERVICE tic=4194 metric=7 total=0.084400 maximum=0.001600 calls=150
+CA851 SERVICE tic=4211 metric=0 total=0.018900 maximum=0.000600 calls=150
+CA851 SERVICE tic=4211 metric=1 total=0.009200 maximum=0.000200 calls=150
+CA851 SERVICE tic=4211 metric=5 total=1.124100 maximum=0.018400 calls=150
+CA851 SERVICE tic=4211 metric=6 total=0.009200 maximum=0.000100 calls=150
+CA851 SERVICE tic=4211 metric=7 total=0.082700 maximum=0.001100 calls=150
+CA851 SERVICE tic=4228 metric=0 total=0.022900 maximum=0.000500 calls=182
+CA851 SERVICE tic=4228 metric=1 total=1.213500 maximum=0.313600 calls=182
+CA851 SERVICE tic=4228 metric=2 total=0.015300 maximum=0.004800 calls=32
+CA851 SERVICE tic=4228 metric=3 total=0.090800 maximum=0.007200 calls=32
+CA851 SERVICE tic=4228 metric=4 total=0.024200 maximum=0.001900 calls=32
+CA851 SERVICE tic=4228 metric=5 total=1.285300 maximum=0.030400 calls=150
+CA851 SERVICE tic=4228 metric=6 total=0.010000 maximum=0.000100 calls=150
+CA851 SERVICE tic=4228 metric=7 total=0.083800 maximum=0.001400 calls=150
+CA851 SERVICE tic=4245 metric=0 total=0.018400 maximum=0.000400 calls=151
+CA851 SERVICE tic=4245 metric=1 total=0.023500 maximum=0.013700 calls=151
+CA851 SERVICE tic=4245 metric=2 total=0.000000 maximum=0.000000 calls=1
+CA851 SERVICE tic=4245 metric=3 total=0.000100 maximum=0.000100 calls=1
+CA851 SERVICE tic=4245 metric=4 total=0.000100 maximum=0.000100 calls=1
+CA851 SERVICE tic=4245 metric=5 total=1.229500 maximum=0.023300 calls=150
+CA851 SERVICE tic=4245 metric=6 total=0.009900 maximum=0.000100 calls=150
+CA851 SERVICE tic=4245 metric=7 total=0.090500 maximum=0.001500 calls=150
+CA851 SERVICE tic=4262 metric=0 total=0.019600 maximum=0.000400 calls=155
+CA851 SERVICE tic=4262 metric=1 total=1.270600 maximum=0.301100 calls=155
+CA851 SERVICE tic=4262 metric=2 total=0.016300 maximum=0.003900 calls=5
+CA851 SERVICE tic=4262 metric=3 total=0.035800 maximum=0.008900 calls=5
+CA851 SERVICE tic=4262 metric=4 total=0.006000 maximum=0.001700 calls=5
+CA851 SERVICE tic=4262 metric=5 total=1.290700 maximum=0.029200 calls=150
+CA851 SERVICE tic=4262 metric=6 total=0.010600 maximum=0.000300 calls=150
+CA851 SERVICE tic=4262 metric=7 total=0.084600 maximum=0.001500 calls=150
+CA851 SERVICE tic=4279 metric=0 total=0.018600 maximum=0.000500 calls=151
+CA851 SERVICE tic=4279 metric=1 total=0.011300 maximum=0.000200 calls=151
+CA851 SERVICE tic=4279 metric=5 total=1.159300 maximum=0.020300 calls=151
+CA851 SERVICE tic=4279 metric=6 total=0.009200 maximum=0.000100 calls=151
+CA851 SERVICE tic=4279 metric=7 total=0.084700 maximum=0.001200 calls=151
+CA851 SERVICE tic=4296 metric=0 total=0.022200 maximum=0.000500 calls=182
+CA851 SERVICE tic=4296 metric=1 total=1.257000 maximum=0.303300 calls=182
+CA851 SERVICE tic=4296 metric=2 total=0.014400 maximum=0.004700 calls=32
+CA851 SERVICE tic=4296 metric=3 total=0.086300 maximum=0.007000 calls=32
+CA851 SERVICE tic=4296 metric=4 total=0.022500 maximum=0.002100 calls=32
+CA851 SERVICE tic=4296 metric=5 total=1.182300 maximum=0.016600 calls=150
+CA851 SERVICE tic=4296 metric=6 total=0.009300 maximum=0.000100 calls=150
+CA851 SERVICE tic=4296 metric=7 total=0.077000 maximum=0.001100 calls=150
+CA851 SERVICES_COMPLETE
+CA435SYNC OK peer=0 map=MAP03 tic=4375
+CA510 FRAME 539.376600
+CA510 FRAME 475.982200
+CA510 FRAME 454.079400
+CA510 FRAME 447.542000
+CA510 FRAME 441.366500
+CA510 FRAME 409.210800
+CA510 FRAME 411.939000
+CA510 FRAME 441.020200
+CA510 FRAME 463.894900
+CA510 FRAME 546.200400
+CA510 FRAME 523.302700
+CA510 FRAME 530.644500
+CA510 FRAME 499.679900
+CA510 FRAME 464.776600
+CA510 FRAME 451.323300
+CA510 FRAME 424.701500
+CA510 FRAME 415.706200
+CA510 FRAME 393.827400
+CA510 FRAME 369.318000
+CA510 FRAME 388.300000
+CA510 FRAME 411.005800
+CA510 FRAME 435.768000
+CA510 FRAME 454.115400
+CA510 FRAME 504.191800
+CA510 FRAME 497.622500
+CA510 FRAME 511.781600
+CA510 FRAME 465.097900
+CA510 FRAME 468.998600
+CA510 FRAME 425.205000
+CA510 FRAME 413.072900
+CA510 FRAME 377.687700
+CA510 FRAME 392.376000
+CA510 FRAME 400.883700
+CA510 FRAME 414.389200
+CA510 FRAME 466.607400
+CA510 FRAME 487.949800
+CA510 FRAME 506.083100
+CA510 FRAME 514.576600
+CA510 FRAME 483.190700
+CA510 FRAMES_END count=39
+Captured scene.png

@@ -1,6 +1,66 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.103** - 2026-11-19.
+Documentation version: **5.17.104** - 2026-11-19.
+
+## 5.17.104 - Bound dense local perception and measure the remaining siege budget (#851, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Dense local perception queries reuse the existing conservative sight/contact
+bound before expensive candidate work. The shared >=500 living-combatant census
+and a single portal group enable it. Residents, summoned bodies, automatons and
+clones retain relationship queries before rejection, preserving migration effects.
+Local iteration/tie order, group queries, unlinked guards, ally observations,
+individual resources/collision, offscreen behavior and all cadence remain intact.
+There are no new fields, schemas, balance values, scans or assets.
+
+The 42-tic siege oracle visits 205,202 local candidates in 6,305 queries and rejects
+99,004; none passes original CanSee or Touching. The measured local region falls
+from 1.6269 to 1.2166 ms per sampled tic, including the added setup. An earlier
+1.2052-ms measurement excluded setup and is retained with that qualification.
+This is a local cost reduction, not a whole-frame improvement claim.
+
+Eight canonical native runs pass 1,358 assertions, including
+850 on the final package. They compare original local targets and fresh
+ally evidence in sparse/dense modes, retained range/light/height/stealth/contact
+edges, relationships and migration side effects, linked portals, and
+fresh/upgrade/reload/rollback saves. All 18,755 packaged members match source;
+only perception and two version diagnostics differ from 5.17.103. The reversible
+source transformation and geometric upper-bound proof are retained.
+
+The initial native thinker snapshot totals 41.2515 ms across 20,432 calls; Mandinga
+and PortDefender account for 26.1833 and 9.1181 ms. A separate renderer benchmark
+records 5.539 ms CPU All. These are different instants after the observation
+window, not a synchronized decomposition or GPU measurement. Combat regions and
+inclusive service probes identify candidate selection, ally observation and
+environmental contact as remaining costs. Native actor Tick includes state
+actions. Nested scopes must not be added. The unlinked-guard region is negligible
+in this scene; its earlier suspected cost is not supported by measurement.
+
+One profiler preparation assertion failed before engine execution because a
+substring also matched the group branch; newline anchors corrected it. Prototype01
+was not run: review caught a case-insensitive local name that could shadow
+Opponent. The tested prototype02 uses localOpponent. Failed preparation and
+unexecuted variants are preserved separately from native passes.
+
+| Scene/package | Queue presents/s | Tic intervals mean / p95 / p99 / max (ms) | Present p95 / p99 / max (ms) |
+| --- | ---: | --- | --- |
+| siege_final | 2.1017 | 29.5109 / 44.8325 / 48.6902 / 59.3098 | 537.7121 / 537.8007 / 537.8007 |
+| siege_control | 1.9906 | 30.1110 / 45.4780 / 48.5717 / 62.5099 | 542.6022 / 548.9384 / 548.9384 |
+| mansion_final | 72.3448 | 28.5686 / 38.7575 / 40.8606 / 43.7895 | 16.1228 / 17.4765 / 20.6355 |
+| sewers_final | 201.5463 | 28.5706 / 32.6882 / 33.8227 / 45.6222 | 6.5334 / 7.7183 / 40.2534 |
+| city_final | 104.6285 | 28.5764 / 35.7049 / 37.1290 / 39.7497 | 10.9856 / 12.0639 / 14.1477 |
+| city_ground_final | 78.9841 | 28.5678 / 37.8092 / 39.9806 / 43.9796 | 14.6248 / 15.7450 / 18.5158 |
+
+All scenes run sequentially on Windows 11, Ryzen 9 5950X, RTX 3070 Ti,
+GZDoom 4.14.2, Vulkan 1280x720, unpaused background at 5% audio. Siege state,
+health, census and camera match across diagnostic and final/control runs.
+Tic intervals include pacing/frame work; queue presents are not monitor scanout.
+The mansion reference includes its opening conversation. Entrance captures do not
+establish whole-map traversal performance. Siege presentation remains limited.
+Evidence and reproduction: assets/validation_v5_17_104. Author checks remain
+unchanged; the complete batch and consolidated author terminal are still pending.
+
 
 ## 5.17.103 - Dispatch measured native contamination carriers directly (#849, #454)
 

@@ -1,6 +1,22 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.103** - 2026-11-19.
+Documentation version: **5.17.104** - 2026-11-19.
+
+## 5.17.104 - Bound dense local perception and measure the remaining siege budget (#851, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Completed: remaining-budget diagnosis, source-proven dense local reach filtering,
+live original sight/contact oracle, original target/ally comparisons, relationship
+migrations, linked portals, reversible saves, exact package preservation and six
+production references. HISTORY records timings and their limits.
+
+Remaining: overall siege performance and the authorized V5.16/V5.17 batch,
+including character/equipment, scenery and recorded campaign authoring gates.
+No pending design or acceptance is inferred. Keep all outstanding author checks
+in pending_test.txt and defer the consolidated terminal until batch preparation.
+Evidence: assets/validation_v5_17_104.
+
 
 ## 5.17.103 - Dispatch measured native contamination carriers directly (#849, #454)
 
