@@ -4,6 +4,53 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-252 - Closed edges do not establish a single mesh component
+
+Status/evidence: CODE-VERIFIED, #827, 2026-11-18. Scope: the retained CC0 neck
+cut, reduced construction mesh and serialized anatomy modules.
+
+A detached pair of opposing triangles has two incident faces per edge and zero
+volume. The combined mesh can pass closed-edge winding and positive total volume
+checks while still containing this island. The earlier body had2, 224vertices,
+4,440 triangles and two connected components; the smaller component comprised
+three vertices/two faces inside the neck attachment. Do not infer connectedness
+from manifold edges or aggregate volume.
+
+Traverse actual triangle adjacency in both the source exporter and serialized
+native validator. The authoring repair discards only the identified isolated
+three-vertex/two-face duplicate triangle, rejecting other disconnected shapes.
+The final body has2,221vertices/4,438triangles and one component. All retained
+packed points/normals across 375 frames and both hand files remain byte-identical.
+Exports 07/08 repeat exactly; final native08 and continuity02 pass 35/22 assertions.
+Evidence: assets/validation_v5_17_92/evidence/source-proof02.json and SUMMARY.json.
+This repair does not establish garment fit or author acceptance.
+
+## CA-KP-251 - Frame bindings snapshot the current poses of other model slots
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #827, 2026-11-18.
+Affected scope: the ten-slot Domingo anatomy preview on GZDoom 4.14.2/Vulkan;
+baseline b2f8600200d17c2c76065a0bbc9628c960795627 plus the archived export03.
+
+Appending all 375 FrameIndex entries for slot 7 after the original seven slots,
+then doing slots 8 and 9, leaves other components at their last registered pose.
+Offline wrist coordinates and actor state-index assertions can pass while the
+seated native body appears mid-jump and its hand is detached. Native03 records
+this failure. The issue is pose snapshots, not a different saved actor state.
+
+Declare every Model/Skin first. For each sprite frame, emit every participating
+slot's FrameIndex before advancing to the next frame. validate_underbody.py
+simulates the current-slot snapshots; the old export fails 374 snapshots and
+the corrected 3,750 registrations pass. Export05/06 repeat byte for byte.
+Native04 and the complete-runtime native07 show the corrected seated body and
+joined hands; 35 final fresh/reload assertions pass. The 59 final anatomy views
+were inspected. Recheck actual native poses when adding a slot, not only mesh
+coordinates or frame counts. The separate inactive-slot visibility lesson in
+CA-KP-009 still applies.
+
+Evidence: assets/validation_v5_17_92/evidence/SUMMARY.json, including earlier
+exports and native iterations. This does not approve anatomy/garment fit or
+generalize to every engine version. CA827-BODY-01 remains pending.
+
 ## CA-KP-250 - Swept tube axes can turn thin cloth panels edge-on
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #819, 2026-11-16.
@@ -845,6 +892,15 @@ Require exact assertion counts as well as completion markers. See
 assets/validation_v5_17_11/evidence/iterations/visual02 and continuity/RESULTS.json;
 the final five-phase native suite passes 743/478/743/478/478 checks. This extends
 the existing isolated-fixture lesson without changing production gameplay.
+
+#827 adds a scheduling qualification: replacing a long semicolon sequence with
+separate newline exec lines also fails. Native06 independently schedules their
+waits and reaches quit before setup, producing zero assertions without an engine
+error. Native05 preserves the earlier 4,255-byte overlong-line failure and VM
+abort. Native07 instead uses bounded single-line files explicitly chained with
+exec after each preceding wait; all 35 fresh/reload assertions pass. Require
+expected counts and completion, not merely exit code zero. Evidence:
+assets/validation_v5_17_92/evidence/iterations/native05 and native06, plus native.
 
 ## CA-KP-220 - Rotating crew posts need box clearance and live AI evidence
 

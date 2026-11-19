@@ -1,0 +1,25 @@
+{
+  "issue": 827,
+  "runtime_sha256": "8edd021d20cc7ac321b6cb7aadbc308db79d7431ddce73a0b2983b8030bd9cd3",
+  "model_sha256": null,
+  "fixture_sha256": "35feba8f3d82f7e556e516ff00abf47e145f4810cde7702a3cfd1d785d695e9e",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "quick": false,
+  "runs": [
+    {
+      "phase": "fresh",
+      "exit_code": 1,
+      "assertions": 0,
+      "expected_assertions": 30,
+      "errors": [
+        "Unknown command \"etevent\"",
+        "CA827 FAIL saved references and camera retained",
+        "VM execution aborted: tried to read from address zero."
+      ],
+      "passed": false
+    }
+  ],
+  "captures": {
+    "hidden.png": "7b353fcf5b77b1ef992e3c388ebd26496daaa4bc0fecb442f0ecb504b431d0cd"
+  }
+}

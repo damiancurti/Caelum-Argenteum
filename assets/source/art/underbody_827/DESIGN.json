@@ -1,0 +1,166 @@
+{
+  "schema_revision": 1,
+  "issue": 827,
+  "parent": 458,
+  "author_accepted": false,
+  "source": "assets/source/art/domingo_3d_pilot/makehuman/base.obj",
+  "source_sha256": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c",
+  "accepted_rig": "assets/source/art/domingo_3d_pilot/domingo.blend",
+  "accepted_rig_sha256": "3c84df6b241df2c48ddee48143d6aa4eba40d16c5c097d60f78eca85b130b9a4",
+  "design": "assets/source/art/domingo_3d_pilot/DESIGN.json",
+  "skin": "assets/source/art/domingo_3d_pilot/domingo_skin.png",
+  "skin_sha256": "6cf9ea66f6671ba3235c2f2ad8af7cc139b20286013e2a9789670b8df60da597",
+  "skin_sample_pixels": [
+    74,
+    1008
+  ],
+  "source_group": "body",
+  "neck_cut_source_y": 6.25,
+  "decimate_ratio": 0.3,
+  "cross_section_scale": 8.5,
+  "wrist_halfspace_minimum_lateral": 3.0,
+  "wrist_halfspace_minimum_height": 0.5,
+  "source_bones": {
+    "pelvis": [
+      "joint-pelvis",
+      "joint-spine-3",
+      null
+    ],
+    "spine": [
+      "joint-spine-3",
+      "joint-spine-1",
+      "pelvis"
+    ],
+    "chest": [
+      "joint-spine-1",
+      "joint-neck",
+      "spine"
+    ],
+    "neck": [
+      "joint-neck",
+      "joint-head",
+      "chest"
+    ],
+    "head": [
+      "joint-head",
+      [
+        0,
+        8.4913,
+        0.1608
+      ],
+      "neck"
+    ],
+    "upper_arm.L": [
+      "joint-l-shoulder",
+      "joint-l-elbow",
+      "chest"
+    ],
+    "forearm.L": [
+      "joint-l-elbow",
+      "joint-l-hand",
+      "upper_arm.L"
+    ],
+    "hand.L": [
+      "joint-l-hand",
+      "joint-l-finger-3-1",
+      "forearm.L"
+    ],
+    "thigh.L": [
+      "joint-l-upper-leg",
+      "joint-l-knee",
+      "pelvis"
+    ],
+    "shin.L": [
+      "joint-l-knee",
+      "joint-l-ankle",
+      "thigh.L"
+    ],
+    "foot.L": [
+      "joint-l-ankle",
+      "joint-l-foot-1",
+      "shin.L"
+    ],
+    "upper_arm.R": [
+      "joint-r-shoulder",
+      "joint-r-elbow",
+      "chest"
+    ],
+    "forearm.R": [
+      "joint-r-elbow",
+      "joint-r-hand",
+      "upper_arm.R"
+    ],
+    "hand.R": [
+      "joint-r-hand",
+      "joint-r-finger-3-1",
+      "forearm.R"
+    ],
+    "thigh.R": [
+      "joint-r-upper-leg",
+      "joint-r-knee",
+      "pelvis"
+    ],
+    "shin.R": [
+      "joint-r-knee",
+      "joint-r-ankle",
+      "thigh.R"
+    ],
+    "foot.R": [
+      "joint-r-ankle",
+      "joint-r-foot-1",
+      "shin.R"
+    ]
+  },
+  "modules": {
+    "underbody": "CA827 Underbody",
+    "left_hand": "CA827 Left hand",
+    "right_hand": "CA827 Right hand"
+  },
+  "module_path": "models/caelum/characters/domingo",
+  "fixture_class": "CA827ModularPreview",
+  "limits": [
+    "Construction anatomy candidate; neutral adult source proportions are fitted to the accepted rig. No new race/sex/skin or gameplay decisions.",
+    "Original seven modules, accepted rig/skin/head and all actor/equipment ownership remain unchanged.",
+    "Hands are independent relaxed construction modules. Item-specific finger grips belong to the equipment fitting task.",
+    "No campaign replacement or visual acceptance; final consolidated author review remains pending."
+  ],
+  "parameter_role": "All numeric fit/cut/UV/reduction values describe editable visual construction only, never physical dimensions, combat timing, balance or identity.",
+  "segment_fit": {
+    "pelvis": {
+      "target_offset": [
+        -1,
+        0,
+        0
+      ]
+    },
+    "spine": {
+      "target_offset": [
+        -4.8,
+        0,
+        0
+      ]
+    },
+    "chest": {
+      "target_offset": [
+        -4.8,
+        0,
+        0
+      ]
+    },
+    "neck": {
+      "cross_section_scale": 10
+    },
+    "head": {
+      "cross_section_scale": 10
+    },
+    "hand.L": {
+      "cross_section_scale": 10
+    },
+    "hand.R": {
+      "cross_section_scale": 10
+    }
+  },
+  "segment_fit_evidence": "Source03 rest-band inspection: native armor is centered on its bones whereas upstream spine helpers lie behind the torso volume. Recenter torso cross sections; retain rig joints/timings and all source clothes.",
+  "editable_source": "assets/source/art/underbody_827/underbody.blend",
+  "editable_sha256": "4bf8f86aac40b8e6db01d97f5c730bdef01ace631c443dfdbe925d5bf2b4bc4a"
+}

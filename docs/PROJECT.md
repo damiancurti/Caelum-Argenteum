@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.91** - 2026-11-16.
+Documentation version: **5.17.92** - 2026-11-18.
+
+## 5.17.92 - Anatomy available for modular fitting (#827)
+
+Reusable Domingo body and independent hands now export through the accepted
+24-action rig. Deterministic files, closed geometry, sampled wrist joins,
+35 isolated anatomy assertions and 22 production-pilot save/rollback checks
+pass. ASSETS records reviewed views and presentation tails. Production characters
+retain their existing bindings. Raw legacy garments still intersect the body;
+#459 fitting, broader character variants and #462 first-person equipment remain
+unfinished. CA827-BODY-01 is pending; no full-batch handoff is claimed.
 
 ## 5.17.91 - Approved regional display coverage completed (#825)
 

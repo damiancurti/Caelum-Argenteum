@@ -1,0 +1,208 @@
+{
+  "issue": 827,
+  "author_accepted": false,
+  "reviewed": {
+    "issue827-native08/mode2-view1.png": "af19b475ce579efdd1e888527c6d12146ff0e468c30167de04b6fd41cd59b695",
+    "issue827-native08/mode2-view7.png": "7e8d8cb756ab5a740dac5a9a25c22bfefb691dd1bd13ce7a44fb41caaaa6d4be",
+    "issue827-native08/pose00.png": "7e8d8cb756ab5a740dac5a9a25c22bfefb691dd1bd13ce7a44fb41caaaa6d4be",
+    "issue827-native08/pose01.png": "387b844ac551977823d6361c02df9c5f25ce97c02ba98337789afdf3aeea1a4f",
+    "issue827-native08/pose02.png": "7d52a727adfba4ee045fd2f04da0bd5707d4db250ee28b389e7f4a80f992d6ed",
+    "issue827-native08/pose05.png": "539bf160b84e3ba52c480c17eabc415cc5de2a6fc7d70eb009183249536f3487",
+    "issue827-native08/pose06.png": "e72ef0173004191df22bdfb0f0d2cfeac4c851e58fabd8f249e14d42a31ca0f1",
+    "issue827-native08/pose07.png": "da85812f0f4c16926d6e349220a3b123d2cf8fd64d082f948bb08afa296b7fac",
+    "issue827-native08/pose08.png": "1018e848d1ae7ea9315a373a91729f8b6a85b2a869c4a5fb792ae94a3ab6ca89",
+    "issue827-native08/pose10.png": "f16203905110f94bda02470a52eb88c339d3c491174e773b1be610c842851159",
+    "issue827-native08/pose15.png": "78deb4560931106f069ce16c2f4b76ebd002c6ee38f50d148495b4d4d4d6b708",
+    "issue827-native08/pose18.png": "45636cea69d0ccbac8b1f3f1155578face1a56c85370ea34a85cb77da3c7eedd",
+    "issue827-native08/pose19.png": "1da5d0a0ada82c8b3fb90d1068af795ab7a953be6acce0ee99d7e1e9f5ab84a1",
+    "issue827-native08/pose20.png": "52887c03fc4d835b74e25956288eafa90d0a93a9c442f88269f70f9b6530b441",
+    "issue827-native08/pose21.png": "c748dfc6ff5a8079e26a89fe9cb0e83b028b8e6436a36fc8613c59dc6925ede8",
+    "issue827-presentation02/seven-1/scene.png": "5c224ce67b40995d8bb28ab1745937aa511fe32d8f5db0e2f25dded08d7a11dc",
+    "issue827-presentation02/ten-1/scene.png": "0db5c8fbf493ca5e04039459da915c0be17a8802500f6e26f4a6b1d92e814da2",
+    "issue827-presentation02/ten-64/scene.png": "e78bf11426b2b848ba1a1344d7435eec02334dff5347329aed2bcb9fc250ed3f",
+    "issue827-presentation02/seven-64/scene.png": "17d8452a56ef4a70cb8438b8e7ff8293a47174234d1c1552740dfddb6e46317d",
+    "issue827-continuity02/old-save-load/old-loaded.png": "42a5ce5ef069ffe1393e5dc714be1b753eacdbdbc4be9996e19da8fcec1b776f"
+  },
+  "exact_pixel_review_reused": {
+    "issue827-native08/hidden.png": {
+      "sha256": "3aad199868c15c81f0bce9b7c9acd5252be94780b487e526d3f2fee0e081b768",
+      "previously_reviewed": "issue827-native07/hidden.png"
+    },
+    "issue827-native08/mode0-view0.png": {
+      "sha256": "8bf43608ebbdeadd2f3b7efb8d8a857e54104cc6de83ddfe347c73bb8289233d",
+      "previously_reviewed": "issue827-native07/mode0-view0.png"
+    },
+    "issue827-native08/mode0-view1.png": {
+      "sha256": "0cbbf602bf0a50d31c0853673692df1009378db33269c2aa5459b69cecb30795",
+      "previously_reviewed": "issue827-native07/mode0-view1.png"
+    },
+    "issue827-native08/mode0-view2.png": {
+      "sha256": "056a16636fb64e6ec98e7a262e6bb678e73bb05f153f67a0c1269c7b4a84e545",
+      "previously_reviewed": "issue827-native07/mode0-view2.png"
+    },
+    "issue827-native08/mode0-view3.png": {
+      "sha256": "0b87775fcdf91c1556baedfda74b1624971a089a5f05b3fadc2b401995dc374d",
+      "previously_reviewed": "issue827-native07/mode0-view3.png"
+    },
+    "issue827-native08/mode0-view4.png": {
+      "sha256": "d776aabeb621bf4b163ffd3b2b4c1b35ae27893c6cb9453c1ba81af4f6a52209",
+      "previously_reviewed": "issue827-native07/mode0-view4.png"
+    },
+    "issue827-native08/mode0-view5.png": {
+      "sha256": "6c40296504b59f858b0e7280031c9b709936fcba9c0f00135ce85129dff463c8",
+      "previously_reviewed": "issue827-native07/mode0-view5.png"
+    },
+    "issue827-native08/mode0-view6.png": {
+      "sha256": "a7244b2bb57312521b80d9bfcb278f75793bbd270aeefc0c7c9cb7352b0b488b",
+      "previously_reviewed": "issue827-native07/mode0-view6.png"
+    },
+    "issue827-native08/mode0-view7.png": {
+      "sha256": "45fe0dfab653f3a46514b5751b42bdd0950b4bdeaaaa761881a685c7cb96824d",
+      "previously_reviewed": "issue827-native07/mode0-view7.png"
+    },
+    "issue827-native08/mode1-view0.png": {
+      "sha256": "7518e1580782d1b72db7b99865319f7e24c6193f3d2783df1514cf54f7229c8d",
+      "previously_reviewed": "issue827-native07/mode1-view0.png"
+    },
+    "issue827-native08/mode1-view1.png": {
+      "sha256": "230487da86ec27b65139e664bddc4ae508a83b83c2a0ba319a4e8bba9e1991e1",
+      "previously_reviewed": "issue827-native07/mode1-view1.png"
+    },
+    "issue827-native08/mode1-view2.png": {
+      "sha256": "4f9ae0125195debcedbcd98901fc8ea05fabb697ee88fbce982e397b9dc254b4",
+      "previously_reviewed": "issue827-native07/mode1-view2.png"
+    },
+    "issue827-native08/mode1-view3.png": {
+      "sha256": "a5d6718622c9a4478d53823ecee3df414e86649ec4abe0880f2c831baa15233e",
+      "previously_reviewed": "issue827-native07/mode1-view3.png"
+    },
+    "issue827-native08/mode1-view4.png": {
+      "sha256": "c0cf3e8f169359118f92615dd1d6d4f4980ba4c9e44418572a93af5581882edd",
+      "previously_reviewed": "issue827-native07/mode1-view4.png"
+    },
+    "issue827-native08/mode1-view5.png": {
+      "sha256": "071fe43b334eac5af54c4928e62c05c6a5baf635bc0f8a16121e1186f4d6bb02",
+      "previously_reviewed": "issue827-native07/mode1-view5.png"
+    },
+    "issue827-native08/mode1-view6.png": {
+      "sha256": "0a27626019e5648c7f2f5e2b505c437a65b1514c9a73d80d874161876d551295",
+      "previously_reviewed": "issue827-native07/mode1-view6.png"
+    },
+    "issue827-native08/mode1-view7.png": {
+      "sha256": "361ef2793657364d7fefb06e7c4699654cdea7bfe65388ad80a1d0fc462285f7",
+      "previously_reviewed": "issue827-native07/mode1-view7.png"
+    },
+    "issue827-native08/mode2-view0.png": {
+      "sha256": "9d14c0e78922bbda7e579da2905cfa95af8e915e57ce879b5cdb4ce883d3673d",
+      "previously_reviewed": "issue827-native07/mode2-view0.png"
+    },
+    "issue827-native08/mode2-view2.png": {
+      "sha256": "99c6df87adc823cec2f48925df81d4620f9be5de697caf179482f56715352290",
+      "previously_reviewed": "issue827-native07/mode2-view2.png"
+    },
+    "issue827-native08/mode2-view3.png": {
+      "sha256": "741a42bcacb203ede74b6492ba5a675079b734db047c70ed541ff98886fdc859",
+      "previously_reviewed": "issue827-native07/mode2-view3.png"
+    },
+    "issue827-native08/mode2-view4.png": {
+      "sha256": "b9ee54521959fb858151af2d242d71449d54b883953fc66ec660ce4694d69685",
+      "previously_reviewed": "issue827-native07/mode2-view4.png"
+    },
+    "issue827-native08/mode2-view5.png": {
+      "sha256": "ed7b2253f21c655e4ca5639227c1093b59b8ac98c673e64a31b435b0ccbfbcf8",
+      "previously_reviewed": "issue827-native07/mode2-view5.png"
+    },
+    "issue827-native08/mode2-view6.png": {
+      "sha256": "e94629543b68a1b68a471c4733b9e111b7c06db32efb662ac73f7d5f3b25855a",
+      "previously_reviewed": "issue827-native07/mode2-view6.png"
+    },
+    "issue827-native08/mode3-view0.png": {
+      "sha256": "6f476c3bb945e60f6842018161e89d57696b14e23c418f8631cf893f2d2a1c45",
+      "previously_reviewed": "issue827-native07/mode3-view0.png"
+    },
+    "issue827-native08/mode3-view1.png": {
+      "sha256": "23720d401d202c42280fcca54d3f277ccbefc513e7035eccae38a32945b36034",
+      "previously_reviewed": "issue827-native07/mode3-view1.png"
+    },
+    "issue827-native08/mode3-view2.png": {
+      "sha256": "a9aef0b1875ce82c2b3069c8757c715c5233ce58fc84da17832a46ceee65a46e",
+      "previously_reviewed": "issue827-native07/mode3-view2.png"
+    },
+    "issue827-native08/mode3-view3.png": {
+      "sha256": "e74c1984bbeab1ff1225ccff01c9fec0a8ea8faa1f3b49d6d12c489b79e4aa9d",
+      "previously_reviewed": "issue827-native07/mode3-view3.png"
+    },
+    "issue827-native08/mode3-view4.png": {
+      "sha256": "50a293f255a7c3225241c45bdca05cc11c4ec6c8ff533a0098b072aa37deff73",
+      "previously_reviewed": "issue827-native07/mode3-view4.png"
+    },
+    "issue827-native08/mode3-view5.png": {
+      "sha256": "52f280d7ea2cb941731f545090432bc0fce393f8a7be188b9059fe46e1e17c24",
+      "previously_reviewed": "issue827-native07/mode3-view5.png"
+    },
+    "issue827-native08/mode3-view6.png": {
+      "sha256": "d718e3fc590e6e1756e7d37cc5e76f0b16c63f9ad6a29d078df9633a0272370d",
+      "previously_reviewed": "issue827-native07/mode3-view6.png"
+    },
+    "issue827-native08/mode3-view7.png": {
+      "sha256": "03a67b576f3bdf6b9f299f93cc0c94f690e420c53bb1f6139289809f733dcf83",
+      "previously_reviewed": "issue827-native07/mode3-view7.png"
+    },
+    "issue827-native08/pose03.png": {
+      "sha256": "9920a2a8e51241c1215459beac6261848e8873eb9b9a2df3252e6abe0c42f3b1",
+      "previously_reviewed": "issue827-native07/pose03.png"
+    },
+    "issue827-native08/pose04.png": {
+      "sha256": "fcdf13a165559298f975e41328ed8bf8b06f55b0480328483bbbae05b18ddfaf",
+      "previously_reviewed": "issue827-native07/pose04.png"
+    },
+    "issue827-native08/pose09.png": {
+      "sha256": "79bca331ba589dc03430087d194a6f532e9c8d18c868f28f434d591cd6190d07",
+      "previously_reviewed": "issue827-native07/pose09.png"
+    },
+    "issue827-native08/pose11.png": {
+      "sha256": "f456dbf3d5af6d53df6fd82ffda14e8ca827faab322c9549477e9971095becd7",
+      "previously_reviewed": "issue827-native07/pose11.png"
+    },
+    "issue827-native08/pose12.png": {
+      "sha256": "f869f28c867a5f9344a4b4d39b3fbc0b82e60bd67f8f8ac3bc466b2a20db8928",
+      "previously_reviewed": "issue827-native07/pose12.png"
+    },
+    "issue827-native08/pose13.png": {
+      "sha256": "5fc8adaa6a90a16a36620daee5011ae7420cb318f89203f197d9e9d19bf2a1dd",
+      "previously_reviewed": "issue827-native07/pose13.png"
+    },
+    "issue827-native08/pose14.png": {
+      "sha256": "2a285ca3da2a5836dc54e9b30e5239dc43e760787992bffd1c83f1828a58793a",
+      "previously_reviewed": "issue827-native07/pose14.png"
+    },
+    "issue827-native08/pose16.png": {
+      "sha256": "8dda17cd8f299063ee94682435cfde97dbf3ff4fad601feadaf964efb29a8054",
+      "previously_reviewed": "issue827-native07/pose16.png"
+    },
+    "issue827-native08/pose17.png": {
+      "sha256": "7352bb3841ba85e86eedad1280a6d02b8b7b7320f74ffb9cb395ef332c4d131d",
+      "previously_reviewed": "issue827-native07/pose17.png"
+    },
+    "issue827-native08/pose22.png": {
+      "sha256": "1e613410284e9a470acbce84951333330c4b775cc972a92e2572d0ba2df56c97",
+      "previously_reviewed": "issue827-native07/pose22.png"
+    },
+    "issue827-native08/pose23.png": {
+      "sha256": "2d62460737b61a85e7fbfe3f6a2b55f66ee086b526364bf7f243417c51c65852",
+      "previously_reviewed": "issue827-native07/pose23.png"
+    },
+    "issue827-native08/reload-restored.png": {
+      "sha256": "9d14c0e78922bbda7e579da2905cfa95af8e915e57ce879b5cdb4ce883d3673d",
+      "previously_reviewed": "issue827-native07/reload-restored.png"
+    },
+    "issue827-native08/reloaded.png": {
+      "sha256": "3aad199868c15c81f0bce9b7c9acd5252be94780b487e526d3f2fee0e081b768",
+      "previously_reviewed": "issue827-native07/reloaded.png"
+    }
+  },
+  "notes": [
+    "All15 changed anatomy captures inspected after removing the planar neck island. Neck/head and wrists remain joined in these poses.44 final captures are byte-identical to previously inspected native07 images. Existing clothing fit limits remain."
+  ],
+  "reviewed_at": "2026-11-18"
+}
