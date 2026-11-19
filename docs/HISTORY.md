@@ -1,6 +1,76 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.105** - 2026-11-19.
+Documentation version: **5.17.106** - 2026-11-19.
+
+## 5.17.106 - Preserve recognition when demon breath inspects a route marker (#855)
+
+Full project validation passes with no errors; the generated document index is current.
+
+The #853 diagnosis exposed an ordering defect in the existing #357 rule:
+technical route markers are not demon combat or aiming targets, but Identify
+was called before CanReach rejected them. Identify mutates visual evidence.
+The correction shares the existing exact CaelumSewerEscapeTarget predicate and
+checks it before Identify in UpdateBreath and PaidTick. General perception,
+native movement, factions, range, resources, heat, animation, cadence and saved
+fields retain their existing logic. No schema or balance change is introduced.
+
+The settled baseline cases reproduce the loss in Mandinga and Zupay, with and
+without cold: one second of recognition falls from 35 tics to zero, and the real
+target fails its two-second identification. Eight baseline assertions fail as
+expected, with normal engine exits. The final cases preserve 35 tics and identify
+the real target at two seconds, including the cold emission's PaidTick path.
+
+Across 16 canonical native runs, 310 assertions pass and eight baseline regression
+assertions fail. Of the passing assertions, 166 execute the final package.
+Both families retain exact positive per-tic charges, owned emission and paid
+duration. Ability controls cover known nearby targets, continued emission,
+switching to navigation, empty resources, distance, cold, real bolas release,
+sleep, stun, recovery, pain, diagnostic flags, death and Zupay fleeing.
+The ability-only fixture explicitly seeds known-target memory; separate real
+elapsed observations establish acquisition. Native upgrade, reload and rollback
+preserve serialized identity, evidence, target, Anima, owned flame, emitter,
+duration and breathing state for both cold families. Upgrade retains existing
+saved evidence rather than reconstructing lost observations. Rollback proves
+serialization before a further update; the old build retains its old defect.
+
+The first cold fixture rejected boolean constants at native compile time. Two
+subsequent attempts inspected actors immediately after Spawn, before deferred
+PostBeginPlay initialized their Anima. Final fixtures wait for native birth and
+assert an initialized positive maximum. These fixture failures and sources remain
+in the evidence; no production behavior was weakened to satisfy a test. The
+earlier immediate-spawn warm pilot is superseded by the settled canonical cases.
+
+Portable tools reproduce the candidate and fixture PK3 byte-for-byte and pass
+nine additional native assertions. All 18,755 final package members match src;
+only the two gameplay files and two release diagnostic strings differ from the
+immutable 5.17.104 baseline. The production gameplay bytes match the tested
+prototype exactly, whose inverse transformation restores the original sources.
+
+Six unpaused background captures use GZDoom 4.14.2 and 5% audio on the recorded
+Ryzen 9 5950X / RTX 3070 Ti environment. No heavy validator/build runs during the
+measurement windows. The approved siege admission remains 1,000 attackers / 600
+defenders; the native reports retain actual live census, health and camera.
+
+| Scene | Queue presents/s | Present p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| siege_final | 1.867 | 580.565 / 583.129 / 583.129 | 31.598 / 47.420 / 52.117 / 63.075 |
+| siege_control | 1.903 | 561.024 / 569.589 / 569.589 | 30.979 / 46.983 / 50.218 / 61.270 |
+| mansion_final | 67.400 | 17.156 / 18.106 / 19.405 | 28.562 / 33.800 / 41.382 / 43.948 |
+| sewers_final | 187.958 | 6.952 / 8.408 / 40.873 | 28.564 / 32.718 / 33.954 / 44.671 |
+| city_final | 99.206 | 11.558 / 12.324 / 14.120 | 28.581 / 33.592 / 36.552 / 38.767 |
+| city_ground_final | 71.985 | 15.869 / 17.438 / 18.831 | 28.570 / 39.799 / 41.416 / 43.126 |
+
+Recorded siege states (including health/camera) equal: True; census equal: True.
+
+Queue presents are not monitor scanout; tic intervals include pacing/frame work,
+not isolated simulation CPU cost. This behavior fix intentionally removes
+misdirected visual-evidence/RNG mutations, so identical combat is not assumed.
+The table is descriptive evidence, not an isolated optimization or whole-frame
+performance claim. Siege performance and overall author acceptance remain open.
+Evidence and portable sources: assets/validation_v5_17_106; CA-KP-264 is updated
+from reproduced defect to verified correction. No author test is removed and no
+partial final terminal is delivered.
+
 
 ## 5.17.105 - Measure breath queries and reproduce route-induced recognition loss (#853, #855)
 

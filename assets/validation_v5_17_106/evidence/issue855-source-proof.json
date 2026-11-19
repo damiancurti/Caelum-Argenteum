@@ -1,0 +1,19 @@
+{
+  "issue": 855,
+  "version": "5.17.106",
+  "members": 18755,
+  "baseline_sha256": "1bf92c28f7317875e10aace435bc730507602e98c6dc4681c79f54a74e48f0cf",
+  "final_sha256": "d2e3f6d0701cbb19455a899959bd87b1f520905d5f39816e81f5b0b44fe049c1",
+  "final_bytes": 1280987351,
+  "changed": [
+    "caelum/actors/CaelumDemonBreath.zs",
+    "caelum/actors/CaelumDemonService.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "final_source_exact": true,
+  "prototype_gameplay_exact": true,
+  "no_added_removed_members": true,
+  "inverse_exact": true,
+  "parent_commit": "9269280c505c06769f24de41f6f0dc6dc936c2d3"
+}

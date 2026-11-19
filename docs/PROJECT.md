@@ -1,6 +1,23 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.105** - 2026-11-19.
+Documentation version: **5.17.106** - 2026-11-19.
+
+## 5.17.106 - Preserve recognition when demon breath inspects a route marker (#855)
+
+Full project validation passes with no errors; the generated document index is current.
+
+The #855 correction preserves the existing navigation-marker exclusion before
+visual identification in both demon breath entry points. Mandinga and Zupay now
+retain ongoing recognition of a real target when their current target is a route
+marker, including legitimate cold emission. Resources, contact heat, movement,
+states and save schema retain their current contracts.
+
+HISTORY records 310 passing native assertions, eight expected baseline failures,
+166 final-package assertions, portable reproduction and reversible saved-state
+checks. The six reference captures report frame/tic tails and actual populations;
+this is a behavior correction, not a claim that siege performance is complete.
+Remaining batch/design/author gates continue. Evidence: assets/validation_v5_17_106.
+
 
 ## 5.17.105 - Measure breath queries and reproduce route-induced recognition loss (#853, #855)
 

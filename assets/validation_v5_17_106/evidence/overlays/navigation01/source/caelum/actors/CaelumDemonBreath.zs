@@ -1,0 +1,198 @@
+// Perfil aprobado #135. Las subdivisiones son cuadratura, no más potencia.
+class CaelumDemonBreathRules : Object
+{
+    const CONTACT_HEAT_REVISION=1;
+    const ANIMA_PER_SECOND=10.0;
+    const RANGE_METERS=4.0;
+    const CONE_DEGREES=60.0;
+    // Boca del atlas de exhalación: altura/avance medidos en píxeles, antes
+    // de la escala común de TEXTURES y de la escala individual del actor.
+    const MANDINGA_MOUTH_PIXELS=160.0/0.980468750;
+    const MANDINGA_MOUTH_FORWARD=60.0/0.980468750;
+    const ZUPAY_MOUTH_PIXELS=147.0/0.600464191;
+    const ZUPAY_MOUTH_FORWARD=70.0/0.600464191;
+    const SEGMENTS=4;
+    const FLAME_PIXEL_WIDTH=115.0;
+    const FLAME_PIXEL_HEIGHT=188.0;
+    static clearscope double Range(){return RANGE_METERS*CaelumJourneyRules.MAP_UNITS_PER_METER;}
+    static clearscope double Watts(){return CaelumThermalData.FireWatts(3);}
+}
+
+class CaelumDemonFlameVisual : Actor
+{
+    int Segment,VisualAge;
+    override void Tick()
+    {
+        Super.Tick();
+        if(bDestroyed)return;
+        if(master==null || master.bDestroyed){Destroy();return;}
+        sprite=GetSpriteIndex("VFBR");
+        frame=Segment*4+(VisualAge/CaelumElementalVFXData.FRAME_TICS)%4;
+        if(VisualAge%CaelumElementalVFXData.FRAME_TICS==0)
+            CaelumElementalVFX.Light(self,0,!CaelumElementalVFX.Dense() || Segment==0);
+        VisualAge++;
+    }
+    Default { +NOINTERACTION +NOGRAVITY +BRIGHT RenderStyle "Add"; }
+    States
+    {
+        Spawn: CEFB ABCDEFGHIJKL 3 Bright; Loop;
+        VisualFrames: VFBR ABCDEFGHIJKLMNOP 1 Bright; Stop;
+    }
+}
+
+class CaelumDemonBreath : Actor
+{
+    CaelumCombatActor Emitter;
+    double PaidSeconds,TotalPaidSeconds;
+    int NextHeatTic;
+    int ContactHeatRevision;
+    Vector3 Direction;
+    Actor FlameVisuals[4];
+
+    Default { +NOBLOCKMAP +NOGRAVITY +NOCLIP +INVISIBLE Radius 1; Height 1; }
+    States { Spawn: TNT1 A -1; Stop; }
+
+    static Vector3 Mouth(Actor owner)
+    {
+        bool boss=owner is "CaelumZupayColossus";
+        double height=owner.Scale.Y*(boss ? CaelumDemonBreathRules.ZUPAY_MOUTH_PIXELS : CaelumDemonBreathRules.MANDINGA_MOUTH_PIXELS);
+        double forward=owner.Scale.X*(boss ? CaelumDemonBreathRules.ZUPAY_MOUTH_FORWARD : CaelumDemonBreathRules.MANDINGA_MOUTH_FORWARD);
+        vector3 point=owner.Pos+(Cos(owner.Angle)*forward,Sin(owner.Angle)*forward,height);
+        vector3 center=owner.Pos+(0,0,owner.Height/2),ray=point-center;
+        FLineTraceData hit;
+        // La cabeza dibujada puede adelantar el cilindro. Nunca se permite
+        // que ese ancla salte a través de una pared junto al actor.
+        if(owner.LineTrace(VectorAngle(ray.X,ray.Y),ray.Length(),-VectorAngle(ray.XY.Length(),ray.Z),
+            TRF_THRUACTORS|TRF_ABSPOSITION,center.Z,center.X,center.Y,hit))return center;
+        return point;
+    }
+
+    // #855: aplicar la exclusion antes de mutar el reconocimiento visual.
+    static bool IsRouteMarker(Actor victim)
+    {
+        // El destino nativo de una ruta es disparable para A_Chase, pero no
+        // es un enemigo ni un punto al que orientar el aliento por frio o sogas.
+        return victim is 'CaelumSewerEscapeTarget';
+    }
+
+    static bool CanReach(Actor owner,Actor victim)
+    {
+        if(IsRouteMarker(victim))return false;
+        vector3 delta=victim.Pos+(0,0,victim.Height/2)-Mouth(owner);
+        return delta.Length()-victim.Radius<=CaelumDemonBreathRules.Range() && owner.CheckSight(victim);
+    }
+
+    bool Visible(Vector3 point)
+    {
+        return CaelumElementalStream.Visible(self,point);
+    }
+
+    bool Contact(Actor body)
+    {
+        return CaelumElementalStream.Contact(self,Emitter,Direction,body);
+    }
+
+    void Burn(Actor body)
+    {
+        CaelumElementalStream.ApplyContact(Emitter,body);
+    }
+
+    void PaidTick()
+    {
+        if(Emitter==null || CaelumBattleCry.Active(Emitter))return;
+        EnsureContactHeat();
+        // Contacto y coste siguen cada tic. Sólo los cuerpos tocados reciben
+        // potencia de quemadura; ningún barrido global ni radiación a distancia.
+        vector3 next=Mouth(Emitter);
+        vector3 nextDirection=(Cos(Emitter.Angle),Sin(Emitter.Angle),0);
+        if(Emitter.target!=null && !IsRouteMarker(Emitter.target)
+            && CaelumVisualPerception.Identify(Emitter,Emitter.target) && CanReach(Emitter,Emitter.target))
+        {
+            vector3 aim=Emitter.target.Pos+(0,0,Emitter.target.Height/2)-next;
+            if(aim.Length()>0)nextDirection=aim/aim.Length();
+        }
+        SetOrigin(next,false);Direction=nextDirection;
+        TotalPaidSeconds+=1.0/TICRATE;
+        for(int i=0;i<CaelumDemonBreathRules.SEGMENTS;i++)
+        {
+            double along=CaelumDemonBreathRules.Range()*(i+0.5)/CaelumDemonBreathRules.SEGMENTS;
+            vector3 point=Pos+Direction*along;
+            if(!Visible(point))
+            {if(FlameVisuals[i]!=null){FlameVisuals[i].Destroy();FlameVisuals[i]=null;}continue;}
+            if(FlameVisuals[i]==null)FlameVisuals[i]=Spawn("CaelumDemonFlameVisual",point,NO_REPLACE);
+            if(FlameVisuals[i]!=null)
+            {
+                // La malla sigue el eje de la boca, sin tocar el cono de contacto.
+                let flame=CaelumDemonFlameVisual(FlameVisuals[i]);
+                flame.master=self;flame.Segment=i;
+                flame.SetOrigin(point,false);
+                flame.Angle=VectorAngle(Direction.X,Direction.Y);
+                flame.Pitch=-VectorAngle(Direction.XY.Length(),Direction.Z);
+                flame.Scale=(CaelumDemonBreathRules.Range(),CaelumDemonBreathRules.Range());
+                flame.Alpha=0.70;
+            }
+        }
+        let nearby=BlockThingsIterator.Create(Emitter,CaelumDemonBreathRules.Range()+Emitter.Radius);
+        Array<Actor> bodies;Array<double> received;double sum=0;
+        while(nearby.Next())
+        {
+            let body=nearby.thing;
+            if(!Contact(body))continue;
+            bool known=false;
+            for(int i=0;i<bodies.Size();i++)if(bodies[i]==body){known=true;break;}
+            if(known)continue;
+            let summoned=CaelumSummonedZupay(Emitter);
+            if(summoned!=null && !summoned.CanAffect(body))continue;
+            if(!CaelumRedemption.AllowsDamage(Emitter,body))continue;
+            Burn(body);
+            let thermal=CaelumThermalBody.Get(body,true);
+            if(thermal==null)continue;
+            if(thermal.SurfaceArea<=0)CaelumThermalBody.Refresh(body,thermal);
+            double watts=ReceivedWatts(body,thermal);
+            bodies.Push(body);received.Push(watts);sum+=watts;
+        }
+        // Se conserva el presupuesto emitido existente entre los contactos
+        // actuales. Armadura se aplica una vez, antes de guardar la potencia.
+        double budget=CaelumDemonBreathRules.Watts()*CaelumThermalData.FIRE_RADIATIVE_FRACTION;
+        double scale=sum>budget ? budget/sum : 1;
+        double power=CaelumElementalStream.Power(Emitter);
+        for(int i=0;i<bodies.Size();i++)
+        {
+            let status=CaelumElementalStream.Status(bodies[i]);
+            if(status!=null)status.ApplyBurnHeat(CaelumConstants.ELEMENTAL_BASE_DURATION_SECONDS*power,
+                power,received[i]*scale*CaelumThermalMagic.AreaRetention(bodies[i]),bodies[i]);
+        }
+    }
+
+    double ReceivedWatts(Actor body,CaelumThermalState thermal)
+    {
+        return CaelumElementalStream.ReceivedWatts(self,Direction,body,thermal);
+    }
+
+    void FlushHeat()
+    {
+        EnsureContactHeat();PaidSeconds=0;
+    }
+
+    void EnsureContactHeat()
+    {
+        if(ContactHeatRevision>=CaelumDemonBreathRules.CONTACT_HEAT_REVISION)return;
+        // El autor retiró la radiación: el saldo antiguo ya pagado no se emite
+        // al cargar o detenerse. Se conservan recursos e historial de emisión.
+        PaidSeconds=0;NextHeatTic=0;
+        ContactHeatRevision=CaelumDemonBreathRules.CONTACT_HEAT_REVISION;
+    }
+
+    override void Tick()
+    {
+        Super.Tick();
+        if(Emitter==null || Emitter.health<=0 || Emitter.DemonBreath!=self)
+        {FlushHeat();Destroy();}
+    }
+
+    override void OnDestroy()
+    {
+        for(int i=0;i<CaelumDemonBreathRules.SEGMENTS;i++)if(FlameVisuals[i]!=null)FlameVisuals[i].Destroy();
+        Super.OnDestroy();
+    }
+}

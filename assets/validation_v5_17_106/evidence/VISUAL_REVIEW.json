@@ -1,0 +1,36 @@
+{
+  "runtime_sha256": "d2e3f6d0701cbb19455a899959bd87b1f520905d5f39816e81f5b0b44fe049c1",
+  "directly_viewed": [
+    {
+      "label": "siege_final",
+      "path": "build/v516/barracas-profile-20261119-182934-293653/peer0/scene.png",
+      "observation": "Gate passage and ram retained; visible surrounding combatants. No new visual asset or obstruction."
+    },
+    {
+      "label": "siege_control",
+      "path": "build/v516/barracas-profile-20261119-183155-547158/peer0/scene.png",
+      "observation": "Same gate/ram framing as final, with normal animation differences."
+    },
+    {
+      "label": "mansion_final",
+      "path": "build/v516/barracas-profile-20261119-183416-036094/peer0/scene.png",
+      "observation": "Opening dialogue, figure and mansion exterior retained; this is the representative exterior reference, not an interior walkthrough."
+    },
+    {
+      "label": "sewers_final",
+      "path": "build/v516/barracas-profile-20261119-183459-289325/peer0/scene.png",
+      "observation": "Dark junction, flat ceiling and traversable opening retained; source materials unchanged."
+    },
+    {
+      "label": "city_final",
+      "path": "build/v516/barracas-profile-20261119-183542-830654/peer0/scene.png",
+      "observation": "Transport, workshop shelter, surrounding walls and paving retained."
+    },
+    {
+      "label": "city_ground_final",
+      "path": "build/v516/barracas-profile-20261119-183626-628432/peer0/scene.png",
+      "observation": "Ground-facing paving reference retained."
+    }
+  ],
+  "qualification": "Direct image inspection only; no claim of full traversal, continuous rendering fluency or author acceptance."
+}
