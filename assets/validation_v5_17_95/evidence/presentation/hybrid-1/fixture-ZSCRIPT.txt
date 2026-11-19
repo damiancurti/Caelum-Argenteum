@@ -1,0 +1,77 @@
+version "4.14.2"
+class CA834Data : Object { static clearscope Vector3 Focus(int pose) {
+ static const double x[]={2.296362,22.596651,9.028690,43.255444,43.521507,3.803947,7.642239,7.654541,25.863079,-0.566910,1.633102,25.926342,25.926342,-5.744007,-5.687210,22.280197,22.280197,22.280197,18.093119,22.596651,9.028690,22.280197,22.280197,22.280197};
+ static const double y[]={0.057821,0.057943,3.280991,-5.952137,-6.121429,0.057859,-10.003771,-10.003771,0.058128,-10.003775,0.057528,0.058113,0.058105,-10.003765,-10.003765,0.057856,0.057856,0.057978,2.576315,2.576317,5.799160,2.576237,2.576237,2.576368};
+ static const double z[]={85.567039,83.566033,92.959391,116.417770,116.417770,85.560150,83.500237,83.477196,69.564455,22.263411,47.517927,85.557710,85.557710,85.706043,85.679264,85.557517,85.557517,75.910413,85.567039,83.566033,92.959391,85.557517,85.557517,75.910413};
+ int i=Clamp(pose,0,23);return(x[i],y[i],z[i]);}
+static clearscope double Distance(int pose){static const double values[]={205.000000,205.000000,205.000000,209.551877,209.551877,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000};return values[Clamp(pose,0,23)];}
+static play void Show(Actor body,int slot,bool visible,bool hybrid){static const name files[]={'clothing.iqm','armor.iqm','cape.iqm','face.iqm','hair.iqm','weapon.iqm','shield.iqm'};
+static const name oldFiles[]={'clothing.md3','armor.md3','cape.md3','face.md3','hair.md3','weapon.md3','shield.md3'};static const int retained[]={0,0,1,0,0,0,0};
+if(hybrid && retained[slot])body.A_ChangeModel('None',slot,"models/caelum/characters/domingo",oldFiles[slot],slot,"models/caelum/characters/domingo",'domingo_skin.png',visible?0:CMDL_HIDEMODEL);
+else body.A_ChangeModel('None',slot,"models/caelum/diagnostics/iqm834",files[slot],slot,"models/caelum/characters/domingo",'domingo_skin.png',visible?0:CMDL_HIDEMODEL);}
+}
+// #834: comparación aislada; conserva los dueños de equipo y colisión.
+class CA834Body : CaelumDomingoPilotFrames
+{
+    int FrozenFrame;
+    bool Live;
+    void Freeze(int index)
+    {Live=false;FrozenFrame=index;SetModelFlag(MDL_NOINTERPOLATION);SetState(FindStateByString(String.Format("F%d",index)));tics=-1;}
+    void Animate()
+    {Live=true;ClearModelFlag(MDL_NOINTERPOLATION);SetState(FindStateByString(String.Format("F%d",Start(WALK))));}
+    override void Tick()
+    {Super.Tick();if(!Live){let desired=FindStateByString(String.Format("F%d",FrozenFrame));if(CurState!=desired)SetState(desired);tics=-1;}}
+    Default {+NOINTERACTION +NOGRAVITY +NOBLOCKMAP RenderRadius 260;}
+}
+class CA834MD3Preview : CA834Body {}
+class CA834IQMPreview : CA834Body
+{
+    int HiddenMask;
+    transient bool BindingsReady;
+    virtual bool RetainedCape(){return false;}
+    void ShowModule(int slot,bool visible)
+    {
+        if(slot<0 || slot>=7)return;
+        CA834Data.Show(self,slot,visible,RetainedCape());
+        if(visible)HiddenMask&=~(1<<slot);else HiddenMask|=1<<slot;
+    }
+    override void Tick()
+    {
+        Super.Tick();
+        // Los selectores guardados reconstruyen los overrides al cargar.
+        if(!BindingsReady){for(int slot=0;slot<7;slot++)ShowModule(slot,(HiddenMask&(1<<slot))==0);BindingsReady=true;}
+    }
+}
+class CA834HybridPreview : CA834IQMPreview
+{override bool RetainedCape(){return true;}}
+class CA834BenchCamera : Actor
+{Default {+NOINTERACTION +NOGRAVITY CameraHeight 0;} States {Spawn:TNT1 A -1;Stop;}}
+class CA834Bench : EventHandler
+{
+    int Age;double Previous;Array<double> Tics;Array<Actor> Bodies;
+    override bool InputProcess(InputEvent e){return true;}
+    override void WorldTick()
+    {
+        Age++;
+        if(Age==5)
+        {
+            let user=CaelumPlayer(players[0].mo);user.CharacterCreationComplete=true;user.CreationWizardOpen=false;user.bInvisible=true;
+            let camera=Actor.Spawn('CA834BenchCamera',(900,-900,750),NO_REPLACE);camera.Angle=135;camera.Pitch=27;players[0].camera=camera;
+            for(int index=0;index<1;index++)
+            {
+                vector3 point=1==1?(0,0,0):((index%8)*140-490,(index/8)*140-490,0);
+                let body=CA834Body(Actor.Spawn('CA834HybridPreview',point,NO_REPLACE));body.Live=true;Bodies.Push(body);
+            }
+            Console.Printf("CA834 BENCH bodies=%d",Bodies.Size());
+        }
+        if(Age==175)Console.Printf("CA834 BEGIN");
+        if(Age<175 || Age>875)return;
+        double now=MSTimeF();if(Previous>0)Tics.Push(now-Previous);Previous=now;
+        if(Age==875)
+        {
+            Console.Printf("CA834 END");
+            for(int index=0;index<Tics.Size();index++)Console.Printf("CA834 TIC %.6f",Tics[index]);
+            Console.Printf("CA834 COMPLETE bodies=%d samples=%d",Bodies.Size(),Tics.Size());
+        }
+    }
+}

@@ -1,0 +1,3625 @@
+{
+  "source_sha256": "3c84df6b241df2c48ddee48143d6aa4eba40d16c5c097d60f78eca85b130b9a4",
+  "blender": "4.5.3 LTS",
+  "rig_matrix": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "bones": [
+    {
+      "name": "root",
+      "parent": null,
+      "deform": true,
+      "length": 18.0
+    },
+    {
+      "name": "pelvis",
+      "parent": "root",
+      "deform": true,
+      "length": 17.0
+    },
+    {
+      "name": "spine",
+      "parent": "pelvis",
+      "deform": true,
+      "length": 20.0
+    },
+    {
+      "name": "chest",
+      "parent": "spine",
+      "deform": true,
+      "length": 18.0
+    },
+    {
+      "name": "neck",
+      "parent": "chest",
+      "deform": true,
+      "length": 7.0
+    },
+    {
+      "name": "head",
+      "parent": "neck",
+      "deform": true,
+      "length": 20.0
+    },
+    {
+      "name": "upper_arm.L",
+      "parent": "chest",
+      "deform": true,
+      "length": 23.55843734741211
+    },
+    {
+      "name": "forearm.L",
+      "parent": "upper_arm.L",
+      "deform": true,
+      "length": 21.189619064331055
+    },
+    {
+      "name": "hand.L",
+      "parent": "forearm.L",
+      "deform": true,
+      "length": 8.5440034866333
+    },
+    {
+      "name": "shield",
+      "parent": "hand.L",
+      "deform": true,
+      "length": 5.9999871253967285
+    },
+    {
+      "name": "upper_arm.R",
+      "parent": "chest",
+      "deform": true,
+      "length": 23.55843734741211
+    },
+    {
+      "name": "forearm.R",
+      "parent": "upper_arm.R",
+      "deform": true,
+      "length": 21.189620971679688
+    },
+    {
+      "name": "hand.R",
+      "parent": "forearm.R",
+      "deform": true,
+      "length": 8.5440034866333
+    },
+    {
+      "name": "sword",
+      "parent": "hand.R",
+      "deform": true,
+      "length": 77.51129150390625
+    },
+    {
+      "name": "cape.upper",
+      "parent": "chest",
+      "deform": true,
+      "length": 39.11521530151367
+    },
+    {
+      "name": "cape.lower",
+      "parent": "cape.upper",
+      "deform": true,
+      "length": 52.08646774291992
+    },
+    {
+      "name": "thigh.L",
+      "parent": "pelvis",
+      "deform": true,
+      "length": 39.0128173828125
+    },
+    {
+      "name": "shin.L",
+      "parent": "thigh.L",
+      "deform": true,
+      "length": 40.01249313354492
+    },
+    {
+      "name": "foot.L",
+      "parent": "shin.L",
+      "deform": true,
+      "length": 13.928387641906738
+    },
+    {
+      "name": "thigh.R",
+      "parent": "pelvis",
+      "deform": true,
+      "length": 39.0128173828125
+    },
+    {
+      "name": "shin.R",
+      "parent": "thigh.R",
+      "deform": true,
+      "length": 40.01249313354492
+    },
+    {
+      "name": "foot.R",
+      "parent": "shin.R",
+      "deform": true,
+      "length": 13.928387641906738
+    },
+    {
+      "name": "foot_ik.L",
+      "parent": null,
+      "deform": false,
+      "length": 13.928388595581055
+    },
+    {
+      "name": "knee_pole.L",
+      "parent": null,
+      "deform": false,
+      "length": 10.0
+    },
+    {
+      "name": "foot_ik.R",
+      "parent": null,
+      "deform": false,
+      "length": 13.928388595581055
+    },
+    {
+      "name": "knee_pole.R",
+      "parent": null,
+      "deform": false,
+      "length": 10.0
+    }
+  ],
+  "objects": [
+    {
+      "name": "Blue skirt L",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "thigh.L",
+        "1": "Part.Blue skirt L"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Blue skirt R",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "thigh.R",
+        "1": "Part.Blue skirt R"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Boot L",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "foot.L",
+        "1": "Part.Boot L"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Boot R",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "foot.R",
+        "1": "Part.Boot R"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Bracer L",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "forearm.L",
+        "1": "Part.Bracer L"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Bracer R",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "forearm.R",
+        "1": "Part.Bracer R"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Breastplate",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "chest",
+        "1": "Part.Breastplate"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Cross strap",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "chest",
+        "1": "Part.Cross strap"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Diamond sword blade",
+      "vertices": 12,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 12
+      },
+      "groups": {
+        "0": "sword",
+        "1": "Part.Diamond sword blade"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Eye l-eye",
+      "vertices": 72,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "1": 72
+      },
+      "groups": {
+        "0": "head"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Eye r-eye",
+      "vertices": 72,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "1": 72
+      },
+      "groups": {
+        "0": "head"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Gauntlet L",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "hand.L",
+        "1": "Part.Gauntlet L"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Gauntlet R",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "hand.R",
+        "1": "Part.Gauntlet R"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Gold embroidered blue cape",
+      "vertices": 81,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        },
+        {
+          "name": "Cloth thickness",
+          "type": "SOLIDIFY",
+          "preserve_volume": null
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 36,
+        "3": 45
+      },
+      "groups": {
+        "0": "cape.upper",
+        "1": "Part.Gold embroidered blue cape",
+        "2": "cape.lower"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Greave L",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shin.L",
+        "1": "Part.Greave L"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Greave R",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shin.R",
+        "1": "Part.Greave R"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Hair crown",
+      "vertices": 352,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "1": 352
+      },
+      "groups": {
+        "0": "head"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Head",
+      "vertices": 1076,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "1": 1076
+      },
+      "groups": {
+        "0": "head"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Hip armor",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "pelvis",
+        "1": "Part.Hip armor"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Kneecap L",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "shin.L",
+        "1": "Part.Kneecap L"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Kneecap R",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "shin.R",
+        "1": "Part.Kneecap R"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Leather belt",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "pelvis",
+        "1": "Part.Leather belt"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Long hair L",
+      "vertices": 2000,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "1": 2000
+      },
+      "groups": {
+        "0": "head"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Long hair R",
+      "vertices": 2000,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "1": 2000
+      },
+      "groups": {
+        "0": "head"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Pauldron L",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "upper_arm.L",
+        "1": "Part.Pauldron L"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Pauldron R",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "upper_arm.R",
+        "1": "Part.Pauldron R"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Pauldron trim L",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "upper_arm.L",
+        "1": "Part.Pauldron trim L"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Pauldron trim R",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "upper_arm.R",
+        "1": "Part.Pauldron trim R"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Pupil -1",
+      "vertices": 17,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "1": 17
+      },
+      "groups": {
+        "0": "head"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Pupil 1",
+      "vertices": 17,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "1": 17
+      },
+      "groups": {
+        "0": "head"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Reverse strap",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "chest",
+        "1": "Part.Reverse strap"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Scarf collar",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "neck",
+        "1": "Part.Scarf collar"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Scarf hanging end",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "chest",
+        "1": "Part.Scarf hanging end"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield boss",
+      "vertices": 50,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 50
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield boss"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield face",
+      "vertices": 25,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        },
+        {
+          "name": "Solid shield",
+          "type": "SOLIDIFY",
+          "preserve_volume": null
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 25
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield face"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield grip",
+      "vertices": 20,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 20
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield grip"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield grip mount front",
+      "vertices": 20,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 20
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield grip mount front"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield grip mount rear",
+      "vertices": 20,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 20
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield grip mount rear"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 00",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 00"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 01",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 01"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 02",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 02"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 03",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 03"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 04",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 04"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 05",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 05"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 06",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 06"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 07",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 07"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 08",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 08"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 09",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 09"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 10",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 10"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 11",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 11"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 12",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 12"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 13",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 13"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 14",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 14"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 15",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 15"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 16",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 16"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 17",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 17"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 18",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 18"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 19",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 19"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 20",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 20"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 21",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 21"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 22",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 22"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Shield rim 23",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "shield",
+        "1": "Part.Shield rim 23"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Sun buckle",
+      "vertices": 50,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 50
+      },
+      "groups": {
+        "0": "pelvis",
+        "1": "Part.Sun buckle"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Sword crossguard",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "sword",
+        "1": "Part.Sword crossguard"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Sword grip",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "sword",
+        "1": "Part.Sword grip"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Sword pommel",
+      "vertices": 50,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 50
+      },
+      "groups": {
+        "0": "sword",
+        "1": "Part.Sword pommel"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Thigh armor L",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "thigh.L",
+        "1": "Part.Thigh armor L"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Thigh armor R",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "thigh.R",
+        "1": "Part.Thigh armor R"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Trouser thigh L",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "thigh.L",
+        "1": "Part.Trouser thigh L"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Trouser thigh R",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "thigh.R",
+        "1": "Part.Trouser thigh R"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Upper sleeve L",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "upper_arm.L",
+        "1": "Part.Upper sleeve L"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Upper sleeve R",
+      "vertices": 40,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 40
+      },
+      "groups": {
+        "0": "upper_arm.R",
+        "1": "Part.Upper sleeve R"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Waistcoat",
+      "vertices": 84,
+      "parent": "Domingo_Rig",
+      "parent_type": "OBJECT",
+      "modifiers": [
+        {
+          "name": "Reusable rig",
+          "type": "ARMATURE",
+          "preserve_volume": false
+        }
+      ],
+      "shape_keys": 0,
+      "weight_histogram": {
+        "2": 84
+      },
+      "groups": {
+        "0": "spine",
+        "1": "Part.Waistcoat"
+      },
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ]
+}

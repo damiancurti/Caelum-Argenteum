@@ -1,0 +1,890 @@
+{
+  "issue": 834,
+  "blender": "4.5.3 LTS",
+  "source_sha256": "3c84df6b241df2c48ddee48143d6aa4eba40d16c5c097d60f78eca85b130b9a4",
+  "config_sha256": "7dc6be020976901518bef9fec9410e690435d1b2f410645fa7233e80c41023dd",
+  "module_config_sha256": "698f9db08a22cacbaa33c88c1644c8735f243222ae2147ae470eda40f67a9364",
+  "generator_sha256": "87d0d4ab9fb60e0490cc1135b241bbff15b54d03b2835f32d5a8350cea1ec4f7",
+  "frames": 375,
+  "actions": 24,
+  "bones": [
+    "root",
+    "pelvis",
+    "spine",
+    "chest",
+    "neck",
+    "head",
+    "upper_arm.L",
+    "forearm.L",
+    "hand.L",
+    "shield",
+    "upper_arm.R",
+    "forearm.R",
+    "hand.R",
+    "sword",
+    "cape.upper",
+    "cape.lower",
+    "thigh.L",
+    "shin.L",
+    "foot.L",
+    "thigh.R",
+    "shin.R",
+    "foot.R",
+    "foot_ik.L",
+    "knee_pole.L",
+    "foot_ik.R",
+    "knee_pole.R"
+  ],
+  "parents": [
+    -1,
+    0,
+    1,
+    2,
+    3,
+    4,
+    3,
+    6,
+    7,
+    8,
+    3,
+    10,
+    11,
+    12,
+    3,
+    14,
+    1,
+    16,
+    17,
+    1,
+    19,
+    20,
+    -1,
+    -1,
+    -1,
+    -1
+  ],
+  "frame_channels": 203,
+  "max_actual_deform_influences": 2,
+  "source_weight_sum_error": 2.9802322387695312e-08,
+  "max_local_trs_reconstruction_error": 7.450580596923828e-07,
+  "sampled_vertex_checks": 4008375,
+  "modules": {
+    "clothing": {
+      "vertices": 1226,
+      "triangles": 1600,
+      "objects": [
+        {
+          "name": "Blue skirt L",
+          "vertex_start": 0,
+          "vertices": 64,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Blue skirt R",
+          "vertex_start": 64,
+          "vertices": 64,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Boot L",
+          "vertex_start": 128,
+          "vertices": 124,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Boot R",
+          "vertex_start": 252,
+          "vertices": 124,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Cross strap",
+          "vertex_start": 376,
+          "vertices": 60,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Leather belt",
+          "vertex_start": 436,
+          "vertices": 116,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Reverse strap",
+          "vertex_start": 552,
+          "vertices": 60,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Scarf collar",
+          "vertex_start": 612,
+          "vertices": 116,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Scarf hanging end",
+          "vertex_start": 728,
+          "vertices": 56,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Sun buckle",
+          "vertex_start": 784,
+          "vertices": 70,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Trouser thigh L",
+          "vertex_start": 854,
+          "vertices": 64,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Trouser thigh R",
+          "vertex_start": 918,
+          "vertices": 64,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Upper sleeve L",
+          "vertex_start": 982,
+          "vertices": 64,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Upper sleeve R",
+          "vertex_start": 1046,
+          "vertices": 64,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Waistcoat",
+          "vertex_start": 1110,
+          "vertices": 116,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        }
+      ],
+      "md3_sha256": "34a02f5a36ee3c35a1fec81973fcf2ec6145265bebc64dbc50771716e52335cd",
+      "md3_bytes": 3728292,
+      "iqm_bytes": 255752,
+      "max_pipeline_distance": 3.280313412380305e-05,
+      "max_encoding_distance": 0.003744908966461937,
+      "max_source_distance": 0.0037487549927286297,
+      "max_md3_distance": 0.014787407245360323,
+      "worst_source": {
+        "frame": 190,
+        "action": "GetUp",
+        "source_frame": 24,
+        "vertex": 615,
+        "candidate": [
+          -53.677883715668,
+          1.9577442637867793e-06,
+          128.47120523170122
+        ],
+        "source": [
+          -53.681251525878906,
+          0.0,
+          128.4695587158203
+        ]
+      },
+      "rms_source_distance": 0.0013791031382353425
+    },
+    "armor": {
+      "vertices": 1664,
+      "triangles": 2272,
+      "objects": [
+        {
+          "name": "Bracer L",
+          "vertex_start": 0,
+          "vertices": 60,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Bracer R",
+          "vertex_start": 60,
+          "vertices": 60,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Breastplate",
+          "vertex_start": 120,
+          "vertices": 116,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Gauntlet L",
+          "vertex_start": 236,
+          "vertices": 124,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Gauntlet R",
+          "vertex_start": 360,
+          "vertices": 124,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Greave L",
+          "vertex_start": 484,
+          "vertices": 60,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Greave R",
+          "vertex_start": 544,
+          "vertices": 60,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Hip armor",
+          "vertex_start": 604,
+          "vertices": 116,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Kneecap L",
+          "vertex_start": 720,
+          "vertices": 116,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Kneecap R",
+          "vertex_start": 836,
+          "vertices": 116,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Pauldron L",
+          "vertex_start": 952,
+          "vertices": 116,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Pauldron R",
+          "vertex_start": 1068,
+          "vertices": 116,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Pauldron trim L",
+          "vertex_start": 1184,
+          "vertices": 124,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Pauldron trim R",
+          "vertex_start": 1308,
+          "vertices": 124,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Thigh armor L",
+          "vertex_start": 1432,
+          "vertices": 116,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Thigh armor R",
+          "vertex_start": 1548,
+          "vertices": 116,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        }
+      ],
+      "md3_sha256": "8e23757a67815e460e7951f7daf6348513e706667f04beb7b0dd1af68020b18a",
+      "md3_bytes": 5053860,
+      "iqm_bytes": 289396,
+      "max_pipeline_distance": 3.7367651441331275e-05,
+      "max_encoding_distance": 0.003696547378469808,
+      "max_source_distance": 0.0036955876186861763,
+      "max_md3_distance": 0.015284745476369743,
+      "worst_source": {
+        "frame": 177,
+        "action": "LieDown",
+        "source_frame": 16,
+        "vertex": 125,
+        "candidate": [
+          -51.665362596062906,
+          0.09039016694036307,
+          126.22426526597931
+        ],
+        "source": [
+          -51.66868209838867,
+          0.09038826078176498,
+          126.22264099121094
+        ]
+      },
+      "rms_source_distance": 0.0014213274877119
+    },
+    "cape": {
+      "vertices": 162,
+      "triangles": 320,
+      "objects": [
+        {
+          "name": "Gold embroidered blue cape",
+          "vertex_start": 0,
+          "vertices": 162,
+          "modifiers": [
+            "ARMATURE",
+            "SOLIDIFY"
+          ]
+        }
+      ],
+      "md3_sha256": "e6069dd3c740df5057a1a273fdf36cce4993585cb8164c640a53aa8a86bdba99",
+      "md3_bytes": 512420,
+      "iqm_bytes": 182468,
+      "max_pipeline_distance": 0.5118259158964015,
+      "max_encoding_distance": 0.0997544371036381,
+      "max_source_distance": 0.5231824492706882,
+      "max_md3_distance": 0.5316566662994973,
+      "worst_source": {
+        "frame": 125,
+        "action": "Seated",
+        "source_frame": 15,
+        "vertex": 128,
+        "candidate": [
+          -32.161057823606775,
+          -12.264460082486398,
+          69.65192722895198
+        ],
+        "source": [
+          -32.387977600097656,
+          -12.255881309509277,
+          69.18059539794922
+        ]
+      },
+      "rms_source_distance": 0.0625355633507952
+    },
+    "face": {
+      "vertices": 1315,
+      "triangles": 2427,
+      "objects": [
+        {
+          "name": "Eye l-eye",
+          "vertex_start": 0,
+          "vertices": 72,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Eye r-eye",
+          "vertex_start": 72,
+          "vertices": 72,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Head",
+          "vertex_start": 144,
+          "vertices": 1137,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Pupil -1",
+          "vertex_start": 1281,
+          "vertices": 17,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Pupil 1",
+          "vertex_start": 1298,
+          "vertices": 17,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        }
+      ],
+      "md3_sha256": "2013e1cb0ba738106ec48a7ef8c1190e3881518bc346a20862642b01282b990e",
+      "md3_bytes": 4005928,
+      "iqm_bytes": 279156,
+      "max_pipeline_distance": 2.8273048843639926e-05,
+      "max_encoding_distance": 0.004055894598199031,
+      "max_source_distance": 0.004065431018070756,
+      "max_md3_distance": 0.016179775371495883,
+      "worst_source": {
+        "frame": 177,
+        "action": "LieDown",
+        "source_frame": 16,
+        "vertex": 363,
+        "candidate": [
+          -64.89554793903633,
+          2.181762755233103e-06,
+          145.99241668008267
+        ],
+        "source": [
+          -64.89918518066406,
+          0.0,
+          145.9906005859375
+        ]
+      },
+      "rms_source_distance": 0.0013733836507937478
+    },
+    "hair": {
+      "vertices": 4352,
+      "triangles": 8440,
+      "objects": [
+        {
+          "name": "Hair crown",
+          "vertex_start": 0,
+          "vertices": 352,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Long hair L",
+          "vertex_start": 352,
+          "vertices": 2000,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Long hair R",
+          "vertex_start": 2352,
+          "vertices": 2000,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        }
+      ],
+      "md3_sha256": "a4b74837692a47802271f529ef4d463de8bc32af2726b3f6d0d6a2d948bcb81e",
+      "md3_bytes": 13213380,
+      "iqm_bytes": 544948,
+      "max_pipeline_distance": 2.990567426208869e-05,
+      "max_encoding_distance": 0.004079198985748292,
+      "max_source_distance": 0.004089675840942447,
+      "max_md3_distance": 0.01643373751315301,
+      "worst_source": {
+        "frame": 177,
+        "action": "LieDown",
+        "source_frame": 16,
+        "vertex": 2576,
+        "candidate": [
+          -61.308776310051556,
+          -2.2672003798616234,
+          149.47537492502084
+        ],
+        "source": [
+          -61.312461853027344,
+          -2.267202377319336,
+          149.47360229492188
+        ]
+      },
+      "rms_source_distance": 0.0013883014751903643
+    },
+    "weapon": {
+      "vertices": 222,
+      "triangles": 264,
+      "objects": [
+        {
+          "name": "Diamond sword blade",
+          "vertex_start": 0,
+          "vertices": 12,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Sword crossguard",
+          "vertex_start": 12,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Sword grip",
+          "vertex_start": 80,
+          "vertices": 64,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Sword pommel",
+          "vertex_start": 144,
+          "vertices": 78,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        }
+      ],
+      "md3_sha256": "65b1c258f0c521471d1cbbcc2ced7a3fd447dfda203d87d7bc16a9192464d92f",
+      "md3_bytes": 692228,
+      "iqm_bytes": 183528,
+      "max_pipeline_distance": 3.6598616246555844e-05,
+      "max_encoding_distance": 0.00555083152923754,
+      "max_source_distance": 0.005550882025337562,
+      "max_md3_distance": 0.015858571586612413,
+      "worst_source": {
+        "frame": 201,
+        "action": "JumpPrepare",
+        "source_frame": 6,
+        "vertex": 9,
+        "candidate": [
+          17.07320892413877,
+          -43.07859268400148,
+          7.131767131964544
+        ],
+        "source": [
+          17.067659378051758,
+          -43.078651428222656,
+          7.131660461425781
+        ]
+      },
+      "rms_source_distance": 0.0018822980227063137
+    },
+    "shield": {
+      "vertices": 1748,
+      "triangles": 2124,
+      "objects": [
+        {
+          "name": "Shield boss",
+          "vertex_start": 0,
+          "vertices": 70,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield face",
+          "vertex_start": 70,
+          "vertices": 50,
+          "modifiers": [
+            "ARMATURE",
+            "SOLIDIFY"
+          ]
+        },
+        {
+          "name": "Shield grip",
+          "vertex_start": 120,
+          "vertices": 20,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield grip mount front",
+          "vertex_start": 140,
+          "vertices": 20,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield grip mount rear",
+          "vertex_start": 160,
+          "vertices": 20,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 00",
+          "vertex_start": 180,
+          "vertices": 60,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 01",
+          "vertex_start": 240,
+          "vertices": 60,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 02",
+          "vertex_start": 300,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 03",
+          "vertex_start": 368,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 04",
+          "vertex_start": 436,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 05",
+          "vertex_start": 504,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 06",
+          "vertex_start": 572,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 07",
+          "vertex_start": 640,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 08",
+          "vertex_start": 708,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 09",
+          "vertex_start": 776,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 10",
+          "vertex_start": 844,
+          "vertices": 60,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 11",
+          "vertex_start": 904,
+          "vertices": 60,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 12",
+          "vertex_start": 964,
+          "vertices": 60,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 13",
+          "vertex_start": 1024,
+          "vertices": 60,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 14",
+          "vertex_start": 1084,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 15",
+          "vertex_start": 1152,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 16",
+          "vertex_start": 1220,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 17",
+          "vertex_start": 1288,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 18",
+          "vertex_start": 1356,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 19",
+          "vertex_start": 1424,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 20",
+          "vertex_start": 1492,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 21",
+          "vertex_start": 1560,
+          "vertices": 68,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 22",
+          "vertex_start": 1628,
+          "vertices": 60,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        },
+        {
+          "name": "Shield rim 23",
+          "vertex_start": 1688,
+          "vertices": 60,
+          "modifiers": [
+            "ARMATURE"
+          ]
+        }
+      ],
+      "md3_sha256": "af4ca2334e6d3aabefd3164776920fea3c9af5bdb28f5c40f69d8c85a5be7a32",
+      "md3_bytes": 5304756,
+      "iqm_bytes": 289200,
+      "max_pipeline_distance": 2.7119952316967145e-05,
+      "max_encoding_distance": 0.003208734397663417,
+      "max_source_distance": 0.0032152117900571225,
+      "max_md3_distance": 0.0155455169206617,
+      "worst_source": {
+        "frame": 190,
+        "action": "GetUp",
+        "source_frame": 24,
+        "vertex": 645,
+        "candidate": [
+          -21.53679031014078,
+          39.87774157656137,
+          102.882196098798
+        ],
+        "source": [
+          -21.53976058959961,
+          39.87769317626953,
+          102.88096618652344
+        ]
+      },
+      "rms_source_distance": 0.0011225217180208798
+    }
+  },
+  "hybrid_md3_modules": [
+    "cape"
+  ],
+  "hybrid_model_bytes": 2354400,
+  "sha256": {
+    "models/caelum/diagnostics/iqm834/clothing.iqm": "fce60961ff781cfbbfab1a716c7e37c5b489d351c14b15a961256ee046584d23",
+    "models/caelum/diagnostics/iqm834/armor.iqm": "91335afeaffdc3cc4da06b809ebd8f9169d0809706d74c4aff68631e1d4a5101",
+    "models/caelum/diagnostics/iqm834/cape.iqm": "9d5c241b2572441658ed5f6666c9cd0dc0a6af963180309f9e7e856c27d6eedc",
+    "models/caelum/diagnostics/iqm834/face.iqm": "515d2e380d20b3ace749bfa2555a472b1421b1cb21c65e5e2d555493ff440ec0",
+    "models/caelum/diagnostics/iqm834/hair.iqm": "12e9a0875ac29f25b253ba3107ce8a71aa12d65fbc0678cd1a63fc5e1dce11ba",
+    "models/caelum/diagnostics/iqm834/weapon.iqm": "fa2f124d35f438586d859177c73e0c5311cc1e910feb28943b9723ac9b8fae77",
+    "models/caelum/diagnostics/iqm834/shield.iqm": "b6e40e5e128555e3009e560c586ac963da436f81f829bdcf41dc05575ebdfc04",
+    "MODELDEF": "85f809ed5f9616ba94743bfbdf2056a01a920169786b952aaca6a7a6619698b6"
+  },
+  "qualifications": [
+    "Part.* groups are selection metadata and are excluded from deform weights.",
+    "Post-armature solidify is baked at rest for the skeletal candidate; pipeline error is measured separately from native encoding error.",
+    "CPU reconstruction predicts stored sample positions, not renderer/interpolation/normal equivalence; native comparison remains required.",
+    "Numeric existing state frames remain authoritative; no uniform-rate IQM named clips are invented.",
+    "No production binding, resource, equipment, collision or save schema is changed."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema_revision": 1,
+  "issue": 834,
+  "status": "diagnostic_assessment_in_progress",
+  "module_config": "assets/source/art/character_modules_458/MODULES.json",
+  "module_config_sha256": "698f9db08a22cacbaa33c88c1644c8735f243222ae2147ae470eda40f67a9364",
+  "source_blend": "assets/source/art/domingo_3d_pilot/domingo.blend",
+  "source_sha256": "3c84df6b241df2c48ddee48143d6aa4eba40d16c5c097d60f78eca85b130b9a4",
+  "source_design": "assets/source/art/domingo_3d_pilot/DESIGN.json",
+  "model_path": "models/caelum/diagnostics/iqm834",
+  "fixture_class": "CA834IQMPreview",
+  "skin": "models/caelum/characters/domingo/domingo_skin.png",
+  "state_authority": "src/caelum/character/CaelumDomingoPilotFrames.zs",
+  "timing_policy": "Retain numeric FrameIndex and existing state durations; no invented uniform IQM clip framerate for nonuniform source sampling.",
+  "native_version": 2,
+  "limits": [
+    "Diagnostic source/export only; no production format migration.",
+    "Four native bone influences maximum; unmatched source Part.* groups are authoring selection metadata, not deform bones. Never silently truncate deform weights.",
+    "Measure post-armature solidify differences against sampled Blender and MD3 geometry.",
+    "Source art, native MD3 resources and gameplay/save owners remain unchanged."
+  ],
+  "hybrid_fixture_class": "CA834HybridPreview",
+  "hybrid_md3_modules": [
+    "cape"
+  ],
+  "hybrid_reason": "The source cape computes thickness after nonrigid deformation. Export01 measures a 0.5118259158964015 MU rest-bake pipeline difference. Compare a hybrid that retains its exact original MD3 samples while using IQM for the other six modules; this is diagnostic assessment, not production migration."
+}

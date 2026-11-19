@@ -1,0 +1,42 @@
+{
+  "issue": 834,
+  "status": "diagnostic format assessment; no production migration or author acceptance",
+  "author_project": "Damian Curti / Caelum Argenteum",
+  "art_source": "assets/source/art/domingo_3d_pilot/domingo.blend",
+  "art_source_sha256": "3c84df6b241df2c48ddee48143d6aa4eba40d16c5c097d60f78eca85b130b9a4",
+  "art_rights_references": [
+    "src/licenses/DOMINGO_3D_PILOT.txt",
+    "src/licenses/MAKEHUMAN_CC0.txt"
+  ],
+  "source_description": "Original project rig, animations, body/equipment/hair and owned Domingo material; retained head/eye geometry derives from MakeHuman hm08 under the recorded CC0 provenance. No new artwork or external model is incorporated.",
+  "changes": [
+    "Separate the same 73 source meshes into the seven retained module groups.",
+    "Serialize rest geometry, source bone transforms and quantized native weights/channels in IQM version 2.",
+    "Measure rest-baked post-armature thickness and encoding differences across all 375 samples.",
+    "Provide a hybrid binding that retains the original MD3 cape samples and six IQM modules."
+  ],
+  "technical_references": [
+    {
+      "repository": "ZDoom/gzdoom",
+      "ref": "g4.14.2",
+      "path": "src/common/models/models_iqm.cpp",
+      "git_blob_sha": "d5fb6a152c3ddc6ee2c1476840bdc099eb0dbb07",
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/models/models_iqm.cpp"
+    },
+    {
+      "repository": "ZDoom/gzdoom",
+      "ref": "g4.14.2",
+      "path": "src/common/models/model_iqm.h",
+      "git_blob_sha": "cf221595f7bfb247f16cce01ca6d50ce2cea276d",
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/models/model_iqm.h"
+    },
+    {
+      "repository": "lsalzman/iqm",
+      "path": "iqm.h",
+      "git_blob_sha": "a450504f97a1467c03782b89405c4622b01b4257",
+      "url": "https://api.github.com/repos/lsalzman/iqm/git/blobs/a450504f97a1467c03782b89405c4622b01b4257"
+    }
+  ],
+  "reference_role": "Format/engine interface inspection only; no upstream implementation source is copied into the project. Native rendering and fidelity measurements are separate evidence.",
+  "distribution": "Diagnostic raw exports only. Test overlay PK3s are rebuilt locally; no engine, IWAD, save or private test package is distributed."
+}

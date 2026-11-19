@@ -1,0 +1,10 @@
+{
+  "issue": 834,
+  "reviewed": [
+    "issue834-native03/md3-pose10-view7.png",
+    "issue834-native03/hybrid-pose10-view7.png"
+  ],
+  "notes": [
+    "Observed crouched rear-quarter comparison: the hybrid retains the original cape silhouette/fold while its other six modules remain aligned. No gross model, material or skeleton error is visible; full native and author review remain pending."
+  ]
+}

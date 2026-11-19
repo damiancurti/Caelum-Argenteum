@@ -1,0 +1,138 @@
+version "4.14.2"
+class CA834Data : Object { static clearscope Vector3 Focus(int pose) {
+ static const double x[]={2.296362,22.596651,9.028690,43.255444,43.521507,3.803947,7.642239,7.654541,25.863079,-0.566910,1.633102,25.926342,25.926342,-5.744007,-5.687210,22.280197,22.280197,22.280197,18.093119,22.596651,9.028690,22.280197,22.280197,22.280197};
+ static const double y[]={0.057821,0.057943,3.280991,-5.952137,-6.121429,0.057859,-10.003771,-10.003771,0.058128,-10.003775,0.057528,0.058113,0.058105,-10.003765,-10.003765,0.057856,0.057856,0.057978,2.576315,2.576317,5.799160,2.576237,2.576237,2.576368};
+ static const double z[]={85.567039,83.566033,92.959391,116.417770,116.417770,85.560150,83.500237,83.477196,69.564455,22.263411,47.517927,85.557710,85.557710,85.706043,85.679264,85.557517,85.557517,75.910413,85.567039,83.566033,92.959391,85.557517,85.557517,75.910413};
+ int i=Clamp(pose,0,23);return(x[i],y[i],z[i]);}
+static clearscope double Distance(int pose){static const double values[]={205.000000,205.000000,205.000000,209.551877,209.551877,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000,205.000000};return values[Clamp(pose,0,23)];}
+static play void Show(Actor body,int slot,bool visible,bool hybrid){static const name files[]={'clothing.iqm','armor.iqm','cape.iqm','face.iqm','hair.iqm','weapon.iqm','shield.iqm'};
+static const name oldFiles[]={'clothing.md3','armor.md3','cape.md3','face.md3','hair.md3','weapon.md3','shield.md3'};static const int retained[]={0,0,1,0,0,0,0};
+if(hybrid && retained[slot])body.A_ChangeModel('None',slot,"models/caelum/characters/domingo",oldFiles[slot],slot,"models/caelum/characters/domingo",'domingo_skin.png',visible?0:CMDL_HIDEMODEL);
+else body.A_ChangeModel('None',slot,"models/caelum/diagnostics/iqm834",files[slot],slot,"models/caelum/characters/domingo",'domingo_skin.png',visible?0:CMDL_HIDEMODEL);}
+}
+// #834: comparación aislada; conserva los dueños de equipo y colisión.
+class CA834Body : CaelumDomingoPilotFrames
+{
+    int FrozenFrame;
+    bool Live;
+    void Freeze(int index)
+    {Live=false;FrozenFrame=index;SetModelFlag(MDL_NOINTERPOLATION);SetState(FindStateByString(String.Format("F%d",index)));tics=-1;}
+    void Animate()
+    {Live=true;ClearModelFlag(MDL_NOINTERPOLATION);SetState(FindStateByString(String.Format("F%d",Start(WALK))));}
+    override void Tick()
+    {Super.Tick();if(!Live){let desired=FindStateByString(String.Format("F%d",FrozenFrame));if(CurState!=desired)SetState(desired);tics=-1;}}
+    Default {+NOINTERACTION +NOGRAVITY +NOBLOCKMAP RenderRadius 260;}
+}
+class CA834MD3Preview : CA834Body {}
+class CA834IQMPreview : CA834Body
+{
+    int HiddenMask;
+    transient bool BindingsReady;
+    virtual bool RetainedCape(){return false;}
+    void ShowModule(int slot,bool visible)
+    {
+        if(slot<0 || slot>=7)return;
+        CA834Data.Show(self,slot,visible,RetainedCape());
+        if(visible)HiddenMask&=~(1<<slot);else HiddenMask|=1<<slot;
+    }
+    override void Tick()
+    {
+        Super.Tick();
+        // Los selectores guardados reconstruyen los overrides al cargar.
+        if(!BindingsReady){for(int slot=0;slot<7;slot++)ShowModule(slot,(HiddenMask&(1<<slot))==0);BindingsReady=true;}
+    }
+}
+class CA834HybridPreview : CA834IQMPreview
+{override bool RetainedCape(){return true;}}
+class CA834Camera : Actor
+{Default {CameraHeight 0;Height 0;Radius 0;+NOINTERACTION +NOGRAVITY} States {Spawn:TNT1 A -1;Stop;}}
+class CA834PreviewEvents : EventHandler
+{
+    CA834MD3Preview Reference;
+    CA834IQMPreview Candidate,Hybrid;
+    CA834Camera Camera;
+    State Previous;
+    int Pose,Rotation,Selected,Failures;
+    override bool InputProcess(InputEvent e){return true;}
+    void Check(bool okay,String label)
+    {if(!okay)Failures++;Console.Printf("CA834 %s %s",okay?"PASS":"FAIL",label);}
+    CA834IQMPreview Active(){if(Selected==2)return Hybrid;return Candidate;}
+    void View()
+    {
+        vector3 focus=CA834Data.Focus(Pose);double distance=CA834Data.Distance(Pose),direction=270+Rotation*45;
+        Camera.SetOrigin((focus.X+distance*Cos(direction),focus.Y+distance*Sin(direction),focus.Z/level.pixelstretch),false);
+        Camera.Angle=direction+180;Camera.Pitch=0;Camera.ClearInterpolation();
+    }
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name.Left(6)!="ca834_")return;
+        if(e.Name=="ca834_prepare")
+        {
+            if(Reference==null)Reference=CA834MD3Preview(Actor.Spawn('CA834MD3Preview',(0,0,0),NO_REPLACE));
+            if(Candidate==null)Candidate=CA834IQMPreview(Actor.Spawn('CA834IQMPreview',(0,0,0),NO_REPLACE));
+            if(Hybrid==null)Hybrid=CA834IQMPreview(Actor.Spawn('CA834HybridPreview',(0,0,0),NO_REPLACE));
+            if(Camera==null)Camera=CA834Camera(Actor.Spawn('CA834Camera',(0,0,0),NO_REPLACE));
+            let user=CaelumPlayer(players[0].mo);user.CharacterCreationComplete=true;user.CreationWizardOpen=false;user.bInvisible=true;
+            Reference.Freeze(0);Candidate.Freeze(0);Hybrid.Freeze(0);Reference.bInvisible=false;Candidate.bInvisible=true;Hybrid.bInvisible=true;Selected=0;Pose=0;Rotation=0;
+            players[0].camera=Camera;View();Check(Reference!=null && Candidate!=null && Hybrid!=null && Camera!=null,"comparison references created");return;
+        }
+        if(e.Name=="ca834_select")
+        {Selected=Clamp(e.Args[0],0,2);Reference.bInvisible=Selected!=0;Candidate.bInvisible=Selected!=1;Hybrid.bInvisible=Selected!=2;Check(Reference.bInvisible==(Selected!=0) && Candidate.bInvisible==(Selected!=1) && Hybrid.bInvisible==(Selected!=2),"one selected format visible");return;}
+        if(e.Name=="ca834_pose")
+        {
+            Pose=Clamp(e.Args[0],0,23);int frame=CA834Body.Start(Pose)+CA834Body.Count(Pose)/2;
+            Reference.Freeze(frame);Candidate.Freeze(frame);Hybrid.Freeze(frame);View();
+            Check(Reference.CurState==Reference.FindStateByString(String.Format("F%d",frame)) && Candidate.CurState==Candidate.FindStateByString(String.Format("F%d",frame)) && Hybrid.CurState==Hybrid.FindStateByString(String.Format("F%d",frame)),"all formats use the same registered sample");return;
+        }
+        if(e.Name=="ca834_rotate"){Rotation=Clamp(e.Args[0],0,7);View();return;}
+        if(e.Name=="ca834_module")
+        {let body=Active();body.ShowModule(e.Args[0],e.Args[1]!=0);Check(((body.HiddenMask&(1<<e.Args[0]))==0)==(e.Args[1]!=0),"independent module visibility selected");return;}
+        if(e.Name=="ca834_restore")
+        {let body=Active();for(int i=0;i<7;i++)body.ShowModule(i,true);Check(body.HiddenMask==0,"all candidate modules restored");return;}
+        if(e.Name=="ca834_animate"){let body=Active();body.Animate();Previous=body.CurState;return;}
+        if(e.Name=="ca834_motion"){Check(Active().CurState!=Previous,"skeletal walking frame advances");return;}
+        if(e.Name=="ca834_saved")
+        {
+            Reference.Freeze(0);Candidate.Freeze(0);Hybrid.Freeze(0);Pose=0;Rotation=0;View();
+            Candidate.ShowModule(4,false);Candidate.ShowModule(6,false);Hybrid.ShowModule(4,false);Hybrid.ShowModule(6,false);return;
+        }
+        if(e.Name=="ca834_verify")
+        {
+            Check(Reference!=null && Candidate!=null && Hybrid!=null && Candidate!=Hybrid && Actor(Reference)!=Actor(Candidate) && players[0].camera==Camera,"saved references and camera retained");
+            Check(Candidate.HiddenMask==((1<<4)|(1<<6)),"saved hair and shield selections retained");
+            Check(Hybrid.HiddenMask==((1<<4)|(1<<6)),"saved hybrid hair and shield selections retained");
+            Check(!Candidate.Live && !Hybrid.Live && Candidate.CurState==Candidate.FindState('F0') && Hybrid.CurState==Hybrid.FindState('F0'),"saved frozen frames retained");
+            Check(Selected==e.Args[0] && Reference.bInvisible && Candidate.bInvisible==(Selected!=1) && Hybrid.bInvisible==(Selected!=2),"saved format selection retained");
+            Check(Candidate.bNOINTERACTION && Candidate.bNOBLOCKMAP && Hybrid.bNOINTERACTION && Hybrid.bNOBLOCKMAP,"diagnostic bodies remain noninteractive");
+            Console.Printf("CA834 COMPLETE failures=%d",Failures);
+        }
+    }
+}
+
+// #834: controles del visor aislado; no altera el juego normal.
+class CA834AuthorEvents : CA834PreviewEvents
+{
+    override bool InputProcess(InputEvent e){return false;}
+    override void RenderOverlay(RenderEvent e)
+    {
+        if(Camera==null)return;
+        String kind=Selected==0?"MD3":Selected==1?"IQM":"Hybrid (MD3 cape)";
+        String label=String.Format("#834 candidate: %s / pose %d / view %d",kind,Pose,Rotation);
+        Screen.DrawText(Font.GetFont("CaelumMono"),Font.CR_WHITE,8,8,label,DTA_VIRTUALWIDTH,640,DTA_VIRTUALHEIGHT,360,DTA_KEEPRATIO,true);
+        Screen.DrawText(Font.GetFont("CaelumMono"),Font.CR_WHITE,8,22,"F1 MD3 / F2 IQM / F3 hybrid / F4 view / F5 pose",DTA_VIRTUALWIDTH,640,DTA_VIRTUALHEIGHT,360,DTA_KEEPRATIO,true);
+        Screen.DrawText(Font.GetFont("CaelumMono"),Font.CR_WHITE,8,36,"F6 walk / F7 rest / F8 hide hair / F9 restore",DTA_VIRTUALWIDTH,640,DTA_VIRTUALHEIGHT,360,DTA_KEEPRATIO,true);
+    }
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name=="ca834_play")
+        {Reference.Animate();Candidate.Animate();Hybrid.Animate();return;}
+        if(e.Name=="ca834_smoke")
+        {
+            Check(Reference.Live && Candidate.Live && Hybrid.Live,"all viewer formats animate");
+            Check(Candidate.BindingsReady && Hybrid.BindingsReady,"viewer skeletal bindings ready");
+            Check(Candidate.CurState==Reference.CurState && Hybrid.CurState==Reference.CurState,"viewer animation samples remain synchronized");
+            return;
+        }
+        Super.NetworkProcess(e);
+    }
+}

@@ -1,0 +1,42 @@
+{
+  "issue": 834,
+  "quick": true,
+  "runtime_sha256": "b073da14f96bc9215a96c509e8c675fe43f2ded8622a2fb57fc3321b0362d7b3",
+  "candidate_sha256": "fa2d993f07d0be7367dfc48321d13a27bb8cf65c9e17e270e71563b5c7cef40c",
+  "manifest_sha256": "3f9e104908ad3cbe8879cfe92951463a271907f8a1ee01158d2dce9f73398615",
+  "fixture_sha256": "6e6713d3ab049701a84a72d99fd8db821bbdbb2bf421129465ea25c3e2a7dbf5",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "fresh",
+      "exit_code": 0,
+      "assertions": 37,
+      "expected_assertions": 37,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "phase": "reload",
+      "exit_code": 0,
+      "assertions": 5,
+      "expected_assertions": 5,
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "captures": {
+    "iqm-pose00-view7.png": "c5ae616b68be177ea6f46c70d1f556b80407bac73c987bbf3fd7a7759a70e191",
+    "iqm-pose02-view7.png": "d97c9844929a6bf56fe6b41ccb2dbdeeda77351348243385beb08256395627c0",
+    "iqm-pose08-view7.png": "924f656a771f734d72de108320f92e2f50286d5d7049454c817d526ec6de4952",
+    "iqm-pose10-view7.png": "cc9902416100577f5f263d55e01af4a430009f01966184e1dceb037742e0e6db",
+    "iqm-pose17-view7.png": "e7732a17ba9b4ce2067a1171b0a1bcc5f1b8eecabfd10d15f12e644645f48aee",
+    "md3-pose00-view7.png": "bf8b864e1e81f38ab86e4ec55fb71cd662b982ccc8cb1c9c5c0e7a965153392a",
+    "md3-pose02-view7.png": "f2dbc57e3eaa3ab4a3783c6b09b013535d50ea5a5ebe383c5ed951eb522816c6",
+    "md3-pose08-view7.png": "52db9cec6013d145f5784a0d7f03227d21e8863433f18fe41bf7c12bc6be0596",
+    "md3-pose10-view7.png": "fbcd0aefd1542d68cd0e146ef9cfe4e25e8a4792aaa168c00b24e1d3d91b63ed",
+    "md3-pose17-view7.png": "2717f71ebfa29e06b42a9352c2130c3a4b482334db789b16f626944b3e76091d",
+    "reloaded.png": "30cdc4f3b39ca3d0bbefe76b254d867e3f4f4396c11e7b517af658066905ffe8",
+    "saved.png": "30cdc4f3b39ca3d0bbefe76b254d867e3f4f4396c11e7b517af658066905ffe8"
+  },
+  "saved_visibility_pixel_match": true
+}
