@@ -1,0 +1,129 @@
+{
+  "issue": 849,
+  "passed": true,
+  "exit_code": 0,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-review01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-carrier01\\carrier.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-fixture-bench01\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-fixture-bench01\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-fixture-bench01",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-fixture-bench01\\engine.log",
+    "+map",
+    "MAP01",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-fixture-bench01\\commands.cfg"
+  ],
+  "errors": [],
+  "events": [
+    "ca502s_core",
+    "ca502s_native",
+    "ca502s_exposure",
+    "ca502s_contact",
+    "ca502s_storage",
+    "ca502s_catalogue",
+    "ca502s_npc",
+    "ca502v_catalogue",
+    "ca502v_storage",
+    "ca502v_immersion",
+    "ca502v_camp",
+    "ca502v_packed",
+    "ca502v_contact",
+    "ca502v_seed",
+    "ca502s_seed",
+    "ca849_check"
+  ],
+  "results": [
+    [
+      12,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      29,
+      0
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      100,
+      0
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "carrier_result": [
+    "264",
+    "0"
+  ],
+  "checks": 450,
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-review01.pk3": "e94024c02321d0532b55c7faccb5f1e35c241bdc5f4d836cca01f47cf2ee3a36",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-carrier01\\carrier.pk3": "1fe0d281c06269f36dd121b4d6d8d8e713c6b564f11ca77143784914cf51967a",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-fixture-bench01\\checks.pk3": "7e4bc975e322b77b899fd438a42d5ba65f7c2cdd3b5f4d4dcdfd11a74ed74e2d"
+  },
+  "retained_sources": {
+    "stacks.zs": "e74d012acab56cd653b8719e72e91faa40c29cf8c176e70b26f44d88404121e1",
+    "vessels.zs": "e396aba1406cfee7b7ceef0661aff74c198e5b3ee4d617e532411a3fe6ee46db"
+  },
+  "reference_runtime_sha256": "e94024c02321d0532b55c7faccb5f1e35c241bdc5f4d836cca01f47cf2ee3a36",
+  "loaded_save_sha256": null,
+  "saved_sha256": "f7c5ca6727ea7b8f40965d3c133df95d83c0deb547fb76a3bc3d3b912092c2c9"
+}

@@ -1,6 +1,26 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.102** - 2026-11-19.
+Documentation version: **5.17.103** - 2026-11-19.
+
+## 5.17.103 - Dispatch measured native contamination carriers directly (#849, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+The existing warm NPC contamination cache is consulted before mutually exclusive
+inventory/furniture casts. GateBlocker (including ram/head/cannon subclasses) and
+VehiclePart families go directly to their existing individual native carrier.
+The original carrier attachment/migration tail is shared without changing its
+body. Exposure eligibility for those same families retains the exact current or
+default solidity and positive-dimension predicate after common rejection guards.
+No field, cache, schema, contamination rule, cadence, resource or collision changes.
+Other storage/furniture dispatch, offscreen behavior and the >=500 census remain.
+
+1,824 native assertions pass, including reversible saves and retained
+stack/vessel contracts. Source ancestry proves the shortcuts; paired query loops
+match the original results. HISTORY records final/control presentation and tic
+tails. Overall siege performance and consolidated author review remain open.
+Evidence: assets/validation_v5_17_103.
+
 
 ## 5.17.102 - Prepare the sewer material comparison (#847, #463)
 

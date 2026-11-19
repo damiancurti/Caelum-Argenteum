@@ -1,0 +1,117 @@
+{
+  "issue": 849,
+  "directory": "build/v516/barracas-profile-20261119-160835-180302",
+  "sampled_tics": 42,
+  "warm_pointer_mismatches": 0,
+  "rows": [
+    {
+      "id": 0,
+      "label": "Get.null_or_player",
+      "calls": 0,
+      "total_ms": 0,
+      "ms_per_sampled_tic": 0.0,
+      "microseconds_per_call": null,
+      "max_call_ms": 0
+    },
+    {
+      "id": 1,
+      "label": "Get.npc_warm_record",
+      "calls": 141525,
+      "total_ms": 12.9411,
+      "ms_per_sampled_tic": 0.3081214285714286,
+      "microseconds_per_call": 0.09144038155802862,
+      "max_call_ms": 0.0343
+    },
+    {
+      "id": 2,
+      "label": "Get.npc_warm_empty_read",
+      "calls": 0,
+      "total_ms": 0,
+      "ms_per_sampled_tic": 0.0,
+      "microseconds_per_call": null,
+      "max_call_ms": 0
+    },
+    {
+      "id": 3,
+      "label": "Get.npc_cold_or_create",
+      "calls": 0,
+      "total_ms": 0,
+      "ms_per_sampled_tic": 0.0,
+      "microseconds_per_call": null,
+      "max_call_ms": 0
+    },
+    {
+      "id": 4,
+      "label": "Get.inventory",
+      "calls": 378,
+      "total_ms": 0.0623,
+      "ms_per_sampled_tic": 0.0014833333333333335,
+      "microseconds_per_call": 0.16481481481481483,
+      "max_call_ms": 0.0034
+    },
+    {
+      "id": 5,
+      "label": "Get.other_actor",
+      "calls": 184395,
+      "total_ms": 21.647199999999998,
+      "ms_per_sampled_tic": 0.5154095238095238,
+      "microseconds_per_call": 0.11739580791236204,
+      "max_call_ms": 0.0118
+    },
+    {
+      "id": 6,
+      "label": "Value.null_or_player",
+      "calls": 0,
+      "total_ms": 0,
+      "ms_per_sampled_tic": 0.0,
+      "microseconds_per_call": null,
+      "max_call_ms": 0
+    },
+    {
+      "id": 7,
+      "label": "Value.npc_warm_record",
+      "calls": 5733,
+      "total_ms": 1.4355,
+      "ms_per_sampled_tic": 0.034178571428571426,
+      "microseconds_per_call": 0.25039246467817894,
+      "max_call_ms": 0.0028
+    },
+    {
+      "id": 8,
+      "label": "Value.npc_warm_empty_read",
+      "calls": 0,
+      "total_ms": 0,
+      "ms_per_sampled_tic": 0.0,
+      "microseconds_per_call": null,
+      "max_call_ms": 0
+    },
+    {
+      "id": 9,
+      "label": "Value.npc_cold_or_create",
+      "calls": 0,
+      "total_ms": 0,
+      "ms_per_sampled_tic": 0.0,
+      "microseconds_per_call": null,
+      "max_call_ms": 0
+    },
+    {
+      "id": 10,
+      "label": "Value.inventory",
+      "calls": 378,
+      "total_ms": 0.1539,
+      "ms_per_sampled_tic": 0.0036642857142857145,
+      "microseconds_per_call": 0.40714285714285714,
+      "max_call_ms": 0.0042
+    },
+    {
+      "id": 11,
+      "label": "Value.other_actor",
+      "calls": 148883,
+      "total_ms": 71.2593,
+      "ms_per_sampled_tic": 1.69665,
+      "microseconds_per_call": 0.4786261695425267,
+      "max_call_ms": 0.02
+    }
+  ],
+  "qualification": "Classification is outside the timed original body. Get recursion and Get inside Value remain nested/inclusive and include probe overhead. Warm NPC result identity is compared after the original call; this does not prove cold-state migration or author acceptance."
+}

@@ -1353,3 +1353,10 @@ assets/validation_v5_17_95/evidence/** -text -diff
 /assets/validation_v5_17_102/*.json text eol=lf
 /assets/validation_v5_17_102/evidence/** -text -diff
 /assets/source/art/sewer_material_847/*.html text eol=lf
+
+# Exact carrier dispatch and retained issue849 evidence.
+src/caelum/survival/CaelumContaminationState.zs text eol=crlf
+src/caelum/survival/CaelumContaminationObject.zs text eol=crlf
+assets/validation_v5_17_103/** -text -diff
+assets/validation_v5_17_103/*.py text eol=lf diff
+assets/validation_v5_17_103/*.json text eol=lf diff

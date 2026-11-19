@@ -55,9 +55,19 @@ class CaelumContaminationCarrier : Inventory
 
 class CaelumContaminationStorage : Object play
 {
+    // Las familias medidas usan su portador individual, no muebles delegados.
+    static clearscope bool NativeCarrierBody(Actor body)
+    {return body is 'CaelumGateBlocker' || body is 'CaelumVehiclePart';}
     static CaelumContaminationState Get(Actor body,bool create=false,bool raw=false)
     {
         if(body==null || body is 'CaelumPlayer')return null;
+        let npc=CaelumCombatActor(body);
+        if(npc!=null && npc.ContaminationBodyReady && (npc.ContaminationBody!=null || !create))
+        {
+            if(create)npc.ContaminationBody.Ensure();
+            return npc.ContaminationBody;
+        }
+        if(NativeCarrierBody(body))return GetCarrier(body,create,npc);
         if(CaelumContaminationStack.Eligible(Inventory(body)))return CaelumContaminationStack.Record(Inventory(body),create);
         let proxy=CaelumDiningBlock(body);
         let dining=proxy!=null?proxy.Table:CaelumDiningTable(body);
@@ -93,12 +103,10 @@ class CaelumContaminationStorage : Object play
             if(equipment.ContaminationState!=null && create)equipment.ContaminationState.Ensure();
             return equipment.ContaminationState;
         }
-        let npc=CaelumCombatActor(body);
-        if(npc!=null && npc.ContaminationBodyReady && (npc.ContaminationBody!=null || !create))
-        {
-            if(create)npc.ContaminationBody.Ensure();
-            return npc.ContaminationBody;
-        }
+        return GetCarrier(body,create,npc);
+    }
+    static CaelumContaminationState GetCarrier(Actor body,bool create,CaelumCombatActor npc)
+    {
         let carrier=CaelumContaminationCarrier(body.FindInventory('CaelumContaminationCarrier'));
         if(carrier==null && create)
         {

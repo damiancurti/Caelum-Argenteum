@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.102** - 2026-11-19.
+Documentation version: **5.17.103** - 2026-11-19.
+
+## 5.17.103 - Dispatch measured native contamination carriers directly (#849, #454)
+
+No art, audio, model, texture or map changes. The measured native-carrier
+dispatch keeps every physical piece's independent contamination state and
+collision. assets/validation_v5_17_103 retains portable profiling/candidate/native
+tools, ancestry proof, failed and corrected fixtures, selected saved fields,
+query timings and final/control traces/captures. Private engine/IWAD/runtime/save
+binaries stay local. See HISTORY for results; prior art candidates remain pending.
+
 
 ## 5.17.102 - Prepare the sewer material comparison (#847, #463)
 

@@ -1,6 +1,80 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.102** - 2026-11-19.
+Documentation version: **5.17.103** - 2026-11-19.
+
+## 5.17.103 - Dispatch measured native contamination carriers directly (#849, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+The existing warm NPC contamination cache is consulted before mutually exclusive
+inventory/furniture casts. GateBlocker (including ram/head/cannon subclasses) and
+VehiclePart families go directly to their existing individual native carrier.
+The original carrier attachment/migration tail is shared without changing its
+body. Exposure eligibility for those same families retains the exact current or
+default solidity and positive-dimension predicate after common rejection guards.
+No field, cache, schema, contamination rule, cadence, resource or collision changes.
+Other storage/furniture dispatch, offscreen behavior and the >=500 census remain.
+
+A 42-tic bounded sample records 141,525 warm-NPC and 184,395 other-actor
+Get calls. Their inclusive scopes average 0.3081 and 0.5154 ms per sampled tic.
+Other-actor Value calls average 1.6967 ms and contain nested work; these figures
+must not be added. A separate class-count run identifies 148,678 of 148,883
+other-actor Value calls in the two native-carrier families and their subclasses.
+No warm-NPC pointer mismatch occurs. Instrumented totals retain probe overhead
+and differently instrumented runs are not production comparisons.
+
+The source proof checks mutually exclusive single-inheritance families, exact
+movement of the warm-NPC block and exact preservation of the native-carrier tail.
+Five canonical base/final/upgrade/reload/rollback runs pass
+1,824 native assertions; 1,065 run the final package.
+They compare original Get and Eligible results, native ownership, legacy revision,
+raw/create combinations, null/player, eight real actor classes, inventory,
+cold/warm-empty NPC state, solidity/missile/dimensions and saved record identity.
+Retained stack/vessel tests cover storage, packed items, exposure and contact.
+
+Six alternating-order query loops compare 160,000 calls per side with zero
+mismatches. These are local query costs, not whole-frame percentages. The NPC
+eligibility path is unchanged and its timing difference is noise, not a new gain.
+
+| Query/body | Original / candidate ms per 160,000 calls |
+| --- | ---: |
+| Get / CA849GateProbe | 10.4387 / 5.4296 |
+| Eligible / CA849GateProbe | 10.8193 / 3.0653 |
+| Get / CA849VehicleProbe | 10.2587 / 5.5435 |
+| Eligible / CA849VehicleProbe | 10.6648 / 3.4315 |
+| Get / CA849NpcProbe | 7.8723 / 1.6440 |
+| Eligible / CA849NpcProbe | 1.8743 / 2.0183 |
+
+Initial private fixtures failed on nested generic delimiters and read-only size
+properties. Corrected code uses separated closing delimiters and A_SetSize.
+Two persistence attempts assumed environmentally active values stayed fixed;
+serialized records showed normal exposure evolution with identity preserved.
+Releasing exposure alone allowed event-driven re-registration. The final fixture
+benchmarks normal bodies, then marks only its three saved probes as missiles and
+releases their exposure to isolate scalar persistence. Production remains active.
+All failed logs, sources and selected saved fields are retained alongside passes.
+
+All 18,755 packaged members match source. Only the two measured source files
+and two diagnostic version strings differ from 5.17.102. No asset changes.
+
+| Scene/package | Queue presents/s | Tic intervals mean / p95 / p99 / max (ms) | Present p95 / p99 / max (ms) |
+| --- | ---: | --- | --- |
+| siege_final | 1.9687 | 30.2268 / 44.7511 / 49.7197 / 58.0344 | 546.9491 / 548.7114 / 548.7114 |
+| siege_control | 1.9264 | 30.6569 / 45.8465 / 48.5140 / 68.2355 | 546.5042 / 549.8233 / 549.8233 |
+| mansion_final | 73.4236 | 28.5774 / 39.4254 / 41.0480 / 44.0498 | 15.8320 / 17.3614 / 22.5288 |
+| sewers_final | 194.6766 | 28.5700 / 32.2209 / 33.6108 / 43.2793 | 6.9501 / 7.9100 / 38.4716 |
+| city_final | 105.2209 | 28.5783 / 35.8506 / 37.2200 / 39.1851 | 10.8369 / 11.9108 / 14.3115 |
+| city_ground_final | 78.3644 | 28.5703 / 37.8589 / 39.4541 / 41.9247 | 14.6787 / 15.7788 / 17.6752 |
+
+Six production scenes run sequentially on Windows 11 / Ryzen 9 5950X /
+RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720, unpaused background and 5% audio.
+Paired siege census, health and camera match. Tic intervals include pacing/frame
+work, not isolated CPU simulation; queue presents are not monitor scanout.
+The mansion includes its opening conversation; entrance captures do not establish
+complete-map traversal performance. Siege presentation remains poor. The complete
+V5.16/V5.17 batch, author acceptance and one final test terminal remain pending.
+Evidence: assets/validation_v5_17_103; pending_test.txt is unchanged.
+
 
 ## 5.17.102 - Prepare the sewer material comparison (#847, #463)
 

@@ -1,0 +1,279 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-19 16:33:41
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue847-review01.pk3, 18755 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue849-carrier01/carrier.pk3, 2 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue849-fixture-pilot05/checks.pk3, 6 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2475.37 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP01 - Contamination dispatch checks
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA502S PASS one gram approved sphere area
+CA502S PASS revision adopts native quantity
+CA502S PASS mixed concentrations transfer
+CA502S PASS mixed pile preserves two lots and real quantity
+CA502S PASS same timestamp retains separate concentrations
+CA502S PASS split crosses lot boundary
+CA502S PASS split transfers exact FIFO units
+CA502S PASS remaining lot never diluted
+CA502S PASS area additive across split
+CA502S PASS overdraw rejected
+CA502S PASS failed transfer atomic
+CA502S PASS forecast never aliases real lots
+CA502S RESULT passed=12 failed=0
+CA502S PASS native pickup merges actual quantity
+CA502S PASS native pickup retains heterogeneous lots
+CA502S PASS native toss splits actual quantity
+CA502S PASS native toss retains oldest contamination
+CA502S PASS native remainder retains newer lot
+CA502S RESULT passed=5 failed=0
+CA502S PASS independent carried preview leaves source unchanged
+CA502S PASS actual carried commit uses one unit area
+CA502S PASS per-unit exposure independent of pile size
+CA502S PASS Box shields carried stack
+CA502S PASS submerged loose stack receives dirty water
+CA502S RESULT passed=5 failed=0
+CA502S PASS source retains concentration
+CA502S PASS stack contact distributes total touched area per unit
+CA502S PASS protected stack rejects contact
+CA502S PASS equal concentration no transfer
+CA502S RESULT passed=4 failed=0
+CA502S PASS actual partial deposit succeeds
+CA502S PASS container split retains concentration and units
+CA502S PASS deposit retains source identity and quantity
+CA502S PASS actual partial withdrawal succeeds
+CA502S PASS withdrawal retains heterogeneous destination lots
+CA502S PASS withdrawal does not dilute remainder
+CA502S PASS closed chest suspends ambient exposure
+CA502S PASS ordinary inventory displays oldest contamination and lot count
+CA502S RESULT passed=8 failed=0
+CA502S PASS abstract material uses own native unit mass
+CA502S PASS abstract material uses own native unit mass
+CA502S PASS abstract material uses own native unit mass
+CA502S PASS abstract material uses own native unit mass
+CA502S PASS abstract material uses own native unit mass
+CA502S PASS abstract material uses own native unit mass
+CA502S PASS abstract material uses own native unit mass
+CA502S PASS abstract material uses own native unit mass
+CA502S PASS abstract material uses own native unit mass
+CA502S PASS abstract material uses own native unit mass
+CA502S PASS abstract material uses own native unit mass
+CA502S PASS prepared dose is tracked
+CA502S PASS prepared dose native toss preserves concentration
+CA502S PASS prepared dose is tracked
+CA502S PASS prepared dose native toss preserves concentration
+CA502S PASS prepared dose is tracked
+CA502S PASS prepared dose native toss preserves concentration
+CA502S PASS prepared dose is tracked
+CA502S PASS prepared dose native toss preserves concentration
+CA502S PASS prepared dose is tracked
+CA502S PASS prepared dose native toss preserves concentration
+CA502S PASS prepared dose is tracked
+CA502S PASS prepared dose native toss preserves concentration
+CA502S PASS prepared dose is tracked
+CA502S PASS prepared dose native toss preserves concentration
+CA502S PASS prepared dose is tracked
+CA502S PASS prepared dose native toss preserves concentration
+CA502S PASS prepared dose is tracked
+CA502S PASS prepared dose native toss preserves concentration
+CA502S RESULT passed=29 failed=0
+CA502S PASS NPC uses real carried native stack
+CA502S PASS NPC protected stack remains shielded
+CA502S RESULT passed=2 failed=0
+CA502V PASS vessel has approved physical geometry
+CA502V AREA kind=0 m2=0.049640904260
+CA502V PASS filling cannot change exterior area
+CA502V PASS forecast does not mutate native vessel
+CA502V PASS carried vessel receives its own exterior exposure
+CA502V PASS exterior exposure does not rewrite water contents
+CA502V PASS Box protects vessel exterior
+CA502V PASS native toss preserves exterior concentration
+CA502V PASS native pickup returns original vessel contents
+CA502V PASS native pickup preserves exterior concentration
+CA502V PASS native transfer preserves water and mate charges
+CA502V PASS vessel has approved physical geometry
+CA502V AREA kind=1 m2=0.090027101710
+CA502V PASS filling cannot change exterior area
+CA502V PASS forecast does not mutate native vessel
+CA502V PASS carried vessel receives its own exterior exposure
+CA502V PASS exterior exposure does not rewrite water contents
+CA502V PASS Box protects vessel exterior
+CA502V PASS native toss preserves exterior concentration
+CA502V PASS native pickup returns original vessel contents
+CA502V PASS native pickup preserves exterior concentration
+CA502V PASS native transfer preserves water and mate charges
+CA502V PASS vessel has approved physical geometry
+CA502V AREA kind=2 m2=0.142157948926
+CA502V PASS filling cannot change exterior area
+CA502V PASS forecast does not mutate native vessel
+CA502V PASS carried vessel receives its own exterior exposure
+CA502V PASS exterior exposure does not rewrite water contents
+CA502V PASS Box protects vessel exterior
+CA502V PASS native toss preserves exterior concentration
+CA502V PASS native pickup returns original vessel contents
+CA502V PASS native pickup preserves exterior concentration
+CA502V PASS native transfer preserves water and mate charges
+CA502V PASS vessel has approved physical geometry
+CA502V AREA kind=3 m2=0.058166812978
+CA502V PASS filling cannot change exterior area
+CA502V PASS forecast does not mutate native vessel
+CA502V PASS carried vessel receives its own exterior exposure
+CA502V PASS exterior exposure does not rewrite water contents
+CA502V PASS Box protects vessel exterior
+CA502V PASS native toss preserves exterior concentration
+CA502V PASS native pickup returns original vessel contents
+CA502V PASS native pickup preserves exterior concentration
+CA502V PASS native transfer preserves water and mate charges
+CA502V PASS vessel has approved physical geometry
+CA502V AREA kind=4 m2=0.102228060112
+CA502V PASS filling cannot change exterior area
+CA502V PASS forecast does not mutate native vessel
+CA502V PASS carried vessel receives its own exterior exposure
+CA502V PASS exterior exposure does not rewrite water contents
+CA502V PASS Box protects vessel exterior
+CA502V PASS native toss preserves exterior concentration
+CA502V PASS native pickup returns original vessel contents
+CA502V PASS native pickup preserves exterior concentration
+CA502V PASS native transfer preserves water and mate charges
+CA502V PASS vessel has approved physical geometry
+CA502V AREA kind=5 m2=0.157853433530
+CA502V PASS filling cannot change exterior area
+CA502V PASS forecast does not mutate native vessel
+CA502V PASS carried vessel receives its own exterior exposure
+CA502V PASS exterior exposure does not rewrite water contents
+CA502V PASS Box protects vessel exterior
+CA502V PASS native toss preserves exterior concentration
+CA502V PASS native pickup returns original vessel contents
+CA502V PASS native pickup preserves exterior concentration
+CA502V PASS native transfer preserves water and mate charges
+CA502V PASS vessel has approved physical geometry
+CA502V AREA kind=6 m2=0.011924172657
+CA502V PASS filling cannot change exterior area
+CA502V PASS forecast does not mutate native vessel
+CA502V PASS carried vessel receives its own exterior exposure
+CA502V PASS exterior exposure does not rewrite water contents
+CA502V PASS Box protects vessel exterior
+CA502V PASS native toss preserves exterior concentration
+CA502V PASS native pickup returns original vessel contents
+CA502V PASS native pickup preserves exterior concentration
+CA502V PASS native transfer preserves water and mate charges
+CA502V PASS vessel has approved physical geometry
+CA502V AREA kind=7 m2=0.021244477390
+CA502V PASS filling cannot change exterior area
+CA502V PASS forecast does not mutate native vessel
+CA502V PASS carried vessel receives its own exterior exposure
+CA502V PASS exterior exposure does not rewrite water contents
+CA502V PASS Box protects vessel exterior
+CA502V PASS native toss preserves exterior concentration
+CA502V PASS native pickup returns original vessel contents
+CA502V PASS native pickup preserves exterior concentration
+CA502V PASS native transfer preserves water and mate charges
+CA502V PASS vessel has approved physical geometry
+CA502V AREA kind=8 m2=0.031663507372
+CA502V PASS filling cannot change exterior area
+CA502V PASS forecast does not mutate native vessel
+CA502V PASS carried vessel receives its own exterior exposure
+CA502V PASS exterior exposure does not rewrite water contents
+CA502V PASS Box protects vessel exterior
+CA502V PASS native toss preserves exterior concentration
+CA502V PASS native pickup returns original vessel contents
+CA502V PASS native pickup preserves exterior concentration
+CA502V PASS native transfer preserves water and mate charges
+CA502V PASS vessel has approved physical geometry
+CA502V AREA kind=9 m2=0.412021689503
+CA502V PASS filling cannot change exterior area
+CA502V PASS forecast does not mutate native vessel
+CA502V PASS carried vessel receives its own exterior exposure
+CA502V PASS exterior exposure does not rewrite water contents
+CA502V PASS Box protects vessel exterior
+CA502V PASS native toss preserves exterior concentration
+CA502V PASS native pickup returns original vessel contents
+CA502V PASS native pickup preserves exterior concentration
+CA502V PASS native transfer preserves water and mate charges
+CA502V RESULT passed=100 failed=0
+CA502V PASS coffer keeps original water vessel identity
+CA502V PASS closed coffer shields dirty vessel
+CA502V PASS coffer returns original vessel
+CA502V PASS coffer round trip does not clean exterior
+CA502V RESULT passed=4 failed=0
+CA502V PASS dirty immersion exposes submerged vessel exterior
+CA502V PASS external immersion leaves saved water-quality rules intact
+CA502V RESULT passed=2 failed=0
+CA502V CAMP manage=1 fits=1 pos=112,128,0 floor=-0 frozen=0
+CA502V PASS mount keeps native pot and trivet
+CA502V PASS mounted pot follows camp location exposure
+CA502V PASS mount preserves exterior dirt and water quality
+CA502V PASS unmount returns original pot
+CA502V PASS unmount hands exposure to player once
+CA502V RESULT passed=5 failed=0
+CA502V PASS carried dining contents follow actual carrier immersion
+CA502V PASS nested vessel preserves original ownership
+CA502V PASS boxing dining set shields its native vessel contents
+CA502V RESULT passed=3 failed=0
+CA502V PASS native contact endpoint caps area to real vessel exterior
+CA502V PASS vessel contact source retains concentration
+CA502V PASS modeled contact cannot flatten heterogeneous lots
+CA502V PASS only lower-concentration source units receive contact
+CA502V PASS modeled receiver uses original higher-source fraction
+CA502V RESULT passed=5 failed=0
+CA502V PASS save seeds ten original vessels
+CA502V RESULT passed=1 failed=0
+CA502S PASS current save seeds distinct real lots
+CA502S RESULT passed=1 failed=0
+CA849 BENCH class=CA849GateProbe method=0 calls_each=160000 original_ms=9.996900 candidate_ms=5.020700 mismatches=0
+CA849 BENCH class=CA849GateProbe method=1 calls_each=160000 original_ms=10.557700 candidate_ms=2.929700 mismatches=0
+CA849 BENCH class=CA849VehicleProbe method=0 calls_each=160000 original_ms=10.064800 candidate_ms=5.482900 mismatches=0
+CA849 BENCH class=CA849VehicleProbe method=1 calls_each=160000 original_ms=10.602900 candidate_ms=3.414900 mismatches=0
+CA849 BENCH class=CA849NpcProbe method=0 calls_each=160000 original_ms=7.724300 candidate_ms=1.556800 mismatches=0
+CA849 BENCH class=CA849NpcProbe method=1 calls_each=160000 original_ms=1.840200 candidate_ms=2.002200 mismatches=0
+CA849 CARRIER_CHECKS checks=267 errors=0
+Game saved.

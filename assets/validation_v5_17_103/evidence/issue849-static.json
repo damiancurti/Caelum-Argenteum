@@ -1,0 +1,23 @@
+{
+  "issue": 849,
+  "passed": true,
+  "runtime_sha256": "aa7e00e93eeaffe42e353ee116961021b8dad92a638146eee399f211be122f82",
+  "baseline_sha256": "e94024c02321d0532b55c7faccb5f1e35c241bdc5f4d836cca01f47cf2ee3a36",
+  "candidate_source_sha256": {
+    "caelum/survival/CaelumContaminationState.zs": "184e404f682be717575b3f223161fd7052afe25e75262093450b9ede20866b78",
+    "caelum/survival/CaelumContaminationObject.zs": "fb4bcd36badc5196eaa51bfcb2e10c99d6eda92034f027944a8fdcd20b3c8413"
+  },
+  "runtime_members": 18755,
+  "runtime_bytes": 1280987102,
+  "changed": [
+    "caelum/survival/CaelumContaminationObject.zs",
+    "caelum/survival/CaelumContaminationState.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "no_added_or_removed_members": true,
+  "source_package_exact": true,
+  "prototype_source_exact": true,
+  "author_queue_unchanged": true,
+  "qualification": "Only native-carrier dispatch, its equivalent exposure eligibility shortcut and two version diagnostics change. Candidate preparation proves ancestry and exact movement of migration/ownership bodies. All other runtime members remain byte-identical."
+}
