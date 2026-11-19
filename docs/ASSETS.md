@@ -1,6 +1,21 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.106** - 2026-11-19.
+Documentation version: **5.17.107** - 2026-11-19.
+
+## 5.17.107 - Bind the opt-in first-body wardrobe to owned clothing (#857)
+
+The #857 candidate connects actual native equipped items to the existing
+#827/#829 first-body modules, coverage masks and trouser hems. All geometry,
+textures, provenance and accepted default modules remain exact. Generated
+CaelumWornClothingModelData and wardrobe_candidate.modeldef use the canonical
+clothing IDs and existing DESIGN/VISIBILITY sources; their portable deterministic
+generator and native evidence live in assets/validation_v5_17_107.
+
+Contiguous17-slot FrameIndex groups correct the failed append-only accessory
+binding. Native corrected pose captures are reviewed; relaxed construction hands
+still need item-specific grip coverage under #859/#462. Reference appearance,
+sword/shield and no-armor limits remain explicit. No #736 proposal or broad
+species conversion is accepted. Final consolidated visual acceptance is pending.
 
 ## 5.17.106 - Preserve recognition when demon breath inspects a route marker (#855)
 

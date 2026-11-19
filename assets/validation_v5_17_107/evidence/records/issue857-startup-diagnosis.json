@@ -1,0 +1,18 @@
+{
+  "issue": 857,
+  "observed_utc": "2026-11-19T21:57:13Z",
+  "method": "Direct Computer Use screenshot of selected GZDoom Fatal Error window after activation; accessibility exposed title only.",
+  "error": [
+    "Execution could not continue.",
+    "Script error, \"prototype.pk3:cvarinfo\" line 3:",
+    "Cvar 'ca_debug_attributes' already exists"
+  ],
+  "log_limit": "File logs ended at EFX enabled and omitted the fatal text. This was not an established audio failure.",
+  "affected_runs": [
+    "build/issue857-compile01",
+    "build/issue857-compile02",
+    "build/issue857-compile03"
+  ],
+  "control": "build/issue857-startup-control01 passed9 without prototype",
+  "correction": "CVARINFO overlay now contains only its new CVAR. MODELDEF only includes new model definition. Compilation-unit and unique-data-name corrections followed separately."
+}

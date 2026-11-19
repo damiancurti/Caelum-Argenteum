@@ -1,6 +1,35 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.106** - 2026-11-19.
+Documentation version: **5.17.107** - 2026-11-19.
+
+## 5.17.107 - Bind the opt-in first-body wardrobe to owned clothing (#857)
+
+The default-off server CVAR ca_wardrobe_candidate enables the first-body
+candidate only on the existing opt-in CaelumDomingoPilotPlayer. Supported living
+profiles are the retained human male reference skin/face/hair, sword and shield,
+with no modeled armor layer. Unsupported armor/appearance keeps the existing
+pilot body; unsupported body or attachments retain the existing sprite fallback.
+The ordinary player and accepted default presentation are not replaced.
+
+Actual persistent equipped clothing IDs select the 25 retained #829 garments.
+Four cached object references are resolved only after an ID change, inventory
+change or load; every use verifies identity, owner, kind, region, equipped and
+Box state. Rebinding occurs only when selection or transient bindings change.
+No per-tic inventory walk or global actor scan is introduced. Stats, item
+creation, ownership, eligibility, weight, durability, collision, resources and
+combat stay in their existing native owners.
+
+Presentation revision1 initializes idempotently. Object references/binding
+readiness are transient; chosen appearance and the last legitimate death outfit
+are saved. Native hub travel reconstructs the local visual body. The activation
+CVAR is nosave/noarchive: enable it explicitly for candidate inspection/loading.
+To return a candidate save to the earlier build, disable the CVAR, allow the
+native visual cleanup to run, then save; rollback of that cleaned save is tested.
+Do not load a save retaining the new visual actor directly into the older build.
+
+This is presentation-only review work. The four clothing regions and all25
+existing item identities remain authoritative. #859 retains item-specific grip
+review; no new weapon/armor fit, species or balance is authorized by this switch.
 
 ## 5.17.43 - Hybrid serpent inspection controls (#729)
 

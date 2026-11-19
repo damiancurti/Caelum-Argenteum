@@ -1,0 +1,102 @@
+{
+  "issue": 857,
+  "pieces": {
+    "0": "F",
+    "1": "FW",
+    "2": "CS",
+    "3": "CE",
+    "4": "CW",
+    "5": "RS",
+    "6": "RE",
+    "7": "RW",
+    "8": "PS",
+    "9": "PE",
+    "10": "PW",
+    "11": "HF",
+    "12": "HC",
+    "13": "HR",
+    "14": "HW",
+    "15": "HP",
+    "16": "GF",
+    "17": "GC",
+    "18": "GW",
+    "19": "GP",
+    "20": "BF",
+    "21": "BC",
+    "22": "BR",
+    "23": "BS",
+    "24": "BP"
+  },
+  "regions": {
+    "0": 1,
+    "1": 1,
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "5": 1,
+    "6": 1,
+    "7": 1,
+    "8": 1,
+    "9": 1,
+    "10": 1,
+    "11": 0,
+    "12": 0,
+    "13": 0,
+    "14": 0,
+    "15": 0,
+    "16": 2,
+    "17": 2,
+    "18": 2,
+    "19": 2,
+    "20": 3,
+    "21": 3,
+    "22": 3,
+    "23": 3,
+    "24": 3
+  },
+  "groups": {
+    "0": [
+      "HF",
+      "HC",
+      "HR",
+      "HW",
+      "HP"
+    ],
+    "1": [
+      "F",
+      "FW",
+      "CS",
+      "CE",
+      "CW",
+      "RS",
+      "RE",
+      "RW",
+      "PS",
+      "PE",
+      "PW"
+    ],
+    "2": [
+      "GF",
+      "GC",
+      "GW",
+      "GP"
+    ],
+    "3": [
+      "BF",
+      "BC",
+      "BR",
+      "BS",
+      "BP"
+    ]
+  },
+  "model_slots": 17,
+  "frames": 375,
+  "new_geometry": false,
+  "new_textures": false,
+  "source_hashes": {
+    "assets/source/art/worn_clothing_829/DESIGN.json": "703899cbc637a8d791d69c435f4b84f135a3db509536820d432a050ab8400b2f",
+    "assets/source/art/worn_clothing_829/VISIBILITY.json": "f794652a5c5d459551f7680a327327abc85dd5fa4f05c4ccf2e6f789a2e11850",
+    "assets/source/art/worn_clothing_829/worn_preview.modeldef": "88a5834c5cf29189149dbd183c67822c776b2425ae758e139bf4e9549b895405",
+    "src/caelum/data/CaelumClothingData.zs": "1fbe4a774bebf0adaba0b2a3f327ef2d74a66c8cd9c12c4bd702114d9e0e0a41"
+  }
+}

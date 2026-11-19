@@ -1,6 +1,88 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.106** - 2026-11-19.
+Documentation version: **5.17.107** - 2026-11-19.
+
+## 5.17.107 - Bind the opt-in first-body wardrobe to owned clothing (#857)
+
+Full project validation passes with no errors; the generated document index is current.
+
+The default-off server CVAR ca_wardrobe_candidate enables the first-body
+candidate only on the existing opt-in CaelumDomingoPilotPlayer. Supported living
+profiles are the retained human male reference skin/face/hair, sword and shield,
+with no modeled armor layer. Unsupported armor/appearance keeps the existing
+pilot body; unsupported body or attachments retain the existing sprite fallback.
+The ordinary player and accepted default presentation are not replaced.
+
+Actual persistent equipped clothing IDs select the 25 retained #829 garments.
+Four cached object references are resolved only after an ID change, inventory
+change or load; every use verifies identity, owner, kind, region, equipped and
+Box state. Rebinding occurs only when selection or transient bindings change.
+No per-tic inventory walk or global actor scan is introduced. Stats, item
+creation, ownership, eligibility, weight, durability, collision, resources and
+combat stay in their existing native owners.
+
+Presentation revision1 initializes idempotently. Object references/binding
+readiness are transient; chosen appearance and the last legitimate death outfit
+are saved. Native hub travel reconstructs the local visual body. The activation
+CVAR is nosave/noarchive: enable it explicitly for candidate inspection/loading.
+To return a candidate save to the earlier build, disable the CVAR, allow the
+native visual cleanup to run, then save; rollback of that cleaned save is tested.
+Do not load a save retaining the new visual actor directly into the older build.
+
+Eleven canonical native runs produce 504 passing assertion
+lines, including 477 on the final package. Counts exclude
+inherited totals serialized in the diagnostic handler. Coverage includes all25
+equip/unequip/replacements, native drop/Box/chest operations, stale-owner rejection,
+unsupported combinations, old-save upgrade, reload, hub roundtrip, disabling,
+old-build rollback and native walk/run/attack/guard/jump/landing. Death and dead
+reload use GZDoom's -host 1 mode (cooperative with one player, no network peers):
+ordinary single-player correctly refuses saving a dead player. Failed fixture
+attempts and their actual causes remain archived, not counted as passing tests.
+
+Direct captures found a generation defect missed by pose/ownership assertions:
+GZDoom snapshots the full current model-frame array at each FrameIndex line.
+Appending accessory entries after all body frames overwrote 5,610 body-slot
+bindings across374 states with body frame374. The final generator emits all17
+slots together for every one of375 states and checks the engine's accumulation
+semantics. Corrected native captures restore body/accessory pose agreement.
+The original failed captures/runtime and their measurements remain explicit
+rejected evidence. The retained hands are still relaxed construction meshes;
+item-specific grips/remaining attachment coverage continue under #859/#462.
+No geometry, texture, native animation timing or accepted source is edited here.
+
+The final package has 18758 members, each byte-identical to src.
+It changes six existing members (including two release diagnostic strings) and
+adds three presentation/data members. All other packaged members, including
+geometry/textures, are exact. Source generation is deterministic. The final
+gameplay/binding files match prototype06. Build SHA256:
+f4b41b9417deb39020fb884357027784bbfc3bafd419af028b34a101cea8a748.
+
+Eight paired one-player captures compare the existing seven-module body with
+the equipped candidate in the studio and campaign entrances. The four affected
+candidate captures were repeated after the binding correction; original control
+captures are reused because they never use the changed candidate definition.
+GZDoom4.14.2, Ryzen9 5950X, RTX3070Ti, unpaused background and5% audio are recorded.
+No heavy build/validator/hash runs overlap the measurement windows. The first
+scope audit ended at22:37:59UTC; the corrected studio window began at22:38:07UTC.
+
+| Scene / mode | Queue presents/s | Present p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| city / candidate | 94.239 | 13.844 / 15.914 / 20.353 | 28.590 / 36.699 / 39.381 / 41.934 |
+| city / control | 104.849 | 10.798 / 11.759 / 14.307 | 28.570 / 35.934 / 37.376 / 38.818 |
+| mansion / candidate | 142.844 | 8.508 / 9.500 / 12.369 | 28.576 / 34.185 / 35.532 / 37.699 |
+| mansion / control | 148.836 | 8.337 / 9.207 / 11.142 | 28.576 / 33.298 / 34.638 / 35.698 |
+| sewers / candidate | 144.470 | 10.950 / 13.070 / 52.794 | 28.568 / 34.170 / 36.675 / 67.679 |
+| sewers / control | 180.862 | 7.051 / 7.961 / 39.020 | 28.568 / 32.542 / 34.154 / 41.300 |
+| studio / candidate | 1042.345 | 1.189 / 1.383 / 1.936 | 28.573 / 29.271 / 29.499 / 29.801 |
+| studio / control | 977.178 | 1.251 / 1.454 / 2.183 | 28.572 / 29.302 / 29.490 / 29.672 |
+
+Queue presents are not monitor scanout. Tic intervals include pacing and frame
+work, not isolated simulation CPU cost. These are one equipped player's fixed
+views, not a crowd, combat, full-map traversal or siege result. Mansion retains
+the opening dialogue; sewer and city entrances are inspected with unchanged
+world rules. Siege performance remains unresolved. Native tests and draft PR
+delivery do not confer author acceptance. Evidence: assets/validation_v5_17_107;
+author check CA857-EQUIPMENT-01 is deferred to the consolidated terminal.
 
 ## 5.17.106 - Preserve recognition when demon breath inspects a route marker (#855)
 

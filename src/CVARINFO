@@ -133,3 +133,6 @@ nosave noarchive server int ca_standalone_mode = 0;
 user int ca_standalone_preset = 0;
 nosave int ca_match_palomo = 0;
 nosave noarchive server int ca_standalone_palomo = 0;
+
+// #857: candidato visual de sesion; no modifica el equipo ni el guardado.
+nosave noarchive server bool ca_wardrobe_candidate = false;
