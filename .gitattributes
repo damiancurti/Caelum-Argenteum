@@ -1316,3 +1316,13 @@ assets/validation_v5_17_95/evidence/** -text -diff
 /assets/validation_v5_17_97/*.zs text eol=lf
 /assets/validation_v5_17_97/*.json text eol=lf
 /assets/validation_v5_17_97/evidence/** -text -diff
+
+# Preserve issue840 lossless resource and native-evidence bytes across checkouts.
+/assets/generators/register_elemental_vfx.py text eol=lf
+/assets/source/art/elemental_518/REGISTRATION.json -text whitespace=cr-at-eol
+/src/graphics/caelum/vfx/elemental.textures -text whitespace=cr-at-eol
+/src/licenses/ELEMENTAL_VFX_518.txt text eol=lf
+/assets/validation_v5_17_98/*.py text eol=lf
+/assets/validation_v5_17_98/*.cpp text eol=lf
+/assets/validation_v5_17_98/*.json text eol=lf
+/assets/validation_v5_17_98/evidence/** -text -diff

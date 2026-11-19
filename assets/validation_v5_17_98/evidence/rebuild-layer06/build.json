@@ -1,0 +1,20 @@
+{
+  "command": [
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\mingw64\\bin\\g++.exe",
+    "-std=c++17",
+    "-O2",
+    "-shared",
+    "-static",
+    "-static-libgcc",
+    "-static-libstdc++",
+    "-Wl,--no-insert-timestamp",
+    "-IC:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\gzdoom-g4.14.2\\libraries\\ZVulkan\\include",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_17_98\\presentation_layer.cpp",
+    "-o",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-rebuild-layer06\\ca_presentation.dll"
+  ],
+  "source_sha256": "b32f5c15025055a1df33076f30ddd13a1fdf6ed569eb2c2d6d2cae88f98d798f",
+  "compiler_sha256": "eccc5963340f7b57805b3750efc182c25c6d4eddb828c8cee2b0f974a0d943ac",
+  "binary_sha256": "7c2e3485bd46aad1270148ffa0472eb3956f505273c62fa7ae77471c6acceebf",
+  "qualification": "Enable only in explicit diagnostic child processes. Selected API durations >=1ms plus all intercepted creation/allocation calls. Original queue trace retained. No installed file/configuration changed."
+}

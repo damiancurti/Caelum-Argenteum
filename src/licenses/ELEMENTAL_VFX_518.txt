@@ -12,3 +12,9 @@ planes are original deterministic meshes authored for this issue. Editable
 dimensions and generators are retained in assets/. Physical surfaces reuse
 Caelum Argenteum's original training-dummy wood/iron atlas from issue #98.
 No third-party model or Doom artwork is included in these new assets.
+
+Release5.17.98 / issue#840,2026-11-19: deterministic projectile-frame PNGs
+are exact RGBA crops at the original DESIGN.json cell boundaries. No pixels
+are repainted or resampled; names, dimensions, scales, pivots and animation
+data remain unchanged. Original atlases are retained, including model inputs.
+register_elemental_vfx.py and REGISTRATION.json record the derived-frame hashes.

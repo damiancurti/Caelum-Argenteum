@@ -1,0 +1,46 @@
+{
+  "issue": 840,
+  "passed": false,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-crops02.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-pixels-upgrade01\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-pixels-upgrade01\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-pixels-upgrade01",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-pixels-upgrade01\\engine.log",
+    "-loadgame",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-pixels-upgrade01\\input.zds",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-pixels-upgrade01\\commands.cfg"
+  ],
+  "exit_code": 4294967295,
+  "errors": [
+    "Missing black",
+    "Missing gray",
+    "Missing white"
+  ],
+  "captures": [],
+  "checks": [],
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-crops02.pk3": "8261aeeef2567a32dcbe4f7b01cc9958a11e79d58de7b4c0998908001d4b6c0d",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-pixels-upgrade01\\checks.pk3": "0ca3215a47104e447dca9f615100cb78977c94659a5ac8420785f68ea2790f6d"
+  },
+  "qualification": "Same native frame renders original atlas aliases and candidates in paired positions on three opaque backgrounds. Actual unchanged-scale/offset metadata and rendered RGB cells are compared. Isolated compositing evidence, not author acceptance or combat/performance evidence.",
+  "reference_runtime_sha256": "6411c05ac7202c510238d989faf4193100015d75e527b898d77364d60512eda4",
+  "loaded_save_sha256": "e0041a225f58aac07d03782669beddb2158487393a5dc7333ae80d6130911146",
+  "saved_sha256": null,
+  "saved_frame_checks": []
+}

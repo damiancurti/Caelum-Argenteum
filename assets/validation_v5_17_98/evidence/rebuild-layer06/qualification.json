@@ -1,0 +1,6 @@
+{
+  "compiled": true,
+  "source_equal_after_newline_normalization": true,
+  "binary_identical_to_measured_layer": false,
+  "qualification": "Portable build tool compiled successfully. Native timing evidence uses the separately recorded layer05 binary and hash; the rebuilt binary was not substituted into those results."
+}

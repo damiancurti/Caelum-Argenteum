@@ -1,0 +1,29 @@
+{
+  "issue": 840,
+  "native_source_tag": "g4.14.2",
+  "native_source_repository": "https://github.com/ZDoom/gzdoom/tree/g4.14.2",
+  "native_source_sha256": {
+    "src/p_tick.cpp": "f71aac210136a4bcd15133fec55d50522ddff1bb1605bc6df1064353c28e7108",
+    "src/d_net.cpp": "23ee15610d63842c7ab8a7c0d5e147bdba428745bc4803f08cfc01c910e2af6c",
+    "src/d_main.cpp": "eaacfd9446066e1e4f7b439b63c7c601fbee24519d932584530a26304bd57703",
+    "src/g_statusbar/shared_sbar.cpp": "e96c91f1c1a7aa19e3e234e2fc5391981a2127135993adff193d4483f5300d03",
+    "src/events.cpp": "ad530e3d58cbb6975193e28f7159c65d4cd1287b73375eb784f805e5678bf4bc",
+    "src/playsim/p_user.cpp": "34274d50f855f6613098ff9c49010439278f1e07bcf9b9513ebab47043d0a79a",
+    "src/common/platform/win32/i_input.cpp": "4f17960aa95942c466ca8603f903fc5922d6437b1c0e8e6b2d64294f0d928754",
+    "src/common/textures/image.cpp": "b32cc8530a5fe35d7e5a4f4014eae7ab5207c2381ee80f69559fcbd4285134e6",
+    "src/common/textures/formats/multipatchtexture.cpp": "9599740a0c9b61dd239e9d85af4a58d2d89a1ea8b39f5422ec8aebe154a02de6",
+    "src/common/textures/texture.cpp": "f04db6952a685c5936fb58de7b75f6a4bd12aec6be3dbf14275644a710e6543a",
+    "src/common/rendering/vulkan/textures/vk_hwtexture.cpp": "735ab163ff782fc6ddd3d3c6ed99fbaf493d774400bf2f277b35e70d4b6fe496",
+    "src/rendering/hwrenderer/hw_precache.cpp": "fafadbfceba08ea8bb79905cc6d1ddfc956d409fd2b03248cc9df6d85157fbfc",
+    "src/p_setup.cpp": "02867ca91c281f911ba323d2d30b2bf323de76a826c10f5b877c81ead66435f7"
+  },
+  "boundary": "Player0 PlayerThink entry precedes WorldTick/Thinkers. Inherited StatusBar.Tick is timestamped at end of P_Ticker, after level.time increment. First static RenderUnderlay follows3D render; last local RenderOverlay bounds HUD callbacks. QPC/engine clocks are aligned by intersecting every overlay<=present<=nextPlayerThink inequality, retaining the offset range.",
+  "resource_path": "FImageSource.GetCachedBitmap creates a complete bitmap outside its precache block; FMultiPatchTexture.CopyPixels then blits the clipped rectangle. VkHardwareTexture.CreateImage obtains this CPU texture buffer before CreateTexture creates staging buffers/images. Crop files replace only the36 projectile patch inputs, with exact native pixels/metadata and originals retained.",
+  "limitations": [
+    "Nested scope overhead remains; inclusive scopes contain children.",
+    "Selected Vulkan API CPU duration is not GPU execution time.",
+    "HUD paired-pixel fixtures are isolated compositing evidence; saved native actor frame indices are separate checks.",
+    "Original noaudio/precache child settings were temporary diagnostics, not production changes.",
+    "Overall siege rendering remains poor; no author acceptance."
+  ]
+}
