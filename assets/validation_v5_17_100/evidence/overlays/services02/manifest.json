@@ -1,0 +1,126 @@
+{
+  "runtime_sha256": "c8fe17e1002348cae5d3eeab3345dc6b57768fce53a59caad71c4519d17cc402",
+  "overlay_sha256": "d404f354b629885d5082553da453a189a739af9b8119b14796cfe68dd7246fb6",
+  "originals_restored_exactly": {
+    "caelum/survival/CaelumContaminationNPC.zs": "70dec1f6e8c441259c6690d7e215fee1dd5b03c24a04dd876ec45c6fead0f222",
+    "caelum/survival/CaelumContaminationSurface.zs": "9e5796074c7c3c9de69f82c35c8409377ca7e2b4e373673bc7f6a6a9bddc69cb",
+    "caelum/survival/CaelumContaminationContact.zs": "77c658e7ec1b6bfe1babd6c23fa03cd3c5fa1782ef7db4efd43c3d6d8faa372c",
+    "caelum/survival/CaelumContaminationObject.zs": "a396c2b1a99df2fa070b58d80afa95a5decf6854c89ee9bdbd2bd3e8148634c2",
+    "caelum/survival/CaelumContaminationEnvironment.zs": "0a895f49639f87b6c6e1dc8b9def90007302e3d4f98a1f9eddc4fc03d762b661",
+    "caelum/survival/CaelumContaminationExposure.zs": "786db0b5d94535727afce05c0b6011ce802933cc07534d94d6cd8281294014b3"
+  },
+  "period": 17,
+  "metrics": [
+    {
+      "id": 0,
+      "path": "caelum/survival/CaelumContaminationNPC.zs",
+      "method": "Step"
+    },
+    {
+      "id": 1,
+      "path": "caelum/survival/CaelumContaminationNPC.zs",
+      "method": "Capture"
+    },
+    {
+      "id": 2,
+      "path": "caelum/survival/CaelumContaminationNPC.zs",
+      "method": "AdvanceCaptured"
+    },
+    {
+      "id": 3,
+      "path": "caelum/survival/CaelumContaminationNPC.zs",
+      "method": "CommitCaptured"
+    },
+    {
+      "id": 4,
+      "path": "caelum/survival/CaelumContaminationSurface.zs",
+      "method": "NPCContact"
+    },
+    {
+      "id": 5,
+      "path": "caelum/survival/CaelumContaminationSurface.zs",
+      "method": "ConfigureObject"
+    },
+    {
+      "id": 6,
+      "path": "caelum/survival/CaelumContaminationSurface.zs",
+      "method": "FloorTile"
+    },
+    {
+      "id": 7,
+      "path": "caelum/survival/CaelumContaminationSurface.zs",
+      "method": "WallTile"
+    },
+    {
+      "id": 8,
+      "path": "caelum/survival/CaelumContaminationSurface.zs",
+      "method": "ObjectSupport"
+    },
+    {
+      "id": 9,
+      "path": "caelum/survival/CaelumContaminationContact.zs",
+      "method": "Observe"
+    },
+    {
+      "id": 10,
+      "path": "caelum/survival/CaelumContaminationContact.zs",
+      "method": "Collision"
+    },
+    {
+      "id": 11,
+      "path": "caelum/survival/CaelumContaminationContact.zs",
+      "method": "Touching"
+    },
+    {
+      "id": 12,
+      "path": "caelum/survival/CaelumContaminationContact.zs",
+      "method": "Exchange"
+    },
+    {
+      "id": 13,
+      "path": "caelum/survival/CaelumContaminationContact.zs",
+      "method": "Tick"
+    },
+    {
+      "id": 14,
+      "path": "caelum/survival/CaelumContaminationObject.zs",
+      "method": "Eligible"
+    },
+    {
+      "id": 15,
+      "path": "caelum/survival/CaelumContaminationObject.zs",
+      "method": "Sample"
+    },
+    {
+      "id": 16,
+      "path": "caelum/survival/CaelumContaminationObject.zs",
+      "method": "Replay"
+    },
+    {
+      "id": 17,
+      "path": "caelum/survival/CaelumContaminationObject.zs",
+      "method": "Settle"
+    },
+    {
+      "id": 18,
+      "path": "caelum/survival/CaelumContaminationObject.zs",
+      "method": "Tick"
+    },
+    {
+      "id": 19,
+      "path": "caelum/survival/CaelumContaminationEnvironment.zs",
+      "method": "ReferenceAt"
+    },
+    {
+      "id": 20,
+      "path": "caelum/survival/CaelumContaminationExposure.zs",
+      "method": "ReadLive"
+    },
+    {
+      "id": 21,
+      "path": "caelum/survival/CaelumContaminationExposure.zs",
+      "method": "Advance"
+    }
+  ],
+  "qualification": "Inclusive sampled bodies; do not sum nested scopes. Lookup/timer overhead remains; not production throughput."
+}

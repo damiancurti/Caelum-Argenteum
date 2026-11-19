@@ -1,0 +1,129 @@
+{
+  "issue": 844,
+  "passed": false,
+  "exit_code": 0,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue842-shelter02.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-base01\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-base01\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-base01",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-base01\\engine.log",
+    "+map",
+    "CA844N",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-base01\\commands.cfg"
+  ],
+  "errors": [
+    "CA502V FAIL mounted pot follows camp location exposure"
+  ],
+  "events": [
+    "ca502s_core",
+    "ca502s_native",
+    "ca502s_exposure",
+    "ca502s_contact",
+    "ca502s_storage",
+    "ca502s_catalogue",
+    "ca502s_npc",
+    "ca502s_seed",
+    "ca502v_catalogue",
+    "ca502v_storage",
+    "ca502v_immersion",
+    "ca502v_camp",
+    "ca502v_packed",
+    "ca502v_contact",
+    "ca502v_seed",
+    "ca844_null"
+  ],
+  "results": [
+    [
+      12,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      29,
+      0
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      100,
+      0
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "null_result": [
+    "32",
+    "0"
+  ],
+  "checks": 217,
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue842-shelter02.pk3": "c8fe17e1002348cae5d3eeab3345dc6b57768fce53a59caad71c4519d17cc402",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-base01\\checks.pk3": "13000cdedb5089ec49c13f38b7788efd22676e12a8dfd5c9d6ba32f6d30abad6"
+  },
+  "retained_sources": {
+    "stacks.zs": "e74d012acab56cd653b8719e72e91faa40c29cf8c176e70b26f44d88404121e1",
+    "vessels.zs": "e396aba1406cfee7b7ceef0661aff74c198e5b3ee4d617e532411a3fe6ee46db"
+  },
+  "reference_runtime_sha256": "c8fe17e1002348cae5d3eeab3345dc6b57768fce53a59caad71c4519d17cc402",
+  "loaded_save_sha256": null,
+  "saved_sha256": "a32927ae21267e75f0a7ddf1b49db1605e70e5718f3026cc8a61d46a509e72eb"
+}

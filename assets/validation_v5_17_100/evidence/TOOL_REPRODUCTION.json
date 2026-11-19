@@ -1,0 +1,22 @@
+[
+  {
+    "label": "services02",
+    "overlay_sha256": "d404f354b629885d5082553da453a189a739af9b8119b14796cfe68dd7246fb6",
+    "exact": true
+  },
+  {
+    "label": "deep01",
+    "overlay_sha256": "81d6d355b94010a5ed414b5d706a7c7c88411cd7170b5fdeeb479dad9b08696f",
+    "exact": true
+  },
+  {
+    "label": "null01",
+    "overlay_sha256": "57eb962e6fb4325ecafd4eb53b91d60e795b76267086d5a2ff02ee08c95c1067",
+    "exact": true
+  },
+  {
+    "label": "null-oracle01",
+    "overlay_sha256": "db38ae976665f9115bfe72938e3ee819eccbbe3fe781125e40930a028914dd88",
+    "exact": true
+  }
+]

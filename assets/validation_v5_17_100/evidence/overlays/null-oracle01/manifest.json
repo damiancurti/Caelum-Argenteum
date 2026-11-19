@@ -1,0 +1,8 @@
+{
+  "runtime_sha256": "c8fe17e1002348cae5d3eeab3345dc6b57768fce53a59caad71c4519d17cc402",
+  "original_sha256": "e17577922e9d3d6b90ee803553d05c50f73e33518b0fd6349b992d8384dea65a",
+  "candidate_sha256": "ad8858e72eedd9fc66f5c91f5f4c942592c934990ea4dfb91cd4252a4cfbb4bf",
+  "overlay_sha256": "db38ae976665f9115bfe72938e3ee819eccbbe3fe781125e40930a028914dd88",
+  "inverse_exact": true,
+  "oracle": true
+}

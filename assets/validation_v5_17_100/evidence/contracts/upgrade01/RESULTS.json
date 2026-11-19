@@ -1,0 +1,65 @@
+{
+  "issue": 844,
+  "passed": false,
+  "exit_code": 0,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-null02.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-upgrade01\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-upgrade01\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-upgrade01",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-upgrade01\\engine.log",
+    "-loadgame",
+    "input.zds",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-upgrade01\\commands.cfg"
+  ],
+  "errors": [
+    "CA502S FAIL save preserves both concentrations without averaging",
+    "CA502S FAIL stack migration revision persists"
+  ],
+  "events": [
+    "ca502s_resume",
+    "ca502v_resume",
+    "ca844_null"
+  ],
+  "results": [
+    [
+      2,
+      2
+    ],
+    [
+      31,
+      0
+    ]
+  ],
+  "null_result": [
+    "33",
+    "0"
+  ],
+  "checks": 66,
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-null02.pk3": "cec68c135d044bee1649bb81c1a5d1330a6b21cafa533b34572a8fb1a4df5374",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-upgrade01\\checks.pk3": "08dbfa1e46f9b3587e109e8455c588871e51ef3fdd4c97473d29f929aa04fc01"
+  },
+  "retained_sources": {
+    "stacks.zs": "e74d012acab56cd653b8719e72e91faa40c29cf8c176e70b26f44d88404121e1",
+    "vessels.zs": "e396aba1406cfee7b7ceef0661aff74c198e5b3ee4d617e532411a3fe6ee46db"
+  },
+  "reference_runtime_sha256": "c8fe17e1002348cae5d3eeab3345dc6b57768fce53a59caad71c4519d17cc402",
+  "loaded_save_sha256": "1b8b8e39fcddf100f64e0447e4b13bc0e4db18e2426903d9333054476f201a25",
+  "saved_sha256": "729e01b0fa9fed6fafd36daf731618cf40cd9d4fea6c1d93d1475d0f08a363c4"
+}

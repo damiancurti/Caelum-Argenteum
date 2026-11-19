@@ -1332,3 +1332,9 @@ assets/validation_v5_17_95/evidence/** -text -diff
 /assets/validation_v5_17_99/*.py text eol=lf
 /assets/validation_v5_17_99/*.json text eol=lf
 /assets/validation_v5_17_99/evidence/** -text -diff
+
+# Preserve the contamination guard source and issue844 native evidence.
+/src/caelum/survival/CaelumContaminationStack.zs text eol=crlf
+/assets/validation_v5_17_100/*.py text eol=lf
+/assets/validation_v5_17_100/*.json text eol=lf
+/assets/validation_v5_17_100/evidence/** -text -diff
