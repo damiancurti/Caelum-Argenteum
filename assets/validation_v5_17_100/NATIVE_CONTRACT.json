@@ -1,0 +1,49 @@
+{
+  "issue": 844,
+  "version": "5.17.100",
+  "parent_commit": "daf392ad1b296f673bd0d46d6b7fbb4e33ab3a1d",
+  "baseline_sha256": "c8fe17e1002348cae5d3eeab3345dc6b57768fce53a59caad71c4519d17cc402",
+  "final_sha256": "cec68c135d044bee1649bb81c1a5d1330a6b21cafa533b34572a8fb1a4df5374",
+  "candidate_source_sha256": "ad8858e72eedd9fc66f5c91f5f4c942592c934990ea4dfb91cd4252a4cfbb4bf",
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "presentation_layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "change": "Return false immediately for a null Inventory in stack eligibility. The complete non-null body and all other behavior remain exact.",
+  "diagnosis": "22 inclusive environmental and11 nested contact scopes sampled every17 tics. Nested instrumentation adds overhead; never add these scopes or equate differently instrumented runs with production.",
+  "oracle": {
+    "benchmark": {
+      "calls_each": 160000,
+      "before_ms": 2.6139,
+      "after_ms": 0.4471,
+      "unexpected": 0
+    },
+    "oracle": {
+      "null": 655541,
+      "nonnull": 188032,
+      "mismatches": 0
+    },
+    "qualification": "Alternating-order null-only loop microbenchmark. Candidate is a small instance wrapper; reference is the original static predicate. This is not whole-frame throughput or a precise production percentage. Live sampled null parity includes 42 tics in the normal siege."
+  },
+  "canonical_fixtures": [
+    "base03",
+    "final02",
+    "upgrade02",
+    "reload02",
+    "rollback02"
+  ],
+  "fixture_adaptations": "The initial unknown map had no climate profile. Use the retained vessel fixture MAP01 climate. The older resume check assumed ledger revision1; use the existing authoritative REVISION3. Seed the protected save after vessel tests grant the Box, so normal ownership synchronization cannot unbox it. Preserve failed attempts and saved-state excerpts.",
+  "private_artifacts": "No engine, IWAD, runtime PK3, WAD, DLL or save is included.",
+  "reproduction": [
+    "python prepare_services.py --runtime <5.17.99.pk3> --output <repo/build/new-scope> [--deep]",
+    "python prepare_null.py --runtime <5.17.99.pk3> --output <repo/build/new-candidate> [--oracle]",
+    "python run_contracts.py --runtime <runtime.pk3> --reference-runtime <5.17.99.pk3> --output <repo/build/new-checks> [--load <private/contamination.zds>]",
+    "python check_preservation.py --runtime <final.pk3> --baseline <5.17.99.pk3> --candidate <candidate/null.pk3> --output <repo/build/static.json>",
+    "python assets/validation_v5_16_2/run_barracas_presentation.py --runtime <runtime.pk3> --map MAP03 --players 1 --siege --presentation-layer <private-layer> [--overlay <scope/services.pk3>]"
+  ],
+  "qualification": "Tic intervals include pacing/frame work, not isolated CPU simulation. Queue presents are not monitor scanout. Native/static checks are not author acceptance. No final batch handoff."
+}

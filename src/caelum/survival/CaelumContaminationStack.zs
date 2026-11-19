@@ -13,6 +13,8 @@ class CaelumContaminationStack : Object play
     {return item is 'CaelumSpecialInventoryItem' && !(item is 'CaelumMaterialPickup') && !(item is 'CaelumStorageFurnitureItem');}
     static bool Eligible(Inventory item)
     {
+        // Un contacto sin inventario no puede contener una pila.
+        if(item==null)return false;
         if(Generic(item))return true;
         if(CaelumVesselSurfaceData.Eligible(item))return true;
         let material=CaelumMaterialPickup(item);

@@ -4,6 +4,36 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-259 - Profile empty dispatch and adapt retained fixtures to current contracts
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #844 / 5.17.100,
+2026-11-19, GZDoom 4.14.2. Native/static verification; author acceptance pending.
+
+Contact cost includes repeated storage/stack eligibility even for endpoints that
+are not inventory. An immediate null return can avoid pure class predicates;
+prove the entire non-null body unchanged and verify the original null result.
+Do not generalize this to skipping non-null getters, migrations, remote storage
+settlement or real contact. No extra registry, scan, cache or interval is needed.
+
+The measured siege has 655,541 null calls among 843,573 stack-eligibility calls on
+42 sampled tics. Nested scopes include their instrumentation; additional deep
+probes inflate parent times. Never add inclusive times or compare different
+instrumented builds as production. A null-only loop benchmark is narrow evidence,
+especially with wrapper/calling differences; final/control native captures remain
+the gameplay performance evidence and still show poor siege presentation.
+
+Retained tests preserve useful contracts but can carry obsolete setup. An unknown
+map lacked the required climate profile; an old save check hardcoded ledger1
+although the current data revision is 3. A protected seed created before Box
+ownership was unboxed by normal synchronization. Preserve failures, inspect saved
+state, use the original declared climate and current authoritative revision, and
+seed after prerequisites. Do not alter production to satisfy stale test setup.
+642 native checks, including reversible saves, pass after those fixture corrections.
+
+Evidence: assets/validation_v5_17_100; rules: SYSTEMS contamination/hygiene and
+stack/vessel contracts. All actual contacts, resources and offscreen work remain.
+
+
 ## CA-KP-258 - Prove bounded connectivity and alternate paired timing order
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #842 / 5.17.99,

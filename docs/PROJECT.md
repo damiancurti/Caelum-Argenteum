@@ -1,6 +1,23 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.99** - 2026-11-19.
+Documentation version: **5.17.100** - 2026-11-19.
+
+## 5.17.100 - Avoid empty inventory checks in physical contacts (#844, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Stack eligibility now returns false immediately for a null inventory. This
+avoids repeated pure type predicates when a physical contact endpoint has no
+inventory. All non-null code remains byte-identical, including item-type reads,
+ownership, stack migration, contamination, exposure/contact cadence and water.
+No fields, save schema, resources, collision, balance or population rules change.
+The shortcut is part of ordinary production, including offscreen/high-density work.
+
+642 native contract/save assertions,655,541 original-null comparisons and exact
+package preservation pass. HISTORY records final/control siege and four final
+reference views with measurement limits. Overall siege performance and the
+consolidated author review remain open. Evidence: assets/validation_v5_17_100.
+
 
 ## 5.17.99 - Preserve shelter rules with bounded connectivity (#842, #454)
 

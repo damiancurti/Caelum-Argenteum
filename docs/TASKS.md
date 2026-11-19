@@ -1,6 +1,22 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.99** - 2026-11-19.
+Documentation version: **5.17.100** - 2026-11-19.
+
+## 5.17.100 - Avoid empty inventory checks in physical contacts (#844, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Completed: bounded environmental/contact diagnosis, a measured null-inventory
+eligibility guard in production, original-result parity, retained contact/stack/
+vessel contracts and upgrade/reload/rollback, exact package preservation and
+paired siege plus mansion/sewer/city/ground-facing reference measurements.
+
+Remaining: overall siege simulation/presentation cost, authorized outstanding
+V5.16/V5.17 work and consolidated author review. Body/species/style gates remain
+pending; this patch does not approve artwork or add campaign decisions. All
+author checks remain in pending_test.txt. HISTORY and assets/validation_v5_17_100
+retain measurements, fixture corrections, source and reproducible tools.
+
 
 ## 5.17.99 - Preserve shelter rules with bounded connectivity (#842, #454)
 

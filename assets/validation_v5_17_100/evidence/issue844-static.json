@@ -1,0 +1,20 @@
+{
+  "issue": 844,
+  "passed": true,
+  "runtime_sha256": "cec68c135d044bee1649bb81c1a5d1330a6b21cafa533b34572a8fb1a4df5374",
+  "baseline_sha256": "c8fe17e1002348cae5d3eeab3345dc6b57768fce53a59caad71c4519d17cc402",
+  "candidate_source_sha256": "ad8858e72eedd9fc66f5c91f5f4c942592c934990ea4dfb91cd4252a4cfbb4bf",
+  "runtime_members": 18755,
+  "runtime_bytes": 1280986904,
+  "changed": [
+    "caelum/survival/CaelumContaminationStack.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "no_added_or_removed_members": true,
+  "source_package_exact": true,
+  "prototype_source_exact": true,
+  "all_outside_null_guard_exact": true,
+  "author_queue_unchanged": true,
+  "qualification": "Only an immediate null-inventory false return, its comment and two diagnostic version strings change. All non-null eligibility, callers, contact/migration/ownership logic, fields, timing and resources remain exact."
+}

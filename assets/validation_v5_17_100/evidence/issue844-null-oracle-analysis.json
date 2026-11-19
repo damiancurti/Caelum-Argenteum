@@ -1,0 +1,14 @@
+{
+  "benchmark": {
+    "calls_each": 160000,
+    "before_ms": 2.6139,
+    "after_ms": 0.4471,
+    "unexpected": 0
+  },
+  "oracle": {
+    "null": 655541,
+    "nonnull": 188032,
+    "mismatches": 0
+  },
+  "qualification": "Alternating-order null-only loop microbenchmark. Candidate is a small instance wrapper; reference is the original static predicate. This is not whole-frame throughput or a precise production percentage. Live sampled null parity includes 42 tics in the normal siege."
+}
