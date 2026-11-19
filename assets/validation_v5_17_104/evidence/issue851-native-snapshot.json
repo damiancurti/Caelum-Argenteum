@@ -1,0 +1,550 @@
+{
+  "issue": 851,
+  "runtime_sha256": "aa7e00e93eeaffe42e353ee116961021b8dad92a638146eee399f211be122f82",
+  "directory": "build/v516/budget851-profile-20261119-165536-590643",
+  "class_rows": [
+    {
+      "class_name": "CaelumMandinga",
+      "total_ms": 26.18332,
+      "average_ms": 0.026528,
+      "calls": 987
+    },
+    {
+      "class_name": "CaelumPortDefender",
+      "total_ms": 9.11806,
+      "average_ms": 0.015197,
+      "calls": 600
+    },
+    {
+      "class_name": "CaelumContaminationObject",
+      "total_ms": 2.091542,
+      "average_ms": 0.001227,
+      "calls": 1705
+    },
+    {
+      "class_name": "CaelumContaminationContact",
+      "total_ms": 1.70412,
+      "average_ms": 0.000956,
+      "calls": 1782
+    },
+    {
+      "class_name": "CaelumSewerEscapeTarget",
+      "total_ms": 0.328323,
+      "average_ms": 0.000132,
+      "calls": 2489
+    },
+    {
+      "class_name": "CaelumContaminationCarrier",
+      "total_ms": 0.262133,
+      "average_ms": 8e-05,
+      "calls": 3294
+    },
+    {
+      "class_name": "CaelumStackExposure",
+      "total_ms": 0.234787,
+      "average_ms": 7.9e-05,
+      "calls": 2964
+    },
+    {
+      "class_name": "CaelumPlayer",
+      "total_ms": 0.19056,
+      "average_ms": 0.19056,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumCannonBlock",
+      "total_ms": 0.183733,
+      "average_ms": 0.000243,
+      "calls": 756
+    },
+    {
+      "class_name": "CaelumBatteringRam",
+      "total_ms": 0.16334,
+      "average_ms": 0.027223,
+      "calls": 6
+    },
+    {
+      "class_name": "CaelumSearchPoint",
+      "total_ms": 0.135259,
+      "average_ms": 0.00014,
+      "calls": 963
+    },
+    {
+      "class_name": "CaelumAnimaPotion",
+      "total_ms": 0.077015,
+      "average_ms": 7.8e-05,
+      "calls": 987
+    },
+    {
+      "class_name": "CaelumEnergyDrink",
+      "total_ms": 0.072959,
+      "average_ms": 7.4e-05,
+      "calls": 987
+    },
+    {
+      "class_name": "CaelumLifePotion",
+      "total_ms": 0.071684,
+      "average_ms": 7.3e-05,
+      "calls": 987
+    },
+    {
+      "class_name": "CaelumGateBlocker",
+      "total_ms": 0.070027,
+      "average_ms": 0.000233,
+      "calls": 300
+    },
+    {
+      "class_name": "CaelumRamBlock",
+      "total_ms": 0.059491,
+      "average_ms": 0.000207,
+      "calls": 288
+    },
+    {
+      "class_name": "CaelumVehiclePart",
+      "total_ms": 0.054871,
+      "average_ms": 0.000453,
+      "calls": 121
+    },
+    {
+      "class_name": "CaelumCityMerchant",
+      "total_ms": 0.03334,
+      "average_ms": 0.000521,
+      "calls": 64
+    },
+    {
+      "class_name": "CaelumCannon",
+      "total_ms": 0.027042,
+      "average_ms": 0.000644,
+      "calls": 42
+    },
+    {
+      "class_name": "CaelumHousePortal",
+      "total_ms": 0.021746,
+      "average_ms": 0.000136,
+      "calls": 160
+    },
+    {
+      "class_name": "CaelumPortSiege",
+      "total_ms": 0.01811,
+      "average_ms": 0.01811,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumMachineOperator",
+      "total_ms": 0.016982,
+      "average_ms": 0.000226,
+      "calls": 75
+    },
+    {
+      "class_name": "CaelumWorkbenchStation",
+      "total_ms": 0.016669,
+      "average_ms": 0.000695,
+      "calls": 24
+    },
+    {
+      "class_name": "CaelumPortCommander",
+      "total_ms": 0.01618,
+      "average_ms": 0.01618,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumCannonFrame",
+      "total_ms": 0.007389,
+      "average_ms": 0.000176,
+      "calls": 42
+    },
+    {
+      "class_name": "CaelumCannonBarrel",
+      "total_ms": 0.00731,
+      "average_ms": 0.000174,
+      "calls": 42
+    },
+    {
+      "class_name": "CaelumCompanionSubcaptain",
+      "total_ms": 0.00704,
+      "average_ms": 0.00704,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumHouseDoorVisual",
+      "total_ms": 0.00597,
+      "average_ms": 1.9e-05,
+      "calls": 320
+    },
+    {
+      "class_name": "CaelumElementalImpactVisual",
+      "total_ms": 0.00585,
+      "average_ms": 0.00585,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumForgeStation",
+      "total_ms": 0.005471,
+      "average_ms": 0.000342,
+      "calls": 16
+    },
+    {
+      "class_name": "CaelumAppearanceHead",
+      "total_ms": 0.00396,
+      "average_ms": 0.00396,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumFineToolsBenchStation",
+      "total_ms": 0.003841,
+      "average_ms": 0.00032,
+      "calls": 12
+    },
+    {
+      "class_name": "CA454Facade31800",
+      "total_ms": 0.00377,
+      "average_ms": 2.4e-05,
+      "calls": 160
+    },
+    {
+      "class_name": "CaelumRamSuspension",
+      "total_ms": 0.003409,
+      "average_ms": 0.000142,
+      "calls": 24
+    },
+    {
+      "class_name": "CaelumMerchantShip",
+      "total_ms": 0.00332,
+      "average_ms": 0.00332,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumBreakableGate",
+      "total_ms": 0.00288,
+      "average_ms": 0.00072,
+      "calls": 4
+    },
+    {
+      "class_name": "CaelumSawmillStation",
+      "total_ms": 0.00278,
+      "average_ms": 0.000347,
+      "calls": 8
+    },
+    {
+      "class_name": "CaelumEssenceAltarStation",
+      "total_ms": 0.0027,
+      "average_ms": 0.000337,
+      "calls": 8
+    },
+    {
+      "class_name": "CaelumSewingMachineStation",
+      "total_ms": 0.00269,
+      "average_ms": 0.000336,
+      "calls": 8
+    },
+    {
+      "class_name": "CaelumJewelerBenchStation",
+      "total_ms": 0.00248,
+      "average_ms": 0.00031,
+      "calls": 8
+    },
+    {
+      "class_name": "CaelumHouseResidents",
+      "total_ms": 0.00242,
+      "average_ms": 0.00242,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumClothingPickup",
+      "total_ms": 0.00226,
+      "average_ms": 0.000565,
+      "calls": 4
+    },
+    {
+      "class_name": "CaelumTreePlainsTalaYoung",
+      "total_ms": 0.00204,
+      "average_ms": 0.00204,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumSourceMarcela",
+      "total_ms": 0.00176,
+      "average_ms": 0.00044,
+      "calls": 4
+    },
+    {
+      "class_name": "CaelumMachineStructure",
+      "total_ms": 0.0016,
+      "average_ms": 3.3e-05,
+      "calls": 48
+    },
+    {
+      "class_name": "CaelumShopSign",
+      "total_ms": 0.00149,
+      "average_ms": 2.3e-05,
+      "calls": 64
+    },
+    {
+      "class_name": "CaelumAnvilStation",
+      "total_ms": 0.00139,
+      "average_ms": 0.000347,
+      "calls": 4
+    },
+    {
+      "class_name": "CaelumArmorWorkshopStation",
+      "total_ms": 0.00137,
+      "average_ms": 0.000342,
+      "calls": 4
+    },
+    {
+      "class_name": "CaelumRangedWorkshopStation",
+      "total_ms": 0.00133,
+      "average_ms": 0.000332,
+      "calls": 4
+    },
+    {
+      "class_name": "CaelumRamFrameVisual",
+      "total_ms": 0.00117,
+      "average_ms": 0.000195,
+      "calls": 6
+    },
+    {
+      "class_name": "CaelumNotificationInbox",
+      "total_ms": 0.00099,
+      "average_ms": 0.00099,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumSiegeRouteNode",
+      "total_ms": 0.00094,
+      "average_ms": 0.000157,
+      "calls": 6
+    },
+    {
+      "class_name": "CaelumRentalAgent",
+      "total_ms": 0.00092,
+      "average_ms": 0.00092,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumSourceCypellaFlower",
+      "total_ms": 0.0009,
+      "average_ms": 0.00045,
+      "calls": 2
+    },
+    {
+      "class_name": "CaelumStarCargo",
+      "total_ms": 0.0007,
+      "average_ms": 0.0007,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumAnimaRegeneration",
+      "total_ms": 0.00069,
+      "average_ms": 0.000345,
+      "calls": 2
+    },
+    {
+      "class_name": "HexenArmor",
+      "total_ms": 0.00067,
+      "average_ms": 0.00067,
+      "calls": 1
+    },
+    {
+      "class_name": "BasicArmor",
+      "total_ms": 0.00058,
+      "average_ms": 0.00058,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumArrivalHousehold",
+      "total_ms": 0.00054,
+      "average_ms": 0.00054,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumSourceHoney",
+      "total_ms": 0.00052,
+      "average_ms": 0.00052,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumRamHead",
+      "total_ms": 0.00051,
+      "average_ms": 8.5e-05,
+      "calls": 6
+    },
+    {
+      "class_name": "InternalDynamicLight",
+      "total_ms": 0.00049,
+      "average_ms": 0.00049,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumRidingHorse",
+      "total_ms": 0.00042,
+      "average_ms": 0.00042,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumSiegeGateReinforced",
+      "total_ms": 0.00031,
+      "average_ms": 0.000155,
+      "calls": 2
+    },
+    {
+      "class_name": "CaelumTimeAdvanceZone",
+      "total_ms": 0.00028,
+      "average_ms": 0.00028,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumSiegeGateArmored",
+      "total_ms": 0.00027,
+      "average_ms": 0.00027,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumPhysicsMapState",
+      "total_ms": 0.00026,
+      "average_ms": 0.00026,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumLandSourceRoster",
+      "total_ms": 0.00023,
+      "average_ms": 0.00023,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumCoveredCart",
+      "total_ms": 0.00023,
+      "average_ms": 0.00023,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumPortCompletion",
+      "total_ms": 0.00022,
+      "average_ms": 0.00022,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumClimateRegion",
+      "total_ms": 0.0002,
+      "average_ms": 0.0002,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumLifePotionLarge",
+      "total_ms": 0.00019,
+      "average_ms": 0.00019,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumWeatherState",
+      "total_ms": 0.00015,
+      "average_ms": 0.00015,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumSteamTrain",
+      "total_ms": 0.00015,
+      "average_ms": 0.00015,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumScheduleState",
+      "total_ms": 0.00015,
+      "average_ms": 0.00015,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumSiegeGate",
+      "total_ms": 0.00015,
+      "average_ms": 0.00015,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumUnarmedWeapon",
+      "total_ms": 0.00013,
+      "average_ms": 0.00013,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumVehicleRanch",
+      "total_ms": 0.00013,
+      "average_ms": 0.00013,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumWorldClock",
+      "total_ms": 0.00013,
+      "average_ms": 0.00013,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumAlchemyRoster",
+      "total_ms": 0.00012,
+      "average_ms": 0.00012,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumAnimaPotionLarge",
+      "total_ms": 0.00011,
+      "average_ms": 0.00011,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumFermentationRoster",
+      "total_ms": 0.0001,
+      "average_ms": 0.0001,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumDomesticMarket",
+      "total_ms": 3e-05,
+      "average_ms": 3e-05,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumM00AmuletChosenToken",
+      "total_ms": 3e-05,
+      "average_ms": 3e-05,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumCalendarState",
+      "total_ms": 2e-05,
+      "average_ms": 2e-05,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumEnergyDrinkLarge",
+      "total_ms": 2e-05,
+      "average_ms": 2e-05,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumRestState",
+      "total_ms": 2e-05,
+      "average_ms": 2e-05,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumPersistentCharacterState",
+      "total_ms": 2e-05,
+      "average_ms": 2e-05,
+      "calls": 1
+    },
+    {
+      "class_name": "CaelumContaminationSurfaces",
+      "total_ms": 2e-05,
+      "average_ms": 2e-05,
+      "calls": 1
+    }
+  ],
+  "class_count": 89,
+  "total_calls": 20432,
+  "summed_class_ms": 41.251523,
+  "renderer_text": "Map MAP03: \"Barracas al Sud \u2014 fortified port\",\nx = -4352.0000, y = -14016.0000, z = 41.0000, angle = -90.0000, pitch = 0.0000\n3 fps\n\nWalls: 838 (0 splits, 0 t-splits, 1516 vertices)\nFlats: 9 (9 primitives, 50718 vertices)\nSprites: 1352, Decals=0, Portals: 2, Command buffers: 5\nBSP = 0.025, Clip=0.181\nW: Render=0.103, Setup=0.732\nF: Render=0.005, Setup=0.004\nS: Render=0.670, Setup=0.535\n2D: 0.153 Finish3D: 0.003\nMain thread total=1.301, Main thread waiting=1.095 Worker thread total=1.284, Worker thread waiting=0.013\nAll=5.539, Render=0.858, Setup=1.314, Portal=0.087, Drawcalls=0.496, Postprocess=0.021, Finish=3.174\nDLight - Walls: 0 processed, 0 rendered - Flats: 0 processed, 0 rendered\n\n\n\n",
+  "files": {
+    "engine.log": "4db1a007eb9be1e3e5ffbb26fddf69c53af211d1644d3923d3c7b96039a7b052",
+    "benchmarks.txt": "ab86aa4aa6cef003a913409bdd86163a4b1d30c828e07c01131153fa51898dce"
+  },
+  "qualification": "One native thinker tic and a later renderer CPU snapshot, after the primary observation window. They are not synchronized whole-window means or GPU duration; main/worker render scopes overlap. Timers retain their own overhead. Do not subtract or add these snapshots as an exact frame decomposition."
+}

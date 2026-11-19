@@ -1,0 +1,51 @@
+{
+  "issue": 851,
+  "runtime_sha256": "aa7e00e93eeaffe42e353ee116961021b8dad92a638146eee399f211be122f82",
+  "overlay_sha256": "0273be5dfd0344ddcf399e77b60478da87cbfde1b5450d8c1c5c31bd4356dcb0",
+  "original_source_sha256": "718f6f390831362aac29cdc8e21c3e2810c847458a728ec68db96471133300b5",
+  "inverse_exact": true,
+  "period": 17,
+  "metrics": [
+    {
+      "id": 0,
+      "path": "caelum/actors/CaelumVisualPerception.zs",
+      "method": "entry_before_group_lookup"
+    },
+    {
+      "id": 1,
+      "path": "caelum/actors/CaelumVisualPerception.zs",
+      "method": "group_lookup"
+    },
+    {
+      "id": 2,
+      "path": "caelum/actors/CaelumVisualPerception.zs",
+      "method": "group_candidates"
+    },
+    {
+      "id": 3,
+      "path": "caelum/actors/CaelumVisualPerception.zs",
+      "method": "group_members"
+    },
+    {
+      "id": 4,
+      "path": "caelum/actors/CaelumVisualPerception.zs",
+      "method": "group_finish"
+    },
+    {
+      "id": 5,
+      "path": "caelum/actors/CaelumVisualPerception.zs",
+      "method": "local_candidates"
+    },
+    {
+      "id": 6,
+      "path": "caelum/actors/CaelumVisualPerception.zs",
+      "method": "unlinked_guards"
+    },
+    {
+      "id": 7,
+      "path": "caelum/actors/CaelumVisualPerception.zs",
+      "method": "local_finish"
+    }
+  ],
+  "qualification": "Bounded regions within Candidate, preserving all original statements and order. Entry/cache early returns are not included in entry-before-group timing; region counts describe calls reaching each region. Group setup is excluded. Instrumentation overhead remains; these are not whole-frame gains."
+}

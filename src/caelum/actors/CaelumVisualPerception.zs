@@ -163,11 +163,22 @@ class CaelumVisualPerception : Object play
             evidence.CandidateCache=nearest;evidence.CandidateCacheTic=level.time;evidence.CandidateCacheReady=true;
             return nearest;
         }
+        // #851: la cota compartida también descarta vecinos locales invisibles.
+        // Las relaciones con migración conservan su consulta antes del descarte.
+        let localPopulation=CaelumPopulationState.Get();
+        double localSightUpper=localPopulation!=null && localPopulation.HighDensity && level.GetPortalGroupCount()==1
+            ? CaelumPhysicsUnits.MapUnits(CaelumPerceptionData.VISUAL_BASE_METERS)*InsightFactor(observer) : -1;
+        bool readOnlyLocalRelation=!(observer is "CaelumAnchoredResident")
+            && !(observer is "CaelumSummonedZupay")
+            && !(observer is "CaelumTarotAutomaton") && !(observer is "CaelumTarotClone");
         let local=BlockThingsIterator.Create(observer,QueryRadius(observer));
         while(local.Next())
         {
             let candidate=local.thing;
-            if(!Opponent(observer,candidate))
+            if(readOnlyLocalRelation && localSightUpper>=0 && candidate!=null && OutsideGroupReach(observer,candidate,localSightUpper))continue;
+            bool localOpponent=Opponent(observer,candidate);
+            if(!readOnlyLocalRelation && localSightUpper>=0 && candidate!=null && OutsideGroupReach(observer,candidate,localSightUpper))continue;
+            if(!localOpponent)
             {
                 let friend=CaelumCombatActor(candidate);
                 if(friend!=null && CaelumCommunication.Eligible(observer,friend))
