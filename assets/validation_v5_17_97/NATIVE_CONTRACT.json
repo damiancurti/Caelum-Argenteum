@@ -1,0 +1,36 @@
+{
+  "issue": 838,
+  "project_source_sha256": {
+    "src/caelum/actors/CaelumVisualPerception.zs": "718f6f390831362aac29cdc8e21c3e2810c847458a728ec68db96471133300b5",
+    "src/caelum/actors/CaelumCommunication.zs": "caf7097c0bce6345d81be61c7968b34f99d710922ea3d1fe9fbd59b68895387d",
+    "src/caelum/actors/CaelumAnchoredResident.zs": "e02b21752ccec38c1e6ad245b0e35cced386e1b03e030e84e6401bee93014a43",
+    "src/caelum/core/CaelumMajorTargets.zs": "ea18321a962f8f29482596662893fe18f0b2f4318aeb5de98164ba21bfec4b1e",
+    "src/caelum/core/CaelumTarotEmperor.zs": "e7dfa9332689b327ee190ea99169717ea521f8a35a511c9f2b265b43d523cd62",
+    "src/caelum/player/CaelumPlayer.zs": "bc6e0aacfde679f83b01fffbf3c22ce6ba0f0b1fb583b5bc4c393930ce6fa741",
+    "src/caelum/player/CaelumPlayerAuthority.zs": "7069887f77281d8d2bea4d095c35a32ee6c00c0a8d3d7db72a475586193228f9",
+    "src/caelum/equipment/CaelumPersistentCharacterState.zs": "81c348cb02a7138f93dc2cbd81a3ddf7d858594ca53ea9a4034eb7c5673bd0ba"
+  },
+  "native_source_tag": "g4.14.2",
+  "native_source_repository": "https://github.com/ZDoom/gzdoom/tree/g4.14.2",
+  "native_source_sha256": {
+    "src/playsim/p_mobj.cpp": "24781f59e76d1874927dc9e0b7a2e14f89a91c5f053736c2e171044b86d2f544",
+    "src/scripting/vmthunks_actors.cpp": "d18dcc9d929d7be029530bf2bd149abc145d0a4b7d48b62ad8960ddc1d5123c5",
+    "src/common/objects/dobjgc.cpp": "6f24c31de2df6fcbcb0382b11b4b5cacc732334da89c96311451b185ac903b23",
+    "src/common/rendering/hwrenderer/data/hw_clock.cpp": "53cddb87fb5237ce0e8f8bd9220c44f145a185ba51c9c0e34ed4c5b6b6d9de5a",
+    "src/events.cpp": "ad530e3d58cbb6975193e28f7159c65d4cd1287b73375eb784f805e5678bf4bc"
+  },
+  "proof": [
+    "CandidatesFor requires a living command leader and a nonnull observer SiegeCombatant; no added scan, cache, field, schema or timing state.",
+    "Opponent first checks Living and the clearscope Emperor Blocks helper. Ordinary observers are outside resident, summoned-Zupay, automaton and clone class families.",
+    "For those ordinary observers, candidate automaton/clone routing still calls RelatedOpponent on the same observer. Its resident branch cannot execute. Remaining paths only read theft, siege, player/native faction data. The shared-query siege branch already applies in this scope.",
+    "All excluded observers retain Opponent before OutsideGroupReach. In particular, CanBeFactionTarget calls GetPersistentCharacterState(false), which can run four material schema migrations even though it does not create a missing record.",
+    "MajorTargets.Enemy can call RelatedOpponent(candidateCombat,user), making a candidate resident trigger the same migration through an automaton/clone/summoned observer. Conservatively preserve the entire delegated families, even when no commander is assigned.",
+    "The unchanged strict horizontal bound uses current height, Insight and radii; when portal group count differs from one the guard is disabled. Every surviving candidate retains original distance/visibility/nearest-order semantics.",
+    "The final package inverse transformation restores parent visual source. Native fixtures verify the actual remote resident and delegated-automaton material migration, plus ordinary/fallback ordered selection and portal behavior."
+  ],
+  "diagnostic_findings": [
+    "Static first-order WorldTick boundary precedes ordinary event handlers; nested inclusive/exclusive scopes do not cover all engine/frame work. Complete700tic profile balanced28scopes with zero stack errors.",
+    "GC stop changes only the isolated diagnostic process threshold. Both paired processes force GC full at tic3200; maximum simulation interval remains above200ms with cycles stopped. No production GC setting is changed.",
+    "Native bench waits five wall seconds before writing benchmarks.txt when it activates FPS statistics. Initial requests exited before that wait. Final/control capture unchanged window and screenshot before bench, then allow350 extra tics; bench is a later CPU snapshot, not GPU/window-wide timing."
+  ]
+}

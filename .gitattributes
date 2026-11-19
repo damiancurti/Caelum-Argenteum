@@ -1310,3 +1310,9 @@ assets/validation_v5_17_95/evidence/** -text -diff
 /assets/validation_v5_17_96/*.py text eol=lf
 /assets/validation_v5_17_96/*.json text eol=lf
 /assets/validation_v5_17_96/evidence/** -text -diff
+
+# Preserve #838 relationship fixtures and measured native evidence.
+/assets/validation_v5_17_97/*.py text eol=lf
+/assets/validation_v5_17_97/*.zs text eol=lf
+/assets/validation_v5_17_97/*.json text eol=lf
+/assets/validation_v5_17_97/evidence/** -text -diff

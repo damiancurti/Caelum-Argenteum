@@ -1,6 +1,25 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.96** - 2026-11-19.
+Documentation version: **5.17.97** - 2026-11-19.
+
+## 5.17.97 - Skip unreachable read-only relationship queries (#838, #454)
+
+
+No art, sound, model, map, balance or saved-state ownership changes. The package
+retains 18,719 members; only the visual relationship-order guard and two diagnostic
+release strings change. Source/runtime byte and inverse-transform audits pass.
+
+assets/validation_v5_17_97 retains the complete nested profile, GC comparison,
+source overlays, ordered-target oracle, relationship/portal/save fixtures,
+native logs, scene captures, queue traces and later CPU benchmark snapshots.
+Six final/control fixture runs pass 392 assertions (263 final). The source contract
+records why resident and delegated relation paths must keep their ordering.
+Private IWADs, executables, PK3/WAD test packages and saves remain local.
+The reproducible run_relation_edges.py extends validation_v5_17_96 and takes an
+explicit parent runtime as its independent baseline. check_preservation.py
+audits the package/source contract; evidence/SUMMARY.json indexes retained
+hashes and measured limitations. Full validation is recorded in the same patch.
+These checks do not advance character proposals, art approval or author tests.
 
 ## 5.17.96 - Conservative shared-candidate reach rejection (#836, #454)
 

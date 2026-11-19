@@ -1,0 +1,12 @@
+{
+  "issue": 838,
+  "candidate_source_sha256": "718f6f390831362aac29cdc8e21c3e2810c847458a728ec68db96471133300b5",
+  "overlay_sha256": "bc40ac5c974a98c62a04a0077c946f9ec1d4f3bf70282fba5741f9a429f40b2e",
+  "inverse_source_exact": true,
+  "sampling_interval": 37,
+  "window": [
+    3600,
+    4300
+  ],
+  "qualification": "Original ordered predicate oracle only for proven read-only relationship paths. No performance claim from instrumented timings."
+}

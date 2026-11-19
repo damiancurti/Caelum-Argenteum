@@ -4,6 +4,38 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-256 - Preserve predicate side effects and measure unexplained residuals
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #838, 2026-11-19.
+Scope: shared high-density candidate query, approved Barracas siege, native
+GZDoom 4.14.2; parent 9387ab0e. No author acceptance or universal timing claim.
+
+Moving a cheap rejection before a relationship predicate requires auditing its
+effects, not just its boolean result. GetPersistentCharacterState(false) does
+not create a missing record but may migrate material schemas. Resident faction
+queries call it, and delegated major-target lookup can reach the same resident
+path. #838 therefore retains relationship-before-bound order for anchored
+residents, summoned Zupays, tarot automatons and clones. The ordinary shared
+observer path only reads relations. Retained candidates keep original functions
+and list order; no cached geometry, new scan, cadence or saved-field change.
+Reaudit the guard whenever relationship routing gains another effect.
+
+The original-order sampled oracle matches 2,066 queries/360,048 visits and skips
+360,047 read-only relations without nearest-target differences. Native fixtures
+verify actual remote resident and delegated-automaton migrations, along with
+visibility, ordering, portal and reversible-save checks. All 392 assertions pass
+across six final/control runs. This evidence is scoped, not universal proof.
+
+The complete 700-tic/28-scope diagnostic separates inclusive and exclusive costs.
+Its largest interval leaves 178.9117 ms outside measured game code; do not call
+that remainder GPU time. A paired prewindow full-GC/control and stopped-cycle
+ablation retains long pauses while increasing allocated collector objects. GC stop
+is not a production optimization. Native bench also waits five wall seconds
+before output: capture after it completes and distinguish that later CPU
+snapshot from the measured queue window. Production presentation remains poor;
+preserve offscreen mechanics and investigate the remaining work independently.
+Evidence, exact source contracts and limitations: assets/validation_v5_17_97.
+
 ## CA-KP-255 - Bound shared candidates conservatively and respect linked portals
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #836, 2026-11-19.
