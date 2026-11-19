@@ -4,6 +4,29 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-261 - Audit shared texture aliases before a map material revision
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #847 / 5.17.102,
+2026-11-19, GZDoom 4.14.2. Visual candidate; author acceptance pending.
+
+A sewer-named alias also appears in urban and diagnostic maps. Audit its map,
+model and tooling consumers before changing a global TEXTURES definition. A
+dedicated preview overlay permits a bounded comparison while retaining original
+production sources. Such aliases remain global while the overlay is loaded;
+restrict the review launch rather than claiming the alias itself is map-scoped.
+
+Record image pixels and logical repeat separately. A higher-resolution original
+can use an explicit display scale without editing its bitmap; that does not
+change collision dimensions. Preserve source/prompt/provenance, actual memory
+estimates, deterministic overlay bytes and matched native screenshots. Existing
+lighting, geometry and inherited prop art still need their own assessment.
+
+The #847 comparison keeps every map and production image byte unchanged. Its
+fourteen directly viewed captures and paired entrance traces establish a local
+visual comparison, not author acceptance, full-map navigation or a permanent
+asset budget. Evidence: assets/validation_v5_17_102. Contracts: ASSETS and MAP01.
+
+
 ## CA-KP-260 - Use the canonical map for a Limbo-only query
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #846 / 5.17.101,

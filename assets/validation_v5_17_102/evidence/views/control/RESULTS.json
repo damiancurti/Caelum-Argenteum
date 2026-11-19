@@ -1,0 +1,52 @@
+{
+  "label": "control",
+  "passed": true,
+  "exit_code": 0,
+  "timed_out": false,
+  "errors": [],
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-review01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\views.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\control\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\control",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "-rngseed",
+    "428",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\control\\engine.log",
+    "+map",
+    "MAP02",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\control\\start.cfg"
+  ],
+  "markers": [
+    "CA847 VIEW 0 pos=0.000,-4864.000,-0.000 angle=90.000 headroom=96.000",
+    "CA847 VIEW 1 pos=-160.000,-4256.000,0.000 angle=45.000 headroom=128.000",
+    "CA847 VIEW 2 pos=-2304.000,-4128.000,0.000 angle=0.000 headroom=128.000",
+    "CA847 VIEW 3 pos=-3936.000,-3232.000,0.000 angle=135.000 headroom=128.000",
+    "CA847 VIEW 4 pos=-2912.000,8160.000,-0.000 angle=180.000 headroom=96.000",
+    "CA847 VIEW 2 pos=-2304.000,-4128.000,0.000 angle=0.000 headroom=128.000",
+    "CA847 WALK distance=24.493 pos=-2279.509,-4127.695,0.000",
+    "CA847 PASS views=5"
+  ],
+  "images": {
+    "entrance.png": "a8b4afa6a2003456ddcbb40ed745adc4085c1d930a1733d2ffe497a273bf9d6d",
+    "junction.png": "b30b61aec1ff5ef3f679d789100ee7dc68d190e140890864868758c036e5f500",
+    "channel.png": "f962045d7bd78c750c99b663cba20080d9a7b3422b004cb4a0cc6ebe75f55a40",
+    "refuge.png": "72468e9ff22c576a25e0e0e74d67bc780d92a97d6f783d8a2904d18bd8881379",
+    "boss_access.png": "bb735b3986556e73fa698c7be90f0699e33c7cdd40d3b77e3db3189b4afca1ca",
+    "walk.png": "f058deae74ae546fe935481f6f5ac314bf5038144453751bab2670efadf9924a"
+  }
+}

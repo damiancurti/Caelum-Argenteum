@@ -1,6 +1,60 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.101** - 2026-11-19.
+Documentation version: **5.17.102** - 2026-11-19.
+
+## 5.17.102 - Prepare the sewer material comparison (#847, #463)
+
+An opt-in MAP02 material comparison uses original generated brick masonry and
+the retained owned stone floor at finer display scales. Production texture
+bindings and images remain active and unchanged. CASWRWAL is shared by eight
+current map consumers (with CASWRFLR used by a subset), so a global replacement
+would exceed this focused sewer review. Load the candidate only in its dedicated
+MAP02 session; the aliases are global while that private overlay is loaded.
+
+The original built-in image_gen output is a 1254x1254 RGB PNG, preserved without
+bitmap postprocessing, with its exact prompt and provenance. Its 64-MU / 2-m
+repeat gives approximately eight brick lengths across. The original 256x256
+stone floor repeats at 128 MU / 4 m instead of 256 MU / 8 m; its pixel bytes are
+unchanged. These are art presentation scales, not new collision or balance data.
+The wall source occupies 3,528,014 bytes; decoded RGBA base level would occupy
+6,290,064 bytes before mipmaps/driver overhead. This is an explicit candidate
+cost, not a measured GPU allocation or an approved permanent asset budget.
+
+AySA's official Nuestra historia page and its captioned Puente Chico/Wilde
+machine-room construction photograph, circa 1884, provide local period masonry
+and arch context. They are reference only; no third-party pixels are copied.
+Colour, wear and bond remain original artistic interpretation. Existing flat
+ceilings, gate/prop materials and geometry remain; this does not complete vault,
+city furnishing, moisture-detail or broader environmental finish work.
+
+Two native runs pass five matched camera placements and a short forward-input
+check each. Both move 24.493 MU to the same position. Entrance, southern junction,
+channel, repair refuge and locked boss access remain readable. Fourteen images
+were inspected directly: twelve comparison/walk captures at 1520x825 and the two
+timed entrance captures at 1280x720. Diagnostic invulnerability/notarget and
+camera teleports are disclosed; this is not an ordinary full-map walkthrough,
+escort, combat, gate-opening or author acceptance test.
+
+Overlay assembly repeats byte-for-byte. All 18,755 final runtime entries match
+source; only two release-diagnostic strings differ from 5.17.101. All map bytes,
+production art, light, water, iron, bars, collision, resources and saved fields
+remain unchanged. The overlay contains exactly one original PNG and TEXTURES.
+Private engines, IWADs, runtime/overlay PK3s and saves are not distributed.
+
+The paired entrance traces use native GZDoom 4.14.2, Vulkan 1280x720, Windows 11,
+Ryzen 9 5950X / RTX 3070 Ti, unpaused background and 5% audio. The candidate gives
+fewer queue presents in this one pair; no stable percentage cost or general
+speedup is claimed. Queue presents are not monitor scanout. Tic intervals include
+pacing/frame work, not isolated simulation CPU cost. Previous siege/mansion/city
+controls remain in validation_v5_17_101 and apply to byte-preserved production
+content; they are not new candidate results for those maps.
+
+Source, prompt, inventory, provenance and comparison page:
+assets/source/art/sewer_material_847/review.html. Evidence and reproduction:
+assets/validation_v5_17_102. CA847-MATERIAL-01 is appended to pending_test.txt;
+every earlier author check is preserved. Consolidated review and the single
+final batch terminal remain pending. No artwork is marked accepted.
+
 
 ## 5.17.101 - Use the canonical mansion map for the Limbo query (#846, #454)
 

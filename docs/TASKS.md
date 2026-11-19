@@ -1,6 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.101** - 2026-11-19.
+Documentation version: **5.17.102** - 2026-11-19.
+
+## 5.17.102 - Prepare the sewer material comparison (#847, #463)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Completed: original brick material candidate, retained floor rescaling in a
+private overlay, explicit shared-consumer inventory, period reference/provenance,
+deterministic assembly, exact production preservation, paired native views and
+bounded movement, entrance presentation comparison and a local review gallery.
+
+Remaining: CA847-MATERIAL-01 art review; production binding/consumer decision
+after review; broader city/sewer finish, character/equipment work, campaign
+decisions and siege performance. Prior pending tests remain unchanged in place;
+the new material check is appended. The final consolidated test terminal is not
+yet delivered. Source: assets/source/art/sewer_material_847;
+evidence: assets/validation_v5_17_102; results and limits: HISTORY.
+
 
 ## 5.17.101 - Use the canonical mansion map for the Limbo query (#846, #454)
 

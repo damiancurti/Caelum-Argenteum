@@ -1,0 +1,20 @@
+{
+  "issue": 847,
+  "version": "5.17.102",
+  "parent_commit": "b8494b983875c7f3357a37631e62902993a950ea",
+  "runtime_sha256": "e94024c02321d0532b55c7faccb5f1e35c241bdc5f4d836cca01f47cf2ee3a36",
+  "overlay_sha256": "2269d19bb5ca491bff3fb3677c3161523375621dbfc980435c73258c6499d80c",
+  "original_prompt": "assets/source/art/sewer_material_847/brick-v1.prompt.txt",
+  "source_image": "assets/source/art/sewer_material_847/brick-v1.png",
+  "source_pixel_edits": false,
+  "source_scope": "Original image_gen material candidate. Production TEXTURES, all original images and all map bytes remain unchanged. The preview overlay contains exactly one image and two visual aliases; load only in its dedicated MAP02 session.",
+  "reference": "https://www.aysa.com.ar/Quienes-Somos/nuestra_historia",
+  "reproduction": [
+    "python assets/generators/build_sewer_material_review.py --output build/new-sewer-review.pk3",
+    "python assets/validation_v5_17_102/run_material_views.py --runtime <5.17.102.pk3> --overlay <review.pk3> --output <new-build-directory>",
+    "python assets/validation_v5_16_2/run_barracas_presentation.py --runtime <5.17.102.pk3> --overlay <review.pk3> --map MAP02 --players 1 --presentation-layer <private-layer>"
+  ],
+  "native_limits": "Five camera placements and one short native forward movement per run. Diagnostic player invulnerability/notarget; live actors retained. Captures are 1520x825; timed entrance traces are 1280x720. No full walkthrough, combat, gate opening, author acceptance or complete-map 60FPS claim.",
+  "prior_control_evidence": "assets/validation_v5_17_101/evidence/issue846-production-performance.json retains siege, mansion and city references. Runtime preservation proves all production content except two version messages is unchanged; no new performance result is claimed for those scenes.",
+  "private_artifacts": "No IWAD, engine, WAD, PK3, save or DLL is distributed."
+}

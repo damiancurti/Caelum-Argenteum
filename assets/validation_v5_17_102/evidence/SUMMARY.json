@@ -1,0 +1,141 @@
+{
+  "issue": 847,
+  "static": {
+    "issue": 847,
+    "passed": true,
+    "runtime_sha256": "e94024c02321d0532b55c7faccb5f1e35c241bdc5f4d836cca01f47cf2ee3a36",
+    "baseline_sha256": "61ccaff36849395018bb7aa31a49e565f9727d9a6b9a9099c36c7f0a1786334d",
+    "overlay_sha256": "2269d19bb5ca491bff3fb3677c3161523375621dbfc980435c73258c6499d80c",
+    "members": 18755,
+    "changed": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "only_release_diagnostics": true,
+    "overlay_deterministic": true,
+    "source_image_exact": true,
+    "all_map_bytes_preserved": true,
+    "geometry_and_gameplay_unchanged": true
+  },
+  "native_views_passed": true,
+  "matched_camera_markers": true,
+  "directly_reviewed_images": 14,
+  "performance": [
+    {
+      "label": "sewers_control",
+      "directory": "build/v516/barracas-profile-20261119-155537-029920",
+      "runtime_sha256": "e94024c02321d0532b55c7faccb5f1e35c241bdc5f4d836cca01f47cf2ee3a36",
+      "overlay_sha256": null,
+      "engine": {
+        "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+      },
+      "layer": {
+        "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+        "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+      },
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.56950757142857,
+        "p95_ms": 32.2079,
+        "p99_ms": 33.5452,
+        "max_ms": 43.2182
+      },
+      "states": [
+        "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+        "CA435PERF STATE slot=0 health=1248 pos=0.000000,-4864.000000,-0.000000",
+        "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+        "CA435PERF STATE slot=0 health=1248 pos=0.000000,-4864.000000,-0.000000"
+      ],
+      "census": [
+        "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+        "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+      ],
+      "presentation": {
+        "pid": 17784,
+        "trace_sha256": "57e8631963a933f23fbcbd70dd51a5248f17a0fb10470fbe3a6939a2a4296a87",
+        "rows": 6328,
+        "scene_presents": 3473,
+        "mean_present_fps": 200.41510748206588,
+        "present_intervals": {
+          "samples": 3472,
+          "mean_ms": 4.9896438076130805,
+          "p50_ms": 4.6773000955581665,
+          "p95_ms": 6.666299939155579,
+          "p99_ms": 7.659000039100647,
+          "max_ms": 39.402899980545044
+        },
+        "native_call_duration": {
+          "samples": 3473,
+          "mean_ms": 0.06848511286026251,
+          "p50_ms": 0.06300008296966553,
+          "p95_ms": 0.09750008583068848,
+          "p99_ms": 0.12650001049041748,
+          "max_ms": 0.44770002365112305
+        }
+      }
+    },
+    {
+      "label": "sewers_candidate",
+      "directory": "build/v516/barracas-profile-20261119-155620-439452",
+      "runtime_sha256": "e94024c02321d0532b55c7faccb5f1e35c241bdc5f4d836cca01f47cf2ee3a36",
+      "overlay_sha256": "2269d19bb5ca491bff3fb3677c3161523375621dbfc980435c73258c6499d80c",
+      "engine": {
+        "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+      },
+      "layer": {
+        "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+        "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+      },
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57094314285714,
+        "p95_ms": 31.9228,
+        "p99_ms": 33.2739,
+        "max_ms": 42.6512
+      },
+      "states": [
+        "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+        "CA435PERF STATE slot=0 health=1248 pos=0.000000,-4864.000000,-0.000000",
+        "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+        "CA435PERF STATE slot=0 health=1248 pos=0.000000,-4864.000000,-0.000000"
+      ],
+      "census": [
+        "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+        "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+      ],
+      "presentation": {
+        "pid": 50004,
+        "trace_sha256": "28e657e616619b3ebd63c73f486dde31e392a05169f3ede4ec48e8237d6f7ec3",
+        "rows": 6163,
+        "scene_presents": 3309,
+        "mean_present_fps": 190.9791054206351,
+        "present_intervals": {
+          "samples": 3308,
+          "mean_ms": 5.2361749092785885,
+          "p50_ms": 5.005300045013428,
+          "p95_ms": 6.975800037384033,
+          "p99_ms": 8.294400095939636,
+          "max_ms": 39.808899998664856
+        },
+        "native_call_duration": {
+          "samples": 3309,
+          "mean_ms": 0.06995983641109427,
+          "p50_ms": 0.06389999389648438,
+          "p95_ms": 0.1007000207901001,
+          "p99_ms": 0.13399994373321533,
+          "max_ms": 0.40859997272491455
+        }
+      }
+    }
+  ],
+  "full_validation_pending": false,
+  "author_acceptance": false,
+  "author_queue_unchanged": false,
+  "author_queue_prior_entries_preserved": true,
+  "author_checks_added": [
+    "CA847-MATERIAL-01"
+  ],
+  "full_validation_passed": true
+}
