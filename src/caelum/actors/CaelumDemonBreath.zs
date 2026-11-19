@@ -67,11 +67,17 @@ class CaelumDemonBreath : Actor
         return point;
     }
 
-    static bool CanReach(Actor owner,Actor victim)
+    // #855: aplicar la exclusion antes de mutar el reconocimiento visual.
+    static bool IsRouteMarker(Actor victim)
     {
         // El destino nativo de una ruta es disparable para A_Chase, pero no
         // es un enemigo ni un punto al que orientar el aliento por frio o sogas.
-        if(victim is 'CaelumSewerEscapeTarget')return false;
+        return victim is 'CaelumSewerEscapeTarget';
+    }
+
+    static bool CanReach(Actor owner,Actor victim)
+    {
+        if(IsRouteMarker(victim))return false;
         vector3 delta=victim.Pos+(0,0,victim.Height/2)-Mouth(owner);
         return delta.Length()-victim.Radius<=CaelumDemonBreathRules.Range() && owner.CheckSight(victim);
     }
@@ -99,7 +105,8 @@ class CaelumDemonBreath : Actor
         // potencia de quemadura; ningún barrido global ni radiación a distancia.
         vector3 next=Mouth(Emitter);
         vector3 nextDirection=(Cos(Emitter.Angle),Sin(Emitter.Angle),0);
-        if(Emitter.target!=null && CaelumVisualPerception.Identify(Emitter,Emitter.target) && CanReach(Emitter,Emitter.target))
+        if(Emitter.target!=null && !IsRouteMarker(Emitter.target)
+            && CaelumVisualPerception.Identify(Emitter,Emitter.target) && CanReach(Emitter,Emitter.target))
         {
             vector3 aim=Emitter.target.Pos+(0,0,Emitter.target.Height/2)-next;
             if(aim.Length()>0)nextDirection=aim/aim.Length();

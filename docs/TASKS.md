@@ -1,6 +1,24 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.105** - 2026-11-19.
+Documentation version: **5.17.106** - 2026-11-19.
+
+## 5.17.106 - Preserve recognition when demon breath inspects a route marker (#855)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Implemented #855 after the #853 diagnosis. Shared route eligibility now precedes
+mutating visual identification in UpdateBreath and PaidTick. The settled
+Mandinga/Zupay regression, cold/bolas/combat/interruption controls, exact charges,
+native saved-state upgrade/reload/rollback and package comparison are complete.
+The baseline's eight recognition failures remain explicit evidence; 310 native
+assertions pass, including 166 on the final package and nine additional portable
+fixture assertions outside that canonical count.
+
+Retain the six descriptive reference captures and the unresolved siege budget.
+Continue the authorized V5.16/V5.17 batch, character/equipment/scenery work and
+the consolidated author session. Existing design gates remain pending; no manual
+acceptance is inferred from native tests or the linked draft PR.
+
 
 ## 5.17.105 - Measure breath queries and reproduce route-induced recognition loss (#853, #855)
 

@@ -6,13 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.105.** Obtain and update the complete repository,
+**Current release: 5.17.106.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
-#853 measures demon breath queries and reproduces a visual-recognition defect
-when breath inspects a technical route target. #855 tracks its separate correction.
-No gameplay change is adopted in this diagnostic patch. Evidence and the expected
-failed baseline are in docs/HISTORY.md and assets/validation_v5_17_105.
+#855 fixes the route-induced recognition loss diagnosed in #853: demon breath
+rejects technical route markers before changing visual evidence. Native checks
+cover both demon families, cold/bolas, resources, interruptions and saved state.
+Evidence and frame/tic qualifications are in docs/HISTORY.md and
+assets/validation_v5_17_106. Siege and consolidated author acceptance remain open.
 
 #851 applies the existing conservative reach bound to dense local perception.
 1,358 native target/ally/portal/save checks pass. The measured local region

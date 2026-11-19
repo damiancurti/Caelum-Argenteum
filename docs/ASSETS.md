@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.105** - 2026-11-19.
+Documentation version: **5.17.106** - 2026-11-19.
+
+## 5.17.106 - Preserve recognition when demon breath inspects a route marker (#855)
+
+No art, map, model, animation or sound asset changes. Evidence and portable tools
+in assets/validation_v5_17_106 retain settled native recognition cases, ability
+controls, reversible saved-state checks, source/package proof and six descriptive
+reference captures. Failed fixture preparation is preserved with its cause.
+Engine, IWAD, runtime PK3/WAD and save binaries remain private. Existing visual
+candidates and consolidated author review remain pending.
+
 
 ## 5.17.105 - Measure breath queries and reproduce route-induced recognition loss (#853, #855)
 

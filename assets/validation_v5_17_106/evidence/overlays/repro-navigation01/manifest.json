@@ -1,0 +1,17 @@
+{
+  "issue": 855,
+  "runtime_sha256": "1bf92c28f7317875e10aace435bc730507602e98c6dc4681c79f54a74e48f0cf",
+  "baseline_sources": {
+    "caelum/actors/CaelumDemonService.zs": "f0257673fc42823e3cb7f07ae7fa8d20c58159528496da5b97cc038a2832fa33",
+    "caelum/actors/CaelumDemonBreath.zs": "712946a70d57070179d6abaacb8caa1ede0b738dcd3ecaed3ed7c226716c81bc"
+  },
+  "candidate_sources": {
+    "caelum/actors/CaelumDemonService.zs": "24c6678a923f04e803dae7c22421eada5461b51ee1ac9f39dca9a7a82eed7a53",
+    "caelum/actors/CaelumDemonBreath.zs": "9cebf08d5a131f9c0713620efaaaf402d786521ca404e2d857d25100e14549ae"
+  },
+  "overlay_sha256": "934a7ee9b4bcc31bcf085bd6ff316f75eed9e429683adf18465d3a0695a14041",
+  "inverse_exact": true,
+  "new_fields": false,
+  "new_rules": false,
+  "qualification": "Prototype behavior fix. Share the exact existing route-marker type predicate and apply it before Identify in UpdateBreath and PaidTick. General perception, native movement, legitimate targets, cold/bolas, contact heat, costs, state transitions and cadence keep their existing bodies. Navigation-triggered visual-evidence/RNG mutation is intentionally removed; this is not an equivalent full-combat comparison."
+}
