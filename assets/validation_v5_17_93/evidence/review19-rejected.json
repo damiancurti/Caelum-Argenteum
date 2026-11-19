@@ -1,0 +1,16 @@
+{
+  "issue": 829,
+  "reviewed": [
+    "issue829-native19/outfit00-pose02.png",
+    "issue829-native19/outfit00-pose08.png",
+    "issue829-layers18-28.png",
+    "issue829-layers18-129.png",
+    "issue829-layers19-28.png",
+    "issue829-layers19-129.png",
+    "issue829-layers19-whole-129.png",
+    "issue829-layers19-whole-150.png"
+  ],
+  "notes": [
+    "Native19/source18 still exposes waistcoat in running. Coloured Blender layer diagnostics confirm inner waistcoat crossing the coarse coat surface. Source19 adds vertical coat samples and localizes thigh transition87..99, clearing abdominal running/seat regions. A small waistcoat edge remains at low side-waist in seated/crouched source19 diagnostics; tapering only lower inner layers next. Blender diagnostics are not native/author acceptance."
+  ]
+}

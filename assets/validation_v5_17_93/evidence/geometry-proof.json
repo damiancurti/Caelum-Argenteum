@@ -1,0 +1,6 @@
+{
+  "issue": 829,
+  "geometry_exact_repeat": true,
+  "geometry_sha256": "2ee4478007717469f49dc2314316abeff6d81a4e60f6894e17b0e32f2047f98e",
+  "qualification": "Editable Blender checkpoints are retained authoring sources; deterministic claims cover intermediate geometry and native exports from the retained checkpoint."
+}

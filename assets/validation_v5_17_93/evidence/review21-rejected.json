@@ -1,0 +1,35 @@
+{
+  "issue": 829,
+  "reviewed": [
+    "issue829-native21/outfit00-view4.png",
+    "issue829-native21/outfit01-view0.png",
+    "issue829-native21/outfit07-view0.png",
+    "issue829-native21/outfit07-view4.png",
+    "issue829-native21/outfit02-pose08.png",
+    "issue829-native21/outfit02-pose17.png",
+    "issue829-native21/outfit03-pose08.png",
+    "issue829-native21/outfit04-pose08.png",
+    "issue829-native21/outfit06-pose08.png",
+    "issue829-native21/outfit09-pose08.png",
+    "issue829-native21/outfit10-pose08.png",
+    "issue829-native21/outfit07-pose03.png",
+    "issue829-native21/outfit04-pose10.png",
+    "issue829-native21/hem-body00-foot-1.png",
+    "issue829-native21/hem-body00-foot2.png",
+    "issue829-native21/hem-body02-foot0.png",
+    "issue829-native21/hem-body05-foot1.png",
+    "issue829-native21/detail3-item3-view2.png",
+    "issue829-native21/detail3-item4-view0.png"
+  ],
+  "notes": [
+    "Only the forthcoming installed-runtime native21 images and final presentation captures listed here will count as direct final review. Earlier qualified images require exact pixel hashes for reuse.",
+    "Final-package formal back and winter-formal front: continuous coat silhouette, retained materials, no exposed covered torso.",
+    "Final-package RW front/back: lower layer contained, independent trouser/tall-boot overlap visible; rectangular rigged panels retain the documented angular cloth limitation.",
+    "Final CS seated and jumping views retain connected trousers, exposed forearms and low-shoe hem coverage.",
+    "Final CE/CW/RE seated views retain jacket/coat coverage and coherent ankle/tall-boot hems; open front panels expose the intended inner garments.",
+    "REJECTED final native21: PW seated trousers cross its long coat, matching the earlier F failure. PE seated jacket is coherent. Need extend demonstrated long-coat fitting to PW and inspect CW. These captures are not final acceptance.",
+    "RW raised-arm pose3 remains covered; CW crouch10 has no matching detached trouser island at this view. Need inspect CW diagnostic layers before deciding whether it requires the long-coat correction.",
+    "Qualified unaffected hem views: F bare/tall boots, CS formal shoes and RS ankle boots retain covered ankles/calf joins. Native21 remains rejected for PW seated coat only; these viewed pixels can be reused only by exact hash in a corrected final run.",
+    "BS profile and BP front without body clothing: retained feet are contained by shoes, without the old ankle/heel protrusions. Qualified unaffected footwear views only."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "issue": 829,
+  "reviewed": [
+    "issue829-native23/outfit00-view0.png",
+    "issue829-native23/outfit00-view4.png",
+    "issue829-native23/outfit04-view0.png",
+    "issue829-native23/outfit10-view0.png",
+    "issue829-native23/outfit02-pose03.png",
+    "issue829-native23/outfit02-pose22.png",
+    "issue829-native23/outfit00-pose08.png",
+    "issue829-native23/outfit00-pose10.png",
+    "issue829-native23/outfit04-pose08.png",
+    "issue829-native23/outfit10-pose08.png",
+    "issue829-native23/region0-item10.png",
+    "issue829-native23/region3-item-1.png",
+    "issue829-native23/hem-body08-foot0.png",
+    "issue829-native23/hem-body10-foot2.png",
+    "issue829-presentation02/seven-1/scene.png",
+    "issue829-presentation02/worn-1/scene.png",
+    "issue829-presentation02/worn-64/scene.png",
+    "issue829-presentation02/seven-64/scene.png",
+    "issue829-native23/detail2-item0-view0.png",
+    "issue829-native23/detail2-item1-view0.png",
+    "issue829-native23/detail2-item2-view0.png",
+    "issue829-native23/detail2-item3-view0.png"
+  ],
+  "notes": [
+    "Awaiting native23 installed final-package direct review. Native21 rejected review is preserved separately.",
+    "Final package F front/back: coat, waistcoat, hat and footwear remain assembled without visible rest-pose intersections. Angular candidate surfaces and untextured construction hands are retained limitations.",
+    "Final CW/PW front rest views: layered clothing, independent hats/gloves/footwear and silhouette are coherent; no exposed construction anatomy through coat surfaces.",
+    "CS raised-arm melee and guard-landing views: gloves, exposed forearms, sleeves, trousers and low shoes follow the registered pose. Angular shoulder folds remain; no independent garment region disappears.",
+    "Final F seated and crouched views retain coat separation from trousers/waistcoat; folds remain angular without the rejected inner-clothing islands.",
+    "Final CW/PW seated views have continuous coat surfaces without the previously rejected trouser islands.",
+    "Independent body swap retains casual headwear/gloves/low shoes on PW; removing CS footwear restores bare feet and the long trouser hem.",
+    "Mixed PS/formal-shoe and PW/tall-boot closeups show the selected trouser hem meeting the shoe/boot collar; no bare calf or full trouser tube crosses the boot.",
+    "All four presentation screenshots were inspected: the single figure and complete 8x8 cohorts are visible in the same room/camera, with the worn cohort cycling the 11 outfits. These distant, noninteractive scenes measure candidate rendering cost, not close-up visual acceptance or campaign performance.",
+    "All four final glove closeups were inspected directly because earlier glove-detail captures did not match pixel hashes. Each retains its own material on the relaxed hand; adjacent body regions remain exposed, with no production item grip claimed."
+  ]
+}

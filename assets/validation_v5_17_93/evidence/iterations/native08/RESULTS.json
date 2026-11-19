@@ -1,0 +1,45 @@
+{
+  "issue": 829,
+  "runtime_sha256": "0c0080193e2d1aea340af318b7acae835b4ca624ae9057e8f41d135ee73e5107",
+  "model_sha256": "70331680fcc7f2300e1d30a7f2a5364d4458113cf90cdc65c0a6da067913e925",
+  "fixture_sha256": "90fcf5a8973f92be72b61595b44705a707cbdb8885b629122faff812464cba68",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "quick": true,
+  "runs": [
+    {
+      "phase": "fresh",
+      "exit_code": 0,
+      "assertions": 20,
+      "expected_assertions": 20,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "phase": "reload",
+      "exit_code": 0,
+      "assertions": 5,
+      "expected_assertions": 5,
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "captures": {
+    "outfit-1-view0.png": "791e15af2abfd37965efab592c49365c17107c2b45b628f1fe0c44bfc6e8b9bf",
+    "outfit-1-view2.png": "810acae0bd84c95ff725972ee311f78ac8a7cd06160eefc6781bb57804e7cb76",
+    "outfit00-pose02.png": "9ed107f117cd45dc2940e8300528f0c7f2d5bd761f5387e11646e063307bebd0",
+    "outfit00-pose09.png": "378e1dd1da65c57db74579442851ba797318544fab3bbb55154e1e65e139861a",
+    "outfit00-view0.png": "98384e97279b13d6359eed977e169f4145dc9eebc15fda250b3c26905143a606",
+    "outfit00-view2.png": "46a09941c1328b0b9863b1cf4fa12509901d8cffdcaf46d486a631cef98d6ca4",
+    "outfit02-pose08.png": "8f3ed8cf30c7378d7451cbc256959671c70a594205a50c986c936c083082cb38",
+    "outfit02-view0.png": "d111e168b343c86d0b4fb489b1ec90a3d50e9cd5d2a6db85ed8d8f9fa17bbc8f",
+    "outfit02-view2.png": "0fc11cabdbe4dc7eb3083fddc42ef518038b99f7acd73418e78b7a4e01d85c9e",
+    "outfit07-pose01.png": "5164c53791d72949b26137bb6c9a829cc641ebc579bf654acd46f5649eaac46f",
+    "outfit07-pose03.png": "aa8a0dc7e19a2278f59678769505fbecf6c3f3eece0f0ac3f83df505cea002d5",
+    "outfit07-pose08.png": "4698f5d2b0c645771a093ec1864f2948041c694032e7e678f8246323ce9828b8",
+    "outfit07-view0.png": "c88ab5bc0129f5e4e878d9fcbd828d6fcd0e2fbd5172d33f7e420e7a49f4127f",
+    "outfit07-view2.png": "f0b1680058738b7b7c6b61d5463c4ebfcf4f4e16a02364eaf207566284c3d805",
+    "reloaded.png": "c88ab5bc0129f5e4e878d9fcbd828d6fcd0e2fbd5172d33f7e420e7a49f4127f",
+    "saved.png": "c88ab5bc0129f5e4e878d9fcbd828d6fcd0e2fbd5172d33f7e420e7a49f4127f"
+  },
+  "saved_visibility_pixel_match": true
+}

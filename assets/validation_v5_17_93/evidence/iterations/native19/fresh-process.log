@@ -1,0 +1,180 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-18 23:28:29
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue829-clothing04.pk3, 18719 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue829-export17-preview/preview.pk3, 87 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue829-native19/fixture.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2491.46 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Worn garment fitting
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA829 VIEW outfit=2 pose=0 rotation=0
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured outfit-1-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured outfit-1-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=2 pose=0 rotation=0
+Captured outfit02-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=2 pose=0 rotation=2
+Captured outfit02-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=0 pose=0 rotation=0
+Captured outfit00-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=0 pose=0 rotation=2
+Captured outfit00-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=7 pose=0 rotation=0
+Captured outfit07-view0.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=205.00 y=0.00 z=90.83 angle=180.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=7 pose=0 rotation=2
+Captured outfit07-view2.png
+CA829 PASS selected camera position and angle
+CA829 CAMERA x=0.00 y=205.00 z=90.83 angle=270.00 subject=0.00 stretch=1.200
+CA829 VIEW outfit=2 pose=0 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose08.png
+CA829 VIEW outfit=2 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit02-pose03.png
+CA829 VIEW outfit=7 pose=3 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose01.png
+CA829 VIEW outfit=7 pose=1 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose08.png
+CA829 VIEW outfit=7 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose03.png
+CA829 VIEW outfit=7 pose=3 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose10.png
+CA829 VIEW outfit=7 pose=10 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose17.png
+CA829 VIEW outfit=7 pose=17 rotation=7
+CA829 PASS selected native pose
+Captured outfit07-pose23.png
+CA829 VIEW outfit=0 pose=23 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose02.png
+CA829 VIEW outfit=0 pose=2 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose08.png
+CA829 VIEW outfit=0 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose09.png
+CA829 VIEW outfit=0 pose=9 rotation=7
+CA829 PASS selected native pose
+Captured outfit00-pose10.png
+CA829 VIEW outfit=1 pose=10 rotation=7
+CA829 PASS selected native pose
+Captured outfit01-pose08.png
+CA829 VIEW outfit=1 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit01-pose09.png
+CA829 VIEW outfit=4 pose=9 rotation=7
+CA829 PASS selected native pose
+Captured outfit04-pose08.png
+CA829 VIEW outfit=10 pose=8 rotation=7
+CA829 PASS selected native pose
+Captured outfit10-pose08.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail3-item0-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail3-item0-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail3-item1-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail3-item1-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail3-item2-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail3-item2-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail3-item3-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail3-item3-view2.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured detail3-item4-view0.png
+CA829 PASS unobstructed garment detail
+CA829 VIEW outfit=-1 pose=0 rotation=2
+Captured detail3-item4-view2.png
+CA829 PASS native walking state advances
+CA829 VIEW outfit=-1 pose=0 rotation=0
+Captured saved.png
+CA829 PASS saved subject/camera references
+CA829 PASS saved four garment selectors
+CA829 PASS saved covered-body and hair visibility
+CA829 PASS saved frozen pose
+CA829 PASS inspection has no gameplay collision
+CA829 COMPLETE failures=0 checks=40
+Game saved.

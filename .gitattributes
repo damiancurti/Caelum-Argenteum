@@ -1286,3 +1286,11 @@ assets/validation_v5_17_92/*.zs text eol=lf
 assets/validation_v5_17_92/evidence/** -text -diff
 assets/generators/*underbody*.py text eol=lf
 src/licenses/UNDERBODY_827.txt text eol=lf
+
+# Preserve #829 worn-clothing sources and diagnostic evidence.
+assets/source/art/worn_clothing_829/** -text
+assets/generators/*worn_clothing*.py text eol=lf
+assets/validation_v5_17_93/*.py text eol=lf
+assets/validation_v5_17_93/*.zs text eol=lf
+assets/validation_v5_17_93/evidence/** -text -diff
+src/licenses/WORN_CLOTHING_829.txt text eol=lf

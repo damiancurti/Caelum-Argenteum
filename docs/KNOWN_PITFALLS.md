@@ -4,6 +4,80 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-253 - Nearest-surface weights can attach clothing to unrelated limbs
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #829, 2026-11-18.
+Scope: the first Domingo-compatible wardrobe, retained 24-action rig and
+GZDoom 4.14.2 isolated fitting fixture; baseline 27af73b8.
+
+Nearest-body weight transfer is useful for close-fitting sleeves, hands and
+shoes. It is insufficient for loose coats and ponchos: some rest vertices are
+closer to a hand or shin than to the torso. Closed meshes, normalized weights,
+375 exported samples and passing selection/save assertions did not detect the
+resulting seated spikes. Native06/09 preserve the rejected configurations.
+
+Use an explicit semantic weight field for torso cloth and its attached trim,
+pockets and buttons. Source11 restricts those 207 parts to pelvis, spine, chest
+and upper thighs, with a continuous front-skirt transition; sleeves retain
+limb weights. Validate the allowed bone set and inspect seated, raised-arm,
+running and horizontal poses in the engine. Continuous anatomy-derived
+trousers also avoid the disconnected hip/leg shapes of the inventory display.
+Native10 passes 30 quick assertions and shows corrected seated coat/poncho
+deformation. These are rigged surfaces, with angular folds and no physical
+cloth simulation; author acceptance remains separate.
+
+Also test each selectable region with adjacent clothing removed. Native11
+passed 240 assertions, but trousers concealed an incomplete foot mask: the
+upper foot remained in the core and crossed the shoes. Moving the mask cut to
+the ankle exposed a second problem at boot heels/calves in native12. Sparse
+loft rings cannot follow a curved calf merely by changing their endpoint scale.
+The fitting utility now samples vertical boot spans and expands a shared upper,
+lining and detail envelope against actual anatomy sections. Quick fixtures
+include all five footwear pairs without trousers, from front and profile.
+These failures and their corrected final views are recorded separately.
+
+Fitting a boot around bare anatomy is still insufficient when full-length
+trousers occupy the same calf space (native13). Source14 separates trousers
+from each body garment and keeps five closed hem variants selected by footwear.
+The variants retain the original fabric, patches and weights; the garment's
+inventory identity does not change. A fifteenth model slot binds the selected
+hem through every pose. Native14 passes 40 quick checks with coherent standing
+and seated boot/hem views; the full fixture also traverses all 66 body/footwear
+selections, including removal, before the final save/reload check.
+
+Inspect layered garments in more than their neutral pose. Native15 passed all
+306 selection/save checks, but the inner RW shirt crossed its poncho during
+crouching and jumping, and trousers crossed the long F coat while seated.
+Reducing the inner RW depth resolved the poncho intersection. Stronger thigh
+weights cleared the long coat's trousers in native17 but exposed its inner
+waistcoat during running. Native18 rejected coupling the inner layers to that field because
+the shirt/tie developed angular intersections. Source18 depth reduction alone still exposed the waistcoat. Coloured
+Blender layer diagnostics locate it, but do not establish native acceptance.
+Source20 adds vertical coat samples, confines thigh following below the waist
+and tapers lower inner layers with their original torso weights. This avoids
+coarse triangles carrying lower-coat deformation into the abdomen. Native20
+passes 45 quick checks; inspected running, seated and crouched coat views and
+crouched/jumping poncho views show the corrected layers. Full-package review
+and author acceptance remain separate. The later native21 full run again passed
+306 assertions but exposed the same trouser crossing on PW; coloured-layer
+inspection also exposed a smaller CW crossing. Source22 extends the demonstrated
+fit to both, so all four below-waist coats receive the correction. Review each
+garment family; a representative formal coat alone is not sufficient. A provisional export can resample selected fitting modules against
+a hashed reference, but it is explicitly marked preview-only, cannot be
+installed by the exporter, and is rejected by final validation. Delivery uses
+complete repeated exports, with actual inspected captures identified separately.
+The complete source22 exports23/24 repeat all 89 files exactly. Native23
+passes 306 assertions with identical saved/reloaded visibility; its qualified
+visual review and four presentation measurements are recorded in the evidence.
+These results do not replace author acceptance.
+
+The same fixture exposed an independent camera error: raw model-space focus
+height must be divided by level.pixelstretch when the accepted MODELDEF lacks
+CorrectPixelStretch. Apply the conversion to the camera, preserving accepted
+model scale; see CA-KP-023. Native camera logs record the actual stretch.
+Evidence: assets/validation_v5_17_93/evidence/SUMMARY.json, the native iteration
+reports, source11 component report and explicit reviewed-image hashes.
+
 ## CA-KP-252 - Closed edges do not establish a single mesh component
 
 Status/evidence: CODE-VERIFIED, #827, 2026-11-18. Scope: the retained CC0 neck

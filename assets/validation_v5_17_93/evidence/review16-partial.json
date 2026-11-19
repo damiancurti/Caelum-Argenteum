@@ -1,0 +1,10 @@
+{
+  "issue": 829,
+  "reviewed": [
+    "issue829-native16/outfit07-pose10.png",
+    "issue829-native16/outfit07-pose17.png"
+  ],
+  "notes": [
+    "Source15 removes large RW shirt intersections in crouch and jump; a small central light seam remains in crouch. Further inner-layer clearance will be tested with long-coat deformation corrections. Not final acceptance."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "issue": 829,
+  "runtime_sha256": "1b8350d8e23c68084d867741518c36b31ae5225283b30fb67fdfab044eaf8519",
+  "model_sha256": "d94aedbf10e9b06107cfa29bdc09de2aec8b0866e7cc145fdf6fe65a2ff1fdfe",
+  "fixture_sha256": "dc8616118055d0b8c9dc9add1c83611d876633b391a8d1ea1989cf8d4d9503f9",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "quick": true,
+  "runs": [
+    {
+      "phase": "fresh",
+      "exit_code": 1,
+      "assertions": 0,
+      "expected_assertions": 17,
+      "errors": [
+        "Script error, \"fixture.pk3:zscript\" line 109:"
+      ],
+      "passed": false
+    }
+  ],
+  "captures": {}
+}

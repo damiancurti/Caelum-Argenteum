@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.92** - 2026-11-18.
+Documentation version: **5.17.93** - 2026-11-19.
+
+## 5.17.93 - First-body wardrobe candidate evidence complete (#829)
+
+Twenty-five fitted garments and independent skin/hair masks are installed as
+isolated candidates. Source/export validation, 306 native assertions, saved
+visibility and four presentation comparisons are recorded in ASSETS and evidence.
+Angular extreme folds and lack of cloth simulation remain explicit limitations.
+Keep CA829-WARDROBE-01 and all earlier author checks pending. Continue broader
+#458 characters, #459 production equipment/body variants, #462 first-person
+work and V5.16 campaign/performance work before the consolidated terminal.
 
 ## 5.17.92 - Anatomy foundation verified; garment fitting next (#827)
 

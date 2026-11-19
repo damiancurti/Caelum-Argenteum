@@ -1,0 +1,16 @@
+{
+  "issue": 829,
+  "reviewed": {
+    "issue829-native10/outfit07-view0.png": "c88aef29749a7c4ffe38b57d80f94575a78263c85fe7e1b6f6807e720a19151c",
+    "issue829-native10/outfit02-pose08.png": "2c44a0c6c49c8a6eb8043c9e9d5aa6565cfcde6c1b706a2d59ad50ea568d9137",
+    "issue829-native10/outfit01-pose08.png": "a0824cc3bb4b24cf15b3059fc10785fb112050e7131c5536ad0f605c51a0b42c",
+    "issue829-native10/outfit01-pose09.png": "58e5de8d172f313c7572e635c1311344b26177be883e0172323a13a71cd67ede",
+    "issue829-native10/outfit04-pose08.png": "6df399ff0bfe3e9cdc606f97847a277d289d25f398ef78cd8e482c6d76338777",
+    "issue829-native10/outfit10-pose08.png": "c5fd8600eacc3d46d693cdef0915cce3fcac2322806934885f97fb9536437130",
+    "issue829-native10/outfit02-pose03.png": "a2fff368cfc998483755a64b50b261b30064b0a3327bf3c47274bcfb9e2b8a40",
+    "issue829-native10/outfit07-pose08.png": "28e705f3192e81132d09651c4a2aee239759648935abc4c13c09151e3e71023f"
+  },
+  "notes": [
+    "Source11 quick native review: RW buckle covered; CS seated and raised-arm shirt continuous; FW/CW seated no hand/shin-driven spikes; PW coat retains angular folds; long coat lying remains rigid because there is no cloth simulation. Author visual acceptance remains pending."
+  ]
+}

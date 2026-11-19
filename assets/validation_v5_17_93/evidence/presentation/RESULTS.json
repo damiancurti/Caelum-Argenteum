@@ -1,0 +1,185 @@
+{
+  "issue": 829,
+  "scope": "Compare the retained seven modules with fitted clothing on one and 64 figures.\n\nThe fitted cohort cycles all 11 ensembles and their matching headwear/gloves/shoes.\nQueue presentation intervals and simulation tails are not display latency or a\ncampaign, combat, siege, first-person or author acceptance result.",
+  "runtime_sha256": "b073da14f96bc9215a96c509e8c675fe43f2ded8622a2fb57fc3321b0362d7b3",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "seven",
+      "bodies": 1,
+      "pid": 37876,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 672301262.7217,
+        "END": 672321279.3641
+      },
+      "fixture_sha256": "cac25c899da1f669ce74075faed90b2dc73c9e760dcce731a4dad7c81a4b3651",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571207142857144,
+        "p50_ms": 28.5693,
+        "p95_ms": 29.1213,
+        "p99_ms": 29.2684,
+        "max_ms": 29.4157
+      },
+      "presentation": {
+        "pid": 37876,
+        "trace_sha256": "ebf65e90fb9b7326b71e8d1cbffd54d87cfe67c84841f6a009bd988d588a8b0f",
+        "rows": 31213,
+        "scene_presents": 21398,
+        "mean_present_fps": 1221.5695208449583,
+        "present_intervals": {
+          "samples": 21397,
+          "mean_ms": 0.8186189839676918,
+          "p50_ms": 0.801800012588501,
+          "p95_ms": 0.9510000944137573,
+          "p99_ms": 1.05649995803833,
+          "max_ms": 1.6212999820709229
+        },
+        "native_call_duration": {
+          "samples": 21398,
+          "mean_ms": 0.09125693086842887,
+          "p50_ms": 0.08749997615814209,
+          "p95_ms": 0.10819995403289795,
+          "p99_ms": 0.1690000295639038,
+          "max_ms": 0.5772000551223755
+        }
+      }
+    },
+    {
+      "kind": "worn",
+      "bodies": 1,
+      "pid": 45200,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 672336666.6615,
+        "END": 672356686.6702
+      },
+      "fixture_sha256": "c5b9bcd15ec81600d655fb353cdaff3fa3c3ecc131eec1803e9b60a1bd4748f1",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571617285714286,
+        "p50_ms": 28.5647,
+        "p95_ms": 29.1622,
+        "p99_ms": 29.3352,
+        "max_ms": 29.4964
+      },
+      "presentation": {
+        "pid": 45200,
+        "trace_sha256": "c6977d95cf00c1a520881b39b61f872d52b0683657f87e2b1ac4439273e4ea39",
+        "rows": 30846,
+        "scene_presents": 21164,
+        "mean_present_fps": 1207.9553773290475,
+        "present_intervals": {
+          "samples": 21163,
+          "mean_ms": 0.8278451495543943,
+          "p50_ms": 0.8093000650405884,
+          "p95_ms": 0.9630000591278076,
+          "p99_ms": 1.0604000091552734,
+          "max_ms": 2.075500011444092
+        },
+        "native_call_duration": {
+          "samples": 21164,
+          "mean_ms": 0.09090076980327663,
+          "p50_ms": 0.08689999580383301,
+          "p95_ms": 0.10859990119934082,
+          "p99_ms": 0.16509997844696045,
+          "max_ms": 0.6841000318527222
+        }
+      }
+    },
+    {
+      "kind": "worn",
+      "bodies": 64,
+      "pid": 5124,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 672374778.6772,
+        "END": 672394802.3861
+      },
+      "fixture_sha256": "2ed0ffa8ce941ad81c2901e3e22cc602fbb9cdc02feeee63182c78af08cb6a53",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571007142857145,
+        "p50_ms": 28.5616,
+        "p95_ms": 29.4657,
+        "p99_ms": 29.661,
+        "max_ms": 29.9305
+      },
+      "presentation": {
+        "pid": 5124,
+        "trace_sha256": "242c0b2bd143a518b1fc2d284378c4e490c05d289fc3b659ab2c95e2b0a6c6b7",
+        "rows": 19651,
+        "scene_presents": 13767,
+        "mean_present_fps": 785.6215123911059,
+        "present_intervals": {
+          "samples": 13766,
+          "mean_ms": 1.2728775679225166,
+          "p50_ms": 1.2436999082565308,
+          "p95_ms": 1.4428000450134277,
+          "p99_ms": 1.5937999486923218,
+          "max_ms": 2.780400037765503
+        },
+        "native_call_duration": {
+          "samples": 13767,
+          "mean_ms": 0.0924807291556662,
+          "p50_ms": 0.08799993991851807,
+          "p95_ms": 0.1101999282836914,
+          "p99_ms": 0.16030001640319824,
+          "max_ms": 0.6935999393463135
+        }
+      }
+    },
+    {
+      "kind": "seven",
+      "bodies": 64,
+      "pid": 19220,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 672409963.7923,
+        "END": 672429979.2947999
+      },
+      "fixture_sha256": "5a3f36093261f166d6f4ec3eeae7c6611eeb66356e6ce3efa8fbc12d23d114e6",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57168971428571,
+        "p50_ms": 28.5742,
+        "p95_ms": 29.3288,
+        "p99_ms": 29.5462,
+        "max_ms": 29.6633
+      },
+      "presentation": {
+        "pid": 19220,
+        "trace_sha256": "67efb0516a4702ea3c82f703e04f6ce4575e24a133cdfa725d38cab0cb42db65",
+        "rows": 22329,
+        "scene_presents": 15569,
+        "mean_present_fps": 888.8784440314055,
+        "present_intervals": {
+          "samples": 15568,
+          "mean_ms": 1.1250132194280869,
+          "p50_ms": 1.1032999753952026,
+          "p95_ms": 1.2616000175476074,
+          "p99_ms": 1.3869000673294067,
+          "max_ms": 2.2685000896453857
+        },
+        "native_call_duration": {
+          "samples": 15569,
+          "mean_ms": 0.091870043171923,
+          "p50_ms": 0.08800005912780762,
+          "p95_ms": 0.10920000076293945,
+          "p99_ms": 0.15779995918273926,
+          "max_ms": 0.691100001335144
+        }
+      }
+    }
+  ]
+}

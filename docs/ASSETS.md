@@ -1,6 +1,85 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.92** - 2026-11-18.
+Documentation version: **5.17.93** - 2026-11-19.
+
+## 5.17.93 - Fitted first-body wardrobe candidates (#829, parent #459)
+
+The 25 approved garment identities now have editable worn candidates for the
+first Domingo-compatible body: 11 body ensembles, five hats, four glove pairs
+and five footwear pairs. Eighty-six native modules include five covered-body
+regions, lower hair and 55 trouser hem variants; fifteen fixture slots select
+the four garment regions independently without adding inventory identities.
+The accepted Domingo source, old models, inventory artwork and production
+character/equipment owners remain unchanged. Campaign equipment integration,
+other bodies/species/sexes, item grips and first-person fitting remain unfinished.
+Author acceptance is pending; no final consolidated terminal has been opened.
+
+Source: assets/source/art/worn_clothing_829. The authoring/export/validation
+utilities retain the 24 actions and 375 samples. The 473 editable components
+have closed edges, positive rest volumes and normalized weights. Each of the
+eleven anatomy-derived trousers is one connected surface. The native modules
+contain 91,755 vertices/168,724 triangles in aggregate, with 5,625 frame/slot
+declarations. All 89 repeated export files are byte-identical; intermediate
+geometry repeats exactly. The .blend is a retained editable authoring checkpoint,
+with 27 owned PNGs packed unchanged, rather than a deterministic Blender-save
+claim. All 18,719 packaged entries match src, and 14 original source files remain
+byte-identical. The runtime SHA-256 is b073da14f96bc9215a96c509e8c675fe43f2ded8622a2fb57fc3321b0362d7b3.
+
+Fitting corrects inventory display offsets, unfolds trousers and maps sleeves
+to the actual shoulder/elbow/wrist path. A complete ankle cut and a vertically
+sampled anatomical envelope fit all shoe/boot uppers. Trousers have bare, low,
+formal, ankle and tall hem variants, with a capped overlap below the selected
+shoe/boot collar. The same fabrics, patches and garment IDs remain authoritative.
+Independent skin regions keep exposed
+forearms, neck and feet visible without drawing covered arms through sleeves.
+Hats use lower hair; removing headwear restores the full original hair.
+VISIBILITY.json is the explicit garment-mask authority for the isolated fixture.
+
+Rejected iterations exposed disconnected trousers, sleeve/ankle gaps, coat
+intersections, a buckle crossing the poncho and hand/shin-driven cloth distortion.
+Native06/09 passed 208/240 assertions despite those visual faults. Source11 uses
+a semantic torso/thigh weight field for 207 cloth/detail parts, continuous fitted
+trousers and open-sided poncho panels. CA-KP-253 records the corrective method.
+Extreme shoulder bends and skirt folds remain angular; horizontal cloth stays
+rigid. These are rigged meshes without physical cloth simulation or item grips.
+
+Final native23 passes 306 assertions: all four region selections and removals,
+all 66 body/footwear combinations including bare feet, 24 action samples on
+representative ensembles, stress poses on the remaining
+ensembles, camera details, animation, saved masks and reload. The saved/reloaded
+capture is byte-identical. Its 236 capture hashes are retained; 22 final
+native/presentation views were directly inspected and 50 other final views
+reuse exact pixels from inspected quick-run captures. The review manifest names
+the actual inspected subset; other local captures are not claimed reviewed.
+Earlier native11/12 exposed foot, heel and calf intersections; native13 exposed
+tall boots crossing full trousers. Those passing logical tests were rejected
+visually and corrected before final verification. Native15 exposed inner shirt
+and long-coat intersections; native17/18 retained rejected layer-weight variants.
+Source22 fits inner RW layers beneath the poncho, adds vertical long-coat
+samples and confines F/FW/CW/PW thigh following below the waist. Lower inner layers
+taper with their original torso weights, avoiding coarse abdominal deformation. Native21 exposed the same PW crossing,
+and coloured diagnostics located a smaller CW crossing; both receive the same
+correction in Source22 before final native verification.
+The unchanged production pilot's earlier 22 save/rollback assertions are reused
+only within the byte-preservation scope, not as new wardrobe integration proof.
+
+Four sequential 700-tic peaceful runs compare the original seven modules with
+the fitted wardrobe on 1/64 noninteractive figures. The 64-figure wardrobe cycles
+all eleven ensembles. Environment: GZDoom 4.14.2/Vulkan, Ryzen 9 5950X, RTX 3070 Ti,
+1280x720, uncapped presentation with vsync off, unpaused background, 5% audio.
+No heavy builds/generators ran concurrently; temporary wake requests were released.
+
+| Figures / modules | Queue presents/s | Present p95 / p99 / max ms | Tic p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| 1 / seven | 1221.6 | 0.95 / 1.06 / 1.62 | 29.12 / 29.27 / 29.42 |
+| 1 / worn | 1208.0 | 0.96 / 1.06 / 2.08 | 29.16 / 29.34 / 29.50 |
+| 64 / worn | 785.6 | 1.44 / 1.59 / 2.78 | 29.47 / 29.66 / 29.93 |
+| 64 / seven | 888.9 | 1.26 / 1.39 / 2.27 | 29.33 / 29.55 / 29.66 |
+
+These single-scene measurements report queue presentation and simulation tails,
+not GPU/display latency, campaign population, siege fluency or author acceptance.
+Evidence: assets/validation_v5_17_93/evidence/SUMMARY.json, including retained
+rejected iterations and final validation. CA829-WARDROBE-01 remains pending.
 
 ## 5.17.92 - Reusable Domingo anatomy foundation (#827, parent #458)
 

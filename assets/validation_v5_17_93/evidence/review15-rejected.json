@@ -1,0 +1,37 @@
+{
+  "reviewed": [
+    "issue829-native15/outfit00-view0.png",
+    "issue829-native15/outfit03-view0.png",
+    "issue829-native15/outfit01-view0.png",
+    "issue829-native15/outfit02-view0.png",
+    "issue829-native15/outfit04-view0.png",
+    "issue829-native15/outfit05-view0.png",
+    "issue829-native15/outfit06-view0.png",
+    "issue829-native15/outfit08-view0.png",
+    "issue829-native15/outfit09-view0.png",
+    "issue829-native15/outfit10-view0.png",
+    "issue829-native15/outfit02-pose02.png",
+    "issue829-native15/outfit02-pose10.png",
+    "issue829-native15/outfit02-pose06.png",
+    "issue829-native15/outfit02-pose14.png",
+    "issue829-native15/outfit07-pose10.png",
+    "issue829-native15/outfit00-pose09.png",
+    "issue829-native15/outfit07-pose17.png",
+    "issue829-native15/outfit07-pose23.png",
+    "issue829-native15/outfit00-pose10.png",
+    "issue829-native15/outfit04-pose10.png",
+    "issue829-native15/outfit00-pose08.png"
+  ],
+  "notes": [
+    "Final F and CE fronts show formal/ankle hems meeting the selected footwear without the former calf overlap.",
+    "FW and CS final fronts inspected; matching materials and closed trouser/shoe joins retained.",
+    "CW/RS front combinations inspected with ankle/low hems.",
+    "RE tall boots and PS patched low footwear retain distinct fabric and continuous joins.",
+    "PE/PW front patch/material identities inspected. Ten final ensemble fronts reviewed directly; RW has a prior qualified quick-run view pending exact-pixel comparison.",
+    "CS run/crouch low hems follow the retained animation without separating from shoes.",
+    "CS death bend and get-up pose preserve hem/shoe coverage; extreme shoulder folds remain angular as documented.",
+    "REJECTED: RW crouch shows a light shirt/placket wedge through the lower front poncho. Foot/hem joins are improved, but this remaining cloth intersection needs correction. F sleeping cloth stays rigid as already qualified.",
+    "Additional direct review: F crouch/seated show dark trouser islands through side-front coat. CW crouch shows no equally evident detached trouser island at this view. Do not treat the F views as passed."
+  ],
+  "qualification": "REJECTED native15: RW shirt crosses poncho in crouch10/jump17/guard23; F trousers cross outer coat in crouch10/seated08. Logical assertions pass but visual fit fails."
+}
