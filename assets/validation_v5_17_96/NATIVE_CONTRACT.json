@@ -1,0 +1,42 @@
+{
+  "issue": 836,
+  "engine": "GZDoom 4.14.2",
+  "references": [
+    {
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/scripting/vmthunks.cpp",
+      "git_blob_sha": "68560a69e4098bb96c1e01116494cd6bef914624",
+      "contract": "GetPortalGroupCount returns level Displacements.size."
+    },
+    {
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/p_setup.cpp",
+      "git_blob_sha": "2775e259e7c112d7b342965d2cd3213dfb7ded82",
+      "contract": "ClearPortals initializes a one-group displacement table."
+    },
+    {
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/portal.cpp",
+      "git_blob_sha": "f94f7f9149dd00048ab1512d964924a6dcc983b7",
+      "contract": "CreateLinkedPortals starts its group ID at one and allocates additional linked-sector groups before constructing the displacement table."
+    },
+    {
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/actor.h",
+      "git_blob_sha": "7e132fa731fb87cd3de6bc61eb39b06bd15238f9",
+      "contract": "Distance3D uses other.PosRelative(this), not raw world coordinate subtraction."
+    },
+    {
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/maploader/specials.cpp",
+      "git_blob_sha": "47663e812105e1035a9cbd57b011c66d8a5f7fed",
+      "contract": "Line_SetPortal argument zero identifies the destination. Traversable linked portals require back sectors; the initial invalid one-sided fixture is retained as a failed diagnostic."
+    }
+  ],
+  "argument": "Without linked groups, native planar distance and 3D distance cannot be smaller than either coordinate gap. Full light and zero stealth upper-bound current visual range. Adding nonnegative radii and the existing contact margin includes every possible physical-contact override. Strictly greater axis gaps may therefore be discarded; the original predicates decide every survivor. The guard falls back for any group count other than one.",
+  "scope": "Existing high-density shared candidate list only. Current observer Insight and candidate height are used, not census-cached height. No candidate ordering, relationship, private evidence, target cadence, population census, global actor scan or persistent state is changed.",
+  "native_portal_fixture": "Two linked rooms are 6640 raw coordinate units apart between probes but 496 native distance units apart. Three portal groups require fallback, and the original visible target must still be selected.",
+  "rights": "Pinned engine references establish API semantics; no engine source or assets are redistributed. Local test fixture uses development IWAD textures and is never distributed as a WAD or PK3.",
+  "reproduce": [
+    "powershell -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1 -Destination build/issue836-rebuilt.pk3",
+    "python assets/validation_v5_17_96/run_reach_edges.py --runtime build/issue836-rebuilt.pk3 --output build/issue836-recheck-flat",
+    "python assets/validation_v5_17_96/run_reach_edges.py --runtime build/issue836-rebuilt.pk3 --portal --output build/issue836-recheck-portal",
+    "Add --load build/issue836-recheck-portal/reach.zds and use a fresh output directory for reload. Use the retained original package for rollback.",
+    "python assets/validation_v5_16_2/run_barracas_presentation.py --runtime build/issue836-rebuilt.pk3 --map MAP03 --players 1 --siege --presentation-layer C:/GZDooMProjects/CaelumArgenteum/build/v515/tools/presentation"
+  ]
+}

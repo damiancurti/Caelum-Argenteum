@@ -1,0 +1,32 @@
+{
+  "issue": 836,
+  "runtime_sha256": "4bcf0a9ada804fd7ce1d3fe52f2f09222d6cd53498a001dbc28571a6a3d627c0",
+  "overlay_sha256": "f5811f9828fe65521c95e1bd1d4ebb4ee9a2f354281a31869796036f5b746db5",
+  "instrumented_functions": [
+    "CaelumVisualPerception.Candidate",
+    "CaelumVisualPerception.Acquire",
+    "CaelumVisualPerception.CanSee",
+    "CaelumVisualPerception.Touching",
+    "CaelumVisualPerception.Range",
+    "CaelumVisualPerception.Opponent",
+    "CaelumCombatActor.ThermalChase",
+    "CaelumContaminationContact.Tick",
+    "CaelumContaminationObject.Tick",
+    "CaelumThermalRuntime.NPCStep",
+    "CaelumCommunication.Pulse"
+  ],
+  "exact_source_restoration": {
+    "caelum/actors/CaelumVisualPerception.zs": "f01d24d67d1b1aee0a8018040ffe904e8693d3aed065d16ce355eee0135081ae",
+    "caelum/actors/CaelumCombatActor.zs": "6cb9afd8c4c68311fe6dcf9c01b8e203d20ec493a4532e855bf5e008564bd181",
+    "caelum/survival/CaelumContaminationContact.zs": "77c658e7ec1b6bfe1babd6c23fa03cd3c5fa1782ef7db4efd43c3d6d8faa372c",
+    "caelum/survival/CaelumContaminationObject.zs": "a396c2b1a99df2fa070b58d80afa95a5decf6854c89ee9bdbd2bd3e8148634c2",
+    "caelum/survival/CaelumThermalRuntime.zs": "fbb3936ca2d205d1baaa6329ff1bcf0c326d87af7ce2df025e5cfebb8e706904",
+    "caelum/actors/CaelumCommunication.zs": "caf7097c0bce6345d81be61c7968b34f99d710922ea3d1fe9fbd59b68895387d"
+  },
+  "sample_interval": 37,
+  "window": [
+    3600,
+    4300
+  ],
+  "qualification": "Sparse inclusive timings; nested scopes and diagnostic overhead overlap. Samples do not establish production savings. No production source or game rule changes."
+}

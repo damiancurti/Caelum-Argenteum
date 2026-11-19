@@ -1,0 +1,56 @@
+[
+  {
+    "name": "final-flat01",
+    "output": "build/issue836-final-flat01",
+    "passed": true,
+    "result": "CA836 EDGE_RESULT checks=25 failures=0 result=PASS"
+  },
+  {
+    "name": "upgrade-flat01",
+    "output": "build/issue836-upgrade-flat01",
+    "passed": true,
+    "result": "CA836 EDGE_RESULT checks=51 failures=0 result=PASS"
+  },
+  {
+    "name": "reload-flat01",
+    "output": "build/issue836-reload-flat01",
+    "passed": true,
+    "result": "CA836 EDGE_RESULT checks=51 failures=0 result=PASS"
+  },
+  {
+    "name": "rollback-flat01",
+    "output": "build/issue836-rollback-flat01",
+    "passed": true,
+    "result": "CA836 EDGE_RESULT checks=51 failures=0 result=PASS"
+  },
+  {
+    "name": "base-portal01",
+    "output": "build/issue836-base-portal01",
+    "passed": true,
+    "result": "CA836 EDGE_RESULT checks=30 failures=0 result=PASS"
+  },
+  {
+    "name": "final-portal01",
+    "output": "build/issue836-final-portal01",
+    "passed": true,
+    "result": "CA836 EDGE_RESULT checks=30 failures=0 result=PASS"
+  },
+  {
+    "name": "upgrade-portal01",
+    "output": "build/issue836-upgrade-portal01",
+    "passed": true,
+    "result": "CA836 EDGE_RESULT checks=61 failures=0 result=PASS"
+  },
+  {
+    "name": "reload-portal01",
+    "output": "build/issue836-reload-portal01",
+    "passed": true,
+    "result": "CA836 EDGE_RESULT checks=61 failures=0 result=PASS"
+  },
+  {
+    "name": "rollback-portal01",
+    "output": "build/issue836-rollback-portal01",
+    "passed": true,
+    "result": "CA836 EDGE_RESULT checks=61 failures=0 result=PASS"
+  }
+]

@@ -49,7 +49,7 @@ class CaelumVisualPerception : Object play
     static bool Touching(Actor observer,Actor candidate)
     {
         return observer!=null && Living(candidate) && observer!=candidate
-            && observer.Distance2D(candidate)<=observer.Radius+candidate.Radius+0.01
+            && observer.Distance2D(candidate)<=observer.Radius+candidate.Radius+CaelumPerceptionData.CONTACT_MARGIN
             && observer.Pos.Z<candidate.Pos.Z+candidate.Height
             && candidate.Pos.Z<observer.Pos.Z+observer.Height
             && observer.CheckSight(candidate,SF_IGNOREVISIBILITY);
@@ -109,6 +109,16 @@ class CaelumVisualPerception : Object play
             *InsightFactor(observer)*height/CaelumPerceptionData.REFERENCE_VISIBLE_HEIGHT;
     }
 
+    // #836: cota exterior conservadora; no concede visibilidad ni identidad.
+    // Solo se usa sin grupos de portales enlazados. Los radios y el margen
+    // de contacto mantienen dentro de la cota todo contacto fisico posible.
+    static bool OutsideGroupReach(CaelumCombatActor observer,Actor candidate,double sightUpper)
+    {
+        double reach=sightUpper*Max(0.0,candidate.Height)/CaelumPerceptionData.REFERENCE_VISIBLE_HEIGHT
+            +Max(0.0,observer.Radius)+Max(0.0,candidate.Radius)+CaelumPerceptionData.CONTACT_MARGIN;
+        return Abs(observer.Pos.X-candidate.Pos.X)>reach || Abs(observer.Pos.Y-candidate.Pos.Y)>reach;
+    }
+
     static Actor Candidate(CaelumCombatActor observer)
     {
         let evidence=Evidence(observer);
@@ -122,12 +132,15 @@ class CaelumVisualPerception : Object play
         let group=CaelumCommunication.CandidatesFor(observer);
         if(group!=null)
         {
+            double sightUpper=level.GetPortalGroupCount()==1
+                ? CaelumPhysicsUnits.MapUnits(CaelumPerceptionData.VISUAL_BASE_METERS)*InsightFactor(observer) : -1;
             // La lista espacial se comparte; cada miembro conserva sus filtros
             // visuales y dos segundos propios. No constituye un aviso audible.
             for(int i=0;i<group.Candidates.Size();i++)
             {
                 let candidate=group.Candidates[i];
                 if(!Opponent(observer,candidate))continue;
+                if(sightUpper>=0 && OutsideGroupReach(observer,candidate,sightUpper))continue;
                 double distance=observer.Distance3D(candidate);
                 if(distance<best && CanSee(observer,candidate,distance)){nearest=candidate;best=distance;}
             }
@@ -135,6 +148,7 @@ class CaelumVisualPerception : Object play
             {
                 let entry=group.Members[i];let friend=entry!=null ? entry.Body : null;
                 if(friend==observer || !Living(friend))continue;
+                if(sightUpper>=0 && OutsideGroupReach(observer,friend,sightUpper))continue;
                 double distance=observer.Distance3D(friend);
                 if(distance<allyDistance && CanSee(observer,friend,distance)){ally=friend;allyDistance=distance;}
             }

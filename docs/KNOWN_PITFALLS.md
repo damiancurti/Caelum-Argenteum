@@ -4,6 +4,45 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-255 - Bound shared candidates conservatively and respect linked portals
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #836, 2026-11-19.
+Scope: existing automatic >=500 shared group query, approved Barracas siege,
+GZDoom 4.14.2 Vulkan 1280x720; parent 49e9bb52. No author acceptance.
+
+A shared spatial list covers multiple members, so its individual observer loops
+can repeatedly evaluate obviously unreachable bodies. Reject only through a
+proven upper bound: current Insight, current candidate height, full light and
+zero stealth bound sight; nonnegative physical radii and the existing contact
+margin also bound the behind/full-stealth contact override. Strict horizontal
+axis rejection is conservative. Preserve the ordered survivor loop, relationship
+authority, exact native distances, contact, field, light, stealth, sight,
+private recognition and ally observation. Do not cache mutable height across
+tics or narrow the group's authoritative shared radius to one member.
+
+Native Distance3D uses portal-relative positions. Raw coordinates are safe for
+this rejection only when GetPortalGroupCount()==1. The pinned engine initializes
+one displacement group and assigns additional linked groups; otherwise retain
+the original query. A real linked-room test must include back sectors: one-sided
+portals are downgraded to visual and do not prove linked semantics. Here a raw
+6,640-unit gap becomes native 496; the selected visible target survives fallback.
+
+The same-scene sampled oracle compares original visibility and ordered nearest
+enemy/ally results for 2,066 queries/517,373 visits, rejects 488,912 and finds zero
+differences. Nine final/control fixtures pass 256 assertions, including dynamic
+attributes/light/height, range/field/contact edges, dormant/sleep/stun/death,
+solid walls, linked portals, original-save upgrade, reload and reverse load.
+No persistent field or schema changes. A no-difference oracle is evidence for
+its sampled scope, not universal equivalence or author acceptance.
+
+Production measurements reduce simulation tails but still show severe frame
+presentation stalls. HISTORY records both original controls, prototype and final
+queue/simulation p95/p99/max values. Nested method measurements overlap;
+NativeTick includes state actions, not just native physics. Never add nested
+timers or treat 35 Hz as playable rendering. Diagnose the next cost separately.
+Evidence and pinned APIs: assets/validation_v5_17_96; existing CA454-MAP03-01
+remains the author check. Preserve all offscreen behavior and census semantics.
+
 ## CA-KP-254 - Smaller skeletal files can render slower and change modifier output
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #834, 2026-11-19.
