@@ -1294,3 +1294,7 @@ assets/validation_v5_17_93/*.py text eol=lf
 assets/validation_v5_17_93/*.zs text eol=lf
 assets/validation_v5_17_93/evidence/** -text -diff
 src/licenses/WORN_CLOTHING_829.txt text eol=lf
+
+# Preserve #831 historical-label audit evidence.
+assets/validation_v5_17_94/*.py text eol=lf
+assets/validation_v5_17_94/evidence/** -text -diff

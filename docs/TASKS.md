@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.93** - 2026-11-19.
+Documentation version: **5.17.94** - 2026-11-19.
+
+## 5.17.94 - Historical release labels restored (#831)
+
+The four retained #822 headings in ASSETS, TASKS, PROJECT and HISTORY again
+identify their original release, 5.17.90. Comparison with the parent of
+b2f86002 records the accidental #825 substitutions and audits retained
+historical headings. Current headers advance only at their explicit marker.
+Gameplay and asset bytes are preserved; the two required diagnostic
+release strings follow 5.17.94. No author test is removed or added.
+The audit covers 1,063 retained historical headings and 18,719 runtime
+files. Only the two required diagnostic version strings differ. Scoped
+documentation/header/link/index checks pass; unchanged art/gameplay tests
+are retained from #829 rather than rerun. Evidence: assets/validation_v5_17_94.
+The V5.16/V5.17 batch and its final author terminal remain unfinished.
 
 ## 5.17.93 - First-body wardrobe candidate evidence complete (#829)
 
@@ -33,7 +47,7 @@ and every earlier unconfirmed check. Continue other characters/modular fitting,
 first-person equipment, campaign authoring and siege performance before the
 consolidated author terminal. No author acceptance is inferred from coverage.
 
-## 5.17.91 - Four distinct forms verified; full batch remains (#822)
+## 5.17.90 - Four distinct forms verified; full batch remains (#822)
 
 Xalpen/Luz Mala/Anchimallen/Huayrapuca pass 16-file repeated export,
 304 closed components, 300 rooted contacts, 2,400 posed attachment

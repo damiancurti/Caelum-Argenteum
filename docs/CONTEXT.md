@@ -1,6 +1,6 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.17.93** - 2026-11-19.
+Documentation version: **5.17.94** - 2026-11-19.
 
 **V5.17:** Inventory/bestiary models and regional galleries remain candidates.
 #825:78 regional displays;56 provisional models. #827:body/hands verified.

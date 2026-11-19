@@ -1,0 +1,51 @@
+{
+  "issue": 831,
+  "version": "5.17.94",
+  "date": "2026-11-19",
+  "base_commit": "1d5f778191559821861a33a9ab6dff40f0fb5543",
+  "historical_reference": "160473b3d41426cc1821c2a7a566286dc3b9bfa4",
+  "restored_headings": [
+    {
+      "file": "docs/ASSETS.md",
+      "before": "## 5.17.91 - Xalpen, Luz Mala, Anchimallen and Huayrapuca candidates (#822)",
+      "restored": "## 5.17.90 - Xalpen, Luz Mala, Anchimallen and Huayrapuca candidates (#822)"
+    },
+    {
+      "file": "docs/TASKS.md",
+      "before": "## 5.17.91 - Four distinct forms verified; full batch remains (#822)",
+      "restored": "## 5.17.90 - Four distinct forms verified; full batch remains (#822)"
+    },
+    {
+      "file": "docs/PROJECT.md",
+      "before": "## 5.17.91 - All provisional bestiary classes have native candidates (#822)",
+      "restored": "## 5.17.90 - All provisional bestiary classes have native candidates (#822)"
+    },
+    {
+      "file": "docs/HISTORY.md",
+      "before": "## 5.17.91 - Four distinct bestiary forms (#822, 2026-11-16)",
+      "restored": "## 5.17.90 - Four distinct bestiary forms (#822, 2026-11-16)"
+    }
+  ],
+  "audited_heading_entries": 1063,
+  "runtime_files_hashed_before_and_after": 18719,
+  "only_runtime_diagnostic_labels_changed": true,
+  "documentation_validation_passed": true,
+  "author_queue_unchanged": true,
+  "no_new_author_check_required": true,
+  "prior_full_validation": {
+    "path": "assets/validation_v5_17_93/evidence/validation-final.json",
+    "sha256": "290b9126dbbbd6a1f0d937146e5e10cba438fc00655e938d1ebe26fc43810f0a",
+    "qualification": "Version5.17.93 full validation is retained for unchanged assets/behavior. Version5.17.94 documentation and diagnostic strings use the focused checks in this directory; no new engine run or full-resource revalidation is claimed."
+  },
+  "batch_terminal_opened": false,
+  "tools": {
+    "check_documents.py": "744bff908d3517484bc6fd78c5bd534520c224024c16915116ba11215b8cba9d",
+    "check_history_scope.py": "c88add74904b29923d578c023bea2478ed9f2b6f5719dc6ce5e777bacfc980dd"
+  },
+  "files": {
+    "documentation-check.json": "b5047bcac252c8aa47b015aaa9e933b8c65adb5ee3fa688dc558f5f2eebf9123",
+    "historical-audit.json": "0d648ee68520fc8466dcbe8f2fd27325fe03a3dfef8d492ae7a3eca858f7e5fc",
+    "preparation.json": "b3da3cbde768c38a20e94e20db2c8f5aadff836ea959c9a13e83ddb0fdcb485c",
+    "runtime-before.json": "e947b7295a881d1f4931558f5bde1098d19fb39efa1f7fc6d6923621fa801626"
+  }
+}

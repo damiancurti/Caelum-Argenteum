@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.93** - 2026-11-19.
+Documentation version: **5.17.94** - 2026-11-19.
+
+## 5.17.94 - Historical release labels restored (#831)
+
+The four retained #822 headings in ASSETS, TASKS, PROJECT and HISTORY again
+identify their original release, 5.17.90. Comparison with the parent of
+b2f86002 records the accidental #825 substitutions and audits retained
+historical headings. Current headers advance only at their explicit marker.
+Gameplay and asset bytes are preserved; the two required diagnostic
+release strings follow 5.17.94. No author test is removed or added.
+The audit covers 1,063 retained historical headings and 18,719 runtime
+files. Only the two required diagnostic version strings differ. Scoped
+documentation/header/link/index checks pass; unchanged art/gameplay tests
+are retained from #829 rather than rerun. Evidence: assets/validation_v5_17_94.
+The V5.16/V5.17 batch and its final author terminal remain unfinished.
 
 ## 5.17.93 - First-body garment candidates verified (#829)
 
@@ -32,7 +46,7 @@ ASSETS records reviewed captures, labelled neutral floors and isolated presentat
 tails. CA825-REGIONS-01 remains pending. This completes diagnostic coverage;
 campaign encounters, modular characters/equipment and siege rendering remain open.
 
-## 5.17.91 - All provisional bestiary classes have native candidates (#822)
+## 5.17.90 - All provisional bestiary classes have native candidates (#822)
 
 Xalpen, Luz Mala, Anchimallen and Huayrapuca bring native model coverage to
 56/56 provisional classes. Protected identities 018/019 remain unchanged.
