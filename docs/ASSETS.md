@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.100** - 2026-11-19.
+Documentation version: **5.17.101** - 2026-11-19.
+
+## 5.17.101 - Use the canonical mansion map for the Limbo query (#846, #454)
+
+No art, audio, model, texture or runtime asset identity changes. The single
+production expression uses the existing canonical mansion mapping for the Limbo
+query. assets/validation_v5_17_101 retains exact-source scopes, the catalogue
+proof, clock/name/save fixtures, failed fixture compilation, timing traces and
+reference captures. Private engines, IWADs, runtime packages and saves stay local.
+See HISTORY for results and measurement limits; artwork review remains pending.
+
 
 ## 5.17.100 - Avoid empty inventory checks in physical contacts (#844, #454)
 

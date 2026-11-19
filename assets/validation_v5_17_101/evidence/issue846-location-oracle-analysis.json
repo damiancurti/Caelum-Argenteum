@@ -1,0 +1,10 @@
+{
+  "map": "MAP03",
+  "calls_each": 160000,
+  "reference_ms": 10.701,
+  "candidate_ms": 5.685,
+  "benchmark_mismatches": 0,
+  "live_mismatches": 0,
+  "live_calls": 239600,
+  "qualification": "Alternating-order pure-static-predicate loop, separate from the sampled live Stamp scopes. Diagnostic local timing is not a whole-frame percentage."
+}

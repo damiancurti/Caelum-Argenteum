@@ -1,0 +1,21 @@
+{
+  "runtime_sha256": "cec68c135d044bee1649bb81c1a5d1330a6b21cafa533b34572a8fb1a4df5374",
+  "original_sha256": "ba5401822c904e670a3d44a59b6bf4834c2c8a888609468d23e0f36e159d7f49",
+  "candidate_sha256": "0a8cd27b4a71f2f872765948f7a16789cd41cbd4098b847810d02454a22c84ea",
+  "overlay_sha256": "049cae0151ca35aaf1248827660849254bd8c0375165762b513fa3b77001bcc3",
+  "inverse_exact": true,
+  "proof": "The original lookup returns the unique MANSION ID iff its first case-insensitive MAP01 comparison succeeds. The unchanged reverse mapping for MANSION is MAP01. Other returned IDs differ. The predicate is therefore equal for every string, not only sampled names.",
+  "returned_location_ids": {
+    "LOCATION_BUENOS_AIRES": 9,
+    "LOCATION_COAST": 7,
+    "LOCATION_HAZARD_GALLERY": 8,
+    "LOCATION_MAINTENANCE": 5,
+    "LOCATION_MANSION": 1,
+    "LOCATION_PORT": 6,
+    "LOCATION_RESERVOIR": 3,
+    "LOCATION_SEWERS": 2,
+    "LOCATION_TAROT_CHAMBERS": 4,
+    "LOCATION_UNKNOWN": 0
+  },
+  "no_fields_or_mapping_changes": true
+}

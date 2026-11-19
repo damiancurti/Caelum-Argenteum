@@ -1,0 +1,46 @@
+{
+  "issue": 846,
+  "passed": true,
+  "exit_code": 0,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue846-location02.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue846-fixture-final01\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue846-fixture-final01\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue846-fixture-final01",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue846-fixture-final01\\engine.log",
+    "+map",
+    "CA846N",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue846-fixture-final01\\commands.cfg"
+  ],
+  "errors": [],
+  "result": [
+    "1",
+    "CA846N",
+    "552",
+    "2761",
+    "2761",
+    "0"
+  ],
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue846-location02.pk3": "61ccaff36849395018bb7aa31a49e565f9727d9a6b9a9099c36c7f0a1786334d",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue846-fixture-final01\\checks.pk3": "c524cd957091a0b1c0c7207736416679e2dd29e9dc20e3bad3439fbf02c9fe10"
+  },
+  "reference_runtime_sha256": "cec68c135d044bee1649bb81c1a5d1330a6b21cafa533b34572a8fb1a4df5374",
+  "loaded_save_sha256": null,
+  "saved_sha256": "4fb9ac65cb80631791586b857143478ecdafc3816e4042fdb1d07c26133c22dc"
+}

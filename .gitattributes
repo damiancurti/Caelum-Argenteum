@@ -1338,3 +1338,9 @@ assets/validation_v5_17_95/evidence/** -text -diff
 /assets/validation_v5_17_100/*.py text eol=lf
 /assets/validation_v5_17_100/*.json text eol=lf
 /assets/validation_v5_17_100/evidence/** -text -diff
+
+# Preserve the location predicate source and issue846 native evidence.
+/src/caelum/world/CaelumWorldCatalogue.zs text eol=crlf
+/assets/validation_v5_17_101/*.py text eol=lf
+/assets/validation_v5_17_101/*.json text eol=lf
+/assets/validation_v5_17_101/evidence/** -text -diff

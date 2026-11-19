@@ -1,0 +1,12 @@
+[
+  {
+    "label": "clocks01",
+    "overlay_sha256": "7c52bf81c3a9f22011489e58937a0dc5c1ef31e07b99087f6cc3b2ab21833ea6",
+    "exact": true
+  },
+  {
+    "label": "location01",
+    "overlay_sha256": "049cae0151ca35aaf1248827660849254bd8c0375165762b513fa3b77001bcc3",
+    "exact": true
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "issue": 846,
+  "version": "5.17.101",
+  "parent_commit": "662ef05920e2f6399226c91768429c3a407e325f",
+  "baseline_sha256": "cec68c135d044bee1649bb81c1a5d1330a6b21cafa533b34572a8fb1a4df5374",
+  "final_sha256": "61ccaff36849395018bb7aa31a49e565f9727d9a6b9a9099c36c7f0a1786334d",
+  "candidate_source_sha256": "0a8cd27b4a71f2f872765948f7a16789cd41cbd4098b847810d02454a22c84ea",
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "presentation_layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "change": "Compare the supplied name directly, case-insensitively, with MapForLocation(LOCATION_MANSION). Both canonical mappings and all clock arithmetic remain unchanged.",
+  "proof": {
+    "runtime_sha256": "cec68c135d044bee1649bb81c1a5d1330a6b21cafa533b34572a8fb1a4df5374",
+    "original_sha256": "ba5401822c904e670a3d44a59b6bf4834c2c8a888609468d23e0f36e159d7f49",
+    "candidate_sha256": "0a8cd27b4a71f2f872765948f7a16789cd41cbd4098b847810d02454a22c84ea",
+    "overlay_sha256": "049cae0151ca35aaf1248827660849254bd8c0375165762b513fa3b77001bcc3",
+    "inverse_exact": true,
+    "proof": "The original lookup returns the unique MANSION ID iff its first case-insensitive MAP01 comparison succeeds. The unchanged reverse mapping for MANSION is MAP01. Other returned IDs differ. The predicate is therefore equal for every string, not only sampled names.",
+    "returned_location_ids": {
+      "LOCATION_BUENOS_AIRES": 9,
+      "LOCATION_COAST": 7,
+      "LOCATION_HAZARD_GALLERY": 8,
+      "LOCATION_MAINTENANCE": 5,
+      "LOCATION_MANSION": 1,
+      "LOCATION_PORT": 6,
+      "LOCATION_RESERVOIR": 3,
+      "LOCATION_SEWERS": 2,
+      "LOCATION_TAROT_CHAMBERS": 4,
+      "LOCATION_UNKNOWN": 0
+    },
+    "no_fields_or_mapping_changes": true
+  },
+  "oracle": {
+    "map": "MAP03",
+    "calls_each": 160000,
+    "reference_ms": 10.701,
+    "candidate_ms": 5.685,
+    "benchmark_mismatches": 0,
+    "live_mismatches": 0,
+    "live_calls": 239600,
+    "qualification": "Alternating-order pure-static-predicate loop, separate from the sampled live Stamp scopes. Diagnostic local timing is not a whole-frame percentage."
+  },
+  "canonical_fixtures": [
+    "base02",
+    "final01",
+    "upgrade01",
+    "reload01",
+    "rollback01",
+    "limbo01"
+  ],
+  "fixture_coverage": "552 packaged/canonical/house/case-variant/unknown names; original predicate and time/map scales; 25 clock seeds across five map names, fractional/day/integer saturation boundaries, journey increments and saved field/reference retention. The five-case outside-Limbo save matrix is complemented by a positive MAP01 boundary run.",
+  "fixture_correction": "The first cloned reference clock retained its old CopyShared parameter type, making source==self compare unrelated types. Consistently rename all self-type references inside the cloned class; production is unchanged. Preserve the failed compile and corrected fixture.",
+  "private_artifacts": "No engine, IWAD, runtime PK3, WAD, DLL or save is included.",
+  "reproduction": [
+    "python prepare_clocks.py --runtime <5.17.100.pk3> --output <repo/build/new-profile>",
+    "python prepare_location.py --runtime <5.17.100.pk3> --output <repo/build/new-candidate>",
+    "python run_clocks.py --runtime <runtime.pk3> --reference-runtime <5.17.100.pk3> --output <repo/build/new-checks> [--map MAP01] [--load <private/clock.zds>]",
+    "python check_preservation.py --runtime <final.pk3> --baseline <5.17.100.pk3> --candidate <candidate/location.pk3> --output <repo/build/static.json>",
+    "python assets/validation_v5_16_2/run_barracas_presentation.py --runtime <runtime.pk3> --map MAP03 --players 1 --siege --presentation-layer <private-layer> [--overlay <profile/services.pk3>]"
+  ],
+  "qualification": "Sampled timings are inclusive with probe overhead. Pure-query loop gains are local, not whole-frame percentages. Tic intervals include pacing/frame work and queue presents are not monitor scanout. Native/static checks do not establish author acceptance or complete batch delivery."
+}
