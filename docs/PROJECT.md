@@ -1,6 +1,25 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.101** - 2026-11-19.
+Documentation version: **5.17.102** - 2026-11-19.
+
+## 5.17.102 - Prepare the sewer material comparison (#847, #463)
+
+Full project validation passes with no errors; the generated document index is current.
+
+An opt-in MAP02 material comparison uses original generated brick masonry and
+the retained owned stone floor at finer display scales. Production texture
+bindings and images remain active and unchanged. CASWRWAL is shared by eight
+current map consumers (with CASWRFLR used by a subset), so a global replacement
+would exceed this focused sewer review. Load the candidate only in its dedicated
+MAP02 session; the aliases are global while that private overlay is loaded.
+
+The source inventory records actual pixels, display scales, shared consumers and
+provenance. Two native runs and fourteen inspected captures retain readable
+routes/objects; a deterministic overlay and exact runtime comparison preserve
+the production game. HISTORY records paired entrance presentation tails.
+CA847-MATERIAL-01 awaits the consolidated author review. Broader environment,
+character/equipment work and siege performance remain open.
+
 
 ## 5.17.101 - Use the canonical mansion map for the Limbo query (#846, #454)
 

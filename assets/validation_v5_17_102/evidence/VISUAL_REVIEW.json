@@ -1,0 +1,142 @@
+[
+  {
+    "path": "evidence/views/control/entrance.png",
+    "sha256": "a8b4afa6a2003456ddcbb40ed745adc4085c1d930a1733d2ffe497a273bf9d6d",
+    "dimensions": [
+      1520,
+      825
+    ],
+    "directly_viewed": true,
+    "note": "Smaller masonry courses and finer retained paving; opening remains visible under unchanged lighting."
+  },
+  {
+    "path": "evidence/views/control/junction.png",
+    "sha256": "b30b61aec1ff5ef3f679d789100ee7dc68d190e140890864868758c036e5f500",
+    "dimensions": [
+      1520,
+      825
+    ],
+    "directly_viewed": true,
+    "note": "Both routes remain readable; brick repeat visible on walls and flat ceiling. No new vault geometry."
+  },
+  {
+    "path": "evidence/views/control/channel.png",
+    "sha256": "f962045d7bd78c750c99b663cba20080d9a7b3422b004cb4a0cc6ebe75f55a40",
+    "dimensions": [
+      1520,
+      825
+    ],
+    "directly_viewed": true,
+    "note": "Harmless water channel, dry shelf and existing NPC remain present; distant passages are more distinguishable."
+  },
+  {
+    "path": "evidence/views/control/refuge.png",
+    "sha256": "72468e9ff22c576a25e0e0e74d67bc780d92a97d6f783d8a2904d18bd8881379",
+    "dimensions": [
+      1520,
+      825
+    ],
+    "directly_viewed": true,
+    "note": "Retained workshops and overhead conduit remain visible; no props or interaction geometry replaced."
+  },
+  {
+    "path": "evidence/views/control/boss_access.png",
+    "sha256": "bb735b3986556e73fa698c7be90f0699e33c7cdd40d3b77e3db3189b4afca1ca",
+    "dimensions": [
+      1520,
+      825
+    ],
+    "directly_viewed": true,
+    "note": "Existing locked gate remains intact and distinguishable; only surrounding masonry and paving presentation differ."
+  },
+  {
+    "path": "evidence/views/control/walk.png",
+    "sha256": "f058deae74ae546fe935481f6f5ac314bf5038144453751bab2670efadf9924a",
+    "dimensions": [
+      1520,
+      825
+    ],
+    "directly_viewed": true,
+    "note": "Same 24.493-MU native forward movement in both runs; a short spot check, not a full escort/progression walkthrough."
+  },
+  {
+    "path": "evidence/views/candidate/entrance.png",
+    "sha256": "56e1fb1d8f35d5852547986fc31ed76ed1457a3b3bd05ea3a0474f79cedb0b53",
+    "dimensions": [
+      1520,
+      825
+    ],
+    "directly_viewed": true,
+    "note": "Smaller masonry courses and finer retained paving; opening remains visible under unchanged lighting."
+  },
+  {
+    "path": "evidence/views/candidate/junction.png",
+    "sha256": "f12f9267e0ce81acd4087af13cf2a279dff41b0f2a035b54df37ac8d30fbbec7",
+    "dimensions": [
+      1520,
+      825
+    ],
+    "directly_viewed": true,
+    "note": "Both routes remain readable; brick repeat visible on walls and flat ceiling. No new vault geometry."
+  },
+  {
+    "path": "evidence/views/candidate/channel.png",
+    "sha256": "4f42f9d2bb3c54ead6a11d9ce6b7fbfcc450bd99c18d441e7029ef41df8cc219",
+    "dimensions": [
+      1520,
+      825
+    ],
+    "directly_viewed": true,
+    "note": "Harmless water channel, dry shelf and existing NPC remain present; distant passages are more distinguishable."
+  },
+  {
+    "path": "evidence/views/candidate/refuge.png",
+    "sha256": "b72f75f68c913f50a0ec82a484cad2c671df94de21cf27c467e8bf3be77fdc69",
+    "dimensions": [
+      1520,
+      825
+    ],
+    "directly_viewed": true,
+    "note": "Retained workshops and overhead conduit remain visible; no props or interaction geometry replaced."
+  },
+  {
+    "path": "evidence/views/candidate/boss_access.png",
+    "sha256": "dc86ca16e981c93efddcd8fc6c6642ba40f6e537204676c9ca30299bb080f15a",
+    "dimensions": [
+      1520,
+      825
+    ],
+    "directly_viewed": true,
+    "note": "Existing locked gate remains intact and distinguishable; only surrounding masonry and paving presentation differ."
+  },
+  {
+    "path": "evidence/views/candidate/walk.png",
+    "sha256": "5dc226c8c50ac3d1b5f8698dce44ae37886699cb7417f5d4da5ac6dfe8ee34c5",
+    "dimensions": [
+      1520,
+      825
+    ],
+    "directly_viewed": true,
+    "note": "Same 24.493-MU native forward movement in both runs; a short spot check, not a full escort/progression walkthrough."
+  },
+  {
+    "path": "evidence/performance/sewers_control/peer0/scene.png",
+    "sha256": "85f65e579e9563722e11e9e6e310fce7ed3f2e42ad9072becb713de5436db100",
+    "dimensions": [
+      1280,
+      720
+    ],
+    "directly_viewed": true,
+    "note": "Matched retained peaceful entrance view at the end of the timing capture."
+  },
+  {
+    "path": "evidence/performance/sewers_candidate/peer0/scene.png",
+    "sha256": "3177fc33201d0e96bcfec902aabbea959f1549eb12988bf9b5c473dcc8310f91",
+    "dimensions": [
+      1280,
+      720
+    ],
+    "directly_viewed": true,
+    "note": "Matched retained peaceful entrance view at the end of the timing capture."
+  }
+]
