@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.91** - 2026-11-16.
+Documentation version: **5.17.92** - 2026-11-18.
+
+## 5.17.92 - Reusable Domingo anatomy foundation (#827, 2026-11-18)
+
+Added three independent body/hand MD3 modules and an editable CC0-derived source
+without changing original accepted artwork, rig/actions or production bindings.
+Six final repeated export files, closed connected geometry and 23,625 quantized
+wrist-pair checks pass. A final audit removed an isolated opposing triangle pair
+at the neck cut. Every retained point/normal across 375 frames and both hand files
+remain byte-identical. Source 05/exports 07/08 and the complete corrected package
+were rechecked on 2026-11-18: 35 anatomy assertions, 22 production save/rollback
+checks and four 700-tic presentation measurements pass. Twenty final captures
+were inspected directly; 44 unchanged anatomy images reuse exact hashes of
+previously inspected views. Earlier Nov 16/Nov 18 evidence is preserved. ASSETS
+records final frame tails and additive-geometry limits.
+
+Earlier source-axis, MODELDEF snapshot ordering and console scheduling defects
+were corrected with retained failed evidence and validation guards. Legacy
+garment overlap/coverage remains explicit #459 work. CA827-BODY-01 originates
+here and remains pending; no existing author check was accepted or removed.
+The larger batch and consolidated terminal remain unfinished.
 
 ## 5.17.91 - Complete regional diagnostic gallery coverage (#825, 2026-11-16)
 

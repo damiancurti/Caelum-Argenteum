@@ -1,0 +1,1 @@
+#include "caelum/data/domingo_modules.modeldef"

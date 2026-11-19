@@ -1,0 +1,30 @@
+{
+  "issue": 827,
+  "repeated_files": 6,
+  "files": {
+    "manifest.json": "40a56cca08cee69170ca8d394820d964bfb0d63062aff14c7311ae04c97d2c7a",
+    "MODELDEF": "ac46475d65d56507c0849cb58247474f61c39982d04633bee06e6fe8c3fdf984",
+    "preview.pk3": "94ab64f82d3ee6d86a1fb1cffb6858529051cd3a281f1f07d4b224906720f8e2",
+    "models/caelum/characters/domingo/left_hand.md3": "7bbc4920e8e334f44aff629f58658a88da4f70ca3e09e3f83d9d04b7cbdcd69f",
+    "models/caelum/characters/domingo/right_hand.md3": "176dbb11b44ec71f0290f605322347c5c49667250d649d5df7362975f7e11b54",
+    "models/caelum/characters/domingo/underbody.md3": "a302f33dd64917a02d7cf30df90a501de2b8e8dc9212c9cfa5fe2ec0414fab38"
+  },
+  "old_bad_binding_detected": [
+    "Model declared after frame snapshots began",
+    "Model declared after frame snapshots began",
+    "Model declared after frame snapshots began",
+    "Frame snapshots carry stale other-slot poses: [0, 1, 2, 3, 4, 5, 6, 7] (374 total)"
+  ],
+  "errors": [],
+  "topology_repair": {
+    "removed_vertices": 3,
+    "removed_opposing_triangles": 2,
+    "retained_points_and_normals_byte_exact_all_frames": 375,
+    "hands_byte_identical": {
+      "left_hand.md3": true,
+      "right_hand.md3": true
+    },
+    "before_components": 2,
+    "after_components": 1
+  }
+}

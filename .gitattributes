@@ -1277,3 +1277,12 @@ assets/source/art/regional_gallery_825/** -text
 assets/validation_v5_17_91/*.py text eol=lf
 assets/validation_v5_17_91/evidence/** -text -diff
 assets/generators/validate_complete_regional_gallery.py text eol=lf
+
+# Preserve #827 editable anatomy and deterministic exports.
+assets/source/art/underbody_827/** -text
+assets/source/art/underbody_827/AUTHORING.json whitespace=cr-at-eol
+assets/validation_v5_17_92/*.py text eol=lf
+assets/validation_v5_17_92/*.zs text eol=lf
+assets/validation_v5_17_92/evidence/** -text -diff
+assets/generators/*underbody*.py text eol=lf
+src/licenses/UNDERBODY_827.txt text eol=lf

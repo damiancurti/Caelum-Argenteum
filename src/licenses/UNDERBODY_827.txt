@@ -1,0 +1,23 @@
+Caelum Argenteum - Reusable construction anatomy, issue #827 (parent #458).
+
+The underbody, left_hand and right_hand native MD3 meshes adapt the retained
+MakeHuman hm08 base.obj, CC0-1.0, commit
+3c701a8e52f09e69922e8b598d23be2d7dfc49e3:
+https://github.com/makehumancommunity/makehuman/blob/3c701a8e52f09e69922e8b598d23be2d7dfc49e3/makehuman/data/3dobjs/base.obj
+
+Copyright holders at the September 2020 CC0 release: Data Collection AB,
+Joel Palmius and Jonas Hauquier. Full terms remain in MAKEHUMAN_CC0.txt.
+
+Modifications: reduced body topology; removal of the upstream head and helper
+geometry; anatomical-axis and landmark fitting to the retained Domingo rig;
+skin weights; closed independent wrist modules; matched quantized poses and
+normals; native exports of the existing 24 actions and 375 samples.
+
+The existing project-owned Domingo skin atlas supplies an unchanged skin-color
+sample. No image pixels were created or edited. The original face, hair,
+outfit and equipment retain their separate DOMINGO_3D_PILOT.txt provenance.
+
+Editable source, art parameters and provenance: assets/source/art/underbody_827.
+The accepted original .blend, source OBJ, skin and seven modules are preserved.
+These are reusable construction candidates, not approval of a finished body,
+new species/sex choices, garment fit or campaign-wide replacement.

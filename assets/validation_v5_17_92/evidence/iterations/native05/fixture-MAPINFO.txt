@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA827PreviewEvents" }
+map CA455V "Modular anatomy inspection" { sky1="CABASKY",0 nointermission }

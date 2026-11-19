@@ -1,0 +1,4 @@
+gameinfo { PlayerClasses="CA283MotionPlayer" AddEventHandlers="CA283Probe" }
+cluster 99 { hub }
+map MAP99 "Domingo continuity" { cluster=99 nointermission sky1="CABASKY",0 }
+map MAP98 "Domingo continuity hub" { cluster=99 nointermission sky1="CABASKY",0 }

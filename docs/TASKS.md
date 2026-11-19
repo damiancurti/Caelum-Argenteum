@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.91** - 2026-11-16.
+Documentation version: **5.17.92** - 2026-11-18.
+
+## 5.17.92 - Anatomy foundation verified; garment fitting next (#827)
+
+The reusable body and two hands are editable, deterministic native candidates.
+All 375 sampled wrist joins, 35 anatomy assertions, 22 save/rollback checks and
+64 reviewed final/continuity/presentation captures have bounded evidence in
+ASSETS. Original accepted assets and production behavior are preserved.
+Next under #459: fit garments and explicit covered-body visibility to remove
+observed pelvis/leg/toe intersections and coverage gaps; retain independent
+pieces and authoritative equipment ownership. Then extend #458 character
+variants and #462 first-person equipment. CA827-BODY-01 and all earlier author
+checks stay pending for the final consolidated terminal.
 
 ## 5.17.91 - Regional diagnostic coverage verified (#825)
 

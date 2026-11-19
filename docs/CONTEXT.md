@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.17.91** - 2026-11-16.
+Documentation version: **5.17.92** - 2026-11-18.
 
-**V5.17:** Native inventory/bestiary models and regional galleries are candidates.
-#825 completes 78 regional displays;56/56 provisional models. Review pending.
-#736 modular proposals await visual approval. Other characters and
-modular equipment remain unfinished. Issue-by-issue status/evidence: ASSETS/TASKS;
-author checks: pending_test.txt. Previous delivery details remain in HISTORY.
+**V5.17:** Inventory/bestiary models and regional galleries remain candidates.
+#825:78 regional displays;56/56 provisional models. #827:body/hands verified;
+#459 garment fitting next. #736 proposals await consolidated visual review.
+Other characters/equipment remain unfinished. Evidence/status: ASSETS/TASKS;
+author checks: pending_test.txt; previous deliveries: HISTORY.
 **V5.16:** #452/453 approved; #454:MAP02/MAP03 rebuilt/tested; siege~1.35FPS.
 #456:World-gate,75assignments pending; #455:56classes/3pilots; #457:eligibility-only. LegacyMap02Revision5.
 
