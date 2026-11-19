@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.95** - 2026-11-19.
+Documentation version: **5.17.96** - 2026-11-19.
+
+## 5.17.96 - Conservative shared-candidate reach rejection (#836, #454)
+
+This engineering patch changes no art, source model, animation, skin, binding,
+sound, map or license. Production retains MD3 as established by #834. All such
+runtime members remain byte-identical to the parent package. The diagnostic
+linked-room fixture is generated locally and depends on development IWAD
+textures; no WAD, PK3, engine or save is distributed. Native fixture source,
+logs, presentation traces, selected scenes and reproducible scripts remain in
+assets/validation_v5_17_96. HISTORY and CA-KP-255 record the measured query change,
+its limits and unchanged author-review status.
 
 ## 5.17.95 - Skeletal native-format assessment (#834, parent #458)
 

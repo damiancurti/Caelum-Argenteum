@@ -1,0 +1,9 @@
+{
+  "issue": 836,
+  "runtime_sha256": "4bcf0a9ada804fd7ce1d3fe52f2f09222d6cd53498a001dbc28571a6a3d627c0",
+  "overlay_sha256": "ef078983dd05b251e04e91dda0588f82374d6ed9e0a1b5fcc0c8668bcaf76390",
+  "original_source_sha256": "f01d24d67d1b1aee0a8018040ffe904e8693d3aed065d16ce355eee0135081ae",
+  "prototype_source_sha256": "c4ecf14c72c44675764b1473ce21ca2d4dd125a92d348448ba01d7753a4f5cac",
+  "exact_restoration": true,
+  "scope": "Diagnostic candidate only. Original predicates and ordered loops remain for every surviving candidate; linked-portal maps take the original path. No production adoption yet."
+}

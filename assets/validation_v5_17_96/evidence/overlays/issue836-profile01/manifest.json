@@ -1,0 +1,30 @@
+{
+  "issue": 836,
+  "runtime_sha256": "4bcf0a9ada804fd7ce1d3fe52f2f09222d6cd53498a001dbc28571a6a3d627c0",
+  "overlay_sha256": "eade5b9c72eac572789a009215f2a1dc154717629e360f3bef13b9fc19b808cb",
+  "original_source_sha256": "6cb9afd8c4c68311fe6dcf9c01b8e203d20ec493a4532e855bf5e008564bd181",
+  "restored_source_sha256": "6cb9afd8c4c68311fe6dcf9c01b8e203d20ec493a4532e855bf5e008564bd181",
+  "sections": [
+    "Initialization",
+    "SenseMaintenance",
+    "Communication",
+    "PrePhysics",
+    "PhysicsPreparation",
+    "NativeTick",
+    "PostNative",
+    "ThermalMotion",
+    "ThermalStep",
+    "Potions",
+    "ImpactStatus",
+    "HealthEffects",
+    "OffenseStats",
+    "ResourceRecovery",
+    "Timers"
+  ],
+  "sample_interval": 37,
+  "window": [
+    3600,
+    4300
+  ],
+  "qualification": "Nonoverlapping diagnostic Tick sections sampled every37th tic. Early-return paths may have fewer later section samples. Unmeasured work and timer overhead remain; this is not production performance evidence."
+}

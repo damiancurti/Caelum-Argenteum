@@ -1,6 +1,63 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.95** - 2026-11-19.
+Documentation version: **5.17.96** - 2026-11-19.
+
+## 5.17.96 - Conservative shared-candidate reach rejection (#836, #454)
+
+The existing high-density shared perception query now rejects bodies outside
+a conservative horizontal reach bound before calculating native distances and
+visibility. In the final approved siege measurement, queue presentation reaches
+1.78 presents/s; simulation p95/p99 are 56.4111/59.7041 ms.
+This is a measured production reduction, not fluent siege acceptance. Severe
+presentation stalls remain and require further focused engineering work.
+
+On 2026-11-19, sparse every-37th-tic diagnostics isolated repeated shared-list
+candidate work. Tick-section NativeTick accounted for about 49.93% of sampled
+actor time, including scripted state actions; nested method timings overlap
+and cannot be added as independent production costs. The conservative prototype
+reduced the measured work without deleting bodies, features or combat rules.
+
+The native sampled oracle compares original and filtered ordered queries in the
+same scene: 2,066 queries, 517,373 visits, 488,912 rejected candidates and zero
+visibility/nearest-enemy/nearest-ally differences. All retained predicates and
+their ordering remain byte-for-byte recoverable after removing the additions.
+Final code relocates the preexisting 0.01-MU contact margin into a shared constant
+without changing its value. No saved fields, schema or revision change.
+
+Nine final/control fixture runs pass 256 assertions (169 on the final package):
+fresh queries, original-save upgrade, same-package reload and reverse load, with
+and without linked portals. The linked-room probes are 6,640 raw coordinate
+units apart but 496 native distance units apart; three portal groups retain
+visibility through the original path. The initial one-sided portal fixture was
+downgraded by the engine and failed three checks; its logs/source are retained.
+Corrected back sectors establish the actual linked fixture. The initial builder
+also rejected CRLF anchors before launching native code; exact restoration is
+checked after correction. Existing saves and pending author checks are retained.
+
+| Run | Queue presents/s | Presentation p95 / p99 / max (ms) | Simulation p95 / p99 / max (ms) |
+| --- | ---: | --- | --- |
+| baseline01 | 1.58 | 737.6545 / 788.7599 / 788.7599 | 99.8053 / 108.4798 / 201.2318 |
+| prototype | 1.81 | 641.1939 / 723.5991 / 723.5991 | 55.6864 / 61.5649 / 207.6267 |
+| final01 | 1.78 | 615.1234 / 706.8979 / 706.8979 | 56.4111 / 59.7041 / 204.5349 |
+| baseline02 | 1.57 | 705.6132 / 724.6718 / 724.6718 | 104.3728 / 109.2688 / 208.3904 |
+
+These are sequential uncapped Vulkan 1280x720 single-machine measurements at
+5% audio with 700 simulation intervals each. No heavy build/export/full validator
+overlaps the captures. The approved normal 1,000-attacker-cap/600-defender scene
+has 988 attacker NPCs, 601 defenders including the subcaptain and one player:
+1,590 living combatants; machines retain their existing cap slots. Registered
+health, population and player state match every recorded start/end sample.
+No retired 6,000-attacker case is run. Queue intervals are not monitor scanout,
+GPU execution duration, Internet latency or author acceptance. Four comparison
+views were directly inspected. The repeated original control bounds observed
+run variation; it is not a general hardware performance guarantee.
+
+The final 18,719-member package matches src exactly. Four members change: the
+visual query, the relocated contact constant, and two diagnostic version strings.
+All other members remain byte-identical to parent 49e9bb52. Evidence, engine/API
+pins and reproducible runners are under assets/validation_v5_17_96. Project
+validation is recorded there. CA454-MAP03-01 and the consolidated review remain
+pending; neither this issue nor a PR constitutes author acceptance.
 
 ## 5.17.95 - Skeletal native-format assessment (#834, parent #458)
 

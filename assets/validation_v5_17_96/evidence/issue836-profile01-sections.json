@@ -1,0 +1,80 @@
+{
+  "sampled_total_ms": 452.9432,
+  "sections": [
+    {
+      "section": "Initialization",
+      "ms": 8.1345,
+      "calls": 30191
+    },
+    {
+      "section": "SenseMaintenance",
+      "ms": 38.94,
+      "calls": 30191
+    },
+    {
+      "section": "Communication",
+      "ms": 37.8586,
+      "calls": 30191
+    },
+    {
+      "section": "PrePhysics",
+      "ms": 30.0138,
+      "calls": 30191
+    },
+    {
+      "section": "PhysicsPreparation",
+      "ms": 8.7951,
+      "calls": 30191
+    },
+    {
+      "section": "NativeTick",
+      "ms": 226.1472,
+      "calls": 30191
+    },
+    {
+      "section": "PostNative",
+      "ms": 2.309,
+      "calls": 30191
+    },
+    {
+      "section": "ThermalMotion",
+      "ms": 2.2073,
+      "calls": 30191
+    },
+    {
+      "section": "ThermalStep",
+      "ms": 53.9424,
+      "calls": 30191
+    },
+    {
+      "section": "Potions",
+      "ms": 1.8587,
+      "calls": 30191
+    },
+    {
+      "section": "ImpactStatus",
+      "ms": 11.5812,
+      "calls": 30191
+    },
+    {
+      "section": "HealthEffects",
+      "ms": 14.719,
+      "calls": 30191
+    },
+    {
+      "section": "OffenseStats",
+      "ms": 4.5712,
+      "calls": 30191
+    },
+    {
+      "section": "ResourceRecovery",
+      "ms": 9.5404,
+      "calls": 30191
+    },
+    {
+      "section": "Timers",
+      "ms": 2.3248,
+      "calls": 30191
+    }
+  ]
+}

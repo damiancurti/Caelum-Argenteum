@@ -1,0 +1,652 @@
+{
+  "issue": 836,
+  "version": "5.17.96",
+  "parent_commit": "49e9bb5242ca5ad2ec248496e247e7cae55177e8",
+  "decision": "Adopt the conservative query reduction in production; siege presentation remains far from fluent. No schema, saved field, balance value or target cadence changes.",
+  "runtime": {
+    "issue": 836,
+    "passed": true,
+    "baseline_sha256": "4bcf0a9ada804fd7ce1d3fe52f2f09222d6cd53498a001dbc28571a6a3d627c0",
+    "runtime_sha256": "cfb1853c9c01bddba58eb9f81bd0b0bcdbcbf4aed63bb17a6c00311812bebf18",
+    "runtime_bytes": 1276886579,
+    "members": 18719,
+    "changed_members": [
+      "caelum/actors/CaelumVisualPerception.zs",
+      "caelum/data/CaelumPerceptionData.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "scope": "All package bytes equal current src. Only the query helper/guards, relocation of the existing contact margin and two diagnostic version strings differ semantically from the parent. Removing exactly those additions restores the original perception/data source; no saved-field or revision change. All other runtime members byte-identical."
+  },
+  "campaign_runs": [
+    {
+      "label": "baseline01",
+      "local_directory": "build/v516/barracas-profile-20261119-105637-361800",
+      "runtime_sha256": "4bcf0a9ada804fd7ce1d3fe52f2f09222d6cd53498a001dbc28571a6a3d627c0",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 37.18043,
+        "p95_ms": 99.8053,
+        "p99_ms": 108.4798,
+        "max_ms": 201.2318
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [],
+      "presentation": {
+        "pid": 38672,
+        "trace_sha256": "c0ae260559af1a57e224a1bd7e1e559d5b441a05bb0cb3275354c27588420110",
+        "rows": 1725,
+        "scene_presents": 37,
+        "mean_present_fps": 1.5838551659432873,
+        "present_intervals": {
+          "samples": 36,
+          "mean_ms": 631.3708611130714,
+          "p50_ms": 630.309700012207,
+          "p95_ms": 737.6545000076294,
+          "p99_ms": 788.7598999738693,
+          "max_ms": 788.7598999738693
+        },
+        "native_call_duration": {
+          "samples": 37,
+          "mean_ms": 0.17453782945065885,
+          "p50_ms": 0.16999995708465576,
+          "p95_ms": 0.20459997653961182,
+          "p99_ms": 0.30390000343322754,
+          "max_ms": 0.30390000343322754
+        }
+      }
+    },
+    {
+      "label": "sections",
+      "local_directory": "build/v516/barracas-profile-20261119-110051-921622",
+      "runtime_sha256": "4bcf0a9ada804fd7ce1d3fe52f2f09222d6cd53498a001dbc28571a6a3d627c0",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 37.39742628571429,
+        "p95_ms": 98.203,
+        "p99_ms": 109.7497,
+        "max_ms": 208.4803
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [
+        {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue836-profile01\\profile.pk3",
+          "sha256": "eade5b9c72eac572789a009215f2a1dc154717629e360f3bef13b9fc19b808cb"
+        }
+      ],
+      "presentation": {
+        "pid": 49464,
+        "trace_sha256": "0c98f212e91f1f700f8ab6f5053529b37a6a6d87348e2d068de0d393b6d3fabe",
+        "rows": 1683,
+        "scene_presents": 38,
+        "mean_present_fps": 1.5772969167868007,
+        "present_intervals": {
+          "samples": 37,
+          "mean_ms": 633.9960405407725,
+          "p50_ms": 622.892499923706,
+          "p95_ms": 720.760400056839,
+          "p99_ms": 880.3009999990463,
+          "max_ms": 880.3009999990463
+        },
+        "native_call_duration": {
+          "samples": 38,
+          "mean_ms": 0.18223157995625547,
+          "p50_ms": 0.17469990253448486,
+          "p95_ms": 0.22790002822875977,
+          "p99_ms": 0.238800048828125,
+          "max_ms": 0.238800048828125
+        }
+      }
+    },
+    {
+      "label": "methods",
+      "local_directory": "build/v516/barracas-profile-20261119-110651-676123",
+      "runtime_sha256": "4bcf0a9ada804fd7ce1d3fe52f2f09222d6cd53498a001dbc28571a6a3d627c0",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 38.33979542857143,
+        "p95_ms": 107.927,
+        "p99_ms": 118.418,
+        "max_ms": 201.4767
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [
+        {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue836-profile02\\profile.pk3",
+          "sha256": "f5811f9828fe65521c95e1bd1d4ebb4ee9a2f354281a31869796036f5b746db5"
+        }
+      ],
+      "presentation": {
+        "pid": 18020,
+        "trace_sha256": "a31df19b67db04ad45dc37552a3b4dbb50c45815cbaa1f1db2e9c916b5255477",
+        "rows": 1757,
+        "scene_presents": 38,
+        "mean_present_fps": 1.5359550896737906,
+        "present_intervals": {
+          "samples": 37,
+          "mean_ms": 651.0607027008726,
+          "p50_ms": 656.5355999469757,
+          "p95_ms": 757.5619000196457,
+          "p99_ms": 804.052099943161,
+          "max_ms": 804.052099943161
+        },
+        "native_call_duration": {
+          "samples": 38,
+          "mean_ms": 0.17262369080593712,
+          "p50_ms": 0.16820001602172852,
+          "p95_ms": 0.2013000249862671,
+          "p99_ms": 0.20840001106262207,
+          "max_ms": 0.20840001106262207
+        }
+      }
+    },
+    {
+      "label": "prototype",
+      "local_directory": "build/v516/barracas-profile-20261119-111755-289458",
+      "runtime_sha256": "4bcf0a9ada804fd7ce1d3fe52f2f09222d6cd53498a001dbc28571a6a3d627c0",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 32.52872242857143,
+        "p95_ms": 55.6864,
+        "p99_ms": 61.5649,
+        "max_ms": 207.6267
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [
+        {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue836-reach02\\prototype.pk3",
+          "sha256": "ef078983dd05b251e04e91dda0588f82374d6ed9e0a1b5fcc0c8668bcaf76390"
+        }
+      ],
+      "presentation": {
+        "pid": 23440,
+        "trace_sha256": "28257510dce31d5b3e3e343aee48ee6f665a2afd33fcef3ee021514fac471f2e",
+        "rows": 2075,
+        "scene_presents": 37,
+        "mean_present_fps": 1.8091765596197404,
+        "present_intervals": {
+          "samples": 36,
+          "mean_ms": 552.7376500003868,
+          "p50_ms": 541.7785000801086,
+          "p95_ms": 641.1938999891281,
+          "p99_ms": 723.5990999937057,
+          "max_ms": 723.5990999937057
+        },
+        "native_call_duration": {
+          "samples": 37,
+          "mean_ms": 0.17456486740627805,
+          "p50_ms": 0.17139995098114014,
+          "p95_ms": 0.19900000095367432,
+          "p99_ms": 0.21959996223449707,
+          "max_ms": 0.21959996223449707
+        }
+      }
+    },
+    {
+      "label": "oracle",
+      "local_directory": "build/v516/barracas-profile-20261119-112132-964507",
+      "runtime_sha256": "4bcf0a9ada804fd7ce1d3fe52f2f09222d6cd53498a001dbc28571a6a3d627c0",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 32.842369,
+        "p95_ms": 56.1784,
+        "p99_ms": 63.38,
+        "max_ms": 201.7496
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [
+        {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue836-oracle01\\oracle.pk3",
+          "sha256": "db0ee99dc80e2794d1b1fd10e6db08331cce342847e8020e4610da3ab8f123ba"
+        }
+      ]
+    },
+    {
+      "label": "final01",
+      "local_directory": "build/v516/barracas-profile-20261119-113117-888786",
+      "runtime_sha256": "cfb1853c9c01bddba58eb9f81bd0b0bcdbcbf4aed63bb17a6c00311812bebf18",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 32.965886142857144,
+        "p95_ms": 56.4111,
+        "p99_ms": 59.7041,
+        "max_ms": 204.5349
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [],
+      "presentation": {
+        "pid": 27032,
+        "trace_sha256": "c26af599481d5b07e059b6fa91441506b1d2666880c4a2ecdbfcb0ee448dd08f",
+        "rows": 1946,
+        "scene_presents": 37,
+        "mean_present_fps": 1.784886721566063,
+        "present_intervals": {
+          "samples": 36,
+          "mean_ms": 560.2596444454458,
+          "p50_ms": 563.0714999437332,
+          "p95_ms": 615.1233999729156,
+          "p99_ms": 706.8978999853134,
+          "max_ms": 706.8978999853134
+        },
+        "native_call_duration": {
+          "samples": 37,
+          "mean_ms": 0.17796485488479202,
+          "p50_ms": 0.17400002479553223,
+          "p95_ms": 0.19620001316070557,
+          "p99_ms": 0.3111000061035156,
+          "max_ms": 0.3111000061035156
+        }
+      }
+    },
+    {
+      "label": "baseline02",
+      "local_directory": "build/v516/barracas-profile-20261119-113342-678282",
+      "runtime_sha256": "4bcf0a9ada804fd7ce1d3fe52f2f09222d6cd53498a001dbc28571a6a3d627c0",
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 37.413129714285716,
+        "p95_ms": 104.3728,
+        "p99_ms": 109.2688,
+        "max_ms": 208.3904
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "overlays": [],
+      "presentation": {
+        "pid": 48760,
+        "trace_sha256": "addf0559fa33b39cc2db3cdd4e710912eccf7a5a4a406b4d77e01287ff8a29d5",
+        "rows": 1814,
+        "scene_presents": 38,
+        "mean_present_fps": 1.573403660791393,
+        "present_intervals": {
+          "samples": 37,
+          "mean_ms": 635.5648108108624,
+          "p50_ms": 640.340499997139,
+          "p95_ms": 705.6131999492645,
+          "p99_ms": 724.6718000173569,
+          "max_ms": 724.6718000173569
+        },
+        "native_call_duration": {
+          "samples": 38,
+          "mean_ms": 0.17621052265167236,
+          "p50_ms": 0.17089998722076416,
+          "p95_ms": 0.20719993114471436,
+          "p99_ms": 0.25029993057250977,
+          "max_ms": 0.25029993057250977
+        }
+      }
+    }
+  ],
+  "oracle": "CA836 ORACLE queries=2066 candidates=517373 rejected=488912 visibility_mismatch=0 nearest_mismatch=0 ally_mismatch=0 portal_fallback=0 portal_groups=1 result=PASS",
+  "oracle_qualification": "Every37th tic of the700tic window; original and filtered ordered queries in the same scene. Added diagnostic work is not production timing evidence. Prototype differs from final semantics only by relocation of the existing0.01 contact constant; preservation audit checks the inverse source transformation.",
+  "edge_runs": [
+    {
+      "label": "initial-base",
+      "local_directory": "build/issue836-edges-base01",
+      "passed": true,
+      "pass_assertions": 25,
+      "fail_assertions": 0,
+      "loaded_save_sha256": null,
+      "output_save_sha256": "e8b6ebaf9639d040496a5a7f47d0ab79a53c14478cc00ce4424758b489563dac"
+    },
+    {
+      "label": "invalid-one-sided-portal",
+      "local_directory": "build/issue836-edges-portal01",
+      "passed": false,
+      "pass_assertions": 27,
+      "fail_assertions": 3,
+      "loaded_save_sha256": null,
+      "output_save_sha256": "bf8260e4e14761d7c7e7cd80b40a9004664204f6ed22d3750c7a900ce74803f3"
+    },
+    {
+      "label": "prototype-portal",
+      "local_directory": "build/issue836-edges-portal02",
+      "passed": true,
+      "pass_assertions": 30,
+      "fail_assertions": 0,
+      "loaded_save_sha256": null,
+      "output_save_sha256": "09881fb8e4d38e0d4888b248d28150f780415d3ed42f2513b35144567225c3f6"
+    },
+    {
+      "label": "final-flat01",
+      "local_directory": "build/issue836-final-flat01",
+      "passed": true,
+      "pass_assertions": 25,
+      "fail_assertions": 0,
+      "loaded_save_sha256": null,
+      "output_save_sha256": "67a078fe2560cff4248c63a396815ab6a468f13b4668e3c318f12e302d689936"
+    },
+    {
+      "label": "upgrade-flat01",
+      "local_directory": "build/issue836-upgrade-flat01",
+      "passed": true,
+      "pass_assertions": 26,
+      "fail_assertions": 0,
+      "loaded_save_sha256": "e8b6ebaf9639d040496a5a7f47d0ab79a53c14478cc00ce4424758b489563dac",
+      "output_save_sha256": "ab1db0d1a59669f6e7e5f86fe648bf59b90d8f1a4fd2f1717a072483345f8c1d"
+    },
+    {
+      "label": "reload-flat01",
+      "local_directory": "build/issue836-reload-flat01",
+      "passed": true,
+      "pass_assertions": 26,
+      "fail_assertions": 0,
+      "loaded_save_sha256": "67a078fe2560cff4248c63a396815ab6a468f13b4668e3c318f12e302d689936",
+      "output_save_sha256": "68759fbbc21d6afecc2653c74364cb9bb92e3cf334b3c5508de45affd42468a8"
+    },
+    {
+      "label": "rollback-flat01",
+      "local_directory": "build/issue836-rollback-flat01",
+      "passed": true,
+      "pass_assertions": 26,
+      "fail_assertions": 0,
+      "loaded_save_sha256": "67a078fe2560cff4248c63a396815ab6a468f13b4668e3c318f12e302d689936",
+      "output_save_sha256": "01dba179eb271c00803f1ce73a02a69e837f4d173ff7ea5d6b878c3311850ea3"
+    },
+    {
+      "label": "base-portal01",
+      "local_directory": "build/issue836-base-portal01",
+      "passed": true,
+      "pass_assertions": 30,
+      "fail_assertions": 0,
+      "loaded_save_sha256": null,
+      "output_save_sha256": "92a34e68d0cfd41bd7c66737436d6f3b2217e13b0a65167fbdb7b26e5636c1fb"
+    },
+    {
+      "label": "final-portal01",
+      "local_directory": "build/issue836-final-portal01",
+      "passed": true,
+      "pass_assertions": 30,
+      "fail_assertions": 0,
+      "loaded_save_sha256": null,
+      "output_save_sha256": "2d71c60f8420340ec97fd6ef946f3e20aa304a2e263b84a6af08b39c021b2438"
+    },
+    {
+      "label": "upgrade-portal01",
+      "local_directory": "build/issue836-upgrade-portal01",
+      "passed": true,
+      "pass_assertions": 31,
+      "fail_assertions": 0,
+      "loaded_save_sha256": "92a34e68d0cfd41bd7c66737436d6f3b2217e13b0a65167fbdb7b26e5636c1fb",
+      "output_save_sha256": "6bc6e532aa6948d93c60cacc0e88161b6f8288a020017a9b5ddad2dc4a637d7f"
+    },
+    {
+      "label": "reload-portal01",
+      "local_directory": "build/issue836-reload-portal01",
+      "passed": true,
+      "pass_assertions": 31,
+      "fail_assertions": 0,
+      "loaded_save_sha256": "2d71c60f8420340ec97fd6ef946f3e20aa304a2e263b84a6af08b39c021b2438",
+      "output_save_sha256": "c281b6af3ce8f24f4fa8c91568d35bd8153aab37b221838fb2595e8e4930d4e4"
+    },
+    {
+      "label": "rollback-portal01",
+      "local_directory": "build/issue836-rollback-portal01",
+      "passed": true,
+      "pass_assertions": 31,
+      "fail_assertions": 0,
+      "loaded_save_sha256": "2d71c60f8420340ec97fd6ef946f3e20aa304a2e263b84a6af08b39c021b2438",
+      "output_save_sha256": "ef6f3059c5a353e0eeddeb92b2ec5ea3b9e40bc61fc8ba123be87a87f6d96af9"
+    }
+  ],
+  "final_suite_assertions": 256,
+  "directly_inspected_scenes": [
+    "baseline01",
+    "prototype",
+    "final01",
+    "baseline02"
+  ],
+  "failed_iterations": [
+    "Initial prototype builder asserted on CRLF anchors before launching native code; corrected newline handling restores source exactly.",
+    "Initial linked-portal fixture used one-sided lines; native engine downgraded them to visual portals. Three intended linked checks failed. The corrected two-sided fixture has three portal groups and passes native496 versus raw6640 distance."
+  ],
+  "qualifications": [
+    "Only the approved normal1000attacker-cap/600defender siege is run; no retired6000actor test. Actual census988attackerNPC+601defenders+player=1590living; machines retain the side cap.",
+    "Single-machine Vulkan1280x720 uncapped, background unpaused,5%audio;700simulation intervals per run. No heavy build/export/full validator overlaps measurement.",
+    "Queue-present intervals are not display scanout/GPU duration or Internet latency. Sparse nested method timings overlap and are diagnostic.",
+    "CA454-MAP03-01 and all earlier author checks remain pending for the final consolidated session; no author acceptance.",
+    "No private IWAD/engine/testWAD/PK3/save is retained in tracked evidence."
+  ],
+  "project_validation_passed": true,
+  "files": {
+    "campaign/baseline01/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/baseline01/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/baseline01/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/baseline01/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/baseline01/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/baseline01/peer0/engine.log": "e1f6cc669fe6c68d2eb280a4688cd715c2857e615f971606ee2c875ad3086c04",
+    "campaign/baseline01/peer0/presents.csv": "c0ae260559af1a57e224a1bd7e1e559d5b441a05bb0cb3275354c27588420110",
+    "campaign/baseline01/peer0/process.log": "1e9c0dbfa7b7f592eb4963e57a60d9965fafb7fbe0f98736e4b94f4e2093c190",
+    "campaign/baseline01/peer0/scene.png": "ff77c92e4c264efdddb0582f8a54bc1e1b65f0784684ab3a30cf4df939c2749e",
+    "campaign/baseline01/peer0/session.ini": "34bbcd51389a58bfb39e66d94c5ccd8c8b1c6f33bebbec7602df09cc26b62607",
+    "campaign/baseline01/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "campaign/baseline01/presentation.json": "efacf162f6db0681ae320f060a714c772a40ad33c2788d643e37dfdba345353a",
+    "campaign/baseline01/results.json": "e8e2dc9c6953193917353a110243f93e3d59cb4a484d029503e3a259677a33fe",
+    "campaign/baseline02/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/baseline02/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/baseline02/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/baseline02/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/baseline02/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/baseline02/peer0/engine.log": "eea5c21304708abdf74679573c7d2fb593be4316d355aaedbb1ed6d57ffc3f26",
+    "campaign/baseline02/peer0/presents.csv": "addf0559fa33b39cc2db3cdd4e710912eccf7a5a4a406b4d77e01287ff8a29d5",
+    "campaign/baseline02/peer0/process.log": "54eb11665680c2997d32f9488265a72768dfb4091ce0db11c0674963e1143a06",
+    "campaign/baseline02/peer0/scene.png": "613e2e7ceb94c9b98a31453eb4dab03b4aa28b32e6f71554d8781456de55cad7",
+    "campaign/baseline02/peer0/session.ini": "fa11ca15765e40b5c31f313740fb07c97af685fa809b9410da88fa8e8482d526",
+    "campaign/baseline02/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "campaign/baseline02/presentation.json": "6b3308e01d0aa0ac43aeb47b676482ceb619dc47c2beeef5c5c63a996a383fee",
+    "campaign/baseline02/results.json": "88dce3d2cf3d7cc7d3fc623083fb01f05f6693e481aecbc4bb725d04f6e4b9ae",
+    "campaign/final01/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/final01/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/final01/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/final01/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/final01/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/final01/peer0/engine.log": "cd6e37e18816515bf98b2b667d643ec6b8be51df3692b72565f50e11a9c61a68",
+    "campaign/final01/peer0/presents.csv": "c26af599481d5b07e059b6fa91441506b1d2666880c4a2ecdbfcb0ee448dd08f",
+    "campaign/final01/peer0/process.log": "f0b693547822b0eeea0cf1a5651ba9169bbd4562799bd7ba847ec5b2b65dedd9",
+    "campaign/final01/peer0/scene.png": "ed4b885290db3166049ba1e2f4c008739965f419f62815a5bc6f0c0b1f99ace4",
+    "campaign/final01/peer0/session.ini": "1ea6ddfab92f6a7d330070058605fec2a29446164e9bd4a82c47f2f3a9710166",
+    "campaign/final01/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "campaign/final01/presentation.json": "9bb3deee605482c6f6e41e40173150df477cbd521660816afc08dcc982957327",
+    "campaign/final01/results.json": "751858beedc78437b6764e33114adc258c1ecb43894cbd997637bfcf37d319b3",
+    "campaign/methods/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/methods/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/methods/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/methods/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/methods/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/methods/peer0/engine.log": "e745331ca244b8e36bfa6acda4e0cc5e52385c45285ac20fc7ee3c1795ffa33c",
+    "campaign/methods/peer0/presents.csv": "a31df19b67db04ad45dc37552a3b4dbb50c45815cbaa1f1db2e9c916b5255477",
+    "campaign/methods/peer0/process.log": "6f00f82a29aaf30900a144c145218683fe614263789c55d4d11793826b168602",
+    "campaign/methods/peer0/scene.png": "9be18b3821b4282159811dafc89f04247c0a1d5d8bd12af54f6e9d5f0d7745e5",
+    "campaign/methods/peer0/session.ini": "67c7818d235639077fca5068938594c113fc4ef26b34fc33f63096405bd05a08",
+    "campaign/methods/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "campaign/methods/presentation.json": "e8a45ce5ed702ff7ebf797c57044c207df63643ce4c2db6612f1fdfdf8daffdc",
+    "campaign/methods/results.json": "53616a638b9b64fa881f1299604fec4cc166d33382c26f24e70cf1f7e43287b4",
+    "campaign/oracle/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/oracle/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/oracle/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/oracle/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/oracle/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/oracle/peer0/engine.log": "35dbf1d94c9fec54f414c420399ee2ec327cbf34df9634449f6ca854a6f75ab6",
+    "campaign/oracle/peer0/presents.csv": "8710504bc1e9e20f3d663dc6036f63a1b642180009673cb5c89093415530055a",
+    "campaign/oracle/peer0/process.log": "23ba9b75f13df231ea3f3a3c544adf4ea4a50e76d2cc249081e3cc8a63391bda",
+    "campaign/oracle/peer0/scene.png": "6bbf9e4a74d7dbe09c77cf26b076c2bdd0b8b4be5f53ccb004452986fff1fe14",
+    "campaign/oracle/peer0/session.ini": "86ecd23462dc7b3f93e18e5836bac86e27ea5e0325d6721121fc54c721d1f40b",
+    "campaign/oracle/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "campaign/oracle/results.json": "be6341a34b975f6f4ef71fb44de7ff281b77e8a527cd80efa3796111a0b6117d",
+    "campaign/prototype/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/prototype/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/prototype/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/prototype/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/prototype/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/prototype/peer0/engine.log": "6a9f8189c301d359070cf2f509904eb53c692c5447eb782822d0a4ac928e7ab0",
+    "campaign/prototype/peer0/presents.csv": "28257510dce31d5b3e3e343aee48ee6f665a2afd33fcef3ee021514fac471f2e",
+    "campaign/prototype/peer0/process.log": "2fff206034c2b9ef2b3d7d95302814e70b13e8e10ec6296c1a3c2618fbb7114e",
+    "campaign/prototype/peer0/scene.png": "7d840717a76338067912ee8d1dd67c53e8e859a8c7b027668e7fad6630c7117c",
+    "campaign/prototype/peer0/session.ini": "1fdc48d598a2fe0bfa425a90da86efe2ce316d7e3e8ab04fd29d685e72f891ca",
+    "campaign/prototype/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "campaign/prototype/presentation.json": "b55624f701c62cfe2169daa345ccc5de05cd7d33cdfae549d2543e28f4982c61",
+    "campaign/prototype/results.json": "448141116aa6ca56bc478816d1a7762d244bd8f0bf3a8be128012e9f22043869",
+    "campaign/sections/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "campaign/sections/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "campaign/sections/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "campaign/sections/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "campaign/sections/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "campaign/sections/peer0/engine.log": "88e2e9fc97f027c6a847220eb734cd2e806a74fcc349f3e928ec98e77abbb89c",
+    "campaign/sections/peer0/presents.csv": "0c98f212e91f1f700f8ab6f5053529b37a6a6d87348e2d068de0d393b6d3fabe",
+    "campaign/sections/peer0/process.log": "07f8fe1bbd4043eeee0f19a9230becc81642580cb195d6a82d86563c17eebeba",
+    "campaign/sections/peer0/scene.png": "83e97241b80a9b029b337c38f52ed8d3ab365f8fd9008f635761cedb909009d7",
+    "campaign/sections/peer0/session.ini": "4cf3293dc6696f27d9b3f3200239b42ddb247e7cbc8ed2ac038b8982a448a0b4",
+    "campaign/sections/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "campaign/sections/presentation.json": "122230191958b527c58032ae0a8f2169c0b65ed5f0cab1fa67f8cc0544373d64",
+    "campaign/sections/results.json": "f9d1a490b565f4b366b1fee29a51699b989437d1c3578cf2cb58e282473bf8b7",
+    "edges/base-portal01/checks.zs": "f52c4f643e3091b43c6404709c01e6aac46e8f868dfafb322edfec8843011e98",
+    "edges/base-portal01/commands.cfg": "41d3ba34ffb780e8b2fc6fe869e8bb9f44928d4e6d669854dc0bb02c772029e6",
+    "edges/base-portal01/engine.log": "fbd7018b309374f91a0a3dd8ffbc613229f65b1dfb26cb911aab078ef529976e",
+    "edges/base-portal01/fixture.txt": "20e11c99e53070823acf0aea02a3d60ff24516afe9f59b34a00d8fb5024aa50c",
+    "edges/base-portal01/process.log": "49e7256097c5c947367abbe2364dbfe0a8f91440aa516a5732dcd5cd2aea9e8c",
+    "edges/base-portal01/RESULTS.json": "088f6da5fa595ce959d71d1f5e1aee68096930eecd98e3fc2dd2c278b2081d35",
+    "edges/base-portal01/session.ini": "28d4e69f205e64a9b869edf14dd4316dd74f96dfdf0daa5f30f74935c14f3b14",
+    "edges/final-flat01/checks.zs": "dc7df555453ecd2a3e561af7d41a3a466e2294e76febcb00272eaa90233c85d8",
+    "edges/final-flat01/commands.cfg": "41d3ba34ffb780e8b2fc6fe869e8bb9f44928d4e6d669854dc0bb02c772029e6",
+    "edges/final-flat01/engine.log": "9d5fdc5433edfe1a54f4d094b70ebcef7910d2df914c24d91fb7caa227c83cc8",
+    "edges/final-flat01/fixture.txt": "7d7106f942a726bac8e7c8200b07fa98e734a797a0bf9e93ca53f534db23ff10",
+    "edges/final-flat01/process.log": "d98d2120f600f81c9d83ac208afd2bf0847b8c4c69c5d91581a9d966b544ca0c",
+    "edges/final-flat01/RESULTS.json": "6ac44ddef8c0351a2e051975b866c73f40abf202eb3a5d24c32b7437b4beac92",
+    "edges/final-flat01/session.ini": "2d6f128ee1580c86ed19ed411c8e0a6399a52944dd766be4d8b1c4253b710242",
+    "edges/final-portal01/checks.zs": "f52c4f643e3091b43c6404709c01e6aac46e8f868dfafb322edfec8843011e98",
+    "edges/final-portal01/commands.cfg": "41d3ba34ffb780e8b2fc6fe869e8bb9f44928d4e6d669854dc0bb02c772029e6",
+    "edges/final-portal01/engine.log": "2adef482ac9b46cb15cc208fdcdd88b9b7f3cece52acdb7197ac96d70347f41f",
+    "edges/final-portal01/fixture.txt": "20e11c99e53070823acf0aea02a3d60ff24516afe9f59b34a00d8fb5024aa50c",
+    "edges/final-portal01/process.log": "587cddf3145a2992c4fea7d2fd4aa4346f8d67f00cf245ec146a69035bd99a33",
+    "edges/final-portal01/RESULTS.json": "e7e1073241be46c499fcefb7d4332b119958a4658579b6c974844432bb7468f6",
+    "edges/final-portal01/session.ini": "5eba12d73f82569ecde3e5f3ea3e8bd932dfbe9b1d0840879db9f1d0ca875b42",
+    "edges/initial-base/checks.zs": "dc7df555453ecd2a3e561af7d41a3a466e2294e76febcb00272eaa90233c85d8",
+    "edges/initial-base/commands.cfg": "41d3ba34ffb780e8b2fc6fe869e8bb9f44928d4e6d669854dc0bb02c772029e6",
+    "edges/initial-base/engine.log": "6c87fbb1fba6778123d65062933778cddd96fd52f538208a456a079a275fdc0e",
+    "edges/initial-base/fixture.txt": "7d7106f942a726bac8e7c8200b07fa98e734a797a0bf9e93ca53f534db23ff10",
+    "edges/initial-base/process.log": "2ed593b406e86966d50b5788590bd0cfeb489709069fc8d45b10e1be05003f78",
+    "edges/initial-base/RESULTS.json": "d5eab518ad3eefa533a403d2f6ec5de777dba15ecbd6dcfba8a632ab0453236b",
+    "edges/initial-base/session.ini": "41cbff98e84b65c049b2ab587f33a4873edac6b3f7e8c5c01e598bb25f38cffd",
+    "edges/invalid-one-sided-portal/checks.zs": "f52c4f643e3091b43c6404709c01e6aac46e8f868dfafb322edfec8843011e98",
+    "edges/invalid-one-sided-portal/commands.cfg": "41d3ba34ffb780e8b2fc6fe869e8bb9f44928d4e6d669854dc0bb02c772029e6",
+    "edges/invalid-one-sided-portal/engine.log": "98fcb350d8bf70427ba75aed5e81d2a1357c0cff4f3e0d2556a3eaf3e1278b78",
+    "edges/invalid-one-sided-portal/fixture.txt": "ee4b4230f8d0da05c5b4adbccb205656916007e1d6797cfb3d4340ed428009da",
+    "edges/invalid-one-sided-portal/process.log": "370dd68186ef779aa2f7c200bb1b6cae386f000b3e39f0b9e80e042275a8c65b",
+    "edges/invalid-one-sided-portal/RESULTS.json": "7f3438fc6600e3c93b515ddb1e98573f9b7392272760a42d5afd1ebf614e3e1f",
+    "edges/invalid-one-sided-portal/session.ini": "acbcfa66233720ae275011fcdb6d0de2e29c17b11f41fed5de1b13bc1f0ea321",
+    "edges/prototype-portal/checks.zs": "f52c4f643e3091b43c6404709c01e6aac46e8f868dfafb322edfec8843011e98",
+    "edges/prototype-portal/commands.cfg": "41d3ba34ffb780e8b2fc6fe869e8bb9f44928d4e6d669854dc0bb02c772029e6",
+    "edges/prototype-portal/engine.log": "acac7373da28e96759622932a1b639c3e4695c3eed6bb1d3a5484b8d824946c0",
+    "edges/prototype-portal/fixture.txt": "20e11c99e53070823acf0aea02a3d60ff24516afe9f59b34a00d8fb5024aa50c",
+    "edges/prototype-portal/process.log": "ee3bae814c6151f3bac7582db54bfac66dc9bfe25b5112fe0c5247a6209361a9",
+    "edges/prototype-portal/RESULTS.json": "446cfa4840bd34bb532f92bffecbb4c8ad97b4220d07791b293b3265bc101522",
+    "edges/prototype-portal/session.ini": "53959217afab5add9734a787616cf558ed1d00f09e3183ac4bcc6170e7e4f87a",
+    "edges/reload-flat01/checks.zs": "dc7df555453ecd2a3e561af7d41a3a466e2294e76febcb00272eaa90233c85d8",
+    "edges/reload-flat01/commands.cfg": "671c7dd6d343c28bafd3aef71d6afd8e5c1ad8352187dceec5c9973c7faff637",
+    "edges/reload-flat01/engine.log": "416c04f5cf4952148e0705f835e74eff3ff6e6fa8cb5af8621b5a166d740dfce",
+    "edges/reload-flat01/fixture.txt": "7d7106f942a726bac8e7c8200b07fa98e734a797a0bf9e93ca53f534db23ff10",
+    "edges/reload-flat01/process.log": "2094947ac6ee11eab4a8f46345e93cef2bcd7ed1de5ef32b35051fec0cd22820",
+    "edges/reload-flat01/RESULTS.json": "d7f5b00272f9c17561ac051f96ad63037b6e8688691fd5fe06b077b9c4d6c661",
+    "edges/reload-flat01/session.ini": "368503b7c701f044c7b20e73a7128b437d16d06307a9b21a67ecc46720742b7c",
+    "edges/reload-portal01/checks.zs": "f52c4f643e3091b43c6404709c01e6aac46e8f868dfafb322edfec8843011e98",
+    "edges/reload-portal01/commands.cfg": "671c7dd6d343c28bafd3aef71d6afd8e5c1ad8352187dceec5c9973c7faff637",
+    "edges/reload-portal01/engine.log": "530c0a5cd5c1c2c13377d859d649dca12d895ba7084b7dbde4f671e167d938e8",
+    "edges/reload-portal01/fixture.txt": "20e11c99e53070823acf0aea02a3d60ff24516afe9f59b34a00d8fb5024aa50c",
+    "edges/reload-portal01/process.log": "948e2030bfb3ead39e28a0443d2be4f7379f19bf90e5f9ded2437c9e95ed6293",
+    "edges/reload-portal01/RESULTS.json": "8a612020b950b687dd49e00b2c2993108288a0f9f4563f2e549d5799298711a7",
+    "edges/reload-portal01/session.ini": "9ef6210d70a0e6cd6ec8f14312d9df5f71f8a9a34493743a537849608522020b",
+    "edges/rollback-flat01/checks.zs": "dc7df555453ecd2a3e561af7d41a3a466e2294e76febcb00272eaa90233c85d8",
+    "edges/rollback-flat01/commands.cfg": "671c7dd6d343c28bafd3aef71d6afd8e5c1ad8352187dceec5c9973c7faff637",
+    "edges/rollback-flat01/engine.log": "1680cb4736041f30d620ca3d8778e2fed8f44982e2a55e52ca14078b5b5b58b7",
+    "edges/rollback-flat01/fixture.txt": "7d7106f942a726bac8e7c8200b07fa98e734a797a0bf9e93ca53f534db23ff10",
+    "edges/rollback-flat01/process.log": "654904e16eb118f5f6e40bf5db0b78027c1cefb7f5dd5db16c80608ad95d8070",
+    "edges/rollback-flat01/RESULTS.json": "1608af6897420044c0b2c00aa608e2e223ab43a7e691b5f1c48349c923595433",
+    "edges/rollback-flat01/session.ini": "d716974857419f42b02077864c006bbfb2f8d4f147b75b79040bab595e4ae6f6",
+    "edges/rollback-portal01/checks.zs": "f52c4f643e3091b43c6404709c01e6aac46e8f868dfafb322edfec8843011e98",
+    "edges/rollback-portal01/commands.cfg": "671c7dd6d343c28bafd3aef71d6afd8e5c1ad8352187dceec5c9973c7faff637",
+    "edges/rollback-portal01/engine.log": "143023e51c9faa597dcf274fb31a103f11147dddd7155a12c333a7881eae39ab",
+    "edges/rollback-portal01/fixture.txt": "20e11c99e53070823acf0aea02a3d60ff24516afe9f59b34a00d8fb5024aa50c",
+    "edges/rollback-portal01/process.log": "8ac8809b4ad77392e115ec7f2dcd50c683b2a8a0584a455ea7c7199934816411",
+    "edges/rollback-portal01/RESULTS.json": "3ee4ef1fe1264e50326815304a0cdab6e7ee401d8001e393f534f6b9fd323aaa",
+    "edges/rollback-portal01/session.ini": "bfbe6dfe11b5f3c775006fc9fefa2c4651a62a3d55fd1f6e87ffc8da9cd1458f",
+    "edges/upgrade-flat01/checks.zs": "dc7df555453ecd2a3e561af7d41a3a466e2294e76febcb00272eaa90233c85d8",
+    "edges/upgrade-flat01/commands.cfg": "671c7dd6d343c28bafd3aef71d6afd8e5c1ad8352187dceec5c9973c7faff637",
+    "edges/upgrade-flat01/engine.log": "a92f692cb452dadb3b1784b35d207f1b41bdf7dd74b798dc7b8b48e1d488e567",
+    "edges/upgrade-flat01/fixture.txt": "7d7106f942a726bac8e7c8200b07fa98e734a797a0bf9e93ca53f534db23ff10",
+    "edges/upgrade-flat01/process.log": "8b72e1ae7f5aeb8ecebb332c590dac927f23f5d7c6ad303f297622554c7a7b06",
+    "edges/upgrade-flat01/RESULTS.json": "aa478811fdcacdccddfa06fe6736eded0adcf89244b156cb9fa50e1cfd878266",
+    "edges/upgrade-flat01/session.ini": "2d7ff0fdb8dedf1acf6dffcfe5083dc84204f79b6cf5f22b6056ae30abbdae99",
+    "edges/upgrade-portal01/checks.zs": "f52c4f643e3091b43c6404709c01e6aac46e8f868dfafb322edfec8843011e98",
+    "edges/upgrade-portal01/commands.cfg": "671c7dd6d343c28bafd3aef71d6afd8e5c1ad8352187dceec5c9973c7faff637",
+    "edges/upgrade-portal01/engine.log": "5c6d23527adf7b1bf2dd2bd076fd617bf7ccb7b275f8556d318057b2d06a6692",
+    "edges/upgrade-portal01/fixture.txt": "20e11c99e53070823acf0aea02a3d60ff24516afe9f59b34a00d8fb5024aa50c",
+    "edges/upgrade-portal01/process.log": "24eaa75661fac7bcb4d7ac3aa68fe13845032315f22f05ac5ef1cb8c981683a8",
+    "edges/upgrade-portal01/RESULTS.json": "2d28b347f828ecdd79d66bbecd4eda2511b48c3633a292a1e5e9070254c893e9",
+    "edges/upgrade-portal01/session.ini": "a297367424029b15c641156cba480f3bbcf47f412eecd30b067ac34ca1264b7a",
+    "executed-helpers/adopt_reach836.py": "1080dc8684cf2e87d651a37090b7aee22cf1fb1e07cbb6cc652103943f9496f2",
+    "executed-helpers/archive_reach836.py": "10ed7c3ca6a2dc2f6a18fef977d8796427d6c768a5320a19741388a47e71e427",
+    "executed-helpers/prepare_actor_sections836.py": "d7ceb528730cc1bbc63232e9b9c76a55d3c0f10072df39e7326fa573890558c0",
+    "executed-helpers/prepare_group_reach836.py": "e305a9d36ff10f8e5ad4ece30522bb6e20a15cb5ed5e2a53a16c4a1c860af3b5",
+    "executed-helpers/prepare_method_cost836.py": "6ff16a99effd7e5658a83420f9931f8a774e9a963d9eb337a075d122e33d5c29",
+    "executed-helpers/prepare_reach_oracle836.py": "cf23cb9b366a39cb407ee2544ce2c534cdd4afe1e0b4ba6f60642e4944caff13",
+    "executed-helpers/run_presentation836.py": "2b8421cee1857329c7685f1c2e90c932c128edbc8881eae87eee55d11165241a",
+    "executed-helpers/run_reach_edges836.py": "c50beee83b1fcb7a38bd8dbd6812062b614a88f20b1e1fd9517530b42388bf30",
+    "executed-helpers/run_suite836.py": "f2e1aa06c04b90064d1fea8cf29cb506892c74c6b9a3695e71cbd64d1464022d",
+    "issue836-presentation-final.json": "cfce0b360fcca710bdb22d104d34063fa7f1cb0e1dc13c71481ce7ac10780b67",
+    "issue836-preservation01.json": "f8dfb174a9e718d4392eed6210d1e5b81c0e97dd7729f1cbe59b944b87878230",
+    "issue836-profile01-sections.json": "9fadc564015c6608633a05f69db194d078199f492535ed5dccbda59d28705f6c",
+    "issue836-profile02-methods.json": "df140bdcedbb08c9884582e91d077ab20f3634f86ddb9e903b48a7f3d5d8fcfa",
+    "issue836-suite01.json": "8b0a955eec12f16ded1844b3fa6a0c4ca25fc278b0f80e720b7f33f12f688205",
+    "overlays/issue836-oracle01/manifest.json": "9c8179d31d1a16faa160605967469e3c3acc4da0fbc1fd65fbf0853008a71eb8",
+    "overlays/issue836-oracle01/source/caelum/actors/CaelumVisualPerception.zs": "71808a2a93bec9c39b0ca3c45ec50f83dae91c54ff6f797140b75992d6cc40cd",
+    "overlays/issue836-oracle01/source/MAPINFO": "1f72bf9c24c1a7dc04cac2e8382f8024668872cfb257487add9918d9a0550d4a",
+    "overlays/issue836-profile01/manifest.json": "7a99f3366880152065390952f99345d58334c22b902c56e4b63cc8d5af0cfc98",
+    "overlays/issue836-profile01/source/caelum/actors/CaelumCombatActor.zs": "d38e7f922025a9b89a0777cf2e04c24d93a77b08a78d26a21a76a1db48166758",
+    "overlays/issue836-profile01/source/MAPINFO": "5008987cba260f53aef17e450af1543eb8714e908528c8b19a9b8befb136fcd1",
+    "overlays/issue836-profile02/manifest.json": "ca49bae1809ee6e172d9d32b7e3dbd93bea932818bfaf2952b5d1ac39d912603",
+    "overlays/issue836-profile02/source/caelum/actors/CaelumCombatActor.zs": "99c0aa7610d317f3cc7297805596cd64da92e91f87f1b3b2f7822ef67bbce153",
+    "overlays/issue836-profile02/source/caelum/actors/CaelumCommunication.zs": "0a17d8dc91f5c798069df5d17555ed62d8495de452ed835448697786b9b9a47a",
+    "overlays/issue836-profile02/source/caelum/actors/CaelumVisualPerception.zs": "dfa2137102ccc38053ea336f22188aaa325f3021d59120d62632dba4d960cb8b",
+    "overlays/issue836-profile02/source/caelum/survival/CaelumContaminationContact.zs": "fae3a73cf7de8f6eb8b78cef482fd4acd4fc7e9c533b281249f18ab429fde20a",
+    "overlays/issue836-profile02/source/caelum/survival/CaelumContaminationObject.zs": "4959f777b84dadb601cbd728f65b88e40872e2ecce99ea4eaa5528836c640ef5",
+    "overlays/issue836-profile02/source/caelum/survival/CaelumThermalRuntime.zs": "cf322403e510abe46d1ba3f171b1016599a558b34219f798cb405f5f55d43dc6",
+    "overlays/issue836-profile02/source/MAPINFO": "f1be9d3c7c30b778eab92766d80eda36bf1c7bac0df079f85ab661e9ad72e9c9",
+    "overlays/issue836-reach02/manifest.json": "c040adc3f1109b788d4b884cb355d910c532c981e3c5f9180384aab286a1e1cb",
+    "overlays/issue836-reach02/source/caelum/actors/CaelumVisualPerception.zs": "c4ecf14c72c44675764b1473ce21ca2d4dd125a92d348448ba01d7753a4f5cac",
+    "validation-final.json": "c2f386280b66c69b8af77f9808ad41c08850abff3131198cdbf8165071c88be6"
+  }
+}

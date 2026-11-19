@@ -1,0 +1,15 @@
+{
+  "issue": 836,
+  "passed": true,
+  "baseline_sha256": "4bcf0a9ada804fd7ce1d3fe52f2f09222d6cd53498a001dbc28571a6a3d627c0",
+  "runtime_sha256": "cfb1853c9c01bddba58eb9f81bd0b0bcdbcbf4aed63bb17a6c00311812bebf18",
+  "runtime_bytes": 1276886579,
+  "members": 18719,
+  "changed_members": [
+    "caelum/actors/CaelumVisualPerception.zs",
+    "caelum/data/CaelumPerceptionData.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "scope": "All package bytes equal current src. Only the query helper/guards, relocation of the existing contact margin and two diagnostic version strings differ semantically from the parent. Removing exactly those additions restores the original perception/data source; no saved-field or revision change. All other runtime members byte-identical."
+}

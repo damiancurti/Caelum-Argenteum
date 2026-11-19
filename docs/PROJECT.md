@@ -1,6 +1,25 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.95** - 2026-11-19.
+Documentation version: **5.17.96** - 2026-11-19.
+
+## 5.17.96 - Conservative shared-candidate reach rejection (#836, #454)
+
+The existing high-density shared perception query now rejects bodies outside
+a conservative horizontal reach bound before calculating native distances and
+visibility. In the final approved siege measurement, queue presentation reaches
+1.78 presents/s; simulation p95/p99 are 56.4111/59.7041 ms.
+This is a measured production reduction, not fluent siege acceptance. Severe
+presentation stalls remain and require further focused engineering work.
+
+The bound uses current Insight and candidate height, full-light/zero-stealth
+range, nonnegative body radii and the existing contact margin. Linked-portal
+maps follow the original native path. Every remaining relationship, contact,
+visibility, ordered nearest selection and private recognition check is retained.
+The automatic whole-map >=500 census and individual offscreen gameplay remain.
+No schema or saved field changes. Final/control save checks pass; the same-scene
+oracle reports no visibility, enemy-selection or ally-selection differences.
+Detailed evidence: validation_v5_17_96; engineering lesson CA-KP-255.
+CA454-MAP03-01 and the full consolidated author review remain pending.
 
 ## 5.17.95 - Skeletal native-format assessment (#834, parent #458)
 

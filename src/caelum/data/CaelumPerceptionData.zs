@@ -7,6 +7,8 @@ class CaelumPerceptionData : Object
     const REFERENCE_VISIBLE_HEIGHT = 56.0;
     const DARK_RANGE_FACTOR = 0.10;
     const NATIVE_FULL_LIGHT = 255.0;
+    // #836: margen de contacto preexistente, compartido con la cota exterior.
+    const CONTACT_MARGIN = 0.01;
     const IDENTIFICATION_SECONDS = 2.0;
     const SUSPICION_MAXIMUM = 100.0;
     const SUSPICION_GRACE_SECONDS = 2.0;
