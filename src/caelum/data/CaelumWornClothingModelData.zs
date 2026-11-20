@@ -1,4 +1,4 @@
-// #857: generado desde el catalogo aprobado y las reglas de ajuste #829.
+// #859: agarres derivados del catalogo y del ajuste de vestuario #857/#829.
 class CaelumWornClothingModelData : Object
 {
     const MODEL_SLOTS=17;
@@ -62,16 +62,16 @@ class CaelumWornClothingModelData : Object
             case 4:return "models/caelum/characters/worn";
             case 5:return "models/caelum/characters/worn";
             case 6:return "models/caelum/characters/worn";
-            case 7:return "models/caelum/characters/domingo";
-            case 8:return "models/caelum/characters/domingo";
+            case 7:return "models/caelum/characters/grips";
+            case 8:return "models/caelum/characters/grips";
             case 9:return "models/caelum/characters/worn";
             case 10:return "models/caelum/characters/worn";
-            case 11:return "models/caelum/characters/worn";
+            case 11:return "models/caelum/characters/grips";
             case 12:return "models/caelum/characters/worn";
             case 13:return "models/caelum/characters/worn";
             case 14:return "models/caelum/characters/worn";
-            case 15:return "models/caelum/characters/domingo";
-            case 16:return "models/caelum/characters/domingo";
+            case 15:return "models/caelum/characters/grips";
+            case 16:return "models/caelum/characters/grips";
         }
         return "";
     }

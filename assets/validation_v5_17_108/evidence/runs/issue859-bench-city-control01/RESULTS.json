@@ -1,0 +1,103 @@
+{
+  "issue": 857,
+  "passed": true,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue857-wardrobe02.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue859-bench-city-control01\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue859-bench-city-control01\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue859-bench-city-control01",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue859-bench-city-control01\\engine.log",
+    "+map",
+    "MAP03",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue859-bench-city-control01\\commands.cfg"
+  ],
+  "exit_code": 0,
+  "errors": [],
+  "checks": [
+    "CA836 EDGE PASS wardrobe: existing opt-in native player",
+    "CA836 EDGE PASS wardrobe: native sword/shield fixture equipped",
+    "CA836 EDGE PASS wardrobe: unsupported armor removed through native equipment operation",
+    "CA836 EDGE PASS wardrobe: unsupported armor removed through native equipment operation",
+    "CA836 EDGE PASS wardrobe: unsupported armor removed through native equipment operation",
+    "CA836 EDGE PASS wardrobe: unsupported armor removed through native equipment operation",
+    "CA836 EDGE PASS wardrobe: seed is equipped through native operation",
+    "CA836 EDGE PASS wardrobe: seed is equipped through native operation",
+    "CA836 EDGE PASS wardrobe: seed is equipped through native operation",
+    "CA836 EDGE PASS wardrobe: seed is equipped through native operation",
+    "CA836 EDGE PASS wardrobe: synchronous visual refresh preserves owner state",
+    "CA836 EDGE PASS wardrobe: saved fixture and original player survive",
+    "CA836 EDGE PASS wardrobe: synchronous visual refresh preserves owner state",
+    "CA836 EDGE PASS wardrobe: expected candidate or existing presentation selected",
+    "CA836 EDGE PASS wardrobe: owned visual is visible",
+    "CA836 EDGE PASS wardrobe: saved native clothing identity and properties survive",
+    "CA836 EDGE PASS wardrobe: saved native clothing identity and properties survive",
+    "CA836 EDGE PASS wardrobe: saved native clothing identity and properties survive",
+    "CA836 EDGE PASS wardrobe: saved native clothing identity and properties survive",
+    "CA836 EDGE PASS wardrobe: revision and transient cache reconstructed",
+    "CA836 EDGE PASS wardrobe: equipped four-region appearance reconstructed",
+    "CA836 EDGE PASS wardrobe: cache references actual restored inventory object",
+    "CA836 EDGE PASS wardrobe: cache references actual restored inventory object",
+    "CA836 EDGE PASS wardrobe: cache references actual restored inventory object",
+    "CA836 EDGE PASS wardrobe: cache references actual restored inventory object",
+    "CA836 EDGE PASS wardrobe: recorded native tic interval window",
+    "CA836 EDGE_RESULT checks=26 failures=0 result=PASS"
+  ],
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue857-wardrobe02.pk3": "f4b41b9417deb39020fb884357027784bbfc3bafd419af028b34a101cea8a748",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue859-bench-city-control01\\checks.pk3": "5c7ba0cbeac95f54cda243bec6d598e58f9d26b00e2d8aff9e97e43994f7619f"
+  },
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "loaded_save_sha256": null,
+  "qualification": "Native wardrobe continuity phase bench. Same diagnostic saved class names and base-compatible fields on both builds; checks actual clothing identity and visual selection. Not author acceptance.",
+  "presentation_markers": {
+    "BEGIN": 746766378.5722,
+    "END": 746786447.4010999
+  },
+  "simulation": {
+    "samples": 702,
+    "mean_ms": 28.576049145299145,
+    "p50_ms": 28.7606,
+    "p95_ms": 35.1341,
+    "p99_ms": 36.8685,
+    "max_ms": 38.1536
+  },
+  "presentation": {
+    "pid": 15656,
+    "trace_sha256": "d869d157fcbb4fc5af54ce3a42c8609fe275e2d9c2d1dc727645fc0f362318b2",
+    "rows": 2908,
+    "scene_presents": 1788,
+    "mean_present_fps": 101.75101076710324,
+    "present_intervals": {
+      "samples": 1787,
+      "mean_ms": 9.827912199210374,
+      "p50_ms": 9.679199934005737,
+      "p95_ms": 11.503999948501587,
+      "p99_ms": 12.930800080299377,
+      "max_ms": 15.399500012397766
+    },
+    "native_call_duration": {
+      "samples": 1788,
+      "mean_ms": 0.1711336694974494,
+      "p50_ms": 0.1678999662399292,
+      "p95_ms": 0.23460006713867188,
+      "p99_ms": 0.29840004444122314,
+      "max_ms": 0.691100001335144
+    }
+  },
+  "presentation_layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+}

@@ -1,0 +1,47 @@
+{
+  "issue": 857,
+  "passed": true,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue859-grips02.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue859-final02\\dead-load\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue859-final02\\dead-load\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue859-final02\\dead-load",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue859-final02\\dead-load\\engine.log",
+    "-loadgame",
+    "input.zds",
+    "-host",
+    "1",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue859-final02\\dead-load\\commands.cfg"
+  ],
+  "exit_code": 0,
+  "errors": [],
+  "checks": [
+    "CA836 EDGE PASS wardrobe: synchronous visual refresh preserves owner state",
+    "CA836 EDGE PASS wardrobe: death retains last legitimate candidate outfit",
+    "CA836 EDGE PASS wardrobe: saved death snapshot restored and rebound",
+    "CA836 EDGE PASS wardrobe: death outfit unchanged after native equipment cleanup",
+    "CA836 EDGE_RESULT checks=33 failures=0 result=PASS"
+  ],
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue859-grips02.pk3": "7aa0a9c8e11ccf878ce099142b29a5b9fbc3c9d1a03e11f139677ff6287a226e",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue859-final02\\dead-load\\checks.pk3": "5c7ba0cbeac95f54cda243bec6d598e58f9d26b00e2d8aff9e97e43994f7619f"
+  },
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "loaded_save_sha256": "205043c128e129c4dd057a4c39f00b8f24b8541f8607e1b2d78435b0c50c7be5",
+  "qualification": "Native wardrobe continuity phase dead-load. Same diagnostic saved class names and base-compatible fields on both builds; checks actual clothing identity and visual selection. Not author acceptance."
+}

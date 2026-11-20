@@ -1,0 +1,9 @@
+First-body equipment grip candidates, issue #859.
+
+Anatomy derives from the retained MakeHuman CC0 base through #827/#829.
+See MAKEHUMAN_CC0.txt and UNDERBODY_827.txt. Source provenance, exact
+input hashes and modifications: assets/source/art/grips_859/PROVENANCE.json
+and DESIGN.json in the repository. The original owned Domingo equipment,
+skin atlas and glove textures remain unchanged. New derivatives are finite
+closed-grip meshes and rigid visual attachment fits; no Doom assets are added.
+Author visual acceptance remains pending.

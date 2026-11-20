@@ -1,0 +1,22 @@
+{
+  "issue": 859,
+  "author_accepted": false,
+  "anatomy": "CC0-1.0 derived; see ../underbody_827/PROVENANCE.json and ../domingo_3d_pilot/makehuman/LICENSE.ASSETS.md",
+  "anatomy_upstream_commit": "3c701a8e52f09e69922e8b598d23be2d7dfc49e3",
+  "owned_sources": [
+    "../../../../src/licenses/DOMINGO_3D_PILOT.txt",
+    "../worn_clothing_829/PROVENANCE.json"
+  ],
+  "modifications": [
+    "Derive finger landmarks from retained CC0 topology using the existing #827 hand transform.",
+    "Bake finite closed hand variants using editable construction bones; retain shared wrist coordinates and original native skin weights.",
+    "Fit existing sword and shield rigidly to those grips; no redesigned equipment or new textures.",
+    "Derive the four glove shells from fitted hands while retaining the original #829 offsets and UV coordinates.",
+    "Export all 375 original action samples with compensating attachment transforms to maintain grip contact; all source rig actions and gameplay timings remain unchanged."
+  ],
+  "preserved": [
+    "Every source file/hash listed in DESIGN.json.",
+    "Original default model modules, original garment modules, atlas pixels, all gameplay identities and saved fields."
+  ],
+  "native_notice": "src/licenses/GRIPS_859.txt"
+}

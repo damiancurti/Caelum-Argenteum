@@ -1383,3 +1383,19 @@ assets/validation_v5_17_106/*.json text eol=lf diff
 assets/validation_v5_17_107/** -text -diff
 assets/validation_v5_17_107/*.py text eol=lf diff
 assets/validation_v5_17_107/*.json text eol=lf diff
+
+# Finite first-body equipment grip sources and native evidence (#859).
+assets/source/art/grips_859/*.json text eol=lf
+assets/source/art/grips_859/*.blend -text -diff
+assets/validation_v5_17_108/** -text -diff
+assets/validation_v5_17_108/*.py text eol=lf diff
+assets/validation_v5_17_108/*.json text eol=lf diff
+assets/generators/author_equipment_grips.py text eol=lf
+assets/generators/export_equipment_grips.py text eol=lf
+assets/generators/build_equipment_grip_bindings.py text eol=lf
+src/licenses/GRIPS_859.txt text eol=crlf diff
+# Preserve the byte-pinned native inputs and camera anchors as authored.
+assets/source/art/grips_859/DESIGN.json text eol=crlf diff
+assets/source/art/grips_859/PROVENANCE.json text eol=crlf diff
+assets/source/art/grips_859/*.html text eol=lf
+assets/validation_v5_17_108/grip_anchors.json text eol=crlf diff
