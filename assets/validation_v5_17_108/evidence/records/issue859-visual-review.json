@@ -1,0 +1,394 @@
+{
+  "issue": 859,
+  "directly_viewed": [
+    {
+      "path": "build/issue859-inspect01/right-front.png",
+      "sha256": "1b5278b157e38fd6cdb36cbd572e0a48dd83071efb06138161edb2b9a9099e65",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-inspect01/right-side.png",
+      "sha256": "8d0005eb6deef55a57d500f159ac548d30a98c30d321719754e246389dd61ef1",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-inspect01/left-front.png",
+      "sha256": "80b0ce0abccc8c6e9fbbc5669c4e0fe4c6ca849f8a636a33f0747bfc4b7a6f72",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-inspect01/right-rear.png",
+      "sha256": "8f195c5b9ce154a9dd5d01a427e48f8290acf7618fe3a42871d22d62927a8e37",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-grip-study01/right-front.png",
+      "sha256": "f88570d28a1f2fd752d66e3bf39f88942d1d6483b2fd152dd0fb1e977a170996",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-grip-study01/left-inside.png",
+      "sha256": "2d225d36ca0a37b6fde7a32af09665918b246f887ff4f8a5efeadbf5e6e21cf9",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-grip-study02/right-front.png",
+      "sha256": "76cf9d30348db392d4c0862a51abf0b9124ec8602ebae9bb49619eecdedeceb0",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-grip-study02/left-inside.png",
+      "sha256": "28d76e2f5249610c7b50818c2fd5b8fd687266e2cf92982e7ca009a67381ebb1",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-grip-study03/right-front.png",
+      "sha256": "b622d1c5616411a48ab152fde79a02d7fb9a955486277280c49c718ef4383d40",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-grip-study03/left-inside.png",
+      "sha256": "83292b9e9e7f80b374ba10c87e858516b0d486b7314cdf3949f53ce69bb79ad2",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-grip-study03/left-front.png",
+      "sha256": "a213eb4c6dd765e5d23d2837f9ff74a2340d8ae4c2a6ac9485d58bcf1193e97f",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-grip-study03/right-rear.png",
+      "sha256": "a8353bd2c937edcdf054dad56aab4182da2b1ece0145f08c32098aeda80b69e6",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-grip-study04/right-rear.png",
+      "sha256": "eb085049f8792ab697d2fc1e1601348c421100c8e50d92947f8ea5b64801fe4c",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-grip-study04/left-inside.png",
+      "sha256": "7cba85eb45fcca2508fc2b19523b8966f45145278e8daa4517184c54686cf991",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-grip-study05/right-rear.png",
+      "sha256": "2cbff3eaef3a4b5fcda711bc49372a15a08be039a0129e48bca4e4590b1ac668",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-grip-study05/left-inside.png",
+      "sha256": "73b7b1a83bdc0cea2ea5e55c5262e05dd6e33a5b564f5216ee094de82fc1225c",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-grip-study05/right-front.png",
+      "sha256": "3f9572f8208947b790f568a9f455afea51149cda491d90311d5900ebd2c09147",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-grip-study05/left-front.png",
+      "sha256": "3a7be65817c6830bdd0eeca9a92e0d4862110305eae3081797cb4bb6199077c3",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-native01/run.png",
+      "sha256": "7f6c09d3d54df0e64cc0b8f9f3ec592d2d09f111641a320ac5ed464aa910c880",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-native01/attack.png",
+      "sha256": "3c0df18ad1ab8bb954a2f32d2580fd416687b2a9adfd8ca4e56e93cd30e0605b",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-bare01/grip-front.png",
+      "sha256": "b6569adddab72b2d1b062c49e224147a8fea3b5cf8c699e463d3781d62c1764e",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-bare01/grip-other.png",
+      "sha256": "c5edf20370c0768d15663b2d2ef5300be5e5c4a6e90fdf6cb4216a9ffc76f6db",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-bare02/grip-front.png",
+      "sha256": "26d10b34037673f9d6f3b7d3f3376bf8a7b9b5a9bbc34937811423e0b1b22069",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-bare02/guard-grip.png",
+      "sha256": "f93bed1a9976de2b36d7dbf93ff4995a9f5688a2ce8f5997270cf3eaeaa0dda9",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-bare02/landing.png",
+      "sha256": "dc556e471d6f56e0c4322323b998c1803444fa5c9a315f3de7582aefe901cea0",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-bare02/death.png",
+      "sha256": "8fbd2395811eb688e64e4f95b12b03553397d1e46fb53155d6c56cf90a6fa7cc",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-final01/bare/grip-rear.png",
+      "sha256": "847e6b6d0ef97689b7fdfb6290aa115474d5361e080c922c42546cf33856c2db",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-final01/bare/guard-rear.png",
+      "sha256": "312dadce30a2a2b30f546a64e7a3e4fada56649db4755e40c448ef4ad8b15bbc",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-final02/bare/walk.png",
+      "sha256": "f3616ed9c47dce8e7f10f722bb3e180901b61fc15d8b79adc2fbbe90a5488ffa",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/bare/run.png",
+      "sha256": "61b263f0cf0083cc38f3bf3ec1ff67b9dd8dec690daacbb3538d29bbb6843ff5",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/bare/attack.png",
+      "sha256": "53f69d1a9fc5ce126301070ef4c8283765717259fc9b383a22b9699e4b97f249",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/bare/guard.png",
+      "sha256": "a589ab25c230acf8dcfee600562e869b0c1849ef8014870f48a9d57ddbfc5136",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/bare/jump-air.png",
+      "sha256": "4d170d63dda6df7f36ee584d15e60ebc55dad4d1fe04639ef1bc7f6a511a55b3",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/bare/landing.png",
+      "sha256": "a922074f61458bb8d07652fa9ad96f54e1d61c3b0a73c5f887d451f071b3435b",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/bare/death-side.png",
+      "sha256": "de8c8914e8cee9e3e21a3dc06d630d3cb7c79d7f3c19a2c66e3627a1ae2255a4",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/bare/grip-front.png",
+      "sha256": "4e9c438f6c08858b26a4e05c99ca4bdeb7e7a9e3d46f4668d0b429a96a579923",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/GF/grip-front.png",
+      "sha256": "4424a9189071719b2eeb0f69b2795b6ae2817073555176d040e9d082e862aca7",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/GF/run.png",
+      "sha256": "9ff7f13a1701492289587ce85b997ad0086b42372674c2e8dc7e904ec18599a7",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/GC/grip-front.png",
+      "sha256": "a405614f8617af5bce9142378b1a8b2c94e65764bbfbc4732d55abb94d7b421f",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/GC/run.png",
+      "sha256": "2cc7ed2b4e8d8ce3ab75a6d0423f4d42ddd74d1f08ab63aa04bceec411f5611a",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/GW/grip-front.png",
+      "sha256": "6e0fd71dadfd5ca3f59f95d5b1f63fd25422d59a2882f254cddcd8c652d9bfa0",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/GW/run.png",
+      "sha256": "e672657f77f5d805aa74f8356a39db02cc5790d26de633e0acfc1af4cd3ad3a0",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/GP/grip-front.png",
+      "sha256": "224b0f1076b75fc77acb815a02a8ff46f208ea9d30ee10c860e3da00285dbb5c",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-final02/GP/run.png",
+      "sha256": "96d2fd9a55cde69471ee30a33fd5da683818a2e78b87302d57f27a00ae5c57ca",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-right02/grip-front.png",
+      "sha256": "978895f0453f0fb097a28ead090f58a9d37749204cf347efbd4c1e6c4a9d9c55",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-close-right02/run.png",
+      "sha256": "6d4317e1e86468906f71f2fc7972818bcb7f716deaff75f93948975a1903dda3",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-close-right03/grip-front.png",
+      "sha256": "ec4d76153396805c274f070fb799cbb078df68a7e15e2f3e4c9e8254bd1adc9f",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-close-right03/run.png",
+      "sha256": "b6efc1a1955ca2c1bc7ecc79dd11c00b4b7f8dc2af80a4fcc9e8bba400775663",
+      "final_evidence": false
+    },
+    {
+      "path": "build/issue859-close-right04/grip-front.png",
+      "sha256": "1018ba374751fe4a0f20e904611fb335acca537635553a6ddb3dab2263fac6b6",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-right04/run.png",
+      "sha256": "537a47e4cd029bf2bcdce66e873c46f35cc663521a598bbed043342ee5b92b3f",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-right04/attack.png",
+      "sha256": "3e5831c3381739816430ef5ae6d346018bc1c32b799c0759693613d7de73d21d",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-right04/guard.png",
+      "sha256": "71910b9f3d38ed256e99a0acfe946106f95742b2e319aa72fa0feabae15e88ed",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-right04/jump-air.png",
+      "sha256": "8e05fbfccb9a3deec356c2bf1d1fdfd8ef0ffb5d4bf8c242523f06f378036d4c",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-right04/landing.png",
+      "sha256": "daedc65f8758d292b933e760a6ba1c64c024d8dff794968b189da588af35670d",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-right04/death.png",
+      "sha256": "6785b21327d6d460c2c3ffae2e88d6ee35b7b40ce6b7ffbaf2db448688f74d49",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-bare-left01/grip-front.png",
+      "sha256": "718823e00526540666be35894be494aa3dd1ac6b82bcba115a149c726157844b",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-bare-left01/run.png",
+      "sha256": "2dac1e76a58c01a1acd848de50a49ff13a4bb450805063eb2ac81087c7425df3",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-gf-right01/grip-front.png",
+      "sha256": "48197d928a8098af7258e5eb88ee07de915393be8ca8971782d7821d6d4cb9db",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-gf-right01/run.png",
+      "sha256": "8ed4e730eaaa9cd239c16998b15f4f4a6c080f214a903ac1ceadada42d31756f",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-gc-right01/grip-front.png",
+      "sha256": "59c345973374046494a5a937bddb835ce78738083b1b3f7a1e081bb96bf99c80",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-gc-right01/run.png",
+      "sha256": "efab744cc18a13ce1b51ae49ccb0b2a7149a53872045f7617a26feaa9ec9b6da",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-gw-right01/grip-front.png",
+      "sha256": "eba997dc4213f390a6a1b546e2295bff0920a9bf1cace8222238a71bcdbd2d28",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-gw-right01/run.png",
+      "sha256": "cc33f0f35c70c99fa82c14b44304eb438ebb2fdb5c6452344d57efd228c641ff",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-gp-right01/grip-front.png",
+      "sha256": "79ec3c1f98b78e979258d85bba405842720e0b587bd5ddb1c96bb703be7e2931",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-gp-right01/run.png",
+      "sha256": "50a4ead4069990da7d5dad34b61da26a613c44d8f26be01f627d17abed001044",
+      "final_evidence": true
+    },
+    {
+      "path": "build/issue859-close-right04/guard-grip.png",
+      "sha256": "6523082e88495337234ec4a19743af3fddf29df490a69a7b0e019f8ad2ee3264",
+      "final_evidence": false,
+      "qualification": "Final runtime but oblique close view misses the hand; not contact evidence. The canonical guard.png was directly inspected and is usable."
+    },
+    {
+      "path": "build/issue859-bench-studio-control01/scene.png",
+      "sha256": "7bd7c6fefe19d4205818eb2498f74d248413e677109f2447f261c1e703fe3c41",
+      "final_evidence": true,
+      "qualification": "control of the final paired performance comparison"
+    },
+    {
+      "path": "build/issue859-bench-studio-candidate01/scene.png",
+      "sha256": "702a996ab977a31e2550cfcc52ba26f010da2a0767ac9430d97c97e13813b44d",
+      "final_evidence": true,
+      "qualification": "candidate of the final paired performance comparison"
+    },
+    {
+      "path": "build/issue859-bench-mansion-control01/scene.png",
+      "sha256": "b89de0f40a3707216dc3788c270a41fa7031031f41bde8c2af8e827bef38a5b7",
+      "final_evidence": true,
+      "qualification": "control of the final paired performance comparison"
+    },
+    {
+      "path": "build/issue859-bench-mansion-candidate01/scene.png",
+      "sha256": "4edebb8e77d680c72bcdf1696db11ad6cbd13d47476fa412ac8479f70981a26c",
+      "final_evidence": true,
+      "qualification": "candidate of the final paired performance comparison"
+    },
+    {
+      "path": "build/issue859-bench-sewers-control01/scene.png",
+      "sha256": "778bbfccdd765e4c6eccadb5b3f2c3c3c6149e2ea2b94e986890433d50c7f96c",
+      "final_evidence": true,
+      "qualification": "control of the final paired performance comparison"
+    },
+    {
+      "path": "build/issue859-bench-sewers-candidate01/scene.png",
+      "sha256": "7c17c21fbafaac8ceb325f3fa9b0d45ef446916b227447a2f03e17067e67d2ac",
+      "final_evidence": true,
+      "qualification": "candidate of the final paired performance comparison"
+    },
+    {
+      "path": "build/issue859-bench-city-control01/scene.png",
+      "sha256": "49846a86355af08e28656161af192ea1388af87549e2a939327c1e2a5fc41b4b",
+      "final_evidence": true,
+      "qualification": "control of the final paired performance comparison"
+    },
+    {
+      "path": "build/issue859-bench-city-candidate01/scene.png",
+      "sha256": "10f23c9a01f3fbec3b9da892c8fe20309254e9cac8db4826b0e0c23d06b7fb14",
+      "final_evidence": true,
+      "qualification": "candidate of the final paired performance comparison"
+    }
+  ],
+  "notes": [
+    "Source studies01-04 were rejected; study05 established the final finite-grip geometry before explicit seam freezing and original glove UV retention.",
+    "All prototype01/export01/02/runtimegrips01 native images are rejected final evidence because raw shield topology omitted Solidify back geometry.",
+    "bare01 mistakenly retained native starting gloves; bare02 fixes that fixture case.",
+    "close-right01 aborted in its diagnostic static-array lookup; no image reviewed. The exact engine/compiler cause was not isolated.",
+    "close-right02 and03 passed native checks but were misframed;04 uses literal sampled anchors, CameraHeight0 and the actual level.pixelstretch compensation, verified against GZDoom4.14.2 models.cpp and actorinlines.h.",
+    "Final images retain the source low-poly construction anatomy/flat sampled skin and existing garment, face, hair and death-pose limitations; this does not establish author acceptance of the broader body or #736.",
+    "Additional corrected close views inspected: bare Left idle/run, bare Right attack/guard/jump-air/landing/death, all4 Right glove idle/run. One oblique guard view is explicitly rejected as contact evidence.",
+    "All8 final paired performance images directly inspected: studio equipped player; mansion opening dialogue; dark sewer entrance; city gate. Control uses107 and candidate108."
+  ]
+}

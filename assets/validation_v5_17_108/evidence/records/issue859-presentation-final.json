@@ -1,0 +1,306 @@
+[
+  {
+    "scene": "studio",
+    "kind": "control",
+    "directory": "build/issue859-bench-studio-control01",
+    "presentation": {
+      "pid": 13620,
+      "trace_sha256": "b9fc9db89f86c3ae480f2ce60dac2d122749f01585655a745c35115f9e9dbe2d",
+      "rows": 29689,
+      "scene_presents": 17922,
+      "mean_present_fps": 1020.633983132999,
+      "present_intervals": {
+        "samples": 17921,
+        "mean_ms": 0.97978317058417,
+        "p50_ms": 0.9427000284194946,
+        "p95_ms": 1.2109999656677246,
+        "p99_ms": 1.383099913597107,
+        "max_ms": 8.26199996471405
+      },
+      "native_call_duration": {
+        "samples": 17922,
+        "mean_ms": 0.0862908712482761,
+        "p50_ms": 0.08369994163513184,
+        "p95_ms": 0.12170004844665527,
+        "p99_ms": 0.15839993953704834,
+        "max_ms": 0.7122000455856323
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.57144344729345,
+      "p50_ms": 28.5784,
+      "p95_ms": 29.2559,
+      "p99_ms": 29.502,
+      "max_ms": 29.7451
+    },
+    "pass_lines": 26,
+    "runtime_sha256": "f4b41b9417deb39020fb884357027784bbfc3bafd419af028b34a101cea8a748"
+  },
+  {
+    "scene": "studio",
+    "kind": "candidate",
+    "directory": "build/issue859-bench-studio-candidate01",
+    "presentation": {
+      "pid": 32780,
+      "trace_sha256": "c188d3ba0ff6f16022aba75781fa5f8812514edf3a57f60abb51159e2fc9b882",
+      "rows": 30305,
+      "scene_presents": 18156,
+      "mean_present_fps": 1033.6426279034881,
+      "present_intervals": {
+        "samples": 18155,
+        "mean_ms": 0.9674523602304167,
+        "p50_ms": 0.9301999807357788,
+        "p95_ms": 1.184000015258789,
+        "p99_ms": 1.3616000413894653,
+        "max_ms": 2.0679999589920044
+      },
+      "native_call_duration": {
+        "samples": 18156,
+        "mean_ms": 0.08611742706649707,
+        "p50_ms": 0.08340001106262207,
+        "p95_ms": 0.12209999561309814,
+        "p99_ms": 0.16470003128051758,
+        "max_ms": 0.49609994888305664
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.572165527065525,
+      "p50_ms": 28.576,
+      "p95_ms": 29.2604,
+      "p99_ms": 29.4319,
+      "max_ms": 29.6259
+    },
+    "pass_lines": 26,
+    "runtime_sha256": "7aa0a9c8e11ccf878ce099142b29a5b9fbc3c9d1a03e11f139677ff6287a226e"
+  },
+  {
+    "scene": "mansion",
+    "kind": "control",
+    "directory": "build/issue859-bench-mansion-control01",
+    "presentation": {
+      "pid": 13304,
+      "trace_sha256": "5779ed89e5a8c9cf0b4febfefc6997d3b0fe60605dae102ee2c050e925f1ffdf",
+      "rows": 3876,
+      "scene_presents": 2507,
+      "mean_present_fps": 142.7485613455449,
+      "present_intervals": {
+        "samples": 2506,
+        "mean_ms": 7.0053245410953435,
+        "p50_ms": 6.809999942779541,
+        "p95_ms": 8.797000050544739,
+        "p99_ms": 9.816699981689453,
+        "max_ms": 12.188099980354309
+      },
+      "native_call_duration": {
+        "samples": 2507,
+        "mean_ms": 0.11146226493210064,
+        "p50_ms": 0.10389995574951172,
+        "p95_ms": 0.17130005359649658,
+        "p99_ms": 0.21599996089935303,
+        "max_ms": 0.31939995288848877
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.576149430199433,
+      "p50_ms": 28.0897,
+      "p95_ms": 33.7249,
+      "p99_ms": 34.8815,
+      "max_ms": 36.6197
+    },
+    "pass_lines": 26,
+    "runtime_sha256": "f4b41b9417deb39020fb884357027784bbfc3bafd419af028b34a101cea8a748"
+  },
+  {
+    "scene": "mansion",
+    "kind": "candidate",
+    "directory": "build/issue859-bench-mansion-candidate01",
+    "presentation": {
+      "pid": 576,
+      "trace_sha256": "d8575bba0e70a3325d47b6d57fb10b0eb1020dc0f5ffcb40cb0c05fc07c3589f",
+      "rows": 3918,
+      "scene_presents": 2549,
+      "mean_present_fps": 145.07902536496616,
+      "present_intervals": {
+        "samples": 2548,
+        "mean_ms": 6.892795133440985,
+        "p50_ms": 6.680299997329712,
+        "p95_ms": 8.483800053596497,
+        "p99_ms": 9.349699974060059,
+        "max_ms": 10.994899988174438
+      },
+      "native_call_duration": {
+        "samples": 2549,
+        "mean_ms": 0.10990808126083679,
+        "p50_ms": 0.10310006141662598,
+        "p95_ms": 0.16300010681152344,
+        "p99_ms": 0.20940005779266357,
+        "max_ms": 0.541100025177002
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.56921923076923,
+      "p50_ms": 28.068,
+      "p95_ms": 33.4234,
+      "p99_ms": 34.7357,
+      "max_ms": 37.0304
+    },
+    "pass_lines": 26,
+    "runtime_sha256": "7aa0a9c8e11ccf878ce099142b29a5b9fbc3c9d1a03e11f139677ff6287a226e"
+  },
+  {
+    "scene": "sewers",
+    "kind": "control",
+    "directory": "build/issue859-bench-sewers-control01",
+    "presentation": {
+      "pid": 12076,
+      "trace_sha256": "a7a29ae67a9eb0debcebf413e584055cc0676ec6e929db8d39c200da662d4e83",
+      "rows": 5086,
+      "scene_presents": 3160,
+      "mean_present_fps": 179.9039374472671,
+      "present_intervals": {
+        "samples": 3159,
+        "mean_ms": 5.558522032310254,
+        "p50_ms": 5.460799932479858,
+        "p95_ms": 7.054400086402893,
+        "p99_ms": 8.130599975585938,
+        "max_ms": 39.30429995059967
+      },
+      "native_call_duration": {
+        "samples": 3160,
+        "mean_ms": 0.09749465192420573,
+        "p50_ms": 0.09259998798370361,
+        "p95_ms": 0.13969993591308594,
+        "p99_ms": 0.19169998168945312,
+        "max_ms": 0.5619999170303345
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.574317663817663,
+      "p50_ms": 28.6545,
+      "p95_ms": 32.4676,
+      "p99_ms": 33.9086,
+      "max_ms": 46.6451
+    },
+    "pass_lines": 26,
+    "runtime_sha256": "f4b41b9417deb39020fb884357027784bbfc3bafd419af028b34a101cea8a748"
+  },
+  {
+    "scene": "sewers",
+    "kind": "candidate",
+    "directory": "build/issue859-bench-sewers-candidate01",
+    "presentation": {
+      "pid": 44604,
+      "trace_sha256": "1f66a9b212c5b3368bd778fe3a358ada846313243ed325405befe43aa0136a1a",
+      "rows": 5134,
+      "scene_presents": 3174,
+      "mean_present_fps": 180.70762028646445,
+      "present_intervals": {
+        "samples": 3173,
+        "mean_ms": 5.533800945498385,
+        "p50_ms": 5.355100035667419,
+        "p95_ms": 7.266599893569946,
+        "p99_ms": 8.62089991569519,
+        "max_ms": 38.32420003414154
+      },
+      "native_call_duration": {
+        "samples": 3174,
+        "mean_ms": 0.09807416392935096,
+        "p50_ms": 0.09210002422332764,
+        "p95_ms": 0.14979994297027588,
+        "p99_ms": 0.2128000259399414,
+        "max_ms": 0.4010000228881836
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.569767094017095,
+      "p50_ms": 28.5804,
+      "p95_ms": 32.3917,
+      "p99_ms": 33.8584,
+      "max_ms": 46.0603
+    },
+    "pass_lines": 26,
+    "runtime_sha256": "7aa0a9c8e11ccf878ce099142b29a5b9fbc3c9d1a03e11f139677ff6287a226e"
+  },
+  {
+    "scene": "city",
+    "kind": "control",
+    "directory": "build/issue859-bench-city-control01",
+    "presentation": {
+      "pid": 15656,
+      "trace_sha256": "d869d157fcbb4fc5af54ce3a42c8609fe275e2d9c2d1dc727645fc0f362318b2",
+      "rows": 2908,
+      "scene_presents": 1788,
+      "mean_present_fps": 101.75101076710324,
+      "present_intervals": {
+        "samples": 1787,
+        "mean_ms": 9.827912199210374,
+        "p50_ms": 9.679199934005737,
+        "p95_ms": 11.503999948501587,
+        "p99_ms": 12.930800080299377,
+        "max_ms": 15.399500012397766
+      },
+      "native_call_duration": {
+        "samples": 1788,
+        "mean_ms": 0.1711336694974494,
+        "p50_ms": 0.1678999662399292,
+        "p95_ms": 0.23460006713867188,
+        "p99_ms": 0.29840004444122314,
+        "max_ms": 0.691100001335144
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.576049145299145,
+      "p50_ms": 28.7606,
+      "p95_ms": 35.1341,
+      "p99_ms": 36.8685,
+      "max_ms": 38.1536
+    },
+    "pass_lines": 26,
+    "runtime_sha256": "f4b41b9417deb39020fb884357027784bbfc3bafd419af028b34a101cea8a748"
+  },
+  {
+    "scene": "city",
+    "kind": "candidate",
+    "directory": "build/issue859-bench-city-candidate01",
+    "presentation": {
+      "pid": 14168,
+      "trace_sha256": "bc8ede6d5d25d1ab7788b70e09360c33c3180b31f5fc4089ed977f5f3bc08141",
+      "rows": 2751,
+      "scene_presents": 1716,
+      "mean_present_fps": 97.72088736815252,
+      "present_intervals": {
+        "samples": 1715,
+        "mean_ms": 10.233226763819815,
+        "p50_ms": 10.144200086593628,
+        "p95_ms": 11.8610999584198,
+        "p99_ms": 12.906599998474121,
+        "max_ms": 16.99119997024536
+      },
+      "native_call_duration": {
+        "samples": 1716,
+        "mean_ms": 0.17679854227112723,
+        "p50_ms": 0.1753000020980835,
+        "p95_ms": 0.2379000186920166,
+        "p99_ms": 0.2804999351501465,
+        "max_ms": 0.6517000198364258
+      }
+    },
+    "simulation": {
+      "samples": 702,
+      "mean_ms": 28.577547578347577,
+      "p50_ms": 29.3302,
+      "p95_ms": 34.4971,
+      "p99_ms": 37.2792,
+      "max_ms": 39.7687
+    },
+    "pass_lines": 26,
+    "runtime_sha256": "7aa0a9c8e11ccf878ce099142b29a5b9fbc3c9d1a03e11f139677ff6287a226e"
+  }
+]

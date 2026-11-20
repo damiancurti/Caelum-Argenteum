@@ -353,6 +353,16 @@ Twenty comparison views, six cohort scenes and a walking viewer were inspected.
 Measured limits, failed initial compile and raw presentation samples remain in
 assets/validation_v5_17_95/evidence/SUMMARY.json. Author acceptance is separate.
 
+#859 recurrence (CODE-VERIFIED and ENGINE-VERIFIED, 2026-11-19): a grip exporter
+used raw topology with evaluated positions. That omitted25 vertices/72 triangles
+of the shield's Solidify back despite passing native pose assertions. Compare
+serialized counts, UVs and expected module byte lengths against the retained
+reference, and derive topology/UVs/positions from the same evaluated mesh. The
+corrected shield restores1,748 vertices/2,124 triangles; all eight finite modules
+retain their original budgets and independently rebuilt exports are identical.
+Evidence: assets/validation_v5_17_108. Native screenshots alone cannot establish
+complete modifier output; source arithmetic alone cannot verify serialized data.
+
 ## CA-KP-253 - Nearest-surface weights can attach clothing to unrelated limbs
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #829, 2026-11-18.

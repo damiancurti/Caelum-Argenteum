@@ -1,6 +1,23 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.107** - 2026-11-19.
+Documentation version: **5.17.108** - 2026-11-19.
+
+## 5.17.108 - Fit first-body hands and retained equipment across native poses (#859)
+
+Full project validation passes with no errors; the generated document index is current.
+
+The finite #859 grip correction is implemented for the opt-in equipped
+reference body: two hands, four glove variants and the retained sword/shield.
+All original assets/default presentation and equipment gameplay stay intact.
+Independent exports match, model/frame budgets are preserved and native
+equipment/save/reversal checks pass. HISTORY records exact test counts,
+rejected evidence, measurements and limits; assets/validation_v5_17_108 retains
+the artifacts. CA859-GRIP-01 remains pending consolidated author acceptance.
+
+This completes this focused attachment implementation, not the wider character,
+equipment, scenery or performance batch. Other bodies/species, first-person
+equipment and unauthored coverage remain under their parent issues. #736 visual
+approval and all outstanding author checks remain deferred to the final session.
 
 ## 5.17.107 - Bind the opt-in first-body wardrobe to owned clothing (#857)
 

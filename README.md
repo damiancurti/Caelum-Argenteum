@@ -6,14 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.107.** Obtain and update the complete repository,
+**Current release: 5.17.108.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
-#857 adds a default-off first-body wardrobe driven by actual equipped clothing.
-Native ownership/save/hub/reversal checks and corrected frame bindings are
-recorded in docs/HISTORY.md and assets/validation_v5_17_107. Item-specific grips
-continue in #859; character conversion and consolidated author acceptance remain
-pending. Existing default presentation is retained.
+#859 fits closed hands and four glove variants to the retained sword/shield
+across the first-body candidate's native poses. Deterministic exports,
+equipment/save/reversal evidence and presentation measurements are recorded in
+docs/HISTORY.md and assets/validation_v5_17_108. Gallery:
+assets/source/art/grips_859/review.html. The #857 equipment authority and default
+presentation remain unchanged. Broader work and consolidated author review
+remain pending.
 
 #855 fixes the route-induced recognition loss diagnosed in #853: demon breath
 rejects technical route markers before changing visual evidence. Native checks

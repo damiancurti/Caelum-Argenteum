@@ -1,6 +1,33 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.107** - 2026-11-19.
+Documentation version: **5.17.108** - 2026-11-19.
+
+## 5.17.108 - Fit first-body hands and retained equipment across native poses (#859)
+
+Eight separate MD3 variants provide closed left/right hands, GF/GC/GW/GP
+gloves and rigidly fitted retained sword/shield for the opt-in #857 wardrobe.
+The original modules, textures and editable sources remain unchanged. Source,
+visual fitting data and provenance: assets/source/art/grips_859. The canonical
+Blender4.5.3 container is retained; independently rebuilt authoring sources
+produce byte-identical native exports. This does not claim identical .blend
+container bytes across saves. The three assets/generators/*equipment_grip*
+tools author, export and bind the variants; native evidence is in
+assets/validation_v5_17_108. The gallery links directly to final native captures.
+
+Finger landmarks come from the retained CC0 anatomy. Editable helper bones
+close the fingers around the existing handles; shared wrist positions and
+native rig weights are retained. Gloves use the original shell offsets and UVs.
+All375 original samples/24 actions keep their timing. Exported attachment
+transforms compensate the independent equipment rotation, including running.
+All eight files retain their original vertex/triangle counts, UVs and byte
+lengths. The shield includes its evaluated Solidify back geometry. No extra
+runtime actor, texture, model slot or gameplay rule is introduced.
+
+This is a finite reference-body grip candidate. Flat construction skin, angular
+hands/wrist shading, original clothing/face/hair and death-pose limits remain
+visible; it is not final skin, other weapons, first-person equipment, other
+bodies/species or approval of #736. Review CA859-GRIP-01 in the consolidated
+author session. Existing default presentation is unchanged.
 
 ## 5.17.107 - Bind the opt-in first-body wardrobe to owned clothing (#857)
 
