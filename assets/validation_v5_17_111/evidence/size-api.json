@@ -1,0 +1,12 @@
+{
+  "engine": "GZDoom4.14.2",
+  "source": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/scripting/interface/vmnatives.cpp",
+  "source_sha256": "dabe4747f902e2cd3e43734d437a1798eea54925cc2ed8b22a22367c463f53fe",
+  "lines": [
+    454,
+    510
+  ],
+  "finding": "GetTextureSize/GetSize rounds GetDisplayWidth/Height; GetScaledSize returns the same display dimensions as doubles. Neither is raw PNG texel size.",
+  "archive_attempt": "The first archive assertion expected512 from GetSize; it failed before any evidence was copied. Corrected to128 display dimensions; PNG headers/provenance establish512 texels.",
+  "native_change": "Portable fixture log label raw renamed display_int only; original executed probes/logs retained. No native behavior changed and no rerun required for a diagnostic label."
+}

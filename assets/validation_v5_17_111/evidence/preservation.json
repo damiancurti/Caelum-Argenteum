@@ -1,0 +1,28 @@
+{
+  "issue": 866,
+  "passed": true,
+  "runtime_sha256": "8759722962a6bee612d347b671610045b6aee59f447af029a6ef83963d72c5c4",
+  "baseline_sha256": "1a0b1348399d3afe0e84418e54dd9c5b012fee17756eb57ccaf2faad5d30fad5",
+  "overlay_sha256": "4c5ce9a64ba18f579cc589466db3dfed0421bcefbbc92ac301f68ebe354d2a31",
+  "runtime_members": 18767,
+  "changed": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "only_release_diagnostics": true,
+  "overlay_members": 9,
+  "overlay_deterministic": true,
+  "source_files_verified": 27,
+  "reference_matches_current_png": {
+    "CMEX01.png": true,
+    "CMEX04.png": true,
+    "CMGR01.png": true,
+    "CMGR02.png": true,
+    "CMST01.png": true,
+    "CMST02.png": true,
+    "CMTB04.png": true,
+    "CMWD01.png": true
+  },
+  "all_map_bytes_preserved": true,
+  "production_art_models_light_collision_gameplay_saves_unchanged": true
+}

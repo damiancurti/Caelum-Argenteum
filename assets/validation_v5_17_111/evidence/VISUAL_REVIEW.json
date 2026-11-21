@@ -1,0 +1,474 @@
+{
+  "issue": 866,
+  "inspected": [
+    "exports/CMEX01.png",
+    "exports/CMEX04.png",
+    "exports/CMST01.png",
+    "exports/CMST02.png",
+    "exports/CMWD01.png",
+    "exports/CMTB04.png",
+    "exports/CMGR01.png",
+    "exports/CMGR02.png",
+    "lab04/control/CMEX01.png",
+    "lab04/candidate/CMEX01.png",
+    "lab04/control/CMEX04.png",
+    "lab04/candidate/CMEX04.png",
+    "map0201/control/justice.png",
+    "map0201/candidate/justice.png",
+    "map0301/control/port.png",
+    "map0301/candidate/port.png",
+    "map0301/control/street.png",
+    "map0301/candidate/street.png",
+    "map0301/control/factory.png",
+    "map0301/candidate/factory.png",
+    "lab04/control/CMST01.png",
+    "lab04/candidate/CMST01.png",
+    "lab04/control/CMST02.png",
+    "lab04/candidate/CMST02.png",
+    "lab04/control/CMWD01.png",
+    "lab04/candidate/CMWD01.png",
+    "lab04/control/CMTB04.png",
+    "lab04/candidate/CMTB04.png",
+    "lab04/control/CMGR01.png",
+    "lab04/candidate/CMGR01.png",
+    "lab04/control/CMGR02.png",
+    "lab04/candidate/CMGR02.png",
+    "map0102/control/garden.png",
+    "map0102/candidate/garden.png",
+    "map0102/control/exterior.png",
+    "map0102/candidate/exterior.png",
+    "map0102/control/interior.png",
+    "map0102/candidate/interior.png",
+    "street01/control/street_outward.png",
+    "street01/candidate/street_outward.png"
+  ],
+  "notes": [
+    "Eight provided512x512 exports and32 named native captures explicitly viewed. Native comparison captures are1520x825 despite1280x720 command-line request.",
+    "Control/candidate camera framing matches. Added stone/wood/plaster detail is visible; grass remains dense and high-contrast. Repeated colour/erosion motifs remain visible at room scale; no universal seamlessness or artistic acceptance is claimed.",
+    "Mansion window composites/gable, city factory brick, port vehicles, props and lighting are visibly retained. Interior plank floor and garden grass change. City street label initially points into factory threshold; the separate street_outward view covers the open road.",
+    "Laboratory applies each material to floor/wall/ceiling solely to expose repeats; this does not propose grass walls or tile floors for campaign use.",
+    "MAP02 direct stone consumer is the existing Justice room. Camera teleport does not establish ordinary locked-room access or full-map walkthrough.",
+    "Ten movement screenshots retained but not explicitly visually reviewed; native logged movement and clearance are checked separately."
+  ],
+  "performance": {
+    "inspected": [
+      "mansion-control01",
+      "mansion-candidate01",
+      "justice-control01",
+      "justice-candidate01",
+      "city-control01",
+      "city-candidate01",
+      "ground-control01",
+      "ground-candidate01",
+      "siege-control01",
+      "siege-candidate01"
+    ],
+    "notes": [
+      "All ten native performance captures explicitly viewed; each1280x720.",
+      "Matched framing: mansion opening dialogue and garden; actual MAP02 Justice stone walls/floor/ceiling; port transport frontage; ground-facing paving; normal-siege gate/ram. Diagnostic text overlays retained.",
+      "The candidate changes material detail while the retained actors, props, world arrangement and lighting remain recognizable. Full artistic acceptance and gameplay review remain pending."
+    ]
+  },
+  "inspected_image_metadata": [
+    {
+      "file": "assets/source/art/environment_remasters_866/exports/CMEX01.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "54b60ae5b4dda073bc6c2cb56da6b0666a72556059a3dc3d4eba895e57e7ce98"
+    },
+    {
+      "file": "assets/source/art/environment_remasters_866/exports/CMEX04.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "e42da1a288e1511a84ab0581dfe7e3c42bc3e8a74b23e4c440428402a4b607ec"
+    },
+    {
+      "file": "assets/source/art/environment_remasters_866/exports/CMST01.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "5a99180c563a1f45e4ee78accf8507ab39441076aa90eabb34f91992e4039297"
+    },
+    {
+      "file": "assets/source/art/environment_remasters_866/exports/CMST02.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "ac0874f6e51d41cc3f026e2be415c3cbc495a539a3c904befbfe433091205f87"
+    },
+    {
+      "file": "assets/source/art/environment_remasters_866/exports/CMWD01.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "f93949046493c66aa77cb4015ebfa955dff539192009b74fbb4ceb13704dd1fc"
+    },
+    {
+      "file": "assets/source/art/environment_remasters_866/exports/CMTB04.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "972fe9427805fd34daa761326f773e93e6cb1d42cf0aa71264d7d3de5adda0aa"
+    },
+    {
+      "file": "assets/source/art/environment_remasters_866/exports/CMGR01.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "1f9cef646e051960b7277aa88b0d7ea41f7fca9d6212fcd728cff5c027492493"
+    },
+    {
+      "file": "assets/source/art/environment_remasters_866/exports/CMGR02.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "555467b7232bd8a6bfa792a56e972ca20c8678e5a4296400e8c54b39970f08b3"
+    },
+    {
+      "file": "build/issue866-lab04/control/CMEX01.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "34c5777cf2d6ec1e11daffd931525663898d6bfeb54f409d29b4b11ff5a567f1"
+    },
+    {
+      "file": "build/issue866-lab04/candidate/CMEX01.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "7b5e76638daa978539765b51ded291938fbe8b2d3f98846d742fff91bec5957d"
+    },
+    {
+      "file": "build/issue866-lab04/control/CMEX04.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "7f3fa66e8a8b8a3b72ca18b66483cbc9f247cf4f4a99f04da42a7dd2e3beb76c"
+    },
+    {
+      "file": "build/issue866-lab04/candidate/CMEX04.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "d357bcff5355b1bd61e2da54fda9053127b82824b350a454a5616df1c0d5fd4a"
+    },
+    {
+      "file": "build/issue866-map0201/control/justice.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "ab7ac05ae449938903e64766a5b234573993e2c32d6f011497f6da4a420c9e93"
+    },
+    {
+      "file": "build/issue866-map0201/candidate/justice.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "4120481904b693fc79bab7ad160cba72e0896f8acc55aaa7ce980fd46b1190e7"
+    },
+    {
+      "file": "build/issue866-map0301/control/port.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "710f19839b55e455037e0fc066a4f89bad0a105d44ae5e44f1e04ed70c3ad809"
+    },
+    {
+      "file": "build/issue866-map0301/candidate/port.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "a834df6c322d2c195bb3a0948886681c5e110677f8c26bda4b99e064d96294bb"
+    },
+    {
+      "file": "build/issue866-map0301/control/street.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "65a2581400236eb2dfd88f6125737389eb2849efcd04998bbd5a851ab26c88e0"
+    },
+    {
+      "file": "build/issue866-map0301/candidate/street.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "802c43f91c58be6b3e4afeccbe305ceb366ca6e20ed3f6ebf6e5c241f1de347a"
+    },
+    {
+      "file": "build/issue866-map0301/control/factory.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "9fafd7c350a4a73e6d476e6c61203fc00b3c3148fdf0f155648a170a7454cc81"
+    },
+    {
+      "file": "build/issue866-map0301/candidate/factory.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "b2e411a3ae69c16471e8ba7a4aabacacb396fca03bcbb7275a125c1dbe4aec21"
+    },
+    {
+      "file": "build/issue866-lab04/control/CMST01.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "8c5fff82738eb2638a92237a408c4d7fde8f3d026f66abc7687f8f33b5b1f5f4"
+    },
+    {
+      "file": "build/issue866-lab04/candidate/CMST01.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "eee9f40d02a38b7c38778d13c82697b98a479e60d152f976d6a96493fabee141"
+    },
+    {
+      "file": "build/issue866-lab04/control/CMST02.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "ec4e02ae9c781fb42253971249a8b711b35a486c3c4e2ef3372f4573e6161edb"
+    },
+    {
+      "file": "build/issue866-lab04/candidate/CMST02.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "cb275c1b38241daa946b3355dcd939eb84951717f0d045e8d8bce10504f74336"
+    },
+    {
+      "file": "build/issue866-lab04/control/CMWD01.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "9eff664280aba12ad42454f2cfe7243b229fd71eacf2081c3e614a51ba880bf1"
+    },
+    {
+      "file": "build/issue866-lab04/candidate/CMWD01.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "18c8cb99c8d10f3be8df356aa278d62a082ebdd94676b63b85ecec5ba900c8f7"
+    },
+    {
+      "file": "build/issue866-lab04/control/CMTB04.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "58059d768085b363792b3502ce1ab9bc6b3a49706aa234c7bfbecd86d0be315e"
+    },
+    {
+      "file": "build/issue866-lab04/candidate/CMTB04.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "0660dc6970e7a59310c017527a378bcb0d942a01ce4bd80037d0a38837e3ce07"
+    },
+    {
+      "file": "build/issue866-lab04/control/CMGR01.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "c44b7ef7797ce3064ff4ec21478d67f0b15b06647c3663aad2f6ffeb4cd859a2"
+    },
+    {
+      "file": "build/issue866-lab04/candidate/CMGR01.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "988cfc3fbcc921de2471c0288b232b029ea61f469023b0664385ba7b68fbd619"
+    },
+    {
+      "file": "build/issue866-lab04/control/CMGR02.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "62c10058ab7063139cf0988d8f447b10afc506f0c6f7cba01fb680114dda604f"
+    },
+    {
+      "file": "build/issue866-lab04/candidate/CMGR02.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "bc769ee724818f9af308d8a3ebe7816af57b5492b57fb8533060a01243ca3dab"
+    },
+    {
+      "file": "build/issue866-map0102/control/garden.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "a51b86318f597abbd558365b6ba838ce34623fe9a18941d72c49a4f88fca2eaa"
+    },
+    {
+      "file": "build/issue866-map0102/candidate/garden.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "9695d85a235fe32d86ab03f4e8612dc2acbbebbaeb9f96b6cf9b68e61cfe45f2"
+    },
+    {
+      "file": "build/issue866-map0102/control/exterior.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "e35be10ca71710191bc03aef06ad1fef92c20bb526cb6762961d1cea6efead71"
+    },
+    {
+      "file": "build/issue866-map0102/candidate/exterior.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "88769be6056965b0922372ef0d18a0a43ca6d8933fabead23706e1ae5d7759b4"
+    },
+    {
+      "file": "build/issue866-map0102/control/interior.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "95db1710e7f8d3069c390a31ffb5612612f2c48e3a5a18ed76ec8e7cb0646210"
+    },
+    {
+      "file": "build/issue866-map0102/candidate/interior.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "e0fd85e0f5cfb451dccdb1685a3148e53ab61d2bae1672d6860d5befb22e9109"
+    },
+    {
+      "file": "build/issue866-street01/control/street_outward.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "7f2bd9747645b6d1e6bbfa34c0a460a447ba3b0d61844affe5442e7578df13a3"
+    },
+    {
+      "file": "build/issue866-street01/candidate/street_outward.png",
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "fdca71f6ca340e6638efe59adfbbafddbf9063f0b3e393ed3cd6dd5152e33e86"
+    },
+    {
+      "file": "build/v516/barracas-profile-20261121-022302-322932/peer0/scene.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "b8ea9c4d0a06ba9941952e16866752633d6258dcac9fbb056a9e500fe2f8c278"
+    },
+    {
+      "file": "build/v516/barracas-profile-20261121-022345-892682/peer0/scene.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "41d1cb498be22689dd9f9196be718b38a987caca9f4637b861f628944255bc96"
+    },
+    {
+      "file": "build/v516/barracas-profile-20261121-022429-478335/peer0/scene.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "f94e33f21b0f4c17e999cc1f08954e9082f765519ec5857915ae28c5390d9afb"
+    },
+    {
+      "file": "build/v516/barracas-profile-20261121-022513-359501/peer0/scene.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "7da3dfef1e05e380aa782a9ae7f270c1cc790faba98e978a5dc04445d787498d"
+    },
+    {
+      "file": "build/v516/barracas-profile-20261121-022557-254934/peer0/scene.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "a914bbf79035f115f1202b1f63334b3e8950a6e1138e9dab68b774092a450beb"
+    },
+    {
+      "file": "build/v516/barracas-profile-20261121-022641-630170/peer0/scene.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "5d5b7a0b03c4ef88064844f425cfeea82587401af3b7fa62e388cf791edfd967"
+    },
+    {
+      "file": "build/v516/barracas-profile-20261121-022726-036898/peer0/scene.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "3156c234ccf8e2437e12a82d9ec5fea7b563b6b34da3b7cda05132e3384b2a9f"
+    },
+    {
+      "file": "build/v516/barracas-profile-20261121-022810-388006/peer0/scene.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "10797ee252bb9175a40866bc0f24162d9e3dfe6bc8896957a61715ce9b1f2839"
+    },
+    {
+      "file": "build/v516/barracas-profile-20261121-022854-792272/peer0/scene.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "89ca4f1d736c2063e8c22e2404f0d91e1e765853080822cf1b6ccd43416d435b"
+    },
+    {
+      "file": "build/v516/barracas-profile-20261121-023113-586485/peer0/scene.png",
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "8cbca27b7082ac2a9159754ba4b1120bbccdf7f74368ceb62e08c68f3321c8f0"
+    }
+  ]
+}

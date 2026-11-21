@@ -1418,3 +1418,15 @@ assets/validation_v5_17_110/*.py text eol=lf diff
 assets/validation_v5_17_110/*.json text eol=lf diff
 assets/validation_v5_17_110/*.txt text eol=lf diff
 assets/validation_v5_17_110/*.html text eol=lf diff
+
+# Exact author source bytes and isolated material-review evidence (#866).
+assets/source/art/environment_remasters_866/** -text -diff
+assets/source/art/environment_remasters_866/INVENTORY.json text eol=lf diff
+assets/source/art/environment_remasters_866/PROVENANCE.json text eol=lf diff
+assets/source/art/environment_remasters_866/VIEWS.json text eol=lf diff
+assets/source/art/environment_remasters_866/*.html text eol=lf diff
+assets/generators/build_environment_remaster_review.py text eol=lf diff
+assets/validation_v5_17_111/** -text -diff
+assets/validation_v5_17_111/*.py text eol=lf diff
+assets/validation_v5_17_111/*.json text eol=lf diff
+assets/validation_v5_17_111/*.html text eol=lf diff
