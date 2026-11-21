@@ -1,0 +1,12 @@
+{
+  "issue": 881,
+  "members": 18767,
+  "identical_members": 18765,
+  "changed": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "old_runtime_sha256": "d6d5df5588d3185021a6931cc8b886e5d9f8ce05bab032f3e53dacd03040eb0d",
+  "new_runtime_sha256": "bb694304cd7b16b18d92a329d294b0eafac95dd493b789e4d83804298ffe31e2",
+  "qualification": "Two release log labels only; every gameplay, map, model, texture, placement and state-layout byte remains identical to118."
+}

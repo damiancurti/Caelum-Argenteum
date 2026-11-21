@@ -1,0 +1,61 @@
+{
+  "issue": 881,
+  "label": "sewer-candidate01",
+  "camera": "main_horizontal",
+  "directory": "build/v516/vault-profile-20261121-083945-660219",
+  "runtime_sha256": "bb694304cd7b16b18d92a329d294b0eafac95dd493b789e4d83804298ffe31e2",
+  "overlays": [
+    {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue881-combined01\\vaults.pk3",
+      "sha256": "693161894176086f541c13677c8e116dced7ea93e41638f929af6f8bac3a3074"
+    }
+  ],
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "states": [
+    "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+    "CA435PERF STATE slot=0 health=1248 pos=768.000000,-3104.000000,-0.000000",
+    "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+    "CA435PERF STATE slot=0 health=1248 pos=768.000000,-3104.000000,-0.000000"
+  ],
+  "census": [
+    "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+    "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+  ],
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 28.570117857142858,
+    "p95_ms": 33.3633,
+    "p99_ms": 34.9837,
+    "max_ms": 46.0311
+  },
+  "presentation": {
+    "pid": 19120,
+    "trace_sha256": "ffd4c4e53877583123be1de8941bc53d9567ee90f05f7822e7ffe580175b6ddb",
+    "rows": 4832,
+    "scene_presents": 2611,
+    "mean_present_fps": 148.5337609302961,
+    "present_intervals": {
+      "samples": 2610,
+      "mean_ms": 6.73247613025351,
+      "p50_ms": 6.74779999256134,
+      "p95_ms": 8.43180000782013,
+      "p99_ms": 9.206000089645386,
+      "max_ms": 40.721699953079224
+    },
+    "native_call_duration": {
+      "samples": 2611,
+      "mean_ms": 0.08327185107756739,
+      "p50_ms": 0.07440006732940674,
+      "p95_ms": 0.1317000389099121,
+      "p99_ms": 0.1782999038696289,
+      "max_ms": 0.54830002784729
+    }
+  }
+}

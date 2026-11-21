@@ -1,0 +1,56 @@
+{
+  "issue": 881,
+  "label": "sewer-control01",
+  "camera": "main_horizontal",
+  "directory": "build/v516/vault-profile-20261121-083901-460081",
+  "runtime_sha256": "bb694304cd7b16b18d92a329d294b0eafac95dd493b789e4d83804298ffe31e2",
+  "overlays": [],
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "states": [
+    "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+    "CA435PERF STATE slot=0 health=1248 pos=768.000000,-3104.000000,-0.000000",
+    "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+    "CA435PERF STATE slot=0 health=1248 pos=768.000000,-3104.000000,-0.000000"
+  ],
+  "census": [
+    "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+    "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+  ],
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 28.57209142857143,
+    "p95_ms": 33.5424,
+    "p99_ms": 34.6325,
+    "max_ms": 48.853
+  },
+  "presentation": {
+    "pid": 13056,
+    "trace_sha256": "743f6cec94859a042925015c630c8363e5e8132a7f576968b11b625184e404da",
+    "rows": 5062,
+    "scene_presents": 2754,
+    "mean_present_fps": 156.61231531002372,
+    "present_intervals": {
+      "samples": 2753,
+      "mean_ms": 6.385193897558047,
+      "p50_ms": 6.258700013160706,
+      "p95_ms": 7.682500004768372,
+      "p99_ms": 8.517799973487854,
+      "max_ms": 41.7635999917984
+    },
+    "native_call_duration": {
+      "samples": 2754,
+      "mean_ms": 0.07950628171732396,
+      "p50_ms": 0.07190001010894775,
+      "p95_ms": 0.12059998512268066,
+      "p99_ms": 0.16210007667541504,
+      "max_ms": 0.7574000358581543
+    }
+  }
+}

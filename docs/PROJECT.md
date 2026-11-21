@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.118** - 2026-11-21.
+Documentation version: **5.17.119** - 2026-11-21.
+
+## 5.17.119 - Inventory and combine the environment review (#881, #463)
+
+A source-backed inventory distinguishes existing furniture, verified visual
+proposals and remaining environment finish. A deterministic private review combines
+#866 remasters, #878 joinery and optional #875 sewer vaults on the corrected #879
+runtime. Eight native view phases and ten paired frame/tic windows are retained.
+The default maps/art remain unchanged. The final author session will compare these
+options; successful engine checks do not approve their style or finish all #463.
+Verified gaps include roof tiles on interior ceiling undersides and unrecognizable
+municipal office/archive furnishing. Street/lighting/moisture detail, siege fluency,
+body/style decisions and unauthored progression remain open.
 
 ## 5.17.118 - Keep large house facades visible from nearby streets (#879)
 

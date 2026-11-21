@@ -1,6 +1,20 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.17.118** - 2026-11-21.
+Documentation version: **5.17.119** - 2026-11-21.
+
+## 5.17.119 - Inventory and combine the environment review (#881, #463)
+
+The #881 gallery compares existing mansion grounds, private house rooms, municipal
+and workshop approaches/interiors, sewer entrance/junction/channel/refuge, main
+axes, maintenance gate, service passage and the existing return-service center.
+Camera coordinates derive from retained layout/room data; none is a new gameplay
+placement. The four source-map hashes and original facade bytes are retained.
+
+The civic layout describes office/archive/courtyard use with the retained public
+shop identity. Inspection finds the courtyard but no clearly delineated/furnished
+office or archive in the sampled perimeter. This discrepancy remains explicit
+finish work. Interior roof-tile reuse also remains; no geometry, furniture scale,
+vendor identity, entrance or narrative assignment is silently changed to hide it.
 
 ## 5.17.118 - Keep large house facades visible from nearby streets (#879)
 

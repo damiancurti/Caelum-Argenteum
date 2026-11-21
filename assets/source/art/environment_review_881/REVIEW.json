@@ -1,0 +1,80 @@
+{
+  "issue": 881,
+  "parent_issue": 463,
+  "release": "5.17.119",
+  "author_acceptance": false,
+  "inventory": "INVENTORY.json",
+  "gallery": "../../../validation_v5_17_119/review.html",
+  "scope": "Source inventory and private composition of existing proposals. No new prop, pixel, actor placement, production geometry or save migration.",
+  "coverage": [
+    {
+      "area": "Owned furniture and fixtures",
+      "existing": "17 item/body furniture source models and55 owned OBJ resources across14 prop families. House preparation already supplies dining table/chairs, bed, chest and bathroom fixtures; workshop/refuge stations are visible in native captures.",
+      "evidence": ["assets/source/art/inventory_models_647/furniture/DESIGN.json", "src/caelum/world/CaelumHouseHub.zs", "assets/validation_v5_17_119/evidence/views/house/RESULTS.json", "assets/validation_v5_17_119/evidence/views/city/RESULTS.json"],
+      "remaining": "Existing model availability does not establish complete map furnishing. Reuse these sources for remaining approved placement work; do not commission duplicate assets. Ordinary use/cargo/placement acceptance remains CA666-FURNITURE-01.",
+      "status": "existing resources inventoried; acceptance pending"
+    },
+    {
+      "area": "House facade and joinery",
+      "existing": "160 original facade instances use the corrected #879 production render bound. The #878 option adds timber leaf framing and iron hinges using unchanged owned texture bytes.",
+      "evidence": ["assets/source/art/house_joinery_878/CONFIG.json", "assets/validation_v5_17_118/evidence/visual-inspection.json"],
+      "remaining": "Period appearance and close approaches require final author review. The original model remains the production default.",
+      "status": "native-verified proposal; unapproved"
+    },
+    {
+      "area": "Surface materials and interior ceilings",
+      "existing": "Eight author-provided remasters preserve the existing128-MU repeats. Original CMTB04 roof tiles also appear on private-house and municipal ceiling undersides; the remaster makes this existing reuse clearer.",
+      "evidence": ["assets/source/art/environment_remasters_866/INVENTORY.json", "assets/map06_port/INTERIORS.json", "assets/generators/generate_barracas_preview.py", "assets/validation_v5_17_119/evidence/visual-inspection.json"],
+      "remaining": "Separate interior ceiling finish from exterior roofing through a focused source-backed proposal. A global roof alias would also alter exterior roofs. Preserve private-house coordinates, dimensions, portals and save compatibility.",
+      "status": "verified finish gap"
+    },
+    {
+      "area": "Municipal office/archive/courtyard",
+      "existing": "The retained civic shop identity and open courtyard exist. LAYOUT.municipality.reuse calls for office/archive/courtyard spaces without new NPC, quest, reward or construction identity. The generator currently opens the courtyard but does not delineate or furnish identifiable offices/archive in the inspected perimeter.",
+      "evidence": ["assets/barracas_redesign/LAYOUT.json", "assets/generators/generate_barracas_preview.py", "assets/validation_v5_17_119/evidence/views/city/RESULTS.json"],
+      "remaining": "Finish the approved civic functions using existing owned furniture and source-backed placement. Preserve the public counter/vendor, current entrances and routes. Do not introduce services, rewards, ownership or story.",
+      "status": "verified implementation/visual gap against the existing layout description"
+    },
+    {
+      "area": "Sewer structure, channels and service access",
+      "existing": "The #875 option combines439 native sloped sectors with map-local #847 brick. Original floors, things and route boundaries are preserved. Native views cover entrance, junction, channel, refuge, keyed boss access, main axes, maintenance, service and return-service center.",
+      "evidence": ["assets/source/art/sewer_structure_875/CONFIG.json", "assets/validation_v5_17_116/evidence/SUMMARY.json", "assets/validation_v5_17_119/evidence/views/sewer/RESULTS.json"],
+      "remaining": "Long walls remain repetitive. Moisture/wear, lighting and maintenance detail remain finish work; the composition adds none. Sampled camera occupancy and short walks do not accept every route, gate, companion or ordinary campaign transition.",
+      "status": "combined native proposal verified; further finish and author review pending"
+    },
+    {
+      "area": "Street fixtures and environmental lighting",
+      "existing": "The inventory records current static things and material references separately from dynamically prepared furniture, residents and services.",
+      "evidence": ["assets/source/art/environment_review_881/INVENTORY.json", "assets/barracas_redesign/LAYOUT.json", "assets/map06_port/CITY.json"],
+      "remaining": "Complete the approved period street/lighting finish against authored routes and placement data. This inventory does not claim a full street-fixture census or invent a decorative density, light radius or production budget.",
+      "status": "remaining scope; requires focused source-backed implementation"
+    },
+    {
+      "area": "Environmental audio availability",
+      "existing": "SNDINFO registers6 ambience loops and weather rain/wind/thunder resources. Resource registration is distinct from map/system emitter implementation.",
+      "evidence": ["src/SNDINFO"],
+      "remaining": "The scoped ZScript/ACS/MAPINFO/SNDSEQ search found no literal caelum/ambience or caelum/weather consumers. This is not proof against dynamically assembled aliases. Audit intended consumers and authoritative schedules before adding hour, region or weather behavior; no new schedule or threshold is authorized by this inventory.",
+      "status": "resource/consumer gap to audit; no new behavior"
+    }
+  ],
+  "costs": {
+    "qualification": "Measured asset/map counts, not approved permanent limits, visible triangle counts, texture area, draw-call counts or resident GPU memory. Models can share materials; runtime instances and dynamic actors must be measured separately.",
+    "owned_prop_library": {"models":55,"vertices":88282,"triangles":40634,"obj_material_sections":342,"bytes":5662553},
+    "furniture_item_variants": 17,
+    "house_instances": 160,
+    "shared_facade_original": {"vertices":1896,"triangles":948,"obj_material_sections":36},
+    "shared_facade_joinery_option": {"vertices":4548,"triangles":2274,"obj_material_sections":3},
+    "sewer_vault_option": {"sloped_sectors":439,"ceiling_minimum_mu":96,"ceiling_maximum_mu":128},
+    "combined_appearance_package_bytes": 4609394,
+    "combined_vaults_package_bytes": 31242459,
+    "new_pixels_created_by_composition": 0,
+    "new_placed_actors_by_composition": 0
+  },
+  "review_rules": [
+    "Appearance combines #866 and #878 without map overrides.",
+    "Vaults adds the exact #875 MAP02 and matching checksum-qualified Justice table; use fresh disposable sessions only.",
+    "The final terminal must let the author compare retained defaults and options; none is approval by installation or by an engine pass.",
+    "#736 character boards and unauthored progression/finale content retain their separate decision gates.",
+    "The severe normal siege performance limitation remains open. Complete the authorized batch before opening the single final author terminal."
+  ]
+}

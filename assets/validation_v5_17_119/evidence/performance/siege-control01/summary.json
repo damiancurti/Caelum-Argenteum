@@ -1,0 +1,56 @@
+{
+  "issue": 881,
+  "label": "siege-control01",
+  "camera": null,
+  "directory": "build/v516/barracas-profile-20261121-084327-985711",
+  "runtime_sha256": "bb694304cd7b16b18d92a329d294b0eafac95dd493b789e4d83804298ffe31e2",
+  "overlays": [],
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "states": [
+    "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+    "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+  ],
+  "census": [
+    "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+    "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+  ],
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 30.95458514285714,
+    "p95_ms": 47.2831,
+    "p99_ms": 50.8171,
+    "max_ms": 64.1941
+  },
+  "presentation": {
+    "pid": 23916,
+    "trace_sha256": "48c933d6303cced67c8f1ea536dc6f66bb5a2f354c36b9412e2a4c5822796cde",
+    "rows": 2091,
+    "scene_presents": 36,
+    "mean_present_fps": 1.8931866473550603,
+    "present_intervals": {
+      "samples": 35,
+      "mean_ms": 528.2099371433258,
+      "p50_ms": 534.1671999692917,
+      "p95_ms": 561.7551999092102,
+      "p99_ms": 566.5667999982834,
+      "max_ms": 566.5667999982834
+    },
+    "native_call_duration": {
+      "samples": 36,
+      "mean_ms": 0.19125556614663866,
+      "p50_ms": 0.18269991874694824,
+      "p95_ms": 0.25429999828338623,
+      "p99_ms": 0.25819993019104004,
+      "max_ms": 0.25819993019104004
+    }
+  }
+}
