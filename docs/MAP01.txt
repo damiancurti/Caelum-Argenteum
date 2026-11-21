@@ -1,6 +1,21 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.17.119** - 2026-11-21.
+Documentation version: **5.17.120** - 2026-11-21.
+
+## 5.17.120 - Separate interior ceilings from exterior roofing (#883, #463)
+
+The #883 private house proposal changes textureceiling only in room sector1 and
+window-recess sector2 of CAH000..CAH159. Solid zero-height sector0, sky/service
+sectors3/4 and Justice arena5 are untouched. The municipal building is the existing
+id7/shop0/tag1028; its control sector307 keeps floor160/ceiling184 and exterior
+CMTB04 textureceiling, changing only texturefloor to CMWD01 on the3D-floor underside.
+The existing courtyard opening, merchant, entrance, furniture and boundaries remain.
+
+An attempted rooftop camera failed occupancy in the unchanged control: the accepted
+low sky in civic sectors114/124 ends at184, exactly the roof top. Its failed fixture
+and logs are retained. Final views cover valid entrance/interior anchors and short
+walks; roof preservation is established by the byte audit and native control-surface
+check, not a rooftop walkthrough. Municipal office/archive recognition remains open.
 
 ## 5.17.119 - Inventory and combine the environment review (#881, #463)
 

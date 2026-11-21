@@ -1,0 +1,23 @@
+{
+  "issue": 883,
+  "schema_revision": 1,
+  "status": "candidate_not_author_accepted",
+  "source_interior_data": "assets/map06_port/INTERIORS.json",
+  "source_hub_data": "assets/map06_port/HOUSE_HUBS.json",
+  "source_city_layout": "assets/barracas_redesign/LAYOUT.json",
+  "old_ceiling": "CMTB04",
+  "candidate_ceiling": "CMWD01",
+  "owned_material": "src/graphics/caelum/textures/mansion/CMWD01.png",
+  "owned_material_sha256": "ab27460be00dbd85f2ff31175a35c4d1566ba20e6a07fa1293f2150605ae1abd",
+  "proposal": "Use the existing owned timber flat on actual private-house ceiling surfaces and the municipal 3D-floor underside. Exact aesthetic choice remains for final author review; no historical reconstruction is asserted.",
+  "surface_selection": "Private-house sectors with the original roof as textureceiling and ceiling strictly above floor; municipal control sector linked by special160 to the authored civic building tag, texturefloor only. Preserve roof top, zero-height solid sectors, sky/service and Justice arena.",
+  "references": [
+    "assets/source/art/environment_review_881/REVIEW.json",
+    "assets/source/art/environment_remasters_866/INVENTORY.json",
+    "assets/generators/generate_house_hubs.py",
+    "assets/generators/generate_barracas_preview.py",
+    "assets/generators/generate_coastal_trials.py"
+  ],
+  "provenance": "No raster editing/new image; use existing native flat. #866 may supply its exact owned remaster through the verified #881 composition. Only map surface names change, in fresh disposable sessions.",
+  "source_city_profiles": "assets/map06_port/CITY.json"
+}

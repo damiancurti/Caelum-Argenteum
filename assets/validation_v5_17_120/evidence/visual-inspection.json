@@ -1,0 +1,72 @@
+{
+  "issue": 883,
+  "directly_inspected": [
+    {
+      "image": "views/house/control/house_entrance.png",
+      "sha256": "db2018398840d97673b4e9f3b468f337103773ca1649cce210e9ad8fc12e8c9f"
+    },
+    {
+      "image": "views/house/control/house_living.png",
+      "sha256": "d53e3eb9b5ead7d108bd4dcea14bfb7d8af1d9fea1cff04982e073819901e645"
+    },
+    {
+      "image": "views/house/control/house_bedroom.png",
+      "sha256": "c32331fcebe77e2b39ed79fe7af0f9ce94298346730e9bc04d65ebd47bbdfd2c"
+    },
+    {
+      "image": "views/house/control/house_bathroom.png",
+      "sha256": "8aa0dae61ba407f365a259e24a98203fc21a7763702f29047292caaf07f45a0f"
+    },
+    {
+      "image": "views/house/control/walk.png",
+      "sha256": "468cfd225a234778b931b35151a71fc488f7be2f398effd23536bb8002f544a8"
+    },
+    {
+      "image": "views/house/candidate/house_entrance.png",
+      "sha256": "c73ef4c6db16b3516feee00bd1cdd7011183609d3b9f1227609b119c6289d7e0"
+    },
+    {
+      "image": "views/house/candidate/house_living.png",
+      "sha256": "16ba856423622032aceb7cb13d25a18f2186e5cbe2bd694635f6399dff4c6c33"
+    },
+    {
+      "image": "views/house/candidate/house_bedroom.png",
+      "sha256": "7c33021d958f60cb9a7d516a4bb6351ace4f1b159393e186fb917051621c5113"
+    },
+    {
+      "image": "views/house/candidate/house_bathroom.png",
+      "sha256": "35b78de5990ec55eabf9045b105200a3dff7c6e893752853cda36d0beea21f4f"
+    },
+    {
+      "image": "views/house/candidate/walk.png",
+      "sha256": "931712e9e979a337cb193b9829e7bcb041db0375b2f121b249314e858eea1a0c"
+    },
+    {
+      "image": "views/city/control/municipality_entrance.png",
+      "sha256": "d456885f13c2b09da83599b93189c87063275f7d6d38e576f90110943549eaed"
+    },
+    {
+      "image": "views/city/control/municipality_inside.png",
+      "sha256": "5b9c4e179c29182095dbaadab6026b9a929382ccc075f9bd6596313954b5f760"
+    },
+    {
+      "image": "views/city/control/walk.png",
+      "sha256": "4c1e5bb394297eed43884ce3764f75024dd1cbc4d97829a1a637fa1f5a79c629"
+    },
+    {
+      "image": "views/city/candidate/municipality_entrance.png",
+      "sha256": "72c2476cbf0ccda93b9f04834833110fcd5b364e92e0a338ae66a1c0ecabf303"
+    },
+    {
+      "image": "views/city/candidate/municipality_inside.png",
+      "sha256": "655daf8a37c8445301364ba87fb85f2beb6dea96e2e5c29b00a173aa70a859e3"
+    },
+    {
+      "image": "views/city/candidate/walk.png",
+      "sha256": "6c513139084968871dcbe704297d5ccacec072462dab5af003980e9c19f3a877"
+    }
+  ],
+  "image_contents_inspected": 16,
+  "findings": "Private-house and municipal undersides change roof tiles to dark timber. Existing furniture, floors, courtyard opening and room dimensions remain. All16 final view captures were inspected directly. Style and municipal office/archive completion remain for the author.",
+  "author_acceptance": false
+}

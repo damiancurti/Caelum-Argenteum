@@ -1,0 +1,8 @@
+{
+  "issue": 883,
+  "production_change": false,
+  "failure": "The reload launcher passed a drive-qualified path to -loadgame while supplying a different -savedir. GZDoom appended that value to savedir and could not find the save; the user supplied the fatal message. The engine log ended before that fatal diagnostic, so the first result has errors=[] but passed=false and exit_code=4294967295.",
+  "correction": "Copy the exact fresh disposable save bytes into the reload savedir and pass inside.zds. Capture process-log fatal markers as well as engine-log markers; report existence and explicit phase success.",
+  "corrected_run": "persistence/RESULTS.json",
+  "author_acceptance": false
+}
