@@ -1,6 +1,18 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.116** - 2026-11-21.
+Documentation version: **5.17.117** - 2026-11-21.
+
+## 5.17.117 - Review timber joinery on existing Barracas house facades (#878, #463)
+
+The #878 overlay replaces one visual OBJ path only. It adds no actor, native
+map geometry, collision, route, interaction, save field, balance or per-tic work.
+Closed shutters are an artistic treatment of existing opaque walls, not new usable
+windows. All original mesh vertices/faces and the entire original envelope remain;
+only the 17 window-panel UV assignments change, plus added detail faces. Operational
+portal leaves, identities, actual Used/capture/render-ACK travel and house returns
+stay authoritative. Disposable candidate save/reload and overlay removal are checked;
+no campaign save migration is needed for this model-only option. The separate #879
+render-sector proposal is confined to the comparison fixture in this release.
 
 ## 5.17.116 - Review native sewer vaults with preserved passage minima (#875, #463)
 

@@ -1,0 +1,11 @@
+{
+  "runtime_sha256": "e39bd42feffdd6bd5bf0456d977f0efbd3643ef61771b1ff199d43d42ecc1dbd",
+  "baseline_sha256": "815c549eb97a988b034d85899c819affa4c7a21ea077c77ad1e28a14b0651189",
+  "members": 18767,
+  "identical_members": 18765,
+  "changed": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "qualification": "Two release log labels only. Default model, textures, maps, classes and saved fields remain byte-identical."
+}

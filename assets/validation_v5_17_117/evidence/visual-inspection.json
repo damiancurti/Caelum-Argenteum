@@ -1,0 +1,32 @@
+{
+  "issue": 878,
+  "final_run": "build/issue878-views04",
+  "final_images": 20,
+  "prior_directly_inspected_run": "build/issue879-radius-views01",
+  "byte_identical_to_directly_inspected": [
+    "control/residential_street.png",
+    "control/door_0.png",
+    "control/window_0.png",
+    "control/door_90.png",
+    "control/window_90.png",
+    "control/door_180.png",
+    "control/window_180.png",
+    "control/door_270.png",
+    "control/window_270.png",
+    "candidate/residential_street.png",
+    "candidate/door_0.png",
+    "candidate/window_0.png",
+    "candidate/door_90.png",
+    "candidate/window_90.png",
+    "candidate/door_180.png",
+    "candidate/window_180.png",
+    "candidate/door_270.png",
+    "candidate/window_270.png"
+  ],
+  "final_directly_inspected": [
+    "control/walk.png",
+    "candidate/walk.png"
+  ],
+  "observations": "All20 final image contents inspected:18 byte-identical to previously inspected captures and2 newly viewed walks. Existing plaster frames/cornices/operational door leaves stay visible with the same RenderRadius781 diagnostic preview on both sides. New green shutter rails and iron plates occupy the same openings; close-up wood clarity/style remains for author review. No visible missing texture in these sampled preview views. The default-class visibility defect is separately retained for #879.",
+  "author_acceptance": false
+}

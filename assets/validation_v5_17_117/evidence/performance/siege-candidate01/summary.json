@@ -1,0 +1,59 @@
+{
+  "label": "siege-candidate01",
+  "directory": "build/v516/barracas-profile-20261121-073622-157065",
+  "runtime_sha256": "e39bd42feffdd6bd5bf0456d977f0efbd3643ef61771b1ff199d43d42ecc1dbd",
+  "overlays": [
+    {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue878-joinery02\\candidate.pk3",
+      "sha256": "1194bd5d3504ded9fc6435bc46cd8e60ab55ff16a6223eddad24041422eb97df"
+    }
+  ],
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "states": [
+    "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+    "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+  ],
+  "census": [
+    "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+    "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+  ],
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 31.51167014285714,
+    "p95_ms": 47.2315,
+    "p99_ms": 50.2651,
+    "max_ms": 63.9249
+  },
+  "presentation": {
+    "pid": 27828,
+    "trace_sha256": "eeaa9faef96d68c178e84637a1ae87afd64d5bcee531e9fb022ae531282b0623",
+    "rows": 1844,
+    "scene_presents": 37,
+    "mean_present_fps": 1.8651935892684353,
+    "present_intervals": {
+      "samples": 36,
+      "mean_ms": 536.137377778689,
+      "p50_ms": 537.9958000183105,
+      "p95_ms": 576.3473999500275,
+      "p99_ms": 577.1965000629425,
+      "max_ms": 577.1965000629425
+    },
+    "native_call_duration": {
+      "samples": 37,
+      "mean_ms": 0.24101080765595306,
+      "p50_ms": 0.2302999496459961,
+      "p95_ms": 0.31519997119903564,
+      "p99_ms": 0.32840001583099365,
+      "max_ms": 0.32840001583099365
+    }
+  }
+}

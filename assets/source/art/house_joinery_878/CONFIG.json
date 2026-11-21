@@ -1,0 +1,42 @@
+{
+  "schema_revision": 1,
+  "issue": 878,
+  "status": "candidate_not_author_accepted",
+  "runtime_model": "models/caelum/architecture/barracas/house-960-1216.obj",
+  "source_model_sha256": "a5c2aefec5ead511571bee96562c07e8797aa989eba8e811d252c2ec0e377b8d",
+  "wood": {
+    "runtime_path": "graphics/caelum/textures/entornos_v1/ciudad/CVCI05.png",
+    "sha256": "a4118c25046e21f3c2b6e25b129d160374fc0602718208199d1ae1e7dc7adcba",
+    "pixels": [256, 512],
+    "field_pixels": [32, 55, 90, 210],
+    "uv_selection": "Sample the existing timber field through model UVs. No pixels are copied, edited, resized or generated; avoid mapping the source door handle onto closed shutters."
+  },
+  "iron": {
+    "runtime_path": "models/caelum/props/kitchen/iron-painted-v1.png",
+    "sha256": "4948dc4dc13b930c7cab4461d5ea764332add932488b32fcf46675b0ac8ba65b",
+    "provenance": "Exact owned #410 kitchen export; assets/art_source/kitchen_stations/IRON_PROMPT.json and MANIFEST.json. Reuse bytes only."
+  },
+  "proposal": {
+    "description": "Closed paired timber shutters with modeled rails/stiles and small iron hinge plates. Preserve the original plaster frames/cornice and door backing; operational house door leaves remain separate and unchanged.",
+    "trim_width_source": "assets/map06_port/NATIVE_DOORS.json:half_thickness",
+    "leaves": 2,
+    "middle_rail_height_fraction": 0.5,
+    "relief_depth_fraction": 0.375,
+    "hinge_width_fraction": 0.75,
+    "hinge_height_fraction": 1.5,
+    "hinge_plate_offset_fraction": 0.0625,
+    "hinge_height_fractions": [0.25, 0.75],
+    "authority": "Artistic arrangement for final review, not new physical dimensions, gameplay or a historical reconstruction. All relief remains inside the original facade envelope."
+  },
+  "references": [
+    {
+      "url": "https://buenosaires.gob.ar/gcaba_historico/cultura/casco-historico/casa-ezeiza",
+      "basis": "Official page: 1876 residence with retained timber/iron joinery, framed openings and paired timber entrance leaves. Construction vocabulary only; do not copy its plan or later 1910/1930 alterations."
+    },
+    {
+      "url": "https://www.arquitectes.cat/es/mon/La-Casa-Chorizo-la-vivienda-t%C3%ADpica-de-Buenos-Aires-de-principios-del-siglo-XX?language=es",
+      "basis": "Professional architectural description spanning 1880-1930: timber street doors and joinery. Later examples do not establish exact 1889 detail or new game room dimensions."
+    }
+  ],
+  "provenance": "Original code-generated model details with existing owned material bytes and authored house positions. No third-party pixels. No new actor, map geometry, collision, saved field or default installation."
+}
