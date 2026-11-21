@@ -1,0 +1,129 @@
+{
+  "issue": 870,
+  "runtime_sha256": "28e29704db5bb6d145ce6ad1a2aa5160b41627e7697fefbfe76af0f3669f46cb",
+  "overlay_sha256": "75a9705b6e85e2fb025a956d5bee4d799f391bd5cfad56289e95c10228619c22",
+  "originals_restored_exactly": {
+    "caelum/actors/CaelumCombatActor.zs": "6cb9afd8c4c68311fe6dcf9c01b8e203d20ec493a4532e855bf5e008564bd181",
+    "caelum/actors/CaelumFolkloreCharacters.zs": "80c5a00ef221395a6688125d8871c3f84ccf21e2aeb63b5c0bd4adb99dd2e420",
+    "caelum/world/CaelumPortDefender.zs": "0677d183cac863aedd64e1db8dfaba42f5a8ef9f3061c2f2ac29b881b4f2b0ea"
+  },
+  "metrics": [
+    {
+      "id": 0,
+      "family": "Mandinga",
+      "stage": "services"
+    },
+    {
+      "id": 1,
+      "family": "Mandinga",
+      "stage": "motion-setup"
+    },
+    {
+      "id": 2,
+      "family": "Mandinga",
+      "stage": "native-state-physics"
+    },
+    {
+      "id": 3,
+      "family": "Mandinga",
+      "stage": "thermal-physics"
+    },
+    {
+      "id": 4,
+      "family": "Mandinga",
+      "stage": "potions-elemental-impacts"
+    },
+    {
+      "id": 5,
+      "family": "Mandinga",
+      "stage": "statistics-resources"
+    },
+    {
+      "id": 6,
+      "family": "Mandinga",
+      "stage": "common-tick-total"
+    },
+    {
+      "id": 7,
+      "family": "PortDefender",
+      "stage": "services"
+    },
+    {
+      "id": 8,
+      "family": "PortDefender",
+      "stage": "motion-setup"
+    },
+    {
+      "id": 9,
+      "family": "PortDefender",
+      "stage": "native-state-physics"
+    },
+    {
+      "id": 10,
+      "family": "PortDefender",
+      "stage": "thermal-physics"
+    },
+    {
+      "id": 11,
+      "family": "PortDefender",
+      "stage": "potions-elemental-impacts"
+    },
+    {
+      "id": 12,
+      "family": "PortDefender",
+      "stage": "statistics-resources"
+    },
+    {
+      "id": 13,
+      "family": "PortDefender",
+      "stage": "common-tick-total"
+    },
+    {
+      "id": 14,
+      "family": "other",
+      "stage": "services"
+    },
+    {
+      "id": 15,
+      "family": "other",
+      "stage": "motion-setup"
+    },
+    {
+      "id": 16,
+      "family": "other",
+      "stage": "native-state-physics"
+    },
+    {
+      "id": 17,
+      "family": "other",
+      "stage": "thermal-physics"
+    },
+    {
+      "id": 18,
+      "family": "other",
+      "stage": "potions-elemental-impacts"
+    },
+    {
+      "id": 19,
+      "family": "other",
+      "stage": "statistics-resources"
+    },
+    {
+      "id": 20,
+      "family": "other",
+      "stage": "common-tick-total"
+    },
+    {
+      "id": 21,
+      "family": "Mandinga",
+      "stage": "outer-tick-total"
+    },
+    {
+      "id": 22,
+      "family": "PortDefender",
+      "stage": "outer-tick-total"
+    }
+  ],
+  "period": 17,
+  "qualification": "Private instrumented actor wrappers and stage timestamps. Seven common stages are split by actor family; common/outer totals include nested stages and instrumentation. Do not sum those totals with their children or treat them as uninstrumented CPU budgets. Early-return paths are covered by total wrappers but may omit later stage records. No production statements, individual rules, actor fields or saved schema are removed or changed."
+}

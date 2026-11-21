@@ -1,0 +1,54 @@
+{
+  "label": "siege-final01",
+  "directory": "build/v516/barracas-profile-20261121-031540-994579",
+  "runtime_sha256": "28e29704db5bb6d145ce6ad1a2aa5160b41627e7697fefbfe76af0f3669f46cb",
+  "overlays": [],
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "states": [
+    "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+    "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+  ],
+  "census": [
+    "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+    "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+  ],
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 29.61403585714286,
+    "p95_ms": 44.6904,
+    "p99_ms": 48.6968,
+    "max_ms": 68.0452
+  },
+  "presentation": {
+    "pid": 42780,
+    "trace_sha256": "f75b037a82cd5f58d896fa5fd15893b2bf2ff01ae3cee52bf677387e5ed9c9ab",
+    "rows": 2391,
+    "scene_presents": 37,
+    "mean_present_fps": 2.0288162922049353,
+    "present_intervals": {
+      "samples": 36,
+      "mean_ms": 492.8982500003444,
+      "p50_ms": 494.2725999355316,
+      "p95_ms": 538.5503000020981,
+      "p99_ms": 543.2141000032425,
+      "max_ms": 543.2141000032425
+    },
+    "native_call_duration": {
+      "samples": 37,
+      "mean_ms": 0.17285135307827512,
+      "p50_ms": 0.16729998588562012,
+      "p95_ms": 0.22169995307922363,
+      "p99_ms": 0.22689998149871826,
+      "max_ms": 0.22689998149871826
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "issue": 870,
+  "release": "5.17.113",
+  "tested_runtime": "5.17.112",
+  "runtime_sha256": "28e29704db5bb6d145ce6ad1a2aa5160b41627e7697fefbfe76af0f3669f46cb",
+  "passed_windows": 5,
+  "observer_states_match": true,
+  "uninstrumented_control": "Prior #868 final112 native window, same immutable runtime and observer state; not rerun as113",
+  "production_optimization": false,
+  "conclusion": "Observed15-17 actual WorldTick callbacks between complete render intervals. Native actor Tick dominates selected thinker profiles; services and state-action execution are separated by42-tic probes. PortSiege.Pulse, thermal NPCStep and Communication.Pulse are the concrete next costs. Measurements do not demonstrate a GPU bottleneck.",
+  "failures": [
+    "calls01: generated wrong carbine argument name; rejected before native launch.",
+    "calls02/calls-run01: For is a reserved case-insensitive ZScript keyword; compilation failed. Renamed FindFor; calls03/calls-run02 passes."
+  ],
+  "limits": [
+    "native01 stride140 reuses the same modulo35 phase; retained as biased, superseded by35 coprime-stride native02 snapshots.",
+    "Snapshot averages and instrumented inclusive timers are not uninstrumented CPU budgets; nested totals overlap.",
+    "Native bench is a later renderer CPU-scope snapshot, not GPU duration or a whole-window mean.",
+    "QueuePresent is not monitor scanout. Actual observer-state equality is narrower than full world-state equivalence.",
+    "Siege performance and broader batch remain open; no author acceptance or partial test terminal."
+  ],
+  "full_validation": "passed with no errors"
+}

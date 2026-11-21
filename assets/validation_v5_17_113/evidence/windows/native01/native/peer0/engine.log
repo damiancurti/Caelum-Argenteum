@@ -1,0 +1,2030 @@
+Log started: 2026-11-21 03:30:43
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 428 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue868-diagnosis01.pk3, 18767 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/v516/barracas-profile-20261121-033043-755232/observer.pk3, 5 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_copy_memory_indirect VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_clamp_zero_one VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_internally_synchronized_queues VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance10 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_maintenance8 VK_KHR_maintenance9 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_id2 VK_KHR_present_mode_fifo_latest_ready VK_KHR_present_wait VK_KHR_present_wait2 VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_robustness2 VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_bfloat16 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_fma VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_shader_untyped_pointers VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_maintenance1 VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_unified_image_layouts VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_decode_vp9 VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_intra_refresh VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_custom_resolve VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_heap VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_decompression VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_present_timing VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_ray_tracing_invocation_reorder VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_64bit_indexing VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_long_vector VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_partitioned VK_EXT_shader_subgroup_vote VK_EXT_shader_uniform_buffer_unsized_array VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_EXT_zero_initialize_device_memory VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_occupancy_priority VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_compute_queue VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_push_constant_bank VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2482.87 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+debug output to: debug0.txt
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP03 - Barracas al Sud — fortified port
+
+CA435SYNC OK peer=0 map=MAP03 tic=0
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CITY133 housed=600 attackers=0 revision=3
+PORT16 deployed Mandingas=100 commander=1 defenders=600 hostileMachines=12 guns=42
+CA435SYNC OK peer=0 map=MAP03 tic=175
+CA435SYNC OK peer=0 map=MAP03 tic=350
+CA435SYNC OK peer=0 map=MAP03 tic=525
+CA435SYNC OK peer=0 map=MAP03 tic=700
+CA435SYNC OK peer=0 map=MAP03 tic=875
+CA435SYNC OK peer=0 map=MAP03 tic=1050
+CA435SYNC OK peer=0 map=MAP03 tic=1225
+CA435SYNC OK peer=0 map=MAP03 tic=1400
+CA435SYNC OK peer=0 map=MAP03 tic=1575
+CA435SYNC OK peer=0 map=MAP03 tic=1750
+CA435SYNC OK peer=0 map=MAP03 tic=1925
+CA435SYNC OK peer=0 map=MAP03 tic=2100
+CA435SYNC OK peer=0 map=MAP03 tic=2275
+CA435SYNC OK peer=0 map=MAP03 tic=2450
+CA435SYNC OK peer=0 map=MAP03 tic=2625
+CA435SYNC OK peer=0 map=MAP03 tic=2800
+CA435SYNC OK peer=0 map=MAP03 tic=2975
+CA435SYNC OK peer=0 map=MAP03 tic=3150
+CA435SYNC OK peer=0 map=MAP03 tic=3325
+CA435SYNC OK peer=0 map=MAP03 tic=3500
+CA435PERF STATE peer=0 tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1
+CA435PERF STATE peer=0 slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000
+CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0
+CA510 BEGIN map=MAP03 tic=3599 ms=114290.199800
+CA870_THINK_0
+Total, ms   Averg, ms   Calls   Actor class
+----------  ----------  ------  --------------------
+ 26.404531    0.026752     987  CaelumMandinga
+  9.597844    0.015996     600  CaelumPortDefender
+  2.149934    0.001261    1705  CaelumContaminationObject
+  1.683837    0.000952    1769  CaelumContaminationContact
+  0.365825    0.000147    2489  CaelumSewerEscapeTarget
+  0.315112    0.000096    3294  CaelumContaminationCarrier
+  0.265157    0.000089    2964  CaelumStackExposure
+  0.236780    0.236780       1  CaelumPlayer
+  0.217390    0.036232       6  CaelumBatteringRam
+  0.205081    0.000271     756  CaelumCannonBlock
+  0.201030    0.201030       1  CaelumPortSiege
+  0.154300    0.000159     971  CaelumSearchPoint
+  0.100331    0.000102     987  CaelumAnimaPotion
+  0.098936    0.000100     987  CaelumEnergyDrink
+  0.094357    0.000096     987  CaelumLifePotion
+  0.073860    0.000246     300  CaelumGateBlocker
+  0.066165    0.000230     288  CaelumRamBlock
+  0.059574    0.000492     121  CaelumVehiclePart
+  0.038602    0.000919      42  CaelumCannon
+  0.037990    0.000594      64  CaelumCityMerchant
+  0.023540    0.023540       1  CaelumPortCommander
+  0.021538    0.000135     160  CaelumHousePortal
+  0.019911    0.000830      24  CaelumWorkbenchStation
+  0.019732    0.000263      75  CaelumMachineOperator
+  0.009080    0.000028     320  CaelumHouseDoorVisual
+  0.007620    0.000181      42  CaelumCannonBarrel
+  0.006940    0.000165      42  CaelumCannonFrame
+  0.006870    0.006870       1  CaelumCompanionSubcaptain
+  0.005801    0.000363      16  CaelumForgeStation
+  0.005580    0.005580       1  CaelumAppearanceHead
+  0.005020    0.005020       1  CaelumMerchantShip
+  0.004640    0.000029     160  CA454Facade31800
+  0.004590    0.000383      12  CaelumFineToolsBenchStation
+  0.003641    0.000455       8  CaelumSewingMachineStation
+  0.003540    0.000885       4  CaelumBreakableGate
+  0.003520    0.000147      24  CaelumRamSuspension
+  0.003380    0.000423       8  CaelumSawmillStation
+  0.003100    0.000387       8  CaelumJewelerBenchStation
+  0.002830    0.000354       8  CaelumEssenceAltarStation
+  0.002820    0.002820       1  CaelumTreePlainsTalaYoung
+  0.002770    0.000692       4  CaelumClothingPickup
+  0.002500    0.002500       1  CaelumHouseResidents
+  0.002030    0.000508       4  CaelumSourceMarcela
+  0.001810    0.000028      64  CaelumShopSign
+  0.001630    0.000408       4  CaelumAnvilStation
+  0.001620    0.000034      48  CaelumMachineStructure
+  0.001600    0.000400       4  CaelumArmorWorkshopStation
+  0.001520    0.000380       4  CaelumRangedWorkshopStation
+  0.001020    0.001020       1  CaelumNotificationInbox
+  0.000990    0.000165       6  CaelumRamFrameVisual
+  0.000960    0.000960       1  CaelumRentalAgent
+  0.000860    0.000143       6  CaelumSiegeRouteNode
+  0.000850    0.000850       1  HexenArmor
+  0.000750    0.000125       6  CaelumRamHead
+  0.000730    0.000730       1  CaelumStarCargo
+  0.000690    0.000345       2  CaelumSourceCypellaFlower
+  0.000650    0.000650       1  CaelumSourceHoney
+  0.000610    0.000610       1  CaelumTimeAdvanceZone
+  0.000610    0.000610       1  CaelumPortCompletion
+  0.000540    0.000540       1  BasicArmor
+  0.000540    0.000540       1  CaelumArrivalHousehold
+  0.000510    0.000510       1  CaelumSteamTrain
+  0.000470    0.000470       1  CaelumFermentationRoster
+  0.000430    0.000215       2  CaelumSiegeGateReinforced
+  0.000390    0.000390       1  CaelumRidingHorse
+  0.000280    0.000280       1  CaelumLandSourceRoster
+  0.000240    0.000240       1  CaelumCoveredCart
+  0.000240    0.000240       1  CaelumVehicleRanch
+  0.000210    0.000210       1  CaelumSiegeGateArmored
+  0.000200    0.000200       1  CaelumAlchemyRoster
+  0.000170    0.000170       1  CaelumSiegeGate
+  0.000170    0.000170       1  CaelumM00AmuletChosenToken
+  0.000160    0.000160       1  CaelumPhysicsMapState
+  0.000130    0.000130       1  CaelumClimateRegion
+  0.000120    0.000120       1  CaelumRestState
+  0.000120    0.000120       1  CaelumUnarmedWeapon
+  0.000110    0.000110       1  CaelumWorldClock
+  0.000080    0.000080       1  CaelumCalendarState
+  0.000070    0.000070       1  CaelumWeatherState
+  0.000030    0.000030       1  CaelumEnergyDrinkLarge
+  0.000030    0.000030       1  CaelumScheduleState
+  0.000020    0.000020       1  CaelumContaminationSurfaces
+  0.000020    0.000020       1  CaelumDomesticMarket
+  0.000020    0.000020       1  CaelumPersistentCharacterState
+  0.000020    0.000020       1  CaelumAnimaPotionLarge
+  0.000020    0.000020       1  CaelumLifePotionLarge
+  0.000010         Inf       0  InternalDynamicLight
+CA435SYNC OK peer=0 map=MAP03 tic=3675
+CA870_THINK_1
+Total, ms   Averg, ms   Calls   Actor class
+----------  ----------  ------  --------------------
+ 25.089222    0.025420     987  CaelumMandinga
+  8.825967    0.014710     600  CaelumPortDefender
+  2.023896    0.001187    1705  CaelumContaminationObject
+  1.582898    0.000893    1773  CaelumContaminationContact
+  0.337527    0.000136    2489  CaelumSewerEscapeTarget
+  0.292410    0.000089    3294  CaelumContaminationCarrier
+  0.247598    0.000084    2964  CaelumStackExposure
+  0.206230    0.206230       1  CaelumPlayer
+  0.190829    0.000252     756  CaelumCannonBlock
+  0.155320    0.025887       6  CaelumBatteringRam
+  0.137035    0.000141     972  CaelumSearchPoint
+  0.091596    0.000093     987  CaelumAnimaPotion
+  0.089616    0.000091     987  CaelumEnergyDrink
+  0.083798    0.000085     987  CaelumLifePotion
+  0.064046    0.000213     300  CaelumGateBlocker
+  0.062325    0.000216     288  CaelumRamBlock
+  0.054801    0.000453     121  CaelumVehiclePart
+  0.034530    0.000540      64  CaelumCityMerchant
+  0.033271    0.000792      42  CaelumCannon
+  0.020920    0.020920       1  CaelumPortSiege
+  0.020367    0.000127     160  CaelumHousePortal
+  0.017801    0.000742      24  CaelumWorkbenchStation
+  0.017372    0.000232      75  CaelumMachineOperator
+  0.017320    0.017320       1  CaelumPortCommander
+  0.007730    0.000184      42  CaelumCannonBarrel
+  0.007440    0.000023     320  CaelumHouseDoorVisual
+  0.006639    0.000158      42  CaelumCannonFrame
+  0.006500    0.006500       1  CaelumCompanionSubcaptain
+  0.005860    0.005860       1  CaelumElementalImpactVisual
+  0.005341    0.000334      16  CaelumForgeStation
+  0.005210    0.005210       1  CaelumAppearanceHead
+  0.004621    0.000385      12  CaelumFineToolsBenchStation
+  0.004430    0.004430       1  CaelumMerchantShip
+  0.004150    0.000026     160  CA454Facade31800
+  0.003500    0.000146      24  CaelumRamSuspension
+  0.003180    0.000795       4  CaelumBreakableGate
+  0.002820    0.000352       8  CaelumEssenceAltarStation
+  0.002790    0.000349       8  CaelumSewingMachineStation
+  0.002720    0.002720       1  CaelumHouseResidents
+  0.002610    0.000326       8  CaelumSawmillStation
+  0.002601    0.000325       8  CaelumJewelerBenchStation
+  0.002510    0.000627       4  CaelumClothingPickup
+  0.002190    0.000034      64  CaelumShopSign
+  0.002080    0.002080       1  CaelumTreePlainsTalaYoung
+  0.001970    0.000492       4  CaelumSourceMarcela
+  0.001761    0.000440       4  CaelumRangedWorkshopStation
+  0.001691    0.000035      48  CaelumMachineStructure
+  0.001630    0.000407       4  CaelumArmorWorkshopStation
+  0.001320    0.000330       4  CaelumAnvilStation
+  0.001150    0.000192       6  CaelumSiegeRouteNode
+  0.000960    0.000480       2  CaelumSourceCypellaFlower
+  0.000910    0.000152       6  CaelumRamFrameVisual
+  0.000910    0.000910       1  CaelumStarCargo
+  0.000870    0.000870       1  CaelumNotificationInbox
+  0.000700    0.000700       1  BasicArmor
+  0.000650    0.000650       1  CaelumArrivalHousehold
+  0.000600    0.000600       1  HexenArmor
+  0.000560    0.000560       1  InternalDynamicLight
+  0.000540    0.000540       1  CaelumFermentationRoster
+  0.000540    0.000540       1  CaelumRentalAgent
+  0.000500    0.000083       6  CaelumRamHead
+  0.000500    0.000500       1  CaelumSourceHoney
+  0.000440    0.000440       1  CaelumRidingHorse
+  0.000420    0.000420       1  CaelumTimeAdvanceZone
+  0.000400    0.000200       2  CaelumSiegeGateReinforced
+  0.000380    0.000380       1  CaelumSteamTrain
+  0.000380    0.000380       1  CaelumPhysicsMapState
+  0.000380    0.000380       1  CaelumPortCompletion
+  0.000350    0.000350       1  CaelumCoveredCart
+  0.000280    0.000280       1  CaelumVehicleRanch
+  0.000270    0.000270       1  CaelumLandSourceRoster
+  0.000200    0.000200       1  CaelumClimateRegion
+  0.000170    0.000170       1  CaelumScheduleState
+  0.000170    0.000170       1  CaelumAlchemyRoster
+  0.000150    0.000150       1  CaelumM00AmuletChosenToken
+  0.000150    0.000150       1  CaelumSiegeGate
+  0.000140    0.000140       1  CaelumSiegeGateArmored
+  0.000140    0.000140       1  CaelumUnarmedWeapon
+  0.000120    0.000120       1  CaelumContaminationSurfaces
+  0.000120    0.000120       1  CaelumWorldClock
+  0.000120    0.000120       1  CaelumRestState
+  0.000060    0.000060       1  CaelumCalendarState
+  0.000030    0.000030       1  CaelumDomesticMarket
+  0.000020    0.000020       1  CaelumEnergyDrinkLarge
+  0.000020    0.000020       1  CaelumLifePotionLarge
+  0.000020    0.000020       1  CaelumWeatherState
+  0.000020    0.000020       1  CaelumAnimaPotionLarge
+  0.000020    0.000020       1  CaelumPersistentCharacterState
+Benchmark info saved
+CA435SYNC OK peer=0 map=MAP03 tic=3850
+CA870_THINK_2
+Total, ms   Averg, ms   Calls   Actor class
+----------  ----------  ------  --------------------
+ 26.677212    0.027029     987  CaelumMandinga
+  9.369509    0.015616     600  CaelumPortDefender
+  2.147896    0.001260    1705  CaelumContaminationObject
+  1.656415    0.000934    1773  CaelumContaminationContact
+  0.454976    0.000183    2489  CaelumSewerEscapeTarget
+  0.321212    0.000098    3294  CaelumContaminationCarrier
+  0.275078    0.000093    2964  CaelumStackExposure
+  0.225000    0.225000       1  CaelumPlayer
+  0.207833    0.000275     756  CaelumCannonBlock
+  0.169591    0.028265       6  CaelumBatteringRam
+  0.161242    0.000166     974  CaelumSearchPoint
+  0.098343    0.000100     987  CaelumAnimaPotion
+  0.096406    0.000098     987  CaelumEnergyDrink
+  0.093688    0.000095     987  CaelumLifePotion
+  0.071071    0.000237     300  CaelumGateBlocker
+  0.066205    0.000230     288  CaelumRamBlock
+  0.057993    0.000479     121  CaelumVehiclePart
+  0.037830    0.000591      64  CaelumCityMerchant
+  0.037564    0.000894      42  CaelumCannon
+  0.023040    0.023040       1  CaelumPortSiege
+  0.021849    0.000137     160  CaelumHousePortal
+  0.020080    0.000837      24  CaelumWorkbenchStation
+  0.019894    0.000265      75  CaelumMachineOperator
+  0.019730    0.019730       1  CaelumPortCommander
+  0.011500    0.011500       1  CaelumElementalImpactVisual
+  0.007490    0.000178      42  CaelumCannonBarrel
+  0.007380    0.000023     320  CaelumHouseDoorVisual
+  0.006730    0.006730       1  CaelumCompanionSubcaptain
+  0.006230    0.000148      42  CaelumCannonFrame
+  0.005660    0.005660       1  CaelumAppearanceHead
+  0.005280    0.000330      16  CaelumForgeStation
+  0.004670    0.000029     160  CA454Facade31800
+  0.004600    0.004600       1  CaelumMerchantShip
+  0.004120    0.000343      12  CaelumFineToolsBenchStation
+  0.003440    0.000430       8  CaelumSawmillStation
+  0.003200    0.000800       4  CaelumBreakableGate
+  0.003190    0.000399       8  CaelumJewelerBenchStation
+  0.003160    0.000132      24  CaelumRamSuspension
+  0.002910    0.000364       8  CaelumSewingMachineStation
+  0.002860    0.000357       8  CaelumEssenceAltarStation
+  0.002750    0.000687       4  CaelumClothingPickup
+  0.002550    0.002550       1  CaelumTreePlainsTalaYoung
+  0.002450    0.002450       1  CaelumHouseResidents
+  0.001980    0.000031      64  CaelumShopSign
+  0.001951    0.000488       4  CaelumSourceMarcela
+  0.001890    0.000039      48  CaelumMachineStructure
+  0.001711    0.000428       4  CaelumArmorWorkshopStation
+  0.001520    0.000380       4  CaelumRangedWorkshopStation
+  0.001490    0.000372       4  CaelumAnvilStation
+  0.001250    0.000208       6  CaelumSiegeRouteNode
+  0.001050    0.001050       1  HexenArmor
+  0.000960    0.000960       1  CaelumStarCargo
+  0.000900    0.000900       1  CaelumNotificationInbox
+  0.000880    0.000147       6  CaelumRamFrameVisual
+  0.000830    0.000830       1  CaelumRentalAgent
+  0.000750    0.000375       2  CaelumSourceCypellaFlower
+  0.000650    0.000650       1  BasicArmor
+  0.000530    0.000088       6  CaelumRamHead
+  0.000530    0.000530       1  CaelumAlchemyRoster
+  0.000500    0.000500       1  CaelumTimeAdvanceZone
+  0.000500    0.000500       1  CaelumSourceHoney
+  0.000480    0.000480       1  CaelumRidingHorse
+  0.000460    0.000460       1  CaelumArrivalHousehold
+  0.000430    0.000430       1  CaelumPhysicsMapState
+  0.000390    0.000195       2  CaelumSiegeGateReinforced
+  0.000280    0.000280       1  CaelumSiegeGate
+  0.000270    0.000270       1  CaelumPortCompletion
+  0.000260    0.000260       1  CaelumSiegeGateArmored
+  0.000250    0.000250       1  CaelumSteamTrain
+  0.000220    0.000220       1  CaelumScheduleState
+  0.000220    0.000220       1  CaelumLandSourceRoster
+  0.000200    0.000200       1  CaelumFermentationRoster
+  0.000170    0.000170       1  CaelumVehicleRanch
+  0.000130    0.000130       1  CaelumWorldClock
+  0.000130    0.000130       1  CaelumCoveredCart
+  0.000120    0.000120       1  CaelumRestState
+  0.000120    0.000120       1  CaelumUnarmedWeapon
+  0.000120    0.000120       1  CaelumContaminationSurfaces
+  0.000120    0.000120       1  CaelumClimateRegion
+  0.000080    0.000080       1  CaelumM00AmuletChosenToken
+  0.000070    0.000070       1  CaelumCalendarState
+  0.000060    0.000060       1  CaelumWeatherState
+  0.000030    0.000030       1  CaelumEnergyDrinkLarge
+  0.000030    0.000030       1  CaelumPersistentCharacterState
+  0.000030    0.000030       1  CaelumLifePotionLarge
+  0.000020    0.000020       1  CaelumDomesticMarket
+  0.000020    0.000020       1  CaelumAnimaPotionLarge
+  0.000010         Inf       0  InternalDynamicLight
+Benchmark info saved
+CA870_THINK_3
+Total, ms   Averg, ms   Calls   Actor class
+----------  ----------  ------  --------------------
+ 27.384151    0.027745     987  CaelumMandinga
+  9.350059    0.015583     600  CaelumPortDefender
+  2.125065    0.001246    1705  CaelumContaminationObject
+  1.640081    0.000923    1776  CaelumContaminationContact
+  0.397548    0.000160    2489  CaelumSewerEscapeTarget
+  0.320466    0.000097    3294  CaelumContaminationCarrier
+  0.317910    0.000107    2964  CaelumStackExposure
+  0.202590    0.202590       1  CaelumPlayer
+  0.202339    0.000268     756  CaelumCannonBlock
+  0.172953    0.000178     973  CaelumSearchPoint
+  0.164310    0.027385       6  CaelumBatteringRam
+  0.096038    0.000097     987  CaelumAnimaPotion
+  0.092962    0.000094     987  CaelumEnergyDrink
+  0.091146    0.000092     987  CaelumLifePotion
+  0.073068    0.000254     288  CaelumRamBlock
+  0.064860    0.000216     300  CaelumGateBlocker
+  0.056525    0.000467     121  CaelumVehiclePart
+  0.036740    0.000574      64  CaelumCityMerchant
+  0.034671    0.000825      42  CaelumCannon
+  0.024500    0.024500       1  CaelumPortCommander
+  0.019820    0.019820       1  CaelumPortSiege
+  0.019599    0.000122     160  CaelumHousePortal
+  0.019561    0.000815      24  CaelumWorkbenchStation
+  0.016231    0.000216      75  CaelumMachineOperator
+  0.007660    0.000024     320  CaelumHouseDoorVisual
+  0.007470    0.003735       2  CaelumElementalImpactVisual
+  0.007290    0.000174      42  CaelumCannonBarrel
+  0.007100    0.007100       1  CaelumCompanionSubcaptain
+  0.006660    0.000159      42  CaelumCannonFrame
+  0.006231    0.000389      16  CaelumForgeStation
+  0.004780    0.004780       1  CaelumMerchantShip
+  0.004730    0.000030     160  CA454Facade31800
+  0.004250    0.004250       1  CaelumAppearanceHead
+  0.003969    0.000331      12  CaelumFineToolsBenchStation
+  0.003880    0.000162      24  CaelumRamSuspension
+  0.003561    0.000890       4  CaelumBreakableGate
+  0.003530    0.000441       8  CaelumSewingMachineStation
+  0.003170    0.000396       8  CaelumSawmillStation
+  0.002760    0.000345       8  CaelumJewelerBenchStation
+  0.002680    0.000335       8  CaelumEssenceAltarStation
+  0.002621    0.000655       4  CaelumClothingPickup
+  0.002330    0.002330       1  CaelumHouseResidents
+  0.002130    0.002130       1  CaelumTreePlainsTalaYoung
+  0.001990    0.000497       4  CaelumSourceMarcela
+  0.001970    0.000031      64  CaelumShopSign
+  0.001640    0.000410       4  CaelumArmorWorkshopStation
+  0.001610    0.000402       4  CaelumAnvilStation
+  0.001350    0.000028      48  CaelumMachineStructure
+  0.001330    0.000222       6  CaelumRamFrameVisual
+  0.001160    0.001160       1  CaelumRentalAgent
+  0.001100    0.000550       2  InternalDynamicLight
+  0.001070    0.000267       4  CaelumRangedWorkshopStation
+  0.001060    0.001060       1  CaelumStarCargo
+  0.000960    0.000960       1  CaelumNotificationInbox
+  0.000870    0.000145       6  CaelumSiegeRouteNode
+  0.000780    0.000390       2  CaelumSourceCypellaFlower
+  0.000720    0.000720       1  HexenArmor
+  0.000660    0.000660       1  BasicArmor
+  0.000650    0.000650       1  CaelumSourceHoney
+  0.000600    0.000100       6  CaelumRamHead
+  0.000540    0.000540       1  CaelumRidingHorse
+  0.000500    0.000500       1  CaelumArrivalHousehold
+  0.000460    0.000460       1  CaelumTimeAdvanceZone
+  0.000430    0.000430       1  CaelumCalendarState
+  0.000410    0.000205       2  CaelumSiegeGateReinforced
+  0.000350    0.000350       1  CaelumWorldClock
+  0.000300    0.000300       1  CaelumSteamTrain
+  0.000270    0.000270       1  CaelumSiegeGate
+  0.000270    0.000270       1  CaelumPortCompletion
+  0.000260    0.000260       1  CaelumPhysicsMapState
+  0.000260    0.000260       1  CaelumCoveredCart
+  0.000240    0.000240       1  CaelumLandSourceRoster
+  0.000230    0.000230       1  CaelumSiegeGateArmored
+  0.000220    0.000220       1  CaelumFermentationRoster
+  0.000200    0.000200       1  CaelumClimateRegion
+  0.000160    0.000160       1  CaelumAlchemyRoster
+  0.000130    0.000130       1  CaelumRestState
+  0.000130    0.000130       1  CaelumUnarmedWeapon
+  0.000120    0.000120       1  CaelumDomesticMarket
+  0.000120    0.000120       1  CaelumWeatherState
+  0.000120    0.000120       1  CaelumVehicleRanch
+  0.000110    0.000110       1  CaelumContaminationSurfaces
+  0.000060    0.000060       1  CaelumScheduleState
+  0.000050    0.000050       1  CaelumM00AmuletChosenToken
+  0.000030    0.000030       1  CaelumPersistentCharacterState
+  0.000030    0.000030       1  CaelumEnergyDrinkLarge
+  0.000020    0.000020       1  CaelumAnimaPotionLarge
+  0.000020    0.000020       1  CaelumLifePotionLarge
+CA435SYNC OK peer=0 map=MAP03 tic=4025
+CA870_THINK_4
+Total, ms   Averg, ms   Calls   Actor class
+----------  ----------  ------  --------------------
+ 24.630822    0.024955     987  CaelumMandinga
+  8.224211    0.013707     600  CaelumPortDefender
+  1.931582    0.001133    1705  CaelumContaminationObject
+  1.529986    0.000858    1783  CaelumContaminationContact
+  0.333517    0.000134    2489  CaelumSewerEscapeTarget
+  0.272849    0.000083    3294  CaelumContaminationCarrier
+  0.256200    0.000086    2964  CaelumStackExposure
+  0.222970    0.222970       1  CaelumPortSiege
+  0.178961    0.000237     756  CaelumCannonBlock
+  0.175800    0.175800       1  CaelumPlayer
+  0.155890    0.025982       6  CaelumBatteringRam
+  0.142887    0.000148     968  CaelumSearchPoint
+  0.084846    0.000086     987  CaelumAnimaPotion
+  0.084036    0.000085     987  CaelumEnergyDrink
+  0.077405    0.000078     987  CaelumLifePotion
+  0.055523    0.000193     288  CaelumRamBlock
+  0.052303    0.000174     300  CaelumGateBlocker
+  0.049201    0.000407     121  CaelumVehiclePart
+  0.032890    0.000514      64  CaelumCityMerchant
+  0.030052    0.000716      42  CaelumCannon
+  0.018048    0.000113     160  CaelumHousePortal
+  0.016651    0.000694      24  CaelumWorkbenchStation
+  0.014710    0.014710       1  CaelumPortCommander
+  0.012999    0.000173      75  CaelumMachineOperator
+  0.008080    0.000025     320  CaelumHouseDoorVisual
+  0.007270    0.000173      42  CaelumCannonBarrel
+  0.006760    0.000161      42  CaelumCannonFrame
+  0.006370    0.006370       1  CaelumCompanionSubcaptain
+  0.005111    0.000319      16  CaelumForgeStation
+  0.004650    0.000029     160  CA454Facade31800
+  0.004030    0.004030       1  CaelumAppearanceHead
+  0.003680    0.000307      12  CaelumFineToolsBenchStation
+  0.003290    0.000137      24  CaelumRamSuspension
+  0.003220    0.003220       1  CaelumMerchantShip
+  0.002831    0.000708       4  CaelumBreakableGate
+  0.002640    0.000330       8  CaelumSewingMachineStation
+  0.002521    0.000315       8  CaelumEssenceAltarStation
+  0.002410    0.002410       1  CaelumHouseResidents
+  0.002391    0.000299       8  CaelumJewelerBenchStation
+  0.002260    0.000282       8  CaelumSawmillStation
+  0.002250    0.000563       4  CaelumClothingPickup
+  0.002160    0.002160       1  CaelumTreePlainsTalaYoung
+  0.001780    0.000445       4  CaelumSourceMarcela
+  0.001770    0.000028      64  CaelumShopSign
+  0.001560    0.000390       4  CaelumAnvilStation
+  0.001370    0.000342       4  CaelumRangedWorkshopStation
+  0.001181    0.000025      48  CaelumMachineStructure
+  0.001170    0.000195       6  CaelumRamFrameVisual
+  0.001161    0.000290       4  CaelumArmorWorkshopStation
+  0.001040    0.001040       1  CaelumNotificationInbox
+  0.000810    0.000135       6  CaelumSiegeRouteNode
+  0.000690    0.000345       2  CaelumAnimaRegeneration
+  0.000670    0.000670       1  CaelumRentalAgent
+  0.000610    0.000610       1  CaelumStarCargo
+  0.000610    0.000305       2  CaelumSourceCypellaFlower
+  0.000600    0.000600       1  HexenArmor
+  0.000590    0.000590       1  BasicArmor
+  0.000490    0.000082       6  CaelumRamHead
+  0.000470    0.000470       1  CaelumSourceHoney
+  0.000430    0.000430       1  CaelumArrivalHousehold
+  0.000410    0.000205       2  CaelumSiegeGateReinforced
+  0.000400    0.000400       1  CaelumSiegeGateArmored
+  0.000350    0.000350       1  CaelumRidingHorse
+  0.000320    0.000320       1  CaelumScheduleState
+  0.000320    0.000320       1  CaelumPortCompletion
+  0.000310    0.000310       1  CaelumSteamTrain
+  0.000310    0.000310       1  CaelumTimeAdvanceZone
+  0.000300    0.000300       1  CaelumCoveredCart
+  0.000260    0.000260       1  CaelumSiegeGate
+  0.000240    0.000240       1  CaelumPhysicsMapState
+  0.000230    0.000230       1  CaelumFermentationRoster
+  0.000210    0.000210       1  CaelumAlchemyRoster
+  0.000150    0.000150       1  CaelumLandSourceRoster
+  0.000130    0.000130       1  CaelumUnarmedWeapon
+  0.000130    0.000130       1  CaelumWorldClock
+  0.000130    0.000130       1  CaelumClimateRegion
+  0.000130    0.000130       1  CaelumVehicleRanch
+  0.000120    0.000120       1  CaelumPersistentCharacterState
+  0.000110    0.000110       1  CaelumContaminationSurfaces
+  0.000110    0.000110       1  CaelumRestState
+  0.000050    0.000050       1  CaelumM00AmuletChosenToken
+  0.000050    0.000050       1  CaelumCalendarState
+  0.000030    0.000030       1  CaelumDomesticMarket
+  0.000030    0.000030       1  CaelumEnergyDrinkLarge
+  0.000030    0.000030       1  CaelumLifePotionLarge
+  0.000020    0.000020       1  CaelumWeatherState
+  0.000020    0.000020       1  CaelumAnimaPotionLarge
+  0.000010         Inf       0  InternalDynamicLight
+CA435SYNC OK peer=0 map=MAP03 tic=4200
+Benchmark info saved
+CA435PERF STATE peer=0 tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1
+CA435PERF STATE peer=0 slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000
+CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0
+CA510 PROFILE candidate_ms=0.000000 candidate_calls=0 noise_ms=0.000000 noise_calls=0 communication_ms=0.000000 communication_calls=0 acquire_ms=0.000000 acquire_calls=0
+CA510 END tic=4299 ms=135877.979400
+CA510 TIC 27.532100
+CA510 TIC 28.243700
+CA510 TIC 29.121400
+CA510 TIC 34.075100
+CA510 TIC 32.628800
+CA510 TIC 53.125300
+CA510 TIC 32.292600
+CA510 TIC 28.835600
+CA510 TIC 31.921500
+CA510 TIC 32.907300
+CA510 TIC 30.832200
+CA510 TIC 32.443000
+CA510 TIC 30.490400
+CA510 TIC 28.847300
+CA510 TIC 26.347700
+CA510 TIC 45.860400
+CA510 TIC 53.978400
+CA510 TIC 29.737000
+CA510 TIC 28.201600
+CA510 TIC 27.340400
+CA510 TIC 29.834200
+CA510 TIC 32.608800
+CA510 TIC 28.858800
+CA510 TIC 29.359700
+CA510 TIC 28.175800
+CA510 TIC 47.005500
+CA510 TIC 31.804400
+CA510 TIC 31.976500
+CA510 TIC 33.076600
+CA510 TIC 33.807500
+CA510 TIC 30.260800
+CA510 TIC 25.572200
+CA510 TIC 23.756700
+CA510 TIC 40.936700
+CA510 TIC 27.532600
+CA510 TIC 48.730400
+CA510 TIC 27.506000
+CA510 TIC 29.343400
+CA510 TIC 24.099800
+CA510 TIC 27.164200
+CA510 TIC 25.382000
+CA510 TIC 31.206000
+CA510 TIC 24.990100
+CA510 TIC 26.138500
+CA510 TIC 25.101200
+CA510 TIC 42.666000
+CA510 TIC 30.416400
+CA510 TIC 28.685600
+CA510 TIC 27.279100
+CA510 TIC 27.497700
+CA510 TIC 41.255500
+CA510 TIC 25.660500
+CA510 TIC 23.994400
+CA510 TIC 25.387400
+CA510 TIC 25.140600
+CA510 TIC 42.897900
+CA510 TIC 25.794500
+CA510 TIC 26.948400
+CA510 TIC 25.832000
+CA510 TIC 25.077500
+CA510 TIC 23.669400
+CA510 TIC 25.149800
+CA510 TIC 23.364500
+CA510 TIC 24.418200
+CA510 TIC 24.130800
+CA510 TIC 42.819700
+CA510 TIC 23.867300
+CA510 TIC 37.520500
+CA510 TIC 29.667400
+CA510 TIC 30.731800
+CA510 TIC 28.351900
+CA510 TIC 30.144800
+CA510 TIC 25.143200
+CA510 TIC 25.186700
+CA510 TIC 27.271300
+CA510 TIC 43.751300
+CA510 TIC 25.822900
+CA510 TIC 26.845300
+CA510 TIC 26.088300
+CA510 TIC 31.834900
+CA510 TIC 30.067100
+CA510 TIC 28.329000
+CA510 TIC 25.474600
+CA510 TIC 33.827600
+CA510 TIC 29.326000
+CA510 TIC 44.395100
+CA510 TIC 25.465200
+CA510 TIC 29.498200
+CA510 TIC 29.802600
+CA510 TIC 31.311500
+CA510 TIC 28.218900
+CA510 TIC 29.844600
+CA510 TIC 27.226900
+CA510 TIC 26.583800
+CA510 TIC 24.960300
+CA510 TIC 43.212000
+CA510 TIC 24.295500
+CA510 TIC 25.269600
+CA510 TIC 23.596000
+CA510 TIC 26.401500
+CA510 TIC 31.350600
+CA510 TIC 32.342000
+CA510 TIC 31.170300
+CA510 TIC 28.822300
+CA510 TIC 27.850000
+CA510 TIC 46.512000
+CA510 TIC 26.664000
+CA510 TIC 27.180600
+CA510 TIC 30.075000
+CA510 TIC 30.645700
+CA510 TIC 32.209100
+CA510 TIC 31.324000
+CA510 TIC 29.813500
+CA510 TIC 26.887600
+CA510 TIC 23.397700
+CA510 TIC 41.350500
+CA510 TIC 23.965000
+CA510 TIC 41.043900
+CA510 TIC 26.354900
+CA510 TIC 25.682200
+CA510 TIC 24.610000
+CA510 TIC 27.961800
+CA510 TIC 25.166800
+CA510 TIC 25.149500
+CA510 TIC 25.920600
+CA510 TIC 42.868500
+CA510 TIC 26.922400
+CA510 TIC 25.588500
+CA510 TIC 30.968500
+CA510 TIC 34.948300
+CA510 TIC 31.809300
+CA510 TIC 33.600100
+CA510 TIC 30.440600
+CA510 TIC 27.760100
+CA510 TIC 41.252300
+CA510 TIC 51.580500
+CA510 TIC 30.318900
+CA510 TIC 33.839300
+CA510 TIC 27.501800
+CA510 TIC 27.766600
+CA510 TIC 25.699600
+CA510 TIC 28.094800
+CA510 TIC 26.071300
+CA510 TIC 27.098400
+CA510 TIC 26.813700
+CA510 TIC 47.314000
+CA510 TIC 27.573400
+CA510 TIC 32.813000
+CA510 TIC 31.815700
+CA510 TIC 33.966800
+CA510 TIC 31.452300
+CA510 TIC 40.763700
+CA510 TIC 28.115500
+CA510 TIC 28.722500
+CA510 TIC 27.013700
+CA510 TIC 45.647800
+CA510 TIC 29.918400
+CA510 TIC 29.795100
+CA510 TIC 27.647600
+CA510 TIC 28.120900
+CA510 TIC 32.236400
+CA510 TIC 30.744000
+CA510 TIC 26.974500
+CA510 TIC 28.781600
+CA510 TIC 30.547300
+CA510 TIC 50.223400
+CA510 TIC 32.250900
+CA510 TIC 33.975100
+CA510 TIC 50.111400
+CA510 TIC 29.401900
+CA510 TIC 26.892900
+CA510 TIC 29.949200
+CA510 TIC 26.939600
+CA510 TIC 27.211400
+CA510 TIC 26.793000
+CA510 TIC 44.240400
+CA510 TIC 27.698300
+CA510 TIC 27.024700
+CA510 TIC 27.357400
+CA510 TIC 27.417300
+CA510 TIC 25.562800
+CA510 TIC 29.714600
+CA510 TIC 28.015100
+CA510 TIC 30.053100
+CA510 TIC 27.861400
+CA510 TIC 67.319700
+CA510 TIC 30.135400
+CA510 TIC 30.055900
+CA510 TIC 28.432400
+CA510 TIC 29.081600
+CA510 TIC 26.484500
+CA510 TIC 30.928300
+CA510 TIC 27.965400
+CA510 TIC 28.769800
+CA510 TIC 26.058100
+CA510 TIC 46.704200
+CA510 TIC 26.588200
+CA510 TIC 29.309500
+CA510 TIC 32.658900
+CA510 TIC 33.628500
+CA510 TIC 32.534600
+CA510 TIC 33.528100
+CA510 TIC 37.919600
+CA510 TIC 32.227500
+CA510 TIC 31.651300
+CA510 TIC 50.737700
+CA510 TIC 31.809200
+CA510 TIC 29.785500
+CA510 TIC 27.688100
+CA510 TIC 29.098800
+CA510 TIC 26.769200
+CA510 TIC 27.658400
+CA510 TIC 25.889300
+CA510 TIC 27.274900
+CA510 TIC 25.737900
+CA510 TIC 45.387300
+CA510 TIC 29.302500
+CA510 TIC 27.711600
+CA510 TIC 26.930600
+CA510 TIC 43.026300
+CA510 TIC 27.726600
+CA510 TIC 31.370200
+CA510 TIC 30.412800
+CA510 TIC 34.884100
+CA510 TIC 32.317800
+CA510 TIC 51.670000
+CA510 TIC 31.401100
+CA510 TIC 28.495400
+CA510 TIC 32.104900
+CA510 TIC 32.972900
+CA510 TIC 31.761900
+CA510 TIC 32.420200
+CA510 TIC 28.759300
+CA510 TIC 27.431000
+CA510 TIC 26.042800
+CA510 TIC 45.854500
+CA510 TIC 36.461400
+CA510 TIC 26.686700
+CA510 TIC 26.102300
+CA510 TIC 28.086800
+CA510 TIC 23.883800
+CA510 TIC 31.114100
+CA510 TIC 29.120100
+CA510 TIC 30.907400
+CA510 TIC 33.859100
+CA510 TIC 51.826900
+CA510 TIC 31.483300
+CA510 TIC 29.974100
+CA510 TIC 28.268100
+CA510 TIC 27.863400
+CA510 TIC 28.254500
+CA510 TIC 27.768300
+CA510 TIC 24.010200
+CA510 TIC 38.889600
+CA510 TIC 25.603300
+CA510 TIC 44.415300
+CA510 TIC 24.015900
+CA510 TIC 27.181600
+CA510 TIC 24.768800
+CA510 TIC 25.320400
+CA510 TIC 26.312000
+CA510 TIC 32.591300
+CA510 TIC 31.047900
+CA510 TIC 32.180800
+CA510 TIC 26.118300
+CA510 TIC 45.493500
+CA510 TIC 24.635800
+CA510 TIC 26.127100
+CA510 TIC 23.556800
+CA510 TIC 25.190200
+CA510 TIC 30.761500
+CA510 TIC 29.388400
+CA510 TIC 24.538700
+CA510 TIC 26.725400
+CA510 TIC 23.281100
+CA510 TIC 43.482200
+CA510 TIC 25.088500
+CA510 TIC 25.648400
+CA510 TIC 25.559400
+CA510 TIC 26.728300
+CA510 TIC 23.946400
+CA510 TIC 27.743500
+CA510 TIC 29.450100
+CA510 TIC 31.047500
+CA510 TIC 30.089100
+CA510 TIC 49.863600
+CA510 TIC 26.325500
+CA510 TIC 35.775600
+CA510 TIC 24.782200
+CA510 TIC 28.101100
+CA510 TIC 26.508700
+CA510 TIC 26.256200
+CA510 TIC 25.577900
+CA510 TIC 25.201900
+CA510 TIC 28.331500
+CA510 TIC 49.453800
+CA510 TIC 29.108400
+CA510 TIC 28.389100
+CA510 TIC 26.829700
+CA510 TIC 25.423600
+CA510 TIC 24.204500
+CA510 TIC 26.674600
+CA510 TIC 30.237000
+CA510 TIC 29.347700
+CA510 TIC 36.560000
+CA510 TIC 49.562700
+CA510 TIC 26.184900
+CA510 TIC 28.974800
+CA510 TIC 26.360400
+CA510 TIC 26.806100
+CA510 TIC 24.124400
+CA510 TIC 25.317100
+CA510 TIC 23.515100
+CA510 TIC 25.637900
+CA510 TIC 24.435800
+CA510 TIC 43.205700
+CA510 TIC 26.075600
+CA510 TIC 26.754600
+CA510 TIC 24.421000
+CA510 TIC 30.333700
+CA510 TIC 26.179600
+CA510 TIC 40.328900
+CA510 TIC 31.404100
+CA510 TIC 32.647900
+CA510 TIC 29.027200
+CA510 TIC 46.675800
+CA510 TIC 26.007700
+CA510 TIC 25.201900
+CA510 TIC 26.127400
+CA510 TIC 31.507600
+CA510 TIC 30.853000
+CA510 TIC 31.158200
+CA510 TIC 29.172600
+CA510 TIC 27.578200
+CA510 TIC 23.438100
+CA510 TIC 44.310600
+CA510 TIC 24.709400
+CA510 TIC 25.232800
+CA510 TIC 43.089200
+CA510 TIC 29.103900
+CA510 TIC 26.175200
+CA510 TIC 33.348100
+CA510 TIC 30.486200
+CA510 TIC 33.059900
+CA510 TIC 31.659400
+CA510 TIC 47.469200
+CA510 TIC 27.001700
+CA510 TIC 28.109100
+CA510 TIC 27.647100
+CA510 TIC 27.823600
+CA510 TIC 25.972500
+CA510 TIC 28.190400
+CA510 TIC 29.998000
+CA510 TIC 28.473500
+CA510 TIC 27.257400
+CA510 TIC 59.988800
+CA510 TIC 29.492100
+CA510 TIC 27.905700
+CA510 TIC 27.609300
+CA510 TIC 27.127100
+CA510 TIC 30.671800
+CA510 TIC 33.744100
+CA510 TIC 31.189900
+CA510 TIC 32.588300
+CA510 TIC 33.843700
+CA510 TIC 45.951100
+CA510 TIC 27.240400
+CA510 TIC 27.627400
+CA510 TIC 26.460300
+CA510 TIC 29.616600
+CA510 TIC 28.575500
+CA510 TIC 28.566400
+CA510 TIC 39.426200
+CA510 TIC 28.863100
+CA510 TIC 26.371900
+CA510 TIC 43.560700
+CA510 TIC 28.286700
+CA510 TIC 29.025800
+CA510 TIC 26.943300
+CA510 TIC 31.397100
+CA510 TIC 33.573700
+CA510 TIC 34.027300
+CA510 TIC 28.805800
+CA510 TIC 32.449200
+CA510 TIC 27.822500
+CA510 TIC 44.621500
+CA510 TIC 30.295900
+CA510 TIC 29.617200
+CA510 TIC 26.511900
+CA510 TIC 39.159700
+CA510 TIC 27.577200
+CA510 TIC 27.953200
+CA510 TIC 29.080900
+CA510 TIC 34.515900
+CA510 TIC 32.108500
+CA510 TIC 51.248300
+CA510 TIC 31.067500
+CA510 TIC 29.520500
+CA510 TIC 31.798900
+CA510 TIC 33.753400
+CA510 TIC 31.237400
+CA510 TIC 34.232300
+CA510 TIC 27.300400
+CA510 TIC 29.651900
+CA510 TIC 27.764900
+CA510 TIC 46.755600
+CA510 TIC 38.194300
+CA510 TIC 28.447600
+CA510 TIC 25.510600
+CA510 TIC 27.910400
+CA510 TIC 27.257900
+CA510 TIC 29.967300
+CA510 TIC 26.607100
+CA510 TIC 36.288100
+CA510 TIC 31.087500
+CA510 TIC 51.429900
+CA510 TIC 31.610300
+CA510 TIC 38.262500
+CA510 TIC 31.584000
+CA510 TIC 31.919500
+CA510 TIC 31.687600
+CA510 TIC 33.359000
+CA510 TIC 31.126800
+CA510 TIC 47.596600
+CA510 TIC 30.787800
+CA510 TIC 53.160400
+CA510 TIC 28.672500
+CA510 TIC 26.943600
+CA510 TIC 28.052400
+CA510 TIC 29.226400
+CA510 TIC 27.374700
+CA510 TIC 27.583500
+CA510 TIC 28.305200
+CA510 TIC 33.482300
+CA510 TIC 28.821900
+CA510 TIC 50.487700
+CA510 TIC 31.692100
+CA510 TIC 34.661100
+CA510 TIC 33.773000
+CA510 TIC 29.682100
+CA510 TIC 36.902000
+CA510 TIC 29.031400
+CA510 TIC 26.422200
+CA510 TIC 27.596400
+CA510 TIC 28.623100
+CA510 TIC 45.367100
+CA510 TIC 27.305800
+CA510 TIC 30.506100
+CA510 TIC 29.094800
+CA510 TIC 26.230400
+CA510 TIC 24.598900
+CA510 TIC 28.689500
+CA510 TIC 25.387100
+CA510 TIC 25.536500
+CA510 TIC 28.405700
+CA510 TIC 49.258600
+CA510 TIC 30.853700
+CA510 TIC 39.052000
+CA510 TIC 28.493900
+CA510 TIC 25.227500
+CA510 TIC 23.658500
+CA510 TIC 27.019600
+CA510 TIC 23.215400
+CA510 TIC 24.946100
+CA510 TIC 24.378200
+CA510 TIC 42.417400
+CA510 TIC 24.896900
+CA510 TIC 24.658100
+CA510 TIC 27.420400
+CA510 TIC 26.707600
+CA510 TIC 24.006200
+CA510 TIC 24.523600
+CA510 TIC 25.092400
+CA510 TIC 26.854600
+CA510 TIC 30.696600
+CA510 TIC 47.155000
+CA510 TIC 28.286000
+CA510 TIC 31.818400
+CA510 TIC 29.273800
+CA510 TIC 32.073000
+CA510 TIC 24.606200
+CA510 TIC 25.462000
+CA510 TIC 26.251200
+CA510 TIC 27.375200
+CA510 TIC 25.046700
+CA510 TIC 42.613800
+CA510 TIC 24.145400
+CA510 TIC 27.537300
+CA510 TIC 29.074600
+CA510 TIC 32.313200
+CA510 TIC 36.668300
+CA510 TIC 30.084400
+CA510 TIC 25.724300
+CA510 TIC 26.368100
+CA510 TIC 23.395500
+CA510 TIC 46.622000
+CA510 TIC 30.118900
+CA510 TIC 31.702600
+CA510 TIC 27.278300
+CA510 TIC 30.416000
+CA510 TIC 24.355100
+CA510 TIC 27.141300
+CA510 TIC 23.976700
+CA510 TIC 25.295400
+CA510 TIC 23.390500
+CA510 TIC 42.302000
+CA510 TIC 24.606900
+CA510 TIC 33.025600
+CA510 TIC 25.010300
+CA510 TIC 28.350400
+CA510 TIC 24.495700
+CA510 TIC 24.915500
+CA510 TIC 22.962100
+CA510 TIC 26.827000
+CA510 TIC 25.873200
+CA510 TIC 42.573600
+CA510 TIC 29.798000
+CA510 TIC 32.607000
+CA510 TIC 30.923400
+CA510 TIC 31.160300
+CA510 TIC 30.138100
+CA510 TIC 26.596700
+CA510 TIC 26.744500
+CA510 TIC 30.131800
+CA510 TIC 34.913000
+CA510 TIC 44.808900
+CA510 TIC 27.548200
+CA510 TIC 25.728700
+CA510 TIC 23.642800
+CA510 TIC 27.757700
+CA510 TIC 25.831800
+CA510 TIC 26.050200
+CA510 TIC 23.242600
+CA510 TIC 25.412800
+CA510 TIC 23.942600
+CA510 TIC 41.399200
+CA510 TIC 27.600300
+CA510 TIC 31.997900
+CA510 TIC 27.701900
+CA510 TIC 31.610500
+CA510 TIC 27.074500
+CA510 TIC 37.589100
+CA510 TIC 25.355500
+CA510 TIC 25.711000
+CA510 TIC 24.644900
+CA510 TIC 41.860700
+CA510 TIC 27.552300
+CA510 TIC 28.517200
+CA510 TIC 26.569500
+CA510 TIC 30.940600
+CA510 TIC 30.483700
+CA510 TIC 30.391400
+CA510 TIC 26.490000
+CA510 TIC 27.431000
+CA510 TIC 25.949100
+CA510 TIC 47.520200
+CA510 TIC 30.954900
+CA510 TIC 31.219000
+CA510 TIC 39.820700
+CA510 TIC 33.106500
+CA510 TIC 27.301900
+CA510 TIC 28.205800
+CA510 TIC 25.910100
+CA510 TIC 28.480100
+CA510 TIC 27.164400
+CA510 TIC 46.463900
+CA510 TIC 29.725300
+CA510 TIC 28.155600
+CA510 TIC 27.824900
+CA510 TIC 28.355100
+CA510 TIC 27.112600
+CA510 TIC 27.078600
+CA510 TIC 27.792100
+CA510 TIC 30.289700
+CA510 TIC 26.534700
+CA510 TIC 60.604100
+CA510 TIC 30.304400
+CA510 TIC 32.651600
+CA510 TIC 31.693000
+CA510 TIC 29.712500
+CA510 TIC 28.136700
+CA510 TIC 29.738100
+CA510 TIC 28.009600
+CA510 TIC 32.572300
+CA510 TIC 34.078100
+CA510 TIC 53.051700
+CA510 TIC 36.223900
+CA510 TIC 36.808700
+CA510 TIC 32.059100
+CA510 TIC 32.478100
+CA510 TIC 29.615400
+CA510 TIC 35.490200
+CA510 TIC 46.959000
+CA510 TIC 31.320400
+CA510 TIC 30.449600
+CA510 TIC 47.655500
+CA510 TIC 27.289200
+CA510 TIC 30.177200
+CA510 TIC 27.461700
+CA510 TIC 30.523300
+CA510 TIC 27.514100
+CA510 TIC 28.364500
+CA510 TIC 26.405200
+CA510 TIC 27.785200
+CA510 TIC 26.466200
+CA510 TIC 45.455600
+CA510 TIC 28.686800
+CA510 TIC 29.035700
+CA510 TIC 26.067600
+CA510 TIC 37.844900
+CA510 TIC 26.498400
+CA510 TIC 30.042000
+CA510 TIC 31.763200
+CA510 TIC 31.594800
+CA510 TIC 32.555200
+CA510 TIC 50.636600
+CA510 TIC 28.095200
+CA510 TIC 32.794900
+CA510 TIC 30.967400
+CA510 TIC 33.472200
+CA510 TIC 30.637300
+CA510 TIC 32.380900
+CA510 TIC 26.708800
+CA510 TIC 28.154400
+CA510 TIC 26.917500
+CA510 TIC 45.813200
+CA510 TIC 37.701200
+CA510 TIC 27.755200
+CA510 TIC 25.662000
+CA510 TIC 27.563900
+CA510 TIC 30.428400
+CA510 TIC 34.626600
+CA510 TIC 31.986700
+CA510 TIC 33.768700
+CA510 TIC 32.075000
+CA510 TIC 44.857900
+CA510 TIC 27.233300
+CA510 TIC 28.890600
+CA510 TIC 27.593800
+CA510 TIC 26.878800
+CA510 TIC 25.984900
+CA510 TIC 28.698800
+CA510 TIC 27.332200
+CA510 TIC 40.975200
+CA510 TIC 28.335100
+CA510 TIC 48.157200
+CA510 TIC 27.854000
+CA510 TIC 30.510800
+CA510 TIC 26.718800
+CA510 TIC 32.049100
+CA510 TIC 32.614200
+CA510 TIC 32.814800
+CA510 TIC 31.667000
+CA510 TIC 33.303100
+CA510 TIC 27.519700
+CA510 TIC 43.830200
+CA510 TIC 27.312600
+CA510 TIC 27.025100
+CA510 TIC 27.379400
+CA510 TIC 28.239600
+CA510 TIC 32.449800
+CA510 TIC 26.315000
+CA510 TIC 23.685600
+CA510 TIC 27.461200
+CA510 TIC 25.035100
+CA510 TIC 41.327300
+CA510 TIC 25.212200
+CA510 TIC 26.906500
+CA510 TIC 24.186600
+CA510 TIC 27.893200
+CA510 TIC 30.406000
+CA510 TIC 31.696100
+CA510 TIC 28.676900
+CA510 TIC 28.587900
+CA510 TIC 28.124700
+CA510 TIC 42.134600
+CA510 TIC 26.610800
+CA510 TIC 34.117200
+CA510 TIC 29.211100
+CA510 TIC 27.831200
+CA510 TIC 26.498900
+CA510 TIC 25.638700
+CA510 TIC 28.652900
+CA510 TIC 29.939600
+CA510 TIC 29.473200
+CA510 TIC 46.491800
+CA510 TIC 27.720300
+CA510 TIC 26.249000
+CA510 TIC 24.873900
+CA510 TIC 25.488500
+CA510 TIC 28.558100
+CA510 TIC 30.406600
+CA510 TIC 28.250900
+CA510 TIC 30.487000
+CA510 TIC 37.279500
+CA510 TIC 43.278300
+CA510 TIC 25.936500
+CA510 TIC 26.850700
+CA510 TIC 24.410200
+CA510 TIC 25.261200
+CA870 TICK_TIME i=0 ms=114290.209100
+CA870 TICK_TIME i=1 ms=114317.741200
+CA870 TICK_TIME i=2 ms=114345.984900
+CA870 TICK_TIME i=3 ms=114375.106300
+CA870 TICK_TIME i=4 ms=114409.181400
+CA870 TICK_TIME i=5 ms=114441.810200
+CA870 TICK_TIME i=6 ms=114494.935500
+CA870 TICK_TIME i=7 ms=114527.228100
+CA870 TICK_TIME i=8 ms=114556.063700
+CA870 TICK_TIME i=9 ms=114587.985200
+CA870 TICK_TIME i=10 ms=114620.892500
+CA870 TICK_TIME i=11 ms=114651.724700
+CA870 TICK_TIME i=12 ms=114684.167700
+CA870 TICK_TIME i=13 ms=114714.658100
+CA870 TICK_TIME i=14 ms=114743.505400
+CA870 TICK_TIME i=15 ms=114769.853100
+CA870 TICK_TIME i=16 ms=114815.713500
+CA870 TICK_TIME i=17 ms=114869.691900
+CA870 TICK_TIME i=18 ms=114899.428900
+CA870 TICK_TIME i=19 ms=114927.630500
+CA870 TICK_TIME i=20 ms=114954.970900
+CA870 TICK_TIME i=21 ms=114984.805100
+CA870 TICK_TIME i=22 ms=115017.413900
+CA870 TICK_TIME i=23 ms=115046.272700
+CA870 TICK_TIME i=24 ms=115075.632400
+CA870 TICK_TIME i=25 ms=115103.808200
+CA870 TICK_TIME i=26 ms=115150.813700
+CA870 TICK_TIME i=27 ms=115182.618100
+CA870 TICK_TIME i=28 ms=115214.594600
+CA870 TICK_TIME i=29 ms=115247.671200
+CA870 TICK_TIME i=30 ms=115281.478700
+CA870 TICK_TIME i=31 ms=115311.739500
+CA870 TICK_TIME i=32 ms=115337.311700
+CA870 TICK_TIME i=33 ms=115361.068400
+CA870 TICK_TIME i=34 ms=115402.005100
+CA870 TICK_TIME i=35 ms=115429.537700
+CA870 TICK_TIME i=36 ms=115478.268100
+CA870 TICK_TIME i=37 ms=115505.774100
+CA870 TICK_TIME i=38 ms=115535.117500
+CA870 TICK_TIME i=39 ms=115559.217300
+CA870 TICK_TIME i=40 ms=115586.381500
+CA870 TICK_TIME i=41 ms=115611.763500
+CA870 TICK_TIME i=42 ms=115642.969500
+CA870 TICK_TIME i=43 ms=115667.959600
+CA870 TICK_TIME i=44 ms=115694.098100
+CA870 TICK_TIME i=45 ms=115719.199300
+CA870 TICK_TIME i=46 ms=115761.865300
+CA870 TICK_TIME i=47 ms=115792.281700
+CA870 TICK_TIME i=48 ms=115820.967300
+CA870 TICK_TIME i=49 ms=115848.246400
+CA870 TICK_TIME i=50 ms=115875.744100
+CA870 TICK_TIME i=51 ms=115916.999600
+CA870 TICK_TIME i=52 ms=115942.660100
+CA870 TICK_TIME i=53 ms=115966.654500
+CA870 TICK_TIME i=54 ms=115992.041900
+CA870 TICK_TIME i=55 ms=116017.182500
+CA870 TICK_TIME i=56 ms=116060.080400
+CA870 TICK_TIME i=57 ms=116085.874900
+CA870 TICK_TIME i=58 ms=116112.823300
+CA870 TICK_TIME i=59 ms=116138.655300
+CA870 TICK_TIME i=60 ms=116163.732800
+CA870 TICK_TIME i=61 ms=116187.402200
+CA870 TICK_TIME i=62 ms=116212.552000
+CA870 TICK_TIME i=63 ms=116235.916500
+CA870 TICK_TIME i=64 ms=116260.334700
+CA870 TICK_TIME i=65 ms=116284.465500
+CA870 TICK_TIME i=66 ms=116327.285200
+CA870 TICK_TIME i=67 ms=116351.152500
+CA870 TICK_TIME i=68 ms=116388.673000
+CA870 TICK_TIME i=69 ms=116418.340400
+CA870 TICK_TIME i=70 ms=116449.072200
+CA870 TICK_TIME i=71 ms=116477.424100
+CA870 TICK_TIME i=72 ms=116507.568900
+CA870 TICK_TIME i=73 ms=116532.712100
+CA870 TICK_TIME i=74 ms=116557.898800
+CA870 TICK_TIME i=75 ms=116585.170100
+CA870 TICK_TIME i=76 ms=116628.921400
+CA870 TICK_TIME i=77 ms=116654.744300
+CA870 TICK_TIME i=78 ms=116681.589600
+CA870 TICK_TIME i=79 ms=116707.677900
+CA870 TICK_TIME i=80 ms=116739.512800
+CA870 TICK_TIME i=81 ms=116769.579900
+CA870 TICK_TIME i=82 ms=116797.908900
+CA870 TICK_TIME i=83 ms=116823.383500
+CA870 TICK_TIME i=84 ms=116857.211100
+CA870 TICK_TIME i=85 ms=116886.537100
+CA870 TICK_TIME i=86 ms=116930.932200
+CA870 TICK_TIME i=87 ms=116956.397400
+CA870 TICK_TIME i=88 ms=116985.895600
+CA870 TICK_TIME i=89 ms=117015.698200
+CA870 TICK_TIME i=90 ms=117047.009700
+CA870 TICK_TIME i=91 ms=117075.228600
+CA870 TICK_TIME i=92 ms=117105.073200
+CA870 TICK_TIME i=93 ms=117132.300100
+CA870 TICK_TIME i=94 ms=117158.883900
+CA870 TICK_TIME i=95 ms=117183.844200
+CA870 TICK_TIME i=96 ms=117227.056200
+CA870 TICK_TIME i=97 ms=117251.351700
+CA870 TICK_TIME i=98 ms=117276.621300
+CA870 TICK_TIME i=99 ms=117300.217300
+CA870 TICK_TIME i=100 ms=117326.618800
+CA870 TICK_TIME i=101 ms=117357.969400
+CA870 TICK_TIME i=102 ms=117390.311400
+CA870 TICK_TIME i=103 ms=117421.481700
+CA870 TICK_TIME i=104 ms=117450.304000
+CA870 TICK_TIME i=105 ms=117478.154000
+CA870 TICK_TIME i=106 ms=117524.666000
+CA870 TICK_TIME i=107 ms=117551.330000
+CA870 TICK_TIME i=108 ms=117578.510600
+CA870 TICK_TIME i=109 ms=117608.585600
+CA870 TICK_TIME i=110 ms=117639.231300
+CA870 TICK_TIME i=111 ms=117671.440400
+CA870 TICK_TIME i=112 ms=117702.764400
+CA870 TICK_TIME i=113 ms=117732.577900
+CA870 TICK_TIME i=114 ms=117759.465500
+CA870 TICK_TIME i=115 ms=117782.863200
+CA870 TICK_TIME i=116 ms=117824.213700
+CA870 TICK_TIME i=117 ms=117848.178700
+CA870 TICK_TIME i=118 ms=117889.222600
+CA870 TICK_TIME i=119 ms=117915.577500
+CA870 TICK_TIME i=120 ms=117941.259700
+CA870 TICK_TIME i=121 ms=117965.869700
+CA870 TICK_TIME i=122 ms=117993.831500
+CA870 TICK_TIME i=123 ms=118018.998300
+CA870 TICK_TIME i=124 ms=118044.147800
+CA870 TICK_TIME i=125 ms=118070.068400
+CA870 TICK_TIME i=126 ms=118112.936900
+CA870 TICK_TIME i=127 ms=118139.859300
+CA870 TICK_TIME i=128 ms=118165.447800
+CA870 TICK_TIME i=129 ms=118196.416300
+CA870 TICK_TIME i=130 ms=118231.364600
+CA870 TICK_TIME i=131 ms=118263.173900
+CA870 TICK_TIME i=132 ms=118296.774000
+CA870 TICK_TIME i=133 ms=118327.214600
+CA870 TICK_TIME i=134 ms=118354.974700
+CA870 TICK_TIME i=135 ms=118396.227000
+CA870 TICK_TIME i=136 ms=118447.807500
+CA870 TICK_TIME i=137 ms=118478.126400
+CA870 TICK_TIME i=138 ms=118511.965700
+CA870 TICK_TIME i=139 ms=118539.467500
+CA870 TICK_TIME i=140 ms=118567.234100
+CA870 TICK_TIME i=141 ms=118592.933700
+CA870 TICK_TIME i=142 ms=118621.028500
+CA870 TICK_TIME i=143 ms=118647.099800
+CA870 TICK_TIME i=144 ms=118674.198200
+CA870 TICK_TIME i=145 ms=118701.011900
+CA870 TICK_TIME i=146 ms=118748.325900
+CA870 TICK_TIME i=147 ms=118775.899300
+CA870 TICK_TIME i=148 ms=118808.712300
+CA870 TICK_TIME i=149 ms=118840.528000
+CA870 TICK_TIME i=150 ms=118874.494800
+CA870 TICK_TIME i=151 ms=118905.947100
+CA870 TICK_TIME i=152 ms=118946.710800
+CA870 TICK_TIME i=153 ms=118974.826300
+CA870 TICK_TIME i=154 ms=119003.548800
+CA870 TICK_TIME i=155 ms=119030.562500
+CA870 TICK_TIME i=156 ms=119076.210300
+CA870 TICK_TIME i=157 ms=119106.128700
+CA870 TICK_TIME i=158 ms=119135.923800
+CA870 TICK_TIME i=159 ms=119163.571400
+CA870 TICK_TIME i=160 ms=119191.692300
+CA870 TICK_TIME i=161 ms=119223.928700
+CA870 TICK_TIME i=162 ms=119254.672700
+CA870 TICK_TIME i=163 ms=119281.647200
+CA870 TICK_TIME i=164 ms=119310.428800
+CA870 TICK_TIME i=165 ms=119340.976100
+CA870 TICK_TIME i=166 ms=119391.199500
+CA870 TICK_TIME i=167 ms=119423.450400
+CA870 TICK_TIME i=168 ms=119457.425500
+CA870 TICK_TIME i=169 ms=119507.536900
+CA870 TICK_TIME i=170 ms=119536.938800
+CA870 TICK_TIME i=171 ms=119563.831700
+CA870 TICK_TIME i=172 ms=119593.780900
+CA870 TICK_TIME i=173 ms=119620.720500
+CA870 TICK_TIME i=174 ms=119647.931900
+CA870 TICK_TIME i=175 ms=119674.724900
+CA870 TICK_TIME i=176 ms=119718.965300
+CA870 TICK_TIME i=177 ms=119746.663600
+CA870 TICK_TIME i=178 ms=119773.688300
+CA870 TICK_TIME i=179 ms=119801.045700
+CA870 TICK_TIME i=180 ms=119828.463000
+CA870 TICK_TIME i=181 ms=119854.025800
+CA870 TICK_TIME i=182 ms=119883.740400
+CA870 TICK_TIME i=183 ms=119911.755500
+CA870 TICK_TIME i=184 ms=119941.808600
+CA870 TICK_TIME i=185 ms=119969.670000
+CA870 TICK_TIME i=186 ms=120036.989700
+CA870 TICK_TIME i=187 ms=120067.125100
+CA870 TICK_TIME i=188 ms=120097.181000
+CA870 TICK_TIME i=189 ms=120125.613400
+CA870 TICK_TIME i=190 ms=120154.695000
+CA870 TICK_TIME i=191 ms=120181.179500
+CA870 TICK_TIME i=192 ms=120212.107800
+CA870 TICK_TIME i=193 ms=120240.073200
+CA870 TICK_TIME i=194 ms=120268.843000
+CA870 TICK_TIME i=195 ms=120294.901100
+CA870 TICK_TIME i=196 ms=120341.605300
+CA870 TICK_TIME i=197 ms=120368.193500
+CA870 TICK_TIME i=198 ms=120397.503000
+CA870 TICK_TIME i=199 ms=120430.161900
+CA870 TICK_TIME i=200 ms=120463.790400
+CA870 TICK_TIME i=201 ms=120496.325000
+CA870 TICK_TIME i=202 ms=120529.853100
+CA870 TICK_TIME i=203 ms=120567.772700
+CA870 TICK_TIME i=204 ms=120600.000200
+CA870 TICK_TIME i=205 ms=120631.651500
+CA870 TICK_TIME i=206 ms=120682.389200
+CA870 TICK_TIME i=207 ms=120714.198400
+CA870 TICK_TIME i=208 ms=120743.983900
+CA870 TICK_TIME i=209 ms=120771.672000
+CA870 TICK_TIME i=210 ms=120800.770800
+CA870 TICK_TIME i=211 ms=120827.540000
+CA870 TICK_TIME i=212 ms=120855.198400
+CA870 TICK_TIME i=213 ms=120881.087700
+CA870 TICK_TIME i=214 ms=120908.362600
+CA870 TICK_TIME i=215 ms=120934.100500
+CA870 TICK_TIME i=216 ms=120979.487800
+CA870 TICK_TIME i=217 ms=121008.790300
+CA870 TICK_TIME i=218 ms=121036.501900
+CA870 TICK_TIME i=219 ms=121063.432500
+CA870 TICK_TIME i=220 ms=121106.458800
+CA870 TICK_TIME i=221 ms=121134.185400
+CA870 TICK_TIME i=222 ms=121165.555600
+CA870 TICK_TIME i=223 ms=121195.968400
+CA870 TICK_TIME i=224 ms=121230.852500
+CA870 TICK_TIME i=225 ms=121263.170300
+CA870 TICK_TIME i=226 ms=121314.840300
+CA870 TICK_TIME i=227 ms=121346.241400
+CA870 TICK_TIME i=228 ms=121374.736800
+CA870 TICK_TIME i=229 ms=121406.841700
+CA870 TICK_TIME i=230 ms=121439.814600
+CA870 TICK_TIME i=231 ms=121471.576500
+CA870 TICK_TIME i=232 ms=121503.996700
+CA870 TICK_TIME i=233 ms=121532.756000
+CA870 TICK_TIME i=234 ms=121560.187000
+CA870 TICK_TIME i=235 ms=121586.229800
+CA870 TICK_TIME i=236 ms=121632.084300
+CA870 TICK_TIME i=237 ms=121668.545700
+CA870 TICK_TIME i=238 ms=121695.232400
+CA870 TICK_TIME i=239 ms=121721.334700
+CA870 TICK_TIME i=240 ms=121749.421500
+CA870 TICK_TIME i=241 ms=121773.305300
+CA870 TICK_TIME i=242 ms=121804.419400
+CA870 TICK_TIME i=243 ms=121833.539500
+CA870 TICK_TIME i=244 ms=121864.446900
+CA870 TICK_TIME i=245 ms=121898.306000
+CA870 TICK_TIME i=246 ms=121950.132900
+CA870 TICK_TIME i=247 ms=121981.616200
+CA870 TICK_TIME i=248 ms=122011.590300
+CA870 TICK_TIME i=249 ms=122039.858400
+CA870 TICK_TIME i=250 ms=122067.721800
+CA870 TICK_TIME i=251 ms=122095.976300
+CA870 TICK_TIME i=252 ms=122123.744600
+CA870 TICK_TIME i=253 ms=122147.754800
+CA870 TICK_TIME i=254 ms=122186.644400
+CA870 TICK_TIME i=255 ms=122212.247700
+CA870 TICK_TIME i=256 ms=122256.663000
+CA870 TICK_TIME i=257 ms=122280.678900
+CA870 TICK_TIME i=258 ms=122307.860500
+CA870 TICK_TIME i=259 ms=122332.629300
+CA870 TICK_TIME i=260 ms=122357.949700
+CA870 TICK_TIME i=261 ms=122384.261700
+CA870 TICK_TIME i=262 ms=122416.853000
+CA870 TICK_TIME i=263 ms=122447.900900
+CA870 TICK_TIME i=264 ms=122480.081700
+CA870 TICK_TIME i=265 ms=122506.200000
+CA870 TICK_TIME i=266 ms=122551.693500
+CA870 TICK_TIME i=267 ms=122576.329300
+CA870 TICK_TIME i=268 ms=122602.456400
+CA870 TICK_TIME i=269 ms=122626.013200
+CA870 TICK_TIME i=270 ms=122651.203400
+CA870 TICK_TIME i=271 ms=122681.964900
+CA870 TICK_TIME i=272 ms=122711.353300
+CA870 TICK_TIME i=273 ms=122735.892000
+CA870 TICK_TIME i=274 ms=122762.617400
+CA870 TICK_TIME i=275 ms=122785.898500
+CA870 TICK_TIME i=276 ms=122829.380700
+CA870 TICK_TIME i=277 ms=122854.469200
+CA870 TICK_TIME i=278 ms=122880.117600
+CA870 TICK_TIME i=279 ms=122905.677000
+CA870 TICK_TIME i=280 ms=122932.405300
+CA870 TICK_TIME i=281 ms=122956.351700
+CA870 TICK_TIME i=282 ms=122984.095200
+CA870 TICK_TIME i=283 ms=123013.545300
+CA870 TICK_TIME i=284 ms=123044.592800
+CA870 TICK_TIME i=285 ms=123074.681900
+CA870 TICK_TIME i=286 ms=123124.545500
+CA870 TICK_TIME i=287 ms=123150.871000
+CA870 TICK_TIME i=288 ms=123186.646600
+CA870 TICK_TIME i=289 ms=123211.428800
+CA870 TICK_TIME i=290 ms=123239.529900
+CA870 TICK_TIME i=291 ms=123266.038600
+CA870 TICK_TIME i=292 ms=123292.294800
+CA870 TICK_TIME i=293 ms=123317.872700
+CA870 TICK_TIME i=294 ms=123343.074600
+CA870 TICK_TIME i=295 ms=123371.406100
+CA870 TICK_TIME i=296 ms=123420.859900
+CA870 TICK_TIME i=297 ms=123449.968300
+CA870 TICK_TIME i=298 ms=123478.357400
+CA870 TICK_TIME i=299 ms=123505.187100
+CA870 TICK_TIME i=300 ms=123530.610700
+CA870 TICK_TIME i=301 ms=123554.815200
+CA870 TICK_TIME i=302 ms=123581.489800
+CA870 TICK_TIME i=303 ms=123611.726800
+CA870 TICK_TIME i=304 ms=123641.074500
+CA870 TICK_TIME i=305 ms=123677.634500
+CA870 TICK_TIME i=306 ms=123727.197200
+CA870 TICK_TIME i=307 ms=123753.382100
+CA870 TICK_TIME i=308 ms=123782.356900
+CA870 TICK_TIME i=309 ms=123808.717300
+CA870 TICK_TIME i=310 ms=123835.523400
+CA870 TICK_TIME i=311 ms=123859.647800
+CA870 TICK_TIME i=312 ms=123884.964900
+CA870 TICK_TIME i=313 ms=123908.480000
+CA870 TICK_TIME i=314 ms=123934.117900
+CA870 TICK_TIME i=315 ms=123958.553700
+CA870 TICK_TIME i=316 ms=124001.759400
+CA870 TICK_TIME i=317 ms=124027.835000
+CA870 TICK_TIME i=318 ms=124054.589600
+CA870 TICK_TIME i=319 ms=124079.010600
+CA870 TICK_TIME i=320 ms=124109.344300
+CA870 TICK_TIME i=321 ms=124135.523900
+CA870 TICK_TIME i=322 ms=124175.852800
+CA870 TICK_TIME i=323 ms=124207.256900
+CA870 TICK_TIME i=324 ms=124239.904800
+CA870 TICK_TIME i=325 ms=124268.932000
+CA870 TICK_TIME i=326 ms=124315.607800
+CA870 TICK_TIME i=327 ms=124341.615500
+CA870 TICK_TIME i=328 ms=124366.817400
+CA870 TICK_TIME i=329 ms=124392.944800
+CA870 TICK_TIME i=330 ms=124424.452400
+CA870 TICK_TIME i=331 ms=124455.305400
+CA870 TICK_TIME i=332 ms=124486.463600
+CA870 TICK_TIME i=333 ms=124515.636200
+CA870 TICK_TIME i=334 ms=124543.214400
+CA870 TICK_TIME i=335 ms=124566.652500
+CA870 TICK_TIME i=336 ms=124610.963100
+CA870 TICK_TIME i=337 ms=124635.672500
+CA870 TICK_TIME i=338 ms=124660.905300
+CA870 TICK_TIME i=339 ms=124703.994500
+CA870 TICK_TIME i=340 ms=124733.098400
+CA870 TICK_TIME i=341 ms=124759.273600
+CA870 TICK_TIME i=342 ms=124792.621700
+CA870 TICK_TIME i=343 ms=124823.107900
+CA870 TICK_TIME i=344 ms=124856.167800
+CA870 TICK_TIME i=345 ms=124887.827200
+CA870 TICK_TIME i=346 ms=124935.296400
+CA870 TICK_TIME i=347 ms=124962.298100
+CA870 TICK_TIME i=348 ms=124990.407200
+CA870 TICK_TIME i=349 ms=125018.054300
+CA870 TICK_TIME i=350 ms=125045.877900
+CA870 TICK_TIME i=351 ms=125071.850400
+CA870 TICK_TIME i=352 ms=125100.040800
+CA870 TICK_TIME i=353 ms=125130.038800
+CA870 TICK_TIME i=354 ms=125158.512300
+CA870 TICK_TIME i=355 ms=125185.769700
+CA870 TICK_TIME i=356 ms=125245.758500
+CA870 TICK_TIME i=357 ms=125275.250600
+CA870 TICK_TIME i=358 ms=125303.156300
+CA870 TICK_TIME i=359 ms=125330.765600
+CA870 TICK_TIME i=360 ms=125357.892700
+CA870 TICK_TIME i=361 ms=125388.564500
+CA870 TICK_TIME i=362 ms=125422.308600
+CA870 TICK_TIME i=363 ms=125453.498500
+CA870 TICK_TIME i=364 ms=125486.086800
+CA870 TICK_TIME i=365 ms=125519.930500
+CA870 TICK_TIME i=366 ms=125565.881600
+CA870 TICK_TIME i=367 ms=125593.122000
+CA870 TICK_TIME i=368 ms=125620.749400
+CA870 TICK_TIME i=369 ms=125647.209700
+CA870 TICK_TIME i=370 ms=125676.826300
+CA870 TICK_TIME i=371 ms=125705.401800
+CA870 TICK_TIME i=372 ms=125733.968200
+CA870 TICK_TIME i=373 ms=125773.394400
+CA870 TICK_TIME i=374 ms=125802.257500
+CA870 TICK_TIME i=375 ms=125828.629400
+CA870 TICK_TIME i=376 ms=125872.190100
+CA870 TICK_TIME i=377 ms=125900.476800
+CA870 TICK_TIME i=378 ms=125929.502600
+CA870 TICK_TIME i=379 ms=125956.445900
+CA870 TICK_TIME i=380 ms=125987.843000
+CA870 TICK_TIME i=381 ms=126021.416700
+CA870 TICK_TIME i=382 ms=126055.444000
+CA870 TICK_TIME i=383 ms=126084.249800
+CA870 TICK_TIME i=384 ms=126116.699000
+CA870 TICK_TIME i=385 ms=126144.521500
+CA870 TICK_TIME i=386 ms=126189.143000
+CA870 TICK_TIME i=387 ms=126219.438900
+CA870 TICK_TIME i=388 ms=126249.056100
+CA870 TICK_TIME i=389 ms=126275.568000
+CA870 TICK_TIME i=390 ms=126314.727700
+CA870 TICK_TIME i=391 ms=126342.304900
+CA870 TICK_TIME i=392 ms=126370.258100
+CA870 TICK_TIME i=393 ms=126399.339000
+CA870 TICK_TIME i=394 ms=126433.854900
+CA870 TICK_TIME i=395 ms=126465.963400
+CA870 TICK_TIME i=396 ms=126517.211700
+CA870 TICK_TIME i=397 ms=126548.279200
+CA870 TICK_TIME i=398 ms=126577.799700
+CA870 TICK_TIME i=399 ms=126609.598600
+CA870 TICK_TIME i=400 ms=126643.352000
+CA870 TICK_TIME i=401 ms=126674.589400
+CA870 TICK_TIME i=402 ms=126708.821700
+CA870 TICK_TIME i=403 ms=126736.122100
+CA870 TICK_TIME i=404 ms=126765.774000
+CA870 TICK_TIME i=405 ms=126793.538900
+CA870 TICK_TIME i=406 ms=126840.294500
+CA870 TICK_TIME i=407 ms=126878.488800
+CA870 TICK_TIME i=408 ms=126906.936400
+CA870 TICK_TIME i=409 ms=126932.447000
+CA870 TICK_TIME i=410 ms=126960.357400
+CA870 TICK_TIME i=411 ms=126987.615300
+CA870 TICK_TIME i=412 ms=127017.582600
+CA870 TICK_TIME i=413 ms=127044.189700
+CA870 TICK_TIME i=414 ms=127080.477800
+CA870 TICK_TIME i=415 ms=127111.565300
+CA870 TICK_TIME i=416 ms=127162.995200
+CA870 TICK_TIME i=417 ms=127194.605500
+CA870 TICK_TIME i=418 ms=127232.868000
+CA870 TICK_TIME i=419 ms=127264.452000
+CA870 TICK_TIME i=420 ms=127296.371500
+CA870 TICK_TIME i=421 ms=127328.059100
+CA870 TICK_TIME i=422 ms=127361.418100
+CA870 TICK_TIME i=423 ms=127392.544900
+CA870 TICK_TIME i=424 ms=127440.141500
+CA870 TICK_TIME i=425 ms=127470.929300
+CA870 TICK_TIME i=426 ms=127524.089700
+CA870 TICK_TIME i=427 ms=127552.762200
+CA870 TICK_TIME i=428 ms=127579.705800
+CA870 TICK_TIME i=429 ms=127607.758200
+CA870 TICK_TIME i=430 ms=127636.984600
+CA870 TICK_TIME i=431 ms=127664.359300
+CA870 TICK_TIME i=432 ms=127691.942800
+CA870 TICK_TIME i=433 ms=127720.248000
+CA870 TICK_TIME i=434 ms=127753.730300
+CA870 TICK_TIME i=435 ms=127782.552200
+CA870 TICK_TIME i=436 ms=127833.039900
+CA870 TICK_TIME i=437 ms=127864.732000
+CA870 TICK_TIME i=438 ms=127899.393100
+CA870 TICK_TIME i=439 ms=127933.166100
+CA870 TICK_TIME i=440 ms=127962.848200
+CA870 TICK_TIME i=441 ms=127999.750200
+CA870 TICK_TIME i=442 ms=128028.781600
+CA870 TICK_TIME i=443 ms=128055.203800
+CA870 TICK_TIME i=444 ms=128082.800200
+CA870 TICK_TIME i=445 ms=128111.423300
+CA870 TICK_TIME i=446 ms=128156.790400
+CA870 TICK_TIME i=447 ms=128184.096200
+CA870 TICK_TIME i=448 ms=128214.602300
+CA870 TICK_TIME i=449 ms=128243.697100
+CA870 TICK_TIME i=450 ms=128269.927500
+CA870 TICK_TIME i=451 ms=128294.526400
+CA870 TICK_TIME i=452 ms=128323.215900
+CA870 TICK_TIME i=453 ms=128348.603000
+CA870 TICK_TIME i=454 ms=128374.139500
+CA870 TICK_TIME i=455 ms=128402.545200
+CA870 TICK_TIME i=456 ms=128451.803800
+CA870 TICK_TIME i=457 ms=128482.657500
+CA870 TICK_TIME i=458 ms=128521.709500
+CA870 TICK_TIME i=459 ms=128550.203400
+CA870 TICK_TIME i=460 ms=128575.430900
+CA870 TICK_TIME i=461 ms=128599.089400
+CA870 TICK_TIME i=462 ms=128626.109000
+CA870 TICK_TIME i=463 ms=128649.324400
+CA870 TICK_TIME i=464 ms=128674.270500
+CA870 TICK_TIME i=465 ms=128698.648700
+CA870 TICK_TIME i=466 ms=128741.066100
+CA870 TICK_TIME i=467 ms=128765.963000
+CA870 TICK_TIME i=468 ms=128790.621100
+CA870 TICK_TIME i=469 ms=128818.041500
+CA870 TICK_TIME i=470 ms=128844.749100
+CA870 TICK_TIME i=471 ms=128868.755300
+CA870 TICK_TIME i=472 ms=128893.278900
+CA870 TICK_TIME i=473 ms=128918.371300
+CA870 TICK_TIME i=474 ms=128945.225900
+CA870 TICK_TIME i=475 ms=128975.922500
+CA870 TICK_TIME i=476 ms=129023.077500
+CA870 TICK_TIME i=477 ms=129051.363500
+CA870 TICK_TIME i=478 ms=129083.181900
+CA870 TICK_TIME i=479 ms=129112.455700
+CA870 TICK_TIME i=480 ms=129144.528700
+CA870 TICK_TIME i=481 ms=129169.134900
+CA870 TICK_TIME i=482 ms=129194.596900
+CA870 TICK_TIME i=483 ms=129220.848100
+CA870 TICK_TIME i=484 ms=129248.223300
+CA870 TICK_TIME i=485 ms=129273.270000
+CA870 TICK_TIME i=486 ms=129315.883800
+CA870 TICK_TIME i=487 ms=129340.029200
+CA870 TICK_TIME i=488 ms=129367.566500
+CA870 TICK_TIME i=489 ms=129396.641100
+CA870 TICK_TIME i=490 ms=129428.954300
+CA870 TICK_TIME i=491 ms=129465.622600
+CA870 TICK_TIME i=492 ms=129495.707000
+CA870 TICK_TIME i=493 ms=129521.431300
+CA870 TICK_TIME i=494 ms=129547.799400
+CA870 TICK_TIME i=495 ms=129571.194900
+CA870 TICK_TIME i=496 ms=129617.816900
+CA870 TICK_TIME i=497 ms=129647.935800
+CA870 TICK_TIME i=498 ms=129679.638400
+CA870 TICK_TIME i=499 ms=129706.916700
+CA870 TICK_TIME i=500 ms=129737.332700
+CA870 TICK_TIME i=501 ms=129761.687800
+CA870 TICK_TIME i=502 ms=129788.829100
+CA870 TICK_TIME i=503 ms=129812.805800
+CA870 TICK_TIME i=504 ms=129838.101200
+CA870 TICK_TIME i=505 ms=129861.491700
+CA870 TICK_TIME i=506 ms=129903.793700
+CA870 TICK_TIME i=507 ms=129928.400600
+CA870 TICK_TIME i=508 ms=129961.426200
+CA870 TICK_TIME i=509 ms=129986.436500
+CA870 TICK_TIME i=510 ms=130014.786900
+CA870 TICK_TIME i=511 ms=130039.282600
+CA870 TICK_TIME i=512 ms=130064.198100
+CA870 TICK_TIME i=513 ms=130087.160200
+CA870 TICK_TIME i=514 ms=130113.987200
+CA870 TICK_TIME i=515 ms=130139.860400
+CA870 TICK_TIME i=516 ms=130182.434000
+CA870 TICK_TIME i=517 ms=130212.232000
+CA870 TICK_TIME i=518 ms=130244.839000
+CA870 TICK_TIME i=519 ms=130275.762400
+CA870 TICK_TIME i=520 ms=130306.922700
+CA870 TICK_TIME i=521 ms=130337.060800
+CA870 TICK_TIME i=522 ms=130363.657500
+CA870 TICK_TIME i=523 ms=130390.402000
+CA870 TICK_TIME i=524 ms=130420.533800
+CA870 TICK_TIME i=525 ms=130455.446800
+CA870 TICK_TIME i=526 ms=130500.255700
+CA870 TICK_TIME i=527 ms=130527.803900
+CA870 TICK_TIME i=528 ms=130553.532600
+CA870 TICK_TIME i=529 ms=130577.175400
+CA870 TICK_TIME i=530 ms=130604.933100
+CA870 TICK_TIME i=531 ms=130630.764900
+CA870 TICK_TIME i=532 ms=130656.815100
+CA870 TICK_TIME i=533 ms=130680.057700
+CA870 TICK_TIME i=534 ms=130705.470500
+CA870 TICK_TIME i=535 ms=130729.413100
+CA870 TICK_TIME i=536 ms=130770.812300
+CA870 TICK_TIME i=537 ms=130798.412600
+CA870 TICK_TIME i=538 ms=130830.410500
+CA870 TICK_TIME i=539 ms=130858.112400
+CA870 TICK_TIME i=540 ms=130889.722900
+CA870 TICK_TIME i=541 ms=130916.797400
+CA870 TICK_TIME i=542 ms=130954.386500
+CA870 TICK_TIME i=543 ms=130979.742000
+CA870 TICK_TIME i=544 ms=131005.453000
+CA870 TICK_TIME i=545 ms=131030.097900
+CA870 TICK_TIME i=546 ms=131071.958600
+CA870 TICK_TIME i=547 ms=131099.510900
+CA870 TICK_TIME i=548 ms=131128.028100
+CA870 TICK_TIME i=549 ms=131154.597600
+CA870 TICK_TIME i=550 ms=131185.538200
+CA870 TICK_TIME i=551 ms=131216.021900
+CA870 TICK_TIME i=552 ms=131246.413300
+CA870 TICK_TIME i=553 ms=131272.903300
+CA870 TICK_TIME i=554 ms=131300.334300
+CA870 TICK_TIME i=555 ms=131326.283400
+CA870 TICK_TIME i=556 ms=131373.803600
+CA870 TICK_TIME i=557 ms=131404.758500
+CA870 TICK_TIME i=558 ms=131435.977500
+CA870 TICK_TIME i=559 ms=131475.798200
+CA870 TICK_TIME i=560 ms=131508.904700
+CA870 TICK_TIME i=561 ms=131536.206600
+CA870 TICK_TIME i=562 ms=131564.412400
+CA870 TICK_TIME i=563 ms=131590.322500
+CA870 TICK_TIME i=564 ms=131618.802600
+CA870 TICK_TIME i=565 ms=131645.967000
+CA870 TICK_TIME i=566 ms=131692.430900
+CA870 TICK_TIME i=567 ms=131722.156200
+CA870 TICK_TIME i=568 ms=131750.311800
+CA870 TICK_TIME i=569 ms=131778.136700
+CA870 TICK_TIME i=570 ms=131806.491800
+CA870 TICK_TIME i=571 ms=131833.604400
+CA870 TICK_TIME i=572 ms=131860.683000
+CA870 TICK_TIME i=573 ms=131888.475100
+CA870 TICK_TIME i=574 ms=131918.764800
+CA870 TICK_TIME i=575 ms=131945.299500
+CA870 TICK_TIME i=576 ms=132005.903600
+CA870 TICK_TIME i=577 ms=132036.208000
+CA870 TICK_TIME i=578 ms=132068.859600
+CA870 TICK_TIME i=579 ms=132100.552600
+CA870 TICK_TIME i=580 ms=132130.265100
+CA870 TICK_TIME i=581 ms=132158.401800
+CA870 TICK_TIME i=582 ms=132188.139900
+CA870 TICK_TIME i=583 ms=132216.149500
+CA870 TICK_TIME i=584 ms=132248.721800
+CA870 TICK_TIME i=585 ms=132282.799900
+CA870 TICK_TIME i=586 ms=132335.851600
+CA870 TICK_TIME i=587 ms=132372.075500
+CA870 TICK_TIME i=588 ms=132408.884200
+CA870 TICK_TIME i=589 ms=132440.943300
+CA870 TICK_TIME i=590 ms=132473.421400
+CA870 TICK_TIME i=591 ms=132503.036800
+CA870 TICK_TIME i=592 ms=132538.527000
+CA870 TICK_TIME i=593 ms=132585.486000
+CA870 TICK_TIME i=594 ms=132616.806400
+CA870 TICK_TIME i=595 ms=132647.256000
+CA870 TICK_TIME i=596 ms=132694.911500
+CA870 TICK_TIME i=597 ms=132722.200700
+CA870 TICK_TIME i=598 ms=132752.377900
+CA870 TICK_TIME i=599 ms=132779.839600
+CA870 TICK_TIME i=600 ms=132810.362900
+CA870 TICK_TIME i=601 ms=132837.877000
+CA870 TICK_TIME i=602 ms=132866.241500
+CA870 TICK_TIME i=603 ms=132892.646700
+CA870 TICK_TIME i=604 ms=132920.431900
+CA870 TICK_TIME i=605 ms=132946.898100
+CA870 TICK_TIME i=606 ms=132992.353700
+CA870 TICK_TIME i=607 ms=133021.040500
+CA870 TICK_TIME i=608 ms=133050.076200
+CA870 TICK_TIME i=609 ms=133076.143800
+CA870 TICK_TIME i=610 ms=133113.988700
+CA870 TICK_TIME i=611 ms=133140.487100
+CA870 TICK_TIME i=612 ms=133170.529100
+CA870 TICK_TIME i=613 ms=133202.292300
+CA870 TICK_TIME i=614 ms=133233.887100
+CA870 TICK_TIME i=615 ms=133266.442300
+CA870 TICK_TIME i=616 ms=133317.078900
+CA870 TICK_TIME i=617 ms=133345.174100
+CA870 TICK_TIME i=618 ms=133377.969000
+CA870 TICK_TIME i=619 ms=133408.936400
+CA870 TICK_TIME i=620 ms=133442.408600
+CA870 TICK_TIME i=621 ms=133473.045900
+CA870 TICK_TIME i=622 ms=133505.426800
+CA870 TICK_TIME i=623 ms=133532.135600
+CA870 TICK_TIME i=624 ms=133560.290000
+CA870 TICK_TIME i=625 ms=133587.207500
+CA870 TICK_TIME i=626 ms=133633.020700
+CA870 TICK_TIME i=627 ms=133670.721900
+CA870 TICK_TIME i=628 ms=133698.477100
+CA870 TICK_TIME i=629 ms=133724.139100
+CA870 TICK_TIME i=630 ms=133751.703000
+CA870 TICK_TIME i=631 ms=133782.131400
+CA870 TICK_TIME i=632 ms=133816.758000
+CA870 TICK_TIME i=633 ms=133848.744700
+CA870 TICK_TIME i=634 ms=133882.513400
+CA870 TICK_TIME i=635 ms=133914.588400
+CA870 TICK_TIME i=636 ms=133959.446300
+CA870 TICK_TIME i=637 ms=133986.679600
+CA870 TICK_TIME i=638 ms=134015.570200
+CA870 TICK_TIME i=639 ms=134043.164000
+CA870 TICK_TIME i=640 ms=134070.042800
+CA870 TICK_TIME i=641 ms=134096.027700
+CA870 TICK_TIME i=642 ms=134124.726500
+CA870 TICK_TIME i=643 ms=134152.058700
+CA870 TICK_TIME i=644 ms=134193.033900
+CA870 TICK_TIME i=645 ms=134221.369000
+CA870 TICK_TIME i=646 ms=134269.526200
+CA870 TICK_TIME i=647 ms=134297.380200
+CA870 TICK_TIME i=648 ms=134327.891000
+CA870 TICK_TIME i=649 ms=134354.609800
+CA870 TICK_TIME i=650 ms=134386.658900
+CA870 TICK_TIME i=651 ms=134419.273100
+CA870 TICK_TIME i=652 ms=134452.087900
+CA870 TICK_TIME i=653 ms=134483.754900
+CA870 TICK_TIME i=654 ms=134517.058000
+CA870 TICK_TIME i=655 ms=134544.577700
+CA870 TICK_TIME i=656 ms=134588.407900
+CA870 TICK_TIME i=657 ms=134615.720500
+CA870 TICK_TIME i=658 ms=134642.745600
+CA870 TICK_TIME i=659 ms=134670.125000
+CA870 TICK_TIME i=660 ms=134698.364600
+CA870 TICK_TIME i=661 ms=134730.814400
+CA870 TICK_TIME i=662 ms=134757.129400
+CA870 TICK_TIME i=663 ms=134780.815000
+CA870 TICK_TIME i=664 ms=134808.276200
+CA870 TICK_TIME i=665 ms=134833.311300
+CA870 TICK_TIME i=666 ms=134874.638600
+CA870 TICK_TIME i=667 ms=134899.850800
+CA870 TICK_TIME i=668 ms=134926.757300
+CA870 TICK_TIME i=669 ms=134950.943900
+CA870 TICK_TIME i=670 ms=134978.837100
+CA870 TICK_TIME i=671 ms=135009.243100
+CA870 TICK_TIME i=672 ms=135040.939200
+CA870 TICK_TIME i=673 ms=135069.616100
+CA870 TICK_TIME i=674 ms=135098.204000
+CA870 TICK_TIME i=675 ms=135126.328700
+CA870 TICK_TIME i=676 ms=135168.463300
+CA870 TICK_TIME i=677 ms=135195.074100
+CA870 TICK_TIME i=678 ms=135229.191300
+CA870 TICK_TIME i=679 ms=135258.402400
+CA870 TICK_TIME i=680 ms=135286.233600
+CA870 TICK_TIME i=681 ms=135312.732500
+CA870 TICK_TIME i=682 ms=135338.371200
+CA870 TICK_TIME i=683 ms=135367.024100
+CA870 TICK_TIME i=684 ms=135396.963700
+CA870 TICK_TIME i=685 ms=135426.436900
+CA870 TICK_TIME i=686 ms=135472.928700
+CA870 TICK_TIME i=687 ms=135500.649000
+CA870 TICK_TIME i=688 ms=135526.898000
+CA870 TICK_TIME i=689 ms=135551.771900
+CA870 TICK_TIME i=690 ms=135577.260400
+CA870 TICK_TIME i=691 ms=135605.818500
+CA870 TICK_TIME i=692 ms=135636.225100
+CA870 TICK_TIME i=693 ms=135664.476000
+CA870 TICK_TIME i=694 ms=135694.963000
+CA870 TICK_TIME i=695 ms=135732.242500
+CA870 TICK_TIME i=696 ms=135775.520800
+CA870 TICK_TIME i=697 ms=135801.457300
+CA870 TICK_TIME i=698 ms=135828.308000
+CA870 TICK_TIME i=699 ms=135852.718200
+CA870 TICK_TIME i=700 ms=135877.979400
+CA510 RESULT normal campaign window complete
+CA435SYNC OK peer=0 map=MAP03 tic=4375
+CA510 FRAME 501.392800
+CA510 FRAME 529.902300
+CA510 FRAME 502.078600
+CA510 FRAME 552.513000
+CA510 FRAME 555.967000
+CA510 FRAME 528.826000
+CA510 FRAME 537.566300
+CA510 FRAME 535.263900
+CA510 FRAME 565.608200
+CA510 FRAME 519.067000
+CA510 FRAME 497.489200
+CA510 FRAME 501.804100
+CA510 FRAME 490.582700
+CA510 FRAME 499.705900
+CA510 FRAME 521.714000
+CA510 FRAME 544.194100
+CA510 FRAME 527.978100
+CA510 FRAME 542.928900
+CA510 FRAME 563.772000
+CA510 FRAME 557.235600
+CA510 FRAME 564.154500
+CA510 FRAME 522.727200
+CA510 FRAME 457.258900
+CA510 FRAME 486.818900
+CA510 FRAME 497.048700
+CA510 FRAME 494.674200
+CA510 FRAME 498.169000
+CA510 FRAME 518.340300
+CA510 FRAME 529.556800
+CA510 FRAME 578.494600
+CA510 FRAME 531.254200
+CA510 FRAME 556.344900
+CA510 FRAME 520.954900
+CA510 FRAME 543.198500
+CA510 FRAME 497.431300
+CA510 FRAME 501.163400
+CA510 FRAMES_END count=36
+CA870 FRAME_TIME i=0 tic=3683 ms=116850.596700
+CA870 FRAME_TIME i=1 tic=3700 ms=117351.989500
+CA870 FRAME_TIME i=2 tic=3717 ms=117881.891800
+CA870 FRAME_TIME i=3 tic=3734 ms=118383.970400
+CA870 FRAME_TIME i=4 tic=3751 ms=118936.483400
+CA870 FRAME_TIME i=5 tic=3768 ms=119492.450400
+CA870 FRAME_TIME i=6 tic=3785 ms=120021.276400
+CA870 FRAME_TIME i=7 tic=3802 ms=120558.842700
+CA870 FRAME_TIME i=8 tic=3819 ms=121094.106600
+CA870 FRAME_TIME i=9 tic=3836 ms=121659.714800
+CA870 FRAME_TIME i=10 tic=3853 ms=122178.781800
+CA870 FRAME_TIME i=11 tic=3870 ms=122676.271000
+CA870 FRAME_TIME i=12 tic=3887 ms=123178.075100
+CA870 FRAME_TIME i=13 tic=3904 ms=123668.657800
+CA870 FRAME_TIME i=14 tic=3921 ms=124168.363700
+CA870 FRAME_TIME i=15 tic=3938 ms=124690.077700
+CA870 FRAME_TIME i=16 tic=3955 ms=125234.271800
+CA870 FRAME_TIME i=17 tic=3972 ms=125762.249900
+CA870 FRAME_TIME i=18 tic=3989 ms=126305.178800
+CA870 FRAME_TIME i=19 tic=4006 ms=126868.950800
+CA870 FRAME_TIME i=20 tic=4023 ms=127426.186400
+CA870 FRAME_TIME i=21 tic=4040 ms=127990.340900
+CA870 FRAME_TIME i=22 tic=4057 ms=128513.068100
+CA870 FRAME_TIME i=23 tic=4074 ms=128970.327000
+CA870 FRAME_TIME i=24 tic=4090 ms=129457.145900
+CA870 FRAME_TIME i=25 tic=4107 ms=129954.194600
+CA870 FRAME_TIME i=26 tic=4124 ms=130448.868800
+CA870 FRAME_TIME i=27 tic=4141 ms=130947.037800
+CA870 FRAME_TIME i=28 tic=4158 ms=131465.378100
+CA870 FRAME_TIME i=29 tic=4175 ms=131994.934900
+CA870 FRAME_TIME i=30 tic=4192 ms=132573.429500
+CA870 FRAME_TIME i=31 tic=4209 ms=133104.683700
+CA870 FRAME_TIME i=32 tic=4226 ms=133661.028600
+CA870 FRAME_TIME i=33 tic=4243 ms=134181.983500
+CA870 FRAME_TIME i=34 tic=4260 ms=134725.182000
+CA870 FRAME_TIME i=35 tic=4277 ms=135222.613300
+CA870 FRAME_TIME i=36 tic=4294 ms=135723.776700
+Captured scene.png

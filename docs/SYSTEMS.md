@@ -1,6 +1,21 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.112** - 2026-11-21.
+Documentation version: **5.17.113** - 2026-11-21.
+
+## 5.17.113 - Measure the full siege frame and identify actor costs (#870, #454)
+
+No gameplay, balance, cadence, candidate eligibility, communication, thermal
+integration, actor collision or resource rule changes under #870. The original
+whole-map >=500 living-combatant census remains authoritative, including offscreen
+bodies. Diagnostic wrappers preserve original statements/arguments and add only
+private timing; they are not packaged in normal gameplay or saved actor fields.
+
+The normal siege accumulates15-17 simulation callbacks between presented frames.
+Current measurements identify siege state actions, thermal NPC updates and
+communication as concrete next costs. Do not remove individual perception,
+audibility, physiology or collision to reduce those numbers. A subsequent focused
+optimization must prove live-input equivalence, save continuity and an actual
+uninstrumented presentation benefit; this diagnosis alone is not that delivery.
 
 ## 5.17.112 - Measure endpoint setup and retain the shared production path (#868, #454)
 

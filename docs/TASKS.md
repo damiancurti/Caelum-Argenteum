@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.112** - 2026-11-21.
+Documentation version: **5.17.113** - 2026-11-21.
+
+## 5.17.113 - Measure the full siege frame and identify actor costs (#870, #454)
+
+Completed: actual monotonic tic/frame grouping; native thinker35-phase coverage;
+separate renderer CPU snapshots; common actor-stage and selected-call probes;
+exact-inverse source restoration; unchanged-runtime observer/census comparisons;
+portable reproduction tools and retained failed diagnostics. The biased initial
+five-snapshot run is preserved and explicitly superseded for phase coverage.
+
+Next: isolate equivalent reductions in PortSiege.Pulse/target acquisition,
+NPC thermal integration and Communication.Pulse, retaining individual live rules.
+Do not spend the next patch duplicating tiny endpoint helpers or infer GPU cost
+from low frame rate. No production optimization is delivered by #870. Overall
+siege fluency, authorized city/sewer finish and the rest of the batch remain open.
+The author queue is unchanged; no acceptance, closure or partial terminal follows.
 
 ## 5.17.112 - Measure endpoint setup and retain the shared production path (#868, #454)
 
