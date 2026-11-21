@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.17.117** - 2026-11-21.
+Documentation version: **5.17.118** - 2026-11-21.
+
+## 5.17.118 - Keep large house facades visible from nearby streets (#879)
+
+The existing160 Barracas house facades receive a render bound derived from their
+original shared mesh. All house coordinates/angles, openings, portal identities,
+private interiors and physical routes remain unchanged. The installed MAP03 hash
+and geometry revision4 are retained. The correction restores sampled facade detail
+near house19 and the house20 entrance; no story, layout or geographic assignment is
+added. Wider traversal and final visual acceptance remain in CA879-VISIBILITY-01.
 
 ## 5.17.117 - Review timber joinery on existing Barracas house facades (#878, #463)
 

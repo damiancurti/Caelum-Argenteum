@@ -1,0 +1,112 @@
+{
+  "issue": 879,
+  "image_contents_inspected": 30,
+  "byte_identical_to_previously_inspected": [
+    {
+      "image": "fixed/residential_street.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/control/residential_street.png",
+      "sha256": "67ea74df1a1030bd144f8d6fc80adf157c6539be337173384881924599c70c06"
+    },
+    {
+      "image": "fixed/door_0.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/control/door_0.png",
+      "sha256": "30b0883e0cc8b5984057dd5ac35cd0fbaff95d6912e9e1e8cb331cfb98be8bcf"
+    },
+    {
+      "image": "fixed/window_0.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/control/window_0.png",
+      "sha256": "09146579b012da930ecd8cec9493b480875c131fdc005a89dd7ba5e5b11d3c28"
+    },
+    {
+      "image": "fixed/door_90.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/control/door_90.png",
+      "sha256": "9ec3210772847585d8767b3e21ccf3ec738285e1a6cd5fb817a1358399c6d6bf"
+    },
+    {
+      "image": "fixed/window_90.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/control/window_90.png",
+      "sha256": "56b093f2084b77419e588bd384f3a1fbe7d4975f10e3f732564ec10303aa671a"
+    },
+    {
+      "image": "fixed/door_180.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/control/door_180.png",
+      "sha256": "101a98f669b56c418115a3363eff7b59f536b1e73ad4f24fa1dce6d5d4aee41a"
+    },
+    {
+      "image": "fixed/window_180.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/control/window_180.png",
+      "sha256": "975674051123d78033b9fbe5cc67e273ce25a463156654e4abb7503065ab9376"
+    },
+    {
+      "image": "fixed/door_270.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/control/door_270.png",
+      "sha256": "2e9b683b4368679910f9fa0d57bd89d5839af9b93c6073ecad7f60e925a37905"
+    },
+    {
+      "image": "fixed/window_270.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/control/window_270.png",
+      "sha256": "a053932af413f232f9077524b660a9b3cf84dc57c33e5ab67f8231d63c05ea39"
+    },
+    {
+      "image": "joinery/residential_street.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/candidate/residential_street.png",
+      "sha256": "f52e3d24e60d41d29357dd3494f54648a1fa1e36ba5b8efa8cf0eae5bbe4f044"
+    },
+    {
+      "image": "joinery/door_0.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/candidate/door_0.png",
+      "sha256": "25df8912f9d26dcc8805e1b7ab7c9328868bba85c297d6d3481c6d1f177ad553"
+    },
+    {
+      "image": "joinery/window_0.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/candidate/window_0.png",
+      "sha256": "ba61021b50802e4f9dd252e797fad6abd777042798aab98aafc11c58d39d6d97"
+    },
+    {
+      "image": "joinery/door_90.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/candidate/door_90.png",
+      "sha256": "04767763a3f8bcf9864a4cfd9b54751b22c6a66c941c7902ffd650862d240aae"
+    },
+    {
+      "image": "joinery/window_90.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/candidate/window_90.png",
+      "sha256": "f356c9420b3b0bd22f0ed61064e68d19c88b5a8089689a633f669676628e48e5"
+    },
+    {
+      "image": "joinery/door_180.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/candidate/door_180.png",
+      "sha256": "8cb95af788cd6333bc89c5a86b4feacf9d7df2e845af229f1819ba35778efa65"
+    },
+    {
+      "image": "joinery/window_180.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/candidate/window_180.png",
+      "sha256": "cbe8bef0ce0d9cc160de7ef9fcaa7a1c6f683da657560d377ba2f427a6ffba85"
+    },
+    {
+      "image": "joinery/door_270.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/candidate/door_270.png",
+      "sha256": "2b2c585921555410ca4aad244d1cb237304d6a040b2e5973f143b91aa9de789f"
+    },
+    {
+      "image": "joinery/window_270.png",
+      "previous": "assets/validation_v5_17_117/evidence/views/candidate/window_270.png",
+      "sha256": "3d1a03de241fb1e8397a592ca6a3e6c423eb4ff896fab423593183fb5d19e4e5"
+    }
+  ],
+  "directly_inspected_final": [
+    "control/residential_street.png",
+    "control/door_0.png",
+    "control/window_0.png",
+    "control/door_90.png",
+    "control/window_90.png",
+    "control/door_180.png",
+    "control/window_180.png",
+    "control/door_270.png",
+    "control/window_270.png",
+    "control/walk.png",
+    "fixed/walk.png",
+    "joinery/walk.png"
+  ],
+  "observations": "Control reproduces missing facade/window/cornice at house19 and door90. Actual fixed production class restores sampled views, including joinery compatibility. All three walk captures retain the same street and 26.663-MU movement. No visual acceptance, all-map traversal or missing-texture claim beyond these sampled views.",
+  "author_acceptance": false
+}

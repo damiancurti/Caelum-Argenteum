@@ -13,12 +13,12 @@
     "assets/barracas_redesign/SIEGE.json": "aa106eb246577f2d45a0f1d0a027d70b91ea0cc735a19ebe6a726006ddab6115",
     "assets/generators/compact_open_geometry.py": "47511304307ef03414e859cbe45d3a100713a3b09f6664dd46d743a162b6dfa5",
     "assets/generators/generate_barracas_data.py": "10d446a133153586f0c5d972ca99f057dd18c3ef3a17b271351bf865e6feae72",
-    "assets/generators/generate_barracas_facades.py": "427e93b8c83f197ba259ecb748df305cde411d5754f979c36b1f3ac0eaf0a542",
+    "assets/generators/generate_barracas_facades.py": "9a02aa38307fc5fcfae9f31e7221aa3a69e300358b5433dd9e8549471d3d8dab",
     "assets/generators/generate_barracas_fronts.py": "52eaefb67aaf7ad173a643a14e4d8546b24d41ef103bbf7d9878724d11693c86",
     "assets/generators/generate_barracas_justice.py": "dde6cd40fcc9b086f1391f580629f157645db8480208103769b6b43b6dbca85b",
     "assets/generators/generate_barracas_map.py": "055b4b3aa9d1f19fb9b4d49e7b74c9381f2071434a0ddc85534ab09a90ba9cdf",
     "assets/generators/generate_barracas_march.py": "e1b718bf9c6aff9d8c390d3818fb84ea20aa601c6ba5c2ae05cc1555d5fd4e09",
-    "assets/generators/generate_barracas_preview.py": "3080d57b1d2c558d9352f5f1685effc186165ac4a97ab21264d98dc92e865e06",
+    "assets/generators/generate_barracas_preview.py": "17d193cfa4f136aa99dee9c426d668fb7cc670690ee0446f2990964718d04049",
     "assets/generators/generate_barracas_ram_crews.py": "f512fee6cdfc5a2804b5b107a792d9286feeca74a0a7d50b4a71ca3f85353830",
     "assets/generators/generate_barracas_retreat.py": "ae2b0f857532aa6265820021a533a9d4a5a11420576fde6aa982674ab1fddf15",
     "assets/generators/generate_barracas_routes.py": "5bca7fdae1e21934e3df01bb49aac46c83b5788855ba9862fe43c5e6437541f5",
@@ -44,10 +44,18 @@
     "assets/barracas_redesign/BASE_MAP03.wad": "1fef4bd06015e3dfa11405eeb6b19d90f0c2a6bf3f1db35ca2c162a6c50ca04f",
     "src/caelum/data/barracas_facades.mapinfo": "d1fbbcb3213f644123aa06a07225710536b2896adb14c5065fd7f09f5323dfbf",
     "src/caelum/data/barracas_facades.modeldef": "fe02ad7455169e6c305cb62fea3e157d455a47ab3b2167700079f89483a0ef15",
-    "src/caelum/world/CaelumBarracasFacades.zs": "9d1cadd94413eb9c24008c312bb98eff4ec28f7a585f805ed4cfa908b3ba58b8",
+    "src/caelum/world/CaelumBarracasFacades.zs": "3d397a5ff8fde056e01ebc09ee5b914d025e42a66e02c6f5561ff6c20fe9d605",
     "src/maps/MAP03.wad": "45bfdbba591b642fd9a2c8c991cd9e9913d9e4158f3e317913efbae0d3df98da",
     "src/models/caelum/architecture/barracas/house-960-1216.obj": "a5c2aefec5ead511571bee96562c07e8797aa989eba8e811d252c2ec0e377b8d"
   },
   "compatibility": "Use LegacyMap03Revision3 for existing active/stored-hub original-city saves. Preserve original saves.",
-  "acceptance": "Packaging and native evidence do not imply author acceptance or siege fluency."
+  "acceptance": "Packaging and native evidence do not imply author acceptance or siege fluency.",
+  "render_visibility_patch": {
+    "issue": 879,
+    "release": "5.17.118",
+    "render_radius": 781,
+    "basis": "Ceiling of the original model maximum horizontal vertex radius",
+    "geometry_and_model_unchanged": true,
+    "author_acceptance": false
+  }
 }

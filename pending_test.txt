@@ -526,3 +526,9 @@ CA878-JOINERY-01 | Origin 5.17.117 / #878 (parent #463) | Pending
 Prerequisites: final consolidated batch terminal after #879 visibility fix; dedicated fresh model-review session and preserved campaign saves. Gallery: assets/source/art/house_joinery_878/review.html.
 Steps: compare the residential street and closed window joinery in four house orientations; F1 cycles the prepared views. Inspect rails/stiles, hinges, green wood clarity, frames and retained operational doors. Walk along the facades, use a house entrance, return, save/reload the disposable session and compare the original model after removing the option. Review the 2,274-triangle/three-section shared-model cost and native frame tails.
 Expected: coherent period-inspired closed timber leaves on existing opaque windows, with unchanged passages, door identity and interior travel. Confirm or request corrections to exact style, texture clarity and cost. This does not accept unreviewed #463 furnishing, unrelated models, siege fluency or all-map traversal.
+
+
+CA879-VISIBILITY-01 | Origin 5.17.118 / #879 | Pending
+Prerequisites: final consolidated batch terminal, corrected runtime and disposable saves. Gallery: assets/validation_v5_17_118/review.html. Preserve campaign saves.
+Steps: compare original and corrected Window270/Door90 and all four house orientations; walk toward/along the facades and turn away/back. Use an entrance and return. Save inside a house, reload and return; compare an existing city save using a preserved copy. Inspect the original art and the separate optional #878 joinery.
+Expected: windows, frames and cornices remain visible at the sampled nearby approaches; unchanged collision, passages, portal identity and returns. Report any missing facade or new obstruction. This test does not accept the joinery style, full-map visibility, multiplayer or siege performance.

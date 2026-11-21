@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.117** - 2026-11-21.
+Documentation version: **5.17.118** - 2026-11-21.
+
+## 5.17.118 - Keep large house facades visible from nearby streets (#879)
+
+The shared Barracas facade now uses a native render bound covering its original
+mesh. This corrects sampled missing windows/cornices without changing collision,
+maps, placements or art. Old-save, reload, rollback, stored-hub return and native
+view evidence passes. The final author queue includes CA879-VISIBILITY-01. The
+separate joinery proposal remains unapproved; #463 furnishing/environment work and
+the severe siege performance limitation remain open.
 
 ## 5.17.117 - Review timber joinery on existing Barracas house facades (#878, #463)
 
