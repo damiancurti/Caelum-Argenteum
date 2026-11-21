@@ -1,6 +1,27 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.109** - 2026-11-19.
+Documentation version: **5.17.110** - 2026-11-21.
+
+## 5.17.110 - Shorten measured native contamination value dispatch (#864)
+
+CaelumContaminationStorage.Value now dispatches the measured GateBlocker and
+VehiclePart families directly to their unchanged native carrier lookup. NPCs
+use the existing Get path directly. Their single-inheritance chains exclude
+inventory stacks, remote household chests and player illness; the skipped
+branches only performed failed pure checks for those types. Other objects retain
+the original ordered stack, remote-storage, player and general lookup paths.
+
+After either lookup, the same exposure SettleNow call still runs before the
+revision test and concentration read. Every physical part keeps its individual
+carrier/resource. No concentration, timestamp, ownership or exposure result is
+cached. No saved fields, schema, cadence, gameplay constants, contact rules or
+global actor scans are added. Existing lazy first-read/load settlement, stack
+lots, delegation and carrier attachment migration remain authoritative.
+
+The typed reduction operates automatically wherever those native reads occur,
+including normal dense gameplay. It does not change the whole-map >=500 living
+combatant census or suppress offscreen effects. Native upgrade, reload and direct
+old-runtime rollback pass; author acceptance and overall siege fluency remain open.
 
 ## 5.17.109 - Select shared hand art from actual clothing gloves (#861)
 

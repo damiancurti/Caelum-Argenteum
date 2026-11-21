@@ -1,0 +1,62 @@
+{
+  "issue": 864,
+  "passed": true,
+  "exit_code": 0,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue864-value03.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue864-native-reload01\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue864-native-reload01\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue864-native-reload01",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue864-native-reload01\\engine.log",
+    "-loadgame",
+    "input.zds",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue864-native-reload01\\commands.cfg"
+  ],
+  "errors": [],
+  "events": [
+    "ca502s_resume",
+    "ca502v_resume",
+    "ca849_check"
+  ],
+  "results": [
+    [
+      4,
+      0
+    ],
+    [
+      31,
+      0
+    ]
+  ],
+  "carrier_result": [
+    "603",
+    "0"
+  ],
+  "checks": 638,
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue864-value03.pk3": "1a0b1348399d3afe0e84418e54dd9c5b012fee17756eb57ccaf2faad5d30fad5",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue864-native-reload01\\checks.pk3": "61aea23e182b74e37814c6a3e2997a95d2f2c6b1524379410009886b9ff5121a"
+  },
+  "retained_sources": {
+    "stacks.zs": "e74d012acab56cd653b8719e72e91faa40c29cf8c176e70b26f44d88404121e1",
+    "vessels.zs": "e396aba1406cfee7b7ceef0661aff74c198e5b3ee4d617e532411a3fe6ee46db"
+  },
+  "reference_runtime_sha256": "8fcef709b7615d6dd6f808f1de6e46a37718b97b0d35ecf1d6568eb66de7a574",
+  "loaded_save_sha256": "8cbbf171e477f965127b733beb72631caa11c076d78feddf5085a80addbf8455",
+  "saved_sha256": "6d3134bb5670a71c085b32384fafc8d07ae6c56bc48000e441542195ec1a6a8d"
+}

@@ -1,6 +1,21 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.109** - 2026-11-19.
+Documentation version: **5.17.110** - 2026-11-21.
+
+## 5.17.110 - Shorten measured native contamination value dispatch (#864)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Implemented one measured read-dispatch reduction under #454/#864, preserving
+individual contamination records and live exposure settlement. Exact source and
+package scope, original-result comparisons, retained ownership contracts and
+reversible native saves are verified. HISTORY records scoped timings and the
+final/control frame/tic distributions; assets/validation_v5_17_110 retains evidence.
+
+This is a bounded subsystem improvement. Overall siege performance and the
+remaining character/equipment/scenery/campaign work are unfinished. The complete
+existing author queue is preserved; the requested consolidated terminal follows
+the remaining batch. Native evidence does not approve #736 or unauthored design.
 
 ## 5.17.109 - Select shared hand art from actual clothing gloves (#861)
 

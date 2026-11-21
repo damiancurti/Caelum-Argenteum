@@ -1,0 +1,8 @@
+{
+  "assets/validation_v5_17_110/prepare_value.py": "cb2f00207eab536deb0b31e4e8d86ad9b5964e44665b6ccfc9c38d1477e42306",
+  "assets/validation_v5_17_110/run_scene.py": "0a7cfeedf653aa6987ecff7e2742c19c44512d85ef8345662c8694f8a0bd5864",
+  "assets/validation_v5_17_110/run_value.py": "71bb52649d15e5cdf80dca2c59d11ec61e7df4cc551709147e003f8dc71c1160",
+  "src/caelum/survival/CaelumContaminationState.zs": "d279735d92f533d3e5d7bbbf0c0e8b8a08bdfe44b11c10bfed0c0572a70a990a",
+  "src/caelum/world/CaelumPhysicalHazards.zs": "c227c47659260f089bbb0d24546f54db614a20dd1f6b54fa8e937d736d2e7e19",
+  "src/caelum/world/CaelumSewerMaze.zs": "ea4e4bcd16f3894b13ee712f487012169ff3919f88797a19626c27a6179e440d"
+}

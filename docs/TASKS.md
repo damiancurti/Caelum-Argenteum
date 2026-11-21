@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.109** - 2026-11-19.
+Documentation version: **5.17.110** - 2026-11-21.
+
+## 5.17.110 - Shorten measured native contamination value dispatch (#864)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Completed the current-source contact/value diagnosis, typed dispatch, fallback
+revision, independent exposure/ownership comparisons, reversible saves and final
+runtime/reference measurements. Preserve the qualified timing evidence and the
+unresolved full-siege performance requirement.
+
+Continue the authorized V5.16/V5.17 batch, including scenery candidates/inventory,
+character/equipment limits and recorded campaign authoring gates. No new manual
+check is added for this equivalent internal dispatch; CA454-MAP03-01 and every
+existing author check remain outstanding for the single final session.
 
 ## 5.17.109 - Select shared hand art from actual clothing gloves (#861)
 
