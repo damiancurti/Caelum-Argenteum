@@ -1,6 +1,20 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.114** - 2026-11-21.
+Documentation version: **5.17.115** - 2026-11-21.
+
+## 5.17.115 - Measure target acquisition and retain current perception (#873, #454)
+
+No perception, communication, movement, balance, cadence or save-state change
+is introduced. Retain the existing full-light conservative reach bound, native
+field/range/contact/sight checks, private recognition and memory, actual audibility,
+candidate order, relationship/migration effects and whole-map >=500 census.
+
+Two private prototypes used current sector illumination in the broadphase; the
+second retained the original cheap rejection first. Native equivalence checks pass,
+but their measured acquisition benefit is insufficient. Neither is integrated.
+The sector-light formula and Range remain byte-identical to 5.17.114. A remembered
+focus or command is not proof of current visibility; no known-visible shortcut,
+cached position, actor skip or shared knowledge was introduced.
 
 ## 5.17.114 - Grow the derived contamination surface index (#871, #454)
 

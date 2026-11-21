@@ -1,0 +1,117 @@
+{
+  "issue": 873,
+  "runtime_sha256": "ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55",
+  "overlay_sha256": "6ffbe65fdfce38a8370722f7a4cd5a6eaa6fbadb1a1b54976f7d1b89d3ac154e",
+  "originals_restored_exactly": {
+    "caelum/actors/CaelumVisualPerception.zs": "dcc202ceeb14b156a0d723fec81745acb53d6576dd5c69150033cd775bdfb03e"
+  },
+  "metrics": [
+    {
+      "id": 0,
+      "family": "Mandinga",
+      "stage": "total"
+    },
+    {
+      "id": 1,
+      "family": "Mandinga",
+      "stage": "group-setup"
+    },
+    {
+      "id": 2,
+      "family": "Mandinga",
+      "stage": "group-enemies"
+    },
+    {
+      "id": 3,
+      "family": "Mandinga",
+      "stage": "group-allies"
+    },
+    {
+      "id": 4,
+      "family": "Mandinga",
+      "stage": "local-query"
+    },
+    {
+      "id": 5,
+      "family": "Mandinga",
+      "stage": "unlinked-fallback"
+    },
+    {
+      "id": 6,
+      "family": "Mandinga",
+      "stage": "observe-ally"
+    },
+    {
+      "id": 7,
+      "family": "PortDefender",
+      "stage": "total"
+    },
+    {
+      "id": 8,
+      "family": "PortDefender",
+      "stage": "group-setup"
+    },
+    {
+      "id": 9,
+      "family": "PortDefender",
+      "stage": "group-enemies"
+    },
+    {
+      "id": 10,
+      "family": "PortDefender",
+      "stage": "group-allies"
+    },
+    {
+      "id": 11,
+      "family": "PortDefender",
+      "stage": "local-query"
+    },
+    {
+      "id": 12,
+      "family": "PortDefender",
+      "stage": "unlinked-fallback"
+    },
+    {
+      "id": 13,
+      "family": "PortDefender",
+      "stage": "observe-ally"
+    },
+    {
+      "id": 14,
+      "family": "other",
+      "stage": "total"
+    },
+    {
+      "id": 15,
+      "family": "other",
+      "stage": "group-setup"
+    },
+    {
+      "id": 16,
+      "family": "other",
+      "stage": "group-enemies"
+    },
+    {
+      "id": 17,
+      "family": "other",
+      "stage": "group-allies"
+    },
+    {
+      "id": 18,
+      "family": "other",
+      "stage": "local-query"
+    },
+    {
+      "id": 19,
+      "family": "other",
+      "stage": "unlinked-fallback"
+    },
+    {
+      "id": 20,
+      "family": "other",
+      "stage": "observe-ally"
+    }
+  ],
+  "period": 17,
+  "qualification": "Existing Candidate statements/arguments/list order are retained and restore exactly. Private stage timers and loop-entry integer counters add overhead; no new query, second traversal, saved actor fields or gameplay changes. Inclusive total overlaps stage timings. Items count existing loop entries, not unique actors or successful visibility checks."
+}

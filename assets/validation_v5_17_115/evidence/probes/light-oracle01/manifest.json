@@ -1,0 +1,13 @@
+{
+  "issue": 873,
+  "baseline_sha256": "ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55",
+  "candidate_sha256": "bde1f2d6a08ed8907ba4ea4a2b58752d8ce7c7777b0309811e662443751edfc9",
+  "overlay_sha256": "192a74f4bd8bd7cba1213f451df692036e0eac5b7c9efdcd46ad5f11cf4b8303",
+  "inverse_exact": true,
+  "period": 17,
+  "window": [
+    3599,
+    4299
+  ],
+  "scope": "Count each real bound invocation; every newly rejected body is checked with immutable 114 sight and contact, plus bit-exact range equality. Restore derived Insight/stealth cache fields after diagnostic calls. This includes group enemies, allies and dense local candidates; it is instrumented, not production throughput."
+}

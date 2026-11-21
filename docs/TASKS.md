@@ -1,6 +1,19 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.114** - 2026-11-21.
+Documentation version: **5.17.115** - 2026-11-21.
+
+## 5.17.115 - Measure target acquisition and retain current perception (#873, #454)
+
+Completed: exact-inverse service, stage and helper probes; real loop counts;
+native original/current light-bound comparisons and relationship/migration checks;
+newly rejected-body sight/contact/range oracle; stage-cost comparison; deterministic
+public reproduction; unchanged-runtime final siege observation. Reject both light
+bounds rather than shipping a negligible specialization. Preserve the original
+case-insensitive-name fixture failure separately from all passing runs.
+
+Still open: siege fluency, the remaining authorized #463 city/sewer finish and the
+broader batch. Character/style and unauthored gameplay decisions stay at the final
+review. pending_test.txt is unchanged; agent diagnostics are not new author tests.
 
 ## 5.17.114 - Grow the derived contamination surface index (#871, #454)
 

@@ -1,0 +1,60 @@
+// #128: población derivada del mapa, independiente de la cámara y de TACTORS.
+class CaelumPopulationState : Object play
+{
+    int Revision, LivingCombatants;
+    int NextMaintenancePhase;
+    bool HighDensity;
+    double PerceptionMaximumHeight,PerceptionMaximumInsightFactor;
+    Array<CaelumSiegeCombatant> UnlinkedGuards;
+
+    static CaelumPopulationState Get()
+    {
+        let ca873Probe=CA873CandidateDetailProbe.FindCandidateScope(false);
+        int ca873Family=ca873Probe!=null?ca873Probe.CurrentFamily:0;
+        
+        double ca873Start=ca873Probe!=null?MSTimeF():0;
+        let ca873Result=CA873Original14();
+        if(ca873Probe!=null)ca873Probe.Record(ca873Family*16+14,ca873Start);
+        
+        return ca873Result;
+    }
+    static CaelumPopulationState CA873Original14()
+    {
+        let owner=CaelumMassAIScheduler(EventHandler.Find("CaelumMassAIScheduler"));
+        return owner!=null ? owner.Population : null;
+    }
+
+    void IncludeHearing(CaelumCombatActor body)
+    {
+        if(body!=null && body.health>0)PerceptionMaximumInsightFactor=Max(PerceptionMaximumInsightFactor,CaelumVisualPerception.InsightFactor(body));
+    }
+
+    void Refresh()
+    {
+        // Reconstrucción idempotente: también detecta resurrecciones y cambios
+        // de flags. El resultado permanece estable durante este tic completo.
+        LivingCombatants=0;UnlinkedGuards.Clear();
+        PerceptionMaximumHeight=CaelumPerceptionData.REFERENCE_VISIBLE_HEIGHT;
+        PerceptionMaximumInsightFactor=1;
+        let it=ThinkerIterator.Create("CaelumCombatActor");
+        CaelumCombatActor body;
+        while((body=CaelumCombatActor(it.Next()))!=null)
+        {
+            // Reutilizar el censo autorizado: enlazar cambios de mapa sin otro recorrido.
+            if(body.MaintenancePopulation!=self)
+            {
+                body.ResetMaintenanceForTravel();
+                body.MaintenancePopulation=self;
+            }
+            if(body.health<=0)continue;
+            if(body.bShootable){LivingCombatants++;PerceptionMaximumHeight=Max(PerceptionMaximumHeight,body.Height);PerceptionMaximumInsightFactor=Max(PerceptionMaximumInsightFactor,CaelumVisualPerception.InsightFactor(body));}
+            if(body.bNoBlockmap && body.SiegeCombatant!=null)
+                UnlinkedGuards.Push(body.SiegeCombatant);
+        }
+        for(int p=0;p<MAXPLAYERS;p++)
+            if(playeringame[p] && players[p].mo!=null && players[p].mo.health>0
+                && players[p].mo.bShootable){LivingCombatants++;PerceptionMaximumHeight=Max(PerceptionMaximumHeight,players[p].mo.Height);}
+        HighDensity=LivingCombatants>=CaelumConstants.HIGH_DENSITY_COMBATANTS;
+        Revision=1;
+    }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "label": "direct",
+    "overlay_sha256": "bde1f2d6a08ed8907ba4ea4a2b58752d8ce7c7777b0309811e662443751edfc9",
+    "byte_identical": true
+  },
+  {
+    "label": "fast",
+    "overlay_sha256": "bd829fce9f47c027d6a4f5c39e793147769d4896f21605114ee12f915c7a1db9",
+    "byte_identical": true
+  },
+  {
+    "label": "stage",
+    "overlay_sha256": "ded7627eed1d6fb9a7cef2789ea2b95f2d59a0a76b7e5468417e8493682cfaad",
+    "byte_identical": true
+  },
+  {
+    "label": "oracle",
+    "overlay_sha256": "192a74f4bd8bd7cba1213f451df692036e0eac5b7c9efdcd46ad5f11cf4b8303",
+    "byte_identical": true
+  }
+]
