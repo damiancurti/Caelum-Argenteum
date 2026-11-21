@@ -90,7 +90,7 @@ def generate(out,map_name=None,configure=None,compile_map=True):
             if key not in facades:
                 editor=31800+len(facades);name='CA454Facade'+str(editor);model=key+'.obj'
                 facades[key]=dict(editor=editor,model=model,**generate_barracas_facades.build(out/'models'/model,width,height,profile,detail,native_doors['half_thickness'],door_y))
-                classes.append(f'class {name} : Actor {{ Default {{ +NOINTERACTION +NOGRAVITY }} States {{ Spawn: CDLS A -1; Stop; }} }}')
+                classes.append(f'class {name} : Actor {{ Default {{ +NOINTERACTION +NOGRAVITY RenderRadius {facades[key]["render_radius"]}; }} States {{ Spawn: CDLS A -1; Stop; }} }}')
                 bindings.append(f'Model {name} {{ Path "models" Model 0 "{model}" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CDLS A 0 0 }}')
                 editors.append(f'{editor}={name}')
             a,b,c,f=building['bounds'];port.prop(facades[key]['editor'],(a+c)/2,(b+f)/2,angle=building['angle'])

@@ -6,13 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.117.** Obtain and update the complete repository,
+**Current release: 5.17.118.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#879 corrects the large-facade render bound without changing maps, collision or art.
+Native persistence, before/after views and frame tails: assets/validation_v5_17_118.
+The severe siege performance limitation and final author acceptance remain pending.
 
 #878 adds an opt-in timber-joinery facade proposal using unchanged owned textures.
 Gallery: assets/source/art/house_joinery_878/review.html. Native travel/save/frame
-evidence: assets/validation_v5_17_117. The prior facade visibility defect is tracked
-separately in #879 and must be fixed before the final consolidated author terminal.
+evidence: assets/validation_v5_17_117. The facade visibility correction is implemented separately in #879; the final
+consolidated author terminal will use that corrected runtime.
 
 #875 adds an opt-in native sewer-vault candidate with map-local brick materials.
 Production MAP02 remains unchanged; the raised roof and explicit geometry cost

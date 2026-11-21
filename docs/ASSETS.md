@@ -1,6 +1,28 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.117** - 2026-11-21.
+Documentation version: **5.17.118** - 2026-11-21.
+
+## 5.17.118 - Keep large house facades visible from nearby streets (#879)
+
+The #879 correction changes the shared facade actor's native RenderRadius only.
+generate_barracas_facades.py derives781 from the original mesh; the preview/map
+generator emits that property. A full recompilation reproduces the original model,
+base map, MAPINFO and MODELDEF byte-for-byte. Removing that one property reproduces
+the original generated actor bytes. The installed final MAP03 remains byte-identical;
+INSTALLATION.json refreshes only the two modified source hashes, actor hash and an
+explicit render-visibility record. The installer is not rerun and revision4 remains.
+
+No geometry, material section, texture or actor instance is added: the original
+facade remains1896 vertices/474 quads/948 triangles/36 OBJ sections, placed160 times.
+The native render bound can make previously culled detail visible, so its effect
+is measured separately rather than presumed free. The #878 joinery overlay remains
+byte-identical and opt-in; it is not installed as part of this fix.
+
+Gallery: assets/validation_v5_17_118/review.html. Thirty final native capture contents
+were inspected (12 directly,18 byte-identical to previously inspected captures).
+Unlike the #878 diagnostic gallery, these use actual production facade classes,
+without a radius subclass override. Evidence and exact runtime hashes remain in
+assets/validation_v5_17_118. Art style and full-map traversal still require review.
 
 ## 5.17.117 - Review timber joinery on existing Barracas house facades (#878, #463)
 

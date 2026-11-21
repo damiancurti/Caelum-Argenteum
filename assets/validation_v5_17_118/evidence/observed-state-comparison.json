@@ -1,0 +1,20 @@
+[
+  {
+    "control": "street-control01",
+    "fixed": "street-fixed01",
+    "states_equal": true,
+    "census_equal": true
+  },
+  {
+    "control": "ground-control01",
+    "fixed": "ground-fixed01",
+    "states_equal": true,
+    "census_equal": true
+  },
+  {
+    "control": "siege-control01",
+    "fixed": "siege-fixed01",
+    "states_equal": true,
+    "census_equal": true
+  }
+]

@@ -4,6 +4,35 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-274 - Large visual models need explicit render bounds and persistence proof
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #879 /5.17.118, 2026-11-21,
+GZDoom4.14.2. Evidence: assets/validation_v5_17_118. Author acceptance pending.
+
+Actor's default RenderRadius is0. p_maputl.cpp links touching render sectors using
+max(Radius,RenderRadius) for nonnegative bounds; the hardware BSP renderer traverses
+touching_renderthings. A model extending far beyond its collider can disappear at
+nearby cameras even when correctly positioned. Derive a conservative horizontal
+bound from the actual transformed model, not a guessed actor radius. The retained
+Barracas OBJ/scale uses ceil780.2563681252464=781. Preserve its collision radius20,
+height16 and transforms. Recompile and compare map/model bytes before refreshing
+generator installation hashes. Do not silently reinstall unrelated geometry.
+
+p_mobj.cpp serializes renderradius relative to the class default; equal values are
+omitted. The serializer leaves initialized defaults when keys are absent, and actor
+PostSerialize relinks the world/render-sector lists. Verify actual old-save upgrade,
+reload, rollback and stored-hub return, rather than adding a speculative migration.
+Seven native phases and eight read-only save inspections establish this behavior
+for these unmodified facade instances. Third-party per-instance overrides are not
+covered. No new saved field or schema revision is needed for this tested correction.
+
+Compare real production classes after using a diagnostic subclass to investigate
+the hypothesis. Retain missing-facade control captures and identify overrides.
+Use measured street, ground-facing and approved siege frame/tic tails; a larger
+render bound affects culling despite unchanged triangles. Single similar pairs
+do not establish zero cost, universal visibility, scanout FPS or author acceptance.
+
+
 ## CA-KP-273 - Audit model detail normals, native material surfaces and visibility
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED diagnostic proposal, #878 / 5.17.117,
