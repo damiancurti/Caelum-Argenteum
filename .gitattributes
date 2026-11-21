@@ -1457,3 +1457,10 @@ assets/validation_v5_17_115/*.py text eol=lf diff
 assets/validation_v5_17_115/*.zs text eol=lf diff
 assets/validation_v5_17_115/*.json text eol=lf diff
 assets/validation_v5_17_115/*.txt text eol=lf diff
+
+# Exact sewer vault candidate evidence (#875).
+assets/validation_v5_17_116/** -text -diff
+assets/validation_v5_17_116/*.py text eol=lf diff
+assets/validation_v5_17_116/*.zs text eol=lf diff
+assets/validation_v5_17_116/*.json text eol=lf diff
+assets/validation_v5_17_116/*.txt text eol=lf diff

@@ -4,6 +4,41 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-272 - Verify native vault planes, inherited sector indices and fixture bodies
+
+Status/evidence: ENGINE-VERIFIED private candidate, #875 / 5.17.116, 2026-11-21,
+GZDoom 4.14.2. No default map replacement, campaign migration or author acceptance.
+Evidence: assets/validation_v5_17_116; source: build_sewer_structure_review.py.
+
+The UDMF loader normalizes ceilingplane_a/b/c but retains the supplied D. For a
+plane z=s*x+i represented by(s,0,-1), supply D=i/sqrt(s*s+1), or supply an already
+normalized complete plane. A source-space height calculation alone cannot verify
+the native result. Check native ceilingplane.ZatPoint at every affected sector's
+line endpoints, not just camera centers; affine extrema occur at polygon vertices.
+Use the same principle for the other horizontal axis and record floating tolerance.
+In this candidate,439 sectors/175,724 endpoint evaluations stay within 96..128 MU.
+
+Splitting sectors moves appended content indices. Preserve the existing arena's
+position and original fallback lookups; dispatch the new index by actual native
+map checksum. UDMF checksum uses TEXTMAP (plus BEHAVIOR when present), not the
+whole WAD hash. Test fresh maps, saved instances and a stored-hub round trip.
+Keep raised-roof candidates separate from visited campaign saves. Private texture
+aliases prevent an apparently map-local material review from changing shared maps.
+
+Recompile the original pure generator prefix byte-for-byte before inserting a
+candidate transform. Compare every original floor/cell/thing and boundary property;
+count the new internal boundaries and measure their presentation cost. Never run
+the production generator's writing tail just to obtain an experimental map.
+
+Bounded maximum-body movement tests must distinguish geometry from live actors.
+Record real blockers and qualify fixture-only suppression; restore their state
+before returning. Explicitly initialize per-case actor locals: a body1 reference
+from a previous pair can survive into a later single-body loop iteration in this
+ZScript fixture. Preserve these failed checks rather than counting them as passes.
+Still images, proxy cylinders and paced35-tic simulation do not prove escort AI,
+ordinary traversal, scanout fluency or author acceptance. See CA-KP-110..115.
+
+
 ## CA-KP-271 - A tighter perception bound still needs a useful measured saving
 
 Status/evidence: ENGINE-VERIFIED rejected prototypes, #873 / 5.17.115, 2026-11-21,

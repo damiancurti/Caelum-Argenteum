@@ -1,6 +1,21 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.115** - 2026-11-21.
+Documentation version: **5.17.116** - 2026-11-21.
+
+## 5.17.116 - Review native sewer vaults with preserved passage minima (#875, #463)
+
+A deterministic private MAP02 proposal adds native ceiling vaults to selected
+ordinary straight passages, with the existing #847 brick/paving option scoped to
+this candidate map. The approved revision6 production map is unchanged. The
+proposed crown raises part of the current 96-MU ceiling to 128 MU; this is an
+unapproved artistic/physical-space choice, not a new accepted map revision.
+
+Native ceiling bounds, maximum-size collision runs, save/reload, stored-hub return,
+matched views and presentation measurements are retained under
+assets/validation_v5_17_116. Final review includes the explicit geometry/image
+cost and raised-roof behavior. #463 furnishing and further environment finish,
+siege fluency, character/body decisions and unauthored content remain open.
+Continue the batch; do not issue an intermediate author terminal or infer acceptance.
 
 ## 5.17.115 - Measure target acquisition and retain current perception (#873, #454)
 

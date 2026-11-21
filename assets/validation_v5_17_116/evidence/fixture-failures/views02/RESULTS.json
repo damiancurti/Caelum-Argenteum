@@ -1,0 +1,378 @@
+{
+  "issue": 875,
+  "collision_parameters": {
+    "issue": 875,
+    "source": "Existing LAYOUT dimensions and actual vaulted dry cells; diagnostic viewpoints, not new game coordinates.",
+    "radius": 21.333333,
+    "height": 74.7,
+    "step_mu": 4.0,
+    "rows": [
+      {
+        "name": "main_horizontal",
+        "point": [
+          768.0,
+          -3104.0
+        ],
+        "angle": 0,
+        "axis": 0,
+        "span_mu": 160,
+        "dry_width_mu": 96,
+        "start": [
+          232.0,
+          -3104.0,
+          0
+        ],
+        "end": [
+          1304.0,
+          -3104.0,
+          0
+        ],
+        "bodies": 2,
+        "lane_offsets": [
+          -24.0,
+          24.0
+        ],
+        "segment": {
+          "axis": 0,
+          "cross": -3072,
+          "low": 0,
+          "high": 1536,
+          "width": 160,
+          "label": "south:main"
+        },
+        "clear_run_mu": 1072.0
+      },
+      {
+        "name": "main_vertical",
+        "point": [
+          -3104.0,
+          -2560.0
+        ],
+        "angle": 90,
+        "axis": 1,
+        "span_mu": 160,
+        "dry_width_mu": 96,
+        "start": [
+          -3104.0,
+          -2840.0,
+          0
+        ],
+        "end": [
+          -3104.0,
+          -2280.0,
+          0
+        ],
+        "bodies": 2,
+        "lane_offsets": [
+          -24.0,
+          24.0
+        ],
+        "segment": {
+          "axis": 1,
+          "cross": -3072,
+          "low": -3072,
+          "high": -2048,
+          "width": 160,
+          "label": "south:main"
+        },
+        "clear_run_mu": 560.0
+      },
+      {
+        "name": "service",
+        "point": [
+          0,
+          2920.0
+        ],
+        "angle": 90,
+        "axis": 1,
+        "span_mu": 128,
+        "dry_width_mu": 128,
+        "start": [
+          0,
+          824.0,
+          0
+        ],
+        "end": [
+          0,
+          5016.0,
+          0
+        ],
+        "bodies": 2,
+        "lane_offsets": [
+          -32.0,
+          32.0
+        ],
+        "segment": {
+          "axis": 1,
+          "cross": 0,
+          "low": 0,
+          "high": 5120,
+          "width": 128,
+          "label": "service"
+        },
+        "clear_run_mu": 4192.0
+      },
+      {
+        "name": "maintenance",
+        "point": [
+          -1536,
+          -3752.0
+        ],
+        "angle": 90,
+        "axis": 1,
+        "span_mu": 64,
+        "dry_width_mu": 64,
+        "start": [
+          -1536,
+          -3864.0,
+          0
+        ],
+        "end": [
+          -1536,
+          -3640.0,
+          0
+        ],
+        "bodies": 1,
+        "lane_offsets": [
+          0
+        ],
+        "segment": {
+          "axis": 1,
+          "cross": -1536,
+          "low": -4096,
+          "high": -3072,
+          "width": 64,
+          "label": "south:shortcut"
+        },
+        "clear_run_mu": 224.0
+      }
+    ]
+  },
+  "runtime_sha256": "767c48ed4fc15a1c6ec13af1d07cc6565d27ed338a3ccef3a37fa2afe1099c9e",
+  "overlay_sha256": "ff3f5b7e956b95797e0bf0e0a6559e778f0d186c8e004aa2e33f800721f47823",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "probe_sha256": "f540ad3de64cdd8152c8dfe1e44dc981a2dbacbf4528f8dfa1b5aa9e9b1d8f0f",
+  "cameras": [
+    {
+      "name": "entrance",
+      "point": [
+        0,
+        -4864
+      ],
+      "angle": 90
+    },
+    {
+      "name": "junction",
+      "point": [
+        -160.0,
+        -4256.0
+      ],
+      "angle": 45
+    },
+    {
+      "name": "channel",
+      "point": [
+        -2304.0,
+        -4128.0
+      ],
+      "angle": 0
+    },
+    {
+      "name": "refuge",
+      "point": [
+        -3936.0,
+        -3232.0
+      ],
+      "angle": 135
+    },
+    {
+      "name": "boss_access",
+      "point": [
+        -2912,
+        8160.0
+      ],
+      "angle": 180
+    },
+    {
+      "name": "main_horizontal",
+      "point": [
+        768.0,
+        -3104.0
+      ],
+      "angle": 0,
+      "axis": 0,
+      "span_mu": 160,
+      "dry_width_mu": 96,
+      "start": [
+        232.0,
+        -3104.0,
+        0
+      ],
+      "end": [
+        1304.0,
+        -3104.0,
+        0
+      ],
+      "bodies": 2,
+      "lane_offsets": [
+        -24.0,
+        24.0
+      ],
+      "segment": {
+        "axis": 0,
+        "cross": -3072,
+        "low": 0,
+        "high": 1536,
+        "width": 160,
+        "label": "south:main"
+      },
+      "clear_run_mu": 1072.0
+    },
+    {
+      "name": "main_vertical",
+      "point": [
+        -3104.0,
+        -2560.0
+      ],
+      "angle": 90,
+      "axis": 1,
+      "span_mu": 160,
+      "dry_width_mu": 96,
+      "start": [
+        -3104.0,
+        -2840.0,
+        0
+      ],
+      "end": [
+        -3104.0,
+        -2280.0,
+        0
+      ],
+      "bodies": 2,
+      "lane_offsets": [
+        -24.0,
+        24.0
+      ],
+      "segment": {
+        "axis": 1,
+        "cross": -3072,
+        "low": -3072,
+        "high": -2048,
+        "width": 160,
+        "label": "south:main"
+      },
+      "clear_run_mu": 560.0
+    },
+    {
+      "name": "service",
+      "point": [
+        0,
+        2920.0
+      ],
+      "angle": 90,
+      "axis": 1,
+      "span_mu": 128,
+      "dry_width_mu": 128,
+      "start": [
+        0,
+        824.0,
+        0
+      ],
+      "end": [
+        0,
+        5016.0,
+        0
+      ],
+      "bodies": 2,
+      "lane_offsets": [
+        -32.0,
+        32.0
+      ],
+      "segment": {
+        "axis": 1,
+        "cross": 0,
+        "low": 0,
+        "high": 5120,
+        "width": 128,
+        "label": "service"
+      },
+      "clear_run_mu": 4192.0
+    },
+    {
+      "name": "maintenance",
+      "point": [
+        -1536,
+        -3752.0
+      ],
+      "angle": 90,
+      "axis": 1,
+      "span_mu": 64,
+      "dry_width_mu": 64,
+      "start": [
+        -1536,
+        -3864.0,
+        0
+      ],
+      "end": [
+        -1536,
+        -3640.0,
+        0
+      ],
+      "bodies": 1,
+      "lane_offsets": [
+        0
+      ],
+      "segment": {
+        "axis": 1,
+        "cross": -1536,
+        "low": -4096,
+        "high": -3072,
+        "width": 64,
+        "label": "south:shortcut"
+      },
+      "clear_run_mu": 224.0
+    }
+  ],
+  "runs": [
+    {
+      "label": "control",
+      "passed": false,
+      "exit_code": 1,
+      "timed_out": false,
+      "errors": [
+        "Script error"
+      ],
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue873-diagnosis01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue875-views02\\views.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue875-views02\\control\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue875-views02\\control",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue875-views02\\control\\engine.log",
+        "+map",
+        "MAP02",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue875-views02\\control\\start.cfg"
+      ],
+      "markers": [],
+      "images": {}
+    }
+  ],
+  "passed": false,
+  "qualification": "Capture private vault views and test maximum-size collision cylinders.\n\nThe placement teleports and invulnerability belong only to the disposable\ninspection player. Collision cylinders use native TryMove in four selected dry\nruns, with opposing pairs where two maximum-radius bodies fit. This is bounded\ngeometry evidence, not player movement, escort AI or author acceptance.\n"
+}

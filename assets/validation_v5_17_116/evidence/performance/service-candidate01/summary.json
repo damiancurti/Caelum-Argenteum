@@ -1,0 +1,60 @@
+{
+  "label": "service-candidate01",
+  "camera": "service",
+  "directory": "build/v516/vault-profile-20261121-064656-231060",
+  "runtime_sha256": "767c48ed4fc15a1c6ec13af1d07cc6565d27ed338a3ccef3a37fa2afe1099c9e",
+  "overlays": [
+    {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue875-vault02\\candidate.pk3",
+      "sha256": "ff3f5b7e956b95797e0bf0e0a6559e778f0d186c8e004aa2e33f800721f47823"
+    }
+  ],
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "states": [
+    "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+    "CA435PERF STATE slot=0 health=1248 pos=0.000000,2920.000000,-0.000000",
+    "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+    "CA435PERF STATE slot=0 health=1248 pos=0.000000,2920.000000,-0.000000"
+  ],
+  "census": [
+    "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+    "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+  ],
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 28.576689428571427,
+    "p95_ms": 33.0496,
+    "p99_ms": 34.3675,
+    "max_ms": 40.5533
+  },
+  "presentation": {
+    "pid": 50816,
+    "trace_sha256": "69ef0a78144a7c90caa4ad6fc644c51bb8899e27f3cf763a24cd9555927cf27a",
+    "rows": 5000,
+    "scene_presents": 2761,
+    "mean_present_fps": 156.92022543653286,
+    "present_intervals": {
+      "samples": 2760,
+      "mean_ms": 6.372664818815563,
+      "p50_ms": 6.223100066184998,
+      "p95_ms": 7.940700054168701,
+      "p99_ms": 8.85539996623993,
+      "max_ms": 37.76550006866455
+    },
+    "native_call_duration": {
+      "samples": 2761,
+      "mean_ms": 0.08288091267852064,
+      "p50_ms": 0.07389998435974121,
+      "p95_ms": 0.13480007648468018,
+      "p99_ms": 0.18700003623962402,
+      "max_ms": 0.3198000192642212
+    }
+  }
+}

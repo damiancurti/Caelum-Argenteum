@@ -1,0 +1,25 @@
+{
+  "issue": 875,
+  "release": "5.17.116",
+  "full_validation": "passed with no errors",
+  "author_acceptance": false,
+  "native_candidate_suites": {
+    "superseded01": 3,
+    "map_local02": 3,
+    "final116": 3
+  },
+  "default_restore_runs": 2,
+  "inspected_final_images": 20,
+  "final_collision_cases_per_map": 4,
+  "trymove_steps_per_map": 5936,
+  "actor_solidity_restored": true,
+  "sloped_sectors_per_sample": 439,
+  "endpoint_evaluations_per_sample": 175724,
+  "minimum_ceiling": 96,
+  "maximum_ceiling": 128,
+  "deterministic_overlay_sha256": "ff3f5b7e956b95797e0bf0e0a6559e778f0d186c8e004aa2e33f800721f47823",
+  "performance_windows": 8,
+  "fixture_failures_preserved": 3,
+  "production_changes": "two release log labels only",
+  "qualification": "Private opt-in structure/material candidate; raised roof/budget unapproved. No visited-map migration, ordinary traversal, escort AI, siege fluency or completed-batch claim."
+}

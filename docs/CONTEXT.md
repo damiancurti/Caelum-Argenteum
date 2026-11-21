@@ -1,9 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.17.115** - 2026-11-21.
+Documentation version: **5.17.116** - 2026-11-21.
 
 **V5.17 candidates:** inventory/bestiary/regional art (#825:78 displays/56 provisional models);
-#829:25 verified fitted garments; #847:sewer;#866:remasters. #736:visual review pending.
+#829:25 garments; #847:brick; #866:remasters; #875:vaults. #736:review pending.
 Verified: #827:body/hands; #851:reach; #855:recognition; #857:equipped wardrobe;
 #859:grips; #861:clothing hands; #864:contact reads;#873:acquisition diagnosis;#871:surface index. #834:retain MD3 (IQM slower).
 Characters/equipment unfinished. Evidence:ASSETS/TASKS; author-checks:pending_test.txt; history:HISTORY.

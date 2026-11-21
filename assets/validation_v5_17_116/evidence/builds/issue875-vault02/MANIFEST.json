@@ -1,0 +1,887 @@
+{
+  "issue": 875,
+  "author_acceptance": false,
+  "runtime_sha256": "767c48ed4fc15a1c6ec13af1d07cc6565d27ed338a3ccef3a37fa2afe1099c9e",
+  "config_sha256": "a529619d08df0fc4edbfba3a98bcf1709f0238667132236a97b52ad2c3e12dca",
+  "compiler_sha256": "29fa09667cadfca6b837063d2a6c2983030f613096d29cd582b2ae5e3eb48879",
+  "builder_sha256": "7e8f8354d2f04f01da8b99e46f7ea94263b6a2dd432452fc8bf3eb89be2af792",
+  "layout_sha256": "1b14751a337fcf331d804f42dffc18710a4baf2d51d756edfa5eac1ce095231e",
+  "source_map_sha256": "1f7052ef2c1bf5bbe612579c6675e2f4541f6c1e256f374d5fd9afabf6eb9fad",
+  "candidate_map_sha256": "df70e78dbc37d11197b5a13354485ff5f214a35e8ef5d3624ccbe4cd353f103e",
+  "candidate_checksum": "f6b7917b3ec920216788dc92cc4db44c",
+  "overlay_sha256": "ff3f5b7e956b95797e0bf0e0a6559e778f0d186c8e004aa2e33f800721f47823",
+  "members": {
+    "maps/MAP02.wad": {
+      "bytes": 23083243,
+      "sha256": "df70e78dbc37d11197b5a13354485ff5f214a35e8ef5d3624ccbe4cd353f103e"
+    },
+    "caelum/data/CaelumJusticeGeometry.zs": {
+      "bytes": 21054,
+      "sha256": "34ff9cf2c969608dfa87d742f7f4ca0ba5e56eddcf0789e77d68068e3ec90922"
+    },
+    "TEXTURES": {
+      "bytes": 349,
+      "sha256": "9192ab87d9100d4d13252db86d4082a2f39b4d828a537ae608318d62accb8b07"
+    },
+    "graphics/caelum/review847/brick-v1.png": {
+      "bytes": 3528014,
+      "sha256": "a4ba1734835ccdfe4768a0c5ee706e0865d27423aacbdde68102a7120a8fcae8"
+    }
+  },
+  "original_geometry": {
+    "sectors": 104,
+    "lines": 32524,
+    "vertices": 32001,
+    "things": 445
+  },
+  "candidate_geometry": {
+    "sectors": 539,
+    "lines": 67120,
+    "vertices": 65578,
+    "things": 445
+  },
+  "geometry": {
+    "counts": {
+      "excluded_cells": 108730,
+      "unmatched_cells": 4543,
+      "vaulted_cells": 42702,
+      "dry_cells": 27974,
+      "ambiguous_cells": 153,
+      "water_cells": 14728
+    },
+    "profiles": [
+      {
+        "axis": 0,
+        "cross": -4096,
+        "low": -3072,
+        "high": -1536,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 0,
+        "cross": -4096,
+        "low": -1536,
+        "high": 0,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 0,
+        "cross": -4096,
+        "low": 0,
+        "high": 1536,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 0,
+        "cross": -4096,
+        "low": 1536,
+        "high": 3072,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 0,
+        "cross": -3072,
+        "low": -3072,
+        "high": -1536,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 0,
+        "cross": -3072,
+        "low": 0,
+        "high": 1536,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 0,
+        "cross": -2048,
+        "low": -3072,
+        "high": -1536,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 0,
+        "cross": -2048,
+        "low": -1536,
+        "high": 0,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 0,
+        "cross": -2048,
+        "low": 0,
+        "high": 1536,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 0,
+        "cross": -2048,
+        "low": 1536,
+        "high": 3072,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 0,
+        "cross": -1024,
+        "low": -3072,
+        "high": -1536,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 0,
+        "cross": -1024,
+        "low": -1536,
+        "high": 0,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 0,
+        "cross": -1024,
+        "low": 1536,
+        "high": 3072,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 1,
+        "cross": -3072,
+        "low": -3072,
+        "high": -2048,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 1,
+        "cross": -1536,
+        "low": -3072,
+        "high": -2048,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 1,
+        "cross": 0,
+        "low": -3072,
+        "high": -2048,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 1,
+        "cross": 1536,
+        "low": -4096,
+        "high": -3072,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 1,
+        "cross": 1536,
+        "low": -3072,
+        "high": -2048,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 1,
+        "cross": -1536,
+        "low": -2048,
+        "high": -1024,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 1,
+        "cross": 1536,
+        "low": -2048,
+        "high": -1024,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 1,
+        "cross": 3072,
+        "low": -2048,
+        "high": -1024,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 0,
+        "cross": -3072,
+        "low": 1536,
+        "high": 3072,
+        "width": 160,
+        "label": "south:main"
+      },
+      {
+        "axis": 1,
+        "cross": -1536,
+        "low": -4096,
+        "high": -3072,
+        "width": 64,
+        "label": "south:shortcut"
+      },
+      {
+        "axis": 0,
+        "cross": 4096,
+        "low": -7168,
+        "high": -6144,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 0,
+        "cross": 4096,
+        "low": -6144,
+        "high": -5120,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 0,
+        "cross": 4096,
+        "low": -5120,
+        "high": -4096,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 0,
+        "cross": 4096,
+        "low": -4096,
+        "high": -3072,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 0,
+        "cross": 3072,
+        "low": -7168,
+        "high": -6144,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 0,
+        "cross": 3072,
+        "low": -6144,
+        "high": -5120,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 0,
+        "cross": 2048,
+        "low": -6144,
+        "high": -5120,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 0,
+        "cross": 2048,
+        "low": -5120,
+        "high": -4096,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 0,
+        "cross": 1024,
+        "low": -4096,
+        "high": -3072,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 1,
+        "cross": -7168,
+        "low": 1024,
+        "high": 2048,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 1,
+        "cross": -7168,
+        "low": 2048,
+        "high": 3072,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 1,
+        "cross": -7168,
+        "low": 3072,
+        "high": 4096,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 1,
+        "cross": -6144,
+        "low": 1024,
+        "high": 2048,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 1,
+        "cross": -5120,
+        "low": 1024,
+        "high": 2048,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 1,
+        "cross": -5120,
+        "low": 2048,
+        "high": 3072,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 1,
+        "cross": -5120,
+        "low": 3072,
+        "high": 4096,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 1,
+        "cross": -3072,
+        "low": 1024,
+        "high": 2048,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 1,
+        "cross": -3072,
+        "low": 2048,
+        "high": 3072,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 1,
+        "cross": -3072,
+        "low": 3072,
+        "high": 4096,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 1,
+        "cross": -6144,
+        "low": 2048,
+        "high": 3072,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 1,
+        "cross": -4096,
+        "low": 3072,
+        "high": 4096,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 0,
+        "cross": 3072,
+        "low": -4096,
+        "high": -3072,
+        "width": 160,
+        "label": "west:main"
+      },
+      {
+        "axis": 0,
+        "cross": 2048,
+        "low": -4096,
+        "high": -3072,
+        "width": 64,
+        "label": "west:shortcut"
+      },
+      {
+        "axis": 0,
+        "cross": 4096,
+        "low": 6144,
+        "high": 7168,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 0,
+        "cross": 4096,
+        "low": 5120,
+        "high": 6144,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 0,
+        "cross": 4096,
+        "low": 4096,
+        "high": 5120,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 0,
+        "cross": 4096,
+        "low": 3072,
+        "high": 4096,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 0,
+        "cross": 3072,
+        "low": 6144,
+        "high": 7168,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 0,
+        "cross": 3072,
+        "low": 5120,
+        "high": 6144,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 0,
+        "cross": 2048,
+        "low": 5120,
+        "high": 6144,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 0,
+        "cross": 2048,
+        "low": 4096,
+        "high": 5120,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 0,
+        "cross": 1024,
+        "low": 3072,
+        "high": 4096,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 1,
+        "cross": 7168,
+        "low": 1024,
+        "high": 2048,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 1,
+        "cross": 7168,
+        "low": 2048,
+        "high": 3072,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 1,
+        "cross": 7168,
+        "low": 3072,
+        "high": 4096,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 1,
+        "cross": 6144,
+        "low": 1024,
+        "high": 2048,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 1,
+        "cross": 5120,
+        "low": 1024,
+        "high": 2048,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 1,
+        "cross": 5120,
+        "low": 2048,
+        "high": 3072,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 1,
+        "cross": 5120,
+        "low": 3072,
+        "high": 4096,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 1,
+        "cross": 3072,
+        "low": 1024,
+        "high": 2048,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 1,
+        "cross": 3072,
+        "low": 2048,
+        "high": 3072,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 1,
+        "cross": 3072,
+        "low": 3072,
+        "high": 4096,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 1,
+        "cross": 6144,
+        "low": 2048,
+        "high": 3072,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 1,
+        "cross": 4096,
+        "low": 3072,
+        "high": 4096,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 0,
+        "cross": 3072,
+        "low": 3072,
+        "high": 4096,
+        "width": 160,
+        "label": "east:main"
+      },
+      {
+        "axis": 0,
+        "cross": 2048,
+        "low": 3072,
+        "high": 4096,
+        "width": 64,
+        "label": "east:shortcut"
+      },
+      {
+        "axis": 0,
+        "cross": 6144,
+        "low": -1024,
+        "high": 1024,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 0,
+        "cross": 6144,
+        "low": 1024,
+        "high": 3072,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 0,
+        "cross": 6144,
+        "low": 3072,
+        "high": 5120,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 0,
+        "cross": 6144,
+        "low": 5120,
+        "high": 7168,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 0,
+        "cross": 8192,
+        "low": -1024,
+        "high": 1024,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 0,
+        "cross": 8192,
+        "low": 1024,
+        "high": 3072,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 0,
+        "cross": 8192,
+        "low": 3072,
+        "high": 5120,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 0,
+        "cross": 8192,
+        "low": 5120,
+        "high": 7168,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 1,
+        "cross": -1024,
+        "low": 6144,
+        "high": 7168,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 1,
+        "cross": -1024,
+        "low": 7168,
+        "high": 8192,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 1,
+        "cross": 1024,
+        "low": 6144,
+        "high": 7168,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 1,
+        "cross": 1024,
+        "low": 7168,
+        "high": 8192,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 1,
+        "cross": 5120,
+        "low": 6144,
+        "high": 7168,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 1,
+        "cross": 5120,
+        "low": 7168,
+        "high": 8192,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 1,
+        "cross": 7168,
+        "low": 6144,
+        "high": 7168,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 1,
+        "cross": 7168,
+        "low": 7168,
+        "high": 8192,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 0,
+        "cross": 7168,
+        "low": 1024,
+        "high": 3072,
+        "width": 160,
+        "label": "north:main"
+      },
+      {
+        "axis": 0,
+        "cross": 7168,
+        "low": 3072,
+        "high": 5120,
+        "width": 64,
+        "label": "north:shortcut"
+      },
+      {
+        "axis": 1,
+        "cross": 0,
+        "low": -4864,
+        "high": -4096,
+        "width": 128,
+        "label": "service"
+      },
+      {
+        "axis": 1,
+        "cross": 0,
+        "low": -1024,
+        "high": 0,
+        "width": 128,
+        "label": "service"
+      },
+      {
+        "axis": 0,
+        "cross": 0,
+        "low": -1536,
+        "high": 0,
+        "width": 128,
+        "label": "service"
+      },
+      {
+        "axis": 1,
+        "cross": -1536,
+        "low": 0,
+        "high": 1024,
+        "width": 128,
+        "label": "service"
+      },
+      {
+        "axis": 0,
+        "cross": 1024,
+        "low": -3072,
+        "high": -1536,
+        "width": 128,
+        "label": "service"
+      },
+      {
+        "axis": 0,
+        "cross": 0,
+        "low": 0,
+        "high": 1536,
+        "width": 128,
+        "label": "service"
+      },
+      {
+        "axis": 1,
+        "cross": 1536,
+        "low": 0,
+        "high": 1024,
+        "width": 128,
+        "label": "service"
+      },
+      {
+        "axis": 0,
+        "cross": 1024,
+        "low": 1536,
+        "high": 3072,
+        "width": 128,
+        "label": "service"
+      },
+      {
+        "axis": 1,
+        "cross": 0,
+        "low": 0,
+        "high": 5120,
+        "width": 128,
+        "label": "service"
+      },
+      {
+        "axis": 0,
+        "cross": 5120,
+        "low": 0,
+        "high": 1024,
+        "width": 128,
+        "label": "service"
+      },
+      {
+        "axis": 1,
+        "cross": 1024,
+        "low": 5120,
+        "high": 6144,
+        "width": 128,
+        "label": "service"
+      }
+    ],
+    "distinct_cross_sections": 36,
+    "spring_mu": 96,
+    "crown_mu": 128,
+    "grid_mu": 16
+  },
+  "original_boundaries_preserved": 32524,
+  "added_boundaries": 34596,
+  "things_equal": true,
+  "original_cell_values_equal": true,
+  "original_compiler_byte_identical": true,
+  "original_arena": {
+    "sector": 104,
+    "origin": [
+      8576,
+      9600,
+      0
+    ],
+    "center": [
+      8960.0,
+      9984.0,
+      0
+    ],
+    "width_mu": 768,
+    "original_vertices": 32001,
+    "original_sectors": 104
+  },
+  "candidate_arena": {
+    "sector": 539,
+    "origin": [
+      8576,
+      9600,
+      0
+    ],
+    "center": [
+      8960.0,
+      9984.0,
+      0
+    ],
+    "width_mu": 768,
+    "original_vertices": 65578,
+    "original_sectors": 539
+  },
+  "brick_option": true,
+  "material_aliases": {
+    "CASWRWAL": "CA875WAL",
+    "CASWRFLR": "CA875FLR"
+  },
+  "scope": "The candidate raises ordinary roof sections above the approved flat 96-MU plane toward the existing 128-MU chamber height. Minimum passage clearance remains 96 MU; the raised roof is an unapproved artistic choice, not an accepted replacement or campaign-save migration.",
+  "launch_scope": "Dedicated fresh MAP02 comparison only. Retain default revision6 and original saves; do not apply this geometry to a visited campaign map."
+}

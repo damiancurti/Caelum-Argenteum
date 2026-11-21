@@ -1,0 +1,105 @@
+{
+  "issue": 454,
+  "started_utc": "2026-11-21T09:28:22.517362+00:00",
+  "ended_utc": "2026-11-21T09:29:04.901976+00:00",
+  "environment_overrides": {
+    "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+  },
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "presentation_layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "runtime_sha256": "767c48ed4fc15a1c6ec13af1d07cc6565d27ed338a3ccef3a37fa2afe1099c9e",
+  "commands": [
+    [
+      "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "-noautoload",
+      "-nomouse",
+      "-iwad",
+      "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+      "-file",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue873-diagnosis01.pk3",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\v516\\barracas-profile-20261121-062822-513345\\observer.pk3",
+      "-config",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\v516\\barracas-profile-20261121-062822-513345\\peer0\\session.ini",
+      "-savedir",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\v516\\barracas-profile-20261121-062822-513345\\peer0",
+      "-rngseed",
+      "428",
+      "-warp",
+      "2",
+      "+logfile",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\v516\\barracas-profile-20261121-062822-513345\\peer0\\engine.log",
+      "+exec",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\v516\\barracas-profile-20261121-062822-513345\\peer0\\start.cfg"
+    ]
+  ],
+  "observed_before_cleanup": [
+    0
+  ],
+  "observer_sha256": "7e4452f55357bb364c6af234173f5b5fb360f1bdb64e8a582c267eb5a913a4e8",
+  "overlays": [],
+  "map": "MAP02",
+  "siege": false,
+  "settled_siege": false,
+  "direct_deployment": false,
+  "ground": false,
+  "players": 1,
+  "peers": [
+    {
+      "slot": 0,
+      "pid": 28036,
+      "exit_code": 0,
+      "window": {
+        "BEGIN": {
+          "utc": "2026-11-21T09:28:42.054586+00:00",
+          "qpc_ms": 867635044.6279
+        },
+        "END": {
+          "utc": "2026-11-21T09:29:01.883795+00:00",
+          "qpc_ms": 867654873.8289001
+        }
+      },
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.567593857142857,
+        "p95_ms": 33.1798,
+        "p99_ms": 34.5735,
+        "max_ms": 47.5422
+      },
+      "render_callbacks": {
+        "samples": 2921,
+        "mean_ms": 6.168736049298186,
+        "p95_ms": 7.7487,
+        "p99_ms": 8.6143,
+        "max_ms": 43.1178
+      },
+      "states": [
+        "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+        "CA435PERF STATE slot=0 health=1248 pos=0.000000,-4864.000000,-0.000000",
+        "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+        "CA435PERF STATE slot=0 health=1248 pos=0.000000,-4864.000000,-0.000000"
+      ],
+      "census": [
+        "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+        "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+      ],
+      "scopes": [],
+      "native_sync": true,
+      "passed": true,
+      "complete_window": true
+    }
+  ],
+  "same_state": true,
+  "scenario_valid": true,
+  "error": null,
+  "passed": true,
+  "performance_accepted": false,
+  "author_accepted": false,
+  "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+}

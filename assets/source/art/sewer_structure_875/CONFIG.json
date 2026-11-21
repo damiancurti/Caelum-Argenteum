@@ -1,0 +1,35 @@
+{
+  "schema_revision": 1,
+  "issue": 875,
+  "status": "candidate_not_author_accepted",
+  "authority": "Parent #463 environment finish; exact architectural form and budget remain for consolidated author review.",
+  "layout": "assets/map02_maze/LAYOUT.json",
+  "compiler": "assets/generators/generate_map02_redesign.py",
+  "profile": {
+    "shape": "circular_segment",
+    "spring_height_key": "ceiling",
+    "crown_height_key": "chamber_height",
+    "facet_spacing_key": "grid",
+    "span_sources": ["passage_width", "service_width", "shortcut_width"],
+    "selection": "Unambiguous straight section edges, shortcuts and service links; normal-height, untagged upper cells only. Preserve all special groups, chambers, gates, lower returns and controls."
+  },
+  "review_change": "The candidate raises ordinary roof sections above the approved flat 96-MU plane toward the existing 128-MU chamber height. Minimum passage clearance remains 96 MU; the raised roof is an unapproved artistic choice, not an accepted replacement or campaign-save migration.",
+  "material_option": "assets/source/art/sewer_material_847/INVENTORY.json",
+  "material_aliases": {
+    "CASWRWAL": "CA875WAL",
+    "CASWRFLR": "CA875FLR"
+  },
+  "material_status": "Optional existing #847 brick/floor review; no bitmap transformation and no new default binding.",
+  "references": [
+    {
+      "url": "https://www.aysa.com.ar/Quienes-Somos/nuestra_historia",
+      "basis": "Retained #847 reference: captioned Puente Chico/Wilde machine-room construction photograph, circa 1884; local brick and arch context only."
+    },
+    {
+      "url": "https://www.argentina.gob.ar/normativa/nacional/decreto-1843-2013-222480/texto",
+      "basis": "Wilde works designed in 1882 and partially enabled in 1889; brick and cast-iron architectural context. Later additions are excluded from the 1889 reference."
+    }
+  ],
+  "provenance": "Original code-generated geometry using project-owned layout and optional #847 art. No third-party pixels. Artistic interpretation, not an archaeological reconstruction.",
+  "launch_scope": "Dedicated fresh MAP02 comparison only. Retain default revision6 and original saves; do not apply this geometry to a visited campaign map."
+}

@@ -1,0 +1,11 @@
+{
+  "issue": 875,
+  "local_gallery_links": 23,
+  "native_images": 20,
+  "image_pixels": [
+    1520,
+    825
+  ],
+  "python_syntax": "passed",
+  "portable_camera_reproduction": "byte-identical"
+}

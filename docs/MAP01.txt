@@ -1,6 +1,22 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.17.115** - 2026-11-21.
+Documentation version: **5.17.116** - 2026-11-21.
+
+## 5.17.116 - Review native sewer vaults with preserved passage minima (#875, #463)
+
+The approved MAP02 revision6 contract stays authoritative. #875 prepares an
+optional structure review, not revision7: selected ordinary straight section,
+service and maintenance passages receive 16-MU facets of circular-segment roofs.
+Existing160/128/64-MU spans,96-MU dry shelf,64-MU channel and16-MU depth are
+retained. The96-MU minimum stays; the128-MU crown is an unapproved raised roof.
+Chambers, boss space, gates, moving panels, lower returns, controls and ambiguous
+crossings are excluded from automatic vaulting. All 445 source things and all
+32,524 original boundaries retain their properties; no new route or story is added.
+
+The existing appended Justice arena stays at its original position. The private
+overlay adds a checksum-qualified sector 539 lookup while preserving the ordinary
+104 and historical85 fallbacks. Its new map checksum is recorded in ASSETS/HISTORY.
+Do not interpret disposable candidate save tests as a visited-map migration.
 
 ## 5.17.1 / #647 - Existing currency presentation
 

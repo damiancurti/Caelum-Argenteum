@@ -1,6 +1,45 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.115** - 2026-11-21.
+Documentation version: **5.17.116** - 2026-11-21.
+
+## 5.17.116 - Review native sewer vaults with preserved passage minima (#875, #463)
+
+The source proposal is assets/source/art/sewer_structure_875/CONFIG.json;
+its native comparison gallery is in that folder's review.html. Build with
+assets/generators/build_sewer_structure_review.py into a new private build folder.
+No production map, material binding, bitmap or model is replaced. The builder first
+recompiles the retained original byte-for-byte, then reuses its pure compiler prefix
+and existing arena appender. It never runs the production generator's writing tail.
+
+Reference: retained AySA circa 1884 Puente Chico/Wilde construction context and the
+official decree describing 1882 design/1889 partial operation. Brick and arches
+inform an artistic proposal, not an archaeological reconstruction. Later Wilde
+additions and unverified dates for Zanjón vaults are excluded. No third-party pixels.
+The exact owned #847 brick PNG is reused; floor pixels and all props/gates remain.
+Private CA875WAL/CA875FLR aliases isolate material changes to candidate MAP02.
+
+| Resource inventory | Original | Candidate |
+| --- | ---: | ---: |
+| Base sectors before existing Justice arena | 104 | 539 |
+| Base lines | 32,524 | 67,120 |
+| Base vertices | 32,001 | 65,578 |
+| Original things | 445 | 445 |
+| Additional sloped sectors actually sampled | 0 | 439 |
+
+The net sector increase is435 because four old flat groupings disappear. The
+proposal adds 34,596 internal boundaries over 42,702 cells (27,974 dry/14,728 water).
+Its packed MAP02 WAD is23,083,243 bytes; the existing arena adds its usual sector.
+The four-member uncompressed overlay includes the3,528,014-byte1254x1254 RGB
+brick source, two texture definitions, MAP02 and a21,054-byte geometry lookup.
+This is an explicit inventory, not an approved permanent map/VRAM budget. No new
+decorative actors, thinker ticks, state schema or whole-map scans enter production.
+
+Final overlay SHA256: ff3f5b7e956b95797e0bf0e0a6559e778f0d186c8e004aa2e33f800721f47823.
+Map SHA256: df70e78dbc37d11197b5a13354485ff5f214a35e8ef5d3624ccbe4cd353f103e.
+Native map checksum: f6b7917b3ec920216788dc92cc4db44c.
+Two independent builds are byte-identical. Final native views inspect20 images
+at 1520x825; frame measurements use1280x720. Actor/fixture differences and the
+superseded global-alias prototype are labeled separately in the evidence.
 
 ## 5.17.115 - Measure target acquisition and retain current perception (#873, #454)
 
