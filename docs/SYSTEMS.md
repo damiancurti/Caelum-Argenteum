@@ -1,6 +1,22 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.111** - 2026-11-21.
+Documentation version: **5.17.112** - 2026-11-21.
+
+## 5.17.112 - Measure endpoint setup and retain the shared production path (#868, #454)
+
+The measured Exterior endpoint routine remains unchanged. A private typed
+GateBlocker/VehiclePart shortcut preserved results but penalized NPC and other
+fallback callers; it was rejected. A second prototype expanded the final
+ActorPoint call into its existing body. Its small repeated-call advantage,
+alongside a nonzero unchanged-clone control, does not justify duplicated live
+shielding/dose logic. Neither prototype is included in normal gameplay.
+
+The same player outer-equipment selection, NPC armor/fur rules, live shielding,
+mass-scaled dose, allocation/reuse/reset, exposure settlement and contact transfer
+remain authoritative. No concentration cache, fields/schema, cadence, actor scan,
+collision/resource rule or whole-map >=500 census change was introduced. Native
+probe saves reload and return to the original implementation; this is diagnostic
+verification, not author acceptance of the pending batch.
 
 ## 5.17.111 - Recover the author-provided environment remasters for review (#866, #463)
 

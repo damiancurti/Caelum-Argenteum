@@ -1,0 +1,43 @@
+Endpoint diagnosis reproduction (#868)
+
+Run from the repository root with Python and the installed GZDoom4.14.2/DOOM2
+development dependency. Only the diagnostic sources/configuration/evidence are
+retained here. Generated packages, map fixtures, saves and engine binaries stay
+under build/ and are not distributed in this patch. Normal production keeps the
+original shared endpoint implementation; canonical conclusions are in HISTORY.
+
+Create each output in a new build/ directory. The runner refuses another active
+gzdoom.exe, keeps the game unpaused in the background with5% audio, captures exit
+status and rejects missing assertions/fatal markers/timeouts. Timeout can also
+mean a native crash dialog that did not reach engine.log; do not count it as pass.
+
+Private alternatives, using the retained original111 runtime:
+python assets/validation_v5_17_112/prepare_endpoints.py --runtime build/issue866-review01.pk3 --output build/endpoints-typed-new
+python assets/validation_v5_17_112/prepare_endpoints.py --runtime build/issue866-review01.pk3 --inline-only --output build/endpoints-inline-new
+
+Same-code control, then private candidate and save reversal:
+python assets/validation_v5_17_112/run_endpoints.py --runtime build/issue866-review01.pk3 --reference-runtime build/issue866-review01.pk3 --output build/endpoints-control-new
+python assets/validation_v5_17_112/run_endpoints.py --runtime build/issue866-review01.pk3 --reference-runtime build/issue866-review01.pk3 --candidate build/endpoints-inline-new/prototype.pk3 --load build/endpoints-control-new/endpoints.zds --output build/endpoints-upgrade-new
+python assets/validation_v5_17_112/run_endpoints.py --runtime build/issue866-review01.pk3 --reference-runtime build/issue866-review01.pk3 --load build/endpoints-upgrade-new/endpoints.zds --output build/endpoints-reversal-new
+
+Use --event seed for only the isolated saved-pair check. The fixture disables
+probe-body Tick/environment exposure and saved-pair automatic Tick; Exchange and
+endpoint persistence remain production methods. This is not an ordinary campaign
+save or automatic free-running collision acceptance test. Never substitute
+archived unsafe fixture expressions as the maintained default.
+
+A fresh current-source nested diagnosis can be prepared with the existing
+assets/validation_v5_17_104/prepare_environment.py --runtime <runtime> --output
+<new build directory> --deep and run using the shared Barracas presentation
+observer with that services.pk3 overlay. Timer wrappers have overhead and nested
+inclusive scopes must not be summed or treated as production CPU budgets.
+
+Uninstrumented final siege (the optional presentation layer is local tooling):
+python assets/validation_v5_17_112/run_scene.py --runtime build/issue868-diagnosis01.pk3 --label fresh-siege-review --map MAP03 --siege --presentation-layer <local layer directory>
+
+The scene wrapper writes build/issue868-<label>-summary.json plus raw evidence.
+Only the approved1000-attacker/600-defender siege or peaceful scenes are allowed.
+Never use retired6000-attacker cases. Performance reuse retains original110/111
+hashes and labels after exact runtime comparison; those are not112 executions.
+QueuePresent is not monitor scanout. Author review remains at the final batch
+terminal; this reproduction guide is not that terminal.

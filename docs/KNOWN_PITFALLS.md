@@ -4,6 +4,30 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-268 - Validate diagnostic object references before interpreting results
+
+Status/evidence: ENGINE-VERIFIED fixture correction, #868 /5.17.112,
+2026-11-21, GZDoom4.14.2. Underlying engine/compiler cause remains unisolated.
+
+A reload assertion chained Get(actor).Pairs[0] for both contact endpoints inside
+one boolean argument. It failed with a VM null-address abort and, in another run,
+a native C0000005 dialog absent from engine.log. Disabling both JIT switches did
+not make the old expression pass. Materializing the two returned records in local
+references, checking null and list bounds, then comparing identities passes the
+same minimal save and the complete upgrade/reload/rollback suite. No record is
+missing in those corrected loads. Do not diagnose a production save migration
+failure from an unsafe fixture expression or claim a JIT-specific bug without
+isolating it. Retain both the failed and corrected diagnostic sources and logs.
+
+Also compare an unchanged source clone when interpreting very small timings:
+the control itself can show an apparent advantage. Alternating loop order alone
+does not eliminate layout/timer effects, and nested profile wrappers inflate
+inclusive totals. #868 retains the shared endpoint routine rather than shipping
+a regressive typed shortcut or duplicating guards for a tiny absolute saving.
+Evidence: assets/validation_v5_17_112. Reject timeouts and nonzero exits even if
+engine.log lacks a fatal marker; record native-dialog uncertainty explicitly.
+
+
 ## CA-KP-267 - Audit aliases and raw-image consumers before remaster binding
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #866 /5.17.111,

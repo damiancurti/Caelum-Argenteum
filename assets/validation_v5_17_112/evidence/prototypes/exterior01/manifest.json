@@ -1,0 +1,59 @@
+{
+  "issue": 868,
+  "npc_first": false,
+  "runtime_sha256": "8759722962a6bee612d347b671610045b6aee59f447af029a6ef83963d72c5c4",
+  "original_sha256": "52c176d389b88de0f0143283585931af6682b757404b24decaf71ec6283abc7c",
+  "candidate_sha256": "bef4936869e3308b46234a8bffff8b1cf530add80e1c40a3437801e9411398e7",
+  "overlay_sha256": "ffebec2e9e3f83365ae94d19f74ae047db16fb6544d30ead5a9c1d9e3320dde6",
+  "inverse_exact": true,
+  "ancestry": {
+    "CaelumGateBlocker": [
+      "CaelumGateBlocker",
+      "Actor"
+    ],
+    "CaelumVehiclePart": [
+      "CaelumVehiclePart",
+      "Actor"
+    ],
+    "Inventory": [
+      "Inventory"
+    ],
+    "CaelumPlayer": [
+      "CaelumPlayer",
+      "DoomPlayer"
+    ],
+    "CaelumCombatActor": [
+      "CaelumCombatActor",
+      "Actor"
+    ],
+    "CaelumTarotRock": [
+      "CaelumTarotRock",
+      "CaelumMovableProp",
+      "Actor"
+    ]
+  },
+  "scope": "Only Exterior changes. The native-family endpoint still resets Body, Record and Dose on every call. No persisted fields, caches, skipped exposure/transfer, cadence or data changes.",
+  "proof": "Single inheritance excludes player/NPC casts, Inventory shielding and contained TarotRock shielding. The original Dose fallback is exactly 1. No skipped path has effects before its impossible cast succeeds.",
+  "class_sources": {
+    "CaelumGateBlocker": {
+      "path": "src/caelum/world/CaelumBreakableGate.zs",
+      "sha256": "dbe7f944252432c8e716f335590c9d40776a44472344ee8476c5fe875c1e85b9"
+    },
+    "CaelumVehiclePart": {
+      "path": "src/caelum/world/CaelumTravelVehicles.zs",
+      "sha256": "72af015f4a8fda14285515c4e36f113a412b37311ddbd21d4711620883d9cec2"
+    },
+    "CaelumPlayer": {
+      "path": "src/caelum/player/CaelumPlayer.zs",
+      "sha256": "b10adb96b46336088db6de628b3962d2886321cd14571ae4b52abf5aeb5143e8"
+    },
+    "CaelumCombatActor": {
+      "path": "src/caelum/actors/CaelumCombatActor.zs",
+      "sha256": "6cb9afd8c4c68311fe6dcf9c01b8e203d20ec493a4532e855bf5e008564bd181"
+    },
+    "CaelumTarotRock": {
+      "path": "src/caelum/core/CaelumTarotSun.zs",
+      "sha256": "d2dffe02360101f1c9b90eda10d3cb8e466b33b6f0b7554d17217b7185579e40"
+    }
+  }
+}

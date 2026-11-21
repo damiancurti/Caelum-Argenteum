@@ -1,6 +1,22 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.111** - 2026-11-21.
+Documentation version: **5.17.112** - 2026-11-21.
+
+## 5.17.112 - Measure endpoint setup and retain the shared production path (#868, #454)
+
+No production image, model, map or resource changed under #868. The two
+endpoint alternatives remain private reconstruction outputs; neither is shipped
+as runtime logic. assets/validation_v5_17_112 retains exact original/candidate
+sources, class proofs, sampled timings, native check/config/log evidence, the
+corrected portable runner and source-preservation records. Engine executables,
+IWADs, generated PK3s, WAD fixtures and saves remain local. The observed native
+crash dialog is recorded as diagnostic text; no crash report was sent externally.
+
+Mansion/city/ground windows are reused from validation_v5_17_111 and normal sewers
+from validation_v5_17_110 after byte-level runtime comparison. Their original
+versions, hashes and visual qualifications remain visible. A new112 normal-siege
+capture and frame/tic traces are separate. Visual/art acceptance and #736 review
+remain deferred to the final consolidated session.
 
 ## 5.17.111 - Recover the author-provided environment remasters for review (#866, #463)
 

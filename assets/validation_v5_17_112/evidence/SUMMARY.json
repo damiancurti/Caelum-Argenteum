@@ -1,0 +1,49 @@
+{
+  "issue": 868,
+  "release": "5.17.112",
+  "decision": "Keep original production Exterior/ActorPoint; reject both private alternatives.",
+  "native_corrected_assertions": 5753,
+  "full_runs": 5,
+  "final_published_runner_reload": 9,
+  "prototype_runs": "Prior prototype/control and failing attempts remain separate; none is silently counted as a passed save test.",
+  "unchanged_runtime_members": 18765,
+  "changed_runtime_members": "Two release diagnostic strings only.",
+  "final_siege_queue_presents_per_second": 2.0288162922049353,
+  "final_siege_simulation": {
+    "samples": 700,
+    "mean_ms": 29.61403585714286,
+    "p95_ms": 44.6904,
+    "p99_ms": 48.6968,
+    "max_ms": 68.0452
+  },
+  "final_siege_presentation": {
+    "pid": 42780,
+    "trace_sha256": "f75b037a82cd5f58d896fa5fd15893b2bf2ff01ae3cee52bf677387e5ed9c9ab",
+    "rows": 2391,
+    "scene_presents": 37,
+    "mean_present_fps": 2.0288162922049353,
+    "present_intervals": {
+      "samples": 36,
+      "mean_ms": 492.8982500003444,
+      "p50_ms": 494.2725999355316,
+      "p95_ms": 538.5503000020981,
+      "p99_ms": 543.2141000032425,
+      "max_ms": 543.2141000032425
+    },
+    "native_call_duration": {
+      "samples": 37,
+      "mean_ms": 0.17285135307827512,
+      "p50_ms": 0.16729998588562012,
+      "p95_ms": 0.22169995307922363,
+      "p99_ms": 0.22689998149871826,
+      "max_ms": 0.22689998149871826
+    }
+  },
+  "census": [
+    "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+    "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+  ],
+  "author_queue_unchanged": true,
+  "author_acceptance": false,
+  "full_validation": "passed with no errors"
+}
