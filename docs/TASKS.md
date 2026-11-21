@@ -1,6 +1,22 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.111** - 2026-11-21.
+Documentation version: **5.17.112** - 2026-11-21.
+
+## 5.17.112 - Measure endpoint setup and retain the shared production path (#868, #454)
+
+Completed: immutable111 nested profile; typed and inline-only private
+prototypes; same-code timing control; original-result point/transfer comparisons;
+five corrected full fixture runs plus final112 published-runner reload; exact
+runtime preservation; retained failures; one final uninstrumented normal-siege
+window and transparently reused unchanged-source reference scenes.
+
+Rejected: native-family-first dispatch regresses fallbacks; duplicated ActorPoint
+body has too little demonstrated benefit over the unchanged-clone control to
+justify splitting shared live guards. Production Exterior remains exact.
+Pending: full-frame siege bottleneck, authorized city/sewer finish and the rest
+of the existing batch. Author-gated character variants/assignments stay gated;
+no intermediate question, acceptance, issue closure or test terminal is implied.
+The outstanding author queue is byte-for-byte preserved.
 
 ## 5.17.111 - Recover the author-provided environment remasters for review (#866, #463)
 

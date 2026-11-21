@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.111** - 2026-11-21.
+Documentation version: **5.17.112** - 2026-11-21.
+
+## 5.17.112 - Measure endpoint setup and retain the shared production path (#868, #454)
+
+Completed the focused endpoint investigation under #454/#868 and retained the
+existing shared implementation. This delivery records rejected alternatives,
+an unchanged-source timing control, corrected native diagnostic assertions and
+save/reversal evidence. It does not claim a production performance improvement.
+Only two runtime release labels differ from 5.17.111; the remaining 18,765 package
+members are exact. Overall siege fluency and the broader V5.16/V5.17 work remain
+open. The next performance work must locate the full frame/tic bottleneck instead
+of treating a tiny repeated-call saving as a rendering solution.
 
 ## 5.17.111 - Recover the author-provided environment remasters for review (#866, #463)
 

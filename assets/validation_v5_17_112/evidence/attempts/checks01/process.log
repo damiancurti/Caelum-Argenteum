@@ -1,0 +1,69 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-21 02:55:04
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue866-review01.pk3, 18767 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue868-exterior01/prototype.pk3, 1 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue868-checks01/checks.pk3, 5 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2466.40 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP01 - Endpoint checks
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA868 BENCH type=CA868GateProbe armor=0 calls=160000 original_ms=4.704600 candidate_ms=1.346700
+CA868 BENCH type=CA868VehicleProbe armor=0 calls=160000 original_ms=4.766700 candidate_ms=1.932500
+CA868 BENCH type=CA868NpcProbe armor=0 calls=160000 original_ms=4.924500 candidate_ms=6.132800
+CA868 BENCH type=CA868NpcProbe armor=1 calls=160000 original_ms=3.650500 candidate_ms=4.877600
+CA868 BENCH type=CA868RatProbe armor=0 calls=160000 original_ms=5.159700 candidate_ms=6.243100
+CA868 BENCH type=CaelumMaterialPickup armor=0 calls=160000 original_ms=7.991500 candidate_ms=9.070600
+CA868 BENCH type=CaelumShopSign armor=0 calls=160000 original_ms=4.795200 candidate_ms=5.801300
+CA868 BENCH type=CaelumPlayer armor=0 calls=160000 original_ms=30.964500 candidate_ms=35.335100
+CA868 RESULT checks=1144 errors=0
+Game saved.

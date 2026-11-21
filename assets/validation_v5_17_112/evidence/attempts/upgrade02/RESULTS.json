@@ -1,0 +1,19 @@
+{
+  "issue": 868,
+  "passed": false,
+  "exit_code": 1,
+  "checks": 0,
+  "errors": [
+    "Native diagnostic timed out before completion (120 seconds)."
+  ],
+  "benchmark": [],
+  "runtime_sha256": "8759722962a6bee612d347b671610045b6aee59f447af029a6ef83963d72c5c4",
+  "reference_runtime_sha256": "8759722962a6bee612d347b671610045b6aee59f447af029a6ef83963d72c5c4",
+  "candidate_sha256": "9026c38e0147a8812d0230312148392f19667c15dd9f6f9149453fb464ec3a66",
+  "fixture_sha256": "c810214c8a9a0c8dabc88eb29d735300fcb07534dbb7f5195092bee2755c79b6",
+  "checks_sha256": "782ddd34d024570c4144276be9b9120f616e53c5b92b4c164f0561e7bb555ba3",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "input_save_sha256": "b5a8b74fe622deeec624bf5f2a8d7299ce7823203b83964d5caa8789f11474ec",
+  "output_save_sha256": null,
+  "qualification": "Private counterfactual comparison and alternating repeated-call timer, not full-scene throughput. Saved probe bodies disable Tick and use bMissile to isolate concentration from background exposure; the saved contact subclass disables automatic Tick, but inherits the production Exchange and transient endpoint fields. Exact production references remain in reference.zs."
+}

@@ -1430,3 +1430,10 @@ assets/validation_v5_17_111/** -text -diff
 assets/validation_v5_17_111/*.py text eol=lf diff
 assets/validation_v5_17_111/*.json text eol=lf diff
 assets/validation_v5_17_111/*.html text eol=lf diff
+
+# Exact endpoint diagnosis evidence and portable reproduction tools (#868).
+assets/validation_v5_17_112/** -text -diff
+assets/validation_v5_17_112/*.py text eol=lf diff
+assets/validation_v5_17_112/*.zs text eol=lf diff
+assets/validation_v5_17_112/*.json text eol=lf diff
+assets/validation_v5_17_112/*.txt text eol=lf diff
