@@ -1,0 +1,113 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-19 21:44:49
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue861-hands01.pk3, 18767 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue861-actions-0-bare01/checks.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2510.00 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA836A - Candidate reach checks
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA836 EDGE PASS hands861: existing opt-in native player
+CA259 EQUIP action=2 compatible=1 id=5 selected=5 itemtier=1 modeltier=1 equipped=1
+CA836 EDGE PASS hands861: native sword/shield fixture equipped
+CA836 EDGE PASS hands861: unsupported armor removed through native equipment operation
+CA836 EDGE PASS hands861: unsupported armor removed through native equipment operation
+CA836 EDGE PASS hands861: unsupported armor removed through native equipment operation
+CA836 EDGE PASS hands861: unsupported armor removed through native equipment operation
+CA836 EDGE PASS hands861: actual player and saved fixture survive
+CA836 EDGE PASS hands861: native saved glove identity and data remain intact
+CA836 EDGE PASS hands861: current build selects its documented glove scope
+CA836 EDGE PASS hands861: saved sex and actual glove choose the expected existing art
+CA836 EDGE PASS hands861: world and preview flag share actual selection
+Game saved.
+CA259 EQUIP action=2 compatible=1 id=7 selected=7 itemtier=1 modeltier=1 equipped=1
+CA836 EDGE PASS hands861: native ammunition exists for the reload fixture
+Captured carbine-ready.png
+CA836 EDGE PASS hands861: carbine capture agrees with actual reload timer
+CA836 EDGE PASS hands861: carbine left hand uses actual glove selection during reload
+CA836 EDGE PASS hands861: carbine right hand uses actual glove selection during reload
+CA861 ACTION tic=235 kind=2 phase=0 reload=0.000000 charge=0.000000 variant=0
+Captured carbine-reload.png
+CA836 EDGE PASS hands861: carbine capture agrees with actual reload timer
+CA836 EDGE PASS hands861: native reload clock advances without fixture timer writes
+CA836 EDGE PASS hands861: carbine left hand uses actual glove selection during reload
+CA836 EDGE PASS hands861: carbine right hand uses actual glove selection during reload
+CA861 ACTION tic=243 kind=2 phase=1 reload=4.337472 charge=0.000000 variant=0
+Captured carbine-loaded.png
+CA836 EDGE PASS hands861: carbine capture agrees with actual reload timer
+CA836 EDGE PASS hands861: native reload finishes with the canonical magazine capacity
+CA836 EDGE PASS hands861: carbine left hand uses actual glove selection during reload
+CA836 EDGE PASS hands861: carbine right hand uses actual glove selection during reload
+CA861 ACTION tic=593 kind=2 phase=2 reload=0.000000 charge=0.000000 variant=0
+CA259 EQUIP action=2 compatible=1 id=8 selected=8 itemtier=1 modeltier=1 equipped=1
+Captured staff-ready.png
+CA836 EDGE PASS hands861: native action fixture equips the actual staff
+CA836 EDGE PASS hands861: staff capture agrees with actual charge timer
+CA836 EDGE PASS hands861: composed staff hand uses actual glove selection during charge
+CA861 ACTION tic=693 kind=1 phase=0 reload=0.000000 charge=0.000000 variant=0
+Captured staff-charge.png
+CA836 EDGE PASS hands861: native action fixture equips the actual staff
+CA836 EDGE PASS hands861: staff capture agrees with actual charge timer
+CA836 EDGE PASS hands861: native charge clock advances without fixture timer writes
+CA836 EDGE PASS hands861: composed staff hand uses actual glove selection during charge
+CA861 ACTION tic=701 kind=1 phase=1 reload=0.000000 charge=1.539713 variant=0
+Captured staff-restored.png
+CA836 EDGE PASS hands861: native action fixture equips the actual staff
+CA836 EDGE PASS hands861: staff capture agrees with actual charge timer
+CA836 EDGE PASS hands861: composed staff hand uses actual glove selection during charge
+CA861 ACTION tic=1051 kind=1 phase=2 reload=0.000000 charge=0.000000 variant=0
+CA836 EDGE PASS hands861: actual player and saved fixture survive
+CA836 EDGE PASS hands861: native saved glove identity and data remain intact
+CA836 EDGE PASS hands861: current build selects its documented glove scope
+CA836 EDGE PASS hands861: saved sex and actual glove choose the expected existing art
+CA836 EDGE PASS hands861: world and preview flag share actual selection
+CA836 EDGE_RESULT checks=38 failures=0 result=PASS

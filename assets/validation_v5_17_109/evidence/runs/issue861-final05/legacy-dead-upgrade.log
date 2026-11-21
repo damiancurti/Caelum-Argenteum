@@ -1,0 +1,1 @@
+{"passed": true, "errors": [], "checks": ["CA836 EDGE PASS hands861: native player remains dead", "CA836 EDGE PASS hands861: death snapshot retains the actual pre-death glove selection", "CA836 EDGE PASS hands861: corpse uses saved appearance after equipment cleanup", "CA836 EDGE_RESULT checks=17 failures=0 result=PASS"]}

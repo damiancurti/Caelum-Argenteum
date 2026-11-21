@@ -1,0 +1,98 @@
+{
+  "issue": 861,
+  "passed": true,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-hands01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-bench-city-candidate01\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-bench-city-candidate01\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-bench-city-candidate01",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-bench-city-candidate01\\engine.log",
+    "+map",
+    "MAP03",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-bench-city-candidate01\\commands.cfg"
+  ],
+  "exit_code": 0,
+  "errors": [],
+  "checks": [
+    "CA836 EDGE PASS hands861: existing opt-in native player",
+    "CA836 EDGE PASS hands861: native sword/shield fixture equipped",
+    "CA836 EDGE PASS hands861: unsupported armor removed through native equipment operation",
+    "CA836 EDGE PASS hands861: unsupported armor removed through native equipment operation",
+    "CA836 EDGE PASS hands861: unsupported armor removed through native equipment operation",
+    "CA836 EDGE PASS hands861: unsupported armor removed through native equipment operation",
+    "CA836 EDGE PASS hands861: actual player and saved fixture survive",
+    "CA836 EDGE PASS hands861: native saved glove identity and data remain intact",
+    "CA836 EDGE PASS hands861: current build selects its documented glove scope",
+    "CA836 EDGE PASS hands861: saved sex and actual glove choose the expected existing art",
+    "CA836 EDGE PASS hands861: world and preview flag share actual selection",
+    "CA836 EDGE PASS hands861: actual player and saved fixture survive",
+    "CA836 EDGE PASS hands861: native saved glove identity and data remain intact",
+    "CA836 EDGE PASS hands861: current build selects its documented glove scope",
+    "CA836 EDGE PASS hands861: saved sex and actual glove choose the expected existing art",
+    "CA836 EDGE PASS hands861: world and preview flag share actual selection",
+    "CA836 EDGE PASS hands861: actual player and saved fixture survive",
+    "CA836 EDGE PASS hands861: native saved glove identity and data remain intact",
+    "CA836 EDGE PASS hands861: current build selects its documented glove scope",
+    "CA836 EDGE PASS hands861: saved sex and actual glove choose the expected existing art",
+    "CA836 EDGE PASS hands861: world and preview flag share actual selection",
+    "CA836 EDGE_RESULT checks=21 failures=0 result=PASS"
+  ],
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-hands01.pk3": "8fcef709b7615d6dd6f808f1de6e46a37718b97b0d35ecf1d6568eb66de7a574",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-bench-city-candidate01\\checks.pk3": "e9d06762354fd23841050d4ccc657439ddf1c72b32bb3eb155927eee2e8ba509"
+  },
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "loaded_save_sha256": null,
+  "qualification": "Matched first-person hand presentation phase bench. Same diagnostic saved class names and base-compatible fields on both builds; checks actual clothing identity and visual selection. Not author acceptance.",
+  "presentation_markers": {
+    "BEGIN": 750363963.8727,
+    "END": 750384045.5672001
+  },
+  "simulation": {
+    "samples": 702,
+    "mean_ms": 28.57416353276353,
+    "p50_ms": 28.6068,
+    "p95_ms": 35.6001,
+    "p99_ms": 37.8599,
+    "max_ms": 40.3488
+  },
+  "presentation": {
+    "pid": 43568,
+    "trace_sha256": "dfc70051688361c7996fcc882f50088509b3d3c32558599007ee69888801a7ab",
+    "rows": 2862,
+    "scene_presents": 1741,
+    "mean_present_fps": 99.08163397301445,
+    "present_intervals": {
+      "samples": 1740,
+      "mean_ms": 10.09268781611289,
+      "p50_ms": 9.76199996471405,
+      "p95_ms": 12.539099931716919,
+      "p99_ms": 14.720100045204163,
+      "max_ms": 21.923399925231934
+    },
+    "native_call_duration": {
+      "samples": 1741,
+      "mean_ms": 0.19288173192948324,
+      "p50_ms": 0.17200005054473877,
+      "p95_ms": 0.3171999454498291,
+      "p99_ms": 0.5280998945236206,
+      "max_ms": 1.2663999795913696
+    }
+  },
+  "presentation_layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+}

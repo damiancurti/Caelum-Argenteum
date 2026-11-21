@@ -1,0 +1,20 @@
+{
+  "assets/validation_v5_17_109/build_hand_counter_overlay861.py": "4c854cf07ef155f53711a753b538950bdb6f9f290c3d6dfad23a78ec2427669d",
+  "assets/validation_v5_17_109/hand_actions861.zs": "5d9918663b897329159510568798e4f957015f57e1a2bb344bf79f3eea3af335",
+  "assets/validation_v5_17_109/hand_cache861.zs": "1a032730a5e02cdf2ac3053fa31c57eee7fbeaf2e562c7b2b9490aa0b48d16fd",
+  "assets/validation_v5_17_109/hand_consumers861.zs": "345ebfb3d4ae7173e361f2a6df1f32d413a16ed7b3f5a1346852b51d485a97e2",
+  "assets/validation_v5_17_109/hand_continuity861.zs": "ab8e6a05c9c04fb8a6d1c4293a47280c1e088d6f5d59d7e902ab8162600fe05c",
+  "assets/validation_v5_17_109/hand_ownership861.zs": "a9ea1574b4020309401c7c8797c9960ebed888ced218120c275f42bc3f22383a",
+  "assets/validation_v5_17_109/hand_presentation861.zs": "09bf2c346701deebbddd8725f2c108a055e0c0a1a2a75b070bf95a2644383fb4",
+  "assets/validation_v5_17_109/run_hand_actions861.py": "d43d4bc6ebc5be7648b0540f020eb6e072c3a3dafaeb0816bec4398893de620e",
+  "assets/validation_v5_17_109/run_hand_cache861.py": "de185083c7f39d84a7ed43f2927d52a86abd7c8d0a771a27e9e2d6f4e8a1e85a",
+  "assets/validation_v5_17_109/run_hand_consumers861.py": "ece96e72f7576e310fe57b9522301fd14943631535948d0f74e60f8c44d0241e",
+  "assets/validation_v5_17_109/run_hand_continuity861.py": "3473d3c052093c580327e98c2edffcc1468d122e47694f96dfbb52b88e4bf07b",
+  "assets/validation_v5_17_109/run_hand_ownership861.py": "da35c738d6207ea46981d756923859f1a1c433a8809df4e52aca2ea90ba395d6",
+  "assets/validation_v5_17_109/run_hand_presentation861.py": "fc49329aabba7539b14ac14935c3dcad57d91d706593d2f65222221fe2eee119",
+  "src/caelum/character/CaelumAppearanceHands.zs": "64f7952ee20cb339dfc9524b5c0a83ae04f56affaeaf9df59bbe39effc6e0ec9",
+  "src/caelum/equipment/CaelumInventoryService.zs": "dfd9c05dae9c6d7dcd7b43fa59102eddae67c6278bfab7965e26c38449a90d83",
+  "src/caelum/player/CaelumPlayer.zs": "b10adb96b46336088db6de628b3962d2886321cd14571ae4b52abf5aeb5143e8",
+  "src/caelum/world/CaelumPhysicalHazards.zs": "b923604014a6ea457d7a2d7fcbc1b0d176a8a20d1543ff8fd49b0538b211cbde",
+  "src/caelum/world/CaelumSewerMaze.zs": "86bd9de51a42653965915185ce13859362e2af0c9357fb9d6c09a89f535a131a"
+}

@@ -1,0 +1,5 @@
+{
+  "caelum/player/CaelumPlayer.zs": "b10adb96b46336088db6de628b3962d2886321cd14571ae4b52abf5aeb5143e8",
+  "caelum/character/CaelumAppearanceHands.zs": "64f7952ee20cb339dfc9524b5c0a83ae04f56affaeaf9df59bbe39effc6e0ec9",
+  "caelum/equipment/CaelumInventoryService.zs": "dfd9c05dae9c6d7dcd7b43fa59102eddae67c6278bfab7965e26c38449a90d83"
+}

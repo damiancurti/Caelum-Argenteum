@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.108** - 2026-11-19.
+Documentation version: **5.17.109** - 2026-11-19.
+
+## 5.17.109 - Select shared hand art from actual clothing gloves (#861)
+
+Full project validation passes with no errors; the generated document index is current.
+
+The focused #861 shared-hand extension is implemented using actual owned
+clothing gloves and the existing artwork. Native ownership, shared consumers,
+first-person actions and saved-state continuity are verified; transient caches
+avoid warm inventory walks. HISTORY and assets/validation_v5_17_109 record exact
+evidence and performance limits. CA861-HANDS-01 remains pending.
+
+This completes a defined #462 integration step. The broader character, equipment,
+scenery and siege-performance work remains open, including material-specific
+and other-body art. #736 proposals are unapproved. The author requested one
+consolidated test terminal after the remaining batch; no intermediate approval
+is inferred from native checks or a draft PR.
 
 ## 5.17.108 - Fit first-body hands and retained equipment across native poses (#859)
 

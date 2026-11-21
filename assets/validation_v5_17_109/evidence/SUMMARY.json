@@ -1,0 +1,786 @@
+{
+  "issue": 861,
+  "version": "5.17.109",
+  "canonical": [
+    {
+      "label": "fresh",
+      "directory": "build/issue861-final03/fresh",
+      "runtime": "final",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 13,
+      "failed": [],
+      "errors": [],
+      "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+    },
+    {
+      "label": "upgrade",
+      "directory": "build/issue861-final03/upgrade",
+      "runtime": "final",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 7,
+      "failed": [],
+      "errors": [],
+      "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+    },
+    {
+      "label": "reload",
+      "directory": "build/issue861-final03/reload",
+      "runtime": "final",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 7,
+      "failed": [],
+      "errors": [],
+      "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+    },
+    {
+      "label": "rollback",
+      "directory": "build/issue861-final03/rollback",
+      "runtime": "baseline",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 5,
+      "failed": [],
+      "errors": [],
+      "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+    },
+    {
+      "label": "hub",
+      "directory": "build/issue861-final03/hub",
+      "runtime": "final",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 21,
+      "failed": [],
+      "errors": [],
+      "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+    },
+    {
+      "label": "death",
+      "directory": "build/issue861-final03/death",
+      "runtime": "final",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 16,
+      "failed": [],
+      "errors": [],
+      "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+    },
+    {
+      "label": "dead-load",
+      "directory": "build/issue861-final03/dead-load",
+      "runtime": "final",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 3,
+      "failed": [],
+      "errors": [],
+      "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+    },
+    {
+      "label": "motion-0-bare",
+      "directory": "build/issue861-final05/motion-0-bare",
+      "runtime": "final",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 35,
+      "failed": [],
+      "errors": []
+    },
+    {
+      "label": "motion-0-GP",
+      "directory": "build/issue861-final05/motion-0-GP",
+      "runtime": "final",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 35,
+      "failed": [],
+      "errors": []
+    },
+    {
+      "label": "motion-1-bare",
+      "directory": "build/issue861-final05/motion-1-bare",
+      "runtime": "final",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 35,
+      "failed": [],
+      "errors": []
+    },
+    {
+      "label": "motion-1-GP",
+      "directory": "build/issue861-final05/motion-1-GP",
+      "runtime": "final",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 35,
+      "failed": [],
+      "errors": []
+    },
+    {
+      "label": "ownership",
+      "directory": "build/issue861-final05/ownership",
+      "runtime": "final",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 446,
+      "failed": [],
+      "errors": []
+    },
+    {
+      "label": "legacy-death",
+      "directory": "build/issue861-final05/legacy-death",
+      "runtime": "baseline",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 14,
+      "failed": [],
+      "errors": []
+    },
+    {
+      "label": "legacy-dead-upgrade",
+      "directory": "build/issue861-final05/legacy-dead-upgrade",
+      "runtime": "final",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 3,
+      "failed": [],
+      "errors": []
+    },
+    {
+      "label": "legacy-dead-reload",
+      "directory": "build/issue861-final05/legacy-dead-reload",
+      "runtime": "final",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 3,
+      "failed": [],
+      "errors": []
+    },
+    {
+      "label": "lookup-counters",
+      "directory": "build/issue861-final05/lookup-counters",
+      "runtime": "instrumented final",
+      "passed": true,
+      "exit_code": 0,
+      "pass_lines": 51,
+      "failed": [],
+      "errors": []
+    }
+  ],
+  "canonical_passes": 729,
+  "actions": [
+    {
+      "sex": 0,
+      "glove": "bare",
+      "directory": "build/issue861-actions-0-bare01",
+      "passed": true,
+      "pass_lines": 38,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "sex": 0,
+      "glove": "GP",
+      "directory": "build/issue861-actions-0-GP01",
+      "passed": true,
+      "pass_lines": 38,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "sex": 1,
+      "glove": "bare",
+      "directory": "build/issue861-actions-1-bare01",
+      "passed": true,
+      "pass_lines": 38,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "sex": 1,
+      "glove": "GP",
+      "directory": "build/issue861-actions-1-GP01",
+      "passed": true,
+      "pass_lines": 38,
+      "errors": [],
+      "failures": []
+    }
+  ],
+  "action_passes": 152,
+  "consumers": [
+    {
+      "directory": "build/issue861-consumers-male01",
+      "pass_lines": 33
+    },
+    {
+      "directory": "build/issue861-consumers-female01",
+      "pass_lines": 33
+    },
+    {
+      "directory": "build/issue861-ordinary01",
+      "pass_lines": 446
+    }
+  ],
+  "consumer_passes": 512,
+  "performance": [
+    {
+      "scene": "studio",
+      "kind": "control",
+      "directory": "build/issue861-bench-studio-control01",
+      "presentation": {
+        "pid": 49156,
+        "trace_sha256": "8186bb4712c9f3cbef5edfd6174e144c16807f413ceb89b4cf06ba834789df26",
+        "rows": 28163,
+        "scene_presents": 16492,
+        "mean_present_fps": 940.2334139321862,
+        "present_intervals": {
+          "samples": 16491,
+          "mean_ms": 1.0635656903724169,
+          "p50_ms": 1.089900016784668,
+          "p95_ms": 1.2883000373840332,
+          "p99_ms": 1.4492000341415405,
+          "max_ms": 2.4595999717712402
+        },
+        "native_call_duration": {
+          "samples": 16492,
+          "mean_ms": 0.0858355261459531,
+          "p50_ms": 0.08259999752044678,
+          "p95_ms": 0.12269997596740723,
+          "p99_ms": 0.16390001773834229,
+          "max_ms": 0.5284000635147095
+        }
+      },
+      "simulation": {
+        "samples": 702,
+        "mean_ms": 28.570102564102562,
+        "p50_ms": 28.5722,
+        "p95_ms": 29.3126,
+        "p99_ms": 29.6083,
+        "max_ms": 29.8667
+      },
+      "pass_lines": 21,
+      "runtime_sha256": "7aa0a9c8e11ccf878ce099142b29a5b9fbc3c9d1a03e11f139677ff6287a226e"
+    },
+    {
+      "scene": "studio",
+      "kind": "candidate",
+      "directory": "build/issue861-bench-studio-candidate01",
+      "presentation": {
+        "pid": 36040,
+        "trace_sha256": "9fa4cfa97660d45fb7cc898f1b6308ca1c1cddef495331076bb45139ce8fa613",
+        "rows": 28364,
+        "scene_presents": 16564,
+        "mean_present_fps": 944.1739037540294,
+        "present_intervals": {
+          "samples": 16563,
+          "mean_ms": 1.059126921453777,
+          "p50_ms": 1.0779000520706177,
+          "p95_ms": 1.281499981880188,
+          "p99_ms": 1.434399962425232,
+          "max_ms": 2.151500105857849
+        },
+        "native_call_duration": {
+          "samples": 16564,
+          "mean_ms": 0.08529512799756304,
+          "p50_ms": 0.08229994773864746,
+          "p95_ms": 0.12139999866485596,
+          "p99_ms": 0.1613999605178833,
+          "max_ms": 0.48249995708465576
+        }
+      },
+      "simulation": {
+        "samples": 702,
+        "mean_ms": 28.572082905982906,
+        "p50_ms": 28.5738,
+        "p95_ms": 29.3058,
+        "p99_ms": 29.6086,
+        "max_ms": 29.7328
+      },
+      "pass_lines": 21,
+      "runtime_sha256": "8fcef709b7615d6dd6f808f1de6e46a37718b97b0d35ecf1d6568eb66de7a574"
+    },
+    {
+      "scene": "mansion",
+      "kind": "control",
+      "directory": "build/issue861-bench-mansion-control01",
+      "presentation": {
+        "pid": 22324,
+        "trace_sha256": "8c742c37f55d46d00719ec0efd7c9aaa7941d7210014904ca9388b1ab4c41476",
+        "rows": 1858,
+        "scene_presents": 1121,
+        "mean_present_fps": 63.777748759260916,
+        "present_intervals": {
+          "samples": 1120,
+          "mean_ms": 15.679449642768928,
+          "p50_ms": 15.674399971961975,
+          "p95_ms": 17.739799976348877,
+          "p99_ms": 18.52329993247986,
+          "max_ms": 22.117900013923645
+        },
+        "native_call_duration": {
+          "samples": 1121,
+          "mean_ms": 0.2128291719200141,
+          "p50_ms": 0.2137000560760498,
+          "p95_ms": 0.25859999656677246,
+          "p99_ms": 0.2970999479293823,
+          "max_ms": 0.37059998512268066
+        }
+      },
+      "simulation": {
+        "samples": 702,
+        "mean_ms": 28.560337321937325,
+        "p50_ms": 30.5587,
+        "p95_ms": 34.8009,
+        "p99_ms": 37.7246,
+        "max_ms": 42.6476
+      },
+      "pass_lines": 21,
+      "runtime_sha256": "7aa0a9c8e11ccf878ce099142b29a5b9fbc3c9d1a03e11f139677ff6287a226e"
+    },
+    {
+      "scene": "mansion",
+      "kind": "candidate",
+      "directory": "build/issue861-bench-mansion-candidate01",
+      "presentation": {
+        "pid": 20744,
+        "trace_sha256": "e92a1a1258508fdab875a6785a3c2dad0fedf46a7978d31998e2625e0a1565b6",
+        "rows": 1874,
+        "scene_presents": 1105,
+        "mean_present_fps": 62.871114693410604,
+        "present_intervals": {
+          "samples": 1104,
+          "mean_ms": 15.905555434740972,
+          "p50_ms": 15.051800012588501,
+          "p95_ms": 18.148499965667725,
+          "p99_ms": 20.21810007095337,
+          "max_ms": 246.0072000026703
+        },
+        "native_call_duration": {
+          "samples": 1105,
+          "mean_ms": 0.2723351131197554,
+          "p50_ms": 0.2257000207901001,
+          "p95_ms": 0.3418999910354614,
+          "p99_ms": 0.5161000490188599,
+          "max_ms": 38.65900003910065
+        }
+      },
+      "simulation": {
+        "samples": 702,
+        "mean_ms": 28.56449415954416,
+        "p50_ms": 28.8685,
+        "p95_ms": 35.5744,
+        "p99_ms": 42.6616,
+        "max_ms": 305.6802
+      },
+      "pass_lines": 21,
+      "runtime_sha256": "8fcef709b7615d6dd6f808f1de6e46a37718b97b0d35ecf1d6568eb66de7a574"
+    },
+    {
+      "scene": "sewers",
+      "kind": "control",
+      "directory": "build/issue861-bench-sewers-control01",
+      "presentation": {
+        "pid": 14200,
+        "trace_sha256": "0c7487c7eafaddf4038160bd85b438c7f9f221f9204bc1ea8f2e7abe5baf1dbc",
+        "rows": 5064,
+        "scene_presents": 2833,
+        "mean_present_fps": 160.92850290998987,
+        "present_intervals": {
+          "samples": 2832,
+          "mean_ms": 6.213939618634975,
+          "p50_ms": 5.758800029754639,
+          "p95_ms": 9.60349988937378,
+          "p99_ms": 11.551699995994568,
+          "max_ms": 38.964500069618225
+        },
+        "native_call_duration": {
+          "samples": 2833,
+          "mean_ms": 0.1840079409723521,
+          "p50_ms": 0.145300030708313,
+          "p95_ms": 0.3895000219345093,
+          "p99_ms": 0.675299882888794,
+          "max_ms": 2.2836999893188477
+        }
+      },
+      "simulation": {
+        "samples": 702,
+        "mean_ms": 28.569858262108262,
+        "p50_ms": 28.4158,
+        "p95_ms": 33.4455,
+        "p99_ms": 35.0173,
+        "max_ms": 42.1808
+      },
+      "pass_lines": 21,
+      "runtime_sha256": "7aa0a9c8e11ccf878ce099142b29a5b9fbc3c9d1a03e11f139677ff6287a226e"
+    },
+    {
+      "scene": "sewers",
+      "kind": "candidate",
+      "directory": "build/issue861-bench-sewers-candidate01",
+      "presentation": {
+        "pid": 40796,
+        "trace_sha256": "031466e2278f135cbc55442a06616aba5fb3fafc8f8016c9f204d55d5628d3b5",
+        "rows": 5793,
+        "scene_presents": 3719,
+        "mean_present_fps": 211.77517355294705,
+        "present_intervals": {
+          "samples": 3718,
+          "mean_ms": 4.721988811167162,
+          "p50_ms": 4.4492000341415405,
+          "p95_ms": 6.510900020599365,
+          "p99_ms": 8.081499934196472,
+          "max_ms": 38.9203999042511
+        },
+        "native_call_duration": {
+          "samples": 3719,
+          "mean_ms": 0.10790282252271446,
+          "p50_ms": 0.09579992294311523,
+          "p95_ms": 0.15810000896453857,
+          "p99_ms": 0.3076000213623047,
+          "max_ms": 0.8077000379562378
+        }
+      },
+      "simulation": {
+        "samples": 702,
+        "mean_ms": 28.567984045584044,
+        "p50_ms": 28.3873,
+        "p95_ms": 32.6201,
+        "p99_ms": 34.151,
+        "max_ms": 42.5389
+      },
+      "pass_lines": 21,
+      "runtime_sha256": "8fcef709b7615d6dd6f808f1de6e46a37718b97b0d35ecf1d6568eb66de7a574"
+    },
+    {
+      "scene": "city",
+      "kind": "control",
+      "directory": "build/issue861-bench-city-control01",
+      "presentation": {
+        "pid": 31308,
+        "trace_sha256": "6422b1adbef002645dace6e82115a345970b148366e28ec9eac587c13daf225e",
+        "rows": 2606,
+        "scene_presents": 1620,
+        "mean_present_fps": 92.07611442695644,
+        "present_intervals": {
+          "samples": 1619,
+          "mean_ms": 10.860579925897019,
+          "p50_ms": 10.660500049591064,
+          "p95_ms": 13.033699989318848,
+          "p99_ms": 14.044800043106079,
+          "max_ms": 15.379999995231628
+        },
+        "native_call_duration": {
+          "samples": 1620,
+          "mean_ms": 0.21403024682292232,
+          "p50_ms": 0.19870007038116455,
+          "p95_ms": 0.3346000909805298,
+          "p99_ms": 0.5914000272750854,
+          "max_ms": 1.063599944114685
+        }
+      },
+      "simulation": {
+        "samples": 702,
+        "mean_ms": 28.57251965811966,
+        "p50_ms": 29.4464,
+        "p95_ms": 36.1594,
+        "p99_ms": 38.4926,
+        "max_ms": 40.308
+      },
+      "pass_lines": 21,
+      "runtime_sha256": "7aa0a9c8e11ccf878ce099142b29a5b9fbc3c9d1a03e11f139677ff6287a226e"
+    },
+    {
+      "scene": "city",
+      "kind": "candidate",
+      "directory": "build/issue861-bench-city-candidate01",
+      "presentation": {
+        "pid": 43568,
+        "trace_sha256": "dfc70051688361c7996fcc882f50088509b3d3c32558599007ee69888801a7ab",
+        "rows": 2862,
+        "scene_presents": 1741,
+        "mean_present_fps": 99.08163397301445,
+        "present_intervals": {
+          "samples": 1740,
+          "mean_ms": 10.09268781611289,
+          "p50_ms": 9.76199996471405,
+          "p95_ms": 12.539099931716919,
+          "p99_ms": 14.720100045204163,
+          "max_ms": 21.923399925231934
+        },
+        "native_call_duration": {
+          "samples": 1741,
+          "mean_ms": 0.19288173192948324,
+          "p50_ms": 0.17200005054473877,
+          "p95_ms": 0.3171999454498291,
+          "p99_ms": 0.5280998945236206,
+          "max_ms": 1.2663999795913696
+        }
+      },
+      "simulation": {
+        "samples": 702,
+        "mean_ms": 28.57416353276353,
+        "p50_ms": 28.6068,
+        "p95_ms": 35.6001,
+        "p99_ms": 37.8599,
+        "max_ms": 40.3488
+      },
+      "pass_lines": 21,
+      "runtime_sha256": "8fcef709b7615d6dd6f808f1de6e46a37718b97b0d35ecf1d6568eb66de7a574"
+    }
+  ],
+  "performance_passes": 168,
+  "scope": {
+    "issue": 861,
+    "version": "5.17.109",
+    "members": 18767,
+    "changed": [
+      "caelum/character/CaelumAppearanceHands.zs",
+      "caelum/equipment/CaelumInventoryService.zs",
+      "caelum/player/CaelumPlayer.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "unchanged_members": 18762,
+    "no_added_or_removed_runtime_members": true,
+    "all_runtime_bytes_match_src": true,
+    "all_prototype02_members_match_final": true,
+    "no_new_classes_or_saved_fields": true,
+    "runtime_sha256": "8fcef709b7615d6dd6f808f1de6e46a37718b97b0d35ecf1d6568eb66de7a574",
+    "baseline_sha256": "7aa0a9c8e11ccf878ce099142b29a5b9fbc3c9d1a03e11f139677ff6287a226e",
+    "prototype_sha256": "10d5bc916d5cacca16b22d5320277303517433c8e087f28a0d3796d0a326a737"
+  },
+  "source_review": {
+    "issue": 861,
+    "unchanged_variant_resolution_and_pivots": true,
+    "inventory_change_only_adds_cache_invalidation": true,
+    "new_player_fields_all_transient": [
+      "AppearanceHandStateReady",
+      "AppearanceHandState",
+      "AppearanceHandLayerReady",
+      "AppearanceHandLayerIds",
+      "AppearanceHandLayers"
+    ],
+    "native_save_omits_all_new_fields": true,
+    "saved_existing_death_glove_flag_present": true,
+    "native_save": "build/issue861-final01/fresh/reach.zds",
+    "cold_state_lookup_does_not_invoke_schema_migrations": true
+  },
+  "full_validation_pending": false,
+  "visual_review": {
+    "issue": 861,
+    "directly_viewed": [
+      {
+        "path": "build/issue861-save-baseline02/hands.png",
+        "sha256": "102fefaacc39e5498af5f4f43e580673dfa31abbcd0afe3047a1d44c6542d266",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-final01/fresh/hands.png",
+        "sha256": "39684f192f77eac0b6368652ac9c16e2f7d5fab8d4fa0f8b4f6261e7e40307d2",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-final03/motion-0-bare/idle.png",
+        "sha256": "626ec3ff4229aa8b9856fe2e02b1d735691aa4453b9761231d52a798b4ab18be",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-final03/motion-0-bare/guard.png",
+        "sha256": "0d12e41a2e4e72840978135ecb54dec43634015cf7f57c4826d676ad9586107e",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-final05/motion-0-GP/attack.png",
+        "sha256": "8005bd45510c9c58b3f938e57c96f8788696079312a5bcfa9979f81079b28dff",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-final05/motion-1-GP/guard.png",
+        "sha256": "99f4350057459d7f8df8ffa987453725b98bd72d73a59701efc5232f45a107b2",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-consumers-male01/preview-gloves.png",
+        "sha256": "e948f049ee29aaecaebede20bf9e7a34060a622e3a5476ce79fc2c71289c2243",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-consumers-female01/preview-bare.png",
+        "sha256": "06e1b2e63f087ada03dbb806f750f298f1a14d906ae579c5b1ff2a2f64be07e2",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-final05/motion-1-bare/idle.png",
+        "sha256": "a60d10fbfa323adb75f4d5b42524031e5f251732d0c38c9b4b5cd184bfe7a6b3",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-final05/motion-1-GP/restored.png",
+        "sha256": "a6acc4311207cedf591350e754ab15a8b8d81e67eaa96f4a13c294f85f79775d",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-save-baseline04/hands.png",
+        "sha256": "102fefaacc39e5498af5f4f43e580673dfa31abbcd0afe3047a1d44c6542d266",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-final03/fresh/hands.png",
+        "sha256": "39684f192f77eac0b6368652ac9c16e2f7d5fab8d4fa0f8b4f6261e7e40307d2",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-actions-0-bare01/carbine-reload.png",
+        "sha256": "1d8b062a52c869e7b660629589385b655fab69ab0b75397ceb7113a798f7031b",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-actions-0-GP01/carbine-reload.png",
+        "sha256": "9a4ae412c154978f0b4105c651aff592a991e38af18d2c128b78884afa022d92",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-actions-1-bare01/staff-charge.png",
+        "sha256": "bd0f468a8af80b35f5bc53ccfc6178ac51fbad52aa2ff7de9d3e51f56373f0cc",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-actions-1-GP01/staff-charge.png",
+        "sha256": "db5deb33f9b7d7c8c9ac0aeb83c637f0ae636859ba154ac9964e4244deab6ac4",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-bench-studio-control01/scene.png",
+        "sha256": "3b41ef53998f80ff8a4f2bd64cd4568dda6ea7145c7b9d84c1d9a1a915118531",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-bench-studio-candidate01/scene.png",
+        "sha256": "543052747642c8c2f4c8a278d2dc2b3c4505227a1ac5756c771761ead7241550",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-bench-mansion-control01/scene.png",
+        "sha256": "8f49125cbba3f49770d2527366dfb62f3361a05b8759a57f7e0f00c930b5962e",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-bench-mansion-candidate01/scene.png",
+        "sha256": "e634411fbaaf383e563760e2ff3a7656f2dec075edb28b5395b258ac2c0b8c88",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-bench-sewers-control01/scene.png",
+        "sha256": "927618da27f7035c3e5013778f6920bd8b91b0a37c551ee24140fb3919e1500c",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-bench-sewers-candidate01/scene.png",
+        "sha256": "f05f0ec921834dc6ca0c68b9dff11c7e12e8b30c0af196e05a03b4c9c5375910",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-bench-city-control01/scene.png",
+        "sha256": "f3cbe6c33c7e9da0c74aeee04ff7ddb1a11f561a84e56b2ae2a34fd40678a535",
+        "pixels": [
+          1520,
+          825
+        ]
+      },
+      {
+        "path": "build/issue861-bench-city-candidate01/scene.png",
+        "sha256": "48b12c64863847f847c386fb0761c95fdd55f35f6fa58597ccc17ff1f4a8ffa5",
+        "pixels": [
+          1520,
+          825
+        ]
+      }
+    ],
+    "notes": [
+      "Actual GP garment comparison: historical bare-hand selection versus existing shared brown padded glove art. No material-specific art or author acceptance implied.",
+      "Sword motion and guard retain the existing poses. Frontal shield block correctly hides sword layers and shows only shield/left hand. Actual menu shows male gloves and female bare hands. Existing shared art is not a specific textile/material depiction. Native captures are1520x825 despite requested1280x720 command-line size; record both rather than assuming requested resolution.",
+      "Four representative native reload/charge captures directly viewed: male carbine bare/GP and female staff bare/GP. Native action timers and layers pass. Carbine reload hands are partly below frame, so complete grip contact is not claimed. All8 final performance images viewed: matched first-person studio, opening mansion dialogue, sewer entrance and city gate. Sewer contamination differs slightly between independent native runs; these are not deterministic whole-world state replays or proof that the selector caused the presentation difference."
+    ]
+  },
+  "qualification": "Counts use actual per-process PASS lines, excluding inherited handler counters. First7 final03 continuity phases are reused because subsequent diagnostic edits concern Pose checks and an optional legacy-death expectation only. Counter overlay is separate from production. Failed attempts remain archived and are not final qualification. No author acceptance.",
+  "private_exclusions": [
+    "PK3",
+    "WAD",
+    "IWAD",
+    "ZDS",
+    "EXE",
+    "DLL",
+    "PYC"
+  ],
+  "full_validation_passed": true,
+  "validation_note": "The initial full validator found only a strict CONTEXT.md word-limit failure at 2500 words. A just-started retry was stopped while the summary was compressed to 2490 words. The following retry was interrupted before producing its report. Validation resumed on 2026-11-21 with no surviving validator process and the same corrected source; the initial failure report is retained. No runtime or native fixture changed."
+}

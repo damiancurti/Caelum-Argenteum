@@ -1,6 +1,22 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.108** - 2026-11-19.
+Documentation version: **5.17.109** - 2026-11-19.
+
+## 5.17.109 - Select shared hand art from actual clothing gloves (#861)
+
+#861 connects the four actually worn clothing glove types to the retained
+shared male/female glove artwork. It adds no image, model, frame, pivot or pose.
+The male padded brown glove and distinct female brown glove are the existing
+shared resources; they do not depict each GF/GC/GW/GP material individually.
+Bare skin/fur remains selected when no legitimate hand layer is worn. The
+opt-in #857/#859 full-body garment and grip candidates remain separate.
+
+Native sword idle/attack/guard/restored, carbine reload, composed staff charge,
+world/preview and save/death captures are retained in assets/validation_v5_17_109.
+Its review.html is a capture gallery for the eventual consolidated review,
+not an intermediate author handoff. Existing carbine reload framing leaves
+much of the hands below the image; layer-state checks do not prove complete
+visual contact. No author acceptance or material-specific art is claimed.
 
 ## 5.17.108 - Fit first-body hands and retained equipment across native poses (#859)
 
