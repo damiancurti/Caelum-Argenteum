@@ -1,6 +1,22 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.119** - 2026-11-21.
+Documentation version: **5.17.120** - 2026-11-21.
+
+## 5.17.120 - Separate interior ceilings from exterior roofing (#883, #463)
+
+The #883 ceiling proposal changes only material assignments in private overlays.
+No actor, collision dimension, light, service, ownership, saved field or balance
+value changes. All variants alter TEXTMAP checksums despite preserving geometry;
+use fresh disposable sessions and never import visited campaign maps. The exact
+candidate save reloads with its matching runtime/fixture/overlay; default restoration
+is a new session after removing the overlay, not candidate-save conversion.
+
+The current MAP03 Justice fallback already selects sector391 and center(2560,20672,0),
+matching the source checksum-specific branch. Preserve that table byte-for-byte,
+including the inherited #875 alias in the vault option. Native surface checks also
+verify the existing arena lookup. Real portal Used/capture/render-ACK travel and
+sampled occupancy/headroom pass; ordinary purchase, multiplayer and all-route
+acceptance remain outside these diagnostic sessions.
 
 ## 5.17.119 - Inventory and combine the environment review (#881, #463)
 

@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.119** - 2026-11-21.
+Documentation version: **5.17.120** - 2026-11-21.
+
+## 5.17.120 - Separate interior ceilings from exterior roofing (#883, #463)
+
+A private review option replaces the inappropriate roof-tile ceiling undersides
+identified by #881 with the existing owned CMWD01 timber flat. The exact visual
+choice awaits the final consolidated author session.321 equal-length texture-name
+edits affect160 private house maps and one municipal roof-control underside;
+all other map bytes, exterior roofing, existing furniture and production defaults
+remain intact. Native paired views, actual house travel, same-option save/reload,
+fresh default restoration and affected interior frame/tic windows pass. This does
+not finish municipal office/archive furnishing, broader environmental detail,
+character decisions, unauthored progression or the severe normal-siege limitation.
 
 ## 5.17.119 - Inventory and combine the environment review (#881, #463)
 

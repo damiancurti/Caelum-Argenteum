@@ -4,6 +4,32 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-276 - Texture-only map edits still affect checksums and isolated save loading
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #883 /5.17.120,2026-11-21,
+GZDoom4.14.2. Evidence: assets/validation_v5_17_120. Author acceptance pending.
+
+Equal-length texture-name edits can preserve all geometry/thing bytes yet change
+TEXTMAP checksums. Audit checksum consumers before testing; do not add aliases
+automatically when the existing fallback already selects the unchanged geometry.
+Here the current MAP03 Justice fallback matches its original checksum branch and
+passes native sector/center checks, including the inherited #875 table. Keep the
+candidate in fresh sessions; same-option reload is not visited-save migration.
+
+On the tested Windows4.14.2 launcher, -loadgame with a drive-qualified path and a
+different -savedir produced a concatenated invalid filename. Copy the exact
+disposable save into the reload savedir and pass its basename. Check byte identity,
+exit code, checkpoints and explicit completion markers, plus both engine/process
+diagnostics. Startup fatal dialogs may be absent from retained logs: an empty
+error-marker list alone does not establish success. Preserve the failed attempt.
+
+Derive camera clearance from native floor/ceiling behavior, including accepted
+low-sky policy. Civic roof top184 equals its local sky ceiling; an apparent rooftop
+anchor is not walkable. The unchanged control failed TestMobjLocation and had zero
+headroom. Remove that invalid test anchor, preserve map geometry, and state which
+exterior surfaces are verified by byte/native material checks instead of traversal.
+
+
 ## CA-KP-275 - Compose verified overlays explicitly and audit placed scenery separately
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #881 /5.17.119,2026-11-21,

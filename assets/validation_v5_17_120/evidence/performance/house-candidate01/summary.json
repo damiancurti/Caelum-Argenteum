@@ -1,0 +1,64 @@
+{
+  "issue": 883,
+  "label": "house-candidate01",
+  "scene": "house",
+  "directory": "build/v516/ceiling-profile-20261121-091958-555551",
+  "runtime_sha256": "1af275be35cb555e2fe65664af536b23fa3bff11bc10942d90ccd6050e9b5d46",
+  "overlays": [
+    {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue883-ceilings01\\vaults.pk3",
+      "sha256": "c0fd4ee810407a1c4710207f678d6b45961f142ef936b5d1cf58110ae6aeb6d1"
+    }
+  ],
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "real_house_uses": 1,
+  "states": [
+    "CA435PERF STATE tic=491 defenders=0 attackers=0 registered_health=0 parked=0 population=5 dense=0",
+    "CA435PERF STATE slot=0 health=1248 pos=-21216.000000,-12192.000000,0.000000",
+    "CA435PERF STATE tic=1191 defenders=0 attackers=0 registered_health=0 parked=0 population=5 dense=0",
+    "CA435PERF STATE slot=0 health=1248 pos=-21216.000000,-12192.000000,0.000000"
+  ],
+  "census": [
+    "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+    "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+  ],
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 28.56948157142857,
+    "p95_ms": 29.8506,
+    "p99_ms": 30.1709,
+    "max_ms": 31.0459
+  },
+  "presentation": {
+    "pid": 45960,
+    "trace_sha256": "b02490b93c435081daf79993300fadfe68ab7be2d37001cf0e8860bb3e5a03f9",
+    "rows": 25497,
+    "scene_presents": 9463,
+    "mean_present_fps": 538.3716422230103,
+    "present_intervals": {
+      "samples": 9462,
+      "mean_ms": 1.8574529592065119,
+      "p50_ms": 1.7827000617980957,
+      "p95_ms": 2.406399965286255,
+      "p99_ms": 2.7882000207901,
+      "max_ms": 13.260200023651123
+    },
+    "native_call_duration": {
+      "samples": 9463,
+      "mean_ms": 0.09722245558364112,
+      "p50_ms": 0.08910000324249268,
+      "p95_ms": 0.1297999620437622,
+      "p99_ms": 0.22970008850097656,
+      "max_ms": 0.7407000064849854
+    }
+  },
+  "author_acceptance": false,
+  "qualification": "House: retained diagnostic city, actual private-map entry and native furniture. Civic: normal campaign. Queue presentation is not monitor scanout; no author acceptance."
+}

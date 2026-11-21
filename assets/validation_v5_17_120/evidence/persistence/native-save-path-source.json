@@ -1,0 +1,9 @@
+{
+  "engine": "GZDoom4.14.2",
+  "source": "src/common/menu/savegamemanager.cpp",
+  "source_sha256": "a8259767b83dd497b2b55a1883932a2e15f325684958b2421d9a6c887c7a78c6",
+  "function": "G_BuildSaveName",
+  "line": 599,
+  "expression": "FString name = G_GetSavegamesFolder() + prefix;",
+  "qualification": "The -loadgame startup path in src/d_main.cpp calls this function. It concatenates the savedir and supplied name before path normalization. The corrected fixture uses an exact copy inside its isolated savedir and the basename inside.zds."
+}

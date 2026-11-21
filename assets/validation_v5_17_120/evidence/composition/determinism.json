@@ -1,0 +1,10 @@
+{
+  "issue": 883,
+  "byte_identical": {
+    "ceilings.pk3": "c2fcee30f56ad8e278483c8579f8adbec329471f96798a773486113f21337935",
+    "appearance.pk3": "2403f9e99b859d420cea7b1cd5ef8cc150ace60b6ed5f0f3eb9736abcd80fabb",
+    "vaults.pk3": "c0fd4ee810407a1c4710207f678d6b45961f142ef936b5d1cf58110ae6aeb6d1",
+    "MANIFEST.json": "0e6530a485cb764250b8fe1cb64a5c375b7f691bdc39fc7d0f9d50e4300d1257"
+  },
+  "qualification": "Two runs of the final public builder; package contents and manifest match byte-for-byte."
+}

@@ -1,0 +1,7 @@
+{
+  "original_sha256": "966b974ef75ed74919a8fe8ca13db046078566e3b727be622e1ae987b70ea561",
+  "reload_sha256": "966b974ef75ed74919a8fe8ca13db046078566e3b727be622e1ae987b70ea561",
+  "byte_identical": true,
+  "save_binaries_published": false,
+  "qualification": "Only the exact fresh disposable save is copied into the reload savedir; -loadgame receives its basename. No campaign save is read or converted."
+}

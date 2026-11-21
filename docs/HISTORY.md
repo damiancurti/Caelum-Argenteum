@@ -1,6 +1,64 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.119** - 2026-11-21.
+Documentation version: **5.17.120** - 2026-11-21.
+
+## 5.17.120 - Separate interior ceilings from exterior roofing (#883, #463)
+
+Prepared the #883 ceiling proposal after native #881 views exposed roof-tile
+undersides. Only321 equal-length material names change across161 private maps:
+two ceilings in each of160 houses and one municipal3D-floor underside. The original
+exterior roof top, all geometry/things and all other WAD bytes are preserved.
+No new pixels/models/lights/actors or gameplay/source-map changes are introduced.
+Production runtime differences from119 are two release log labels only;
+18765 of18767 members match. Existing Justice fallback and inherited #875 table
+remain byte-identical, with native current-arena lookup checks.
+
+Two public-builder runs reproduce every option and manifest byte-for-byte.
+Ceilings SHA256:c2fcee30f56ad8e278483c8579f8adbec329471f96798a773486113f21337935.
+Appearance SHA256:2403f9e99b859d420cea7b1cd5ef8cc150ace60b6ed5f0f3eb9736abcd80fabb.
+Vaults SHA256:c0fd4ee810407a1c4710207f678d6b45961f142ef936b5d1cf58110ae6aeb6d1.
+All options require fresh sessions because TEXTMAP checksums change. No visited
+campaign save migration is attempted and no test binary/save/IWAD is published.
+
+Four final view phases pass16 surface-check samples, camera occupancy/headroom and
+a26.663-MU walk each. House phases make four actual Used/capture requests and two
+exact returns.16 final1520x825 captures were inspected directly. Three persistence
+phases pass five surface samples, four uses/two exact returns and all checkpoints:
+fresh candidate save inside the house; exact matching save reload then stored-city
+return; new default-material session. Saves are disposable, not campaign inputs.
+
+Two fixture failures are preserved. The added civic roof camera has zero headroom
+in the unchanged control because the accepted low sky meets the184-MU roof top;
+remove that diagnostic anchor without altering map geometry. The first reload
+passed a drive-qualified path with a different -savedir; GZDoom concatenated them
+and reported Cannot find savegame. The author supplied that fatal diagnostic,
+which was absent from the retained engine/process logs; the original result still
+correctly failed by exit code and missing markers. The corrected launcher copies
+identical save bytes into its own savedir, passes inside.zds and also searches
+process-log errors. The repeated three-phase suite passes.
+
+| Scene | Queue presents/s | Present mean / p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| house-control01 | 534.136487 | 1.872 / 2.486 / 2.913 / 4.209 | 28.573 / 29.993 / 30.511 / 30.851 |
+| house-candidate01 | 538.371642 | 1.857 / 2.406 / 2.788 / 13.260 | 28.569 / 29.851 / 30.171 / 31.046 |
+| civic-control01 | 178.389151 | 5.606 / 7.030 / 8.019 / 10.845 | 28.571 / 32.758 / 33.744 / 36.150 |
+| civic-candidate01 | 172.210457 | 5.807 / 7.913 / 8.849 / 11.308 | 28.577 / 32.601 / 33.881 / 42.490 |
+
+All four windows complete700 simulation samples and native render/presentation
+collection, with identical paired states/census. One hidden unpaused official
+GZDoom4.14.2/Vulkan process runs at5% audio,1280x720 on Windows11/Ryzen9 5950X/
+RTX3070Ti. No heavy build/hash/validation work overlaps startup or measurement.
+Both variants use the same120 runtime and #881 vaults composition; the candidate
+adds only ceiling assignments. House entry uses the retained diagnostic city with
+real portal/render-ACK travel, not ordinary campaign population. Civic runs retain
+normal AI. Four endpoint images were inspected separately from the16-view gallery.
+Queue presents are not monitor scanout and tic intervals include pacing/frame work;
+single pairs do not establish speedup or all-map60FPS. Unchanged mansion/sewer/
+street/ground/siege references remain in #881; its severe siege limit persists.
+No retired6000-attacker case is run.
+
+Evidence: assets/validation_v5_17_120. Full project validation passes with no errors; the generated document index is current. CA883-CEILING-01 is appended; all prior author checks remain pending.
+No author acceptance, merge, issue closure or completed-batch claim is recorded.
 
 ## 5.17.119 - Inventory and combine the environment review (#881, #463)
 
