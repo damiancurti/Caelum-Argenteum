@@ -1,0 +1,1773 @@
+{
+  "issue": 881,
+  "status": "source_inventory_native_evidence_separate",
+  "author_acceptance": false,
+  "sources": {
+    "assets/map06_port/INTERIORS.json": "340df2d2f9a5df6e2e7e7d05d1adf8528b3a0b18e4f47783783e32dcf95913ef",
+    "assets/map06_port/CITY.json": "d251e8aff3fb4f7c30c94e176b10eb95cd1a00e888c1a53f3846160d7e0e6d35",
+    "assets/barracas_redesign/LAYOUT.json": "4ac292be6105b2926669a7f93b43fe5f0643f73e8610ef18c02bfdc0aa3f4aed",
+    "assets/source/art/inventory_models_647/furniture/DESIGN.json": "4df2764ae31f031c9df8a9920e40f8efc0bd9e5b2543a310f6790166edb43c5e",
+    "src/caelum/world/CaelumHouseHub.zs": "924920bc901a4291798a0ebde4a1012bc7ab73ac96237ccede8c79b0920cc566",
+    "assets/generators/generate_house_hubs.py": "d7c082136e6e7e892539c37cfb9c31f6b9d1f0cf5afc63e2d65554a8135d3e94",
+    "assets/generators/generate_barracas_map.py": "055b4b3aa9d1f19fb9b4d49e7b74c9381f2071434a0ddc85534ab09a90ba9cdf",
+    "assets/generators/generate_barracas_preview.py": "17d193cfa4f136aa99dee9c426d668fb7cc670690ee0446f2990964718d04049"
+  },
+  "maps": [
+    {
+      "map": "MAP01",
+      "sha256": "fe7adb9480353fd8faf06d7e09d967836f45ba2fde8748e2fca356226e577de0",
+      "bytes": 4501535,
+      "sectors": 7760,
+      "linedefs": 13606,
+      "static_things": 408,
+      "static_thing_types": {
+        "1": 1,
+        "18000": 4,
+        "18001": 1,
+        "18002": 1,
+        "18003": 1,
+        "18004": 3,
+        "18005": 2,
+        "18006": 1,
+        "18007": 1,
+        "18008": 1,
+        "18009": 1,
+        "18011": 1,
+        "18012": 1,
+        "18020": 1,
+        "18021": 1,
+        "18022": 1,
+        "18023": 1,
+        "18036": 1,
+        "18099": 48,
+        "18100": 36,
+        "18101": 16,
+        "18102": 8,
+        "18103": 153,
+        "18104": 1,
+        "18105": 1,
+        "18106": 1,
+        "18110": 1,
+        "18111": 1,
+        "18112": 1,
+        "18120": 1,
+        "18121": 1,
+        "18122": 1,
+        "18123": 1,
+        "18124": 1,
+        "18130": 12,
+        "18131": 15,
+        "18469": 1,
+        "18470": 1,
+        "18471": 1,
+        "18507": 1,
+        "18510": 1,
+        "18538": 1,
+        "18539": 1,
+        "18600": 6,
+        "18601": 5,
+        "18602": 5,
+        "18603": 24,
+        "18610": 7,
+        "18611": 9,
+        "18612": 10,
+        "18613": 6,
+        "18614": 1,
+        "18620": 1,
+        "18621": 1,
+        "18622": 1,
+        "18623": 1,
+        "18624": 1
+      },
+      "material_references": {
+        "-": 2895,
+        "CACVROCK": 7236,
+        "CAPOOL01": 20,
+        "CMCL01": 166,
+        "CMDR03": 213,
+        "CMEX01": 1270,
+        "CMGR01A": 6957,
+        "CMIN01": 7068,
+        "CMPLS36": 124,
+        "CMPNL36": 2,
+        "CMPW01": 36,
+        "CMRF01": 80,
+        "CMRLBAL": 408,
+        "CMSHT36": 35,
+        "CMSP03": 192,
+        "CMST01": 289,
+        "CMST02": 571,
+        "CMST03": 646,
+        "CMTB02": 1,
+        "CMWD01": 605,
+        "CMWD03": 1,
+        "F_SKY1": 7554,
+        "SW1EXIT": 1
+      },
+      "qualification": "Static UDMF references only; dynamic residents, furniture, services and effects require their native setup. Reference counts are not texture area or resident GPU cost."
+    },
+    {
+      "map": "MAP02",
+      "sha256": "1f7052ef2c1bf5bbe612579c6675e2f4541f6c1e256f374d5fd9afabf6eb9fad",
+      "bytes": 9620970,
+      "sectors": 105,
+      "linedefs": 32528,
+      "static_things": 445,
+      "static_thing_types": {
+        "1": 2,
+        "18000": 4,
+        "18001": 4,
+        "18002": 4,
+        "18003": 4,
+        "18004": 4,
+        "18029": 192,
+        "18037": 96,
+        "18038": 1,
+        "30961": 12,
+        "30963": 12,
+        "30964": 6,
+        "30965": 6,
+        "30966": 9,
+        "30973": 39,
+        "30974": 1,
+        "30975": 12,
+        "30976": 6,
+        "30980": 16,
+        "30981": 2,
+        "30987": 4,
+        "30988": 1,
+        "30989": 1,
+        "30990": 1,
+        "30991": 1,
+        "30992": 4,
+        "30993": 1
+      },
+      "material_references": {
+        "-": 19428,
+        "CAPOOL01": 119,
+        "CASWRFLR": 64,
+        "CASWRPIP": 325,
+        "CASWRWAL": 107068,
+        "CMGT02": 260,
+        "CMST01": 5,
+        "CMST02": 1
+      },
+      "qualification": "Static UDMF references only; dynamic residents, furniture, services and effects require their native setup. Reference counts are not texture area or resident GPU cost."
+    },
+    {
+      "map": "MAP03",
+      "sha256": "45bfdbba591b642fd9a2c8c991cd9e9913d9e4158f3e317913efbae0d3df98da",
+      "bytes": 14362753,
+      "sectors": 392,
+      "linedefs": 38464,
+      "static_things": 651,
+      "static_thing_types": {
+        "1": 161,
+        "18000": 16,
+        "18001": 4,
+        "18002": 4,
+        "18003": 8,
+        "18004": 25,
+        "18005": 4,
+        "18006": 8,
+        "18007": 8,
+        "18009": 8,
+        "18011": 12,
+        "18063": 1,
+        "30950": 1,
+        "30987": 1,
+        "30988": 1,
+        "30989": 1,
+        "30990": 1,
+        "30991": 1,
+        "31050": 1,
+        "31051": 1,
+        "31052": 160,
+        "31054": 64,
+        "31800": 160
+      },
+      "material_references": {
+        "-": 71356,
+        "CASWRWAL": 27200,
+        "CMGR02": 2,
+        "CMGR03": 2,
+        "CMST01": 29859,
+        "CMST02": 4,
+        "CMST04": 1,
+        "CMTB04": 131,
+        "CVCI01": 16528,
+        "CVCI02": 38356,
+        "CVCI04": 1056,
+        "CVCI06": 129,
+        "CVPL02": 1,
+        "CVPL06": 15,
+        "CVPO01": 65,
+        "CVPO02": 1,
+        "CVPO03": 37471,
+        "CVPO04": 13,
+        "CVPO05": 24,
+        "CVPO06": 695,
+        "F_SKY1": 293
+      },
+      "qualification": "Static UDMF references only; dynamic residents, furniture, services and effects require their native setup. Reference counts are not texture area or resident GPU cost."
+    },
+    {
+      "map": "CAH000",
+      "sha256": "0cf1e5a3d21ae3cbe1dc4c61d3e27ff2bc515ff39136e7c364d4606a37acaea3",
+      "bytes": 68466,
+      "sectors": 6,
+      "linedefs": 198,
+      "static_things": 16,
+      "static_thing_types": {
+        "1": 1,
+        "18099": 4,
+        "30950": 1,
+        "31052": 1,
+        "31053": 1,
+        "9300": 4,
+        "9301": 4
+      },
+      "material_references": {
+        "-": 216,
+        "CAPODR": 32,
+        "CMST01": 5,
+        "CMST02": 3,
+        "CMST03": 1,
+        "CMTB04": 4,
+        "CVCI01": 628,
+        "CVCI03": 1,
+        "F_SKY1": 2
+      },
+      "qualification": "Static UDMF references only; dynamic residents, furniture, services and effects require their native setup. Reference counts are not texture area or resident GPU cost."
+    }
+  ],
+  "furniture": [
+    {
+      "key": "wardrobe",
+      "item_class": "CaelumWardrobeItem",
+      "body_class": "CaelumWardrobeClosedVisual",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/wardrobe/closed.obj",
+          "sha256": "e509ca5a2bbc5b3401b6e0aa60f5952ff5c85263f1cbb865a1d9499240af0951",
+          "bytes": 55046,
+          "vertices": 864,
+          "faces": 216,
+          "triangles": 432,
+          "material_sections": 2,
+          "materials": [
+            "models/caelum/props/stash/ca_stash_metal.png",
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/wardrobe/closed.obj",
+        "reference": "src/graphics/caelum/icons/furniture/wardrobe.png",
+        "sprite": "CWRD",
+        "sprite_scale": [
+          1.774224,
+          1.774224
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumWardrobeItem",
+        "body_class": "CaelumWardrobeClosedVisual"
+      }
+    },
+    {
+      "key": "cupboard",
+      "item_class": "CaelumCupboardItem",
+      "body_class": "CaelumKitchenCupboardClosedVisual",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/kitchen_fixtures/closed.obj",
+          "sha256": "1dc7c23127d125f0044d83b43e786a04d60f38f1ddcc2ebfec91ceb5881f8a8f",
+          "bytes": 38239,
+          "vertices": 600,
+          "faces": 150,
+          "triangles": 300,
+          "material_sections": 2,
+          "materials": [
+            "models/caelum/props/stash/ca_stash_lock.png",
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/kitchen_fixtures/closed.obj",
+        "reference": "src/graphics/caelum/icons/kitchen_stations/cupboard.png",
+        "sprite": "CKCB",
+        "sprite_scale": [
+          2.8125,
+          2.8125
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumCupboardItem",
+        "body_class": "CaelumKitchenCupboardClosedVisual"
+      }
+    },
+    {
+      "key": "luxury_chair",
+      "item_class": "CaelumLuxuryChairItem",
+      "body_class": "CaelumLuxuryChair",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/luxury/ca_luxury_chair.obj",
+          "sha256": "06637f5ce0f01b8076e14eb99e61d8deef8f09118c7e14db1842ca93b102c346",
+          "bytes": 248669,
+          "vertices": 3840,
+          "faces": 1038,
+          "triangles": 1764,
+          "material_sections": 3,
+          "materials": [
+            "models/caelum/props/stash/ca_stash_inside.png",
+            "models/caelum/props/stash/ca_stash_metal.png",
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/luxury/ca_luxury_chair.obj",
+        "reference": "src/sprites/caelum/rest_furniture/CLICA0.png",
+        "sprite": "CLIC",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumLuxuryChairItem",
+        "body_class": "CaelumLuxuryChair"
+      }
+    },
+    {
+      "key": "luxury_bed",
+      "item_class": "CaelumLuxuryBedItem",
+      "body_class": "CaelumLuxuryBed",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/luxury/ca_luxury_bed.obj",
+          "sha256": "3eb6220fc85c6a6d01751c88a64027f618b05f1f42103cc389b2b25e10dd9284",
+          "bytes": 327647,
+          "vertices": 4968,
+          "faces": 1302,
+          "triangles": 2364,
+          "material_sections": 7,
+          "materials": [
+            "models/caelum/props/stash/ca_stash_metal.png",
+            "models/caelum/props/stash/ca_stash_wood.png",
+            "models/caelum/world/alchemy_ingredients/cloth.png",
+            "models/caelum/world/alchemy_ingredients/cloth_shade1.png",
+            "models/caelum/world/alchemy_ingredients/cloth_shade3.png",
+            "models/caelum/world/alchemy_ingredients/cloth_shade4.png",
+            "models/caelum/world/alchemy_ingredients/cloth_shade5.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/luxury/ca_luxury_bed.obj",
+        "reference": "src/sprites/caelum/rest_furniture/CLIBA0.png",
+        "sprite": "CLIB",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumLuxuryBedItem",
+        "body_class": "CaelumLuxuryBed"
+      }
+    },
+    {
+      "key": "basic_chair",
+      "item_class": "CaelumBasicChairItem",
+      "body_class": "CaelumRestChair",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/rest/ca_rest_chair.obj",
+          "sha256": "a2531e42c20dc717dcbef74ec039cdb3f7cd01bcf2ae75eb1a1b61f3796f336b",
+          "bytes": 19490,
+          "vertices": 312,
+          "faces": 78,
+          "triangles": 156,
+          "material_sections": 1,
+          "materials": [
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/rest/ca_rest_chair.obj",
+        "reference": "src/sprites/caelum/rest_furniture/CBICA0.png",
+        "sprite": "CBIC",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumBasicChairItem",
+        "body_class": "CaelumRestChair"
+      }
+    },
+    {
+      "key": "basic_bed",
+      "item_class": "CaelumBasicBedItem",
+      "body_class": "CaelumRestBed",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/rest/ca_rest_bed.obj",
+          "sha256": "c127d6a55d2a17eb64e5e6d6ae2bd2b24851b8c1c73c76f99600e5449ed272f5",
+          "bytes": 57375,
+          "vertices": 888,
+          "faces": 238,
+          "triangles": 412,
+          "material_sections": 7,
+          "materials": [
+            "models/caelum/props/stash/ca_stash_metal.png",
+            "models/caelum/props/stash/ca_stash_wood.png",
+            "models/caelum/world/alchemy_ingredients/cloth.png",
+            "models/caelum/world/alchemy_ingredients/cloth_shade1.png",
+            "models/caelum/world/alchemy_ingredients/cloth_shade3.png",
+            "models/caelum/world/alchemy_ingredients/cloth_shade4.png",
+            "models/caelum/world/alchemy_ingredients/cloth_shade5.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/rest/ca_rest_bed.obj",
+        "reference": "src/sprites/caelum/rest_furniture/CBIBA0.png",
+        "sprite": "CBIB",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumBasicBedItem",
+        "body_class": "CaelumRestBed"
+      }
+    },
+    {
+      "key": "sofa_two",
+      "item_class": "CaelumTwoSeatSofaItem",
+      "body_class": "CaelumTwoSeatSofa",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/sofas/ca_sofa_2.obj",
+          "sha256": "7c33ebd31ee58c580aa15721a4b651b8682cd39a33ecbe871c54114258163a46",
+          "bytes": 51819,
+          "vertices": 816,
+          "faces": 204,
+          "triangles": 408,
+          "material_sections": 3,
+          "materials": [
+            "models/caelum/props/stash/ca_stash_inside.png",
+            "models/caelum/props/stash/ca_stash_metal.png",
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/sofas/ca_sofa_2.obj",
+        "reference": "src/sprites/caelum/rest_furniture/CSF2A0.png",
+        "sprite": "CSF2",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumTwoSeatSofaItem",
+        "body_class": "CaelumTwoSeatSofa"
+      }
+    },
+    {
+      "key": "sofa_three",
+      "item_class": "CaelumThreeSeatSofaItem",
+      "body_class": "CaelumThreeSeatSofa",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/sofas/ca_sofa_3.obj",
+          "sha256": "17092f40af4acdb6b724321e95b80aecd1ca58a2dcf1cc27a8015eb94c7abd0e",
+          "bytes": 58299,
+          "vertices": 912,
+          "faces": 228,
+          "triangles": 456,
+          "material_sections": 3,
+          "materials": [
+            "models/caelum/props/stash/ca_stash_inside.png",
+            "models/caelum/props/stash/ca_stash_metal.png",
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/sofas/ca_sofa_3.obj",
+        "reference": "src/sprites/caelum/rest_furniture/CSF3A0.png",
+        "sprite": "CSF3",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumThreeSeatSofaItem",
+        "body_class": "CaelumThreeSeatSofa"
+      }
+    },
+    {
+      "key": "desk",
+      "item_class": "CaelumDeskItem",
+      "body_class": "CaelumPortableReadingDesk",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/study/ca_study_desk.obj",
+          "sha256": "85d07a7a7583440ef1de27fc73f0478f1753018cecbebdb323805d655744dc70",
+          "bytes": 20167,
+          "vertices": 312,
+          "faces": 78,
+          "triangles": 156,
+          "material_sections": 2,
+          "materials": [
+            "models/caelum/props/stash/ca_stash_metal.png",
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/study/ca_study_desk.obj",
+        "reference": "src/sprites/caelum/rest_furniture/CSDKA0.png",
+        "sprite": "CSDK",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumDeskItem",
+        "body_class": "CaelumPortableReadingDesk"
+      }
+    },
+    {
+      "key": "bookcase",
+      "item_class": "CaelumBookcaseItem",
+      "body_class": "CaelumPortableReadingShelf",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/study/ca_study_bookcase.obj",
+          "sha256": "ea953b494e234ee525cbc237d9b76922c95271cf6faa0fe99e31f36da372b9f4",
+          "bytes": 35147,
+          "vertices": 552,
+          "faces": 138,
+          "triangles": 276,
+          "material_sections": 2,
+          "materials": [
+            "models/caelum/props/stash/ca_stash_metal.png",
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/study/ca_study_bookcase.obj",
+        "reference": "src/sprites/caelum/rest_furniture/CSBKA0.png",
+        "sprite": "CSBK",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumBookcaseItem",
+        "body_class": "CaelumPortableReadingShelf"
+      }
+    },
+    {
+      "key": "dining_small",
+      "item_class": "CaelumSmallDiningSetItem",
+      "body_class": "CaelumPortableSmallTable",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/dining_sets/ca_dining_small.obj",
+          "sha256": "50152e072aba1c3fd9ab18f9b54dcad265afb159945f09e3df0dd9aadfa36b5d",
+          "bytes": 24819,
+          "vertices": 392,
+          "faces": 114,
+          "triangles": 164,
+          "material_sections": 1,
+          "materials": [
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/dining_sets/ca_dining_small.obj",
+        "reference": "src/sprites/caelum/rest_furniture/CDS2A0.png",
+        "sprite": "CDS2",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumSmallDiningSetItem",
+        "body_class": "CaelumPortableSmallTable",
+        "dining": {
+          "kind": 0,
+          "seats": 2,
+          "width": 33.28,
+          "depth": 33.28,
+          "player_radius": 16,
+          "chair_radius": 9.843576586,
+          "chair_variant": "basic_chair"
+        },
+        "runtime_model": "models/caelum/inventory/furniture/dining_small.obj"
+      }
+    },
+    {
+      "key": "dining_normal",
+      "item_class": "CaelumNormalDiningSetItem",
+      "body_class": "CaelumPortableNormalTable",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/dining_sets/ca_dining_normal.obj",
+          "sha256": "869ad86a09aa2e2c2743034505eab38c7966b46ee91271bfa1003e9272ac821a",
+          "bytes": 76614,
+          "vertices": 1176,
+          "faces": 342,
+          "triangles": 492,
+          "material_sections": 2,
+          "materials": [
+            "models/caelum/props/stash/ca_stash_metal.png",
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/dining_sets/ca_dining_normal.obj",
+        "reference": "src/sprites/caelum/rest_furniture/CDS6A0.png",
+        "sprite": "CDS6",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumNormalDiningSetItem",
+        "body_class": "CaelumPortableNormalTable",
+        "dining": {
+          "kind": 1,
+          "seats": 6,
+          "width": 54.464,
+          "depth": 28.256,
+          "player_radius": 16,
+          "chair_radius": 9.843576586,
+          "chair_variant": "basic_chair"
+        },
+        "runtime_model": "models/caelum/inventory/furniture/dining_normal.obj"
+      }
+    },
+    {
+      "key": "dining_large",
+      "item_class": "CaelumLargeDiningSetItem",
+      "body_class": "CaelumPortableLargeTable",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/dining_sets/ca_dining_large.obj",
+          "sha256": "d9c12421766466b2e936102e560655852f2022d0919f06daac95fde1039d163a",
+          "bytes": 76614,
+          "vertices": 1176,
+          "faces": 342,
+          "triangles": 492,
+          "material_sections": 2,
+          "materials": [
+            "models/caelum/props/stash/ca_stash_metal.png",
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/dining_sets/ca_dining_large.obj",
+        "reference": "src/sprites/caelum/rest_furniture/CD12A0.png",
+        "sprite": "CD12",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumLargeDiningSetItem",
+        "body_class": "CaelumPortableLargeTable",
+        "dining": {
+          "kind": 2,
+          "seats": 12,
+          "width": 99.36,
+          "depth": 27.04,
+          "player_radius": 16,
+          "chair_radius": 9.843576586,
+          "chair_variant": "basic_chair"
+        },
+        "runtime_model": "models/caelum/inventory/furniture/dining_large.obj"
+      }
+    },
+    {
+      "key": "dining_luxury",
+      "item_class": "CaelumLuxuryDiningSetItem",
+      "body_class": "CaelumPortableLuxuryTable",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/luxury/ca_luxury_table.obj",
+          "sha256": "799650ec3a6234fe8b764535dbd4dc18dc517c2be6ef1bca9be261641d33e05a",
+          "bytes": 350757,
+          "vertices": 5328,
+          "faces": 1404,
+          "triangles": 2520,
+          "material_sections": 2,
+          "materials": [
+            "models/caelum/props/stash/ca_stash_metal.png",
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/luxury/ca_luxury_table.obj",
+        "reference": "src/sprites/caelum/rest_furniture/CDLXA0.png",
+        "sprite": "CDLX",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumLuxuryDiningSetItem",
+        "body_class": "CaelumPortableLuxuryTable",
+        "dining": {
+          "kind": 3,
+          "seats": 6,
+          "width": 133.088,
+          "depth": 48.96,
+          "player_radius": 16,
+          "chair_radius": 15.816564481580693,
+          "chair_variant": "luxury_chair"
+        },
+        "runtime_model": "models/caelum/inventory/furniture/dining_luxury.obj"
+      }
+    },
+    {
+      "key": "painting",
+      "item_class": "CaelumPaintingItem",
+      "body_class": "CaelumLandscapePainting",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/ornamental/ca_river_painting.obj",
+          "sha256": "03f9d296e54f6c1351020992f8bc7b790a31ebc703cc123f8889f560737f8200",
+          "bytes": 25036,
+          "vertices": 412,
+          "faces": 105,
+          "triangles": 202,
+          "material_sections": 3,
+          "materials": [
+            "models/caelum/props/ornamental/carved_wood.png",
+            "models/caelum/props/ornamental/river_landscape.png",
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/ornamental/ca_river_painting.obj",
+        "reference": "src/sprites/caelum/ornamental/COTPA0.png",
+        "sprite": "COTP",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": 90.0,
+        "class": "CaelumPaintingItem",
+        "body_class": "CaelumLandscapePainting"
+      }
+    },
+    {
+      "key": "statue",
+      "item_class": "CaelumStatueItem",
+      "body_class": "CaelumOrnamentalStatue",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/ornamental/ca_botanical_statue.obj",
+          "sha256": "e5bd86fd058d3071192a3f20f867579a71d3f5c9249e7577b642127dd7b9df8a",
+          "bytes": 746292,
+          "vertices": 11928,
+          "faces": 2982,
+          "triangles": 5964,
+          "material_sections": 2,
+          "materials": [
+            "models/caelum/props/ornamental/carved_wood.png",
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/ornamental/ca_botanical_statue.obj",
+        "reference": "src/sprites/caelum/ornamental/COTSA0.png",
+        "sprite": "COTS",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": -90.0,
+        "class": "CaelumStatueItem",
+        "body_class": "CaelumOrnamentalStatue"
+      }
+    },
+    {
+      "key": "painting_large",
+      "item_class": "CaelumLargePaintingItem",
+      "body_class": "CaelumLargeLandscapePainting",
+      "source_models": [
+        {
+          "path": "src/models/caelum/props/ornamental/ca_large_river_painting.obj",
+          "sha256": "d7e010c8ea04f6a6c68edcd970d5fd938ac683a6a54c64971dd2cda289d5fbe3",
+          "bytes": 25140,
+          "vertices": 412,
+          "faces": 105,
+          "triangles": 202,
+          "material_sections": 3,
+          "materials": [
+            "models/caelum/props/ornamental/carved_wood.png",
+            "models/caelum/props/ornamental/river_landscape.png",
+            "models/caelum/props/stash/ca_stash_wood.png"
+          ]
+        }
+      ],
+      "source": {
+        "source_obj": "src/models/caelum/props/ornamental/ca_large_river_painting.obj",
+        "reference": "src/sprites/caelum/ornamental/COTPA0.png",
+        "sprite": "COTP",
+        "sprite_scale": [
+          1,
+          1
+        ],
+        "angle_offset": 90.0,
+        "class": "CaelumLargePaintingItem",
+        "body_class": "CaelumLargeLandscapePainting"
+      }
+    }
+  ],
+  "owned_prop_models": {
+    "bathrooms": [
+      {
+        "path": "src/models/caelum/props/bathrooms/bathtub.obj",
+        "sha256": "d5bbe1f94b2004222109b4b99129ef81a1dc687351d3af47444d22456b932c0b",
+        "bytes": 73567,
+        "vertices": 1200,
+        "faces": 300,
+        "triangles": 600,
+        "material_sections": 4,
+        "materials": [
+          "models/caelum/props/bathrooms/enamel.png",
+          "models/caelum/props/stash/ca_stash_lock.png",
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stations/ca_station_paper.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/bathrooms/sink.obj",
+        "sha256": "bb03b332498a5576d658747c65a9e803c7443f6a023f914b383bfc218e415d32",
+        "bytes": 53828,
+        "vertices": 888,
+        "faces": 222,
+        "triangles": 444,
+        "material_sections": 5,
+        "materials": [
+          "models/caelum/props/bathrooms/enamel.png",
+          "models/caelum/props/stash/ca_stash_lock.png",
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png",
+          "models/caelum/props/stations/ca_station_paper.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/bathrooms/toilet.obj",
+        "sha256": "9b0f65835d70940c806a6a66dbd030e6c3db095d4244ef6eb2920bb9cd932ff7",
+        "bytes": 83318,
+        "vertices": 1368,
+        "faces": 342,
+        "triangles": 684,
+        "material_sections": 5,
+        "materials": [
+          "models/caelum/props/bathrooms/enamel.png",
+          "models/caelum/props/stash/ca_stash_lock.png",
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png",
+          "models/caelum/props/stations/ca_station_paper.png"
+        ]
+      }
+    ],
+    "dining_sets": [
+      {
+        "path": "src/models/caelum/props/dining_sets/ca_dining_large.obj",
+        "sha256": "d9c12421766466b2e936102e560655852f2022d0919f06daac95fde1039d163a",
+        "bytes": 76614,
+        "vertices": 1176,
+        "faces": 342,
+        "triangles": 492,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/dining_sets/ca_dining_normal.obj",
+        "sha256": "869ad86a09aa2e2c2743034505eab38c7966b46ee91271bfa1003e9272ac821a",
+        "bytes": 76614,
+        "vertices": 1176,
+        "faces": 342,
+        "triangles": 492,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/dining_sets/ca_dining_small.obj",
+        "sha256": "50152e072aba1c3fd9ab18f9b54dcad265afb159945f09e3df0dd9aadfa36b5d",
+        "bytes": 24819,
+        "vertices": 392,
+        "faces": 114,
+        "triangles": 164,
+        "material_sections": 1,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      }
+    ],
+    "kitchen": [
+      {
+        "path": "src/models/caelum/props/kitchen/counter.obj",
+        "sha256": "6837246ad826a2cbfc9a193d972f77af7c4022057564dd8cabc74ac28a8b4856",
+        "bytes": 29035,
+        "vertices": 456,
+        "faces": 114,
+        "triangles": 228,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_lock.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/kitchen/oven.obj",
+        "sha256": "9e5788ff29e2c043d3f33de1dd6f28c45e79b0891d8a03a9167b2671f3ad975c",
+        "bytes": 38383,
+        "vertices": 608,
+        "faces": 152,
+        "triangles": 304,
+        "material_sections": 3,
+        "materials": [
+          "models/caelum/props/kitchen/iron-painted-v1.png",
+          "models/caelum/props/stash/ca_stash_lock.png",
+          "models/caelum/props/stations/ca_station_brass.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/kitchen/stove.obj",
+        "sha256": "25bf355ee3b89b52695ebeb6051c38d41e8cf0dc1ba1c4d13620a160a1643f9b",
+        "bytes": 71793,
+        "vertices": 1136,
+        "faces": 284,
+        "triangles": 568,
+        "material_sections": 3,
+        "materials": [
+          "models/caelum/props/kitchen/iron-painted-v1.png",
+          "models/caelum/props/stash/ca_stash_lock.png",
+          "models/caelum/props/stations/ca_station_brass.png"
+        ]
+      }
+    ],
+    "kitchen_fixtures": [
+      {
+        "path": "src/models/caelum/props/kitchen_fixtures/closed.obj",
+        "sha256": "1dc7c23127d125f0044d83b43e786a04d60f38f1ddcc2ebfec91ceb5881f8a8f",
+        "bytes": 38239,
+        "vertices": 600,
+        "faces": 150,
+        "triangles": 300,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_lock.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/kitchen_fixtures/locked.obj",
+        "sha256": "24e7d3ae701b5bf96576b771f9942652b0c94db102274e93b11e37651e7e10c2",
+        "bytes": 39733,
+        "vertices": 624,
+        "faces": 156,
+        "triangles": 312,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_lock.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/kitchen_fixtures/open.obj",
+        "sha256": "cb0f53db8ccd55be635b642ff98a3b60675e57e0e4c4485c9ccc0e3144ab9fce",
+        "bytes": 38575,
+        "vertices": 600,
+        "faces": 150,
+        "triangles": 300,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_lock.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      }
+    ],
+    "luxury": [
+      {
+        "path": "src/models/caelum/props/luxury/ca_luxury_bed.obj",
+        "sha256": "3eb6220fc85c6a6d01751c88a64027f618b05f1f42103cc389b2b25e10dd9284",
+        "bytes": 327647,
+        "vertices": 4968,
+        "faces": 1302,
+        "triangles": 2364,
+        "material_sections": 7,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png",
+          "models/caelum/world/alchemy_ingredients/cloth.png",
+          "models/caelum/world/alchemy_ingredients/cloth_shade1.png",
+          "models/caelum/world/alchemy_ingredients/cloth_shade3.png",
+          "models/caelum/world/alchemy_ingredients/cloth_shade4.png",
+          "models/caelum/world/alchemy_ingredients/cloth_shade5.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/luxury/ca_luxury_chair.obj",
+        "sha256": "06637f5ce0f01b8076e14eb99e61d8deef8f09118c7e14db1842ca93b102c346",
+        "bytes": 248669,
+        "vertices": 3840,
+        "faces": 1038,
+        "triangles": 1764,
+        "material_sections": 3,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_inside.png",
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/luxury/ca_luxury_table.obj",
+        "sha256": "799650ec3a6234fe8b764535dbd4dc18dc517c2be6ef1bca9be261641d33e05a",
+        "bytes": 350757,
+        "vertices": 5328,
+        "faces": 1404,
+        "triangles": 2520,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      }
+    ],
+    "ornamental": [
+      {
+        "path": "src/models/caelum/props/ornamental/ca_botanical_statue.obj",
+        "sha256": "e5bd86fd058d3071192a3f20f867579a71d3f5c9249e7577b642127dd7b9df8a",
+        "bytes": 746292,
+        "vertices": 11928,
+        "faces": 2982,
+        "triangles": 5964,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/ornamental/carved_wood.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/ornamental/ca_large_river_painting.obj",
+        "sha256": "d7e010c8ea04f6a6c68edcd970d5fd938ac683a6a54c64971dd2cda289d5fbe3",
+        "bytes": 25140,
+        "vertices": 412,
+        "faces": 105,
+        "triangles": 202,
+        "material_sections": 3,
+        "materials": [
+          "models/caelum/props/ornamental/carved_wood.png",
+          "models/caelum/props/ornamental/river_landscape.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/ornamental/ca_river_painting.obj",
+        "sha256": "03f9d296e54f6c1351020992f8bc7b790a31ebc703cc123f8889f560737f8200",
+        "bytes": 25036,
+        "vertices": 412,
+        "faces": 105,
+        "triangles": 202,
+        "material_sections": 3,
+        "materials": [
+          "models/caelum/props/ornamental/carved_wood.png",
+          "models/caelum/props/ornamental/river_landscape.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "path": "src/models/caelum/props/reading/ca_reading_shelf.obj",
+        "sha256": "6a3872d5fba1309fb03ab9340ef201b2134088640efa5e5b9945ce7fd3ace549",
+        "bytes": 196735,
+        "vertices": 3048,
+        "faces": 762,
+        "triangles": 1524,
+        "material_sections": 4,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_wood.png",
+          "models/caelum/props/stations/ca_station_cloth.png",
+          "models/caelum/props/stations/ca_station_leather.png",
+          "models/caelum/props/stations/ca_station_paper.png"
+        ]
+      }
+    ],
+    "rest": [
+      {
+        "path": "src/models/caelum/props/rest/ca_food_plate.obj",
+        "sha256": "5165c8a3637d2c3fc06decaf6b7724aa58236019fdf5e91dacac445699cebede",
+        "bytes": 81137,
+        "vertices": 1304,
+        "faces": 326,
+        "triangles": 652,
+        "material_sections": 4,
+        "materials": [
+          "models/caelum/props/stations/ca_station_leather.png",
+          "models/caelum/props/stations/ca_station_paper.png",
+          "models/caelum/props/stations/ca_station_wax.png",
+          "models/caelum/props/stations/ca_station_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/rest/ca_large_canteen.obj",
+        "sha256": "af8bfe1db1aabde9677969445e51ff37ee689cd9870ee90c309a6a68706a4715",
+        "bytes": 42808,
+        "vertices": 664,
+        "faces": 174,
+        "triangles": 316,
+        "material_sections": 1,
+        "materials": [
+          "graphics/caelum/icons/water/canteen_large.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/rest/ca_rest_bag_open.obj",
+        "sha256": "2819863e93e8bf09d33e4f028ea9ab35f4e376ff803b76b91dd0106d665fe004",
+        "bytes": 7667,
+        "vertices": 120,
+        "faces": 30,
+        "triangles": 60,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_inside.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/rest/ca_rest_bag_roll.obj",
+        "sha256": "0be0115929101b8ce34ab66f14988377aaefbf239995652b130ba56d36ecacfd",
+        "bytes": 30185,
+        "vertices": 480,
+        "faces": 144,
+        "triangles": 192,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_inside.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/rest/ca_rest_bed.obj",
+        "sha256": "c127d6a55d2a17eb64e5e6d6ae2bd2b24851b8c1c73c76f99600e5449ed272f5",
+        "bytes": 57375,
+        "vertices": 888,
+        "faces": 238,
+        "triangles": 412,
+        "material_sections": 7,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png",
+          "models/caelum/world/alchemy_ingredients/cloth.png",
+          "models/caelum/world/alchemy_ingredients/cloth_shade1.png",
+          "models/caelum/world/alchemy_ingredients/cloth_shade3.png",
+          "models/caelum/world/alchemy_ingredients/cloth_shade4.png",
+          "models/caelum/world/alchemy_ingredients/cloth_shade5.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/rest/ca_rest_chair.obj",
+        "sha256": "a2531e42c20dc717dcbef74ec039cdb3f7cd01bcf2ae75eb1a1b61f3796f336b",
+        "bytes": 19490,
+        "vertices": 312,
+        "faces": 78,
+        "triangles": 156,
+        "material_sections": 1,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/rest/ca_table_large.obj",
+        "sha256": "e10c77a9122503dafa7e85c63ca8683e24fa1c5fe435d6f4c2274ae83098829e",
+        "bytes": 37719,
+        "vertices": 576,
+        "faces": 144,
+        "triangles": 288,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/rest/ca_table_normal.obj",
+        "sha256": "8adcf9bf9074f1725b4979b652dfc2142812e7900881232c994273c311020113",
+        "bytes": 27819,
+        "vertices": 432,
+        "faces": 108,
+        "triangles": 216,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/rest/ca_table_small.obj",
+        "sha256": "67c33f4bfdca1e9a087cb8b89eadc6430aa2ec510e0fc4a85cc81b71b06a09fb",
+        "bytes": 24944,
+        "vertices": 392,
+        "faces": 114,
+        "triangles": 164,
+        "material_sections": 1,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/rest/ca_water_cup.obj",
+        "sha256": "d8f27e76dbe33abb073ab588d42fb30462eb6572ae3b9dfd3eafd02d60f0aa7c",
+        "bytes": 33948,
+        "vertices": 552,
+        "faces": 138,
+        "triangles": 276,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stations/ca_station_iron.png",
+          "models/caelum/props/stations/ca_station_paper.png"
+        ]
+      }
+    ],
+    "sofas": [
+      {
+        "path": "src/models/caelum/props/sofas/ca_sofa_2.obj",
+        "sha256": "7c33ebd31ee58c580aa15721a4b651b8682cd39a33ecbe871c54114258163a46",
+        "bytes": 51819,
+        "vertices": 816,
+        "faces": 204,
+        "triangles": 408,
+        "material_sections": 3,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_inside.png",
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/sofas/ca_sofa_3.obj",
+        "sha256": "17092f40af4acdb6b724321e95b80aecd1ca58a2dcf1cc27a8015eb94c7abd0e",
+        "bytes": 58299,
+        "vertices": 912,
+        "faces": 228,
+        "triangles": 456,
+        "material_sections": 3,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_inside.png",
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      }
+    ],
+    "stash": [
+      {
+        "path": "src/models/caelum/props/stash/ca_stash_closed.obj",
+        "sha256": "dceb0fe8801bd3df58eaf3e724fc1c48168706945dfea5e4c86bec3512f14cc2",
+        "bytes": 55566,
+        "vertices": 868,
+        "faces": 242,
+        "triangles": 384,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stash/ca_stash_locked.obj",
+        "sha256": "6690c75df52d4976fac8497a711abf75e5c69fd2f470229441f9a02a7cd5adb8",
+        "bytes": 61678,
+        "vertices": 964,
+        "faces": 266,
+        "triangles": 432,
+        "material_sections": 3,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_lock.png",
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stash/ca_stash_open.obj",
+        "sha256": "0ce6067fa5e3026ad292b2730bf31132c4bd92d2aa8be493edf6bb5487ef5281",
+        "bytes": 58916,
+        "vertices": 916,
+        "faces": 254,
+        "triangles": 408,
+        "material_sections": 3,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_inside.png",
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      }
+    ],
+    "stations": [
+      {
+        "path": "src/models/caelum/props/stations/ca_station_alchemy.obj",
+        "sha256": "2a89e1ab168fce6af3f90193b5db318fb0bab9e643f3c1d857274b2e65b4f979",
+        "bytes": 212358,
+        "vertices": 3284,
+        "faces": 958,
+        "triangles": 1368,
+        "material_sections": 16,
+        "materials": [
+          "models/caelum/props/stations/ca_station_brass.png",
+          "models/caelum/props/stations/ca_station_iron.png",
+          "models/caelum/props/stations/ca_station_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stations/ca_station_altar.obj",
+        "sha256": "b9390c5dc917470dc0eecfe0af94a7706e0854545b3f9d4594a4292b94282387",
+        "bytes": 81058,
+        "vertices": 1272,
+        "faces": 376,
+        "triangles": 520,
+        "material_sections": 11,
+        "materials": [
+          "models/caelum/props/stations/ca_station_brass.png",
+          "models/caelum/props/stations/ca_station_ember.png",
+          "models/caelum/props/stations/ca_station_gem.png",
+          "models/caelum/props/stations/ca_station_leather.png",
+          "models/caelum/props/stations/ca_station_paper.png",
+          "models/caelum/props/stations/ca_station_stone.png",
+          "models/caelum/props/stations/ca_station_wax.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stations/ca_station_anvil.obj",
+        "sha256": "a8c08a5e292d51fc795aa88607e55287a64f707573858225734a284f4cab6bd3",
+        "bytes": 46496,
+        "vertices": 740,
+        "faces": 216,
+        "triangles": 308,
+        "material_sections": 4,
+        "materials": [
+          "models/caelum/props/stations/ca_station_iron.png",
+          "models/caelum/props/stations/ca_station_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stations/ca_station_armor.obj",
+        "sha256": "6cb5aa9188375bbcafe96ce78266366b4a75bc6a8a30756e0890d99efee98569",
+        "bytes": 59970,
+        "vertices": 936,
+        "faces": 258,
+        "triangles": 420,
+        "material_sections": 19,
+        "materials": [
+          "models/caelum/props/stations/ca_station_brass.png",
+          "models/caelum/props/stations/ca_station_iron.png",
+          "models/caelum/props/stations/ca_station_leather.png",
+          "models/caelum/props/stations/ca_station_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stations/ca_station_fermentation.obj",
+        "sha256": "b3492a02695f8f2775afc5697b14609d78d922f0a0cb73e53148eab0339ff3f1",
+        "bytes": 321293,
+        "vertices": 4924,
+        "faces": 1458,
+        "triangles": 2008,
+        "material_sections": 4,
+        "materials": [
+          "models/caelum/props/stations/ca_station_brass.png",
+          "models/caelum/props/stations/ca_station_iron.png",
+          "models/caelum/props/stations/ca_station_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stations/ca_station_fine_tools.obj",
+        "sha256": "22d42d60898b25e9e656418b43e92b58cbb373e5f9c60374dbec8d4addc66bdb",
+        "bytes": 101159,
+        "vertices": 1564,
+        "faces": 450,
+        "triangles": 664,
+        "material_sections": 25,
+        "materials": [
+          "models/caelum/props/stations/ca_station_brass.png",
+          "models/caelum/props/stations/ca_station_cloth.png",
+          "models/caelum/props/stations/ca_station_iron.png",
+          "models/caelum/props/stations/ca_station_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stations/ca_station_forge.obj",
+        "sha256": "10e66fce4b6084740fb1c26b4203ce27fb61b748aa5d9b63fa52519bc09439ce",
+        "bytes": 58082,
+        "vertices": 916,
+        "faces": 262,
+        "triangles": 392,
+        "material_sections": 7,
+        "materials": [
+          "models/caelum/props/stations/ca_station_ember.png",
+          "models/caelum/props/stations/ca_station_iron.png",
+          "models/caelum/props/stations/ca_station_stone.png",
+          "models/caelum/props/stations/ca_station_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stations/ca_station_globe.obj",
+        "sha256": "9d2d8773d1796571b8b5e2754c898e03ad010b59674bde8d3c8c5bd7d28b33d9",
+        "bytes": 122074,
+        "vertices": 1904,
+        "faces": 564,
+        "triangles": 776,
+        "material_sections": 4,
+        "materials": [
+          "models/caelum/props/stations/ca_station_brass.png",
+          "models/caelum/props/stations/ca_station_map.png",
+          "models/caelum/props/stations/ca_station_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stations/ca_station_jeweler.obj",
+        "sha256": "d4f31125c8c2027136380a53282d157a6dbcd5e4bfd19bbb745bfb4d1c782fff",
+        "bytes": 123954,
+        "vertices": 1902,
+        "faces": 542,
+        "triangles": 818,
+        "material_sections": 34,
+        "materials": [
+          "models/caelum/props/stations/ca_station_brass.png",
+          "models/caelum/props/stations/ca_station_ember.png",
+          "models/caelum/props/stations/ca_station_gem.png",
+          "models/caelum/props/stations/ca_station_iron.png",
+          "models/caelum/props/stations/ca_station_leather.png",
+          "models/caelum/props/stations/ca_station_wax.png",
+          "models/caelum/props/stations/ca_station_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stations/ca_station_master.obj",
+        "sha256": "e1072ea849c09b3177dcfbec3b42d7ae53d2de9cab95c4d24d07d7b62faaef23",
+        "bytes": 101754,
+        "vertices": 1560,
+        "faces": 428,
+        "triangles": 704,
+        "material_sections": 33,
+        "materials": [
+          "models/caelum/props/stations/ca_station_brass.png",
+          "models/caelum/props/stations/ca_station_cloth.png",
+          "models/caelum/props/stations/ca_station_ember.png",
+          "models/caelum/props/stations/ca_station_iron.png",
+          "models/caelum/props/stations/ca_station_leather.png",
+          "models/caelum/props/stations/ca_station_paper.png",
+          "models/caelum/props/stations/ca_station_wax.png",
+          "models/caelum/props/stations/ca_station_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stations/ca_station_ranged.obj",
+        "sha256": "009c89136e6b1d7e9318526a270e1f642313670fc614fd699a93e9635e716870",
+        "bytes": 113488,
+        "vertices": 1752,
+        "faces": 498,
+        "triangles": 756,
+        "material_sections": 26,
+        "materials": [
+          "models/caelum/props/stations/ca_station_brass.png",
+          "models/caelum/props/stations/ca_station_iron.png",
+          "models/caelum/props/stations/ca_station_leather.png",
+          "models/caelum/props/stations/ca_station_paper.png",
+          "models/caelum/props/stations/ca_station_wax.png",
+          "models/caelum/props/stations/ca_station_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stations/ca_station_sawmill.obj",
+        "sha256": "f041b600899ac1809d647934a74a966cc3f244673f0d115e829ad6e0c5664d1a",
+        "bytes": 59137,
+        "vertices": 924,
+        "faces": 256,
+        "triangles": 412,
+        "material_sections": 13,
+        "materials": [
+          "models/caelum/props/stations/ca_station_iron.png",
+          "models/caelum/props/stations/ca_station_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stations/ca_station_sewing.obj",
+        "sha256": "f4d27f041aa3a6cc43222e3ce284b273287976ea1156a52f920316f32eb691a2",
+        "bytes": 73804,
+        "vertices": 1160,
+        "faces": 324,
+        "triangles": 512,
+        "material_sections": 15,
+        "materials": [
+          "models/caelum/props/stations/ca_station_brass.png",
+          "models/caelum/props/stations/ca_station_iron.png",
+          "models/caelum/props/stations/ca_station_leather.png",
+          "models/caelum/props/stations/ca_station_wax.png",
+          "models/caelum/props/stations/ca_station_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/stations/ca_station_workbench.obj",
+        "sha256": "23ab5223d63bb2b6047d395c35c013fdcf5ad59a6037c41aa4c9e03095857691",
+        "bytes": 67436,
+        "vertices": 1048,
+        "faces": 290,
+        "triangles": 468,
+        "material_sections": 21,
+        "materials": [
+          "models/caelum/props/stations/ca_station_brass.png",
+          "models/caelum/props/stations/ca_station_ember.png",
+          "models/caelum/props/stations/ca_station_iron.png",
+          "models/caelum/props/stations/ca_station_wax.png",
+          "models/caelum/props/stations/ca_station_wood.png"
+        ]
+      }
+    ],
+    "study": [
+      {
+        "path": "src/models/caelum/props/study/ca_study_bookcase.obj",
+        "sha256": "ea953b494e234ee525cbc237d9b76922c95271cf6faa0fe99e31f36da372b9f4",
+        "bytes": 35147,
+        "vertices": 552,
+        "faces": 138,
+        "triangles": 276,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/study/ca_study_desk.obj",
+        "sha256": "85d07a7a7583440ef1de27fc73f0478f1753018cecbebdb323805d655744dc70",
+        "bytes": 20167,
+        "vertices": 312,
+        "faces": 78,
+        "triangles": 156,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      }
+    ],
+    "wardrobe": [
+      {
+        "path": "src/models/caelum/props/wardrobe/closed.obj",
+        "sha256": "e509ca5a2bbc5b3401b6e0aa60f5952ff5c85263f1cbb865a1d9499240af0951",
+        "bytes": 55046,
+        "vertices": 864,
+        "faces": 216,
+        "triangles": 432,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/wardrobe/locked.obj",
+        "sha256": "192491da7ca9d262af9a5f2e9d0ac77f3d8f60c926b6db0a6ab61e14cf154296",
+        "bytes": 56616,
+        "vertices": 888,
+        "faces": 222,
+        "triangles": 444,
+        "material_sections": 3,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_lock.png",
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/wardrobe/open.obj",
+        "sha256": "20303e302ea320cafa2eff1dd9b9b7784c5575c201dad200ca4f44fb379c8b04",
+        "bytes": 55226,
+        "vertices": 864,
+        "faces": 216,
+        "triangles": 432,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/stash/ca_stash_metal.png",
+          "models/caelum/props/stash/ca_stash_wood.png"
+        ]
+      }
+    ],
+    "water_furniture": [
+      {
+        "path": "src/models/caelum/props/water_furniture/cistern.obj",
+        "sha256": "2d1e179f829f9dd765fdcdd1de332feac478431a5321dd857437c833bf51e317",
+        "bytes": 225281,
+        "vertices": 3464,
+        "faces": 986,
+        "triangles": 1492,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/kitchen/iron-painted-v1.png",
+          "models/caelum/props/stash/ca_stash_lock.png"
+        ]
+      },
+      {
+        "path": "src/models/caelum/props/water_furniture/fountain.obj",
+        "sha256": "0bfa76c9c21ba5534ee50058a72d06a14cdf9c32a998f415c52588a501bb55c8",
+        "bytes": 458843,
+        "vertices": 7096,
+        "faces": 2034,
+        "triangles": 3028,
+        "material_sections": 2,
+        "materials": [
+          "models/caelum/props/kitchen/iron-painted-v1.png",
+          "models/caelum/props/stash/ca_stash_lock.png"
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "assets/art_source/bathrooms/DATA.json": "3c783912f88cab8fc572db90b1729e34ef5cf79803bf01132d93b41ed9c1261e",
+    "assets/art_source/bathrooms/MANIFEST.json": "87bb96e1949dd34f32c6ba0d252cad55dd4f1f5900dcb46adb76dafb0fb9ddf3",
+    "assets/art_source/basic_rest_furniture/DATA.json": "45d2f7d6a95f2bf0ea965bcdf206f108a77981bc11cadf7f6a3f2855804a1986",
+    "assets/art_source/basic_rest_furniture/GENERATED.json": "d5431989a111919e10340d3d52142254ce47cc926121b72f2e7f9978811f0711",
+    "assets/art_source/dining_sets/DATA.json": "fb4e4f73dbffc6c00086d58ca25eabfa27a2a45492757f9500f53c2f65f525b4",
+    "assets/art_source/dining_sets/GENERATED.json": "56acabf858d3106e02f82b24eda5ce1fb9b6bad144c375f690feea64c66a5070",
+    "assets/art_source/kitchen_fixtures/DATA.json": "aca9daf2527ba8dd010bb307ecf3f131c42d62d3a4fd4a09526a262efa19a2b2",
+    "assets/art_source/kitchen_fixtures/MANIFEST.json": "32d1679b61b95b7eba9dfb77248483e1dbbecae1f892ab4c8ecea94fd6649c10",
+    "assets/art_source/kitchen_stations/DATA.json": "1ee7555cb0de91fbaa84d3e21b3318c923a47edcae8ce024dd87e33b20ff639e",
+    "assets/art_source/kitchen_stations/MANIFEST.json": "e2616588e551b59d7a0c4eea5e63310c02af4eb40c24d88edc4219c1572d4e7d",
+    "assets/art_source/luxury_furniture/DATA.json": "2d9d011daf8d9a525df7ba138854d25b6f233f77f689efd676056c1059e67ff3",
+    "assets/art_source/luxury_furniture/GENERATED.json": "b686530c5cb8ebbd8922f67dbf3e568133181fe9c1e270831293cb4cc98efd0f",
+    "assets/art_source/ornamental_decor/DATA.json": "4af350da19b942d843824e6fbd49b4b3f545b836ba265738835eaa4968108be6",
+    "assets/art_source/ornamental_decor/GENERATED.json": "34f89bf63795ce37bf891de365dadf4cf82157a8798ba77c01b554fcee311bc5",
+    "assets/art_source/sofas/DATA.json": "56970d3dabc76c840610a842965b63720b753ae954781b8b45e8cd5fc313416f",
+    "assets/art_source/sofas/GENERATED.json": "e574578d3b4c699bb46a7fdff5fb18e495701075a89376894640f595cadcab52",
+    "assets/art_source/study_furniture/DATA.json": "6bb63a10b4051290733481c8953b0d79ac709c5d42398cd3b5c581d8015c5b5f",
+    "assets/art_source/study_furniture/GENERATED.json": "6b9147027101651273258ec1e0555ff378bbd1aa53bcaa96fe7a38a2a87402d0",
+    "assets/art_source/wardrobe/DATA.json": "6c6b60401d3a3573264687ba6e71c720c28582b048bd503cbadbbd5941b4215f",
+    "assets/art_source/wardrobe/MANIFEST.json": "e834fc33c6ab9c255bc10a2701dd54c20bd5b96ad5cdb682e1a64f1a9cbaeee0",
+    "assets/art_source/water_furniture/DATA.json": "5036f3498be0e99fab9711909a160fae17d7b8a93ad0417b8ef5d6e95fd89a8b",
+    "assets/art_source/water_furniture/MANIFEST.json": "b28f17465d93b7fba81a7f5b393e69ac343561412eb751609f455b2a87ce9353"
+  },
+  "facade": {
+    "path": "src/models/caelum/architecture/barracas/house-960-1216.obj",
+    "sha256": "a5c2aefec5ead511571bee96562c07e8797aa989eba8e811d252c2ec0e377b8d",
+    "bytes": 131007,
+    "vertices": 1896,
+    "faces": 474,
+    "triangles": 948,
+    "material_sections": 36,
+    "materials": [
+      "graphics/caelum/textures/entornos_v1/ciudad/CVCI01.png",
+      "graphics/caelum/textures/entornos_v1/ciudad/CVCI05.png"
+    ]
+  },
+  "city_counts": {
+    "factory": 24,
+    "house": 160,
+    "construction": 40,
+    "shop": 64
+  },
+  "cameras": {
+    "CAH000": [
+      {
+        "name": "house_entrance",
+        "point": [
+          -21088,
+          -12416
+        ],
+        "angle": 105.945396,
+        "basis": "Original private house0 bounds + INTERIORS.door_inside, looking toward the existing table"
+      },
+      {
+        "name": "house_living",
+        "point": [
+          -21216.0,
+          -12192.0
+        ],
+        "angle": 90.0,
+        "basis": "Center of authored living room, looking toward the existing table"
+      },
+      {
+        "name": "house_bedroom",
+        "point": [
+          -21536,
+          -12416.0
+        ],
+        "angle": 110.556045,
+        "basis": "Bedroom doorway inner side, offset by existing door_inset"
+      },
+      {
+        "name": "house_bathroom",
+        "point": [
+          -21696.0,
+          -11872
+        ],
+        "angle": 71.565051,
+        "basis": "Bathroom doorway inner side, offset by existing door_inset"
+      }
+    ],
+    "MAP03": [
+      {
+        "name": "municipality_entrance",
+        "point": [
+          -16000,
+          -1472
+        ],
+        "angle": 180.0,
+        "basis": "Existing generated door center and authored grid; no gameplay placement"
+      },
+      {
+        "name": "municipality_inside",
+        "point": [
+          -16192,
+          -1472
+        ],
+        "angle": 180.0,
+        "basis": "Existing generated door center and authored grid; no gameplay placement"
+      },
+      {
+        "name": "workshop_entrance",
+        "point": [
+          -3584,
+          10304
+        ],
+        "angle": 180.0,
+        "basis": "Existing generated door center and authored grid; no gameplay placement"
+      },
+      {
+        "name": "workshop_inside",
+        "point": [
+          -3776,
+          10304
+        ],
+        "angle": 180.0,
+        "basis": "Existing generated door center and authored grid; no gameplay placement"
+      }
+    ]
+  },
+  "scope": "Read-only source inventory. Existing household source prepares table/chairs, bed, chest and bathroom fixtures; item models are not evidence that every map is fully furnished. Camera positions are review-only and require native clearance checks. No src/map/resource mutations."
+}

@@ -1,6 +1,66 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.118** - 2026-11-21.
+Documentation version: **5.17.119** - 2026-11-21.
+
+## 5.17.119 - Inventory and combine the environment review (#881, #463)
+
+Added the #881 read-only resource inventory and private combined environment review.
+Production changes are two release log labels only:18765 of18767 runtime members
+match118. All source maps, art, actor placements and gameplay remain unchanged.
+The inventory records17 furniture variants and55 owned prop OBJ resources, four map
+counts/material references, current source/provenance hashes and authored review
+anchors. It distinguishes available assets from actual dynamic placement and
+identifies unfinished ceiling/municipal/street/lighting/moisture work explicitly.
+
+Composition pins the exact #866/#875/#878 component hashes, rejects duplicate paths
+and texture kind/name definitions, and preserves original TEXTURES fragments.
+Appearance SHA256:8b4b22a055e8e125e0ca8ad8ce6752d04d46ced5f2c0bce88ab0f45f50f4b04a.
+Vaults SHA256:693161894176086f541c13677c8e116dced7ea93e41638f929af6f8bac3a3074.
+Two public-builder runs reproduce both packages and the manifest byte-for-byte.
+No generated test binary, development IWAD or engine executable is published.
+
+Eight clean native phases compare control/candidate house, city, mansion and sewer
+scenes. Every camera passes TestMobjLocation/headroom; each phase records26.663MU of
+movement. House phases complete four real Used/capture requests and two exact
+returns, saving disposable checkpoints after return. They use the retained house
+diagnostic city setup, not the normal army. No facade radius subclass is used.
+Fifty capture contents are reviewed:44 directly and6 matching previously inspected
+#866 mansion images. Captures are1520x825; native performance below is1280x720.
+The interactive helper removes automatic menu dismissal and cycles camera anchors;
+it is reserved for the final consolidated terminal. No author session is opened.
+Two additional hidden smoke phases pass with the actual review fixture: house
+views wrap through6 placements and sewer views through12; both save checkpoints.
+The house completes2 more real uses and1 exact return. Capture-only menu dismissal
+is absent from the source; physical native-menu interaction remains an author check.
+
+| Scene | Queue presents/s | Present mean / p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| mansion-control01 | 64.329192 | 15.545 / 17.906 / 19.064 / 20.768 | 28.563 / 35.055 / 41.335 / 44.256 |
+| mansion-candidate01 | 66.034217 | 15.144 / 16.953 / 18.275 / 19.232 | 28.572 / 34.000 / 41.276 / 43.135 |
+| sewer-control01 | 156.612315 | 6.385 / 7.683 / 8.518 / 41.764 | 28.572 / 33.542 / 34.633 / 48.853 |
+| sewer-candidate01 | 148.533761 | 6.732 / 8.432 / 9.206 / 40.722 | 28.570 / 33.363 / 34.984 / 46.031 |
+| street-control01 | 140.862474 | 7.099 / 8.192 / 9.020 / 10.839 | 28.565 / 33.979 / 35.022 / 36.683 |
+| street-candidate01 | 141.642959 | 7.060 / 8.085 / 8.940 / 11.204 | 28.581 / 33.896 / 34.995 / 36.330 |
+| ground-control01 | 137.584563 | 7.268 / 8.293 / 8.912 / 10.970 | 28.574 / 34.243 / 35.057 / 36.530 |
+| ground-candidate01 | 138.493304 | 7.221 / 8.249 / 8.942 / 11.167 | 28.568 / 33.962 / 35.331 / 35.952 |
+| siege-control01 | 1.893187 | 528.210 / 561.755 / 566.567 / 566.567 | 30.955 / 47.283 / 50.817 / 64.194 |
+| siege-candidate01 | 2.003575 | 499.108 / 536.166 / 536.881 / 536.881 | 29.787 / 45.211 / 47.370 / 60.160 |
+
+All five pairs retain identical observed states and census. Runs use one hidden,
+unpaused official GZDoom4.14.2/Vulkan process at5% audio, Windows11, Ryzen9 5950X and
+RTX3070Ti, without concurrent heavy build/hash/validation work. Both variants use
+the same119 runtime; only the combined option differs. The siege uses the approved
+normal1000-attacker/600-defender deployment, never the retired6000 case. Queue
+presents are not scanout FPS; tic intervals include pacing and frame work. Single
+comparisons do not establish a speedup, universal60FPS acceptance or playable siege.
+The sewer pair shows a lower presentation rate with the combined candidate; retain
+its tails rather than claiming free visual detail. The severe siege limit persists.
+The paired mansion reference retains its native opening conversation overlay;
+simulation continues. Its64.329/66.034 mean queue rate has p95 intervals above
+16.667ms in both variants and does not establish steady60FPS walking acceptance.
+
+Evidence: assets/validation_v5_17_119. Full project validation passes with no errors; the generated document index is current. CA881-ENVIRONMENT-01 is appended and prior author checks remain.
+No author acceptance, merge, issue closure or completed-batch claim is recorded.
 
 ## 5.17.118 - Keep large house facades visible from nearby streets (#879)
 

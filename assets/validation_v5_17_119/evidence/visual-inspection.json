@@ -1,0 +1,103 @@
+{
+  "issue": 881,
+  "author_acceptance": false,
+  "directly_inspected": [
+    "house01/control/house_entrance.png",
+    "house01/control/house_living.png",
+    "house01/control/house_bedroom.png",
+    "house01/control/house_bathroom.png",
+    "house01/control/walk.png",
+    "house01/candidate/house_entrance.png",
+    "house01/candidate/house_living.png",
+    "house01/candidate/house_bedroom.png",
+    "house01/candidate/house_bathroom.png",
+    "house01/candidate/walk.png",
+    "city01/control/municipality_entrance.png",
+    "city01/control/municipality_inside.png",
+    "city01/control/walk.png",
+    "city01/control/workshop_entrance.png",
+    "city01/control/workshop_inside.png",
+    "city01/candidate/municipality_entrance.png",
+    "city01/candidate/municipality_inside.png",
+    "city01/candidate/walk.png",
+    "city01/candidate/workshop_entrance.png",
+    "city01/candidate/workshop_inside.png",
+    "mansion01/control/walk.png",
+    "mansion01/candidate/walk.png",
+    "sewer01/control/boss_access.png",
+    "sewer01/control/channel.png",
+    "sewer01/control/entrance.png",
+    "sewer01/control/junction.png",
+    "sewer01/control/main_horizontal.png",
+    "sewer01/control/main_vertical.png",
+    "sewer01/control/maintenance.png",
+    "sewer01/control/refuge.png",
+    "sewer01/control/service.png",
+    "sewer01/control/surface_service_exit.png",
+    "sewer01/control/walk.png",
+    "sewer01/candidate/boss_access.png",
+    "sewer01/candidate/channel.png",
+    "sewer01/candidate/entrance.png",
+    "sewer01/candidate/junction.png",
+    "sewer01/candidate/main_horizontal.png",
+    "sewer01/candidate/main_vertical.png",
+    "sewer01/candidate/maintenance.png",
+    "sewer01/candidate/refuge.png",
+    "sewer01/candidate/service.png",
+    "sewer01/candidate/surface_service_exit.png",
+    "sewer01/candidate/walk.png"
+  ],
+  "observations": {
+    "house": "Existing table/chairs, bed, chest and bathroom fixtures are present in both variants. Remastered roof tiles remain visible on interior ceilings; this existing material-use issue is clearer in the candidate and remains an environment-finish gap. Rooms retain their large authored envelope; no furniture dimensions or layout changed. All10 house images inspected.",
+    "city": "All10 images inspected. Municipal courtyard perimeter remains sparsely furnished and office/archive use is not visually recognizable. Original roof tiles appear on ceiling undersides in both variants. Existing workshop stations remain visible against the retained broad floor and wood ceiling. No geometry/furniture placement changes in this comparison.",
+    "mansion": "Both new walk images inspected: Palomo, mansion facade, route and foreground remain visible. Six named-camera images require recorded byte identity to the already inspected #866 evidence.",
+    "sewer": "All22 images inspected. Main corridors, junction, channel, refuge stations, maintenance gate, service passage and return-service center retain sampled openings. Candidate vaults and map-local brick render together; long service walls remain visually repetitive and need remaining finish review. Gate animation timing differs between captures; these still images do not prove door operation or full-route traversal."
+  },
+  "direct_count": 44,
+  "byte_identical_to_previously_inspected": [
+    {
+      "image": "mansion01/control/garden.png",
+      "previous": "assets/validation_v5_17_111/evidence/views/map0102/control/garden.png",
+      "sha256": "a51b86318f597abbd558365b6ba838ce34623fe9a18941d72c49a4f88fca2eaa"
+    },
+    {
+      "image": "mansion01/control/exterior.png",
+      "previous": "assets/validation_v5_17_111/evidence/views/map0102/control/exterior.png",
+      "sha256": "e35be10ca71710191bc03aef06ad1fef92c20bb526cb6762961d1cea6efead71"
+    },
+    {
+      "image": "mansion01/control/interior.png",
+      "previous": "assets/validation_v5_17_111/evidence/views/map0102/control/interior.png",
+      "sha256": "95db1710e7f8d3069c390a31ffb5612612f2c48e3a5a18ed76ec8e7cb0646210"
+    },
+    {
+      "image": "mansion01/candidate/garden.png",
+      "previous": "assets/validation_v5_17_111/evidence/views/map0102/candidate/garden.png",
+      "sha256": "9695d85a235fe32d86ab03f4e8612dc2acbbebbaeb9f96b6cf9b68e61cfe45f2"
+    },
+    {
+      "image": "mansion01/candidate/exterior.png",
+      "previous": "assets/validation_v5_17_111/evidence/views/map0102/candidate/exterior.png",
+      "sha256": "88769be6056965b0922372ef0d18a0a43ca6d8933fabead23706e1ae5d7759b4"
+    },
+    {
+      "image": "mansion01/candidate/interior.png",
+      "previous": "assets/validation_v5_17_111/evidence/views/map0102/candidate/interior.png",
+      "sha256": "e0fd85e0f5cfb451dccdb1685a3148e53ab61d2bae1672d6860d5befb22e9109"
+    }
+  ],
+  "image_contents_inspected": 50,
+  "performance_scene_images_directly_inspected": [
+    "performance/mansion-control01/peer0/scene.png",
+    "performance/mansion-candidate01/peer0/scene.png",
+    "performance/sewer-control01/peer0/scene.png",
+    "performance/sewer-candidate01/peer0/scene.png",
+    "performance/street-control01/peer0/scene.png",
+    "performance/street-candidate01/peer0/scene.png",
+    "performance/ground-control01/peer0/scene.png",
+    "performance/ground-candidate01/peer0/scene.png",
+    "performance/siege-control01/peer0/scene.png",
+    "performance/siege-candidate01/peer0/scene.png"
+  ],
+  "performance_observation": "All10 endpoint images inspected separately from the50 view-gallery captures. Same scene/angle in each pair. Mansion has its native opening conversation overlay while simulation runs; sewer main passage, street/ground and the normal siege correspond to their retained diagnostic anchors. These images do not establish frame pacing by themselves."
+}

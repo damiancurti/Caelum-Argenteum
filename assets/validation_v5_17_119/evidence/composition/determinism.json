@@ -1,0 +1,9 @@
+{
+  "issue": 881,
+  "byte_identical": {
+    "appearance.pk3": "8b4b22a055e8e125e0ca8ad8ce6752d04d46ced5f2c0bce88ab0f45f50f4b04a",
+    "vaults.pk3": "693161894176086f541c13677c8e116dced7ea93e41638f929af6f8bac3a3074",
+    "MANIFEST.json": "08ec39889f197f74f8869268136ccf4e2c77cbd2e7ee19cd4ada1fe26194923b"
+  },
+  "scope": "Two runs of the public builder, including final manifest and builder hash. The component bytes are pinned by their retained native evidence."
+}

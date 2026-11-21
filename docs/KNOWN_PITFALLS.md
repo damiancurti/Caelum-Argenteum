@@ -4,6 +4,32 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-275 - Compose verified overlays explicitly and audit placed scenery separately
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #881 /5.17.119,2026-11-21,
+GZDoom4.14.2. Evidence: assets/validation_v5_17_119. Author acceptance pending.
+
+Loading separately verified art proposals together does not prove load-order safety.
+Pin component package hashes; audit duplicate member paths case-insensitively and
+native texture declarations before explicit fragment composition. Preserve exact
+image/model bytes and record each member's owner, hash and base override. Reproduce
+both package and manifest bytes. Keep map-changing options visibly separate from
+appearance-only options and use fresh sessions for changed geometry/checksums.
+
+An owned-model catalogue is not a furnished-map census: furniture/services can be
+created dynamically. Pair source inventory with native scenes and actual house
+travel. Here17 item variants and55 prop resources already existed, while sampled
+municipal office/archive finish was absent. Shared roof textures also appeared on
+interior ceiling undersides. A sharper material cannot correct an inappropriate
+surface assignment. Report that source/visual discrepancy rather than inventing
+new rooms, furniture scales, service rules or a global roof alias to conceal it.
+
+Recheck combined frame tails in affected mansion/sewer/street/ground/siege scenes.
+Unchanged source code does not make art free. Preserve the slower sewer comparison
+and severe siege limit; one paired window cannot establish a permanent art budget,
+scanout FPS, all-map clearance or final artistic acceptance.
+
+
 ## CA-KP-274 - Large visual models need explicit render bounds and persistence proof
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #879 /5.17.118, 2026-11-21,

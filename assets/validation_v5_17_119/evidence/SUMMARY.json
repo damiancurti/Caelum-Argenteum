@@ -1,0 +1,20 @@
+{
+  "issue": 881,
+  "release": "5.17.119",
+  "full_validation": "passed with no errors",
+  "author_acceptance": false,
+  "combined_native_view_phases": 8,
+  "review_launcher_smoke_phases": 2,
+  "image_contents_inspected": 50,
+  "view_house_uses": 4,
+  "view_house_returns": 2,
+  "smoke_house_uses": 2,
+  "smoke_house_returns": 1,
+  "performance_windows": 10,
+  "furniture_variants": 17,
+  "owned_prop_models": 55,
+  "deterministic_packages": 2,
+  "deterministic_manifest": true,
+  "production_changes": "Two release log labels only",
+  "qualification": "Private combined proposals and explicit remaining finish inventory. No ordinary campaign/purchase/multiplayer/all-map traversal, permanent budget, siege fluency, author acceptance or completed-batch claim."
+}
