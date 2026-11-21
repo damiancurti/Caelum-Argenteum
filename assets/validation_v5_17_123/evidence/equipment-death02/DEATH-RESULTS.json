@@ -1,0 +1,34 @@
+{
+  "issue": 889,
+  "passed": true,
+  "rows": [
+    {
+      "issue": 889,
+      "action": "equipment",
+      "passed": true,
+      "exit_code": 0,
+      "errors": [],
+      "ready": true,
+      "menu_available": true,
+      "smoke_save_exists": true,
+      "reloaded": true,
+      "author_acceptance": false
+    },
+    {
+      "issue": 889,
+      "action": "equipment",
+      "passed": true,
+      "exit_code": 0,
+      "errors": [],
+      "ready": true,
+      "menu_available": true,
+      "smoke_save_exists": true,
+      "reloaded": true,
+      "author_acceptance": false
+    }
+  ],
+  "frozen_snapshot_identical": true,
+  "host_players": 1,
+  "qualification": "One-player cooperative diagnostic room permits native dead-player saves. No campaign death rule is changed.",
+  "author_acceptance": false
+}

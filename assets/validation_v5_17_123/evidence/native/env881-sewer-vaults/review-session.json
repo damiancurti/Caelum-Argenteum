@@ -1,0 +1,224 @@
+{
+  "issue": 881,
+  "author_acceptance": false,
+  "scene": "sewer",
+  "variant": "vaults",
+  "runtime_sha256": "ee543c8f7c8acc8aeb8dcfe7e8f475e8e2cd478fd28bc74d8c01c71c860dc87a",
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue889-review01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue889-components01\\vaults.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env881-sewer-vaults\\review.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env881-sewer-vaults\\review.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env881-sewer-vaults",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env881-sewer-vaults\\engine.log",
+    "+map",
+    "MAP02",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env881-sewer-vaults\\start.cfg"
+  ],
+  "cameras": [
+    {
+      "name": "entrance",
+      "point": [
+        0,
+        -4864
+      ],
+      "angle": 90
+    },
+    {
+      "name": "junction",
+      "point": [
+        -160.0,
+        -4256.0
+      ],
+      "angle": 45
+    },
+    {
+      "name": "channel",
+      "point": [
+        -2304.0,
+        -4128.0
+      ],
+      "angle": 0
+    },
+    {
+      "name": "refuge",
+      "point": [
+        -3936.0,
+        -3232.0
+      ],
+      "angle": 135
+    },
+    {
+      "name": "boss_access",
+      "point": [
+        -2912,
+        8160.0
+      ],
+      "angle": 180
+    },
+    {
+      "name": "main_horizontal",
+      "point": [
+        768.0,
+        -3104.0
+      ],
+      "angle": 0,
+      "axis": 0,
+      "span_mu": 160,
+      "dry_width_mu": 96,
+      "start": [
+        232.0,
+        -3104.0,
+        0
+      ],
+      "end": [
+        1304.0,
+        -3104.0,
+        0
+      ],
+      "bodies": 2,
+      "lane_offsets": [
+        -24.0,
+        24.0
+      ],
+      "segment": {
+        "axis": 0,
+        "cross": -3072,
+        "low": 0,
+        "high": 1536,
+        "width": 160,
+        "label": "south:main"
+      },
+      "clear_run_mu": 1072.0
+    },
+    {
+      "name": "main_vertical",
+      "point": [
+        -3104.0,
+        -2560.0
+      ],
+      "angle": 90,
+      "axis": 1,
+      "span_mu": 160,
+      "dry_width_mu": 96,
+      "start": [
+        -3104.0,
+        -2840.0,
+        0
+      ],
+      "end": [
+        -3104.0,
+        -2280.0,
+        0
+      ],
+      "bodies": 2,
+      "lane_offsets": [
+        -24.0,
+        24.0
+      ],
+      "segment": {
+        "axis": 1,
+        "cross": -3072,
+        "low": -3072,
+        "high": -2048,
+        "width": 160,
+        "label": "south:main"
+      },
+      "clear_run_mu": 560.0
+    },
+    {
+      "name": "service",
+      "point": [
+        0,
+        2920.0
+      ],
+      "angle": 90,
+      "axis": 1,
+      "span_mu": 128,
+      "dry_width_mu": 128,
+      "start": [
+        0,
+        824.0,
+        0
+      ],
+      "end": [
+        0,
+        5016.0,
+        0
+      ],
+      "bodies": 2,
+      "lane_offsets": [
+        -32.0,
+        32.0
+      ],
+      "segment": {
+        "axis": 1,
+        "cross": 0,
+        "low": 0,
+        "high": 5120,
+        "width": 128,
+        "label": "service"
+      },
+      "clear_run_mu": 4192.0
+    },
+    {
+      "name": "maintenance",
+      "point": [
+        -1536,
+        -3752.0
+      ],
+      "angle": 90,
+      "axis": 1,
+      "span_mu": 64,
+      "dry_width_mu": 64,
+      "start": [
+        -1536,
+        -3864.0,
+        0
+      ],
+      "end": [
+        -1536,
+        -3640.0,
+        0
+      ],
+      "bodies": 1,
+      "lane_offsets": [
+        0
+      ],
+      "segment": {
+        "axis": 1,
+        "cross": -1536,
+        "low": -4096,
+        "high": -3072,
+        "width": 64,
+        "label": "south:shortcut"
+      },
+      "clear_run_mu": 224.0
+    },
+    {
+      "name": "surface_service_exit",
+      "point": [
+        -2048,
+        7168
+      ],
+      "angle": 90,
+      "basis": "Existing extraction/return-service center before the keyed boss chamber"
+    }
+  ],
+  "qualification": "Prepare or open one combined environment scene for the final author session.\n\nAll saves/configuration stay in a new build directory. F1 cycles native review\nanchors; menus remain usable. House review enters through real portal travel.\nThe fixture uses invulnerability/notarget and suppresses narrative delivery;\nthis is an art review, not ordinary campaign or multiplayer acceptance.\n",
+  "geometry_save_scope": "Fresh disposable sessions only. Never load campaign saves into the vaults variant."
+}

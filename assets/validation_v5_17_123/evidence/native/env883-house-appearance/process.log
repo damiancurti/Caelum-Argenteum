@@ -1,0 +1,100 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-21 11:32:24
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue889-review01.pk3, 18767 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue889-ceilings01/appearance.pk3, 171 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/author-889/native01/env883-house-appearance/review.pk3, 3 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/author-889/native01/env883-house-appearance/terminal-observer.pk3, 2 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2468.99 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP03 - Barracas al Sud — puerto fortificado
+
+CA889 LEVEL map=MAP03
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA454 HOUSE USE PASS house=0 inside=0 angle=0.0 fit=1 request=1
+
+----------------------------------------
+
+CAH000 - Barracas al Sud — puerto fortificado
+
+CA889 LEVEL map=CAH000
+Partida guardada.
+Partida guardada.
+CA866 SIZE CMEX01 kind=1 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMEX01 kind=2 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMEX04 kind=1 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMEX04 kind=2 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR01 kind=1 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR01 kind=2 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR01A kind=1 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR01A kind=2 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR01B kind=1 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR01B kind=2 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR02 kind=1 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR02 kind=2 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMRF01 kind=1 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMRF01 kind=2 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMST01 kind=1 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMST01 kind=2 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMST02 kind=1 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMST02 kind=2 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMTB04 kind=1 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMTB04 kind=2 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMWD01 kind=1 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMWD01 kind=2 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMWV01 kind=1 display_int=128x128 scaled=128.000x128.000
+CA866 SIZE CMWV01 kind=2 display_int=128x128 scaled=128.000x128.000
+CA866 VIEW 0 pos=-21088.000,-12416.000,0.000 angle=105.945 headroom=160.000 height=56.000 floor=CVCI03 ceiling=CMWD01
+CA883 SURFACE PASS candidate=1 sectors=6 checksum=aff465778ccf8f593e33033a54b0a378
+CA889 READY map=CAH000 player=1
+CA889 MENU PASS class=Savemenu
+Partida guardada.
+Captured terminal.png

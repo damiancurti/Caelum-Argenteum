@@ -1,0 +1,448 @@
+{
+  "issue": 881,
+  "author_acceptance": false,
+  "runtime_sha256": "ee543c8f7c8acc8aeb8dcfe7e8f475e8e2cd478fd28bc74d8c01c71c860dc87a",
+  "builder_sha256": "f688f66e0c840bd5463ffd02ba35f23136a0eb65cf5fe36a5b5d3600a2638163",
+  "inputs": {
+    "remasters": {
+      "issue": 866,
+      "sha256": "4c5ce9a64ba18f579cc589466db3dfed0421bcefbbc92ac301f68ebe354d2a31",
+      "evidence": "assets/source/art/environment_remasters_866/INVENTORY.json",
+      "members": {
+        "TEXTURES": "12c146f39a26c6fc11849f24678b6281899784b719f918b8d4ec973a7a42f7f7",
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMEX01.png": "54b60ae5b4dda073bc6c2cb56da6b0666a72556059a3dc3d4eba895e57e7ce98",
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMEX04.png": "e42da1a288e1511a84ab0581dfe7e3c42bc3e8a74b23e4c440428402a4b607ec",
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMGR01.png": "1f9cef646e051960b7277aa88b0d7ea41f7fca9d6212fcd728cff5c027492493",
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMGR02.png": "555467b7232bd8a6bfa792a56e972ca20c8678e5a4296400e8c54b39970f08b3",
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMST01.png": "5a99180c563a1f45e4ee78accf8507ab39441076aa90eabb34f91992e4039297",
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMST02.png": "ac0874f6e51d41cc3f026e2be415c3cbc495a539a3c904befbfe433091205f87",
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMTB04.png": "972fe9427805fd34daa761326f773e93e6cb1d42cf0aa71264d7d3de5adda0aa",
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMWD01.png": "f93949046493c66aa77cb4015ebfa955dff539192009b74fbb4ceb13704dd1fc"
+      }
+    },
+    "vaults": {
+      "issue": 875,
+      "sha256": "ff3f5b7e956b95797e0bf0e0a6559e778f0d186c8e004aa2e33f800721f47823",
+      "evidence": "assets/validation_v5_17_116/evidence/builds/issue875-vault02/MANIFEST.json",
+      "members": {
+        "TEXTURES": "9192ab87d9100d4d13252db86d4082a2f39b4d828a537ae608318d62accb8b07",
+        "caelum/data/CaelumJusticeGeometry.zs": "34ff9cf2c969608dfa87d742f7f4ca0ba5e56eddcf0789e77d68068e3ec90922",
+        "graphics/caelum/review847/brick-v1.png": "a4ba1734835ccdfe4768a0c5ee706e0865d27423aacbdde68102a7120a8fcae8",
+        "maps/MAP02.wad": "df70e78dbc37d11197b5a13354485ff5f214a35e8ef5d3624ccbe4cd353f103e"
+      }
+    },
+    "joinery": {
+      "issue": 878,
+      "sha256": "1194bd5d3504ded9fc6435bc46cd8e60ab55ff16a6223eddad24041422eb97df",
+      "evidence": "assets/validation_v5_17_117/evidence/builds/issue878-joinery02/MANIFEST.json",
+      "members": {
+        "models/caelum/architecture/barracas/house-960-1216.obj": "ac49cc67ace1f715e534d53384adf60db4512cf1f5e1c8d30f43b38ccf8a24a5"
+      }
+    }
+  },
+  "baseline_resources": {
+    "maps/cah000.wad": "0cf1e5a3d21ae3cbe1dc4c61d3e27ff2bc515ff39136e7c364d4606a37acaea3",
+    "maps/map01.wad": "fe7adb9480353fd8faf06d7e09d967836f45ba2fde8748e2fca356226e577de0",
+    "maps/map02.wad": "1f7052ef2c1bf5bbe612579c6675e2f4541f6c1e256f374d5fd9afabf6eb9fad",
+    "maps/map03.wad": "45bfdbba591b642fd9a2c8c991cd9e9913d9e4158f3e317913efbae0d3df98da",
+    "models/caelum/architecture/barracas/house-960-1216.obj": "a5c2aefec5ead511571bee96562c07e8797aa989eba8e811d252c2ec0e377b8d"
+  },
+  "variants": [
+    {
+      "name": "appearance",
+      "sha256": "8b4b22a055e8e125e0ca8ad8ce6752d04d46ced5f2c0bce88ab0f45f50f4b04a",
+      "bytes": 4609394,
+      "components": [
+        "remasters",
+        "joinery"
+      ],
+      "changed_maps": [],
+      "texture_definitions": [
+        [
+          "flat",
+          "cmex01"
+        ],
+        [
+          "flat",
+          "cmex04"
+        ],
+        [
+          "flat",
+          "cmgr01"
+        ],
+        [
+          "flat",
+          "cmgr01a"
+        ],
+        [
+          "flat",
+          "cmgr01b"
+        ],
+        [
+          "flat",
+          "cmgr02"
+        ],
+        [
+          "flat",
+          "cmrf01"
+        ],
+        [
+          "flat",
+          "cmst01"
+        ],
+        [
+          "flat",
+          "cmst02"
+        ],
+        [
+          "flat",
+          "cmtb04"
+        ],
+        [
+          "flat",
+          "cmwd01"
+        ],
+        [
+          "flat",
+          "cmwv01"
+        ],
+        [
+          "texture",
+          "cmex01"
+        ],
+        [
+          "texture",
+          "cmex04"
+        ],
+        [
+          "texture",
+          "cmgr01"
+        ],
+        [
+          "texture",
+          "cmgr01a"
+        ],
+        [
+          "texture",
+          "cmgr01b"
+        ],
+        [
+          "texture",
+          "cmgr02"
+        ],
+        [
+          "texture",
+          "cmrf01"
+        ],
+        [
+          "texture",
+          "cmst01"
+        ],
+        [
+          "texture",
+          "cmst02"
+        ],
+        [
+          "texture",
+          "cmtb04"
+        ],
+        [
+          "texture",
+          "cmwd01"
+        ],
+        [
+          "texture",
+          "cmwv01"
+        ]
+      ],
+      "members": {
+        "TEXTURES": {
+          "sha256": "12c146f39a26c6fc11849f24678b6281899784b719f918b8d4ec973a7a42f7f7",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": true
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMEX01.png": {
+          "sha256": "54b60ae5b4dda073bc6c2cb56da6b0666a72556059a3dc3d4eba895e57e7ce98",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMEX04.png": {
+          "sha256": "e42da1a288e1511a84ab0581dfe7e3c42bc3e8a74b23e4c440428402a4b607ec",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMGR01.png": {
+          "sha256": "1f9cef646e051960b7277aa88b0d7ea41f7fca9d6212fcd728cff5c027492493",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMGR02.png": {
+          "sha256": "555467b7232bd8a6bfa792a56e972ca20c8678e5a4296400e8c54b39970f08b3",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMST01.png": {
+          "sha256": "5a99180c563a1f45e4ee78accf8507ab39441076aa90eabb34f91992e4039297",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMST02.png": {
+          "sha256": "ac0874f6e51d41cc3f026e2be415c3cbc495a539a3c904befbfe433091205f87",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMTB04.png": {
+          "sha256": "972fe9427805fd34daa761326f773e93e6cb1d42cf0aa71264d7d3de5adda0aa",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMWD01.png": {
+          "sha256": "f93949046493c66aa77cb4015ebfa955dff539192009b74fbb4ceb13704dd1fc",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "models/caelum/architecture/barracas/house-960-1216.obj": {
+          "sha256": "ac49cc67ace1f715e534d53384adf60db4512cf1f5e1c8d30f43b38ccf8a24a5",
+          "owners": [
+            "joinery"
+          ],
+          "overrides_runtime": true
+        }
+      },
+      "requires_fresh_geometry_session": false
+    },
+    {
+      "name": "vaults",
+      "sha256": "693161894176086f541c13677c8e116dced7ea93e41638f929af6f8bac3a3074",
+      "bytes": 31242459,
+      "components": [
+        "remasters",
+        "joinery",
+        "vaults"
+      ],
+      "changed_maps": [
+        "maps/MAP02.wad"
+      ],
+      "texture_definitions": [
+        [
+          "flat",
+          "ca875flr"
+        ],
+        [
+          "flat",
+          "cmex01"
+        ],
+        [
+          "flat",
+          "cmex04"
+        ],
+        [
+          "flat",
+          "cmgr01"
+        ],
+        [
+          "flat",
+          "cmgr01a"
+        ],
+        [
+          "flat",
+          "cmgr01b"
+        ],
+        [
+          "flat",
+          "cmgr02"
+        ],
+        [
+          "flat",
+          "cmrf01"
+        ],
+        [
+          "flat",
+          "cmst01"
+        ],
+        [
+          "flat",
+          "cmst02"
+        ],
+        [
+          "flat",
+          "cmtb04"
+        ],
+        [
+          "flat",
+          "cmwd01"
+        ],
+        [
+          "flat",
+          "cmwv01"
+        ],
+        [
+          "texture",
+          "ca875wal"
+        ],
+        [
+          "texture",
+          "cmex01"
+        ],
+        [
+          "texture",
+          "cmex04"
+        ],
+        [
+          "texture",
+          "cmgr01"
+        ],
+        [
+          "texture",
+          "cmgr01a"
+        ],
+        [
+          "texture",
+          "cmgr01b"
+        ],
+        [
+          "texture",
+          "cmgr02"
+        ],
+        [
+          "texture",
+          "cmrf01"
+        ],
+        [
+          "texture",
+          "cmst01"
+        ],
+        [
+          "texture",
+          "cmst02"
+        ],
+        [
+          "texture",
+          "cmtb04"
+        ],
+        [
+          "texture",
+          "cmwd01"
+        ],
+        [
+          "texture",
+          "cmwv01"
+        ]
+      ],
+      "members": {
+        "TEXTURES": {
+          "sha256": "8ac6f58f9ed70923dba0c1808a104773ceda0ccebe085a550057ec24614aa93f",
+          "owners": [
+            "remasters",
+            "vaults"
+          ],
+          "overrides_runtime": true
+        },
+        "caelum/data/CaelumJusticeGeometry.zs": {
+          "sha256": "34ff9cf2c969608dfa87d742f7f4ca0ba5e56eddcf0789e77d68068e3ec90922",
+          "owners": [
+            "vaults"
+          ],
+          "overrides_runtime": true
+        },
+        "graphics/caelum/review847/brick-v1.png": {
+          "sha256": "a4ba1734835ccdfe4768a0c5ee706e0865d27423aacbdde68102a7120a8fcae8",
+          "owners": [
+            "vaults"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMEX01.png": {
+          "sha256": "54b60ae5b4dda073bc6c2cb56da6b0666a72556059a3dc3d4eba895e57e7ce98",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMEX04.png": {
+          "sha256": "e42da1a288e1511a84ab0581dfe7e3c42bc3e8a74b23e4c440428402a4b607ec",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMGR01.png": {
+          "sha256": "1f9cef646e051960b7277aa88b0d7ea41f7fca9d6212fcd728cff5c027492493",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMGR02.png": {
+          "sha256": "555467b7232bd8a6bfa792a56e972ca20c8678e5a4296400e8c54b39970f08b3",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMST01.png": {
+          "sha256": "5a99180c563a1f45e4ee78accf8507ab39441076aa90eabb34f91992e4039297",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMST02.png": {
+          "sha256": "ac0874f6e51d41cc3f026e2be415c3cbc495a539a3c904befbfe433091205f87",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMTB04.png": {
+          "sha256": "972fe9427805fd34daa761326f773e93e6cb1d42cf0aa71264d7d3de5adda0aa",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "graphics/caelum/textures/entornos_v1/mejoradas/CMWD01.png": {
+          "sha256": "f93949046493c66aa77cb4015ebfa955dff539192009b74fbb4ceb13704dd1fc",
+          "owners": [
+            "remasters"
+          ],
+          "overrides_runtime": false
+        },
+        "maps/MAP02.wad": {
+          "sha256": "df70e78dbc37d11197b5a13354485ff5f214a35e8ef5d3624ccbe4cd353f103e",
+          "owners": [
+            "vaults"
+          ],
+          "overrides_runtime": true
+        },
+        "models/caelum/architecture/barracas/house-960-1216.obj": {
+          "sha256": "ac49cc67ace1f715e534d53384adf60db4512cf1f5e1c8d30f43b38ccf8a24a5",
+          "owners": [
+            "joinery"
+          ],
+          "overrides_runtime": true
+        }
+      },
+      "requires_fresh_geometry_session": true
+    }
+  ],
+  "scope": "Private review options only. No src installation or save conversion. Appearance preserves map geometry; vaults changes only MAP02 and its existing checksum-qualified Justice table. No fixture, class replacement, new actor or decoration placement is embedded. Texture fragments are concatenated after duplicate kind/name rejection; every image and model byte comes unchanged from its verified component."
+}

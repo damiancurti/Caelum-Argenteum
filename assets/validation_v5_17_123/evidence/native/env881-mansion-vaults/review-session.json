@@ -1,0 +1,65 @@
+{
+  "issue": 881,
+  "author_acceptance": false,
+  "scene": "mansion",
+  "variant": "vaults",
+  "runtime_sha256": "ee543c8f7c8acc8aeb8dcfe7e8f475e8e2cd478fd28bc74d8c01c71c860dc87a",
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue889-review01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue889-components01\\vaults.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env881-mansion-vaults\\review.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env881-mansion-vaults\\review.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env881-mansion-vaults",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env881-mansion-vaults\\engine.log",
+    "+map",
+    "MAP01",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env881-mansion-vaults\\start.cfg"
+  ],
+  "cameras": [
+    {
+      "name": "garden",
+      "point": [
+        -1600,
+        0
+      ],
+      "angle": 0,
+      "pitch": 15,
+      "basis": "Existing player start"
+    },
+    {
+      "name": "exterior",
+      "point": [
+        -1200,
+        -900
+      ],
+      "angle": 25,
+      "basis": "Outside existing mansion footprint; diagnostic viewpoint"
+    },
+    {
+      "name": "interior",
+      "point": [
+        -400,
+        0
+      ],
+      "angle": 0,
+      "pitch": 15,
+      "basis": "Inside existing REPAIR interior footprint"
+    }
+  ],
+  "qualification": "Prepare or open one combined environment scene for the final author session.\n\nAll saves/configuration stay in a new build directory. F1 cycles native review\nanchors; menus remain usable. House review enters through real portal travel.\nThe fixture uses invulnerability/notarget and suppresses narrative delivery;\nthis is an art review, not ordinary campaign or multiplayer acceptance.\n",
+  "geometry_save_scope": "Fresh disposable sessions only. Never load campaign saves into the vaults variant."
+}

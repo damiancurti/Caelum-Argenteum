@@ -1,0 +1,23 @@
+{
+  "issue": 889,
+  "passed": true,
+  "native": {
+    "issue": 889,
+    "action": "env887-candidate",
+    "passed": true,
+    "exit_code": 0,
+    "errors": [],
+    "ready": true,
+    "menu_available": true,
+    "smoke_save_exists": true,
+    "reloaded": true,
+    "author_acceptance": false
+  },
+  "basename_load": true,
+  "source_save_sha256": "e565a96bf10393770cfc0453eab301f2bfd72bb7f74ff30c2881cbc056f44ae5",
+  "copied_save_sha256": "e565a96bf10393770cfc0453eab301f2bfd72bb7f74ff30c2881cbc056f44ae5",
+  "source_preserved": true,
+  "changed_binding_rejected": "El paquete cambió: conserva esta partida con su versión original.",
+  "rejected_before_new_output": true,
+  "author_acceptance": false
+}

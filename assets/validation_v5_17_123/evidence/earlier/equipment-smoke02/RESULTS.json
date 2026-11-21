@@ -1,0 +1,12 @@
+{
+  "issue": 889,
+  "action": "equipment",
+  "passed": false,
+  "exit_code": 4294967295,
+  "errors": [],
+  "ready": false,
+  "menu_available": false,
+  "smoke_save_exists": false,
+  "reloaded": false,
+  "author_acceptance": false
+}

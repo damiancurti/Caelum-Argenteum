@@ -1,0 +1,22 @@
+{
+  "issue": 889,
+  "release": "5.17.123",
+  "author_acceptance": false,
+  "checks": 108,
+  "actions": 158,
+  "native_actions": 146,
+  "galleries": 12,
+  "native_smoke_scenes": 39,
+  "equipment_final_phases": 5,
+  "environment_reload_phases": 1,
+  "character_creator_phases": 1,
+  "pending_unchanged": true,
+  "production_changes": "Only two release log labels; no maps/art/gameplay/save schema.",
+  "performance": "No new performance claim or stress case. Previous affected component windows remain byte-applicable; severe normal siege presentation remains open.",
+  "runtime_sha256": "ee543c8f7c8acc8aeb8dcfe7e8f475e8e2cd478fd28bc74d8c01c71c860dc87a",
+  "equipment_live_phases": 3,
+  "corpse_phases": 2,
+  "equipment_host_players": 1,
+  "final_equipment_command_reprepared": true,
+  "preparation_qualification": "Preflight03 prepares all146 actions; preflight04 rechecks the sole subsequently changed equipment command after -host1. Final live/corpse native phases exercise that exact room."
+}

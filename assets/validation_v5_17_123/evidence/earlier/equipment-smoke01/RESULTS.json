@@ -1,0 +1,16 @@
+{
+  "issue": 889,
+  "action": "equipment",
+  "passed": false,
+  "exit_code": 1,
+  "errors": [
+    "Script error, \"equipment.pk3:zscript\" line 308:",
+    "Script error, \"equipment.pk3:zscript\" line 308:",
+    "Native error"
+  ],
+  "ready": false,
+  "menu_available": false,
+  "smoke_save_exists": false,
+  "reloaded": false,
+  "author_acceptance": false
+}

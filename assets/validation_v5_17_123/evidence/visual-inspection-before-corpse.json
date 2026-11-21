@@ -1,0 +1,58 @@
+{
+  "issue": 889,
+  "author_acceptance": false,
+  "count": 10,
+  "directly_inspected": [
+    {
+      "image": "earlier/campaign-title01/terminal.png",
+      "sha256": "6ab3a2ba9735045096f45d4023a291542ad070d36103f255e82f30ca74daa322",
+      "finding": "Native Spanish character creator is visible; no level/save expected."
+    },
+    {
+      "image": "native/env887-candidate/terminal.png",
+      "sha256": "8b4ed943c514c858b757623781e129b08cbc9f29a446a84a6eae92ad1ebf3ba6",
+      "finding": "Native vault entrance and HUD visible; narrow waterline change is not assessed from this entrance view."
+    },
+    {
+      "image": "native/env886-candidate/terminal.png",
+      "sha256": "30b8a12ebc46dfd1fa9889ed2fb430155463b57d8d6eabc7fcee73fb5b2ed073",
+      "finding": "Municipal entrance, open courtyard and distant shelves/workstations visible."
+    },
+    {
+      "image": "native/equipment/terminal.png",
+      "sha256": "1524e763fd96ed166eb5cc314f803a14fc4a79523a2019db683e3ce641b0437a",
+      "finding": "Earlier front camera is clear of the chest; before the final native resource refill."
+    },
+    {
+      "image": "equipment-controls01/fresh/equipment-controls.png",
+      "sha256": "384eec3730638f1cc753123e88429bd458c96abdff70665024af328516ea72b4",
+      "finding": "Earlier delayed screenshot includes the actual save menu; not a clean art capture."
+    },
+    {
+      "image": "equipment-controls01/travel/terminal.png",
+      "sha256": "9e09009ef7bbb9a4bed9c310907e5469638f3f851c5d8d444293b0b2353479fa",
+      "finding": "Earlier fallback body exposed missing room-option restoration."
+    },
+    {
+      "image": "equipment-controls03/fresh/terminal.png",
+      "sha256": "8fe6bbcfa9350cbb1cc06cbff02e23428f7c8e90ee3ff94ee36be0f1853966f1",
+      "finding": "Final first-person sword/shield with gloves after controls; canonical resource changes remain visible."
+    },
+    {
+      "image": "equipment-controls03/reload/terminal.png",
+      "sha256": "9362833b227c4efc68bdb93da3c14da81bbaa30470e55b41862571aa541e98c2",
+      "finding": "Final exact reload screenshot inspected directly."
+    },
+    {
+      "image": "equipment-controls03/travel/terminal.png",
+      "sha256": "868f8bbd081fa3150fbc6624300ceea1eaf0096cd99a788929d0e37309ef02d6",
+      "finding": "Final returned wardrobe body and chest inspected directly."
+    },
+    {
+      "image": "environment-reload/reload/terminal.png",
+      "sha256": "a0fa1ef3059afab03a082adb27837e62657080e8cec52ae9e29387c735d0f68b",
+      "finding": "Final native waterline-option reload and subsequent camera action inspected directly."
+    }
+  ],
+  "qualification": "Only listed images were directly inspected for this terminal patch. Other native PNGs are retained smoke captures, not new visual acceptance. Previous proposal-specific visual evidence retains its original scope."
+}

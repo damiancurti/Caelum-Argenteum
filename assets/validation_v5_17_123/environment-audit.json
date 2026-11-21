@@ -1,0 +1,26 @@
+{
+  "issue": 889,
+  "source_hashes": {
+    "src/SNDINFO": "4a1b944ec20e6a2c5115edeaefebf04433f7df07abab5605ea7e79cdbf5c84c4",
+    "assets/audio_stock/pack05/README.md": "268a13d76fa4bb8972878b893d5f2e3108eed986e9aa609c658aa56d0228eeda",
+    "assets/map02_maze/LAYOUT.json": "1b14751a337fcf331d804f42dffc18710a4baf2d51d756edfa5eac1ce095231e",
+    "assets/map06_port/CITY.json": "d251e8aff3fb4f7c30c94e176b10eb95cd1a00e888c1a53f3846160d7e0e6d35",
+    "assets/map06_port/LAYOUT.json": "56bc2e815b46e78d4f141f97d21e15d038a6d991e4be376a2fa8022f818c7a86",
+    "src/caelum/world/CaelumWeather.zs": "875043ed98a261d271de47705be5acba7ca856f3a45a2f29aef17784962e38b0"
+  },
+  "lighting_terms": [],
+  "named_audio_consumers": [],
+  "scope": "Scoped current source/data audit; absence of literal matches alone is not proof against every dynamically constructed consumer. Registered/reserved audio is not implemented scheduling.",
+  "retained_exception": "SNDINFO aliases caelum/world/magic_mine to caelum/weather/thunder_heavy; CaelumMagicHazards invokes magic_mine for the existing mine. This is not a weather emitter.",
+  "authored_sewer_lighting": {
+    "corridor": 160,
+    "boss": 176
+  },
+  "design_gates": [
+    "Approve lamp locations/types/radii and budgets before new lighting placement.",
+    "Approve ambient events/regions/hour/weather mapping, attenuation, repetition and mixing before new emitters.",
+    "Ten technically validated reserve-pack files remain outside src until an approved event exists.",
+    "Retain #736 seven-family visual decision; no all-character conversion is inferred.",
+    "Unauthored progression assignments, final consent/transport and severe siege rendering remain open."
+  ]
+}

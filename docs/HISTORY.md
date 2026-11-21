@@ -1,6 +1,73 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.122** - 2026-11-21.
+Documentation version: **5.17.123** - 2026-11-21.
+
+## 5.17.123 - Consolidate the author review terminal (#889)
+
+Consolidated the authorized V5.16/V5.17 review actions into one Spanish terminal,
+with ES/EN game selection, search by issue/text, retained proposal galleries,
+actual-inventory equipment controls, normal character creation and same-option
+save recovery. The 108 pending checks and their exact canonical instructions
+remain unchanged. The 158 actions include 146 native launch options and 12 HTML
+references. No manual result, design decision, merge or closure is inferred.
+
+Seven deterministic environment packages repeat the final release122 bytes;
+runtime123 changes only two release log labels (18765/18767 members identical).
+No production gameplay, map, art, balance or save-schema change is introduced.
+The source-backed lighting/audio audit records remaining author data gates and
+the magic-mine/thunder alias exception, without treating missing literal matches
+as a proof about all dynamic consumers.
+
+Early fixture failures are retained: an Actor/player ternary failed native type
+checking; explicit branches corrected it. A nested exec/wait wrapper reached
+equipment setup but lost its later readiness/menu/save checks; flattening the
+ordered commands into bounded chained configs corrected the observed launch.
+Its exact engine parser cause is not established. The initial static preflight
+rejected 56 established runners because they intentionally use an output/visual
+child; command normalization now retains those absolute inputs while using one
+root log/save folder. Original traceback line text can reflect a later file edit
+while the running Python process still holds older bytecode. Direct +map was
+also replaced by the real character-creation menu; the equipment chest was moved
+off the front camera, and the native debug heal restores resources after the
+fixture's attributes100 setup. None is a production behavior correction.
+
+The strengthened equipment check exposed two further review aids: switching
+back to sword must re-equip the room's owned buckler, and the deliberately
+nosave/noarchive wardrobe option must be re-enabled on reload. The final helper
+does both without replaying item creation; F9 can select the base view again.
+Earlier controls01/02 retained object IDs but their fallback-body views are not
+evidence of final appearance continuity. Controls03 verifies the actual wardrobe
+body and buckler in all three phases, alongside the same four equipped IDs.
+
+Native checks pass for39 representative launch/menu/checkpoint scenes (including
+26 environment options), the real character creator, three final equipment
+phases and one exact-copy environment reload with a subsequent native surface
+check. The equipment phases exercise33 region-cycle calls, carbine reload/staff
+charge inputs, sex/camera choices, diagnostic Moon, save/reload and hub return.
+These input exercises do not replace prior detailed weapon-state validation.
+A changed-package binding is rejected before creating a reload folder. The text
+menu passes navigation, language, search and wake-request/release checks.
+Catalogue preparation passes146/146 native actions; all12 gallery paths exist.
+The sole later equipment-command change is rechecked in preflight04 and the
+final native equipment/corpse phases. Full project validation passes with no
+errors; the generated document index is current. Fifteen specified diagnostic
+images were inspected directly; other retained captures do not imply additional
+visual acceptance. Author acceptance remains pending, including every visual proposal.
+Severe siege stalls and unauthored progression/consent/transport remain open.
+
+The first full validator run reported only CONTEXT.md's2501-word count against
+its2500-word limit. The current terminal summary was shortened without removing
+historical entries; the failed report is retained alongside the final rerun.
+
+The final corpse step exposed GZDoom's native dead-single-player save prohibition:
+menu_save returned CaelumNarrativeMessageBox and no checkpoint. The equipment
+room now uses one-player cooperative mode (-host1), as the existing corpse
+diagnostics do. Controls04 repeats all three living equipment phases with the
+same owned IDs and candidate body; death02 saves and reloads the dead player,
+verifying the same four frozen wardrobe choices. Fifteen specified images are
+inspected across retained and final phases. The existing flat death pose remains
+visible and awaits author review. The ordinary campaign launch is unchanged.
+
 
 ## 5.17.122 - Review damp masonry at the sewer waterline (#887, #463)
 

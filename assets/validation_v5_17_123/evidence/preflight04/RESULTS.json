@@ -1,0 +1,13 @@
+{
+  "issue": 889,
+  "passed": true,
+  "rows": [
+    {
+      "action": "equipment",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight04\\equipment",
+      "packages": 3
+    }
+  ],
+  "qualification": "Prepared commands and fixtures only; no native execution or author acceptance."
+}

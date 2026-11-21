@@ -1,0 +1,48 @@
+{
+  "issue": 889,
+  "rows": [
+    {
+      "component": "components",
+      "package": "appearance.pk3",
+      "sha256": "8b4b22a055e8e125e0ca8ad8ce6752d04d46ced5f2c0bce88ab0f45f50f4b04a",
+      "repeat_identical": true
+    },
+    {
+      "component": "components",
+      "package": "vaults.pk3",
+      "sha256": "693161894176086f541c13677c8e116dced7ea93e41638f929af6f8bac3a3074",
+      "repeat_identical": true
+    },
+    {
+      "component": "ceilings",
+      "package": "appearance.pk3",
+      "sha256": "2403f9e99b859d420cea7b1cd5ef8cc150ace60b6ed5f0f3eb9736abcd80fabb",
+      "repeat_identical": true
+    },
+    {
+      "component": "ceilings",
+      "package": "ceilings.pk3",
+      "sha256": "c2fcee30f56ad8e278483c8579f8adbec329471f96798a773486113f21337935",
+      "repeat_identical": true
+    },
+    {
+      "component": "ceilings",
+      "package": "vaults.pk3",
+      "sha256": "c0fd4ee810407a1c4710207f678d6b45961f142ef936b5d1cf58110ae6aeb6d1",
+      "repeat_identical": true
+    },
+    {
+      "component": "municipal",
+      "package": "municipal.pk3",
+      "sha256": "b510512be4638c7ff396df490c942bb3c1bdcff622e299e70ec497a6b177e916",
+      "repeat_identical": true
+    },
+    {
+      "component": "waterline",
+      "package": "waterline.pk3",
+      "sha256": "172d0b4e284a31c8de751e1e18fdee850a9d7d1430781b15636a9a9ab1c8973c",
+      "repeat_identical": true
+    }
+  ],
+  "qualified": "Final wrapper repeats seven packages exactly; manifests have new absolute local paths."
+}

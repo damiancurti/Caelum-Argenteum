@@ -1,0 +1,10 @@
+{
+  "issue": 889,
+  "initial_type_error": "equipment-smoke01 failed an Actor/player ternary; explicit branches corrected native type checking.",
+  "command_chain": "equipment-smoke02 reached setup but not the wrapper readiness/menu/save tail. Flattening trusted generated exec/wait commands into ordered bounded chunks passed smoke03. Exact engine parser cause remains unestablished. Old result had errors[] despite nonzero termination/missing ready; final runner treats both as failures.",
+  "output_directory": "Static preflight01 passed90/rejected56 because established creature runners use output/visual. Corrected normalization retained absolute inputs and unified cwd/log/savedir. Preflight02 repeated56/56; final preflight03 prepares146/146. Earlier traceback text may reflect edits made after the running Python process imported its bytecode.",
+  "equipment": "Initial front-camera chest obstruction moved to the same authored64-MU offset on Y. Existing native debug heal restores initial resources after attributes100. Native weapon switching unequips the buckler; final room explicitly re-equips its owned buckler when returning to sword. Candidate CVAR is deliberately nosave/noarchive: reload now re-enables the declared room option without replaying object setup. The terminal help states that F9 selects the base view again. Controls01/02 retained exact owned IDs but their fallback-body images are not a passed final-appearance check.",
+  "title": "Direct +map creates a safe technical profile. The final campaign action opens and checks the actual character creator before any level/save is expected.",
+  "interface": "Lossy question marks in early Spanish catalogue labels corrected through UTF-8 source editing; canonical pending-check instructions and action commands unchanged.",
+  "dead_save": "The solo room produced CaelumNarrativeMessageBox and the native dead-single-player save prohibition. Final room uses -host 1, matching prior corpse diagnostics. Controls04 repeats living controls/reload/return; death02 saves and reloads the actual dead player with the same frozen four-region snapshot. No production death/save rule is changed."
+}

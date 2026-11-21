@@ -1,0 +1,883 @@
+{
+  "issue": 889,
+  "passed": true,
+  "rows": [
+    {
+      "action": "v5_16_3-run_nahuelito_preview",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_16_3-run_nahuelito_preview",
+      "packages": 4
+    },
+    {
+      "action": "v5_17_0-run_modular_preview",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_0-run_modular_preview",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_1-run_coin_drops-coins",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_1-run_coin_drops-coins",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_1-run_coin_drops-consumables",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_1-run_coin_drops-consumables",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_1-run_coin_drops-water",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_1-run_coin_drops-water",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_1-run_coin_drops-food",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_1-run_coin_drops-food",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_3-run_ammunition_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_3-run_ammunition_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_4-run_gallery",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_4-run_gallery",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_5-run_pombero",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_5-run_pombero",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_6-run_document_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_6-run_document_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_7-run_ingot_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_7-run_ingot_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_8-run_cuero",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_8-run_cuero",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_9-run_nahuelito",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_9-run_nahuelito",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_10-run_camp_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_10-run_camp_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_11-run_furniture_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_11-run_furniture_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_12-run_waterskin_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_12-run_waterskin_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_13-run_mate_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_13-run_mate_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_14-run_lock_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_14-run_lock_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_15-run_jewelry_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_15-run_jewelry_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_16-run_book_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_16-run_book_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_17-run_gem_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_17-run_gem_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_18-run_beast_men-lobizon",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_18-run_beast_men-lobizon",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_18-run_beast_men-uturunco",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_18-run_beast_men-uturunco",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_18-run_beast_men-ucumar",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_18-run_beast_men-ucumar",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_19-run_gallery",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_19-run_gallery",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_20-run_ore_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_20-run_ore_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_21-run_headwear_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_21-run_headwear_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_22-run_glove_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_22-run_glove_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_23-run_duendes-mikilo",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_23-run_duendes-mikilo",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_23-run_duendes-coquena",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_23-run_duendes-coquena",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_25-run_footwear_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_25-run_footwear_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_26-run_clothing_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_26-run_clothing_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_27-run_guardians-yasi",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_27-run_guardians-yasi",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_27-run_guardians-yastay",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_27-run_guardians-yastay",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_29-run_shield_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_29-run_shield_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_30-run_plate_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_30-run_plate_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_31-run_chainmail_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_31-run_chainmail_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_32-run_peuchen-peuchen",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_32-run_peuchen-peuchen",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_43-run_gallery",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_43-run_gallery",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_34-run_avian-cachiru",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_34-run_avian-cachiru",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_34-run_avian-kakuy",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_34-run_avian-kakuy",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_34-run_avian-kelenken",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_34-run_avian-kelenken",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_36-run_chain_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_36-run_chain_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_37-run_wood_component_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_37-run_wood_component_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_38-run_serpent-monai",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_38-run_serpent-monai",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_38-run_serpent-mboi_tata",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_38-run_serpent-mboi_tata",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_40-run_weapon_component_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_40-run_weapon_component_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_41-run_assembly_component_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_41-run_assembly_component_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_42-run_serpent-mboi_tui",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_42-run_serpent-mboi_tui",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_42-run_serpent-mboi_yagua",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_42-run_serpent-mboi_yagua",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_44-run_hide_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_44-run_hide_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_45-run_textile_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_45-run_textile_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_47-run_basilisco-basilisco",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_47-run_basilisco-basilisco",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_48-run_gallery",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_48-run_gallery",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_49-run_hygiene_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_49-run_hygiene_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_50-run_kitchen_ingredient_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_50-run_kitchen_ingredient_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_52-run_cartridge_kit_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_52-run_cartridge_kit_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_54-run_elemental_essence_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_54-run_elemental_essence_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_55-run_orb_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_55-run_orb_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_56-run_magic_base_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_56-run_magic_base_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_57-run_magic_weapon_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_57-run_magic_weapon_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_58-run_magic_tier_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_58-run_magic_tier_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_59-run_effigy_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_59-run_effigy_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_60-run_bladed_weapon_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_60-run_bladed_weapon_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_61-run_axe_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_61-run_axe_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_62-run_polearm_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_62-run_polearm_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_64-run_articulated_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_64-run_articulated_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_65-run_ranged_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_65-run_ranged_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_67-run_helmet_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_67-run_helmet_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_68-run_hand_armor_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_68-run_hand_armor_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_69-run_foot_armor_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_69-run_foot_armor_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_70-run_torso_armor_drops",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_70-run_torso_armor_drops",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_72-run_quadrupeds-familiar",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_72-run_quadrupeds-familiar",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_72-run_quadrupeds-ao_ao",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_72-run_quadrupeds-ao_ao",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_73-run_gallery",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_73-run_gallery",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_74-run_teju-teju_jagua",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_74-run_teju-teju_jagua",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_75-run_gallery",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_75-run_gallery",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_76-run_kasogonaga-kasogonaga",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_76-run_kasogonaga-kasogonaga",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_77-run_apparitions-mulanima",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_77-run_apparitions-mulanima",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_77-run_apparitions-chancho_lata",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_77-run_apparitions-chancho_lata",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_79-run_gallery",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_79-run_gallery",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_80-run_heads-umita",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_80-run_heads-umita",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_80-run_heads-chonchon",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_80-run_heads-chonchon",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_83-run_gallery",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_83-run_gallery",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_83-run_native_gallery",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_83-run_native_gallery",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_84-run_period-viuda",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_84-run_period-viuda",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_84-run_period-llorona",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_84-run_period-llorona",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_84-run_period-futre",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_84-run_period-futre",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_85-run_forest-sachayoj",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_85-run_forest-sachayoj",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_85-run_forest-caapora",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_85-run_forest-caapora",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_85-run_forest-caayari",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_85-run_forest-caayari",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_85-run_forest-zapamzucum",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_85-run_forest-zapamzucum",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_86-run_austral-shoort",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_86-run_austral-shoort",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_86-run_austral-tanu",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_86-run_austral-tanu",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_86-run_austral-halahaches",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_86-run_austral-halahaches",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_86-run_austral-matan",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_86-run_austral-matan",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_86-run_austral-ulen",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_86-run_austral-ulen",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_87-run_witch-witch",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_87-run_witch-witch",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_87-run_witch-salamanca",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_87-run_witch-salamanca",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_87-run_witch-pericana",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_87-run_witch-pericana",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_87-run_witch-solapa",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_87-run_witch-solapa",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_88-run_land-noshtex",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_88-run_land-noshtex",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_88-run_land-pampayoj",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_88-run_land-pampayoj",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_88-run_land-mayumaman",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_88-run_land-mayumaman",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_88-run_land-orkomaman",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_88-run_land-orkomaman",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_88-run_land-nowet",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_88-run_land-nowet",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_89-run_bestiary-curupi",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_89-run_bestiary-curupi",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_89-run_bestiary-gualicho",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_89-run_bestiary-gualicho",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_89-run_bestiary-urituorko",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_89-run_bestiary-urituorko",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_89-run_bestiary-maip",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_89-run_bestiary-maip",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_90-run_forms-xalpen",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_90-run_forms-xalpen",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_90-run_forms-luzmala",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_90-run_forms-luzmala",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_90-run_forms-anchimallen",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_90-run_forms-anchimallen",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_90-run_forms-huayrapuca",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_90-run_forms-huayrapuca",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_91-run_gallery",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_91-run_gallery",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_92-run_underbody",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_92-run_underbody",
+      "packages": 3
+    },
+    {
+      "action": "v5_17_95-run_iqm_viewer",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\v5_17_95-run_iqm_viewer",
+      "packages": 4
+    },
+    {
+      "action": "wardrobe-art",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\wardrobe-art",
+      "packages": 3
+    },
+    {
+      "action": "campaign",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\campaign",
+      "packages": 2
+    },
+    {
+      "action": "equipment",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\equipment",
+      "packages": 3
+    },
+    {
+      "action": "env881-house-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env881-house-control",
+      "packages": 3
+    },
+    {
+      "action": "env881-house-appearance",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env881-house-appearance",
+      "packages": 4
+    },
+    {
+      "action": "env881-house-vaults",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env881-house-vaults",
+      "packages": 4
+    },
+    {
+      "action": "env881-city-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env881-city-control",
+      "packages": 3
+    },
+    {
+      "action": "env881-city-appearance",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env881-city-appearance",
+      "packages": 4
+    },
+    {
+      "action": "env881-city-vaults",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env881-city-vaults",
+      "packages": 4
+    },
+    {
+      "action": "env881-mansion-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env881-mansion-control",
+      "packages": 3
+    },
+    {
+      "action": "env881-mansion-appearance",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env881-mansion-appearance",
+      "packages": 4
+    },
+    {
+      "action": "env881-mansion-vaults",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env881-mansion-vaults",
+      "packages": 4
+    },
+    {
+      "action": "env881-sewer-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env881-sewer-control",
+      "packages": 3
+    },
+    {
+      "action": "env881-sewer-appearance",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env881-sewer-appearance",
+      "packages": 4
+    },
+    {
+      "action": "env881-sewer-vaults",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env881-sewer-vaults",
+      "packages": 4
+    },
+    {
+      "action": "env883-house-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env883-house-control",
+      "packages": 3
+    },
+    {
+      "action": "env883-house-ceilings",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env883-house-ceilings",
+      "packages": 4
+    },
+    {
+      "action": "env883-house-appearance",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env883-house-appearance",
+      "packages": 4
+    },
+    {
+      "action": "env883-house-vaults",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env883-house-vaults",
+      "packages": 4
+    },
+    {
+      "action": "env883-city-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env883-city-control",
+      "packages": 3
+    },
+    {
+      "action": "env883-city-ceilings",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env883-city-ceilings",
+      "packages": 4
+    },
+    {
+      "action": "env883-city-appearance",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env883-city-appearance",
+      "packages": 4
+    },
+    {
+      "action": "env883-city-vaults",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env883-city-vaults",
+      "packages": 4
+    },
+    {
+      "action": "env886-default",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env886-default",
+      "packages": 3
+    },
+    {
+      "action": "env886-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env886-control",
+      "packages": 4
+    },
+    {
+      "action": "env886-candidate",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env886-candidate",
+      "packages": 4
+    },
+    {
+      "action": "env887-default",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env887-default",
+      "packages": 3
+    },
+    {
+      "action": "env887-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env887-control",
+      "packages": 4
+    },
+    {
+      "action": "env887-candidate",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\preflight03\\env887-candidate",
+      "packages": 4
+    }
+  ],
+  "qualification": "Prepared commands and fixtures only; no native execution or author acceptance."
+}
