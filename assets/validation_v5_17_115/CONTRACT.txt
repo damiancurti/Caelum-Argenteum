@@ -1,0 +1,57 @@
+Issue #873 / release 5.17.115: acquisition diagnosis; retain production perception.
+
+Neither experimental current-light bound is accepted into production. Both preserve
+the tested visibility/contact results, but the measured stage reduction is too small
+to justify the added work. This package does not claim to resolve siege performance.
+The existing private recognition, memory, communication and movement rules remain.
+
+Required local dependencies: official GZDoom 4.14.2 and the development Doom II IWAD
+at the paths in the retained runners, plus a local presentation layer supplied with
+--presentation-layer. Neither engine/IWAD, private map/PK3 nor save binaries are
+distributed. Run from repository root. Use one hidden native engine, unpaused in
+background, 5% audio, and no competing build/hash/validation. Do not run 6,000 cases.
+
+The immutable release114 runtime SHA256 is
+ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55.
+Pass its path explicitly; do not substitute a later runtime and relabel the result.
+Every output directory must be a new directory beneath build. Tools refuse reuse.
+
+Rebuild the rejected bounds and selected-stage probe:
+python assets/validation_v5_17_115/prepare_light.py --runtime BASE114 --output build/repro873-direct
+python assets/validation_v5_17_115/prepare_light.py --runtime BASE114 --output build/repro873-fast --fast
+python assets/validation_v5_17_115/prepare_probe.py --runtime BASE114 --output build/repro873-stage --source-overlay build/repro873-fast/light.pk3
+python assets/validation_v5_17_115/prepare_oracle.py --runtime BASE114 --candidate build/repro873-direct/light.pk3 --output build/repro873-oracle
+
+Native edge checks, with --portal for the separate linked-portal room:
+python assets/validation_v5_17_115/run_edges.py --baseline BASE114 --runtime BASE114 --candidate build/repro873-direct/light.pk3 --output build/repro873-edges
+The runner extends the retained #836/#838/#851 fixtures. Counts include old/native
+Candidate equality and fresh ally evidence, sparse/dense modes, migration families,
+current light/height/Insight/stealth boundaries and original contact/portal checks.
+The 280 added checks per expanded run use requested light levels -30..300 through
+the native setter; they do not claim native sectors retain out-of-range light.
+Actual fixture saves were produced, but no new upgrade/rollback claim is made here.
+No saved fields or schema changed in production; this is not author acceptance.
+
+Run the approved siege with --siege and one player through run_frame.py --mode
+grouping --label NAME, forwarding --runtime BASE114, --players 1, --overlay PK3
+and --presentation-layer LOCAL_LAYER. Retain wrapper stdout in
+build/issue873-NAME-run.log, then use analyze_frame.py NAME. The selected-stage
+handler emits 21 metrics, covering 42 tics at stride17 in [3599,4299). Sources and
+raw logs retain exact metric definitions. Inclusive/nested timers add overhead and
+must not be summed as independent CPU budgets. Rejected-bound oracle calls restore
+the original derived Insight/stealth cache fields after checking immutable sight,
+contact and bit-exact range; it measures no production speedup.
+
+Uninstrumented whole-scene observation uses run_scene.py --label NAME --runtime PK3
+--siege --presentation-layer LOCAL_LAYER; omit --siege and choose --map MAP01/MAP02
+or MAP03 (optionally --ground) for peaceful references. QueuePresent is not monitor
+scanout. Tic intervals include pacing/frame work; 35 tics/s alone proves no fluency.
+The prior peaceful release114 references keep their original labels and hashes.
+
+The initial candidate probe failed compilation because local 'items' shadowed the
+Items array in case-insensitive ZScript. It remains a failed attempt. The corrected
+loopEntries version passes; this was a private fixture defect, not a game bug.
+light-stages01 and light-oracle02 were prepared but not run. They are not passes.
+
+Author checks remain only in pending_test.txt, unchanged by this diagnosis. No
+author acceptance, merge, issue closure or partial author terminal is inferred.

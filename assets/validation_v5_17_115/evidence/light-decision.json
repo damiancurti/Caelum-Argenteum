@@ -1,0 +1,198 @@
+{
+  "issue": 873,
+  "decision": "Retain the current production perception. Do not integrate either light-bound prototype.",
+  "rows": [
+    {
+      "family": "Mandinga",
+      "stage": "total",
+      "original_ms": 1.5901238095238095,
+      "candidate_ms": 1.617302380952381,
+      "delta_ms": 0.027178571428571496,
+      "calls": 4358,
+      "entries": 0
+    },
+    {
+      "family": "Mandinga",
+      "stage": "group-setup",
+      "original_ms": 0.8565238095238096,
+      "candidate_ms": 0.8694071428571428,
+      "delta_ms": 0.012883333333333247,
+      "calls": 4156,
+      "entries": 0
+    },
+    {
+      "family": "Mandinga",
+      "stage": "group-enemies",
+      "original_ms": 0.22076666666666667,
+      "candidate_ms": 0.23847380952380953,
+      "delta_ms": 0.017707142857142866,
+      "calls": 4156,
+      "entries": 724187
+    },
+    {
+      "family": "Mandinga",
+      "stage": "group-allies",
+      "original_ms": 0.4013380952380952,
+      "candidate_ms": 0.40215238095238093,
+      "delta_ms": 0.0008142857142857118,
+      "calls": 4156,
+      "entries": 320030
+    },
+    {
+      "family": "Mandinga",
+      "stage": "local-query",
+      "original_ms": 0,
+      "candidate_ms": 0,
+      "delta_ms": 0,
+      "calls": 0,
+      "entries": 0
+    },
+    {
+      "family": "Mandinga",
+      "stage": "unlinked-fallback",
+      "original_ms": 0,
+      "candidate_ms": 0,
+      "delta_ms": 0,
+      "calls": 0,
+      "entries": 0
+    },
+    {
+      "family": "Mandinga",
+      "stage": "observe-ally",
+      "original_ms": 0.07611666666666667,
+      "candidate_ms": 0.07207619047619047,
+      "delta_ms": -0.0040404761904761916,
+      "calls": 4054,
+      "entries": 4054
+    },
+    {
+      "family": "PortDefender",
+      "stage": "total",
+      "original_ms": 1.4848904761904762,
+      "candidate_ms": 1.4313047619047619,
+      "delta_ms": -0.05358571428571435,
+      "calls": 6358,
+      "entries": 0
+    },
+    {
+      "family": "PortDefender",
+      "stage": "group-setup",
+      "original_ms": 0.013092857142857142,
+      "candidate_ms": 0.011026190476190476,
+      "delta_ms": -0.0020666666666666663,
+      "calls": 6305,
+      "entries": 0
+    },
+    {
+      "family": "PortDefender",
+      "stage": "group-enemies",
+      "original_ms": 0,
+      "candidate_ms": 0,
+      "delta_ms": 0,
+      "calls": 0,
+      "entries": 0
+    },
+    {
+      "family": "PortDefender",
+      "stage": "group-allies",
+      "original_ms": 0,
+      "candidate_ms": 0,
+      "delta_ms": 0,
+      "calls": 0,
+      "entries": 0
+    },
+    {
+      "family": "PortDefender",
+      "stage": "local-query",
+      "original_ms": 1.323640476190476,
+      "candidate_ms": 1.2699761904761904,
+      "delta_ms": -0.05366428571428572,
+      "calls": 6305,
+      "entries": 205202
+    },
+    {
+      "family": "PortDefender",
+      "stage": "unlinked-fallback",
+      "original_ms": 0.004052380952380952,
+      "candidate_ms": 0.004092857142857143,
+      "delta_ms": 4.04761904761906e-05,
+      "calls": 6305,
+      "entries": 0
+    },
+    {
+      "family": "PortDefender",
+      "stage": "observe-ally",
+      "original_ms": 0.07943571428571429,
+      "candidate_ms": 0.07934285714285715,
+      "delta_ms": -9.285714285714453e-05,
+      "calls": 4344,
+      "entries": 4344
+    },
+    {
+      "family": "other",
+      "stage": "total",
+      "original_ms": 0.0036714285714285716,
+      "candidate_ms": 0.004435714285714286,
+      "delta_ms": 0.0007642857142857143,
+      "calls": 16,
+      "entries": 0
+    },
+    {
+      "family": "other",
+      "stage": "group-setup",
+      "original_ms": 0.0033285714285714286,
+      "candidate_ms": 0.004023809523809524,
+      "delta_ms": 0.0006952380952380956,
+      "calls": 10,
+      "entries": 0
+    },
+    {
+      "family": "other",
+      "stage": "group-enemies",
+      "original_ms": 4.761904761904762e-06,
+      "candidate_ms": 7.1428571428571436e-06,
+      "delta_ms": 2.380952380952381e-06,
+      "calls": 10,
+      "entries": 0
+    },
+    {
+      "family": "other",
+      "stage": "group-allies",
+      "original_ms": 9.523809523809525e-06,
+      "candidate_ms": 9.523809523809525e-06,
+      "delta_ms": 0.0,
+      "calls": 10,
+      "entries": 10
+    },
+    {
+      "family": "other",
+      "stage": "local-query",
+      "original_ms": 0,
+      "candidate_ms": 0,
+      "delta_ms": 0,
+      "calls": 0,
+      "entries": 0
+    },
+    {
+      "family": "other",
+      "stage": "unlinked-fallback",
+      "original_ms": 0,
+      "candidate_ms": 0,
+      "delta_ms": 0,
+      "calls": 0,
+      "entries": 0
+    },
+    {
+      "family": "other",
+      "stage": "observe-ally",
+      "original_ms": 0,
+      "candidate_ms": 0,
+      "delta_ms": 0,
+      "calls": 0,
+      "entries": 0
+    }
+  ],
+  "states_match": true,
+  "census_match": true,
+  "qualification": "Separate 42-tic instrumented stage samples. Identical recorded state, calls and loop entries. The fast light bound changes Mandinga total 1.5901 to 1.6173 ms and defender total 1.4849 to 1.4313 ms; the net reduction is negligible. The earlier full-scene direct-light difference does not establish a repeatable causal gain. No visibility skip, schema or behavior change is delivered."
+}

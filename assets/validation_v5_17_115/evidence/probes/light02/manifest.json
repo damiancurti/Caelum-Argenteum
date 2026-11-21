@@ -1,0 +1,11 @@
+{
+  "issue": 873,
+  "runtime_sha256": "ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55",
+  "overlay_sha256": "bd829fce9f47c027d6a4f5c39e793147769d4896f21605114ee12f915c7a1db9",
+  "original_sha256": "dcc202ceeb14b156a0d723fec81745acb53d6576dd5c69150033cd775bdfb03e",
+  "candidate_sha256": "3fce90a179db85d6c447cf4b5277f76d1204c18b0889123745f68e34e2d1910f",
+  "original_restored_exactly": true,
+  "scope": "Retain the original full-light bound first and only calculate current illumination for surviving bodies. Both reach expressions preserve the original addition/multiplication order. Same conservative contact padding and portal guards; no new fields or caches.",
+  "previous_overlay_sha256": "bde1f2d6a08ed8907ba4ea4a2b58752d8ce7c7777b0309811e662443751edfc9",
+  "previous_restored_exactly": true
+}

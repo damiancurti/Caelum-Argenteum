@@ -1,0 +1,19 @@
+{
+  "issue": 873,
+  "release": "5.17.115",
+  "decision": "Retain production perception; reject both current-light bounds as insufficiently beneficial.",
+  "assertions": 2663,
+  "passing_edge_runs": 4,
+  "diagnostic_windows": 5,
+  "scene_windows": 4,
+  "failed_fixture_attempts": 1,
+  "production_changes": "Two release log labels only",
+  "author_queue_unchanged": true,
+  "author_acceptance": false,
+  "full_validation": "passed with no errors",
+  "prepared_but_not_run": [
+    "light-stages01",
+    "light-oracle02"
+  ],
+  "qualification": "Instrumented local costs and a single direct-light full-scene difference do not establish a production gain. No light bound or known-visible shortcut is integrated. Prior peaceful references retain release114 labels. Siege-final01 overlapped the package byte audit during its first approximately two startup seconds, before the measured window; final02 repeats the final scene without that overlap. Siege fluency and the broader batch remain open."
+}

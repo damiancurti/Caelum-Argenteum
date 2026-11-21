@@ -1450,3 +1450,10 @@ assets/validation_v5_17_114/*.py text eol=lf diff
 assets/validation_v5_17_114/*.zs text eol=lf diff
 assets/validation_v5_17_114/*.json text eol=lf diff
 assets/validation_v5_17_114/*.txt text eol=lf diff
+
+# Exact acquisition diagnosis evidence and portable tools (#873).
+assets/validation_v5_17_115/** -text -diff
+assets/validation_v5_17_115/*.py text eol=lf diff
+assets/validation_v5_17_115/*.zs text eol=lf diff
+assets/validation_v5_17_115/*.json text eol=lf diff
+assets/validation_v5_17_115/*.txt text eol=lf diff

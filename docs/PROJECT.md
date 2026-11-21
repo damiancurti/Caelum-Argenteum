@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.114** - 2026-11-21.
+Documentation version: **5.17.115** - 2026-11-21.
+
+## 5.17.115 - Measure target acquisition and retain current perception (#873, #454)
+
+The acquisition diagnosis narrows actual siege costs into shared query setup,
+enemy/ally filtering and local filtering. Population getters and focus operations
+are small in the recorded samples. A current-light bound passes native equivalence
+but provides a negligible net stage reduction, so production perception is retained.
+Only two release log labels differ from 5.17.114; no performance gain is claimed.
+
+The normal siege remains slow. This diagnosis completes the bounded #873 experiment,
+not #454 fluency or the broader V5.16/V5.17 batch. Continue the authorized city/sewer
+finish; character variants and unauthored content retain their existing decision
+gates. The final consolidated author terminal remains deferred until that work is
+ready; no author acceptance, merge or issue closure is inferred.
 
 ## 5.17.114 - Grow the derived contamination surface index (#871, #454)
 

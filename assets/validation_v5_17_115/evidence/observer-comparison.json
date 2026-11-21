@@ -1,0 +1,25 @@
+{
+  "issue": 873,
+  "control": "assets/validation_v5_17_114/evidence/scenes/siege-final01/summary.json",
+  "windows": [
+    {
+      "label": "target-run01",
+      "states_match": true,
+      "census_match": true,
+      "runtime_sha256": "ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55"
+    },
+    {
+      "label": "candidate-run02",
+      "states_match": true,
+      "census_match": true,
+      "runtime_sha256": "ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55"
+    },
+    {
+      "label": "details-run01",
+      "states_match": true,
+      "census_match": true,
+      "runtime_sha256": "ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55"
+    }
+  ],
+  "qualification": "Recorded observer state/census only, not proof of all hidden state; instrumentation is not a production speed comparison."
+}

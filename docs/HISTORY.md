@@ -1,6 +1,91 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.114** - 2026-11-21.
+Documentation version: **5.17.115** - 2026-11-21.
+
+## 5.17.115 - Measure target acquisition and retain current perception (#873, #454)
+
+Retain production perception. The current-light broadphase experiments did not
+justify a runtime change, despite passing the scoped equivalence checks. Final
+package SHA256: 767c48ed4fc15a1c6ec13af1d07cc6565d27ed338a3ccef3a37fa2afe1099c9e. Baseline 5.17.114 SHA256:
+ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55. Of 18,767 members,
+18,765 match byte-for-byte; only two release log labels
+differ. No probe or light helper enters production, and no save fields/schema change.
+
+Three separate 42-tic probes (stride17, tics3599..4299) narrow the real acquisition
+path. Service means for Mandinga/defender families: Pulse 2.8456/3.6789 ms,
+Acquire 1.7693/1.8730, Candidate 1.7100/1.6970. The separate stage probe records
+Mandinga shared setup 0.8565 ms, group allies 0.4013 and enemies 0.2208; defender
+local filtering is 1.3236 ms. Across those sampled tics, shared loops visit 320,030
+allies and 724,187 enemies; 6,305 local queries visit 205,202 entries. These are
+loop invocations, not unique bodies. Further helper wrappers raise Candidate cost
+substantially (5.5721/3.4302 ms), illustrating their own overhead. Population.Get
+is only 0.0167/0.0274 ms in that separate helper probe; no getter optimization was
+made. Inclusive/nested metrics from different runs are not additive CPU budgets.
+
+The first rejected prototype extracts the existing illumination arithmetic into a
+helper and uses current sector light in the conservative bound. Contact padding,
+portal fallback and relation ordering remain intact. The second first performs
+the original cheap full-light rejection. Expanded frozen fixtures compare immutable
+114/current Candidate, fresh ally evidence, sparse/dense modes, live height/Insight/
+stealth/light boundaries, contact, portals and applicable migration families. Four
+passing edge runs total 2,663 assertions (165/829/840/829). Actual local fixture saves
+exist; this adds no upgrade/rollback or campaign-save acceptance claim.
+
+The direct-light campaign oracle checks 31,505 newly rejected bound invocations
+against immutable 114 CanSee/Touching and exact Range: zero visible bodies, zero
+contacts, zero range mismatches. It restores derived Insight/stealth cache fields.
+Of 1,040,061 Mandinga bound calls, 991,248 are rejected, only 8,373 newly; of 205,202
+defender calls, 122,136 are rejected, 23,132 newly. Most Mandinga candidates already
+fail the cheap original bound, motivating the second prototype without a new cache.
+
+| Instrumented stage mean per sampled tic | Original ms | Fast light-bound ms |
+| --- | ---: | ---: |
+| Mandinga Candidate total | 1.5901 | 1.6173 |
+| Mandinga group enemies | 0.2208 | 0.2385 |
+| Mandinga group allies | 0.4013 | 0.4022 |
+| Defender Candidate total | 1.4849 | 1.4313 |
+| Defender local query | 1.3236 | 1.2700 |
+
+Call counts, loop counts, sampled tics and recorded state/census match. The net
+sampled Candidate difference is about 0.0264 ms, with a Mandinga regression; this
+is insufficient to justify the added implementation. The earlier direct-light
+whole-window difference below is not established as a causal/repeatable gain.
+Neither prototype is integrated. light-stages01 and light-oracle02 were prepared
+but not run; they are not passing evidence. No repeated-visibility shortcut is
+implemented: Acquire may receive a remembered focus or command, not a just-seen
+candidate, and those paths retain their existing checks and effects.
+
+| Scene | Queue presents/s | Present mean / p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| light-control01 | 1.878091 | 532.456 / 586.538 / 614.890 / 614.890 | 31.270 / 48.712 / 52.803 / 63.233 |
+| light-candidate01 | 1.955231 | 511.448 / 552.883 / 554.771 / 554.771 | 30.096 / 47.861 / 51.502 / 69.597 |
+| siege-final01 | 1.931503 | 517.731 / 561.585 / 563.642 / 563.642 | 30.561 / 45.445 / 49.895 / 59.226 |
+| siege-final02 | 1.921200 | 520.508 / 562.442 / 575.365 / 575.365 | 30.623 / 46.200 / 50.159 / 59.614 |
+
+light-control01 uses immutable 114; light-candidate01 adds the rejected direct-light
+overlay. Both final scenes use actual 115 with unchanged gameplay. The package byte
+audit overlapped approximately the first two startup seconds of siege-final01,
+well before its measured window; siege-final02 repeats it without that overlap.
+Only final02 is the uncontended final comparison. No heavy build/hash/validator
+runs during that repeat. All recorded census/state agree: 601 defenders, 988
+attackers, population1,590, parked0, dense1, health1,421,137; player health1,248 at
+(-4352,-14016,0). This is narrower than proof of every hidden field. Five separate
+diagnostic windows also retain that observed state/census. Prior peaceful reference
+data retains its release114 labels and hashes because production behavior is equal.
+
+Windows11 / Ryzen9 5950X / RTX3070Ti; official GZDoom4.14.2, Vulkan1280x720,
+one hidden unpaused engine, 5% audio. QueuePresent is not monitor scanout; tic
+intervals include pacing/frame work. Rendering remains slow, with no GPU-saturation
+or fluent-gameplay claim. No retired 6,000-attacker case ran. Final siege captures
+were inspected for expected scene/HUD continuity only.
+
+The original candidate probe failed because parameter items shadowed array Items
+in case-insensitive ZScript. Renaming it loopEntries fixed this private fixture;
+the failure is preserved and excluded from passing totals. Public direct/fast,
+stage and oracle builders reproduce all four overlays byte-for-byte.
+
+Evidence: assets/validation_v5_17_115; lesson CA-KP-271. Full project validation passes with no errors; the document index is current. pending_test.txt is unchanged. No author acceptance,
+merge, issue closure or partial terminal; the broader batch remains open.
 
 ## 5.17.114 - Grow the derived contamination surface index (#871, #454)
 

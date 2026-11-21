@@ -4,6 +4,35 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-271 - A tighter perception bound still needs a useful measured saving
+
+Status/evidence: ENGINE-VERIFIED rejected prototypes, #873 / 5.17.115, 2026-11-21,
+GZDoom4.14.2. Production perception remains byte-identical to 5.17.114. No author
+acceptance or siege-fluency claim. Evidence: assets/validation_v5_17_115.
+
+Current sector illumination can conservatively tighten a range bound while retaining
+contact padding, portal fallback and relation side effects. That geometric proof is
+not proof of useful performance. Check actual candidates: this scene's original bound
+already rejects most Mandinga entries. Calling a light helper for every entry spends
+work on bodies that were already cheap to reject. Testing the original bound first
+avoids that waste, but its measured net Candidate reduction here is still negligible.
+Reject the specialization rather than assigning a noisy whole-scene difference to it.
+
+Separate inclusive service, stage and helper probes; count existing loop entries
+without adding a second traversal. High-frequency nested wrappers can more than
+double the measured outer cost. Compare the same sample tics, state/census, calls
+and list counts. A getter that appears in a hot path is not necessarily expensive.
+Check every newly rejected candidate against an immutable prior sight/contact
+predicate; restore diagnostic-derived caches and retain private evidence ordering.
+Native equivalence is narrower than author acceptance or a useful frame-time gain.
+
+Preserve failed fixtures separately. ZScript is case-insensitive: parameter items
+shadows array Items. Finally compare uncontended whole-window presentation and tic
+tails. Startup overlap with a package audit must be recorded and repeated cleanly,
+even when the audit ends before the timed interval. Never equate queue presents with
+scanout or 35 simulation tics/s with fluent rendering. See CA-KP-269 and CA-KP-270.
+
+
 ## CA-KP-270 - Size a derived lookup index for the retained state, not actor count
 
 Status/evidence: ENGINE-VERIFIED production index, #871 / 5.17.114, 2026-11-21,
