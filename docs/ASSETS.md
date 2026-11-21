@@ -1,6 +1,27 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.121** - 2026-11-21.
+Documentation version: **5.17.122** - 2026-11-21.
+
+## 5.17.122 - Review damp masonry at the sewer waterline (#887, #463)
+
+assets/source/art/sewer_waterline_887 retains the owned input attribution,
+exact prompt, configuration and generated PNG. The built-in imagegen tool edited
+#847 brick-v1.png into wet-brick-v1.png without pixel postprocessing: 1254x1254,
+2,980,069 bytes, SHA256 b290299359ae4e6c121ac308aae22ce456e5dd739fc4b4f34e1c264b76317afa.
+The brick bond/scale is visually comparable; pixel-identical relief is not claimed.
+Darker mortar, mineral variation and restrained recess staining communicate damp
+masonry. No third-party reference pixels are included. AySA's circa-1884 Wilde
+construction reference remains provenance, not exact historical reconstruction.
+
+assets/generators/build_sewer_waterline_review.py composes the inherited #886
+option with the targeted material and native 64-MU repeat. Package size 59,517,147
+bytes; SHA256 172d0b4e284a31c8de751e1e18fdee850a9d7d1430781b15636a9a9ab1c8973c.
+Two final runs reproduce both package and manifest exactly. This adds one raster,
+not geometry or an approved permanent art budget. Gallery:
+assets/validation_v5_17_122/review.html, 18 unchanged native comparison captures.
+Close views show the narrow damp riser; distant change is subtle. The candidate
+walk HUD shows Aira 1084/1 versus control 1084/1084, cause unestablished. These
+unpaused diagnostic captures are not evidence of identical gameplay state.
 
 ## 5.17.121 - Furnish the municipal office and archive for review (#886, #463)
 

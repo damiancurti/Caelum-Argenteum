@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.121** - 2026-11-21.
+Documentation version: **5.17.122** - 2026-11-21.
+
+## 5.17.122 - Review damp masonry at the sewer waterline (#887, #463)
+
+A private material proposal applies a damp derivative of the owned sewer brick
+only to the exposed 16-MU channel risers. All geometry, things, light, water,
+hazards and services stay unchanged. Native paired views, matching save/reload,
+fresh default restoration and three affected presentation comparisons pass.
+The style remains a proposal for the single final author session. Remaining
+street-light/ambient decisions and character boards are not silently approved;
+#889 consolidates the authorized batch and its outstanding checks. Severe normal
+siege stalls and unauthored progression remain open.
 
 ## 5.17.121 - Furnish the municipal office and archive for review (#886, #463)
 

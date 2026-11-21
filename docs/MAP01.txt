@@ -1,6 +1,19 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.17.121** - 2026-11-21.
+Documentation version: **5.17.122** - 2026-11-21.
+
+## 5.17.122 - Review damp masonry at the sewer waterline (#887, #463)
+
+The existing sewer layout supplies channel depth 16 MU and dry-floor height 0.
+The private #887 builder selects only exposed lower faces between those water
+and dry sectors: 4,638 source sidedefs change CA875WAL to CA887WET. Reversing those
+equal-length substitutions restores the original TEXTMAP exactly; all remaining
+WAD bytes and geometry are retained. Counts stay 65,582 vertices, 67,124 lines,
+111,548 source sidedefs, 540 sectors and 445 things. The lower return pool is
+excluded. The retained private Justice arena is sector 539 at (8960,9984,0);
+its new checksum alias retains every prior branch. Default sector 104 is checked
+separately. Camera samples cover entrance, junction, channel, refuge, boss access,
+maintenance and two close waterline directions; no all-route/body claim is made.
 
 ## 5.17.121 - Furnish the municipal office and archive for review (#886, #463)
 

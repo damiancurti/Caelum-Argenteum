@@ -1,0 +1,6 @@
+{
+  "issue": 887,
+  "file_index": "Candidate views01 reported 4285/4638 wrong material faces because the fixture treated source TEXTMAP sidedef indices as native level.Sides indices. GZDoom 4.14.2 udmf.cpp ProcessLineDefs reallocates sides in linedef/front-back order. Final checks follow level.Lines[line].sidedef[0/1] and match the authored water sector. Native line count is verified; no zero-length removal changes this map mapping.",
+  "parallel_arrays": "Views02 and views03 aborted at index4639 for arrays of size4638 while reading a second static lookup array. Materializing both indices did not resolve the fixture. Exact compiler cause is not established. Views04 uses one packed line/sector integer table, decodes using the recorded sector count540 and checks all4638 faces. No vm_jit override; final control/candidate and persistence/helper phases pass.",
+  "engine_source": "Local official g4.14.2 src/maploader/udmf.cpp ProcessLineDefs, lines2369-2440; zscript/mapdata.zs Line.sidedef and Side.sector/GetTexture. This establishes the file/native sidedef-index difference, not a general diagnosis of all static-array failures."
+}

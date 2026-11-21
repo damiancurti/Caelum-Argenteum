@@ -1,0 +1,243 @@
+{
+  "issue": 887,
+  "map": "MAP02",
+  "cameras": [
+    {
+      "name": "entrance",
+      "point": [
+        0,
+        -4864
+      ],
+      "angle": 90
+    },
+    {
+      "name": "junction",
+      "point": [
+        -160.0,
+        -4256.0
+      ],
+      "angle": 45
+    },
+    {
+      "name": "channel",
+      "point": [
+        -2304.0,
+        -4128.0
+      ],
+      "angle": 0
+    },
+    {
+      "name": "refuge",
+      "point": [
+        -3936.0,
+        -3232.0
+      ],
+      "angle": 135
+    },
+    {
+      "name": "boss_access",
+      "point": [
+        -2912,
+        8160.0
+      ],
+      "angle": 180
+    },
+    {
+      "name": "maintenance",
+      "point": [
+        -1536,
+        -3752.0
+      ],
+      "angle": 90,
+      "axis": 1,
+      "span_mu": 64,
+      "dry_width_mu": 64,
+      "start": [
+        -1536,
+        -3864.0,
+        0
+      ],
+      "end": [
+        -1536,
+        -3640.0,
+        0
+      ],
+      "bodies": 1,
+      "lane_offsets": [
+        0
+      ],
+      "segment": {
+        "axis": 1,
+        "cross": -1536,
+        "low": -4096,
+        "high": -3072,
+        "width": 64,
+        "label": "south:shortcut"
+      },
+      "clear_run_mu": 224.0
+    },
+    {
+      "name": "waterline_horizontal",
+      "point": [
+        -2504.0,
+        -4048.0
+      ],
+      "angle": 0,
+      "target": [
+        -2504.0,
+        -4080.0,
+        -8.0
+      ],
+      "side": 24910,
+      "basis": "Existing changed riser, channel midpoint and native player eye height"
+    },
+    {
+      "name": "waterline_vertical",
+      "point": [
+        -2528.0,
+        -4072.0
+      ],
+      "angle": 0,
+      "target": [
+        -2496.0,
+        -4072.0,
+        -8.0
+      ],
+      "side": 24909,
+      "basis": "Existing changed riser, channel midpoint and native player eye height"
+    }
+  ],
+  "runs": [
+    {
+      "label": "control",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "errors": [],
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-review01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-municipal01\\municipal.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-views04\\waterline-views.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-views04\\control\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-views04\\control",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-views04\\control\\engine.log",
+        "+map",
+        "MAP02",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-views04\\control\\start.cfg"
+      ],
+      "markers": [
+        "CA866 SIZE CA875WAL kind=1 display_int=64x64 scaled=64.000x64.000",
+        "CA866 SIZE CA875WAL kind=2 display_int=64x64 scaled=64.000x64.000",
+        "CA866 VIEW 0 pos=0.000,-4864.000,-0.000 angle=90.000 headroom=96.000 height=56.000 floor=CA875FLR ceiling=CA875WAL",
+        "CA866 VIEW 1 pos=-160.000,-4256.000,0.000 angle=45.000 headroom=128.000 height=56.000 floor=CA875FLR ceiling=CA875WAL",
+        "CA866 VIEW 2 pos=-2304.000,-4128.000,0.000 angle=0.000 headroom=128.000 height=56.000 floor=CA875FLR ceiling=CA875WAL",
+        "CA866 VIEW 3 pos=-3936.000,-3232.000,0.000 angle=135.000 headroom=128.000 height=56.000 floor=CA875FLR ceiling=CA875WAL",
+        "CA866 VIEW 4 pos=-2912.000,8160.000,-0.000 angle=180.000 headroom=96.000 height=56.000 floor=CA875FLR ceiling=CA875WAL",
+        "CA866 VIEW 5 pos=-1536.000,-3752.000,0.000 angle=90.000 headroom=128.000 height=56.000 floor=CA875FLR ceiling=CA875WAL",
+        "CA866 VIEW 6 pos=-2504.000,-4048.000,0.000 angle=-90.000 headroom=133.603 height=56.000 floor=CAPOOL01 ceiling=CA875WAL",
+        "CA866 VIEW 7 pos=-2528.000,-4072.000,0.000 angle=0.000 headroom=141.195 height=56.000 floor=CAPOOL01 ceiling=CA875WAL",
+        "CA866 VIEW 0 pos=0.000,-4864.000,-0.000 angle=90.000 headroom=96.000 height=56.000 floor=CA875FLR ceiling=CA875WAL",
+        "CA866 WALK distance=26.663 pos=0.000,-4837.337,-0.000",
+        "CA866 PASS views=8"
+      ],
+      "images": {
+        "entrance.png": "08ee1762b58b033d9fff94871bf7c8df4a9c18beab056226f245964202cab082",
+        "junction.png": "f54a4ecd030852da7247909df313dfc8832cfedd70cba77775dbcec3810b247b",
+        "channel.png": "d5ed8e87eb4ea4db45c992f635f546c94377a3b0a821e9885951e43a057cbe20",
+        "refuge.png": "6afb33cca355ed07265e52106d3dc933b415fae2745cdf21d0d5d8819fcfd7f0",
+        "boss_access.png": "bc437a49d5c7aaaa49cc328e98af663c3eab98358c725fd63da9567eda52289a",
+        "maintenance.png": "7db3e3b3128b02834d4d0993e0d5e0711ab5a459bf187bcd8d8c62853b283808",
+        "waterline_horizontal.png": "3f81132ced6718c994ad1c6cb9fb043c33bf846cb2009680c2829f9233382918",
+        "waterline_vertical.png": "ded03f2ff912520bc65f0591d2b86d56192966bcf72ed8b94075c95a3db94c10",
+        "walk.png": "0ff7e8f1841a022c0473c71dee97a2264625615bab14a7ff53fc440ef995a835"
+      },
+      "surface_passes": 9
+    },
+    {
+      "label": "candidate",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "errors": [],
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-review01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-waterline02\\waterline.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-views04\\waterline-views.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-views04\\candidate\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-views04\\candidate",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-views04\\candidate\\engine.log",
+        "+map",
+        "MAP02",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-views04\\candidate\\start.cfg"
+      ],
+      "markers": [
+        "CA866 SIZE CA875WAL kind=1 display_int=64x64 scaled=64.000x64.000",
+        "CA866 SIZE CA875WAL kind=2 display_int=64x64 scaled=64.000x64.000",
+        "CA866 VIEW 0 pos=0.000,-4864.000,-0.000 angle=90.000 headroom=96.000 height=56.000 floor=CA875FLR ceiling=CA875WAL",
+        "CA866 VIEW 1 pos=-160.000,-4256.000,0.000 angle=45.000 headroom=128.000 height=56.000 floor=CA875FLR ceiling=CA875WAL",
+        "CA866 VIEW 2 pos=-2304.000,-4128.000,0.000 angle=0.000 headroom=128.000 height=56.000 floor=CA875FLR ceiling=CA875WAL",
+        "CA866 VIEW 3 pos=-3936.000,-3232.000,0.000 angle=135.000 headroom=128.000 height=56.000 floor=CA875FLR ceiling=CA875WAL",
+        "CA866 VIEW 4 pos=-2912.000,8160.000,-0.000 angle=180.000 headroom=96.000 height=56.000 floor=CA875FLR ceiling=CA875WAL",
+        "CA866 VIEW 5 pos=-1536.000,-3752.000,0.000 angle=90.000 headroom=128.000 height=56.000 floor=CA875FLR ceiling=CA875WAL",
+        "CA866 VIEW 6 pos=-2504.000,-4048.000,0.000 angle=-90.000 headroom=133.603 height=56.000 floor=CAPOOL01 ceiling=CA875WAL",
+        "CA866 VIEW 7 pos=-2528.000,-4072.000,0.000 angle=0.000 headroom=141.195 height=56.000 floor=CAPOOL01 ceiling=CA875WAL",
+        "CA866 VIEW 0 pos=0.000,-4864.000,-0.000 angle=90.000 headroom=96.000 height=56.000 floor=CA875FLR ceiling=CA875WAL",
+        "CA866 WALK distance=26.663 pos=0.000,-4837.337,-0.000",
+        "CA866 PASS views=8"
+      ],
+      "images": {
+        "entrance.png": "08ee1762b58b033d9fff94871bf7c8df4a9c18beab056226f245964202cab082",
+        "junction.png": "79c0f7b099d54596ed37829107969666f2c80e82cd8a2b05bc9972a3bd997e58",
+        "channel.png": "bc78a5daf62491a4375eb25b5409bff2d9e42a402bda8b4231f9b41fb96494b2",
+        "refuge.png": "6afb33cca355ed07265e52106d3dc933b415fae2745cdf21d0d5d8819fcfd7f0",
+        "boss_access.png": "bc437a49d5c7aaaa49cc328e98af663c3eab98358c725fd63da9567eda52289a",
+        "maintenance.png": "46a3e8d72642a0fbfcd8b3b7b1d55815132e23213b2ac59facb7753fe69d9322",
+        "waterline_horizontal.png": "1335e519c887f739b7401df95bad6728c981c462497ceb12c63f6e79d0f708a8",
+        "waterline_vertical.png": "7ef6f889f36359068eb466bd6be5845cad2a25a2a5d616c3356a94bff2aee8cd",
+        "walk.png": "b70bbe8453eaf9257230301117a5fed632d374a82fbdc37c25dfcf4125f7087a"
+      },
+      "surface_passes": 9
+    }
+  ],
+  "runtime_sha256": "a11aeaf0ec553f06d8aff857175a5ed272654c696b197f5d5ee23813ae9690dc",
+  "control_sha256": "b510512be4638c7ff396df490c942bb3c1bdcff622e299e70ec497a6b177e916",
+  "candidate_sha256": "172d0b4e284a31c8de751e1e18fdee850a9d7d1430781b15636a9a9ab1c8973c",
+  "fixture_sha256": "fb752792ec329f6a6c039dea661e065169bbb45fabd065f0a68ed38300532c32",
+  "passed": true,
+  "qualification": "Compare private waterline masonry with unchanged native channel geometry.\n\nCamera teleports, invulnerability/notarget and menu dismissal are diagnostic.\nTargeted side checks run only on explicit camera events, not in production ticks.\n",
+  "author_acceptance": false
+}

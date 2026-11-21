@@ -1,0 +1,80 @@
+{
+  "issue": 887,
+  "directly_inspected": [
+    {
+      "image": "views/candidate/boss_access.png",
+      "sha256": "bc437a49d5c7aaaa49cc328e98af663c3eab98358c725fd63da9567eda52289a"
+    },
+    {
+      "image": "views/candidate/channel.png",
+      "sha256": "bc78a5daf62491a4375eb25b5409bff2d9e42a402bda8b4231f9b41fb96494b2"
+    },
+    {
+      "image": "views/candidate/entrance.png",
+      "sha256": "08ee1762b58b033d9fff94871bf7c8df4a9c18beab056226f245964202cab082"
+    },
+    {
+      "image": "views/candidate/junction.png",
+      "sha256": "79c0f7b099d54596ed37829107969666f2c80e82cd8a2b05bc9972a3bd997e58"
+    },
+    {
+      "image": "views/candidate/maintenance.png",
+      "sha256": "46a3e8d72642a0fbfcd8b3b7b1d55815132e23213b2ac59facb7753fe69d9322"
+    },
+    {
+      "image": "views/candidate/refuge.png",
+      "sha256": "6afb33cca355ed07265e52106d3dc933b415fae2745cdf21d0d5d8819fcfd7f0"
+    },
+    {
+      "image": "views/candidate/walk.png",
+      "sha256": "b70bbe8453eaf9257230301117a5fed632d374a82fbdc37c25dfcf4125f7087a"
+    },
+    {
+      "image": "views/candidate/waterline_horizontal.png",
+      "sha256": "1335e519c887f739b7401df95bad6728c981c462497ceb12c63f6e79d0f708a8"
+    },
+    {
+      "image": "views/candidate/waterline_vertical.png",
+      "sha256": "7ef6f889f36359068eb466bd6be5845cad2a25a2a5d616c3356a94bff2aee8cd"
+    },
+    {
+      "image": "views/control/boss_access.png",
+      "sha256": "bc437a49d5c7aaaa49cc328e98af663c3eab98358c725fd63da9567eda52289a"
+    },
+    {
+      "image": "views/control/channel.png",
+      "sha256": "d5ed8e87eb4ea4db45c992f635f546c94377a3b0a821e9885951e43a057cbe20"
+    },
+    {
+      "image": "views/control/entrance.png",
+      "sha256": "08ee1762b58b033d9fff94871bf7c8df4a9c18beab056226f245964202cab082"
+    },
+    {
+      "image": "views/control/junction.png",
+      "sha256": "f54a4ecd030852da7247909df313dfc8832cfedd70cba77775dbcec3810b247b"
+    },
+    {
+      "image": "views/control/maintenance.png",
+      "sha256": "7db3e3b3128b02834d4d0993e0d5e0711ab5a459bf187bcd8d8c62853b283808"
+    },
+    {
+      "image": "views/control/refuge.png",
+      "sha256": "6afb33cca355ed07265e52106d3dc933b415fae2745cdf21d0d5d8819fcfd7f0"
+    },
+    {
+      "image": "views/control/walk.png",
+      "sha256": "0ff7e8f1841a022c0473c71dee97a2264625615bab14a7ff53fc440ef995a835"
+    },
+    {
+      "image": "views/control/waterline_horizontal.png",
+      "sha256": "3f81132ced6718c994ad1c6cb9fb043c33bf846cb2009680c2829f9233382918"
+    },
+    {
+      "image": "views/control/waterline_vertical.png",
+      "sha256": "ded03f2ff912520bc65f0591d2b86d56192966bcf72ed8b94075c95a3db94c10"
+    }
+  ],
+  "count": 18,
+  "author_acceptance": false,
+  "findings": "All 18 final 1520x825 images inspected directly. Close horizontal/vertical waterline views show darker brick/mortar only on the existing 16-MU exposed risers, with comparable bond and scale. Distant channel change is subtle. Entrance, junction, refuge, boss access and maintenance retain their geometry and appearance. Original NPCs and aim HUD remain visible. The final candidate walk capture displays Aira 1084/1 versus control 1084/1084; cause unestablished. These unpaused teleport/walk images do not establish identical HUD or simulation state. Pixel contents are retained unchanged."
+}

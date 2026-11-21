@@ -1,0 +1,20 @@
+[
+  {
+    "control": "channel-control01",
+    "candidate": "channel-candidate01",
+    "states_equal": true,
+    "census_equal": true
+  },
+  {
+    "control": "waterline-horizontal-control01",
+    "candidate": "waterline-horizontal-candidate01",
+    "states_equal": true,
+    "census_equal": true
+  },
+  {
+    "control": "maintenance-control01",
+    "candidate": "maintenance-candidate01",
+    "states_equal": true,
+    "census_equal": true
+  }
+]

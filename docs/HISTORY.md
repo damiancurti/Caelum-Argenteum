@@ -1,6 +1,70 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.121** - 2026-11-21.
+Documentation version: **5.17.122** - 2026-11-21.
+
+## 5.17.122 - Review damp masonry at the sewer waterline (#887, #463)
+
+Prepared an owned damp-brick proposal using the built-in imagegen tool and the
+retained #847 input. Source prompt, output and attribution are preserved without
+pixel postprocessing. A private deterministic builder replaces only 4,638
+CA875WAL bottom-face names with CA887WET on existing 16-MU channel risers. The
+64-MU texture repeat remains native. Exact reversal restores source TEXTMAP;
+remaining WAD bytes, all geometry/things/lighting/water/hazards/services and other
+inherited members remain unchanged. One checksum alias preserves Justice sector
+539 at (8960,9984,0); every existing branch is retained. Both final package and
+manifest repeat byte-for-byte. Package SHA256:
+172d0b4e284a31c8de751e1e18fdee850a9d7d1430781b15636a9a9ab1c8973c.
+Runtime changes from121 are two release log labels only: 18765/18767 members
+remain identical. No production art, map, save field or balance changes.
+
+Final views04 passes 18 surface samples, each checking all 4,638 native faces
+(83,484 repeated face observations), camera occupancy/headroom and a 26.663-MU
+walk per option. All 18 final 1520x825 images were inspected directly. Close
+waterline pairs show damp risers; distant views remain subtle. The candidate
+walk capture displays Aira 1084/1 versus control 1084/1084; cause unestablished.
+Pixels are preserved and identical HUD/gameplay state is not claimed for these
+unpaused teleport captures. Existing NPCs remain active; diagnostic invulnerability,
+notarget, teleport and gallery-only menu dismissal are explicit fixture aids.
+
+Three persistence phases pass 15 surface checks: fresh candidate, exact copied
+inside.zds loaded by basename, and fresh default restoration. Reload writes its
+later save as reloaded.zds, preserving the copied original for byte comparison.
+No campaign save is read or converted. Three final-review helper smoke phases
+pass 30 view/surface checks, wraparound and three saves, with native menus available.
+These are agent checks, not ordinary progression, all-body routes or author review.
+
+Initial views01 candidate failed 4285/4638 material comparisons because source
+sidedef indices were treated as level.Sides indices. Official 4.14.2 udmf.cpp
+ProcessLineDefs rebuilds sides in linedef/front-back order. Final checks traverse
+level.Lines[line].sidedef[0/1] and match the authored water sector; the full native
+line count is checked. Views02/03 then aborted on a second static lookup array at
+index4639/size4638; materializing indices did not resolve that fixture. Exact
+compiler cause is unestablished. One packed line/sector table passes all final
+faces with native JIT unchanged. Failed logs/fixtures remain available; CA-KP-278
+records the proven mapping issue separately from the empirical workaround.
+
+| Scene | Queue presents/s | Present mean / p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| channel-control01 | 162.660708 | 6.148 / 7.888 / 9.098 / 12.251 | 28.577 / 32.931 / 34.252 / 35.346 |
+| channel-candidate01 | 166.413622 | 6.009 / 7.398 / 8.710 / 11.898 | 28.577 / 33.199 / 34.580 / 70.088 |
+| waterline-horizontal-control01 | 147.392953 | 6.785 / 8.505 / 10.302 / 249.323 | 28.573 / 33.304 / 36.440 / 250.688 |
+| waterline-horizontal-candidate01 | 134.959808 | 7.410 / 8.730 / 10.832 / 236.654 | 28.569 / 33.877 / 45.856 / 221.062 |
+| maintenance-control01 | 144.038774 | 6.943 / 8.566 / 10.620 / 237.950 | 28.567 / 33.310 / 36.522 / 221.117 |
+| maintenance-candidate01 | 144.681560 | 6.912 / 8.428 / 10.659 / 237.044 | 28.572 / 33.182 / 42.731 / 219.626 |
+
+All six sequential windows complete 700 simulation samples. Observed pair checks:
+channel-control01: states_equal=True, census_equal=True; waterline-horizontal-control01: states_equal=True, census_equal=True; maintenance-control01: states_equal=True, census_equal=True.
+Official GZDoom4.14.2/Vulkan, Windows11/Ryzen9 5950X/RTX3070Ti, 1280x720, hidden and
+unpaused at 5% audio. No heavy build/hash/validation overlaps startup or measurement.
+All six endpoint images were inspected separately. Normal MAP02 AI stays active.
+The close waterline candidate costs more in this pair; no general performance
+improvement is claimed. Queue presents are not monitor scanout FPS; tic intervals
+include pacing/frame work. MAP03 is byte-identical to #886, so its approved normal
+1000-attacker/600-defender evidence is retained as reference, not rerun or called
+fluent. No retired 6000-attacker test is used.
+
+Evidence: assets/validation_v5_17_122. Full project validation passes with no errors; the generated document index is current. CA887-WATERLINE-01 is added; previous author checks remain pending.
+No author acceptance, merge, issue closure or completed-batch claim is recorded.
 
 ## 5.17.121 - Furnish the municipal office and archive for review (#886, #463)
 

@@ -1,0 +1,20 @@
+{
+  "issue": 887,
+  "generator": "Built-in image_gen tool",
+  "generation_date": "2026-11-21",
+  "output": "wet-brick-v1.png",
+  "prompt": "wet-brick-v1.prompt.txt",
+  "original_source": "assets/source/art/sewer_material_847/brick-v1.png",
+  "original_sha256": "a4ba1734835ccdfe4768a0c5ee706e0865d27423aacbdde68102a7120a8fcae8",
+  "output_sha256": "b290299359ae4e6c121ac308aae22ce456e5dd739fc4b4f34e1c264b76317afa",
+  "output_pixels": [
+    1254,
+    1254
+  ],
+  "no_bitmap_postprocessing": true,
+  "generated_file": "C:/Users/dcc70/.codex/generated_images/01a1e0be-5f9b-77e2-b703-5f45441eeaad/exec-4e2f9048-3105-4ac2-9acd-67e91f658cfc.png",
+  "reference_provenance": "assets/source/art/sewer_material_847/PROVENANCE.json",
+  "reference_qualification": "Retained circa-1884 Puente Chico/Wilde masonry reference. Artistic dampness interpretation; no exact archaeological reconstruction or third-party pixels.",
+  "visual_inspection": "Source and generated image inspected directly: square frontal staggered brick rows remain comparable, with darker damp mortar/brick. Fine surface pixels are changed; pixel-identical geometry is not asserted.",
+  "author_acceptance": false
+}

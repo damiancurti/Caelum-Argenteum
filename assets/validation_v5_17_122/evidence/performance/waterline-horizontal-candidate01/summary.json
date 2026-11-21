@@ -1,0 +1,64 @@
+{
+  "issue": 887,
+  "label": "waterline-horizontal-candidate01",
+  "camera": "waterline_horizontal",
+  "directory": "build/v516/waterline-profile-20261121-104801-116842",
+  "runtime_sha256": "a11aeaf0ec553f06d8aff857175a5ed272654c696b197f5d5ee23813ae9690dc",
+  "overlays": [
+    {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-waterline02\\waterline.pk3",
+      "sha256": "172d0b4e284a31c8de751e1e18fdee850a9d7d1430781b15636a9a9ab1c8973c"
+    }
+  ],
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "real_house_uses": 0,
+  "states": [
+    "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+    "CA435PERF STATE slot=0 health=1248 pos=-2504.000000,-4048.000000,0.000000",
+    "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=290 dense=0",
+    "CA435PERF STATE slot=0 health=1248 pos=-2504.000000,-4048.000000,-16.000000"
+  ],
+  "census": [
+    "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+    "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+  ],
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 28.569182571428573,
+    "p95_ms": 33.8771,
+    "p99_ms": 45.8563,
+    "max_ms": 221.0619
+  },
+  "presentation": {
+    "pid": 17808,
+    "trace_sha256": "39581b9d33a54897f41bc3cc42fa3d418e12b547a80f80b92dc280d102f53cfe",
+    "rows": 4547,
+    "scene_presents": 2374,
+    "mean_present_fps": 134.959807741218,
+    "present_intervals": {
+      "samples": 2373,
+      "mean_ms": 7.409613400735385,
+      "p50_ms": 6.842299938201904,
+      "p95_ms": 8.730200052261353,
+      "p99_ms": 10.832000017166138,
+      "max_ms": 236.6537001132965
+    },
+    "native_call_duration": {
+      "samples": 2374,
+      "mean_ms": 0.13057177746707688,
+      "p50_ms": 0.12070000171661377,
+      "p95_ms": 0.19470000267028809,
+      "p99_ms": 0.25380003452301025,
+      "max_ms": 0.5176000595092773
+    }
+  },
+  "author_acceptance": false,
+  "qualification": "Existing MAP02 channel or maintenance anchor; unchanged native gameplay and original geometry. Queue presentation is not monitor scanout; no author acceptance."
+}

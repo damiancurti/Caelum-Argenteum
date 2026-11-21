@@ -1,6 +1,17 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.121** - 2026-11-21.
+Documentation version: **5.17.122** - 2026-11-21.
+
+## 5.17.122 - Review damp masonry at the sewer waterline (#887, #463)
+
+The #887 private option changes only 4,638 bottom-material names on existing
+channel faces and adds one checksum alias for the same Justice arena. Selection
+uses authored water at -16, dry floor at 0, retained floor/wall materials and
+untagged, nonspecial two-sided lines. No water depth, actor, collision, damage,
+lighting, resource, service or persisted gameplay field changes. Production
+maps remain intact. Use disposable same-option saves; the corrected launcher
+copies exact save bytes and loads the basename under its own savedir. A fresh
+default session verifies removal; no visited campaign save is migrated.
 
 ## 5.17.121 - Furnish the municipal office and archive for review (#886, #463)
 

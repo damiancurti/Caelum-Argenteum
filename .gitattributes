@@ -1511,3 +1511,13 @@ assets/validation_v5_17_121/*.json text eol=lf diff
 assets/validation_v5_17_121/*.txt text eol=lf diff
 assets/validation_v5_17_121/*.html text eol=lf diff
 assets/source/art/municipal_review_886/*.json text eol=lf diff
+
+# Exact waterline proposal evidence (#887).
+assets/validation_v5_17_122/** -text -diff
+assets/validation_v5_17_122/*.py text eol=lf diff
+assets/validation_v5_17_122/*.zs text eol=lf diff
+assets/validation_v5_17_122/*.json text eol=lf diff
+assets/validation_v5_17_122/*.txt text eol=lf diff
+assets/validation_v5_17_122/*.html text eol=lf diff
+assets/source/art/sewer_waterline_887/*.json text eol=lf diff
+assets/source/art/sewer_waterline_887/*.txt text eol=lf diff

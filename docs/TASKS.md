@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.121** - 2026-11-21.
+Documentation version: **5.17.122** - 2026-11-21.
+
+## 5.17.122 - Review damp masonry at the sewer waterline (#887, #463)
+
+Implemented #887 as a private material proposal: 4,638 exact lower-face
+substitutions, retained arena lookup, deterministic package/manifest, 18 inspected
+views, three matching-save/default phases, three final-helper smoke phases and
+six affected MAP02 presentation windows. The native-side indexing correction and
+failed dual-array fixture attempts are retained. CA887-WATERLINE-01 joins the
+single author queue; no prior check is removed. Production art remains unchanged.
+
+Proceed with #889: consolidate the final author terminal and trace every manual
+check to an action, audit actual ambient consumers/placement sources and state
+remaining design gates. Do not invent lamp placement, timing, art budgets or
+approval of #736. No intermediate terminal, acceptance, merge or closure follows
+this patch. Normal-siege presentation remains severely limited.
 
 ## 5.17.121 - Furnish the municipal office and archive for review (#886, #463)
 

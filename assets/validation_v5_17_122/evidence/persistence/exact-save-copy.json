@@ -1,0 +1,7 @@
+{
+  "fresh_sha256": "af02ee499dc78d0e6fcb92167a51b3fa93793b4784257f014a6d1af41ea193ef",
+  "reload_copy_sha256": "af02ee499dc78d0e6fcb92167a51b3fa93793b4784257f014a6d1af41ea193ef",
+  "bytes": 272812,
+  "exact": true,
+  "qualification": "The unchanged copied inside.zds is loaded by basename under the reload savedir; the subsequent save uses reloaded.zds. No campaign save is used or converted. Binary saves remain local."
+}
