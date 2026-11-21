@@ -1,0 +1,11 @@
+{
+  "issue": 878,
+  "passed": true,
+  "original_faces": 474,
+  "original_vertices": 1896,
+  "new_rail_faces_outward": 595,
+  "new_hinge_faces_outward": 68,
+  "original_bounds_equal": true,
+  "overlay_sha256": "1194bd5d3504ded9fc6435bc46cd8e60ab55ff16a6223eddad24041422eb97df",
+  "qualification": "Static original-face/bounds and nondegenerate outward-normal audit; native view review and author acceptance remain separate."
+}

@@ -1464,3 +1464,15 @@ assets/validation_v5_17_116/*.py text eol=lf diff
 assets/validation_v5_17_116/*.zs text eol=lf diff
 assets/validation_v5_17_116/*.json text eol=lf diff
 assets/validation_v5_17_116/*.txt text eol=lf diff
+
+# Exact house joinery candidate evidence (#878).
+assets/validation_v5_17_117/** -text -diff
+assets/validation_v5_17_117/*.py text eol=lf diff
+assets/validation_v5_17_117/*.zs text eol=lf diff
+assets/validation_v5_17_117/*.json text eol=lf diff
+assets/validation_v5_17_117/*.txt text eol=lf diff
+
+# Stable joinery source bytes for reproducible provenance.
+assets/generators/build_house_joinery_review.py text eol=lf
+assets/source/art/house_joinery_878/*.json text eol=lf
+assets/source/art/house_joinery_878/*.html text eol=lf

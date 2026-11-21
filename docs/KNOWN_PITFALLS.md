@@ -4,6 +4,34 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-273 - Audit model detail normals, native material surfaces and visibility
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED diagnostic proposal, #878 / 5.17.117,
+2026-11-21, GZDoom4.14.2. Evidence: assets/validation_v5_17_117. Author acceptance pending.
+
+New rail boxes need consistent outward winding on both horizontal axes and both
+exterior signs. DontCullBackFaces makes reversed polygons visible but does not fix
+their lighting normals. Check each nondegenerate face normal against its rail center;
+avoid coplanar overlapping rail/stile fronts. Retain old source geometry separately.
+The final joinery audit checks 595 rail faces and 68 hinge plates without altering
+the original 474 faces. Existing texture-field UVs can select wood without copying
+door handles; native OBJ FixUV flips V, so preserve that convention when selecting pixels.
+
+GZDoom's OBJ loader creates a new surface at each usemtl section, even when the
+material name repeats. Count sections as well as unique materials, triangles and
+instances. Grouping this opaque candidate by material yields three sections instead
+of the original36, while triangles increase948 to2274. This alone proves no frame-time
+gain. Never regroup transparent draw order without reviewing its semantics.
+
+A model actor at the center of a large opaque building can be positioned correctly
+yet disappear from a nearby street. Verify native actor coordinates and original
+art before blaming the new mesh. A larger RenderRadius expands native render-sector
+linkage beyond the collision radius; a radius781 private subclass restores the sampled house19 facade and
+house20 cornice for both models. This hypothesis is proven only in a diagnostic
+fixture here. #879 owns production bounds, save migration/rollback and performance.
+Report fixture overrides prominently; still images do not establish full-map visibility.
+
+
 ## CA-KP-272 - Verify native vault planes, inherited sector indices and fixture bodies
 
 Status/evidence: ENGINE-VERIFIED private candidate, #875 / 5.17.116, 2026-11-21,

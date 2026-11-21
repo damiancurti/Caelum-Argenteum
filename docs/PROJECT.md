@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.116** - 2026-11-21.
+Documentation version: **5.17.117** - 2026-11-21.
+
+## 5.17.117 - Review timber joinery on existing Barracas house facades (#878, #463)
+
+An opt-in model-only proposal adds closed timber leaves, rails/stiles and small
+iron hinge plates to the existing house window panels. The 160 house placements,
+production model and operational doors remain unchanged. Final review will include
+the native comparison gallery and explicit mesh cost. Existing facade visibility
+can fail near a building; #879 owns its separately verified correction before the
+final consolidated terminal. #463 furnishing and wider environment work remain open.
 
 ## 5.17.116 - Review native sewer vaults with preserved passage minima (#875, #463)
 

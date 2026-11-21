@@ -1,0 +1,14 @@
+[
+  {
+    "control": "street-control01",
+    "candidate": "street-candidate01",
+    "states_equal": true,
+    "census_equal": true
+  },
+  {
+    "control": "siege-control01",
+    "candidate": "siege-candidate01",
+    "states_equal": true,
+    "census_equal": true
+  }
+]
