@@ -1,6 +1,115 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.113** - 2026-11-21.
+Documentation version: **5.17.114** - 2026-11-21.
+
+## 5.17.114 - Grow the derived contamination surface index (#871, #454)
+
+Production delivery: CaelumContaminationMap retains the original hash arithmetic
+and exact five-field key comparison, using the current bucket capacity as divisor.
+Index starts at 1,024 and doubles at integer load four. It only rewrites existing
+Buckets/Next derived links, preserving all authoritative fields, tile identities,
+creation defaults and last-inserted duplicate precedence. No primary-state schema,
+SURFACE_REVISION, actor population, cadence, balance, physiology or asset changes.
+
+The initial dry-thermal hypothesis was rejected after narrowing the measured cost.
+All 76,400 sampled moisture slots were dry, but IntegrateStep accounted for only
+0.1701/0.1063 ms per sampled tic for Mandinga/defender families. NPCStep includes
+contamination maintenance (1.0764/0.4835 ms). Separate nested probes locate
+NPCContact (0.4154/0.3905 ms), FloorTile (0.1490/0.1439 ms) and, in a further
+index probe, Find (0.1518/0.1488 ms of FloorTile 0.1602/0.1586 ms). These are
+overhead-bearing inclusive samples from separate runs; do not add them as a CPU
+budget. The probes sample 42 tics at period 17. All four diagnostic windows retain
+the same observed siege census/state. No thermal arithmetic or shelter reuse was
+integrated: later shelter overrides are not interchangeable with raw geometry.
+
+A post-window snapshot contains 62,253 unique current-map keys. Calculated uniform
+successful-key depth falls from mean 31.2043 / p95 60 / p99 67 at 1,024 buckets to
+2.7750 / 6 / 7 at 16,384; maximum chain falls from 86 to 11. These are calculated
+key distributions, not measured per-query traversal counts. Integer payload grows
+from 4 to 64 KiB at this size; allocator overhead is excluded. Growth remains
+proportional to accumulated zones, with no deletion/cap or global actor scan.
+
+The native oracle retains the original map class from immutable 5.17.113. It checks
+every actual key, 12 additional absent/extreme signed keys, repeated creation,
+default fields, map metadata, duplicate order, explicit rebuild and saved reference
+identity. Rebuild checks revisit all prior tile values. Alternating lookup rounds
+test both call orders, with unchanged-code and small-table controls. Seven passing
+runs total 187,079 assertions; full-array checks traverse
+all 62,265 records but count as one assertion each. Benchmark loops also verify
+each returned identity. Native saves are detached fixture objects, not campaign
+save or author acceptance. Upgrade, reload, rollback and re-upgrade are exercised.
+
+| Native run | Assertions | Original / candidate ms per 498,120 reads | Buckets |
+| --- | ---: | ---: | ---: |
+| baseline05 | 62332 | 402.6268 / 392.3273 | 1024 |
+| fresh01 | 62336 | 412.3307 / 74.2760 | 16384 |
+| upgrade01 | 18 | 376.4437 / 56.8888 | 16384 |
+| reload01 | 18 | 376.9191 / 58.1080 | 16384 |
+| rollback01 | 18 | 409.6579 / 427.7983 | 1024 |
+| final-fresh01 | 62339 | 388.9150 / 76.3641 | 16384 |
+| final-upgrade01 | 18 | 361.3084 / 53.0385 | 16384 |
+
+The final fresh run adds creation/rebuild timing: 1,024->2,048 at 4,097 resulting
+tiles takes 0.0451 ms; the largest observed growth,
+8,192->16,384 at 32,769 resulting tiles, takes 0.8781 ms.
+The triggering Find rebuilds the pre-insertion population. Final old-save first
+lookup rebuilds 62,265 records from 1,024 to
+16,384 buckets in 2.7425 ms; subsequent lookups retain capacity.
+These single cold observations include lookup/timer overhead and are not bounds
+for arbitrary future maps. Final small-table checks use 16/512/4,096 tiles and
+500,000 lookups each; exact raw results remain in native-checks.json. Small maps
+retain the initial allocation; the 4,096-tile warmed index grows to 2,048 buckets.
+
+Four unsuccessful fixture attempts remain separately retained: baseline01 used
+reserved local identifier map; baseline02 used a bool constant rejected by this
+engine's constant parser; baseline03 shadowed Actual with local actual in the
+case-insensitive language. Corrected names and integer flags compile. baseline04
+passed assertions but did not produce the required save, so it is not a passing
+persistence run. Longer command waits produced native saves; the exact reason for
+the short-wait failure was not isolated. The runner now rejects missing saves,
+constant-definition errors, VM failures and timeouts, and terminates only its own
+native process. No failed attempt contributes to passing totals.
+
+Final runtime SHA256: ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55.
+Baseline 5.17.113 SHA256: 3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a.
+Of 18,767 package members, 18,764 match
+byte-for-byte. The surface source exactly matches the private candidate; the other
+two changes are release log labels. No diagnostic wrappers enter production.
+Final fresh and re-upgrade checks use this actual package, not only an overlay.
+
+| Scene / runtime | Queue presents/s | Present mean / p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| siege-control01 | 1.847441 | 541.289 / 601.245 / 617.318 / 617.318 | 31.704 / 47.916 / 52.208 / 63.594 |
+| siege-candidate01 | 2.127524 | 470.030 / 532.842 / 547.854 / 547.854 | 29.372 / 44.472 / 48.745 / 61.584 |
+| siege-final01 | 1.894575 | 527.823 / 626.111 / 686.077 / 686.077 | 31.127 / 46.937 / 51.804 / 66.473 |
+| mansion-control01 | 69.339842 | 14.422 / 16.670 / 17.730 / 19.960 | 28.588 / 38.230 / 40.792 / 43.028 |
+| mansion-final01 | 68.038750 | 14.698 / 17.005 / 18.265 / 20.245 | 28.568 / 36.275 / 40.837 / 42.906 |
+| sewers-control01 | 162.788256 | 6.143 / 7.681 / 8.479 / 40.178 | 28.568 / 33.265 / 34.777 / 46.011 |
+| sewers-final01 | 162.302370 | 6.161 / 7.755 / 8.614 / 41.584 | 28.574 / 33.096 / 34.208 / 47.330 |
+| city-control01 | 101.860105 | 9.817 / 11.347 / 12.830 / 14.568 | 28.563 / 35.077 / 36.438 / 38.279 |
+| city-final01 | 97.492119 | 10.257 / 11.706 / 12.526 / 14.228 | 28.572 / 34.849 / 36.761 / 38.412 |
+| ground-control01 | 71.328586 | 14.020 / 16.230 / 17.605 / 19.311 | 28.571 / 37.957 / 40.893 / 41.922 |
+| ground-final01 | 73.023505 | 13.694 / 15.806 / 17.035 / 18.041 | 28.583 / 38.504 / 41.602 / 43.450 |
+
+Controls use 5.17.113; candidate uses that same runtime plus the private overlay;
+final uses production 5.17.114. Each peaceful scene has a fresh paired control.
+The three siege windows retain 601 defenders, 988 attackers, population 1,590,
+parked 0, dense 1, aggregate health 1,421,137; player health 1,248 at
+(-4352,-14016,0), tics 3599..4299. Recorded state/census agree within each scene
+pair; this is narrower than proof of every hidden world field. Earlier 5.17.110
+peaceful references are retained with their original labels, not relabeled runs.
+
+Windows 11 / Ryzen 9 5950X / RTX 3070 Ti, official GZDoom 4.14.2, Vulkan 1280x720,
+unpaused background, 5% audio, one engine at a time and no competing build/validator.
+QueuePresent is not monitor scanout. Tic intervals include pacing/frame work;
+lookup microtimings do not establish whole-scene fluency. The siege is still slow;
+the final whole-scene difference is small, and the earlier overlay gain does not
+reproduce consistently. These observations do not establish a stable speedup
+percentage. No retired
+6,000-attacker case ran. Final siege and sewer captures were inspected.
+
+Evidence: assets/validation_v5_17_114; reusable lesson CA-KP-270. pending_test.txt
+is unchanged, with no author acceptance. Full project validation passes with no errors; the document index is current. The batch and its final consolidated author terminal remain open.
 
 ## 5.17.113 - Measure the full siege frame and identify actor costs (#870, #454)
 

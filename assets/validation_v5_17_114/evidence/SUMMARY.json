@@ -1,0 +1,30 @@
+{
+  "issue": 871,
+  "release": "5.17.114",
+  "production_change": "Derived surface index only; two release labels",
+  "runtime": {
+    "issue": 871,
+    "release": "5.17.114",
+    "runtime_sha256": "ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55",
+    "baseline_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+    "members": 18767,
+    "identical_members": 18764,
+    "changed_members": [
+      "caelum/survival/CaelumContaminationSurface.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "surface_sha256": "a5a452ac7da4c49cfb7b3222cb522a96369800ad3b7da59bd040a116bf5c37fd",
+    "surface_matches_prototype": true
+  },
+  "passed_native_runs": 7,
+  "assertions": 187079,
+  "failed_attempts": 4,
+  "scene_windows": 11,
+  "diagnostic_windows": 4,
+  "save_schema_changed": false,
+  "author_queue_unchanged": true,
+  "author_acceptance": false,
+  "full_validation": "passed with no errors",
+  "qualification": "Measured lookup improvement with preserved individual state. Native detached fixture save/reversal and campaign observer equality are narrower than author/campaign-save acceptance. Siege fluency and broader batch remain open."
+}

@@ -1,0 +1,290 @@
+class CaelumThermalShelter : Object play
+{
+    static bool Roof(Actor body)
+    {
+        if(CaelumThermalWorld.UnderRoof(body))return true;
+        FLineTraceData hit;
+        double z=body.Pos.Z+body.Height*0.75;
+        bool found=body.LineTrace(0,65536,-90,TRF_THRUACTORS|TRF_ABSPOSITION|TRF_NOSKY,
+            z,body.Pos.X,body.Pos.Y,hit);
+        return found && hit.HitType!=FLineTraceData.TRACE_HasHitSky;
+    }
+
+    static bool SameWall(Line a,Line b)
+    {
+        if(a==b)return true;
+        vector2 da=a.delta,db=b.delta,offset=b.v1.p-a.v1.p;
+        double length=Max(0.001,da.Length());
+        return Abs(da.X*db.Y-da.Y*db.X)<=0.001*length*Max(0.001,db.Length())
+            && Abs(da.X*offset.Y-da.Y*offset.X)<=0.01*length;
+    }
+
+    static bool Connected(Line a,Line b)
+    {
+        return (a.v1.p-b.v1.p).Length()<0.01 || (a.v1.p-b.v2.p).Length()<0.01
+            || (a.v2.p-b.v1.p).Length()<0.01 || (a.v2.p-b.v2.p).Length()<0.01;
+    }
+
+    static bool WindBlocked(Actor body)
+    {
+        // UnderRoof reconoce el volumen geométrico del rancho de tres paredes;
+        // sus colisiones son actores y por eso no aparecen como HitLine.
+        if(CaelumThermalWorld.UnderRoof(body))return true;
+        Line walls[8];int count=0;
+        double z=body.Pos.Z+body.Height*0.5;
+        for(int direction=0;direction<CaelumThermalData.SHELTER_RAYS;direction++)
+        {
+            FLineTraceData hit;
+            if(!body.LineTrace(direction*360.0/CaelumThermalData.SHELTER_RAYS,
+                CaelumThermalData.SHELTER_RANGE_MU,0,TRF_THRUACTORS|TRF_ABSPOSITION|TRF_NOSKY,
+                z,body.Pos.X,body.Pos.Y,hit) || hit.HitLine==null)continue;
+            bool duplicate=false;
+            for(int i=0;i<count;i++)if(SameWall(walls[i],hit.HitLine)){duplicate=true;break;}
+            if(!duplicate)walls[count++]=hit.HitLine;
+        }
+        // Tres segmentos arbitrarios no bastan: deben formar un recinto local
+        // conectado. Se cuentan planos distintos, no subdivisiones de una pared.
+        // En un grafo no dirigido hay un componente de al menos tres planos
+        // si y sólo si algún plano tiene dos vecinos distintos. Cada par se
+        // comprueba una sola vez; los ocho trazados y sus filtros no cambian.
+        int neighbors[8];
+        for(int first=0;first<count;first++)for(int second=first+1;second<count;second++)
+        {
+            if(!Connected(walls[first],walls[second]))continue;
+            neighbors[first]++;neighbors[second]++;
+            if(neighbors[first]>=2 || neighbors[second]>=2)return true;
+        }
+        return false;
+    }
+}
+
+// Caché de referencia climática compartida; nunca posee el estado de un cuerpo.
+class CaelumThermalWorld : StaticEventHandler
+{
+    CaelumWeatherState ReferenceWeather;
+    CaelumWorldClock ReferenceClock;
+    CaelumCalendarState ReferenceCalendar;
+    CaelumWeatherState SampleSource;
+    CaelumWeatherSample Samples[5];
+    int SampleDate,SampleMinute,SampleSeed,SampleProfile,SampleRegion;
+    int NextPhase;
+    Array<CaelumThermalFireSource> FireSources;
+    Array<CaelumVehicleRanch> Ranches;
+    int FireSampleTic;
+    bool HasThermalSurfaces;
+    override void WorldUnloaded(WorldEvent e)
+    {
+        // Un censo tipado por transición, acotado a la población nativa.
+        // Cada cuerpo posee su registro; no hay búsquedas por NPC ni por tic.
+        CaelumPlayer user;
+        for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)
+        {user=CaelumPlayer(players[i].mo);break;}
+        if(user==null)return;
+        Array<CaelumCombatActor> thieves;
+        let actors=ThinkerIterator.Create('CaelumCombatActor',Thinker.STAT_DEFAULT);CaelumCombatActor body;
+        while((body=CaelumCombatActor(actors.Next()))!=null)
+        {
+            CaelumContaminationAbsence.Capture(body,user);
+            if(body.AbsentTheft!=null)thieves.Push(body);
+        }
+        CaelumAbsentBattles.Capture(user);
+        CaelumTheftWorld.Capture(user,thieves);
+    }
+    override void WorldLoaded(WorldEvent e)
+    {
+        ReferenceWeather=null;ReferenceClock=null;ReferenceCalendar=null;NextPhase=0;FireSources.Clear();Ranches.Clear();FireSampleTic=-TICRATE;
+        // Censo tipado sólo al cargar; las fuentes nuevas usan eventos nativos.
+        let fires=ThinkerIterator.Create('CaelumThermalFireSource');CaelumThermalFireSource fire;
+        while((fire=CaelumThermalFireSource(fires.Next()))!=null)RegisterFire(fire);
+        SampleSource=null;for(int i=0;i<5;i++)Samples[i]=null;
+        // Una lectura de los sectores al cargar identifica mapas con catálogo
+        // térmico. No recorre actores ni agrega consultas por tic a mapas ajenos.
+        HasThermalSurfaces=false;
+        for(int i=0;i<level.Sectors.Size();i++)
+            if(CaelumThermalSurfaceData.Valid(level.Sectors[i].GetUDMFInt('user_ca_thermal_surface')))
+            {HasThermalSurfaces=true;break;}
+        // #502 restaura contaminación/enfermedad en el primer Tick del cuerpo.
+        // Reiniciar los demás relojes térmicos evita cobrar el intervalo dos veces.
+        if(e.IsReopen && !e.IsSaveGame)
+        {
+            CaelumPlayer user;
+            for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)
+            {user=CaelumPlayer(players[i].mo);break;}
+            if(CaelumAbsentArrival.Begin(user))return;
+            CaelumAbsentBattles.Restore(user);
+            let actors=ThinkerIterator.Create("CaelumCombatActor");CaelumCombatActor body;
+            while((body=CaelumCombatActor(actors.Next()))!=null)
+            {
+                // Resolver cuerpos del hub mientras todavía se carga el mapa,
+                // reutilizando este censo, antes del primer fotograma jugable.
+                // Los residentes viajeros se restauran en Resume, ya colocados.
+                let defender=CaelumPortDefender(body);
+                if(defender==null || defender.Residence==null || !defender.Residence.Suspended)
+                    CaelumContaminationAbsence.Restore(body,user);
+                if(body.ThermalState!=null)
+                {
+                    body.ThermalState.RuntimeReady=false;body.ThermalState.SourceMap="";
+                    body.ThermalState.PendingActivityJoules=0;body.ThermalState.PropelledVelocity=(0,0);
+                }
+            }
+        }
+    }
+    CaelumWeatherSample LocalSample(CaelumWeatherState weather,int shelter)
+    {
+        if(SampleSource!=weather || SampleDate!=weather.SampleDate || SampleMinute!=weather.SampleMinute
+            || SampleSeed!=weather.Seed || SampleProfile!=weather.Profile || SampleRegion!=weather.Region)
+        {
+            SampleSource=weather;SampleDate=weather.SampleDate;SampleMinute=weather.SampleMinute;
+            SampleSeed=weather.Seed;SampleProfile=weather.Profile;SampleRegion=weather.Region;
+            for(int i=0;i<5;i++)
+            {
+                if(Samples[i]==null)Samples[i]=new("CaelumWeatherSample");
+                Samples[i].ApplyShelter(weather.Outside,i,weather.Profile);
+            }
+        }
+        return Samples[Clamp(shelter,0,4)];
+    }
+    void RegisterFire(CaelumThermalFireSource fire)
+    {if(fire!=null && FireSources.Find(fire)==FireSources.Size())FireSources.Push(fire);}
+    void ForgetFire(CaelumThermalFireSource fire)
+    {int i=FireSources.Find(fire);if(i<FireSources.Size())FireSources.Delete(i);}
+    override void WorldTick()
+    {
+        ReferenceWeather=null;ReferenceClock=null;ReferenceCalendar=null;
+        if(level.maptime-FireSampleTic>=TICRATE || FireSampleTic>level.maptime)
+        {
+            FireSampleTic=level.maptime;
+            Ranches.Clear();let roofs=ThinkerIterator.Create("CaelumVehicleRanch");CaelumVehicleRanch ranch;
+            while((ranch=CaelumVehicleRanch(roofs.Next()))!=null)Ranches.Push(ranch);
+        }
+        for(int i=0;i<MAXPLAYERS;i++)
+        {
+            if(!playeringame[i])continue;
+            let user=CaelumPlayer(players[i].mo);
+            if(!CaelumPlayerAuthority.CanMutate(user) || !user.CharacterCreationComplete || user.CreationWizardOpen)continue;
+            ReferenceWeather=CaelumWeatherState.Get(user);
+            ReferenceClock=CaelumWorldClock.Get(user);
+            ReferenceCalendar=CaelumCalendarState.Get(user);
+            if(ReferenceWeather!=null)return;
+        }
+    }
+    static bool UnderRoof(Actor body)
+    {
+        let world=Get();
+        if(world==null)return CaelumVehicleWorld.UnderRoof(body);
+        for(int i=0;i<world.Ranches.Size();i++)if(world.Ranches[i]!=null && world.Ranches[i].Covers(body))return true;
+        return false;
+    }
+    static CaelumThermalWorld Get()
+    {return CaelumThermalWorld(StaticEventHandler.Find("CaelumThermalWorld"));}
+}
+
+class CaelumThermalEnvironment : Object play
+{
+    static int ClimateShelter(int profile,bool roof,bool windSheltered)
+    {
+        if(profile==CaelumWeatherRules.PROFILE_LIMBO)return CaelumWeatherRules.LIMBO;
+        if(roof && profile>=2 && profile<=4)return CaelumWeatherRules.UNDERGROUND;
+        if(roof)return windSheltered ? CaelumWeatherRules.INDOOR : CaelumWeatherRules.CANOPY;
+        return CaelumWeatherRules.OPEN;
+    }
+    // Propiedades UDMF del volumen/modelo: user_ca_water_temperature_defined=1
+    // y user_ca_water_temperature_c. Permiten expresar también cero grados.
+    static double WaterTemperature(Sector volume,double fallback)
+    {
+        return volume!=null && volume.GetUDMFInt('user_ca_water_temperature_defined')!=0
+            ? volume.GetUDMFFloat('user_ca_water_temperature_c') : fallback;
+    }
+
+    static double SampleWater(Actor body,CaelumThermalState thermal,double fallback)
+    {
+        thermal.WaterC=fallback;thermal.WaterRowMask=0;
+        thermal.DirtyWaterRowMask=0;thermal.CleanWaterRowMask=0;thermal.DynamicContactWater=false;thermal.WaterContactReady=true;
+        if(body.CurSector==null)return 0;
+        Sector sector=body.CurSector;
+        let height=sector.GetHeightSec();
+        if(height==null && sector.Get3DFloorCount()==0 && body.WaterLevel<=0)return 0;
+        int count=CaelumThermalData.SURFACE_SAMPLES,wetRows=0;
+        double totalTemperature=0;
+        bool contaminationSupported=CaelumPlayer(body)!=null;
+        let connected=contaminationSupported ? CaelumConnectedWaterMap.Get() : null;
+        for(int row=0;row<count;row++)
+        {
+            double z=body.Pos.Z+body.Height*(row+0.5)/count;
+            bool wet=height!=null && z<=height.floorplane.ZatPoint(body.Pos.XY);
+            double temperature=wet ? WaterTemperature(height,fallback) : fallback;
+            Sector waterSource=wet ? height : sector;
+            if(connected!=null && height!=null && connected.Index(height)>=0)thermal.DynamicContactWater=true;
+            bool described=height!=null;
+            for(int i=0;i<sector.Get3DFloorCount();i++)
+            {
+                let volume=sector.Get3DFloor(i);
+                if(volume==null || (volume.flags&(F3DFloor.FF_EXISTS|F3DFloor.FF_SWIMMABLE))
+                    !=(F3DFloor.FF_EXISTS|F3DFloor.FF_SWIMMABLE))continue;
+                described=true;
+                if(connected!=null && connected.Index(volume.model)>=0)thermal.DynamicContactWater=true;
+                if(z>=volume.bottom.ZatPoint(body.Pos.XY) && z<=volume.top.ZatPoint(body.Pos.XY))
+                {wet=true;temperature=WaterTemperature(volume.model,fallback);waterSource=volume.model;}
+            }
+            // Sólo una inmersión sin geometría de volumen usa el respaldo total.
+            if(!described && body.WaterLevel>=3)wet=true;
+            thermal.WaterRowC[row]=temperature;
+            if(wet)
+            {
+                thermal.WaterRowMask|=1<<row;wetRows++;totalTemperature+=temperature;
+                int quality=contaminationSupported ? CaelumWaterQuality.Volume(waterSource,sector) : CaelumWaterQuality.UNIDENTIFIED;
+                if(CaelumWaterQuality.Valid(quality) && (quality&(CaelumWaterQuality.BIOLOGICAL|CaelumWaterQuality.CHEMICAL))!=0)
+                    thermal.DirtyWaterRowMask|=1<<row;
+                if(quality==CaelumWaterQuality.POTABLE)thermal.CleanWaterRowMask|=1<<row;
+            }
+        }
+        if(wetRows>0)thermal.WaterC=totalTemperature/wetRows;
+        return double(wetRows)/count;
+    }
+
+    static bool Sample(Actor body,CaelumThermalState thermal,double localMotionMps=0)
+    {
+        let ca871Probe=CA871ThermalProbe.FindSample();
+        int ca871Family=ca871Probe!=null?CA871ThermalProbe.Family(body):0;
+        
+        double ca871Start=ca871Probe!=null?MSTimeF():0;
+        let ca871Result=CA871Original5(body,thermal,localMotionMps);
+        if(ca871Probe!=null)ca871Probe.Record(ca871Family*10+5,ca871Start);
+        
+        return ca871Result;
+    }
+    static bool CA871Original5(Actor body,CaelumThermalState thermal,double localMotionMps=0)
+    {
+        CaelumThermalCoefficients.Get(thermal).EnvironmentSamples++;
+        let user=CaelumPlayer(body);
+        let world=CaelumThermalWorld.Get();
+        let weather=user!=null ? CaelumWeatherState.Get(user) : world!=null ? world.ReferenceWeather : null;
+        if(weather==null || weather.Outside==null || !weather.Outside.Available)
+        {thermal.Available=false;return false;}
+        thermal.Roof=CaelumThermalShelter.Roof(body);
+        thermal.WindSheltered=CaelumThermalShelter.WindBlocked(body);
+        int shelter=ClimateShelter(weather.Profile,thermal.Roof,thermal.WindSheltered);
+        CaelumWeatherSample local;
+        if(world!=null)local=world.LocalSample(weather,shelter);
+        else {local=new("CaelumWeatherSample");local.ApplyShelter(weather.Outside,shelter,weather.Profile);}
+        thermal.Available=local.Available;thermal.AirC=local.AirTemperatureC;
+        thermal.ClimateC=local.AirTemperatureC;thermal.Humidity=local.RelativeHumidityPercent;
+        thermal.RainMmHour=thermal.Roof ? 0 : local.PrecipitationMmPerHour;
+        thermal.SealClimateRevision=CaelumSealClimateData.REVISION;
+        thermal.AmbientAirC=local.AirTemperatureC;thermal.AmbientHumidity=local.RelativeHumidityPercent;
+        thermal.AmbientWindKmh=thermal.WindSheltered ? 0 : local.WindSpeedKmh;
+        if(CaelumCampShelter.Find(body)!=null)
+        {
+            thermal.Roof=true;thermal.RainMmHour=0;
+            thermal.AmbientWindKmh*=CaelumCampData.TENT_WIND_FACTOR;
+        }
+        double exterior=thermal.AmbientWindKmh/3.6;
+        // Suma cuadrática de magnitudes: aproximación local sin rumbo corporal.
+        thermal.WindMps=Sqrt(exterior*exterior+localMotionMps*localMotionMps);
+        double immersed=SampleWater(body,thermal,local.GroundTemperatureC);
+        CaelumThermalBody.SampleCoverage(body,thermal,immersed,thermal.WaterRowMask);
+        CaelumSealClimate.ApplyThermal(body,thermal);
+        thermal.LastEnvironmentTic=level.maptime;thermal.SourceMap=level.MapName;
+        return true;
+    }
+}

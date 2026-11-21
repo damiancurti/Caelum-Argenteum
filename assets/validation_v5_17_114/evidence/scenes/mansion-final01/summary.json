@@ -1,0 +1,54 @@
+{
+  "label": "mansion-final01",
+  "directory": "build/v516/barracas-profile-20261121-045324-210301",
+  "runtime_sha256": "ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55",
+  "overlays": [],
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "states": [
+    "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=8 dense=0",
+    "CA435PERF STATE slot=0 health=1248 pos=-1600.000000,0.000000,-0.000000",
+    "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=8 dense=0",
+    "CA435PERF STATE slot=0 health=1248 pos=-1600.000000,0.000000,-0.000000"
+  ],
+  "census": [
+    "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+    "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+  ],
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 28.567653285714286,
+    "p95_ms": 36.2749,
+    "p99_ms": 40.8372,
+    "max_ms": 42.9064
+  },
+  "presentation": {
+    "pid": 49716,
+    "trace_sha256": "54f4904457af55d720d69b0b6637d481ffa29d8f60fe4fa4e76a71eeb19b4374",
+    "rows": 2176,
+    "scene_presents": 1196,
+    "mean_present_fps": 68.03874956525644,
+    "present_intervals": {
+      "samples": 1195,
+      "mean_ms": 14.69750702929796,
+      "p50_ms": 14.601200103759766,
+      "p95_ms": 17.005200028419495,
+      "p99_ms": 18.264999985694885,
+      "max_ms": 20.245499968528748
+    },
+    "native_call_duration": {
+      "samples": 1196,
+      "mean_ms": 0.18082366260796487,
+      "p50_ms": 0.17420005798339844,
+      "p95_ms": 0.2380000352859497,
+      "p99_ms": 0.3140000104904175,
+      "max_ms": 0.8178000450134277
+    }
+  }
+}

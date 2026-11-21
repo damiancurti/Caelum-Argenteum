@@ -1,0 +1,50 @@
+Campaign peers started: C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\v516\barracas-profile-20261121-044458-738060
+{
+  "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\v516\\barracas-profile-20261121-044458-738060",
+  "passed": true,
+  "peers": [
+    {
+      "slot": 0,
+      "pid": 52816,
+      "exit_code": 0,
+      "window": {
+        "BEGIN": {
+          "utc": "2026-11-21T07:46:52.164611+00:00",
+          "qpc_ms": 861525155.0933
+        },
+        "END": {
+          "utc": "2026-11-21T07:47:12.757114+00:00",
+          "qpc_ms": 861545747.3058
+        }
+      },
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 29.37151242857143,
+        "p95_ms": 44.4719,
+        "p99_ms": 48.7451,
+        "max_ms": 61.5845
+      },
+      "render_callbacks": {
+        "samples": 38,
+        "mean_ms": 470.5628947368421,
+        "p95_ms": 526.61,
+        "p99_ms": 533.5445,
+        "max_ms": 548.0221
+      },
+      "states": [
+        "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+        "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+        "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+      ],
+      "census": [
+        "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+        "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+      ],
+      "scopes": [],
+      "native_sync": true,
+      "passed": true,
+      "complete_window": true
+    }
+  ]
+}

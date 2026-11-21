@@ -1,0 +1,7963 @@
+{
+  "issue": 871,
+  "directory": "build/v516/barracas-profile-20261121-040848-340575",
+  "runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "manifest": {
+    "issue": 871,
+    "runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+    "overlay_sha256": "ebaf5a61672ffe26210ad5ed2b910af4cca783c10cffcdf1de52061520b53734",
+    "originals_restored_exactly": {
+      "caelum/survival/CaelumThermalRuntime.zs": "fbb3936ca2d205d1baaa6329ff1bcf0c326d87af7ce2df025e5cfebb8e706904",
+      "caelum/survival/CaelumThermalService.zs": "e850961e98aea979c3e88ec32ade73a9dfcda08e8093ddcbb5e934cacd5f842e",
+      "caelum/survival/CaelumThermalBody.zs": "066443c40e9ccfd7b908bd107bb7958ff5437c558279e452807327ed7e861a26",
+      "caelum/survival/CaelumThermalEnvironment.zs": "5b0c5a25cef8adc120cc060a10e21fe23bb0791701dba1d9b7b8cf94da3dda80",
+      "caelum/survival/CaelumContaminationNPC.zs": "70dec1f6e8c441259c6690d7e215fee1dd5b03c24a04dd876ec45c6fead0f222",
+      "caelum/survival/CaelumThermalCoefficients.zs": "ac9a6d0f64d08b4ef7c1098eb2fab1af60f3842245e106042c8a28d177a8c682"
+    },
+    "metrics": [
+      {
+        "id": 0,
+        "family": "Mandinga",
+        "stage": "CaelumThermalRuntime.zs:NPCStep"
+      },
+      {
+        "id": 1,
+        "family": "Mandinga",
+        "stage": "CaelumThermalService.zs:Advance"
+      },
+      {
+        "id": 2,
+        "family": "Mandinga",
+        "stage": "CaelumThermalService.zs:Integrate"
+      },
+      {
+        "id": 3,
+        "family": "Mandinga",
+        "stage": "CaelumThermalService.zs:IntegrateStep"
+      },
+      {
+        "id": 4,
+        "family": "Mandinga",
+        "stage": "CaelumThermalBody.zs:Refresh"
+      },
+      {
+        "id": 5,
+        "family": "Mandinga",
+        "stage": "CaelumThermalEnvironment.zs:Sample"
+      },
+      {
+        "id": 6,
+        "family": "Mandinga",
+        "stage": "CaelumContaminationNPC.zs:Step"
+      },
+      {
+        "id": 7,
+        "family": "Mandinga",
+        "stage": "CaelumThermalCoefficients.zs:Prepare"
+      },
+      {
+        "id": 8,
+        "family": "Mandinga",
+        "stage": "eligible-dry-slots"
+      },
+      {
+        "id": 9,
+        "family": "Mandinga",
+        "stage": "fallback-slots"
+      },
+      {
+        "id": 10,
+        "family": "PortDefender",
+        "stage": "CaelumThermalRuntime.zs:NPCStep"
+      },
+      {
+        "id": 11,
+        "family": "PortDefender",
+        "stage": "CaelumThermalService.zs:Advance"
+      },
+      {
+        "id": 12,
+        "family": "PortDefender",
+        "stage": "CaelumThermalService.zs:Integrate"
+      },
+      {
+        "id": 13,
+        "family": "PortDefender",
+        "stage": "CaelumThermalService.zs:IntegrateStep"
+      },
+      {
+        "id": 14,
+        "family": "PortDefender",
+        "stage": "CaelumThermalBody.zs:Refresh"
+      },
+      {
+        "id": 15,
+        "family": "PortDefender",
+        "stage": "CaelumThermalEnvironment.zs:Sample"
+      },
+      {
+        "id": 16,
+        "family": "PortDefender",
+        "stage": "CaelumContaminationNPC.zs:Step"
+      },
+      {
+        "id": 17,
+        "family": "PortDefender",
+        "stage": "CaelumThermalCoefficients.zs:Prepare"
+      },
+      {
+        "id": 18,
+        "family": "PortDefender",
+        "stage": "eligible-dry-slots"
+      },
+      {
+        "id": 19,
+        "family": "PortDefender",
+        "stage": "fallback-slots"
+      },
+      {
+        "id": 20,
+        "family": "other",
+        "stage": "CaelumThermalRuntime.zs:NPCStep"
+      },
+      {
+        "id": 21,
+        "family": "other",
+        "stage": "CaelumThermalService.zs:Advance"
+      },
+      {
+        "id": 22,
+        "family": "other",
+        "stage": "CaelumThermalService.zs:Integrate"
+      },
+      {
+        "id": 23,
+        "family": "other",
+        "stage": "CaelumThermalService.zs:IntegrateStep"
+      },
+      {
+        "id": 24,
+        "family": "other",
+        "stage": "CaelumThermalBody.zs:Refresh"
+      },
+      {
+        "id": 25,
+        "family": "other",
+        "stage": "CaelumThermalEnvironment.zs:Sample"
+      },
+      {
+        "id": 26,
+        "family": "other",
+        "stage": "CaelumContaminationNPC.zs:Step"
+      },
+      {
+        "id": 27,
+        "family": "other",
+        "stage": "CaelumThermalCoefficients.zs:Prepare"
+      },
+      {
+        "id": 28,
+        "family": "other",
+        "stage": "eligible-dry-slots"
+      },
+      {
+        "id": 29,
+        "family": "other",
+        "stage": "fallback-slots"
+      }
+    ],
+    "period": 17,
+    "dry_condition": "capacity>=0 && fraction>=0 && water==0 && sweat==0 && submerged==0 && (dw<=0 || thermal.Roof || fraction<=0 || thermal.RainMmHour<=0)",
+    "qualification": "Private inclusive call timers and branch counts; no math or production statements changed. Advance temporarily tags nested thermal calls by actor family and restores prior tag; direct forecast/other calls remain other. Counts are observed, not a skipped production branch. Overlapping inclusive timers include wrapper/counter overhead and cannot be summed as CPU budgets."
+  },
+  "sample_tics": [
+    3599,
+    3616,
+    3633,
+    3650,
+    3667,
+    3684,
+    3701,
+    3718,
+    3735,
+    3752,
+    3769,
+    3786,
+    3803,
+    3820,
+    3837,
+    3854,
+    3871,
+    3888,
+    3905,
+    3922,
+    3939,
+    3956,
+    3973,
+    3990,
+    4007,
+    4024,
+    4041,
+    4058,
+    4075,
+    4092,
+    4109,
+    4126,
+    4143,
+    4160,
+    4177,
+    4194,
+    4211,
+    4228,
+    4245,
+    4262,
+    4279,
+    4296
+  ],
+  "summary": [
+    {
+      "id": 0,
+      "family": "Mandinga",
+      "stage": "CaelumThermalRuntime.zs:NPCStep",
+      "mean_sampled_tic_ms": 1.9180309523809524,
+      "maximum_sampled_tic_ms": 2.1524,
+      "calls": 41454,
+      "calls_per_sample": [
+        987,
+        987
+      ]
+    },
+    {
+      "id": 1,
+      "family": "Mandinga",
+      "stage": "CaelumThermalService.zs:Advance",
+      "mean_sampled_tic_ms": 1.3536642857142858,
+      "maximum_sampled_tic_ms": 1.5832,
+      "calls": 1190,
+      "calls_per_sample": [
+        26,
+        30
+      ]
+    },
+    {
+      "id": 2,
+      "family": "Mandinga",
+      "stage": "CaelumThermalService.zs:Integrate",
+      "mean_sampled_tic_ms": 0.21946190476190477,
+      "maximum_sampled_tic_ms": 0.2471,
+      "calls": 1190,
+      "calls_per_sample": [
+        26,
+        30
+      ]
+    },
+    {
+      "id": 3,
+      "family": "Mandinga",
+      "stage": "CaelumThermalService.zs:IntegrateStep",
+      "mean_sampled_tic_ms": 0.17006190476190475,
+      "maximum_sampled_tic_ms": 0.1832,
+      "calls": 11900,
+      "calls_per_sample": [
+        260,
+        300
+      ]
+    },
+    {
+      "id": 4,
+      "family": "Mandinga",
+      "stage": "CaelumThermalBody.zs:Refresh",
+      "mean_sampled_tic_ms": 0.08451904761904762,
+      "maximum_sampled_tic_ms": 0.6502,
+      "calls": 5144,
+      "calls_per_sample": [
+        27,
+        957
+      ]
+    },
+    {
+      "id": 5,
+      "family": "Mandinga",
+      "stage": "CaelumThermalEnvironment.zs:Sample",
+      "mean_sampled_tic_ms": 0.2725309523809524,
+      "maximum_sampled_tic_ms": 0.3822,
+      "calls": 1190,
+      "calls_per_sample": [
+        26,
+        30
+      ]
+    },
+    {
+      "id": 6,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationNPC.zs:Step",
+      "mean_sampled_tic_ms": 1.0763857142857143,
+      "maximum_sampled_tic_ms": 1.282,
+      "calls": 1190,
+      "calls_per_sample": [
+        26,
+        30
+      ]
+    },
+    {
+      "id": 7,
+      "family": "Mandinga",
+      "stage": "CaelumThermalCoefficients.zs:Prepare",
+      "mean_sampled_tic_ms": 0.018783333333333332,
+      "maximum_sampled_tic_ms": 0.0472,
+      "calls": 1190,
+      "calls_per_sample": [
+        26,
+        30
+      ]
+    },
+    {
+      "id": 8,
+      "family": "Mandinga",
+      "stage": "eligible-dry-slots",
+      "mean_sampled_tic_ms": 0.0,
+      "maximum_sampled_tic_ms": 0.0,
+      "calls": 47600,
+      "calls_per_sample": [
+        1040,
+        1200
+      ]
+    },
+    {
+      "id": 9,
+      "family": "Mandinga",
+      "stage": "fallback-slots",
+      "mean_sampled_tic_ms": 0,
+      "maximum_sampled_tic_ms": 0,
+      "calls": 0,
+      "calls_per_sample": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": 10,
+      "family": "PortDefender",
+      "stage": "CaelumThermalRuntime.zs:NPCStep",
+      "mean_sampled_tic_ms": 1.1093857142857142,
+      "maximum_sampled_tic_ms": 1.497,
+      "calls": 25242,
+      "calls_per_sample": [
+        601,
+        601
+      ]
+    },
+    {
+      "id": 11,
+      "family": "PortDefender",
+      "stage": "CaelumThermalService.zs:Advance",
+      "mean_sampled_tic_ms": 0.6735571428571429,
+      "maximum_sampled_tic_ms": 0.9556,
+      "calls": 720,
+      "calls_per_sample": [
+        14,
+        20
+      ]
+    },
+    {
+      "id": 12,
+      "family": "PortDefender",
+      "stage": "CaelumThermalService.zs:Integrate",
+      "mean_sampled_tic_ms": 0.14036428571428572,
+      "maximum_sampled_tic_ms": 0.1823,
+      "calls": 720,
+      "calls_per_sample": [
+        14,
+        20
+      ]
+    },
+    {
+      "id": 13,
+      "family": "PortDefender",
+      "stage": "CaelumThermalService.zs:IntegrateStep",
+      "mean_sampled_tic_ms": 0.1062952380952381,
+      "maximum_sampled_tic_ms": 0.1446,
+      "calls": 7200,
+      "calls_per_sample": [
+        140,
+        200
+      ]
+    },
+    {
+      "id": 14,
+      "family": "PortDefender",
+      "stage": "CaelumThermalBody.zs:Refresh",
+      "mean_sampled_tic_ms": 0.2335047619047619,
+      "maximum_sampled_tic_ms": 0.2839,
+      "calls": 6974,
+      "calls_per_sample": [
+        162,
+        170
+      ]
+    },
+    {
+      "id": 15,
+      "family": "PortDefender",
+      "stage": "CaelumThermalEnvironment.zs:Sample",
+      "mean_sampled_tic_ms": 0.2492309523809524,
+      "maximum_sampled_tic_ms": 0.326,
+      "calls": 720,
+      "calls_per_sample": [
+        14,
+        20
+      ]
+    },
+    {
+      "id": 16,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationNPC.zs:Step",
+      "mean_sampled_tic_ms": 0.48354761904761906,
+      "maximum_sampled_tic_ms": 0.6524,
+      "calls": 720,
+      "calls_per_sample": [
+        14,
+        20
+      ]
+    },
+    {
+      "id": 17,
+      "family": "PortDefender",
+      "stage": "CaelumThermalCoefficients.zs:Prepare",
+      "mean_sampled_tic_ms": 0.014154761904761904,
+      "maximum_sampled_tic_ms": 0.028,
+      "calls": 720,
+      "calls_per_sample": [
+        14,
+        20
+      ]
+    },
+    {
+      "id": 18,
+      "family": "PortDefender",
+      "stage": "eligible-dry-slots",
+      "mean_sampled_tic_ms": 0.0,
+      "maximum_sampled_tic_ms": 0.0,
+      "calls": 28800,
+      "calls_per_sample": [
+        560,
+        800
+      ]
+    },
+    {
+      "id": 19,
+      "family": "PortDefender",
+      "stage": "fallback-slots",
+      "mean_sampled_tic_ms": 0,
+      "maximum_sampled_tic_ms": 0,
+      "calls": 0,
+      "calls_per_sample": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": 20,
+      "family": "other",
+      "stage": "CaelumThermalRuntime.zs:NPCStep",
+      "mean_sampled_tic_ms": 0.002092857142857143,
+      "maximum_sampled_tic_ms": 0.0715,
+      "calls": 42,
+      "calls_per_sample": [
+        1,
+        1
+      ]
+    },
+    {
+      "id": 21,
+      "family": "other",
+      "stage": "CaelumThermalService.zs:Advance",
+      "mean_sampled_tic_ms": 0.03783809523809524,
+      "maximum_sampled_tic_ms": 0.0944,
+      "calls": 43,
+      "calls_per_sample": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 22,
+      "family": "other",
+      "stage": "CaelumThermalService.zs:Integrate",
+      "mean_sampled_tic_ms": 0.0032142857142857142,
+      "maximum_sampled_tic_ms": 0.0119,
+      "calls": 43,
+      "calls_per_sample": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 23,
+      "family": "other",
+      "stage": "CaelumThermalService.zs:IntegrateStep",
+      "mean_sampled_tic_ms": 0.0019380952380952381,
+      "maximum_sampled_tic_ms": 0.0082,
+      "calls": 52,
+      "calls_per_sample": [
+        1,
+        11
+      ]
+    },
+    {
+      "id": 24,
+      "family": "other",
+      "stage": "CaelumThermalBody.zs:Refresh",
+      "mean_sampled_tic_ms": 0.002585714285714286,
+      "maximum_sampled_tic_ms": 0.0062,
+      "calls": 53,
+      "calls_per_sample": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 25,
+      "family": "other",
+      "stage": "CaelumThermalEnvironment.zs:Sample",
+      "mean_sampled_tic_ms": 0.0006047619047619048,
+      "maximum_sampled_tic_ms": 0.0187,
+      "calls": 2,
+      "calls_per_sample": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 26,
+      "family": "other",
+      "stage": "CaelumContaminationNPC.zs:Step",
+      "mean_sampled_tic_ms": 0.0012000000000000001,
+      "maximum_sampled_tic_ms": 0.0504,
+      "calls": 1,
+      "calls_per_sample": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 27,
+      "family": "other",
+      "stage": "CaelumThermalCoefficients.zs:Prepare",
+      "mean_sampled_tic_ms": 0.0003333333333333333,
+      "maximum_sampled_tic_ms": 0.0016,
+      "calls": 43,
+      "calls_per_sample": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 28,
+      "family": "other",
+      "stage": "eligible-dry-slots",
+      "mean_sampled_tic_ms": 0.0,
+      "maximum_sampled_tic_ms": 0.0,
+      "calls": 208,
+      "calls_per_sample": [
+        4,
+        44
+      ]
+    },
+    {
+      "id": 29,
+      "family": "other",
+      "stage": "fallback-slots",
+      "mean_sampled_tic_ms": 0,
+      "maximum_sampled_tic_ms": 0,
+      "calls": 0,
+      "calls_per_sample": [
+        0,
+        0
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "tic": 3599,
+      "metric": 0,
+      "total_ms": 1.8817,
+      "maximum_ms": 0.0811,
+      "calls": 987
+    },
+    {
+      "tic": 3599,
+      "metric": 1,
+      "total_ms": 1.2968,
+      "maximum_ms": 0.0635,
+      "calls": 29
+    },
+    {
+      "tic": 3599,
+      "metric": 2,
+      "total_ms": 0.2216,
+      "maximum_ms": 0.0082,
+      "calls": 29
+    },
+    {
+      "tic": 3599,
+      "metric": 3,
+      "total_ms": 0.1702,
+      "maximum_ms": 0.0011,
+      "calls": 290
+    },
+    {
+      "tic": 3599,
+      "metric": 4,
+      "total_ms": 0.0206,
+      "maximum_ms": 0.0017,
+      "calls": 29
+    },
+    {
+      "tic": 3599,
+      "metric": 5,
+      "total_ms": 0.2956,
+      "maximum_ms": 0.0159,
+      "calls": 29
+    },
+    {
+      "tic": 3599,
+      "metric": 6,
+      "total_ms": 1.0165,
+      "maximum_ms": 0.0526,
+      "calls": 29
+    },
+    {
+      "tic": 3599,
+      "metric": 7,
+      "total_ms": 0.0214,
+      "maximum_ms": 0.001,
+      "calls": 29
+    },
+    {
+      "tic": 3599,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 3599,
+      "metric": 10,
+      "total_ms": 0.9754,
+      "maximum_ms": 0.0668,
+      "calls": 601
+    },
+    {
+      "tic": 3599,
+      "metric": 11,
+      "total_ms": 0.5546,
+      "maximum_ms": 0.0445,
+      "calls": 15
+    },
+    {
+      "tic": 3599,
+      "metric": 12,
+      "total_ms": 0.118,
+      "maximum_ms": 0.0084,
+      "calls": 15
+    },
+    {
+      "tic": 3599,
+      "metric": 13,
+      "total_ms": 0.0929,
+      "maximum_ms": 0.0011,
+      "calls": 150
+    },
+    {
+      "tic": 3599,
+      "metric": 14,
+      "total_ms": 0.2312,
+      "maximum_ms": 0.0037,
+      "calls": 165
+    },
+    {
+      "tic": 3599,
+      "metric": 15,
+      "total_ms": 0.2384,
+      "maximum_ms": 0.0226,
+      "calls": 15
+    },
+    {
+      "tic": 3599,
+      "metric": 16,
+      "total_ms": 0.3953,
+      "maximum_ms": 0.0342,
+      "calls": 15
+    },
+    {
+      "tic": 3599,
+      "metric": 17,
+      "total_ms": 0.0081,
+      "maximum_ms": 0.001,
+      "calls": 15
+    },
+    {
+      "tic": 3599,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 600
+    },
+    {
+      "tic": 3599,
+      "metric": 20,
+      "total_ms": 0.0005,
+      "maximum_ms": 0.0005,
+      "calls": 1
+    },
+    {
+      "tic": 3599,
+      "metric": 21,
+      "total_ms": 0.0445,
+      "maximum_ms": 0.0445,
+      "calls": 1
+    },
+    {
+      "tic": 3599,
+      "metric": 22,
+      "total_ms": 0.0026,
+      "maximum_ms": 0.0026,
+      "calls": 1
+    },
+    {
+      "tic": 3599,
+      "metric": 23,
+      "total_ms": 0.0016,
+      "maximum_ms": 0.0016,
+      "calls": 1
+    },
+    {
+      "tic": 3599,
+      "metric": 24,
+      "total_ms": 0.0023,
+      "maximum_ms": 0.0023,
+      "calls": 1
+    },
+    {
+      "tic": 3599,
+      "metric": 27,
+      "total_ms": 0.0002,
+      "maximum_ms": 0.0002,
+      "calls": 1
+    },
+    {
+      "tic": 3599,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3616,
+      "metric": 0,
+      "total_ms": 1.9295,
+      "maximum_ms": 0.0966,
+      "calls": 987
+    },
+    {
+      "tic": 3616,
+      "metric": 1,
+      "total_ms": 1.3682,
+      "maximum_ms": 0.0719,
+      "calls": 29
+    },
+    {
+      "tic": 3616,
+      "metric": 2,
+      "total_ms": 0.2375,
+      "maximum_ms": 0.0095,
+      "calls": 29
+    },
+    {
+      "tic": 3616,
+      "metric": 3,
+      "total_ms": 0.1718,
+      "maximum_ms": 0.0013,
+      "calls": 290
+    },
+    {
+      "tic": 3616,
+      "metric": 4,
+      "total_ms": 0.042,
+      "maximum_ms": 0.0036,
+      "calls": 57
+    },
+    {
+      "tic": 3616,
+      "metric": 5,
+      "total_ms": 0.2444,
+      "maximum_ms": 0.0228,
+      "calls": 29
+    },
+    {
+      "tic": 3616,
+      "metric": 6,
+      "total_ms": 1.0716,
+      "maximum_ms": 0.0565,
+      "calls": 29
+    },
+    {
+      "tic": 3616,
+      "metric": 7,
+      "total_ms": 0.0354,
+      "maximum_ms": 0.0016,
+      "calls": 29
+    },
+    {
+      "tic": 3616,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 3616,
+      "metric": 10,
+      "total_ms": 0.9869,
+      "maximum_ms": 0.0663,
+      "calls": 601
+    },
+    {
+      "tic": 3616,
+      "metric": 11,
+      "total_ms": 0.5857,
+      "maximum_ms": 0.0475,
+      "calls": 15
+    },
+    {
+      "tic": 3616,
+      "metric": 12,
+      "total_ms": 0.1281,
+      "maximum_ms": 0.0091,
+      "calls": 15
+    },
+    {
+      "tic": 3616,
+      "metric": 13,
+      "total_ms": 0.0907,
+      "maximum_ms": 0.0012,
+      "calls": 150
+    },
+    {
+      "tic": 3616,
+      "metric": 14,
+      "total_ms": 0.2169,
+      "maximum_ms": 0.0033,
+      "calls": 162
+    },
+    {
+      "tic": 3616,
+      "metric": 15,
+      "total_ms": 0.2219,
+      "maximum_ms": 0.021,
+      "calls": 15
+    },
+    {
+      "tic": 3616,
+      "metric": 16,
+      "total_ms": 0.4155,
+      "maximum_ms": 0.0359,
+      "calls": 15
+    },
+    {
+      "tic": 3616,
+      "metric": 17,
+      "total_ms": 0.0202,
+      "maximum_ms": 0.0016,
+      "calls": 15
+    },
+    {
+      "tic": 3616,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 600
+    },
+    {
+      "tic": 3616,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3616,
+      "metric": 21,
+      "total_ms": 0.0315,
+      "maximum_ms": 0.0315,
+      "calls": 1
+    },
+    {
+      "tic": 3616,
+      "metric": 22,
+      "total_ms": 0.0028,
+      "maximum_ms": 0.0028,
+      "calls": 1
+    },
+    {
+      "tic": 3616,
+      "metric": 23,
+      "total_ms": 0.0016,
+      "maximum_ms": 0.0016,
+      "calls": 1
+    },
+    {
+      "tic": 3616,
+      "metric": 24,
+      "total_ms": 0.0019,
+      "maximum_ms": 0.0019,
+      "calls": 1
+    },
+    {
+      "tic": 3616,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3616,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3633,
+      "metric": 0,
+      "total_ms": 1.942,
+      "maximum_ms": 0.0781,
+      "calls": 987
+    },
+    {
+      "tic": 3633,
+      "metric": 1,
+      "total_ms": 1.3671,
+      "maximum_ms": 0.0661,
+      "calls": 29
+    },
+    {
+      "tic": 3633,
+      "metric": 2,
+      "total_ms": 0.2383,
+      "maximum_ms": 0.0102,
+      "calls": 29
+    },
+    {
+      "tic": 3633,
+      "metric": 3,
+      "total_ms": 0.1735,
+      "maximum_ms": 0.0026,
+      "calls": 290
+    },
+    {
+      "tic": 3633,
+      "metric": 4,
+      "total_ms": 0.0215,
+      "maximum_ms": 0.0018,
+      "calls": 29
+    },
+    {
+      "tic": 3633,
+      "metric": 5,
+      "total_ms": 0.2845,
+      "maximum_ms": 0.0125,
+      "calls": 29
+    },
+    {
+      "tic": 3633,
+      "metric": 6,
+      "total_ms": 1.0709,
+      "maximum_ms": 0.0551,
+      "calls": 29
+    },
+    {
+      "tic": 3633,
+      "metric": 7,
+      "total_ms": 0.0342,
+      "maximum_ms": 0.0015,
+      "calls": 29
+    },
+    {
+      "tic": 3633,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 3633,
+      "metric": 10,
+      "total_ms": 1.2795,
+      "maximum_ms": 0.0694,
+      "calls": 601
+    },
+    {
+      "tic": 3633,
+      "metric": 11,
+      "total_ms": 0.7942,
+      "maximum_ms": 0.0468,
+      "calls": 20
+    },
+    {
+      "tic": 3633,
+      "metric": 12,
+      "total_ms": 0.17,
+      "maximum_ms": 0.0091,
+      "calls": 20
+    },
+    {
+      "tic": 3633,
+      "metric": 13,
+      "total_ms": 0.1222,
+      "maximum_ms": 0.0011,
+      "calls": 200
+    },
+    {
+      "tic": 3633,
+      "metric": 14,
+      "total_ms": 0.236,
+      "maximum_ms": 0.0026,
+      "calls": 168
+    },
+    {
+      "tic": 3633,
+      "metric": 15,
+      "total_ms": 0.2991,
+      "maximum_ms": 0.0213,
+      "calls": 20
+    },
+    {
+      "tic": 3633,
+      "metric": 16,
+      "total_ms": 0.5688,
+      "maximum_ms": 0.0354,
+      "calls": 20
+    },
+    {
+      "tic": 3633,
+      "metric": 17,
+      "total_ms": 0.0259,
+      "maximum_ms": 0.0015,
+      "calls": 20
+    },
+    {
+      "tic": 3633,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 800
+    },
+    {
+      "tic": 3633,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3633,
+      "metric": 21,
+      "total_ms": 0.0291,
+      "maximum_ms": 0.0291,
+      "calls": 1
+    },
+    {
+      "tic": 3633,
+      "metric": 22,
+      "total_ms": 0.0027,
+      "maximum_ms": 0.0027,
+      "calls": 1
+    },
+    {
+      "tic": 3633,
+      "metric": 23,
+      "total_ms": 0.0015,
+      "maximum_ms": 0.0015,
+      "calls": 1
+    },
+    {
+      "tic": 3633,
+      "metric": 24,
+      "total_ms": 0.0031,
+      "maximum_ms": 0.0016,
+      "calls": 2
+    },
+    {
+      "tic": 3633,
+      "metric": 27,
+      "total_ms": 0.0002,
+      "maximum_ms": 0.0002,
+      "calls": 1
+    },
+    {
+      "tic": 3633,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3650,
+      "metric": 0,
+      "total_ms": 1.9215,
+      "maximum_ms": 0.0985,
+      "calls": 987
+    },
+    {
+      "tic": 3650,
+      "metric": 1,
+      "total_ms": 1.3687,
+      "maximum_ms": 0.0783,
+      "calls": 29
+    },
+    {
+      "tic": 3650,
+      "metric": 2,
+      "total_ms": 0.2089,
+      "maximum_ms": 0.0081,
+      "calls": 29
+    },
+    {
+      "tic": 3650,
+      "metric": 3,
+      "total_ms": 0.173,
+      "maximum_ms": 0.0015,
+      "calls": 290
+    },
+    {
+      "tic": 3650,
+      "metric": 4,
+      "total_ms": 0.0248,
+      "maximum_ms": 0.0016,
+      "calls": 34
+    },
+    {
+      "tic": 3650,
+      "metric": 5,
+      "total_ms": 0.2617,
+      "maximum_ms": 0.0234,
+      "calls": 29
+    },
+    {
+      "tic": 3650,
+      "metric": 6,
+      "total_ms": 1.1021,
+      "maximum_ms": 0.0692,
+      "calls": 29
+    },
+    {
+      "tic": 3650,
+      "metric": 7,
+      "total_ms": 0.0062,
+      "maximum_ms": 0.0005,
+      "calls": 29
+    },
+    {
+      "tic": 3650,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 3650,
+      "metric": 10,
+      "total_ms": 1.1262,
+      "maximum_ms": 0.0713,
+      "calls": 601
+    },
+    {
+      "tic": 3650,
+      "metric": 11,
+      "total_ms": 0.6688,
+      "maximum_ms": 0.0463,
+      "calls": 18
+    },
+    {
+      "tic": 3650,
+      "metric": 12,
+      "total_ms": 0.1419,
+      "maximum_ms": 0.0086,
+      "calls": 18
+    },
+    {
+      "tic": 3650,
+      "metric": 13,
+      "total_ms": 0.1104,
+      "maximum_ms": 0.0012,
+      "calls": 180
+    },
+    {
+      "tic": 3650,
+      "metric": 14,
+      "total_ms": 0.2249,
+      "maximum_ms": 0.0035,
+      "calls": 167
+    },
+    {
+      "tic": 3650,
+      "metric": 15,
+      "total_ms": 0.2728,
+      "maximum_ms": 0.0238,
+      "calls": 18
+    },
+    {
+      "tic": 3650,
+      "metric": 16,
+      "total_ms": 0.4758,
+      "maximum_ms": 0.036,
+      "calls": 18
+    },
+    {
+      "tic": 3650,
+      "metric": 17,
+      "total_ms": 0.0106,
+      "maximum_ms": 0.001,
+      "calls": 18
+    },
+    {
+      "tic": 3650,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 720
+    },
+    {
+      "tic": 3650,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3650,
+      "metric": 21,
+      "total_ms": 0.0309,
+      "maximum_ms": 0.0309,
+      "calls": 1
+    },
+    {
+      "tic": 3650,
+      "metric": 22,
+      "total_ms": 0.0025,
+      "maximum_ms": 0.0025,
+      "calls": 1
+    },
+    {
+      "tic": 3650,
+      "metric": 23,
+      "total_ms": 0.0014,
+      "maximum_ms": 0.0014,
+      "calls": 1
+    },
+    {
+      "tic": 3650,
+      "metric": 24,
+      "total_ms": 0.0016,
+      "maximum_ms": 0.0016,
+      "calls": 1
+    },
+    {
+      "tic": 3650,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3650,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3667,
+      "metric": 0,
+      "total_ms": 2.0323,
+      "maximum_ms": 0.0901,
+      "calls": 987
+    },
+    {
+      "tic": 3667,
+      "metric": 1,
+      "total_ms": 1.4008,
+      "maximum_ms": 0.0688,
+      "calls": 29
+    },
+    {
+      "tic": 3667,
+      "metric": 2,
+      "total_ms": 0.2144,
+      "maximum_ms": 0.0085,
+      "calls": 29
+    },
+    {
+      "tic": 3667,
+      "metric": 3,
+      "total_ms": 0.1764,
+      "maximum_ms": 0.0012,
+      "calls": 290
+    },
+    {
+      "tic": 3667,
+      "metric": 4,
+      "total_ms": 0.0219,
+      "maximum_ms": 0.0024,
+      "calls": 29
+    },
+    {
+      "tic": 3667,
+      "metric": 5,
+      "total_ms": 0.3345,
+      "maximum_ms": 0.0195,
+      "calls": 29
+    },
+    {
+      "tic": 3667,
+      "metric": 6,
+      "total_ms": 1.1269,
+      "maximum_ms": 0.0566,
+      "calls": 29
+    },
+    {
+      "tic": 3667,
+      "metric": 7,
+      "total_ms": 0.0062,
+      "maximum_ms": 0.0011,
+      "calls": 29
+    },
+    {
+      "tic": 3667,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 3667,
+      "metric": 10,
+      "total_ms": 0.9848,
+      "maximum_ms": 0.0738,
+      "calls": 601
+    },
+    {
+      "tic": 3667,
+      "metric": 11,
+      "total_ms": 0.5914,
+      "maximum_ms": 0.0527,
+      "calls": 15
+    },
+    {
+      "tic": 3667,
+      "metric": 12,
+      "total_ms": 0.1204,
+      "maximum_ms": 0.0089,
+      "calls": 15
+    },
+    {
+      "tic": 3667,
+      "metric": 13,
+      "total_ms": 0.0945,
+      "maximum_ms": 0.0011,
+      "calls": 150
+    },
+    {
+      "tic": 3667,
+      "metric": 14,
+      "total_ms": 0.2316,
+      "maximum_ms": 0.005,
+      "calls": 165
+    },
+    {
+      "tic": 3667,
+      "metric": 15,
+      "total_ms": 0.2057,
+      "maximum_ms": 0.0198,
+      "calls": 15
+    },
+    {
+      "tic": 3667,
+      "metric": 16,
+      "total_ms": 0.4284,
+      "maximum_ms": 0.0413,
+      "calls": 15
+    },
+    {
+      "tic": 3667,
+      "metric": 17,
+      "total_ms": 0.0082,
+      "maximum_ms": 0.0016,
+      "calls": 15
+    },
+    {
+      "tic": 3667,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 600
+    },
+    {
+      "tic": 3667,
+      "metric": 20,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 3667,
+      "metric": 21,
+      "total_ms": 0.0365,
+      "maximum_ms": 0.0365,
+      "calls": 1
+    },
+    {
+      "tic": 3667,
+      "metric": 22,
+      "total_ms": 0.0035,
+      "maximum_ms": 0.0035,
+      "calls": 1
+    },
+    {
+      "tic": 3667,
+      "metric": 23,
+      "total_ms": 0.002,
+      "maximum_ms": 0.002,
+      "calls": 1
+    },
+    {
+      "tic": 3667,
+      "metric": 24,
+      "total_ms": 0.0023,
+      "maximum_ms": 0.0023,
+      "calls": 1
+    },
+    {
+      "tic": 3667,
+      "metric": 27,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 3667,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3684,
+      "metric": 0,
+      "total_ms": 1.9671,
+      "maximum_ms": 0.0971,
+      "calls": 987
+    },
+    {
+      "tic": 3684,
+      "metric": 1,
+      "total_ms": 1.4365,
+      "maximum_ms": 0.0729,
+      "calls": 30
+    },
+    {
+      "tic": 3684,
+      "metric": 2,
+      "total_ms": 0.2406,
+      "maximum_ms": 0.0085,
+      "calls": 30
+    },
+    {
+      "tic": 3684,
+      "metric": 3,
+      "total_ms": 0.1832,
+      "maximum_ms": 0.0012,
+      "calls": 300
+    },
+    {
+      "tic": 3684,
+      "metric": 4,
+      "total_ms": 0.6498,
+      "maximum_ms": 0.0018,
+      "calls": 957
+    },
+    {
+      "tic": 3684,
+      "metric": 5,
+      "total_ms": 0.2479,
+      "maximum_ms": 0.0223,
+      "calls": 30
+    },
+    {
+      "tic": 3684,
+      "metric": 6,
+      "total_ms": 1.1402,
+      "maximum_ms": 0.0612,
+      "calls": 30
+    },
+    {
+      "tic": 3684,
+      "metric": 7,
+      "total_ms": 0.0243,
+      "maximum_ms": 0.0013,
+      "calls": 30
+    },
+    {
+      "tic": 3684,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1200
+    },
+    {
+      "tic": 3684,
+      "metric": 10,
+      "total_ms": 1.0367,
+      "maximum_ms": 0.0704,
+      "calls": 601
+    },
+    {
+      "tic": 3684,
+      "metric": 11,
+      "total_ms": 0.6352,
+      "maximum_ms": 0.0497,
+      "calls": 16
+    },
+    {
+      "tic": 3684,
+      "metric": 12,
+      "total_ms": 0.1273,
+      "maximum_ms": 0.0084,
+      "calls": 16
+    },
+    {
+      "tic": 3684,
+      "metric": 13,
+      "total_ms": 0.0994,
+      "maximum_ms": 0.0012,
+      "calls": 160
+    },
+    {
+      "tic": 3684,
+      "metric": 14,
+      "total_ms": 0.2261,
+      "maximum_ms": 0.0047,
+      "calls": 165
+    },
+    {
+      "tic": 3684,
+      "metric": 15,
+      "total_ms": 0.2188,
+      "maximum_ms": 0.0192,
+      "calls": 16
+    },
+    {
+      "tic": 3684,
+      "metric": 16,
+      "total_ms": 0.4643,
+      "maximum_ms": 0.0386,
+      "calls": 16
+    },
+    {
+      "tic": 3684,
+      "metric": 17,
+      "total_ms": 0.0097,
+      "maximum_ms": 0.001,
+      "calls": 16
+    },
+    {
+      "tic": 3684,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 640
+    },
+    {
+      "tic": 3684,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3684,
+      "metric": 21,
+      "total_ms": 0.0314,
+      "maximum_ms": 0.0314,
+      "calls": 1
+    },
+    {
+      "tic": 3684,
+      "metric": 22,
+      "total_ms": 0.0029,
+      "maximum_ms": 0.0029,
+      "calls": 1
+    },
+    {
+      "tic": 3684,
+      "metric": 23,
+      "total_ms": 0.0014,
+      "maximum_ms": 0.0014,
+      "calls": 1
+    },
+    {
+      "tic": 3684,
+      "metric": 24,
+      "total_ms": 0.0017,
+      "maximum_ms": 0.0017,
+      "calls": 1
+    },
+    {
+      "tic": 3684,
+      "metric": 27,
+      "total_ms": 0.0006,
+      "maximum_ms": 0.0006,
+      "calls": 1
+    },
+    {
+      "tic": 3684,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3701,
+      "metric": 0,
+      "total_ms": 1.7106,
+      "maximum_ms": 0.0726,
+      "calls": 987
+    },
+    {
+      "tic": 3701,
+      "metric": 1,
+      "total_ms": 1.1896,
+      "maximum_ms": 0.0583,
+      "calls": 28
+    },
+    {
+      "tic": 3701,
+      "metric": 2,
+      "total_ms": 0.1995,
+      "maximum_ms": 0.0078,
+      "calls": 28
+    },
+    {
+      "tic": 3701,
+      "metric": 3,
+      "total_ms": 0.1645,
+      "maximum_ms": 0.0012,
+      "calls": 280
+    },
+    {
+      "tic": 3701,
+      "metric": 4,
+      "total_ms": 0.018,
+      "maximum_ms": 0.0015,
+      "calls": 28
+    },
+    {
+      "tic": 3701,
+      "metric": 5,
+      "total_ms": 0.2395,
+      "maximum_ms": 0.0132,
+      "calls": 28
+    },
+    {
+      "tic": 3701,
+      "metric": 6,
+      "total_ms": 0.9372,
+      "maximum_ms": 0.0493,
+      "calls": 28
+    },
+    {
+      "tic": 3701,
+      "metric": 7,
+      "total_ms": 0.0051,
+      "maximum_ms": 0.0003,
+      "calls": 28
+    },
+    {
+      "tic": 3701,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 3701,
+      "metric": 10,
+      "total_ms": 1.2245,
+      "maximum_ms": 0.0675,
+      "calls": 601
+    },
+    {
+      "tic": 3701,
+      "metric": 11,
+      "total_ms": 0.7636,
+      "maximum_ms": 0.0499,
+      "calls": 20
+    },
+    {
+      "tic": 3701,
+      "metric": 12,
+      "total_ms": 0.1603,
+      "maximum_ms": 0.0116,
+      "calls": 20
+    },
+    {
+      "tic": 3701,
+      "metric": 13,
+      "total_ms": 0.1258,
+      "maximum_ms": 0.0037,
+      "calls": 200
+    },
+    {
+      "tic": 3701,
+      "metric": 14,
+      "total_ms": 0.2316,
+      "maximum_ms": 0.0039,
+      "calls": 168
+    },
+    {
+      "tic": 3701,
+      "metric": 15,
+      "total_ms": 0.2762,
+      "maximum_ms": 0.0191,
+      "calls": 20
+    },
+    {
+      "tic": 3701,
+      "metric": 16,
+      "total_ms": 0.5471,
+      "maximum_ms": 0.0358,
+      "calls": 20
+    },
+    {
+      "tic": 3701,
+      "metric": 17,
+      "total_ms": 0.0113,
+      "maximum_ms": 0.0011,
+      "calls": 20
+    },
+    {
+      "tic": 3701,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 800
+    },
+    {
+      "tic": 3701,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3701,
+      "metric": 21,
+      "total_ms": 0.0297,
+      "maximum_ms": 0.0297,
+      "calls": 1
+    },
+    {
+      "tic": 3701,
+      "metric": 22,
+      "total_ms": 0.0025,
+      "maximum_ms": 0.0025,
+      "calls": 1
+    },
+    {
+      "tic": 3701,
+      "metric": 23,
+      "total_ms": 0.0016,
+      "maximum_ms": 0.0016,
+      "calls": 1
+    },
+    {
+      "tic": 3701,
+      "metric": 24,
+      "total_ms": 0.0046,
+      "maximum_ms": 0.003,
+      "calls": 2
+    },
+    {
+      "tic": 3701,
+      "metric": 27,
+      "total_ms": 0.0002,
+      "maximum_ms": 0.0002,
+      "calls": 1
+    },
+    {
+      "tic": 3701,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3718,
+      "metric": 0,
+      "total_ms": 1.8404,
+      "maximum_ms": 0.1231,
+      "calls": 987
+    },
+    {
+      "tic": 3718,
+      "metric": 1,
+      "total_ms": 1.325,
+      "maximum_ms": 0.1141,
+      "calls": 28
+    },
+    {
+      "tic": 3718,
+      "metric": 2,
+      "total_ms": 0.2285,
+      "maximum_ms": 0.0088,
+      "calls": 28
+    },
+    {
+      "tic": 3718,
+      "metric": 3,
+      "total_ms": 0.1648,
+      "maximum_ms": 0.001,
+      "calls": 280
+    },
+    {
+      "tic": 3718,
+      "metric": 4,
+      "total_ms": 0.0239,
+      "maximum_ms": 0.0017,
+      "calls": 33
+    },
+    {
+      "tic": 3718,
+      "metric": 5,
+      "total_ms": 0.2322,
+      "maximum_ms": 0.0174,
+      "calls": 28
+    },
+    {
+      "tic": 3718,
+      "metric": 6,
+      "total_ms": 1.0398,
+      "maximum_ms": 0.1043,
+      "calls": 28
+    },
+    {
+      "tic": 3718,
+      "metric": 7,
+      "total_ms": 0.033,
+      "maximum_ms": 0.0015,
+      "calls": 28
+    },
+    {
+      "tic": 3718,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 3718,
+      "metric": 10,
+      "total_ms": 1.0401,
+      "maximum_ms": 0.0762,
+      "calls": 601
+    },
+    {
+      "tic": 3718,
+      "metric": 11,
+      "total_ms": 0.6338,
+      "maximum_ms": 0.0533,
+      "calls": 17
+    },
+    {
+      "tic": 3718,
+      "metric": 12,
+      "total_ms": 0.147,
+      "maximum_ms": 0.0092,
+      "calls": 17
+    },
+    {
+      "tic": 3718,
+      "metric": 13,
+      "total_ms": 0.1044,
+      "maximum_ms": 0.0011,
+      "calls": 170
+    },
+    {
+      "tic": 3718,
+      "metric": 14,
+      "total_ms": 0.2176,
+      "maximum_ms": 0.0033,
+      "calls": 163
+    },
+    {
+      "tic": 3718,
+      "metric": 15,
+      "total_ms": 0.2245,
+      "maximum_ms": 0.0216,
+      "calls": 17
+    },
+    {
+      "tic": 3718,
+      "metric": 16,
+      "total_ms": 0.4405,
+      "maximum_ms": 0.0421,
+      "calls": 17
+    },
+    {
+      "tic": 3718,
+      "metric": 17,
+      "total_ms": 0.0228,
+      "maximum_ms": 0.0017,
+      "calls": 17
+    },
+    {
+      "tic": 3718,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 680
+    },
+    {
+      "tic": 3718,
+      "metric": 20,
+      "total_ms": 0.0715,
+      "maximum_ms": 0.0715,
+      "calls": 1
+    },
+    {
+      "tic": 3718,
+      "metric": 21,
+      "total_ms": 0.0927,
+      "maximum_ms": 0.0631,
+      "calls": 2
+    },
+    {
+      "tic": 3718,
+      "metric": 22,
+      "total_ms": 0.0119,
+      "maximum_ms": 0.009,
+      "calls": 2
+    },
+    {
+      "tic": 3718,
+      "metric": 23,
+      "total_ms": 0.0082,
+      "maximum_ms": 0.0019,
+      "calls": 11
+    },
+    {
+      "tic": 3718,
+      "metric": 24,
+      "total_ms": 0.0031,
+      "maximum_ms": 0.0016,
+      "calls": 2
+    },
+    {
+      "tic": 3718,
+      "metric": 25,
+      "total_ms": 0.0067,
+      "maximum_ms": 0.0067,
+      "calls": 1
+    },
+    {
+      "tic": 3718,
+      "metric": 26,
+      "total_ms": 0.0504,
+      "maximum_ms": 0.0504,
+      "calls": 1
+    },
+    {
+      "tic": 3718,
+      "metric": 27,
+      "total_ms": 0.0016,
+      "maximum_ms": 0.0014,
+      "calls": 2
+    },
+    {
+      "tic": 3718,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 44
+    },
+    {
+      "tic": 3735,
+      "metric": 0,
+      "total_ms": 1.846,
+      "maximum_ms": 0.0767,
+      "calls": 987
+    },
+    {
+      "tic": 3735,
+      "metric": 1,
+      "total_ms": 1.2906,
+      "maximum_ms": 0.06,
+      "calls": 28
+    },
+    {
+      "tic": 3735,
+      "metric": 2,
+      "total_ms": 0.2274,
+      "maximum_ms": 0.0092,
+      "calls": 28
+    },
+    {
+      "tic": 3735,
+      "metric": 3,
+      "total_ms": 0.1641,
+      "maximum_ms": 0.0011,
+      "calls": 280
+    },
+    {
+      "tic": 3735,
+      "metric": 4,
+      "total_ms": 0.0181,
+      "maximum_ms": 0.0013,
+      "calls": 28
+    },
+    {
+      "tic": 3735,
+      "metric": 5,
+      "total_ms": 0.2663,
+      "maximum_ms": 0.0155,
+      "calls": 28
+    },
+    {
+      "tic": 3735,
+      "metric": 6,
+      "total_ms": 1.0082,
+      "maximum_ms": 0.0489,
+      "calls": 28
+    },
+    {
+      "tic": 3735,
+      "metric": 7,
+      "total_ms": 0.0331,
+      "maximum_ms": 0.0016,
+      "calls": 28
+    },
+    {
+      "tic": 3735,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 3735,
+      "metric": 10,
+      "total_ms": 0.9341,
+      "maximum_ms": 0.0638,
+      "calls": 601
+    },
+    {
+      "tic": 3735,
+      "metric": 11,
+      "total_ms": 0.5274,
+      "maximum_ms": 0.0441,
+      "calls": 15
+    },
+    {
+      "tic": 3735,
+      "metric": 12,
+      "total_ms": 0.1289,
+      "maximum_ms": 0.0088,
+      "calls": 15
+    },
+    {
+      "tic": 3735,
+      "metric": 13,
+      "total_ms": 0.0926,
+      "maximum_ms": 0.0011,
+      "calls": 150
+    },
+    {
+      "tic": 3735,
+      "metric": 14,
+      "total_ms": 0.2314,
+      "maximum_ms": 0.0046,
+      "calls": 164
+    },
+    {
+      "tic": 3735,
+      "metric": 15,
+      "total_ms": 0.2249,
+      "maximum_ms": 0.0191,
+      "calls": 15
+    },
+    {
+      "tic": 3735,
+      "metric": 16,
+      "total_ms": 0.3558,
+      "maximum_ms": 0.0335,
+      "calls": 15
+    },
+    {
+      "tic": 3735,
+      "metric": 17,
+      "total_ms": 0.0199,
+      "maximum_ms": 0.0014,
+      "calls": 15
+    },
+    {
+      "tic": 3735,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 600
+    },
+    {
+      "tic": 3735,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3735,
+      "metric": 21,
+      "total_ms": 0.0362,
+      "maximum_ms": 0.0362,
+      "calls": 1
+    },
+    {
+      "tic": 3735,
+      "metric": 22,
+      "total_ms": 0.004,
+      "maximum_ms": 0.004,
+      "calls": 1
+    },
+    {
+      "tic": 3735,
+      "metric": 23,
+      "total_ms": 0.0025,
+      "maximum_ms": 0.0025,
+      "calls": 1
+    },
+    {
+      "tic": 3735,
+      "metric": 24,
+      "total_ms": 0.0022,
+      "maximum_ms": 0.0022,
+      "calls": 1
+    },
+    {
+      "tic": 3735,
+      "metric": 27,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 3735,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3752,
+      "metric": 0,
+      "total_ms": 1.9101,
+      "maximum_ms": 0.2265,
+      "calls": 987
+    },
+    {
+      "tic": 3752,
+      "metric": 1,
+      "total_ms": 1.4012,
+      "maximum_ms": 0.2171,
+      "calls": 27
+    },
+    {
+      "tic": 3752,
+      "metric": 2,
+      "total_ms": 0.1978,
+      "maximum_ms": 0.01,
+      "calls": 27
+    },
+    {
+      "tic": 3752,
+      "metric": 3,
+      "total_ms": 0.1615,
+      "maximum_ms": 0.0013,
+      "calls": 270
+    },
+    {
+      "tic": 3752,
+      "metric": 4,
+      "total_ms": 0.0408,
+      "maximum_ms": 0.0021,
+      "calls": 55
+    },
+    {
+      "tic": 3752,
+      "metric": 5,
+      "total_ms": 0.2212,
+      "maximum_ms": 0.0144,
+      "calls": 27
+    },
+    {
+      "tic": 3752,
+      "metric": 6,
+      "total_ms": 1.1471,
+      "maximum_ms": 0.2072,
+      "calls": 27
+    },
+    {
+      "tic": 3752,
+      "metric": 7,
+      "total_ms": 0.0061,
+      "maximum_ms": 0.001,
+      "calls": 27
+    },
+    {
+      "tic": 3752,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1080
+    },
+    {
+      "tic": 3752,
+      "metric": 10,
+      "total_ms": 1.0602,
+      "maximum_ms": 0.0628,
+      "calls": 601
+    },
+    {
+      "tic": 3752,
+      "metric": 11,
+      "total_ms": 0.6539,
+      "maximum_ms": 0.0483,
+      "calls": 17
+    },
+    {
+      "tic": 3752,
+      "metric": 12,
+      "total_ms": 0.1311,
+      "maximum_ms": 0.0083,
+      "calls": 17
+    },
+    {
+      "tic": 3752,
+      "metric": 13,
+      "total_ms": 0.1045,
+      "maximum_ms": 0.0011,
+      "calls": 170
+    },
+    {
+      "tic": 3752,
+      "metric": 14,
+      "total_ms": 0.2171,
+      "maximum_ms": 0.003,
+      "calls": 163
+    },
+    {
+      "tic": 3752,
+      "metric": 15,
+      "total_ms": 0.2214,
+      "maximum_ms": 0.0183,
+      "calls": 17
+    },
+    {
+      "tic": 3752,
+      "metric": 16,
+      "total_ms": 0.476,
+      "maximum_ms": 0.0369,
+      "calls": 17
+    },
+    {
+      "tic": 3752,
+      "metric": 17,
+      "total_ms": 0.008,
+      "maximum_ms": 0.001,
+      "calls": 17
+    },
+    {
+      "tic": 3752,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 680
+    },
+    {
+      "tic": 3752,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3752,
+      "metric": 21,
+      "total_ms": 0.032,
+      "maximum_ms": 0.032,
+      "calls": 1
+    },
+    {
+      "tic": 3752,
+      "metric": 22,
+      "total_ms": 0.0025,
+      "maximum_ms": 0.0025,
+      "calls": 1
+    },
+    {
+      "tic": 3752,
+      "metric": 23,
+      "total_ms": 0.0015,
+      "maximum_ms": 0.0015,
+      "calls": 1
+    },
+    {
+      "tic": 3752,
+      "metric": 24,
+      "total_ms": 0.0018,
+      "maximum_ms": 0.0018,
+      "calls": 1
+    },
+    {
+      "tic": 3752,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3752,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3769,
+      "metric": 0,
+      "total_ms": 1.743,
+      "maximum_ms": 0.0711,
+      "calls": 987
+    },
+    {
+      "tic": 3769,
+      "metric": 1,
+      "total_ms": 1.2208,
+      "maximum_ms": 0.0566,
+      "calls": 27
+    },
+    {
+      "tic": 3769,
+      "metric": 2,
+      "total_ms": 0.2068,
+      "maximum_ms": 0.0085,
+      "calls": 27
+    },
+    {
+      "tic": 3769,
+      "metric": 3,
+      "total_ms": 0.1594,
+      "maximum_ms": 0.0012,
+      "calls": 270
+    },
+    {
+      "tic": 3769,
+      "metric": 4,
+      "total_ms": 0.0204,
+      "maximum_ms": 0.0017,
+      "calls": 27
+    },
+    {
+      "tic": 3769,
+      "metric": 5,
+      "total_ms": 0.2343,
+      "maximum_ms": 0.0148,
+      "calls": 27
+    },
+    {
+      "tic": 3769,
+      "metric": 6,
+      "total_ms": 0.9586,
+      "maximum_ms": 0.0471,
+      "calls": 27
+    },
+    {
+      "tic": 3769,
+      "metric": 7,
+      "total_ms": 0.0192,
+      "maximum_ms": 0.0013,
+      "calls": 27
+    },
+    {
+      "tic": 3769,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1080
+    },
+    {
+      "tic": 3769,
+      "metric": 10,
+      "total_ms": 1.1175,
+      "maximum_ms": 0.0635,
+      "calls": 601
+    },
+    {
+      "tic": 3769,
+      "metric": 11,
+      "total_ms": 0.6828,
+      "maximum_ms": 0.0417,
+      "calls": 20
+    },
+    {
+      "tic": 3769,
+      "metric": 12,
+      "total_ms": 0.1589,
+      "maximum_ms": 0.0108,
+      "calls": 20
+    },
+    {
+      "tic": 3769,
+      "metric": 13,
+      "total_ms": 0.1228,
+      "maximum_ms": 0.0011,
+      "calls": 200
+    },
+    {
+      "tic": 3769,
+      "metric": 14,
+      "total_ms": 0.2348,
+      "maximum_ms": 0.003,
+      "calls": 169
+    },
+    {
+      "tic": 3769,
+      "metric": 15,
+      "total_ms": 0.2507,
+      "maximum_ms": 0.0211,
+      "calls": 20
+    },
+    {
+      "tic": 3769,
+      "metric": 16,
+      "total_ms": 0.4684,
+      "maximum_ms": 0.0314,
+      "calls": 20
+    },
+    {
+      "tic": 3769,
+      "metric": 17,
+      "total_ms": 0.0117,
+      "maximum_ms": 0.001,
+      "calls": 20
+    },
+    {
+      "tic": 3769,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 800
+    },
+    {
+      "tic": 3769,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3769,
+      "metric": 21,
+      "total_ms": 0.0354,
+      "maximum_ms": 0.0354,
+      "calls": 1
+    },
+    {
+      "tic": 3769,
+      "metric": 22,
+      "total_ms": 0.0033,
+      "maximum_ms": 0.0033,
+      "calls": 1
+    },
+    {
+      "tic": 3769,
+      "metric": 23,
+      "total_ms": 0.0019,
+      "maximum_ms": 0.0019,
+      "calls": 1
+    },
+    {
+      "tic": 3769,
+      "metric": 24,
+      "total_ms": 0.0043,
+      "maximum_ms": 0.0022,
+      "calls": 2
+    },
+    {
+      "tic": 3769,
+      "metric": 27,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 3769,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3786,
+      "metric": 0,
+      "total_ms": 1.7486,
+      "maximum_ms": 0.0845,
+      "calls": 987
+    },
+    {
+      "tic": 3786,
+      "metric": 1,
+      "total_ms": 1.2134,
+      "maximum_ms": 0.0647,
+      "calls": 27
+    },
+    {
+      "tic": 3786,
+      "metric": 2,
+      "total_ms": 0.1967,
+      "maximum_ms": 0.0087,
+      "calls": 27
+    },
+    {
+      "tic": 3786,
+      "metric": 3,
+      "total_ms": 0.1611,
+      "maximum_ms": 0.0012,
+      "calls": 270
+    },
+    {
+      "tic": 3786,
+      "metric": 4,
+      "total_ms": 0.0219,
+      "maximum_ms": 0.0012,
+      "calls": 32
+    },
+    {
+      "tic": 3786,
+      "metric": 5,
+      "total_ms": 0.2445,
+      "maximum_ms": 0.018,
+      "calls": 27
+    },
+    {
+      "tic": 3786,
+      "metric": 6,
+      "total_ms": 0.9646,
+      "maximum_ms": 0.053,
+      "calls": 27
+    },
+    {
+      "tic": 3786,
+      "metric": 7,
+      "total_ms": 0.0059,
+      "maximum_ms": 0.0003,
+      "calls": 27
+    },
+    {
+      "tic": 3786,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1080
+    },
+    {
+      "tic": 3786,
+      "metric": 10,
+      "total_ms": 1.0995,
+      "maximum_ms": 0.077,
+      "calls": 601
+    },
+    {
+      "tic": 3786,
+      "metric": 11,
+      "total_ms": 0.6665,
+      "maximum_ms": 0.0538,
+      "calls": 17
+    },
+    {
+      "tic": 3786,
+      "metric": 12,
+      "total_ms": 0.1334,
+      "maximum_ms": 0.0094,
+      "calls": 17
+    },
+    {
+      "tic": 3786,
+      "metric": 13,
+      "total_ms": 0.1041,
+      "maximum_ms": 0.0012,
+      "calls": 170
+    },
+    {
+      "tic": 3786,
+      "metric": 14,
+      "total_ms": 0.2325,
+      "maximum_ms": 0.0056,
+      "calls": 166
+    },
+    {
+      "tic": 3786,
+      "metric": 15,
+      "total_ms": 0.2477,
+      "maximum_ms": 0.0216,
+      "calls": 17
+    },
+    {
+      "tic": 3786,
+      "metric": 16,
+      "total_ms": 0.483,
+      "maximum_ms": 0.042,
+      "calls": 17
+    },
+    {
+      "tic": 3786,
+      "metric": 17,
+      "total_ms": 0.0098,
+      "maximum_ms": 0.0017,
+      "calls": 17
+    },
+    {
+      "tic": 3786,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 680
+    },
+    {
+      "tic": 3786,
+      "metric": 20,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 3786,
+      "metric": 21,
+      "total_ms": 0.0352,
+      "maximum_ms": 0.0352,
+      "calls": 1
+    },
+    {
+      "tic": 3786,
+      "metric": 22,
+      "total_ms": 0.003,
+      "maximum_ms": 0.003,
+      "calls": 1
+    },
+    {
+      "tic": 3786,
+      "metric": 23,
+      "total_ms": 0.0018,
+      "maximum_ms": 0.0018,
+      "calls": 1
+    },
+    {
+      "tic": 3786,
+      "metric": 24,
+      "total_ms": 0.0021,
+      "maximum_ms": 0.0021,
+      "calls": 1
+    },
+    {
+      "tic": 3786,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3786,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3803,
+      "metric": 0,
+      "total_ms": 1.8698,
+      "maximum_ms": 0.0851,
+      "calls": 987
+    },
+    {
+      "tic": 3803,
+      "metric": 1,
+      "total_ms": 1.2781,
+      "maximum_ms": 0.0661,
+      "calls": 27
+    },
+    {
+      "tic": 3803,
+      "metric": 2,
+      "total_ms": 0.2012,
+      "maximum_ms": 0.0096,
+      "calls": 27
+    },
+    {
+      "tic": 3803,
+      "metric": 3,
+      "total_ms": 0.1645,
+      "maximum_ms": 0.0012,
+      "calls": 270
+    },
+    {
+      "tic": 3803,
+      "metric": 4,
+      "total_ms": 0.0202,
+      "maximum_ms": 0.0017,
+      "calls": 27
+    },
+    {
+      "tic": 3803,
+      "metric": 5,
+      "total_ms": 0.2917,
+      "maximum_ms": 0.0174,
+      "calls": 27
+    },
+    {
+      "tic": 3803,
+      "metric": 6,
+      "total_ms": 1.0197,
+      "maximum_ms": 0.052,
+      "calls": 27
+    },
+    {
+      "tic": 3803,
+      "metric": 7,
+      "total_ms": 0.0072,
+      "maximum_ms": 0.0017,
+      "calls": 27
+    },
+    {
+      "tic": 3803,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1080
+    },
+    {
+      "tic": 3803,
+      "metric": 10,
+      "total_ms": 1.0578,
+      "maximum_ms": 0.0784,
+      "calls": 601
+    },
+    {
+      "tic": 3803,
+      "metric": 11,
+      "total_ms": 0.617,
+      "maximum_ms": 0.0551,
+      "calls": 15
+    },
+    {
+      "tic": 3803,
+      "metric": 12,
+      "total_ms": 0.1226,
+      "maximum_ms": 0.0088,
+      "calls": 15
+    },
+    {
+      "tic": 3803,
+      "metric": 13,
+      "total_ms": 0.095,
+      "maximum_ms": 0.0012,
+      "calls": 150
+    },
+    {
+      "tic": 3803,
+      "metric": 14,
+      "total_ms": 0.2311,
+      "maximum_ms": 0.0062,
+      "calls": 165
+    },
+    {
+      "tic": 3803,
+      "metric": 15,
+      "total_ms": 0.2529,
+      "maximum_ms": 0.0229,
+      "calls": 15
+    },
+    {
+      "tic": 3803,
+      "metric": 16,
+      "total_ms": 0.4532,
+      "maximum_ms": 0.0442,
+      "calls": 15
+    },
+    {
+      "tic": 3803,
+      "metric": 17,
+      "total_ms": 0.0101,
+      "maximum_ms": 0.0011,
+      "calls": 15
+    },
+    {
+      "tic": 3803,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 600
+    },
+    {
+      "tic": 3803,
+      "metric": 20,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 3803,
+      "metric": 21,
+      "total_ms": 0.0361,
+      "maximum_ms": 0.0361,
+      "calls": 1
+    },
+    {
+      "tic": 3803,
+      "metric": 22,
+      "total_ms": 0.0037,
+      "maximum_ms": 0.0037,
+      "calls": 1
+    },
+    {
+      "tic": 3803,
+      "metric": 23,
+      "total_ms": 0.0023,
+      "maximum_ms": 0.0023,
+      "calls": 1
+    },
+    {
+      "tic": 3803,
+      "metric": 24,
+      "total_ms": 0.0021,
+      "maximum_ms": 0.0021,
+      "calls": 1
+    },
+    {
+      "tic": 3803,
+      "metric": 27,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 3803,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3820,
+      "metric": 0,
+      "total_ms": 1.7117,
+      "maximum_ms": 0.0855,
+      "calls": 987
+    },
+    {
+      "tic": 3820,
+      "metric": 1,
+      "total_ms": 1.2194,
+      "maximum_ms": 0.0666,
+      "calls": 27
+    },
+    {
+      "tic": 3820,
+      "metric": 2,
+      "total_ms": 0.2219,
+      "maximum_ms": 0.0095,
+      "calls": 27
+    },
+    {
+      "tic": 3820,
+      "metric": 3,
+      "total_ms": 0.1608,
+      "maximum_ms": 0.0011,
+      "calls": 270
+    },
+    {
+      "tic": 3820,
+      "metric": 4,
+      "total_ms": 0.0389,
+      "maximum_ms": 0.002,
+      "calls": 54
+    },
+    {
+      "tic": 3820,
+      "metric": 5,
+      "total_ms": 0.2106,
+      "maximum_ms": 0.0173,
+      "calls": 27
+    },
+    {
+      "tic": 3820,
+      "metric": 6,
+      "total_ms": 0.9437,
+      "maximum_ms": 0.0542,
+      "calls": 27
+    },
+    {
+      "tic": 3820,
+      "metric": 7,
+      "total_ms": 0.0322,
+      "maximum_ms": 0.0015,
+      "calls": 27
+    },
+    {
+      "tic": 3820,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1080
+    },
+    {
+      "tic": 3820,
+      "metric": 10,
+      "total_ms": 1.063,
+      "maximum_ms": 0.0655,
+      "calls": 601
+    },
+    {
+      "tic": 3820,
+      "metric": 11,
+      "total_ms": 0.6591,
+      "maximum_ms": 0.0491,
+      "calls": 17
+    },
+    {
+      "tic": 3820,
+      "metric": 12,
+      "total_ms": 0.146,
+      "maximum_ms": 0.0092,
+      "calls": 17
+    },
+    {
+      "tic": 3820,
+      "metric": 13,
+      "total_ms": 0.1036,
+      "maximum_ms": 0.0011,
+      "calls": 170
+    },
+    {
+      "tic": 3820,
+      "metric": 14,
+      "total_ms": 0.2211,
+      "maximum_ms": 0.0034,
+      "calls": 163
+    },
+    {
+      "tic": 3820,
+      "metric": 15,
+      "total_ms": 0.2199,
+      "maximum_ms": 0.0172,
+      "calls": 17
+    },
+    {
+      "tic": 3820,
+      "metric": 16,
+      "total_ms": 0.4666,
+      "maximum_ms": 0.0376,
+      "calls": 17
+    },
+    {
+      "tic": 3820,
+      "metric": 17,
+      "total_ms": 0.0227,
+      "maximum_ms": 0.0015,
+      "calls": 17
+    },
+    {
+      "tic": 3820,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 680
+    },
+    {
+      "tic": 3820,
+      "metric": 20,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 3820,
+      "metric": 21,
+      "total_ms": 0.0306,
+      "maximum_ms": 0.0306,
+      "calls": 1
+    },
+    {
+      "tic": 3820,
+      "metric": 22,
+      "total_ms": 0.0026,
+      "maximum_ms": 0.0026,
+      "calls": 1
+    },
+    {
+      "tic": 3820,
+      "metric": 23,
+      "total_ms": 0.0015,
+      "maximum_ms": 0.0015,
+      "calls": 1
+    },
+    {
+      "tic": 3820,
+      "metric": 24,
+      "total_ms": 0.0016,
+      "maximum_ms": 0.0016,
+      "calls": 1
+    },
+    {
+      "tic": 3820,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3820,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3837,
+      "metric": 0,
+      "total_ms": 1.9659,
+      "maximum_ms": 0.0944,
+      "calls": 987
+    },
+    {
+      "tic": 3837,
+      "metric": 1,
+      "total_ms": 1.3509,
+      "maximum_ms": 0.0783,
+      "calls": 27
+    },
+    {
+      "tic": 3837,
+      "metric": 2,
+      "total_ms": 0.221,
+      "maximum_ms": 0.0097,
+      "calls": 27
+    },
+    {
+      "tic": 3837,
+      "metric": 3,
+      "total_ms": 0.1598,
+      "maximum_ms": 0.0014,
+      "calls": 270
+    },
+    {
+      "tic": 3837,
+      "metric": 4,
+      "total_ms": 0.0187,
+      "maximum_ms": 0.0014,
+      "calls": 27
+    },
+    {
+      "tic": 3837,
+      "metric": 5,
+      "total_ms": 0.3169,
+      "maximum_ms": 0.0153,
+      "calls": 27
+    },
+    {
+      "tic": 3837,
+      "metric": 6,
+      "total_ms": 1.0756,
+      "maximum_ms": 0.0655,
+      "calls": 27
+    },
+    {
+      "tic": 3837,
+      "metric": 7,
+      "total_ms": 0.0323,
+      "maximum_ms": 0.0016,
+      "calls": 27
+    },
+    {
+      "tic": 3837,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1080
+    },
+    {
+      "tic": 3837,
+      "metric": 10,
+      "total_ms": 1.2213,
+      "maximum_ms": 0.0703,
+      "calls": 601
+    },
+    {
+      "tic": 3837,
+      "metric": 11,
+      "total_ms": 0.768,
+      "maximum_ms": 0.0496,
+      "calls": 19
+    },
+    {
+      "tic": 3837,
+      "metric": 12,
+      "total_ms": 0.1648,
+      "maximum_ms": 0.0093,
+      "calls": 19
+    },
+    {
+      "tic": 3837,
+      "metric": 13,
+      "total_ms": 0.1166,
+      "maximum_ms": 0.0014,
+      "calls": 190
+    },
+    {
+      "tic": 3837,
+      "metric": 14,
+      "total_ms": 0.2343,
+      "maximum_ms": 0.0058,
+      "calls": 168
+    },
+    {
+      "tic": 3837,
+      "metric": 15,
+      "total_ms": 0.2654,
+      "maximum_ms": 0.0194,
+      "calls": 19
+    },
+    {
+      "tic": 3837,
+      "metric": 16,
+      "total_ms": 0.5501,
+      "maximum_ms": 0.0376,
+      "calls": 19
+    },
+    {
+      "tic": 3837,
+      "metric": 17,
+      "total_ms": 0.0252,
+      "maximum_ms": 0.0017,
+      "calls": 19
+    },
+    {
+      "tic": 3837,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 760
+    },
+    {
+      "tic": 3837,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3837,
+      "metric": 21,
+      "total_ms": 0.0337,
+      "maximum_ms": 0.0337,
+      "calls": 1
+    },
+    {
+      "tic": 3837,
+      "metric": 22,
+      "total_ms": 0.0029,
+      "maximum_ms": 0.0029,
+      "calls": 1
+    },
+    {
+      "tic": 3837,
+      "metric": 23,
+      "total_ms": 0.0017,
+      "maximum_ms": 0.0017,
+      "calls": 1
+    },
+    {
+      "tic": 3837,
+      "metric": 24,
+      "total_ms": 0.0039,
+      "maximum_ms": 0.002,
+      "calls": 2
+    },
+    {
+      "tic": 3837,
+      "metric": 27,
+      "total_ms": 0.0002,
+      "maximum_ms": 0.0002,
+      "calls": 1
+    },
+    {
+      "tic": 3837,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3854,
+      "metric": 0,
+      "total_ms": 1.8416,
+      "maximum_ms": 0.0832,
+      "calls": 987
+    },
+    {
+      "tic": 3854,
+      "metric": 1,
+      "total_ms": 1.342,
+      "maximum_ms": 0.0731,
+      "calls": 26
+    },
+    {
+      "tic": 3854,
+      "metric": 2,
+      "total_ms": 0.2154,
+      "maximum_ms": 0.0124,
+      "calls": 26
+    },
+    {
+      "tic": 3854,
+      "metric": 3,
+      "total_ms": 0.1639,
+      "maximum_ms": 0.0037,
+      "calls": 260
+    },
+    {
+      "tic": 3854,
+      "metric": 4,
+      "total_ms": 0.6324,
+      "maximum_ms": 0.0027,
+      "calls": 931
+    },
+    {
+      "tic": 3854,
+      "metric": 5,
+      "total_ms": 0.2186,
+      "maximum_ms": 0.0147,
+      "calls": 26
+    },
+    {
+      "tic": 3854,
+      "metric": 6,
+      "total_ms": 1.0758,
+      "maximum_ms": 0.06,
+      "calls": 26
+    },
+    {
+      "tic": 3854,
+      "metric": 7,
+      "total_ms": 0.0216,
+      "maximum_ms": 0.0013,
+      "calls": 26
+    },
+    {
+      "tic": 3854,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1040
+    },
+    {
+      "tic": 3854,
+      "metric": 10,
+      "total_ms": 1.0915,
+      "maximum_ms": 0.0703,
+      "calls": 601
+    },
+    {
+      "tic": 3854,
+      "metric": 11,
+      "total_ms": 0.6583,
+      "maximum_ms": 0.0509,
+      "calls": 17
+    },
+    {
+      "tic": 3854,
+      "metric": 12,
+      "total_ms": 0.1366,
+      "maximum_ms": 0.0114,
+      "calls": 17
+    },
+    {
+      "tic": 3854,
+      "metric": 13,
+      "total_ms": 0.1032,
+      "maximum_ms": 0.0012,
+      "calls": 170
+    },
+    {
+      "tic": 3854,
+      "metric": 14,
+      "total_ms": 0.2256,
+      "maximum_ms": 0.0032,
+      "calls": 166
+    },
+    {
+      "tic": 3854,
+      "metric": 15,
+      "total_ms": 0.2511,
+      "maximum_ms": 0.0223,
+      "calls": 17
+    },
+    {
+      "tic": 3854,
+      "metric": 16,
+      "total_ms": 0.4751,
+      "maximum_ms": 0.04,
+      "calls": 17
+    },
+    {
+      "tic": 3854,
+      "metric": 17,
+      "total_ms": 0.0098,
+      "maximum_ms": 0.001,
+      "calls": 17
+    },
+    {
+      "tic": 3854,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 680
+    },
+    {
+      "tic": 3854,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3854,
+      "metric": 21,
+      "total_ms": 0.03,
+      "maximum_ms": 0.03,
+      "calls": 1
+    },
+    {
+      "tic": 3854,
+      "metric": 22,
+      "total_ms": 0.0025,
+      "maximum_ms": 0.0025,
+      "calls": 1
+    },
+    {
+      "tic": 3854,
+      "metric": 23,
+      "total_ms": 0.0014,
+      "maximum_ms": 0.0014,
+      "calls": 1
+    },
+    {
+      "tic": 3854,
+      "metric": 24,
+      "total_ms": 0.0017,
+      "maximum_ms": 0.0017,
+      "calls": 1
+    },
+    {
+      "tic": 3854,
+      "metric": 27,
+      "total_ms": 0.0002,
+      "maximum_ms": 0.0002,
+      "calls": 1
+    },
+    {
+      "tic": 3854,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3871,
+      "metric": 0,
+      "total_ms": 1.8761,
+      "maximum_ms": 0.0798,
+      "calls": 987
+    },
+    {
+      "tic": 3871,
+      "metric": 1,
+      "total_ms": 1.2734,
+      "maximum_ms": 0.0661,
+      "calls": 28
+    },
+    {
+      "tic": 3871,
+      "metric": 2,
+      "total_ms": 0.2064,
+      "maximum_ms": 0.0092,
+      "calls": 28
+    },
+    {
+      "tic": 3871,
+      "metric": 3,
+      "total_ms": 0.1699,
+      "maximum_ms": 0.0011,
+      "calls": 280
+    },
+    {
+      "tic": 3871,
+      "metric": 4,
+      "total_ms": 0.022,
+      "maximum_ms": 0.0026,
+      "calls": 28
+    },
+    {
+      "tic": 3871,
+      "metric": 5,
+      "total_ms": 0.3082,
+      "maximum_ms": 0.0173,
+      "calls": 28
+    },
+    {
+      "tic": 3871,
+      "metric": 6,
+      "total_ms": 1.0068,
+      "maximum_ms": 0.0559,
+      "calls": 28
+    },
+    {
+      "tic": 3871,
+      "metric": 7,
+      "total_ms": 0.0068,
+      "maximum_ms": 0.0015,
+      "calls": 28
+    },
+    {
+      "tic": 3871,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 3871,
+      "metric": 10,
+      "total_ms": 0.9961,
+      "maximum_ms": 0.0676,
+      "calls": 601
+    },
+    {
+      "tic": 3871,
+      "metric": 11,
+      "total_ms": 0.5861,
+      "maximum_ms": 0.0465,
+      "calls": 15
+    },
+    {
+      "tic": 3871,
+      "metric": 12,
+      "total_ms": 0.1202,
+      "maximum_ms": 0.0087,
+      "calls": 15
+    },
+    {
+      "tic": 3871,
+      "metric": 13,
+      "total_ms": 0.0943,
+      "maximum_ms": 0.0012,
+      "calls": 150
+    },
+    {
+      "tic": 3871,
+      "metric": 14,
+      "total_ms": 0.2354,
+      "maximum_ms": 0.0052,
+      "calls": 165
+    },
+    {
+      "tic": 3871,
+      "metric": 15,
+      "total_ms": 0.2266,
+      "maximum_ms": 0.0204,
+      "calls": 15
+    },
+    {
+      "tic": 3871,
+      "metric": 16,
+      "total_ms": 0.4223,
+      "maximum_ms": 0.0358,
+      "calls": 15
+    },
+    {
+      "tic": 3871,
+      "metric": 17,
+      "total_ms": 0.0083,
+      "maximum_ms": 0.0011,
+      "calls": 15
+    },
+    {
+      "tic": 3871,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 600
+    },
+    {
+      "tic": 3871,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3871,
+      "metric": 21,
+      "total_ms": 0.0368,
+      "maximum_ms": 0.0368,
+      "calls": 1
+    },
+    {
+      "tic": 3871,
+      "metric": 22,
+      "total_ms": 0.0029,
+      "maximum_ms": 0.0029,
+      "calls": 1
+    },
+    {
+      "tic": 3871,
+      "metric": 23,
+      "total_ms": 0.0017,
+      "maximum_ms": 0.0017,
+      "calls": 1
+    },
+    {
+      "tic": 3871,
+      "metric": 24,
+      "total_ms": 0.0022,
+      "maximum_ms": 0.0022,
+      "calls": 1
+    },
+    {
+      "tic": 3871,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3871,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3888,
+      "metric": 0,
+      "total_ms": 1.7596,
+      "maximum_ms": 0.0659,
+      "calls": 987
+    },
+    {
+      "tic": 3888,
+      "metric": 1,
+      "total_ms": 1.2359,
+      "maximum_ms": 0.0539,
+      "calls": 28
+    },
+    {
+      "tic": 3888,
+      "metric": 2,
+      "total_ms": 0.2042,
+      "maximum_ms": 0.0091,
+      "calls": 28
+    },
+    {
+      "tic": 3888,
+      "metric": 3,
+      "total_ms": 0.1678,
+      "maximum_ms": 0.0012,
+      "calls": 280
+    },
+    {
+      "tic": 3888,
+      "metric": 4,
+      "total_ms": 0.0397,
+      "maximum_ms": 0.0017,
+      "calls": 56
+    },
+    {
+      "tic": 3888,
+      "metric": 5,
+      "total_ms": 0.2318,
+      "maximum_ms": 0.0122,
+      "calls": 28
+    },
+    {
+      "tic": 3888,
+      "metric": 6,
+      "total_ms": 0.9758,
+      "maximum_ms": 0.0448,
+      "calls": 28
+    },
+    {
+      "tic": 3888,
+      "metric": 7,
+      "total_ms": 0.0061,
+      "maximum_ms": 0.0012,
+      "calls": 28
+    },
+    {
+      "tic": 3888,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 3888,
+      "metric": 10,
+      "total_ms": 1.0726,
+      "maximum_ms": 0.0693,
+      "calls": 601
+    },
+    {
+      "tic": 3888,
+      "metric": 11,
+      "total_ms": 0.6453,
+      "maximum_ms": 0.0467,
+      "calls": 17
+    },
+    {
+      "tic": 3888,
+      "metric": 12,
+      "total_ms": 0.1333,
+      "maximum_ms": 0.0087,
+      "calls": 17
+    },
+    {
+      "tic": 3888,
+      "metric": 13,
+      "total_ms": 0.1042,
+      "maximum_ms": 0.0015,
+      "calls": 170
+    },
+    {
+      "tic": 3888,
+      "metric": 14,
+      "total_ms": 0.2152,
+      "maximum_ms": 0.0029,
+      "calls": 165
+    },
+    {
+      "tic": 3888,
+      "metric": 15,
+      "total_ms": 0.2441,
+      "maximum_ms": 0.0231,
+      "calls": 17
+    },
+    {
+      "tic": 3888,
+      "metric": 16,
+      "total_ms": 0.4649,
+      "maximum_ms": 0.0357,
+      "calls": 17
+    },
+    {
+      "tic": 3888,
+      "metric": 17,
+      "total_ms": 0.0101,
+      "maximum_ms": 0.001,
+      "calls": 17
+    },
+    {
+      "tic": 3888,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 680
+    },
+    {
+      "tic": 3888,
+      "metric": 20,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 3888,
+      "metric": 21,
+      "total_ms": 0.0332,
+      "maximum_ms": 0.0332,
+      "calls": 1
+    },
+    {
+      "tic": 3888,
+      "metric": 22,
+      "total_ms": 0.0025,
+      "maximum_ms": 0.0025,
+      "calls": 1
+    },
+    {
+      "tic": 3888,
+      "metric": 23,
+      "total_ms": 0.0015,
+      "maximum_ms": 0.0015,
+      "calls": 1
+    },
+    {
+      "tic": 3888,
+      "metric": 24,
+      "total_ms": 0.002,
+      "maximum_ms": 0.002,
+      "calls": 1
+    },
+    {
+      "tic": 3888,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3888,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3905,
+      "metric": 0,
+      "total_ms": 1.9285,
+      "maximum_ms": 0.0835,
+      "calls": 987
+    },
+    {
+      "tic": 3905,
+      "metric": 1,
+      "total_ms": 1.3313,
+      "maximum_ms": 0.0667,
+      "calls": 28
+    },
+    {
+      "tic": 3905,
+      "metric": 2,
+      "total_ms": 0.2033,
+      "maximum_ms": 0.0081,
+      "calls": 28
+    },
+    {
+      "tic": 3905,
+      "metric": 3,
+      "total_ms": 0.1672,
+      "maximum_ms": 0.0013,
+      "calls": 280
+    },
+    {
+      "tic": 3905,
+      "metric": 4,
+      "total_ms": 0.0179,
+      "maximum_ms": 0.0012,
+      "calls": 28
+    },
+    {
+      "tic": 3905,
+      "metric": 5,
+      "total_ms": 0.2991,
+      "maximum_ms": 0.0171,
+      "calls": 28
+    },
+    {
+      "tic": 3905,
+      "metric": 6,
+      "total_ms": 1.0718,
+      "maximum_ms": 0.0553,
+      "calls": 28
+    },
+    {
+      "tic": 3905,
+      "metric": 7,
+      "total_ms": 0.0063,
+      "maximum_ms": 0.0003,
+      "calls": 28
+    },
+    {
+      "tic": 3905,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 3905,
+      "metric": 10,
+      "total_ms": 1.1959,
+      "maximum_ms": 0.0647,
+      "calls": 601
+    },
+    {
+      "tic": 3905,
+      "metric": 11,
+      "total_ms": 0.7603,
+      "maximum_ms": 0.0474,
+      "calls": 20
+    },
+    {
+      "tic": 3905,
+      "metric": 12,
+      "total_ms": 0.1585,
+      "maximum_ms": 0.0089,
+      "calls": 20
+    },
+    {
+      "tic": 3905,
+      "metric": 13,
+      "total_ms": 0.1265,
+      "maximum_ms": 0.0012,
+      "calls": 200
+    },
+    {
+      "tic": 3905,
+      "metric": 14,
+      "total_ms": 0.24,
+      "maximum_ms": 0.0059,
+      "calls": 169
+    },
+    {
+      "tic": 3905,
+      "metric": 15,
+      "total_ms": 0.2504,
+      "maximum_ms": 0.0193,
+      "calls": 20
+    },
+    {
+      "tic": 3905,
+      "metric": 16,
+      "total_ms": 0.5427,
+      "maximum_ms": 0.037,
+      "calls": 20
+    },
+    {
+      "tic": 3905,
+      "metric": 17,
+      "total_ms": 0.0101,
+      "maximum_ms": 0.0013,
+      "calls": 20
+    },
+    {
+      "tic": 3905,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 800
+    },
+    {
+      "tic": 3905,
+      "metric": 20,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 3905,
+      "metric": 21,
+      "total_ms": 0.0358,
+      "maximum_ms": 0.0358,
+      "calls": 1
+    },
+    {
+      "tic": 3905,
+      "metric": 22,
+      "total_ms": 0.0029,
+      "maximum_ms": 0.0029,
+      "calls": 1
+    },
+    {
+      "tic": 3905,
+      "metric": 23,
+      "total_ms": 0.0017,
+      "maximum_ms": 0.0017,
+      "calls": 1
+    },
+    {
+      "tic": 3905,
+      "metric": 24,
+      "total_ms": 0.004,
+      "maximum_ms": 0.002,
+      "calls": 2
+    },
+    {
+      "tic": 3905,
+      "metric": 27,
+      "total_ms": 0.0002,
+      "maximum_ms": 0.0002,
+      "calls": 1
+    },
+    {
+      "tic": 3905,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3922,
+      "metric": 0,
+      "total_ms": 2.1524,
+      "maximum_ms": 0.2095,
+      "calls": 987
+    },
+    {
+      "tic": 3922,
+      "metric": 1,
+      "total_ms": 1.5832,
+      "maximum_ms": 0.1993,
+      "calls": 29
+    },
+    {
+      "tic": 3922,
+      "metric": 2,
+      "total_ms": 0.2415,
+      "maximum_ms": 0.0091,
+      "calls": 29
+    },
+    {
+      "tic": 3922,
+      "metric": 3,
+      "total_ms": 0.1749,
+      "maximum_ms": 0.0011,
+      "calls": 290
+    },
+    {
+      "tic": 3922,
+      "metric": 4,
+      "total_ms": 0.0245,
+      "maximum_ms": 0.0014,
+      "calls": 34
+    },
+    {
+      "tic": 3922,
+      "metric": 5,
+      "total_ms": 0.271,
+      "maximum_ms": 0.0144,
+      "calls": 29
+    },
+    {
+      "tic": 3922,
+      "metric": 6,
+      "total_ms": 1.282,
+      "maximum_ms": 0.1895,
+      "calls": 29
+    },
+    {
+      "tic": 3922,
+      "metric": 7,
+      "total_ms": 0.0347,
+      "maximum_ms": 0.0014,
+      "calls": 29
+    },
+    {
+      "tic": 3922,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 3922,
+      "metric": 10,
+      "total_ms": 1.0656,
+      "maximum_ms": 0.0715,
+      "calls": 601
+    },
+    {
+      "tic": 3922,
+      "metric": 11,
+      "total_ms": 0.6401,
+      "maximum_ms": 0.0509,
+      "calls": 16
+    },
+    {
+      "tic": 3922,
+      "metric": 12,
+      "total_ms": 0.1391,
+      "maximum_ms": 0.0092,
+      "calls": 16
+    },
+    {
+      "tic": 3922,
+      "metric": 13,
+      "total_ms": 0.099,
+      "maximum_ms": 0.0012,
+      "calls": 160
+    },
+    {
+      "tic": 3922,
+      "metric": 14,
+      "total_ms": 0.227,
+      "maximum_ms": 0.0036,
+      "calls": 166
+    },
+    {
+      "tic": 3922,
+      "metric": 15,
+      "total_ms": 0.2415,
+      "maximum_ms": 0.0205,
+      "calls": 16
+    },
+    {
+      "tic": 3922,
+      "metric": 16,
+      "total_ms": 0.4562,
+      "maximum_ms": 0.0391,
+      "calls": 16
+    },
+    {
+      "tic": 3922,
+      "metric": 17,
+      "total_ms": 0.0212,
+      "maximum_ms": 0.0016,
+      "calls": 16
+    },
+    {
+      "tic": 3922,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 640
+    },
+    {
+      "tic": 3922,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3922,
+      "metric": 21,
+      "total_ms": 0.032,
+      "maximum_ms": 0.032,
+      "calls": 1
+    },
+    {
+      "tic": 3922,
+      "metric": 22,
+      "total_ms": 0.0026,
+      "maximum_ms": 0.0026,
+      "calls": 1
+    },
+    {
+      "tic": 3922,
+      "metric": 23,
+      "total_ms": 0.0016,
+      "maximum_ms": 0.0016,
+      "calls": 1
+    },
+    {
+      "tic": 3922,
+      "metric": 24,
+      "total_ms": 0.002,
+      "maximum_ms": 0.002,
+      "calls": 1
+    },
+    {
+      "tic": 3922,
+      "metric": 27,
+      "total_ms": 0.0002,
+      "maximum_ms": 0.0002,
+      "calls": 1
+    },
+    {
+      "tic": 3922,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3939,
+      "metric": 0,
+      "total_ms": 1.9483,
+      "maximum_ms": 0.0844,
+      "calls": 987
+    },
+    {
+      "tic": 3939,
+      "metric": 1,
+      "total_ms": 1.3241,
+      "maximum_ms": 0.0677,
+      "calls": 28
+    },
+    {
+      "tic": 3939,
+      "metric": 2,
+      "total_ms": 0.2295,
+      "maximum_ms": 0.0094,
+      "calls": 28
+    },
+    {
+      "tic": 3939,
+      "metric": 3,
+      "total_ms": 0.1658,
+      "maximum_ms": 0.0013,
+      "calls": 280
+    },
+    {
+      "tic": 3939,
+      "metric": 4,
+      "total_ms": 0.0214,
+      "maximum_ms": 0.0031,
+      "calls": 28
+    },
+    {
+      "tic": 3939,
+      "metric": 5,
+      "total_ms": 0.3279,
+      "maximum_ms": 0.0167,
+      "calls": 28
+    },
+    {
+      "tic": 3939,
+      "metric": 6,
+      "total_ms": 1.0367,
+      "maximum_ms": 0.0529,
+      "calls": 28
+    },
+    {
+      "tic": 3939,
+      "metric": 7,
+      "total_ms": 0.0331,
+      "maximum_ms": 0.0016,
+      "calls": 28
+    },
+    {
+      "tic": 3939,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 3939,
+      "metric": 10,
+      "total_ms": 1.0671,
+      "maximum_ms": 0.0786,
+      "calls": 601
+    },
+    {
+      "tic": 3939,
+      "metric": 11,
+      "total_ms": 0.6442,
+      "maximum_ms": 0.0553,
+      "calls": 16
+    },
+    {
+      "tic": 3939,
+      "metric": 12,
+      "total_ms": 0.1375,
+      "maximum_ms": 0.0092,
+      "calls": 16
+    },
+    {
+      "tic": 3939,
+      "metric": 13,
+      "total_ms": 0.0966,
+      "maximum_ms": 0.0013,
+      "calls": 160
+    },
+    {
+      "tic": 3939,
+      "metric": 14,
+      "total_ms": 0.2341,
+      "maximum_ms": 0.0049,
+      "calls": 167
+    },
+    {
+      "tic": 3939,
+      "metric": 15,
+      "total_ms": 0.239,
+      "maximum_ms": 0.022,
+      "calls": 16
+    },
+    {
+      "tic": 3939,
+      "metric": 16,
+      "total_ms": 0.4639,
+      "maximum_ms": 0.0436,
+      "calls": 16
+    },
+    {
+      "tic": 3939,
+      "metric": 17,
+      "total_ms": 0.0215,
+      "maximum_ms": 0.0016,
+      "calls": 16
+    },
+    {
+      "tic": 3939,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 640
+    },
+    {
+      "tic": 3939,
+      "metric": 20,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 3939,
+      "metric": 21,
+      "total_ms": 0.0355,
+      "maximum_ms": 0.0355,
+      "calls": 1
+    },
+    {
+      "tic": 3939,
+      "metric": 22,
+      "total_ms": 0.0029,
+      "maximum_ms": 0.0029,
+      "calls": 1
+    },
+    {
+      "tic": 3939,
+      "metric": 23,
+      "total_ms": 0.0018,
+      "maximum_ms": 0.0018,
+      "calls": 1
+    },
+    {
+      "tic": 3939,
+      "metric": 24,
+      "total_ms": 0.0021,
+      "maximum_ms": 0.0021,
+      "calls": 1
+    },
+    {
+      "tic": 3939,
+      "metric": 27,
+      "total_ms": 0.0002,
+      "maximum_ms": 0.0002,
+      "calls": 1
+    },
+    {
+      "tic": 3939,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3956,
+      "metric": 0,
+      "total_ms": 2.033,
+      "maximum_ms": 0.2227,
+      "calls": 987
+    },
+    {
+      "tic": 3956,
+      "metric": 1,
+      "total_ms": 1.495,
+      "maximum_ms": 0.2145,
+      "calls": 29
+    },
+    {
+      "tic": 3956,
+      "metric": 2,
+      "total_ms": 0.2168,
+      "maximum_ms": 0.0105,
+      "calls": 29
+    },
+    {
+      "tic": 3956,
+      "metric": 3,
+      "total_ms": 0.1757,
+      "maximum_ms": 0.003,
+      "calls": 290
+    },
+    {
+      "tic": 3956,
+      "metric": 4,
+      "total_ms": 0.0409,
+      "maximum_ms": 0.0023,
+      "calls": 56
+    },
+    {
+      "tic": 3956,
+      "metric": 5,
+      "total_ms": 0.2479,
+      "maximum_ms": 0.0142,
+      "calls": 29
+    },
+    {
+      "tic": 3956,
+      "metric": 6,
+      "total_ms": 1.218,
+      "maximum_ms": 0.2055,
+      "calls": 29
+    },
+    {
+      "tic": 3956,
+      "metric": 7,
+      "total_ms": 0.0085,
+      "maximum_ms": 0.0014,
+      "calls": 29
+    },
+    {
+      "tic": 3956,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 3956,
+      "metric": 10,
+      "total_ms": 1.1462,
+      "maximum_ms": 0.0796,
+      "calls": 601
+    },
+    {
+      "tic": 3956,
+      "metric": 11,
+      "total_ms": 0.6944,
+      "maximum_ms": 0.0563,
+      "calls": 18
+    },
+    {
+      "tic": 3956,
+      "metric": 12,
+      "total_ms": 0.1431,
+      "maximum_ms": 0.0085,
+      "calls": 18
+    },
+    {
+      "tic": 3956,
+      "metric": 13,
+      "total_ms": 0.1124,
+      "maximum_ms": 0.0012,
+      "calls": 180
+    },
+    {
+      "tic": 3956,
+      "metric": 14,
+      "total_ms": 0.2309,
+      "maximum_ms": 0.0034,
+      "calls": 167
+    },
+    {
+      "tic": 3956,
+      "metric": 15,
+      "total_ms": 0.2653,
+      "maximum_ms": 0.0249,
+      "calls": 18
+    },
+    {
+      "tic": 3956,
+      "metric": 16,
+      "total_ms": 0.5027,
+      "maximum_ms": 0.0447,
+      "calls": 18
+    },
+    {
+      "tic": 3956,
+      "metric": 17,
+      "total_ms": 0.0096,
+      "maximum_ms": 0.001,
+      "calls": 18
+    },
+    {
+      "tic": 3956,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 720
+    },
+    {
+      "tic": 3956,
+      "metric": 20,
+      "total_ms": 0.0005,
+      "maximum_ms": 0.0005,
+      "calls": 1
+    },
+    {
+      "tic": 3956,
+      "metric": 21,
+      "total_ms": 0.0334,
+      "maximum_ms": 0.0334,
+      "calls": 1
+    },
+    {
+      "tic": 3956,
+      "metric": 22,
+      "total_ms": 0.0028,
+      "maximum_ms": 0.0028,
+      "calls": 1
+    },
+    {
+      "tic": 3956,
+      "metric": 23,
+      "total_ms": 0.0016,
+      "maximum_ms": 0.0016,
+      "calls": 1
+    },
+    {
+      "tic": 3956,
+      "metric": 24,
+      "total_ms": 0.0018,
+      "maximum_ms": 0.0018,
+      "calls": 1
+    },
+    {
+      "tic": 3956,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3956,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3973,
+      "metric": 0,
+      "total_ms": 1.7896,
+      "maximum_ms": 0.0832,
+      "calls": 987
+    },
+    {
+      "tic": 3973,
+      "metric": 1,
+      "total_ms": 1.2333,
+      "maximum_ms": 0.0671,
+      "calls": 28
+    },
+    {
+      "tic": 3973,
+      "metric": 2,
+      "total_ms": 0.2,
+      "maximum_ms": 0.008,
+      "calls": 28
+    },
+    {
+      "tic": 3973,
+      "metric": 3,
+      "total_ms": 0.1651,
+      "maximum_ms": 0.0013,
+      "calls": 280
+    },
+    {
+      "tic": 3973,
+      "metric": 4,
+      "total_ms": 0.0199,
+      "maximum_ms": 0.0021,
+      "calls": 28
+    },
+    {
+      "tic": 3973,
+      "metric": 5,
+      "total_ms": 0.2677,
+      "maximum_ms": 0.0157,
+      "calls": 28
+    },
+    {
+      "tic": 3973,
+      "metric": 6,
+      "total_ms": 0.9781,
+      "maximum_ms": 0.056,
+      "calls": 28
+    },
+    {
+      "tic": 3973,
+      "metric": 7,
+      "total_ms": 0.0052,
+      "maximum_ms": 0.0004,
+      "calls": 28
+    },
+    {
+      "tic": 3973,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 3973,
+      "metric": 10,
+      "total_ms": 1.2243,
+      "maximum_ms": 0.0688,
+      "calls": 601
+    },
+    {
+      "tic": 3973,
+      "metric": 11,
+      "total_ms": 0.76,
+      "maximum_ms": 0.0509,
+      "calls": 20
+    },
+    {
+      "tic": 3973,
+      "metric": 12,
+      "total_ms": 0.1583,
+      "maximum_ms": 0.0096,
+      "calls": 20
+    },
+    {
+      "tic": 3973,
+      "metric": 13,
+      "total_ms": 0.1228,
+      "maximum_ms": 0.0013,
+      "calls": 200
+    },
+    {
+      "tic": 3973,
+      "metric": 14,
+      "total_ms": 0.2342,
+      "maximum_ms": 0.0054,
+      "calls": 168
+    },
+    {
+      "tic": 3973,
+      "metric": 15,
+      "total_ms": 0.2759,
+      "maximum_ms": 0.0185,
+      "calls": 20
+    },
+    {
+      "tic": 3973,
+      "metric": 16,
+      "total_ms": 0.5477,
+      "maximum_ms": 0.0401,
+      "calls": 20
+    },
+    {
+      "tic": 3973,
+      "metric": 17,
+      "total_ms": 0.0133,
+      "maximum_ms": 0.0018,
+      "calls": 20
+    },
+    {
+      "tic": 3973,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 800
+    },
+    {
+      "tic": 3973,
+      "metric": 20,
+      "total_ms": 0.0006,
+      "maximum_ms": 0.0006,
+      "calls": 1
+    },
+    {
+      "tic": 3973,
+      "metric": 21,
+      "total_ms": 0.0402,
+      "maximum_ms": 0.0402,
+      "calls": 1
+    },
+    {
+      "tic": 3973,
+      "metric": 22,
+      "total_ms": 0.0033,
+      "maximum_ms": 0.0033,
+      "calls": 1
+    },
+    {
+      "tic": 3973,
+      "metric": 23,
+      "total_ms": 0.0018,
+      "maximum_ms": 0.0018,
+      "calls": 1
+    },
+    {
+      "tic": 3973,
+      "metric": 24,
+      "total_ms": 0.0051,
+      "maximum_ms": 0.0029,
+      "calls": 2
+    },
+    {
+      "tic": 3973,
+      "metric": 27,
+      "total_ms": 0.0005,
+      "maximum_ms": 0.0005,
+      "calls": 1
+    },
+    {
+      "tic": 3973,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 3990,
+      "metric": 0,
+      "total_ms": 1.8757,
+      "maximum_ms": 0.0755,
+      "calls": 987
+    },
+    {
+      "tic": 3990,
+      "metric": 1,
+      "total_ms": 1.3219,
+      "maximum_ms": 0.0578,
+      "calls": 29
+    },
+    {
+      "tic": 3990,
+      "metric": 2,
+      "total_ms": 0.2114,
+      "maximum_ms": 0.0098,
+      "calls": 29
+    },
+    {
+      "tic": 3990,
+      "metric": 3,
+      "total_ms": 0.1744,
+      "maximum_ms": 0.0035,
+      "calls": 290
+    },
+    {
+      "tic": 3990,
+      "metric": 4,
+      "total_ms": 0.025,
+      "maximum_ms": 0.0024,
+      "calls": 34
+    },
+    {
+      "tic": 3990,
+      "metric": 5,
+      "total_ms": 0.2691,
+      "maximum_ms": 0.0164,
+      "calls": 29
+    },
+    {
+      "tic": 3990,
+      "metric": 6,
+      "total_ms": 1.0511,
+      "maximum_ms": 0.0488,
+      "calls": 29
+    },
+    {
+      "tic": 3990,
+      "metric": 7,
+      "total_ms": 0.0066,
+      "maximum_ms": 0.0009,
+      "calls": 29
+    },
+    {
+      "tic": 3990,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 3990,
+      "metric": 10,
+      "total_ms": 1.0482,
+      "maximum_ms": 0.0744,
+      "calls": 601
+    },
+    {
+      "tic": 3990,
+      "metric": 11,
+      "total_ms": 0.6456,
+      "maximum_ms": 0.0539,
+      "calls": 16
+    },
+    {
+      "tic": 3990,
+      "metric": 12,
+      "total_ms": 0.1245,
+      "maximum_ms": 0.0087,
+      "calls": 16
+    },
+    {
+      "tic": 3990,
+      "metric": 13,
+      "total_ms": 0.0979,
+      "maximum_ms": 0.0012,
+      "calls": 160
+    },
+    {
+      "tic": 3990,
+      "metric": 14,
+      "total_ms": 0.2285,
+      "maximum_ms": 0.0044,
+      "calls": 165
+    },
+    {
+      "tic": 3990,
+      "metric": 15,
+      "total_ms": 0.2145,
+      "maximum_ms": 0.0193,
+      "calls": 16
+    },
+    {
+      "tic": 3990,
+      "metric": 16,
+      "total_ms": 0.4757,
+      "maximum_ms": 0.0429,
+      "calls": 16
+    },
+    {
+      "tic": 3990,
+      "metric": 17,
+      "total_ms": 0.0086,
+      "maximum_ms": 0.0014,
+      "calls": 16
+    },
+    {
+      "tic": 3990,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 640
+    },
+    {
+      "tic": 3990,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3990,
+      "metric": 21,
+      "total_ms": 0.0346,
+      "maximum_ms": 0.0346,
+      "calls": 1
+    },
+    {
+      "tic": 3990,
+      "metric": 22,
+      "total_ms": 0.0035,
+      "maximum_ms": 0.0035,
+      "calls": 1
+    },
+    {
+      "tic": 3990,
+      "metric": 23,
+      "total_ms": 0.0021,
+      "maximum_ms": 0.0021,
+      "calls": 1
+    },
+    {
+      "tic": 3990,
+      "metric": 24,
+      "total_ms": 0.0017,
+      "maximum_ms": 0.0017,
+      "calls": 1
+    },
+    {
+      "tic": 3990,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 3990,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4007,
+      "metric": 0,
+      "total_ms": 1.8812,
+      "maximum_ms": 0.0844,
+      "calls": 987
+    },
+    {
+      "tic": 4007,
+      "metric": 1,
+      "total_ms": 1.3167,
+      "maximum_ms": 0.0637,
+      "calls": 28
+    },
+    {
+      "tic": 4007,
+      "metric": 2,
+      "total_ms": 0.2021,
+      "maximum_ms": 0.0081,
+      "calls": 28
+    },
+    {
+      "tic": 4007,
+      "metric": 3,
+      "total_ms": 0.1672,
+      "maximum_ms": 0.0013,
+      "calls": 280
+    },
+    {
+      "tic": 4007,
+      "metric": 4,
+      "total_ms": 0.0179,
+      "maximum_ms": 0.0014,
+      "calls": 28
+    },
+    {
+      "tic": 4007,
+      "metric": 5,
+      "total_ms": 0.2773,
+      "maximum_ms": 0.0188,
+      "calls": 28
+    },
+    {
+      "tic": 4007,
+      "metric": 6,
+      "total_ms": 1.0611,
+      "maximum_ms": 0.0527,
+      "calls": 28
+    },
+    {
+      "tic": 4007,
+      "metric": 7,
+      "total_ms": 0.0053,
+      "maximum_ms": 0.0003,
+      "calls": 28
+    },
+    {
+      "tic": 4007,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 4007,
+      "metric": 10,
+      "total_ms": 0.9199,
+      "maximum_ms": 0.0732,
+      "calls": 601
+    },
+    {
+      "tic": 4007,
+      "metric": 11,
+      "total_ms": 0.5418,
+      "maximum_ms": 0.0502,
+      "calls": 14
+    },
+    {
+      "tic": 4007,
+      "metric": 12,
+      "total_ms": 0.1117,
+      "maximum_ms": 0.0093,
+      "calls": 14
+    },
+    {
+      "tic": 4007,
+      "metric": 13,
+      "total_ms": 0.0859,
+      "maximum_ms": 0.0011,
+      "calls": 140
+    },
+    {
+      "tic": 4007,
+      "metric": 14,
+      "total_ms": 0.2267,
+      "maximum_ms": 0.0048,
+      "calls": 163
+    },
+    {
+      "tic": 4007,
+      "metric": 15,
+      "total_ms": 0.1974,
+      "maximum_ms": 0.0227,
+      "calls": 14
+    },
+    {
+      "tic": 4007,
+      "metric": 16,
+      "total_ms": 0.3876,
+      "maximum_ms": 0.0391,
+      "calls": 14
+    },
+    {
+      "tic": 4007,
+      "metric": 17,
+      "total_ms": 0.0096,
+      "maximum_ms": 0.0015,
+      "calls": 14
+    },
+    {
+      "tic": 4007,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 560
+    },
+    {
+      "tic": 4007,
+      "metric": 20,
+      "total_ms": 0.0005,
+      "maximum_ms": 0.0005,
+      "calls": 1
+    },
+    {
+      "tic": 4007,
+      "metric": 21,
+      "total_ms": 0.0405,
+      "maximum_ms": 0.0405,
+      "calls": 1
+    },
+    {
+      "tic": 4007,
+      "metric": 22,
+      "total_ms": 0.0036,
+      "maximum_ms": 0.0036,
+      "calls": 1
+    },
+    {
+      "tic": 4007,
+      "metric": 23,
+      "total_ms": 0.0023,
+      "maximum_ms": 0.0023,
+      "calls": 1
+    },
+    {
+      "tic": 4007,
+      "metric": 24,
+      "total_ms": 0.0022,
+      "maximum_ms": 0.0022,
+      "calls": 1
+    },
+    {
+      "tic": 4007,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4007,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4024,
+      "metric": 0,
+      "total_ms": 2.0121,
+      "maximum_ms": 0.0873,
+      "calls": 987
+    },
+    {
+      "tic": 4024,
+      "metric": 1,
+      "total_ms": 1.4838,
+      "maximum_ms": 0.0722,
+      "calls": 29
+    },
+    {
+      "tic": 4024,
+      "metric": 2,
+      "total_ms": 0.2466,
+      "maximum_ms": 0.0096,
+      "calls": 29
+    },
+    {
+      "tic": 4024,
+      "metric": 3,
+      "total_ms": 0.1763,
+      "maximum_ms": 0.0014,
+      "calls": 290
+    },
+    {
+      "tic": 4024,
+      "metric": 4,
+      "total_ms": 0.6502,
+      "maximum_ms": 0.0052,
+      "calls": 957
+    },
+    {
+      "tic": 4024,
+      "metric": 5,
+      "total_ms": 0.2399,
+      "maximum_ms": 0.0132,
+      "calls": 29
+    },
+    {
+      "tic": 4024,
+      "metric": 6,
+      "total_ms": 1.185,
+      "maximum_ms": 0.0598,
+      "calls": 29
+    },
+    {
+      "tic": 4024,
+      "metric": 7,
+      "total_ms": 0.0381,
+      "maximum_ms": 0.0019,
+      "calls": 29
+    },
+    {
+      "tic": 4024,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 4024,
+      "metric": 10,
+      "total_ms": 1.1679,
+      "maximum_ms": 0.073,
+      "calls": 601
+    },
+    {
+      "tic": 4024,
+      "metric": 11,
+      "total_ms": 0.7125,
+      "maximum_ms": 0.0519,
+      "calls": 18
+    },
+    {
+      "tic": 4024,
+      "metric": 12,
+      "total_ms": 0.1614,
+      "maximum_ms": 0.0124,
+      "calls": 18
+    },
+    {
+      "tic": 4024,
+      "metric": 13,
+      "total_ms": 0.1158,
+      "maximum_ms": 0.0038,
+      "calls": 180
+    },
+    {
+      "tic": 4024,
+      "metric": 14,
+      "total_ms": 0.2348,
+      "maximum_ms": 0.0042,
+      "calls": 165
+    },
+    {
+      "tic": 4024,
+      "metric": 15,
+      "total_ms": 0.2656,
+      "maximum_ms": 0.0224,
+      "calls": 18
+    },
+    {
+      "tic": 4024,
+      "metric": 16,
+      "total_ms": 0.4999,
+      "maximum_ms": 0.0403,
+      "calls": 18
+    },
+    {
+      "tic": 4024,
+      "metric": 17,
+      "total_ms": 0.0243,
+      "maximum_ms": 0.0015,
+      "calls": 18
+    },
+    {
+      "tic": 4024,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 720
+    },
+    {
+      "tic": 4024,
+      "metric": 20,
+      "total_ms": 0.0006,
+      "maximum_ms": 0.0006,
+      "calls": 1
+    },
+    {
+      "tic": 4024,
+      "metric": 21,
+      "total_ms": 0.0348,
+      "maximum_ms": 0.0348,
+      "calls": 1
+    },
+    {
+      "tic": 4024,
+      "metric": 22,
+      "total_ms": 0.0029,
+      "maximum_ms": 0.0029,
+      "calls": 1
+    },
+    {
+      "tic": 4024,
+      "metric": 23,
+      "total_ms": 0.0018,
+      "maximum_ms": 0.0018,
+      "calls": 1
+    },
+    {
+      "tic": 4024,
+      "metric": 24,
+      "total_ms": 0.0021,
+      "maximum_ms": 0.0021,
+      "calls": 1
+    },
+    {
+      "tic": 4024,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4024,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4041,
+      "metric": 0,
+      "total_ms": 2.0723,
+      "maximum_ms": 0.1015,
+      "calls": 987
+    },
+    {
+      "tic": 4041,
+      "metric": 1,
+      "total_ms": 1.4112,
+      "maximum_ms": 0.083,
+      "calls": 28
+    },
+    {
+      "tic": 4041,
+      "metric": 2,
+      "total_ms": 0.2391,
+      "maximum_ms": 0.012,
+      "calls": 28
+    },
+    {
+      "tic": 4041,
+      "metric": 3,
+      "total_ms": 0.1719,
+      "maximum_ms": 0.0014,
+      "calls": 280
+    },
+    {
+      "tic": 4041,
+      "metric": 4,
+      "total_ms": 0.0251,
+      "maximum_ms": 0.0036,
+      "calls": 28
+    },
+    {
+      "tic": 4041,
+      "metric": 5,
+      "total_ms": 0.3653,
+      "maximum_ms": 0.0186,
+      "calls": 28
+    },
+    {
+      "tic": 4041,
+      "metric": 6,
+      "total_ms": 1.1067,
+      "maximum_ms": 0.0674,
+      "calls": 28
+    },
+    {
+      "tic": 4041,
+      "metric": 7,
+      "total_ms": 0.0351,
+      "maximum_ms": 0.0019,
+      "calls": 28
+    },
+    {
+      "tic": 4041,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 4041,
+      "metric": 10,
+      "total_ms": 1.3856,
+      "maximum_ms": 0.0803,
+      "calls": 601
+    },
+    {
+      "tic": 4041,
+      "metric": 11,
+      "total_ms": 0.8619,
+      "maximum_ms": 0.0548,
+      "calls": 20
+    },
+    {
+      "tic": 4041,
+      "metric": 12,
+      "total_ms": 0.1742,
+      "maximum_ms": 0.0094,
+      "calls": 20
+    },
+    {
+      "tic": 4041,
+      "metric": 13,
+      "total_ms": 0.1237,
+      "maximum_ms": 0.0013,
+      "calls": 200
+    },
+    {
+      "tic": 4041,
+      "metric": 14,
+      "total_ms": 0.2535,
+      "maximum_ms": 0.0067,
+      "calls": 169
+    },
+    {
+      "tic": 4041,
+      "metric": 15,
+      "total_ms": 0.326,
+      "maximum_ms": 0.027,
+      "calls": 20
+    },
+    {
+      "tic": 4041,
+      "metric": 16,
+      "total_ms": 0.629,
+      "maximum_ms": 0.0412,
+      "calls": 20
+    },
+    {
+      "tic": 4041,
+      "metric": 17,
+      "total_ms": 0.028,
+      "maximum_ms": 0.0016,
+      "calls": 20
+    },
+    {
+      "tic": 4041,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 800
+    },
+    {
+      "tic": 4041,
+      "metric": 20,
+      "total_ms": 0.0007,
+      "maximum_ms": 0.0007,
+      "calls": 1
+    },
+    {
+      "tic": 4041,
+      "metric": 21,
+      "total_ms": 0.0386,
+      "maximum_ms": 0.0386,
+      "calls": 1
+    },
+    {
+      "tic": 4041,
+      "metric": 22,
+      "total_ms": 0.0041,
+      "maximum_ms": 0.0041,
+      "calls": 1
+    },
+    {
+      "tic": 4041,
+      "metric": 23,
+      "total_ms": 0.0023,
+      "maximum_ms": 0.0023,
+      "calls": 1
+    },
+    {
+      "tic": 4041,
+      "metric": 24,
+      "total_ms": 0.0047,
+      "maximum_ms": 0.0024,
+      "calls": 2
+    },
+    {
+      "tic": 4041,
+      "metric": 27,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 4041,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4058,
+      "metric": 0,
+      "total_ms": 2.0482,
+      "maximum_ms": 0.0872,
+      "calls": 987
+    },
+    {
+      "tic": 4058,
+      "metric": 1,
+      "total_ms": 1.4421,
+      "maximum_ms": 0.077,
+      "calls": 29
+    },
+    {
+      "tic": 4058,
+      "metric": 2,
+      "total_ms": 0.2146,
+      "maximum_ms": 0.0086,
+      "calls": 29
+    },
+    {
+      "tic": 4058,
+      "metric": 3,
+      "total_ms": 0.1766,
+      "maximum_ms": 0.0016,
+      "calls": 290
+    },
+    {
+      "tic": 4058,
+      "metric": 4,
+      "total_ms": 0.0256,
+      "maximum_ms": 0.0017,
+      "calls": 34
+    },
+    {
+      "tic": 4058,
+      "metric": 5,
+      "total_ms": 0.3047,
+      "maximum_ms": 0.0177,
+      "calls": 29
+    },
+    {
+      "tic": 4058,
+      "metric": 6,
+      "total_ms": 1.1661,
+      "maximum_ms": 0.0675,
+      "calls": 29
+    },
+    {
+      "tic": 4058,
+      "metric": 7,
+      "total_ms": 0.006,
+      "maximum_ms": 0.0003,
+      "calls": 29
+    },
+    {
+      "tic": 4058,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 4058,
+      "metric": 10,
+      "total_ms": 1.1136,
+      "maximum_ms": 0.0811,
+      "calls": 601
+    },
+    {
+      "tic": 4058,
+      "metric": 11,
+      "total_ms": 0.6542,
+      "maximum_ms": 0.0563,
+      "calls": 16
+    },
+    {
+      "tic": 4058,
+      "metric": 12,
+      "total_ms": 0.1285,
+      "maximum_ms": 0.0091,
+      "calls": 16
+    },
+    {
+      "tic": 4058,
+      "metric": 13,
+      "total_ms": 0.1001,
+      "maximum_ms": 0.0012,
+      "calls": 160
+    },
+    {
+      "tic": 4058,
+      "metric": 14,
+      "total_ms": 0.2437,
+      "maximum_ms": 0.0057,
+      "calls": 166
+    },
+    {
+      "tic": 4058,
+      "metric": 15,
+      "total_ms": 0.267,
+      "maximum_ms": 0.0234,
+      "calls": 16
+    },
+    {
+      "tic": 4058,
+      "metric": 16,
+      "total_ms": 0.4785,
+      "maximum_ms": 0.0452,
+      "calls": 16
+    },
+    {
+      "tic": 4058,
+      "metric": 17,
+      "total_ms": 0.0094,
+      "maximum_ms": 0.0018,
+      "calls": 16
+    },
+    {
+      "tic": 4058,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 640
+    },
+    {
+      "tic": 4058,
+      "metric": 20,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 4058,
+      "metric": 21,
+      "total_ms": 0.0375,
+      "maximum_ms": 0.0375,
+      "calls": 1
+    },
+    {
+      "tic": 4058,
+      "metric": 22,
+      "total_ms": 0.0033,
+      "maximum_ms": 0.0033,
+      "calls": 1
+    },
+    {
+      "tic": 4058,
+      "metric": 23,
+      "total_ms": 0.0021,
+      "maximum_ms": 0.0021,
+      "calls": 1
+    },
+    {
+      "tic": 4058,
+      "metric": 24,
+      "total_ms": 0.002,
+      "maximum_ms": 0.002,
+      "calls": 1
+    },
+    {
+      "tic": 4058,
+      "metric": 27,
+      "total_ms": 0.0002,
+      "maximum_ms": 0.0002,
+      "calls": 1
+    },
+    {
+      "tic": 4058,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4075,
+      "metric": 0,
+      "total_ms": 1.7914,
+      "maximum_ms": 0.0806,
+      "calls": 987
+    },
+    {
+      "tic": 4075,
+      "metric": 1,
+      "total_ms": 1.2447,
+      "maximum_ms": 0.0638,
+      "calls": 28
+    },
+    {
+      "tic": 4075,
+      "metric": 2,
+      "total_ms": 0.2025,
+      "maximum_ms": 0.0082,
+      "calls": 28
+    },
+    {
+      "tic": 4075,
+      "metric": 3,
+      "total_ms": 0.167,
+      "maximum_ms": 0.0012,
+      "calls": 280
+    },
+    {
+      "tic": 4075,
+      "metric": 4,
+      "total_ms": 0.0184,
+      "maximum_ms": 0.0016,
+      "calls": 28
+    },
+    {
+      "tic": 4075,
+      "metric": 5,
+      "total_ms": 0.2568,
+      "maximum_ms": 0.0151,
+      "calls": 28
+    },
+    {
+      "tic": 4075,
+      "metric": 6,
+      "total_ms": 0.9862,
+      "maximum_ms": 0.0528,
+      "calls": 28
+    },
+    {
+      "tic": 4075,
+      "metric": 7,
+      "total_ms": 0.0065,
+      "maximum_ms": 0.0009,
+      "calls": 28
+    },
+    {
+      "tic": 4075,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 4075,
+      "metric": 10,
+      "total_ms": 0.9619,
+      "maximum_ms": 0.0663,
+      "calls": 601
+    },
+    {
+      "tic": 4075,
+      "metric": 11,
+      "total_ms": 0.5577,
+      "maximum_ms": 0.0483,
+      "calls": 14
+    },
+    {
+      "tic": 4075,
+      "metric": 12,
+      "total_ms": 0.1112,
+      "maximum_ms": 0.0085,
+      "calls": 14
+    },
+    {
+      "tic": 4075,
+      "metric": 13,
+      "total_ms": 0.0861,
+      "maximum_ms": 0.0011,
+      "calls": 140
+    },
+    {
+      "tic": 4075,
+      "metric": 14,
+      "total_ms": 0.2255,
+      "maximum_ms": 0.0041,
+      "calls": 163
+    },
+    {
+      "tic": 4075,
+      "metric": 15,
+      "total_ms": 0.2192,
+      "maximum_ms": 0.0208,
+      "calls": 14
+    },
+    {
+      "tic": 4075,
+      "metric": 16,
+      "total_ms": 0.4084,
+      "maximum_ms": 0.0376,
+      "calls": 14
+    },
+    {
+      "tic": 4075,
+      "metric": 17,
+      "total_ms": 0.0091,
+      "maximum_ms": 0.0011,
+      "calls": 14
+    },
+    {
+      "tic": 4075,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 560
+    },
+    {
+      "tic": 4075,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4075,
+      "metric": 21,
+      "total_ms": 0.0354,
+      "maximum_ms": 0.0354,
+      "calls": 1
+    },
+    {
+      "tic": 4075,
+      "metric": 22,
+      "total_ms": 0.003,
+      "maximum_ms": 0.003,
+      "calls": 1
+    },
+    {
+      "tic": 4075,
+      "metric": 23,
+      "total_ms": 0.0014,
+      "maximum_ms": 0.0014,
+      "calls": 1
+    },
+    {
+      "tic": 4075,
+      "metric": 24,
+      "total_ms": 0.0021,
+      "maximum_ms": 0.0021,
+      "calls": 1
+    },
+    {
+      "tic": 4075,
+      "metric": 27,
+      "total_ms": 0.0006,
+      "maximum_ms": 0.0006,
+      "calls": 1
+    },
+    {
+      "tic": 4075,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4092,
+      "metric": 0,
+      "total_ms": 1.9466,
+      "maximum_ms": 0.0849,
+      "calls": 987
+    },
+    {
+      "tic": 4092,
+      "metric": 1,
+      "total_ms": 1.3915,
+      "maximum_ms": 0.0657,
+      "calls": 29
+    },
+    {
+      "tic": 4092,
+      "metric": 2,
+      "total_ms": 0.2118,
+      "maximum_ms": 0.0082,
+      "calls": 29
+    },
+    {
+      "tic": 4092,
+      "metric": 3,
+      "total_ms": 0.1752,
+      "maximum_ms": 0.0014,
+      "calls": 290
+    },
+    {
+      "tic": 4092,
+      "metric": 4,
+      "total_ms": 0.0434,
+      "maximum_ms": 0.0017,
+      "calls": 57
+    },
+    {
+      "tic": 4092,
+      "metric": 5,
+      "total_ms": 0.2573,
+      "maximum_ms": 0.0169,
+      "calls": 29
+    },
+    {
+      "tic": 4092,
+      "metric": 6,
+      "total_ms": 1.1176,
+      "maximum_ms": 0.0549,
+      "calls": 29
+    },
+    {
+      "tic": 4092,
+      "metric": 7,
+      "total_ms": 0.0061,
+      "maximum_ms": 0.0003,
+      "calls": 29
+    },
+    {
+      "tic": 4092,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 4092,
+      "metric": 10,
+      "total_ms": 1.2213,
+      "maximum_ms": 0.0679,
+      "calls": 601
+    },
+    {
+      "tic": 4092,
+      "metric": 11,
+      "total_ms": 0.7843,
+      "maximum_ms": 0.0481,
+      "calls": 20
+    },
+    {
+      "tic": 4092,
+      "metric": 12,
+      "total_ms": 0.1546,
+      "maximum_ms": 0.0086,
+      "calls": 20
+    },
+    {
+      "tic": 4092,
+      "metric": 13,
+      "total_ms": 0.1221,
+      "maximum_ms": 0.0011,
+      "calls": 200
+    },
+    {
+      "tic": 4092,
+      "metric": 14,
+      "total_ms": 0.2288,
+      "maximum_ms": 0.0042,
+      "calls": 169
+    },
+    {
+      "tic": 4092,
+      "metric": 15,
+      "total_ms": 0.2556,
+      "maximum_ms": 0.0188,
+      "calls": 20
+    },
+    {
+      "tic": 4092,
+      "metric": 16,
+      "total_ms": 0.5744,
+      "maximum_ms": 0.0373,
+      "calls": 20
+    },
+    {
+      "tic": 4092,
+      "metric": 17,
+      "total_ms": 0.0107,
+      "maximum_ms": 0.0011,
+      "calls": 20
+    },
+    {
+      "tic": 4092,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 800
+    },
+    {
+      "tic": 4092,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4092,
+      "metric": 21,
+      "total_ms": 0.0309,
+      "maximum_ms": 0.0309,
+      "calls": 1
+    },
+    {
+      "tic": 4092,
+      "metric": 22,
+      "total_ms": 0.0027,
+      "maximum_ms": 0.0027,
+      "calls": 1
+    },
+    {
+      "tic": 4092,
+      "metric": 23,
+      "total_ms": 0.0015,
+      "maximum_ms": 0.0015,
+      "calls": 1
+    },
+    {
+      "tic": 4092,
+      "metric": 24,
+      "total_ms": 0.0015,
+      "maximum_ms": 0.0015,
+      "calls": 1
+    },
+    {
+      "tic": 4092,
+      "metric": 27,
+      "total_ms": 0.0002,
+      "maximum_ms": 0.0002,
+      "calls": 1
+    },
+    {
+      "tic": 4092,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4109,
+      "metric": 0,
+      "total_ms": 2.1086,
+      "maximum_ms": 0.1127,
+      "calls": 987
+    },
+    {
+      "tic": 4109,
+      "metric": 1,
+      "total_ms": 1.4248,
+      "maximum_ms": 0.0878,
+      "calls": 28
+    },
+    {
+      "tic": 4109,
+      "metric": 2,
+      "total_ms": 0.2471,
+      "maximum_ms": 0.034,
+      "calls": 28
+    },
+    {
+      "tic": 4109,
+      "metric": 3,
+      "total_ms": 0.1682,
+      "maximum_ms": 0.002,
+      "calls": 280
+    },
+    {
+      "tic": 4109,
+      "metric": 4,
+      "total_ms": 0.0235,
+      "maximum_ms": 0.004,
+      "calls": 28
+    },
+    {
+      "tic": 4109,
+      "metric": 5,
+      "total_ms": 0.3822,
+      "maximum_ms": 0.0253,
+      "calls": 28
+    },
+    {
+      "tic": 4109,
+      "metric": 6,
+      "total_ms": 1.1151,
+      "maximum_ms": 0.0676,
+      "calls": 28
+    },
+    {
+      "tic": 4109,
+      "metric": 7,
+      "total_ms": 0.0472,
+      "maximum_ms": 0.0267,
+      "calls": 28
+    },
+    {
+      "tic": 4109,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 4109,
+      "metric": 10,
+      "total_ms": 1.3011,
+      "maximum_ms": 0.0705,
+      "calls": 601
+    },
+    {
+      "tic": 4109,
+      "metric": 11,
+      "total_ms": 0.8291,
+      "maximum_ms": 0.0506,
+      "calls": 19
+    },
+    {
+      "tic": 4109,
+      "metric": 12,
+      "total_ms": 0.1521,
+      "maximum_ms": 0.0088,
+      "calls": 19
+    },
+    {
+      "tic": 4109,
+      "metric": 13,
+      "total_ms": 0.119,
+      "maximum_ms": 0.0013,
+      "calls": 190
+    },
+    {
+      "tic": 4109,
+      "metric": 14,
+      "total_ms": 0.2779,
+      "maximum_ms": 0.0297,
+      "calls": 170
+    },
+    {
+      "tic": 4109,
+      "metric": 15,
+      "total_ms": 0.2809,
+      "maximum_ms": 0.0199,
+      "calls": 19
+    },
+    {
+      "tic": 4109,
+      "metric": 16,
+      "total_ms": 0.6214,
+      "maximum_ms": 0.0396,
+      "calls": 19
+    },
+    {
+      "tic": 4109,
+      "metric": 17,
+      "total_ms": 0.0112,
+      "maximum_ms": 0.0014,
+      "calls": 19
+    },
+    {
+      "tic": 4109,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 760
+    },
+    {
+      "tic": 4109,
+      "metric": 20,
+      "total_ms": 0.0008,
+      "maximum_ms": 0.0008,
+      "calls": 1
+    },
+    {
+      "tic": 4109,
+      "metric": 21,
+      "total_ms": 0.0431,
+      "maximum_ms": 0.0431,
+      "calls": 1
+    },
+    {
+      "tic": 4109,
+      "metric": 22,
+      "total_ms": 0.0037,
+      "maximum_ms": 0.0037,
+      "calls": 1
+    },
+    {
+      "tic": 4109,
+      "metric": 23,
+      "total_ms": 0.0023,
+      "maximum_ms": 0.0023,
+      "calls": 1
+    },
+    {
+      "tic": 4109,
+      "metric": 24,
+      "total_ms": 0.0062,
+      "maximum_ms": 0.0037,
+      "calls": 2
+    },
+    {
+      "tic": 4109,
+      "metric": 27,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 4109,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4126,
+      "metric": 0,
+      "total_ms": 1.9525,
+      "maximum_ms": 0.0835,
+      "calls": 987
+    },
+    {
+      "tic": 4126,
+      "metric": 1,
+      "total_ms": 1.3977,
+      "maximum_ms": 0.0653,
+      "calls": 29
+    },
+    {
+      "tic": 4126,
+      "metric": 2,
+      "total_ms": 0.2387,
+      "maximum_ms": 0.0101,
+      "calls": 29
+    },
+    {
+      "tic": 4126,
+      "metric": 3,
+      "total_ms": 0.1723,
+      "maximum_ms": 0.0018,
+      "calls": 290
+    },
+    {
+      "tic": 4126,
+      "metric": 4,
+      "total_ms": 0.0252,
+      "maximum_ms": 0.0029,
+      "calls": 34
+    },
+    {
+      "tic": 4126,
+      "metric": 5,
+      "total_ms": 0.2621,
+      "maximum_ms": 0.0164,
+      "calls": 29
+    },
+    {
+      "tic": 4126,
+      "metric": 6,
+      "total_ms": 1.0988,
+      "maximum_ms": 0.051,
+      "calls": 29
+    },
+    {
+      "tic": 4126,
+      "metric": 7,
+      "total_ms": 0.0346,
+      "maximum_ms": 0.0016,
+      "calls": 29
+    },
+    {
+      "tic": 4126,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 4126,
+      "metric": 10,
+      "total_ms": 0.9996,
+      "maximum_ms": 0.0673,
+      "calls": 601
+    },
+    {
+      "tic": 4126,
+      "metric": 11,
+      "total_ms": 0.594,
+      "maximum_ms": 0.0479,
+      "calls": 15
+    },
+    {
+      "tic": 4126,
+      "metric": 12,
+      "total_ms": 0.1291,
+      "maximum_ms": 0.009,
+      "calls": 15
+    },
+    {
+      "tic": 4126,
+      "metric": 13,
+      "total_ms": 0.091,
+      "maximum_ms": 0.0011,
+      "calls": 150
+    },
+    {
+      "tic": 4126,
+      "metric": 14,
+      "total_ms": 0.2253,
+      "maximum_ms": 0.004,
+      "calls": 165
+    },
+    {
+      "tic": 4126,
+      "metric": 15,
+      "total_ms": 0.222,
+      "maximum_ms": 0.0248,
+      "calls": 15
+    },
+    {
+      "tic": 4126,
+      "metric": 16,
+      "total_ms": 0.4231,
+      "maximum_ms": 0.0365,
+      "calls": 15
+    },
+    {
+      "tic": 4126,
+      "metric": 17,
+      "total_ms": 0.0197,
+      "maximum_ms": 0.0014,
+      "calls": 15
+    },
+    {
+      "tic": 4126,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 600
+    },
+    {
+      "tic": 4126,
+      "metric": 20,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 4126,
+      "metric": 21,
+      "total_ms": 0.0343,
+      "maximum_ms": 0.0343,
+      "calls": 1
+    },
+    {
+      "tic": 4126,
+      "metric": 22,
+      "total_ms": 0.0026,
+      "maximum_ms": 0.0026,
+      "calls": 1
+    },
+    {
+      "tic": 4126,
+      "metric": 23,
+      "total_ms": 0.0016,
+      "maximum_ms": 0.0016,
+      "calls": 1
+    },
+    {
+      "tic": 4126,
+      "metric": 24,
+      "total_ms": 0.0019,
+      "maximum_ms": 0.0019,
+      "calls": 1
+    },
+    {
+      "tic": 4126,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4126,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4143,
+      "metric": 0,
+      "total_ms": 1.9247,
+      "maximum_ms": 0.0947,
+      "calls": 987
+    },
+    {
+      "tic": 4143,
+      "metric": 1,
+      "total_ms": 1.3473,
+      "maximum_ms": 0.0713,
+      "calls": 28
+    },
+    {
+      "tic": 4143,
+      "metric": 2,
+      "total_ms": 0.2318,
+      "maximum_ms": 0.0095,
+      "calls": 28
+    },
+    {
+      "tic": 4143,
+      "metric": 3,
+      "total_ms": 0.1675,
+      "maximum_ms": 0.0011,
+      "calls": 280
+    },
+    {
+      "tic": 4143,
+      "metric": 4,
+      "total_ms": 0.0227,
+      "maximum_ms": 0.0023,
+      "calls": 28
+    },
+    {
+      "tic": 4143,
+      "metric": 5,
+      "total_ms": 0.2854,
+      "maximum_ms": 0.0216,
+      "calls": 28
+    },
+    {
+      "tic": 4143,
+      "metric": 6,
+      "total_ms": 1.0543,
+      "maximum_ms": 0.0579,
+      "calls": 28
+    },
+    {
+      "tic": 4143,
+      "metric": 7,
+      "total_ms": 0.034,
+      "maximum_ms": 0.0018,
+      "calls": 28
+    },
+    {
+      "tic": 4143,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 4143,
+      "metric": 10,
+      "total_ms": 1.0269,
+      "maximum_ms": 0.0674,
+      "calls": 601
+    },
+    {
+      "tic": 4143,
+      "metric": 11,
+      "total_ms": 0.6015,
+      "maximum_ms": 0.0512,
+      "calls": 15
+    },
+    {
+      "tic": 4143,
+      "metric": 12,
+      "total_ms": 0.1292,
+      "maximum_ms": 0.0091,
+      "calls": 15
+    },
+    {
+      "tic": 4143,
+      "metric": 13,
+      "total_ms": 0.0924,
+      "maximum_ms": 0.0011,
+      "calls": 150
+    },
+    {
+      "tic": 4143,
+      "metric": 14,
+      "total_ms": 0.2298,
+      "maximum_ms": 0.0048,
+      "calls": 165
+    },
+    {
+      "tic": 4143,
+      "metric": 15,
+      "total_ms": 0.2387,
+      "maximum_ms": 0.0274,
+      "calls": 15
+    },
+    {
+      "tic": 4143,
+      "metric": 16,
+      "total_ms": 0.4301,
+      "maximum_ms": 0.0387,
+      "calls": 15
+    },
+    {
+      "tic": 4143,
+      "metric": 17,
+      "total_ms": 0.02,
+      "maximum_ms": 0.0015,
+      "calls": 15
+    },
+    {
+      "tic": 4143,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 600
+    },
+    {
+      "tic": 4143,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4143,
+      "metric": 21,
+      "total_ms": 0.0369,
+      "maximum_ms": 0.0369,
+      "calls": 1
+    },
+    {
+      "tic": 4143,
+      "metric": 22,
+      "total_ms": 0.0028,
+      "maximum_ms": 0.0028,
+      "calls": 1
+    },
+    {
+      "tic": 4143,
+      "metric": 23,
+      "total_ms": 0.0018,
+      "maximum_ms": 0.0018,
+      "calls": 1
+    },
+    {
+      "tic": 4143,
+      "metric": 24,
+      "total_ms": 0.0021,
+      "maximum_ms": 0.0021,
+      "calls": 1
+    },
+    {
+      "tic": 4143,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4143,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4160,
+      "metric": 0,
+      "total_ms": 1.9393,
+      "maximum_ms": 0.0866,
+      "calls": 987
+    },
+    {
+      "tic": 4160,
+      "metric": 1,
+      "total_ms": 1.3707,
+      "maximum_ms": 0.0703,
+      "calls": 29
+    },
+    {
+      "tic": 4160,
+      "metric": 2,
+      "total_ms": 0.2139,
+      "maximum_ms": 0.0083,
+      "calls": 29
+    },
+    {
+      "tic": 4160,
+      "metric": 3,
+      "total_ms": 0.178,
+      "maximum_ms": 0.0013,
+      "calls": 290
+    },
+    {
+      "tic": 4160,
+      "metric": 4,
+      "total_ms": 0.0416,
+      "maximum_ms": 0.0025,
+      "calls": 57
+    },
+    {
+      "tic": 4160,
+      "metric": 5,
+      "total_ms": 0.2699,
+      "maximum_ms": 0.0147,
+      "calls": 29
+    },
+    {
+      "tic": 4160,
+      "metric": 6,
+      "total_ms": 1.0959,
+      "maximum_ms": 0.0586,
+      "calls": 29
+    },
+    {
+      "tic": 4160,
+      "metric": 7,
+      "total_ms": 0.0057,
+      "maximum_ms": 0.0004,
+      "calls": 29
+    },
+    {
+      "tic": 4160,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 4160,
+      "metric": 10,
+      "total_ms": 1.273,
+      "maximum_ms": 0.0659,
+      "calls": 601
+    },
+    {
+      "tic": 4160,
+      "metric": 11,
+      "total_ms": 0.7926,
+      "maximum_ms": 0.047,
+      "calls": 20
+    },
+    {
+      "tic": 4160,
+      "metric": 12,
+      "total_ms": 0.1628,
+      "maximum_ms": 0.0091,
+      "calls": 20
+    },
+    {
+      "tic": 4160,
+      "metric": 13,
+      "total_ms": 0.1267,
+      "maximum_ms": 0.0011,
+      "calls": 200
+    },
+    {
+      "tic": 4160,
+      "metric": 14,
+      "total_ms": 0.2411,
+      "maximum_ms": 0.0049,
+      "calls": 169
+    },
+    {
+      "tic": 4160,
+      "metric": 15,
+      "total_ms": 0.2841,
+      "maximum_ms": 0.019,
+      "calls": 20
+    },
+    {
+      "tic": 4160,
+      "metric": 16,
+      "total_ms": 0.573,
+      "maximum_ms": 0.0358,
+      "calls": 20
+    },
+    {
+      "tic": 4160,
+      "metric": 17,
+      "total_ms": 0.0126,
+      "maximum_ms": 0.0012,
+      "calls": 20
+    },
+    {
+      "tic": 4160,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 800
+    },
+    {
+      "tic": 4160,
+      "metric": 20,
+      "total_ms": 0.0007,
+      "maximum_ms": 0.0007,
+      "calls": 1
+    },
+    {
+      "tic": 4160,
+      "metric": 21,
+      "total_ms": 0.0944,
+      "maximum_ms": 0.0944,
+      "calls": 1
+    },
+    {
+      "tic": 4160,
+      "metric": 22,
+      "total_ms": 0.003,
+      "maximum_ms": 0.003,
+      "calls": 1
+    },
+    {
+      "tic": 4160,
+      "metric": 23,
+      "total_ms": 0.0022,
+      "maximum_ms": 0.0022,
+      "calls": 1
+    },
+    {
+      "tic": 4160,
+      "metric": 24,
+      "total_ms": 0.0021,
+      "maximum_ms": 0.0021,
+      "calls": 1
+    },
+    {
+      "tic": 4160,
+      "metric": 25,
+      "total_ms": 0.0187,
+      "maximum_ms": 0.0187,
+      "calls": 1
+    },
+    {
+      "tic": 4160,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4160,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4177,
+      "metric": 0,
+      "total_ms": 1.9626,
+      "maximum_ms": 0.0981,
+      "calls": 987
+    },
+    {
+      "tic": 4177,
+      "metric": 1,
+      "total_ms": 1.3334,
+      "maximum_ms": 0.0732,
+      "calls": 28
+    },
+    {
+      "tic": 4177,
+      "metric": 2,
+      "total_ms": 0.2013,
+      "maximum_ms": 0.0085,
+      "calls": 28
+    },
+    {
+      "tic": 4177,
+      "metric": 3,
+      "total_ms": 0.1661,
+      "maximum_ms": 0.0013,
+      "calls": 280
+    },
+    {
+      "tic": 4177,
+      "metric": 4,
+      "total_ms": 0.0182,
+      "maximum_ms": 0.001,
+      "calls": 28
+    },
+    {
+      "tic": 4177,
+      "metric": 5,
+      "total_ms": 0.3352,
+      "maximum_ms": 0.0228,
+      "calls": 28
+    },
+    {
+      "tic": 4177,
+      "metric": 6,
+      "total_ms": 1.0774,
+      "maximum_ms": 0.0611,
+      "calls": 28
+    },
+    {
+      "tic": 4177,
+      "metric": 7,
+      "total_ms": 0.0057,
+      "maximum_ms": 0.0006,
+      "calls": 28
+    },
+    {
+      "tic": 4177,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 4177,
+      "metric": 10,
+      "total_ms": 1.244,
+      "maximum_ms": 0.0704,
+      "calls": 601
+    },
+    {
+      "tic": 4177,
+      "metric": 11,
+      "total_ms": 0.7524,
+      "maximum_ms": 0.0509,
+      "calls": 19
+    },
+    {
+      "tic": 4177,
+      "metric": 12,
+      "total_ms": 0.1481,
+      "maximum_ms": 0.009,
+      "calls": 19
+    },
+    {
+      "tic": 4177,
+      "metric": 13,
+      "total_ms": 0.1169,
+      "maximum_ms": 0.0014,
+      "calls": 190
+    },
+    {
+      "tic": 4177,
+      "metric": 14,
+      "total_ms": 0.2377,
+      "maximum_ms": 0.0055,
+      "calls": 168
+    },
+    {
+      "tic": 4177,
+      "metric": 15,
+      "total_ms": 0.3045,
+      "maximum_ms": 0.0224,
+      "calls": 19
+    },
+    {
+      "tic": 4177,
+      "metric": 16,
+      "total_ms": 0.5494,
+      "maximum_ms": 0.0382,
+      "calls": 19
+    },
+    {
+      "tic": 4177,
+      "metric": 17,
+      "total_ms": 0.0094,
+      "maximum_ms": 0.0015,
+      "calls": 19
+    },
+    {
+      "tic": 4177,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 760
+    },
+    {
+      "tic": 4177,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4177,
+      "metric": 21,
+      "total_ms": 0.0373,
+      "maximum_ms": 0.0373,
+      "calls": 1
+    },
+    {
+      "tic": 4177,
+      "metric": 22,
+      "total_ms": 0.0035,
+      "maximum_ms": 0.0035,
+      "calls": 1
+    },
+    {
+      "tic": 4177,
+      "metric": 23,
+      "total_ms": 0.0023,
+      "maximum_ms": 0.0023,
+      "calls": 1
+    },
+    {
+      "tic": 4177,
+      "metric": 24,
+      "total_ms": 0.0048,
+      "maximum_ms": 0.0025,
+      "calls": 2
+    },
+    {
+      "tic": 4177,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4177,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4194,
+      "metric": 0,
+      "total_ms": 1.9021,
+      "maximum_ms": 0.0841,
+      "calls": 987
+    },
+    {
+      "tic": 4194,
+      "metric": 1,
+      "total_ms": 1.3964,
+      "maximum_ms": 0.0672,
+      "calls": 29
+    },
+    {
+      "tic": 4194,
+      "metric": 2,
+      "total_ms": 0.2317,
+      "maximum_ms": 0.0084,
+      "calls": 29
+    },
+    {
+      "tic": 4194,
+      "metric": 3,
+      "total_ms": 0.1755,
+      "maximum_ms": 0.0011,
+      "calls": 290
+    },
+    {
+      "tic": 4194,
+      "metric": 4,
+      "total_ms": 0.6213,
+      "maximum_ms": 0.0033,
+      "calls": 934
+    },
+    {
+      "tic": 4194,
+      "metric": 5,
+      "total_ms": 0.2307,
+      "maximum_ms": 0.0151,
+      "calls": 29
+    },
+    {
+      "tic": 4194,
+      "metric": 6,
+      "total_ms": 1.1113,
+      "maximum_ms": 0.0559,
+      "calls": 29
+    },
+    {
+      "tic": 4194,
+      "metric": 7,
+      "total_ms": 0.0232,
+      "maximum_ms": 0.0012,
+      "calls": 29
+    },
+    {
+      "tic": 4194,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 4194,
+      "metric": 10,
+      "total_ms": 0.9466,
+      "maximum_ms": 0.0645,
+      "calls": 601
+    },
+    {
+      "tic": 4194,
+      "metric": 11,
+      "total_ms": 0.5492,
+      "maximum_ms": 0.0469,
+      "calls": 15
+    },
+    {
+      "tic": 4194,
+      "metric": 12,
+      "total_ms": 0.119,
+      "maximum_ms": 0.0088,
+      "calls": 15
+    },
+    {
+      "tic": 4194,
+      "metric": 13,
+      "total_ms": 0.0928,
+      "maximum_ms": 0.0012,
+      "calls": 150
+    },
+    {
+      "tic": 4194,
+      "metric": 14,
+      "total_ms": 0.2234,
+      "maximum_ms": 0.0045,
+      "calls": 164
+    },
+    {
+      "tic": 4194,
+      "metric": 15,
+      "total_ms": 0.2162,
+      "maximum_ms": 0.0228,
+      "calls": 15
+    },
+    {
+      "tic": 4194,
+      "metric": 16,
+      "total_ms": 0.389,
+      "maximum_ms": 0.0366,
+      "calls": 15
+    },
+    {
+      "tic": 4194,
+      "metric": 17,
+      "total_ms": 0.0094,
+      "maximum_ms": 0.001,
+      "calls": 15
+    },
+    {
+      "tic": 4194,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 600
+    },
+    {
+      "tic": 4194,
+      "metric": 20,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 4194,
+      "metric": 21,
+      "total_ms": 0.0339,
+      "maximum_ms": 0.0339,
+      "calls": 1
+    },
+    {
+      "tic": 4194,
+      "metric": 22,
+      "total_ms": 0.0026,
+      "maximum_ms": 0.0026,
+      "calls": 1
+    },
+    {
+      "tic": 4194,
+      "metric": 23,
+      "total_ms": 0.0015,
+      "maximum_ms": 0.0015,
+      "calls": 1
+    },
+    {
+      "tic": 4194,
+      "metric": 24,
+      "total_ms": 0.0019,
+      "maximum_ms": 0.0019,
+      "calls": 1
+    },
+    {
+      "tic": 4194,
+      "metric": 27,
+      "total_ms": 0.0002,
+      "maximum_ms": 0.0002,
+      "calls": 1
+    },
+    {
+      "tic": 4194,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4211,
+      "metric": 0,
+      "total_ms": 1.8785,
+      "maximum_ms": 0.0952,
+      "calls": 987
+    },
+    {
+      "tic": 4211,
+      "metric": 1,
+      "total_ms": 1.3369,
+      "maximum_ms": 0.0705,
+      "calls": 29
+    },
+    {
+      "tic": 4211,
+      "metric": 2,
+      "total_ms": 0.2088,
+      "maximum_ms": 0.0081,
+      "calls": 29
+    },
+    {
+      "tic": 4211,
+      "metric": 3,
+      "total_ms": 0.1711,
+      "maximum_ms": 0.0012,
+      "calls": 290
+    },
+    {
+      "tic": 4211,
+      "metric": 4,
+      "total_ms": 0.0203,
+      "maximum_ms": 0.0031,
+      "calls": 29
+    },
+    {
+      "tic": 4211,
+      "metric": 5,
+      "total_ms": 0.2609,
+      "maximum_ms": 0.0229,
+      "calls": 29
+    },
+    {
+      "tic": 4211,
+      "metric": 6,
+      "total_ms": 1.0679,
+      "maximum_ms": 0.0569,
+      "calls": 29
+    },
+    {
+      "tic": 4211,
+      "metric": 7,
+      "total_ms": 0.0068,
+      "maximum_ms": 0.0011,
+      "calls": 29
+    },
+    {
+      "tic": 4211,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 4211,
+      "metric": 10,
+      "total_ms": 0.9933,
+      "maximum_ms": 0.0656,
+      "calls": 601
+    },
+    {
+      "tic": 4211,
+      "metric": 11,
+      "total_ms": 0.5924,
+      "maximum_ms": 0.0482,
+      "calls": 15
+    },
+    {
+      "tic": 4211,
+      "metric": 12,
+      "total_ms": 0.1172,
+      "maximum_ms": 0.0085,
+      "calls": 15
+    },
+    {
+      "tic": 4211,
+      "metric": 13,
+      "total_ms": 0.092,
+      "maximum_ms": 0.0011,
+      "calls": 150
+    },
+    {
+      "tic": 4211,
+      "metric": 14,
+      "total_ms": 0.2213,
+      "maximum_ms": 0.003,
+      "calls": 165
+    },
+    {
+      "tic": 4211,
+      "metric": 15,
+      "total_ms": 0.22,
+      "maximum_ms": 0.02,
+      "calls": 15
+    },
+    {
+      "tic": 4211,
+      "metric": 16,
+      "total_ms": 0.4332,
+      "maximum_ms": 0.0369,
+      "calls": 15
+    },
+    {
+      "tic": 4211,
+      "metric": 17,
+      "total_ms": 0.0078,
+      "maximum_ms": 0.001,
+      "calls": 15
+    },
+    {
+      "tic": 4211,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 600
+    },
+    {
+      "tic": 4211,
+      "metric": 20,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 4211,
+      "metric": 21,
+      "total_ms": 0.0352,
+      "maximum_ms": 0.0352,
+      "calls": 1
+    },
+    {
+      "tic": 4211,
+      "metric": 22,
+      "total_ms": 0.0032,
+      "maximum_ms": 0.0032,
+      "calls": 1
+    },
+    {
+      "tic": 4211,
+      "metric": 23,
+      "total_ms": 0.0018,
+      "maximum_ms": 0.0018,
+      "calls": 1
+    },
+    {
+      "tic": 4211,
+      "metric": 24,
+      "total_ms": 0.002,
+      "maximum_ms": 0.002,
+      "calls": 1
+    },
+    {
+      "tic": 4211,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4211,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4228,
+      "metric": 0,
+      "total_ms": 2.0043,
+      "maximum_ms": 0.0809,
+      "calls": 987
+    },
+    {
+      "tic": 4228,
+      "metric": 1,
+      "total_ms": 1.4411,
+      "maximum_ms": 0.0649,
+      "calls": 29
+    },
+    {
+      "tic": 4228,
+      "metric": 2,
+      "total_ms": 0.2167,
+      "maximum_ms": 0.0084,
+      "calls": 29
+    },
+    {
+      "tic": 4228,
+      "metric": 3,
+      "total_ms": 0.1792,
+      "maximum_ms": 0.0013,
+      "calls": 290
+    },
+    {
+      "tic": 4228,
+      "metric": 4,
+      "total_ms": 0.044,
+      "maximum_ms": 0.0026,
+      "calls": 57
+    },
+    {
+      "tic": 4228,
+      "metric": 5,
+      "total_ms": 0.2615,
+      "maximum_ms": 0.0142,
+      "calls": 29
+    },
+    {
+      "tic": 4228,
+      "metric": 6,
+      "total_ms": 1.1592,
+      "maximum_ms": 0.0521,
+      "calls": 29
+    },
+    {
+      "tic": 4228,
+      "metric": 7,
+      "total_ms": 0.006,
+      "maximum_ms": 0.0003,
+      "calls": 29
+    },
+    {
+      "tic": 4228,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 4228,
+      "metric": 10,
+      "total_ms": 1.2534,
+      "maximum_ms": 0.0711,
+      "calls": 601
+    },
+    {
+      "tic": 4228,
+      "metric": 11,
+      "total_ms": 0.7602,
+      "maximum_ms": 0.0532,
+      "calls": 20
+    },
+    {
+      "tic": 4228,
+      "metric": 12,
+      "total_ms": 0.1574,
+      "maximum_ms": 0.0087,
+      "calls": 20
+    },
+    {
+      "tic": 4228,
+      "metric": 13,
+      "total_ms": 0.1224,
+      "maximum_ms": 0.0011,
+      "calls": 200
+    },
+    {
+      "tic": 4228,
+      "metric": 14,
+      "total_ms": 0.2839,
+      "maximum_ms": 0.0525,
+      "calls": 169
+    },
+    {
+      "tic": 4228,
+      "metric": 15,
+      "total_ms": 0.303,
+      "maximum_ms": 0.0234,
+      "calls": 20
+    },
+    {
+      "tic": 4228,
+      "metric": 16,
+      "total_ms": 0.548,
+      "maximum_ms": 0.0422,
+      "calls": 20
+    },
+    {
+      "tic": 4228,
+      "metric": 17,
+      "total_ms": 0.0123,
+      "maximum_ms": 0.0017,
+      "calls": 20
+    },
+    {
+      "tic": 4228,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 800
+    },
+    {
+      "tic": 4228,
+      "metric": 20,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 4228,
+      "metric": 21,
+      "total_ms": 0.0347,
+      "maximum_ms": 0.0347,
+      "calls": 1
+    },
+    {
+      "tic": 4228,
+      "metric": 22,
+      "total_ms": 0.0026,
+      "maximum_ms": 0.0026,
+      "calls": 1
+    },
+    {
+      "tic": 4228,
+      "metric": 23,
+      "total_ms": 0.0017,
+      "maximum_ms": 0.0017,
+      "calls": 1
+    },
+    {
+      "tic": 4228,
+      "metric": 24,
+      "total_ms": 0.002,
+      "maximum_ms": 0.002,
+      "calls": 1
+    },
+    {
+      "tic": 4228,
+      "metric": 27,
+      "total_ms": 0.0002,
+      "maximum_ms": 0.0002,
+      "calls": 1
+    },
+    {
+      "tic": 4228,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4245,
+      "metric": 0,
+      "total_ms": 1.8941,
+      "maximum_ms": 0.1026,
+      "calls": 987
+    },
+    {
+      "tic": 4245,
+      "metric": 1,
+      "total_ms": 1.3664,
+      "maximum_ms": 0.0768,
+      "calls": 29
+    },
+    {
+      "tic": 4245,
+      "metric": 2,
+      "total_ms": 0.2339,
+      "maximum_ms": 0.0094,
+      "calls": 29
+    },
+    {
+      "tic": 4245,
+      "metric": 3,
+      "total_ms": 0.1698,
+      "maximum_ms": 0.0012,
+      "calls": 290
+    },
+    {
+      "tic": 4245,
+      "metric": 4,
+      "total_ms": 0.0189,
+      "maximum_ms": 0.0017,
+      "calls": 29
+    },
+    {
+      "tic": 4245,
+      "metric": 5,
+      "total_ms": 0.2449,
+      "maximum_ms": 0.024,
+      "calls": 29
+    },
+    {
+      "tic": 4245,
+      "metric": 6,
+      "total_ms": 1.0759,
+      "maximum_ms": 0.0645,
+      "calls": 29
+    },
+    {
+      "tic": 4245,
+      "metric": 7,
+      "total_ms": 0.0332,
+      "maximum_ms": 0.0015,
+      "calls": 29
+    },
+    {
+      "tic": 4245,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 4245,
+      "metric": 10,
+      "total_ms": 1.1218,
+      "maximum_ms": 0.0673,
+      "calls": 601
+    },
+    {
+      "tic": 4245,
+      "metric": 11,
+      "total_ms": 0.6791,
+      "maximum_ms": 0.0492,
+      "calls": 18
+    },
+    {
+      "tic": 4245,
+      "metric": 12,
+      "total_ms": 0.1532,
+      "maximum_ms": 0.0088,
+      "calls": 18
+    },
+    {
+      "tic": 4245,
+      "metric": 13,
+      "total_ms": 0.1083,
+      "maximum_ms": 0.0011,
+      "calls": 180
+    },
+    {
+      "tic": 4245,
+      "metric": 14,
+      "total_ms": 0.2254,
+      "maximum_ms": 0.0042,
+      "calls": 166
+    },
+    {
+      "tic": 4245,
+      "metric": 15,
+      "total_ms": 0.2611,
+      "maximum_ms": 0.0243,
+      "calls": 18
+    },
+    {
+      "tic": 4245,
+      "metric": 16,
+      "total_ms": 0.4769,
+      "maximum_ms": 0.0382,
+      "calls": 18
+    },
+    {
+      "tic": 4245,
+      "metric": 17,
+      "total_ms": 0.0235,
+      "maximum_ms": 0.0014,
+      "calls": 18
+    },
+    {
+      "tic": 4245,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 720
+    },
+    {
+      "tic": 4245,
+      "metric": 20,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4245,
+      "metric": 21,
+      "total_ms": 0.035,
+      "maximum_ms": 0.035,
+      "calls": 1
+    },
+    {
+      "tic": 4245,
+      "metric": 22,
+      "total_ms": 0.003,
+      "maximum_ms": 0.003,
+      "calls": 1
+    },
+    {
+      "tic": 4245,
+      "metric": 23,
+      "total_ms": 0.0018,
+      "maximum_ms": 0.0018,
+      "calls": 1
+    },
+    {
+      "tic": 4245,
+      "metric": 24,
+      "total_ms": 0.0041,
+      "maximum_ms": 0.0022,
+      "calls": 2
+    },
+    {
+      "tic": 4245,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4245,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4262,
+      "metric": 0,
+      "total_ms": 1.9732,
+      "maximum_ms": 0.0911,
+      "calls": 987
+    },
+    {
+      "tic": 4262,
+      "metric": 1,
+      "total_ms": 1.4006,
+      "maximum_ms": 0.0703,
+      "calls": 29
+    },
+    {
+      "tic": 4262,
+      "metric": 2,
+      "total_ms": 0.2406,
+      "maximum_ms": 0.0096,
+      "calls": 29
+    },
+    {
+      "tic": 4262,
+      "metric": 3,
+      "total_ms": 0.1722,
+      "maximum_ms": 0.0011,
+      "calls": 290
+    },
+    {
+      "tic": 4262,
+      "metric": 4,
+      "total_ms": 0.0263,
+      "maximum_ms": 0.0024,
+      "calls": 34
+    },
+    {
+      "tic": 4262,
+      "metric": 5,
+      "total_ms": 0.2807,
+      "maximum_ms": 0.019,
+      "calls": 29
+    },
+    {
+      "tic": 4262,
+      "metric": 6,
+      "total_ms": 1.0996,
+      "maximum_ms": 0.0566,
+      "calls": 29
+    },
+    {
+      "tic": 4262,
+      "metric": 7,
+      "total_ms": 0.0351,
+      "maximum_ms": 0.0019,
+      "calls": 29
+    },
+    {
+      "tic": 4262,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1160
+    },
+    {
+      "tic": 4262,
+      "metric": 10,
+      "total_ms": 1.0104,
+      "maximum_ms": 0.0688,
+      "calls": 601
+    },
+    {
+      "tic": 4262,
+      "metric": 11,
+      "total_ms": 0.607,
+      "maximum_ms": 0.0495,
+      "calls": 15
+    },
+    {
+      "tic": 4262,
+      "metric": 12,
+      "total_ms": 0.1284,
+      "maximum_ms": 0.0091,
+      "calls": 15
+    },
+    {
+      "tic": 4262,
+      "metric": 13,
+      "total_ms": 0.0912,
+      "maximum_ms": 0.001,
+      "calls": 150
+    },
+    {
+      "tic": 4262,
+      "metric": 14,
+      "total_ms": 0.2315,
+      "maximum_ms": 0.0043,
+      "calls": 164
+    },
+    {
+      "tic": 4262,
+      "metric": 15,
+      "total_ms": 0.213,
+      "maximum_ms": 0.021,
+      "calls": 15
+    },
+    {
+      "tic": 4262,
+      "metric": 16,
+      "total_ms": 0.4365,
+      "maximum_ms": 0.0372,
+      "calls": 15
+    },
+    {
+      "tic": 4262,
+      "metric": 17,
+      "total_ms": 0.0199,
+      "maximum_ms": 0.0014,
+      "calls": 15
+    },
+    {
+      "tic": 4262,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 600
+    },
+    {
+      "tic": 4262,
+      "metric": 20,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 4262,
+      "metric": 21,
+      "total_ms": 0.0404,
+      "maximum_ms": 0.0404,
+      "calls": 1
+    },
+    {
+      "tic": 4262,
+      "metric": 22,
+      "total_ms": 0.0036,
+      "maximum_ms": 0.0036,
+      "calls": 1
+    },
+    {
+      "tic": 4262,
+      "metric": 23,
+      "total_ms": 0.0022,
+      "maximum_ms": 0.0022,
+      "calls": 1
+    },
+    {
+      "tic": 4262,
+      "metric": 24,
+      "total_ms": 0.0021,
+      "maximum_ms": 0.0021,
+      "calls": 1
+    },
+    {
+      "tic": 4262,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4262,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4279,
+      "metric": 0,
+      "total_ms": 2.0272,
+      "maximum_ms": 0.1008,
+      "calls": 987
+    },
+    {
+      "tic": 4279,
+      "metric": 1,
+      "total_ms": 1.4761,
+      "maximum_ms": 0.0757,
+      "calls": 30
+    },
+    {
+      "tic": 4279,
+      "metric": 2,
+      "total_ms": 0.2311,
+      "maximum_ms": 0.0085,
+      "calls": 30
+    },
+    {
+      "tic": 4279,
+      "metric": 3,
+      "total_ms": 0.1782,
+      "maximum_ms": 0.0012,
+      "calls": 300
+    },
+    {
+      "tic": 4279,
+      "metric": 4,
+      "total_ms": 0.0201,
+      "maximum_ms": 0.0015,
+      "calls": 30
+    },
+    {
+      "tic": 4279,
+      "metric": 5,
+      "total_ms": 0.2638,
+      "maximum_ms": 0.0232,
+      "calls": 30
+    },
+    {
+      "tic": 4279,
+      "metric": 6,
+      "total_ms": 1.185,
+      "maximum_ms": 0.0637,
+      "calls": 30
+    },
+    {
+      "tic": 4279,
+      "metric": 7,
+      "total_ms": 0.0219,
+      "maximum_ms": 0.0013,
+      "calls": 30
+    },
+    {
+      "tic": 4279,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1200
+    },
+    {
+      "tic": 4279,
+      "metric": 10,
+      "total_ms": 1.0419,
+      "maximum_ms": 0.0638,
+      "calls": 601
+    },
+    {
+      "tic": 4279,
+      "metric": 11,
+      "total_ms": 0.6276,
+      "maximum_ms": 0.0455,
+      "calls": 16
+    },
+    {
+      "tic": 4279,
+      "metric": 12,
+      "total_ms": 0.1251,
+      "maximum_ms": 0.0088,
+      "calls": 16
+    },
+    {
+      "tic": 4279,
+      "metric": 13,
+      "total_ms": 0.097,
+      "maximum_ms": 0.0012,
+      "calls": 160
+    },
+    {
+      "tic": 4279,
+      "metric": 14,
+      "total_ms": 0.2268,
+      "maximum_ms": 0.0044,
+      "calls": 166
+    },
+    {
+      "tic": 4279,
+      "metric": 15,
+      "total_ms": 0.2285,
+      "maximum_ms": 0.0232,
+      "calls": 16
+    },
+    {
+      "tic": 4279,
+      "metric": 16,
+      "total_ms": 0.4582,
+      "maximum_ms": 0.0353,
+      "calls": 16
+    },
+    {
+      "tic": 4279,
+      "metric": 17,
+      "total_ms": 0.0089,
+      "maximum_ms": 0.001,
+      "calls": 16
+    },
+    {
+      "tic": 4279,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 640
+    },
+    {
+      "tic": 4279,
+      "metric": 20,
+      "total_ms": 0.0004,
+      "maximum_ms": 0.0004,
+      "calls": 1
+    },
+    {
+      "tic": 4279,
+      "metric": 21,
+      "total_ms": 0.0344,
+      "maximum_ms": 0.0344,
+      "calls": 1
+    },
+    {
+      "tic": 4279,
+      "metric": 22,
+      "total_ms": 0.0026,
+      "maximum_ms": 0.0026,
+      "calls": 1
+    },
+    {
+      "tic": 4279,
+      "metric": 23,
+      "total_ms": 0.0015,
+      "maximum_ms": 0.0015,
+      "calls": 1
+    },
+    {
+      "tic": 4279,
+      "metric": 24,
+      "total_ms": 0.0018,
+      "maximum_ms": 0.0018,
+      "calls": 1
+    },
+    {
+      "tic": 4279,
+      "metric": 27,
+      "total_ms": 0.0003,
+      "maximum_ms": 0.0003,
+      "calls": 1
+    },
+    {
+      "tic": 4279,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    },
+    {
+      "tic": 4296,
+      "metric": 0,
+      "total_ms": 2.0134,
+      "maximum_ms": 0.0956,
+      "calls": 987
+    },
+    {
+      "tic": 4296,
+      "metric": 1,
+      "total_ms": 1.4053,
+      "maximum_ms": 0.0671,
+      "calls": 28
+    },
+    {
+      "tic": 4296,
+      "metric": 2,
+      "total_ms": 0.2145,
+      "maximum_ms": 0.0102,
+      "calls": 28
+    },
+    {
+      "tic": 4296,
+      "metric": 3,
+      "total_ms": 0.177,
+      "maximum_ms": 0.0019,
+      "calls": 280
+    },
+    {
+      "tic": 4296,
+      "metric": 4,
+      "total_ms": 0.0419,
+      "maximum_ms": 0.0033,
+      "calls": 55
+    },
+    {
+      "tic": 4296,
+      "metric": 5,
+      "total_ms": 0.3006,
+      "maximum_ms": 0.0287,
+      "calls": 28
+    },
+    {
+      "tic": 4296,
+      "metric": 6,
+      "total_ms": 1.1263,
+      "maximum_ms": 0.056,
+      "calls": 28
+    },
+    {
+      "tic": 4296,
+      "metric": 7,
+      "total_ms": 0.0077,
+      "maximum_ms": 0.0012,
+      "calls": 28
+    },
+    {
+      "tic": 4296,
+      "metric": 8,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1120
+    },
+    {
+      "tic": 4296,
+      "metric": 10,
+      "total_ms": 1.497,
+      "maximum_ms": 0.1328,
+      "calls": 601
+    },
+    {
+      "tic": 4296,
+      "metric": 11,
+      "total_ms": 0.9556,
+      "maximum_ms": 0.1109,
+      "calls": 20
+    },
+    {
+      "tic": 4296,
+      "metric": 12,
+      "total_ms": 0.1823,
+      "maximum_ms": 0.0115,
+      "calls": 20
+    },
+    {
+      "tic": 4296,
+      "metric": 13,
+      "total_ms": 0.1446,
+      "maximum_ms": 0.0015,
+      "calls": 200
+    },
+    {
+      "tic": 4296,
+      "metric": 14,
+      "total_ms": 0.281,
+      "maximum_ms": 0.0064,
+      "calls": 169
+    },
+    {
+      "tic": 4296,
+      "metric": 15,
+      "total_ms": 0.3162,
+      "maximum_ms": 0.0224,
+      "calls": 20
+    },
+    {
+      "tic": 4296,
+      "metric": 16,
+      "total_ms": 0.6524,
+      "maximum_ms": 0.044,
+      "calls": 20
+    },
+    {
+      "tic": 4296,
+      "metric": 17,
+      "total_ms": 0.012,
+      "maximum_ms": 0.0013,
+      "calls": 20
+    },
+    {
+      "tic": 4296,
+      "metric": 18,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 800
+    },
+    {
+      "tic": 4296,
+      "metric": 20,
+      "total_ms": 0.0005,
+      "maximum_ms": 0.0005,
+      "calls": 1
+    },
+    {
+      "tic": 4296,
+      "metric": 21,
+      "total_ms": 0.0349,
+      "maximum_ms": 0.0349,
+      "calls": 1
+    },
+    {
+      "tic": 4296,
+      "metric": 22,
+      "total_ms": 0.0029,
+      "maximum_ms": 0.0029,
+      "calls": 1
+    },
+    {
+      "tic": 4296,
+      "metric": 23,
+      "total_ms": 0.0016,
+      "maximum_ms": 0.0016,
+      "calls": 1
+    },
+    {
+      "tic": 4296,
+      "metric": 24,
+      "total_ms": 0.0018,
+      "maximum_ms": 0.0018,
+      "calls": 1
+    },
+    {
+      "tic": 4296,
+      "metric": 27,
+      "total_ms": 0.0002,
+      "maximum_ms": 0.0002,
+      "calls": 1
+    },
+    {
+      "tic": 4296,
+      "metric": 28,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 4
+    }
+  ],
+  "states": [
+    "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+    "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+  ],
+  "census": [
+    "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+    "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+  ],
+  "qualification": "Private inclusive call timers and branch counts; no math or production statements changed. Advance temporarily tags nested thermal calls by actor family and restores prior tag; direct forecast/other calls remain other. Counts are observed, not a skipped production branch. Overlapping inclusive timers include wrapper/counter overhead and cannot be summed as CPU budgets."
+}

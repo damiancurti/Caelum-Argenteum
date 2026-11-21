@@ -1,6 +1,22 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.113** - 2026-11-21.
+Documentation version: **5.17.114** - 2026-11-21.
+
+## 5.17.114 - Grow the derived contamination surface index (#871, #454)
+
+No art, material, model, map, actor placement or geometry changes under #871.
+assets/validation_v5_17_114 retains exact diagnosis sources/logs, the post-window
+surface-key dataset, growth/save/oracle checks, native campaign timing traces and
+reproduction tools. Private diagnostic packages, engine/IWAD and save binaries are
+not distributed. The 62,253-key dataset is derived from this project's current map;
+its snapshot runs once after the timed window, not as a routine actor scan.
+
+The adaptive index uses 16,384 buckets for this dataset: 64 KiB of integer payload,
+versus 4 KiB previously (60 KiB additional payload per ledger at this size; array
+allocator overhead is not included). Existing tile objects are neither duplicated
+nor removed. Tiny ledgers retain 1,024 buckets. This is a derived-index memory
+tradeoff, not an invented limit on zones or living combatants. Final siege and sewer
+captures were inspected as scene checks; still images do not establish fluency.
 
 ## 5.17.113 - Measure the full siege frame and identify actor costs (#870, #454)
 

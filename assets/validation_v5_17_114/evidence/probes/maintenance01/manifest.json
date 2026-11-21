@@ -1,0 +1,136 @@
+{
+  "issue": 871,
+  "runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "overlay_sha256": "115cd9b04d9977da10fd942cfc306dbb02ae1929be1e42c01712ac97ab502c08",
+  "originals_restored_exactly": {
+    "caelum/survival/CaelumContaminationNPC.zs": "70dec1f6e8c441259c6690d7e215fee1dd5b03c24a04dd876ec45c6fead0f222",
+    "caelum/survival/CaelumContaminationSurface.zs": "9e5796074c7c3c9de69f82c35c8409377ca7e2b4e373673bc7f6a6a9bddc69cb",
+    "caelum/survival/CaelumContaminationContact.zs": "77c658e7ec1b6bfe1babd6c23fa03cd3c5fa1782ef7db4efd43c3d6d8faa372c",
+    "caelum/survival/CaelumContaminationEnvironment.zs": "0a895f49639f87b6c6e1dc8b9def90007302e3d4f98a1f9eddc4fc03d762b661",
+    "caelum/survival/CaelumContaminationExposure.zs": "786db0b5d94535727afce05c0b6011ce802933cc07534d94d6cd8281294014b3"
+  },
+  "metrics": [
+    {
+      "id": 0,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationNPC.zs:Step"
+    },
+    {
+      "id": 1,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationNPC.zs:Capture"
+    },
+    {
+      "id": 2,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationNPC.zs:AdvanceCaptured"
+    },
+    {
+      "id": 3,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationNPC.zs:CommitCaptured"
+    },
+    {
+      "id": 4,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationSurface.zs:NPCContact"
+    },
+    {
+      "id": 5,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationContact.zs:Observe"
+    },
+    {
+      "id": 6,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationEnvironment.zs:ReferenceAt"
+    },
+    {
+      "id": 7,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationExposure.zs:Advance"
+    },
+    {
+      "id": 8,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationNPC.zs:Step"
+    },
+    {
+      "id": 9,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationNPC.zs:Capture"
+    },
+    {
+      "id": 10,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationNPC.zs:AdvanceCaptured"
+    },
+    {
+      "id": 11,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationNPC.zs:CommitCaptured"
+    },
+    {
+      "id": 12,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationSurface.zs:NPCContact"
+    },
+    {
+      "id": 13,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationContact.zs:Observe"
+    },
+    {
+      "id": 14,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationEnvironment.zs:ReferenceAt"
+    },
+    {
+      "id": 15,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationExposure.zs:Advance"
+    },
+    {
+      "id": 16,
+      "family": "other",
+      "stage": "CaelumContaminationNPC.zs:Step"
+    },
+    {
+      "id": 17,
+      "family": "other",
+      "stage": "CaelumContaminationNPC.zs:Capture"
+    },
+    {
+      "id": 18,
+      "family": "other",
+      "stage": "CaelumContaminationNPC.zs:AdvanceCaptured"
+    },
+    {
+      "id": 19,
+      "family": "other",
+      "stage": "CaelumContaminationNPC.zs:CommitCaptured"
+    },
+    {
+      "id": 20,
+      "family": "other",
+      "stage": "CaelumContaminationSurface.zs:NPCContact"
+    },
+    {
+      "id": 21,
+      "family": "other",
+      "stage": "CaelumContaminationContact.zs:Observe"
+    },
+    {
+      "id": 22,
+      "family": "other",
+      "stage": "CaelumContaminationEnvironment.zs:ReferenceAt"
+    },
+    {
+      "id": 23,
+      "family": "other",
+      "stage": "CaelumContaminationExposure.zs:Advance"
+    }
+  ],
+  "period": 17,
+  "qualification": "Private inclusive maintenance timers; no production statements changed. NPC Step tags nested calls by actor family and restores the prior tag. Other callers remain other. Nested timers include wrapper overhead and must not be added as independent CPU costs."
+}

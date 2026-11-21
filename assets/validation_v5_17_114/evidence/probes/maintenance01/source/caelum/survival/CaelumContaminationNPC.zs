@@ -1,0 +1,232 @@
+// #502: adapta el inventario/modelos del NPC al mismo balance del jugador.
+// La planificación térmica existente posee el reloj; no añade Tick ni censos.
+class CaelumContaminationNPC : Object play
+{
+    CaelumContaminationExposure Frame;
+    CaelumFoodIllness Body;
+    int Count;
+
+    static double HealthRate(CaelumCombatActor npc)
+    {
+        return npc.CombatMaximumHealth/CaelumConstants.HEALTH_BASE_RECOVERY_REAL_SECONDS
+            *npc.CalculateActorType4Percent(npc.CombatResilience)/100.0*CaelumRestRules.CHAIR_RESOURCE_FACTOR;
+    }
+
+    // El daño usa segundos activos, como el jugador; la exposición conserva
+    // su reloj mundial separado. El registro del cuerpo es la única autoridad.
+    static void IllnessStep(CaelumCombatActor npc)
+    {
+        if(npc==null || npc.health<=0 || !npc.CombatProfileInitialized)return;
+        let entry=CaelumContaminationStorage.Get(npc);if(entry==null)return;
+        entry.EnsurePhysiology();
+        if(entry.Revision<CaelumContaminationData.STATE_REVISION
+            || entry.Concentration<=CaelumFoodData.ILLNESS_THRESHOLD)return;
+        entry.DiseaseFraction+=CaelumFoodRules.DamagePerSecond(entry.Concentration,
+            npc.CombatMaximumHealth,CaelumToughnessRules.Effective(npc))/TICRATE;
+        int damage=int(entry.DiseaseFraction+0.0000001);
+        if(damage<=0)return;
+        entry.DiseaseFraction=Max(0.0,entry.DiseaseFraction-damage);
+        npc.DamageMobj(null,null,damage,'CaelumDiseaseDOT',DMG_NO_ARMOR,0.0);
+    }
+    static bool NeedsRecovery(CaelumCombatActor npc)
+    {
+        let entry=CaelumContaminationStorage.Get(npc);
+        return entry!=null && entry.Revision>=CaelumContaminationData.STATE_REVISION
+            && entry.Concentration>0;
+    }
+    static void Recover(CaelumCombatActor npc,double effort)
+    {
+        if(npc==null || npc.health<=0 || npc.CombatMaximumHealth<=0 || effort<=0)return;
+        let entry=CaelumContaminationStorage.Get(npc);
+        if(entry!=null && entry.Revision>=CaelumContaminationData.STATE_REVISION)
+            entry.Concentration=Max(0.0,entry.Concentration-effort/npc.CombatMaximumHealth);
+    }
+
+    CaelumContaminationEquipment Row()
+    {
+        if(Count==Frame.Items.Size())
+        {
+            let row=new('CaelumContaminationEquipment');
+            row.Endpoint=new('CaelumContaminationContactPoint');Frame.Items.Push(row);
+        }
+        let row=Frame.Items[Count++];
+        row.Item=null;row.Endpoint.Body=null;row.Endpoint.Record=null;row.Endpoint.Dose=1;
+        row.Worn=false;row.Slot=0;row.Kind=0;return row;
+    }
+    void Model(CaelumContaminationState entry,double area,int slot=-1)
+    {
+        entry.Ensure();let row=Row();row.Endpoint.Record=entry;row.Area=area;
+        if(slot>=0){row.Worn=true;row.Slot=slot;Frame.Armor[slot]=Count-1;}
+    }
+    void Capture(CaelumCombatActor npc,CaelumThermalState thermal)
+    {
+        let ca871Probe=CA871MaintenanceProbe.FindSample();
+        int ca871Family=ca871Probe!=null?CA871MaintenanceProbe.Family(npc):0;
+        
+        double ca871Start=ca871Probe!=null?MSTimeF():0;
+        CA871Original1(npc,thermal);
+        if(ca871Probe!=null)ca871Probe.Record(ca871Family*8+1,ca871Start);
+        
+        
+    }
+    void CA871Original1(CaelumCombatActor npc,CaelumThermalState thermal)
+    {
+        if(Frame==null)Frame=new('CaelumContaminationExposure');
+        Frame.CaptureStacks(npc);
+        if(Body==null)Body=new('CaelumFoodIllness');
+        Count=0;Frame.BodyKg=thermal.BodyMassKg;
+        for(int slot=0;slot<4;slot++)
+        {
+            Frame.Armor[slot]=-1;Frame.Clothes[slot]=-1;
+            Frame.BodyArea[slot]=thermal.SurfaceArea*thermal.Coverage[slot];
+            if(npc.CombatArmor!=null && !CaelumThermalBody.FurryAnimal(npc)
+                && (npc.Companion==null || npc.CombatArmor.ArmorType[slot]!=CaelumConstants.ARMOR_TYPE_BASE_CLOTHING))
+            {
+                if(npc.CombatArmor.ContaminationState[slot]==null)
+                    npc.CombatArmor.ContaminationState[slot]=new('CaelumContaminationState');
+                Model(npc.CombatArmor.ContaminationState[slot],Frame.BodyArea[slot],slot);
+            }
+        }
+        let weapon=npc.GetPossessedSidearm();
+        let resident=CaelumAnchoredResident(npc);
+        bool nativeSidearm=resident!=null && resident.ResidentTools!=null
+            && resident.ResidentTools.Available(resident.ResidentTools.Melee);
+        if(weapon!=null && !nativeSidearm)
+        {
+            if(weapon.ContaminationState==null)weapon.ContaminationState=new('CaelumContaminationState');
+            Model(weapon.ContaminationState,CaelumContaminationRules.WeaponArea(weapon.WeaponType,weapon.Size));
+        }
+        let defender=CaelumPortDefender(npc);
+        let automaton=CaelumTarotAutomaton(npc);
+        let shield=defender!=null?defender.Shield:automaton!=null?automaton.Shield:null;
+        if(shield!=null)
+        {
+            if(shield.ContaminationState==null)shield.ContaminationState=new('CaelumContaminationState');
+            Model(shield.ContaminationState,CaelumContaminationRules.ShieldArea(shield.ShieldType,shield.Size));
+        }
+        // Sólo el inventario de este dueño, en su intervalo térmico compartido.
+        // Los objetos nativos guardan identidad; no se copian a los modelos.
+        if(npc.Companion!=null && npc.Companion.Loadout!=null)npc.Companion.Loadout.Sync();
+        for(Inventory cursor=npc.Inv;cursor!=null;cursor=cursor.Inv)
+        {
+            if(cursor is 'CaelumStorageFurnitureItem' && cursor.Owner==npc && cursor.Amount>0 && !CaelumContaminationStorage.IsShielded(cursor))
+            {let row=Row();row.Item=cursor;row.Endpoint.Body=cursor;row.Area=CaelumContaminationObject.Area(cursor);row.Kind=-1;continue;}
+            let item=CaelumEquipmentItem(cursor);
+            if(item==null || item.Owner!=npc || item.Amount<=0 || CaelumContaminationStorage.IsShielded(item))continue;
+            int kind=item.EquipmentKind;double area;
+            if(kind==CaelumConstants.EQUIPMENT_KIND_WEAPON)
+                area=CaelumContaminationRules.WeaponArea(item.ItemType,item.EquipmentSize);
+            else if(kind==CaelumConstants.EQUIPMENT_KIND_SHIELD)
+                area=CaelumContaminationRules.ShieldArea(item.ItemType,item.EquipmentSize);
+            else if(kind==CaelumConstants.EQUIPMENT_KIND_ARMOR || kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
+                area=CaelumContaminationRules.GarmentArea(item.ArmorSlot,item.EquipmentSize);
+            else continue;
+            // Un arma nativa puede ser tambien el modelo de combate. Si
+            // comparten autoridad, reemplazar su vista en vez de exponerla dos veces.
+            CaelumContaminationEquipment row=null;
+            if(item.ContaminationState!=null)
+                for(int i=0;i<Count;i++)
+                    if(Frame.Items[i].Endpoint.Record==item.ContaminationState){row=Frame.Items[i];break;}
+            if(row==null){row=Row();row.Area=area;}
+            row.Item=item;row.Endpoint.Body=item;row.Endpoint.Record=null;row.Kind=kind;
+            if(kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING && item.Equipped && npc.Companion!=null
+                && npc.Companion.Loadout!=null && npc.Companion.Loadout.Clothing[item.ArmorSlot]==item)
+            {
+                row.Worn=true;row.Slot=item.ArmorSlot;row.Area=Frame.BodyArea[row.Slot];
+                // Row puede reutilizar un registro: localizarlo en el conjunto acotado.
+                for(int i=0;i<Count;i++)if(Frame.Items[i]==row){Frame.Clothes[row.Slot]=i;break;}
+            }
+        }
+        Frame.Items.Resize(Count);Frame.Immersion(thermal);Frame.ReadLive();
+        Body.Contamination=CaelumContaminationStorage.Value(npc);
+    }
+    void Advance(CaelumCombatActor npc,CaelumThermalState thermal,double seconds,double ambient)
+    {
+        Capture(npc,thermal);AdvanceCaptured(npc,seconds,ambient);
+    }
+    void AdvanceCaptured(CaelumCombatActor npc,double seconds,double ambient)
+    {
+        let ca871Probe=CA871MaintenanceProbe.FindSample();
+        int ca871Family=ca871Probe!=null?CA871MaintenanceProbe.Family(npc):0;
+        
+        double ca871Start=ca871Probe!=null?MSTimeF():0;
+        CA871Original2(npc,seconds,ambient);
+        if(ca871Probe!=null)ca871Probe.Record(ca871Family*8+2,ca871Start);
+        
+        
+    }
+    void CA871Original2(CaelumCombatActor npc,double seconds,double ambient)
+    {
+        Frame.ReadLive();Body.Contamination=CaelumContaminationStorage.Value(npc);
+        Frame.Advance(Body,ambient,seconds);
+        CommitCaptured(npc);
+    }
+    void CommitCaptured(CaelumCombatActor npc)
+    {
+        let ca871Probe=CA871MaintenanceProbe.FindSample();
+        int ca871Family=ca871Probe!=null?CA871MaintenanceProbe.Family(npc):0;
+        
+        double ca871Start=ca871Probe!=null?MSTimeF():0;
+        CA871Original3(npc);
+        if(ca871Probe!=null)ca871Probe.Record(ca871Family*8+3,ca871Start);
+        
+        
+    }
+    void CA871Original3(CaelumCombatActor npc)
+    {
+        Frame.CommitStacks(npc);
+        if(Body.Contamination!=CaelumContaminationStorage.Value(npc))
+            CaelumContaminationStorage.Set(npc,Body.Contamination);
+        for(int i=0;i<Frame.Items.Size();i++)
+        {
+            let row=Frame.Items[i];
+            if(row.Concentration!=row.Endpoint.Value())row.Endpoint.Set(row.Concentration);
+        }
+    }
+    static void Step(CaelumCombatActor npc,CaelumThermalState thermal,double seconds)
+    {
+        let ca871Probe=CA871MaintenanceProbe.FindSample();
+        int ca871Family=ca871Probe!=null?CA871MaintenanceProbe.Family(npc):0;
+        int ca871Previous=0;if(ca871Probe!=null){ca871Previous=ca871Probe.CurrentFamily;ca871Probe.CurrentFamily=ca871Family;}
+        double ca871Start=ca871Probe!=null?MSTimeF():0;
+        CA871Original0(npc,thermal,seconds);
+        if(ca871Probe!=null)ca871Probe.Record(ca871Family*8+0,ca871Start);
+        if(ca871Probe!=null)ca871Probe.CurrentFamily=ca871Previous;
+        
+    }
+    static void CA871Original0(CaelumCombatActor npc,CaelumThermalState thermal,double seconds)
+    {
+        if(npc==null || thermal==null || !thermal.Available || npc.health<=0 || seconds<=0)return;
+        if(npc.ContaminationExposure==null)npc.ContaminationExposure=new('CaelumContaminationNPC');
+        double reference=CaelumContaminationEnvironment.ReferenceAt(npc);
+        double ambient=reference>=0?CaelumContaminationRules.Ambient(reference,thermal.AirC,
+            thermal.Humidity,thermal.RainMmHour,!thermal.Roof):-1;
+        npc.ContaminationExposure.Advance(npc,thermal,seconds,ambient);
+        CaelumContaminationSurfaceContact.NPCContact(npc,thermal,seconds);
+        CaelumContaminationContacts.Observe(npc);
+    }
+}
+
+class CA871MaintenanceProbe : StaticEventHandler
+{
+    const METRICS=24;const WINDOW=700;
+    Array<double> Total,Maximum;Array<int> Calls;
+    bool Ready,Printed;int CurrentFamily;
+    static CA871MaintenanceProbe FindSample()
+    {
+        if(level.time<3599 || level.time>=4299 || (level.time-3599)%17!=0)return null;
+        return CA871MaintenanceProbe(StaticEventHandler.Find('CA871MaintenanceProbe'));
+    }
+    static int Family(Actor body){return body is 'CaelumMandinga'?0:body is 'CaelumPortDefender'?1:2;}
+    override void WorldLoaded(WorldEvent e)
+    {Total.Resize(METRICS*WINDOW);Maximum.Resize(METRICS*WINDOW);Calls.Resize(METRICS*WINDOW);CurrentFamily=2;Ready=true;}
+    void Record(int metric,double start)
+    {double elapsed=MSTimeF()-start;int cell=metric*WINDOW+level.time-3599;Total[cell]+=elapsed;Maximum[cell]=Max(Maximum[cell],elapsed);Calls[cell]++;}
+    override void WorldTick()
+    {
+        if(!Ready || Printed || level.time!=4350)return;Printed=true;
+        for(int tic=0;tic<WINDOW;tic++)for(int metric=0;metric<METRICS;metric++)
+        {int cell=metric*WINDOW+tic;if(Calls[cell]>0)Console.Printf("CA871 MAINTENANCE tic=%d metric=%d total=%.6f maximum=%.6f calls=%d",tic+3599,metric,Total[cell],Maximum[cell],Calls[cell]);}
+        Console.Printf("CA871 MAINTENANCE_COMPLETE");
+    }
+}

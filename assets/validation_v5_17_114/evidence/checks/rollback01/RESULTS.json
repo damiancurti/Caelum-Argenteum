@@ -1,0 +1,52 @@
+{
+  "issue": 871,
+  "event": "check",
+  "adaptive": false,
+  "interpret": false,
+  "passed": true,
+  "exit_code": 0,
+  "checks": 18,
+  "errors": [],
+  "benchmark": [
+    {
+      "tiles": 62265,
+      "calls": 498120,
+      "original_ms": 409.6579,
+      "candidate_ms": 427.7983,
+      "buckets": 1024
+    }
+  ],
+  "small_benchmark": [
+    {
+      "tiles": 16,
+      "calls": 500000,
+      "original_ms": 8.8578,
+      "candidate_ms": 8.7461,
+      "buckets": 1024
+    },
+    {
+      "tiles": 512,
+      "calls": 500000,
+      "original_ms": 10.2766,
+      "candidate_ms": 10.2181,
+      "buckets": 1024
+    },
+    {
+      "tiles": 4096,
+      "calls": 500000,
+      "original_ms": 17.4283,
+      "candidate_ms": 17.2781,
+      "buckets": 1024
+    }
+  ],
+  "runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "reference_runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "candidate_sha256": null,
+  "fixture_sha256": "1bc64f51db23d923ceded8df506a10d385044f203b70be98425a36255baf602d",
+  "key_data_sha256": "564accedb3bafe492d8ff9bbbfd67dbae1c874ddc93fa912bf94a74c52e9343a",
+  "checks_sha256": "ec6e6f1161d35f4b95e5e0e310c5b817ae73a61f090db4777c51721358a5be20",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "input_save_sha256": "dfa7ce85f6dd0b0ef1eb8b24f218819bd673f351eb151040d032293a7ffc5cbe",
+  "output_save_sha256": "76c3db087273f6bb60cce62dd1cfe26374236953bc447637bbd24e95e4b7c798",
+  "qualification": "Private original-map-class oracle on62253 actual current-map tile keys, plus signed/absent/duplicate-key and identity tests. Native saved objects preserve tile references and all authoritative tile/map fields; only derived bucket/Next links may change. Alternating repeated lookup timings are not whole-scene frame rates."
+}
