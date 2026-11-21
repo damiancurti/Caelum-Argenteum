@@ -1,6 +1,26 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.120** - 2026-11-21.
+Documentation version: **5.17.121** - 2026-11-21.
+
+## 5.17.121 - Furnish the municipal office and archive for review (#886, #463)
+
+The #886 private proposal adds 42 fixed, solid, non-pushable scene actors derived
+directly from Actor. They have no Tick/Used behavior, inventory, ownership, storage,
+reading, rest or reward. Dimensions and model bindings reuse the existing owned
+desk/chair/reading-shelf sources. Visible books remain mesh decoration. Original
+MAP03 geometry, existing actor things, public merchant identity0 and production
+save fields/rules are unchanged. The private map checksum changes; use fresh
+disposable sessions and same-option saves only. A fresh default session verifies
+removal; no visited campaign save is converted.
+
+Four diagnostic phases each traverse451 native TryMove steps and test42 prop
+centers with the current player collision body (radius 16 / height 56). Candidate
+centers block all 42 probes; control/default centers block none. Each phase opens
+the existing vendor 0 trade menu through actual +use/-use. Its Box prerequisite is
+prepared in both pawn and persistent character record with PersistCharacterState;
+this is explicit fixture setup, not a changed production eligibility rule or an
+ordinary progression test. No purchase is performed. Sampled paths and scene
+checks do not establish all-body, all-map, multiplayer or author acceptance.
 
 ## 5.17.120 - Separate interior ceilings from exterior roofing (#883, #463)
 

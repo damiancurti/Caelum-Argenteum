@@ -4,6 +4,31 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-277 - Verify fixture calling conventions and persistent service prerequisites
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #886 /5.17.121,2026-11-21,
+GZDoom4.14.2. Evidence: assets/validation_v5_17_121. Author acceptance pending.
+
+The initial municipal fixture's out-vector helper caused Unexpected JIT error:
+Unknown REGT value passed to EmitPARAM and REGT_ADDROF not implemented for vectors.
+Replacing this specific helper with direct boolean actor predicates passed the
+same native scene checks. Include unexpected JIT diagnostics among fatal markers;
+a clean script parse or a control that skips the affected helper is insufficient.
+This establishes the tested helper failure, not a ban on every out/reference use.
+
+To test a gated service, prepare its complete persisted prerequisite through the
+existing fixture pattern. Setting only CaelumPlayer.MagicBoxOwned did not establish
+the retained merchant's Box prerequisite in this run. Set the pawn and persistent
+character record, then PersistCharacterState, and log the actual aim, distance,
+availability and native +use/-use result. Do not weaken production gates to make
+a fixture pass. A source identity check alone does not prove an interaction opens.
+
+Visual-only scene actors still need user-facing ES/EN labels. Geometry checks
+passed while the second proposal exposed its internal class name in the aim HUD;
+direct inspection found it. Private Tag/LANGUAGE entries and a complete repeated
+view pair verify the correction without granting functional reading/storage.
+
+
 ## CA-KP-276 - Texture-only map edits still affect checksums and isolated save loading
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #883 /5.17.120,2026-11-21,

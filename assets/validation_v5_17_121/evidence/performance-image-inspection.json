@@ -1,0 +1,22 @@
+{
+  "directly_inspected": [
+    {
+      "image": "performance/civic-control01/peer0/scene.png",
+      "sha256": "bceba97fbd264b83cf0b0750d8c2bdf82e89f7c992f25cc841858f9478029700"
+    },
+    {
+      "image": "performance/civic-candidate01/peer0/scene.png",
+      "sha256": "db8a814fe5fb5412b95a4b3412551ff53b4158a604ad2b62a9a1812c82948772"
+    },
+    {
+      "image": "performance/siege-control01/peer0/scene.png",
+      "sha256": "f8e731dcf09730416a534ab5b0b831c05f7c56af45f4635d70c770a9246a1bcd"
+    },
+    {
+      "image": "performance/siege-candidate01/peer0/scene.png",
+      "sha256": "aedd00e3fce0ee1b94425b115644a45065ab00921a192602ea7b809433250c48"
+    }
+  ],
+  "count": 4,
+  "qualification": "All four endpoint images inspected separately from the 22 view/route captures. Native diagnostic text is expected; no menu obscures the measured scene."
+}

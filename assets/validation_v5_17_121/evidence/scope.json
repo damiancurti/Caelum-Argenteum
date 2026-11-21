@@ -1,0 +1,9 @@
+{
+  "issue": 886,
+  "release": "5.17.121",
+  "author_acceptance": false,
+  "production": "Two release log labels only; 18765 of 18767 runtime members identical to120. Default maps/art/gameplay/save layout unchanged.",
+  "proposal": "42 fixed visual props appended to private MAP03; all original TEXTMAP bytes preserved as exact prefix. Four open northern workspace bays, western archive row. No added partitions, functional furniture, rewards, ownership, services or lights. Existing owned geometry, model bindings and pixels retained.",
+  "native": "18 gallery scene samples, four route/reload/default phases with1804 native TryMove steps,168 collision samples,8 scene checks,4 native merchant Use openings and4 checkpoints. One player body radius16/height56 sampled; no all-body/all-map/multiplayer claim.",
+  "performance": "Four sequential hidden unpaused official-engine windows at5% audio,1280x720, without overlapping heavy build/hash/validation work. Normal AI, civic interior and approved normal1000/600 siege. Queue presents are not monitor scanout; unchanged source rules and original actor identities do not automatically imply identical future simulation. Measured state/census comparison is explicit."
+}

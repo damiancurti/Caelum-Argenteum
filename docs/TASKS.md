@@ -1,6 +1,25 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.120** - 2026-11-21.
+Documentation version: **5.17.121** - 2026-11-21.
+
+## 5.17.121 - Furnish the municipal office and archive for review (#886, #463)
+
+Implemented #886: deterministic private municipal furnishing proposal, exact
+original map-prefix audit,42 source-sized fixed props,18 inspected comparison
+views, four native route/collision/vendor/save phases, three final-review helper
+smoke phases and four paired civic/siege presentation windows. Failed out-vector
+fixture, raw-class HUD labels and incomplete Box prerequisites are retained with
+their corrections. Production maps/art remain unchanged; CA886-MUNICIPAL-01 is
+added to the single author queue. Open workspace bays are not enclosed offices,
+and visual shelves do not add reading/storage services.
+
+Continue the source-backed street/maintenance/wear/moisture/lighting inventory and
+finish work under #463, preserving authored routes and gameplay. Audit actual
+ambient consumers and authoritative timing data before adding behavior. Do not
+invent schedules, art budgets, unauthored progression or approval of #736 boards.
+The severe normal-siege performance limitation remains explicit. Prepare the one
+consolidated author terminal after the authorized batch; no intermediate terminal,
+author acceptance, merge, closure or completed-batch claim follows this patch.
 
 ## 5.17.120 - Separate interior ceilings from exterior roofing (#883, #463)
 

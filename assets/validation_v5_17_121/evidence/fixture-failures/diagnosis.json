@@ -1,0 +1,7 @@
+{
+  "issue": 886,
+  "author_acceptance": false,
+  "vector_out": "The initial fixture out-vector helper produced Unexpected JIT error: Unknown REGT value passed to EmitPARAM and REGT_ADDROF not implemented for vectors in GZDoom 4.14.2. Direct boolean actor predicates replaced this specific helper; final paired runs are clean. Failed console images were inspected and are not final art.",
+  "labels": "The second view attempt passed geometry checks but exposed CA886SceneShelf in the aim HUD. Candidate-only Tag/LANGUAGE entries now supply generic English/Spanish labels; the complete final pair was repeated. Two intermediate images were inspected.",
+  "service": "Routes01/02 reached the merchant but did not open trade: first the Box prerequisite was absent, then only the pawn flag was set. The established author-fixture pattern sets pawn and persistent character record, then PersistCharacterState. Routes03 logs box/aim/availability and actual native Use opening the retained vendor0 menu in all four phases. No production condition was bypassed."
+}

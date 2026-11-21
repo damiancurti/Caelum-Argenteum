@@ -1502,3 +1502,12 @@ assets/validation_v5_17_120/*.json text eol=lf diff
 assets/validation_v5_17_120/*.txt text eol=lf diff
 assets/validation_v5_17_120/*.html text eol=lf diff
 assets/source/art/interior_ceilings_883/*.json text eol=lf diff
+
+# Exact municipal proposal evidence (#886).
+assets/validation_v5_17_121/** -text -diff
+assets/validation_v5_17_121/*.py text eol=lf diff
+assets/validation_v5_17_121/*.zs text eol=lf diff
+assets/validation_v5_17_121/*.json text eol=lf diff
+assets/validation_v5_17_121/*.txt text eol=lf diff
+assets/validation_v5_17_121/*.html text eol=lf diff
+assets/source/art/municipal_review_886/*.json text eol=lf diff
