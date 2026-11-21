@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.115** - 2026-11-21.
+Documentation version: **5.17.116** - 2026-11-21.
+
+## 5.17.116 - Review native sewer vaults with preserved passage minima (#875, #463)
+
+Completed for #875: deterministic opt-in vault builder; original cell/thing/
+boundary equality; private map-local brick aliases; checksum-specific Justice
+lookup; native plane minima/maxima, maximum-body opposing-lane collision runs,
+candidate save/reload and stored-hub return; default restoration; twenty inspected
+view captures; three representative paired MAP02 presentation viewpoints and tails.
+The final consolidated author check is CA875-VAULT-01. No earlier test is removed.
+
+Still open: the author's roof/material/physical-clearance evaluation and permanent
+budget, #463 city furnishing/access/fixture finish, overall siege fluency and the
+broader batch. #736 character-style decisions and unauthored progression remain
+gated. Do not treat this candidate, a draft PR or an agent-only pass as approval.
 
 ## 5.17.115 - Measure target acquisition and retain current perception (#873, #454)
 

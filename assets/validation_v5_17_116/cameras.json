@@ -1,0 +1,148 @@
+{
+  "issue": 875,
+  "source": "Existing LAYOUT dimensions and actual vaulted dry cells; diagnostic viewpoints, not new game coordinates.",
+  "radius": 21.333333,
+  "height": 74.7,
+  "step_mu": 4.0,
+  "rows": [
+    {
+      "name": "main_horizontal",
+      "point": [
+        768.0,
+        -3104.0
+      ],
+      "angle": 0,
+      "axis": 0,
+      "span_mu": 160,
+      "dry_width_mu": 96,
+      "start": [
+        232.0,
+        -3104.0,
+        0
+      ],
+      "end": [
+        1304.0,
+        -3104.0,
+        0
+      ],
+      "bodies": 2,
+      "lane_offsets": [
+        -24.0,
+        24.0
+      ],
+      "segment": {
+        "axis": 0,
+        "cross": -3072,
+        "low": 0,
+        "high": 1536,
+        "width": 160,
+        "label": "south:main"
+      },
+      "clear_run_mu": 1072.0
+    },
+    {
+      "name": "main_vertical",
+      "point": [
+        -3104.0,
+        -2560.0
+      ],
+      "angle": 90,
+      "axis": 1,
+      "span_mu": 160,
+      "dry_width_mu": 96,
+      "start": [
+        -3104.0,
+        -2840.0,
+        0
+      ],
+      "end": [
+        -3104.0,
+        -2280.0,
+        0
+      ],
+      "bodies": 2,
+      "lane_offsets": [
+        -24.0,
+        24.0
+      ],
+      "segment": {
+        "axis": 1,
+        "cross": -3072,
+        "low": -3072,
+        "high": -2048,
+        "width": 160,
+        "label": "south:main"
+      },
+      "clear_run_mu": 560.0
+    },
+    {
+      "name": "service",
+      "point": [
+        0,
+        2920.0
+      ],
+      "angle": 90,
+      "axis": 1,
+      "span_mu": 128,
+      "dry_width_mu": 128,
+      "start": [
+        0,
+        824.0,
+        0
+      ],
+      "end": [
+        0,
+        5016.0,
+        0
+      ],
+      "bodies": 2,
+      "lane_offsets": [
+        -32.0,
+        32.0
+      ],
+      "segment": {
+        "axis": 1,
+        "cross": 0,
+        "low": 0,
+        "high": 5120,
+        "width": 128,
+        "label": "service"
+      },
+      "clear_run_mu": 4192.0
+    },
+    {
+      "name": "maintenance",
+      "point": [
+        -1536,
+        -3752.0
+      ],
+      "angle": 90,
+      "axis": 1,
+      "span_mu": 64,
+      "dry_width_mu": 64,
+      "start": [
+        -1536,
+        -3864.0,
+        0
+      ],
+      "end": [
+        -1536,
+        -3640.0,
+        0
+      ],
+      "bodies": 1,
+      "lane_offsets": [
+        0
+      ],
+      "segment": {
+        "axis": 1,
+        "cross": -1536,
+        "low": -4096,
+        "high": -3072,
+        "width": 64,
+        "label": "south:shortcut"
+      },
+      "clear_run_mu": 224.0
+    }
+  ]
+}

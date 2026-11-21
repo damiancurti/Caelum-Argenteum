@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.115.** Obtain and update the complete repository,
+**Current release: 5.17.116.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#875 adds an opt-in native sewer-vault candidate with map-local brick materials.
+Production MAP02 remains unchanged; the raised roof and explicit geometry cost
+await the consolidated author review. Gallery: assets/source/art/sewer_structure_875/review.html.
+Native clearance/save/view/frame evidence: assets/validation_v5_17_116.
+City furnishing, siege fluency and the broader batch remain open.
 
 #873 measures target acquisition and retains the current perception path. Native
 checks pass for two experimental light bounds, but their measured benefit is too
