@@ -1,0 +1,202 @@
+{
+  "issue": 861,
+  "directly_viewed": [
+    {
+      "path": "build/issue861-save-baseline02/hands.png",
+      "sha256": "102fefaacc39e5498af5f4f43e580673dfa31abbcd0afe3047a1d44c6542d266",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-final01/fresh/hands.png",
+      "sha256": "39684f192f77eac0b6368652ac9c16e2f7d5fab8d4fa0f8b4f6261e7e40307d2",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-final03/motion-0-bare/idle.png",
+      "sha256": "626ec3ff4229aa8b9856fe2e02b1d735691aa4453b9761231d52a798b4ab18be",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-final03/motion-0-bare/guard.png",
+      "sha256": "0d12e41a2e4e72840978135ecb54dec43634015cf7f57c4826d676ad9586107e",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-final05/motion-0-GP/attack.png",
+      "sha256": "8005bd45510c9c58b3f938e57c96f8788696079312a5bcfa9979f81079b28dff",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-final05/motion-1-GP/guard.png",
+      "sha256": "99f4350057459d7f8df8ffa987453725b98bd72d73a59701efc5232f45a107b2",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-consumers-male01/preview-gloves.png",
+      "sha256": "e948f049ee29aaecaebede20bf9e7a34060a622e3a5476ce79fc2c71289c2243",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-consumers-female01/preview-bare.png",
+      "sha256": "06e1b2e63f087ada03dbb806f750f298f1a14d906ae579c5b1ff2a2f64be07e2",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-final05/motion-1-bare/idle.png",
+      "sha256": "a60d10fbfa323adb75f4d5b42524031e5f251732d0c38c9b4b5cd184bfe7a6b3",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-final05/motion-1-GP/restored.png",
+      "sha256": "a6acc4311207cedf591350e754ab15a8b8d81e67eaa96f4a13c294f85f79775d",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-save-baseline04/hands.png",
+      "sha256": "102fefaacc39e5498af5f4f43e580673dfa31abbcd0afe3047a1d44c6542d266",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-final03/fresh/hands.png",
+      "sha256": "39684f192f77eac0b6368652ac9c16e2f7d5fab8d4fa0f8b4f6261e7e40307d2",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-actions-0-bare01/carbine-reload.png",
+      "sha256": "1d8b062a52c869e7b660629589385b655fab69ab0b75397ceb7113a798f7031b",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-actions-0-GP01/carbine-reload.png",
+      "sha256": "9a4ae412c154978f0b4105c651aff592a991e38af18d2c128b78884afa022d92",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-actions-1-bare01/staff-charge.png",
+      "sha256": "bd0f468a8af80b35f5bc53ccfc6178ac51fbad52aa2ff7de9d3e51f56373f0cc",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-actions-1-GP01/staff-charge.png",
+      "sha256": "db5deb33f9b7d7c8c9ac0aeb83c637f0ae636859ba154ac9964e4244deab6ac4",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-bench-studio-control01/scene.png",
+      "sha256": "3b41ef53998f80ff8a4f2bd64cd4568dda6ea7145c7b9d84c1d9a1a915118531",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-bench-studio-candidate01/scene.png",
+      "sha256": "543052747642c8c2f4c8a278d2dc2b3c4505227a1ac5756c771761ead7241550",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-bench-mansion-control01/scene.png",
+      "sha256": "8f49125cbba3f49770d2527366dfb62f3361a05b8759a57f7e0f00c930b5962e",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-bench-mansion-candidate01/scene.png",
+      "sha256": "e634411fbaaf383e563760e2ff3a7656f2dec075edb28b5395b258ac2c0b8c88",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-bench-sewers-control01/scene.png",
+      "sha256": "927618da27f7035c3e5013778f6920bd8b91b0a37c551ee24140fb3919e1500c",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-bench-sewers-candidate01/scene.png",
+      "sha256": "f05f0ec921834dc6ca0c68b9dff11c7e12e8b30c0af196e05a03b4c9c5375910",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-bench-city-control01/scene.png",
+      "sha256": "f3cbe6c33c7e9da0c74aeee04ff7ddb1a11f561a84e56b2ae2a34fd40678a535",
+      "pixels": [
+        1520,
+        825
+      ]
+    },
+    {
+      "path": "build/issue861-bench-city-candidate01/scene.png",
+      "sha256": "48b12c64863847f847c386fb0761c95fdd55f35f6fa58597ccc17ff1f4a8ffa5",
+      "pixels": [
+        1520,
+        825
+      ]
+    }
+  ],
+  "notes": [
+    "Actual GP garment comparison: historical bare-hand selection versus existing shared brown padded glove art. No material-specific art or author acceptance implied.",
+    "Sword motion and guard retain the existing poses. Frontal shield block correctly hides sword layers and shows only shield/left hand. Actual menu shows male gloves and female bare hands. Existing shared art is not a specific textile/material depiction. Native captures are1520x825 despite requested1280x720 command-line size; record both rather than assuming requested resolution.",
+    "Four representative native reload/charge captures directly viewed: male carbine bare/GP and female staff bare/GP. Native action timers and layers pass. Carbine reload hands are partly below frame, so complete grip contact is not claimed. All8 final performance images viewed: matched first-person studio, opening mansion dialogue, sewer entrance and city gate. Sewer contamination differs slightly between independent native runs; these are not deterministic whole-world state replays or proof that the selector caused the presentation difference."
+  ]
+}

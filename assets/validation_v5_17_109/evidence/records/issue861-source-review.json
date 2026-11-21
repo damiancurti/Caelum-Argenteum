@@ -1,0 +1,16 @@
+{
+  "issue": 861,
+  "unchanged_variant_resolution_and_pivots": true,
+  "inventory_change_only_adds_cache_invalidation": true,
+  "new_player_fields_all_transient": [
+    "AppearanceHandStateReady",
+    "AppearanceHandState",
+    "AppearanceHandLayerReady",
+    "AppearanceHandLayerIds",
+    "AppearanceHandLayers"
+  ],
+  "native_save_omits_all_new_fields": true,
+  "saved_existing_death_glove_flag_present": true,
+  "native_save": "build/issue861-final01/fresh/reach.zds",
+  "cold_state_lookup_does_not_invoke_schema_migrations": true
+}

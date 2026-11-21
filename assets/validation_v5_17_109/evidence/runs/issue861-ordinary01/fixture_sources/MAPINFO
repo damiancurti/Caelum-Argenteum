@@ -1,0 +1,2 @@
+gameinfo { PlayerClasses="CaelumPlayer" AddEventHandlers="CA857WardrobeProbe" }
+map CA836A "Candidate reach checks" {}

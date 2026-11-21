@@ -1,0 +1,169 @@
+[
+  {
+    "label": "fresh",
+    "directory": "build/issue861-final03/fresh",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 13,
+    "failed": [],
+    "errors": [],
+    "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+  },
+  {
+    "label": "upgrade",
+    "directory": "build/issue861-final03/upgrade",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 7,
+    "failed": [],
+    "errors": [],
+    "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+  },
+  {
+    "label": "reload",
+    "directory": "build/issue861-final03/reload",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 7,
+    "failed": [],
+    "errors": [],
+    "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+  },
+  {
+    "label": "rollback",
+    "directory": "build/issue861-final03/rollback",
+    "runtime": "baseline",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 5,
+    "failed": [],
+    "errors": [],
+    "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+  },
+  {
+    "label": "hub",
+    "directory": "build/issue861-final03/hub",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 21,
+    "failed": [],
+    "errors": [],
+    "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+  },
+  {
+    "label": "death",
+    "directory": "build/issue861-final03/death",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 16,
+    "failed": [],
+    "errors": [],
+    "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+  },
+  {
+    "label": "dead-load",
+    "directory": "build/issue861-final03/dead-load",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 3,
+    "failed": [],
+    "errors": [],
+    "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+  },
+  {
+    "label": "motion-0-bare",
+    "directory": "build/issue861-final05/motion-0-bare",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 35,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "motion-0-GP",
+    "directory": "build/issue861-final05/motion-0-GP",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 35,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "motion-1-bare",
+    "directory": "build/issue861-final05/motion-1-bare",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 35,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "motion-1-GP",
+    "directory": "build/issue861-final05/motion-1-GP",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 35,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "ownership",
+    "directory": "build/issue861-final05/ownership",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 446,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "legacy-death",
+    "directory": "build/issue861-final05/legacy-death",
+    "runtime": "baseline",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 14,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "legacy-dead-upgrade",
+    "directory": "build/issue861-final05/legacy-dead-upgrade",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 3,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "legacy-dead-reload",
+    "directory": "build/issue861-final05/legacy-dead-reload",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 3,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "lookup-counters",
+    "directory": "build/issue861-final05/lookup-counters",
+    "runtime": "instrumented final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 51,
+    "failed": [],
+    "errors": []
+  }
+]

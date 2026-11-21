@@ -1,6 +1,98 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.108** - 2026-11-19.
+Documentation version: **5.17.109** - 2026-11-19.
+
+## 5.17.109 - Select shared hand art from actual clothing gloves (#861)
+
+Full project validation passes with no errors; the generated document index is current.
+
+The historical #148 contract selected gloves from armor only. #861 explicitly
+extends selection to actual GF/GC/GW/GP clothing, following #857's equipped
+wardrobe and #859's fitted grips. This patch changes three gameplay source
+members plus two release diagnostic strings. The complete 18,767-member runtime
+matches src; 18,762 prior members are byte-identical, with no members added or
+removed. All existing textures, poses, pivots and equipment rules are unchanged.
+Runtime SHA256: 8fcef709b7615d6dd6f808f1de6e46a37718b97b0d35ecf1d6568eb66de7a574.
+The three-member final prototype matches the runtime exactly.
+
+Five new declarations are transient only. The native saved JSON omits them and
+retains the existing death-glove snapshot. Warm use validates owner/ID/kind/
+region/equipped/Box state without traversing inventory. The clothing record is
+read directly: the general GetPersistentCharacterState(false) accessor also
+executes unrelated schema checks and is deliberately not used by rendering.
+Native inventory changes invalidate references, including same-ID replacements.
+
+The 16-phase qualified continuity/motion/ownership/counter record contains
+729 passing assertion lines: 659 on the final runtime, 19 on prior-runtime
+rollback/legacy-death creation, and 51 on the separately instrumented counter overlay.
+The first seven continuity phases from final03 remain valid: later fixture
+changes only correct Pose assertions and add an optional legacy-death expectation.
+Four corrected sword-motion cases cover both sexes, bare and actual GP gloves.
+The final owned-item matrix covers all four clothing kinds and 42 profile
+choices, including native equip/unequip/Box/chest and invalid cached-object guards.
+Old saves upgrade/reload/travel and roll back directly. Native death/dead reload
+preserve the current snapshot; a pre-109 bare corpse retains its old false glove
+snapshot through upgrade and a second reload. Death uses native one-player coop.
+
+The ordinary player independently passes the same 446 ownership assertions.
+Two male/female consumer runs add 66 assertions for native drop/replacement,
+same-ID rebind, foreign-record rejection, armor/clothing layers, broken worn
+armor, actual Moon initialization snapshots and the rendered appearance editor.
+The editor is opened, observed and closed without committing appearance changes.
+Four actual input-driven carbine-reload/staff-charge runs add 152 assertions;
+native clocks advance and the carbine reaches its canonical capacity. Diagnostic
+setup supplies equipment/ammunition but never pins active clocks/resources.
+Full Moon permissions/resources and every weapon/material are outside this test.
+
+Five instrumented 1,000-call batches cover bare, clothing, armor over clothing,
+armor only and bare after inventory events. All 5,000 warm results agree and
+perform zero record/item lookups. Cold counts are respectively 1/0,1/1,0/1,0/1,
+1/0 (record/item). The 51 counter assertions pass. Timers include diagnostic
+instrumentation; they do not establish production frame cost. A portable overlay
+rebuild is byte-identical to the tested counter overlay; counters never enter src.
+
+Rejected fixture attempts remain explicit: an old command name ran no checks;
+an initial hub sequence lacked settled map transitions; map-local handler fields
+required a diagnostic traveling witness; and a sword-hand assertion incorrectly
+expected layer52 during frontal shield guard. The accepted guard intentionally
+clears sword layers and retains shield 44/left hand 45. The corrected test checks
+that existing rule. One later compile attempt collided diagnostic placeholder
+names; unique placeholders resolved it before execution. No gameplay change was
+made to satisfy these fixture errors. Prototype01's general record accessor is
+superseded by prototype02's direct read. Raw failures remain archived separately.
+
+Eight fresh paired first-person windows compare the 108 runtime with 109,
+using the same actual GP item, player setup and scene. They add 168 fixture
+assertions. GZDoom 4.14.2, Ryzen 9 5950X, RTX 3070 Ti, Vulkan, unpaused background
+and 5% audio are recorded. The command requests 1280x720; native images are
+1520x825. No heavy build/hash/validator or second engine overlaps the windows.
+
+| Scene / runtime | Queue presents/s | Present p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| studio / control | 940.233 | 1.288 / 1.449 / 2.460 | 28.570 / 29.313 / 29.608 / 29.867 |
+| studio / candidate | 944.174 | 1.281 / 1.434 / 2.152 | 28.572 / 29.306 / 29.609 / 29.733 |
+| mansion / control | 63.778 | 17.740 / 18.523 / 22.118 | 28.560 / 34.801 / 37.725 / 42.648 |
+| mansion / candidate | 62.871 | 18.148 / 20.218 / 246.007 | 28.564 / 35.574 / 42.662 / 305.680 |
+| sewers / control | 160.929 | 9.603 / 11.552 / 38.965 | 28.570 / 33.446 / 35.017 / 42.181 |
+| sewers / candidate | 211.775 | 6.511 / 8.081 / 38.920 | 28.568 / 32.620 / 34.151 / 42.539 |
+| city / control | 92.076 | 13.034 / 14.045 / 15.380 | 28.573 / 36.159 / 38.493 / 40.308 |
+| city / candidate | 99.082 | 12.539 / 14.720 / 21.923 | 28.574 / 35.600 / 37.860 / 40.349 |
+
+These observations are paired scene samples, not a general speedup or regression
+claim. Queue presentation is not monitor scanout; tic intervals include pacing
+and frame work. One player at fixed entrance views does not establish full-map,
+combat, crowd or siege performance. The mansion opening dialogue and original
+sewer/city rules are retained. Overall siege performance remains unresolved.
+Raw samples, exact runtime/layer hashes, native captures and the explicitly
+viewed-image list are retained in assets/validation_v5_17_109.
+
+Direct visual review records only explicitly viewed image paths and hashes.
+Shared brown glove art is not a material-specific representation of all four
+clothing types. Carbine reload framing leaves much of each hand below the image;
+successful native layer checks are not complete hand-contact evidence. No art,
+combat clock, resource amount or existing saved snapshot is rewritten. The
+broader artwork/performance batch and author acceptance remain open. Review
+CA861-HANDS-01 at the requested final consolidated terminal.
 
 ## 5.17.108 - Fit first-body hands and retained equipment across native poses (#859)
 

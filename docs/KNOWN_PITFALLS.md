@@ -4,6 +4,37 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-265 - Keep hand-layer ownership checks live while caching references
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #861 / 5.17.109,
+2026-11-19, GZDoom 4.14.2. Native verification is not author acceptance.
+
+Armor and clothing keep distinct equipped-ID sources. Extending an armor-only
+visual selector requires resolving the actual clothing record/item, not treating
+a glove-type flag or any inventory copy as worn. Cache clean absence and bounded
+references, invalidate them through existing native inventory events, compare
+current IDs, and validate record/item ownership plus item kind/region/equipped/
+Box state every use. This rejects stale, destroyed and foreign objects while
+retaining broken-but-worn visual presence. Same-ID replacement needs the event.
+
+Use the narrow read path for presentation. Here the general persistent-state
+accessor executes four unrelated schema checks even with create=false. The
+selector instead reads and validates the existing native inventory record.
+Five transient declarations avoid a save-schema change; actual saved JSON
+contains none of them. Old save/reload/hub, native death and direct rollback
+verify reconstruction, while prior corpse/clone glove snapshots remain intact.
+Five 1,000-call warm batches perform zero inventory reads; measure production
+presentation separately from counter-instrumented microbenchmarks.
+
+Match diagnostic assertions to the renderer's actual contract: frontal shield
+guard clears sword layers 46..53 and retains shield 44/left hand 45. Assert that
+selection rather than requiring a duplicate sword hand. Map-local EventHandler
+fields also reset on fresh hub maps; carry diagnostic reference data in a
+traveling inventory witness instead of mistaking handler reset for item loss.
+
+Evidence: assets/validation_v5_17_109; SYSTEMS shared-hand extension. Existing
+art/pivots/clocks are unchanged and material-specific glove art remains separate.
+
 ## CA-KP-264 - Visual identification has effects before a later eligibility rejection
 
 Status/evidence: VERIFIED CORRECTION in 5.17.106 / #855, GZDoom 4.14.2,

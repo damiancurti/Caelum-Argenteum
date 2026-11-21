@@ -1,0 +1,92 @@
+[
+  {
+    "label": "fresh",
+    "directory": "build/issue861-final03/fresh",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 13,
+    "failed": [],
+    "errors": [],
+    "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+  },
+  {
+    "label": "upgrade",
+    "directory": "build/issue861-final03/upgrade",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 7,
+    "failed": [],
+    "errors": [],
+    "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+  },
+  {
+    "label": "reload",
+    "directory": "build/issue861-final03/reload",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 7,
+    "failed": [],
+    "errors": [],
+    "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+  },
+  {
+    "label": "rollback",
+    "directory": "build/issue861-final03/rollback",
+    "runtime": "baseline",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 5,
+    "failed": [],
+    "errors": [],
+    "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+  },
+  {
+    "label": "hub",
+    "directory": "build/issue861-final03/hub",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 21,
+    "failed": [],
+    "errors": [],
+    "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+  },
+  {
+    "label": "death",
+    "directory": "build/issue861-final03/death",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 16,
+    "failed": [],
+    "errors": [],
+    "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+  },
+  {
+    "label": "dead-load",
+    "directory": "build/issue861-final03/dead-load",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 3,
+    "failed": [],
+    "errors": [],
+    "qualification": "Reused: Pose-only diagnostic correction does not affect completed continuity checks."
+  },
+  {
+    "label": "motion-0-bare",
+    "directory": "build/issue861-final04/motion-0-bare",
+    "runtime": "final",
+    "passed": false,
+    "exit_code": 1,
+    "pass_lines": 0,
+    "failed": [],
+    "errors": [
+      "Script error",
+      "Native error"
+    ]
+  }
+]

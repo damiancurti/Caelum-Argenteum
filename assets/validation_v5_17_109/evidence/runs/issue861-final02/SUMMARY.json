@@ -1,0 +1,60 @@
+[
+  {
+    "label": "fresh",
+    "directory": "build/issue861-final02/fresh",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 13,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "upgrade",
+    "directory": "build/issue861-final02/upgrade",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 7,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "reload",
+    "directory": "build/issue861-final02/reload",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 7,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "rollback",
+    "directory": "build/issue861-final02/rollback",
+    "runtime": "baseline",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 5,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "hub",
+    "directory": "build/issue861-final02/hub",
+    "runtime": "final",
+    "passed": false,
+    "exit_code": 1,
+    "pass_lines": 16,
+    "failed": [
+      "CA836 EDGE FAIL hands861: actual player and saved fixture survive",
+      "CA836 EDGE FAIL hands861: native saved glove identity and data remain intact",
+      "CA836 EDGE FAIL hands861: current build selects its documented glove scope",
+      "CA836 EDGE FAIL hands861: saved sex and actual glove choose the expected existing art",
+      "CA836 EDGE FAIL hands861: world and preview flag share actual selection"
+    ],
+    "errors": [
+      "CA836 EDGE FAIL"
+    ]
+  }
+]

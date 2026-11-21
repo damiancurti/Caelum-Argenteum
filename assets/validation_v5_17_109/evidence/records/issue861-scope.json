@@ -1,0 +1,20 @@
+{
+  "issue": 861,
+  "version": "5.17.109",
+  "members": 18767,
+  "changed": [
+    "caelum/character/CaelumAppearanceHands.zs",
+    "caelum/equipment/CaelumInventoryService.zs",
+    "caelum/player/CaelumPlayer.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "unchanged_members": 18762,
+  "no_added_or_removed_runtime_members": true,
+  "all_runtime_bytes_match_src": true,
+  "all_prototype02_members_match_final": true,
+  "no_new_classes_or_saved_fields": true,
+  "runtime_sha256": "8fcef709b7615d6dd6f808f1de6e46a37718b97b0d35ecf1d6568eb66de7a574",
+  "baseline_sha256": "7aa0a9c8e11ccf878ce099142b29a5b9fbc3c9d1a03e11f139677ff6287a226e",
+  "prototype_sha256": "10d5bc916d5cacca16b22d5320277303517433c8e087f28a0d3796d0a326a737"
+}

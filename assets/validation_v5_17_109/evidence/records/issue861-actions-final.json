@@ -1,0 +1,38 @@
+[
+  {
+    "sex": 0,
+    "glove": "bare",
+    "directory": "build/issue861-actions-0-bare01",
+    "passed": true,
+    "pass_lines": 38,
+    "errors": [],
+    "failures": []
+  },
+  {
+    "sex": 0,
+    "glove": "GP",
+    "directory": "build/issue861-actions-0-GP01",
+    "passed": true,
+    "pass_lines": 38,
+    "errors": [],
+    "failures": []
+  },
+  {
+    "sex": 1,
+    "glove": "bare",
+    "directory": "build/issue861-actions-1-bare01",
+    "passed": true,
+    "pass_lines": 38,
+    "errors": [],
+    "failures": []
+  },
+  {
+    "sex": 1,
+    "glove": "GP",
+    "directory": "build/issue861-actions-1-GP01",
+    "passed": true,
+    "pass_lines": 38,
+    "errors": [],
+    "failures": []
+  }
+]

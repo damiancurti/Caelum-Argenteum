@@ -1,13 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.17.108** - 2026-11-19.
+Documentation version: **5.17.109** - 2026-11-19.
 
-**V5.17:** Inventory/bestiary models and regional galleries remain candidates.
-#825:78 regional displays;56 provisional models. #827:body/hands verified.
-#834:retain MD3;IQM slower. #829:25 fitted garment candidates verified. #736:visual review pending.
-Characters/equipment unfinished. Evidence: ASSETS/TASKS;
-author checks: pending_test.txt; deliveries: HISTORY.
-#847:sewer candidate;#851:reach;#855:recognition;#857:equipped wardrobe verified;#859:grips verified.
+**V5.17 candidates:** inventory/bestiary/regional art (#825:78 displays/56 provisional models);
+#829:25 verified fitted garments; #847:sewer. #736:visual review pending.
+Verified: #827:body/hands; #851:reach; #855:recognition; #857:equipped wardrobe;
+#859:grips; #861:clothing hands. #834:retain MD3 (IQM slower).
+Characters/equipment unfinished. Evidence:ASSETS/TASKS; author-checks:pending_test.txt; history:HISTORY.
 **V5.16:** #452/453 approved; #454:MAP02/MAP03 rebuilt/tested; siege performance pending (#851).
 #456:World-gate,75assignments pending; #455:56classes/3pilots; #457:eligibility-only. LegacyMap02Revision5.
 

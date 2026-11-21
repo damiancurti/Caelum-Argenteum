@@ -1,0 +1,62 @@
+Issue #861 / 5.17.109 — actual clothing hand selection
+
+Production scope
+The shared selector now reads actual worn hand armor or clothing. Existing
+male/female glove images, bare skin/fur, pivots, action clocks, inventory and
+gameplay rules remain authoritative. Five transient declarations do not add
+saved state. This is not material-specific glove art or author acceptance.
+
+Reproduction from the complete checkout
+Build with build_dev.ps1. Each native command requires --runtime PATH and a
+fresh --output directory under build/. Shared optional --candidate overlays
+and --load saves are local diagnostic inputs. Use your installed GZDoom4.14.2
+and private development IWAD; do not distribute binaries, WADs or saved games.
+The shared runner records engine/runtime/fixture hashes and uses hidden,
+unpaused Windows sessions with 5% audio. Run one engine at a time.
+
+- run_hand_ownership861.py: all four glove types, native equip/Box/chest,
+ 42 existing profile choices and stale-object guards. Add --ordinary-player
+ to verify the normal player; default uses the retained opt-in player.
+- run_hand_continuity861.py --mode seed|load|hub|death|dead-load|motion:
+ --sex 0|1 and --glove bare|GF|GC|GW|GP select the fixture. Use --baseline with
+ the pre-109 runtime. Death uses native one-player cooperative mode so an
+ actually dead player can be saved. --legacy-death applies only to dead-load
+ and expects the old saved armor-only corpse snapshot to remain unchanged.
+ Hub reference data travels in a diagnostic inventory witness; gameplay
+ inventory and persistence remain native. Motion uses actual attack/block input.
+- run_hand_consumers861.py --sex 0|1: actual native drop/replacement/layering,
+ direct foreign-record and same-ID replacement checks, native Moon initializer
+ snapshots and the actual appearance menu. No appearance edit is committed.
+ Moon initialization is not a full power-permission/resource acceptance test.
+- run_hand_actions861.py --sex 0|1 --glove bare|GP: native carbine reload and
+ staff charge input, timer progression and actual layer selection. Setup
+ supplies ammo and empties the magazine. Active clocks/resources are not pinned.
+- build_hand_counter_overlay861.py --output build/NEW: deterministic private
+ overlay with two transient lookup counters; never install it into src.
+ Run run_hand_cache861.py with that --candidate. Five 1,000-call batches verify
+ zero warm record/item reads. Instrumented timings are not production frame cost.
+- run_hand_presentation861.py --scene CA836A|MAP01|MAP02|MAP03
+ --presentation-layer PATH: 700-tic native first-person observation window.
+ Use --baseline-fixture only with the pre-109 runtime. Keep scene/inputs equal;
+ do not overlap heavy builds, hashes, other engines or validators. The Vulkan
+ layer measures queue presentation, not monitor scanout. Tic intervals include
+ pacing/frame work. One fixed player/view does not establish siege performance.
+
+Examples (spaces are required between each option and its value)
+python assets/validation_v5_17_109/run_hand_ownership861.py --ordinary-player --runtime build/caelum_argenteum_dev.pk3 --output build/hand-ownership-new
+python assets/validation_v5_17_109/run_hand_actions861.py --sex 1 --glove GP --runtime build/caelum_argenteum_dev.pk3 --output build/hand-actions-new
+
+Qualification
+evidence/SUMMARY.json selects the qualified runs. Its first seven continuity
+phases reuse final03: later fixture edits correct the sword/guard assertion and
+add an optional legacy-death expectation without changing those prior phases.
+Earlier failing fixture attempts are retained separately. Per-process PASS
+lines are counted rather than persisted EventHandler counters. No failed run
+is promoted because a later handler reset its own failure count.
+
+The gallery contains captured images; the summary separately lists exactly
+which images were directly inspected. Requested 1280x720 and actual 1520x825
+captures are distinguished. The carbine reload hands are partly below frame.
+The shared brown gloves do not depict all textile/material distinctions.
+The single pending author check is CA861-HANDS-01, reserved for the requested
+final consolidated batch terminal. No earlier pending author check is removed.
