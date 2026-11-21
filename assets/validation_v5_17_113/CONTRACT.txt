@@ -1,0 +1,56 @@
+Full-frame siege diagnosis (#870)
+
+Run from the repository root with Python, installed official GZDoom 4.14.2 and
+the local DOOM2 development dependency. This is engineering reproduction, not
+the author's final consolidated test terminal. Never run the retired 6,000 case.
+
+Use a fresh label/output for every run. The shared scene is the approved normal
+1,000-attacker/600-defender siege; actual registered census is reported separately.
+One engine at a time, hidden/unpaused background, audio 5%. Do not run heavy builds,
+hashing or validation while measuring. The optional Vulkan presentation layer is
+local tooling. Its QueuePresent trace is not monitor scanout or GPU-duration data.
+
+Grouping without native profiler/debug-stat overhead:
+python assets/validation_v5_17_113/run_frame.py --mode grouping --label fresh-grouping --runtime build/issue868-diagnosis01.pk3 --players 1 --siege --presentation-layer <local-layer> > build/issue870-fresh-grouping-run.log 2>&1
+python assets/validation_v5_17_113/analyze_frame.py fresh-grouping
+
+Native snapshots covering all 35 command-marker phases:
+python assets/validation_v5_17_113/run_frame.py --mode native-phases --label fresh-native --runtime build/issue868-diagnosis01.pk3 --players 1 --siege --presentation-layer <local-layer> > build/issue870-fresh-native-run.log 2>&1
+python assets/validation_v5_17_113/analyze_frame.py fresh-native
+
+The legacy mode native deliberately retains five snapshots spaced 140 tics for
+reproduction of the biased first attempt. Use native-phases for phase coverage.
+profilethinkers samples one tic; bench reports a later renderer CPU snapshot.
+Do not add nested/main/worker counters or infer a window mean or GPU duration.
+
+Common actor stages, preserving original statements and verifying exact inverse:
+python assets/validation_v5_17_113/prepare_stages.py --runtime build/issue868-diagnosis01.pk3 --output build/frame-stages-new
+python assets/validation_v5_17_113/run_frame.py --mode grouping --label fresh-stages --runtime build/issue868-diagnosis01.pk3 --players 1 --siege --overlay build/frame-stages-new/stages.pk3 --presentation-layer <local-layer> > build/issue870-fresh-stages-run.log 2>&1
+python assets/validation_v5_17_113/analyze_frame.py fresh-stages
+python assets/validation_v5_17_113/analyze_stages.py --probe build/frame-stages-new --run-log build/issue870-fresh-stages-run.log
+
+Selected inclusive calls, separately from the common-stage overlay:
+python assets/validation_v5_17_113/prepare_calls.py --runtime build/issue868-diagnosis01.pk3 --output build/frame-calls-new
+python assets/validation_v5_17_113/run_frame.py --mode grouping --label fresh-calls --runtime build/issue868-diagnosis01.pk3 --players 1 --siege --overlay build/frame-calls-new/calls.pk3 --presentation-layer <local-layer> > build/issue870-fresh-calls-run.log 2>&1
+python assets/validation_v5_17_113/analyze_frame.py fresh-calls
+python assets/validation_v5_17_113/analyze_calls.py --probe build/frame-calls-new --run-log build/issue870-fresh-calls-run.log
+
+The two actor overlays are independent alternatives. Do not stack them: they
+override common source paths. The helpers reject an already existing output.
+Samples cover 42 tics at period 17. Wrappers retain gameplay but add overhead;
+their inclusive totals overlap. Actor.Tick includes scripted state actions.
+No actor fields, saved schema, populations, schedules or production rules change.
+
+Uninstrumented comparison:
+python assets/validation_v5_17_113/run_scene.py --runtime build/issue868-diagnosis01.pk3 --label fresh-control --map MAP03 --siege --presentation-layer <local-layer>
+
+Retained measurements use immutable 5.17.112. The uninstrumented control is the
+original #868 window on that exact runtime, with equal recorded census/state.
+It was not rerun as 5.17.113. The 5.17.113 package differs only in two release
+diagnostic strings; evidence/scope.json proves member equality. Reproduction
+can use that final package, but record its own hash and do not relabel old runs.
+
+Failed probes are under evidence/attempts, separate from passing windows. Do not
+use their source as the maintained default. Check clean process exit, passed,
+complete_window, expected marker counts and fatal diagnostics. Timeouts or a
+native crash dialog absent from the log are failures, never successful results.

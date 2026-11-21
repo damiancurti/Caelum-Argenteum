@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.112** - 2026-11-21.
+Documentation version: **5.17.113** - 2026-11-21.
+
+## 5.17.113 - Measure the full siege frame and identify actor costs (#870, #454)
+
+The full-frame investigation now distinguishes simulation backlog from rendering.
+Current GZDoom4.14.2 runs show15-17 WorldTick callbacks per complete frame interval;
+single-tic native profiles and42-tic service probes locate actor state actions,
+thermal updates and communication. The evidence does not establish a GPU
+bottleneck. Production remains unchanged apart from two release log labels.
+
+The next performance work is a focused equivalent reduction within these measured
+actor services. No speedup or siege fluency is claimed. The broader authorized
+V5.16/V5.17 batch, city/sewer finish and author-gated character decisions remain
+open; the final consolidated author terminal has not been delivered.
 
 ## 5.17.112 - Measure endpoint setup and retain the shared production path (#868, #454)
 
