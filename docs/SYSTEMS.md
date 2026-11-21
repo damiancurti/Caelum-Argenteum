@@ -1,6 +1,20 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.110** - 2026-11-21.
+Documentation version: **5.17.111** - 2026-11-21.
+
+## 5.17.111 - Recover the author-provided environment remasters for review (#866, #463)
+
+#866 adds an isolated visual comparison package from retained author images.
+Production maps, actor code, physics, material gameplay, interaction IDs, lighting,
+resources and save fields/schema remain unchanged. The only runtime differences
+from 5.17.110 are two release-diagnostic strings. The overlay retains the existing
+texture names and 128-MU repeats; it contains no actors, map replacement or logic.
+
+The diagnostic capture fixture uses camera teleports, menu dismissal, invulnerability
+and notarget for its disposable pawn. Its short forward-input checks do not
+establish ordinary locked-room access, full-map navigation or author acceptance.
+MAP02 normal 96-MU passage clearance and its approved layout remain authoritative.
+No global actor scan, population policy or offscreen gameplay change is introduced.
 
 ## 5.17.110 - Shorten measured native contamination value dispatch (#864)
 

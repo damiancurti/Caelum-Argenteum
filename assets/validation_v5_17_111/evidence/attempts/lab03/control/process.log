@@ -1,0 +1,103 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-21 02:17:48
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 428 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue866-review01.pk3, 18767 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue866-lab03/views.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2483.40 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+C866LAB - Author material repeat review
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA866 SIZE CMEX01 kind=1 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMEX01 kind=2 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMEX04 kind=1 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMEX04 kind=2 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR01 kind=1 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR01 kind=2 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR01A kind=1 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR01A kind=2 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR01B kind=1 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR01B kind=2 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR02 kind=1 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMGR02 kind=2 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMRF01 kind=1 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMRF01 kind=2 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMST01 kind=1 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMST01 kind=2 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMST02 kind=1 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMST02 kind=2 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMTB04 kind=1 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMTB04 kind=2 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMWD01 kind=1 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMWD01 kind=2 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMWV01 kind=1 raw=128x128 scaled=128.000x128.000
+CA866 SIZE CMWV01 kind=2 raw=128x128 scaled=128.000x128.000
+CA866 VIEW 0 pos=128.000,128.000,-0.000 angle=45.000 headroom=256.000 height=56.000 floor=CMEX01 ceiling=CMEX01
+Captured CMEX01.png
+CA866 VIEW 1 pos=640.000,128.000,-0.000 angle=45.000 headroom=256.000 height=56.000 floor=CMEX04 ceiling=CMEX04
+Captured CMEX04.png
+CA866 VIEW 2 pos=1152.000,128.000,-0.000 angle=45.000 headroom=256.000 height=56.000 floor=CMST01 ceiling=CMST01
+Captured CMST01.png
+CA866 VIEW 3 pos=1664.000,128.000,-0.000 angle=45.000 headroom=256.000 height=56.000 floor=CMST02 ceiling=CMST02
+Captured CMST02.png
+CA866 VIEW 4 pos=2176.000,128.000,-0.000 angle=45.000 headroom=256.000 height=56.000 floor=CMWD01 ceiling=CMWD01
+Captured CMWD01.png
+CA866 VIEW 5 pos=2688.000,128.000,-0.000 angle=45.000 headroom=256.000 height=56.000 floor=CMTB04 ceiling=CMTB04
+Captured CMTB04.png
+CA866 VIEW 6 pos=3200.000,128.000,-0.000 angle=45.000 headroom=256.000 height=56.000 floor=CMGR01 ceiling=CMGR01
+Captured CMGR01.png
+CA866 VIEW 7 pos=3712.000,128.000,-0.000 angle=45.000 headroom=256.000 height=56.000 floor=CMGR02 ceiling=CMGR02
+Captured CMGR02.png
+CA866 VIEW 0 pos=128.000,128.000,-0.000 angle=45.000 headroom=256.000 height=56.000 floor=CMEX01 ceiling=CMEX01
+Captured walk.png
+CA866 WALK distance=26.663 pos=146.854,146.854,-0.000
+CA866 PASS views=8

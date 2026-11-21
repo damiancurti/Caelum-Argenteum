@@ -1,0 +1,132 @@
+{
+  "issue": 866,
+  "map": "C866LAB",
+  "runtime_sha256": "8759722962a6bee612d347b671610045b6aee59f447af029a6ef83963d72c5c4",
+  "overlay_sha256": "4c5ce9a64ba18f579cc589466db3dfed0421bcefbbc92ac301f68ebe354d2a31",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "probe_sha256": "d7500339dc45b82b46641989507ae28ea45de973dbc9e29afc0c5513122d5d03",
+  "cameras": [
+    {
+      "name": "CMEX01",
+      "point": [
+        128,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    },
+    {
+      "name": "CMEX04",
+      "point": [
+        640,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    },
+    {
+      "name": "CMST01",
+      "point": [
+        1152,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    },
+    {
+      "name": "CMST02",
+      "point": [
+        1664,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    },
+    {
+      "name": "CMWD01",
+      "point": [
+        2176,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    },
+    {
+      "name": "CMTB04",
+      "point": [
+        2688,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    },
+    {
+      "name": "CMGR01",
+      "point": [
+        3200,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    },
+    {
+      "name": "CMGR02",
+      "point": [
+        3712,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    }
+  ],
+  "runs": [
+    {
+      "label": "control",
+      "passed": false,
+      "exit_code": 1,
+      "timed_out": false,
+      "errors": [
+        "Script error"
+      ],
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue866-review01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue866-lab02\\views.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue866-lab02\\control\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue866-lab02\\control",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue866-lab02\\control\\engine.log",
+        "+map",
+        "C866LAB",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue866-lab02\\control\\start.cfg"
+      ],
+      "markers": [],
+      "images": {}
+    }
+  ],
+  "passed": false,
+  "qualification": "Capture #866 material pairs, native texture sizes and bounded movement.\n\nDiagnostic teleports, menu dismissal, invulnerability and notarget affect only\nthe disposable inspection pawn. This is not a full campaign/locked-route test.\nOne hidden, unpaused native engine at 5% audio runs at a time.\n"
+}

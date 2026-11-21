@@ -1,0 +1,168 @@
+{
+  "C866LAB": [
+    {
+      "name": "CMEX01",
+      "point": [
+        128,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    },
+    {
+      "name": "CMEX04",
+      "point": [
+        640,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    },
+    {
+      "name": "CMST01",
+      "point": [
+        1152,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    },
+    {
+      "name": "CMST02",
+      "point": [
+        1664,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    },
+    {
+      "name": "CMWD01",
+      "point": [
+        2176,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    },
+    {
+      "name": "CMTB04",
+      "point": [
+        2688,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    },
+    {
+      "name": "CMGR01",
+      "point": [
+        3200,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    },
+    {
+      "name": "CMGR02",
+      "point": [
+        3712,
+        128
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Private 384-MU material room, three authored128-MU repeats per side; diagnostic dimensions only"
+    }
+  ],
+  "MAP01": [
+    {
+      "name": "garden",
+      "point": [
+        -1600,
+        0
+      ],
+      "angle": 0,
+      "pitch": 15,
+      "basis": "Existing player start"
+    },
+    {
+      "name": "exterior",
+      "point": [
+        -1200,
+        -900
+      ],
+      "angle": 25,
+      "basis": "Outside existing mansion footprint; diagnostic viewpoint"
+    },
+    {
+      "name": "interior",
+      "point": [
+        -400,
+        0
+      ],
+      "angle": 0,
+      "pitch": 15,
+      "basis": "Inside existing REPAIR interior footprint"
+    }
+  ],
+  "MAP02": [
+    {
+      "name": "justice",
+      "point": [
+        8960,
+        9984
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Centre of existing sector104, CMST02 floor and CMST01 ceiling; diagnostic access does not unlock this room"
+    }
+  ],
+  "MAP03": [
+    {
+      "name": "port",
+      "point": [
+        -576,
+        15488
+      ],
+      "angle": 0,
+      "pitch": 15,
+      "basis": "Existing revised quay player start"
+    },
+    {
+      "name": "street",
+      "point": [
+        -3520,
+        10304
+      ],
+      "angle": 180,
+      "pitch": 15,
+      "basis": "Outside existing building0 east facade, current LAYOUT bounds"
+    },
+    {
+      "name": "factory",
+      "point": [
+        -4288,
+        10304
+      ],
+      "angle": 45,
+      "pitch": 15,
+      "basis": "Centre of current building0 bounds; CMST01 floor"
+    },
+    {
+      "name": "street_outward",
+      "point": [
+        -3520,
+        10304
+      ],
+      "angle": 90,
+      "basis": "Same existing building0 threshold, looking north along the open road instead of into the factory"
+    }
+  ]
+}

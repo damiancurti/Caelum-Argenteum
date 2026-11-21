@@ -1,0 +1,195 @@
+// Caelum Argenteum - texture add-on, 2026-09-16
+// 4 image pixels per map unit; load after the base game.
+
+Texture "CMEX01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMEX01.png", 0, 0
+}
+
+Flat "CMEX01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMEX01.png", 0, 0
+}
+
+Texture "CMEX04", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMEX04.png", 0, 0
+}
+
+Flat "CMEX04", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMEX04.png", 0, 0
+}
+
+Texture "CMST01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMST01.png", 0, 0
+}
+
+Flat "CMST01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMST01.png", 0, 0
+}
+
+Texture "CMST02", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMST02.png", 0, 0
+}
+
+Flat "CMST02", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMST02.png", 0, 0
+}
+
+Texture "CMWD01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMWD01.png", 0, 0
+}
+
+Flat "CMWD01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMWD01.png", 0, 0
+}
+
+Texture "CMTB04", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMTB04.png", 0, 0
+}
+
+Flat "CMTB04", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMTB04.png", 0, 0
+}
+
+Texture "CMGR01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMGR01.png", 0, 0
+}
+
+Flat "CMGR01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMGR01.png", 0, 0
+}
+
+Texture "CMGR02", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMGR02.png", 0, 0
+}
+
+Flat "CMGR02", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMGR02.png", 0, 0
+}
+
+// Historical map aliases retained by the recovered project.
+Texture "CMGR01A", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMGR01.png", 0, 0
+}
+
+Flat "CMGR01A", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMGR01.png", 0, 0
+}
+
+Texture "CMGR01B", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMGR02.png", 0, 0
+}
+
+Flat "CMGR01B", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMGR02.png", 0, 0
+}
+
+Texture "CMRF01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMTB04.png", 0, 0
+}
+
+Flat "CMRF01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMTB04.png", 0, 0
+}
+
+Texture "CMWV01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMST01.png", 0, 0
+}
+
+Flat "CMWV01", 512, 512
+{
+    XScale 4
+    YScale 4
+    WorldPanning
+    Patch "graphics/caelum/textures/entornos_v1/mejoradas/CMST01.png", 0, 0
+}

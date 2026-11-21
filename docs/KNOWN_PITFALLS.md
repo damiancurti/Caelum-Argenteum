@@ -4,6 +4,30 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-267 - Audit aliases and raw-image consumers before remaster binding
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #866 /5.17.111,
+2026-11-21, GZDoom 4.14.2. Artistic acceptance remains pending.
+
+A logical wall/flat alias, a cropped TEXTURES composition and an OBJ usemtl
+raw-image path are separate consumers. Replacing an alias does not update the
+other two; replacing their shared 128-pixel PNG with 512-pixel art can instead
+change crop coverage or UV scale. Inventory all paths, aliases and packaged
+maps first. Preserve source pixels and world dimensions explicitly; inspect
+native wall and flat lookups as well as the actual map locations that use them.
+
+For #866, the retained fragment supplies 24 bindings/12 aliases at 128 MU, while
+CMWIN36/CSUFA0/CTFWA0 and one mansion model retain old raw images. MAP02 uses
+these stones in its Justice room, so an entry-only capture would miss the change.
+In 4.14.2, TexMan.GetSize returns rounded display dimensions, while GetScaledSize
+returns them as doubles; neither exposes raw texel resolution. Check image headers
+for pixels and native display dimensions for world repeat.
+Use exact archive/per-file hashes and deterministic ZIP metadata; decoded-image
+estimates are not measured VRAM. Keep global-alias candidates isolated until
+their shared scope is accepted. Evidence: assets/validation_v5_17_111 and
+assets/source/art/environment_remasters_866/INVENTORY.json.
+
+
 ## CA-KP-266 - Measure the fallback after adding a typed shortcut
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #864 / 5.17.110,

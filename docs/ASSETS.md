@@ -1,6 +1,51 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.110** - 2026-11-21.
+Documentation version: **5.17.111** - 2026-11-21.
+
+## 5.17.111 - Recover the author-provided environment remasters for review (#866, #463)
+
+The original Caelum_Texturas_Ciudad_Puerto_Playa_v1 ZIP was recovered locally.
+Its SHA-256 exactly matches assets/coastal_textures/integration.json:
+888b6c3b5cf54ffbaddad2a78e32fd61c5b6f9889faebb66654085d72c08681e.
+The filename lacks the historical manifest's (1) suffix; the bytes match.
+The eight optional remasters explicitly left uninstalled in 4.35.0m are now
+preserved as an opt-in review candidate, not an approved production replacement.
+
+CMEX01/04 depict worn lime plaster and handmade red brick; CMST01/02 irregular
+cobbles and squared paving; CMWD01 dark planks; CMTB04 terracotta roof tiles;
+CMGR01/02 dark grass and sparse grass/earth. Exact source preservation includes
+eight 128x128 references, eight 1254x1254 masters, eight 512x512 RGB exports,
+the original PROMPTS/EXPORT_CROPS JSON and TEXTURES_MEJORAS_V3 fragment:27 files.
+No pixels were generated, cropped, resized, repainted or recompressed for #866.
+The original crop metadata remains provenance; the supplied exports are used as-is.
+
+The fragment defines 24 native wall/flat bindings for 12 names, including the
+historical CMGR01A/B, CMRF01 and CMWV01 aliases. XScale/YScale 4 and WorldPanning
+retain the author's 128x128-MU repeat (4m at 32 MU/m), with four pixels per MU.
+Its aliases have 238 packaged UDMF map consumers, including test maps. This is
+global scope while loaded, so use only dedicated comparison sessions. MAP02's
+actual consumer is the existing Justice room; ordinary sewer passages use
+different aliases and retain their previous appearance. #847 remains separate.
+
+Three compositions still read the old raw PNGs: CMWIN36, CSUFA0 and CTFWA0.
+The ca_mansion_door_gable.obj model also reads old CMEX01 directly. Those paths
+remain unchanged. CMPLS36, CMPNL36, CMSHT36 and CMCL01 use other source images;
+they are not silently transformed. The comparison is therefore deliberately
+incomplete across derived surfaces, model skins and unrelated city materials.
+Do not overwrite a 128-pixel source with 512-pixel art under existing crop layouts.
+
+The eight exports total 4,292,384 encoded bytes; unique RGBA base levels would
+occupy 8,388,608 bytes (8 MiB), or 11,184,800 bytes including full mip chains.
+Separate allocations for all 24 bindings could cost three times that estimate.
+These are explicit candidate image costs, not measured VRAM, driver overhead
+or an approved permanent budget. Existing production images remain retained.
+
+The source/capture gallery is assets/source/art/environment_remasters_866/review.html;
+inventory, provenance and original prompts sit alongside it. Native source,
+frame/tic traces, repeated assembly and runtime preservation evidence are in
+assets/validation_v5_17_111. CA866-MATERIAL-01 joins the existing final-session
+queue. Repeated wear/colour motifs remain visible at room scale; final artistic
+judgment, derived-surface work, vaults, furnishing and broader #463 finish remain open.
 
 ## 5.17.110 - Shorten measured native contamination value dispatch (#864)
 

@@ -1,0 +1,34 @@
+{
+  "issue": 866,
+  "version": "5.17.111",
+  "scope": "Exact author-provided optional environment remasters; isolated global aliases",
+  "runtime": "build/issue866-review01.pk3",
+  "baseline": "build/issue864-value03.pk3",
+  "overlay": "build/issue866-remasters03.pk3",
+  "build_overlay": "python assets/generators/build_environment_remaster_review.py --output build/author-remasters.pk3 --inventory build/author-remasters-inventory.json",
+  "native_views": "python assets/validation_v5_17_111/run_material_views.py --runtime build/caelum_argenteum_dev.pk3 --overlay build/author-remasters.pk3 --map MAP01 --output build/author-remasters-map01",
+  "maps": [
+    "C866LAB",
+    "MAP01",
+    "MAP02",
+    "MAP03"
+  ],
+  "optional_named_view": "--view street_outward",
+  "performance": "python assets/validation_v5_17_111/run_scene.py --runtime build/caelum_argenteum_dev.pk3 --label UNIQUE --map MAP03 --overlay build/author-remasters.pk3 --presentation-layer LOCAL_LAYER_DIRECTORY",
+  "performance_variants": [
+    "mansion MAP01",
+    "Justice room MAP02",
+    "peaceful city MAP03",
+    "ground MAP03 --ground",
+    "normal siege MAP03 --siege"
+  ],
+  "paths_must_be_fresh": true,
+  "engine": "Native Windows GZDoom4.14.2; local licensed development IWAD; neither distributed",
+  "limitations": [
+    "Fixture camera and pawn grants are not ordinary progression",
+    "No save schema change; no new save migration claimed",
+    "No production asset replacement or artistic acceptance",
+    "Unchanged raw-image compositions and model consumers listed in inventory",
+    "No retired6000 tests"
+  ]
+}
