@@ -1443,3 +1443,10 @@ assets/validation_v5_17_113/** -text -diff
 assets/validation_v5_17_113/*.py text eol=lf diff
 assets/validation_v5_17_113/*.json text eol=lf diff
 assets/validation_v5_17_113/*.txt text eol=lf diff
+
+# Exact surface-index evidence and portable reproduction tools (#871).
+assets/validation_v5_17_114/** -text -diff
+assets/validation_v5_17_114/*.py text eol=lf diff
+assets/validation_v5_17_114/*.zs text eol=lf diff
+assets/validation_v5_17_114/*.json text eol=lf diff
+assets/validation_v5_17_114/*.txt text eol=lf diff

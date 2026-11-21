@@ -1,0 +1,168 @@
+{
+  "issue": 871,
+  "runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "overlay_sha256": "ebaf5a61672ffe26210ad5ed2b910af4cca783c10cffcdf1de52061520b53734",
+  "originals_restored_exactly": {
+    "caelum/survival/CaelumThermalRuntime.zs": "fbb3936ca2d205d1baaa6329ff1bcf0c326d87af7ce2df025e5cfebb8e706904",
+    "caelum/survival/CaelumThermalService.zs": "e850961e98aea979c3e88ec32ade73a9dfcda08e8093ddcbb5e934cacd5f842e",
+    "caelum/survival/CaelumThermalBody.zs": "066443c40e9ccfd7b908bd107bb7958ff5437c558279e452807327ed7e861a26",
+    "caelum/survival/CaelumThermalEnvironment.zs": "5b0c5a25cef8adc120cc060a10e21fe23bb0791701dba1d9b7b8cf94da3dda80",
+    "caelum/survival/CaelumContaminationNPC.zs": "70dec1f6e8c441259c6690d7e215fee1dd5b03c24a04dd876ec45c6fead0f222",
+    "caelum/survival/CaelumThermalCoefficients.zs": "ac9a6d0f64d08b4ef7c1098eb2fab1af60f3842245e106042c8a28d177a8c682"
+  },
+  "metrics": [
+    {
+      "id": 0,
+      "family": "Mandinga",
+      "stage": "CaelumThermalRuntime.zs:NPCStep"
+    },
+    {
+      "id": 1,
+      "family": "Mandinga",
+      "stage": "CaelumThermalService.zs:Advance"
+    },
+    {
+      "id": 2,
+      "family": "Mandinga",
+      "stage": "CaelumThermalService.zs:Integrate"
+    },
+    {
+      "id": 3,
+      "family": "Mandinga",
+      "stage": "CaelumThermalService.zs:IntegrateStep"
+    },
+    {
+      "id": 4,
+      "family": "Mandinga",
+      "stage": "CaelumThermalBody.zs:Refresh"
+    },
+    {
+      "id": 5,
+      "family": "Mandinga",
+      "stage": "CaelumThermalEnvironment.zs:Sample"
+    },
+    {
+      "id": 6,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationNPC.zs:Step"
+    },
+    {
+      "id": 7,
+      "family": "Mandinga",
+      "stage": "CaelumThermalCoefficients.zs:Prepare"
+    },
+    {
+      "id": 8,
+      "family": "Mandinga",
+      "stage": "eligible-dry-slots"
+    },
+    {
+      "id": 9,
+      "family": "Mandinga",
+      "stage": "fallback-slots"
+    },
+    {
+      "id": 10,
+      "family": "PortDefender",
+      "stage": "CaelumThermalRuntime.zs:NPCStep"
+    },
+    {
+      "id": 11,
+      "family": "PortDefender",
+      "stage": "CaelumThermalService.zs:Advance"
+    },
+    {
+      "id": 12,
+      "family": "PortDefender",
+      "stage": "CaelumThermalService.zs:Integrate"
+    },
+    {
+      "id": 13,
+      "family": "PortDefender",
+      "stage": "CaelumThermalService.zs:IntegrateStep"
+    },
+    {
+      "id": 14,
+      "family": "PortDefender",
+      "stage": "CaelumThermalBody.zs:Refresh"
+    },
+    {
+      "id": 15,
+      "family": "PortDefender",
+      "stage": "CaelumThermalEnvironment.zs:Sample"
+    },
+    {
+      "id": 16,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationNPC.zs:Step"
+    },
+    {
+      "id": 17,
+      "family": "PortDefender",
+      "stage": "CaelumThermalCoefficients.zs:Prepare"
+    },
+    {
+      "id": 18,
+      "family": "PortDefender",
+      "stage": "eligible-dry-slots"
+    },
+    {
+      "id": 19,
+      "family": "PortDefender",
+      "stage": "fallback-slots"
+    },
+    {
+      "id": 20,
+      "family": "other",
+      "stage": "CaelumThermalRuntime.zs:NPCStep"
+    },
+    {
+      "id": 21,
+      "family": "other",
+      "stage": "CaelumThermalService.zs:Advance"
+    },
+    {
+      "id": 22,
+      "family": "other",
+      "stage": "CaelumThermalService.zs:Integrate"
+    },
+    {
+      "id": 23,
+      "family": "other",
+      "stage": "CaelumThermalService.zs:IntegrateStep"
+    },
+    {
+      "id": 24,
+      "family": "other",
+      "stage": "CaelumThermalBody.zs:Refresh"
+    },
+    {
+      "id": 25,
+      "family": "other",
+      "stage": "CaelumThermalEnvironment.zs:Sample"
+    },
+    {
+      "id": 26,
+      "family": "other",
+      "stage": "CaelumContaminationNPC.zs:Step"
+    },
+    {
+      "id": 27,
+      "family": "other",
+      "stage": "CaelumThermalCoefficients.zs:Prepare"
+    },
+    {
+      "id": 28,
+      "family": "other",
+      "stage": "eligible-dry-slots"
+    },
+    {
+      "id": 29,
+      "family": "other",
+      "stage": "fallback-slots"
+    }
+  ],
+  "period": 17,
+  "dry_condition": "capacity>=0 && fraction>=0 && water==0 && sweat==0 && submerged==0 && (dw<=0 || thermal.Roof || fraction<=0 || thermal.RainMmHour<=0)",
+  "qualification": "Private inclusive call timers and branch counts; no math or production statements changed. Advance temporarily tags nested thermal calls by actor family and restores prior tag; direct forecast/other calls remain other. Counts are observed, not a skipped production branch. Overlapping inclusive timers include wrapper/counter overhead and cannot be summed as CPU budgets."
+}

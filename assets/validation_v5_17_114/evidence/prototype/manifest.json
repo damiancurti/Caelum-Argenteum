@@ -1,0 +1,9 @@
+{
+  "issue": 871,
+  "runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "original_sha256": "9e5796074c7c3c9de69f82c35c8409377ca7e2b4e373673bc7f6a6a9bddc69cb",
+  "candidate_sha256": "a5a452ac7da4c49cfb7b3222cb522a96369800ad3b7da59bd040a116bf5c37fd",
+  "overlay_sha256": "e71a1c534b19204a724d13e69a0e6b5019a38c53d8c408f57f3927739df218ab",
+  "production_change": false,
+  "qualification": "Private candidate. Same hash arithmetic and exact key comparison; divisor follows actual bucket capacity. The index doubles when integer load reaches4, preserving every tile and the insertion/rebuild traversal order. Only existing Buckets/Next derived links change; no new fields or saved schema. Old runtime Index sees a non1024 size and rebuilds its original hash, providing a reversible index migration. Requires native identity/state, growth, save/reversal and measured-cost verification before integration."
+}

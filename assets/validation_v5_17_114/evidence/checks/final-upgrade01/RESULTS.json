@@ -1,0 +1,76 @@
+{
+  "issue": 871,
+  "event": "check",
+  "adaptive": true,
+  "interpret": false,
+  "passed": true,
+  "exit_code": 0,
+  "checks": 18,
+  "errors": [],
+  "benchmark": [
+    {
+      "tiles": 62265,
+      "calls": 498120,
+      "original_ms": 361.3084,
+      "candidate_ms": 53.0385,
+      "buckets": 16384
+    }
+  ],
+  "small_benchmark": [
+    {
+      "tiles": 16,
+      "calls": 500000,
+      "original_ms": 8.6408,
+      "candidate_ms": 8.5402,
+      "buckets": 1024
+    },
+    {
+      "tiles": 512,
+      "calls": 500000,
+      "original_ms": 10.4903,
+      "candidate_ms": 10.3193,
+      "buckets": 1024
+    },
+    {
+      "tiles": 4096,
+      "calls": 500000,
+      "original_ms": 17.8278,
+      "candidate_ms": 14.2912,
+      "buckets": 2048
+    }
+  ],
+  "growth": [],
+  "first_find": [
+    {
+      "label": "native_reload",
+      "tiles": 62265,
+      "before": 1024,
+      "after": 16384,
+      "ms": 2.7425
+    },
+    {
+      "label": "before_benchmark",
+      "tiles": 62265,
+      "before": 16384,
+      "after": 16384,
+      "ms": 0.0006
+    },
+    {
+      "label": "before_native_save",
+      "tiles": 62265,
+      "before": 16384,
+      "after": 16384,
+      "ms": 0.0013
+    }
+  ],
+  "runtime_sha256": "ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55",
+  "reference_runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "candidate_sha256": null,
+  "fixture_sha256": "108c2f9a549387dc17442908c67c6fae3c12ead1489ebbb643262d7d264b8301",
+  "key_data_sha256": "564accedb3bafe492d8ff9bbbfd67dbae1c874ddc93fa912bf94a74c52e9343a",
+  "checks_sha256": "dd5fca1cc09ca04e896e9f7b870991277adb149ffa6e20de04472f7507a041e7",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "input_save_sha256": "76c3db087273f6bb60cce62dd1cfe26374236953bc447637bbd24e95e4b7c798",
+  "output_save_sha256": "45008bc979d447983dcd74e9902eab64b7cb6590cc04fabdb9c49c7a263009a4",
+  "qualification": "Private original-map-class oracle on62253 actual current-map tile keys, plus signed/absent/duplicate-key and identity tests. Native saved objects preserve tile references and all authoritative tile/map fields; only derived bucket/Next links may change. Alternating repeated lookup timings are not whole-scene frame rates."
+}

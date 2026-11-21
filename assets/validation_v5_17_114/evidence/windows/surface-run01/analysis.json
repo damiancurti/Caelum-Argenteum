@@ -1,0 +1,315 @@
+{
+  "issue": 871,
+  "label": "surface-run01",
+  "directory": "build/v516/barracas-profile-20261121-041815-688823",
+  "runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "census": [
+    "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+    "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+  ],
+  "states": [
+    "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+    "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+  ],
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 31.232895428571428,
+    "p95_ms": 45.7306,
+    "p99_ms": 50.5681,
+    "max_ms": 62.4074
+  },
+  "presentation": {
+    "pid": 22228,
+    "trace_sha256": "227f85b61ad08528866fd2ca1a404ed656f1a948e962bff3cfae8a4b408e6131",
+    "rows": 2158,
+    "scene_presents": 36,
+    "mean_present_fps": 1.8773118357775227,
+    "present_intervals": {
+      "samples": 35,
+      "mean_ms": 532.676554284777,
+      "p50_ms": 533.3873999118805,
+      "p95_ms": 589.0477999448776,
+      "p99_ms": 589.0820000171661,
+      "max_ms": 589.0820000171661
+    },
+    "native_call_duration": {
+      "samples": 36,
+      "mean_ms": 0.1781166692574819,
+      "p50_ms": 0.16760003566741943,
+      "p95_ms": 0.21180009841918945,
+      "p99_ms": 0.37960004806518555,
+      "max_ms": 0.37960004806518555
+    }
+  },
+  "grouping": {
+    "frame_samples": 37,
+    "complete_intervals": 36,
+    "tic_histogram": {
+      "17": 36
+    },
+    "mean_observed_tics": 17,
+    "labels_match_counts": true,
+    "intervals": [
+      {
+        "start_ms": 116884.5879,
+        "end_ms": 117375.9395,
+        "elapsed_ms": 491.3515999999945,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 117375.9395,
+        "end_ms": 117877.5532,
+        "elapsed_ms": 501.6137000000017,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 117877.5532,
+        "end_ms": 118360.6663,
+        "elapsed_ms": 483.1131000000023,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 118360.6663,
+        "end_ms": 118919.0312,
+        "elapsed_ms": 558.3649000000005,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 118919.0312,
+        "end_ms": 119483.2611,
+        "elapsed_ms": 564.2299000000057,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 119483.2611,
+        "end_ms": 120072.1508,
+        "elapsed_ms": 588.8896999999997,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 120072.1508,
+        "end_ms": 120617.8313,
+        "elapsed_ms": 545.6805000000022,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 120617.8313,
+        "end_ms": 121151.1254,
+        "elapsed_ms": 533.2940999999992,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 121151.1254,
+        "end_ms": 121724.4602,
+        "elapsed_ms": 573.3347999999969,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 121724.4602,
+        "end_ms": 122248.3834,
+        "elapsed_ms": 523.9232000000047,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 122248.3834,
+        "end_ms": 122770.0849,
+        "elapsed_ms": 521.7014999999956,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 122770.0849,
+        "end_ms": 123269.1079,
+        "elapsed_ms": 499.02300000000105,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 123269.1079,
+        "end_ms": 123749.9993,
+        "elapsed_ms": 480.89139999999315,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 123749.9993,
+        "end_ms": 124277.838,
+        "elapsed_ms": 527.8387000000075,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 124277.838,
+        "end_ms": 124820.6073,
+        "elapsed_ms": 542.7692999999999,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 124820.6073,
+        "end_ms": 125290.5729,
+        "elapsed_ms": 469.9655999999959,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 125290.5729,
+        "end_ms": 125863.0204,
+        "elapsed_ms": 572.4474999999948,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 125863.0204,
+        "end_ms": 126407.2558,
+        "elapsed_ms": 544.235400000005,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 126407.2558,
+        "end_ms": 126960.6015,
+        "elapsed_ms": 553.3457000000053,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 126960.6015,
+        "end_ms": 127505.1063,
+        "elapsed_ms": 544.5047999999952,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 127505.1063,
+        "end_ms": 128071.6918,
+        "elapsed_ms": 566.585500000001,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 128071.6918,
+        "end_ms": 128648.9876,
+        "elapsed_ms": 577.2957999999926,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 128648.9876,
+        "end_ms": 129158.6547,
+        "elapsed_ms": 509.66710000000603,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 129158.6547,
+        "end_ms": 129673.8332,
+        "elapsed_ms": 515.1784999999945,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 129673.8332,
+        "end_ms": 130182.2778,
+        "elapsed_ms": 508.44460000000254,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 130182.2778,
+        "end_ms": 130684.2012,
+        "elapsed_ms": 501.9233999999997,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 130684.2012,
+        "end_ms": 131176.9503,
+        "elapsed_ms": 492.7491000000009,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 131176.9503,
+        "end_ms": 131700.2325,
+        "elapsed_ms": 523.282200000016,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 131700.2325,
+        "end_ms": 132240.9712,
+        "elapsed_ms": 540.7386999999871,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 132240.9712,
+        "end_ms": 132762.9389,
+        "elapsed_ms": 521.9677000000083,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 132762.9389,
+        "end_ms": 133319.4638,
+        "elapsed_ms": 556.5248999999894,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 133319.4638,
+        "end_ms": 133884.1662,
+        "elapsed_ms": 564.7024000000092,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 133884.1662,
+        "end_ms": 134418.6042,
+        "elapsed_ms": 534.4379999999946,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 134418.6042,
+        "end_ms": 135007.0803,
+        "elapsed_ms": 588.4760999999999,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 135007.0803,
+        "end_ms": 135528.2907,
+        "elapsed_ms": 521.2104000000108,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      },
+      {
+        "start_ms": 135528.2907,
+        "end_ms": 136011.5053,
+        "elapsed_ms": 483.2145999999775,
+        "label_tics": 17,
+        "observed_tick_callbacks": 17
+      }
+    ]
+  },
+  "thinker_samples": [],
+  "thinker_means": [],
+  "renderer_all_snapshots_ms": [],
+  "native_marks": [],
+  "native_marker_phase_coverage_mod35": {},
+  "qualification": "Actual complete intervals use engine monotonic timestamps; callback labels are also retained. Native thinker profiles are separate instrumented single-tic snapshots, not a window mean. Their count and phase coverage are recorded explicitly. Native bench entries are later renderer CPU-scope snapshots; main/worker/nested phases overlap and do not establish GPU duration. Statistics, debugfile and timers add diagnostic overhead. Compare separately with grouping-only and uninstrumented controls."
+}

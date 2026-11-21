@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.113** - 2026-11-21.
+Documentation version: **5.17.114** - 2026-11-21.
+
+## 5.17.114 - Grow the derived contamination surface index (#871, #454)
+
+The production contamination surface index now scales with accumulated zones,
+removing long linked-list lookup chains without changing individual state.
+Original-result, identity, growth and native save/reversal checks pass. Whole-scene
+presentation and simulation tails are retained separately from lookup microtimings.
+The final package matches the tested candidate source exactly; only this index and
+two release log labels differ from 5.17.113.
+
+The normal siege remains far below playable rendering despite the measured lookup
+reduction; whole-scene differences are small and variable. It is not accepted as
+fluent or complete. Next performance work remains
+within measured state actions, targeting and communication, preserving each live
+rule. The authorized city/sewer finish and author-gated character work remain open;
+the consolidated author terminal stays deferred until the batch is ready.
 
 ## 5.17.113 - Measure the full siege frame and identify actor costs (#870, #454)
 

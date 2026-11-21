@@ -1,0 +1,29 @@
+{
+  "issue": 871,
+  "event": "check",
+  "adaptive": false,
+  "interpret": false,
+  "passed": false,
+  "exit_code": 1,
+  "checks": 0,
+  "errors": [
+    "Script error, \"checks.pk3:checks.zs\" line 127:",
+    "Script error, \"checks.pk3:checks.zs\" line 131:",
+    "Script error, \"checks.pk3:checks.zs\" line 131:",
+    "Script error, \"checks.pk3:checks.zs\" line 133:",
+    "Script error, \"checks.pk3:checks.zs\" line 135:",
+    "Script error, \"checks.pk3:checks.zs\" line 135:",
+    "Script error, \"checks.pk3:checks.zs\" line 135:"
+  ],
+  "benchmark": [],
+  "runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "reference_runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "candidate_sha256": null,
+  "fixture_sha256": "efd75b5708218125f85fc0ee56a02117c40cbf324f3be8ddc35e20b2a25316c7",
+  "key_data_sha256": "564accedb3bafe492d8ff9bbbfd67dbae1c874ddc93fa912bf94a74c52e9343a",
+  "checks_sha256": "055ed50016bf1e141390136fefa5eaeb32e4e95dbedb2cc27c9610595b503a50",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "input_save_sha256": null,
+  "output_save_sha256": null,
+  "qualification": "Private original-map-class oracle on62253 actual current-map tile keys, plus signed/absent/duplicate-key and identity tests. Native saved objects preserve tile references and all authoritative tile/map fields; only derived bucket/Next links may change. Alternating repeated lookup timings are not whole-scene frame rates."
+}

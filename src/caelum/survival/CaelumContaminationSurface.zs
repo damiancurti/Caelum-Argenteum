@@ -186,20 +186,26 @@ class CaelumContaminationMap : Object play
     transient bool PristineReady;
     // Limite tecnico de resultados derivados por tic, no de zonas guardadas.
     const PRISTINE_CACHE_LIMIT=32;
-    // Tamaño del índice, no un límite de población ni de estado guardado.
+    // Tamaño inicial y carga técnica: no limitan zonas ni población.
     const BUCKET_COUNT=1024;
-    static int Hash(int kind,int surface,int side,int x,int y)
-    {return ((kind*31+surface*131+side*17+x*37+y*73)&0x7fffffff)%BUCKET_COUNT;}
+    const BUCKET_LOAD_LIMIT=4;
+    static int Hash(int kind,int surface,int side,int x,int y,int buckets=BUCKET_COUNT)
+    {return ((kind*31+surface*131+side*17+x*37+y*73)&0x7fffffff)%buckets;}
     void Index()
     {
-        if(Buckets.Size()==BUCKET_COUNT)return;
-        Buckets.Resize(BUCKET_COUNT);for(int i=0;i<BUCKET_COUNT;i++)Buckets[i]=-1;
+        int count=Buckets.Size();
+        if(count>=BUCKET_COUNT && Tiles.Size()/count<BUCKET_LOAD_LIMIT)return;
+        count=Max(BUCKET_COUNT,count);
+        while(Tiles.Size()/count>=BUCKET_LOAD_LIMIT)count*=2;
+        // Sólo reconstruye enlaces derivados. Las zonas conservan identidad,
+        // concentración, reloj e historial; el índice anterior puede rehacerse.
+        Buckets.Resize(count);for(int i=0;i<count;i++)Buckets[i]=-1;
         for(int i=0;i<Tiles.Size();i++)
-        {let t=Tiles[i];int h=Hash(t.Kind,t.Surface,t.Side,t.X,t.Y);t.Next=Buckets[h];Buckets[h]=i;}
+        {let t=Tiles[i];int h=Hash(t.Kind,t.Surface,t.Side,t.X,t.Y,count);t.Next=Buckets[h];Buckets[h]=i;}
     }
     CaelumContaminationTile Find(int kind,int surface,int side,int x,int y,bool create=false)
     {
-        Index();int h=Hash(kind,surface,side,x,y);
+        Index();int h=Hash(kind,surface,side,x,y,Buckets.Size());
         for(int i=Buckets[h];i>=0;i=Tiles[i].Next)
         {let t=Tiles[i];if(t.Kind==kind && t.Surface==surface && t.Side==side && t.X==x && t.Y==y)return t;}
         if(!create)return null;

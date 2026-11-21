@@ -1,0 +1,9 @@
+{
+  "issue": 871,
+  "fixture_matches_final_native": true,
+  "prototype_manifest_matches_original": true,
+  "overlay_sha256": "e71a1c534b19204a724d13e69a0e6b5019a38c53d8c408f57f3927739df218ab",
+  "public_python_sources_parse": true,
+  "help_commands": 3,
+  "document_index_errors": []
+}

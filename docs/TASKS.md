@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.113** - 2026-11-21.
+Documentation version: **5.17.114** - 2026-11-21.
+
+## 5.17.114 - Grow the derived contamination surface index (#871, #454)
+
+Completed: trace the apparent thermal cost into contamination maintenance;
+measure surface lookup chains; grow the existing derived index; preserve exact
+tile identity/state/defaults and duplicate traversal order; verify cold growth,
+old saves, repeated reload and reversal; run unchanged-code/small-table controls
+and final native campaign presentation comparisons. No dry-physiology shortcut,
+shelter reuse, concentration cache, new actor scan or simulation skip was applied.
+
+Remaining: siege fluency and the broader authorized V5.16/V5.17 batch, including
+the city/sewer structural finish and character/equipment decisions awaiting the
+final review. The author queue is unchanged. Native checks are agent evidence;
+no author acceptance, issue closure, merge or partial test terminal is inferred.
 
 ## 5.17.113 - Measure the full siege frame and identify actor costs (#870, #454)
 
