@@ -1,0 +1,14 @@
+{
+  "previous_sha256": "8fcef709b7615d6dd6f808f1de6e46a37718b97b0d35ecf1d6568eb66de7a574",
+  "runtime_sha256": "1a0b1348399d3afe0e84418e54dd9c5b012fee17756eb57ccaf2faad5d30fad5",
+  "members": 18767,
+  "changed": [
+    "caelum/survival/CaelumContaminationState.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "unchanged": 18764,
+  "all_members_match_src": true,
+  "final_value_matches_prototype02": true,
+  "no_added_or_removed_members": true
+}

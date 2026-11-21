@@ -1,0 +1,70 @@
+{
+  "runtime_sha256": "8fcef709b7615d6dd6f808f1de6e46a37718b97b0d35ecf1d6568eb66de7a574",
+  "overlay_sha256": "567c8f4a58704e7243edd3cd4fff894c2931dff670d4bed42d512f7ecbcc373e",
+  "originals_restored_exactly": {
+    "caelum/survival/CaelumContaminationContact.zs": "77c658e7ec1b6bfe1babd6c23fa03cd3c5fa1782ef7db4efd43c3d6d8faa372c",
+    "caelum/survival/CaelumContaminationCombat.zs": "52c176d389b88de0f0143283585931af6682b757404b24decaf71ec6283abc7c",
+    "caelum/survival/CaelumContaminationState.zs": "184e404f682be717575b3f223161fd7052afe25e75262093450b9ede20866b78",
+    "caelum/survival/CaelumContaminationObject.zs": "fb4bcd36badc5196eaa51bfcb2e10c99d6eda92034f027944a8fdcd20b3c8413",
+    "caelum/survival/CaelumContaminationStack.zs": "ad8858e72eedd9fc66f5c91f5f4c942592c934990ea4dfb91cd4252a4cfbb4bf"
+  },
+  "period": 17,
+  "metrics": [
+    {
+      "id": 0,
+      "path": "caelum/survival/CaelumContaminationContact.zs",
+      "method": "Exchange"
+    },
+    {
+      "id": 1,
+      "path": "caelum/survival/CaelumContaminationCombat.zs",
+      "method": "Exterior"
+    },
+    {
+      "id": 2,
+      "path": "caelum/survival/CaelumContaminationCombat.zs",
+      "method": "ActorPoint"
+    },
+    {
+      "id": 3,
+      "path": "caelum/survival/CaelumContaminationCombat.zs",
+      "method": "ModelPoint"
+    },
+    {
+      "id": 4,
+      "path": "caelum/survival/CaelumContaminationCombat.zs",
+      "method": "Transfer"
+    },
+    {
+      "id": 5,
+      "path": "caelum/survival/CaelumContaminationState.zs",
+      "method": "Get"
+    },
+    {
+      "id": 6,
+      "path": "caelum/survival/CaelumContaminationState.zs",
+      "method": "Value"
+    },
+    {
+      "id": 7,
+      "path": "caelum/survival/CaelumContaminationState.zs",
+      "method": "IsShielded"
+    },
+    {
+      "id": 8,
+      "path": "caelum/survival/CaelumContaminationObject.zs",
+      "method": "SettleNow"
+    },
+    {
+      "id": 9,
+      "path": "caelum/survival/CaelumContaminationStack.zs",
+      "method": "TouchPoints"
+    },
+    {
+      "id": 10,
+      "path": "caelum/survival/CaelumContaminationStack.zs",
+      "method": "Eligible"
+    }
+  ],
+  "qualification": "Inclusive sampled bodies; do not sum nested scopes. Lookup/timer overhead remains; not production throughput."
+}

@@ -1,0 +1,1113 @@
+Log started: 2026-11-21 01:41:07
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 428 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue861-hands01.pk3, 18767 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue864-types01/storage.pk3, 2 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/v516/barracas-profile-20261121-014107-593477/observer.pk3, 5 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_copy_memory_indirect VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_clamp_zero_one VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_internally_synchronized_queues VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance10 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_maintenance8 VK_KHR_maintenance9 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_id2 VK_KHR_present_mode_fifo_latest_ready VK_KHR_present_wait VK_KHR_present_wait2 VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_robustness2 VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_bfloat16 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_fma VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_shader_untyped_pointers VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_maintenance1 VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_unified_image_layouts VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_decode_vp9 VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_intra_refresh VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_custom_resolve VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_heap VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_decompression VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_present_timing VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_ray_tracing_invocation_reorder VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_64bit_indexing VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_long_vector VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_partitioned VK_EXT_shader_subgroup_vote VK_EXT_shader_uniform_buffer_unsized_array VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_EXT_zero_initialize_device_memory VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_occupancy_priority VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_compute_queue VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_push_constant_bank VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2485.92 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP03 - Barracas al Sud — fortified port
+
+CA435SYNC OK peer=0 map=MAP03 tic=0
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CITY133 housed=600 attackers=0 revision=3
+PORT16 deployed Mandingas=100 commander=1 defenders=600 hostileMachines=12 guns=42
+CA435SYNC OK peer=0 map=MAP03 tic=175
+CA435SYNC OK peer=0 map=MAP03 tic=350
+CA435SYNC OK peer=0 map=MAP03 tic=525
+CA435SYNC OK peer=0 map=MAP03 tic=700
+CA435SYNC OK peer=0 map=MAP03 tic=875
+CA435SYNC OK peer=0 map=MAP03 tic=1050
+CA435SYNC OK peer=0 map=MAP03 tic=1225
+CA435SYNC OK peer=0 map=MAP03 tic=1400
+CA435SYNC OK peer=0 map=MAP03 tic=1575
+CA435SYNC OK peer=0 map=MAP03 tic=1750
+CA435SYNC OK peer=0 map=MAP03 tic=1925
+CA435SYNC OK peer=0 map=MAP03 tic=2100
+CA435SYNC OK peer=0 map=MAP03 tic=2275
+CA435SYNC OK peer=0 map=MAP03 tic=2450
+CA435SYNC OK peer=0 map=MAP03 tic=2625
+CA435SYNC OK peer=0 map=MAP03 tic=2800
+CA435SYNC OK peer=0 map=MAP03 tic=2975
+CA435SYNC OK peer=0 map=MAP03 tic=3150
+CA435SYNC OK peer=0 map=MAP03 tic=3325
+CA435SYNC OK peer=0 map=MAP03 tic=3500
+CA435PERF STATE peer=0 tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1
+CA435PERF STATE peer=0 slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000
+CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0
+CA510 BEGIN map=MAP03 tic=3599 ms=113520.600800
+CA435SYNC OK peer=0 map=MAP03 tic=3675
+CA435SYNC OK peer=0 map=MAP03 tic=3850
+CA435SYNC OK peer=0 map=MAP03 tic=4025
+CA435SYNC OK peer=0 map=MAP03 tic=4200
+CA435PERF STATE peer=0 tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1
+CA435PERF STATE peer=0 slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000
+CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0
+CA510 PROFILE candidate_ms=0.000000 candidate_calls=0 noise_ms=0.000000 noise_calls=0 communication_ms=0.000000 communication_calls=0 acquire_ms=0.000000 acquire_calls=0
+CA510 END tic=4299 ms=134529.157000
+CA510 TIC 28.439900
+CA510 TIC 28.749800
+CA510 TIC 28.082800
+CA510 TIC 34.522500
+CA510 TIC 35.201700
+CA510 TIC 50.814800
+CA510 TIC 29.151700
+CA510 TIC 32.318200
+CA510 TIC 28.079700
+CA510 TIC 28.114900
+CA510 TIC 26.701600
+CA510 TIC 31.871500
+CA510 TIC 28.004100
+CA510 TIC 52.254700
+CA510 TIC 30.922600
+CA510 TIC 45.382600
+CA510 TIC 26.997200
+CA510 TIC 29.936800
+CA510 TIC 29.465000
+CA510 TIC 29.955700
+CA510 TIC 28.799000
+CA510 TIC 29.540000
+CA510 TIC 26.673900
+CA510 TIC 28.956000
+CA510 TIC 26.674900
+CA510 TIC 45.695300
+CA510 TIC 26.740900
+CA510 TIC 28.067700
+CA510 TIC 26.781600
+CA510 TIC 28.573700
+CA510 TIC 44.098700
+CA510 TIC 26.134500
+CA510 TIC 26.638800
+CA510 TIC 28.031000
+CA510 TIC 26.243400
+CA510 TIC 45.726500
+CA510 TIC 26.051700
+CA510 TIC 25.521400
+CA510 TIC 24.350700
+CA510 TIC 27.081400
+CA510 TIC 25.590500
+CA510 TIC 28.264500
+CA510 TIC 24.165900
+CA510 TIC 27.661700
+CA510 TIC 27.891200
+CA510 TIC 43.405400
+CA510 TIC 25.291500
+CA510 TIC 33.711400
+CA510 TIC 24.995100
+CA510 TIC 26.809600
+CA510 TIC 25.116200
+CA510 TIC 28.613000
+CA510 TIC 24.689100
+CA510 TIC 26.774300
+CA510 TIC 24.221700
+CA510 TIC 42.273800
+CA510 TIC 24.754900
+CA510 TIC 27.376800
+CA510 TIC 29.732300
+CA510 TIC 30.248900
+CA510 TIC 24.999500
+CA510 TIC 27.959100
+CA510 TIC 24.162900
+CA510 TIC 25.891400
+CA510 TIC 30.165100
+CA510 TIC 45.850500
+CA510 TIC 25.795600
+CA510 TIC 26.415600
+CA510 TIC 25.958600
+CA510 TIC 25.947000
+CA510 TIC 24.927700
+CA510 TIC 29.915500
+CA510 TIC 25.543800
+CA510 TIC 27.164800
+CA510 TIC 26.811600
+CA510 TIC 43.312000
+CA510 TIC 25.322600
+CA510 TIC 25.988400
+CA510 TIC 25.428400
+CA510 TIC 29.807400
+CA510 TIC 35.892100
+CA510 TIC 27.779000
+CA510 TIC 26.590800
+CA510 TIC 26.110000
+CA510 TIC 24.067200
+CA510 TIC 44.532300
+CA510 TIC 26.597000
+CA510 TIC 25.854000
+CA510 TIC 24.348200
+CA510 TIC 26.502100
+CA510 TIC 25.069700
+CA510 TIC 25.525100
+CA510 TIC 24.945600
+CA510 TIC 26.572300
+CA510 TIC 25.298700
+CA510 TIC 41.950400
+CA510 TIC 23.658400
+CA510 TIC 33.448200
+CA510 TIC 24.545400
+CA510 TIC 26.707900
+CA510 TIC 24.963300
+CA510 TIC 25.457100
+CA510 TIC 27.469600
+CA510 TIC 27.740500
+CA510 TIC 25.762100
+CA510 TIC 42.624900
+CA510 TIC 27.133000
+CA510 TIC 26.645600
+CA510 TIC 23.886000
+CA510 TIC 27.032200
+CA510 TIC 26.151800
+CA510 TIC 27.289100
+CA510 TIC 24.403600
+CA510 TIC 35.470600
+CA510 TIC 25.341200
+CA510 TIC 44.663500
+CA510 TIC 24.444300
+CA510 TIC 29.672700
+CA510 TIC 26.317200
+CA510 TIC 27.160100
+CA510 TIC 26.274800
+CA510 TIC 26.820300
+CA510 TIC 26.214200
+CA510 TIC 26.627700
+CA510 TIC 24.855100
+CA510 TIC 42.401600
+CA510 TIC 25.644600
+CA510 TIC 29.799300
+CA510 TIC 29.141200
+CA510 TIC 46.064100
+CA510 TIC 28.569000
+CA510 TIC 28.732200
+CA510 TIC 26.702900
+CA510 TIC 28.516200
+CA510 TIC 27.588000
+CA510 TIC 45.898100
+CA510 TIC 27.824300
+CA510 TIC 30.173900
+CA510 TIC 28.969900
+CA510 TIC 28.310100
+CA510 TIC 28.625100
+CA510 TIC 30.002500
+CA510 TIC 26.308200
+CA510 TIC 28.151900
+CA510 TIC 28.007400
+CA510 TIC 45.115800
+CA510 TIC 47.314600
+CA510 TIC 31.298500
+CA510 TIC 27.926600
+CA510 TIC 28.158600
+CA510 TIC 26.508700
+CA510 TIC 27.154200
+CA510 TIC 27.541000
+CA510 TIC 31.582800
+CA510 TIC 27.669900
+CA510 TIC 45.839700
+CA510 TIC 28.681700
+CA510 TIC 28.150100
+CA510 TIC 26.742300
+CA510 TIC 28.892800
+CA510 TIC 28.570100
+CA510 TIC 29.107000
+CA510 TIC 26.893900
+CA510 TIC 47.528300
+CA510 TIC 29.443400
+CA510 TIC 45.478300
+CA510 TIC 27.573500
+CA510 TIC 27.415500
+CA510 TIC 27.198900
+CA510 TIC 32.426400
+CA510 TIC 29.124700
+CA510 TIC 27.821200
+CA510 TIC 25.918000
+CA510 TIC 30.850600
+CA510 TIC 26.980500
+CA510 TIC 44.513900
+CA510 TIC 32.459900
+CA510 TIC 36.631100
+CA510 TIC 32.526100
+CA510 TIC 31.054500
+CA510 TIC 42.793400
+CA510 TIC 33.648200
+CA510 TIC 26.973800
+CA510 TIC 27.248300
+CA510 TIC 26.888600
+CA510 TIC 45.308900
+CA510 TIC 26.731500
+CA510 TIC 28.932400
+CA510 TIC 29.379600
+CA510 TIC 28.509600
+CA510 TIC 27.835700
+CA510 TIC 28.221200
+CA510 TIC 28.605600
+CA510 TIC 30.535100
+CA510 TIC 26.238100
+CA510 TIC 46.613700
+CA510 TIC 31.839600
+CA510 TIC 45.779300
+CA510 TIC 31.497500
+CA510 TIC 29.216900
+CA510 TIC 28.019900
+CA510 TIC 29.003900
+CA510 TIC 26.665200
+CA510 TIC 27.565600
+CA510 TIC 32.175600
+CA510 TIC 45.527100
+CA510 TIC 26.798400
+CA510 TIC 32.303400
+CA510 TIC 29.291800
+CA510 TIC 29.730100
+CA510 TIC 26.849400
+CA510 TIC 31.640500
+CA510 TIC 29.610100
+CA510 TIC 28.829700
+CA510 TIC 37.965500
+CA510 TIC 45.949900
+CA510 TIC 30.569900
+CA510 TIC 30.557000
+CA510 TIC 27.268300
+CA510 TIC 28.749800
+CA510 TIC 26.969500
+CA510 TIC 29.579900
+CA510 TIC 28.160900
+CA510 TIC 29.473300
+CA510 TIC 30.099900
+CA510 TIC 51.165600
+CA510 TIC 30.250500
+CA510 TIC 29.376300
+CA510 TIC 26.565900
+CA510 TIC 28.559200
+CA510 TIC 26.527900
+CA510 TIC 39.225600
+CA510 TIC 28.293500
+CA510 TIC 28.417500
+CA510 TIC 27.048800
+CA510 TIC 44.183100
+CA510 TIC 27.414500
+CA510 TIC 26.365600
+CA510 TIC 25.759300
+CA510 TIC 27.078600
+CA510 TIC 25.226400
+CA510 TIC 25.948900
+CA510 TIC 26.332800
+CA510 TIC 27.076600
+CA510 TIC 27.030300
+CA510 TIC 44.015300
+CA510 TIC 25.077600
+CA510 TIC 25.241100
+CA510 TIC 32.628200
+CA510 TIC 27.268900
+CA510 TIC 27.069200
+CA510 TIC 26.776200
+CA510 TIC 23.918100
+CA510 TIC 25.706300
+CA510 TIC 26.967800
+CA510 TIC 44.089900
+CA510 TIC 24.944400
+CA510 TIC 27.033900
+CA510 TIC 24.491900
+CA510 TIC 25.334100
+CA510 TIC 26.840000
+CA510 TIC 26.755400
+CA510 TIC 27.213100
+CA510 TIC 26.017300
+CA510 TIC 23.723700
+CA510 TIC 52.139200
+CA510 TIC 25.751400
+CA510 TIC 26.736200
+CA510 TIC 24.238400
+CA510 TIC 25.586900
+CA510 TIC 24.884900
+CA510 TIC 28.019700
+CA510 TIC 28.513500
+CA510 TIC 26.311500
+CA510 TIC 23.856500
+CA510 TIC 41.843100
+CA510 TIC 25.331400
+CA510 TIC 27.388000
+CA510 TIC 25.992800
+CA510 TIC 26.121600
+CA510 TIC 27.930600
+CA510 TIC 28.535700
+CA510 TIC 33.426300
+CA510 TIC 26.637200
+CA510 TIC 23.415600
+CA510 TIC 43.395800
+CA510 TIC 26.162200
+CA510 TIC 24.533300
+CA510 TIC 25.155900
+CA510 TIC 30.305800
+CA510 TIC 25.033300
+CA510 TIC 25.524700
+CA510 TIC 24.978300
+CA510 TIC 25.222100
+CA510 TIC 23.751200
+CA510 TIC 43.618900
+CA510 TIC 26.097700
+CA510 TIC 26.726700
+CA510 TIC 25.188600
+CA510 TIC 34.536900
+CA510 TIC 25.378700
+CA510 TIC 26.069800
+CA510 TIC 25.837400
+CA510 TIC 26.850000
+CA510 TIC 25.015700
+CA510 TIC 42.211900
+CA510 TIC 28.227200
+CA510 TIC 30.013300
+CA510 TIC 25.184800
+CA510 TIC 25.648600
+CA510 TIC 24.104700
+CA510 TIC 25.396700
+CA510 TIC 24.175100
+CA510 TIC 25.394100
+CA510 TIC 25.873500
+CA510 TIC 54.875200
+CA510 TIC 27.478700
+CA510 TIC 27.168700
+CA510 TIC 24.891000
+CA510 TIC 25.786100
+CA510 TIC 23.728300
+CA510 TIC 27.727700
+CA510 TIC 24.463400
+CA510 TIC 29.438800
+CA510 TIC 25.864700
+CA510 TIC 43.945300
+CA510 TIC 24.699700
+CA510 TIC 27.388900
+CA510 TIC 24.597800
+CA510 TIC 25.984100
+CA510 TIC 24.392900
+CA510 TIC 25.681100
+CA510 TIC 31.417200
+CA510 TIC 26.397000
+CA510 TIC 28.477600
+CA510 TIC 47.372300
+CA510 TIC 27.718500
+CA510 TIC 30.405400
+CA510 TIC 26.160700
+CA510 TIC 27.418500
+CA510 TIC 27.209600
+CA510 TIC 29.962100
+CA510 TIC 30.529100
+CA510 TIC 29.691000
+CA510 TIC 26.802800
+CA510 TIC 45.681300
+CA510 TIC 27.233500
+CA510 TIC 27.475500
+CA510 TIC 39.246800
+CA510 TIC 29.215900
+CA510 TIC 27.584300
+CA510 TIC 36.431900
+CA510 TIC 35.764000
+CA510 TIC 32.989200
+CA510 TIC 28.685200
+CA510 TIC 50.111300
+CA510 TIC 30.280400
+CA510 TIC 30.844500
+CA510 TIC 27.778000
+CA510 TIC 30.125300
+CA510 TIC 31.218300
+CA510 TIC 28.887800
+CA510 TIC 27.439000
+CA510 TIC 28.176800
+CA510 TIC 27.396000
+CA510 TIC 61.899200
+CA510 TIC 31.829900
+CA510 TIC 29.012800
+CA510 TIC 29.033600
+CA510 TIC 31.015000
+CA510 TIC 27.391500
+CA510 TIC 28.851000
+CA510 TIC 26.813800
+CA510 TIC 30.508200
+CA510 TIC 31.720300
+CA510 TIC 47.275400
+CA510 TIC 29.331800
+CA510 TIC 29.907000
+CA510 TIC 27.641200
+CA510 TIC 30.076800
+CA510 TIC 26.238800
+CA510 TIC 31.700400
+CA510 TIC 41.311100
+CA510 TIC 28.652200
+CA510 TIC 26.305700
+CA510 TIC 46.301000
+CA510 TIC 28.449300
+CA510 TIC 27.891300
+CA510 TIC 26.715900
+CA510 TIC 29.071900
+CA510 TIC 26.175500
+CA510 TIC 29.850900
+CA510 TIC 28.840500
+CA510 TIC 27.970500
+CA510 TIC 26.850100
+CA510 TIC 47.543500
+CA510 TIC 29.902700
+CA510 TIC 28.169100
+CA510 TIC 27.044000
+CA510 TIC 37.280000
+CA510 TIC 27.660000
+CA510 TIC 31.298300
+CA510 TIC 29.128800
+CA510 TIC 28.531500
+CA510 TIC 26.761000
+CA510 TIC 44.656600
+CA510 TIC 30.230100
+CA510 TIC 29.703400
+CA510 TIC 27.994800
+CA510 TIC 28.048000
+CA510 TIC 28.633100
+CA510 TIC 29.941000
+CA510 TIC 27.436800
+CA510 TIC 27.740600
+CA510 TIC 30.581600
+CA510 TIC 45.995300
+CA510 TIC 36.161700
+CA510 TIC 31.274500
+CA510 TIC 27.189500
+CA510 TIC 28.901800
+CA510 TIC 27.200000
+CA510 TIC 29.557000
+CA510 TIC 27.356600
+CA510 TIC 31.082700
+CA510 TIC 28.385200
+CA510 TIC 47.656600
+CA510 TIC 29.995000
+CA510 TIC 29.921500
+CA510 TIC 29.371000
+CA510 TIC 30.322400
+CA510 TIC 28.358100
+CA510 TIC 29.453200
+CA510 TIC 30.297200
+CA510 TIC 40.919400
+CA510 TIC 29.996500
+CA510 TIC 45.838300
+CA510 TIC 28.708700
+CA510 TIC 28.657300
+CA510 TIC 28.752000
+CA510 TIC 29.150400
+CA510 TIC 27.694900
+CA510 TIC 29.160900
+CA510 TIC 28.398600
+CA510 TIC 29.697300
+CA510 TIC 28.274900
+CA510 TIC 48.277000
+CA510 TIC 28.909800
+CA510 TIC 26.485500
+CA510 TIC 24.134800
+CA510 TIC 26.824000
+CA510 TIC 32.655400
+CA510 TIC 25.796300
+CA510 TIC 24.443500
+CA510 TIC 26.667700
+CA510 TIC 27.314700
+CA510 TIC 43.809700
+CA510 TIC 24.775900
+CA510 TIC 28.093200
+CA510 TIC 26.432300
+CA510 TIC 26.834100
+CA510 TIC 25.090300
+CA510 TIC 28.233200
+CA510 TIC 24.112300
+CA510 TIC 24.940400
+CA510 TIC 25.869900
+CA510 TIC 44.155500
+CA510 TIC 24.053900
+CA510 TIC 32.907000
+CA510 TIC 24.941700
+CA510 TIC 26.452700
+CA510 TIC 24.328000
+CA510 TIC 26.607300
+CA510 TIC 23.593400
+CA510 TIC 26.589100
+CA510 TIC 26.098900
+CA510 TIC 44.756000
+CA510 TIC 26.016100
+CA510 TIC 25.866500
+CA510 TIC 24.391400
+CA510 TIC 25.976900
+CA510 TIC 24.944400
+CA510 TIC 29.505300
+CA510 TIC 26.801200
+CA510 TIC 27.077400
+CA510 TIC 32.941800
+CA510 TIC 43.325800
+CA510 TIC 24.885800
+CA510 TIC 24.857200
+CA510 TIC 24.065200
+CA510 TIC 27.169600
+CA510 TIC 26.079200
+CA510 TIC 25.576500
+CA510 TIC 26.422500
+CA510 TIC 29.356400
+CA510 TIC 25.366600
+CA510 TIC 42.585900
+CA510 TIC 26.098200
+CA510 TIC 25.777900
+CA510 TIC 24.700000
+CA510 TIC 27.345100
+CA510 TIC 32.806200
+CA510 TIC 26.827200
+CA510 TIC 24.189900
+CA510 TIC 27.262500
+CA510 TIC 23.919100
+CA510 TIC 42.045400
+CA510 TIC 24.893500
+CA510 TIC 26.359900
+CA510 TIC 24.705900
+CA510 TIC 28.261900
+CA510 TIC 27.914200
+CA510 TIC 26.871500
+CA510 TIC 24.361100
+CA510 TIC 25.578000
+CA510 TIC 24.490800
+CA510 TIC 42.041100
+CA510 TIC 31.272000
+CA510 TIC 30.339700
+CA510 TIC 25.350100
+CA510 TIC 25.472900
+CA510 TIC 26.675800
+CA510 TIC 28.549200
+CA510 TIC 24.994300
+CA510 TIC 30.581300
+CA510 TIC 31.751200
+CA510 TIC 52.076800
+CA510 TIC 28.535600
+CA510 TIC 29.017800
+CA510 TIC 30.240100
+CA510 TIC 29.832500
+CA510 TIC 26.434300
+CA510 TIC 26.749300
+CA510 TIC 31.206100
+CA510 TIC 25.939400
+CA510 TIC 25.031800
+CA510 TIC 43.306200
+CA510 TIC 25.960900
+CA510 TIC 27.374400
+CA510 TIC 25.118700
+CA510 TIC 25.970600
+CA510 TIC 24.416100
+CA510 TIC 25.522700
+CA510 TIC 23.803500
+CA510 TIC 24.913700
+CA510 TIC 33.619400
+CA510 TIC 46.463100
+CA510 TIC 29.181400
+CA510 TIC 29.763900
+CA510 TIC 28.658600
+CA510 TIC 38.115600
+CA510 TIC 27.488700
+CA510 TIC 32.391300
+CA510 TIC 31.694500
+CA510 TIC 29.160100
+CA510 TIC 28.815200
+CA510 TIC 45.807500
+CA510 TIC 26.917700
+CA510 TIC 28.586200
+CA510 TIC 26.758700
+CA510 TIC 28.436300
+CA510 TIC 28.221700
+CA510 TIC 32.056800
+CA510 TIC 27.070400
+CA510 TIC 29.904100
+CA510 TIC 29.004300
+CA510 TIC 51.371300
+CA510 TIC 42.231700
+CA510 TIC 28.795500
+CA510 TIC 28.179000
+CA510 TIC 28.944100
+CA510 TIC 27.913700
+CA510 TIC 28.424100
+CA510 TIC 26.448100
+CA510 TIC 29.158700
+CA510 TIC 26.126100
+CA510 TIC 47.086200
+CA510 TIC 29.538500
+CA510 TIC 29.265500
+CA510 TIC 28.478600
+CA510 TIC 29.874600
+CA510 TIC 28.828700
+CA510 TIC 28.670700
+CA510 TIC 27.683200
+CA510 TIC 40.728300
+CA510 TIC 27.888200
+CA510 TIC 47.051000
+CA510 TIC 30.366000
+CA510 TIC 28.600600
+CA510 TIC 29.775700
+CA510 TIC 28.816900
+CA510 TIC 26.265300
+CA510 TIC 28.113000
+CA510 TIC 26.342500
+CA510 TIC 28.892000
+CA510 TIC 28.546200
+CA510 TIC 48.144600
+CA510 TIC 28.341700
+CA510 TIC 32.901800
+CA510 TIC 28.735700
+CA510 TIC 28.963500
+CA510 TIC 39.535700
+CA510 TIC 30.195100
+CA510 TIC 30.520400
+CA510 TIC 29.070100
+CA510 TIC 26.096600
+CA510 TIC 45.260000
+CA510 TIC 28.831300
+CA510 TIC 29.537700
+CA510 TIC 27.416300
+CA510 TIC 29.009100
+CA510 TIC 27.350200
+CA510 TIC 29.314200
+CA510 TIC 28.658700
+CA510 TIC 32.166900
+CA510 TIC 27.581500
+CA510 TIC 46.635700
+CA510 TIC 27.296600
+CA510 TIC 39.136100
+CA510 TIC 28.224900
+CA510 TIC 28.488700
+CA510 TIC 28.966300
+CA510 TIC 30.798700
+CA510 TIC 27.139800
+CA510 TIC 28.489200
+CA510 TIC 26.752100
+CA510 TIC 47.297900
+CA510 TIC 29.004100
+CA510 TIC 28.320400
+CA510 TIC 27.999200
+CA510 TIC 29.765000
+CA510 TIC 26.212100
+CA510 TIC 30.829400
+CA510 TIC 29.102800
+CA510 TIC 29.444900
+CA510 TIC 37.768900
+CA510 TIC 44.358200
+CA510 TIC 27.253900
+CA510 TIC 31.598100
+CA510 TIC 28.564700
+CA510 TIC 28.975600
+CA510 TIC 31.287100
+CA510 TIC 30.043700
+CA510 TIC 26.419400
+CA510 TIC 27.726200
+CA510 TIC 26.645800
+CA510 TIC 47.850300
+CA510 TIC 30.410700
+CA510 TIC 32.807700
+CA510 TIC 28.380100
+CA510 TIC 27.802000
+CA510 TIC 26.627900
+CA510 TIC 39.236800
+CA510 TIC 27.486800
+CA510 TIC 28.494800
+CA510 TIC 27.705800
+CA510 TIC 46.983700
+CA510 TIC 27.946400
+CA510 TIC 27.394900
+CA510 TIC 25.492100
+CA510 TIC 26.720600
+CA510 TIC 24.175800
+CA510 TIC 29.031100
+CA510 TIC 25.571800
+CA510 TIC 26.865900
+CA510 TIC 26.317800
+CA510 TIC 44.658800
+CA510 TIC 25.689300
+CA510 TIC 27.402500
+CA510 TIC 31.690400
+CA510 TIC 26.541900
+CA510 TIC 24.473500
+CA510 TIC 28.016600
+CA510 TIC 24.280700
+CA510 TIC 28.877100
+CA510 TIC 29.310700
+CA510 TIC 43.975100
+CA510 TIC 24.856000
+CA510 TIC 27.005900
+CA510 TIC 23.716600
+CA510 TIC 25.412900
+CA510 TIC 26.749900
+CA510 TIC 28.330000
+CA510 TIC 28.480600
+CA510 TIC 27.630100
+CA510 TIC 26.458400
+CA510 TIC 50.934300
+CA510 TIC 25.410400
+CA510 TIC 26.273500
+CA510 TIC 23.925700
+CA510 TIC 25.286900
+CA510 TIC 23.914600
+CA510 TIC 27.409200
+CA510 TIC 26.501200
+CA510 TIC 30.694400
+CA510 TIC 32.514800
+CA510 TIC 49.499600
+CA510 TIC 27.127800
+CA510 TIC 32.641000
+CA510 TIC 29.822800
+CA510 TIC 28.240300
+CA510 RESULT normal campaign window complete
+CA849 STORAGE tic=3599 metric=1 total=0.117000 maximum=0.000100 calls=3358
+CA849 STORAGE tic=3599 metric=4 total=0.001500 maximum=0.000700 calls=9
+CA849 STORAGE tic=3599 metric=5 total=0.384500 maximum=0.000800 calls=4390
+CA849 STORAGE tic=3599 metric=7 total=0.024700 maximum=0.000400 calls=132
+CA849 STORAGE tic=3599 metric=10 total=0.003800 maximum=0.001600 calls=9
+CA849 STORAGE tic=3599 metric=11 total=1.450500 maximum=0.001500 calls=3546
+CA849 STORAGE tic=3616 metric=1 total=0.120000 maximum=0.000100 calls=3396
+CA849 STORAGE tic=3616 metric=4 total=0.002000 maximum=0.000800 calls=9
+CA849 STORAGE tic=3616 metric=5 total=0.374800 maximum=0.003000 calls=4396
+CA849 STORAGE tic=3616 metric=7 total=0.024500 maximum=0.000400 calls=132
+CA849 STORAGE tic=3616 metric=10 total=0.004100 maximum=0.001700 calls=9
+CA849 STORAGE tic=3616 metric=11 total=1.432400 maximum=0.003600 calls=3545
+CA849 STORAGE tic=3633 metric=1 total=0.113700 maximum=0.000300 calls=3415
+CA849 STORAGE tic=3633 metric=4 total=0.001600 maximum=0.000800 calls=9
+CA849 STORAGE tic=3633 metric=5 total=0.394900 maximum=0.000700 calls=4391
+CA849 STORAGE tic=3633 metric=7 total=0.027600 maximum=0.000400 calls=147
+CA849 STORAGE tic=3633 metric=10 total=0.004000 maximum=0.001500 calls=9
+CA849 STORAGE tic=3633 metric=11 total=1.446600 maximum=0.001300 calls=3546
+CA849 STORAGE tic=3650 metric=1 total=0.119200 maximum=0.000300 calls=3364
+CA849 STORAGE tic=3650 metric=4 total=0.001500 maximum=0.000600 calls=9
+CA849 STORAGE tic=3650 metric=5 total=0.368000 maximum=0.000800 calls=4393
+CA849 STORAGE tic=3650 metric=7 total=0.027400 maximum=0.000700 calls=141
+CA849 STORAGE tic=3650 metric=10 total=0.003700 maximum=0.001400 calls=9
+CA849 STORAGE tic=3650 metric=11 total=1.450300 maximum=0.004300 calls=3545
+CA849 STORAGE tic=3667 metric=1 total=0.118500 maximum=0.002900 calls=3356
+CA849 STORAGE tic=3667 metric=4 total=0.001600 maximum=0.000800 calls=9
+CA849 STORAGE tic=3667 metric=5 total=0.362700 maximum=0.000700 calls=4387
+CA849 STORAGE tic=3667 metric=7 total=0.024900 maximum=0.000400 calls=132
+CA849 STORAGE tic=3667 metric=10 total=0.003800 maximum=0.001600 calls=9
+CA849 STORAGE tic=3667 metric=11 total=1.421700 maximum=0.003600 calls=3546
+CA849 STORAGE tic=3684 metric=1 total=0.120800 maximum=0.000100 calls=3357
+CA849 STORAGE tic=3684 metric=4 total=0.001700 maximum=0.000700 calls=9
+CA849 STORAGE tic=3684 metric=5 total=0.367400 maximum=0.002400 calls=4392
+CA849 STORAGE tic=3684 metric=7 total=0.028500 maximum=0.000400 calls=138
+CA849 STORAGE tic=3684 metric=10 total=0.003500 maximum=0.001400 calls=9
+CA849 STORAGE tic=3684 metric=11 total=1.409900 maximum=0.003200 calls=3546
+CA849 STORAGE tic=3701 metric=1 total=0.115200 maximum=0.000100 calls=3362
+CA849 STORAGE tic=3701 metric=4 total=0.001700 maximum=0.000600 calls=9
+CA849 STORAGE tic=3701 metric=5 total=0.346600 maximum=0.000700 calls=4393
+CA849 STORAGE tic=3701 metric=7 total=0.027000 maximum=0.000400 calls=144
+CA849 STORAGE tic=3701 metric=10 total=0.003800 maximum=0.001400 calls=9
+CA849 STORAGE tic=3701 metric=11 total=1.406000 maximum=0.001300 calls=3545
+CA849 STORAGE tic=3718 metric=1 total=0.118600 maximum=0.003000 calls=3402
+CA849 STORAGE tic=3718 metric=4 total=0.001700 maximum=0.000600 calls=9
+CA849 STORAGE tic=3718 metric=5 total=0.363800 maximum=0.000700 calls=4392
+CA849 STORAGE tic=3718 metric=7 total=0.026300 maximum=0.000400 calls=138
+CA849 STORAGE tic=3718 metric=10 total=0.003800 maximum=0.001400 calls=9
+CA849 STORAGE tic=3718 metric=11 total=1.426400 maximum=0.003200 calls=3546
+CA849 STORAGE tic=3735 metric=1 total=0.121700 maximum=0.003200 calls=3388
+CA849 STORAGE tic=3735 metric=4 total=0.001600 maximum=0.000800 calls=9
+CA849 STORAGE tic=3735 metric=5 total=0.405700 maximum=0.000700 calls=4387
+CA849 STORAGE tic=3735 metric=7 total=0.023900 maximum=0.000400 calls=129
+CA849 STORAGE tic=3735 metric=10 total=0.003700 maximum=0.001600 calls=9
+CA849 STORAGE tic=3735 metric=11 total=1.469200 maximum=0.001400 calls=3545
+CA849 STORAGE tic=3752 metric=1 total=0.112500 maximum=0.000100 calls=3352
+CA849 STORAGE tic=3752 metric=4 total=0.002100 maximum=0.001100 calls=9
+CA849 STORAGE tic=3752 metric=5 total=0.379500 maximum=0.000800 calls=4387
+CA849 STORAGE tic=3752 metric=7 total=0.026200 maximum=0.000400 calls=132
+CA849 STORAGE tic=3752 metric=10 total=0.004100 maximum=0.002100 calls=9
+CA849 STORAGE tic=3752 metric=11 total=1.438700 maximum=0.004200 calls=3545
+CA849 STORAGE tic=3769 metric=1 total=0.116300 maximum=0.000100 calls=3359
+CA849 STORAGE tic=3769 metric=4 total=0.001800 maximum=0.000800 calls=9
+CA849 STORAGE tic=3769 metric=5 total=0.420200 maximum=0.000700 calls=4393
+CA849 STORAGE tic=3769 metric=7 total=0.027400 maximum=0.000400 calls=141
+CA849 STORAGE tic=3769 metric=10 total=0.003900 maximum=0.001700 calls=9
+CA849 STORAGE tic=3769 metric=11 total=1.501100 maximum=0.003000 calls=3547
+CA849 STORAGE tic=3786 metric=1 total=0.117600 maximum=0.000100 calls=3351
+CA849 STORAGE tic=3786 metric=4 total=0.001800 maximum=0.000900 calls=9
+CA849 STORAGE tic=3786 metric=5 total=0.381800 maximum=0.001000 calls=4401
+CA849 STORAGE tic=3786 metric=7 total=0.024500 maximum=0.000400 calls=132
+CA849 STORAGE tic=3786 metric=10 total=0.004500 maximum=0.002200 calls=9
+CA849 STORAGE tic=3786 metric=11 total=1.501100 maximum=0.054400 calls=3545
+CA849 STORAGE tic=3803 metric=1 total=0.115700 maximum=0.000100 calls=3346
+CA849 STORAGE tic=3803 metric=4 total=0.001700 maximum=0.000700 calls=9
+CA849 STORAGE tic=3803 metric=5 total=0.369000 maximum=0.001000 calls=4381
+CA849 STORAGE tic=3803 metric=7 total=0.024300 maximum=0.000400 calls=126
+CA849 STORAGE tic=3803 metric=10 total=0.003800 maximum=0.001600 calls=9
+CA849 STORAGE tic=3803 metric=11 total=1.423100 maximum=0.001900 calls=3545
+CA849 STORAGE tic=3820 metric=1 total=0.116900 maximum=0.000100 calls=3391
+CA849 STORAGE tic=3820 metric=4 total=0.001700 maximum=0.000800 calls=9
+CA849 STORAGE tic=3820 metric=5 total=0.357100 maximum=0.000600 calls=4408
+CA849 STORAGE tic=3820 metric=7 total=0.025600 maximum=0.000400 calls=132
+CA849 STORAGE tic=3820 metric=10 total=0.003800 maximum=0.001500 calls=9
+CA849 STORAGE tic=3820 metric=11 total=1.420500 maximum=0.003100 calls=3546
+CA849 STORAGE tic=3837 metric=1 total=0.114500 maximum=0.000100 calls=3399
+CA849 STORAGE tic=3837 metric=4 total=0.002000 maximum=0.000800 calls=9
+CA849 STORAGE tic=3837 metric=5 total=0.356000 maximum=0.001500 calls=4383
+CA849 STORAGE tic=3837 metric=7 total=0.025900 maximum=0.000300 calls=138
+CA849 STORAGE tic=3837 metric=10 total=0.003800 maximum=0.001500 calls=9
+CA849 STORAGE tic=3837 metric=11 total=1.470100 maximum=0.050500 calls=3546
+CA849 STORAGE tic=3854 metric=1 total=0.124500 maximum=0.000200 calls=3349
+CA849 STORAGE tic=3854 metric=4 total=0.002000 maximum=0.000700 calls=9
+CA849 STORAGE tic=3854 metric=5 total=0.369400 maximum=0.003300 calls=4402
+CA849 STORAGE tic=3854 metric=7 total=0.025700 maximum=0.000400 calls=129
+CA849 STORAGE tic=3854 metric=10 total=0.003800 maximum=0.001400 calls=9
+CA849 STORAGE tic=3854 metric=11 total=1.420100 maximum=0.004000 calls=3546
+CA849 STORAGE tic=3871 metric=1 total=0.115700 maximum=0.000100 calls=3348
+CA849 STORAGE tic=3871 metric=4 total=0.002100 maximum=0.001000 calls=9
+CA849 STORAGE tic=3871 metric=5 total=0.462300 maximum=0.002900 calls=4385
+CA849 STORAGE tic=3871 metric=7 total=0.023300 maximum=0.000400 calls=129
+CA849 STORAGE tic=3871 metric=10 total=0.004200 maximum=0.001800 calls=9
+CA849 STORAGE tic=3871 metric=11 total=1.537800 maximum=0.003300 calls=3546
+CA849 STORAGE tic=3888 metric=1 total=0.115400 maximum=0.000100 calls=3356
+CA849 STORAGE tic=3888 metric=4 total=0.001600 maximum=0.000700 calls=9
+CA849 STORAGE tic=3888 metric=5 total=0.366600 maximum=0.000800 calls=4383
+CA849 STORAGE tic=3888 metric=7 total=0.027900 maximum=0.000500 calls=135
+CA849 STORAGE tic=3888 metric=10 total=0.003800 maximum=0.001500 calls=9
+CA849 STORAGE tic=3888 metric=11 total=1.427000 maximum=0.003400 calls=3546
+CA849 STORAGE tic=3905 metric=1 total=0.117400 maximum=0.000100 calls=3364
+CA849 STORAGE tic=3905 metric=4 total=0.001600 maximum=0.000700 calls=9
+CA849 STORAGE tic=3905 metric=5 total=0.382800 maximum=0.000800 calls=4390
+CA849 STORAGE tic=3905 metric=7 total=0.026700 maximum=0.000300 calls=144
+CA849 STORAGE tic=3905 metric=10 total=0.003800 maximum=0.001700 calls=9
+CA849 STORAGE tic=3905 metric=11 total=1.446900 maximum=0.001800 calls=3546
+CA849 STORAGE tic=3922 metric=1 total=0.116500 maximum=0.000100 calls=3395
+CA849 STORAGE tic=3922 metric=4 total=0.002000 maximum=0.000900 calls=9
+CA849 STORAGE tic=3922 metric=5 total=0.401300 maximum=0.000800 calls=4383
+CA849 STORAGE tic=3922 metric=7 total=0.025500 maximum=0.000400 calls=135
+CA849 STORAGE tic=3922 metric=10 total=0.003900 maximum=0.001600 calls=9
+CA849 STORAGE tic=3922 metric=11 total=1.584100 maximum=0.003700 calls=3545
+CA849 STORAGE tic=3939 metric=1 total=0.114900 maximum=0.000100 calls=3391
+CA849 STORAGE tic=3939 metric=4 total=0.001500 maximum=0.000600 calls=9
+CA849 STORAGE tic=3939 metric=5 total=0.354300 maximum=0.002300 calls=4397
+CA849 STORAGE tic=3939 metric=7 total=0.025100 maximum=0.000400 calls=132
+CA849 STORAGE tic=3939 metric=10 total=0.003700 maximum=0.001400 calls=9
+CA849 STORAGE tic=3939 metric=11 total=1.405600 maximum=0.002700 calls=3545
+CA849 STORAGE tic=3956 metric=1 total=0.115900 maximum=0.000100 calls=3362
+CA849 STORAGE tic=3956 metric=4 total=0.001500 maximum=0.000700 calls=9
+CA849 STORAGE tic=3956 metric=5 total=0.445200 maximum=0.053900 calls=4389
+CA849 STORAGE tic=3956 metric=7 total=0.027700 maximum=0.000400 calls=141
+CA849 STORAGE tic=3956 metric=10 total=0.003800 maximum=0.001600 calls=9
+CA849 STORAGE tic=3956 metric=11 total=1.512000 maximum=0.054500 calls=3543
+CA849 STORAGE tic=3973 metric=1 total=0.125000 maximum=0.006900 calls=3365
+CA849 STORAGE tic=3973 metric=4 total=0.001800 maximum=0.000900 calls=9
+CA849 STORAGE tic=3973 metric=5 total=0.441400 maximum=0.001100 calls=4385
+CA849 STORAGE tic=3973 metric=7 total=0.027800 maximum=0.000400 calls=144
+CA849 STORAGE tic=3973 metric=10 total=0.003900 maximum=0.001800 calls=9
+CA849 STORAGE tic=3973 metric=11 total=1.511600 maximum=0.003700 calls=3543
+CA849 STORAGE tic=3990 metric=1 total=0.114300 maximum=0.000100 calls=3356
+CA849 STORAGE tic=3990 metric=4 total=0.001700 maximum=0.000700 calls=9
+CA849 STORAGE tic=3990 metric=5 total=0.356400 maximum=0.000800 calls=4382
+CA849 STORAGE tic=3990 metric=7 total=0.024500 maximum=0.000300 calls=135
+CA849 STORAGE tic=3990 metric=10 total=0.003700 maximum=0.001600 calls=9
+CA849 STORAGE tic=3990 metric=11 total=1.419200 maximum=0.003000 calls=3542
+CA849 STORAGE tic=4007 metric=1 total=0.113600 maximum=0.000400 calls=3344
+CA849 STORAGE tic=4007 metric=4 total=0.001700 maximum=0.000800 calls=9
+CA849 STORAGE tic=4007 metric=5 total=0.389000 maximum=0.000800 calls=4383
+CA849 STORAGE tic=4007 metric=7 total=0.024400 maximum=0.000900 calls=126
+CA849 STORAGE tic=4007 metric=10 total=0.004100 maximum=0.001700 calls=9
+CA849 STORAGE tic=4007 metric=11 total=1.504700 maximum=0.053100 calls=3544
+CA849 STORAGE tic=4024 metric=1 total=0.124300 maximum=0.000100 calls=3403
+CA849 STORAGE tic=4024 metric=4 total=0.001600 maximum=0.000600 calls=9
+CA849 STORAGE tic=4024 metric=5 total=0.395700 maximum=0.000700 calls=4378
+CA849 STORAGE tic=4024 metric=7 total=0.028400 maximum=0.000400 calls=141
+CA849 STORAGE tic=4024 metric=10 total=0.003700 maximum=0.001400 calls=9
+CA849 STORAGE tic=4024 metric=11 total=1.519200 maximum=0.044400 calls=3541
+CA849 STORAGE tic=4041 metric=1 total=0.119300 maximum=0.000100 calls=3408
+CA849 STORAGE tic=4041 metric=4 total=0.001800 maximum=0.000900 calls=9
+CA849 STORAGE tic=4041 metric=5 total=0.383200 maximum=0.000800 calls=4389
+CA849 STORAGE tic=4041 metric=7 total=0.027400 maximum=0.000400 calls=144
+CA849 STORAGE tic=4041 metric=10 total=0.003700 maximum=0.001700 calls=9
+CA849 STORAGE tic=4041 metric=11 total=1.438900 maximum=0.001600 calls=3544
+CA849 STORAGE tic=4058 metric=1 total=0.113400 maximum=0.000200 calls=3352
+CA849 STORAGE tic=4058 metric=4 total=0.001600 maximum=0.000700 calls=9
+CA849 STORAGE tic=4058 metric=5 total=0.368200 maximum=0.000700 calls=4384
+CA849 STORAGE tic=4058 metric=7 total=0.026100 maximum=0.000400 calls=135
+CA849 STORAGE tic=4058 metric=10 total=0.003700 maximum=0.001400 calls=9
+CA849 STORAGE tic=4058 metric=11 total=1.427300 maximum=0.003100 calls=3541
+CA849 STORAGE tic=4075 metric=1 total=0.109800 maximum=0.000100 calls=3343
+CA849 STORAGE tic=4075 metric=4 total=0.001700 maximum=0.000800 calls=9
+CA849 STORAGE tic=4075 metric=5 total=0.397800 maximum=0.000800 calls=4381
+CA849 STORAGE tic=4075 metric=7 total=0.024600 maximum=0.000400 calls=126
+CA849 STORAGE tic=4075 metric=10 total=0.003500 maximum=0.001500 calls=9
+CA849 STORAGE tic=4075 metric=11 total=1.464300 maximum=0.003600 calls=3543
+CA849 STORAGE tic=4092 metric=1 total=0.112400 maximum=0.000200 calls=3363
+CA849 STORAGE tic=4092 metric=4 total=0.002000 maximum=0.001000 calls=9
+CA849 STORAGE tic=4092 metric=5 total=0.340600 maximum=0.000700 calls=4382
+CA849 STORAGE tic=4092 metric=7 total=0.028300 maximum=0.000400 calls=147
+CA849 STORAGE tic=4092 metric=10 total=0.004100 maximum=0.001900 calls=9
+CA849 STORAGE tic=4092 metric=11 total=1.394600 maximum=0.001300 calls=3541
+CA849 STORAGE tic=4109 metric=1 total=0.122000 maximum=0.000100 calls=3356
+CA849 STORAGE tic=4109 metric=4 total=0.001500 maximum=0.000600 calls=9
+CA849 STORAGE tic=4109 metric=5 total=0.367100 maximum=0.000700 calls=4390
+CA849 STORAGE tic=4109 metric=7 total=0.027300 maximum=0.000400 calls=141
+CA849 STORAGE tic=4109 metric=10 total=0.003700 maximum=0.001400 calls=9
+CA849 STORAGE tic=4109 metric=11 total=1.462500 maximum=0.013700 calls=3545
+CA849 STORAGE tic=4126 metric=1 total=0.121300 maximum=0.000200 calls=3392
+CA849 STORAGE tic=4126 metric=4 total=0.001900 maximum=0.000700 calls=9
+CA849 STORAGE tic=4126 metric=5 total=0.402300 maximum=0.015400 calls=4425
+CA849 STORAGE tic=4126 metric=7 total=0.026700 maximum=0.000500 calls=132
+CA849 STORAGE tic=4126 metric=10 total=0.003900 maximum=0.001600 calls=9
+CA849 STORAGE tic=4126 metric=11 total=1.550100 maximum=0.015900 calls=3543
+CA849 STORAGE tic=4143 metric=1 total=0.120100 maximum=0.000100 calls=3388
+CA849 STORAGE tic=4143 metric=4 total=0.001700 maximum=0.000700 calls=9
+CA849 STORAGE tic=4143 metric=5 total=0.395600 maximum=0.001000 calls=4391
+CA849 STORAGE tic=4143 metric=7 total=0.025800 maximum=0.000600 calls=129
+CA849 STORAGE tic=4143 metric=10 total=0.003900 maximum=0.001800 calls=9
+CA849 STORAGE tic=4143 metric=11 total=1.494600 maximum=0.003300 calls=3547
+CA849 STORAGE tic=4160 metric=1 total=0.111300 maximum=0.000100 calls=3364
+CA849 STORAGE tic=4160 metric=4 total=0.001700 maximum=0.000700 calls=9
+CA849 STORAGE tic=4160 metric=5 total=0.393400 maximum=0.000900 calls=4391
+CA849 STORAGE tic=4160 metric=7 total=0.029000 maximum=0.000400 calls=147
+CA849 STORAGE tic=4160 metric=10 total=0.003800 maximum=0.001600 calls=9
+CA849 STORAGE tic=4160 metric=11 total=1.469700 maximum=0.003000 calls=3544
+CA849 STORAGE tic=4177 metric=1 total=0.119000 maximum=0.000200 calls=3356
+CA849 STORAGE tic=4177 metric=4 total=0.001800 maximum=0.000900 calls=9
+CA849 STORAGE tic=4177 metric=5 total=0.381300 maximum=0.000700 calls=4395
+CA849 STORAGE tic=4177 metric=7 total=0.026100 maximum=0.000400 calls=141
+CA849 STORAGE tic=4177 metric=10 total=0.003800 maximum=0.001700 calls=9
+CA849 STORAGE tic=4177 metric=11 total=1.433200 maximum=0.001800 calls=3545
+CA849 STORAGE tic=4194 metric=1 total=0.137100 maximum=0.013900 calls=3348
+CA849 STORAGE tic=4194 metric=4 total=0.001600 maximum=0.000700 calls=9
+CA849 STORAGE tic=4194 metric=5 total=0.374300 maximum=0.000800 calls=4387
+CA849 STORAGE tic=4194 metric=7 total=0.027300 maximum=0.000400 calls=132
+CA849 STORAGE tic=4194 metric=10 total=0.003500 maximum=0.001500 calls=9
+CA849 STORAGE tic=4194 metric=11 total=1.429400 maximum=0.003900 calls=3545
+CA849 STORAGE tic=4211 metric=1 total=0.118800 maximum=0.000400 calls=3350
+CA849 STORAGE tic=4211 metric=4 total=0.001800 maximum=0.000800 calls=9
+CA849 STORAGE tic=4211 metric=5 total=0.386300 maximum=0.000700 calls=4396
+CA849 STORAGE tic=4211 metric=7 total=0.024600 maximum=0.000400 calls=132
+CA849 STORAGE tic=4211 metric=10 total=0.004100 maximum=0.001800 calls=9
+CA849 STORAGE tic=4211 metric=11 total=1.453200 maximum=0.003600 calls=3545
+CA849 STORAGE tic=4228 metric=1 total=0.116100 maximum=0.000100 calls=3366
+CA849 STORAGE tic=4228 metric=4 total=0.001700 maximum=0.000700 calls=9
+CA849 STORAGE tic=4228 metric=5 total=0.385700 maximum=0.002700 calls=4385
+CA849 STORAGE tic=4228 metric=7 total=0.028100 maximum=0.000400 calls=147
+CA849 STORAGE tic=4228 metric=10 total=0.003700 maximum=0.001600 calls=9
+CA849 STORAGE tic=4228 metric=11 total=1.449900 maximum=0.003300 calls=3546
+CA849 STORAGE tic=4245 metric=1 total=0.120900 maximum=0.000100 calls=3402
+CA849 STORAGE tic=4245 metric=4 total=0.001700 maximum=0.000800 calls=9
+CA849 STORAGE tic=4245 metric=5 total=0.418500 maximum=0.001800 calls=4392
+CA849 STORAGE tic=4245 metric=7 total=0.028500 maximum=0.000400 calls=141
+CA849 STORAGE tic=4245 metric=10 total=0.003800 maximum=0.001600 calls=9
+CA849 STORAGE tic=4245 metric=11 total=1.518000 maximum=0.003400 calls=3545
+CA849 STORAGE tic=4262 metric=1 total=0.113500 maximum=0.000200 calls=3391
+CA849 STORAGE tic=4262 metric=4 total=0.001500 maximum=0.000600 calls=9
+CA849 STORAGE tic=4262 metric=5 total=0.341900 maximum=0.000800 calls=4388
+CA849 STORAGE tic=4262 metric=7 total=0.026900 maximum=0.000400 calls=132
+CA849 STORAGE tic=4262 metric=10 total=0.003400 maximum=0.001400 calls=9
+CA849 STORAGE tic=4262 metric=11 total=1.407200 maximum=0.003600 calls=3546
+CA849 STORAGE tic=4279 metric=1 total=0.122200 maximum=0.003100 calls=3356
+CA849 STORAGE tic=4279 metric=4 total=0.001700 maximum=0.000700 calls=9
+CA849 STORAGE tic=4279 metric=5 total=0.360000 maximum=0.003000 calls=4394
+CA849 STORAGE tic=4279 metric=7 total=0.026000 maximum=0.000300 calls=138
+CA849 STORAGE tic=4279 metric=10 total=0.004000 maximum=0.001800 calls=9
+CA849 STORAGE tic=4279 metric=11 total=1.420400 maximum=0.003400 calls=3547
+CA849 STORAGE tic=4296 metric=1 total=0.118800 maximum=0.000100 calls=3361
+CA849 STORAGE tic=4296 metric=4 total=0.001700 maximum=0.000700 calls=9
+CA849 STORAGE tic=4296 metric=5 total=0.401800 maximum=0.002600 calls=4394
+CA849 STORAGE tic=4296 metric=7 total=0.028600 maximum=0.000400 calls=144
+CA849 STORAGE tic=4296 metric=10 total=0.003600 maximum=0.001500 calls=9
+CA849 STORAGE tic=4296 metric=11 total=1.517800 maximum=0.003000 calls=3545
+CA849 TYPE name=CaelumAnvilStation get=15 value=5
+CA849 TYPE name=CaelumEssenceAltarStation get=30 value=10
+CA849 TYPE name=CaelumShopSign get=150 value=0
+CA849 TYPE name=CaelumVehiclePart get=29060 value=24036
+CA849 TYPE name=CaelumCityMerchant get=228 value=76
+CA849 TYPE name=CaelumGateBlocker get=63010 value=49754
+CA849 TYPE name=CaelumCannonBlock get=2421 value=609
+CA849 TYPE name=CaelumRamBlock get=88096 value=73523
+CA849 TYPE name=CaelumRamHead get=1040 value=756
+CA849 TYPE name=CaelumFineToolsBenchStation get=42 value=14
+CA849 TYPE name=CaelumSawmillStation get=33 value=11
+CA849 TYPE name=CaelumSourceCypellaFlower get=9 value=3
+CA849 TYPE name=CaelumForgeStation get=63 value=21
+CA849 TYPE name=CaelumWorkbenchStation get=81 value=27
+CA849 TYPE name=CaelumRangedWorkshopStation get=15 value=5
+CA849 TYPE name=CaelumSourceMarcela get=18 value=6
+CA849 TYPE name=CaelumSewingMachineStation get=30 value=10
+CA849 TYPE name=CaelumArmorWorkshopStation get=15 value=5
+CA849 TYPE name=CaelumJewelerBenchStation get=24 value=8
+CA849 TYPE name=CaelumPortCompletion get=3 value=1
+CA849 TYPE name=CaelumTreePlainsTalaYoung get=3 value=1
+CA849 TYPE name=CaelumElementalImpactVisual get=2 value=0
+CA849 TYPE name=CaelumSourceHoney get=3 value=1
+CA849 TYPE name=CaelumRentalAgent get=3 value=1
+CA849 TYPE name=CaelumActorSimpleElementalProjectile get=1 value=0
+CA849 STORAGE_COMPLETE mismatches=0
+CA435SYNC OK peer=0 map=MAP03 tic=4375
+CA510 FRAME 482.327600
+CA510 FRAME 443.943200
+CA510 FRAME 475.089600
+CA510 FRAME 536.812700
+CA510 FRAME 514.236400
+CA510 FRAME 551.342900
+CA510 FRAME 541.302600
+CA510 FRAME 523.689200
+CA510 FRAME 538.974100
+CA510 FRAME 497.946600
+CA510 FRAME 484.933100
+CA510 FRAME 469.404400
+CA510 FRAME 481.473000
+CA510 FRAME 458.403300
+CA510 FRAME 467.447000
+CA510 FRAME 492.459100
+CA510 FRAME 563.407900
+CA510 FRAME 532.343800
+CA510 FRAME 524.682900
+CA510 FRAME 529.758600
+CA510 FRAME 525.753500
+CA510 FRAME 525.373700
+CA510 FRAME 484.291900
+CA510 FRAME 465.171800
+CA510 FRAME 457.594600
+CA510 FRAME 451.335400
+CA510 FRAME 478.109500
+CA510 FRAME 499.708300
+CA510 FRAME 545.247600
+CA510 FRAME 513.902600
+CA510 FRAME 535.723800
+CA510 FRAME 536.180900
+CA510 FRAME 514.508500
+CA510 FRAME 535.666200
+CA510 FRAME 503.748700
+CA510 FRAME 494.186700
+CA510 FRAMES_END count=36
+Captured scene.png

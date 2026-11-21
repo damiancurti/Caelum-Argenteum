@@ -1,0 +1,62 @@
+{
+  "explicitly_viewed": [
+    {
+      "path": "assets/validation_v5_17_110/evidence/scenes/siege-control01/peer0/scene.png",
+      "sha256": "032d9c1a0e7c2d2df338c660cf9d1f919ef85530293c11ee159f359836587e4b",
+      "pixels": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "assets/validation_v5_17_110/evidence/scenes/siege-final01/peer0/scene.png",
+      "sha256": "23982d4c17f65825c5a093f62e5a1574e561b1881eeabf96caf14eb3fd004c52",
+      "pixels": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "assets/validation_v5_17_110/evidence/scenes/mansion-final01/peer0/scene.png",
+      "sha256": "64a0305de8d66a7ebb7f9d370d9be1512ae97728a4a5eb60352e787a088efa49",
+      "pixels": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "assets/validation_v5_17_110/evidence/scenes/sewers-final01/peer0/scene.png",
+      "sha256": "a9badd0e0da96b93b1752f480a6ec9d35934b54c7179f030a56e2b67292b0097",
+      "pixels": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "assets/validation_v5_17_110/evidence/scenes/city-final01/peer0/scene.png",
+      "sha256": "7d70b10c5b6118f7797edd85d76f6093e12269ae22e317f01ab3847bfdbd9b90",
+      "pixels": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "assets/validation_v5_17_110/evidence/scenes/ground-final01/peer0/scene.png",
+      "sha256": "1e8b1aa9f446d35c48e0b4e06f4637d3ebcfe7c4e3f9cfc1e896f5802253f90b",
+      "pixels": [
+        1280,
+        720
+      ]
+    }
+  ],
+  "count": 6,
+  "requested_resolution": [
+    1280,
+    720
+  ],
+  "actual_resolution": [
+    1280,
+    720
+  ],
+  "observations": "Both siege views retain the same gateway/ram framing. Mansion opening dialogue is visible and preserved. Sewer entrance, city transport frontage and downward paving view render with the retained assets. Diagnostic console notifications remain in captures. No visual or route acceptance is inferred."
+}

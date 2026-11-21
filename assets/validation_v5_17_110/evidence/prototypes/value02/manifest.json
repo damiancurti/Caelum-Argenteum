@@ -1,0 +1,57 @@
+{
+  "issue": 864,
+  "runtime_sha256": "8fcef709b7615d6dd6f808f1de6e46a37718b97b0d35ecf1d6568eb66de7a574",
+  "original_sha256": "184e404f682be717575b3f223161fd7052afe25e75262093450b9ede20866b78",
+  "candidate_sha256": "d279735d92f533d3e5d7bbbf0c0e8b8a08bdfe44b11c10bfed0c0572a70a990a",
+  "overlay_sha256": "bf662b9f6a0d5b164edc00668dbfad01ef5e4f99a2d1f64dbd4be6f4c3908cde",
+  "inverse_exact": true,
+  "scope": "Only Value dispatch changes; the exclusive NPC branch uses the unchanged Get method. Original GetCarrier, settlement, revision test and concentration read remain exact. No fields, caches, data or saved schema changes.",
+  "ancestry": {
+    "CaelumGateBlocker": [
+      "CaelumGateBlocker",
+      "Actor"
+    ],
+    "CaelumVehiclePart": [
+      "CaelumVehiclePart",
+      "Actor"
+    ],
+    "Inventory": [
+      "Inventory"
+    ],
+    "CaelumPlayer": [
+      "CaelumPlayer",
+      "DoomPlayer"
+    ],
+    "CaelumCombatActor": [
+      "CaelumCombatActor",
+      "Actor"
+    ],
+    "CaelumStashChest": [
+      "CaelumStashChest",
+      "Actor"
+    ]
+  },
+  "proof": "Single inheritance excludes stack eligibility, remote chest synchronization, player illness, and the NPC branch of Get for both native-carrier families. NPC inheritance also excludes Inventory, CaelumPlayer and CaelumStashChest; its original Get still owns cache reconstruction. Skipped original paths contain only pure failed guards/casts. GetCarrier retains native attachment migration and individual record ownership; SettleNow still runs on every read.",
+  "class_sources": {
+    "CaelumGateBlocker": {
+      "path": "src/caelum/world/CaelumBreakableGate.zs",
+      "sha256": "dbe7f944252432c8e716f335590c9d40776a44472344ee8476c5fe875c1e85b9"
+    },
+    "CaelumVehiclePart": {
+      "path": "src/caelum/world/CaelumTravelVehicles.zs",
+      "sha256": "72af015f4a8fda14285515c4e36f113a412b37311ddbd21d4711620883d9cec2"
+    },
+    "CaelumPlayer": {
+      "path": "src/caelum/player/CaelumPlayer.zs",
+      "sha256": "b10adb96b46336088db6de628b3962d2886321cd14571ae4b52abf5aeb5143e8"
+    },
+    "CaelumCombatActor": {
+      "path": "src/caelum/actors/CaelumCombatActor.zs",
+      "sha256": "6cb9afd8c4c68311fe6dcf9c01b8e203d20ec493a4532e855bf5e008564bd181"
+    },
+    "CaelumStashChest": {
+      "path": "src/caelum/world/CaelumStashChest.zs",
+      "sha256": "0b73c323824da782e994090fa0e0e55acbae7d288d879e4a8637800ebec285b0"
+    }
+  }
+}
