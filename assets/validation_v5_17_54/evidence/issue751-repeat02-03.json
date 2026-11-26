@@ -1,0 +1,24 @@
+{
+  "byte_identical": true,
+  "files": [
+    "manifest.json",
+    "preview.pk3",
+    "editable\\earth.obj",
+    "editable\\elemental_essences.mtl",
+    "editable\\fire.obj",
+    "editable\\quintessence.obj",
+    "editable\\water.obj",
+    "editable\\wind.obj",
+    "caelum\\data\\inventory_elemental_essences.modeldef",
+    "models\\caelum\\inventory\\essences\\earth.md3",
+    "models\\caelum\\inventory\\essences\\earth.png",
+    "models\\caelum\\inventory\\essences\\fire.md3",
+    "models\\caelum\\inventory\\essences\\fire.png",
+    "models\\caelum\\inventory\\essences\\quintessence.md3",
+    "models\\caelum\\inventory\\essences\\quintessence.png",
+    "models\\caelum\\inventory\\essences\\water.md3",
+    "models\\caelum\\inventory\\essences\\water.png",
+    "models\\caelum\\inventory\\essences\\wind.md3",
+    "models\\caelum\\inventory\\essences\\wind.png"
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "schema_revision": 1,
+  "issue": 751,
+  "parent_issue": 647,
+  "status": "native_candidate_pending_author_review",
+  "variants": {
+    "fire": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "central_crystal": 53043.119999999995,
+        "central_crystal_core": 48411.02345975999,
+        "left_flame": 5275.851383781686,
+        "right_flame": 7265.329393486892,
+        "front_flame": 2563.449753294105
+      },
+      "closed_outward_components": 5,
+      "vertices": 889,
+      "triangles": 1584,
+      "surfaces": [
+        {
+          "material": "fire",
+          "vertices": 889,
+          "triangles": 1584
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -42.08959956007707,
+            -29.008074181539826,
+            0.0
+          ],
+          "max": [
+            43.84258688929417,
+            15.969040508927554,
+            109.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        16,
+        11,
+        111,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 0.9980650318079721,
+      "source_to_native": {
+        "factor": 0.9980650318079721,
+        "floor": 0.788679568756173
+      }
+    },
+    "water": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "central_crystal": 53043.119999999995,
+        "central_crystal_core": 48411.02345975999,
+        "left_wave": 6861.633781081481,
+        "right_wave": 9501.990944387553,
+        "front_surge": 5145.503669618468
+      },
+      "closed_outward_components": 5,
+      "vertices": 889,
+      "triangles": 1584,
+      "surfaces": [
+        {
+          "material": "water",
+          "vertices": 889,
+          "triangles": 1584
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -49.249946762546585,
+            -32.22387556668914,
+            0.0
+          ],
+          "max": [
+            48.060757901746,
+            20.08962864895527,
+            110.00000000000001
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        9,
+        120,
+        119
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.0039064286422101,
+      "source_to_native": {
+        "factor": 1.0039064286422101,
+        "floor": 0.42803506221618903
+      }
+    },
+    "earth": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "central_crystal": 53043.119999999995,
+        "central_crystal_core": 48411.02345975999,
+        "left_root": 4744.83728900096,
+        "right_vine": 5502.595729648195,
+        "front_root": 4128.732850944085,
+        "left_leaf": 288.1376000000003,
+        "left_leaf_core": 262.97540780479875,
+        "right_leaf": 288.1375999999999,
+        "right_leaf_core": 262.975407804801
+      },
+      "closed_outward_components": 9,
+      "vertices": 992,
+      "triangles": 1656,
+      "surfaces": [
+        {
+          "material": "earth",
+          "vertices": 992,
+          "triangles": 1656
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -45.853825084535366,
+            -30.795921492131644,
+            0.0
+          ],
+          "max": [
+            44.28225304534394,
+            16.147105041386446,
+            111.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        15,
+        9,
+        113,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.0091940650866529,
+      "source_to_native": {
+        "factor": 1.0091940650866529,
+        "floor": 0.011243783454911949
+      }
+    },
+    "wind": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "central_crystal": 53043.119999999995,
+        "central_crystal_core": 48411.02345975999,
+        "left_whorl": 4485.530876860582,
+        "right_whorl": 5810.198868768594,
+        "front_whorl": 5475.547199180884,
+        "upper_whorl": 1157.6683445550111
+      },
+      "closed_outward_components": 6,
+      "vertices": 1034,
+      "triangles": 1848,
+      "surfaces": [
+        {
+          "material": "wind",
+          "vertices": 1034,
+          "triangles": 1848
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -49.579560005536216,
+            -33.47907488710025,
+            0.0
+          ],
+          "max": [
+            48.0859892262887,
+            18.331298788146903,
+            111.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        11,
+        9,
+        117,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.0249416622774843,
+      "source_to_native": {
+        "factor": 1.0249416622774843,
+        "floor": 1.7011532604196455
+      }
+    },
+    "quintessence": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "central_crystal": 53043.119999999995,
+        "central_crystal_core": 48411.02345975999,
+        "golden_orbit": 2150.394805631405,
+        "satellite_0": 564.5750000000003,
+        "satellite_0_core": 515.2723589749994,
+        "satellite_1": 739.0799999999999,
+        "satellite_1_core": 674.5383608399991,
+        "satellite_2": 667.2249999999997,
+        "satellite_2_core": 608.9582424250008,
+        "satellite_3": 800.6700000000002,
+        "satellite_3_core": 730.74989091,
+        "satellite_4": 718.5500000000004,
+        "satellite_4_core": 655.8011841499997,
+        "satellite_5": 862.2600000000002,
+        "satellite_5_core": 786.9614209799995
+      },
+      "closed_outward_components": 15,
+      "vertices": 968,
+      "triangles": 1640,
+      "surfaces": [
+        {
+          "material": "quintessence",
+          "vertices": 968,
+          "triangles": 1640
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -51.49999999999999,
+            -28.2827868852459,
+            0.0
+          ],
+          "max": [
+            51.49999999999999,
+            28.2827868852459,
+            110.80942622950819
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        13,
+        8,
+        116,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.055327868852459,
+      "source_to_native": {
+        "factor": 1.055327868852459,
+        "floor": 5
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "85bef91e761b57766b1996463a92083c48707419604128061b0414840e02cac0",
+    "PROVENANCE.json": "55d56d550afbbdd3adc5a919f56d4ce83701c0eff5f235231649bd5425ee3268"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/materials/ca_material_fire_essence.png": "1214dd4981b3b64c68c6f544eb4a7a49d0ff848a0494b24cf135a1c9fe90f497",
+    "src/graphics/caelum/icons/materials/ca_material_water_essence.png": "d84544e63a0cd382f830f1d3a1c9ae5245860f40a22ea3b9bbfc8db3c73453ab",
+    "src/graphics/caelum/icons/materials/ca_material_earth_essence.png": "ac52a4ee2797f831542797e2fcfa9c76a3a9aed8522e9c341d342b5fedd4ec0a",
+    "src/graphics/caelum/icons/materials/ca_material_wind_essence.png": "1101f4a264224ba2c0d5c695c901026bae02cba2eb584dff010583e0cdf5b036",
+    "src/graphics/caelum/icons/materials/ca_material_quintessence.png": "98b59cad87ddeba0859e583b83f426430da0f6dabf4baab1c647f40f016675a8",
+    "assets/manifests/sprites_v4.json": "1eb337e47bda4d1fafd976001512da49f43c891ce80360580b0c7a0a90238e48",
+    "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04"
+  },
+  "generator_sha256": {
+    "generate_inventory_elemental_essences_models.py": "fac482805df37a17f64690cd94a40bf4eca6daaebaa467d09e2b917e792a2cdd",
+    "generate_inventory_jewelry_models.py": "2d2942e5c68ae1f5311377cbc85ec153347e4e569acf7468d56bee3c94620c3a",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7"
+  },
+  "sha256": {
+    "models/caelum/inventory/essences/fire.png": "1214dd4981b3b64c68c6f544eb4a7a49d0ff848a0494b24cf135a1c9fe90f497",
+    "models/caelum/inventory/essences/water.png": "d84544e63a0cd382f830f1d3a1c9ae5245860f40a22ea3b9bbfc8db3c73453ab",
+    "models/caelum/inventory/essences/earth.png": "ac52a4ee2797f831542797e2fcfa9c76a3a9aed8522e9c341d342b5fedd4ec0a",
+    "models/caelum/inventory/essences/wind.png": "1101f4a264224ba2c0d5c695c901026bae02cba2eb584dff010583e0cdf5b036",
+    "models/caelum/inventory/essences/quintessence.png": "98b59cad87ddeba0859e583b83f426430da0f6dabf4baab1c647f40f016675a8",
+    "models/caelum/inventory/essences/fire.md3": "94022643f7d78ab03a8a295d376e4256bae564624281354c93f9ce67e39b6dc7",
+    "editable/fire.obj": "44026c20f5f98c9beadd550b6bb3d57c8b6c32158c38560de6d0176f35b16423",
+    "models/caelum/inventory/essences/water.md3": "c561c48bba153d133115001c098e889d65bc490ee7b5be3cf4502c296c59d6a6",
+    "editable/water.obj": "e2ce067d9b92633d9ebbe8a3bb8b2a6538e3abfd3168197e6a2d128b5b3bab1c",
+    "models/caelum/inventory/essences/earth.md3": "47f5005f15ed006f85f198af5ff80ca891bdf25ae503f861f3143501d7ffc8db",
+    "editable/earth.obj": "2846f8fbfd74b469beb0e7bae934288d59f84dac52b94813d3220fd2624d7560",
+    "models/caelum/inventory/essences/wind.md3": "42215fec28d0f49c6750b07fa1e938a288e4f9a9dcad8d982c86e387ae9c4604",
+    "editable/wind.obj": "de21bda0a297ee656de919983e46aff76db55aa3f704612fb9b12a9c050e3d80",
+    "models/caelum/inventory/essences/quintessence.md3": "6a5b41fe1f47f968fb224b077a88e8ff02356ba3530537a72949a6367198a5a7",
+    "editable/quintessence.obj": "cbd4a92192d5ae373762f8e0bd5b52d23f6151ded0900be39e4d03f086049584",
+    "editable/elemental_essences.mtl": "63788a4f01e84e9e0be3473a1ce09a16f9a4f37a428c894231ee3c0bd96130e3",
+    "caelum/data/inventory_elemental_essences.modeldef": "216a25d4c6ffdb3fcbfa96544f5f6fb2e9e882879cee2ba5e1fb7babe879025b"
+  }
+}

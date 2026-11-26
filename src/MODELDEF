@@ -4794,3 +4794,5 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_kitchen_ingredients.modeldef"
 
 #include "caelum/data/inventory_cartridge_kits.modeldef"
+
+#include "caelum/data/inventory_elemental_essences.modeldef"

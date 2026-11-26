@@ -999,3 +999,13 @@ assets/validation_v5_17_42/evidence/** -text -diff
 
 # #749 isolated hide assertion-count evidence.
 /assets/validation_v5_17_53/evidence/** -text -diff
+
+# #751 native elemental crafting essence sources and evidence.
+/assets/generators/*inventory_elemental_essences_models.py text eol=lf
+/assets/source/art/inventory_models_647/elemental_essences/** text eol=lf
+/assets/source/art/inventory_models_647/elemental_essences/**/*.png binary
+/assets/validation_v5_17_54/*.py text eol=lf
+/assets/validation_v5_17_54/*.zs text eol=lf
+/assets/validation_v5_17_54/evidence/** -text -diff
+/src/models/caelum/inventory/essences/** -text -diff
+/src/caelum/data/inventory_elemental_essences.modeldef text eol=lf

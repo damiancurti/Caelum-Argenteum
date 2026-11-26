@@ -1,6 +1,54 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.53** - 2026-11-14.
+Documentation version: **5.17.54** - 2026-11-15.
+
+## 5.17.54 - Native elemental crafting essence drops (#751, parent #647)
+
+Fire, water, earth, wind and quintessence materials 20-24 gain exact M020-M024 A
+native bindings. All fifteen type/tier cases keep their original icons, scale,
+collision, quantities, weights, provenance, crafting/enchantment rules and saves.
+These crafting materials are separate from the 78 Tarot essences. Original
+128px PNGs are copied byte-for-byte to short shader aliases; no image generation
+or raster editing occurred. sprites_v4.json retains their original provenance.
+
+The five models contain 4,772 vertices and 8,312 triangles in
+40 independently closed components, including a real toroidal orbit. Closed
+edges, winding, volume, genus, quantized native/editable triangles, floor origin,
+source hashes and original icon envelopes pass. Nineteen outputs repeat exactly.
+Editable OBJ/MTL and portable original textures live in
+assets/source/art/inventory_models_647/elemental_essences. Regenerate with python
+assets/generators/generate_inventory_elemental_essences_models.py
+--output build/elemental-essences --install.
+
+Native visual01 exposed flat single-color surrounds and a white orbit. Mapping
+opaque regions of the same icons corrected those materials. Visual02 prompted
+thinner curved earth leaves joined into the root/vine depth. An initial copied
+navigation expectation incorrectly named item 4 instead of item 1; the expected
+index was corrected without removing any of the seven controls. Earlier sources,
+logs and manifests remain as evidence. Final visual03 passes 413 checks; all
+25 detail/underside views and the floor overview were inspected. Art remains a
+candidate: projected low-resolution facets, repeated front/rear paint, saturated
+tubular surrounds, pink/gold orbit and small satellites need author review.
+The surrounds are static mesh decoration, with no new light, particle or attack.
+
+The installed package passes 2,172 native checks: 406 baseline, 458 old-save
+adoption, 406 fresh, 451 reload and 451 rollback. Native pickup/toss, split/merge,
+contamination/provenance, saved identity and prepared Box/quest guards pass;
+these API checks do not establish ordinary menus or actual crafting acceptance.
+One sequential 700-tic five-object sprite/model pair records
+700.88/669.60 queue presents/s,
+p95 3.3748/3.9137 ms and
+p99 4.7531/4.8327 ms.
+Both scenes were inspected. Windows 11, Ryzen 9 5950X, RTX 3070 Ti, GZDoom 4.14.2,
+Vulkan 1280x720, uncapped/vsync off, background unpaused/audio 5%. Queue-only
+timing and unequal projected footprints do not establish GPU/display timing,
+repeatability or campaign/crowd performance. All 18,485 package entries match
+src; only five models, five unchanged-icon aliases, their definition, MODELDEF
+and two release diagnostic strings differ from #749.
+
+Evidence: assets/validation_v5_17_54/evidence/SUMMARY.json.
+CA751-ELEMENTAL-DROPS-01 retains visual and ordinary inventory/crafting review.
+Other inventory, characters, modular equipment and V5.16 campaign work remain.
 
 ## 5.17.53 - Restore hide assertion expectations (#749)
 

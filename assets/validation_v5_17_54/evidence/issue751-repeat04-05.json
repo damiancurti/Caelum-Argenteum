@@ -1,0 +1,25 @@
+{
+  "outputs": 19,
+  "byte_identical": true,
+  "sha256": {
+    "caelum/data/inventory_elemental_essences.modeldef": "216a25d4c6ffdb3fcbfa96544f5f6fb2e9e882879cee2ba5e1fb7babe879025b",
+    "editable/earth.obj": "2846f8fbfd74b469beb0e7bae934288d59f84dac52b94813d3220fd2624d7560",
+    "editable/elemental_essences.mtl": "63788a4f01e84e9e0be3473a1ce09a16f9a4f37a428c894231ee3c0bd96130e3",
+    "editable/fire.obj": "44026c20f5f98c9beadd550b6bb3d57c8b6c32158c38560de6d0176f35b16423",
+    "editable/quintessence.obj": "cbd4a92192d5ae373762f8e0bd5b52d23f6151ded0900be39e4d03f086049584",
+    "editable/water.obj": "e2ce067d9b92633d9ebbe8a3bb8b2a6538e3abfd3168197e6a2d128b5b3bab1c",
+    "editable/wind.obj": "de21bda0a297ee656de919983e46aff76db55aa3f704612fb9b12a9c050e3d80",
+    "manifest.json": "27024ae0a2b18060ca17513db6cfdb89d8f8bbe09704561726b2a25f260f8579",
+    "models/caelum/inventory/essences/earth.md3": "47f5005f15ed006f85f198af5ff80ca891bdf25ae503f861f3143501d7ffc8db",
+    "models/caelum/inventory/essences/earth.png": "ac52a4ee2797f831542797e2fcfa9c76a3a9aed8522e9c341d342b5fedd4ec0a",
+    "models/caelum/inventory/essences/fire.md3": "94022643f7d78ab03a8a295d376e4256bae564624281354c93f9ce67e39b6dc7",
+    "models/caelum/inventory/essences/fire.png": "1214dd4981b3b64c68c6f544eb4a7a49d0ff848a0494b24cf135a1c9fe90f497",
+    "models/caelum/inventory/essences/quintessence.md3": "6a5b41fe1f47f968fb224b077a88e8ff02356ba3530537a72949a6367198a5a7",
+    "models/caelum/inventory/essences/quintessence.png": "98b59cad87ddeba0859e583b83f426430da0f6dabf4baab1c647f40f016675a8",
+    "models/caelum/inventory/essences/water.md3": "c561c48bba153d133115001c098e889d65bc490ee7b5be3cf4502c296c59d6a6",
+    "models/caelum/inventory/essences/water.png": "d84544e63a0cd382f830f1d3a1c9ae5245860f40a22ea3b9bbfc8db3c73453ab",
+    "models/caelum/inventory/essences/wind.md3": "42215fec28d0f49c6750b07fa1e938a288e4f9a9dcad8d982c86e387ae9c4604",
+    "models/caelum/inventory/essences/wind.png": "1101f4a264224ba2c0d5c695c901026bae02cba2eb584dff010583e0cdf5b036",
+    "preview.pk3": "fd8b284c8cf155265d308c01573a2f9ef36636c41f6cb991347c32abb834a157"
+  }
+}

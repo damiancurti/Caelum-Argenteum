@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.53** - 2026-11-14.
+Documentation version: **5.17.54** - 2026-11-15.
+
+## 5.17.54 - Native elemental crafting essences (#751, 2026-11-15)
+
+Added five native models using byte-exact owned icon textures. Native review
+prompted textured elemental curves, the colored orbit and thinner joined earth
+leaves. Corrected an initial copied navigation expectation while retaining all
+seven controls. Forty closed components, nineteen repeated outputs, 2,172
+installed continuity checks and 413 final visual/control checks pass. ASSETS
+records qualified presentation measurements and remaining art limits.
+Evidence: assets/validation_v5_17_54/evidence/SUMMARY.json.
+CA751-ELEMENTAL-DROPS-01 originates here and remains pending. No author test
+was accepted or removed. Broader 3D and V5.16 campaign work continues.
 
 ## 5.17.53 - Restore hide assertion counts (#749, 2026-11-14)
 
