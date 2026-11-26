@@ -1,0 +1,13 @@
+{
+  "issue": 465,
+  "upstream": "DejaVu fonts",
+  "source_url": "https://github.com/matplotlib/matplotlib/tree/v3.10.7/lib/matplotlib/mpl-data/fonts/ttf",
+  "license": "src/licenses/DejaVu-copyright.txt",
+  "font_inputs": {
+    "DejaVuSansMono-Bold.ttf": "baada9a5172fe20886251aff0433fc38461912d5daf07287e7bee56620a8da96",
+    "DejaVuSansMono.ttf": "602ec86b8948cfcd956482fe64f94c36c867770149ef2f791d4613f443bcecb3",
+    "DejaVuSerif-Bold.ttf": "c3753f2ed6bc673f15846dc45addbeb3b9c872f32fb18fd53a21f1bef1ed7676",
+    "DejaVuSerif.ttf": "107244956e9962b9e96faccdc551825e0ae0898ae13737133e1b921a2fd35ffa"
+  },
+  "scope": "Six missing characters already used by LANGUAGE and existing notices. Retained 189 glyphs and font.inf files unchanged. A/i renderer byte identity verified in every family. Regular sources retained for provenance; only Bold sources used."
+}
