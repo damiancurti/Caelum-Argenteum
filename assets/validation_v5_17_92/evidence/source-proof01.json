@@ -1,0 +1,19 @@
+{
+  "issue": 827,
+  "repeated_files": 6,
+  "files": {
+    "manifest.json": "dcee628434481a39a902b46943d694ddd5917a7c70ccee016858a034a299ae31",
+    "MODELDEF": "ac46475d65d56507c0849cb58247474f61c39982d04633bee06e6fe8c3fdf984",
+    "preview.pk3": "834ad631d3db31b6493b082a1f8c23e333c8a8248cf509dbbcee1b37a1f2e004",
+    "models/caelum/characters/domingo/left_hand.md3": "7bbc4920e8e334f44aff629f58658a88da4f70ca3e09e3f83d9d04b7cbdcd69f",
+    "models/caelum/characters/domingo/right_hand.md3": "176dbb11b44ec71f0290f605322347c5c49667250d649d5df7362975f7e11b54",
+    "models/caelum/characters/domingo/underbody.md3": "145cf8e7f111fb17741ac50f3b18b86a4a29330f2ea2e153521a439043eb8ce2"
+  },
+  "old_bad_binding_detected": [
+    "Model declared after frame snapshots began",
+    "Model declared after frame snapshots began",
+    "Model declared after frame snapshots began",
+    "Frame snapshots carry stale other-slot poses: [0, 1, 2, 3, 4, 5, 6, 7] (374 total)"
+  ],
+  "errors": []
+}

@@ -6,12 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.91.** Obtain and update the complete repository,
+**Current release: 5.17.92.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
-#825 completes diagnostic regional coverage: 78 approved associations of the 56 provisional bestiary classes across three galleries. The new gallery passes native save/movement/animation and camera-control checks. Author acceptance and the full batch remain pending.
+#827 adds an editable Domingo body and independent hands for modular garment fitting. Native anatomy and save/rollback checks pass. Existing production characters retain their models; garment intersections, broader variants and first-person equipment remain unfinished. Author review stays reserved for the completed batch.
 
 Earlier candidate deliveries and their recorded scope:
+
+#825 completes diagnostic regional coverage: 78 approved associations of the 56 provisional bestiary classes across three galleries. The new gallery passes native save/movement/animation and camera-control checks. Author acceptance and the full batch remain pending.
 
 #822 adds native Xalpen/Luz Mala/Anchimallen/Huayrapuca candidates. All 56 provisional bestiary classes now have models; protected identities 018/019 remain unchanged. Geometry, continuity and action checks pass within their recorded scope. The full batch and consolidated author review remain pending.
 

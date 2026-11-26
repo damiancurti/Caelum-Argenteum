@@ -1,0 +1,185 @@
+{
+  "issue": 827,
+  "scope": "Measure the existing seven slots versus all ten candidate visual slots.\n\nOne and64 noninteractive figures preserve the accepted studio comparison.\nAll slots draw in the additive cost case, including overlapping geometry;\nthis is not garment-fit acceptance or an all-character campaign budget.",
+  "runtime_sha256": "8edd021d20cc7ac321b6cb7aadbc308db79d7431ddce73a0b2983b8030bd9cd3",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "seven",
+      "bodies": 1,
+      "pid": 27452,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 427801885.4619,
+        "END": 427821893.3239
+      },
+      "fixture_sha256": "5cc30232ba166f4eec9f7b5d55667d1b3f1bf9cd4a91df9d81ff8ab24c1d6412",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57210042857143,
+        "p50_ms": 28.5794,
+        "p95_ms": 29.0983,
+        "p99_ms": 29.248,
+        "max_ms": 29.5319
+      },
+      "presentation": {
+        "pid": 27452,
+        "trace_sha256": "fe33a4c48bbbd79a68244b92c99defb9f137d5f4cbf786aa65910ca43a4feb42",
+        "rows": 32334,
+        "scene_presents": 21928,
+        "mean_present_fps": 1252.4773656120985,
+        "present_intervals": {
+          "samples": 21927,
+          "mean_ms": 0.7984176221111108,
+          "p50_ms": 0.7731000185012817,
+          "p95_ms": 0.9656000137329102,
+          "p99_ms": 1.0791000127792358,
+          "max_ms": 1.8867999911308289
+        },
+        "native_call_duration": {
+          "samples": 21928,
+          "mean_ms": 0.06552765879403584,
+          "p50_ms": 0.06050002574920654,
+          "p95_ms": 0.09029996395111084,
+          "p99_ms": 0.12889999151229858,
+          "max_ms": 0.3773999810218811
+        }
+      }
+    },
+    {
+      "kind": "ten",
+      "bodies": 1,
+      "pid": 18744,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 427837057.0826,
+        "END": 427857068.9621
+      },
+      "fixture_sha256": "d7695fd0ea916568cc143a7408709d027f28e82cac30eb57c7e7dd2163049952",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571784285714287,
+        "p50_ms": 28.5687,
+        "p95_ms": 29.1175,
+        "p99_ms": 29.2508,
+        "max_ms": 29.6273
+      },
+      "presentation": {
+        "pid": 18744,
+        "trace_sha256": "f78bc8213b89a0c4598c380784f12b4a49cdf210129a465a7cfd18587733cbd7",
+        "rows": 31169,
+        "scene_presents": 21554,
+        "mean_present_fps": 1230.8007109849448,
+        "present_intervals": {
+          "samples": 21553,
+          "mean_ms": 0.8124792186703831,
+          "p50_ms": 0.7784000039100647,
+          "p95_ms": 0.9909999966621399,
+          "p99_ms": 1.1062999963760376,
+          "max_ms": 2.5564000010490417
+        },
+        "native_call_duration": {
+          "samples": 21554,
+          "mean_ms": 0.06719001541113803,
+          "p50_ms": 0.06090003252029419,
+          "p95_ms": 0.09070003032684326,
+          "p99_ms": 0.1280999779701233,
+          "max_ms": 0.6635000109672546
+        }
+      }
+    },
+    {
+      "kind": "ten",
+      "bodies": 64,
+      "pid": 42136,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 427872152.6738,
+        "END": 427892161.7375
+      },
+      "fixture_sha256": "447a5275fd38d4e144e530ada803238a0786b264cdaa60843105cd4dcafdfafa",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571589,
+        "p50_ms": 28.548,
+        "p95_ms": 29.4851,
+        "p99_ms": 29.783,
+        "max_ms": 30.0872
+      },
+      "presentation": {
+        "pid": 42136,
+        "trace_sha256": "cbf3006f7bae3b9370f02280562fc8013162b0690b6e22987587eca375e654f1",
+        "rows": 18843,
+        "scene_presents": 13040,
+        "mean_present_fps": 744.7802224624384,
+        "present_intervals": {
+          "samples": 13039,
+          "mean_ms": 1.3426779737702195,
+          "p50_ms": 1.3077999949455261,
+          "p95_ms": 1.526699960231781,
+          "p99_ms": 1.6636000275611877,
+          "max_ms": 2.2490000128746033
+        },
+        "native_call_duration": {
+          "samples": 13040,
+          "mean_ms": 0.06671265336267787,
+          "p50_ms": 0.06069999933242798,
+          "p95_ms": 0.09310001134872437,
+          "p99_ms": 0.12459999322891235,
+          "max_ms": 0.4901999831199646
+        }
+      }
+    },
+    {
+      "kind": "seven",
+      "bodies": 64,
+      "pid": 30724,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 427907198.8444,
+        "END": 427927212.7659
+      },
+      "fixture_sha256": "1f9774d3a9e3e1cbcc641789c4ecca4266eae11d250df08cde604e6fb3a4a38d",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571306,
+        "p50_ms": 28.5456,
+        "p95_ms": 29.2711,
+        "p99_ms": 29.4842,
+        "max_ms": 29.8668
+      },
+      "presentation": {
+        "pid": 30724,
+        "trace_sha256": "5b7b2c23cf6eaade93c1c6ebfc589d1b6e398f0decebc733c20178787819f2bb",
+        "rows": 23204,
+        "scene_presents": 16133,
+        "mean_present_fps": 921.1781827835556,
+        "present_intervals": {
+          "samples": 16132,
+          "mean_ms": 1.0855663092001004,
+          "p50_ms": 1.0569000244140625,
+          "p95_ms": 1.2518999576568604,
+          "p99_ms": 1.3927000164985657,
+          "max_ms": 2.5375999808311462
+        },
+        "native_call_duration": {
+          "samples": 16133,
+          "mean_ms": 0.06536274672899392,
+          "p50_ms": 0.06040000915527344,
+          "p95_ms": 0.08970004320144653,
+          "p99_ms": 0.11820000410079956,
+          "max_ms": 0.4879000186920166
+        }
+      }
+    }
+  ]
+}

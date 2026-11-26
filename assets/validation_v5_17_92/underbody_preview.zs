@@ -1,0 +1,116 @@
+// #827: cuerpos de inspección; nunca reemplazan al jugador ni su equipo.
+class CA827PreviewBody : CaelumDomingoPilotFrames
+{
+    int FrozenFrame;
+    bool Live;
+    void Freeze(int index)
+    {Live=false;FrozenFrame=index;SetModelFlag(MDL_NOINTERPOLATION);SetState(FindStateByString(String.Format("F%d",index)));tics=-1;}
+    void Animate(int pose)
+    {Live=true;ClearModelFlag(MDL_NOINTERPOLATION);SetState(FindStateByString(String.Format("F%d",Start(pose))));}
+    override void Tick()
+    {
+        Super.Tick();
+        if(!Live){let desired=FindStateByString(String.Format("F%d",FrozenFrame));if(CurState!=desired)SetState(desired);tics=-1;}
+    }
+    Default {+NOINTERACTION +NOGRAVITY +NOBLOCKMAP RenderRadius 240;}
+}
+class CA827LegacyPreview : CA827PreviewBody {}
+class CA827ModularPreview : CA827PreviewBody
+{
+    int HiddenMask;
+    transient bool BindingsReady;
+    void ShowModule(int slot,bool visible)
+    {
+        static const name files[]={'clothing.md3','armor.md3','cape.md3','face.md3','hair.md3','weapon.md3','shield.md3','underbody.md3','left_hand.md3','right_hand.md3'};
+        if(slot<0 || slot>=10)return;
+        A_ChangeModel('None',slot,"models/caelum/characters/domingo",files[slot],slot,"models/caelum/characters/domingo",'domingo_skin.png',visible?0:CMDL_HIDEMODEL);
+        if(visible)HiddenMask&=~(1<<slot);else HiddenMask|=1<<slot;
+    }
+    override void Tick()
+    {
+        Super.Tick();
+        if(!BindingsReady)
+        {for(int slot=0;slot<10;slot++)ShowModule(slot,(HiddenMask&(1<<slot))==0);BindingsReady=true;}
+    }
+}
+class CA827Camera : Actor
+{Default {CameraHeight 0;Height 0;Radius 0;+NOINTERACTION +NOGRAVITY} States {Spawn:TNT1 A -1;Stop;}}
+class CA827KeyLight : CA827Camera {}
+class CA827FillLight : CA827Camera {}
+class CA827PreviewEvents : EventHandler
+{
+    CA827LegacyPreview Legacy;
+    CA827ModularPreview Modular;
+    CA827Camera Camera;
+    State Previous;
+    int Failures,Checks,ViewMode,ViewRotation,ViewPose;
+    String CurrentLabel;
+    void Check(bool okay,String label)
+    {Checks++;if(!okay)Failures++;Console.Printf("CA827 %s %s",okay?"PASS":"FAIL",label);}
+    void SelectMode(int mode)
+    {
+        ViewMode=mode;Legacy.bInvisible=mode!=0;Modular.bInvisible=mode==0;
+        for(int slot=0;slot<10;slot++)
+        {
+            bool visible=mode==1?(slot<8):slot==3 || slot==4 || slot>=7;
+            if(mode==3 && slot==0)visible=true;
+            Modular.ShowModule(slot,visible);
+        }
+        CurrentLabel=String.Format("#827 candidate | mode %d | pose %d | view %d",ViewMode,ViewPose,ViewRotation);
+    }
+    void Rotate(int rotation)
+    {
+        ViewRotation=rotation%8;double angle=ViewRotation*45;
+        Camera.SetOrigin((cos(angle)*185,sin(angle)*185,94),true);Camera.Angle=angle+180;Camera.Pitch=4;
+        Camera.ClearInterpolation();SelectMode(ViewMode);
+        Console.Printf("CA827 VIEW mode=%d pose=%d rotation=%d",ViewMode,ViewPose,ViewRotation);
+    }
+    override void RenderOverlay(RenderEvent e)
+    {
+        if(Camera==null || players[0].camera!=Camera)return;
+        Screen.DrawText(Font.GetFont("CaelumMono"),Font.CR_WHITE,8,8,CurrentLabel,DTA_VIRTUALWIDTH,640,DTA_VIRTUALHEIGHT,360,DTA_KEEPRATIO,true);
+    }
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name.Left(6)!="ca827_")return;
+        if(e.Name=="ca827_prepare")
+        {
+            Legacy=CA827LegacyPreview(Actor.Spawn('CA827LegacyPreview',(0,0,0),NO_REPLACE));
+            Modular=CA827ModularPreview(Actor.Spawn('CA827ModularPreview',(0,0,0),NO_REPLACE));
+            Camera=CA827Camera(Actor.Spawn('CA827Camera',(275,0,108),NO_REPLACE));
+            Actor.Spawn('CA827KeyLight',(130,-100,190),NO_REPLACE);
+            Actor.Spawn('CA827FillLight',(-90,100,140),NO_REPLACE);
+            let user=CaelumPlayer(players[0].mo);user.CharacterCreationComplete=true;user.CreationWizardOpen=false;user.bInvisible=true;
+            Legacy.Freeze(0);Modular.Freeze(0);players[0].camera=Camera;
+            SelectMode(2);Rotate(0);return;
+        }
+        if(Legacy==null || Modular==null || Camera==null)
+        {Check(false,"inspection must be prepared before commands");return;}
+        if(e.Name=="ca827_mode"){SelectMode(e.Args[0]);return;}
+        if(e.Name=="ca827_rotate"){Rotate(e.Args[0]);return;}
+        if(e.Name=="ca827_nextview"){Rotate(ViewRotation+1);return;}
+        if(e.Name=="ca827_pose" || e.Name=="ca827_nextpose")
+        {
+            ViewPose=e.Name=="ca827_nextpose"?(ViewPose+1)%24:Clamp(e.Args[0],0,23);
+            int index=CaelumDomingoPilotFrames.Start(ViewPose)+CaelumDomingoPilotFrames.Count(ViewPose)/2;
+            Legacy.Freeze(index);Modular.Freeze(index);SelectMode(ViewMode);
+            Check(Modular.CurState==Modular.FindStateByString(String.Format("F%d",index)),"selected sampled native frame");return;
+        }
+        if(e.Name=="ca827_animate"){Modular.Animate(CaelumDomingoPilotFrames.WALK);Previous=Modular.CurState;return;}
+        if(e.Name=="ca827_motion"){Check(Modular.CurState!=Previous,"native walking state advances");return;}
+        if(e.Name=="ca827_freeze"){ViewPose=0;Legacy.Freeze(0);Modular.Freeze(0);SelectMode(ViewMode);return;}
+        if(e.Name=="ca827_saved")
+        {
+            SelectMode(2);Modular.ShowModule(4,false);Modular.ShowModule(9,false);CurrentLabel="#827 saved hair/right-hand visibility | review pending";return;
+        }
+        if(e.Name=="ca827_verify")
+        {
+            Check(Legacy!=null && Modular!=null && Camera!=null && players[0].camera==Camera,"saved references and camera retained");
+            Check(Modular.HiddenMask==((1<<0)|(1<<1)|(1<<2)|(1<<4)|(1<<5)|(1<<6)|(1<<9)),"saved independent hair/right-hand selection retained");
+            Check(!Modular.Live && Modular.CurState==Modular.FindState('F0'),"saved frozen frame retained");
+            Check(Modular.bNoInteraction && Modular.bNoBlockmap,"visual modules have no gameplay collision");
+            Check(Legacy.bInvisible && !Modular.bInvisible,"selected assembly retained");
+            Console.Printf("CA827 COMPLETE failures=%d checks=%d",Failures,Checks);
+        }
+    }
+}

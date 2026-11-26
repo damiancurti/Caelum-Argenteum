@@ -1,6 +1,77 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.91** - 2026-11-16.
+Documentation version: **5.17.92** - 2026-11-18.
+
+## 5.17.92 - Reusable Domingo anatomy foundation (#827, parent #458)
+
+Three independent native modules add a complete construction body and relaxed
+left/right hands for garment fitting. The editable source derives from the
+already retained CC0 MakeHuman base and uses Domingo's accepted rig, head and
+24 actions/375 samples. The original .blend, skin, fixed model and seven old
+modules remain byte-identical. The runtime contains the three new MD3 files and
+attribution, but production bindings, equipment, collision and gameplay remain
+unchanged. Ordinary campaign characters do not use this candidate yet.
+
+Sources/provenance: assets/source/art/underbody_827. Authoring explicitly maps
+MakeHuman axes to the accepted rig, transfers bone weights, closes neck/wrist
+cuts and preserves shared wrist coordinates. The body has 2,221 vertices and
+4,438 triangles; left hand 353/702; right hand 354/704. Each module is connected,
+closed and positive-volume. Sixty-three shared wrist pairs remain identical
+after native quantization across all 375 frames: 23,625 pair checks. Exported
+normals agree at those seams. All UVs sample one existing skin-atlas pixel;
+this uniform construction material does not introduce or approve new painted
+skin. Relaxed hands do not establish item-specific finger grips.
+
+Six files from final exports 07/08 repeat byte for byte. A final connectivity
+audit removed a detached, opposing triangle pair at the neck cut: three vertices
+and two zero-volume faces. All retained points/normals in 375 frames and both hand
+files remain byte-identical; each final serialized module has one component.
+The previous closed-edge check alone could not detect that island (CA-KP-252).
+The static validator
+checks source hashes, native counts and all 3,750 frame/slot bindings. GZDoom
+snapshots retain other slots' current poses: declare all ten models first and
+write every slot for each pose before advancing. An earlier slot-by-slot export
+left 374 stale snapshots and visibly detached a seated hand/body. The corrected
+native views and rejected earlier bindings are retained; see CA-KP-251.
+
+The complete 18,632-entry runtime matches src exactly. Its only existing runtime
+differences from #825 are the two required version diagnostics. The isolated
+anatomy fixture passes 30 fresh and five reload assertions, including motion,
+all 24 sampled poses and byte-identical saved hair/hand visibility captures.
+Four production-pilot continuity phases pass 22 checks: parent save, forward
+load, candidate save and rollback load. These exercise the unchanged production
+owners, not integration of the new anatomy into gameplay.
+
+All 59 final anatomy views, four presentation captures and one old-save capture
+are covered by review: 15 changed anatomy views and the other five captures were
+inspected directly; 44 anatomy views are byte-identical to inspected native07 views.
+The neck/head and wrist attachments remain visually connected
+in the sampled poses. Legacy clothing intersects hips, legs and toes and leaves
+coverage gaps. Modes showing that raw overlay deliberately expose unfinished
+#459 fitting work; they are not finished clothing or an accepted replacement.
+Species/sex variants, skin artwork, named-character conversion and first-person
+equipment remain outside this foundation patch.
+
+Four sequential 700-tic final comparisons ran on 2026-11-18 with one/64 isolated figures,
+seven versus ten simultaneously drawn modules. Windows 11 Pro 26200, Ryzen 9
+5950X/32GB/RTX 3070 Ti driver 32.0.16.1088 and Parsec adapter; GZDoom 4.14.2
+Vulkan, 1280x720, uncapped without VSync, unpaused background at 5% audio:
+
+| Drawn slots / bodies | Queue presents/s | Present p95 / p99 / max (ms) | Simulation mean / p95 / p99 / max (ms) |
+| --- | ---: | --- | --- |
+| seven / 1 | 937.35 | 1.4112 / 1.8302 / 2.6051 | 28.5711 / 29.3022 / 29.5093 / 29.6483 |
+| ten / 1 | 911.72 | 1.4469 / 1.8911 / 3.3709 | 28.5716 / 29.3815 / 30.0135 / 30.2377 |
+| ten / 64 | 631.27 | 1.9255 / 2.4128 / 3.3204 | 28.5721 / 29.6391 / 30.0964 / 30.7502 |
+| seven / 64 | 729.91 | 1.7455 / 2.2186 / 2.7723 | 28.5709 / 29.5261 / 29.9020 / 30.5321 |
+
+Ten-slot scenes include overlapping old clothing and the new body. These are
+additive geometry costs, not final fitted-character, GPU/display-latency,
+campaign or siege results. Earlier Nov 16 measurements remain in evidence; the
+Nov 18 environment snapshot accompanies the final complete-package runs. Earlier failed
+authoring, binding and console scheduling attempts remain in evidence.
+Evidence: assets/validation_v5_17_92/evidence/SUMMARY.json.
+CA827-BODY-01 remains pending. Continue garment fitting and the larger batch
+before the single consolidated author test terminal.
 
 ## 5.17.91 - Complete approved regional inspection coverage (#825)
 

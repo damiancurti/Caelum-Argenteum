@@ -1,0 +1,37 @@
+{
+  "issue": 827,
+  "base_commit": "b2f8600200d17c2c76065a0bbc9628c960795627",
+  "runtime_sha256": "8edd021d20cc7ac321b6cb7aadbc308db79d7431ddce73a0b2983b8030bd9cd3",
+  "source_entries": 18632,
+  "package_exact_source_bytes": true,
+  "retained_inputs": {
+    "assets/source/art/domingo_3d_pilot/DESIGN.json": "c572dfb2f5e2bed266e84d229d01db0660a5adc82240d12c3bde70d34a9614fd",
+    "assets/source/art/domingo_3d_pilot/authoring_transcript.txt": "f823c3042cbed098f9bd2213186102fd3197a269a03ab1bbb77a081646f23be9",
+    "assets/source/art/domingo_3d_pilot/domingo.blend": "3c84df6b241df2c48ddee48143d6aa4eba40d16c5c097d60f78eca85b130b9a4",
+    "assets/source/art/domingo_3d_pilot/domingo_skin.png": "6cf9ea66f6671ba3235c2f2ad8af7cc139b20286013e2a9789670b8df60da597",
+    "assets/source/art/domingo_3d_pilot/makehuman/LICENSE.ASSETS.md": "f6089cba01cb570a24712b41ab8a586ccd3cc5ef53dc266ca50b95c288956d2c",
+    "assets/source/art/domingo_3d_pilot/makehuman/base.obj": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c",
+    "assets/source/art/character_modules_458/EXPORT.json": "5d3c378230a1b15b50d4e256cb5d1132d0c148ac0e98b8e212dc73ba0393356c",
+    "assets/source/art/character_modules_458/MODULES.json": "698f9db08a22cacbaa33c88c1644c8735f243222ae2147ae470eda40f67a9364"
+  },
+  "repeated_files": 6,
+  "repeated_exports": {
+    "manifest.json": "dcee628434481a39a902b46943d694ddd5917a7c70ccee016858a034a299ae31",
+    "MODELDEF": "ac46475d65d56507c0849cb58247474f61c39982d04633bee06e6fe8c3fdf984",
+    "models/caelum/characters/domingo/left_hand.md3": "7bbc4920e8e334f44aff629f58658a88da4f70ca3e09e3f83d9d04b7cbdcd69f",
+    "models/caelum/characters/domingo/right_hand.md3": "176dbb11b44ec71f0290f605322347c5c49667250d649d5df7362975f7e11b54",
+    "models/caelum/characters/domingo/underbody.md3": "145cf8e7f111fb17741ac50f3b18b86a4a29330f2ea2e153521a439043eb8ce2",
+    "preview.pk3": "834ad631d3db31b6493b082a1f8c23e333c8a8248cf509dbbcee1b37a1f2e004"
+  },
+  "additions": [
+    "src/licenses/UNDERBODY_827.txt",
+    "src/models/caelum/characters/domingo/left_hand.md3",
+    "src/models/caelum/characters/domingo/right_hand.md3",
+    "src/models/caelum/characters/domingo/underbody.md3"
+  ],
+  "changed_existing_runtime": [
+    "src/caelum/world/CaelumPhysicalHazards.zs",
+    "src/caelum/world/CaelumSewerMaze.zs"
+  ],
+  "existing_runtime_art_and_behavior_preserved": true
+}
