@@ -1,0 +1,46 @@
+{
+  "issue": 755,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "authority": "Author requests native3D for all dropped inventory objects. Existing owned designs remain the silhouette/material reference. Rejected #479 Book/Statuette meshes are not reused or enabled.",
+  "authorship": "New original deterministic geometry and generated material atlas prepared with OpenAI tools for Caelum Argenteum; existing owned icons/source paintings remain unchanged.",
+  "scope": "Only six CaelumMaterialPickup states; 18 existing material/tier combinations. No weapon or held-state replacement, gameplay change or author acceptance.",
+  "texture": {
+    "file": "materials.png",
+    "sha256": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "prompt": "MATERIALS_PROMPT.json"
+  },
+  "limitations": [
+    "Back and hidden surfaces are new volumetric interpretations requiring author review.",
+    "Painted atlas lighting is baked; this is not a PBR material.",
+    "All three material tiers retain the existing shared T1 world appearance.",
+    "Simplified sculpted face, static ribbon folds, heavy painted ornament and subdued ambient depth remain author-review qualifications.",
+    "Staff and scepter share their existing related silhouette; the main visible difference is head shape/trim. No duplicate tier artwork or different statistics was invented."
+  ],
+  "iterations": [
+    {
+      "candidate": "model01",
+      "result": "Independent geometry found inaccurate intersection witnesses, detached seal contacts and excessive seal width; corrected before native review."
+    },
+    {
+      "candidate": "model03 / visual01",
+      "result": "494 native fresh/visual checks pass. Refined pointed staff/scepter crests, statuette facial detail/folds and enlarged actual censer apertures."
+    },
+    {
+      "candidate": "model05 / visual02",
+      "result": "494 native fresh/visual checks pass. Raised underside inspection showed gold cavity textures flattening the bell; assigned existing dark atlas tile to real bell/censer interiors."
+    },
+    {
+      "candidate": "model07",
+      "result": "Static opacity check initially sampled outside the atlas. Bounds corrected; seam vertices also split so every lip/wall triangle remains within one material tile."
+    },
+    {
+      "candidate": "model08 / visual03",
+      "result": "Final geometry and separate dark cavity mappings; independent serialized triangle UV checks prohibit crossing atlas cells. Native outcome recorded in issue evidence."
+    },
+    {
+      "candidate": "model11",
+      "result": "Thirty visual03 detail/underside views inspected. Replaced the seal blank face radial cap UVs with planar UVs to remove the visible fan seam; geometry and five other runtime meshes are unchanged."
+    }
+  ]
+}

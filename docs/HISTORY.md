@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.55** - 2026-11-15.
+Documentation version: **5.17.56** - 2026-11-15.
+
+## 5.17.56 - Native magical crafting bases (#755, 2026-11-15)
+
+Added six original volumetric material models and a generated, unchanged-byte
+atlas with prompt/provenance. Corrected attachment witnesses and seal extent;
+native inspection refined crests, sculpted detail, aperture size, dark cavities
+and the seal's cap UV seam. Existing icons and gameplay remain unchanged.
+Seventeen repeated outputs, 2,604 installed continuity checks and 494 visual/
+control checks pass. ASSETS records presentation limits and art qualifications.
+Evidence: assets/validation_v5_17_56/evidence/SUMMARY.json.
+CA755-MAGIC-BASE-DROPS-01 originates here and remains pending. No author test was
+accepted or removed. Broader 3D and V5.16 campaign work remains incomplete.
 
 ## 5.17.55 - Native baseless Orbs (#753, 2026-11-15)
 

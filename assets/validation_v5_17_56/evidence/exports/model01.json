@@ -1,0 +1,488 @@
+{
+  "schema_revision": 1,
+  "issue": 755,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "variants": {
+    "staff": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "shaft",
+        "ferrule",
+        "band0",
+        "band1",
+        "band2",
+        "band3",
+        "head",
+        "frame",
+        "cabochon",
+        "scroll-1",
+        "crest-1",
+        "scroll1",
+        "crest1",
+        "knot",
+        "ribbon0",
+        "ribbon1"
+      ],
+      "closed_outward_components": 16,
+      "vertices": 4394,
+      "triangles": 8352,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 912,
+          "triangles": 1728
+        },
+        {
+          "material": "gold",
+          "vertices": 2838,
+          "triangles": 5424
+        },
+        {
+          "material": "wood",
+          "vertices": 67,
+          "triangles": 120
+        },
+        {
+          "material": "blue",
+          "vertices": 175,
+          "triangles": 312
+        },
+        {
+          "material": "gem",
+          "vertices": 402,
+          "triangles": 768
+        }
+      ],
+      "reference_opaque_bounds": [
+        27,
+        6,
+        101,
+        122
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 116.0,
+      "native_bounds": [
+        {
+          "min": [
+            -35.33537396633783,
+            -8.765653110562084,
+            0.0
+          ],
+          "max": [
+            35.312566453306516,
+            6.419226619907425,
+            116.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0713228564874344,
+        "floor": 1
+      }
+    },
+    "bell": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "shell",
+        "handle",
+        "handle_loop",
+        "clapper_stem",
+        "clapper",
+        "tassel-1",
+        "tassel1"
+      ],
+      "closed_outward_components": 7,
+      "vertices": 2264,
+      "triangles": 4392,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 288,
+          "triangles": 552
+        },
+        {
+          "material": "gold",
+          "vertices": 1764,
+          "triangles": 3456
+        },
+        {
+          "material": "red",
+          "vertices": 212,
+          "triangles": 384
+        }
+      ],
+      "reference_opaque_bounds": [
+        24,
+        9,
+        109,
+        115
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 106.0,
+      "native_bounds": [
+        {
+          "min": [
+            -37.7604919417429,
+            -34.202881247964704,
+            0.0
+          ],
+          "max": [
+            37.7604919417429,
+            34.202881247964704,
+            106.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0059670955283737,
+        "floor": 6.428760253510474
+      }
+    },
+    "statuette": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "robe",
+        "plinth",
+        "neck",
+        "head",
+        "hair_back",
+        "nose",
+        "hair-1",
+        "sleeve-1",
+        "hand-1",
+        "eye-1",
+        "robe_fold-1",
+        "hair1",
+        "sleeve1",
+        "hand1",
+        "eye1",
+        "robe_fold1"
+      ],
+      "closed_outward_components": 16,
+      "vertices": 4256,
+      "triangles": 8112,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 2342,
+          "triangles": 4464
+        },
+        {
+          "material": "gold",
+          "vertices": 216,
+          "triangles": 384
+        },
+        {
+          "material": "wood",
+          "vertices": 402,
+          "triangles": 768
+        },
+        {
+          "material": "leaves",
+          "vertices": 492,
+          "triangles": 960
+        },
+        {
+          "material": "dark",
+          "vertices": 804,
+          "triangles": 1536
+        }
+      ],
+      "reference_opaque_bounds": [
+        33,
+        6,
+        95,
+        122
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 116.0,
+      "native_bounds": [
+        {
+          "min": [
+            -27.56435643564356,
+            -18.376237623762375,
+            0.0
+          ],
+          "max": [
+            27.56435643564356,
+            18.376237623762375,
+            115.99999999999999
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.1485148514851484,
+        "floor": 0.0
+      }
+    },
+    "seal": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "pedestal",
+        "blank_face",
+        "oval_frame",
+        "rear_neck",
+        "crown-1",
+        "foot_scroll-1",
+        "crown1",
+        "foot_scroll1"
+      ],
+      "closed_outward_components": 8,
+      "vertices": 2566,
+      "triangles": 4872,
+      "surfaces": [
+        {
+          "material": "gold",
+          "vertices": 2417,
+          "triangles": 4584
+        },
+        {
+          "material": "stone",
+          "vertices": 149,
+          "triangles": 288
+        }
+      ],
+      "reference_opaque_bounds": [
+        25,
+        8,
+        102,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -55.32891946724902,
+            -44.102761894184006,
+            0.0
+          ],
+          "max": [
+            55.32891946724902,
+            44.102761894184006,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.6037367961521456,
+        "floor": 0.0
+      }
+    },
+    "censer": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "shell",
+        "foot",
+        "lid_knob",
+        "rim0",
+        "rim1",
+        "hinge"
+      ],
+      "closed_outward_components": 6,
+      "vertices": 10862,
+      "triangles": 16512,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 4095,
+          "triangles": 5792
+        },
+        {
+          "material": "bronze",
+          "vertices": 4095,
+          "triangles": 5712
+        },
+        {
+          "material": "bronze",
+          "vertices": 1126,
+          "triangles": 1936
+        },
+        {
+          "material": "gold",
+          "vertices": 1152,
+          "triangles": 2304
+        },
+        {
+          "material": "leaves",
+          "vertices": 394,
+          "triangles": 768
+        }
+      ],
+      "reference_opaque_bounds": [
+        27,
+        8,
+        100,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -34.3859649122807,
+            -34.3859649122807,
+            0.0
+          ],
+          "max": [
+            36.33411325421206,
+            34.3859649122807,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.9824561403508771,
+        "floor": 0.0
+      }
+    },
+    "scepter": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "shaft",
+        "ferrule",
+        "band0",
+        "band1",
+        "band2",
+        "band3",
+        "head",
+        "frame",
+        "cabochon",
+        "scroll-1",
+        "crest-1",
+        "scroll1",
+        "crest1",
+        "knot",
+        "ribbon0",
+        "ribbon1"
+      ],
+      "closed_outward_components": 16,
+      "vertices": 4394,
+      "triangles": 8352,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 3174,
+          "triangles": 6000
+        },
+        {
+          "material": "gold",
+          "vertices": 576,
+          "triangles": 1152
+        },
+        {
+          "material": "wood",
+          "vertices": 67,
+          "triangles": 120
+        },
+        {
+          "material": "blue",
+          "vertices": 175,
+          "triangles": 312
+        },
+        {
+          "material": "gem",
+          "vertices": 402,
+          "triangles": 768
+        }
+      ],
+      "reference_opaque_bounds": [
+        26,
+        8,
+        101,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -34.1169127950848,
+            -8.463389210197874,
+            0.0
+          ],
+          "max": [
+            34.094891748020075,
+            6.197873977841651,
+            111.99999999999999
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0343806890223504,
+        "floor": 1
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "ad7b190672eac4640584508f73466b00f32ff9371bfab05f67620b3cbbbefcb8",
+    "PROVENANCE.json": "595dff68d9f7f605dd03c6e4952e68b8fa457cafd117e64fb6c42b6f5442ed17",
+    "MATERIALS_PROMPT.json": "cb3112d05fb905e44147a7947254ca701281c0460f6cf96b3a19dae899506139"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/ca_staff.png": "e639347898daa83f4b76a63937ae84b99bb5f04e5d9b63d9db4c4848a80fc04c",
+    "src/graphics/caelum/icons/ca_bell.png": "7043ca39e00fa719939eed3b52413f412422512f9412bd5202bdc57a4c63676f",
+    "src/graphics/caelum/icons/ca_statuette.png": "6bbd38a2f05028482b42a48a7bd4f906d30e51ae5456f50f26966de6222b16e8",
+    "src/graphics/caelum/icons/materials/ca_material_seal_base.png": "48b963928731081f2304572401c76efa4c0812c8e1a4fca916807c83e886ddc7",
+    "src/graphics/caelum/icons/support_sprites/censer_t1.png": "1bbbccb4f7c03df613b6debbac7143c1e9733c6c771df00745cdace7ee7a16c2",
+    "src/graphics/caelum/icons/support_sprites/scepter_t1.png": "57e4f991342ee7e5cdbd98125a02fe60ce6f58d8999336f0e44c637543b54b75",
+    "assets/art_source/support_sprites/scepter-source.png": "fe8bbf7314b17c5ad0dbfaa0c3ea7cb9096cef9f0071b4bcbbb4b59680d4fa98",
+    "assets/art_source/support_sprites/censer-source.png": "e26b48a467c241faf7fdc97e5588a15799c1f1dfb169c4678abf9d5b2b59fe74",
+    "assets/art_source/support_sprites/REGISTRATION.json": "f3acb57ca1b76a064dde32d3a939e4d020ee704cdfe1a92067ccb7feefb07a5a",
+    "src/caelum/data/support_sprites.textures": "40854287c9d22184a896d952227e3f19ff195f2f9b95ebf88cf264228d169c1f",
+    "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04",
+    "assets/generators/generate_inventory_hygiene_models.py": "b85d6bac14b35faf4cc2f232c6c0e2fa8d9e2f6d5633400adc929f452a2c0a8e",
+    "assets/generators/generate_inventory_weapon_components_models.py": "49db0176aef05d21f21f7a356e58c4623c285eac15d2d1537bc8ddc8ec227958",
+    "assets/generators/generate_inventory_chains_models.py": "cd9296836666c78bd555c76e3de56d0ccc345c40ecb94a15d5e78f159719f94f",
+    "assets/generators/generate_peuchen_model.py": "0f1873c9fd1da0be0f965ea73ff2cc5c35dc25a35ac9da2df4692b50cef30812"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_magic_bases_models.py": "6015f2bc618fe7b9f3db1f7e7a5f71d0559a74d1c3e6dfe5e722783535e7aa2c"
+  },
+  "sha256": {
+    "models/caelum/inventory/magic_bases/staff.md3": "dc8d1e95bf4c7d5340cfc5337226ed56cf399ef978b90f782f5bfb9b370f42f5",
+    "editable/staff.obj": "e8d70062e649aa0247def4f3729396657b89ea722940f96a4575692619b80a7a",
+    "models/caelum/inventory/magic_bases/bell.md3": "e56ea868964151dc7355680fd513868020904c36610d86f849e15bfc07f691d9",
+    "editable/bell.obj": "ea1807de04e0d4468f628f15cbcf307d14c1acb604e66a86870cb104db59c1d1",
+    "models/caelum/inventory/magic_bases/statuette.md3": "35f1618511c7d12efa5eca8a104e1cb7670c01d83e934732bf84765cb1aed9a9",
+    "editable/statuette.obj": "8388bf3a51c669bad55340abe1b346cffc167c03c5228b36a79331565bd949e0",
+    "models/caelum/inventory/magic_bases/seal.md3": "82fafc04f7a6e5fd5082eb42ad016b89b24cdac71ce3dc32e096e30cc6a1511d",
+    "editable/seal.obj": "19848fed78fb4ab343095f260952d6cd9a3594173214e8b469ae614c33ccea31",
+    "models/caelum/inventory/magic_bases/censer.md3": "aa510a6efffa0f9c9fafd80847729675e2c5cf1f572d141cd3a0295d049374b6",
+    "editable/censer.obj": "4c834087021119e5987fcfd5a333f1bcd175f77e4823a6a2be976ee6e414e54a",
+    "models/caelum/inventory/magic_bases/scepter.md3": "c085e2ac2c5439af2a70dda5665db8f36aff8aa3cd5bf2f52f77bb023b9d17be",
+    "editable/scepter.obj": "b5f25c6772ee7eb12f6df4f66315015d05bf921e55b832ae888b346ca5da172b",
+    "editable/magic_bases.mtl": "69ce5996a40fb512cfef83b874aa7b8cf2d9aa9206f77f9a3be0c03b591a82b7",
+    "caelum/data/inventory_magic_bases.modeldef": "53bfb7c41fd950c3bdd4ab1efc9ba89d2a7b9aac05dcf896c9365e9e47c03f80",
+    "models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041"
+  }
+}

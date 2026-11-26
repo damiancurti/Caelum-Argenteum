@@ -1,0 +1,71 @@
+{
+  "staff": [
+    [],
+    {
+      "closed_components": 16,
+      "fixed_attachment_witnesses": 15,
+      "connected_components": 16,
+      "opening_probes": 0,
+      "opening_rays": 0,
+      "native_triangles": 8352
+    }
+  ],
+  "bell": [
+    [],
+    {
+      "closed_components": 7,
+      "fixed_attachment_witnesses": 6,
+      "connected_components": 7,
+      "opening_probes": 2,
+      "opening_rays": 10,
+      "native_triangles": 4392
+    }
+  ],
+  "statuette": [
+    [],
+    {
+      "closed_components": 16,
+      "fixed_attachment_witnesses": 15,
+      "connected_components": 16,
+      "opening_probes": 0,
+      "opening_rays": 0,
+      "native_triangles": 8112
+    }
+  ],
+  "seal": [
+    [
+      "Detached attachment oval_frame -> blank_face",
+      "Detached attachment crown1 -> rear_neck"
+    ],
+    {
+      "closed_components": 8,
+      "fixed_attachment_witnesses": 7,
+      "connected_components": 8,
+      "opening_probes": 0,
+      "opening_rays": 0,
+      "native_triangles": 4872
+    }
+  ],
+  "censer": [
+    [],
+    {
+      "closed_components": 6,
+      "fixed_attachment_witnesses": 5,
+      "connected_components": 6,
+      "opening_probes": 4,
+      "opening_rays": 20,
+      "native_triangles": 16512
+    }
+  ],
+  "scepter": [
+    [],
+    {
+      "closed_components": 16,
+      "fixed_attachment_witnesses": 15,
+      "connected_components": 16,
+      "opening_probes": 0,
+      "opening_rays": 0,
+      "native_triangles": 8352
+    }
+  ]
+}

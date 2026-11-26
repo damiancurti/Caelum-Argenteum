@@ -1,0 +1,10 @@
+{
+  "files": 17,
+  "byte_identical": true,
+  "changed_from_visual03": [
+    "models/caelum/inventory/magic_bases/seal.md3",
+    "editable/seal.obj",
+    "manifest.json"
+  ],
+  "preview_package_byte_identical": true
+}
