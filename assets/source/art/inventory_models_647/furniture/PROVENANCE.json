@@ -1,0 +1,8 @@
+{
+  "issue": 666,
+  "parent_issue": 647,
+  "author": "Damian Curti / Caelum Argenteum project",
+  "method": "Reuse original owned model vertices, UVs, materials and icons; assemble dining chairs by native seat layout. No new bitmap generation or editing.",
+  "source_authority": "Existing model bindings and CaelumDiningSetData / CaelumPortableDiningTable.SeatPosition and SeatAngle. Source hashes in DESIGN.json.",
+  "approval": "User requested all dropped inventory models; existing placed furniture design retained. New dropped presentations await author review. Existing unresolved placed-object author checks remain pending."
+}

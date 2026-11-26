@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.10** - 2026-11-13.
+Documentation version: **5.17.11** - 2026-11-13.
+
+## 5.17.11 - Unplaced furniture inventory models (#666)
+
+Seventeen native item classes reuse existing owned furniture meshes and pixels.
+Complete dining sets include their original chairs. Original item classes,
+collision, Actor.Scale, icons, mass and placed body/cargo mechanics remain intact.
+Native tests and author review are tracked separately in ASSETS and TASKS;
+CA666-FURNITURE-01 is pending. Remaining inventory and character work continues.
 
 ## 5.17.10 - Camp inventory world models (#664)
 

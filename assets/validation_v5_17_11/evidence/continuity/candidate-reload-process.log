@@ -1,0 +1,536 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 18:57:12
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-666/build/issue666-furniture01.pk3, 18213 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-666/build/issue666-native01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2504.63 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+CA666 PASS two independent copies of all seventeen classes
+CA666 PASS furniture 0 saved reference
+CA666 PASS furniture 0 independent world ownership
+CA666 PASS furniture 0 no duplicate held identity
+CA666 PASS furniture 0 original collision and scale
+CA666 PASS furniture 0 original icon and spawn pair
+CA666 PASS furniture 0 native floor contact
+CA666 PASS furniture 0 original furniture weight
+CA666 PASS furniture 0 independent provenance
+CA666 PASS furniture 0 exact surface contamination and location
+CA666 PASS furniture 1 saved reference
+CA666 PASS furniture 1 independent world ownership
+CA666 PASS furniture 1 no duplicate held identity
+CA666 PASS furniture 1 original collision and scale
+CA666 PASS furniture 1 original icon and spawn pair
+CA666 PASS furniture 1 native floor contact
+CA666 PASS furniture 1 original furniture weight
+CA666 PASS furniture 1 independent provenance
+CA666 PASS furniture 1 exact surface contamination and location
+CA666 PASS furniture 2 saved reference
+CA666 PASS furniture 2 independent world ownership
+CA666 PASS furniture 2 no duplicate held identity
+CA666 PASS furniture 2 original collision and scale
+CA666 PASS furniture 2 original icon and spawn pair
+CA666 PASS furniture 2 native floor contact
+CA666 PASS furniture 2 original furniture weight
+CA666 PASS furniture 2 independent provenance
+CA666 PASS furniture 2 exact surface contamination and location
+CA666 PASS furniture 3 saved reference
+CA666 PASS furniture 3 independent world ownership
+CA666 PASS furniture 3 no duplicate held identity
+CA666 PASS furniture 3 original collision and scale
+CA666 PASS furniture 3 original icon and spawn pair
+CA666 PASS furniture 3 native floor contact
+CA666 PASS furniture 3 original furniture weight
+CA666 PASS furniture 3 independent provenance
+CA666 PASS furniture 3 exact surface contamination and location
+CA666 PASS furniture 4 saved reference
+CA666 PASS furniture 4 independent world ownership
+CA666 PASS furniture 4 no duplicate held identity
+CA666 PASS furniture 4 original collision and scale
+CA666 PASS furniture 4 original icon and spawn pair
+CA666 PASS furniture 4 native floor contact
+CA666 PASS furniture 4 original furniture weight
+CA666 PASS furniture 4 independent provenance
+CA666 PASS furniture 4 exact surface contamination and location
+CA666 PASS furniture 5 saved reference
+CA666 PASS furniture 5 independent world ownership
+CA666 PASS furniture 5 no duplicate held identity
+CA666 PASS furniture 5 original collision and scale
+CA666 PASS furniture 5 original icon and spawn pair
+CA666 PASS furniture 5 native floor contact
+CA666 PASS furniture 5 original furniture weight
+CA666 PASS furniture 5 independent provenance
+CA666 PASS furniture 5 exact surface contamination and location
+CA666 PASS furniture 6 saved reference
+CA666 PASS furniture 6 independent world ownership
+CA666 PASS furniture 6 no duplicate held identity
+CA666 PASS furniture 6 original collision and scale
+CA666 PASS furniture 6 original icon and spawn pair
+CA666 PASS furniture 6 native floor contact
+CA666 PASS furniture 6 original furniture weight
+CA666 PASS furniture 6 independent provenance
+CA666 PASS furniture 6 exact surface contamination and location
+CA666 PASS furniture 7 saved reference
+CA666 PASS furniture 7 independent world ownership
+CA666 PASS furniture 7 no duplicate held identity
+CA666 PASS furniture 7 original collision and scale
+CA666 PASS furniture 7 original icon and spawn pair
+CA666 PASS furniture 7 native floor contact
+CA666 PASS furniture 7 original furniture weight
+CA666 PASS furniture 7 independent provenance
+CA666 PASS furniture 7 exact surface contamination and location
+CA666 PASS furniture 8 saved reference
+CA666 PASS furniture 8 independent world ownership
+CA666 PASS furniture 8 no duplicate held identity
+CA666 PASS furniture 8 original collision and scale
+CA666 PASS furniture 8 original icon and spawn pair
+CA666 PASS furniture 8 native floor contact
+CA666 PASS furniture 8 original furniture weight
+CA666 PASS furniture 8 independent provenance
+CA666 PASS furniture 8 exact surface contamination and location
+CA666 PASS furniture 9 saved reference
+CA666 PASS furniture 9 independent world ownership
+CA666 PASS furniture 9 no duplicate held identity
+CA666 PASS furniture 9 original collision and scale
+CA666 PASS furniture 9 original icon and spawn pair
+CA666 PASS furniture 9 native floor contact
+CA666 PASS furniture 9 original furniture weight
+CA666 PASS furniture 9 independent provenance
+CA666 PASS furniture 9 exact surface contamination and location
+CA666 PASS furniture 10 saved reference
+CA666 PASS furniture 10 independent world ownership
+CA666 PASS furniture 10 no duplicate held identity
+CA666 PASS furniture 10 original collision and scale
+CA666 PASS furniture 10 original icon and spawn pair
+CA666 PASS furniture 10 native floor contact
+CA666 PASS furniture 10 original furniture weight
+CA666 PASS furniture 10 independent provenance
+CA666 PASS furniture 10 exact surface contamination and location
+CA666 PASS furniture 11 saved reference
+CA666 PASS furniture 11 independent world ownership
+CA666 PASS furniture 11 no duplicate held identity
+CA666 PASS furniture 11 original collision and scale
+CA666 PASS furniture 11 original icon and spawn pair
+CA666 PASS furniture 11 native floor contact
+CA666 PASS furniture 11 original furniture weight
+CA666 PASS furniture 11 independent provenance
+CA666 PASS furniture 11 exact surface contamination and location
+CA666 PASS furniture 12 saved reference
+CA666 PASS furniture 12 independent world ownership
+CA666 PASS furniture 12 no duplicate held identity
+CA666 PASS furniture 12 original collision and scale
+CA666 PASS furniture 12 original icon and spawn pair
+CA666 PASS furniture 12 native floor contact
+CA666 PASS furniture 12 original furniture weight
+CA666 PASS furniture 12 independent provenance
+CA666 PASS furniture 12 exact surface contamination and location
+CA666 PASS furniture 13 saved reference
+CA666 PASS furniture 13 independent world ownership
+CA666 PASS furniture 13 no duplicate held identity
+CA666 PASS furniture 13 original collision and scale
+CA666 PASS furniture 13 original icon and spawn pair
+CA666 PASS furniture 13 native floor contact
+CA666 PASS furniture 13 original furniture weight
+CA666 PASS furniture 13 independent provenance
+CA666 PASS furniture 13 exact surface contamination and location
+CA666 PASS furniture 14 saved reference
+CA666 PASS furniture 14 independent world ownership
+CA666 PASS furniture 14 no duplicate held identity
+CA666 PASS furniture 14 original collision and scale
+CA666 PASS furniture 14 original icon and spawn pair
+CA666 PASS furniture 14 native floor contact
+CA666 PASS furniture 14 original furniture weight
+CA666 PASS furniture 14 independent provenance
+CA666 PASS furniture 14 exact surface contamination and location
+CA666 PASS furniture 15 saved reference
+CA666 PASS furniture 15 independent world ownership
+CA666 PASS furniture 15 no duplicate held identity
+CA666 PASS furniture 15 original collision and scale
+CA666 PASS furniture 15 original icon and spawn pair
+CA666 PASS furniture 15 native floor contact
+CA666 PASS furniture 15 original furniture weight
+CA666 PASS furniture 15 independent provenance
+CA666 PASS furniture 15 exact surface contamination and location
+CA666 PASS furniture 16 saved reference
+CA666 PASS furniture 16 independent world ownership
+CA666 PASS furniture 16 no duplicate held identity
+CA666 PASS furniture 16 original collision and scale
+CA666 PASS furniture 16 original icon and spawn pair
+CA666 PASS furniture 16 native floor contact
+CA666 PASS furniture 16 original furniture weight
+CA666 PASS furniture 16 independent provenance
+CA666 PASS furniture 16 exact surface contamination and location
+CA666 PASS furniture 17 saved reference
+CA666 PASS furniture 17 independent world ownership
+CA666 PASS furniture 17 no duplicate held identity
+CA666 PASS furniture 17 original collision and scale
+CA666 PASS furniture 17 original icon and spawn pair
+CA666 PASS furniture 17 native floor contact
+CA666 PASS furniture 17 original furniture weight
+CA666 PASS furniture 17 independent provenance
+CA666 PASS furniture 17 exact surface contamination and location
+CA666 PASS furniture 18 saved reference
+CA666 PASS furniture 18 independent world ownership
+CA666 PASS furniture 18 no duplicate held identity
+CA666 PASS furniture 18 original collision and scale
+CA666 PASS furniture 18 original icon and spawn pair
+CA666 PASS furniture 18 native floor contact
+CA666 PASS furniture 18 original furniture weight
+CA666 PASS furniture 18 independent provenance
+CA666 PASS furniture 18 exact surface contamination and location
+CA666 PASS furniture 19 saved reference
+CA666 PASS furniture 19 independent world ownership
+CA666 PASS furniture 19 no duplicate held identity
+CA666 PASS furniture 19 original collision and scale
+CA666 PASS furniture 19 original icon and spawn pair
+CA666 PASS furniture 19 native floor contact
+CA666 PASS furniture 19 original furniture weight
+CA666 PASS furniture 19 independent provenance
+CA666 PASS furniture 19 exact surface contamination and location
+CA666 PASS furniture 20 saved reference
+CA666 PASS furniture 20 independent world ownership
+CA666 PASS furniture 20 no duplicate held identity
+CA666 PASS furniture 20 original collision and scale
+CA666 PASS furniture 20 original icon and spawn pair
+CA666 PASS furniture 20 native floor contact
+CA666 PASS furniture 20 original furniture weight
+CA666 PASS furniture 20 independent provenance
+CA666 PASS furniture 20 exact surface contamination and location
+CA666 PASS furniture 21 saved reference
+CA666 PASS furniture 21 independent world ownership
+CA666 PASS furniture 21 no duplicate held identity
+CA666 PASS furniture 21 original collision and scale
+CA666 PASS furniture 21 original icon and spawn pair
+CA666 PASS furniture 21 native floor contact
+CA666 PASS furniture 21 original furniture weight
+CA666 PASS furniture 21 independent provenance
+CA666 PASS furniture 21 exact surface contamination and location
+CA666 PASS furniture 22 saved reference
+CA666 PASS furniture 22 independent world ownership
+CA666 PASS furniture 22 no duplicate held identity
+CA666 PASS furniture 22 original collision and scale
+CA666 PASS furniture 22 original icon and spawn pair
+CA666 PASS furniture 22 native floor contact
+CA666 PASS furniture 22 original furniture weight
+CA666 PASS furniture 22 independent provenance
+CA666 PASS furniture 22 exact surface contamination and location
+CA666 PASS furniture 23 saved reference
+CA666 PASS furniture 23 independent world ownership
+CA666 PASS furniture 23 no duplicate held identity
+CA666 PASS furniture 23 original collision and scale
+CA666 PASS furniture 23 original icon and spawn pair
+CA666 PASS furniture 23 native floor contact
+CA666 PASS furniture 23 original furniture weight
+CA666 PASS furniture 23 independent provenance
+CA666 PASS furniture 23 exact surface contamination and location
+CA666 PASS furniture 24 saved reference
+CA666 PASS furniture 24 independent world ownership
+CA666 PASS furniture 24 no duplicate held identity
+CA666 PASS furniture 24 original collision and scale
+CA666 PASS furniture 24 original icon and spawn pair
+CA666 PASS furniture 24 native floor contact
+CA666 PASS furniture 24 original furniture weight
+CA666 PASS furniture 24 independent provenance
+CA666 PASS furniture 24 exact surface contamination and location
+CA666 PASS furniture 25 saved reference
+CA666 PASS furniture 25 independent world ownership
+CA666 PASS furniture 25 no duplicate held identity
+CA666 PASS furniture 25 original collision and scale
+CA666 PASS furniture 25 original icon and spawn pair
+CA666 PASS furniture 25 native floor contact
+CA666 PASS furniture 25 original furniture weight
+CA666 PASS furniture 25 independent provenance
+CA666 PASS furniture 25 exact surface contamination and location
+CA666 PASS furniture 26 saved reference
+CA666 PASS furniture 26 independent world ownership
+CA666 PASS furniture 26 no duplicate held identity
+CA666 PASS furniture 26 original collision and scale
+CA666 PASS furniture 26 original icon and spawn pair
+CA666 PASS furniture 26 native floor contact
+CA666 PASS furniture 26 original furniture weight
+CA666 PASS furniture 26 independent provenance
+CA666 PASS furniture 26 exact surface contamination and location
+CA666 PASS furniture 27 saved reference
+CA666 PASS furniture 27 independent world ownership
+CA666 PASS furniture 27 no duplicate held identity
+CA666 PASS furniture 27 original collision and scale
+CA666 PASS furniture 27 original icon and spawn pair
+CA666 PASS furniture 27 native floor contact
+CA666 PASS furniture 27 original furniture weight
+CA666 PASS furniture 27 independent provenance
+CA666 PASS furniture 27 exact surface contamination and location
+CA666 PASS furniture 28 saved reference
+CA666 PASS furniture 28 independent world ownership
+CA666 PASS furniture 28 no duplicate held identity
+CA666 PASS furniture 28 original collision and scale
+CA666 PASS furniture 28 original icon and spawn pair
+CA666 PASS furniture 28 native floor contact
+CA666 PASS furniture 28 original furniture weight
+CA666 PASS furniture 28 independent provenance
+CA666 PASS furniture 28 exact surface contamination and location
+CA666 PASS furniture 29 saved reference
+CA666 PASS furniture 29 independent world ownership
+CA666 PASS furniture 29 no duplicate held identity
+CA666 PASS furniture 29 original collision and scale
+CA666 PASS furniture 29 original icon and spawn pair
+CA666 PASS furniture 29 native floor contact
+CA666 PASS furniture 29 original furniture weight
+CA666 PASS furniture 29 independent provenance
+CA666 PASS furniture 29 exact surface contamination and location
+CA666 PASS furniture 30 saved reference
+CA666 PASS furniture 30 independent world ownership
+CA666 PASS furniture 30 no duplicate held identity
+CA666 PASS furniture 30 original collision and scale
+CA666 PASS furniture 30 original icon and spawn pair
+CA666 PASS furniture 30 native floor contact
+CA666 PASS furniture 30 original furniture weight
+CA666 PASS furniture 30 independent provenance
+CA666 PASS furniture 30 exact surface contamination and location
+CA666 PASS furniture 31 saved reference
+CA666 PASS furniture 31 independent world ownership
+CA666 PASS furniture 31 no duplicate held identity
+CA666 PASS furniture 31 original collision and scale
+CA666 PASS furniture 31 original icon and spawn pair
+CA666 PASS furniture 31 native floor contact
+CA666 PASS furniture 31 original furniture weight
+CA666 PASS furniture 31 independent provenance
+CA666 PASS furniture 31 exact surface contamination and location
+CA666 PASS furniture 32 saved reference
+CA666 PASS furniture 32 independent world ownership
+CA666 PASS furniture 32 no duplicate held identity
+CA666 PASS furniture 32 original collision and scale
+CA666 PASS furniture 32 original icon and spawn pair
+CA666 PASS furniture 32 native floor contact
+CA666 PASS furniture 32 original furniture weight
+CA666 PASS furniture 32 independent provenance
+CA666 PASS furniture 32 exact surface contamination and location
+CA666 PASS furniture 33 saved reference
+CA666 PASS furniture 33 independent world ownership
+CA666 PASS furniture 33 no duplicate held identity
+CA666 PASS furniture 33 original collision and scale
+CA666 PASS furniture 33 original icon and spawn pair
+CA666 PASS furniture 33 native floor contact
+CA666 PASS furniture 33 original furniture weight
+CA666 PASS furniture 33 independent provenance
+CA666 PASS furniture 33 exact surface contamination and location
+CA666 COMPLETE failures=0
+CA666 PASS furniture 0 repickup
+CA666 PASS furniture 0 recovered independent identity
+CA666 PASS furniture 0 independent provenance
+CA666 PASS furniture 0 exact surface contamination and location
+CA666 PASS furniture 0 recovered original weight
+CA666 PASS furniture 1 repickup
+CA666 PASS furniture 1 recovered independent identity
+CA666 PASS furniture 1 independent provenance
+CA666 PASS furniture 1 exact surface contamination and location
+CA666 PASS furniture 1 recovered original weight
+CA666 PASS furniture 2 repickup
+CA666 PASS furniture 2 recovered independent identity
+CA666 PASS furniture 2 independent provenance
+CA666 PASS furniture 2 exact surface contamination and location
+CA666 PASS furniture 2 recovered original weight
+CA666 PASS furniture 3 repickup
+CA666 PASS furniture 3 recovered independent identity
+CA666 PASS furniture 3 independent provenance
+CA666 PASS furniture 3 exact surface contamination and location
+CA666 PASS furniture 3 recovered original weight
+CA666 PASS furniture 4 repickup
+CA666 PASS furniture 4 recovered independent identity
+CA666 PASS furniture 4 independent provenance
+CA666 PASS furniture 4 exact surface contamination and location
+CA666 PASS furniture 4 recovered original weight
+CA666 PASS furniture 5 repickup
+CA666 PASS furniture 5 recovered independent identity
+CA666 PASS furniture 5 independent provenance
+CA666 PASS furniture 5 exact surface contamination and location
+CA666 PASS furniture 5 recovered original weight
+CA666 PASS furniture 6 repickup
+CA666 PASS furniture 6 recovered independent identity
+CA666 PASS furniture 6 independent provenance
+CA666 PASS furniture 6 exact surface contamination and location
+CA666 PASS furniture 6 recovered original weight
+CA666 PASS furniture 7 repickup
+CA666 PASS furniture 7 recovered independent identity
+CA666 PASS furniture 7 independent provenance
+CA666 PASS furniture 7 exact surface contamination and location
+CA666 PASS furniture 7 recovered original weight
+CA666 PASS furniture 8 repickup
+CA666 PASS furniture 8 recovered independent identity
+CA666 PASS furniture 8 independent provenance
+CA666 PASS furniture 8 exact surface contamination and location
+CA666 PASS furniture 8 recovered original weight
+CA666 PASS furniture 9 repickup
+CA666 PASS furniture 9 recovered independent identity
+CA666 PASS furniture 9 independent provenance
+CA666 PASS furniture 9 exact surface contamination and location
+CA666 PASS furniture 9 recovered original weight
+CA666 PASS furniture 10 repickup
+CA666 PASS furniture 10 recovered independent identity
+CA666 PASS furniture 10 independent provenance
+CA666 PASS furniture 10 exact surface contamination and location
+CA666 PASS furniture 10 recovered original weight
+CA666 PASS furniture 11 repickup
+CA666 PASS furniture 11 recovered independent identity
+CA666 PASS furniture 11 independent provenance
+CA666 PASS furniture 11 exact surface contamination and location
+CA666 PASS furniture 11 recovered original weight
+CA666 PASS furniture 12 repickup
+CA666 PASS furniture 12 recovered independent identity
+CA666 PASS furniture 12 independent provenance
+CA666 PASS furniture 12 exact surface contamination and location
+CA666 PASS furniture 12 recovered original weight
+CA666 PASS furniture 13 repickup
+CA666 PASS furniture 13 recovered independent identity
+CA666 PASS furniture 13 independent provenance
+CA666 PASS furniture 13 exact surface contamination and location
+CA666 PASS furniture 13 recovered original weight
+CA666 PASS furniture 14 repickup
+CA666 PASS furniture 14 recovered independent identity
+CA666 PASS furniture 14 independent provenance
+CA666 PASS furniture 14 exact surface contamination and location
+CA666 PASS furniture 14 recovered original weight
+CA666 PASS furniture 15 repickup
+CA666 PASS furniture 15 recovered independent identity
+CA666 PASS furniture 15 independent provenance
+CA666 PASS furniture 15 exact surface contamination and location
+CA666 PASS furniture 15 recovered original weight
+CA666 PASS furniture 16 repickup
+CA666 PASS furniture 16 recovered independent identity
+CA666 PASS furniture 16 independent provenance
+CA666 PASS furniture 16 exact surface contamination and location
+CA666 PASS furniture 16 recovered original weight
+CA666 PASS furniture 17 repickup
+CA666 PASS furniture 17 recovered independent identity
+CA666 PASS furniture 17 independent provenance
+CA666 PASS furniture 17 exact surface contamination and location
+CA666 PASS furniture 17 recovered original weight
+CA666 PASS furniture 18 repickup
+CA666 PASS furniture 18 recovered independent identity
+CA666 PASS furniture 18 independent provenance
+CA666 PASS furniture 18 exact surface contamination and location
+CA666 PASS furniture 18 recovered original weight
+CA666 PASS furniture 19 repickup
+CA666 PASS furniture 19 recovered independent identity
+CA666 PASS furniture 19 independent provenance
+CA666 PASS furniture 19 exact surface contamination and location
+CA666 PASS furniture 19 recovered original weight
+CA666 PASS furniture 20 repickup
+CA666 PASS furniture 20 recovered independent identity
+CA666 PASS furniture 20 independent provenance
+CA666 PASS furniture 20 exact surface contamination and location
+CA666 PASS furniture 20 recovered original weight
+CA666 PASS furniture 21 repickup
+CA666 PASS furniture 21 recovered independent identity
+CA666 PASS furniture 21 independent provenance
+CA666 PASS furniture 21 exact surface contamination and location
+CA666 PASS furniture 21 recovered original weight
+CA666 PASS furniture 22 repickup
+CA666 PASS furniture 22 recovered independent identity
+CA666 PASS furniture 22 independent provenance
+CA666 PASS furniture 22 exact surface contamination and location
+CA666 PASS furniture 22 recovered original weight
+CA666 PASS furniture 23 repickup
+CA666 PASS furniture 23 recovered independent identity
+CA666 PASS furniture 23 independent provenance
+CA666 PASS furniture 23 exact surface contamination and location
+CA666 PASS furniture 23 recovered original weight
+CA666 PASS furniture 24 repickup
+CA666 PASS furniture 24 recovered independent identity
+CA666 PASS furniture 24 independent provenance
+CA666 PASS furniture 24 exact surface contamination and location
+CA666 PASS furniture 24 recovered original weight
+CA666 PASS furniture 25 repickup
+CA666 PASS furniture 25 recovered independent identity
+CA666 PASS furniture 25 independent provenance
+CA666 PASS furniture 25 exact surface contamination and location
+CA666 PASS furniture 25 recovered original weight
+CA666 PASS furniture 26 repickup
+CA666 PASS furniture 26 recovered independent identity
+CA666 PASS furniture 26 independent provenance
+CA666 PASS furniture 26 exact surface contamination and location
+CA666 PASS furniture 26 recovered original weight
+CA666 PASS furniture 27 repickup
+CA666 PASS furniture 27 recovered independent identity
+CA666 PASS furniture 27 independent provenance
+CA666 PASS furniture 27 exact surface contamination and location
+CA666 PASS furniture 27 recovered original weight
+CA666 PASS furniture 28 repickup
+CA666 PASS furniture 28 recovered independent identity
+CA666 PASS furniture 28 independent provenance
+CA666 PASS furniture 28 exact surface contamination and location
+CA666 PASS furniture 28 recovered original weight
+CA666 PASS furniture 29 repickup
+CA666 PASS furniture 29 recovered independent identity
+CA666 PASS furniture 29 independent provenance
+CA666 PASS furniture 29 exact surface contamination and location
+CA666 PASS furniture 29 recovered original weight
+CA666 PASS furniture 30 repickup
+CA666 PASS furniture 30 recovered independent identity
+CA666 PASS furniture 30 independent provenance
+CA666 PASS furniture 30 exact surface contamination and location
+CA666 PASS furniture 30 recovered original weight
+CA666 PASS furniture 31 repickup
+CA666 PASS furniture 31 recovered independent identity
+CA666 PASS furniture 31 independent provenance
+CA666 PASS furniture 31 exact surface contamination and location
+CA666 PASS furniture 31 recovered original weight
+CA666 PASS furniture 32 repickup
+CA666 PASS furniture 32 recovered independent identity
+CA666 PASS furniture 32 independent provenance
+CA666 PASS furniture 32 exact surface contamination and location
+CA666 PASS furniture 32 recovered original weight
+CA666 PASS furniture 33 repickup
+CA666 PASS furniture 33 recovered independent identity
+CA666 PASS furniture 33 independent provenance
+CA666 PASS furniture 33 exact surface contamination and location
+CA666 PASS furniture 33 recovered original weight
+CA666 PASS all independent furniture identities recovered
+CA666 COMPLETE failures=0

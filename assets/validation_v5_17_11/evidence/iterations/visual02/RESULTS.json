@@ -1,0 +1,27 @@
+{
+  "issue": 666,
+  "kind": "furniture",
+  "scope": "Native pickup/toss, quantity and saved ownership for furniture; no normal menu or author acceptance.",
+  "baseline_sha256": "8a9138d73c0a0fd7557aeb45a883fa61a3747149dcbdf7612a5f682c5ca1e75c",
+  "runtime_sha256": "8a9138d73c0a0fd7557aeb45a883fa61a3747149dcbdf7612a5f682c5ca1e75c",
+  "model_sha256": "6640d0df1ff27c675523403e029677eb3d3dff942581aef05fbf1b09a5e79aef",
+  "fixture_sha256": "5e660028236ca9a5cb291d323d0a4025d057e84aa9f803eb781ce2638f58a6d0",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 0,
+      "passed": false,
+      "errors": [
+        "Unknown command \"hot\""
+      ],
+      "assertions": 0
+    }
+  ],
+  "captures": {
+    "detail-15-270.png": "d96c77c640b9f524d9c305c4583c671d779b728786ee927b68add91796e8b2d4",
+    "detail-16-160.png": "6b13dea21b43f4f44413e6f9d3755ce5fe8dee1192067c5710293b099e0b15a1",
+    "detail-16-270.png": "6b13dea21b43f4f44413e6f9d3755ce5fe8dee1192067c5710293b099e0b15a1",
+    "detail-16-90.png": "d96c77c640b9f524d9c305c4583c671d779b728786ee927b68add91796e8b2d4"
+  }
+}

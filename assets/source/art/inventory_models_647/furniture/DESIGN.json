@@ -1,0 +1,399 @@
+{
+  "schema_revision": 1,
+  "issue": 666,
+  "parent_issue": 647,
+  "status": "native_candidate_pending_author_review",
+  "policy": "Reuse existing owned placed geometry, UVs and pixels. Complete dining sets retain original table and 2/6/12/6 chairs at native seat transforms. Uniformly fit drop meshes inside original opaque sprite width and height; preserve native Actor.Scale, collision and placed ownership. These are inventory presentations, not new physical dimensions.",
+  "variants": {
+    "wardrobe": {
+      "source_obj": "src/models/caelum/props/wardrobe/closed.obj",
+      "reference": "src/graphics/caelum/icons/furniture/wardrobe.png",
+      "sprite": "CWRD",
+      "sprite_scale": [
+        1.774224,
+        1.774224
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumWardrobeItem",
+      "body_class": "CaelumWardrobeClosedVisual"
+    },
+    "cupboard": {
+      "source_obj": "src/models/caelum/props/kitchen_fixtures/closed.obj",
+      "reference": "src/graphics/caelum/icons/kitchen_stations/cupboard.png",
+      "sprite": "CKCB",
+      "sprite_scale": [
+        2.8125,
+        2.8125
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumCupboardItem",
+      "body_class": "CaelumKitchenCupboardClosedVisual"
+    },
+    "luxury_chair": {
+      "source_obj": "src/models/caelum/props/luxury/ca_luxury_chair.obj",
+      "reference": "src/sprites/caelum/rest_furniture/CLICA0.png",
+      "sprite": "CLIC",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumLuxuryChairItem",
+      "body_class": "CaelumLuxuryChair"
+    },
+    "luxury_bed": {
+      "source_obj": "src/models/caelum/props/luxury/ca_luxury_bed.obj",
+      "reference": "src/sprites/caelum/rest_furniture/CLIBA0.png",
+      "sprite": "CLIB",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumLuxuryBedItem",
+      "body_class": "CaelumLuxuryBed"
+    },
+    "basic_chair": {
+      "source_obj": "src/models/caelum/props/rest/ca_rest_chair.obj",
+      "reference": "src/sprites/caelum/rest_furniture/CBICA0.png",
+      "sprite": "CBIC",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumBasicChairItem",
+      "body_class": "CaelumRestChair"
+    },
+    "basic_bed": {
+      "source_obj": "src/models/caelum/props/rest/ca_rest_bed.obj",
+      "reference": "src/sprites/caelum/rest_furniture/CBIBA0.png",
+      "sprite": "CBIB",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumBasicBedItem",
+      "body_class": "CaelumRestBed"
+    },
+    "sofa_two": {
+      "source_obj": "src/models/caelum/props/sofas/ca_sofa_2.obj",
+      "reference": "src/sprites/caelum/rest_furniture/CSF2A0.png",
+      "sprite": "CSF2",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumTwoSeatSofaItem",
+      "body_class": "CaelumTwoSeatSofa"
+    },
+    "sofa_three": {
+      "source_obj": "src/models/caelum/props/sofas/ca_sofa_3.obj",
+      "reference": "src/sprites/caelum/rest_furniture/CSF3A0.png",
+      "sprite": "CSF3",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumThreeSeatSofaItem",
+      "body_class": "CaelumThreeSeatSofa"
+    },
+    "desk": {
+      "source_obj": "src/models/caelum/props/study/ca_study_desk.obj",
+      "reference": "src/sprites/caelum/rest_furniture/CSDKA0.png",
+      "sprite": "CSDK",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumDeskItem",
+      "body_class": "CaelumPortableReadingDesk"
+    },
+    "bookcase": {
+      "source_obj": "src/models/caelum/props/study/ca_study_bookcase.obj",
+      "reference": "src/sprites/caelum/rest_furniture/CSBKA0.png",
+      "sprite": "CSBK",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumBookcaseItem",
+      "body_class": "CaelumPortableReadingShelf"
+    },
+    "dining_small": {
+      "source_obj": "src/models/caelum/props/dining_sets/ca_dining_small.obj",
+      "reference": "src/sprites/caelum/rest_furniture/CDS2A0.png",
+      "sprite": "CDS2",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumSmallDiningSetItem",
+      "body_class": "CaelumPortableSmallTable",
+      "dining": {
+        "kind": 0,
+        "seats": 2,
+        "width": 33.28,
+        "depth": 33.28,
+        "player_radius": 16,
+        "chair_radius": 9.843576586,
+        "chair_variant": "basic_chair"
+      },
+      "runtime_model": "models/caelum/inventory/furniture/dining_small.obj"
+    },
+    "dining_normal": {
+      "source_obj": "src/models/caelum/props/dining_sets/ca_dining_normal.obj",
+      "reference": "src/sprites/caelum/rest_furniture/CDS6A0.png",
+      "sprite": "CDS6",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumNormalDiningSetItem",
+      "body_class": "CaelumPortableNormalTable",
+      "dining": {
+        "kind": 1,
+        "seats": 6,
+        "width": 54.464,
+        "depth": 28.256,
+        "player_radius": 16,
+        "chair_radius": 9.843576586,
+        "chair_variant": "basic_chair"
+      },
+      "runtime_model": "models/caelum/inventory/furniture/dining_normal.obj"
+    },
+    "dining_large": {
+      "source_obj": "src/models/caelum/props/dining_sets/ca_dining_large.obj",
+      "reference": "src/sprites/caelum/rest_furniture/CD12A0.png",
+      "sprite": "CD12",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumLargeDiningSetItem",
+      "body_class": "CaelumPortableLargeTable",
+      "dining": {
+        "kind": 2,
+        "seats": 12,
+        "width": 99.36,
+        "depth": 27.04,
+        "player_radius": 16,
+        "chair_radius": 9.843576586,
+        "chair_variant": "basic_chair"
+      },
+      "runtime_model": "models/caelum/inventory/furniture/dining_large.obj"
+    },
+    "dining_luxury": {
+      "source_obj": "src/models/caelum/props/luxury/ca_luxury_table.obj",
+      "reference": "src/sprites/caelum/rest_furniture/CDLXA0.png",
+      "sprite": "CDLX",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumLuxuryDiningSetItem",
+      "body_class": "CaelumPortableLuxuryTable",
+      "dining": {
+        "kind": 3,
+        "seats": 6,
+        "width": 133.088,
+        "depth": 48.96,
+        "player_radius": 16,
+        "chair_radius": 15.816564481580693,
+        "chair_variant": "luxury_chair"
+      },
+      "runtime_model": "models/caelum/inventory/furniture/dining_luxury.obj"
+    },
+    "painting": {
+      "source_obj": "src/models/caelum/props/ornamental/ca_river_painting.obj",
+      "reference": "src/sprites/caelum/ornamental/COTPA0.png",
+      "sprite": "COTP",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": 90.0,
+      "class": "CaelumPaintingItem",
+      "body_class": "CaelumLandscapePainting"
+    },
+    "statue": {
+      "source_obj": "src/models/caelum/props/ornamental/ca_botanical_statue.obj",
+      "reference": "src/sprites/caelum/ornamental/COTSA0.png",
+      "sprite": "COTS",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": -90.0,
+      "class": "CaelumStatueItem",
+      "body_class": "CaelumOrnamentalStatue"
+    },
+    "painting_large": {
+      "source_obj": "src/models/caelum/props/ornamental/ca_large_river_painting.obj",
+      "reference": "src/sprites/caelum/ornamental/COTPA0.png",
+      "sprite": "COTP",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "angle_offset": 90.0,
+      "class": "CaelumLargePaintingItem",
+      "body_class": "CaelumLargeLandscapePainting"
+    }
+  },
+  "materials": [
+    "models/caelum/props/ornamental/carved_wood.png",
+    "models/caelum/props/ornamental/river_landscape.png",
+    "models/caelum/props/stash/ca_stash_inside.png",
+    "models/caelum/props/stash/ca_stash_lock.png",
+    "models/caelum/props/stash/ca_stash_metal.png",
+    "models/caelum/props/stash/ca_stash_wood.png",
+    "models/caelum/world/alchemy_ingredients/cloth.png",
+    "models/caelum/world/alchemy_ingredients/cloth_shade1.png",
+    "models/caelum/world/alchemy_ingredients/cloth_shade3.png",
+    "models/caelum/world/alchemy_ingredients/cloth_shade4.png",
+    "models/caelum/world/alchemy_ingredients/cloth_shade5.png"
+  ],
+  "original_model_blocks": {
+    "CaelumWardrobeClosedVisual": {
+      "file": "src/caelum/data/wardrobe.modeldef",
+      "text": "Model CaelumWardrobeClosedVisual { Path \"models/caelum/props/wardrobe\" Model 0 \"closed.obj\" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CWRD A 0 0 }"
+    },
+    "CaelumKitchenCupboardClosedVisual": {
+      "file": "src/caelum/data/kitchen_fixtures.modeldef",
+      "text": "Model CaelumKitchenCupboardClosedVisual { Path \"models/caelum/props/kitchen_fixtures\" Model 0 \"closed.obj\" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CKCB A 0 0 }"
+    },
+    "CaelumLuxuryChair": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumLuxuryChair { Path \"models/caelum/props/luxury\" Model 0 \"ca_luxury_chair.obj\" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CAHC A 0 0 }"
+    },
+    "CaelumLuxuryBed": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumLuxuryBed { Path \"models/caelum/props/luxury\" Model 0 \"ca_luxury_bed.obj\" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CAHC A 0 0 }"
+    },
+    "CaelumRestChair": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumRestChair { Path \"models/caelum/props/rest\" Model 0 \"ca_rest_chair.obj\" Scale 1.0 1.0 1.0 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CAHC A 0 0 }"
+    },
+    "CaelumRestBed": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumRestBed { Path \"models/caelum/props/rest\" Model 0 \"ca_rest_bed.obj\" Scale 1.0 1.0 1.0 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CAHC A 0 0 }"
+    },
+    "CaelumTwoSeatSofa": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumTwoSeatSofa { Path \"models/caelum/props/sofas\" Model 0 \"ca_sofa_2.obj\" Scale 1.0 1.0 1.0 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CAHC A 0 0 }"
+    },
+    "CaelumThreeSeatSofa": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumThreeSeatSofa { Path \"models/caelum/props/sofas\" Model 0 \"ca_sofa_3.obj\" Scale 1.0 1.0 1.0 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CAHC A 0 0 }"
+    },
+    "CaelumPortableReadingDesk": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumPortableReadingDesk { Path \"models/caelum/props/study\" Model 0 \"ca_study_desk.obj\" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CAHC A 0 0 }"
+    },
+    "CaelumPortableReadingShelf": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumPortableReadingShelf { Path \"models/caelum/props/study\" Model 0 \"ca_study_bookcase.obj\" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CBOO A 0 0 }"
+    },
+    "CaelumPortableSmallTable": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumPortableSmallTable { Path \"models/caelum/props/dining_sets\" Model 0 \"ca_dining_small.obj\" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CAHC A 0 0 }"
+    },
+    "CaelumPortableNormalTable": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumPortableNormalTable { Path \"models/caelum/props/dining_sets\" Model 0 \"ca_dining_normal.obj\" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CAHC A 0 0 }"
+    },
+    "CaelumPortableLargeTable": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumPortableLargeTable { Path \"models/caelum/props/dining_sets\" Model 0 \"ca_dining_large.obj\" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CAHC A 0 0 }"
+    },
+    "CaelumPortableLuxuryTable": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumPortableLuxuryTable { Path \"models/caelum/props/luxury\" Model 0 \"ca_luxury_table.obj\" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CAHC A 0 0 }"
+    },
+    "CaelumLandscapePainting": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumLandscapePainting { Path \"models/caelum/props/ornamental\" Model 0 \"ca_river_painting.obj\" Scale 1 1 1 AngleOffset 90 CorrectPixelStretch DontCullBackFaces FrameIndex COAP A 0 0 }"
+    },
+    "CaelumOrnamentalStatue": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumOrnamentalStatue { Path \"models/caelum/props/ornamental\" Model 0 \"ca_botanical_statue.obj\" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex COAS A 0 0 }"
+    },
+    "CaelumLargeLandscapePainting": {
+      "file": "src/MODELDEF",
+      "text": "Model CaelumLargeLandscapePainting { Path \"models/caelum/props/ornamental\" Model 0 \"ca_large_river_painting.obj\" Scale 1 1 1 AngleOffset 90 CorrectPixelStretch DontCullBackFaces FrameIndex COAL A 0 0 }"
+    }
+  },
+  "source_sha256": {
+    "assets/generators/generate_inventory_camp_models.py": "16242c3cced836233ec95ea92548489b9492c87990972a7244231c5ed1358a47",
+    "src/caelum/data/CaelumBasicRestData.zs": "7ffb937ccdad00054c9a5f4dc327864f83b2799e07ef6b84d4ccdc8517075858",
+    "src/caelum/data/CaelumDecorData.zs": "ce4443c0391ee7545fbcf3941c8e57f5ece48a9a47c30fa2593f3faaf63ca25c",
+    "src/caelum/data/CaelumDiningSetData.zs": "12ceb157f48799d489f384a47ff310820ce497b88ff433968b083809edf0a6f3",
+    "src/caelum/data/CaelumLuxuryData.zs": "42f4d6bc7c6fe59bdf81e63720f97fa6fffdf2d1fe54bc07e71434b60d7e9ac8",
+    "src/caelum/data/CaelumRestFurnitureData.zs": "09426842168977b4c0cad80bbd962aac024ba9059c2461b68ea9af1c26edf902",
+    "src/caelum/data/CaelumSofaData.zs": "67c240b12b4e2fc80abf8c1081796b7b57cf47d3c1d4c75b895d46ca3dbcbe5e",
+    "src/caelum/data/CaelumStorageFurnitureData.zs": "370bd9f22bb67ea8d8c40912476155ac20136db37ac8f75b2b13d5dbca8605c0",
+    "src/caelum/data/CaelumStudyData.zs": "ac72d296be05660e597fff094872b9bd99d91ced6538427c248df2d2cc0a16da",
+    "src/caelum/data/kitchen_fixtures.textures": "51ac3062bdc43bb7959907753c6c5d3fd525e018cf28d00a56e83760edbfd142",
+    "src/caelum/data/wardrobe.textures": "eb774d84048d98cc17b10b24a971d6bb4c9bf980fc01e649ec06bbc9115bd664",
+    "src/caelum/equipment/CaelumDecorItems.zs": "ca02bbb09f291f29e0dd3d784c7a20eed41f79cb19c87901176880d62622250a",
+    "src/caelum/equipment/CaelumDiningSetItems.zs": "79aa2f4feba7ddc49ddcaeb7ac780dd15c5faf9c802e9b39cd7642ba2255ba64",
+    "src/caelum/equipment/CaelumRestFurnitureItems.zs": "80451e6643a7e529302ec5f9e5eac420a860bbc8145a498dda3e1056fe776192",
+    "src/caelum/equipment/CaelumSofaItems.zs": "b42dd324fa88e8bbaebc1f8fcc2ed2b5b18ea78bd52c0a438ace1800a63d5b49",
+    "src/caelum/equipment/CaelumStorageFurnitureItems.zs": "7cb6a2bb5bf39207cc4665cdef0d1be0bbb85790fe6cbd337d1d60fd660947f1",
+    "src/caelum/equipment/CaelumStudyItems.zs": "9b8fa591d6a615cb0cd9b47f061ce65c4cacca97db2b8a19ba74c9943652eabf",
+    "src/graphics/caelum/icons/furniture/wardrobe.png": "94258275a713bfc8e69707fbef888f70fc01fcb3084d8966e00747aae9f87258",
+    "src/graphics/caelum/icons/kitchen_stations/cupboard.png": "be8fb29bdffbc48b8d929cb24307db899570c255ff72f51ef1d211c22168e64e",
+    "src/models/caelum/props/dining_sets/ca_dining_large.obj": "d9c12421766466b2e936102e560655852f2022d0919f06daac95fde1039d163a",
+    "src/models/caelum/props/dining_sets/ca_dining_normal.obj": "869ad86a09aa2e2c2743034505eab38c7966b46ee91271bfa1003e9272ac821a",
+    "src/models/caelum/props/dining_sets/ca_dining_small.obj": "50152e072aba1c3fd9ab18f9b54dcad265afb159945f09e3df0dd9aadfa36b5d",
+    "src/models/caelum/props/kitchen_fixtures/closed.obj": "1dc7c23127d125f0044d83b43e786a04d60f38f1ddcc2ebfec91ceb5881f8a8f",
+    "src/models/caelum/props/luxury/ca_luxury_bed.obj": "3eb6220fc85c6a6d01751c88a64027f618b05f1f42103cc389b2b25e10dd9284",
+    "src/models/caelum/props/luxury/ca_luxury_chair.obj": "06637f5ce0f01b8076e14eb99e61d8deef8f09118c7e14db1842ca93b102c346",
+    "src/models/caelum/props/luxury/ca_luxury_table.obj": "799650ec3a6234fe8b764535dbd4dc18dc517c2be6ef1bca9be261641d33e05a",
+    "src/models/caelum/props/ornamental/ca_botanical_statue.obj": "e5bd86fd058d3071192a3f20f867579a71d3f5c9249e7577b642127dd7b9df8a",
+    "src/models/caelum/props/ornamental/ca_large_river_painting.obj": "d7e010c8ea04f6a6c68edcd970d5fd938ac683a6a54c64971dd2cda289d5fbe3",
+    "src/models/caelum/props/ornamental/ca_river_painting.obj": "03f9d296e54f6c1351020992f8bc7b790a31ebc703cc123f8889f560737f8200",
+    "src/models/caelum/props/ornamental/carved_wood.png": "467d97247a5f612e20bf15cdb539b26ff4eafaba48ce26a886c3c906e7f1f1b4",
+    "src/models/caelum/props/ornamental/river_landscape.png": "d8b2c712ad38af0fbc1cbc8c770fc14f4520f71279698f3244237d3e822e3f67",
+    "src/models/caelum/props/rest/ca_rest_bed.obj": "c127d6a55d2a17eb64e5e6d6ae2bd2b24851b8c1c73c76f99600e5449ed272f5",
+    "src/models/caelum/props/rest/ca_rest_chair.obj": "a2531e42c20dc717dcbef74ec039cdb3f7cd01bcf2ae75eb1a1b61f3796f336b",
+    "src/models/caelum/props/sofas/ca_sofa_2.obj": "7c33ebd31ee58c580aa15721a4b651b8682cd39a33ecbe871c54114258163a46",
+    "src/models/caelum/props/sofas/ca_sofa_3.obj": "17092f40af4acdb6b724321e95b80aecd1ca58a2dcf1cc27a8015eb94c7abd0e",
+    "src/models/caelum/props/stash/ca_stash_inside.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "src/models/caelum/props/stash/ca_stash_lock.png": "b5b64919fd56f032ba18c3faab18bbb8be52d411cf7182492f0a056173811ca2",
+    "src/models/caelum/props/stash/ca_stash_metal.png": "12dcce7259db39be5b52583c63ec66f24240841b33ae70d985ca416bc158b9fe",
+    "src/models/caelum/props/stash/ca_stash_wood.png": "c7ae22352f207d99e59ddfaa4dbbb5628dd40ad66eb06638f984b16f27ffda36",
+    "src/models/caelum/props/study/ca_study_bookcase.obj": "ea953b494e234ee525cbc237d9b76922c95271cf6faa0fe99e31f36da372b9f4",
+    "src/models/caelum/props/study/ca_study_desk.obj": "85d07a7a7583440ef1de27fc73f0478f1753018cecbebdb323805d655744dc70",
+    "src/models/caelum/props/wardrobe/closed.obj": "e509ca5a2bbc5b3401b6e0aa60f5952ff5c85263f1cbb865a1d9499240af0951",
+    "src/models/caelum/world/alchemy_ingredients/cloth.png": "53ed47e3aef37f40a396034102781852b12ce36e76baaf7194f202fcbbead201",
+    "src/models/caelum/world/alchemy_ingredients/cloth_shade1.png": "9e433d6eba81f235ff026b81dc780d433cfb7982f365925bd1c017e46bc26436",
+    "src/models/caelum/world/alchemy_ingredients/cloth_shade3.png": "e58a6a0221e8bf018015d2696a0dbd8f301cac57207614839cc84bcb94815b99",
+    "src/models/caelum/world/alchemy_ingredients/cloth_shade4.png": "7173f4d6eb8bd76c13a797cee334e3473cc5dd13d2995c912b837d16e4dc45d0",
+    "src/models/caelum/world/alchemy_ingredients/cloth_shade5.png": "4d0cab6ff2c30f15cb1bc8827464e9e6ad0266b001f0ebc880826e0fc002a29a",
+    "src/sprites/caelum/ornamental/COTPA0.png": "d8a9375033985104b26e3698c9d972735630242f4959878727f57d0d416fc839",
+    "src/sprites/caelum/ornamental/COTSA0.png": "4ccf8aafc50672af42db56f1d01197f30441f9a71f3fd6349e2e9a65b263f99f",
+    "src/sprites/caelum/rest_furniture/CBIBA0.png": "f7e20c6aa9a3b9821ebc3ee3114499f13745bc93e137325a3f49f9b8a8bc6fbe",
+    "src/sprites/caelum/rest_furniture/CBICA0.png": "03187ff2fd9df3d837cc1cc743d6519f3aac2112ab62151518842e85c210f39e",
+    "src/sprites/caelum/rest_furniture/CD12A0.png": "133bdb4b0d1cc0380b863d9e761d8ea0e4ce9dd7c00da06789172c885700b456",
+    "src/sprites/caelum/rest_furniture/CDLXA0.png": "8c5c4c4f67e88c0ad8b5ba2ebcb08d63245e776174dac0c8c1c01b1d967ebe52",
+    "src/sprites/caelum/rest_furniture/CDS2A0.png": "42dc71b76d5b4c78e7df24890aa4784792373be1c0dc9c3eae39f8692ac3ec79",
+    "src/sprites/caelum/rest_furniture/CDS6A0.png": "9c86c85cd58e7d2e8193ab137e3dbd5880cdc5739b375a1872815ea3db4fcb84",
+    "src/sprites/caelum/rest_furniture/CLIBA0.png": "ed1a3df4904b2fc074fe69fc03670de209f08663d1921fa18c9b87193451a990",
+    "src/sprites/caelum/rest_furniture/CLICA0.png": "c4315085a295661397a414588ee4a1ffa978dee93ee771e9aedb61ab2bd0d8b3",
+    "src/sprites/caelum/rest_furniture/CSBKA0.png": "6bf85b8fe264f8e1012f4904db796c485bfe58254b48dfa7586986ba4130be86",
+    "src/sprites/caelum/rest_furniture/CSDKA0.png": "89818f40b5bf3b8ccdf1ec64cc19d17857ed725177bebd19135e646e0613b0e2",
+    "src/sprites/caelum/rest_furniture/CSF2A0.png": "031c2e16d2bd4ababe5c5564fca3041d4278e2d59afc7a67da43ef4bd335a073",
+    "src/sprites/caelum/rest_furniture/CSF3A0.png": "2fdbb6e23672c5ebc66700e4076797742a9412260458807be60060b633a18457"
+  }
+}

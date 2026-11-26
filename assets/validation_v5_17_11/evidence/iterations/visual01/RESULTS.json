@@ -1,0 +1,23 @@
+{
+  "issue": 666,
+  "kind": "furniture",
+  "scope": "Native pickup/toss, quantity and saved ownership for furniture; no normal menu or author acceptance.",
+  "baseline_sha256": "8a9138d73c0a0fd7557aeb45a883fa61a3747149dcbdf7612a5f682c5ca1e75c",
+  "runtime_sha256": "8a9138d73c0a0fd7557aeb45a883fa61a3747149dcbdf7612a5f682c5ca1e75c",
+  "model_sha256": "6640d0df1ff27c675523403e029677eb3d3dff942581aef05fbf1b09a5e79aef",
+  "fixture_sha256": "6391df726e40b7c0b15626a029998543215e367061b2b63c3da95537e768d675",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 1,
+      "passed": false,
+      "errors": [
+        "Unknown command \"hot\"",
+        "Script error, \"fixture.pk3:zscript\" line 117:"
+      ],
+      "assertions": 0
+    }
+  ],
+  "captures": {}
+}

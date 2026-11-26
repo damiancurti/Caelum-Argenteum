@@ -30,7 +30,7 @@ def main(default_kind='coins'):
         parser.add_argument('--' + name, type=Path, required=True)
     parser.add_argument('--baseline', type=Path, help='Previous runtime, required for automated compatibility checks.')
     parser.add_argument('--model', type=Path, help='Optional candidate preview.pk3 overlay.')
-    parser.add_argument('--kind', choices=('coins', 'consumables', 'water', 'food', 'ammunition', 'documents', 'ingots', 'camp'), default=default_kind, help='Select the issue-specific native inventory fixture.')
+    parser.add_argument('--kind', choices=('coins', 'consumables', 'water', 'food', 'ammunition', 'documents', 'ingots', 'camp', 'furniture'), default=default_kind, help='Select the issue-specific native inventory fixture.')
     parser.add_argument('--interactive', action='store_true', help='Open the inspection room for author review; no automatic acceptance.')
     parser.add_argument('--visual-only', action='store_true', help='Inspect a changed art candidate in one fresh run; no save compatibility claim.')
     args = parser.parse_args()
@@ -56,14 +56,15 @@ def main(default_kind='coins'):
         config = json.loads((ROOT / 'assets/source/art/inventory_models_647' / args.kind / 'DESIGN.json').read_text(encoding='utf-8'))
         classes = [item['class'] for item in config['variants'].values()] + [item['class'] for item in config.get('reused_variants', [])]
         classes += [binding['class'] for item in config['variants'].values() for binding in item.get('additional_bindings', []) if binding.get('inventory')]
-        fixture_name = {'camp': 'camp_drops.zs', 'water': 'water_drops.zs', 'food': 'food_drops.zs', 'ammunition': 'ammunition_drops.zs', 'documents': 'document_drops.zs', 'ingots': 'ingot_drops.zs', 'consumables': 'consumable_drops.zs'}[args.kind]
+        fixture_name = {'furniture': 'furniture_drops.zs', 'camp': 'camp_drops.zs', 'water': 'water_drops.zs', 'food': 'food_drops.zs', 'ammunition': 'ammunition_drops.zs', 'documents': 'document_drops.zs', 'ingots': 'ingot_drops.zs', 'consumables': 'consumable_drops.zs'}[args.kind]
         fixture_path = (ROOT / 'assets/validation_v5_17_3' / fixture_name) if args.kind == 'ammunition' else Path(__file__).with_name(fixture_name)
         if args.kind == 'documents': fixture_path = ROOT / 'assets/validation_v5_17_6/document_drops.zs'
         if args.kind == 'ingots': fixture_path = ROOT / 'assets/validation_v5_17_7/ingot_drops.zs'
         if args.kind == 'camp': fixture_path = ROOT / 'assets/validation_v5_17_10/camp_drops.zs'
+        if args.kind == 'furniture': fixture_path = ROOT / 'assets/validation_v5_17_11/furniture_drops.zs'
         source = fixture_path.read_text(encoding='utf-8')
         source = source.replace('ITEM_CLASSES', ','.join("'%s'" % kind for kind in classes))
-        if args.kind in ('ammunition', 'documents', 'ingots', 'camp'):
+        if args.kind in ('ammunition', 'documents', 'ingots', 'camp', 'furniture'):
             manifest = json.loads((ROOT / 'assets/source/art/inventory_models_647' / args.kind / 'EXPORT.json').read_text())
             records = list(manifest['variants'].values())
             records += [manifest['variants'][key] for key, item in config['variants'].items() for binding in item.get('additional_bindings', []) if binding.get('inventory')]
@@ -71,8 +72,13 @@ def main(default_kind='coins'):
             source = source.replace('DETAIL_EXTENTS', ','.join(str(max(b['max'][axis] - b['min'][axis] for axis in range(3))) for b in bounds))
             source = source.replace('DETAIL_HEIGHTS', ','.join(str((b['max'][2] + b['min'][2]) / 2) for b in bounds))
         if args.kind == 'ingots': source = source.replace('ITEM_IDS', ','.join(str(item['material_id']) for item in config['variants'].values()))
-        event_class = {'camp': 'CA664CampEvents', 'water': 'CA647WaterEvents', 'food': 'CA647FoodEvents', 'ammunition': 'CA652AmmoEvents', 'documents': 'CA656DocumentEvents', 'ingots': 'CA658IngotEvents', 'consumables': 'CA647ConsumableEvents'}[args.kind]
-    marker = 'CA664' if args.kind == 'camp' else 'CA658' if args.kind == 'ingots' else 'CA656' if args.kind == 'documents' else 'CA652' if args.kind == 'ammunition' else 'CA647'
+        if args.kind == 'furniture':
+            sys.path.insert(0, str(ROOT / 'assets/generators'))
+            from generate_inventory_furniture_models import seat_transforms
+            transforms = [value for item in config['variants'].values() if 'dining' in item for seat in seat_transforms(item['dining']) for value in seat]
+            source = source.replace('DINING_TRANSFORMS', ','.join(str(value) for value in transforms))
+        event_class = {'furniture': 'CA666FurnitureEvents', 'camp': 'CA664CampEvents', 'water': 'CA647WaterEvents', 'food': 'CA647FoodEvents', 'ammunition': 'CA652AmmoEvents', 'documents': 'CA656DocumentEvents', 'ingots': 'CA658IngotEvents', 'consumables': 'CA647ConsumableEvents'}[args.kind]
+    marker = 'CA666' if args.kind == 'furniture' else 'CA664' if args.kind == 'camp' else 'CA658' if args.kind == 'ingots' else 'CA656' if args.kind == 'documents' else 'CA652' if args.kind == 'ammunition' else 'CA647'
     (out / 'fixture.zs').write_text(source, encoding='utf-8')
     fixture = out / 'fixture.pk3'
     with zipfile.ZipFile(fixture, 'w') as package:
@@ -85,7 +91,7 @@ def main(default_kind='coins'):
         '[GlobalSettings]\nvid_fullscreen=false\nvid_preferbackend=1\nvid_activeinbackground=true\n'
         'i_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\n'
         'snd_mastervolume=0.05\nvid_maxfps=60\nlanguage=en\n')
-    if args.kind in ('ammunition', 'documents', 'ingots', 'camp'):
+    if args.kind in ('ammunition', 'documents', 'ingots', 'camp', 'furniture'):
         with (out / 'session.ini').open('a') as stream:
             stream.write('vid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\n[LastRun]\nVersion=225\n')
     common = 'screenblocks 12; crosshair 0; con_notifytime 0; '
@@ -93,7 +99,7 @@ def main(default_kind='coins'):
     if args.interactive:
         commands = fresh + ''.join(f'bind F{index + 1} "netevent ca647_view {index}"; ' for index in
                                    range(5 if args.kind == 'coins' else 9 if args.kind == 'food' else 8)) + '\n'
-        if args.kind in ('ammunition', 'documents', 'ingots', 'camp'):
+        if args.kind in ('ammunition', 'documents', 'ingots', 'camp', 'furniture'):
             commands += 'bind F9 "fov 30; netevent ca652_next"; bind F10 "fov 30; netevent ca652_rotate"; bind F5 "fov 90; netevent ca652_view 4";\n'
         cfg = out / 'interactive.cfg'
         cfg.write_text(commands.replace('ca647', marker.lower()).replace('ca652', marker.lower()))
@@ -102,7 +108,7 @@ def main(default_kind='coins'):
                    str(fixture), '-config', str(out / 'session.ini'), '-savedir', str(out), '-window',
                    '+logfile', str(out / 'interactive.log'), '+map', 'CA455V', '+exec', str(cfg)]
         print('F1 top / F2 low / F3 side / F4 close / F5 player control. F6/F7 additional close views / F8 rear for non-coin fixtures. Food: F9 table. Close the game after review; no automatic acceptance.', flush=True)
-        if args.kind in ('ammunition', 'documents', 'ingots', 'camp'):
+        if args.kind in ('ammunition', 'documents', 'ingots', 'camp', 'furniture'):
             print('F9 next item close-up; F10 rotate close-up; F5 restores ordinary field of view.', flush=True)
         subprocess.run(command, cwd=out, check=True)
         return
@@ -111,9 +117,9 @@ def main(default_kind='coins'):
                     (range(4) if args.kind == 'coins' else (0, 1, 2, 3, 5, 6, 7)))
     if args.kind == 'food':
         views += 'netevent ca647_view 8; wait 20; screenshot candidate-8.png; wait 5; '
-    if args.kind in ('ammunition', 'documents', 'ingots', 'camp'):
+    if args.kind in ('ammunition', 'documents', 'ingots', 'camp', 'furniture'):
         views += 'fov 30; ' + ''.join(f'netevent ca652_detail {index} {angle}; wait 20; screenshot detail-{index}-{angle}.png; wait 5; '
-                                     for index in range(len(classes)) for angle in (90, 160, 270)) + 'netevent ca652_next; wait 5; netevent ca652_rotate; wait 5; fov 90; '
+                                     for index in range(len(classes)) for angle in ((0, 90, 160, 270) if args.kind == 'furniture' else (90, 160, 270))) + 'netevent ca652_next; wait 5; netevent ca652_rotate; wait 5; fov 90; '
     runs = [
         ('baseline', baseline, False, ['+map', 'CA455V'], fresh + 'screenshot baseline.png; wait 5; save coin-old; wait 20; quit\n'),
         ('old-save-load', runtime, True, ['-loadgame', 'coin-old.zds'], load + views + 'netevent ca647_pickup; wait 20; quit\n'),
@@ -123,12 +129,24 @@ def main(default_kind='coins'):
     ]
     if args.visual_only:
         runs = [('visual', runtime, True, ['+map', 'CA455V'], fresh + views + 'wait 20; quit\n')]
-    report = {'issue': 664 if args.kind == 'camp' else 658 if args.kind == 'ingots' else 656 if args.kind == 'documents' else 652 if args.kind == 'ammunition' else 647, 'kind': args.kind, 'scope': 'Native pickup/toss, quantity and saved ownership for ' + args.kind + '; no normal menu or author acceptance.', 'baseline_sha256': digest(baseline),
+    report = {'issue': 666 if args.kind == 'furniture' else 664 if args.kind == 'camp' else 658 if args.kind == 'ingots' else 656 if args.kind == 'documents' else 652 if args.kind == 'ammunition' else 647, 'kind': args.kind, 'scope': 'Native pickup/toss, quantity and saved ownership for ' + args.kind + '; no normal menu or author acceptance.', 'baseline_sha256': digest(baseline),
               'runtime_sha256': digest(runtime), 'model_sha256': digest(model) if model else None,
               'fixture_sha256': digest(fixture), 'engine_sha256': digest(ENGINE), 'runs': []}
     for label, package, candidate, entry, commands in runs:
         cfg = out / (label + '.cfg')
-        cfg.write_text(commands.replace('ca647', marker.lower()).replace('ca652', marker.lower()))
+        commands = commands.replace('ca647', marker.lower()).replace('ca652', marker.lower())
+        if args.kind == 'furniture' and len(commands) > 1800:
+            # Keep every request in bounded, explicitly chained files.
+            chunks=['']
+            for command in commands.split(';'):
+                if len(chunks[-1])+len(command)>1500: chunks.append('')
+                chunks[-1]+=command.strip()+'; '
+            paths=[cfg]+[out/f'{label}-part-{i}.cfg' for i in range(1,len(chunks))]
+            for i,(path,chunk) in enumerate(zip(paths,chunks)):
+                tail=f'exec "{paths[i+1].as_posix()}";' if i+1<len(paths) else ''
+                path.write_text(chunk+tail+'\n')
+        else:
+            cfg.write_text(commands)
         extras = [str(model)] if model and candidate else []
         command = [str(ENGINE), '-noautoload', '-nomouse', '-iwad', str(IWAD), '-file', str(package), *extras,
                    str(fixture), '-config', str(out / 'session.ini'), '-savedir', str(out), '-window',
@@ -156,6 +174,11 @@ def main(default_kind='coins'):
                    'Unknown command', 'Unable to load model', marker + ' FAIL'))]
         passed = code == 0 and not errors and marker + ' COMPLETE failures=0' in log
         assertions = sum(line.startswith(marker + ' PASS') for line in log.splitlines())
+        if args.kind == 'furniture':
+            expected = 743 if label in ('baseline', 'candidate-fresh', 'visual') else 478
+            if assertions != expected:
+                errors.append(f'Expected {expected} native assertions, observed {assertions}')
+                passed = False
         if args.kind == 'documents':
             expected = 89 if label in ('baseline', 'candidate-fresh', 'visual') else 98
             if assertions != expected:

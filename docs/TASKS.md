@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.10** - 2026-11-13.
+Documentation version: **5.17.11** - 2026-11-13.
+
+## 5.17.11 - Unplaced furniture drops (#666)
+
+Seventeen native models reuse original placed art, including complete
+2/6/12/6-chair dining assemblies. Native continuity/rollback passes 2,920 checks;
+36 exports repeat exactly and all 18,213 package entries match src. Close-ups and
+one bounded seventeen-object presentation pair are recorded in ASSETS/evidence.
+Keep ordinary menu/placement/cargo acceptance and CA666-FURNITURE-01 pending.
+Preserve all earlier author checks and continue remaining inventory coverage.
 
 ## 5.17.10 - Camp inventory drop models (#664)
 
