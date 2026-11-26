@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.26** - 2026-11-14.
+Documentation version: **5.17.27** - 2026-11-14.
+
+## 5.17.27 - Two unique folklore combat models (#698)
+
+Yasí Yateré and Yastay gain reference-based 3D candidates and all 23 inherited
+frame bindings, retaining unique identities and existing provisional rules.
+Thirteen deterministic exports, 143 closed components, 86 neutral attachment
+witnesses, 230 continuity checks and 136 action/loot checks pass. Isolated
+presentation evidence is qualified in ASSETS. Ten of 56 new bestiary classes
+now have candidate native models; CA698-GUARDIANS-01, wider character/equipment
+coverage and the overall version batch remain unfinished.
 
 ## 5.17.26 - Eleven clothing-ensemble world props (#696)
 

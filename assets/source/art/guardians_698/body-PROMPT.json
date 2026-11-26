@@ -1,0 +1,12 @@
+{
+  "issue": 698,
+  "mode": "Built-in image_gen; body diffuse atlas for ambient readability",
+  "output": "body.png",
+  "transparent_background": false,
+  "references": [
+    "assets/source/art/guardians_698/yasi-face.png",
+    "assets/source/art/guardians_698/yastay-face.png",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/11_yastay.png"
+  ],
+  "prompt": "Use case: stylized-concept. Asset type: one opaque 2-by-2 diffuse material atlas for fully volumetric 3D game characters, not a character render. Input1 is the current Yas? Yater? face-color reference; Input2 is the current Yastay face-color reference; Input3 is Yastay's original anatomy/costume reference. Create exactly four equally sized square cells in one square image, edge to edge, no gutters, borders, labels, lettering or transparency. Upper-left cell: a seamless-looking warm fair skin material strip matching Input1, subtle pores and freckles, intended to wrap an arm or leg cylinder; soft painted volume gradient with the central vertical third gently lighter and both vertical edges slightly darker, no actual body outline or anatomical object. Upper-right cell: the same cylinder-wrap format in short fine tawny camelid fur matching Input2; close, fine hair rather than large diagonal locks or woven fabric, with a restrained warm brown palette. Lower-left cell: an orthographic frontal adult masculine tawny humanoid torso diffuse panel matching the exposed upper torso in Input3, clavicles/pectorals/subtle abdominal anatomy from neckline at top edge to waist at bottom edge, filling the tile completely without head, arms, hips or background. Lower-right cell: the matching adult upper-back diffuse panel from shoulders to waist, back musculature/scapulae, filling the whole tile. The adult torso panels should read as subtly furred anatomy, not separate clothing, armor or a photographic person. Painted game-material realism for dark fantasy, fine muted surface detail and gentle baked form shading to remain readable under uniform ambient light. Keep all cell edges filled with the corresponding material; no cast shadow, gloss, dramatic lighting, modern decoration or scenic elements."
+}

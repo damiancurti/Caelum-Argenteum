@@ -1,0 +1,11 @@
+{
+  "issue": 698,
+  "mode": "Built-in image_gen; targeted camelid muzzle correction",
+  "output": "yastay-face.png",
+  "transparent_background": false,
+  "references": [
+    "assets/source/art/guardians_698/yastay-face-v1.png",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/11_yastay.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Input1 is the edit target: a square facial albedo plate for a 3D model. Input2 is the original author-owned Yastay reference, used only for facial anatomy. Correct ONLY the nose and muzzle region of Input1 to match the camelid-human muzzle in Input2. Replace the catlike triangular nose pad and broad feline muzzle with a long narrow convex camelid nasal bridge, two small separated dark nostril slits on the left and right sides of a soft pale-brown elongated nose, and a narrow restrained ruminant upper lip. Keep the nostrils disconnected, not joined in a black triangular or heart-shaped cat nose. The muzzle must taper forward as in the original reference, without feline whisker pads. Preserve the exact square edge-to-edge opaque UV plate, existing pupil positions, fur/skin color, forehead, eyebrows, eyes, chin, and uniformly diffuse painted game-material treatment. Frontal orthographic alignment; nose/muzzle center stays x50%, y54.3%, mouth center x50%, y70.4%. No ears, head silhouette, background, transparency, labels, frame, text or new accessories. Keep the character recognizable as the supplied Yastay."
+}

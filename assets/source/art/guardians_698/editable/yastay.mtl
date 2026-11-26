@@ -1,0 +1,9 @@
+newmtl face
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/guardians/yastay-face.png
+newmtl atlas
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/guardians/materials.png
+newmtl body
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/guardians/body.png

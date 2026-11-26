@@ -788,3 +788,14 @@ assets/generators/validate_inventory_gloves_models.py text eol=lf
 /assets/validation_v5_17_26/evidence/** -text -diff
 /src/caelum/data/inventory_clothing.modeldef text eol=lf
 /src/models/caelum/inventory/clothing/** -text -diff
+
+/assets/source/art/guardians_698/** text eol=lf
+/assets/source/art/guardians_698/**/*.png binary
+/assets/generators/generate_guardian_models.py text eol=lf
+/assets/generators/validate_guardian_models.py text eol=lf
+/src/caelum/data/guardian_combat.modeldef text eol=lf
+/src/models/caelum/folklore/guardians/** -text -diff
+/assets/validation_v5_17_27/*.py text eol=lf
+/assets/validation_v5_17_27/*.zs text eol=lf
+/assets/validation_v5_17_27/*.json text eol=lf
+/assets/validation_v5_17_27/evidence/** -text -diff

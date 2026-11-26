@@ -1,0 +1,52 @@
+{
+  "yasi-face.png": {
+    "sha256": "2cb2c1da113029d64a932eea191bc0b34153809ac47da1373031785c436374da",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "generated_original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-cc1bad41-70b3-4079-8c63-6cad2615d4c7.png",
+    "selected": true
+  },
+  "yastay-face-v1.png": {
+    "sha256": "650248e723714e4055bcba332eaca678a44e857c410428c94f9748bd84714ef7",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "generated_original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-b7110816-4913-4ab8-a3fa-83523f1d0344.png",
+    "selected": false
+  },
+  "yastay-face.png": {
+    "sha256": "29079660655b56461d8ece742b5fa1eb95f380f9b1ae4343bb117fec02cb82be",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "generated_original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-e93cb05e-8fb1-48ba-8c49-983b24a801bf.png",
+    "selected": true
+  },
+  "materials.png": {
+    "sha256": "40fb9de4639f6edb2befe1458d41e64f625ec1f6a1a17ed7cb04f7da8ee027f5",
+    "dimensions": [
+      1448,
+      1086
+    ],
+    "mode": "RGB",
+    "generated_original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-6bbeb45f-b378-4349-a767-b5a2887ea7f6.png",
+    "selected": true
+  },
+  "body.png": {
+    "sha256": "a9deb5b9e24c655143eaf04d759de856090b7c7bf56ae19c8bcb3cde030cac0d",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "generated_original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-11b7f162-f30f-4ee3-8d6b-c0a83f738a9d.png",
+    "selected": true
+  }
+}

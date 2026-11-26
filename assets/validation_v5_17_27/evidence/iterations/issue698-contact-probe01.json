@@ -1,0 +1,478 @@
+{
+  "issue": 698,
+  "space": "Emitted OBJ neutral frame, mapped back to X-forward/Y-left/Z-up. Witnesses clear 1/64 quantization margin in both solids. This is neutral attachment evidence, not cloth simulation.",
+  "species": {
+    "yasi": [
+      {
+        "part": "continuous torso",
+        "target": "covered hip volume",
+        "witness": [
+          0.0,
+          0.0,
+          55.852156
+        ]
+      },
+      {
+        "part": "neck",
+        "target": "continuous torso",
+        "witness": [
+          -0.005583999999999811,
+          0.0,
+          76.8480895
+        ]
+      },
+      {
+        "part": "continuous reference face and cranium",
+        "target": "neck",
+        "witness": [
+          -0.005583999999999811,
+          0.0,
+          82.0841245
+        ]
+      },
+      {
+        "part": "volumetric hair crown",
+        "target": "continuous reference face and cranium",
+        "witness": [
+          -1.4674255,
+          0.0,
+          94.859912
+        ]
+      },
+      {
+        "part": "left rounded deltoid",
+        "target": "continuous torso",
+        "witness": [
+          0.0,
+          8.6067765,
+          77.3870635
+        ]
+      },
+      {
+        "part": "left upper arm",
+        "target": "left rounded deltoid",
+        "witness": [
+          0.0,
+          10.225873,
+          76.726473
+        ]
+      },
+      {
+        "part": "left forearm",
+        "target": "left upper arm",
+        "witness": [
+          1.4004985,
+          14.4338985,
+          60.9659415
+        ]
+      },
+      {
+        "part": "left palm",
+        "target": "left forearm",
+        "witness": [
+          3.5219525,
+          16.7381195,
+          45.5262475
+        ]
+      },
+      {
+        "part": "left trousers",
+        "target": "covered hip volume",
+        "witness": [
+          0.0,
+          3.706879,
+          48.665298
+        ]
+      },
+      {
+        "part": "left thigh under hem",
+        "target": "left trousers",
+        "witness": [
+          0.0,
+          5.2833675,
+          42.45699
+        ]
+      },
+      {
+        "part": "left calf",
+        "target": "left thigh under hem",
+        "witness": [
+          0.0,
+          5.283367500000001,
+          29.172307500000002
+        ]
+      },
+      {
+        "part": "left bare foot",
+        "target": "left calf",
+        "witness": [
+          0.17390700000000026,
+          5.283367999999999,
+          4.0483375
+        ]
+      },
+      {
+        "part": "right rounded deltoid",
+        "target": "continuous torso",
+        "witness": [
+          0.0,
+          -8.6067765,
+          77.3870635
+        ]
+      },
+      {
+        "part": "right upper arm",
+        "target": "right rounded deltoid",
+        "witness": [
+          0.0,
+          -10.225873,
+          76.726473
+        ]
+      },
+      {
+        "part": "right forearm",
+        "target": "right upper arm",
+        "witness": [
+          1.4004985,
+          -14.4338985,
+          60.9659415
+        ]
+      },
+      {
+        "part": "right palm",
+        "target": "right forearm",
+        "witness": [
+          3.5219525,
+          -16.7381195,
+          45.5262475
+        ]
+      },
+      {
+        "part": "right trousers",
+        "target": "covered hip volume",
+        "witness": [
+          0.0,
+          -3.7068790000000003,
+          48.665298
+        ]
+      },
+      {
+        "part": "right thigh under hem",
+        "target": "right trousers",
+        "witness": [
+          0.0,
+          -5.2833675,
+          42.45699
+        ]
+      },
+      {
+        "part": "right calf",
+        "target": "right thigh under hem",
+        "witness": [
+          0.0,
+          -5.2833675,
+          29.172307500000002
+        ]
+      },
+      {
+        "part": "right bare foot",
+        "target": "right calf",
+        "witness": [
+          0.17390700000000026,
+          -5.283368,
+          4.0483375
+        ]
+      },
+      {
+        "part": "curved wooden staff",
+        "target": "left palm",
+        "witness": [
+          4.71851275,
+          18.1088295,
+          43.5318275
+        ]
+      }
+    ],
+    "yastay": [
+      {
+        "part": "continuous torso",
+        "target": "covered hip volume",
+        "witness": [
+          0.0,
+          0.0,
+          53.125
+        ]
+      },
+      {
+        "part": "neck",
+        "target": "continuous torso",
+        "witness": [
+          -0.0053114999999999135,
+          0.0,
+          77.490268
+        ]
+      },
+      {
+        "part": "continuous reference face and cranium",
+        "target": "neck",
+        "witness": [
+          -0.0053114999999999135,
+          0.0,
+          82.763622
+        ]
+      },
+      {
+        "part": "volumetric hair crown",
+        "target": "continuous reference face and cranium",
+        "witness": [
+          -1.2492915,
+          0.0,
+          95.3061985
+        ]
+      },
+      {
+        "part": "left rounded deltoid",
+        "target": "continuous torso",
+        "witness": [
+          0.0,
+          10.3564455,
+          77.51464849999999
+        ]
+      },
+      {
+        "part": "left upper arm",
+        "target": "left rounded deltoid",
+        "witness": [
+          0.0,
+          12.3046875,
+          77.071753
+        ]
+      },
+      {
+        "part": "left forearm",
+        "target": "left upper arm",
+        "witness": [
+          1.3364935,
+          17.3674025,
+          59.9266395
+        ]
+      },
+      {
+        "part": "left palm",
+        "target": "left forearm",
+        "witness": [
+          3.3073185,
+          20.139561,
+          42.296330999999995
+        ]
+      },
+      {
+        "part": "left trousers",
+        "target": "covered hip volume",
+        "witness": [
+          0.0,
+          4.4604490000000006,
+          46.2890625
+        ]
+      },
+      {
+        "part": "left thigh under hem",
+        "target": "left trousers",
+        "witness": [
+          0.0,
+          6.357422,
+          36.9991895
+        ]
+      },
+      {
+        "part": "left calf",
+        "target": "left thigh under hem",
+        "witness": [
+          0.0,
+          6.357422,
+          27.7514575
+        ]
+      },
+      {
+        "part": "left bare foot",
+        "target": "left calf",
+        "witness": [
+          0.0,
+          6.357422,
+          3.810047
+        ]
+      },
+      {
+        "part": "left leather leg wrap 11",
+        "target": "left calf",
+        "witness": [
+          -0.3557600000000001,
+          4.45557375,
+          9.71032525
+        ]
+      },
+      {
+        "part": "left leather leg wrap 17",
+        "target": "left calf",
+        "witness": [
+          -0.04162599999999994,
+          4.12719725,
+          15.567295
+        ]
+      },
+      {
+        "part": "left leather leg wrap 23",
+        "target": "left calf",
+        "witness": [
+          -1.6398655,
+          4.12719725,
+          21.4258285
+        ]
+      },
+      {
+        "part": "left leather leg wrap 32",
+        "target": "left trousers",
+        "witness": [
+          -2.02252425,
+          2.908803375,
+          30.21219125
+        ]
+      },
+      {
+        "part": "right rounded deltoid",
+        "target": "continuous torso",
+        "witness": [
+          0.0,
+          -10.3564455,
+          77.51464849999999
+        ]
+      },
+      {
+        "part": "right upper arm",
+        "target": "right rounded deltoid",
+        "witness": [
+          0.0,
+          -12.3046875,
+          77.071753
+        ]
+      },
+      {
+        "part": "right forearm",
+        "target": "right upper arm",
+        "witness": [
+          1.3364935,
+          -17.3674025,
+          59.9266395
+        ]
+      },
+      {
+        "part": "right palm",
+        "target": "right forearm",
+        "witness": [
+          3.3073185,
+          -20.139561,
+          42.296330999999995
+        ]
+      },
+      {
+        "part": "right trousers",
+        "target": "covered hip volume",
+        "witness": [
+          0.0,
+          -4.4604490000000006,
+          46.2890625
+        ]
+      },
+      {
+        "part": "right thigh under hem",
+        "target": "right trousers",
+        "witness": [
+          0.0,
+          -6.357422,
+          36.9991895
+        ]
+      },
+      {
+        "part": "right calf",
+        "target": "right thigh under hem",
+        "witness": [
+          0.0,
+          -6.357422,
+          27.7514575
+        ]
+      },
+      {
+        "part": "right bare foot",
+        "target": "right calf",
+        "witness": [
+          0.0,
+          -6.357422000000001,
+          3.810047
+        ]
+      },
+      {
+        "part": "right leather leg wrap 11",
+        "target": "right calf",
+        "witness": [
+          -0.3557600000000001,
+          -8.259269374999999,
+          9.71032525
+        ]
+      },
+      {
+        "part": "right leather leg wrap 17",
+        "target": "right calf",
+        "witness": [
+          -0.04162599999999994,
+          -8.58764675,
+          15.567295
+        ]
+      },
+      {
+        "part": "right leather leg wrap 23",
+        "target": "right calf",
+        "witness": [
+          -1.6398655,
+          -8.58764675,
+          21.4258285
+        ]
+      },
+      {
+        "part": "right leather leg wrap 32",
+        "target": "right trousers",
+        "witness": [
+          -2.02252425,
+          -9.8060405,
+          30.21219125
+        ]
+      },
+      {
+        "part": "open ivory shoulder mantle",
+        "target": "mantle cross-shoulder fold",
+        "witness": [
+          2.82894075,
+          -8.097063125,
+          77.9883275
+        ]
+      },
+      {
+        "part": "shoulder mantle clasp",
+        "target": "mantle cross-shoulder fold",
+        "witness": [
+          5.859375,
+          6.953139999999999,
+          77.5390625
+        ]
+      }
+    ]
+  },
+  "failures": {
+    "yasi": [
+      [
+        "ivory sleeveless embroidered tunic",
+        "neck"
+      ]
+    ],
+    "yastay": []
+  }
+}

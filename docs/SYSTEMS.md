@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.26** - 2026-11-14.
+Documentation version: **5.17.27** - 2026-11-14.
 
 ## 5.17.24 - Expanded isolated regional inspection controls (#692)
 
