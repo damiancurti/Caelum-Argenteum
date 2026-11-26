@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-278 - Resolve native sides through their linedefs
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #887 /5.17.122,2026-11-21,
+GZDoom4.14.2. Evidence: assets/validation_v5_17_122. Author acceptance pending.
+
+Source TEXTMAP sidedef indices are not a stable index into level.Sides. Official
+udmf.cpp ProcessLineDefs reconstructs sides in linedef/front-back order and can
+remove zero-length lines. The initial waterline candidate consequently reported
+4,285 wrong faces although the exact source-material substitutions were valid.
+Use native line.sidedef[0/1], match its sector/side identity and validate any
+assumed source-to-native line mapping. Here all 67,124 lines remain, and final
+checks resolve all 4,638 target faces in both material options.
+
+The next two fixtures used parallel static index arrays and aborted while reading
+the second table (index4639,size4638), including after explicit materialization.
+The exact compiler cause is not established. A single packed line/sector table
+with documented radix540 passes the complete view/persistence/helper set with
+native JIT unchanged. This is an empirically verified fixture workaround, not a
+general diagnosis or prohibition of multiple arrays. Preserve failed logs and
+separate source-proven mapping facts from unproven compiler explanations.
+
+
 ## CA-KP-277 - Verify fixture calling conventions and persistent service prerequisites
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #886 /5.17.121,2026-11-21,

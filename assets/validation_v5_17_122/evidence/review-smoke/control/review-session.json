@@ -1,0 +1,139 @@
+{
+  "issue": 887,
+  "author_acceptance": false,
+  "variant": "control",
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-review01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-municipal01\\municipal.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-review-smoke01\\control\\review.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-review-smoke01\\control\\review.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-review-smoke01\\control",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-review-smoke01\\control\\engine.log",
+    "+map",
+    "MAP02",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue887-review-smoke01\\control\\start.cfg"
+  ],
+  "runtime_sha256": "a11aeaf0ec553f06d8aff857175a5ed272654c696b197f5d5ee23813ae9690dc",
+  "cameras": [
+    {
+      "name": "entrance",
+      "point": [
+        0,
+        -4864
+      ],
+      "angle": 90
+    },
+    {
+      "name": "junction",
+      "point": [
+        -160.0,
+        -4256.0
+      ],
+      "angle": 45
+    },
+    {
+      "name": "channel",
+      "point": [
+        -2304.0,
+        -4128.0
+      ],
+      "angle": 0
+    },
+    {
+      "name": "refuge",
+      "point": [
+        -3936.0,
+        -3232.0
+      ],
+      "angle": 135
+    },
+    {
+      "name": "boss_access",
+      "point": [
+        -2912,
+        8160.0
+      ],
+      "angle": 180
+    },
+    {
+      "name": "maintenance",
+      "point": [
+        -1536,
+        -3752.0
+      ],
+      "angle": 90,
+      "axis": 1,
+      "span_mu": 64,
+      "dry_width_mu": 64,
+      "start": [
+        -1536,
+        -3864.0,
+        0
+      ],
+      "end": [
+        -1536,
+        -3640.0,
+        0
+      ],
+      "bodies": 1,
+      "lane_offsets": [
+        0
+      ],
+      "segment": {
+        "axis": 1,
+        "cross": -1536,
+        "low": -4096,
+        "high": -3072,
+        "width": 64,
+        "label": "south:shortcut"
+      },
+      "clear_run_mu": 224.0
+    },
+    {
+      "name": "waterline_horizontal",
+      "point": [
+        -2504.0,
+        -4048.0
+      ],
+      "angle": 0,
+      "target": [
+        -2504.0,
+        -4080.0,
+        -8.0
+      ],
+      "side": 24910,
+      "basis": "Existing changed riser, channel midpoint and native player eye height"
+    },
+    {
+      "name": "waterline_vertical",
+      "point": [
+        -2528.0,
+        -4072.0
+      ],
+      "angle": 0,
+      "target": [
+        -2496.0,
+        -4072.0,
+        -8.0
+      ],
+      "side": 24909,
+      "basis": "Existing changed riser, channel midpoint and native player eye height"
+    }
+  ],
+  "qualification": "Prepare or open the waterline masonry proposal in a fresh disposable review session.\n\nF1 cycles eight sampled anchors; native menus remain available. The fixture\nsuppresses narrative delivery and enables invulnerability/notarget. It does\nnot grant services or inventory. This is art review, not campaign acceptance.\n",
+  "save_scope": "Fresh disposable sessions only. Same-option saves only; never import campaign saves or saves from another map variant."
+}

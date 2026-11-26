@@ -1,0 +1,23 @@
+{
+  "issue": 887,
+  "schema_revision": 1,
+  "status": "private_proposal_not_author_accepted",
+  "inherited_issue": 886,
+  "layout": "assets/map02_maze/LAYOUT.json",
+  "material_inventory": "assets/source/art/sewer_material_847/INVENTORY.json",
+  "source_image": "assets/source/art/sewer_waterline_887/wet-brick-v1.png",
+  "source_sha256": "b290299359ae4e6c121ac308aae22ce456e5dd739fc4b4f34e1c264b76317afa",
+  "alias": "CA887WET",
+  "map_member": "maps/MAP02.wad",
+  "selection": {
+    "source_alias": "CA875WAL",
+    "dry_floor_alias": "CA875FLR",
+    "water_floor_key": "water",
+    "water_depth_key": "channel_depth",
+    "field": "texturebottom",
+    "rule": "Two-sided lower masonry face in a normal channel-water sector at minus channel_depth, facing the retained dry floor at zero. Exclude special/tagged lines and all other surfaces. Existing geometry supplies the16-MU riser; no new height or moisture gameplay.",
+    "dry_floor_z": 0,
+    "dry_floor_basis": "Retained normal upper-level dry floor in the native MAP02 source and generate_map02_redesign.room default; not a new clearance or balance value."
+  },
+  "scope": "Private material-only MAP02 variant, combined with the inherited municipal/environment proposal. No geometry, thing, light, route, water/hazard behavior, ownership or service changes. Fresh disposable sessions; no campaign-save conversion. Exact moisture appearance awaits final author review."
+}

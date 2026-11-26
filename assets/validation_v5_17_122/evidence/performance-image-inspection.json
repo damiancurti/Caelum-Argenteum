@@ -1,0 +1,30 @@
+{
+  "directly_inspected": [
+    {
+      "image": "performance/channel-control01/peer0/scene.png",
+      "sha256": "eeae631aa1f7e38795612b62134a1ed1c63b86df56d643b2ae2e982db6e96960"
+    },
+    {
+      "image": "performance/channel-candidate01/peer0/scene.png",
+      "sha256": "935fa09c03b289083b477f6f9bde7f455e0f72224244b2e13a623edef04048aa"
+    },
+    {
+      "image": "performance/waterline-horizontal-control01/peer0/scene.png",
+      "sha256": "8dcc010ace4519c53014c4d4280c48984ba3d31fdb4fda9fbb60dce77eab1e74"
+    },
+    {
+      "image": "performance/waterline-horizontal-candidate01/peer0/scene.png",
+      "sha256": "9be5728650c778e36bcfca6c3c261a9fc390aaade5df6774476fedbcec36eb67"
+    },
+    {
+      "image": "performance/maintenance-control01/peer0/scene.png",
+      "sha256": "2796b09ff33a830ed884f69316da8c3080670d6deaeb0425aab5f8ba2f137f9f"
+    },
+    {
+      "image": "performance/maintenance-candidate01/peer0/scene.png",
+      "sha256": "d5dd06dfb0f7733978b9176ae97c67ac3cfa2d069f4c4f127a64388378f154e4"
+    }
+  ],
+  "count": 6,
+  "qualification": "Six endpoint images inspected directly, separately from the18 gallery images. Native diagnostic text is expected. Queue presentation is not monitor scanout."
+}

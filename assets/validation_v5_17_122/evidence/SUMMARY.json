@@ -1,0 +1,21 @@
+{
+  "issue": 887,
+  "release": "5.17.122",
+  "full_validation": "passed with no errors",
+  "author_acceptance": false,
+  "native_view_phases": 2,
+  "gallery_images_inspected": 18,
+  "performance_endpoint_images_inspected": 6,
+  "scene_view_samples": 18,
+  "unique_material_faces": 4638,
+  "view_face_observations": 83484,
+  "persistence_phases": 3,
+  "persistence_surface_samples": 15,
+  "review_smoke_phases": 3,
+  "review_smoke_view_samples": 30,
+  "performance_windows": 6,
+  "deterministic_packages": 1,
+  "deterministic_manifest": true,
+  "production_changes": "Two release log labels only",
+  "qualification": "Private waterline masonry proposal. Exact lower-material substitutions, no geometry/thing/light/water/hazard/service changes. Same-option save reload and fresh default restoration only; no campaign migration or author acceptance."
+}
