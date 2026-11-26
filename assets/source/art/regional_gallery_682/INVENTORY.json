@@ -1,0 +1,59 @@
+{
+  "schema_revision": 1,
+  "issue": 682,
+  "parent_issue": 463,
+  "status": "native_verified_author_review_pending",
+  "authority": "Author requests needed regional textures and small monster inspection maps; questions deferred.",
+  "scope": "Two new material studies and five approved displays of three native beast species. Original CA463G remains intact.",
+  "definition": "caelum/data/regional_materials_682.textures",
+  "reused_materials": [
+    "CRLITGR",
+    "CRSELVG"
+  ],
+  "gaps": [
+    {
+      "key": "pampa_ground",
+      "purpose": "Isolated regional ground-material study; not campaign geography or a mandatory creature habitat.",
+      "prompt": "pampa_ground-v1.prompt.txt",
+      "world_tile_map_units": [
+        128,
+        128
+      ],
+      "status": "native_verified_author_review_pending",
+      "image": "pampa_ground-v1.png",
+      "sha256": "8201410a2cfc0b622e60998bebc766959d40508677d542d37334f973702bc3d7",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "texture": "CRPAMGR"
+    },
+    {
+      "key": "noa_foothill_ground",
+      "purpose": "Isolated regional ground-material study; not campaign geography or a mandatory creature habitat.",
+      "prompt": "noa_foothill_ground-v1.prompt.txt",
+      "world_tile_map_units": [
+        128,
+        128
+      ],
+      "status": "native_verified_author_review_pending",
+      "image": "noa_foothill_ground-v1.png",
+      "sha256": "d80c2f85f9006a12e133814f95120e6a800176d6f6c51715983c57e06577c3d8",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "texture": "CRNOAGR"
+    }
+  ],
+  "source_sha256": {
+    "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
+    "assets/source/art/beast_men_680/EXPORT.json": "9fd7daadbf1c856a79d95de8819898aef50baf37bf1fd92fdc99a2c041b416c7",
+    "assets/generators/generate_beast_regional_materials.py": "2f76d6647aa627da78009b191f8f55d190032c29e34ae7c1a34bc20b5752e1a9",
+    "assets/source/art/regional_gallery_463/INVENTORY.json": "1dd6460200ef58d80534b10a44bc8b27010abf036b64f83a8eed15f4cf280d7f"
+  },
+  "exclusions": [
+    "No campaign geometry, encounters, body/balance/AI rules or final biome approval.",
+    "Remaining regional/bestiary artwork and author acceptance remain pending."
+  ]
+}

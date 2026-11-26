@@ -1,0 +1,17 @@
+{
+  "schema_revision": 1,
+  "issue": 682,
+  "status": "regional_art_candidate",
+  "source_sha256": {
+    "INVENTORY.json": "4ad55b423d2584781fa14163c332cce01223b0d42a8b2623142d7bd91d5accda",
+    "PROVENANCE.json": "67e9c7538a4d1d0574c50401b3622abe1c7f1969bb8d30c5efc54ae36be2e68d",
+    "pampa_ground-v1.prompt.txt": "0bf0309b18a918ead6576cb4d10eedba44e08814866c486536895ed12e8e017c",
+    "noa_foothill_ground-v1.prompt.txt": "c611a3219e56dc359121baff24b192732c5f755c5edb9d55d30338096ab51185"
+  },
+  "generator_sha256": "02b5634f81abbc5073583e39ffc4bac48e09801c9349d883d2a69e6ebfdbcdbe",
+  "sha256": {
+    "graphics/caelum/textures/regions_682/pampa_ground-v1.png": "8201410a2cfc0b622e60998bebc766959d40508677d542d37334f973702bc3d7",
+    "graphics/caelum/textures/regions_682/noa_foothill_ground-v1.png": "d80c2f85f9006a12e133814f95120e6a800176d6f6c51715983c57e06577c3d8",
+    "caelum/data/regional_materials_682.textures": "6244c53ebc7fbee4c81785edda14d33917cb2aea5f3466fea22bd7cbba10b972"
+  }
+}

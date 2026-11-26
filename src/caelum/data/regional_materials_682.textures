@@ -1,0 +1,31 @@
+Texture "CRPAMGR", 1254, 1254
+{
+    XScale 9.796875
+    YScale 9.796875
+    WorldPanning
+    Patch "graphics/caelum/textures/regions_682/pampa_ground-v1.png", 0, 0
+}
+
+Flat "CRPAMGR", 1254, 1254
+{
+    XScale 9.796875
+    YScale 9.796875
+    WorldPanning
+    Patch "graphics/caelum/textures/regions_682/pampa_ground-v1.png", 0, 0
+}
+
+Texture "CRNOAGR", 1254, 1254
+{
+    XScale 9.796875
+    YScale 9.796875
+    WorldPanning
+    Patch "graphics/caelum/textures/regions_682/noa_foothill_ground-v1.png", 0, 0
+}
+
+Flat "CRNOAGR", 1254, 1254
+{
+    XScale 9.796875
+    YScale 9.796875
+    WorldPanning
+    Patch "graphics/caelum/textures/regions_682/noa_foothill_ground-v1.png", 0, 0
+}

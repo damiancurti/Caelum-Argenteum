@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.18** - 2026-11-13.
+Documentation version: **5.17.19** - 2026-11-13.
+
+## 5.17.19 - Pampa/NOA studies and beast-men gallery (#682)
+
+A second isolated map shows five approved regional occurrences of the three
+#680 native species, with two new ground studies and reused Litoral/Selva
+materials. Final native continuity/walking passes 52 checks; one five-body
+presentation pair passes. Author CA682-REGIONS-01 remains pending. Full regional and bestiary work,
+modular characters/equipment and siege performance remain unfinished.
 
 ## 5.17.18 - Three reference-based beast-men models (#680)
 

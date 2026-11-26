@@ -1,6 +1,65 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.18** - 2026-11-13.
+Documentation version: **5.17.19** - 2026-11-13.
+
+## 5.17.19 - Pampa/NOA materials and regional beast-men gallery (#682)
+
+The author's small-map request now has a second isolated inspection fixture,
+CA682G, with Pampa, Northwest Argentina, Litoral and Selva plots. Five native
+bodies follow every approved allocation of the three #680 species: Lobizon
+in Pampa/Litoral, Uturunco in Litoral/Selva and Ucumar in Northwest Argentina.
+Their existing models, body profiles, saved identity and production AI remain
+unchanged. Fixture-only Friendly staging, the diagnostic simplification flag
+and protected observer keep this inspection separate from encounters. Named Rulo and the original CA463G with
+its preserved Pombero/Cuero/Nahuelito pilots remain unchanged.
+
+Two new owned 1254-square opaque PNG studies depict Pampean grassland soil and
+northwestern wooded-foothill soil. Built-in image_gen outputs, exact prompts,
+hashes and provenance are retained in assets/source/art/regional_gallery_682.
+Runtime copies preserve every original byte; no raster postprocessing was used.
+Both use an editable 128-MU native tile. These are ground-material studies,
+not approval of campaign biomes or mandatory creature habitats. Existing
+CRLITGR/CRSELVG materials are reused with their original tiling and source bytes.
+New names CRPAMGR/CRNOAGR do not replace any existing map material.
+
+The shared regional exporter/validator now accepts a separate source/namespace
+while retaining old defaults. Original regional, ammunition, ingot, document,
+book and lock outputs remain byte-identical (28 resources checked against the
+parent commit). The new TEXTURES include requires refreshing ammunition/ingot
+hashes and their transitive document/book/lock metadata in dependency order. All #680 models and production behavior remain
+unchanged. Rebuild materials with python
+assets/generators/generate_beast_regional_materials.py --output build/beast-regions
+--install. The final two material exports reproduce five files; separate gallery
+exports reproduce four. Source associations, opaque pixels, hashes, plot
+containment and contiguous walking boundaries are checked statically.
+
+assets/validation_v5_17_19/build_gallery.py reuses the original rectangular-map
+builder and gallery event template. GALLERY.json owns four plots, one walkway,
+five sectors, fifteen vertices and nineteen linedefs. The map is generated as
+an optional development fixture; it adds no campaign destination or encounters.
+The final native run passes 52 exact checks (24 fresh, 28 reload): all five
+initialized native identities and positions persist; both animation snapshots
+belong to the original idle states and advance over 11 tics. Native input walks
+through all three regional boundaries and stays on the floor. Original native01
+fails one saved-position check: the diagnostic flag does not disable perception.
+Fixture-only Friendly staging fixes the inspection; no position-reset loop or
+production AI edit hides movement (CA-KP-236). The failed evidence is preserved.
+All four plots, repeated Pampa/NOA materials and creature views were inspected.
+
+One sequential 700-tic material comparison keeps five native models and geometry
+constant: existing/regional queue presents/s 1199.77/1211.24, p95 1.1432/1.1416 ms,
+p99 1.5602/1.5217 ms. Simulation means are 28.5707/28.5707 ms per tic. Windows 11
+Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720,
+uncapped/vsync off, background unpaused, 5% audio. These queue intervals are not
+GPU/display timing, repeatability or city/siege acceptance. Evidence and exact
+package/source proof are in assets/validation_v5_17_19/evidence/SUMMARY.json.
+
+Use python assets/validation_v5_17_19/run_gallery.py --runtime
+build/caelum_argenteum_dev.pk3 --output build/beast-regions-author-01 --interactive
+for inspection. F1 overview, F2 Pampa, F3 NOA, F4 Litoral, F5 player control,
+F6 Selva, F7-F10 repeated ground materials. CA682-REGIONS-01 remains pending
+for author art/scale/walkthrough acceptance. Other regional materials, the full
+bestiary, modular equipment and city/sewer/siege finish remain separate work.
 
 ## 5.17.18 - Lobizon, Uturunco and Ucumar combat art (#680, parent #461)
 

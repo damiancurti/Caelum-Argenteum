@@ -723,3 +723,9 @@
 /assets/validation_v5_17_18/*.py text eol=lf
 /assets/validation_v5_17_18/*.zs text eol=lf
 /assets/validation_v5_17_18/evidence/** -text -whitespace
+
+/assets/source/art/regional_gallery_682/** text eol=lf
+/assets/source/art/regional_gallery_682/*.png binary
+/src/caelum/data/regional_materials_682.textures text eol=lf
+/assets/validation_v5_17_19/*.py text eol=lf
+/assets/validation_v5_17_19/evidence/** -text -whitespace

@@ -13,12 +13,12 @@ DEFINITION = 'caelum/data/regional_materials.textures'
 def digest(blob): return hashlib.sha256(blob).hexdigest()
 
 
-def output_files():
-    config = json.loads((SOURCE / 'INVENTORY.json').read_text())
+def output_files(source=SOURCE, definition=DEFINITION, region_directory='regions_463', issue=463):
+    config = json.loads((source / 'INVENTORY.json').read_text())
     files = {}; definitions = []
     for item in config['gaps']:
-        name = 'graphics/caelum/textures/regions_463/' + item['image']
-        blob = (SOURCE / item['image']).read_bytes()
+        name = 'graphics/caelum/textures/'+region_directory+'/' + item['image']
+        blob = (source / item['image']).read_bytes()
         if digest(blob) != item['sha256']: raise ValueError('Source image changed: ' + item['image'])
         files[name] = blob
         width, height = item['image_size']; world_x, world_y = item['world_tile_map_units']
@@ -26,9 +26,9 @@ def output_files():
             definitions += [f'{kind} "{item["texture"]}", {width}, {height}', '{',
                             f'    XScale {width/world_x:.12g}', f'    YScale {height/world_y:.12g}',
                             '    WorldPanning', f'    Patch "{name}", 0, 0', '}', '']
-    files[DEFINITION] = ('\n'.join(definitions)).encode()
-    sources = {name:digest((SOURCE/name).read_bytes()) for name in ['INVENTORY.json','PROVENANCE.json'] + [item['prompt'] for item in config['gaps']]}
-    report = dict(schema_revision=1, issue=463, status='regional_art_candidate', source_sha256=sources,
+    files[definition] = ('\n'.join(definitions)).encode()
+    sources = {name:digest((source/name).read_bytes()) for name in ['INVENTORY.json','PROVENANCE.json'] + [item['prompt'] for item in config['gaps']]}
+    report = dict(schema_revision=1, issue=issue, status='regional_art_candidate', source_sha256=sources,
                   generator_sha256=digest(Path(__file__).read_bytes()),
                   sha256={name:digest(blob) for name,blob in files.items()})
     files['manifest.json'] = (json.dumps(report,indent=2)+'\n').encode()

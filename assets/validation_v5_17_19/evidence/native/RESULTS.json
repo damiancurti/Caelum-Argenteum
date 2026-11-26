@@ -1,0 +1,38 @@
+{
+  "issue": 682,
+  "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+  "runtime_sha256": "e8dd8b81a4e53301b8b7082089cae428c12b5705c81d75fad8b8b63e1f69a68c",
+  "materials_sha256": null,
+  "fixture_sha256": "c8d223709054f93b16304cd91e2aa3346c1ce04c580c510531b56316b34f3c40",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 24,
+      "expected_assertions": 24
+    },
+    {
+      "phase": "reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 28,
+      "expected_assertions": 28
+    }
+  ],
+  "captures": {
+    "litoral-tiles.png": "c9ec25364ad03552e9a0ff39c2ff76eaf8b2bdf1cd9d766066b8540da5033727",
+    "litoral.png": "99719fc1a820fca4b7ea9a839b951e91e9a943f97208b7f2ec4587a076f76a87",
+    "noa-tiles.png": "6dfe9052a5da67c85cb1e177af3e330d7d01f0f1756cc75f313b8f114b73f536",
+    "noa.png": "7ef7f8124600240614821da47e703ead8ee5b8a0d238bbc9e675c4627ac4d7a7",
+    "overview.png": "75a0fc653c4485f90ab3ac38037db90d3182478d43cb9ce5422e0b6a24aa9ec0",
+    "pampa-tiles.png": "58f96a40c3408e670cf5746b16abbc6973f0bc197d34505e2fd8e3ce25b99d12",
+    "pampa.png": "7501c78c8e8a39e6c553c30f0df3af8978c126ab12bb66d3b0b44dea8b69f3e7",
+    "reload.png": "4561a713b0c6090cd03bc8ec8990000a6b45f8b1fe857894a72c3f79f9f04ca9",
+    "selva-tiles.png": "a91556c9d7b3dfb011708f84f5ca4c285f81b836918a186ce6d9964a87ecf04c",
+    "selva.png": "f5978c93f5fac69a47e61ae9fea12c2f4acbad37940b17b586fc02c207bc2330"
+  }
+}

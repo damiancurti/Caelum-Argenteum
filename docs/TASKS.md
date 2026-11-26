@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.18** - 2026-11-13.
+Documentation version: **5.17.19** - 2026-11-13.
+
+## #682 - Regional beast-men gallery and two materials (5.17.19)
+
+Two owned ground studies and an isolated four-plot/five-body map are authored.
+Final native walking/reload passes 52 assertions; material/map exports repeat
+byte-for-byte, and 28 earlier native resources remain unchanged. One five-body
+presentation pair passes; retain CA682-REGIONS-01 for author review.
+Original CA463G, campaign geometry and all native models remain unchanged.
 
 ## #680 - Three beast-men combat models (5.17.18)
 

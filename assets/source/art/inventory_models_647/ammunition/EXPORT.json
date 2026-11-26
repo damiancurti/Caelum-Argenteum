@@ -508,13 +508,13 @@
     }
   },
   "source_sha256": {
-    "DESIGN.json": "ac7def61b94c52c20b30004b607e0a21c09e6caed46e1ed6398641b4a58c50a4",
+    "DESIGN.json": "d44e2b59ab82e4aba1c8029871de7e788f63b040126c37acdf3a774f4489d004",
     "PROMPT.txt": "5235b6fdf9d877915e3522da4a3d0f44b6eaf15dd01c780d8d553bf7f45a1c74",
     "GENERATION_STATUS.json": "7919ddedc4e06608d9aecb30c4463b13b49b541a0ba4d1f1dc62940fdec7eb63"
   },
   "external_source_sha256": {
     "assets/source/art/elemental_518/MODELS.json": "08da944ff765fcb75c57b09e03540b97478589eb93f8d51b06254dc6ff03aa61",
-    "src/TEXTURES": "e93b59094575efbdc7361e0093fe84f798095571a2e34728a1e15530f1146640",
+    "src/TEXTURES": "9fee7e6372ca2dd03ddfa91012c5620313753d40a1e3c0ec36e1897183f5eeb1",
     "src/graphics/caelum/icons/ca_arrow_ammo.png": "a921b29fd2eab24993ae16ac6962c0caaa9f1183b43eb1df9497587d03fd2a4b",
     "src/graphics/caelum/icons/ca_bolt_ammo.png": "9a493e3fd535c9f9f41ddf6b8a8d5fd0709ef7851368b9ddc247751ccfa647bc",
     "src/graphics/caelum/icons/ca_carbine_ammo.png": "8d7ef010bc87f32ac331b05c764eb07be8c152883e553ba977151d1032ece0d0",
