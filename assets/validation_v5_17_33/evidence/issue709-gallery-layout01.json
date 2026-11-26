@@ -1,0 +1,314 @@
+{
+  "schema_revision": 1,
+  "issue": 709,
+  "status": "isolated_visual_inspection_not_campaign",
+  "map": "CA709G",
+  "title": "Native Litoral, Selva and Patagonia inspection",
+  "ambient": 208,
+  "ceiling_height": 2048,
+  "outer_wall": "CACVROCK",
+  "walkway_flat": "CMST01",
+  "walkway_y": [
+    -640,
+    -512
+  ],
+  "plot_y": [
+    -512,
+    512
+  ],
+  "player_start": [
+    -768,
+    -576,
+    90
+  ],
+  "crossing_test": {
+    "start": [
+      -768,
+      -256,
+      0
+    ],
+    "angle": 90,
+    "destination_plot": "Patagonia",
+    "input_tics": 420,
+    "duration_basis": "The recorded 210-tic attempt advances604.814MU, short of the768MU boundary. Double that diagnostic duration; preserve native player speed."
+  },
+  "plots": [
+    {
+      "region": "Litoral",
+      "x": [
+        -1024,
+        -512
+      ],
+      "floor": "CRLITGR"
+    },
+    {
+      "region": "Selva",
+      "x": [
+        -512,
+        0
+      ],
+      "floor": "CRSELVG"
+    },
+    {
+      "region": "Patagonia",
+      "x": [
+        0,
+        1024
+      ],
+      "floor": "CRPATGR"
+    }
+  ],
+  "subjects": [
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-006",
+      "kind": "pombero",
+      "class": "CaelumBestiary006",
+      "position": [
+        -768,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Selva",
+      "catalogue_id": "CA-FOLK-006",
+      "kind": "pombero",
+      "class": "CaelumBestiary006",
+      "position": [
+        -256,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-053",
+      "kind": "cuero",
+      "class": "CaelumBestiary053",
+      "position": [
+        256,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-055",
+      "kind": "nahuelito",
+      "class": "CaelumBestiary055",
+      "position": [
+        704,
+        0,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-054",
+      "kind": "peuchen",
+      "class": "CaelumBestiary054",
+      "position": [
+        480,
+        180,
+        0
+      ],
+      "angle": 270
+    }
+  ],
+  "views": [
+    {
+      "id": "overview",
+      "position": [
+        0,
+        -900,
+        1300
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "key": "F1"
+    },
+    {
+      "id": "litoral",
+      "position": [
+        -768,
+        -110,
+        60
+      ],
+      "target": [
+        -768,
+        0,
+        26
+      ],
+      "key": "F2"
+    },
+    {
+      "id": "selva",
+      "position": [
+        -256,
+        -110,
+        60
+      ],
+      "target": [
+        -256,
+        0,
+        26
+      ],
+      "key": "F3"
+    },
+    {
+      "id": "patagonia",
+      "position": [
+        512,
+        -360,
+        200
+      ],
+      "target": [
+        480,
+        60,
+        20
+      ],
+      "key": "F4"
+    },
+    {
+      "id": "player",
+      "control": true,
+      "key": "F5"
+    },
+    {
+      "id": "cuero",
+      "position": [
+        256,
+        -65,
+        40
+      ],
+      "target": [
+        256,
+        0,
+        8
+      ],
+      "key": "F6"
+    },
+    {
+      "id": "nahuelito",
+      "position": [
+        704,
+        -90,
+        45
+      ],
+      "target": [
+        704,
+        0,
+        12
+      ],
+      "key": "F7"
+    },
+    {
+      "id": "litoral-tiles",
+      "position": [
+        -768,
+        -280,
+        200
+      ],
+      "target": [
+        -768,
+        -280,
+        0
+      ],
+      "key": "F8"
+    },
+    {
+      "id": "selva-tiles",
+      "position": [
+        -256,
+        -280,
+        70
+      ],
+      "target": [
+        -256,
+        -280,
+        0
+      ],
+      "key": "F9"
+    },
+    {
+      "id": "patagonia-tiles",
+      "position": [
+        384,
+        -280,
+        120
+      ],
+      "target": [
+        384,
+        -280,
+        0
+      ],
+      "key": "F10"
+    },
+    {
+      "id": "peuchen",
+      "position": [
+        480,
+        70,
+        60
+      ],
+      "target": [
+        480,
+        180,
+        26
+      ],
+      "key": "F11"
+    }
+  ],
+  "notes": [
+    "Five diagnostic displays cover the approved allocations of these four native candidates.",
+    "Original CA463G pilot and CA682G extended galleries remain unchanged.",
+    "All regional texture and creature model bytes are reused. No campaign encounters, balance, flight or new save fields.",
+    "Two Pombero displays compare approved Litoral/Selva appearances, not new campaign identity rules."
+  ],
+  "model_exports": [
+    "assets/source/art/pombero_461/EXPORT.json",
+    "assets/source/art/cuero_660/EXPORT.json",
+    "assets/source/art/nahuelito_662/EXPORT.json",
+    "assets/source/art/peuchen_708/EXPORT.json"
+  ],
+  "model_bindings": [
+    {
+      "kind": "pombero",
+      "catalogue_id": "CA-FOLK-006",
+      "actor": "CaelumBestiary006",
+      "export": "assets/source/art/pombero_461/EXPORT.json"
+    },
+    {
+      "kind": "cuero",
+      "catalogue_id": "CA-FOLK-053",
+      "actor": "CaelumBestiary053",
+      "export": "assets/source/art/cuero_660/EXPORT.json"
+    },
+    {
+      "kind": "nahuelito",
+      "catalogue_id": "CA-FOLK-055",
+      "actor": "CaelumBestiary055",
+      "export": "assets/source/art/nahuelito_662/EXPORT.json"
+    },
+    {
+      "kind": "peuchen",
+      "catalogue_id": "CA-FOLK-054",
+      "actor": "CaelumBestiary054",
+      "export": "assets/source/art/peuchen_708/EXPORT.json"
+    }
+  ],
+  "animation_sample_wait_tics": 11,
+  "animation_sample_basis": "Existing MIID native idle states last10 tics; wait11 to cross at least one boundary.",
+  "silent_observer_steps": true,
+  "inspection_noise_basis": "Reuse the proven #692 observer-only movement-noise suppression, preserving native movement and production perception.",
+  "inspection_staging": "Native classes with fixture-only Friendly flag and existing diagnostic passive AI. Original idle states advance; no forced positions.",
+  "layout_basis": "Retain the original three regional plots and four display positions. Add Peuchen in the unobstructed rear row of Patagonia; adjust close cameras to current native profiles. Diagnostic coordinates only."
+}

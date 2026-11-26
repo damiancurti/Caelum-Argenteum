@@ -1,0 +1,54 @@
+{
+  "issue": 709,
+  "scope": "One isolated regional gallery cohort; no comparison, repeatability or campaign acceptance.",
+  "baseline_sha256": "e0dc2dffa0c3dcc070c18a16f6b9cc8ceee2c67bdc80aa1eb0cd92bcf1b183b4",
+  "runtime_sha256": "e0dc2dffa0c3dcc070c18a16f6b9cc8ceee2c67bdc80aa1eb0cd92bcf1b183b4",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "regional-materials",
+      "pid": 42304,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 267471832.1236,
+        "END": 267491852.35050002
+      },
+      "fixture_sha256": "94b5bc77b4ff2a89c929935b08b308ff07a666f2cb4f96541ab3922239927389",
+      "bench_sha256": "62b9bc34be8a4307f762df4450645a843dc05b582a83004934dfc7749d0e5cfe",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.572026571428573,
+        "p50_ms": 28.5795,
+        "p95_ms": 28.9866,
+        "p99_ms": 29.0986,
+        "max_ms": 29.4949
+      },
+      "presentation": {
+        "pid": 42304,
+        "trace_sha256": "073230c08d71aaf3229b04435eeb86e89dace596d0bd404af56d3d763e5a7207",
+        "rows": 41390,
+        "scene_presents": 29552,
+        "mean_present_fps": 1686.719195658861,
+        "present_intervals": {
+          "samples": 29551,
+          "mean_ms": 0.5928669114418794,
+          "p50_ms": 0.5665999948978424,
+          "p95_ms": 0.7800000011920929,
+          "p99_ms": 0.9532999992370605,
+          "max_ms": 1.5610999763011932
+        },
+        "native_call_duration": {
+          "samples": 29552,
+          "mean_ms": 0.07400108630701892,
+          "p50_ms": 0.07340002059936523,
+          "p95_ms": 0.09720000624656677,
+          "p99_ms": 0.12409999966621399,
+          "max_ms": 0.49539998173713684
+        }
+      }
+    }
+  ]
+}

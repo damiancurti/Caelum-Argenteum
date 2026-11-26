@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.17.32** - 2026-11-14.
+Documentation version: **5.17.33** - 2026-11-14.
 
 ## 5.17.1 / #647 - Existing currency presentation
 

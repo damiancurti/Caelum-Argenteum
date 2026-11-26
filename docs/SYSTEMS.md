@@ -1,6 +1,14 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.32** - 2026-11-14.
+Documentation version: **5.17.33** - 2026-11-14.
+
+## 5.17.33 - Optional native regional gallery controls (#709)
+
+CA709G: F1 overview; F2/F3 Litoral/Selva Pombero; F4 Patagonia; F5 normal walk;
+F6 Cuero; F7 Nahuelito; F8-F10 ground tiling; F11 Peuchen. Five diagnostic native
+figures remain Friendly/passive and retain their idle states. The observer's
+steps are silent to prevent anonymous noise investigation. This isolated tool
+changes no production speed, hostility, balance, flight or campaign population.
 
 ## 5.17.24 - Expanded isolated regional inspection controls (#692)
 

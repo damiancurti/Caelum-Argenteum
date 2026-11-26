@@ -45,6 +45,7 @@ from assets.generators.validate_beast_men_models import validate as beast_men_pr
 from assets.generators.validate_duende_models import validate as duende_model_problems
 from assets.generators.validate_guardian_models import validate as guardian_model_problems
 from assets.generators.validate_peuchen_model import validate as peuchen_model_problems
+from assets.generators.validate_native_regional_gallery import validate as native_regional_gallery_problems
 from assets.generators.validate_pombero_combat_model import validate as pombero_combat_problems
 from assets.generators.validate_beast_regional_materials import validate as beast_regional_material_problems
 from assets.generators.validate_cuyo_regional_materials import validate as cuyo_regional_material_problems
@@ -140,6 +141,7 @@ def validate(root):
     errors.extend(duende_model_problems(root))
     errors.extend(guardian_model_problems(root))
     errors.extend(peuchen_model_problems(root))
+    errors.extend(native_regional_gallery_problems(root))
     errors.extend(cuero_combat_problems(root))
     errors.extend(nahuelito_combat_problems(root))
     errors.extend(barracas_installation_problems(root))
