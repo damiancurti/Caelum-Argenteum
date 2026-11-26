@@ -1,0 +1,11 @@
+{
+  "issue": 777,
+  "mode": "built-in image_gen",
+  "date": "2026-11-15",
+  "intent": "new original opaque antique golden brass material",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: original square opaque game albedo material.\nCreate one continuous, edge-to-edge field of restrained antique golden brass, softly matte and lightly worn. A subdued warm golden metal color, not orange, brown wood, or bright yellow paint. Extremely fine isotropic metallic grain with tiny subtle irregularities. Low contrast across the whole square. Perfectly flat surface, uniform diffuse illumination without directional shading, highlights or vignette. No wood grain, swirls, engravings, ornaments, embossing, seams, shapes, objects, text or border. The entire image is this one uniform material, suitable for wrapping curved metal surfaces without baked-in lighting. Fully opaque.",
+  "transparent_background": false,
+  "source": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-ff9d5d18-a0a1-4476-b4bc-4a926d2cc94d.png",
+  "processing": "Byte-for-byte copy; no raster editing.",
+  "status": "candidate_author_review_pending"
+}

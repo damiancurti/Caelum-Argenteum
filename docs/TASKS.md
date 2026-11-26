@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.66** - 2026-11-15.
+Documentation version: **5.17.67** - 2026-11-15.
+
+## 5.17.67 - #777 helmet drops delivered; author review pending
+
+Four original helmet assemblies cover all twelve head armor type/tier cases.
+Nineteen exports repeat; 130 closed components, 126 fixed contacts and 100
+opening rays pass independent checks. Native continuity: 1,011 assertions;
+visual/control: 236; unaffected armor/potion regression: 157. Twenty final
+detail views were inspected. Evidence: assets/validation_v5_17_67/evidence/SUMMARY.json.
+CA777-ARMOR-HELMETS-01 awaits review of simplified shapes/materials and ordinary
+handling. Next: twelve torso/hand/foot armor states and ancestor-only pickup
+bindings. Worn modular fitting, other characters and wider V5.16 remain pending.
 
 ## 5.17.66 - #775 alias corrected; armor models remain pending
 

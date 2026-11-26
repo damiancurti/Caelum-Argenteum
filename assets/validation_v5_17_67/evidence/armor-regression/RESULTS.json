@@ -1,0 +1,21 @@
+{
+  "issue": 777,
+  "scope": "Check unaffected medium torso armor and Anima potion after helmet MODELDEF addition for #777.",
+  "baseline_sha256": "f57402ca8a76ba8e4b1dcf06a51b99e4f3392539a4c8cfb675a4c15511b491aa",
+  "runtime_sha256": "aeaca60139f3a21444bb51c8f865ccd26e1d98265bf329d9d17121635fa91aaf",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "fixture_sha256": "c4df7ef654594506c332c034b4604f1c3a6340bc1a5bf07777fbc3307e11105b",
+  "runs": [
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "errors": [],
+      "assertions": 157,
+      "expected_assertions": 157,
+      "completions": [
+        "0"
+      ],
+      "passed": true
+    }
+  ]
+}

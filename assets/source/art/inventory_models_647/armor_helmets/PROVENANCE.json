@@ -1,0 +1,12 @@
+{
+  "issue": 777,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "method": "Original native closed geometry reuses unchanged owned materials and exact purple/blue plumage color samples. One original opaque antique-gold material was generated through built-in image_gen and copied byte-for-byte; GOLD_PROMPT.json records the exact prompt and source.",
+  "limitations": [
+    "Simplified visor, trim, plume strands and medium mail relief require author review. The decorative mail loops are fixed to the closed curtain, not a cloth simulation.",
+    "World drops only; worn modular fitting, ordinary gameplay and author acceptance remain pending."
+  ],
+  "gold_sha256": "4e6123410914b56260ca5f406e873315063659043072852e2ebe433973be17dc",
+  "iterations": "Native review narrowed and lengthened the visor slots, smoothed and tapered plume strands, darkened the medium/heavy steel, and added a closed dark rear liner. The prior engraved gold atlas and a smaller crop still produced wood-like stretched marks; replaced only this material with the new uniform gold texture."
+}

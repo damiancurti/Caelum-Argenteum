@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.66** - 2026-11-15.
+Documentation version: **5.17.67** - 2026-11-15.
+
+## 5.17.67 - Magic, light, medium and heavy helmet drops (#777), 2026-11-15
+
+Delivered four original hollow native world models with portable editable
+sources and an original opaque gold material/exact built-in image_gen prompt.
+Twelve existing head armor identities and gameplay remain unchanged. Nineteen
+exports repeat; independent checks verify 130 closed components, 126 fixed
+contacts and 100 clear opening rays. Engine checks pass 1,011 continuity,
+236 visual/control and 157 unaffected armor/potion assertions. Twenty final
+detail views, the overview, regression and both performance scenes were inspected.
+Earlier material/visor/plume trials remain as superseded evidence. ASSETS records
+the final visual limitations and measured queue cost; no campaign claim follows.
+Evidence: assets/validation_v5_17_67/evidence/SUMMARY.json.
+CA777-ARMOR-HELMETS-01 originates here and remains pending. No earlier author
+test was accepted or removed. The broader V5.16/3D request remains unfinished.
 
 ## 5.17.66 - Medium torso armor no longer uses potion art (#775), 2026-11-15
 

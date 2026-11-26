@@ -4807,3 +4807,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_polearms.modeldef"
 #include "caelum/data/inventory_articulated_weapons.modeldef"
 #include "caelum/data/inventory_ranged_weapons.modeldef"
+#include "caelum/data/inventory_armor_helmets.modeldef"
