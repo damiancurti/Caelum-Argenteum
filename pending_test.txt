@@ -77,3 +77,8 @@ CA662-NAHUELITO-01 | Origin: 5.17.9 / #662
 Prerequisites: current package. Run python assets/validation_v5_17_9/run_nahuelito.py --runtime build/caelum_argenteum_dev.pk3 --output build/nahuelito-author-01 --interactive in an isolated configuration; do not use a campaign save.
 Steps: inspect F1 idle, F2 movement, F3 stun, F4 preparation, F5 release, F6 pain, F7 falling, F8 corpse, F9 breath and F10 rest. Check neck continuity, flipper/jaw contact and floor placement. Report appearance and provisional small body fitting separately from the original full-size regional preview.
 Expected: original creature identity and real volume in all inherited poses. Existing Mandinga stats/body remain unchanged. This does not approve final dimensions, mesh/hitbox matching, aquatic mechanics, encounter placement or remaining creatures.
+
+CA664-CAMP-01 | Origin: 5.17.10 / #664
+Prerequisites: current package. Run python assets/validation_v5_17_10/run_camp_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/camp-author-01 --interactive in an isolated configuration; do not use a campaign save.
+Steps: inspect F1-F4/F6-F8 overview angles, F9 next item, F10 rotation and F5 player control. Review the miniature pitched tent, pot interior/handles and integral trivet from multiple directions. Check ordinary pickup/drop and each pot's separate contents in the normal inventory UI.
+Expected: actual 3D drops with recognizable original camp art; unchanged icons and native item/container behavior. Inventory display fitting is separate from deployed physical scale. This does not accept earlier pending deployed-pot/trivet visuals or complete the inventory roster.

@@ -1,0 +1,139 @@
+{
+  "schema_revision": 1,
+  "issue": 664,
+  "parent_issue": 647,
+  "status": "native_candidate_pending_author_review",
+  "variants": {
+    "tent": {
+      "class_name": "CaelumCampTent",
+      "vertices": 1705,
+      "polygons": 518,
+      "triangles": 669,
+      "selected_materials": [
+        "models/caelum/props/stash/ca_stash_wood.png",
+        "models/caelum/props/stations/ca_station_iron.png",
+        "models/caelum/props/stations/ca_station_leather.png",
+        "models/caelum/world/alchemy_ingredients/cloth.png",
+        "models/caelum/world/alchemy_ingredients/cloth_shade2.png"
+      ],
+      "modeldef_scale": 0.8663187312111271,
+      "reference_opaque_bounds": [
+        9,
+        25,
+        120,
+        98
+      ],
+      "target_art_extent": 111.0,
+      "source_obj_bounds": {
+        "min": [
+          -64.064181,
+          -0.079222,
+          -48.096
+        ],
+        "max": [
+          64.064181,
+          69.199222,
+          48.096
+        ]
+      },
+      "native_bounds": [
+        {
+          "min": [
+            -41.66646569633037,
+            -55.5,
+            -0.06863150252400792
+          ],
+          "max": [
+            41.66646569633037,
+            55.5,
+            59.94858220383712
+          ]
+        }
+      ],
+      "runtime_model": "models/caelum/world/camp/tent.obj",
+      "selected_geometry_sha256": "c78c9f3aa071dde7fe5f4c1d3588af20f9d9b96f91a780c37a97e8cc4754e7a7"
+    },
+    "pot": {
+      "class_name": "CaelumCampPot",
+      "vertices": 3188,
+      "polygons": 950,
+      "triangles": 1288,
+      "selected_materials": [
+        "models/caelum/props/stations/ca_station_iron.png"
+      ],
+      "modeldef_scale": 5.786304034541819,
+      "reference_opaque_bounds": [
+        20,
+        30,
+        111,
+        97
+      ],
+      "target_art_extent": 91.0,
+      "source_obj_bounds": {
+        "min": [
+          -7.863396,
+          0.0,
+          -5.824
+        ],
+        "max": [
+          7.863396,
+          26.821923,
+          5.824
+        ]
+      },
+      "native_bounds": [
+        {
+          "min": [
+            -45.5,
+            -33.69943469717155,
+            0.0
+          ],
+          "max": [
+            45.5,
+            33.69943469717155,
+            155.19980126907
+          ]
+        }
+      ],
+      "runtime_model": "models/caelum/inventory/camp/pot.obj",
+      "selected_geometry_sha256": "002cffb7d7f64d94149ab7b781b886b64a0ac36b2081999425e992203deb6b88"
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "3df8b52c3b46800e2d11f8b86312e151ff671f4b5eba75e61d1c493fc0645785",
+    "PROVENANCE.json": "7ffa488c0bddb54d20ecf8ff1518361126ec9965b8090f5f245e23d5b6a1a92f"
+  },
+  "external_source_sha256": {
+    "assets/art_source/camp_equipment/TENT_MODEL.json": "4908b0e16b369c4b3ee492f0c3679ae9989a7f5cb808e3e4f6a24e8a88bbdf91",
+    "assets/art_source/camp_equipment/FIRE_MODEL.json": "f3201794a06ee03c65c697bbb2408e47573bed831ead553fdc2dbf528cbc532f",
+    "assets/generators/generate_camp_tent.py": "e43bd9f3e03659cb58db562e75b4ad012be31f6c93582d47986aeec698bf3816",
+    "assets/generators/generate_camp_fire.py": "1a36e6d49f1329f398eb4040899033c3827e1789667cd6a721de6e9ca16761e4",
+    "src/caelum/data/CaelumCampData.zs": "6a4476f282efd516d1b5a9d4ec37c400bb56bec65fffd167e5ffc42cc8b31bc3",
+    "src/caelum/core/CaelumPhysicsUnits.zs": "538919a5932a951dde9a2c429bb303764bbb73312bea39c82200462c3e8aca02",
+    "src/caelum/equipment/CaelumCampItems.zs": "7e62f1209db678640b7d7ff9578423afda742c5e947eecff04523c096c19e2df",
+    "src/graphics/caelum/icons/camp/tent.png": "37aba5e902fd2cb6e3131d660951455a76bbe10e71486b396628af011f357c50",
+    "src/graphics/caelum/icons/camp/iron_pot.png": "0860a89a491ea155298e0e098d5e157b872935fb612b2e6f64bdbabc9f42b3a3",
+    "src/models/caelum/world/camp/tent.obj": "6ff87979ce79892485714f51ad8c9b18d4895fda594c39771131aa904e4bf708",
+    "src/sprites/CPTNA0.png": "37aba5e902fd2cb6e3131d660951455a76bbe10e71486b396628af011f357c50",
+    "src/models/caelum/world/camp/fire_5.obj": "d4dfbc03f6e013be4d5a70a6de83fae6e95a903163733d729ed5a51e68a2ae7b",
+    "src/sprites/CPPTA0.png": "0860a89a491ea155298e0e098d5e157b872935fb612b2e6f64bdbabc9f42b3a3",
+    "src/models/caelum/props/stash/ca_stash_wood.png": "c7ae22352f207d99e59ddfaa4dbbb5628dd40ad66eb06638f984b16f27ffda36",
+    "src/models/caelum/props/stations/ca_station_iron.png": "02312891cf9b5fcd5be597cbf77877f919f5a86a478a6d45efad751a3e75325f",
+    "src/models/caelum/props/stations/ca_station_leather.png": "caf6005df986fe383efd88c62910e7cab5d3b231eb707900abc727ae49787b1e",
+    "src/models/caelum/world/alchemy_ingredients/cloth.png": "53ed47e3aef37f40a396034102781852b12ce36e76baaf7194f202fcbbead201",
+    "src/models/caelum/world/alchemy_ingredients/cloth_shade2.png": "cbf8bc8280bd28de0b8443bb3dfa37869fe3e67f3e81f619658bfb7d251c4ae7"
+  },
+  "generator_sha256": "64e53bc18d91568dd23affaf0dc76822a888ad0cedb5a1ed78d6c0869edc0497",
+  "sha256": {
+    "editable/materials/material_0.png": "c7ae22352f207d99e59ddfaa4dbbb5628dd40ad66eb06638f984b16f27ffda36",
+    "editable/materials/material_1.png": "02312891cf9b5fcd5be597cbf77877f919f5a86a478a6d45efad751a3e75325f",
+    "editable/materials/material_2.png": "caf6005df986fe383efd88c62910e7cab5d3b231eb707900abc727ae49787b1e",
+    "editable/materials/material_3.png": "53ed47e3aef37f40a396034102781852b12ce36e76baaf7194f202fcbbead201",
+    "editable/materials/material_4.png": "cbf8bc8280bd28de0b8443bb3dfa37869fe3e67f3e81f619658bfb7d251c4ae7",
+    "editable/camp.mtl": "0ac1faf4464f35bb1b4c6337c3ca5ccf0508919bd4da528395cda8aabf2538b6",
+    "editable/tent.obj": "30512ac0992f66f5433afed23ea2f363bd144af707bd0866a00fac0a01d86323",
+    "models/caelum/inventory/camp/pot.obj": "95e5392a32c2b7795673d96a80421d9fda226bbfabc7ab5a580df509548181a4",
+    "editable/pot.obj": "7c88c6e1105d4567cf76521753ae8c982f67e97db19cc0786e730517106fb3e1",
+    "caelum/data/inventory_camp.modeldef": "6b9cdbfb4e2e3babd35eca7d3f96aceec64cc312d2fe2a60e69345edf3da31c7"
+  }
+}

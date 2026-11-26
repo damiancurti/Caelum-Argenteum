@@ -4,6 +4,24 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-233 - Verify that both subjects are visible before comparing art costs
+
+Status/evidence: ENGINE-VERIFIED diagnostic correction, #664, 2026-11-13.
+An actor count and 700 timing samples do not prove a visible baseline. The
+original camp PNG sprites have no grAb bottom-offset chunk and disappear below
+the floor at native floor Z, while their new model bindings remain visible.
+The first sprite/model comparison passed numeric gates but was rejected after
+both captures were inspected. Preserve that evidence and qualify it explicitly.
+
+For this isolated cost comparison, raise both cohorts and the camera equally
+(64 MU here), using no-gravity flags only inside the diagnostic. Inspect both
+resulting captures. This does not change production offsets/physics or verify
+floor contact; the separate native pickup/drop/save test checks that behavior.
+Keep the environment, camera, object count and observation window comparable;
+one pair still cannot establish repeatability, GPU/display timing or a campaign
+budget. Evidence: assets/validation_v5_17_10/evidence/SUMMARY.json and its retained
+iterations/presentation01 captures versus the corrected presentation captures.
+
 ## CA-KP-232 - Reserve opaque texels around reused icon material patches
 
 Status/evidence: STATIC-VERIFIED source sampling and NATIVE-VISUAL review,
