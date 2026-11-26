@@ -1,6 +1,6 @@
 {
   "schema_revision": 1,
-  "issue": 790,
+  "issue": 793,
   "status": "isolated_visual_inspection_not_campaign",
   "map": "CA682G",
   "title": "Regional bestiary inspection gallery",
@@ -238,6 +238,18 @@
       "class": "CaelumBestiary050",
       "position": [
         768,
+        200,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Selva",
+      "catalogue_id": "CA-FOLK-047",
+      "kind": "teju-jagua",
+      "class": "CaelumBestiary047",
+      "position": [
+        928,
         200,
         0
       ],
@@ -515,6 +527,20 @@
         26
       ],
       "key": "8"
+    },
+    {
+      "id": "teju-jagua",
+      "position": [
+        928,
+        90,
+        60
+      ],
+      "target": [
+        928,
+        200,
+        26
+      ],
+      "key": "9"
     }
   ],
   "notes": [
@@ -522,7 +548,7 @@
     "Existing native actors/models with the established diagnostic passive-AI flag and protected observer. No new production behavior.",
     "Ground studies do not fix a campaign biome or mandatory creature habitat.",
     "Original CA463G and its three visual pilots remain intact.",
-    "Fourteen diagnostic displays cover every approved allocation of these ten candidate species. Repeated displays compare regional associations; the two Yastay copies do not authorize duplicate campaign identities."
+    "Fifteen diagnostic displays cover every approved allocation of these eleven candidate species. Repeated displays compare regional associations; the two Yastay copies do not authorize duplicate campaign identities."
   ],
   "animation_sample_wait_tics": 11,
   "animation_sample_basis": "Existing MIID native idle states last10 tics; wait11 to cross at least one boundary.",
@@ -532,9 +558,10 @@
     "assets/source/art/duendes_690/EXPORT.json",
     "assets/source/art/guardians_698/EXPORT.json",
     "assets/source/art/basilisco_738/EXPORT.json",
-    "assets/source/art/quadrupeds_787/EXPORT.json"
+    "assets/source/art/quadrupeds_787/EXPORT.json",
+    "assets/source/art/teju_791/EXPORT.json"
   ],
-  "layout_basis": "Retain all twelve earlier figures, five grounds, eighteen controls and four-boundary crossing path. Add Familiar in the free rear NOA position and Ao Ao in rear Selva, with keys7/8. Coordinates are diagnostic only.",
+  "layout_basis": "Retain all fourteen earlier figures, five grounds, twenty controls and four-boundary crossing path. Add Teju Jagua in the free rear Selva position with key9. Coordinates are diagnostic only.",
   "silent_observer_steps": true,
   "inspection_noise_basis": "Mute only the diagnostic observer movement-noise timer; native walking speed, figure idle animation and production perception remain unchanged. Friendly and NOTARGET do not suppress anonymous sound investigation."
 }
