@@ -1,0 +1,21 @@
+{
+  "issue": 817,
+  "before_sha256": "285077d7ddeda2217b2c2956d62c2dc9e23e4ac23413c509d7d656618caf9a4b",
+  "final_sha256": "73f544ba7b08fb3a6f589e4b2e4a54b791e7fc534e880c6f8e2d4d54a3ac07fc",
+  "changed_resources": [
+    "models/caelum/folklore/witchfigures/solapa.md3"
+  ],
+  "all_other_runtime_bytes_identical": true,
+  "reused_continuity": [
+    "witch",
+    "salamanca",
+    "pericana"
+  ],
+  "regenerated_fixture_sha256": {
+    "witch": "64c4532a4a5b95b3dc86148f6230441c864d13c92a53fdc609ec5c656a7f0cab",
+    "salamanca": "6ff20681ca4186586cceb4ccecf7676873c7410b3fdad504b866f11eaf589b4e",
+    "pericana": "2144ebfd39b21eff9b295229fd12d89b47b5baf68602369f47e18444eb73f13b"
+  },
+  "reason": "Only Solapa hat-band geometry and Solapa-specific inspection cameras changed. Other model/material/binding, actor/map/save bytes and regenerated native fixture archives remain identical.",
+  "author_accepted": false
+}

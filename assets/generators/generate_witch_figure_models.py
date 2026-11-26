@@ -1,0 +1,123 @@
+"""Export closed witch and rural figures through the owned anatomy/garment pipeline."""
+from pathlib import Path
+import hashlib,json,math
+try:
+    from .generate_beast_men_models import ROOT,output_files as shared_output,main as shared_main,prepared_design,surface_materials
+    from .generate_head_apparition_models import geometry as base_geometry
+    from .generate_pombero_model import poses,rotate
+    from .generate_nahuelito_model import Mesh,md3,fixed,mul
+except ImportError:
+    from generate_beast_men_models import ROOT,output_files as shared_output,main as shared_main,prepared_design,surface_materials
+    from generate_head_apparition_models import geometry as base_geometry
+    from generate_pombero_model import poses,rotate
+    from generate_nahuelito_model import Mesh,md3,fixed,mul
+
+SOURCE=ROOT/'assets/source/art/witch_figures_817'
+MODEL_PATH='models/caelum/folklore/witchfigures'
+DEFINITION='caelum/data/witch_figure_combat.modeldef'
+
+
+def geometry(design):
+    mesh=base_geometry(design);curve=design.get('posture_curve')
+    # Keep cropped facial projections inside their original atlas cell.
+    for shape in design['shapes']:
+        projection=shape.get('front_projection',{})
+        if not projection.get('clamp_to_material_cell'):continue
+        material=projection['material'];left,top,right,bottom=design['materials'][material]['uv_rect']
+        indices={i for owner,tri in mesh.faces if owner==material for i in tri}
+        for i in indices:
+            u,v=mesh.uv[i];mesh.uv[i]=(max(left,min(right,u)),max(top,min(bottom,v)))
+    for warp in design.get('brim_warps',[]):
+        cx,cy=warp['center'];rx,ry=warp['radii']
+        for i,((x,y,z),part) in enumerate(zip(mesh.vertices,mesh.parts)):
+            if part!=warp['part']:continue
+            a,b=(x-cx)/rx,(y-cy)/ry;angle=math.atan2(b,a)
+            delta=(a*a+b*b)*sum(w['amplitude']*math.cos(w['frequency']*angle+w['phase']) for w in warp['waves'])
+            mesh.vertices[i]=(x,y,z+delta)
+    if curve:
+        points=[]
+        for x,y,z in mesh.vertices:
+            delta=curve[-1][1]
+            for (low,left),(high,right) in zip(curve,curve[1:]):
+                if z<=high:
+                    fraction=max(0,min(1,(z-low)/(high-low)));delta=left+(right-left)*fraction;break
+            points.append((x+delta,y,z))
+        mesh.vertices=points
+    return mesh
+
+
+def garment_walk(mesh,design,sample):
+    """Give the long skirt stride clearance while keeping its waist attached."""
+    motion=design['motion']['walk'];cloth=design['garment_stride_clearance']
+    phase=math.tau*sample/motion['frames'];amount=cloth['maximum_depth_expansion']*math.sin(phase)**2
+    factor=design['preview']['height_map_units']/(max(p[2] for p in mesh.vertices)-min(p[2] for p in mesh.vertices))
+    points=[]
+    for vertex,part in zip(mesh.vertices,mesh.parts):
+        parent=part;garment=False
+        while parent is not None:
+            garment|=parent==cloth['root'];parent=design['parts'][parent]['parent']
+        if garment:
+            x,y,z=vertex;weight=max(0,min(1,(cloth['waist_z']-z)/(cloth['waist_z']-cloth['hem_z'])))
+            vertex=(x*(1+amount*weight),y,z)
+        while part is not None:
+            info=design['parts'][part];pivot=info['pivot']
+            for transform in motion.get('transforms',{}).get(part,[]):
+                pulse=math.sin(phase*transform.get('frequency',1)+transform.get('phase',0))
+                if transform.get('positive_only'):pulse=max(0,pulse)
+                value=transform.get('offset',0)+transform['amplitude']*pulse
+                if transform['kind']=='rotate':vertex=rotate(vertex,pivot,transform['axis'],value)
+                elif transform['kind']=='translate_z':vertex=(vertex[0],vertex[1],vertex[2]+value)
+                elif transform['kind']=='scale_xy':vertex=(pivot[0]+(vertex[0]-pivot[0])*(1+value),pivot[1]+(vertex[1]-pivot[1])*(1+value),vertex[2])
+                else:raise ValueError('Unknown authored figure transform')
+            part=info['parent']
+        points.append(mul(vertex,factor))
+    floor=min(p[2] for p in points)
+    return [(x,y,z-floor) for x,y,z in points]
+
+
+def output_files():
+    names=['generate_witch_figure_models.py','generate_head_apparition_models.py',
+           'generate_quadruped_models.py','generate_basilisco_model.py','generate_serpent_models.py',
+           'generate_avian_models.py','generate_peuchen_model.py','generate_guardian_models.py',
+           'generate_duende_models.py','generate_inventory_clothing_models.py',
+           'generate_pombero_model.py','generate_nahuelito_model.py']
+    files=shared_output(SOURCE,MODEL_PATH,DEFINITION,817,geometry,
+                        tuple(Path(__file__).with_name(n) for n in names))
+    config=json.loads((SOURCE/'ANIMATION.json').read_text());report=json.loads(files['manifest.json'])
+    for name,item in config['species'].items():
+        design=json.loads((ROOT/item['design']).read_text())
+        if 'garment_stride_clearance' not in design:continue
+        mesh=geometry(prepared_design(design));surface_materials(mesh,design)
+        cycles,labels=poses(mesh,design);lookup={(row['action'],row['sample']):points for row,points in zip(labels,cycles)}
+        normalization=design['preview']['height_map_units']/(max(p[2] for p in mesh.vertices)-min(p[2] for p in mesh.vertices))
+        frames=[]
+        for row in config['frames']:
+            if row.get('cycle')=='walk':points=garment_walk(mesh,design,row['sample'])
+            elif 'cycle' in row:points=lookup[(row['cycle'],row['sample'])]
+            else:
+                transforms={}
+                for t in row.get('transforms',[]):transforms.setdefault(t['part'],[]).append(t)
+                points=[]
+                for vertex,part in zip(mesh.vertices,mesh.parts):
+                    while part is not None:
+                        info=design['parts'][part]
+                        for t in transforms.get(part,[]):
+                            if t['kind']!='rotate':raise ValueError('Unknown inherited presentation transform')
+                            vertex=rotate(vertex,info['pivot'],t['axis'],t['angle'])
+                        part=info['parent']
+                    points.append(mul(vertex,normalization))
+                floor=min(p[2] for p in points);points=[(x,y,z-floor) for x,y,z in points]
+            frames.append(points)
+        native=Mesh();native.vertices=mesh.vertices;native.uv=mesh.uv;native.parts=mesh.parts
+        native.faces=[(design['materials'][m]['native_batch'],tri) for m,tri in mesh.faces]
+        shaders={key:MODEL_PATH+'/'+Path(path).name for key,path in item['textures'].items()}
+        binary,surfaces,bounds=md3(native,frames,shaders)
+        path=MODEL_PATH+'/'+name+'.md3';files[path]=binary[:8]+fixed(item['catalogue_id']+' inherited combat',64)+binary[72:]
+        report['sha256'][path]=hashlib.sha256(files[path]).hexdigest()
+        report['species'][name].update(surfaces=surfaces,native_bounds=bounds,maximum_authored_radius=max(math.hypot(p[0],p[1]) for frame in frames for p in frame),maximum_authored_height=max(p[2] for frame in frames for p in frame),garment_stride_clearance=design['garment_stride_clearance'])
+    files['manifest.json']=(json.dumps(report,indent=2)+'\n').encode()
+    return files
+
+
+if __name__=='__main__':
+    shared_main(SOURCE,DEFINITION,output_files)

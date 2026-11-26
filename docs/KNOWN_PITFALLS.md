@@ -37,6 +37,16 @@ authored face rectangles. Global bounds alone would miss the first export's 20
 out-of-cell vertices per head. Final export: 28,414 checked native material UV
 vertices, zero overflow. This validates these two head models, not every atlas.
 
+Extension #817, 2026-11-15: cropping a face projection to align eyes with the
+volumetric head left 58 native UV vertices outside the assigned face rectangle
+per figure. A local, data-enabled material-cell clamp keeps the cropped edge
+vertices inside their original rectangle without editing atlas pixels or other
+models. Retain native material ownership checks and inspect eye/nose/mouth
+alignment at actual scale; successful closure/contact checks cannot detect a
+face hidden under hair. CODE-VERIFIED and ENGINE-VERIFIED evidence:
+assets/validation_v5_17_87/evidence/SUMMARY.json; original geometry04 retained.
+Author appearance acceptance remains pending.
+
 ## CA-KP-248 - Verify exact native model states and typed diagnostic censuses
 
 Status/evidence: STATIC-VERIFIED and ENGINE-OBSERVED, #785, 2026-11-15.

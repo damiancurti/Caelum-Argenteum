@@ -1,0 +1,15 @@
+{
+  "issue": 817,
+  "parent_issue": 461,
+  "status": "candidate_author_review_pending",
+  "author": "Damian Curti",
+  "reference_images": {
+    "assets/source/bestiary_453/imagenes/01_Humanos/01_brujas_brujos.png": "8013d7ab5bd966e1f098e683356d77289784fc50bfbdf0fa674d4de557fce2ec",
+    "assets/source/bestiary_453/imagenes/01_Humanos/02_salamanca.png": "72bbb072494873b55220e3c11c903897711afcdb964c4fb26a5899eb6e76296c",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/16_pericana.png": "f859b4c8bb3f0da9f6f39e55f8a097d4c8fc5d5bf0c240f257e90eb4b3908982",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/17_solapa.png": "ee6b02e50e58b6bc31752f5c107ef24417d6b28cdd39d3b78f8e1751624d97ea"
+  },
+  "material_source": "MATERIALS_PROMPT.json",
+  "geometry": "Original dimensionless anatomy controls and owned closed mesh/native animation tools.",
+  "limits": "Reference-led elderly witch, middle-aged poncho wearer and two distinct hags with fixed clothing, hair, hats, pouches and claws. Candidate species art only; no modular inventory, new powers, statistics, metric scale or invented cultural claims."
+}
