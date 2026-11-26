@@ -1,6 +1,58 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.35** - 2026-11-14.
+Documentation version: **5.17.36** - 2026-11-14.
+
+## 5.17.36 - Chain and silver-chain material world models (#716, parent #647)
+
+CaelumMaterialPickup now binds M041/A to a closed spiked head, eye and linked
+chain, and M043/A to a coiled silver chain. The owned material icons guide
+both shapes and remain unchanged. Type41 retains its three existing tiers;
+type43 remains untiered and resolves requested tiers2/3 to1. These are four
+real inventory cases sharing two static models. Icons, recipes, weight,
+quantities, Scale0.25, collision, saves, provenance and contamination are
+unchanged. Equipped weapons and first-person art remain separate.
+
+The iron component contains18 closed parts, including nine interlaced rings,
+a true-pole head and eight closed spikes:2,092 vertices and4,128 triangles.
+The silver coil contains31 closed oval rings:5,952 vertices and11,904
+triangles. All40 rings have real openings. The38 linked pairs and nine fixed
+head/spike/eye witnesses connect all49 components. Opaque owned training-dummy
+iron and the existing #647 painted silver atlas are reused byte-for-byte;
+no image is generated. DESIGN/PROVENANCE/EXPORT and portable OBJ/MTL/textures
+live in assets/source/art/inventory_models_647/chains. Regenerate with python
+assets/generators/generate_inventory_chains_models.py --output build/chains-model
+--install. Eight final exports repeat byte-for-byte.
+
+Independent serialized checks verify closed outward solids, genus-one links,
+positive wire-capsule clearance, the actual interlacing graph, two-ray fixed
+attachment witnesses and exact quantized OBJ/MD3 triangle multisets. The first
+graph is connected but two pairs fail clearance: the head eye/first link and
+the inner silver terminal pair. Refitting the eye plane, using analytic
+spiral tangents and widening silver link openings resolves both. Final minimum
+capsule gaps are0.154620/0.813393 native model units, above the0.027065
+quantization allowance. Original failed data and report remain evidence.
+Both original sprite envelopes and portable opaque material pixels are checked.
+
+The ordinary-light preview passes110 checks; front, edge, rear-oblique, rear,
+raised underside and floor views were inspected for both designs. Uniform
+metal, simplified spikes and the regular coil remain candidate art, with
+rigid arrangements rather than chain simulation. Final packaged native checks
+pass 586 assertions (110/122/110/122/122) across old sprites, old-save/model,
+fresh model, reload and rollback. They cover four real cases, native split/merge,
+ownership, original lot boundaries, provenance, Box weight, quest guard,
+untiered silver resolution and unchanged sprite/icon/collision. Direct API
+probes do not replace ordinary-menu/crafting or author acceptance.
+
+One sequential700-tic two-object sprite/model pair records 1123.54/1167.32 queue
+presents/s, p95 1.0844/1.0432 ms and p99 1.3922/1.2610 ms. Recorded Windows11/Ryzen9 5950X/
+RTX3070Ti environment, GZDoom4.14.2 Vulkan1280x720, uncapped/vsync off,
+background unpaused, audio5%. Queue timing and different projected footprints
+establish no GPU/display, repeatability or campaign/crowd result. All
+18,397 package entries match src. Three new resources, MODELDEF and two
+release diagnostics are the only runtime changes from #713. Evidence:
+assets/validation_v5_17_36/evidence/SUMMARY.json. CA716-CHAINS-01 remains
+pending; other inventory categories and the broader character/campaign batch
+remain unfinished.
 
 ## 5.17.35 - Avian regional gallery extension (#713, parent #463)
 

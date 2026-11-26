@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.35** - 2026-11-14.
+Documentation version: **5.17.36** - 2026-11-14.
+
+## 5.17.36 - Two chain-component world models (#716)
+
+Chain41 and untiered silver chain43 gain native models with actual interlaced
+openings. Forty rings,38 linked pairs and nine fixed attachments connect49
+closed components. Existing four type/tier cases and inventory rules remain.
+Eight exports repeat; 586 native continuity/pickup/toss assertions pass.
+Qualified presentation evidence is in ASSETS. CA716-CHAINS-01 retains author
+art and ordinary-play acceptance. Other inventory, worn/first-person art,
+characters and original campaign work remain unfinished.
 
 ## 5.17.35 - Eight-figure native regional gallery (#713)
 

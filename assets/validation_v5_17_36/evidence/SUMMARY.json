@@ -1,0 +1,508 @@
+{
+  "issue": 716,
+  "parent_issue": 647,
+  "version": "5.17.36",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Existing chain material41/M041A tiers1/2/3 and untiered silver chain43/M043A on CaelumMaterialPickup. Two native static drop models and four real type/tier cases; gameplay and inventory icons unchanged.",
+  "runtime": {
+    "sha256": "0ebdab2cd33b14e8bb67ef0454989c8cc5bc92b47583b8966cc620a9031474c8",
+    "source_entries": 18397,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "d43efb39a7b94ed3d7cab822968673e69585b418281b6ce72152ac11d07b4a2b",
+    "new_resources": [
+      "caelum/data/inventory_chains.modeldef",
+      "models/caelum/inventory/chains/chain.md3",
+      "models/caelum/inventory/chains/silver_chain.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 8,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "chain": {
+        "closed_components": 18,
+        "rings": 9,
+        "linked_pairs": 8,
+        "fixed_attachment_witnesses": 9,
+        "connected_components": 18,
+        "nearby_ring_pairs": 8,
+        "minimum_capsule_clearance": 0.1546199203437174,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 4128
+      },
+      "silver_chain": {
+        "closed_components": 31,
+        "rings": 31,
+        "linked_pairs": 30,
+        "fixed_attachment_witnesses": 0,
+        "connected_components": 31,
+        "nearby_ring_pairs": 30,
+        "minimum_capsule_clearance": 0.8133934156591411,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 11904
+      }
+    },
+    "variants": {
+      "chain": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "head",
+          "spike_00",
+          "spike_01",
+          "spike_02",
+          "spike_03",
+          "spike_04",
+          "spike_05",
+          "spike_06",
+          "spike_07",
+          "eye",
+          "link_00",
+          "link_01",
+          "link_02",
+          "link_03",
+          "link_04",
+          "link_05",
+          "link_06",
+          "link_07"
+        ],
+        "closed_outward_components": 18,
+        "vertices": 2092,
+        "triangles": 4128,
+        "surfaces": [
+          {
+            "material": "iron",
+            "vertices": 2092,
+            "triangles": 4128
+          }
+        ],
+        "reference_opaque_bounds": [
+          17,
+          8,
+          111,
+          120
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 94.0,
+        "native_bounds": [
+          {
+            "min": [
+              -46.915783480015925,
+              -13.978126779370276,
+              0.0
+            ],
+            "max": [
+              47.08421651998408,
+              13.978126779370276,
+              23.542108259992045
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 7.356908831247513,
+          "floor": 0.050000000000000044
+        }
+      },
+      "silver_chain": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "link_00",
+          "link_01",
+          "link_02",
+          "link_03",
+          "link_04",
+          "link_05",
+          "link_06",
+          "link_07",
+          "link_08",
+          "link_09",
+          "link_10",
+          "link_11",
+          "link_12",
+          "link_13",
+          "link_14",
+          "link_15",
+          "link_16",
+          "link_17",
+          "link_18",
+          "link_19",
+          "link_20",
+          "link_21",
+          "link_22",
+          "link_23",
+          "link_24",
+          "link_25",
+          "link_26",
+          "link_27",
+          "link_28",
+          "link_29",
+          "link_30"
+        ],
+        "closed_outward_components": 31,
+        "vertices": 5952,
+        "triangles": 11904,
+        "surfaces": [
+          {
+            "material": "silver",
+            "vertices": 4096,
+            "triangles": 8176
+          },
+          {
+            "material": "silver",
+            "vertices": 1872,
+            "triangles": 3728
+          }
+        ],
+        "reference_opaque_bounds": [
+          12,
+          8,
+          116,
+          120
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 104.0,
+        "native_bounds": [
+          {
+            "min": [
+              -46.2012764860713,
+              -40.42977024830967,
+              0.0
+            ],
+            "max": [
+              57.79872351392871,
+              51.99426699685902,
+              9.4071634001762
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 14.526208485768986,
+          "floor": 0.17620031719246648
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 716,
+    "kind": "chains",
+    "scope": "Native pickup/toss, quantity and saved ownership for chains; no normal menu or author acceptance.",
+    "baseline_sha256": "d43efb39a7b94ed3d7cab822968673e69585b418281b6ce72152ac11d07b4a2b",
+    "runtime_sha256": "0ebdab2cd33b14e8bb67ef0454989c8cc5bc92b47583b8966cc620a9031474c8",
+    "model_sha256": null,
+    "fixture_sha256": "78efc9d71c86b5be2fab0599115752a3630f4e1b676f298eab35e159384a7512",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 110
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 122
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 110
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 122
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 122
+      }
+    ],
+    "captures": {
+      "baseline.png": "b0ebdaff8d01f848e46e8747e54f7c710f1eb0b3976b1acef9a69dab985db37f",
+      "candidate-0.png": "7cd77015eca520b08c949b59e3b5f05d12dda180d546b45044e6b2f12d0cd806",
+      "candidate-1.png": "e0890a45feea6660801f2ae38ba2308665831de58dffe704d441d03a69dfdf6a",
+      "candidate-2.png": "37544e908fdc6d875c64d28aaa38bdbc620e5c58dcd4c6aac4431ebc84c7fc28",
+      "candidate-3.png": "a4d982e4d1bb6d814189161b34845741096751aea64df4cb3491e96e63e13cb9",
+      "candidate-5.png": "ca2f2ef9c72f4ff2d9a05791d8114fd5264b63c5e30c2e9ed068034cd62b5f0c",
+      "candidate-6.png": "52485241a575634f8308e784940f4ec2046620da20603d103e3a6513c4a2ffe9",
+      "candidate-7.png": "8f8cfa36d7aa6e1cc0a2f963817fe342a1dd65c4471362ee4a03c671061dd806",
+      "detail-0-0.png": "8241e12402054975fa8ef267a1a6895eb7a15a4b377f9ff6b7b94524a17c4f5c",
+      "detail-0-160.png": "8b5f914d3d11f5987b765546b9e954c757cb3742f36c5ad2741b5e5d382029f4",
+      "detail-0-225.png": "39dc5b65aaa74329e6579037c04e376f9f9c43840bd972dc70b953def96a0a22",
+      "detail-0-270.png": "12943d66e6da98ee35c9dd3af28b69b9889e57b2516d15dc72b2a7b056c5dfcc",
+      "detail-0-90.png": "05d1b95566b18913dc2b874b497191d91b83a8213864ffd2330dba6977af40c4",
+      "detail-1-0.png": "361585a19169fd85b3c2c9146b5dcbbed3ceaff7926220def59cbaa57528f53c",
+      "detail-1-160.png": "cdc457947ee21d52fb20ff3dc8bc3195e17d90544e53a7611ff487ce24b547a4",
+      "detail-1-225.png": "148284071cf07e419fc3a2feac0197250d6838a6de8a24ec3c8b90f4deb68d80",
+      "detail-1-270.png": "b3a69965cc35b0abff5304660052277ebb4e5b7d965abda6557d12eabfd6f581",
+      "detail-1-90.png": "984f6ef30c8fb82ca366596cf2ce1d0b41abd48a831397726ae7448f4ad99464"
+    }
+  },
+  "presentation": {
+    "issue": 716,
+    "kind": "chains",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "d43efb39a7b94ed3d7cab822968673e69585b418281b6ce72152ac11d07b4a2b",
+    "runtime_sha256": "0ebdab2cd33b14e8bb67ef0454989c8cc5bc92b47583b8966cc620a9031474c8",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 2,
+        "pid": 12628,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 272956916.3973,
+          "END": 272976940.6781
+        },
+        "fixture_sha256": "ff89fdf3ac78bef511117af2e8d4db2e2fcf39d2abf89ddba593d026dbb1a1eb",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            2,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571585,
+          "p50_ms": 28.5807,
+          "p95_ms": 29.1599,
+          "p99_ms": 29.4061,
+          "max_ms": 29.901
+        },
+        "presentation": {
+          "pid": 12628,
+          "trace_sha256": "73e43ebd515f559330c19a023a9e78b9876f1703ae92410208d534d27af88063",
+          "rows": 29897,
+          "scene_presents": 19690,
+          "mean_present_fps": 1123.5382874728314,
+          "present_intervals": {
+            "samples": 19689,
+            "mean_ms": 0.8900453248008972,
+            "p50_ms": 0.8586000204086304,
+            "p95_ms": 1.0843999981880188,
+            "p99_ms": 1.392199993133545,
+            "max_ms": 3.149399995803833
+          },
+          "native_call_duration": {
+            "samples": 19690,
+            "mean_ms": 0.07677696810088344,
+            "p50_ms": 0.07669997215270996,
+            "p95_ms": 0.10130000114440918,
+            "p99_ms": 0.13450002670288086,
+            "max_ms": 0.47049999237060547
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 2,
+        "pid": 49672,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 272991298.6184,
+          "END": 273011323.0254
+        },
+        "fixture_sha256": "ff89fdf3ac78bef511117af2e8d4db2e2fcf39d2abf89ddba593d026dbb1a1eb",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            2,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57221128571429,
+          "p50_ms": 28.5629,
+          "p95_ms": 29.1977,
+          "p99_ms": 29.3673,
+          "max_ms": 29.8206
+        },
+        "presentation": {
+          "pid": 49672,
+          "trace_sha256": "9e0bc0ec65f7198c6e748f8df454de4cf90b8aa915e7eac4741fd97a48b0ebe8",
+          "rows": 30434,
+          "scene_presents": 20456,
+          "mean_present_fps": 1167.3214214664492,
+          "present_intervals": {
+            "samples": 20455,
+            "mean_ms": 0.8566620826196683,
+            "p50_ms": 0.8295999765396118,
+            "p95_ms": 1.0432000160217285,
+            "p99_ms": 1.2609999775886536,
+            "max_ms": 1.6884999871253967
+          },
+          "native_call_duration": {
+            "samples": 20456,
+            "mean_ms": 0.07515325076735295,
+            "p50_ms": 0.07370001077651978,
+            "p95_ms": 0.09880000352859497,
+            "p99_ms": 0.12660002708435059,
+            "max_ms": 0.3875000476837158
+          }
+        }
+      }
+    ]
+  },
+  "iterations": "The initial serialized link graph is connected but independent clearance rejects the head eye/first link and the inner silver-chain terminal pair. Model02 rotates the eye into a compatible interlacing plane, uses analytic spiral tangents and widens the silver link openings. All49 closed components,40 genus-one rings,38 linked pairs and9 fixed attachments then pass. The ordinary native preview passes110 assertions. Final model02/03 repeats all8 files. Original data and the failed clearance report are retained.",
+  "art": {
+    "source": "assets/source/art/inventory_models_647/chains",
+    "new_image_generation": false,
+    "original_pixels_preserved": true,
+    "reused_materials": [
+      "Owned training-dummy iron",
+      "Owned #647 painted silver atlas"
+    ],
+    "reviewed_views": "Both original icons; both final front, edge, rear-oblique, rear and raised underside detail views, ordinary floor overview and both presentation cohorts.",
+    "author_check": "CA716-CHAINS-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Rigid dropped arrangements, not chain simulation, equipped weapons or first-person art. Uniform reused metals, simplified spikes and regular coil remain candidate art.",
+    "One sequential700-tic two-object sprite/model pair: queue intervals, not GPU/display timing, repeatability or campaign/crowd acceptance. Different projected footprints preclude equal-pixel claims.",
+    "Native fixtures call pickup/toss APIs and prepare Box/quest states; ordinary menus/crafting and author acceptance remain separate.",
+    "No recipe, tier resolution, weight, quantity, identity, collision, save schema, production scan or original icon/texture changes.",
+    "No executable, IWAD, compiled fixture, PK3/WAD, DLL or save is committed."
+  ],
+  "files": {
+    "continuity/baseline-process.log": "01fa6d7e5fa22f74e9cbd13480bfb230d64cc4d850e00f2185e29dacb4e5bee3",
+    "continuity/baseline.cfg": "9eb8411940764c8496a0a8a51ee00279cfc8ce90fe1e9febb1ebd77bc15372a0",
+    "continuity/baseline.log": "640f6d8016e941a75ff58bd1c8d0d92386b66395fc756d4a66aa3baf13264daf",
+    "continuity/baseline.png": "b0ebdaff8d01f848e46e8747e54f7c710f1eb0b3976b1acef9a69dab985db37f",
+    "continuity/candidate-0.png": "7cd77015eca520b08c949b59e3b5f05d12dda180d546b45044e6b2f12d0cd806",
+    "continuity/candidate-1.png": "e0890a45feea6660801f2ae38ba2308665831de58dffe704d441d03a69dfdf6a",
+    "continuity/candidate-2.png": "37544e908fdc6d875c64d28aaa38bdbc620e5c58dcd4c6aac4431ebc84c7fc28",
+    "continuity/candidate-3.png": "a4d982e4d1bb6d814189161b34845741096751aea64df4cb3491e96e63e13cb9",
+    "continuity/candidate-5.png": "ca2f2ef9c72f4ff2d9a05791d8114fd5264b63c5e30c2e9ed068034cd62b5f0c",
+    "continuity/candidate-6.png": "52485241a575634f8308e784940f4ec2046620da20603d103e3a6513c4a2ffe9",
+    "continuity/candidate-7.png": "8f8cfa36d7aa6e1cc0a2f963817fe342a1dd65c4471362ee4a03c671061dd806",
+    "continuity/candidate-fresh-process.log": "f0c4ff69fd0f4463e6db984a84f2514e167d24fe1f3843d24cf2dd7299da4a6f",
+    "continuity/candidate-fresh.cfg": "42590a38c1d5213fc9ec91f74ea340c0e7f9f68003bb416cac6738e6d6e80a7f",
+    "continuity/candidate-fresh.log": "b8e9fdc29dec3b943b7738ffcc3c2683a782dfeb03eeb12d85ee9a30e1b2bbf0",
+    "continuity/candidate-reload-process.log": "85ac78859220da1a58dac9fcffa2976a6b4a1343cd687f5b6c1b5f809598f038",
+    "continuity/candidate-reload.cfg": "f3df25141867754c51fdb84cf65cb06cd28cac7ed1acd6c3cea89a5eaf65e7ce",
+    "continuity/candidate-reload.log": "4005e9d494fc3a83113254baf4651c71bc1834b80be2a0e5cf85bacd66c9987b",
+    "continuity/detail-0-0.png": "8241e12402054975fa8ef267a1a6895eb7a15a4b377f9ff6b7b94524a17c4f5c",
+    "continuity/detail-0-160.png": "8b5f914d3d11f5987b765546b9e954c757cb3742f36c5ad2741b5e5d382029f4",
+    "continuity/detail-0-225.png": "39dc5b65aaa74329e6579037c04e376f9f9c43840bd972dc70b953def96a0a22",
+    "continuity/detail-0-270.png": "12943d66e6da98ee35c9dd3af28b69b9889e57b2516d15dc72b2a7b056c5dfcc",
+    "continuity/detail-0-90.png": "05d1b95566b18913dc2b874b497191d91b83a8213864ffd2330dba6977af40c4",
+    "continuity/detail-1-0.png": "361585a19169fd85b3c2c9146b5dcbbed3ceaff7926220def59cbaa57528f53c",
+    "continuity/detail-1-160.png": "cdc457947ee21d52fb20ff3dc8bc3195e17d90544e53a7611ff487ce24b547a4",
+    "continuity/detail-1-225.png": "148284071cf07e419fc3a2feac0197250d6838a6de8a24ec3c8b90f4deb68d80",
+    "continuity/detail-1-270.png": "b3a69965cc35b0abff5304660052277ebb4e5b7d965abda6557d12eabfd6f581",
+    "continuity/detail-1-90.png": "984f6ef30c8fb82ca366596cf2ce1d0b41abd48a831397726ae7448f4ad99464",
+    "continuity/fixture-source/MAPINFO.txt": "716a4ef6068532637a516ff8dd21f56cb4d2384041dbc6d3059a07fd8c82085b",
+    "continuity/fixture-source/ZSCRIPT.txt": "1fecb04c0ddf927f27b6554e5c7868ccb4ce9f6730beba8e5e4dc869454a2ffb",
+    "continuity/fixture.zs": "5982938ff2f44f274d024ec316d4dd38ed8da4c82624ba5e4bed67a8817b6670",
+    "continuity/old-save-load-process.log": "13aebe088dc02247193f1387b354c05c02cda19f193ecf059632e88e41d721ea",
+    "continuity/old-save-load.cfg": "d27f23e71e613b5cd9fe39fafd1b1e32805a535e3c6880a0f8cf9be4487e1b08",
+    "continuity/old-save-load.log": "64947328f0ee1c4e5805aee30b2592d67f74760a40d7d097fb3668ead807816b",
+    "continuity/RESULTS.json": "89b5d4b2c675acb7a914bfd246f19d0320881d8761c6fecdfb2ef3c020ea92d5",
+    "continuity/rollback-load-process.log": "6bc7464dabe42766de37c4466626815caa94776e25e3897f6684c1b916914722",
+    "continuity/rollback-load.cfg": "f3df25141867754c51fdb84cf65cb06cd28cac7ed1acd6c3cea89a5eaf65e7ce",
+    "continuity/rollback-load.log": "0b3e82621a4c23f25db24ee46dbaeafd9e2a9010b0ee35ed02c89b0671524d71",
+    "continuity/session.ini": "def4f5e5c7306d2dcd6f8ad7251473b920467e1c6535629285e28d2be4e7238f",
+    "exports/model01.json": "46cae2a12dc982b33fab943c80ebabc8ceff7db7533b6f6d63c78c1cd7281ae9",
+    "exports/model02.json": "3260a2870236775a51e0e1cda27704edde06f76d013a396a7543d501264e9d2f",
+    "exports/model03.json": "3260a2870236775a51e0e1cda27704edde06f76d013a396a7543d501264e9d2f",
+    "issue716-build01.log": "16ae841083144751bb5d671dbf5e5ccf1da2e65b9dda12d3126e5b2b698d14ea",
+    "issue716-design01.json": "abb3a538182b1b6b937831773c7448730de3de25976ff9dc03e1c47e384f202f",
+    "issue716-geometry01.log": "fa4d8f3f8bd3a90fe06fb83eb3211bbcc1c7f51facc8dd1e7cf239834c12aa2a",
+    "issue716-geometry02.log": "7cc466cf590b66a87bfae020d25f939746cb2c4fe4bbfe2e2e9adcbd4f2c8836",
+    "issue716-installed-check.log": "1708a07a90523b325035981e8083f72693014ece3759be38827910098a8884ee",
+    "issue716-repeat-final.json": "bbc895513847099d6dcb706c3517d367ee1661a19681fee495bd07ea94f80677",
+    "iterations/visual01/candidate-0.png": "7cd77015eca520b08c949b59e3b5f05d12dda180d546b45044e6b2f12d0cd806",
+    "iterations/visual01/candidate-1.png": "e0890a45feea6660801f2ae38ba2308665831de58dffe704d441d03a69dfdf6a",
+    "iterations/visual01/candidate-2.png": "37544e908fdc6d875c64d28aaa38bdbc620e5c58dcd4c6aac4431ebc84c7fc28",
+    "iterations/visual01/candidate-3.png": "a4d982e4d1bb6d814189161b34845741096751aea64df4cb3491e96e63e13cb9",
+    "iterations/visual01/candidate-5.png": "ca2f2ef9c72f4ff2d9a05791d8114fd5264b63c5e30c2e9ed068034cd62b5f0c",
+    "iterations/visual01/candidate-6.png": "52485241a575634f8308e784940f4ec2046620da20603d103e3a6513c4a2ffe9",
+    "iterations/visual01/candidate-7.png": "8f8cfa36d7aa6e1cc0a2f963817fe342a1dd65c4471362ee4a03c671061dd806",
+    "iterations/visual01/detail-0-0.png": "8241e12402054975fa8ef267a1a6895eb7a15a4b377f9ff6b7b94524a17c4f5c",
+    "iterations/visual01/detail-0-160.png": "8b5f914d3d11f5987b765546b9e954c757cb3742f36c5ad2741b5e5d382029f4",
+    "iterations/visual01/detail-0-225.png": "39dc5b65aaa74329e6579037c04e376f9f9c43840bd972dc70b953def96a0a22",
+    "iterations/visual01/detail-0-270.png": "12943d66e6da98ee35c9dd3af28b69b9889e57b2516d15dc72b2a7b056c5dfcc",
+    "iterations/visual01/detail-0-90.png": "05d1b95566b18913dc2b874b497191d91b83a8213864ffd2330dba6977af40c4",
+    "iterations/visual01/detail-1-0.png": "361585a19169fd85b3c2c9146b5dcbbed3ceaff7926220def59cbaa57528f53c",
+    "iterations/visual01/detail-1-160.png": "cdc457947ee21d52fb20ff3dc8bc3195e17d90544e53a7611ff487ce24b547a4",
+    "iterations/visual01/detail-1-225.png": "148284071cf07e419fc3a2feac0197250d6838a6de8a24ec3c8b90f4deb68d80",
+    "iterations/visual01/detail-1-270.png": "b3a69965cc35b0abff5304660052277ebb4e5b7d965abda6557d12eabfd6f581",
+    "iterations/visual01/detail-1-90.png": "984f6ef30c8fb82ca366596cf2ce1d0b41abd48a831397726ae7448f4ad99464",
+    "iterations/visual01/fixture-source/MAPINFO.txt": "716a4ef6068532637a516ff8dd21f56cb4d2384041dbc6d3059a07fd8c82085b",
+    "iterations/visual01/fixture-source/ZSCRIPT.txt": "1fecb04c0ddf927f27b6554e5c7868ccb4ce9f6730beba8e5e4dc869454a2ffb",
+    "iterations/visual01/fixture.zs": "5982938ff2f44f274d024ec316d4dd38ed8da4c82624ba5e4bed67a8817b6670",
+    "iterations/visual01/RESULTS.json": "4fbdb7d6deb140523cfcf4cb7e85779ac6d954a50de9873511ef50760b83ce8e",
+    "iterations/visual01/session.ini": "ec332dc0dd2ab39e77f507ba186aaa83709ea3b3557c2e98bca1e5a6801f93cd",
+    "iterations/visual01/visual-process.log": "7545859a2c6a8c52b9aec1cfd0d3d8a30c5db2a6fc6fc7bfbf255a323ff6e075",
+    "iterations/visual01/visual.cfg": "67471f5c50e4f78045b977631f144c6c019efa8a886f4b0f2b920b99c7721922",
+    "iterations/visual01/visual.log": "4cb4e429a23f7f386b70f6ee5d1cef6aec5d6aa87b7bc67739a73b28ee50a93f",
+    "presentation/models-2/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-2/engine.log": "e3aaf5cc984cc8af1695e05c58cabd460e9be6e40ecc4520b8f6541ead7c8e13",
+    "presentation/models-2/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-2/fixture-source/ZSCRIPT.txt": "345d2b71d4824e48c442eeb604082b8e8922f0fd1c125c709487afa02967e7ac",
+    "presentation/models-2/presents.csv": "9e0bc0ec65f7198c6e748f8df454de4cf90b8aa915e7eac4741fd97a48b0ebe8",
+    "presentation/models-2/process.log": "61bb4eed799d153c38f8b5bb0e1b40225475f7700c0eb5d5d98f7841a9cc4df2",
+    "presentation/models-2/scene.png": "e1a94d64027f18e260d69fd8651ea502eb048ed9d9a7e82ac77236adf6cf3290",
+    "presentation/models-2/session.ini": "fa6c5c790c5b6dc7500c6546b90d01e65a39c8111ffc5392c4dcd0adeb0a195f",
+    "presentation/RESULTS.json": "7c40356a4ad57bdf9897a6ce836903b8a1569f6307ab66ef1e07e8535be1dac8",
+    "presentation/sprites-2/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-2/engine.log": "e97729529004859e83ad024aec959dae333ef70e5747f4d55e7ac0abbda25930",
+    "presentation/sprites-2/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-2/fixture-source/ZSCRIPT.txt": "345d2b71d4824e48c442eeb604082b8e8922f0fd1c125c709487afa02967e7ac",
+    "presentation/sprites-2/presents.csv": "73e43ebd515f559330c19a023a9e78b9876f1703ae92410208d534d27af88063",
+    "presentation/sprites-2/process.log": "c032a55a243e1e9ff8bf29b782050d2b02ff6c1acc74830b127b4875c984319f",
+    "presentation/sprites-2/scene.png": "bf1ab2a156799201dcdefbd8ce2bb2d29ec4133128db78bb819f26434b6cb917",
+    "presentation/sprites-2/session.ini": "f4736460ea203bfb80df6b4b113d511eaafeafbeb6e480881f7a2c1055d47fd2",
+    "validation-final.json": "fc56ece4007f8f07d91d3e81c00e7f0a740bf84d30d0054493507073e54fae1d"
+  }
+}
