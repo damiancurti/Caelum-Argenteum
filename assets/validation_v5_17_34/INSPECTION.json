@@ -1,0 +1,24 @@
+{
+  "issue": 711,
+  "purpose": "Inspection-only view of broad winged lying poses.",
+  "additional_views": [
+    {
+      "name": "lying-oblique",
+      "position": [
+        45,
+        -60,
+        38
+      ],
+      "target": [
+        -10,
+        0,
+        12
+      ],
+      "default_pose": 22
+    }
+  ],
+  "action_views": {
+    "death": 6,
+    "rest": 6
+  }
+}

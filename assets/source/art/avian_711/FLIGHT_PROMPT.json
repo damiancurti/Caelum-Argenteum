@@ -1,0 +1,7 @@
+{
+  "issue": 711,
+  "mode": "built-in image_gen",
+  "intent": "generate",
+  "prompt": "Use case: stylized-concept. Asset type: original diffuse material atlas for volumetric avian flight-feather, beak and talon meshes in a dark-fantasy game. Create one square opaque image divided into an exact 2 by 2 grid of equal quadrants, with no borders, gaps, labels, text or symbols. In each of the first three quadrants show a close orthogonal flat material study of ONE broad feather vane filling the entire square quadrant edge to edge, with a slender central rachis running vertically from bottom to top and fine diagonal barbs sweeping toward the top; do not show a feather silhouette, cutout, background, or bare quill. Upper left: charcoal umber owl vane with subtle irregular tan horizontal bars. Upper right: lighter ash taupe owl vane with clearly alternating muted cream and dark-brown horizontal bars. Lower left: slate black raptor vane with a muted rusty-brown margin and fine natural barbs. Lower right: uniformly illuminated matte dark graphite keratin with subtle lengthwise striations suitable for a hooked beak and talons; no feather in this quadrant. All materials are under even neutral diffuse illumination with no cast shadows, glare, perspective or vignetting. Original natural painterly realism, muted fine-grained material detail; no bird body, eyes, text or decorative elements.",
+  "original_generated_path": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-9c1b0b8c-3c74-4d69-b964-0e084734c358.png"
+}

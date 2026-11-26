@@ -1,0 +1,180 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-14 08:31:53
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-711/build/issue711-avian01.pk3, 18394 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-711/build/issue711-native01-kelenken/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2544.22 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Avian inherited combat model
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA711 VIEW pose=0 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4547 frame=0 invisible=0 alpha=1.000 frozen=1
+CA711 PASS saved actor and camera references
+CA711 PASS original production class and identity
+CA711 PASS unchanged provisional collision and mass
+CA711 PASS native body flags preserved
+CA711 PASS unchanged native actor scale
+CA711 PASS health and derived maximum preserved
+CA711 PASS speed and resource maxima preserved
+CA711 PASS same finite inventory object and ownership
+CA711 PASS initialization is not repeated on load
+CA711 PASS inherited combat state identity
+CA711 PASS existing alliance retained
+CA711 PASS all native sprite and frame pairs reachable
+CA711 COMPLETE failures=0
+CA711 PASS native solid-body collision
+CA711 PASS native free-space movement
+CA711 PASS native wall collision
+CA711 COMPLETE failures=0
+CA711 PASS native animation state advancement
+CA711 COMPLETE failures=0
+CA711 VIEW pose=0 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4546 frame=2 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-00-idle.png
+CA711 VIEW pose=1 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4547 frame=0 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-01-idle.png
+CA711 VIEW pose=2 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4547 frame=1 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-02-run.png
+CA711 VIEW pose=3 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4546 frame=0 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-03-run.png
+CA711 VIEW pose=4 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4546 frame=1 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-04-run.png
+CA711 VIEW pose=5 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4546 frame=2 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-05-run.png
+CA711 VIEW pose=6 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4546 frame=3 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-06-walk.png
+CA711 VIEW pose=7 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4549 frame=0 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-07-walk.png
+CA711 VIEW pose=8 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4549 frame=1 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-08-stun.png
+CA711 VIEW pose=9 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4548 frame=0 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-09-attack_prepare.png
+CA711 VIEW pose=10 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4548 frame=3 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-10-attack_release.png
+CA711 VIEW pose=11 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4548 frame=4 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-11-pain.png
+CA711 VIEW pose=12 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4548 frame=5 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-12-death.png
+CA711 VIEW pose=13 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4548 frame=6 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-13-death.png
+CA711 VIEW pose=14 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4548 frame=7 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-14-death.png
+CA711 VIEW pose=15 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4548 frame=8 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-15-death.png
+CA711 VIEW pose=16 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4548 frame=9 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-16-death.png
+CA711 VIEW pose=17 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4548 frame=10 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-17-death.png
+CA711 VIEW pose=18 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4548 frame=11 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-18-breath.png
+CA711 VIEW pose=19 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4550 frame=0 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-19-breath.png
+CA711 VIEW pose=20 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4550 frame=1 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-20-breath.png
+CA711 VIEW pose=21 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4550 frame=2 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-21-breath.png
+CA711 VIEW pose=22 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4550 frame=3 invisible=0 alpha=1.000 frozen=1
+CA711 PASS native captured pose matches requested frame
+Captured pose-22-rest.png
+CA711 VIEW pose=0 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4551 frame=0 invisible=0 alpha=1.000 frozen=1
+Captured view-front.png
+CA711 VIEW pose=0 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4547 frame=0 invisible=0 alpha=1.000 frozen=1
+Captured view-side.png
+CA711 VIEW pose=0 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4547 frame=0 invisible=0 alpha=1.000 frozen=1
+Captured view-rear.png
+CA711 VIEW pose=0 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4547 frame=0 invisible=0 alpha=1.000 frozen=1
+Captured view-head-front.png
+CA711 VIEW pose=0 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4547 frame=0 invisible=0 alpha=1.000 frozen=1
+Captured view-head-oblique.png
+CA711 VIEW pose=22 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4547 frame=0 invisible=0 alpha=1.000 frozen=1
+Captured view-lying-oblique.png
+CA711 VIEW pose=0 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4551 frame=0 invisible=0 alpha=1.000 frozen=1
+Captured empty-view-0.png
+CA711 VIEW pose=0 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4547 frame=0 invisible=0 alpha=1.000 frozen=1
+Captured empty-view-6.png
+CA711 VIEW pose=0 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4547 frame=0 invisible=0 alpha=1.000 frozen=1
+Captured empty.png
+CA711 PASS saved actor and camera references
+CA711 PASS original production class and identity
+CA711 PASS unchanged provisional collision and mass
+CA711 PASS native body flags preserved
+CA711 PASS unchanged native actor scale
+CA711 PASS health and derived maximum preserved
+CA711 PASS speed and resource maxima preserved
+CA711 PASS same finite inventory object and ownership
+CA711 PASS initialization is not repeated on load
+CA711 PASS inherited combat state identity
+CA711 PASS existing alliance retained
+CA711 PASS all native sprite and frame pairs reachable
+CA711 COMPLETE failures=0
+CA711 VIEW pose=0 pos=(0.000,0.000,0.000) scale=(0.313,0.313) sprite=4547 frame=0 invisible=0 alpha=1.000 frozen=1
+Game saved.

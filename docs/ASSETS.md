@@ -1,6 +1,80 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.33** - 2026-11-14.
+Documentation version: **5.17.34** - 2026-11-14.
+
+## 5.17.34 - Cachiru, Kakuy and Kelenken native models (#711, parent #461)
+
+Three owned avian concepts now have candidate volumetric native models on
+their existing classes: CA-FOLK-045 Cachiru/Cachuru (repeatable), 046 Kakuy/Cacuy
+(unique) and 058 Kelenken (unique). Native art covers fourteen of the 56 new
+folklore combat classes. Cachiru retains its dark mottled plumage and swept
+owl tufts; Kakuy has a rounded tuftless head, large round eyes, small beak and
+lighter barred feathers. Kelenken follows the author's winged raptor concept,
+with a long neck/head, hooked beak and charcoal/rust plumage. It is not recast
+as a flightless reconstruction. Wings, tails, toes, curved talons and beaks
+are actual closed volumes with editable hinges and anatomy data.
+
+| Model | Vertices | Triangles | Hierarchy parts | Closed components | Neutral attachment witnesses |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Cachiru | 10,229 | 18,496 | 121 | 108 | 107 |
+| Kakuy | 9,651 | 17,472 | 113 | 100 | 99 |
+| Kelenken | 9,535 | 17,184 | 118 | 105 | 104 |
+
+All 23 inherited sprite/frame/action identities remain. Art transforms use
+species data; provisional Mandinga attacks, attributes, hostility, loot,
+Scale, collision and save behavior are unchanged. Neutral Height fits that
+existing profile. Catalogue metre ranges do not authorize runtime dimensions;
+wings do not add flight. Rulo, Mandinga, Zupay and older model bytes remain
+untouched. Regional galleries are a separate follow-up, with the existing
+approved distributions preserved.
+
+Source: assets/source/art/avian_711. Built-in image_gen produced coverts.png,
+flight.png and the refined coverts-v2.png. Exact prompts and references are
+in COVERTS_PROMPT.json, FLIGHT_PROMPT.json and COVERTS_V2_PROMPT.json. Both
+coverts generations remain intact; the refined atlas and flight atlas are
+active. Owned Peuchen iris/dark sources are reused unchanged; circular pupils
+are modeled geometry. Editable OBJ/MTL and JSON remain alongside the native
+exports. Fixed-creature anatomy is not interchangeable worn equipment.
+
+Regenerate with python assets/generators/generate_avian_models.py --output
+build/avian-model --install. Sixteen final exports repeat byte-for-byte.
+Independent serialized checks verify 313 closed outward solids, a rooted
+310-witness attachment graph with two-ray/quantization clearance, exact
+class mappings and noncollapsed triangles in every quantized pose. Shared
+backends remain unchanged. Neutral contacts do not prove all-pose clearance.
+
+The first validator attempted a copied Peuchen OBJ path; its correction
+exposed no avian geometry failures. Initial native previews passed 51 checks
+per species, but visual review prompted denser feathers, shorter Cachiru
+tufts/brows and a smaller Kakuy beak. The refined previews also pass 51 each.
+Original sources and prior candidates remain evidence; inactive native
+coverts.png was moved to local recovery, not deleted. Final provenance-only
+changes affect manifest.json; the other fifteen exported files are identical
+to the visually tested candidate. Front/side/rear, head, selected actions,
+death and folded lying views were reviewed. Simplified facial disks/beaks,
+feather layering, talons and rigid articulation still require author review.
+
+Final native continuity passes 345 assertions: 115 per species across old
+sprites, old-save/model, fresh model, reload and rollback (16/16/51/16/16).
+Inherited action/loot checks pass 188 assertions (90/70/28), including
+12 action scenarios against the Mandinga control and finite loot reload.
+One sequential 700-tic sprite/model pair per species records:
+
+| Species | Queue presents/s, sprite / model | p95 ms, sprite / model | p99 ms, sprite / model |
+| --- | ---: | ---: | ---: |
+| Cachiru | 1846.15 / 1846.30 | 0.6958 / 0.6916 | 0.8340 / 0.7883 |
+| Kakuy | 1801.35 / 1810.53 | 0.7426 / 0.7291 | 0.8994 / 0.8541 |
+| Kelenken | 1771.56 / 1828.96 | 0.7625 / 0.6922 | 0.9271 / 0.8069 |
+
+Environment: Windows 11, Ryzen 9 5950X, RTX 3070 Ti, GZDoom 4.14.2 Vulkan,
+1280x720, background unpaused, audio 5%, uncapped presentation without vsync.
+Queue intervals are not GPU/display timing; unequal footprints and one pair
+do not establish repeatability or campaign/crowd performance. All
+18,394 runtime entries match src. Only eight new avian resources,
+MODELDEF and two release diagnostics differ from #709. Evidence:
+assets/validation_v5_17_34/evidence/SUMMARY.json. CA711-AVIAN-01 is pending;
+other characters, worn/first-person equipment and the broad campaign remain
+unfinished.
 
 ## 5.17.33 - Native Litoral, Selva and Patagonia gallery (#709, parent #463)
 

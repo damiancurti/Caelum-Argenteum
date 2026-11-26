@@ -1,0 +1,5742 @@
+{
+  "schema_revision": 1,
+  "issue": 711,
+  "catalogue_id": "CA-FOLK-046",
+  "species": "kakuy",
+  "reference": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/46_kakuy.png",
+  "reference_role": "Owned anatomy, silhouette, plumage and identity; conceptual metres do not authorize runtime scale.",
+  "preview": {
+    "height_map_units": 100
+  },
+  "atlas": {
+    "columns": 2,
+    "rows": 2,
+    "inset": 0.018,
+    "source_file": "coverts.png"
+  },
+  "materials": {
+    "coat": {
+      "tile": [
+        1,
+        0
+      ],
+      "native_batch": "coverts"
+    },
+    "face": {
+      "tile": [
+        1,
+        0
+      ],
+      "native_batch": "coverts"
+    },
+    "leg": {
+      "tile": [
+        1,
+        1
+      ],
+      "native_batch": "coverts"
+    },
+    "flight": {
+      "tile": [
+        1,
+        0
+      ],
+      "native_batch": "flight"
+    },
+    "keratin": {
+      "tile": [
+        1,
+        1
+      ],
+      "native_batch": "flight"
+    },
+    "iris": {
+      "uv_rect": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "native_batch": "iris"
+    },
+    "dark": {
+      "uv_rect": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "native_batch": "dark"
+    }
+  },
+  "parts": {
+    "pelvis": {
+      "parent": null,
+      "pivot": [
+        -2,
+        0,
+        25
+      ]
+    },
+    "torso": {
+      "parent": "pelvis",
+      "pivot": [
+        -2,
+        0,
+        36
+      ]
+    },
+    "head": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        45
+      ]
+    },
+    "jaw": {
+      "parent": "head",
+      "pivot": [
+        9,
+        0,
+        57
+      ]
+    },
+    "tail": {
+      "parent": "pelvis",
+      "pivot": [
+        -8,
+        0,
+        25
+      ]
+    },
+    "trunk": {
+      "parent": "torso",
+      "pivot": [
+        -2,
+        0,
+        36
+      ]
+    },
+    "neck": {
+      "parent": "head",
+      "pivot": [
+        0,
+        0,
+        45
+      ]
+    },
+    "cranium": {
+      "parent": "head",
+      "pivot": [
+        0,
+        0,
+        45
+      ]
+    },
+    "upper_beak": {
+      "parent": "head",
+      "pivot": [
+        0,
+        0,
+        45
+      ]
+    },
+    "lower_beak": {
+      "parent": "jaw",
+      "pivot": [
+        9,
+        0,
+        57
+      ]
+    },
+    "left_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        -3,
+        -5,
+        27
+      ]
+    },
+    "left_shin": {
+      "parent": "left_thigh",
+      "pivot": [
+        -2,
+        -5,
+        17
+      ]
+    },
+    "left_haunch": {
+      "parent": "left_thigh",
+      "pivot": [
+        -3,
+        -5,
+        27
+      ]
+    },
+    "left_tarsus": {
+      "parent": "left_shin",
+      "pivot": [
+        -2,
+        -5,
+        17
+      ]
+    },
+    "left_foot": {
+      "parent": "left_shin",
+      "pivot": [
+        -2,
+        -5,
+        17
+      ]
+    },
+    "left_toe_0": {
+      "parent": "left_shin",
+      "pivot": [
+        -2,
+        -5,
+        17
+      ]
+    },
+    "left_toe_0_talon": {
+      "parent": "left_shin",
+      "pivot": [
+        -2,
+        -5,
+        17
+      ]
+    },
+    "left_toe_1": {
+      "parent": "left_shin",
+      "pivot": [
+        -2,
+        -5,
+        17
+      ]
+    },
+    "left_toe_1_talon": {
+      "parent": "left_shin",
+      "pivot": [
+        -2,
+        -5,
+        17
+      ]
+    },
+    "left_toe_2": {
+      "parent": "left_shin",
+      "pivot": [
+        -2,
+        -5,
+        17
+      ]
+    },
+    "left_toe_2_talon": {
+      "parent": "left_shin",
+      "pivot": [
+        -2,
+        -5,
+        17
+      ]
+    },
+    "left_rear_toe": {
+      "parent": "left_shin",
+      "pivot": [
+        -2,
+        -5,
+        17
+      ]
+    },
+    "left_rear_talon": {
+      "parent": "left_shin",
+      "pivot": [
+        -2,
+        -5,
+        17
+      ]
+    },
+    "left_facial_disk": {
+      "parent": "head",
+      "pivot": [
+        0,
+        0,
+        45
+      ]
+    },
+    "left_eye": {
+      "parent": "head",
+      "pivot": [
+        0,
+        0,
+        45
+      ]
+    },
+    "left_iris": {
+      "parent": "head",
+      "pivot": [
+        0,
+        0,
+        45
+      ]
+    },
+    "left_pupil": {
+      "parent": "head",
+      "pivot": [
+        0,
+        0,
+        45
+      ]
+    },
+    "left_wing": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_wing_tip": {
+      "parent": "left_wing",
+      "pivot": [
+        -3,
+        -23,
+        52
+      ]
+    },
+    "left_wing_upper": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_wing_fore": {
+      "parent": "left_wing_tip",
+      "pivot": [
+        -3,
+        -23,
+        52
+      ]
+    },
+    "left_secondary_0": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_covert_0": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_secondary_1": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_covert_1": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_secondary_2": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_covert_2": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_secondary_3": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_covert_3": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_secondary_4": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_covert_4": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_secondary_5": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_covert_5": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_secondary_6": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_covert_6": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_secondary_7": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_covert_7": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_secondary_8": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_covert_8": {
+      "parent": "left_wing",
+      "pivot": [
+        0,
+        -6.5,
+        43
+      ]
+    },
+    "left_primary_0": {
+      "parent": "left_wing_tip",
+      "pivot": [
+        -3,
+        -23,
+        52
+      ]
+    },
+    "left_primary_1": {
+      "parent": "left_wing_tip",
+      "pivot": [
+        -3,
+        -23,
+        52
+      ]
+    },
+    "left_primary_2": {
+      "parent": "left_wing_tip",
+      "pivot": [
+        -3,
+        -23,
+        52
+      ]
+    },
+    "left_primary_3": {
+      "parent": "left_wing_tip",
+      "pivot": [
+        -3,
+        -23,
+        52
+      ]
+    },
+    "left_primary_4": {
+      "parent": "left_wing_tip",
+      "pivot": [
+        -3,
+        -23,
+        52
+      ]
+    },
+    "left_primary_5": {
+      "parent": "left_wing_tip",
+      "pivot": [
+        -3,
+        -23,
+        52
+      ]
+    },
+    "left_primary_6": {
+      "parent": "left_wing_tip",
+      "pivot": [
+        -3,
+        -23,
+        52
+      ]
+    },
+    "left_primary_7": {
+      "parent": "left_wing_tip",
+      "pivot": [
+        -3,
+        -23,
+        52
+      ]
+    },
+    "left_primary_8": {
+      "parent": "left_wing_tip",
+      "pivot": [
+        -3,
+        -23,
+        52
+      ]
+    },
+    "right_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        -3,
+        5,
+        27
+      ]
+    },
+    "right_shin": {
+      "parent": "right_thigh",
+      "pivot": [
+        -2,
+        5,
+        17
+      ]
+    },
+    "right_haunch": {
+      "parent": "right_thigh",
+      "pivot": [
+        -3,
+        5,
+        27
+      ]
+    },
+    "right_tarsus": {
+      "parent": "right_shin",
+      "pivot": [
+        -2,
+        5,
+        17
+      ]
+    },
+    "right_foot": {
+      "parent": "right_shin",
+      "pivot": [
+        -2,
+        5,
+        17
+      ]
+    },
+    "right_toe_0": {
+      "parent": "right_shin",
+      "pivot": [
+        -2,
+        5,
+        17
+      ]
+    },
+    "right_toe_0_talon": {
+      "parent": "right_shin",
+      "pivot": [
+        -2,
+        5,
+        17
+      ]
+    },
+    "right_toe_1": {
+      "parent": "right_shin",
+      "pivot": [
+        -2,
+        5,
+        17
+      ]
+    },
+    "right_toe_1_talon": {
+      "parent": "right_shin",
+      "pivot": [
+        -2,
+        5,
+        17
+      ]
+    },
+    "right_toe_2": {
+      "parent": "right_shin",
+      "pivot": [
+        -2,
+        5,
+        17
+      ]
+    },
+    "right_toe_2_talon": {
+      "parent": "right_shin",
+      "pivot": [
+        -2,
+        5,
+        17
+      ]
+    },
+    "right_rear_toe": {
+      "parent": "right_shin",
+      "pivot": [
+        -2,
+        5,
+        17
+      ]
+    },
+    "right_rear_talon": {
+      "parent": "right_shin",
+      "pivot": [
+        -2,
+        5,
+        17
+      ]
+    },
+    "right_facial_disk": {
+      "parent": "head",
+      "pivot": [
+        0,
+        0,
+        45
+      ]
+    },
+    "right_eye": {
+      "parent": "head",
+      "pivot": [
+        0,
+        0,
+        45
+      ]
+    },
+    "right_iris": {
+      "parent": "head",
+      "pivot": [
+        0,
+        0,
+        45
+      ]
+    },
+    "right_pupil": {
+      "parent": "head",
+      "pivot": [
+        0,
+        0,
+        45
+      ]
+    },
+    "right_wing": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_wing_tip": {
+      "parent": "right_wing",
+      "pivot": [
+        -3,
+        23,
+        52
+      ]
+    },
+    "right_wing_upper": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_wing_fore": {
+      "parent": "right_wing_tip",
+      "pivot": [
+        -3,
+        23,
+        52
+      ]
+    },
+    "right_secondary_0": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_covert_0": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_secondary_1": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_covert_1": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_secondary_2": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_covert_2": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_secondary_3": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_covert_3": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_secondary_4": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_covert_4": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_secondary_5": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_covert_5": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_secondary_6": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_covert_6": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_secondary_7": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_covert_7": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_secondary_8": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_covert_8": {
+      "parent": "right_wing",
+      "pivot": [
+        0,
+        6.5,
+        43
+      ]
+    },
+    "right_primary_0": {
+      "parent": "right_wing_tip",
+      "pivot": [
+        -3,
+        23,
+        52
+      ]
+    },
+    "right_primary_1": {
+      "parent": "right_wing_tip",
+      "pivot": [
+        -3,
+        23,
+        52
+      ]
+    },
+    "right_primary_2": {
+      "parent": "right_wing_tip",
+      "pivot": [
+        -3,
+        23,
+        52
+      ]
+    },
+    "right_primary_3": {
+      "parent": "right_wing_tip",
+      "pivot": [
+        -3,
+        23,
+        52
+      ]
+    },
+    "right_primary_4": {
+      "parent": "right_wing_tip",
+      "pivot": [
+        -3,
+        23,
+        52
+      ]
+    },
+    "right_primary_5": {
+      "parent": "right_wing_tip",
+      "pivot": [
+        -3,
+        23,
+        52
+      ]
+    },
+    "right_primary_6": {
+      "parent": "right_wing_tip",
+      "pivot": [
+        -3,
+        23,
+        52
+      ]
+    },
+    "right_primary_7": {
+      "parent": "right_wing_tip",
+      "pivot": [
+        -3,
+        23,
+        52
+      ]
+    },
+    "right_primary_8": {
+      "parent": "right_wing_tip",
+      "pivot": [
+        -3,
+        23,
+        52
+      ]
+    },
+    "tail_0": {
+      "parent": "tail",
+      "pivot": [
+        -8,
+        0,
+        25
+      ]
+    },
+    "tail_1": {
+      "parent": "tail",
+      "pivot": [
+        -8,
+        0,
+        25
+      ]
+    },
+    "tail_2": {
+      "parent": "tail",
+      "pivot": [
+        -8,
+        0,
+        25
+      ]
+    },
+    "tail_3": {
+      "parent": "tail",
+      "pivot": [
+        -8,
+        0,
+        25
+      ]
+    },
+    "tail_4": {
+      "parent": "tail",
+      "pivot": [
+        -8,
+        0,
+        25
+      ]
+    },
+    "tail_5": {
+      "parent": "tail",
+      "pivot": [
+        -8,
+        0,
+        25
+      ]
+    },
+    "tail_6": {
+      "parent": "tail",
+      "pivot": [
+        -8,
+        0,
+        25
+      ]
+    }
+  },
+  "shapes": [
+    {
+      "kind": "ellipsoid",
+      "name": "trunk",
+      "center": [
+        -2,
+        0,
+        35
+      ],
+      "radii": [
+        12,
+        10,
+        19
+      ],
+      "material": "coat",
+      "latitudes": 12,
+      "longitudes": 20,
+      "part": "trunk"
+    },
+    {
+      "kind": "tube",
+      "name": "neck",
+      "rows": [
+        [
+          0,
+          0,
+          43,
+          7,
+          7
+        ],
+        [
+          3,
+          0,
+          51,
+          6,
+          6
+        ],
+        [
+          3,
+          0,
+          55,
+          4.5,
+          5
+        ],
+        [
+          5,
+          0,
+          58,
+          4.5,
+          5
+        ]
+      ],
+      "material": "coat",
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "neck"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "cranium",
+      "center": [
+        5,
+        0,
+        60
+      ],
+      "radii": [
+        8.5,
+        9.5,
+        10.5
+      ],
+      "material": "coat",
+      "latitudes": 12,
+      "longitudes": 20,
+      "part": "cranium"
+    },
+    {
+      "kind": "tube",
+      "name": "upper_beak",
+      "rows": [
+        [
+          10,
+          0,
+          60,
+          2.5,
+          3
+        ],
+        [
+          13,
+          0,
+          59,
+          2.8,
+          2.2
+        ],
+        [
+          14,
+          0,
+          56,
+          1.7,
+          1.6
+        ],
+        [
+          12.5,
+          0,
+          53,
+          0.4,
+          0.5
+        ]
+      ],
+      "material": "keratin",
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "upper_beak"
+    },
+    {
+      "kind": "tube",
+      "name": "lower_beak",
+      "rows": [
+        [
+          9,
+          0,
+          57,
+          2.1,
+          1.5
+        ],
+        [
+          13,
+          0,
+          56,
+          1.6,
+          1.1
+        ],
+        [
+          14,
+          0,
+          55,
+          0.5,
+          0.5
+        ]
+      ],
+      "material": "keratin",
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "lower_beak"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left_haunch",
+      "center": [
+        -3,
+        -5,
+        22
+      ],
+      "radii": [
+        4.5,
+        4,
+        10
+      ],
+      "material": "coat",
+      "latitudes": 12,
+      "longitudes": 20,
+      "part": "left_haunch"
+    },
+    {
+      "kind": "tube",
+      "name": "left_tarsus",
+      "rows": [
+        [
+          -2,
+          -5,
+          18,
+          2.7,
+          2.5
+        ],
+        [
+          0,
+          -5,
+          10,
+          2,
+          1.8
+        ],
+        [
+          1,
+          -5,
+          4.6,
+          2,
+          1.5
+        ]
+      ],
+      "material": "leg",
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "left_tarsus"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left_foot",
+      "center": [
+        3,
+        -5,
+        4
+      ],
+      "radii": [
+        4.5,
+        3.4,
+        1.8
+      ],
+      "material": "leg",
+      "latitudes": 12,
+      "longitudes": 20,
+      "part": "left_foot"
+    },
+    {
+      "kind": "tube",
+      "name": "left_toe_0",
+      "rows": [
+        [
+          4,
+          -6,
+          4,
+          1.1,
+          1.1
+        ],
+        [
+          8,
+          -8,
+          3.1,
+          0.85,
+          0.8
+        ],
+        [
+          10,
+          -8,
+          2.4,
+          0.65,
+          0.65
+        ]
+      ],
+      "material": "leg",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_toe_0"
+    },
+    {
+      "kind": "tube",
+      "name": "left_toe_0_talon",
+      "rows": [
+        [
+          9.5,
+          -8,
+          2.6,
+          0.8,
+          0.7
+        ],
+        [
+          12,
+          -8,
+          2.1,
+          0.65,
+          0.65
+        ],
+        [
+          13,
+          -8,
+          0.8,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "keratin",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_toe_0_talon"
+    },
+    {
+      "kind": "tube",
+      "name": "left_toe_1",
+      "rows": [
+        [
+          4,
+          -5,
+          4,
+          1.1,
+          1.1
+        ],
+        [
+          8,
+          -5,
+          3.1,
+          0.85,
+          0.8
+        ],
+        [
+          10,
+          -5,
+          2.4,
+          0.65,
+          0.65
+        ]
+      ],
+      "material": "leg",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_toe_1"
+    },
+    {
+      "kind": "tube",
+      "name": "left_toe_1_talon",
+      "rows": [
+        [
+          9.5,
+          -5,
+          2.6,
+          0.8,
+          0.7
+        ],
+        [
+          12,
+          -5,
+          2.1,
+          0.65,
+          0.65
+        ],
+        [
+          13,
+          -5,
+          0.8,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "keratin",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_toe_1_talon"
+    },
+    {
+      "kind": "tube",
+      "name": "left_toe_2",
+      "rows": [
+        [
+          4,
+          -4,
+          4,
+          1.1,
+          1.1
+        ],
+        [
+          8,
+          -2,
+          3.1,
+          0.85,
+          0.8
+        ],
+        [
+          10,
+          -2,
+          2.4,
+          0.65,
+          0.65
+        ]
+      ],
+      "material": "leg",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_toe_2"
+    },
+    {
+      "kind": "tube",
+      "name": "left_toe_2_talon",
+      "rows": [
+        [
+          9.5,
+          -2,
+          2.6,
+          0.8,
+          0.7
+        ],
+        [
+          12,
+          -2,
+          2.1,
+          0.65,
+          0.65
+        ],
+        [
+          13,
+          -2,
+          0.8,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "keratin",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_toe_2_talon"
+    },
+    {
+      "kind": "tube",
+      "name": "left_rear_toe",
+      "rows": [
+        [
+          0,
+          -5,
+          4,
+          1.1,
+          1.1
+        ],
+        [
+          -4,
+          -5,
+          3,
+          0.85,
+          0.8
+        ],
+        [
+          -6,
+          -5,
+          2.2,
+          0.65,
+          0.65
+        ]
+      ],
+      "material": "leg",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_rear_toe"
+    },
+    {
+      "kind": "tube",
+      "name": "left_rear_talon",
+      "rows": [
+        [
+          -5.5,
+          -5,
+          2.4,
+          0.8,
+          0.7
+        ],
+        [
+          -8,
+          -5,
+          2,
+          0.65,
+          0.65
+        ],
+        [
+          -9,
+          -5,
+          0.8,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "keratin",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_rear_talon"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left_facial_disk",
+      "center": [
+        10.8,
+        -4.5,
+        61
+      ],
+      "radii": [
+        2.8,
+        4.5,
+        5
+      ],
+      "material": "face",
+      "latitudes": 12,
+      "longitudes": 20,
+      "part": "left_facial_disk"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left_eye",
+      "center": [
+        12.8,
+        -4.5,
+        61
+      ],
+      "radii": [
+        1.4,
+        2.7,
+        2.8
+      ],
+      "material": "dark",
+      "latitudes": 12,
+      "longitudes": 20,
+      "part": "left_eye"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left_iris",
+      "center": [
+        13.8,
+        -4.5,
+        61
+      ],
+      "radii": [
+        0.5,
+        2.25,
+        2.3
+      ],
+      "material": "iris",
+      "latitudes": 12,
+      "longitudes": 20,
+      "part": "left_iris"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left_pupil",
+      "center": [
+        14.200000000000001,
+        -4.5,
+        61
+      ],
+      "radii": [
+        0.3,
+        1.6,
+        1.65
+      ],
+      "material": "dark",
+      "latitudes": 12,
+      "longitudes": 20,
+      "part": "left_pupil"
+    },
+    {
+      "kind": "tube",
+      "name": "left_wing_upper",
+      "rows": [
+        [
+          0,
+          -6.5,
+          43,
+          4,
+          4.5
+        ],
+        [
+          -2,
+          -16,
+          49,
+          4,
+          5
+        ],
+        [
+          -3,
+          -24,
+          52,
+          3.5,
+          4
+        ]
+      ],
+      "material": "coat",
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "left_wing_upper"
+    },
+    {
+      "kind": "tube",
+      "name": "left_wing_fore",
+      "rows": [
+        [
+          -3,
+          -22,
+          52,
+          3.8,
+          4
+        ],
+        [
+          -5,
+          -31,
+          47,
+          3.5,
+          4
+        ],
+        [
+          -8,
+          -40,
+          38,
+          2.5,
+          3
+        ]
+      ],
+      "material": "coat",
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "left_wing_fore"
+    },
+    {
+      "kind": "feather",
+      "name": "left_secondary_0",
+      "start": [
+        -0.2,
+        -9.5,
+        44.8
+      ],
+      "end": [
+        -19.5,
+        -11.6,
+        17.6
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_secondary_0"
+    },
+    {
+      "kind": "feather",
+      "name": "left_covert_0",
+      "start": [
+        0.8,
+        -9.5,
+        44.8
+      ],
+      "end": [
+        -6.2,
+        -13.5,
+        31.799999999999997
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "left_covert_0"
+    },
+    {
+      "kind": "feather",
+      "name": "left_secondary_1",
+      "start": [
+        -0.4,
+        -11.0,
+        45.6
+      ],
+      "end": [
+        -19.0,
+        -13.2,
+        18.2
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_secondary_1"
+    },
+    {
+      "kind": "feather",
+      "name": "left_covert_1",
+      "start": [
+        0.6,
+        -11.0,
+        45.6
+      ],
+      "end": [
+        -6.4,
+        -15.0,
+        32.6
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "left_covert_1"
+    },
+    {
+      "kind": "feather",
+      "name": "left_secondary_2",
+      "start": [
+        -0.6,
+        -12.5,
+        46.4
+      ],
+      "end": [
+        -18.5,
+        -14.8,
+        18.8
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_secondary_2"
+    },
+    {
+      "kind": "feather",
+      "name": "left_covert_2",
+      "start": [
+        0.4,
+        -12.5,
+        46.4
+      ],
+      "end": [
+        -6.6,
+        -16.5,
+        33.4
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "left_covert_2"
+    },
+    {
+      "kind": "feather",
+      "name": "left_secondary_3",
+      "start": [
+        -0.8,
+        -14.0,
+        47.2
+      ],
+      "end": [
+        -18.0,
+        -16.4,
+        19.4
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_secondary_3"
+    },
+    {
+      "kind": "feather",
+      "name": "left_covert_3",
+      "start": [
+        0.19999999999999996,
+        -14.0,
+        47.2
+      ],
+      "end": [
+        -6.8,
+        -18.0,
+        34.2
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "left_covert_3"
+    },
+    {
+      "kind": "feather",
+      "name": "left_secondary_4",
+      "start": [
+        -1.0,
+        -15.5,
+        48.0
+      ],
+      "end": [
+        -17.5,
+        -18.0,
+        20.0
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_secondary_4"
+    },
+    {
+      "kind": "feather",
+      "name": "left_covert_4",
+      "start": [
+        0.0,
+        -15.5,
+        48.0
+      ],
+      "end": [
+        -7.0,
+        -19.5,
+        35.0
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "left_covert_4"
+    },
+    {
+      "kind": "feather",
+      "name": "left_secondary_5",
+      "start": [
+        -1.2,
+        -17.0,
+        48.8
+      ],
+      "end": [
+        -17.0,
+        -19.6,
+        20.6
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_secondary_5"
+    },
+    {
+      "kind": "feather",
+      "name": "left_covert_5",
+      "start": [
+        -0.19999999999999996,
+        -17.0,
+        48.8
+      ],
+      "end": [
+        -7.2,
+        -21.0,
+        35.8
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "left_covert_5"
+    },
+    {
+      "kind": "feather",
+      "name": "left_secondary_6",
+      "start": [
+        -1.4,
+        -18.5,
+        49.6
+      ],
+      "end": [
+        -16.5,
+        -21.2,
+        21.2
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_secondary_6"
+    },
+    {
+      "kind": "feather",
+      "name": "left_covert_6",
+      "start": [
+        -0.3999999999999999,
+        -18.5,
+        49.6
+      ],
+      "end": [
+        -7.4,
+        -22.5,
+        36.6
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "left_covert_6"
+    },
+    {
+      "kind": "feather",
+      "name": "left_secondary_7",
+      "start": [
+        -1.6,
+        -20.0,
+        50.4
+      ],
+      "end": [
+        -16.0,
+        -22.8,
+        21.8
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_secondary_7"
+    },
+    {
+      "kind": "feather",
+      "name": "left_covert_7",
+      "start": [
+        -0.6000000000000001,
+        -20.0,
+        50.4
+      ],
+      "end": [
+        -7.6,
+        -24.0,
+        37.4
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "left_covert_7"
+    },
+    {
+      "kind": "feather",
+      "name": "left_secondary_8",
+      "start": [
+        -1.8,
+        -21.5,
+        51.2
+      ],
+      "end": [
+        -15.5,
+        -24.4,
+        22.4
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_secondary_8"
+    },
+    {
+      "kind": "feather",
+      "name": "left_covert_8",
+      "start": [
+        -0.8,
+        -21.5,
+        51.2
+      ],
+      "end": [
+        -7.8,
+        -25.5,
+        38.2
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "left_covert_8"
+    },
+    {
+      "kind": "feather",
+      "name": "left_primary_0",
+      "start": [
+        -3.4,
+        -25.4,
+        49.9
+      ],
+      "end": [
+        -19.0,
+        -34,
+        12.0
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_primary_0"
+    },
+    {
+      "kind": "feather",
+      "name": "left_primary_1",
+      "start": [
+        -3.8,
+        -26.8,
+        48.8
+      ],
+      "end": [
+        -19.4,
+        -37,
+        13.2
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_primary_1"
+    },
+    {
+      "kind": "feather",
+      "name": "left_primary_2",
+      "start": [
+        -4.2,
+        -28.2,
+        47.7
+      ],
+      "end": [
+        -19.8,
+        -40,
+        14.4
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_primary_2"
+    },
+    {
+      "kind": "feather",
+      "name": "left_primary_3",
+      "start": [
+        -4.6,
+        -29.6,
+        46.6
+      ],
+      "end": [
+        -20.2,
+        -43,
+        15.6
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_primary_3"
+    },
+    {
+      "kind": "feather",
+      "name": "left_primary_4",
+      "start": [
+        -5.0,
+        -31.0,
+        45.5
+      ],
+      "end": [
+        -20.6,
+        -46,
+        16.8
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_primary_4"
+    },
+    {
+      "kind": "feather",
+      "name": "left_primary_5",
+      "start": [
+        -5.4,
+        -32.4,
+        44.4
+      ],
+      "end": [
+        -21.0,
+        -49,
+        18.0
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_primary_5"
+    },
+    {
+      "kind": "feather",
+      "name": "left_primary_6",
+      "start": [
+        -5.8,
+        -33.8,
+        43.3
+      ],
+      "end": [
+        -21.4,
+        -52,
+        19.2
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_primary_6"
+    },
+    {
+      "kind": "feather",
+      "name": "left_primary_7",
+      "start": [
+        -6.2,
+        -35.2,
+        42.2
+      ],
+      "end": [
+        -21.8,
+        -55,
+        20.4
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_primary_7"
+    },
+    {
+      "kind": "feather",
+      "name": "left_primary_8",
+      "start": [
+        -6.6,
+        -36.6,
+        41.1
+      ],
+      "end": [
+        -22.2,
+        -58,
+        21.6
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "left_primary_8"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right_haunch",
+      "center": [
+        -3,
+        5,
+        22
+      ],
+      "radii": [
+        4.5,
+        4,
+        10
+      ],
+      "material": "coat",
+      "latitudes": 12,
+      "longitudes": 20,
+      "part": "right_haunch"
+    },
+    {
+      "kind": "tube",
+      "name": "right_tarsus",
+      "rows": [
+        [
+          -2,
+          5,
+          18,
+          2.7,
+          2.5
+        ],
+        [
+          0,
+          5,
+          10,
+          2,
+          1.8
+        ],
+        [
+          1,
+          5,
+          4.6,
+          2,
+          1.5
+        ]
+      ],
+      "material": "leg",
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "right_tarsus"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right_foot",
+      "center": [
+        3,
+        5,
+        4
+      ],
+      "radii": [
+        4.5,
+        3.4,
+        1.8
+      ],
+      "material": "leg",
+      "latitudes": 12,
+      "longitudes": 20,
+      "part": "right_foot"
+    },
+    {
+      "kind": "tube",
+      "name": "right_toe_0",
+      "rows": [
+        [
+          4,
+          4,
+          4,
+          1.1,
+          1.1
+        ],
+        [
+          8,
+          2,
+          3.1,
+          0.85,
+          0.8
+        ],
+        [
+          10,
+          2,
+          2.4,
+          0.65,
+          0.65
+        ]
+      ],
+      "material": "leg",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_toe_0"
+    },
+    {
+      "kind": "tube",
+      "name": "right_toe_0_talon",
+      "rows": [
+        [
+          9.5,
+          2,
+          2.6,
+          0.8,
+          0.7
+        ],
+        [
+          12,
+          2,
+          2.1,
+          0.65,
+          0.65
+        ],
+        [
+          13,
+          2,
+          0.8,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "keratin",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_toe_0_talon"
+    },
+    {
+      "kind": "tube",
+      "name": "right_toe_1",
+      "rows": [
+        [
+          4,
+          5,
+          4,
+          1.1,
+          1.1
+        ],
+        [
+          8,
+          5,
+          3.1,
+          0.85,
+          0.8
+        ],
+        [
+          10,
+          5,
+          2.4,
+          0.65,
+          0.65
+        ]
+      ],
+      "material": "leg",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_toe_1"
+    },
+    {
+      "kind": "tube",
+      "name": "right_toe_1_talon",
+      "rows": [
+        [
+          9.5,
+          5,
+          2.6,
+          0.8,
+          0.7
+        ],
+        [
+          12,
+          5,
+          2.1,
+          0.65,
+          0.65
+        ],
+        [
+          13,
+          5,
+          0.8,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "keratin",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_toe_1_talon"
+    },
+    {
+      "kind": "tube",
+      "name": "right_toe_2",
+      "rows": [
+        [
+          4,
+          6,
+          4,
+          1.1,
+          1.1
+        ],
+        [
+          8,
+          8,
+          3.1,
+          0.85,
+          0.8
+        ],
+        [
+          10,
+          8,
+          2.4,
+          0.65,
+          0.65
+        ]
+      ],
+      "material": "leg",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_toe_2"
+    },
+    {
+      "kind": "tube",
+      "name": "right_toe_2_talon",
+      "rows": [
+        [
+          9.5,
+          8,
+          2.6,
+          0.8,
+          0.7
+        ],
+        [
+          12,
+          8,
+          2.1,
+          0.65,
+          0.65
+        ],
+        [
+          13,
+          8,
+          0.8,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "keratin",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_toe_2_talon"
+    },
+    {
+      "kind": "tube",
+      "name": "right_rear_toe",
+      "rows": [
+        [
+          0,
+          5,
+          4,
+          1.1,
+          1.1
+        ],
+        [
+          -4,
+          5,
+          3,
+          0.85,
+          0.8
+        ],
+        [
+          -6,
+          5,
+          2.2,
+          0.65,
+          0.65
+        ]
+      ],
+      "material": "leg",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_rear_toe"
+    },
+    {
+      "kind": "tube",
+      "name": "right_rear_talon",
+      "rows": [
+        [
+          -5.5,
+          5,
+          2.4,
+          0.8,
+          0.7
+        ],
+        [
+          -8,
+          5,
+          2,
+          0.65,
+          0.65
+        ],
+        [
+          -9,
+          5,
+          0.8,
+          0.28,
+          0.28
+        ]
+      ],
+      "material": "keratin",
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_rear_talon"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right_facial_disk",
+      "center": [
+        10.8,
+        4.5,
+        61
+      ],
+      "radii": [
+        2.8,
+        4.5,
+        5
+      ],
+      "material": "face",
+      "latitudes": 12,
+      "longitudes": 20,
+      "part": "right_facial_disk"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right_eye",
+      "center": [
+        12.8,
+        4.5,
+        61
+      ],
+      "radii": [
+        1.4,
+        2.7,
+        2.8
+      ],
+      "material": "dark",
+      "latitudes": 12,
+      "longitudes": 20,
+      "part": "right_eye"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right_iris",
+      "center": [
+        13.8,
+        4.5,
+        61
+      ],
+      "radii": [
+        0.5,
+        2.25,
+        2.3
+      ],
+      "material": "iris",
+      "latitudes": 12,
+      "longitudes": 20,
+      "part": "right_iris"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right_pupil",
+      "center": [
+        14.200000000000001,
+        4.5,
+        61
+      ],
+      "radii": [
+        0.3,
+        1.6,
+        1.65
+      ],
+      "material": "dark",
+      "latitudes": 12,
+      "longitudes": 20,
+      "part": "right_pupil"
+    },
+    {
+      "kind": "tube",
+      "name": "right_wing_upper",
+      "rows": [
+        [
+          0,
+          6.5,
+          43,
+          4,
+          4.5
+        ],
+        [
+          -2,
+          16,
+          49,
+          4,
+          5
+        ],
+        [
+          -3,
+          24,
+          52,
+          3.5,
+          4
+        ]
+      ],
+      "material": "coat",
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "right_wing_upper"
+    },
+    {
+      "kind": "tube",
+      "name": "right_wing_fore",
+      "rows": [
+        [
+          -3,
+          22,
+          52,
+          3.8,
+          4
+        ],
+        [
+          -5,
+          31,
+          47,
+          3.5,
+          4
+        ],
+        [
+          -8,
+          40,
+          38,
+          2.5,
+          3
+        ]
+      ],
+      "material": "coat",
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "right_wing_fore"
+    },
+    {
+      "kind": "feather",
+      "name": "right_secondary_0",
+      "start": [
+        -0.2,
+        9.5,
+        44.8
+      ],
+      "end": [
+        -19.5,
+        11.6,
+        17.6
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_secondary_0"
+    },
+    {
+      "kind": "feather",
+      "name": "right_covert_0",
+      "start": [
+        0.8,
+        9.5,
+        44.8
+      ],
+      "end": [
+        -6.2,
+        13.5,
+        31.799999999999997
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "right_covert_0"
+    },
+    {
+      "kind": "feather",
+      "name": "right_secondary_1",
+      "start": [
+        -0.4,
+        11.0,
+        45.6
+      ],
+      "end": [
+        -19.0,
+        13.2,
+        18.2
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_secondary_1"
+    },
+    {
+      "kind": "feather",
+      "name": "right_covert_1",
+      "start": [
+        0.6,
+        11.0,
+        45.6
+      ],
+      "end": [
+        -6.4,
+        15.0,
+        32.6
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "right_covert_1"
+    },
+    {
+      "kind": "feather",
+      "name": "right_secondary_2",
+      "start": [
+        -0.6,
+        12.5,
+        46.4
+      ],
+      "end": [
+        -18.5,
+        14.8,
+        18.8
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_secondary_2"
+    },
+    {
+      "kind": "feather",
+      "name": "right_covert_2",
+      "start": [
+        0.4,
+        12.5,
+        46.4
+      ],
+      "end": [
+        -6.6,
+        16.5,
+        33.4
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "right_covert_2"
+    },
+    {
+      "kind": "feather",
+      "name": "right_secondary_3",
+      "start": [
+        -0.8,
+        14.0,
+        47.2
+      ],
+      "end": [
+        -18.0,
+        16.4,
+        19.4
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_secondary_3"
+    },
+    {
+      "kind": "feather",
+      "name": "right_covert_3",
+      "start": [
+        0.19999999999999996,
+        14.0,
+        47.2
+      ],
+      "end": [
+        -6.8,
+        18.0,
+        34.2
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "right_covert_3"
+    },
+    {
+      "kind": "feather",
+      "name": "right_secondary_4",
+      "start": [
+        -1.0,
+        15.5,
+        48.0
+      ],
+      "end": [
+        -17.5,
+        18.0,
+        20.0
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_secondary_4"
+    },
+    {
+      "kind": "feather",
+      "name": "right_covert_4",
+      "start": [
+        0.0,
+        15.5,
+        48.0
+      ],
+      "end": [
+        -7.0,
+        19.5,
+        35.0
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "right_covert_4"
+    },
+    {
+      "kind": "feather",
+      "name": "right_secondary_5",
+      "start": [
+        -1.2,
+        17.0,
+        48.8
+      ],
+      "end": [
+        -17.0,
+        19.6,
+        20.6
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_secondary_5"
+    },
+    {
+      "kind": "feather",
+      "name": "right_covert_5",
+      "start": [
+        -0.19999999999999996,
+        17.0,
+        48.8
+      ],
+      "end": [
+        -7.2,
+        21.0,
+        35.8
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "right_covert_5"
+    },
+    {
+      "kind": "feather",
+      "name": "right_secondary_6",
+      "start": [
+        -1.4,
+        18.5,
+        49.6
+      ],
+      "end": [
+        -16.5,
+        21.2,
+        21.2
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_secondary_6"
+    },
+    {
+      "kind": "feather",
+      "name": "right_covert_6",
+      "start": [
+        -0.3999999999999999,
+        18.5,
+        49.6
+      ],
+      "end": [
+        -7.4,
+        22.5,
+        36.6
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "right_covert_6"
+    },
+    {
+      "kind": "feather",
+      "name": "right_secondary_7",
+      "start": [
+        -1.6,
+        20.0,
+        50.4
+      ],
+      "end": [
+        -16.0,
+        22.8,
+        21.8
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_secondary_7"
+    },
+    {
+      "kind": "feather",
+      "name": "right_covert_7",
+      "start": [
+        -0.6000000000000001,
+        20.0,
+        50.4
+      ],
+      "end": [
+        -7.6,
+        24.0,
+        37.4
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "right_covert_7"
+    },
+    {
+      "kind": "feather",
+      "name": "right_secondary_8",
+      "start": [
+        -1.8,
+        21.5,
+        51.2
+      ],
+      "end": [
+        -15.5,
+        24.4,
+        22.4
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.275,
+          0.48
+        ],
+        [
+          0.3,
+          3.5,
+          0.5
+        ],
+        [
+          0.5,
+          3.29,
+          0.46
+        ],
+        [
+          0.72,
+          2.52,
+          0.36
+        ],
+        [
+          0.9,
+          1.12,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_secondary_8"
+    },
+    {
+      "kind": "feather",
+      "name": "right_covert_8",
+      "start": [
+        -0.8,
+        21.5,
+        51.2
+      ],
+      "end": [
+        -7.8,
+        25.5,
+        38.2
+      ],
+      "bend": [
+        1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "coat",
+      "part": "right_covert_8"
+    },
+    {
+      "kind": "feather",
+      "name": "right_primary_0",
+      "start": [
+        -3.4,
+        25.4,
+        49.9
+      ],
+      "end": [
+        -19.0,
+        34,
+        12.0
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_primary_0"
+    },
+    {
+      "kind": "feather",
+      "name": "right_primary_1",
+      "start": [
+        -3.8,
+        26.8,
+        48.8
+      ],
+      "end": [
+        -19.4,
+        37,
+        13.2
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_primary_1"
+    },
+    {
+      "kind": "feather",
+      "name": "right_primary_2",
+      "start": [
+        -4.2,
+        28.2,
+        47.7
+      ],
+      "end": [
+        -19.8,
+        40,
+        14.4
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_primary_2"
+    },
+    {
+      "kind": "feather",
+      "name": "right_primary_3",
+      "start": [
+        -4.6,
+        29.6,
+        46.6
+      ],
+      "end": [
+        -20.2,
+        43,
+        15.6
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_primary_3"
+    },
+    {
+      "kind": "feather",
+      "name": "right_primary_4",
+      "start": [
+        -5.0,
+        31.0,
+        45.5
+      ],
+      "end": [
+        -20.6,
+        46,
+        16.8
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_primary_4"
+    },
+    {
+      "kind": "feather",
+      "name": "right_primary_5",
+      "start": [
+        -5.4,
+        32.4,
+        44.4
+      ],
+      "end": [
+        -21.0,
+        49,
+        18.0
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_primary_5"
+    },
+    {
+      "kind": "feather",
+      "name": "right_primary_6",
+      "start": [
+        -5.8,
+        33.8,
+        43.3
+      ],
+      "end": [
+        -21.4,
+        52,
+        19.2
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_primary_6"
+    },
+    {
+      "kind": "feather",
+      "name": "right_primary_7",
+      "start": [
+        -6.2,
+        35.2,
+        42.2
+      ],
+      "end": [
+        -21.8,
+        55,
+        20.4
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_primary_7"
+    },
+    {
+      "kind": "feather",
+      "name": "right_primary_8",
+      "start": [
+        -6.6,
+        36.6,
+        41.1
+      ],
+      "end": [
+        -22.2,
+        58,
+        21.6
+      ],
+      "bend": [
+        -1,
+        0,
+        1
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          2.21,
+          0.48
+        ],
+        [
+          0.3,
+          3.4,
+          0.5
+        ],
+        [
+          0.5,
+          3.1959999999999997,
+          0.46
+        ],
+        [
+          0.72,
+          2.448,
+          0.36
+        ],
+        [
+          0.9,
+          1.088,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "right_primary_8"
+    },
+    {
+      "kind": "feather",
+      "name": "tail_0",
+      "start": [
+        -8,
+        -2.0999999999999996,
+        25
+      ],
+      "end": [
+        -31.1,
+        -8.100000000000001,
+        10
+      ],
+      "bend": [
+        0,
+        0,
+        2
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "tail_0"
+    },
+    {
+      "kind": "feather",
+      "name": "tail_1",
+      "start": [
+        -8,
+        -1.4,
+        25
+      ],
+      "end": [
+        -32.4,
+        -5.4,
+        10
+      ],
+      "bend": [
+        0,
+        0,
+        2
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "tail_1"
+    },
+    {
+      "kind": "feather",
+      "name": "tail_2",
+      "start": [
+        -8,
+        -0.7,
+        25
+      ],
+      "end": [
+        -33.7,
+        -2.7,
+        10
+      ],
+      "bend": [
+        0,
+        0,
+        2
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "tail_2"
+    },
+    {
+      "kind": "feather",
+      "name": "tail_3",
+      "start": [
+        -8,
+        0.0,
+        25
+      ],
+      "end": [
+        -35.0,
+        0.0,
+        10
+      ],
+      "bend": [
+        0,
+        0,
+        2
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "tail_3"
+    },
+    {
+      "kind": "feather",
+      "name": "tail_4",
+      "start": [
+        -8,
+        0.7,
+        25
+      ],
+      "end": [
+        -33.7,
+        2.7,
+        10
+      ],
+      "bend": [
+        0,
+        0,
+        2
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "tail_4"
+    },
+    {
+      "kind": "feather",
+      "name": "tail_5",
+      "start": [
+        -8,
+        1.4,
+        25
+      ],
+      "end": [
+        -32.4,
+        5.4,
+        10
+      ],
+      "bend": [
+        0,
+        0,
+        2
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "tail_5"
+    },
+    {
+      "kind": "feather",
+      "name": "tail_6",
+      "start": [
+        -8,
+        2.0999999999999996,
+        25
+      ],
+      "end": [
+        -31.1,
+        8.100000000000001,
+        10
+      ],
+      "bend": [
+        0,
+        0,
+        2
+      ],
+      "normal": [
+        0,
+        0,
+        1
+      ],
+      "profile": [
+        [
+          0,
+          0.45,
+          0.35
+        ],
+        [
+          0.12,
+          1.9500000000000002,
+          0.48
+        ],
+        [
+          0.3,
+          3,
+          0.5
+        ],
+        [
+          0.5,
+          2.82,
+          0.46
+        ],
+        [
+          0.72,
+          2.16,
+          0.36
+        ],
+        [
+          0.9,
+          0.96,
+          0.22
+        ]
+      ],
+      "segments": 8,
+      "material": "flight",
+      "part": "tail_6"
+    }
+  ],
+  "motion": {
+    "idle": {
+      "frames": 16,
+      "tics": 6,
+      "transforms": {
+        "torso": [
+          {
+            "kind": "scale_xy",
+            "amplitude": 0.012,
+            "phase": 0
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 0.6,
+            "phase": 1.5707963267948966,
+            "offset": -0.6
+          }
+        ],
+        "left_wing": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": -1,
+            "phase": 1.5707963267948966,
+            "offset": 1
+          }
+        ],
+        "right_wing": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1,
+            "phase": 1.5707963267948966,
+            "offset": -1
+          }
+        ]
+      }
+    },
+    "walk": {
+      "frames": 24,
+      "tics": 2,
+      "transforms": {
+        "pelvis": [
+          {
+            "kind": "translate_z",
+            "amplitude": 0.7,
+            "frequency": 2
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 2,
+            "phase": 1
+          }
+        ],
+        "tail": [
+          {
+            "kind": "rotate",
+            "axis": "z",
+            "amplitude": 3
+          }
+        ],
+        "left_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -16,
+            "phase": 0
+          }
+        ],
+        "left_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 15,
+            "phase": 3.141592653589793
+          }
+        ],
+        "left_wing": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": -2,
+            "phase": 0.2
+          }
+        ],
+        "right_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -16,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 15,
+            "phase": 6.283185307179586
+          }
+        ],
+        "right_wing": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 2,
+            "phase": 0.2
+          }
+        ]
+      }
+    }
+  },
+  "limits": [
+    "Presentation only; unchanged provisional Mandinga ground combat, collision and stats. No flight or new population.",
+    "Closed editable anatomy and feathers, not interchangeable wearable equipment. Neutral attachments do not establish all-pose clearance."
+  ]
+}

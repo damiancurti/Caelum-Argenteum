@@ -1,0 +1,6 @@
+{
+  "reason": "Active diffuse material now uses coverts-v2.png; untracked model01 installed copy moved out of src without deletion. Original owned PNG remains in avian_711/coverts.png.",
+  "source": "src/models/caelum/folklore/avian/coverts.png",
+  "preserved_copy": "build\\issue711-retired-native\\coverts.png",
+  "sha256": "a1f5b107aec9edd64eba38993b6a69669f60e6483f28631dab3ca71128d05508"
+}

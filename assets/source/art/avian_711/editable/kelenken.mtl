@@ -1,0 +1,12 @@
+newmtl coverts
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/avian/coverts-v2.png
+newmtl flight
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/avian/flight.png
+newmtl iris
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/avian/iris.png
+newmtl dark
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/avian/dark.png

@@ -1,0 +1,8 @@
+{
+  "issue": 711,
+  "mode": "built-in image_gen",
+  "intent": "edit",
+  "prompt": "Edit this original material atlas for the same 3D bird models. Preserve the exact four equal quadrant layout, opaque square format, muted palettes and the lower-right gray-brown scaled bird-skin material. In the other three quadrants, make the individual body feathers FOUR TIMES SMALLER in both directions, so each full quadrant contains about 20 to 30 feathers across and 30 to 40 layered rows vertically. These are small dense body contour feathers, not large flight feathers. Upper-left remains charcoal and dark umber with fine tan mottling; upper-right remains light ash/taupe with small dark barring and pale edges; lower-left remains charcoal/slate with restrained rusty chestnut accents. Keep each small feather tip directed down. Use fine natural barbs and a fairly even surface, with gentle shallow shading rather than deep dramatic shadows. Flat orthographic diffuse texture sheet, uniform neutral lighting. No borders, gaps, text, labels, eyes, whole birds or new objects. The purpose is to eliminate giant feather shapes when wrapped onto small curved body and head meshes.",
+  "reference": "assets/source/art/avian_711/coverts.png",
+  "original_generated_path": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-504697b6-9c06-4478-a638-408903fa00a9.png"
+}
