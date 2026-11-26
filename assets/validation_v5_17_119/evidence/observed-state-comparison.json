@@ -1,0 +1,32 @@
+[
+  {
+    "control": "mansion-control01",
+    "candidate": "mansion-candidate01",
+    "states_equal": true,
+    "census_equal": true
+  },
+  {
+    "control": "sewer-control01",
+    "candidate": "sewer-candidate01",
+    "states_equal": true,
+    "census_equal": true
+  },
+  {
+    "control": "street-control01",
+    "candidate": "street-candidate01",
+    "states_equal": true,
+    "census_equal": true
+  },
+  {
+    "control": "ground-control01",
+    "candidate": "ground-candidate01",
+    "states_equal": true,
+    "census_equal": true
+  },
+  {
+    "control": "siege-control01",
+    "candidate": "siege-candidate01",
+    "states_equal": true,
+    "census_equal": true
+  }
+]

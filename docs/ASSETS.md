@@ -1,6 +1,35 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.118** - 2026-11-21.
+Documentation version: **5.17.119** - 2026-11-21.
+
+## 5.17.119 - Inventory and combine the environment review (#881, #463)
+
+The source inventory and coverage/cost matrix are in
+assets/source/art/environment_review_881/INVENTORY.json and REVIEW.json. They record
+four production UDMF maps,17 furniture item/body variants and55 owned OBJ resources
+across14 prop families, plus source/provenance hashes. The prop library totals88282
+vertices,40634 triangles,342 OBJ material sections and5662553 bytes. These are asset
+library counts, not simultaneous visibility, draw calls, texture area or GPU memory.
+Static thing counts are separate from dynamic residents/furniture/service setup.
+Existing household, bathroom, workshop and refuge furniture is reused.
+
+assets/generators/build_environment_review.py verifies exact component hashes,
+rejects duplicate package paths and texture kind/name definitions, then combines
+TEXTURES fragments explicitly. Every image/model byte remains unchanged from its
+verified component. Two public-builder runs produce identical PK3s and manifests.
+Appearance is4609394 bytes with no map override; vaults is31242459 bytes and changes
+only the private MAP02 plus its existing Justice table. New pixel/placed-actor count
+is zero. The retained joinery model costs2274 versus948 triangles per shared model,
+with160 placements; the vault candidate adds439 sloped sectors. These measurements
+do not establish an approved permanent art budget.
+
+Gallery: assets/validation_v5_17_119/review.html. Fifty capture contents were inspected
+(44 directly,6 byte-identical to inspected #866 mansion images). Current gaps include
+roof tiles on interior ceilings, municipal office/archive recognition and remaining
+street/lighting/moisture detail. Long sewer walls remain repetitive. SNDINFO has six
+ambience loops and weather assets; a scoped literal-consumer search found no matching
+ZScript/ACS/MAPINFO/SNDSEQ references, without ruling out dynamically assembled names.
+No new schedule, behavior or visual choice is inferred from resource availability.
 
 ## 5.17.118 - Keep large house facades visible from nearby streets (#879)
 

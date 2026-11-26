@@ -1,6 +1,21 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.118** - 2026-11-21.
+Documentation version: **5.17.119** - 2026-11-21.
+
+## 5.17.119 - Inventory and combine the environment review (#881, #463)
+
+The #881 composition changes no production gameplay, saved field or map. Its
+appearance option combines existing image/model proposals without map overrides;
+the vaults option additionally uses the exact #875 MAP02 and checksum-qualified
+Justice geometry table. Use dedicated fresh sessions for that option; no visited
+campaign save is converted. Existing doors, services, furniture ownership, loot,
+encounters and the >=500-combatant policy retain their authoritative sources.
+
+Native combined-view checks verify sampled player occupancy/headroom and short
+walks. House review uses real Used/capture/render-ACK travel, with the retained
+diagnostic city setup. This is not ordinary purchase, full-route or multiplayer
+acceptance. Inventory sound registrations do not authorize new ambient schedules,
+thresholds or emitters; resource availability and behavior remain separate.
 
 ## 5.17.118 - Keep large house facades visible from nearby streets (#879)
 

@@ -1,6 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.118** - 2026-11-21.
+Documentation version: **5.17.119** - 2026-11-21.
+
+## 5.17.119 - Inventory and combine the environment review (#881, #463)
+
+Implemented #881: source/provenance inventory, explicit gap/cost matrix, verified
+private combined options, eight native scene phases,50 reviewed image contents,
+ten paired presentation windows and the final-session scene launcher. Defaults and
+all prior author checks are preserved; CA881-ENVIRONMENT-01 is appended for the
+single final review. #736 boards remain unapproved; this integration does not turn
+their deferred decision into authorization for broad character conversion.
+
+Next authorized finish work: separate interior ceiling materials from exterior
+roofing; make the existing municipal office/archive function recognizable using
+owned furniture and source-backed placements; address remaining street, maintenance,
+wear/moisture and lighting detail without invented gameplay or schedules. Preserve
+the severe normal-siege limitation and diagnose material costs with representative
+frame tails. Do not call #463 or the whole batch complete from this composition.
+No intermediate terminal, merge, closure or acceptance is recorded.
 
 ## 5.17.118 - Keep large house facades visible from nearby streets (#879)
 
