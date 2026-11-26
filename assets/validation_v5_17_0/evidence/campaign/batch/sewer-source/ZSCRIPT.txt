@@ -1,0 +1,16 @@
+version "4.14.2"
+class CA458CampaignFigure : CaelumDomingoPilotFrames
+{Default {+NOINTERACTION +NOGRAVITY +NOBLOCKMAP}}
+class CA458CampaignPresentation : EventHandler
+{
+    int Age;Actor Figure;
+    override void WorldTick()
+    {
+        Age++;if(Age!=351)return;
+        let user=players[0].mo;if(user==null)return;
+        vector3 point=user.Pos+(Cos(user.Angle)*64,Sin(user.Angle)*64,0);
+        Figure=Actor.Spawn('CA458CampaignFigure',point,NO_REPLACE);
+        Figure.Angle=user.Angle+180;Figure.Scale=user.Scale;
+        Console.Printf("CA458 FIGURE one noninteractive modular figure pos=(%.3f,%.3f,%.3f) scale=(%.4f,%.4f)",Figure.Pos.X,Figure.Pos.Y,Figure.Pos.Z,Figure.Scale.X,Figure.Scale.Y);
+    }
+}

@@ -1,6 +1,19 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.16.5** - 2026-11-13.
+Documentation version: **5.17.0** - 2026-11-13.
+
+## 5.17.0 - Modular 3D expansion (#458 and related art issues)
+
+#458 separates the accepted Domingo mesh into seven reusable animated modules
+and binds them to the existing opt-in body. Finish reusable underbody/hand anatomy,
+supported face/hair/species variants and authoritative equipment-driven selection
+before claiming all-character conversion. Keep actual identities and physics.
+Representative single-figure campaign and one/64 studio measurements are recorded;
+all-character budgets and CA458-MODULES-01 author review remain open.
+#459 owns worn garments, #461 creature art, #462 first-person equipment, #463
+regional/scenery finish, and #647 all droppable-inventory models. Small regional
+texture/monster inspection maps are authorized; exact campaign layouts remain
+under #454. Questions are deferred while the author is away.
 
 ## 5.16.5 - Approved finale predicate, pending scenes (#457)
 

@@ -1,0 +1,163 @@
+{
+  "issue": 458,
+  "scope": "Observe one modular visual alongside the unchanged approved campaign scenes.\n\nThe extra noninteractive figure is a diagnostic render object. It is not an NPC\nconversion, adds no combatant, and does not establish an all-model siege budget.",
+  "runtime_sha256": "d4aa0aeb27ae9d37deb753f903a84e27937785f2fccb505fc30619283578b0e5",
+  "runs": [
+    {
+      "label": "mansion",
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-458\\build\\v516\\barracas-profile-20261113-125213-766242",
+      "runner_exit": 0,
+      "passed": true,
+      "native_passed": true,
+      "presentation": {
+        "issue": 454,
+        "map": "MAP01",
+        "siege": false,
+        "ground": false,
+        "peers": [
+          {
+            "pid": 47368,
+            "trace_sha256": "5a05c5b19a2594625b22eeb9bd87fa49675320d40f1607e99c99afb14a5d6e21",
+            "rows": 1977,
+            "scene_presents": 1099,
+            "mean_present_fps": 62.51381011475139,
+            "present_intervals": {
+              "samples": 1098,
+              "mean_ms": 15.996465391637198,
+              "p50_ms": 15.70320001244545,
+              "p95_ms": 18.34189999103546,
+              "p99_ms": 20.13160002231598,
+              "max_ms": 21.70489999651909
+            },
+            "native_call_duration": {
+              "samples": 1099,
+              "mean_ms": 0.19052593319170902,
+              "p50_ms": 0.1883000135421753,
+              "p95_ms": 0.23360002040863037,
+              "p99_ms": 0.2784999907016754,
+              "max_ms": 0.37039998173713684
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "sewer",
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-458\\build\\v516\\barracas-profile-20261113-125255-459071",
+      "runner_exit": 0,
+      "passed": true,
+      "native_passed": true,
+      "presentation": {
+        "issue": 454,
+        "map": "MAP02",
+        "siege": false,
+        "ground": false,
+        "peers": [
+          {
+            "pid": 10944,
+            "trace_sha256": "bbab3a34643a3ad1b93d8d2510fd7f3fff9a352271fa7a1d53abb6160af000a3",
+            "rows": 5040,
+            "scene_presents": 2779,
+            "mean_present_fps": 160.35465230907525,
+            "present_intervals": {
+              "samples": 2778,
+              "mean_ms": 6.2361770338446565,
+              "p50_ms": 5.979599982500076,
+              "p95_ms": 8.286799997091293,
+              "p99_ms": 10.253099977970123,
+              "max_ms": 60.19760000705719
+            },
+            "native_call_duration": {
+              "samples": 2779,
+              "mean_ms": 0.08695300494479206,
+              "p50_ms": 0.08309999108314514,
+              "p95_ms": 0.12560001015663147,
+              "p99_ms": 0.1883000135421753,
+              "max_ms": 0.586899995803833
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "city-ground",
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-458\\build\\v516\\barracas-profile-20261113-125337-275631",
+      "runner_exit": 0,
+      "passed": true,
+      "native_passed": true,
+      "presentation": {
+        "issue": 454,
+        "map": "MAP03",
+        "siege": false,
+        "ground": true,
+        "peers": [
+          {
+            "pid": 48068,
+            "trace_sha256": "6c69c8a4f6ff5e669b57bc6a5e1b4cd1c3ac6f057654c7924cc896b35cf421a4",
+            "rows": 2511,
+            "scene_presents": 1242,
+            "mean_present_fps": 71.6617257033239,
+            "present_intervals": {
+              "samples": 1241,
+              "mean_ms": 13.954450443182907,
+              "p50_ms": 13.68699997663498,
+              "p95_ms": 16.025000005960464,
+              "p99_ms": 16.933800011873245,
+              "max_ms": 23.051500022411346
+            },
+            "native_call_duration": {
+              "samples": 1242,
+              "mean_ms": 0.17096996832872935,
+              "p50_ms": 0.16940000653266907,
+              "p95_ms": 0.2206999957561493,
+              "p99_ms": 0.25200000405311584,
+              "max_ms": 0.3662000000476837
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "siege",
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-458\\build\\v516\\barracas-profile-20261113-125419-529465",
+      "runner_exit": 0,
+      "passed": true,
+      "native_passed": true,
+      "presentation": {
+        "issue": 454,
+        "map": "MAP03",
+        "siege": true,
+        "ground": false,
+        "peers": [
+          {
+            "pid": 38204,
+            "trace_sha256": "977032c5ee2b3db6702abe97cd9591dd33875a2fa6be97797c0e03ab39a1cb6a",
+            "rows": 1661,
+            "scene_presents": 38,
+            "mean_present_fps": 1.5430315552292004,
+            "present_intervals": {
+              "samples": 37,
+              "mean_ms": 648.0748864863369,
+              "p50_ms": 646.0534999966621,
+              "p95_ms": 775.5494999885559,
+              "p99_ms": 800.3959999978542,
+              "max_ms": 800.3959999978542
+            },
+            "native_call_duration": {
+              "samples": 38,
+              "mean_ms": 0.19140000249210157,
+              "p50_ms": 0.18729999661445618,
+              "p95_ms": 0.2353000044822693,
+              "p99_ms": 0.23820000886917114,
+              "max_ms": 0.23820000886917114
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    }
+  ]
+}

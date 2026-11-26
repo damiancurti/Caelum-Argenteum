@@ -1,6 +1,15 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.16.5** - 2026-11-13.
+Documentation version: **5.17.0** - 2026-11-13.
+
+## 5.17.0 / #458 - Modular presentation boundary
+
+The opt-in Domingo player keeps its existing equipment eligibility, native action
+timing, collision, resources and save fields. Its visual body uses seven model
+slots instead of one fixed surface. CaelumDomingoModules selects an individual
+slot without changing an inventory item or granting equipment. The ordinary
+equipment authority must remain the source when further appearances are wired.
+No character schema, gameplay balance or transition timing changes here.
 
 ## 5.16.5 / #457 - Finale eligibility query
 

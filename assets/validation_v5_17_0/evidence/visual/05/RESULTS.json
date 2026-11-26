@@ -1,0 +1,19 @@
+{
+  "issue": 458,
+  "scope": "Compare the accepted fixed model with separate native modules and save overrides.\n\nThis isolated art room does not change ordinary players, equipment or collision.",
+  "runtime_sha256": "e82807d0d4684667d763d2fa65fb108a45d23305cf95b268eda80a6ad7871b13",
+  "model_sha256": "59607107f2c5c137c37ea15af78e438a82945c3500633c3005d6a9e5a149f08f",
+  "fixture_sha256": "5b98bca98c041b0e055b54fa4c0dbeb1389100ea751fe148b7e4208a529eaf4e",
+  "runs": [
+    {
+      "phase": "fresh",
+      "exit_code": 4294967295,
+      "passed": false,
+      "errors": [
+        "Script error, \"issue458-modular01.pk3:caelum/data/caelumdomingomodules.zs\" line 16:"
+      ],
+      "checks": []
+    }
+  ],
+  "captures": {}
+}

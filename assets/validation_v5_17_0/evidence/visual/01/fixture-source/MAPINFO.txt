@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA458PreviewEvents" }
+map CA455V "Modular character inspection" { sky1="CABASKY",0 nointermission }

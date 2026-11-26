@@ -1,6 +1,14 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.16.5** - 2026-11-13.
+Documentation version: **5.17.0** - 2026-11-13.
+
+## 5.17.0 / #458 - Character art expansion, unchanged narrative
+
+The author requests 3D characters, modular parts, inventory drop models and small
+regional texture/monster inspection maps. #458 starts with the accepted Domingo
+rig and identity. This visual pipeline adds no campaign region, quest, encounter,
+revelation, faction rule or essence placement. Those pending decisions retain
+their V5.16 issue boundaries.
 
 ## 5.16.5 / #457 - Approved finale predicate, no new scene
 

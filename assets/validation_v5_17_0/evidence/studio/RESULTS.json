@@ -1,0 +1,185 @@
+{
+  "issue": 458,
+  "scope": "Measure fixed versus seven-slot MD3 presentation in a controlled art room.\n\nOne and64 noninteractive visual bodies reuse #283's inspection population.\nThese are not combatants or an all-character/campaign performance acceptance.",
+  "runtime_sha256": "d4aa0aeb27ae9d37deb753f903a84e27937785f2fccb505fc30619283578b0e5",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "fixed",
+      "bodies": 1,
+      "pid": 46676,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 199130663.8139,
+        "END": 199150685.2898
+      },
+      "fixture_sha256": "61adbd5083192be6d3557fee1319a930b6a15e2f9d79fbf887614e0af9307104",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571558,
+        "p50_ms": 28.5619,
+        "p95_ms": 29.1971,
+        "p99_ms": 29.3612,
+        "max_ms": 29.5402
+      },
+      "presentation": {
+        "pid": 46676,
+        "trace_sha256": "6ef5af581678bfde76b31ded2a5a4ba62bf85e0eba24961697520bac64138644",
+        "rows": 30841,
+        "scene_presents": 20988,
+        "mean_present_fps": 1197.8054847456835,
+        "present_intervals": {
+          "samples": 20987,
+          "mean_ms": 0.8348600943435475,
+          "p50_ms": 0.8023999929428101,
+          "p95_ms": 1.0096000134944916,
+          "p99_ms": 1.1996000111103058,
+          "max_ms": 1.8153000175952911
+        },
+        "native_call_duration": {
+          "samples": 20988,
+          "mean_ms": 0.07639302473500363,
+          "p50_ms": 0.07620000839233398,
+          "p95_ms": 0.10060000419616699,
+          "p99_ms": 0.13079997897148132,
+          "max_ms": 0.4081000089645386
+        }
+      }
+    },
+    {
+      "kind": "modular",
+      "bodies": 1,
+      "pid": 47972,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 199164445.0359,
+        "END": 199184464.9517
+      },
+      "fixture_sha256": "f5b0b7fc00380ce6123eea92a243da5a4121928bfc6681b46e8245724381dfb9",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.570562428571428,
+        "p50_ms": 28.5708,
+        "p95_ms": 29.1605,
+        "p99_ms": 29.4383,
+        "max_ms": 29.6628
+      },
+      "presentation": {
+        "pid": 47972,
+        "trace_sha256": "428e000a6ebeeb4388e7fb39b257408011fb7e764a96d632781774b06c24b728",
+        "rows": 30402,
+        "scene_presents": 20465,
+        "mean_present_fps": 1168.0883269299948,
+        "present_intervals": {
+          "samples": 20464,
+          "mean_ms": 0.8560996432763184,
+          "p50_ms": 0.825300008058548,
+          "p95_ms": 1.0534000098705292,
+          "p99_ms": 1.2578000128269196,
+          "max_ms": 1.9094000160694122
+        },
+        "native_call_duration": {
+          "samples": 20465,
+          "mean_ms": 0.07758554610185509,
+          "p50_ms": 0.07580000162124634,
+          "p95_ms": 0.10410001873970032,
+          "p99_ms": 0.13599997758865356,
+          "max_ms": 0.46790000796318054
+        }
+      }
+    },
+    {
+      "kind": "modular",
+      "bodies": 64,
+      "pid": 39892,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 199198429.0731,
+        "END": 199218448.1528
+      },
+      "fixture_sha256": "7db5e2f74b4b4e11c81ed2b643b398c556f029dbb864a5e0af53fb8dd207fc98",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57065328571429,
+        "p50_ms": 28.5654,
+        "p95_ms": 29.3747,
+        "p99_ms": 29.5003,
+        "max_ms": 29.9896
+      },
+      "presentation": {
+        "pid": 39892,
+        "trace_sha256": "75d7d49729bf7ab7d86702e911d5625f2afdddb0c4154cbea0c115f1af91c87a",
+        "rows": 22048,
+        "scene_presents": 15555,
+        "mean_present_fps": 887.8886609303213,
+        "present_intervals": {
+          "samples": 15554,
+          "mean_ms": 1.1262673395921168,
+          "p50_ms": 1.093199998140335,
+          "p95_ms": 1.3107999861240387,
+          "p99_ms": 1.4776999950408936,
+          "max_ms": 2.5257999897003174
+        },
+        "native_call_duration": {
+          "samples": 15555,
+          "mean_ms": 0.0767288462137034,
+          "p50_ms": 0.07609999179840088,
+          "p95_ms": 0.10050001740455627,
+          "p99_ms": 0.1256999969482422,
+          "max_ms": 0.45329999923706055
+        }
+      }
+    },
+    {
+      "kind": "fixed",
+      "bodies": 64,
+      "pid": 21300,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 199232281.8709,
+        "END": 199252305.0174
+      },
+      "fixture_sha256": "7b7391d06855e017b57b511953fe307dadf0076167ae686acf79222adb87e955",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57053342857143,
+        "p50_ms": 28.5825,
+        "p95_ms": 29.2771,
+        "p99_ms": 29.448,
+        "max_ms": 29.5938
+      },
+      "presentation": {
+        "pid": 21300,
+        "trace_sha256": "021866a0c1c54fd1693f2dd3e681276b7d8789de339c493abba11d63573eb80f",
+        "rows": 24361,
+        "scene_presents": 16901,
+        "mean_present_fps": 964.4957142727073,
+        "present_intervals": {
+          "samples": 16900,
+          "mean_ms": 1.0368112426026332,
+          "p50_ms": 1.0036999881267548,
+          "p95_ms": 1.2188999950885773,
+          "p99_ms": 1.3992999792099,
+          "max_ms": 2.226300001144409
+        },
+        "native_call_duration": {
+          "samples": 16901,
+          "mean_ms": 0.07684396196488029,
+          "p50_ms": 0.0761999785900116,
+          "p95_ms": 0.10109999775886536,
+          "p99_ms": 0.1306999921798706,
+          "max_ms": 0.4178999960422516
+        }
+      }
+    }
+  ]
+}

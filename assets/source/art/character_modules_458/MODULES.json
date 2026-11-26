@@ -1,0 +1,108 @@
+{
+  "schema_revision": 1,
+  "issue": 458,
+  "status": "production_pipeline_in_progress",
+  "authority": "Author 2026-11-13: convert all characters to actual3D, retain modular parts; reuse accepted #283 source identity and animation.",
+  "source_blend": "assets/source/art/domingo_3d_pilot/domingo.blend",
+  "source_sha256": "3c84df6b241df2c48ddee48143d6aa4eba40d16c5c097d60f78eca85b130b9a4",
+  "source_design": "assets/source/art/domingo_3d_pilot/DESIGN.json",
+  "skin": "assets/source/art/domingo_3d_pilot/domingo_skin.png",
+  "baseline_model": "src/models/caelum/domingo/domingo.md3",
+  "module_path": "models/caelum/characters/domingo",
+  "native_fixture_class": "CA458ModularPreview",
+  "native_runtime_class": "CaelumDomingoPilotBody",
+  "groups": {
+    "clothing": [
+      "Blue skirt L",
+      "Blue skirt R",
+      "Boot L",
+      "Boot R",
+      "Cross strap",
+      "Leather belt",
+      "Reverse strap",
+      "Scarf collar",
+      "Scarf hanging end",
+      "Sun buckle",
+      "Trouser thigh L",
+      "Trouser thigh R",
+      "Upper sleeve L",
+      "Upper sleeve R",
+      "Waistcoat"
+    ],
+    "armor": [
+      "Bracer L",
+      "Bracer R",
+      "Breastplate",
+      "Gauntlet L",
+      "Gauntlet R",
+      "Greave L",
+      "Greave R",
+      "Hip armor",
+      "Kneecap L",
+      "Kneecap R",
+      "Pauldron L",
+      "Pauldron R",
+      "Pauldron trim L",
+      "Pauldron trim R",
+      "Thigh armor L",
+      "Thigh armor R"
+    ],
+    "cape": [
+      "Gold embroidered blue cape"
+    ],
+    "face": [
+      "Eye l-eye",
+      "Eye r-eye",
+      "Head",
+      "Pupil -1",
+      "Pupil 1"
+    ],
+    "hair": [
+      "Hair crown",
+      "Long hair L",
+      "Long hair R"
+    ],
+    "weapon": [
+      "Diamond sword blade",
+      "Sword crossguard",
+      "Sword grip",
+      "Sword pommel"
+    ],
+    "shield": [
+      "Shield boss",
+      "Shield face",
+      "Shield grip",
+      "Shield grip mount front",
+      "Shield grip mount rear",
+      "Shield rim 00",
+      "Shield rim 01",
+      "Shield rim 02",
+      "Shield rim 03",
+      "Shield rim 04",
+      "Shield rim 05",
+      "Shield rim 06",
+      "Shield rim 07",
+      "Shield rim 08",
+      "Shield rim 09",
+      "Shield rim 10",
+      "Shield rim 11",
+      "Shield rim 12",
+      "Shield rim 13",
+      "Shield rim 14",
+      "Shield rim 15",
+      "Shield rim 16",
+      "Shield rim 17",
+      "Shield rim 18",
+      "Shield rim 19",
+      "Shield rim 20",
+      "Shield rim 21",
+      "Shield rim 22",
+      "Shield rim 23"
+    ]
+  },
+  "limits": [
+    "Initial slots separate the accepted fixed outfit. They do not yet supply interchangeable naked anatomy, other characters, garments, equipment or species variants.",
+    "Existing action sampling and model-space coordinates remain unchanged; no new combat, collision or transition timing is inferred.",
+    "Clothing/armor coverage is the accepted source silhouette; hiding a slot is a diagnostic, not an approved unequipped body."
+  ]
+}

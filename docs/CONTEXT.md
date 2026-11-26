@@ -1,10 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.16.5** - 2026-11-13.
+Documentation version: **5.17.0** - 2026-11-13.
 
-**V5.16:** #452 regions/Majors/finale, #453 approved; #454 MAP02/MAP03 rebuilt/tested.
-MAP01/ASSETS/TASKS; #456:World-gate/capture-tests,75assignments pending.
-#455:56classes/3pilots; #457:eligibility-only. Vision-tested;siege~1.35FPS; scripts/art pending. LegacyMap02Revision5.
+**V5.17:** #458:Domingo's7modules; other3D/art pending. ASSETS/TASKS.
+**V5.16:** #452/453 approved; #454:MAP02/MAP03 rebuilt/tested; siege~1.35FPS.
+#456:World-gate,75assignments pending; #455:56classes/3pilots; #457:eligibility-only. LegacyMap02Revision5.
 
 **V5.15 accepted2026-11-10:** CA447-01..451-01;#447-451 closed;PR635-639 merged.
 HISTORY/validation_v5_15_0..4. Single-player/attributes100 terminal:
