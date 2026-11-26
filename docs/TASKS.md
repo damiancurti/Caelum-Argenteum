@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.84** - 2026-11-15.
+Documentation version: **5.17.85** - 2026-11-15.
+
+## 5.17.85 - Forest candidates verified; complete batch remains (#813)
+
+Four forest guardians pass 16-file deterministic export, 290 closed components,
+2,288 posed contacts, 332 closed-skirt samples and 702 native assertions on the
+final package. Retain CA813-FOREST-01 and all previous unconfirmed author checks.
+Continue the 22 remaining creatures, regional displays, other characters and
+modular fitting, and V5.16 progression/performance work. Author acceptance and
+the consolidated terminal remain deferred until the requested batch is complete.
 
 ## 5.17.84 - Period candidates verified; full batch remains (#811)
 

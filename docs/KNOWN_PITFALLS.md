@@ -221,6 +221,13 @@ deliberately. This proves those samples, not every interpolation or future outfi
 Evidence: assets/validation_v5_17_84/evidence/SUMMARY.json; STATIC-VERIFIED coverage,
 ENGINE-OBSERVED candidate correction; author check CA811-PERIOD-01 pending.
 
+Extension #813, 2026-11-15: valid beard-root witnesses did not prove that the
+lower locks remained outside the chest. Front/profile native captures exposed
+the buried silhouette. Curved lower locks correct it without moving their roots;
+final posed contact checks still pass. Source/failed diagnostics and native
+captures: assets/validation_v5_17_85/evidence/SUMMARY.json. ENGINE-OBSERVED
+candidate correction; CA813-FOREST-01 remains pending.
+
 Native functional assertions do not establish distinct or grounded art.
 Peuchen's first 51-assertion preview repeats idle endpoints, attack poses and
 all death stages. A death-letter offset assumed A but the actual sequence

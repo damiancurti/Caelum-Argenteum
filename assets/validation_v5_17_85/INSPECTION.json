@@ -1,0 +1,50 @@
+{
+  "issue": 813,
+  "purpose": "Forest silhouettes, face/hair, bark/fur, leaves, garment/limb contacts and inherited actions.",
+  "additional_views": [
+    {
+      "name": "lying-oblique",
+      "position": [
+        65,
+        -65,
+        63
+      ],
+      "target": [
+        0,
+        0,
+        12
+      ],
+      "default_pose": 22
+    },
+    {
+      "name": "face-detail",
+      "position": [
+        27,
+        -6,
+        47
+      ],
+      "target": [
+        2,
+        0,
+        44
+      ]
+    },
+    {
+      "name": "garment-rear",
+      "position": [
+        -50,
+        -35,
+        35
+      ],
+      "target": [
+        0,
+        0,
+        26
+      ]
+    }
+  ],
+  "action_views": {
+    "death": 6,
+    "rest": 6
+  }
+}
