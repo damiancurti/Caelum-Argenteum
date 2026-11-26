@@ -1,0 +1,9 @@
+{
+  "issue": 873,
+  "runtime_sha256": "ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55",
+  "overlay_sha256": "bde1f2d6a08ed8907ba4ea4a2b58752d8ce7c7777b0309811e662443751edfc9",
+  "original_sha256": "dcc202ceeb14b156a0d723fec81745acb53d6576dd5c69150033cd775bdfb03e",
+  "candidate_sha256": "0de7d52ef11887a8b93fc367bceba32b3c2768139a3600b51526fb111aed1eec",
+  "original_restored_exactly": true,
+  "scope": "Extract the existing sector-light arithmetic without changing Range, then use its current value in the conservative reach bound. Contact radii, portal guards, relation order and all other statements remain unchanged. No new fields or caches. Private prototype, not production acceptance."
+}

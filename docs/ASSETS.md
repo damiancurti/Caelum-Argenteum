@@ -1,6 +1,20 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.114** - 2026-11-21.
+Documentation version: **5.17.115** - 2026-11-21.
+
+## 5.17.115 - Measure target acquisition and retain current perception (#873, #454)
+
+No art, models, materials, maps or geometry change under #873. Evidence and
+relocatable reproduction tools are in assets/validation_v5_17_115. Retained sources
+include both rejected light bounds, native edge/oracle logs, full-window traces and
+the corrected/failed candidate probes. Public builders reproduce all four checked
+private overlays byte-for-byte. Engine, IWAD, private map/PK3 and save binaries are
+not distributed. Native fixture saves were produced locally, not published.
+
+Prior peaceful references remain labeled as release 5.17.114; no unchanged scene
+is relabeled as a new run. Final siege stills were inspected only for scene/HUD
+continuity, not as evidence of fluent rendering. #736/#847/#866 art reviews and
+the structural environment finish retain their existing status.
 
 ## 5.17.114 - Grow the derived contamination surface index (#871, #454)
 

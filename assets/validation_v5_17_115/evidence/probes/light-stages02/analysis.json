@@ -1,0 +1,3315 @@
+{
+  "issue": 873,
+  "directory": "build/v516/barracas-profile-20261121-054947-826041",
+  "runtime_sha256": "ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55",
+  "manifest": {
+    "issue": 873,
+    "runtime_sha256": "ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55",
+    "overlay_sha256": "ded7627eed1d6fb9a7cef2789ea2b95f2d59a0a76b7e5468417e8493682cfaad",
+    "originals_restored_exactly": {
+      "caelum/actors/CaelumVisualPerception.zs": "3fce90a179db85d6c447cf4b5277f76d1204c18b0889123745f68e34e2d1910f"
+    },
+    "metrics": [
+      {
+        "id": 0,
+        "family": "Mandinga",
+        "stage": "total"
+      },
+      {
+        "id": 1,
+        "family": "Mandinga",
+        "stage": "group-setup"
+      },
+      {
+        "id": 2,
+        "family": "Mandinga",
+        "stage": "group-enemies"
+      },
+      {
+        "id": 3,
+        "family": "Mandinga",
+        "stage": "group-allies"
+      },
+      {
+        "id": 4,
+        "family": "Mandinga",
+        "stage": "local-query"
+      },
+      {
+        "id": 5,
+        "family": "Mandinga",
+        "stage": "unlinked-fallback"
+      },
+      {
+        "id": 6,
+        "family": "Mandinga",
+        "stage": "observe-ally"
+      },
+      {
+        "id": 7,
+        "family": "PortDefender",
+        "stage": "total"
+      },
+      {
+        "id": 8,
+        "family": "PortDefender",
+        "stage": "group-setup"
+      },
+      {
+        "id": 9,
+        "family": "PortDefender",
+        "stage": "group-enemies"
+      },
+      {
+        "id": 10,
+        "family": "PortDefender",
+        "stage": "group-allies"
+      },
+      {
+        "id": 11,
+        "family": "PortDefender",
+        "stage": "local-query"
+      },
+      {
+        "id": 12,
+        "family": "PortDefender",
+        "stage": "unlinked-fallback"
+      },
+      {
+        "id": 13,
+        "family": "PortDefender",
+        "stage": "observe-ally"
+      },
+      {
+        "id": 14,
+        "family": "other",
+        "stage": "total"
+      },
+      {
+        "id": 15,
+        "family": "other",
+        "stage": "group-setup"
+      },
+      {
+        "id": 16,
+        "family": "other",
+        "stage": "group-enemies"
+      },
+      {
+        "id": 17,
+        "family": "other",
+        "stage": "group-allies"
+      },
+      {
+        "id": 18,
+        "family": "other",
+        "stage": "local-query"
+      },
+      {
+        "id": 19,
+        "family": "other",
+        "stage": "unlinked-fallback"
+      },
+      {
+        "id": 20,
+        "family": "other",
+        "stage": "observe-ally"
+      }
+    ],
+    "period": 17,
+    "qualification": "Light-factor prototype, compared with its own uninstrumented source. Existing Candidate statements/arguments/list order are retained and restore exactly. Private stage timers and loop-entry integer counters add overhead; no new query, second traversal, saved actor fields or gameplay changes. Inclusive total overlaps stage timings. Items count existing loop entries, not unique actors or successful visibility checks."
+  },
+  "sample_tics": [
+    3599,
+    3616,
+    3633,
+    3650,
+    3667,
+    3684,
+    3701,
+    3718,
+    3735,
+    3752,
+    3769,
+    3786,
+    3803,
+    3820,
+    3837,
+    3854,
+    3871,
+    3888,
+    3905,
+    3922,
+    3939,
+    3956,
+    3973,
+    3990,
+    4007,
+    4024,
+    4041,
+    4058,
+    4075,
+    4092,
+    4109,
+    4126,
+    4143,
+    4160,
+    4177,
+    4194,
+    4211,
+    4228,
+    4245,
+    4262,
+    4279,
+    4296
+  ],
+  "summary": [
+    {
+      "id": 0,
+      "family": "Mandinga",
+      "stage": "total",
+      "mean_sampled_tic_ms": 1.617302380952381,
+      "maximum_sampled_tic_ms": 10.7995,
+      "calls": 4358,
+      "calls_per_sample": [
+        0,
+        995
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    },
+    {
+      "id": 1,
+      "family": "Mandinga",
+      "stage": "group-setup",
+      "mean_sampled_tic_ms": 0.8694071428571428,
+      "maximum_sampled_tic_ms": 3.361,
+      "calls": 4156,
+      "calls_per_sample": [
+        0,
+        970
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    },
+    {
+      "id": 2,
+      "family": "Mandinga",
+      "stage": "group-enemies",
+      "mean_sampled_tic_ms": 0.23847380952380953,
+      "maximum_sampled_tic_ms": 2.4474,
+      "calls": 4156,
+      "calls_per_sample": [
+        0,
+        970
+      ],
+      "loop_entries": 724187,
+      "entries_per_call": 174.2509624639076
+    },
+    {
+      "id": 3,
+      "family": "Mandinga",
+      "stage": "group-allies",
+      "mean_sampled_tic_ms": 0.40215238095238093,
+      "maximum_sampled_tic_ms": 3.9968,
+      "calls": 4156,
+      "calls_per_sample": [
+        0,
+        970
+      ],
+      "loop_entries": 320030,
+      "entries_per_call": 77.00433108758422
+    },
+    {
+      "id": 4,
+      "family": "Mandinga",
+      "stage": "local-query",
+      "mean_sampled_tic_ms": 0,
+      "maximum_sampled_tic_ms": 0,
+      "calls": 0,
+      "calls_per_sample": [
+        0,
+        0
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    },
+    {
+      "id": 5,
+      "family": "Mandinga",
+      "stage": "unlinked-fallback",
+      "mean_sampled_tic_ms": 0,
+      "maximum_sampled_tic_ms": 0,
+      "calls": 0,
+      "calls_per_sample": [
+        0,
+        0
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    },
+    {
+      "id": 6,
+      "family": "Mandinga",
+      "stage": "observe-ally",
+      "mean_sampled_tic_ms": 0.07207619047619047,
+      "maximum_sampled_tic_ms": 0.6984,
+      "calls": 4054,
+      "calls_per_sample": [
+        0,
+        960
+      ],
+      "loop_entries": 4054,
+      "entries_per_call": 1.0
+    },
+    {
+      "id": 7,
+      "family": "PortDefender",
+      "stage": "total",
+      "mean_sampled_tic_ms": 1.4313047619047619,
+      "maximum_sampled_tic_ms": 1.8467,
+      "calls": 6358,
+      "calls_per_sample": [
+        150,
+        154
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    },
+    {
+      "id": 8,
+      "family": "PortDefender",
+      "stage": "group-setup",
+      "mean_sampled_tic_ms": 0.011026190476190476,
+      "maximum_sampled_tic_ms": 0.013,
+      "calls": 6305,
+      "calls_per_sample": [
+        150,
+        151
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    },
+    {
+      "id": 9,
+      "family": "PortDefender",
+      "stage": "group-enemies",
+      "mean_sampled_tic_ms": 0,
+      "maximum_sampled_tic_ms": 0,
+      "calls": 0,
+      "calls_per_sample": [
+        0,
+        0
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    },
+    {
+      "id": 10,
+      "family": "PortDefender",
+      "stage": "group-allies",
+      "mean_sampled_tic_ms": 0,
+      "maximum_sampled_tic_ms": 0,
+      "calls": 0,
+      "calls_per_sample": [
+        0,
+        0
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    },
+    {
+      "id": 11,
+      "family": "PortDefender",
+      "stage": "local-query",
+      "mean_sampled_tic_ms": 1.2699761904761904,
+      "maximum_sampled_tic_ms": 1.6793,
+      "calls": 6305,
+      "calls_per_sample": [
+        150,
+        151
+      ],
+      "loop_entries": 205202,
+      "entries_per_call": 32.54591593973037
+    },
+    {
+      "id": 12,
+      "family": "PortDefender",
+      "stage": "unlinked-fallback",
+      "mean_sampled_tic_ms": 0.004092857142857143,
+      "maximum_sampled_tic_ms": 0.0055,
+      "calls": 6305,
+      "calls_per_sample": [
+        150,
+        151
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    },
+    {
+      "id": 13,
+      "family": "PortDefender",
+      "stage": "observe-ally",
+      "mean_sampled_tic_ms": 0.07934285714285715,
+      "maximum_sampled_tic_ms": 0.0865,
+      "calls": 4344,
+      "calls_per_sample": [
+        97,
+        113
+      ],
+      "loop_entries": 4344,
+      "entries_per_call": 1.0
+    },
+    {
+      "id": 14,
+      "family": "other",
+      "stage": "total",
+      "mean_sampled_tic_ms": 0.004435714285714286,
+      "maximum_sampled_tic_ms": 0.027,
+      "calls": 16,
+      "calls_per_sample": [
+        0,
+        2
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    },
+    {
+      "id": 15,
+      "family": "other",
+      "stage": "group-setup",
+      "mean_sampled_tic_ms": 0.004023809523809524,
+      "maximum_sampled_tic_ms": 0.0245,
+      "calls": 10,
+      "calls_per_sample": [
+        0,
+        1
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    },
+    {
+      "id": 16,
+      "family": "other",
+      "stage": "group-enemies",
+      "mean_sampled_tic_ms": 7.1428571428571436e-06,
+      "maximum_sampled_tic_ms": 0.0001,
+      "calls": 10,
+      "calls_per_sample": [
+        0,
+        1
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    },
+    {
+      "id": 17,
+      "family": "other",
+      "stage": "group-allies",
+      "mean_sampled_tic_ms": 9.523809523809525e-06,
+      "maximum_sampled_tic_ms": 0.0001,
+      "calls": 10,
+      "calls_per_sample": [
+        0,
+        1
+      ],
+      "loop_entries": 10,
+      "entries_per_call": 1.0
+    },
+    {
+      "id": 18,
+      "family": "other",
+      "stage": "local-query",
+      "mean_sampled_tic_ms": 0,
+      "maximum_sampled_tic_ms": 0,
+      "calls": 0,
+      "calls_per_sample": [
+        0,
+        0
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    },
+    {
+      "id": 19,
+      "family": "other",
+      "stage": "unlinked-fallback",
+      "mean_sampled_tic_ms": 0,
+      "maximum_sampled_tic_ms": 0,
+      "calls": 0,
+      "calls_per_sample": [
+        0,
+        0
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    },
+    {
+      "id": 20,
+      "family": "other",
+      "stage": "observe-ally",
+      "mean_sampled_tic_ms": 0,
+      "maximum_sampled_tic_ms": 0,
+      "calls": 0,
+      "calls_per_sample": [
+        0,
+        0
+      ],
+      "loop_entries": 0,
+      "entries_per_call": 0.0
+    }
+  ],
+  "rows": [
+    {
+      "tic": 3599,
+      "metric": 7,
+      "total_ms": 1.4724,
+      "maximum_ms": 0.024,
+      "calls": 153,
+      "items": 0
+    },
+    {
+      "tic": 3599,
+      "metric": 8,
+      "total_ms": 0.0104,
+      "maximum_ms": 0.0004,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3599,
+      "metric": 11,
+      "total_ms": 1.3083,
+      "maximum_ms": 0.0234,
+      "calls": 151,
+      "items": 4908
+    },
+    {
+      "tic": 3599,
+      "metric": 12,
+      "total_ms": 0.0037,
+      "maximum_ms": 0.0001,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3599,
+      "metric": 13,
+      "total_ms": 0.0828,
+      "maximum_ms": 0.0014,
+      "calls": 108,
+      "items": 108
+    },
+    {
+      "tic": 3616,
+      "metric": 0,
+      "total_ms": 1.5809,
+      "maximum_ms": 0.3301,
+      "calls": 63,
+      "items": 0
+    },
+    {
+      "tic": 3616,
+      "metric": 1,
+      "total_ms": 1.4198,
+      "maximum_ms": 0.3197,
+      "calls": 34,
+      "items": 0
+    },
+    {
+      "tic": 3616,
+      "metric": 2,
+      "total_ms": 0.0204,
+      "maximum_ms": 0.0055,
+      "calls": 34,
+      "items": 961
+    },
+    {
+      "tic": 3616,
+      "metric": 3,
+      "total_ms": 0.0951,
+      "maximum_ms": 0.0072,
+      "calls": 34,
+      "items": 1280
+    },
+    {
+      "tic": 3616,
+      "metric": 6,
+      "total_ms": 0.0234,
+      "maximum_ms": 0.002,
+      "calls": 27,
+      "items": 27
+    },
+    {
+      "tic": 3616,
+      "metric": 7,
+      "total_ms": 1.3076,
+      "maximum_ms": 0.0181,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3616,
+      "metric": 8,
+      "total_ms": 0.0116,
+      "maximum_ms": 0.0003,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3616,
+      "metric": 11,
+      "total_ms": 1.154,
+      "maximum_ms": 0.0168,
+      "calls": 150,
+      "items": 5072
+    },
+    {
+      "tic": 3616,
+      "metric": 12,
+      "total_ms": 0.0038,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3616,
+      "metric": 13,
+      "total_ms": 0.0725,
+      "maximum_ms": 0.0013,
+      "calls": 97,
+      "items": 97
+    },
+    {
+      "tic": 3633,
+      "metric": 7,
+      "total_ms": 1.3915,
+      "maximum_ms": 0.0203,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3633,
+      "metric": 8,
+      "total_ms": 0.0112,
+      "maximum_ms": 0.0003,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3633,
+      "metric": 11,
+      "total_ms": 1.2303,
+      "maximum_ms": 0.019,
+      "calls": 150,
+      "items": 5094
+    },
+    {
+      "tic": 3633,
+      "metric": 12,
+      "total_ms": 0.005,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3633,
+      "metric": 13,
+      "total_ms": 0.0797,
+      "maximum_ms": 0.0014,
+      "calls": 106,
+      "items": 106
+    },
+    {
+      "tic": 3633,
+      "metric": 14,
+      "total_ms": 0.0166,
+      "maximum_ms": 0.0164,
+      "calls": 2,
+      "items": 0
+    },
+    {
+      "tic": 3633,
+      "metric": 15,
+      "total_ms": 0.0147,
+      "maximum_ms": 0.0147,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 3633,
+      "metric": 16,
+      "total_ms": 0.0001,
+      "maximum_ms": 0.0001,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 3633,
+      "metric": 17,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1,
+      "items": 1
+    },
+    {
+      "tic": 3650,
+      "metric": 0,
+      "total_ms": 1.4249,
+      "maximum_ms": 0.308,
+      "calls": 8,
+      "items": 0
+    },
+    {
+      "tic": 3650,
+      "metric": 1,
+      "total_ms": 1.3578,
+      "maximum_ms": 0.2986,
+      "calls": 5,
+      "items": 0
+    },
+    {
+      "tic": 3650,
+      "metric": 2,
+      "total_ms": 0.0197,
+      "maximum_ms": 0.0045,
+      "calls": 5,
+      "items": 1171
+    },
+    {
+      "tic": 3650,
+      "metric": 3,
+      "total_ms": 0.0376,
+      "maximum_ms": 0.0097,
+      "calls": 5,
+      "items": 487
+    },
+    {
+      "tic": 3650,
+      "metric": 6,
+      "total_ms": 0.0046,
+      "maximum_ms": 0.0019,
+      "calls": 3,
+      "items": 3
+    },
+    {
+      "tic": 3650,
+      "metric": 7,
+      "total_ms": 1.3846,
+      "maximum_ms": 0.0198,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3650,
+      "metric": 8,
+      "total_ms": 0.0117,
+      "maximum_ms": 0.0005,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3650,
+      "metric": 11,
+      "total_ms": 1.2225,
+      "maximum_ms": 0.0186,
+      "calls": 150,
+      "items": 4808
+    },
+    {
+      "tic": 3650,
+      "metric": 12,
+      "total_ms": 0.0047,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3650,
+      "metric": 13,
+      "total_ms": 0.0781,
+      "maximum_ms": 0.0015,
+      "calls": 100,
+      "items": 100
+    },
+    {
+      "tic": 3667,
+      "metric": 7,
+      "total_ms": 1.2705,
+      "maximum_ms": 0.0177,
+      "calls": 152,
+      "items": 0
+    },
+    {
+      "tic": 3667,
+      "metric": 8,
+      "total_ms": 0.0115,
+      "maximum_ms": 0.0004,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3667,
+      "metric": 11,
+      "total_ms": 1.1098,
+      "maximum_ms": 0.0163,
+      "calls": 150,
+      "items": 4757
+    },
+    {
+      "tic": 3667,
+      "metric": 12,
+      "total_ms": 0.0055,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3667,
+      "metric": 13,
+      "total_ms": 0.0797,
+      "maximum_ms": 0.0014,
+      "calls": 106,
+      "items": 106
+    },
+    {
+      "tic": 3684,
+      "metric": 0,
+      "total_ms": 10.1355,
+      "maximum_ms": 0.3137,
+      "calls": 975,
+      "items": 0
+    },
+    {
+      "tic": 3684,
+      "metric": 1,
+      "total_ms": 2.7691,
+      "maximum_ms": 0.305,
+      "calls": 970,
+      "items": 0
+    },
+    {
+      "tic": 3684,
+      "metric": 2,
+      "total_ms": 2.4474,
+      "maximum_ms": 0.0063,
+      "calls": 970,
+      "items": 180309
+    },
+    {
+      "tic": 3684,
+      "metric": 3,
+      "total_ms": 3.9091,
+      "maximum_ms": 0.0097,
+      "calls": 970,
+      "items": 76586
+    },
+    {
+      "tic": 3684,
+      "metric": 6,
+      "total_ms": 0.6943,
+      "maximum_ms": 0.0019,
+      "calls": 960,
+      "items": 960
+    },
+    {
+      "tic": 3684,
+      "metric": 7,
+      "total_ms": 1.5885,
+      "maximum_ms": 0.0278,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3684,
+      "metric": 8,
+      "total_ms": 0.0116,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3684,
+      "metric": 11,
+      "total_ms": 1.4346,
+      "maximum_ms": 0.0272,
+      "calls": 150,
+      "items": 5031
+    },
+    {
+      "tic": 3684,
+      "metric": 12,
+      "total_ms": 0.004,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3684,
+      "metric": 13,
+      "total_ms": 0.0726,
+      "maximum_ms": 0.0012,
+      "calls": 97,
+      "items": 97
+    },
+    {
+      "tic": 3701,
+      "metric": 7,
+      "total_ms": 1.4799,
+      "maximum_ms": 0.0213,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3701,
+      "metric": 8,
+      "total_ms": 0.0112,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3701,
+      "metric": 11,
+      "total_ms": 1.3148,
+      "maximum_ms": 0.0198,
+      "calls": 150,
+      "items": 5079
+    },
+    {
+      "tic": 3701,
+      "metric": 12,
+      "total_ms": 0.0038,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3701,
+      "metric": 13,
+      "total_ms": 0.0814,
+      "maximum_ms": 0.0013,
+      "calls": 109,
+      "items": 109
+    },
+    {
+      "tic": 3701,
+      "metric": 14,
+      "total_ms": 0.0144,
+      "maximum_ms": 0.0142,
+      "calls": 2,
+      "items": 0
+    },
+    {
+      "tic": 3701,
+      "metric": 15,
+      "total_ms": 0.0128,
+      "maximum_ms": 0.0128,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 3701,
+      "metric": 16,
+      "total_ms": 0.0001,
+      "maximum_ms": 0.0001,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 3701,
+      "metric": 17,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1,
+      "items": 1
+    },
+    {
+      "tic": 3718,
+      "metric": 0,
+      "total_ms": 1.3649,
+      "maximum_ms": 0.34,
+      "calls": 8,
+      "items": 0
+    },
+    {
+      "tic": 3718,
+      "metric": 1,
+      "total_ms": 1.2897,
+      "maximum_ms": 0.3262,
+      "calls": 5,
+      "items": 0
+    },
+    {
+      "tic": 3718,
+      "metric": 2,
+      "total_ms": 0.0227,
+      "maximum_ms": 0.0068,
+      "calls": 5,
+      "items": 1164
+    },
+    {
+      "tic": 3718,
+      "metric": 3,
+      "total_ms": 0.0401,
+      "maximum_ms": 0.0115,
+      "calls": 5,
+      "items": 487
+    },
+    {
+      "tic": 3718,
+      "metric": 6,
+      "total_ms": 0.0064,
+      "maximum_ms": 0.0019,
+      "calls": 4,
+      "items": 4
+    },
+    {
+      "tic": 3718,
+      "metric": 7,
+      "total_ms": 1.1851,
+      "maximum_ms": 0.0156,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3718,
+      "metric": 8,
+      "total_ms": 0.0103,
+      "maximum_ms": 0.0003,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3718,
+      "metric": 11,
+      "total_ms": 1.0266,
+      "maximum_ms": 0.0144,
+      "calls": 150,
+      "items": 4812
+    },
+    {
+      "tic": 3718,
+      "metric": 12,
+      "total_ms": 0.004,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3718,
+      "metric": 13,
+      "total_ms": 0.0791,
+      "maximum_ms": 0.0015,
+      "calls": 102,
+      "items": 102
+    },
+    {
+      "tic": 3735,
+      "metric": 7,
+      "total_ms": 1.3231,
+      "maximum_ms": 0.0231,
+      "calls": 152,
+      "items": 0
+    },
+    {
+      "tic": 3735,
+      "metric": 8,
+      "total_ms": 0.0112,
+      "maximum_ms": 0.0003,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3735,
+      "metric": 11,
+      "total_ms": 1.1654,
+      "maximum_ms": 0.0223,
+      "calls": 150,
+      "items": 4779
+    },
+    {
+      "tic": 3735,
+      "metric": 12,
+      "total_ms": 0.0047,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3735,
+      "metric": 13,
+      "total_ms": 0.0761,
+      "maximum_ms": 0.0016,
+      "calls": 103,
+      "items": 103
+    },
+    {
+      "tic": 3752,
+      "metric": 0,
+      "total_ms": 1.7279,
+      "maximum_ms": 0.3359,
+      "calls": 56,
+      "items": 0
+    },
+    {
+      "tic": 3752,
+      "metric": 1,
+      "total_ms": 1.5693,
+      "maximum_ms": 0.3248,
+      "calls": 32,
+      "items": 0
+    },
+    {
+      "tic": 3752,
+      "metric": 2,
+      "total_ms": 0.0181,
+      "maximum_ms": 0.006,
+      "calls": 32,
+      "items": 944
+    },
+    {
+      "tic": 3752,
+      "metric": 3,
+      "total_ms": 0.0988,
+      "maximum_ms": 0.0089,
+      "calls": 32,
+      "items": 1256
+    },
+    {
+      "tic": 3752,
+      "metric": 6,
+      "total_ms": 0.0239,
+      "maximum_ms": 0.0024,
+      "calls": 25,
+      "items": 25
+    },
+    {
+      "tic": 3752,
+      "metric": 7,
+      "total_ms": 1.4585,
+      "maximum_ms": 0.0264,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3752,
+      "metric": 8,
+      "total_ms": 0.0107,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3752,
+      "metric": 11,
+      "total_ms": 1.3013,
+      "maximum_ms": 0.0247,
+      "calls": 150,
+      "items": 4974
+    },
+    {
+      "tic": 3752,
+      "metric": 12,
+      "total_ms": 0.0037,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3752,
+      "metric": 13,
+      "total_ms": 0.0772,
+      "maximum_ms": 0.0013,
+      "calls": 100,
+      "items": 100
+    },
+    {
+      "tic": 3769,
+      "metric": 7,
+      "total_ms": 1.8467,
+      "maximum_ms": 0.0365,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3769,
+      "metric": 8,
+      "total_ms": 0.0104,
+      "maximum_ms": 0.0005,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3769,
+      "metric": 11,
+      "total_ms": 1.6793,
+      "maximum_ms": 0.0342,
+      "calls": 151,
+      "items": 5241
+    },
+    {
+      "tic": 3769,
+      "metric": 12,
+      "total_ms": 0.0037,
+      "maximum_ms": 0.0001,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3769,
+      "metric": 13,
+      "total_ms": 0.0833,
+      "maximum_ms": 0.0038,
+      "calls": 103,
+      "items": 103
+    },
+    {
+      "tic": 3769,
+      "metric": 14,
+      "total_ms": 0.0191,
+      "maximum_ms": 0.0189,
+      "calls": 2,
+      "items": 0
+    },
+    {
+      "tic": 3769,
+      "metric": 15,
+      "total_ms": 0.0172,
+      "maximum_ms": 0.0172,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 3769,
+      "metric": 16,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 3769,
+      "metric": 17,
+      "total_ms": 0.0001,
+      "maximum_ms": 0.0001,
+      "calls": 1,
+      "items": 1
+    },
+    {
+      "tic": 3786,
+      "metric": 0,
+      "total_ms": 1.2452,
+      "maximum_ms": 0.2943,
+      "calls": 7,
+      "items": 0
+    },
+    {
+      "tic": 3786,
+      "metric": 1,
+      "total_ms": 1.1882,
+      "maximum_ms": 0.2865,
+      "calls": 5,
+      "items": 0
+    },
+    {
+      "tic": 3786,
+      "metric": 2,
+      "total_ms": 0.0173,
+      "maximum_ms": 0.0041,
+      "calls": 5,
+      "items": 1159
+    },
+    {
+      "tic": 3786,
+      "metric": 3,
+      "total_ms": 0.0292,
+      "maximum_ms": 0.0082,
+      "calls": 5,
+      "items": 487
+    },
+    {
+      "tic": 3786,
+      "metric": 6,
+      "total_ms": 0.0055,
+      "maximum_ms": 0.0017,
+      "calls": 4,
+      "items": 4
+    },
+    {
+      "tic": 3786,
+      "metric": 7,
+      "total_ms": 1.2546,
+      "maximum_ms": 0.0184,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3786,
+      "metric": 8,
+      "total_ms": 0.01,
+      "maximum_ms": 0.0003,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3786,
+      "metric": 11,
+      "total_ms": 1.0941,
+      "maximum_ms": 0.0171,
+      "calls": 150,
+      "items": 4847
+    },
+    {
+      "tic": 3786,
+      "metric": 12,
+      "total_ms": 0.0036,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3786,
+      "metric": 13,
+      "total_ms": 0.0803,
+      "maximum_ms": 0.0016,
+      "calls": 102,
+      "items": 102
+    },
+    {
+      "tic": 3803,
+      "metric": 7,
+      "total_ms": 1.5856,
+      "maximum_ms": 0.0294,
+      "calls": 153,
+      "items": 0
+    },
+    {
+      "tic": 3803,
+      "metric": 8,
+      "total_ms": 0.0112,
+      "maximum_ms": 0.0009,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3803,
+      "metric": 11,
+      "total_ms": 1.4212,
+      "maximum_ms": 0.0275,
+      "calls": 150,
+      "items": 4673
+    },
+    {
+      "tic": 3803,
+      "metric": 12,
+      "total_ms": 0.0044,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3803,
+      "metric": 13,
+      "total_ms": 0.0794,
+      "maximum_ms": 0.0013,
+      "calls": 103,
+      "items": 103
+    },
+    {
+      "tic": 3820,
+      "metric": 0,
+      "total_ms": 1.6529,
+      "maximum_ms": 0.3374,
+      "calls": 36,
+      "items": 0
+    },
+    {
+      "tic": 3820,
+      "metric": 1,
+      "total_ms": 1.4973,
+      "maximum_ms": 0.3276,
+      "calls": 32,
+      "items": 0
+    },
+    {
+      "tic": 3820,
+      "metric": 2,
+      "total_ms": 0.017,
+      "maximum_ms": 0.0057,
+      "calls": 32,
+      "items": 932
+    },
+    {
+      "tic": 3820,
+      "metric": 3,
+      "total_ms": 0.0968,
+      "maximum_ms": 0.01,
+      "calls": 32,
+      "items": 1256
+    },
+    {
+      "tic": 3820,
+      "metric": 6,
+      "total_ms": 0.027,
+      "maximum_ms": 0.0024,
+      "calls": 26,
+      "items": 26
+    },
+    {
+      "tic": 3820,
+      "metric": 7,
+      "total_ms": 1.5181,
+      "maximum_ms": 0.0254,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3820,
+      "metric": 8,
+      "total_ms": 0.0106,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3820,
+      "metric": 11,
+      "total_ms": 1.3533,
+      "maximum_ms": 0.0238,
+      "calls": 150,
+      "items": 4949
+    },
+    {
+      "tic": 3820,
+      "metric": 12,
+      "total_ms": 0.0038,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3820,
+      "metric": 13,
+      "total_ms": 0.0815,
+      "maximum_ms": 0.0014,
+      "calls": 104,
+      "items": 104
+    },
+    {
+      "tic": 3837,
+      "metric": 7,
+      "total_ms": 1.381,
+      "maximum_ms": 0.0206,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3837,
+      "metric": 8,
+      "total_ms": 0.0112,
+      "maximum_ms": 0.0003,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3837,
+      "metric": 11,
+      "total_ms": 1.2211,
+      "maximum_ms": 0.0202,
+      "calls": 150,
+      "items": 5101
+    },
+    {
+      "tic": 3837,
+      "metric": 12,
+      "total_ms": 0.005,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3837,
+      "metric": 13,
+      "total_ms": 0.0783,
+      "maximum_ms": 0.0013,
+      "calls": 103,
+      "items": 103
+    },
+    {
+      "tic": 3837,
+      "metric": 14,
+      "total_ms": 0.0125,
+      "maximum_ms": 0.0125,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 3837,
+      "metric": 15,
+      "total_ms": 0.0113,
+      "maximum_ms": 0.0113,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 3837,
+      "metric": 16,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 3837,
+      "metric": 17,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1,
+      "items": 1
+    },
+    {
+      "tic": 3854,
+      "metric": 0,
+      "total_ms": 10.0551,
+      "maximum_ms": 0.3445,
+      "calls": 946,
+      "items": 0
+    },
+    {
+      "tic": 3854,
+      "metric": 1,
+      "total_ms": 2.6986,
+      "maximum_ms": 0.3344,
+      "calls": 943,
+      "items": 0
+    },
+    {
+      "tic": 3854,
+      "metric": 2,
+      "total_ms": 2.443,
+      "maximum_ms": 0.0077,
+      "calls": 943,
+      "items": 178200
+    },
+    {
+      "tic": 3854,
+      "metric": 3,
+      "total_ms": 3.9179,
+      "maximum_ms": 0.0115,
+      "calls": 943,
+      "items": 75817
+    },
+    {
+      "tic": 3854,
+      "metric": 6,
+      "total_ms": 0.6786,
+      "maximum_ms": 0.0021,
+      "calls": 937,
+      "items": 937
+    },
+    {
+      "tic": 3854,
+      "metric": 7,
+      "total_ms": 1.3799,
+      "maximum_ms": 0.0183,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3854,
+      "metric": 8,
+      "total_ms": 0.0103,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3854,
+      "metric": 11,
+      "total_ms": 1.2171,
+      "maximum_ms": 0.0171,
+      "calls": 150,
+      "items": 4765
+    },
+    {
+      "tic": 3854,
+      "metric": 12,
+      "total_ms": 0.0043,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3854,
+      "metric": 13,
+      "total_ms": 0.0818,
+      "maximum_ms": 0.0015,
+      "calls": 101,
+      "items": 101
+    },
+    {
+      "tic": 3871,
+      "metric": 7,
+      "total_ms": 1.5063,
+      "maximum_ms": 0.0687,
+      "calls": 153,
+      "items": 0
+    },
+    {
+      "tic": 3871,
+      "metric": 8,
+      "total_ms": 0.013,
+      "maximum_ms": 0.0003,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3871,
+      "metric": 11,
+      "total_ms": 1.3455,
+      "maximum_ms": 0.0669,
+      "calls": 150,
+      "items": 4776
+    },
+    {
+      "tic": 3871,
+      "metric": 12,
+      "total_ms": 0.0041,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3871,
+      "metric": 13,
+      "total_ms": 0.0772,
+      "maximum_ms": 0.0014,
+      "calls": 100,
+      "items": 100
+    },
+    {
+      "tic": 3888,
+      "metric": 0,
+      "total_ms": 1.3866,
+      "maximum_ms": 0.2973,
+      "calls": 57,
+      "items": 0
+    },
+    {
+      "tic": 3888,
+      "metric": 1,
+      "total_ms": 1.2481,
+      "maximum_ms": 0.289,
+      "calls": 32,
+      "items": 0
+    },
+    {
+      "tic": 3888,
+      "metric": 2,
+      "total_ms": 0.0162,
+      "maximum_ms": 0.0055,
+      "calls": 32,
+      "items": 929
+    },
+    {
+      "tic": 3888,
+      "metric": 3,
+      "total_ms": 0.0854,
+      "maximum_ms": 0.0063,
+      "calls": 32,
+      "items": 1256
+    },
+    {
+      "tic": 3888,
+      "metric": 6,
+      "total_ms": 0.0209,
+      "maximum_ms": 0.0015,
+      "calls": 25,
+      "items": 25
+    },
+    {
+      "tic": 3888,
+      "metric": 7,
+      "total_ms": 1.278,
+      "maximum_ms": 0.0226,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3888,
+      "metric": 8,
+      "total_ms": 0.0116,
+      "maximum_ms": 0.0003,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3888,
+      "metric": 11,
+      "total_ms": 1.1185,
+      "maximum_ms": 0.0213,
+      "calls": 150,
+      "items": 4928
+    },
+    {
+      "tic": 3888,
+      "metric": 12,
+      "total_ms": 0.0046,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3888,
+      "metric": 13,
+      "total_ms": 0.0779,
+      "maximum_ms": 0.0012,
+      "calls": 106,
+      "items": 106
+    },
+    {
+      "tic": 3905,
+      "metric": 7,
+      "total_ms": 1.4251,
+      "maximum_ms": 0.0231,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3905,
+      "metric": 8,
+      "total_ms": 0.0105,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3905,
+      "metric": 11,
+      "total_ms": 1.2632,
+      "maximum_ms": 0.0225,
+      "calls": 150,
+      "items": 5149
+    },
+    {
+      "tic": 3905,
+      "metric": 12,
+      "total_ms": 0.0039,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3905,
+      "metric": 13,
+      "total_ms": 0.0793,
+      "maximum_ms": 0.0014,
+      "calls": 104,
+      "items": 104
+    },
+    {
+      "tic": 3905,
+      "metric": 14,
+      "total_ms": 0.017,
+      "maximum_ms": 0.0168,
+      "calls": 2,
+      "items": 0
+    },
+    {
+      "tic": 3905,
+      "metric": 15,
+      "total_ms": 0.0155,
+      "maximum_ms": 0.0155,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 3905,
+      "metric": 16,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 3905,
+      "metric": 17,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1,
+      "items": 1
+    },
+    {
+      "tic": 3922,
+      "metric": 0,
+      "total_ms": 1.2335,
+      "maximum_ms": 0.2859,
+      "calls": 7,
+      "items": 0
+    },
+    {
+      "tic": 3922,
+      "metric": 1,
+      "total_ms": 1.1776,
+      "maximum_ms": 0.2777,
+      "calls": 5,
+      "items": 0
+    },
+    {
+      "tic": 3922,
+      "metric": 2,
+      "total_ms": 0.0175,
+      "maximum_ms": 0.0043,
+      "calls": 5,
+      "items": 1154
+    },
+    {
+      "tic": 3922,
+      "metric": 3,
+      "total_ms": 0.0274,
+      "maximum_ms": 0.007,
+      "calls": 5,
+      "items": 487
+    },
+    {
+      "tic": 3922,
+      "metric": 6,
+      "total_ms": 0.0056,
+      "maximum_ms": 0.0016,
+      "calls": 4,
+      "items": 4
+    },
+    {
+      "tic": 3922,
+      "metric": 7,
+      "total_ms": 1.2164,
+      "maximum_ms": 0.0157,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3922,
+      "metric": 8,
+      "total_ms": 0.0109,
+      "maximum_ms": 0.0003,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3922,
+      "metric": 11,
+      "total_ms": 1.0562,
+      "maximum_ms": 0.0145,
+      "calls": 150,
+      "items": 4752
+    },
+    {
+      "tic": 3922,
+      "metric": 12,
+      "total_ms": 0.0042,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3922,
+      "metric": 13,
+      "total_ms": 0.0809,
+      "maximum_ms": 0.0014,
+      "calls": 103,
+      "items": 103
+    },
+    {
+      "tic": 3939,
+      "metric": 7,
+      "total_ms": 1.4689,
+      "maximum_ms": 0.0318,
+      "calls": 154,
+      "items": 0
+    },
+    {
+      "tic": 3939,
+      "metric": 8,
+      "total_ms": 0.0119,
+      "maximum_ms": 0.0005,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3939,
+      "metric": 11,
+      "total_ms": 1.3012,
+      "maximum_ms": 0.0301,
+      "calls": 151,
+      "items": 4856
+    },
+    {
+      "tic": 3939,
+      "metric": 12,
+      "total_ms": 0.0041,
+      "maximum_ms": 0.0001,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3939,
+      "metric": 13,
+      "total_ms": 0.0808,
+      "maximum_ms": 0.0016,
+      "calls": 102,
+      "items": 102
+    },
+    {
+      "tic": 3956,
+      "metric": 0,
+      "total_ms": 2.1285,
+      "maximum_ms": 0.4949,
+      "calls": 37,
+      "items": 0
+    },
+    {
+      "tic": 3956,
+      "metric": 1,
+      "total_ms": 1.9546,
+      "maximum_ms": 0.4783,
+      "calls": 32,
+      "items": 0
+    },
+    {
+      "tic": 3956,
+      "metric": 2,
+      "total_ms": 0.0231,
+      "maximum_ms": 0.0082,
+      "calls": 32,
+      "items": 924
+    },
+    {
+      "tic": 3956,
+      "metric": 3,
+      "total_ms": 0.1085,
+      "maximum_ms": 0.0102,
+      "calls": 32,
+      "items": 1256
+    },
+    {
+      "tic": 3956,
+      "metric": 6,
+      "total_ms": 0.026,
+      "maximum_ms": 0.0022,
+      "calls": 26,
+      "items": 26
+    },
+    {
+      "tic": 3956,
+      "metric": 7,
+      "total_ms": 1.4666,
+      "maximum_ms": 0.0245,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3956,
+      "metric": 8,
+      "total_ms": 0.0107,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3956,
+      "metric": 11,
+      "total_ms": 1.3088,
+      "maximum_ms": 0.0231,
+      "calls": 150,
+      "items": 4959
+    },
+    {
+      "tic": 3956,
+      "metric": 12,
+      "total_ms": 0.0039,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3956,
+      "metric": 13,
+      "total_ms": 0.0787,
+      "maximum_ms": 0.0013,
+      "calls": 103,
+      "items": 103
+    },
+    {
+      "tic": 3973,
+      "metric": 7,
+      "total_ms": 1.6573,
+      "maximum_ms": 0.0287,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3973,
+      "metric": 8,
+      "total_ms": 0.01,
+      "maximum_ms": 0.0003,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3973,
+      "metric": 11,
+      "total_ms": 1.497,
+      "maximum_ms": 0.0282,
+      "calls": 150,
+      "items": 5157
+    },
+    {
+      "tic": 3973,
+      "metric": 12,
+      "total_ms": 0.0043,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3973,
+      "metric": 13,
+      "total_ms": 0.0773,
+      "maximum_ms": 0.0013,
+      "calls": 101,
+      "items": 101
+    },
+    {
+      "tic": 3973,
+      "metric": 14,
+      "total_ms": 0.0239,
+      "maximum_ms": 0.0239,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 3973,
+      "metric": 15,
+      "total_ms": 0.0222,
+      "maximum_ms": 0.0222,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 3973,
+      "metric": 16,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 3973,
+      "metric": 17,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1,
+      "items": 1
+    },
+    {
+      "tic": 3990,
+      "metric": 0,
+      "total_ms": 1.718,
+      "maximum_ms": 0.4116,
+      "calls": 8,
+      "items": 0
+    },
+    {
+      "tic": 3990,
+      "metric": 1,
+      "total_ms": 1.6426,
+      "maximum_ms": 0.3934,
+      "calls": 5,
+      "items": 0
+    },
+    {
+      "tic": 3990,
+      "metric": 2,
+      "total_ms": 0.0248,
+      "maximum_ms": 0.0076,
+      "calls": 5,
+      "items": 1147
+    },
+    {
+      "tic": 3990,
+      "metric": 3,
+      "total_ms": 0.0401,
+      "maximum_ms": 0.01,
+      "calls": 5,
+      "items": 487
+    },
+    {
+      "tic": 3990,
+      "metric": 6,
+      "total_ms": 0.0048,
+      "maximum_ms": 0.0016,
+      "calls": 3,
+      "items": 3
+    },
+    {
+      "tic": 3990,
+      "metric": 7,
+      "total_ms": 1.6306,
+      "maximum_ms": 0.0273,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 3990,
+      "metric": 8,
+      "total_ms": 0.0109,
+      "maximum_ms": 0.0007,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3990,
+      "metric": 11,
+      "total_ms": 1.4635,
+      "maximum_ms": 0.026,
+      "calls": 150,
+      "items": 4639
+    },
+    {
+      "tic": 3990,
+      "metric": 12,
+      "total_ms": 0.0039,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 3990,
+      "metric": 13,
+      "total_ms": 0.0809,
+      "maximum_ms": 0.0015,
+      "calls": 100,
+      "items": 100
+    },
+    {
+      "tic": 4007,
+      "metric": 7,
+      "total_ms": 1.3029,
+      "maximum_ms": 0.0232,
+      "calls": 153,
+      "items": 0
+    },
+    {
+      "tic": 4007,
+      "metric": 8,
+      "total_ms": 0.0116,
+      "maximum_ms": 0.0004,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4007,
+      "metric": 11,
+      "total_ms": 1.1435,
+      "maximum_ms": 0.0219,
+      "calls": 150,
+      "items": 4729
+    },
+    {
+      "tic": 4007,
+      "metric": 12,
+      "total_ms": 0.0039,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4007,
+      "metric": 13,
+      "total_ms": 0.0763,
+      "maximum_ms": 0.0014,
+      "calls": 101,
+      "items": 101
+    },
+    {
+      "tic": 4024,
+      "metric": 0,
+      "total_ms": 9.9688,
+      "maximum_ms": 0.3195,
+      "calls": 995,
+      "items": 0
+    },
+    {
+      "tic": 4024,
+      "metric": 1,
+      "total_ms": 2.6796,
+      "maximum_ms": 0.3108,
+      "calls": 970,
+      "items": 0
+    },
+    {
+      "tic": 4024,
+      "metric": 2,
+      "total_ms": 2.3737,
+      "maximum_ms": 0.0082,
+      "calls": 970,
+      "items": 175877
+    },
+    {
+      "tic": 4024,
+      "metric": 3,
+      "total_ms": 3.9037,
+      "maximum_ms": 0.0093,
+      "calls": 970,
+      "items": 76586
+    },
+    {
+      "tic": 4024,
+      "metric": 6,
+      "total_ms": 0.6885,
+      "maximum_ms": 0.002,
+      "calls": 959,
+      "items": 959
+    },
+    {
+      "tic": 4024,
+      "metric": 7,
+      "total_ms": 1.499,
+      "maximum_ms": 0.0252,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4024,
+      "metric": 8,
+      "total_ms": 0.0105,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4024,
+      "metric": 11,
+      "total_ms": 1.3434,
+      "maximum_ms": 0.0239,
+      "calls": 150,
+      "items": 4935
+    },
+    {
+      "tic": 4024,
+      "metric": 12,
+      "total_ms": 0.0041,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4024,
+      "metric": 13,
+      "total_ms": 0.076,
+      "maximum_ms": 0.0016,
+      "calls": 100,
+      "items": 100
+    },
+    {
+      "tic": 4041,
+      "metric": 7,
+      "total_ms": 1.4058,
+      "maximum_ms": 0.0268,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4041,
+      "metric": 8,
+      "total_ms": 0.0116,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4041,
+      "metric": 11,
+      "total_ms": 1.2432,
+      "maximum_ms": 0.0248,
+      "calls": 150,
+      "items": 5129
+    },
+    {
+      "tic": 4041,
+      "metric": 12,
+      "total_ms": 0.0044,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4041,
+      "metric": 13,
+      "total_ms": 0.0808,
+      "maximum_ms": 0.0013,
+      "calls": 107,
+      "items": 107
+    },
+    {
+      "tic": 4041,
+      "metric": 14,
+      "total_ms": 0.019,
+      "maximum_ms": 0.0188,
+      "calls": 2,
+      "items": 0
+    },
+    {
+      "tic": 4041,
+      "metric": 15,
+      "total_ms": 0.017,
+      "maximum_ms": 0.017,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 4041,
+      "metric": 16,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 4041,
+      "metric": 17,
+      "total_ms": 0.0001,
+      "maximum_ms": 0.0001,
+      "calls": 1,
+      "items": 1
+    },
+    {
+      "tic": 4058,
+      "metric": 0,
+      "total_ms": 1.2399,
+      "maximum_ms": 0.289,
+      "calls": 7,
+      "items": 0
+    },
+    {
+      "tic": 4058,
+      "metric": 1,
+      "total_ms": 1.1845,
+      "maximum_ms": 0.2811,
+      "calls": 5,
+      "items": 0
+    },
+    {
+      "tic": 4058,
+      "metric": 2,
+      "total_ms": 0.0168,
+      "maximum_ms": 0.004,
+      "calls": 5,
+      "items": 1145
+    },
+    {
+      "tic": 4058,
+      "metric": 3,
+      "total_ms": 0.0276,
+      "maximum_ms": 0.0071,
+      "calls": 5,
+      "items": 487
+    },
+    {
+      "tic": 4058,
+      "metric": 6,
+      "total_ms": 0.0057,
+      "maximum_ms": 0.0018,
+      "calls": 4,
+      "items": 4
+    },
+    {
+      "tic": 4058,
+      "metric": 7,
+      "total_ms": 1.1947,
+      "maximum_ms": 0.0151,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4058,
+      "metric": 8,
+      "total_ms": 0.0115,
+      "maximum_ms": 0.0003,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4058,
+      "metric": 11,
+      "total_ms": 1.0366,
+      "maximum_ms": 0.0139,
+      "calls": 150,
+      "items": 4614
+    },
+    {
+      "tic": 4058,
+      "metric": 12,
+      "total_ms": 0.0033,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4058,
+      "metric": 13,
+      "total_ms": 0.0773,
+      "maximum_ms": 0.0013,
+      "calls": 102,
+      "items": 102
+    },
+    {
+      "tic": 4075,
+      "metric": 7,
+      "total_ms": 1.2279,
+      "maximum_ms": 0.0171,
+      "calls": 153,
+      "items": 0
+    },
+    {
+      "tic": 4075,
+      "metric": 8,
+      "total_ms": 0.0113,
+      "maximum_ms": 0.0004,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4075,
+      "metric": 11,
+      "total_ms": 1.0654,
+      "maximum_ms": 0.0159,
+      "calls": 150,
+      "items": 4708
+    },
+    {
+      "tic": 4075,
+      "metric": 12,
+      "total_ms": 0.0046,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4075,
+      "metric": 13,
+      "total_ms": 0.0818,
+      "maximum_ms": 0.0013,
+      "calls": 109,
+      "items": 109
+    },
+    {
+      "tic": 4092,
+      "metric": 0,
+      "total_ms": 1.8151,
+      "maximum_ms": 0.4275,
+      "calls": 36,
+      "items": 0
+    },
+    {
+      "tic": 4092,
+      "metric": 1,
+      "total_ms": 1.6546,
+      "maximum_ms": 0.4146,
+      "calls": 32,
+      "items": 0
+    },
+    {
+      "tic": 4092,
+      "metric": 2,
+      "total_ms": 0.0189,
+      "maximum_ms": 0.0065,
+      "calls": 32,
+      "items": 914
+    },
+    {
+      "tic": 4092,
+      "metric": 3,
+      "total_ms": 0.1008,
+      "maximum_ms": 0.0106,
+      "calls": 32,
+      "items": 1256
+    },
+    {
+      "tic": 4092,
+      "metric": 6,
+      "total_ms": 0.0259,
+      "maximum_ms": 0.0025,
+      "calls": 26,
+      "items": 26
+    },
+    {
+      "tic": 4092,
+      "metric": 7,
+      "total_ms": 1.5238,
+      "maximum_ms": 0.0262,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4092,
+      "metric": 8,
+      "total_ms": 0.0113,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4092,
+      "metric": 11,
+      "total_ms": 1.3645,
+      "maximum_ms": 0.0256,
+      "calls": 150,
+      "items": 4933
+    },
+    {
+      "tic": 4092,
+      "metric": 12,
+      "total_ms": 0.0034,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4092,
+      "metric": 13,
+      "total_ms": 0.0765,
+      "maximum_ms": 0.0016,
+      "calls": 102,
+      "items": 102
+    },
+    {
+      "tic": 4109,
+      "metric": 7,
+      "total_ms": 1.3633,
+      "maximum_ms": 0.0253,
+      "calls": 152,
+      "items": 0
+    },
+    {
+      "tic": 4109,
+      "metric": 8,
+      "total_ms": 0.0112,
+      "maximum_ms": 0.0002,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4109,
+      "metric": 11,
+      "total_ms": 1.196,
+      "maximum_ms": 0.0239,
+      "calls": 151,
+      "items": 5293
+    },
+    {
+      "tic": 4109,
+      "metric": 12,
+      "total_ms": 0.0052,
+      "maximum_ms": 0.0001,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4109,
+      "metric": 13,
+      "total_ms": 0.0847,
+      "maximum_ms": 0.0042,
+      "calls": 105,
+      "items": 105
+    },
+    {
+      "tic": 4109,
+      "metric": 14,
+      "total_ms": 0.0179,
+      "maximum_ms": 0.0179,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 4109,
+      "metric": 15,
+      "total_ms": 0.0165,
+      "maximum_ms": 0.0165,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 4109,
+      "metric": 16,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 4109,
+      "metric": 17,
+      "total_ms": 0.0001,
+      "maximum_ms": 0.0001,
+      "calls": 1,
+      "items": 1
+    },
+    {
+      "tic": 4126,
+      "metric": 0,
+      "total_ms": 1.3029,
+      "maximum_ms": 0.3284,
+      "calls": 8,
+      "items": 0
+    },
+    {
+      "tic": 4126,
+      "metric": 1,
+      "total_ms": 1.2415,
+      "maximum_ms": 0.315,
+      "calls": 5,
+      "items": 0
+    },
+    {
+      "tic": 4126,
+      "metric": 2,
+      "total_ms": 0.0169,
+      "maximum_ms": 0.0043,
+      "calls": 5,
+      "items": 1134
+    },
+    {
+      "tic": 4126,
+      "metric": 3,
+      "total_ms": 0.0338,
+      "maximum_ms": 0.0083,
+      "calls": 5,
+      "items": 487
+    },
+    {
+      "tic": 4126,
+      "metric": 6,
+      "total_ms": 0.0062,
+      "maximum_ms": 0.0018,
+      "calls": 4,
+      "items": 4
+    },
+    {
+      "tic": 4126,
+      "metric": 7,
+      "total_ms": 1.3832,
+      "maximum_ms": 0.0227,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4126,
+      "metric": 8,
+      "total_ms": 0.011,
+      "maximum_ms": 0.001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4126,
+      "metric": 11,
+      "total_ms": 1.2199,
+      "maximum_ms": 0.0184,
+      "calls": 150,
+      "items": 4611
+    },
+    {
+      "tic": 4126,
+      "metric": 12,
+      "total_ms": 0.0037,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4126,
+      "metric": 13,
+      "total_ms": 0.0834,
+      "maximum_ms": 0.0014,
+      "calls": 105,
+      "items": 105
+    },
+    {
+      "tic": 4143,
+      "metric": 7,
+      "total_ms": 1.3288,
+      "maximum_ms": 0.0248,
+      "calls": 153,
+      "items": 0
+    },
+    {
+      "tic": 4143,
+      "metric": 8,
+      "total_ms": 0.0097,
+      "maximum_ms": 0.0003,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4143,
+      "metric": 11,
+      "total_ms": 1.17,
+      "maximum_ms": 0.0233,
+      "calls": 150,
+      "items": 4675
+    },
+    {
+      "tic": 4143,
+      "metric": 12,
+      "total_ms": 0.0042,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4143,
+      "metric": 13,
+      "total_ms": 0.0801,
+      "maximum_ms": 0.0013,
+      "calls": 106,
+      "items": 106
+    },
+    {
+      "tic": 4160,
+      "metric": 0,
+      "total_ms": 1.7013,
+      "maximum_ms": 0.397,
+      "calls": 56,
+      "items": 0
+    },
+    {
+      "tic": 4160,
+      "metric": 1,
+      "total_ms": 1.5461,
+      "maximum_ms": 0.3852,
+      "calls": 32,
+      "items": 0
+    },
+    {
+      "tic": 4160,
+      "metric": 2,
+      "total_ms": 0.0177,
+      "maximum_ms": 0.0059,
+      "calls": 32,
+      "items": 911
+    },
+    {
+      "tic": 4160,
+      "metric": 3,
+      "total_ms": 0.0955,
+      "maximum_ms": 0.0087,
+      "calls": 32,
+      "items": 1256
+    },
+    {
+      "tic": 4160,
+      "metric": 6,
+      "total_ms": 0.0243,
+      "maximum_ms": 0.0023,
+      "calls": 26,
+      "items": 26
+    },
+    {
+      "tic": 4160,
+      "metric": 7,
+      "total_ms": 1.3897,
+      "maximum_ms": 0.0229,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4160,
+      "metric": 8,
+      "total_ms": 0.0117,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4160,
+      "metric": 11,
+      "total_ms": 1.2318,
+      "maximum_ms": 0.0224,
+      "calls": 150,
+      "items": 4905
+    },
+    {
+      "tic": 4160,
+      "metric": 12,
+      "total_ms": 0.0034,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4160,
+      "metric": 13,
+      "total_ms": 0.0746,
+      "maximum_ms": 0.0017,
+      "calls": 101,
+      "items": 101
+    },
+    {
+      "tic": 4177,
+      "metric": 7,
+      "total_ms": 1.4237,
+      "maximum_ms": 0.0258,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4177,
+      "metric": 8,
+      "total_ms": 0.0114,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4177,
+      "metric": 11,
+      "total_ms": 1.2638,
+      "maximum_ms": 0.0244,
+      "calls": 150,
+      "items": 5091
+    },
+    {
+      "tic": 4177,
+      "metric": 12,
+      "total_ms": 0.0033,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4177,
+      "metric": 13,
+      "total_ms": 0.0807,
+      "maximum_ms": 0.0012,
+      "calls": 108,
+      "items": 108
+    },
+    {
+      "tic": 4177,
+      "metric": 14,
+      "total_ms": 0.0189,
+      "maximum_ms": 0.0187,
+      "calls": 2,
+      "items": 0
+    },
+    {
+      "tic": 4177,
+      "metric": 15,
+      "total_ms": 0.0173,
+      "maximum_ms": 0.0173,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 4177,
+      "metric": 16,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 4177,
+      "metric": 17,
+      "total_ms": 0.0001,
+      "maximum_ms": 0.0001,
+      "calls": 1,
+      "items": 1
+    },
+    {
+      "tic": 4194,
+      "metric": 0,
+      "total_ms": 10.7995,
+      "maximum_ms": 0.4498,
+      "calls": 946,
+      "items": 0
+    },
+    {
+      "tic": 4194,
+      "metric": 1,
+      "total_ms": 3.361,
+      "maximum_ms": 0.436,
+      "calls": 943,
+      "items": 0
+    },
+    {
+      "tic": 4194,
+      "metric": 2,
+      "total_ms": 2.4196,
+      "maximum_ms": 0.0084,
+      "calls": 943,
+      "items": 172307
+    },
+    {
+      "tic": 4194,
+      "metric": 3,
+      "total_ms": 3.9968,
+      "maximum_ms": 0.0129,
+      "calls": 943,
+      "items": 75817
+    },
+    {
+      "tic": 4194,
+      "metric": 6,
+      "total_ms": 0.6984,
+      "maximum_ms": 0.002,
+      "calls": 937,
+      "items": 937
+    },
+    {
+      "tic": 4194,
+      "metric": 7,
+      "total_ms": 1.6397,
+      "maximum_ms": 0.0277,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4194,
+      "metric": 8,
+      "total_ms": 0.0102,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4194,
+      "metric": 11,
+      "total_ms": 1.473,
+      "maximum_ms": 0.0265,
+      "calls": 150,
+      "items": 4614
+    },
+    {
+      "tic": 4194,
+      "metric": 12,
+      "total_ms": 0.0041,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4194,
+      "metric": 13,
+      "total_ms": 0.084,
+      "maximum_ms": 0.0015,
+      "calls": 106,
+      "items": 106
+    },
+    {
+      "tic": 4211,
+      "metric": 7,
+      "total_ms": 1.4256,
+      "maximum_ms": 0.0276,
+      "calls": 153,
+      "items": 0
+    },
+    {
+      "tic": 4211,
+      "metric": 8,
+      "total_ms": 0.0111,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4211,
+      "metric": 11,
+      "total_ms": 1.2617,
+      "maximum_ms": 0.0261,
+      "calls": 150,
+      "items": 4642
+    },
+    {
+      "tic": 4211,
+      "metric": 12,
+      "total_ms": 0.0041,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4211,
+      "metric": 13,
+      "total_ms": 0.0795,
+      "maximum_ms": 0.0014,
+      "calls": 108,
+      "items": 108
+    },
+    {
+      "tic": 4228,
+      "metric": 0,
+      "total_ms": 2.0529,
+      "maximum_ms": 0.4969,
+      "calls": 37,
+      "items": 0
+    },
+    {
+      "tic": 4228,
+      "metric": 1,
+      "total_ms": 1.8786,
+      "maximum_ms": 0.4749,
+      "calls": 32,
+      "items": 0
+    },
+    {
+      "tic": 4228,
+      "metric": 2,
+      "total_ms": 0.0251,
+      "maximum_ms": 0.0107,
+      "calls": 32,
+      "items": 897
+    },
+    {
+      "tic": 4228,
+      "metric": 3,
+      "total_ms": 0.1067,
+      "maximum_ms": 0.0109,
+      "calls": 32,
+      "items": 1256
+    },
+    {
+      "tic": 4228,
+      "metric": 6,
+      "total_ms": 0.0263,
+      "maximum_ms": 0.0025,
+      "calls": 25,
+      "items": 25
+    },
+    {
+      "tic": 4228,
+      "metric": 7,
+      "total_ms": 1.6506,
+      "maximum_ms": 0.0274,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4228,
+      "metric": 8,
+      "total_ms": 0.0106,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4228,
+      "metric": 11,
+      "total_ms": 1.495,
+      "maximum_ms": 0.0269,
+      "calls": 150,
+      "items": 4932
+    },
+    {
+      "tic": 4228,
+      "metric": 12,
+      "total_ms": 0.0036,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4228,
+      "metric": 13,
+      "total_ms": 0.0751,
+      "maximum_ms": 0.0014,
+      "calls": 100,
+      "items": 100
+    },
+    {
+      "tic": 4245,
+      "metric": 7,
+      "total_ms": 1.4723,
+      "maximum_ms": 0.0296,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4245,
+      "metric": 8,
+      "total_ms": 0.0115,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4245,
+      "metric": 11,
+      "total_ms": 1.3049,
+      "maximum_ms": 0.0281,
+      "calls": 150,
+      "items": 5022
+    },
+    {
+      "tic": 4245,
+      "metric": 12,
+      "total_ms": 0.0039,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4245,
+      "metric": 13,
+      "total_ms": 0.0865,
+      "maximum_ms": 0.0012,
+      "calls": 113,
+      "items": 113
+    },
+    {
+      "tic": 4245,
+      "metric": 14,
+      "total_ms": 0.027,
+      "maximum_ms": 0.027,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 4245,
+      "metric": 15,
+      "total_ms": 0.0245,
+      "maximum_ms": 0.0245,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 4245,
+      "metric": 16,
+      "total_ms": 0.0001,
+      "maximum_ms": 0.0001,
+      "calls": 1,
+      "items": 0
+    },
+    {
+      "tic": 4245,
+      "metric": 17,
+      "total_ms": 0.0,
+      "maximum_ms": 0.0,
+      "calls": 1,
+      "items": 1
+    },
+    {
+      "tic": 4262,
+      "metric": 0,
+      "total_ms": 1.6395,
+      "maximum_ms": 0.3691,
+      "calls": 9,
+      "items": 0
+    },
+    {
+      "tic": 4262,
+      "metric": 1,
+      "total_ms": 1.5574,
+      "maximum_ms": 0.356,
+      "calls": 5,
+      "items": 0
+    },
+    {
+      "tic": 4262,
+      "metric": 2,
+      "total_ms": 0.021,
+      "maximum_ms": 0.0051,
+      "calls": 5,
+      "items": 1121
+    },
+    {
+      "tic": 4262,
+      "metric": 3,
+      "total_ms": 0.0476,
+      "maximum_ms": 0.0117,
+      "calls": 5,
+      "items": 487
+    },
+    {
+      "tic": 4262,
+      "metric": 6,
+      "total_ms": 0.0072,
+      "maximum_ms": 0.0022,
+      "calls": 4,
+      "items": 4
+    },
+    {
+      "tic": 4262,
+      "metric": 7,
+      "total_ms": 1.5469,
+      "maximum_ms": 0.023,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4262,
+      "metric": 8,
+      "total_ms": 0.0102,
+      "maximum_ms": 0.0006,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4262,
+      "metric": 11,
+      "total_ms": 1.3843,
+      "maximum_ms": 0.0214,
+      "calls": 150,
+      "items": 4566
+    },
+    {
+      "tic": 4262,
+      "metric": 12,
+      "total_ms": 0.004,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4262,
+      "metric": 13,
+      "total_ms": 0.0813,
+      "maximum_ms": 0.0013,
+      "calls": 104,
+      "items": 104
+    },
+    {
+      "tic": 4279,
+      "metric": 7,
+      "total_ms": 1.271,
+      "maximum_ms": 0.0203,
+      "calls": 154,
+      "items": 0
+    },
+    {
+      "tic": 4279,
+      "metric": 8,
+      "total_ms": 0.011,
+      "maximum_ms": 0.0003,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4279,
+      "metric": 11,
+      "total_ms": 1.104,
+      "maximum_ms": 0.0187,
+      "calls": 151,
+      "items": 4769
+    },
+    {
+      "tic": 4279,
+      "metric": 12,
+      "total_ms": 0.0042,
+      "maximum_ms": 0.0002,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4279,
+      "metric": 13,
+      "total_ms": 0.0819,
+      "maximum_ms": 0.0033,
+      "calls": 106,
+      "items": 106
+    },
+    {
+      "tic": 4296,
+      "metric": 0,
+      "total_ms": 1.7529,
+      "maximum_ms": 0.3892,
+      "calls": 56,
+      "items": 0
+    },
+    {
+      "tic": 4296,
+      "metric": 1,
+      "total_ms": 1.5991,
+      "maximum_ms": 0.3766,
+      "calls": 32,
+      "items": 0
+    },
+    {
+      "tic": 4296,
+      "metric": 2,
+      "total_ms": 0.019,
+      "maximum_ms": 0.0074,
+      "calls": 32,
+      "items": 887
+    },
+    {
+      "tic": 4296,
+      "metric": 3,
+      "total_ms": 0.0919,
+      "maximum_ms": 0.0084,
+      "calls": 32,
+      "items": 1256
+    },
+    {
+      "tic": 4296,
+      "metric": 6,
+      "total_ms": 0.0237,
+      "maximum_ms": 0.0023,
+      "calls": 25,
+      "items": 25
+    },
+    {
+      "tic": 4296,
+      "metric": 7,
+      "total_ms": 1.5891,
+      "maximum_ms": 0.0299,
+      "calls": 151,
+      "items": 0
+    },
+    {
+      "tic": 4296,
+      "metric": 8,
+      "total_ms": 0.0111,
+      "maximum_ms": 0.0002,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4296,
+      "metric": 11,
+      "total_ms": 1.4304,
+      "maximum_ms": 0.0293,
+      "calls": 150,
+      "items": 4928
+    },
+    {
+      "tic": 4296,
+      "metric": 12,
+      "total_ms": 0.0038,
+      "maximum_ms": 0.0001,
+      "calls": 150,
+      "items": 0
+    },
+    {
+      "tic": 4296,
+      "metric": 13,
+      "total_ms": 0.0751,
+      "maximum_ms": 0.0014,
+      "calls": 98,
+      "items": 98
+    }
+  ],
+  "states": [
+    "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+    "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+  ],
+  "census": [
+    "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+    "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+  ],
+  "qualification": "Light-factor prototype, compared with its own uninstrumented source. Existing Candidate statements/arguments/list order are retained and restore exactly. Private stage timers and loop-entry integer counters add overhead; no new query, second traversal, saved actor fields or gameplay changes. Inclusive total overlaps stage timings. Items count existing loop entries, not unique actors or successful visibility checks."
+}

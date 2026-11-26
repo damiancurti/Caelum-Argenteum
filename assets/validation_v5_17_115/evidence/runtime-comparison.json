@@ -1,0 +1,12 @@
+{
+  "issue": 873,
+  "runtime_sha256": "767c48ed4fc15a1c6ec13af1d07cc6565d27ed338a3ccef3a37fa2afe1099c9e",
+  "baseline_sha256": "ccab9226618925716bff36b976ee6e6b75dace774ad22d58a569b7e6b1365a55",
+  "members": 18767,
+  "identical_members": 18765,
+  "changed": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "perception_byte_identical": true
+}

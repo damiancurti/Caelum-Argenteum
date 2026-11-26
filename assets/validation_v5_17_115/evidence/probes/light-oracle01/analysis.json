@@ -1,0 +1,36 @@
+{
+  "issue": 873,
+  "label": "light-oracle-run01",
+  "rows": [
+    {
+      "family": 0,
+      "visits": 1040061,
+      "rejected": 991248,
+      "new_rejected": 8373,
+      "visible": 0,
+      "contact": 0,
+      "range_mismatches": 0
+    },
+    {
+      "family": 1,
+      "visits": 205202,
+      "rejected": 122136,
+      "new_rejected": 23132,
+      "visible": 0,
+      "contact": 0,
+      "range_mismatches": 0
+    },
+    {
+      "family": 2,
+      "visits": 0,
+      "rejected": 0,
+      "new_rejected": 0,
+      "visible": 0,
+      "contact": 0,
+      "range_mismatches": 0
+    }
+  ],
+  "states_match": true,
+  "census_match": true,
+  "scope": "Every newly rejected bound invocation in the 42 sampled tics; calls include group targets, group allies and dense local candidates, not unique bodies. Frozen 114 sight/contact and exact Range equality; derived caches restored."
+}
