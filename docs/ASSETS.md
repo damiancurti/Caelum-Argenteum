@@ -1,6 +1,45 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.34** - 2026-11-14.
+Documentation version: **5.17.35** - 2026-11-14.
+
+## 5.17.35 - Avian regional gallery extension (#713, parent #463)
+
+Optional CA709G now includes Cachiru and Kakuy on the existing NOA ground,
+and Kelenken in Patagonia. Eight displays cover seven native species and four
+approved regions. The original five display positions and three plots remain;
+a contiguous NOA plot extends the room westward. CA463G and CA682G are unchanged.
+All model/material bytes and source provenance are reused. No new bitmap or
+model is generated. GALLERY.json and PROVENANCE.json under
+assets/source/art/regional_gallery_709 retain the current inspection data;
+the earlier layout is preserved with the new evidence.
+
+Run python assets/validation_v5_17_35/run_gallery.py --runtime
+build/caelum_argenteum_dev.pk3 --output build/avian-regions-author-01 --interactive.
+F1 overview, F2/F3 Litoral/Selva Pombero, F4 Patagonia, F5 walk, F6 Cuero,
+F7 Nahuelito, F8 Cachiru, F9 Kakuy, F11 Peuchen and F12 Kelenken. Number keys
+1/2/3/4 show repeated Litoral/Selva/Patagonia/NOA ground. These current controls
+supersede the earlier CA709G F8-F10 tiling bindings. Passive native figures
+retain real idle states; only diagnostic observer footsteps are muted.
+
+Four fixture files repeat. Independent checks verify exact exports and
+approved regional associations, nonoverlapping collision bodies, contiguous
+boundaries and cameras inside the room. Fresh/reload native phases pass
+37/78 assertions, including all eight identities/positions, advancing idle
+states and a 630-tic walk across three boundaries with unchanged movement
+speed. New avian views, overview, NOA tiling, Patagonia framing, reload and
+presentation were inspected. Existing unmodified model/combat and material
+evidence remains applicable.
+
+One700-tic eight-display distant overview records 1554.24 queue presents/s, p95 0.8553 ms, p99 1.0707 ms; mean simulation 28.5712 ms/tic.
+Recorded environment: Windows11 Pro26200, Ryzen9 5950X,32GB, RTX3070Ti;
+GZDoom4.14.2 Vulkan1280x720, uncapped/vsync off, background unpaused, audio5%.
+This queue-only sample establishes no GPU/display timing, repeatability,
+comparative cost, close-up budget or campaign/crowd acceptance. All
+18,394 package entries match src; only two release diagnostics differ
+from #711. Evidence: assets/validation_v5_17_35/evidence/SUMMARY.json.
+CA713-AVIAN-GALLERY-01, CA709-NATIVE-GALLERY-01 and individual art checks remain
+pending. Production encounters, population, flight, saves and broader 3D work
+are unchanged. Use isolated gallery saves, not campaign saves.
 
 ## 5.17.34 - Cachiru, Kakuy and Kelenken native models (#711, parent #461)
 

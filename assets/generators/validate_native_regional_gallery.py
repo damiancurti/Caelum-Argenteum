@@ -14,7 +14,7 @@ def validate(root=ROOT):
         for name,want in provenance['reused_source_sha256'].items():
             assert hashlib.sha256((root/name).read_bytes()).hexdigest()==want,'Changed reused source: '+name
         assert gallery['map']=='CA709G' and gallery['status']=='isolated_visual_inspection_not_campaign'
-        assert gallery['model_exports']==[b['export'] for b in gallery['model_bindings']]
+        assert gallery['model_exports']==list(dict.fromkeys(b['export'] for b in gallery['model_bindings']))
         actors={};radii={};exports=[]
         for binding in gallery['model_bindings']:
             report=json.loads((root/binding['export']).read_text())
@@ -43,7 +43,11 @@ def validate(root=ROOT):
         for name,want in material['sha256'].items():
             assert hashlib.sha256((root/'src'/name).read_bytes()).hexdigest()==want,'Changed regional material: '+name
         original=json.loads((root/'assets/source/art/regional_gallery_463/GALLERY.json').read_text())
-        assert gallery['plots']==original['plots'],'Existing regional plots changed'
+        assert gallery['plots'][1:]==original['plots'],'Existing regional plots changed'
+        assert gallery['plots'][0]==dict(region='Northwest Argentina',x=[-1536,-1024],floor='CRNOAGR'),'Unexpected NOA inspection plot'
+        extra=json.loads((root/'assets/source/art/regional_gallery_682/EXPORT.json').read_text())
+        for name,want in extra['sha256'].items():
+            assert hashlib.sha256((root/'src'/name).read_bytes()).hexdigest()==want,'Changed NOA material: '+name
         for s in gallery['subjects']:
             assert s['class']==actors[s['catalogue_id']]
             x,y,z=s['position'];left,right=plots[s['region']]['x'];radius=radii[s['class']]
@@ -54,7 +58,11 @@ def validate(root=ROOT):
         for a,b in zip(gallery['plots'],gallery['plots'][1:]):assert a['x'][1]==b['x'][0]
         assert gallery['walkway_y'][1]==gallery['plot_y'][0]
         keys=[v['key'] for v in gallery['views']]
-        assert len(keys)==len(set(keys)) and all(re.fullmatch(r'F(?:[1-9]|1[0-2])',k) for k in keys)
+        assert len(keys)==len(set(keys)) and all(re.fullmatch(r'(?:F(?:[1-9]|1[0-2])|[1-4])',k) for k in keys)
+        for view in gallery['views']:
+            if view.get('control'):continue
+            x,y,z=view['position']
+            assert gallery['plots'][0]['x'][0]<x<gallery['plots'][-1]['x'][1] and gallery['walkway_y'][0]<y<gallery['plot_y'][1] and 0<z<gallery['ceiling_height'],'Camera outside inspection room'
         assert sum(bool(v.get('control')) for v in gallery['views'])==1
         assert gallery['silent_observer_steps'] and gallery['animation_sample_wait_tics']==11
     except (OSError,ValueError,KeyError,AssertionError) as exc:

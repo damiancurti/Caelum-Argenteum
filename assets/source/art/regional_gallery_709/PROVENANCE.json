@@ -1,5 +1,5 @@
 {
-  "issue": 709,
+  "issue": 713,
   "parent_issue": 463,
   "status": "candidate_author_review_pending",
   "ownership": "Reuse existing owned regional materials and native folklore models; no image or geometry generation.",
@@ -11,7 +11,11 @@
     "assets/source/art/regional_gallery_463/GALLERY.json": "c4414a14c9d1b30414a6c3e97ecd3494e56301dd4c21fda43a09f0583251bc37",
     "assets/source/art/regional_gallery_463/EXPORT.json": "94eb9cbd972314d6a7fa8407c7131faee15cc1c87cfafed02f7a4fce6a615b38",
     "assets/source/art/regional_gallery_682/GALLERY.json": "e77384f9890453e9f6d8fe2f90d8632d2d6f56ad19865c83a77b8ff76e558771",
-    "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004"
+    "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
+    "assets/source/art/avian_711/EXPORT.json": "7278f91fcb6a88025256d4d3c4c48fa9aca420c97f24abf00255ece7f73419f4",
+    "assets/source/art/regional_gallery_682/EXPORT.json": "c3a329355a8fabdee008fd8e9d9c81fefba5bede8dc0d6cfb7547179102f8621"
   },
-  "scope": "Isolated diagnostic gallery; five native figures, four species, three existing regional grounds."
+  "scope": "Isolated diagnostic gallery; eight native figures, seven species, four reused regional grounds.",
+  "origin_issue": 709,
+  "previous_gallery_sha256": "75b556a23bb67e692fd87fae03ec5239f9c9ef80349ed8ab627e030c1bd4ce88"
 }

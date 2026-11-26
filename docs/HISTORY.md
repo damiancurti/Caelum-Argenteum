@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.34** - 2026-11-14.
+Documentation version: **5.17.35** - 2026-11-14.
+
+## 5.17.35 - Avian regional inspection (#713, 2026-11-14)
+
+Extended optional CA709G with Cachiru/Kakuy in NOA and Kelenken in Patagonia,
+retaining previous plots/figures and all native model/material bytes. Added
+data-driven views and camera containment checks. Four fixture files repeat;
+37/78 native assertions cover fresh/reload identity, position, idle, silent
+steps and all three boundaries. One700-tic distant overview records 1554.24 queue presents/s, p95 0.8553 ms, p99 1.0707 ms; mean simulation 28.5712 ms/tic;
+queue-only and small-footprint qualifications apply. Evidence:
+assets/validation_v5_17_35/evidence/SUMMARY.json. CA713-AVIAN-GALLERY-01
+originates here; it and CA709-NATIVE-GALLERY-01 remain unconfirmed. Updated
+the older pending test's instructions to the current keys without retiring it.
 
 ## 5.17.34 - Native avian family (#711, 2026-11-14)
 

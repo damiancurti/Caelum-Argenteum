@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.34** - 2026-11-14.
+Documentation version: **5.17.35** - 2026-11-14.
+
+## 5.17.35 - Eight-figure native regional gallery (#713)
+
+CA709G adds the three #711 birds in their approved NOA/Patagonia regions,
+reusing all art and retaining the original five figures. Four regions,
+seven species and eight displays pass115 fresh/reload/movement/idle checks;
+four fixture exports repeat. Qualified presentation evidence is in ASSETS.
+CA713-AVIAN-GALLERY-01 and earlier art/gallery acceptance remain pending.
+Other characters, modular equipment and the original campaign stay unfinished.
 
 ## 5.17.34 - Three native avian combat models (#711)
 

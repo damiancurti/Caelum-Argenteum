@@ -1,9 +1,9 @@
 {
   "schema_revision": 1,
-  "issue": 709,
+  "issue": 713,
   "status": "isolated_visual_inspection_not_campaign",
   "map": "CA709G",
-  "title": "Native Litoral, Selva and Patagonia inspection",
+  "title": "Native NOA, Litoral, Selva and Patagonia inspection",
   "ambient": 208,
   "ceiling_height": 2048,
   "outer_wall": "CACVROCK",
@@ -17,22 +17,30 @@
     512
   ],
   "player_start": [
-    -768,
+    -1280,
     -576,
     90
   ],
   "crossing_test": {
     "start": [
-      -768,
+      -1280,
       -256,
       0
     ],
     "angle": 90,
     "destination_plot": "Patagonia",
-    "input_tics": 420,
-    "duration_basis": "The recorded 210-tic attempt advances604.814MU, short of the768MU boundary. Double that diagnostic duration; preserve native player speed."
+    "input_tics": 630,
+    "duration_basis": "Reuse the proven630-tic diagnostic crossing duration from #700; native movement speed remains unchanged. This starts1280MU before Patagonia and crosses three boundaries."
   },
   "plots": [
+    {
+      "region": "Northwest Argentina",
+      "x": [
+        -1536,
+        -1024
+      ],
+      "floor": "CRNOAGR"
+    },
     {
       "region": "Litoral",
       "x": [
@@ -118,18 +126,54 @@
         0
       ],
       "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-045",
+      "kind": "cachiru",
+      "class": "CaelumBestiary045",
+      "position": [
+        -1280,
+        -32,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-046",
+      "kind": "kakuy",
+      "class": "CaelumBestiary046",
+      "position": [
+        -1280,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-058",
+      "kind": "kelenken",
+      "class": "CaelumBestiary058",
+      "position": [
+        800,
+        272,
+        0
+      ],
+      "angle": 270
     }
   ],
   "views": [
     {
       "id": "overview",
       "position": [
-        0,
+        -256,
         -400,
-        1600
+        1800
       ],
       "target": [
-        0,
+        -256,
         0,
         0
       ],
@@ -222,7 +266,7 @@
         -280,
         0
       ],
-      "key": "F8"
+      "key": "1"
     },
     {
       "id": "selva-tiles",
@@ -236,7 +280,7 @@
         -280,
         0
       ],
-      "key": "F9"
+      "key": "2"
     },
     {
       "id": "patagonia-tiles",
@@ -250,7 +294,7 @@
         -280,
         0
       ],
-      "key": "F10"
+      "key": "3"
     },
     {
       "id": "peuchen",
@@ -265,19 +309,76 @@
         26
       ],
       "key": "F11"
+    },
+    {
+      "id": "cachiru",
+      "position": [
+        -1280,
+        -142,
+        60
+      ],
+      "target": [
+        -1280,
+        -32,
+        26
+      ],
+      "key": "F8"
+    },
+    {
+      "id": "kakuy",
+      "position": [
+        -1280,
+        146,
+        60
+      ],
+      "target": [
+        -1280,
+        256,
+        26
+      ],
+      "key": "F9"
+    },
+    {
+      "id": "kelenken",
+      "position": [
+        800,
+        162,
+        60
+      ],
+      "target": [
+        800,
+        272,
+        26
+      ],
+      "key": "F12"
+    },
+    {
+      "id": "noa-tiles",
+      "position": [
+        -1280,
+        -280,
+        140
+      ],
+      "target": [
+        -1280,
+        -280,
+        0
+      ],
+      "key": "4"
     }
   ],
   "notes": [
-    "Five diagnostic displays cover the approved allocations of these four native candidates.",
-    "Original CA463G pilot and CA682G extended galleries remain unchanged.",
-    "All regional texture and creature model bytes are reused. No campaign encounters, balance, flight or new save fields.",
+    "Eight diagnostic displays cover the approved allocations of these seven native candidates.",
+    "Original CA463G pilot and CA682G other native gallery remain unchanged.",
+    "All regional textures and native creature model bytes are reused. No campaign encounters, balance, flight or new save fields.",
     "Two Pombero displays compare approved Litoral/Selva appearances, not new campaign identity rules."
   ],
   "model_exports": [
     "assets/source/art/pombero_461/EXPORT.json",
     "assets/source/art/cuero_660/EXPORT.json",
     "assets/source/art/nahuelito_662/EXPORT.json",
-    "assets/source/art/peuchen_708/EXPORT.json"
+    "assets/source/art/peuchen_708/EXPORT.json",
+    "assets/source/art/avian_711/EXPORT.json"
   ],
   "model_bindings": [
     {
@@ -303,6 +404,24 @@
       "catalogue_id": "CA-FOLK-054",
       "actor": "CaelumBestiary054",
       "export": "assets/source/art/peuchen_708/EXPORT.json"
+    },
+    {
+      "kind": "cachiru",
+      "catalogue_id": "CA-FOLK-045",
+      "actor": "CaelumBestiary045",
+      "export": "assets/source/art/avian_711/EXPORT.json"
+    },
+    {
+      "kind": "kakuy",
+      "catalogue_id": "CA-FOLK-046",
+      "actor": "CaelumBestiary046",
+      "export": "assets/source/art/avian_711/EXPORT.json"
+    },
+    {
+      "kind": "kelenken",
+      "catalogue_id": "CA-FOLK-058",
+      "actor": "CaelumBestiary058",
+      "export": "assets/source/art/avian_711/EXPORT.json"
     }
   ],
   "animation_sample_wait_tics": 11,
@@ -310,5 +429,5 @@
   "silent_observer_steps": true,
   "inspection_noise_basis": "Reuse the proven #692 observer-only movement-noise suppression, preserving native movement and production perception.",
   "inspection_staging": "Native classes with fixture-only Friendly flag and existing diagnostic passive AI. Original idle states advance; no forced positions.",
-  "layout_basis": "Retain the original three regional plots and four display positions. Add Peuchen in the unobstructed rear row of Patagonia; adjust close cameras to current native profiles. Diagnostic coordinates only."
+  "layout_basis": "Retain all previous plots and five display positions. Append a contiguous NOA plot to the west, place its two avian figures in separate rows and add Kelenken to the free rear-east Patagonia area. All coordinates and views are diagnostic only."
 }
