@@ -1,0 +1,465 @@
+{
+  "schema_revision": 1,
+  "issue": 733,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "variants": {
+    "fabric": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "sheet"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 228,
+      "triangles": 452,
+      "surfaces": [
+        {
+          "material": "linen",
+          "vertices": 228,
+          "triangles": 452
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        18,
+        119,
+        108
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 110.0,
+      "native_bounds": [
+        {
+          "min": [
+            -55.0,
+            -66.37931034482759,
+            0.0
+          ],
+          "max": [
+            55.0,
+            63.3448275862069,
+            50.82758620689655
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.896551724137931,
+        "floor": 2.6
+      }
+    },
+    "wool": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "core",
+        "lock_00",
+        "lock_01",
+        "lock_02",
+        "lock_03",
+        "lock_04",
+        "lock_05",
+        "lock_06",
+        "lock_07",
+        "lock_08",
+        "lock_09",
+        "lock_10",
+        "lock_11",
+        "lock_12",
+        "lock_13",
+        "lock_14",
+        "lock_15",
+        "lock_16",
+        "lock_17",
+        "lock_18",
+        "lock_19",
+        "lock_20",
+        "lock_21",
+        "lock_22",
+        "lock_23",
+        "lock_24",
+        "lock_25",
+        "lock_26",
+        "lock_27",
+        "lock_28",
+        "lock_29",
+        "lock_30",
+        "lock_31",
+        "lock_32",
+        "lock_33"
+      ],
+      "closed_outward_components": 35,
+      "vertices": 4614,
+      "triangles": 8512,
+      "surfaces": [
+        {
+          "material": "fleece",
+          "vertices": 4096,
+          "triangles": 7534
+        },
+        {
+          "material": "fleece",
+          "vertices": 549,
+          "triangles": 978
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        12,
+        120,
+        115
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.72088218341897,
+            -43.05792631862235,
+            0.0
+          ],
+          "max": [
+            55.27911781658103,
+            45.25600177981131,
+            62.519602434979824
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.6308653551508314,
+        "floor": -4.517585360898618
+      }
+    },
+    "cotton": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "stem",
+        "branch_0",
+        "boll_0",
+        "cotton_0_0",
+        "cotton_0_1",
+        "cotton_0_2",
+        "cotton_0_3",
+        "husk_0_0",
+        "husk_0_1",
+        "husk_0_2",
+        "husk_0_3",
+        "branch_1",
+        "boll_1",
+        "cotton_1_0",
+        "cotton_1_1",
+        "cotton_1_2",
+        "cotton_1_3",
+        "husk_1_0",
+        "husk_1_1",
+        "husk_1_2",
+        "husk_1_3",
+        "branch_2",
+        "boll_2",
+        "cotton_2_0",
+        "cotton_2_1",
+        "cotton_2_2",
+        "cotton_2_3",
+        "husk_2_0",
+        "husk_2_1",
+        "husk_2_2",
+        "husk_2_3"
+      ],
+      "closed_outward_components": 31,
+      "vertices": 3423,
+      "triangles": 6312,
+      "surfaces": [
+        {
+          "material": "cotton",
+          "vertices": 2826,
+          "triangles": 5280
+        },
+        {
+          "material": "husk",
+          "vertices": 597,
+          "triangles": 1032
+        }
+      ],
+      "reference_opaque_bounds": [
+        12,
+        8,
+        115,
+        120
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 103.0,
+      "native_bounds": [
+        {
+          "min": [
+            -51.5,
+            -26.316238965133035,
+            0.0
+          ],
+          "max": [
+            51.5,
+            29.46420909449141,
+            82.16072756991676
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.5739850646791853,
+        "floor": 1.8008213587064592
+      }
+    },
+    "raw_silk": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "cocoon_0",
+        "thread_0",
+        "cocoon_1",
+        "thread_1",
+        "cocoon_2",
+        "thread_2"
+      ],
+      "closed_outward_components": 6,
+      "vertices": 6615,
+      "triangles": 11952,
+      "surfaces": [
+        {
+          "material": "silk",
+          "vertices": 4096,
+          "triangles": 7396
+        },
+        {
+          "material": "silk",
+          "vertices": 2538,
+          "triangles": 4556
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        10,
+        120,
+        117
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.0,
+            -37.02354391901892,
+            0.0
+          ],
+          "max": [
+            56.0,
+            42.82695531490674,
+            51.8630167212669
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.8711898941840244,
+        "floor": 0.13298145191334343
+      }
+    },
+    "plant_fiber": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "core",
+        "fiber_00",
+        "fiber_01",
+        "fiber_02",
+        "fiber_03",
+        "fiber_04",
+        "fiber_05",
+        "fiber_06",
+        "fiber_07",
+        "fiber_08",
+        "fiber_09",
+        "fiber_10",
+        "fiber_11",
+        "fiber_12",
+        "fiber_13",
+        "fiber_14",
+        "fiber_15",
+        "fiber_16",
+        "fiber_17",
+        "fiber_18",
+        "fiber_19",
+        "fiber_20",
+        "fiber_21",
+        "fiber_22",
+        "fiber_23",
+        "fiber_24",
+        "fiber_25",
+        "fiber_26",
+        "fiber_27",
+        "fiber_28",
+        "fiber_29",
+        "tie_0",
+        "tie_1",
+        "tie_2"
+      ],
+      "closed_outward_components": 34,
+      "vertices": 6824,
+      "triangles": 12480,
+      "surfaces": [
+        {
+          "material": "fiber",
+          "vertices": 4096,
+          "triangles": 7208
+        },
+        {
+          "material": "fiber",
+          "vertices": 2747,
+          "triangles": 5272
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        11,
+        120,
+        117
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -55.19593790014979,
+            -123.5314353995462,
+            0.0
+          ],
+          "max": [
+            56.80406209985023,
+            -4.077686772245515,
+            81.99214462177686
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 3.1897448201161436,
+        "floor": -12.82031839519532
+      }
+    },
+    "rope": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "cord",
+        "strand_0",
+        "strand_1",
+        "strand_2",
+        "wrap_0",
+        "wrap_1",
+        "wrap_2"
+      ],
+      "closed_outward_components": 7,
+      "vertices": 12910,
+      "triangles": 23492,
+      "surfaces": [
+        {
+          "material": "fiber",
+          "vertices": 4096,
+          "triangles": 7390
+        },
+        {
+          "material": "fiber",
+          "vertices": 4096,
+          "triangles": 7244
+        },
+        {
+          "material": "fiber",
+          "vertices": 4096,
+          "triangles": 7518
+        },
+        {
+          "material": "fiber",
+          "vertices": 680,
+          "triangles": 1340
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        20,
+        120,
+        108
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.01236745314372,
+            -41.437784968627824,
+            0.0
+          ],
+          "max": [
+            55.987632546856275,
+            41.437784968627824,
+            52.18091440493874
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 2.557887961026409,
+        "floor": 0.7000000000000011
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "923bff27868f8c958008e5510493d7e9acfe8dda4126bbb6bfdbb2561ffaf406",
+    "PROVENANCE.json": "f01be42b88ff98df533909a7dd8dac24d574628d4cbaec62cb79c0fd08c3a456",
+    "MATERIALS_PROMPT.json": "fc9d4b3c82676430b873f39acb867080f7955df436e0dbb411f648bf77ba1e65"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/materials/ca_material_fabric.png": "5a462accabb91593ee66c4a1e60f9fb9c7ba5b5a72147cf16c3defff4eee8166",
+    "src/graphics/caelum/icons/materials/ca_material_wool.png": "e0b1fad3f8bf157b22b4a73285d3535d368979d6a8e99e4f71aeac2198757996",
+    "src/graphics/caelum/icons/materials/ca_material_cotton.png": "b8cd94bc216a7c9589683301c3a6a440ca1e4e4aeec8348534f6380f15a8388a",
+    "src/graphics/caelum/icons/materials/ca_material_raw_silk.png": "eafb7ac4c7246896434b56e6f6bdae04ed00afc48b44ace1515d41e5185287c6",
+    "src/graphics/caelum/icons/materials/ca_material_plant_fiber.png": "54bb1ef3ba9ba0a2465be53c62fcf1aa579791f912b58734387e628e0bb48c85",
+    "src/graphics/caelum/icons/materials/ca_material_rope.png": "5483846917b7861a723939760540cc93d418e6be46a8c9508a17bf8aec817de2",
+    "assets/source/art/inventory_models_647/textiles/materials.png": "c7218f6bbc76e6c8ccb20db5829d5d9c91e07552bad034d596d2bdb5d95f1d1f"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_textile_models.py": "879a40aef2f0cbda7fc59a7516b93083cc073a95209b36ee634eacda90bdd42f"
+  },
+  "sha256": {
+    "models/caelum/inventory/textiles/fabric.md3": "122cdfdb47e86d8e9297d96f6ec699ca8c040e8f41f6ec4479cc4d4b8c20cc36",
+    "editable/fabric.obj": "4e7e7286c5a2cdc7efc987599f30f0858e120a1f5920c22fe9374c93014ebe6e",
+    "models/caelum/inventory/textiles/wool.md3": "04332082b8ff17547575e4524ea03830bf4629aea24fdb75334aca1902d9e3f4",
+    "editable/wool.obj": "287d36d698331933cf61339ba0c37e9509d9d4d70665c1d85bfecaf7c0fe6159",
+    "models/caelum/inventory/textiles/cotton.md3": "d32df7265ab07cdb1476a726d85b633446c5a11ac49c6e4422a9efccdc70a06c",
+    "editable/cotton.obj": "3c957f9db6653eac8eb8f8daafccb2314dbec983e038f55ec83be6ca7943d8a3",
+    "models/caelum/inventory/textiles/raw_silk.md3": "99ad117cb55dafc652906304b59c66b1c4bf263098d129553586a810b9e7edd4",
+    "editable/raw_silk.obj": "0e24c7f5e740420706cabff7f473ed501d093e7003dbb45ab745510d1af384be",
+    "models/caelum/inventory/textiles/plant_fiber.md3": "5c72902c755b3e3adb3dcf6e7c01706131380225fc0e9c3961fe8d936a35c787",
+    "editable/plant_fiber.obj": "77893c2ffd631f07f001ad19665640dfcf7f0d16a4e5205527d27c6f24e94be8",
+    "models/caelum/inventory/textiles/rope.md3": "2e8eef19d2f69e1368e69a835d9bf3707e305c81676e33df3d8fc85d777699b7",
+    "editable/rope.obj": "64117394c28dd141a82550fc090e7a080153e06ec6ac1efad0c5e049768ac014",
+    "editable/textiles.mtl": "269f262f8b147451cc0c7e5ab94b87c9c2a64963cfa6c7e9a21539c3d77efbbf",
+    "caelum/data/inventory_textiles.modeldef": "04acf6e04b422a7f42d8baacc5e428835148df0cd616f9886c3a17f8dd39c09b",
+    "models/caelum/inventory/textiles/materials.png": "c7218f6bbc76e6c8ccb20db5829d5d9c91e07552bad034d596d2bdb5d95f1d1f"
+  }
+}

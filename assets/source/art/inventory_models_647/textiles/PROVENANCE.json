@@ -1,0 +1,23 @@
+{
+  "issue": 733,
+  "owner": "Dami\u00e1n Curti / Caelum Argenteum",
+  "references": {
+    "fabric": "src/graphics/caelum/icons/materials/ca_material_fabric.png",
+    "wool": "src/graphics/caelum/icons/materials/ca_material_wool.png",
+    "cotton": "src/graphics/caelum/icons/materials/ca_material_cotton.png",
+    "raw_silk": "src/graphics/caelum/icons/materials/ca_material_raw_silk.png",
+    "plant_fiber": "src/graphics/caelum/icons/materials/ca_material_plant_fiber.png",
+    "rope": "src/graphics/caelum/icons/materials/ca_material_rope.png"
+  },
+  "method": "Original folded closed sheet, clustered fleece/cotton/cocoon volumes, dry fiber bundle and actual coiled rope strands. Owned icons guide shape/material identity. #725 coiled strand data is reused with the new fiber material and binding. No raster edits.",
+  "generated_images": {
+    "materials.png": {
+      "tool": "built-in image_gen",
+      "prompt": "MATERIALS_PROMPT.json",
+      "original_output": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-6db4f3fc-5149-4500-9aab-757a5acb459f.png",
+      "sha256": "c7218f6bbc76e6c8ccb20db5829d5d9c91e07552bad034d596d2bdb5d95f1d1f",
+      "copied_without_raster_edits": true
+    }
+  },
+  "limits": "Candidate world crafting art only. Existing eight cases, icon pixels, tiers, recipes, weight, collision, Actor.Scale, provenance, quest guards and saves remain unchanged. No worn or first-person equipment."
+}

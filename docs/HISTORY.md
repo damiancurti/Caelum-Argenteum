@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.44** - 2026-11-14.
+Documentation version: **5.17.45** - 2026-11-14.
+
+## 5.17.45 - Fabric, raw fibers and rope drops (#733, 2026-11-14)
+
+Added six native crafting models for materials18/71..75, preserving all eight
+cases and gameplay. A new image_gen material atlas retains exact prompt and
+provenance. Geometry/native review prompted deeper cotton roots, cloth UV
+tiling, shallow fleece locks, fine silk winding and centered tapered fibers;
+earlier sources/previews remain retained. 114 closed solids, 108 contacts,
+50 opening rays, 17 repeated exports and 1,157 native assertions pass.
+One qualified six-object pair records 876.74/852.02 queue presents/s, p95
+1.3865/1.3934 ms and p99 1.6478/1.6308 ms; small-scene queue-only limits apply.
+Evidence: assets/validation_v5_17_45/evidence/SUMMARY.json.
+CA733-TEXTILE-DROPS-01 originates here and remains pending. The broader
+delivery and author acceptance are not complete.
 
 ## 5.17.44 - Leather and hide drops (#731, 2026-11-14)
 

@@ -1,0 +1,940 @@
+{
+  "issue": 733,
+  "parent_issue": 647,
+  "version": "5.17.45",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Six existing CaelumMaterialPickup designs18/71/72/73/74/75: three fabric tiers and five untiered materials, eight cases. Folded cloth, fleece/cotton/cocoon clusters, bound dry fibers and coiled rope. Gameplay and icons unchanged.",
+  "runtime": {
+    "sha256": "353d9eed14bceb861734f17dfda16a6b1973e779423c88c9733a8e90c9c55a23",
+    "source_entries": 18453,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "9f85623d5425f2e1f58fb1903b7a1b45b48966c6d1bcd364bb6b1c0a5e062ecc",
+    "new_resources": [
+      "caelum/data/inventory_textiles.modeldef",
+      "models/caelum/inventory/textiles/cotton.md3",
+      "models/caelum/inventory/textiles/fabric.md3",
+      "models/caelum/inventory/textiles/materials.png",
+      "models/caelum/inventory/textiles/plant_fiber.md3",
+      "models/caelum/inventory/textiles/raw_silk.md3",
+      "models/caelum/inventory/textiles/rope.md3",
+      "models/caelum/inventory/textiles/wool.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 17,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "fabric": {
+        "closed_components": 1,
+        "fixed_attachment_witnesses": 0,
+        "connected_components": 1,
+        "opening_probes": 3,
+        "opening_rays": 30,
+        "native_triangles": 5828
+      },
+      "wool": {
+        "closed_components": 35,
+        "fixed_attachment_witnesses": 34,
+        "connected_components": 35,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 8512
+      },
+      "cotton": {
+        "closed_components": 31,
+        "fixed_attachment_witnesses": 30,
+        "connected_components": 31,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 6312
+      },
+      "raw_silk": {
+        "closed_components": 6,
+        "fixed_attachment_witnesses": 5,
+        "connected_components": 6,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 16560
+      },
+      "plant_fiber": {
+        "closed_components": 34,
+        "fixed_attachment_witnesses": 33,
+        "connected_components": 34,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 12480
+      },
+      "rope": {
+        "closed_components": 7,
+        "fixed_attachment_witnesses": 6,
+        "connected_components": 7,
+        "opening_probes": 2,
+        "opening_rays": 20,
+        "native_triangles": 23492
+      }
+    },
+    "variants": {
+      "fabric": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "sheet"
+        ],
+        "closed_outward_components": 1,
+        "vertices": 11688,
+        "triangles": 5828,
+        "surfaces": [
+          {
+            "material": "linen",
+            "vertices": 4096,
+            "triangles": 2048
+          },
+          {
+            "material": "linen",
+            "vertices": 4096,
+            "triangles": 2048
+          },
+          {
+            "material": "linen",
+            "vertices": 3496,
+            "triangles": 1732
+          }
+        ],
+        "reference_opaque_bounds": [
+          9,
+          18,
+          119,
+          108
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 110.0,
+        "native_bounds": [
+          {
+            "min": [
+              -55.0,
+              -65.47620839042136,
+              0.0
+            ],
+            "max": [
+              55.0,
+              62.483010292573525,
+              52.37660026995416
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.870748811154896,
+          "floor": 2.0006270497412433
+        }
+      },
+      "wool": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "core",
+          "lock_00",
+          "lock_01",
+          "lock_02",
+          "lock_03",
+          "lock_04",
+          "lock_05",
+          "lock_06",
+          "lock_07",
+          "lock_08",
+          "lock_09",
+          "lock_10",
+          "lock_11",
+          "lock_12",
+          "lock_13",
+          "lock_14",
+          "lock_15",
+          "lock_16",
+          "lock_17",
+          "lock_18",
+          "lock_19",
+          "lock_20",
+          "lock_21",
+          "lock_22",
+          "lock_23",
+          "lock_24",
+          "lock_25",
+          "lock_26",
+          "lock_27",
+          "lock_28",
+          "lock_29",
+          "lock_30",
+          "lock_31",
+          "lock_32",
+          "lock_33"
+        ],
+        "closed_outward_components": 35,
+        "vertices": 4614,
+        "triangles": 8512,
+        "surfaces": [
+          {
+            "material": "fleece",
+            "vertices": 4096,
+            "triangles": 7534
+          },
+          {
+            "material": "fleece",
+            "vertices": 549,
+            "triangles": 978
+          }
+        ],
+        "reference_opaque_bounds": [
+          8,
+          12,
+          120,
+          115
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -56.02572463293441,
+              -45.526637590084924,
+              0.0
+            ],
+            "max": [
+              55.97427536706559,
+              45.31772598863869,
+              60.25275030397374
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.8632728077414549,
+          "floor": -1.3039722438449477
+        }
+      },
+      "cotton": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "stem",
+          "branch_0",
+          "boll_0",
+          "cotton_0_0",
+          "cotton_0_1",
+          "cotton_0_2",
+          "cotton_0_3",
+          "husk_0_0",
+          "husk_0_1",
+          "husk_0_2",
+          "husk_0_3",
+          "branch_1",
+          "boll_1",
+          "cotton_1_0",
+          "cotton_1_1",
+          "cotton_1_2",
+          "cotton_1_3",
+          "husk_1_0",
+          "husk_1_1",
+          "husk_1_2",
+          "husk_1_3",
+          "branch_2",
+          "boll_2",
+          "cotton_2_0",
+          "cotton_2_1",
+          "cotton_2_2",
+          "cotton_2_3",
+          "husk_2_0",
+          "husk_2_1",
+          "husk_2_2",
+          "husk_2_3"
+        ],
+        "closed_outward_components": 31,
+        "vertices": 3423,
+        "triangles": 6312,
+        "surfaces": [
+          {
+            "material": "cotton",
+            "vertices": 2826,
+            "triangles": 5280
+          },
+          {
+            "material": "husk",
+            "vertices": 597,
+            "triangles": 1032
+          }
+        ],
+        "reference_opaque_bounds": [
+          12,
+          8,
+          115,
+          120
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 103.0,
+        "native_bounds": [
+          {
+            "min": [
+              -51.5,
+              -26.316238965133035,
+              0.0
+            ],
+            "max": [
+              51.5,
+              29.46420909449141,
+              82.16072756991676
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.5739850646791853,
+          "floor": 1.8008213587064592
+        }
+      },
+      "raw_silk": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "cocoon_0",
+          "thread_0",
+          "cocoon_1",
+          "thread_1",
+          "cocoon_2",
+          "thread_2"
+        ],
+        "closed_outward_components": 6,
+        "vertices": 9207,
+        "triangles": 16560,
+        "surfaces": [
+          {
+            "material": "silk",
+            "vertices": 4096,
+            "triangles": 7396
+          },
+          {
+            "material": "silk",
+            "vertices": 4096,
+            "triangles": 7312
+          },
+          {
+            "material": "silk",
+            "vertices": 1053,
+            "triangles": 1852
+          }
+        ],
+        "reference_opaque_bounds": [
+          8,
+          10,
+          120,
+          117
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -56.0,
+              -36.06310872583682,
+              0.0
+            ],
+            "max": [
+              56.0,
+              41.5887399011879,
+              49.62497986174992
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.8711898941840244,
+          "floor": 0.7413883338785098
+        }
+      },
+      "plant_fiber": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "core",
+          "fiber_00",
+          "fiber_01",
+          "fiber_02",
+          "fiber_03",
+          "fiber_04",
+          "fiber_05",
+          "fiber_06",
+          "fiber_07",
+          "fiber_08",
+          "fiber_09",
+          "fiber_10",
+          "fiber_11",
+          "fiber_12",
+          "fiber_13",
+          "fiber_14",
+          "fiber_15",
+          "fiber_16",
+          "fiber_17",
+          "fiber_18",
+          "fiber_19",
+          "fiber_20",
+          "fiber_21",
+          "fiber_22",
+          "fiber_23",
+          "fiber_24",
+          "fiber_25",
+          "fiber_26",
+          "fiber_27",
+          "fiber_28",
+          "fiber_29",
+          "tie_0",
+          "tie_1",
+          "tie_2"
+        ],
+        "closed_outward_components": 34,
+        "vertices": 6824,
+        "triangles": 12480,
+        "surfaces": [
+          {
+            "material": "fiber",
+            "vertices": 4096,
+            "triangles": 7208
+          },
+          {
+            "material": "fiber",
+            "vertices": 2747,
+            "triangles": 5272
+          }
+        ],
+        "reference_opaque_bounds": [
+          8,
+          11,
+          120,
+          117
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -55.140470692399724,
+              -65.2747866503183,
+              0.0
+            ],
+            "max": [
+              56.85952930760028,
+              65.78170785121767,
+              81.15856099966985
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 3.2844723687090718,
+          "floor": -12.31947985214979
+        }
+      },
+      "rope": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "cord",
+          "strand_0",
+          "strand_1",
+          "strand_2",
+          "wrap_0",
+          "wrap_1",
+          "wrap_2"
+        ],
+        "closed_outward_components": 7,
+        "vertices": 12910,
+        "triangles": 23492,
+        "surfaces": [
+          {
+            "material": "fiber",
+            "vertices": 4096,
+            "triangles": 7390
+          },
+          {
+            "material": "fiber",
+            "vertices": 4096,
+            "triangles": 7244
+          },
+          {
+            "material": "fiber",
+            "vertices": 4096,
+            "triangles": 7518
+          },
+          {
+            "material": "fiber",
+            "vertices": 680,
+            "triangles": 1340
+          }
+        ],
+        "reference_opaque_bounds": [
+          8,
+          20,
+          120,
+          108
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -56.01236745314372,
+              -41.437784968627824,
+              0.0
+            ],
+            "max": [
+              55.987632546856275,
+              41.437784968627824,
+              52.18091440493874
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 2.557887961026409,
+          "floor": 0.7000000000000011
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 733,
+    "kind": "textiles",
+    "scope": "Native pickup/toss, quantity and saved ownership for textiles; no normal menu or author acceptance.",
+    "baseline_sha256": "9f85623d5425f2e1f58fb1903b7a1b45b48966c6d1bcd364bb6b1c0a5e062ecc",
+    "runtime_sha256": "353d9eed14bceb861734f17dfda16a6b1973e779423c88c9733a8e90c9c55a23",
+    "model_sha256": null,
+    "fixture_sha256": "43358e0c1928ddb0ca204f9526dbd294100dde479c8694a0e8fbd9e9580d0abb",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 217
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 241
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 217
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 241
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 241
+      }
+    ],
+    "captures": {
+      "baseline.png": "7ddf1daa2773270c53755726427e269693c5f714812f295a4b46bd3aa6b923c8",
+      "candidate-0.png": "82f469692954c2a511a6554d63a09106146ff0dfe69485e6223253e8e36b1926",
+      "candidate-1.png": "9f3a7fc1ec7bfd5903ad6a85071617db114ae89020199164970d7889ac35558a",
+      "candidate-2.png": "d8eb5d2bc39bfd226f62737fbfe10bf4168fd83f426e412320f811be3892e1c8",
+      "candidate-3.png": "756ba4db071378c4efbfea7d80c5a3b931472ce9bcdd0606faab45acb2d9532b",
+      "candidate-5.png": "b5c7320fbbe275085538027cfb65f59d203a5a3aa42d1b78d83682cc3855a171",
+      "candidate-6.png": "0a6f87aa30aff5c0d76d9fd39eb36ef862fa475636f3f87ef10eff50f4642aae",
+      "candidate-7.png": "cda4c28ec263d5b106dc87cd3c39302b779ae31c963dd821f3971d9b9f5cfdf7",
+      "detail-0-0.png": "d4dc4961366db4334ae7f61a2b179cbda6e04d3e655b03289772125ee12eeb46",
+      "detail-0-160.png": "db0ae4399954f973fd90344feb557f79ccac3f07af704e5eac6808b6b3e0b116",
+      "detail-0-225.png": "ba0517e24e928219db920ae3b139c2329da04cd3db79481c7a62a6928dca1448",
+      "detail-0-270.png": "a95314ac81579b8806c77b5cdb3bdbdcb659ef2f5526adcf385729fe52c5a1f8",
+      "detail-0-90.png": "46166149848a49477df89c2237641f1ec25276d9bee42e75a17389afbec49efd",
+      "detail-1-0.png": "71b027f74f4f436177646598b9e6afcdfbf087a23594ae4e94dd4fe8d049beca",
+      "detail-1-160.png": "2acd4f044640b433771d2153c0b894177a9f88914b6fc552937cd3c67727ed68",
+      "detail-1-225.png": "ef411a2cc5d6da3cc2e928409e8b833bfaa5c4c43e73a0893ff67e762fc0ad03",
+      "detail-1-270.png": "401b4a854e2e6ec9bd37ef7fdfa2f79d5ac3f7aaf3157a4a77e085741ee938cc",
+      "detail-1-90.png": "99a7b449c436f663af99e7dff615df0f05b5438070de8a72f48ec84d268d3b15",
+      "detail-2-0.png": "c70cc3ae7fd7879a8c6f8d7e3127bbb88c094b88b793039de2d4da283715914e",
+      "detail-2-160.png": "f2a055d989e31f316fd3dd1b9670c17c8cfa4ea52ad20423fa7b363f3f384183",
+      "detail-2-225.png": "5bfff9bdf99509c5519219562efc168d3a9fee3f62d1ebd0091c705c24667e7a",
+      "detail-2-270.png": "41b3221f5b08cc25dad6350bb4160095e786a65f882e1d1fc31b421fc836576c",
+      "detail-2-90.png": "eec9931809415172eb1fb95c66818cf773bdeecb9f46e3c7d1beb060f9db49aa",
+      "detail-3-0.png": "8fc44abc5a27752aa288ce8b781b1d820cce29d42d2cfc684d7cea1967f61e2d",
+      "detail-3-160.png": "4a5178b9e718d6dba03deaee9333d7d4a613eb3396da1a08fbe5c3544f7cb5c5",
+      "detail-3-225.png": "65a8b90d629d8f2fdc36e31992518b0448a0c7cfb554842af54fd89d416a9555",
+      "detail-3-270.png": "44b563678aaeb880a1fd9994a2bdbe463bd0d46e381cd1f74a3dea4f6368afbf",
+      "detail-3-90.png": "d5dcaf42121f23383fa65ad88923766b5c4399d616254ee05dda181874fa3dc8",
+      "detail-4-0.png": "cd1a88270d8f8f512fd51a6b39ce62cb2b8f30d2ab19a60af305620597b35664",
+      "detail-4-160.png": "f596eb9e443c1d33c3718a537e649fda90e263d6a238d22894aef625adf772c9",
+      "detail-4-225.png": "0827110e1b908e935bf56187cf2b8d19c86a8dd0ddcc97c447d0d3da68690f59",
+      "detail-4-270.png": "09ef42257b379db61c0fc8217d92b4b36daec58ed0b18953f06074ca95491f6e",
+      "detail-4-90.png": "aab4765b5d781d4b22ea76bd38ba184375c78f8fd266da0cbd6540c13ad685cc",
+      "detail-5-0.png": "8ab597642b167071af9374921e01b35448b88c22353e44b53d39945a589f6dae",
+      "detail-5-160.png": "77390920edd28be0583b769dd10d175d21cc80188f7e4f59522ef7ee6e8af960",
+      "detail-5-225.png": "4f63b5f9e8166a67eaac5dc4ec969a0774cbe51b76577e61c7ea12448a2ee2a7",
+      "detail-5-270.png": "2b0021baeb18b1c008af6a4026564db2a2bdb424b85e2a2c0eb21835860d12a4",
+      "detail-5-90.png": "6d72f3316812afaa9b068acc66623dfbd6505c882d44fc75323e10117c5d7903"
+    }
+  },
+  "presentation": {
+    "issue": 733,
+    "kind": "textiles",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "9f85623d5425f2e1f58fb1903b7a1b45b48966c6d1bcd364bb6b1c0a5e062ecc",
+    "runtime_sha256": "353d9eed14bceb861734f17dfda16a6b1973e779423c88c9733a8e90c9c55a23",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 6,
+        "pid": 26364,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 313476491.9429,
+          "END": 313496533.6955
+        },
+        "fixture_sha256": "28b764617b3b84165dced4d76ef3686977b2e6365d39123a08dd3fdf507c7e63",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            6,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57284142857143,
+          "p50_ms": 28.5305,
+          "p95_ms": 29.3832,
+          "p99_ms": 29.6277,
+          "max_ms": 30.4084
+        },
+        "presentation": {
+          "pid": 26364,
+          "trace_sha256": "b01d258fa3711885fb907892f2882e2d6d17a186df6a77221107906913b54ce2",
+          "rows": 22728,
+          "scene_presents": 15379,
+          "mean_present_fps": 876.7407020140785,
+          "present_intervals": {
+            "samples": 15378,
+            "mean_ms": 1.1405880868799247,
+            "p50_ms": 1.1092000007629395,
+            "p95_ms": 1.3865000009536743,
+            "p99_ms": 1.6477999687194824,
+            "max_ms": 2.3664000034332275
+          },
+          "native_call_duration": {
+            "samples": 15379,
+            "mean_ms": 0.09454118607839362,
+            "p50_ms": 0.089199960231781,
+            "p95_ms": 0.11460000276565552,
+            "p99_ms": 0.17500001192092896,
+            "max_ms": 0.3920999765396118
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 6,
+        "pid": 23608,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 313511217.0196,
+          "END": 313531250.73
+        },
+        "fixture_sha256": "28b764617b3b84165dced4d76ef3686977b2e6365d39123a08dd3fdf507c7e63",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            6,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57087257142857,
+          "p50_ms": 28.5984,
+          "p95_ms": 29.4307,
+          "p99_ms": 29.7025,
+          "max_ms": 30.2189
+        },
+        "presentation": {
+          "pid": 23608,
+          "trace_sha256": "5043eda13849dc6284720efe7a6054067c2c95c6f4a47f2ca6fcf359ad10d536",
+          "rows": 22206,
+          "scene_presents": 14939,
+          "mean_present_fps": 852.0199168925952,
+          "present_intervals": {
+            "samples": 14938,
+            "mean_ms": 1.1736814834647333,
+            "p50_ms": 1.1434000134468079,
+            "p95_ms": 1.3934000134468079,
+            "p99_ms": 1.6308000087738037,
+            "max_ms": 2.3963000178337097
+          },
+          "native_call_duration": {
+            "samples": 14939,
+            "mean_ms": 0.0945597964243139,
+            "p50_ms": 0.08939999341964722,
+            "p95_ms": 0.1143999695777893,
+            "p99_ms": 0.1743999719619751,
+            "max_ms": 0.42419999837875366
+          }
+        }
+      }
+    ]
+  },
+  "iterations": "Model01 has closed noncollapsed geometry but11 cotton attachment witnesses lie on root caps. Model02 extends branch/husk roots1.2 source units; geometry and217 visual01 assertions pass. Visual review identifies stretched cloth UVs, spherical fleece locks, thick silk threads and an off-center fiber bundle. Model03 uses arc-length cloth tiling with welded seams, shallow oriented fleece locks, finer silk winding and centered tapered stalks. Its initial cap triangulation attempt rejects clockwise end outlines before output; explicit winding handling corrects it. Geometry and217 visual02 assertions pass. Model03/04 repeat17 exports. Earlier data, generator, manifests and previews retained.",
+  "art": {
+    "source": "assets/source/art/inventory_models_647/textiles",
+    "new_image_generation": true,
+    "mode": "built-in image_gen",
+    "image": "materials.png",
+    "prompt": "MATERIALS_PROMPT.json",
+    "original_pixels_preserved": true,
+    "reviewed_views": "All six original icons, generated atlas, all30 final detail rotations/raised undersides, ordinary eight-case floor overview and both presentation cohorts.",
+    "author_check": "CA733-TEXTILE-DROPS-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Static world crafting art. Regular cloth folds, simplified shallow fleece locks, upright cotton branch, silk winding and fiber/binding shapes require author review; no worn equipment.",
+    "One sequential700-tic six-object sprite/model pair measures queue intervals, not GPU/display timing, repeatability or campaign/crowd acceptance. Different footprints preclude equal-pixel claims.",
+    "Native pickup/toss API probes and prepared Box/quest states do not establish ordinary menus/crafting or author acceptance.",
+    "No recipe, tier resolution, weight, amount, identity, collision, save schema, production scan or original icon changes.",
+    "No executable, IWAD, compiled fixture, PK3/WAD, DLL or save is committed."
+  ],
+  "files": {
+    "continuity/baseline-process.log": "1b52e2f84a0fdccf6cdb20940c91e6972beedc768ac7ec4eb78ad15992100045",
+    "continuity/baseline.cfg": "150e5b9d8eb8138e0c2a10058bbe3667580d3708811e5b8281e9f3b448fa15a5",
+    "continuity/baseline.log": "d3074e087fb0504b7b5cf003e6c0d1d68397b256ec32f5278831e21bd77a2568",
+    "continuity/baseline.png": "7ddf1daa2773270c53755726427e269693c5f714812f295a4b46bd3aa6b923c8",
+    "continuity/candidate-0.png": "82f469692954c2a511a6554d63a09106146ff0dfe69485e6223253e8e36b1926",
+    "continuity/candidate-1.png": "9f3a7fc1ec7bfd5903ad6a85071617db114ae89020199164970d7889ac35558a",
+    "continuity/candidate-2.png": "d8eb5d2bc39bfd226f62737fbfe10bf4168fd83f426e412320f811be3892e1c8",
+    "continuity/candidate-3.png": "756ba4db071378c4efbfea7d80c5a3b931472ce9bcdd0606faab45acb2d9532b",
+    "continuity/candidate-5.png": "b5c7320fbbe275085538027cfb65f59d203a5a3aa42d1b78d83682cc3855a171",
+    "continuity/candidate-6.png": "0a6f87aa30aff5c0d76d9fd39eb36ef862fa475636f3f87ef10eff50f4642aae",
+    "continuity/candidate-7.png": "cda4c28ec263d5b106dc87cd3c39302b779ae31c963dd821f3971d9b9f5cfdf7",
+    "continuity/candidate-fresh-process.log": "a9933f14beb575ec7811ea60fb2d56df87ba32d430a2833bd5684c99b20791c9",
+    "continuity/candidate-fresh.cfg": "f8b77bce3641388f9f022bd33ee3685be4ead81206a859c846b8d5a522752fcf",
+    "continuity/candidate-fresh.log": "7aee1d39dc8fdcb733580c3a3b843a812a4a8486fe5f1f8a7466ddc7e330ce61",
+    "continuity/candidate-reload-process.log": "4814dab4fce016038d5d205db39071bb94696ec694940db2113addb57321205a",
+    "continuity/candidate-reload.cfg": "74189b9c13a5037155afc2a6d77a182380b6b981217ca428ceb24139cd6c57ea",
+    "continuity/candidate-reload.log": "08473402e88187f48e49af29b65cdcdb600efcaaa9a32027c5447e07c7f4daff",
+    "continuity/detail-0-0.png": "d4dc4961366db4334ae7f61a2b179cbda6e04d3e655b03289772125ee12eeb46",
+    "continuity/detail-0-160.png": "db0ae4399954f973fd90344feb557f79ccac3f07af704e5eac6808b6b3e0b116",
+    "continuity/detail-0-225.png": "ba0517e24e928219db920ae3b139c2329da04cd3db79481c7a62a6928dca1448",
+    "continuity/detail-0-270.png": "a95314ac81579b8806c77b5cdb3bdbdcb659ef2f5526adcf385729fe52c5a1f8",
+    "continuity/detail-0-90.png": "46166149848a49477df89c2237641f1ec25276d9bee42e75a17389afbec49efd",
+    "continuity/detail-1-0.png": "71b027f74f4f436177646598b9e6afcdfbf087a23594ae4e94dd4fe8d049beca",
+    "continuity/detail-1-160.png": "2acd4f044640b433771d2153c0b894177a9f88914b6fc552937cd3c67727ed68",
+    "continuity/detail-1-225.png": "ef411a2cc5d6da3cc2e928409e8b833bfaa5c4c43e73a0893ff67e762fc0ad03",
+    "continuity/detail-1-270.png": "401b4a854e2e6ec9bd37ef7fdfa2f79d5ac3f7aaf3157a4a77e085741ee938cc",
+    "continuity/detail-1-90.png": "99a7b449c436f663af99e7dff615df0f05b5438070de8a72f48ec84d268d3b15",
+    "continuity/detail-2-0.png": "c70cc3ae7fd7879a8c6f8d7e3127bbb88c094b88b793039de2d4da283715914e",
+    "continuity/detail-2-160.png": "f2a055d989e31f316fd3dd1b9670c17c8cfa4ea52ad20423fa7b363f3f384183",
+    "continuity/detail-2-225.png": "5bfff9bdf99509c5519219562efc168d3a9fee3f62d1ebd0091c705c24667e7a",
+    "continuity/detail-2-270.png": "41b3221f5b08cc25dad6350bb4160095e786a65f882e1d1fc31b421fc836576c",
+    "continuity/detail-2-90.png": "eec9931809415172eb1fb95c66818cf773bdeecb9f46e3c7d1beb060f9db49aa",
+    "continuity/detail-3-0.png": "8fc44abc5a27752aa288ce8b781b1d820cce29d42d2cfc684d7cea1967f61e2d",
+    "continuity/detail-3-160.png": "4a5178b9e718d6dba03deaee9333d7d4a613eb3396da1a08fbe5c3544f7cb5c5",
+    "continuity/detail-3-225.png": "65a8b90d629d8f2fdc36e31992518b0448a0c7cfb554842af54fd89d416a9555",
+    "continuity/detail-3-270.png": "44b563678aaeb880a1fd9994a2bdbe463bd0d46e381cd1f74a3dea4f6368afbf",
+    "continuity/detail-3-90.png": "d5dcaf42121f23383fa65ad88923766b5c4399d616254ee05dda181874fa3dc8",
+    "continuity/detail-4-0.png": "cd1a88270d8f8f512fd51a6b39ce62cb2b8f30d2ab19a60af305620597b35664",
+    "continuity/detail-4-160.png": "f596eb9e443c1d33c3718a537e649fda90e263d6a238d22894aef625adf772c9",
+    "continuity/detail-4-225.png": "0827110e1b908e935bf56187cf2b8d19c86a8dd0ddcc97c447d0d3da68690f59",
+    "continuity/detail-4-270.png": "09ef42257b379db61c0fc8217d92b4b36daec58ed0b18953f06074ca95491f6e",
+    "continuity/detail-4-90.png": "aab4765b5d781d4b22ea76bd38ba184375c78f8fd266da0cbd6540c13ad685cc",
+    "continuity/detail-5-0.png": "8ab597642b167071af9374921e01b35448b88c22353e44b53d39945a589f6dae",
+    "continuity/detail-5-160.png": "77390920edd28be0583b769dd10d175d21cc80188f7e4f59522ef7ee6e8af960",
+    "continuity/detail-5-225.png": "4f63b5f9e8166a67eaac5dc4ec969a0774cbe51b76577e61c7ea12448a2ee2a7",
+    "continuity/detail-5-270.png": "2b0021baeb18b1c008af6a4026564db2a2bdb424b85e2a2c0eb21835860d12a4",
+    "continuity/detail-5-90.png": "6d72f3316812afaa9b068acc66623dfbd6505c882d44fc75323e10117c5d7903",
+    "continuity/fixture-source/MAPINFO.txt": "b621201804288f0c48f2bf0f7a6fec9e75e9775a0f2b24077dd71f82f61eb2e7",
+    "continuity/fixture-source/ZSCRIPT.txt": "c538dd03996dfe3442a45716c563b150b7d99e0da230757d222f2f955be9cfd8",
+    "continuity/fixture.zs": "24dbbb5ccc396b9def96e63080f381d0fe2e17257c11121e10226e336a433233",
+    "continuity/old-save-load-part-1.cfg": "e03ead22375fc87cfba2c23d31b3ea42ef60aed082e52666ee5ab3bd9c96e8df",
+    "continuity/old-save-load-process.log": "247598190013434ef9e0bb7a6507763fe2a8539cef84f9cd12111d5834d9b5f3",
+    "continuity/old-save-load.cfg": "970368a52120248115848cc64c92ba20c79b9b4e1ae6e6181d10ea6cc108b509",
+    "continuity/old-save-load.log": "bfaa3d928e0f25f7700ab207d763a3d5a679e4c9312ef0ede1613fe3b0cf6d41",
+    "continuity/RESULTS.json": "58ac6b6d64b63ee78d6d58aab8ab1165e85cebb3f703c0fb7804552654fb9e75",
+    "continuity/rollback-load-process.log": "0676e466fe0f370ae177e34d6e3e2c103932c3049dc9a0c13cc8c448af900ee0",
+    "continuity/rollback-load.cfg": "74189b9c13a5037155afc2a6d77a182380b6b981217ca428ceb24139cd6c57ea",
+    "continuity/rollback-load.log": "9fbb0b20e9fd7b1f78733a8edad3963b758e5d0c184b54d4f5c0105c99345acd",
+    "continuity/session.ini": "21963687f941781806f4cefad82d5ad4e6029a549f37295c5755f2309c837da0",
+    "exports/model01.json": "a94daaee3a083c3d95b98cb546fd7cb6a7238fb14ed957941e1572f4823d46ad",
+    "exports/model02.json": "3bb3686877422794d7b988b7625464099cff461d877343ea762399c94efa59ba",
+    "exports/model03.json": "b57d7cf82866e01f2518c34b87faf1d00521fcd558a29dd3108a9ed6cb21413b",
+    "exports/model04.json": "b57d7cf82866e01f2518c34b87faf1d00521fcd558a29dd3108a9ed6cb21413b",
+    "issue733-build01.log": "8e52d0456d4fae27cc043fa5c2a900ef828f579594fc37497d6e91db7e8218ff",
+    "issue733-installed-check.log": "c0d4ddb89a0b05f74a4c13fade0f6639050ce1af8fb9c31b67ba1b3f26c9390d",
+    "issue733-repeat-final.json": "45fac175e6080741ba3690ea2c5c6bc34495619de33f3f7a2c3c6def43b9f4c7",
+    "iterations/issue733-design01.json": "63dd8292d437c31f0d670af8a029038fb1942697830b6b3601d4c8d3dd3f70d6",
+    "iterations/issue733-design02.json": "923bff27868f8c958008e5510493d7e9acfe8dda4126bbb6bfdbb2561ffaf406",
+    "iterations/issue733-generator02.py": "879a40aef2f0cbda7fc59a7516b93083cc073a95209b36ee634eacda90bdd42f",
+    "iterations/issue733-geometry01.log": "758a9c4a1989bbbfd35fc0d9a9760a29a63b817e815f8cc33f70f86629da37f6",
+    "iterations/issue733-geometry02.log": "8c3d6602d03038cf3ab0fdb414ef2fb8a70d9a2d9242c178fa049d0dbaf4b458",
+    "iterations/issue733-geometry03.log": "82e1491877ef18d22942b076a85ae974f6ad63204b83b547fb53b3593d0808a5",
+    "iterations/visual01/candidate-0.png": "51175aef6a96eb144b93ef56f106c1438ed5776e2aeebdd2f6cc92df5b2a2d22",
+    "iterations/visual01/candidate-1.png": "b0b1f080634fedbc3a902a4ae975ce9209a3a46826464442dd23771901b6b172",
+    "iterations/visual01/candidate-2.png": "c3397c35274c8fad8fb6eb91cd1f2b141d210ccf4a2c2765c76c7d0486611e5c",
+    "iterations/visual01/candidate-3.png": "75f34d85364122d582598e1a54ec81352e735dd8656c2736da17da75f9b7157a",
+    "iterations/visual01/candidate-5.png": "45f2040942755cca8930803fa83bc8ddff8a4dac8f576578672abe979837268f",
+    "iterations/visual01/candidate-6.png": "cdc9429971a79e380ae08d338f89dea703605c8f3b94337ad02d31086ca8a31e",
+    "iterations/visual01/candidate-7.png": "31b8bf5295e30515bbdd4a6559881ddffa77d617ff749892bdf6bdafdd8c4769",
+    "iterations/visual01/detail-0-0.png": "6d01b2cbb5fb5201e40d3e3d6fc1867d4e8bee88e831f180f9f904c9ad6f6f1e",
+    "iterations/visual01/detail-0-160.png": "d2e6016c7fb5d7d91e16b93994a7816610c3f627e3dfa0389d8a066f183a4961",
+    "iterations/visual01/detail-0-225.png": "82bc9090cb2020182a06edae4ebf1cd8d0b7857b21406d78ce9f9f3022a1785c",
+    "iterations/visual01/detail-0-270.png": "bf3e7fc78b37252845b23c432e585415a07926e0631a2038a84be75b8b30d7cb",
+    "iterations/visual01/detail-0-90.png": "e48130455786c7fa15e08ae82d5e730fc55a678c892c9e64b410ff5826921cf2",
+    "iterations/visual01/detail-1-0.png": "7abe8519529b800de9e0542b14aec2bf132211939dc3c3a5e317cd09a7e57a2e",
+    "iterations/visual01/detail-1-160.png": "2dc19df3355d2590cce09bfa2f6245e8080aa7079ccaa92aab387b3355246ee9",
+    "iterations/visual01/detail-1-225.png": "e14732ebdfe1d170d0ee023be9cfc44f5839c057108fba0686040cb3c2053dcd",
+    "iterations/visual01/detail-1-270.png": "7b08e8ffd7a89c89c7dc5e2911d314ff92c2bc26338b276b029308fae7202478",
+    "iterations/visual01/detail-1-90.png": "36f4d0a0838a67fb11c682f5502b5e07ce3a05b9d14dec5fd6450d4d95333c70",
+    "iterations/visual01/detail-2-0.png": "c70cc3ae7fd7879a8c6f8d7e3127bbb88c094b88b793039de2d4da283715914e",
+    "iterations/visual01/detail-2-160.png": "f2a055d989e31f316fd3dd1b9670c17c8cfa4ea52ad20423fa7b363f3f384183",
+    "iterations/visual01/detail-2-225.png": "5bfff9bdf99509c5519219562efc168d3a9fee3f62d1ebd0091c705c24667e7a",
+    "iterations/visual01/detail-2-270.png": "41b3221f5b08cc25dad6350bb4160095e786a65f882e1d1fc31b421fc836576c",
+    "iterations/visual01/detail-2-90.png": "eec9931809415172eb1fb95c66818cf773bdeecb9f46e3c7d1beb060f9db49aa",
+    "iterations/visual01/detail-3-0.png": "b30e14d88a2e1ac724922cb7a1849ee58866d2a2bbe3d7d98d757da69efe94ad",
+    "iterations/visual01/detail-3-160.png": "44a61a9c12c9a2a6139d774769a0a571974552a130beab6b7d777ca5e58d6e75",
+    "iterations/visual01/detail-3-225.png": "239f2bf6bdd15e13f3ec5d67fd99bb8e97a1a9b361a4bff56529ca7521b59826",
+    "iterations/visual01/detail-3-270.png": "2aa0656e804d9efb0add69c05a29ef37326cfc5e9b3df3d4ff84c9cabde2410a",
+    "iterations/visual01/detail-3-90.png": "b2efbb7af38f5a0463c7f5b04e14c16af2aa51cd556c19cb01567af9e3aaa983",
+    "iterations/visual01/detail-4-0.png": "ce9c8ab32ceef36fca43243d40889c58f180279a47fe41ee62d22829b2002e1f",
+    "iterations/visual01/detail-4-160.png": "4c5e4c63602c9455dfc963200e886042ed21aef968fd3df54507e9f12094f99d",
+    "iterations/visual01/detail-4-225.png": "06714b4d65f9170ea8b868b3e4d6bc6472347bde36187bad54e9bede85a77115",
+    "iterations/visual01/detail-4-270.png": "837a8b17abb160d946d47f1d527da9f9a17e31b575f2aa778cda938c3cada931",
+    "iterations/visual01/detail-4-90.png": "90b4f9cabc522209136b48d995723e07fdee02fe50961347501bf92fc45dbebc",
+    "iterations/visual01/detail-5-0.png": "8ab597642b167071af9374921e01b35448b88c22353e44b53d39945a589f6dae",
+    "iterations/visual01/detail-5-160.png": "77390920edd28be0583b769dd10d175d21cc80188f7e4f59522ef7ee6e8af960",
+    "iterations/visual01/detail-5-225.png": "4f63b5f9e8166a67eaac5dc4ec969a0774cbe51b76577e61c7ea12448a2ee2a7",
+    "iterations/visual01/detail-5-270.png": "2b0021baeb18b1c008af6a4026564db2a2bdb424b85e2a2c0eb21835860d12a4",
+    "iterations/visual01/detail-5-90.png": "6d72f3316812afaa9b068acc66623dfbd6505c882d44fc75323e10117c5d7903",
+    "iterations/visual01/fixture-source/MAPINFO.txt": "b621201804288f0c48f2bf0f7a6fec9e75e9775a0f2b24077dd71f82f61eb2e7",
+    "iterations/visual01/fixture-source/ZSCRIPT.txt": "1d9861af207cfe0275896200c51f28e1745841d43d19b21988f5b641f7afd3dd",
+    "iterations/visual01/fixture.zs": "8f97b98b7201ae1f4b7a8dea946d969006b1f0d21a93ee8f109102d0a13b8e45",
+    "iterations/visual01/RESULTS.json": "d3af48f1f0cb47241a2e4ffc2f4fe5f58b10fe5089fbb2bb43f34061a3d9289a",
+    "iterations/visual01/session.ini": "d9f1e188e6201e7dfea25654e8dbdf24a978e1384fa25fe252b091d5a472bf02",
+    "iterations/visual01/visual-part-1.cfg": "036c7197343bd9aef678f6945848b403a320635a449819bc1e22229c1e79946d",
+    "iterations/visual01/visual-process.log": "9e601686f65892c98dedf83e4c3a0a65976444fbd3eed77d28454113f70d4422",
+    "iterations/visual01/visual.cfg": "e8e730c33f46378315d05df891993653a868b67dc50a95a77f4502a87f704363",
+    "iterations/visual01/visual.log": "5e65ef99284807bd4eba342761def0fcb0c795570fbc5fa8a71ec28b6f123acc",
+    "iterations/visual02/candidate-0.png": "82f469692954c2a511a6554d63a09106146ff0dfe69485e6223253e8e36b1926",
+    "iterations/visual02/candidate-1.png": "9f3a7fc1ec7bfd5903ad6a85071617db114ae89020199164970d7889ac35558a",
+    "iterations/visual02/candidate-2.png": "d8eb5d2bc39bfd226f62737fbfe10bf4168fd83f426e412320f811be3892e1c8",
+    "iterations/visual02/candidate-3.png": "756ba4db071378c4efbfea7d80c5a3b931472ce9bcdd0606faab45acb2d9532b",
+    "iterations/visual02/candidate-5.png": "b5c7320fbbe275085538027cfb65f59d203a5a3aa42d1b78d83682cc3855a171",
+    "iterations/visual02/candidate-6.png": "0a6f87aa30aff5c0d76d9fd39eb36ef862fa475636f3f87ef10eff50f4642aae",
+    "iterations/visual02/candidate-7.png": "cda4c28ec263d5b106dc87cd3c39302b779ae31c963dd821f3971d9b9f5cfdf7",
+    "iterations/visual02/detail-0-0.png": "d4dc4961366db4334ae7f61a2b179cbda6e04d3e655b03289772125ee12eeb46",
+    "iterations/visual02/detail-0-160.png": "db0ae4399954f973fd90344feb557f79ccac3f07af704e5eac6808b6b3e0b116",
+    "iterations/visual02/detail-0-225.png": "ba0517e24e928219db920ae3b139c2329da04cd3db79481c7a62a6928dca1448",
+    "iterations/visual02/detail-0-270.png": "a95314ac81579b8806c77b5cdb3bdbdcb659ef2f5526adcf385729fe52c5a1f8",
+    "iterations/visual02/detail-0-90.png": "46166149848a49477df89c2237641f1ec25276d9bee42e75a17389afbec49efd",
+    "iterations/visual02/detail-1-0.png": "71b027f74f4f436177646598b9e6afcdfbf087a23594ae4e94dd4fe8d049beca",
+    "iterations/visual02/detail-1-160.png": "2acd4f044640b433771d2153c0b894177a9f88914b6fc552937cd3c67727ed68",
+    "iterations/visual02/detail-1-225.png": "ef411a2cc5d6da3cc2e928409e8b833bfaa5c4c43e73a0893ff67e762fc0ad03",
+    "iterations/visual02/detail-1-270.png": "401b4a854e2e6ec9bd37ef7fdfa2f79d5ac3f7aaf3157a4a77e085741ee938cc",
+    "iterations/visual02/detail-1-90.png": "99a7b449c436f663af99e7dff615df0f05b5438070de8a72f48ec84d268d3b15",
+    "iterations/visual02/detail-2-0.png": "c70cc3ae7fd7879a8c6f8d7e3127bbb88c094b88b793039de2d4da283715914e",
+    "iterations/visual02/detail-2-160.png": "f2a055d989e31f316fd3dd1b9670c17c8cfa4ea52ad20423fa7b363f3f384183",
+    "iterations/visual02/detail-2-225.png": "5bfff9bdf99509c5519219562efc168d3a9fee3f62d1ebd0091c705c24667e7a",
+    "iterations/visual02/detail-2-270.png": "41b3221f5b08cc25dad6350bb4160095e786a65f882e1d1fc31b421fc836576c",
+    "iterations/visual02/detail-2-90.png": "eec9931809415172eb1fb95c66818cf773bdeecb9f46e3c7d1beb060f9db49aa",
+    "iterations/visual02/detail-3-0.png": "8fc44abc5a27752aa288ce8b781b1d820cce29d42d2cfc684d7cea1967f61e2d",
+    "iterations/visual02/detail-3-160.png": "4a5178b9e718d6dba03deaee9333d7d4a613eb3396da1a08fbe5c3544f7cb5c5",
+    "iterations/visual02/detail-3-225.png": "65a8b90d629d8f2fdc36e31992518b0448a0c7cfb554842af54fd89d416a9555",
+    "iterations/visual02/detail-3-270.png": "44b563678aaeb880a1fd9994a2bdbe463bd0d46e381cd1f74a3dea4f6368afbf",
+    "iterations/visual02/detail-3-90.png": "d5dcaf42121f23383fa65ad88923766b5c4399d616254ee05dda181874fa3dc8",
+    "iterations/visual02/detail-4-0.png": "cd1a88270d8f8f512fd51a6b39ce62cb2b8f30d2ab19a60af305620597b35664",
+    "iterations/visual02/detail-4-160.png": "f596eb9e443c1d33c3718a537e649fda90e263d6a238d22894aef625adf772c9",
+    "iterations/visual02/detail-4-225.png": "0827110e1b908e935bf56187cf2b8d19c86a8dd0ddcc97c447d0d3da68690f59",
+    "iterations/visual02/detail-4-270.png": "09ef42257b379db61c0fc8217d92b4b36daec58ed0b18953f06074ca95491f6e",
+    "iterations/visual02/detail-4-90.png": "aab4765b5d781d4b22ea76bd38ba184375c78f8fd266da0cbd6540c13ad685cc",
+    "iterations/visual02/detail-5-0.png": "8ab597642b167071af9374921e01b35448b88c22353e44b53d39945a589f6dae",
+    "iterations/visual02/detail-5-160.png": "77390920edd28be0583b769dd10d175d21cc80188f7e4f59522ef7ee6e8af960",
+    "iterations/visual02/detail-5-225.png": "4f63b5f9e8166a67eaac5dc4ec969a0774cbe51b76577e61c7ea12448a2ee2a7",
+    "iterations/visual02/detail-5-270.png": "2b0021baeb18b1c008af6a4026564db2a2bdb424b85e2a2c0eb21835860d12a4",
+    "iterations/visual02/detail-5-90.png": "6d72f3316812afaa9b068acc66623dfbd6505c882d44fc75323e10117c5d7903",
+    "iterations/visual02/fixture-source/MAPINFO.txt": "b621201804288f0c48f2bf0f7a6fec9e75e9775a0f2b24077dd71f82f61eb2e7",
+    "iterations/visual02/fixture-source/ZSCRIPT.txt": "c538dd03996dfe3442a45716c563b150b7d99e0da230757d222f2f955be9cfd8",
+    "iterations/visual02/fixture.zs": "24dbbb5ccc396b9def96e63080f381d0fe2e17257c11121e10226e336a433233",
+    "iterations/visual02/RESULTS.json": "4cf1f4f16f46e497169659d758f7c81cdf884fc84a7f2e377860df1d79033588",
+    "iterations/visual02/session.ini": "65ebdd74f98c2a97e09baa86ab46ff45472defa44db96b82e38314a8889025ad",
+    "iterations/visual02/visual-part-1.cfg": "036c7197343bd9aef678f6945848b403a320635a449819bc1e22229c1e79946d",
+    "iterations/visual02/visual-process.log": "c0489a983853b91451459387bc03f36b714c8780cb81593c533db6b4e4a9ba92",
+    "iterations/visual02/visual.cfg": "7ab45e51724d4f25376b2958f8ec66a2532f09d4f270c3988bd101232f50d4ad",
+    "iterations/visual02/visual.log": "130489fe1bc7664bb49111f7570479b4ac5362c2c1238e8431aaf0bf3f80771e",
+    "presentation/models-6/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-6/engine.log": "e84bad1eb6a336da264b3d9cdba5ce6a224348d06328cdf52929ad9b46df2731",
+    "presentation/models-6/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-6/fixture-source/ZSCRIPT.txt": "b09663bbbf2490fae97fdf2789ee007ac473bf4c2fcbcefa8c7b537a4aee78f1",
+    "presentation/models-6/presents.csv": "5043eda13849dc6284720efe7a6054067c2c95c6f4a47f2ca6fcf359ad10d536",
+    "presentation/models-6/process.log": "4273323cf0760c100476b0c6165f634a6e2ef8a58eeefcbd57867641a2f5227d",
+    "presentation/models-6/scene.png": "588807b99508bb41e5f933d1f67bcc6750e2cfe10ef8d52d9b021f4db58164fa",
+    "presentation/models-6/session.ini": "b365d0330fc010c7f0884aa9630a1ecf059368debda4a8914a25c8c7c98f6c02",
+    "presentation/RESULTS.json": "06362ea0fa7c20b44f705d53494574c96b8f7e77801c758f82f3b127f5020eb6",
+    "presentation/sprites-6/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-6/engine.log": "1c4ba5d88f4b93d0162206dc43807adf13f6e9d8770bb837dad7d2d67832bf30",
+    "presentation/sprites-6/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-6/fixture-source/ZSCRIPT.txt": "b09663bbbf2490fae97fdf2789ee007ac473bf4c2fcbcefa8c7b537a4aee78f1",
+    "presentation/sprites-6/presents.csv": "b01d258fa3711885fb907892f2882e2d6d17a186df6a77221107906913b54ce2",
+    "presentation/sprites-6/process.log": "b543761f6264bdc6100746d8399a11c389d5cb3157337a1f25d2af41aed60373",
+    "presentation/sprites-6/scene.png": "af1cd5d91aa12a894098b71b505df23b5d2b9905abf88f37e1f60497db54e409",
+    "presentation/sprites-6/session.ini": "84b9c24a00183c40daeb0784aca5087aa6a4a149deaefbe5d6262599488f351d",
+    "validation-final.json": "4f1ae703389d24d69febcbe9589b5d02267ec8e00aa5bc77eb07501ae92a50c6"
+  }
+}

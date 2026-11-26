@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.44** - 2026-11-14.
+Documentation version: **5.17.45** - 2026-11-14.
+
+## #733 - Textile world drops (5.17.45)
+
+Six designs cover fabric18 and materials71..75, eight existing cases.
+114 closed solids, 108 contacts, 50 opening rays, 17 repeated exports and
+1,157 native continuity assertions pass. CA733-TEXTILE-DROPS-01 retains
+ordinary inventory/crafting and visual review, including regular folds,
+shallow fleece locks, cotton posture and silk/fiber/binding detail.
+Other #647 inventory, character and modular work remains separate.
 
 ## #731 - Leather and hide world drops (5.17.44)
 

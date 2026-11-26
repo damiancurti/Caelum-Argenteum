@@ -1,0 +1,18 @@
+newmtl linen
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/textiles/materials.png
+newmtl fleece
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/textiles/materials.png
+newmtl cotton
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/textiles/materials.png
+newmtl silk
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/textiles/materials.png
+newmtl fiber
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/textiles/materials.png
+newmtl husk
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/textiles/materials.png
