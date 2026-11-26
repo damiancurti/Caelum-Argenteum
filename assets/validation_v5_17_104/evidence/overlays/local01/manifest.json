@@ -1,0 +1,10 @@
+{
+  "issue": 851,
+  "runtime_sha256": "aa7e00e93eeaffe42e353ee116961021b8dad92a638146eee399f211be122f82",
+  "baseline_source_sha256": "718f6f390831362aac29cdc8e21c3e2810c847458a728ec68db96471133300b5",
+  "candidate_source_sha256": "fff547dba01003c92074180ff72dc940e0894363dd37e2eb39e58233606fcae4",
+  "overlay_sha256": "5c92670212de2d6a0cf8e3c5e514dbe6584e0648f906aa787d0bbf7836dd17b1",
+  "inverse_exact": true,
+  "no_new_fields_or_gameplay_data": true,
+  "qualification": "Prototype only. Local iterator order, group and unlinked-guard paths remain intact. Reuses the exact existing bound only with the shared HighDensity flag and one portal group. Read-only relationship paths may reject before Opponent; residents/summoned/automaton/clone observers retain Opponent first. Communication eligibility is read-only. Skipped bodies cannot pass the original contact or sight range tests; derived keyed insight/stealth cache warming may occur at a different point."
+}

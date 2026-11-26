@@ -1360,3 +1360,8 @@ src/caelum/survival/CaelumContaminationObject.zs text eol=crlf
 assets/validation_v5_17_103/** -text -diff
 assets/validation_v5_17_103/*.py text eol=lf diff
 assets/validation_v5_17_103/*.json text eol=lf diff
+
+# Exact local perception source and retained issue851 evidence.
+assets/validation_v5_17_104/** -text -diff
+assets/validation_v5_17_104/*.py text eol=lf diff
+assets/validation_v5_17_104/*.json text eol=lf diff

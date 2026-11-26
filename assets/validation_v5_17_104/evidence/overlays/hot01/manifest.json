@@ -1,0 +1,102 @@
+{
+  "runtime_sha256": "aa7e00e93eeaffe42e353ee116961021b8dad92a638146eee399f211be122f82",
+  "overlay_sha256": "ab9b2487cc706f1eb4f63a53d481422e7ac257bcb7c6d175dcc4c41a441aad8e",
+  "originals_restored_exactly": {
+    "caelum/actors/CaelumCommunication.zs": "caf7097c0bce6345d81be61c7968b34f99d710922ea3d1fe9fbd59b68895387d",
+    "caelum/actors/CaelumVisualPerception.zs": "718f6f390831362aac29cdc8e21c3e2810c847458a728ec68db96471133300b5",
+    "caelum/actors/CaelumVisualEvidence.zs": "f1ecda67166c3f73fbe3719fcd290440fbfb2e4fcea9a5f0c35d879f030f8353",
+    "caelum/world/CaelumPortSiege.zs": "3f40d2ebdf3703a44c6e2f16023ce135206c6e23cd36bbbc969e6939d65ea49a",
+    "caelum/actors/CaelumCombatActor.zs": "6cb9afd8c4c68311fe6dcf9c01b8e203d20ec493a4532e855bf5e008564bd181",
+    "caelum/actors/CaelumDemonService.zs": "f0257673fc42823e3cb7f07ae7fa8d20c58159528496da5b97cc038a2832fa33",
+    "caelum/survival/CaelumAltitudeService.zs": "b4de2b38817c47ea3c697a3594f6a8bd553ac03dac8a2078c954dcddcf83e732"
+  },
+  "period": 17,
+  "metrics": [
+    {
+      "id": 0,
+      "path": "caelum/actors/CaelumCommunication.zs",
+      "method": "Pulse"
+    },
+    {
+      "id": 1,
+      "path": "caelum/actors/CaelumCommunication.zs",
+      "method": "ObserveAlly"
+    },
+    {
+      "id": 2,
+      "path": "caelum/actors/CaelumCommunication.zs",
+      "method": "Eligible"
+    },
+    {
+      "id": 3,
+      "path": "caelum/actors/CaelumCommunication.zs",
+      "method": "Pending"
+    },
+    {
+      "id": 4,
+      "path": "caelum/actors/CaelumVisualPerception.zs",
+      "method": "CanSee"
+    },
+    {
+      "id": 5,
+      "path": "caelum/actors/CaelumVisualPerception.zs",
+      "method": "Touching"
+    },
+    {
+      "id": 6,
+      "path": "caelum/actors/CaelumVisualPerception.zs",
+      "method": "Candidate"
+    },
+    {
+      "id": 7,
+      "path": "caelum/actors/CaelumVisualPerception.zs",
+      "method": "Acquire"
+    },
+    {
+      "id": 8,
+      "path": "caelum/actors/CaelumVisualEvidence.zs",
+      "method": "Observe"
+    },
+    {
+      "id": 9,
+      "path": "caelum/world/CaelumPortSiege.zs",
+      "method": "Pulse"
+    },
+    {
+      "id": 10,
+      "path": "caelum/world/CaelumPortSiege.zs",
+      "method": "AttackerTarget"
+    },
+    {
+      "id": 11,
+      "path": "caelum/world/CaelumPortSiege.zs",
+      "method": "WalkTo"
+    },
+    {
+      "id": 12,
+      "path": "caelum/actors/CaelumCombatActor.zs",
+      "method": "ThermalChase"
+    },
+    {
+      "id": 13,
+      "path": "caelum/actors/CaelumCombatActor.zs",
+      "method": "ThermalTryMove"
+    },
+    {
+      "id": 14,
+      "path": "caelum/actors/CaelumCombatActor.zs",
+      "method": "PulseResourceRecovery"
+    },
+    {
+      "id": 15,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "UpdateBreath"
+    },
+    {
+      "id": 16,
+      "path": "caelum/survival/CaelumAltitudeService.zs",
+      "method": "Update"
+    }
+  ],
+  "qualification": "Inclusive sampled bodies; do not sum nested scopes. Lookup/timer overhead remains; not production throughput."
+}

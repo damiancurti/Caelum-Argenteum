@@ -1,0 +1,47 @@
+{
+  "reviews": [
+    {
+      "label": "siege_final",
+      "path": "evidence/native/siege_final/peer0/scene.png",
+      "sha256": "05ec3e42e2848bd53f73ec2e4866df9c08b9495947137ee222d51b0b0a57d3ec",
+      "directly_viewed": true,
+      "note": "Gate, ram, nearby attackers and retained HUD/framing inspected."
+    },
+    {
+      "label": "siege_control",
+      "path": "evidence/native/siege_control/peer0/scene.png",
+      "sha256": "344a729c15126f6c47e16c83a558312bd33f2c3516985a2fc3f892f0f0807c4b",
+      "directly_viewed": true,
+      "note": "Matched gate/ram camera and apparent scene retained."
+    },
+    {
+      "label": "mansion_final",
+      "path": "evidence/native/mansion_final/peer0/scene.png",
+      "sha256": "e073e4fd0ebd332f530d2eefc444d7ca622b1eeaf4e5d7deb4ff4fe75b6d9d31",
+      "directly_viewed": true,
+      "note": "Mansion entrance and Palomo with opening conversation; not unobstructed traversal evidence."
+    },
+    {
+      "label": "sewers_final",
+      "path": "evidence/native/sewers_final/peer0/scene.png",
+      "sha256": "c3fd3a180595496a22ac31829d0cc18728ecb2e0aebe5fbedf1ae2a8a7174bf0",
+      "directly_viewed": true,
+      "note": "Dark sewer entrance, retained rectangular passage/materials and HUD; not a full walkthrough."
+    },
+    {
+      "label": "city_final",
+      "path": "evidence/native/city_final/peer0/scene.png",
+      "sha256": "d21d6642b2367cd35c4b6a32bcede90ecd24176a5895bf5fcb51c00bb229a8ff",
+      "directly_viewed": true,
+      "note": "Quay vehicles, shelter and city wall with retained camera and HUD."
+    },
+    {
+      "label": "city_ground_final",
+      "path": "evidence/native/city_ground_final/peer0/scene.png",
+      "sha256": "9dca026db6604aa3602588079be2632c974f7755b71a0e96b843564a7a7e4210",
+      "directly_viewed": true,
+      "note": "Ground-facing paving and HUD with the expected camera."
+    }
+  ],
+  "qualification": "Agent visual review, not author acceptance or full-map traversal performance."
+}

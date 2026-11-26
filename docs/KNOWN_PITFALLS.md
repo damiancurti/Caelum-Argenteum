@@ -4,6 +4,34 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-263 - Measure local candidates separately and preserve ally evidence
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #851 / 5.17.104,
+2026-11-19, GZDoom 4.14.2. Native/static verification; author acceptance pending.
+
+A shared census can make local query radii conservative for the tallest actor.
+Measure the actual local loop before assuming a global or unlinked list dominates.
+Here 99,004 of 205,202 sampled candidates lie beyond the existing individual
+sight/contact upper bound. Reusing that bound requires the authoritative dense
+flag, one portal group and preserved migration-capable relationship order.
+Geometry proves rejected bodies cannot reach native CheckSight; a live oracle
+calls original CanSee/Touching only for rejects and fails on any positive result.
+Do not run unrestricted old/new visible queries sequentially in a live battle
+without accounting for RNG and state effects.
+
+Compare both selected opponents and ally evidence. A second query can inherit
+the first query's remembered ally and hide a missing observation; the isolated
+fixture gives each side fresh communication state, compares observations and
+restores the original object. Retain explicit side-effect, portal and save tests.
+
+Include setup in the measured region. Inclusive service scopes are nested, and
+native actor Tick includes state actions. Thinker and renderer snapshots taken
+at different instants cannot be added/subtracted into an exact frame budget.
+Keep raw queue-present/tic tails and representative peaceful references; a local
+gain does not establish playable siege rendering. Evidence and reproduction:
+assets/validation_v5_17_104; contract: SYSTEMS perception/communication/performance.
+
+
 ## CA-KP-262 - Prove exclusive carrier families before shortening dispatch
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #849 / 5.17.103,

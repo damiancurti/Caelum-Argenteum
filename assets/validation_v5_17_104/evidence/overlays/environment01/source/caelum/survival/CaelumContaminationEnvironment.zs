@@ -1,0 +1,133 @@
+// #502: la categoría pertenece al lugar; no se buscan emisores por tic.
+class CaelumContaminationWorld : StaticEventHandler
+{
+    Array<bool> Industrial;
+    Array<CaelumTarotDirtyRock> RockSources;
+    void RegisterRock(CaelumTarotDirtyRock rock)
+    {if(rock!=null && RockSources.Find(rock)==RockSources.Size())RockSources.Push(rock);}
+    void ForgetRock(CaelumTarotDirtyRock rock)
+    {int i=RockSources.Find(rock);if(i<RockSources.Size())RockSources.Delete(i);}
+    transient CaelumContaminationWeatherCache HistoryWeather;
+    transient CaelumContaminationGrid Grid;
+    CaelumContaminationGrid ContactGrid()
+    {if(Grid==null)Grid=new('CaelumContaminationGrid');return Grid;}
+
+    void Observe(Actor actor)
+    {
+        if(!(actor is 'CaelumForgeStation') && !(actor is 'CaelumSawmillStation')
+            && !(actor is 'CaelumAlchemyStation'))return;
+        let sector=actor.CurSector;if(sector==null)return;
+        int index=sector.Index();
+        if(index<0)return;
+        if(Industrial.Size()<level.Sectors.Size())Industrial.Resize(level.Sectors.Size());
+        Industrial[index]=true;
+    }
+    override void WorldLoaded(WorldEvent e)
+    {
+        HistoryWeather=null;Grid=null;RockSources.Clear();
+        Industrial.Clear();Industrial.Resize(level.Sectors.Size());
+        // Censo tipado único al cargar: reconstruye sectores de talleres ya existentes.
+        let stations=ThinkerIterator.Create('CaelumCraftingStation');Actor station;
+        while((station=Actor(stations.Next()))!=null)Observe(station);
+        // Reconstrucción única al cargar para mapas/partidas anteriores. El
+        // conjunto está acotado a actores nativos del mapa cargado; sólo los
+        // objetos físicos elegibles reciben un nodo, nunca jugadores ni NPC.
+        let objects=ThinkerIterator.Create('Actor');Actor object;
+        while((object=Actor(objects.Next()))!=null)
+        {CaelumContaminationObject.Register(object);ContactGrid().Track(object);RegisterRock(CaelumTarotDirtyRock(object));}
+    }
+    override void WorldThingSpawned(WorldEvent e){Observe(e.Thing);CaelumContaminationObject.Register(e.Thing);ContactGrid().Track(e.Thing);}
+    override void WorldThingDestroyed(WorldEvent e)
+    {let row=CaelumContaminationContacts.Get(e.Thing);if(row!=null && row.Grid!=null)row.Grid.Remove(row);}
+    void DepartObjects()
+    {
+        // Una consulta tipada por salida de mapa, nunca por tic/actor. Sólo
+        // los nodos bajo un sello cierran su muestra y capturan el clima base.
+        let nodes=ThinkerIterator.Create('CaelumContaminationObject');CaelumContaminationObject node;
+        while((node=CaelumContaminationObject(nodes.Next()))!=null)node.Depart();
+    }
+    override void WorldUnloaded(WorldEvent e){DepartObjects();}
+    static CaelumContaminationWorld Get()
+    {return CaelumContaminationWorld(StaticEventHandler.Find('CaelumContaminationWorld'));}
+}
+
+class CaelumContaminationEnvironment : Object play
+{
+    static double ReferenceAt(Actor body)
+    {
+        CA851ServiceProbe ca851Probe=null;double ca851Start=0;
+        if(level.time>=3599 && level.time<4299 && (level.time-3599)%17==0)
+        {ca851Probe=CA851ServiceProbe(StaticEventHandler.Find('CA851ServiceProbe'));if(ca851Probe!=null)ca851Start=MSTimeF();}
+        double ca851Result=CA851Body_ReferenceAt(body);
+        if(ca851Probe!=null)ca851Probe.Record(19,ca851Start);
+        return ca851Result;
+    }
+    static double CA851Body_ReferenceAt(Actor body)
+    {
+        if(body==null)return -1;
+        let world=CaelumContaminationWorld.Get();
+        // Sólo las fuentes declaradas, una en el anexo; nunca actores del mapa.
+        if(world!=null)for(int i=0;i<world.RockSources.Size();i++)
+        {
+            let source=world.RockSources[i];
+            if(source!=null && source.Affects(body))
+            {source.Remember(body);return CaelumMajorArcanaData.ROCK_FIXED_REFERENCE;}
+        }
+        return BaseReferenceAt(body);
+    }
+    static double BaseReferenceAt(Actor body)
+    {
+        if(body==null || body.CurSector==null)return -1;
+        let sector=body.CurSector;
+        int declared=sector.GetUDMFInt('user_ca_contamination_class');
+        if(declared>0 && declared<=CaelumContaminationData.ENV_SEWER)
+            return CaelumContaminationData.Reference(declared);
+        let world=CaelumContaminationWorld.Get();int index=sector.Index();
+        if(world!=null && index>=0 && index<world.Industrial.Size() && world.Industrial[index])
+            return CaelumContaminationData.INDUSTRIAL_REFERENCE;
+        if(CaelumCampLandData.Garden(level.MapName,TexMan.GetName(sector.GetTexture(Sector.floor)))
+            || CaelumCampLandData.Countryside(level.MapName,body.Pos))return CaelumContaminationData.NATURAL_REFERENCE;
+        return CaelumContaminationData.Reference(CaelumContaminationData.MapClass(level.MapName));
+    }
+}
+
+// El pronóstico de espera conserva lugar/abrigo y evalúa su calendario futuro.
+// No consulta ni modifica el clima o equipo vivos durante la simulación.
+class CaelumContaminationWaitWeather : Object play
+{
+    int Profile,Region,Seed,Shelter,SampleDay,SampleMinute;
+    double Reference,Value;
+    bool DynamicClimate,RainCovered;
+    CaelumWeatherSample Outside,Local;
+    void Capture(CaelumPlayer user)
+    {
+        Reference=CaelumContaminationEnvironment.ReferenceAt(user);SampleDay=-1;SampleMinute=-1;
+        let weather=CaelumWeatherState.Get(user);
+        if(weather==null || weather.Current==null || !weather.Current.Available){Reference=-1;return;}
+        Profile=weather.Profile;Region=weather.Region;Seed=weather.Seed;
+        // Usa el mismo abrigo geométrico que el contacto térmico, no la muestra
+        // anterior del diario, que puede pertenecer al lugar previo al movimiento.
+        bool roof=CaelumThermalShelter.Roof(user);
+        Shelter=CaelumThermalEnvironment.ClimateShelter(Profile,roof,CaelumThermalShelter.WindBlocked(user));
+        RainCovered=roof || CaelumCampShelter.Find(user)!=null;
+        double heat,humidity,wind,direction;
+        [heat,humidity,wind,direction]=CaelumSealClimate.Delta(user,0,0);
+        DynamicClimate=heat!=0 || humidity!=0;
+        Outside=new('CaelumWeatherSample');Local=new('CaelumWeatherSample');
+    }
+    double Sample(int day,int tics)
+    {
+        if(Reference<0 || Outside==null)return -1;
+        int minute=tics/(CaelumWorldClock.TicsPerHour()/60);
+        if(SampleDay!=day || SampleMinute!=minute)
+        {
+            if(Profile==CaelumWeatherRules.PROFILE_LIMBO)Outside.Evaluate(Profile,day,minute*(CaelumWorldClock.TicsPerHour()/60),Seed);
+            else Outside.EvaluateRegion(Region,day,minute*(CaelumWorldClock.TicsPerHour()/60),Seed);
+            Local.ApplyShelter(Outside,Shelter,Profile);
+            Value=Local.Available ? CaelumContaminationRules.Ambient(Reference,Local.AirTemperatureC,
+                Local.RelativeHumidityPercent,Local.PrecipitationMmPerHour,!RainCovered) : -1;
+            SampleDay=day;SampleMinute=minute;
+        }
+        return Value;
+    }
+}
