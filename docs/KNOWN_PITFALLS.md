@@ -1625,6 +1625,20 @@ changes them, and the reconstructed reload matches the hidden pre-save capture.
 Test other skin/model replacements separately; this is evidence for these slots
 and the existing375-frame MD3 rig, not every native model format.
 
+### 5.17.124 / #460 - Backward visual-state conversion
+
+ENGINE-VERIFIED, GZDoom4.14.2/Windows11/Vulkan, 2026-11-26. The previous
+runtime can retain rest gameplay while warning about appended state offsets
+and unavailable model override paths in a current save. Successful loading
+alone is insufficient rollback evidence. Convert a separate copy, restore
+known native frame identities and model paths, and preserve the original.
+The #460 converter is byte-idempotent and native-tested on the matched fixture.
+Do not replace serialized ActorModelData with a bare object or JSON null:
+the native reader rejected those attempted resets. Preserve the object shape
+and remap only owned bindings; restore the hidden weapon slot explicitly.
+Evidence: assets/validation_v5_17_124/evidence/SUMMARY.json and rollback_save.py.
+
+
 ## CA-KP-225 - Reuse exact local measurements before changing perception rules
 
 Status/evidence: ENGINE-VERIFIED, 2026-11-13. Issue/PR: #454/#643.

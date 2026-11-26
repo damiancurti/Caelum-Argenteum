@@ -1,0 +1,36 @@
+{
+  "issue": 460,
+  "runtime_sha256": "2d03c994f9c0ebc4d9b39ad93b18fafde81ca950edad1be613da990c8a30325a",
+  "fixture_sha256": "1015ab4f7ac285a815f4cb841b710df0104a5d526ff3358ba16ff67c2d54e3d2",
+  "runs": [
+    {
+      "name": "presentation",
+      "passed": true,
+      "counts": [
+        [
+          "7",
+          "0"
+        ]
+      ],
+      "exit": 0,
+      "presentation_windows": [
+        {
+          "frames": 299,
+          "mean_ms": 16.66615719063545,
+          "p50_ms": 16.6564,
+          "p95_ms": 16.8478,
+          "p99_ms": 17.121,
+          "max_ms": 17.2415
+        },
+        {
+          "frames": 299,
+          "mean_ms": 16.665202675585284,
+          "p50_ms": 16.6601,
+          "p95_ms": 16.8331,
+          "p99_ms": 16.977,
+          "max_ms": 17.1215
+        }
+      ]
+    }
+  ]
+}

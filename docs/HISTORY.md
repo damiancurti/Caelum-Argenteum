@@ -1,6 +1,42 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.123** - 2026-11-21.
+Documentation version: **5.17.124** - 2026-11-26.
+
+## 5.17.124 - Native rest and meal transitions (#460, 2026-11-26)
+
+The author approved using the current modular body, retaining the left-hand
+shield and hiding the weapon visual during right-hand meal gestures. This
+patch implements the previously approved 2/3/4-second timings, serialized
+revision1 visual clock, voluntary exit sequencing and immediate interruption.
+Native provision, equipment, jump and forced-exhaustion authorities remain.
+
+Static evidence: 208 deterministic MD3 exports, unchanged topology/UVs,
+444,156 neutral vertices and 7,056 wrist checks; generated data/source hashes
+pass. Native evidence covers chair/bed/floor, actual held input, damage,
+support removal, food/water consumption and equipment, jump charging, pending
+entry/meal/exit reload, hub return, exhaustion, exact old-save upgrade and
+copied rollback. Inspected captures show the shield retained, weapon hidden and
+right-hand gesture on the base and owned-clothing bodies. This is isolated
+engineering evidence; CA460-MOTION-01 and all 108 older author checks remain.
+
+Full validate_project.py passes after refreshing twelve shared TEXTURES
+fingerprints with byte-identical original-prefix proof and updating the two
+diagnostic release labels. The focused native set records 21 phases/442 checks
+without failures in retained passing runs. Failed earlier attempts are separate.
+
+Two five-second, 299-frame single-body windows at a 60-FPS cap measured seated
+rest versus eating: mean16.666/16.665ms, p95 16.848/16.833ms, p99 17.121/16.977ms,
+maximum17.242/17.122ms. This verifies the sampled presentation, not map-wide or
+siege fluency. Environment and raw intervals are retained in the evidence.
+
+Initial minimized captures were inadequate for visual review; visible background
+captures replaced them. One diagnostic referenced the wrong shield property.
+Raw backward loading retained gameplay but warned about unknown RM states and
+meal model paths. Two attempted override resets were rejected by the native
+save reader; the corrected copy conversion restores existing model paths and
+state identities, preserves the original save, and passes native old-runtime
+loading without those warnings. All attempts remain local and are indexed in
+the evidence summary. No failing attempt is treated as author acceptance.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 

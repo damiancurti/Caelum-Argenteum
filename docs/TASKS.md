@@ -1,6 +1,27 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.123** - 2026-11-21.
+Documentation version: **5.17.124** - 2026-11-26.
+
+## 5.17.124 - Complete native rest/meal transitions (#460)
+
+Implemented revisioned rest phases, approved durations, native input guards,
+damage/support interruption and retained-body meal gestures. Preserve the
+existing 108 author checks and add CA460-MOTION-01. Its verdict is pending;
+automated fixtures and a PR do not constitute author acceptance.
+
+Evidence: deterministic 208-model export; unchanged UV/topology and neutral
+samples; native chair/bed/floor, held input, damage, support loss, meal/equipment,
+jump charge, entry/meal/exit saves, hub return, exhaustion, old-save upgrade and
+copied rollback. The rollback tool preserves original saves and is idempotent.
+Raw current-to-old loading warns about unknown states/models, so use the copy
+conversion with matched package/maps. Failed fixture/migration attempts remain
+recorded in the evidence summary rather than being counted as passing checks.
+
+Continue #464 and #465 independently, then #466/#467 dependency removal and
+#468/#469 integrated beta validation/release preparation. Approved scope:
+MAP01-MAP03 with existing modes/limits; GZDoom4.14.2 installed separately;
+current audio assignments retained and 19 future tracks reserved. Leave the
+consolidated terminal open only after the full remaining batch is prepared.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 

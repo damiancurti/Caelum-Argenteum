@@ -9242,6 +9242,7 @@ class CaelumPlayer : DoomPlayer
     bool CanEnterCombatBlockMode()
     {
         return player != null
+            && !CaelumRestState.MotionLocked(self)
             && player.playerstate == PST_LIVE
             && !EquipmentMenuOpen
             && !CreationWizardOpen

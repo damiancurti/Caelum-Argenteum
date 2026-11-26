@@ -1,6 +1,36 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.123** - 2026-11-21.
+Documentation version: **5.17.124** - 2026-11-26.
+
+## 5.17.124 - Rest animation ownership (#460)
+
+CaelumRestState MotionRevision1 stores phase, native start tic, last advanced
+tic and an optional queued exit. Missing fields migrate idempotently without
+restarting an old rest or changing its elapsed game time. The visual clock
+advances at most once per native tic, including during accelerated rest.
+Active phases last 70 tics for chair entry/exit, 105 for lying/getting up and
+140 for eating/drinking. Movement/attack input queues a voluntary exit and is
+filtered until it finishes. Blocking cannot be entered while motion is locked.
+Damage, support loss and ordinary map travel interrupt without waiting. Forced
+exhaustion keeps its existing lock; collapse/travel discards stale visual phases.
+
+The existing DiningSession alone consumes provisions and starts native hunger
+or thirst regeneration. A supported resting player with an active regeneration
+effect receives the matching four-second gesture, alternating when both effects
+are present. Visual updates neither consume nor refill items. The supported
+modular body's weapon slot is hidden only for the gesture; its shield and actual
+equipment remain. Bindings reconstruct after load and restore on interruption.
+Jump preparation/landing still use their accepted 10/35 tics and native controls.
+
+Old saves upgrade in place without resetting rest progress. To return a save
+made during a new clip to the exact prior package, preserve the original and run
+`python assets/validation_v5_17_124/rollback_save.py SOURCE.zds COPY.zds`.
+Use the matching legacy maps/package and a copied basename in that session's
+save directory. The tool resets only new visual states/model paths and motion
+fields; inventory, resources, rest progress, map data and the original save stay
+intact. Repeating conversion is byte-idempotent. Restore the original save with
+the current package to reverse it. Native proof is scoped to the retained
+GZDoom4.14.2 fixture and matched packages, not arbitrary historical map variants.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 

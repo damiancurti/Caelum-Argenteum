@@ -52,16 +52,23 @@ class CaelumWardrobePilotBody : CaelumDomingoPilotBody
     void ApplyBindings()
     {
         HiddenMask=CaelumWornClothingModelData.Hidden(BodyKind,HeadKind,HandKind,FootKind);
+        if(MealVisualPhase!=0)HiddenMask|=1<<15;
         for(int slot=0;slot<CaelumWornClothingModelData.MODEL_SLOTS;slot++)
         {
             bool visible=(HiddenMask&(1<<slot))==0;
-            A_ChangeModel('None',slot,CaelumWornClothingModelData.ModelPath(slot),
+            A_ChangeModel('None',slot,CaelumRestMotionData.ModelPath(CaelumWornClothingModelData.ModelPath(slot),MealVisualPhase),
                 CaelumWornClothingModelData.File(slot,BodyKind,HeadKind,HandKind,FootKind),
                 slot,CaelumWornClothingModelData.SkinPath(slot),
                 CaelumWornClothingModelData.Skin(slot,BodyKind,HeadKind,HandKind,FootKind),
                 visible?0:CMDL_HIDEMODEL);
         }
         BindingsReady=true;
+    }
+
+    override void SyncMealBindings(int phase)
+    {
+        if(MealBindingsReady && MealVisualPhase==phase)return;
+        MealVisualPhase=phase;MealBindingsReady=true;ApplyBindings();
     }
 
     void Sync(CaelumDomingoPilotPlayer user)
@@ -73,6 +80,7 @@ class CaelumWardrobePilotBody : CaelumDomingoPilotBody
             // sólo la última presentación legítima, sin recrear objetos reales.
             if(!SnapshotReady || !LastSupported)return;
             FrozenDeath=true;
+            if(MealVisualPhase!=0){MealVisualPhase=0;BindingsReady=false;}
             if(!BindingsReady)ApplyBindings();
             return;
         }

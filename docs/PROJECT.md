@@ -1,6 +1,28 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.123** - 2026-11-21.
+Documentation version: **5.17.124** - 2026-11-26.
+
+## 5.17.124 - Native rest and meal transitions (#460)
+
+Rest owns a revisioned visual clock: chair sit/stand takes two seconds,
+bed/floor lie/get-up three seconds, and eating/drinking four seconds. Actual
+movement, attacks and blocking stay unavailable during those rest animations;
+voluntary cancellation completes the current gesture and exit, while damage or
+support loss releases the animation immediately. Existing forced exhaustion
+retains its independent sleep lock and immediate collapse pose.
+
+The retained optional human male modular body supplies the rendered clips.
+The author approved keeping the shield in the left hand and hiding the weapon
+visual while the right hand gestures. Consumption, progressive resource rates,
+equipment and the 10-tic/35-tic jump transitions keep their native owners.
+Other appearance fallbacks retain their existing poses; this delivery does not
+approve the seven pending #736 families or convert all characters.
+
+Static model/binding checks and focused native scenarios pass. Exact old-save
+upgrade and copied rollback are covered; direct rollback needs the documented
+visual-state conversion. Final visual acceptance is CA460-MOTION-01. The next
+focused issues are #464-469: existing audio, presentation, provenance and an
+independent MAP01-MAP03 beta using separately installed GZDoom4.14.2.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 

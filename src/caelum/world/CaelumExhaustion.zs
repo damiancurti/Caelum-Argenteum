@@ -36,6 +36,7 @@ class CaelumExhaustion : Object play
         if(!Active(user))return;
         if(rest.OriginMap!=level.MapName)
         {
+            rest.EnsureMotion();rest.MotionPhase=CaelumRestMotionData.NONE;rest.MotionExitQueued=false;
             DropSupport(user,rest);rest.ReleaseView(user);rest.ViewInitialized=false;
             rest.OriginMap=level.MapName;rest.LastUntimedTic=level.maptime-1;
             rest.LastUntimedStepSerial=CaelumTimeAdvanceState.StepSerial(user);
@@ -62,6 +63,8 @@ class CaelumExhaustion : Object play
         if(user.StaffCastPending)user.CancelPendingStaffCast(false);
         rest.Exhaustion=true;rest.ExhaustionRevision=1;rest.ExhaustionLockNoticeShown=false;
         rest.Status=CaelumRestRules.STATUS_ACTIVE;rest.Mode=CaelumRestRules.MODE_SLEEP;
+        // El colapso forzado conserva su pose inmediata y descarta una salida pendiente.
+        rest.EnsureMotion();rest.MotionPhase=CaelumRestMotionData.NONE;rest.MotionExitQueued=false;
         rest.Untimed=true;rest.RequestedTics=0;rest.ElapsedTics=0;
         rest.OriginMap=level.MapName;rest.OriginPosition=user.Pos;rest.LastHealth=user.health;
         rest.InputArmed=false;rest.ResultKey="";

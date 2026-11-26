@@ -1,19 +1,15 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.17.123** - 2026-11-21.
+Documentation version: **5.17.124** - 2026-11-26.
 
-**V5.16/V5.17 integration authorized 2026-11-26:** 130 PRs/132 implemented issues;
-release5.17.123 retained. Later versions extend scope;108 manual checks remain.
-Exact scope:validation_v5_17_123/integration-decision.json. #403/460/464-469 stay open.
-V5.17:78 displays/56 provisional models(#825),25garments(#829),brick(#847),
-remasters(#866),vaults(#875),joinery(#878);#736review pending.
-Verified:#827body/hands,#851reach,#855recognition,#857wardrobe,#859grips,
-#861hands,#864contacts,#871surface index,#873diagnosis;#834retains MD3.
-#879facades,#881combined,#883ceilings,#886municipal,#887masonry;
-#889consolidated terminal. Evidence:ASSETS/TASKS/HISTORY;checks:pending_test.txt.
-V5.16:#452/453approved;#454MAP02/MAP03 rebuilt, siege fluency unresolved;
-#456World-gate,75assignments pending;#45556classes/3pilots;#457eligibility-only.
-LegacyMap02Revision5 retained.
+**5.17.124/#460:** timed rest/meal gestures, native guards, copied rollback;
+evidence:validation_v5_17_124. CA460-MOTION-01 joins108 pending checks.
+**2026-11-26 integration:**130PRs/132issues; scope/evidence in
+validation_v5_17_123/integration-decision.json and ASSETS/TASKS/HISTORY.
+#736art and siege fluency remain unresolved; LegacyMap02Revision5 retained.
+**Next #464-469/#403:** independent MAP01-MAP03 beta; existing modes/limits,
+separate GZDoom4.14.2, current audio,19reserved tracks. Separate commits/tests/PRs;
+open the consolidated author terminal after the batch. Later campaign needs authoring.
 
 **V5.15 accepted2026-11-10:** CA447-01..451-01;#447-451 closed;PR635-639 merged.
 HISTORY/validation_v5_15_0..4. Single-player/attributes100 terminal:

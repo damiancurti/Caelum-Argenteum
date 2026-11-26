@@ -1,0 +1,23 @@
+{
+  "issue": 460,
+  "base": "0953a15e056d02ea65e24b62c7b3be4909b1451c",
+  "source": "src/TEXTURES",
+  "previous_sha256": "fe101bef213d375ca30330deb1f01a3c595caf63d753ed9e5ba505318fc3c6ad",
+  "current_sha256": "3958df53c3bed45aa802252f0f7a15d14b4260370609d290826a8faf3207aa21",
+  "original_prefix_byte_identical": true,
+  "only_append": "#include \"caelum/data/rest_motion.textures\"",
+  "refreshed_manifests": [
+    "assets/source/art/inventory_models_647/ammunition/EXPORT.json",
+    "assets/source/art/inventory_models_647/bladed_weapons/EXPORT.json",
+    "assets/source/art/inventory_models_647/axes/EXPORT.json",
+    "assets/source/art/inventory_models_647/polearms/EXPORT.json",
+    "assets/source/art/inventory_models_647/articulated_weapons/EXPORT.json",
+    "assets/source/art/inventory_models_647/ranged_weapons/EXPORT.json",
+    "assets/source/art/inventory_models_647/armor_helmets/EXPORT.json",
+    "assets/source/art/inventory_models_647/armor_hands/EXPORT.json",
+    "assets/source/art/inventory_models_647/armor_feet/EXPORT.json",
+    "assets/source/art/inventory_models_647/armor_torso/EXPORT.json",
+    "assets/source/art/inventory_models_647/ingots/EXPORT.json",
+    "assets/source/art/inventory_models_647/effective_weapon_references/PROVENANCE.json"
+  ]
+}
