@@ -1,0 +1,21 @@
+{
+  "files": 15,
+  "byte_identical": true,
+  "sha256": {
+    "manifest.json": "e744c18e9475dcc4e3f8cfc3bc3ebcba6032bd7335d5ef994eced8296200a835",
+    "preview.pk3": "1910fb03f5e97dad370c5ea4f5df9908be3da9fa04939f78be75f09069d19636",
+    "editable/bladed_weapons.mtl": "845d6ace2f0c9d6be80b3850204d1b5ba94b5ac0759a6b0ce7a19962146a2ba0",
+    "editable/dagger.obj": "9a8b56e77f37fbde0257a9acdb693c5c4cdd63182ed7cf62d927e7a786c9dc1e",
+    "editable/greatsword.obj": "3b77f17c5deccdb43fc0579f392adf854548f0b25a25843d0233be538a10b602",
+    "editable/machete.obj": "01a49e7eed6f7dbd2a30c07a64c71eb4b4764d484a71ba3c6e7b040efebda01f",
+    "editable/sword.obj": "0a935de347d48b80cef09b452dc1d474cf265ca3c988772d4aa29a19b4678e65",
+    "caelum/data/inventory_bladed_weapons.modeldef": "047b6304b7ebd71267a293917304b2c91fc060056c777eff8fa16690779f7de6",
+    "editable/src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "models/caelum/inventory/bladed_weapons/dagger.md3": "d7e3cec7e77b3702cb41d537c1ae3b557a84e129ea3607bc85ae5ab40a98db81",
+    "models/caelum/inventory/bladed_weapons/greatsword.md3": "8d952e91ab738a2050cb77d0c2a1df853ac07f431312c57b9360216dacb170d8",
+    "models/caelum/inventory/bladed_weapons/machete.md3": "d951ac23aa9a76b122981126b41fea057013ded6d0d8e94dfa097c0c7257d354",
+    "models/caelum/inventory/bladed_weapons/sword.md3": "df3c87277f4c62f702dc16f496017f6e8e6e206daa795ed006fd81b9fe94ad9c"
+  }
+}

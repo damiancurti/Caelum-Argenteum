@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.59** - 2026-11-15.
+Documentation version: **5.17.60** - 2026-11-15.
+
+## 5.17.60 - Native physical blade drops (#763)
+
+Sword, dagger, machete and greatsword drops now use four original complete
+volumes with six exact bindings, including the two sword quest subclasses.
+Fifteen deterministic exports, independent geometry/UV checks, 1,343 native
+continuity assertions and 312 final visual/control checks pass. Twenty native
+detail views were inspected. ASSETS records visual interpretation and bounded
+presentation evidence. CA763-BLADED-WEAPON-DROPS-01 retains author acceptance.
+Other weapons, characters, modular equipment and V5.16 remain unfinished.
 
 ## 5.17.59 - Native hooded effigy drops (#761)
 

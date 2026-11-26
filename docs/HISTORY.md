@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.59** - 2026-11-15.
+Documentation version: **5.17.60** - 2026-11-15.
+
+## 5.17.60 - Physical blade drops (#763, 2026-11-15)
+
+Added four native blade/hilt assemblies and six exact state bindings with
+unchanged source textures, quality appearance and gameplay. Improved blade
+edge/cap UV area and bounded test capture requests before installed continuity.
+Fifteen deterministic exports, independent geometry/UV checks, 1,343 native
+continuity and 312 final visual/control assertions pass. Twenty final detail
+views and the floor overview were inspected. ASSETS records art/performance
+qualifications; evidence: assets/validation_v5_17_60/evidence/SUMMARY.json.
+CA763-BLADED-WEAPON-DROPS-01 originates here and remains pending. No author
+check was accepted or removed. Broader3D and V5.16 remain incomplete.
 
 ## 5.17.59 - Hooded effigy drops (#761, 2026-11-15)
 

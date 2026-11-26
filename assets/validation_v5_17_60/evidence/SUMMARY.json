@@ -1,0 +1,861 @@
+{
+  "issue": 763,
+  "parent_issue": 647,
+  "version": "5.17.60",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Four original native sword, dagger, machete and greatsword models with six exact state bindings and sixteen native type/tier/class cases, including Ronnie and MAP01 sword pickups. Existing material pixels, icons, held art, shared quality appearance, essence rules, statistics, scale/collision, durability, size, quest acquisition, recipes and persistence remain unchanged.",
+  "runtime": {
+    "sha256": "2ee6726299fa63ae466f72d10c66e3f36a5810cf42f39764ce68c31e6ca959b8",
+    "source_entries": 18514,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "04670ba48dde811c5ad9286803f61c57eaa4c10882671d56ce7df9f9cdfb0e82",
+    "new_resources": [
+      "caelum/data/inventory_bladed_weapons.modeldef",
+      "models/caelum/inventory/bladed_weapons/dagger.md3",
+      "models/caelum/inventory/bladed_weapons/greatsword.md3",
+      "models/caelum/inventory/bladed_weapons/machete.md3",
+      "models/caelum/inventory/bladed_weapons/sword.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 15,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "sword": {
+        "closed_components": 6,
+        "fixed_attachment_witnesses": 5,
+        "connected_components": 6,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 832
+      },
+      "dagger": {
+        "closed_components": 6,
+        "fixed_attachment_witnesses": 5,
+        "connected_components": 6,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 832
+      },
+      "machete": {
+        "closed_components": 6,
+        "fixed_attachment_witnesses": 5,
+        "connected_components": 6,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 836
+      },
+      "greatsword": {
+        "closed_components": 6,
+        "fixed_attachment_witnesses": 5,
+        "connected_components": 6,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 832
+      }
+    },
+    "variants": {
+      "sword": {
+        "class": "CaelumWeaponPickup",
+        "parts": [
+          "blade",
+          "guard",
+          "grip",
+          "pommel",
+          "grip_band0",
+          "grip_band1"
+        ],
+        "closed_outward_components": 6,
+        "vertices": 602,
+        "triangles": 832,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 192,
+            "triangles": 64
+          },
+          {
+            "material": "bronze",
+            "vertices": 308,
+            "triangles": 576
+          },
+          {
+            "material": "wood",
+            "vertices": 102,
+            "triangles": 192
+          }
+        ],
+        "reference_opaque_bounds": [
+          12,
+          3,
+          52,
+          61
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 58.0,
+        "native_bounds": [
+          {
+            "min": [
+              -9.791129236482886,
+              -2.160449800674527,
+              0.0
+            ],
+            "max": [
+              26.426955274131444,
+              2.160449800674527,
+              58.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 0.6751405627107897,
+          "floor": -20.763321492613674
+        }
+      },
+      "dagger": {
+        "class": "CaelumWeaponPickup",
+        "parts": [
+          "blade",
+          "guard",
+          "grip",
+          "pommel",
+          "grip_band0",
+          "grip_band1"
+        ],
+        "closed_outward_components": 6,
+        "vertices": 602,
+        "triangles": 832,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 192,
+            "triangles": 64
+          },
+          {
+            "material": "bronze",
+            "vertices": 308,
+            "triangles": 576
+          },
+          {
+            "material": "blue",
+            "vertices": 102,
+            "triangles": 192
+          }
+        ],
+        "reference_opaque_bounds": [
+          10,
+          3,
+          52,
+          61
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 58.0,
+        "native_bounds": [
+          {
+            "min": [
+              -11.973644832095822,
+              -2.957084707821803,
+              0.0
+            ],
+            "max": [
+              24.748932248015645,
+              2.957084707821803,
+              58.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 0.9240889711943133,
+          "floor": -18.191819590507336
+        }
+      },
+      "machete": {
+        "class": "CaelumWeaponPickup",
+        "parts": [
+          "blade",
+          "guard",
+          "grip",
+          "pommel",
+          "grip_band0",
+          "grip_band1"
+        ],
+        "closed_outward_components": 6,
+        "vertices": 614,
+        "triangles": 836,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 204,
+            "triangles": 68
+          },
+          {
+            "material": "bronze",
+            "vertices": 308,
+            "triangles": 576
+          },
+          {
+            "material": "wood",
+            "vertices": 102,
+            "triangles": 192
+          }
+        ],
+        "reference_opaque_bounds": [
+          11,
+          3,
+          53,
+          61
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 58.0,
+        "native_bounds": [
+          {
+            "min": [
+              -30.10825312246566,
+              -2.368360757624941,
+              0.0
+            ],
+            "max": [
+              11.114565116684503,
+              2.368360757624941,
+              58.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 0.7401127367577941,
+          "floor": -56.74595069545741
+        }
+      },
+      "greatsword": {
+        "class": "CaelumWeaponPickup",
+        "parts": [
+          "blade",
+          "guard",
+          "grip",
+          "pommel",
+          "grip_band0",
+          "grip_band1"
+        ],
+        "closed_outward_components": 6,
+        "vertices": 602,
+        "triangles": 832,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 192,
+            "triangles": 64
+          },
+          {
+            "material": "bronze",
+            "vertices": 308,
+            "triangles": 576
+          },
+          {
+            "material": "blue",
+            "vertices": 102,
+            "triangles": 192
+          }
+        ],
+        "reference_opaque_bounds": [
+          12,
+          3,
+          53,
+          61
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 58.0,
+        "native_bounds": [
+          {
+            "min": [
+              -24.080929086505012,
+              -1.8471359555184357,
+              0.0
+            ],
+            "max": [
+              11.938740183471857,
+              1.8471359555184357,
+              58.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 0.5772299860995111,
+          "floor": -69.43055135687109
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 763,
+    "kind": "bladed_weapons",
+    "scope": "Native pickup/toss, quantity and saved ownership for bladed_weapons; no normal menu or author acceptance.",
+    "baseline_sha256": "04670ba48dde811c5ad9286803f61c57eaa4c10882671d56ce7df9f9cdfb0e82",
+    "runtime_sha256": "2ee6726299fa63ae466f72d10c66e3f36a5810cf42f39764ce68c31e6ca959b8",
+    "model_sha256": null,
+    "fixture_sha256": "a788256c5f7fe24560a1eb65399c6599e2cb28a3bb09164016967b0bdff8da2e",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 305
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 249
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 305
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 242
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 242
+      }
+    ],
+    "captures": {
+      "baseline.png": "03b1c59c464d28137b72a80e71d84dbd6c9f15dc1ed853d624287ee7a364ae9f",
+      "candidate-0.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+      "candidate-1.png": "dd70fb70dd32ea2869ae15076aea8df73eab036db5d4d397c63b02e864f931e9",
+      "candidate-2.png": "1dc3327c96cf56763902eec9e01e37462058ebb5f591f5c8a8f894bc8b269238",
+      "candidate-3.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+      "candidate-5.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+      "candidate-6.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+      "candidate-7.png": "8be93fad21e95b989e96b7ad3aeb014d805198536a19fc2152ae00f3234b7eaf",
+      "detail-0-0.png": "f16c951306ead111442c7cd8ded69a0cc7523673ef318c6b91ad7e6128c4b8f8",
+      "detail-0-160.png": "6555a1a94f8913cdf85e8f837945b6abdd478de8487f01c4783cc5937b3b0f5e",
+      "detail-0-225.png": "da95a8d42b46af45466c3e3f9f953da1f9f1b93e29a5e455d3a610dbf8467bff",
+      "detail-0-270.png": "173f7725a6a6e1bc5310d6c7bf01e412a07e3fd1e3d6781cb7cd1e99377aac07",
+      "detail-0-90.png": "8e202ca5780a80d83afdccc238a82559e80e7de8b35aaf79c1c61d9281def018",
+      "detail-1-0.png": "94bbf723902d033b862a9bf696a18f432a38923144009addc6c3ff82a6c74955",
+      "detail-1-160.png": "a2edbc60c3bf9c955cb56a6aba2981de2b572ac67b5ea4aecdd17224b8eb7fca",
+      "detail-1-225.png": "ce52ba5e3202e7758a2ad403fd8d27ad78373f290f250ac1d02e197a68c6eebc",
+      "detail-1-270.png": "8809a09457bef56a0c1ba55fbb587ce44c582dabfdac686468b5955263efb564",
+      "detail-1-90.png": "a4700889d0afa311779836e0e6776a8810aefa97b5c4a2a22ccbd1cbdfc691fb",
+      "detail-2-0.png": "fb68e64f847cbccfba471cf5067f30f391c3c2f2c815879a84ff91b18cc55886",
+      "detail-2-160.png": "d51e8bca522f4dccbc149dc2ee6104e75a632b0bbf0dc31d3183df09f1cdeab6",
+      "detail-2-225.png": "945f4e856bcfc527ac0d388e431dc47b285e71afe931f949ad0efc85500dcd2a",
+      "detail-2-270.png": "67ea0feff34eef2fdf25cf49cf8080d4ec5611b365b42b72db017befd9a5d5c9",
+      "detail-2-90.png": "30cbba9f5e38a5c6563fbcd90d82842d781c3b25b044b8355b55c32a6c14da57",
+      "detail-3-0.png": "868af12ca52e4ad4d14afefe65f4d855ba5e0f0d81dbc4ff6ba1716fcdc50198",
+      "detail-3-160.png": "17097cead828b572f27e256f06bca66c49bed1168e22b422b5bf7ff8df878c58",
+      "detail-3-225.png": "48d70445f4b600d28dfa3a56cd775c4f462a2f87455b1c8f4c1a44a3441bf971",
+      "detail-3-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-3-90.png": "a7f0bcf415683491c3a5cec6e2a18da53bf3c0a394da4cfc77872992f4be1cee"
+    }
+  },
+  "visual": {
+    "issue": 763,
+    "kind": "bladed_weapons",
+    "scope": "Native pickup/toss, quantity and saved ownership for bladed_weapons; no normal menu or author acceptance.",
+    "baseline_sha256": "04670ba48dde811c5ad9286803f61c57eaa4c10882671d56ce7df9f9cdfb0e82",
+    "runtime_sha256": "04670ba48dde811c5ad9286803f61c57eaa4c10882671d56ce7df9f9cdfb0e82",
+    "model_sha256": "1910fb03f5e97dad370c5ea4f5df9908be3da9fa04939f78be75f09069d19636",
+    "fixture_sha256": "a788256c5f7fe24560a1eb65399c6599e2cb28a3bb09164016967b0bdff8da2e",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "visual",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 312
+      }
+    ],
+    "captures": {
+      "candidate-0.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+      "candidate-1.png": "dd70fb70dd32ea2869ae15076aea8df73eab036db5d4d397c63b02e864f931e9",
+      "candidate-2.png": "1dc3327c96cf56763902eec9e01e37462058ebb5f591f5c8a8f894bc8b269238",
+      "candidate-3.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+      "candidate-5.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+      "candidate-6.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+      "candidate-7.png": "8be93fad21e95b989e96b7ad3aeb014d805198536a19fc2152ae00f3234b7eaf",
+      "detail-0-0.png": "f16c951306ead111442c7cd8ded69a0cc7523673ef318c6b91ad7e6128c4b8f8",
+      "detail-0-160.png": "6555a1a94f8913cdf85e8f837945b6abdd478de8487f01c4783cc5937b3b0f5e",
+      "detail-0-225.png": "da95a8d42b46af45466c3e3f9f953da1f9f1b93e29a5e455d3a610dbf8467bff",
+      "detail-0-270.png": "173f7725a6a6e1bc5310d6c7bf01e412a07e3fd1e3d6781cb7cd1e99377aac07",
+      "detail-0-90.png": "8e202ca5780a80d83afdccc238a82559e80e7de8b35aaf79c1c61d9281def018",
+      "detail-1-0.png": "94bbf723902d033b862a9bf696a18f432a38923144009addc6c3ff82a6c74955",
+      "detail-1-160.png": "a2edbc60c3bf9c955cb56a6aba2981de2b572ac67b5ea4aecdd17224b8eb7fca",
+      "detail-1-225.png": "ce52ba5e3202e7758a2ad403fd8d27ad78373f290f250ac1d02e197a68c6eebc",
+      "detail-1-270.png": "8809a09457bef56a0c1ba55fbb587ce44c582dabfdac686468b5955263efb564",
+      "detail-1-90.png": "a4700889d0afa311779836e0e6776a8810aefa97b5c4a2a22ccbd1cbdfc691fb",
+      "detail-10-0.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-10-160.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-10-225.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-10-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-10-90.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-11-0.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-11-160.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-11-225.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-11-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-11-90.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-12-0.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-12-160.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-12-225.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-12-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-12-90.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-13-0.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-13-160.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-13-225.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-13-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-13-90.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-14-0.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-14-160.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-14-225.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-14-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-14-90.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-15-0.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-15-160.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-15-225.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-15-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-15-90.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-2-0.png": "fb68e64f847cbccfba471cf5067f30f391c3c2f2c815879a84ff91b18cc55886",
+      "detail-2-160.png": "d51e8bca522f4dccbc149dc2ee6104e75a632b0bbf0dc31d3183df09f1cdeab6",
+      "detail-2-225.png": "945f4e856bcfc527ac0d388e431dc47b285e71afe931f949ad0efc85500dcd2a",
+      "detail-2-270.png": "67ea0feff34eef2fdf25cf49cf8080d4ec5611b365b42b72db017befd9a5d5c9",
+      "detail-2-90.png": "30cbba9f5e38a5c6563fbcd90d82842d781c3b25b044b8355b55c32a6c14da57",
+      "detail-3-0.png": "868af12ca52e4ad4d14afefe65f4d855ba5e0f0d81dbc4ff6ba1716fcdc50198",
+      "detail-3-160.png": "17097cead828b572f27e256f06bca66c49bed1168e22b422b5bf7ff8df878c58",
+      "detail-3-225.png": "48d70445f4b600d28dfa3a56cd775c4f462a2f87455b1c8f4c1a44a3441bf971",
+      "detail-3-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-3-90.png": "a7f0bcf415683491c3a5cec6e2a18da53bf3c0a394da4cfc77872992f4be1cee",
+      "detail-4-0.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-4-160.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-4-225.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-4-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-4-90.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-5-0.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-5-160.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-5-225.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-5-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-5-90.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-6-0.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-6-160.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-6-225.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-6-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-6-90.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-7-0.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-7-160.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-7-225.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-7-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-7-90.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-8-0.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-8-160.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-8-225.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-8-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-8-90.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-9-0.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-9-160.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-9-225.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-9-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+      "detail-9-90.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc"
+    }
+  },
+  "presentation": {
+    "issue": 763,
+    "kind": "bladed_weapons",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "04670ba48dde811c5ad9286803f61c57eaa4c10882671d56ce7df9f9cdfb0e82",
+    "runtime_sha256": "2ee6726299fa63ae466f72d10c66e3f36a5810cf42f39764ce68c31e6ca959b8",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 16,
+        "pid": 38252,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 335616447.2252,
+          "END": 335636481.89779997
+        },
+        "fixture_sha256": "d66aec8f394a81396b63f573ce89d522daef8a2defe464c54d20078e568814ed",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            16,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571800999999997,
+          "p50_ms": 28.5607,
+          "p95_ms": 29.2837,
+          "p99_ms": 29.4991,
+          "max_ms": 29.863
+        },
+        "presentation": {
+          "pid": 38252,
+          "trace_sha256": "c3c2e77d3192d9657de58f138b990c3962307a20203c0d1bea84eeca1c8bd306",
+          "rows": 24341,
+          "scene_presents": 16530,
+          "mean_present_fps": 942.684857609283,
+          "present_intervals": {
+            "samples": 16529,
+            "mean_ms": 1.0607998971534054,
+            "p50_ms": 1.0324000120162964,
+            "p95_ms": 1.2811000347137451,
+            "p99_ms": 1.555899977684021,
+            "max_ms": 2.4599000215530396
+          },
+          "native_call_duration": {
+            "samples": 16530,
+            "mean_ms": 0.09451457995468389,
+            "p50_ms": 0.08950001001358032,
+            "p95_ms": 0.11430001258850098,
+            "p99_ms": 0.16909998655319214,
+            "max_ms": 0.9100000262260437
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 16,
+        "pid": 31992,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 335651149.9503,
+          "END": 335671187.5328
+        },
+        "fixture_sha256": "d66aec8f394a81396b63f573ce89d522daef8a2defe464c54d20078e568814ed",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            16,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57122314285714,
+          "p50_ms": 28.5639,
+          "p95_ms": 29.2943,
+          "p99_ms": 29.5844,
+          "max_ms": 30.1739
+        },
+        "presentation": {
+          "pid": 31992,
+          "trace_sha256": "2976f71422f05ebf63f5536cce9169f48887ec4b297993404d3921e32fadb4f7",
+          "rows": 23896,
+          "scene_presents": 16080,
+          "mean_present_fps": 916.8566672824098,
+          "present_intervals": {
+            "samples": 16079,
+            "mean_ms": 1.090683021332036,
+            "p50_ms": 1.060200035572052,
+            "p95_ms": 1.3321000337600708,
+            "p99_ms": 1.6330000162124634,
+            "max_ms": 2.4300000071525574
+          },
+          "native_call_duration": {
+            "samples": 16080,
+            "mean_ms": 0.09578552876983709,
+            "p50_ms": 0.09030002355575562,
+            "p95_ms": 0.11799997091293335,
+            "p99_ms": 0.17649996280670166,
+            "max_ms": 0.73089998960495
+          }
+        }
+      }
+    ]
+  },
+  "art": {
+    "inspected_views": [
+      "visual02/detail-0-0.png",
+      "visual02/detail-0-90.png",
+      "visual02/detail-0-160.png",
+      "visual02/detail-0-225.png",
+      "visual02/detail-0-270.png",
+      "visual02/detail-1-0.png",
+      "visual02/detail-1-90.png",
+      "visual02/detail-1-160.png",
+      "visual02/detail-1-225.png",
+      "visual02/detail-1-270.png",
+      "visual02/detail-2-0.png",
+      "visual02/detail-2-90.png",
+      "visual02/detail-2-160.png",
+      "visual02/detail-2-225.png",
+      "visual02/detail-2-270.png",
+      "visual02/detail-3-0.png",
+      "visual02/detail-3-90.png",
+      "visual02/detail-3-160.png",
+      "visual02/detail-3-225.png",
+      "visual02/detail-3-270.png"
+    ],
+    "overview": "visual02/candidate-0.png",
+    "author_check": "CA763-BLADED-WEAPON-DROPS-01"
+  },
+  "iterations": [
+    "Initial installed old-save run passed all249 actual checks but the runner incorrectly expected259. Derived the count from16*(10 verification+5 pickup checks), two completions and seven view controls, fixed only the runner gate and repeated the continuity suite. Raw failed gate evidence is retained.",
+    "Visual01 passed312 native/control checks. Before final review, blade edges/caps received area-preserving per-face UV projections; closed geometry remains unchanged. Final source comment identifies this blade fixture.",
+    "Visual01/02 also requested unsupported detail indices4..15, which the fixture guard ignored. Only valid0..3 image sets are archived/reviewed; logs retain all requests. Runner bounds were corrected before installed continuity tests, which capture exactly twenty valid detail images."
+  ],
+  "environment": {
+    "os": "Windows11 Pro26200",
+    "cpu": "Ryzen9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX3070Ti",
+    "engine": "GZDoom4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "All twenty final native detail/underside views and the floor overview were inspected. Narrow edges/caps have noncollapsed material coordinates. Each blade consists of six closed connected components.",
+    "Simplified blade profiles and guards, matte gray steel, repeating grain, diagonal standing pickup orientation and interpreted hidden thickness/back surfaces require author review. Existing 2D approval is not native3D acceptance.",
+    "One sequential700-tic sixteen-object pair measures queue intervals only, not GPU/display timing, repeatability or campaign/crowd performance. Both scenes were inspected; projected sprite/model footprints differ.",
+    "Native pickup/equip/unequip/toss APIs and prepared Box/quest/provenance state do not prove ordinary menus, combat, crafting or author acceptance.",
+    "Other weapon states, characters, modular equipment and V5.16 campaign remain unfinished. No executable, IWAD, compiled test package, DLL or save committed."
+  ],
+  "files": {
+    "build01.log": "3629844aeb6a2cb13a5a1f89e28cccb39dfd9874b55632724a92715a6a926bae",
+    "continuity/baseline-process.log": "7a52777756354f744657e4b8ab177e3e72fb037849a0dce1abf309441404ea94",
+    "continuity/baseline.cfg": "8ec2a73d0a01ede403e56fc64dfdb75d0662adb967a8678beb2be65a01709dbc",
+    "continuity/baseline.log": "58ced0fe6e98c321e5b91405a1bbd505c21134f706113197282a62031b4f0849",
+    "continuity/baseline.png": "03b1c59c464d28137b72a80e71d84dbd6c9f15dc1ed853d624287ee7a364ae9f",
+    "continuity/candidate-0.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+    "continuity/candidate-1.png": "dd70fb70dd32ea2869ae15076aea8df73eab036db5d4d397c63b02e864f931e9",
+    "continuity/candidate-2.png": "1dc3327c96cf56763902eec9e01e37462058ebb5f591f5c8a8f894bc8b269238",
+    "continuity/candidate-3.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+    "continuity/candidate-5.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+    "continuity/candidate-6.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+    "continuity/candidate-7.png": "8be93fad21e95b989e96b7ad3aeb014d805198536a19fc2152ae00f3234b7eaf",
+    "continuity/candidate-fresh-process.log": "7a82efbd829a3331309ccc4a46154e707b1d5e63c99ae73edd2bb9348ccd7bc5",
+    "continuity/candidate-fresh.cfg": "36acf725d795e02daf4227b02ca7e80894412ed2910e157083ba395c9c348672",
+    "continuity/candidate-fresh.log": "d057de46d264b0a1bc1d8902b3032ef1bae884a563b5ee0141f70350844e06ed",
+    "continuity/candidate-reload-process.log": "ad6bd94e74404d76839bb0d8be235175b9f95943f9f3a48b073c7f2a1c4b6ac5",
+    "continuity/candidate-reload.cfg": "4a708be8a07823707fdae861e7441a12b805fa663f76b388c4cb5821df66b426",
+    "continuity/candidate-reload.log": "054dd65f4c8977716441eaa569e12462e24b42f4a1ec440e5ca4b5a5549e6e2b",
+    "continuity/detail-0-0.png": "f16c951306ead111442c7cd8ded69a0cc7523673ef318c6b91ad7e6128c4b8f8",
+    "continuity/detail-0-160.png": "6555a1a94f8913cdf85e8f837945b6abdd478de8487f01c4783cc5937b3b0f5e",
+    "continuity/detail-0-225.png": "da95a8d42b46af45466c3e3f9f953da1f9f1b93e29a5e455d3a610dbf8467bff",
+    "continuity/detail-0-270.png": "173f7725a6a6e1bc5310d6c7bf01e412a07e3fd1e3d6781cb7cd1e99377aac07",
+    "continuity/detail-0-90.png": "8e202ca5780a80d83afdccc238a82559e80e7de8b35aaf79c1c61d9281def018",
+    "continuity/detail-1-0.png": "94bbf723902d033b862a9bf696a18f432a38923144009addc6c3ff82a6c74955",
+    "continuity/detail-1-160.png": "a2edbc60c3bf9c955cb56a6aba2981de2b572ac67b5ea4aecdd17224b8eb7fca",
+    "continuity/detail-1-225.png": "ce52ba5e3202e7758a2ad403fd8d27ad78373f290f250ac1d02e197a68c6eebc",
+    "continuity/detail-1-270.png": "8809a09457bef56a0c1ba55fbb587ce44c582dabfdac686468b5955263efb564",
+    "continuity/detail-1-90.png": "a4700889d0afa311779836e0e6776a8810aefa97b5c4a2a22ccbd1cbdfc691fb",
+    "continuity/detail-2-0.png": "fb68e64f847cbccfba471cf5067f30f391c3c2f2c815879a84ff91b18cc55886",
+    "continuity/detail-2-160.png": "d51e8bca522f4dccbc149dc2ee6104e75a632b0bbf0dc31d3183df09f1cdeab6",
+    "continuity/detail-2-225.png": "945f4e856bcfc527ac0d388e431dc47b285e71afe931f949ad0efc85500dcd2a",
+    "continuity/detail-2-270.png": "67ea0feff34eef2fdf25cf49cf8080d4ec5611b365b42b72db017befd9a5d5c9",
+    "continuity/detail-2-90.png": "30cbba9f5e38a5c6563fbcd90d82842d781c3b25b044b8355b55c32a6c14da57",
+    "continuity/detail-3-0.png": "868af12ca52e4ad4d14afefe65f4d855ba5e0f0d81dbc4ff6ba1716fcdc50198",
+    "continuity/detail-3-160.png": "17097cead828b572f27e256f06bca66c49bed1168e22b422b5bf7ff8df878c58",
+    "continuity/detail-3-225.png": "48d70445f4b600d28dfa3a56cd775c4f462a2f87455b1c8f4c1a44a3441bf971",
+    "continuity/detail-3-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+    "continuity/detail-3-90.png": "a7f0bcf415683491c3a5cec6e2a18da53bf3c0a394da4cfc77872992f4be1cee",
+    "continuity/fixture-source/MAPINFO.txt": "fa48e1184f4512b89d0890797264db58cc2ccc9bf2200cf95e501ba810ef489c",
+    "continuity/fixture-source/ZSCRIPT.txt": "c21f223b354b835e2f953bf527dac23952fa0bfced2faa76cc954e13cb6b6a4a",
+    "continuity/fixture.zs": "7865a22b062394f1613c1b15dd0a68267875e9334dd16a08045f4b9796d04d0b",
+    "continuity/old-save-load-part-1.cfg": "0e250651a02fe689ad7cc67ab1d91d62be6426dffb61da7f67a818ea58b6811f",
+    "continuity/old-save-load-process.log": "f4766017452869fb2c559f84e56ba98d18673219dbb955cae6219ce40b8e9cf9",
+    "continuity/old-save-load.cfg": "328f43ab9c35c810dc4a545c6c3014c88f53a420fb4f0371181e572e3e5d0d6e",
+    "continuity/old-save-load.log": "581470e9230ec12fe0fb8082df8430c4d3153b2f194bb5d88dfd70ae08b756b7",
+    "continuity/RESULTS.json": "d0710f0b7d3501187c825a29d05750b848b68bedcd1f4bc23eb67a78fdef0d47",
+    "continuity/rollback-load-process.log": "efa88bed085f7713d6bc0e31a88db5261bec5b8d0546f144ab5ed3f6442acbeb",
+    "continuity/rollback-load.cfg": "4a708be8a07823707fdae861e7441a12b805fa663f76b388c4cb5821df66b426",
+    "continuity/rollback-load.log": "4fd50455e6e0ddd6441e668ffd349a5ce184c144077a19bcd2a23e24fbb97900",
+    "continuity/session.ini": "e86f81981c444b631f88a1c3e3c6170c2ac2c3118c9e644b3e92a08251f1c437",
+    "export-check.log": "206c996a60a75fb4ccd51818fe14d247a3ad559484fcc09c1b2f5d71bd25fa0f",
+    "exports/model01.json": "3b20196067a436e0fdb9071bd5e9f12e2bbba7bcc638d57bd4a93dbcb1bda60d",
+    "exports/model02.json": "1fec60909a2978b87578b24a2f03e00fd303156c7bd9764eab5144470a60b92d",
+    "exports/model03.json": "e744c18e9475dcc4e3f8cfc3bc3ebcba6032bd7335d5ef994eced8296200a835",
+    "exports/model04.json": "e744c18e9475dcc4e3f8cfc3bc3ebcba6032bd7335d5ef994eced8296200a835",
+    "geometry02.log": "178b5751fa3121be8396f0116bc9931029be881a96cd163ff1ee8f5ba13b6f54",
+    "geometry03.log": "178b5751fa3121be8396f0116bc9931029be881a96cd163ff1ee8f5ba13b6f54",
+    "iterations/count-gate01/baseline-process.log": "f3a39437d2856cd474e6c105d998c3c4d08db405b4724a7c5028561171cb3d88",
+    "iterations/count-gate01/baseline.cfg": "8ec2a73d0a01ede403e56fc64dfdb75d0662adb967a8678beb2be65a01709dbc",
+    "iterations/count-gate01/baseline.log": "ad2f64734119464381efd59099709755d90f436c4a4490ae18bc5e9016bace37",
+    "iterations/count-gate01/baseline.png": "03b1c59c464d28137b72a80e71d84dbd6c9f15dc1ed853d624287ee7a364ae9f",
+    "iterations/count-gate01/candidate-0.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+    "iterations/count-gate01/candidate-1.png": "dd70fb70dd32ea2869ae15076aea8df73eab036db5d4d397c63b02e864f931e9",
+    "iterations/count-gate01/candidate-2.png": "1dc3327c96cf56763902eec9e01e37462058ebb5f591f5c8a8f894bc8b269238",
+    "iterations/count-gate01/candidate-3.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+    "iterations/count-gate01/candidate-5.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+    "iterations/count-gate01/candidate-6.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+    "iterations/count-gate01/candidate-7.png": "8be93fad21e95b989e96b7ad3aeb014d805198536a19fc2152ae00f3234b7eaf",
+    "iterations/count-gate01/detail-0-0.png": "f16c951306ead111442c7cd8ded69a0cc7523673ef318c6b91ad7e6128c4b8f8",
+    "iterations/count-gate01/detail-0-160.png": "6555a1a94f8913cdf85e8f837945b6abdd478de8487f01c4783cc5937b3b0f5e",
+    "iterations/count-gate01/detail-0-225.png": "da95a8d42b46af45466c3e3f9f953da1f9f1b93e29a5e455d3a610dbf8467bff",
+    "iterations/count-gate01/detail-0-270.png": "173f7725a6a6e1bc5310d6c7bf01e412a07e3fd1e3d6781cb7cd1e99377aac07",
+    "iterations/count-gate01/detail-0-90.png": "8e202ca5780a80d83afdccc238a82559e80e7de8b35aaf79c1c61d9281def018",
+    "iterations/count-gate01/detail-1-0.png": "94bbf723902d033b862a9bf696a18f432a38923144009addc6c3ff82a6c74955",
+    "iterations/count-gate01/detail-1-160.png": "a2edbc60c3bf9c955cb56a6aba2981de2b572ac67b5ea4aecdd17224b8eb7fca",
+    "iterations/count-gate01/detail-1-225.png": "ce52ba5e3202e7758a2ad403fd8d27ad78373f290f250ac1d02e197a68c6eebc",
+    "iterations/count-gate01/detail-1-270.png": "8809a09457bef56a0c1ba55fbb587ce44c582dabfdac686468b5955263efb564",
+    "iterations/count-gate01/detail-1-90.png": "a4700889d0afa311779836e0e6776a8810aefa97b5c4a2a22ccbd1cbdfc691fb",
+    "iterations/count-gate01/detail-2-0.png": "fb68e64f847cbccfba471cf5067f30f391c3c2f2c815879a84ff91b18cc55886",
+    "iterations/count-gate01/detail-2-160.png": "d51e8bca522f4dccbc149dc2ee6104e75a632b0bbf0dc31d3183df09f1cdeab6",
+    "iterations/count-gate01/detail-2-225.png": "945f4e856bcfc527ac0d388e431dc47b285e71afe931f949ad0efc85500dcd2a",
+    "iterations/count-gate01/detail-2-270.png": "67ea0feff34eef2fdf25cf49cf8080d4ec5611b365b42b72db017befd9a5d5c9",
+    "iterations/count-gate01/detail-2-90.png": "30cbba9f5e38a5c6563fbcd90d82842d781c3b25b044b8355b55c32a6c14da57",
+    "iterations/count-gate01/detail-3-0.png": "868af12ca52e4ad4d14afefe65f4d855ba5e0f0d81dbc4ff6ba1716fcdc50198",
+    "iterations/count-gate01/detail-3-160.png": "17097cead828b572f27e256f06bca66c49bed1168e22b422b5bf7ff8df878c58",
+    "iterations/count-gate01/detail-3-225.png": "48d70445f4b600d28dfa3a56cd775c4f462a2f87455b1c8f4c1a44a3441bf971",
+    "iterations/count-gate01/detail-3-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+    "iterations/count-gate01/detail-3-90.png": "a7f0bcf415683491c3a5cec6e2a18da53bf3c0a394da4cfc77872992f4be1cee",
+    "iterations/count-gate01/fixture-source/MAPINFO.txt": "fa48e1184f4512b89d0890797264db58cc2ccc9bf2200cf95e501ba810ef489c",
+    "iterations/count-gate01/fixture-source/ZSCRIPT.txt": "c21f223b354b835e2f953bf527dac23952fa0bfced2faa76cc954e13cb6b6a4a",
+    "iterations/count-gate01/fixture.zs": "7865a22b062394f1613c1b15dd0a68267875e9334dd16a08045f4b9796d04d0b",
+    "iterations/count-gate01/old-save-load-part-1.cfg": "0e250651a02fe689ad7cc67ab1d91d62be6426dffb61da7f67a818ea58b6811f",
+    "iterations/count-gate01/old-save-load-process.log": "a8e34d0755b26c8dc39cb0ffa12380bf056d0f634df29aa1b1cdb7e837cc0160",
+    "iterations/count-gate01/old-save-load.cfg": "5033b91f723352d9cfc222adbd58e8995920f850582df0688c75f8df1e6a3d7b",
+    "iterations/count-gate01/old-save-load.log": "93c06d893b7fc9be62eb6b65b58c976564e35ba08c647f9b4b72d6d6f01ce2d5",
+    "iterations/count-gate01/RESULTS.json": "0585b0e9592a2c6ae7f78d371ffc811d7eab5fa428b24457ad01ab79bb3cc12d",
+    "iterations/count-gate01/session.ini": "3ad89b243eef00e9290b295df1c11d08e41668d60cdfc1428f80958dda06f1b0",
+    "presentation/models-16/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-16/engine.log": "3e46d3859801a91b6147af60125bd4e3ef42a410e3f91fa566503595aa85e3b3",
+    "presentation/models-16/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-16/fixture-source/ZSCRIPT.txt": "34842615ecf07960c40ff0f6c00c4b757979a4ad7a569547c78f59070b5db1b4",
+    "presentation/models-16/presents.csv": "2976f71422f05ebf63f5536cce9169f48887ec4b297993404d3921e32fadb4f7",
+    "presentation/models-16/process.log": "ce8d7d04a01b73ec86a08318657d420939d43a76ea5c45d3787f8c364cc96841",
+    "presentation/models-16/scene.png": "844d90a37baf460d54135e1f428791172fee39e7293a64473cdc4f619c0e66a6",
+    "presentation/models-16/session.ini": "8e2b2d7b15ff64172b24080aee58cde32299e8cf71f9d2701a035fab862b6945",
+    "presentation/RESULTS.json": "49078c2fb2eb860bfe0891fda8994e9d8cca0285c114d633fec5b676fd76e2d1",
+    "presentation/sprites-16/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-16/engine.log": "7d95a2a60f52b9f45b9dd89e6523cfe2622d7416c925712cdeafa1665655d150",
+    "presentation/sprites-16/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-16/fixture-source/ZSCRIPT.txt": "34842615ecf07960c40ff0f6c00c4b757979a4ad7a569547c78f59070b5db1b4",
+    "presentation/sprites-16/presents.csv": "c3c2e77d3192d9657de58f138b990c3962307a20203c0d1bea84eeca1c8bd306",
+    "presentation/sprites-16/process.log": "b6b20dbab41e6217aa3c7ef7a5ce4d8045e40ee3a2f31340aa8fd653edbb1583",
+    "presentation/sprites-16/scene.png": "f6f89785fcb1e99996c350752b3f16d90dd5049a69c4f7b8f0c1134ed9b02381",
+    "presentation/sprites-16/session.ini": "2191f1d49300dca00a2039d55dd075219c25e7662cae276b51ca21fd7d939107",
+    "repeat03-04.json": "3c42adc2fadc6ba84aa4c4ec2949f125bdfbc83c358124c29ee05fb14945df1c",
+    "visual01/candidate-0.png": "f02f7a441cf925ebce4576c038047b8a283a2512c1f36bcbf402a2881d76555b",
+    "visual01/candidate-1.png": "4ff7c5ece7c2d402c7efbc7a212ab375e84a53074a016552ef451e77ebe3dec5",
+    "visual01/candidate-2.png": "c4ae7fe904c58d4f5ae976d3650e7b51574d653803bb586b80a1c66dc01da124",
+    "visual01/candidate-3.png": "f02f7a441cf925ebce4576c038047b8a283a2512c1f36bcbf402a2881d76555b",
+    "visual01/candidate-5.png": "f02f7a441cf925ebce4576c038047b8a283a2512c1f36bcbf402a2881d76555b",
+    "visual01/candidate-6.png": "f02f7a441cf925ebce4576c038047b8a283a2512c1f36bcbf402a2881d76555b",
+    "visual01/candidate-7.png": "06306494a669a5250093de40e09891802e63c4ebb4e89e3038a2a5443d0a16e7",
+    "visual01/detail-0-0.png": "47000544e11dbc0b5ac0e19efcbd97ace1eb95409f6a3ea75a8eea54fb8b35aa",
+    "visual01/detail-0-160.png": "71732f713e9d20cb2f05e6ab664f8ec68fa8a5c802d9b2dde03f95cc36d19211",
+    "visual01/detail-0-225.png": "091364f13d03b893724ea17e448a9c628b5df6662c858ed92e1d45d184975708",
+    "visual01/detail-0-270.png": "afde78577495956548dc973e579dc97edccdc033548b7ca56ccb7a8961794619",
+    "visual01/detail-0-90.png": "5541807f38e02313df20b7faff5a6e612283938675f12c2e92324a31481c7c96",
+    "visual01/detail-1-0.png": "b92cf9404eb59bf639b4067b717e76281b60e365962fd7dcddcc4ab71be1bfcf",
+    "visual01/detail-1-160.png": "820072990c6d5b9ce90cfb5e2f2f7884d4992f91594e8e7ded6e09eea08d40c1",
+    "visual01/detail-1-225.png": "0c61450ce09db3e1cdcce11455c080f005984b432584f1d473d1bf5061705b9e",
+    "visual01/detail-1-270.png": "f39ac2b332720e038587192f98c189e9f86c7b79a32298cfd59fe60a007d5cfe",
+    "visual01/detail-1-90.png": "3174dcba7a75e5c8696c94719eb5d24ae301053aa051799b0759b02a476dc0ac",
+    "visual01/detail-2-0.png": "fb68e64f847cbccfba471cf5067f30f391c3c2f2c815879a84ff91b18cc55886",
+    "visual01/detail-2-160.png": "d51e8bca522f4dccbc149dc2ee6104e75a632b0bbf0dc31d3183df09f1cdeab6",
+    "visual01/detail-2-225.png": "945f4e856bcfc527ac0d388e431dc47b285e71afe931f949ad0efc85500dcd2a",
+    "visual01/detail-2-270.png": "67ea0feff34eef2fdf25cf49cf8080d4ec5611b365b42b72db017befd9a5d5c9",
+    "visual01/detail-2-90.png": "30cbba9f5e38a5c6563fbcd90d82842d781c3b25b044b8355b55c32a6c14da57",
+    "visual01/detail-3-0.png": "a78644f6d077dd58005c6fd256f51424a91b4fd9e6c4451aa08af171271ac057",
+    "visual01/detail-3-160.png": "fd2dfd514a5beb34f29ebedd7de885333e95984b5254e49f3f6dfda823cca1d4",
+    "visual01/detail-3-225.png": "f8a12f024f0327a5a133b6a826e97bb08c87ccfd87844b4108a03ec27a592513",
+    "visual01/detail-3-270.png": "78a1578483a9cc2fef9a61a30e799e36c059280b9d0bdbab2697c1e57b1991e7",
+    "visual01/detail-3-90.png": "53989996e741e6fa2e4ea9428d85071bf594c90b9eb9fae5ebc3995847a98c02",
+    "visual01/fixture-source/MAPINFO.txt": "fa48e1184f4512b89d0890797264db58cc2ccc9bf2200cf95e501ba810ef489c",
+    "visual01/fixture-source/ZSCRIPT.txt": "7f63ac8a60fa64744cea5f31ae1a6bb10fbc78972f7894f93c55513ac22687e3",
+    "visual01/fixture.zs": "e718fba305a09ebcdd0f9826811b7dd0b217a38d5b9e4ae62149aefb0c1ff67b",
+    "visual01/RESULTS.json": "861b44dc55dd9fdc5ae30da597950b08655f7f9c91ef11d59847538d084489de",
+    "visual01/session.ini": "b4578018e0e2cb20f02a593e5fb68bd2df7abecced67f6b8e14bcc188e28cece",
+    "visual01/visual-part-1.cfg": "1f67cb52a6bac1b10d312d13fcdb50463aa0573b374314651fe5e856da78478a",
+    "visual01/visual-part-2.cfg": "b04dbc57005939007ec5f111df672ced4f1179c81554e60f97d25dc40c61c027",
+    "visual01/visual-part-3.cfg": "292af8ec187a954f79121abc4fadd4846d4ca39088839aec96fa094d5640909f",
+    "visual01/visual-part-4.cfg": "08cb29583a5796c310f10e5d6d1ee6ea070c83a39dbbda38ab3f827c64829833",
+    "visual01/visual-process.log": "dfafc678ea5f9b3ecf2fd928152fc49ca4dd5bd872bc078a1d37e58b470ab877",
+    "visual01/visual.cfg": "1f92847063c409ca7a9496332d3c3e01d79c548d519f3e3becf7f756450f644c",
+    "visual01/visual.log": "1015ed27c90f88e76f0274b80e8da69315535cecc681c224472be3651a1fe0b1",
+    "visual02/candidate-0.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+    "visual02/candidate-1.png": "dd70fb70dd32ea2869ae15076aea8df73eab036db5d4d397c63b02e864f931e9",
+    "visual02/candidate-2.png": "1dc3327c96cf56763902eec9e01e37462058ebb5f591f5c8a8f894bc8b269238",
+    "visual02/candidate-3.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+    "visual02/candidate-5.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+    "visual02/candidate-6.png": "06c076dca45a5ebd6128212a91418e92737a54a9a62bf7c4bb2a8109e8bc1e78",
+    "visual02/candidate-7.png": "8be93fad21e95b989e96b7ad3aeb014d805198536a19fc2152ae00f3234b7eaf",
+    "visual02/detail-0-0.png": "f16c951306ead111442c7cd8ded69a0cc7523673ef318c6b91ad7e6128c4b8f8",
+    "visual02/detail-0-160.png": "6555a1a94f8913cdf85e8f837945b6abdd478de8487f01c4783cc5937b3b0f5e",
+    "visual02/detail-0-225.png": "da95a8d42b46af45466c3e3f9f953da1f9f1b93e29a5e455d3a610dbf8467bff",
+    "visual02/detail-0-270.png": "173f7725a6a6e1bc5310d6c7bf01e412a07e3fd1e3d6781cb7cd1e99377aac07",
+    "visual02/detail-0-90.png": "8e202ca5780a80d83afdccc238a82559e80e7de8b35aaf79c1c61d9281def018",
+    "visual02/detail-1-0.png": "94bbf723902d033b862a9bf696a18f432a38923144009addc6c3ff82a6c74955",
+    "visual02/detail-1-160.png": "a2edbc60c3bf9c955cb56a6aba2981de2b572ac67b5ea4aecdd17224b8eb7fca",
+    "visual02/detail-1-225.png": "ce52ba5e3202e7758a2ad403fd8d27ad78373f290f250ac1d02e197a68c6eebc",
+    "visual02/detail-1-270.png": "8809a09457bef56a0c1ba55fbb587ce44c582dabfdac686468b5955263efb564",
+    "visual02/detail-1-90.png": "a4700889d0afa311779836e0e6776a8810aefa97b5c4a2a22ccbd1cbdfc691fb",
+    "visual02/detail-2-0.png": "fb68e64f847cbccfba471cf5067f30f391c3c2f2c815879a84ff91b18cc55886",
+    "visual02/detail-2-160.png": "d51e8bca522f4dccbc149dc2ee6104e75a632b0bbf0dc31d3183df09f1cdeab6",
+    "visual02/detail-2-225.png": "945f4e856bcfc527ac0d388e431dc47b285e71afe931f949ad0efc85500dcd2a",
+    "visual02/detail-2-270.png": "67ea0feff34eef2fdf25cf49cf8080d4ec5611b365b42b72db017befd9a5d5c9",
+    "visual02/detail-2-90.png": "30cbba9f5e38a5c6563fbcd90d82842d781c3b25b044b8355b55c32a6c14da57",
+    "visual02/detail-3-0.png": "868af12ca52e4ad4d14afefe65f4d855ba5e0f0d81dbc4ff6ba1716fcdc50198",
+    "visual02/detail-3-160.png": "17097cead828b572f27e256f06bca66c49bed1168e22b422b5bf7ff8df878c58",
+    "visual02/detail-3-225.png": "48d70445f4b600d28dfa3a56cd775c4f462a2f87455b1c8f4c1a44a3441bf971",
+    "visual02/detail-3-270.png": "4ce68d84710cdaba096ef284eb19e6682f666e9daa2d7f38baa3873b4b0f96dc",
+    "visual02/detail-3-90.png": "a7f0bcf415683491c3a5cec6e2a18da53bf3c0a394da4cfc77872992f4be1cee",
+    "visual02/fixture-source/MAPINFO.txt": "fa48e1184f4512b89d0890797264db58cc2ccc9bf2200cf95e501ba810ef489c",
+    "visual02/fixture-source/ZSCRIPT.txt": "c21f223b354b835e2f953bf527dac23952fa0bfced2faa76cc954e13cb6b6a4a",
+    "visual02/fixture.zs": "7865a22b062394f1613c1b15dd0a68267875e9334dd16a08045f4b9796d04d0b",
+    "visual02/RESULTS.json": "0668d5e9b966dd85f1834385f0e15dd3273ae6e52f191a764f281d916e256e6a",
+    "visual02/session.ini": "3cf495dcb5ee864007d5b110f7b020f70aa2376334e7e70b97c7ac9941bc4310",
+    "visual02/visual-part-1.cfg": "e6a2b93038e77a255f06b2edf5756b704e9749dc2598beb72d8b41cd6d08b7cf",
+    "visual02/visual-part-2.cfg": "77ebd82db53f18b0531e6758d98aa8d8f5c03e828ad8fd544178b058c6cdb9a1",
+    "visual02/visual-part-3.cfg": "cc681e5d2c751f9420955dcad1fb305fe8d1feb663770435e4b1e436b166a427",
+    "visual02/visual-part-4.cfg": "08cb29583a5796c310f10e5d6d1ee6ea070c83a39dbbda38ab3f827c64829833",
+    "visual02/visual-process.log": "38e1a95661dc00101149beef5bb75fe4be1b7eff1ec58437f85d277b1b746917",
+    "visual02/visual.cfg": "b34c5536853a0e0deb91192de20f8d890ba754f2e4a496aea950d1cb44f6fae5",
+    "visual02/visual.log": "cd2105cd4b8a2a8f286d854acd5a950d23749d7f8e2bf5f0dbbe6d4cd4123caf",
+    "validation-final.json": "c1e95675e39564272680095750a870b9f568687589452e618a2b4b2e65cb4ed0"
+  }
+}
