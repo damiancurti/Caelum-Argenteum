@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.36** - 2026-11-14.
+Documentation version: **5.17.37** - 2026-11-14.
+
+## #717 - Wooden crafting world drops (5.17.37)
+
+Six models/eighteen existing cases, eight closed components, four attachment
+witnesses and forty bow-opening rays pass static validation; native continuity
+passes2,597 assertions. Sixteen exports repeat. CA717-WOOD-COMPONENTS-01 retains
+review of uniform brown material, simplified decoration, floor contact and
+ordinary pickup/drop. Staff/support weapons and broader #647 remain separate.
 
 ## #716 - Chain material world drops (5.17.36)
 

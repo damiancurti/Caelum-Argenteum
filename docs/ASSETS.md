@@ -1,6 +1,51 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.36** - 2026-11-14.
+Documentation version: **5.17.37** - 2026-11-14.
+
+## 5.17.37 - Wooden crafting component world models (#717, parent #647)
+
+Six existing CaelumMaterialPickup designs gain native world models: shaft6,
+frame7, long frame8, handle28, long handle29 and wood42, using their M006/007/
+008/028/029/042 A sprites. All eighteen existing type/tier cases retain the
+same rules and icons. Owned rounded shafts, flared handle, distinct curved
+bow frames with their visible strings, and cut timber guide the silhouettes.
+Staff/support weapons remain separate. Actor.Scale0.25, Radius12/Height8,
+recipes, quantities, weight, provenance, contamination and saves are unchanged.
+
+Eight closed components contain5,219 vertices and10,000 triangles. Each bow
+has one genuine opening, checked at two interior areas with ten rays per
+area; four endpoint witnesses independently join the two strings to the limbs.
+Serialized OBJ checks verify outward closure, solid topology, attachment depth,
+all40 unobstructed rays, original sprite envelopes, floor contact and exact
+noncollapsed quantized MD3 triangle multisets. Geometry reporting calls these
+four sampled areas opening_probes, not four separate bow holes.
+Owned training-dummy wood and existing painted strap pixels are reused exactly.
+No new bitmap or icon edit. Editable JSON/OBJ/MTL and portable materials live in
+assets/source/art/inventory_models_647/wood_components. Regenerate with python
+assets/generators/generate_inventory_wood_components_models.py --output
+build/wood-component-model --install. Sixteen final exports repeat byte-for-byte.
+
+The preview passes487 checks. All thirty front/edge/rear-oblique/rear/raised
+underside details, ordinary floor overview and both presentation cohorts were
+inspected. Final generator cleanup changes metadata only; all fifteen other
+exports remain identical to that preview. Uniform brown material, simplified
+decoration and regular curves remain candidate art pending author review.
+The final package passes2,597 native assertions (487/541/487/541/541) for
+baseline sprites, old-save/model, fresh model, reload and rollback, including
+all eighteen types/tiers, pickup/split/merge, lot boundaries, provenance,
+Box weight and quest guards. API fixtures do not establish menu/crafting or
+author acceptance.
+
+One sequential700-tic six-object sprite/model pair records 1036.43/1046.24 queue
+presents/s, p95 1.1954/1.1952 ms and p99 1.4774/1.4470 ms on the recorded Windows11/Ryzen9
+5950X/RTX3070Ti system, GZDoom4.14.2 Vulkan1280x720, uncapped/vsync off,
+background unpaused, audio5%. Different projected footprints and queue-only
+timing establish no GPU/display, repeatability or campaign/crowd acceptance.
+All18,404 package entries match src; six models, one definition,
+MODELDEF and two release diagnostics are the only runtime changes from #716.
+Evidence: assets/validation_v5_17_37/evidence/SUMMARY.json.
+CA717-WOOD-COMPONENTS-01 remains pending. Other inventory, character, modular
+equipment and campaign work remain unfinished.
 
 ## 5.17.36 - Chain and silver-chain material world models (#716, parent #647)
 

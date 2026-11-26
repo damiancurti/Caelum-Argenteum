@@ -1,0 +1,6 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/wood_components" Model 0 "shaft.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M006 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/wood_components" Model 0 "frame.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M007 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/wood_components" Model 0 "long_frame.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M008 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/wood_components" Model 0 "handle.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M028 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/wood_components" Model 0 "long_handle.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M029 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/wood_components" Model 0 "wood.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M042 A 0 0 }

@@ -1,0 +1,6 @@
+newmtl wood
+Kd 1 1 1
+map_Kd src/models/caelum/actors/training/ca_training_dummy.png
+newmtl strap
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/consumables/materials.png

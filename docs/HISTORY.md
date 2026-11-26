@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.36** - 2026-11-14.
+Documentation version: **5.17.37** - 2026-11-14.
+
+## 5.17.37 - Wooden crafting components (#717, 2026-11-14)
+
+Added native drops for existing materials6/7/8/28/29/42, preserving all three
+tiers and gameplay. Six owned icon silhouettes use closed rounded profiles,
+curved bow limbs/strings and cut timber with unchanged owned texture pixels.
+Eight closed components, four attachment witnesses and forty opening rays
+pass; sixteen final exports repeat. Model01 art remains byte-identical after
+unused generator imports are removed. Native checks pass2,597 assertions.
+One qualified six-object sprite/model pair records 1036.43/1046.24 queue presents/s,
+p95 1.1954/1.1952 ms and p99 1.4774/1.4470 ms; small-scene queue-only qualifications apply.
+Evidence: assets/validation_v5_17_37/evidence/SUMMARY.json.
+CA717-WOOD-COMPONENTS-01 originates here and remains pending. Broader work and
+author acceptance are not complete.
 
 ## 5.17.36 - Chain material world props (#716, 2026-11-14)
 
