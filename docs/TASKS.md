@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.110** - 2026-11-21.
+Documentation version: **5.17.111** - 2026-11-21.
+
+## 5.17.111 - Recover the author-provided environment remasters for review (#866, #463)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Completed #866 source recovery, shared-consumer inventory, deterministic opt-in
+assembly, native material comparisons and scoped presentation checks. Preserve
+the author's source bytes and original 128-MU world dimensions. Review the grass,
+plaster, brick, stone, wood and roof candidates at the consolidated session.
+
+Three raw-image compositions and one model skin remain on their original sources;
+those require separately scoped transformations if the author selects the remasters.
+Continue the remaining #463 scenery finish and other authorized batch work without
+silently treating this material candidate, #736 boards or native tests as acceptance.
+The appended CA866-MATERIAL-01 remains pending with every earlier author check.
 
 ## 5.17.110 - Shorten measured native contamination value dispatch (#864)
 

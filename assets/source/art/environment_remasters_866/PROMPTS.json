@@ -1,0 +1,435 @@
+[
+  {
+    "desc": "Remaster the reference old lime plaster material in substantially higher detail. Preserve its warm dirty cream / gray-brown identity and overall amount of wear. Fine lime grains, small cracks, shallow eroded patches and scattered old discoloration; flat plaster with a few subtle stone exposures, no giant isolated crater. Clean and controlled material information rather than smeared noise. Retain similar midtone value.",
+    "group": "mejoradas",
+    "id": "CMEX01",
+    "name": "Revoque de cal envejecido",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: edit target, preserve its material identity and approximate pattern scale. Remaster the reference old lime plaster material in substantially higher detail. Preserve its warm dirty cream / gray-brown identity and overall amount of wear. Fine lime grains, small cracks, shallow eroded patches and scattered old discoloration; flat plaster with a few subtle stone exposures, no giant isolated crater. Clean and controlled material information rather than smeared noise. Retain similar midtone value.",
+    "source": "CMEX01",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMEX01.png",
+    "master_file": "masters/CMEX01.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "Remaster the reference old red-brown brick wall. Preserve the same small-scale running-bond courses (about 16 horizontal rows across the tile) and muted dark terracotta palette. Straight horizontal brick courses, well-defined narrow aged gray-brown mortar, handmade slightly rounded chipped brick edges, modest soot, individually readable mineral texture. No green moss and no facade ornaments.",
+    "group": "mejoradas",
+    "id": "CMEX04",
+    "name": "Ladrillo rojo artesanal",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: edit target, preserve its material identity and approximate pattern scale. Remaster the reference old red-brown brick wall. Preserve the same small-scale running-bond courses (about 16 horizontal rows across the tile) and muted dark terracotta palette. Straight horizontal brick courses, well-defined narrow aged gray-brown mortar, handmade slightly rounded chipped brick edges, modest soot, individually readable mineral texture. No green moss and no facade ornaments.",
+    "source": "CMEX04",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMEX04.png",
+    "master_file": "masters/CMEX04.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "Remaster this rough old cobblestone paving viewed exactly from above. Preserve warm gray-brown irregular rounded cobbles, about 5-6 cobbles across and 7 rows, dark narrow dirt-filled joints. More readable chipped stone surfaces, fine natural mineral variation and subtle worn high spots. Low relief shading, absolutely no perspective. No dominant solitary stone.",
+    "group": "mejoradas",
+    "id": "CMST01",
+    "name": "Empedrado de piedra irregular",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: edit target, preserve its material identity and approximate pattern scale. Remaster this rough old cobblestone paving viewed exactly from above. Preserve warm gray-brown irregular rounded cobbles, about 5-6 cobbles across and 7 rows, dark narrow dirt-filled joints. More readable chipped stone surfaces, fine natural mineral variation and subtle worn high spots. Low relief shading, absolutely no perspective. No dominant solitary stone.",
+    "source": "CMST01",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMST01.png",
+    "master_file": "masters/CMST01.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "Remaster this old squared stone paving viewed exactly from above. Preserve 4-5 worn square/rectangular warm-gray stone blocks across and about 5 staggered rows. Clear controlled joints, small edge chips and mineral grain, restrained dirt, no illustrated standing wall, no perspective, no embossing or decorative icon.",
+    "group": "mejoradas",
+    "id": "CMST02",
+    "name": "Adoquín de piedra escuadrada",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: edit target, preserve its material identity and approximate pattern scale. Remaster this old squared stone paving viewed exactly from above. Preserve 4-5 worn square/rectangular warm-gray stone blocks across and about 5 staggered rows. Clear controlled joints, small edge chips and mineral grain, restrained dirt, no illustrated standing wall, no perspective, no embossing or decorative icon.",
+    "source": "CMST02",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMST02.png",
+    "master_file": "masters/CMST02.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "Remaster the old dark vertical wooden floor boards. Preserve roughly six long vertical boards across, dark walnut / umber aged wood, slim gaps. Add readable flowing wood grain, small occasional knots, worn edges and restrained iron nail marks. Boards continue through top and bottom edges, joints wrap without a frame. No crossbar or X brace.",
+    "group": "mejoradas",
+    "id": "CMWD01",
+    "name": "Tablado oscuro de madera",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: edit target, preserve its material identity and approximate pattern scale. Remaster the old dark vertical wooden floor boards. Preserve roughly six long vertical boards across, dark walnut / umber aged wood, slim gaps. Add readable flowing wood grain, small occasional knots, worn edges and restrained iron nail marks. Boards continue through top and bottom edges, joints wrap without a frame. No crossbar or X brace.",
+    "source": "CMWD01",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMWD01.png",
+    "master_file": "masters/CMWD01.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "Remaster the roof material as an orthographic tile surface, not a building. Preserve five or six vertical columns of overlapping curved terracotta barrel tiles, dark warm burnt-sienna palette. Consistent rhythm, chipped tile lips, fine clay grains, a little ash-gray weathering. Shallow neutral relief, no directional sunlight. Rows must continue through all edges.",
+    "group": "mejoradas",
+    "id": "CMTB04",
+    "name": "Tejas criollas de terracota",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: edit target, preserve its material identity and approximate pattern scale. Remaster the roof material as an orthographic tile surface, not a building. Preserve five or six vertical columns of overlapping curved terracotta barrel tiles, dark warm burnt-sienna palette. Consistent rhythm, chipped tile lips, fine clay grains, a little ash-gray weathering. Shallow neutral relief, no directional sunlight. Rows must continue through all edges.",
+    "source": "CMTB04",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "refinement_prompt": "Edit the supplied terracotta roof material texture only to correct its repeating geometry and edge continuity. Keep the same dark reddish brown handmade curved clay tiles, weathering, medium detail, diffuse painterly realistic game style and straight-on orthographic material view. Make a mathematically periodic pattern with exactly SIX equally spaced tile columns across and FOUR equally spaced overlapping tile rows vertically. The top and bottom image boundaries must cut the tile pattern at precisely the same phase: no extra tiny row, no doubled lip, no horizontal dark cut at the join. Matching left and right phase too. Every row has exactly the same height. Return ONE seamless square 1024x1024 opaque texture, filling the canvas edge to edge, no text, no border, no perspective building scene. Preserve the original muted palette and tile scale. No new decorative motifs.",
+    "refinement_reference_file": "iterations/CMTB04_first_generation.png",
+    "reference_file": "canonical_mansion_v2/CMTB04.png",
+    "master_file": "masters/CMTB04.png",
+    "export_crop_xyxy": [
+      0,
+      30,
+      1254,
+      1254
+    ]
+  },
+  {
+    "desc": "Remaster the top-down dark olive grass ground. Preserve its low saturation and dark value, with individual short thin grass blades in varied directions, subtle dark soil visible underneath, modest natural density variation. Flat walkable lawn/ground, no tall grass clumps, no perspective or horizon. Avoid repetitive artificial curly noise.",
+    "group": "mejoradas",
+    "id": "CMGR01",
+    "name": "Pasto oscuro de terreno",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: edit target, preserve its material identity and approximate pattern scale. Remaster the top-down dark olive grass ground. Preserve its low saturation and dark value, with individual short thin grass blades in varied directions, subtle dark soil visible underneath, modest natural density variation. Flat walkable lawn/ground, no tall grass clumps, no perspective or horizon. Avoid repetitive artificial curly noise.",
+    "source": "CMGR01",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMGR01.png",
+    "master_file": "masters/CMGR01.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "Remaster the patchy rural ground seen straight down. Preserve muted olive dry short grass mixed with bare dark brown soil, small organic patches, subtle grit and tiny pebbles, moderate worn foot traffic. No clear path or central focal patch. Avoid large stripes, checkerboard patterns, directional light.",
+    "group": "mejoradas",
+    "id": "CMGR02",
+    "name": "Pasto seco y tierra",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: edit target, preserve its material identity and approximate pattern scale. Remaster the patchy rural ground seen straight down. Preserve muted olive dry short grass mixed with bare dark brown soil, small organic patches, subtle grit and tiny pebbles, moderate worn foot traffic. No clear path or central focal patch. Avoid large stripes, checkerboard patterns, directional light.",
+    "source": "CMGR02",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMGR02.png",
+    "master_file": "masters/CMGR02.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New continuous old urban limewash plaster material in muted pale ochre, Buenos Aires nineteenth-century masonry. Worn ochre pigment, hairline cracks, irregular cream undercoat glimpses and subtle weather staining. Restrained elegant deterioration, not completely ruined. NO window, door, border, foundation band or architectural object.",
+    "group": "ciudad",
+    "id": "CVCI01",
+    "name": "Revoque ocre urbano",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New continuous old urban limewash plaster material in muted pale ochre, Buenos Aires nineteenth-century masonry. Worn ochre pigment, hairline cracks, irregular cream undercoat glimpses and subtle weather staining. Restrained elegant deterioration, not completely ruined. NO window, door, border, foundation band or architectural object.",
+    "source": "CMEX01",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMEX01.png",
+    "master_file": "masters/CVCI01.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New continuous faded blue-gray limewashed plaster wall, nineteenth-century Rio de la Plata. Very low saturation slate-blue washed pigment, warm beige lime chips, fine crazing and uneven patina. Aged dignified urban facade material. NO window, door, border or building geometry.",
+    "group": "ciudad",
+    "id": "CVCI02",
+    "name": "Revoque azul grisáceo",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New continuous faded blue-gray limewashed plaster wall, nineteenth-century Rio de la Plata. Very low saturation slate-blue washed pigment, warm beige lime chips, fine crazing and uneven patina. Aged dignified urban facade material. NO window, door, border or building geometry.",
+    "source": "CMEX01",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMEX01.png",
+    "master_file": "masters/CVCI02.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New top-down nineteenth-century geometric hydraulic cement floor tiles. Four by four consistent square tiles forming a seamless muted ivory, charcoal navy and dusty terracotta geometric star/diamond repeating pattern. Pigment worn by feet, fine cracks, narrow matte grout. Keep each tile square, no text or heraldic emblem, no beveled fake perspective.",
+    "group": "ciudad",
+    "id": "CVCI03",
+    "name": "Baldosa hidráulica de patio",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New top-down nineteenth-century geometric hydraulic cement floor tiles. Four by four consistent square tiles forming a seamless muted ivory, charcoal navy and dusty terracotta geometric star/diamond repeating pattern. Pigment worn by feet, fine cracks, narrow matte grout. Keep each tile square, no text or heraldic emblem, no beveled fake perspective.",
+    "source": "CMST02",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMST02.png",
+    "master_file": "masters/CVCI03.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New flat frontal architectural trim sheet: a single continuous horizontal strip of old cream-gray carved limestone molding. Three restrained parallel horizontal profiles running across the complete width, with a broad plain stone center band, subtle chips and dust, worn nineteenth-century urban neoclassical architecture. No capitals, columns, perspective, endpoints or vertical divider. Only horizontal tiling is required. Create a 2:1 wide 1024x512 trim texture.",
+    "group": "ciudad",
+    "id": "CVCI04",
+    "name": "Cornisa y zócalo de piedra",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE wide 1024x512 horizontally seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Left and right edges MUST join seamlessly; the continuous horizontal molding is permitted to bound the top and bottom edges. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only. New flat frontal architectural trim sheet: a single continuous horizontal strip of old cream-gray carved limestone molding. Three restrained parallel horizontal profiles running across the complete width, with a broad plain stone center band, subtle chips and dust, worn nineteenth-century urban neoclassical architecture. No capitals, columns, perspective, endpoints or vertical divider. Only horizontal tiling is required. Create a 2:1 wide 1024x512 trim texture.",
+    "source": "CMEX01",
+    "tile": "x",
+    "world": [
+      128,
+      64
+    ],
+    "reference_file": "canonical_mansion_v2/CMEX01.png",
+    "master_file": "masters/CVCI04.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New SINGLE door leaf surface viewed flat from the front. Fill the tall 1:2 image edge to edge with aged muted bottle-green painted wood, four restrained recessed rectangular panels, tiny iron handle at the right side. No wall, no arch, no surrounding doorframe, no background or transparency. Chipped green paint reveals brown wood at edges. Create a vertical 1024x2048 door-leaf texture; its proportions must already be correct. This is a finite door surface and does not need seamless edges.",
+    "group": "ciudad",
+    "id": "CVCI05",
+    "name": "Hoja de puerta urbana verde",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE tall 1024x2048 finite game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Finite door leaf. The object fills the image edges with no surrounding frame or wall. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only. New SINGLE door leaf surface viewed flat from the front. Fill the tall 1:2 image edge to edge with aged muted bottle-green painted wood, four restrained recessed rectangular panels, tiny iron handle at the right side. No wall, no arch, no surrounding doorframe, no background or transparency. Chipped green paint reveals brown wood at edges. Create a vertical 1024x2048 door-leaf texture; its proportions must already be correct. This is a finite door surface and does not need seamless edges.",
+    "source": "CMWD01",
+    "tile": "none",
+    "world": [
+      64,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMWD01.png",
+    "master_file": "masters/CVCI05.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New flat nineteenth-century glazed ceramic wall tile material. A 4 by 4 regular grid of square ivory tiles with subdued cobalt/navy blue simple floral-geometric hand-painted ornaments forming a repeat. Worn matte glaze, tiny chips, subtle craquelure, dark thin grout. Aged Rio de la Plata courtyard or shop interior. No border frieze or text; even soft light.",
+    "group": "ciudad",
+    "id": "CVCI06",
+    "name": "Azulejo azul y marfil",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New flat nineteenth-century glazed ceramic wall tile material. A 4 by 4 regular grid of square ivory tiles with subdued cobalt/navy blue simple floral-geometric hand-painted ornaments forming a repeat. Worn matte glaze, tiny chips, subtle craquelure, dark thin grout. Aged Rio de la Plata courtyard or shop interior. No border frieze or text; even soft light.",
+    "source": "CMST02",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMST02.png",
+    "master_file": "masters/CVCI06.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New top-down old dock planks: about six horizontal broad weathered timber boards, desaturated gray-brown driftwood color with dark worn grain, small iron nails, split edges and sparse salt wear. Planks go all the way across, with a few staggered board ends and restrained width variation. Working nineteenth-century Argentine waterfront. No ropes, boat, horizon or objects.",
+    "group": "puerto",
+    "id": "CVPO01",
+    "name": "Tablas secas de muelle",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New top-down old dock planks: about six horizontal broad weathered timber boards, desaturated gray-brown driftwood color with dark worn grain, small iron nails, split edges and sparse salt wear. Planks go all the way across, with a few staggered board ends and restrained width variation. Working nineteenth-century Argentine waterfront. No ropes, boat, horizon or objects.",
+    "source": "CMWD01",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMWD01.png",
+    "master_file": "masters/CVPO01.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New top-down old wet dock planks: about six horizontal broad timber boards darkened by moisture, deep desaturated umber with gray aged grain, iron nail heads and fine salt erosion. Thin dark damp seams; dampness suggested by deeper color rather than a large shiny reflection. No standing puddles, sky reflection, ropes, ship or surrounding scene.",
+    "group": "puerto",
+    "id": "CVPO02",
+    "name": "Tablas húmedas de muelle",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New top-down old wet dock planks: about six horizontal broad timber boards darkened by moisture, deep desaturated umber with gray aged grain, iron nail heads and fine salt erosion. Thin dark damp seams; dampness suggested by deeper color rather than a large shiny reflection. No standing puddles, sky reflection, ropes, ship or surrounding scene.",
+    "source": "CMWD01",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMWD01.png",
+    "master_file": "masters/CVPO02.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New old quay wall material in large rectangular gray-brown blocks, front orthographic. Five staggered courses, irregular mineral wear and salt efflorescence, thin dark moss/olive algae scattered in joints. Restrained damp patina across tile, no horizontal waterline or water surface. Weathered river harbor masonry compatible with old Argentine architecture.",
+    "group": "puerto",
+    "id": "CVPO03",
+    "name": "Piedra de muelle con verdín",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New old quay wall material in large rectangular gray-brown blocks, front orthographic. Five staggered courses, irregular mineral wear and salt efflorescence, thin dark moss/olive algae scattered in joints. Restrained damp patina across tile, no horizontal waterline or water surface. Weathered river harbor masonry compatible with old Argentine architecture.",
+    "source": "CMST02",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMST02.png",
+    "master_file": "masters/CVPO03.png",
+    "export_crop_xyxy": [
+      0,
+      3,
+      1254,
+      1191
+    ]
+  },
+  {
+    "desc": "New flat wrought iron dock/warehouse plate material. A simple repeating arrangement of dark charcoal forged iron plates with straight subtle seams and a small number of rounded hand-forged rivets. Thin warm rust around joints and scratches, almost black cold iron centers. Nineteenth-century material, not modern sci-fi armor. No insignia, no machinery, no raised 3D objects.",
+    "group": "puerto",
+    "id": "CVPO04",
+    "name": "Hierro remachado oxidado",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New flat wrought iron dock/warehouse plate material. A simple repeating arrangement of dark charcoal forged iron plates with straight subtle seams and a small number of rounded hand-forged rivets. Thin warm rust around joints and scratches, almost black cold iron centers. Nineteenth-century material, not modern sci-fi armor. No insignia, no machinery, no raised 3D objects.",
+    "source": "CMEX04",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMEX04.png",
+    "master_file": "masters/CVPO04.png",
+    "export_crop_xyxy": [
+      0,
+      79,
+      1254,
+      980
+    ]
+  },
+  {
+    "desc": "New flat coarse burlap/jute cargo textile, weathered beige-brown with visible interwoven irregular natural fibers, subtle stains and fraying in a few tiny spots. Textile lies completely flat; evenly detailed woven surface all the way to edges, no folds, bag silhouette, sack, label, rope, printed text or artificial grid.",
+    "group": "puerto",
+    "id": "CVPO05",
+    "name": "Arpillera de carga",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New flat coarse burlap/jute cargo textile, weathered beige-brown with visible interwoven irregular natural fibers, subtle stains and fraying in a few tiny spots. Textile lies completely flat; evenly detailed woven surface all the way to edges, no folds, bag silhouette, sack, label, rope, printed text or artificial grid.",
+    "source": "CMWD01",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMWD01.png",
+    "master_file": "masters/CVPO05.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New flat old ship hull timber material, around five long horizontal planks of tar-darkened brown wood, thin nearly black caulk between planks, occasional small dark iron fasteners, weathered salt-scratched grain. Low relief, no curved hull perspective, no boat silhouette, no railing, no sea or objects. Authentic working wooden harbor material.",
+    "group": "puerto",
+    "id": "CVPO06",
+    "name": "Madera naval alquitranada",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New flat old ship hull timber material, around five long horizontal planks of tar-darkened brown wood, thin nearly black caulk between planks, occasional small dark iron fasteners, weathered salt-scratched grain. Low relief, no curved hull perspective, no boat silhouette, no railing, no sea or objects. Authentic working wooden harbor material.",
+    "source": "CMWD01",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMWD01.png",
+    "master_file": "masters/CVPO06.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New top-down flat Argentine coastal dry sand material. Muted gray-beige sand with very fine grains and tiny low wind ripples spread evenly, sparse dark mineral grains, subtle broad natural variation. No footprints, shells, dunes in perspective, rocks, plants, water or horizon. Matte medium-dark muted palette fitting dark fantasy, not bright tropical yellow.",
+    "group": "playa",
+    "id": "CVPL01",
+    "name": "Arena seca",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New top-down flat Argentine coastal dry sand material. Muted gray-beige sand with very fine grains and tiny low wind ripples spread evenly, sparse dark mineral grains, subtle broad natural variation. No footprints, shells, dunes in perspective, rocks, plants, water or horizon. Matte medium-dark muted palette fitting dark fantasy, not bright tropical yellow.",
+    "source": "CMGR02",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMGR02.png",
+    "master_file": "masters/CVPL01.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New top-down flat wet packed Argentine shoreline sand. Desaturated cool brown-gray sand, very fine compact grain, a few extremely subtle shallow ripple patterns and scattered tiny dark mineral flecks. Even damp tone, no mirror reflections. No water edge, wave, horizon, footprint, objects, shells or plants.",
+    "group": "playa",
+    "id": "CVPL02",
+    "name": "Arena húmeda",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New top-down flat wet packed Argentine shoreline sand. Desaturated cool brown-gray sand, very fine compact grain, a few extremely subtle shallow ripple patterns and scattered tiny dark mineral flecks. Even damp tone, no mirror reflections. No water edge, wave, horizon, footprint, objects, shells or plants.",
+    "source": "CMGR02",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMGR02.png",
+    "master_file": "masters/CVPL02.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New top-down coarse Argentine beach sand scattered with small broken pale shell fragments, tiny rounded gray pebbles and a few whole small cream shells. Gray-beige muted sand background, varied sparse distribution, no central focal object. Shells are small embedded surface details, no large starfish, coral or tropical ornament. Neutral flat light.",
+    "group": "playa",
+    "id": "CVPL03",
+    "name": "Arena con conchillas",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New top-down coarse Argentine beach sand scattered with small broken pale shell fragments, tiny rounded gray pebbles and a few whole small cream shells. Gray-beige muted sand background, varied sparse distribution, no central focal object. Shells are small embedded surface details, no large starfish, coral or tropical ornament. Neutral flat light.",
+    "source": "CMGR02",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMGR02.png",
+    "master_file": "masters/CVPL03.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New top-down densely packed small rounded beach shingle, natural desaturated warm-gray, charcoal, beige and muted brown pebbles. Roughly 12 to 18 pebbles across, varied sizes, fine dark sand in tiny gaps, worn smooth matte surfaces. No large boulder or shiny wet highlights. Organic irregular distribution, no masonry courses.",
+    "group": "playa",
+    "id": "CVPL04",
+    "name": "Canto rodado costero",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New top-down densely packed small rounded beach shingle, natural desaturated warm-gray, charcoal, beige and muted brown pebbles. Roughly 12 to 18 pebbles across, varied sizes, fine dark sand in tiny gaps, worn smooth matte surfaces. No large boulder or shiny wet highlights. Organic irregular distribution, no masonry courses.",
+    "source": "CMST01",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMST01.png",
+    "master_file": "masters/CVPL04.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New frontal coastal sedimentary rock surface for low sea cliffs, natural weathered gray-brown horizontal strata, shallow eroded fissures, salt bleaching and restrained olive lichen flecks. Stone surface fills the frame, rock material only. No individual rock silhouette, cliff scene, sky, sea or visible ground.",
+    "group": "playa",
+    "id": "CVPL05",
+    "name": "Roca costera estratificada",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New frontal coastal sedimentary rock surface for low sea cliffs, natural weathered gray-brown horizontal strata, shallow eroded fissures, salt bleaching and restrained olive lichen flecks. Stone surface fills the frame, rock material only. No individual rock silhouette, cliff scene, sky, sea or visible ground.",
+    "source": "CMST02",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMST02.png",
+    "master_file": "masters/CVPL05.png",
+    "export_crop_xyxy": null
+  },
+  {
+    "desc": "New exact top-down flat coastal water surface material, slate-gray and deep muted green-blue water with small overlapping irregular ripples, subtle low-contrast diffuse reflections and modest foam specks. Overcast Argentine shore, sober dark-fantasy palette. No horizon, shore, bottom stones, objects, strong glittering sunshine, caustic beams or perspective. This is a STATIC repeating water albedo frame, not a landscape.",
+    "group": "playa",
+    "id": "CVPL06",
+    "name": "Agua costera gris verdosa",
+    "prompt": "Use case: stylized-concept. Production asset for Caelum Argenteum, a semi-realistic dark-fantasy game inspired by nineteenth-century Argentina. Deliver ONE square 1024x1024 seamless game material texture filling the entire image, opaque. Direct orthographic material view, no perspective, no scene, no frame, no margin, no text, no labels, no montage. Painterly realistic weathered materials in subdued earth, soot, warm gray and brown colors, matching the reference palette, legible medium-scale forms and restrained fine detail. Even diffuse illumination, no spotlight, no vignette, no cast shadows, no bright wet specular highlights. Both opposing horizontal and vertical edges MUST join seamlessly: the material continues beyond every edge, no perimeter border. This is a repeating albedo/color map for real level geometry, not an illustration of architecture. Input image role: style and palette reference only; create the requested different material. New exact top-down flat coastal water surface material, slate-gray and deep muted green-blue water with small overlapping irregular ripples, subtle low-contrast diffuse reflections and modest foam specks. Overcast Argentine shore, sober dark-fantasy palette. No horizon, shore, bottom stones, objects, strong glittering sunshine, caustic beams or perspective. This is a STATIC repeating water albedo frame, not a landscape.",
+    "source": "CMGR01",
+    "tile": "xy",
+    "world": [
+      128,
+      128
+    ],
+    "reference_file": "canonical_mansion_v2/CMGR01.png",
+    "master_file": "masters/CVPL06.png",
+    "export_crop_xyxy": null
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "assets/generators/build_environment_remaster_review.py": "fa88a08d1933c3e854f9541490ee204ff4586e7c1eb699eddfc5687ecd38a3fb",
+  "assets/validation_v5_17_111/build_review_page.py": "11066dd4457c128a1cbc7c97a86262a6702c29756ff23c08d7e1409b7b07af31",
+  "assets/validation_v5_17_111/check_preservation.py": "80c1c562fde7f871e82c4cda8efa0009c9f986109f05dd6f51046f02afe8cc4e",
+  "assets/validation_v5_17_111/run_material_views.py": "d3c19e6ecf3110da7381e129aade34e53434d5302f41eba929cb2337365e67bb",
+  "assets/validation_v5_17_111/run_profile.py": "2bdaa72a9ccb5b2c1955186b7fad757046ee24443a2c928ce1b90ee3d65eb08b",
+  "assets/validation_v5_17_111/run_scene.py": "2ae3590c14e032c8454f42b2114eff0e8c82437233ae0d354e3791c5a85884ba",
+  "src/caelum/world/CaelumPhysicalHazards.zs": "32657e8a658ed2b9317568a06ec1548d4e7646dfa9e8d1b6aa0e1da4c119f24e",
+  "src/caelum/world/CaelumSewerMaze.zs": "eef90e4e75ee4d4242f523e3d2fa4b8c638d476c9d27fddb901fba501391f0a9"
+}

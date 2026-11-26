@@ -1,6 +1,77 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.110** - 2026-11-21.
+Documentation version: **5.17.111** - 2026-11-21.
+
+## 5.17.111 - Recover the author-provided environment remasters for review (#866, #463)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Recovered 27 source/provenance files from the author's retained ZIP, whose hash
+matches the historical coastal-texture integration manifest. Three independent
+overlay assemblies are byte-identical: 4c5ce9a64ba18f579cc589466db3dfed0421bcefbbc92ac301f68ebe354d2a31.
+They contain only eight exact PNG exports and the exact supplied binding fragment.
+All 18,767 runtime entries match source. Compared with 5.17.110, only the two release
+diagnostic strings change; all maps, production art/models, gameplay and saved
+fields remain byte-preserved. Final runtime SHA-256: 8759722962a6bee612d347b671610045b6aee59f447af029a6ef83963d72c5c4.
+
+Five final control/candidate pairs cover an eight-material repeat room, mansion
+garden/exterior/interior, MAP02 Justice stone room, port/factory threshold/interior
+and a separate outward street view. Each run checks 24 native wall/flat sizes;
+all 240 observations retain 128x128 MU. GetSize returns rounded display size
+in 4.14.2, as does GetScaledSize with doubles; the old log label raw is misleading.
+PNG headers and exact source bytes separately establish 512x512 texels. The initial
+archive assertion expecting 512 from GetSize failed before copying evidence; it
+was corrected, and portable logging now says display_int. No native behavior changed.
+All 42 camera/walk placements report adequate
+clearance. Ten 35-tic forward checks move 26.663 MU to identical paired positions.
+The diagnostic pawn is 56 MU high; this is a short local check, not a full traversal,
+largest-body clearance, combat, escort, locked-room progression or author test.
+Unchanged map bytes preserve the existing approved geometry and earlier evidence.
+
+Eight source exports and 32 named native before/after captures were directly
+inspected. Captures are 1520x825 although 1280x720 was requested. All eight materials
+render and repeat; surface detail increases without moving the cameras or changing
+world dimensions. Repeated wear/colour patterns remain visible. The grass keeps
+strong fine contrast. Mansion composites/gable, city brick, vehicles, props and
+lighting remain visibly unchanged where outside the candidate aliases. Ten short
+movement screenshots are retained but not separately visually reviewed.
+
+First lab attempts retained two fixture-only compile failures: reserved identifier
+state, then nonexistent sector floorpic/ceilingpic fields. The corrected fixture
+uses record and Sector.GetTexture. Lab03/MAP01-01 completed but their run lifetimes
+could overlap; lab04/MAP01-02 replaced them serially. Launchers now refuse an
+already-running GZDoom. None of those attempts supplies performance evidence.
+
+Ten later serial windows compare the same final runtime with/without the overlay,
+native GZDoom 4.14.2, Vulkan 1280x720, Windows 11, Ryzen 9 5950X and RTX 3070 Ti,
+unpaused background and 5% audio. MAP02 uses the actual stone room, not its
+unaffected entry. Native QueuePresent is distinct from monitor scanout; tic
+intervals include pacing/frame work and are not isolated simulation CPU cost.
+These are single paired windows, not a stable causal speedup/cost estimate.
+
+| Scene | Queue presents/s | Present p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| mansion-control01 | 72.341 | 15.700 / 17.183 / 20.174 | 28.561 / 39.266 / 40.833 / 41.882 |
+| mansion-candidate01 | 72.818 | 15.578 / 17.004 / 19.871 | 28.571 / 39.626 / 41.074 / 42.355 |
+| justice-control01 | 199.450 | 6.739 / 7.996 / 38.640 | 28.572 / 32.179 / 33.969 / 43.081 |
+| justice-candidate01 | 200.276 | 6.607 / 7.545 / 37.218 | 28.570 / 32.312 / 33.353 / 40.032 |
+| city-control01 | 105.049 | 10.636 / 11.814 / 14.327 | 28.574 / 36.121 / 37.371 / 37.999 |
+| city-candidate01 | 105.998 | 10.569 / 12.006 / 16.596 | 28.570 / 35.683 / 37.361 / 39.317 |
+| ground-control01 | 77.753 | 14.782 / 15.762 / 17.644 | 28.568 / 38.030 / 39.752 / 42.635 |
+| ground-candidate01 | 75.423 | 15.105 / 16.132 / 20.083 | 28.577 / 39.126 / 40.119 / 41.637 |
+| siege-control01 | 2.127 | 536.111 / 545.451 / 545.451 | 29.379 / 44.836 / 48.703 / 61.383 |
+| siege-candidate01 | 2.161 | 539.594 / 554.279 / 554.279 | 29.162 / 44.148 / 49.141 / 62.121 |
+
+The normal siege retains the approved 1,000-attacker/600-defender diagnostic
+design. All five pairs have identical recorded observer states and censuses.
+The siege records 601 defenders, 988 attackers, population 1590, dense mode 1,
+registered health 1421137 and player health 1248 at (-4352,-14016,0), tics 3599 to 4299.
+These snapshots do not prove every world state identical. Full tails remain in evidence.
+No retired 6,000-attacker case ran. Overall siege rendering remains unresolved.
+The mansion performance capture retains its opening dialogue; comparison captures
+separately dismiss menus. Ten performance images are inspected and qualified in
+the visual record. No asset is marked accepted. CA866-MATERIAL-01 is appended;
+the consolidated terminal remains deferred until remaining authorized work is ready.
 
 ## 5.17.110 - Shorten measured native contamination value dispatch (#864)
 

@@ -1,0 +1,28 @@
+{
+  "issue": 866,
+  "version": "5.17.111",
+  "view_sets": [
+    "lab04",
+    "map0102",
+    "map0201",
+    "map0301",
+    "street01"
+  ],
+  "native_runs": 10,
+  "native_size_observations": 240,
+  "clearance_placements": 42,
+  "movement_checks": 10,
+  "retained_final_view_images": 42,
+  "private_fixtures_not_distributed": true,
+  "performance_windows": 10,
+  "full_validation_pending": false,
+  "qualification": "Short diagnostic camera/movement checks; exact unchanged production geometry. No author acceptance or full campaign traversal.",
+  "size_api_qualification": "The raw field in retained logs is GetSize rounded display dimensions, not texel resolution. GetScaledSize uses the same display dimensions as doubles. Original PNG IHDR/source bytes establish512x512 texels. Portable logging label corrected without gameplay change.",
+  "superseded_attempts": {
+    "lab01": "Reserved state identifier: compile failed",
+    "lab02": "Unknown sector floorpic/ceilingpic fields: compile failed",
+    "lab03": "Passed; possible overlap with MAP01-01, superseded by serial lab04",
+    "map0101": "Passed; possible overlap with lab03, superseded by serial MAP01-02"
+  },
+  "full_validation_passed": true
+}

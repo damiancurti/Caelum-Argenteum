@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.110** - 2026-11-21.
+Documentation version: **5.17.111** - 2026-11-21.
+
+## 5.17.111 - Recover the author-provided environment remasters for review (#866, #463)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Prepared the eight retained author-supplied material remasters as an isolated
+review candidate under #463/#866. Exact source provenance, native 128-MU repeats,
+shared consumers, short movement, before/after views and peaceful/normal-siege
+presentation windows are documented in ASSETS/HISTORY and validation_v5_17_111.
+
+This does not activate the textures in production, approve shared mansion changes,
+complete all scenery/characters/equipment or resolve siege fluency. Consolidated
+author review remains deferred to the one final batch terminal. Continue the
+remaining authorized work; retain explicit design gates and all pending tests.
 
 ## 5.17.110 - Shorten measured native contamination value dispatch (#864)
 

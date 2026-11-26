@@ -1,0 +1,292 @@
+{
+  "issue": 866,
+  "parent_issue": 463,
+  "archive_name": "Caelum_Texturas_Ciudad_Puerto_Playa_v1.zip",
+  "archive_sha256": "888b6c3b5cf54ffbaddad2a78e32fd61c5b6f9889faebb66654085d72c08681e",
+  "manifest": "assets/coastal_textures/integration.json",
+  "status": "Unapproved opt-in candidate; exact author-provided source bytes",
+  "files": [
+    {
+      "file": "references/CMEX01.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/canonical_mansion_v2/CMEX01.png",
+      "sha256": "abd8f2e9bcca7591cba148bbf2014e8347c22e1d9bb0bfd265715e4b283e5f20",
+      "bytes": 34190,
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "masters/CMEX01.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/masters/CMEX01.png",
+      "sha256": "101346d5b15911c9d578885ba98bac2c345bbfddaf99af1fac2bae9918043ffe",
+      "bytes": 3558743,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "exports/CMEX01.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/src/graphics/caelum/textures/entornos_v1/mejoradas/CMEX01.png",
+      "sha256": "54b60ae5b4dda073bc6c2cb56da6b0666a72556059a3dc3d4eba895e57e7ce98",
+      "bytes": 609803,
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "references/CMEX04.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/canonical_mansion_v2/CMEX04.png",
+      "sha256": "943bb0bfb481510fb0c50a8d6d372cb70b38a0e67e061a2d2639f1e7a36fe40a",
+      "bytes": 31024,
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "masters/CMEX04.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/masters/CMEX04.png",
+      "sha256": "4f372d30a64a8983af06030ff8fa445a956479a0124ba92777e1ec88a85cd493",
+      "bytes": 2925505,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "exports/CMEX04.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/src/graphics/caelum/textures/entornos_v1/mejoradas/CMEX04.png",
+      "sha256": "e42da1a288e1511a84ab0581dfe7e3c42bc3e8a74b23e4c440428402a4b607ec",
+      "bytes": 500925,
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "references/CMST01.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/canonical_mansion_v2/CMST01.png",
+      "sha256": "02d0626ec4cc51696d9921a5e32ab79610de4bedd95a2c7f04f7479ee9354a54",
+      "bytes": 34075,
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "masters/CMST01.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/masters/CMST01.png",
+      "sha256": "1eb834a53aa318b0bf0baa61b74429965d8cf083016314fdd77261d1028a9667",
+      "bytes": 3337387,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "exports/CMST01.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/src/graphics/caelum/textures/entornos_v1/mejoradas/CMST01.png",
+      "sha256": "5a99180c563a1f45e4ee78accf8507ab39441076aa90eabb34f91992e4039297",
+      "bytes": 585487,
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "references/CMST02.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/canonical_mansion_v2/CMST02.png",
+      "sha256": "5169d64a44b0246803c7382e0bf8581d48763755bbba129033afd2f1245f864a",
+      "bytes": 32762,
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "masters/CMST02.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/masters/CMST02.png",
+      "sha256": "db9a661ec22f23ef3b9a108427d438032ab104b55c87f896de32e2a98dcf87c2",
+      "bytes": 3135220,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "exports/CMST02.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/src/graphics/caelum/textures/entornos_v1/mejoradas/CMST02.png",
+      "sha256": "ac0874f6e51d41cc3f026e2be415c3cbc495a539a3c904befbfe433091205f87",
+      "bytes": 536985,
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "references/CMWD01.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/canonical_mansion_v2/CMWD01.png",
+      "sha256": "ab27460be00dbd85f2ff31175a35c4d1566ba20e6a07fa1293f2150605ae1abd",
+      "bytes": 23800,
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "masters/CMWD01.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/masters/CMWD01.png",
+      "sha256": "45cc3ef92ef67391d6d2333a026e6d66fb594f41a3f7e03ce9b91b587a2b57bd",
+      "bytes": 2446171,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "exports/CMWD01.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/src/graphics/caelum/textures/entornos_v1/mejoradas/CMWD01.png",
+      "sha256": "f93949046493c66aa77cb4015ebfa955dff539192009b74fbb4ceb13704dd1fc",
+      "bytes": 413896,
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "references/CMTB04.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/canonical_mansion_v2/CMTB04.png",
+      "sha256": "ef015aae2ceb4df8a4b4fa8f87a978b8763ef23eda0d2042777831d1f72e51e4",
+      "bytes": 26983,
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "masters/CMTB04.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/masters/CMTB04.png",
+      "sha256": "ac2279b77d2c44de5c004b5ecade6a28ff3310d04f974b77a3ed12e8bba424aa",
+      "bytes": 2727563,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "exports/CMTB04.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/src/graphics/caelum/textures/entornos_v1/mejoradas/CMTB04.png",
+      "sha256": "972fe9427805fd34daa761326f773e93e6cb1d42cf0aa71264d7d3de5adda0aa",
+      "bytes": 489851,
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "references/CMGR01.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/canonical_mansion_v2/CMGR01.png",
+      "sha256": "ded049f3fd556aecb84677b6aeb2bf2256410febb0e92047eb7513b9c883497d",
+      "bytes": 29910,
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "masters/CMGR01.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/masters/CMGR01.png",
+      "sha256": "3f3d92eb120636204101f28c2733a7f0cc1d8fe3ca25c6227efa83cfa55902fb",
+      "bytes": 3232598,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "exports/CMGR01.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/src/graphics/caelum/textures/entornos_v1/mejoradas/CMGR01.png",
+      "sha256": "1f9cef646e051960b7277aa88b0d7ea41f7fca9d6212fcd728cff5c027492493",
+      "bytes": 570348,
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "references/CMGR02.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/canonical_mansion_v2/CMGR02.png",
+      "sha256": "db141cb9247fa358f81a707c170ccdedcf67732af1b5f62027cef439221df274",
+      "bytes": 27332,
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "masters/CMGR02.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/masters/CMGR02.png",
+      "sha256": "ee2086c3a22fe98cc6d4d73e4c51fe24694c480b6c059a1266a426e67bc8c55c",
+      "bytes": 3452214,
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "exports/CMGR02.png",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/src/graphics/caelum/textures/entornos_v1/mejoradas/CMGR02.png",
+      "sha256": "555467b7232bd8a6bfa792a56e972ca20c8678e5a4296400e8c54b39970f08b3",
+      "bytes": 585089,
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGB"
+    },
+    {
+      "file": "TEXTURES_MEJORAS_V3.txt",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/src/TEXTURES_MEJORAS_V3.txt",
+      "sha256": "12c146f39a26c6fc11849f24678b6281899784b719f918b8d4ec973a7a42f7f7",
+      "bytes": 3760
+    },
+    {
+      "file": "PROMPTS.json",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/PROMPTS.json",
+      "sha256": "44cb778d75750ae3b34615424702e220031064e54ab458778b26549a2364b044",
+      "bytes": 53326
+    },
+    {
+      "file": "EXPORT_CROPS.json",
+      "archive_member": "Caelum_Argenteum_Texturas_Ciudad_Puerto_Playa_v1/assets/art_source/EXPORT_CROPS.json",
+      "sha256": "53801b9689949ff2895739728f538cea1ebce335dd3f5ddb923d606994d029a4",
+      "bytes": 160
+    }
+  ]
+}
