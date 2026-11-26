@@ -1,0 +1,5 @@
+Model CaelumClothingPickup { Path "models/caelum/inventory/headwear" Model 0 "HF.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC11 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/headwear" Model 0 "HC.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC12 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/headwear" Model 0 "HR.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC13 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/headwear" Model 0 "HW.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC14 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/headwear" Model 0 "HP.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC15 A 0 0 }

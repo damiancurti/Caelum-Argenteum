@@ -4757,3 +4757,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/beast_men_combat.modeldef"
 
 #include "caelum/data/inventory_ores.modeldef"
+#include "caelum/data/inventory_headwear.modeldef"

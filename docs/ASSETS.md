@@ -1,6 +1,58 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.20** - 2026-11-13.
+Documentation version: **5.17.21** - 2026-11-14.
+
+## 5.17.21 - Five native headwear props (#686, parent #647)
+
+The five accepted #387 headwear designs now have candidate world-drop models:
+formal felt hat HF, urban cotton cap HC, country felt hat HR, winter wool cap HW
+and patched cloth cap HP. Exact CaelumClothingPickup WC11..WC15/A bindings retain
+the original inventory/crafting icons, all five existing sizes, identity,
+physical properties, weight, equipment rules, wetness and durability. The later
+all-dropped-inventory-3D instruction supersedes #459's original billboard-only
+drop scope for these five props. Other twenty garments and actual worn fitting
+remain separate; no body, species, wardrobe or balance decision is introduced.
+
+Five original owned high-resolution PNGs remain byte-identical in short native
+aliases and portable editable sources. Twenty-six closed outward OBJ groups
+form hollow crowns, brims, bands, a bow, visors, seams, buttons and cloth patches
+where appropriate. There are 33,934 source vertices, 12,936 triangles and 17 MD3
+surfaces. Source DESIGN/PROVENANCE/EXPORT files are under
+assets/source/art/inventory_models_647/headwear. Regenerate with python
+assets/generators/generate_inventory_headwear_models.py --output
+build/headwear-models --install. Final exports repeat 19 files byte-for-byte.
+
+Both original sprite dimensions bound the artwork; native Scale 0.25 and
+collision stay intact. Opening rays reach inner roofs rather than bottom disks.
+The first underside review exposed raised cloth patches despite closed meshes;
+the corrected patches follow the actual elliptical crown and their vertices
+are checked against its triangles (CA-KP-238). The optional four-column prism
+profile preserves all eight older families and 54 native outputs exactly;
+their current generator hashes alone are refreshed. Two dependent book/key
+binding manifests also refresh source hashes with identical native output.
+Fixed source crops and
+box-projected UVs can still show close-up material seams. Source sampling
+margins retain alpha >=250/255, preserving fractional source alpha. No raster
+editing, image generation or external mesh is involved.
+
+Final native continuity passes 2,458 checks: 476 original-sprite and 476 fresh
+model assertions, then 502 each for old-save/model, model reload and reverse
+load. Twenty-five type/size cases retain individual IDs, provenance, original
+icons/states, wet/dry weight, wear and water; native selection accepts compatible
+sizes and refuses incompatible sizes. Direct Box-weight and temporary quest-drop
+guards pass. The fixture calls native APIs; ordinary menus, crafting and author
+art acceptance remain pending. Geometry is shared across sizes; wearable body
+fitting is not implemented by these props.
+
+One final sequential five-visible-object, 700-tic sprite/model pair records
+1199.43/1192.72 queue presents/s, p95 1.0005/1.0258 ms and p99 1.2821/1.2845 ms.
+Simulation means are 28.5723/28.5726 ms/tic. Windows 11 Pro 26200, Ryzen 9 5950X,
+32 GB, RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720, uncapped/vsync off,
+background unpaused at 5% audio. This is isolated queue timing, not GPU/display
+timing, repeatability or campaign/crowd acceptance. All 18,298 package entries
+match src; only five models, five aliases, their binding/include and two release
+diagnostics differ from #684. Evidence and earlier candidates:
+assets/validation_v5_17_21/evidence/SUMMARY.json. CA686-HEADWEAR-01 remains pending.
 
 ## 5.17.20 - Coal and raw-metal material drops (#684, parent #647)
 

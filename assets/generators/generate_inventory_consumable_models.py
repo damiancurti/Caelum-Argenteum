@@ -101,12 +101,22 @@ def prism(mesh, shape):
         py = center[1]
         if 'surface_profile' in shape:
             profile = shape['surface_profile']
-            radius = profile[0][1] if pz <= profile[0][0] else profile[-1][1]
-            for (za, ra), (zb, rb) in zip(profile, profile[1:]):
-                if za <= pz <= zb:
-                    radius = ra + (rb-ra)*(pz-za)/(zb-za)
-                    break
-            py = -math.sqrt(max(0, radius*radius-px*px)) - shape['surface_offset']
+            if len(profile[0]) == 4:
+                # Optional elliptical crown: Z, X radius, Y radius, Y center.
+                rx,ry,cy = profile[0][1:] if pz <= profile[0][0] else profile[-1][1:]
+                for before,after in zip(profile,profile[1:]):
+                    if before[0] <= pz <= after[0]:
+                        fraction=(pz-before[0])/(after[0]-before[0])
+                        rx,ry,cy=(a+(b-a)*fraction for a,b in zip(before[1:],after[1:]))
+                        break
+                py=cy-ry*math.sqrt(max(0,1-(px/rx)**2))-shape['surface_offset']
+            else:
+                radius = profile[0][1] if pz <= profile[0][0] else profile[-1][1]
+                for (za, ra), (zb, rb) in zip(profile, profile[1:]):
+                    if za <= pz <= zb:
+                        radius = ra + (rb-ra)*(pz-za)/(zb-za)
+                        break
+                py = -math.sqrt(max(0, radius*radius-px*px)) - shape['surface_offset']
         return mesh.vertex((px, py + side * depth / 2, pz),
                            ((x-min(xs))/(max(xs)-min(xs)), 1-(z-min(zs))/(max(zs)-min(zs))), shape['part'])
     rings = []

@@ -1,0 +1,36 @@
+newmtl HF_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/headwear/hf.png
+newmtl HF_band
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/headwear/hf.png
+newmtl HC_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/headwear/hc.png
+newmtl HC_visor
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/headwear/hc.png
+newmtl HC_seam
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/headwear/hc.png
+newmtl HR_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/headwear/hr.png
+newmtl HR_band
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/headwear/hr.png
+newmtl HW_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/headwear/hw.png
+newmtl HP_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/headwear/hp.png
+newmtl HP_visor
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/headwear/hp.png
+newmtl HP_seam
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/headwear/hp.png
+newmtl HP_patch
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/headwear/hp.png

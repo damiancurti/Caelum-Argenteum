@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.20** - 2026-11-13.
+Documentation version: **5.17.21** - 2026-11-14.
+
+## #686 - Five headwear world-drop models (5.17.21)
+
+HF/HC/HR/HW/HP have candidate hollow props and exact WC11..15/A bindings. Final
+native continuity passes 2,458 checks across all 25 type/size combinations;
+19-file deterministic export and one five-body presentation pair pass. The two
+cloth patches now follow and intersect the elliptical crown. All 54 affected
+prior native export resources remain identical. Retain CA686-HEADWEAR-01 for
+author art/ordinary-menu review; the other twenty garments and worn fitting
+remain separate. Broad #647/#459 and campaign work are unfinished.
 
 ## #684 - Coal and raw-metal drop models (5.17.20)
 

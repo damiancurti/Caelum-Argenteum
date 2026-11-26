@@ -1,0 +1,23 @@
+{
+  "issue": 686,
+  "kind": "headwear",
+  "scope": "Native pickup/toss, quantity and saved ownership for headwear; no normal menu or author acceptance.",
+  "baseline_sha256": "73f84eafbaf8c67d49948a1a9871ddb03df15a75f59b59e997846e658cbafdeb",
+  "runtime_sha256": "73f84eafbaf8c67d49948a1a9871ddb03df15a75f59b59e997846e658cbafdeb",
+  "model_sha256": "3463236f62acf7d9f4fe59adb7466dcf41d99539f0a3c38a8a490559020935ce",
+  "fixture_sha256": "58be14b90625fbb061e4951cbef1cbeb2137da8800cc5a01fd6d1ae2c8ada248",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 1,
+      "passed": false,
+      "errors": [
+        "Script error, \"fixture.pk3:zscript\" line 58:",
+        "Expected 16 art assertions, observed 0"
+      ],
+      "assertions": 0
+    }
+  ],
+  "captures": {}
+}
