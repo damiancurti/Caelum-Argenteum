@@ -1,0 +1,19 @@
+{
+  "sha256": "88a1fe950851eac01569b21ed3e90ed30f86350be4a97217ac7d7738a58875b7",
+  "source_entries": 18584,
+  "exact_source_bytes": true,
+  "baseline_sha256": "85e741fefa72cedb48265a83ecaab977f2804327480d59e856f5146af1fc8822",
+  "added": [
+    "caelum/data/head_apparition_combat.modeldef",
+    "models/caelum/folklore/heads/chonchon.md3",
+    "models/caelum/folklore/heads/materials.png",
+    "models/caelum/folklore/heads/umita.md3"
+  ],
+  "changed": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "removed": [],
+  "unrelated_runtime_bytes_identical": true
+}

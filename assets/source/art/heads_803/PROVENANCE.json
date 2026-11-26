@@ -1,0 +1,21 @@
+{
+  "issue": 803,
+  "parent_issue": 461,
+  "ownership": "Owned supplied Umita/Chonchon concepts; original facial deformation, hair/beard volumes and head hierarchy. Owned Peuchen ear-wing topology adapted to the head silhouette.",
+  "references": {
+    "assets/source/bestiary_453/imagenes/04_Apariciones/28_umita.png": "9222a320c0aa7934ab45f13fb9ab44fd868be2e901672840dc82b26c59e3ef3b",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/35_chonchon.png": "f28cdc5af4c27783de753cac1bfe4ef438f57f51dd2fcbe101b98987681dbeb1"
+  },
+  "material": {
+    "mode": "built-in image_gen",
+    "prompt": "MATERIALS_PROMPT.json",
+    "sha256": "81fc522b7c804e56c00df8661cd3da66cdcd1bb27fa3c6de95e94355dbab5a30",
+    "processing": "Unchanged generated pixels; nine equal cells."
+  },
+  "reused": {
+    "assets/source/art/peuchen_708/peuchen.json": "921f3e3695b4ead286ad3ef82974c6c11a684631cdeb3f3e057a97e7596c66a6",
+    "assets/source/art/peuchen_708/CONTACTS.json": "b970a9cd0940d32aa704481fe16cffefeba0c13712232cfba7ad1bea997fa383",
+    "assets/source/art/apparitions_797/ANIMATION.json": "da2a24652b292335362decee3d398e72f8ed6bf71dab291fd8218f6c6e9629f6"
+  },
+  "limits": "Distinct full-volume human heads, source-led face textures, closed hair volumes and membrane ear-wings. Render offset and flaps do not add flight or other powers. Conceptual metre scales remain unauthorised."
+}

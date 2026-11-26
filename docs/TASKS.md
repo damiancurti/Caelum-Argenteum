@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.79** - 2026-11-15.
+Documentation version: **5.17.80** - 2026-11-15.
+
+## 5.17.80 - Head candidates verified; batch remains (#803)
+
+Umita/Chonchon pass deterministic export, 65 closed components, 504 posed contacts
+and 364 native continuity/action/loot assertions plus 51 final-pose checks. Keep
+CA803-HEADS-01 pending
+alongside prior author checks. Next deliver #805 descriptive identity corrections
+and #806 verified historical headings; then regional views and remaining creature,
+named/modular character, fitting and V5.16 progression/performance work. Native
+candidates cover 27/56 classes. Do not open the consolidated author terminal
+before the requested batch is complete or infer acceptance from these checks.
 
 ## 5.17.79 - Apparition gallery implemented; batch remains (#801)
 

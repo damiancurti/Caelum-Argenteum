@@ -1,0 +1,50 @@
+{
+  "issue": 803,
+  "purpose": "Inspect volumetric faces, long hair/beard and ear-wings; no new flight or apparition behavior.",
+  "additional_views": [
+    {
+      "name": "lying-oblique",
+      "position": [
+        130,
+        -150,
+        90
+      ],
+      "target": [
+        0,
+        0,
+        22
+      ],
+      "default_pose": 22
+    },
+    {
+      "name": "face-detail",
+      "position": [
+        65,
+        -18,
+        47
+      ],
+      "target": [
+        4,
+        0,
+        35
+      ]
+    },
+    {
+      "name": "hair-wing-detail",
+      "position": [
+        -100,
+        -80,
+        62
+      ],
+      "target": [
+        0,
+        0,
+        32
+      ]
+    }
+  ],
+  "action_views": {
+    "death": 6,
+    "rest": 6
+  }
+}

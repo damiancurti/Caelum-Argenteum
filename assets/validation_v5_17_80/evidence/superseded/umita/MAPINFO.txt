@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA803Events" }
+map CA455V "Umita/Chonchon inherited combat model" { sky1="CABASKY",0 nointermission }
