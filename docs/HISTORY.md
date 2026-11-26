@@ -1,6 +1,29 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.92** - 2026-11-18.
+Documentation version: **5.17.93** - 2026-11-19.
+
+## 5.17.93 - First-body fitted clothing candidates (#829)
+
+2026-11-19: added 25 independently fitted garment identities, five body masks
+and lower hair using the retained 24-action/375-sample rig. All 473 source parts
+are closed with positive rest volume; eleven trousers are connected surfaces.
+Source11 corrects unrelated limb weights on loose cloth and the RW buckle depth.
+CA-KP-253 records why closed geometry and passing native assertions alone were
+insufficient. Earlier rejected fitting/camera iterations remain available.
+
+Eighty-nine repeated exports and all 18,719 package entries match exactly.
+Final native23 passes 306 assertions, including independent selection/removal
+and byte-identical saved/reloaded visibility. Four sequential 700-tic native
+measurements and 22 directly inspected/50 exact-pixel reused final
+views are recorded in ASSETS and assets/validation_v5_17_93/evidence/SUMMARY.json.
+The earlier production-pilot 22 save/rollback checks are reused only for unchanged
+owners/models. No new production equipment integration is claimed.
+
+Accepted sources, inventory PNGs, balance and save schemas remain unchanged.
+Other bodies/sexes/species, grips, first-person and campaign equipment binding
+remain unfinished. Rigged cloth retains angular folds without physical simulation.
+CA829-WARDROBE-01 and all earlier author checks remain pending; the single final
+batch terminal has not been opened and author acceptance is not inferred.
 
 ## 5.17.92 - Reusable Domingo anatomy foundation (#827, 2026-11-18)
 

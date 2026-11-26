@@ -1,0 +1,50 @@
+{
+  "issue": 829,
+  "runtime_sha256": "51d848b6e47d312b706dc88f399d123ac42c609e35157f6a50f3fd1c80f740ab",
+  "model_sha256": "efe90627ab8830e314eb143b60a8f2558e806db65ef9235264fb0dc36e40f344",
+  "fixture_sha256": "d6e740eb639728026818182205573102ab655c7ebe5b13ba89c5557c006cb066",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "quick": true,
+  "runs": [
+    {
+      "phase": "fresh",
+      "exit_code": 0,
+      "assertions": 25,
+      "expected_assertions": 25,
+      "errors": [],
+      "passed": true
+    },
+    {
+      "phase": "reload",
+      "exit_code": 0,
+      "assertions": 5,
+      "expected_assertions": 5,
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "captures": {
+    "outfit-1-view0.png": "bef17d8c82551d7e540a39b24b156fb7ba27fe48f4caf46903c13d610ff68def",
+    "outfit-1-view2.png": "6094198b234ec11fc0c1e2e4c1177b386e4f7392caba768a655dc618a54376aa",
+    "outfit00-pose02.png": "78d75d9ace8d74d3389d95587c53afc0f5f26f20ae593e737abdb1556504816f",
+    "outfit00-pose09.png": "c8230fd839f6c144d5254f35bff8b49fa042659671f2735b27aa36efc8e95549",
+    "outfit00-view0.png": "6ff719e0091d9847b6da1cabf15164c1a2e49d0ece6c0be56d5f1eee82ca3e8b",
+    "outfit00-view2.png": "c459afbdd855ae924e837fc967207a26640cce21c9f6acc48a3465e71244ec1e",
+    "outfit01-pose08.png": "a0824cc3bb4b24cf15b3059fc10785fb112050e7131c5536ad0f605c51a0b42c",
+    "outfit01-pose09.png": "58e5de8d172f313c7572e635c1311344b26177be883e0172323a13a71cd67ede",
+    "outfit02-pose03.png": "a2fff368cfc998483755a64b50b261b30064b0a3327bf3c47274bcfb9e2b8a40",
+    "outfit02-pose08.png": "2c44a0c6c49c8a6eb8043c9e9d5aa6565cfcde6c1b706a2d59ad50ea568d9137",
+    "outfit02-view0.png": "7d5d5c7c283e08dc20dd39659e5a7c89b9baa3712c990748dcbcbf5ca1b8c022",
+    "outfit02-view2.png": "c54cd6c87e16356a08b347dd3cc951873aecb351431d6912f4734e760e728975",
+    "outfit04-pose08.png": "6df399ff0bfe3e9cdc606f97847a277d289d25f398ef78cd8e482c6d76338777",
+    "outfit07-pose01.png": "3fc15bc32091c7e791b7fb5e9a6981cef2886f142acce51d92124d29b1b2b367",
+    "outfit07-pose03.png": "2b5bfced242c1f703ef31fd195f5b06d067196f526ef51b33ca585b9f1fac9e9",
+    "outfit07-pose08.png": "28e705f3192e81132d09651c4a2aee239759648935abc4c13c09151e3e71023f",
+    "outfit07-view0.png": "c88aef29749a7c4ffe38b57d80f94575a78263c85fe7e1b6f6807e720a19151c",
+    "outfit07-view2.png": "3d14a504a06a17d537ee23de2693716f5a32f41faa1dab7e559b62d7a8dc39b3",
+    "outfit10-pose08.png": "c5fd8600eacc3d46d693cdef0915cce3fcac2322806934885f97fb9536437130",
+    "reloaded.png": "c88aef29749a7c4ffe38b57d80f94575a78263c85fe7e1b6f6807e720a19151c",
+    "saved.png": "c88aef29749a7c4ffe38b57d80f94575a78263c85fe7e1b6f6807e720a19151c"
+  },
+  "saved_visibility_pixel_match": true
+}

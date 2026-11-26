@@ -1,0 +1,16 @@
+{
+  "issue": 829,
+  "reviewed": [
+    "issue829-native22/outfit04-pose08.png",
+    "issue829-native22/outfit04-pose02.png",
+    "issue829-native22/outfit04-pose10.png",
+    "issue829-native22/outfit04-pose17.png",
+    "issue829-native22/outfit10-pose08.png",
+    "issue829-native22/outfit10-pose02.png",
+    "issue829-native22/outfit10-pose10.png",
+    "issue829-native22/outfit10-pose17.png"
+  ],
+  "notes": [
+    "Source22 native seated/running/crouched/jumping views of CW/PW contain the inner clothing and trousers. The previously visible detached trouser islands are absent. PW patches remain attached. Rigged folds stay angular without physical cloth simulation. Final complete-package and author acceptance remain separate."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "iteration": "native09",
+  "decision": "Source10 belt depth and long-coat weights need correction; unmodified head/glove/foot models remain reusable",
+  "reviews": [
+    {
+      "files": [
+        "outfit03-view0.png",
+        "outfit04-view0.png"
+      ],
+      "notes": "Casual jacket and winter coat/waistcoat distinct; continuous trousers and covered cuffs, no former hip/coat intersections in front."
+    },
+    {
+      "files": [
+        "outfit05-view0.png",
+        "outfit06-view0.png"
+      ],
+      "notes": "Country summer/mid-season fronts: continuous looser trousers, sash and regional hat; cuffs/gloves and shoes attached."
+    },
+    {
+      "files": [
+        "outfit07-view0.png",
+        "outfit07-view4.png"
+      ],
+      "notes": "RW rear drape coherent, but front belt buckle protrudes through poncho after the shared lower-torso expansion. Correct only the covered RW belt depth before delivery."
+    },
+    {
+      "files": [
+        "outfit08-view0.png",
+        "outfit09-view0.png"
+      ],
+      "notes": "Poor summer/mid-season fronts: retained patch materials fitted to continuous trousers; ungloved hands and worn shoes visible, no detached patches."
+    },
+    {
+      "files": [
+        "outfit10-view0.png",
+        "outfit10-view4.png"
+      ],
+      "notes": "Poor winter front/rear: patched long coat, fitted leg patches and gloves, full back coverage; continuous trousers remain inside coat."
+    },
+    {
+      "files": [
+        "outfit03-view2.png",
+        "outfit07-view2.png"
+      ],
+      "notes": "Casual jacket profile remains connected; poncho profile has intentional open sides with long shirt sleeves. Shared lower-torso scaling overextends only the RW belt/buckle, now isolated for correction."
+    },
+    {
+      "files": [
+        "outfit01-pose08.png",
+        "outfit04-pose08.png"
+      ],
+      "notes": "Rejected coat weights: long warm formal coat folds around knees with severe self-intersection; shorter winter coat also distorts. Constrain torso garments and their attached details to a continuous torso/thigh field, excluding nearby hands and shins."
+    }
+  ]
+}

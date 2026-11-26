@@ -1,0 +1,253 @@
+{
+  "issue": 829,
+  "reviewed": {
+    "issue829-native23/outfit00-view0.png": "62eacbb3acbd71139aa014d06853e116feebf28cd3175f5a083817c8e66e10cd",
+    "issue829-native23/outfit00-view4.png": "1ec574cf496828b4378b4d557c3403eccea5fd5368ad9316dd8e48ebf3a194dc",
+    "issue829-native23/outfit04-view0.png": "273d525acd43f5bf0e125d5c06a98c4142438512e49409ddd34e94183bf1104e",
+    "issue829-native23/outfit10-view0.png": "72b898140493e26f01bd416a9beca7057e3581ad20269650acfb862675930e0f",
+    "issue829-native23/outfit02-pose03.png": "ccfb3a2abd01b8bcfc6e8373cd859d0a6787698695905aeda64ff6ab6a7ff032",
+    "issue829-native23/outfit02-pose22.png": "2826f50833e10d11273970aa75d221c79f8176445425039755c434b83f8a19b4",
+    "issue829-native23/outfit00-pose08.png": "a91e0a05e3b92d594e9d07272d8fb79d38e333af3898b0a2cc455687ab67af03",
+    "issue829-native23/outfit00-pose10.png": "2b7bf8d62d3f915177fd43287e7904bdcdfb9e4edc921eda5b3de6066d48d231",
+    "issue829-native23/outfit04-pose08.png": "b262acff3123fecd2efd5fd5123a3ba465e8a9f777ba88449c8e4daa03034460",
+    "issue829-native23/outfit10-pose08.png": "dd407cd6cf7d791002ed0d8befbc364c7b12977a57b6f971c3866b5ec43e51b5",
+    "issue829-native23/region0-item10.png": "7e73a6c1545c973a5c5094cff2fe26cb366e7a5e3edf0be2806260b5a8ae8687",
+    "issue829-native23/region3-item-1.png": "e843b47a07952ad1648cbe781b70006a704e03e0c2733a47732a4b7f9706f63d",
+    "issue829-native23/hem-body08-foot0.png": "85c62c7052d5b0d370e78868927e943616fe4764334770de898395af53f90177",
+    "issue829-native23/hem-body10-foot2.png": "953056b5d7cd8d3d9100ea7f0ac2d043b883c99bfafd662bbc8e3ecde950f3af",
+    "issue829-presentation02/seven-1/scene.png": "8c9f5b2880a17ddd889d44298b15d6bae42c532f538e37c418c9e90e683faeb5",
+    "issue829-presentation02/worn-1/scene.png": "f728cccfd61528d9518ed302fe78f26a77cfd1e6f68d3f013e3d650fcf110c6b",
+    "issue829-presentation02/worn-64/scene.png": "861d7e81e314b6b8da00a28db16e54231099d957b525ecce8a5fb1d21893a8e3",
+    "issue829-presentation02/seven-64/scene.png": "7ed774193bf7ac4bc58cfb15de945bdb4030809f3eb94a14ce8270e0803fde41",
+    "issue829-native23/detail2-item0-view0.png": "616adbbd0a99ac8054b047ee0e291d3750a12b5d93a538874f304ca46ba2ce2a",
+    "issue829-native23/detail2-item1-view0.png": "cb65f2b0c2257ed77255bc8a978b3c8e20ef5e1796e399446b478736ab0254b9",
+    "issue829-native23/detail2-item2-view0.png": "4a97b786bf70a9be7d92b770652fb65e5968ae84032a92fa100bf9c0c87228f7",
+    "issue829-native23/detail2-item3-view0.png": "9b4175e459580d47e41a1abb52e5e18db1a347dc0aaa38e30cc7213d6c82fdd8"
+  },
+  "notes": [
+    "Awaiting native23 installed final-package direct review. Native21 rejected review is preserved separately.",
+    "Final package F front/back: coat, waistcoat, hat and footwear remain assembled without visible rest-pose intersections. Angular candidate surfaces and untextured construction hands are retained limitations.",
+    "Final CW/PW front rest views: layered clothing, independent hats/gloves/footwear and silhouette are coherent; no exposed construction anatomy through coat surfaces.",
+    "CS raised-arm melee and guard-landing views: gloves, exposed forearms, sleeves, trousers and low shoes follow the registered pose. Angular shoulder folds remain; no independent garment region disappears.",
+    "Final F seated and crouched views retain coat separation from trousers/waistcoat; folds remain angular without the rejected inner-clothing islands.",
+    "Final CW/PW seated views have continuous coat surfaces without the previously rejected trouser islands.",
+    "Independent body swap retains casual headwear/gloves/low shoes on PW; removing CS footwear restores bare feet and the long trouser hem.",
+    "Mixed PS/formal-shoe and PW/tall-boot closeups show the selected trouser hem meeting the shoe/boot collar; no bare calf or full trouser tube crosses the boot.",
+    "All four presentation screenshots were inspected: the single figure and complete 8x8 cohorts are visible in the same room/camera, with the worn cohort cycling the 11 outfits. These distant, noninteractive scenes measure candidate rendering cost, not close-up visual acceptance or campaign performance.",
+    "All four final glove closeups were inspected directly because earlier glove-detail captures did not match pixel hashes. Each retains its own material on the relaxed hand; adjacent body regions remain exposed, with no production item grip claimed.",
+    "Prior native11 reuse is limited to inspected head/glove details; native12 reuse is limited to the bare body; native13 reuse is limited to the repaired bare-footwear details. Rejected garment/footwear intersections are never treated as passing reused review."
+  ],
+  "exact_pixel_review_reused": {
+    "issue829-native23/detail1-item0-view0.png": {
+      "previously_reviewed": "issue829-native11/detail1-item0-view0.png",
+      "sha256": "d2fe86ce2ce9358935900f37150bf1036adcd0154c0b382a908692acb98e2983"
+    },
+    "issue829-native23/detail1-item0-view2.png": {
+      "previously_reviewed": "issue829-native11/detail1-item0-view2.png",
+      "sha256": "8469ca7cbcb0c4f8e5573f8f3f55ad37cdbd2c718de95e24424e4c73c6a94805"
+    },
+    "issue829-native23/detail1-item1-view0.png": {
+      "previously_reviewed": "issue829-native11/detail1-item1-view0.png",
+      "sha256": "5c926d3b3ce9c30967748cb2205b6dd76bea789034f96e79a7be8a97feb79280"
+    },
+    "issue829-native23/detail1-item2-view2.png": {
+      "previously_reviewed": "issue829-native11/detail1-item2-view2.png",
+      "sha256": "5f1c2fd53326699c0ee9f1f476781fd7d43dde2bd53dc1082987ece533f4803b"
+    },
+    "issue829-native23/detail1-item3-view0.png": {
+      "previously_reviewed": "issue829-native11/detail1-item3-view0.png",
+      "sha256": "76b34a9f8e487e771b965af0a7f6e41ae06f42f331ed1940ce623eb0f2a95f9c"
+    },
+    "issue829-native23/detail1-item4-view2.png": {
+      "previously_reviewed": "issue829-native11/detail1-item4-view2.png",
+      "sha256": "73780a4bb930a0793b43446b68809ff15ddfb0d8220d9496996bb89617bc6070"
+    },
+    "issue829-native23/detail3-item0-view2.png": {
+      "previously_reviewed": "issue829-native13/detail3-item0-view2.png",
+      "sha256": "a42dd6c6c1652075984870e9ac393aa592c99b7eb7020c63ce4c2f4dbf91886a"
+    },
+    "issue829-native23/detail3-item1-view2.png": {
+      "previously_reviewed": "issue829-native13/detail3-item1-view2.png",
+      "sha256": "32db8847568bdec2da76911652f0f6694cfc693e06758a4f777b68d63ee1abb8"
+    },
+    "issue829-native23/detail3-item2-view0.png": {
+      "previously_reviewed": "issue829-native13/detail3-item2-view0.png",
+      "sha256": "dd3b6f823f8bb97f082fe5f20591716c027620455005719367b39b64ce1cbfa8"
+    },
+    "issue829-native23/detail3-item2-view2.png": {
+      "previously_reviewed": "issue829-native13/detail3-item2-view2.png",
+      "sha256": "00c40511fbe343d0bbf4fd3b046c6dfe46d21767879ff73a5f0a8d5c0a57fc59"
+    },
+    "issue829-native23/detail3-item3-view2.png": {
+      "previously_reviewed": "issue829-native21/detail3-item3-view2.png",
+      "sha256": "21e197aabf8356917e530b6b16f053faa3c7db3d32fe71d9c091d79d8bcc1bdf"
+    },
+    "issue829-native23/detail3-item4-view0.png": {
+      "previously_reviewed": "issue829-native21/detail3-item4-view0.png",
+      "sha256": "14294ebeebb0b1d6dff6e40c17f3fbe63ceeda51daf9f247a83450d89404ad60"
+    },
+    "issue829-native23/hem-body00-foot-1.png": {
+      "previously_reviewed": "issue829-native21/hem-body00-foot-1.png",
+      "sha256": "5ac906fa0619fb14370ff407166535307a4db607cba075eece2142a3578a989a"
+    },
+    "issue829-native23/hem-body00-foot2.png": {
+      "previously_reviewed": "issue829-native21/hem-body00-foot2.png",
+      "sha256": "fcb1074bbdf59b92cb2a39d1b513dd355633a6af162bdbd77cbdacf70fe7759a"
+    },
+    "issue829-native23/hem-body02-foot0.png": {
+      "previously_reviewed": "issue829-native21/hem-body02-foot0.png",
+      "sha256": "7c20d72f2ebb0aaf2744bc18b42e95ad4ebc48df38667b3b44b06c62548c3c36"
+    },
+    "issue829-native23/hem-body05-foot1.png": {
+      "previously_reviewed": "issue829-native21/hem-body05-foot1.png",
+      "sha256": "96d41f7a50ae3e5e3b2f10b0b2009cda151d52268e647797c58e286e0a07c930"
+    },
+    "issue829-native23/outfit-1-view0.png": {
+      "previously_reviewed": "issue829-native12/outfit-1-view0.png",
+      "sha256": "18c8b7b6030ed0ca3e071b5a4e8b1aa764b5450ebcef050ab7a5cdbf94d122ac"
+    },
+    "issue829-native23/outfit00-pose02.png": {
+      "previously_reviewed": "issue829-native20/outfit00-pose02.png",
+      "sha256": "e1e8b0cb92e4b3fccdca097eed4680915fafa4fe1be30136f6d94f898df4c491"
+    },
+    "issue829-native23/outfit00-pose09.png": {
+      "previously_reviewed": "issue829-native20/outfit00-pose09.png",
+      "sha256": "7cef81e750a7ec073fe217578a17be30ce8ef2c4da53cd3ce3c659f9a6372ee0"
+    },
+    "issue829-native23/outfit01-pose08.png": {
+      "previously_reviewed": "issue829-native20/outfit01-pose08.png",
+      "sha256": "0a061a87a5d8bebbab7c99336cb6cc32c24b3ab3bc808c376a86749f83e0da9a"
+    },
+    "issue829-native23/outfit01-pose09.png": {
+      "previously_reviewed": "issue829-native20/outfit01-pose09.png",
+      "sha256": "57311f3877dc19d19eb5dd4a3e7df414c484203d6ecfb7fbed5e836a59dec5f5"
+    },
+    "issue829-native23/outfit01-view0.png": {
+      "previously_reviewed": "issue829-native21/outfit01-view0.png",
+      "sha256": "4e9d6ec953a1342061a0603a268e6a2eed589740c4c446b504114daaa7d33dba"
+    },
+    "issue829-native23/outfit02-pose02.png": {
+      "previously_reviewed": "issue829-native15/outfit02-pose02.png",
+      "sha256": "e49e1fd27451608dbcc187b5b7c629d7f89a09b312394848d989e371e294f885"
+    },
+    "issue829-native23/outfit02-pose08.png": {
+      "previously_reviewed": "issue829-native21/outfit02-pose08.png",
+      "sha256": "efe8896cd05c57f1d23feb7886593ecb9a4e93e7d503e24fd639766bf3730016"
+    },
+    "issue829-native23/outfit02-pose14.png": {
+      "previously_reviewed": "issue829-native15/outfit02-pose14.png",
+      "sha256": "1de129ae3ad3d1d4a20f14490fff01046aa046b303b583cb18e8f89b68b6cc9e"
+    },
+    "issue829-native23/outfit02-pose17.png": {
+      "previously_reviewed": "issue829-native21/outfit02-pose17.png",
+      "sha256": "c594294b11c90a30e1f5bd18890d36d35a009ab94f21c7cb107522cc5d405bf0"
+    },
+    "issue829-native23/outfit02-view0.png": {
+      "previously_reviewed": "issue829-native15/outfit02-view0.png",
+      "sha256": "8d76e1815ced61668f7ed4efb7e54210f37b63b3bebb59b3407d36c3386afa17"
+    },
+    "issue829-native23/outfit02-view2.png": {
+      "previously_reviewed": "issue829-native14/outfit02-view2.png",
+      "sha256": "d788e34a48c4c3d1d6878b64a6a48a79d2adece1a64903917a6b9cac41d703cd"
+    },
+    "issue829-native23/outfit03-pose08.png": {
+      "previously_reviewed": "issue829-native21/outfit03-pose08.png",
+      "sha256": "3c82a789aca311e29b642548c304a4837bb2e11dcebe5be1b9d1cc9984a96c6f"
+    },
+    "issue829-native23/outfit03-view0.png": {
+      "previously_reviewed": "issue829-native15/outfit03-view0.png",
+      "sha256": "87b090e1fe3ca94150644c9a871ee41c22aa8c5171e7c49961ec69ff3a357aa1"
+    },
+    "issue829-native23/outfit04-pose02.png": {
+      "previously_reviewed": "issue829-native22/outfit04-pose02.png",
+      "sha256": "7651cdfa20a851e3b0e8b6c3b0636f299e7773a0a4d79ff4b0d7cba18f0d61ff"
+    },
+    "issue829-native23/outfit04-pose10.png": {
+      "previously_reviewed": "issue829-native22/outfit04-pose10.png",
+      "sha256": "4846413c5c52bda5389078a7e85a8009bed3787167b306b035556b0c025ae6db"
+    },
+    "issue829-native23/outfit04-pose17.png": {
+      "previously_reviewed": "issue829-native22/outfit04-pose17.png",
+      "sha256": "4b4981b53345c92d848911b18ce59508d907b058c6d834b66b689cd2476349be"
+    },
+    "issue829-native23/outfit05-view0.png": {
+      "previously_reviewed": "issue829-native15/outfit05-view0.png",
+      "sha256": "6c443c9cfd81c2b3e12d99866356c7740006a9e76374faf8ef300b4926ef0a91"
+    },
+    "issue829-native23/outfit06-pose08.png": {
+      "previously_reviewed": "issue829-native21/outfit06-pose08.png",
+      "sha256": "6c8411773acc2cdc7b63854fd84d8336ec17a6072c3ddf1ed16197f829681f03"
+    },
+    "issue829-native23/outfit06-view0.png": {
+      "previously_reviewed": "issue829-native15/outfit06-view0.png",
+      "sha256": "d53f975b38cdfbf518fa7b59249dfbec83369e98ea34fe1060e9ea7ff80cfeb0"
+    },
+    "issue829-native23/outfit07-pose03.png": {
+      "previously_reviewed": "issue829-native21/outfit07-pose03.png",
+      "sha256": "46ef179f8c9a0cb3e0b8cc9704c73166a6fd9863f0dbfb1d77c2570ae8a93ce7"
+    },
+    "issue829-native23/outfit07-pose10.png": {
+      "previously_reviewed": "issue829-native20/outfit07-pose10.png",
+      "sha256": "0766446fdea58bd99d70d5db14e33022723327cc1610ae32f84796e700c41510"
+    },
+    "issue829-native23/outfit07-pose17.png": {
+      "previously_reviewed": "issue829-native20/outfit07-pose17.png",
+      "sha256": "2bcfa3a76a52dc25dfac14c7972e68f4b291b97a8fbb7675d38391d6b95d58f1"
+    },
+    "issue829-native23/outfit07-pose23.png": {
+      "previously_reviewed": "issue829-native17/outfit07-pose23.png",
+      "sha256": "13a64b244f22283d0ade576923ca0db6ba43011b5cba67bcbf66cccb74b53fc9"
+    },
+    "issue829-native23/outfit07-view0.png": {
+      "previously_reviewed": "issue829-native21/outfit07-view0.png",
+      "sha256": "4122499c6f1287e457e05e8176abf5fd5562a8d1e30127c7cea373a7f9117345"
+    },
+    "issue829-native23/outfit07-view4.png": {
+      "previously_reviewed": "issue829-native21/outfit07-view4.png",
+      "sha256": "b188d63fbc17a5133440c18bcf20ad115b8870aee85b52dc1e37c2c8cb694bac"
+    },
+    "issue829-native23/outfit08-view0.png": {
+      "previously_reviewed": "issue829-native15/outfit08-view0.png",
+      "sha256": "de54fa6a91e9062e8f52acab8eb684fc64af4be9f376b4c0be139fd42774b7d7"
+    },
+    "issue829-native23/outfit09-pose08.png": {
+      "previously_reviewed": "issue829-native21/outfit09-pose08.png",
+      "sha256": "310c77929607e476fb9902db6824c7c7cea98165291be88f52755c057cdceb61"
+    },
+    "issue829-native23/outfit09-view0.png": {
+      "previously_reviewed": "issue829-native15/outfit09-view0.png",
+      "sha256": "8334d2483d8bef3b9c7a0dcac2abec7872a0b7b594e40aa4e105eccd3a1cce21"
+    },
+    "issue829-native23/outfit10-pose02.png": {
+      "previously_reviewed": "issue829-native22/outfit10-pose02.png",
+      "sha256": "84313e7ddd23da30a2013be8a7d748b0e5f0fc462839256ec0a471e86124c0c1"
+    },
+    "issue829-native23/outfit10-pose10.png": {
+      "previously_reviewed": "issue829-native22/outfit10-pose10.png",
+      "sha256": "226f0f50e649d20e840dc5a8faf5bbed62729f733136f3d73bc68b8cb76b67b9"
+    },
+    "issue829-native23/outfit10-pose17.png": {
+      "previously_reviewed": "issue829-native22/outfit10-pose17.png",
+      "sha256": "01a1d6d889dc3d1bd3bead083083dd566b6ba9818c9808fefc0c5d9646a70932"
+    },
+    "issue829-native23/reloaded.png": {
+      "previously_reviewed": "issue829-native21/outfit07-view0.png",
+      "sha256": "4122499c6f1287e457e05e8176abf5fd5562a8d1e30127c7cea373a7f9117345"
+    },
+    "issue829-native23/saved.png": {
+      "previously_reviewed": "issue829-native21/outfit07-view0.png",
+      "sha256": "4122499c6f1287e457e05e8176abf5fd5562a8d1e30127c7cea373a7f9117345"
+    }
+  },
+  "prior_review_manifests": {
+    "issue829-review22-list.json": "bfa6f269c0d908063485f8bb6b09c6fec79f6229359cf18946da23ca806a456b",
+    "issue829-review21-rejected.json": "b8400f8fc97a74dfe45193274b10175942d6b5d99d7bd92adad209da87bba799",
+    "issue829-review20-list.json": "0e8347df68b5c72f8b80ac47edc0dbe017fb48f4d9ee270e7cf6b60b483aab04",
+    "issue829-review15-rejected.json": "3178594d0c00c5c32ab0d8133061d2097b9d3c165626446ed0a8e5e4f233e2f6",
+    "issue829-review17-rejected.json": "5b7ef1942d2fef3006c657a4ae222157e288419847536883be2252e80824ea05",
+    "issue829-review14-list.json": "45ac92f152841878e2f854bb7e8ff67ae8f8806e4ab927ab53eacad6a4bd000b",
+    "issue829-review13-rejected.json": "9c1c180bd621a7237db8e18b2a80be30fd3a38639aede337beed92fca20a02e8",
+    "issue829-review11-rejected.json": "1ab36c883b9aacf91ae5aa8238eaf91f9e98b33662e4fb5b6d253b3abdecea57",
+    "issue829-review12-rejected.json": "7965c6ce2fc00220517fbdf92d2ed3847aa67e4f1995878da68ef849ba93d557"
+  }
+}

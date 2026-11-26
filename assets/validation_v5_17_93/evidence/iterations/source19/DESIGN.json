@@ -1,0 +1,683 @@
+{
+  "schema_revision": 1,
+  "issue": 829,
+  "parent_issue": 459,
+  "author_accepted": false,
+  "anatomy_source": "assets/source/art/underbody_827/underbody.blend",
+  "anatomy_sha256": "4bf8f86aac40b8e6db01d97f5c730bdef01ace631c443dfdbe925d5bf2b4bc4a",
+  "accepted_design": "assets/source/art/domingo_3d_pilot/DESIGN.json",
+  "accepted_rig": "assets/source/art/domingo_3d_pilot/domingo.blend",
+  "source_catalogues": {
+    "clothing": "assets/source/art/inventory_models_647/clothing",
+    "headwear": "assets/source/art/inventory_models_647/headwear",
+    "gloves": "assets/source/art/inventory_models_647/gloves",
+    "footwear": "assets/source/art/inventory_models_647/footwear"
+  },
+  "source_sha256": {
+    "assets/source/art/inventory_models_647/clothing/DESIGN.json": "053193355c55a781252af7d8db87b86151638e8a64c9d8683d98b7c50bb1bd30",
+    "assets/source/art/inventory_models_647/headwear/DESIGN.json": "0897990e6fbcaa4c1cd1922a0f7a046b78c2f70e4fe3318ebb762f6b81af6a39",
+    "assets/source/art/inventory_models_647/gloves/DESIGN.json": "4ce950958e5206041fc1e51d8557399ee412ca074d740ac47bc9a5e59ebe42ff",
+    "assets/source/art/inventory_models_647/footwear/DESIGN.json": "8f633b76227e446cd4b4fbc34fb98ae76107c69b815c09f39f2ffd5693a99113"
+  },
+  "native_model_path": "models/caelum/characters/worn",
+  "fixture_class": "CA829WardrobePreview",
+  "tessellation": {
+    "max_segments": 16,
+    "max_surface_subdivisions": 2,
+    "max_outline_subdivisions": 2
+  },
+  "body_fit": {
+    "width_scale": 1.14,
+    "depth_scale": 1.14,
+    "depth_offset": -2.0,
+    "height_knots": [
+      [
+        0,
+        3.5
+      ],
+      [
+        10,
+        16
+      ],
+      [
+        38,
+        49
+      ],
+      [
+        73,
+        88
+      ],
+      [
+        98,
+        118
+      ],
+      [
+        109,
+        138
+      ],
+      [
+        115,
+        143
+      ],
+      [
+        121,
+        147
+      ],
+      [
+        124.5,
+        149
+      ]
+    ],
+    "skin_clearance": 0.35,
+    "neck_mask_z": 141.0,
+    "feet_mask_z": 12,
+    "arm_mask_lateral": 22.0,
+    "weld_distance": 0.0001,
+    "folded_display_top_offset": 22,
+    "forearm_mask_z": 110,
+    "sleeve_radius_scale": 1.15,
+    "sleeve_axis": [
+      [
+        70,
+        89,
+        3,
+        29
+      ],
+      [
+        71,
+        90,
+        3,
+        29
+      ],
+      [
+        86,
+        110,
+        1,
+        27
+      ],
+      [
+        87,
+        111,
+        1,
+        27
+      ],
+      [
+        100,
+        130,
+        0,
+        24
+      ],
+      [
+        111,
+        138,
+        0,
+        21
+      ],
+      [
+        115,
+        141,
+        0,
+        14
+      ],
+      [
+        117,
+        142,
+        0,
+        10
+      ]
+    ],
+    "poncho_width_knots": [
+      [
+        0,
+        1
+      ],
+      [
+        80,
+        1
+      ],
+      [
+        90,
+        1.05
+      ],
+      [
+        100,
+        1.2
+      ],
+      [
+        110,
+        1.25
+      ],
+      [
+        119,
+        1
+      ]
+    ],
+    "lower_torso_depth_knots": [
+      [
+        0,
+        1.65,
+        1.35
+      ],
+      [
+        93,
+        1.65,
+        1.35
+      ],
+      [
+        118,
+        1,
+        1
+      ],
+      [
+        160,
+        1,
+        1
+      ]
+    ]
+  },
+  "head_fit": {
+    "width_scale": 0.38,
+    "depth_scale": 0.5,
+    "height_scale": 0.27,
+    "base_z": 161.0,
+    "depth_offset": 0.0
+  },
+  "foot_fit": {
+    "height_scale": 0.9,
+    "source_center": 14.0,
+    "target_center": 11.0,
+    "horizontal_fit_knots": [
+      [
+        0,
+        0.5,
+        0.5,
+        4
+      ],
+      [
+        18,
+        0.5,
+        0.5,
+        4
+      ],
+      [
+        34,
+        0.7,
+        0.6,
+        6
+      ],
+      [
+        54,
+        0.7,
+        0.6,
+        7.5
+      ],
+      [
+        100,
+        0.7,
+        0.6,
+        7.5
+      ]
+    ],
+    "max_vertical_step": 4,
+    "anatomy_clearance": 0.35,
+    "transition_height": 4
+  },
+  "gloves": {
+    "GF": {
+      "offset": 0.12
+    },
+    "GC": {
+      "offset": 0.12
+    },
+    "GW": {
+      "offset": 0.24
+    },
+    "GP": {
+      "offset": 0.22
+    }
+  },
+  "combinations": [
+    [
+      "F",
+      "HF",
+      "GF",
+      "BF"
+    ],
+    [
+      "FW",
+      "HF",
+      "GW",
+      "BF"
+    ],
+    [
+      "CS",
+      "HC",
+      "GC",
+      "BS"
+    ],
+    [
+      "CE",
+      "HC",
+      "GC",
+      "BC"
+    ],
+    [
+      "CW",
+      "HW",
+      "GW",
+      "BC"
+    ],
+    [
+      "RS",
+      "HR",
+      "GC",
+      "BS"
+    ],
+    [
+      "RE",
+      "HR",
+      "GC",
+      "BR"
+    ],
+    [
+      "RW",
+      "HW",
+      "GW",
+      "BR"
+    ],
+    [
+      "PS",
+      "HP",
+      null,
+      "BP"
+    ],
+    [
+      "PE",
+      "HP",
+      null,
+      "BP"
+    ],
+    [
+      "PW",
+      "HP",
+      "GP",
+      "BP"
+    ]
+  ],
+  "parameter_role": "Editable mesh fitting, tessellation and visibility only. No physical dimensions, balance, thermal rules, native item size or wardrobe entitlement are inferred.",
+  "limits": [
+    "First Domingo-compatible construction body only; broader supported sex/species/size variants remain under #458/#459.",
+    "Original rig, head identity, fixed outfit, accepted object pixels and native equipment owners remain unchanged.",
+    "No campaign NPC wardrobe assignments or first-person integration. Candidate visual review is deferred to the final consolidated terminal."
+  ],
+  "head_overrides": {
+    "HC": {
+      "width_scale": 0.33,
+      "depth_scale": 0.44,
+      "height_scale": 0.25
+    },
+    "HP": {
+      "width_scale": 0.33,
+      "depth_scale": 0.44,
+      "height_scale": 0.25
+    },
+    "HR": {
+      "width_scale": 0.38,
+      "depth_scale": 0.5,
+      "height_scale": 0.27
+    },
+    "HW": {
+      "width_scale": 0.32,
+      "depth_scale": 0.42,
+      "height_scale": 0.3
+    }
+  },
+  "unfolded_ensembles": {
+    "F": "CS",
+    "FW": "CS",
+    "CW": "CS",
+    "PW": "PS"
+  },
+  "poncho_fit": {
+    "panels": {
+      "front": [
+        -145,
+        -35
+      ],
+      "back": [
+        35,
+        145
+      ]
+    },
+    "vertical_subdivisions": 4
+  },
+  "trouser_fit": {
+    "waist_z": 93,
+    "ankle_source_z": 14,
+    "exclude_arms_y": 22,
+    "country_items": [
+      "RS",
+      "RE",
+      "RW"
+    ],
+    "straight_padding": [
+      [
+        14,
+        2.2
+      ],
+      [
+        35,
+        2
+      ],
+      [
+        60,
+        1.5
+      ],
+      [
+        80,
+        1.2
+      ],
+      [
+        93,
+        1
+      ]
+    ],
+    "country_padding": [
+      [
+        14,
+        2
+      ],
+      [
+        35,
+        3
+      ],
+      [
+        60,
+        5
+      ],
+      [
+        80,
+        2
+      ],
+      [
+        93,
+        1
+      ]
+    ],
+    "inner_gap_below_z": 70,
+    "inner_gap": 0.8,
+    "hem_height_knots": [
+      [
+        14,
+        3.5
+      ],
+      [
+        25,
+        25
+      ],
+      [
+        93,
+        93
+      ]
+    ],
+    "uv_half_width": 26,
+    "patch_clearance": 0.15
+  },
+  "part_fit_overrides": {
+    "RW": {
+      "leather_waistband": [
+        [
+          0,
+          1.2,
+          1.35
+        ],
+        [
+          93,
+          1.2,
+          1.35
+        ],
+        [
+          118,
+          1,
+          1
+        ],
+        [
+          160,
+          1,
+          1
+        ]
+      ],
+      "belt_buckle": [
+        [
+          0,
+          1.2,
+          1.35
+        ],
+        [
+          93,
+          1.2,
+          1.35
+        ],
+        [
+          118,
+          1,
+          1
+        ],
+        [
+          160,
+          1,
+          1
+        ]
+      ],
+      "shirt_body": [
+        [
+          0,
+          1.2,
+          1.35
+        ],
+        [
+          93,
+          1.2,
+          1.35
+        ],
+        [
+          118,
+          1,
+          1
+        ],
+        [
+          160,
+          1,
+          1
+        ]
+      ],
+      "shirt_placket": [
+        [
+          0,
+          1.2,
+          1.35
+        ],
+        [
+          93,
+          1.2,
+          1.35
+        ],
+        [
+          118,
+          1,
+          1
+        ],
+        [
+          160,
+          1,
+          1
+        ]
+      ],
+      "shirt_button_0": [
+        [
+          0,
+          1.2,
+          1.35
+        ],
+        [
+          93,
+          1.2,
+          1.35
+        ],
+        [
+          118,
+          1,
+          1
+        ],
+        [
+          160,
+          1,
+          1
+        ]
+      ],
+      "shirt_button_1": [
+        [
+          0,
+          1.2,
+          1.35
+        ],
+        [
+          93,
+          1.2,
+          1.35
+        ],
+        [
+          118,
+          1,
+          1
+        ],
+        [
+          160,
+          1,
+          1
+        ]
+      ],
+      "shirt_button_2": [
+        [
+          0,
+          1.2,
+          1.35
+        ],
+        [
+          93,
+          1.2,
+          1.35
+        ],
+        [
+          118,
+          1,
+          1
+        ],
+        [
+          160,
+          1,
+          1
+        ]
+      ],
+      "shirt_button_3": [
+        [
+          0,
+          1.2,
+          1.35
+        ],
+        [
+          93,
+          1.2,
+          1.35
+        ],
+        [
+          118,
+          1,
+          1
+        ],
+        [
+          160,
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  "torso_weights": {
+    "pelvis_to_spine": [
+      88,
+      125
+    ],
+    "spine_to_chest": [
+      125,
+      143
+    ],
+    "thigh_height": [
+      78,
+      108
+    ],
+    "front_depth": [
+      -3,
+      7
+    ],
+    "thigh_weight": 0.8,
+    "center_blend_half_width": 4,
+    "allowed_bones": [
+      "pelvis",
+      "spine",
+      "chest",
+      "thigh.L",
+      "thigh.R"
+    ]
+  },
+  "trouser_hems": {
+    "overlap": 1.0,
+    "variants": {
+      "bare": null,
+      "low": "BS",
+      "formal": "BF",
+      "ankle": "BC",
+      "tall": "BR"
+    },
+    "foot_order": [
+      "BF",
+      "BC",
+      "BR",
+      "BS",
+      "BP"
+    ],
+    "foot_items": {
+      "BF": "formal",
+      "BC": "ankle",
+      "BR": "tall",
+      "BS": "low",
+      "BP": "low"
+    }
+  },
+  "torso_weight_overrides": {
+    "F": {
+      "thigh_height": [
+        87,
+        99
+      ],
+      "front_depth": [
+        -14,
+        0
+      ],
+      "thigh_weight": 1.0,
+      "max_source_vertical_step": 2
+    },
+    "FW": {
+      "thigh_height": [
+        87,
+        99
+      ],
+      "front_depth": [
+        -14,
+        0
+      ],
+      "thigh_weight": 1.0,
+      "max_source_vertical_step": 2
+    }
+  }
+}

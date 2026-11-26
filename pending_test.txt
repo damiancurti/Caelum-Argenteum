@@ -470,3 +470,17 @@ CA827-BODY-01 | Origin:5.17.92 / #827 | Pending consolidated author acceptance.
 Prerequisites: final consolidated candidate package and local engine/IWAD; preserve original saves. At final handoff run python assets/validation_v5_17_92/run_underbody.py --runtime build/caelum_argenteum_dev.pk3 --output build/underbody-author-01 --interactive, using a new output folder each time.
 Steps: F1 compares the original fixed model, F2 shows the assembled candidate, F3 exposes construction anatomy, F4 shows the raw legacy clothing overlay; F5 rotates, F6 cycles poses, F7 walks and F8 freezes. Inspect neck/head and wrist joins, hands and anatomy from every direction. Save/reload while inspecting and compare restored visibility/pose.
 Expected: independent body/hands follow all sampled actions and retain attached neck/wrists after reload. The single sampled skin color is construction material. Raw legacy clothing has recorded pelvis/leg/toe intersections and coverage gaps; report them separately from this body foundation and inspect later fitted garments in their own check. No production character conversion, item-specific grips, final skin or author acceptance is inferred from agent tests.
+
+CA829-WARDROBE-01 | Origin 5.17.93 / #829 | Pending
+Prerequisites: consolidated final batch terminal, GZDoom4.14.2 and complete
+runtime; the author has requested no intermediate test handoff.
+Steps: enter the first-body wardrobe preview. Cycle all 11 body ensembles;
+inspect the five hats, four gloves and five footwear pairs from front/back/sides.
+Rotate and inspect standing, walking, running, seated, crouched, jumping, sleeping and combat poses;
+remove each region independently, inspect each shoe/boot pair without body
+clothing, then restore clothing and change footwear to inspect the trouser hem.
+Save/load the final selection.
+Expected: period cuts/materials remain recognizable, covered skin and hair do
+not protrude, exposed regions stay connected, and garment choices survive load.
+This check concerns first-body art, not acceptance of other species/sexes,
+production ownership, first-person equipment or the full batch.

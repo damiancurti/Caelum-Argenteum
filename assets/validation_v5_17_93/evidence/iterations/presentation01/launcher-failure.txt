@@ -1,0 +1,1 @@
+The seven-module single-body case passed. The runpy wrapper then exposed a missing sibling-module search path before launching the worn case. No worn engine test ran in this attempt. The tool now adds its own directory explicitly; final evidence uses the complete presentation02 series. The wake request was released in finally.

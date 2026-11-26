@@ -1,0 +1,14 @@
+{
+  "issue": 829,
+  "reviewed": [
+    "issue829-native17/outfit07-pose10.png",
+    "issue829-native17/outfit07-pose23.png",
+    "issue829-native17/outfit00-pose08.png",
+    "issue829-native17/outfit00-pose10.png",
+    "issue829-native17/outfit01-pose08.png",
+    "issue829-native17/outfit00-pose02.png"
+  ],
+  "notes": [
+    "RW crouch/guard clean after front1.2. F/FW seated/crouch trouser islands removed, but stronger lower-coat weights expose inner waistcoat at abdomen in running2. Rejected preview pending coherent inner/outer lower-torso weights."
+  ]
+}

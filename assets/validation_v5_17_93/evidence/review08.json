@@ -1,0 +1,36 @@
+{
+  "iteration": "native08",
+  "scope": "Direct review of six changed views; other final views still pending",
+  "reviewed": [
+    {
+      "file": "outfit00-view0.png",
+      "sha256": "98384e97279b13d6359eed977e169f4145dc9eebc15fda250b3c26905143a606",
+      "notes": "Formal front: trousers no longer penetrate coat tails."
+    },
+    {
+      "file": "outfit00-view2.png",
+      "sha256": "46a09941c1328b0b9863b1cf4fa12509901d8cffdcaf46d486a631cef98d6ca4",
+      "notes": "Formal profile: covered body and coherent coat volume."
+    },
+    {
+      "file": "outfit02-view2.png",
+      "sha256": "0fc11cabdbe4dc7eb3083fddc42ef518038b99f7acd73418e78b7a4e01d85c9e",
+      "notes": "Summer profile: waist garment clears continuous trousers."
+    },
+    {
+      "file": "outfit00-pose09.png",
+      "sha256": "378e1dd1da65c57db74579442851ba797318544fab3bbb55154e1e65e139861a",
+      "notes": "Sleeping: complete framing, coat clears trousers; rigged cloth remains stiff, no physics simulation."
+    },
+    {
+      "file": "outfit00-pose02.png",
+      "sha256": "9ed107f117cd45dc2940e8300528f0c7f2d5bd761f5387e11646e063307bebd0",
+      "notes": "Running: coat and hands remain attached, no previous trouser holes."
+    },
+    {
+      "file": "outfit02-pose08.png",
+      "sha256": "8f3ed8cf30c7378d7451cbc256959671c70a594205a50c986c936c083082cb38",
+      "notes": "Seated: continuous hips/knees and forearm/cuff connection."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+Caelum Argenteum - Fitted clothing candidates (#829, parent #459)
+
+The 25 existing garment identities and their original owned textures derive
+from Damian Curti's approved clothing catalogue and object artwork (#386/#387).
+The editable source reuses the project's inventory clothing, headwear, glove
+and footwear sources under assets/source/art/inventory_models_647. Their
+provenance and unchanged source images remain authoritative.
+
+New work: fitted and weighted period garments, unfolded trousers, articulated
+gloves, covered-body regions and a lower-hair mask, sampled through Domingo's
+retained 24 actions. Existing raster files are reused without pixel edits.
+The body/hands and fitted trouser surfaces derive from the retained CC0
+MakeHuman source; see
+MAKEHUMAN_CC0.txt and UNDERBODY_827.txt. The accepted Domingo scene and original
+inventory assets remain unchanged. These worn meshes await author review.
+
+Editable scene, fitting data, authorship hashes and source references:
+assets/source/art/worn_clothing_829/

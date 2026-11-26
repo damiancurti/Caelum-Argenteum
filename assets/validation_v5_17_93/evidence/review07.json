@@ -1,0 +1,26 @@
+{
+  "iteration": "native07",
+  "decision": "coat clearance correction required",
+  "reviewed": [
+    {
+      "file": "outfit02-view0.png",
+      "sha256": "cbe6a113a906784867fc959fbb27ca2b07e3b71d8799edfc6684b7bd44cbd7f3",
+      "notes": "Continuous trousers join the hips/legs; shoe contact retained."
+    },
+    {
+      "file": "outfit00-view0.png",
+      "sha256": "7870cd402b1bb317b2c24248a7dbb3049244411c6f13705d5ce8e63f81aad118",
+      "notes": "Rejected: new trousers penetrate the frock-coat tails. Increase lower torso/coat clearance."
+    },
+    {
+      "file": "outfit07-pose08.png",
+      "sha256": "0ade0d953f5eba6d71e339ed0d4950135464fe7e2fff62f482f07e9485696035",
+      "notes": "Open-sided poncho with torso/thigh weighting removes the hand-driven strips in seated pose."
+    },
+    {
+      "file": "outfit00-pose09.png",
+      "sha256": "38a3f48776284fc134a0e3400b57c20d3ca09fe8b90def4840902b5b5c60dc1d",
+      "notes": "Whole lying figure is framed; trouser/coat intersections remain visible."
+    }
+  ]
+}

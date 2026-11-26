@@ -1,0 +1,87 @@
+{
+  "errors": [],
+  "full_validation_sha256": "290b9126dbbbd6a1f0d937146e5e10cba438fc00655e938d1ebe26fc43810f0a",
+  "qualification": "The full project validator passed before the final reviewed-view count changed from 18 to 22. Byte comparison proves those two count replacements are the only subsequent maintained-document changes; the regenerated index is fresh. Runtime, source art and test behavior were unchanged. Four additional existing glove captures and their review metadata are archived.",
+  "review_coverage": {
+    "body": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "head": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "hands": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "feet": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "documents": {
+    "AGENTS.md": {
+      "before_sha256": "16538fbd24225433138da00154abd431e7e14d2062d380c08bb30cff2a02008f",
+      "after_sha256": "16538fbd24225433138da00154abd431e7e14d2062d380c08bb30cff2a02008f"
+    },
+    "README.md": {
+      "before_sha256": "a0f77b327bb105fc9f9ed0aeb9d6d968e036a20ea12cbe3189f01156ab436a55",
+      "after_sha256": "a0f77b327bb105fc9f9ed0aeb9d6d968e036a20ea12cbe3189f01156ab436a55"
+    },
+    "docs/ASSETS.md": {
+      "before_sha256": "b3b092acab8db99eb860ad903a9ef0a3e9100a87a12b9c71b1ce209241a40617",
+      "after_sha256": "b50debdfa8f3c53b27c42c73c2022ee90db3e8220430a7c39ab85cb5efbc5a3b"
+    },
+    "docs/CONTEXT.md": {
+      "before_sha256": "42c36391a9b73ae238cc3129f13680b4bdb59f87d836a6fa20b7f078998b4f05",
+      "after_sha256": "42c36391a9b73ae238cc3129f13680b4bdb59f87d836a6fa20b7f078998b4f05"
+    },
+    "docs/HISTORY.md": {
+      "before_sha256": "25410bd30e78ffcb25af9db8416ab165ecca1378f56c9834aa287251938a6ca5",
+      "after_sha256": "aa50e87c11bd6da1fc71363d46b01377994b7bf9e6dda5c20843cc6896641caa"
+    },
+    "docs/KNOWN_PITFALLS.md": {
+      "before_sha256": "cc1c7e876ec159fc2878d4585ddae5707dda47fc0d786da2994e7e6a34b1b4cd",
+      "after_sha256": "cc1c7e876ec159fc2878d4585ddae5707dda47fc0d786da2994e7e6a34b1b4cd"
+    },
+    "docs/MAP01.txt": {
+      "before_sha256": "c243ff6a090bebf254917b089245338b904e8b4bd8a18891acbc58bb6ab1a389",
+      "after_sha256": "c243ff6a090bebf254917b089245338b904e8b4bd8a18891acbc58bb6ab1a389"
+    },
+    "docs/PROJECT.md": {
+      "before_sha256": "a31dd3f93bbf7ac12a7425667baa145c6ff820659734475e0a644e3495237670",
+      "after_sha256": "a31dd3f93bbf7ac12a7425667baa145c6ff820659734475e0a644e3495237670"
+    },
+    "docs/SPRITE_ART_DIRECTION.md": {
+      "before_sha256": "999dc56ef7c894aa5d9663f9aa0cf2bc29809da4b72a1f0c2bbbac52e4a2bd2f",
+      "after_sha256": "999dc56ef7c894aa5d9663f9aa0cf2bc29809da4b72a1f0c2bbbac52e4a2bd2f"
+    },
+    "docs/SYSTEMS.md": {
+      "before_sha256": "279524f1f8a6691330f229e9a134661a20434302fad7b469e990fcee08856685",
+      "after_sha256": "279524f1f8a6691330f229e9a134661a20434302fad7b469e990fcee08856685"
+    },
+    "docs/TASKS.md": {
+      "before_sha256": "447e5bafc9408b1e3e5b352515c1909aad91bf1057447dd411f7e26774a4a9c4",
+      "after_sha256": "447e5bafc9408b1e3e5b352515c1909aad91bf1057447dd411f7e26774a4a9c4"
+    }
+  },
+  "index_sha256": "40480619a1f4ae768874785fb8d83c3324e2fd69311dc977b4ff29e10bd981f9"
+}

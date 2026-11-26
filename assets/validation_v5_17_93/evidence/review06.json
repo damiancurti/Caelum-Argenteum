@@ -1,0 +1,55 @@
+{
+  "iteration": "native06",
+  "decision": "rejected before delivery",
+  "reviews": [
+    {
+      "files": [
+        "outfit-1-view0.png",
+        "outfit-1-view4.png"
+      ],
+      "notes": "Bare front/rear: connected torso, limb and wrist silhouette; retained hair and head."
+    },
+    {
+      "files": [
+        "outfit00-view0.png",
+        "outfit00-view4.png"
+      ],
+      "notes": "Formal front/rear: unfolded trousers and full coat, joined cuffs/shoes, skin covered; no detached display trousers."
+    },
+    {
+      "files": [
+        "outfit01-view0.png",
+        "outfit01-view4.png"
+      ],
+      "notes": "Warm formal: longer wool outer coat and glove material distinct, joined neck/wrists; retained silhouette."
+    },
+    {
+      "files": [
+        "outfit02-view0.png",
+        "outfit02-view4.png"
+      ],
+      "notes": "Summer casual: forearms exposed only below cuffs; trouser hem reaches shoes. Coarse separate hip/leg construction remains visible and awaits artistic review."
+    },
+    {
+      "files": [
+        "outfit03-view0.png",
+        "outfit04-view0.png"
+      ],
+      "notes": "Casual mid-season and winter: distinct jacket/coat/waistcoat and materials; covered forearms, aligned gloves/ankle boots."
+    },
+    {
+      "files": [
+        "outfit05-view0.png",
+        "outfit06-view0.png"
+      ],
+      "notes": "Country summer/mid-season: sash, bombachas and country hat readable; hip/leg outlines are visibly separate. Refine continuous worn trousers before final approval."
+    },
+    {
+      "files": [
+        "outfit07-pose08.png",
+        "outfit00-pose09.png"
+      ],
+      "notes": "REJECT source07: seated poncho follows hands and tears visually into folded strips. Formal sleeping articulation connected, but camera crops feet; later capture framing must fit horizontal poses."
+    }
+  ]
+}
