@@ -1,0 +1,46 @@
+{
+  "issue": 721,
+  "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+  "runtime_sha256": "57588a90345f8a2b748da90469dc2c054f8fce68e91e247670abb1d8528a94f2",
+  "materials_sha256": null,
+  "fixture_sha256": "d0defc2608cff1ea881215df51458293f4bad6ea8d9cba5c137cab28ef1ea289",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 49,
+      "expected_assertions": 49
+    },
+    {
+      "phase": "reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 102,
+      "expected_assertions": 102
+    }
+  ],
+  "captures": {
+    "cachiru.png": "0900dec1817fb187faff5ff92d9ada31781d06a929a2250e9d65010367ff8f90",
+    "cuero.png": "abd9168ddde1783c60bd21e363893de6a5aec6d7c81e263df7fa5c17170c5676",
+    "kakuy.png": "6e5d2c8655e21a994bc1fe5ec0585c8ea46551ba35cb80359069a7db8f1a0595",
+    "kelenken.png": "bf0506df48865bd975250357c716eafb0da2cc206b182ff0e328094bb4c49b8b",
+    "litoral-tiles.png": "8f4c447278acf37ca33fe800d2557650784a87f265d06c12b65f59495c0ea142",
+    "litoral.png": "4804d0746b8ba6241f66b03d86de88d90b9c62680982dd89ec4265061912f568",
+    "mboi_tata-litoral.png": "a456ff5c9423272778208ac51f4697d1e4f1367716c4404d2fb57b9a0da4a54d",
+    "mboi_tata-selva.png": "62a32139c370c8497a2145764da215e6675efbe16f51e44154ed31b36f8eaec4",
+    "monai-selva.png": "8b8b1af815e539e6466306416fc7dd715adbe73e731f102c256519540cb22027",
+    "nahuelito.png": "580b28a2fca694477e8879a24137ab807f1c66bccf03df00ccfec5169489f777",
+    "noa-tiles.png": "1e0956a422d07c8bf8faaca30bbac9a7cafab1e66bb59a8d7e4999ba110658ca",
+    "overview.png": "94d24062d7c2dd0815e05381d74397eb397c752e8901d7014084005681f52673",
+    "patagonia-tiles.png": "bcb0580b6d883f78b6198ac0a8fc4af17d8221861fe1ef339cd52883ef8cb294",
+    "patagonia.png": "5447eab64e2c0d3e339275d05f179a57d76467fd0e6e45d020d2204d8178298c",
+    "peuchen.png": "77461fb058f43758b3ebf119b74653e716362d24c0b2a0260dab0a875bd4526a",
+    "reload.png": "02d4bd521621ed1a6be12fcdc73719041c689944d6be8bb3ddc2e9f84609fbd2",
+    "selva-tiles.png": "e8c3bcfe31e3c73f69552af8367d8f0c17cbd7b305097ce3443cce412b84aacc",
+    "selva.png": "e3a00c7ead79ce2d1a1070b01efa350bafe6ad0f3d93d7a50b71c83aee0c5ffe"
+  }
+}

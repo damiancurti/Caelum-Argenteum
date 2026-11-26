@@ -898,3 +898,6 @@ assets/validation_v5_17_31/evidence/** -text -diff
 /assets/validation_v5_17_38/*.py text eol=lf
 /assets/validation_v5_17_38/*.json text eol=lf
 /assets/validation_v5_17_38/evidence/** -text -diff
+
+/assets/validation_v5_17_39/*.py text eol=lf
+/assets/validation_v5_17_39/evidence/** -text -diff

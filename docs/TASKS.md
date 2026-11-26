@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.38** - 2026-11-14.
+Documentation version: **5.17.39** - 2026-11-14.
+
+## #721 - Serpents in the regional inspection room (5.17.39)
+
+Eleven displays on four regional grounds, four repeatable fixture files and
+151 native fresh/reload/idle/walking checks pass. CA721-SERPENT-GALLERY-01
+retains author review of the three new regional appearances and framing.
+Earlier model/gallery checks remain pending. Other characters, modular
+equipment, first-person work and the original campaign remain unfinished.
 
 ## #720 - Native Moñái and Mbói Tatá (5.17.38)
 

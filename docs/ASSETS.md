@@ -1,6 +1,45 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.38** - 2026-11-14.
+Documentation version: **5.17.39** - 2026-11-14.
+
+## 5.17.39 - Serpent regional gallery extension (#721, parent #463)
+
+Optional CA709G adds Moñái in Selva and Mbói Tatá in both Litoral and Selva,
+following the approved associations. Eleven displays cover nine native species
+on four reused regional grounds. All eight earlier positions, plots, crossing
+path and controls remain; three rear-row diagnostic positions and inspection
+cameras are added. CA463G and CA682G are unchanged. All native model/material
+bytes are reused. Data and provenance remain in
+assets/source/art/regional_gallery_709; the previous layout is archived.
+
+Run python assets/validation_v5_17_39/run_gallery.py --runtime
+build/caelum_argenteum_dev.pk3 --output build/serpent-regions-author-01 --interactive.
+New keys: 5 Moñái/Selva, 6 Mbói Tatá/Litoral, 7 Mbói Tatá/Selva. Retained:
+F1 overview, F2/F3 Litoral/Selva Pombero, F4 Patagonia, F5 walk, F6 Cuero,
+F7 Nahuelito, F8 Cachiru, F9 Kakuy, F11 Peuchen, F12 Kelenken; number keys
+1/2/3/4 inspect Litoral/Selva/Patagonia/NOA ground. Native idle animation
+advances; only diagnostic observer footsteps are silent. Repeated displays
+show approved associations without establishing campaign population rules.
+
+Four fixture files repeat. Independent checks verify exact export hashes,
+complete approved region associations, separated collision bodies and valid
+cameras. Native fresh/reload passes 49/102 assertions, including eleven
+identities/positions, advancing idle states, silent observer footsteps and
+the existing 630-tic crossing of three boundaries at unchanged movement
+speed. Added closeups, expanded/reloaded overview, affected ground views
+and presentation were inspected. Unmodified art/combat evidence remains
+applicable, including #720's 230 continuity and 136 combat/loot assertions.
+
+One 700-tic eleven-display distant overview records 1491.67 queue presents/s, p95 0.8887 ms, p99 1.0917 ms; mean simulation 28.5718 ms/tic.
+Environment: Windows 11 Pro26200, Ryzen9 5950X,32GB, RTX3070Ti;
+GZDoom4.14.2 Vulkan1280x720, uncapped/vsync off, background unpaused, audio5%.
+Queue intervals do not establish GPU/display timing, repeatability,
+comparative cost, close-up budget or campaign/crowd acceptance. All
+18,412 package entries match src; only two release diagnostics differ
+from #720. Evidence: assets/validation_v5_17_39/evidence/SUMMARY.json.
+CA721-SERPENT-GALLERY-01 and earlier gallery/art checks remain pending.
+No campaign map, encounter, balance, production AI or save schema changes.
+Use fresh isolated gallery saves; broader character/equipment work is unfinished.
 
 ## 5.17.38 - Moñái and Mbói Tatá native models (#720, parent #461)
 

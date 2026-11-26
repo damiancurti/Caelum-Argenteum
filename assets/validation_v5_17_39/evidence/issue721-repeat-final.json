@@ -1,0 +1,10 @@
+{
+  "files": 4,
+  "all_byte_identical": true,
+  "sha256": {
+    "gallery.pk3": "d0defc2608cff1ea881215df51458293f4bad6ea8d9cba5c137cab28ef1ea289",
+    "gallery.zs": "99aa1e9af1f013a11c0590bc728361e6a1badbb0fc461faeb2a335f329227dfb",
+    "GALLERY_MANIFEST.json": "b5239bdb27519d15569dda321ae05b66dcc8a3ec871247dd349671be2a2cd1a1",
+    "TEXTMAP.txt": "7f60a1560176b49442b641b138992f73d7a821b28a6622a847c3a2abbe67d575"
+  }
+}

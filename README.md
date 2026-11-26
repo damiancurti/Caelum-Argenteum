@@ -6,8 +6,10 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.38.** Obtain and update the complete repository,
+**Current release: 5.17.39.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#721 adds Moñái and Mbói Tatá to their approved regional inspection grounds. Author review remains pending.
 
 #720 adds native Moñái and Mbói Tatá with inherited combat and save continuity. Author visual review remains pending.
 

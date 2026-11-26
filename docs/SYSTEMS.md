@@ -1,6 +1,14 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.38** - 2026-11-14.
+Documentation version: **5.17.39** - 2026-11-14.
+
+## 5.17.39 - Serpent inspection controls (#721)
+
+CA709G adds number keys 5 for Moñái/Selva, 6 for Mbói Tatá/Litoral and 7 for
+Mbói Tatá/Selva. Existing F1-F9/F11/F12 and ground keys 1-4 remain unchanged.
+Eleven passive native figures retain idle animation. Diagnostic observer
+footsteps remain silent; production movement, perception and hostility are
+unchanged. Duplicate appearances illustrate approved regional allocation.
 
 ## 5.17.35 - Extended native gallery controls (#713)
 

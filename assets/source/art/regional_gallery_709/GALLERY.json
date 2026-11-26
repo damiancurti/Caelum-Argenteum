@@ -1,6 +1,6 @@
 {
   "schema_revision": 1,
-  "issue": 713,
+  "issue": 721,
   "status": "isolated_visual_inspection_not_campaign",
   "map": "CA709G",
   "title": "Native NOA, Litoral, Selva and Patagonia inspection",
@@ -159,6 +159,42 @@
       "position": [
         800,
         272,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Selva",
+      "catalogue_id": "CA-FOLK-049",
+      "kind": "monai",
+      "class": "CaelumBestiary049",
+      "position": [
+        -384,
+        224,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-051",
+      "kind": "mboi_tata",
+      "class": "CaelumBestiary051",
+      "position": [
+        -768,
+        256,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Selva",
+      "catalogue_id": "CA-FOLK-051",
+      "kind": "mboi_tata",
+      "class": "CaelumBestiary051",
+      "position": [
+        -128,
+        256,
         0
       ],
       "angle": 270
@@ -365,20 +401,63 @@
         0
       ],
       "key": "4"
+    },
+    {
+      "id": "monai-selva",
+      "position": [
+        -384,
+        114,
+        60
+      ],
+      "target": [
+        -384,
+        224,
+        26
+      ],
+      "key": "5"
+    },
+    {
+      "id": "mboi_tata-litoral",
+      "position": [
+        -768,
+        146,
+        60
+      ],
+      "target": [
+        -768,
+        256,
+        26
+      ],
+      "key": "6"
+    },
+    {
+      "id": "mboi_tata-selva",
+      "position": [
+        -128,
+        146,
+        60
+      ],
+      "target": [
+        -128,
+        256,
+        26
+      ],
+      "key": "7"
     }
   ],
   "notes": [
-    "Eight diagnostic displays cover the approved allocations of these seven native candidates.",
+    "Eleven diagnostic displays cover the approved allocations of these nine native candidates.",
     "Original CA463G pilot and CA682G other native gallery remain unchanged.",
-    "All regional textures and native creature model bytes are reused. No campaign encounters, balance, flight or new save fields.",
-    "Two Pombero displays compare approved Litoral/Selva appearances, not new campaign identity rules."
+    "All regional textures and native creature model bytes are reused. No campaign encounters, balance, new effects or save fields.",
+    "Duplicated Pombero and Mboi Tata displays compare approved Litoral/Selva appearances, not campaign population rules."
   ],
   "model_exports": [
     "assets/source/art/pombero_461/EXPORT.json",
     "assets/source/art/cuero_660/EXPORT.json",
     "assets/source/art/nahuelito_662/EXPORT.json",
     "assets/source/art/peuchen_708/EXPORT.json",
-    "assets/source/art/avian_711/EXPORT.json"
+    "assets/source/art/avian_711/EXPORT.json",
+    "assets/source/art/serpents_720/EXPORT.json"
   ],
   "model_bindings": [
     {
@@ -422,6 +501,18 @@
       "catalogue_id": "CA-FOLK-058",
       "actor": "CaelumBestiary058",
       "export": "assets/source/art/avian_711/EXPORT.json"
+    },
+    {
+      "kind": "monai",
+      "catalogue_id": "CA-FOLK-049",
+      "actor": "CaelumBestiary049",
+      "export": "assets/source/art/serpents_720/EXPORT.json"
+    },
+    {
+      "kind": "mboi_tata",
+      "catalogue_id": "CA-FOLK-051",
+      "actor": "CaelumBestiary051",
+      "export": "assets/source/art/serpents_720/EXPORT.json"
     }
   ],
   "animation_sample_wait_tics": 11,
@@ -429,5 +520,5 @@
   "silent_observer_steps": true,
   "inspection_noise_basis": "Reuse the proven #692 observer-only movement-noise suppression, preserving native movement and production perception.",
   "inspection_staging": "Native classes with fixture-only Friendly flag and existing diagnostic passive AI. Original idle states advance; no forced positions.",
-  "layout_basis": "Retain all previous plots and five display positions. Append a contiguous NOA plot to the west, place its two avian figures in separate rows and add Kelenken to the free rear-east Patagonia area. All coordinates and views are diagnostic only."
+  "layout_basis": "Retain all previous plots, eight display positions, crossing path and controls. Add Mo\u00f1\u00e1i and Mb\u00f3i Tat\u00e1 in separated rear Selva columns and Mb\u00f3i Tat\u00e1 in the free rear Litoral row. All coordinates and views are diagnostic only."
 }
