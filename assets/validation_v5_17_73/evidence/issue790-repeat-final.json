@@ -1,0 +1,12 @@
+{
+  "issue": 790,
+  "files": 4,
+  "byte_identical": true,
+  "resumed_verification": true,
+  "sha256": {
+    "gallery.pk3": "11bd3b7e9c38604782ad4a5395246967fee01dee9049450bfde5c7d27954db25",
+    "gallery.zs": "edcf442a3a9eae8da51d79c23daa1ff04c1ee0045f192433cfa97fa05b375f44",
+    "GALLERY_MANIFEST.json": "377f63f92f05d719df7f679e98d1379043a597746816a4d3cc416289a783bfb9",
+    "TEXTMAP.txt": "a02a2243b19412edc767aabcd06d9aa7e9ba997fbf063730d6d1457912f68411"
+  }
+}
