@@ -12,7 +12,13 @@ are review aids, not automatic approval or proof that every design is finished.
 The seven #736 character families still require the author's visual decision.
 Unauthored lamp/ambient rules, progression assignments and final consent/transport
 remain explicit design gates. Severe siege presentation remains unresolved.
-No check is removed, issue closed or PR merged by this handoff.
+The original 2026-11-21 handoff did not close issues or merge PRs. On 2026-11-26
+the author authorized integrating the current implementation and closing its
+issues, with later versions complementing the remaining scope. The exact 130-PR,
+132-issue scope is in assets/validation_v5_17_123/integration-decision.json.
+All 108 author checks and unauthored design gates remain pending; #460, #464-469
+and roadmap umbrella #403 remain open. Release 5.17.123 and production defaults
+are retained; this is neither full campaign completion nor visual acceptance.
 
 
 ## 5.17.122 - Review damp masonry at the sewer waterline (#887, #463)

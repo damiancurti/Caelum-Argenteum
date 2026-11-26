@@ -9,6 +9,15 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.17.123.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
+**Integration decision, 2026-11-26:** the author authorized merging the 130
+implemented V5.16/V5.17 PRs and closing their 130 issues plus parent scopes #459
+and #462 for the work delivered so far. Later versions will complement it.
+Release 5.17.123 is retained. The 108 manual checks, visual decisions and known
+limitations remain pending; closure does not certify the full campaign or art.
+The exact integration scope is recorded in
+`assets/validation_v5_17_123/integration-decision.json`. Unimplemented roadmap
+issues #460, #464-469 and umbrella #403 remain open.
+
 #889 supplies the consolidated author terminal for all108 outstanding checks:
 `assets/validation_v5_17_123/author_terminal.ps1`. Its scene catalogue includes
 normal character creation, actual equipment, environment comparisons and retained

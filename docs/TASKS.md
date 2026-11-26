@@ -16,8 +16,16 @@ corrections by stable check ID. Record confirmed results in HISTORY and remove
 only explicitly passed entries. Character conversion, new lamp/ambient rules,
 unauthored progression and consent/transport require the missing design decisions.
 The severe normal-siege presentation limitation remains an engineering task,
-not an accepted limitation or a completed performance goal. Draft PRs remain
-unmerged; no issue closure is inferred from a passing agent test.
+not an accepted limitation or a completed performance goal.
+
+On 2026-11-26 the author explicitly authorized integrating the current delivery
+and closing its implemented issues, with later versions supplying further work.
+This covers the 130 stacked PRs and their issues, plus #459/#462 through their
+delivered child PRs; integration-decision.json records the exact scope. It does
+not accept any of the 108 pending manual checks or missing design choices.
+#460, #464-469 and umbrella #403 remain open. Follow-up work must retain the
+remaining scope below and use focused issues. The existing 5.17.123 validation
+still applies to unchanged runtime/art; this integration update affects docs only.
 
 
 ## 5.17.122 - Review damp masonry at the sewer waterline (#887, #463)

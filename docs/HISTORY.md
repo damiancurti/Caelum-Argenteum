@@ -4,6 +4,24 @@ Documentation version: **5.17.123** - 2026-11-21.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 
+**Integration decision, 2026-11-26:** the author requested closing the implemented
+issues and merging their PRs, explicitly allowing later versions to complement
+the delivered work. The authorized batch contains 130 stacked PRs (#641 through
+#891; exact numbers and original tips in integration-decision.json), their 130
+issues and the delivered parent scopes #459/#462. Merge commits preserve each
+implementation's ancestry. Remaining roadmap issues #460, #464-469 and #403 stay
+open. The release remains 5.17.123 because this records integration of the same
+patch, with no new gameplay, art, save-schema or balance change.
+
+The 108-entry pending_test.txt is preserved byte-for-byte (Git blob
+fcb1dba56215ed44994f91928cc84c058fe7d597). No manual check is marked passed.
+Character-family approval, broader fitting, unauthored campaign/consent/transport
+and lighting/audio choices remain future work, as does severe siege presentation.
+Original per-patch evidence and limitations below remain historical records;
+earlier statements that merges/closures were not authorized are superseded only
+by this dated instruction. Documentation/index checks cover this status update;
+existing release123 native evidence applies to unchanged runtime and assets.
+
 Consolidated the authorized V5.16/V5.17 review actions into one Spanish terminal,
 with ES/EN game selection, search by issue/text, retained proposal galleries,
 actual-inventory equipment controls, normal character creation and same-option

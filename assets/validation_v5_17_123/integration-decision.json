@@ -1,0 +1,1087 @@
+{
+  "date": "2026-11-26",
+  "release": "5.17.123",
+  "issue": 889,
+  "authorization": "Close the issues and merge the currently implemented V5.16/V5.17 work; later versions will complement it.",
+  "meaning": "Integration of delivered scope; no new manual test pass, visual approval, completed campaign, standalone release or performance acceptance.",
+  "pull_requests": [
+    {
+      "number": 641,
+      "issue": 452,
+      "branch": "issue452-campaign-progression",
+      "implementation_head": "1e52e423fcd88856ae29401237315cf08fb250c3",
+      "original_base": "main"
+    },
+    {
+      "number": 642,
+      "issue": 453,
+      "branch": "issue453-folklore-catalogue",
+      "implementation_head": "2ce364374fb311c1ec80600ec046cebc96887a05",
+      "original_base": "issue452-campaign-progression"
+    },
+    {
+      "number": 643,
+      "issue": 454,
+      "branch": "issue454-map-redesign",
+      "implementation_head": "009b374d6aa9c893253d40a98b3e793d672fffcd",
+      "original_base": "issue453-folklore-catalogue"
+    },
+    {
+      "number": 644,
+      "issue": 455,
+      "branch": "issue455-folklore-actors",
+      "implementation_head": "c6620dd41e6e85a403b6f3a50bfa0618b97c32ef",
+      "original_base": "issue454-map-redesign"
+    },
+    {
+      "number": 645,
+      "issue": 456,
+      "branch": "issue456-tarot-distribution",
+      "implementation_head": "3860858bb3073d82ca5c4b6917db1a3629ccaffc",
+      "original_base": "issue455-folklore-actors"
+    },
+    {
+      "number": 646,
+      "issue": 457,
+      "branch": "issue457-campaign-transitions",
+      "implementation_head": "9f34de50bb0bde6041fc97e98bde132f7cfe0319",
+      "original_base": "issue456-tarot-distribution"
+    },
+    {
+      "number": 648,
+      "issue": 458,
+      "branch": "issue458-modular-3d",
+      "implementation_head": "f1e8c733eb996cef3c5c08fccdf62cba4e032369",
+      "original_base": "issue457-campaign-transitions"
+    },
+    {
+      "number": 649,
+      "issue": 647,
+      "branch": "issue647-inventory-3d",
+      "implementation_head": "c68e6e855736ec44e05bde050c8bf95626c8c24f",
+      "original_base": "issue458-modular-3d"
+    },
+    {
+      "number": 651,
+      "issue": 650,
+      "branch": "issue650-javelin-stacks",
+      "implementation_head": "1c869ac2478d486407db08fd11c3cae9e9588618",
+      "original_base": "issue647-inventory-3d"
+    },
+    {
+      "number": 653,
+      "issue": 652,
+      "branch": "issue652-ammunition-models",
+      "implementation_head": "a20eeb95c5222acdcc5ba52a3e6d488fa14781c7",
+      "original_base": "issue650-javelin-stacks"
+    },
+    {
+      "number": 654,
+      "issue": 463,
+      "branch": "issue463-regional-gallery",
+      "implementation_head": "4baa560a7139d303992f6907dcab9f09cfcd62f7",
+      "original_base": "issue652-ammunition-models"
+    },
+    {
+      "number": 655,
+      "issue": 461,
+      "branch": "issue461-pombero-combat",
+      "implementation_head": "7e66b7afc446e5943d646d331a857a8a512fbb3b",
+      "original_base": "issue463-regional-gallery"
+    },
+    {
+      "number": 657,
+      "issue": 656,
+      "branch": "issue656-document-supply-models",
+      "implementation_head": "195d9ff3bd5bc55aed95fde54512df0849721262",
+      "original_base": "issue461-pombero-combat"
+    },
+    {
+      "number": 659,
+      "issue": 658,
+      "branch": "issue658-metal-ingot-models",
+      "implementation_head": "f292b737b215a9185007acbea8167a0c979f5f81",
+      "original_base": "issue656-document-supply-models"
+    },
+    {
+      "number": 661,
+      "issue": 660,
+      "branch": "issue660-cuero-combat",
+      "implementation_head": "46e2ca78cd8b2a75e9ec4bf5dd86a5c60dbf27fa",
+      "original_base": "issue658-metal-ingot-models"
+    },
+    {
+      "number": 663,
+      "issue": 662,
+      "branch": "issue662-nahuelito-combat",
+      "implementation_head": "b461e50424c073e7e2fee64eb2e72fc46c236bc3",
+      "original_base": "issue660-cuero-combat"
+    },
+    {
+      "number": 665,
+      "issue": 664,
+      "branch": "issue664-camp-drop-models",
+      "implementation_head": "5391dca2ca44f1fc5c072ae96e3d4e241f4244f6",
+      "original_base": "issue662-nahuelito-combat"
+    },
+    {
+      "number": 667,
+      "issue": 666,
+      "branch": "issue666-furniture-drop-models",
+      "implementation_head": "cf5b359a5cadcb36c43de148c0528cc8b75e4b1d",
+      "original_base": "issue664-camp-drop-models"
+    },
+    {
+      "number": 669,
+      "issue": 668,
+      "branch": "issue668-water-ration-model",
+      "implementation_head": "476cf55129d0b1780ffaeec8b441c63cb9dc0b6b",
+      "original_base": "issue666-furniture-drop-models"
+    },
+    {
+      "number": 671,
+      "issue": 670,
+      "branch": "issue670-mate-drop-models",
+      "implementation_head": "58c42fa0fc18756eb72d45328d69a18bcd651943",
+      "original_base": "issue668-water-ration-model"
+    },
+    {
+      "number": 673,
+      "issue": 672,
+      "branch": "issue672-lock-drop-model",
+      "implementation_head": "a53531f0ea543877d03098fd8ef4d47a682621a6",
+      "original_base": "issue670-mate-drop-models"
+    },
+    {
+      "number": 675,
+      "issue": 674,
+      "branch": "issue674-jewelry-drop-models",
+      "implementation_head": "e818b87337c9d29280a2c155a951b51b68fce451",
+      "original_base": "issue672-lock-drop-model"
+    },
+    {
+      "number": 677,
+      "issue": 676,
+      "branch": "issue676-book-drop-bindings",
+      "implementation_head": "a2d84e335396d350d6a0e79b6154eb07c551ea10",
+      "original_base": "issue674-jewelry-drop-models"
+    },
+    {
+      "number": 679,
+      "issue": 678,
+      "branch": "issue678-gem-material-models",
+      "implementation_head": "365b77a78d1ba54698a5b4b4deffc0754034732d",
+      "original_base": "issue676-book-drop-bindings"
+    },
+    {
+      "number": 681,
+      "issue": 680,
+      "branch": "issue680-beast-men-models",
+      "implementation_head": "ac6c9639477d4ba40ab6b77ca186130293f226cc",
+      "original_base": "issue678-gem-material-models"
+    },
+    {
+      "number": 683,
+      "issue": 682,
+      "branch": "issue682-regional-beast-gallery",
+      "implementation_head": "d5297638107867735689418c52be80102e88723b",
+      "original_base": "issue680-beast-men-models"
+    },
+    {
+      "number": 685,
+      "issue": 684,
+      "branch": "issue684-raw-ore-models",
+      "implementation_head": "f32e7b1ec3c9f01983036b756077038fb6d9dc83",
+      "original_base": "issue682-regional-beast-gallery"
+    },
+    {
+      "number": 687,
+      "issue": 686,
+      "branch": "issue686-headwear-models",
+      "implementation_head": "5dfd7e2cf9e5820d02b33ded662199a4fe042060",
+      "original_base": "issue684-raw-ore-models"
+    },
+    {
+      "number": 689,
+      "issue": 688,
+      "branch": "issue688-glove-models",
+      "implementation_head": "d348106546e210094c667bf887d3394edc93ade3",
+      "original_base": "issue686-headwear-models"
+    },
+    {
+      "number": 691,
+      "issue": 690,
+      "branch": "issue690-duende-models",
+      "implementation_head": "2e2fbe64db2270a2188b0bed018606a65fb690d1",
+      "original_base": "issue688-glove-models"
+    },
+    {
+      "number": 693,
+      "issue": 692,
+      "branch": "issue692-noa-gallery",
+      "implementation_head": "e904d3ee36c624aeb1456d4ee05ae3088bb98050",
+      "original_base": "issue690-duende-models"
+    },
+    {
+      "number": 695,
+      "issue": 694,
+      "branch": "issue694-footwear-models",
+      "implementation_head": "c5cf5fe6801f6e171b5d583720b0f50d44dad814",
+      "original_base": "issue692-noa-gallery"
+    },
+    {
+      "number": 697,
+      "issue": 696,
+      "branch": "issue696-clothing-ensemble-models",
+      "implementation_head": "f9926ae78e7d923c6199b672f427b1d43dd3951c",
+      "original_base": "issue694-footwear-models"
+    },
+    {
+      "number": 699,
+      "issue": 698,
+      "branch": "issue698-yasi-yastay-models",
+      "implementation_head": "f92d4b3bdab74cb108b2f18b9c39e2333df59fb5",
+      "original_base": "issue696-clothing-ensemble-models"
+    },
+    {
+      "number": 701,
+      "issue": 700,
+      "branch": "issue700-cuyo-gallery",
+      "implementation_head": "82029d6444edd84ddc71ef0308f5d8d18f03a40c",
+      "original_base": "issue698-yasi-yastay-models"
+    },
+    {
+      "number": 703,
+      "issue": 702,
+      "branch": "issue702-shield-models",
+      "implementation_head": "cf55b0c7c8bdd855955531737bbcd6b579f58bad",
+      "original_base": "issue700-cuyo-gallery"
+    },
+    {
+      "number": 705,
+      "issue": 704,
+      "branch": "issue704-plate-material-models",
+      "implementation_head": "214cfcf4a8d37f883298c58c06e798aeb293d7ee",
+      "original_base": "issue702-shield-models"
+    },
+    {
+      "number": 707,
+      "issue": 706,
+      "branch": "issue706-chainmail-model",
+      "implementation_head": "fb0a91b630ebfad96d2ab0fd41f7f2cb782cec5e",
+      "original_base": "issue704-plate-material-models"
+    },
+    {
+      "number": 710,
+      "issue": 708,
+      "branch": "issue708-peuchen-model",
+      "implementation_head": "631a2ef0496463c4f2efc128df096f38d3555178",
+      "original_base": "issue706-chainmail-model"
+    },
+    {
+      "number": 712,
+      "issue": 709,
+      "branch": "issue709-native-regional-gallery",
+      "implementation_head": "4f69a1e1b26db624b08d417cc433e669017a3eae",
+      "original_base": "issue708-peuchen-model"
+    },
+    {
+      "number": 714,
+      "issue": 711,
+      "branch": "issue711-avian-models",
+      "implementation_head": "1a8aa5574c2c8f1e9aab4034c85acd071701010c",
+      "original_base": "issue709-native-regional-gallery"
+    },
+    {
+      "number": 715,
+      "issue": 713,
+      "branch": "issue713-avian-regional-gallery",
+      "implementation_head": "847ac83e4c2fa6a22b5429408880901513f4c367",
+      "original_base": "issue711-avian-models"
+    },
+    {
+      "number": 718,
+      "issue": 716,
+      "branch": "issue716-chain-material-models",
+      "implementation_head": "5e81fade59f90ec8e17b2066e593ffb74896fea4",
+      "original_base": "issue713-avian-regional-gallery"
+    },
+    {
+      "number": 719,
+      "issue": 717,
+      "branch": "issue717-wood-component-models",
+      "implementation_head": "c6fab401c4f54e5fd1b91f47c8a846631e49b85e",
+      "original_base": "issue716-chain-material-models"
+    },
+    {
+      "number": 722,
+      "issue": 720,
+      "branch": "issue720-serpent-models",
+      "implementation_head": "942d7f2e413f1298ffa511d9c6b5fb6b9ad668f5",
+      "original_base": "issue717-wood-component-models"
+    },
+    {
+      "number": 724,
+      "issue": 721,
+      "branch": "issue721-serpent-regional-gallery",
+      "implementation_head": "d8a5ab3bbfbae0395a7c4ecafdd4e608ecfd92bd",
+      "original_base": "issue720-serpent-models"
+    },
+    {
+      "number": 726,
+      "issue": 723,
+      "branch": "issue723-metal-weapon-components",
+      "implementation_head": "628bf1795454bcdb74f1af2b8c0a518c9785e33e",
+      "original_base": "issue721-serpent-regional-gallery"
+    },
+    {
+      "number": 728,
+      "issue": 725,
+      "branch": "issue725-weapon-assembly-models",
+      "implementation_head": "9375d2fd676b23125e989edc6eb2c96ff9f54f29",
+      "original_base": "issue723-metal-weapon-components"
+    },
+    {
+      "number": 730,
+      "issue": 727,
+      "branch": "issue727-hybrid-serpent-models",
+      "implementation_head": "a4a890aab54e374e6faffcaa8d058adc2f634cb0",
+      "original_base": "issue725-weapon-assembly-models"
+    },
+    {
+      "number": 732,
+      "issue": 729,
+      "branch": "issue729-hybrid-serpent-gallery",
+      "implementation_head": "a64ef0b0f4ff0b9e7858ef7423e28fee2932e1e1",
+      "original_base": "issue727-hybrid-serpent-models"
+    },
+    {
+      "number": 734,
+      "issue": 731,
+      "branch": "issue731-hide-drop-models",
+      "implementation_head": "deff655ec4cbdedee87ff2885686abed0af3c51b",
+      "original_base": "issue729-hybrid-serpent-gallery"
+    },
+    {
+      "number": 735,
+      "issue": 733,
+      "branch": "issue733-textile-drop-models",
+      "implementation_head": "b96256ab7d305ace1429f41d832b9937b1e8fe87",
+      "original_base": "issue731-hide-drop-models"
+    },
+    {
+      "number": 737,
+      "issue": 736,
+      "branch": "issue736-modular-visual-proposals",
+      "implementation_head": "e018e7317fe36b596c7b7e71fc07bde745100864",
+      "original_base": "issue733-textile-drop-models"
+    },
+    {
+      "number": 740,
+      "issue": 738,
+      "branch": "issue738-basilisco-native-model",
+      "implementation_head": "756823370ec7d0361c68c0d76dae2ecf6652dd48",
+      "original_base": "issue736-modular-visual-proposals"
+    },
+    {
+      "number": 742,
+      "issue": 739,
+      "branch": "issue739-basilisco-regional-gallery",
+      "implementation_head": "30a32c6c4c56b5971fe956c45e6d4c6ec95ccf92",
+      "original_base": "issue738-basilisco-native-model"
+    },
+    {
+      "number": 744,
+      "issue": 741,
+      "branch": "issue741-hygiene-drop-models",
+      "implementation_head": "0f0b2aa361a4fd4d8cce22c43a02cf1763ccf5ad",
+      "original_base": "issue739-basilisco-regional-gallery"
+    },
+    {
+      "number": 746,
+      "issue": 743,
+      "branch": "issue743-kitchen-ingredient-models",
+      "implementation_head": "81d0724c18433866b10d4b85c8d8331d021dc237",
+      "original_base": "issue741-hygiene-drop-models"
+    },
+    {
+      "number": 748,
+      "issue": 745,
+      "branch": "issue745-review-underside-controls",
+      "implementation_head": "ea8359cb5087e3ba4420a81c09783bde9b313abb",
+      "original_base": "issue743-kitchen-ingredient-models"
+    },
+    {
+      "number": 750,
+      "issue": 747,
+      "branch": "issue747-cartridge-kit-models",
+      "implementation_head": "3fc73ee406ccecd11805cf5aead54f83c8df8de3",
+      "original_base": "issue745-review-underside-controls"
+    },
+    {
+      "number": 752,
+      "issue": 749,
+      "branch": "issue749-hide-assertion-counts",
+      "implementation_head": "28c770b9a50dd88a84f0c50e7d0540b9b572eecd",
+      "original_base": "issue747-cartridge-kit-models"
+    },
+    {
+      "number": 754,
+      "issue": 751,
+      "branch": "issue751-elemental-essence-models",
+      "implementation_head": "6364e7257da5e7c85ddb3e1a4b38668c3ca9658c",
+      "original_base": "issue749-hide-assertion-counts"
+    },
+    {
+      "number": 756,
+      "issue": 753,
+      "branch": "issue753-orb-drop-models",
+      "implementation_head": "e88687e3e67e8115034d5ceea1b693a874d46822",
+      "original_base": "issue751-elemental-essence-models"
+    },
+    {
+      "number": 758,
+      "issue": 755,
+      "branch": "issue755-magic-base-models",
+      "implementation_head": "7de8729fca685123e9aa33284b45cc423e9e7d01",
+      "original_base": "issue753-orb-drop-models"
+    },
+    {
+      "number": 760,
+      "issue": 757,
+      "branch": "issue757-magic-weapon-bindings",
+      "implementation_head": "754226370d30750fddb291c31d48b010a5db8457",
+      "original_base": "issue755-magic-base-models"
+    },
+    {
+      "number": 762,
+      "issue": 759,
+      "branch": "issue759-magic-quality-models",
+      "implementation_head": "8c676b990f13361902bde9f0f0aed5c0856949cc",
+      "original_base": "issue757-magic-weapon-bindings"
+    },
+    {
+      "number": 764,
+      "issue": 761,
+      "branch": "issue761-effigy-drop-models",
+      "implementation_head": "6ceb00d7e68a16eee15e1a3cc6d694fe549a2484",
+      "original_base": "issue759-magic-quality-models"
+    },
+    {
+      "number": 766,
+      "issue": 763,
+      "branch": "issue763-bladed-weapon-models",
+      "implementation_head": "5f2e659974085df8d625c92dbf647b127fd99225",
+      "original_base": "issue761-effigy-drop-models"
+    },
+    {
+      "number": 768,
+      "issue": 765,
+      "branch": "issue765-axe-drop-models",
+      "implementation_head": "cb3b8cdecb5d5e0a729230211af8521c37e9275f",
+      "original_base": "issue763-bladed-weapon-models"
+    },
+    {
+      "number": 770,
+      "issue": 767,
+      "branch": "issue767-polearm-utility-models",
+      "implementation_head": "7050996ba2a187548c568ca0a3f6e120ee233131",
+      "original_base": "issue765-axe-drop-models"
+    },
+    {
+      "number": 772,
+      "issue": 769,
+      "branch": "issue769-effective-weapon-references",
+      "implementation_head": "396ac19b623fd80e31b2d1ccd0defd7cf890d89b",
+      "original_base": "issue767-polearm-utility-models"
+    },
+    {
+      "number": 774,
+      "issue": 771,
+      "branch": "issue771-articulated-weapon-drops",
+      "implementation_head": "d7d6dbc2b3d0a21fa1617ef11a8897171ebd6958",
+      "original_base": "issue769-effective-weapon-references"
+    },
+    {
+      "number": 776,
+      "issue": 773,
+      "branch": "issue773-ranged-weapon-drops",
+      "implementation_head": "72a168b0d5e65b7732b7fb741a074bcc8147b87f",
+      "original_base": "issue771-articulated-weapon-drops"
+    },
+    {
+      "number": 778,
+      "issue": 775,
+      "branch": "issue775-medium-armor-sprite",
+      "implementation_head": "815c6760704bfae4dd6210d8e16bcf4e73905490",
+      "original_base": "issue773-ranged-weapon-drops"
+    },
+    {
+      "number": 780,
+      "issue": 777,
+      "branch": "issue777-armor-helmet-models",
+      "implementation_head": "004d48c07c301ef801e9b5ec3c3b1792b23e83d7",
+      "original_base": "issue775-medium-armor-sprite"
+    },
+    {
+      "number": 782,
+      "issue": 779,
+      "branch": "issue779-hand-armor-models",
+      "implementation_head": "03889a383c01fb755f232a774ce4c68f57a6e13b",
+      "original_base": "issue777-armor-helmet-models"
+    },
+    {
+      "number": 784,
+      "issue": 781,
+      "branch": "issue781-foot-armor-models",
+      "implementation_head": "2ff0f971ea1e446a17eacce33cc458140e4e2752",
+      "original_base": "issue779-hand-armor-models"
+    },
+    {
+      "number": 786,
+      "issue": 783,
+      "branch": "issue783-torso-armor-models",
+      "implementation_head": "dea5d4bfddc9bab715d7b10b4695ff69910b4efe",
+      "original_base": "issue781-foot-armor-models"
+    },
+    {
+      "number": 788,
+      "issue": 785,
+      "branch": "issue785-inventory-model-audit",
+      "implementation_head": "4f8c7a936969836eba5fed84c1f74628b26127b5",
+      "original_base": "issue783-torso-armor-models"
+    },
+    {
+      "number": 789,
+      "issue": 787,
+      "branch": "issue787-quadruped-models",
+      "implementation_head": "29d59b82d80e26ef3d021d7375d22b627f0e7b13",
+      "original_base": "issue785-inventory-model-audit"
+    },
+    {
+      "number": 792,
+      "issue": 790,
+      "branch": "issue790-quadruped-gallery",
+      "implementation_head": "76d7d5edbd26130e502ac2d579946af764319781",
+      "original_base": "issue787-quadruped-models"
+    },
+    {
+      "number": 794,
+      "issue": 791,
+      "branch": "issue791-teju-jagua-model",
+      "implementation_head": "61df328f516bde02f0d019902035e46765afbc45",
+      "original_base": "issue790-quadruped-gallery"
+    },
+    {
+      "number": 796,
+      "issue": 793,
+      "branch": "issue793-teju-regional-gallery",
+      "implementation_head": "43e3c5756facba09b75f6df166d8c81177d40bd4",
+      "original_base": "issue791-teju-jagua-model"
+    },
+    {
+      "number": 798,
+      "issue": 795,
+      "branch": "issue795-kasogonaga-model",
+      "implementation_head": "2054d4f4046b78399bbe531eb3b7af457ee3605f",
+      "original_base": "issue793-teju-regional-gallery"
+    },
+    {
+      "number": 800,
+      "issue": 797,
+      "branch": "issue797-apparition-models",
+      "implementation_head": "0e9593b7bbaf3056cbe1b9a5075ad44a85799bd9",
+      "original_base": "issue795-kasogonaga-model"
+    },
+    {
+      "number": 802,
+      "issue": 799,
+      "branch": "issue799-swept-uv-cells",
+      "implementation_head": "32458abc60799341b770376e41efa009e7986e32",
+      "original_base": "issue797-apparition-models"
+    },
+    {
+      "number": 804,
+      "issue": 801,
+      "branch": "issue801-apparition-regional-gallery",
+      "implementation_head": "7065ccc75e8a9742827ffe141b0b5f07d7dd5111",
+      "original_base": "issue799-swept-uv-cells"
+    },
+    {
+      "number": 807,
+      "issue": 803,
+      "branch": "issue803-head-apparition-models",
+      "implementation_head": "f52a98c22e07063c33bbde1b16c70189928ab75c",
+      "original_base": "issue801-apparition-regional-gallery"
+    },
+    {
+      "number": 808,
+      "issue": 805,
+      "branch": "issue805-model-identity-metadata",
+      "implementation_head": "f399df2f059349685b6ebfa52a380edffb525adb",
+      "original_base": "issue803-head-apparition-models"
+    },
+    {
+      "number": 810,
+      "issue": 806,
+      "branch": "issue806-release-history",
+      "implementation_head": "7768bd0cc640b8f5c07bcaa8a151a94ca65d5a85",
+      "original_base": "issue805-model-identity-metadata"
+    },
+    {
+      "number": 812,
+      "issue": 809,
+      "branch": "issue809-head-regional-galleries",
+      "implementation_head": "9485883c120f5190b327df00eb30cbcb0f78926f",
+      "original_base": "issue806-release-history"
+    },
+    {
+      "number": 814,
+      "issue": 811,
+      "branch": "issue811-period-apparition-models",
+      "implementation_head": "dded57eeb9e577d2226d305baa25e12e74e69eba",
+      "original_base": "issue809-head-regional-galleries"
+    },
+    {
+      "number": 816,
+      "issue": 813,
+      "branch": "issue813-forest-guardian-models",
+      "implementation_head": "766560724add29cefad418e86a0c28096dd86500",
+      "original_base": "issue811-period-apparition-models"
+    },
+    {
+      "number": 818,
+      "issue": 815,
+      "branch": "issue815-austral-figure-models",
+      "implementation_head": "4ddaa94abaa59c5619b3631cb8477acf168fc8b4",
+      "original_base": "issue813-forest-guardian-models"
+    },
+    {
+      "number": 820,
+      "issue": 817,
+      "branch": "issue817-witch-figure-models",
+      "implementation_head": "5f324f76853715411be07d71b9a83657ec0a0127",
+      "original_base": "issue815-austral-figure-models"
+    },
+    {
+      "number": 823,
+      "issue": 819,
+      "branch": "issue819-land-figure-models",
+      "implementation_head": "63684da6499e66919d65ad2452d2c18f8d8fe844",
+      "original_base": "issue817-witch-figure-models"
+    },
+    {
+      "number": 824,
+      "issue": 821,
+      "branch": "issue821-bestiary-figure-models",
+      "implementation_head": "2c584de50bb1e72bc083f29ed097b2c9672155c3",
+      "original_base": "issue819-land-figure-models"
+    },
+    {
+      "number": 826,
+      "issue": 822,
+      "branch": "issue822-distinct-form-models",
+      "implementation_head": "160473b3d41426cc1821c2a7a566286dc3b9bfa4",
+      "original_base": "issue821-bestiary-figure-models"
+    },
+    {
+      "number": 828,
+      "issue": 825,
+      "branch": "issue825-complete-regional-gallery",
+      "implementation_head": "b2f8600200d17c2c76065a0bbc9628c960795627",
+      "original_base": "issue822-distinct-form-models"
+    },
+    {
+      "number": 830,
+      "issue": 827,
+      "branch": "issue827-modular-underbody",
+      "implementation_head": "27af73b81c9427b71e218349a7f896485155858c",
+      "original_base": "issue825-complete-regional-gallery"
+    },
+    {
+      "number": 832,
+      "issue": 829,
+      "branch": "issue829-worn-clothing",
+      "implementation_head": "1d5f778191559821861a33a9ab6dff40f0fb5543",
+      "original_base": "issue827-modular-underbody"
+    },
+    {
+      "number": 833,
+      "issue": 831,
+      "branch": "issue831-historical-labels",
+      "implementation_head": "d1d501e9e586f3e95a16044304304e9f1bb6c8e9",
+      "original_base": "issue829-worn-clothing"
+    },
+    {
+      "number": 835,
+      "issue": 834,
+      "branch": "issue834-skeletal-format",
+      "implementation_head": "49e9bb5242ca5ad2ec248496e247e7cae55177e8",
+      "original_base": "issue831-historical-labels"
+    },
+    {
+      "number": 837,
+      "issue": 836,
+      "branch": "issue836-siege-simulation",
+      "implementation_head": "9387ab0eb2e2095c2d61019730a7a5086a3ff500",
+      "original_base": "issue834-skeletal-format"
+    },
+    {
+      "number": 839,
+      "issue": 838,
+      "branch": "issue838-siege-bursts",
+      "implementation_head": "c85bc88b9a9eda26d07c876d8d234f0b9b00c2c1",
+      "original_base": "issue836-siege-simulation"
+    },
+    {
+      "number": 841,
+      "issue": 840,
+      "branch": "issue840-frame-stalls",
+      "implementation_head": "df4444a3b34cceac1b2182636d1c12958cbc3507",
+      "original_base": "issue838-siege-bursts"
+    },
+    {
+      "number": 843,
+      "issue": 842,
+      "branch": "issue842-combat-maintenance",
+      "implementation_head": "daf392ad1b296f673bd0d46d6b7fbb4e33ab3a1d",
+      "original_base": "issue840-frame-stalls"
+    },
+    {
+      "number": 845,
+      "issue": 844,
+      "branch": "issue844-environment-maintenance",
+      "implementation_head": "662ef05920e2f6399226c91768429c3a407e325f",
+      "original_base": "issue842-combat-maintenance"
+    },
+    {
+      "number": 848,
+      "issue": 846,
+      "branch": "issue846-clock-queries",
+      "implementation_head": "b8494b983875c7f3357a37631e62902993a950ea",
+      "original_base": "issue844-environment-maintenance"
+    },
+    {
+      "number": 850,
+      "issue": 847,
+      "branch": "issue847-sewer-material-review",
+      "implementation_head": "b3dc2944862f6ec1f3d854c934a537dcbc48f237",
+      "original_base": "issue846-clock-queries"
+    },
+    {
+      "number": 852,
+      "issue": 849,
+      "branch": "issue849-storage-dispatch",
+      "implementation_head": "c0ec3ccb8fea435683f5a49aad73985c309a30ea",
+      "original_base": "issue847-sewer-material-review"
+    },
+    {
+      "number": 854,
+      "issue": 851,
+      "branch": "issue851-siege-budget",
+      "implementation_head": "4964bb3eddda73a27773e2999ce22646e4b7c079",
+      "original_base": "issue849-storage-dispatch"
+    },
+    {
+      "number": 856,
+      "issue": 853,
+      "branch": "issue853-breath-state-queries",
+      "implementation_head": "9269280c505c06769f24de41f6f0dc6dc936c2d3",
+      "original_base": "issue851-siege-budget"
+    },
+    {
+      "number": 858,
+      "issue": 855,
+      "branch": "issue855-breath-navigation",
+      "implementation_head": "887ae8d4ad02bd037acbbf12237108d9f1f941b8",
+      "original_base": "issue853-breath-state-queries"
+    },
+    {
+      "number": 860,
+      "issue": 857,
+      "branch": "issue857-equipment-wardrobe",
+      "implementation_head": "43501c5bb2162dd5314420dd393ba0588ba7dd83",
+      "original_base": "issue855-breath-navigation"
+    },
+    {
+      "number": 862,
+      "issue": 859,
+      "branch": "issue859-first-body-grips",
+      "implementation_head": "ba5f9e8b249bf36bc685e6ed07bd97a73b01a5bc",
+      "original_base": "issue857-equipment-wardrobe"
+    },
+    {
+      "number": 863,
+      "issue": 861,
+      "branch": "issue861-clothing-hand-selection",
+      "implementation_head": "e9bd0915dde87dd9d451371dfbfa7aa119f63de1",
+      "original_base": "issue859-first-body-grips"
+    },
+    {
+      "number": 865,
+      "issue": 864,
+      "branch": "issue864-contact-settlement",
+      "implementation_head": "75321a2ba64bc56ed032ef73d81fcda43ff1387f",
+      "original_base": "issue861-clothing-hand-selection"
+    },
+    {
+      "number": 867,
+      "issue": 866,
+      "branch": "issue866-environment-remasters",
+      "implementation_head": "8373369710a9c2d3682cb15d02d7ce8d6e4db88d",
+      "original_base": "issue864-contact-settlement"
+    },
+    {
+      "number": 869,
+      "issue": 868,
+      "branch": "issue868-contact-endpoints",
+      "implementation_head": "e8b88a8d9f11ef0f7ee0c8c6ac402825125920d0",
+      "original_base": "issue866-environment-remasters"
+    },
+    {
+      "number": 872,
+      "issue": 870,
+      "branch": "issue870-frame-bottleneck",
+      "implementation_head": "811cdb675073c96015944addb700165ca2fb3d8f",
+      "original_base": "issue868-contact-endpoints"
+    },
+    {
+      "number": 874,
+      "issue": 871,
+      "branch": "issue871-surface-index",
+      "implementation_head": "349b668fa9553feed69f058725cd22a37c61c549",
+      "original_base": "issue870-frame-bottleneck"
+    },
+    {
+      "number": 876,
+      "issue": 873,
+      "branch": "issue873-target-acquisition",
+      "implementation_head": "2b815e2527699d18b882284813bcad8098abaf1f",
+      "original_base": "issue871-surface-index"
+    },
+    {
+      "number": 877,
+      "issue": 875,
+      "branch": "issue875-sewer-vaults",
+      "implementation_head": "8ece99265ae3cf1cc58a6bb62a6d647a3e48b7cb",
+      "original_base": "issue873-target-acquisition"
+    },
+    {
+      "number": 880,
+      "issue": 878,
+      "branch": "issue878-house-joinery",
+      "implementation_head": "220a3ace930e93b402e6b413a6191050aaad3f36",
+      "original_base": "issue875-sewer-vaults"
+    },
+    {
+      "number": 882,
+      "issue": 879,
+      "branch": "issue879-facade-visibility",
+      "implementation_head": "2c8e46a3f2f1e39d6e5c5c70780b5578660c020b",
+      "original_base": "issue878-house-joinery"
+    },
+    {
+      "number": 884,
+      "issue": 881,
+      "branch": "issue881-environment-review",
+      "implementation_head": "4004ba652dcc7a4c8d77c53181d84faeec506cc9",
+      "original_base": "issue879-facade-visibility"
+    },
+    {
+      "number": 885,
+      "issue": 883,
+      "branch": "issue883-interior-ceilings",
+      "implementation_head": "c0c51f2beda918aacd4b92d89426a68fa68c31bd",
+      "original_base": "issue881-environment-review"
+    },
+    {
+      "number": 888,
+      "issue": 886,
+      "branch": "issue886-municipal-review",
+      "implementation_head": "8751edb44ad4e4f0886d076ca73f588485852f1d",
+      "original_base": "issue883-interior-ceilings"
+    },
+    {
+      "number": 890,
+      "issue": 887,
+      "branch": "issue887-waterline-masonry",
+      "implementation_head": "3a8d53e8624845363e571c75c48e8f4dce055154",
+      "original_base": "issue886-municipal-review"
+    },
+    {
+      "number": 891,
+      "issue": 889,
+      "branch": "issue889-author-terminal",
+      "implementation_head": "3f20ef2e265ae89b7c7c73b9b412824cb8f0d7dc",
+      "original_base": "issue887-waterline-masonry"
+    }
+  ],
+  "close_issues": [
+    452,
+    453,
+    454,
+    455,
+    456,
+    457,
+    458,
+    459,
+    461,
+    462,
+    463,
+    647,
+    650,
+    652,
+    656,
+    658,
+    660,
+    662,
+    664,
+    666,
+    668,
+    670,
+    672,
+    674,
+    676,
+    678,
+    680,
+    682,
+    684,
+    686,
+    688,
+    690,
+    692,
+    694,
+    696,
+    698,
+    700,
+    702,
+    704,
+    706,
+    708,
+    709,
+    711,
+    713,
+    716,
+    717,
+    720,
+    721,
+    723,
+    725,
+    727,
+    729,
+    731,
+    733,
+    736,
+    738,
+    739,
+    741,
+    743,
+    745,
+    747,
+    749,
+    751,
+    753,
+    755,
+    757,
+    759,
+    761,
+    763,
+    765,
+    767,
+    769,
+    771,
+    773,
+    775,
+    777,
+    779,
+    781,
+    783,
+    785,
+    787,
+    790,
+    791,
+    793,
+    795,
+    797,
+    799,
+    801,
+    803,
+    805,
+    806,
+    809,
+    811,
+    813,
+    815,
+    817,
+    819,
+    821,
+    822,
+    825,
+    827,
+    829,
+    831,
+    834,
+    836,
+    838,
+    840,
+    842,
+    844,
+    846,
+    847,
+    849,
+    851,
+    853,
+    855,
+    857,
+    859,
+    861,
+    864,
+    866,
+    868,
+    870,
+    871,
+    873,
+    875,
+    878,
+    879,
+    881,
+    883,
+    886,
+    887,
+    889
+  ],
+  "parent_delivery_links": {
+    "459": [
+      832,
+      860,
+      863
+    ],
+    "462": [
+      862,
+      863
+    ]
+  },
+  "preserve_open": [
+    403,
+    460,
+    464,
+    465,
+    466,
+    467,
+    468,
+    469
+  ],
+  "pending_checks": {
+    "count": 108,
+    "git_blob": "fcb1dba56215ed44994f91928cc84c058fe7d597",
+    "policy": "Preserve byte-for-byte; remove only following explicit author pass by stable ID."
+  },
+  "future_scope": [
+    "#736 character-family visual decisions and remaining body/species fitting",
+    "Unauthored essence placements, campaign routes, consent and transport",
+    "Missing lamp placement and environmental audio rules",
+    "Remaining animation, music, UI and standalone roadmap issues",
+    "Severe approved 1000/600 siege presentation limitation"
+  ],
+  "integration_policy": "Merge in dependency order into main; retain commit ancestry, all worktree files and pre-existing local edits."
+}
