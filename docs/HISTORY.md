@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.41** - 2026-11-14.
+Documentation version: **5.17.42** - 2026-11-14.
+
+## 5.17.42 - Hybrid serpents (#727, 2026-11-14)
+
+Delivered candidate native models for the supplied parrot-headed Mbói Tu’ĩ
+and canine-headed Mbói Yaguá, preserving their provisional actor profiles.
+Model01 exposed 362 contact failures despite noncollapsed closed geometry.
+Model02 deepened roots and refined head proportions; 86 solids, 84 neutral
+contacts and 672 independent posed checks pass. Model03 repeats all twelve
+exports. Original references, the new atlas prompt/provenance, editable data
+and failed iterations are retained. Native previews pass 51 checks each;
+final package continuity passes 230 and combat/loot passes 136. ASSETS records
+the qualified per-species presentation comparison and environment.
+Evidence: assets/validation_v5_17_42/evidence/SUMMARY.json.
+CA727-HYBRID-SERPENTS-01 originates here and remains pending; no author test
+was accepted or removed. The broader campaign and art conversion continue.
 
 ## 5.17.41 - Weapon assembly components (#725, 2026-11-14)
 

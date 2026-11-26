@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA727Events" }
+map CA455V "Serpent inherited combat model" { sky1="CABASKY",0 nointermission }

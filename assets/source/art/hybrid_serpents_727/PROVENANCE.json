@@ -1,0 +1,22 @@
+{
+  "issue": 727,
+  "owner": "Damián Curti / Caelum Argenteum",
+  "references": {
+    "mboi_tui": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/48_mboi_tui.png",
+    "mboi_yagua": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/52_mboi_yagua.png"
+  },
+  "materials": {
+    "atlas": "Original built-in image_gen; exact MATERIALS_PROMPT.json.",
+    "eyes": "Owned #720 iris/dark bytes reused exactly; provenance retained there."
+  },
+  "method": "Original reference-based parrot/canine head anatomy and attached plumes/fur on a continuous deforming serpent mesh. Reuses #720 sweep/pose and MD3 export helpers; no raster edits.",
+  "limits": "Candidate fixed-species native models. Existing Mandinga profile/actions/loot, unique or repeatable identity, approved regions, collision, actor scale, save schema and named actors remain unchanged. No campaign placement, meter-scale approval or humanoid wardrobe.",
+  "generation_date": "2026-11-14",
+  "generated_images": {
+    "materials.png": {
+      "original_output": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-eeeaae60-c37c-4902-a9c2-203dcb3e10fe.png",
+      "sha256": "a2c88dc7380f27bcec9039489cb235430eb3ba9ac6bd80314e081445f853c0e0",
+      "copied_without_raster_edits": true
+    }
+  }
+}

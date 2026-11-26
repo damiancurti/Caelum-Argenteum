@@ -1,0 +1,1680 @@
+{
+  "issue": 727,
+  "parent_issue": 461,
+  "version": "5.17.42",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Existing CA-FOLK-048 unique Mboi Tui and052 repeatable Mboi Yagua gain native23-frame models; all inherited combat, identity, regions, collision, scale, loot and saves unchanged.",
+  "runtime": {
+    "sha256": "21620fdb2964641d75d39589c4575bf5ac07b0b2104789cac12391a7b214a8af",
+    "source_entries": 18439,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "8c2bcafbd6117bc8e447b6f6ca7aac57cde814a5dca8aaddeaa759724192d049",
+    "new_resources": [
+      "caelum/data/hybrid_serpent_combat.modeldef",
+      "models/caelum/folklore/hybrid_serpents/dark.png",
+      "models/caelum/folklore/hybrid_serpents/iris.png",
+      "models/caelum/folklore/hybrid_serpents/materials.png",
+      "models/caelum/folklore/hybrid_serpents/mboi_tui.md3",
+      "models/caelum/folklore/hybrid_serpents/mboi_yagua.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "errors": [],
+    "geometry": {
+      "mboi_tui": {
+        "closed_components": 43,
+        "attachment_witnesses": 42,
+        "rooted_components": 43,
+        "combat_frames": 23,
+        "collapsed_native_triangles": 0,
+        "native_pose_floor_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "independent_posed_attachment_checks": 336,
+        "attachment_frames": [
+          0,
+          10,
+          17,
+          22
+        ]
+      },
+      "mboi_yagua": {
+        "closed_components": 43,
+        "attachment_witnesses": 42,
+        "rooted_components": 43,
+        "combat_frames": 23,
+        "collapsed_native_triangles": 0,
+        "native_pose_floor_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "independent_posed_attachment_checks": 336,
+        "attachment_frames": [
+          0,
+          10,
+          17,
+          22
+        ]
+      }
+    },
+    "file_count": 12,
+    "files": [
+      "manifest.json",
+      "preview.pk3",
+      "editable/mboi_tui.mtl",
+      "editable/mboi_tui.obj",
+      "editable/mboi_yagua.mtl",
+      "editable/mboi_yagua.obj",
+      "caelum/data/hybrid_serpent_combat.modeldef",
+      "models/caelum/folklore/hybrid_serpents/dark.png",
+      "models/caelum/folklore/hybrid_serpents/iris.png",
+      "models/caelum/folklore/hybrid_serpents/materials.png",
+      "models/caelum/folklore/hybrid_serpents/mboi_tui.md3",
+      "models/caelum/folklore/hybrid_serpents/mboi_yagua.md3"
+    ],
+    "byte_identical": true,
+    "installed_check_passed": true,
+    "exports": {
+      "mboi_tui": {
+        "actor": "CaelumBestiary048",
+        "catalogue_id": "CA-FOLK-048",
+        "vertices": 10444,
+        "triangles": 17064,
+        "hierarchical_parts": 43,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 4095,
+            "triangles": 6930
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 6582
+          },
+          {
+            "material": "atlas",
+            "vertices": 1788,
+            "triangles": 2640
+          },
+          {
+            "material": "iris",
+            "vertices": 310,
+            "triangles": 576
+          },
+          {
+            "material": "dark",
+            "vertices": 186,
+            "triangles": 336
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              35.27792007894665,
+              28.483639484748036,
+              96.99369996168588
+            ]
+          },
+          {
+            "min": [
+              -68.47141387667372,
+              -25.763389796769154,
+              0.0
+            ],
+            "max": [
+              35.27550668497831,
+              28.107110410911623,
+              97.49550518397838
+            ]
+          },
+          {
+            "min": [
+              -68.47081754094357,
+              -24.611082462373034,
+              0.0
+            ],
+            "max": [
+              34.977353948731256,
+              26.283275224951943,
+              96.99295327163061
+            ]
+          },
+          {
+            "min": [
+              -68.47130401046637,
+              -27.00003472972258,
+              0.0
+            ],
+            "max": [
+              35.578484535772745,
+              27.988490803460266,
+              96.99360940061752
+            ]
+          },
+          {
+            "min": [
+              -68.4721238454283,
+              -26.69627126189997,
+              0.0
+            ],
+            "max": [
+              34.977353948731256,
+              30.679205295290153,
+              96.9950936727598
+            ]
+          },
+          {
+            "min": [
+              -68.47174658033913,
+              -24.34689452867319,
+              0.0
+            ],
+            "max": [
+              35.578484535772745,
+              29.100346599899062,
+              96.9928843108608
+            ]
+          },
+          {
+            "min": [
+              -68.47114562950303,
+              -25.056706966100542,
+              0.0
+            ],
+            "max": [
+              34.977353949045515,
+              27.240550075836914,
+              96.99350192051797
+            ]
+          },
+          {
+            "min": [
+              -68.47140516455264,
+              -26.40233298994824,
+              0.0
+            ],
+            "max": [
+              35.57848460875611,
+              28.178818271152306,
+              96.99346076570436
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              34.28084237686711,
+              28.483639484748036,
+              95.99140900263102
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              32.26724259530661,
+              28.483639484748036,
+              98.0017594677794
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              42.29524227595142,
+              28.483639484748036,
+              95.97953921806418
+            ]
+          },
+          {
+            "min": [
+              -68.4715621474304,
+              -26.3571798074736,
+              0.0
+            ],
+            "max": [
+              33.28375464780267,
+              28.659014308293177,
+              94.98941134996906
+            ]
+          },
+          {
+            "min": [
+              -68.47141387667372,
+              -25.763389796769154,
+              0.0
+            ],
+            "max": [
+              42.08605840327577,
+              28.107110410911623,
+              84.62032559019707
+            ]
+          },
+          {
+            "min": [
+              -68.47141387667372,
+              -25.763389796769154,
+              0.0
+            ],
+            "max": [
+              48.870769364548636,
+              28.107110410911623,
+              73.00614306503897
+            ]
+          },
+          {
+            "min": [
+              -68.47141387667372,
+              -25.763389796769154,
+              0.0
+            ],
+            "max": [
+              55.55121299276752,
+              28.107110410911623,
+              63.23097969679391
+            ]
+          },
+          {
+            "min": [
+              -68.47141387667372,
+              -25.763389796769154,
+              0.0
+            ],
+            "max": [
+              62.203067749674204,
+              28.107110410911623,
+              59.11177433704205
+            ]
+          },
+          {
+            "min": [
+              -68.47141387667372,
+              -25.763389796769154,
+              0.0
+            ],
+            "max": [
+              68.78047967547084,
+              31.47616718708491,
+              57.02366957485859
+            ]
+          },
+          {
+            "min": [
+              -68.47141387667372,
+              -25.763389796769154,
+              0.0
+            ],
+            "max": [
+              75.30905742726586,
+              36.069752641421175,
+              59.53482736040013
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              37.281654463410035,
+              28.483639484748036,
+              96.99076558663016
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              39.282974433595044,
+              28.483639484748036,
+              97.48971339337135
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              38.278755520715954,
+              28.483639484748036,
+              97.99304887164817
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              36.27256163941733,
+              28.483639484748036,
+              98.49780422568342
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              73.75201842307172,
+              34.967370703131635,
+              56.960787525545086
+            ]
+          }
+        ],
+        "modeldef_scale": 1.7038448978158514,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "source_sha256": "30068e43bef04cd9a08c184fea47f390c9bbd6e09a39b41abd7c80a69bc05df0",
+        "pose_floors": [
+          0.006300038314122958,
+          0.006358561888529124,
+          0.007486194318686579,
+          0.0059509465451936805,
+          0.005345793189512449,
+          0.006676036301915822,
+          0.006937545442911919,
+          0.00609958415396239,
+          0.006300038314122958,
+          0.006300038314122958,
+          0.006300038314122958,
+          0.005976383318629708,
+          0.006358561888529124,
+          0.006358561888529124,
+          0.006358561888529124,
+          0.006358561888529124,
+          0.006358561888529124,
+          -3.3844460267149366,
+          0.006300038314122958,
+          0.006300038314122958,
+          0.006300038314122958,
+          0.006300038314122958,
+          -0.5841590599233086
+        ]
+      },
+      "mboi_yagua": {
+        "actor": "CaelumBestiary052",
+        "catalogue_id": "CA-FOLK-052",
+        "vertices": 10574,
+        "triangles": 17472,
+        "hierarchical_parts": 43,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 4095,
+            "triangles": 6930
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 6644
+          },
+          {
+            "material": "atlas",
+            "vertices": 1764,
+            "triangles": 2698
+          },
+          {
+            "material": "iris",
+            "vertices": 310,
+            "triangles": 576
+          },
+          {
+            "material": "dark",
+            "vertices": 341,
+            "triangles": 624
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              39.30000000000001,
+              28.483639484748036,
+              104.99369996168588
+            ]
+          },
+          {
+            "min": [
+              -68.47141387667372,
+              -25.763389796769154,
+              0.0
+            ],
+            "max": [
+              39.29625008346509,
+              28.107110410911623,
+              105.49082702619214
+            ]
+          },
+          {
+            "min": [
+              -68.47081754094357,
+              -24.611082462373034,
+              0.0
+            ],
+            "max": [
+              38.99911982715996,
+              26.283275224951943,
+              104.9918535670821
+            ]
+          },
+          {
+            "min": [
+              -68.47130401046637,
+              -27.00003472972258,
+              0.0
+            ],
+            "max": [
+              39.600877932317225,
+              27.988490803460266,
+              104.99470749534782
+            ]
+          },
+          {
+            "min": [
+              -68.4721238454283,
+              -26.69627126189997,
+              0.0
+            ],
+            "max": [
+              38.99911982715996,
+              30.679205295290153,
+              104.99399396821127
+            ]
+          },
+          {
+            "min": [
+              -68.47174658033913,
+              -24.34689452867319,
+              0.0
+            ],
+            "max": [
+              39.60087793231722,
+              29.100346599899062,
+              104.99398240559111
+            ]
+          },
+          {
+            "min": [
+              -68.47114562950303,
+              -25.056706966100542,
+              0.0
+            ],
+            "max": [
+              38.999119827534614,
+              27.240550075836914,
+              104.99240221594046
+            ]
+          },
+          {
+            "min": [
+              -68.47140516455264,
+              -26.40233298994824,
+              0.0
+            ],
+            "max": [
+              39.60087801932936,
+              28.178818271152306,
+              104.99455885370838
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              38.30454852932576,
+              28.483639484748036,
+              103.99710841356816
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              36.28345227702328,
+              28.483639484748036,
+              105.98125135432032
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              46.327095634187046,
+              28.483639484748036,
+              104.01391355896203
+            ]
+          },
+          {
+            "min": [
+              -68.4715621474304,
+              -26.3571798074736,
+              0.0
+            ],
+            "max": [
+              37.30909025602122,
+              28.659014308293177,
+              103.00082948360459
+            ]
+          },
+          {
+            "min": [
+              -68.47141387667372,
+              -25.763389796769154,
+              0.0
+            ],
+            "max": [
+              46.20752956603571,
+              28.107110410911623,
+              92.98782868512825
+            ]
+          },
+          {
+            "min": [
+              -68.47141387667372,
+              -25.763389796769154,
+              0.0
+            ],
+            "max": [
+              52.968429711868154,
+              28.107110410911623,
+              80.84466807886733
+            ]
+          },
+          {
+            "min": [
+              -68.47141387667372,
+              -25.763389796769154,
+              0.0
+            ],
+            "max": [
+              59.60477368752977,
+              28.107110410911623,
+              68.55790350471923
+            ]
+          },
+          {
+            "min": [
+              -68.47141387667372,
+              -25.763389796769154,
+              0.0
+            ],
+            "max": [
+              66.105865668096,
+              28.107110410911623,
+              59.11177433704205
+            ]
+          },
+          {
+            "min": [
+              -68.47141387667372,
+              -25.763389796769154,
+              0.0
+            ],
+            "max": [
+              72.46228360765572,
+              31.45611494383451,
+              57.02366957485859
+            ]
+          },
+          {
+            "min": [
+              -68.47141387667372,
+              -25.763389796769154,
+              0.0
+            ],
+            "max": [
+              78.69046903072058,
+              36.05017229573044,
+              60.48864756891679
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              41.30581409478641,
+              28.483639484748036,
+              104.99805571181378
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              43.30787262207258,
+              28.483639484748036,
+              105.49959556219025
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              42.30129946787673,
+              28.483639484748036,
+              105.99467432335952
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              40.291681873321174,
+              28.483639484748036,
+              106.48745169934645
+            ]
+          },
+          {
+            "min": [
+              -68.47153244161413,
+              -25.63495574545079,
+              0.0
+            ],
+            "max": [
+              77.20632633605358,
+              34.94646354518558,
+              56.370328427307655
+            ]
+          }
+        ],
+        "modeldef_scale": 1.5740203541765574,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "source_sha256": "ebec130cb9bea23848ba0a58f77a648c6632fc8fb71d2072745a32818ca77ad8",
+        "pose_floors": [
+          0.006300038314122958,
+          0.006358561888529124,
+          0.007486194318686579,
+          0.0059509465451936805,
+          0.005345793189512449,
+          0.006676036301915822,
+          0.006937545442911919,
+          0.00609958415396239,
+          0.006300038314122958,
+          0.006300038314122958,
+          0.006300038314122958,
+          0.005976383318629708,
+          0.006358561888529124,
+          0.006358561888529124,
+          0.006358561888529124,
+          0.006358561888529124,
+          0.006358561888529124,
+          -4.338266235231593,
+          0.006300038314122958,
+          0.006300038314122958,
+          0.006300038314122958,
+          0.006300038314122958,
+          0.006300038314122958
+        ]
+      }
+    },
+    "material_alpha_opaque": true,
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "mboi_tui": {
+      "issue": 727,
+      "species": "mboi_tui",
+      "studio": false,
+      "runtime_sha256": "21620fdb2964641d75d39589c4575bf5ac07b0b2104789cac12391a7b214a8af",
+      "baseline_sha256": "8c2bcafbd6117bc8e447b6f6ca7aac57cde814a5dca8aaddeaa759724192d049",
+      "fixture_sha256": "806faa7a37ac2d9e1cec552da78a3bfb4bcae8cb8ff3d7e67db42158a8afdeef",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+            "empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "pose-00-idle.png": "9dd960cd433413c2c5fa93d47df1f78f0acd48e91461d23d1a97ff2cc01313d6",
+            "pose-01-idle.png": "83c9b9530641884876183fc9b0cfc468cd640a253972a009d93e0ff16601be63",
+            "pose-02-run.png": "3e90564c74e50ce529fd0f29e9aeb8ef902a46f1a26f3e414c0c71f5b0d8cca7",
+            "pose-03-run.png": "3ff7f30bedf303a8826fffc7bb7789a7e0bee8a2009a02a0e6fb35df5596cdae",
+            "pose-04-run.png": "5cf08ceffbdf111b971576ef8ef329ef59842a0ff13af7f13ec47314a7f8f096",
+            "pose-05-run.png": "d936b7d7b333deaa913e88e993946042b0a09e03df7da7a74c2bac4a6b3687c8",
+            "pose-06-walk.png": "d6e9d746e2d14771993f80b4d506b75e621565207f8a1f44e0a8ff975d1ee8cd",
+            "pose-07-walk.png": "375bdbfb7893b7141a1f635f846376ffb9d913a5c47ba34df81f9b9c1668184a",
+            "pose-08-stun.png": "fa69ad0083a089eafd2df3b37c3fdb5d48360d6f6720a761d9654c223264c9c5",
+            "pose-09-attack_prepare.png": "e39a70b820a37c9f92ca54031fdc59c9aec104bdfda7cec4248fcebfbce6b822",
+            "pose-10-attack_release.png": "64cef17c9e15e1abdc10c04c78448e93e98a52d48ea041164e2239b4301ba8c5",
+            "pose-11-pain.png": "07b00b96de70a4f74173b01e7fdd1226ad42016bee6ede15aa4c6ac9b4a78935",
+            "pose-12-death.png": "5ccfccc346886f819740935f5c8b12633b4816772fbe647e9e2aac9c2c06492e",
+            "pose-13-death.png": "bfc05f252e80fab1d9541681143d5a123f5518e3c3a830acc689f5ea56db693e",
+            "pose-14-death.png": "60c34bbe8933af5b62237fc26b1d4063555a43207fca16aef67cf86e9760f631",
+            "pose-15-death.png": "253f162f3f5ceccb11ea63846f30ab2ab1e534641016157f97932ac41b1d2b75",
+            "pose-16-death.png": "4676c661060d012dbcfa71470f273f21033ed44b1c8a23e7dda988bc859fa78e",
+            "pose-17-death.png": "fa6fd1305ac4c42553fc268a36dc89d286320ca82a8121122a6fb1b56ac04d7a",
+            "pose-18-breath.png": "3dad866e0fd0ede941295a746e0603d3fa8351aaa85e8439fcbeb465a86cf14d",
+            "pose-19-breath.png": "b8220f8ebe1ce6c02ae651f81b51935b5cb76190439cf4ffe3278defb7b1eead",
+            "pose-20-breath.png": "1e6a28ce819d4d05a608e64b77859507d8a1dc7a50e7e915b31ee9a05e4de748",
+            "pose-21-breath.png": "b67aedc300b0550fdaba7107d91ff24c9dffa4089a0b5c6a79b8e2da78fd9476",
+            "pose-22-rest.png": "9d3b51a29fa3ca10dc2e3f4a2f6d0485d844a31aaa51ee045dc2ab65fd081654",
+            "view-front.png": "897ecf3d788a4568972a364fccbf2393d0b880e93a00dd20fa8d1900b8897338",
+            "view-head-front.png": "c9dbed41c53808c9b8494ed32ef833cda4281a62ea9b94356e193eda813af6d7",
+            "view-head-oblique.png": "86e05685cec08a1108a71352a8ff2f77cbdd779516c1ada6d2aac4888dac09e5",
+            "view-lying-oblique.png": "9d3b51a29fa3ca10dc2e3f4a2f6d0485d844a31aaa51ee045dc2ab65fd081654",
+            "view-rear.png": "4dda7644f55b2412e9cdb32afbc0f03d115ff515443d5f5c308c7325c14290d5",
+            "view-side.png": "ffca859ef15cb60d1a2672858826267d9e3f7f8447687377945b836d5c57788d"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 23672,
+            "pose-01-idle.png": 23754,
+            "pose-02-run.png": 23442,
+            "pose-03-run.png": 23550,
+            "pose-04-run.png": 23831,
+            "pose-05-run.png": 23908,
+            "pose-06-walk.png": 23519,
+            "pose-07-walk.png": 23585,
+            "pose-08-stun.png": 23446,
+            "pose-09-attack_prepare.png": 23494,
+            "pose-10-attack_release.png": 24501,
+            "pose-11-pain.png": 23259,
+            "pose-12-death.png": 30160,
+            "pose-13-death.png": 29997,
+            "pose-14-death.png": 30190,
+            "pose-15-death.png": 31123,
+            "pose-16-death.png": 31686,
+            "pose-17-death.png": 33398,
+            "pose-18-breath.png": 23908,
+            "pose-19-breath.png": 24268,
+            "pose-20-breath.png": 24210,
+            "pose-21-breath.png": 24044,
+            "pose-22-rest.png": 32689
+          },
+          "distinct_pose_captures": 23
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    },
+    "mboi_yagua": {
+      "issue": 727,
+      "species": "mboi_yagua",
+      "studio": false,
+      "runtime_sha256": "21620fdb2964641d75d39589c4575bf5ac07b0b2104789cac12391a7b214a8af",
+      "baseline_sha256": "8c2bcafbd6117bc8e447b6f6ca7aac57cde814a5dca8aaddeaa759724192d049",
+      "fixture_sha256": "f3eea49d727957305aad1368483721e0b2a76bca4389425bf67ce731dbc48926",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+            "empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "pose-00-idle.png": "2da49d24898bc1d806fc47630fd765af05eaa7448cdc2b125c8a7d132dd9aa1e",
+            "pose-01-idle.png": "e8234a2af891c1160541af9790ba1d0da329416b907dc1dcbcf87c078c03a51a",
+            "pose-02-run.png": "dddb941fb8fc2ee73547637e66ab36338a113e145df302837f164e321716085f",
+            "pose-03-run.png": "1efd499aad5dd9189d85eac028bec76c420df3dcc329b39a4e3bca689c20f9f9",
+            "pose-04-run.png": "900d050d59e6228af62a0c755997b878a5abe3b932d441713b8c7540e57105bb",
+            "pose-05-run.png": "2d0a755ffe1a09e54f84e6ec0d0c867bf257e7883c2d6447d84544f431791d4b",
+            "pose-06-walk.png": "a2523b6db667c5405bf2af9f1a4314b6b365b97d8140f11195b3d08b89a3fb15",
+            "pose-07-walk.png": "afdbec886108d5ff92eca1acc11ebb0da83c0dd97fb06373e2f011e34f666677",
+            "pose-08-stun.png": "22b3badd3c63a4ff8dab0e1e531e78e9ee97e037357856ec2abb17888f5e5b3b",
+            "pose-09-attack_prepare.png": "f676d6b37143275f80f6b7cd522e7b20c75ac4c11e34dc9c2e7da8208e40d8ec",
+            "pose-10-attack_release.png": "f475502b981b958319c0c990943d46a6e21ccffd85e26585658ed6253269dc1b",
+            "pose-11-pain.png": "a36ab29ca968232ada9d1549d2425556fa6f7be0d7d8debcba100801d17bb5f0",
+            "pose-12-death.png": "58c2f91621812918084eabca9b9a8f00b1bc11d5ba7aec981aa8be120c6e6633",
+            "pose-13-death.png": "f685b6c5c3a5e80f3865c67d889c107490877948b643655cfb9db1eeb0c93c90",
+            "pose-14-death.png": "0720a080f9bd3d814a87fc8d99ec4fda990247bcc9d9f4dc3a6b689878ebdc02",
+            "pose-15-death.png": "a237926945da7bdbcec25e278956bfdfc1905e38e34fb35c753593d892e76f57",
+            "pose-16-death.png": "5facb7107098883451580db436bbfe6b7345aa42594cd777daf51baaaf095537",
+            "pose-17-death.png": "befe22692485feff9944f3e646aa6c0e5f75a742249f2405718169af44d26a62",
+            "pose-18-breath.png": "44c60bd1d1c28d35c00007f7490dcc60466d4b0e872a97df3eaeb17eac3b6b6a",
+            "pose-19-breath.png": "c9ae3649d2804ac2c840ed2c1398bbf557b9a545fac9acdcc70262e2b35da5d1",
+            "pose-20-breath.png": "ee9c1153d5c058cb8947c13b0d48e72a6f746d172dc3eaa8318d7716af7ed622",
+            "pose-21-breath.png": "53c1f1fbac8baa6148203b951ac1509ae3972ef0b8cdfa32a2fd721a8833585d",
+            "pose-22-rest.png": "76b6604553ec8ace88829f648a913e45bad2585fa0738c8b66d0de91b26c1465",
+            "view-front.png": "49e6234286e307f1fa0ef7803797d0d00e61ed1bd2939514ff021643a058c95b",
+            "view-head-front.png": "28cbb8382fe00d18ee731afe93efe23fe263e39a0d9b92d775a24f3cdcd131cd",
+            "view-head-oblique.png": "68e711635d4d233caa5ed586ad99bdf2f2551102226101f7dbedcfba57a5dcb0",
+            "view-lying-oblique.png": "76b6604553ec8ace88829f648a913e45bad2585fa0738c8b66d0de91b26c1465",
+            "view-rear.png": "4d6856a9a6fbd527d15025a8085fb6bfacd9a70c3a46c7dd6d4880cef0ccbb36",
+            "view-side.png": "50a5084d9c5e9d7a3c441db6434b745cbda22dc7cc4c00409cab96aee0e09732"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 19492,
+            "pose-01-idle.png": 19528,
+            "pose-02-run.png": 19398,
+            "pose-03-run.png": 19447,
+            "pose-04-run.png": 19670,
+            "pose-05-run.png": 19754,
+            "pose-06-walk.png": 19448,
+            "pose-07-walk.png": 19469,
+            "pose-08-stun.png": 19334,
+            "pose-09-attack_prepare.png": 19498,
+            "pose-10-attack_release.png": 20515,
+            "pose-11-pain.png": 19400,
+            "pose-12-death.png": 24716,
+            "pose-13-death.png": 24514,
+            "pose-14-death.png": 24825,
+            "pose-15-death.png": 25278,
+            "pose-16-death.png": 26245,
+            "pose-17-death.png": 27203,
+            "pose-18-breath.png": 19972,
+            "pose-19-breath.png": 20268,
+            "pose-20-breath.png": 20173,
+            "pose-21-breath.png": 19936,
+            "pose-22-rest.png": 26495
+          },
+          "distinct_pose_captures": 23
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    }
+  },
+  "actions": {
+    "issue": 727,
+    "runtime_sha256": "21620fdb2964641d75d39589c4575bf5ac07b0b2104789cac12391a7b214a8af",
+    "source_probe_sha256": "bf298e7c4b3ca7f0285f81c089b18f686ba0a114f65697252662af8b0121b65a",
+    "fixture_sha256": "7dd0135bba5801f215f9a1b3d00303f181b8a16c9b672372e8158514c2c3c140",
+    "runs": [
+      {
+        "phase": "actions",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 66,
+        "expected_assertions": 66,
+        "actions": [
+          "CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=47 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=47 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=0",
+          "CA455 ACTION PASS index=47 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=51 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=51 mode=1 damage=1 air=0 anima=1 projectiles=2 breath=0",
+          "CA455 ACTION PASS index=51 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1"
+        ],
+        "loot_audits": 0
+      },
+      {
+        "phase": "loot",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 50,
+        "expected_assertions": 50,
+        "actions": [],
+        "loot_audits": 2
+      },
+      {
+        "phase": "loot-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 20,
+        "expected_assertions": 20,
+        "actions": [],
+        "loot_audits": 2
+      }
+    ]
+  },
+  "presentation": {
+    "mboi_tui": {
+      "issue": 727,
+      "species": "mboi_tui",
+      "scope": "Measure one 700-tic sprite/model pair for a real serpent; no campaign or crowd budget.",
+      "baseline_sha256": "8c2bcafbd6117bc8e447b6f6ca7aac57cde814a5dca8aaddeaa759724192d049",
+      "runtime_sha256": "21620fdb2964641d75d39589c4575bf5ac07b0b2104789cac12391a7b214a8af",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 13952,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 283039004.88149995,
+            "END": 283059025.02030003
+          },
+          "fixture_sha256": "806faa7a37ac2d9e1cec552da78a3bfb4bcae8cb8ff3d7e67db42158a8afdeef",
+          "bench_sha256": "2a8a7710b0a43a880df6b971e1352c49dba80268787bd38330099388f8e0462d",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.571104,
+            "p50_ms": 28.5764,
+            "p95_ms": 28.9631,
+            "p99_ms": 29.0964,
+            "max_ms": 29.546
+          },
+          "presentation": {
+            "pid": 13952,
+            "trace_sha256": "f461a132d4353e1d0b63773eafe598507b70b79cd4a0129cd989e8c018f89e9a",
+            "rows": 43928,
+            "scene_presents": 31624,
+            "mean_present_fps": 1805.0121768571635,
+            "present_intervals": {
+              "samples": 31623,
+              "mean_ms": 0.554012883027289,
+              "p50_ms": 0.5261000394821167,
+              "p95_ms": 0.7513999938964844,
+              "p99_ms": 0.9146999716758728,
+              "max_ms": 1.8040000200271606
+            },
+            "native_call_duration": {
+              "samples": 31624,
+              "mean_ms": 0.07282180947131699,
+              "p50_ms": 0.06490004062652588,
+              "p95_ms": 0.09710001945495605,
+              "p99_ms": 0.125,
+              "max_ms": 0.6169000267982483
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 39000,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 283073529.6184,
+            "END": 283093550.897
+          },
+          "fixture_sha256": "806faa7a37ac2d9e1cec552da78a3bfb4bcae8cb8ff3d7e67db42158a8afdeef",
+          "bench_sha256": "2a8a7710b0a43a880df6b971e1352c49dba80268787bd38330099388f8e0462d",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57142342857143,
+            "p50_ms": 28.5657,
+            "p95_ms": 28.9685,
+            "p99_ms": 29.1213,
+            "max_ms": 29.3095
+          },
+          "presentation": {
+            "pid": 39000,
+            "trace_sha256": "8a54110d201d81bbffc99553f60d60bc1e1ef9e46157d8f78bb5aad0731bf0b8",
+            "rows": 44936,
+            "scene_presents": 32175,
+            "mean_present_fps": 1836.320501817115,
+            "present_intervals": {
+              "samples": 32174,
+              "mean_ms": 0.5445672468452314,
+              "p50_ms": 0.5239999890327454,
+              "p95_ms": 0.6999000310897827,
+              "p99_ms": 0.8482000231742859,
+              "max_ms": 1.9336000084877014
+            },
+            "native_call_duration": {
+              "samples": 32175,
+              "mean_ms": 0.07301927280870629,
+              "p50_ms": 0.06560003757476807,
+              "p95_ms": 0.09629994630813599,
+              "p99_ms": 0.12330001592636108,
+              "max_ms": 0.3637999892234802
+            }
+          }
+        }
+      ]
+    },
+    "mboi_yagua": {
+      "issue": 727,
+      "species": "mboi_yagua",
+      "scope": "Measure one 700-tic sprite/model pair for a real serpent; no campaign or crowd budget.",
+      "baseline_sha256": "8c2bcafbd6117bc8e447b6f6ca7aac57cde814a5dca8aaddeaa759724192d049",
+      "runtime_sha256": "21620fdb2964641d75d39589c4575bf5ac07b0b2104789cac12391a7b214a8af",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 27016,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 283109927.9803,
+            "END": 283129945.0242
+          },
+          "fixture_sha256": "f3eea49d727957305aad1368483721e0b2a76bca4389425bf67ce731dbc48926",
+          "bench_sha256": "2a8a7710b0a43a880df6b971e1352c49dba80268787bd38330099388f8e0462d",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.571232000000002,
+            "p50_ms": 28.5763,
+            "p95_ms": 28.9586,
+            "p99_ms": 29.082,
+            "max_ms": 29.3013
+          },
+          "presentation": {
+            "pid": 27016,
+            "trace_sha256": "ed315390dce729f99026ae1aaf318f73f3462eb2e83331466147656dd8449b4f",
+            "rows": 45187,
+            "scene_presents": 31957,
+            "mean_present_fps": 1824.3425735858434,
+            "present_intervals": {
+              "samples": 31956,
+              "mean_ms": 0.5481426649132275,
+              "p50_ms": 0.5225000381469727,
+              "p95_ms": 0.7400999665260315,
+              "p99_ms": 0.936199963092804,
+              "max_ms": 1.5960999727249146
+            },
+            "native_call_duration": {
+              "samples": 31957,
+              "mean_ms": 0.07343824519775953,
+              "p50_ms": 0.06550002098083496,
+              "p95_ms": 0.09780001640319824,
+              "p99_ms": 0.1315000057220459,
+              "max_ms": 0.45600003004074097
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 41744,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 283144356.9398,
+            "END": 283164377.0933
+          },
+          "fixture_sha256": "f3eea49d727957305aad1368483721e0b2a76bca4389425bf67ce731dbc48926",
+          "bench_sha256": "2a8a7710b0a43a880df6b971e1352c49dba80268787bd38330099388f8e0462d",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57159814285714,
+            "p50_ms": 28.5678,
+            "p95_ms": 28.9773,
+            "p99_ms": 29.1256,
+            "max_ms": 29.6598
+          },
+          "presentation": {
+            "pid": 41744,
+            "trace_sha256": "fe9716526aedadf77fca081be2da93ba8fce65a4a57d85cc0fa1282b7592b0f2",
+            "rows": 44432,
+            "scene_presents": 32127,
+            "mean_present_fps": 1833.7127768714752,
+            "present_intervals": {
+              "samples": 32126,
+              "mean_ms": 0.5453416765225986,
+              "p50_ms": 0.5277000069618225,
+              "p95_ms": 0.6861000061035156,
+              "p99_ms": 0.8162000179290771,
+              "max_ms": 1.225100040435791
+            },
+            "native_call_duration": {
+              "samples": 32127,
+              "mean_ms": 0.07285671560178118,
+              "p50_ms": 0.06550002098083496,
+              "p95_ms": 0.09539997577667236,
+              "p99_ms": 0.12220001220703125,
+              "max_ms": 0.47829997539520264
+            }
+          }
+        }
+      ]
+    }
+  },
+  "iterations": "Model01 has closed noncollapsed geometry but362 independent contact failures: witnesses on root caps and head/body boundaries, plus shallow crown/mane/eye joints. Native previews pass51 each but head proportions remain too rounded. Model02 deepens physical roots around strict witnesses, revises head/beak/ear/face proportions and adds a canine muzzle bridge. All geometry/posed contacts pass; both native previews pass51. Model03 repeats every export byte exactly.",
+  "art": {
+    "source": "assets/source/art/hybrid_serpents_727",
+    "mode": "built-in image_gen",
+    "selected_textures": [
+      "materials.png"
+    ],
+    "prompts": [
+      "MATERIALS_PROMPT.json"
+    ],
+    "reused_textures": [
+      "Owned #720 iris.png and dark.png byte-identical"
+    ],
+    "original_concepts_preserved": true,
+    "reviewed_views": "Original48/52 concepts and the generated atlas; final front/side/rear, head-front/head-oblique, selected run/attack/pain/death/lying captures and both presentation cohorts per species.",
+    "author_check": "CA727-HYBRID-SERPENTS-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "One sequential700-tic sprite/model pair per species. Queue intervals are not GPU/display timing, repeatability or crowd/campaign acceptance; projected footprints differ.",
+    "Fixed-species anatomy is not modular humanoid equipment. Simplified facial surfaces, sparse regular dorsal tufts, belly UV transitions and rigid jaw/crest remain candidate art requiring author review.",
+    "Neutral Height fits unchanged Mandinga profile; the visual footprint can exceed collision Radius. No runtime metre sizing or campaign placement is authorized here.",
+    "672 independent posed attachment checks cover frames0,10,17,22, not every interpolation or full-surface clearance. All23 serialized poses per species have no collapsed triangles and a grounded lowest vertex.",
+    "Other characters, inventory, worn/first-person equipment and original V5.16 campaign remain unfinished. No production logic, balance, save schema, scans or approved regions changed."
+  ],
+  "files": {
+    "actions01/actions/commands.cfg": "6b331476dfe7d6e9e741ad620bde0456f786c7c4522ae799e8cef610db598383",
+    "actions01/actions/engine.log": "e3acfd5dcf474c5b5d8dd9ef7c69e525dbf2d99e34cf5a9665db057ecdf48ec5",
+    "actions01/actions/process.log": "5e94bef35ca2bfe0132d6b25c1cfea6c458f1438dcc21924c53dd0ed4f32b6b8",
+    "actions01/actions/session.ini": "68d16279982ddbebba78f51dfd1298f3858b647aa5a4f529339045a76af0b8ff",
+    "actions01/fixture-source/MAPINFO.txt": "84a2a2cfd3f2be232b6fb78ca406204bda0732dd7beeb3c11bb55231684a80ad",
+    "actions01/fixture-source/ZSCRIPT.txt": "dd1d224e8f03742c06f776319917743e53b2e4d30b677d4ca231f13322956a1c",
+    "actions01/fixture.zs": "8aa3d7a64092d6c7886d49eb18758492cb0855ccaf224432f73125cbdd0a492c",
+    "actions01/loot/commands.cfg": "c7131f87f9df9188e2301d6730516e731540216e6417b470aab866467fbd8ad7",
+    "actions01/loot/engine.log": "ab1e7ba97ace700ddffb1a4f4ed6dd3f174a2959977a9327b3077e6f43b51143",
+    "actions01/loot/process.log": "ed2c62cb8f8e0fac02d5556726f95ca22275b0c31a584d2804da6e136ec55380",
+    "actions01/loot/session.ini": "b5d943f9546233e8a34583093b74d8cb08d59f911bb38fc9c7ef18b0c8782eff",
+    "actions01/loot-reload/commands.cfg": "ad82c3110081fb6cd15b9a00885b6cc0747127803c4e52c0e06a730955dcf399",
+    "actions01/loot-reload/engine.log": "a43511d3764e186e15e2b5b9d69e0ca741ded1ff72e9462ec9f97c78c91dfdf8",
+    "actions01/loot-reload/process.log": "81b5fad142074f68047eb187fc9be4d9e1ce294d978683b813275de1da7a6f1b",
+    "actions01/loot-reload/session.ini": "de7b9daa9bd48d7b71ce32974e00cada013eaccc86e0d30f62968afb521d5656",
+    "actions01/RESULTS.json": "9f61a287c18abe653a54b3dc2e6277135d250ab2eb3790a17b46876845845a41",
+    "iterations/issue727-mboi_tui01.json": "ce75e7dc21ff4bd230304244ac61a7eb1d845ea78bd6ad6aa6f0f4aaeda235af",
+    "iterations/issue727-mboi_yagua01.json": "bc592ceb418acdbb2b5851859a955769b64a92b9198dc8fdff74631eed9ed033",
+    "iterations/visual01/mboi_tui/fixture-source/MAPINFO.txt": "a08bc27a8ab7fd82d1fc0d3628519462b4a83451fae6006f7ac342d8704dc580",
+    "iterations/visual01/mboi_tui/fixture-source/ZSCRIPT.txt": "4837ec0155404260e4fa29a49b800c3ec882f18717ff5b0fb036161e1a5246a5",
+    "iterations/visual01/mboi_tui/fixture.zs": "500e076ae37304fee642f99023070ebd25ee6f9069565cd65a8f3eb88ffc272c",
+    "iterations/visual01/mboi_tui/RESULTS.json": "aba13e05d393c48fdbcb91986c7fe7ea0ec604e94e6473879d73a585674403fa",
+    "iterations/visual01/mboi_tui/visual/commands.cfg": "c5354e31432c3842e878c614ffddf59f27bb7964ffce3ef5b2dbcbb6accd2e86",
+    "iterations/visual01/mboi_tui/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual01/mboi_tui/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual01/mboi_tui/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual01/mboi_tui/visual/engine.log": "cb1a9c77f5e33a226d48dbdf55848af13a4859aed2b483dd31a58f8b842c8c2f",
+    "iterations/visual01/mboi_tui/visual/pose-00-idle.png": "60ea8665e5e3f4a07ac75d34fe591e2eecd0560b611a7197c7557cb261bef3e5",
+    "iterations/visual01/mboi_tui/visual/pose-01-idle.png": "ec8f640d15042f7b87b4ea15f2d57fa5f10bf20d1139b0cfad150e8b8cbd57ca",
+    "iterations/visual01/mboi_tui/visual/pose-02-run.png": "44217898fcd75f8d22aedcc45b72bac943d801238a37704e8e18637e9e75f8cd",
+    "iterations/visual01/mboi_tui/visual/pose-03-run.png": "ef4f7e7383b4838c0f00d2ccee433debd9575f6656545f36760962abeea4a06a",
+    "iterations/visual01/mboi_tui/visual/pose-04-run.png": "26980de4aa82239f5f56e6b5060a4c32c4d2a41f369bc05938502181e31d7bf6",
+    "iterations/visual01/mboi_tui/visual/pose-05-run.png": "f3f962d89433f159a50089b4a316db24ded9393bbfa80beea0e745f517e3cf8a",
+    "iterations/visual01/mboi_tui/visual/pose-06-walk.png": "7eae9eaeb23a7528c382d44b007ec5ca98be01f2f88ebe6360035c989ce5db05",
+    "iterations/visual01/mboi_tui/visual/pose-07-walk.png": "152ccf7a16ee806ea78e7dffcf0308a202c8ded8a377aec5f6b927a43586aef0",
+    "iterations/visual01/mboi_tui/visual/pose-08-stun.png": "6f4ab23862dda799b3a3c47ab834ccb4d1b0a069a5ebcf85798e1837b108d00b",
+    "iterations/visual01/mboi_tui/visual/pose-09-attack_prepare.png": "bae0dcf8603a84fcf6311c26a947ef096b1375636f0592563cff49186ee5adfb",
+    "iterations/visual01/mboi_tui/visual/pose-10-attack_release.png": "4cf4d343332f7827708f1b90c9765cb9cd85ae92741ffde04ba65e48a5ef48fe",
+    "iterations/visual01/mboi_tui/visual/pose-11-pain.png": "b0c418fdc3adc5ce7d053bd836e1d9c7163dbd9a3f049d06b5644b3d464cc0b9",
+    "iterations/visual01/mboi_tui/visual/pose-12-death.png": "81adcd39b302d882f17bd2256238fd88f896d7ef88b3dd9e1f6947f91ac991b5",
+    "iterations/visual01/mboi_tui/visual/pose-13-death.png": "242f37151db1f9a69b75b10453a541abe8266e43ed0f8a436b09b574b95ccbed",
+    "iterations/visual01/mboi_tui/visual/pose-14-death.png": "8a01fb6039e275abac13afb3c700445609b82a77f31044eb4ccab0265c72e667",
+    "iterations/visual01/mboi_tui/visual/pose-15-death.png": "f7b671f14746fc118cfa61b8b904c0fee02328507047360830f96fbe3b55419c",
+    "iterations/visual01/mboi_tui/visual/pose-16-death.png": "553396fa50aac721973a34208dbd6b83529d4ea6e4e9976e137cb163dbc283d8",
+    "iterations/visual01/mboi_tui/visual/pose-17-death.png": "77064be08a25b5385d633f7da3047572061dfa9f38f81066b2bf92279816a7e1",
+    "iterations/visual01/mboi_tui/visual/pose-18-breath.png": "44c560417a6b1818a2e22d5c1c32aeb872aa26c9a286fb50dd0b4b2815da9a65",
+    "iterations/visual01/mboi_tui/visual/pose-19-breath.png": "e0e06fe079f57f1341b228291e591dbd038573d7e11fb66f2e37e926f43785d6",
+    "iterations/visual01/mboi_tui/visual/pose-20-breath.png": "e79070d61a0d243518afa02edd7dc44dba29f5bdaaf284728bc229076a410d09",
+    "iterations/visual01/mboi_tui/visual/pose-21-breath.png": "daa35eef33760431375c719fd8a606db451d1cf602e30270681785a8eb7b2b73",
+    "iterations/visual01/mboi_tui/visual/pose-22-rest.png": "553420e824daadc48fa1e8cbd9423326c9c88d10dff455b5909d065c8e1ea8b8",
+    "iterations/visual01/mboi_tui/visual/process.log": "4857ef623992364e059a449b5370937015e4c00eb210b87ca4d7185061075c95",
+    "iterations/visual01/mboi_tui/visual/session.ini": "644cc3d4c7cf1ed5e84aa81c4698bcfc0109e7270ea6be3f525aeac347fb576e",
+    "iterations/visual01/mboi_tui/visual/view-front.png": "4b40286f3f50364797e3b4067d8ffbcdc2d6dbcce4b90249c24b665404e6ccd4",
+    "iterations/visual01/mboi_tui/visual/view-head-front.png": "eb06384f8bf8f2ecd2d161252e2b952ac8e65000326a9d8b996a68add1529aaa",
+    "iterations/visual01/mboi_tui/visual/view-head-oblique.png": "93abb7c9ae2658fddd8dd6d8a3b2e66f014afd769ea284e26a87575ac1c414c9",
+    "iterations/visual01/mboi_tui/visual/view-lying-oblique.png": "553420e824daadc48fa1e8cbd9423326c9c88d10dff455b5909d065c8e1ea8b8",
+    "iterations/visual01/mboi_tui/visual/view-rear.png": "b48148966489b4628904e26aecf33d51cfce2a35b6cedc8a2e860ad93aa9bbce",
+    "iterations/visual01/mboi_tui/visual/view-side.png": "34691908b8df7583361cd7929201ee149090fd03acb94bf06b93fae045b9554f",
+    "iterations/visual01/mboi_yagua/fixture-source/MAPINFO.txt": "a08bc27a8ab7fd82d1fc0d3628519462b4a83451fae6006f7ac342d8704dc580",
+    "iterations/visual01/mboi_yagua/fixture-source/ZSCRIPT.txt": "01c77e7e5b95ef287bf0e8dca768a037b7252ceeafb9a6d9a2a6542ec2bed1e9",
+    "iterations/visual01/mboi_yagua/fixture.zs": "6a876d61b86cdb4b991cb5bed97cdaa95d672ad323c0d906e1d03c6b4b2ea249",
+    "iterations/visual01/mboi_yagua/RESULTS.json": "97ce90b19a3f6620873fb000f58e2ed06516d62ddafcdbb8577d3649fea0482b",
+    "iterations/visual01/mboi_yagua/visual/commands.cfg": "c5354e31432c3842e878c614ffddf59f27bb7964ffce3ef5b2dbcbb6accd2e86",
+    "iterations/visual01/mboi_yagua/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual01/mboi_yagua/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual01/mboi_yagua/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual01/mboi_yagua/visual/engine.log": "919f5d91cc931970e8578be16648cd53ce5507fcbc0d5ca46b13bb393ae4fb8d",
+    "iterations/visual01/mboi_yagua/visual/pose-00-idle.png": "e47b3beecb311ddcc039a65a0ca51a2b8480b1cf3067570903b2231c49659245",
+    "iterations/visual01/mboi_yagua/visual/pose-01-idle.png": "90e145ea811d3957714d313dd25670771d206ed55675deaaee7f659494853b23",
+    "iterations/visual01/mboi_yagua/visual/pose-02-run.png": "56c582272acc59fc8c4005b89b8faa639cb161610f5215de0a8bbcfb0890f12f",
+    "iterations/visual01/mboi_yagua/visual/pose-03-run.png": "cbc0dd06e4c71e944bf1df9ff5871424fefad3cb6cad901741a23ca32c53a773",
+    "iterations/visual01/mboi_yagua/visual/pose-04-run.png": "8d5f90ad9e77413ddd859685a989b29ac1b486e0db5fa3d583233f70c517fc5c",
+    "iterations/visual01/mboi_yagua/visual/pose-05-run.png": "6e74407e3d58a41e9c8be5f426dd7780d03a6fb27c0365ce5da38ec41babaff2",
+    "iterations/visual01/mboi_yagua/visual/pose-06-walk.png": "01f7106c393edf118a155fc78fdaf491a402e72e927e4c4edf5ba01c7b3a74ee",
+    "iterations/visual01/mboi_yagua/visual/pose-07-walk.png": "b6ef125778ce05cd35522bb71e5050bf17db6d25c87084f04a82574ee86928f5",
+    "iterations/visual01/mboi_yagua/visual/pose-08-stun.png": "8c05f49fb4865af09604508e7dfc9433d9c7426df6cdec990ae10649d431ce5d",
+    "iterations/visual01/mboi_yagua/visual/pose-09-attack_prepare.png": "3ea44d0f8f2c1e18fff056cd06c42d7f65e0c0b66bd40f5a0632d3fd13bda3fd",
+    "iterations/visual01/mboi_yagua/visual/pose-10-attack_release.png": "38b466e205bd9542d6c502136fdae9c4def1f99885ae35cd877d00fddc22f9e4",
+    "iterations/visual01/mboi_yagua/visual/pose-11-pain.png": "6a255d09e58ed803bb69f520d5509be0b604acc1f131a7f3ab930c29be0c5ff8",
+    "iterations/visual01/mboi_yagua/visual/pose-12-death.png": "92307e54be1038aa7b5262a5080899cfe76d4b796546498793b4742d969ad6c8",
+    "iterations/visual01/mboi_yagua/visual/pose-13-death.png": "dd0a1ca88f390ecc131ecba5d5c090910eaff1d450d81f9bacbe195b46e6b074",
+    "iterations/visual01/mboi_yagua/visual/pose-14-death.png": "137d59c1fb587a6a0f77bb9f7f1efbc3093f92d9d754c53a09a369cb4d01c7dc",
+    "iterations/visual01/mboi_yagua/visual/pose-15-death.png": "11bf58696406486a6ccbba0882cdbe1718f9f01d530d991b0c0084a94b61f0df",
+    "iterations/visual01/mboi_yagua/visual/pose-16-death.png": "375516d0e77c49228354da9ca5722dbc22b089c5278111c8ebe752c478935df7",
+    "iterations/visual01/mboi_yagua/visual/pose-17-death.png": "337ea71cb27001d378f1f44bf87dd4a650579510233f37290e524688a5d7ff20",
+    "iterations/visual01/mboi_yagua/visual/pose-18-breath.png": "f713e6b257b2563955f91c3876e81b056ccf5066eab90c0a0a8ba3d6d22a1cb1",
+    "iterations/visual01/mboi_yagua/visual/pose-19-breath.png": "d6a671a36683df85daa4d47d1552165e44eaab1693fc9a880859bbdb8f2950d1",
+    "iterations/visual01/mboi_yagua/visual/pose-20-breath.png": "ccb3e2f3c919530c32b7aee645cc21cfef8f4b840d923f920e909f7eaad3041d",
+    "iterations/visual01/mboi_yagua/visual/pose-21-breath.png": "cdb319249e9d0299e461dbf7931b7cb252b99a0a6626d1e9fd9f9108798c3954",
+    "iterations/visual01/mboi_yagua/visual/pose-22-rest.png": "ed788b99b0d4132f57d7e82c1a3cde9479fc6db6f0c2fa0567d74e617b861b2a",
+    "iterations/visual01/mboi_yagua/visual/process.log": "6099a315308db6d5def816fed37e78f3c5107fe4617d6fd6e9cadbce78afbbd6",
+    "iterations/visual01/mboi_yagua/visual/session.ini": "69674a80d05fd082a945a01cc51b8e69825c8ed22db7a8e62f7a0bc121c38f91",
+    "iterations/visual01/mboi_yagua/visual/view-front.png": "a43ef5c9f2156868f50e6ba3025219dc847d26f13981869589466c6332f56846",
+    "iterations/visual01/mboi_yagua/visual/view-head-front.png": "227915a2eeee1625432c6965adacb5a6f69138e59be4128f73fd86753dc95317",
+    "iterations/visual01/mboi_yagua/visual/view-head-oblique.png": "8fdeebb631e64330acb8f5ab3e8041d023d5512ec8806e85512fb0d46759e042",
+    "iterations/visual01/mboi_yagua/visual/view-lying-oblique.png": "ed788b99b0d4132f57d7e82c1a3cde9479fc6db6f0c2fa0567d74e617b861b2a",
+    "iterations/visual01/mboi_yagua/visual/view-rear.png": "9b5c1111383d7a8c72fde17329ce88136140e928d2f94ece1b3f9b750c7c8ae9",
+    "iterations/visual01/mboi_yagua/visual/view-side.png": "4f8ca0c8cb85693f8fc808f52858814b6bf0c5d09edbfcd71b620ed8aac41159",
+    "iterations/visual02/mboi_tui/fixture-source/MAPINFO.txt": "a08bc27a8ab7fd82d1fc0d3628519462b4a83451fae6006f7ac342d8704dc580",
+    "iterations/visual02/mboi_tui/fixture-source/ZSCRIPT.txt": "4837ec0155404260e4fa29a49b800c3ec882f18717ff5b0fb036161e1a5246a5",
+    "iterations/visual02/mboi_tui/fixture.zs": "500e076ae37304fee642f99023070ebd25ee6f9069565cd65a8f3eb88ffc272c",
+    "iterations/visual02/mboi_tui/RESULTS.json": "1a0c710690603d7d7b84afd22b1a837c174a1577599ce3d206b9a2a5c0405185",
+    "iterations/visual02/mboi_tui/visual/commands.cfg": "c5354e31432c3842e878c614ffddf59f27bb7964ffce3ef5b2dbcbb6accd2e86",
+    "iterations/visual02/mboi_tui/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual02/mboi_tui/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual02/mboi_tui/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual02/mboi_tui/visual/engine.log": "18e2c5995149ae4e4697415da52dd0c7902f7ad931ee7f7212fa717fd09b7750",
+    "iterations/visual02/mboi_tui/visual/pose-00-idle.png": "9dd960cd433413c2c5fa93d47df1f78f0acd48e91461d23d1a97ff2cc01313d6",
+    "iterations/visual02/mboi_tui/visual/pose-01-idle.png": "83c9b9530641884876183fc9b0cfc468cd640a253972a009d93e0ff16601be63",
+    "iterations/visual02/mboi_tui/visual/pose-02-run.png": "3e90564c74e50ce529fd0f29e9aeb8ef902a46f1a26f3e414c0c71f5b0d8cca7",
+    "iterations/visual02/mboi_tui/visual/pose-03-run.png": "3ff7f30bedf303a8826fffc7bb7789a7e0bee8a2009a02a0e6fb35df5596cdae",
+    "iterations/visual02/mboi_tui/visual/pose-04-run.png": "5cf08ceffbdf111b971576ef8ef329ef59842a0ff13af7f13ec47314a7f8f096",
+    "iterations/visual02/mboi_tui/visual/pose-05-run.png": "d936b7d7b333deaa913e88e993946042b0a09e03df7da7a74c2bac4a6b3687c8",
+    "iterations/visual02/mboi_tui/visual/pose-06-walk.png": "d6e9d746e2d14771993f80b4d506b75e621565207f8a1f44e0a8ff975d1ee8cd",
+    "iterations/visual02/mboi_tui/visual/pose-07-walk.png": "375bdbfb7893b7141a1f635f846376ffb9d913a5c47ba34df81f9b9c1668184a",
+    "iterations/visual02/mboi_tui/visual/pose-08-stun.png": "fa69ad0083a089eafd2df3b37c3fdb5d48360d6f6720a761d9654c223264c9c5",
+    "iterations/visual02/mboi_tui/visual/pose-09-attack_prepare.png": "e39a70b820a37c9f92ca54031fdc59c9aec104bdfda7cec4248fcebfbce6b822",
+    "iterations/visual02/mboi_tui/visual/pose-10-attack_release.png": "64cef17c9e15e1abdc10c04c78448e93e98a52d48ea041164e2239b4301ba8c5",
+    "iterations/visual02/mboi_tui/visual/pose-11-pain.png": "07b00b96de70a4f74173b01e7fdd1226ad42016bee6ede15aa4c6ac9b4a78935",
+    "iterations/visual02/mboi_tui/visual/pose-12-death.png": "5ccfccc346886f819740935f5c8b12633b4816772fbe647e9e2aac9c2c06492e",
+    "iterations/visual02/mboi_tui/visual/pose-13-death.png": "bfc05f252e80fab1d9541681143d5a123f5518e3c3a830acc689f5ea56db693e",
+    "iterations/visual02/mboi_tui/visual/pose-14-death.png": "60c34bbe8933af5b62237fc26b1d4063555a43207fca16aef67cf86e9760f631",
+    "iterations/visual02/mboi_tui/visual/pose-15-death.png": "253f162f3f5ceccb11ea63846f30ab2ab1e534641016157f97932ac41b1d2b75",
+    "iterations/visual02/mboi_tui/visual/pose-16-death.png": "4676c661060d012dbcfa71470f273f21033ed44b1c8a23e7dda988bc859fa78e",
+    "iterations/visual02/mboi_tui/visual/pose-17-death.png": "fa6fd1305ac4c42553fc268a36dc89d286320ca82a8121122a6fb1b56ac04d7a",
+    "iterations/visual02/mboi_tui/visual/pose-18-breath.png": "3dad866e0fd0ede941295a746e0603d3fa8351aaa85e8439fcbeb465a86cf14d",
+    "iterations/visual02/mboi_tui/visual/pose-19-breath.png": "b8220f8ebe1ce6c02ae651f81b51935b5cb76190439cf4ffe3278defb7b1eead",
+    "iterations/visual02/mboi_tui/visual/pose-20-breath.png": "1e6a28ce819d4d05a608e64b77859507d8a1dc7a50e7e915b31ee9a05e4de748",
+    "iterations/visual02/mboi_tui/visual/pose-21-breath.png": "b67aedc300b0550fdaba7107d91ff24c9dffa4089a0b5c6a79b8e2da78fd9476",
+    "iterations/visual02/mboi_tui/visual/pose-22-rest.png": "9d3b51a29fa3ca10dc2e3f4a2f6d0485d844a31aaa51ee045dc2ab65fd081654",
+    "iterations/visual02/mboi_tui/visual/process.log": "1503922fc3fcefdefb48cb489756cb5e08dfabb3afc07029d68acd07c582e560",
+    "iterations/visual02/mboi_tui/visual/session.ini": "4c3ed92e61af41f9c84ca87696744d0f0c4689f076d2bbbe28d4086bbb06d3b3",
+    "iterations/visual02/mboi_tui/visual/view-front.png": "897ecf3d788a4568972a364fccbf2393d0b880e93a00dd20fa8d1900b8897338",
+    "iterations/visual02/mboi_tui/visual/view-head-front.png": "c9dbed41c53808c9b8494ed32ef833cda4281a62ea9b94356e193eda813af6d7",
+    "iterations/visual02/mboi_tui/visual/view-head-oblique.png": "86e05685cec08a1108a71352a8ff2f77cbdd779516c1ada6d2aac4888dac09e5",
+    "iterations/visual02/mboi_tui/visual/view-lying-oblique.png": "9d3b51a29fa3ca10dc2e3f4a2f6d0485d844a31aaa51ee045dc2ab65fd081654",
+    "iterations/visual02/mboi_tui/visual/view-rear.png": "4dda7644f55b2412e9cdb32afbc0f03d115ff515443d5f5c308c7325c14290d5",
+    "iterations/visual02/mboi_tui/visual/view-side.png": "ffca859ef15cb60d1a2672858826267d9e3f7f8447687377945b836d5c57788d",
+    "iterations/visual02/mboi_yagua/fixture-source/MAPINFO.txt": "a08bc27a8ab7fd82d1fc0d3628519462b4a83451fae6006f7ac342d8704dc580",
+    "iterations/visual02/mboi_yagua/fixture-source/ZSCRIPT.txt": "01c77e7e5b95ef287bf0e8dca768a037b7252ceeafb9a6d9a2a6542ec2bed1e9",
+    "iterations/visual02/mboi_yagua/fixture.zs": "6a876d61b86cdb4b991cb5bed97cdaa95d672ad323c0d906e1d03c6b4b2ea249",
+    "iterations/visual02/mboi_yagua/RESULTS.json": "7f7305ce34321482aca283708ade519b5b4b6520d8e11f95cc23c54bd2cfe778",
+    "iterations/visual02/mboi_yagua/visual/commands.cfg": "c5354e31432c3842e878c614ffddf59f27bb7964ffce3ef5b2dbcbb6accd2e86",
+    "iterations/visual02/mboi_yagua/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual02/mboi_yagua/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual02/mboi_yagua/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual02/mboi_yagua/visual/engine.log": "0ffc4892d5dea3eb7d8c4c1d8b225bece2990d73b138d67b209d6c671132a6ec",
+    "iterations/visual02/mboi_yagua/visual/pose-00-idle.png": "2da49d24898bc1d806fc47630fd765af05eaa7448cdc2b125c8a7d132dd9aa1e",
+    "iterations/visual02/mboi_yagua/visual/pose-01-idle.png": "e8234a2af891c1160541af9790ba1d0da329416b907dc1dcbcf87c078c03a51a",
+    "iterations/visual02/mboi_yagua/visual/pose-02-run.png": "dddb941fb8fc2ee73547637e66ab36338a113e145df302837f164e321716085f",
+    "iterations/visual02/mboi_yagua/visual/pose-03-run.png": "1efd499aad5dd9189d85eac028bec76c420df3dcc329b39a4e3bca689c20f9f9",
+    "iterations/visual02/mboi_yagua/visual/pose-04-run.png": "900d050d59e6228af62a0c755997b878a5abe3b932d441713b8c7540e57105bb",
+    "iterations/visual02/mboi_yagua/visual/pose-05-run.png": "2d0a755ffe1a09e54f84e6ec0d0c867bf257e7883c2d6447d84544f431791d4b",
+    "iterations/visual02/mboi_yagua/visual/pose-06-walk.png": "a2523b6db667c5405bf2af9f1a4314b6b365b97d8140f11195b3d08b89a3fb15",
+    "iterations/visual02/mboi_yagua/visual/pose-07-walk.png": "afdbec886108d5ff92eca1acc11ebb0da83c0dd97fb06373e2f011e34f666677",
+    "iterations/visual02/mboi_yagua/visual/pose-08-stun.png": "22b3badd3c63a4ff8dab0e1e531e78e9ee97e037357856ec2abb17888f5e5b3b",
+    "iterations/visual02/mboi_yagua/visual/pose-09-attack_prepare.png": "f676d6b37143275f80f6b7cd522e7b20c75ac4c11e34dc9c2e7da8208e40d8ec",
+    "iterations/visual02/mboi_yagua/visual/pose-10-attack_release.png": "f475502b981b958319c0c990943d46a6e21ccffd85e26585658ed6253269dc1b",
+    "iterations/visual02/mboi_yagua/visual/pose-11-pain.png": "a36ab29ca968232ada9d1549d2425556fa6f7be0d7d8debcba100801d17bb5f0",
+    "iterations/visual02/mboi_yagua/visual/pose-12-death.png": "58c2f91621812918084eabca9b9a8f00b1bc11d5ba7aec981aa8be120c6e6633",
+    "iterations/visual02/mboi_yagua/visual/pose-13-death.png": "f685b6c5c3a5e80f3865c67d889c107490877948b643655cfb9db1eeb0c93c90",
+    "iterations/visual02/mboi_yagua/visual/pose-14-death.png": "0720a080f9bd3d814a87fc8d99ec4fda990247bcc9d9f4dc3a6b689878ebdc02",
+    "iterations/visual02/mboi_yagua/visual/pose-15-death.png": "a237926945da7bdbcec25e278956bfdfc1905e38e34fb35c753593d892e76f57",
+    "iterations/visual02/mboi_yagua/visual/pose-16-death.png": "5facb7107098883451580db436bbfe6b7345aa42594cd777daf51baaaf095537",
+    "iterations/visual02/mboi_yagua/visual/pose-17-death.png": "befe22692485feff9944f3e646aa6c0e5f75a742249f2405718169af44d26a62",
+    "iterations/visual02/mboi_yagua/visual/pose-18-breath.png": "44c60bd1d1c28d35c00007f7490dcc60466d4b0e872a97df3eaeb17eac3b6b6a",
+    "iterations/visual02/mboi_yagua/visual/pose-19-breath.png": "c9ae3649d2804ac2c840ed2c1398bbf557b9a545fac9acdcc70262e2b35da5d1",
+    "iterations/visual02/mboi_yagua/visual/pose-20-breath.png": "ee9c1153d5c058cb8947c13b0d48e72a6f746d172dc3eaa8318d7716af7ed622",
+    "iterations/visual02/mboi_yagua/visual/pose-21-breath.png": "53c1f1fbac8baa6148203b951ac1509ae3972ef0b8cdfa32a2fd721a8833585d",
+    "iterations/visual02/mboi_yagua/visual/pose-22-rest.png": "76b6604553ec8ace88829f648a913e45bad2585fa0738c8b66d0de91b26c1465",
+    "iterations/visual02/mboi_yagua/visual/process.log": "8e451288754b52da4d2dc01c199d48ce513c40421586231a56b103c811db6956",
+    "iterations/visual02/mboi_yagua/visual/session.ini": "e4c1ac74676be48b86150ebfaf74c0513c6aa8fba2b4983cebb55f1d52f7af0b",
+    "iterations/visual02/mboi_yagua/visual/view-front.png": "49e6234286e307f1fa0ef7803797d0d00e61ed1bd2939514ff021643a058c95b",
+    "iterations/visual02/mboi_yagua/visual/view-head-front.png": "28cbb8382fe00d18ee731afe93efe23fe263e39a0d9b92d775a24f3cdcd131cd",
+    "iterations/visual02/mboi_yagua/visual/view-head-oblique.png": "68e711635d4d233caa5ed586ad99bdf2f2551102226101f7dbedcfba57a5dcb0",
+    "iterations/visual02/mboi_yagua/visual/view-lying-oblique.png": "76b6604553ec8ace88829f648a913e45bad2585fa0738c8b66d0de91b26c1465",
+    "iterations/visual02/mboi_yagua/visual/view-rear.png": "4d6856a9a6fbd527d15025a8085fb6bfacd9a70c3a46c7dd6d4880cef0ccbb36",
+    "iterations/visual02/mboi_yagua/visual/view-side.png": "50a5084d9c5e9d7a3c441db6434b745cbda22dc7cc4c00409cab96aee0e09732",
+    "native01/mboi_tui/baseline/commands.cfg": "20424473ef5e5d21048b7584d584479fdd013919be6447a7e3d9a0d1dd0de8c9",
+    "native01/mboi_tui/baseline/engine.log": "59e5508cc938b5b209b9d8e1b26f32bc50225c2310281f2e68ff4bbf17fd2d95",
+    "native01/mboi_tui/baseline/process.log": "85ba11e72c169c2b0adb0a9cee9f4cc1a68e445fc1a0a1679a33131c15cb756a",
+    "native01/mboi_tui/baseline/session.ini": "fba1d9beb1947ad9bce1ea530feb5eb2fa61fdcbd0d4440fcb690fa70fa3c041",
+    "native01/mboi_tui/fixture-source/MAPINFO.txt": "a08bc27a8ab7fd82d1fc0d3628519462b4a83451fae6006f7ac342d8704dc580",
+    "native01/mboi_tui/fixture-source/ZSCRIPT.txt": "4837ec0155404260e4fa29a49b800c3ec882f18717ff5b0fb036161e1a5246a5",
+    "native01/mboi_tui/fixture.zs": "500e076ae37304fee642f99023070ebd25ee6f9069565cd65a8f3eb88ffc272c",
+    "native01/mboi_tui/fresh-model/commands.cfg": "c5354e31432c3842e878c614ffddf59f27bb7964ffce3ef5b2dbcbb6accd2e86",
+    "native01/mboi_tui/fresh-model/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "native01/mboi_tui/fresh-model/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "native01/mboi_tui/fresh-model/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "native01/mboi_tui/fresh-model/engine.log": "27062b8ee88562121713a9e28e5ad0227fb576ca02b0a901522ba88084c19f95",
+    "native01/mboi_tui/fresh-model/pose-00-idle.png": "9dd960cd433413c2c5fa93d47df1f78f0acd48e91461d23d1a97ff2cc01313d6",
+    "native01/mboi_tui/fresh-model/pose-01-idle.png": "83c9b9530641884876183fc9b0cfc468cd640a253972a009d93e0ff16601be63",
+    "native01/mboi_tui/fresh-model/pose-02-run.png": "3e90564c74e50ce529fd0f29e9aeb8ef902a46f1a26f3e414c0c71f5b0d8cca7",
+    "native01/mboi_tui/fresh-model/pose-03-run.png": "3ff7f30bedf303a8826fffc7bb7789a7e0bee8a2009a02a0e6fb35df5596cdae",
+    "native01/mboi_tui/fresh-model/pose-04-run.png": "5cf08ceffbdf111b971576ef8ef329ef59842a0ff13af7f13ec47314a7f8f096",
+    "native01/mboi_tui/fresh-model/pose-05-run.png": "d936b7d7b333deaa913e88e993946042b0a09e03df7da7a74c2bac4a6b3687c8",
+    "native01/mboi_tui/fresh-model/pose-06-walk.png": "d6e9d746e2d14771993f80b4d506b75e621565207f8a1f44e0a8ff975d1ee8cd",
+    "native01/mboi_tui/fresh-model/pose-07-walk.png": "375bdbfb7893b7141a1f635f846376ffb9d913a5c47ba34df81f9b9c1668184a",
+    "native01/mboi_tui/fresh-model/pose-08-stun.png": "fa69ad0083a089eafd2df3b37c3fdb5d48360d6f6720a761d9654c223264c9c5",
+    "native01/mboi_tui/fresh-model/pose-09-attack_prepare.png": "e39a70b820a37c9f92ca54031fdc59c9aec104bdfda7cec4248fcebfbce6b822",
+    "native01/mboi_tui/fresh-model/pose-10-attack_release.png": "64cef17c9e15e1abdc10c04c78448e93e98a52d48ea041164e2239b4301ba8c5",
+    "native01/mboi_tui/fresh-model/pose-11-pain.png": "07b00b96de70a4f74173b01e7fdd1226ad42016bee6ede15aa4c6ac9b4a78935",
+    "native01/mboi_tui/fresh-model/pose-12-death.png": "5ccfccc346886f819740935f5c8b12633b4816772fbe647e9e2aac9c2c06492e",
+    "native01/mboi_tui/fresh-model/pose-13-death.png": "bfc05f252e80fab1d9541681143d5a123f5518e3c3a830acc689f5ea56db693e",
+    "native01/mboi_tui/fresh-model/pose-14-death.png": "60c34bbe8933af5b62237fc26b1d4063555a43207fca16aef67cf86e9760f631",
+    "native01/mboi_tui/fresh-model/pose-15-death.png": "253f162f3f5ceccb11ea63846f30ab2ab1e534641016157f97932ac41b1d2b75",
+    "native01/mboi_tui/fresh-model/pose-16-death.png": "4676c661060d012dbcfa71470f273f21033ed44b1c8a23e7dda988bc859fa78e",
+    "native01/mboi_tui/fresh-model/pose-17-death.png": "fa6fd1305ac4c42553fc268a36dc89d286320ca82a8121122a6fb1b56ac04d7a",
+    "native01/mboi_tui/fresh-model/pose-18-breath.png": "3dad866e0fd0ede941295a746e0603d3fa8351aaa85e8439fcbeb465a86cf14d",
+    "native01/mboi_tui/fresh-model/pose-19-breath.png": "b8220f8ebe1ce6c02ae651f81b51935b5cb76190439cf4ffe3278defb7b1eead",
+    "native01/mboi_tui/fresh-model/pose-20-breath.png": "1e6a28ce819d4d05a608e64b77859507d8a1dc7a50e7e915b31ee9a05e4de748",
+    "native01/mboi_tui/fresh-model/pose-21-breath.png": "b67aedc300b0550fdaba7107d91ff24c9dffa4089a0b5c6a79b8e2da78fd9476",
+    "native01/mboi_tui/fresh-model/pose-22-rest.png": "9d3b51a29fa3ca10dc2e3f4a2f6d0485d844a31aaa51ee045dc2ab65fd081654",
+    "native01/mboi_tui/fresh-model/process.log": "33e642baa3481e19f7a442587749f640451dea3a16f946a8b81b60d3c11b539e",
+    "native01/mboi_tui/fresh-model/session.ini": "b352bbdacb294b5dcb0bc8e12fb78222926d7c205efe7b0b42e02473712fec55",
+    "native01/mboi_tui/fresh-model/view-front.png": "897ecf3d788a4568972a364fccbf2393d0b880e93a00dd20fa8d1900b8897338",
+    "native01/mboi_tui/fresh-model/view-head-front.png": "c9dbed41c53808c9b8494ed32ef833cda4281a62ea9b94356e193eda813af6d7",
+    "native01/mboi_tui/fresh-model/view-head-oblique.png": "86e05685cec08a1108a71352a8ff2f77cbdd779516c1ada6d2aac4888dac09e5",
+    "native01/mboi_tui/fresh-model/view-lying-oblique.png": "9d3b51a29fa3ca10dc2e3f4a2f6d0485d844a31aaa51ee045dc2ab65fd081654",
+    "native01/mboi_tui/fresh-model/view-rear.png": "4dda7644f55b2412e9cdb32afbc0f03d115ff515443d5f5c308c7325c14290d5",
+    "native01/mboi_tui/fresh-model/view-side.png": "ffca859ef15cb60d1a2672858826267d9e3f7f8447687377945b836d5c57788d",
+    "native01/mboi_tui/model-reload/commands.cfg": "6835a2b5e0dc0ff67df4e8b6a4132e7ffc120b0f80da89720a96c371fa1da1d8",
+    "native01/mboi_tui/model-reload/engine.log": "2e29f33e1306db33bb09847c1fa80bbbaab62a66c03885c7e35de7199b7b56c8",
+    "native01/mboi_tui/model-reload/process.log": "6d83d267fde54edc469d69f87ff2a31d651660c8de96065723845838e603a7eb",
+    "native01/mboi_tui/model-reload/session.ini": "7ef4a83461e5cb13c99115dc0b7cb79eb6968dea4c719b2f6f1e37bcd63770ec",
+    "native01/mboi_tui/old-save-model/commands.cfg": "6835a2b5e0dc0ff67df4e8b6a4132e7ffc120b0f80da89720a96c371fa1da1d8",
+    "native01/mboi_tui/old-save-model/engine.log": "83c8affa30c7d12762976782c99636305e4721789c3c02e1f8e4b842138988a6",
+    "native01/mboi_tui/old-save-model/process.log": "2af14c8059eccc87beccf8e96d9e34ab27ac864cb7cf37413943d1c8cee3300e",
+    "native01/mboi_tui/old-save-model/session.ini": "e1973450ac202386c8c447ace84db325d28d79dbfbf952b55511ce21f34fa9d1",
+    "native01/mboi_tui/RESULTS.json": "f10ef1ea85203998e3d980a4ec1a9f5c5a189829e047970c1bf9d8a5c024f9a5",
+    "native01/mboi_tui/rollback/commands.cfg": "6835a2b5e0dc0ff67df4e8b6a4132e7ffc120b0f80da89720a96c371fa1da1d8",
+    "native01/mboi_tui/rollback/engine.log": "0b69c4831dd8d3a91724635cadba532721830ed40fa2f15b6883ca6baefe2856",
+    "native01/mboi_tui/rollback/process.log": "7ae723b54e706abc9c00f55062788dcfde033fd19c2eb88f0647b0538f58acb0",
+    "native01/mboi_tui/rollback/session.ini": "1895df2b939eb08966a46358b2aebcb7860f8d3d5de58479f6f3e58d8637a67f",
+    "native01/mboi_yagua/baseline/commands.cfg": "20424473ef5e5d21048b7584d584479fdd013919be6447a7e3d9a0d1dd0de8c9",
+    "native01/mboi_yagua/baseline/engine.log": "cc70a86f7229798063f7bc747fdd394aa4de9885761ecde731833b93794070b6",
+    "native01/mboi_yagua/baseline/process.log": "ee9b411984c35f206872256c754228446e7e0e5d63716a9316c639fff2fbed3f",
+    "native01/mboi_yagua/baseline/session.ini": "9029dcdc581e22f41c0bc555e003889f7690b5e95f8b6034a4e2f63295b9518c",
+    "native01/mboi_yagua/fixture-source/MAPINFO.txt": "a08bc27a8ab7fd82d1fc0d3628519462b4a83451fae6006f7ac342d8704dc580",
+    "native01/mboi_yagua/fixture-source/ZSCRIPT.txt": "01c77e7e5b95ef287bf0e8dca768a037b7252ceeafb9a6d9a2a6542ec2bed1e9",
+    "native01/mboi_yagua/fixture.zs": "6a876d61b86cdb4b991cb5bed97cdaa95d672ad323c0d906e1d03c6b4b2ea249",
+    "native01/mboi_yagua/fresh-model/commands.cfg": "c5354e31432c3842e878c614ffddf59f27bb7964ffce3ef5b2dbcbb6accd2e86",
+    "native01/mboi_yagua/fresh-model/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "native01/mboi_yagua/fresh-model/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "native01/mboi_yagua/fresh-model/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "native01/mboi_yagua/fresh-model/engine.log": "cc8ae120cb57bae38f2259823a42450498b4c25ae493b811df76099761f18b22",
+    "native01/mboi_yagua/fresh-model/pose-00-idle.png": "2da49d24898bc1d806fc47630fd765af05eaa7448cdc2b125c8a7d132dd9aa1e",
+    "native01/mboi_yagua/fresh-model/pose-01-idle.png": "e8234a2af891c1160541af9790ba1d0da329416b907dc1dcbcf87c078c03a51a",
+    "native01/mboi_yagua/fresh-model/pose-02-run.png": "dddb941fb8fc2ee73547637e66ab36338a113e145df302837f164e321716085f",
+    "native01/mboi_yagua/fresh-model/pose-03-run.png": "1efd499aad5dd9189d85eac028bec76c420df3dcc329b39a4e3bca689c20f9f9",
+    "native01/mboi_yagua/fresh-model/pose-04-run.png": "900d050d59e6228af62a0c755997b878a5abe3b932d441713b8c7540e57105bb",
+    "native01/mboi_yagua/fresh-model/pose-05-run.png": "2d0a755ffe1a09e54f84e6ec0d0c867bf257e7883c2d6447d84544f431791d4b",
+    "native01/mboi_yagua/fresh-model/pose-06-walk.png": "a2523b6db667c5405bf2af9f1a4314b6b365b97d8140f11195b3d08b89a3fb15",
+    "native01/mboi_yagua/fresh-model/pose-07-walk.png": "afdbec886108d5ff92eca1acc11ebb0da83c0dd97fb06373e2f011e34f666677",
+    "native01/mboi_yagua/fresh-model/pose-08-stun.png": "22b3badd3c63a4ff8dab0e1e531e78e9ee97e037357856ec2abb17888f5e5b3b",
+    "native01/mboi_yagua/fresh-model/pose-09-attack_prepare.png": "f676d6b37143275f80f6b7cd522e7b20c75ac4c11e34dc9c2e7da8208e40d8ec",
+    "native01/mboi_yagua/fresh-model/pose-10-attack_release.png": "f475502b981b958319c0c990943d46a6e21ccffd85e26585658ed6253269dc1b",
+    "native01/mboi_yagua/fresh-model/pose-11-pain.png": "a36ab29ca968232ada9d1549d2425556fa6f7be0d7d8debcba100801d17bb5f0",
+    "native01/mboi_yagua/fresh-model/pose-12-death.png": "58c2f91621812918084eabca9b9a8f00b1bc11d5ba7aec981aa8be120c6e6633",
+    "native01/mboi_yagua/fresh-model/pose-13-death.png": "f685b6c5c3a5e80f3865c67d889c107490877948b643655cfb9db1eeb0c93c90",
+    "native01/mboi_yagua/fresh-model/pose-14-death.png": "0720a080f9bd3d814a87fc8d99ec4fda990247bcc9d9f4dc3a6b689878ebdc02",
+    "native01/mboi_yagua/fresh-model/pose-15-death.png": "a237926945da7bdbcec25e278956bfdfc1905e38e34fb35c753593d892e76f57",
+    "native01/mboi_yagua/fresh-model/pose-16-death.png": "5facb7107098883451580db436bbfe6b7345aa42594cd777daf51baaaf095537",
+    "native01/mboi_yagua/fresh-model/pose-17-death.png": "befe22692485feff9944f3e646aa6c0e5f75a742249f2405718169af44d26a62",
+    "native01/mboi_yagua/fresh-model/pose-18-breath.png": "44c60bd1d1c28d35c00007f7490dcc60466d4b0e872a97df3eaeb17eac3b6b6a",
+    "native01/mboi_yagua/fresh-model/pose-19-breath.png": "c9ae3649d2804ac2c840ed2c1398bbf557b9a545fac9acdcc70262e2b35da5d1",
+    "native01/mboi_yagua/fresh-model/pose-20-breath.png": "ee9c1153d5c058cb8947c13b0d48e72a6f746d172dc3eaa8318d7716af7ed622",
+    "native01/mboi_yagua/fresh-model/pose-21-breath.png": "53c1f1fbac8baa6148203b951ac1509ae3972ef0b8cdfa32a2fd721a8833585d",
+    "native01/mboi_yagua/fresh-model/pose-22-rest.png": "76b6604553ec8ace88829f648a913e45bad2585fa0738c8b66d0de91b26c1465",
+    "native01/mboi_yagua/fresh-model/process.log": "631ae91ef79773c6d70e5ddfe51a165daa4c8bc0f372b25e02a1e9f2f8d689c8",
+    "native01/mboi_yagua/fresh-model/session.ini": "a1169ffb27db06e5bbb277b619397a04920b538b07034840575c54fcd52c0bed",
+    "native01/mboi_yagua/fresh-model/view-front.png": "49e6234286e307f1fa0ef7803797d0d00e61ed1bd2939514ff021643a058c95b",
+    "native01/mboi_yagua/fresh-model/view-head-front.png": "28cbb8382fe00d18ee731afe93efe23fe263e39a0d9b92d775a24f3cdcd131cd",
+    "native01/mboi_yagua/fresh-model/view-head-oblique.png": "68e711635d4d233caa5ed586ad99bdf2f2551102226101f7dbedcfba57a5dcb0",
+    "native01/mboi_yagua/fresh-model/view-lying-oblique.png": "76b6604553ec8ace88829f648a913e45bad2585fa0738c8b66d0de91b26c1465",
+    "native01/mboi_yagua/fresh-model/view-rear.png": "4d6856a9a6fbd527d15025a8085fb6bfacd9a70c3a46c7dd6d4880cef0ccbb36",
+    "native01/mboi_yagua/fresh-model/view-side.png": "50a5084d9c5e9d7a3c441db6434b745cbda22dc7cc4c00409cab96aee0e09732",
+    "native01/mboi_yagua/model-reload/commands.cfg": "6835a2b5e0dc0ff67df4e8b6a4132e7ffc120b0f80da89720a96c371fa1da1d8",
+    "native01/mboi_yagua/model-reload/engine.log": "fa654ae0ca3e1e869e6061e85c6a8654891a284cf9581e23ed55386ba67c11be",
+    "native01/mboi_yagua/model-reload/process.log": "ac6334ee45b358858f30aad8a11fe12cf79c812c435f28a377794a25020bf1cf",
+    "native01/mboi_yagua/model-reload/session.ini": "cc0e48c6ae010d8703839fa6c78e79c4fe57e1e766393dc052af1356abfd37bd",
+    "native01/mboi_yagua/old-save-model/commands.cfg": "6835a2b5e0dc0ff67df4e8b6a4132e7ffc120b0f80da89720a96c371fa1da1d8",
+    "native01/mboi_yagua/old-save-model/engine.log": "cb9da6b93c551f181e2169a32c814b4c47fbc2c2881f52ac3e647da5d8cc8620",
+    "native01/mboi_yagua/old-save-model/process.log": "ff68d8add4d755b7bf735d4f7ba640734eb6bffe05507be9fc4c5643ece080c1",
+    "native01/mboi_yagua/old-save-model/session.ini": "a3cd12192c91626be67832d063782627debfb7369336f30d5ed6928ea1e679ce",
+    "native01/mboi_yagua/RESULTS.json": "c3175d448f280b1309aaf879dd08b455ee8d7f79b0acf4ba0a5c378d4a2d7cef",
+    "native01/mboi_yagua/rollback/commands.cfg": "6835a2b5e0dc0ff67df4e8b6a4132e7ffc120b0f80da89720a96c371fa1da1d8",
+    "native01/mboi_yagua/rollback/engine.log": "20922aee9cc72f852136a8f91dad1127f161bf5dababae12ff3619fbee8dd4f5",
+    "native01/mboi_yagua/rollback/process.log": "5ce761956fa3600faa108ce9e986cfb59f89008831781b6489c82676c43dbfa2",
+    "native01/mboi_yagua/rollback/session.ini": "47ae6e39b10b3ce06a0224eb5b4ea7a60162587bf3ac0b4a83698ccc3ccfaade",
+    "presentation01/mboi_tui/model/commands.cfg": "ff5a6f411f643487d0669b105152837812ec7f522bc8add33cf0b34eaa26ffd6",
+    "presentation01/mboi_tui/model/engine.log": "558e7f0da9f9166092c0d8b031ef1dc0768c2d4efe814888e031142bb6ff5745",
+    "presentation01/mboi_tui/model/fixture-source/MAPINFO.txt": "a08bc27a8ab7fd82d1fc0d3628519462b4a83451fae6006f7ac342d8704dc580",
+    "presentation01/mboi_tui/model/fixture-source/ZSCRIPT.txt": "4837ec0155404260e4fa29a49b800c3ec882f18717ff5b0fb036161e1a5246a5",
+    "presentation01/mboi_tui/model/fixture.zs": "500e076ae37304fee642f99023070ebd25ee6f9069565cd65a8f3eb88ffc272c",
+    "presentation01/mboi_tui/model/presents.csv": "8a54110d201d81bbffc99553f60d60bc1e1ef9e46157d8f78bb5aad0731bf0b8",
+    "presentation01/mboi_tui/model/process.log": "bcc7a77ef5c100c117a8a17a33fd87b89053dc80596215c0126d5c2143d625ec",
+    "presentation01/mboi_tui/model/scene.png": "9dd960cd433413c2c5fa93d47df1f78f0acd48e91461d23d1a97ff2cc01313d6",
+    "presentation01/mboi_tui/model/session.ini": "c38194e759f0aa0686e138c870dada4564189ef7d6019c5ce4471545dc293dbc",
+    "presentation01/mboi_tui/RESULTS.json": "f5f43b469bc7d7e70b69c29775058f7208c060616021770f9943c7e4cae34550",
+    "presentation01/mboi_tui/sprite/commands.cfg": "ff5a6f411f643487d0669b105152837812ec7f522bc8add33cf0b34eaa26ffd6",
+    "presentation01/mboi_tui/sprite/engine.log": "2f828eb5818cc97b6cbcf67732807ed3fb445dace905575c3f96954a53d7dd72",
+    "presentation01/mboi_tui/sprite/fixture-source/MAPINFO.txt": "a08bc27a8ab7fd82d1fc0d3628519462b4a83451fae6006f7ac342d8704dc580",
+    "presentation01/mboi_tui/sprite/fixture-source/ZSCRIPT.txt": "4837ec0155404260e4fa29a49b800c3ec882f18717ff5b0fb036161e1a5246a5",
+    "presentation01/mboi_tui/sprite/fixture.zs": "500e076ae37304fee642f99023070ebd25ee6f9069565cd65a8f3eb88ffc272c",
+    "presentation01/mboi_tui/sprite/presents.csv": "f461a132d4353e1d0b63773eafe598507b70b79cd4a0129cd989e8c018f89e9a",
+    "presentation01/mboi_tui/sprite/process.log": "0d55f02d75946ad441684ed5def1c224dbcb87b584146f5142fd2c15bd587409",
+    "presentation01/mboi_tui/sprite/scene.png": "0605f2270fd9d84c44e66ad2f90d5b98c47cc6f531e4f7bfe38bf03b59f89921",
+    "presentation01/mboi_tui/sprite/session.ini": "50910a7807d642ac4bb9069378795e1fcaa78970f0640f704d07f12b8bdb7c23",
+    "presentation01/mboi_yagua/model/commands.cfg": "ff5a6f411f643487d0669b105152837812ec7f522bc8add33cf0b34eaa26ffd6",
+    "presentation01/mboi_yagua/model/engine.log": "ae54fcdd0602c8f23ed7dce9c4f74de725381294a4c19e8d40aa4936702bb45f",
+    "presentation01/mboi_yagua/model/fixture-source/MAPINFO.txt": "a08bc27a8ab7fd82d1fc0d3628519462b4a83451fae6006f7ac342d8704dc580",
+    "presentation01/mboi_yagua/model/fixture-source/ZSCRIPT.txt": "01c77e7e5b95ef287bf0e8dca768a037b7252ceeafb9a6d9a2a6542ec2bed1e9",
+    "presentation01/mboi_yagua/model/fixture.zs": "6a876d61b86cdb4b991cb5bed97cdaa95d672ad323c0d906e1d03c6b4b2ea249",
+    "presentation01/mboi_yagua/model/presents.csv": "fe9716526aedadf77fca081be2da93ba8fce65a4a57d85cc0fa1282b7592b0f2",
+    "presentation01/mboi_yagua/model/process.log": "ff11d9d589e220bbaf928bda605d8a6f355093fff01a71d8fb8b3d0da5efdbb7",
+    "presentation01/mboi_yagua/model/scene.png": "2da49d24898bc1d806fc47630fd765af05eaa7448cdc2b125c8a7d132dd9aa1e",
+    "presentation01/mboi_yagua/model/session.ini": "3c7e37564d6a5750d911a85768d6f59ccc4bc7cc1477549dc5149c74620e8b48",
+    "presentation01/mboi_yagua/RESULTS.json": "f960985ac39ae3d0672e1990f7dd0d9b883087838cb7e43045f94ee0a76cd342",
+    "presentation01/mboi_yagua/sprite/commands.cfg": "ff5a6f411f643487d0669b105152837812ec7f522bc8add33cf0b34eaa26ffd6",
+    "presentation01/mboi_yagua/sprite/engine.log": "8a46b2c27382bdb233668ec74e4883d84cd63f19dfb84a9d96b089ee2e885c90",
+    "presentation01/mboi_yagua/sprite/fixture-source/MAPINFO.txt": "a08bc27a8ab7fd82d1fc0d3628519462b4a83451fae6006f7ac342d8704dc580",
+    "presentation01/mboi_yagua/sprite/fixture-source/ZSCRIPT.txt": "01c77e7e5b95ef287bf0e8dca768a037b7252ceeafb9a6d9a2a6542ec2bed1e9",
+    "presentation01/mboi_yagua/sprite/fixture.zs": "6a876d61b86cdb4b991cb5bed97cdaa95d672ad323c0d906e1d03c6b4b2ea249",
+    "presentation01/mboi_yagua/sprite/presents.csv": "ed315390dce729f99026ae1aaf318f73f3462eb2e83331466147656dd8449b4f",
+    "presentation01/mboi_yagua/sprite/process.log": "14b8d1a940f5373e8130ca2a94e5cac15db3a2001299741dfefaa84ff8cc7b73",
+    "presentation01/mboi_yagua/sprite/scene.png": "0605f2270fd9d84c44e66ad2f90d5b98c47cc6f531e4f7bfe38bf03b59f89921",
+    "presentation01/mboi_yagua/sprite/session.ini": "aa342fc7e7f41cafa740ca6b542d99e03389b4e3999efc4fa30d3e84a18f9171",
+    "static/issue727-build01.log": "ced361ef3cdc2ccf7e0f72fa353dc1fbaa5928c7e6d4eb51b5906bc1abdc413f",
+    "static/issue727-geometry01.log": "c6e4d472ab4e4a33e270224d842b0ffd09f7e3d7a09e2928fc6b4145439ed748",
+    "static/issue727-geometry02.log": "0a924a99e46fad4c013934696e428d7a63f708da86acf2de7986f887f7dac902",
+    "static/issue727-repeat-final.json": "506632b9721405a72c3cb388a1a05627b7f19dab27cd4100d0c7bdc5282260f6",
+    "static/issue727-material-opacity.json": "acc550393098e688eba6dc16a4f190e6cad1f74104f0ceac84dfff889a99ae8d",
+    "validation-final.json": "563b0487e4ddcedb6a31d81fffb15e0b07094ad96597be2117212ad7d7117123"
+  }
+}

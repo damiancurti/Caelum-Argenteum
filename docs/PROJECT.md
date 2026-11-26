@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.41** - 2026-11-14.
+Documentation version: **5.17.42** - 2026-11-14.
+
+## 5.17.42 - Hybrid serpent models (#727)
+
+Mbói Tu’ĩ and Mbói Yaguá gain editable native 23-frame models on their existing
+provisional classes, bringing the new folklore model coverage to 18 of 56.
+Closed geometry, deterministic exports, native save continuity and inherited
+combat/loot checks pass; ASSETS records qualified presentation measurements.
+CA727-HYBRID-SERPENTS-01 retains author art/gameplay acceptance. Regional
+gallery placement, other characters/equipment and the V5.16 campaign remain
+unfinished; no new actor rules or save schema are introduced.
 
 ## 5.17.41 - Weapon assembly drops (#725)
 
