@@ -1064,3 +1064,12 @@ assets/validation_v5_17_42/evidence/** -text -diff
 /assets/validation_v5_17_60/*.zs text eol=lf
 /assets/validation_v5_17_60/evidence/** -text -diff
 /src/caelum/data/inventory_bladed_weapons.modeldef text eol=lf
+
+# #765 axe/tool assemblies, portable sources and raw evidence.
+/assets/generators/*inventory_axes_models.py text eol=lf
+/assets/source/art/inventory_models_647/axes/** text eol=lf
+/assets/source/art/inventory_models_647/axes/**/*.png binary
+/assets/validation_v5_17_61/*.py text eol=lf
+/assets/validation_v5_17_61/*.zs text eol=lf
+/assets/validation_v5_17_61/evidence/** -text -diff
+/src/caelum/data/inventory_axes.modeldef text eol=lf

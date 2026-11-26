@@ -46,6 +46,7 @@ from assets.generators.validate_inventory_magic_weapon_bindings import validate 
 from assets.generators.validate_inventory_magic_tiers_models import validate as magic_tier_problems
 from assets.generators.validate_inventory_effigies_models import validate as effigy_problems
 from assets.generators.validate_inventory_bladed_weapons_models import validate as bladed_weapon_problems
+from assets.generators.validate_inventory_axes_models import validate as axe_problems
 from assets.generators.validate_inventory_gems_models import validate as inventory_gem_problems
 from assets.generators.validate_inventory_book_bindings import validate as inventory_book_problems
 from assets.generators.validate_inventory_jewelry_models import validate as inventory_jewelry_problems
@@ -168,6 +169,7 @@ def validate(root):
     errors.extend(magic_tier_problems(root))
     errors.extend(effigy_problems(root))
     errors.extend(bladed_weapon_problems(root))
+    errors.extend(axe_problems(root))
     errors.extend(inventory_ingot_problems(root))
     errors.extend(regional_material_problems(root))
     errors.extend(beast_regional_material_problems(root))

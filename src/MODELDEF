@@ -4803,3 +4803,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_magic_tiers.modeldef"
 #include "caelum/data/inventory_effigies.modeldef"
 #include "caelum/data/inventory_bladed_weapons.modeldef"
+#include "caelum/data/inventory_axes.modeldef"
