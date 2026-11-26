@@ -27,6 +27,11 @@ def output_files(source=SOURCE, definition_name='inventory_ammunition.modeldef',
         mesh=Mesh();parts=[]
         for part in config['families'][item['family']]['parts']:
             component,volumes=geometry(neutral,{'parts':[part]},item['tier'])
+            if part.get('normalize_uv',False):
+                # Folded hollow profiles can revisit Z and exceed the default UV range.
+                low_uv=[min(uv[axis] for uv in component.uv) for axis in (0,1)]
+                high_uv=[max(uv[axis] for uv in component.uv) for axis in (0,1)]
+                component.uv=[tuple((uv[axis]-low_uv[axis])/max(1e-12,high_uv[axis]-low_uv[axis]) for axis in (0,1)) for uv in component.uv]
             matrix=part.get('rotation',[[1,0,0],[0,1,0],[0,0,1]])
             offset=part.get('offset',[0,0,0])
             material=config['tier_materials'][item['tier']].get(part['material'],part['material'])

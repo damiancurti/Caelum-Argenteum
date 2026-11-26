@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-234 - Normalize folded profile UVs before selecting atlas pixels
+
+Status/evidence: STATIC-VERIFIED geometry/UV checks and ENGINE-VERIFIED visual
+inspection, #668, 2026-11-13. GZDoom 4.14.2, Windows 11, Vulkan 1280x720.
+A hollow cup profile travels up its outer wall, across the lip and back down to
+the inner floor. The ordinary loft's first/last-Z UV formula can therefore leave
+the intended material rectangle even when the component is closed and outward.
+Optional per-component UV normalization bounds the folded profile before atlas
+mapping. Validate native quantized coordinates, triangle indices and every UV;
+verify that earlier parts without the option produce identical native files.
+#668 retains exact equality for all 22 ammunition/document/ingot resources.
+
+Material ownership does not establish visual suitability: a warm underside tile
+made the new cup interior resemble brown contents. Native review rejected it;
+the final lining uses unchanged dark pixels from the approved icon's own cup,
+with an opaque inset per CA-KP-232. Geometry/manifold checks remain separate
+from visual and author acceptance. See assets/validation_v5_17_12/evidence:
+iterations/model01.json, generator-compatibility.json, rejected visual03,
+continuity captures and SUMMARY.json. CA668-WATERSKIN-01 remains pending.
+
 ## CA-KP-233 - Verify that both subjects are visible before comparing art costs
 
 Status/evidence: ENGINE-VERIFIED diagnostic correction, #664, 2026-11-13.

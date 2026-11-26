@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.11** - 2026-11-13.
+Documentation version: **5.17.12** - 2026-11-13.
+
+## 5.17.12 - Water-ration inventory model (#668)
+
+Two native bindings share the original waterskin/cup assembly. Native
+continuity/rollback, stacking and actual consumption/thirst restoration pass
+220 checks; the final visual run passes 47. Six exports repeat exactly, all
+18,215 package entries match src and visible presentation evidence is recorded.
+Preserve CA668-WATERSKIN-01, ordinary-menu review and earlier author checks.
 
 ## 5.17.11 - Unplaced furniture drops (#666)
 

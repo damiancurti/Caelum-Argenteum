@@ -1,0 +1,18 @@
+newmtl leather
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/water/materials.png
+newmtl strap
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/water/materials.png
+newmtl dark
+Kd 1 1 1
+map_Kd src/graphics/caelum/icons/ca_water_ration.png
+newmtl iron
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/consumables/materials.png
+newmtl blue
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/consumables/materials.png
+newmtl cup_iron
+Kd 1 1 1
+map_Kd src/models/caelum/props/stations/ca_station_iron.png

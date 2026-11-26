@@ -1,6 +1,23 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.11** - 2026-11-13.
+Documentation version: **5.17.12** - 2026-11-13.
+
+## 5.17.12 - Water-ration waterskin (#668)
+
+The author-requested 3D inventory conversion adds a closed leather waterskin,
+strap/loop, blue pendant and hollow drinking cup for the existing water ration
+and its legacy maze subclass. Native consumable rules and original icons remain
+intact. Owned material pixels are reused unchanged. Optional UV normalization
+supports the folded cup profile while preserving all 22 earlier native exports.
+The final visual run passes 47 assertions; native continuity/rollback and actual
+consumption/thirst restoration pass 220 with exact phase counts. Six exports
+repeat byte-for-byte and all 18,215 package entries match src. One visible
+two-object pair records 992.72/982.58 queue presents/s, p95 1.2888/1.3370 ms,
+p99 1.5651/1.7446 ms; ASSETS records measurement scope and environment. Rejected
+material choices remain documented, including the brown inner lining replaced
+by unchanged dark cup-interior pixels from the approved icon. Evidence:
+assets/validation_v5_17_12/evidence/SUMMARY.json. CA668-WATERSKIN-01 remains
+pending; no ordinary-menu, campaign-performance or author acceptance is implied.
 
 ## 5.17.11 - Unplaced furniture models (#666)
 

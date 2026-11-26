@@ -1,0 +1,11 @@
+{
+  "issue": 668,
+  "parent_issue": 647,
+  "date": "2026-11-13",
+  "method": "Original reference-led mesh built from the accepted water-ration icon. Reuses unchanged owned water/consumables atlases, original station iron pixels and the approved icon cup-interior pixels; no image generation or raster editing.",
+  "reference": "src/graphics/caelum/icons/ca_water_ration.png",
+  "roles": "Closed leather body, angled neck, carrying strap/loop, blue pendant and separate hollow metal drinking cup with dark inner lining. All are visual components of one native ration.",
+  "dark_uv": "Cup-interior source rectangle [33,91,41,95] has alpha>=250; use inset [34,92,40,94] to avoid transparent-edge filtering. The complete original PNG remains unchanged.",
+  "original_atlases": "Built-in image_gen sources/prompts/provenance remain under inventory_models_647/water and consumables. Existing station iron remains in props/stations. Original pixels are copied unchanged for portable material references.",
+  "acceptance": "New dropped art awaits author review. No reusable-water-container mechanics or mate-art reinstatement."
+}

@@ -22,6 +22,7 @@ from assets.generators.validate_inventory_water_models import validate as invent
 from assets.generators.validate_inventory_food_models import validate as inventory_food_problems
 from assets.generators.validate_inventory_ammunition_models import validate as inventory_ammunition_problems
 from assets.generators.validate_inventory_ingot_models import validate as inventory_ingot_problems
+from assets.generators.validate_inventory_waterskin_models import validate as inventory_waterskin_problems
 from assets.generators.validate_inventory_furniture_models import validate as inventory_furniture_problems
 from assets.generators.validate_inventory_camp_models import validate as inventory_camp_problems
 from assets.generators.validate_inventory_document_models import validate as inventory_document_problems
@@ -97,6 +98,7 @@ def validate(root):
     errors.extend(inventory_document_problems(root))
     errors.extend(inventory_camp_problems(root))
     errors.extend(inventory_furniture_problems(root))
+    errors.extend(inventory_waterskin_problems(root))
     errors.extend(inventory_ingot_problems(root))
     errors.extend(regional_material_problems(root))
     errors.extend(pombero_combat_problems(root))

@@ -4745,3 +4745,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/nahuelito_combat.modeldef"
 #include "caelum/data/inventory_camp.modeldef"
 #include "caelum/data/inventory_furniture.modeldef"
+#include "caelum/data/inventory_waterskin.modeldef"
