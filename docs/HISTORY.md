@@ -1,6 +1,83 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.109** - 2026-11-19.
+Documentation version: **5.17.110** - 2026-11-21.
+
+## 5.17.110 - Shorten measured native contamination value dispatch (#864)
+
+Full project validation passes with no errors; the generated document index is current.
+
+The current 109 runtime was profiled before selecting a change. Deep sampled
+scopes measured Exchange 4.4021, Transfer 2.9949, Value 2.1461, SettleNow 0.7415 and
+Get 0.7375 ms per sampled tic. These scopes nest and include instrumentation;
+they cannot be added or treated as uninstrumented savings. A separate 42-tic
+classification observed 154,994 Value calls: 148,678 from native gate/vehicle
+families, 5,733 warm NPC reads, 378 inventory reads and 205 other actor reads.
+Warm NPC pointer comparisons had zero mismatches. Exact launch/source manifests
+and all raw samples are retained.
+
+The final Value branch bypasses pure checks that cannot match these exclusive
+families, retaining the original GetCarrier/Get bodies, exposure settlement and
+revision/concentration tail. No fields, caches, data or migration are introduced.
+Only that source member and two release strings change. All 18,764 other members
+of the 18,767-member runtime are byte-identical; all members match src and the
+Value source matches prototype02. Runtime SHA256:
+1a0b1348399d3afe0e84418e54dd9c5b012fee17756eb57ccaf2faad5d30fad5.
+The portable prototype builder repeats the private overlay byte for byte.
+
+Prototype01 passed 745 assertions and improved native-piece reads but slowed the
+NPC fallback (4.3955 to 5.5801ms per 160,000 seed reads). It was superseded by the
+explicit NPC path in prototype02. Prototype02 passed 745 assertions; extending the
+fixture with pending first-read exposure brought the separate prototype run to 787.
+These are supplementary attempts, not part of the final continuity count.
+
+The canonical five-phase suite passes 3,488 assertions: baseline 787, final
+fresh 787, upgrade 638, reload 638 and old-runtime rollback 638. Of these, 2,063
+run on the final package and 1,425 on the prior package. Paired independent
+records/exposures compare values and mutation effects across the native families,
+NPC controls, pending first-read settlement, equal/future timestamps and a legacy
+record revision. Retained stack/vessel contracts cover ownership and heterogeneous
+lots. Persistence seeds deliberately isolate environmental exposure; the paired
+matrix separately covers first-read exposure effects. Neither is manual acceptance.
+
+Final-runtime synchronous loops alternate original/final order; every comparison
+agrees. The second NPC row repeats its unmodified control setup. Loop costs are
+not frame-time measurements:
+
+| Native class / setup | Original / final ms per 160,000 reads |
+| --- | ---: |
+| CA864GateProbe / seed state | 7.9628 / 4.2629 |
+| CA864GateProbe / settled exposure | 28.6497 / 19.9431 |
+| CA864VehicleProbe / seed state | 8.4526 / 4.6366 |
+| CA864VehicleProbe / settled exposure | 27.7284 / 20.7273 |
+| CA864NpcProbe / seed state | 4.3272 / 3.9615 |
+| CA864NpcProbe / repeated NPC control | 4.2666 / 3.8336 |
+
+Six final/control reference windows use the recorded GZDoom 4.14.2, Windows 11,
+Ryzen 9 5950X and RTX 3070 Ti/Vulkan environment, one hidden unpaused engine at 5%
+audio with no concurrent heavy work. The normal siege retains its existing
+1,000-attacker admission cap/600-defender design; the two measured windows agree
+on actual census, health and observer position. No retired 6,000-attacker test runs.
+
+| Scene | Queue presents/s | Present p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| siege-control01 | 2.062 | 543.750 / 556.646 / 556.646 | 29.472 / 44.506 / 47.047 / 66.147 |
+| siege-final01 | 2.127 | 520.119 / 524.793 / 524.793 | 29.163 / 44.249 / 47.183 / 56.345 |
+| mansion-final01 | 73.251 | 15.642 / 16.908 / 18.111 | 28.571 / 39.387 / 41.202 / 42.380 |
+| sewers-final01 | 178.420 | 7.330 / 8.170 / 39.478 | 28.572 / 32.476 / 34.256 / 45.980 |
+| city-final01 | 103.903 | 11.114 / 12.260 / 13.911 | 28.570 / 35.689 / 36.985 / 37.809 |
+| ground-final01 | 76.674 | 15.059 / 15.986 / 18.047 | 28.578 / 38.544 / 40.035 / 42.505 |
+
+Six native images were directly inspected and fingerprinted; each is 1280x720,
+matching the requested resolution. The mansion opening dialogue and diagnostic
+notifications remain visible. The siege gateway, sewer entrance and city transport/
+paving references retain their existing presentation.
+
+Queue presents are application submissions, not monitor scanout. Tic intervals
+include pacing/frame work. These fixed entrances, two city angles and bounded
+siege samples are not full-map or route acceptance. The small dispatch reduction
+does not resolve the overall siege rendering requirement; do not extrapolate the
+microbenchmark ratios to complete-frame gains. All prior author checks and the
+broader batch remain open. Evidence/reproduction: assets/validation_v5_17_110.
 
 ## 5.17.109 - Select shared hand art from actual clothing gloves (#861)
 

@@ -4,6 +4,31 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-266 - Measure the fallback after adding a typed shortcut
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #864 / 5.17.110,
+2026-11-21, GZDoom 4.14.2. Native verification is not author acceptance.
+
+A faster hot-family branch can add work to other frequent callers. The first
+Value prototype improved gate/vehicle reads but increased the repeated NPC
+control from 4.3955 to 5.5801ms per 160,000 calls. Adding an exclusive NPC dispatch
+through the unchanged Get method removed that observed fallback regression.
+Measure all relevant families and alternate loop order; preserve rejected
+performance attempts rather than reporting only the fastest type.
+
+Do not shortcut a live Value read to a stored scalar: it first settles pending
+exposure and may repair carrier attachment or delegated state. Prove the skipped
+type branches are pure and impossible, retain the shared settlement/revision
+tail, and compare independent records with pending first-read, equal/future
+clock boundaries and legacy revisions. Repeated reads of an already-settled
+object alone cannot verify the first-read effects. Ownership, native save/load
+and old-runtime reversal need separate evidence. No value cache was added here.
+
+Raw source/class proofs, independent native cases, loop measurements and the
+qualified full-scene presentation/tic windows: assets/validation_v5_17_110.
+Nested diagnostic scopes are not additive; a faster lookup is not proof that
+the full siege meets the author's rendering expectation.
+
 ## CA-KP-265 - Keep hand-layer ownership checks live while caching references
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #861 / 5.17.109,

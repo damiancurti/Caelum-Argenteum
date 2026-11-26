@@ -1411,3 +1411,10 @@ assets/validation_v5_17_109/*.html text eol=lf diff
 src/caelum/character/CaelumAppearanceHands.zs text eol=crlf
 src/caelum/equipment/CaelumInventoryService.zs text eol=crlf
 src/caelum/player/CaelumPlayer.zs text eol=crlf
+
+# Native Value dispatch evidence and portable reproduction tools (#864).
+assets/validation_v5_17_110/** -text -diff
+assets/validation_v5_17_110/*.py text eol=lf diff
+assets/validation_v5_17_110/*.json text eol=lf diff
+assets/validation_v5_17_110/*.txt text eol=lf diff
+assets/validation_v5_17_110/*.html text eol=lf diff

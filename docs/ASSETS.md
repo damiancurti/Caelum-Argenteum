@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.109** - 2026-11-19.
+Documentation version: **5.17.110** - 2026-11-21.
+
+## 5.17.110 - Shorten measured native contamination value dispatch (#864)
+
+No art, geometry, material, pose or attachment changes. The native mansion,
+sewer, peaceful city/ground and normal-siege references use the retained assets.
+Evidence and captures are in assets/validation_v5_17_110; those fixed-camera
+samples are engineering references, not acceptance of the broader #463 finish.
+Existing #736, clothing, grip and sewer-material review gates remain pending.
 
 ## 5.17.109 - Select shared hand art from actual clothing gloves (#861)
 
