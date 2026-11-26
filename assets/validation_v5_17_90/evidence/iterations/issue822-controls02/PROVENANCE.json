@@ -1,0 +1,15 @@
+{
+  "issue": 822,
+  "parent_issue": 461,
+  "status": "candidate_author_review_pending",
+  "author": "Damian Curti",
+  "reference_images": {
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/21_xalpen.png": "867c21e64a44b6e5ca291ec797afecdd7f6fa9bab69b217020c0e5174a9f530d",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/27_luz_mala.png": "4bb8caddad781c58658bbc62ffd6998e1f27abc7d936d8e1b88a2349083065d5",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/34_anchimallen.png": "1ca9bd0898e0e99086dea8f498e5da9d289d08c2f0b12bac523313e808c5e5ad",
+    "assets/source/bestiary_453/imagenes/05_Bestias_magicas/56_huayrapuca.png": "444534f6c5fa56e6c6f8f639f56a39111fd1ef010fe1184eeb3753dcaf07e4ec"
+  },
+  "material_source": "MATERIALS_PROMPT.json",
+  "geometry": "Original dimensionless controls and owned closed anatomy/garment/native animation tools.",
+  "limits": "Distinct owned-reference forms: adult female reptile-centaur Xalpen with four legs and long tail; pale-green skull-orb Luz Mala with flame wisps and no limbs; childlike amber Anchimallen with short hair, ivory tunic and bare feet; adult female-faced feathered serpent-dragon Huayrapuca with long neck, four legs, two wings and long tail. Fixed garments/light-colored materials are art; no shared taxonomy, new lighting mechanics, metric scale, powers, rules, inventory or cultural claims."
+}

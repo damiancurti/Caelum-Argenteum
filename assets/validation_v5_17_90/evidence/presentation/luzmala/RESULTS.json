@@ -1,0 +1,99 @@
+{
+  "issue": 822,
+  "species": "luzmala",
+  "scope": "Measure one 700-tic sprite/model pair for a real Xalpen/Luz Mala/Anchimallen/Huayrapuca; no campaign or crowd budget.",
+  "baseline_sha256": "76b90a267723491bf9d738470d89d21f5a3d625c318ef56494477177583dbad7",
+  "runtime_sha256": "88941ddf47abe63d6194032bed919c58a06fbedf8034e4b6e4822f897df29bd9",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "sprite",
+      "pid": 50316,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 422988205.72720003,
+        "END": 423008218.7958
+      },
+      "fixture_sha256": "7868e326fe87025c4965aac2f8a4a4fa8201a13bd04b49acd0078eb79f3aee98",
+      "bench_sha256": "d3e98c955d76f1da23efbdd110cef297630b7542d0432e9a8d914ecd0374944e",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57142957142857,
+        "p50_ms": 28.5804,
+        "p95_ms": 28.9378,
+        "p99_ms": 29.0595,
+        "max_ms": 29.9257
+      },
+      "presentation": {
+        "pid": 50316,
+        "trace_sha256": "e1a7f07762d49ca6574ff30301d2f979047d0772f2a51f6a928b01dfdd6913c5",
+        "rows": 47337,
+        "scene_presents": 33797,
+        "mean_present_fps": 1929.8028447905078,
+        "present_intervals": {
+          "samples": 33796,
+          "mean_ms": 0.518187649427243,
+          "p50_ms": 0.49090003967285156,
+          "p95_ms": 0.6990000009536743,
+          "p99_ms": 0.7926999926567078,
+          "max_ms": 1.8587999939918518
+        },
+        "native_call_duration": {
+          "samples": 33797,
+          "mean_ms": 0.06314934179529402,
+          "p50_ms": 0.05889999866485596,
+          "p95_ms": 0.08460003137588501,
+          "p99_ms": 0.11269998550415039,
+          "max_ms": 0.4246000051498413
+        }
+      }
+    },
+    {
+      "kind": "model",
+      "pid": 44172,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 423023430.8952,
+        "END": 423043344.9511
+      },
+      "fixture_sha256": "7868e326fe87025c4965aac2f8a4a4fa8201a13bd04b49acd0078eb79f3aee98",
+      "bench_sha256": "d3e98c955d76f1da23efbdd110cef297630b7542d0432e9a8d914ecd0374944e",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57102914285714,
+        "p50_ms": 28.5646,
+        "p95_ms": 28.9744,
+        "p99_ms": 29.0729,
+        "max_ms": 29.2502
+      },
+      "presentation": {
+        "pid": 44172,
+        "trace_sha256": "28d1e2bb14259f54b4f2a4b019c89d5560e1ce5f231008b1e11f91657aa8b4c5",
+        "rows": 46075,
+        "scene_presents": 32482,
+        "mean_present_fps": 1865.2584414327823,
+        "present_intervals": {
+          "samples": 32481,
+          "mean_ms": 0.5361187371074748,
+          "p50_ms": 0.5101999640464783,
+          "p95_ms": 0.7293000221252441,
+          "p99_ms": 0.8331999778747559,
+          "max_ms": 1.624500036239624
+        },
+        "native_call_duration": {
+          "samples": 32482,
+          "mean_ms": 0.06367262172130857,
+          "p50_ms": 0.05910003185272217,
+          "p95_ms": 0.08619999885559082,
+          "p99_ms": 0.118399977684021,
+          "max_ms": 0.5393000245094299
+        }
+      }
+    }
+  ]
+}

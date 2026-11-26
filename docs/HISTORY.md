@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.89** - 2026-11-16.
+Documentation version: **5.17.90** - 2026-11-16.
+
+## 5.17.90 - Four distinct bestiary forms (#822, 2026-11-16)
+
+Added Xalpen, Luz Mala, Anchimallen and Huayrapuca owned-reference candidates,
+original materials, editable geometry/animation and inherited combat mappings.
+Sixteen exports repeat; closed/posed geometry and 702 final-package native
+assertions pass. Native review refined ears, clothing, hair/cord, flame curves,
+throat and feather orientation; independent tests corrected attachment witnesses.
+Earlier diagnostics remain. ASSETS and
+assets/validation_v5_17_90/evidence/SUMMARY.json retain scope and presentation
+evidence. CA822-FORMS-01 originates here and remains pending; no author check
+was accepted or removed. Coverage reaches 56/56 provisional classes. The
+complete batch and consolidated review remain unfinished.
 
 ## 5.17.89 - Curupi, Gualicho, Uritu Orko and Maip candidates (#821, 2026-11-16)
 

@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.89** - 2026-11-16.
+Documentation version: **5.17.90** - 2026-11-16.
+
+## 5.17.90 - All provisional bestiary classes have native candidates (#822)
+
+Xalpen, Luz Mala, Anchimallen and Huayrapuca bring native model coverage to
+56/56 provisional classes. Protected identities 018/019 remain unchanged.
+Sixteen-file repeated export, closed/posed geometry and 702 final-package
+native assertions pass. ASSETS records reviewed art and isolated presentation
+results with their limits. CA822-FORMS-01 remains pending. Regional displays,
+other characters/modular fitting, campaign authoring and siege rendering still
+prevent the final batch handoff. Model coverage does not establish acceptance.
 
 ## 5.17.89 - Four distinct bestiary figure candidates (#821)
 

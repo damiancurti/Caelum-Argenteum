@@ -1,0 +1,3029 @@
+{
+  "schema_revision": 1,
+  "issue": 822,
+  "parent_issue": 461,
+  "status": "candidate_author_review_pending",
+  "frames": [
+    {
+      "sprite": "MIID",
+      "letter": "A",
+      "action": "idle",
+      "cycle": "idle",
+      "sample": 0
+    },
+    {
+      "sprite": "MIID",
+      "letter": "B",
+      "action": "idle",
+      "cycle": "idle",
+      "sample": 8
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "A",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 0
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "B",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 6
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "C",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 12
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "D",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 18
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "A",
+      "action": "walk",
+      "cycle": "walk",
+      "sample": 6
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "B",
+      "action": "walk",
+      "cycle": "walk",
+      "sample": 18
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "A",
+      "action": "stun",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 6
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 12
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "D",
+      "action": "attack_prepare",
+      "transforms": [
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -125
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -30
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": -12
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "E",
+      "action": "attack_release",
+      "transforms": [
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -75
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -25
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": 10
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "F",
+      "action": "pain",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -8
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -12
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "G",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -50
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 30
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "H",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -30
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -50
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 30
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "I",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -50
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 30
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "J",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -78
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -50
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 30
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "K",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -88
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -3
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 6
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 14
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 12
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -12
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -18
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "L",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -90
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 5
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 6
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -8
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -14
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "A",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8.0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10.0
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "B",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 9.0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -9.0
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "C",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8.0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10.0
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "D",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 7.0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -11.0
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        }
+      ]
+    },
+    {
+      "sprite": "SLMD",
+      "letter": "A",
+      "action": "rest",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -90
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 20
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    }
+  ],
+  "species": {
+    "xalpen": {
+      "actor": "CaelumBestiary021",
+      "catalogue_id": "CA-FOLK-021",
+      "vertices": 11762,
+      "triangles": 21384,
+      "hierarchical_parts": 91,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 4096,
+          "triangles": 7524
+        },
+        {
+          "material": "atlas",
+          "vertices": 4096,
+          "triangles": 7592
+        },
+        {
+          "material": "atlas",
+          "vertices": 3374,
+          "triangles": 6268
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -103.84038049364207,
+            -22.085950742845753,
+            0.0
+          ],
+          "max": [
+            11.052680560376382,
+            22.085950742845753,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -22.085950742845753,
+            0.0
+          ],
+          "max": [
+            11.052680560376382,
+            22.085950742845753,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -22.085950742845753,
+            0.0
+          ],
+          "max": [
+            11.052680560376382,
+            22.085950742845753,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -22.358212209000886,
+            0.0
+          ],
+          "max": [
+            21.306265917977605,
+            22.511447629167446,
+            102.15183415509186
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -22.085950742845753,
+            0.0
+          ],
+          "max": [
+            11.052680560376386,
+            22.085950742845753,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -22.511447629167446,
+            0.0
+          ],
+          "max": [
+            21.306265917977605,
+            22.358212209000886,
+            102.13373677064853
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -22.358212209000886,
+            0.0
+          ],
+          "max": [
+            21.306265917977605,
+            22.511447629167446,
+            102.15183415509186
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -22.511447629167446,
+            0.0
+          ],
+          "max": [
+            21.306265917977605,
+            22.358212209000886,
+            102.13373677064853
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -22.085950742845753,
+            0.0
+          ],
+          "max": [
+            12.801752371574022,
+            22.085950742845753,
+            100.04299644850033
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -26.79169727912546,
+            0.0
+          ],
+          "max": [
+            25.24427651393346,
+            19.44361352078971,
+            112.36951191153302
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -19.44361352078971,
+            0.0
+          ],
+          "max": [
+            44.789975427124844,
+            28.850906663284622,
+            99.7431413663864
+          ]
+        },
+        {
+          "min": [
+            -97.30500561418441,
+            -22.085950742845753,
+            0.0
+          ],
+          "max": [
+            32.080505170368035,
+            22.085950742845753,
+            101.05984029116901
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -27.873823264239473,
+            0.0
+          ],
+          "max": [
+            38.53259214905927,
+            23.422915270994725,
+            100.14426935963893
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -42.24495752379236,
+            0.0
+          ],
+          "max": [
+            38.53259214905927,
+            27.579780136398846,
+            95.14293880453937
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -53.61026445824184,
+            0.0
+          ],
+          "max": [
+            38.53259214905927,
+            38.629912004120584,
+            75.26887885233407
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -55.51365844999119,
+            0.0
+          ],
+          "max": [
+            38.53259214905927,
+            44.58497226990727,
+            54.374390892633
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -53.934430929066764,
+            0.0
+          ],
+          "max": [
+            11.052680560376382,
+            46.48845786878558,
+            44.18814086130783
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -53.44500947252967,
+            0.0
+          ],
+          "max": [
+            11.052680560376382,
+            46.68477917570122,
+            44.17190148569151
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -22.085950742845753,
+            0.0
+          ],
+          "max": [
+            16.165590959486973,
+            22.085950742845753,
+            99.69693030442829
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -22.085950742845753,
+            0.0
+          ],
+          "max": [
+            15.794465342572394,
+            22.085950742845753,
+            99.64559018145542
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -22.085950742845753,
+            0.0
+          ],
+          "max": [
+            16.165590959486973,
+            22.085950742845753,
+            99.69693030442829
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -22.085950742845753,
+            0.0
+          ],
+          "max": [
+            16.531792380795707,
+            22.085950742845753,
+            99.72871208749717
+          ]
+        },
+        {
+          "min": [
+            -103.84038049364207,
+            -53.44500947252967,
+            0.0
+          ],
+          "max": [
+            15.510903537450595,
+            46.73546380186108,
+            44.17190148569151
+          ]
+        }
+      ],
+      "modeldef_scale": 1.652622208,
+      "native_profile": {
+        "Height": 51.644444,
+        "Radius": 14.755556,
+        "Scale": 0.3125
+      },
+      "maximum_authored_radius": 111.26589748814678,
+      "maximum_authored_height": 112.36951191153302,
+      "source_sha256": "867c21e64a44b6e5ca291ec797afecdd7f6fa9bab69b217020c0e5174a9f530d",
+      "authored_model_offset": [
+        0,
+        0,
+        0
+      ],
+      "native_pose_overrides": {
+        "12": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "x",
+            "angle": -10
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -50
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -55
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 30
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ],
+        "13": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "x",
+            "angle": -30
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -50
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -55
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 30
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ],
+        "14": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "x",
+            "angle": -55
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -50
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -55
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 30
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ],
+        "15": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "x",
+            "angle": -78
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -50
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -55
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 30
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ],
+        "16": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "x",
+            "angle": -88
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -3
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 6
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 10
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 14
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 8
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 12
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -12
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -18
+          }
+        ],
+        "17": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "x",
+            "angle": -90
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 8
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 5
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 8
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 6
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 10
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -8
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -14
+          }
+        ],
+        "22": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "x",
+            "angle": -90
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 10
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 20
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ]
+      }
+    },
+    "luzmala": {
+      "actor": "CaelumBestiary027",
+      "catalogue_id": "CA-FOLK-027",
+      "vertices": 2012,
+      "triangles": 3160,
+      "hierarchical_parts": 9,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1732,
+          "triangles": 3160
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -19.428594806787306,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            23.940010306396463,
+            38.700957374624195,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -19.428594806787306,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            23.940010306396463,
+            38.700957374624195,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -19.428594806787306,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            23.940010306396463,
+            38.700957374624195,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -19.41594299668304,
+            -40.21354307068896,
+            0.0
+          ],
+          "max": [
+            23.681208941993553,
+            37.97545526155038,
+            100.36892730714774
+          ]
+        },
+        {
+          "min": [
+            -19.428594806787306,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            23.940010306396463,
+            38.700957374624195,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -19.41594299668304,
+            -37.97545526155038,
+            0.0
+          ],
+          "max": [
+            24.082178347028027,
+            40.21354307068896,
+            98.83105434764644
+          ]
+        },
+        {
+          "min": [
+            -19.41594299668304,
+            -40.21354307068896,
+            0.0
+          ],
+          "max": [
+            23.681208941993553,
+            37.97545526155038,
+            100.36892730714774
+          ]
+        },
+        {
+          "min": [
+            -19.41594299668304,
+            -37.97545526155038,
+            0.0
+          ],
+          "max": [
+            24.082178347028027,
+            40.21354307068896,
+            98.83105434764644
+          ]
+        },
+        {
+          "min": [
+            -20.8836317103348,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            22.54393181146641,
+            38.700957374624195,
+            95.53514216740328
+          ]
+        },
+        {
+          "min": [
+            -19.35984150060796,
+            -36.892668243593114,
+            0.0
+          ],
+          "max": [
+            23.41686364274428,
+            39.05832842802655,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -19.43141247462382,
+            -38.715691926749095,
+            0.0
+          ],
+          "max": [
+            22.989326832303274,
+            38.02498760518513,
+            98.71547541916149
+          ]
+        },
+        {
+          "min": [
+            -35.45523449096706,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            23.864658319043063,
+            38.700957374624195,
+            81.73830138451018
+          ]
+        },
+        {
+          "min": [
+            -35.45523449096705,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            23.864658319043063,
+            38.700957374624195,
+            81.73830138451015
+          ]
+        },
+        {
+          "min": [
+            -46.734821661416625,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            36.229685828317976,
+            38.700957374624195,
+            57.986561972088666
+          ]
+        },
+        {
+          "min": [
+            -53.18230110984814,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            45.53317430931335,
+            38.700957374624195,
+            42.81506248430898
+          ]
+        },
+        {
+          "min": [
+            -50.61916014908698,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            46.667220387409074,
+            38.700957374624195,
+            45.41812532466729
+          ]
+        },
+        {
+          "min": [
+            -53.32064297723846,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            46.4132244962656,
+            38.700957374624195,
+            43.0534641163684
+          ]
+        },
+        {
+          "min": [
+            -53.28633594449206,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            45.92560903458678,
+            38.700957374624195,
+            42.94831907086782
+          ]
+        },
+        {
+          "min": [
+            -19.416759431774075,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            24.025730152367565,
+            38.700957374624195,
+            99.90097812551456
+          ]
+        },
+        {
+          "min": [
+            -19.428594806787306,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            23.940010306396466,
+            38.700957374624195,
+            100.00000000000003
+          ]
+        },
+        {
+          "min": [
+            -19.416759431774075,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            24.025730152367565,
+            38.700957374624195,
+            99.90097812551456
+          ]
+        },
+        {
+          "min": [
+            -19.41594299668304,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            24.082178347028027,
+            38.700957374624195,
+            99.69623927823906
+          ]
+        },
+        {
+          "min": [
+            -53.18230110984814,
+            -38.700957374624195,
+            0.0
+          ],
+          "max": [
+            45.53317430931335,
+            38.700957374624195,
+            42.815062484308974
+          ]
+        }
+      ],
+      "modeldef_scale": 1.652622208,
+      "native_profile": {
+        "Height": 51.644444,
+        "Radius": 14.755556,
+        "Scale": 0.3125
+      },
+      "maximum_authored_radius": 54.12212440703594,
+      "maximum_authored_height": 100.36892730714774,
+      "source_sha256": "4bb8caddad781c58658bbc62ffd6998e1f27abc7d936d8e1b88a2349083065d5",
+      "authored_model_offset": [
+        0,
+        0,
+        16
+      ]
+    },
+    "anchimallen": {
+      "actor": "CaelumBestiary034",
+      "catalogue_id": "CA-FOLK-034",
+      "vertices": 10002,
+      "triangles": 18208,
+      "hierarchical_parts": 68,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 4096,
+          "triangles": 7590
+        },
+        {
+          "material": "atlas",
+          "vertices": 4095,
+          "triangles": 7672
+        },
+        {
+          "material": "atlas",
+          "vertices": 1606,
+          "triangles": 2946
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -14.72801292405656,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            14.731826271613961,
+            18.62244897959184,
+            100.00000000000001
+          ]
+        },
+        {
+          "min": [
+            -14.72801292405656,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            14.731826271613961,
+            18.62244897959184,
+            100.00000000000001
+          ]
+        },
+        {
+          "min": [
+            -14.72801292405656,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            14.731826271613961,
+            18.62244897959184,
+            100.00000000000001
+          ]
+        },
+        {
+          "min": [
+            -16.80144401525359,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            18.082144940571208,
+            18.62244897959184,
+            99.5094147241577
+          ]
+        },
+        {
+          "min": [
+            -14.72801292405656,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            14.731826271613961,
+            18.62244897959184,
+            100.00000000000001
+          ]
+        },
+        {
+          "min": [
+            -16.80144401525359,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            18.082144940571208,
+            18.62244897959184,
+            99.35270090864998
+          ]
+        },
+        {
+          "min": [
+            -16.80144401525359,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            18.082144940571208,
+            18.62244897959184,
+            99.5094147241577
+          ]
+        },
+        {
+          "min": [
+            -16.80144401525359,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            18.082144940571208,
+            18.62244897959184,
+            99.35270090864998
+          ]
+        },
+        {
+          "min": [
+            -14.72801292405656,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            16.287697920933343,
+            18.62244897959184,
+            100.33324754811154
+          ]
+        },
+        {
+          "min": [
+            -14.72801292405656,
+            -22.179549561006894,
+            0.0
+          ],
+          "max": [
+            23.648502599660684,
+            15.386926403016961,
+            100.00000000000001
+          ]
+        },
+        {
+          "min": [
+            -14.72801292405656,
+            -15.388406395182717,
+            0.0
+          ],
+          "max": [
+            37.12464611924823,
+            24.28714824414574,
+            99.96383941505162
+          ]
+        },
+        {
+          "min": [
+            -30.49449309929023,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            25.11856294757135,
+            18.62244897959184,
+            94.90416133197218
+          ]
+        },
+        {
+          "min": [
+            -29.10419474930588,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            28.652699505143264,
+            18.62244897959184,
+            93.87519206506454
+          ]
+        },
+        {
+          "min": [
+            -42.3621710654723,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            24.565381267500463,
+            18.62244897959184,
+            81.88910103531141
+          ]
+        },
+        {
+          "min": [
+            -52.68604217840085,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            35.331034708442914,
+            18.62244897959184,
+            64.5911555274977
+          ]
+        },
+        {
+          "min": [
+            -55.06971647734738,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            40.83571648971409,
+            18.62244897959184,
+            52.83804335878261
+          ]
+        },
+        {
+          "min": [
+            -56.13687878581228,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            43.82722575042043,
+            18.62244897959184,
+            29.44032691530551
+          ]
+        },
+        {
+          "min": [
+            -56.233065616785474,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            43.97424370790146,
+            18.62244897959184,
+            29.45983919567053
+          ]
+        },
+        {
+          "min": [
+            -14.72801292405656,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            15.442476542656177,
+            18.62244897959184,
+            99.54076501930071
+          ]
+        },
+        {
+          "min": [
+            -14.72801292405656,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            16.20474475817909,
+            18.62244897959184,
+            99.61526064359806
+          ]
+        },
+        {
+          "min": [
+            -14.72801292405656,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            15.442476542656177,
+            18.62244897959184,
+            99.54076501930071
+          ]
+        },
+        {
+          "min": [
+            -14.72801292405656,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            14.731826271613961,
+            18.62244897959184,
+            99.43170155416625
+          ]
+        },
+        {
+          "min": [
+            -56.30594407219561,
+            -18.62244897959184,
+            0.0
+          ],
+          "max": [
+            42.02003665753526,
+            18.62244897959184,
+            29.45983919567053
+          ]
+        }
+      ],
+      "modeldef_scale": 1.6526222079999997,
+      "native_profile": {
+        "Height": 51.644444,
+        "Radius": 14.755556,
+        "Scale": 0.3125
+      },
+      "maximum_authored_radius": 56.30594407219561,
+      "maximum_authored_height": 100.33324754811154,
+      "source_sha256": "1ca9bd0898e0e99086dea8f498e5da9d289d08c2f0b12bac523313e808c5e5ad",
+      "authored_model_offset": [
+        0,
+        0,
+        0
+      ]
+    },
+    "huayrapuca": {
+      "actor": "CaelumBestiary056",
+      "catalogue_id": "CA-FOLK-056",
+      "vertices": 9671,
+      "triangles": 17200,
+      "hierarchical_parts": 111,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 4096,
+          "triangles": 7584
+        },
+        {
+          "material": "atlas",
+          "vertices": 4095,
+          "triangles": 7458
+        },
+        {
+          "material": "atlas",
+          "vertices": 1222,
+          "triangles": 2158
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -93.02330830783583,
+            -57.45511665306452,
+            0.0
+          ],
+          "max": [
+            36.325185273126294,
+            57.45511665306452,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -57.45511665306452,
+            0.0
+          ],
+          "max": [
+            36.325185273126294,
+            57.45511665306452,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -57.45511665306452,
+            0.0
+          ],
+          "max": [
+            36.325185273126294,
+            57.45511665306452,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -93.65018281746752,
+            -57.43688341111566,
+            0.0
+          ],
+          "max": [
+            36.44533335091326,
+            57.43688341111566,
+            102.54217072456075
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -57.45511665306452,
+            0.0
+          ],
+          "max": [
+            36.325185273126294,
+            57.45511665306452,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -92.33368265202516,
+            -57.41383649345246,
+            0.0
+          ],
+          "max": [
+            36.198848545703505,
+            57.41383649345246,
+            102.05085824039897
+          ]
+        },
+        {
+          "min": [
+            -93.65018281746752,
+            -57.43688341111566,
+            0.0
+          ],
+          "max": [
+            36.44533335091326,
+            57.43688341111566,
+            102.54217072456075
+          ]
+        },
+        {
+          "min": [
+            -92.33368265202516,
+            -57.41383649345246,
+            0.0
+          ],
+          "max": [
+            36.198848545703505,
+            57.41383649345246,
+            102.05085824039897
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -57.45511665306452,
+            0.0
+          ],
+          "max": [
+            41.58391131956151,
+            57.45511665306452,
+            102.06329387343142
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -57.45511665306452,
+            0.0
+          ],
+          "max": [
+            35.69071835331636,
+            57.45511665306452,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -57.45511665306452,
+            0.0
+          ],
+          "max": [
+            43.017996728636646,
+            57.45511665306452,
+            98.6226038814659
+          ]
+        },
+        {
+          "min": [
+            -89.77955096680881,
+            -57.45511665306452,
+            0.0
+          ],
+          "max": [
+            23.560979397399088,
+            57.45511665306452,
+            104.13707350412892
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -54.845987135126045,
+            0.0
+          ],
+          "max": [
+            34.509589098576214,
+            58.62489570028743,
+            98.79520304670616
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -44.79740481451718,
+            0.0
+          ],
+          "max": [
+            34.509589098576214,
+            65.0684743281267,
+            98.07511427449414
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -37.27427051751562,
+            0.0
+          ],
+          "max": [
+            34.509589098576214,
+            62.47412599181538,
+            106.89332108382328
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -36.35749735965831,
+            0.0
+          ],
+          "max": [
+            34.509589098576214,
+            62.563956265927054,
+            113.70996228564222
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -34.49864067618668,
+            0.0
+          ],
+          "max": [
+            36.859301004147746,
+            67.19847413110024,
+            114.84023309676955
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -34.02460028279284,
+            0.0
+          ],
+          "max": [
+            37.03657438595559,
+            67.5837686645001,
+            114.91023330612906
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -57.45511665306452,
+            0.0
+          ],
+          "max": [
+            41.275847450920416,
+            57.45511665306452,
+            96.86957032375935
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -57.45511665306452,
+            0.0
+          ],
+          "max": [
+            42.08784215809001,
+            57.45511665306452,
+            96.86867495102753
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -57.45511665306452,
+            0.0
+          ],
+          "max": [
+            41.275847450920416,
+            57.45511665306452,
+            96.86957032375935
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -57.45511665306452,
+            0.0
+          ],
+          "max": [
+            40.44269569926186,
+            57.45511665306452,
+            96.83343476480866
+          ]
+        },
+        {
+          "min": [
+            -93.02330830783583,
+            -34.02460028279284,
+            0.0
+          ],
+          "max": [
+            37.198334217175876,
+            68.13214399069173,
+            114.91023330612906
+          ]
+        }
+      ],
+      "modeldef_scale": 1.652622208,
+      "native_profile": {
+        "Height": 51.644444,
+        "Radius": 14.755556,
+        "Scale": 0.3125
+      },
+      "maximum_authored_radius": 95.19001020289485,
+      "maximum_authored_height": 114.91023330612906,
+      "source_sha256": "444534f6c5fa56e6c6f8f639f56a39111fd1ef010fe1184eeb3753dcaf07e4ec",
+      "authored_model_offset": [
+        0,
+        0,
+        0
+      ],
+      "native_pose_overrides": {
+        "12": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "x",
+            "angle": -10
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -50
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -55
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 30
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ],
+        "13": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "x",
+            "angle": -30
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -50
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -55
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 30
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ],
+        "14": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "x",
+            "angle": -55
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -50
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -55
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 30
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ],
+        "15": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "x",
+            "angle": -78
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -50
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -55
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -20
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 30
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ],
+        "16": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "x",
+            "angle": -88
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 6
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 10
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 14
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 8
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 12
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -12
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -18
+          }
+        ],
+        "17": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "x",
+            "angle": -90
+          },
+          {
+            "part": "torso",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 8
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 5
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 8
+          },
+          {
+            "part": "right_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "left_fore",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 0
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 6
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 10
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -8
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -14
+          }
+        ],
+        "22": [
+          {
+            "part": "pelvis",
+            "kind": "rotate",
+            "axis": "x",
+            "angle": -90
+          },
+          {
+            "part": "head",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 10
+          },
+          {
+            "part": "right_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -10
+          },
+          {
+            "part": "left_upper",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -15
+          },
+          {
+            "part": "right_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 20
+          },
+          {
+            "part": "left_thigh",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": 25
+          },
+          {
+            "part": "right_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -35
+          },
+          {
+            "part": "left_shin",
+            "kind": "rotate",
+            "axis": "y",
+            "angle": -40
+          }
+        ]
+      }
+    }
+  },
+  "source_sha256": {
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/21_xalpen.png": "867c21e64a44b6e5ca291ec797afecdd7f6fa9bab69b217020c0e5174a9f530d",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/27_luz_mala.png": "4bb8caddad781c58658bbc62ffd6998e1f27abc7d936d8e1b88a2349083065d5",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/34_anchimallen.png": "1ca9bd0898e0e99086dea8f498e5da9d289d08c2f0b12bac523313e808c5e5ad",
+    "assets/source/bestiary_453/imagenes/05_Bestias_magicas/56_huayrapuca.png": "444534f6c5fa56e6c6f8f639f56a39111fd1ef010fe1184eeb3753dcaf07e4ec",
+    "assets/source/art/distinct_forms_822/materials.png": "3e8a12a81b250a1587a2ec4607b9249b3645ab1d8f0d5de03f5f1f72194660a2",
+    "assets/source/art/distinct_forms_822/ANIMATION.json": "f610d71e0319e71e6025580defc5e171a3f6c396db1d0b3c73444133ed40c792",
+    "assets/source/art/distinct_forms_822/PROVENANCE.json": "28f715ce987de9fb53c3b43585862dff8b5b66d61a1cd973792a3e23cea654e7",
+    "assets/source/art/distinct_forms_822/xalpen.json": "2548d5e472669c93427546a02c84c0687c8f4ba7228b4fe710dbb3adc7605f88",
+    "assets/source/art/distinct_forms_822/luzmala.json": "c063c1eb14b83a4ba23efd22f92ec8e35e1dc62002ca708aa285ef76132146ad",
+    "assets/source/art/distinct_forms_822/anchimallen.json": "1ecf26bd3b17a5ad1dc7a989dc74b1553d22664fc35ba4c40cc0152fd845a8a1",
+    "assets/source/art/distinct_forms_822/huayrapuca.json": "d0053f83a35539588be2f0c8c0bd3610a7971056a5027c320cd571150604a293",
+    "assets/generators/generate_beast_men_models.py": "326327fa90dd2bca5648a6725aa064400d2eae6f71a35ade88ea2a2ba1f13eb7",
+    "assets/generators/generate_distinct_form_models.py": "87ba0041198a2ea56926aa99eca1ca6a9b80c811e78be481d9778ef552169712",
+    "assets/generators/generate_head_apparition_models.py": "eb2e99ee0a9b479894d886c03566c7a3597b0f818b28d0984fcc9ad09983fb1d",
+    "assets/generators/generate_quadruped_models.py": "b4293a90aff2245b4aabde2597ae04754316b5b5515219819fb06fed88b468ce",
+    "assets/generators/generate_basilisco_model.py": "bcf59c6ff5c70dc95ace4818cdf91b0dc553e2d4dddbeb9062e65d9f60f5dd22",
+    "assets/generators/generate_serpent_models.py": "e4f9abc0a3c372551fe555a232c4799a05d6aa57703fb865c6393f4236151cca",
+    "assets/generators/generate_avian_models.py": "5a450ac72d03eef12cafd06fbaefff515ae7e370bc13a46dd8036a050259e4e6",
+    "assets/generators/generate_peuchen_model.py": "0f1873c9fd1da0be0f965ea73ff2cc5c35dc25a35ac9da2df4692b50cef30812",
+    "assets/generators/generate_guardian_models.py": "2f105629523a71735d388b430ac87801bd8bb687177e9fa84ca0edd451051951",
+    "assets/generators/generate_duende_models.py": "243d46cee79b1723f6b7ac9bd0b8c0c4f87b37f463cf8540cd7d51be2800511f",
+    "assets/generators/generate_inventory_clothing_models.py": "105e9107d4b0ec4c82a6a168127fb3968f8d19ca72bf48320cb01c90062217d3",
+    "assets/generators/generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "assets/generators/generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281"
+  },
+  "sha256": {
+    "models/caelum/folklore/distinctforms/materials.png": "3e8a12a81b250a1587a2ec4607b9249b3645ab1d8f0d5de03f5f1f72194660a2",
+    "models/caelum/folklore/distinctforms/xalpen.md3": "b5e26658d7a44e9897ce691416a2869cc43b252bca55a59e6a1eca2d37e1b66a",
+    "editable/xalpen.obj": "f5f3cbc73cd4f8a03fc945669efde7d44ff7745f50147656960425e737534d5b",
+    "editable/xalpen.mtl": "7858932c38c409b01445f521a2ceaff1f6dca9ec0487d3c151e9c214d360d7ee",
+    "models/caelum/folklore/distinctforms/luzmala.md3": "3cfb0ba853b2a36ad8b9bebb40155618f891c1b8f82797c547d0379288b9fb8b",
+    "editable/luzmala.obj": "73fdf18e596e3d8ac761138d3d4d57168f25eda5e57886ce617f058948de8296",
+    "editable/luzmala.mtl": "7858932c38c409b01445f521a2ceaff1f6dca9ec0487d3c151e9c214d360d7ee",
+    "models/caelum/folklore/distinctforms/anchimallen.md3": "2b54538ed4b57cc5528b13305d96517449bb7e862ec2996dedd3371f7cee42a2",
+    "editable/anchimallen.obj": "7c9319a5d2c80487e31e3f926803a096866270fd2ad42a928841a0d1a10471f1",
+    "editable/anchimallen.mtl": "7858932c38c409b01445f521a2ceaff1f6dca9ec0487d3c151e9c214d360d7ee",
+    "models/caelum/folklore/distinctforms/huayrapuca.md3": "2996520e9baf7756bca968a2f212016e80a93f50505a5c5800bb1168e39312c6",
+    "editable/huayrapuca.obj": "8db450f395311238e6bb98565cd2e181a73ad955c98ab00acd21e3e849b3518c",
+    "editable/huayrapuca.mtl": "7858932c38c409b01445f521a2ceaff1f6dca9ec0487d3c151e9c214d360d7ee",
+    "caelum/data/distinct_form_combat.modeldef": "2052d89ea1b72351139f8e59ac75aa6ef7ad83b20c390bcc35f3ac96a0f16be0"
+  }
+}

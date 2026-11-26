@@ -1,0 +1,5187 @@
+{
+  "schema_revision": 1,
+  "issue": 822,
+  "species": "huayrapuca",
+  "catalogue_id": "CA-FOLK-056",
+  "reference": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/56_huayrapuca.png",
+  "status": "candidate_author_review_pending",
+  "visual_contract": "Adult female face with golden eyes on a long neck, pointed ears, long dark hair and swept horns; ivory-scaled throat, long gray quadruped serpent-dragon body, four clawed legs, two large feather wings, long curling tail with feather fringe.",
+  "preview": {
+    "height_map_units": 100,
+    "model_offset": [
+      0,
+      0,
+      0
+    ],
+    "scale_authority": "Dimensionless art coordinates fitted to unchanged provisional Height, not metric scale."
+  },
+  "atlas": {
+    "source_file": "materials.png",
+    "columns": 4,
+    "rows": 5,
+    "inset": 0.012,
+    "image_size": [
+      1122,
+      1402
+    ]
+  },
+  "materials": {
+    "face": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.7522281639928698,
+        0.0021398002853067048,
+        0.9973262032085561,
+        0.21825962910128388
+      ]
+    },
+    "skin": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.7522281639928698,
+        0.2225392296718973,
+        0.9973262032085561,
+        0.3980028530670471
+      ]
+    },
+    "hair": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.00267379679144385,
+        0.40228245363766046,
+        0.24777183600713013,
+        0.5977175463623395
+      ]
+    },
+    "slate": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.5026737967914439,
+        0.40228245363766046,
+        0.7468805704099821,
+        0.5977175463623395
+      ]
+    },
+    "ivory": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.7522281639928698,
+        0.40228245363766046,
+        0.9973262032085561,
+        0.5977175463623395
+      ]
+    },
+    "leather": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.00267379679144385,
+        0.6019971469329529,
+        0.24777183600713013,
+        0.7981455064194009
+      ]
+    },
+    "bronze": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.2531194295900178,
+        0.6019971469329529,
+        0.49732620320855614,
+        0.7981455064194009
+      ]
+    },
+    "linen": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.5026737967914439,
+        0.6019971469329529,
+        0.7468805704099821,
+        0.7981455064194009
+      ]
+    },
+    "rope": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.7522281639928698,
+        0.6019971469329529,
+        0.9973262032085561,
+        0.7981455064194009
+      ]
+    },
+    "armor": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.00267379679144385,
+        0.8024251069900142,
+        0.24777183600713013,
+        0.9978601997146933
+      ]
+    },
+    "scutes": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.2531194295900178,
+        0.8024251069900142,
+        0.49732620320855614,
+        0.9978601997146933
+      ]
+    },
+    "bone": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.5026737967914439,
+        0.8024251069900142,
+        0.7468805704099821,
+        0.9978601997146933
+      ]
+    },
+    "flame": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.7522281639928698,
+        0.8024251069900142,
+        0.9973262032085561,
+        0.9978601997146933
+      ]
+    }
+  },
+  "parts": {
+    "pelvis": {
+      "parent": null,
+      "pivot": [
+        -15,
+        0,
+        34
+      ]
+    },
+    "torso": {
+      "parent": "pelvis",
+      "pivot": [
+        7.2,
+        0,
+        39.8
+      ]
+    },
+    "head": {
+      "parent": "torso",
+      "pivot": [
+        24,
+        0,
+        77.5
+      ]
+    },
+    "throat_scutes": {
+      "parent": "torso",
+      "pivot": [
+        12.8,
+        0,
+        43.5
+      ]
+    },
+    "left_front_upper": {
+      "parent": "pelvis",
+      "pivot": [
+        4.1,
+        -9,
+        39
+      ]
+    },
+    "left_front_shank": {
+      "parent": "left_front_upper",
+      "pivot": [
+        7,
+        -14,
+        21
+      ]
+    },
+    "left_front_foot": {
+      "parent": "left_front_shank",
+      "pivot": [
+        8,
+        -14,
+        5.3
+      ]
+    },
+    "left_front_claw_0": {
+      "parent": "left_front_foot",
+      "pivot": [
+        13,
+        -16.7,
+        3.3
+      ]
+    },
+    "left_front_claw_1": {
+      "parent": "left_front_foot",
+      "pivot": [
+        13,
+        -14.9,
+        3.3
+      ]
+    },
+    "left_front_claw_2": {
+      "parent": "left_front_foot",
+      "pivot": [
+        13,
+        -13.1,
+        3.3
+      ]
+    },
+    "left_front_claw_3": {
+      "parent": "left_front_foot",
+      "pivot": [
+        13,
+        -11.3,
+        3.3
+      ]
+    },
+    "left_hind_upper": {
+      "parent": "pelvis",
+      "pivot": [
+        -36,
+        -9,
+        35
+      ]
+    },
+    "left_hind_shank": {
+      "parent": "left_hind_upper",
+      "pivot": [
+        -34,
+        -14,
+        21
+      ]
+    },
+    "left_hind_foot": {
+      "parent": "left_hind_shank",
+      "pivot": [
+        -39,
+        -14,
+        5.3
+      ]
+    },
+    "left_hind_claw_0": {
+      "parent": "left_hind_foot",
+      "pivot": [
+        -34,
+        -16.7,
+        3.3
+      ]
+    },
+    "left_hind_claw_1": {
+      "parent": "left_hind_foot",
+      "pivot": [
+        -34,
+        -14.9,
+        3.3
+      ]
+    },
+    "left_hind_claw_2": {
+      "parent": "left_hind_foot",
+      "pivot": [
+        -34,
+        -13.1,
+        3.3
+      ]
+    },
+    "left_hind_claw_3": {
+      "parent": "left_hind_foot",
+      "pivot": [
+        -34,
+        -11.3,
+        3.3
+      ]
+    },
+    "right_front_upper": {
+      "parent": "pelvis",
+      "pivot": [
+        4.1,
+        9,
+        39
+      ]
+    },
+    "right_front_shank": {
+      "parent": "right_front_upper",
+      "pivot": [
+        7,
+        14,
+        21
+      ]
+    },
+    "right_front_foot": {
+      "parent": "right_front_shank",
+      "pivot": [
+        8,
+        14,
+        5.3
+      ]
+    },
+    "right_front_claw_0": {
+      "parent": "right_front_foot",
+      "pivot": [
+        13,
+        11.3,
+        3.3
+      ]
+    },
+    "right_front_claw_1": {
+      "parent": "right_front_foot",
+      "pivot": [
+        13,
+        13.1,
+        3.3
+      ]
+    },
+    "right_front_claw_2": {
+      "parent": "right_front_foot",
+      "pivot": [
+        13,
+        14.9,
+        3.3
+      ]
+    },
+    "right_front_claw_3": {
+      "parent": "right_front_foot",
+      "pivot": [
+        13,
+        16.7,
+        3.3
+      ]
+    },
+    "right_hind_upper": {
+      "parent": "pelvis",
+      "pivot": [
+        -36,
+        9,
+        35
+      ]
+    },
+    "right_hind_shank": {
+      "parent": "right_hind_upper",
+      "pivot": [
+        -34,
+        14,
+        21
+      ]
+    },
+    "right_hind_foot": {
+      "parent": "right_hind_shank",
+      "pivot": [
+        -39,
+        14,
+        5.3
+      ]
+    },
+    "right_hind_claw_0": {
+      "parent": "right_hind_foot",
+      "pivot": [
+        -34,
+        11.3,
+        3.3
+      ]
+    },
+    "right_hind_claw_1": {
+      "parent": "right_hind_foot",
+      "pivot": [
+        -34,
+        13.1,
+        3.3
+      ]
+    },
+    "right_hind_claw_2": {
+      "parent": "right_hind_foot",
+      "pivot": [
+        -34,
+        14.9,
+        3.3
+      ]
+    },
+    "right_hind_claw_3": {
+      "parent": "right_hind_foot",
+      "pivot": [
+        -34,
+        16.7,
+        3.3
+      ]
+    },
+    "serpent_tail": {
+      "parent": "pelvis",
+      "pivot": [
+        -41,
+        0,
+        33.5
+      ]
+    },
+    "hair_mass": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        86
+      ]
+    },
+    "hair_crown": {
+      "parent": "head",
+      "pivot": [
+        27,
+        0,
+        90
+      ]
+    },
+    "hair_lock_0": {
+      "parent": "hair_mass",
+      "pivot": [
+        20.624429495415054,
+        4.206888370749727,
+        87.2
+      ]
+    },
+    "hair_lock_1": {
+      "parent": "hair_mass",
+      "pivot": [
+        19.945632290866428,
+        1.9479542857627434,
+        87.2
+      ]
+    },
+    "hair_lock_2": {
+      "parent": "hair_mass",
+      "pivot": [
+        19.830384493975586,
+        -0.9029705238680376,
+        87.2
+      ]
+    },
+    "hair_lock_3": {
+      "parent": "hair_mass",
+      "pivot": [
+        20.313710349045213,
+        -3.479479153066061,
+        87.2
+      ]
+    },
+    "hair_lock_4": {
+      "parent": "hair_mass",
+      "pivot": [
+        21.248725288366003,
+        -4.998560818879258,
+        87.2
+      ]
+    },
+    "hair_lock_5": {
+      "parent": "hair_mass",
+      "pivot": [
+        22.351274711633998,
+        -4.998560818879258,
+        87.2
+      ]
+    },
+    "hair_lock_6": {
+      "parent": "hair_mass",
+      "pivot": [
+        23.28628965095479,
+        -3.4794791530660643,
+        87.2
+      ]
+    },
+    "hair_lock_7": {
+      "parent": "hair_mass",
+      "pivot": [
+        23.769615506024415,
+        -0.9029705238680378,
+        87.2
+      ]
+    },
+    "hair_lock_8": {
+      "parent": "hair_mass",
+      "pivot": [
+        23.654367709133577,
+        1.9479542857627423,
+        87.2
+      ]
+    },
+    "hair_lock_9": {
+      "parent": "hair_mass",
+      "pivot": [
+        22.975570504584947,
+        4.206888370749726,
+        87.2
+      ]
+    },
+    "left_ear": {
+      "parent": "head",
+      "pivot": [
+        25.7,
+        -5.9,
+        84.3
+      ]
+    },
+    "left_horn": {
+      "parent": "head",
+      "pivot": [
+        23.6,
+        -4.9,
+        89.5
+      ]
+    },
+    "left_head_feather_0": {
+      "parent": "head",
+      "pivot": [
+        24.6,
+        -3.12,
+        89.2
+      ]
+    },
+    "left_head_feather_1": {
+      "parent": "head",
+      "pivot": [
+        24.6,
+        -3.8480000000000003,
+        88.60000000000001
+      ]
+    },
+    "left_head_feather_2": {
+      "parent": "head",
+      "pivot": [
+        24.6,
+        -4.5760000000000005,
+        88.0
+      ]
+    },
+    "left_head_feather_3": {
+      "parent": "head",
+      "pivot": [
+        24.6,
+        -5.303999999999999,
+        87.4
+      ]
+    },
+    "left_wing": {
+      "parent": "pelvis",
+      "pivot": [
+        -11.4,
+        -8.5,
+        44.2
+      ]
+    },
+    "left_wing_feather_0": {
+      "parent": "left_wing",
+      "pivot": [
+        -12.0,
+        -8.55,
+        43.7
+      ]
+    },
+    "left_wing_feather_1": {
+      "parent": "left_wing",
+      "pivot": [
+        -11.0,
+        -11.05,
+        45.7
+      ]
+    },
+    "left_wing_feather_2": {
+      "parent": "left_wing",
+      "pivot": [
+        -10.0,
+        -13.55,
+        47.7
+      ]
+    },
+    "left_wing_feather_3": {
+      "parent": "left_wing",
+      "pivot": [
+        -9.0,
+        -16.05,
+        49.7
+      ]
+    },
+    "left_wing_feather_4": {
+      "parent": "left_wing",
+      "pivot": [
+        -8.0,
+        -18.55,
+        51.7
+      ]
+    },
+    "left_wing_feather_5": {
+      "parent": "left_wing",
+      "pivot": [
+        -7.0,
+        -21.05,
+        53.7
+      ]
+    },
+    "left_wing_feather_6": {
+      "parent": "left_wing",
+      "pivot": [
+        -6.833333333333333,
+        -23.8,
+        55.86666666666667
+      ]
+    },
+    "left_wing_feather_7": {
+      "parent": "left_wing",
+      "pivot": [
+        -7.5,
+        -26.8,
+        58.2
+      ]
+    },
+    "left_wing_feather_8": {
+      "parent": "left_wing",
+      "pivot": [
+        -8.166666666666668,
+        -29.8,
+        60.53333333333334
+      ]
+    },
+    "left_wing_feather_9": {
+      "parent": "left_wing",
+      "pivot": [
+        -8.833333333333334,
+        -32.8,
+        62.866666666666674
+      ]
+    },
+    "left_wing_feather_10": {
+      "parent": "left_wing",
+      "pivot": [
+        -9.5,
+        -35.8,
+        65.2
+      ]
+    },
+    "left_wing_feather_11": {
+      "parent": "left_wing",
+      "pivot": [
+        -10.166666666666666,
+        -38.8,
+        67.53333333333333
+      ]
+    },
+    "left_dorsal_feather_0": {
+      "parent": "pelvis",
+      "pivot": [
+        -8.3,
+        -3,
+        44.5
+      ]
+    },
+    "left_dorsal_feather_1": {
+      "parent": "pelvis",
+      "pivot": [
+        -12.3,
+        -3,
+        44.25
+      ]
+    },
+    "left_dorsal_feather_2": {
+      "parent": "pelvis",
+      "pivot": [
+        -16.3,
+        -3,
+        44.0
+      ]
+    },
+    "left_dorsal_feather_3": {
+      "parent": "pelvis",
+      "pivot": [
+        -20.3,
+        -3,
+        43.75
+      ]
+    },
+    "left_dorsal_feather_4": {
+      "parent": "pelvis",
+      "pivot": [
+        -24.3,
+        -3,
+        43.5
+      ]
+    },
+    "left_dorsal_feather_5": {
+      "parent": "pelvis",
+      "pivot": [
+        -28.3,
+        -3,
+        43.25
+      ]
+    },
+    "left_dorsal_feather_6": {
+      "parent": "pelvis",
+      "pivot": [
+        -32.3,
+        -3,
+        43.0
+      ]
+    },
+    "left_tail_feather_0": {
+      "parent": "serpent_tail",
+      "pivot": [
+        -45.3,
+        -3.414285714285714,
+        32.385714285714286
+      ]
+    },
+    "left_tail_feather_1": {
+      "parent": "serpent_tail",
+      "pivot": [
+        -50.3,
+        -3.6999999999999997,
+        30.1
+      ]
+    },
+    "left_tail_feather_2": {
+      "parent": "serpent_tail",
+      "pivot": [
+        -55.3,
+        -3.9857142857142858,
+        27.814285714285713
+      ]
+    },
+    "left_tail_feather_3": {
+      "parent": "serpent_tail",
+      "pivot": [
+        -60.3,
+        -4.271428571428571,
+        25.52857142857143
+      ]
+    },
+    "left_tail_feather_4": {
+      "parent": "serpent_tail",
+      "pivot": [
+        -65.3,
+        -3.2714285714285705,
+        23.242857142857144
+      ]
+    },
+    "left_tail_feather_5": {
+      "parent": "serpent_tail",
+      "pivot": [
+        -70.3,
+        -2.128571428571428,
+        20.95714285714286
+      ]
+    },
+    "left_tail_feather_6": {
+      "parent": "serpent_tail",
+      "pivot": [
+        -75.3,
+        -0.9857142857142851,
+        18.67142857142857
+      ]
+    },
+    "right_ear": {
+      "parent": "head",
+      "pivot": [
+        25.7,
+        5.9,
+        84.3
+      ]
+    },
+    "right_horn": {
+      "parent": "head",
+      "pivot": [
+        23.6,
+        4.9,
+        89.5
+      ]
+    },
+    "right_head_feather_0": {
+      "parent": "head",
+      "pivot": [
+        24.6,
+        3.12,
+        89.2
+      ]
+    },
+    "right_head_feather_1": {
+      "parent": "head",
+      "pivot": [
+        24.6,
+        3.8480000000000003,
+        88.60000000000001
+      ]
+    },
+    "right_head_feather_2": {
+      "parent": "head",
+      "pivot": [
+        24.6,
+        4.5760000000000005,
+        88.0
+      ]
+    },
+    "right_head_feather_3": {
+      "parent": "head",
+      "pivot": [
+        24.6,
+        5.303999999999999,
+        87.4
+      ]
+    },
+    "right_wing": {
+      "parent": "pelvis",
+      "pivot": [
+        -11.4,
+        8.5,
+        44.2
+      ]
+    },
+    "right_wing_feather_0": {
+      "parent": "right_wing",
+      "pivot": [
+        -12.0,
+        8.55,
+        43.7
+      ]
+    },
+    "right_wing_feather_1": {
+      "parent": "right_wing",
+      "pivot": [
+        -11.0,
+        11.05,
+        45.7
+      ]
+    },
+    "right_wing_feather_2": {
+      "parent": "right_wing",
+      "pivot": [
+        -10.0,
+        13.55,
+        47.7
+      ]
+    },
+    "right_wing_feather_3": {
+      "parent": "right_wing",
+      "pivot": [
+        -9.0,
+        16.05,
+        49.7
+      ]
+    },
+    "right_wing_feather_4": {
+      "parent": "right_wing",
+      "pivot": [
+        -8.0,
+        18.55,
+        51.7
+      ]
+    },
+    "right_wing_feather_5": {
+      "parent": "right_wing",
+      "pivot": [
+        -7.0,
+        21.05,
+        53.7
+      ]
+    },
+    "right_wing_feather_6": {
+      "parent": "right_wing",
+      "pivot": [
+        -6.833333333333333,
+        23.8,
+        55.86666666666667
+      ]
+    },
+    "right_wing_feather_7": {
+      "parent": "right_wing",
+      "pivot": [
+        -7.5,
+        26.8,
+        58.2
+      ]
+    },
+    "right_wing_feather_8": {
+      "parent": "right_wing",
+      "pivot": [
+        -8.166666666666668,
+        29.8,
+        60.53333333333334
+      ]
+    },
+    "right_wing_feather_9": {
+      "parent": "right_wing",
+      "pivot": [
+        -8.833333333333334,
+        32.8,
+        62.866666666666674
+      ]
+    },
+    "right_wing_feather_10": {
+      "parent": "right_wing",
+      "pivot": [
+        -9.5,
+        35.8,
+        65.2
+      ]
+    },
+    "right_wing_feather_11": {
+      "parent": "right_wing",
+      "pivot": [
+        -10.166666666666666,
+        38.8,
+        67.53333333333333
+      ]
+    },
+    "right_dorsal_feather_0": {
+      "parent": "pelvis",
+      "pivot": [
+        -8.3,
+        3,
+        44.5
+      ]
+    },
+    "right_dorsal_feather_1": {
+      "parent": "pelvis",
+      "pivot": [
+        -12.3,
+        3,
+        44.25
+      ]
+    },
+    "right_dorsal_feather_2": {
+      "parent": "pelvis",
+      "pivot": [
+        -16.3,
+        3,
+        44.0
+      ]
+    },
+    "right_dorsal_feather_3": {
+      "parent": "pelvis",
+      "pivot": [
+        -20.3,
+        3,
+        43.75
+      ]
+    },
+    "right_dorsal_feather_4": {
+      "parent": "pelvis",
+      "pivot": [
+        -24.3,
+        3,
+        43.5
+      ]
+    },
+    "right_dorsal_feather_5": {
+      "parent": "pelvis",
+      "pivot": [
+        -28.3,
+        3,
+        43.25
+      ]
+    },
+    "right_dorsal_feather_6": {
+      "parent": "pelvis",
+      "pivot": [
+        -32.3,
+        3,
+        43.0
+      ]
+    },
+    "right_tail_feather_0": {
+      "parent": "serpent_tail",
+      "pivot": [
+        -45.3,
+        3.414285714285714,
+        32.385714285714286
+      ]
+    },
+    "right_tail_feather_1": {
+      "parent": "serpent_tail",
+      "pivot": [
+        -50.3,
+        3.6999999999999997,
+        30.1
+      ]
+    },
+    "right_tail_feather_2": {
+      "parent": "serpent_tail",
+      "pivot": [
+        -55.3,
+        3.9857142857142858,
+        27.814285714285713
+      ]
+    },
+    "right_tail_feather_3": {
+      "parent": "serpent_tail",
+      "pivot": [
+        -60.3,
+        4.271428571428571,
+        25.52857142857143
+      ]
+    },
+    "right_tail_feather_4": {
+      "parent": "serpent_tail",
+      "pivot": [
+        -65.3,
+        5.842857142857143,
+        23.242857142857144
+      ]
+    },
+    "right_tail_feather_5": {
+      "parent": "serpent_tail",
+      "pivot": [
+        -70.3,
+        7.557142857142857,
+        20.95714285714286
+      ]
+    },
+    "right_tail_feather_6": {
+      "parent": "serpent_tail",
+      "pivot": [
+        -75.3,
+        9.271428571428574,
+        18.67142857142857
+      ]
+    }
+  },
+  "shapes": [
+    {
+      "kind": "ellipsoid",
+      "center": [
+        -15,
+        0,
+        34
+      ],
+      "radii": [
+        32,
+        14,
+        15
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "pelvis",
+      "part": "pelvis"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          6,
+          0,
+          37,
+          9,
+          10
+        ],
+        [
+          12,
+          0,
+          51,
+          7,
+          8
+        ],
+        [
+          18,
+          0,
+          66,
+          5.5,
+          6.5
+        ],
+        [
+          25,
+          0,
+          79,
+          4.5,
+          5
+        ]
+      ],
+      "material": "skin",
+      "segments": 24,
+      "name": "torso",
+      "part": "torso"
+    },
+    {
+      "kind": "face",
+      "center": [
+        27,
+        0,
+        84
+      ],
+      "radii": [
+        7.2,
+        6.3,
+        8.7
+      ],
+      "material": "skin",
+      "latitudes": 23,
+      "longitudes": 40,
+      "front_deformation": [
+        {
+          "depth": 1.8,
+          "y": 0,
+          "z": 83.13,
+          "width_y": 1.26,
+          "width_z": 2.436
+        },
+        {
+          "depth": 0.5760000000000001,
+          "y": 0,
+          "z": 79.824,
+          "width_y": 2.52,
+          "width_z": 0.87
+        }
+      ],
+      "front_projection": {
+        "material": "face",
+        "minimum_x": 28.728,
+        "y_bounds": [
+          -6.804,
+          6.804
+        ],
+        "z_bounds": [
+          74.952,
+          93.048
+        ],
+        "clamp_to_material_cell": true
+      },
+      "name": "head",
+      "part": "head"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          13,
+          0,
+          42,
+          1.4,
+          5
+        ],
+        [
+          18.5,
+          0,
+          54,
+          1.4,
+          5
+        ],
+        [
+          23,
+          0,
+          66,
+          1.3,
+          4
+        ],
+        [
+          29,
+          0,
+          77,
+          1,
+          3.5
+        ]
+      ],
+      "material": "scutes",
+      "segments": 20,
+      "name": "throat_scutes",
+      "part": "throat_scutes"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          4,
+          -9,
+          40,
+          5,
+          5.5
+        ],
+        [
+          5,
+          -12,
+          30,
+          4.5,
+          4.8
+        ],
+        [
+          7,
+          -14,
+          21,
+          3.8,
+          4
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_front_upper",
+      "part": "left_front_upper"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          7,
+          -14,
+          23,
+          3.8,
+          4
+        ],
+        [
+          7,
+          -14,
+          11,
+          2.8,
+          3
+        ],
+        [
+          8,
+          -14,
+          5,
+          2.5,
+          2.7
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_front_shank",
+      "part": "left_front_shank"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        10,
+        -14,
+        3.7
+      ],
+      "radii": [
+        6,
+        4.5,
+        3.3
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "left_front_foot",
+      "part": "left_front_foot"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          12,
+          -16.7,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          16,
+          -17.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          19,
+          -17.3,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "left_front_claw_0",
+      "part": "left_front_claw_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          12,
+          -14.9,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          16,
+          -15.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          19,
+          -15.1,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "left_front_claw_1",
+      "part": "left_front_claw_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          12,
+          -13.1,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          16,
+          -13.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          19,
+          -12.9,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "left_front_claw_2",
+      "part": "left_front_claw_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          12,
+          -11.3,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          16,
+          -11.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          19,
+          -10.700000000000001,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "left_front_claw_3",
+      "part": "left_front_claw_3"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        -36,
+        -9,
+        30
+      ],
+      "radii": [
+        7,
+        6,
+        11
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "left_hind_upper",
+      "part": "left_hind_upper"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -34,
+          -14,
+          23,
+          3.8,
+          4
+        ],
+        [
+          -40,
+          -14,
+          11,
+          2.8,
+          3
+        ],
+        [
+          -39,
+          -14,
+          5,
+          2.5,
+          2.7
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_hind_shank",
+      "part": "left_hind_shank"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        -37,
+        -14,
+        3.7
+      ],
+      "radii": [
+        6,
+        4.5,
+        3.3
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "left_hind_foot",
+      "part": "left_hind_foot"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -35,
+          -16.7,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          -31,
+          -17.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          -28,
+          -17.3,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "left_hind_claw_0",
+      "part": "left_hind_claw_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -35,
+          -14.9,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          -31,
+          -15.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          -28,
+          -15.1,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "left_hind_claw_1",
+      "part": "left_hind_claw_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -35,
+          -13.1,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          -31,
+          -13.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          -28,
+          -12.9,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "left_hind_claw_2",
+      "part": "left_hind_claw_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -35,
+          -11.3,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          -31,
+          -11.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          -28,
+          -10.700000000000001,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "left_hind_claw_3",
+      "part": "left_hind_claw_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          4,
+          9,
+          40,
+          5,
+          5.5
+        ],
+        [
+          5,
+          12,
+          30,
+          4.5,
+          4.8
+        ],
+        [
+          7,
+          14,
+          21,
+          3.8,
+          4
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_front_upper",
+      "part": "right_front_upper"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          7,
+          14,
+          23,
+          3.8,
+          4
+        ],
+        [
+          7,
+          14,
+          11,
+          2.8,
+          3
+        ],
+        [
+          8,
+          14,
+          5,
+          2.5,
+          2.7
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_front_shank",
+      "part": "right_front_shank"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        10,
+        14,
+        3.7
+      ],
+      "radii": [
+        6,
+        4.5,
+        3.3
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "right_front_foot",
+      "part": "right_front_foot"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          12,
+          11.3,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          16,
+          11.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          19,
+          10.700000000000001,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "right_front_claw_0",
+      "part": "right_front_claw_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          12,
+          13.1,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          16,
+          13.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          19,
+          12.9,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "right_front_claw_1",
+      "part": "right_front_claw_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          12,
+          14.9,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          16,
+          15.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          19,
+          15.1,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "right_front_claw_2",
+      "part": "right_front_claw_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          12,
+          16.7,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          16,
+          17.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          19,
+          17.3,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "right_front_claw_3",
+      "part": "right_front_claw_3"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        -36,
+        9,
+        30
+      ],
+      "radii": [
+        7,
+        6,
+        11
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "right_hind_upper",
+      "part": "right_hind_upper"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -34,
+          14,
+          23,
+          3.8,
+          4
+        ],
+        [
+          -40,
+          14,
+          11,
+          2.8,
+          3
+        ],
+        [
+          -39,
+          14,
+          5,
+          2.5,
+          2.7
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_hind_shank",
+      "part": "right_hind_shank"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        -37,
+        14,
+        3.7
+      ],
+      "radii": [
+        6,
+        4.5,
+        3.3
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "right_hind_foot",
+      "part": "right_hind_foot"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -35,
+          11.3,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          -31,
+          11.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          -28,
+          10.700000000000001,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "right_hind_claw_0",
+      "part": "right_hind_claw_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -35,
+          13.1,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          -31,
+          13.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          -28,
+          12.9,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "right_hind_claw_1",
+      "part": "right_hind_claw_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -35,
+          14.9,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          -31,
+          15.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          -28,
+          15.1,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "right_hind_claw_2",
+      "part": "right_hind_claw_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -35,
+          16.7,
+          3.5,
+          1.1,
+          1.1
+        ],
+        [
+          -31,
+          17.0,
+          2.8,
+          0.9,
+          0.9
+        ],
+        [
+          -28,
+          17.3,
+          1.4,
+          0.2,
+          0.2
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "right_hind_claw_3",
+      "part": "right_hind_claw_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -39,
+          0,
+          34,
+          8,
+          9
+        ],
+        [
+          -51,
+          0,
+          31,
+          7,
+          8
+        ],
+        [
+          -66,
+          2,
+          24,
+          5,
+          6
+        ],
+        [
+          -80,
+          8,
+          17,
+          3.8,
+          4.8
+        ],
+        [
+          -89,
+          19,
+          16,
+          2.9,
+          3.5
+        ],
+        [
+          -83,
+          28,
+          21,
+          1.7,
+          2.3
+        ],
+        [
+          -72,
+          29,
+          27,
+          0.3,
+          0.4
+        ]
+      ],
+      "material": "skin",
+      "segments": 24,
+      "name": "serpent_tail",
+      "part": "serpent_tail"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        23,
+        0,
+        87
+      ],
+      "radii": [
+        5.4,
+        7.1,
+        7
+      ],
+      "material": "hair",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "hair_mass",
+      "part": "hair_mass"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        27,
+        0,
+        91
+      ],
+      "radii": [
+        5,
+        5.8,
+        2.5
+      ],
+      "material": "hair",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "hair_crown",
+      "part": "hair_crown"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          20.824429495415053,
+          4.206888370749727,
+          88,
+          1,
+          1.1
+        ],
+        [
+          18.824429495415053,
+          4.6275772078247,
+          80,
+          1,
+          1.2
+        ],
+        [
+          16.824429495415053,
+          4.6275772078247,
+          70,
+          0.8,
+          1
+        ],
+        [
+          13.824429495415053,
+          5.048266044899672,
+          60,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_lock_0",
+      "part": "hair_lock_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          20.145632290866427,
+          1.9479542857627434,
+          88,
+          1,
+          1.1
+        ],
+        [
+          18.145632290866427,
+          2.142749714339018,
+          80,
+          1,
+          1.2
+        ],
+        [
+          16.145632290866427,
+          2.142749714339018,
+          70,
+          0.8,
+          1
+        ],
+        [
+          13.145632290866427,
+          2.337545142915292,
+          59,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_lock_1",
+      "part": "hair_lock_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          20.030384493975586,
+          -0.9029705238680376,
+          88,
+          1,
+          1.1
+        ],
+        [
+          18.030384493975586,
+          -0.9932675762548414,
+          80,
+          1,
+          1.2
+        ],
+        [
+          16.030384493975586,
+          -0.9932675762548414,
+          70,
+          0.8,
+          1
+        ],
+        [
+          13.030384493975586,
+          -1.083564628641645,
+          58,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_lock_2",
+      "part": "hair_lock_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          20.513710349045212,
+          -3.479479153066061,
+          88,
+          1,
+          1.1
+        ],
+        [
+          18.513710349045212,
+          -3.8274270683726677,
+          80,
+          1,
+          1.2
+        ],
+        [
+          16.513710349045212,
+          -3.8274270683726677,
+          70,
+          0.8,
+          1
+        ],
+        [
+          13.513710349045212,
+          -4.175374983679273,
+          60,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_lock_3",
+      "part": "hair_lock_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          21.448725288366003,
+          -4.998560818879258,
+          88,
+          1,
+          1.1
+        ],
+        [
+          19.448725288366003,
+          -5.498416900767184,
+          80,
+          1,
+          1.2
+        ],
+        [
+          17.448725288366003,
+          -5.498416900767184,
+          70,
+          0.8,
+          1
+        ],
+        [
+          14.448725288366003,
+          -5.998272982655109,
+          59,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_lock_4",
+      "part": "hair_lock_4"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          22.551274711633997,
+          -4.998560818879258,
+          88,
+          1,
+          1.1
+        ],
+        [
+          20.551274711633997,
+          -5.498416900767184,
+          80,
+          1,
+          1.2
+        ],
+        [
+          18.551274711633997,
+          -5.498416900767184,
+          70,
+          0.8,
+          1
+        ],
+        [
+          15.551274711633997,
+          -5.998272982655109,
+          58,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_lock_5",
+      "part": "hair_lock_5"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          23.486289650954788,
+          -3.4794791530660643,
+          88,
+          1,
+          1.1
+        ],
+        [
+          21.486289650954788,
+          -3.8274270683726708,
+          80,
+          1,
+          1.2
+        ],
+        [
+          19.486289650954788,
+          -3.8274270683726708,
+          70,
+          0.8,
+          1
+        ],
+        [
+          16.486289650954788,
+          -4.175374983679277,
+          60,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_lock_6",
+      "part": "hair_lock_6"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          23.969615506024414,
+          -0.9029705238680378,
+          88,
+          1,
+          1.1
+        ],
+        [
+          21.969615506024414,
+          -0.9932675762548416,
+          80,
+          1,
+          1.2
+        ],
+        [
+          19.969615506024414,
+          -0.9932675762548416,
+          70,
+          0.8,
+          1
+        ],
+        [
+          16.969615506024414,
+          -1.0835646286416454,
+          59,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_lock_7",
+      "part": "hair_lock_7"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          23.854367709133577,
+          1.9479542857627423,
+          88,
+          1,
+          1.1
+        ],
+        [
+          21.854367709133577,
+          2.1427497143390166,
+          80,
+          1,
+          1.2
+        ],
+        [
+          19.854367709133577,
+          2.1427497143390166,
+          70,
+          0.8,
+          1
+        ],
+        [
+          16.854367709133577,
+          2.3375451429152907,
+          58,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_lock_8",
+      "part": "hair_lock_8"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          23.175570504584947,
+          4.206888370749726,
+          88,
+          1,
+          1.1
+        ],
+        [
+          21.175570504584947,
+          4.627577207824699,
+          80,
+          1,
+          1.2
+        ],
+        [
+          19.175570504584947,
+          4.627577207824699,
+          70,
+          0.8,
+          1
+        ],
+        [
+          16.175570504584947,
+          5.0482660448996715,
+          60,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_lock_9",
+      "part": "hair_lock_9"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          26,
+          -5.5,
+          84,
+          1.1,
+          2
+        ],
+        [
+          24,
+          -8,
+          86,
+          1,
+          1.8
+        ],
+        [
+          21,
+          -10.5,
+          88,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_ear",
+      "part": "left_ear"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          24,
+          -4.8,
+          89,
+          1.6,
+          1.8
+        ],
+        [
+          20,
+          -6.5,
+          94,
+          1.4,
+          1.6
+        ],
+        [
+          13,
+          -7,
+          98,
+          1,
+          1.2
+        ],
+        [
+          5,
+          -6.5,
+          98,
+          0.25,
+          0.3
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "left_horn",
+      "part": "left_horn"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          25,
+          -3.0,
+          89.0,
+          0.8,
+          1.4
+        ],
+        [
+          20,
+          -4.5,
+          92.0,
+          1,
+          2
+        ],
+        [
+          12,
+          -5.4,
+          94.0,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "left_head_feather_0",
+      "part": "left_head_feather_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          25,
+          -3.7,
+          88.4,
+          0.8,
+          1.4
+        ],
+        [
+          20,
+          -5.550000000000001,
+          91.4,
+          1,
+          2
+        ],
+        [
+          11,
+          -6.66,
+          93.4,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_head_feather_1",
+      "part": "left_head_feather_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          25,
+          -4.4,
+          87.8,
+          0.8,
+          1.4
+        ],
+        [
+          20,
+          -6.6000000000000005,
+          90.8,
+          1,
+          2
+        ],
+        [
+          10,
+          -7.920000000000001,
+          92.8,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "left_head_feather_2",
+      "part": "left_head_feather_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          25,
+          -5.1,
+          87.2,
+          0.8,
+          1.4
+        ],
+        [
+          20,
+          -7.6499999999999995,
+          90.2,
+          1,
+          2
+        ],
+        [
+          9,
+          -9.18,
+          92.2,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_head_feather_3",
+      "part": "left_head_feather_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -12,
+          -7,
+          43,
+          3.8,
+          4
+        ],
+        [
+          -6,
+          -22,
+          55,
+          3.2,
+          3.4
+        ],
+        [
+          -10,
+          -40,
+          69,
+          2.5,
+          2.8
+        ],
+        [
+          -23,
+          -51,
+          72,
+          1.4,
+          1.7
+        ]
+      ],
+      "material": "slate",
+      "segments": 20,
+      "name": "left_wing",
+      "part": "left_wing"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -11.5,
+          -8.25,
+          44.0,
+          1.5,
+          2.6
+        ],
+        [
+          -19.5,
+          -13.25,
+          39.0,
+          1.6,
+          3.6
+        ],
+        [
+          -31.5,
+          -21.25,
+          31.0,
+          1.3,
+          3.8
+        ],
+        [
+          -42.5,
+          -26.25,
+          20.0,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "left_wing_feather_0",
+      "part": "left_wing_feather_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -10.5,
+          -10.75,
+          46.0,
+          1.5,
+          2.6
+        ],
+        [
+          -18.5,
+          -15.75,
+          41.0,
+          1.6,
+          3.6
+        ],
+        [
+          -31.15,
+          -23.75,
+          33.0,
+          1.3,
+          3.8
+        ],
+        [
+          -42.2,
+          -28.75,
+          22.0,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_wing_feather_1",
+      "part": "left_wing_feather_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -9.5,
+          -13.25,
+          48.0,
+          1.5,
+          2.6
+        ],
+        [
+          -17.5,
+          -18.25,
+          43.0,
+          1.6,
+          3.6
+        ],
+        [
+          -30.8,
+          -26.25,
+          35.0,
+          1.3,
+          3.8
+        ],
+        [
+          -41.9,
+          -31.25,
+          24.0,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_wing_feather_2",
+      "part": "left_wing_feather_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -8.5,
+          -15.75,
+          50.0,
+          1.5,
+          2.6
+        ],
+        [
+          -16.5,
+          -20.75,
+          45.0,
+          1.6,
+          3.6
+        ],
+        [
+          -30.45,
+          -28.75,
+          37.0,
+          1.3,
+          3.8
+        ],
+        [
+          -41.6,
+          -33.75,
+          26.0,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "left_wing_feather_3",
+      "part": "left_wing_feather_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -7.5,
+          -18.25,
+          52.0,
+          1.5,
+          2.6
+        ],
+        [
+          -15.5,
+          -23.25,
+          47.0,
+          1.6,
+          3.6
+        ],
+        [
+          -30.1,
+          -31.25,
+          39.0,
+          1.3,
+          3.8
+        ],
+        [
+          -41.3,
+          -36.25,
+          28.0,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_wing_feather_4",
+      "part": "left_wing_feather_4"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -6.5,
+          -20.75,
+          54.0,
+          1.5,
+          2.6
+        ],
+        [
+          -14.5,
+          -25.75,
+          49.0,
+          1.6,
+          3.6
+        ],
+        [
+          -29.75,
+          -33.75,
+          41.0,
+          1.3,
+          3.8
+        ],
+        [
+          -41.0,
+          -38.75,
+          30.0,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_wing_feather_5",
+      "part": "left_wing_feather_5"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -6.333333333333333,
+          -23.5,
+          56.166666666666664,
+          1.5,
+          2.6
+        ],
+        [
+          -14.333333333333332,
+          -28.5,
+          51.166666666666664,
+          1.6,
+          3.6
+        ],
+        [
+          -30.233333333333334,
+          -36.5,
+          43.166666666666664,
+          1.3,
+          3.8
+        ],
+        [
+          -41.53333333333333,
+          -41.5,
+          32.166666666666664,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "left_wing_feather_6",
+      "part": "left_wing_feather_6"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -7.0,
+          -26.5,
+          58.5,
+          1.5,
+          2.6
+        ],
+        [
+          -15.0,
+          -31.5,
+          53.5,
+          1.6,
+          3.6
+        ],
+        [
+          -31.55,
+          -39.5,
+          45.5,
+          1.3,
+          3.8
+        ],
+        [
+          -42.9,
+          -44.5,
+          34.5,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_wing_feather_7",
+      "part": "left_wing_feather_7"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -7.666666666666667,
+          -29.5,
+          60.833333333333336,
+          1.5,
+          2.6
+        ],
+        [
+          -15.666666666666668,
+          -34.5,
+          55.833333333333336,
+          1.6,
+          3.6
+        ],
+        [
+          -32.86666666666667,
+          -42.5,
+          47.833333333333336,
+          1.3,
+          3.8
+        ],
+        [
+          -44.266666666666666,
+          -47.5,
+          36.833333333333336,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_wing_feather_8",
+      "part": "left_wing_feather_8"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -8.333333333333334,
+          -32.5,
+          63.16666666666667,
+          1.5,
+          2.6
+        ],
+        [
+          -16.333333333333336,
+          -37.5,
+          58.16666666666667,
+          1.6,
+          3.6
+        ],
+        [
+          -34.18333333333334,
+          -45.5,
+          50.16666666666667,
+          1.3,
+          3.8
+        ],
+        [
+          -45.63333333333333,
+          -50.5,
+          39.16666666666667,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "left_wing_feather_9",
+      "part": "left_wing_feather_9"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -9.0,
+          -35.5,
+          65.5,
+          1.5,
+          2.6
+        ],
+        [
+          -17.0,
+          -40.5,
+          60.5,
+          1.6,
+          3.6
+        ],
+        [
+          -35.5,
+          -48.5,
+          52.5,
+          1.3,
+          3.8
+        ],
+        [
+          -47.0,
+          -53.5,
+          41.5,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_wing_feather_10",
+      "part": "left_wing_feather_10"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -9.666666666666666,
+          -38.5,
+          67.83333333333333,
+          1.5,
+          2.6
+        ],
+        [
+          -17.666666666666664,
+          -43.5,
+          62.83333333333333,
+          1.6,
+          3.6
+        ],
+        [
+          -36.81666666666666,
+          -51.5,
+          54.83333333333333,
+          1.3,
+          3.8
+        ],
+        [
+          -48.36666666666666,
+          -56.5,
+          43.83333333333333,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_wing_feather_11",
+      "part": "left_wing_feather_11"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -8,
+          -3,
+          44.0,
+          1.4,
+          2
+        ],
+        [
+          -11,
+          -5.4,
+          49.0,
+          1.3,
+          2.5
+        ],
+        [
+          -18,
+          -6,
+          54.0,
+          0.25,
+          0.35
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "left_dorsal_feather_0",
+      "part": "left_dorsal_feather_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -12,
+          -3,
+          43.75,
+          1.4,
+          2
+        ],
+        [
+          -15,
+          -5.4,
+          48.75,
+          1.3,
+          2.5
+        ],
+        [
+          -22,
+          -6,
+          53.75,
+          0.25,
+          0.35
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_dorsal_feather_1",
+      "part": "left_dorsal_feather_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -16,
+          -3,
+          43.5,
+          1.4,
+          2
+        ],
+        [
+          -19,
+          -5.4,
+          48.5,
+          1.3,
+          2.5
+        ],
+        [
+          -26,
+          -6,
+          53.5,
+          0.25,
+          0.35
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "left_dorsal_feather_2",
+      "part": "left_dorsal_feather_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -20,
+          -3,
+          43.25,
+          1.4,
+          2
+        ],
+        [
+          -23,
+          -5.4,
+          48.25,
+          1.3,
+          2.5
+        ],
+        [
+          -30,
+          -6,
+          53.25,
+          0.25,
+          0.35
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_dorsal_feather_3",
+      "part": "left_dorsal_feather_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -24,
+          -3,
+          43.0,
+          1.4,
+          2
+        ],
+        [
+          -27,
+          -5.4,
+          48.0,
+          1.3,
+          2.5
+        ],
+        [
+          -34,
+          -6,
+          53.0,
+          0.25,
+          0.35
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "left_dorsal_feather_4",
+      "part": "left_dorsal_feather_4"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -28,
+          -3,
+          42.75,
+          1.4,
+          2
+        ],
+        [
+          -31,
+          -5.4,
+          47.75,
+          1.3,
+          2.5
+        ],
+        [
+          -38,
+          -6,
+          52.75,
+          0.25,
+          0.35
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_dorsal_feather_5",
+      "part": "left_dorsal_feather_5"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -32,
+          -3,
+          42.5,
+          1.4,
+          2
+        ],
+        [
+          -35,
+          -5.4,
+          47.5,
+          1.3,
+          2.5
+        ],
+        [
+          -42,
+          -6,
+          52.5,
+          0.25,
+          0.35
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "left_dorsal_feather_6",
+      "part": "left_dorsal_feather_6"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -45.0,
+          -3.1142857142857143,
+          32.08571428571429,
+          1.1,
+          1.8
+        ],
+        [
+          -48.0,
+          -7.114285714285714,
+          35.08571428571429,
+          1.2,
+          2.5
+        ],
+        [
+          -55.0,
+          -11.114285714285714,
+          39.08571428571429,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "left_tail_feather_0",
+      "part": "left_tail_feather_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -50.0,
+          -3.4,
+          29.8,
+          1.1,
+          1.8
+        ],
+        [
+          -53.0,
+          -7.4,
+          32.8,
+          1.2,
+          2.5
+        ],
+        [
+          -60.0,
+          -11.4,
+          36.8,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_tail_feather_1",
+      "part": "left_tail_feather_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -55.0,
+          -3.685714285714286,
+          27.514285714285712,
+          1.1,
+          1.8
+        ],
+        [
+          -58.0,
+          -7.685714285714286,
+          30.514285714285712,
+          1.2,
+          2.5
+        ],
+        [
+          -65.0,
+          -11.685714285714287,
+          34.51428571428571,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "left_tail_feather_2",
+      "part": "left_tail_feather_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -60.0,
+          -3.9714285714285715,
+          25.228571428571428,
+          1.1,
+          1.8
+        ],
+        [
+          -63.0,
+          -7.9714285714285715,
+          28.228571428571428,
+          1.2,
+          2.5
+        ],
+        [
+          -70.0,
+          -11.971428571428572,
+          32.22857142857143,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_tail_feather_3",
+      "part": "left_tail_feather_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -65.0,
+          -2.9714285714285706,
+          22.942857142857143,
+          1.1,
+          1.8
+        ],
+        [
+          -68.0,
+          -6.971428571428571,
+          25.942857142857143,
+          1.2,
+          2.5
+        ],
+        [
+          -75.0,
+          -10.971428571428572,
+          29.942857142857143,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "left_tail_feather_4",
+      "part": "left_tail_feather_4"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -70.0,
+          -1.8285714285714283,
+          20.65714285714286,
+          1.1,
+          1.8
+        ],
+        [
+          -73.0,
+          -5.828571428571428,
+          23.65714285714286,
+          1.2,
+          2.5
+        ],
+        [
+          -80.0,
+          -9.82857142857143,
+          27.65714285714286,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "left_tail_feather_5",
+      "part": "left_tail_feather_5"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -75.0,
+          -0.685714285714285,
+          18.37142857142857,
+          1.1,
+          1.8
+        ],
+        [
+          -78.0,
+          -4.685714285714285,
+          21.37142857142857,
+          1.2,
+          2.5
+        ],
+        [
+          -85.0,
+          -8.685714285714285,
+          25.37142857142857,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "left_tail_feather_6",
+      "part": "left_tail_feather_6"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          26,
+          5.5,
+          84,
+          1.1,
+          2
+        ],
+        [
+          24,
+          8,
+          86,
+          1,
+          1.8
+        ],
+        [
+          21,
+          10.5,
+          88,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_ear",
+      "part": "right_ear"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          24,
+          4.8,
+          89,
+          1.6,
+          1.8
+        ],
+        [
+          20,
+          6.5,
+          94,
+          1.4,
+          1.6
+        ],
+        [
+          13,
+          7,
+          98,
+          1,
+          1.2
+        ],
+        [
+          5,
+          6.5,
+          98,
+          0.25,
+          0.3
+        ]
+      ],
+      "material": "bone",
+      "segments": 16,
+      "name": "right_horn",
+      "part": "right_horn"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          25,
+          3.0,
+          89.0,
+          0.8,
+          1.4
+        ],
+        [
+          20,
+          4.5,
+          92.0,
+          1,
+          2
+        ],
+        [
+          12,
+          5.4,
+          94.0,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "right_head_feather_0",
+      "part": "right_head_feather_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          25,
+          3.7,
+          88.4,
+          0.8,
+          1.4
+        ],
+        [
+          20,
+          5.550000000000001,
+          91.4,
+          1,
+          2
+        ],
+        [
+          11,
+          6.66,
+          93.4,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_head_feather_1",
+      "part": "right_head_feather_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          25,
+          4.4,
+          87.8,
+          0.8,
+          1.4
+        ],
+        [
+          20,
+          6.6000000000000005,
+          90.8,
+          1,
+          2
+        ],
+        [
+          10,
+          7.920000000000001,
+          92.8,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "right_head_feather_2",
+      "part": "right_head_feather_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          25,
+          5.1,
+          87.2,
+          0.8,
+          1.4
+        ],
+        [
+          20,
+          7.6499999999999995,
+          90.2,
+          1,
+          2
+        ],
+        [
+          9,
+          9.18,
+          92.2,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_head_feather_3",
+      "part": "right_head_feather_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -12,
+          7,
+          43,
+          3.8,
+          4
+        ],
+        [
+          -6,
+          22,
+          55,
+          3.2,
+          3.4
+        ],
+        [
+          -10,
+          40,
+          69,
+          2.5,
+          2.8
+        ],
+        [
+          -23,
+          51,
+          72,
+          1.4,
+          1.7
+        ]
+      ],
+      "material": "slate",
+      "segments": 20,
+      "name": "right_wing",
+      "part": "right_wing"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -11.5,
+          8.25,
+          44.0,
+          1.5,
+          2.6
+        ],
+        [
+          -19.5,
+          13.25,
+          39.0,
+          1.6,
+          3.6
+        ],
+        [
+          -31.5,
+          21.25,
+          31.0,
+          1.3,
+          3.8
+        ],
+        [
+          -42.5,
+          26.25,
+          20.0,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "right_wing_feather_0",
+      "part": "right_wing_feather_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -10.5,
+          10.75,
+          46.0,
+          1.5,
+          2.6
+        ],
+        [
+          -18.5,
+          15.75,
+          41.0,
+          1.6,
+          3.6
+        ],
+        [
+          -31.15,
+          23.75,
+          33.0,
+          1.3,
+          3.8
+        ],
+        [
+          -42.2,
+          28.75,
+          22.0,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_wing_feather_1",
+      "part": "right_wing_feather_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -9.5,
+          13.25,
+          48.0,
+          1.5,
+          2.6
+        ],
+        [
+          -17.5,
+          18.25,
+          43.0,
+          1.6,
+          3.6
+        ],
+        [
+          -30.8,
+          26.25,
+          35.0,
+          1.3,
+          3.8
+        ],
+        [
+          -41.9,
+          31.25,
+          24.0,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_wing_feather_2",
+      "part": "right_wing_feather_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -8.5,
+          15.75,
+          50.0,
+          1.5,
+          2.6
+        ],
+        [
+          -16.5,
+          20.75,
+          45.0,
+          1.6,
+          3.6
+        ],
+        [
+          -30.45,
+          28.75,
+          37.0,
+          1.3,
+          3.8
+        ],
+        [
+          -41.6,
+          33.75,
+          26.0,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "right_wing_feather_3",
+      "part": "right_wing_feather_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -7.5,
+          18.25,
+          52.0,
+          1.5,
+          2.6
+        ],
+        [
+          -15.5,
+          23.25,
+          47.0,
+          1.6,
+          3.6
+        ],
+        [
+          -30.1,
+          31.25,
+          39.0,
+          1.3,
+          3.8
+        ],
+        [
+          -41.3,
+          36.25,
+          28.0,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_wing_feather_4",
+      "part": "right_wing_feather_4"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -6.5,
+          20.75,
+          54.0,
+          1.5,
+          2.6
+        ],
+        [
+          -14.5,
+          25.75,
+          49.0,
+          1.6,
+          3.6
+        ],
+        [
+          -29.75,
+          33.75,
+          41.0,
+          1.3,
+          3.8
+        ],
+        [
+          -41.0,
+          38.75,
+          30.0,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_wing_feather_5",
+      "part": "right_wing_feather_5"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -6.333333333333333,
+          23.5,
+          56.166666666666664,
+          1.5,
+          2.6
+        ],
+        [
+          -14.333333333333332,
+          28.5,
+          51.166666666666664,
+          1.6,
+          3.6
+        ],
+        [
+          -30.233333333333334,
+          36.5,
+          43.166666666666664,
+          1.3,
+          3.8
+        ],
+        [
+          -41.53333333333333,
+          41.5,
+          32.166666666666664,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "right_wing_feather_6",
+      "part": "right_wing_feather_6"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -7.0,
+          26.5,
+          58.5,
+          1.5,
+          2.6
+        ],
+        [
+          -15.0,
+          31.5,
+          53.5,
+          1.6,
+          3.6
+        ],
+        [
+          -31.55,
+          39.5,
+          45.5,
+          1.3,
+          3.8
+        ],
+        [
+          -42.9,
+          44.5,
+          34.5,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_wing_feather_7",
+      "part": "right_wing_feather_7"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -7.666666666666667,
+          29.5,
+          60.833333333333336,
+          1.5,
+          2.6
+        ],
+        [
+          -15.666666666666668,
+          34.5,
+          55.833333333333336,
+          1.6,
+          3.6
+        ],
+        [
+          -32.86666666666667,
+          42.5,
+          47.833333333333336,
+          1.3,
+          3.8
+        ],
+        [
+          -44.266666666666666,
+          47.5,
+          36.833333333333336,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_wing_feather_8",
+      "part": "right_wing_feather_8"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -8.333333333333334,
+          32.5,
+          63.16666666666667,
+          1.5,
+          2.6
+        ],
+        [
+          -16.333333333333336,
+          37.5,
+          58.16666666666667,
+          1.6,
+          3.6
+        ],
+        [
+          -34.18333333333334,
+          45.5,
+          50.16666666666667,
+          1.3,
+          3.8
+        ],
+        [
+          -45.63333333333333,
+          50.5,
+          39.16666666666667,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "right_wing_feather_9",
+      "part": "right_wing_feather_9"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -9.0,
+          35.5,
+          65.5,
+          1.5,
+          2.6
+        ],
+        [
+          -17.0,
+          40.5,
+          60.5,
+          1.6,
+          3.6
+        ],
+        [
+          -35.5,
+          48.5,
+          52.5,
+          1.3,
+          3.8
+        ],
+        [
+          -47.0,
+          53.5,
+          41.5,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_wing_feather_10",
+      "part": "right_wing_feather_10"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -9.666666666666666,
+          38.5,
+          67.83333333333333,
+          1.5,
+          2.6
+        ],
+        [
+          -17.666666666666664,
+          43.5,
+          62.83333333333333,
+          1.6,
+          3.6
+        ],
+        [
+          -36.81666666666666,
+          51.5,
+          54.83333333333333,
+          1.3,
+          3.8
+        ],
+        [
+          -48.36666666666666,
+          56.5,
+          43.83333333333333,
+          0.25,
+          0.4
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_wing_feather_11",
+      "part": "right_wing_feather_11"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -8,
+          3,
+          44.0,
+          1.4,
+          2
+        ],
+        [
+          -11,
+          5.4,
+          49.0,
+          1.3,
+          2.5
+        ],
+        [
+          -18,
+          6,
+          54.0,
+          0.25,
+          0.35
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "right_dorsal_feather_0",
+      "part": "right_dorsal_feather_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -12,
+          3,
+          43.75,
+          1.4,
+          2
+        ],
+        [
+          -15,
+          5.4,
+          48.75,
+          1.3,
+          2.5
+        ],
+        [
+          -22,
+          6,
+          53.75,
+          0.25,
+          0.35
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_dorsal_feather_1",
+      "part": "right_dorsal_feather_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -16,
+          3,
+          43.5,
+          1.4,
+          2
+        ],
+        [
+          -19,
+          5.4,
+          48.5,
+          1.3,
+          2.5
+        ],
+        [
+          -26,
+          6,
+          53.5,
+          0.25,
+          0.35
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "right_dorsal_feather_2",
+      "part": "right_dorsal_feather_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -20,
+          3,
+          43.25,
+          1.4,
+          2
+        ],
+        [
+          -23,
+          5.4,
+          48.25,
+          1.3,
+          2.5
+        ],
+        [
+          -30,
+          6,
+          53.25,
+          0.25,
+          0.35
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_dorsal_feather_3",
+      "part": "right_dorsal_feather_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -24,
+          3,
+          43.0,
+          1.4,
+          2
+        ],
+        [
+          -27,
+          5.4,
+          48.0,
+          1.3,
+          2.5
+        ],
+        [
+          -34,
+          6,
+          53.0,
+          0.25,
+          0.35
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "right_dorsal_feather_4",
+      "part": "right_dorsal_feather_4"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -28,
+          3,
+          42.75,
+          1.4,
+          2
+        ],
+        [
+          -31,
+          5.4,
+          47.75,
+          1.3,
+          2.5
+        ],
+        [
+          -38,
+          6,
+          52.75,
+          0.25,
+          0.35
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_dorsal_feather_5",
+      "part": "right_dorsal_feather_5"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -32,
+          3,
+          42.5,
+          1.4,
+          2
+        ],
+        [
+          -35,
+          5.4,
+          47.5,
+          1.3,
+          2.5
+        ],
+        [
+          -42,
+          6,
+          52.5,
+          0.25,
+          0.35
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "right_dorsal_feather_6",
+      "part": "right_dorsal_feather_6"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -45.0,
+          3.1142857142857143,
+          32.08571428571429,
+          1.1,
+          1.8
+        ],
+        [
+          -48.0,
+          7.114285714285714,
+          35.08571428571429,
+          1.2,
+          2.5
+        ],
+        [
+          -55.0,
+          11.114285714285714,
+          39.08571428571429,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "right_tail_feather_0",
+      "part": "right_tail_feather_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -50.0,
+          3.4,
+          29.8,
+          1.1,
+          1.8
+        ],
+        [
+          -53.0,
+          7.4,
+          32.8,
+          1.2,
+          2.5
+        ],
+        [
+          -60.0,
+          11.4,
+          36.8,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_tail_feather_1",
+      "part": "right_tail_feather_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -55.0,
+          3.685714285714286,
+          27.514285714285712,
+          1.1,
+          1.8
+        ],
+        [
+          -58.0,
+          7.685714285714286,
+          30.514285714285712,
+          1.2,
+          2.5
+        ],
+        [
+          -65.0,
+          11.685714285714287,
+          34.51428571428571,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "right_tail_feather_2",
+      "part": "right_tail_feather_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -60.0,
+          3.9714285714285715,
+          25.228571428571428,
+          1.1,
+          1.8
+        ],
+        [
+          -63.0,
+          7.9714285714285715,
+          28.228571428571428,
+          1.2,
+          2.5
+        ],
+        [
+          -70.0,
+          11.971428571428572,
+          32.22857142857143,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_tail_feather_3",
+      "part": "right_tail_feather_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -65.0,
+          5.542857142857144,
+          22.942857142857143,
+          1.1,
+          1.8
+        ],
+        [
+          -68.0,
+          9.542857142857144,
+          25.942857142857143,
+          1.2,
+          2.5
+        ],
+        [
+          -75.0,
+          13.542857142857144,
+          29.942857142857143,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "right_tail_feather_4",
+      "part": "right_tail_feather_4"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -70.0,
+          7.257142857142857,
+          20.65714285714286,
+          1.1,
+          1.8
+        ],
+        [
+          -73.0,
+          11.257142857142856,
+          23.65714285714286,
+          1.2,
+          2.5
+        ],
+        [
+          -80.0,
+          15.257142857142856,
+          27.65714285714286,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "slate",
+      "segments": 12,
+      "name": "right_tail_feather_5",
+      "part": "right_tail_feather_5"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -75.0,
+          8.971428571428573,
+          18.37142857142857,
+          1.1,
+          1.8
+        ],
+        [
+          -78.0,
+          12.971428571428573,
+          21.37142857142857,
+          1.2,
+          2.5
+        ],
+        [
+          -85.0,
+          16.971428571428575,
+          25.37142857142857,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "ivory",
+      "segments": 12,
+      "name": "right_tail_feather_6",
+      "part": "right_tail_feather_6"
+    }
+  ],
+  "anatomy_scale": [
+    1,
+    1,
+    1
+  ],
+  "motion": {
+    "idle": {
+      "frames": 16,
+      "tics": 6,
+      "transforms": {
+        "left_wing": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": -0.7
+          }
+        ],
+        "right_wing": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 0.5
+          }
+        ],
+        "serpent_tail": [
+          {
+            "kind": "rotate",
+            "axis": "z",
+            "amplitude": 1
+          }
+        ]
+      }
+    },
+    "walk": {
+      "frames": 24,
+      "tics": 2,
+      "transforms": {
+        "left_front_upper": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 12,
+            "phase": 0
+          }
+        ],
+        "left_front_shank": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -8,
+            "phase": 3.141592653589793
+          }
+        ],
+        "left_hind_upper": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -12,
+            "phase": 0
+          }
+        ],
+        "left_hind_shank": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 10,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_front_upper": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 12,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_front_shank": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -8,
+            "phase": 6.283185307179586
+          }
+        ],
+        "right_hind_upper": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -12,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_hind_shank": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 10,
+            "phase": 6.283185307179586
+          }
+        ],
+        "left_wing": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": -2
+          }
+        ],
+        "right_wing": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 2
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 1.3
+          }
+        ],
+        "serpent_tail": [
+          {
+            "kind": "rotate",
+            "axis": "z",
+            "amplitude": 2
+          }
+        ]
+      }
+    }
+  },
+  "attachment_root": "pelvis",
+  "source_history": "Original long-necked four-legged serpent-dragon controls, female face, hair, horns, ivory throat, feathered wings/dorsum/tail. No Peuchen bat membrane or new abilities.",
+  "native_pose_overrides": {
+    "12": [
+      {
+        "part": "pelvis",
+        "kind": "rotate",
+        "axis": "x",
+        "angle": -10
+      },
+      {
+        "part": "torso",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 0
+      },
+      {
+        "part": "head",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -15
+      },
+      {
+        "part": "right_upper",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -50
+      },
+      {
+        "part": "left_upper",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -55
+      },
+      {
+        "part": "right_fore",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -10
+      },
+      {
+        "part": "left_fore",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -20
+      },
+      {
+        "part": "right_thigh",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 25
+      },
+      {
+        "part": "left_thigh",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 30
+      },
+      {
+        "part": "right_shin",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -35
+      },
+      {
+        "part": "left_shin",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -40
+      }
+    ],
+    "13": [
+      {
+        "part": "pelvis",
+        "kind": "rotate",
+        "axis": "x",
+        "angle": -30
+      },
+      {
+        "part": "torso",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 0
+      },
+      {
+        "part": "head",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -15
+      },
+      {
+        "part": "right_upper",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -50
+      },
+      {
+        "part": "left_upper",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -55
+      },
+      {
+        "part": "right_fore",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -10
+      },
+      {
+        "part": "left_fore",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -20
+      },
+      {
+        "part": "right_thigh",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 25
+      },
+      {
+        "part": "left_thigh",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 30
+      },
+      {
+        "part": "right_shin",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -35
+      },
+      {
+        "part": "left_shin",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -40
+      }
+    ],
+    "14": [
+      {
+        "part": "pelvis",
+        "kind": "rotate",
+        "axis": "x",
+        "angle": -55
+      },
+      {
+        "part": "torso",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 0
+      },
+      {
+        "part": "head",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -15
+      },
+      {
+        "part": "right_upper",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -50
+      },
+      {
+        "part": "left_upper",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -55
+      },
+      {
+        "part": "right_fore",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -10
+      },
+      {
+        "part": "left_fore",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -20
+      },
+      {
+        "part": "right_thigh",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 25
+      },
+      {
+        "part": "left_thigh",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 30
+      },
+      {
+        "part": "right_shin",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -35
+      },
+      {
+        "part": "left_shin",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -40
+      }
+    ],
+    "15": [
+      {
+        "part": "pelvis",
+        "kind": "rotate",
+        "axis": "x",
+        "angle": -78
+      },
+      {
+        "part": "torso",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 0
+      },
+      {
+        "part": "head",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -15
+      },
+      {
+        "part": "right_upper",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -50
+      },
+      {
+        "part": "left_upper",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -55
+      },
+      {
+        "part": "right_fore",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -10
+      },
+      {
+        "part": "left_fore",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -20
+      },
+      {
+        "part": "right_thigh",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 25
+      },
+      {
+        "part": "left_thigh",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 30
+      },
+      {
+        "part": "right_shin",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -35
+      },
+      {
+        "part": "left_shin",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -40
+      }
+    ],
+    "16": [
+      {
+        "part": "pelvis",
+        "kind": "rotate",
+        "axis": "x",
+        "angle": -88
+      },
+      {
+        "part": "torso",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 0
+      },
+      {
+        "part": "head",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 6
+      },
+      {
+        "part": "right_upper",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 10
+      },
+      {
+        "part": "left_upper",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 14
+      },
+      {
+        "part": "right_fore",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 0
+      },
+      {
+        "part": "left_fore",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 0
+      },
+      {
+        "part": "right_thigh",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 8
+      },
+      {
+        "part": "left_thigh",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 12
+      },
+      {
+        "part": "right_shin",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -12
+      },
+      {
+        "part": "left_shin",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -18
+      }
+    ],
+    "17": [
+      {
+        "part": "pelvis",
+        "kind": "rotate",
+        "axis": "x",
+        "angle": -90
+      },
+      {
+        "part": "torso",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 0
+      },
+      {
+        "part": "head",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 8
+      },
+      {
+        "part": "right_upper",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 5
+      },
+      {
+        "part": "left_upper",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 8
+      },
+      {
+        "part": "right_fore",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 0
+      },
+      {
+        "part": "left_fore",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 0
+      },
+      {
+        "part": "right_thigh",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 6
+      },
+      {
+        "part": "left_thigh",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 10
+      },
+      {
+        "part": "right_shin",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -8
+      },
+      {
+        "part": "left_shin",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -14
+      }
+    ],
+    "22": [
+      {
+        "part": "pelvis",
+        "kind": "rotate",
+        "axis": "x",
+        "angle": -90
+      },
+      {
+        "part": "head",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 10
+      },
+      {
+        "part": "right_upper",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -10
+      },
+      {
+        "part": "left_upper",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -15
+      },
+      {
+        "part": "right_thigh",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 20
+      },
+      {
+        "part": "left_thigh",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": 25
+      },
+      {
+        "part": "right_shin",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -35
+      },
+      {
+        "part": "left_shin",
+        "kind": "rotate",
+        "axis": "y",
+        "angle": -40
+      }
+    ]
+  }
+}

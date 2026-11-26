@@ -1,0 +1,681 @@
+{
+  "schema_revision": 1,
+  "issue": 822,
+  "species": "luzmala",
+  "catalogue_id": "CA-FOLK-027",
+  "reference": "assets/source/bestiary_453/imagenes/04_Apariciones/27_luz_mala.png",
+  "status": "candidate_author_review_pending",
+  "visual_contract": "Pale-green bright skull orb with rounded cranium, dark nasal opening, large bright eyes, curling flame crest, two side flames and three lower wisps; no ordinary limbs.",
+  "preview": {
+    "height_map_units": 100,
+    "model_offset": [
+      0,
+      0,
+      16
+    ],
+    "scale_authority": "Dimensionless art coordinates fitted to unchanged provisional Height, not metric scale."
+  },
+  "atlas": {
+    "source_file": "materials.png",
+    "columns": 4,
+    "rows": 5,
+    "inset": 0.012,
+    "image_size": [
+      1122,
+      1402
+    ]
+  },
+  "materials": {
+    "face": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.2531194295900178,
+        0.0021398002853067048,
+        0.49732620320855614,
+        0.21825962910128388
+      ]
+    },
+    "skin": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.2531194295900178,
+        0.2225392296718973,
+        0.49732620320855614,
+        0.3980028530670471
+      ]
+    },
+    "hair": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.00267379679144385,
+        0.40228245363766046,
+        0.24777183600713013,
+        0.5977175463623395
+      ]
+    },
+    "slate": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.5026737967914439,
+        0.40228245363766046,
+        0.7468805704099821,
+        0.5977175463623395
+      ]
+    },
+    "ivory": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.7522281639928698,
+        0.40228245363766046,
+        0.9973262032085561,
+        0.5977175463623395
+      ]
+    },
+    "leather": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.00267379679144385,
+        0.6019971469329529,
+        0.24777183600713013,
+        0.7981455064194009
+      ]
+    },
+    "bronze": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.2531194295900178,
+        0.6019971469329529,
+        0.49732620320855614,
+        0.7981455064194009
+      ]
+    },
+    "linen": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.5026737967914439,
+        0.6019971469329529,
+        0.7468805704099821,
+        0.7981455064194009
+      ]
+    },
+    "rope": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.7522281639928698,
+        0.6019971469329529,
+        0.9973262032085561,
+        0.7981455064194009
+      ]
+    },
+    "armor": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.00267379679144385,
+        0.8024251069900142,
+        0.24777183600713013,
+        0.9978601997146933
+      ]
+    },
+    "scutes": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.2531194295900178,
+        0.8024251069900142,
+        0.49732620320855614,
+        0.9978601997146933
+      ]
+    },
+    "bone": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.5026737967914439,
+        0.8024251069900142,
+        0.7468805704099821,
+        0.9978601997146933
+      ]
+    },
+    "flame": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.7522281639928698,
+        0.8024251069900142,
+        0.9973262032085561,
+        0.9978601997146933
+      ]
+    }
+  },
+  "parts": {
+    "pelvis": {
+      "parent": null,
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "torso": {
+      "parent": "pelvis",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "head": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "crest_flame": {
+      "parent": "head",
+      "pivot": [
+        -3.5,
+        0,
+        60
+      ]
+    },
+    "left_side_flame": {
+      "parent": "head",
+      "pivot": [
+        -1.2,
+        -11,
+        49.3
+      ]
+    },
+    "right_side_flame": {
+      "parent": "head",
+      "pivot": [
+        -1.2,
+        11,
+        49.3
+      ]
+    },
+    "lower_wisp_0": {
+      "parent": "head",
+      "pivot": [
+        -0.5,
+        -7.7,
+        36
+      ]
+    },
+    "lower_wisp_1": {
+      "parent": "head",
+      "pivot": [
+        -0.5,
+        0.3,
+        36
+      ]
+    },
+    "lower_wisp_2": {
+      "parent": "head",
+      "pivot": [
+        -0.5,
+        8.3,
+        36
+      ]
+    }
+  },
+  "shapes": [
+    {
+      "kind": "face",
+      "center": [
+        0,
+        0,
+        48
+      ],
+      "radii": [
+        15,
+        14,
+        17
+      ],
+      "material": "skin",
+      "latitudes": 23,
+      "longitudes": 40,
+      "front_deformation": [
+        {
+          "depth": 3.75,
+          "y": 0,
+          "z": 46.3,
+          "width_y": 2.8000000000000003,
+          "width_z": 4.760000000000001
+        },
+        {
+          "depth": 1.2,
+          "y": 0,
+          "z": 39.84,
+          "width_y": 5.6000000000000005,
+          "width_z": 1.7000000000000002
+        }
+      ],
+      "front_projection": {
+        "material": "face",
+        "minimum_x": 0,
+        "y_bounds": [
+          -15.120000000000001,
+          15.120000000000001
+        ],
+        "z_bounds": [
+          30.32,
+          65.68
+        ],
+        "clamp_to_material_cell": true
+      },
+      "name": "head",
+      "part": "head"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -3,
+          0,
+          59,
+          6,
+          7
+        ],
+        [
+          -5,
+          2,
+          67,
+          5,
+          6
+        ],
+        [
+          -6,
+          9,
+          76,
+          4.5,
+          5
+        ],
+        [
+          -5,
+          12,
+          83,
+          3,
+          3.6
+        ],
+        [
+          -4,
+          7,
+          87,
+          1.7,
+          2
+        ],
+        [
+          -3,
+          2,
+          84,
+          0.3,
+          0.4
+        ]
+      ],
+      "material": "skin",
+      "segments": 20,
+      "name": "crest_flame",
+      "part": "crest_flame",
+      "curve_steps": 3
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -1,
+          -10,
+          49,
+          4,
+          4
+        ],
+        [
+          -2,
+          -18,
+          51,
+          4.6,
+          5
+        ],
+        [
+          -4,
+          -26,
+          58,
+          4,
+          4.5
+        ],
+        [
+          -4,
+          -27,
+          66,
+          2.6,
+          3
+        ],
+        [
+          -3,
+          -23,
+          71,
+          1.5,
+          1.8
+        ],
+        [
+          -2,
+          -20,
+          68,
+          0.3,
+          0.4
+        ]
+      ],
+      "material": "skin",
+      "segments": 20,
+      "name": "left_side_flame",
+      "part": "left_side_flame",
+      "curve_steps": 3
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -1,
+          10,
+          49,
+          4,
+          4
+        ],
+        [
+          -2,
+          18,
+          51,
+          4.6,
+          5
+        ],
+        [
+          -4,
+          26,
+          58,
+          4,
+          4.5
+        ],
+        [
+          -4,
+          27,
+          66,
+          2.6,
+          3
+        ],
+        [
+          -3,
+          23,
+          71,
+          1.5,
+          1.8
+        ],
+        [
+          -2,
+          20,
+          68,
+          0.3,
+          0.4
+        ]
+      ],
+      "material": "skin",
+      "segments": 20,
+      "name": "right_side_flame",
+      "part": "right_side_flame",
+      "curve_steps": 3
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          -8,
+          37,
+          3.6,
+          3.8
+        ],
+        [
+          -4,
+          -5,
+          29,
+          3.2,
+          3.6
+        ],
+        [
+          -6,
+          -10,
+          22,
+          2.3,
+          2.5
+        ],
+        [
+          -5,
+          -12,
+          16,
+          1.3,
+          1.5
+        ],
+        [
+          -3,
+          -8,
+          12,
+          0.3,
+          0.35
+        ]
+      ],
+      "material": "skin",
+      "segments": 20,
+      "name": "lower_wisp_0",
+      "part": "lower_wisp_0",
+      "curve_steps": 3
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          0,
+          37,
+          3.6,
+          3.8
+        ],
+        [
+          -4,
+          3,
+          29,
+          3.2,
+          3.6
+        ],
+        [
+          -6,
+          -2,
+          25,
+          2.3,
+          2.5
+        ],
+        [
+          -5,
+          -4,
+          19,
+          1.3,
+          1.5
+        ],
+        [
+          -3,
+          0,
+          15,
+          0.3,
+          0.35
+        ]
+      ],
+      "material": "skin",
+      "segments": 20,
+      "name": "lower_wisp_1",
+      "part": "lower_wisp_1",
+      "curve_steps": 3
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          8,
+          37,
+          3.6,
+          3.8
+        ],
+        [
+          -4,
+          11,
+          29,
+          3.2,
+          3.6
+        ],
+        [
+          -6,
+          6,
+          22,
+          2.3,
+          2.5
+        ],
+        [
+          -5,
+          4,
+          16,
+          1.3,
+          1.5
+        ],
+        [
+          -3,
+          8,
+          12,
+          0.3,
+          0.35
+        ]
+      ],
+      "material": "skin",
+      "segments": 20,
+      "name": "lower_wisp_2",
+      "part": "lower_wisp_2",
+      "curve_steps": 3
+    }
+  ],
+  "anatomy_scale": [
+    1,
+    1,
+    1
+  ],
+  "motion": {
+    "idle": {
+      "frames": 16,
+      "tics": 6,
+      "transforms": {
+        "crest_flame": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 2
+          }
+        ],
+        "left_side_flame": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 2
+          }
+        ],
+        "right_side_flame": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 2
+          }
+        ],
+        "lower_wisp_0": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 2
+          }
+        ],
+        "lower_wisp_1": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 2
+          }
+        ],
+        "lower_wisp_2": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 2
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 1
+          }
+        ]
+      }
+    },
+    "walk": {
+      "frames": 24,
+      "tics": 2,
+      "transforms": {
+        "crest_flame": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 4
+          }
+        ],
+        "left_side_flame": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 4
+          }
+        ],
+        "right_side_flame": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 4
+          }
+        ],
+        "lower_wisp_0": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 4
+          }
+        ],
+        "lower_wisp_1": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 4
+          }
+        ],
+        "lower_wisp_2": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 4
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 4
+          }
+        ]
+      }
+    }
+  },
+  "attachment_root": "head",
+  "source_history": "Original closed skull-orb/flame controls; owned face projection and animated head-apparition offset convention. Color is visual, not a new damage or lighting rule.",
+  "native_refinement": "Native01 exposed angular flame bends and a serrated face-material boundary. Smoothed closed flame controls and a hemisphere-aligned projection boundary preserve the original pixels."
+}

@@ -1,0 +1,51 @@
+{
+  "issue": 822,
+  "runtime_sha256": "88941ddf47abe63d6194032bed919c58a06fbedf8034e4b6e4822f897df29bd9",
+  "source_probe_sha256": "bf298e7c4b3ca7f0285f81c089b18f686ba0a114f65697252662af8b0121b65a",
+  "fixture_sha256": "9ce9630504b4ad922c296ba4639989a73a92ccc3bdff7319115ca017e0a48c35",
+  "runs": [
+    {
+      "phase": "actions",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 115,
+      "actions": [
+        "CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=2 breath=0",
+        "CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=20 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=20 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+        "CA455 ACTION PASS index=20 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=26 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=26 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+        "CA455 ACTION PASS index=26 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=33 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=33 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+        "CA455 ACTION PASS index=33 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=55 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=55 mode=1 damage=1 air=0 anima=1 projectiles=2 breath=0",
+        "CA455 ACTION PASS index=55 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1"
+      ],
+      "loot_audits": 0
+    },
+    {
+      "phase": "loot",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 91,
+      "actions": [],
+      "loot_audits": 2
+    },
+    {
+      "phase": "loot-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 36,
+      "actions": [],
+      "loot_audits": 2
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA822Events" }
+map CA455V "Xalpen/Luz Mala/Anchimallen/Huayrapuca inherited combat model" { sky1="CABASKY",0 nointermission }

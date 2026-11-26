@@ -84,6 +84,7 @@ from assets.generators.validate_forest_guardian_models import validate as forest
 from assets.generators.validate_austral_figure_models import validate as austral_figure_model_problems
 from assets.generators.validate_witch_figure_models import validate as witch_figure_model_problems
 from assets.generators.validate_land_figure_models import validate as land_figure_model_problems
+from assets.generators.validate_distinct_form_models import validate as distinct_form_model_problems
 from assets.generators.validate_bestiary_figure_models import validate as bestiary_figure_model_problems
 from assets.generators.validate_serpent_models import validate as serpent_problems
 from assets.generators.validate_hybrid_serpent_models import validate as hybrid_serpent_problems
@@ -222,6 +223,7 @@ def validate(root):
     errors.extend(austral_figure_model_problems(root))
     errors.extend(witch_figure_model_problems(root))
     errors.extend(land_figure_model_problems(root))
+    errors.extend(distinct_form_model_problems(root))
     errors.extend(bestiary_figure_model_problems(root))
     errors.extend(serpent_problems(root))
     errors.extend(hybrid_serpent_problems(root))

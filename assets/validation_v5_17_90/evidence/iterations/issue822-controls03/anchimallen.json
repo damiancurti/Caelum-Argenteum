@@ -1,0 +1,2675 @@
+{
+  "schema_revision": 1,
+  "issue": 822,
+  "species": "anchimallen",
+  "catalogue_id": "CA-FOLK-034",
+  "reference": "assets/source/bestiary_453/imagenes/04_Apariciones/34_anchimallen.png",
+  "status": "candidate_author_review_pending",
+  "visual_contract": "Childlike amber spirit with large eyes, short brown hair, small pointed ears, ragged ivory sleeveless knee-length tunic, rope cord and bare feet; nonsexual.",
+  "preview": {
+    "height_map_units": 100,
+    "model_offset": [
+      0,
+      0,
+      0
+    ],
+    "scale_authority": "Dimensionless art coordinates fitted to unchanged provisional Height, not metric scale."
+  },
+  "atlas": {
+    "source_file": "materials.png",
+    "columns": 4,
+    "rows": 5,
+    "inset": 0.012,
+    "image_size": [
+      1122,
+      1402
+    ]
+  },
+  "materials": {
+    "face": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.5026737967914439,
+        0.0021398002853067048,
+        0.7468805704099821,
+        0.21825962910128388
+      ]
+    },
+    "skin": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.5026737967914439,
+        0.2225392296718973,
+        0.7468805704099821,
+        0.3980028530670471
+      ]
+    },
+    "hair": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.2531194295900178,
+        0.40228245363766046,
+        0.49732620320855614,
+        0.5977175463623395
+      ]
+    },
+    "slate": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.5026737967914439,
+        0.40228245363766046,
+        0.7468805704099821,
+        0.5977175463623395
+      ]
+    },
+    "ivory": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.7522281639928698,
+        0.40228245363766046,
+        0.9973262032085561,
+        0.5977175463623395
+      ]
+    },
+    "leather": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.00267379679144385,
+        0.6019971469329529,
+        0.24777183600713013,
+        0.7981455064194009
+      ]
+    },
+    "bronze": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.2531194295900178,
+        0.6019971469329529,
+        0.49732620320855614,
+        0.7981455064194009
+      ]
+    },
+    "linen": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.5026737967914439,
+        0.6019971469329529,
+        0.7468805704099821,
+        0.7981455064194009
+      ]
+    },
+    "rope": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.7522281639928698,
+        0.6019971469329529,
+        0.9973262032085561,
+        0.7981455064194009
+      ]
+    },
+    "armor": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.00267379679144385,
+        0.8024251069900142,
+        0.24777183600713013,
+        0.9978601997146933
+      ]
+    },
+    "scutes": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.2531194295900178,
+        0.8024251069900142,
+        0.49732620320855614,
+        0.9978601997146933
+      ]
+    },
+    "bone": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.5026737967914439,
+        0.8024251069900142,
+        0.7468805704099821,
+        0.9978601997146933
+      ]
+    },
+    "flame": {
+      "native_batch": "atlas",
+      "uv_rect": [
+        0.7522281639928698,
+        0.8024251069900142,
+        0.9973262032085561,
+        0.9978601997146933
+      ]
+    }
+  },
+  "parts": {
+    "pelvis": {
+      "parent": null,
+      "pivot": [
+        0,
+        0,
+        35
+      ]
+    },
+    "torso": {
+      "parent": "pelvis",
+      "pivot": [
+        0,
+        0,
+        38
+      ]
+    },
+    "neck": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        55.5
+      ]
+    },
+    "head": {
+      "parent": "neck",
+      "pivot": [
+        0,
+        0,
+        62.5
+      ]
+    },
+    "hair_mass": {
+      "parent": "head",
+      "pivot": [
+        -2,
+        0,
+        72
+      ]
+    },
+    "hair_crown": {
+      "parent": "head",
+      "pivot": [
+        0,
+        0,
+        74.9
+      ]
+    },
+    "hair_fringe_0": {
+      "parent": "hair_crown",
+      "pivot": [
+        1.5849999999999997,
+        -5.075,
+        75.4
+      ]
+    },
+    "hair_fringe_1": {
+      "parent": "hair_crown",
+      "pivot": [
+        1.8749999999999998,
+        -3.625,
+        75.4
+      ]
+    },
+    "hair_fringe_2": {
+      "parent": "hair_crown",
+      "pivot": [
+        2.1649999999999996,
+        -2.175,
+        75.4
+      ]
+    },
+    "hair_fringe_3": {
+      "parent": "hair_crown",
+      "pivot": [
+        2.4549999999999996,
+        -0.725,
+        75.4
+      ]
+    },
+    "hair_fringe_4": {
+      "parent": "hair_crown",
+      "pivot": [
+        2.4549999999999996,
+        0.725,
+        75.4
+      ]
+    },
+    "hair_fringe_5": {
+      "parent": "hair_crown",
+      "pivot": [
+        2.1649999999999996,
+        2.175,
+        75.4
+      ]
+    },
+    "hair_fringe_6": {
+      "parent": "hair_crown",
+      "pivot": [
+        1.8749999999999998,
+        3.625,
+        75.4
+      ]
+    },
+    "hair_fringe_7": {
+      "parent": "hair_crown",
+      "pivot": [
+        1.5849999999999997,
+        5.075,
+        75.4
+      ]
+    },
+    "left_ear": {
+      "parent": "head",
+      "pivot": [
+        0,
+        -6,
+        68.8
+      ]
+    },
+    "left_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        0,
+        -4.6,
+        35
+      ]
+    },
+    "left_shin": {
+      "parent": "left_thigh",
+      "pivot": [
+        0.3,
+        -4.8,
+        21
+      ]
+    },
+    "left_foot": {
+      "parent": "left_shin",
+      "pivot": [
+        0.6,
+        -4.8,
+        5.3
+      ]
+    },
+    "left_toe_0": {
+      "parent": "left_foot",
+      "pivot": [
+        5.1,
+        -6.3,
+        2.2
+      ]
+    },
+    "left_toe_1": {
+      "parent": "left_foot",
+      "pivot": [
+        5.1,
+        -5.55,
+        2.2
+      ]
+    },
+    "left_toe_2": {
+      "parent": "left_foot",
+      "pivot": [
+        5.1,
+        -4.8,
+        2.2
+      ]
+    },
+    "left_toe_3": {
+      "parent": "left_foot",
+      "pivot": [
+        5.1,
+        -4.05,
+        2.2
+      ]
+    },
+    "left_toe_4": {
+      "parent": "left_foot",
+      "pivot": [
+        5.1,
+        -3.3,
+        2.2
+      ]
+    },
+    "left_upper": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        -7.2,
+        52.3
+      ]
+    },
+    "left_fore": {
+      "parent": "left_upper",
+      "pivot": [
+        0.3,
+        -11,
+        41.5
+      ]
+    },
+    "left_hand": {
+      "parent": "left_fore",
+      "pivot": [
+        0.6,
+        -12.5,
+        30.3
+      ]
+    },
+    "left_finger_0": {
+      "parent": "left_hand",
+      "pivot": [
+        0.85,
+        -13.8,
+        27
+      ]
+    },
+    "left_finger_1": {
+      "parent": "left_hand",
+      "pivot": [
+        0.85,
+        -13.0,
+        27
+      ]
+    },
+    "left_finger_2": {
+      "parent": "left_hand",
+      "pivot": [
+        0.85,
+        -12.2,
+        27
+      ]
+    },
+    "left_finger_3": {
+      "parent": "left_hand",
+      "pivot": [
+        0.85,
+        -11.399999999999999,
+        27
+      ]
+    },
+    "left_thumb": {
+      "parent": "left_hand",
+      "pivot": [
+        1.2,
+        -11,
+        28.7
+      ]
+    },
+    "right_ear": {
+      "parent": "head",
+      "pivot": [
+        0,
+        6,
+        68.8
+      ]
+    },
+    "right_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        0,
+        4.6,
+        35
+      ]
+    },
+    "right_shin": {
+      "parent": "right_thigh",
+      "pivot": [
+        0.3,
+        4.8,
+        21
+      ]
+    },
+    "right_foot": {
+      "parent": "right_shin",
+      "pivot": [
+        0.6,
+        4.8,
+        5.3
+      ]
+    },
+    "right_toe_0": {
+      "parent": "right_foot",
+      "pivot": [
+        5.1,
+        3.3,
+        2.2
+      ]
+    },
+    "right_toe_1": {
+      "parent": "right_foot",
+      "pivot": [
+        5.1,
+        4.05,
+        2.2
+      ]
+    },
+    "right_toe_2": {
+      "parent": "right_foot",
+      "pivot": [
+        5.1,
+        4.8,
+        2.2
+      ]
+    },
+    "right_toe_3": {
+      "parent": "right_foot",
+      "pivot": [
+        5.1,
+        5.55,
+        2.2
+      ]
+    },
+    "right_toe_4": {
+      "parent": "right_foot",
+      "pivot": [
+        5.1,
+        6.3,
+        2.2
+      ]
+    },
+    "right_upper": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        7.2,
+        52.3
+      ]
+    },
+    "right_fore": {
+      "parent": "right_upper",
+      "pivot": [
+        0.3,
+        11,
+        41.5
+      ]
+    },
+    "right_hand": {
+      "parent": "right_fore",
+      "pivot": [
+        0.6,
+        12.5,
+        30.3
+      ]
+    },
+    "right_finger_0": {
+      "parent": "right_hand",
+      "pivot": [
+        0.85,
+        11.399999999999999,
+        27
+      ]
+    },
+    "right_finger_1": {
+      "parent": "right_hand",
+      "pivot": [
+        0.85,
+        12.2,
+        27
+      ]
+    },
+    "right_finger_2": {
+      "parent": "right_hand",
+      "pivot": [
+        0.85,
+        13.0,
+        27
+      ]
+    },
+    "right_finger_3": {
+      "parent": "right_hand",
+      "pivot": [
+        0.85,
+        13.8,
+        27
+      ]
+    },
+    "right_thumb": {
+      "parent": "right_hand",
+      "pivot": [
+        1.2,
+        11,
+        28.7
+      ]
+    },
+    "tunic_hem": {
+      "parent": "torso",
+      "pivot": [
+        5.45,
+        0,
+        38.8
+      ]
+    },
+    "rope_belt": {
+      "parent": "tunic_hem",
+      "pivot": [
+        6.1,
+        0,
+        37
+      ]
+    },
+    "rope_ends": {
+      "parent": "rope_belt",
+      "pivot": [
+        5.8,
+        0,
+        36.8
+      ]
+    },
+    "neckline": {
+      "parent": "torso",
+      "pivot": [
+        5.2,
+        0,
+        53
+      ]
+    },
+    "hem_fray_0": {
+      "parent": "tunic_hem",
+      "pivot": [
+        10.114,
+        0.0,
+        22.7
+      ]
+    },
+    "hem_fray_1": {
+      "parent": "tunic_hem",
+      "pivot": [
+        8.810887714887786,
+        3.8929758510372054,
+        22.7
+      ]
+    },
+    "hem_fray_2": {
+      "parent": "tunic_hem",
+      "pivot": [
+        7.089545950564777,
+        7.539265863399422,
+        22.7
+      ]
+    },
+    "hem_fray_3": {
+      "parent": "tunic_hem",
+      "pivot": [
+        3.7117212224089733,
+        9.548475097564962,
+        22.7
+      ]
+    },
+    "hem_fray_4": {
+      "parent": "tunic_hem",
+      "pivot": [
+        6.009341843416063e-16,
+        10.45,
+        22.7
+      ]
+    },
+    "hem_fray_5": {
+      "parent": "tunic_hem",
+      "pivot": [
+        -3.799589188053008,
+        9.760607131920928,
+        22.7
+      ]
+    },
+    "hem_fray_6": {
+      "parent": "tunic_hem",
+      "pivot": [
+        -6.7895459505647775,
+        7.239265863399422,
+        22.7
+      ]
+    },
+    "hem_fray_7": {
+      "parent": "tunic_hem",
+      "pivot": [
+        -9.32301974924375,
+        4.1051078853931715,
+        22.7
+      ]
+    },
+    "hem_fray_8": {
+      "parent": "tunic_hem",
+      "pivot": [
+        -9.514,
+        1.2430165011345633e-15,
+        22.7
+      ]
+    },
+    "hem_fray_9": {
+      "parent": "tunic_hem",
+      "pivot": [
+        -9.323019749243752,
+        -4.105107885393169,
+        22.7
+      ]
+    },
+    "hem_fray_10": {
+      "parent": "tunic_hem",
+      "pivot": [
+        -6.789545950564779,
+        -7.239265863399421,
+        22.7
+      ]
+    },
+    "hem_fray_11": {
+      "parent": "tunic_hem",
+      "pivot": [
+        -3.799589188053015,
+        -9.760607131920926,
+        22.7
+      ]
+    },
+    "hem_fray_12": {
+      "parent": "tunic_hem",
+      "pivot": [
+        -1.802802553024818e-15,
+        -10.449999999999998,
+        22.7
+      ]
+    },
+    "hem_fray_13": {
+      "parent": "tunic_hem",
+      "pivot": [
+        3.711721222408976,
+        -9.548475097564964,
+        22.7
+      ]
+    },
+    "hem_fray_14": {
+      "parent": "tunic_hem",
+      "pivot": [
+        7.0895459505647755,
+        -7.5392658633994225,
+        22.7
+      ]
+    },
+    "hem_fray_15": {
+      "parent": "tunic_hem",
+      "pivot": [
+        8.810887714887786,
+        -3.8929758510372126,
+        22.7
+      ]
+    }
+  },
+  "shapes": [
+    {
+      "kind": "ellipsoid",
+      "center": [
+        0,
+        0,
+        35
+      ],
+      "radii": [
+        5.6,
+        7.4,
+        6.8
+      ],
+      "material": "linen",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "pelvis",
+      "part": "pelvis"
+    },
+    {
+      "kind": "loft",
+      "rows": [
+        [
+          36,
+          0,
+          0,
+          5.4,
+          7.2
+        ],
+        [
+          43,
+          0,
+          0,
+          5.8,
+          7.5
+        ],
+        [
+          51,
+          0,
+          0,
+          6.4,
+          8
+        ],
+        [
+          57,
+          0,
+          0,
+          3.8,
+          5
+        ]
+      ],
+      "material": "linen",
+      "segments": 28,
+      "cap": true,
+      "curve_steps": 2,
+      "name": "torso",
+      "part": "torso"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          0,
+          54,
+          2.9,
+          3
+        ],
+        [
+          0,
+          0,
+          60,
+          2.6,
+          2.8
+        ],
+        [
+          0,
+          0,
+          64,
+          2.7,
+          2.9
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "neck",
+      "part": "neck"
+    },
+    {
+      "kind": "face",
+      "center": [
+        0,
+        0,
+        68.5
+      ],
+      "radii": [
+        7.2,
+        6.6,
+        8.8
+      ],
+      "material": "skin",
+      "latitudes": 23,
+      "longitudes": 40,
+      "front_deformation": [
+        {
+          "depth": 1.8,
+          "y": 0,
+          "z": 67.62,
+          "width_y": 1.32,
+          "width_z": 2.4640000000000004
+        },
+        {
+          "depth": 0.5760000000000001,
+          "y": 0,
+          "z": 64.276,
+          "width_y": 2.64,
+          "width_z": 0.8800000000000001
+        }
+      ],
+      "front_projection": {
+        "material": "face",
+        "minimum_x": 1.728,
+        "y_bounds": [
+          -7.128,
+          7.128
+        ],
+        "z_bounds": [
+          59.348,
+          77.652
+        ],
+        "clamp_to_material_cell": true
+      },
+      "name": "head",
+      "part": "head"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        -3.2,
+        0,
+        71.8
+      ],
+      "radii": [
+        5.4,
+        7,
+        7
+      ],
+      "material": "hair",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "hair_mass",
+      "part": "hair_mass"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        0.2,
+        0,
+        75.8
+      ],
+      "radii": [
+        5.7,
+        6.1,
+        2.5
+      ],
+      "material": "hair",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "hair_crown",
+      "part": "hair_crown"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          1.2849999999999997,
+          -5.075,
+          75.8,
+          0.85,
+          1.1
+        ],
+        [
+          3.2849999999999997,
+          -5.075,
+          73.8,
+          0.9,
+          1.1
+        ],
+        [
+          4.285,
+          -5.075,
+          71.5,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_fringe_0",
+      "part": "hair_fringe_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          1.5749999999999997,
+          -3.625,
+          75.8,
+          0.85,
+          1.1
+        ],
+        [
+          3.5749999999999997,
+          -3.625,
+          73.8,
+          0.9,
+          1.1
+        ],
+        [
+          4.574999999999999,
+          -3.625,
+          72.5,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_fringe_1",
+      "part": "hair_fringe_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          1.8649999999999998,
+          -2.175,
+          75.8,
+          0.85,
+          1.1
+        ],
+        [
+          3.8649999999999998,
+          -2.175,
+          73.8,
+          0.9,
+          1.1
+        ],
+        [
+          4.865,
+          -2.175,
+          71.5,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_fringe_2",
+      "part": "hair_fringe_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          2.155,
+          -0.725,
+          75.8,
+          0.85,
+          1.1
+        ],
+        [
+          4.154999999999999,
+          -0.725,
+          73.8,
+          0.9,
+          1.1
+        ],
+        [
+          5.154999999999999,
+          -0.725,
+          72.5,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_fringe_3",
+      "part": "hair_fringe_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          2.155,
+          0.725,
+          75.8,
+          0.85,
+          1.1
+        ],
+        [
+          4.154999999999999,
+          0.725,
+          73.8,
+          0.9,
+          1.1
+        ],
+        [
+          5.154999999999999,
+          0.725,
+          71.5,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_fringe_4",
+      "part": "hair_fringe_4"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          1.8649999999999998,
+          2.175,
+          75.8,
+          0.85,
+          1.1
+        ],
+        [
+          3.8649999999999998,
+          2.175,
+          73.8,
+          0.9,
+          1.1
+        ],
+        [
+          4.865,
+          2.175,
+          72.5,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_fringe_5",
+      "part": "hair_fringe_5"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          1.5749999999999997,
+          3.625,
+          75.8,
+          0.85,
+          1.1
+        ],
+        [
+          3.5749999999999997,
+          3.625,
+          73.8,
+          0.9,
+          1.1
+        ],
+        [
+          4.574999999999999,
+          3.625,
+          71.5,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_fringe_6",
+      "part": "hair_fringe_6"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          1.2849999999999997,
+          5.075,
+          75.8,
+          0.85,
+          1.1
+        ],
+        [
+          3.2849999999999997,
+          5.075,
+          73.8,
+          0.9,
+          1.1
+        ],
+        [
+          4.285,
+          5.075,
+          72.5,
+          0.2,
+          0.3
+        ]
+      ],
+      "material": "hair",
+      "segments": 16,
+      "name": "hair_fringe_7",
+      "part": "hair_fringe_7"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          -5.6,
+          68.5,
+          1.1,
+          1.8
+        ],
+        [
+          0,
+          -7.3,
+          69.8,
+          0.9,
+          1.4
+        ],
+        [
+          -0.2,
+          -9,
+          72,
+          0.2,
+          0.25
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_ear",
+      "part": "left_ear"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          -4.6,
+          36,
+          3.4,
+          3.7
+        ],
+        [
+          0.3,
+          -4.8,
+          27,
+          3.1,
+          3.3
+        ],
+        [
+          0.3,
+          -4.8,
+          20,
+          2.3,
+          2.5
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_thigh",
+      "part": "left_thigh"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.3,
+          -4.8,
+          22,
+          2.5,
+          2.7
+        ],
+        [
+          0,
+          -4.8,
+          13,
+          2,
+          2.2
+        ],
+        [
+          0,
+          -4.8,
+          5,
+          1.6,
+          1.8
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_shin",
+      "part": "left_shin"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        2.2,
+        -4.8,
+        3
+      ],
+      "radii": [
+        4.7,
+        2.5,
+        2.6
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "left_foot",
+      "part": "left_foot"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        5.5,
+        -6.3,
+        2.1
+      ],
+      "radii": [
+        2,
+        0.55,
+        0.8
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "left_toe_0",
+      "part": "left_toe_0"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        5.5,
+        -5.55,
+        2.1
+      ],
+      "radii": [
+        2,
+        0.55,
+        0.8
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "left_toe_1",
+      "part": "left_toe_1"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        5.5,
+        -4.8,
+        2.1
+      ],
+      "radii": [
+        2,
+        0.55,
+        0.8
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "left_toe_2",
+      "part": "left_toe_2"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        5.5,
+        -4.05,
+        2.1
+      ],
+      "radii": [
+        2,
+        0.55,
+        0.8
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "left_toe_3",
+      "part": "left_toe_3"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        5.5,
+        -3.3,
+        2.1
+      ],
+      "radii": [
+        2,
+        0.55,
+        0.8
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "left_toe_4",
+      "part": "left_toe_4"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          -7,
+          53,
+          2.5,
+          2.8
+        ],
+        [
+          0,
+          -10,
+          47,
+          2.3,
+          2.5
+        ],
+        [
+          0.3,
+          -11,
+          41,
+          1.8,
+          2
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_upper",
+      "part": "left_upper"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.3,
+          -11,
+          42.5,
+          2,
+          2.2
+        ],
+        [
+          0.7,
+          -12,
+          36,
+          1.8,
+          2
+        ],
+        [
+          0.6,
+          -12.5,
+          30,
+          1.2,
+          1.4
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_fore",
+      "part": "left_fore"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        0.8,
+        -12.6,
+        28.5
+      ],
+      "radii": [
+        1.7,
+        2,
+        2.8
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "left_hand",
+      "part": "left_hand"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.8,
+          -13.8,
+          27.6,
+          0.5,
+          0.55
+        ],
+        [
+          0.9,
+          -13.8,
+          25.6,
+          0.48,
+          0.5
+        ],
+        [
+          1.3,
+          -13.8,
+          24.849999999999998,
+          0.25,
+          0.3
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_finger_0",
+      "part": "left_finger_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.8,
+          -13.0,
+          27.6,
+          0.5,
+          0.55
+        ],
+        [
+          0.9,
+          -13.0,
+          25.6,
+          0.48,
+          0.5
+        ],
+        [
+          1.3,
+          -13.0,
+          24.549999999999997,
+          0.25,
+          0.3
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_finger_1",
+      "part": "left_finger_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.8,
+          -12.2,
+          27.6,
+          0.5,
+          0.55
+        ],
+        [
+          0.9,
+          -12.2,
+          25.6,
+          0.48,
+          0.5
+        ],
+        [
+          1.3,
+          -12.2,
+          24.549999999999997,
+          0.25,
+          0.3
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_finger_2",
+      "part": "left_finger_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.8,
+          -11.399999999999999,
+          27.6,
+          0.5,
+          0.55
+        ],
+        [
+          0.9,
+          -11.399999999999999,
+          25.6,
+          0.48,
+          0.5
+        ],
+        [
+          1.3,
+          -11.399999999999999,
+          24.849999999999998,
+          0.25,
+          0.3
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_finger_3",
+      "part": "left_finger_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          1,
+          -11.2,
+          29,
+          0.65,
+          0.7
+        ],
+        [
+          2,
+          -10.4,
+          27.8,
+          0.55,
+          0.6
+        ],
+        [
+          2.6,
+          -10.4,
+          26.8,
+          0.25,
+          0.3
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "left_thumb",
+      "part": "left_thumb"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          5.6,
+          68.5,
+          1.1,
+          1.8
+        ],
+        [
+          0,
+          7.3,
+          69.8,
+          0.9,
+          1.4
+        ],
+        [
+          -0.2,
+          9,
+          72,
+          0.2,
+          0.25
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_ear",
+      "part": "right_ear"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          4.6,
+          36,
+          3.4,
+          3.7
+        ],
+        [
+          0.3,
+          4.8,
+          27,
+          3.1,
+          3.3
+        ],
+        [
+          0.3,
+          4.8,
+          20,
+          2.3,
+          2.5
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_thigh",
+      "part": "right_thigh"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.3,
+          4.8,
+          22,
+          2.5,
+          2.7
+        ],
+        [
+          0,
+          4.8,
+          13,
+          2,
+          2.2
+        ],
+        [
+          0,
+          4.8,
+          5,
+          1.6,
+          1.8
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_shin",
+      "part": "right_shin"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        2.2,
+        4.8,
+        3
+      ],
+      "radii": [
+        4.7,
+        2.5,
+        2.6
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "right_foot",
+      "part": "right_foot"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        5.5,
+        3.3,
+        2.1
+      ],
+      "radii": [
+        2,
+        0.55,
+        0.8
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "right_toe_0",
+      "part": "right_toe_0"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        5.5,
+        4.05,
+        2.1
+      ],
+      "radii": [
+        2,
+        0.55,
+        0.8
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "right_toe_1",
+      "part": "right_toe_1"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        5.5,
+        4.8,
+        2.1
+      ],
+      "radii": [
+        2,
+        0.55,
+        0.8
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "right_toe_2",
+      "part": "right_toe_2"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        5.5,
+        5.55,
+        2.1
+      ],
+      "radii": [
+        2,
+        0.55,
+        0.8
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "right_toe_3",
+      "part": "right_toe_3"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        5.5,
+        6.3,
+        2.1
+      ],
+      "radii": [
+        2,
+        0.55,
+        0.8
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "right_toe_4",
+      "part": "right_toe_4"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0,
+          7,
+          53,
+          2.5,
+          2.8
+        ],
+        [
+          0,
+          10,
+          47,
+          2.3,
+          2.5
+        ],
+        [
+          0.3,
+          11,
+          41,
+          1.8,
+          2
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_upper",
+      "part": "right_upper"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.3,
+          11,
+          42.5,
+          2,
+          2.2
+        ],
+        [
+          0.7,
+          12,
+          36,
+          1.8,
+          2
+        ],
+        [
+          0.6,
+          12.5,
+          30,
+          1.2,
+          1.4
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_fore",
+      "part": "right_fore"
+    },
+    {
+      "kind": "ellipsoid",
+      "center": [
+        0.8,
+        12.6,
+        28.5
+      ],
+      "radii": [
+        1.7,
+        2,
+        2.8
+      ],
+      "material": "skin",
+      "latitudes": 13,
+      "longitudes": 24,
+      "name": "right_hand",
+      "part": "right_hand"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.8,
+          11.399999999999999,
+          27.6,
+          0.5,
+          0.55
+        ],
+        [
+          0.9,
+          11.399999999999999,
+          25.6,
+          0.48,
+          0.5
+        ],
+        [
+          1.3,
+          11.399999999999999,
+          24.849999999999998,
+          0.25,
+          0.3
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_finger_0",
+      "part": "right_finger_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.8,
+          12.2,
+          27.6,
+          0.5,
+          0.55
+        ],
+        [
+          0.9,
+          12.2,
+          25.6,
+          0.48,
+          0.5
+        ],
+        [
+          1.3,
+          12.2,
+          24.549999999999997,
+          0.25,
+          0.3
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_finger_1",
+      "part": "right_finger_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.8,
+          13.0,
+          27.6,
+          0.5,
+          0.55
+        ],
+        [
+          0.9,
+          13.0,
+          25.6,
+          0.48,
+          0.5
+        ],
+        [
+          1.3,
+          13.0,
+          24.549999999999997,
+          0.25,
+          0.3
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_finger_2",
+      "part": "right_finger_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          0.8,
+          13.8,
+          27.6,
+          0.5,
+          0.55
+        ],
+        [
+          0.9,
+          13.8,
+          25.6,
+          0.48,
+          0.5
+        ],
+        [
+          1.3,
+          13.8,
+          24.849999999999998,
+          0.25,
+          0.3
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_finger_3",
+      "part": "right_finger_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          1,
+          11.2,
+          29,
+          0.65,
+          0.7
+        ],
+        [
+          2,
+          10.4,
+          27.8,
+          0.55,
+          0.6
+        ],
+        [
+          2.6,
+          10.4,
+          26.8,
+          0.25,
+          0.3
+        ]
+      ],
+      "material": "skin",
+      "segments": 16,
+      "name": "right_thumb",
+      "part": "right_thumb"
+    },
+    {
+      "kind": "open_mantle",
+      "rows": [
+        [
+          22,
+          0,
+          0,
+          10.5,
+          11
+        ],
+        [
+          29,
+          0,
+          0,
+          8.5,
+          9.5
+        ],
+        [
+          39,
+          0,
+          0,
+          5.8,
+          7.7
+        ]
+      ],
+      "material": "linen",
+      "arc_degrees": [
+        0,
+        360
+      ],
+      "thickness": 0.8,
+      "fold_amplitude": 0.3,
+      "fold_count": 9,
+      "segments": 72,
+      "front_lift": [
+        0,
+        0,
+        0
+      ],
+      "name": "tunic_hem",
+      "part": "tunic_hem"
+    },
+    {
+      "kind": "open_mantle",
+      "rows": [
+        [
+          36,
+          0,
+          0,
+          6.3,
+          8.1
+        ],
+        [
+          38,
+          0,
+          0,
+          6.3,
+          8.1
+        ]
+      ],
+      "material": "rope",
+      "arc_degrees": [
+        0,
+        360
+      ],
+      "thickness": 0.9,
+      "fold_amplitude": 0.1,
+      "fold_count": 12,
+      "segments": 48,
+      "front_lift": [
+        0,
+        0
+      ],
+      "name": "rope_belt",
+      "part": "rope_belt"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          5.7,
+          0,
+          37,
+          0.65,
+          0.8
+        ],
+        [
+          7.4,
+          0.6,
+          32,
+          0.65,
+          0.7
+        ],
+        [
+          9,
+          1,
+          28,
+          0.3,
+          0.35
+        ]
+      ],
+      "material": "rope",
+      "segments": 16,
+      "name": "rope_ends",
+      "part": "rope_ends"
+    },
+    {
+      "kind": "loft",
+      "rows": [
+        [
+          50,
+          6.1,
+          0,
+          0.4,
+          0.25
+        ],
+        [
+          53,
+          5.4,
+          0,
+          0.6,
+          1.8
+        ],
+        [
+          56,
+          4.2,
+          0,
+          0.6,
+          3
+        ]
+      ],
+      "material": "skin",
+      "segments": 28,
+      "cap": true,
+      "curve_steps": 2,
+      "name": "neckline",
+      "part": "neckline"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          10.114,
+          0.0,
+          23,
+          1,
+          1.3
+        ],
+        [
+          10.506,
+          0.0,
+          20,
+          1,
+          1.1
+        ],
+        [
+          10.607999999999999,
+          0.0,
+          17,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_0",
+      "part": "hem_fray_0"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          8.810887714887786,
+          3.8929758510372054,
+          23,
+          1,
+          1.3
+        ],
+        [
+          9.706278368563579,
+          4.217554108095655,
+          20,
+          1,
+          1.1
+        ],
+        [
+          9.80051408087973,
+          4.258501235358719,
+          18,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_1",
+      "part": "hem_fray_1"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          7.089545950564777,
+          7.539265863399422,
+          23,
+          1,
+          1.3
+        ],
+        [
+          7.4288638431458685,
+          7.793023835456941,
+          20,
+          1,
+          1.1
+        ],
+        [
+          7.500988734826897,
+          7.868684261043901,
+          19,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_2",
+      "part": "hem_fray_2"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          3.7117212224089733,
+          9.548475097564962,
+          23,
+          1,
+          1.3
+        ],
+        [
+          4.020472140427634,
+          10.182076327806891,
+          20,
+          1,
+          1.1
+        ],
+        [
+          4.059505850528873,
+          10.280931437785599,
+          17,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_3",
+      "part": "hem_fray_3"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          6.009341843416063e-16,
+          10.45,
+          23,
+          1,
+          1.3
+        ],
+        [
+          6.433069635921046e-16,
+          11.020999999999999,
+          20,
+          1,
+          1.1
+        ],
+        [
+          6.495526622677561e-16,
+          11.128,
+          18,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_4",
+      "part": "hem_fray_4"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -3.799589188053008,
+          9.760607131920928,
+          23,
+          1,
+          1.3
+        ],
+        [
+          -4.020472140427633,
+          10.182076327806891,
+          20,
+          1,
+          1.1
+        ],
+        [
+          -4.059505850528872,
+          10.280931437785599,
+          19,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_5",
+      "part": "hem_fray_5"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -6.7895459505647775,
+          7.239265863399422,
+          23,
+          1,
+          1.3
+        ],
+        [
+          -7.428863843145868,
+          7.793023835456941,
+          20,
+          1,
+          1.1
+        ],
+        [
+          -7.500988734826896,
+          7.868684261043901,
+          17,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_6",
+      "part": "hem_fray_6"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -9.32301974924375,
+          4.1051078853931715,
+          23,
+          1,
+          1.3
+        ],
+        [
+          -9.706278368563579,
+          4.217554108095656,
+          20,
+          1,
+          1.1
+        ],
+        [
+          -9.80051408087973,
+          4.25850123535872,
+          18,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_7",
+      "part": "hem_fray_7"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -9.514,
+          1.2430165011345633e-15,
+          23,
+          1,
+          1.3
+        ],
+        [
+          -10.506,
+          1.349683237340298e-15,
+          20,
+          1,
+          1.1
+        ],
+        [
+          -10.607999999999999,
+          1.3627869580911747e-15,
+          19,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_8",
+      "part": "hem_fray_8"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -9.323019749243752,
+          -4.105107885393169,
+          23,
+          1,
+          1.3
+        ],
+        [
+          -9.706278368563579,
+          -4.217554108095653,
+          20,
+          1,
+          1.1
+        ],
+        [
+          -9.80051408087973,
+          -4.258501235358717,
+          17,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_9",
+      "part": "hem_fray_9"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -6.789545950564779,
+          -7.239265863399421,
+          23,
+          1,
+          1.3
+        ],
+        [
+          -7.428863843145869,
+          -7.793023835456939,
+          20,
+          1,
+          1.1
+        ],
+        [
+          -7.5009887348268975,
+          -7.868684261043899,
+          18,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_10",
+      "part": "hem_fray_10"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -3.799589188053015,
+          -9.760607131920926,
+          23,
+          1,
+          1.3
+        ],
+        [
+          -4.020472140427639,
+          -10.18207632780689,
+          20,
+          1,
+          1.1
+        ],
+        [
+          -4.059505850528878,
+          -10.280931437785597,
+          19,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_11",
+      "part": "hem_fray_11"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          -1.802802553024818e-15,
+          -10.449999999999998,
+          23,
+          1,
+          1.3
+        ],
+        [
+          -1.9299208907763135e-15,
+          -11.020999999999999,
+          20,
+          1,
+          1.1
+        ],
+        [
+          -1.948657986803268e-15,
+          -11.128,
+          17,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_12",
+      "part": "hem_fray_12"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          3.711721222408976,
+          -9.548475097564964,
+          23,
+          1,
+          1.3
+        ],
+        [
+          4.020472140427636,
+          -10.18207632780689,
+          20,
+          1,
+          1.1
+        ],
+        [
+          4.059505850528875,
+          -10.280931437785597,
+          18,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_13",
+      "part": "hem_fray_13"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          7.0895459505647755,
+          -7.5392658633994225,
+          23,
+          1,
+          1.3
+        ],
+        [
+          7.428863843145866,
+          -7.793023835456942,
+          20,
+          1,
+          1.1
+        ],
+        [
+          7.500988734826894,
+          -7.868684261043902,
+          19,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_14",
+      "part": "hem_fray_14"
+    },
+    {
+      "kind": "tube",
+      "rows": [
+        [
+          8.810887714887786,
+          -3.8929758510372126,
+          23,
+          1,
+          1.3
+        ],
+        [
+          9.706278368563577,
+          -4.217554108095661,
+          20,
+          1,
+          1.1
+        ],
+        [
+          9.800514080879728,
+          -4.258501235358725,
+          17,
+          0.22,
+          0.3
+        ]
+      ],
+      "material": "linen",
+      "segments": 10,
+      "name": "hem_fray_15",
+      "part": "hem_fray_15"
+    }
+  ],
+  "anatomy_scale": [
+    1,
+    1,
+    1
+  ],
+  "motion": {
+    "idle": {
+      "frames": 16,
+      "tics": 6,
+      "transforms": {
+        "torso": [
+          {
+            "kind": "scale_xy",
+            "amplitude": 0.01
+          }
+        ]
+      }
+    },
+    "walk": {
+      "frames": 24,
+      "tics": 2,
+      "transforms": {
+        "left_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -12,
+            "phase": 0
+          }
+        ],
+        "left_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 14,
+            "phase": 3.141592653589793,
+            "positive_only": true
+          }
+        ],
+        "left_upper": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 16,
+            "phase": 0
+          }
+        ],
+        "left_fore": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -5,
+            "phase": 0
+          }
+        ],
+        "right_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -12,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 14,
+            "phase": 6.283185307179586,
+            "positive_only": true
+          }
+        ],
+        "right_upper": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 16,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_fore": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -5,
+            "phase": 3.141592653589793
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 1.1
+          }
+        ]
+      }
+    }
+  },
+  "attachment_root": "pelvis",
+  "source_history": "Original childlike proportions and closed tunic, short hair, small ears and bare hands/feet controls. No sexual anatomy or new size rules."
+}

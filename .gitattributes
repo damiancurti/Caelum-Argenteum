@@ -1264,3 +1264,10 @@ assets/validation_v5_17_89/*.json -text
 assets/source/art/bestiary_figures_821/** -text
 assets/generators/*bestiary_figure*.py text eol=lf
 src/caelum/data/bestiary_figure_combat.modeldef text eol=lf
+
+assets/validation_v5_17_90/*.py text eol=lf
+assets/validation_v5_17_90/evidence/** -text -diff
+assets/validation_v5_17_90/*.json -text
+assets/source/art/distinct_forms_822/** -text
+assets/generators/*distinct_form*.py text eol=lf
+src/caelum/data/distinct_form_combat.modeldef text eol=lf
