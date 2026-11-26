@@ -1,6 +1,24 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.51** - 2026-11-14.
+Documentation version: **5.17.52** - 2026-11-14.
+
+## 5.17.52 - Native prepared-kit models (#747, 2026-11-14)
+
+Added two native drop models based on the accepted #380 references, preserving
+the #379 indivisible-kit rules. Existing opaque textures are reused unchanged.
+Corrected recessed-case UV ranges and blocked mouth rays, then refined wrapper
+folds and packet closures after native review.18 closed solids,16 contacts,
+ten mouth rays,2,592 projected UV triangles, eight repeated outputs and300
+native continuity/control checks pass. ASSETS records qualified presentation
+measurements and remaining art limits. Evidence:
+assets/validation_v5_17_52/evidence/SUMMARY.json.
+Final packaging restores MODELDEF to its existing CRLF checkout policy.
+Only those line endings differ from the tested package; normalized content
+and every other entry are identical. Full validation preceded that correction;
+package/source and filtered checkout bytes were verified afterward.
+
+CA747-CARTRIDGE-KIT-DROPS-01 originates here and remains pending. No author
+test was accepted or removed. Broader 3D and V5.16 campaign work continues.
 
 ## 5.17.51 - Restore review underside controls (#745, 2026-11-14)
 

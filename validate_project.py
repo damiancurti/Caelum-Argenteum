@@ -38,6 +38,7 @@ from assets.generators.validate_inventory_hide_models import validate as invento
 from assets.generators.validate_inventory_textile_models import validate as inventory_textile_problems
 from assets.generators.validate_inventory_hygiene_models import validate as inventory_hygiene_problems
 from assets.generators.validate_inventory_kitchen_ingredients_models import validate as kitchen_ingredient_problems
+from assets.generators.validate_inventory_cartridge_kits_models import validate as cartridge_kit_problems
 from assets.generators.validate_inventory_gems_models import validate as inventory_gem_problems
 from assets.generators.validate_inventory_book_bindings import validate as inventory_book_problems
 from assets.generators.validate_inventory_jewelry_models import validate as inventory_jewelry_problems
@@ -152,6 +153,7 @@ def validate(root):
     errors.extend(inventory_textile_problems(root))
     errors.extend(inventory_hygiene_problems(root))
     errors.extend(kitchen_ingredient_problems(root))
+    errors.extend(cartridge_kit_problems(root))
     errors.extend(inventory_ingot_problems(root))
     errors.extend(regional_material_problems(root))
     errors.extend(beast_regional_material_problems(root))
