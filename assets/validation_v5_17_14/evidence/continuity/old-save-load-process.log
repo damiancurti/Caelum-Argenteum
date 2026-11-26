@@ -1,0 +1,385 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 20:10:41
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-672/build/issue672-locks01.pk3, 18223 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-672/build/issue672-native02/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2484.02 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+CA672 PASS sixteen independent native lock items retained
+CA672 PASS lock item 0 saved reference
+CA672 PASS lock item 0 separate world instance
+CA672 PASS lock item 0 saved native type
+CA672 PASS lock item 0 original catalogue identity
+CA672 PASS lock item 0 saved pairing token
+CA672 PASS lock item 0 original type weight
+CA672 PASS lock item 0 original collision and scale
+CA672 PASS lock item 0 original shared key icon and spawn
+CA672 PASS lock item 0 native floor contact
+CA672 PASS lock item 0 normal carried-state flags
+CA672 PASS lock item 0 copied provenance
+CA672 PASS lock item 0 retained contamination
+CA672 PASS lock item 1 saved reference
+CA672 PASS lock item 1 separate world instance
+CA672 PASS lock item 1 saved native type
+CA672 PASS lock item 1 original catalogue identity
+CA672 PASS lock item 1 saved pairing token
+CA672 PASS lock item 1 original type weight
+CA672 PASS lock item 1 original collision and scale
+CA672 PASS lock item 1 original shared key icon and spawn
+CA672 PASS lock item 1 native floor contact
+CA672 PASS lock item 1 normal carried-state flags
+CA672 PASS lock item 1 copied provenance
+CA672 PASS lock item 1 retained contamination
+CA672 PASS lock item 2 saved reference
+CA672 PASS lock item 2 separate world instance
+CA672 PASS lock item 2 saved native type
+CA672 PASS lock item 2 original catalogue identity
+CA672 PASS lock item 2 saved pairing token
+CA672 PASS lock item 2 original type weight
+CA672 PASS lock item 2 original collision and scale
+CA672 PASS lock item 2 original shared key icon and spawn
+CA672 PASS lock item 2 native floor contact
+CA672 PASS lock item 2 normal carried-state flags
+CA672 PASS lock item 2 copied provenance
+CA672 PASS lock item 2 retained contamination
+CA672 PASS lock item 3 saved reference
+CA672 PASS lock item 3 separate world instance
+CA672 PASS lock item 3 saved native type
+CA672 PASS lock item 3 original catalogue identity
+CA672 PASS lock item 3 saved pairing token
+CA672 PASS lock item 3 original type weight
+CA672 PASS lock item 3 original collision and scale
+CA672 PASS lock item 3 original shared key icon and spawn
+CA672 PASS lock item 3 native floor contact
+CA672 PASS lock item 3 normal carried-state flags
+CA672 PASS lock item 3 copied provenance
+CA672 PASS lock item 3 retained contamination
+CA672 PASS lock item 4 saved reference
+CA672 PASS lock item 4 separate world instance
+CA672 PASS lock item 4 saved native type
+CA672 PASS lock item 4 original catalogue identity
+CA672 PASS lock item 4 saved pairing token
+CA672 PASS lock item 4 original type weight
+CA672 PASS lock item 4 original collision and scale
+CA672 PASS lock item 4 original shared key icon and spawn
+CA672 PASS lock item 4 native floor contact
+CA672 PASS lock item 4 normal carried-state flags
+CA672 PASS lock item 4 copied provenance
+CA672 PASS lock item 4 retained contamination
+CA672 PASS lock item 5 saved reference
+CA672 PASS lock item 5 separate world instance
+CA672 PASS lock item 5 saved native type
+CA672 PASS lock item 5 original catalogue identity
+CA672 PASS lock item 5 saved pairing token
+CA672 PASS lock item 5 original type weight
+CA672 PASS lock item 5 original collision and scale
+CA672 PASS lock item 5 original shared key icon and spawn
+CA672 PASS lock item 5 native floor contact
+CA672 PASS lock item 5 normal carried-state flags
+CA672 PASS lock item 5 copied provenance
+CA672 PASS lock item 5 retained contamination
+CA672 PASS lock item 6 saved reference
+CA672 PASS lock item 6 separate world instance
+CA672 PASS lock item 6 saved native type
+CA672 PASS lock item 6 original catalogue identity
+CA672 PASS lock item 6 saved pairing token
+CA672 PASS lock item 6 original type weight
+CA672 PASS lock item 6 original collision and scale
+CA672 PASS lock item 6 original shared key icon and spawn
+CA672 PASS lock item 6 native floor contact
+CA672 PASS lock item 6 normal carried-state flags
+CA672 PASS lock item 6 copied provenance
+CA672 PASS lock item 6 retained contamination
+CA672 PASS lock item 7 saved reference
+CA672 PASS lock item 7 separate world instance
+CA672 PASS lock item 7 saved native type
+CA672 PASS lock item 7 original catalogue identity
+CA672 PASS lock item 7 saved pairing token
+CA672 PASS lock item 7 original type weight
+CA672 PASS lock item 7 original collision and scale
+CA672 PASS lock item 7 original shared key icon and spawn
+CA672 PASS lock item 7 native floor contact
+CA672 PASS lock item 7 normal carried-state flags
+CA672 PASS lock item 7 copied provenance
+CA672 PASS lock item 7 retained contamination
+CA672 PASS lock item 8 saved reference
+CA672 PASS lock item 8 separate world instance
+CA672 PASS lock item 8 saved native type
+CA672 PASS lock item 8 original catalogue identity
+CA672 PASS lock item 8 saved pairing token
+CA672 PASS lock item 8 original type weight
+CA672 PASS lock item 8 original collision and scale
+CA672 PASS lock item 8 original shared key icon and spawn
+CA672 PASS lock item 8 native floor contact
+CA672 PASS lock item 8 normal carried-state flags
+CA672 PASS lock item 8 copied provenance
+CA672 PASS lock item 8 retained contamination
+CA672 PASS lock item 9 saved reference
+CA672 PASS lock item 9 separate world instance
+CA672 PASS lock item 9 saved native type
+CA672 PASS lock item 9 original catalogue identity
+CA672 PASS lock item 9 saved pairing token
+CA672 PASS lock item 9 original type weight
+CA672 PASS lock item 9 original collision and scale
+CA672 PASS lock item 9 original shared key icon and spawn
+CA672 PASS lock item 9 native floor contact
+CA672 PASS lock item 9 normal carried-state flags
+CA672 PASS lock item 9 copied provenance
+CA672 PASS lock item 9 retained contamination
+CA672 PASS lock item 10 saved reference
+CA672 PASS lock item 10 separate world instance
+CA672 PASS lock item 10 saved native type
+CA672 PASS lock item 10 original catalogue identity
+CA672 PASS lock item 10 saved pairing token
+CA672 PASS lock item 10 original type weight
+CA672 PASS lock item 10 original collision and scale
+CA672 PASS lock item 10 original shared key icon and spawn
+CA672 PASS lock item 10 native floor contact
+CA672 PASS lock item 10 normal carried-state flags
+CA672 PASS lock item 10 copied provenance
+CA672 PASS lock item 10 retained contamination
+CA672 PASS lock item 11 saved reference
+CA672 PASS lock item 11 separate world instance
+CA672 PASS lock item 11 saved native type
+CA672 PASS lock item 11 original catalogue identity
+CA672 PASS lock item 11 saved pairing token
+CA672 PASS lock item 11 original type weight
+CA672 PASS lock item 11 original collision and scale
+CA672 PASS lock item 11 original shared key icon and spawn
+CA672 PASS lock item 11 native floor contact
+CA672 PASS lock item 11 normal carried-state flags
+CA672 PASS lock item 11 copied provenance
+CA672 PASS lock item 11 retained contamination
+CA672 PASS lock item 12 saved reference
+CA672 PASS lock item 12 separate world instance
+CA672 PASS lock item 12 saved native type
+CA672 PASS lock item 12 original catalogue identity
+CA672 PASS lock item 12 saved pairing token
+CA672 PASS lock item 12 original type weight
+CA672 PASS lock item 12 original collision and scale
+CA672 PASS lock item 12 original shared key icon and spawn
+CA672 PASS lock item 12 native floor contact
+CA672 PASS lock item 12 normal carried-state flags
+CA672 PASS lock item 12 copied provenance
+CA672 PASS lock item 12 retained contamination
+CA672 PASS lock item 13 saved reference
+CA672 PASS lock item 13 separate world instance
+CA672 PASS lock item 13 saved native type
+CA672 PASS lock item 13 original catalogue identity
+CA672 PASS lock item 13 saved pairing token
+CA672 PASS lock item 13 original type weight
+CA672 PASS lock item 13 original collision and scale
+CA672 PASS lock item 13 original shared key icon and spawn
+CA672 PASS lock item 13 native floor contact
+CA672 PASS lock item 13 normal carried-state flags
+CA672 PASS lock item 13 copied provenance
+CA672 PASS lock item 13 retained contamination
+CA672 PASS lock item 14 saved reference
+CA672 PASS lock item 14 separate world instance
+CA672 PASS lock item 14 saved native type
+CA672 PASS lock item 14 original catalogue identity
+CA672 PASS lock item 14 saved pairing token
+CA672 PASS lock item 14 original type weight
+CA672 PASS lock item 14 original collision and scale
+CA672 PASS lock item 14 original shared key icon and spawn
+CA672 PASS lock item 14 native floor contact
+CA672 PASS lock item 14 normal carried-state flags
+CA672 PASS lock item 14 copied provenance
+CA672 PASS lock item 14 retained contamination
+CA672 PASS lock item 15 saved reference
+CA672 PASS lock item 15 separate world instance
+CA672 PASS lock item 15 saved native type
+CA672 PASS lock item 15 original catalogue identity
+CA672 PASS lock item 15 saved pairing token
+CA672 PASS lock item 15 original type weight
+CA672 PASS lock item 15 original collision and scale
+CA672 PASS lock item 15 original shared key icon and spawn
+CA672 PASS lock item 15 native floor contact
+CA672 PASS lock item 15 normal carried-state flags
+CA672 PASS lock item 15 copied provenance
+CA672 PASS lock item 15 retained contamination
+CA672 PASS matched pair token retained
+CA672 PASS independent same-tier pair remains distinct
+CA672 PASS matched pair token retained
+CA672 PASS independent same-tier pair remains distinct
+CA672 PASS matched pair token retained
+CA672 PASS independent same-tier pair remains distinct
+CA672 PASS matched pair token retained
+CA672 PASS independent same-tier pair remains distinct
+CA672 PASS matched pair token retained
+CA672 PASS independent same-tier pair remains distinct
+CA672 PASS matched pair token retained
+CA672 PASS independent same-tier pair remains distinct
+CA672 COMPLETE failures=0
+Captured candidate-0.png
+Captured candidate-1.png
+Captured candidate-2.png
+Captured candidate-3.png
+Captured candidate-5.png
+Captured candidate-6.png
+Captured candidate-7.png
+Captured detail-0-0.png
+Captured detail-0-90.png
+Captured detail-0-160.png
+Captured detail-0-270.png
+CA672 PASS lock item 0 native repickup
+CA672 PASS lock item 0 exact recovered instance
+CA672 PASS lock item 0 recovered copied provenance
+CA672 PASS lock item 0 recovered retained contamination
+CA672 PASS lock item 1 native repickup
+CA672 PASS lock item 1 exact recovered instance
+CA672 PASS lock item 1 recovered copied provenance
+CA672 PASS lock item 1 recovered retained contamination
+CA672 PASS lock item 2 native repickup
+CA672 PASS lock item 2 exact recovered instance
+CA672 PASS lock item 2 recovered copied provenance
+CA672 PASS lock item 2 recovered retained contamination
+CA672 PASS lock item 3 native repickup
+CA672 PASS lock item 3 exact recovered instance
+CA672 PASS lock item 3 recovered copied provenance
+CA672 PASS lock item 3 recovered retained contamination
+CA672 PASS lock item 4 native repickup
+CA672 PASS lock item 4 exact recovered instance
+CA672 PASS lock item 4 recovered copied provenance
+CA672 PASS lock item 4 recovered retained contamination
+CA672 PASS lock item 5 native repickup
+CA672 PASS lock item 5 exact recovered instance
+CA672 PASS lock item 5 recovered copied provenance
+CA672 PASS lock item 5 recovered retained contamination
+CA672 PASS lock item 6 native repickup
+CA672 PASS lock item 6 exact recovered instance
+CA672 PASS lock item 6 recovered copied provenance
+CA672 PASS lock item 6 recovered retained contamination
+CA672 PASS lock item 7 native repickup
+CA672 PASS lock item 7 exact recovered instance
+CA672 PASS lock item 7 recovered copied provenance
+CA672 PASS lock item 7 recovered retained contamination
+CA672 PASS lock item 8 native repickup
+CA672 PASS lock item 8 exact recovered instance
+CA672 PASS lock item 8 recovered copied provenance
+CA672 PASS lock item 8 recovered retained contamination
+CA672 PASS lock item 9 native repickup
+CA672 PASS lock item 9 exact recovered instance
+CA672 PASS lock item 9 recovered copied provenance
+CA672 PASS lock item 9 recovered retained contamination
+CA672 PASS lock item 10 native repickup
+CA672 PASS lock item 10 exact recovered instance
+CA672 PASS lock item 10 recovered copied provenance
+CA672 PASS lock item 10 recovered retained contamination
+CA672 PASS lock item 11 native repickup
+CA672 PASS lock item 11 exact recovered instance
+CA672 PASS lock item 11 recovered copied provenance
+CA672 PASS lock item 11 recovered retained contamination
+CA672 PASS lock item 12 native repickup
+CA672 PASS lock item 12 exact recovered instance
+CA672 PASS lock item 12 recovered copied provenance
+CA672 PASS lock item 12 recovered retained contamination
+CA672 PASS lock item 13 native repickup
+CA672 PASS lock item 13 exact recovered instance
+CA672 PASS lock item 13 recovered copied provenance
+CA672 PASS lock item 13 recovered retained contamination
+CA672 PASS lock item 14 native repickup
+CA672 PASS lock item 14 exact recovered instance
+CA672 PASS lock item 14 recovered copied provenance
+CA672 PASS lock item 14 recovered retained contamination
+CA672 PASS lock item 15 native repickup
+CA672 PASS lock item 15 exact recovered instance
+CA672 PASS lock item 15 recovered copied provenance
+CA672 PASS lock item 15 recovered retained contamination
+CA672 PASS all sixteen same-class objects coexist without merging
+CA672 PASS Box excludes every opening tool
+CA672 PASS matching serialized value opens independently reconstructed pair
+CA672 PASS same-tier wrong pair cannot open
+CA672 PASS native picks retain access
+CA672 PASS native master key retains access
+CA672 PASS Box excludes every opening tool
+CA672 PASS matching serialized value opens independently reconstructed pair
+CA672 PASS same-tier wrong pair cannot open
+CA672 PASS native picks retain access
+CA672 PASS native master key retains access
+CA672 PASS Box excludes every opening tool
+CA672 PASS matching serialized value opens independently reconstructed pair
+CA672 PASS same-tier wrong pair cannot open
+CA672 PASS native picks retain access
+CA672 PASS native master key retains access
+CA672 PASS Box excludes every opening tool
+CA672 PASS matching serialized value opens independently reconstructed pair
+CA672 PASS same-tier wrong pair cannot open
+CA672 PASS native picks retain access
+CA672 PASS native master key retains access
+CA672 PASS Box excludes every opening tool
+CA672 PASS matching serialized value opens independently reconstructed pair
+CA672 PASS same-tier wrong pair cannot open
+CA672 PASS native picks retain access
+CA672 PASS native master key retains access
+CA672 PASS Box excludes every opening tool
+CA672 PASS matching serialized value opens independently reconstructed pair
+CA672 PASS same-tier wrong pair cannot open
+CA672 PASS native picks retain access
+CA672 PASS native master key retains access
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 PASS second native toss retains type
+CA672 COMPLETE failures=0

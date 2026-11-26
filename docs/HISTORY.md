@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.13** - 2026-11-13.
+Documentation version: **5.17.14** - 2026-11-13.
+
+## 5.17.14 - Shared key model for lock inventory (#672)
+
+The author's all-drop 3D request is applied to CaelumLockItem by reusing the
+original #656 key model. All eight native types retain the existing shared key
+icon representation; no distinct lock/tool design or gameplay rule is authored.
+Original geometry/materials, pairing, weights, per-instance ownership and #382
+acceptance remain unchanged. Native compatibility/rollback/access checks pass
+1,646 assertions; the earlier visual run passes 349. Three exports repeat and all
+18,223 source/package entries match. Sixteen-object presentation: 1169.98/1127.44
+queue presents/s, p95 1.0351/1.0713 ms and p99 1.2384/1.3079 ms; ASSETS records scope
+and environment. Evidence: assets/validation_v5_17_14/evidence/SUMMARY.json.
+CA672-LOCKS-01 remains an unconfirmed author visual/menu check.
 
 ## 5.17.13 - Closed mate drop models (#670)
 

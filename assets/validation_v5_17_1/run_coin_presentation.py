@@ -28,14 +28,14 @@ def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main(default_kind='coins'):
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ['baseline','runtime','presentation-layer','output']:parser.add_argument('--'+name,type=Path,required=True)
-    parser.add_argument('--kind',choices=('coins','consumables','water','food','ammunition','documents','ingots','camp','furniture','waterskin','mates'),default=default_kind)
+    parser.add_argument('--kind',choices=('coins','consumables','water','food','ammunition','documents','ingots','camp','furniture','waterskin','mates','locks'),default=default_kind)
     args=parser.parse_args();baseline=args.baseline.resolve(strict=True);runtime=args.runtime.resolve(strict=True);layer=args.presentation_layer.resolve(strict=True)
     existing=subprocess.check_output(['tasklist','/FI','IMAGENAME eq gzdoom.exe','/FO','CSV','/NH']).decode(errors='replace')
     if '"gzdoom.exe"' in existing.lower():parser.error('Another native engine is running.')
     out=args.output.resolve();out.relative_to(ROOT/'build');out.mkdir(parents=True,exist_ok=False)
-    report={'issue':670 if args.kind=='mates' else 668 if args.kind=='waterskin' else 666 if args.kind=='furniture' else 664 if args.kind=='camp' else 658 if args.kind=='ingots' else 656 if args.kind=='documents' else 652 if args.kind=='ammunition' else 647,'kind':args.kind,'scope':__doc__.strip(),'baseline_sha256':digest(baseline),'runtime_sha256':digest(runtime),'engine_sha256':digest(ENGINE),
+    report={'issue':672 if args.kind=='locks' else 670 if args.kind=='mates' else 668 if args.kind=='waterskin' else 666 if args.kind=='furniture' else 664 if args.kind=='camp' else 658 if args.kind=='ingots' else 656 if args.kind=='documents' else 652 if args.kind=='ammunition' else 647,'kind':args.kind,'scope':__doc__.strip(),'baseline_sha256':digest(baseline),'runtime_sha256':digest(runtime),'engine_sha256':digest(ENGINE),
             'layer_sha256':digest(layer/'ca_presentation.dll'),'runs':[]}
-    count={'coins':15,'consumables':9,'water':6,'food':6,'ammunition':7,'documents':6,'ingots':7,'camp':2,'furniture':17,'waterskin':2,'mates':3}[args.kind]
+    count={'coins':15,'consumables':9,'water':6,'food':6,'ammunition':7,'documents':6,'ingots':7,'camp':2,'furniture':17,'waterskin':2,'mates':3,'locks':16}[args.kind]
     for kind in ['sprites','models']:
         folder=out/f'{kind}-{count}';folder.mkdir()
         if args.kind=='coins':
@@ -96,6 +96,9 @@ class CA647Bench : EventHandler
             source=source.replace('(0,-180,180)','(0,-180,244)')
             source=source.replace("Bodies.Push(Actor.Spawn(kinds[index],((index%3-1)*55,(index/3-1)*55,0),NO_REPLACE));",
                 "{let item=Actor.Spawn(kinds[index],((index%5-2)*35,(index/5-1.5)*35,64),NO_REPLACE);item.bNOGRAVITY=true;Bodies.Push(item);}")
+        if args.kind=='locks':
+            source=source.replace('index<kinds.Size()','index<16').replace('Bodies.Push(Actor.Spawn(kinds[index],((index%3-1)*55,(index/3-1)*55,0),NO_REPLACE));',
+                '{let item=CaelumLockRules.Create(index%8,((index%4-1.5)*40,(index/4-1.5)*40,0));Bodies.Push(item);}')
         fixture=folder/'fixture.pk3'
         with zipfile.ZipFile(fixture,'w') as package:
             for name,blob in {'ZSCRIPT':('version "4.14.2"\n'+source).encode(),'maps/CA455V.wad':wad(224),

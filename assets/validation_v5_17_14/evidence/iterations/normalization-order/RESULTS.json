@@ -1,0 +1,54 @@
+{
+  "issue": 672,
+  "kind": "locks",
+  "scope": "Native pickup/toss, quantity and saved ownership for locks; no normal menu or author acceptance.",
+  "baseline_sha256": "36c4592298df3cb2cac246af65581dae8021cdc14cac9be83dc83ff4aa953ddb",
+  "runtime_sha256": "4bef58513f71b4b77e759a063f435e38ccdf024655478da29aa557cf55363c65",
+  "model_sha256": null,
+  "fixture_sha256": "e71c78e12a42f1830e4d9050106abcd83f5369155e1d5f4c110b086744a92662",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 349
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": false,
+      "errors": [
+        "CA672 FAIL Box excludes every opening tool",
+        "CA672 FAIL same-tier wrong pair cannot open",
+        "CA672 FAIL Box excludes every opening tool",
+        "CA672 FAIL same-tier wrong pair cannot open",
+        "CA672 FAIL Box excludes every opening tool",
+        "CA672 FAIL same-tier wrong pair cannot open",
+        "CA672 FAIL Box excludes every opening tool",
+        "CA672 FAIL same-tier wrong pair cannot open",
+        "CA672 FAIL Box excludes every opening tool",
+        "CA672 FAIL same-tier wrong pair cannot open",
+        "CA672 FAIL Box excludes every opening tool",
+        "CA672 FAIL same-tier wrong pair cannot open",
+        "Expected 316 native assertions, observed 304"
+      ],
+      "assertions": 304
+    }
+  ],
+  "captures": {
+    "baseline.png": "f7f09008847792c361cecaaa0339cc0b394c30612d19fb0a2e22787ae504bb17",
+    "candidate-0.png": "b623b51b806ddcd4036328ed8cd72a2b2fe0d31ab004c0849fd0967b1b443aad",
+    "candidate-1.png": "6c7ff23d8e7e959280c341b2245a5ba652d910b0e0e1450de72bce8dfd286c18",
+    "candidate-2.png": "2a3098e043879f337d2b551c89ec743c988b24903b0c61c3b6996485fb156962",
+    "candidate-3.png": "7adf649d4b7bc6df3f6f026a65c138436306fc50141d6ba9faeb72362081dd37",
+    "candidate-5.png": "daedbc0b5d2b0cb7f8e4e0bd83a7ebccda73096b275d66e4a80d9f4bd703709a",
+    "candidate-6.png": "c76a380534a1c8788fe9639c5acf8b2aa69f6e0ee2f4fad2bf5938c70676204b",
+    "candidate-7.png": "11557994bf58515585609c5f787f5a8bc6861ab7c21c57f48c888903fd74f22e",
+    "detail-0-0.png": "669ddf889cac084f53bf657fe2a1beaea701b543e143a9b6b49d7aeb5fdf4df4",
+    "detail-0-160.png": "fae1402dfd50ffbafadcd9ca12d2273d1602fe15c3d6a8e6ed8d5596775eb486",
+    "detail-0-270.png": "01760505614ab49f4c7e3d0a845b9b8188fc47fda32b76f82720c9c093ff7f4f",
+    "detail-0-90.png": "47c5ef730cc39facd0680dbba4faf4388e4720ba4118cec815116022ba94d1c7"
+  }
+}

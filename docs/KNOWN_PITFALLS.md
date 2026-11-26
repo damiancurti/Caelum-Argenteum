@@ -80,6 +80,17 @@ package passes 472 checks across baseline, old/new saves, reload and rollback:
 assets/validation_v5_17_6/evidence/SUMMARY.json. This is fixture isolation;
 campaign/menu behavior and author review remain separate.
 
+Related ENGINE-VERIFIED fixture ordering, #672 (2026-11-13): sequential native
+pickups also normalize InMagicBox flags when the test player does not own the
+Box. Marking each recovered tool before the next pickup left earlier tools
+accessible and produced twelve false access failures. Finish every pickup,
+then prepare direct Box-exclusion flags immediately before HasAccess probes.
+Do not change NormalizeUnownedMagicBoxStorage or grant campaign ownership just
+to bypass its behavior. The final five-phase suite passes 1,646 checks on the
+unchanged runtime. This isolates direct access-method testing; ordinary Box
+menus and actual storage transitions remain separate. Evidence:
+assets/validation_v5_17_14/evidence/SUMMARY.json (including the rejected order).
+
 ## CA-KP-230 - Freeze native model poses without invoking gameplay actions
 
 Status/evidence: ENGINE-VERIFIED fixture correction, #461, 2026-11-13.

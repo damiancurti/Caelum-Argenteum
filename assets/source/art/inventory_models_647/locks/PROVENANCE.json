@@ -1,0 +1,6 @@
+{
+  "issue": 672,
+  "ownership": "Original owned #656 key geometry and source materials, derived from the existing ca_key.png artwork.",
+  "editable_sources": "Editable geometric controls remain in assets/source/art/inventory_models_647/documents/DESIGN.json. The original generate_inventory_document_models.py recreates editable/key.obj and documents.mtl in its selected output directory; no redundant model or bitmap copy is introduced.",
+  "changes": "One explicit CaelumLockItem/CKEY/A binding; no geometry, PNG, gameplay, crafting or pairing modifications."
+}
