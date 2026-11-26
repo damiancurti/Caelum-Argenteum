@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.124.** Obtain and update the complete repository,
+**Current release: 5.17.125.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#464 verifies the retained prologue audio: 131 decoded recordings, 19 future
+tracks still reserved, and native music/volume/dialogue/travel/save checks.
+Audio bytes and assignments remain unchanged. Evidence is in
+assets/validation_v5_17_125; CA464-AUDIO-01 awaits the final author terminal.
+The remaining independent-beta work is #465-469.
 
 #460 adds timed chair/bed/floor transitions and eating/drinking gestures on the
 retained supported modular body. The shield stays visible and the weapon visual

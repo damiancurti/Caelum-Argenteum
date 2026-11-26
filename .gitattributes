@@ -1,4 +1,8 @@
 # Document index hashes use exact source bytes. Keep them stable on checkout.
+# #464 isolated audio evidence and portable probe sources.
+/assets/validation_v5_17_125/** -text -diff
+/assets/validation_v5_17_125/*.py text eol=lf diff
+/assets/validation_v5_17_125/*.zs text eol=lf diff
 # #460 retains exact source/evidence bytes and deterministic generated bindings.
 /assets/source/art/rest_motion_460/** -text
 /assets/validation_v5_17_124/** -text

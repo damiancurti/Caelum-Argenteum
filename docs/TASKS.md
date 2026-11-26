@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.124** - 2026-11-26.
+Documentation version: **5.17.125** - 2026-11-26.
+
+## 5.17.125 - Verify retained prologue audio (#464)
+
+Completed the author-approved audio verification scope: deterministic index
+of 131 recordings, preserved credit/source locators, full PCM decode, 19 reserved
+tracks and three native phases with71 checks. Existing music, conversation,
+cue-channel and preference ownership is unchanged. The eight container/decode
+duration differences are recorded with independent-decoder agreement.
+
+CA464-AUDIO-01 joins the pending author queue; all prior109 checks remain.
+Continue #465 UI/icon/font/credit coverage. #466 resolves distributable asset
+permissions; this audio verification does not certify unrelated third-party
+rights or implement future weather/region designs. #467-469 deliver and validate
+the approved independent prologue beta and final consolidated terminal.
 
 ## 5.17.124 - Complete native rest/meal transitions (#460)
 

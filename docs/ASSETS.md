@@ -1,6 +1,30 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.124** - 2026-11-26.
+Documentation version: **5.17.125** - 2026-11-26.
+
+## 5.17.125 - Verify retained prologue audio (#464)
+
+The author approved retaining current prologue assignments and keeping the
+19 future tracks reserved. assets/validation_v5_17_125 contains the reproducible
+audit, native probe/runner and bounded evidence. The current inventory has 131
+recordings; each index entry records a hash, aliases, literal consumer locators
+and existing credit/provenance references. A reference is not a new rights grant;
+the independent-distribution permission audit remains #466.
+
+All 131 files decode to non-silent PCM. Eight retained ambient/weather OGGs
+advertise slightly more frames than they decode (414-4,618 samples at 48kHz).
+libsndfile and FFmpeg7.1 agree on decoded counts and finish without errors or
+warnings. Both advertised and actual durations remain recorded; the original
+audio bytes are preserved. Nineteen future tracks have no map binding or literal
+runtime consumer. Their approved catalogue and Damián Curti/Suno provenance
+remain intact; no soundtrack generation or new weather mix is claimed.
+
+Native evidence: three phases,71 checks, title-once/map-loop policy, prologue
+travel/return, real Fool conversation, volume preferences, nine cues on one
+channel, breathing and saved MAP02 reload. Auditory judgement and loop/mix
+quality remain CA464-AUDIO-01 for the author. The historical pack-04 harp
+derivative record is superseded for dialogue_open by the issue-31 Suno recording;
+its original harp-loop attribution remains applicable to that separate file.
 
 ## 5.17.124 - Rest and meal clips on retained rigs (#460)
 
@@ -10527,7 +10551,7 @@ Sitting/crouching does not itself activate healing, camera or calendar.
 | Map Exit button | `caelum/stock/menu_strings_start` | switches/exitbutn. |
 
 MAP01 now uses the former MAP02 track (`CA_MUS02`); MAP02 uses the new sewer track
-`CA_MUS03_SEWER`, MAP06 uses `CA_MUS04_PORT` and MAP07 uses `CA_MUS05_COAST`.
+`CA_MUS03_SEWER`, MAP03 uses `CA_MUS04_PORT` and TCOAST uses `CA_MUS05_COAST`.
 The former MAP01 track (`CA_MUS01`) becomes the opening and reserved chapter-intermission
 music. Opening the pause menu during a game retains that map's music. The original
 dialogue harp remains in `ca_stock_tarot_harp_loop.ogg`; the new opening cue is another
@@ -10623,8 +10647,8 @@ file does not imply that there is already a climate or scene emitter.
 | `music/CA_MUS01.mp3` | Reserved chapter-end story intermissions. |
 | `music/CA_MUS02.mp3` | MAP01 music. |
 | `music/CA_MUS03_SEWER.ogg` | MAP02 sewer music. |
-| `music/CA_MUS04_PORT.ogg` | MAP06 port music. |
-| `music/CA_MUS05_COAST.ogg` | MAP07 coast music. |
+| `music/CA_MUS04_PORT.ogg` | MAP03 port/Barracas music (formerly MAP06). |
+| `music/CA_MUS05_COAST.ogg` | TCOAST diagnostic coast music (formerly MAP07). |
 | `sounds/caelum/gathering/chop.wav` | One confirmed wood/fiber extraction impact, any eligible weapon. |
 | `sounds/caelum/gathering/stone.ogg` | Confirmed stone/coal extraction. |
 | `sounds/caelum/gathering/metal.ogg` | Confirmed metal-ore extraction. |

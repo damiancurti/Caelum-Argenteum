@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.124** - 2026-11-26.
+Documentation version: **5.17.125** - 2026-11-26.
+
+## 5.17.125 - Verify retained prologue audio (#464)
+
+The author narrowed #464 to the current prologue audio: retain assignments,
+verify playback, volume, transitions and saves, and keep the 19 future-region
+tracks in reserve. The audit covers all 131 runtime recordings and their retained
+credit/source locators. No new weather/time/region emitters or music assignments
+are authorized by this delivery. #466 still audits distribution permissions.
+
+Native GZDoom4.14.2 checks cover title, MAP01-MAP02-MAP03 and hub return,
+actual conversation opening/closure, music preferences, cue channel ownership,
+breathing and save/reload. Final listening acceptance is CA464-AUDIO-01.
+Continue typography/credits coverage under #465, then standalone work #466-469.
 
 ## 5.17.124 - Native rest and meal transitions (#460)
 
