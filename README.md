@@ -6,8 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.16.3.** Obtain and update the complete repository,
+**Current release: 5.16.4.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#456 now audits [all 78 essence identities](assets/campaign/ESSENCE_COVERAGE.json),
+their approved chapter allocations and recovery policy. The three opening sources
+remain in place; 75 exact acquisitions still require authored quests/locations.
+This coverage ledger adds no runtime placements or completed campaign routes.
 
 The [58-reference folklore catalogue](assets/bestiary/CATALOGUE.json) is imported
 under #453 with original images, verified provenance and all 58 regional
@@ -32,6 +37,9 @@ including stored hub maps. [Map specifications and validation](docs/MAP01.txt)
 distinguish this slice from the remaining campaign and author test terminal. The basic finale
 and its all-78-essence/Respected reputation requirements are author-approved;
 the checkpoint is before Selene on the Moon, after obtaining the World last.
+#456 now enforces the World's other-77 prerequisite in the shared capture service;
+its lunar placement and the remaining quest assignments are still unauthored.
+Native ID/capture and old-save evidence is recorded in [SYSTEMS](docs/SYSTEMS.md).
 The seven named Majors per chapter are also approved as an allocation base;
 the recovered bestiary and map references proceed through separate issues.
 Barracas revision4 is now packaged in MAP03 from the [approved layout](assets/barracas_redesign/LAYOUT.json),

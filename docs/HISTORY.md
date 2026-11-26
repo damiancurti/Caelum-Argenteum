@@ -1,6 +1,70 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.16.3** - 2026-11-12.
+Documentation version: **5.16.4** - 2026-11-13.
+
+2026-11-13 #456 capture follow-up: the shared service now enforces the approved
+World-after-other-77 personal acquisition requirement while retaining separate
+reward entitlement. Generated CaelumEssenceAcquisitionData derives the values
+from the approved graph; project validation checks freshness. No source placement,
+saved field, opening capture rule or previous acquisition is changed.
+
+The preceding runtime passed all75 generic native captures but failed78 early
+World boundary assertions (opening-only plus each missing identity). The new
+runtime passes those boundaries and all75 actual Use/full35-tic transactions.
+Native continuation loads the preceding runtime's interrupted/mid-capture and
+completed saves. A separate actual early World capture on the preceding runtime
+retains its4 acquired identities under the new gate, without replay. Original
+packages and saves remain local for rollback. Static and project checks pass.
+An initial document audit overlapped the archive/document update and rejected
+stale index hashes; its log is retained before the ordered regeneration/audit.
+
+Evidence: validation_v5_16_4/capture/SUMMARY.json. The first oversized console
+matrix lost its setup and exited early; its failed logs are retained. Bounded
+explicitly chained scripts follow CA-KP-098/CA-KP-134. The fixture prepares the
+three opening acquisitions, floor positions and response acceptance; source
+removal/reoffer is not an authored NPC-death route. No new campaign/cooperative
+reachability or author acceptance is claimed. All outstanding author checks stay.
+
+2026-11-13 #456 dependency refresh includes #455's Cuero visual pilot
+and its native/binary evidence, preserving this issue's runtime and authored data.
+Combined project validation passes in validation_v5_16_4/dependency-cuero.log;
+visual evidence retains its original #455 model/runtime hashes and qualifications.
+
+2026-11-13 #456 dependency refresh includes #455 commit17da9f10c and its Pombero
+facial/material refinement. The essence ledger and runtime remain unchanged.
+Combined project validation passes in validation_v5_16_4/dependency-pombero-face.log;
+visual evidence retains its original #455 build/model hashes and qualifications.
+
+2026-11-13 #456 dependency refresh includes #454's tested perception change
+through #455 commit1d22cca3d. The essence ledger and policy remain unchanged.
+The project audit passes in validation_v5_16_4/dependency-perception.log; native
+evidence retains its #454 runtime hash and does not imply new placement coverage.
+
+2026-11-13 #456 dependency refresh includes #455 commit2822c4315 and its Pombero
+technical pilot, preserving5.16.4 and the unchanged essence ledger/runtime.
+The combined project audit passes; validation_v5_16_4/dependency-pombero.log
+records this checkout's result. The first log writer lacked its local build
+directory; that tooling attempt did not retain a validator result. The repeated
+recorded audit supplies the evidence. No native behavior changed in this merge.
+
+## 5.16.4 - Essence coverage contract (#456, 2026-11-13, in progress)
+
+Created an explicit 78-ID coverage ledger with the 22/56 split, approved Major
+allocation/story anchors, preserved opening sources 0/36/60 and World-after-77.
+Recorded the author's no-permanent-loss recovery policy. Exact assignments for
+75 acquisitions and the remaining 54 Minor chapter allocations are still open;
+no map, reward, capture rule or save schema changed. The author requested that
+questions be postponed while away; missing destinations were left unauthored.
+
+Static contract/freshness checks and deterministic generation pass; negative
+cases reject duplicate IDs, a circular World prerequisite, changed opening
+sources, permanent loss and accidental activation. The completion gate fails
+as expected on the pending assignments. Evidence is in assets/validation_v5_16_4.
+The first project check caught the two stale diagnostic release labels; those
+strings were advanced to 5.16.4. No native test was needed for this authoring patch;
+previous native results keep
+their original issue/build scope. No author acceptance or full completion is
+claimed, and outstanding manual checks remain untouched.
 
 ## 5.16.3 - Folklore combat classes and model pilot (#455, 2026-11-12)
 

@@ -1,6 +1,23 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.16.3** - 2026-11-12.
+Documentation version: **5.16.4** - 2026-11-13.
+
+## 5.16.4 - Essence coverage and recovery contract (#456, in progress)
+
+The generated ESSENCE_COVERAGE.json accounts for all 78 canonical IDs (22 Major,
+56 Minor), joins the approved chapter allocation and preserves opening sources
+0/36/60. Exact quests/locations remain unauthored for 75 cards; 54 Minors also lack
+chapter assignments. World requires the other 77 identities and belongs to the
+Moon, but its exact acquisition is not placed. The ledger does not prove regional
+reachability or implement new recovery routes. Questions remain postponed while
+the author is away; no pending design was inferred.
+
+The shared capture service now enforces the approved World-after-other-77 rule,
+using generated canonical data and preserving prior acquisitions. Native tests
+cover all 75 generic transactions, every missing-identity boundary, interruption,
+explicit source reoffer and old-save continuation. The three opening IDs and flat
+room are fixture preparation; no quest location or alternate route is added.
+See validation_v5_16_4/capture/SUMMARY.json for exact builds and qualifications.
 
 ## 5.16.3 - Folklore combat classes and model pilot (#455, in progress)
 

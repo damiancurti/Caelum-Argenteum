@@ -5,6 +5,7 @@ version "4.14"
 // Keeping each system in a separate file will make the project easier to learn,
 // test, and maintain as it grows.
 #include "caelum/core/CaelumConstants.zs"
+#include "caelum/data/CaelumEssenceAcquisitionData.zs"
 #include "caelum/data/CaelumFoodData.zs"
 #include "caelum/data/CaelumTheftData.zs"
 #include "caelum/data/CaelumContaminationData.zs"

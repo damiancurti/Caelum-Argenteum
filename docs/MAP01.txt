@@ -1,6 +1,16 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.16.3** - 2026-11-12.
+Documentation version: **5.16.4** - 2026-11-13.
+
+## 5.16.4 / #456 - Essence acquisition authoring ledger
+
+assets/campaign/ESSENCE_COVERAGE.json derives the 78-card ledger from the canonical
+Tarot manifest and approved PROGRESSION.json allocation. It retains the existing
+Fool/MAP01, Ace of Cups/MAP02 and Knight of Wands/MAP03 sources, including the
+approved #454 relocations. Chapter assignment does not authorize a quest, exact
+map, NPC interaction or acquisition order. The other 75 locations remain pending;
+null prerequisites mean unspecified here, never permission to bypass game gates.
+World is lunar and requires the other 77; no lunar source is implemented yet.
 
 ## 5.16.2 / #454 - Approved sewer redesign, revision 6
 

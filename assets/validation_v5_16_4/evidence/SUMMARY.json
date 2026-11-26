@@ -1,0 +1,55 @@
+{
+  "issue": 456,
+  "release": "5.16.4",
+  "scope": "Static authoring contract; runtime diff is exactly two diagnostic release labels. No native or author acceptance claimed.",
+  "completion_gate": "Expected rejection: 75 exact acquisitions remain unauthored.",
+  "initial_failure": "Project validation caught stale diagnostic labels; original failing log retained.",
+  "results": [
+    {
+      "command": [
+        "python",
+        "assets/generators/build_essence_coverage.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "check-1.log"
+    },
+    {
+      "command": [
+        "python",
+        "assets/generators/build_essence_coverage.py",
+        "--check",
+        "--require-complete"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "check-2.log"
+    },
+    {
+      "command": [
+        "python",
+        "assets/validation_v5_16_4/check_essence_coverage.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "check-3.log"
+    },
+    {
+      "command": [
+        "python",
+        "validate_project.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": "check-4.log"
+    }
+  ],
+  "sha256": {
+    "check-1.log": "743acc78028518911ae7b10d69ef0c417d63640ef4ff58d314ca58929b771f3e",
+    "check-2.log": "743acc78028518911ae7b10d69ef0c417d63640ef4ff58d314ca58929b771f3e",
+    "check-3.log": "a54cb427e0c24429af9f15f4a056680721df2c385e009e96e3f347f2c1f2e31b",
+    "check-4-initial-label-failure.log": "3f192a144f1d560814820396276511d03fc8ba985ad93830600e993f35639ae2",
+    "check-4.log": "816940e240600dc2ce13e77d834b94b931cad8384b549607fc0b05e31dd7ae34"
+  }
+}
