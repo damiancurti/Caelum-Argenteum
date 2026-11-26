@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.3** - 2026-11-13.
+Documentation version: **5.17.4** - 2026-11-13.
+
+## 5.17.4 - First regional art inspection slice (#463)
+
+Three owned ground materials and an isolated Litoral/Selva/Patagonia gallery
+reuse Pombero, Cuero and Nahuelito visual pilots. The existing maps, combat
+templates and original art remain intact. This is partial #463 delivery, with
+remaining creatures, regional environments and urban/sewer finishing still open.
+ASSETS records provenance, native evidence and pending author art review.
 
 ## 5.17.3 - Ammunition world models (#652)
 

@@ -1,0 +1,38 @@
+{
+  "issue": 463,
+  "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+  "runtime_sha256": "5e301d8bbe651d1f3d834b031ba3b505e0ea8c1fed963c215e4686f24613aa9f",
+  "materials_sha256": null,
+  "fixture_sha256": "0f1fcd08b6627e93aade63e2e6bbd8b00affae52ca061d7b198cda1fbbc94e2b",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 16,
+      "expected_assertions": 16
+    },
+    {
+      "phase": "reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 20,
+      "expected_assertions": 20
+    }
+  ],
+  "captures": {
+    "cuero.png": "1d600e845d58228e0764d7dfdb5b28f755b1b92d73357cac451ba041d14f5c3d",
+    "litoral-tiles.png": "f7f280254aa79b7a41c259d958c8a2b23971b08a7452f85d43b59d49f91df04b",
+    "litoral.png": "3bd6602afcd7aba279fd6fd09c82056d468b816088b4020a596d0292a647c4a5",
+    "nahuelito.png": "ff670da4de35202c521bd98ef11c104c9adf9dae65af40098c9a9139b852f360",
+    "overview.png": "ce5427db166e0a063e33c0a47d33fd84d8cf95fbe445ff1210c4581469a68eea",
+    "patagonia-tiles.png": "bcb0580b6d883f78b6198ac0a8fc4af17d8221861fe1ef339cd52883ef8cb294",
+    "patagonia.png": "0c7072f30d674a1ea3f34e223bd340fc05c1a0221fb9950b9be9ae3f54cb10a3",
+    "reload.png": "bfce4a4fe5954a1f86a0089288b63d9e71855cb3db207f0d182d27227e2b7ff6",
+    "selva-tiles.png": "e8c3bcfe31e3c73f69552af8367d8f0c17cbd7b305097ce3443cce412b84aacc",
+    "selva.png": "6a2f836d768311dcc324384696cb60b8873604bad072498ec57e2a2ba1a0fae9"
+  }
+}

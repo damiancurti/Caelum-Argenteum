@@ -5817,3 +5817,6 @@ Graphic "CA518_DOMIZ0_1", 142, 88 { Patch "graphics/caelum/death_repair/domingo-
 #include "caelum/data/tarot_fronts.textures"
 
 #include "caelum/data/powerups.textures"
+
+// #463: materiales regionales propios; sin sustituciones de mapas.
+#include "caelum/data/regional_materials.textures"

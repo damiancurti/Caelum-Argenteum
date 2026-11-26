@@ -1,6 +1,59 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.3** - 2026-11-13.
+Documentation version: **5.17.4** - 2026-11-13.
+
+## 5.17.4 - Regional materials and inspection gallery (#463)
+
+The author requested needed regional textures and a small map alongside the
+regional monsters. This first slice supplies three owned ground materials and
+an isolated gallery for the three existing visual pilot identities. Pombero is
+shown in Litoral and Selva; Cuero and Nahuelito are shown in Patagonia, following
+the approved REGION_PROPOSAL.json. These four displays are original #455 preview
+actors, not campaign populations, physical combat bodies or new encounter rules.
+The remaining creatures and other regional environments are still unfinished.
+
+INVENTORY.json in assets/source/art/regional_gallery_463 records the asset gaps
+and existing city/port/beach, rock, bark and foliage resources retained. Built-in
+image_gen generated three separate 1,254-square opaque PNGs: damp Litoral soil,
+Selva leaf litter and Patagonian gravel. All original PNG bytes and exact prompts
+remain beside PROVENANCE.json. Runtime copies are byte-identical; no raster was
+edited. Native display tiles use 128, 32 and 64 MU respectively: the generated
+leaf/gravel features need smaller tiling than the prompt's approximate 4m patch.
+Those are art presentation scales, not body/collision or campaign dimensions.
+The recorded scales must be judged in repeated native floor views.
+
+`python assets/generators/generate_regional_materials.py --output build/regional-materials --install`
+rebuilds the material definitions and unchanged image copies; --check compares
+the deterministic export. New IDs CRLITGR/CRSELVG/CRPATGR do not replace old maps
+or materials. The #652 ammunition manifest's TEXTURES input hash is refreshed
+for the new include; its original icon aliases and model output remain intact.
+
+GALLERY.json contains test coordinates for CA463G: four sectors, 15 linedefs,
+three floor plots and a connecting walkway. assets/validation_v5_17_4/build_gallery.py
+packages that map plus the preserved pilot resources from assets/bestiary/models;
+no source model geometry, scale, animation or textures change. It is an isolated
+development fixture, not a new campaign destination. The optional run_gallery.py
+launcher provides F1 overview, F2/F3/F4 regional views, F5 player control, F6 Cuero,
+F7 Nahuelito and F8-F10 repeated-floor views. The final package passes 36 native
+fresh/reload checks, retaining references and idle advancement. Real native input
+walks onto the plots and crosses both regional boundaries. The initial crossing
+attempt was too short: 210 tics advanced about 605 of the required 768 MU. The
+recorded 420-tic test reaches x631 from x-768 without changing game speed. The
+runner waits for its last network event and requires exact per-phase counts;
+an earlier clean exit with only the initial assertions is retained as partial
+evidence. Separate gallery exports and their manifests are byte-identical.
+
+Evidence: assets/validation_v5_17_4/evidence/SUMMARY.json. The package matches
+18,179 source entries; existing runtime files change only at the new TEXTURES
+include and two current-version diagnostics. One sequential 700-tic pair uses
+the same four displays/geometry with old cobbles versus regional materials:
+1849.27/1860.24 queue presents/s, p95 0.7010/0.7082 ms, p99 0.8260/0.8317 ms.
+Environment: Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom 4.14.2,
+Vulkan 1280x720, uncapped, vsync off, unpaused background, 5% audio. Queue presents
+are not GPU/display timing. This single pair provides no repeatability estimate
+or city/siege budget; existing campaign maps are byte-identical and were not
+retested for this isolated slice. CA463-REGIONS-01 remains pending author review;
+the broader #463 environment finish and remaining creatures are still open.
 
 ## 5.17.3 - Seven ammunition drop models (#652)
 

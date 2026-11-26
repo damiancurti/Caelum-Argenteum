@@ -1,0 +1,43 @@
+{
+  "issue": 463,
+  "method": "Built-in image_gen; three independent original opaque ground materials, no raster edits.",
+  "date": "2026-11-13",
+  "images": {
+    "litoral_ground": {
+      "original_path": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-a8979305-1626-4bcc-9a2a-91721cd5183e.png",
+      "source": "litoral_ground-v1.png",
+      "sha256": "709d370daae729387bbc10507c486d6e79f8ea397de29c447f789d4f8035bb62",
+      "prompt": "litoral_ground-v1.prompt.txt",
+      "prompt_sha256": "3254af425e38762c26733dc22c6070dffb828e6a291d652663601b4650fe45c7",
+      "native_world_tile_map_units": [
+        128,
+        128
+      ],
+      "original_pixels_unchanged": true
+    },
+    "selva_ground": {
+      "original_path": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-59bd558b-9058-4c20-9df1-e298350cf5c9.png",
+      "source": "selva_ground-v1.png",
+      "sha256": "b059820b642a1fd7a928cebca685f0b4d19b98879cc9c6a7a64d77ef3e12b16b",
+      "prompt": "selva_ground-v1.prompt.txt",
+      "prompt_sha256": "fdbce2c9eb9a457a4b31bd2efeb0fe44b0f8a999a649b59c2cd33ff4269f2bef",
+      "native_world_tile_map_units": [
+        32,
+        32
+      ],
+      "original_pixels_unchanged": true
+    },
+    "patagonia_ground": {
+      "original_path": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-7658c88b-801e-48ba-88db-c1de5b47d5df.png",
+      "source": "patagonia_ground-v1.png",
+      "sha256": "b59111904cd86f10df351acbe4d150dab9a671274069bd50b76a4c88cb51a5ec",
+      "prompt": "patagonia_ground-v1.prompt.txt",
+      "prompt_sha256": "87072b131ff5c6593b2d06e219eeaf44595cd84d025f29370d177a4800c2228c",
+      "native_world_tile_map_units": [
+        64,
+        64
+      ],
+      "original_pixels_unchanged": true
+    }
+  }
+}

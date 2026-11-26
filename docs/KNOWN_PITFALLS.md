@@ -4,6 +4,19 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-229 - Wait for the last diagnostic network event before quitting
+
+Status/evidence: ENGINE-VERIFIED fixture correction, #463, 2026-11-13.
+The first gallery visual run queued its animation verification immediately before
+quit. Native GZDoom exited cleanly with the earlier 11 class/position assertions,
+but the final queued check never ran. A prior COMPLETE marker therefore did not
+prove every intended stage completed. Keep a short tic barrier after the last
+netevent and require the expected phase-specific assertion count. The corrected
+gallery runs require 16 fresh checks and 20 after reload/movement, including
+the two plot boundaries. Evidence:
+assets/validation_v5_17_4/evidence/SUMMARY.json. This corrects the test harness;
+it is not a gameplay synchronization change or author acceptance.
+
 ## CA-KP-228 - Share native ammunition identity between lookup and creation
 
 Status/evidence: ENGINE-VERIFIED, 2026-11-13. Issue: #650.

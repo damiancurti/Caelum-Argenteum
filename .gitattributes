@@ -594,3 +594,13 @@
 /assets/validation_v5_17_3/*.py text eol=lf
 /assets/validation_v5_17_3/*.zs text eol=lf
 /assets/validation_v5_17_3/evidence/** -text -whitespace
+
+/assets/generators/*regional_materials.py text eol=lf
+/assets/source/art/regional_gallery_463/*.json text eol=lf
+/assets/source/art/regional_gallery_463/*.txt text eol=lf
+/assets/source/art/regional_gallery_463/*.png -text
+/src/caelum/data/regional_materials.textures text eol=lf
+/src/graphics/caelum/textures/regions_463/*.png -text
+/assets/validation_v5_17_4/*.py text eol=lf
+/assets/validation_v5_17_4/*.zs text eol=lf
+/assets/validation_v5_17_4/evidence/** -text -whitespace

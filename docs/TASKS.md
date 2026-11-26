@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.3** - 2026-11-13.
+Documentation version: **5.17.4** - 2026-11-13.
+
+## 5.17.4 - Regional materials/gallery (#463, first slice)
+
+Three ground materials and a four-sector isolated gallery are implemented using
+the original three #455 preview identities and approved regional associations.
+Final-package save/movement/animation pass 36 required checks. Native input crosses
+both plot boundaries; one isolated 700-tic presentation pair is recorded in ASSETS.
+CA463-REGIONS-01 remains pending. Other regional creatures, worn character parts,
+inventory categories and the broader city/sewer environment finish remain open;
+this visual fixture grants no campaign encounters or creature body dimensions.
 
 ## 5.17.3 - Ammunition models (#652)
 
