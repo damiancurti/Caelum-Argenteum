@@ -4,6 +4,32 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-247 - Resolve effective TEXTURES art before sizing native models
+
+Status/evidence: STATIC-VERIFIED and ENGINE-OBSERVED, #769, 2026-11-15.
+Affected candidates: #763/#765, present in baseline 7050996ba2a187548c568ca0a3f6e120ee233131.
+Sprites under sprites/caelum/weapons/physical coexist with newer TEXTURES
+aliases. File existence and matching sprite names do not identify the effective
+image. Initial model envelopes followed the legacy images, while the engine
+rendered current icon aliases in the sprite comparison. Inventory/API tests
+still passed; those tests do not certify source-art fidelity or display extent.
+
+Trace each exact actor state through loaded TEXTURES definitions and nested
+Graphic/Patch references, including crops, offsets and X/YScale. Check the
+effective opaque envelope after scaling. Greatsword here resolves through two
+RGB-only transforms to a 1254-pixel source scaled by 9.796875; utility staff in
+#767 uses one 627-pixel atlas cell scaled by 4.8984375. Preserve provenance and
+distinguish RGB transformations from alpha/extent transformations. Hash the
+authoritative definitions and retain native sprite/model comparison captures.
+
+Eight aliases/scales pass the independent #769 check; seven models required
+correction, while the already-correct pickaxe remains byte-identical. Thirty-five
+changed-model detail views and bounded presentation scenes were inspected in
+GZDoom 4.14.2/Vulkan. Evidence: assets/validation_v5_17_63/evidence/SUMMARY.json;
+checker: assets/generators/validate_effective_weapon_references.py. This bounded
+check covers these known definitions, not arbitrary future TEXTURES graphs,
+exact painted-art reproduction, ordinary gameplay or author acceptance.
+
 ## CA-KP-246 - Keep aggregate fixture counts specific to their phase
 
 Status/evidence: ENGINE-OBSERVED and STATIC-VERIFIED, #749, 2026-11-14.

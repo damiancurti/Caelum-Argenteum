@@ -1082,3 +1082,9 @@ assets/validation_v5_17_42/evidence/** -text -diff
 /assets/validation_v5_17_62/*.zs text eol=lf
 /assets/validation_v5_17_62/evidence/** -text -diff
 /src/caelum/data/inventory_polearms.modeldef text eol=lf
+
+# #769 effective reference correction and raw evidence.
+/assets/generators/validate_effective_weapon_references.py text eol=lf
+/assets/source/art/inventory_models_647/effective_weapon_references/** text eol=lf
+/assets/validation_v5_17_63/*.py text eol=lf
+/assets/validation_v5_17_63/evidence/** -text -diff

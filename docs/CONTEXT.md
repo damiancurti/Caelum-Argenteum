@@ -1,8 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.17.62** - 2026-11-15.
+Documentation version: **5.17.63** - 2026-11-15.
 
-**V5.17:**#767:polearms;#769:reference-correction-pending;#765:axes;#763:blades;#761:effigies;#759:magic-qualities;#757:magic-weapons;#755:magic bases;#753:orbs;#751:elements;#749:hide-counts;#747:kits;#745:review-controls;#743:kitchen;#741:hygiene;#739:Basiliscogallery;#738:Basilisco;#736:visual-proposals-pending;#733:textiles;#731:hides;#729:hybridgallery;#727:hybrids;#725:assembly;#723:metalcomponents;#721:serpentgallery;#720:serpents;#717:wood;#716:chains;#713:aviangallery;#711:avians;#709:nativegallery;#708:Peuchen;#706:chainmail;#704:plates;#702:shields;#700:Cuyo;#698:guardians;#696:clothing;#694:footwear;#692:NOAgallery;#690:duendes;#688:gloves;#686:headwear;#684:ores;#682:regions;#680:beasts;#678:gems;#676:books;#674:jewelry;#672:locks;#670:mates;#668:waterskin;#666:furniture;#664:camp;#662:Nahuelito;#660:Cuero;#658:ingots;#656:documents;#461:Pombero;#463:gallery;#652:ammo3D;#650:stacks; #647:drops; #458:modules; other3D pending. ASSETS/TASKS.
+**V5.17:** Native inventory/bestiary models and regional galleries are candidates.
+#769 corrects seven sword/axe references; #767 adds polearms/utility staff.
+#736 modular proposals await visual approval. Other weapons, characters and
+modular equipment remain unfinished. Issue-by-issue status/evidence: ASSETS/TASKS;
+author checks: pending_test.txt. Previous delivery details remain in HISTORY.
 **V5.16:** #452/453 approved; #454:MAP02/MAP03 rebuilt/tested; siege~1.35FPS.
 #456:World-gate,75assignments pending; #455:56classes/3pilots; #457:eligibility-only. LegacyMap02Revision5.
 
@@ -10,23 +14,13 @@ Documentation version: **5.17.62** - 2026-11-15.
 HISTORY/validation_v5_15_0..4. Single-player/attributes100 terminal:
 validation_v5_15_4/author_terminal.ps1; laboratory contamination: TASKS.
 
-**V5.14 accepted2026-11-09:** 5checks;#443-446 closed;PR630-633 merged.
-**V5.13 accepted2026-11-01:**13checks, awakening included; implementation merged.
-HISTORY preserves IDs/versions, corrections and ETW/Internet/FPS limitations.
+**V5.9-V5.14:** accepted and merged. HISTORY retains exact check IDs, versions,
+dates, corrections and performance/Internet qualifications. V5.12 evidence:
+validation_v5_12_7/7a, timer-fixed4.14.2; V5.13 includes awakening.
 
-**V5.12 accepted/merged:** HISTORY; validation_v5_12_7/7a; timer-fixed4.14.2.
-Siege1.33-6.48FPS/sharedGPU; no Internet claim; LF indexes#604.
-
-**V5.11/V5.10 accepted/merged:** HISTORY.
-
-**V5.9:** #418-424 closed, PR561-569; CA418-01..CA424-01
-confirmed 2026-10-30 in HISTORY. validation_590-597; pending_test.txt empty.
-
-**V5.8 accepted/integrated:** #410-417/#496/#502, 5.8.56, 2026-10-29.
-Acceptance: HISTORY; evidence: validation_5854-56. No pending checks at closure.
-Multiplayer rest deferred to V5.12 (#435-437). Long-absence loading remains
-expensive; render callbacks 1125.93?28.34ms, not60FPS. Preserve local queries,
-shared typed registries and offscreen gameplay; no routine global scans.
+**V5.8:** accepted/integrated 2026-10-29, #410-417/#496/#502, 5.8.56.
+HISTORY and validation_5854-56 retain acceptance and loading/performance limits.
+Multiplayer rest followed in V5.12; preserve offscreen gameplay and typed registries.
 
 **5.7.0/#408:**water-quality;validation_570;CA408-01:accepted2026-10-21.
 

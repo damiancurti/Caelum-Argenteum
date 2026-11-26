@@ -1,6 +1,62 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.62** - 2026-11-15.
+Documentation version: **5.17.63** - 2026-11-15.
+
+## 5.17.63 - Effective sword/axe world references (#769)
+
+The first #763/#765 candidates used older physical sprite lumps that
+TEXTURES overrides. Seven models now derive their display envelopes from
+the effective sword, dagger, machete, greatsword, hatchet, axe and war-axe
+aliases. The pickaxe already used the effective #89 reference and remains
+byte-identical. Greatsword resolves through CA_GSICON1_M/CA_GSICON1_M_D to
+first_person/v5/greatsword_icon_t1_source.png with 9.796875 sprite scale;
+its RGB-only desaturation/blend leaves the alpha envelope unchanged.
+
+Corrected source data and portable exports stay in inventory_models_647/
+bladed_weapons and axes; effective_weapon_references/PROVENANCE.json records
+the before/after source resolution. Existing generators remain unchanged.
+Fifteen blade outputs and sixteen axe outputs repeat byte-for-byte. Eight
+effective aliases/scales are checked independently; the seven changed models
+total 5,816 vertices, 8,488 triangles, 60 closed parts and 53 attachment witnesses.
+Scaled envelopes, floor contact, quantized topology, opaque/noncollapsed UVs
+and exact existing class/state bindings pass. This art-data revision changes
+no gameplay schema or save migration.
+
+The sword gains blue grip/tassels, dagger a red grip, machete a blue grip,
+and hatchet/war axe red tassels. Axe fittings use bronze; the plain axe has
+wood/bronze grip bands. Shared quality appearances and all icons/held art
+remain unchanged. Simplified profiles/guards, matte plain steel without the
+reference's painted blade stains, omitted fine ornament/axe chain, static
+tassels, repeated grain, standing orientation and interpreted backs require
+author review. Source resolution is not a claim of exact painted-art fidelity.
+
+Oblique native review exposed coincident shaft/socket upper caps on the
+three axes. Their shaft ends now stop inside the cap. An independent test
+on serialized, quantized geometry reproduces three failures before and zero
+after correction; new native views show clean caps. One early tassel had
+duplicate-height rows collapsing its UVs, and the initial machete lean exceeded
+its effective width; both were corrected before final reviewed exports.
+
+The existing issue-specific fixtures are reused unchanged. Blade continuity
+passes 1,343 checks on runtime01; the final runtime02 differs from runtime01
+only in the three corrected axe meshes, leaving that blade evidence applicable.
+Axes pass 845 checks on runtime02. Old-save adoption, reload, rollback, original
+metadata and native equipment transactions pass; final visual/control runs
+pass 312 + 198 checks. All 35 views of the seven changed models and both overviews
+were inspected. These checks do not establish ordinary gameplay acceptance.
+Two separate 700-tic presentation pairs compare sixteen blade objects and ten
+axe objects with their original sprite baselines. Queue rates, sprite/model:
+blades 1084.54/937.20 per second, p95 1.125/1.315 ms and p99 1.390/1.571 ms;
+axes 1100.28/1101.03, p95 1.093/1.081 ms and p99 1.323/1.311 ms. All four
+scenes were inspected. These single pairs do not measure GPU/display timing,
+repeatability or campaign/crowd performance; projected footprints differ.
+The final package matches all 18,524 source entries. Against #767, only seven
+meshes and two version diagnostics change; bindings remain byte-identical.
+Evidence: assets/validation_v5_17_63/evidence/SUMMARY.json.
+
+CA769-EFFECTIVE-WEAPON-REFERENCES-01 retains author review alongside the
+unconfirmed #763/#765 checks. No prior author result is accepted or removed.
+Other weapon drops, characters/modular equipment and V5.16 remain unfinished.
 
 ## 5.17.62 - Polearm and utility-staff drops (#767)
 
