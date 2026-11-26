@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.7** - 2026-11-13.
+Documentation version: **5.17.8** - 2026-11-13.
+
+## 5.17.8 - Cuero Uñudo native combat presentation (#660)
+
+The original owned Cuero geometry/skin gains all inherited combat model frames.
+The provisional body and behavior remain unchanged; final species dimensions,
+author art acceptance and broader creature coverage remain outstanding. ASSETS
+records the fitting policy and verification boundary.
 
 ## 5.17.7 - Seven native metal-ingot variants in 3D (#658)
 

@@ -67,3 +67,8 @@ CA658-INGOTS-01 | Origin: 5.17.7 / #658
 Prerequisites: current package. Run python assets/validation_v5_17_7/run_ingot_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/ingots-author-01 --interactive in an isolated configuration; do not use a campaign save.
 Steps: inspect the seven metal columns and three quality rows. F9 chooses the next metal close-up and F10 rotates it; F1-F4/F6-F8 give wider views. F5 restores player control. Collect and discard ingots through the ordinary inventory interface, comparing material, tier, amount and original icon.
 Expected: volumetric iron/copper/tin/bronze/steel/silver/gold, correct separate tier stacks and conserved amounts. Report scale, close-up material resolution and ordinary-menu results separately. Agent fixtures do not constitute author acceptance.
+
+CA660-CUERO-01 | Origin: 5.17.8 / #660
+Prerequisites: current package. Run python assets/validation_v5_17_8/run_cuero.py --runtime build/caelum_argenteum_dev.pk3 --output build/cuero-author-01 --interactive in an isolated configuration; do not use a campaign save.
+Steps: inspect F1 idle, F2 movement, F3 stun, F4 preparation, F5 release, F6 pain, F7 falling, F8 corpse, F9 breath and F10 rest. Compare the original sheet, claws and eyes through each fold and floor contact. Report the temporary diameter fitting and inherited tall hitbox separately from appearance.
+Expected: original creature identity and real volume in all inherited poses. Native provisional Mandinga gameplay/body remain intact. This review does not approve final species dimensions, mesh/hitbox matching, aquatic rules, encounter placement or the remaining roster.

@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.7** - 2026-11-13.
+Documentation version: **5.17.8** - 2026-11-13.
+
+## 5.17.8 - Cuero inherited combat frames (#660)
+
+All 23 native frame pairs now have original Cuero geometry and authored sheet
+deformations. Native continuity/rollback passes 115 checks, exact keyframes 51
+and real actions/loot 80. Deterministic export, binary, package and presentation
+evidence is retained. CA660-CUERO-01 remains pending, including body fitting.
+The original full-size pilot and other creatures remain separate.
 
 ## 5.17.7 - Metal-ingot drop models (#658)
 

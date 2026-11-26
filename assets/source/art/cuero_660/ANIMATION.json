@@ -1,0 +1,336 @@
+{
+  "schema_revision": 1,
+  "issue": 660,
+  "parent_issue": 461,
+  "catalogue_id": "CA-FOLK-053",
+  "actor": "CaelumBestiary053",
+  "status": "native_candidate_pending_author_review",
+  "source_design": "assets/source/art/cuero_455/DESIGN.json",
+  "profile_source": "src/caelum/actors/CaelumFolkloreCharacters.zs",
+  "profile_class": "CaelumMandinga",
+  "source_sha256": {
+    "assets/source/art/cuero_455/DESIGN.json": "4c25ba5afa43d13c6c8b79ef39a7caddc8c8234a0d993f717067cda824069bdd",
+    "assets/source/art/cuero_455/PROVENANCE.json": "8e193a881fcd9818c91a55271f3495cf54d8a868bbfbdf535397776506304be2",
+    "assets/source/art/cuero_455/PROMPT.json": "07f3ec9a41e3d9c49a43815daa416d8a8497cccea73fc4e2f3d98f0da14bc0ca",
+    "assets/source/art/cuero_455/materials.png": "9cbf0cc1e59a6bd09e6bcae65a714b08c8f6ea45f63271fc73678913dea4afd4",
+    "assets/generators/generate_cuero_model.py": "4d02f514cccfeacf51f53b500ff01772acba1e61daabde38cec794fa0352f819",
+    "assets/generators/generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "assets/generators/generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "80c5a00ef221395a6688125d8871c3f84ccf21e2aeb63b5c0bd4adb99dd2e420",
+    "assets/bestiary/BEHAVIOR.json": "a017c151836f6df1934be6762e708e0759101c0daa8e2b77bb61bbfcb77e7576"
+  },
+  "scale_policy": "Fit neutral maximum horizontal extent to the unchanged provisional body diameter (2*Radius), divided by Actor.Scale with CorrectPixelStretch. This temporary combat fitting is not approval of final species dimensions. The original 96MU/3m preview stays unchanged.",
+  "timing_policy": "Use the exact 23 inherited sprite/frame pairs; native actions, durations, physics and serialized state stay unchanged. Locomotion reuses existing sheet-wave cycles without adding aquatic behavior.",
+  "art_policy": "Original geometry, UVs and owned PNG bytes. Editable continuous deformation controls fold the existing sheet, rim, claws and eyes together; no new appendage, attack, wrapped-victim mechanic or equipment catalogue.",
+  "deformation_rig": {
+    "front_hinge_fraction": 0.1,
+    "front_weight_power": 2,
+    "side_weight_power": 2
+  },
+  "frames": [
+    {
+      "sprite": "MIID",
+      "letter": "A",
+      "action": "idle",
+      "cycle": "idle",
+      "sample": 0
+    },
+    {
+      "sprite": "MIID",
+      "letter": "B",
+      "action": "idle",
+      "cycle": "idle",
+      "sample": 8
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "A",
+      "action": "run",
+      "cycle": "swim",
+      "sample": 0
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "B",
+      "action": "run",
+      "cycle": "swim",
+      "sample": 6
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "C",
+      "action": "run",
+      "cycle": "swim",
+      "sample": 12
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "D",
+      "action": "run",
+      "cycle": "swim",
+      "sample": 18
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "A",
+      "action": "walk",
+      "cycle": "swim",
+      "sample": 0
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "B",
+      "action": "walk",
+      "cycle": "swim",
+      "sample": 12
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "A",
+      "action": "stun",
+      "deformation": {
+        "radial_scale": 0.97,
+        "vertical_scale": 0.85,
+        "front_curl": 8,
+        "side_curl": 0.0,
+        "roll": 0.0
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "D",
+      "action": "attack_prepare",
+      "deformation": {
+        "radial_scale": 0.9,
+        "vertical_scale": 1.0,
+        "front_curl": 46,
+        "side_curl": 12,
+        "roll": 0.0
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "E",
+      "action": "attack_release",
+      "deformation": {
+        "radial_scale": 1.03,
+        "vertical_scale": 1.0,
+        "front_curl": -8,
+        "side_curl": -4,
+        "roll": 0.0
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "F",
+      "action": "pain",
+      "deformation": {
+        "radial_scale": 0.89,
+        "vertical_scale": 1.0,
+        "front_curl": 18,
+        "side_curl": 22,
+        "roll": 8
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "G",
+      "action": "death",
+      "deformation": {
+        "radial_scale": 0.92,
+        "vertical_scale": 0.92,
+        "front_curl": 22,
+        "side_curl": 18,
+        "roll": 10
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "H",
+      "action": "death",
+      "deformation": {
+        "radial_scale": 0.96,
+        "vertical_scale": 0.8,
+        "front_curl": 12,
+        "side_curl": 12,
+        "roll": -5
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "I",
+      "action": "death",
+      "deformation": {
+        "radial_scale": 1.0,
+        "vertical_scale": 0.65,
+        "front_curl": 5,
+        "side_curl": 7,
+        "roll": 3
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "J",
+      "action": "death",
+      "deformation": {
+        "radial_scale": 1.02,
+        "vertical_scale": 0.5,
+        "front_curl": 0,
+        "side_curl": 3,
+        "roll": 0
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "K",
+      "action": "death",
+      "deformation": {
+        "radial_scale": 1.03,
+        "vertical_scale": 0.4,
+        "front_curl": 0,
+        "side_curl": 0,
+        "roll": 0
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "L",
+      "action": "death",
+      "deformation": {
+        "radial_scale": 1.03,
+        "vertical_scale": 0.4,
+        "front_curl": 0,
+        "side_curl": 0,
+        "roll": 0
+      }
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "A",
+      "action": "breath",
+      "deformation": {
+        "radial_scale": 1.0,
+        "vertical_scale": 1.05,
+        "front_curl": 34,
+        "side_curl": 8,
+        "roll": 0.0
+      }
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "B",
+      "action": "breath",
+      "deformation": {
+        "radial_scale": 1.0,
+        "vertical_scale": 1.15,
+        "front_curl": 42,
+        "side_curl": 11,
+        "roll": 0.0
+      }
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "C",
+      "action": "breath",
+      "deformation": {
+        "radial_scale": 1.0,
+        "vertical_scale": 1.08,
+        "front_curl": 37,
+        "side_curl": 9,
+        "roll": 0.0
+      }
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "D",
+      "action": "breath",
+      "deformation": {
+        "radial_scale": 1.0,
+        "vertical_scale": 1.02,
+        "front_curl": 29,
+        "side_curl": 5,
+        "roll": 0.0
+      }
+    },
+    {
+      "sprite": "SLMD",
+      "letter": "A",
+      "action": "rest",
+      "deformation": {
+        "radial_scale": 0.98,
+        "vertical_scale": 0.65,
+        "front_curl": 0.0,
+        "side_curl": 4,
+        "roll": 0.0
+      }
+    }
+  ],
+  "inspection": {
+    "keys": [
+      0,
+      3,
+      8,
+      9,
+      10,
+      11,
+      14,
+      17,
+      18,
+      22
+    ],
+    "views": [
+      {
+        "name": "front-oblique",
+        "position": [
+          44,
+          -32,
+          35
+        ],
+        "target": [
+          0,
+          0,
+          3
+        ]
+      },
+      {
+        "name": "front",
+        "position": [
+          50,
+          0,
+          25
+        ],
+        "target": [
+          0,
+          0,
+          3
+        ]
+      },
+      {
+        "name": "side",
+        "position": [
+          0,
+          -50,
+          25
+        ],
+        "target": [
+          0,
+          0,
+          3
+        ]
+      },
+      {
+        "name": "rear",
+        "position": [
+          -50,
+          0,
+          25
+        ],
+        "target": [
+          0,
+          0,
+          3
+        ]
+      }
+    ]
+  }
+}
