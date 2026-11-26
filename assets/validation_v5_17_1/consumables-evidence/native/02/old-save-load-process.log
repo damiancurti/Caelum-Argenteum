@@ -1,0 +1,157 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 13:51:46
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-647/build/issue647-coins01.pk3, 18141 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-647/build/issue647-consumables02/preview.pk3, 11 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-647/build/issue647-consumables-native02/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2472.44 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+CA647 PASS all nine consumable types retained
+CA647 PASS consumable 0 saved references
+CA647 PASS consumable 0 world/inventory ownership
+CA647 PASS consumable 0 split quantities
+CA647 PASS consumable 0 consumable identity
+CA647 PASS consumable 0 unit weight
+CA647 PASS consumable 0 native collision and scale
+CA647 PASS consumable 0 original icon and state
+CA647 PASS consumable 0 rests on floor
+CA647 PASS consumable 1 saved references
+CA647 PASS consumable 1 world/inventory ownership
+CA647 PASS consumable 1 split quantities
+CA647 PASS consumable 1 consumable identity
+CA647 PASS consumable 1 unit weight
+CA647 PASS consumable 1 native collision and scale
+CA647 PASS consumable 1 original icon and state
+CA647 PASS consumable 1 rests on floor
+CA647 PASS consumable 2 saved references
+CA647 PASS consumable 2 world/inventory ownership
+CA647 PASS consumable 2 split quantities
+CA647 PASS consumable 2 consumable identity
+CA647 PASS consumable 2 unit weight
+CA647 PASS consumable 2 native collision and scale
+CA647 PASS consumable 2 original icon and state
+CA647 PASS consumable 2 rests on floor
+CA647 PASS consumable 3 saved references
+CA647 PASS consumable 3 world/inventory ownership
+CA647 PASS consumable 3 split quantities
+CA647 PASS consumable 3 consumable identity
+CA647 PASS consumable 3 unit weight
+CA647 PASS consumable 3 native collision and scale
+CA647 PASS consumable 3 original icon and state
+CA647 PASS consumable 3 rests on floor
+CA647 PASS consumable 4 saved references
+CA647 PASS consumable 4 world/inventory ownership
+CA647 PASS consumable 4 split quantities
+CA647 PASS consumable 4 consumable identity
+CA647 PASS consumable 4 unit weight
+CA647 PASS consumable 4 native collision and scale
+CA647 PASS consumable 4 original icon and state
+CA647 PASS consumable 4 rests on floor
+CA647 PASS consumable 5 saved references
+CA647 PASS consumable 5 world/inventory ownership
+CA647 PASS consumable 5 split quantities
+CA647 PASS consumable 5 consumable identity
+CA647 PASS consumable 5 unit weight
+CA647 PASS consumable 5 native collision and scale
+CA647 PASS consumable 5 original icon and state
+CA647 PASS consumable 5 rests on floor
+CA647 PASS consumable 6 saved references
+CA647 PASS consumable 6 world/inventory ownership
+CA647 PASS consumable 6 split quantities
+CA647 PASS consumable 6 consumable identity
+CA647 PASS consumable 6 unit weight
+CA647 PASS consumable 6 native collision and scale
+CA647 PASS consumable 6 original icon and state
+CA647 PASS consumable 6 rests on floor
+CA647 PASS consumable 7 saved references
+CA647 PASS consumable 7 world/inventory ownership
+CA647 PASS consumable 7 split quantities
+CA647 PASS consumable 7 consumable identity
+CA647 PASS consumable 7 unit weight
+CA647 PASS consumable 7 native collision and scale
+CA647 PASS consumable 7 original icon and state
+CA647 PASS consumable 7 rests on floor
+CA647 PASS consumable 8 saved references
+CA647 PASS consumable 8 world/inventory ownership
+CA647 PASS consumable 8 split quantities
+CA647 PASS consumable 8 consumable identity
+CA647 PASS consumable 8 unit weight
+CA647 PASS consumable 8 native collision and scale
+CA647 PASS consumable 8 original icon and state
+CA647 PASS consumable 8 rests on floor
+CA647 COMPLETE failures=0
+Captured candidate-0.png
+Captured candidate-1.png
+Captured candidate-2.png
+Captured candidate-3.png
+Captured candidate-5.png
+Captured candidate-6.png
+Captured candidate-7.png
+CA647 PASS consumable 0 repickup
+CA647 PASS consumable 0 combined native stack
+CA647 PASS consumable 1 repickup
+CA647 PASS consumable 1 combined native stack
+CA647 PASS consumable 2 repickup
+CA647 PASS consumable 2 combined native stack
+CA647 PASS consumable 3 repickup
+CA647 PASS consumable 3 combined native stack
+CA647 PASS consumable 4 repickup
+CA647 PASS consumable 4 combined native stack
+CA647 PASS consumable 5 repickup
+CA647 PASS consumable 5 combined native stack
+CA647 PASS consumable 6 repickup
+CA647 PASS consumable 6 combined native stack
+CA647 PASS consumable 7 repickup
+CA647 PASS consumable 7 combined native stack
+CA647 PASS consumable 8 repickup
+CA647 PASS consumable 8 combined native stack
+CA647 COMPLETE failures=0

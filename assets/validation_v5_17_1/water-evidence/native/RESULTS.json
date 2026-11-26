@@ -1,0 +1,57 @@
+{
+  "issue": 647,
+  "kind": "water",
+  "scope": "Native pickup/toss, quantity and saved ownership for water; no normal menu or author acceptance.",
+  "baseline_sha256": "29f22e72d912c63fb70b792e1c9f3eea1d22c7549570015d25e88e92ab3a35dc",
+  "runtime_sha256": "39fd816fccfac0c8c6ea48a30414138ed514dd7c4f73141034d69fdd4b99dca9",
+  "model_sha256": null,
+  "fixture_sha256": "a74824c479cdcef7030926bb670daeff83b10245b27b0df2869b353e8f6c7cd3",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 109
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 85
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 109
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 85
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 85
+    }
+  ],
+  "captures": {
+    "baseline.png": "3e51dd9f9d1bd5cc734f26d2e3a5174af743938122ae33ef9d6ecc8a4a76a262",
+    "candidate-0.png": "fd529ee1a25b4e52dcd1f9af1495a6da1307a3015c62b987b90c740b5adfac94",
+    "candidate-1.png": "61ff7b067e6f2daad5e3d45a18afb6b1d56da975f7796f35b61f10a6ec2f4a1a",
+    "candidate-2.png": "ea95d5249701a5e86ee2ed1311215e058790270131ba451e984c609a6b3d96a2",
+    "candidate-3.png": "0d5b07b4df684e0c77e90fc51fc351007cb6dcb4fbbe9d8b709a1bfc07bd36d5",
+    "candidate-5.png": "d7f9d6424a5f72c835bf68d1b6dd62c312bd27713277582757051430727da797",
+    "candidate-6.png": "47aa735c15471e38f0ba50cdb7482e185ce0a43157aa934675848d62c42cad43",
+    "candidate-7.png": "f6d990351b9f50f05b12127874b8a1b14422ce059e01f4aba090f79f8f5372b5"
+  }
+}

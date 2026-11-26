@@ -1,0 +1,75 @@
+{
+  "schema_revision": 1,
+  "issue": 647,
+  "config_sha256": "8d8bd6591aeca4984c486f067fd42cacd8f12285eef0d1323be819190f50f08c",
+  "generator_sha256": "61bd6a4bf2b58ef9c40076a44df98e1a2a5a7ace47c2e160f1bdd4cf8e4582bc",
+  "variants": {
+    "copper": {
+      "vertices": 290,
+      "triangles": 384,
+      "closed_edges": 576,
+      "signed_volume": 4866.245286572119,
+      "image_size": [
+        64,
+        64
+      ],
+      "opaque_bounds": [
+        9,
+        9,
+        56,
+        55
+      ],
+      "radius_art_pixels": 23.0,
+      "thickness_art_pixels": 3
+    },
+    "silver": {
+      "vertices": 290,
+      "triangles": 384,
+      "closed_edges": 576,
+      "signed_volume": 4866.245286572119,
+      "image_size": [
+        64,
+        64
+      ],
+      "opaque_bounds": [
+        9,
+        9,
+        56,
+        55
+      ],
+      "radius_art_pixels": 23.0,
+      "thickness_art_pixels": 3
+    },
+    "gold": {
+      "vertices": 290,
+      "triangles": 384,
+      "closed_edges": 576,
+      "signed_volume": 4866.245286572119,
+      "image_size": [
+        64,
+        64
+      ],
+      "opaque_bounds": [
+        9,
+        9,
+        56,
+        55
+      ],
+      "radius_art_pixels": 23.0,
+      "thickness_art_pixels": 3
+    }
+  },
+  "class_bindings": 15,
+  "sha256": {
+    "models/caelum/inventory/coins/copper.obj": "c99909551e8104304d232d213c44555dac209454c58c994d77ec37f93d889875",
+    "models/caelum/inventory/coins/copper.mtl": "45e334299a3518825cdab9f3847df385c2469cadfe7d58a1132543f29dddaf2c",
+    "models/caelum/inventory/coins/copper.png": "1a9d5909ea825f1898424df7dcb14a660455904e0ba863ee503eabb3adddc1bb",
+    "models/caelum/inventory/coins/silver.obj": "afa5dade212feee5daade7245cc7e17aacd76aa09f35bf8862c0011da44249e2",
+    "models/caelum/inventory/coins/silver.mtl": "030f863645de7ec2afa4cf7637ecf795f351e84220a00eba71e1aa9c9d93de6c",
+    "models/caelum/inventory/coins/silver.png": "58b3a04fd5ce8184e52bab7c69b899e3799bd53e7379b05ad11af902afa6760d",
+    "models/caelum/inventory/coins/gold.obj": "e8e5b56db09a15fd61457b94fa679af072a1d8446783940bde76bb9dbec03235",
+    "models/caelum/inventory/coins/gold.mtl": "e81f3fe030e05b01e9b3508898982a5375372ca2710e519f7fa64fc9a9b539e7",
+    "models/caelum/inventory/coins/gold.png": "16d90390d480f92721c7c2c423e3c3ea4458c6d0d06ed288259da87f4d5b7066",
+    "caelum/data/inventory_coins.modeldef": "dd760785fe7d4850da4de1131ecc6e456cfa790d6ca785a6fa2c7a6a0a17c346"
+  }
+}

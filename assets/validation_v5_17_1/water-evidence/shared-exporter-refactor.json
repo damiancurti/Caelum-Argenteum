@@ -1,0 +1,519 @@
+{
+  "schema_revision": 1,
+  "issue": 647,
+  "status": "runtime_art_candidate_pending_author_acceptance",
+  "variants": {
+    "medikit_small": {
+      "class": "CaelumLifePotion",
+      "family": "medikit",
+      "tier": "small",
+      "parts": [
+        "leather_body",
+        "medical_patch",
+        "patch_rim",
+        "carry_handle",
+        "body_strap_-1",
+        "buckle_back_-1",
+        "buckle_inset_-1",
+        "buckle_pin_-1",
+        "corner_-1_-1",
+        "corner_-1_1",
+        "body_strap_1",
+        "buckle_back_1",
+        "buckle_inset_1",
+        "buckle_pin_1",
+        "corner_1_-1",
+        "corner_1_1",
+        "rolled_bandage",
+        "top_closure"
+      ],
+      "closed_outward_components": 18,
+      "vertices": 1695,
+      "triangles": 1324,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1695,
+          "triangles": 1324
+        }
+      ],
+      "source_opaque_bounds": [
+        13,
+        18,
+        118,
+        109
+      ],
+      "model_height_art_pixels": 91,
+      "native_bounds": [
+        {
+          "min": [
+            -48.8315709335098,
+            -29.298942560105882,
+            0.0
+          ],
+          "max": [
+            48.8315709335098,
+            28.445006560184233,
+            91.0
+          ]
+        }
+      ]
+    },
+    "medikit_medium": {
+      "class": "CaelumLifePotionMedium",
+      "family": "medikit",
+      "tier": "medium",
+      "parts": [
+        "leather_body",
+        "medical_patch",
+        "patch_rim",
+        "carry_handle",
+        "body_strap_-1",
+        "buckle_back_-1",
+        "buckle_inset_-1",
+        "buckle_pin_-1",
+        "corner_-1_-1",
+        "corner_-1_1",
+        "body_strap_1",
+        "buckle_back_1",
+        "buckle_inset_1",
+        "buckle_pin_1",
+        "corner_1_-1",
+        "corner_1_1",
+        "rolled_bandage",
+        "top_closure"
+      ],
+      "closed_outward_components": 18,
+      "vertices": 1695,
+      "triangles": 1324,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1695,
+          "triangles": 1324
+        }
+      ],
+      "source_opaque_bounds": [
+        14,
+        18,
+        120,
+        109
+      ],
+      "model_height_art_pixels": 91,
+      "native_bounds": [
+        {
+          "min": [
+            -48.8315709335098,
+            -29.298942560105882,
+            0.0
+          ],
+          "max": [
+            48.8315709335098,
+            28.445006560184233,
+            91.0
+          ]
+        }
+      ]
+    },
+    "medikit_large": {
+      "class": "CaelumLifePotionLarge",
+      "family": "medikit",
+      "tier": "large",
+      "parts": [
+        "leather_body",
+        "medical_patch",
+        "patch_rim",
+        "carry_handle",
+        "body_strap_-1",
+        "buckle_back_-1",
+        "buckle_inset_-1",
+        "buckle_pin_-1",
+        "corner_-1_-1",
+        "corner_inlay_-1_-1",
+        "corner_-1_1",
+        "corner_inlay_-1_1",
+        "body_strap_1",
+        "buckle_back_1",
+        "buckle_inset_1",
+        "buckle_pin_1",
+        "corner_1_-1",
+        "corner_inlay_1_-1",
+        "corner_1_1",
+        "corner_inlay_1_1",
+        "rolled_bandage",
+        "top_closure"
+      ],
+      "closed_outward_components": 22,
+      "vertices": 1735,
+      "triangles": 1388,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1735,
+          "triangles": 1388
+        }
+      ],
+      "source_opaque_bounds": [
+        11,
+        15,
+        120,
+        110
+      ],
+      "model_height_art_pixels": 95,
+      "native_bounds": [
+        {
+          "min": [
+            -50.97801361190584,
+            -30.586808167143502,
+            0.0
+          ],
+          "max": [
+            50.97801361190584,
+            29.69533651887365,
+            95.0
+          ]
+        }
+      ]
+    },
+    "anima_small": {
+      "class": "CaelumAnimaPotion",
+      "family": "anima",
+      "tier": "small",
+      "parts": [
+        "glass_body",
+        "base_ring",
+        "neck_ring",
+        "cork",
+        "star_trim",
+        "star_face",
+        "star_gem",
+        "silver_brace_-1",
+        "blue_ribbon_-1",
+        "filigree_-1",
+        "silver_brace_1",
+        "blue_ribbon_1",
+        "filigree_1"
+      ],
+      "closed_outward_components": 13,
+      "vertices": 1786,
+      "triangles": 3376,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1786,
+          "triangles": 3376
+        }
+      ],
+      "source_opaque_bounds": [
+        19,
+        8,
+        108,
+        120
+      ],
+      "model_height_art_pixels": 112,
+      "native_bounds": [
+        {
+          "min": [
+            -46.48,
+            -50.93822222222222,
+            0.0
+          ],
+          "max": [
+            46.48,
+            46.48,
+            112.0
+          ]
+        }
+      ]
+    },
+    "anima_medium": {
+      "class": "CaelumAnimaPotionMedium",
+      "family": "anima",
+      "tier": "medium",
+      "parts": [
+        "glass_body",
+        "base_ring",
+        "neck_ring",
+        "cork",
+        "star_trim",
+        "star_face",
+        "star_gem",
+        "silver_brace_-1",
+        "blue_ribbon_-1",
+        "filigree_-1",
+        "silver_brace_1",
+        "blue_ribbon_1",
+        "filigree_1"
+      ],
+      "closed_outward_components": 13,
+      "vertices": 1786,
+      "triangles": 3376,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1786,
+          "triangles": 3376
+        }
+      ],
+      "source_opaque_bounds": [
+        20,
+        9,
+        108,
+        119
+      ],
+      "model_height_art_pixels": 110,
+      "native_bounds": [
+        {
+          "min": [
+            -45.65,
+            -50.02861111111111,
+            0.0
+          ],
+          "max": [
+            45.65,
+            45.65,
+            110.0
+          ]
+        }
+      ]
+    },
+    "anima_large": {
+      "class": "CaelumAnimaPotionLarge",
+      "family": "anima",
+      "tier": "large",
+      "parts": [
+        "glass_body",
+        "base_ring",
+        "neck_ring",
+        "cork",
+        "base_gold_inlay",
+        "neck_gold_inlay",
+        "star_trim",
+        "star_face",
+        "star_gem",
+        "silver_brace_-1",
+        "blue_ribbon_-1",
+        "filigree_-1",
+        "silver_brace_1",
+        "blue_ribbon_1",
+        "filigree_1"
+      ],
+      "closed_outward_components": 15,
+      "vertices": 2054,
+      "triangles": 3888,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 2054,
+          "triangles": 3888
+        }
+      ],
+      "source_opaque_bounds": [
+        15,
+        2,
+        117,
+        124
+      ],
+      "model_height_art_pixels": 122,
+      "native_bounds": [
+        {
+          "min": [
+            -50.629999999999995,
+            -55.48627777777778,
+            0.0
+          ],
+          "max": [
+            50.629999999999995,
+            50.629999999999995,
+            122.0
+          ]
+        }
+      ]
+    },
+    "energy_small": {
+      "class": "CaelumEnergyDrink",
+      "family": "energy",
+      "tier": "small",
+      "parts": [
+        "glass_body",
+        "base_ring",
+        "shoulder_ring",
+        "neck_ring",
+        "cork",
+        "diagonal_sling",
+        "sling_buckle",
+        "sling_buckle_inset",
+        "leaf_0",
+        "leaf_1",
+        "leaf_2"
+      ],
+      "closed_outward_components": 11,
+      "vertices": 973,
+      "triangles": 1820,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 973,
+          "triangles": 1820
+        }
+      ],
+      "source_opaque_bounds": [
+        9,
+        6,
+        118,
+        122
+      ],
+      "model_height_art_pixels": 116,
+      "native_bounds": [
+        {
+          "min": [
+            -46.47702821911828,
+            -28.13,
+            0.0
+          ],
+          "max": [
+            25.197668268135715,
+            25.122847965185777,
+            116.0
+          ]
+        }
+      ]
+    },
+    "energy_medium": {
+      "class": "CaelumEnergyDrinkMedium",
+      "family": "energy",
+      "tier": "medium",
+      "parts": [
+        "glass_body",
+        "base_ring",
+        "shoulder_ring",
+        "neck_ring",
+        "cork",
+        "diagonal_sling",
+        "sling_buckle",
+        "sling_buckle_inset",
+        "leaf_0",
+        "leaf_1",
+        "leaf_2"
+      ],
+      "closed_outward_components": 11,
+      "vertices": 973,
+      "triangles": 1820,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 973,
+          "triangles": 1820
+        }
+      ],
+      "source_opaque_bounds": [
+        10,
+        5,
+        119,
+        121
+      ],
+      "model_height_art_pixels": 116,
+      "native_bounds": [
+        {
+          "min": [
+            -46.47702821911828,
+            -28.13,
+            0.0
+          ],
+          "max": [
+            25.197668268135715,
+            25.122847965185777,
+            116.0
+          ]
+        }
+      ]
+    },
+    "energy_large": {
+      "class": "CaelumEnergyDrinkLarge",
+      "family": "energy",
+      "tier": "large",
+      "parts": [
+        "glass_body",
+        "base_ring",
+        "shoulder_ring",
+        "neck_ring",
+        "cork",
+        "base_gold_inlay",
+        "shoulder_gold_inlay",
+        "neck_gold_inlay",
+        "diagonal_sling",
+        "sling_buckle",
+        "sling_buckle_inset",
+        "leaf_0",
+        "leaf_1",
+        "leaf_2"
+      ],
+      "closed_outward_components": 14,
+      "vertices": 1375,
+      "triangles": 2588,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1375,
+          "triangles": 2588
+        }
+      ],
+      "source_opaque_bounds": [
+        12,
+        3,
+        119,
+        123
+      ],
+      "model_height_art_pixels": 120,
+      "native_bounds": [
+        {
+          "min": [
+            -48.07968436460512,
+            -29.099999999999998,
+            0.0
+          ],
+          "max": [
+            26.06655338083005,
+            25.989153067433563,
+            120.0
+          ]
+        }
+      ]
+    }
+  },
+  "generator_sha256": "5b6a06d8f92b7bf46ba9902018f871340f69b9c36e4884a6ff890131c4aa388d",
+  "shared_generator_sha256": {
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2"
+  },
+  "source_sha256": {
+    "DESIGN.json": "688ea50e9f9c8db852c3ba4db99f06234e2b316e6d489f19429f4ff3070353ae",
+    "PROVENANCE.json": "5a711c9eb4fec4d236f5b9efdca32e0b7774edb984ccca031493ba76b0961d19",
+    "materials-v2.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "PROMPT.txt": "2e06792efbe4fc92a693a2ad3599af9a5a138298f04c077cf20e38907cf2aae0",
+    "PROMPT-v2.txt": "5aed8401efc2b33d7b12e29b6c96c62a78afb9ce8a1952ff9552cf3630b556a9"
+  },
+  "sha256": {
+    "models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "models/caelum/inventory/consumables/medikit_small.md3": "9866f70ff2695eb27e251372eb9d63490d946b1d2f95b59cecc03cc08c8ebc74",
+    "editable/medikit_small.obj": "a38bf42ac2790efec522b61ce6202861472b0f5ec0d564eb44cdab3810fc3954",
+    "models/caelum/inventory/consumables/medikit_medium.md3": "0b65744b29d2e1f2df84778fc7581ea75f4b1265c47627b62676398be127be97",
+    "editable/medikit_medium.obj": "359f1ac23a11585aea3dc01f1fa3bd82edb1efc87945c2de3d87c6daff4dc747",
+    "models/caelum/inventory/consumables/medikit_large.md3": "07874b527490894e781c49cf1efe73a39f540036356f93d1d968ebe393c65fbf",
+    "editable/medikit_large.obj": "505ace75364f1812b8ea7a089c752a53ff17f2d09a587c80bf76f30072a72e96",
+    "models/caelum/inventory/consumables/anima_small.md3": "997eedce2beea889e81e42e1d73d4331fa55baf1d2acec143f82cd15304a1e9a",
+    "editable/anima_small.obj": "1ba15318b343f2234780399e778dc8d4acbb149540b42c7f68db52c61a9cfcac",
+    "models/caelum/inventory/consumables/anima_medium.md3": "71f62fcd940585ac3caedfaf651a4e16e0f6da7c281e7059c986d296f9970ee3",
+    "editable/anima_medium.obj": "9c895fed87b2fc1af48cc806a342764c4e49ad65774918a7a521f818b24111aa",
+    "models/caelum/inventory/consumables/anima_large.md3": "8013aaa7b64ddfeb3a6feb4152fcd8a4e1f9728bf55d790f8bfd9ea00eca0c9c",
+    "editable/anima_large.obj": "a3ab2988bc0116000e2424ea298e652a8b81d6b7a74cf9906733eb391ba0e582",
+    "models/caelum/inventory/consumables/energy_small.md3": "b0cceeed2137e43bf0b8596f9d844da4a219a599ac454084cd4693950429c154",
+    "editable/energy_small.obj": "820c3f2df83cca78af533d76315da0979dd6f7664b8250dc238d893188f1087d",
+    "models/caelum/inventory/consumables/energy_medium.md3": "edbdb31229b77145a7e35c350f325c2746d8e9f9cbebff25ca2993767a82965b",
+    "editable/energy_medium.obj": "91674dfc7e59fc689bedb3ef41a12245b38ea67cc727e6a4cd250494c23f2797",
+    "models/caelum/inventory/consumables/energy_large.md3": "d49c9969af8ac81553412147884ee734b0b3f375105c84d2560d77b649cdb205",
+    "editable/energy_large.obj": "07255d7fbfd431c40bc1cca19a82849d90ee058d397292f78451160fd1b6dabe",
+    "editable/materials.mtl": "39201196ca51be448eb0750d62a6f9c4299ea843a74d9b0b3d3e4552ef78cf78",
+    "caelum/data/inventory_consumables.modeldef": "154c2654f866e9304197009a4c1e9fd27c519a38221f87f5415081c1ffc4448a"
+  }
+}

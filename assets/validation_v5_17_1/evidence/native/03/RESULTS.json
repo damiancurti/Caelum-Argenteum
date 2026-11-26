@@ -1,0 +1,53 @@
+{
+  "issue": 647,
+  "scope": "Observe real coin drops, native stacking and bidirectional save compatibility.\n\nThe fixture invokes native pickup/toss methods on all 15 actual denominations.\nIt does not exercise ordinary menu selection or confer author acceptance.",
+  "baseline_sha256": "d4aa0aeb27ae9d37deb753f903a84e27937785f2fccb505fc30619283578b0e5",
+  "runtime_sha256": "d4aa0aeb27ae9d37deb753f903a84e27937785f2fccb505fc30619283578b0e5",
+  "model_sha256": "5c060c17e4407fafdf906c75827e8fab57515d28a4ee17928313c95c5faa2adf",
+  "fixture_sha256": "a7f703b6d106be3a638a0852a18ed0b8824745757fe9f67288873e906beafdae",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 166
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 151
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 166
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 151
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 151
+    }
+  ],
+  "captures": {
+    "baseline.png": "2d0cb8617ef6f4731f6b6bd4d8ac7e6daa0f68215e568dce29ddd291d3d6cca1",
+    "candidate-0.png": "2ff5d7ddb846cc2b54481c9caaf522973e526234366ccd6952ab963f14cc462c",
+    "candidate-1.png": "f4e76102f3d13b98453aa6807d2b05be6be6ec3deaea5fa17a211d90ebb94af1",
+    "candidate-2.png": "ea47de858001404efe06d17cabf7a6fc844f13081464846d28afedabcf004cb9",
+    "candidate-3.png": "be6748279bc562911737e254382e69a946cdd38fc3a5d8612dff14eed6c6dc4c"
+  }
+}

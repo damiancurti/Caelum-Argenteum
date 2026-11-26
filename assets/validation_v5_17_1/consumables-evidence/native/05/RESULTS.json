@@ -1,0 +1,57 @@
+{
+  "issue": 647,
+  "kind": "consumables",
+  "scope": "Native pickup/toss, quantity and saved ownership for consumables; no normal menu or author acceptance.",
+  "baseline_sha256": "193675cd5f64d8e51589656bebcf51148d0a45365065ecdc747ce20d60f8b0f3",
+  "runtime_sha256": "29f22e72d912c63fb70b792e1c9f3eea1d22c7549570015d25e88e92ab3a35dc",
+  "model_sha256": null,
+  "fixture_sha256": "a9bb532c4fbd11bb81ff1d7edd30b0c1752ef19cd2fe0501ff09b89c6cafa727",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 100
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 91
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 100
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 91
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 91
+    }
+  ],
+  "captures": {
+    "baseline.png": "068f922e0b8345cb450ef982232f25896843c8c29991882e8bfb7ace864553aa",
+    "candidate-0.png": "b72e345dfd790b08d29c603b653a0913367e9fc0986cce22d45752b21506656d",
+    "candidate-1.png": "5bbf08f6d79fb66034d289c2cc4e2158db90d4fa6eaf8f1d8ee5fa5b98bda0ea",
+    "candidate-2.png": "d98a4300f770e8cc094f829b1a796ea8fa74a4b6ec4a4c8070b04b3ea2332374",
+    "candidate-3.png": "85b4f25c6e96dea3289e2e50b9d0a6efc6c87487b523ec445558ba94124146d0",
+    "candidate-5.png": "e50fd8e3444a5344d1cf0c3439ad4a63ffe984c23c681baf3866c1b9b78e2eea",
+    "candidate-6.png": "ea1e89c8a619ef931e8623de13f8bec40f1046396c5ef928576d0c6f8e483e96",
+    "candidate-7.png": "aaf2e42dbafa9f39ad0ee5beaf6577b7874bd55a94b277218c94354c5393e031"
+  }
+}

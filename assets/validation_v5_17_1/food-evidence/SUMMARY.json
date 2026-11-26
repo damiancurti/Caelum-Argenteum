@@ -1,0 +1,494 @@
+{
+  "issue": 647,
+  "version": "5.17.1",
+  "date": "2026-11-13",
+  "author_accepted": false,
+  "scope": "Five closed food models: ration and maze ration, bread, roast beef, roast hake and puchero. Four prepared dining displays reuse the models. Other inventory categories remain unfinished.",
+  "runtime": {
+    "local_path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-647\\build\\issue647-food01.pk3",
+    "sha256": "68436c1245879efedd627771469252aaffe70978e4b3aadfbf4f2f8fd7cdc23a",
+    "source_entries": 18167,
+    "source_mismatches": []
+  },
+  "static": {
+    "variants": {
+      "ration": {
+        "class": "CaelumFoodRation",
+        "family": "ration",
+        "tier": "existing",
+        "parts": [
+          "ration_loaf_crust",
+          "ration_beef_crust",
+          "ration_beef_cut",
+          "ration_nut_0",
+          "ration_nut_1",
+          "ration_nut_2",
+          "ration_nut_3",
+          "ration_nut_4"
+        ],
+        "closed_outward_components": 8,
+        "vertices": 1764,
+        "triangles": 588,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 1764,
+            "triangles": 588
+          }
+        ],
+        "source_opaque_bounds": [
+          8,
+          23,
+          119,
+          104
+        ],
+        "model_height_art_pixels": 37.366336633663366,
+        "native_bounds": [
+          {
+            "min": [
+              -56.52050919377652,
+              -46.41976343575471,
+              0.0
+            ],
+            "max": [
+              54.47949080622349,
+              40.42786421499293,
+              37.366336633663366
+            ]
+          }
+        ]
+      },
+      "bread": {
+        "class": "CaelumBread",
+        "family": "bread",
+        "tier": "existing",
+        "parts": [
+          "bread_crust",
+          "cut_slice_crust",
+          "cut_slice_crumb"
+        ],
+        "closed_outward_components": 3,
+        "vertices": 888,
+        "triangles": 296,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 888,
+            "triangles": 296
+          }
+        ],
+        "source_opaque_bounds": [
+          6,
+          49,
+          122,
+          122
+        ],
+        "model_height_art_pixels": 48.808743169398916,
+        "native_bounds": [
+          {
+            "min": [
+              -61.80327868852459,
+              -30.188524590163937,
+              0.0
+            ],
+            "max": [
+              54.196721311475414,
+              37.240437158469945,
+              48.808743169398916
+            ]
+          }
+        ]
+      },
+      "roast_beef": {
+        "class": "CaelumRoastBeef",
+        "family": "roast_beef",
+        "tier": "existing",
+        "parts": [
+          "earthenware_plate",
+          "beef_crust",
+          "beef_slice_0",
+          "beef_slice_1"
+        ],
+        "closed_outward_components": 4,
+        "vertices": 2040,
+        "triangles": 680,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 2040,
+            "triangles": 680
+          }
+        ],
+        "source_opaque_bounds": [
+          6,
+          40,
+          122,
+          122
+        ],
+        "model_height_art_pixels": 35.55952380952381,
+        "native_bounds": [
+          {
+            "min": [
+              -58.0,
+              -44.19047619047619,
+              0.0
+            ],
+            "max": [
+              58.0,
+              44.19047619047619,
+              35.55952380952381
+            ]
+          }
+        ]
+      },
+      "roast_fish": {
+        "class": "CaelumRoastFish",
+        "family": "roast_fish",
+        "tier": "existing",
+        "parts": [
+          "earthenware_plate",
+          "hake_fillet",
+          "grilled_top"
+        ],
+        "closed_outward_components": 3,
+        "vertices": 2160,
+        "triangles": 720,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 2160,
+            "triangles": 720
+          }
+        ],
+        "source_opaque_bounds": [
+          6,
+          49,
+          122,
+          122
+        ],
+        "model_height_art_pixels": 19.333333333333332,
+        "native_bounds": [
+          {
+            "min": [
+              -58.0,
+              -44.19047619047619,
+              0.0
+            ],
+            "max": [
+              58.0,
+              44.19047619047619,
+              19.333333333333332
+            ]
+          }
+        ]
+      },
+      "puchero": {
+        "class": "CaelumPuchero",
+        "family": "puchero",
+        "tier": "existing",
+        "parts": [
+          "earthenware_bowl",
+          "broth",
+          "stew_chunk_0",
+          "stew_chunk_1",
+          "stew_chunk_2",
+          "stew_chunk_3",
+          "stew_chunk_4",
+          "stew_chunk_5",
+          "corn_piece"
+        ],
+        "closed_outward_components": 9,
+        "vertices": 2880,
+        "triangles": 960,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 2880,
+            "triangles": 960
+          }
+        ],
+        "source_opaque_bounds": [
+          6,
+          29,
+          122,
+          122
+        ],
+        "model_height_art_pixels": 35.69230769230769,
+        "native_bounds": [
+          {
+            "min": [
+              -58.0,
+              -49.07692307692308,
+              0.0
+            ],
+            "max": [
+              58.0,
+              49.07692307692308,
+              35.69230769230769
+            ]
+          }
+        ]
+      }
+    },
+    "repeat_export_install_check_passed": true,
+    "shared_exporter_prior_runtime_files_byte_identical": [
+      "models/caelum/inventory/consumables/materials.png",
+      "models/caelum/inventory/consumables/medikit_small.md3",
+      "models/caelum/inventory/consumables/medikit_medium.md3",
+      "models/caelum/inventory/consumables/medikit_large.md3",
+      "models/caelum/inventory/consumables/anima_small.md3",
+      "models/caelum/inventory/consumables/anima_medium.md3",
+      "models/caelum/inventory/consumables/anima_large.md3",
+      "models/caelum/inventory/consumables/energy_small.md3",
+      "models/caelum/inventory/consumables/energy_medium.md3",
+      "models/caelum/inventory/consumables/energy_large.md3",
+      "caelum/data/inventory_consumables.modeldef",
+      "models/caelum/inventory/water/materials.png",
+      "models/caelum/inventory/water/bottle_small.md3",
+      "models/caelum/inventory/water/bottle_normal.md3",
+      "models/caelum/inventory/water/bottle_large.md3",
+      "models/caelum/inventory/water/canteen_small.md3",
+      "models/caelum/inventory/water/canteen_normal.md3",
+      "caelum/data/inventory_water.modeldef",
+      "models/caelum/inventory/water/canteen_large.obj"
+    ],
+    "project_validation_passed": true
+  },
+  "native": {
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 118
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 124
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 118
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 124
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 124
+      }
+    ],
+    "assertions": 608,
+    "scope": "Native CallTryPickup/CreateTossable for six real classes, splitting 5 into 3 held/2 dropped then recombining. Retains lot units and chronology, no contamination rejuvenation, identity/weight/icons/collision/floor. Four native table displays retain real item ownership, class, serving scale and surface position. Fresh, old-save, reload and rollback. No ordinary-menu, cooking/eating, table placement-menu or author acceptance."
+  },
+  "presentation": [
+    {
+      "kind": "sprites",
+      "bodies": 6,
+      "pid": 46492,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 206259570.515,
+        "END": 206279595.2499
+      },
+      "fixture_sha256": "bfaa214e16e8e3b425ac785aa2e27e1e30c82776649392be085de943615f8507",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571567714285713,
+        "p50_ms": 28.5666,
+        "p95_ms": 29.224,
+        "p99_ms": 29.3642,
+        "max_ms": 29.6118
+      },
+      "presentation": {
+        "pid": 46492,
+        "trace_sha256": "1af75e9b09a249c071d2b79b8aacbd4cfeb460219bd725133bbcfa7d79b28799",
+        "rows": 30204,
+        "scene_presents": 20436,
+        "mean_present_fps": 1166.084492729973,
+        "present_intervals": {
+          "samples": 20435,
+          "mean_ms": 0.8575707903111334,
+          "p50_ms": 0.8261999785900116,
+          "p95_ms": 1.0598999857902527,
+          "p99_ms": 1.2741000056266785,
+          "max_ms": 1.8438999950885773
+        },
+        "native_call_duration": {
+          "samples": 20436,
+          "mean_ms": 0.07592173631491318,
+          "p50_ms": 0.07580000162124634,
+          "p95_ms": 0.09929999709129333,
+          "p99_ms": 0.12720000743865967,
+          "max_ms": 0.4291999936103821
+        }
+      }
+    },
+    {
+      "kind": "models",
+      "bodies": 6,
+      "pid": 24752,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 206293450.82200003,
+        "END": 206313376.593
+      },
+      "fixture_sha256": "bfaa214e16e8e3b425ac785aa2e27e1e30c82776649392be085de943615f8507",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571023285714286,
+        "p50_ms": 28.5806,
+        "p95_ms": 29.1822,
+        "p99_ms": 29.3995,
+        "max_ms": 29.6262
+      },
+      "presentation": {
+        "pid": 24752,
+        "trace_sha256": "709c01c952af3a79986672e6c0b322366d76c056b0e8ad7ab49ce19834854843",
+        "rows": 29857,
+        "scene_presents": 20035,
+        "mean_present_fps": 1149.7794121160555,
+        "present_intervals": {
+          "samples": 20034,
+          "mean_ms": 0.8697320455230614,
+          "p50_ms": 0.835999995470047,
+          "p95_ms": 1.0794000029563904,
+          "p99_ms": 1.2928999960422516,
+          "max_ms": 1.9492000043392181
+        },
+        "native_call_duration": {
+          "samples": 20035,
+          "mean_ms": 0.07542012484108744,
+          "p50_ms": 0.07359999418258667,
+          "p95_ms": 0.09940001368522644,
+          "p99_ms": 0.1257999837398529,
+          "max_ms": 0.3675000071525574
+        }
+      }
+    }
+  ],
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "presentation_resolution": [
+      1280,
+      720
+    ],
+    "uncapped": true,
+    "vsync": false,
+    "background_unpaused": true,
+    "audio": 0.05
+  },
+  "art": {
+    "mode": "Built-in image_gen from five owned approved references",
+    "source": "assets/source/art/inventory_models_647/food",
+    "prompt": "PROMPT.txt",
+    "selected_texture": "materials-v1.png",
+    "all_original_icons_unchanged": true,
+    "front_side_rear_close_table_captures_inspected": true
+  },
+  "superseded": {
+    "visual01": "Closed meshes and 118 fixture checks pass; projected bread-cut tubes appear as raised spikes and cut-surface side UVs stretch.",
+    "visual02": "Remove raised score geometry; painted crust retains scoring. Box UV projection corrects slice sides. Final complete package repeats these model bytes."
+  },
+  "qualifications": [
+    "One sequential 700-tic presentation pair for six visible dropped food objects; no repeatability, full dining-room or all-item/campaign budget.",
+    "Queue-present intervals are not GPU timing or display scanout; simulation tic spacing is not CPU cost.",
+    "Flat food models use the recorded icon-width footprint convention, not upright icon height. Actor collision/mass remain unchanged; depicted plates/bowl are presentation, not new items.",
+    "RefreshDisplays already copies each prepared item actor scale; table MODELDEF must not apply a second .25 factor.",
+    "No new gameplay fields, actors, scans, recipes, portions or food rules. No PK3, WAD, executable, DLL or save distributed. Author review and severe siege presentation remain unresolved."
+  ],
+  "files": {
+    "build.log": "ca988106e84b9228a8db00a9544b30ffbea7c1c35d38388dd57d68bca3f0dc7e",
+    "exports/01.json": "6b96a870cde551c2b33a88663c91a83c972b4b37a905ee1f0c89fb4e1afbad73",
+    "exports/02.json": "4c32aa77f4e57e07906a815894c48f0de6c3e7d09da00cffdabd91382d0a4aa0",
+    "exports/03.json": "09a358febf8a9d9aa929b476a5655f95814d0b6c4388b126af74ba32f979ce97",
+    "native/baseline-process.log": "e8a04d1f9c5df3b72f90e7ad2584e3ec01d8a0c39e1186ee3b8c552db2d7d364",
+    "native/baseline.cfg": "3eba76c8f6ef39f16a0da639e5a5fa360f158948c1a9be02ff1ffc7927d21c6b",
+    "native/baseline.log": "367ab07b0aafdf509fe2986a4cbc9fffd27fb459e4548725adf6135a05f349bb",
+    "native/baseline.png": "88b3df6e9758c75ee4f0d302fbf26852244a26f24436da86c1085792829411ba",
+    "native/candidate-0.png": "aaf083befcb13a0f69dfabe44e7273d74ee1e08ffc0f2b3db42b511a65630f19",
+    "native/candidate-1.png": "cda70a79921bdfa16162b7b483b3bd45156c164a0673e2b43e004826214bd2fb",
+    "native/candidate-2.png": "5503ee1bdbb17e640510247ccf6b88bbc21f6216e7e0c283f5fdfa9bc7b54300",
+    "native/candidate-3.png": "0f60b1d4b5f2f7dc12bbaad68e1938d0896cdafc49ef6c2e72b636f063195e0d",
+    "native/candidate-5.png": "283424980bbf7dfab2e74c1b056a4879e8d0705177919bd7e75c3c2813c0a13e",
+    "native/candidate-6.png": "55639703e0f6ec5af668a6facf4c9eeedfe1964c514f68a352889d59381084ee",
+    "native/candidate-7.png": "7ad16370cf6835029b78f1716785aaa1aef41b36d7b6186aa2357613ff2224eb",
+    "native/candidate-8.png": "7d7c9027023453a603a896f0039f92fc34724e098bd39660bf522e9c51d95fcc",
+    "native/candidate-fresh-process.log": "e804b82f4acdd9a8d7be3bd81c26958c21df57384a87f6e180a9b4624835818e",
+    "native/candidate-fresh.cfg": "37394edc756ad971a656f44387747d92ba61e8494a24168c3d277b24d212028f",
+    "native/candidate-fresh.log": "6c34e3e31c3fa8bf3be16a84e5b408cfb937fcfc6ea4b58ab264b3e6bbac2a66",
+    "native/candidate-reload-process.log": "54020ea5938dd2883d43ac34ab80a0b86bde1aba106325feec06793b8d5fbf03",
+    "native/candidate-reload.cfg": "c130a1220e0a78732a9bec676c71b2fad2e2279baeba33ab495b037cd68a04d3",
+    "native/candidate-reload.log": "cb23fb054f53abfa1a7119b6195e342204ce07d4abe62b206447b77a8f88fc39",
+    "native/fixture-source/MAPINFO.txt": "e8dd22171aa74fa1caa2fda1feeffec52265816b0fb2394a8da564682d91dc14",
+    "native/fixture-source/ZSCRIPT.txt": "3e214b19dd0940dbf7ef2995f94c380e53f95be3fd1c1c77e04ccd7f75246fc8",
+    "native/fixture.zs": "ecb74d258c8424847e799b11345e3d84220ad4de78cf721d3d1566e0bcc1a40b",
+    "native/old-save-load-process.log": "08aca42e0224e7c7525bf88e057e4e8cb597445c25e90dc8b0141e620fc9425c",
+    "native/old-save-load.cfg": "70276ee95c1a8b829e3334edbd13ed4b8c842b0bd34ad50f3264df3258a51e2e",
+    "native/old-save-load.log": "2100c2cb8ed8dc60cbc452992e5384d098ff41a08f7ee6515676c5c92e6016cc",
+    "native/RESULTS.json": "0aadcdce6840f1c1308aa65640f45fb9cc338115816d4c17c1336ee99d2cadeb",
+    "native/rollback-load-process.log": "beaed09122a63f86afb336e0d15f636854b721762bbb0e43613b3e84b028467a",
+    "native/rollback-load.cfg": "c130a1220e0a78732a9bec676c71b2fad2e2279baeba33ab495b037cd68a04d3",
+    "native/rollback-load.log": "121bfecc3018b083217e67c84677ab5f13297a3f5af9ed52171fd0d8935ef680",
+    "native/session.ini": "95e39726749cde93255ed52c87b9c033f238bf904ee8bfeeb8adabc85ee2d39b",
+    "presentation/models-6/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-6/engine.log": "7d68f91c306291b352ab6e6044381f854b7dd052c5bd8767f01ef2b8ed3612ba",
+    "presentation/models-6/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-6/fixture-source/ZSCRIPT.txt": "1592e7daeb75006325ed0db08fb6c17ded49af5003473b631f8ddb7a650469c1",
+    "presentation/models-6/presents.csv": "709c01c952af3a79986672e6c0b322366d76c056b0e8ad7ab49ce19834854843",
+    "presentation/models-6/process.log": "f66a880d5b61acbc8379a8237f36f6a4299ada510218375fd385e61684930594",
+    "presentation/models-6/scene.png": "8ce5bbb5ead6ce28deaea492ac83411a71760eb0be9252ed097ceb1bede31735",
+    "presentation/models-6/session.ini": "20a4e98364738d23206bcaa415ef69645f83e5ab0f9fbcf7ff301fe857815027",
+    "presentation/RESULTS.json": "2f7208344fe831272ff29377027e0ea170a402ed1589d702a333b04d2d1de533",
+    "presentation/sprites-6/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-6/engine.log": "ae77ef606f6fca1c13bcc829cc864ab611fe3a91a245e533cf288c40ca97b411",
+    "presentation/sprites-6/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-6/fixture-source/ZSCRIPT.txt": "1592e7daeb75006325ed0db08fb6c17ded49af5003473b631f8ddb7a650469c1",
+    "presentation/sprites-6/presents.csv": "1af75e9b09a249c071d2b79b8aacbd4cfeb460219bd725133bbcfa7d79b28799",
+    "presentation/sprites-6/process.log": "e77e2d25db5219ccb52b565c01a538db07de308934d940aabdff893194285fc3",
+    "presentation/sprites-6/scene.png": "9745f04b728df02a7679ca1901bd9194ade48abf3b4dfad33da52584b79d44bd",
+    "presentation/sprites-6/session.ini": "75a66313d00eadd1ad7f2dddda9e94787862261d850f973aacc46604c76aab38",
+    "visual/01/close.png": "dfbb1ca4a00c098ff5d8d9d2c1dc2d280e8eec3bd6f4b3cbc5cf7c6eea7ba338",
+    "visual/01/fixture-source/MAPINFO.txt": "e8dd22171aa74fa1caa2fda1feeffec52265816b0fb2394a8da564682d91dc14",
+    "visual/01/fixture-source/ZSCRIPT.txt": "3e214b19dd0940dbf7ef2995f94c380e53f95be3fd1c1c77e04ccd7f75246fc8",
+    "visual/01/fixture.zs": "ecb74d258c8424847e799b11345e3d84220ad4de78cf721d3d1566e0bcc1a40b",
+    "visual/01/RESULTS.json": "8b12c6d5cc7985d7f9722e7358bf7fc22a3ca3f6c3b1da607b7412069aff2f48",
+    "visual/01/session.ini": "53b384b92229be3004db5881e7230de8c9b26217fed4f1b1f1462fdd7b6bf3dc",
+    "visual/01/visual-process.log": "1ba9d66d564c27ee93608d92ea12a561a9b219c7c8f985a16fca0d0684b173a4",
+    "visual/01/visual.cfg": "67776ff8c65032df319add87a98176df8f51bc430f0e5fc597a3f3d018828d69",
+    "visual/01/visual.log": "3ca142ee3a45f9f52372731807eb62bcb4d03d33fbf35a233a629dbd32602166",
+    "visual/02/close.png": "0f60b1d4b5f2f7dc12bbaad68e1938d0896cdafc49ef6c2e72b636f063195e0d",
+    "visual/02/fixture-source/MAPINFO.txt": "e8dd22171aa74fa1caa2fda1feeffec52265816b0fb2394a8da564682d91dc14",
+    "visual/02/fixture-source/ZSCRIPT.txt": "3e214b19dd0940dbf7ef2995f94c380e53f95be3fd1c1c77e04ccd7f75246fc8",
+    "visual/02/fixture.zs": "ecb74d258c8424847e799b11345e3d84220ad4de78cf721d3d1566e0bcc1a40b",
+    "visual/02/RESULTS.json": "2440f87a9495f2a96c92a3eacbbc15bba8c17adc30d375226ad0d841f373ebd7",
+    "visual/02/session.ini": "cf08811517c93eb0a918a7ce99d1601e28f3c21f7630f1809e75620184c35ace",
+    "visual/02/visual-process.log": "79d83b95bb004700c40b304224d721d27f6a1b9433e6ff283ffed814b5afa334",
+    "visual/02/visual.cfg": "67776ff8c65032df319add87a98176df8f51bc430f0e5fc597a3f3d018828d69",
+    "visual/02/visual.log": "e3c16bab73089467b7abf4a541309e32a8dea679efa0ee42703af0152d911f8e",
+    "validation.log": "1e095366e5c1d31dd95a7b2429e2c6d0c2a8697d14404f6dc7f8163b4587a667"
+  }
+}

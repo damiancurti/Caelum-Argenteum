@@ -1,0 +1,788 @@
+{
+  "issue": 647,
+  "version": "5.17.1",
+  "date": "2026-11-13",
+  "author_accepted": false,
+  "scope": "Nine actual medikit/Anima/energy classes gain closed 3D art. Other inventory categories remain unfinished; prior coin coverage is retained.",
+  "runtime": {
+    "local_path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-647\\build\\issue647-consumables01.pk3",
+    "sha256": "29f22e72d912c63fb70b792e1c9f3eea1d22c7549570015d25e88e92ab3a35dc",
+    "source_entries": 18152,
+    "source_mismatches": []
+  },
+  "static": {
+    "variants": {
+      "medikit_small": {
+        "class": "CaelumLifePotion",
+        "family": "medikit",
+        "tier": "small",
+        "parts": [
+          "leather_body",
+          "medical_patch",
+          "patch_rim",
+          "carry_handle",
+          "body_strap_-1",
+          "buckle_back_-1",
+          "buckle_inset_-1",
+          "buckle_pin_-1",
+          "corner_-1_-1",
+          "corner_-1_1",
+          "body_strap_1",
+          "buckle_back_1",
+          "buckle_inset_1",
+          "buckle_pin_1",
+          "corner_1_-1",
+          "corner_1_1",
+          "rolled_bandage",
+          "top_closure"
+        ],
+        "closed_outward_components": 18,
+        "vertices": 1695,
+        "triangles": 1324,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 1695,
+            "triangles": 1324
+          }
+        ],
+        "source_opaque_bounds": [
+          13,
+          18,
+          118,
+          109
+        ],
+        "model_height_art_pixels": 91,
+        "native_bounds": [
+          {
+            "min": [
+              -48.8315709335098,
+              -29.298942560105882,
+              0.0
+            ],
+            "max": [
+              48.8315709335098,
+              28.445006560184233,
+              91.0
+            ]
+          }
+        ]
+      },
+      "medikit_medium": {
+        "class": "CaelumLifePotionMedium",
+        "family": "medikit",
+        "tier": "medium",
+        "parts": [
+          "leather_body",
+          "medical_patch",
+          "patch_rim",
+          "carry_handle",
+          "body_strap_-1",
+          "buckle_back_-1",
+          "buckle_inset_-1",
+          "buckle_pin_-1",
+          "corner_-1_-1",
+          "corner_-1_1",
+          "body_strap_1",
+          "buckle_back_1",
+          "buckle_inset_1",
+          "buckle_pin_1",
+          "corner_1_-1",
+          "corner_1_1",
+          "rolled_bandage",
+          "top_closure"
+        ],
+        "closed_outward_components": 18,
+        "vertices": 1695,
+        "triangles": 1324,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 1695,
+            "triangles": 1324
+          }
+        ],
+        "source_opaque_bounds": [
+          14,
+          18,
+          120,
+          109
+        ],
+        "model_height_art_pixels": 91,
+        "native_bounds": [
+          {
+            "min": [
+              -48.8315709335098,
+              -29.298942560105882,
+              0.0
+            ],
+            "max": [
+              48.8315709335098,
+              28.445006560184233,
+              91.0
+            ]
+          }
+        ]
+      },
+      "medikit_large": {
+        "class": "CaelumLifePotionLarge",
+        "family": "medikit",
+        "tier": "large",
+        "parts": [
+          "leather_body",
+          "medical_patch",
+          "patch_rim",
+          "carry_handle",
+          "body_strap_-1",
+          "buckle_back_-1",
+          "buckle_inset_-1",
+          "buckle_pin_-1",
+          "corner_-1_-1",
+          "corner_inlay_-1_-1",
+          "corner_-1_1",
+          "corner_inlay_-1_1",
+          "body_strap_1",
+          "buckle_back_1",
+          "buckle_inset_1",
+          "buckle_pin_1",
+          "corner_1_-1",
+          "corner_inlay_1_-1",
+          "corner_1_1",
+          "corner_inlay_1_1",
+          "rolled_bandage",
+          "top_closure"
+        ],
+        "closed_outward_components": 22,
+        "vertices": 1735,
+        "triangles": 1388,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 1735,
+            "triangles": 1388
+          }
+        ],
+        "source_opaque_bounds": [
+          11,
+          15,
+          120,
+          110
+        ],
+        "model_height_art_pixels": 95,
+        "native_bounds": [
+          {
+            "min": [
+              -50.97801361190584,
+              -30.586808167143502,
+              0.0
+            ],
+            "max": [
+              50.97801361190584,
+              29.69533651887365,
+              95.0
+            ]
+          }
+        ]
+      },
+      "anima_small": {
+        "class": "CaelumAnimaPotion",
+        "family": "anima",
+        "tier": "small",
+        "parts": [
+          "glass_body",
+          "base_ring",
+          "neck_ring",
+          "cork",
+          "star_trim",
+          "star_face",
+          "star_gem",
+          "silver_brace_-1",
+          "blue_ribbon_-1",
+          "filigree_-1",
+          "silver_brace_1",
+          "blue_ribbon_1",
+          "filigree_1"
+        ],
+        "closed_outward_components": 13,
+        "vertices": 1786,
+        "triangles": 3376,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 1786,
+            "triangles": 3376
+          }
+        ],
+        "source_opaque_bounds": [
+          19,
+          8,
+          108,
+          120
+        ],
+        "model_height_art_pixels": 112,
+        "native_bounds": [
+          {
+            "min": [
+              -46.48,
+              -50.93822222222222,
+              0.0
+            ],
+            "max": [
+              46.48,
+              46.48,
+              112.0
+            ]
+          }
+        ]
+      },
+      "anima_medium": {
+        "class": "CaelumAnimaPotionMedium",
+        "family": "anima",
+        "tier": "medium",
+        "parts": [
+          "glass_body",
+          "base_ring",
+          "neck_ring",
+          "cork",
+          "star_trim",
+          "star_face",
+          "star_gem",
+          "silver_brace_-1",
+          "blue_ribbon_-1",
+          "filigree_-1",
+          "silver_brace_1",
+          "blue_ribbon_1",
+          "filigree_1"
+        ],
+        "closed_outward_components": 13,
+        "vertices": 1786,
+        "triangles": 3376,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 1786,
+            "triangles": 3376
+          }
+        ],
+        "source_opaque_bounds": [
+          20,
+          9,
+          108,
+          119
+        ],
+        "model_height_art_pixels": 110,
+        "native_bounds": [
+          {
+            "min": [
+              -45.65,
+              -50.02861111111111,
+              0.0
+            ],
+            "max": [
+              45.65,
+              45.65,
+              110.0
+            ]
+          }
+        ]
+      },
+      "anima_large": {
+        "class": "CaelumAnimaPotionLarge",
+        "family": "anima",
+        "tier": "large",
+        "parts": [
+          "glass_body",
+          "base_ring",
+          "neck_ring",
+          "cork",
+          "base_gold_inlay",
+          "neck_gold_inlay",
+          "star_trim",
+          "star_face",
+          "star_gem",
+          "silver_brace_-1",
+          "blue_ribbon_-1",
+          "filigree_-1",
+          "silver_brace_1",
+          "blue_ribbon_1",
+          "filigree_1"
+        ],
+        "closed_outward_components": 15,
+        "vertices": 2054,
+        "triangles": 3888,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 2054,
+            "triangles": 3888
+          }
+        ],
+        "source_opaque_bounds": [
+          15,
+          2,
+          117,
+          124
+        ],
+        "model_height_art_pixels": 122,
+        "native_bounds": [
+          {
+            "min": [
+              -50.629999999999995,
+              -55.48627777777778,
+              0.0
+            ],
+            "max": [
+              50.629999999999995,
+              50.629999999999995,
+              122.0
+            ]
+          }
+        ]
+      },
+      "energy_small": {
+        "class": "CaelumEnergyDrink",
+        "family": "energy",
+        "tier": "small",
+        "parts": [
+          "glass_body",
+          "base_ring",
+          "shoulder_ring",
+          "neck_ring",
+          "cork",
+          "diagonal_sling",
+          "sling_buckle",
+          "sling_buckle_inset",
+          "leaf_0",
+          "leaf_1",
+          "leaf_2"
+        ],
+        "closed_outward_components": 11,
+        "vertices": 973,
+        "triangles": 1820,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 973,
+            "triangles": 1820
+          }
+        ],
+        "source_opaque_bounds": [
+          9,
+          6,
+          118,
+          122
+        ],
+        "model_height_art_pixels": 116,
+        "native_bounds": [
+          {
+            "min": [
+              -46.47702821911828,
+              -28.13,
+              0.0
+            ],
+            "max": [
+              25.197668268135715,
+              25.122847965185777,
+              116.0
+            ]
+          }
+        ]
+      },
+      "energy_medium": {
+        "class": "CaelumEnergyDrinkMedium",
+        "family": "energy",
+        "tier": "medium",
+        "parts": [
+          "glass_body",
+          "base_ring",
+          "shoulder_ring",
+          "neck_ring",
+          "cork",
+          "diagonal_sling",
+          "sling_buckle",
+          "sling_buckle_inset",
+          "leaf_0",
+          "leaf_1",
+          "leaf_2"
+        ],
+        "closed_outward_components": 11,
+        "vertices": 973,
+        "triangles": 1820,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 973,
+            "triangles": 1820
+          }
+        ],
+        "source_opaque_bounds": [
+          10,
+          5,
+          119,
+          121
+        ],
+        "model_height_art_pixels": 116,
+        "native_bounds": [
+          {
+            "min": [
+              -46.47702821911828,
+              -28.13,
+              0.0
+            ],
+            "max": [
+              25.197668268135715,
+              25.122847965185777,
+              116.0
+            ]
+          }
+        ]
+      },
+      "energy_large": {
+        "class": "CaelumEnergyDrinkLarge",
+        "family": "energy",
+        "tier": "large",
+        "parts": [
+          "glass_body",
+          "base_ring",
+          "shoulder_ring",
+          "neck_ring",
+          "cork",
+          "base_gold_inlay",
+          "shoulder_gold_inlay",
+          "neck_gold_inlay",
+          "diagonal_sling",
+          "sling_buckle",
+          "sling_buckle_inset",
+          "leaf_0",
+          "leaf_1",
+          "leaf_2"
+        ],
+        "closed_outward_components": 14,
+        "vertices": 1375,
+        "triangles": 2588,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 1375,
+            "triangles": 2588
+          }
+        ],
+        "source_opaque_bounds": [
+          12,
+          3,
+          119,
+          123
+        ],
+        "model_height_art_pixels": 120,
+        "native_bounds": [
+          {
+            "min": [
+              -48.07968436460512,
+              -29.099999999999998,
+              0.0
+            ],
+            "max": [
+              26.06655338083005,
+              25.989153067433563,
+              120.0
+            ]
+          }
+        ]
+      }
+    },
+    "closed_outward_oriented_components": true,
+    "repeat_export_install_check_passed": true,
+    "project_validation_passed": true
+  },
+  "native": {
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 100
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 91
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 100
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 91
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 91
+      }
+    ],
+    "assertions": 473,
+    "scope": "Native CallTryPickup/CreateTossable, all nine classes; split 5 into 3 held and 2 dropped, recombine, preserve identity/weight/collision/icons and bidirectional saved ownership. No ordinary-menu, healing-use or author acceptance."
+  },
+  "presentation": [
+    {
+      "kind": "sprites",
+      "bodies": 9,
+      "pid": 47320,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 203773229.3703,
+        "END": 203793255.79500002
+      },
+      "fixture_sha256": "331e7c1d5505fa48c87f6bcb31005ab297b84174f64182a20e045b25ade0233d",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571515571428574,
+        "p50_ms": 28.563,
+        "p95_ms": 29.1968,
+        "p99_ms": 29.3635,
+        "max_ms": 29.6789
+      },
+      "presentation": {
+        "pid": 47320,
+        "trace_sha256": "1106892423d76bb681c4b53771588ee76ef82466b91a263627f24663e7dad651",
+        "rows": 29590,
+        "scene_presents": 19905,
+        "mean_present_fps": 1135.7126585798078,
+        "present_intervals": {
+          "samples": 19904,
+          "mean_ms": 0.8805044061501309,
+          "p50_ms": 0.8510999977588654,
+          "p95_ms": 1.086599975824356,
+          "p99_ms": 1.308899998664856,
+          "max_ms": 1.9370000064373016
+        },
+        "native_call_duration": {
+          "samples": 19905,
+          "mean_ms": 0.07580261228971522,
+          "p50_ms": 0.07499998807907104,
+          "p95_ms": 0.09939998388290405,
+          "p99_ms": 0.12919998168945312,
+          "max_ms": 0.45419999957084656
+        }
+      }
+    },
+    {
+      "kind": "models",
+      "bodies": 9,
+      "pid": 20512,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 203807014.8751,
+        "END": 203827036.8189
+      },
+      "fixture_sha256": "331e7c1d5505fa48c87f6bcb31005ab297b84174f64182a20e045b25ade0233d",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571313857142854,
+        "p50_ms": 28.5786,
+        "p95_ms": 29.1756,
+        "p99_ms": 29.3775,
+        "max_ms": 29.8307
+      },
+      "presentation": {
+        "pid": 20512,
+        "trace_sha256": "e96dbbf1caf55be5efa01336b4a8e5412d824ead549534627f5a9b8503e208e7",
+        "rows": 28874,
+        "scene_presents": 19421,
+        "mean_present_fps": 1108.4235549861176,
+        "present_intervals": {
+          "samples": 19420,
+          "mean_ms": 0.9021821987647353,
+          "p50_ms": 0.8667999804019928,
+          "p95_ms": 1.1201000213623047,
+          "p99_ms": 1.3445000052452087,
+          "max_ms": 2.2732000052928925
+        },
+        "native_call_duration": {
+          "samples": 19421,
+          "mean_ms": 0.0758922917256302,
+          "p50_ms": 0.07510000467300415,
+          "p95_ms": 0.09970000386238098,
+          "p99_ms": 0.12570002675056458,
+          "max_ms": 0.43609997630119324
+        }
+      }
+    }
+  ],
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "presentation_resolution": [
+      1280,
+      720
+    ],
+    "uncapped": true,
+    "vsync": false,
+    "background_unpaused": true,
+    "audio": 0.05
+  },
+  "art": {
+    "mode": "Built-in image_gen",
+    "source": "assets/source/art/inventory_models_647/consumables",
+    "prompts": [
+      "PROMPT.txt",
+      "PROMPT-v2.txt"
+    ],
+    "selected_texture": "materials-v2.png",
+    "original_texture_retained": "materials-v1.png",
+    "all_original_icons_unchanged": true,
+    "final_front_side_rear_close_captures_inspected": true
+  },
+  "superseded": {
+    "native01": "Initial closed candidate passes inventory checks; HUD overlays obscure details.",
+    "native02": "HUD-free views expose floating flat Anima ornaments and stretched/wood-like bag material.",
+    "visual03": "Curved caps and projected scroll controls follow the bottle; leather material still too striated.",
+    "visual04": "Selected matte atlas corrects source grain; rounded-box UVs still stretch it.",
+    "native05": "Final full runtime uses face-oriented leather UVs and all corrections; no separate model overlay."
+  },
+  "qualifications": [
+    "One sequential 700-tic presentation pair for nine actual world objects, all visible in the inspected capture; no repeatability or all-item/campaign budget.",
+    "Queue-present intervals are not GPU timing or display scanout; simulation tic spacing is not CPU cost.",
+    "HUD suppression exists only in the inspection fixture, with normal HUD/player control on F5; production HUD is unchanged.",
+    "The existing duplicate CAMDA0 sprite registration remains. Model bindings are explicit by class, with no saved-state rename.",
+    "No native item rules, new production fields, actors, global scans or gameplay values. No PK3, WAD, executable, DLL or save is distributed.",
+    "Author tests remain pending and severe existing siege presentation remains unresolved."
+  ],
+  "files": {
+    "build.log": "31414bdafcfa6b7861303ab562e220b4c18ff2327192a66631b41cd93ad30c72",
+    "exports/01.json": "159db3a190fdd584be7014ff7d98d65cda775ff339e244bee8b45c1454c12149",
+    "exports/02.json": "2e083c932bf3a883f763d6536041c0d8c2019bcfe7c60241b70db41d9fab0777",
+    "exports/03.json": "5b9729ce46ead11c56f091c8c2f55a45ea5b347477ca991244ebdfced94920a4",
+    "exports/04.json": "80b3184e52933579124e5da4edd2837da6f64418454d7c4d743d0fe31c2f5d5a",
+    "exports/05.json": "0a67b6e34b05bb79932eca2226614fc7932c3fa8afa98e495bb0227b73a7e102",
+    "native/01/baseline-process.log": "966b176ca0a51201b8e9c383fef7d540cee28e0e890699bc8b8380f9a568e3c6",
+    "native/01/baseline.cfg": "3eba76c8f6ef39f16a0da639e5a5fa360f158948c1a9be02ff1ffc7927d21c6b",
+    "native/01/baseline.log": "2abc63348f0f25595a028caa90ab27fcd73dcfd7e8a55c56edcee57a58fead9d",
+    "native/01/candidate-fresh-process.log": "663297a42b5be5f9cb82c65757f98590cff0b1f9a97c0615a380ab4eb2098ee5",
+    "native/01/candidate-fresh.cfg": "37394edc756ad971a656f44387747d92ba61e8494a24168c3d277b24d212028f",
+    "native/01/candidate-fresh.log": "c364a450da457ce098878513c59035e1ef442875886920c30e9f0eb9a707646a",
+    "native/01/candidate-reload-process.log": "04d422c2b8a42cd25af4209987f15f08e39499c313dac94ab55d8c6e8f21e951",
+    "native/01/candidate-reload.cfg": "c130a1220e0a78732a9bec676c71b2fad2e2279baeba33ab495b037cd68a04d3",
+    "native/01/candidate-reload.log": "5af1ace090cda6d26de257fab1972234de4ef1ea5cf0bb2e6fff2bf0c719b343",
+    "native/01/fixture-source/MAPINFO.txt": "ef2a86390d6deb4388cf7ca35348fac0790d40185df6e20c773de68d8bdfbb8d",
+    "native/01/fixture-source/ZSCRIPT.txt": "f0c4e018986a9dbfb14ebce120a23e5a433252617350e14e6678c4b545211f15",
+    "native/01/fixture.zs": "cb846b112f1e59179a7fd9d9af305afa3b521d3b276b44feda08bbe120205d48",
+    "native/01/old-save-load-process.log": "8885d871f14c15151b0777d4dadf0bf28e4eb477a602ec1b78abc3ff6de03943",
+    "native/01/old-save-load.cfg": "878e1b9339d15d8e61a885878ceccff7d15eb1f1320f470860ba36c34b2096a6",
+    "native/01/old-save-load.log": "09944f259afa5b21fac982215b6df638b4465cbb260c1c5a705f993c56ab9663",
+    "native/01/RESULTS.json": "3104a07b0122398b91cc91c3742db5862a99455dabbfa31f22a8ddd5ac0db69e",
+    "native/01/rollback-load-process.log": "5b0469979a3a6f51fd9e13dfe97918ba6442daee9eb680b2d37fd7beb2dea9ef",
+    "native/01/rollback-load.cfg": "c130a1220e0a78732a9bec676c71b2fad2e2279baeba33ab495b037cd68a04d3",
+    "native/01/rollback-load.log": "7a80179fa52a428c9d6d4b0d7050e72597a29c739287b28f2b2ee886445f0421",
+    "native/01/session.ini": "0fe7967fec59dc89d6f920d30eb07ba2a891073a795b9c7580a253f34e9e52dd",
+    "native/02/baseline-process.log": "454420d00e6db6c04b37ff9b4e6c0a533e0062542244af765ddb66fb40c566b9",
+    "native/02/baseline.cfg": "3eba76c8f6ef39f16a0da639e5a5fa360f158948c1a9be02ff1ffc7927d21c6b",
+    "native/02/baseline.log": "30b72a2f19d0ecfa28e1e47eacaab696fa688ed4bfefedebf7f11aeb455ae953",
+    "native/02/candidate-2.png": "31ccb038d7d7a65ae234be1b6ab83d560f2b95221cb3e4b1cb4059e17c3abffa",
+    "native/02/candidate-3.png": "2ba12d1733f50114fe12964d4f595fda51974bbbd633e29809a60a3dd6d3dc0d",
+    "native/02/candidate-5.png": "080b79720479195cc1b4c7ca58c27e2f2df06f37562229de256d31da6267668c",
+    "native/02/candidate-fresh-process.log": "6ce132cc9ef3025648d6976c997dcb752074e15229cd98ff1f8aec6c5d2b5956",
+    "native/02/candidate-fresh.cfg": "37394edc756ad971a656f44387747d92ba61e8494a24168c3d277b24d212028f",
+    "native/02/candidate-fresh.log": "095593f6c9e16075a9792eaef042334f2876c34eab9e7dc36a15eb72dc00e256",
+    "native/02/candidate-reload-process.log": "7a59b98680381aa7d782e1143d6abc7e921177240200e619a37f5e5c1d8af849",
+    "native/02/candidate-reload.cfg": "c130a1220e0a78732a9bec676c71b2fad2e2279baeba33ab495b037cd68a04d3",
+    "native/02/candidate-reload.log": "ad853667f3031d77cb16b8fb3d3cb5b9620ebec07e1646479d59256c25355953",
+    "native/02/fixture-source/MAPINFO.txt": "ef2a86390d6deb4388cf7ca35348fac0790d40185df6e20c773de68d8bdfbb8d",
+    "native/02/fixture-source/ZSCRIPT.txt": "cd4d5f6135421a000c8a83e402185182649242622e0414c3d656e64c719206f2",
+    "native/02/fixture.zs": "067e53f321f6d3796ff148c7b33f69c86e23baf56efa28b332db402c3debd8f8",
+    "native/02/old-save-load-process.log": "7a93432f18bad69c54f5a0e498f6547796d192d94fbce0793f396592c2079d64",
+    "native/02/old-save-load.cfg": "878e1b9339d15d8e61a885878ceccff7d15eb1f1320f470860ba36c34b2096a6",
+    "native/02/old-save-load.log": "3219f331ce0d79dc55730d372f5e040d1e1a396ee269ec325f652d8bc4d2b4ab",
+    "native/02/RESULTS.json": "a2df7dcff718ac458637977b6db0ddecec16fbe1675c95a73f03a265e43d6be8",
+    "native/02/rollback-load-process.log": "61c32331cd7d4e757a011765c763844998a7b628c3b468037175b77f6a732be5",
+    "native/02/rollback-load.cfg": "c130a1220e0a78732a9bec676c71b2fad2e2279baeba33ab495b037cd68a04d3",
+    "native/02/rollback-load.log": "82fde79726dcd5449a9ea6b141d05b59c52910b33d61fb06fae5f309ba36d77c",
+    "native/02/session.ini": "d69d1533be858d28072074d79a63f5c56548ebe5401ade72773b5836e902d818",
+    "native/05/baseline-process.log": "856ec2e44d1af67f6456c2833bab1e04144d9d74c8817118d14d03db103d3916",
+    "native/05/baseline.cfg": "3eba76c8f6ef39f16a0da639e5a5fa360f158948c1a9be02ff1ffc7927d21c6b",
+    "native/05/baseline.log": "ae7fd08c4d6eca4735950e2e6adea935735a97bdd327c33f07c01597b202bc29",
+    "native/05/baseline.png": "068f922e0b8345cb450ef982232f25896843c8c29991882e8bfb7ace864553aa",
+    "native/05/candidate-0.png": "b72e345dfd790b08d29c603b653a0913367e9fc0986cce22d45752b21506656d",
+    "native/05/candidate-1.png": "5bbf08f6d79fb66034d289c2cc4e2158db90d4fa6eaf8f1d8ee5fa5b98bda0ea",
+    "native/05/candidate-2.png": "d98a4300f770e8cc094f829b1a796ea8fa74a4b6ec4a4c8070b04b3ea2332374",
+    "native/05/candidate-3.png": "85b4f25c6e96dea3289e2e50b9d0a6efc6c87487b523ec445558ba94124146d0",
+    "native/05/candidate-5.png": "e50fd8e3444a5344d1cf0c3439ad4a63ffe984c23c681baf3866c1b9b78e2eea",
+    "native/05/candidate-6.png": "ea1e89c8a619ef931e8623de13f8bec40f1046396c5ef928576d0c6f8e483e96",
+    "native/05/candidate-7.png": "aaf2e42dbafa9f39ad0ee5beaf6577b7874bd55a94b277218c94354c5393e031",
+    "native/05/candidate-fresh-process.log": "9ae85ec854415b79b5be3afb9525bd1bf938458f6cd06a8adea87037bd682bca",
+    "native/05/candidate-fresh.cfg": "37394edc756ad971a656f44387747d92ba61e8494a24168c3d277b24d212028f",
+    "native/05/candidate-fresh.log": "4f5b24baf1f7831139a74d0ba50bb12cc2a63e5c93938bd32868b875ef154246",
+    "native/05/candidate-reload-process.log": "8169988a123e3fd051368052d3708eaed87b5d67c008d6de9ea5f5c984116257",
+    "native/05/candidate-reload.cfg": "c130a1220e0a78732a9bec676c71b2fad2e2279baeba33ab495b037cd68a04d3",
+    "native/05/candidate-reload.log": "83a9e1a2adcfc2f0792e9a9b4246af7639a9db7a70d3bcf6fd0fdcc2d08aedc4",
+    "native/05/fixture-source/MAPINFO.txt": "ef2a86390d6deb4388cf7ca35348fac0790d40185df6e20c773de68d8bdfbb8d",
+    "native/05/fixture-source/ZSCRIPT.txt": "cd4d5f6135421a000c8a83e402185182649242622e0414c3d656e64c719206f2",
+    "native/05/fixture.zs": "067e53f321f6d3796ff148c7b33f69c86e23baf56efa28b332db402c3debd8f8",
+    "native/05/old-save-load-process.log": "4d0605221980aeb9e557d1091440a90984c2af16fa16add16bf7043ed76607fe",
+    "native/05/old-save-load.cfg": "878e1b9339d15d8e61a885878ceccff7d15eb1f1320f470860ba36c34b2096a6",
+    "native/05/old-save-load.log": "56093f0aecba3ea1652b6f5a6de6b56bec42abf98ad2b97517d6bd8722343948",
+    "native/05/RESULTS.json": "7fbaf5c2363f010ad2bbd9c4eaa236b46b66e6ed7375465f7bf279d168e0fbb7",
+    "native/05/rollback-load-process.log": "9b1b4aa84224f137bd270ba17d44e02b83bccc8f602f87a196223cb062dbdffc",
+    "native/05/rollback-load.cfg": "c130a1220e0a78732a9bec676c71b2fad2e2279baeba33ab495b037cd68a04d3",
+    "native/05/rollback-load.log": "851d09e40228f9bc0bfc284b452db67e7914d6e387cf5e12f7266699e14d17d3",
+    "native/05/session.ini": "68ddc8e74f13ec77396abce13ad5e67857d947c4d735ac18d08ad31a964bdc59",
+    "presentation/models-9/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-9/engine.log": "67e568979a2232981bae42c73cc3f7491561f4df7061b1ca0e7ffaeadc446c1d",
+    "presentation/models-9/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-9/fixture-source/ZSCRIPT.txt": "6e5401144ed55734d92382fe9a733041e64b738523cb08ff69756c6a902f7552",
+    "presentation/models-9/presents.csv": "e96dbbf1caf55be5efa01336b4a8e5412d824ead549534627f5a9b8503e208e7",
+    "presentation/models-9/process.log": "4ce3c919048fa5be1d1a9816e92fac5fc5842e0e264b953d67bc68667fe77218",
+    "presentation/models-9/scene.png": "f7090a5cf1bb7b0e81feb33056e3438cb89eff39725316de265aa88f8e645e22",
+    "presentation/models-9/session.ini": "99f319a546e4df9b5c1dee218d86371b050c8768ba11f8c7918db987e155aa5f",
+    "presentation/RESULTS.json": "32adc40909162efe9a4770c17dfe5ec141d5ce2cdb4edc53db7da5a0b24d4b34",
+    "presentation/sprites-9/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-9/engine.log": "99e06778ae25daebcfac118637ed06b6fd32614d3c94470fa1d3716693b6b75a",
+    "presentation/sprites-9/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-9/fixture-source/ZSCRIPT.txt": "6e5401144ed55734d92382fe9a733041e64b738523cb08ff69756c6a902f7552",
+    "presentation/sprites-9/presents.csv": "1106892423d76bb681c4b53771588ee76ef82466b91a263627f24663e7dad651",
+    "presentation/sprites-9/process.log": "ef009c2ee8478584b1f114a5affd69f37e96087e5f2d82fb6adf1ccbfa40bcec",
+    "presentation/sprites-9/scene.png": "fec1845b034c2f734f28682be2957137817d98ec7e5026475a26f9865ca65cae",
+    "presentation/sprites-9/session.ini": "3c0ee17211144abfcf88c3e7bc5e2fc01aa8dffefe7a7c66372ae0df5bb7217d",
+    "visual/03/anima.png": "cf46f428cdaac6579461e7e7a0f9eaec85ddceef87fb32b946af2f13e3293771",
+    "visual/03/fixture-source/MAPINFO.txt": "ef2a86390d6deb4388cf7ca35348fac0790d40185df6e20c773de68d8bdfbb8d",
+    "visual/03/fixture-source/ZSCRIPT.txt": "cd4d5f6135421a000c8a83e402185182649242622e0414c3d656e64c719206f2",
+    "visual/03/fixture.zs": "067e53f321f6d3796ff148c7b33f69c86e23baf56efa28b332db402c3debd8f8",
+    "visual/03/medikits.png": "ba70b2593f4e24f7affce8e450151bde566b2e6af80c32e60f3532e01b1c3b49",
+    "visual/03/RESULTS.json": "46a0b0f7475c3e9ef445b24e263864b6ec7d97e8d11f741268d8d29c25ac7c83",
+    "visual/03/session.ini": "3a2bee9d443ee36504414117f0091690f5738f6b9fa9131021867006ff523be1",
+    "visual/03/visual-process.log": "3e4820812f0ee4de8955072c15e0a61f2e3a9ac7decd745cb55c749796cefa24",
+    "visual/03/visual.cfg": "69776412d0d7dc13edc3b9af8e904cd38875b1e36d87f0df77ccafbc99252354",
+    "visual/03/visual.log": "079fce161ccbb7795de798864c27d260ce326c86bc22827d999f378ff1cd3c87",
+    "visual/04/anima.png": "e50fd8e3444a5344d1cf0c3439ad4a63ffe984c23c681baf3866c1b9b78e2eea",
+    "visual/04/fixture-source/MAPINFO.txt": "ef2a86390d6deb4388cf7ca35348fac0790d40185df6e20c773de68d8bdfbb8d",
+    "visual/04/fixture-source/ZSCRIPT.txt": "cd4d5f6135421a000c8a83e402185182649242622e0414c3d656e64c719206f2",
+    "visual/04/fixture.zs": "067e53f321f6d3796ff148c7b33f69c86e23baf56efa28b332db402c3debd8f8",
+    "visual/04/medikits.png": "0bf8e64330c7595ca59d629c4882ab258b656453fd42b1050407451800c4087d",
+    "visual/04/RESULTS.json": "2c898ceefb596d18c1d0ea513c0fe084d7b6c043413dc698011e2c5e8b1c712d",
+    "visual/04/session.ini": "1b9507adbb0284d50f816ca610a60bd85f43e5ad66c02506ce24761af2ff0c14",
+    "visual/04/visual-process.log": "cf8ca6fbcb0732b2b30c88579aff52fac0e679f93d897486697e151a8c055c6f",
+    "visual/04/visual.cfg": "69776412d0d7dc13edc3b9af8e904cd38875b1e36d87f0df77ccafbc99252354",
+    "visual/04/visual.log": "d47e56648497a713ff6773d6aa7ffc948011c26b567d75ac4d31f2c361109caa",
+    "validation-final.log": "1e095366e5c1d31dd95a7b2429e2c6d0c2a8697d14404f6dc7f8163b4587a667"
+  }
+}

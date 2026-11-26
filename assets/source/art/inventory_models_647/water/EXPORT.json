@@ -1,0 +1,280 @@
+{
+  "schema_revision": 1,
+  "issue": 647,
+  "status": "runtime_art_candidate_pending_author_acceptance",
+  "variants": {
+    "bottle_small": {
+      "class": "CaelumBottleSmall",
+      "family": "bottle_small",
+      "tier": "existing",
+      "parts": [
+        "green_glass",
+        "cork",
+        "neck_tie",
+        "tie_left",
+        "tie_right"
+      ],
+      "closed_outward_components": 5,
+      "vertices": 584,
+      "triangles": 640,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 584,
+          "triangles": 640
+        }
+      ],
+      "source_opaque_bounds": [
+        46,
+        10,
+        81,
+        117
+      ],
+      "model_height_art_pixels": 107,
+      "native_bounds": [
+        {
+          "min": [
+            -14.403846153846153,
+            -14.403846153846153,
+            0.0
+          ],
+          "max": [
+            14.403846153846153,
+            14.403846153846153,
+            106.99999999999999
+          ]
+        }
+      ]
+    },
+    "bottle_normal": {
+      "class": "CaelumBottleNormal",
+      "family": "bottle_normal",
+      "tier": "existing",
+      "parts": [
+        "amber_glass",
+        "leather_sleeve",
+        "cork",
+        "lower_binding",
+        "upper_binding",
+        "sleeve_front_seam"
+      ],
+      "closed_outward_components": 6,
+      "vertices": 1190,
+      "triangles": 896,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1190,
+          "triangles": 896
+        }
+      ],
+      "source_opaque_bounds": [
+        35,
+        9,
+        94,
+        117
+      ],
+      "model_height_art_pixels": 108,
+      "native_bounds": [
+        {
+          "min": [
+            -25.305882352941175,
+            -26.152941176470588,
+            0.0
+          ],
+          "max": [
+            25.305882352941175,
+            25.305882352941175,
+            108.0
+          ]
+        }
+      ]
+    },
+    "bottle_large": {
+      "class": "CaelumBottleLarge",
+      "family": "bottle_large",
+      "tier": "existing",
+      "parts": [
+        "green_glass",
+        "wicker_basket",
+        "basket_rim",
+        "basket_foot",
+        "wicker_handle",
+        "cork"
+      ],
+      "closed_outward_components": 6,
+      "vertices": 1462,
+      "triangles": 1112,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1462,
+          "triangles": 1112
+        }
+      ],
+      "source_opaque_bounds": [
+        29,
+        7,
+        102,
+        119
+      ],
+      "model_height_art_pixels": 112,
+      "native_bounds": [
+        {
+          "min": [
+            -33.26732673267327,
+            -33.26732673267327,
+            0.0
+          ],
+          "max": [
+            49.68713404719717,
+            33.26732673267327,
+            112.00000000000001
+          ]
+        }
+      ]
+    },
+    "canteen_small": {
+      "class": "CaelumCanteenSmall",
+      "family": "canteen_small",
+      "tier": "existing",
+      "parts": [
+        "round_leather_body",
+        "short_neck",
+        "cork",
+        "cross_front_left",
+        "cross_front_right",
+        "wrist_loop"
+      ],
+      "closed_outward_components": 6,
+      "vertices": 1974,
+      "triangles": 864,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1974,
+          "triangles": 864
+        }
+      ],
+      "source_opaque_bounds": [
+        27,
+        13,
+        111,
+        111
+      ],
+      "model_height_art_pixels": 98,
+      "native_bounds": [
+        {
+          "min": [
+            -42.717948717948715,
+            -19.471295043855406,
+            0.0
+          ],
+          "max": [
+            60.93299579386148,
+            16.333333333333332,
+            98.0
+          ]
+        }
+      ]
+    },
+    "canteen_normal": {
+      "class": "CaelumCanteenNormal",
+      "family": "canteen_normal",
+      "tier": "existing",
+      "parts": [
+        "oval_leather_body",
+        "short_neck",
+        "cork",
+        "long_carry_strap",
+        "front_seam_left",
+        "front_seam_right"
+      ],
+      "closed_outward_components": 6,
+      "vertices": 2010,
+      "triangles": 928,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 2010,
+          "triangles": 928
+        }
+      ],
+      "source_opaque_bounds": [
+        21,
+        10,
+        112,
+        115
+      ],
+      "model_height_art_pixels": 105,
+      "native_bounds": [
+        {
+          "min": [
+            -36.67727238585983,
+            -12.501947945025057,
+            0.0
+          ],
+          "max": [
+            33.84508743192402,
+            12.501947945025057,
+            105.0
+          ]
+        }
+      ]
+    }
+  },
+  "generator_sha256": "1e0f81ac23de88c55271cccba6fd7f56c64c3b38d76ddda50da1348bd1d269a7",
+  "shared_generator_sha256": {
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2"
+  },
+  "source_sha256": {
+    "DESIGN.json": "dc1938077f441a4c7a39940d890c39688893471b9c07760d91715a9e25f227f9",
+    "PROVENANCE.json": "9a321763cc73c72d41e253b86f6e29d18781bc4b8d363602def86889113364e7",
+    "materials-v1.png": "0c15178f14cd0afc4e6ac7ff4633e6f5bda022d1b07a33cb6b7d885e560848ca",
+    "PROMPT.txt": "9ec45cc4067cf80ee07ee5378d1447576d5d83afa4b596afcb0f6030bc9946e7"
+  },
+  "sha256": {
+    "models/caelum/inventory/water/materials.png": "0c15178f14cd0afc4e6ac7ff4633e6f5bda022d1b07a33cb6b7d885e560848ca",
+    "models/caelum/inventory/water/bottle_small.md3": "a05a084badfcb90562199e4ee3adb6423b2e9b4db323150caa03d27a291229c9",
+    "editable/bottle_small.obj": "5127fe10917709907350f0cdae8cbe4298efe3f47392cf2f2d412b96d5ebb8b0",
+    "models/caelum/inventory/water/bottle_normal.md3": "612ffdcc70aa046f2ca3cfec4f2c16d253d2e5361388adb0b56d3ffde8d7743c",
+    "editable/bottle_normal.obj": "38d0babba4984f58dca3c1bbb546b6319062bb1b75969a0f8a6612427c4a2795",
+    "models/caelum/inventory/water/bottle_large.md3": "54c419b2bf487db6b185f9997f41b14e9e7ac0ca2ce7de3ed398f10c9905981b",
+    "editable/bottle_large.obj": "5ec0e49a0201f3954ac6fbe746e439c17cc75803a305c4624c363c48d0702283",
+    "models/caelum/inventory/water/canteen_small.md3": "04a8770983c1f2edd2a41fde753a1b72cafd69bf49a3c19040ca28f6b4a2b00d",
+    "editable/canteen_small.obj": "104c103b740a9e16d768c7204a5ddd15b1f8203b3bf28a0d2d9871babaefa35a",
+    "models/caelum/inventory/water/canteen_normal.md3": "cf7c3d818e49250dcd0a488c09b0c88028a35792c5ba5aafdd13b12505edee3f",
+    "editable/canteen_normal.obj": "7f571db48a81ba0e8942e1acd379d9fdaa7002de59ed9270f00e216d71e2aa81",
+    "editable/materials.mtl": "5624a695e81642cdf2bb5477403320a8df717d23ad24a6431fe2bfa07d6a2571",
+    "caelum/data/inventory_water.modeldef": "95045cde4780d6a9f45b58b3e5cdbff33ff068288665149c3bf1763cb60e2643",
+    "models/caelum/inventory/water/canteen_large.obj": "771d4412e5e37eb24750de6265ef94dee1594297f4096b8e2bae7ad2a7097250"
+  },
+  "wrapper_sha256": "bf9c1c9d41045706eb68df0e7ad2e02f6e21faaf99537ddaadc3048747eb0282",
+  "reused_variants": [
+    {
+      "key": "canteen_large",
+      "class": "CaelumCanteenLarge",
+      "sprite": "CW5X",
+      "obj": "src/models/caelum/props/rest/ca_large_canteen.obj",
+      "icon": "src/graphics/caelum/icons/water/canteen_large.png",
+      "note": "Reuse the existing dining canteen topology, UVs and owned texture in a normalized drop copy matching the current opaque icon height. Dining binding/source remain unchanged.",
+      "source_sha256": {
+        "src/models/caelum/props/rest/ca_large_canteen.obj": "af8bfe1db1aabde9677969445e51ff37ee689cd9870ee90c309a6a68706a4715",
+        "src/graphics/caelum/icons/water/canteen_large.png": "953705175aeac528dec03387e6e4a1281f4f26b486484b1e5e601ba65a8b6241"
+      },
+      "vertices": 664,
+      "faces": 174,
+      "normalization_scale": 1.4285714285714286,
+      "source_floor_art_pixels": 2.0,
+      "source_opaque_bounds": [
+        26,
+        6,
+        103,
+        121
+      ],
+      "model_height_art_pixels": 115,
+      "topology_uv_texture_unchanged": true
+    }
+  ]
+}

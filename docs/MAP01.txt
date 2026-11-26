@@ -1,6 +1,14 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.17.0** - 2026-11-13.
+Documentation version: **5.17.1** - 2026-11-13.
+
+## 5.17.1 / #647 - Existing currency presentation
+
+Existing medikit and Anima/energy drops retain their identities, placements and
+rewards while gaining volumetric art.
+
+Existing coin drops receive volumetric art without new map placements, rewards,
+prices, quests or campaign locations. The isolated inspection room is test-only.
 
 ## 5.17.0 / #458 - Character art expansion, unchanged narrative
 

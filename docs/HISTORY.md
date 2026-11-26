@@ -1,6 +1,65 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.0** - 2026-11-13.
+Documentation version: **5.17.1** - 2026-11-13.
+
+## 5.17.1 - Initial inventory model coverage (#647, 2026-11-13, in progress)
+
+Added five closed food models for six inventory classes and four prepared table
+displays, preserving approved #410 icons, portions, recipes and native lots.
+Owned built-in ImageGen material source, prompt and references are retained under
+assets/source/art/inventory_models_647/food. Native visual revision removes
+raised bread-cut tubes and fixes stretched slice-side UVs. The 18,167-entry
+complete package passed 608 assertions across five fresh/old-save/reload/rollback
+runs, including food-lot chronology and actual table ownership/scale. ASSETS and
+validation_v5_17_1/food-evidence/SUMMARY.json retain measurements and limits.
+CA647-FOOD-01 remains pending; raw ingredients and other inventory art remain open.
+
+Added explicit 3D drops for the six existing bottle/canteen classes. Five new
+closed meshes follow the owned green/amber glass, leather and wicker references;
+the large canteen reuses existing dining geometry/UVs in a normalized copy.
+Built-in ImageGen source, exact prompt and provenance are retained under
+assets/source/art/inventory_models_647/water. Shared-exporter parameterization
+leaves prior consumable runtime bytes unchanged. No water rules or fields changed.
+The final 18,160-entry package passed 473 native assertions across fresh, old-save,
+reload and rollback runs. Exact native transfer fields and saved contents/quality
+are checked, with ordinary elapsed-time cooling preserved. A six-object pair
+observed 1,141.79/1,130.29 presents/s, p95/p99 1.0919/1.3261ms and
+1.1038/1.3150ms (sprites/models). Environment, limits and captures are in ASSETS
+and validation_v5_17_1/water-evidence/SUMMARY.json. CA647-WATER-01 remains pending;
+legacy rations/maze water, cooking vessels and other inventory art remain open.
+
+The same issue adds nine medikit/Anima/energy model variants. Owned built-in
+ImageGen atlas sources and both exact prompts are retained under
+assets/source/art/inventory_models_647/consumables. Deterministic geometry retains
+the reference identities and approved metal tiers without inventory-rule changes.
+Candidate native integration passed 473 assertions; further visual corrections
+addressed the handle, surface-conforming ornaments and leather material/UVs.
+The final complete package passed 473 assertions and matches all 18,152 source
+entries. A nine-object presentation pair recorded 1,135.71/1,108.42 presents/s
+(sprites/models), p95/p99 1.0866/1.3089ms and 1.1201/1.3445ms. ASSETS and
+validation_v5_17_1/consumables-evidence/SUMMARY.json retain environment, captures,
+qualifications and superseded visual candidates. CA-KP-227 records the reusable
+geometry/material lessons. CA647-CONSUMABLES-01 remains pending author review.
+
+Implemented closed copper/silver/gold coin meshes and explicit bindings for all
+15 denominations, using the unchanged owned sun artwork. No native inventory,
+physics, economy or saved state changed. Sources, deterministic exporter and
+read-only installation checks are retained. The native catalogue observation
+found 595 inventory-derived types and 87 initial visible-drop candidates; custom
+policies/dynamic variants prevent treating this as final coverage.
+
+Candidate inspection passed 785 native assertions across fresh, old-save,
+new-save reload and rollback cases. Initial fixture attempts were rejected for
+protected TryPickup access/local-name shadowing, then an invalid comparison of
+held and world sprite states. The corrected fixture uses CallTryPickup and the
+world class default state. These were fixture defects, not production changes.
+The final complete package passed the same 785 checks without an overlay.
+An interactive-fixture camera ternary type error was also fixed before that run.
+A one-pair 15-object presentation comparison observed 950.75 versus 942.38
+presents/s, p95/p99 1.2991/1.5097ms versus 1.2992/1.5176ms; environment, limits
+and owned evidence are in ASSETS and validation_v5_17_1/evidence/SUMMARY.json.
+Static generation/installation and all 18,141 packaged source entries match.
+CA647-COINS-01 remains an author check; no manual acceptance or removal of earlier pending tests is recorded.
 
 ## 5.17.0 - Modular Domingo export (#458, 2026-11-13, in progress)
 
