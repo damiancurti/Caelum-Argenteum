@@ -66,6 +66,18 @@ native front/side/oblique/rear views remain necessary. Also inspect side seams:
 cosine front projection compressed motifs, improved by linear angular wrapping.
 Evidence: assets/validation_v5_17_13/evidence/SUMMARY.json. No bitmap was repainted.
 
+Additional STATIC-VERIFIED / NATIVE-VISUAL evidence, #674 (2026-11-13):
+accepted jewelry PNGs contain fully transparent highlight pixels inside their
+painted silhouettes (the Quintessence center includes alpha zero). Projecting
+only a crown's last cap also left its sloped facets unpainted. Map the complete
+raised front, preserve the source PNG, and place an independently closed opaque
+undercoat behind the image where a solid prop is intended. Sample the matching
+bright gem/emblem from its own unchanged image, verifying the bilinear alpha
+margin; a dark or metal backing visibly changes the intended light highlight.
+This is geometry/material composition, not a general rule to remove artistic
+transparency. Link holes remain open modeled rings. Original failed views and
+final native front/side/rear evidence: assets/validation_v5_17_15/evidence/SUMMARY.json.
+
 ## CA-KP-231 - Isolate deferred recipe-sheet delivery in inventory fixtures
 
 Status/evidence: ENGINE-VERIFIED fixture correction, #656, 2026-11-13.

@@ -1,0 +1,8 @@
+{
+  "issue": 674,
+  "ownership": "Original Caelum Argenteum jewelry PNGs, already packaged and documented. Author-provided tier-two/tier-three icons retained byte-for-byte; see ASSETS Equipment icons and assets/source/art/tiers_2_3_rehechos_4_33_0d.",
+  "creation": "New deterministic closed polygon/torus meshes authored from the existing silhouettes. No external mesh, new bitmap, image edit or image generator is used.",
+  "editable_sources": "DESIGN.json controls plus separate OBJ groups and original PNG material copies under editable/.",
+  "limits": "Reverse sides use the existing painted metal atlas; back engraving and worn fitting have not been designed or accepted.",
+  "additional_materials": "Original #647 consumable atlas, unchanged bronze/silver/gold tiles; source prompt and provenance remain in assets/source/art/inventory_models_647/consumables/. No new image generation."
+}

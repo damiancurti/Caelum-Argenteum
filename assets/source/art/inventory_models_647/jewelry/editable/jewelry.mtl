@@ -1,0 +1,36 @@
+newmtl amulet_ruby
+Kd 1 1 1
+map_Kd src/graphics/caelum/icons/jewelry/ca_amulet_ruby.png
+newmtl amulet_sapphire
+Kd 1 1 1
+map_Kd src/graphics/caelum/icons/jewelry/ca_amulet_sapphire.png
+newmtl amulet_emerald
+Kd 1 1 1
+map_Kd src/graphics/caelum/icons/jewelry/ca_amulet_emerald.png
+newmtl amulet_topaz
+Kd 1 1 1
+map_Kd src/graphics/caelum/icons/jewelry/ca_amulet_topaz.png
+newmtl seal_fire
+Kd 1 1 1
+map_Kd src/graphics/caelum/icons/jewelry/ca_seal_fire.png
+newmtl seal_water
+Kd 1 1 1
+map_Kd src/graphics/caelum/icons/jewelry/ca_seal_water.png
+newmtl seal_earth
+Kd 1 1 1
+map_Kd src/graphics/caelum/icons/jewelry/ca_seal_earth.png
+newmtl seal_air
+Kd 1 1 1
+map_Kd src/graphics/caelum/icons/jewelry/ca_seal_air.png
+newmtl seal_quintessence
+Kd 1 1 1
+map_Kd src/graphics/caelum/icons/jewelry/ca_seal_quintessence.png
+newmtl bronze
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/consumables/materials.png
+newmtl silver
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/consumables/materials.png
+newmtl gold
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/consumables/materials.png

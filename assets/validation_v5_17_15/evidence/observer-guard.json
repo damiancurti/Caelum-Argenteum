@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "phase": "baseline",
+      "assertions": 715,
+      "accepted": true
+    },
+    {
+      "phase": "baseline",
+      "assertions": 714,
+      "accepted": false
+    },
+    {
+      "phase": "candidate-reload",
+      "assertions": 632,
+      "accepted": true
+    },
+    {
+      "phase": "candidate-reload",
+      "assertions": 631,
+      "accepted": false
+    }
+  ]
+}

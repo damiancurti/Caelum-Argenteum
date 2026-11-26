@@ -1,6 +1,15 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.14** - 2026-11-13.
+Documentation version: **5.17.15** - 2026-11-13.
+
+## 5.17.15 - Jewelry world presentation (#674)
+
+The four native amulet and five seal types, including CA_LimboMagicSeal, gain
+volumetric world models. All three qualities retain their current type, icon,
+mass, ownership, equipment effects and collision; the original world sprite
+already shares one image per type across quality. No balance, crafting,
+channeling, saved field or migration rule changes. Native test evidence and
+the separate CA674-JEWELRY-01 author check are recorded in ASSETS/HISTORY.
 
 ## 5.17.2 - Native ammunition class lookup (#650)
 

@@ -1,0 +1,564 @@
+{
+  "schema_revision": 1,
+  "issue": 674,
+  "parent_issue": 647,
+  "status": "native_candidate_pending_author_review",
+  "variants": {
+    "amulet_ruby": {
+      "class": "CaelumAmuletPickup",
+      "parts": {
+        "pendant_back": 5791.681,
+        "painted_setting": 1095.3917099999999,
+        "raised_gem": 1225.426029519512,
+        "bail": 91.412651431253,
+        "left_chain_00": 10.523869832318844,
+        "left_chain_01": 10.523870232418961,
+        "left_chain_02": 10.52386983231884,
+        "left_chain_03": 10.523870243380967,
+        "left_chain_04": 10.523869818201616,
+        "left_chain_05": 10.523870248145185,
+        "left_chain_06": 10.523869832318667,
+        "left_chain_07": 10.523870232419284,
+        "left_chain_08": 10.52386983231865,
+        "left_chain_09": 10.523870243381793,
+        "left_chain_10": 10.523869818201314,
+        "left_chain_11": 10.523870248145183,
+        "right_chain_00": 10.523869832318834,
+        "right_chain_01": 10.523870232418911,
+        "right_chain_02": 10.523869832318905,
+        "right_chain_03": 10.523870243381428,
+        "right_chain_04": 10.523869818201831,
+        "right_chain_05": 10.523870248144405,
+        "right_chain_06": 10.523869832318827,
+        "right_chain_07": 10.523870232418453,
+        "right_chain_08": 10.52386983231877,
+        "right_chain_09": 10.523870243381587,
+        "right_chain_10": 10.523869818201664,
+        "right_chain_11": 10.523870248143815
+      },
+      "closed_outward_components": 28,
+      "vertices": 2636,
+      "triangles": 5148,
+      "surfaces": [
+        {
+          "material": "amulet_ruby",
+          "vertices": 2636,
+          "triangles": 5148
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -33.602794414550424,
+            -7.3956272567569705,
+            0.0
+          ],
+          "max": [
+            31.489758055477,
+            2.11303635907342,
+            112.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        30,
+        8,
+        97,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.05651817953671
+    },
+    "amulet_sapphire": {
+      "class": "CaelumAmuletPickup",
+      "parts": {
+        "pendant_back": 5791.681,
+        "painted_setting": 1095.3917099999999,
+        "raised_gem": 1225.426029519512,
+        "bail": 91.412651431253,
+        "left_chain_00": 10.523869832318844,
+        "left_chain_01": 10.523870232418961,
+        "left_chain_02": 10.52386983231884,
+        "left_chain_03": 10.523870243380967,
+        "left_chain_04": 10.523869818201616,
+        "left_chain_05": 10.523870248145185,
+        "left_chain_06": 10.523869832318667,
+        "left_chain_07": 10.523870232419284,
+        "left_chain_08": 10.52386983231865,
+        "left_chain_09": 10.523870243381793,
+        "left_chain_10": 10.523869818201314,
+        "left_chain_11": 10.523870248145183,
+        "right_chain_00": 10.523869832318834,
+        "right_chain_01": 10.523870232418911,
+        "right_chain_02": 10.523869832318905,
+        "right_chain_03": 10.523870243381428,
+        "right_chain_04": 10.523869818201831,
+        "right_chain_05": 10.523870248144405,
+        "right_chain_06": 10.523869832318827,
+        "right_chain_07": 10.523870232418453,
+        "right_chain_08": 10.52386983231877,
+        "right_chain_09": 10.523870243381587,
+        "right_chain_10": 10.523869818201664,
+        "right_chain_11": 10.523870248143815
+      },
+      "closed_outward_components": 28,
+      "vertices": 2636,
+      "triangles": 5148,
+      "surfaces": [
+        {
+          "material": "amulet_sapphire",
+          "vertices": 2636,
+          "triangles": 5148
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -33.602794414550424,
+            -7.3956272567569705,
+            0.0
+          ],
+          "max": [
+            31.489758055477,
+            2.11303635907342,
+            112.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        28,
+        8,
+        99,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.05651817953671
+    },
+    "amulet_emerald": {
+      "class": "CaelumAmuletPickup",
+      "parts": {
+        "pendant_back": 5791.681,
+        "painted_setting": 1095.3917099999999,
+        "raised_gem": 1225.426029519512,
+        "bail": 91.412651431253,
+        "left_chain_00": 10.523869832318844,
+        "left_chain_01": 10.523870232418961,
+        "left_chain_02": 10.52386983231884,
+        "left_chain_03": 10.523870243380967,
+        "left_chain_04": 10.523869818201616,
+        "left_chain_05": 10.523870248145185,
+        "left_chain_06": 10.523869832318667,
+        "left_chain_07": 10.523870232419284,
+        "left_chain_08": 10.52386983231865,
+        "left_chain_09": 10.523870243381793,
+        "left_chain_10": 10.523869818201314,
+        "left_chain_11": 10.523870248145183,
+        "right_chain_00": 10.523869832318834,
+        "right_chain_01": 10.523870232418911,
+        "right_chain_02": 10.523869832318905,
+        "right_chain_03": 10.523870243381428,
+        "right_chain_04": 10.523869818201831,
+        "right_chain_05": 10.523870248144405,
+        "right_chain_06": 10.523869832318827,
+        "right_chain_07": 10.523870232418453,
+        "right_chain_08": 10.52386983231877,
+        "right_chain_09": 10.523870243381587,
+        "right_chain_10": 10.523869818201664,
+        "right_chain_11": 10.523870248143815
+      },
+      "closed_outward_components": 28,
+      "vertices": 2636,
+      "triangles": 5148,
+      "surfaces": [
+        {
+          "material": "amulet_emerald",
+          "vertices": 2636,
+          "triangles": 5148
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -33.602794414550424,
+            -7.3956272567569705,
+            0.0
+          ],
+          "max": [
+            31.489758055477,
+            2.11303635907342,
+            112.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        30,
+        8,
+        98,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.05651817953671
+    },
+    "amulet_topaz": {
+      "class": "CaelumAmuletPickup",
+      "parts": {
+        "pendant_back": 5791.681,
+        "painted_setting": 1095.3917099999999,
+        "raised_gem": 1225.426029519512,
+        "bail": 91.412651431253,
+        "left_chain_00": 10.523869832318844,
+        "left_chain_01": 10.523870232418961,
+        "left_chain_02": 10.52386983231884,
+        "left_chain_03": 10.523870243380967,
+        "left_chain_04": 10.523869818201616,
+        "left_chain_05": 10.523870248145185,
+        "left_chain_06": 10.523869832318667,
+        "left_chain_07": 10.523870232419284,
+        "left_chain_08": 10.52386983231865,
+        "left_chain_09": 10.523870243381793,
+        "left_chain_10": 10.523869818201314,
+        "left_chain_11": 10.523870248145183,
+        "right_chain_00": 10.523869832318834,
+        "right_chain_01": 10.523870232418911,
+        "right_chain_02": 10.523869832318905,
+        "right_chain_03": 10.523870243381428,
+        "right_chain_04": 10.523869818201831,
+        "right_chain_05": 10.523870248144405,
+        "right_chain_06": 10.523869832318827,
+        "right_chain_07": 10.523870232418453,
+        "right_chain_08": 10.52386983231877,
+        "right_chain_09": 10.523870243381587,
+        "right_chain_10": 10.523869818201664,
+        "right_chain_11": 10.523870248143815
+      },
+      "closed_outward_components": 28,
+      "vertices": 2636,
+      "triangles": 5148,
+      "surfaces": [
+        {
+          "material": "amulet_topaz",
+          "vertices": 2636,
+          "triangles": 5148
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -33.602794414550424,
+            -7.3956272567569705,
+            0.0
+          ],
+          "max": [
+            31.489758055477,
+            2.11303635907342,
+            112.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        30,
+        8,
+        98,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.05651817953671
+    },
+    "seal_fire": {
+      "class": "CaelumSealPickup",
+      "parts": {
+        "medal_back": 21244.98844999999,
+        "painted_relief": 2972.816805,
+        "raised_emblem": 4922.696996811222,
+        "suspension_ring": 562.2150269148711,
+        "joining_loop": 162.0760478560171
+      },
+      "closed_outward_components": 5,
+      "vertices": 658,
+      "triangles": 1080,
+      "surfaces": [
+        {
+          "material": "seal_fire",
+          "vertices": 658,
+          "triangles": 1080
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -35.588785046728965,
+            -7.327102803738317,
+            0.0
+          ],
+          "max": [
+            32.44859813084112,
+            4.622936407305627,
+            111.99999999999999
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        24,
+        8,
+        103,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.0467289719626167
+    },
+    "seal_water": {
+      "class": "CaelumSealPickup",
+      "parts": {
+        "medal_back": 21244.98844999999,
+        "painted_relief": 2972.816805,
+        "raised_emblem": 4922.696996811222,
+        "suspension_ring": 562.2150269148711,
+        "joining_loop": 162.0760478560171
+      },
+      "closed_outward_components": 5,
+      "vertices": 658,
+      "triangles": 1080,
+      "surfaces": [
+        {
+          "material": "seal_water",
+          "vertices": 658,
+          "triangles": 1080
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -35.588785046728965,
+            -7.327102803738317,
+            0.0
+          ],
+          "max": [
+            32.44859813084112,
+            4.622936407305627,
+            111.99999999999999
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        24,
+        8,
+        104,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.0467289719626167
+    },
+    "seal_earth": {
+      "class": "CaelumSealPickup",
+      "parts": {
+        "medal_back": 21244.98844999999,
+        "painted_relief": 2972.816805,
+        "raised_emblem": 4922.696996811222,
+        "suspension_ring": 562.2150269148711,
+        "joining_loop": 162.0760478560171
+      },
+      "closed_outward_components": 5,
+      "vertices": 658,
+      "triangles": 1080,
+      "surfaces": [
+        {
+          "material": "seal_earth",
+          "vertices": 658,
+          "triangles": 1080
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -35.588785046728965,
+            -7.327102803738317,
+            0.0
+          ],
+          "max": [
+            32.44859813084112,
+            4.622936407305627,
+            111.99999999999999
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        23,
+        8,
+        104,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.0467289719626167
+    },
+    "seal_air": {
+      "class": "CaelumSealPickup",
+      "parts": {
+        "medal_back": 21244.98844999999,
+        "painted_relief": 2972.816805,
+        "raised_emblem": 4922.696996811222,
+        "suspension_ring": 562.2150269148711,
+        "joining_loop": 162.0760478560171
+      },
+      "closed_outward_components": 5,
+      "vertices": 658,
+      "triangles": 1080,
+      "surfaces": [
+        {
+          "material": "seal_air",
+          "vertices": 658,
+          "triangles": 1080
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -35.588785046728965,
+            -7.327102803738317,
+            0.0
+          ],
+          "max": [
+            32.44859813084112,
+            4.622936407305627,
+            111.99999999999999
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        23,
+        8,
+        104,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.0467289719626167
+    },
+    "seal_quintessence": {
+      "class": "CaelumSealPickup",
+      "parts": {
+        "compass_back": 19622.352,
+        "painted_compass": 2729.7257850000005,
+        "raised_star": 5694.089714511691,
+        "joining_loop": 59.73534579144316
+      },
+      "closed_outward_components": 4,
+      "vertices": 430,
+      "triangles": 656,
+      "surfaces": [
+        {
+          "material": "seal_quintessence",
+          "vertices": 430,
+          "triangles": 656
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -46.117647058823536,
+            -7.686274509803923,
+            0.0
+          ],
+          "max": [
+            43.92156862745098,
+            3.718755375763772,
+            112.00000000000001
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        16,
+        8,
+        111,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.0980392156862746
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "25cbbb7c256c2560c94eba5437dc4f9e7bcabf6012f37c71224bb2488771487e",
+    "PROVENANCE.json": "cd9c59edbc189e1846fcf835e9ecf69e6f45caa86c4e6926b253024b400b7335"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/jewelry/ca_amulet_ruby.png": "caa5d472d60773f61efa9c8d97cb8881ff1b7e6cf865bdf54f5d2cf92017fb81",
+    "src/graphics/caelum/icons/jewelry/ca_amulet_ruby_t2.png": "ce67325edcb52ae34aa1a220077b987d48e3c93c728fb31d5d16c062ba80c5ab",
+    "src/graphics/caelum/icons/jewelry/ca_amulet_ruby_t3.png": "43c46510e5df049557b0d3da8815a5d515af91393cebcced56e5a7f59e8abcc2",
+    "src/graphics/caelum/icons/jewelry/ca_amulet_sapphire.png": "5d868e815ef12bd6bf4dbce55075923e47b22dac94c13c7dc62e8e9d7c3e92c2",
+    "src/graphics/caelum/icons/jewelry/ca_amulet_sapphire_t2.png": "fbe60844fd8bee32741135ac803f41fccc95060f998389235665fd32409ecfd3",
+    "src/graphics/caelum/icons/jewelry/ca_amulet_sapphire_t3.png": "fd7c1d40916785e05e06b99375e7e18f0c8a979fd6875568c27b7c3368ee2699",
+    "src/graphics/caelum/icons/jewelry/ca_amulet_emerald.png": "86c1de268698a20c6f84ceffe4b3e655244805aa279f55d29c903ba3d5c614ec",
+    "src/graphics/caelum/icons/jewelry/ca_amulet_emerald_t2.png": "f1aa25c58db8d47ba04d4331acae1e3296287db612e0135372e42b248a55f1c0",
+    "src/graphics/caelum/icons/jewelry/ca_amulet_emerald_t3.png": "d66d56d4a2a6305bafd48a1e8768d05e7f5171b03f60294705c54ee6815cd58c",
+    "src/graphics/caelum/icons/jewelry/ca_amulet_topaz.png": "a3b5d9fa883d5d9b531224942d2cf64b1ce011ccef042cffa42265345926c719",
+    "src/graphics/caelum/icons/jewelry/ca_amulet_topaz_t2.png": "3dcee771f30828b2cc2bb3ede59c4cb9b492ad3633092608d21b255f89f767de",
+    "src/graphics/caelum/icons/jewelry/ca_amulet_topaz_t3.png": "3ea64e357ba51580697c9706975409493eac1194d20bd53204efd5b2594b0cce",
+    "src/graphics/caelum/icons/jewelry/ca_seal_fire.png": "1497558804ce70d2e8950c0739004300163c8e46c90b49f544b180f0337e95d6",
+    "src/graphics/caelum/icons/jewelry/ca_seal_fire_t2.png": "a6c3460a9af1af93c668d98f84800553d0a66b4f1fa2890f1f651d20eb5375eb",
+    "src/graphics/caelum/icons/jewelry/ca_seal_fire_t3.png": "cd28f155906d27080cf03ea81e0b8b67259eadbaff5898efad60fe15132120ad",
+    "src/graphics/caelum/icons/jewelry/ca_seal_water.png": "596bd97a53bc1eec88f43e3113c065b0819272ecd12ba3f1c5d6e73f9fdd44b9",
+    "src/graphics/caelum/icons/jewelry/ca_seal_water_t2.png": "5bb8e10c3c5b1a9f200c1d9ff87c1659a748baecab01c24eccca1d4c9d9c6491",
+    "src/graphics/caelum/icons/jewelry/ca_seal_water_t3.png": "949152a4d23de36ff008baca0fe41fbb30f696b6edfc8378607b8116295c3373",
+    "src/graphics/caelum/icons/jewelry/ca_seal_earth.png": "d14bce7901b2d8f8e67dd5a3edde499a2a2718c6e2a75d1cbcabc465a9e1f5b3",
+    "src/graphics/caelum/icons/jewelry/ca_seal_earth_t2.png": "702aa56f77466f6412c6c8b27f2680abf3df5e5d606e6ad18785279c1bf645e3",
+    "src/graphics/caelum/icons/jewelry/ca_seal_earth_t3.png": "05c507888115502ca5ac8afee701f1cd64642c3397d7d10fcb229601f612edba",
+    "src/graphics/caelum/icons/jewelry/ca_seal_air.png": "f3a847d1584d68e2a4dfa35b41ed51c43cfc5a976df108138e4b7e51955ab996",
+    "src/graphics/caelum/icons/jewelry/ca_seal_air_t2.png": "6aeec979259ea8afba323b551bc00a94ab43babf78e76d280dc36e3f3689db77",
+    "src/graphics/caelum/icons/jewelry/ca_seal_air_t3.png": "4c0436350b3821c9a5e10c8a7f5d922563a520e65e3da655980ae33daa7e0df8",
+    "src/graphics/caelum/icons/jewelry/ca_seal_quintessence.png": "e6fdc91206c144afcca9714b5c0030b417d646cc9a8728ce500eca08199cd9bc",
+    "src/graphics/caelum/icons/jewelry/ca_seal_quintessence_t2.png": "3ccd674276101605975c7f7db9afbc76833ef1eb5ac6919484d4d920acf406b4",
+    "src/graphics/caelum/icons/jewelry/ca_seal_quintessence_t3.png": "a1c6afaf297a8ebd6fdd63adc37c7c90d8f0300eb6df8ed9bd403fa74e1e16be"
+  },
+  "generator_sha256": {
+    "generate_inventory_jewelry_models.py": "9e2b217cdb52a822b620ce0ac24c05bd12ab57b96eefeafd6f5d72f730229fb8",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2"
+  },
+  "sha256": {
+    "models/caelum/inventory/jewelry/amulet_ruby.md3": "1328ced825b0814701250a67d103b3d26be5217615b9ecc391d73e222f87798e",
+    "editable/amulet_ruby.obj": "59a5155ab7486ee9382be6d11ce8647882499d3695db571549d68d89eeeb74da",
+    "models/caelum/inventory/jewelry/amulet_sapphire.md3": "7e58802dd554e8fd8435f2d6440740d05276cc72902933e3f1c62fddafc7f681",
+    "editable/amulet_sapphire.obj": "00b75157f44ce46e558de000b8c48dddeecc6fbd1abc77f38b79701e36035f54",
+    "models/caelum/inventory/jewelry/amulet_emerald.md3": "cbe5537f7ef1b2543289626df7e82303253ddec74dc3b300dd58136681d415fb",
+    "editable/amulet_emerald.obj": "e44dc6cbc7b8eeca2d14a5d8e82a85bd265a26d4796f70a52568a1b4267c9ede",
+    "models/caelum/inventory/jewelry/amulet_topaz.md3": "0bd442d202a4696ae48da021a71c5cf9f91ed502d3ec8a78d22d89ad2f0263e4",
+    "editable/amulet_topaz.obj": "d717765e06bbf398eaae9acf1d435ff0132045db377485d7dca350674df052e3",
+    "models/caelum/inventory/jewelry/seal_fire.md3": "b1f8a29f25c4a70fecf35a428d7ed9d08e2963c9ac2a5ca65595826e4a96eac4",
+    "editable/seal_fire.obj": "9cbc86cac475b26ff827a78d9b56ab29b60cdd5ea09c9620c78a57eaea2b554d",
+    "models/caelum/inventory/jewelry/seal_water.md3": "008484592d5bf03b1a6d81e13e5046824acc904069946bedb253f839d484bf68",
+    "editable/seal_water.obj": "c6f8dbd5c1ca3d07c82f6c742b3258b5dce1558225caff8418938c6a5821a707",
+    "models/caelum/inventory/jewelry/seal_earth.md3": "7f27eb833bb0d56455d338355763e639652b9fdb9c1d608783c894ac5aa8bcf6",
+    "editable/seal_earth.obj": "44a5d4d47f2178b4b481817fd143d748791393935f3b9479667f95cb97f1c50d",
+    "models/caelum/inventory/jewelry/seal_air.md3": "8a1195461788e9112682b858141da70b1c3d39d09d49887953e6cc37a78d61a1",
+    "editable/seal_air.obj": "eb0353faa8e5a61089c2cc01fe1558c5b1496d39a472b3cf4ac7fe3d809c52e7",
+    "models/caelum/inventory/jewelry/seal_quintessence.md3": "f28169f8fb9f3501c2900e05cae139905f02d7bbb845197c57aa7fd81a781799",
+    "editable/seal_quintessence.obj": "bb2d95ad00b769fa615c26fd569a771a888fd62de90d86f0427ac7acc6ffca5f",
+    "editable/jewelry.mtl": "70334f052e112eb900cdc9e286b70a537776a2b81f1a4ff05d41c66f1e042a46",
+    "caelum/data/inventory_jewelry.modeldef": "9af80c473f9561e0b445a6e7408efec53807a7638aad51910546c4bbb2807b82"
+  }
+}

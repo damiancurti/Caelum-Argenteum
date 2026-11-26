@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.14** - 2026-11-13.
+Documentation version: **5.17.15** - 2026-11-13.
+
+## 5.17.15 - Jewelry drop models (#674, 2026-11-13)
+
+The author's all-dropped-inventory request is extended to four amulet and five
+seal designs, with nine original volumetric models and fourteen bindings.
+Original art, tier icons, native rules and saves are preserved. The first
+visual iteration exposed incomplete facet projection and constant-color links;
+the revised geometry uses existing painted metals and separate opaque colored
+undercoats, finally sampling the bright source highlight instead of a dark
+backing. Final complete-package compatibility/equip/drop checks pass 3,326
+assertions. Twenty-two exports repeat and all 18,233 package entries match src.
+Nine-object presentation: 1026.06/1007.60 queue presents/s, p95 1.1880/1.2388 ms and
+p99 1.4289/1.4931 ms; ASSETS records the environment and practical limits. Evidence:
+assets/validation_v5_17_15/evidence/SUMMARY.json. CA674-JEWELRY-01 remains an
+unconfirmed author check; other pending author entries are retained.
 
 ## 5.17.14 - Shared key model for lock inventory (#672)
 
