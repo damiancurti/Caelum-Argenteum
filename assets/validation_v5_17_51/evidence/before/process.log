@@ -1,0 +1,235 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-14 22:53:40
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue743-kitchen02.pk3, 18471 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue745-controls-before01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2599.60 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Review controls
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA731 PASS hide 0 native pickup
+CA731 PASS hide 0 native distinct ownership
+CA731 PASS hide 0 existing boxed weight
+CA731 PASS hide 0 quest drop guard
+CA731 PASS hide 0 native split
+CA731 PASS hide 1 native pickup
+CA731 PASS hide 1 native distinct ownership
+CA731 PASS hide 1 existing boxed weight
+CA731 PASS hide 1 quest drop guard
+CA731 PASS hide 1 native split
+CA731 PASS hide 2 native pickup
+CA731 PASS hide 2 native distinct ownership
+CA731 PASS hide 2 existing boxed weight
+CA731 PASS hide 2 quest drop guard
+CA731 PASS hide 2 native split
+CA731 PASS hide 3 native pickup
+CA731 PASS hide 3 native distinct ownership
+CA731 PASS hide 3 existing boxed weight
+CA731 PASS hide 3 quest drop guard
+CA731 PASS hide 3 native split
+CA731 PASS hide 4 native pickup
+CA731 PASS hide 4 native distinct ownership
+CA731 PASS hide 4 existing boxed weight
+CA731 PASS hide 4 quest drop guard
+CA731 PASS hide 4 native split
+CA731 PASS hide 5 native pickup
+CA731 PASS hide 5 native distinct ownership
+CA731 PASS hide 5 existing boxed weight
+CA731 PASS hide 5 quest drop guard
+CA731 PASS hide 5 native split
+Game saved.
+CA745 CHECK hides expected=0/90 observed=0/90 result=PASS
+CA745 CHECK hides expected=0/160 observed=0/160 result=PASS
+CA745 CHECK hides expected=0/225 observed=0/225 result=PASS
+CA745 CHECK hides expected=0/270 observed=0/270 result=PASS
+CA745 CHECK hides expected=0/0 observed=0/90 result=FAIL
+Captured hides-0-underside.png
+CA745 CHECK hides expected=0/90 observed=0/160 result=FAIL
+CA745 CHECK hides expected=1/90 observed=1/90 result=PASS
+CA745 CHECK hides expected=1/160 observed=1/160 result=PASS
+CA745 CHECK hides expected=1/225 observed=1/225 result=PASS
+CA745 CHECK hides expected=1/270 observed=1/270 result=PASS
+CA745 CHECK hides expected=1/0 observed=1/90 result=FAIL
+Captured hides-1-underside.png
+CA745 CHECK hides expected=1/90 observed=1/160 result=FAIL
+CA745 CHECK hides expected=2/90 observed=2/90 result=PASS
+CA745 CHECK hides expected=2/160 observed=2/160 result=PASS
+CA745 CHECK hides expected=2/225 observed=2/225 result=PASS
+CA745 CHECK hides expected=2/270 observed=2/270 result=PASS
+CA745 CHECK hides expected=2/0 observed=2/90 result=FAIL
+Captured hides-2-underside.png
+CA745 CHECK hides expected=2/90 observed=2/160 result=FAIL
+CA745 CHECK hides expected=3/90 observed=3/90 result=PASS
+CA745 CHECK hides expected=3/160 observed=3/160 result=PASS
+CA745 CHECK hides expected=3/225 observed=3/225 result=PASS
+CA745 CHECK hides expected=3/270 observed=3/270 result=PASS
+CA745 CHECK hides expected=3/0 observed=3/90 result=FAIL
+Captured hides-3-underside.png
+CA745 CHECK hides expected=3/90 observed=3/160 result=FAIL
+CA733 PASS textile 0 native pickup
+CA733 PASS textile 0 native distinct ownership
+CA733 PASS textile 0 existing boxed weight
+CA733 PASS textile 0 quest drop guard
+CA733 PASS textile 0 native split
+CA733 PASS textile 1 native pickup
+CA733 PASS textile 1 native distinct ownership
+CA733 PASS textile 1 existing boxed weight
+CA733 PASS textile 1 quest drop guard
+CA733 PASS textile 1 native split
+CA733 PASS textile 2 native pickup
+CA733 PASS textile 2 native distinct ownership
+CA733 PASS textile 2 existing boxed weight
+CA733 PASS textile 2 quest drop guard
+CA733 PASS textile 2 native split
+CA733 PASS textile 3 native pickup
+CA733 PASS textile 3 native distinct ownership
+CA733 PASS textile 3 existing boxed weight
+CA733 PASS textile 3 quest drop guard
+CA733 PASS textile 3 native split
+CA733 PASS textile 4 native pickup
+CA733 PASS textile 4 native distinct ownership
+CA733 PASS textile 4 existing boxed weight
+CA733 PASS textile 4 quest drop guard
+CA733 PASS textile 4 native split
+CA733 PASS textile 5 native pickup
+CA733 PASS textile 5 native distinct ownership
+CA733 PASS textile 5 existing boxed weight
+CA733 PASS textile 5 quest drop guard
+CA733 PASS textile 5 native split
+CA733 PASS textile 6 native pickup
+CA733 PASS textile 6 native distinct ownership
+CA733 PASS textile 6 existing boxed weight
+CA733 PASS textile 6 quest drop guard
+CA733 PASS textile 6 native split
+CA733 PASS textile 7 native pickup
+CA733 PASS textile 7 native distinct ownership
+CA733 PASS textile 7 existing boxed weight
+CA733 PASS textile 7 quest drop guard
+CA733 PASS textile 7 native split
+CA745 CHECK textiles expected=0/90 observed=0/90 result=PASS
+CA745 CHECK textiles expected=0/160 observed=0/160 result=PASS
+CA745 CHECK textiles expected=0/225 observed=0/225 result=PASS
+CA745 CHECK textiles expected=0/270 observed=0/270 result=PASS
+CA745 CHECK textiles expected=0/0 observed=0/90 result=FAIL
+Captured textiles-0-underside.png
+CA745 CHECK textiles expected=0/90 observed=0/160 result=FAIL
+CA745 CHECK textiles expected=1/90 observed=1/90 result=PASS
+CA745 CHECK textiles expected=1/160 observed=1/160 result=PASS
+CA745 CHECK textiles expected=1/225 observed=1/225 result=PASS
+CA745 CHECK textiles expected=1/270 observed=1/270 result=PASS
+CA745 CHECK textiles expected=1/0 observed=1/90 result=FAIL
+Captured textiles-1-underside.png
+CA745 CHECK textiles expected=1/90 observed=1/160 result=FAIL
+CA745 CHECK textiles expected=2/90 observed=2/90 result=PASS
+CA745 CHECK textiles expected=2/160 observed=2/160 result=PASS
+CA745 CHECK textiles expected=2/225 observed=2/225 result=PASS
+CA745 CHECK textiles expected=2/270 observed=2/270 result=PASS
+CA745 CHECK textiles expected=2/0 observed=2/90 result=FAIL
+Captured textiles-2-underside.png
+CA745 CHECK textiles expected=2/90 observed=2/160 result=FAIL
+CA745 CHECK textiles expected=3/90 observed=3/90 result=PASS
+CA745 CHECK textiles expected=3/160 observed=3/160 result=PASS
+CA745 CHECK textiles expected=3/225 observed=3/225 result=PASS
+CA745 CHECK textiles expected=3/270 observed=3/270 result=PASS
+CA745 CHECK textiles expected=3/0 observed=3/90 result=FAIL
+Captured textiles-3-underside.png
+CA745 CHECK textiles expected=3/90 observed=3/160 result=FAIL
+CA745 CHECK textiles expected=4/90 observed=4/90 result=PASS
+CA745 CHECK textiles expected=4/160 observed=4/160 result=PASS
+CA745 CHECK textiles expected=4/225 observed=4/225 result=PASS
+CA745 CHECK textiles expected=4/270 observed=4/270 result=PASS
+CA745 CHECK textiles expected=4/0 observed=4/90 result=FAIL
+Captured textiles-4-underside.png
+CA745 CHECK textiles expected=4/90 observed=4/160 result=FAIL
+CA745 CHECK textiles expected=5/90 observed=5/90 result=PASS
+CA745 CHECK textiles expected=5/160 observed=5/160 result=PASS
+CA745 CHECK textiles expected=5/225 observed=5/225 result=PASS
+CA745 CHECK textiles expected=5/270 observed=5/270 result=PASS
+CA745 CHECK textiles expected=5/0 observed=5/90 result=FAIL
+Captured textiles-5-underside.png
+CA745 CHECK textiles expected=5/90 observed=5/160 result=FAIL
+CA741 PASS hygiene 0 native pickup
+CA741 PASS hygiene 0 native distinct ownership
+CA741 PASS hygiene 0 existing boxed weight
+CA741 PASS hygiene 0 quest drop guard
+CA741 PASS hygiene 0 native split
+CA741 PASS hygiene 1 native pickup
+CA741 PASS hygiene 1 native distinct ownership
+CA741 PASS hygiene 1 existing boxed weight
+CA741 PASS hygiene 1 quest drop guard
+CA741 PASS hygiene 1 native split
+CA741 PASS hygiene 2 native pickup
+CA741 PASS hygiene 2 native distinct ownership
+CA741 PASS hygiene 2 existing boxed weight
+CA741 PASS hygiene 2 quest drop guard
+CA741 PASS hygiene 2 native split
+CA745 CHECK hygiene expected=0/90 observed=0/90 result=PASS
+CA745 CHECK hygiene expected=0/160 observed=0/160 result=PASS
+CA745 CHECK hygiene expected=0/225 observed=0/225 result=PASS
+CA745 CHECK hygiene expected=0/270 observed=0/270 result=PASS
+CA745 CHECK hygiene expected=0/0 observed=0/90 result=FAIL
+Captured hygiene-0-underside.png
+CA745 CHECK hygiene expected=0/90 observed=0/160 result=FAIL
+CA745 CHECK hygiene expected=1/90 observed=1/90 result=PASS
+CA745 CHECK hygiene expected=1/160 observed=1/160 result=PASS
+CA745 CHECK hygiene expected=1/225 observed=1/225 result=PASS
+CA745 CHECK hygiene expected=1/270 observed=1/270 result=PASS
+CA745 CHECK hygiene expected=1/0 observed=1/90 result=FAIL
+Captured hygiene-1-underside.png
+CA745 CHECK hygiene expected=1/90 observed=1/160 result=FAIL
+CA745 CHECK hygiene expected=2/90 observed=2/90 result=PASS
+CA745 CHECK hygiene expected=2/160 observed=2/160 result=PASS
+CA745 CHECK hygiene expected=2/225 observed=2/225 result=PASS
+CA745 CHECK hygiene expected=2/270 observed=2/270 result=PASS
+CA745 CHECK hygiene expected=2/0 observed=2/90 result=FAIL
+Captured hygiene-2-underside.png
+CA745 CHECK hygiene expected=2/90 observed=2/160 result=FAIL

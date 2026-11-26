@@ -1,0 +1,353 @@
+{
+  "issue": 745,
+  "version": "5.17.51",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Correct terminal rotation angles in three diagnostic author-review fixtures. No runtime art or gameplay changes.",
+  "before": {
+    "issue": 745,
+    "passed": true,
+    "expect_broken": true,
+    "checks": 78,
+    "expected_faults": 26,
+    "observed_faults": [
+      [
+        "hides",
+        "0",
+        "0",
+        "0",
+        "90",
+        "FAIL"
+      ],
+      [
+        "hides",
+        "0",
+        "90",
+        "0",
+        "160",
+        "FAIL"
+      ],
+      [
+        "hides",
+        "1",
+        "0",
+        "1",
+        "90",
+        "FAIL"
+      ],
+      [
+        "hides",
+        "1",
+        "90",
+        "1",
+        "160",
+        "FAIL"
+      ],
+      [
+        "hides",
+        "2",
+        "0",
+        "2",
+        "90",
+        "FAIL"
+      ],
+      [
+        "hides",
+        "2",
+        "90",
+        "2",
+        "160",
+        "FAIL"
+      ],
+      [
+        "hides",
+        "3",
+        "0",
+        "3",
+        "90",
+        "FAIL"
+      ],
+      [
+        "hides",
+        "3",
+        "90",
+        "3",
+        "160",
+        "FAIL"
+      ],
+      [
+        "textiles",
+        "0",
+        "0",
+        "0",
+        "90",
+        "FAIL"
+      ],
+      [
+        "textiles",
+        "0",
+        "90",
+        "0",
+        "160",
+        "FAIL"
+      ],
+      [
+        "textiles",
+        "1",
+        "0",
+        "1",
+        "90",
+        "FAIL"
+      ],
+      [
+        "textiles",
+        "1",
+        "90",
+        "1",
+        "160",
+        "FAIL"
+      ],
+      [
+        "textiles",
+        "2",
+        "0",
+        "2",
+        "90",
+        "FAIL"
+      ],
+      [
+        "textiles",
+        "2",
+        "90",
+        "2",
+        "160",
+        "FAIL"
+      ],
+      [
+        "textiles",
+        "3",
+        "0",
+        "3",
+        "90",
+        "FAIL"
+      ],
+      [
+        "textiles",
+        "3",
+        "90",
+        "3",
+        "160",
+        "FAIL"
+      ],
+      [
+        "textiles",
+        "4",
+        "0",
+        "4",
+        "90",
+        "FAIL"
+      ],
+      [
+        "textiles",
+        "4",
+        "90",
+        "4",
+        "160",
+        "FAIL"
+      ],
+      [
+        "textiles",
+        "5",
+        "0",
+        "5",
+        "90",
+        "FAIL"
+      ],
+      [
+        "textiles",
+        "5",
+        "90",
+        "5",
+        "160",
+        "FAIL"
+      ],
+      [
+        "hygiene",
+        "0",
+        "0",
+        "0",
+        "90",
+        "FAIL"
+      ],
+      [
+        "hygiene",
+        "0",
+        "90",
+        "0",
+        "160",
+        "FAIL"
+      ],
+      [
+        "hygiene",
+        "1",
+        "0",
+        "1",
+        "90",
+        "FAIL"
+      ],
+      [
+        "hygiene",
+        "1",
+        "90",
+        "1",
+        "160",
+        "FAIL"
+      ],
+      [
+        "hygiene",
+        "2",
+        "0",
+        "2",
+        "90",
+        "FAIL"
+      ],
+      [
+        "hygiene",
+        "2",
+        "90",
+        "2",
+        "160",
+        "FAIL"
+      ]
+    ],
+    "errors": [],
+    "exit_code": 0,
+    "runtime_sha256": "3a3e6f95119d28e21635dd10b2978da22427ab4fcfc304edf70952065ba64d21",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "fixture_sha256": "76c4ca42e934baf741c833d4e8f0085d6438d68f90a2b66e45d6875bfeedc4d0",
+    "source_sha256": {
+      "assets/validation_v5_17_44/hide_drops.zs": "11ca025879c23c084702ab7ce4ab56ba8258f576f1682da308437bc5536c0e29",
+      "assets/validation_v5_17_45/textile_drops.zs": "76a5594e3f0421573517b8874f66a653cd73eb6d8faa562b08c099f6135ea8a4",
+      "assets/validation_v5_17_49/hygiene_drops.zs": "3a479191b45cff213388cf5fd3d84b2afc65536c8371df7063b065719704b330"
+    },
+    "scope": "Actual fixture F9/F10 event chains, item index, angle, camera and raised/grounded state. No production change or author acceptance.",
+    "author_accepted": false
+  },
+  "after": {
+    "issue": 745,
+    "passed": true,
+    "expect_broken": false,
+    "checks": 78,
+    "expected_faults": 0,
+    "observed_faults": [],
+    "errors": [],
+    "exit_code": 0,
+    "runtime_sha256": "3a3e6f95119d28e21635dd10b2978da22427ab4fcfc304edf70952065ba64d21",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "fixture_sha256": "32b656a8e6ea10cba3b489e793b7e41d56ac50ae37335c9b4b98f393ae23d30b",
+    "source_sha256": {
+      "assets/validation_v5_17_44/hide_drops.zs": "1e89a21a4cc62f497cf5a9df4441860a75ab76b52b2a0f5ae1e21d8e76833344",
+      "assets/validation_v5_17_45/textile_drops.zs": "0e760c6a2bc5db0e0b3200a00e7228797f31b1f43b6930518af983b238171715",
+      "assets/validation_v5_17_49/hygiene_drops.zs": "51f798bc70644c670e5356f37af276c32df907eff6850ae9c2ed3a1599b724d4"
+    },
+    "scope": "Actual fixture F9/F10 event chains, item index, angle, camera and raised/grounded state. No production change or author acceptance.",
+    "author_accepted": false
+  },
+  "runtime": {
+    "sha256": "eff8a6732a61060e9dfa6508a70778083363bf5eb8bf8d083aa8d2641cd70f69",
+    "source_entries": 18471,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "3a3e6f95119d28e21635dd10b2978da22427ab4fcfc304edf70952065ba64d21",
+    "changed_resources": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "only_release_diagnostic_strings": true
+  },
+  "inspected": {
+    "before": [
+      "before/hides-0-underside.png",
+      "before/textiles-0-underside.png",
+      "before/hygiene-0-underside.png"
+    ],
+    "after": [
+      "after/hides-0-underside.png",
+      "after/textiles-0-underside.png",
+      "after/hygiene-0-underside.png"
+    ],
+    "note": "Representative native captures in all three families; all thirteen underside captures preserved. Broken captures show the wrong view; corrected captures show raised undersides."
+  },
+  "qualifications": [
+    "Tests invoke actual NetworkProcess events used by the unchanged F9/F10 bindings; physical key input and author acceptance are not asserted.",
+    "Before/after use the same #743 runtime. The #745 package differs only in two required release diagnostic strings, proven byte-for-byte; unchanged inventory continuity and performance tests were not repeated.",
+    "Prior explicit-angle visual captures remain valid. All author tests and art qualifications remain pending. No production schema, data, geometry, texture, performance or behavior change.",
+    "Native GZDoom4.14.2/Vulkan, Windows11, isolated development-IWAD room,1280x720, background unpaused,5%audio. No engine, IWAD, PK3, WAD or save committed."
+  ],
+  "files": {
+    "after/controls-0.cfg": "8c7a82642716724fb305a0c9eba34a6c651427c371e815a1ea1a1f51833bf57f",
+    "after/controls-1.cfg": "cf36cbea85e2f8806a2dd33070457c7966aafc4728057025d3f318d57199ae89",
+    "after/controls-2.cfg": "74ff6f5d6610ed8b97d436f4a17881cf8bbf02d0a843eabda23b411fdc412734",
+    "after/controls-3.cfg": "bcc3e58276ddaf9992e76a9bc1ee5b2059334566a5fb473d55da735e9ebce175",
+    "after/controls-4.cfg": "a5a885baf4c72048041af78ae7ee0e7a980b7f4611efcbfa17d523bcfdce3118",
+    "after/engine.log": "308fdfada11a16835c063ed16814c52989d31ac8895c9f60da10c99d1cf7a833",
+    "after/hides-0-underside.png": "777748238f95356771a0329db2f269cb35aa16557ecc98f0b78d7385b085b981",
+    "after/hides-1-underside.png": "47b99ed8a4d279181d9529517de33ee6d689714047f2aa408b029aceca959de2",
+    "after/hides-2-underside.png": "55dec398bc1ccc842f1c249848e37b042977743cc994b05deea2385671c8a304",
+    "after/hides-3-underside.png": "0017c2d51a6acc7981eb8e5bfd223847989fe0a9e714b387b45d1fe859ce2283",
+    "after/hides-observed.zs": "55f6fdaaa5f09c766d3d3003970a44e3d47b5b7453abb0dc0e29d5e2c097491d",
+    "after/hides-original.zs": "1e89a21a4cc62f497cf5a9df4441860a75ab76b52b2a0f5ae1e21d8e76833344",
+    "after/hygiene-0-underside.png": "d0ae1eb4e16871c55d14f67aacf09b366460e7d0bbd012e6fa9e50571447325c",
+    "after/hygiene-1-underside.png": "f1afd9a06ef1cc11f112fc87747dd54f67be4ae870303e5f51570025ecaf58a7",
+    "after/hygiene-2-underside.png": "3ad094d53754211d29267c6adca4f5fe9895de3cb9398e89947e84c1d240c569",
+    "after/hygiene-observed.zs": "a37772a736fa0d1cfd1a0cb700abec3389197e41bd03f5589da2b6f26611bea5",
+    "after/hygiene-original.zs": "51f798bc70644c670e5356f37af276c32df907eff6850ae9c2ed3a1599b724d4",
+    "after/MAPINFO.txt": "7ea385bcf03742a550a394775b3582deed651ed1b9ea75860848e43759f137b1",
+    "after/process.log": "3b97a92800fe9e6607e94e8cd02f5f105c134bbeea12fc7aca3de22ec10f0f43",
+    "after/RESULTS.json": "1dcf0070583e450d59fbe92453a0eee5bb7ba44b3a9b0e725bc7afbfb6824f5d",
+    "after/session.ini": "61178c14013d14792b87f6a7c4c11d041cb617d888e7c8da173c478af395e7da",
+    "after/textiles-0-underside.png": "d4dc4961366db4334ae7f61a2b179cbda6e04d3e655b03289772125ee12eeb46",
+    "after/textiles-1-underside.png": "71b027f74f4f436177646598b9e6afcdfbf087a23594ae4e94dd4fe8d049beca",
+    "after/textiles-2-underside.png": "c70cc3ae7fd7879a8c6f8d7e3127bbb88c094b88b793039de2d4da283715914e",
+    "after/textiles-3-underside.png": "8fc44abc5a27752aa288ce8b781b1d820cce29d42d2cfc684d7cea1967f61e2d",
+    "after/textiles-4-underside.png": "cd1a88270d8f8f512fd51a6b39ce62cb2b8f30d2ab19a60af305620597b35664",
+    "after/textiles-5-underside.png": "8ab597642b167071af9374921e01b35448b88c22353e44b53d39945a589f6dae",
+    "after/textiles-observed.zs": "662cd5c152e1a4f6b214861ae84c803e953523477fcd89d7ae5e4c7efc3a2f91",
+    "after/textiles-original.zs": "0e760c6a2bc5db0e0b3200a00e7228797f31b1f43b6930518af983b238171715",
+    "after/ZSCRIPT.txt": "5082d9c1cdb93c213100c0914cdc790999dbdc9ad734e29b3b74804075af771d",
+    "before/controls-0.cfg": "fc173bbe5a4d5da752b7fb0b75ac91d00bfc77f4f87ad857600a6b8be1c284cb",
+    "before/controls-1.cfg": "61ecd85d41e7c626024e1f01541091c5d2a48748f8efe12ccc752e4b179e5dea",
+    "before/controls-2.cfg": "b190093fd1bb8a5fdb646ce9a07757c1860e2895ecddb8deaf1a50c7f86bb5c0",
+    "before/controls-3.cfg": "36099f0700965ff16e6fc0fc68cb2381cce261372c14cb0bfdd4e298ab92976e",
+    "before/controls-4.cfg": "a5a885baf4c72048041af78ae7ee0e7a980b7f4611efcbfa17d523bcfdce3118",
+    "before/engine.log": "50cabbf0cadb6a7000e9e4e37cc2aefef20b345acb5b76add63b9bfbe606f389",
+    "before/hides-0-underside.png": "a176fdcb11c01ee0a40a86d7bb04000be506c7044a84c018543d01c8366a6714",
+    "before/hides-1-underside.png": "960502876010ba880e5191861f284007416fb70eb626bd002eb464e4fbf2fcf5",
+    "before/hides-2-underside.png": "024e272a14316bc2ad48260ce106fe7c0f2e20a5ddfa1485ae4921bbd7a2ae30",
+    "before/hides-3-underside.png": "189a9b2a54d1eb709aaeaf7ad084b86d0d4d1915baa8456be023077cb9250683",
+    "before/hides-observed.zs": "bd0f31f4d02b261a00a7cd7e95ec123c385eb3203702ecad10b244822784b43a",
+    "before/hides-original.zs": "11ca025879c23c084702ab7ce4ab56ba8258f576f1682da308437bc5536c0e29",
+    "before/hygiene-0-underside.png": "8f05646298334b8fdd66ebcfaa761b952b07db6e2734e58489b66c7eeed5f25f",
+    "before/hygiene-1-underside.png": "95e0d338c34be457f6fdff9a40167774265a0d0b5ee7e3da8d72d75f16972472",
+    "before/hygiene-2-underside.png": "54fea3ae3bb5f8c7da26b338b140472aa3947d707fafdf1e5dd354bf76341120",
+    "before/hygiene-observed.zs": "64e445eb82150b79a69b6c1ed640d34891170f59f0163923b13de0c57d804c3f",
+    "before/hygiene-original.zs": "3a479191b45cff213388cf5fd3d84b2afc65536c8371df7063b065719704b330",
+    "before/MAPINFO.txt": "7ea385bcf03742a550a394775b3582deed651ed1b9ea75860848e43759f137b1",
+    "before/process.log": "b693d3d413876d0ce5fb2560c5c30a5a5b0fed9b17158ed5f1cda716f6ba908b",
+    "before/RESULTS.json": "920886688257e005b79bf8a5fed19f522e8e4af2f7a6e7b5629b0ee6c85252a5",
+    "before/session.ini": "121dd81d9449edb641598e1ee6eeeecf6f401d2717a9de2b9d37ea14062fb58a",
+    "before/textiles-0-underside.png": "46166149848a49477df89c2237641f1ec25276d9bee42e75a17389afbec49efd",
+    "before/textiles-1-underside.png": "99a7b449c436f663af99e7dff615df0f05b5438070de8a72f48ec84d268d3b15",
+    "before/textiles-2-underside.png": "eec9931809415172eb1fb95c66818cf773bdeecb9f46e3c7d1beb060f9db49aa",
+    "before/textiles-3-underside.png": "d5dcaf42121f23383fa65ad88923766b5c4399d616254ee05dda181874fa3dc8",
+    "before/textiles-4-underside.png": "aab4765b5d781d4b22ea76bd38ba184375c78f8fd266da0cbd6540c13ad685cc",
+    "before/textiles-5-underside.png": "6d72f3316812afaa9b068acc66623dfbd6505c882d44fc75323e10117c5d7903",
+    "before/textiles-observed.zs": "cf0a0314703df18cb5392582670b2296d64927a62dc8c3194fe85d12dc9f7e34",
+    "before/textiles-original.zs": "76a5594e3f0421573517b8874f66a653cd73eb6d8faa562b08c099f6135ea8a4",
+    "before/ZSCRIPT.txt": "88b647471a6a08b1cf13adf45e29495ae2c27e0535f6af7e0fcd5e75c034e763",
+    "build.log": "f3525625358e76cfa57be84e86c91b665a612d20292930b3bae8bafa69fafbb3",
+    "validation-final.json": "4b58f1ba66c0ad6895c5242809886b98cbd13ab3cbd9296b17627fbf99004c6e"
+  },
+  "project_validation_passed": true
+}

@@ -4,6 +4,25 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-245 - Direct view captures do not verify interactive navigation
+
+Status/evidence: ENGINE-OBSERVED and STATIC-VERIFIED, #745, 2026-11-14.
+Affected baseline:81d0724c18433866b10d4b85c8d8331d021dc237, diagnostic
+hide/textile/hygiene fixtures only. GZDoom4.14.2/Vulkan, Windows11,
+isolated development-IWAD room. Explicit-angle captures reached the underside,
+but copied F10 chains compared their final angle with60,80 or30 instead of270.
+The keyboard event therefore returned to90 before reaching the raised view.
+
+Probe the actual navigation event code in addition to direct camera views.
+Across all13 designs, check F9 selection/wrap and the full F10 sequence
+90->160->225->270->0->90, active camera, gravity flag and actual raised/floor
+position. Inject observation only and preserve control statements byte-exact.
+Original sources reproduce26 failures in78 checks; corrected sources pass78.
+Inspect representative native before/after views. This proves event behavior,
+not physical key input or author visual acceptance. Existing direct-angle
+captures and pending author checks remain valid. Reproduction/evidence:
+assets/validation_v5_17_51/run_review_controls.py and evidence/SUMMARY.json.
+
 ## CA-KP-244 - Closed container and fill meshes can still intersect visibly
 
 Status/evidence: STATIC-VERIFIED and ENGINE-OBSERVED, #743, 2026-11-14.

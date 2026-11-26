@@ -1,0 +1,5 @@
+[
+  {"family":"hides","fixture":"assets/validation_v5_17_44/hide_drops.zs","marker":"ca731","handler":"CA731HideEvents"},
+  {"family":"textiles","fixture":"assets/validation_v5_17_45/textile_drops.zs","marker":"ca733","handler":"CA733TextileEvents"},
+  {"family":"hygiene","fixture":"assets/validation_v5_17_49/hygiene_drops.zs","marker":"ca741","handler":"CA741HygieneEvents"}
+]

@@ -1,6 +1,29 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.50** - 2026-11-14.
+Documentation version: **5.17.51** - 2026-11-14.
+
+## 5.17.51 - Restore review-fixture underside controls (#745)
+
+The F10 event chains for hides (#731), textiles (#733) and hygiene (#741)
+used60,80 and30 instead of270 as their terminal rotation comparison. They
+skipped the raised underside during interactive cycling. The three diagnostic
+constants now use270; production art, gameplay and key bindings are unchanged.
+Earlier explicit-angle captures remain valid.
+
+One native regression probe preserves the original event code and injects
+observation only. It cycles all13 designs through their actual F9/F10 events,
+checking index, angle, active camera and raised/grounded state. The original
+sources reproduce26 failures across78 checks; the corrected sources pass all78.
+Representative before/after captures from each family were inspected, and all
+13 underside captures per run are retained. This tests events used by the keys,
+not physical keyboard input or author acceptance.
+
+Both runs use the same #743 package. Every18,471 entry of the #745 package
+matches src; only two required release diagnostic strings differ from #743.
+No unchanged continuity or performance tests were repeated. Evidence:
+assets/validation_v5_17_51/evidence/SUMMARY.json. The three existing author
+checks retain their original IDs and versions, with corrected F10 instructions.
+All visual and ordinary inventory/crafting/hygiene acceptance remains pending.
 
 ## 5.17.50 - Native kitchen ingredient drops (#743, parent #647)
 

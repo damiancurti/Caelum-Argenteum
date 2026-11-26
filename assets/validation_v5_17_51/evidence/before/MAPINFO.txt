@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA731HideEvents","CA733TextileEvents","CA741HygieneEvents" }
+map CA455V "Review controls" { sky1="CABASKY",0 nointermission }

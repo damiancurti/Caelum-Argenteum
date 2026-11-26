@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.50** - 2026-11-14.
+Documentation version: **5.17.51** - 2026-11-14.
+
+## #745 - Review-fixture underside controls (5.17.51)
+
+Corrected terminal rotation constants in hide, textile and hygiene fixtures.
+All78 native event/control checks pass after reproducing26 baseline failures.
+Existing CA731-HIDE-DROPS-01, CA733-TEXTILE-DROPS-01 and CA741-HYGIENE-DROPS-01
+retain author review; their F10 instructions now include the fixed cycle.
+No production art, gameplay or save change. Other batch work remains separate.
 
 ## #743 - Kitchen ingredient world drops (5.17.50)
 
