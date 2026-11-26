@@ -1,8 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.77** - 2026-11-15.
+Documentation version: **5.17.78** - 2026-11-15.
 
-## 5.17.77 - Two apparition candidates; UV follow-up remains (#797/#799)
+## 5.17.78 - UV follow-up implemented; full batch remains (#799)
+
+The #797 follow-up is implemented: nine old sweep grids corrected, shared guard
+added, serialized native UVs checked and563 native continuity/action/gallery
+assertions passed. CA799-UV-01 remains for the final consolidated review. Continue
+remaining creature/character models, modular fitting, regional inspection and
+V5.16 progression/performance work; do not present this repair as batch completion.
+
+## 5.17.78 - Two apparition candidates; UV follow-up remains (#797/#799)
 
 Mulanima and Chancho de Lata have distinct native models with closed anatomy,
 deterministic exports and364 native continuity/action/loot assertions. Evidence:

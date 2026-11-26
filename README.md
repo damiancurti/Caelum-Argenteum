@@ -6,10 +6,12 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.77.** Obtain and update the complete repository,
+**Current release: 5.17.78.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
-#797 adds native Mulanima and Chancho de Lata candidates. Their checks pass; #799 retains an atlas-cell repair for earlier models before consolidated author testing.
+#799 repairs nine Ao Ao/Kasogonaga texture-repeat curves and adds a validation guard. All native checks pass; consolidated author review remains pending.
+
+#797 adds native Mulanima and Chancho de Lata candidates. Their checks pass; the related atlas-cell repair is included under #799. Consolidated author testing remains pending.
 
 #795 adds a native Kasogonaga candidate; geometry, save and combat checks pass. Consolidated author review remains pending.
 

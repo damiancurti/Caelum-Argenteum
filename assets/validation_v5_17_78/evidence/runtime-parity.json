@@ -1,0 +1,13 @@
+{
+  "sha256": "9baec78a48d422cf9a947640b289c2af27915bcee624f166b5fdca16b3fac828",
+  "baseline_sha256": "7ad0cc7fa0027113ce87bb1d8b1e2e45365f1b3c96a522428f621f4ff6355d2a",
+  "source_entries": 18580,
+  "exact_source_bytes": true,
+  "changed_resources": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs",
+    "models/caelum/folklore/kasogonaga/kasogonaga.md3",
+    "models/caelum/folklore/quadrupeds/ao_ao.md3"
+  ],
+  "all_other_runtime_bytes_identical": true
+}

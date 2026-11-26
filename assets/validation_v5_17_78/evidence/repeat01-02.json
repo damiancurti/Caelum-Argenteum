@@ -1,0 +1,31 @@
+{
+  "files": 21,
+  "all_byte_identical": true,
+  "sha256": {
+    "quadrupeds": {
+      "manifest.json": "78a01710ffdd7f250fe8dc8bc2dfb2c2f8f1845165e63f9f5b7b1ba79385dcb8",
+      "preview.pk3": "bdf3ada389cdcd0ed7d9730588179483853df6d12ac163ede7c97eb5b16ab86a",
+      "editable/ao_ao.mtl": "304e75885b824cce51e263a7b9a2606e5a9f1bc7bbd4f872bfbd79d8292d26cd",
+      "editable/ao_ao.obj": "9371e8b74aacb86d89311c797fcaff2719d1a0a792a1558538fec3377b5cf508",
+      "editable/familiar.mtl": "304e75885b824cce51e263a7b9a2606e5a9f1bc7bbd4f872bfbd79d8292d26cd",
+      "editable/familiar.obj": "7cde6182a48b4d6eb1abd749d06c5819985bae60ed6185fa2584783cd6c78f30",
+      "caelum/data/quadruped_combat.modeldef": "16ea502cb3c644b0f7689ef489956acace7b25b83a16de0682d52f8644251923",
+      "models/caelum/folklore/quadrupeds/ao_ao.md3": "81b4ea57a1d0f7eda744216dfb055a179df67b44de380ad8c882a17c918e68c9",
+      "models/caelum/folklore/quadrupeds/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+      "models/caelum/folklore/quadrupeds/familiar.md3": "a6a02ce9ed27bee7c4a8a35c6fe28cc41187d6932604d555de486d019e37b6aa",
+      "models/caelum/folklore/quadrupeds/iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+      "models/caelum/folklore/quadrupeds/materials.png": "b63c9fa16efda5e0ffb4f30dde62eb3dc1ff4d76be178c30c3c024a578c3bb5c"
+    },
+    "kasogonaga": {
+      "manifest.json": "9108212004b50a8a2c77306bd49f0eb9eb251259aba3d610bcbee92e8176662b",
+      "preview.pk3": "a2e1ebe411226780680b6350703e097841c61657f6a10ec9effc0ddeba494aaf",
+      "editable/kasogonaga.mtl": "98efeb22c6159987d98f313d279aea010029266e1376acddd4997cc724d32369",
+      "editable/kasogonaga.obj": "08eb186f2a5929b6f89790f25934b1fe8c7bd191e3da2b01901129812be47cda",
+      "caelum/data/kasogonaga_combat.modeldef": "6dbe0bd6b1692594ac9fdcf5d076b053dd4b6ca196136d8b115eabd98df010e0",
+      "models/caelum/folklore/kasogonaga/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+      "models/caelum/folklore/kasogonaga/iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+      "models/caelum/folklore/kasogonaga/kasogonaga.md3": "0e407b3e505e126e205d2b1b1a43b4419c4cc9a1970f1c578095a0b21967f4d2",
+      "models/caelum/folklore/kasogonaga/materials.png": "c4b9a4c7c72d9ae69177314580e2e6cdba1c861317e2e13ddd7c55bbe8afaac0"
+    }
+  }
+}
