@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.57** - 2026-11-15.
+Documentation version: **5.17.58** - 2026-11-15.
+
+## 5.17.58 - Native scepter/censer quality variants (#759)
+
+Twelve native weapon bindings reuse two exact #755 meshes and add four
+quality variants with existing textures. Sixteen deterministic outputs,
+closed geometry, 1,011 continuity checks and 236 final visual/control checks
+pass. Thirty native detail views were inspected; ASSETS records the added
+reference bands, art qualifications and bounded presentation measurements.
+CA759-MAGIC-QUALITY-DROPS-01 retains author review. Other weapons, characters,
+modular equipment and V5.16 campaign remain incomplete.
 
 ## 5.17.57 - Reused magical weapon drop models (#757)
 

@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.57** - 2026-11-15.
+Documentation version: **5.17.58** - 2026-11-15.
+
+## #759 - Scepter/censer quality drops (5.17.58)
+
+S479 ABC/JKL now have explicit native models in both weapon classes. Tier-one
+meshes and runtime textures are reused unchanged; four quality variants
+follow owned references. Sixteen repeated outputs, 1,011 continuity and
+236 final visual/control assertions pass. All thirty detail views were
+inspected. CA759-MAGIC-QUALITY-DROPS-01 retains author art and ordinary gameplay
+acceptance. Effigies and physical weapons remain separate. The #736 modular
+visual proposals, remaining bestiary and V5.16 campaign work remain pending.
 
 ## #757 - Magical weapon drop bindings (5.17.57)
 

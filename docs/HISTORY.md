@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.57** - 2026-11-15.
+Documentation version: **5.17.58** - 2026-11-15.
+
+## 5.17.58 - Scepter/censer quality models (#759, 2026-11-15)
+
+Reused exact #755 tier-one geometry and existing atlases; added four quality
+variants and twelve exact weapon bindings. Native inspection prompted the
+reference foot/knob bands after censer tiers I/III appeared too similar.
+Sixteen deterministic outputs, closed geometry, 1,011 installed continuity
+checks and 236 final visual/control checks pass. Thirty final detail views
+and the overview were inspected. ASSETS records presentation and art limits.
+Evidence: assets/validation_v5_17_58/evidence/SUMMARY.json.
+CA759-MAGIC-QUALITY-DROPS-01 originates here and remains pending. No author
+check was accepted or removed. Broader 3D and V5.16 work remains incomplete.
 
 ## 5.17.57 - Reused magical weapon drops (#757, 2026-11-15)
 

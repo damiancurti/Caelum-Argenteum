@@ -1,0 +1,21 @@
+{
+  "byte_identical": true,
+  "files": {
+    "manifest.json": "8b2469591707704fc8e37ded4e5badbefc62782848b135915d4e08a12e73ded1",
+    "preview.pk3": "00118d31c3e780828938a3af5aedbbef5bc873ec30341a2b66642a9d6b3143eb",
+    "editable/censer.obj": "0125aa0cc2db63e83d6ee16b9de7cdff35b4cb6fb027b5941815790db139224f",
+    "editable/censer_t2.obj": "10a99228c5aac1f240d6ad91ce42621a732c3cee6627df98698f92c5f626678f",
+    "editable/censer_t3.obj": "baeb04efac9e8f2490ce852bbd3dc42e747436f6bf428fb2a245d4e58aa171fe",
+    "editable/magic_tiers.mtl": "823f707c5a9487c5855b602fc76d19a49dbfdde0d022d7fb64ebab069b3ae28a",
+    "editable/scepter.obj": "d9d025ab552461e132d44670c4b7038fb52391c419449c099474de72030bf571",
+    "editable/scepter_t2.obj": "70a834cc4f75fd0ee8085d55e8e1eec52e1e765ebf3b3f0f3f3336af8387ecee",
+    "editable/scepter_t3.obj": "669e3f59e3ef4a16b3ced3d8aa27fd821dcb5af54aa043fe4af4b30778941270",
+    "caelum/data/inventory_magic_tiers.modeldef": "7f948ea46f13a4e39e9d297eebe1abf645d2608eb3fd40fe566c786a0c382433",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "models/caelum/inventory/magic_bases/censer_t2.md3": "2ca309282c4214e822676a2a70c9bdd3657b303857dc2bfe583ccb4e1e952731",
+    "models/caelum/inventory/magic_bases/censer_t3.md3": "58bf3bf3d16e851178ac623134bdbe344b8b253f06bbd6fc63bd8045a9222e51",
+    "models/caelum/inventory/magic_bases/scepter_t2.md3": "0636124db1bfc2f9e2ac5a967968f409d56355780ca8d15807c543609ea8117b",
+    "models/caelum/inventory/magic_bases/scepter_t3.md3": "37f4cbe9cdab87dd16194185bd4501dae24b8a3fe4257cec781aae86fd3eaa1d"
+  }
+}

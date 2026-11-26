@@ -1,0 +1,12 @@
+Model CaelumWeaponPickup { Path "models/caelum/inventory/magic_bases" Model 0 "scepter.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 A 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/magic_bases" Model 0 "scepter.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/magic_bases" Model 0 "scepter_t2.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 B 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/magic_bases" Model 0 "scepter_t2.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 B 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/magic_bases" Model 0 "scepter_t3.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 C 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/magic_bases" Model 0 "scepter_t3.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 C 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/magic_bases" Model 0 "censer.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 J 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/magic_bases" Model 0 "censer.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 J 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/magic_bases" Model 0 "censer_t2.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 K 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/magic_bases" Model 0 "censer_t2.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 K 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/magic_bases" Model 0 "censer_t3.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 L 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/magic_bases" Model 0 "censer_t3.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 L 0 0 }
