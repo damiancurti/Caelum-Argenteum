@@ -1,0 +1,564 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-14 02:43:53
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-692/build/issue692-gallery01.pk3, 18313 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-694/build/issue694-model04/preview.pk3, 11 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-694/build/issue694-visual02/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2493.20 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA694 PASS footwear 0 native pickup
+CA694 PASS footwear 0 exact acquired instance
+CA694 PASS footwear 0 assigned persistent identity
+CA694 PASS footwear 0 Box excludes wet carried mass
+CA694 PASS footwear 0 temporary quest drop guard
+CA694 PASS footwear 0 native toss
+CA694 PASS footwear 0 exact instance leaves inventory
+CA694 PASS footwear 1 native pickup
+CA694 PASS footwear 1 exact acquired instance
+CA694 PASS footwear 1 assigned persistent identity
+CA694 PASS footwear 1 Box excludes wet carried mass
+CA694 PASS footwear 1 temporary quest drop guard
+CA694 PASS footwear 1 native toss
+CA694 PASS footwear 1 exact instance leaves inventory
+CA694 PASS footwear 2 native pickup
+CA694 PASS footwear 2 exact acquired instance
+CA694 PASS footwear 2 assigned persistent identity
+CA694 PASS footwear 2 Box excludes wet carried mass
+CA694 PASS footwear 2 temporary quest drop guard
+CA694 PASS footwear 2 native toss
+CA694 PASS footwear 2 exact instance leaves inventory
+CA694 PASS footwear 3 native pickup
+CA694 PASS footwear 3 exact acquired instance
+CA694 PASS footwear 3 assigned persistent identity
+CA694 PASS footwear 3 Box excludes wet carried mass
+CA694 PASS footwear 3 temporary quest drop guard
+CA694 PASS footwear 3 native toss
+CA694 PASS footwear 3 exact instance leaves inventory
+CA694 PASS footwear 4 native pickup
+CA694 PASS footwear 4 exact acquired instance
+CA694 PASS footwear 4 assigned persistent identity
+CA694 PASS footwear 4 Box excludes wet carried mass
+CA694 PASS footwear 4 temporary quest drop guard
+CA694 PASS footwear 4 native toss
+CA694 PASS footwear 4 exact instance leaves inventory
+CA694 PASS footwear 5 native pickup
+CA694 PASS footwear 5 exact acquired instance
+CA694 PASS footwear 5 assigned persistent identity
+CA694 PASS footwear 5 Box excludes wet carried mass
+CA694 PASS footwear 5 temporary quest drop guard
+CA694 PASS footwear 5 native toss
+CA694 PASS footwear 5 exact instance leaves inventory
+CA694 PASS footwear 6 native pickup
+CA694 PASS footwear 6 exact acquired instance
+CA694 PASS footwear 6 assigned persistent identity
+CA694 PASS footwear 6 Box excludes wet carried mass
+CA694 PASS footwear 6 temporary quest drop guard
+CA694 PASS footwear 6 native toss
+CA694 PASS footwear 6 exact instance leaves inventory
+CA694 PASS footwear 7 native pickup
+CA694 PASS footwear 7 exact acquired instance
+CA694 PASS footwear 7 assigned persistent identity
+CA694 PASS footwear 7 Box excludes wet carried mass
+CA694 PASS footwear 7 temporary quest drop guard
+CA694 PASS footwear 7 native toss
+CA694 PASS footwear 7 exact instance leaves inventory
+CA694 PASS footwear 8 native pickup
+CA694 PASS footwear 8 exact acquired instance
+CA694 PASS footwear 8 assigned persistent identity
+CA694 PASS footwear 8 Box excludes wet carried mass
+CA694 PASS footwear 8 temporary quest drop guard
+CA694 PASS footwear 8 native toss
+CA694 PASS footwear 8 exact instance leaves inventory
+CA694 PASS footwear 9 native pickup
+CA694 PASS footwear 9 exact acquired instance
+CA694 PASS footwear 9 assigned persistent identity
+CA694 PASS footwear 9 Box excludes wet carried mass
+CA694 PASS footwear 9 temporary quest drop guard
+CA694 PASS footwear 9 native toss
+CA694 PASS footwear 9 exact instance leaves inventory
+CA694 PASS footwear 10 native pickup
+CA694 PASS footwear 10 exact acquired instance
+CA694 PASS footwear 10 assigned persistent identity
+CA694 PASS footwear 10 Box excludes wet carried mass
+CA694 PASS footwear 10 temporary quest drop guard
+CA694 PASS footwear 10 native toss
+CA694 PASS footwear 10 exact instance leaves inventory
+CA694 PASS footwear 11 native pickup
+CA694 PASS footwear 11 exact acquired instance
+CA694 PASS footwear 11 assigned persistent identity
+CA694 PASS footwear 11 Box excludes wet carried mass
+CA694 PASS footwear 11 temporary quest drop guard
+CA694 PASS footwear 11 native toss
+CA694 PASS footwear 11 exact instance leaves inventory
+CA694 PASS footwear 12 native pickup
+CA694 PASS footwear 12 exact acquired instance
+CA694 PASS footwear 12 assigned persistent identity
+CA694 PASS footwear 12 Box excludes wet carried mass
+CA694 PASS footwear 12 temporary quest drop guard
+CA694 PASS footwear 12 native toss
+CA694 PASS footwear 12 exact instance leaves inventory
+CA694 PASS footwear 13 native pickup
+CA694 PASS footwear 13 exact acquired instance
+CA694 PASS footwear 13 assigned persistent identity
+CA694 PASS footwear 13 Box excludes wet carried mass
+CA694 PASS footwear 13 temporary quest drop guard
+CA694 PASS footwear 13 native toss
+CA694 PASS footwear 13 exact instance leaves inventory
+CA694 PASS footwear 14 native pickup
+CA694 PASS footwear 14 exact acquired instance
+CA694 PASS footwear 14 assigned persistent identity
+CA694 PASS footwear 14 Box excludes wet carried mass
+CA694 PASS footwear 14 temporary quest drop guard
+CA694 PASS footwear 14 native toss
+CA694 PASS footwear 14 exact instance leaves inventory
+CA694 PASS footwear 15 native pickup
+CA694 PASS footwear 15 exact acquired instance
+CA694 PASS footwear 15 assigned persistent identity
+CA694 PASS footwear 15 Box excludes wet carried mass
+CA694 PASS footwear 15 temporary quest drop guard
+CA694 PASS footwear 15 native toss
+CA694 PASS footwear 15 exact instance leaves inventory
+CA694 PASS footwear 16 native pickup
+CA694 PASS footwear 16 exact acquired instance
+CA694 PASS footwear 16 assigned persistent identity
+CA694 PASS footwear 16 Box excludes wet carried mass
+CA694 PASS footwear 16 temporary quest drop guard
+CA694 PASS footwear 16 native toss
+CA694 PASS footwear 16 exact instance leaves inventory
+CA694 PASS footwear 17 native pickup
+CA694 PASS footwear 17 exact acquired instance
+CA694 PASS footwear 17 assigned persistent identity
+CA694 PASS footwear 17 Box excludes wet carried mass
+CA694 PASS footwear 17 temporary quest drop guard
+CA694 PASS footwear 17 native toss
+CA694 PASS footwear 17 exact instance leaves inventory
+CA694 PASS footwear 18 native pickup
+CA694 PASS footwear 18 exact acquired instance
+CA694 PASS footwear 18 assigned persistent identity
+CA694 PASS footwear 18 Box excludes wet carried mass
+CA694 PASS footwear 18 temporary quest drop guard
+CA694 PASS footwear 18 native toss
+CA694 PASS footwear 18 exact instance leaves inventory
+CA694 PASS footwear 19 native pickup
+CA694 PASS footwear 19 exact acquired instance
+CA694 PASS footwear 19 assigned persistent identity
+CA694 PASS footwear 19 Box excludes wet carried mass
+CA694 PASS footwear 19 temporary quest drop guard
+CA694 PASS footwear 19 native toss
+CA694 PASS footwear 19 exact instance leaves inventory
+CA694 PASS footwear 20 native pickup
+CA694 PASS footwear 20 exact acquired instance
+CA694 PASS footwear 20 assigned persistent identity
+CA694 PASS footwear 20 Box excludes wet carried mass
+CA694 PASS footwear 20 temporary quest drop guard
+CA694 PASS footwear 20 native toss
+CA694 PASS footwear 20 exact instance leaves inventory
+CA694 PASS footwear 21 native pickup
+CA694 PASS footwear 21 exact acquired instance
+CA694 PASS footwear 21 assigned persistent identity
+CA694 PASS footwear 21 Box excludes wet carried mass
+CA694 PASS footwear 21 temporary quest drop guard
+CA694 PASS footwear 21 native toss
+CA694 PASS footwear 21 exact instance leaves inventory
+CA694 PASS footwear 22 native pickup
+CA694 PASS footwear 22 exact acquired instance
+CA694 PASS footwear 22 assigned persistent identity
+CA694 PASS footwear 22 Box excludes wet carried mass
+CA694 PASS footwear 22 temporary quest drop guard
+CA694 PASS footwear 22 native toss
+CA694 PASS footwear 22 exact instance leaves inventory
+CA694 PASS footwear 23 native pickup
+CA694 PASS footwear 23 exact acquired instance
+CA694 PASS footwear 23 assigned persistent identity
+CA694 PASS footwear 23 Box excludes wet carried mass
+CA694 PASS footwear 23 temporary quest drop guard
+CA694 PASS footwear 23 native toss
+CA694 PASS footwear 23 exact instance leaves inventory
+CA694 PASS footwear 24 native pickup
+CA694 PASS footwear 24 exact acquired instance
+CA694 PASS footwear 24 assigned persistent identity
+CA694 PASS footwear 24 Box excludes wet carried mass
+CA694 PASS footwear 24 temporary quest drop guard
+CA694 PASS footwear 24 native toss
+CA694 PASS footwear 24 exact instance leaves inventory
+Game saved.
+CA694 PASS five footwear types in all native sizes
+CA694 PASS footwear 0 saved native class
+CA694 PASS footwear 0 independent world instance
+CA694 PASS footwear 0 original type, slot and kind
+CA694 PASS footwear 0 original native size
+CA694 PASS footwear 0 persistent unique identity
+CA694 PASS footwear 0 existing wear and water retained
+CA694 PASS footwear 0 unchanged collision, scale and floor contact
+CA694 PASS footwear 0 original icon and dynamic sprite
+CA694 PASS footwear 0 native dry and wet mass
+CA694 PASS footwear 0 provenance survives copy and save
+CA694 PASS footwear 0 unequipped world flags
+CA694 PASS footwear 0 fixed acquired size retained
+CA694 PASS footwear 1 saved native class
+CA694 PASS footwear 1 independent world instance
+CA694 PASS footwear 1 original type, slot and kind
+CA694 PASS footwear 1 original native size
+CA694 PASS footwear 1 persistent unique identity
+CA694 PASS footwear 1 existing wear and water retained
+CA694 PASS footwear 1 unchanged collision, scale and floor contact
+CA694 PASS footwear 1 original icon and dynamic sprite
+CA694 PASS footwear 1 native dry and wet mass
+CA694 PASS footwear 1 provenance survives copy and save
+CA694 PASS footwear 1 unequipped world flags
+CA694 PASS footwear 1 fixed acquired size retained
+CA694 PASS footwear 2 saved native class
+CA694 PASS footwear 2 independent world instance
+CA694 PASS footwear 2 original type, slot and kind
+CA694 PASS footwear 2 original native size
+CA694 PASS footwear 2 persistent unique identity
+CA694 PASS footwear 2 existing wear and water retained
+CA694 PASS footwear 2 unchanged collision, scale and floor contact
+CA694 PASS footwear 2 original icon and dynamic sprite
+CA694 PASS footwear 2 native dry and wet mass
+CA694 PASS footwear 2 provenance survives copy and save
+CA694 PASS footwear 2 unequipped world flags
+CA694 PASS footwear 2 fixed acquired size retained
+CA694 PASS footwear 3 saved native class
+CA694 PASS footwear 3 independent world instance
+CA694 PASS footwear 3 original type, slot and kind
+CA694 PASS footwear 3 original native size
+CA694 PASS footwear 3 persistent unique identity
+CA694 PASS footwear 3 existing wear and water retained
+CA694 PASS footwear 3 unchanged collision, scale and floor contact
+CA694 PASS footwear 3 original icon and dynamic sprite
+CA694 PASS footwear 3 native dry and wet mass
+CA694 PASS footwear 3 provenance survives copy and save
+CA694 PASS footwear 3 unequipped world flags
+CA694 PASS footwear 3 fixed acquired size retained
+CA694 PASS footwear 4 saved native class
+CA694 PASS footwear 4 independent world instance
+CA694 PASS footwear 4 original type, slot and kind
+CA694 PASS footwear 4 original native size
+CA694 PASS footwear 4 persistent unique identity
+CA694 PASS footwear 4 existing wear and water retained
+CA694 PASS footwear 4 unchanged collision, scale and floor contact
+CA694 PASS footwear 4 original icon and dynamic sprite
+CA694 PASS footwear 4 native dry and wet mass
+CA694 PASS footwear 4 provenance survives copy and save
+CA694 PASS footwear 4 unequipped world flags
+CA694 PASS footwear 4 fixed acquired size retained
+CA694 PASS footwear 5 saved native class
+CA694 PASS footwear 5 independent world instance
+CA694 PASS footwear 5 original type, slot and kind
+CA694 PASS footwear 5 original native size
+CA694 PASS footwear 5 persistent unique identity
+CA694 PASS footwear 5 existing wear and water retained
+CA694 PASS footwear 5 unchanged collision, scale and floor contact
+CA694 PASS footwear 5 original icon and dynamic sprite
+CA694 PASS footwear 5 native dry and wet mass
+CA694 PASS footwear 5 provenance survives copy and save
+CA694 PASS footwear 5 unequipped world flags
+CA694 PASS footwear 5 fixed acquired size retained
+CA694 PASS footwear 6 saved native class
+CA694 PASS footwear 6 independent world instance
+CA694 PASS footwear 6 original type, slot and kind
+CA694 PASS footwear 6 original native size
+CA694 PASS footwear 6 persistent unique identity
+CA694 PASS footwear 6 existing wear and water retained
+CA694 PASS footwear 6 unchanged collision, scale and floor contact
+CA694 PASS footwear 6 original icon and dynamic sprite
+CA694 PASS footwear 6 native dry and wet mass
+CA694 PASS footwear 6 provenance survives copy and save
+CA694 PASS footwear 6 unequipped world flags
+CA694 PASS footwear 6 fixed acquired size retained
+CA694 PASS footwear 7 saved native class
+CA694 PASS footwear 7 independent world instance
+CA694 PASS footwear 7 original type, slot and kind
+CA694 PASS footwear 7 original native size
+CA694 PASS footwear 7 persistent unique identity
+CA694 PASS footwear 7 existing wear and water retained
+CA694 PASS footwear 7 unchanged collision, scale and floor contact
+CA694 PASS footwear 7 original icon and dynamic sprite
+CA694 PASS footwear 7 native dry and wet mass
+CA694 PASS footwear 7 provenance survives copy and save
+CA694 PASS footwear 7 unequipped world flags
+CA694 PASS footwear 7 fixed acquired size retained
+CA694 PASS footwear 8 saved native class
+CA694 PASS footwear 8 independent world instance
+CA694 PASS footwear 8 original type, slot and kind
+CA694 PASS footwear 8 original native size
+CA694 PASS footwear 8 persistent unique identity
+CA694 PASS footwear 8 existing wear and water retained
+CA694 PASS footwear 8 unchanged collision, scale and floor contact
+CA694 PASS footwear 8 original icon and dynamic sprite
+CA694 PASS footwear 8 native dry and wet mass
+CA694 PASS footwear 8 provenance survives copy and save
+CA694 PASS footwear 8 unequipped world flags
+CA694 PASS footwear 8 fixed acquired size retained
+CA694 PASS footwear 9 saved native class
+CA694 PASS footwear 9 independent world instance
+CA694 PASS footwear 9 original type, slot and kind
+CA694 PASS footwear 9 original native size
+CA694 PASS footwear 9 persistent unique identity
+CA694 PASS footwear 9 existing wear and water retained
+CA694 PASS footwear 9 unchanged collision, scale and floor contact
+CA694 PASS footwear 9 original icon and dynamic sprite
+CA694 PASS footwear 9 native dry and wet mass
+CA694 PASS footwear 9 provenance survives copy and save
+CA694 PASS footwear 9 unequipped world flags
+CA694 PASS footwear 9 fixed acquired size retained
+CA694 PASS footwear 10 saved native class
+CA694 PASS footwear 10 independent world instance
+CA694 PASS footwear 10 original type, slot and kind
+CA694 PASS footwear 10 original native size
+CA694 PASS footwear 10 persistent unique identity
+CA694 PASS footwear 10 existing wear and water retained
+CA694 PASS footwear 10 unchanged collision, scale and floor contact
+CA694 PASS footwear 10 original icon and dynamic sprite
+CA694 PASS footwear 10 native dry and wet mass
+CA694 PASS footwear 10 provenance survives copy and save
+CA694 PASS footwear 10 unequipped world flags
+CA694 PASS footwear 10 fixed acquired size retained
+CA694 PASS footwear 11 saved native class
+CA694 PASS footwear 11 independent world instance
+CA694 PASS footwear 11 original type, slot and kind
+CA694 PASS footwear 11 original native size
+CA694 PASS footwear 11 persistent unique identity
+CA694 PASS footwear 11 existing wear and water retained
+CA694 PASS footwear 11 unchanged collision, scale and floor contact
+CA694 PASS footwear 11 original icon and dynamic sprite
+CA694 PASS footwear 11 native dry and wet mass
+CA694 PASS footwear 11 provenance survives copy and save
+CA694 PASS footwear 11 unequipped world flags
+CA694 PASS footwear 11 fixed acquired size retained
+CA694 PASS footwear 12 saved native class
+CA694 PASS footwear 12 independent world instance
+CA694 PASS footwear 12 original type, slot and kind
+CA694 PASS footwear 12 original native size
+CA694 PASS footwear 12 persistent unique identity
+CA694 PASS footwear 12 existing wear and water retained
+CA694 PASS footwear 12 unchanged collision, scale and floor contact
+CA694 PASS footwear 12 original icon and dynamic sprite
+CA694 PASS footwear 12 native dry and wet mass
+CA694 PASS footwear 12 provenance survives copy and save
+CA694 PASS footwear 12 unequipped world flags
+CA694 PASS footwear 12 fixed acquired size retained
+CA694 PASS footwear 13 saved native class
+CA694 PASS footwear 13 independent world instance
+CA694 PASS footwear 13 original type, slot and kind
+CA694 PASS footwear 13 original native size
+CA694 PASS footwear 13 persistent unique identity
+CA694 PASS footwear 13 existing wear and water retained
+CA694 PASS footwear 13 unchanged collision, scale and floor contact
+CA694 PASS footwear 13 original icon and dynamic sprite
+CA694 PASS footwear 13 native dry and wet mass
+CA694 PASS footwear 13 provenance survives copy and save
+CA694 PASS footwear 13 unequipped world flags
+CA694 PASS footwear 13 fixed acquired size retained
+CA694 PASS footwear 14 saved native class
+CA694 PASS footwear 14 independent world instance
+CA694 PASS footwear 14 original type, slot and kind
+CA694 PASS footwear 14 original native size
+CA694 PASS footwear 14 persistent unique identity
+CA694 PASS footwear 14 existing wear and water retained
+CA694 PASS footwear 14 unchanged collision, scale and floor contact
+CA694 PASS footwear 14 original icon and dynamic sprite
+CA694 PASS footwear 14 native dry and wet mass
+CA694 PASS footwear 14 provenance survives copy and save
+CA694 PASS footwear 14 unequipped world flags
+CA694 PASS footwear 14 fixed acquired size retained
+CA694 PASS footwear 15 saved native class
+CA694 PASS footwear 15 independent world instance
+CA694 PASS footwear 15 original type, slot and kind
+CA694 PASS footwear 15 original native size
+CA694 PASS footwear 15 persistent unique identity
+CA694 PASS footwear 15 existing wear and water retained
+CA694 PASS footwear 15 unchanged collision, scale and floor contact
+CA694 PASS footwear 15 original icon and dynamic sprite
+CA694 PASS footwear 15 native dry and wet mass
+CA694 PASS footwear 15 provenance survives copy and save
+CA694 PASS footwear 15 unequipped world flags
+CA694 PASS footwear 15 fixed acquired size retained
+CA694 PASS footwear 16 saved native class
+CA694 PASS footwear 16 independent world instance
+CA694 PASS footwear 16 original type, slot and kind
+CA694 PASS footwear 16 original native size
+CA694 PASS footwear 16 persistent unique identity
+CA694 PASS footwear 16 existing wear and water retained
+CA694 PASS footwear 16 unchanged collision, scale and floor contact
+CA694 PASS footwear 16 original icon and dynamic sprite
+CA694 PASS footwear 16 native dry and wet mass
+CA694 PASS footwear 16 provenance survives copy and save
+CA694 PASS footwear 16 unequipped world flags
+CA694 PASS footwear 16 fixed acquired size retained
+CA694 PASS footwear 17 saved native class
+CA694 PASS footwear 17 independent world instance
+CA694 PASS footwear 17 original type, slot and kind
+CA694 PASS footwear 17 original native size
+CA694 PASS footwear 17 persistent unique identity
+CA694 PASS footwear 17 existing wear and water retained
+CA694 PASS footwear 17 unchanged collision, scale and floor contact
+CA694 PASS footwear 17 original icon and dynamic sprite
+CA694 PASS footwear 17 native dry and wet mass
+CA694 PASS footwear 17 provenance survives copy and save
+CA694 PASS footwear 17 unequipped world flags
+CA694 PASS footwear 17 fixed acquired size retained
+CA694 PASS footwear 18 saved native class
+CA694 PASS footwear 18 independent world instance
+CA694 PASS footwear 18 original type, slot and kind
+CA694 PASS footwear 18 original native size
+CA694 PASS footwear 18 persistent unique identity
+CA694 PASS footwear 18 existing wear and water retained
+CA694 PASS footwear 18 unchanged collision, scale and floor contact
+CA694 PASS footwear 18 original icon and dynamic sprite
+CA694 PASS footwear 18 native dry and wet mass
+CA694 PASS footwear 18 provenance survives copy and save
+CA694 PASS footwear 18 unequipped world flags
+CA694 PASS footwear 18 fixed acquired size retained
+CA694 PASS footwear 19 saved native class
+CA694 PASS footwear 19 independent world instance
+CA694 PASS footwear 19 original type, slot and kind
+CA694 PASS footwear 19 original native size
+CA694 PASS footwear 19 persistent unique identity
+CA694 PASS footwear 19 existing wear and water retained
+CA694 PASS footwear 19 unchanged collision, scale and floor contact
+CA694 PASS footwear 19 original icon and dynamic sprite
+CA694 PASS footwear 19 native dry and wet mass
+CA694 PASS footwear 19 provenance survives copy and save
+CA694 PASS footwear 19 unequipped world flags
+CA694 PASS footwear 19 fixed acquired size retained
+CA694 PASS footwear 20 saved native class
+CA694 PASS footwear 20 independent world instance
+CA694 PASS footwear 20 original type, slot and kind
+CA694 PASS footwear 20 original native size
+CA694 PASS footwear 20 persistent unique identity
+CA694 PASS footwear 20 existing wear and water retained
+CA694 PASS footwear 20 unchanged collision, scale and floor contact
+CA694 PASS footwear 20 original icon and dynamic sprite
+CA694 PASS footwear 20 native dry and wet mass
+CA694 PASS footwear 20 provenance survives copy and save
+CA694 PASS footwear 20 unequipped world flags
+CA694 PASS footwear 20 fixed acquired size retained
+CA694 PASS footwear 21 saved native class
+CA694 PASS footwear 21 independent world instance
+CA694 PASS footwear 21 original type, slot and kind
+CA694 PASS footwear 21 original native size
+CA694 PASS footwear 21 persistent unique identity
+CA694 PASS footwear 21 existing wear and water retained
+CA694 PASS footwear 21 unchanged collision, scale and floor contact
+CA694 PASS footwear 21 original icon and dynamic sprite
+CA694 PASS footwear 21 native dry and wet mass
+CA694 PASS footwear 21 provenance survives copy and save
+CA694 PASS footwear 21 unequipped world flags
+CA694 PASS footwear 21 fixed acquired size retained
+CA694 PASS footwear 22 saved native class
+CA694 PASS footwear 22 independent world instance
+CA694 PASS footwear 22 original type, slot and kind
+CA694 PASS footwear 22 original native size
+CA694 PASS footwear 22 persistent unique identity
+CA694 PASS footwear 22 existing wear and water retained
+CA694 PASS footwear 22 unchanged collision, scale and floor contact
+CA694 PASS footwear 22 original icon and dynamic sprite
+CA694 PASS footwear 22 native dry and wet mass
+CA694 PASS footwear 22 provenance survives copy and save
+CA694 PASS footwear 22 unequipped world flags
+CA694 PASS footwear 22 fixed acquired size retained
+CA694 PASS footwear 23 saved native class
+CA694 PASS footwear 23 independent world instance
+CA694 PASS footwear 23 original type, slot and kind
+CA694 PASS footwear 23 original native size
+CA694 PASS footwear 23 persistent unique identity
+CA694 PASS footwear 23 existing wear and water retained
+CA694 PASS footwear 23 unchanged collision, scale and floor contact
+CA694 PASS footwear 23 original icon and dynamic sprite
+CA694 PASS footwear 23 native dry and wet mass
+CA694 PASS footwear 23 provenance survives copy and save
+CA694 PASS footwear 23 unequipped world flags
+CA694 PASS footwear 23 fixed acquired size retained
+CA694 PASS footwear 24 saved native class
+CA694 PASS footwear 24 independent world instance
+CA694 PASS footwear 24 original type, slot and kind
+CA694 PASS footwear 24 original native size
+CA694 PASS footwear 24 persistent unique identity
+CA694 PASS footwear 24 existing wear and water retained
+CA694 PASS footwear 24 unchanged collision, scale and floor contact
+CA694 PASS footwear 24 original icon and dynamic sprite
+CA694 PASS footwear 24 native dry and wet mass
+CA694 PASS footwear 24 provenance survives copy and save
+CA694 PASS footwear 24 unequipped world flags
+CA694 PASS footwear 24 fixed acquired size retained
+CA694 COMPLETE failures=0
+Captured candidate-0.png
+Captured candidate-1.png
+Captured candidate-2.png
+Captured candidate-3.png
+Captured candidate-5.png
+Captured candidate-6.png
+Captured candidate-7.png
+Captured detail-0-0.png
+Captured detail-0-90.png
+Captured detail-0-160.png
+Captured detail-0-270.png
+Captured detail-1-0.png
+Captured detail-1-90.png
+Captured detail-1-160.png
+Captured detail-1-270.png
+Captured detail-2-0.png
+Captured detail-2-90.png
+Captured detail-2-160.png
+Captured detail-2-270.png
+Captured detail-3-0.png
+Captured detail-3-90.png
+Captured detail-3-160.png
+Captured detail-3-270.png
+Captured detail-4-0.png
+Captured detail-4-90.png
+Captured detail-4-160.png
+Captured detail-4-270.png

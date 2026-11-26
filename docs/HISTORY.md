@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.24** - 2026-11-14.
+Documentation version: **5.17.25** - 2026-11-14.
+
+## 5.17.25 - Footwear-pair world props (#694, 2026-11-14)
+
+Five accepted #387 footwear designs gain candidate closed 3D pairs without
+changing original pixels or native inventory rules. Initial attachment/opening
+checks failed; later native views led to a fully fitted lining, circumferential
+upper UVs and revised original material crops. Underside review subsequently
+replaced the sole/heel cap projection to remove radial fan distortion. Each of three preview runs passes
+476 functional assertions; these do not establish art acceptance. Final exports
+repeat 19 files and the complete package passes 2,458 native assertions.
+One five-pair comparison records 1195.42/1142.40 queue presents/s, p95 1.0161/1.0697 ms and
+p99 1.2497/1.3196 ms. ASSETS and SUMMARY retain the environment, source/package proof,
+iterations and limits. CA694-FOOTWEAR-01 remains pending; worn fitting and
+completion of the broader batch are not claimed.
 
 ## 5.17.24 - NOA gallery extension (#692, 2026-11-14)
 

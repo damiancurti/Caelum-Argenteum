@@ -1,0 +1,125 @@
+{
+  "issue": 694,
+  "parent_issue": 647,
+  "source_issue": 387,
+  "source_acceptance": "CA387-01, 2026-10-21: original inventory/world sprites only",
+  "sources": [
+    {
+      "type": 20,
+      "id": "BF",
+      "source": "assets/art_source/clothing/BF-v1.png",
+      "source_sha256": "a02abdf526fe36d30a952e9c5138e062af44949d1b0b900405994872a3892270",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_20.png",
+      "output_sha256": "be79b369a0f06de909ccdbd681fab0f6de6a32353c4b1041bdfe1f07ef10a681",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "source_alpha_bounds": [
+        0,
+        0,
+        1516,
+        1024
+      ],
+      "sprite": "WC20A0",
+      "pivot": [
+        64,
+        96
+      ]
+    },
+    {
+      "type": 21,
+      "id": "BC",
+      "source": "assets/art_source/clothing/BC-v1.png",
+      "source_sha256": "ca1aaa283b521171b98d705cdb38bfc95db1eff7544ae958890f1f7e2e14f89d",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_21.png",
+      "output_sha256": "cc5add5c156d8e36cc2b8877cb14d20470aab697c1a5d59712c154248ec20178",
+      "source_size": [
+        1312,
+        1199
+      ],
+      "source_alpha_bounds": [
+        0,
+        9,
+        1304,
+        1199
+      ],
+      "sprite": "WC21A0",
+      "pivot": [
+        64,
+        114
+      ]
+    },
+    {
+      "type": 22,
+      "id": "BR",
+      "source": "assets/art_source/clothing/BR-v1.png",
+      "source_sha256": "a1f691a457aefc62b0a0d1bd5bb52a5793873fe8c4d345fe97c1e1e6fade1855",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_22.png",
+      "output_sha256": "53bfe1a381cfce4c6900fb707495ffcf406ab0ab82dac219092d4d320b54505a",
+      "source_size": [
+        1290,
+        1219
+      ],
+      "source_alpha_bounds": [
+        0,
+        30,
+        1268,
+        1219
+      ],
+      "sprite": "WC22A0",
+      "pivot": [
+        64,
+        117
+      ]
+    },
+    {
+      "type": 23,
+      "id": "BS",
+      "source": "assets/art_source/clothing/BS-v1.png",
+      "source_sha256": "b38dafaedd06fd0e878ff80d82fb10219a5f22cb1316a50d1820c19dc60eedd3",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_23.png",
+      "output_sha256": "cc44242cf40baca17c6f3e20e44b748083835c5b8dbcf8b1f99d50ded43d5e45",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "source_alpha_bounds": [
+        0,
+        21,
+        1535,
+        1008
+      ],
+      "sprite": "WC23A0",
+      "pivot": [
+        64,
+        98
+      ]
+    },
+    {
+      "type": 24,
+      "id": "BP",
+      "source": "assets/art_source/clothing/BP-v1.png",
+      "source_sha256": "e3b57c6bfef1abe4a7c4fd6ca72be3c9392714344c2a8dbcaf9580fded968b31",
+      "output": "src/graphics/caelum/icons/clothing/ca_clothing_24.png",
+      "output_sha256": "88fe56a4af313dca9bf791a3a3730134e9370c3aebcbd94ba9d6a7b3406654c3",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "source_alpha_bounds": [
+        0,
+        0,
+        1512,
+        1024
+      ],
+      "sprite": "WC24A0",
+      "pivot": [
+        64,
+        103
+      ]
+    }
+  ],
+  "method": "Unchanged original diffuse pixels in opaque material crops. Editable closed uppers/linings/soles/heels/laces/rope bands/patches; circumferential UVs on lofts. No bitmap generation or editing.",
+  "limits": "Candidate world pairs only; worn body fitting, first-person appearance, other clothing and final author acceptance remain separate."
+}

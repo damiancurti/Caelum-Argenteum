@@ -30,6 +30,20 @@ tests pass. Closure and an intersecting joint center are separate from fitting
 the whole patch. Native views and author art review remain distinct evidence.
 See validation_v5_17_22/evidence and validate_inventory_gloves_models.py.
 
+
+Extension #694, 2026-11-14: a valid shoe-lining attachment witness does not
+prove that its visible face reaches the cavity. Earlier model03 exposes the
+upper first in six of ten side rays: the leather lining is buried in the wall,
+not protruding outside it. The corrected candidate exposes lining first in all
+ten rays. Every serialized lining vertex also stays within the faceted outer
+envelope; 64 joint witnesses, ten deep opening rays and all patch vertices pass.
+Outer color discontinuities were separate crop/UV defects; underside review
+also replaced radial cap UVs with box projection for soles and heels. These
+measurements refine the initial visual hypothesis. Original pixels remain
+intact. See validation_v5_17_25/evidence/iterations/lining-regression.json and
+validate_inventory_footwear_models.py. Native continuity and author art review
+remain distinct evidence levels.
+
 ## CA-KP-237 - Derive inventory test cases from native tier normalization
 
 Status/evidence: ENGINE-VERIFIED isolated fixture correction, #684, 2026-11-13.
