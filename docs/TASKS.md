@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.56** - 2026-11-15.
+Documentation version: **5.17.57** - 2026-11-15.
+
+## #757 - Magical weapon drop bindings (5.17.57)
+
+Six exact staff/bell/statuette bindings reuse #755's native assets. Eighteen
+class/type/tier cases pass 1,509 continuity and 350 visual/control checks;
+three outputs repeat byte-for-byte. CA757-MAGIC-WEAPON-DROPS-01 retains art and
+ordinary gameplay review. Scepter/censer/effigy tier art and physical weapons
+remain separate. #736 still awaits the requested modular visual review;
+remaining bestiary models and V5.16 campaign work continue.
 
 ## #755 - Six magical crafting bases (5.17.56)
 

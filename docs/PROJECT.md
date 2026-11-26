@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.56** - 2026-11-15.
+Documentation version: **5.17.57** - 2026-11-15.
+
+## 5.17.57 - Reused magical weapon drop models (#757)
+
+Staff, bell and support-statuette drops now reuse the exact #755 native meshes
+in both weapon classes and all eighteen class/type/tier cases. Six bindings,
+three repeated outputs, 1,509 continuity checks and 350 visual/control checks
+pass. ASSETS records source reuse, presentation measurements and inherited
+art limitations. CA757-MAGIC-WEAPON-DROPS-01 retains author acceptance.
+Other weapons, characters, modular equipment and V5.16 campaign are incomplete.
 
 ## 5.17.56 - Native magical material drops (#755)
 
