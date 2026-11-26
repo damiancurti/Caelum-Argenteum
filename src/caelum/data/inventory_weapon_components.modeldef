@@ -1,0 +1,8 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/weapon_components" Model 0 "blade.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M001 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/weapon_components" Model 0 "small_blade.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M002 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/weapon_components" Model 0 "curved_blade.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M003 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/weapon_components" Model 0 "long_blade.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M004 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/weapon_components" Model 0 "broad_blade.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M005 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/weapon_components" Model 0 "weapon_head.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M009 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/weapon_components" Model 0 "round_head.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M010 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/weapon_components" Model 0 "small_weapon_head.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M040 A 0 0 }

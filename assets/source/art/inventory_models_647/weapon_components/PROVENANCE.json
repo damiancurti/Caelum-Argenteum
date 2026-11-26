@@ -1,0 +1,23 @@
+{
+  "issue": 723,
+  "owner": "Dami\u00e1n Curti / Caelum Argenteum",
+  "references": [
+    "src/graphics/caelum/icons/materials/ca_material_blade.png",
+    "src/graphics/caelum/icons/materials/ca_material_small_blade.png",
+    "src/graphics/caelum/icons/materials/ca_material_curved_blade.png",
+    "src/graphics/caelum/icons/materials/ca_material_long_blade.png",
+    "src/graphics/caelum/icons/materials/ca_material_broad_blade.png",
+    "src/graphics/caelum/icons/materials/ca_material_weapon_head.png",
+    "src/graphics/caelum/icons/materials/ca_material_round_head.png",
+    "src/graphics/caelum/icons/materials/ca_material_small_weapon_head.png"
+  ],
+  "materials": "Original four-quadrant aged-metal atlas from built-in image_gen, exact prompt retained in METALS_PROMPT.json. Owned training-dummy wood unchanged. Original icons and initial portable metal copies remain retained. No raster edits.",
+  "method": "Closed bevel/ridge blades, concave triangulated double axe wings, volumetric spiked heads and open-through socket walls. Editable JSON/OBJ/MTL with deterministic native MD3 exports.",
+  "limits": "Eight crafting drops and24 existing type-tier cases. Original icons, recipes, quantity, identity, collision, scale and saves unchanged. Fixed world components do not complete worn/first-person weapon attachments. Author visual and ordinary inventory/crafting acceptance pending.",
+  "generated_image": {
+    "path": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-d9ac583b-66cd-4d97-8e5c-bf0a7b9eccee.png",
+    "sha256": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "date": "2026-11-14"
+  },
+  "iterations": "Initial ingot crops had fractional alpha; opaque existing materials passed geometry but native views looked too smooth. New aged-metal atlas and reference-led crescent curvature refine the candidate. Previous designs and material copies retained."
+}

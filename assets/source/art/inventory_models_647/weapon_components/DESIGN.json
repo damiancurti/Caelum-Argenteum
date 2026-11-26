@@ -1,0 +1,2988 @@
+{
+  "schema_revision": 1,
+  "issue": 723,
+  "parent_issue": 647,
+  "status": "candidate_pending_author_review",
+  "model_path": "models/caelum/inventory/weapon_components",
+  "editable_materials_name": "weapon_components.mtl",
+  "tier_materials": {
+    "original": {}
+  },
+  "materials": {
+    "iron": {
+      "texture": "models/caelum/inventory/weapon_components/metals.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        12,
+        615,
+        615
+      ]
+    },
+    "steel": {
+      "texture": "models/caelum/inventory/weapon_components/metals.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        639,
+        12,
+        1242,
+        615
+      ]
+    },
+    "bronze": {
+      "texture": "models/caelum/inventory/weapon_components/metals.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        639,
+        615,
+        1242
+      ]
+    },
+    "wood": {
+      "texture": "models/caelum/actors/training/ca_training_dummy.png",
+      "image_size": [
+        512,
+        256
+      ],
+      "rect_pixels": [
+        8,
+        8,
+        248,
+        248
+      ]
+    },
+    "dark_iron": {
+      "texture": "models/caelum/inventory/weapon_components/metals.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        639,
+        639,
+        1242,
+        1242
+      ]
+    },
+    "socket_atlas": {
+      "texture": "models/caelum/inventory/weapon_components/metals.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        1,
+        1,
+        1253,
+        1253
+      ]
+    }
+  },
+  "source_sha256": {
+    "src/graphics/caelum/icons/materials/ca_material_blade.png": "9a7f23f902d4550458f76c8de057a7b10e7627ff4a6f8cab674c0c41b828140c",
+    "src/graphics/caelum/icons/materials/ca_material_small_blade.png": "4b2753403b51dd09d0fb0bacb8bb34ce4fa14f1e7f0f75bae5bf4ffe1ed853af",
+    "src/graphics/caelum/icons/materials/ca_material_curved_blade.png": "13eef9ca9e3d1eebc3fd4541614f357e8dd77c09d557399b4b9c25931c87d3a7",
+    "src/graphics/caelum/icons/materials/ca_material_long_blade.png": "3c79be40369bb18f2c338cc2d1e8878a275e2b0c6590cd3d973af1e501418842",
+    "src/graphics/caelum/icons/materials/ca_material_broad_blade.png": "78b2fd7d8e7bd96c67fff27bb418525877945c37b65d1d8cf00850787f7bbf57",
+    "src/graphics/caelum/icons/materials/ca_material_weapon_head.png": "754242ddfa3a4c3cfc5618755b831847d68302a569275b8157623d56b0a66bd3",
+    "src/graphics/caelum/icons/materials/ca_material_round_head.png": "72e27c576a57352fd139f74805fb122cb03b62aa690e2ca39e710d2771b1d8bb",
+    "src/graphics/caelum/icons/materials/ca_material_small_weapon_head.png": "905d40ee5146586e9a1c428f13591b183718cb8f06278d740844fc0d1cb4dccb",
+    "src/graphics/caelum/icons/materials/ca_material_iron_ingot.png": "82dd215ceb46deee151ab1674847f80d9798f168e72b3f2ec71b961f30dd6c74",
+    "src/graphics/caelum/icons/materials/ca_material_steel_ingot.png": "353901f4271eaa64e05628b638e2eb3bf799b9f4dcf0bf729e55e46634f9d99a",
+    "src/graphics/caelum/icons/materials/ca_material_bronze_ingot.png": "432cf7a1a10ea198e2282cf3c4e20b24098cab21758bf9d05c873fb834c75677",
+    "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff",
+    "assets/generators/generate_inventory_chains_models.py": "cd9296836666c78bd555c76e3de56d0ccc345c40ecb94a15d5e78f159719f94f",
+    "assets/generators/generate_peuchen_model.py": "0f1873c9fd1da0be0f965ea73ff2cc5c35dc25a35ac9da2df4692b50cef30812",
+    "assets/generators/generate_duende_models.py": "243d46cee79b1723f6b7ac9bd0b8c0c4f87b37f463cf8540cd7d51be2800511f",
+    "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "assets/source/art/inventory_models_647/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "assets/source/art/inventory_models_647/weapon_components/METALS_PROMPT.json": "935c64507308577aed24cc1424b675ce701d3a22c4ad3edf4d37e33c1bb7dffb"
+  },
+  "variants": {
+    "blade": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M001",
+      "item_type": 1,
+      "family": "blade",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_blade.png",
+      "reference_axis": "height",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "small_blade": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M002",
+      "item_type": 2,
+      "family": "small_blade",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_small_blade.png",
+      "reference_axis": "height",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "curved_blade": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M003",
+      "item_type": 3,
+      "family": "curved_blade",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_curved_blade.png",
+      "reference_axis": "height",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "long_blade": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M004",
+      "item_type": 4,
+      "family": "long_blade",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_long_blade.png",
+      "reference_axis": "height",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "broad_blade": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M005",
+      "item_type": 5,
+      "family": "broad_blade",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_broad_blade.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "weapon_head": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M009",
+      "item_type": 9,
+      "family": "weapon_head",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_weapon_head.png",
+      "reference_axis": "height",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "round_head": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M010",
+      "item_type": 10,
+      "family": "round_head",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_round_head.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "small_weapon_head": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M040",
+      "item_type": 40,
+      "family": "small_weapon_head",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_small_weapon_head.png",
+      "reference_axis": "height",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    }
+  },
+  "families": {
+    "blade": {
+      "root": "blade",
+      "parts": [
+        {
+          "part": "blade",
+          "kind": "blade",
+          "material": "steel",
+          "rows": [
+            [
+              0,
+              0,
+              4,
+              2
+            ],
+            [
+              5,
+              0,
+              7,
+              3
+            ],
+            [
+              68,
+              0,
+              6,
+              2.7
+            ],
+            [
+              79,
+              0,
+              1.5,
+              0.65
+            ]
+          ],
+          "tip": [
+            0,
+            0,
+            84
+          ]
+        },
+        {
+          "part": "tang",
+          "kind": "loft",
+          "material": "iron",
+          "rows": [
+            [
+              -12,
+              0,
+              0,
+              2.2,
+              1
+            ],
+            [
+              -11.5,
+              0,
+              0,
+              2.5,
+              1.2
+            ],
+            [
+              2,
+              0,
+              0,
+              2.5,
+              1.2
+            ]
+          ],
+          "segments": 24,
+          "exponent": 0.25
+        }
+      ],
+      "attachments": [
+        {
+          "part": "tang",
+          "target": "blade",
+          "witness": [
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "openings": []
+    },
+    "small_blade": {
+      "root": "blade",
+      "parts": [
+        {
+          "part": "blade",
+          "kind": "blade",
+          "material": "steel",
+          "rows": [
+            [
+              0,
+              0,
+              4,
+              3
+            ],
+            [
+              8,
+              0,
+              8,
+              3.5
+            ],
+            [
+              40,
+              0,
+              10,
+              3
+            ],
+            [
+              64,
+              0,
+              5,
+              2
+            ],
+            [
+              72,
+              0,
+              2,
+              0.7
+            ]
+          ],
+          "tip": [
+            0,
+            0,
+            78
+          ]
+        },
+        {
+          "part": "guard",
+          "kind": "loft",
+          "material": "bronze",
+          "rows": [
+            [
+              -2,
+              0,
+              0,
+              11,
+              2
+            ],
+            [
+              -1.5,
+              0,
+              0,
+              14,
+              2.5
+            ],
+            [
+              1.5,
+              0,
+              0,
+              14,
+              2.5
+            ],
+            [
+              2,
+              0,
+              0,
+              11,
+              2
+            ]
+          ],
+          "segments": 24,
+          "exponent": 0.25
+        },
+        {
+          "part": "socket",
+          "kind": "socket",
+          "material": "socket_atlas",
+          "segments": 36,
+          "genus": 1,
+          "profile": [
+            [
+              -14,
+              3.1959999999999997
+            ],
+            [
+              -13.65,
+              3.4
+            ],
+            [
+              -0.35,
+              3.4
+            ],
+            [
+              0,
+              3.1959999999999997
+            ],
+            [
+              0,
+              2.2
+            ],
+            [
+              -0.35,
+              2.2
+            ],
+            [
+              -13.65,
+              2.2
+            ],
+            [
+              -14,
+              2.2
+            ]
+          ],
+          "uv_regions": {
+            "outer": [
+              12,
+              639,
+              615,
+              1242
+            ],
+            "inner": [
+              639,
+              639,
+              1242,
+              1242
+            ]
+          },
+          "uv_bounds": [
+            1,
+            1,
+            1253,
+            1253
+          ],
+          "inner_spans": [
+            4,
+            5,
+            6
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "part": "guard",
+          "target": "blade",
+          "witness": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "part": "socket",
+          "target": "guard",
+          "witness": [
+            2.8,
+            0,
+            -1
+          ]
+        }
+      ],
+      "openings": [
+        {
+          "point": [
+            0,
+            0,
+            -12
+          ],
+          "normal": [
+            0,
+            0,
+            -1
+          ],
+          "axis_u": [
+            1,
+            0,
+            0
+          ],
+          "axis_v": [
+            0,
+            1,
+            0
+          ],
+          "clearance": 1,
+          "signs": [
+            1
+          ]
+        }
+      ]
+    },
+    "curved_blade": {
+      "root": "blade",
+      "parts": [
+        {
+          "part": "blade",
+          "kind": "blade",
+          "material": "steel",
+          "rows": [
+            [
+              0.0,
+              0.0,
+              3.5,
+              2.6
+            ],
+            [
+              2.578125,
+              3.28125,
+              3.79296875,
+              2.68125
+            ],
+            [
+              6.25,
+              8.0,
+              4.21875,
+              2.8000000000000003
+            ],
+            [
+              10.546875,
+              13.21875,
+              4.66015625,
+              2.91875
+            ],
+            [
+              15.0,
+              18.0,
+              5.0,
+              3.0
+            ],
+            [
+              19.6484375,
+              22.328125,
+              5.21875,
+              3.0398437499999997
+            ],
+            [
+              24.6875,
+              26.625,
+              5.375,
+              3.05625
+            ],
+            [
+              29.8828125,
+              30.609375,
+              5.46875,
+              3.04453125
+            ],
+            [
+              35.0,
+              34.0,
+              5.5,
+              3.0
+            ],
+            [
+              40.0703125,
+              36.65625,
+              5.473437499999999,
+              2.921875
+            ],
+            [
+              45.1875,
+              38.75,
+              5.3875,
+              2.8125
+            ],
+            [
+              50.2109375,
+              40.46875,
+              5.2328125000000005,
+              2.671875
+            ],
+            [
+              55.0,
+              42.0,
+              5.0,
+              2.5
+            ],
+            [
+              59.671875,
+              43.375,
+              4.6734374999999995,
+              2.28046875
+            ],
+            [
+              64.25,
+              44.5,
+              4.262499999999999,
+              2.0187500000000003
+            ],
+            [
+              68.453125,
+              45.375,
+              3.7953125,
+              1.7476562500000001
+            ],
+            [
+              72.0,
+              46.0,
+              3.3,
+              1.5
+            ],
+            [
+              74.8203125,
+              46.28125,
+              2.7132812499999996,
+              1.2671875
+            ],
+            [
+              77.0625,
+              46.25,
+              2.0437499999999997,
+              1.0375
+            ],
+            [
+              78.7734375,
+              46.09375,
+              1.4273437499999995,
+              0.8390625
+            ],
+            [
+              80,
+              46,
+              1,
+              0.7
+            ]
+          ],
+          "tip": [
+            44,
+            0,
+            87
+          ]
+        },
+        {
+          "part": "guard",
+          "kind": "loft",
+          "material": "bronze",
+          "rows": [
+            [
+              -1,
+              0,
+              0,
+              5,
+              2
+            ],
+            [
+              -0.7,
+              0,
+              0,
+              7.5,
+              2.5
+            ],
+            [
+              1.7,
+              0,
+              0,
+              7.5,
+              2.5
+            ],
+            [
+              2,
+              0,
+              0,
+              5,
+              2
+            ]
+          ],
+          "segments": 24,
+          "exponent": 0.25
+        },
+        {
+          "part": "socket",
+          "kind": "socket",
+          "material": "socket_atlas",
+          "segments": 36,
+          "genus": 1,
+          "profile": [
+            [
+              -10,
+              2.82
+            ],
+            [
+              -9.65,
+              3
+            ],
+            [
+              0.65,
+              3
+            ],
+            [
+              1,
+              2.82
+            ],
+            [
+              1,
+              1.8
+            ],
+            [
+              0.65,
+              1.8
+            ],
+            [
+              -9.65,
+              1.8
+            ],
+            [
+              -10,
+              1.8
+            ]
+          ],
+          "uv_regions": {
+            "outer": [
+              12,
+              639,
+              615,
+              1242
+            ],
+            "inner": [
+              639,
+              639,
+              1242,
+              1242
+            ]
+          },
+          "uv_bounds": [
+            1,
+            1,
+            1253,
+            1253
+          ],
+          "inner_spans": [
+            4,
+            5,
+            6
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "part": "guard",
+          "target": "blade",
+          "witness": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "part": "socket",
+          "target": "guard",
+          "witness": [
+            2.4,
+            0,
+            0.2
+          ]
+        }
+      ],
+      "openings": [
+        {
+          "point": [
+            0,
+            0,
+            -8
+          ],
+          "normal": [
+            0,
+            0,
+            -1
+          ],
+          "axis_u": [
+            1,
+            0,
+            0
+          ],
+          "axis_v": [
+            0,
+            1,
+            0
+          ],
+          "clearance": 0.8,
+          "signs": [
+            1
+          ]
+        }
+      ]
+    },
+    "long_blade": {
+      "root": "blade",
+      "parts": [
+        {
+          "part": "blade",
+          "kind": "blade",
+          "material": "steel",
+          "rows": [
+            [
+              0,
+              0,
+              4,
+              2.4
+            ],
+            [
+              6,
+              0,
+              8,
+              3.3
+            ],
+            [
+              67,
+              0,
+              8,
+              3.3
+            ],
+            [
+              73,
+              1,
+              5,
+              2.7
+            ],
+            [
+              79,
+              2,
+              2.5,
+              1.2
+            ]
+          ],
+          "tip": [
+            3,
+            0,
+            85
+          ]
+        },
+        {
+          "part": "tang",
+          "kind": "loft",
+          "material": "iron",
+          "rows": [
+            [
+              -10,
+              0,
+              0,
+              2,
+              1
+            ],
+            [
+              -9.5,
+              0,
+              0,
+              2.4,
+              1.1
+            ],
+            [
+              2,
+              0,
+              0,
+              2.4,
+              1.1
+            ]
+          ],
+          "segments": 24,
+          "exponent": 0.25
+        }
+      ],
+      "attachments": [
+        {
+          "part": "tang",
+          "target": "blade",
+          "witness": [
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "openings": []
+    },
+    "broad_blade": {
+      "root": "hub",
+      "parts": [
+        {
+          "part": "hub",
+          "kind": "loft",
+          "material": "iron",
+          "rows": [
+            [
+              8,
+              0,
+              0,
+              5,
+              4
+            ],
+            [
+              10,
+              0,
+              0,
+              6,
+              4.8
+            ],
+            [
+              38,
+              0,
+              0,
+              6,
+              4.8
+            ],
+            [
+              40,
+              0,
+              0,
+              5,
+              4
+            ]
+          ],
+          "segments": 24,
+          "exponent": 0.25
+        },
+        {
+          "part": "wood_stub",
+          "kind": "loft",
+          "material": "wood",
+          "rows": [
+            [
+              -25,
+              0,
+              0,
+              3.2,
+              3.2
+            ],
+            [
+              -24,
+              0,
+              0,
+              3.8,
+              3.8
+            ],
+            [
+              22,
+              0,
+              0,
+              3.8,
+              3.8
+            ],
+            [
+              23,
+              0,
+              0,
+              3.3,
+              3.3
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1
+        },
+        {
+          "part": "wing_left",
+          "kind": "bevel",
+          "material": "iron",
+          "outline": [
+            [
+              -3,
+              13
+            ],
+            [
+              -14,
+              10
+            ],
+            [
+              -27,
+              -3
+            ],
+            [
+              -35,
+              2
+            ],
+            [
+              -40,
+              15
+            ],
+            [
+              -40,
+              29
+            ],
+            [
+              -34,
+              43
+            ],
+            [
+              -23,
+              52
+            ],
+            [
+              -19,
+              40
+            ],
+            [
+              -11,
+              34
+            ],
+            [
+              -3,
+              33
+            ]
+          ],
+          "bevel_center": [
+            -20,
+            25
+          ],
+          "inner_scale": 0.83,
+          "depth": 5,
+          "edge_depth": 0.6
+        },
+        {
+          "part": "wing_right",
+          "kind": "bevel",
+          "material": "iron",
+          "outline": [
+            [
+              3,
+              13
+            ],
+            [
+              14,
+              10
+            ],
+            [
+              27,
+              -3
+            ],
+            [
+              35,
+              2
+            ],
+            [
+              40,
+              15
+            ],
+            [
+              40,
+              29
+            ],
+            [
+              34,
+              43
+            ],
+            [
+              23,
+              52
+            ],
+            [
+              19,
+              40
+            ],
+            [
+              11,
+              34
+            ],
+            [
+              3,
+              33
+            ]
+          ],
+          "bevel_center": [
+            20,
+            25
+          ],
+          "inner_scale": 0.83,
+          "depth": 5,
+          "edge_depth": 0.6
+        }
+      ],
+      "attachments": [
+        {
+          "part": "wood_stub",
+          "target": "hub",
+          "witness": [
+            0,
+            0,
+            18
+          ]
+        },
+        {
+          "part": "wing_left",
+          "target": "hub",
+          "witness": [
+            -5,
+            0,
+            25
+          ]
+        },
+        {
+          "part": "wing_right",
+          "target": "hub",
+          "witness": [
+            5,
+            0,
+            25
+          ]
+        }
+      ],
+      "openings": []
+    },
+    "weapon_head": {
+      "root": "head",
+      "parts": [
+        {
+          "part": "head",
+          "kind": "ellipsoid",
+          "material": "iron",
+          "center": [
+            0,
+            0,
+            27
+          ],
+          "radii": [
+            15,
+            14,
+            16
+          ],
+          "latitudes": 18,
+          "longitudes": 32
+        },
+        {
+          "part": "spike_00",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            13.35,
+            0.0,
+            27.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              -0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_01",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            9.43987552884041,
+            8.810550493584381,
+            27.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              -0.7071067811865476,
+              0.7071067811865476
+            ],
+            [
+              0.0,
+              0.7071067811865476,
+              0.7071067811865476
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_02",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            8.174517384308583e-16,
+            12.46,
+            27.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ],
+            [
+              0.0,
+              -6.123233995736766e-17,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_03",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            -9.439875528840409,
+            8.810550493584381,
+            27.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              0.7071067811865476,
+              -0.7071067811865475
+            ],
+            [
+              -0.0,
+              0.7071067811865475,
+              0.7071067811865476
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_04",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            -13.35,
+            1.525909911737602e-15,
+            27.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              1.2246467991473532e-16,
+              -1.0
+            ],
+            [
+              -0.0,
+              1.0,
+              1.2246467991473532e-16
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_05",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            -9.439875528840412,
+            -8.810550493584381,
+            27.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              -0.7071067811865475,
+              -0.7071067811865477
+            ],
+            [
+              -0.0,
+              0.7071067811865477,
+              -0.7071067811865475
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_06",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            -2.4523552152925747e-15,
+            -12.46,
+            27.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              1.0,
+              -1.8369701987210297e-16
+            ],
+            [
+              -0.0,
+              -1.8369701987210297e-16,
+              -1.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_07",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            9.439875528840407,
+            -8.810550493584383,
+            27.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              0.7071067811865477,
+              0.7071067811865474
+            ],
+            [
+              0.0,
+              0.7071067811865474,
+              -0.7071067811865477
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_08",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            8.996966526158005,
+            3.550266007375585,
+            36.70653594273228
+          ],
+          "rotation": [
+            [
+              0.711116371537693,
+              -0.20032912326161073,
+              0.6739300768657681
+            ],
+            [
+              0.0,
+              0.9585474154523858,
+              0.2849330664025349
+            ],
+            [
+              -0.7030743247559719,
+              -0.20262056831127917,
+              0.6816387600233341
+            ]
+          ]
+        },
+        {
+          "part": "spike_09",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            -0.8374668965543481,
+            9.083274596316562,
+            36.70653594273228
+          ],
+          "rotation": [
+            [
+              0.995791899203109,
+              0.06680748086380504,
+              -0.06273160273815342
+            ],
+            [
+              -0.0,
+              0.6845192861769828,
+              0.7289947509082312
+            ],
+            [
+              0.09164329479817482,
+              -0.7259270675160049,
+              0.6816387600233341
+            ]
+          ]
+        },
+        {
+          "part": "spike_10",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            -9.514549532681484,
+            2.063506422296532,
+            36.70653594273228
+          ],
+          "rotation": [
+            [
+              0.691183138142931,
+              0.11968331373007819,
+              -0.712700339526703
+            ],
+            [
+              -0.0,
+              0.9861912457163804,
+              0.16561046727901538
+            ],
+            [
+              0.7226796451726657,
+              -0.11446716248322704,
+              0.6816387600233341
+            ]
+          ]
+        },
+        {
+          "part": "spike_11",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            -5.042848102287235,
+            -7.807957491333611,
+            36.70653594273228
+          ],
+          "rotation": [
+            [
+              0.8746725363866441,
+              -0.3037422681904258,
+              -0.37774143088293893
+            ],
+            [
+              -0.0,
+              0.7793073769518921,
+              -0.6266418532370475
+            ],
+            [
+              0.4847143015127104,
+              0.5481064191768755,
+              0.6816387600233341
+            ]
+          ]
+        },
+        {
+          "part": "spike_12",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            6.397898005365067,
+            -6.889089534655062,
+            36.70653594273228
+          ],
+          "rotation": [
+            [
+              0.8180483323548736,
+              0.3179980957492464,
+              0.4792432962820275
+            ],
+            [
+              0.0,
+              0.8332499842168686,
+              -0.5528964313527337
+            ],
+            [
+              -0.5751494813797629,
+              0.45229600363306466,
+              0.6816387600233341
+            ]
+          ]
+        },
+        {
+          "part": "spike_13",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            10.415871906986375,
+            1.9706416465110597,
+            18.3821455823188
+          ],
+          "rotation": [
+            [
+              -0.6129004269336217,
+              -0.12496970337175227,
+              0.7802151241188295
+            ],
+            [
+              0.0,
+              0.9874139079390502,
+              0.15815743551453126
+            ],
+            [
+              -0.7901601525416125,
+              0.09693475974958295,
+              -0.6051864057360395
+            ]
+          ]
+        },
+        {
+          "part": "spike_14",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            1.2106190242089323,
+            9.854639085294297,
+            18.3821455823188
+          ],
+          "rotation": [
+            [
+              -0.9889590884373974,
+              -0.11720282280296092,
+              0.09068307297445186
+            ],
+            [
+              0.0,
+              0.6119428122069872,
+              0.7909020132659949
+            ],
+            [
+              -0.14818880321087696,
+              0.7821697340828407,
+              -0.6051864057360395
+            ]
+          ]
+        },
+        {
+          "part": "spike_15",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            -9.667668202598025,
+            4.11986025506399,
+            18.3821455823188
+          ],
+          "rotation": [
+            [
+              -0.6412540331042725,
+              0.2537148337848808,
+              -0.7241699028163314
+            ],
+            [
+              0.0,
+              0.943754541092503,
+              0.3306468904545738
+            ],
+            [
+              0.7673286551585993,
+              0.21202865203738203,
+              -0.6051864057360395
+            ]
+          ]
+        },
+        {
+          "part": "spike_16",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            -7.185566565371112,
+            -7.30842541876494,
+            18.3821455823188
+          ],
+          "rotation": [
+            [
+              -0.747224617074819,
+              -0.38980511674917606,
+              -0.5382446865446526
+            ],
+            [
+              0.0,
+              0.8099122966601122,
+              -0.5865509966906052
+            ],
+            [
+              0.6645715699888087,
+              -0.43828534389699086,
+              -0.6051864057360395
+            ]
+          ]
+        },
+        {
+          "part": "spike_17",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            5.2267438367738315,
+            -8.636715568104405,
+            18.3821455823188
+          ],
+          "rotation": [
+            [
+              -0.8396174928578782,
+              0.37650681304955536,
+              0.39151639226770274
+            ],
+            [
+              0.0,
+              0.720788229025713,
+              -0.6931553425444948
+            ],
+            [
+              -0.5431781159868745,
+              -0.5819853508682525,
+              -0.6051864057360395
+            ]
+          ]
+        },
+        {
+          "part": "spike_18",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 7,
+          "segments": 16,
+          "offset": [
+            0.0,
+            0.0,
+            41.24
+          ],
+          "rotation": [
+            [
+              1.0,
+              0.0,
+              0
+            ],
+            [
+              0.0,
+              1.0,
+              0
+            ],
+            [
+              0.0,
+              0.0,
+              1
+            ]
+          ]
+        },
+        {
+          "part": "socket",
+          "kind": "socket",
+          "material": "socket_atlas",
+          "segments": 36,
+          "genus": 1,
+          "profile": [
+            [
+              0,
+              5.64
+            ],
+            [
+              0.35,
+              6
+            ],
+            [
+              16.65,
+              6
+            ],
+            [
+              17,
+              5.64
+            ],
+            [
+              17,
+              4
+            ],
+            [
+              16.65,
+              4
+            ],
+            [
+              0.35,
+              4
+            ],
+            [
+              0,
+              4
+            ]
+          ],
+          "uv_regions": {
+            "outer": [
+              639,
+              639,
+              1242,
+              1242
+            ],
+            "inner": [
+              639,
+              639,
+              1242,
+              1242
+            ]
+          },
+          "uv_bounds": [
+            1,
+            1,
+            1253,
+            1253
+          ],
+          "inner_spans": [
+            4,
+            5,
+            6
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "part": "spike_00",
+          "target": "head",
+          "witness": [
+            13.85,
+            0.0,
+            27.0
+          ]
+        },
+        {
+          "part": "spike_01",
+          "target": "head",
+          "witness": [
+            9.793428919433683,
+            9.164103884177655,
+            27.0
+          ]
+        },
+        {
+          "part": "spike_02",
+          "target": "head",
+          "witness": [
+            8.480679084095421e-16,
+            12.96,
+            27.0
+          ]
+        },
+        {
+          "part": "spike_03",
+          "target": "head",
+          "witness": [
+            -9.793428919433682,
+            9.164103884177655,
+            27.0
+          ]
+        },
+        {
+          "part": "spike_04",
+          "target": "head",
+          "witness": [
+            -13.85,
+            1.5871422516949696e-15,
+            27.0
+          ]
+        },
+        {
+          "part": "spike_05",
+          "target": "head",
+          "witness": [
+            -9.793428919433685,
+            -9.164103884177655,
+            27.0
+          ]
+        },
+        {
+          "part": "spike_06",
+          "target": "head",
+          "witness": [
+            -2.544203725228626e-15,
+            -12.96,
+            27.0
+          ]
+        },
+        {
+          "part": "spike_07",
+          "target": "head",
+          "witness": [
+            9.79342891943368,
+            -9.164103884177656,
+            27.0
+          ]
+        },
+        {
+          "part": "spike_08",
+          "target": "head",
+          "witness": [
+            9.33393156459089,
+            3.6927325405768525,
+            37.04735532274395
+          ]
+        },
+        {
+          "part": "spike_09",
+          "target": "head",
+          "witness": [
+            -0.8688326979234249,
+            9.447771971770678,
+            37.04735532274395
+          ]
+        },
+        {
+          "part": "spike_10",
+          "target": "head",
+          "witness": [
+            -9.870899702444834,
+            2.1463116559360396,
+            37.04735532274395
+          ]
+        },
+        {
+          "part": "spike_11",
+          "target": "head",
+          "witness": [
+            -5.231718817728704,
+            -8.121278417952135,
+            37.04735532274395
+          ]
+        },
+        {
+          "part": "spike_12",
+          "target": "head",
+          "witness": [
+            6.6375196535060805,
+            -7.165537750331429,
+            37.04735532274395
+          ]
+        },
+        {
+          "part": "spike_13",
+          "target": "head",
+          "witness": [
+            10.80597946904579,
+            2.0497203642683255,
+            18.079552379450778
+          ]
+        },
+        {
+          "part": "spike_14",
+          "target": "head",
+          "witness": [
+            1.2559605606961581,
+            10.250090091927294,
+            18.079552379450778
+          ]
+        },
+        {
+          "part": "spike_15",
+          "target": "head",
+          "witness": [
+            -10.02975315400619,
+            4.2851837002912765,
+            18.079552379450778
+          ]
+        },
+        {
+          "part": "spike_16",
+          "target": "head",
+          "witness": [
+            -7.454688908643439,
+            -7.601700917110242,
+            18.079552379450778
+          ]
+        },
+        {
+          "part": "spike_17",
+          "target": "head",
+          "witness": [
+            5.4225020329076825,
+            -8.983293239376652,
+            18.079552379450778
+          ]
+        },
+        {
+          "part": "spike_18",
+          "target": "head",
+          "witness": [
+            0.0,
+            0.0,
+            41.74
+          ]
+        },
+        {
+          "part": "socket",
+          "target": "head",
+          "witness": [
+            5,
+            0,
+            15
+          ]
+        }
+      ],
+      "openings": [
+        {
+          "point": [
+            0,
+            0,
+            2
+          ],
+          "normal": [
+            0,
+            0,
+            -1
+          ],
+          "axis_u": [
+            1,
+            0,
+            0
+          ],
+          "axis_v": [
+            0,
+            1,
+            0
+          ],
+          "clearance": 2,
+          "signs": [
+            1
+          ]
+        }
+      ]
+    },
+    "round_head": {
+      "root": "head",
+      "parts": [
+        {
+          "part": "head",
+          "kind": "ellipsoid",
+          "material": "iron",
+          "center": [
+            0,
+            0,
+            18
+          ],
+          "radii": [
+            14,
+            14,
+            14
+          ],
+          "latitudes": 18,
+          "longitudes": 32
+        },
+        {
+          "part": "spike_00",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            12.46,
+            0.0,
+            18.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              -0.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_01",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            8.810550493584381,
+            8.810550493584381,
+            18.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              -0.7071067811865476,
+              0.7071067811865476
+            ],
+            [
+              0.0,
+              0.7071067811865476,
+              0.7071067811865476
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_02",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            7.62954955868801e-16,
+            12.46,
+            18.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ],
+            [
+              0.0,
+              -6.123233995736766e-17,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_03",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            -8.810550493584381,
+            8.810550493584381,
+            18.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              0.7071067811865476,
+              -0.7071067811865475
+            ],
+            [
+              -0.0,
+              0.7071067811865475,
+              0.7071067811865476
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_04",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            -12.46,
+            1.525909911737602e-15,
+            18.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              1.2246467991473532e-16,
+              -1.0
+            ],
+            [
+              -0.0,
+              1.0,
+              1.2246467991473532e-16
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_05",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            -8.810550493584383,
+            -8.810550493584381,
+            18.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              -0.7071067811865475,
+              -0.7071067811865477
+            ],
+            [
+              -0.0,
+              0.7071067811865477,
+              -0.7071067811865475
+            ],
+            [
+              1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_06",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            -2.288864867606403e-15,
+            -12.46,
+            18.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              1.0,
+              -1.8369701987210297e-16
+            ],
+            [
+              -0.0,
+              -1.8369701987210297e-16,
+              -1.0
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_07",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            8.810550493584381,
+            -8.810550493584383,
+            18.0
+          ],
+          "rotation": [
+            [
+              0.0,
+              0.7071067811865477,
+              0.7071067811865474
+            ],
+            [
+              0.0,
+              0.7071067811865474,
+              -0.7071067811865477
+            ],
+            [
+              -1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "spike_08",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            8.39716875774747,
+            3.550266007375585,
+            26.493218949890743
+          ],
+          "rotation": [
+            [
+              0.711116371537693,
+              -0.20032912326161073,
+              0.6739300768657681
+            ],
+            [
+              0.0,
+              0.9585474154523858,
+              0.2849330664025349
+            ],
+            [
+              -0.7030743247559719,
+              -0.20262056831127917,
+              0.6816387600233341
+            ]
+          ]
+        },
+        {
+          "part": "spike_09",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            -0.7816357701173917,
+            9.083274596316562,
+            26.493218949890743
+          ],
+          "rotation": [
+            [
+              0.995791899203109,
+              0.06680748086380504,
+              -0.06273160273815342
+            ],
+            [
+              -0.0,
+              0.6845192861769828,
+              0.7289947509082312
+            ],
+            [
+              0.09164329479817482,
+              -0.7259270675160049,
+              0.6816387600233341
+            ]
+          ]
+        },
+        {
+          "part": "spike_10",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            -8.88024623050272,
+            2.063506422296532,
+            26.493218949890743
+          ],
+          "rotation": [
+            [
+              0.691183138142931,
+              0.11968331373007819,
+              -0.712700339526703
+            ],
+            [
+              -0.0,
+              0.9861912457163804,
+              0.16561046727901538
+            ],
+            [
+              0.7226796451726657,
+              -0.11446716248322704,
+              0.6816387600233341
+            ]
+          ]
+        },
+        {
+          "part": "spike_11",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            -4.706658228801419,
+            -7.807957491333611,
+            26.493218949890743
+          ],
+          "rotation": [
+            [
+              0.8746725363866441,
+              -0.3037422681904258,
+              -0.37774143088293893
+            ],
+            [
+              -0.0,
+              0.7793073769518921,
+              -0.6266418532370475
+            ],
+            [
+              0.4847143015127104,
+              0.5481064191768755,
+              0.6816387600233341
+            ]
+          ]
+        },
+        {
+          "part": "spike_12",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            5.971371471674062,
+            -6.889089534655062,
+            26.493218949890743
+          ],
+          "rotation": [
+            [
+              0.8180483323548736,
+              0.3179980957492464,
+              0.4792432962820275
+            ],
+            [
+              0.0,
+              0.8332499842168686,
+              -0.5528964313527337
+            ],
+            [
+              -0.5751494813797629,
+              0.45229600363306466,
+              0.6816387600233341
+            ]
+          ]
+        },
+        {
+          "part": "spike_13",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            9.721480446520617,
+            1.9706416465110597,
+            10.459377384528945
+          ],
+          "rotation": [
+            [
+              -0.6129004269336217,
+              -0.12496970337175227,
+              0.7802151241188295
+            ],
+            [
+              0.0,
+              0.9874139079390502,
+              0.15815743551453126
+            ],
+            [
+              -0.7901601525416125,
+              0.09693475974958295,
+              -0.6051864057360395
+            ]
+          ]
+        },
+        {
+          "part": "spike_14",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            1.1299110892616702,
+            9.854639085294297,
+            10.459377384528945
+          ],
+          "rotation": [
+            [
+              -0.9889590884373974,
+              -0.11720282280296092,
+              0.09068307297445186
+            ],
+            [
+              0.0,
+              0.6119428122069872,
+              0.7909020132659949
+            ],
+            [
+              -0.14818880321087696,
+              0.7821697340828407,
+              -0.6051864057360395
+            ]
+          ]
+        },
+        {
+          "part": "spike_15",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            -9.02315698909149,
+            4.11986025506399,
+            10.459377384528945
+          ],
+          "rotation": [
+            [
+              -0.6412540331042725,
+              0.2537148337848808,
+              -0.7241699028163314
+            ],
+            [
+              0.0,
+              0.943754541092503,
+              0.3306468904545738
+            ],
+            [
+              0.7673286551585993,
+              0.21202865203738203,
+              -0.6051864057360395
+            ]
+          ]
+        },
+        {
+          "part": "spike_16",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            -6.706528794346371,
+            -7.30842541876494,
+            10.459377384528945
+          ],
+          "rotation": [
+            [
+              -0.747224617074819,
+              -0.38980511674917606,
+              -0.5382446865446526
+            ],
+            [
+              0.0,
+              0.8099122966601122,
+              -0.5865509966906052
+            ],
+            [
+              0.6645715699888087,
+              -0.43828534389699086,
+              -0.6051864057360395
+            ]
+          ]
+        },
+        {
+          "part": "spike_17",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            4.8782942476555755,
+            -8.636715568104405,
+            10.459377384528945
+          ],
+          "rotation": [
+            [
+              -0.8396174928578782,
+              0.37650681304955536,
+              0.39151639226770274
+            ],
+            [
+              0.0,
+              0.720788229025713,
+              -0.6931553425444948
+            ],
+            [
+              -0.5431781159868745,
+              -0.5819853508682525,
+              -0.6051864057360395
+            ]
+          ]
+        },
+        {
+          "part": "spike_18",
+          "kind": "spike",
+          "material": "steel",
+          "radius": 2.5,
+          "height": 6,
+          "segments": 16,
+          "offset": [
+            0.0,
+            0.0,
+            30.46
+          ],
+          "rotation": [
+            [
+              1.0,
+              0.0,
+              0
+            ],
+            [
+              0.0,
+              1.0,
+              0
+            ],
+            [
+              0.0,
+              0.0,
+              1
+            ]
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "part": "spike_00",
+          "target": "head",
+          "witness": [
+            12.96,
+            0.0,
+            18.0
+          ]
+        },
+        {
+          "part": "spike_01",
+          "target": "head",
+          "witness": [
+            9.164103884177655,
+            9.164103884177655,
+            18.0
+          ]
+        },
+        {
+          "part": "spike_02",
+          "target": "head",
+          "witness": [
+            7.935711258474848e-16,
+            12.96,
+            18.0
+          ]
+        },
+        {
+          "part": "spike_03",
+          "target": "head",
+          "witness": [
+            -9.164103884177655,
+            9.164103884177655,
+            18.0
+          ]
+        },
+        {
+          "part": "spike_04",
+          "target": "head",
+          "witness": [
+            -12.96,
+            1.5871422516949696e-15,
+            18.0
+          ]
+        },
+        {
+          "part": "spike_05",
+          "target": "head",
+          "witness": [
+            -9.164103884177656,
+            -9.164103884177655,
+            18.0
+          ]
+        },
+        {
+          "part": "spike_06",
+          "target": "head",
+          "witness": [
+            -2.3807133775424543e-15,
+            -12.96,
+            18.0
+          ]
+        },
+        {
+          "part": "spike_07",
+          "target": "head",
+          "witness": [
+            9.164103884177655,
+            -9.164103884177656,
+            18.0
+          ]
+        },
+        {
+          "part": "spike_08",
+          "target": "head",
+          "witness": [
+            8.734133796180355,
+            3.6927325405768525,
+            26.83403832990241
+          ]
+        },
+        {
+          "part": "spike_09",
+          "target": "head",
+          "witness": [
+            -0.8130015714864685,
+            9.447771971770678,
+            26.83403832990241
+          ]
+        },
+        {
+          "part": "spike_10",
+          "target": "head",
+          "witness": [
+            -9.236596400266071,
+            2.1463116559360396,
+            26.83403832990241
+          ]
+        },
+        {
+          "part": "spike_11",
+          "target": "head",
+          "witness": [
+            -4.895528944242888,
+            -8.121278417952135,
+            26.83403832990241
+          ]
+        },
+        {
+          "part": "spike_12",
+          "target": "head",
+          "witness": [
+            6.210993119815075,
+            -7.165537750331429,
+            26.83403832990241
+          ]
+        },
+        {
+          "part": "spike_13",
+          "target": "head",
+          "witness": [
+            10.111588008580032,
+            2.0497203642683255,
+            10.156784181660926
+          ]
+        },
+        {
+          "part": "spike_14",
+          "target": "head",
+          "witness": [
+            1.175252625748896,
+            10.250090091927294,
+            10.156784181660926
+          ]
+        },
+        {
+          "part": "spike_15",
+          "target": "head",
+          "witness": [
+            -9.385241940499656,
+            4.2851837002912765,
+            10.156784181660926
+          ]
+        },
+        {
+          "part": "spike_16",
+          "target": "head",
+          "witness": [
+            -6.975651137618698,
+            -7.601700917110242,
+            10.156784181660926
+          ]
+        },
+        {
+          "part": "spike_17",
+          "target": "head",
+          "witness": [
+            5.0740524437894265,
+            -8.983293239376652,
+            10.156784181660926
+          ]
+        },
+        {
+          "part": "spike_18",
+          "target": "head",
+          "witness": [
+            0.0,
+            0.0,
+            30.96
+          ]
+        }
+      ],
+      "openings": []
+    },
+    "small_weapon_head": {
+      "root": "blade",
+      "parts": [
+        {
+          "part": "blade",
+          "kind": "blade",
+          "material": "steel",
+          "rows": [
+            [
+              12,
+              0,
+              5,
+              4
+            ],
+            [
+              20,
+              0,
+              9,
+              5
+            ],
+            [
+              40,
+              0,
+              6,
+              3
+            ],
+            [
+              51,
+              0,
+              1.5,
+              0.8
+            ]
+          ],
+          "tip": [
+            0,
+            0,
+            58
+          ]
+        },
+        {
+          "part": "socket",
+          "kind": "socket",
+          "material": "socket_atlas",
+          "segments": 36,
+          "genus": 1,
+          "profile": [
+            [
+              0,
+              4.512
+            ],
+            [
+              0.35,
+              4.8
+            ],
+            [
+              16.65,
+              4.8
+            ],
+            [
+              17,
+              4.512
+            ],
+            [
+              17,
+              3.2
+            ],
+            [
+              16.65,
+              3.2
+            ],
+            [
+              0.35,
+              3.2
+            ],
+            [
+              0,
+              3.2
+            ]
+          ],
+          "uv_regions": {
+            "outer": [
+              12,
+              639,
+              615,
+              1242
+            ],
+            "inner": [
+              639,
+              639,
+              1242,
+              1242
+            ]
+          },
+          "uv_bounds": [
+            1,
+            1,
+            1253,
+            1253
+          ],
+          "inner_spans": [
+            4,
+            5,
+            6
+          ]
+        }
+      ],
+      "attachments": [
+        {
+          "part": "socket",
+          "target": "blade",
+          "witness": [
+            4.2,
+            0,
+            14
+          ]
+        }
+      ],
+      "openings": [
+        {
+          "point": [
+            0,
+            0,
+            2
+          ],
+          "normal": [
+            0,
+            0,
+            -1
+          ],
+          "axis_u": [
+            1,
+            0,
+            0
+          ],
+          "axis_v": [
+            0,
+            1,
+            0
+          ],
+          "clearance": 1.5,
+          "signs": [
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "runtime_cases": [
+    {
+      "item_type": 1,
+      "tier": 1
+    },
+    {
+      "item_type": 1,
+      "tier": 2
+    },
+    {
+      "item_type": 1,
+      "tier": 3
+    },
+    {
+      "item_type": 2,
+      "tier": 1
+    },
+    {
+      "item_type": 2,
+      "tier": 2
+    },
+    {
+      "item_type": 2,
+      "tier": 3
+    },
+    {
+      "item_type": 3,
+      "tier": 1
+    },
+    {
+      "item_type": 3,
+      "tier": 2
+    },
+    {
+      "item_type": 3,
+      "tier": 3
+    },
+    {
+      "item_type": 4,
+      "tier": 1
+    },
+    {
+      "item_type": 4,
+      "tier": 2
+    },
+    {
+      "item_type": 4,
+      "tier": 3
+    },
+    {
+      "item_type": 5,
+      "tier": 1
+    },
+    {
+      "item_type": 5,
+      "tier": 2
+    },
+    {
+      "item_type": 5,
+      "tier": 3
+    },
+    {
+      "item_type": 9,
+      "tier": 1
+    },
+    {
+      "item_type": 9,
+      "tier": 2
+    },
+    {
+      "item_type": 9,
+      "tier": 3
+    },
+    {
+      "item_type": 10,
+      "tier": 1
+    },
+    {
+      "item_type": 10,
+      "tier": 2
+    },
+    {
+      "item_type": 10,
+      "tier": 3
+    },
+    {
+      "item_type": 40,
+      "tier": 1
+    },
+    {
+      "item_type": 40,
+      "tier": 2
+    },
+    {
+      "item_type": 40,
+      "tier": 3
+    }
+  ],
+  "scale_policy": "Fit each unchanged owned icon extent and floor within its opaque envelope; retain Actor.Scale0.25 and existing collision. Editable model dimensions are presentation only."
+}

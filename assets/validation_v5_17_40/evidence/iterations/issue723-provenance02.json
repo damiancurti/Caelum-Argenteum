@@ -1,0 +1,17 @@
+{
+  "issue": 723,
+  "owner": "Dami\u00e1n Curti / Caelum Argenteum",
+  "references": [
+    "src/graphics/caelum/icons/materials/ca_material_blade.png",
+    "src/graphics/caelum/icons/materials/ca_material_small_blade.png",
+    "src/graphics/caelum/icons/materials/ca_material_curved_blade.png",
+    "src/graphics/caelum/icons/materials/ca_material_long_blade.png",
+    "src/graphics/caelum/icons/materials/ca_material_broad_blade.png",
+    "src/graphics/caelum/icons/materials/ca_material_weapon_head.png",
+    "src/graphics/caelum/icons/materials/ca_material_round_head.png",
+    "src/graphics/caelum/icons/materials/ca_material_small_weapon_head.png"
+  ],
+  "materials": "Owned training-dummy iron/wood and #647 silver/bronze material patches reused byte-for-byte. Initial ingot icon crops had fractional alpha and were replaced before native review; original source icons and first portable copies are retained, never raster-edited.",
+  "method": "Closed bevel/ridge blades, concave triangulated double axe wings, volumetric spiked heads and open-through socket walls. Editable JSON/OBJ/MTL with deterministic native MD3 exports.",
+  "limits": "Eight crafting drops and24 existing type-tier cases. Original icons, recipes, quantity, identity, collision, scale and saves unchanged. Fixed world components do not complete worn/first-person weapon attachments. Author visual and ordinary inventory/crafting acceptance pending."
+}

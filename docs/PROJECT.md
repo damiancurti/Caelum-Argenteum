@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.39** - 2026-11-14.
+Documentation version: **5.17.40** - 2026-11-14.
+
+## 5.17.40 - Metal crafting drops (#723)
+
+Eight existing weapon components/all24 type-tier cases use native models.
+Twenty-one deterministic exports,57 closed solids,49 attachment witnesses and
+20 socket-opening rays pass validation. Native continuity passes3,461 checks;
+ASSETS records qualified presentation results. The new original metal atlas
+and simplified component silhouettes remain pending CA723-WEAPON-COMPONENTS-01.
+This does not complete other inventory, equipped/first-person art or characters.
 
 ## 5.17.39 - Eleven-figure native regional gallery (#721)
 
