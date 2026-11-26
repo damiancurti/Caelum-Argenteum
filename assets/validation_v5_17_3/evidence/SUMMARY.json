@@ -1,0 +1,807 @@
+{
+  "issue": 652,
+  "parent_issue": 647,
+  "version": "5.17.3",
+  "date": "2026-11-13",
+  "author_accepted": false,
+  "scope": "Seven production ammunition world models. The #650 ammunition lookup fix is the separate baseline; no additional gameplay behavior.",
+  "runtime": {
+    "local_path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-652\\build\\issue652-ammunition01.pk3",
+    "sha256": "462016cb0055538e1289d07debb3e01e891419bd4961eccdc8c9cd789fa3a24a",
+    "source_entries": 18175,
+    "source_mismatches": []
+  },
+  "baseline": {
+    "sha256": "23adb7917f961a41c33b9382873e9017abd4b2b1c46fdb5f789da1a871a59485",
+    "new_files": [
+      "caelum/data/inventory_ammunition.modeldef",
+      "models/caelum/inventory/ammunition/arrow.md3",
+      "models/caelum/inventory/ammunition/bolt.md3",
+      "models/caelum/inventory/ammunition/carbine.md3",
+      "models/caelum/inventory/ammunition/javelin_one.md3",
+      "models/caelum/inventory/ammunition/javelin_three.md3",
+      "models/caelum/inventory/ammunition/javelin_two.md3",
+      "models/caelum/inventory/ammunition/shotgun.md3"
+    ],
+    "changed_files": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "variants": {
+      "carbine": {
+        "class": "CaelumCarbineAmmo",
+        "parts": [
+          "0_case",
+          "0_projectile",
+          "1_case",
+          "1_projectile",
+          "2_case",
+          "2_projectile",
+          "lying_case",
+          "lying_projectile",
+          "leather_pouch",
+          "pouch_strap"
+        ],
+        "closed_outward_components": 10,
+        "vertices": 4472,
+        "triangles": 1568,
+        "surfaces": [
+          {
+            "material": "leather",
+            "vertices": 576,
+            "triangles": 192
+          },
+          {
+            "material": "strap",
+            "vertices": 56,
+            "triangles": 96
+          },
+          {
+            "material": "bronze",
+            "vertices": 3840,
+            "triangles": 1280
+          }
+        ],
+        "reference_opaque_bounds": [
+          6,
+          16,
+          122,
+          111
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 95.0,
+        "native_bounds": [
+          {
+            "min": [
+              -54.52719123096814,
+              -34.4375,
+              0.0
+            ],
+            "max": [
+              54.52720405905356,
+              52.25,
+              95.0
+            ]
+          }
+        ]
+      },
+      "arrow": {
+        "class": "CaelumArrowAmmo",
+        "parts": [
+          "0_shaft",
+          "0_metal_head",
+          "0_vertical_fletching",
+          "0_horizontal_fletching",
+          "1_shaft",
+          "1_metal_head",
+          "1_vertical_fletching",
+          "1_horizontal_fletching",
+          "2_shaft",
+          "2_metal_head",
+          "2_vertical_fletching",
+          "2_horizontal_fletching",
+          "leather_binding",
+          "binding_rim"
+        ],
+        "closed_outward_components": 14,
+        "vertices": 518,
+        "triangles": 480,
+        "surfaces": [
+          {
+            "material": "wood",
+            "vertices": 60,
+            "triangles": 96
+          },
+          {
+            "material": "leather",
+            "vertices": 28,
+            "triangles": 48
+          },
+          {
+            "material": "strap",
+            "vertices": 28,
+            "triangles": 48
+          },
+          {
+            "material": "iron",
+            "vertices": 144,
+            "triangles": 48
+          },
+          {
+            "material": "red",
+            "vertices": 258,
+            "triangles": 240
+          }
+        ],
+        "reference_opaque_bounds": [
+          17,
+          8,
+          110,
+          120
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 93.0,
+        "native_bounds": [
+          {
+            "min": [
+              -46.5,
+              -12.51923076923077,
+              0.0
+            ],
+            "max": [
+              46.5,
+              12.51923076923077,
+              16.453846153846158
+            ]
+          }
+        ]
+      },
+      "bolt": {
+        "class": "CaelumBoltAmmo",
+        "parts": [
+          "0_shaft",
+          "0_metal_head",
+          "0_vertical_fletching",
+          "0_horizontal_fletching",
+          "1_shaft",
+          "1_metal_head",
+          "1_vertical_fletching",
+          "1_horizontal_fletching",
+          "2_shaft",
+          "2_metal_head",
+          "2_vertical_fletching",
+          "2_horizontal_fletching",
+          "leather_binding",
+          "binding_rim"
+        ],
+        "closed_outward_components": 14,
+        "vertices": 518,
+        "triangles": 480,
+        "surfaces": [
+          {
+            "material": "wood",
+            "vertices": 60,
+            "triangles": 96
+          },
+          {
+            "material": "leather",
+            "vertices": 28,
+            "triangles": 48
+          },
+          {
+            "material": "strap",
+            "vertices": 28,
+            "triangles": 48
+          },
+          {
+            "material": "iron",
+            "vertices": 144,
+            "triangles": 48
+          },
+          {
+            "material": "blue",
+            "vertices": 258,
+            "triangles": 240
+          }
+        ],
+        "reference_opaque_bounds": [
+          19,
+          8,
+          109,
+          120
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 90.0,
+        "native_bounds": [
+          {
+            "min": [
+              -45.0,
+              -15.75,
+              0.0
+            ],
+            "max": [
+              45.0,
+              15.75,
+              20.700000000000003
+            ]
+          }
+        ]
+      },
+      "javelin_one": {
+        "class": "CaelumJavelinTierOneAmmo",
+        "parts": [
+          "shaft",
+          "spear_head",
+          "grip",
+          "head_socket",
+          "butt_cap",
+          "tassel_knot",
+          "red_tassel_0",
+          "red_tassel_1",
+          "red_tassel_2"
+        ],
+        "closed_outward_components": 9,
+        "vertices": 271,
+        "triangles": 392,
+        "surfaces": [
+          {
+            "material": "wood",
+            "vertices": 28,
+            "triangles": 48
+          },
+          {
+            "material": "leather",
+            "vertices": 28,
+            "triangles": 48
+          },
+          {
+            "material": "bronze",
+            "vertices": 56,
+            "triangles": 96
+          },
+          {
+            "material": "silver",
+            "vertices": 48,
+            "triangles": 16
+          },
+          {
+            "material": "red",
+            "vertices": 111,
+            "triangles": 184
+          }
+        ],
+        "reference_opaque_bounds": [
+          9,
+          8,
+          119,
+          120
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 110.0,
+        "native_bounds": [
+          {
+            "min": [
+              -55.0,
+              -7.185168115338481,
+              0.0
+            ],
+            "max": [
+              55.0,
+              7.361135912065751,
+              6.416666666666666
+            ]
+          }
+        ]
+      },
+      "javelin_two": {
+        "class": "CaelumJavelinTierTwoAmmo",
+        "parts": [
+          "shaft",
+          "spear_head",
+          "grip",
+          "head_socket",
+          "butt_cap",
+          "tassel_knot",
+          "red_tassel_0",
+          "red_tassel_1",
+          "red_tassel_2"
+        ],
+        "closed_outward_components": 9,
+        "vertices": 271,
+        "triangles": 392,
+        "surfaces": [
+          {
+            "material": "leather",
+            "vertices": 28,
+            "triangles": 48
+          },
+          {
+            "material": "silver",
+            "vertices": 104,
+            "triangles": 112
+          },
+          {
+            "material": "dark",
+            "vertices": 28,
+            "triangles": 48
+          },
+          {
+            "material": "red",
+            "vertices": 111,
+            "triangles": 184
+          }
+        ],
+        "reference_opaque_bounds": [
+          8,
+          9,
+          119,
+          119
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 111.0,
+        "native_bounds": [
+          {
+            "min": [
+              -55.5,
+              -7.250487825477922,
+              0.0
+            ],
+            "max": [
+              55.5,
+              7.428055329448167,
+              6.475
+            ]
+          }
+        ]
+      },
+      "javelin_three": {
+        "class": "CaelumJavelinTierThreeAmmo",
+        "parts": [
+          "shaft",
+          "spear_head",
+          "grip",
+          "head_socket",
+          "butt_cap",
+          "tassel_knot",
+          "red_tassel_0",
+          "red_tassel_1",
+          "red_tassel_2"
+        ],
+        "closed_outward_components": 9,
+        "vertices": 271,
+        "triangles": 392,
+        "surfaces": [
+          {
+            "material": "leather",
+            "vertices": 28,
+            "triangles": 48
+          },
+          {
+            "material": "silver",
+            "vertices": 48,
+            "triangles": 16
+          },
+          {
+            "material": "gold",
+            "vertices": 56,
+            "triangles": 96
+          },
+          {
+            "material": "dark",
+            "vertices": 28,
+            "triangles": 48
+          },
+          {
+            "material": "red",
+            "vertices": 111,
+            "triangles": 184
+          }
+        ],
+        "reference_opaque_bounds": [
+          8,
+          8,
+          119,
+          120
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 111.0,
+        "native_bounds": [
+          {
+            "min": [
+              -55.5,
+              -7.250487825477922,
+              0.0
+            ],
+            "max": [
+              55.5,
+              7.428055329448167,
+              6.475
+            ]
+          }
+        ]
+      },
+      "shotgun": {
+        "class": "CaelumShotgunAmmo",
+        "parts": [
+          "0_brass_base",
+          "0_paper_body",
+          "0_crimp_0",
+          "0_crimp_1",
+          "0_crimp_2",
+          "0_crimp_3",
+          "0_crimp_4",
+          "0_crimp_5",
+          "0_crimp_6",
+          "0_crimp_7",
+          "1_brass_base",
+          "1_paper_body",
+          "1_crimp_0",
+          "1_crimp_1",
+          "1_crimp_2",
+          "1_crimp_3",
+          "1_crimp_4",
+          "1_crimp_5",
+          "1_crimp_6",
+          "1_crimp_7",
+          "2_brass_base",
+          "2_paper_body",
+          "2_crimp_0",
+          "2_crimp_1",
+          "2_crimp_2",
+          "2_crimp_3",
+          "2_crimp_4",
+          "2_crimp_5",
+          "2_crimp_6",
+          "2_crimp_7",
+          "lying_brass_base",
+          "lying_paper_body",
+          "lying_crimp_0",
+          "lying_crimp_1",
+          "lying_crimp_2",
+          "lying_crimp_3",
+          "lying_crimp_4",
+          "lying_crimp_5",
+          "lying_crimp_6",
+          "lying_crimp_7"
+        ],
+        "closed_outward_components": 40,
+        "vertices": 4512,
+        "triangles": 1504,
+        "surfaces": [
+          {
+            "material": "bronze",
+            "vertices": 1920,
+            "triangles": 640
+          },
+          {
+            "material": "paper",
+            "vertices": 2592,
+            "triangles": 864
+          }
+        ],
+        "reference_opaque_bounds": [
+          0,
+          0,
+          345,
+          365
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          19.010416667,
+          19.010416667
+        ],
+        "target_art_extent": 19.19999999966334,
+        "native_bounds": [
+          {
+            "min": [
+              -10.741258741070402,
+              -10.741258741070402,
+              0.0
+            ],
+            "max": [
+              10.741258741070402,
+              8.951048950892002,
+              19.19999999966334
+            ]
+          }
+        ]
+      }
+    },
+    "repeat_export_install_check_passed": true,
+    "unchanged_owned_raster_hashes": {
+      "assets/source/art/elemental_518/MODELS.json": "08da944ff765fcb75c57b09e03540b97478589eb93f8d51b06254dc6ff03aa61",
+      "src/TEXTURES": "668d05829560c8d30ed3f756d6d305209a436c57f22c9d956d5f8a8450598ff0",
+      "src/graphics/caelum/icons/ca_arrow_ammo.png": "a921b29fd2eab24993ae16ac6962c0caaa9f1183b43eb1df9497587d03fd2a4b",
+      "src/graphics/caelum/icons/ca_bolt_ammo.png": "9a493e3fd535c9f9f41ddf6b8a8d5fd0709ef7851368b9ddc247751ccfa647bc",
+      "src/graphics/caelum/icons/ca_carbine_ammo.png": "8d7ef010bc87f32ac331b05c764eb07be8c152883e553ba977151d1032ece0d0",
+      "src/graphics/caelum/icons/ca_javelin.png": "a23d7bb4b2009ed4f50c53ff8134024f4b23ef521d4510d6664b88758acf64ee",
+      "src/graphics/caelum/icons/ca_javelin_t2.png": "051c8c2cc5ff1359da6e842cdbc060617a360018fdb5bde60597d810e2bce47b",
+      "src/graphics/caelum/icons/ca_javelin_t3.png": "785c9864652113684afb46402a9d408c1142ecfc2324249484b5a5ad8bdd14ae",
+      "src/graphics/caelum/shotgun.textures": "7b6208f1712678234bfffecb405d5d12ffaaec7cd2a6b272c5422f6b1393d04e",
+      "src/graphics/caelum/shotgun/icons.png": "68b20fb01e0c15394ae832ad082d22d121a33f05e8a623685afa8389aa59e9dc",
+      "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff",
+      "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e"
+    },
+    "project_validation_passed": true
+  },
+  "native": {
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 106
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 113
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 106
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 113
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 113
+      }
+    ],
+    "assertions": 551,
+    "scope": "Native CallTryPickup/CreateTossable: five incoming rounds split into three held/two dropped, then recombine. Seven separate classes, provenance quantities/markers, icons, weight, floor, collision and native scale. Old-save load, fresh/reload, rollback. No ordinary-menu, firing or multiplayer acceptance."
+  },
+  "presentation": [
+    {
+      "kind": "sprites",
+      "bodies": 7,
+      "pid": 13592,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 208979509.53390002,
+        "END": 208999532.7618
+      },
+      "fixture_sha256": "5d964f1e3821235bf97fe84b883f68dfd630e9b770b7655c64b39144a03a6c60",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57274885714286,
+        "p50_ms": 28.5651,
+        "p95_ms": 29.1935,
+        "p99_ms": 29.3562,
+        "max_ms": 29.5216
+      },
+      "presentation": {
+        "pid": 13592,
+        "trace_sha256": "1e209090345f76f86d284a91168ace9d5cb90d973a51fd5e8464a408e469e147",
+        "rows": 29203,
+        "scene_presents": 19746,
+        "mean_present_fps": 1126.8096644547056,
+        "present_intervals": {
+          "samples": 19745,
+          "mean_ms": 0.8874613269171131,
+          "p50_ms": 0.8458000123500824,
+          "p95_ms": 1.112199991941452,
+          "p99_ms": 1.324400007724762,
+          "max_ms": 2.1180999875068665
+        },
+        "native_call_duration": {
+          "samples": 19746,
+          "mean_ms": 0.07602032816519941,
+          "p50_ms": 0.07539999485015869,
+          "p95_ms": 0.09970000386238098,
+          "p99_ms": 0.12700000405311584,
+          "max_ms": 0.42920002341270447
+        }
+      }
+    },
+    {
+      "kind": "models",
+      "bodies": 7,
+      "pid": 19068,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 209013399.0829,
+        "END": 209033421.7597
+      },
+      "fixture_sha256": "5d964f1e3821235bf97fe84b883f68dfd630e9b770b7655c64b39144a03a6c60",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571523857142857,
+        "p50_ms": 28.5662,
+        "p95_ms": 29.2339,
+        "p99_ms": 29.4022,
+        "max_ms": 29.8573
+      },
+      "presentation": {
+        "pid": 19068,
+        "trace_sha256": "1e64b03caf5e5f697a0008a63948eb6fd35b551ed8b09598c00a1a4827714aeb",
+        "rows": 28980,
+        "scene_presents": 19531,
+        "mean_present_fps": 1114.6453174066664,
+        "present_intervals": {
+          "samples": 19530,
+          "mean_ms": 0.8971463696869959,
+          "p50_ms": 0.8642999827861786,
+          "p95_ms": 1.1107999980449677,
+          "p99_ms": 1.3086999952793121,
+          "max_ms": 1.9210000038146973
+        },
+        "native_call_duration": {
+          "samples": 19531,
+          "mean_ms": 0.07609254013441606,
+          "p50_ms": 0.0762999951839447,
+          "p95_ms": 0.09929999709129333,
+          "p99_ms": 0.12550002336502075,
+          "max_ms": 0.37689998745918274
+        }
+      }
+    }
+  ],
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "presentation_resolution": [
+      1280,
+      720
+    ],
+    "uncapped": true,
+    "vsync": false,
+    "background_unpaused": true,
+    "audio": 0.05
+  },
+  "art": {
+    "mode": "Original procedural closed geometry; unchanged owned raster materials. New built-in ImageGen atlas request rejected, no image and no retry.",
+    "source": "assets/source/art/inventory_models_647/ammunition",
+    "prompt": "PROMPT.txt",
+    "failure_record": "GENERATION_STATUS.json",
+    "all_front_oblique_rear_close_views_inspected": true,
+    "final_overlay_to_full_package_identical_pixel_views": 21
+  },
+  "qualifications": [
+    "Single sequential 700-tic sprite/model pair with seven visible drops; no repeatability, all-item, campaign or crowd performance claim.",
+    "Queue presents are not GPU timing or display scanout; simulation tic intervals are not CPU cost.",
+    "The small shotgun world-sprite scale is preserved. Decorative counts do not encode native Amount.",
+    "The implementation parent CaelumJavelinAmmo is not an eighth production type. Projectile assets and native behavior remain unchanged.",
+    "Native assertions use a 1e-6 scale tolerance: the inherited Tick uses a double .1 while its default is serialized as float.",
+    "Original uncommitted #647 ammo art/test files remain in their worktree for recovery. No files deleted.",
+    "Author acceptance, other inventory/characters and severe siege presentation remain unresolved. No executable, DLL, WAD, PK3 or save distributed."
+  ],
+  "files": {
+    "build.log": "91e66602be917172b76b9852873c1f14b127ec258be440644caa3d7644c720a0",
+    "exports/ammo01.json": "26364da6f46f844c3b1e8ed46245dd262e4c8edf78f186e083abf50ddc4c89bc",
+    "native/baseline-process.log": "df9ee67b9a7c130135ae2430d8d8b3d17a7893ff64ac95e8edd61a1df8a0e885",
+    "native/baseline.cfg": "92288d1cbaa89bc7496e70b06974eba2f49c55b08e074be5bd19c2e45eb1469f",
+    "native/baseline.log": "0d70187f95eea6a31001a212615d49509ab62699bb50e07b72b00682e2526515",
+    "native/baseline.png": "d632a623305a942d1466cdb00d5ffa429bd6d3f0d46e71868b5181765519502f",
+    "native/candidate-0.png": "3a9b050da9b1280d97ae6962f5a51a2bde415ae1d92d73c6f65b22ee2d1d4e68",
+    "native/candidate-1.png": "2af429b15636ddfcbce91df767575c3732580285ef4baf7012bb57414db11328",
+    "native/candidate-2.png": "e0031bde43661f953365d5e2e7e3e56d80c682ed7756ab618453a59c7b6a7cf4",
+    "native/candidate-3.png": "ef4ad95b0ae0e401bf6081441e9da9d1dbd67eed8a9527a6e2420a67dcd76fe1",
+    "native/candidate-5.png": "0a01f1f4d314a4534ac557de2b9e3f0c0e6dcea8d88bcc8d916933fbe92978d6",
+    "native/candidate-6.png": "10de1bad8211678154728af3519c95aac99453e28e73dbd7e13e559d3105a0cf",
+    "native/candidate-7.png": "1192ea4384aaae3f305b0ff0e957b58e31b6222576a070effc046de0206ac49d",
+    "native/candidate-fresh-process.log": "c64c4f14a7e7d928dfb613942cfa99a16a326ec89d8197fbdb8bb2b72ecc2327",
+    "native/candidate-fresh.cfg": "4765a85ce52437222c0329cc48baa6af6a527262c7ec8d1a8e20059400efea01",
+    "native/candidate-fresh.log": "0b644ac1d7a14d763560eb08d63e5a50c373202514f3bfbced44b144fd3719ae",
+    "native/candidate-reload-process.log": "95a17e619f373202a60b55976803826cdce859b4c74f45339551563849de703b",
+    "native/candidate-reload.cfg": "5a5a831a4c1bf3170389622e3298617f8baf05049d4d03be7d5a456a4bc90dd5",
+    "native/candidate-reload.log": "f4a1eda297a7e576f44690f2040cf939071bc90993a033c5ea2bdb687ef6e750",
+    "native/detail-0-160.png": "0c46fa98ac3a1bab2dfefabf6d86f9fd0f45d304a9327cc9df8299d85dbfb287",
+    "native/detail-0-270.png": "999c3a72c68911fb97d44e2acab178d6e0f537f6b628d879a6a4c399c2fdb7f6",
+    "native/detail-0-90.png": "9b24b5e6bd0c5eb144bbd601fd48e9ef1457b74ff6c02557c092205336a315f2",
+    "native/detail-1-160.png": "4953e22f02d09fc0e29101007adccc9ef45bfa9f473515884885544dc7ec0ead",
+    "native/detail-1-270.png": "3e423f1493cb32d1a1e93c756c9dd3a7790a3dc66569ff2a322eb2aafed7d50c",
+    "native/detail-1-90.png": "b86b3ce11f4c0d9cf1203c7d0428471e495101b652064ca6c55eeb44d9fabcac",
+    "native/detail-2-160.png": "823bab3dfd3a03b4ff33d376c645094309bdd1ea52f14222a0795bf96f4a91bb",
+    "native/detail-2-270.png": "5e0f39f4eb1d9abd14f6c7b396b24c348b58571f1ee9ca89e8ecbfbfb5eb0a43",
+    "native/detail-2-90.png": "7d8c2e69786f4d62a53d4c29a1eafaa748c28963b875346470d44aab4d17fdd0",
+    "native/detail-3-160.png": "badb5ad8455b3f2a9d422525eda0d7820616579eb29bccc1cf2dfeb39e8a8f37",
+    "native/detail-3-270.png": "2de490e04c8b6f93faa34240c09d69c48e542fad50de14f2fff0b0401068ba60",
+    "native/detail-3-90.png": "1de91d0ea227c339f7aa23abd22b084b8f5b076c2e5d862d01a6199f32550316",
+    "native/detail-4-160.png": "a5deef951f786cc2adbe210cfe33404f2b2869f70d31ae2a5a366c8af6f268d8",
+    "native/detail-4-270.png": "2ab92629a20960d47c7c0932f0f53415b342c4c3adfee59a2d25baaf9e814404",
+    "native/detail-4-90.png": "3f7cdde0f0c68e719dee3ea901a787c90c6a78301d5faecda3183ab1f5eef5a3",
+    "native/detail-5-160.png": "d49b6b22b435a9c32c4c7440d93be90a0e82346cbf86b9264a2ea56b62addf90",
+    "native/detail-5-270.png": "f2a523d85b29d785c09b82c778da518f6c71d3b630257988723a5bdb289c8e9b",
+    "native/detail-5-90.png": "1bc0be48eaa41cf7013ca56f122cf9554ac6d50ab307feee671bc5a41f977927",
+    "native/detail-6-160.png": "aeec32d0b8e942ebf4d3f764c9992c8bbb06c040b5340dbfc9458da995859d20",
+    "native/detail-6-270.png": "f6d8cc2170bef0ff5f89cbc8913207b9dcad562ae138422d78bc0349dc2f504a",
+    "native/detail-6-90.png": "7e1d4b063d257fdc10de80b7962fe8ea0e4533df625da506fe143d511163e885",
+    "native/fixture-source/MAPINFO.txt": "502f8ea9b5ac2fae609da9189c48141bc9a97045581319b6ffeb0c1693653279",
+    "native/fixture-source/ZSCRIPT.txt": "b6b57fe8dde058f7428b214fa6c0e48b4ed873fad06fa0cbd21c448edbaa1101",
+    "native/fixture.zs": "64b006e85450ea1e2c57380efd6098d24ca4773c84e3b3f837152756d304f42a",
+    "native/old-save-load-process.log": "ead429cdf7070b5836d42474894e3762193b984c515aaae3e8c5a99b23419f28",
+    "native/old-save-load.cfg": "0f209acfbff7db396a9c489459e63e61f84500a2ea3c3e1a12f4e9c677ea5097",
+    "native/old-save-load.log": "3c6855905a6d728d444e1e92d0a60a4d130c55e2ab265dee1e3e08fba318a8b3",
+    "native/RESULTS.json": "5b6e8a55947947cb6360bbd949f392e0b03eeb9f64ce0fe073d8b167d36609da",
+    "native/rollback-load-process.log": "1c82d38afbb38754ed1b488b5941f7ac8e9298b08f6c82fe6689d5e365b6b809",
+    "native/rollback-load.cfg": "5a5a831a4c1bf3170389622e3298617f8baf05049d4d03be7d5a456a4bc90dd5",
+    "native/rollback-load.log": "381f7bc141285f22090d0b676467201cd37300230869c256c92538065570fe8e",
+    "native/session.ini": "acddd2bf2ff66f216fba13fc69f8a2dfafd993511ce6aad6b7df3a66951e574b",
+    "presentation/models-7/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-7/engine.log": "a8222b6630d71fa841252eb3fbbcfcecded4699a2baa8ba4d429fab11930deab",
+    "presentation/models-7/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-7/fixture-source/ZSCRIPT.txt": "c6e61dae9c20d809ec55f370bd65fe0d36ccec229705a2f2248f49c2c92c4b43",
+    "presentation/models-7/presents.csv": "1e64b03caf5e5f697a0008a63948eb6fd35b551ed8b09598c00a1a4827714aeb",
+    "presentation/models-7/process.log": "cd7a2cae569445acdca212a6ae1263ed5ab3b5dcf5622b01b7e6e84d14b8e805",
+    "presentation/models-7/scene.png": "fd95d53fcaab43825b7d228670c1111c29da69c67eff2c7c777c9649d70118d4",
+    "presentation/models-7/session.ini": "a122b2d12b81e918cb82aadc729a4027352332aab3b3144d8308adb9f2f30ec5",
+    "presentation/RESULTS.json": "a047dc082b40d05121aa749155262452d0ddd4852cef0b977126e2ab265ff019",
+    "presentation/sprites-7/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-7/engine.log": "a811d731988a1ded19f4dd3aa7ac0393bc9775eba8fc99bb2b12121ecab55058",
+    "presentation/sprites-7/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-7/fixture-source/ZSCRIPT.txt": "c6e61dae9c20d809ec55f370bd65fe0d36ccec229705a2f2248f49c2c92c4b43",
+    "presentation/sprites-7/presents.csv": "1e209090345f76f86d284a91168ace9d5cb90d973a51fd5e8464a408e469e147",
+    "presentation/sprites-7/process.log": "5612b2c0b45ae27009a94852a35a3deea9ca13d7c49ea816873f2adb784d2058",
+    "presentation/sprites-7/scene.png": "9085da480ea2412c33f6a21405ac8e0c2f1343986701df0521b1c9c3048315a7",
+    "presentation/sprites-7/session.ini": "f22eed0f4776874c51ea12110aed17ba4af575059bd332e3f584f956495660b8",
+    "visual/01/fixture-source/MAPINFO.txt": "502f8ea9b5ac2fae609da9189c48141bc9a97045581319b6ffeb0c1693653279",
+    "visual/01/fixture-source/ZSCRIPT.txt": "1622b9f139da72445b33e46028777770f3c16049678db28db5aed9c3a93a7590",
+    "visual/01/fixture.zs": "7675eb3d2da2f751dfc1099819fd805382bf2da2fef9e18f0c9e63e9f574de1d",
+    "visual/01/RESULTS.json": "7d7d749098f9332dcda6dbb6c43e85072ea714cba4493e0d76acb0b8686e5f56",
+    "visual/01/session.ini": "ba5f23ecb120aa403e08913cacd02957754eaec3e3969b9a0ebed24a962b8ab3",
+    "visual/01/shotgun-close.png": "f804d944d8dcaa5125333341b8895bf2c9d13d327bd8619a21a7f5b267503311",
+    "visual/01/visual-process.log": "11988219c7040bbf6ecd35f584ee1d0b8f8bf28ecb4f443fff688922451e85cf",
+    "visual/01/visual.cfg": "0bd72035cfad863f9d9af3f774f1a0ed6a684606c98fe0fd2262b7cb93e1f445",
+    "visual/01/visual.log": "af567365947c74f84de57f71ee19ae5a4755b285b5912cc80ba785620fa4ef24",
+    "visual/02/fixture-source/MAPINFO.txt": "502f8ea9b5ac2fae609da9189c48141bc9a97045581319b6ffeb0c1693653279",
+    "visual/02/fixture-source/ZSCRIPT.txt": "9cec4b895193ad96939a119f1f9ab406a402ad222cc62c768a08a917390373ad",
+    "visual/02/fixture.zs": "f52ce686cb9d6b855fb0c18e5d4fc28beb5cc24dd0e7e4d70603cbc15b30524c",
+    "visual/02/RESULTS.json": "36b29f44ce45e7db1cc738a6308569c541fe699c54feb4a3d83f8d7b3b4fac64",
+    "visual/02/session.ini": "7402e3703edcd833fb2038070154700bf60cc49afd002001afb235e2adc11b26",
+    "visual/02/visual-process.log": "570ec594be44c1a50f3301665ee70bf83c17403a4476b4c4d3299d7f5ec4ca4c",
+    "visual/02/visual.cfg": "5d4267de55b3eaa982a86b0529e90dd14b0d84e1e4d5184871a6540af3014958",
+    "visual/02/visual.log": "70ba869f0683118bab524fffa1f5ccd8cc3fa025021a181e1bcabc8f9ec2c3c0",
+    "validation.log": "c62fbe44c1b5689363c30813bec393251d888dbfd3674ee35885442c89aee699"
+  }
+}

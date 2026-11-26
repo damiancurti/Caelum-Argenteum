@@ -1,0 +1,28 @@
+{
+  "issue": 652,
+  "kind": "ammunition",
+  "scope": "Native pickup/toss, quantity and saved ownership for ammunition; no normal menu or author acceptance.",
+  "baseline_sha256": "23adb7917f961a41c33b9382873e9017abd4b2b1c46fdb5f789da1a871a59485",
+  "runtime_sha256": "23adb7917f961a41c33b9382873e9017abd4b2b1c46fdb5f789da1a871a59485",
+  "model_sha256": "67b0a684567f180996f8999d929c1df7537485f8fd096c8927e1014b3ba73ad0",
+  "fixture_sha256": "ac9fd534bc3c0544223e8a8657c9a4ff4eedfaf0f43082395dc628772be7c380",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 106
+    }
+  ],
+  "captures": {
+    "candidate-0.png": "19d515b6dad5580e571c4b79dcc4fd198f3d44345852562a012cb15e69c90ec8",
+    "candidate-1.png": "cc4300ade694deee46a6b96267ad3aeb76cc4a292d28df73bbd5635c2d2d571a",
+    "candidate-2.png": "436557765dbcbaa1a46f037cd397dd3a84fb6eff15310dc82024554ff455dc37",
+    "candidate-3.png": "73ffe46e259c69b1b947a21da4f492b0e36ec2a1ec651a0673a44cfa883b9fd9",
+    "candidate-5.png": "4a68d2a06b291f9ff9f13afba4d20a64cf84e67e1597ae1ba0c23da9e04f74cb",
+    "candidate-6.png": "f804d944d8dcaa5125333341b8895bf2c9d13d327bd8619a21a7f5b267503311",
+    "candidate-7.png": "d4721010891a6bdc2f9552a1fd5668bab9d207bd7bffceaad0d69f0cd5cb5c48"
+  }
+}

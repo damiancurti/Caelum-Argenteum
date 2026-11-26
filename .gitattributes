@@ -585,3 +585,12 @@
 /assets/validation_v5_17_2/*.py text eol=lf
 /assets/validation_v5_17_2/*.zs text eol=lf
 /assets/validation_v5_17_2/evidence/** -text -whitespace
+
+/assets/generators/*inventory_ammunition_models.py text eol=lf
+/assets/source/art/inventory_models_647/ammunition/*.json text eol=lf
+/assets/source/art/inventory_models_647/ammunition/*.txt text eol=lf
+/src/caelum/data/inventory_ammunition.modeldef text eol=lf
+/src/models/caelum/inventory/ammunition/*.md3 -text
+/assets/validation_v5_17_3/*.py text eol=lf
+/assets/validation_v5_17_3/*.zs text eol=lf
+/assets/validation_v5_17_3/evidence/** -text -whitespace

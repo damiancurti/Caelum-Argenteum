@@ -1,0 +1,3857 @@
+{
+  "schema_revision": 1,
+  "issue": 652,
+  "status": "runtime_art_candidate_pending_author_acceptance",
+  "authority": "Author 2026-11-13: all inventory drops require actual3D. Keep approved ammunition identities, tier materials and existing item/projectile rules.",
+  "dimensions_note": "Editable art only. Source sprite opaque extents and composite-sprite scale determine display size; native actor scale/collision/weight remain. Shaft/tip proportions reuse existing projectile art dimensions. Decorative bundles do not encode native Amount. In-flight models stay unchanged.",
+  "excluded_parent": "CaelumJavelinAmmo is an implementation parent with no production pickup consumer and inherited carbine identity; no new ammunition type or behavior is introduced.",
+  "art_method": "Reuse existing owned texture pixels unchanged after the new image-tool request was rejected. No raster editing or additional image generation.",
+  "model_path": "models/caelum/inventory/ammunition",
+  "materials": {
+    "wood": {
+      "texture": "models/caelum/actors/training/ca_training_dummy.png",
+      "image_size": [
+        512,
+        256
+      ],
+      "rect_pixels": [
+        8,
+        8,
+        248,
+        248
+      ]
+    },
+    "leather": {
+      "texture": "models/caelum/inventory/consumables/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        12,
+        302,
+        302
+      ]
+    },
+    "strap": {
+      "texture": "models/caelum/inventory/consumables/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        326,
+        12,
+        614,
+        302
+      ]
+    },
+    "bronze": {
+      "texture": "models/caelum/inventory/consumables/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        326,
+        302,
+        614
+      ]
+    },
+    "silver": {
+      "texture": "models/caelum/inventory/consumables/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        326,
+        326,
+        614,
+        614
+      ]
+    },
+    "gold": {
+      "texture": "models/caelum/inventory/consumables/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        640,
+        326,
+        928,
+        614
+      ]
+    },
+    "iron": {
+      "texture": "models/caelum/actors/training/ca_training_dummy.png",
+      "image_size": [
+        512,
+        256
+      ],
+      "rect_pixels": [
+        264,
+        136,
+        376,
+        248
+      ]
+    },
+    "dark": {
+      "texture": "models/caelum/inventory/consumables/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        954,
+        326,
+        1242,
+        614
+      ]
+    },
+    "red": {
+      "texture": "models/caelum/inventory/consumables/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        16,
+        956,
+        65,
+        1006
+      ]
+    },
+    "blue": {
+      "texture": "models/caelum/inventory/consumables/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        640,
+        640,
+        928,
+        928
+      ]
+    },
+    "paper": {
+      "texture": "graphics/caelum/shotgun/icons.png",
+      "image_size": [
+        1200,
+        1310
+      ],
+      "rect_pixels": [
+        1012,
+        981,
+        1047,
+        1069
+      ]
+    }
+  },
+  "tier_materials": {
+    "arrow": {
+      "fletching": "red"
+    },
+    "bolt": {
+      "fletching": "blue"
+    },
+    "one": {
+      "shaft": "wood",
+      "fitting": "bronze"
+    },
+    "two": {
+      "shaft": "dark",
+      "fitting": "silver"
+    },
+    "three": {
+      "shaft": "dark",
+      "fitting": "gold"
+    },
+    "carbine": {},
+    "shotgun": {}
+  },
+  "families": {
+    "arrow": {
+      "parts": [
+        {
+          "kind": "tube",
+          "part": "0_shaft",
+          "material": "wood",
+          "rows": [
+            [
+              -13.0,
+              -1.7,
+              0.7,
+              0.27,
+              0.27
+            ],
+            [
+              9.0,
+              -1.7,
+              0.7,
+              0.27,
+              0.27
+            ]
+          ],
+          "segments": 8,
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "0_metal_head",
+          "material": "iron",
+          "outline": [
+            [
+              -1.5,
+              -0.6
+            ],
+            [
+              2.5,
+              0
+            ],
+            [
+              -1.5,
+              0.6
+            ],
+            [
+              -0.5,
+              0
+            ]
+          ],
+          "center": [
+            10.5,
+            -1.7,
+            0.7
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "0_vertical_fletching",
+          "material": "fletching",
+          "outline": [
+            [
+              -2,
+              -0.8
+            ],
+            [
+              -1,
+              1.2
+            ],
+            [
+              2,
+              0.9
+            ],
+            [
+              3,
+              -0.8
+            ]
+          ],
+          "center": [
+            -10.0,
+            -1.7,
+            1.5
+          ],
+          "depth": 0.22,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "tube",
+          "part": "0_horizontal_fletching",
+          "material": "fletching",
+          "rows": [
+            [
+              -12.0,
+              -1.7,
+              0.7,
+              0.3,
+              0.12
+            ],
+            [
+              -11.0,
+              -1.7,
+              0.7,
+              1.7,
+              0.12
+            ],
+            [
+              -8.0,
+              -1.7,
+              0.7,
+              1.3,
+              0.12
+            ],
+            [
+              -7.0,
+              -1.7,
+              0.7,
+              0.3,
+              0.12
+            ]
+          ],
+          "segments": 8,
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "tube",
+          "part": "1_shaft",
+          "material": "wood",
+          "rows": [
+            [
+              -13.0,
+              0,
+              1.6,
+              0.27,
+              0.27
+            ],
+            [
+              9.0,
+              0,
+              1.6,
+              0.27,
+              0.27
+            ]
+          ],
+          "segments": 8,
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "1_metal_head",
+          "material": "iron",
+          "outline": [
+            [
+              -1.5,
+              -0.6
+            ],
+            [
+              2.5,
+              0
+            ],
+            [
+              -1.5,
+              0.6
+            ],
+            [
+              -0.5,
+              0
+            ]
+          ],
+          "center": [
+            10.5,
+            0,
+            1.6
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "1_vertical_fletching",
+          "material": "fletching",
+          "outline": [
+            [
+              -2,
+              -0.8
+            ],
+            [
+              -1,
+              1.2
+            ],
+            [
+              2,
+              0.9
+            ],
+            [
+              3,
+              -0.8
+            ]
+          ],
+          "center": [
+            -10.0,
+            0,
+            2.4000000000000004
+          ],
+          "depth": 0.22,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "tube",
+          "part": "1_horizontal_fletching",
+          "material": "fletching",
+          "rows": [
+            [
+              -12.0,
+              0,
+              1.6,
+              0.3,
+              0.12
+            ],
+            [
+              -11.0,
+              0,
+              1.6,
+              1.7,
+              0.12
+            ],
+            [
+              -8.0,
+              0,
+              1.6,
+              1.3,
+              0.12
+            ],
+            [
+              -7.0,
+              0,
+              1.6,
+              0.3,
+              0.12
+            ]
+          ],
+          "segments": 8,
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "tube",
+          "part": "2_shaft",
+          "material": "wood",
+          "rows": [
+            [
+              -13.0,
+              1.7,
+              0.7,
+              0.27,
+              0.27
+            ],
+            [
+              9.0,
+              1.7,
+              0.7,
+              0.27,
+              0.27
+            ]
+          ],
+          "segments": 8,
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "2_metal_head",
+          "material": "iron",
+          "outline": [
+            [
+              -1.5,
+              -0.6
+            ],
+            [
+              2.5,
+              0
+            ],
+            [
+              -1.5,
+              0.6
+            ],
+            [
+              -0.5,
+              0
+            ]
+          ],
+          "center": [
+            10.5,
+            1.7,
+            0.7
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "2_vertical_fletching",
+          "material": "fletching",
+          "outline": [
+            [
+              -2,
+              -0.8
+            ],
+            [
+              -1,
+              1.2
+            ],
+            [
+              2,
+              0.9
+            ],
+            [
+              3,
+              -0.8
+            ]
+          ],
+          "center": [
+            -10.0,
+            1.7,
+            1.5
+          ],
+          "depth": 0.22,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "tube",
+          "part": "2_horizontal_fletching",
+          "material": "fletching",
+          "rows": [
+            [
+              -12.0,
+              1.7,
+              0.7,
+              0.3,
+              0.12
+            ],
+            [
+              -11.0,
+              1.7,
+              0.7,
+              1.7,
+              0.12
+            ],
+            [
+              -8.0,
+              1.7,
+              0.7,
+              1.3,
+              0.12
+            ],
+            [
+              -7.0,
+              1.7,
+              0.7,
+              0.3,
+              0.12
+            ]
+          ],
+          "segments": 8,
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "tube",
+          "part": "leather_binding",
+          "material": "leather",
+          "rows": [
+            [
+              -1,
+              0,
+              1,
+              3.4,
+              1.9
+            ],
+            [
+              1,
+              0,
+              1,
+              3.4,
+              1.9
+            ]
+          ],
+          "segments": 12
+        },
+        {
+          "kind": "tube",
+          "part": "binding_rim",
+          "material": "strap",
+          "rows": [
+            [
+              -1.2,
+              0,
+              1,
+              3.5,
+              2
+            ],
+            [
+              -0.7,
+              0,
+              1,
+              3.5,
+              2
+            ]
+          ],
+          "segments": 12
+        }
+      ]
+    },
+    "bolt": {
+      "parts": [
+        {
+          "kind": "tube",
+          "part": "0_shaft",
+          "material": "wood",
+          "rows": [
+            [
+              -10.0,
+              -1.7,
+              0.7,
+              0.27,
+              0.27
+            ],
+            [
+              6.0,
+              -1.7,
+              0.7,
+              0.27,
+              0.27
+            ]
+          ],
+          "segments": 8,
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "0_metal_head",
+          "material": "iron",
+          "outline": [
+            [
+              -1.5,
+              -0.6
+            ],
+            [
+              2.5,
+              0
+            ],
+            [
+              -1.5,
+              0.6
+            ],
+            [
+              -0.5,
+              0
+            ]
+          ],
+          "center": [
+            7.5,
+            -1.7,
+            0.7
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "0_vertical_fletching",
+          "material": "fletching",
+          "outline": [
+            [
+              -2,
+              -0.8
+            ],
+            [
+              -1,
+              1.2
+            ],
+            [
+              2,
+              0.9
+            ],
+            [
+              3,
+              -0.8
+            ]
+          ],
+          "center": [
+            -7.0,
+            -1.7,
+            1.5
+          ],
+          "depth": 0.22,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "tube",
+          "part": "0_horizontal_fletching",
+          "material": "fletching",
+          "rows": [
+            [
+              -9.0,
+              -1.7,
+              0.7,
+              0.3,
+              0.12
+            ],
+            [
+              -8.0,
+              -1.7,
+              0.7,
+              1.7,
+              0.12
+            ],
+            [
+              -5.0,
+              -1.7,
+              0.7,
+              1.3,
+              0.12
+            ],
+            [
+              -4.0,
+              -1.7,
+              0.7,
+              0.3,
+              0.12
+            ]
+          ],
+          "segments": 8,
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "tube",
+          "part": "1_shaft",
+          "material": "wood",
+          "rows": [
+            [
+              -10.0,
+              0,
+              1.6,
+              0.27,
+              0.27
+            ],
+            [
+              6.0,
+              0,
+              1.6,
+              0.27,
+              0.27
+            ]
+          ],
+          "segments": 8,
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "1_metal_head",
+          "material": "iron",
+          "outline": [
+            [
+              -1.5,
+              -0.6
+            ],
+            [
+              2.5,
+              0
+            ],
+            [
+              -1.5,
+              0.6
+            ],
+            [
+              -0.5,
+              0
+            ]
+          ],
+          "center": [
+            7.5,
+            0,
+            1.6
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "1_vertical_fletching",
+          "material": "fletching",
+          "outline": [
+            [
+              -2,
+              -0.8
+            ],
+            [
+              -1,
+              1.2
+            ],
+            [
+              2,
+              0.9
+            ],
+            [
+              3,
+              -0.8
+            ]
+          ],
+          "center": [
+            -7.0,
+            0,
+            2.4000000000000004
+          ],
+          "depth": 0.22,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "tube",
+          "part": "1_horizontal_fletching",
+          "material": "fletching",
+          "rows": [
+            [
+              -9.0,
+              0,
+              1.6,
+              0.3,
+              0.12
+            ],
+            [
+              -8.0,
+              0,
+              1.6,
+              1.7,
+              0.12
+            ],
+            [
+              -5.0,
+              0,
+              1.6,
+              1.3,
+              0.12
+            ],
+            [
+              -4.0,
+              0,
+              1.6,
+              0.3,
+              0.12
+            ]
+          ],
+          "segments": 8,
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "tube",
+          "part": "2_shaft",
+          "material": "wood",
+          "rows": [
+            [
+              -10.0,
+              1.7,
+              0.7,
+              0.27,
+              0.27
+            ],
+            [
+              6.0,
+              1.7,
+              0.7,
+              0.27,
+              0.27
+            ]
+          ],
+          "segments": 8,
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "2_metal_head",
+          "material": "iron",
+          "outline": [
+            [
+              -1.5,
+              -0.6
+            ],
+            [
+              2.5,
+              0
+            ],
+            [
+              -1.5,
+              0.6
+            ],
+            [
+              -0.5,
+              0
+            ]
+          ],
+          "center": [
+            7.5,
+            1.7,
+            0.7
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "2_vertical_fletching",
+          "material": "fletching",
+          "outline": [
+            [
+              -2,
+              -0.8
+            ],
+            [
+              -1,
+              1.2
+            ],
+            [
+              2,
+              0.9
+            ],
+            [
+              3,
+              -0.8
+            ]
+          ],
+          "center": [
+            -7.0,
+            1.7,
+            1.5
+          ],
+          "depth": 0.22,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "tube",
+          "part": "2_horizontal_fletching",
+          "material": "fletching",
+          "rows": [
+            [
+              -9.0,
+              1.7,
+              0.7,
+              0.3,
+              0.12
+            ],
+            [
+              -8.0,
+              1.7,
+              0.7,
+              1.7,
+              0.12
+            ],
+            [
+              -5.0,
+              1.7,
+              0.7,
+              1.3,
+              0.12
+            ],
+            [
+              -4.0,
+              1.7,
+              0.7,
+              0.3,
+              0.12
+            ]
+          ],
+          "segments": 8,
+          "offset": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "tube",
+          "part": "leather_binding",
+          "material": "leather",
+          "rows": [
+            [
+              -1,
+              0,
+              1,
+              3.4,
+              1.9
+            ],
+            [
+              1,
+              0,
+              1,
+              3.4,
+              1.9
+            ]
+          ],
+          "segments": 12
+        },
+        {
+          "kind": "tube",
+          "part": "binding_rim",
+          "material": "strap",
+          "rows": [
+            [
+              -1.2,
+              0,
+              1,
+              3.5,
+              2
+            ],
+            [
+              -0.7,
+              0,
+              1,
+              3.5,
+              2
+            ]
+          ],
+          "segments": 12
+        }
+      ]
+    },
+    "javelin": {
+      "parts": [
+        {
+          "kind": "tube",
+          "part": "shaft",
+          "material": "shaft",
+          "rows": [
+            [
+              -24,
+              0,
+              1,
+              0.45,
+              0.45
+            ],
+            [
+              15,
+              0,
+              1,
+              0.45,
+              0.45
+            ]
+          ],
+          "segments": 12
+        },
+        {
+          "kind": "prism",
+          "part": "spear_head",
+          "material": "silver",
+          "outline": [
+            [
+              -4,
+              -1.4
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              -4,
+              1.4
+            ],
+            [
+              -2,
+              0
+            ]
+          ],
+          "center": [
+            19,
+            0,
+            1
+          ],
+          "depth": 0.5,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "tube",
+          "part": "grip",
+          "material": "leather",
+          "rows": [
+            [
+              -2,
+              0,
+              1,
+              0.65,
+              0.65
+            ],
+            [
+              6,
+              0,
+              1,
+              0.65,
+              0.65
+            ]
+          ],
+          "segments": 12
+        },
+        {
+          "kind": "tube",
+          "part": "head_socket",
+          "material": "fitting",
+          "rows": [
+            [
+              13,
+              0,
+              1,
+              0.7,
+              0.7
+            ],
+            [
+              15,
+              0,
+              1,
+              0.7,
+              0.7
+            ]
+          ],
+          "segments": 12
+        },
+        {
+          "kind": "tube",
+          "part": "butt_cap",
+          "material": "fitting",
+          "rows": [
+            [
+              -24,
+              0,
+              1,
+              0.7,
+              0.7
+            ],
+            [
+              -23,
+              0,
+              1,
+              0.7,
+              0.7
+            ]
+          ],
+          "segments": 12
+        },
+        {
+          "kind": "tube",
+          "part": "tassel_knot",
+          "material": "red",
+          "rows": [
+            [
+              12.5,
+              0,
+              1,
+              0.8,
+              0.8
+            ],
+            [
+              13.4,
+              0,
+              1,
+              0.8,
+              0.8
+            ]
+          ],
+          "segments": 10
+        },
+        {
+          "kind": "tube",
+          "part": "red_tassel_0",
+          "material": "red",
+          "rows": [
+            [
+              13,
+              0,
+              1,
+              0.3,
+              0.25
+            ],
+            [
+              12,
+              -1,
+              0.4,
+              0.4,
+              0.25
+            ],
+            [
+              9,
+              -2,
+              0.1,
+              0.3,
+              0.2
+            ]
+          ],
+          "segments": 8
+        },
+        {
+          "kind": "tube",
+          "part": "red_tassel_1",
+          "material": "red",
+          "rows": [
+            [
+              13,
+              0,
+              1,
+              0.3,
+              0.25
+            ],
+            [
+              14,
+              -1,
+              0.3,
+              0.4,
+              0.25
+            ],
+            [
+              15,
+              -3,
+              0.1,
+              0.3,
+              0.2
+            ]
+          ],
+          "segments": 8
+        },
+        {
+          "kind": "tube",
+          "part": "red_tassel_2",
+          "material": "red",
+          "rows": [
+            [
+              13,
+              0,
+              1,
+              0.3,
+              0.25
+            ],
+            [
+              12,
+              1,
+              0.4,
+              0.4,
+              0.25
+            ],
+            [
+              10,
+              3,
+              0.1,
+              0.3,
+              0.2
+            ]
+          ],
+          "segments": 8
+        }
+      ]
+    },
+    "carbine": {
+      "parts": [
+        {
+          "kind": "loft",
+          "part": "0_case",
+          "material": "bronze",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              4.5,
+              4.5
+            ],
+            [
+              1.5,
+              0,
+              0,
+              4.5,
+              4.5
+            ],
+            [
+              1.8,
+              0,
+              0,
+              3.8,
+              3.8
+            ],
+            [
+              22,
+              0,
+              0,
+              3.8,
+              3.8
+            ],
+            [
+              26,
+              0,
+              0,
+              3,
+              3
+            ],
+            [
+              30,
+              0,
+              0,
+              3,
+              3
+            ]
+          ],
+          "segments": 16,
+          "exponent": 1,
+          "uv_projection": "box",
+          "offset": [
+            -11,
+            3,
+            0
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "0_projectile",
+          "material": "bronze",
+          "rows": [
+            [
+              29,
+              0,
+              0,
+              2.9,
+              2.9
+            ],
+            [
+              34,
+              0,
+              0,
+              2.9,
+              2.9
+            ],
+            [
+              38,
+              0,
+              0,
+              2,
+              2
+            ],
+            [
+              40,
+              0,
+              0,
+              0.25,
+              0.25
+            ]
+          ],
+          "segments": 16,
+          "exponent": 1,
+          "uv_projection": "box",
+          "offset": [
+            -11,
+            3,
+            0
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "1_case",
+          "material": "bronze",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              4.5,
+              4.5
+            ],
+            [
+              1.5,
+              0,
+              0,
+              4.5,
+              4.5
+            ],
+            [
+              1.8,
+              0,
+              0,
+              3.8,
+              3.8
+            ],
+            [
+              22,
+              0,
+              0,
+              3.8,
+              3.8
+            ],
+            [
+              26,
+              0,
+              0,
+              3,
+              3
+            ],
+            [
+              30,
+              0,
+              0,
+              3,
+              3
+            ]
+          ],
+          "segments": 16,
+          "exponent": 1,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            6,
+            0
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "1_projectile",
+          "material": "bronze",
+          "rows": [
+            [
+              29,
+              0,
+              0,
+              2.9,
+              2.9
+            ],
+            [
+              34,
+              0,
+              0,
+              2.9,
+              2.9
+            ],
+            [
+              38,
+              0,
+              0,
+              2,
+              2
+            ],
+            [
+              40,
+              0,
+              0,
+              0.25,
+              0.25
+            ]
+          ],
+          "segments": 16,
+          "exponent": 1,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            6,
+            0
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "2_case",
+          "material": "bronze",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              4.5,
+              4.5
+            ],
+            [
+              1.5,
+              0,
+              0,
+              4.5,
+              4.5
+            ],
+            [
+              1.8,
+              0,
+              0,
+              3.8,
+              3.8
+            ],
+            [
+              22,
+              0,
+              0,
+              3.8,
+              3.8
+            ],
+            [
+              26,
+              0,
+              0,
+              3,
+              3
+            ],
+            [
+              30,
+              0,
+              0,
+              3,
+              3
+            ]
+          ],
+          "segments": 16,
+          "exponent": 1,
+          "uv_projection": "box",
+          "offset": [
+            11,
+            4,
+            0
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "2_projectile",
+          "material": "bronze",
+          "rows": [
+            [
+              29,
+              0,
+              0,
+              2.9,
+              2.9
+            ],
+            [
+              34,
+              0,
+              0,
+              2.9,
+              2.9
+            ],
+            [
+              38,
+              0,
+              0,
+              2,
+              2
+            ],
+            [
+              40,
+              0,
+              0,
+              0.25,
+              0.25
+            ]
+          ],
+          "segments": 16,
+          "exponent": 1,
+          "uv_projection": "box",
+          "offset": [
+            11,
+            4,
+            0
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "lying_case",
+          "material": "bronze",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              4.5,
+              4.5
+            ],
+            [
+              1.5,
+              0,
+              0,
+              4.5,
+              4.5
+            ],
+            [
+              1.8,
+              0,
+              0,
+              3.8,
+              3.8
+            ],
+            [
+              22,
+              0,
+              0,
+              3.8,
+              3.8
+            ],
+            [
+              26,
+              0,
+              0,
+              3,
+              3
+            ],
+            [
+              30,
+              0,
+              0,
+              3,
+              3
+            ]
+          ],
+          "segments": 16,
+          "exponent": 1,
+          "uv_projection": "box",
+          "offset": [
+            -18,
+            -10,
+            4.5
+          ],
+          "rotation": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "lying_projectile",
+          "material": "bronze",
+          "rows": [
+            [
+              29,
+              0,
+              0,
+              2.9,
+              2.9
+            ],
+            [
+              34,
+              0,
+              0,
+              2.9,
+              2.9
+            ],
+            [
+              38,
+              0,
+              0,
+              2,
+              2
+            ],
+            [
+              40,
+              0,
+              0,
+              0.25,
+              0.25
+            ]
+          ],
+          "segments": 16,
+          "exponent": 1,
+          "uv_projection": "box",
+          "offset": [
+            -18,
+            -10,
+            4.5
+          ],
+          "rotation": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "leather_pouch",
+          "material": "leather",
+          "rows": [
+            [
+              0,
+              0,
+              16,
+              19,
+              5
+            ],
+            [
+              4,
+              0,
+              16,
+              21,
+              6
+            ],
+            [
+              26,
+              0,
+              16,
+              18,
+              6
+            ],
+            [
+              31,
+              0,
+              16,
+              14,
+              4
+            ]
+          ],
+          "segments": 24,
+          "exponent": 0.6,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "tube",
+          "part": "pouch_strap",
+          "material": "strap",
+          "rows": [
+            [
+              -20,
+              17,
+              4,
+              2,
+              1
+            ],
+            [
+              -22,
+              18,
+              19,
+              2,
+              1
+            ],
+            [
+              -12,
+              18,
+              31,
+              2,
+              1
+            ],
+            [
+              12,
+              18,
+              31,
+              2,
+              1
+            ],
+            [
+              22,
+              18,
+              19,
+              2,
+              1
+            ],
+            [
+              20,
+              17,
+              4,
+              2,
+              1
+            ]
+          ],
+          "segments": 8
+        }
+      ]
+    },
+    "shotgun": {
+      "parts": [
+        {
+          "kind": "loft",
+          "part": "0_brass_base",
+          "material": "bronze",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              6,
+              6
+            ],
+            [
+              1,
+              0,
+              0,
+              6,
+              6
+            ],
+            [
+              1.5,
+              0,
+              0,
+              5.3,
+              5.3
+            ],
+            [
+              9,
+              0,
+              0,
+              5.3,
+              5.3
+            ]
+          ],
+          "segments": 20,
+          "exponent": 1,
+          "uv_projection": "box",
+          "offset": [
+            -12,
+            3,
+            0
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "0_paper_body",
+          "material": "paper",
+          "rows": [
+            [
+              8.5,
+              0,
+              0,
+              5.1,
+              5.1
+            ],
+            [
+              31,
+              0,
+              0,
+              5.1,
+              5.1
+            ],
+            [
+              32,
+              0,
+              0,
+              4.8,
+              4.8
+            ]
+          ],
+          "segments": 20,
+          "exponent": 1,
+          "uv_projection": "box",
+          "offset": [
+            -12,
+            3,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "0_crimp_0",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              1.0,
+              0,
+              -0.0
+            ],
+            [
+              0.0,
+              0,
+              1.0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            -12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "0_crimp_1",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0.7071067811865476,
+              0,
+              -0.7071067811865476
+            ],
+            [
+              0.7071067811865476,
+              0,
+              0.7071067811865476
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            -12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "0_crimp_2",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              6.123233995736766e-17,
+              0,
+              -1.0
+            ],
+            [
+              1.0,
+              0,
+              6.123233995736766e-17
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            -12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "0_crimp_3",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              -0.7071067811865475,
+              0,
+              -0.7071067811865476
+            ],
+            [
+              0.7071067811865476,
+              0,
+              -0.7071067811865475
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            -12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "0_crimp_4",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              -1.0,
+              0,
+              -1.2246467991473532e-16
+            ],
+            [
+              1.2246467991473532e-16,
+              0,
+              -1.0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            -12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "0_crimp_5",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              -0.7071067811865477,
+              0,
+              0.7071067811865475
+            ],
+            [
+              -0.7071067811865475,
+              0,
+              -0.7071067811865477
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            -12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "0_crimp_6",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              -1.8369701987210297e-16,
+              0,
+              1.0
+            ],
+            [
+              -1.0,
+              0,
+              -1.8369701987210297e-16
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            -12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "0_crimp_7",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0.7071067811865474,
+              0,
+              0.7071067811865477
+            ],
+            [
+              -0.7071067811865477,
+              0,
+              0.7071067811865474
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            -12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "1_brass_base",
+          "material": "bronze",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              6,
+              6
+            ],
+            [
+              1,
+              0,
+              0,
+              6,
+              6
+            ],
+            [
+              1.5,
+              0,
+              0,
+              5.3,
+              5.3
+            ],
+            [
+              9,
+              0,
+              0,
+              5.3,
+              5.3
+            ]
+          ],
+          "segments": 20,
+          "exponent": 1,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            9,
+            0
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "1_paper_body",
+          "material": "paper",
+          "rows": [
+            [
+              8.5,
+              0,
+              0,
+              5.1,
+              5.1
+            ],
+            [
+              31,
+              0,
+              0,
+              5.1,
+              5.1
+            ],
+            [
+              32,
+              0,
+              0,
+              4.8,
+              4.8
+            ]
+          ],
+          "segments": 20,
+          "exponent": 1,
+          "uv_projection": "box",
+          "offset": [
+            0,
+            9,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "1_crimp_0",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              1.0,
+              0,
+              -0.0
+            ],
+            [
+              0.0,
+              0,
+              1.0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            9,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "1_crimp_1",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0.7071067811865476,
+              0,
+              -0.7071067811865476
+            ],
+            [
+              0.7071067811865476,
+              0,
+              0.7071067811865476
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            9,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "1_crimp_2",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              6.123233995736766e-17,
+              0,
+              -1.0
+            ],
+            [
+              1.0,
+              0,
+              6.123233995736766e-17
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            9,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "1_crimp_3",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              -0.7071067811865475,
+              0,
+              -0.7071067811865476
+            ],
+            [
+              0.7071067811865476,
+              0,
+              -0.7071067811865475
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            9,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "1_crimp_4",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              -1.0,
+              0,
+              -1.2246467991473532e-16
+            ],
+            [
+              1.2246467991473532e-16,
+              0,
+              -1.0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            9,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "1_crimp_5",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              -0.7071067811865477,
+              0,
+              0.7071067811865475
+            ],
+            [
+              -0.7071067811865475,
+              0,
+              -0.7071067811865477
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            9,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "1_crimp_6",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              -1.8369701987210297e-16,
+              0,
+              1.0
+            ],
+            [
+              -1.0,
+              0,
+              -1.8369701987210297e-16
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            9,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "1_crimp_7",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0.7071067811865474,
+              0,
+              0.7071067811865477
+            ],
+            [
+              -0.7071067811865477,
+              0,
+              0.7071067811865474
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            9,
+            32
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "2_brass_base",
+          "material": "bronze",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              6,
+              6
+            ],
+            [
+              1,
+              0,
+              0,
+              6,
+              6
+            ],
+            [
+              1.5,
+              0,
+              0,
+              5.3,
+              5.3
+            ],
+            [
+              9,
+              0,
+              0,
+              5.3,
+              5.3
+            ]
+          ],
+          "segments": 20,
+          "exponent": 1,
+          "uv_projection": "box",
+          "offset": [
+            12,
+            3,
+            0
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "2_paper_body",
+          "material": "paper",
+          "rows": [
+            [
+              8.5,
+              0,
+              0,
+              5.1,
+              5.1
+            ],
+            [
+              31,
+              0,
+              0,
+              5.1,
+              5.1
+            ],
+            [
+              32,
+              0,
+              0,
+              4.8,
+              4.8
+            ]
+          ],
+          "segments": 20,
+          "exponent": 1,
+          "uv_projection": "box",
+          "offset": [
+            12,
+            3,
+            0
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "2_crimp_0",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              1.0,
+              0,
+              -0.0
+            ],
+            [
+              0.0,
+              0,
+              1.0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "2_crimp_1",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0.7071067811865476,
+              0,
+              -0.7071067811865476
+            ],
+            [
+              0.7071067811865476,
+              0,
+              0.7071067811865476
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "2_crimp_2",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              6.123233995736766e-17,
+              0,
+              -1.0
+            ],
+            [
+              1.0,
+              0,
+              6.123233995736766e-17
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "2_crimp_3",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              -0.7071067811865475,
+              0,
+              -0.7071067811865476
+            ],
+            [
+              0.7071067811865476,
+              0,
+              -0.7071067811865475
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "2_crimp_4",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              -1.0,
+              0,
+              -1.2246467991473532e-16
+            ],
+            [
+              1.2246467991473532e-16,
+              0,
+              -1.0
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "2_crimp_5",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              -0.7071067811865477,
+              0,
+              0.7071067811865475
+            ],
+            [
+              -0.7071067811865475,
+              0,
+              -0.7071067811865477
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "2_crimp_6",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              -1.8369701987210297e-16,
+              0,
+              1.0
+            ],
+            [
+              -1.0,
+              0,
+              -1.8369701987210297e-16
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "2_crimp_7",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0.7071067811865474,
+              0,
+              0.7071067811865477
+            ],
+            [
+              -0.7071067811865477,
+              0,
+              0.7071067811865474
+            ],
+            [
+              0,
+              -1,
+              0
+            ]
+          ],
+          "offset": [
+            12,
+            3,
+            32
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "lying_brass_base",
+          "material": "bronze",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              6,
+              6
+            ],
+            [
+              1,
+              0,
+              0,
+              6,
+              6
+            ],
+            [
+              1.5,
+              0,
+              0,
+              5.3,
+              5.3
+            ],
+            [
+              9,
+              0,
+              0,
+              5.3,
+              5.3
+            ]
+          ],
+          "segments": 20,
+          "exponent": 1,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            -16,
+            -12,
+            6
+          ]
+        },
+        {
+          "kind": "loft",
+          "part": "lying_paper_body",
+          "material": "paper",
+          "rows": [
+            [
+              8.5,
+              0,
+              0,
+              5.1,
+              5.1
+            ],
+            [
+              31,
+              0,
+              0,
+              5.1,
+              5.1
+            ],
+            [
+              32,
+              0,
+              0,
+              4.8,
+              4.8
+            ]
+          ],
+          "segments": 20,
+          "exponent": 1,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          "offset": [
+            -16,
+            -12,
+            6
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "lying_crimp_0",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0.0,
+              -1,
+              0.0
+            ],
+            [
+              0.0,
+              0,
+              1.0
+            ],
+            [
+              -1.0,
+              0,
+              0.0
+            ]
+          ],
+          "offset": [
+            16,
+            -12,
+            6
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "lying_crimp_1",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0.0,
+              -1,
+              0.0
+            ],
+            [
+              0.7071067811865476,
+              0,
+              0.7071067811865476
+            ],
+            [
+              -0.7071067811865476,
+              0,
+              0.7071067811865476
+            ]
+          ],
+          "offset": [
+            16,
+            -12,
+            6
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "lying_crimp_2",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0.0,
+              -1,
+              0.0
+            ],
+            [
+              1.0,
+              0,
+              6.123233995736766e-17
+            ],
+            [
+              -6.123233995736766e-17,
+              0,
+              1.0
+            ]
+          ],
+          "offset": [
+            16,
+            -12,
+            6
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "lying_crimp_3",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0.0,
+              -1,
+              0.0
+            ],
+            [
+              0.7071067811865476,
+              0,
+              -0.7071067811865475
+            ],
+            [
+              0.7071067811865475,
+              0,
+              0.7071067811865476
+            ]
+          ],
+          "offset": [
+            16,
+            -12,
+            6
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "lying_crimp_4",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0.0,
+              -1,
+              0.0
+            ],
+            [
+              1.2246467991473532e-16,
+              0,
+              -1.0
+            ],
+            [
+              1.0,
+              0,
+              1.2246467991473532e-16
+            ]
+          ],
+          "offset": [
+            16,
+            -12,
+            6
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "lying_crimp_5",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0.0,
+              -1,
+              0.0
+            ],
+            [
+              -0.7071067811865475,
+              0,
+              -0.7071067811865477
+            ],
+            [
+              0.7071067811865477,
+              0,
+              -0.7071067811865475
+            ]
+          ],
+          "offset": [
+            16,
+            -12,
+            6
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "lying_crimp_6",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0.0,
+              -1,
+              0.0
+            ],
+            [
+              -1.0,
+              0,
+              -1.8369701987210297e-16
+            ],
+            [
+              1.8369701987210297e-16,
+              0,
+              -1.0
+            ]
+          ],
+          "offset": [
+            16,
+            -12,
+            6
+          ]
+        },
+        {
+          "kind": "prism",
+          "part": "lying_crimp_7",
+          "material": "paper",
+          "outline": [
+            [
+              -3.2,
+              0
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              1.6,
+              0.5
+            ]
+          ],
+          "center": [
+            3.2,
+            0,
+            0
+          ],
+          "depth": 0.35,
+          "uv_projection": "box",
+          "rotation": [
+            [
+              0.0,
+              -1,
+              0.0
+            ],
+            [
+              -0.7071067811865477,
+              0,
+              0.7071067811865474
+            ],
+            [
+              -0.7071067811865474,
+              0,
+              -0.7071067811865477
+            ]
+          ],
+          "offset": [
+            16,
+            -12,
+            6
+          ]
+        }
+      ]
+    }
+  },
+  "variants": {
+    "carbine": {
+      "family": "carbine",
+      "tier": "carbine",
+      "reference": "src/graphics/caelum/icons/ca_carbine_ammo.png",
+      "reference_axis": "height",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "class": "CaelumCarbineAmmo",
+      "sprite": "CCAA"
+    },
+    "arrow": {
+      "family": "arrow",
+      "tier": "arrow",
+      "reference": "src/graphics/caelum/icons/ca_arrow_ammo.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "class": "CaelumArrowAmmo",
+      "sprite": "CARR"
+    },
+    "bolt": {
+      "family": "bolt",
+      "tier": "bolt",
+      "reference": "src/graphics/caelum/icons/ca_bolt_ammo.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "class": "CaelumBoltAmmo",
+      "sprite": "CBOL"
+    },
+    "javelin_one": {
+      "family": "javelin",
+      "tier": "one",
+      "reference": "src/graphics/caelum/icons/ca_javelin.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "class": "CaelumJavelinTierOneAmmo",
+      "sprite": "CJAV"
+    },
+    "javelin_two": {
+      "family": "javelin",
+      "tier": "two",
+      "reference": "src/graphics/caelum/icons/ca_javelin_t2.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "class": "CaelumJavelinTierTwoAmmo",
+      "sprite": "CJAV"
+    },
+    "javelin_three": {
+      "family": "javelin",
+      "tier": "three",
+      "reference": "src/graphics/caelum/icons/ca_javelin_t3.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "class": "CaelumJavelinTierThreeAmmo",
+      "sprite": "CJAV"
+    },
+    "shotgun": {
+      "family": "shotgun",
+      "tier": "shotgun",
+      "reference": "src/graphics/caelum/shotgun/icons.png",
+      "reference_axis": "height",
+      "sprite_scale": [
+        19.010416667,
+        19.010416667
+      ],
+      "class": "CaelumShotgunAmmo",
+      "sprite": "CSAM",
+      "reference_crop": [
+        767,
+        881,
+        1112,
+        1246
+      ]
+    }
+  },
+  "source_sha256": {
+    "assets/source/art/elemental_518/MODELS.json": "08da944ff765fcb75c57b09e03540b97478589eb93f8d51b06254dc6ff03aa61",
+    "src/TEXTURES": "668d05829560c8d30ed3f756d6d305209a436c57f22c9d956d5f8a8450598ff0",
+    "src/graphics/caelum/icons/ca_arrow_ammo.png": "a921b29fd2eab24993ae16ac6962c0caaa9f1183b43eb1df9497587d03fd2a4b",
+    "src/graphics/caelum/icons/ca_bolt_ammo.png": "9a493e3fd535c9f9f41ddf6b8a8d5fd0709ef7851368b9ddc247751ccfa647bc",
+    "src/graphics/caelum/icons/ca_carbine_ammo.png": "8d7ef010bc87f32ac331b05c764eb07be8c152883e553ba977151d1032ece0d0",
+    "src/graphics/caelum/icons/ca_javelin.png": "a23d7bb4b2009ed4f50c53ff8134024f4b23ef521d4510d6664b88758acf64ee",
+    "src/graphics/caelum/icons/ca_javelin_t2.png": "051c8c2cc5ff1359da6e842cdbc060617a360018fdb5bde60597d810e2bce47b",
+    "src/graphics/caelum/icons/ca_javelin_t3.png": "785c9864652113684afb46402a9d408c1142ecfc2324249484b5a5ad8bdd14ae",
+    "src/graphics/caelum/shotgun.textures": "7b6208f1712678234bfffecb405d5d12ffaaec7cd2a6b272c5422f6b1393d04e",
+    "src/graphics/caelum/shotgun/icons.png": "68b20fb01e0c15394ae832ad082d22d121a33f05e8a623685afa8389aa59e9dc",
+    "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff",
+    "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e"
+  },
+  "parent_issue": 647
+}

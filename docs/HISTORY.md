@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.2** - 2026-11-13.
+Documentation version: **5.17.3** - 2026-11-13.
+
+## 5.17.3 - Ammunition drop models (#652, 2026-11-13)
+
+Separated seven ammunition drop models from the preceding #650 behavior repair.
+Reused owned textures unchanged after the new atlas request failed; preserved its
+prompt/failure record and the original uncommitted #647 candidate. Added explicit
+bindings and deterministic editable exports without changing item or projectile
+rules. The final package has 18,175 exact source entries. Five native runs pass
+551 assertions through pickup, split/recombine, old/new-save loading and rollback,
+retaining seven identities and provenance. Twenty-one inspected detail images
+match the final overlay pixel for pixel. A single seven-drop, 700-tic pair measures
+1126.81/1114.65 sprite/model queue presents/s; p95 1.1122/1.1108 ms and p99
+1.3244/1.3087 ms. Environment and limits are recorded in ASSETS and
+assets/validation_v5_17_3/evidence/SUMMARY.json. CA652-AMMUNITION-01 is pending;
+no ordinary-menu, firing, multiplayer, author or campaign performance acceptance.
 
 ## 5.17.2 - Preserve native javelin stacks (#650, 2026-11-13)
 

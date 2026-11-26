@@ -6,8 +6,11 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.2.** Obtain and update the complete repository,
+**Current release: 5.17.3.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#652 adds seven ammunition drop models using existing owned textures. Native
+inventory rules and projectile art remain unchanged; author review is pending.
 
 #650 fixes native ammunition lookup for all three javelin tiers. Picking up a
 javelin while carrying carbine ammunition now retains its own typed stack.
