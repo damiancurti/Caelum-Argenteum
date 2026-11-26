@@ -1,0 +1,50 @@
+{
+  "issue": 791,
+  "purpose": "Inspect all seven native canine heads, reptilian limbs, tail and lying poses.",
+  "additional_views": [
+    {
+      "name": "lying-oblique",
+      "position": [
+        60,
+        -75,
+        60
+      ],
+      "target": [
+        0,
+        -5,
+        15
+      ],
+      "default_pose": 22
+    },
+    {
+      "name": "heads-detail",
+      "position": [
+        95,
+        0,
+        60
+      ],
+      "target": [
+        20,
+        0,
+        36
+      ]
+    },
+    {
+      "name": "tail-detail",
+      "position": [
+        -85,
+        -50,
+        42
+      ],
+      "target": [
+        -30,
+        6,
+        17
+      ]
+    }
+  ],
+  "action_views": {
+    "death": 6,
+    "rest": 6
+  }
+}

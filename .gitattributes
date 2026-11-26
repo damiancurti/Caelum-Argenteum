@@ -1171,3 +1171,11 @@ src/caelum/data/quadruped_combat.modeldef text eol=lf
 
 /assets/validation_v5_17_73/*.py text eol=lf
 /assets/validation_v5_17_73/evidence/** -text -diff
+
+assets/source/art/teju_791/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+assets/generators/*teju*.py text eol=lf
+assets/validation_v5_17_74/*.py text eol=lf
+assets/validation_v5_17_74/*.json text eol=lf
+assets/validation_v5_17_74/evidence/** -text -diff
+src/caelum/data/teju_combat.modeldef text eol=lf
+src/MODELDEF text eol=lf

@@ -4815,3 +4815,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_inherited_defaults.modeldef"
 
 #include "caelum/data/quadruped_combat.modeldef"
+#include "caelum/data/teju_combat.modeldef"

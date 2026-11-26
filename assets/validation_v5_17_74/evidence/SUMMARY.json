@@ -1,0 +1,829 @@
+{
+  "issue": 791,
+  "parent_issue": 461,
+  "version": "5.17.74",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Seven native canine heads on an editable reptilian quadruped. Exact CaelumBestiary047 combat-state visuals only; regional gallery placement is separate.",
+  "runtime": {
+    "sha256": "85c6ec686efbb73ccf05c49d32cc89bb58073ebe41586b4b5be8435698325d6e",
+    "source_entries": 18569,
+    "exact_source_bytes": true,
+    "baseline_sha256": "4c9aa95dead81c6f55729701dbef8803d3412eeb9fc12b0f6d508c20a5122e77",
+    "added": [
+      "caelum/data/teju_combat.modeldef",
+      "models/caelum/folklore/teju/dark.png",
+      "models/caelum/folklore/teju/iris.png",
+      "models/caelum/folklore/teju/materials.png",
+      "models/caelum/folklore/teju/teju_jagua.md3"
+    ],
+    "changed": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "removed": [],
+    "unrelated_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_artifacts": 9,
+    "repeat_byte_identical": true,
+    "geometry": {
+      "teju_jagua": {
+        "closed_components": 210,
+        "attachment_witnesses": 209,
+        "rooted_components": 210,
+        "combat_frames": 23,
+        "collapsed_native_triangles": 0,
+        "native_pose_floor_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "independent_posed_attachment_checks": 1672,
+        "attachment_frames": [
+          0,
+          10,
+          17,
+          22
+        ]
+      }
+    },
+    "models": {
+      "teju_jagua": {
+        "actor": "CaelumBestiary047",
+        "catalogue_id": "CA-FOLK-047",
+        "vertices": 36400,
+        "triangles": 54164,
+        "hierarchical_parts": 237,
+        "surfaces": [
+          {
+            "material": "iris",
+            "vertices": 1932,
+            "triangles": 3584
+          },
+          {
+            "material": "dark",
+            "vertices": 4096,
+            "triangles": 7504
+          },
+          {
+            "material": "dark",
+            "vertices": 447,
+            "triangles": 784
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 5798
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7064
+          },
+          {
+            "material": "atlas",
+            "vertices": 4094,
+            "triangles": 5622
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 5594
+          },
+          {
+            "material": "atlas",
+            "vertices": 4094,
+            "triangles": 5202
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 5452
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 5305
+          },
+          {
+            "material": "atlas",
+            "vertices": 1379,
+            "triangles": 2255
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -91.02044502867899,
+              -36.68944563713893,
+              0.0
+            ],
+            "max": [
+              52.75650098072326,
+              41.323268845163625,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -87.6824201638398,
+              -35.8088989418476,
+              0.0
+            ],
+            "max": [
+              51.115548147784594,
+              46.031227705366256,
+              99.92559314660471
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -36.68944563713893,
+              0.0
+            ],
+            "max": [
+              52.75650098072326,
+              41.323268845163625,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -94.35500100023256,
+              -36.68944563713893,
+              0.0
+            ],
+            "max": [
+              53.29558743179795,
+              36.68944563713893,
+              101.03140020313703
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -36.68944563713893,
+              0.0
+            ],
+            "max": [
+              52.75650098072326,
+              41.323268845163625,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -87.08932737037009,
+              -36.68944563713893,
+              0.0
+            ],
+            "max": [
+              52.20625032633457,
+              46.76817070260782,
+              100.83464252064228
+            ]
+          },
+          {
+            "min": [
+              -94.35500100023256,
+              -36.68944563713893,
+              0.0
+            ],
+            "max": [
+              53.29558743179795,
+              36.68944563713893,
+              101.03140020313703
+            ]
+          },
+          {
+            "min": [
+              -87.08932737037009,
+              -36.68944563713893,
+              0.0
+            ],
+            "max": [
+              52.20625032633457,
+              46.76817070260782,
+              100.83464252064228
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -39.33495811291136,
+              0.0
+            ],
+            "max": [
+              48.75167119866496,
+              41.323268845163625,
+              98.49307365910573
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -36.68944563713893,
+              0.0
+            ],
+            "max": [
+              46.86382836311444,
+              41.323268845163625,
+              97.89341393863491
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -36.68944563713893,
+              0.0
+            ],
+            "max": [
+              58.44426509348016,
+              41.323268845163625,
+              99.55302624734495
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -34.02169745293611,
+              0.0
+            ],
+            "max": [
+              48.75167119866496,
+              41.323268845163625,
+              98.49307365910573
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -39.78259885102955,
+              0.0
+            ],
+            "max": [
+              53.18867120935087,
+              42.108363754308364,
+              102.3674578281326
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -45.17491696956418,
+              0.0
+            ],
+            "max": [
+              54.082925957948376,
+              41.07213302193502,
+              102.79232554276541
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -55.69001074705028,
+              0.0
+            ],
+            "max": [
+              55.09213238369525,
+              38.042016366370696,
+              93.73202711342098
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -67.91570442447983,
+              0.0
+            ],
+            "max": [
+              56.05383978982249,
+              36.728516355331735,
+              81.48565503335993
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -72.82448820065498,
+              0.0
+            ],
+            "max": [
+              56.74324205016214,
+              33.40335206696107,
+              73.65042360235277
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -73.79622523058578,
+              0.0
+            ],
+            "max": [
+              57.187399177466126,
+              29.922531713034,
+              78.01271448230256
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -36.68944563713893,
+              0.0
+            ],
+            "max": [
+              49.92799723004979,
+              41.323268845163625,
+              99.2262337500914
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -36.68944563713893,
+              0.0
+            ],
+            "max": [
+              52.75650098072326,
+              41.323268845163625,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -36.68944563713893,
+              0.0
+            ],
+            "max": [
+              54.33961433092904,
+              41.323268845163625,
+              100.19328572022647
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -36.68944563713893,
+              0.0
+            ],
+            "max": [
+              52.75650098072326,
+              41.323268845163625,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -91.02044502867899,
+              -73.79622523058578,
+              0.0
+            ],
+            "max": [
+              57.187399177466126,
+              29.922531713034,
+              78.01271448230256
+            ]
+          }
+        ],
+        "modeldef_scale": 1.652622208,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 98.0023269017363,
+        "maximum_authored_height": 102.79232554276541,
+        "source_sha256": "587792dd828295a4109dd91ad4808983963f58b307061e3f3b7bf1aa94a7bf54"
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 791,
+    "species": "teju_jagua",
+    "studio": false,
+    "runtime_sha256": "85c6ec686efbb73ccf05c49d32cc89bb58073ebe41586b4b5be8435698325d6e",
+    "baseline_sha256": "4c9aa95dead81c6f55729701dbef8803d3412eeb9fc12b0f6d508c20a5122e77",
+    "fixture_sha256": "de0433c108d93e2e9b365fecd226bbbc9f86e3528bc3f06784d9215ea3eb8796",
+    "model_overlay_sha256": null,
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "assertions": 16,
+        "expected_assertions": 16,
+        "errors": [],
+        "captures": {}
+      },
+      {
+        "phase": "old-save-model",
+        "exit_code": 0,
+        "passed": true,
+        "assertions": 16,
+        "expected_assertions": 16,
+        "errors": [],
+        "captures": {}
+      },
+      {
+        "phase": "fresh-model",
+        "exit_code": 0,
+        "passed": true,
+        "assertions": 51,
+        "expected_assertions": 51,
+        "errors": [],
+        "captures": {
+          "empty-view-0.png": "2ae838a06414f559a2f4d31d187f8d406c2eef963da1c9d5a2d504084dcbed55",
+          "empty-view-6.png": "483f86768cac9a38ab0ea69b8f64ed606d36f2ea681e31984ef8f5e8a4e1b124",
+          "empty.png": "2ae838a06414f559a2f4d31d187f8d406c2eef963da1c9d5a2d504084dcbed55",
+          "pose-00-idle.png": "2e1926d73461a76de6c6826c80aaf1ae1cdb807ba7bc9f2a004ecffd0cfde7f9",
+          "pose-01-idle.png": "7831084c69e4b381547003abe45791646be672d060f5a19136d9ae7ea1e6728a",
+          "pose-02-run.png": "2e1926d73461a76de6c6826c80aaf1ae1cdb807ba7bc9f2a004ecffd0cfde7f9",
+          "pose-03-run.png": "9ef755a460f7f516ba27e74c0acd6d4a683dd04697d508e0c31254928ffbf121",
+          "pose-04-run.png": "2e1926d73461a76de6c6826c80aaf1ae1cdb807ba7bc9f2a004ecffd0cfde7f9",
+          "pose-05-run.png": "5601de067ebe9139e61fa8f4e23c6a7418d65cfe0b560cd979e5deb7a438c209",
+          "pose-06-walk.png": "9ef755a460f7f516ba27e74c0acd6d4a683dd04697d508e0c31254928ffbf121",
+          "pose-07-walk.png": "5601de067ebe9139e61fa8f4e23c6a7418d65cfe0b560cd979e5deb7a438c209",
+          "pose-08-stun.png": "fc7725a05ba9735c7c7ecd056a907d8e2eb8cc7a69c0f65d071101009ecce2eb",
+          "pose-09-attack_prepare.png": "8bb9cb012341053ab905391b4dd0b8fcab05b34a95b94a95f6d377adf8dfc98f",
+          "pose-10-attack_release.png": "9fc09d95862c12da5d2f18f4778f9714d309067c1ce18e632d54cd534fbad3fe",
+          "pose-11-pain.png": "12dd4d8e7c1363db602f0ec172eb163db38235dd83596b395ab8e7e8e78b3c6e",
+          "pose-12-death.png": "55ed65570d01229830dd525e65ad887bcbc894a6f916210a92bfb81e26283970",
+          "pose-13-death.png": "ff4e139fb5aa3f7db8adeddf4fc968e37b2b8b769229700af8da3fd7768d70d5",
+          "pose-14-death.png": "704f04d57cefea6928fa89c12110dc6f126f7e5bfe6a9b2f4a4e402911b20b3b",
+          "pose-15-death.png": "4974886829beb07e0e32848089da8373468dcb208b25494797fb94af36ba1473",
+          "pose-16-death.png": "c358a398b2d0fd71e55bc7a8c244fa4a7e990b42687b7ac8315748fe7f6103ba",
+          "pose-17-death.png": "08cb0b4f024f04df7904ee41c9a9a01fa6b76f14b706e66c3b3a614cdbb1b200",
+          "pose-18-breath.png": "6930179f4e4b2ab6328deaafcc59b296ffc8ba0c32b6eab51aa3f62719f1204c",
+          "pose-19-breath.png": "b56c45fcea7b1d19456c172581b8fe15c7390aa387fc5dca372e96669879d0f4",
+          "pose-20-breath.png": "e4cce60c8e6b7b35b0ddc583da7798b6ece6009241652c26327feb2e43ef0967",
+          "pose-21-breath.png": "cf04be0f655f7c43f719fc655bb80fe27931e7ba9c362676e85130b976ce8108",
+          "pose-22-rest.png": "08cb0b4f024f04df7904ee41c9a9a01fa6b76f14b706e66c3b3a614cdbb1b200",
+          "view-front.png": "983ce04fd912ec8f53cdd84fd779120b0ff650cb5d002d02cf7d371f89444bcf",
+          "view-head-front.png": "429eddf66c9740de543590c1ee57cb04b0a5d53ffaf0b5ae561e0aa0de636d54",
+          "view-head-oblique.png": "ac7a530d2b5c4688760177f496216de5b1d69f65ef5be3371a189bdf775cf267",
+          "view-heads-detail.png": "3766446aeacf12f038b55e60d7f3145e00b7f780a91d75145cfd14f7606ff819",
+          "view-lying-oblique.png": "08cb0b4f024f04df7904ee41c9a9a01fa6b76f14b706e66c3b3a614cdbb1b200",
+          "view-rear.png": "83957b8289497eb036849ef83b7f2b6bbc3acac8bae9331a64a3b1fd7e0400b2",
+          "view-side.png": "efcb5e2b5215960db107af4557ff648f46129ae40eb9b8512bccb48d2b24b453",
+          "view-tail-detail.png": "5dd778f2d18fa651eadc1ddba70263546d9c4f7cc0dace4e6f75bb9920ab39e5"
+        },
+        "visible_pose_pixels": {
+          "pose-00-idle.png": 22894,
+          "pose-01-idle.png": 22382,
+          "pose-02-run.png": 22894,
+          "pose-03-run.png": 22758,
+          "pose-04-run.png": 22894,
+          "pose-05-run.png": 22908,
+          "pose-06-walk.png": 22758,
+          "pose-07-walk.png": 22908,
+          "pose-08-stun.png": 23097,
+          "pose-09-attack_prepare.png": 23110,
+          "pose-10-attack_release.png": 23686,
+          "pose-11-pain.png": 22596,
+          "pose-12-death.png": 23356,
+          "pose-13-death.png": 23600,
+          "pose-14-death.png": 22735,
+          "pose-15-death.png": 22713,
+          "pose-16-death.png": 23880,
+          "pose-17-death.png": 25168,
+          "pose-18-breath.png": 23209,
+          "pose-19-breath.png": 23153,
+          "pose-20-breath.png": 23485,
+          "pose-21-breath.png": 23086,
+          "pose-22-rest.png": 25168
+        },
+        "distinct_pose_captures": 18
+      },
+      {
+        "phase": "model-reload",
+        "exit_code": 0,
+        "passed": true,
+        "assertions": 16,
+        "expected_assertions": 16,
+        "errors": [],
+        "captures": {}
+      },
+      {
+        "phase": "rollback",
+        "exit_code": 0,
+        "passed": true,
+        "assertions": 16,
+        "expected_assertions": 16,
+        "errors": [],
+        "captures": {}
+      }
+    ]
+  },
+  "actions": {
+    "issue": 791,
+    "runtime_sha256": "85c6ec686efbb73ccf05c49d32cc89bb58073ebe41586b4b5be8435698325d6e",
+    "source_probe_sha256": "bf298e7c4b3ca7f0285f81c089b18f686ba0a114f65697252662af8b0121b65a",
+    "fixture_sha256": "8edb570d4213c55f28cdd5b3b3a9a962e72e7cf9747774b0a829d14b2e134519",
+    "runs": [
+      {
+        "phase": "actions",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 40,
+        "actions": [
+          "CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=2 breath=0",
+          "CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=46 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=46 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=46 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1"
+        ],
+        "loot_audits": 0
+      },
+      {
+        "phase": "loot",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 28,
+        "actions": [],
+        "loot_audits": 2
+      },
+      {
+        "phase": "loot-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 12,
+        "actions": [],
+        "loot_audits": 2
+      }
+    ]
+  },
+  "presentation": {
+    "issue": 791,
+    "species": "teju_jagua",
+    "scope": "Measure one 700-tic sprite/model pair for a real Teju Jagua; no campaign or crowd budget.",
+    "baseline_sha256": "4c9aa95dead81c6f55729701dbef8803d3412eeb9fc12b0f6d508c20a5122e77",
+    "runtime_sha256": "85c6ec686efbb73ccf05c49d32cc89bb58073ebe41586b4b5be8435698325d6e",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprite",
+        "pid": 7748,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 387773808.3121,
+          "END": 387793825.8653
+        },
+        "fixture_sha256": "de0433c108d93e2e9b365fecd226bbbc9f86e3528bc3f06784d9215ea3eb8796",
+        "bench_sha256": "541cbcbff59852284c3216aa428877b540b6a39ccdd2503f772612ca37eb4692",
+        "passed": true,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571604,
+          "p50_ms": 28.5672,
+          "p95_ms": 28.9687,
+          "p99_ms": 29.0546,
+          "max_ms": 29.1915
+        },
+        "presentation": {
+          "pid": 7748,
+          "trace_sha256": "58faf638e88d078c8ed174be16189167aed5f76104110edacce5579b18833b2c",
+          "rows": 46624,
+          "scene_presents": 33062,
+          "mean_present_fps": 1887.3420250110048,
+          "present_intervals": {
+            "samples": 33061,
+            "mean_ms": 0.5298456701265735,
+            "p50_ms": 0.5099999904632568,
+            "p95_ms": 0.6787999868392944,
+            "p99_ms": 0.7817000150680542,
+            "max_ms": 1.1668999791145325
+          },
+          "native_call_duration": {
+            "samples": 33062,
+            "mean_ms": 0.06360124015965311,
+            "p50_ms": 0.05910003185272217,
+            "p95_ms": 0.08660000562667847,
+            "p99_ms": 0.10449999570846558,
+            "max_ms": 0.5164999961853027
+          }
+        }
+      },
+      {
+        "kind": "model",
+        "pid": 19296,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 387808536.5271,
+          "END": 387828549.8149
+        },
+        "fixture_sha256": "de0433c108d93e2e9b365fecd226bbbc9f86e3528bc3f06784d9215ea3eb8796",
+        "bench_sha256": "541cbcbff59852284c3216aa428877b540b6a39ccdd2503f772612ca37eb4692",
+        "passed": true,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571492142857142,
+          "p50_ms": 28.5734,
+          "p95_ms": 28.9594,
+          "p99_ms": 29.061,
+          "max_ms": 29.1518
+        },
+        "presentation": {
+          "pid": 19296,
+          "trace_sha256": "ad1c988c50f4135d6c2e424a453bc687dade059afdbc692e12a0ad24073a622a",
+          "rows": 45420,
+          "scene_presents": 32286,
+          "mean_present_fps": 1843.5121058878808,
+          "present_intervals": {
+            "samples": 32285,
+            "mean_ms": 0.5424428713031832,
+            "p50_ms": 0.5238999724388123,
+            "p95_ms": 0.7080000042915344,
+            "p99_ms": 0.7821000218391418,
+            "max_ms": 1.060200035572052
+          },
+          "native_call_duration": {
+            "samples": 32286,
+            "mean_ms": 0.06374690280943963,
+            "p50_ms": 0.059300005435943604,
+            "p95_ms": 0.08740001916885376,
+            "p99_ms": 0.10559999942779541,
+            "max_ms": 0.49730002880096436
+          }
+        }
+      }
+    ]
+  },
+  "art": {
+    "source": "assets/source/art/teju_791",
+    "generated_atlas": "assets/source/art/teju_791/materials.png",
+    "atlas_sha256": "52adf7521c37fa16fe5f8d88b17691edd362bc9c84a6b1ddcb990931e921ee59",
+    "prompt": "assets/source/art/teju_791/MATERIALS_PROMPT.json",
+    "mode": "built-in image_gen",
+    "author_check": "CA791-TEJU-01"
+  },
+  "iterations": [
+    "The initial authoring copy included the donor tail beneath each head; generation stopped on missing h0_tail. The seven erroneous donor tail components were removed from the new data before the first export.",
+    "Initial tube witnesses lay exactly on caps; extended roots and interior witnesses repaired all joints. Four collapsed pupil triangles were identified independently in quantized native poses; reduced tiny-pupil tessellation removed them.",
+    "Repeated trunk/fur UVs and swept neck UVs improved material density without changing the generated pixels. Inspection cameras were adjusted before the final package tests.",
+    "A read-only --check was mistakenly pointed at a nonexistent output directory; it failed without mutations. Two subsequently generated complete export folders match byte-for-byte."
+  ],
+  "qualifications": [
+    "Candidate simplified canine anatomy, elongated neck fan, rounded limbs, broad scale patterns and rigid fall/rest articulation await author review. This does not reproduce every concept detail.",
+    "Seven visible heads do not multiply attacks. Collision, inherited statistics, native state duration, loot, identity and saves are unchanged. Conceptual metre sizes are not adopted; horizontal anatomy and lying silhouettes extend beyond unchanged collision.",
+    "One sequential700-tic sprite/model pair measures queue intervals and simulation spacing, not GPU/display latency, repeatability or campaign/crowd budget. Footprints differ and siege performance remains unresolved.",
+    "The native catalogue now has22 of56 provisional new creature classes represented.34 remain; modular characters, named actors and unauthored V5.16 progression are unfinished.",
+    "The author reiterated on2026-11-15 that acceptance will occur only after a consolidated test terminal for all worked issues. No manual check is confirmed or removed."
+  ],
+  "files": {
+    "actions/actions/commands.cfg": "5a75bbed709496a17639c7bb164a5d93e37fde0d258367232ac9eb0aaf911736",
+    "actions/actions/engine.log": "ce3210b6b927c82acd8469b800a92a1ccf0c2ba4eba251e561fe27e4de16f81e",
+    "actions/actions/process.log": "ffb93bea975e0e1cfdbbe8566cfba5bab5622e66c96095d9abc4d9daa5363669",
+    "actions/actions/session.ini": "62dffdf612aecb772ade70c9b650ed14d8e07f1ebbcbcb4636b50db93bfd8c00",
+    "actions/fixture.zs": "356708795de80ebb3240a8e5458735b52dc6899e7f91c5de7649db94bfd05f0b",
+    "actions/loot/commands.cfg": "c7131f87f9df9188e2301d6730516e731540216e6417b470aab866467fbd8ad7",
+    "actions/loot/engine.log": "4317f1061f1eddc16b6634599ced48d4e280044fb108dc72893698f9a3f14a1d",
+    "actions/loot/process.log": "eedb47639a450d3e192ff217076b9f98b5667ec89e76a4b7d1d5a0c2d050c727",
+    "actions/loot/session.ini": "cc851fc15b045ac878c14fa15c4c4ca8e8ead385551ad26d4839577465f5af94",
+    "actions/loot-reload/commands.cfg": "ad82c3110081fb6cd15b9a00885b6cc0747127803c4e52c0e06a730955dcf399",
+    "actions/loot-reload/engine.log": "b6cf93e67ff49d20b6b01044fdbe14f32e6d51b196dcbd8e71077370a6026705",
+    "actions/loot-reload/process.log": "51ead2c7212a9e6a3968f542ce271667b0ace1d012237c45a42207b673e09daa",
+    "actions/loot-reload/session.ini": "479725eea5deb3f1d2909c27a284e65e17288bba9faff2420b2cab5041046a94",
+    "actions/MAPINFO.txt": "0ec2a42452c10df190b45b1c3a34bf90aa47ff7717697ee3347dd7c9b0c391f5",
+    "actions/RESULTS.json": "e9eaf492fbe8d0c73011a9a52efc3d1d13bd0d438eac8c3fff99f8db9836310b",
+    "actions/ZSCRIPT.txt": "4be2f3a0549cfaa98f17c42cbbb0edea167525850906db60e94c054f2f217f35",
+    "build01.log": "60ec3da626823362dfb8228c0146e51745757dd9d09c61722a670baab4f74704",
+    "continuity/baseline/commands.cfg": "ed3068a1ddffaca4b7467fa42bf7e8eb56452bf502b7b32020bb46ddb673daf4",
+    "continuity/baseline/engine.log": "6da33a67666d7bcfcc2d19b5f06f39910bade50c3510e5324970d99f768e1d82",
+    "continuity/baseline/process.log": "c30384de3ad371340ca87efd3a93177fb4ae7d868075ec65a7ec8655e5888f72",
+    "continuity/baseline/session.ini": "ac07ae80900770ca281181f99ed01d522b26fc551665a72364cdecc9a3caca57",
+    "continuity/fixture.zs": "6389729425f4883f9bb284c406f5e8ba9fcc76e546c008a4019eb913d3d49dcf",
+    "continuity/fresh-model/commands.cfg": "d6e0650f1c016455f6b2d8b9ecb44f74311c42125daba5ce84a17a4b6e63c27a",
+    "continuity/fresh-model/empty-view-0.png": "2ae838a06414f559a2f4d31d187f8d406c2eef963da1c9d5a2d504084dcbed55",
+    "continuity/fresh-model/empty-view-6.png": "483f86768cac9a38ab0ea69b8f64ed606d36f2ea681e31984ef8f5e8a4e1b124",
+    "continuity/fresh-model/empty.png": "2ae838a06414f559a2f4d31d187f8d406c2eef963da1c9d5a2d504084dcbed55",
+    "continuity/fresh-model/engine.log": "9d521ccfe36bf323789713973ed0a082377c77ac85fefac3b3a75ec0891b748b",
+    "continuity/fresh-model/pose-00-idle.png": "2e1926d73461a76de6c6826c80aaf1ae1cdb807ba7bc9f2a004ecffd0cfde7f9",
+    "continuity/fresh-model/pose-01-idle.png": "7831084c69e4b381547003abe45791646be672d060f5a19136d9ae7ea1e6728a",
+    "continuity/fresh-model/pose-02-run.png": "2e1926d73461a76de6c6826c80aaf1ae1cdb807ba7bc9f2a004ecffd0cfde7f9",
+    "continuity/fresh-model/pose-03-run.png": "9ef755a460f7f516ba27e74c0acd6d4a683dd04697d508e0c31254928ffbf121",
+    "continuity/fresh-model/pose-04-run.png": "2e1926d73461a76de6c6826c80aaf1ae1cdb807ba7bc9f2a004ecffd0cfde7f9",
+    "continuity/fresh-model/pose-05-run.png": "5601de067ebe9139e61fa8f4e23c6a7418d65cfe0b560cd979e5deb7a438c209",
+    "continuity/fresh-model/pose-06-walk.png": "9ef755a460f7f516ba27e74c0acd6d4a683dd04697d508e0c31254928ffbf121",
+    "continuity/fresh-model/pose-07-walk.png": "5601de067ebe9139e61fa8f4e23c6a7418d65cfe0b560cd979e5deb7a438c209",
+    "continuity/fresh-model/pose-08-stun.png": "fc7725a05ba9735c7c7ecd056a907d8e2eb8cc7a69c0f65d071101009ecce2eb",
+    "continuity/fresh-model/pose-09-attack_prepare.png": "8bb9cb012341053ab905391b4dd0b8fcab05b34a95b94a95f6d377adf8dfc98f",
+    "continuity/fresh-model/pose-10-attack_release.png": "9fc09d95862c12da5d2f18f4778f9714d309067c1ce18e632d54cd534fbad3fe",
+    "continuity/fresh-model/pose-11-pain.png": "12dd4d8e7c1363db602f0ec172eb163db38235dd83596b395ab8e7e8e78b3c6e",
+    "continuity/fresh-model/pose-12-death.png": "55ed65570d01229830dd525e65ad887bcbc894a6f916210a92bfb81e26283970",
+    "continuity/fresh-model/pose-13-death.png": "ff4e139fb5aa3f7db8adeddf4fc968e37b2b8b769229700af8da3fd7768d70d5",
+    "continuity/fresh-model/pose-14-death.png": "704f04d57cefea6928fa89c12110dc6f126f7e5bfe6a9b2f4a4e402911b20b3b",
+    "continuity/fresh-model/pose-15-death.png": "4974886829beb07e0e32848089da8373468dcb208b25494797fb94af36ba1473",
+    "continuity/fresh-model/pose-16-death.png": "c358a398b2d0fd71e55bc7a8c244fa4a7e990b42687b7ac8315748fe7f6103ba",
+    "continuity/fresh-model/pose-17-death.png": "08cb0b4f024f04df7904ee41c9a9a01fa6b76f14b706e66c3b3a614cdbb1b200",
+    "continuity/fresh-model/pose-18-breath.png": "6930179f4e4b2ab6328deaafcc59b296ffc8ba0c32b6eab51aa3f62719f1204c",
+    "continuity/fresh-model/pose-19-breath.png": "b56c45fcea7b1d19456c172581b8fe15c7390aa387fc5dca372e96669879d0f4",
+    "continuity/fresh-model/pose-20-breath.png": "e4cce60c8e6b7b35b0ddc583da7798b6ece6009241652c26327feb2e43ef0967",
+    "continuity/fresh-model/pose-21-breath.png": "cf04be0f655f7c43f719fc655bb80fe27931e7ba9c362676e85130b976ce8108",
+    "continuity/fresh-model/pose-22-rest.png": "08cb0b4f024f04df7904ee41c9a9a01fa6b76f14b706e66c3b3a614cdbb1b200",
+    "continuity/fresh-model/process.log": "399f177feccdafc9fa5b8a724d7920bd6e7a261ac35d4d7f68d5bd2ce72ca9c7",
+    "continuity/fresh-model/session.ini": "1e6e03339fb7ebbc7f61f1793006c213d1186cd88b4d6b282082e25aa63c45f6",
+    "continuity/fresh-model/view-front.png": "983ce04fd912ec8f53cdd84fd779120b0ff650cb5d002d02cf7d371f89444bcf",
+    "continuity/fresh-model/view-head-front.png": "429eddf66c9740de543590c1ee57cb04b0a5d53ffaf0b5ae561e0aa0de636d54",
+    "continuity/fresh-model/view-head-oblique.png": "ac7a530d2b5c4688760177f496216de5b1d69f65ef5be3371a189bdf775cf267",
+    "continuity/fresh-model/view-heads-detail.png": "3766446aeacf12f038b55e60d7f3145e00b7f780a91d75145cfd14f7606ff819",
+    "continuity/fresh-model/view-lying-oblique.png": "08cb0b4f024f04df7904ee41c9a9a01fa6b76f14b706e66c3b3a614cdbb1b200",
+    "continuity/fresh-model/view-rear.png": "83957b8289497eb036849ef83b7f2b6bbc3acac8bae9331a64a3b1fd7e0400b2",
+    "continuity/fresh-model/view-side.png": "efcb5e2b5215960db107af4557ff648f46129ae40eb9b8512bccb48d2b24b453",
+    "continuity/fresh-model/view-tail-detail.png": "5dd778f2d18fa651eadc1ddba70263546d9c4f7cc0dace4e6f75bb9920ab39e5",
+    "continuity/MAPINFO.txt": "7104f807f199c5e33329ef9522487b45f8d37d435a072d694acb9b577f1ab8d4",
+    "continuity/model-reload/commands.cfg": "1c82857c14f9dce70e7f750048bbe4d8e6d00feff572a92af743c91f1d7f17a0",
+    "continuity/model-reload/engine.log": "2a1091e1c827eb4c2986310b17924abd6dc116e47026a343707ec80484d18d51",
+    "continuity/model-reload/process.log": "660327cae842d29379c816fe473c2941f6f8b0587dbf47f7ea8298e4829a5f07",
+    "continuity/model-reload/session.ini": "3cb80b818598d44bf08358e67dc290876e0997cdb5b7f2be387514f3b8dcd45d",
+    "continuity/old-save-model/commands.cfg": "1c82857c14f9dce70e7f750048bbe4d8e6d00feff572a92af743c91f1d7f17a0",
+    "continuity/old-save-model/engine.log": "6e9de33239d0d9f929e0568c0203acccda526215e8857f43a0bb1e67f6f63ab3",
+    "continuity/old-save-model/process.log": "d31aca794b01eed04e8b3ae84cafa1d6ced22a75908adf33867ae829bf7931ee",
+    "continuity/old-save-model/session.ini": "085f73c329d7f79d1571f5e4c4fa02fb1f92ae597db6dfc5f6075e1e490bf059",
+    "continuity/RESULTS.json": "a920a903f2f9f024d649dfb1d7ac156768c53bdd3f4f4d053b6ccb77d3939e39",
+    "continuity/rollback/commands.cfg": "1c82857c14f9dce70e7f750048bbe4d8e6d00feff572a92af743c91f1d7f17a0",
+    "continuity/rollback/engine.log": "7d508817de96e3253ed7a67795fbb9090457366a6a8da277e54bd0279c62203b",
+    "continuity/rollback/process.log": "c5aa81754532d12e6c07dcd11b845eaea56cc421414ef183b588ef4ccc0abecd",
+    "continuity/rollback/session.ini": "7e18965d1aab8cfe446599298ee9b984aa2ce48778100833d3ab754c12b51c9a",
+    "continuity/ZSCRIPT.txt": "5192b335a14e9826cbd98f21207846c4a4eed49b110554e49ddf5fca70031c2a",
+    "export02.json": "5ab3667c6f07c09c967b795ed5653a49fa4f5d0e5c0ea95f7096ec055211fb60",
+    "export03.json": "8b8f16c135d7797605489387193556c3f3d43ceb3988285bba1cfccdfb398883",
+    "export04.json": "09b60b773ca08e52375bb51f8853df21a6da8aa41e350cac0fd4a6da5dfd662e",
+    "export05.json": "09b60b773ca08e52375bb51f8853df21a6da8aa41e350cac0fd4a6da5dfd662e",
+    "geometry02.json": "51cd712c515230f273755ee5ebf14bc9ca131e2e21cfb29de4e7867d4af91557",
+    "geometry03.json": "811a4c8480052f3cdb9b80a97fb3ef198edbe94a278bbd46ae342330f18b5f97",
+    "geometry04.json": "467f9114fa523d11f07d0355ee7a6cb6b6c709de328591f0b1026ed0616afb51",
+    "presentation/model/commands.cfg": "d506f0f8e89d4c21bfd091578b08aae13440b091128a61fd83cd0d98ee653806",
+    "presentation/model/engine.log": "05d722a93ad54734a9e2b7619b5b2c4c775748babe41743329f2a529e131e883",
+    "presentation/model/fixture.zs": "6389729425f4883f9bb284c406f5e8ba9fcc76e546c008a4019eb913d3d49dcf",
+    "presentation/model/MAPINFO.txt": "7104f807f199c5e33329ef9522487b45f8d37d435a072d694acb9b577f1ab8d4",
+    "presentation/model/presents.csv": "ad1c988c50f4135d6c2e424a453bc687dade059afdbc692e12a0ad24073a622a",
+    "presentation/model/process.log": "6ecfa0e3b11f4ab9c0c1f96ca829ba34f0e4d2c2c3cceef1fc070e82e3afcaa5",
+    "presentation/model/scene.png": "2e1926d73461a76de6c6826c80aaf1ae1cdb807ba7bc9f2a004ecffd0cfde7f9",
+    "presentation/model/session.ini": "914956c05e67a554441841a088903bb44f94412d2c90f224cd21702a7008c2f2",
+    "presentation/model/ZSCRIPT.txt": "5192b335a14e9826cbd98f21207846c4a4eed49b110554e49ddf5fca70031c2a",
+    "presentation/RESULTS.json": "c2dddddc026fb976b04beb92a9fe990acee41bc63163b43ab8ba844289560674",
+    "presentation/sprite/commands.cfg": "d506f0f8e89d4c21bfd091578b08aae13440b091128a61fd83cd0d98ee653806",
+    "presentation/sprite/engine.log": "8d7c7a33ff18d4adf6683d34795dbb15defcadef3a3005121a94ed693b773031",
+    "presentation/sprite/fixture.zs": "6389729425f4883f9bb284c406f5e8ba9fcc76e546c008a4019eb913d3d49dcf",
+    "presentation/sprite/MAPINFO.txt": "7104f807f199c5e33329ef9522487b45f8d37d435a072d694acb9b577f1ab8d4",
+    "presentation/sprite/presents.csv": "58faf638e88d078c8ed174be16189167aed5f76104110edacce5579b18833b2c",
+    "presentation/sprite/process.log": "e7cd5db279957c6078438d2228e75ef7d75e05975c06e4eedf1454a68e3631fe",
+    "presentation/sprite/scene.png": "6a6ce4f49c9c666ef25d5a0ba06f2738d5b727b16aded3450e6fb77a72821dd9",
+    "presentation/sprite/session.ini": "e50b47f58f7261cb1c3877d72c0df400e07d79457639f2aec610c6c2edf13b7d",
+    "presentation/sprite/ZSCRIPT.txt": "5192b335a14e9826cbd98f21207846c4a4eed49b110554e49ddf5fca70031c2a",
+    "repeat04-05.json": "6dacac58c3b9260c10d35c0557a4cd2cb0832959351f3e8cf5d5b6d306792005",
+    "runtime-parity.json": "fb9c9790ccfa02c49ceb1d7431d4bcd4e9adf62d1f64db5a756fc404a1dcc6e3",
+    "superseded/visual01/fixture.zs": "d658a4ba8a819333c8ae425f5a137fa750ebb13ebadc5885c9770715cf2986dd",
+    "superseded/visual01/MAPINFO.txt": "7104f807f199c5e33329ef9522487b45f8d37d435a072d694acb9b577f1ab8d4",
+    "superseded/visual01/RESULTS.json": "d046dadad2b111cfe46549bb5c73a99127c83d92aa4fabc38f979beacef6315e",
+    "superseded/visual01/visual/commands.cfg": "d6e0650f1c016455f6b2d8b9ecb44f74311c42125daba5ce84a17a4b6e63c27a",
+    "superseded/visual01/visual/engine.log": "cf523d3c96dc800371f61caa89075372b822c14c502c4b17ddb520d40a70a4b1",
+    "superseded/visual01/visual/process.log": "24097d943ea781080ee0535cabd78d2005b3356a9176d2623d5f7f3eeda6b311",
+    "superseded/visual01/visual/session.ini": "9f741d99ada829660ef175d56fd9805f5b2e24a5eea1ae7914bfa9d65e834878",
+    "superseded/visual01/ZSCRIPT.txt": "b06e2fbe2e51c94ca6e8fc6d58dee100d5fbee15471452f003ac8d89ce9d46c9",
+    "superseded/visual02/fixture.zs": "6389729425f4883f9bb284c406f5e8ba9fcc76e546c008a4019eb913d3d49dcf",
+    "superseded/visual02/MAPINFO.txt": "7104f807f199c5e33329ef9522487b45f8d37d435a072d694acb9b577f1ab8d4",
+    "superseded/visual02/RESULTS.json": "ce638db09fb0f537eb598025dc295e267e01fc71abfd035252bf43463af29f16",
+    "superseded/visual02/visual/commands.cfg": "d6e0650f1c016455f6b2d8b9ecb44f74311c42125daba5ce84a17a4b6e63c27a",
+    "superseded/visual02/visual/engine.log": "d5571d5f06d4a4f480b17f9e5f532ead5e2c5387f8a3d201e48826298400cf93",
+    "superseded/visual02/visual/process.log": "f34deab848f526fb0a13d9395143aa258fbe2ba435e642ad6186227ec5d70573",
+    "superseded/visual02/visual/session.ini": "8f65d3b7b9992342ee2d80ddeead2b7c75144b2d0462651bf2e1143352ffac01",
+    "superseded/visual02/ZSCRIPT.txt": "5192b335a14e9826cbd98f21207846c4a4eed49b110554e49ddf5fca70031c2a",
+    "validation-final.json": "ef35ea676ff19795880fb7f6cb150c913f7adc6eb218fda4f68dd87aa7d18808"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "files": 9,
+  "all_byte_identical": true,
+  "sha256": {
+    "manifest.json": "09b60b773ca08e52375bb51f8853df21a6da8aa41e350cac0fd4a6da5dfd662e",
+    "preview.pk3": "cbde045d1faa47fb694131b60638a21d5edfc9a0a05200710bbf46fd19936bbb",
+    "editable\\teju_jagua.mtl": "df93cd265c938a3a98066bc018faf0a624ebb1ad95386d2aac92afb190816cdb",
+    "editable\\teju_jagua.obj": "9b6617c5f796424431c95d8b8bb3881859f34be71d09a6f683eedd553b009629",
+    "caelum\\data\\teju_combat.modeldef": "41725de81dbc8c5b9427676d55099c3216dafb733668b855415e9223785fb5a7",
+    "models\\caelum\\folklore\\teju\\dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "models\\caelum\\folklore\\teju\\iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+    "models\\caelum\\folklore\\teju\\materials.png": "52adf7521c37fa16fe5f8d88b17691edd362bc9c84a6b1ddcb990931e921ee59",
+    "models\\caelum\\folklore\\teju\\teju_jagua.md3": "3ef5f283e8ee1aa04f09f8506ee50e4fc8d11ffaabb98752fbf0be7d9be2a3dd"
+  }
+}
