@@ -1375,3 +1375,11 @@ assets/validation_v5_17_105/*.json text eol=lf diff
 assets/validation_v5_17_106/** -text -diff
 assets/validation_v5_17_106/*.py text eol=lf diff
 assets/validation_v5_17_106/*.json text eol=lf diff
+
+# Native first-body wardrobe binding and issue857 evidence.
+/src/caelum/character/CaelumWardrobePilot.zs text eol=lf
+/src/caelum/data/CaelumWornClothingModelData.zs text eol=lf
+/src/caelum/data/wardrobe_candidate.modeldef text eol=lf
+assets/validation_v5_17_107/** -text -diff
+assets/validation_v5_17_107/*.py text eol=lf diff
+assets/validation_v5_17_107/*.json text eol=lf diff

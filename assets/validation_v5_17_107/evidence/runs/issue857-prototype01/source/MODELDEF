@@ -1,0 +1,4830 @@
+#include "caelum/data/tarot_automaton.modeldef"
+#include "caelum/data/barracas_facades.modeldef"
+Model CaelumArenaRingFrame { Path "models/caelum/world/arenas" Model 0 "ring_frame.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN A 0 0 }
+
+Model CaelumTarotRoots
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tarot_roots.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+// Original covered cart, centered and scaled deterministically for #440.
+Model CaelumTarotChariot
+{
+    Path "models/caelum/vehicles"
+    Model 0 "ca_tarot_chariot.obj"
+    Scale 1 1 1
+    AngleOffset 90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumStashChestClosedVisual
+{
+    Path "models/caelum/props/stash"
+    Model 0 "ca_stash_closed.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumStashChestOpenVisual
+{
+    Path "models/caelum/props/stash"
+    Model 0 "ca_stash_open.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC B 0 0
+}
+
+Model CaelumStashChestLockedVisual
+{
+    Path "models/caelum/props/stash"
+    Model 0 "ca_stash_locked.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC C 0 0
+}
+
+// --- BEGIN GENERATED CAELUM ENVIRONMENT MODELS ---
+// Cinco formas rocosas en cinco escalas y tres variantes, más
+// veintiuna especies regionales en tres variantes cada una y
+// adultos y jóvenes que reutilizan esas mallas aprobadas.
+Model CaelumRockGraniteHalf
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockGraniteHalf2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite2.obj"
+    Scale 0.375 0.375 0.375
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockGraniteHalf3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite3.obj"
+    Scale 0.625 0.625 0.625
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockGranite
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockGranite2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockGranite3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockGraniteDouble
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite.obj"
+    Scale 2 2 2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockGraniteDouble2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite2.obj"
+    Scale 1.5 1.5 1.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockGraniteDouble3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite3.obj"
+    Scale 2.5 2.5 2.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockGraniteGiant
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite.obj"
+    Scale 5 5 5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockGraniteGiant2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite2.obj"
+    Scale 3.75 3.75 3.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockGraniteGiant3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite3.obj"
+    Scale 6.25 6.25 6.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockGraniteColossal
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite.obj"
+    Scale 20 20 20
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockGraniteColossal2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite2.obj"
+    Scale 15 15 15
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockGraniteColossal3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite3.obj"
+    Scale 25 25 25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+Model CaelumRockSandstoneHalf
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockSandstoneHalf2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone2.obj"
+    Scale 0.375 0.375 0.375
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockSandstoneHalf3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone3.obj"
+    Scale 0.625 0.625 0.625
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockSandstone
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockSandstone2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockSandstone3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockSandstoneDouble
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone.obj"
+    Scale 2 2 2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockSandstoneDouble2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone2.obj"
+    Scale 1.5 1.5 1.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockSandstoneDouble3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone3.obj"
+    Scale 2.5 2.5 2.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockSandstoneGiant
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone.obj"
+    Scale 5 5 5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockSandstoneGiant2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone2.obj"
+    Scale 3.75 3.75 3.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockSandstoneGiant3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone3.obj"
+    Scale 6.25 6.25 6.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockSandstoneColossal
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone.obj"
+    Scale 20 20 20
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockSandstoneColossal2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone2.obj"
+    Scale 15 15 15
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockSandstoneColossal3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_sandstone3.obj"
+    Scale 25 25 25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK B 0 0
+}
+
+Model CaelumRockBasaltHalf
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockBasaltHalf2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt2.obj"
+    Scale 0.375 0.375 0.375
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockBasaltHalf3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt3.obj"
+    Scale 0.625 0.625 0.625
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockBasalt
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockBasalt2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockBasalt3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockBasaltDouble
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt.obj"
+    Scale 2 2 2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockBasaltDouble2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt2.obj"
+    Scale 1.5 1.5 1.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockBasaltDouble3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt3.obj"
+    Scale 2.5 2.5 2.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockBasaltGiant
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt.obj"
+    Scale 5 5 5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockBasaltGiant2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt2.obj"
+    Scale 3.75 3.75 3.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockBasaltGiant3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt3.obj"
+    Scale 6.25 6.25 6.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockBasaltColossal
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt.obj"
+    Scale 20 20 20
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockBasaltColossal2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt2.obj"
+    Scale 15 15 15
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockBasaltColossal3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_basalt3.obj"
+    Scale 25 25 25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK C 0 0
+}
+
+Model CaelumRockQuartzHalf
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockQuartzHalf2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz2.obj"
+    Scale 0.375 0.375 0.375
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockQuartzHalf3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz3.obj"
+    Scale 0.625 0.625 0.625
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockQuartz
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockQuartz2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockQuartz3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockQuartzDouble
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz.obj"
+    Scale 2 2 2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockQuartzDouble2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz2.obj"
+    Scale 1.5 1.5 1.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockQuartzDouble3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz3.obj"
+    Scale 2.5 2.5 2.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockQuartzGiant
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz.obj"
+    Scale 5 5 5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockQuartzGiant2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz2.obj"
+    Scale 3.75 3.75 3.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockQuartzGiant3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz3.obj"
+    Scale 6.25 6.25 6.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockQuartzColossal
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz.obj"
+    Scale 20 20 20
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockQuartzColossal2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz2.obj"
+    Scale 15 15 15
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockQuartzColossal3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_quartz3.obj"
+    Scale 25 25 25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK D 0 0
+}
+
+Model CaelumRockCoastalHalf
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumRockCoastalHalf2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal2.obj"
+    Scale 0.375 0.375 0.375
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumRockCoastalHalf3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal3.obj"
+    Scale 0.625 0.625 0.625
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumRockCoastal
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumRockCoastal2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumRockCoastal3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumRockCoastalDouble
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal.obj"
+    Scale 2 2 2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumRockCoastalDouble2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal2.obj"
+    Scale 1.5 1.5 1.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumRockCoastalDouble3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal3.obj"
+    Scale 2.5 2.5 2.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumRockCoastalGiant
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal.obj"
+    Scale 5 5 5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumRockCoastalGiant2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal2.obj"
+    Scale 3.75 3.75 3.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumRockCoastalGiant3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal3.obj"
+    Scale 6.25 6.25 6.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumRockCoastalColossal
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal.obj"
+    Scale 20 20 20
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumRockCoastalColossal2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal2.obj"
+    Scale 15 15 15
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumRockCoastalColossal3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_coastal3.obj"
+    Scale 25 25 25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK E 0 0
+}
+
+Model CaelumTreeDesertCardon
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_cardon.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT A 0 0
+}
+
+Model CaelumTreeDesertCardon2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_cardon2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT A 0 0
+}
+
+Model CaelumTreeDesertCardon3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_cardon3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT A 0 0
+}
+
+Model CaelumTreeDesertChurqui
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_churqui.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT B 0 0
+}
+
+Model CaelumTreeDesertChurqui2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_churqui2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT B 0 0
+}
+
+Model CaelumTreeDesertChurqui3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_churqui3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT B 0 0
+}
+
+Model CaelumTreeDesertChanar
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_chanar.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT C 0 0
+}
+
+Model CaelumTreeDesertChanar2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_chanar2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT C 0 0
+}
+
+Model CaelumTreeDesertChanar3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_chanar3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT C 0 0
+}
+
+Model CaelumTreeJungleLapacho
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_lapacho.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT D 0 0
+}
+
+Model CaelumTreeJungleLapacho2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_lapacho2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT D 0 0
+}
+
+Model CaelumTreeJungleLapacho3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_lapacho3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT D 0 0
+}
+
+Model CaelumTreeJunglePaloRosa
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_palo_rosa.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT E 0 0
+}
+
+Model CaelumTreeJunglePaloRosa2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_palo_rosa2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT E 0 0
+}
+
+Model CaelumTreeJunglePaloRosa3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_palo_rosa3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT E 0 0
+}
+
+Model CaelumTreeJungleTimbo
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_timbo.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT F 0 0
+}
+
+Model CaelumTreeJungleTimbo2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_timbo2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT F 0 0
+}
+
+Model CaelumTreeJungleTimbo3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_timbo3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT F 0 0
+}
+
+Model CaelumTreeTundraLenga
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_lenga.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT G 0 0
+}
+
+Model CaelumTreeTundraLenga2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_lenga2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT G 0 0
+}
+
+Model CaelumTreeTundraLenga3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_lenga3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT G 0 0
+}
+
+Model CaelumTreeTundraNire
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_nire.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT H 0 0
+}
+
+Model CaelumTreeTundraNire2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_nire2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT H 0 0
+}
+
+Model CaelumTreeTundraNire3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_nire3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT H 0 0
+}
+
+Model CaelumTreeTundraGuindo
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_guindo.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT I 0 0
+}
+
+Model CaelumTreeTundraGuindo2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_guindo2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT I 0 0
+}
+
+Model CaelumTreeTundraGuindo3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_guindo3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT I 0 0
+}
+
+Model CaelumTreeMountainPehuen
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_pehuen.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT J 0 0
+}
+
+Model CaelumTreeMountainPehuen2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_pehuen2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT J 0 0
+}
+
+Model CaelumTreeMountainPehuen3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_pehuen3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT J 0 0
+}
+
+Model CaelumTreeMountainCypress
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_cypress.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT K 0 0
+}
+
+Model CaelumTreeMountainCypress2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_cypress2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT K 0 0
+}
+
+Model CaelumTreeMountainCypress3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_cypress3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT K 0 0
+}
+
+Model CaelumTreeMountainCoihue
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_coihue.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT L 0 0
+}
+
+Model CaelumTreeMountainCoihue2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_coihue2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT L 0 0
+}
+
+Model CaelumTreeMountainCoihue3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_coihue3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT L 0 0
+}
+
+Model CaelumTreePlainsOmbu
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_ombu.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT M 0 0
+}
+
+Model CaelumTreePlainsOmbu2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_ombu2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT M 0 0
+}
+
+Model CaelumTreePlainsOmbu3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_ombu3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT M 0 0
+}
+
+Model CaelumTreePlainsTala
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_tala.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT N 0 0
+}
+
+Model CaelumTreePlainsTala2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_tala2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT N 0 0
+}
+
+Model CaelumTreePlainsTala3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_tala3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT N 0 0
+}
+
+Model CaelumTreePlainsEspinillo
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_espinillo.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT O 0 0
+}
+
+Model CaelumTreePlainsEspinillo2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_espinillo2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT O 0 0
+}
+
+Model CaelumTreePlainsEspinillo3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_espinillo3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT O 0 0
+}
+
+Model CaelumTreeCoastCoronillo
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_coronillo.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT P 0 0
+}
+
+Model CaelumTreeCoastCoronillo2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_coronillo2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT P 0 0
+}
+
+Model CaelumTreeCoastCoronillo3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_coronillo3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT P 0 0
+}
+
+Model CaelumTreeCoastWillow
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_willow.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT Q 0 0
+}
+
+Model CaelumTreeCoastWillow2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_willow2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT Q 0 0
+}
+
+Model CaelumTreeCoastWillow3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_willow3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT Q 0 0
+}
+
+Model CaelumTreeCoastCeibo
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+
+Model CaelumTreeCoastCeibo2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+
+Model CaelumTreeCoastCeibo3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+
+Model CaelumTreeCityJacaranda
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_jacaranda.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT S 0 0
+}
+
+Model CaelumTreeCityJacaranda2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_jacaranda2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT S 0 0
+}
+
+Model CaelumTreeCityJacaranda3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_jacaranda3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT S 0 0
+}
+
+Model CaelumTreeCityTipa
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_tipa.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT T 0 0
+}
+
+Model CaelumTreeCityTipa2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_tipa2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT T 0 0
+}
+
+Model CaelumTreeCityTipa3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_tipa3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT T 0 0
+}
+
+Model CaelumTreeCityPlane
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_plane.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT U 0 0
+}
+
+Model CaelumTreeCityPlane2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_plane2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT U 0 0
+}
+
+Model CaelumTreeCityPlane3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_plane3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT U 0 0
+}
+
+Model CaelumTreeJungleLapachoAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_lapacho.obj"
+    Scale 2.420168 2.420168 2.420168
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT D 0 0
+}
+
+Model CaelumTreeJungleLapachoAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_lapacho2.obj"
+    Scale 1.815126 1.815126 1.815126
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT D 0 0
+}
+
+Model CaelumTreeJungleLapachoAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_lapacho3.obj"
+    Scale 3.02521 3.02521 3.02521
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT D 0 0
+}
+
+Model CaelumTreeJunglePaloRosaAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_palo_rosa.obj"
+    Scale 3.303226 3.303226 3.303226
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT E 0 0
+}
+
+Model CaelumTreeJunglePaloRosaAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_palo_rosa2.obj"
+    Scale 2.477419 2.477419 2.477419
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT E 0 0
+}
+
+Model CaelumTreeJunglePaloRosaAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_palo_rosa3.obj"
+    Scale 4.129032 4.129032 4.129032
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT E 0 0
+}
+
+Model CaelumTreeJungleTimboAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_timbo.obj"
+    Scale 2.742857 2.742857 2.742857
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT F 0 0
+}
+
+Model CaelumTreeJungleTimboAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_timbo2.obj"
+    Scale 2.057143 2.057143 2.057143
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT F 0 0
+}
+
+Model CaelumTreeJungleTimboAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_timbo3.obj"
+    Scale 3.428571 3.428571 3.428571
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT F 0 0
+}
+
+Model CaelumTreeTundraLengaAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_lenga.obj"
+    Scale 3.595506 3.595506 3.595506
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT G 0 0
+}
+
+Model CaelumTreeTundraLengaAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_lenga2.obj"
+    Scale 2.696629 2.696629 2.696629
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT G 0 0
+}
+
+Model CaelumTreeTundraLengaAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_lenga3.obj"
+    Scale 4.494382 4.494382 4.494382
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT G 0 0
+}
+
+Model CaelumTreeTundraNireAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_nire.obj"
+    Scale 2.857143 2.857143 2.857143
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT H 0 0
+}
+
+Model CaelumTreeTundraNireAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_nire2.obj"
+    Scale 2.142857 2.142857 2.142857
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT H 0 0
+}
+
+Model CaelumTreeTundraNireAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_nire3.obj"
+    Scale 3.571429 3.571429 3.571429
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT H 0 0
+}
+
+Model CaelumTreeTundraGuindoAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_guindo.obj"
+    Scale 3.106796 3.106796 3.106796
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT I 0 0
+}
+
+Model CaelumTreeTundraGuindoAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_guindo2.obj"
+    Scale 2.330097 2.330097 2.330097
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT I 0 0
+}
+
+Model CaelumTreeTundraGuindoAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_guindo3.obj"
+    Scale 3.883495 3.883495 3.883495
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT I 0 0
+}
+
+Model CaelumTreeMountainPehuenAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_pehuen.obj"
+    Scale 3.58042 3.58042 3.58042
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT J 0 0
+}
+
+Model CaelumTreeMountainPehuenAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_pehuen2.obj"
+    Scale 2.685315 2.685315 2.685315
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT J 0 0
+}
+
+Model CaelumTreeMountainPehuenAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_pehuen3.obj"
+    Scale 4.475524 4.475524 4.475524
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT J 0 0
+}
+
+Model CaelumTreeMountainCypressAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_cypress.obj"
+    Scale 2.548673 2.548673 2.548673
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT K 0 0
+}
+
+Model CaelumTreeMountainCypressAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_cypress2.obj"
+    Scale 1.911504 1.911504 1.911504
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT K 0 0
+}
+
+Model CaelumTreeMountainCypressAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_cypress3.obj"
+    Scale 3.185841 3.185841 3.185841
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT K 0 0
+}
+
+Model CaelumTreeMountainCoihueAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_coihue.obj"
+    Scale 3.779528 3.779528 3.779528
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT L 0 0
+}
+
+Model CaelumTreeMountainCoihueAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_coihue2.obj"
+    Scale 2.834646 2.834646 2.834646
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT L 0 0
+}
+
+Model CaelumTreeMountainCoihueAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_coihue3.obj"
+    Scale 4.724409 4.724409 4.724409
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT L 0 0
+}
+
+Model CaelumTreePlainsOmbuAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_ombu.obj"
+    Scale 1.959184 1.959184 1.959184
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT M 0 0
+}
+
+Model CaelumTreePlainsOmbuAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_ombu2.obj"
+    Scale 1.469388 1.469388 1.469388
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT M 0 0
+}
+
+Model CaelumTreePlainsOmbuAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_ombu3.obj"
+    Scale 2.44898 2.44898 2.44898
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT M 0 0
+}
+
+Model CaelumTreePlainsTalaAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_tala.obj"
+    Scale 1.72973 1.72973 1.72973
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT N 0 0
+}
+
+Model CaelumTreePlainsTalaAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_tala2.obj"
+    Scale 1.297297 1.297297 1.297297
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT N 0 0
+}
+
+Model CaelumTreePlainsTalaAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_tala3.obj"
+    Scale 2.162162 2.162162 2.162162
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT N 0 0
+}
+
+Model CaelumTreeCoastCoronilloAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_coronillo.obj"
+    Scale 1.802817 1.802817 1.802817
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT P 0 0
+}
+
+Model CaelumTreeCoastCoronilloAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_coronillo2.obj"
+    Scale 1.352113 1.352113 1.352113
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT P 0 0
+}
+
+Model CaelumTreeCoastCoronilloAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_coronillo3.obj"
+    Scale 2.253521 2.253521 2.253521
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT P 0 0
+}
+
+Model CaelumTreeCoastWillowAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_willow.obj"
+    Scale 2.696629 2.696629 2.696629
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT Q 0 0
+}
+
+Model CaelumTreeCoastWillowAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_willow2.obj"
+    Scale 2.022472 2.022472 2.022472
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT Q 0 0
+}
+
+Model CaelumTreeCoastWillowAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_willow3.obj"
+    Scale 3.370787 3.370787 3.370787
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT Q 0 0
+}
+
+Model CaelumTreeCityJacarandaAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_jacaranda.obj"
+    Scale 2.44898 2.44898 2.44898
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT S 0 0
+}
+
+Model CaelumTreeCityJacarandaAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_jacaranda2.obj"
+    Scale 1.836735 1.836735 1.836735
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT S 0 0
+}
+
+Model CaelumTreeCityJacarandaAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_jacaranda3.obj"
+    Scale 3.061224 3.061224 3.061224
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT S 0 0
+}
+
+Model CaelumTreeCityTipaAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_tipa.obj"
+    Scale 2.831858 2.831858 2.831858
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT T 0 0
+}
+
+Model CaelumTreeCityTipaAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_tipa2.obj"
+    Scale 2.123894 2.123894 2.123894
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT T 0 0
+}
+
+Model CaelumTreeCityTipaAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_tipa3.obj"
+    Scale 3.539823 3.539823 3.539823
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT T 0 0
+}
+
+Model CaelumTreeCityPlaneAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_plane.obj"
+    Scale 2.885246 2.885246 2.885246
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT U 0 0
+}
+
+Model CaelumTreeCityPlaneAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_plane2.obj"
+    Scale 2.163934 2.163934 2.163934
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT U 0 0
+}
+
+Model CaelumTreeCityPlaneAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_plane3.obj"
+    Scale 3.606557 3.606557 3.606557
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT U 0 0
+}
+
+Model CaelumTreeDesertCardonAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_cardon.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT A 0 0
+}
+
+Model CaelumTreeDesertCardonYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_cardon.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT A 0 0
+}
+
+Model CaelumTreeDesertCardonAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_cardon2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT A 0 0
+}
+
+Model CaelumTreeDesertCardonYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_cardon2.obj"
+    Scale 0.375 0.375 0.375
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT A 0 0
+}
+
+Model CaelumTreeDesertCardonAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_cardon3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT A 0 0
+}
+
+Model CaelumTreeDesertCardonYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_cardon3.obj"
+    Scale 0.625 0.625 0.625
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT A 0 0
+}
+
+Model CaelumTreeDesertChurquiAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_churqui.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT B 0 0
+}
+
+Model CaelumTreeDesertChurquiYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_churqui.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT B 0 0
+}
+
+Model CaelumTreeDesertChurquiAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_churqui2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT B 0 0
+}
+
+Model CaelumTreeDesertChurquiYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_churqui2.obj"
+    Scale 0.375 0.375 0.375
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT B 0 0
+}
+
+Model CaelumTreeDesertChurquiAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_churqui3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT B 0 0
+}
+
+Model CaelumTreeDesertChurquiYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_churqui3.obj"
+    Scale 0.625 0.625 0.625
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT B 0 0
+}
+
+Model CaelumTreeDesertChanarAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_chanar.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT C 0 0
+}
+
+Model CaelumTreeDesertChanarYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_chanar.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT C 0 0
+}
+
+Model CaelumTreeDesertChanarAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_chanar2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT C 0 0
+}
+
+Model CaelumTreeDesertChanarYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_chanar2.obj"
+    Scale 0.375 0.375 0.375
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT C 0 0
+}
+
+Model CaelumTreeDesertChanarAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_chanar3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT C 0 0
+}
+
+Model CaelumTreeDesertChanarYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_desert_chanar3.obj"
+    Scale 0.625 0.625 0.625
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT C 0 0
+}
+
+Model CaelumTreePlainsEspinilloAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_espinillo.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT O 0 0
+}
+
+Model CaelumTreePlainsEspinilloYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_espinillo.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT O 0 0
+}
+
+Model CaelumTreePlainsEspinilloAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_espinillo2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT O 0 0
+}
+
+Model CaelumTreePlainsEspinilloYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_espinillo2.obj"
+    Scale 0.375 0.375 0.375
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT O 0 0
+}
+
+Model CaelumTreePlainsEspinilloAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_espinillo3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT O 0 0
+}
+
+Model CaelumTreePlainsEspinilloYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_espinillo3.obj"
+    Scale 0.625 0.625 0.625
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT O 0 0
+}
+
+Model CaelumTreeCoastCeiboAdult
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+
+Model CaelumTreeCoastCeiboYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+
+Model CaelumTreeCoastCeiboAdult2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+
+Model CaelumTreeCoastCeiboYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo2.obj"
+    Scale 0.375 0.375 0.375
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+
+Model CaelumTreeCoastCeiboAdult3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+
+Model CaelumTreeCoastCeiboYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo3.obj"
+    Scale 0.625 0.625 0.625
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+
+Model CaelumTreeJungleLapachoYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_lapacho.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT D 0 0
+}
+
+Model CaelumTreeJungleLapachoYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_lapacho2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT D 0 0
+}
+
+Model CaelumTreeJungleLapachoYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_lapacho3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT D 0 0
+}
+
+Model CaelumTreeJunglePaloRosaYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_palo_rosa.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT E 0 0
+}
+
+Model CaelumTreeJunglePaloRosaYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_palo_rosa2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT E 0 0
+}
+
+Model CaelumTreeJunglePaloRosaYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_palo_rosa3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT E 0 0
+}
+
+Model CaelumTreeJungleTimboYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_timbo.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT F 0 0
+}
+
+Model CaelumTreeJungleTimboYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_timbo2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT F 0 0
+}
+
+Model CaelumTreeJungleTimboYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_jungle_timbo3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT F 0 0
+}
+
+Model CaelumTreeTundraLengaYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_lenga.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT G 0 0
+}
+
+Model CaelumTreeTundraLengaYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_lenga2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT G 0 0
+}
+
+Model CaelumTreeTundraLengaYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_lenga3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT G 0 0
+}
+
+Model CaelumTreeTundraNireYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_nire.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT H 0 0
+}
+
+Model CaelumTreeTundraNireYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_nire2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT H 0 0
+}
+
+Model CaelumTreeTundraNireYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_nire3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT H 0 0
+}
+
+Model CaelumTreeTundraGuindoYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_guindo.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT I 0 0
+}
+
+Model CaelumTreeTundraGuindoYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_guindo2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT I 0 0
+}
+
+Model CaelumTreeTundraGuindoYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_tundra_guindo3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT I 0 0
+}
+
+Model CaelumTreeMountainPehuenYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_pehuen.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT J 0 0
+}
+
+Model CaelumTreeMountainPehuenYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_pehuen2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT J 0 0
+}
+
+Model CaelumTreeMountainPehuenYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_pehuen3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT J 0 0
+}
+
+Model CaelumTreeMountainCypressYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_cypress.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT K 0 0
+}
+
+Model CaelumTreeMountainCypressYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_cypress2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT K 0 0
+}
+
+Model CaelumTreeMountainCypressYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_cypress3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT K 0 0
+}
+
+Model CaelumTreeMountainCoihueYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_coihue.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT L 0 0
+}
+
+Model CaelumTreeMountainCoihueYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_coihue2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT L 0 0
+}
+
+Model CaelumTreeMountainCoihueYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_mountain_coihue3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT L 0 0
+}
+
+Model CaelumTreePlainsOmbuYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_ombu.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT M 0 0
+}
+
+Model CaelumTreePlainsOmbuYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_ombu2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT M 0 0
+}
+
+Model CaelumTreePlainsOmbuYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_ombu3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT M 0 0
+}
+
+Model CaelumTreePlainsTalaYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_tala.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT N 0 0
+}
+
+Model CaelumTreePlainsTalaYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_tala2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT N 0 0
+}
+
+Model CaelumTreePlainsTalaYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_plains_tala3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT N 0 0
+}
+
+Model CaelumTreeCoastCoronilloYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_coronillo.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT P 0 0
+}
+
+Model CaelumTreeCoastCoronilloYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_coronillo2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT P 0 0
+}
+
+Model CaelumTreeCoastCoronilloYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_coronillo3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT P 0 0
+}
+
+Model CaelumTreeCoastWillowYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_willow.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT Q 0 0
+}
+
+Model CaelumTreeCoastWillowYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_willow2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT Q 0 0
+}
+
+Model CaelumTreeCoastWillowYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_willow3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT Q 0 0
+}
+
+Model CaelumTreeCityJacarandaYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_jacaranda.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT S 0 0
+}
+
+Model CaelumTreeCityJacarandaYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_jacaranda2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT S 0 0
+}
+
+Model CaelumTreeCityJacarandaYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_jacaranda3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT S 0 0
+}
+
+Model CaelumTreeCityTipaYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_tipa.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT T 0 0
+}
+
+Model CaelumTreeCityTipaYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_tipa2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT T 0 0
+}
+
+Model CaelumTreeCityTipaYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_tipa3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT T 0 0
+}
+
+Model CaelumTreeCityPlaneYoung
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_plane.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT U 0 0
+}
+
+Model CaelumTreeCityPlaneYoung2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_plane2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT U 0 0
+}
+
+Model CaelumTreeCityPlaneYoung3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_city_plane3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT U 0 0
+}
+
+// --- END GENERATED CAELUM ENVIRONMENT MODELS ---
+
+// --- BEGIN GENERATED CAELUM MINERAL VEIN MODELS ---
+// Once recursos, cada uno con tres afloramientos originales.
+Model CaelumVeinIron
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_iron.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE A 0 0
+}
+
+Model CaelumVeinIron2
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_iron2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE A 0 0
+}
+
+Model CaelumVeinIron3
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_iron3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE A 0 0
+}
+
+Model CaelumVeinCoal
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_coal.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE B 0 0
+}
+
+Model CaelumVeinCoal2
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_coal2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE B 0 0
+}
+
+Model CaelumVeinCoal3
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_coal3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE B 0 0
+}
+
+Model CaelumVeinCopper
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_copper.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE C 0 0
+}
+
+Model CaelumVeinCopper2
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_copper2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE C 0 0
+}
+
+Model CaelumVeinCopper3
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_copper3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE C 0 0
+}
+
+Model CaelumVeinTin
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_tin.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE D 0 0
+}
+
+Model CaelumVeinTin2
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_tin2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE D 0 0
+}
+
+Model CaelumVeinTin3
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_tin3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE D 0 0
+}
+
+Model CaelumVeinSilver
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_silver.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE E 0 0
+}
+
+Model CaelumVeinSilver2
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_silver2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE E 0 0
+}
+
+Model CaelumVeinSilver3
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_silver3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE E 0 0
+}
+
+Model CaelumVeinGold
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_gold.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE F 0 0
+}
+
+Model CaelumVeinGold2
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_gold2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE F 0 0
+}
+
+Model CaelumVeinGold3
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_gold3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE F 0 0
+}
+
+Model CaelumVeinOpal
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_opal.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE G 0 0
+}
+
+Model CaelumVeinOpal2
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_opal2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE G 0 0
+}
+
+Model CaelumVeinOpal3
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_opal3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE G 0 0
+}
+
+Model CaelumVeinTopaz
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_topaz.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE H 0 0
+}
+
+Model CaelumVeinTopaz2
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_topaz2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE H 0 0
+}
+
+Model CaelumVeinTopaz3
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_topaz3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE H 0 0
+}
+
+Model CaelumVeinSapphire
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_sapphire.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE I 0 0
+}
+
+Model CaelumVeinSapphire2
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_sapphire2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE I 0 0
+}
+
+Model CaelumVeinSapphire3
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_sapphire3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE I 0 0
+}
+
+Model CaelumVeinRuby
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_ruby.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE J 0 0
+}
+
+Model CaelumVeinRuby2
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_ruby2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE J 0 0
+}
+
+Model CaelumVeinRuby3
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_ruby3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE J 0 0
+}
+
+Model CaelumVeinEmerald
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_emerald.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE K 0 0
+}
+
+Model CaelumVeinEmerald2
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_emerald2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE K 0 0
+}
+
+Model CaelumVeinEmerald3
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_emerald3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE K 0 0
+}
+
+// --- END GENERATED CAELUM MINERAL VEIN MODELS ---
+
+// --- BEGIN GENERATED CAELUM STATION MODELS ---
+// Doce estaciones sencillas; fuentes y sprites de referencia en assets.
+Model CaelumWorkbenchStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_workbench.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CWBK A 0 0
+}
+
+Model CaelumForgeStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_forge.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFRG A 0 0
+}
+
+Model CaelumAnvilStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_anvil.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CANV A 0 0
+}
+
+Model CaelumRangedWorkshopStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_ranged.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CRNG A 0 0
+}
+
+Model CaelumBowWorkshopStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_ranged.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CRNG A 0 0
+}
+
+Model CaelumSawmillStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_sawmill.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CSAW A 0 0
+}
+
+Model CaelumArmorWorkshopStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_armor.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARM A 0 0
+}
+
+Model CaelumSewingMachineStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_sewing.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CSEW A 0 0
+}
+
+Model CaelumEssenceAltarStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_altar.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CESA A 0 0
+}
+
+Model CaelumGlobeStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_globe.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CGLB A 0 0
+}
+
+Model CaelumJewelerBenchStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_jeweler.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CJWL A 0 0
+}
+
+Model CaelumFineToolsBenchStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_fine_tools.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFIN A 0 0
+}
+
+Model CaelumMasterBenchStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_master.obj"
+    Scale 2.0 2.0 2.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CMST A 0 0
+}
+// --- END GENERATED CAELUM STATION MODELS ---
+
+Model CaelumRestChair
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_rest_chair.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumRestBed
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_rest_bed.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumSleepingBag
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_rest_bag_roll.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CSBG A 0 0
+}
+
+Model CaelumRestBag
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_rest_bag_open.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CSBO A 0 0
+}
+
+Model CaelumDiningTableSmall
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_table_small.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumDiningTable
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_table_normal.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumDiningTableLarge
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_table_large.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+// 4.35.0h: una presentación por pertenencia, sin dar objetos adicionales.
+Model CaelumDiningFoodPlate
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_food_plate.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+Model CaelumDiningWaterCup
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_water_cup.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+// #209: volumen real; conserva la escala e identidad del objeto de la mesa.
+Model CaelumDiningLargeCanteen
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_large_canteen.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CW5X A 0 0
+}
+
+// BEGIN CAELUM TRAVEL VEHICLES
+Model CaelumCoveredCart
+{
+    Path "models/caelum/vehicles"
+    Model 0 "ca_covered_cart.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset 90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumMerchantShip
+{
+    Path "models/caelum/vehicles"
+    Model 0 "ca_merchant_ship.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset 90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumVehicleRanch
+{
+    Path "models/caelum/vehicles"
+    Model 0 "ca_ranch.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset 90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumVehicleDock
+{
+    Path "models/caelum/vehicles"
+    Model 0 "ca_dock.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset 90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+// END CAELUM TRAVEL VEHICLES
+
+// 4.36.0b: pivote central y capa visual independiente de la colisión.
+Model CaelumHazardRockVisual
+{
+    Path "models/caelum/world/hazards"
+    Model 0 "ca_hazard_boulder.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    UseActorRoll
+    FrameIndex CARK A 0 0
+}
+Model CaelumLeverColumn
+{
+    Path "models/caelum/world/hazards"
+    Model 0 "ca_lever_column.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}
+
+// --- BEGIN GENERATED CAELUM SIEGE MODELS ---
+// Reusable siege preview meshes; states only, no mechanics.
+Model CaelumSiegeCannon
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_cannon_ready.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CSGN A 0 0
+}
+
+Model CaelumSiegeCannon
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_cannon_loading.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CSGN B 0 0
+}
+
+Model CaelumSiegeCannon
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_cannon_firing.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CSGN C 0 0
+}
+
+Model CaelumSiegeCannon
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_cannon_recovery.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CSGN D 0 0
+}
+
+Model CaelumSiegeRam
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_ram_ready.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CRAM A 0 0
+}
+
+Model CaelumSiegeRam
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_ram_strike.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CRAM B 0 0
+}
+
+Model CaelumSiegeRam
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_ram_recovery.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CRAM C 0 0
+}
+
+Model CaelumSiegeGate
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_intact.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGT A 0 0
+}
+
+Model CaelumHingedDoorLeaf
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_mansion_door.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDLS A 0 0
+}
+
+Model CaelumHouseDoorVisual
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_mansion_door.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDLS A 0 0
+}
+
+Model CaelumSiegeGate
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_damaged.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGT B 0 0
+}
+
+Model CaelumSiegeGate
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_broken.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGT C 0 0
+}
+
+Model CaelumSiegeGateReinforced
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_reinforced_intact.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGR A 0 0
+}
+
+Model CaelumSiegeGateReinforced
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_reinforced_damaged.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGR B 0 0
+}
+
+Model CaelumSiegeGateReinforced
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_reinforced_broken.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGR C 0 0
+}
+
+Model CaelumSiegeGateArmored
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_armored_intact.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGA A 0 0
+}
+
+Model CaelumSiegeGateArmored
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_armored_damaged.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGA B 0 0
+}
+
+Model CaelumSiegeGateArmored
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_armored_broken.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGA C 0 0
+}
+
+// --- END GENERATED CAELUM SIEGE MODELS ---
+
+// BEGIN GENERATED RAM COMPONENTS
+Model CaelumRamFrameVisual
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_ram_frame.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CRFR A 0 0
+}
+Model CaelumRamHead
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_ram_moving.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CRHD A 0 0
+}
+Model CaelumRamSuspension
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_ram_suspension.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CRSP A 0 0
+}
+// END GENERATED RAM COMPONENTS
+
+// BEGIN GENERATED CANNON COMPONENTS
+Model CaelumCannonFrame
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_cannon_frame.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CCFR A 0 0
+}
+Model CaelumCannonBarrel
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_cannon_closed.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CCBR A 0 0
+}
+Model CaelumCannonBarrel
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_cannon_open.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CCBR B 0 0
+}
+Model CaelumCannonProjectile
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_cannon_round.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CCSH A 0 0
+}
+Model CaelumCannonFlash
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_cannon_flash.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CCFL A 0 0
+}
+// END GENERATED CANNON COMPONENTS
+
+Model CaelumMansionSceneryTree
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+Model CaelumMansionSceneryTree2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+Model CaelumMansionSceneryTree3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+
+// BEGIN GENERATED MANSION TYMPANA
+Model CaelumMansionTympanum0
+{
+    Path "models/caelum/mansion"
+    Model 0 "ca_mansion_tympanum_128_20.obj"
+    Scale 1 1 1.2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDLS A 0 0
+}
+Model CaelumMansionTympanum1
+{
+    Path "models/caelum/mansion"
+    Model 0 "ca_mansion_tympanum_128_28.obj"
+    Scale 1 1 1.2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDLS A 0 0
+}
+Model CaelumMansionTympanum2
+{
+    Path "models/caelum/mansion"
+    Model 0 "ca_mansion_tympanum_64_20.obj"
+    Scale 1 1 1.2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDLS A 0 0
+}
+Model CaelumMansionTympanum3
+{
+    Path "models/caelum/mansion"
+    Model 0 "ca_mansion_tympanum_64_28.obj"
+    Scale 1 1 1.2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDLS A 0 0
+}
+Model CaelumMansionDoorGable
+{
+    Path "models/caelum/mansion"
+    Model 0 "ca_mansion_door_gable.obj"
+    Scale 1 1 1.2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDLS A 0 0
+}
+// END GENERATED MANSION TYMPANA
+
+// BEGIN GENERATED DECORATIVE CAVE
+Model CaelumCaveSceneryRuby
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_ruby.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE J 0 0
+}
+Model CaelumCaveScenerySapphire
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_sapphire.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE I 0 0
+}
+Model CaelumCaveSceneryEmerald
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_emerald.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE K 0 0
+}
+Model CaelumCaveSceneryTopaz
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_topaz.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE H 0 0
+}
+Model CaelumCaveSceneryOpal
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_opal.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE G 0 0
+}
+// END GENERATED DECORATIVE CAVE
+
+// BEGIN GENERATED TRAINING DUMMY
+Model CaelumTrainingDummy
+{
+    Path "models/caelum/actors/training"
+    Model 0 "ca_training_dummy.obj"
+    Scale 1 1 1.2
+    AngleOffset 0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDMY A 0 0
+}
+Model CaelumM00TrainingDummy
+{
+    Path "models/caelum/actors/training"
+    Model 0 "ca_training_dummy.obj"
+    Scale 1 1 1.2
+    AngleOffset 0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDMY A 0 0
+}
+// END GENERATED TRAINING DUMMY
+
+// BEGIN GENERATED PHYSICAL PROJECTILES
+Model CaelumArrowProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "ca_arrow.obj"
+ Scale 5 5 5
+ CorrectPixelStretch
+ PitchFromMomentum
+ DontCullBackFaces
+ FrameIndex ARRO A 0 0
+}
+Model CaelumBoltProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "ca_bolt.obj"
+ Scale 5 5 5
+ CorrectPixelStretch
+ PitchFromMomentum
+ DontCullBackFaces
+ FrameIndex BOLT A 0 0
+}
+Model CaelumCarbineProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "ca_bullet.obj"
+ Scale 1 1 1
+ CorrectPixelStretch
+ PitchFromMomentum
+ DontCullBackFaces
+ FrameIndex PUFF A 0 0
+}
+Model CaelumShotgunPellet
+{
+ Path "models/caelum/projectiles"
+ Model 0 "ca_pellet.obj"
+ Scale 1 1 1
+ CorrectPixelStretch
+ PitchFromMomentum
+ DontCullBackFaces
+ FrameIndex PUFF A 0 0
+}
+Model CaelumJavelinProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "ca_javelin.obj"
+ Scale 4 4 4
+ CorrectPixelStretch
+ PitchFromMomentum
+ DontCullBackFaces
+ FrameIndex JAVL A 0 0
+}
+// END GENERATED PHYSICAL PROJECTILES
+
+// BEGIN GENERATED DEMON FLAME PLANES
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_0_0.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR A 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_0_1.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR B 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_0_2.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR C 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_0_3.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR D 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_1_0.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR E 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_1_1.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR F 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_1_2.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR G 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_1_3.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR H 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_2_0.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR I 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_2_1.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR J 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_2_2.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR K 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_2_3.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR L 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_3_0.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR M 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_3_1.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR N 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_3_2.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR O 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_3_3.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR P 0 0
+}
+// END GENERATED DEMON FLAME PLANES
+
+// BEGIN GENERATED LIGHTNING RAYS
+Model CaelumPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumChargedPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumChargedHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumChargedExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumActorSimpleElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumActorExplosiveElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumChargedPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumChargedHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumChargedExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumActorSimpleElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumActorExplosiveElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumChargedPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumChargedHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumChargedExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumActorSimpleElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumActorExplosiveElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+Model CaelumHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+Model CaelumExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+Model CaelumChargedPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+Model CaelumChargedHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+Model CaelumChargedExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+Model CaelumActorSimpleElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+Model CaelumActorExplosiveElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+// END GENERATED LIGHTNING RAYS
+
+// La clase finita del tutorial necesita su propio enlace de modelo.
+Model CaelumTutorialGoldVein
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_gold.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE F 0 0
+}
+
+// BEGIN CAELUM ARCANE CLOUD
+Model CaelumArcaneCloudModel
+{
+    Path "models/caelum/weather"
+    Model 0 "rain_cloud.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    ForceCullBackFaces
+    FrameIndex CARK A 0 0
+}
+// END CAELUM ARCANE CLOUD
+
+// BEGIN DOMINGO 3D PILOT
+#include "caelum/data/domingo_modules.modeldef"
+// END DOMINGO 3D PILOT
+
+// BEGIN ZUPAY ROCK #284
+Model CaelumActorExplosiveElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "ca_zupay_rock.obj"
+ Scale 1 1 1
+ CorrectPixelStretch
+ PitchFromMomentum
+ FrameIndex ZROK A 0 0
+}
+// END ZUPAY ROCK #284
+
+// BEGIN BULL 3D MODEL
+Model CaelumBullModelBody
+{
+    Path "models/caelum/bull"
+    Model 0 "bull.md3"
+    Skin 0 "bull_skin.png"
+    Scale 1 1 1
+    DontCullBackFaces
+    FrameIndex B300 A 0 0
+    FrameIndex B300 B 0 1
+    FrameIndex B300 C 0 2
+    FrameIndex B300 D 0 3
+    FrameIndex B300 E 0 4
+    FrameIndex B300 F 0 5
+    FrameIndex B300 G 0 6
+    FrameIndex B300 H 0 7
+    FrameIndex B300 I 0 8
+    FrameIndex B300 J 0 9
+    FrameIndex B300 K 0 10
+    FrameIndex B300 L 0 11
+    FrameIndex B300 M 0 12
+    FrameIndex B300 N 0 13
+    FrameIndex B300 O 0 14
+    FrameIndex B300 P 0 15
+    FrameIndex B300 Q 0 16
+    FrameIndex B300 R 0 17
+    FrameIndex B300 S 0 18
+    FrameIndex B300 T 0 19
+    FrameIndex B300 U 0 20
+    FrameIndex B300 V 0 21
+    FrameIndex B300 W 0 22
+    FrameIndex B300 X 0 23
+    FrameIndex B300 Y 0 24
+    FrameIndex B300 Z 0 25
+    FrameIndex B301 A 0 26
+    FrameIndex B301 B 0 27
+    FrameIndex B301 C 0 28
+    FrameIndex B301 D 0 29
+    FrameIndex B301 E 0 30
+    FrameIndex B301 F 0 31
+    FrameIndex B301 G 0 32
+    FrameIndex B301 H 0 33
+    FrameIndex B301 I 0 34
+    FrameIndex B301 J 0 35
+    FrameIndex B301 K 0 36
+    FrameIndex B301 L 0 37
+    FrameIndex B301 M 0 38
+    FrameIndex B301 N 0 39
+    FrameIndex B301 O 0 40
+    FrameIndex B301 P 0 41
+    FrameIndex B301 Q 0 42
+    FrameIndex B301 R 0 43
+    FrameIndex B301 S 0 44
+    FrameIndex B301 T 0 45
+    FrameIndex B301 U 0 46
+    FrameIndex B301 V 0 47
+    FrameIndex B301 W 0 48
+    FrameIndex B301 X 0 49
+    FrameIndex B301 Y 0 50
+    FrameIndex B301 Z 0 51
+    FrameIndex B302 A 0 52
+    FrameIndex B302 B 0 53
+    FrameIndex B302 C 0 54
+    FrameIndex B302 D 0 55
+    FrameIndex B302 E 0 56
+    FrameIndex B302 F 0 57
+    FrameIndex B302 G 0 58
+    FrameIndex B302 H 0 59
+    FrameIndex B302 I 0 60
+    FrameIndex B302 J 0 61
+    FrameIndex B302 K 0 62
+    FrameIndex B302 L 0 63
+    FrameIndex B302 M 0 64
+    FrameIndex B302 N 0 65
+    FrameIndex B302 O 0 66
+    FrameIndex B302 P 0 67
+    FrameIndex B302 Q 0 68
+    FrameIndex B302 R 0 69
+    FrameIndex B302 S 0 70
+    FrameIndex B302 T 0 71
+    FrameIndex B302 U 0 72
+    FrameIndex B302 V 0 73
+    FrameIndex B302 W 0 74
+    FrameIndex B302 X 0 75
+    FrameIndex B302 Y 0 76
+    FrameIndex B302 Z 0 77
+    FrameIndex B303 A 0 78
+    FrameIndex B303 B 0 79
+    FrameIndex B303 C 0 80
+    FrameIndex B303 D 0 81
+    FrameIndex B303 E 0 82
+    FrameIndex B303 F 0 83
+    FrameIndex B303 G 0 84
+    FrameIndex B303 H 0 85
+    FrameIndex B303 I 0 86
+    FrameIndex B303 J 0 87
+    FrameIndex B303 K 0 88
+    FrameIndex B303 L 0 89
+    FrameIndex B303 M 0 90
+    FrameIndex B303 N 0 91
+    FrameIndex B303 O 0 92
+    FrameIndex B303 P 0 93
+    FrameIndex B303 Q 0 94
+    FrameIndex B303 R 0 95
+    FrameIndex B303 S 0 96
+    FrameIndex B303 T 0 97
+    FrameIndex B303 U 0 98
+    FrameIndex B303 V 0 99
+    FrameIndex B303 W 0 100
+    FrameIndex B303 X 0 101
+    FrameIndex B303 Y 0 102
+    FrameIndex B303 Z 0 103
+    FrameIndex B304 A 0 104
+    FrameIndex B304 B 0 105
+    FrameIndex B304 C 0 106
+    FrameIndex B304 D 0 107
+    FrameIndex B304 E 0 108
+    FrameIndex B304 F 0 109
+    FrameIndex B304 G 0 110
+    FrameIndex B304 H 0 111
+    FrameIndex B304 I 0 112
+    FrameIndex B304 J 0 113
+    FrameIndex B304 K 0 114
+    FrameIndex B304 L 0 115
+    FrameIndex B304 M 0 116
+    FrameIndex B304 N 0 117
+    FrameIndex B304 O 0 118
+    FrameIndex B304 P 0 119
+    FrameIndex B304 Q 0 120
+    FrameIndex B304 R 0 121
+    FrameIndex B304 S 0 122
+    FrameIndex B304 T 0 123
+    FrameIndex B304 U 0 124
+    FrameIndex B304 V 0 125
+    FrameIndex B304 W 0 126
+    FrameIndex B304 X 0 127
+    FrameIndex B304 Y 0 128
+    FrameIndex B304 Z 0 129
+    FrameIndex B305 A 0 130
+    FrameIndex B305 B 0 131
+    FrameIndex B305 C 0 132
+    FrameIndex B305 D 0 133
+    FrameIndex B305 E 0 134
+    FrameIndex B305 F 0 135
+}
+// END BULL 3D MODEL
+
+Model CaelumReadingShelf
+{
+    Path "models/caelum/props/reading"
+    Model 0 "ca_reading_shelf.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CBOO A 0 0
+}
+// #405: fuentes, materiales y arbustos con geometría 3D propia.
+#include "caelum/data/land_resources.modeldef"
+#include "caelum/data/marine_resources.modeldef"
+
+Model CaelumAlchemyStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_alchemy.obj"
+    Scale 2 2 2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CALC A 0 0
+}
+
+Model CaelumFermentationStation
+{
+    Path "models/caelum/props/stations"
+    Model 0 "ca_station_fermentation.obj"
+    Scale 2 2 2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CFER A 0 0
+}
+
+// #479: rejected model bindings retained in source; active equipment uses sprites.
+
+#include "caelum/data/chemistry_resources.modeldef"
+
+#include "caelum/data/mate.modeldef"
+#include "caelum/data/domestic_bathrooms.modeldef"
+
+Model CaelumDeployedTent { Path "models/caelum/world/camp" Model 0 "tent_legacy.obj" Scale 1 1 1 AngleOffset 90 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN A 0 0 }
+Model CaelumDeployedTent { Path "models/caelum/world/camp" Model 0 "tent.obj" Scale 1 1 1 AngleOffset 90 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN B 0 0 }
+
+// #411 original campfire models
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_0.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN A 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_1.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN B 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_2.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN C 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_3.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN D 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_4.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN E 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_5.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN F 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_6.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN G 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_7.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN H 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_8.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN I 0 0 }
+Model CaelumCampFire { Path "models/caelum/world/camp" Model 0 "fire_9.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN J 0 0 }
+
+#include "caelum/data/kitchen_stations.modeldef"
+#include "caelum/data/kitchen_fixtures.modeldef"
+#include "caelum/data/wardrobe.modeldef"
+#include "caelum/data/water_furniture.modeldef"
+
+Model CaelumReadingDesk
+{
+    Path "models/caelum/props/rest"
+    Model 0 "ca_table_small.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumTwoSeatSofa
+{
+    Path "models/caelum/props/sofas"
+    Model 0 "ca_sofa_2.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumThreeSeatSofa
+{
+    Path "models/caelum/props/sofas"
+    Model 0 "ca_sofa_3.obj"
+    Scale 1.0 1.0 1.0
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumLuxuryChair
+{
+    Path "models/caelum/props/luxury"
+    Model 0 "ca_luxury_chair.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumLuxuryBed
+{
+    Path "models/caelum/props/luxury"
+    Model 0 "ca_luxury_bed.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumLuxuryTable
+{
+    Path "models/caelum/props/luxury"
+    Model 0 "ca_luxury_table.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumPortableReadingDesk
+{
+    Path "models/caelum/props/study"
+    Model 0 "ca_study_desk.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumPortableReadingShelf
+{
+    Path "models/caelum/props/study"
+    Model 0 "ca_study_bookcase.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CBOO A 0 0
+}
+
+Model CaelumPortableSmallTable
+{
+    Path "models/caelum/props/dining_sets"
+    Model 0 "ca_dining_small.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumPortableNormalTable
+{
+    Path "models/caelum/props/dining_sets"
+    Model 0 "ca_dining_normal.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumPortableLargeTable
+{
+    Path "models/caelum/props/dining_sets"
+    Model 0 "ca_dining_large.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumPortableLuxuryTable
+{
+    Path "models/caelum/props/luxury"
+    Model 0 "ca_luxury_table.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+Model CaelumLandscapePainting
+{
+    Path "models/caelum/props/ornamental"
+    Model 0 "ca_river_painting.obj"
+    Scale 1 1 1
+    AngleOffset 90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex COAP A 0 0
+}
+Model CaelumOrnamentalStatue
+{
+    Path "models/caelum/props/ornamental"
+    Model 0 "ca_botanical_statue.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex COAS A 0 0
+}
+// #416 uses owned vehicle materials; the riding horse remains a sprite.
+Model CaelumLargeLandscapePainting
+{
+    Path "models/caelum/props/ornamental"
+    Model 0 "ca_large_river_painting.obj"
+    Scale 1 1 1
+    AngleOffset 90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex COAL A 0 0
+}
+#include "caelum/data/transport_vehicles.modeldef"
+
+#include "caelum/data/powerups.modeldef"
+#include "caelum/data/hunt_arcana.modeldef"
+
+// BEGIN GENERATED BARRICADE
+Model CaelumBarricadeVisual
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_barricade.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGT A 0 0
+    FrameIndex CAGT B 0 0
+}
+// END GENERATED BARRICADE
+
+// #647: explicit native denomination bindings.
+#include "caelum/data/inventory_coins.modeldef"
+
+// #647: representaciones de botiquines y frascos, sin reglas nuevas.
+#include "caelum/data/inventory_consumables.modeldef"
+#include "caelum/data/inventory_water.modeldef"
+#include "caelum/data/inventory_food.modeldef"
+
+// #652: siete tipos de munición, sin cambios de reglas.
+#include "caelum/data/inventory_ammunition.modeldef"
+
+// #461: Pombero conserva estados, combate y cuerpo provisionales.
+#include "caelum/data/pombero_combat.modeldef"
+#include "caelum/data/inventory_documents.modeldef"
+#include "caelum/data/inventory_ingots.modeldef"
+#include "caelum/data/cuero_combat.modeldef"
+#include "caelum/data/nahuelito_combat.modeldef"
+#include "caelum/data/inventory_camp.modeldef"
+#include "caelum/data/inventory_furniture.modeldef"
+#include "caelum/data/inventory_waterskin.modeldef"
+#include "caelum/data/inventory_mates.modeldef"
+#include "caelum/data/inventory_locks.modeldef"
+
+#include "caelum/data/inventory_jewelry.modeldef"
+#include "caelum/data/inventory_books.modeldef"
+
+#include "caelum/data/inventory_gems.modeldef"
+
+#include "caelum/data/beast_men_combat.modeldef"
+
+#include "caelum/data/inventory_ores.modeldef"
+#include "caelum/data/inventory_headwear.modeldef"
+#include "caelum/data/inventory_gloves.modeldef"
+#include "caelum/data/duende_combat.modeldef"
+#include "caelum/data/inventory_footwear.modeldef"
+
+#include "caelum/data/inventory_clothing.modeldef"
+
+#include "caelum/data/guardian_combat.modeldef"
+
+#include "caelum/data/inventory_shields.modeldef"
+
+#include "caelum/data/inventory_plates.modeldef"
+
+#include "caelum/data/inventory_chainmail.modeldef"
+
+#include "caelum/data/peuchen_combat.modeldef"
+
+#include "caelum/data/avian_combat.modeldef"
+
+#include "caelum/data/inventory_chains.modeldef"
+
+#include "caelum/data/inventory_wood_components.modeldef"
+
+#include "caelum/data/serpent_combat.modeldef"
+
+#include "caelum/data/inventory_weapon_components.modeldef"
+
+#include "caelum/data/inventory_assembly_components.modeldef"
+#include "caelum/data/hybrid_serpent_combat.modeldef"
+#include "caelum/data/inventory_hides.modeldef"
+#include "caelum/data/inventory_textiles.modeldef"
+
+#include "caelum/data/basilisco_combat.modeldef"
+#include "caelum/data/inventory_hygiene.modeldef"
+#include "caelum/data/inventory_kitchen_ingredients.modeldef"
+
+#include "caelum/data/inventory_cartridge_kits.modeldef"
+
+#include "caelum/data/inventory_elemental_essences.modeldef"
+
+#include "caelum/data/inventory_orbs.modeldef"
+#include "caelum/data/inventory_magic_bases.modeldef"
+#include "caelum/data/inventory_magic_weapons.modeldef"
+#include "caelum/data/inventory_magic_tiers.modeldef"
+#include "caelum/data/inventory_effigies.modeldef"
+#include "caelum/data/inventory_bladed_weapons.modeldef"
+#include "caelum/data/inventory_axes.modeldef"
+#include "caelum/data/inventory_polearms.modeldef"
+#include "caelum/data/inventory_articulated_weapons.modeldef"
+#include "caelum/data/inventory_ranged_weapons.modeldef"
+#include "caelum/data/inventory_armor_helmets.modeldef"
+#include "caelum/data/inventory_armor_hands.modeldef"
+#include "caelum/data/inventory_armor_feet.modeldef"
+#include "caelum/data/inventory_armor_torso.modeldef"
+
+#include "caelum/data/inventory_inherited_defaults.modeldef"
+
+#include "caelum/data/quadruped_combat.modeldef"
+#include "caelum/data/teju_combat.modeldef"
+#include "caelum/data/kasogonaga_combat.modeldef"
+#include "caelum/data/apparition_combat.modeldef"
+#include "caelum/data/head_apparition_combat.modeldef"
+#include "caelum/data/period_apparition_combat.modeldef"
+#include "caelum/data/forest_guardian_combat.modeldef"
+#include "caelum/data/austral_figure_combat.modeldef"
+#include "caelum/data/witch_figure_combat.modeldef"
+#include "caelum/data/land_figure_combat.modeldef"
+#include "caelum/data/bestiary_figure_combat.modeldef"
+#include "caelum/data/distinct_form_combat.modeldef"
+
+#include "caelum/data/wardrobe_candidate.modeldef"

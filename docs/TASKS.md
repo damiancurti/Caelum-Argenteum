@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.106** - 2026-11-19.
+Documentation version: **5.17.107** - 2026-11-19.
+
+## 5.17.107 - Bind the opt-in first-body wardrobe to owned clothing (#857)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Completed #857 equipment authority binding, bounded invalidation, revisioned
+presentation, native ownership/save/hub/rollback tests, corrected frame grouping,
+deterministic package proof and paired one-player presentation evidence.
+Continue #859/#462 item-specific hands/grips and remaining authorized character,
+equipment/scenery and V5.16 work. Existing unauthored design decisions and #736
+visual approval remain pending. Preserve every outstanding author check and
+deliver the single consolidated terminal only after the batch is worked.
 
 ## 5.17.106 - Preserve recognition when demon breath inspects a route marker (#855)
 

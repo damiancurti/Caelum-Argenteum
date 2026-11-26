@@ -1,0 +1,3 @@
+version "4.14.2"
+#include "caelum/data/CaelumWornClothingModelData.zs"
+#include "caelum/character/CaelumWardrobePilot.zs"

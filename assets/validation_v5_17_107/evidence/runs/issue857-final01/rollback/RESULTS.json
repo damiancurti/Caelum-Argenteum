@@ -1,0 +1,49 @@
+{
+  "issue": 857,
+  "passed": true,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-navigation02.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue857-final01\\rollback\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue857-final01\\rollback\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue857-final01\\rollback",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue857-final01\\rollback\\engine.log",
+    "-loadgame",
+    "input.zds",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue857-final01\\rollback\\commands.cfg"
+  ],
+  "exit_code": 0,
+  "errors": [],
+  "checks": [
+    "CA836 EDGE PASS wardrobe: saved fixture and original player survive",
+    "CA836 EDGE PASS wardrobe: synchronous visual refresh preserves owner state",
+    "CA836 EDGE PASS wardrobe: expected candidate or existing presentation selected",
+    "CA836 EDGE PASS wardrobe: owned visual is visible",
+    "CA836 EDGE PASS wardrobe: saved native clothing identity and properties survive",
+    "CA836 EDGE PASS wardrobe: saved native clothing identity and properties survive",
+    "CA836 EDGE PASS wardrobe: saved native clothing identity and properties survive",
+    "CA836 EDGE PASS wardrobe: saved native clothing identity and properties survive",
+    "CA836 EDGE_RESULT checks=83 failures=0 result=PASS"
+  ],
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-navigation02.pk3": "d2e3f6d0701cbb19455a899959bd87b1f520905d5f39816e81f5b0b44fe049c1",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue857-final01\\rollback\\checks.pk3": "b273ea3273c77745852bee632cf7ccf026f117d04438f3716e3d4f273422f3cd"
+  },
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "loaded_save_sha256": "bb085bc7596cf4dfc39954bae519175373bd73d1fd2c47c44c03fbfb2c4feee5",
+  "qualification": "Native wardrobe continuity phase rollback. Same diagnostic saved class names and base-compatible fields on both builds; checks actual clothing identity and visual selection. Not author acceptance."
+}

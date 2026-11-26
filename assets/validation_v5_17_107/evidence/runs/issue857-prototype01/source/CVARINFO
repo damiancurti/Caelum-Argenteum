@@ -1,0 +1,138 @@
+// This user setting remembers whether the attribute debug panel is visible.
+// "user" means that each local GZDoom profile stores its own value.
+user bool ca_debug_attributes = false;
+
+// Estado exclusivamente local del Diario. La interfaz puede modificar estos
+// CVars desde ámbito UI sin convertir navegación visual en estado de juego.
+user bool ca_journal_open = false;
+user int ca_journal_page = 0;
+user bool ca_journal_quest_detail = false;
+user int ca_journal_quest_scroll = 0;
+
+// Puente local entre el creador previo a la partida y el primer CaelumPlayer.
+// El inventario persistente toma el relevo apenas comienza el mapa.
+user bool ca_newchar_ready = false;
+user int ca_newchar_race = 2;
+user int ca_newchar_first_class = 0;
+user int ca_newchar_second_class = 3;
+user int ca_newchar_sex = 0;
+user int ca_newchar_height = 1;
+user int ca_newchar_skintone = 0;
+user int ca_newchar_beastform = 0;
+user int ca_newchar_face = 0;
+user int ca_newchar_hairstyle = 0;
+user int ca_newchar_haircolor = 0;
+user int ca_newchar_personality = -1;
+user int ca_newchar_layer0 = 0;
+user int ca_newchar_layer1 = 0;
+user int ca_newchar_layer2 = 0;
+user int ca_newchar_layer3 = 0;
+user int ca_newchar_attribute0 = 0;
+user int ca_newchar_attribute1 = 0;
+user int ca_newchar_attribute2 = 0;
+user int ca_newchar_attribute3 = 0;
+user int ca_newchar_attribute4 = 0;
+user int ca_newchar_attribute5 = 0;
+user int ca_newchar_attribute6 = 0;
+user int ca_newchar_attribute7 = 0;
+user int ca_newchar_attribute8 = 0;
+user int ca_newchar_attribute9 = 0;
+user int ca_newchar_attribute10 = 0;
+user int ca_newchar_attribute11 = 0;
+
+// Interruptores exclusivos del campo masivo de MAP02. Son CVars de servidor:
+// deben fijarse antes de cargar MAP02 y el coordinador los captura una sola vez
+// para que ninguna IA consulte configuración dentro del camino caliente.
+server bool ca_diag_mass_attacks = true;
+server bool ca_diag_mass_look_enabled = true;
+server bool ca_diag_mass_chase_enabled = true;
+
+// Divide de forma determinista los intentos de ataque del campo masivo entre
+// varios tics. Sólo el coordinador consulta estas CVars; los actores usan su
+// referencia cacheada y no ejecutan búsquedas en el camino caliente.
+server int ca_diag_mass_attack_stagger = 64;
+
+// Percepción y persecución tienen presupuestos independientes. Siete mantiene
+// una comprobación de sigilo/percepción cercana a dos segundos; trece reparte
+// A_Chase entre ciclos coprimos y reduce su cadencia a aproximadamente 1,5--2 s.
+server int ca_diag_mass_look_stagger = 7;
+server int ca_diag_mass_chase_stagger = 13;
+
+// Un coordinador global impide que una distribución de fases desfavorable
+// supere estos números de llamadas nativas dentro del mismo tic.
+server int ca_diag_mass_look_budget = 20;
+server int ca_diag_mass_chase_budget = 10;
+
+// Prueba arquitectónica de escuadras: sólo uno de cada N actores del campo
+// masivo puede ejecutar movimiento nativo. Los demás conservan adquisición,
+// objetivo y orientación lenta sin iniciar TryMove ni chequeos de ataque.
+// El valor uno restaura el comportamiento anterior para una comparación A/B.
+server int ca_diag_mass_squad_size = 16;
+
+// Movimiento local experimental para seguidores. Desactivado conserva la
+// línea base 4.29.0u/0v ya aceptada; activado mueve a todos los seguidores con
+// velocidad continua sin permitirles entrar en A_Chase/TryMove. 0.25 equivale
+// aproximadamente al desplazamiento normal de una acción cada cuatro tics.
+server bool ca_diag_mass_follower_movement = false;
+server int ca_diag_mass_follower_speed_percent = 25;
+
+// La especificación aún debe confirmar si 60°/120° describe la apertura total
+// o el semicono. false prueba aperturas totales (±30°/±60°); true compara la
+// lectura amplia (±60°/±120°) sin cambiar código ni documentación canónica.
+server bool ca_diag_perception_wide_half_angles = false;
+
+// Navegación local: nunca modifica el registro autoritativo.
+user int ca_journal_quest_selected = 0;
+user int ca_journal_quest_abandon = -1;
+user bool ca_journal_quest_abandon_held = false;
+user int ca_journal_quest_abandon_scan = -1;
+user int ca_journal_tarot_selected = -1;
+user int ca_journal_tarot_preview = -1;
+user bool ca_journal_tarot_select_held = false;
+user int ca_journal_tarot_scroll = 0;
+user int ca_journal_craft_scroll = 0;
+
+// Calendario mensual; selección local, fechas autoritativas en el inventario.
+user int ca_calendar_open = 0;
+user int ca_calendar_day = 0;
+user int ca_calendar_event = 0;
+user int ca_calendar_detail = 0;
+
+// Cada entrada conserva su propia vida restante en segundos.
+user float ca_notification_seconds = 8.0;
+
+// Filtros locales del diario; no son progreso guardado.
+user int ca_journal_quest_kind = 0;
+user int ca_journal_quest_status = 0;
+
+// Compatibilidad #132: MAP03 usa refuerzos automáticamente, sin depender del CVar.
+server bool ca_test_siege_reinforcements = false;
+
+// Presentación reversible del toro; desactivar antes de guardar para rollback.
+server bool ca_bull_3d = true;
+
+// Identidad local emitida por el lanzador; no concede propiedad.
+nosave noarchive string ca_session_profile = "";
+nosave noarchive int ca_session_slot = -1;
+nosave noarchive int ca_session_nonce = 0;
+// Modo de nueva partida sin personajes; nunca se guarda como regla de juego.
+nosave noarchive server bool ca_profile_bootstrap = false;
+
+// Preferencias del menú; el proceso de partida usa una configuración nueva.
+nosave noarchive bool ca_standalone_bridge = false;
+nosave noarchive int ca_standalone_menu_ready = 0;
+nosave int ca_match_role = 0;
+nosave int ca_match_mode = 0;
+nosave int ca_match_preset = 0;
+nosave int ca_match_venue = 0;
+nosave int ca_match_players = 2;
+nosave int ca_match_port = 5029;
+nosave string ca_match_host = "127.0.0.1";
+nosave string ca_match_session = "";
+nosave noarchive server int ca_standalone_mode = 0;
+user int ca_standalone_preset = 0;
+nosave int ca_match_palomo = 0;
+nosave noarchive server int ca_standalone_palomo = 0;
+
+// #857: candidato visual de sesion; no modifica el equipo ni el guardado.
+nosave noarchive server bool ca_wardrobe_candidate = false;

@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\GZDooMProjects\CaelumArgenteum\build\v516\run_wardrobe_continuity857.py", line 50, in <module>
+    exec(compile(source,str(original),'exec'),{'__name__':'__main__','__file__':str(original)})
+  File "C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\assets\validation_v5_17_96\run_reach_edges.py", line 80, in <module>
+    Checks++;bool portals=level.GetPortalGroupCount()>1;if(!portals)Failures++;
+                    ^^^^^^
+  File "C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\assets\validation_v5_17_96\run_reach_edges.py", line 56, in main
+    }
+      
+  File "C:\Users\dcc70\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 260, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue857-continuity-death04\\reach.zds'

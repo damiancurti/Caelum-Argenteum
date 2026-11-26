@@ -1,0 +1,2 @@
+// #857: candidato visual de sesion; no modifica el equipo ni el guardado.
+nosave noarchive server bool ca_wardrobe_candidate = false;
