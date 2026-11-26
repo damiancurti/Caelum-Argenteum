@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.22** - 2026-11-14.
+Documentation version: **5.17.23** - 2026-11-14.
+
+## 5.17.23 - Two additional folklore combat models (#690)
+
+Mikilo and Coquena gain distinct 3D reference costumes and all 23 inherited frame
+bindings. Native continuity passes 230 assertions and attacks/finite loot pass
+136; deterministic exports and one presentation pair per model pass. Earlier
+beast-men exports remain identical. CA690-DUENDES-01 retains author art/play
+review. Eight of 56 new bestiary classes have candidate native models; broader
+characters, worn modules, regional/campaign work and the batch remain unfinished.
 
 ## 5.17.22 - Four glove-pair world-drop models (#688)
 

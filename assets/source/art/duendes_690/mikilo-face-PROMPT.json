@@ -1,0 +1,10 @@
+{
+  "issue": 690,
+  "mode": "Built-in image_gen; reference-led diffuse generation",
+  "output": "mikilo-face.png",
+  "transparent_background": false,
+  "references": [
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/09_mikilo.png"
+  ],
+  "prompt": "Use case: stylized-concept. Derive ONE opaque square diffuse texture plate for the front face of the same mature male Argentine folklore goblin Mikilo in the provided author-owned reference. The input is identity/anatomy guidance, not a request to replace the original concept. This plate will be projected onto a sculpted, fully volumetric 3D head. Preserve his hooked broad fleshy nose, deep wrinkles, amber-brown eyes, heavy gray brows, warm weathered tan skin, sparse gray moustache and narrow wispy gray chin beard. Keep his individual expression as a restrained, closed-mouth sly smile. Flat orthographic frontal orientation, both eyes looking straight ahead. Fill the entire square with facial surface and matching skin/gray-hair bleed. No background, transparency, head silhouette, hat, ears, neck, shoulders, text or border. Forehead reaches top edge, chin near bottom; the outermost side edges may show wispy gray hair. Exact UV registration: pupils at x=29.5% and 70.5%, y=36.7%; nose tip at x=50%, y=54.3%; mouth center x=50%, y=70.4%; chin y=91%. Soft, evenly lit painted game-material realism, clear pores and wrinkles, no glossy portrait lighting, no cast shadows, no ambient scene, no cartoon simplification. This is albedo for the mature face in the reference; retain its earthy palette and identity."
+}

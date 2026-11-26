@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.17.22** - 2026-11-14.
+Documentation version: **5.17.23** - 2026-11-14.
 
-**V5.17:**#688:gloves;#686:headwear;#684:ores;#682:regions;#680:beasts;#678:gems;#676:books;#674:jewelry;#672:locks;#670:mates;#668:waterskin;#666:furniture;#664:camp;#662:Nahuelito;#660:Cuero;#658:ingots;#656:documents;#461:Pombero;#463:gallery;#652:ammo3D;#650:stacks; #647:drops; #458:modules; other3D pending. ASSETS/TASKS.
+**V5.17:**#690:duendes;#688:gloves;#686:headwear;#684:ores;#682:regions;#680:beasts;#678:gems;#676:books;#674:jewelry;#672:locks;#670:mates;#668:waterskin;#666:furniture;#664:camp;#662:Nahuelito;#660:Cuero;#658:ingots;#656:documents;#461:Pombero;#463:gallery;#652:ammo3D;#650:stacks; #647:drops; #458:modules; other3D pending. ASSETS/TASKS.
 **V5.16:** #452/453 approved; #454:MAP02/MAP03 rebuilt/tested; siege~1.35FPS.
 #456:World-gate,75assignments pending; #455:56classes/3pilots; #457:eligibility-only. LegacyMap02Revision5.
 

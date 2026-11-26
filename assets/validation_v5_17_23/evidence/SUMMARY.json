@@ -1,0 +1,1425 @@
+{
+  "issue": 690,
+  "parent_issue": 461,
+  "version": "5.17.23",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Repeatable Mikilo009 and unique Coquena010; fixed reference costumes, separate editable parts and all 23 inherited frame pairs. Native rules and campaign placement remain unchanged.",
+  "runtime": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-690\\build\\issue690-duendes01.pk3",
+    "sha256": "53e631b4547c7bc5b2c258ff089ff3bcbbdd58914216d176e95f7ef624559cb9",
+    "source_entries": 18313,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "f15f8437e40faa6aa8e7dc7ac9dc18ab6aa7e95c1829313d70f3b9c32f61b852",
+    "new_resources": [
+      "caelum/data/duende_combat.modeldef",
+      "models/caelum/folklore/duendes/coquena-face.png",
+      "models/caelum/folklore/duendes/coquena.md3",
+      "models/caelum/folklore/duendes/materials.png",
+      "models/caelum/folklore/duendes/mikilo-face.png",
+      "models/caelum/folklore/duendes/mikilo.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 12,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "prior_beast_native_resources_unchanged": 8,
+    "species": {
+      "mikilo": {
+        "actor": "CaelumBestiary009",
+        "catalogue_id": "CA-FOLK-009",
+        "vertices": 18455,
+        "triangles": 29736,
+        "hierarchical_parts": 20,
+        "surfaces": [
+          {
+            "material": "face",
+            "vertices": 1862,
+            "triangles": 3456
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7167
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7203
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7422
+          },
+          {
+            "material": "atlas",
+            "vertices": 4094,
+            "triangles": 4346
+          },
+          {
+            "material": "atlas",
+            "vertices": 284,
+            "triangles": 142
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -16.339774402873587,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              15.548770253457981,
+              24.93008314515405,
+              100.03817785840462
+            ]
+          },
+          {
+            "min": [
+              -16.545168725134584,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              15.34337593119698,
+              24.93008314515405,
+              99.98589400595391
+            ]
+          },
+          {
+            "min": [
+              -16.08399868495019,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              15.808728729912046,
+              24.93008314515405,
+              100.12936012083756
+            ]
+          },
+          {
+            "min": [
+              -21.64768859824745,
+              -24.698841135642006,
+              0.0
+            ],
+            "max": [
+              22.30457040860576,
+              24.762268166488543,
+              101.02993219607838
+            ]
+          },
+          {
+            "min": [
+              -16.804960339299605,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              15.087767075562626,
+              24.93008314515405,
+              99.94583677733094
+            ]
+          },
+          {
+            "min": [
+              -21.64768859824745,
+              -24.762268166488543,
+              0.0
+            ],
+            "max": [
+              22.30457040860576,
+              24.698841135642006,
+              100.91208900469786
+            ]
+          },
+          {
+            "min": [
+              -21.64768859824745,
+              -24.698841135642006,
+              0.0
+            ],
+            "max": [
+              22.30457040860576,
+              24.762268166488543,
+              101.02993219607838
+            ]
+          },
+          {
+            "min": [
+              -21.64768859824745,
+              -24.762268166488543,
+              0.0
+            ],
+            "max": [
+              22.30457040860576,
+              24.698841135642006,
+              100.91208900469786
+            ]
+          },
+          {
+            "min": [
+              -11.349858627577891,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              23.341570196046256,
+              24.93008314515405,
+              100.32683647006463
+            ]
+          },
+          {
+            "min": [
+              -16.672943607779835,
+              -27.615832408708435,
+              0.0
+            ],
+            "max": [
+              29.52081604169569,
+              22.655263823587138,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -10.955918446120535,
+              -21.76810478930201,
+              0.0
+            ],
+            "max": [
+              43.64996072140083,
+              30.354003760672384,
+              100.30024325802275
+            ]
+          },
+          {
+            "min": [
+              -36.98612460153644,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              27.210453591574353,
+              24.93008314515405,
+              89.37821616177318
+            ]
+          },
+          {
+            "min": [
+              -35.820365587020234,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              29.779517440731922,
+              24.93008314515405,
+              88.57165395022936
+            ]
+          },
+          {
+            "min": [
+              -51.423272702197764,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              23.465761720724007,
+              24.93008314515405,
+              77.31560274978429
+            ]
+          },
+          {
+            "min": [
+              -62.13028415900984,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              30.662555948160435,
+              24.93008314515405,
+              62.75582372556251
+            ]
+          },
+          {
+            "min": [
+              -62.8156692882364,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              32.97871719948528,
+              24.93008314515405,
+              55.561359920794395
+            ]
+          },
+          {
+            "min": [
+              -65.01154066314226,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              35.4275110021438,
+              24.93008314515405,
+              31.671989648576407
+            ]
+          },
+          {
+            "min": [
+              -65.01154066314226,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              35.4275110021438,
+              24.93008314515405,
+              31.671989648576407
+            ]
+          },
+          {
+            "min": [
+              -13.496425199559775,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              18.39371591068258,
+              24.93008314515405,
+              99.639019256752
+            ]
+          },
+          {
+            "min": [
+              -12.388110404194688,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              19.497112298545773,
+              24.93008314515405,
+              99.68104499840399
+            ]
+          },
+          {
+            "min": [
+              -13.496425199559775,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              18.39371591068258,
+              24.93008314515405,
+              99.639019256752
+            ]
+          },
+          {
+            "min": [
+              -14.58500218370731,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              17.342979721086255,
+              24.93008314515405,
+              99.54585117415856
+            ]
+          },
+          {
+            "min": [
+              -65.06210230066547,
+              -24.93008314515405,
+              0.0
+            ],
+            "max": [
+              33.677651758290295,
+              24.93008314515405,
+              31.521932260797936
+            ]
+          }
+        ],
+        "modeldef_scale": 1.651991513019303,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 65.18461056375317,
+        "maximum_authored_height": 101.02993219607838,
+        "source_sha256": "18533e3cfa0da8054c27a94597499f333c651dee57c5297e39888beab1e0e9d9"
+      },
+      "coquena": {
+        "actor": "CaelumBestiary010",
+        "catalogue_id": "CA-FOLK-010",
+        "vertices": 19973,
+        "triangles": 32424,
+        "hierarchical_parts": 22,
+        "surfaces": [
+          {
+            "material": "face",
+            "vertices": 1862,
+            "triangles": 3456
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7167
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7203
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7420
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 6278
+          },
+          {
+            "material": "atlas",
+            "vertices": 1800,
+            "triangles": 900
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -12.895298766987425,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              12.517600155295623,
+              21.115053105442076,
+              100.00929677719176
+            ]
+          },
+          {
+            "min": [
+              -12.895298766987425,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              12.517600155295623,
+              21.115053105442076,
+              99.98979444886011
+            ]
+          },
+          {
+            "min": [
+              -12.895298766987425,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              12.517600155295623,
+              21.115053105442076,
+              100.02835895942238
+            ]
+          },
+          {
+            "min": [
+              -23.43787641434797,
+              -20.88063045440192,
+              0.0
+            ],
+            "max": [
+              21.782070326501476,
+              20.93720126417596,
+              99.42455420107194
+            ]
+          },
+          {
+            "min": [
+              -12.895298766987425,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              12.517600155295623,
+              21.115053105442076,
+              99.95990316793367
+            ]
+          },
+          {
+            "min": [
+              -23.43787641434797,
+              -20.93720126417596,
+              0.0
+            ],
+            "max": [
+              21.782070326501476,
+              20.88063045440192,
+              99.38059767334434
+            ]
+          },
+          {
+            "min": [
+              -23.43787641434797,
+              -20.88063045440192,
+              0.0
+            ],
+            "max": [
+              21.782070326501476,
+              20.93720126417596,
+              99.42455420107194
+            ]
+          },
+          {
+            "min": [
+              -23.43787641434797,
+              -20.93720126417596,
+              0.0
+            ],
+            "max": [
+              21.782070326501476,
+              20.88063045440192,
+              99.38059767334434
+            ]
+          },
+          {
+            "min": [
+              -13.271051510311068,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              15.806812246437904,
+              21.115053105442076,
+              98.86645850637348
+            ]
+          },
+          {
+            "min": [
+              -13.137344637540043,
+              -23.920269764341093,
+              0.0
+            ],
+            "max": [
+              29.276455287550675,
+              18.829670241773165,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -13.286936699401586,
+              -18.25237924509512,
+              0.0
+            ],
+            "max": [
+              44.525670012735716,
+              26.59781683191514,
+              99.40292119123704
+            ]
+          },
+          {
+            "min": [
+              -31.895053009368983,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              28.028448110163662,
+              21.115053105442076,
+              90.57160358022891
+            ]
+          },
+          {
+            "min": [
+              -30.677110363106365,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              30.90200072531322,
+              21.115053105442076,
+              90.1847489426068
+            ]
+          },
+          {
+            "min": [
+              -46.9965828527625,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              23.20431822869691,
+              21.115053105442076,
+              75.4078108115986
+            ]
+          },
+          {
+            "min": [
+              -59.52433529663798,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              31.357699886094565,
+              21.115053105442076,
+              65.80706450772291
+            ]
+          },
+          {
+            "min": [
+              -61.47365564545413,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              34.43711016124547,
+              21.115053105442076,
+              53.801900616814805
+            ]
+          },
+          {
+            "min": [
+              -62.704443797434195,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              37.03042532117474,
+              21.115053105442076,
+              25.41289892228305
+            ]
+          },
+          {
+            "min": [
+              -62.704443797434195,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              37.03042532117474,
+              21.115053105442076,
+              25.41289892228305
+            ]
+          },
+          {
+            "min": [
+              -13.389636917696773,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              16.792387860033642,
+              21.115053105442076,
+              99.65424202961754
+            ]
+          },
+          {
+            "min": [
+              -13.442820423017434,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              16.6135215461549,
+              21.115053105442076,
+              99.66676740746136
+            ]
+          },
+          {
+            "min": [
+              -13.389636917696773,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              16.792387860033642,
+              21.115053105442076,
+              99.65424202961754
+            ]
+          },
+          {
+            "min": [
+              -13.332374799262654,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              16.9661390498987,
+              21.115053105442076,
+              99.59370052076689
+            ]
+          },
+          {
+            "min": [
+              -62.587392327589335,
+              -21.115053105442076,
+              0.0
+            ],
+            "max": [
+              35.65442956100953,
+              21.115053105442076,
+              28.28804315997799
+            ]
+          }
+        ],
+        "modeldef_scale": 1.6524685816777975,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 62.704443797434195,
+        "maximum_authored_height": 100.02835895942238,
+        "source_sha256": "800fb9b2c93846341e84fa72c370c46382781a8201e5c5e269c86d906b062029"
+      }
+    },
+    "checks": [
+      "Original references and three owned generated texture hashes",
+      "Two exact actor identities and 23 frame mappings each",
+      "MD3 indices, shaders, finite UVs and all quantized posed coordinates",
+      "Neutral-height fit without collision changes",
+      "Closed/outward garment shells and closed loft winding",
+      "Portable OBJ/material/texture groups and acyclic occupied pose hierarchy",
+      "Unchanged catalogue population identities"
+    ],
+    "regional_material_resources_unchanged": 3,
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "mikilo": {
+      "issue": 690,
+      "species": "mikilo",
+      "studio": false,
+      "runtime_sha256": "53e631b4547c7bc5b2c258ff089ff3bcbbdd58914216d176e95f7ef624559cb9",
+      "baseline_sha256": "f15f8437e40faa6aa8e7dc7ac9dc18ab6aa7e95c1829313d70f3b9c32f61b852",
+      "fixture_sha256": "2bc05c31b8065d0c4130f8b05cc00978a166b96f8787264644b1c0c003b83ca3",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty.png": "e9d2d20151922c597e0bfc06a181a66eb0ff3e0f0fcdbde1af35e01ecd79c195",
+            "pose-00-idle.png": "7fa6a0d220e33b3f80b0ab6ea73e0eb72f4e82416d40ab62131746e15c063e92",
+            "pose-01-idle.png": "e15ebc5dff565a819b9f3337251450e651ca32799bf10caa362aa4c98989022f",
+            "pose-02-run.png": "14bc2dd4b4fa6358d04413408c128ba5aa0816564a33b46277e481c2863ef509",
+            "pose-03-run.png": "f9326d9993815d97f4e8ef64e03cd1ea088b45308f0c6bc6ae24c6bfc7b1eb53",
+            "pose-04-run.png": "ed468162e810df9e1709480a5f859078c0599cf87af7f5892b3c25116a65ca59",
+            "pose-05-run.png": "18dc14d1433523096d9c9ee0c92d6244a51f45f13141b049801d58e4b9b22775",
+            "pose-06-walk.png": "f9326d9993815d97f4e8ef64e03cd1ea088b45308f0c6bc6ae24c6bfc7b1eb53",
+            "pose-07-walk.png": "18dc14d1433523096d9c9ee0c92d6244a51f45f13141b049801d58e4b9b22775",
+            "pose-08-stun.png": "d51581e5e169fdfba25be99b27e985a75f1ffcc1a30920af9c48c8af1644e7e7",
+            "pose-09-attack_prepare.png": "5ddeecce62be54950e6611dd107e18377c0c86cc5e09eb98f7ca4184915316d8",
+            "pose-10-attack_release.png": "77019caf8fc424d990169f48d12ed66e567e0ff4de0007f4e052b418d4549319",
+            "pose-11-pain.png": "c4d867a65275c0c5e0e63dddcefebf112a12c562107c7c21a89b2da29f3c0323",
+            "pose-12-death.png": "3e003428f236bd724113aefba170cb1ac3ae525cbed7b44c73c5e7ac21ae9dad",
+            "pose-13-death.png": "0dce9412522237c7cbdd901e7e9ee56da0305fd61272f053fbb30e87d9a36a11",
+            "pose-14-death.png": "fa30cbb2abf9e2f0def90228f198b3725aa257408bdb41370ee99ed22b71a89d",
+            "pose-15-death.png": "670c5f98af04e34ab75b53a54524f13cd869fa298ef0e0e429734df6089feba7",
+            "pose-16-death.png": "fb26c7035b8abaae51805482442f25125919afce92090d4d60bf6b65cf442ba6",
+            "pose-17-death.png": "fb26c7035b8abaae51805482442f25125919afce92090d4d60bf6b65cf442ba6",
+            "pose-18-breath.png": "011009beeaeb94efe15250fe649d8204723380cb015411fd0d5fd8913a201234",
+            "pose-19-breath.png": "f2115a6aa94bd6f65b1a54dae2cd99a605462e947a0e1188fd42547fb752148e",
+            "pose-20-breath.png": "011009beeaeb94efe15250fe649d8204723380cb015411fd0d5fd8913a201234",
+            "pose-21-breath.png": "ae70a4e00322be259d72fd63c2799874f2e01fd4ef8427312e2fa46ba19fce0e",
+            "pose-22-rest.png": "e7482151dd2a3bb016738c89298eae255e29bea3cfc247b87cfb93f2e07d48a8",
+            "view-front.png": "964dc43284b31328fa96e13f3cbf6738b2454bf269f76a648eb897892a925b8b",
+            "view-head-front.png": "8f0ff2fd9ef47b831c215164e237ddffeec98476b228e46c95757ffdcffa028f",
+            "view-head-oblique.png": "d09e64ffdac17c701165cb5acbf4cbaa77bb44b46c926cbd1313af6a3b122123",
+            "view-rear.png": "799c46eaa9233138eb7611fa33f8bea8c2ef564d6343f30c3ae4c51bd3ce8668",
+            "view-side.png": "b9caa92dc18bc7d0faa3b031e2126756daff0aec1ae31c052f7905e1dc6865ba"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 59011,
+            "pose-01-idle.png": 59046,
+            "pose-02-run.png": 59174,
+            "pose-03-run.png": 52846,
+            "pose-04-run.png": 59231,
+            "pose-05-run.png": 57695,
+            "pose-06-walk.png": 52846,
+            "pose-07-walk.png": 57695,
+            "pose-08-stun.png": 61002,
+            "pose-09-attack_prepare.png": 64407,
+            "pose-10-attack_release.png": 55089,
+            "pose-11-pain.png": 53133,
+            "pose-12-death.png": 50079,
+            "pose-13-death.png": 47321,
+            "pose-14-death.png": 44625,
+            "pose-15-death.png": 41849,
+            "pose-16-death.png": 42649,
+            "pose-17-death.png": 42649,
+            "pose-18-breath.png": 60268,
+            "pose-19-breath.png": 60401,
+            "pose-20-breath.png": 60268,
+            "pose-21-breath.png": 60142,
+            "pose-22-rest.png": 39670
+          },
+          "distinct_pose_captures": 19
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    },
+    "coquena": {
+      "issue": 690,
+      "species": "coquena",
+      "studio": false,
+      "runtime_sha256": "53e631b4547c7bc5b2c258ff089ff3bcbbdd58914216d176e95f7ef624559cb9",
+      "baseline_sha256": "f15f8437e40faa6aa8e7dc7ac9dc18ab6aa7e95c1829313d70f3b9c32f61b852",
+      "fixture_sha256": "abb5ff1c80bfbef6381990ba27e6dbdfd0b0369d251404e405222acd81440f32",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty.png": "e9d2d20151922c597e0bfc06a181a66eb0ff3e0f0fcdbde1af35e01ecd79c195",
+            "pose-00-idle.png": "568a22ceedebf037046a4dc985b35b4d22036e1aee5e5af7177d41a9cd3ac832",
+            "pose-01-idle.png": "1653ed6d6a46ccc4270b0058224f98cd98e0f74cd8e5d50521ddebaca97f6881",
+            "pose-02-run.png": "dc7cc3baf3f20e8e53f783cfe744394d40d1d3c2024474b1b11775a362b00188",
+            "pose-03-run.png": "c6046be5d67df97d66a7a3ae79f076b101cddb0b0d9af3db9ad182f793be48ea",
+            "pose-04-run.png": "48ac4182a3249e12486e7011149afa8880c5d0a2198dd7ec332dfd167574b230",
+            "pose-05-run.png": "e83e5cdd2b92e7490cea527ac88723b29a5820d4ba1b6a6a09d6ec5f95d62970",
+            "pose-06-walk.png": "c6046be5d67df97d66a7a3ae79f076b101cddb0b0d9af3db9ad182f793be48ea",
+            "pose-07-walk.png": "e83e5cdd2b92e7490cea527ac88723b29a5820d4ba1b6a6a09d6ec5f95d62970",
+            "pose-08-stun.png": "a3c5b50be51bb6b562680ff73dffe7ca869012dff833481623671c7a071e4b02",
+            "pose-09-attack_prepare.png": "9f1de0fbd1515a49cc9e84e7e7f2485170e73a2f3864e4460a114d66de5ed017",
+            "pose-10-attack_release.png": "2afb90838b6cb8e0852d439ecae84bc61b7708ba8892d23cab1d367e44df9bf0",
+            "pose-11-pain.png": "739bef75354d1d0d92c3d1247926ee96aaf793ad99fb161f41ad0f853f8890c9",
+            "pose-12-death.png": "7defc524614ea438f60f9983fd02b8126019c013e36fec2a97bb00ec24da63ce",
+            "pose-13-death.png": "611db0cbc19270aa0325831fbc8afa070dd1c726f52387f4b740f65d617b8de4",
+            "pose-14-death.png": "2c3ad65007a320ddefc9489d4b898a02001d520cefc750e6eb03986391c82e59",
+            "pose-15-death.png": "ba3a9acfb3ab2780b3f1690dcce8975c3019e861543ff1decfc54abc8378f6aa",
+            "pose-16-death.png": "83f04aa309f38607b5b1016bb8f24c9b0e4753c871df788b00bc365d84c054b9",
+            "pose-17-death.png": "83f04aa309f38607b5b1016bb8f24c9b0e4753c871df788b00bc365d84c054b9",
+            "pose-18-breath.png": "cc79286df5524024c144d9af9814110800ca48a6c8ee90e95006c07fc692c270",
+            "pose-19-breath.png": "5ad56af59b31535b6b19321ce69d3460369a9aec2e52ab13e9e9e67d25c4826b",
+            "pose-20-breath.png": "cc79286df5524024c144d9af9814110800ca48a6c8ee90e95006c07fc692c270",
+            "pose-21-breath.png": "5b1f6284597ba8f7ea5b4db2f78e80b99444f886e0d8c83e7bfa7e6c44cb330c",
+            "pose-22-rest.png": "d8063705364e5192e0ffb0c6f9fbbc445f7bf63feaf650f3a65617d304b68d99",
+            "view-front.png": "48a955101b3a6b4d02506d8bee318c90cbd11ff6db0f17e0b257829ed6a06520",
+            "view-head-front.png": "75e2771102af26db4cd53d3e6b2dd447402561217ed573e4d7e44ec915b88a11",
+            "view-head-oblique.png": "728acf084aef33717f7f8d23203817955cef922edb5f7eab02f286b85eec5060",
+            "view-rear.png": "580971f670db4d0779d6cef9424a7c3a83d7553e7cb7a9c53fced76741875d3e",
+            "view-side.png": "f403d1f404174702409c524b38df30bd2328bf178ccf10c51a40e0a2ec905bf4"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 51180,
+            "pose-01-idle.png": 51164,
+            "pose-02-run.png": 51111,
+            "pose-03-run.png": 45228,
+            "pose-04-run.png": 51053,
+            "pose-05-run.png": 49795,
+            "pose-06-walk.png": 45228,
+            "pose-07-walk.png": 49795,
+            "pose-08-stun.png": 52525,
+            "pose-09-attack_prepare.png": 59379,
+            "pose-10-attack_release.png": 52084,
+            "pose-11-pain.png": 45964,
+            "pose-12-death.png": 44009,
+            "pose-13-death.png": 42105,
+            "pose-14-death.png": 40966,
+            "pose-15-death.png": 39176,
+            "pose-16-death.png": 36400,
+            "pose-17-death.png": 36400,
+            "pose-18-breath.png": 50989,
+            "pose-19-breath.png": 51268,
+            "pose-20-breath.png": 50989,
+            "pose-21-breath.png": 50729,
+            "pose-22-rest.png": 34620
+          },
+          "distinct_pose_captures": 19
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    }
+  },
+  "actions": {
+    "issue": 690,
+    "runtime_sha256": "53e631b4547c7bc5b2c258ff089ff3bcbbdd58914216d176e95f7ef624559cb9",
+    "source_probe_sha256": "bf298e7c4b3ca7f0285f81c089b18f686ba0a114f65697252662af8b0121b65a",
+    "fixture_sha256": "5104eea1bbfdef34b10a052c22110a43d0e1cd4747ee8b4c2db712add398d0e9",
+    "runs": [
+      {
+        "phase": "actions",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 66,
+        "expected_assertions": 66,
+        "actions": [
+          "CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=8 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=8 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=8 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=9 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=9 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=9 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1"
+        ],
+        "loot_audits": 0
+      },
+      {
+        "phase": "loot",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 50,
+        "expected_assertions": 50,
+        "actions": [],
+        "loot_audits": 2
+      },
+      {
+        "phase": "loot-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 20,
+        "expected_assertions": 20,
+        "actions": [],
+        "loot_audits": 2
+      }
+    ]
+  },
+  "presentation": {
+    "mikilo": {
+      "issue": 690,
+      "species": "mikilo",
+      "scope": "Measure one 700-tic sprite/model pair for a real duende; no campaign or crowd budget.",
+      "baseline_sha256": "f15f8437e40faa6aa8e7dc7ac9dc18ab6aa7e95c1829313d70f3b9c32f61b852",
+      "runtime_sha256": "53e631b4547c7bc5b2c258ff089ff3bcbbdd58914216d176e95f7ef624559cb9",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 48620,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 246143159.24460003,
+            "END": 246163174.3263
+          },
+          "fixture_sha256": "2bc05c31b8065d0c4130f8b05cc00978a166b96f8787264644b1c0c003b83ca3",
+          "bench_sha256": "b991fd7a0419b23e4eecf291cef3df027bae29f576d34a5e132b4f8dd0f894d0",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57159957142857,
+            "p50_ms": 28.5723,
+            "p95_ms": 28.959,
+            "p99_ms": 29.0934,
+            "max_ms": 29.345
+          },
+          "presentation": {
+            "pid": 48620,
+            "trace_sha256": "77378f20923c62321aeb2a87f16cd0b3b13f179fbd6ff8cfb9fcdba48d238031",
+            "rows": 44807,
+            "scene_presents": 31866,
+            "mean_present_fps": 1819.3102197657013,
+            "present_intervals": {
+              "samples": 31865,
+              "mean_ms": 0.5496588702331284,
+              "p50_ms": 0.5299999713897705,
+              "p95_ms": 0.6861999928951263,
+              "p99_ms": 0.8501999974250793,
+              "max_ms": 1.242000013589859
+            },
+            "native_call_duration": {
+              "samples": 31866,
+              "mean_ms": 0.07383858646641252,
+              "p50_ms": 0.0723000168800354,
+              "p95_ms": 0.09730002284049988,
+              "p99_ms": 0.12129998207092285,
+              "max_ms": 0.4415999948978424
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 32872,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 246177277.1167,
+            "END": 246197194.3395
+          },
+          "fixture_sha256": "2bc05c31b8065d0c4130f8b05cc00978a166b96f8787264644b1c0c003b83ca3",
+          "bench_sha256": "b991fd7a0419b23e4eecf291cef3df027bae29f576d34a5e132b4f8dd0f894d0",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57155857142857,
+            "p50_ms": 28.5707,
+            "p95_ms": 28.938,
+            "p99_ms": 29.0323,
+            "max_ms": 29.1765
+          },
+          "presentation": {
+            "pid": 32872,
+            "trace_sha256": "265b714a05cf21eb49e3328c0fa7ea2c7aa275250b3e87855c264b4f18321932",
+            "rows": 45140,
+            "scene_presents": 31965,
+            "mean_present_fps": 1835.2419097042168,
+            "present_intervals": {
+              "samples": 31964,
+              "mean_ms": 0.5448872950820791,
+              "p50_ms": 0.5262999832630157,
+              "p95_ms": 0.6755000054836273,
+              "p99_ms": 0.794299989938736,
+              "max_ms": 1.2493000030517578
+            },
+            "native_call_duration": {
+              "samples": 31965,
+              "mean_ms": 0.07374781793632848,
+              "p50_ms": 0.07199999690055847,
+              "p95_ms": 0.0958000123500824,
+              "p99_ms": 0.11730000376701355,
+              "max_ms": 0.45739999413490295
+            }
+          }
+        }
+      ]
+    },
+    "coquena": {
+      "issue": 690,
+      "species": "coquena",
+      "scope": "Measure one 700-tic sprite/model pair for a real duende; no campaign or crowd budget.",
+      "baseline_sha256": "f15f8437e40faa6aa8e7dc7ac9dc18ab6aa7e95c1829313d70f3b9c32f61b852",
+      "runtime_sha256": "53e631b4547c7bc5b2c258ff089ff3bcbbdd58914216d176e95f7ef624559cb9",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 25360,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 246212881.47779998,
+            "END": 246232899.89920002
+          },
+          "fixture_sha256": "abb5ff1c80bfbef6381990ba27e6dbdfd0b0369d251404e405222acd81440f32",
+          "bench_sha256": "b991fd7a0419b23e4eecf291cef3df027bae29f576d34a5e132b4f8dd0f894d0",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.570606285714284,
+            "p50_ms": 28.5773,
+            "p95_ms": 28.9379,
+            "p99_ms": 29.0562,
+            "max_ms": 29.1502
+          },
+          "presentation": {
+            "pid": 25360,
+            "trace_sha256": "7f561b931c59f4d1d1eebfedce0cbcabf9b4febaf8e585b132d8e54b4c28b235",
+            "rows": 46251,
+            "scene_presents": 32702,
+            "mean_present_fps": 1866.7584208408018,
+            "present_intervals": {
+              "samples": 32701,
+              "mean_ms": 0.5356879544968612,
+              "p50_ms": 0.512499988079071,
+              "p95_ms": 0.7009000182151794,
+              "p99_ms": 0.8351999819278717,
+              "max_ms": 1.3231000006198883
+            },
+            "native_call_duration": {
+              "samples": 32702,
+              "mean_ms": 0.07470805152068699,
+              "p50_ms": 0.07330000400543213,
+              "p95_ms": 0.09799998998641968,
+              "p99_ms": 0.1200999915599823,
+              "max_ms": 0.4278999865055084
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 16956,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 246247107.3068,
+            "END": 246267024.4992
+          },
+          "fixture_sha256": "abb5ff1c80bfbef6381990ba27e6dbdfd0b0369d251404e405222acd81440f32",
+          "bench_sha256": "b991fd7a0419b23e4eecf291cef3df027bae29f576d34a5e132b4f8dd0f894d0",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57146385714286,
+            "p50_ms": 28.5701,
+            "p95_ms": 28.9609,
+            "p99_ms": 29.0643,
+            "max_ms": 29.2788
+          },
+          "presentation": {
+            "pid": 16956,
+            "trace_sha256": "a9c8b59a89294b7d471264b2fe040d2936a912899f569d5f9f40bf091966cbc4",
+            "rows": 45246,
+            "scene_presents": 32269,
+            "mean_present_fps": 1852.7653941735866,
+            "present_intervals": {
+              "samples": 32268,
+              "mean_ms": 0.539733742407275,
+              "p50_ms": 0.5162999927997589,
+              "p95_ms": 0.6949999928474426,
+              "p99_ms": 0.7985999882221222,
+              "max_ms": 1.6282999813556671
+            },
+            "native_call_duration": {
+              "samples": 32269,
+              "mean_ms": 0.07402953611355903,
+              "p50_ms": 0.07320001721382141,
+              "p95_ms": 0.09619998931884766,
+              "p99_ms": 0.11959999799728394,
+              "max_ms": 0.46959999203681946
+            }
+          }
+        }
+      ]
+    }
+  },
+  "iterations": "First Mikilo command used a PK3 file where the runner requires a model directory; it stopped before the engine. Model01 native previews pass 51 assertions each, but show high head cameras, stiff clothes and a hidden Coquena bag. Model02 smooths the clothes and changes Mikilo hat/patches, visible hip bags, ray-positioned Coquena strap, longer trousers and asymmetric hems. Model03 lowers neck openings, projects shawl/poncho UVs without radial swirls, and samples neutral linen for nails. Model04/05 only finalize candidate metadata and repeat identical art. Full native runs use the final complete package.",
+  "art": {
+    "source": "assets/source/art/duendes_690",
+    "new_image_generation": true,
+    "mode": "built-in image_gen",
+    "textures": [
+      "mikilo-face.png",
+      "coquena-face.png",
+      "materials.png"
+    ],
+    "prompts": [
+      "mikilo-face-PROMPT.json",
+      "coquena-face-PROMPT.json",
+      "materials-PROMPT.json"
+    ],
+    "original_pixels_preserved": true,
+    "reviewed_views": "Final ordinary-ambient front/side/rear and face details, inherited idle/run/attack/pain/death/rest captures and both presentation cohorts per creature.",
+    "author_check": "CA690-DUENDES-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Two separate sequential 700-tic sprite/model pairs, one visible creature each and a Mandinga control. Queue intervals are not GPU/display timing, repeatability or campaign/crowd acceptance.",
+    "Original billboard and neutral-height-fitted model can occupy different screen areas. This comparison is not an equal-pixel-cost benchmark.",
+    "Candidate anatomy, material seams, costume details and articulation require author review; no exact sculpt or final-art acceptance claim.",
+    "Fixed reference outfits retain editable clothing/head/limb/accessory groups. They are not runtime interchangeable inventory modules; #458/#459 playable-body and worn-equipment work remains unfinished.",
+    "Catalogue meter ranges do not authorize gameplay dimensions. Neutral art fits unchanged provisional Height; moving/lying poses can exceed collision Radius.",
+    "No new actor states, saved fields, scans, balance, loot rules or campaign spawns. Unique Coquena identity remains intact.",
+    "CATALOGUE/AUTHORING art flags are historical snapshots; current exact MODELDEF bindings and ASSETS describe coverage.",
+    "Three original generated outputs and exact prompts are preserved without raster postprocessing. No PK3, WAD, executable, DLL, development IWAD or save is committed.",
+    "First project validation found the regional inventory pin to the refreshed beast-men export metadata stale. Refreshed that pin and its derived manifest only; all three regional runtime resources remain byte-identical."
+  ],
+  "files": {
+    "actions/actions/commands.cfg": "8c15a81a09e0f5c0ac608b016fbb03ed90556711effe24f64e7674409f50681d",
+    "actions/actions/engine.log": "c17f514558e229549706f7c28f1142e8b528f965995e03f8dea10e18e6efba71",
+    "actions/actions/process.log": "40742c6850b234d2372675f3072bbbeedf5a636171bc35994bdbf6b7343c4a95",
+    "actions/actions/session.ini": "4a1613e6193317af66205f51c20269f091a367473b2368337ddd7487963f0e3c",
+    "actions/fixture-source/MAPINFO.txt": "cd22e22c2b222f1aa8c75cd83be6d28801ec6486671b02abac89eda266aac7f4",
+    "actions/fixture-source/ZSCRIPT.txt": "6dea5a9d651575e5e57da16d3835c89de088987c51cf545686d6bbbd915e7b02",
+    "actions/fixture.zs": "5a720dac8b9dce2b9d231d97ceef5808696dff9e0389d682833f9978e48cd211",
+    "actions/loot/commands.cfg": "c7131f87f9df9188e2301d6730516e731540216e6417b470aab866467fbd8ad7",
+    "actions/loot/engine.log": "a88bb74c9e7d3b368cdc2a522d375b3c4f41fe9a3ed54eb1574452cfb176143b",
+    "actions/loot/process.log": "d20dd567dae1f2422b03f441862ed16812a482346354a908e80d6b5cb133863e",
+    "actions/loot/session.ini": "bdb583db64b82a9baa56f8639b5f2c1e3181bd9b0c36a40d9f5f1421ad5b2493",
+    "actions/loot-reload/commands.cfg": "ad82c3110081fb6cd15b9a00885b6cc0747127803c4e52c0e06a730955dcf399",
+    "actions/loot-reload/engine.log": "307c9928e67a738d82bb090d292374b0361814cffe2c2c44670b1c2892c0a214",
+    "actions/loot-reload/process.log": "1c7747e84119fe482f8f2374e3b17a4201af75641be5e4187cf1f225c18339af",
+    "actions/loot-reload/session.ini": "be4c43154dc7c8cd0ea5da5727e564cb3edc289362e8aa191aa261b268b25760",
+    "actions/RESULTS.json": "3de17431e8d6370a2c84b5f1749169fb12205f7d7baf407c0402145517d88e14",
+    "build.log": "6c9b0112486b41b4bec11c0ead3b1ad81f9ba8204d37a293c6d949f1450b9d02",
+    "continuity/coquena/baseline/commands.cfg": "d4324b0bab4c99931a2de4cb873d1c048828fdfbf702ecc93a955c616c7511f0",
+    "continuity/coquena/baseline/engine.log": "732ea743c0639b92c782fd60db76d3b5b119be65925c17558c847e363209c409",
+    "continuity/coquena/baseline/process.log": "925a0f7aa5c01e5815e0b445c1aa54fd9b786e30a49e0ab9d4cd7643216ab2ae",
+    "continuity/coquena/baseline/session.ini": "64a6d8e4f5c0efe205b83deef667f4a2452c8cce8fb32daf9d00bb3b4824ac42",
+    "continuity/coquena/fixture-source/MAPINFO.txt": "d3c7af6ca2dec3fad812c5a853245412ff3958815e8693233bbd5358be7574fa",
+    "continuity/coquena/fixture-source/ZSCRIPT.txt": "1dd58cf9eda166225c383a9452b1b8247739561af8f5b0c7b51cc97e5f608de3",
+    "continuity/coquena/fixture.zs": "efde4ddb22045fdf392671d3f0c90eda6b0d9a29c046d83ba4f5c59e72b3e3c4",
+    "continuity/coquena/fresh-model/commands.cfg": "49dd44d0daa91c60dc2f457eba3c54a5bf032597c156b78a548a59f519c660b4",
+    "continuity/coquena/fresh-model/empty.png": "e9d2d20151922c597e0bfc06a181a66eb0ff3e0f0fcdbde1af35e01ecd79c195",
+    "continuity/coquena/fresh-model/engine.log": "35a40b73d0deeabf9b66ce8b8af6ff159f9c4ab3f97ddbf9526a80a501fd977a",
+    "continuity/coquena/fresh-model/pose-00-idle.png": "568a22ceedebf037046a4dc985b35b4d22036e1aee5e5af7177d41a9cd3ac832",
+    "continuity/coquena/fresh-model/pose-01-idle.png": "1653ed6d6a46ccc4270b0058224f98cd98e0f74cd8e5d50521ddebaca97f6881",
+    "continuity/coquena/fresh-model/pose-02-run.png": "dc7cc3baf3f20e8e53f783cfe744394d40d1d3c2024474b1b11775a362b00188",
+    "continuity/coquena/fresh-model/pose-03-run.png": "c6046be5d67df97d66a7a3ae79f076b101cddb0b0d9af3db9ad182f793be48ea",
+    "continuity/coquena/fresh-model/pose-04-run.png": "48ac4182a3249e12486e7011149afa8880c5d0a2198dd7ec332dfd167574b230",
+    "continuity/coquena/fresh-model/pose-05-run.png": "e83e5cdd2b92e7490cea527ac88723b29a5820d4ba1b6a6a09d6ec5f95d62970",
+    "continuity/coquena/fresh-model/pose-06-walk.png": "c6046be5d67df97d66a7a3ae79f076b101cddb0b0d9af3db9ad182f793be48ea",
+    "continuity/coquena/fresh-model/pose-07-walk.png": "e83e5cdd2b92e7490cea527ac88723b29a5820d4ba1b6a6a09d6ec5f95d62970",
+    "continuity/coquena/fresh-model/pose-08-stun.png": "a3c5b50be51bb6b562680ff73dffe7ca869012dff833481623671c7a071e4b02",
+    "continuity/coquena/fresh-model/pose-09-attack_prepare.png": "9f1de0fbd1515a49cc9e84e7e7f2485170e73a2f3864e4460a114d66de5ed017",
+    "continuity/coquena/fresh-model/pose-10-attack_release.png": "2afb90838b6cb8e0852d439ecae84bc61b7708ba8892d23cab1d367e44df9bf0",
+    "continuity/coquena/fresh-model/pose-11-pain.png": "739bef75354d1d0d92c3d1247926ee96aaf793ad99fb161f41ad0f853f8890c9",
+    "continuity/coquena/fresh-model/pose-12-death.png": "7defc524614ea438f60f9983fd02b8126019c013e36fec2a97bb00ec24da63ce",
+    "continuity/coquena/fresh-model/pose-13-death.png": "611db0cbc19270aa0325831fbc8afa070dd1c726f52387f4b740f65d617b8de4",
+    "continuity/coquena/fresh-model/pose-14-death.png": "2c3ad65007a320ddefc9489d4b898a02001d520cefc750e6eb03986391c82e59",
+    "continuity/coquena/fresh-model/pose-15-death.png": "ba3a9acfb3ab2780b3f1690dcce8975c3019e861543ff1decfc54abc8378f6aa",
+    "continuity/coquena/fresh-model/pose-16-death.png": "83f04aa309f38607b5b1016bb8f24c9b0e4753c871df788b00bc365d84c054b9",
+    "continuity/coquena/fresh-model/pose-17-death.png": "83f04aa309f38607b5b1016bb8f24c9b0e4753c871df788b00bc365d84c054b9",
+    "continuity/coquena/fresh-model/pose-18-breath.png": "cc79286df5524024c144d9af9814110800ca48a6c8ee90e95006c07fc692c270",
+    "continuity/coquena/fresh-model/pose-19-breath.png": "5ad56af59b31535b6b19321ce69d3460369a9aec2e52ab13e9e9e67d25c4826b",
+    "continuity/coquena/fresh-model/pose-20-breath.png": "cc79286df5524024c144d9af9814110800ca48a6c8ee90e95006c07fc692c270",
+    "continuity/coquena/fresh-model/pose-21-breath.png": "5b1f6284597ba8f7ea5b4db2f78e80b99444f886e0d8c83e7bfa7e6c44cb330c",
+    "continuity/coquena/fresh-model/pose-22-rest.png": "d8063705364e5192e0ffb0c6f9fbbc445f7bf63feaf650f3a65617d304b68d99",
+    "continuity/coquena/fresh-model/process.log": "11b63258fc4818e30f08aafaa02898e8bc8e1481940b28517c529f317fe5c48e",
+    "continuity/coquena/fresh-model/session.ini": "e673e3f35103e9c16021ac0b9ca0d2f6900c409058e2122c29750cdd1c323c83",
+    "continuity/coquena/fresh-model/view-front.png": "48a955101b3a6b4d02506d8bee318c90cbd11ff6db0f17e0b257829ed6a06520",
+    "continuity/coquena/fresh-model/view-head-front.png": "75e2771102af26db4cd53d3e6b2dd447402561217ed573e4d7e44ec915b88a11",
+    "continuity/coquena/fresh-model/view-head-oblique.png": "728acf084aef33717f7f8d23203817955cef922edb5f7eab02f286b85eec5060",
+    "continuity/coquena/fresh-model/view-rear.png": "580971f670db4d0779d6cef9424a7c3a83d7553e7cb7a9c53fced76741875d3e",
+    "continuity/coquena/fresh-model/view-side.png": "f403d1f404174702409c524b38df30bd2328bf178ccf10c51a40e0a2ec905bf4",
+    "continuity/coquena/model-reload/commands.cfg": "d26a95cf3f1795b6b547d5ee6e067fb935ffc9dae226ec8cbe8f7f7a578c2dbb",
+    "continuity/coquena/model-reload/engine.log": "7552697f050b420563b7ca9b91f157e1aa1b1c3e4e4cde039dabbf4eb0ba31f9",
+    "continuity/coquena/model-reload/process.log": "a9cd89adc5540445db5398fd4b5f6c7775d568a0f8c81c695cafb96eee0ea490",
+    "continuity/coquena/model-reload/session.ini": "02cf0a05106bad4e2a698b5280a16d8417d7b950f996cefc088de5f9ea858f00",
+    "continuity/coquena/old-save-model/commands.cfg": "d26a95cf3f1795b6b547d5ee6e067fb935ffc9dae226ec8cbe8f7f7a578c2dbb",
+    "continuity/coquena/old-save-model/engine.log": "1092808908d062c3c803ad1126e3c0f82dac4fa752d224481b754fc501acbbeb",
+    "continuity/coquena/old-save-model/process.log": "5edee6c1a1cda6dfad950686f6875dfa98dcea1989cb30e2413edbf2fdbb9a28",
+    "continuity/coquena/old-save-model/session.ini": "7cd25bf29b8c9fa3404870e75ee941a842e99ede17aecb6f7fa0f9d18558af8e",
+    "continuity/coquena/RESULTS.json": "0b4ae47bc40a57ca48ac7058c64154452f2169a60f1b9f6f033e09b893541df5",
+    "continuity/coquena/rollback/commands.cfg": "d26a95cf3f1795b6b547d5ee6e067fb935ffc9dae226ec8cbe8f7f7a578c2dbb",
+    "continuity/coquena/rollback/engine.log": "e1a0c3d7b4558e19802167f4d86fad7e6ad4376c7d50885d22c03f323d468f64",
+    "continuity/coquena/rollback/process.log": "8fccf9bec608f3bf55cc1f436dbb7bc8fd4ccb4f942df738643a0f06ff52d9c3",
+    "continuity/coquena/rollback/session.ini": "44b15d7091e710426aac5873e7979562fc5db50d757ffafb839192d0cae18725",
+    "continuity/mikilo/baseline/commands.cfg": "d4324b0bab4c99931a2de4cb873d1c048828fdfbf702ecc93a955c616c7511f0",
+    "continuity/mikilo/baseline/engine.log": "e257ebc69fa5568d8fcbd12fe0d7bd99758273498580f7e37eda8607e7f45198",
+    "continuity/mikilo/baseline/process.log": "7d1c90c178b369ead71b9a79a3498806a4de30438b1f0d769d85b012f4b4e95c",
+    "continuity/mikilo/baseline/session.ini": "811ee84f77e398a7ff26189f5fe9ea3f1e63993adc444db108f620eaf1d7eecb",
+    "continuity/mikilo/fixture-source/MAPINFO.txt": "d3c7af6ca2dec3fad812c5a853245412ff3958815e8693233bbd5358be7574fa",
+    "continuity/mikilo/fixture-source/ZSCRIPT.txt": "5634ea4ec728e8ddae1e0bd2f99fbf978ffdf20e6778f99972c8b713418b6110",
+    "continuity/mikilo/fixture.zs": "21c1786cf01fde78770cb04f0fcb78eba57179d04908a9bea38e65f0951f3ad6",
+    "continuity/mikilo/fresh-model/commands.cfg": "49dd44d0daa91c60dc2f457eba3c54a5bf032597c156b78a548a59f519c660b4",
+    "continuity/mikilo/fresh-model/empty.png": "e9d2d20151922c597e0bfc06a181a66eb0ff3e0f0fcdbde1af35e01ecd79c195",
+    "continuity/mikilo/fresh-model/engine.log": "434b66f7c2d845a8fc1e3d7e908ff43cc8d1d0c684b5b7d256155b06ff208b5a",
+    "continuity/mikilo/fresh-model/pose-00-idle.png": "7fa6a0d220e33b3f80b0ab6ea73e0eb72f4e82416d40ab62131746e15c063e92",
+    "continuity/mikilo/fresh-model/pose-01-idle.png": "e15ebc5dff565a819b9f3337251450e651ca32799bf10caa362aa4c98989022f",
+    "continuity/mikilo/fresh-model/pose-02-run.png": "14bc2dd4b4fa6358d04413408c128ba5aa0816564a33b46277e481c2863ef509",
+    "continuity/mikilo/fresh-model/pose-03-run.png": "f9326d9993815d97f4e8ef64e03cd1ea088b45308f0c6bc6ae24c6bfc7b1eb53",
+    "continuity/mikilo/fresh-model/pose-04-run.png": "ed468162e810df9e1709480a5f859078c0599cf87af7f5892b3c25116a65ca59",
+    "continuity/mikilo/fresh-model/pose-05-run.png": "18dc14d1433523096d9c9ee0c92d6244a51f45f13141b049801d58e4b9b22775",
+    "continuity/mikilo/fresh-model/pose-06-walk.png": "f9326d9993815d97f4e8ef64e03cd1ea088b45308f0c6bc6ae24c6bfc7b1eb53",
+    "continuity/mikilo/fresh-model/pose-07-walk.png": "18dc14d1433523096d9c9ee0c92d6244a51f45f13141b049801d58e4b9b22775",
+    "continuity/mikilo/fresh-model/pose-08-stun.png": "d51581e5e169fdfba25be99b27e985a75f1ffcc1a30920af9c48c8af1644e7e7",
+    "continuity/mikilo/fresh-model/pose-09-attack_prepare.png": "5ddeecce62be54950e6611dd107e18377c0c86cc5e09eb98f7ca4184915316d8",
+    "continuity/mikilo/fresh-model/pose-10-attack_release.png": "77019caf8fc424d990169f48d12ed66e567e0ff4de0007f4e052b418d4549319",
+    "continuity/mikilo/fresh-model/pose-11-pain.png": "c4d867a65275c0c5e0e63dddcefebf112a12c562107c7c21a89b2da29f3c0323",
+    "continuity/mikilo/fresh-model/pose-12-death.png": "3e003428f236bd724113aefba170cb1ac3ae525cbed7b44c73c5e7ac21ae9dad",
+    "continuity/mikilo/fresh-model/pose-13-death.png": "0dce9412522237c7cbdd901e7e9ee56da0305fd61272f053fbb30e87d9a36a11",
+    "continuity/mikilo/fresh-model/pose-14-death.png": "fa30cbb2abf9e2f0def90228f198b3725aa257408bdb41370ee99ed22b71a89d",
+    "continuity/mikilo/fresh-model/pose-15-death.png": "670c5f98af04e34ab75b53a54524f13cd869fa298ef0e0e429734df6089feba7",
+    "continuity/mikilo/fresh-model/pose-16-death.png": "fb26c7035b8abaae51805482442f25125919afce92090d4d60bf6b65cf442ba6",
+    "continuity/mikilo/fresh-model/pose-17-death.png": "fb26c7035b8abaae51805482442f25125919afce92090d4d60bf6b65cf442ba6",
+    "continuity/mikilo/fresh-model/pose-18-breath.png": "011009beeaeb94efe15250fe649d8204723380cb015411fd0d5fd8913a201234",
+    "continuity/mikilo/fresh-model/pose-19-breath.png": "f2115a6aa94bd6f65b1a54dae2cd99a605462e947a0e1188fd42547fb752148e",
+    "continuity/mikilo/fresh-model/pose-20-breath.png": "011009beeaeb94efe15250fe649d8204723380cb015411fd0d5fd8913a201234",
+    "continuity/mikilo/fresh-model/pose-21-breath.png": "ae70a4e00322be259d72fd63c2799874f2e01fd4ef8427312e2fa46ba19fce0e",
+    "continuity/mikilo/fresh-model/pose-22-rest.png": "e7482151dd2a3bb016738c89298eae255e29bea3cfc247b87cfb93f2e07d48a8",
+    "continuity/mikilo/fresh-model/process.log": "502e5376da1bef01167b960ae4eedc7eff0662d871770b248117c8801eacbb55",
+    "continuity/mikilo/fresh-model/session.ini": "4cbec7bdad11ae5d1a7d35daab2f3bda78e3a9fddc74a4ea22911f1627f5b899",
+    "continuity/mikilo/fresh-model/view-front.png": "964dc43284b31328fa96e13f3cbf6738b2454bf269f76a648eb897892a925b8b",
+    "continuity/mikilo/fresh-model/view-head-front.png": "8f0ff2fd9ef47b831c215164e237ddffeec98476b228e46c95757ffdcffa028f",
+    "continuity/mikilo/fresh-model/view-head-oblique.png": "d09e64ffdac17c701165cb5acbf4cbaa77bb44b46c926cbd1313af6a3b122123",
+    "continuity/mikilo/fresh-model/view-rear.png": "799c46eaa9233138eb7611fa33f8bea8c2ef564d6343f30c3ae4c51bd3ce8668",
+    "continuity/mikilo/fresh-model/view-side.png": "b9caa92dc18bc7d0faa3b031e2126756daff0aec1ae31c052f7905e1dc6865ba",
+    "continuity/mikilo/model-reload/commands.cfg": "d26a95cf3f1795b6b547d5ee6e067fb935ffc9dae226ec8cbe8f7f7a578c2dbb",
+    "continuity/mikilo/model-reload/engine.log": "e4cd05d02af3d716740ed5ac93bb97f165463bf9ab9f3b52d464321a4329cfd1",
+    "continuity/mikilo/model-reload/process.log": "bd33502892f371e33f4b4b5b1450ab975f5ef4839b148feaf3a4e0e70147b34a",
+    "continuity/mikilo/model-reload/session.ini": "6b697954f2bfc7baed64ff07032acdf4e4a0ff1d98e7c3c41eab7093e44c04be",
+    "continuity/mikilo/old-save-model/commands.cfg": "d26a95cf3f1795b6b547d5ee6e067fb935ffc9dae226ec8cbe8f7f7a578c2dbb",
+    "continuity/mikilo/old-save-model/engine.log": "f765cd69dc736c5e20b23e6734a6c7e3812d26888fc23507226e87c70a4ff83b",
+    "continuity/mikilo/old-save-model/process.log": "c5f7f03a7f6027ecedb4021e97ef84bc8d48e5b6c9811dbc595faf08047b725c",
+    "continuity/mikilo/old-save-model/session.ini": "ff4a4a16d70b6cfcbba8be72f69466486659a58c3a06c7ae8611e4c7c5383cd5",
+    "continuity/mikilo/RESULTS.json": "593b29f35c682eee2746c19603ccc455c67b2414947abc023781a70b386a362f",
+    "continuity/mikilo/rollback/commands.cfg": "d26a95cf3f1795b6b547d5ee6e067fb935ffc9dae226ec8cbe8f7f7a578c2dbb",
+    "continuity/mikilo/rollback/engine.log": "c63cdf5adca85a66878b55be9445082f1085d53a9bc243ca83b8951c13d8153b",
+    "continuity/mikilo/rollback/process.log": "71145ea3b53679538f54d0b692ab5a0166c78540f1d6d706af7c71293b94666d",
+    "continuity/mikilo/rollback/session.ini": "cf31a3752a83ed6a4a4b639fe0fcd41f958705d16b5e0bb1082e0ad6efb0e812",
+    "iterations/issue690-coquena-visual01/fixture.zs": "68c10baacea432271f5f4cfe962958d1ec979ed625a8fd04f4fb1b3ae2223799",
+    "iterations/issue690-coquena-visual01/RESULTS.json": "7e646eca1eabb85eb9c3bcbf98c5f1086e4c2a2d4f286fa38b106a5f0685bc73",
+    "iterations/issue690-coquena-visual01/visual/engine.log": "7776dd049b40de942338f1b802051299d67248b72883fb3c2c6312b718133e32",
+    "iterations/issue690-coquena-visual01/visual/process.log": "772e5577a6ac801094c53072886d51dbe2bdb4da582db4a5328dc7215408c988",
+    "iterations/issue690-coquena-visual01/visual/view-front.png": "00b0a74e8838f78386232db044a87628814a6bd035d4b15f99c58524f04fba37",
+    "iterations/issue690-coquena-visual01/visual/view-head-oblique.png": "f0fe6dd8fcc2531b44af6c6d0a834ea81e3e2ae8ea075e4162e896647d7f9746",
+    "iterations/issue690-coquena-visual01/visual/view-side.png": "c0dd2eb43fbfbfd4f0f12b4fee87d5481b1eda8a50dea74488e7d14c2f671f9d",
+    "iterations/issue690-coquena-visual02/fixture.zs": "efde4ddb22045fdf392671d3f0c90eda6b0d9a29c046d83ba4f5c59e72b3e3c4",
+    "iterations/issue690-coquena-visual02/RESULTS.json": "8f34fabf94d499de2752630b1136ea33c0e57237904345c2108275aa882026fd",
+    "iterations/issue690-coquena-visual02/visual/engine.log": "846c5c65fb67a0aef010fbfc473484479668a44c1c37d8c48919babd4b0a7e55",
+    "iterations/issue690-coquena-visual02/visual/process.log": "a02ea50ec6e3bad7779d1fc0efcbd1aa9321d1e384d4b1ecf1a1ec6143d262f0",
+    "iterations/issue690-coquena-visual02/visual/view-front.png": "c8740746896396dd89f8da49b0553ffcc4d73a1b22305db4a75529d6bde14e18",
+    "iterations/issue690-coquena-visual02/visual/view-head-oblique.png": "85b5914410a3751493590f7934f89bd1662d8b8133af299e97e3a258134af320",
+    "iterations/issue690-coquena-visual02/visual/view-side.png": "1e43ef9207a8447e0a5741ebfeb2f4448f3194675fac07c051aee9f5fd66403f",
+    "iterations/issue690-mikilo-visual01/fixture.zs": "22506fae2a3b2d16ea49e852211b1377f72dbc838982c8542bba2b9301f032e0",
+    "iterations/issue690-mikilo-visual02/fixture.zs": "22506fae2a3b2d16ea49e852211b1377f72dbc838982c8542bba2b9301f032e0",
+    "iterations/issue690-mikilo-visual02/RESULTS.json": "e197cc700e338da35e44fb27615555e426f5cbbe57691a3c0e18cec1627e362f",
+    "iterations/issue690-mikilo-visual02/visual/engine.log": "4f54feb70a3df55718c35e6c1f08e73652e51500f9ba39800ebe1d02b012aa86",
+    "iterations/issue690-mikilo-visual02/visual/process.log": "f72c3b8637d1ffbc9233a3c9a376665057fbe2bf9d517a93be7bda50e31bce7e",
+    "iterations/issue690-mikilo-visual02/visual/view-front.png": "bc8018236cf9290dd00a9fabdd18f6aa5818c73a4970333938a810fb30fec925",
+    "iterations/issue690-mikilo-visual02/visual/view-head-oblique.png": "82822ceb837ddd322dd2a6356cc6b3c75fa7f7f91a4a47649ed66735a5df5885",
+    "iterations/issue690-mikilo-visual02/visual/view-side.png": "8ab3fa8c2163ef4ce8663b03cc6e9688d8077b9ea89b97979d7938b88309cafe",
+    "iterations/issue690-mikilo-visual03/fixture.zs": "21c1786cf01fde78770cb04f0fcb78eba57179d04908a9bea38e65f0951f3ad6",
+    "iterations/issue690-mikilo-visual03/RESULTS.json": "0abd7303fbd5a2d25dd988c18528bd5d1f91d8673542f662f7cd4eb99c294b28",
+    "iterations/issue690-mikilo-visual03/visual/engine.log": "70f2ab87c96719c442f96d990ddb6ac0a474326e65d5df36dd85ca6127151d74",
+    "iterations/issue690-mikilo-visual03/visual/process.log": "32f10c62ee17a61ca12bf7e78923fb5dafb611264cde655aaee503cbe998e8d5",
+    "iterations/issue690-mikilo-visual03/visual/view-front.png": "9dcea3e492d4293663f9eb5592ac9e7f46f3d643c954147f31550a98f069b0f4",
+    "iterations/issue690-mikilo-visual03/visual/view-head-oblique.png": "49ff471220045080c5a5585d3117802a0508d686988902a768b6d6145bcc7983",
+    "iterations/issue690-mikilo-visual03/visual/view-side.png": "038cb3590f6d2a6a8d10f6895894183587036d91ffcacea68ea4e51dc13ddf7a",
+    "iterations/model01.json": "62f923140fbf0eba20b5c468a572b055e39d74c5a71496a465574033cbe4bce2",
+    "iterations/model02.json": "716543432123c1b06cb15daa87d015c692cee5d7faffb3d90302e99df2084188",
+    "iterations/model03.json": "f33c1aab5eff1e4fa03b2d882d11ae76fbed43359d340204e106e0c2032d166c",
+    "iterations/model04.json": "fcf8b02c9c21e821e333ec187ad86c7a1bc612b2a073b963bbab43e7e08205a6",
+    "iterations/model05.json": "fcf8b02c9c21e821e333ec187ad86c7a1bc612b2a073b963bbab43e7e08205a6",
+    "iterations/visual01-cli-error.log": "88d3356ebef3bcc3e03ac6baa8dcb3d207c918a87b6a6215213ac2b171fe86f0",
+    "presentation/coquena/model/commands.cfg": "7f1686791dff6dfdf0ccfe365f312a6751167935ee287c2cafdc7e49fbddc24b",
+    "presentation/coquena/model/engine.log": "b6aa544531cc9f8475898cba922a5b06dc59807933894f66c7be37dcead187f5",
+    "presentation/coquena/model/fixture-source/MAPINFO.txt": "d3c7af6ca2dec3fad812c5a853245412ff3958815e8693233bbd5358be7574fa",
+    "presentation/coquena/model/fixture-source/ZSCRIPT.txt": "1dd58cf9eda166225c383a9452b1b8247739561af8f5b0c7b51cc97e5f608de3",
+    "presentation/coquena/model/fixture.zs": "efde4ddb22045fdf392671d3f0c90eda6b0d9a29c046d83ba4f5c59e72b3e3c4",
+    "presentation/coquena/model/presents.csv": "a9c8b59a89294b7d471264b2fe040d2936a912899f569d5f9f40bf091966cbc4",
+    "presentation/coquena/model/process.log": "5b66c50af568c3b669eef533897b93d7a963f3f8127f3b373e5bedea0d652f44",
+    "presentation/coquena/model/scene.png": "568a22ceedebf037046a4dc985b35b4d22036e1aee5e5af7177d41a9cd3ac832",
+    "presentation/coquena/model/session.ini": "fe1c54b18e8bef5dedbfe8f7bd7b3e2082850488a2c686defe420821a8412f31",
+    "presentation/coquena/RESULTS.json": "a56a404e1999793a2d08e77e47d12aa9f833e233f894e9635fcefb349d404fbb",
+    "presentation/coquena/sprite/commands.cfg": "7f1686791dff6dfdf0ccfe365f312a6751167935ee287c2cafdc7e49fbddc24b",
+    "presentation/coquena/sprite/engine.log": "8a7c6f224cdbe69ba175c6043e67eb0d0d8d30b12dc47ef7f037492839c97aa3",
+    "presentation/coquena/sprite/fixture-source/MAPINFO.txt": "d3c7af6ca2dec3fad812c5a853245412ff3958815e8693233bbd5358be7574fa",
+    "presentation/coquena/sprite/fixture-source/ZSCRIPT.txt": "1dd58cf9eda166225c383a9452b1b8247739561af8f5b0c7b51cc97e5f608de3",
+    "presentation/coquena/sprite/fixture.zs": "efde4ddb22045fdf392671d3f0c90eda6b0d9a29c046d83ba4f5c59e72b3e3c4",
+    "presentation/coquena/sprite/presents.csv": "7f561b931c59f4d1d1eebfedce0cbcabf9b4febaf8e585b132d8e54b4c28b235",
+    "presentation/coquena/sprite/process.log": "971447d16fc5d6000a26b87dc1cee050ff66affb7836337cbcec6a49ea0d6014",
+    "presentation/coquena/sprite/scene.png": "7d5d805cb1b8c4b9b09bdf67a9d42f9dd90d91b22c687f2c8c569a9459415e53",
+    "presentation/coquena/sprite/session.ini": "5c8e550943f963d1d315745176df0dfe1a17705e621fc0ffc7de9c5fa2c5c65e",
+    "presentation/mikilo/model/commands.cfg": "7f1686791dff6dfdf0ccfe365f312a6751167935ee287c2cafdc7e49fbddc24b",
+    "presentation/mikilo/model/engine.log": "e119852894b62150b5893837dd304883867da3451cedc9783a8144a90ccecf87",
+    "presentation/mikilo/model/fixture-source/MAPINFO.txt": "d3c7af6ca2dec3fad812c5a853245412ff3958815e8693233bbd5358be7574fa",
+    "presentation/mikilo/model/fixture-source/ZSCRIPT.txt": "5634ea4ec728e8ddae1e0bd2f99fbf978ffdf20e6778f99972c8b713418b6110",
+    "presentation/mikilo/model/fixture.zs": "21c1786cf01fde78770cb04f0fcb78eba57179d04908a9bea38e65f0951f3ad6",
+    "presentation/mikilo/model/presents.csv": "265b714a05cf21eb49e3328c0fa7ea2c7aa275250b3e87855c264b4f18321932",
+    "presentation/mikilo/model/process.log": "f0b743e5ee4f9890ae5405e0d61d59af4dc3e298ac2b02812f80194696aee84c",
+    "presentation/mikilo/model/scene.png": "7fa6a0d220e33b3f80b0ab6ea73e0eb72f4e82416d40ab62131746e15c063e92",
+    "presentation/mikilo/model/session.ini": "cdd4dcb5d1dd1bd932e94ae318cf68ad06e648ecceeb26b07e96d721a7095649",
+    "presentation/mikilo/RESULTS.json": "dd66428526f45ab24738fbe2f4d4aecc8164c7ce2108b1b3af66c64973b1424c",
+    "presentation/mikilo/sprite/commands.cfg": "7f1686791dff6dfdf0ccfe365f312a6751167935ee287c2cafdc7e49fbddc24b",
+    "presentation/mikilo/sprite/engine.log": "c1efcdc0b063cd73d14517ca5eed5946e198759a7e6263339d3df4fa1ea309de",
+    "presentation/mikilo/sprite/fixture-source/MAPINFO.txt": "d3c7af6ca2dec3fad812c5a853245412ff3958815e8693233bbd5358be7574fa",
+    "presentation/mikilo/sprite/fixture-source/ZSCRIPT.txt": "5634ea4ec728e8ddae1e0bd2f99fbf978ffdf20e6778f99972c8b713418b6110",
+    "presentation/mikilo/sprite/fixture.zs": "21c1786cf01fde78770cb04f0fcb78eba57179d04908a9bea38e65f0951f3ad6",
+    "presentation/mikilo/sprite/presents.csv": "77378f20923c62321aeb2a87f16cd0b3b13f179fbd6ff8cfb9fcdba48d238031",
+    "presentation/mikilo/sprite/process.log": "287092299bb51e1f095f774406279f0551e668a10c4891a40f57f5e182b67d5a",
+    "presentation/mikilo/sprite/scene.png": "7d5d805cb1b8c4b9b09bdf67a9d42f9dd90d91b22c687f2c8c569a9459415e53",
+    "presentation/mikilo/sprite/session.ini": "d5db48847dff4acf7b40cfbca18fc6fc1b265b2c2a53601ddaed79b40c80b4f5",
+    "prior-beasts-proof.json": "1fb9d6333c543c08f4d80649999b7e64793ac2f7c78afabe51dfbb95cec09df8",
+    "iterations/validation-transitive-metadata.json": "8dd4cbe1008c5b0da556b68a454339ac14ea88fc3596e806a70a797e927659bb",
+    "validation-final.json": "423b997629e6784b0ab4d6d4d4483cf94a4dc98a1a86128c705723aca30e8417"
+  }
+}

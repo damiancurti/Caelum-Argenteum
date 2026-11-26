@@ -1,0 +1,10 @@
+{
+  "issue": 690,
+  "mode": "Built-in image_gen; reference-led diffuse generation",
+  "output": "coquena-face.png",
+  "transparent_background": false,
+  "references": [
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/10_coquena.png"
+  ],
+  "prompt": "Use case: stylized-concept. Derive ONE opaque square diffuse texture plate for the front face of the same mature male Andean folklore goblin Coquena in the provided author-owned reference. The input is identity/anatomy guidance, not a replacement concept. The texture will cover a real sculpted 3D head. Preserve his broad slightly hooked nose, prominent cheekbones, deep facial creases, dark brown eyes, thick dark eyebrows, warm medium-brown weathered skin and clean-shaven closed mouth with a calm stern expression. No added beard or moustache. Flat orthographic frontal orientation; eyes look straight forward. Fill the entire square with facial surface and matching skin bleed: no background, transparency, head silhouette, hat, ears, neck, shoulders, text or border. Forehead reaches the top edge and chin the lower edge. Exact UV registration: pupils x=29.5% and 70.5%, y=36.7%; nose tip x=50%, y=54.3%; closed mouth center x=50%, y=70.4%; chin y=91%. Soft, evenly lit painted game-material realism, clear natural pores and wrinkles. No glossy portrait lighting, cast shadows, dramatic shading, cartoon proportions or ambient scenery. Keep the reference identity and earthy palette."
+}

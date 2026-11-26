@@ -13,10 +13,10 @@ except ImportError:
 ROOT=Path(__file__).resolve().parents[2]
 
 
-def validate(root=ROOT):
+def validate(root=ROOT, source_relative='assets/source/art/beast_men_680', model_relative='models/caelum/folklore/beastmen', definition='caelum/data/beast_men_combat.modeldef', mesh_builder=geometry):
     errors=[]
     try:
-        source=root/'assets/source/art/beast_men_680'
+        source=root/source_relative
         report=json.loads((source/'EXPORT.json').read_text(encoding='utf-8'))
         config=json.loads((source/'ANIMATION.json').read_text(encoding='utf-8'))
         for name,want in report['source_sha256'].items():
@@ -24,29 +24,31 @@ def validate(root=ROOT):
         for name,want in report['sha256'].items():
             path=source/name if name.startswith('editable/') else root/'src'/name
             assert hashlib.sha256(path.read_bytes()).hexdigest()==want,'Stale export: '+name
-        definition='caelum/data/beast_men_combat.modeldef'
         assert (root/'src/MODELDEF').read_text().count('#include "'+definition+'"')==1,'Expected one native include'
         modeldef=(root/'src'/definition).read_text()
         blocks=re.findall(r'\bModel\s+(\w+)\s*\{([^}]+)\}',modeldef)
-        assert [name for name,_ in blocks]==[v['actor'] for v in config['species'].values()],'Only three specific beast classes may be bound'
+        assert [name for name,_ in blocks]==[v['actor'] for v in config['species'].values()],'Only the configured specific creature classes may be bound'
         inherited=json.loads((root/'assets/source/art/pombero_461/ANIMATION.json').read_text())
         assert config['frames']==inherited['frames'],'Inherited combat-state mapping changed'
         for (species,item),(actor,block) in zip(config['species'].items(),blocks):
             info=report['species'][species]
             design=json.loads((root/item['design']).read_text(encoding='utf-8'))
             for shape in design['shapes']:
-                if shape['kind']!='loft':continue
+                if shape['kind']!='loft' or not shape.get('cap',True):continue
                 component=dict(design);component['shapes']=[shape]
-                mesh=geometry(prepared_design(component));volume=0
+                mesh=mesh_builder(prepared_design(component));volume=0
                 for _,tri in mesh.faces:
                     a,b,c=[mesh.vertices[i] for i in tri]
                     volume+=(a[0]*(b[1]*c[2]-b[2]*c[1])+a[1]*(b[2]*c[0]-b[0]*c[2])+a[2]*(b[0]*c[1]-b[1]*c[0]))/6
                 assert volume>0,'Inverted closed loft: '+species+'/'+shape['part']+'/'+shape['material']
-            model_path=root/'src/models/caelum/folklore/beastmen'
-            assert (model_path/(species+'.png')).read_bytes()==(root/item['reference']).read_bytes(),'Changed reference pixels'
-            assert (model_path/'materials.png').read_bytes()==(source/design['atlas']['source_file']).read_bytes(),'Changed atlas pixels'
-            for name in (species+'.png','materials.png'):
-                assert (source/'editable/src/models/caelum/folklore/beastmen'/name).read_bytes()==(model_path/name).read_bytes(),'Stale portable texture'
+            model_path=root/'src'/model_relative
+            if 'textures' in item:
+                textures={Path(path).name:root/path for path in item['textures'].values()}
+            else:
+                textures={species+'.png':root/item['reference'],'materials.png':source/design['atlas']['source_file']}
+            for name,original in textures.items():
+                assert (model_path/name).read_bytes()==original.read_bytes(),'Changed source texture pixels'
+                assert (source/'editable/src'/model_relative/name).read_bytes()==(model_path/name).read_bytes(),'Stale portable texture'
             expected=[(row['sprite'],row['letter'],'0',str(index)) for index,row in enumerate(config['frames'])]
             assert re.findall(r'FrameIndex\s+(\w+)\s+(\w)\s+(\d+)\s+(\d+)',block)==expected,'Incomplete frame mapping'
             assert 'CorrectPixelStretch' in block
@@ -72,7 +74,7 @@ def validate(root=ROOT):
                     indices=struct.unpack_from('<3I',blob,offset+tri+index*12)
                     assert max(indices)<nv and len(set(indices))==3
                 shader=struct.unpack_from('<64sI',blob,offset+skin)[0].split(b'\0')[0].decode()
-                assert shader in ('models/caelum/folklore/beastmen/'+species+'.png','models/caelum/folklore/beastmen/materials.png'),shader
+                assert shader in [model_relative+'/'+name for name in textures],shader
                 for index in range(nv):
                     assert all(math.isfinite(v) and 0<=v<=1 for v in struct.unpack_from('<2f',blob,offset+uv+8*index))
                 for frame in range(frames):

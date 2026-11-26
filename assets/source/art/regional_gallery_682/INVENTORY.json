@@ -48,7 +48,7 @@
   ],
   "source_sha256": {
     "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
-    "assets/source/art/beast_men_680/EXPORT.json": "9fd7daadbf1c856a79d95de8819898aef50baf37bf1fd92fdc99a2c041b416c7",
+    "assets/source/art/beast_men_680/EXPORT.json": "50a127b8ab72c6b914829e36e77e6a21e178e7ad5e68176ad98e74bb09492790",
     "assets/generators/generate_beast_regional_materials.py": "2f76d6647aa627da78009b191f8f55d190032c29e34ae7c1a34bc20b5752e1a9",
     "assets/source/art/regional_gallery_463/INVENTORY.json": "1dd6460200ef58d80534b10a44bc8b27010abf036b64f83a8eed15f4cf280d7f"
   },

@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA690Events" }
+map CA455V "duende inherited combat model" { sky1="CABASKY",0 nointermission }

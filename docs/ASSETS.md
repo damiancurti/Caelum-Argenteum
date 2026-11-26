@@ -1,6 +1,73 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.22** - 2026-11-14.
+Documentation version: **5.17.23** - 2026-11-14.
+
+## 5.17.23 - Mikilo and Coquena combat models (#690, parent #461)
+
+CaelumBestiary009 Mikilo and CaelumBestiary010 Coquena now have candidate native
+models based on the verified #453 concepts. Distinct mature faces, pointed ears
+and fixed costumes retain Mikilo's worn felt hat, gray hair, short shoulder
+cloth, patched trousers and bare feet; Coquena's patterned chullo, ochre/red
+poncho, sash, shoulder bag and wrapped sandals. Their repeatable/unique catalogue
+identities and lack of campaign spawning remain intact. Eight of #455's 56 new
+classes now have candidate native models; the other 48 and the protected named
+profiles remain outside this delivery.
+
+Editable sources are under assets/source/art/duendes_690. Two square face plates
+and one material atlas were generated with built-in image_gen from the owned
+references. Exact prompts are the three *-PROMPT.json files; PROVENANCE.json
+records original output paths, dimensions and hashes. Original concept/output
+pixels remain unchanged, without raster postprocessing. Each face is projected
+onto a sculpted volumetric head. Source JSON retains articulated body, head,
+limb, clothing and accessory groups: 20 for Mikilo and 22 for Coquena, totaling
+38,428 source vertices, 62,160 triangles and twelve MD3 surfaces. These fixed
+outfits do not complete runtime interchangeable inventory modules or playable
+goblin customization under #458/#459.
+
+The shared beast-men exporter now accepts explicit source/binding/texture inputs
+and a mesh builder; all eight prior native beast-men resources and their editable
+exports remain byte-identical. Only their generator-hash metadata changes.
+The first project validation exposed a stale transitive regional-gallery pin;
+its inventory/export metadata was refreshed, with all three runtime regional
+resources byte-identical.
+New closed garment profiles preserve open hems and necks. Initial native review
+exposed high cameras, hidden bags and stretched radial cloth UVs; final camera,
+garment, strap, collar and material mapping corrections are retained with earlier
+iterations. Candidate material seams, coarse weave, simplified hands/feet and
+costume articulation still need author review.
+
+Regenerate with python assets/generators/generate_duende_models.py --output
+build/duende-models --install. Twelve final export files repeat byte-for-byte.
+Static checks cover exact actor/frame bindings, source/portable texture hashes,
+closed garment winding, occupied acyclic groups and every quantized MD3 pose.
+All 23 inherited frame pairs preserve native state functions, timing and rules.
+Neutral art height fits the existing Mandinga Height/Scale; reference meter
+ranges remain unapproved and moving/lying art can exceed collision Radius.
+No saved field, actor state, combat, loot or population rule changes.
+
+The complete package passes 230 continuity assertions: 115 per creature across
+original, old-save/model, fresh model, reload and reverse-load phases. The
+observer verifies every inherited frame and capture; manual art review covers
+front/side/rear, facial detail and representative action poses. A separate
+Mandinga/two-creature action/death/finite-loot test passes 136 checks. All
+18,313 packaged entries match src; only two models,
+three textures, their binding/include and two release diagnostics differ from
+#688. Ordinary play and CA690-DUENDES-01 remain pending author acceptance.
+
+One sequential 700-tic sprite/model pair per visible creature records:
+
+| Creature | Queue presents/s | p95 ms | p99 ms | Mean simulation ms/tic |
+| --- | --- | --- | --- | --- |
+| Mikilo | 1819.31/1835.24 | 0.6862/0.6755 | 0.8502/0.7943 | 28.5716/28.5716 |
+| Coquena | 1866.76/1852.77 | 0.7009/0.6950 | 0.8352/0.7986 | 28.5706/28.5715 |
+
+Environment: Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom
+4.14.2, Vulkan 1280x720, uncapped/vsync off, background unpaused at 5% audio.
+Queue intervals do not establish GPU/display timing, repeatability or campaign/
+crowd acceptance. Original billboard and fitted model have different projected
+footprints, so this is not an equal-pixel benchmark. Evidence, hashes and limits:
+assets/validation_v5_17_23/evidence/SUMMARY.json. Historical CATALOGUE/AUTHORING
+art flags remain snapshots; these exact bindings document current coverage.
 
 ## 5.17.22 - Four native glove-pair props (#688, parent #647)
 
