@@ -1,0 +1,80 @@
+{
+  "issue": 836,
+  "runtime": "cfb1853c9c01bddba58eb9f81bd0b0bcdbcbf4aed63bb17a6c00311812bebf18",
+  "passed": true,
+  "rows": [
+    {
+      "method": "Candidate",
+      "ms": 120.8865,
+      "calls": 5015,
+      "max_ms": 0.4855
+    },
+    {
+      "method": "Acquire",
+      "ms": 123.0871,
+      "calls": 5067,
+      "max_ms": 0.4863
+    },
+    {
+      "method": "CanSee",
+      "ms": 40.4274,
+      "calls": 109371,
+      "max_ms": 0.0825
+    },
+    {
+      "method": "Touching",
+      "ms": 13.1386,
+      "calls": 124310,
+      "max_ms": 0.0225
+    },
+    {
+      "method": "Range",
+      "ms": 5.1442,
+      "calls": 67617,
+      "max_ms": 0.0026
+    },
+    {
+      "method": "Opponent",
+      "ms": 37.9484,
+      "calls": 546549,
+      "max_ms": 0.0271
+    },
+    {
+      "method": "Chase",
+      "ms": 0.7177,
+      "calls": 91,
+      "max_ms": 0.0193
+    },
+    {
+      "method": "Contact",
+      "ms": 45.5799,
+      "calls": 33477,
+      "max_ms": 0.0668
+    },
+    {
+      "method": "ObjectExposure",
+      "ms": 45.19,
+      "calls": 32395,
+      "max_ms": 0.1103
+    },
+    {
+      "method": "Thermal",
+      "ms": 53.3975,
+      "calls": 30191,
+      "max_ms": 0.2197
+    },
+    {
+      "method": "Communication",
+      "ms": 43.4388,
+      "calls": 30191,
+      "max_ms": 0.0836
+    }
+  ],
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 33.15411342857143,
+    "p95_ms": 58.2376,
+    "p99_ms": 67.7261,
+    "max_ms": 210.0388
+  }
+}

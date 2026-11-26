@@ -1,6 +1,32 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.96** - 2026-11-19.
+Documentation version: **5.17.97** - 2026-11-19.
+
+## 5.17.97 - Skip unreachable read-only relationship queries (#838, #454)
+
+The production shared-candidate loop now rejects unreachable bodies before
+relationship queries only when the observer's relationship path reads state.
+Residents, summoned Zupays, tarot automatons and clones retain the previous
+relationship-before-bound order. In the final approved siege run, simulation
+p95/p99 are 46.3211/50.8397 ms and queue presentation is
+1.85 presents/s. Severe siege stalls remain; this patch
+does not establish fluent gameplay or author acceptance.
+
+Completed: every-tic nested diagnosis, bounded GC control/ablation, one production
+query reduction, original-order sampled oracle, relationship/visibility/portal
+fixtures, reversible save checks and exact runtime preservation. The oracle
+matches 2,066 queries/360,048 visits, avoiding 360,047 read-only relationship
+calls with zero nearest-target mismatches. Six final/control fixture runs pass
+392 assertions, of which 263 execute the final package. Existing author checks
+remain pending; no partial test terminal or acceptance is recorded.
+
+Next: isolate remaining frame-boundary residuals and native/scripted state-action
+bursts before selecting another measured reduction. GC cycle suppression did
+not remove long pauses and is not a production solution. Do not stagger combat
+cadence, remove gameplay or replace the whole-map living census. Retain mansion,
+sewer, city and ground-facing references; this siege result does not certify
+their 60-FPS expectation. The broader character/equipment/first-person, scenery
+and unauthored campaign assignments remain under their existing parent issues.
 
 ## 5.17.96 - Conservative shared-candidate reach rejection (#836, #454)
 

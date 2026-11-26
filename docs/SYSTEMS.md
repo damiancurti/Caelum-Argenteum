@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.96** - 2026-11-19.
+Documentation version: **5.17.97** - 2026-11-19.
 
 ## 5.17.43 - Hybrid serpent inspection controls (#729)
 
@@ -2670,6 +2670,16 @@ current data, not a saved cache or another actor scan. GZDoom portal-group count
 must be exactly one; linked-portal maps retain native portal-aware queries.
 The shared CONTACT_MARGIN constant relocates the existing value without changing
 it. No gameplay value, cadence, saved field or revision changes.
+
+#838 / 5.17.97 moves that bound before the relationship query only for observers
+outside the anchored-resident, summoned-Zupay, tarot-automaton and tarot-clone
+class families. Their ordinary relationship path reads state; skipped candidates
+already fail the unchanged reach bound. Null entries are discarded safely.
+Excluded families keep relationship-before-bound ordering: resident reputation
+can maintain player material schemas, including through delegated target checks.
+All retained candidates still pass the original relationship and visibility
+functions in the same list order. Portal fallback, allies, private evidence,
+cache priority, clocks, whole-map census and saved fields remain unchanged.
 
 A previously unknown body requires two active seconds of continuous visual
 observation. General suspicion is 0-100; after two seconds without evidence it

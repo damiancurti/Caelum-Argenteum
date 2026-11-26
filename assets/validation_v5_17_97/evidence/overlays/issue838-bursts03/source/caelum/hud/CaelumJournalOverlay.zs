@@ -1,0 +1,3368 @@
+// Primera capa definitiva del Diario. La navegación es local y no duplica el
+// inventario real; las acciones autoritativas se conectarán por eventos cuando
+// cada sección abandone su pantalla provisional.
+class CaelumJournalOverlay : EventHandler
+{
+    const JOURNAL_PAGE_COUNT = 7;
+    ui bool ThermalDetailsOpen, QuestTrackHeld, FermentationDiscardHeld;
+    ui int FermentationDiscardScan;
+    ui int QuestTrackScan;
+
+    Font TitleFont;
+    Font TextFont;
+    Font SmallFont;
+    Font InventoryFont;
+
+    override void OnRegister()
+    {
+        TitleFont = Font.GetFont("CaelumDisplay");
+        TextFont = Font.GetFont("CaelumText");
+        SmallFont = Font.GetFont("CaelumSmall");
+        // El inventario comparte exactamente la métrica monoespaciada del HUD.
+        InventoryFont = Font.GetFont("CaelumMono");
+        SetOrder(100);
+    }
+
+    // InputProcess y ConsoleProcess pertenecen al ámbito UI. Los CVars user
+    // conservan este estado en el cliente correcto sin eventos de red ni
+    // escrituras sobre el EventHandler de ámbito play.
+    ui bool IsJournalOpen()
+    {
+        if (consoleplayer < 0) { return false; }
+        CVar openState = CVar.GetCVar(
+            "ca_journal_open",
+            players[consoleplayer]
+        );
+        return openState != null && openState.GetBool();
+    }
+
+    ui void SetJournalOpen(bool value)
+    {
+        QuestTrackHeld=false;
+        FermentationDiscardHeld=false;
+        CaelumScheduleCalendar.Close();
+        SetQuestDetailOpen(false);
+        if (consoleplayer < 0) { return; }
+        let held = CVar.GetCVar("ca_journal_quest_abandon_held", players[consoleplayer]);
+        if (held != null) held.SetBool(false);
+        let tarotHeld = CVar.GetCVar("ca_journal_tarot_select_held", players[consoleplayer]);
+        if (tarotHeld != null) tarotHeld.SetBool(false);
+        CVar openState = CVar.GetCVar(
+            "ca_journal_open",
+            players[consoleplayer]
+        );
+        if (openState != null) { openState.SetBool(value); }
+    }
+
+    ui int GetJournalPage()
+    {
+        if (consoleplayer < 0) { return 0; }
+        CVar pageState = CVar.GetCVar(
+            "ca_journal_page",
+            players[consoleplayer]
+        );
+        if (pageState == null) { return 0; }
+        return Clamp(pageState.GetInt(), 0, JOURNAL_PAGE_COUNT - 1);
+    }
+
+    ui void SetJournalPage(int page)
+    {
+        QuestTrackHeld=false;
+        CaelumScheduleCalendar.Close();
+        SetQuestDetailOpen(false);
+        if (consoleplayer < 0) { return; }
+        CVar pageState = CVar.GetCVar(
+            "ca_journal_page",
+            players[consoleplayer]
+        );
+        if (pageState != null)
+        {
+            pageState.SetInt(Clamp(page, 0, JOURNAL_PAGE_COUNT - 1));
+        }
+    }
+
+    ui int GetTarotPreview()
+    {
+        if (consoleplayer < 0) { return -1; }
+        let preview = CVar.GetCVar("ca_journal_tarot_preview", players[consoleplayer]);
+        int selected = preview == null ? -1 : preview.GetInt();
+        return selected >= 0 && selected < CaelumConstants.TAROT_CARD_COUNT
+            ? selected : -1;
+    }
+
+    ui void SetTarotPreview(int card)
+    {
+        if (consoleplayer < 0) { return; }
+        let preview = CVar.GetCVar("ca_journal_tarot_preview", players[consoleplayer]);
+        if (preview != null)
+        {
+            preview.SetInt(card < 0
+                ? -1 : Clamp(card, 0, CaelumConstants.TAROT_CARD_COUNT - 1));
+        }
+    }
+
+    ui int GetTarotSelection(CaelumPlayer localPlayer)
+    {
+        int preview = GetTarotPreview();
+        if (preview >= 0) { return preview; }
+        if (localPlayer == null) { return -1; }
+        let selection = CVar.GetCVar("ca_journal_tarot_selected", players[consoleplayer]);
+        int chosen = selection == null ? -1 : selection.GetInt();
+        if (chosen >= 0 && chosen < CaelumConstants.TAROT_CARD_COUNT
+            && localPlayer.TarotOwnedSnapshot[chosen])
+            return chosen;
+        for (int card = CaelumConstants.TAROT_CARD_COUNT - 1; card >= 0; card--)
+            if (localPlayer.TarotOwnedSnapshot[card]) return card;
+        return -1;
+    }
+
+    ui bool CycleTarot(CaelumPlayer user, int direction, bool leaveAtEdge = false)
+    {
+        int current = GetTarotSelection(user);
+        if (current < 0)
+        {
+            if (leaveAtEdge) CycleJournalPage(direction);
+            return false;
+        }
+        let selection = CVar.GetCVar("ca_journal_tarot_selected", players[consoleplayer]);
+        if (selection == null) return false;
+        for (int step = 1; step <= CaelumConstants.TAROT_CARD_COUNT; step++)
+        {
+            int card = current + direction * step;
+            if (leaveAtEdge && (card < 0 || card >= CaelumConstants.TAROT_CARD_COUNT))
+            {
+                CycleJournalPage(direction);
+                return false;
+            }
+            card = (card + CaelumConstants.TAROT_CARD_COUNT * 2)
+                % CaelumConstants.TAROT_CARD_COUNT;
+            if (!user.TarotOwnedSnapshot[card]) continue;
+            selection.SetInt(card);
+            CaelumCraftingUI.Scroll("ca_journal_tarot_scroll",0);
+            return true;
+        }
+        return false;
+    }
+
+    ui void RequestTarotSelection()
+    {
+        if (consoleplayer < 0 || !IsJournalOpen() || GetJournalPage() != 6) return;
+        let user = CaelumPlayer(players[consoleplayer].mo);
+        let held = CVar.GetCVar("ca_journal_tarot_select_held", players[consoleplayer]);
+        if (GetTarotPreview() < 0 && (held == null || !held.GetBool()))
+        {
+            SendNetworkEvent("ca_tarot_select", GetTarotSelection(user));
+            if (held != null) held.SetBool(true);
+        }
+    }
+
+    ui bool CycleTarotPreview(int direction)
+    {
+        int current = GetTarotPreview();
+        if (current < 0)
+        {
+            current = direction > 0 ? 0 : CaelumConstants.TAROT_CARD_COUNT - 1;
+        }
+        else
+        {
+            current = (current + direction + CaelumConstants.TAROT_CARD_COUNT)
+                % CaelumConstants.TAROT_CARD_COUNT;
+        }
+        SetTarotPreview(current);
+        CaelumCraftingUI.Scroll("ca_journal_tarot_scroll",0);
+        return true;
+    }
+
+    ui bool IsQuestDetailOpen()
+    {
+        if (consoleplayer < 0) return false;
+        let detailState = CVar.GetCVar("ca_journal_quest_detail", players[consoleplayer]);
+        return detailState != null && detailState.GetBool();
+    }
+
+    ui void SetQuestDetailOpen(bool value)
+    {
+        if (consoleplayer < 0) return;
+        let detailState = CVar.GetCVar("ca_journal_quest_detail", players[consoleplayer]);
+        let scroll = CVar.GetCVar("ca_journal_quest_scroll", players[consoleplayer]);
+        let confirm = CVar.GetCVar("ca_journal_quest_abandon", players[consoleplayer]);
+        if (confirm != null) confirm.SetInt(-1);
+        if (detailState != null) detailState.SetBool(value);
+        if (scroll != null) scroll.SetInt(0);
+    }
+
+    ui int QuestFilter(String name, int maximum)
+    {
+        let value = CVar.GetCVar(name, players[consoleplayer]);
+        return value == null ? 0 : Clamp(value.GetInt(), 0, maximum);
+    }
+
+    ui bool QuestVisible(CaelumPlayer user, int id)
+    {
+        return user != null && CaelumQuestCatalogue.Matches(id, user.JournalQuestState[id],
+            QuestFilter("ca_journal_quest_kind", 2), QuestFilter("ca_journal_quest_status", 3));
+    }
+
+    ui void CycleQuestFilter(bool kind)
+    {
+        String name = kind ? "ca_journal_quest_kind" : "ca_journal_quest_status";
+        int maximum = kind ? 2 : 3;
+        let value = CVar.GetCVar(name, players[consoleplayer]);
+        if (value != null) value.SetInt((QuestFilter(name, maximum) + 1) % (maximum + 1));
+        SetQuestDetailOpen(false);
+        SendNetworkEvent("ca_social_refresh");
+        SendNetworkEvent("ca_journal_menu_move_sound");
+    }
+
+    ui String QuestClassification(CaelumPlayer user, int id)
+    {
+        return StringTable.Localize(CaelumQuestCatalogue.IsMain(id) ? "CA_Q_KIND_MAIN" : "CA_Q_KIND_SIDE", false)
+            .. " | " .. StringTable.Localize(GetQuestStateKey(user.JournalQuestState[id]), false);
+    }
+
+    ui void DrawQuestFilters()
+    {
+        int kind = QuestFilter("ca_journal_quest_kind", 2);
+        int status = QuestFilter("ca_journal_quest_status", 3);
+        DrawCenteredText(SmallFont, Font.CR_GRAY, 320, 110,
+            StringTable.Localize("CA_Q_FILTER_TYPE", false) .. ": "
+            .. StringTable.Localize(kind == 0 ? "CA_Q_FILTER_ALL" : kind == 1 ? "CA_Q_KIND_MAIN" : "CA_Q_KIND_SIDE", false)
+            .. " | " .. StringTable.Localize("CA_Q_FILTER_STATE", false) .. ": "
+            .. StringTable.Localize(status == 0 ? "CA_Q_FILTER_ALL" : status == 1 ? "CA_QUEST_STATUS_ACTIVE"
+                : status == 2 ? "CA_QUEST_STATUS_COMPLETED" : "CA_Q_FILTER_OTHER", false));
+    }
+
+    ui int GetVisibleQuestId(CaelumPlayer localPlayer)
+    {
+        if (localPlayer == null) return -1;
+        let selection = CVar.GetCVar("ca_journal_quest_selected", players[consoleplayer]);
+        int chosen = selection == null ? 0 : selection.GetInt();
+        if (chosen >= 0 && chosen < CaelumConstants.QUEST_DEFINED_COUNT
+            && QuestVisible(localPlayer, chosen))
+            return chosen;
+        for (int id = 0; id < CaelumConstants.QUEST_DEFINED_COUNT; id++)
+            if (QuestVisible(localPlayer, id)) return id;
+        return -1;
+    }
+
+    ui bool CycleQuest(CaelumPlayer user, int direction, bool leaveAtEdge = false)
+    {
+        int current = GetVisibleQuestId(user);
+        if (current < 0)
+        {
+            if (leaveAtEdge) CycleJournalPage(direction);
+            return false;
+        }
+        let selection = CVar.GetCVar("ca_journal_quest_selected", players[consoleplayer]);
+        if (selection == null) return false;
+        for (int step = 1; step <= CaelumConstants.QUEST_DEFINED_COUNT; step++)
+        {
+            int id = current + direction * step;
+            if (leaveAtEdge && (id < 0 || id >= CaelumConstants.QUEST_DEFINED_COUNT))
+            {
+                CycleJournalPage(direction);
+                return false;
+            }
+            id = (id + CaelumConstants.QUEST_DEFINED_COUNT * 2) % CaelumConstants.QUEST_DEFINED_COUNT;
+            if (!QuestVisible(user, id)) continue;
+            selection.SetInt(id);
+            SetQuestDetailOpen(false);
+            return true;
+        }
+        return false;
+    }
+
+    // Cambiar de solapa no depende del filtro ni de la misión seleccionada.
+    ui void CycleJournalPage(int direction)
+    {
+        let user = consoleplayer >= 0 ? CaelumPlayer(players[consoleplayer].mo) : null;
+        if (GetJournalPage() == 3 && user != null && user.CraftingMenuOpen)
+            SendNetworkEvent("ca_crafting_session_close");
+        int nextPage = (GetJournalPage() + direction + JOURNAL_PAGE_COUNT)
+            % JOURNAL_PAGE_COUNT;
+        SetJournalPage(nextPage);
+        SendNetworkEvent(nextPage == 3 ? "ca_crafting_page_turn_sound"
+            : "ca_journal_menu_move_sound");
+        if (nextPage == 0) SendNetworkEvent("ca_inventory_refresh");
+        if (nextPage == 4 || nextPage == 5) SendNetworkEvent("ca_social_refresh");
+    }
+
+    // Ruta común de las teclas nativas: solapas, misiones y contexto de Oficios.
+    ui bool HandleJournalNavigation(int keyScan)
+    {
+        bool next = keyScan == InputEvent.Key_PgDn || keyScan == InputEvent.Key_Pad_RShoulder;
+        bool previous = keyScan == InputEvent.Key_PgUp || keyScan == InputEvent.Key_Pad_LShoulder;
+        if (next || previous)
+        {
+            CycleJournalPage(next ? 1 : -1);
+            return true;
+        }
+        next = keyScan == InputEvent.Key_RightArrow || keyScan == InputEvent.Key_Pad_DPad_Right;
+        previous = keyScan == InputEvent.Key_LeftArrow || keyScan == InputEvent.Key_Pad_DPad_Left;
+        if (!next && !previous) return false;
+        let user = consoleplayer >= 0 ? CaelumPlayer(players[consoleplayer].mo) : null;
+        if (GetJournalPage() == 3) return false;
+        if (GetJournalPage() == 0)
+        {
+            bool atEdge = user == null || (next
+                ? user.FormalInventoryFilter >= CaelumPlayer.FORMAL_INVENTORY_FILTER_COUNT - 1
+                : user.FormalInventoryFilter <= 0);
+            if (atEdge) CycleJournalPage(next ? 1 : -1);
+            else
+            {
+                SendNetworkEvent(next ? "ca_inventory_filter" : "ca_inventory_filter_previous");
+                SendNetworkEvent("ca_journal_menu_move_sound");
+            }
+        }
+        else if (GetJournalPage() == 4)
+        {
+            if (CycleQuest(user, next ? 1 : -1, true))
+                SendNetworkEvent("ca_journal_menu_move_sound");
+        }
+        else if (GetJournalPage() == 6)
+        {
+            if (GetTarotPreview() >= 0)
+            {
+                if (CycleTarotPreview(next ? 1 : -1))
+                    SendNetworkEvent("ca_journal_menu_move_sound");
+            }
+            else if (CycleTarot(user, next ? 1 : -1))
+                SendNetworkEvent("ca_journal_menu_move_sound");
+        }
+        else CycleJournalPage(next ? 1 : -1);
+        return true;
+    }
+
+    ui String GetSideQuestHelp(CaelumPlayer user, int id)
+    {
+        let confirm = CVar.GetCVar("ca_journal_quest_abandon", players[consoleplayer]);
+        if (confirm != null && confirm.GetInt() == id) return "CA_Q_SIDE_CONFIRM_ABANDON";
+        if (CaelumPortQuestData.Defined(id)) return CaelumPortQuestView.Help(user,id);
+        if (user.JournalQuestState[id] == CaelumConstants.QUEST_STATE_OFFERED)
+            return user.JournalQuestCanStart[id] ? "CA_Q_SIDE_ACCEPT" : "CA_Q_SIDE_LOCKED";
+        if (user.JournalQuestState[id] == CaelumConstants.QUEST_STATE_ACTIVE)
+            return user.JournalQuestReady[id] ? "CA_Q_SIDE_FINISH" : "CA_Q_SIDE_PROGRESS";
+        if (user.JournalQuestState[id] == CaelumConstants.QUEST_STATE_COMPLETED)
+            return user.JournalQuestRewardClaimed[id] ? "CA_Q_SIDE_REWARDED" : "CA_Q_SIDE_CLAIM";
+        return "CA_Q_SIDE_TERMINAL";
+    }
+
+    static clearscope String GetQuestDetailStageKey(CaelumPlayer localPlayer, int questId)
+    {
+        if (localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_COMPLETED)
+            return questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL ? "CA_M01_RETURN_DETAIL_COMPLETE" : "CA_Q_DETAIL_COMPLETE";
+        if (localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_FAILED)
+            return "CA_Q_DETAIL_FAILED";
+        if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
+            return "CA_Q_DETAIL_GENERIC";
+        int stage = localPlayer.JournalQuestStage[questId];
+        if (stage >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED) return "CA_M01_RETURN_DETAIL_CROSSING";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_FOOL_CAPTURED) return "CA_M01_RETURN_DETAIL_READY";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED) return localPlayer.MainM00FoolRevealedSnapshot
+            ? "CA_M01_FOOL_DETAIL_REVEALED" : "CA_M01_FOOL_DETAIL_FIND";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_RULO_COMPLETE) return "CA_M01_RULO_DETAIL_DONE";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE)
+            return localPlayer.MainM00BullDefeatedSnapshot ? "CA_M01_RULO_DETAIL_RETURN"
+                : localPlayer.MainM00BullStartedSnapshot ? "CA_M01_RULO_DETAIL_FIGHT"
+                : localPlayer.MainM00RuloPracticeSnapshot < 6 ? "CA_M01_RULO_DETAIL_PRACTICE"
+                : localPlayer.MainM00SilverKeySnapshot ? "CA_M01_RULO_DETAIL_DOOR" : "CA_M01_RULO_DETAIL_KEY";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
+            && stage < CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE)
+            return localPlayer.MainM00RonnieFinishedSnapshot ? "CA_M01_RULO_DETAIL_OFFER"
+                : localPlayer.MainM00LessonsCompleteSnapshot ? "CA_M01_DETAIL_READY" : "CA_M01_DETAIL_GATHER";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE)
+            return stage < CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
+                ? "CA_Q_DETAIL_M01_RONNIE" : "CA_Q_DETAIL_GENERIC";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE)
+            return localPlayer.MainM00RuneSequenceSnapshot == 4 ? "CA_Q_DETAIL_M01_RETURN_CAELLA"
+                : localPlayer.MainM00MagicPracticeSnapshot < 4
+                ? "CA_Q_DETAIL_M01_PRACTICE" : "CA_Q_DETAIL_M01_RUNES";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_ARGENTO_COMPLETE)
+            return "CA_Q_DETAIL_M01_CAELLA";
+        if (stage >= CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE)
+        {
+            if (localPlayer.MainM00ConvincedCountSnapshot == CaelumConstants.MAIN_M00_RESIDENT_COUNT)
+                return "CA_Q_DETAIL_M01_RETURN_ARGENTO";
+            return localPlayer.JournalMainM00ArgentoStarted
+                ? "CA_Q_DETAIL_M01_RESIDENTS" : "CA_Q_DETAIL_M01_ARGENTO";
+        }
+        return "CA_Q_DETAIL_M01_PALOMO";
+    }
+
+    // Sólo lee la instantánea del registro. Abrir Detalle no inicia, completa
+    // ni concede nada; las indicaciones cambian con el progreso del personaje.
+    static ui String GetRuloDefenseKey(CaelumPlayer user, bool checklist = false)
+    {
+        if (user.HUDActiveWeaponIsRanged)
+            return checklist ? "CA_M01_RULO_CHECK_AIM" : "CA_M01_RULO_DEFENSE_AIM";
+        if (user.HUDHasActiveBlockSource)
+            return checklist ? "CA_M01_RULO_CHECK_BLOCK" : "CA_M01_RULO_DEFENSE_BLOCK";
+        if (!checklist && user.HUDHasActiveWeapon
+            && user.HUDActiveWeaponType == CaelumConstants.WEAPON_TYPE_GREATSWORD)
+            return "CA_M01_RULO_DEFENSE_GREATSWORD";
+        return checklist ? "CA_M01_RULO_CHECK_EVADE" : "CA_M01_RULO_DEFENSE_EVADE";
+    }
+
+    ui String GetQuestDetailText(CaelumPlayer localPlayer, int questId)
+    {
+        if (CaelumPortQuestData.Defined(questId)) return CaelumPortQuestView.Detail(localPlayer,questId);
+        if (questId == CaelumConstants.QUEST_GUARD_CAPTAIN || questId == CaelumConstants.QUEST_SEWERS)
+            return CaelumQuestTrackingView.Objective(localPlayer,questId);
+        if (CaelumQuestCatalogue.IsRescue(questId))
+        {
+            int state = localPlayer.JournalQuestState[questId];
+            String text = CaelumQuestTrackingView.Objective(localPlayer,questId);
+            if (state == CaelumConstants.QUEST_STATE_COMPLETED)
+                text = text .. "\n\n" .. StringTable.Localize(localPlayer.JournalQuestRewardClaimed[questId]
+                    ? "CA_Q_RESCUE_PAID" : "CA_Q_RESCUE_UNPAID", false);
+            if (localPlayer.JournalQuestRewardClaimed[questId])
+                text = text .. "\n\n" .. CaelumSiegeIntelligence.Text(localPlayer);
+            return text;
+        }
+        if (questId == CaelumConstants.QUEST_PORT_SIEGE)
+            return CaelumSiegeIntelligence.Text(localPlayer) .. "\n\n" .. CaelumPortStory.Accounts(localPlayer);
+        if (CaelumSideQuestRules.IsDefined(questId))
+        {
+            return CaelumQuestTrackingView.Objective(localPlayer,questId) .. "\n\n"
+                .. StringTable.Localize(GetSideQuestHelp(localPlayer, questId), false)
+                .. "\n\n" .. StringTable.Localize("CA_Q_SIDE_REWARD_NOTE", false);
+        }
+        String text = StringTable.Localize("CA_QUEST_STAGE_LABEL", false) .. ": "
+            .. CaelumQuestTrackingView.Objective(localPlayer,questId);
+        int stage = localPlayer.JournalQuestStage[questId];
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && stage == CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE && localPlayer.MainM00RuloPracticeSnapshot < 6)
+        {
+            for (int n = 0; n < 6; n++)
+            {
+                String key = n == 0 ? "CA_M01_RULO_CHECK_PRIMARY" : n == 1 ? "CA_M01_RULO_CHECK_SECONDARY"
+                    : n == 2 ? GetRuloDefenseKey(localPlayer, true) : n == 3 ? "CA_M01_RULO_CHECK_ADVANCED"
+                    : n == 4 ? "CA_M01_RULO_CHECK_AIR" : "CA_M01_RULO_CHECK_RECOVERY";
+                text = text .. "\n" .. StringTable.Localize(localPlayer.JournalMainM00RuloPracticeDone[n]
+                    ? "CA_Q_DETAIL_DONE" : "CA_Q_DETAIL_PENDING", false) .. ": " .. StringTable.Localize(key, false);
+            }
+            text = text .. "\n\n" .. StringTable.Localize("CA_M01_RULO_EQUIVALENT_TEXT", false);
+        }
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && localPlayer.MainM00StarterOptionSnapshot == 15
+            && stage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
+            && stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED)
+            text = text .. "\n\n" .. StringTable.Localize("CA_M01_BOLTS_DETAIL", false);
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && stage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
+            && stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED)
+        {
+            String armorText = StringTable.Localize(localPlayer.MainM00ArmorTypeSnapshot < 0
+                ? "CA_M01_ARMOR_DETAIL_CHOOSE" : "CA_M01_ARMOR_DETAIL", false);
+            armorText.Replace("%ARMOR%", StringTable.Localize(String.Format("CA_M01_ARMOR_NAME_%d",
+                Max(0, localPlayer.MainM00ArmorTypeSnapshot)), false));
+            armorText.Replace("%PIECES%", String.Format("%d", localPlayer.MainM00ArmorPiecesSnapshot));
+            text = text .. "\n\n" .. armorText;
+        }
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE
+            && stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED)
+        {
+            String sealText = StringTable.Localize("CA_AF_ACCESSORY_DETAIL", false);
+            sealText.Replace("%SEAL%", localPlayer.MainM00ChosenSealSnapshot < 0 ? "-"
+                : StringTable.Localize(String.Format("CA_AF_SEAL_%d", localPlayer.MainM00ChosenSealSnapshot), false));
+            sealText.Replace("%AMULET%", localPlayer.MainM00ChosenAmuletSnapshot < 0 ? "-"
+                : StringTable.Localize(String.Format("CA_AF_AMULET_%d", localPlayer.MainM00ChosenAmuletSnapshot), false));
+            sealText.Replace("%SEALS%", String.Format("%d", localPlayer.MainM00SealsPreparedSnapshot));
+            sealText.Replace("%AMULETDONE%", localPlayer.MainM00AmuletPreparedSnapshot ? "1" : "0");
+            text = text .. "\n\n" .. sealText;
+            if (localPlayer.MainM00WaterGivenSnapshot)
+            {
+                String water = StringTable.Localize("CA_WATER_DETAIL", false);
+                water.Replace("%FILLED%", localPlayer.MainM00WaterFilledSnapshot ? "1/1" : "0/1");
+                water.Replace("%DRANK%", localPlayer.MainM00WaterDrankSnapshot ? "1/1" : "0/1");
+                text = text .. "\n\n" .. water;
+            }
+        }
+        bool magicActive = questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_ACTIVE
+            && stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE
+            && stage < CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE;
+        if (magicActive)
+        {
+            text = text .. "\n\n" .. StringTable.Localize("CA_Q_DETAIL_LOCATION", false)
+                .. "\n" .. StringTable.Localize("CA_DLG_M01_MAGIC_TARGET_LOCATION", false)
+                .. "\n" .. StringTable.Localize("CA_DLG_M01_MAGIC_LOCATION", false)
+                .. "\n\n" .. StringTable.Localize("CA_Q_DETAIL_PRACTICE", false);
+            for (int practiceAction = 0; practiceAction < 5; practiceAction++)
+            {
+                String key = practiceAction == 0 ? "CA_Q_DETAIL_PRIMARY"
+                    : practiceAction == 1 ? "CA_Q_DETAIL_SECONDARY"
+                    : practiceAction == 2 ? "CA_Q_DETAIL_CHANNEL"
+                    : practiceAction == 3 ? "CA_Q_DETAIL_ANIMA_SPENT" : "CA_Q_DETAIL_ANIMA_RECOVERED";
+                text = text .. "\n" .. StringTable.Localize(
+                    localPlayer.JournalMainM00MagicPracticeDone[practiceAction]
+                        ? "CA_Q_DETAIL_DONE" : "CA_Q_DETAIL_PENDING", false)
+                    .. ": " .. StringTable.Localize(key, false);
+            }
+            if (localPlayer.MainM00MagicPracticeSnapshot >= 4)
+            {
+                String riddle = StringTable.Localize("CA_DLG_M01_MAGIC_RIDDLE", false);
+                riddle.Replace("%RUNES%", String.Format("%d", localPlayer.MainM00RuneSequenceSnapshot));
+                text = text .. "\n\n" .. riddle;
+            }
+        }
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && stage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
+            && stage < CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE
+            && !localPlayer.MainM00LessonsCompleteSnapshot)
+        {
+            text = text .. "\n\n" .. StringTable.Localize("CA_M01_RONNIE_LOCATION", false)
+                .. "\n\n" .. StringTable.Localize("CA_M01_DETAIL_MATERIALS", false);
+            text = text .. "\n\n" .. StringTable.Localize("CA_M01_DETAIL_LOAD", false);
+        }
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && localPlayer.MainM00RepairLessonOfferedSnapshot
+            && (stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
+                || localPlayer.MainM00RepairLessonCompleteSnapshot))
+        {
+            text = text .. "\n\n" .. StringTable.Localize(localPlayer.MainM00RepairLessonCompleteSnapshot
+                ? "CA_M01_REPAIR_DETAIL_DONE" : "CA_M01_REPAIR_DETAIL", false);
+        }
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL && localPlayer.PalomoSleepLessonStartedSnapshot)
+            text = text .. "\n\n" .. StringTable.Localize(localPlayer.PalomoSleepLessonCompleteSnapshot
+                ? "CA_DEMO_SLEEP_DONE" : "CA_DEMO_SLEEP", false);
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && localPlayer.MainM00NeedsLessonStartedSnapshot
+            && (stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
+                || (localPlayer.MainM00NeedsFoodUsedSnapshot && localPlayer.MainM00NeedsWaterUsedSnapshot)))
+        {
+            text = text .. "\n\n" .. StringTable.Localize("CA_M01_NEEDS_DETAIL", false)
+                .. "\n" .. StringTable.Localize(localPlayer.MainM00NeedsFoodUsedSnapshot ? "CA_M01_NEEDS_FOOD_DONE" : "CA_M01_NEEDS_FOOD_WAIT", false)
+                .. "\n" .. StringTable.Localize(localPlayer.MainM00NeedsWaterUsedSnapshot ? "CA_M01_NEEDS_WATER_DONE" : "CA_M01_NEEDS_WATER_WAIT", false);
+        }
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && localPlayer.MainM00AirLessonStartedSnapshot
+            && (stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED || localPlayer.MainM00AirLessonCompleteSnapshot))
+            text = text .. "\n\n" .. StringTable.Localize(localPlayer.MainM00AirLessonCompleteSnapshot
+                ? "CA_M01_AIR_DETAIL_DONE" : localPlayer.MainM00AirLessonRanSnapshot
+                ? "CA_M01_AIR_DETAIL_RECOVER" : "CA_M01_AIR_DETAIL_RUN", false);
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && localPlayer.MainM00LoadLessonStartedSnapshot
+            && (stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED || localPlayer.MainM00LoadLessonCompleteSnapshot))
+            text = text .. "\n\n" .. StringTable.Localize(localPlayer.MainM00LoadLessonCompleteSnapshot
+                ? "CA_M01_LOAD_DETAIL_DONE" : "CA_M01_LOAD_DETAIL", false);
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            && localPlayer.MainM00SwimLessonStartedSnapshot
+            && (stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED || localPlayer.MainM00SwimLessonCompleteSnapshot))
+            text = text .. "\n\n" .. StringTable.Localize(localPlayer.MainM00SwimLessonCompleteSnapshot
+                ? "CA_M01_SWIM_DETAIL_DONE" : localPlayer.MainM00SwimLessonSubmergedSnapshot
+                ? "CA_M01_SWIM_DETAIL_RECOVER" : "CA_M01_SWIM_DETAIL_DIVE", false);
+        text = text .. "\n\n" .. StringTable.Localize("CA_Q_DETAIL_ABOUT", false)
+            .. "\n" .. StringTable.Localize(questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+                ? "CA_Q_DETAIL_M01_ABOUT" : "CA_Q_DETAIL_GENERIC", false);
+        text.Replace("%DEFENSE%", StringTable.Localize(GetRuloDefenseKey(localPlayer), false));
+        return text;
+    }
+
+    ui int GetQuestDetailLineCount()
+    {
+        return Max(1, int(134 / Max(12, SmallFont.GetHeight() + 2)));
+    }
+
+    ui void ScrollQuestDetail(CaelumPlayer localPlayer, int direction)
+    {
+        int questId = GetVisibleQuestId(localPlayer);
+        if (questId < 0 || SmallFont == null) return;
+        String availability=localPlayer.JournalQuestUnavailable[questId]
+            ? StringTable.Localize("CA_COOP_QUEST_UNAVAILABLE",false).."\n\n" : "";
+        let lines = SmallFont.BreakLines(QuestClassification(localPlayer, questId) .. "\n" .. CaelumQuestTrackingView.Detail(localPlayer,questId) .. "\n\n" .. availability .. GetQuestDetailText(localPlayer, questId), 512);
+        int count = GetQuestDetailLineCount();
+        int last = Max(0, (lines.Count() - 1) / count) * count;
+        let scroll = CVar.GetCVar("ca_journal_quest_scroll", players[consoleplayer]);
+        if (scroll != null) scroll.SetInt(Clamp(scroll.GetInt() + direction * count, 0, last));
+    }
+
+    ui void DrawQuestDetail(CaelumPlayer localPlayer)
+    {
+        int questId = GetVisibleQuestId(localPlayer);
+        if (questId < 0) return;
+        DrawTextLine(TextFont, Font.CR_GOLD, 64, 132,
+            StringTable.Localize(GetQuestNameKey(questId), false));
+        let lines = SmallFont.BreakLines(QuestClassification(localPlayer, questId) .. "\n" .. CaelumQuestTrackingView.Detail(localPlayer,questId) .. "\n\n" .. GetQuestDetailText(localPlayer, questId), 512);
+        int count = GetQuestDetailLineCount();
+        int pages = Max(1, (lines.Count() + count - 1) / count);
+        let scroll = CVar.GetCVar("ca_journal_quest_scroll", players[consoleplayer]);
+        int first = Clamp(scroll != null ? scroll.GetInt() : 0, 0, (pages - 1) * count);
+        for (int row = 0; row < count && first + row < lines.Count(); row++)
+            DrawTextLine(SmallFont, Font.CR_WHITE, 64,
+                156 + row * Max(12, SmallFont.GetHeight() + 2), lines.StringAt(first + row));
+        DrawCenteredText(SmallFont, Font.CR_GRAY, 320, 298,
+            String.Format("%d / %d", first / count + 1, pages));
+    }
+
+    ui String GetPageKey(int page)
+    {
+        switch (page)
+        {
+            case 1: return "CA_JOURNAL_CHARACTER";
+            case 2: return "CA_JOURNAL_WORLD";
+            case 3: return "CA_JOURNAL_CRAFTS";
+            case 4: return "CA_JOURNAL_QUESTS";
+            case 5: return "CA_JOURNAL_REPUTATION";
+            case 6: return "CA_JOURNAL_TAROT";
+            default: return "CA_JOURNAL_INVENTORY";
+        }
+    }
+
+    ui String GetPageIcon(int page)
+    {
+        switch (page)
+        {
+            case 1: return "graphics/caelum/ui/journal/icons/ca_ui_nav_character.png";
+            case 2: return "graphics/caelum/ui/journal/icons/ca_ui_nav_world.png";
+            case 3: return "graphics/caelum/ui/journal/icons/ca_ui_nav_crafts.png";
+            case 4: return "graphics/caelum/ui/journal/icons/ca_ui_nav_quests.png";
+            case 5: return "graphics/caelum/ui/journal/icons/ca_ui_nav_reputation.png";
+            case 6: return "graphics/caelum/ui/journal/icons/ca_ui_slot_tarot.png";
+            default: return "graphics/caelum/ui/journal/icons/ca_ui_nav_inventory.png";
+        }
+    }
+
+    ui String GetQuestNameKey(int questId)
+    {
+        return CaelumQuestCatalogue.TitleKey(questId);
+    }
+
+    ui String GetQuestStateKey(int questState)
+    {
+        switch (questState)
+        {
+            case CaelumConstants.QUEST_STATE_COMPLETED:
+                return "CA_QUEST_STATUS_COMPLETED";
+            case CaelumConstants.QUEST_STATE_FAILED:
+                return "CA_QUEST_STATUS_FAILED";
+            case CaelumConstants.QUEST_STATE_OFFERED: return "CA_QUEST_STATUS_OFFERED";
+            case CaelumConstants.QUEST_STATE_ABANDONED: return "CA_QUEST_STATUS_ABANDONED";
+            default: return "CA_QUEST_STATUS_ACTIVE";
+        }
+    }
+
+    ui String GetQuestStageKey(int questId, int questStage, bool argentoStarted, int residents)
+    {
+        if (questId == CaelumConstants.QUEST_PORT_SIEGE)
+            return questStage >= 2 ? "CA_DEMO_PORT_DONE" : questStage == 1
+                ? "CA_DEMO_PORT_ACTIVE" : "CA_PRISONER_SIEGE_AWAITING";
+        if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
+        {
+            return "CA_Q_SIDE_STAGE";
+        }
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_COMPLETE)
+            return "CA_Q_M01_STATE_COMPLETE";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED)
+            return "CA_Q_M01_STATE_RETURN_TO_BODY";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_FOOL_CAPTURED)
+            return "CA_M01_FOOL_STATE_OBTAINED";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED)
+            return "CA_M01_FOOL_STATE_FIND";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_RULO_COMPLETE)
+            return "CA_Q_M01_STATE_PALOMO_FINAL";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE)
+            return "CA_Q_M01_STATE_RULO_COMBAT";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_WEAPON_READY)
+            return "CA_Q_M01_STATE_PREPARE_WEAPON";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE)
+            return "CA_Q_M01_STATE_RONNIE_SURVIVAL";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE)
+            return "CA_Q_M01_STATE_TALK_RONNIE";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE)
+            return "CA_Q_M01_STATE_CAELLA_MAGIC";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_ARGENTO_COMPLETE)
+            return "CA_Q_M01_STATE_TALK_CAELLA";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE)
+        {
+            if (residents == CaelumConstants.MAIN_M00_RESIDENT_COUNT)
+                return "CA_Q_M01_STATE_RETURN_ARGENTO";
+            return argentoStarted ? "CA_Q_M01_STATE_RECRUIT_RESIDENTS"
+                : "CA_Q_M01_STATE_ARGENTO_SOCIAL";
+        }
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_MET_PALOMO)
+            return "CA_Q_M01_STATE_MEET_PALOMO";
+        if (questStage >= CaelumConstants.MAIN_M00_STATE_AWAKENED)
+            return "CA_Q_M01_STATE_AWAKEN";
+        return "CA_Q_M01_STATE_INITIALIZE";
+    }
+
+    ui String GetQuestObjectiveKey(int questId, int objectiveId)
+    {
+        if (CaelumPortQuestData.Defined(questId)) return CaelumPortQuestData.ObjectiveKey(questId,objectiveId);
+        if (questId == CaelumConstants.QUEST_PORT_SIEGE)
+            return objectiveId == 0 ? "CA_DEMO_PORT_MACHINES" : "CA_DEMO_PORT_COMMANDER";
+        if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
+        {
+            return questId == CaelumConstants.QUEST_TRIAL_ROUTE
+                ? "CA_Q_SIDE_ROUTE_OBJECTIVE" : "CA_Q_SIDE_WAIT_OBJECTIVE";
+        }
+        switch (objectiveId)
+        {
+            case CaelumConstants.MAIN_M00_OBJECTIVE_FIND_HELP:
+                return "CA_Q_M01_OBJ_FIND_HELP";
+            case CaelumConstants.MAIN_M00_OBJECTIVE_CONVINCE_RESIDENTS:
+                return "CA_Q_M01_OBJ_CONVINCE_RESIDENTS";
+            case CaelumConstants.MAIN_M00_OBJECTIVE_SOLVE_RIDDLE:
+                return "CA_Q_M01_OBJ_SOLVE_RIDDLE";
+            case CaelumConstants.MAIN_M00_OBJECTIVE_GATHER_MATERIALS:
+                return "CA_Q_M01_OBJ_GATHER_MATERIALS";
+            case CaelumConstants.MAIN_M00_OBJECTIVE_PREPARE_WEAPON:
+                return "CA_Q_M01_OBJ_PREPARE_WEAPON";
+            case CaelumConstants.MAIN_M00_OBJECTIVE_DEFEAT_BULL:
+                return "CA_Q_M01_OBJ_DEFEAT_BULL";
+            case CaelumConstants.MAIN_M00_OBJECTIVE_CAPTURE_FOOL:
+                return "CA_Q_M01_OBJ_CAPTURE_FOOL";
+            default: return "CA_Q_M01_OBJ_LEAVE_MANSION";
+        }
+    }
+
+    ui String GetFactionNameKey(int factionId)
+    {
+        switch (factionId)
+        {
+            case CaelumConstants.FACTION_UNITARIOS:
+                return "CA_FACTION_UNITARIOS";
+            case CaelumConstants.FACTION_FEDERALS:
+                return "CA_FACTION_FEDERALS";
+            case CaelumConstants.FACTION_PUEBLOS_LIBRES:
+                return "CA_FACTION_PUEBLOS_LIBRES";
+            case CaelumConstants.FACTION_CAELITH:
+                return "CA_FACTION_CAELITH";
+            case CaelumConstants.FACTION_CULT_TAROT:
+                return "CA_FACTION_CULT_TAROT";
+            case CaelumConstants.FACTION_SUN_WARRIORS:
+                return "CA_FACTION_SUN_WARRIORS";
+            default: return "CA_REP_UNKNOWN_FACTION";
+        }
+    }
+
+    ui String GetPalomoPlacementKey(int placement)
+    {
+        switch (placement)
+        {
+            case CaelumConstants.PALOMO_PLACEMENT_MANSION_FOYER:
+                return "CA_PALOMO_PLACEMENT_MANSION_FOYER";
+            case CaelumConstants.PALOMO_PLACEMENT_MANSION_UPSTAIRS:
+                return "CA_PALOMO_PLACEMENT_MANSION_UPSTAIRS";
+            default: return "CA_PALOMO_PLACEMENT_HIDDEN";
+        }
+    }
+
+    ui String GetInventoryCategoryIcon(int category)
+    {
+        switch (category)
+        {
+            case 1: return "ca_ui_category_weapons.png";
+            case 2: return "ca_ui_category_armor.png";
+            case 3: return "ca_ui_category_shields.png";
+            case 4: return "ca_ui_category_accessories.png";
+            case 5: return "ca_ui_category_consumables.png";
+            case 6: return "ca_ui_category_materials.png";
+            case 7: return "ca_ui_category_ammo.png";
+            case 8: return "ca_ui_category_key_items.png";
+            default: return "ca_ui_category_all.png";
+        }
+    }
+
+    ui String GetInventoryCategoryIconPath(int category)
+    {
+        if (category == 9)
+        {
+            return "graphics/caelum/icons/currency/ca_coin_silver.png";
+        }
+        return "graphics/caelum/ui/journal/icons/"
+            .. GetInventoryCategoryIcon(category);
+    }
+
+    ui String GetInventoryFilterKey(int category)
+    {
+        switch (category)
+        {
+            case 1: return "CA_JOURNAL_FILTER_WEAPONS";
+            case 2: return "CA_JOURNAL_FILTER_ARMOR";
+            case 3: return "CA_JOURNAL_FILTER_SHIELDS";
+            case 4: return "CA_JOURNAL_FILTER_ACCESSORIES";
+            case 5: return "CA_JOURNAL_FILTER_CONSUMABLES";
+            case 6: return "CA_JOURNAL_FILTER_MATERIALS";
+            case 7: return "CA_JOURNAL_FILTER_AMMUNITION";
+            case 8: return "CA_JOURNAL_FILTER_KEY_ITEMS";
+            case 9: return "CA_JOURNAL_FILTER_CURRENCY";
+            case 10: return "CA_EQUIPMENT_CATEGORY_CLOTHING";
+            default: return "CA_JOURNAL_FILTER_ALL";
+        }
+    }
+
+    ui String GetCraftingFilterKey(int recipeFilter)
+    {
+        switch (recipeFilter)
+        {
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_PHYSICAL_WEAPON:
+                return "CA_CRAFTING_FILTER_PHYSICAL_WEAPONS";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_ARMOR:
+                return "CA_CRAFTING_FILTER_ARMOR";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_SHIELD:
+                return "CA_CRAFTING_FILTER_SHIELDS";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_ESSENCE_WEAPON:
+                return "CA_CRAFTING_FILTER_ESSENCE_WEAPONS";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_AMULET:
+                return "CA_CRAFTING_FILTER_AMULETS";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_SEAL:
+                return "CA_CRAFTING_FILTER_SEALS";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_PROCESSING:
+                return "CA_CRAFTING_FILTER_PROCESSING";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_CLOTHING: return "CA_EQUIPMENT_CATEGORY_CLOTHING";
+            case 10: return "CA_CRAFTING_FILTER_UTILITIES";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_AMMUNITION:
+                return "CA_CRAFTING_FILTER_AMMUNITION";
+            case CaelumConstants.CRAFTING_RECIPE_FILTER_COMPONENT:
+                return "CA_CRAFTING_FILTER_COMPONENTS";
+            default: return "CA_CRAFTING_FILTER_ALL";
+        }
+    }
+
+    ui String GetCraftingActionKey(int craftingAction)
+    {
+        switch (craftingAction)
+        {
+            case CaelumConstants.CRAFTING_ACTION_CREATED:
+                return "CA_CRAFTING_ACTION_CREATED";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS:
+                return "CA_CRAFTING_ACTION_FAILED_MATERIALS";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL:
+                return "CA_CRAFTING_ACTION_FAILED_BOX_FULL";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE:
+                return "CA_CRAFTING_ACTION_FAILED_DUPLICATE";
+            case CaelumConstants.CRAFTING_ACTION_MATERIALS_SPAWNED:
+                return "CA_CRAFTING_ACTION_MATERIALS_SPAWNED";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_STATION:
+                return "CA_CRAFTING_ACTION_FAILED_STATION";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE:
+                return "CA_CRAFTING_ACTION_FAILED_INFRASTRUCTURE";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_RECIPE_LOCKED:
+                return "CA_CRAFTING_ACTION_FAILED_RECIPE_LOCKED";
+            case CaelumConstants.CRAFTING_ACTION_PROCESSED:
+                return "CA_CRAFTING_ACTION_PROCESSED";
+            case CaelumConstants.CRAFTING_ACTION_TASK_STARTED:
+                return "CA_CRAFTING_ACTION_TASK_STARTED";
+            case CaelumConstants.CRAFTING_ACTION_TASK_CANCELLED:
+                return "CA_CRAFTING_ACTION_TASK_CANCELLED";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_TASK_ACTIVE:
+                return "CA_CRAFTING_ACTION_FAILED_TASK_ACTIVE";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_COMBAT:
+                return "CA_CRAFTING_ACTION_FAILED_COMBAT";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_TARGET:
+                return "CA_CRAFTING_ACTION_FAILED_TARGET";
+            case CaelumConstants.CRAFTING_ACTION_FAILED_CARRY_CAPACITY:
+                return "CA_CRAFTING_ACTION_FAILED_CARRY_CAPACITY";
+            case CaelumConstants.CRAFTING_ACTION_REPAIRED:
+                return "CA_CRAFTING_ACTION_REPAIRED";
+            case CaelumConstants.CRAFTING_ACTION_DISMANTLED:
+                return "CA_CRAFTING_ACTION_DISMANTLED";
+            case CaelumConstants.CRAFTING_ACTION_DEBUG_TIME_ADVANCED:
+                return "CA_CRAFTING_ACTION_DEBUG_TIME_ADVANCED";
+            case CaelumConstants.CRAFTING_ACTION_DEBUG_TIME_BLOCKED:
+                return "CA_CRAFTING_ACTION_DEBUG_TIME_BLOCKED";
+            default: return "CA_CRAFTING_ACTION_NONE";
+        }
+    }
+
+    ui String GetEssenceKey(int essenceType)
+    {
+        switch (essenceType)
+        {
+            case CaelumConstants.ESSENCE_WATER: return "CA_ESSENCE_WATER";
+            case CaelumConstants.ESSENCE_EARTH: return "CA_ESSENCE_EARTH";
+            case CaelumConstants.ESSENCE_WIND: return "CA_ESSENCE_WIND";
+            case CaelumConstants.ESSENCE_QUINTESSENCE:
+                return "CA_ESSENCE_QUINTESSENCE";
+            default: return "CA_ESSENCE_FIRE";
+        }
+    }
+
+    ui String GetEquipmentActionKey(int actionCode)
+    {
+        switch (actionCode)
+        {
+            case CaelumConstants.EQUIPMENT_ACTION_CREATED:
+                return "CA_EQUIPMENT_ACTION_CREATED";
+            case CaelumConstants.EQUIPMENT_ACTION_EQUIPPED:
+                return "CA_EQUIPMENT_ACTION_EQUIPPED";
+            case CaelumConstants.EQUIPMENT_ACTION_UNEQUIPPED:
+                return "CA_EQUIPMENT_ACTION_UNEQUIPPED";
+            case CaelumConstants.EQUIPMENT_ACTION_BROKEN:
+                return "CA_EQUIPMENT_ACTION_BROKEN";
+            case CaelumConstants.EQUIPMENT_ACTION_DROPPED:
+                return "CA_EQUIPMENT_ACTION_DROPPED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED:
+                return "CA_EQUIPMENT_ACTION_FAILED_NOT_OWNED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_SIZE:
+                return "CA_EQUIPMENT_ACTION_FAILED_SIZE";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_BOX_FULL:
+                return "CA_EQUIPMENT_ACTION_FAILED_BOX_FULL";
+            case CaelumConstants.EQUIPMENT_ACTION_CREATED_IN_MAGIC_BOX:
+                return "CA_EQUIPMENT_ACTION_CREATED_IN_MAGIC_BOX";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY:
+                return "CA_EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY";
+            case CaelumConstants.EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX:
+                return "CA_EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX";
+            case CaelumConstants.EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX:
+                return "CA_EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX";
+            case CaelumConstants.EQUIPMENT_ACTION_USED:
+                return "CA_EQUIPMENT_ACTION_USED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_KEY_STORAGE:
+                return "CA_EQUIPMENT_ACTION_FAILED_KEY_STORAGE";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_STORAGE:
+                return "CA_EQUIPMENT_ACTION_FAILED_STORAGE";
+            case CaelumConstants.EQUIPMENT_ACTION_DISMANTLED:
+                return "CA_EQUIPMENT_ACTION_DISMANTLED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_EQUIPPED:
+                return "CA_EQUIPMENT_ACTION_FAILED_EQUIPPED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED:
+                return "CA_EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED";
+            case CaelumConstants.EQUIPMENT_ACTION_REPAIR_STARTED:
+                return "CA_EQUIPMENT_ACTION_REPAIR_STARTED";
+            case CaelumConstants.EQUIPMENT_ACTION_REPAIRED:
+                return "CA_EQUIPMENT_ACTION_REPAIRED";
+            case CaelumConstants.EQUIPMENT_ACTION_DISMANTLE_STARTED:
+                return "CA_EQUIPMENT_ACTION_DISMANTLE_STARTED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK:
+                return "CA_EQUIPMENT_ACTION_FAILED_CRAFTING_TASK";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_COMBAT:
+                return "CA_EQUIPMENT_ACTION_FAILED_COMBAT";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_DURABILITY:
+                return "CA_EQUIPMENT_ACTION_FAILED_DURABILITY";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE:
+                return "CA_EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED:
+                return "CA_EQUIPMENT_ACTION_FAILED_RESERVED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_MATERIALS:
+                return "CA_EQUIPMENT_ACTION_FAILED_MATERIALS";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED:
+                return "CA_EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_RECIPE_LOCKED:
+                return "CA_CRAFTING_RECIPE_UNKNOWN";
+            default: return "CA_EQUIPMENT_ACTION_NONE";
+        }
+    }
+
+    ui String GetPalomoMerchantItemKey(int merchantItem)
+    {
+        switch (merchantItem)
+        {
+            case CaelumConstants.PALOMO_MERCHANT_ITEM_FOOD:
+                return "CA_CONSUMABLE_FOOD_RATION";
+            case CaelumConstants.PALOMO_MERCHANT_ITEM_WATER:
+                return "CA_CONSUMABLE_WATER_RATION";
+            case CaelumConstants.PALOMO_MERCHANT_ITEM_WOOD:
+                return "CA_MATERIAL_WOOD";
+            case CaelumConstants.PALOMO_MERCHANT_ITEM_RAW_COPPER:
+                return "CA_MATERIAL_RAW_COPPER";
+            case CaelumConstants.PALOMO_MERCHANT_ITEM_RAW_TIN:
+                return "CA_MATERIAL_RAW_TIN";
+            default:
+                return "CA_PALOMO_MERCHANT_UNKNOWN_ITEM";
+        }
+    }
+
+    ui String GetPalomoMerchantActionKey(int actionCode)
+    {
+        switch (actionCode)
+        {
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_BOUGHT:
+                return "CA_PALOMO_MERCHANT_ACTION_BOUGHT";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_SOLD:
+                return "CA_PALOMO_MERCHANT_ACTION_SOLD";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_STOCK:
+                return "CA_PALOMO_MERCHANT_ACTION_FAILED_STOCK";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_PLAYER_MONEY:
+                return "CA_PALOMO_MERCHANT_ACTION_FAILED_PLAYER_MONEY";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_PLAYER_STOCK:
+                return "CA_PALOMO_MERCHANT_ACTION_FAILED_PLAYER_STOCK";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_MERCHANT_MONEY:
+                return "CA_PALOMO_MERCHANT_ACTION_FAILED_MERCHANT_MONEY";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_CAPACITY:
+                return "CA_PALOMO_MERCHANT_ACTION_FAILED_CAPACITY";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_RESERVED:
+                return "CA_PALOMO_MERCHANT_ACTION_FAILED_RESERVED";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION:
+                return "CA_PALOMO_MERCHANT_ACTION_FAILED_SESSION";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_PRICE_CHANGED:
+                return "CA_REP_TRADE_PRICE_CHANGED";
+            case CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_DUPLICATE:
+                return "CA_LIBRARY_ALREADY_OWNED";
+            default:
+                return "CA_PALOMO_MERCHANT_ACTION_NONE";
+        }
+    }
+
+    ui String FormatInventoryEntryName(
+        int kind, int itemType, int armorSlot, int tier, int equipmentSize,
+        int essenceType
+    )
+    {
+        if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER && CaelumSunCargo.Display(itemType))
+            return StringTable.Localize(CaelumSunCargo.NameKey(itemType),false);
+        if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER)
+            return StringTable.Localize(CaelumContainerRules.NameKey(itemType),false);
+        String sizeName = StringTable.Localize(
+            CaelumDisplayNames.GetEquipmentSizeKey(equipmentSize), false
+        );
+        if(kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
+            return StringTable.Localize(CaelumClothingData.NameKey(itemType),false).." · "..sizeName;
+        if (kind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            String weaponName =
+                CaelumDisplayNames.FormatWeaponName(itemType, tier);
+            if (itemType == CaelumConstants.WEAPON_TYPE_STAFF
+                || itemType == CaelumConstants.WEAPON_TYPE_BELL
+                || itemType == CaelumConstants.WEAPON_TYPE_BOOK
+                || itemType == CaelumConstants.WEAPON_TYPE_STATUETTE)
+            {
+                return String.Format(
+                    "%s · %s · %s", weaponName, sizeName,
+                    StringTable.Localize(GetEssenceKey(essenceType), false)
+                );
+            }
+            return String.Format("%s · %s", weaponName, sizeName);
+        }
+        if (kind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
+        {
+            return String.Format(
+                "%s · %s · %s",
+                CaelumDisplayNames.FormatArmorTypeName(itemType, tier),
+                StringTable.Localize(
+                    CaelumDisplayNames.GetArmorSlotKey(armorSlot), false
+                ),
+                sizeName
+            );
+        }
+        if (kind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        {
+            return String.Format(
+                "%s · %s",
+                CaelumDisplayNames.FormatShieldName(itemType, tier), sizeName
+            );
+        }
+        if (kind == CaelumConstants.EQUIPMENT_KIND_AMULET)
+        {
+            return CaelumDisplayNames.FormatAmuletName(itemType, tier);
+        }
+        if (kind == CaelumConstants.EQUIPMENT_KIND_SEAL)
+        {
+            return CaelumDisplayNames.FormatSealName(itemType, tier);
+        }
+        if (kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
+        {
+            return StringTable.Localize(
+                CaelumDisplayNames.GetConsumableKey(itemType), false
+            );
+        }
+        if (kind == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
+        {
+            return StringTable.Localize(
+                CaelumDisplayNames.GetAmmunitionKey(itemType), false
+            );
+        }
+        String specialName = StringTable.Localize(
+            CaelumDisplayNames.GetSpecialItemKey(kind, itemType), false
+        );
+        if (kind == CaelumConstants.EQUIPMENT_KIND_MATERIAL && tier > 0)
+        {
+            return String.Format("%s · T%d", specialName, tier);
+        }
+        return specialName;
+    }
+
+    ui String GetWeaponNameKey(int weaponType)
+    {
+        return CaelumDisplayNames.GetWeaponKey(weaponType);
+    }
+
+    ui void DrawTexture(String path, double x, double y, double width,
+        double height, double alpha = 1.0)
+    {
+        TextureID texture = TexMan.CheckForTexture(path, TexMan.Type_MiscPatch);
+        if (!texture.IsValid()) { return; }
+        Screen.DrawTexture(
+            texture, true, x, y,
+            DTA_VIRTUALWIDTHF, 640.0,
+            DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_DESTWIDTHF, width,
+            DTA_DESTHEIGHTF, height,
+            DTA_ALPHA, alpha,
+            DTA_KEEPRATIO, true
+        );
+    }
+
+    ui void DrawTextLine(Font font, int textColor, double x, double y,
+        String text)
+    {
+        text=CaelumInputHints.Resolve(text);
+        if (font == null) { return; }
+        Screen.DrawText(
+            font, textColor, x, y, text,
+            DTA_VIRTUALWIDTHF, 640.0,
+            DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_KEEPRATIO, true,
+            DTA_SHADOW, true
+        );
+    }
+
+    ui void DrawParagraph(Font font, int textColor, double x, double y,
+        int width, String text)
+    {
+        text=CaelumInputHints.Resolve(text);
+        if (font == null) return;
+        let lines = font.BreakLines(text, width);
+        for (int row = 0; row < lines.Count(); row++)
+            DrawTextLine(font, textColor, x, y + row * Max(12, font.GetHeight() + 2),
+                lines.StringAt(row));
+        lines.Destroy();
+    }
+
+    ui void DrawCenteredText(Font font, int textColor, double centerX,
+        double y, String text)
+    {
+        text=CaelumInputHints.Resolve(text);
+        if (font == null) { return; }
+        DrawTextLine(
+            font,
+            textColor,
+            centerX - font.StringWidth(text) * 0.5,
+            y,
+            text
+        );
+    }
+
+    ui void DrawPanel(double x, double y, double width, double height)
+    {
+        double corner = 32.0;
+        String root = "graphics/caelum/ui/hud/components/";
+
+        DrawTexture(root .. "ca_ui_panel_center.png", x + corner, y + corner,
+            width - corner * 2.0, height - corner * 2.0);
+        DrawTexture(root .. "ca_ui_panel_top.png", x + corner, y,
+            width - corner * 2.0, corner);
+        DrawTexture(root .. "ca_ui_panel_bottom.png", x + corner,
+            y + height - corner, width - corner * 2.0, corner);
+        DrawTexture(root .. "ca_ui_panel_left.png", x, y + corner,
+            corner, height - corner * 2.0);
+        DrawTexture(root .. "ca_ui_panel_right.png", x + width - corner,
+            y + corner, corner, height - corner * 2.0);
+        DrawTexture(root .. "ca_ui_panel_top_left.png", x, y, corner, corner);
+        DrawTexture(root .. "ca_ui_panel_top_right.png", x + width - corner,
+            y, corner, corner);
+        DrawTexture(root .. "ca_ui_panel_bottom_left.png", x,
+            y + height - corner, corner, corner);
+        DrawTexture(root .. "ca_ui_panel_bottom_right.png",
+            x + width - corner, y + height - corner, corner, corner);
+    }
+
+    ui void DrawNavigation()
+    {
+        int currentPage = GetJournalPage();
+        for (int page = 0; page < JOURNAL_PAGE_COUNT; page++)
+        {
+            double centerX = 68.0 + page * 84.0;
+            String laurel = page == currentPage
+                ? "graphics/caelum/ui/journal/components/ca_ui_nav_laurel_selected.png"
+                : "graphics/caelum/ui/journal/components/ca_ui_nav_laurel_normal.png";
+            String frame = page == currentPage
+                ? "graphics/caelum/ui/hud/components/ca_ui_icon_frame_selected.png"
+                : "graphics/caelum/ui/hud/components/ca_ui_icon_frame_normal.png";
+            // El laurel comparte la caja del marco y siempre se compone detrás.
+            DrawTexture(laurel, centerX - 24.0, 38.0, 48.0, 48.0);
+            DrawTexture(frame, centerX - 24.0, 38.0, 48.0, 48.0);
+            DrawTexture(GetPageIcon(page), centerX - 14.0, 48.0, 28.0, 28.0);
+            DrawCenteredText(
+                SmallFont,
+                page == currentPage ? Font.CR_GOLD : Font.CR_WHITE,
+                centerX,
+                86.0,
+                StringTable.Localize(GetPageKey(page), false)
+            );
+            CaelumInputHints.Draw(SmallFont,Font.CR_GRAY,centerX,96,
+                CaelumInputHints.Label("",CaelumInputHints.KeyName(InputEvent.Key_PgUp).."/"..CaelumInputHints.KeyName(InputEvent.Key_PgDn)),80);
+        }
+    }
+
+    ui void DrawInventoryPage(CaelumPlayer localPlayer)
+    {
+        DrawTextLine(SmallFont,Font.CR_GOLD,52,309,StringTable.Localize("CA_AWAKEN_HINT",false));
+        if(localPlayer.TarotOwnedCountSnapshot==CaelumConstants.TAROT_CARD_COUNT)
+            DrawTextLine(SmallFont,Font.CR_GOLD,414,151,
+                StringTable.Localize("CA_TAROT_UNIFIED_ACTION",false));
+        for (int index = 0;
+            index < CaelumPlayer.FORMAL_INVENTORY_FILTER_COUNT; index++)
+        {
+            DrawTexture(
+                GetInventoryCategoryIconPath(index),
+                54.0 + index * 57.0,
+                124.0,
+                28.0,
+                28.0,
+                index == localPlayer.FormalInventoryFilter ? 1.0 : 0.35
+            );
+        }
+        DrawTextLine(
+            InventoryFont, Font.CR_GOLD, 52.0, 151.0,
+            String.Format(
+                "%s · %d",
+                StringTable.Localize(
+                    GetInventoryFilterKey(localPlayer.FormalInventoryFilter),
+                    false
+                ),
+                localPlayer.FormalInventoryEntryCount
+            )
+        );
+
+        int selectedRow = localPlayer.FormalInventorySelectionIndex
+            - localPlayer.FormalInventoryVisibleStart;
+        for (int row = 0;
+            row < CaelumPlayer.FORMAL_INVENTORY_VISIBLE_ROWS; row++)
+        {
+            int kind = localPlayer.FormalInventoryRowKind[row];
+            if (kind < 0) { continue; }
+            String entryLabel = FormatInventoryEntryName(
+                kind,
+                localPlayer.FormalInventoryRowType[row],
+                localPlayer.FormalInventoryRowArmorSlot[row],
+                localPlayer.FormalInventoryRowTier[row],
+                localPlayer.FormalInventoryRowSize[row],
+                localPlayer.FormalInventoryRowEssenceType[row]
+            );
+            if (localPlayer.FormalInventoryRowItemId[row] > 0)
+            {
+                entryLabel = String.Format(
+                    "%s  #%d", entryLabel,
+                    localPlayer.FormalInventoryRowItemId[row]
+                );
+            }
+            else
+            {
+                entryLabel = String.Format(
+                    "%s  x%d", entryLabel,
+                    localPlayer.FormalInventoryRowAmount[row]
+                );
+            }
+            if (localPlayer.FormalInventoryRowWaterLiters[row] >= 0)
+                entryLabel = entryLabel .. String.Format("  %.2f L", localPlayer.FormalInventoryRowWaterLiters[row]);
+            if (localPlayer.FormalInventoryRowEquipped[row])
+            {
+                entryLabel = entryLabel .. "  [E]";
+            }
+            if (localPlayer.FormalInventoryRowInMagicBox[row])
+            {
+                entryLabel = entryLabel .. "  [M]";
+            }
+            if (localPlayer.FormalInventoryRowReservedUnits[row] > 0)
+            {
+                entryLabel = String.Format(
+                    "%s  [R:%d]",
+                    entryLabel,
+                    localPlayer.FormalInventoryRowReservedUnits[row]
+                );
+            }
+            if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER && CaelumSunCargo.Display(localPlayer.FormalInventoryRowType[row]))
+                DrawTexture("graphics/caelum/ui/journal/icons/ca_ui_magic_box.png",30.0,165.0+row*21.0,20.0,20.0);
+            else if(kind==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && CaelumRestFurnitureData.IsKey(localPlayer.FormalInventoryRowType[row]))
+                DrawTexture(CaelumRestFurnitureData.Icon(localPlayer.FormalInventoryRowType[row]-CaelumRestFurnitureData.FIRST_KEY),30.0,165.0+row*21.0,20.0,20.0);
+            else if(kind==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && CaelumStorageFurnitureData.IsKey(localPlayer.FormalInventoryRowType[row]))
+                DrawTexture(CaelumStorageFurnitureData.Icon(localPlayer.FormalInventoryRowType[row]-CaelumStorageFurnitureData.FIRST_KEY),30.0,165.0+row*21.0,20.0,20.0);
+            else if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER && localPlayer.FormalInventoryRowType[row]==CaelumStoredReadingData.DISPLAY_TYPE)
+                DrawTexture(CaelumRestFurnitureData.Icon(CaelumRestFurnitureData.FIRST_STUDY_VARIANT+1),30.0,165.0+row*21.0,20.0,20.0);
+            else if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER && localPlayer.FormalInventoryRowType[row]==CaelumStorageFurnitureData.CUPBOARD_DISPLAY)
+                DrawTexture(CaelumStorageFurnitureData.Icon(1),30.0,165.0+row*21.0,20.0,20.0);
+            else if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER && localPlayer.FormalInventoryRowType[row]==CaelumWardrobeData.DISPLAY_TYPE)
+                DrawTexture("graphics/caelum/icons/furniture/wardrobe.png",30.0,165.0+row*21.0,20.0,20.0);
+            else if ((kind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && localPlayer.FormalInventoryRowType[row]==CaelumCampData.TENT_KEY)
+                || (kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE && localPlayer.FormalInventoryRowType[row]==CaelumCampData.POT_CONSUMABLE))
+                DrawTexture(CaelumCampData.Icon(kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE?1:0),
+                    30.0,165.0+row*21.0,20.0,20.0);
+            else if(kind==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && localPlayer.FormalInventoryRowType[row]==CaelumHygieneData.CLOTH_KEY)
+                DrawTexture("graphics/caelum/icons/hygiene/cloth.png",30.0,165.0+row*21.0,20.0,20.0);
+            else if (kind == CaelumConstants.EQUIPMENT_KIND_CLOTHING)
+                DrawTexture(CaelumClothingData.Icon(localPlayer.FormalInventoryRowType[row]),
+                    30.0, 165.0 + row * 21.0, 20.0, 20.0);
+            else if (kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
+                && CaelumMateData.IsConsumable(localPlayer.FormalInventoryRowType[row]))
+                DrawTexture(CaelumMateCrafting.Icon(localPlayer.FormalInventoryRowType[row]-CaelumMateData.FIRST_CONSUMABLE),
+                    30.0, 165.0 + row * 21.0, 20.0, 20.0);
+            else if (kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
+                && CaelumMealData.IsMeal(localPlayer.FormalInventoryRowType[row]))
+                DrawTexture(CaelumMealData.Icon(localPlayer.FormalInventoryRowType[row]),
+                    30.0, 165.0 + row * 21.0, 20.0, 20.0);
+            else if (kind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
+                DrawTexture(CaelumMaterialPickup.GetMaterialIconPathForType(
+                    localPlayer.FormalInventoryRowType[row]),
+                    30.0, 165.0 + row * 21.0, 20.0, 20.0);
+            else if (kind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+                && CaelumSupportArt.Index(localPlayer.FormalInventoryRowType[row]) >= 0)
+                DrawTexture(CaelumIconResolver.ResolveEquipmentPath(kind,
+                    localPlayer.FormalInventoryRowType[row], 0,
+                    localPlayer.FormalInventoryRowTier[row]),
+                    30.0, 165.0 + row * 21.0, 20.0, 20.0);
+            DrawTextLine(
+                InventoryFont,
+                row == selectedRow ? Font.CR_GOLD : Font.CR_WHITE,
+                52.0,
+                170.0 + row * 21.0,
+                (row == selectedRow ? "> " : "  ") .. entryLabel
+            );
+        }
+
+        if (localPlayer.FormalInventoryEntryCount <= 0)
+        {
+            DrawTextLine(
+                InventoryFont, Font.CR_GRAY, 52.0, 190.0,
+                StringTable.Localize("CA_JOURNAL_INVENTORY_EMPTY", false)
+            );
+        }
+
+        DrawTextLine(InventoryFont, Font.CR_WHITE, 414.0, 170.0,
+            String.Format("%s: %.3f / %.3f",
+                StringTable.Localize("CA_HUD_LOAD", false),
+                localPlayer.HUDCarriedWeight,
+                localPlayer.HUDCarryCapacity));
+        DrawTexture(
+            "graphics/caelum/ui/journal/icons/ca_ui_magic_box.png",
+            414.0, 188.0, 16.0, 16.0,
+            localPlayer.MagicBoxOwned ? 1.0 : 0.35
+        );
+        if (localPlayer.MagicBoxOwned)
+        {
+            DrawTextLine(InventoryFont, Font.CR_WHITE, 432.0, 190.0,
+                String.Format("%s: %d/%d · %.3f kg",
+                    StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
+                    localPlayer.MagicBoxUsedSlots,
+                    localPlayer.MagicBoxMaximumSlots,
+                    localPlayer.HUDMagicBoxTotalWeight));
+        }
+        else
+        {
+            DrawTextLine(InventoryFont, Font.CR_GRAY, 432.0, 190.0,
+                String.Format("%s: %s",
+                    StringTable.Localize("CA_EQUIPMENT_MAGIC_BOX", false),
+                    StringTable.Localize(
+                        "CA_MAGIC_BOX_NOT_ACQUIRED", false
+                    )));
+        }
+        DrawTextLine(InventoryFont, Font.CR_GOLD, 414.0, 210.0,
+            String.Format("%s: %.0f c",
+                StringTable.Localize("CA_ECONOMY_TOTAL_MONEY", false),
+                localPlayer.HUDTotalMoneyCopperValue));
+        DrawTexture(
+            "graphics/caelum/icons/currency/ca_coin_copper.png",
+            414.0, 229.0, 16.0, 16.0
+        );
+        DrawTextLine(
+            InventoryFont, Font.CR_WHITE, 432.0, 230.0,
+            String.Format("%d", localPlayer.HUDCopperCoinCount)
+        );
+        DrawTexture(
+            "graphics/caelum/icons/currency/ca_coin_silver.png",
+            480.0, 229.0, 16.0, 16.0
+        );
+        DrawTextLine(
+            InventoryFont, Font.CR_WHITE, 498.0, 230.0,
+            String.Format("%d", localPlayer.HUDSilverCoinCount)
+        );
+        DrawTexture(
+            "graphics/caelum/icons/currency/ca_coin_gold.png",
+            546.0, 229.0, 16.0, 16.0
+        );
+        DrawTextLine(
+            InventoryFont, Font.CR_WHITE, 564.0, 230.0,
+            String.Format("%d", localPlayer.HUDGoldCoinCount)
+        );
+        if (selectedRow >= 0
+            && selectedRow < CaelumPlayer.FORMAL_INVENTORY_VISIBLE_ROWS
+            && localPlayer.FormalInventoryRowKind[selectedRow] >= 0)
+        {
+            DrawTextLine(InventoryFont, Font.CR_WHITE, 414.0, 258.0,
+                String.Format("%s: %.3f",
+                    StringTable.Localize(
+                        "CA_JOURNAL_INVENTORY_WEIGHT", false
+                    ),
+                    localPlayer.FormalInventoryRowWeight[selectedRow]));
+            if (localPlayer.FormalInventoryRowMaximumDurability[selectedRow]
+                > 0)
+            {
+                DrawTextLine(InventoryFont, Font.CR_WHITE, 414.0, 278.0,
+                    String.Format("%s: %d / %d",
+                        StringTable.Localize(
+                            "CA_JOURNAL_INVENTORY_DURABILITY", false
+                        ),
+                        localPlayer.FormalInventoryRowDurability[selectedRow],
+                        localPlayer.FormalInventoryRowMaximumDurability[
+                            selectedRow
+                        ]));
+            }
+            let mate=CaelumMateSession.Selected(localPlayer);
+            if(localPlayer.FormalInventoryRowKind[selectedRow]==CaelumConstants.EQUIPMENT_KIND_CONTAINER
+                && CaelumSunCargo.Display(localPlayer.FormalInventoryRowType[selectedRow]))
+            {
+                let cargo=CaelumSunCargo.View(localPlayer);
+                CaelumCraftingUI.Paragraph(self,StringTable.Localize(cargo!=null && cargo.Pending
+                    ?"CA_TAROT_SUN_PENDING_SHORT":"CA_TAROT_SUN_INVENTORY",false),414,270,192,3,"ca_journal_inventory_scroll");
+            }
+            if(localPlayer.FormalInventoryRowFoodContamination[selectedRow]>=0)
+                CaelumCraftingUI.Paragraph(self,String.Format(StringTable.Localize("CA_FOOD_LOTS_DETAIL",false),
+                    localPlayer.FormalInventoryRowFoodContamination[selectedRow],localPlayer.FormalInventoryRowFoodLots[selectedRow]),
+                    414,270,192,2,"ca_journal_inventory_scroll");
+            if(mate!=null)CaelumCraftingUI.Paragraph(self,CaelumMateUI.Contents(mate),414,278,192,3,"ca_journal_inventory_scroll");
+            if (localPlayer.FormalInventoryRowWaterLiters[selectedRow] > 0)
+                DrawTextLine(InventoryFont,Font.CR_WHITE,414,246,
+                    String.Format(StringTable.Localize("CA_WATER_BOIL_ESTIMATE",false),
+                        CaelumWaterThermalData.Seconds(localPlayer.FormalInventoryRowWaterLiters[selectedRow],localPlayer.FormalInventoryRowWaterTemperature[selectedRow]),
+                        CaelumWaterThermalData.Fuel(localPlayer.FormalInventoryRowWaterLiters[selectedRow],localPlayer.FormalInventoryRowWaterTemperature[selectedRow])));
+            if (localPlayer.FormalInventoryRowWaterLiters[selectedRow] >= 0)
+                DrawTextLine(InventoryFont, Font.CR_WHITE, 414.0, 278.0,
+                    localPlayer.FormalInventoryRowWaterLiters[selectedRow] <= 0.000001
+                    ? StringTable.Localize("CA_WATER_EMPTY", false)
+                    : CaelumWaterQuality.Label(localPlayer.FormalInventoryRowWaterQuality[selectedRow])
+                        ..String.Format(" / %.1f °C",localPlayer.FormalInventoryRowWaterTemperature[selectedRow]));
+        }
+        DrawTextLine(
+            InventoryFont,
+            localPlayer.LastEquipmentAction
+                    == CaelumConstants.EQUIPMENT_ACTION_NONE
+                ? Font.CR_GRAY : Font.CR_GOLD,
+            52.0, 298.0,
+            StringTable.Localize(
+                GetEquipmentActionKey(localPlayer.LastEquipmentAction), false
+            )
+        );
+        if (localPlayer.CraftingTaskActive)
+        {
+            DrawTextLine(
+                InventoryFont, Font.CR_CYAN, 414.0, 298.0,
+                String.Format(
+                    "%s: %.1f / %.1f s",
+                    StringTable.Localize(localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CLEAN?"CA_CLEAN_TITLE":localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BATH?"CA_BATH_TITLE":localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_HYGIENE?"CA_DOMESTIC_TOILET":"CA_CRAFTING_TASK_ACTIVE", false),
+                    localPlayer.CraftingTaskRemainingSeconds,
+                    localPlayer.CraftingTaskTotalSeconds
+                )
+            );
+        }
+    }
+
+    ui void DrawCharacterPage(CaelumPlayer localPlayer)
+    {
+        DrawTextLine(SmallFont, Font.CR_CYAN, 416, 310,
+            StringTable.Localize("CA_CHARACTER_THERMAL", false));
+        if (ThermalDetailsOpen) { DrawThermalPage(localPlayer); return; }
+        if (localPlayer.Attributes == null) return;
+        CaelumAttributes values = localPlayer.Attributes;
+        DrawTextLine(SmallFont, Font.CR_WHITE, 56, 132,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_STRENGTH", false), values.Strength));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 173, 132,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_TOUGHNESS", false), values.Toughness));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 290, 132,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_CONSTITUTION", false), values.Constitution));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 56, 150,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_AGILITY", false), values.Agility));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 173, 150,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_DEXTERITY", false), values.Dexterity));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 290, 150,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_RESILIENCE", false), values.Resilience));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 56, 168,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_CHARISMA", false), values.Charisma));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 173, 168,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_EMPATHY", false), values.Empathy));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 290, 168,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_ELOQUENCE", false), values.Eloquence));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 56, 186,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_INTELLIGENCE", false), values.Intelligence));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 173, 186,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_PATIENCE", false), values.Patience));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 290, 186,
+            String.Format("%s: %.2f", StringTable.Localize("CA_ATTRIBUTE_INSIGHT", false), values.Insight));
+        DrawTextLine(SmallFont, Font.CR_GOLD, 56, 207,
+            String.Format(StringTable.Localize("CA_TAROT_BONUS", false), localPlayer.TarotAttributeBonusSnapshot));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 56, 230,
+            String.Format("%s: %.2f%%", StringTable.Localize("CA_CHARACTER_EVASION", false),
+                Clamp(localPlayer.EffectiveEvasionChance, 0.0, 100.0)));
+        DrawCharacterChance("CA_CHARACTER_PHYSICAL_CRITICAL", 245,
+            localPlayer.HUDPhysicalCriticalApplies, localPlayer.HUDPhysicalCriticalChance);
+        DrawCharacterChance("CA_CHARACTER_MAGICAL_CRITICAL", 260,
+            localPlayer.HUDMagicalCriticalApplies, localPlayer.HUDMagicalCriticalChance);
+        // Media de armadura corporal y factor del sello; sin Dureza ni bloqueo.
+        for (int element = 0; element < CaelumConstants.ELEMENT_TYPE_COUNT; element++)
+            DrawTextLine(SmallFont, Font.CR_CYAN, 56 + (element % 2) * 176, 282 + (element / 2) * 14,
+                String.Format(StringTable.Localize(CaelumCharacterView.ResistanceKey(element), false),
+                    (1 - localPlayer.HUDMagicalDamageFactor*CaelumSealResistance.Factor(
+                        localPlayer.HUDHasEquippedSeal ? localPlayer.HUDEquippedSealType : -1,element)) * 100));
+        for (int resource = 0; resource < 3; resource++)
+        {
+            double y = 132 + resource * 34;
+            int state = CaelumSurvivalView.State(localPlayer, resource);
+            DrawTexture(CaelumSurvivalView.Icon(resource), 407, y, 18, 18);
+            DrawTextLine(SmallFont, Font.CR_WHITE, 428, y,
+                String.Format("%s: %.0f%%", StringTable.Localize(CaelumSurvivalView.NameKey(resource), false),
+                    CaelumSurvivalView.Value(localPlayer, resource)));
+            DrawTextLine(SmallFont, CaelumSurvivalView.TextColor(state), 428, y + 12,
+                StringTable.Localize(CaelumSurvivalView.StateKey(resource, state), false));
+            CaelumSurvivalView.Bar(CaelumSurvivalView.Value(localPlayer, resource), state,
+                428, y + 26, 146, CaelumSurvivalView.BaseColor(resource));
+        }
+        DrawTexture(CaelumSurvivalView.Icon(4),407,234,18,18);
+        double contamination=CaelumFoodIllness.Value(localPlayer);
+        DrawTextLine(SmallFont,Font.CR_WHITE,428,234,
+            String.Format("%s: %.1f",StringTable.Localize("CA_HUD_CONTAMINATION",false),contamination));
+        DrawTextLine(SmallFont,CaelumSurvivalView.ContaminationColor(localPlayer),428,246,
+            StringTable.Localize(CaelumSurvivalView.ContaminationStateKey(localPlayer),false));
+        CaelumSurvivalView.Bar(contamination,
+            contamination>CaelumFoodData.ILLNESS_THRESHOLD ? CaelumConstants.SURVIVAL_STATE_CRITICAL : CaelumConstants.SURVIVAL_STATE_NORMAL,
+            428,260,146,0x9F9456);
+        DrawTexture(CaelumSurvivalView.Icon(3), 407, 272, 18, 18);
+        String thermalLine; int thermalColor, thermalTint;
+        [thermalLine, thermalColor, thermalTint] = CaelumSurvivalView.ThermalLabel(localPlayer);
+        let lines = SmallFont.BreakLines(thermalLine, 146);
+        for (int line = 0; line < lines.Count(); line++)
+            Screen.DrawText(SmallFont, thermalColor, 428, 272 + line * 12, lines.StringAt(line),
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_KEEPRATIO, true, DTA_SHADOW, true, DTA_COLOR, thermalTint);
+        lines.Destroy();
+        CaelumSurvivalView.ThermalBar(localPlayer, 428, 300, 146);
+    }
+
+    ui void DrawCharacterChance(String key, double y, bool applies, double chance)
+    {
+        DrawTextLine(SmallFont, Font.CR_WHITE, 56, y,
+            StringTable.Localize(key, false) .. ": " .. (applies ? String.Format("%.2f%%", chance)
+                : StringTable.Localize("CA_CHARACTER_NOT_APPLICABLE", false)));
+    }
+
+    ui void DrawAwakening(CaelumPlayer user,CaelumAwakeningMenu state)
+    {
+        CaelumPresentation.MenuBackground(0x05070A,0.92);
+        DrawPanel(16,12,608,336);
+        DrawCenteredText(TitleFont,Font.CR_GOLD,320,28,StringTable.Localize("CA_AWAKEN_TITLE",false));
+        DrawTextLine(TextFont,Font.CR_WHITE,50,78,FormatInventoryEntryName(state.ItemKind,
+            state.ItemType,state.ItemSlot,state.ItemTier,state.ItemSize,state.ItemEssence));
+        DrawParagraph(TextFont,Font.CR_WHITE,50,105,530,StringTable.Localize("CA_AWAKEN_RULES",false));
+        if(state.SelectedCard>=0)DrawTexture(CaelumTarotArt.FrontPath(state.SelectedCard),60,186,76,113);
+        DrawTextLine(TextFont,Font.CR_GOLD,158,190,state.SelectedCard<0
+            ?StringTable.Localize("CA_AWAKEN_NONE",false):CaelumTarotArt.DisplayName(state.SelectedCard));
+        DrawParagraph(SmallFont,Font.CR_GRAY,158,228,390,StringTable.Localize("CA_AWAKEN_KEYS",false));
+    }
+
+    ui void DrawTarotPage(CaelumPlayer localPlayer)
+    {
+        let record = CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
+        let deck = CaelumTarotDeck(localPlayer.FindInventory("CaelumTarotDeck"));
+        DrawTextLine(SmallFont, Font.CR_GOLD, 56, 127,
+            String.Format(StringTable.Localize("CA_TAROT_COLLECTION_COUNT", false),
+                localPlayer.TarotOwnedCountSnapshot, CaelumConstants.TAROT_CARD_COUNT));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 330, 127,
+            StringTable.Localize(deck == null ? "CA_TAROT_DECK_MISSING"
+                : deck.InMagicBox ? "CA_TAROT_DECK_BOXED" : "CA_TAROT_DECK_CARRIED", false));
+        int preview = GetTarotPreview();
+        int selected = preview >= 0 ? preview : GetTarotSelection(localPlayer);
+        if (selected < 0)
+        {
+            DrawTexture(CaelumTarotArt.BackPath(), 78, 166, 100, 100);
+            DrawParagraph(TextFont, Font.CR_WHITE, 226, 170, 330,
+                StringTable.Localize("CA_TAROT_COLLECTION_EMPTY", false));
+            DrawCenteredText(SmallFont,Font.CR_GRAY,320,322,
+                StringTable.Localize("CA_JOURNAL_NAVIGATION_HELP",false));
+            return;
+        }
+        double ratio = (double(Screen.GetWidth()) / Screen.GetHeight()) / (640.0 / 360.0);
+        double cardWidth = 104 / Max(1.0, ratio);
+        double cardHeight = 156 * Min(1.0, ratio);
+        DrawTexture(CaelumTarotArt.FrontPath(selected),
+            76 + (104-cardWidth)*0.5, 151 + (156-cardHeight)*0.5, cardWidth, cardHeight);
+        DrawTextLine(TextFont, Font.CR_GOLD, 210, 151,
+            CaelumTarotArt.DisplayName(selected));
+        bool captured = localPlayer.TarotOwnedSnapshot[selected];
+        int selectedCount = 0;
+        for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
+            if (localPlayer.TarotSelectedSnapshot[card]) selectedCount++;
+        DrawTextLine(SmallFont, Font.CR_GOLD, 210, 170,
+            StringTable.Localize(preview >= 0 ? "CA_TAROT_DETAIL_PREVIEW"
+                : !captured ? "CA_TAROT_POWER_UNOWNED"
+                : !CaelumTarotService.Implemented(selected) ? "CA_TAROT_POWER_UNIMPLEMENTED"
+                : localPlayer.TarotSelectedSnapshot[selected]
+                    ? "CA_TAROT_POWER_EQUIPPED" : "CA_TAROT_POWER_SELECT_HINT", false));
+        String details = "\c[Gold]" .. CaelumTarotDetails.L("CA_TAROT_DETAIL_PASSIVE_LABEL") .. "\c-: "
+            .. CaelumTarotDetails.Passive(selected,captured)
+            .. "\n\n\c[Gold]" .. CaelumTarotDetails.L("CA_TAROT_DETAIL_ACTIVE_LABEL") .. "\c-: "
+            .. CaelumTarotDetails.Active(selected,captured)
+            .. "\n\n\c[Gold]" .. CaelumTarotDetails.L("CA_TAROT_DETAIL_TRUCAZO_LABEL") .. "\c-: "
+            .. CaelumTarotDetails.Trucazo(selected,captured);
+        details=details.."\n\n"..String.Format(StringTable.Localize("CA_TAROT_ORDER",false),CaelumTarotLoadout.Position(record,selected));
+        if(selected==CaelumHangedMan.CARD && CaelumHangedMan.Chosen(localPlayer,record))
+            details=details.."\n"..String.Format(StringTable.Localize("CA_TAROT_RACE_CHOSEN",false),
+                StringTable.Localize(CaelumHangedMan.RaceKey(record.TarotHangedRace),false));
+        CaelumCraftingUI.Paragraph(self,details,210,189,358,7,"ca_journal_tarot_scroll");
+        bool active = record != null && CaelumTarotService.EffectTics(record) > 0 && CaelumTarotService.IsActive(record, selected);
+        DrawTextLine(SmallFont, active ? Font.CR_CYAN : Font.CR_GRAY, 210, 282,
+            active ? String.Format(StringTable.Localize("CA_TAROT_POWER_ACTIVE_TIME", false),
+                (CaelumTarotService.EffectTics(record,selected) + TICRATE - 1) / TICRATE)
+                : StringTable.Localize("CA_TAROT_POWER_INACTIVE", false));
+        DrawTextLine(SmallFont, Font.CR_GOLD, 210, 297,
+            String.Format(StringTable.Localize("CA_TAROT_POWER_GROUP_STATUS", false),
+                selectedCount, CaelumTarotLoadout.Capacity(record),
+                record == null ? 0 : (CaelumTarotService.CooldownTics(record) + TICRATE - 1) / TICRATE));
+
+    }
+
+    ui void DrawQuestPage(CaelumPlayer localPlayer)
+    {
+        DrawQuestFilters();
+        if (GetVisibleQuestId(localPlayer) < 0 && IsQuestDetailOpen()) SetQuestDetailOpen(false);
+        if (IsQuestDetailOpen()) { DrawQuestDetail(localPlayer); return; }
+        if (GetVisibleQuestId(localPlayer) < 0)
+        {
+            DrawCenteredText(
+                TextFont, Font.CR_WHITE, 320.0, 164.0,
+                StringTable.Localize("CA_Q_FILTER_EMPTY", false)
+            );
+        }
+        else
+        {
+            for (int questId = 0;
+                questId < CaelumConstants.QUEST_DEFINED_COUNT; questId++)
+            {
+                int questState = localPlayer.JournalQuestState[questId];
+                if (questState == CaelumConstants.QUEST_STATE_UNDISCOVERED
+                    || questId != GetVisibleQuestId(localPlayer))
+                {
+                    continue;
+                }
+
+                DrawTextLine(
+                    TextFont, Font.CR_GOLD, 64.0, 132.0,
+                    StringTable.Localize(GetQuestNameKey(questId), false)
+                );
+                DrawTextLine(SmallFont, Font.CR_WHITE, 64, 154,
+                    QuestClassification(localPlayer, questId));
+                if (questId >= CaelumConstants.QUEST_SEWERS)
+                {
+                    let lines = SmallFont.BreakLines(GetQuestDetailText(localPlayer, questId), 512);
+                    for (int row = 0; row < Min(7, lines.Count()); row++)
+                        DrawTextLine(SmallFont, Font.CR_WHITE, 64, 182 + row * 14, lines.StringAt(row));
+                    break;
+                }
+                let stageLines = SmallFont.BreakLines(StringTable.Localize(GetQuestStageKey(questId,
+                    localPlayer.JournalQuestStage[questId], localPlayer.JournalMainM00ArgentoStarted,
+                    localPlayer.MainM00ConvincedCountSnapshot), false), 512);
+                for (int row = 0; row < Min(2, stageLines.Count()); row++)
+                    DrawTextLine(SmallFont, Font.CR_WHITE, 64, 166 + row * 12, stageLines.StringAt(row));
+                DrawTextLine(
+                    SmallFont, Font.CR_GRAY, 64.0, 190.0,
+                    StringTable.Localize("CA_QUEST_OBJECTIVES_LABEL", false)
+                );
+
+                int objectiveBase = questId
+                    * CaelumConstants.QUEST_OBJECTIVE_CAPACITY;
+                for (int objectiveId = 0;
+                    objectiveId < CaelumConstants.QUEST_OBJECTIVE_CAPACITY;
+                    objectiveId++)
+                {
+                    int objective = objectiveBase + objectiveId;
+                    if (objective
+                            >= CaelumConstants.QUEST_JOURNAL_OBJECTIVE_STORAGE_COUNT
+                        || !localPlayer.JournalQuestObjectiveKnown[objective])
+                    {
+                        continue;
+                    }
+                    int progress =
+                        localPlayer.JournalQuestObjectiveProgress[objective];
+                    int target = Max(
+                        1,
+                        localPlayer.JournalQuestObjectiveTarget[objective]
+                    );
+                    DrawTextLine(
+                        SmallFont,
+                        progress >= target ? Font.CR_GREEN : Font.CR_WHITE,
+                        56.0 + (objectiveId / 4)*284.0, 208.0 + (objectiveId % 4)*18.0,
+                        String.Format(
+                            "[%d/%d] %s",
+                            progress, target,
+                            StringTable.Localize(
+                                questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+                                    && objectiveId == CaelumConstants.MAIN_M00_OBJECTIVE_CAPTURE_FOOL
+                                    && !localPlayer.MainM00FoolRevealedSnapshot
+                                    ? "CA_M01_FOOL_STATE_FIND" : GetQuestObjectiveKey(questId, objectiveId),
+                                false
+                            )
+                        )
+                    );
+                }
+                break;
+            }
+        }
+
+        int selected = GetVisibleQuestId(localPlayer);
+        if (selected >= 0)
+        {
+            int ordinal = 0, total = 0;
+            for (int id = 0; id < CaelumConstants.QUEST_DEFINED_COUNT; id++)
+                if (QuestVisible(localPlayer, id)) { total++; if (id <= selected) ordinal++; }
+            DrawCenteredText(SmallFont, Font.CR_GRAY, 560, 132,
+                String.Format("%d/%d", ordinal, total));
+        }
+        if (CaelumSideQuestRules.IsDefined(selected))
+        {
+            DrawCenteredText(SmallFont, Font.CR_WHITE, 320, 288,
+                StringTable.Localize(GetSideQuestHelp(localPlayer, selected), false));
+            return;
+        }
+        if (selected != CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            || localPlayer.JournalQuestState[selected] == CaelumConstants.QUEST_STATE_COMPLETED) return;
+        DrawTextLine(
+            SmallFont, Font.CR_WHITE, 56.0, 288.0,
+            String.Format(
+                "%s: %s",
+                StringTable.Localize(
+                    "CA_QUEST_PALOMO_LOCATION_LABEL", false
+                ),
+                StringTable.Localize(
+                    GetPalomoPlacementKey(
+                        localPlayer.JournalPalomoPlacement
+                    ),
+                    false
+                )
+            )
+        );
+        DrawCenteredText(
+            SmallFont, Font.CR_GRAY, 320.0, 304.0,
+            StringTable.Localize(localPlayer.TarotFoolOwnedSnapshot
+                ? "CA_M01_FOOL_HINT_DONE"
+                : localPlayer.JournalQuestStage[CaelumConstants.QUEST_MAIN_M00_THE_FOOL]
+                    >= CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED
+                    ? "CA_M01_FOOL_HINT_FIND" : "CA_QUEST_FOUNDATION_NOTE", false)
+        );
+    }
+
+    ui void DrawReputationPage(CaelumPlayer localPlayer)
+    {
+        for (int factionId = 0;
+            factionId < CaelumConstants.FACTION_COUNT; factionId++)
+        {
+            double rowY = 132.0 + factionId * 40.0;
+            DrawTextLine(
+                TextFont, Font.CR_GOLD, 64.0, rowY,
+                StringTable.Localize(GetFactionNameKey(factionId), false)
+            );
+            DrawTextLine(
+                SmallFont, Font.CR_WHITE, 250.0, rowY + 4.0,
+                String.Format(
+                    "%s: %s  |  %s: %d (%s)",
+                    StringTable.Localize(
+                        "CA_FACTION_MEMBERSHIP_LABEL", false
+                    ),
+                    StringTable.Localize(
+                        localPlayer.JournalFactionMember[factionId]
+                            ? "CA_FACTION_MEMBER_YES"
+                            : "CA_FACTION_MEMBER_NO",
+                        false
+                    ),
+                    StringTable.Localize(
+                        "CA_REPUTATION_VALUE_LABEL", false
+                    ),
+                    localPlayer.JournalFactionReputation[factionId],
+                    StringTable.Localize(CaelumFactionData.RankKey(
+                        localPlayer.JournalFactionReputation[factionId]), false)
+                )
+            );
+        }
+        DrawCenteredText(
+            SmallFont, Font.CR_GRAY, 320.0, 298.0,
+            StringTable.Localize(
+                localPlayer.JournalReputationTrialEnabled
+                    ? "CA_REP_TRIAL_JOURNAL_HINT" : "CA_REPUTATION_FOUNDATION_NOTE", false
+            )
+        );
+    }
+
+    ui void DrawCraftingSummary(CaelumPlayer localPlayer)
+    {
+        DrawCenteredText(
+            TextFont,
+            Font.CR_GOLD,
+            320.0,
+            136.0,
+            String.Format(
+                "%s: %d / %d",
+                StringTable.Localize("CA_CRAFTING_RECIPE_BOOK", false),
+                localPlayer.CraftingKnownRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT
+            )
+        );
+        DrawTextLine(TextFont, Font.CR_WHITE, 84.0, 176.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize(
+                    "CA_CRAFTING_FILTER_PHYSICAL_WEAPONS", false
+                ),
+                localPlayer.CraftingKnownPhysicalRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT));
+        DrawTextLine(TextFont, Font.CR_WHITE, 344.0, 176.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize("CA_CRAFTING_FILTER_ARMOR", false),
+                localPlayer.CraftingKnownArmorRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_ARMOR_RECIPE_COUNT));
+        DrawTextLine(TextFont, Font.CR_WHITE, 84.0, 204.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize(
+                    "CA_CRAFTING_FILTER_ESSENCE_WEAPONS", false
+                ),
+                localPlayer.CraftingKnownEssenceRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_ESSENCE_RECIPE_COUNT));
+        DrawTextLine(TextFont, Font.CR_WHITE, 344.0, 204.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize("CA_CRAFTING_FILTER_AMULETS", false),
+                localPlayer.CraftingKnownAmuletRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_AMULET_RECIPE_COUNT));
+        DrawTextLine(TextFont, Font.CR_WHITE, 84.0, 232.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize("CA_CRAFTING_FILTER_SEALS", false),
+                localPlayer.CraftingKnownSealRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_SEAL_RECIPE_COUNT));
+        DrawTextLine(TextFont, Font.CR_WHITE, 344.0, 232.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize("CA_CRAFTING_FILTER_SHIELDS", false),
+                localPlayer.CraftingKnownShieldRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_SHIELD_RECIPE_COUNT));
+        DrawTextLine(TextFont, Font.CR_WHITE, 84.0, 260.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize(
+                    "CA_CRAFTING_FILTER_PROCESSING", false
+                ),
+                localPlayer.CraftingKnownProcessingRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT));
+        DrawTextLine(TextFont, Font.CR_WHITE, 344.0, 260.0,
+            String.Format("%s: %d / %d",
+                StringTable.Localize(
+                    "CA_CRAFTING_FILTER_COMPONENTS", false
+                ),
+                localPlayer.CraftingKnownComponentRecipeCount,
+                CaelumConstants.CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT));
+        if (localPlayer.CraftingTaskActive)
+        {
+            DrawCenteredText(
+                SmallFont, Font.CR_CYAN, 320.0, 282.0,
+                String.Format(
+                    "%s: %.1f / %.1f s",
+                    StringTable.Localize(localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CLEAN?"CA_CLEAN_TITLE":localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BATH?"CA_BATH_TITLE":localPlayer.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_HYGIENE?"CA_DOMESTIC_TOILET":"CA_CRAFTING_TASK_ACTIVE", false),
+                    localPlayer.CraftingTaskRemainingSeconds,
+                    localPlayer.CraftingTaskTotalSeconds
+                )
+            );
+        }
+        DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0,
+            localPlayer.CraftingTaskActive ? 304.0 : 288.0,
+            StringTable.Localize("CA_JOURNAL_CRAFTS_STATION_HELP", false));
+    }
+
+    ui String FormatCraftingRecipeName(CaelumPlayer localPlayer)
+    {
+        if(CaelumClothingData.IsRecipe(localPlayer.CraftingSelectionRecipe))return CaelumCraftingBrowser.RecipeName(localPlayer.CraftingSelectionRecipe);
+        if (!localPlayer.CraftingSelectedRecipeKnown)
+        {
+            return StringTable.Localize("CA_CRAFTING_RECIPE_UNKNOWN", false);
+        }
+        if (localPlayer.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
+            return StringTable.Localize(localPlayer.CraftingSelectionRecipe == CaelumConstants.CRAFTING_BOLT_RECIPE
+                ? "CA_CRAFTING_TEN_BOLTS" : "CA_CRAFTING_TEN_ARROWS", false);
+        if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
+        {
+            return String.Format(
+                "%s · %s",
+                CaelumDisplayNames.FormatArmorTypeName(
+                    localPlayer.CraftingSelectedArmorType,
+                    localPlayer.CraftingSelectionTier
+                ),
+                StringTable.Localize(
+                    CaelumDisplayNames.GetArmorSlotKey(
+                        localPlayer.CraftingSelectedArmorSlot
+                    ),
+                    false
+                )
+            );
+        }
+        if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD)
+        {
+            return CaelumDisplayNames.FormatShieldName(
+                localPlayer.CraftingSelectedShieldType,
+                localPlayer.CraftingSelectionTier
+            );
+        }
+        if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON)
+        {
+            return String.Format(
+                "%s · %s",
+                CaelumDisplayNames.FormatWeaponName(
+                    localPlayer.CraftingSelectedEssenceWeaponType,
+                    localPlayer.CraftingSelectionTier
+                ),
+                StringTable.Localize(
+                    GetEssenceKey(localPlayer.CraftingSelectedEssenceType),
+                    false
+                )
+            );
+        }
+        if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET)
+        {
+            return CaelumDisplayNames.FormatAmuletName(
+                localPlayer.CraftingSelectedAmuletType,
+                localPlayer.CraftingSelectionTier
+            );
+        }
+        if (localPlayer.CraftingSelectedRecipeKind
+            == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
+        {
+            return CaelumDisplayNames.FormatSealName(
+                localPlayer.CraftingSelectedSealType,
+                localPlayer.CraftingSelectionTier
+            );
+        }
+        if (localPlayer.CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
+            || localPlayer.CraftingSelectedRecipeKind
+                == CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
+        {
+            return FormatInventoryEntryName(
+                CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+                localPlayer.CraftingOutputMaterialType,
+                -1,
+                localPlayer.CraftingOutputMaterialTier,
+                CaelumConstants.EQUIPMENT_SIZE_M,
+                CaelumConstants.ESSENCE_FIRE
+            );
+        }
+        return CaelumDisplayNames.FormatCatalogueWeaponName(
+            localPlayer.CraftingSelectedWeapon,
+            localPlayer.CraftingSelectionTier
+        );
+    }
+
+    ui int GetCraftingEfficiencyPercentForIndex(int efficiencyIndex)
+    {
+        if (efficiencyIndex == 1)
+        {
+            return CaelumConstants.CRAFTING_EFFICIENCY_CAREFUL_PERCENT;
+        }
+        if (efficiencyIndex == 2)
+        {
+            return CaelumConstants.CRAFTING_EFFICIENCY_PERFECT_PERCENT;
+        }
+        return CaelumConstants.CRAFTING_EFFICIENCY_FAST_PERCENT;
+    }
+
+    ui String FormatCraftingBlueprintNodeName(
+        CaelumPlayer localPlayer, int node
+    )
+    {
+        if (localPlayer.CraftingBlueprintNodeKind[node]
+            == CaelumConstants.CRAFTING_BLUEPRINT_NODE_FINAL)
+        {
+            return StringTable.Localize(
+                "CA_JOURNAL_CRAFTING_FINAL_STEP", false
+            );
+        }
+        return FormatInventoryEntryName(
+            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
+            localPlayer.CraftingBlueprintNodeMaterialType[node],
+            -1,
+            localPlayer.CraftingBlueprintNodeMaterialTier[node],
+            CaelumConstants.EQUIPMENT_SIZE_M,
+            CaelumConstants.ESSENCE_FIRE
+        );
+    }
+
+    ui void DrawCraftingBlueprint(CaelumPlayer localPlayer)
+    {
+        int visibleRows = 4;
+        int nodeCount = localPlayer.CraftingBlueprintNodeCount;
+        if (nodeCount <= 0) { return; }
+        int selected = Clamp(
+            localPlayer.CraftingBlueprintSelectedNode,
+            0, nodeCount - 1
+        );
+        int visibleStart = Clamp(
+            selected - 1,
+            0, Max(0, nodeCount - visibleRows)
+        );
+
+        DrawTextLine(
+            SmallFont, Font.CR_GRAY, 52.0, 212.0,
+            String.Format(
+                "%s  ·  %s %d/%d",
+                StringTable.Localize(
+                    "CA_JOURNAL_CRAFTING_BREAKDOWN", false
+                ),
+                StringTable.Localize(
+                    "CA_JOURNAL_CRAFTING_SELECTED_STEP", false
+                ),
+                selected + 1,
+                nodeCount
+            )
+        );
+
+        for (int row = 0; row < visibleRows; row++)
+        {
+            int node = visibleStart + row;
+            if (node >= nodeCount) { break; }
+            int nodeKind = localPlayer.CraftingBlueprintNodeKind[node];
+            String indentation = "";
+            for (int depth = 0;
+                depth < Min(4, localPlayer.CraftingBlueprintNodeDepth[node]);
+                depth++)
+            {
+                indentation = indentation .. "  ";
+            }
+            String nodeName = FormatCraftingBlueprintNodeName(
+                localPlayer, node
+            );
+            String nodeLine;
+            if (nodeKind == CaelumConstants.CRAFTING_BLUEPRINT_NODE_RAW)
+            {
+                nodeLine = String.Format(
+                    "%s%s %d/%d",
+                    indentation,
+                    nodeName,
+                    localPlayer.CraftingBlueprintNodeOwnedUnits[node],
+                    localPlayer.CraftingBlueprintNodeUnits[node]
+                );
+            }
+            else
+            {
+                if (nodeKind
+                    == CaelumConstants.CRAFTING_BLUEPRINT_NODE_FINAL)
+                {
+                    nodeLine = String.Format(
+                        "%s%s · %s: %d u (%.3f kg) · %d%% · %d t/u · %.1f s",
+                        indentation,
+                        nodeName,
+                        StringTable.Localize(
+                            "CA_JOURNAL_CRAFTING_MATERIAL_USED", false
+                        ),
+                        localPlayer.CraftingBlueprintNodeInputUnits[node],
+                        localPlayer.CraftingBlueprintNodeInputUnits[node]
+                            * CaelumConstants.MATERIAL_UNIT_WEIGHT,
+                        GetCraftingEfficiencyPercentForIndex(
+                            localPlayer.CraftingBlueprintNodeEfficiency[node]
+                        ),
+                        localPlayer.CraftingBlueprintNodeComplexityTics[node],
+                        localPlayer.CraftingBlueprintNodeSeconds[node]
+                    );
+                }
+                else
+                {
+                    nodeLine = String.Format(
+                        "%s%s %d/%d · %d%% · %d t/u · %.1f s",
+                        indentation,
+                        nodeName,
+                        localPlayer.CraftingBlueprintNodeOwnedUnits[node],
+                        localPlayer.CraftingBlueprintNodeUnits[node],
+                        GetCraftingEfficiencyPercentForIndex(
+                            localPlayer.CraftingBlueprintNodeEfficiency[node]
+                        ),
+                        localPlayer.CraftingBlueprintNodeComplexityTics[node],
+                        localPlayer.CraftingBlueprintNodeSeconds[node]
+                    );
+                }
+            }
+            bool nodeAvailable = nodeKind
+                    == CaelumConstants.CRAFTING_BLUEPRINT_NODE_FINAL
+                || localPlayer.CraftingBlueprintNodeExecuted[node]
+                || localPlayer.CraftingBlueprintNodeOwnedUnits[node]
+                    >= localPlayer.CraftingBlueprintNodeUnits[node];
+            int color = node == selected
+                ? Font.CR_GOLD
+                : nodeAvailable ? Font.CR_GREEN : Font.CR_RED;
+            DrawTextLine(
+                SmallFont, color,
+                52.0, 228.0 + row * 14.0,
+                nodeLine
+            );
+        }
+    }
+
+    ui void DrawCraftsPage(CaelumPlayer localPlayer)
+    {
+        CaelumCraftingUI.Draw(self, localPlayer);
+    }
+
+    ui void DrawWeather(CaelumPlayer localPlayer, bool trialDate)
+    {
+        let weather = CaelumWeatherState(localPlayer.FindInventory("CaelumWeatherState"));
+        if (weather == null || weather.SourceMap != level.MapName
+            || weather.Current == null || !weather.Current.Available)
+        {
+            DrawTextLine(SmallFont, Font.CR_GRAY, 48, 176,
+                StringTable.Localize("CA_WEATHER_UNAVAILABLE", false));
+            return;
+        }
+        let sample = weather.Current;
+        DrawTextLine(SmallFont, Font.CR_CYAN, 48, 176,
+            String.Format(StringTable.Localize(trialDate ? "CA_WEATHER_CAMPAIGN" : "CA_WEATHER_LOCAL", false),
+                StringTable.Localize(CaelumWeatherRules.RegionKey(weather.Region), false),
+                sample.AirTemperatureC, sample.RelativeHumidityPercent));
+        String wind = sample.WindSpeedKmh < 0.05 ? StringTable.Localize("CA_WEATHER_CALM", false)
+            : String.Format(StringTable.Localize("CA_WEATHER_WIND_VALUE", false), sample.WindSpeedKmh,
+                StringTable.Localize(CaelumWeatherRules.WindKey(sample.WindFromDegrees), false));
+        DrawTextLine(SmallFont, Font.CR_CYAN, 48, 188,
+            String.Format(StringTable.Localize("CA_WEATHER_WIND_RAIN", false), wind, sample.PrecipitationMmPerHour,
+                StringTable.Localize(CaelumWeatherRules.ShelterKey(weather.Shelter), false)));
+        DrawTextLine(SmallFont, Font.CR_CYAN, 48, 200,weather.ContaminationAvailable
+            ? String.Format(StringTable.Localize("CA_CONTAMINATION_ENVIRONMENT",false),weather.Contamination)
+            : StringTable.Localize("CA_CONTAMINATION_ENVIRONMENT_UNKNOWN",false));
+    }
+
+    ui void DrawThermalPage(CaelumPlayer localPlayer)
+    {
+        let record=CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
+        let thermal=record!=null ? record.ThermalState : null;
+        if(thermal==null)return;
+        DrawTextLine(TextFont,Font.CR_GOLD,48,134,StringTable.Localize(
+            CaelumThermalRules.StateKey(thermal.Exposure,thermal.Toughness),false));
+        DrawTextLine(SmallFont,Font.CR_WHITE,48,156,String.Format(StringTable.Localize("CA_THERMAL_ENV",false),
+            thermal.AirC,thermal.ComfortC+thermal.Acclimation));
+        DrawTextLine(SmallFont,Font.CR_WHITE,48,172,String.Format(StringTable.Localize("CA_THERMAL_EXPOSURE",false),
+            thermal.Exposure,CaelumThermalRules.Threshold(1,thermal.Toughness)));
+        DrawTextLine(SmallFont,Font.CR_WHITE,48,188,String.Format(StringTable.Localize("CA_THERMAL_WET",false),
+            thermal.WetnessPercent,thermal.Humidity,thermal.Acclimation));
+        DrawTextLine(SmallFont,Font.CR_WHITE,48,210,String.Format(StringTable.Localize("CA_THERMAL_COST",false),
+            CaelumThermalRules.HeatCost(thermal.Exposure,thermal.Toughness),100*CaelumThermalRules.Speed(thermal.Exposure,thermal.Toughness)));
+        DrawTextLine(SmallFont,Font.CR_WHITE,48,226,String.Format(StringTable.Localize("CA_THERMAL_ATTACK",false),
+            CaelumThermalRules.ColdAttack(thermal.Exposure,thermal.Toughness,true),CaelumThermalRules.ColdAttack(thermal.Exposure,thermal.Toughness,false)));
+        DrawTextLine(SmallFont,Font.CR_WHITE,48,242,String.Format(StringTable.Localize("CA_THERMAL_DAMAGE",false),
+            thermal.Severity*(1-CaelumThermalRules.DamageResistance(thermal.Toughness))));
+        DrawTextLine(SmallFont,Font.CR_GRAY,48,268,StringTable.Localize("CA_THERMAL_EXPLAIN",false));
+        DrawTextLine(SmallFont,Font.CR_GRAY,48,284,StringTable.Localize("CA_THERMAL_HELP",false));
+    }
+
+    ui void DrawWorldPage(CaelumPlayer localPlayer)
+    {
+        DrawTextLine(SmallFont,Font.CR_CYAN,440,110,StringTable.Localize("CA_THERMAL_TOGGLE",false));
+        if(ThermalDetailsOpen){DrawThermalPage(localPlayer);return;}
+        // Dos columnas para las visitas y las salidas de la ubicación actual.
+        // La UI sólo consulta el Inventory; no descubre ni ejecuta viajes.
+        let record = CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
+        int locationId = CaelumWorldCatalogue.LocationForMap(level.MapName);
+        let clock = CaelumWorldClock(localPlayer.FindInventory("CaelumWorldClock"));
+        DrawTextLine(TextFont, Font.CR_WHITE, 48, 132,
+            String.Format(StringTable.Localize("CA_WORLD_CURRENT", false),
+                StringTable.Localize(CaelumWorldCatalogue.LocationNameKey(locationId), false)));
+        DrawTextLine(SmallFont, Font.CR_CYAN, 48, 148,
+            clock == null ? StringTable.Localize("CA_WORLD_CLOCK_NONE", false)
+                : String.Format(StringTable.Localize(CaelumWorldCatalogue.IsLimboMap(level.MapName)
+                    ? "CA_WORLD_CLOCK_LIMBO" : "CA_WORLD_CLOCK_RECORDED", false),
+                    CaelumWorldClock.FormatStamp(CaelumWorldCatalogue.IsLimboMap(level.MapName)?clock.LocalDays():clock.CompletedDays,
+                        CaelumWorldCatalogue.IsLimboMap(level.MapName)?clock.LocalTics():clock.DayTics)));
+        let calendar = CaelumCalendarState(localPlayer.FindInventory("CaelumCalendarState"));
+        int dateSerial = calendar == null ? -1 : calendar.DateSerial(clock, calendar.TrialDate);
+        String calendarText = StringTable.Localize("CA_CALENDAR_UNSET", false);
+        if (dateSerial >= 0)
+            calendarText = String.Format(StringTable.Localize(calendar.TrialDate
+                    ? "CA_CALENDAR_TRIAL" : "CA_CALENDAR_DATE", false),
+                calendar.FormatDate(clock, calendar.TrialDate), StringTable.Localize(CaelumCalendarRules.SeasonKey(
+                    CaelumCalendarRules.SouthernSeasonForMonth(
+                        CaelumCalendarRules.MonthForSerial(dateSerial))), false));
+        else if (calendar != null && calendar.Configured)
+            calendarText = StringTable.Localize("CA_CALENDAR_OUT_OF_RANGE", false);
+        DrawTextLine(SmallFont, Font.CR_CYAN, 48, 160, calendarText);
+        DrawWeather(localPlayer, calendar != null && calendar.TrialDate);
+        DrawTextLine(SmallFont, Font.CR_GOLD, 48, 210, StringTable.Localize("CA_WORLD_VISITED", false));
+        int visits = 0;
+        if(record!=null)for(int id=1;id<CaelumWorldCatalogue.LOCATION_DEFINED_COUNT;id++)
+            if(record.WorldLocationVisited[id])visits++;
+        int rowStep=visits>5?7:12;
+        int row = 0;
+        for (int id = 1; id < CaelumWorldCatalogue.LOCATION_DEFINED_COUNT; id++)
+        {
+            if (record == null || !record.WorldLocationVisited[id]) continue;
+            DrawTextLine(SmallFont, id == locationId ? Font.CR_GOLD : Font.CR_WHITE, 56, 224+row*rowStep,
+                StringTable.Localize(CaelumWorldCatalogue.LocationNameKey(id), false));
+            row++;
+        }
+        if (row == 0) DrawTextLine(SmallFont, Font.CR_GRAY, 56, 224,
+            StringTable.Localize("CA_WORLD_NO_VISITS", false));
+        DrawTextLine(SmallFont, Font.CR_GOLD, 310, 210,
+            StringTable.Localize("CA_WORLD_LOCAL_CONNECTIONS", false));
+        row = 0;
+        for (int id = 1; id < CaelumWorldCatalogue.CONNECTION_DEFINED_COUNT; id++)
+        {
+            if (record == null || !record.WorldConnectionKnown[id]
+                || (id != CaelumWorldCatalogue.CONNECTION_RETURN && !CaelumWorldCatalogue.IsTravelConnection(id))
+                || CaelumWorldCatalogue.ConnectionOrigin(id) != locationId) continue;
+            DrawTextLine(SmallFont, Font.CR_WHITE, 318, 224+row*22,
+                StringTable.Localize(CaelumWorldCatalogue.ConnectionNameKey(id), false));
+            DrawTextLine(SmallFont, Font.CR_GRAY, 318, 234+row*22,
+                StringTable.Localize(record.WorldConnectionTraversed[id]
+                    ? "CA_WORLD_TRAVERSED" : "CA_WORLD_KNOWN", false));
+            row++;
+        }
+        if (row == 0) DrawTextLine(SmallFont, Font.CR_GRAY, 318, 224,
+            StringTable.Localize("CA_WORLD_NO_LOCAL_CONNECTIONS", false));
+        if (locationId == CaelumWorldCatalogue.LOCATION_MANSION && row > 0)
+            DrawTextLine(SmallFont, Font.CR_GRAY, 318, 250,
+                String.Format(StringTable.Localize("CA_WORLD_DESTINATION", false),
+                    StringTable.Localize(record.WorldLocationVisited[2]
+                        ? "CA_MAP02_SEWER_NAME" : "CA_WORLD_UNDISCOVERED", false)));
+        let journey = CaelumJourneyState(localPlayer.FindInventory("CaelumJourneyState"));
+        if (journey != null)
+            DrawTextLine(SmallFont, Font.CR_CYAN, 48, 286,
+                String.Format(StringTable.Localize("CA_JOURNEY_LAST", false), journey.Sequence,
+                    StringTable.Localize(CaelumJourneyRules.ModeKey(journey.TravelMode), false),
+                    StringTable.Localize(CaelumJourneyState.StatusKey(journey.Status), false)));
+        if (record != null && record.WorldConnectionTraversed[CaelumWorldCatalogue.CONNECTION_RETURN])
+            DrawTextLine(SmallFont, Font.CR_GRAY, 48, 298, StringTable.Localize("CA_WORLD_RETURN_RECORDED", false));
+        DrawTextLine(SmallFont, Font.CR_GRAY, 48, 310,
+            StringTable.Localize(locationId >= 2 ? "CA_CARAVAN_WORLD_HELP" : "CA_WORLD_USE_EXIT", false));
+    }
+
+    ui void DrawPlannedPage(String key)
+    {
+        DrawCenteredText(TextFont, Font.CR_WHITE, 320.0, 174.0,
+            StringTable.Localize(key, false));
+        DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, 210.0,
+            StringTable.Localize("CA_JOURNAL_NO_FAKE_DATA", false));
+    }
+
+    ui void DrawRest(CaelumPlayer localPlayer, CaelumRestState rest)
+    {
+        CaelumPresentation.MenuBackground(0x05070A,0.12);
+        DrawPanel(16.0, 12.0, 608.0, 116.0);
+        DrawCenteredText(TextFont, Font.CR_GOLD, 320, 18,
+            StringTable.Localize(rest.Exhaustion ? "CA_EXHAUSTION_TITLE" : CaelumRestRules.ModeKey(rest.Mode), false));
+        let clock = CaelumWorldClock(localPlayer.FindInventory("CaelumWorldClock"));
+        let calendar = CaelumCalendarState(localPlayer.FindInventory("CaelumCalendarState"));
+        if (calendar != null)
+            DrawCenteredText(SmallFont, Font.CR_CYAN, 170, 32,
+                CaelumWorldCatalogue.IsLimboMap(level.MapName)?CaelumWorldClock.FormatStamp(clock.LocalDays(),clock.LocalTics()):calendar.FormatDate(clock));
+        int minuteTics = CaelumWorldClock.TicsPerHour() / 60;
+        int remainingMinutes = (Max(0, rest.RequestedTics-rest.ElapsedTics)+minuteTics-1) / minuteTics;
+        DrawCenteredText(SmallFont, Font.CR_WHITE, 460, 32,
+            rest.Untimed ? StringTable.Localize("CA_REST_UNTIMED",false)
+                : String.Format(StringTable.Localize("CA_REST_REMAINING", false), remainingMinutes));
+        DrawCenteredText(SmallFont, Font.CR_WHITE, 320, 45,
+            String.Format(StringTable.Localize("CA_REST_RESOURCES", false),
+                localPlayer.CurrentSleep, localPlayer.CurrentHunger, localPlayer.CurrentThirst));
+        DrawCenteredText(SmallFont, Font.CR_GOLD, 320, 74,
+            StringTable.Localize(CaelumExhaustion.Locked(localPlayer) ? "CA_EXHAUSTION_LOCK" : "CA_REST_STOP_HELP", false));
+        DrawCenteredText(SmallFont, Font.CR_GRAY, 320, 87,
+            StringTable.Localize(rest.ViewCamera != null ? "CA_REST_CAMERA_HELP" : "CA_REST_PAUSE_HELP", false));
+        int factor = rest.Furniture != null ? rest.Furniture.ComfortFactor() : 1;
+        if(localPlayer.CurrentHunger<=CaelumExhaustion.RELEASE_ABOVE
+            || localPlayer.CurrentThirst<=CaelumExhaustion.RELEASE_ABOVE)factor=1;
+        DrawCenteredText(SmallFont, Font.CR_CYAN, 320, 58,
+            String.Format(StringTable.Localize("CA_REST_COMFORT", false), factor, factor));
+        let fast = CaelumTimeAdvanceState(localPlayer.FindInventory("CaelumTimeAdvanceState"));
+        DrawCenteredText(SmallFont, Font.CR_CYAN, 320, 100,
+            StringTable.Localize(rest.Untimed
+                ? fast!=null && fast.Active ? "CA_FAST_LIMBO_ON" : "CA_FAST_LIMBO_OFF"
+                : fast!=null && fast.Active ? "CA_FAST_HELP_ON" : "CA_FAST_HELP_OFF", false));
+        DrawCenteredText(SmallFont, Font.CR_GOLD, 320, 113,
+            CaelumDiningSession.HasMealSupport(localPlayer)
+                ? String.Format(StringTable.Localize("CA_TABLE_AUTO_HELP",false),rest.AutoEating?"ON":"OFF",rest.AutoDrinking?"ON":"OFF")
+                : StringTable.Localize("CA_SLEEP_LUCIDITY_HELP", false));
+        if(CaelumDiningSession.HasMealSupport(localPlayer))
+            DrawCenteredText(SmallFont, Font.CR_GRAY, 320, 126, StringTable.Localize("CA_TABLE_RESERVES",false));
+    }
+
+    ui void DrawCityTrade(CaelumPlayer user)
+    {
+        let trade=user.CityTrade;
+        CaelumPresentation.MenuBackground(0x05070A,0.92);
+        DrawPanel(16,12,608,336);
+        DrawCenteredText(TitleFont,Font.CR_GOLD,320,20,StringTable.Localize(user.PalomoMerchantTitleKey,false));
+        DrawTextLine(TextFont,Font.CR_GOLD,42,60,StringTable.Localize(trade.Selling ? "CA_MERCHANT_MODE_SELL" : "CA_MERCHANT_MODE_BUY",false));
+        bool library=trade.Vendor.Category==CaelumShopCatalogue.LIBRARY && !trade.Selling;
+        if(library)DrawTextLine(SmallFont,Font.CR_CYAN,175,64,String.Format("%s: %s",StringTable.Localize("CA_LIBRARY_CATEGORY",false),StringTable.Localize(GetCraftingFilterKey(trade.CategoryFilter),false)));
+        DrawTextLine(InventoryFont,Font.CR_WHITE,42,86,String.Format("%s: %.0f c",StringTable.Localize("CA_PALOMO_MERCHANT_YOUR_MONEY",false),user.HUDTotalMoneyCopperValue));
+        DrawTextLine(InventoryFont,Font.CR_WHITE,355,86,String.Format("%s: %d c",StringTable.Localize("CA_MERCHANT_CASH",false),user.PalomoMerchantWalletCopper));
+        DrawTextLine(SmallFont,Font.CR_GRAY,42,111,StringTable.Localize("CA_PALOMO_MERCHANT_ITEM",false));
+        DrawTextLine(SmallFont,Font.CR_GRAY,461,111,StringTable.Localize("CA_PALOMO_MERCHANT_STOCK",false));
+        DrawTextLine(SmallFont,Font.CR_GRAY,538,111,StringTable.Localize("CA_PALOMO_MERCHANT_UNIT",false));
+        int first=(trade.Selection/5)*5;
+        for(int i=first;i<Min(first+5,trade.Rows.Size());i++)
+        {
+            double y=133+(i-first)*28;
+            int color=i==trade.Selection ? Font.CR_GOLD : Font.CR_WHITE;
+            String label=(i==trade.Selection ? "> " : "  ")..trade.Names[i];
+            // Dividir por anchura real de fuente, sin perder talla ni esencia.
+            int cut=label.Length();
+            while(cut>0 && SmallFont.StringWidth(label.Left(cut))>400)cut--;
+            if(cut<int(label.Length()))while(cut>0 && label.Mid(cut,1)!=" ")cut--;
+            DrawTextLine(SmallFont,color,42,y,label.Left(cut));
+            if(cut<int(label.Length()))DrawTextLine(SmallFont,color,54,y+12,label.Mid(cut+1));
+            DrawTextLine(InventoryFont,color,480,y,String.Format("%d",trade.Quantities[i]));
+            DrawTextLine(InventoryFont,color,538,y,String.Format("%d c",trade.Prices[i]));
+        }
+        if(trade.Rows.Size()==0)DrawCenteredText(InventoryFont,Font.CR_GRAY,320,160,StringTable.Localize("CA_PALOMO_MERCHANT_NOTHING_TO_SELL",false));
+        DrawTextLine(InventoryFont,Font.CR_CYAN,42,280,String.Format("%s: %d | %s: %d c",StringTable.Localize("CA_PALOMO_MERCHANT_QUANTITY",false),user.PalomoMerchantSelectedQuantity,
+            StringTable.Localize("CA_PALOMO_MERCHANT_TOTAL",false),user.PalomoMerchantSelectedLotPrice));
+        DrawTextLine(SmallFont,Font.CR_GRAY,543,280,String.Format("%d/%d",trade.Rows.Size()==0 ? 0 : trade.Selection+1,trade.Rows.Size()));
+        DrawCenteredText(InventoryFont,Font.CR_GOLD,320,306,StringTable.Localize(GetPalomoMerchantActionKey(user.LastPalomoMerchantAction),false));
+        DrawCenteredText(SmallFont,Font.CR_GRAY,320,329,StringTable.Localize(library?"CA_LIBRARY_HELP":"CA_REP_TRIAL_TRADE_HELP",false));
+    }
+
+    ui void DrawPalomoMerchant(CaelumPlayer localPlayer)
+    {
+        if(localPlayer.CityTrade!=null){DrawCityTrade(localPlayer);return;}
+        bool legacyMerchant = localPlayer.PalomoMerchantTitleKey.Length() == 0
+            || localPlayer.PalomoMerchantTitleKey == "CA_PALOMO_MERCHANT_TITLE";
+        CaelumPresentation.MenuBackground(0x05070A,0.92);
+        DrawPanel(16.0, 12.0, 608.0, 336.0);
+        DrawCenteredText(
+            TitleFont, Font.CR_GOLD, 320.0, 20.0,
+            StringTable.Localize(localPlayer.PalomoMerchantTitleKey.Length() > 0
+                ? localPlayer.PalomoMerchantTitleKey : "CA_PALOMO_MERCHANT_TITLE", false)
+        );
+        if (localPlayer.PalomoMerchantDiscountGranted || localPlayer.PalomoMerchantReputationDiscount)
+        {
+            DrawCenteredText(
+                SmallFont, Font.CR_CYAN, 320.0, 44.0,
+                StringTable.Localize(
+                    localPlayer.PalomoMerchantReputationDiscount && !localPlayer.PalomoMerchantDiscountGranted
+                        ? "CA_REP_TRADE_DISCOUNT" : "CA_PALOMO_MERCHANT_DISCOUNT_ACTIVE", false
+                )
+            );
+        }
+
+        String modeKey = localPlayer.PalomoMerchantMode
+                == CaelumConstants.PALOMO_MERCHANT_MODE_SELL
+            ? (legacyMerchant ? "CA_PALOMO_MERCHANT_MODE_SELL" : "CA_MERCHANT_MODE_SELL")
+            : (legacyMerchant ? "CA_PALOMO_MERCHANT_MODE_BUY" : "CA_MERCHANT_MODE_BUY");
+        DrawTextLine(
+            TextFont, Font.CR_GOLD, 54.0, 62.0,
+            String.Format(
+                "%s: %s",
+                StringTable.Localize("CA_PALOMO_MERCHANT_MODE", false),
+                StringTable.Localize(modeKey, false)
+            )
+        );
+        DrawTextLine(
+            InventoryFont, Font.CR_WHITE, 54.0, 88.0,
+            String.Format(
+                "%s: %.0f c",
+                StringTable.Localize("CA_PALOMO_MERCHANT_YOUR_MONEY", false),
+                localPlayer.HUDTotalMoneyCopperValue
+            )
+        );
+        DrawTextLine(
+            InventoryFont, Font.CR_WHITE, 360.0, 88.0,
+            String.Format(
+                "%s: %d c",
+                StringTable.Localize(legacyMerchant ? "CA_PALOMO_MERCHANT_CASH" : "CA_MERCHANT_CASH", false),
+                localPlayer.PalomoMerchantWalletCopper
+            )
+        );
+
+        DrawTextLine(InventoryFont, Font.CR_GRAY, 54.0, 116.0,
+            StringTable.Localize("CA_PALOMO_MERCHANT_ITEM", false));
+        DrawTextLine(InventoryFont, Font.CR_GRAY, 346.0, 116.0,
+            StringTable.Localize("CA_PALOMO_MERCHANT_STOCK", false));
+        DrawTextLine(InventoryFont, Font.CR_GRAY, 432.0, 116.0,
+            StringTable.Localize("CA_PALOMO_MERCHANT_YOURS", false));
+        DrawTextLine(InventoryFont, Font.CR_GRAY, 518.0, 116.0,
+            StringTable.Localize("CA_PALOMO_MERCHANT_UNIT", false));
+
+        for (int visibleRow = 0;
+            visibleRow < localPlayer.PalomoMerchantVisibleItemCount;
+            visibleRow++)
+        {
+            int merchantItem = localPlayer.PalomoMerchantVisibleItems[visibleRow];
+            bool selected = merchantItem
+                == localPlayer.PalomoMerchantSelection;
+            double rowY = 142.0 + visibleRow * 27.0;
+            String itemName = StringTable.Localize(
+                GetPalomoMerchantItemKey(merchantItem), false
+            );
+            DrawTextLine(
+                InventoryFont,
+                selected ? Font.CR_GOLD : Font.CR_WHITE,
+                54.0, rowY,
+                (selected ? "> " : "  ") .. itemName
+            );
+            DrawTextLine(
+                InventoryFont, Font.CR_WHITE, 366.0, rowY,
+                String.Format("%d", localPlayer.PalomoMerchantStock[merchantItem])
+            );
+            DrawTextLine(
+                InventoryFont, Font.CR_WHITE, 452.0, rowY,
+                String.Format(
+                    "%d", localPlayer.PalomoMerchantPlayerOwned[merchantItem]
+                )
+            );
+            DrawTextLine(
+                InventoryFont, Font.CR_WHITE, 518.0, rowY,
+                String.Format(
+                    "%d c",
+                    CaelumEconomyRules.GetPalomoMerchantLotPrice(
+                        merchantItem, 1, localPlayer.PalomoMerchantMode,
+                        localPlayer.PalomoMerchantDiscountGranted || localPlayer.PalomoMerchantReputationDiscount, localPlayer.PalomoMerchantFactionPriceFactor
+                    )
+                )
+            );
+        }
+        if (localPlayer.PalomoMerchantVisibleItemCount <= 0)
+        {
+            DrawCenteredText(
+                InventoryFont, Font.CR_GRAY, 320.0, 154.0,
+                StringTable.Localize(
+                    "CA_PALOMO_MERCHANT_NOTHING_TO_SELL", false
+                )
+            );
+        }
+
+        DrawTextLine(
+            InventoryFont, Font.CR_CYAN, 54.0, 282.0,
+            String.Format(
+                "%s: %d  |  %s: %d c",
+                StringTable.Localize("CA_PALOMO_MERCHANT_QUANTITY", false),
+                localPlayer.PalomoMerchantSelectedQuantity,
+                StringTable.Localize("CA_PALOMO_MERCHANT_TOTAL", false),
+                localPlayer.PalomoMerchantSelectedLotPrice
+            )
+        );
+        DrawCenteredText(
+            InventoryFont,
+            localPlayer.LastPalomoMerchantAction
+                    == CaelumConstants.PALOMO_MERCHANT_ACTION_NONE
+                ? Font.CR_GRAY : Font.CR_GOLD,
+            320.0, 306.0,
+            StringTable.Localize(
+                GetPalomoMerchantActionKey(
+                    localPlayer.LastPalomoMerchantAction
+                ),
+                false
+            )
+        );
+        DrawCenteredText(
+            SmallFont, Font.CR_GRAY, 320.0, 329.0,
+            StringTable.Localize(legacyMerchant ? "CA_PALOMO_MERCHANT_HELP" : "CA_REP_TRIAL_TRADE_HELP", false)
+        );
+    }
+
+    ui void DrawJourney(CaelumJourneyPlan plan)
+    {
+        let available = plan.Available;
+        let needed = plan.Needed;
+        CaelumPresentation.MenuBackground(0x05070A,0.92);
+        DrawPanel(16, 12, 608, 336);
+        DrawCenteredText(TitleFont, Font.CR_GOLD, 320, 24, StringTable.Localize("CA_JOURNEY_PLAN", false));
+        String destination = StringTable.Localize(CaelumWorldCatalogue.LocationNameKey(
+            CaelumWorldCatalogue.ConnectionDestination(plan.ConnectionId)), false);
+        DrawCenteredText(TextFont, Font.CR_WHITE, 320, 63, destination .. " | "
+            .. StringTable.Localize(CaelumJourneyRules.ModeKey(plan.TravelMode),false));
+        DrawTextLine(SmallFont, Font.CR_GRAY, 42, 89, String.Format(StringTable.Localize("CA_JOURNEY_PACE_LINE", false),
+            CaelumJourneyRules.DistanceKm(plan.ConnectionId), plan.SpeedKmh));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 42, 111, String.Format(StringTable.Localize("CA_JOURNEY_TIME_LINE", false),
+            CaelumJourneyRules.Duration(plan.TotalTics())));
+        DrawTextLine(SmallFont, Font.CR_GRAY, 42, 129, String.Format(StringTable.Localize(
+            plan.TravelMode == CaelumJourneyState.MODE_SHIP ? "CA_JOURNEY_ONBOARD_REST" : "CA_JOURNEY_REST_LINE", false),
+            CaelumJourneyRules.Duration(plan.PlannedWalkTics), CaelumJourneyRules.Duration(plan.PlannedSleepTics)));
+        DrawTextLine(SmallFont, Font.CR_GOLD, 42, 154, StringTable.Localize("CA_JOURNEY_STOCK_TITLE", false));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 42, 172, String.Format(StringTable.Localize("CA_JOURNEY_FOOD_LINE", false),
+            needed.FoodSpent, available.FoodStock, available.FoodSpent));
+        DrawTextLine(SmallFont, Font.CR_WHITE, 42, 190, String.Format(StringTable.Localize("CA_JOURNEY_WATER_LINE", false),
+            needed.WaterSpent, available.WaterStock, available.WaterSpent));
+        DrawTextLine(SmallFont, Font.CR_GRAY, 42, 208, String.Format(StringTable.Localize("CA_JOURNEY_LITERS_LINE", false),
+            available.ContainerSpent, available.ContainerStock));
+        DrawTextLine(SmallFont, Font.CR_GRAY, 42, 226, StringTable.Localize(
+            plan.TravelMode == CaelumJourneyState.MODE_SHIP
+                ? available.Bag ? "CA_JOURNEY_SHIP_BAG" : "CA_JOURNEY_SHIP_DECK"
+                : available.Bag ? "CA_JOURNEY_BAG" : "CA_JOURNEY_GROUND", false));
+        DrawTextLine(SmallFont, available.Health > 0 ? Font.CR_WHITE : Font.CR_RED, 42, 247,
+            available.Health > 0 ? String.Format(StringTable.Localize("CA_JOURNEY_END_LINE", false),
+                available.Hunger, available.Thirst, available.Sleep, 100.0 * available.Health / available.MaxHealth)
+                : String.Format(StringTable.Localize("CA_JOURNEY_FATAL", false), CaelumJourneyRules.Duration(available.ElapsedTics)));
+        DrawTextLine(SmallFont, Font.CR_GRAY, 42, 271, StringTable.Localize(
+            plan.TravelMode == CaelumJourneyState.MODE_SHIP ? "CA_JOURNEY_SHIP_NOTE"
+                : plan.TravelMode == CaelumJourneyState.MODE_CART ? "CA_JOURNEY_CART_NOTE" : "CA_JOURNEY_FOOT_NOTE", false));
+        DrawCenteredText(SmallFont, available.Health > 0 ? Font.CR_GOLD : Font.CR_RED, 320, 310,
+            StringTable.Localize(available.Health > 0 ? "CA_JOURNEY_CONFIRM" : "CA_JOURNEY_CONFIRM_FATAL", false));
+    }
+
+    override bool InputProcess(InputEvent e)
+    {
+        if(menuactive!=0)return false;
+        return PanelKey(e.Type,e.KeyScan,e.KeyChar,e.KeyString);
+    }
+
+    ui bool AwakeningKey(CaelumPlayer user,int type,int scan,String keyString)
+    {
+        let awakening=CaelumAwakeningMenu.Read(user);
+        if(awakening==null || !awakening.Opened)return false;
+        if(type!=InputEvent.Type_KeyDown)return true;
+        if(scan==InputEvent.Key_Enter || scan==InputEvent.Key_Pad_A)SendNetworkEvent("ca_awaken_action",1);
+        else if(scan==InputEvent.Key_RightArrow || scan==InputEvent.Key_DownArrow)SendNetworkEvent("ca_awaken_action",2);
+        else if(scan==InputEvent.Key_LeftArrow || scan==InputEvent.Key_UpArrow)SendNetworkEvent("ca_awaken_action",3);
+        else if(scan==InputEvent.Key_Tab || scan==InputEvent.Key_Pad_B || keyString~=="q")SendNetworkEvent("ca_awaken_action",0);
+        return true;
+    }
+
+    ui bool PanelKey(int type,int scan,int character,String keyString,bool physical=true)
+    {
+        CaelumPlayer localPlayer = consoleplayer >= 0
+            ? CaelumPlayer(players[consoleplayer].mo) : null;
+        if(scan!=InputEvent.Key_Grave && scan!=InputEvent.Key_Escape && scan!=InputEvent.Key_Pad_Start
+            && AwakeningKey(localPlayer,type,scan,keyString))return true;
+        let plan = localPlayer == null ? null : CaelumJourneyPlan(localPlayer.FindInventory("CaelumJourneyPlan"));
+        if (plan != null && plan.Open && CaelumLiveMenu.InputAllowed())
+        {
+            // Liberar teclas siempre llega al motor: no deja Use/marcha trabados.
+            if (type != InputEvent.Type_KeyDown || scan == InputEvent.Key_Grave
+                || scan == InputEvent.Key_Escape || scan == InputEvent.Key_Pad_Start) return false;
+            if (keyString ~== "q" || character == 113 || character == 81 || scan == InputEvent.Key_Tab
+                || scan == InputEvent.Key_Pad_B)
+                SendNetworkEvent("ca_journey_cancel");
+            else if (scan == InputEvent.Key_Enter || scan == InputEvent.Key_Pad_A)
+                SendNetworkEvent("ca_journey_confirm");
+            return true;
+        }
+        let activeRest = localPlayer == null ? null
+            : CaelumRestState(localPlayer.FindInventory("CaelumRestState"));
+        bool restOpen = activeRest != null && activeRest.Status == CaelumRestRules.STATUS_ACTIVE;
+        bool craftOpen = localPlayer != null && localPlayer.CraftingMenuOpen;
+        if(localPlayer!=null && CaelumTimeSkipPanel.Key(type,scan,character,keyString,localPlayer))return true;
+        if(physical && CaelumLiveMenu.InputAllowed() && type==InputEvent.Type_KeyDown
+            && CaelumInputHints.Matches(scan,"ca_journal_toggle") && (IsJournalOpen() || restOpen))
+        {
+            ToggleJournal();return true;
+        }
+        if(physical && menuactive!=Menu.Off && CaelumLiveMenu.InputAllowed() && type==InputEvent.Type_KeyDown && CaelumInputHints.Matches(scan,"ca_time_skip"))
+        {SendNetworkEvent("ca_skip_open");return true;}
+        if (CaelumLiveMenu.InputAllowed() && (restOpen || craftOpen) && type == InputEvent.Type_KeyDown
+            && (character == 116 || character == 84 || keyString ~== "t"))
+        { SendNetworkEvent("ca_time_fast"); return true; }
+        if (CaelumLiveMenu.InputAllowed() && restOpen && type == InputEvent.Type_KeyDown)
+        {
+            if (character == 102 || character == 70 || keyString ~== "f")
+            { SendNetworkEvent("ca_table_eat"); return true; }
+            if (character == 103 || character == 71 || keyString ~== "g")
+            { SendNetworkEvent("ca_table_drink"); return true; }
+        }
+        if (CaelumLiveMenu.InputAllowed() && activeRest != null && activeRest.Status == CaelumRestRules.STATUS_ACTIVE
+            && type == InputEvent.Type_KeyDown)
+        {
+            if (character == 113 || character == 81 || keyString ~== "q"
+                || scan == InputEvent.Key_Pad_B)
+            {
+                SendNetworkEvent("ca_rest_cancel");
+                return true;
+            }
+            // Abrir el Diario levanta al personaje. Escape conserva la pausa
+            // nativa; las liberaciones de Use siempre llegan al motor.
+            if (scan == InputEvent.Key_Tab)
+            { ToggleJournal(); return true; }
+        }
+        if (localPlayer != null && localPlayer.PalomoMerchantMenuOpen)
+        {
+            if (type != InputEvent.Type_KeyDown
+                && type != InputEvent.Type_KeyUp)
+            {
+                return false;
+            }
+            if (scan == InputEvent.Key_Grave
+                || scan == InputEvent.Key_Pad_Start)
+            {
+                return false;
+            }
+            if (type == InputEvent.Type_KeyUp) { return true; }
+
+            if (scan == InputEvent.Key_Escape
+                || scan == InputEvent.Key_Tab
+                || scan == InputEvent.Key_Pad_B
+                || character == 113 || character == 81
+                || keyString ~== "q")
+            {
+                SendNetworkEvent("ca_palomo_merchant_close");
+                SendNetworkEvent("ca_journal_menu_select_sound");
+            }
+            else if (scan == InputEvent.Key_DownArrow
+                || scan == InputEvent.Key_Pad_DPad_Down)
+            {
+                SendNetworkEvent("ca_palomo_merchant_next");
+                SendNetworkEvent("ca_journal_menu_move_sound");
+            }
+            else if (scan == InputEvent.Key_UpArrow
+                || scan == InputEvent.Key_Pad_DPad_Up)
+            {
+                SendNetworkEvent("ca_palomo_merchant_previous");
+                SendNetworkEvent("ca_journal_menu_move_sound");
+            }
+            else if (scan == InputEvent.Key_LeftArrow
+                || scan == InputEvent.Key_Pad_DPad_Left)
+            {
+                SendNetworkEvent("ca_palomo_merchant_quantity_previous");
+                SendNetworkEvent("ca_journal_menu_move_sound");
+            }
+            else if (scan == InputEvent.Key_RightArrow
+                || scan == InputEvent.Key_Pad_DPad_Right)
+            {
+                SendNetworkEvent("ca_palomo_merchant_quantity_next");
+                SendNetworkEvent("ca_journal_menu_move_sound");
+            }
+            else if (scan == InputEvent.Key_Space
+                || scan == InputEvent.Key_Pad_X)
+            {
+                SendNetworkEvent("ca_palomo_merchant_mode");
+                SendNetworkEvent("ca_journal_menu_move_sound");
+            }
+            else if (scan == InputEvent.Key_Enter
+                || scan == InputEvent.Key_Pad_A)
+            {
+                SendNetworkEvent("ca_palomo_merchant_transact");
+            }
+            return true;
+        }
+        if (!IsJournalOpen())
+        {
+            return false;
+        }
+        if (GetJournalPage() == 2 && CaelumScheduleCalendar.Key(type,scan,character,keyString,localPlayer)) return true;
+        return JournalKey(type,scan,character,keyString,localPlayer);
+    }
+
+    ui bool JournalKey(int type,int scan,int character,String keyString,CaelumPlayer localPlayer)
+    {
+        if (type != InputEvent.Type_KeyDown
+            && type != InputEvent.Type_KeyUp)
+        {
+            return false;
+        }
+        if (scan == InputEvent.Key_Grave || scan == InputEvent.Key_Escape
+            || scan == InputEvent.Key_Pad_Start)
+        {
+            return false;
+        }
+        // Resolver X de Mundo antes del latch de abandono de Misiones: la
+        // liberación llegará cuando el Diario ya esté cerrado.
+        if (GetJournalPage() == 2 && (character == 100 || character == 68
+            || keyString ~== "d" || scan == InputEvent.Key_Pad_X))
+        {
+            if (type == InputEvent.Type_KeyDown)
+            {
+                SetJournalOpen(false);
+                SendNetworkEvent("ca_rest_trial");
+            }
+            return true;
+        }
+        bool trackKey=character==116 || character==84 || keyString~=="t" || scan==InputEvent.Key_Backspace;
+        if(type==InputEvent.Type_KeyUp && QuestTrackHeld && (trackKey || scan==QuestTrackScan))
+        {QuestTrackHeld=false;return true;}
+        if(GetJournalPage()==4 && trackKey)
+        {
+            if(type==InputEvent.Type_KeyDown && !QuestTrackHeld)
+            {
+                QuestTrackHeld=true;QuestTrackScan=scan;
+                int quest=GetVisibleQuestId(localPlayer);
+                if(quest>=0)SendNetworkEvent("ca_quest_track",quest,CaelumQuestTracking.Selected(localPlayer,quest)?0:1);
+            }
+            return true;
+        }
+        if(type==InputEvent.Type_KeyUp && FermentationDiscardHeld && scan==FermentationDiscardScan)
+        {FermentationDiscardHeld=false;return true;}
+        if(GetJournalPage()==3 && localPlayer!=null && CaelumFermentationMenu.Active(localPlayer)
+            && (character==99 || character==67 || keyString~=="c"))
+        {
+            // Una pulsación mantenida no confirma el descarte por repetición.
+            if(type==InputEvent.Type_KeyDown && !FermentationDiscardHeld)
+            {FermentationDiscardHeld=true;FermentationDiscardScan=scan;CaelumFermentationUI.Send(self,localPlayer,2);}
+            return true;
+        }
+        bool abandonKey = character == 103 || character == 71 || keyString ~== "g"
+            || scan == InputEvent.Key_Pad_X;
+        let abandonScan = CVar.GetCVar("ca_journal_quest_abandon_scan", players[consoleplayer]);
+        if (abandonKey || (type == InputEvent.Type_KeyUp && abandonScan != null
+            && scan == abandonScan.GetInt()))
+        {
+            let held = CVar.GetCVar("ca_journal_quest_abandon_held", players[consoleplayer]);
+            if (held != null)
+            {
+                if (type == InputEvent.Type_KeyUp) { held.SetBool(false); return true; }
+                if (held.GetBool()) return true;
+                held.SetBool(true);
+                if (abandonScan != null) abandonScan.SetInt(scan);
+            }
+        }
+        if (type == InputEvent.Type_KeyUp)
+        {
+            if (scan == InputEvent.Key_Enter || scan == InputEvent.Key_Pad_A)
+            {
+                let held = CVar.GetCVar("ca_journal_tarot_select_held", players[consoleplayer]);
+                if (held != null) held.SetBool(false);
+            }
+            // Use abre Oficios antes de que se suelte la tecla. El motor
+            // necesita recibir esa liberación para aceptar el próximo uso
+            // después de Q; consumirla aquí deja +use retenido internamente.
+            return !(Bindings.GetBinding(scan) ~== "+use");
+        }
+
+        int currentPage = GetJournalPage();
+        if(currentPage==0 && (keyString~=="a" || character==97 || character==65))
+        {SendNetworkEvent("ca_awaken_open");return true;}
+        if((currentPage==1 || currentPage==2) && (keyString ~== "t" || character==116 || character==84))
+        {ThermalDetailsOpen=!ThermalDetailsOpen;return true;}
+        bool craftingSession = currentPage == 3
+            && localPlayer != null && localPlayer.CraftingMenuOpen;
+
+        // Las solapas siempre son accesibles, aun cuando las flechas controlan
+        // las misiones o las opciones contextuales de una estación abierta.
+        if (currentPage == 2 && (keyString ~== "f" || character == 102 || character == 70
+            || scan == InputEvent.Key_Pad_RTrigger))
+        { CaelumScheduleCalendar.Open(localPlayer); return true; }
+        if (currentPage == 4 && (keyString ~== "c" || character == 99 || character == 67
+            || scan == InputEvent.Key_Pad_RTrigger))
+        { CycleQuestFilter(true); return true; }
+        if (currentPage == 4 && (keyString ~== "v" || character == 118 || character == 86
+            || scan == InputEvent.Key_Pad_LTrigger))
+        { CycleQuestFilter(false); return true; }
+        if (HandleJournalNavigation(scan)) return true;
+        if (currentPage == 3 && CaelumCraftingUI.Key(self,localPlayer,scan,character)) return true;
+        if (currentPage == 6 && (scan == InputEvent.Key_UpArrow || scan == InputEvent.Key_DownArrow
+            || scan == InputEvent.Key_Pad_DPad_Up || scan == InputEvent.Key_Pad_DPad_Down))
+        {
+            CaelumCraftingUI.Scroll("ca_journal_tarot_scroll",
+                scan == InputEvent.Key_UpArrow || scan == InputEvent.Key_Pad_DPad_Up ? -1 : 1);
+            return true;
+        }
+
+        if ((currentPage == 2 && (keyString ~== "q" || character == 113 || character == 81))
+            || scan == InputEvent.Key_Tab || scan == InputEvent.Key_Pad_B)
+        {
+            if (currentPage == 4 && IsQuestDetailOpen())
+            {
+                SetQuestDetailOpen(false);
+                return true;
+            }
+            if (craftingSession)
+            {
+                SendNetworkEvent("ca_crafting_session_close");
+                SendNetworkEvent("ca_journal_menu_select_sound");
+            }
+            SetJournalOpen(false);
+        }
+        else if (currentPage == 3
+            && (character == 113 || character == 81
+                || keyString ~== "q"))
+        {
+            SendNetworkEvent("ca_crafting_session_close");
+            SendNetworkEvent("ca_journal_menu_select_sound");
+            SetJournalOpen(false);
+        }
+        else if (currentPage != 3 && scan == InputEvent.Key_Tab)
+        {
+            SetJournalOpen(false);
+        }
+        else if (currentPage == 2
+            && CaelumWorldCatalogue.LocationForMap(level.MapName) >= 2
+            && (character == 99 || character == 67 || keyString ~== "c"
+                || scan == InputEvent.Key_Pad_Y))
+        {
+            SetJournalOpen(false);
+            SendNetworkEvent("ca_caravan_trial");
+        }
+        else if (currentPage == 5 && localPlayer.JournalReputationTrialEnabled
+            && (character == 102 || character == 70 || keyString ~== "f"
+                || scan == InputEvent.Key_Pad_Y))
+        {
+            SetJournalOpen(false);
+            SendNetworkEvent("ca_reputation_trial");
+        }
+        else if (currentPage == 6
+            && (scan == InputEvent.Key_Enter || scan == InputEvent.Key_Pad_A))
+        {
+            RequestTarotSelection();
+        }
+        else if (currentPage == 4
+            && (character == 102 || character == 70 || keyString ~== "f"
+                || scan == InputEvent.Key_Pad_Y))
+        {
+            if (GetVisibleQuestId(localPlayer) >= 0)
+            {
+                SetQuestDetailOpen(!IsQuestDetailOpen());
+                SendNetworkEvent("ca_social_refresh");
+                SendNetworkEvent("ca_journal_menu_select_sound");
+            }
+        }
+        else if (currentPage == 4 && IsQuestDetailOpen()
+            && (scan == InputEvent.Key_DownArrow
+                || scan == InputEvent.Key_Pad_DPad_Down))
+        {
+            ScrollQuestDetail(localPlayer, 1);
+        }
+        else if (currentPage == 4 && IsQuestDetailOpen()
+            && (scan == InputEvent.Key_UpArrow
+                || scan == InputEvent.Key_Pad_DPad_Up))
+        {
+            ScrollQuestDetail(localPlayer, -1);
+        }
+        else if (currentPage == 4 && !IsQuestDetailOpen()
+            && (scan == InputEvent.Key_DownArrow || scan == InputEvent.Key_Pad_DPad_Down))
+        {
+            CycleQuest(localPlayer, 1);
+            SendNetworkEvent("ca_journal_menu_move_sound");
+        }
+        else if (currentPage == 4 && !IsQuestDetailOpen()
+            && (scan == InputEvent.Key_UpArrow || scan == InputEvent.Key_Pad_DPad_Up))
+        {
+            CycleQuest(localPlayer, -1);
+            SendNetworkEvent("ca_journal_menu_move_sound");
+        }
+        else if (currentPage == 4
+            && (scan == InputEvent.Key_Enter || scan == InputEvent.Key_Pad_A))
+        {
+            let confirm = CVar.GetCVar("ca_journal_quest_abandon", players[consoleplayer]);
+            if (confirm != null) confirm.SetInt(-1);
+            SendNetworkEvent("ca_quest_activate", GetVisibleQuestId(localPlayer));
+        }
+        else if (currentPage == 4
+            && (character == 103 || character == 71 || keyString ~== "g"
+                || scan == InputEvent.Key_Pad_X))
+        {
+            int id = GetVisibleQuestId(localPlayer);
+            let confirm = CVar.GetCVar("ca_journal_quest_abandon", players[consoleplayer]);
+            if (confirm != null && CaelumSideQuestRules.IsDefined(id)
+                && localPlayer.JournalQuestState[id] == CaelumConstants.QUEST_STATE_ACTIVE)
+            {
+                if (confirm.GetInt() == id)
+                {
+                    confirm.SetInt(-1);
+                    SendNetworkEvent("ca_quest_abandon", id);
+                }
+                else confirm.SetInt(id);
+            }
+        }
+        else if (currentPage == 0
+            && (scan == InputEvent.Key_DownArrow
+                || scan == InputEvent.Key_Pad_DPad_Down))
+        {
+            SendNetworkEvent("ca_inventory_next");
+            SendNetworkEvent("ca_journal_menu_move_sound");
+        }
+        else if (currentPage == 0
+            && (scan == InputEvent.Key_UpArrow
+                || scan == InputEvent.Key_Pad_DPad_Up))
+        {
+            SendNetworkEvent("ca_inventory_previous");
+            SendNetworkEvent("ca_journal_menu_move_sound");
+        }
+        else if (currentPage == 0
+            && (character == 102 || character == 70
+                || scan == InputEvent.Key_Pad_Y))
+        {
+            SendNetworkEvent("ca_inventory_filter");
+            SendNetworkEvent("ca_journal_menu_move_sound");
+        }
+        else if(currentPage==0 && (character==117 || character==85 || keyString~=="u"))
+        {
+            SendNetworkEvent("ca_tarot_unified");
+        }
+        else if (currentPage == 0
+            && (scan == InputEvent.Key_Enter
+                || scan == InputEvent.Key_Pad_A))
+        {
+            // La bolsa abre su diálogo después de cerrar la vista de inventario.
+            if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
+                && localPlayer.EquipmentSelectionSpecialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG
+                && localPlayer.EquipmentSelectionOwned && !localPlayer.EquipmentSelectionInMagicBox)
+                SetJournalOpen(false);
+            SendNetworkEvent("ca_inventory_activate");
+            SendNetworkEvent("ca_journal_menu_select_sound");
+        }
+        else if (currentPage == 0
+            && (character == 99 || character == 67
+                || scan == InputEvent.Key_Pad_X))
+        {
+            SendNetworkEvent("ca_inventory_storage");
+            SendNetworkEvent("ca_journal_menu_select_sound");
+        }
+        else if (currentPage == 0
+            && (character == 100 || character == 68))
+        {
+            SendNetworkEvent("ca_inventory_drop");
+            SendNetworkEvent("ca_journal_menu_select_sound");
+        }
+        else if (currentPage == 0 && (character == 114 || character == 82))
+            SendNetworkEvent(CaelumMateSession.Selected(localPlayer)!=null?"ca_mate_open":"ca_inventory_water", 0);
+        else if (currentPage == 0 && (character == 104 || character == 72))
+            SendNetworkEvent("ca_inventory_boil");
+        else if (currentPage == 0 && (character == 118 || character == 86))
+            SendNetworkEvent("ca_inventory_water", 1);
+        else if (currentPage == 0 && (character == 103 || character == 71))
+            SendNetworkEvent("ca_inventory_water_deposit");
+        return true;
+    }
+
+    override void ConsoleProcess(ConsoleEvent e)
+    {
+        if(CaelumExplorationNavigation.Command(e.Name))return;
+        if (e.Name ~== "ca_journal_toggle") ToggleJournal();
+    }
+
+    ui void ToggleJournal()
+    {
+        CaelumPlayer localPlayer = consoleplayer >= 0
+            ? CaelumPlayer(players[consoleplayer].mo) : null;
+        let rest = localPlayer == null ? null
+            : CaelumRestState(localPlayer.FindInventory("CaelumRestState"));
+        if (rest != null && rest.Status == CaelumRestRules.STATUS_ACTIVE)
+        {
+            SendNetworkEvent("ca_rest_cancel");
+            if(CaelumExhaustion.Locked(localPlayer))return;
+        }
+        if (localPlayer != null && localPlayer.PalomoMerchantMenuOpen)
+        {
+            SendNetworkEvent("ca_palomo_merchant_close");
+            return;
+        }
+        bool opening = !IsJournalOpen();
+        if (!opening && GetJournalPage() == 3)
+        {
+            SendNetworkEvent("ca_crafting_session_close");
+        }
+        SetJournalOpen(opening);
+        if (opening)
+        {
+            SendNetworkEvent("ca_inventory_refresh");
+            SendNetworkEvent("ca_social_refresh");
+        }
+    }
+
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        // Única excepción materialmente inocua para el Tarot del grupo muerto.
+        if(e.Name=="ca_tarot_select")
+        {CaelumTarotService.Select(CaelumPlayerAuthority.FromNetworkPlayer(e.Player,true),e.Args[0]);return;}
+        CaelumPlayer requestingPlayer = CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
+        if (requestingPlayer == null) { return; }
+        if(e.Name=="ca_transport_action")
+        {let session=CaelumTransportSession.Find(requestingPlayer);if(session!=null)session.Act(requestingPlayer,e.Args[0]);return;}
+        if(e.Name=="ca_kitchen_proof")
+        {CaelumProofing.Act(requestingPlayer,e.Args[0]);return;}
+        if(e.Name=="ca_fermentation_action")
+        {CaelumFermentationMenu.Act(requestingPlayer,e.Args[0],e.Args[1],e.Args[2]);return;}
+        if (e.Name == "ca_crafting_browser_mode")
+        { CaelumCraftingBrowser.Get(requestingPlayer).SetMode(requestingPlayer,e.Args[0]); return; }
+        if (e.Name == "ca_crafting_browser_move")
+        { CaelumCraftingBrowser.Get(requestingPlayer).Move(requestingPlayer,e.Args[0] < 0 ? -1 : 1); return; }
+        if (e.Name == "ca_crafting_browser_select")
+        { CaelumCraftingBrowser.Get(requestingPlayer).Select(requestingPlayer,e.Args[0],e.Args[1]); return; }
+        if (e.Name == "ca_crafting_browser_confirm")
+        { CaelumCraftingBrowser.Get(requestingPlayer).Confirm(requestingPlayer,e.Args[0],e.Args[1],e.Args[2]); return; }
+        if(e.Name=="ca_tarot_unified")CaelumUnifiedTarot.Activate(requestingPlayer);
+        else if(e.Name=="ca_awaken_open")CaelumAwakeningMenu.Open(requestingPlayer);
+        else if(e.Name=="ca_awaken_action")CaelumAwakeningMenu.HandleCommand(requestingPlayer,e.Args[0]);
+        else if (e.Name == "ca_event_action") { CaelumScheduleState.Act(requestingPlayer, e.Args[0]); }
+        else if (e.Name == "ca_debug_events_report") { CaelumScheduleState.Report(requestingPlayer); }
+        else if (e.Name == "ca_debug_events_trial") { CaelumScheduleTrial.Enable(requestingPlayer); }
+        else if (e.Name == "ca_debug_cargo_trial") { CaelumScheduleTrial.Cargo(requestingPlayer); }
+        else if(e.Name=="ca_mate_open")CaelumMateSession.OpenSelected(requestingPlayer);
+        else if(e.Name=="ca_mate_action")CaelumMateSession.Act(requestingPlayer,e.Args[0]);
+        else if (e.Name == "ca_inventory_refresh")
+        {
+            requestingPlayer.RefreshFormalInventorySnapshot();
+        }
+        else if (e.Name == "ca_debug_fool_report")
+        {
+            CaelumMainM00FoolCapture.Report(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_door_report")
+        {
+            CaelumDoorAccessTrial.Report(requestingPlayer);
+        }
+        else if (e.Name == "ca_journey_confirm") { CaelumJourneyPlan.Confirm(requestingPlayer); }
+        else if (e.Name == "ca_journey_cancel") { CaelumJourneyPlan.Cancel(requestingPlayer); }
+        else if (e.Name == "ca_caravan_trial")
+        {
+            CaelumCaravanTrial.Open(requestingPlayer);
+        }
+        else if (e.Name == "ca_time_fast")
+        { CaelumTimeAdvanceState.Toggle(requestingPlayer); }
+        else if(e.Name=="ca_skip_open") {CaelumTimeSkipState.OpenMenu(requestingPlayer);}
+        else if(e.Name=="ca_skip_start") {CaelumTimeSkipState.Start(requestingPlayer);}
+        else if(e.Name=="ca_skip_edit") {CaelumTimeSkipState.Edit(requestingPlayer,e.Args[0],e.Args[1]);}
+        else if(e.Name=="ca_skip_field") {CaelumTimeSkipState.SelectField(requestingPlayer,e.Args[0]);}
+        else if(e.Name=="ca_skip_cancel")
+        {CaelumTimeSkipState.FinishSkip(requestingPlayer,"CA_SKIP_CANCELLED",!CaelumTimeSkipState.IsActive(requestingPlayer));}
+        else if(e.Name=="ca_skip_forecast")
+        {
+            let s=CaelumTimeSkipState.Get(requestingPlayer);
+            if(s!=null && s.Open && !s.Active && !s.ConfirmPending){s.UseTaskDefault=true;s.HadTask=CaelumTimeSkipState.TaskActive(requestingPlayer);s.Recalculate(requestingPlayer);}
+        }
+        else if (e.Name == "ca_table_eat" || e.Name == "ca_table_drink")
+        {
+            if (!CaelumDiningSession.Toggle(requestingPlayer, e.Name == "ca_table_drink"))
+                CaelumNotifications.Notify(requestingPlayer,StringTable.Localize("CA_TABLE_CANNOT_EAT", false));
+        }
+        else if (e.Name == "ca_debug_dining")
+        { CaelumDiningWorld.Prepare(); }
+        else if (e.Name == "ca_debug_time_fast_report")
+        {
+            let fast = CaelumTimeAdvanceState.Get(requestingPlayer);
+            Console.Printf("[Caelum 4.35.0j] Avance: activo=%d extra=%d motivo=%s lucidez=%.4f",
+                fast != null && fast.Active, fast != null ? fast.SimulatedTics : 0,
+                fast != null ? fast.LastReason : "", requestingPlayer.CurrentLucidity);
+        }
+        else if (e.Name == "ca_rest_trial")
+        {
+            CaelumRestTrial.Open(requestingPlayer);
+        }
+        else if(e.Name=="ca_rest_camera")
+        {
+            let rest=CaelumRestState.Get(requestingPlayer);
+            if(rest!=null && rest.Status==CaelumRestRules.STATUS_ACTIVE && rest.ViewCamera!=null
+                && requestingPlayer.player.camera==rest.ViewCamera)
+            {
+                rest.CameraYaw+=e.Args[0]/1000.0;
+                rest.CameraPitch=Clamp(rest.CameraPitch+e.Args[1]/1000.0,-5,60);
+                rest.ViewCamera.UpdateView(rest);
+            }
+        }
+        else if (e.Name == "ca_rest_cancel")
+        {
+            CaelumRestState.Cancel(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_rest_report")
+        {
+            CaelumRestState.Report(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_rest_bag")
+        {
+            CaelumSleepingBag.PrepareTrial(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_rest_hit")
+        {
+            CaelumRestTrial.DebugHit(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_travel_report")
+        {
+            CaelumJourneyState.Report(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_world_report")
+        {
+            CaelumWorldProgress.Report(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_time_report")
+        {
+            CaelumWorldClock.Report(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_weather_report")
+        {
+            CaelumWeatherState.Report(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_weather_sample")
+        {
+            CaelumWeatherState.DebugSample(requestingPlayer, e.Args[0], e.Args[1], e.Args[2]);
+        }
+        else if (e.Name == "ca_debug_climate_sample")
+        {
+            CaelumWeatherState.DebugSample(requestingPlayer, e.Args[0], e.Args[1], e.Args[2], true);
+        }
+        else if (e.Name == "ca_debug_calendar_report")
+        {
+            CaelumCalendarState.Report(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_calendar_set")
+        {
+            CaelumCalendarState.ConfigureTrial(requestingPlayer, e.Args[0], e.Args[1], e.Args[2]);
+        }
+        else if (e.Name == "ca_debug_calendar_edge")
+        {
+            CaelumCalendarState.PrepareMidnightTrial(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_calendar_clear")
+        {
+            CaelumCalendarState.ClearTrial(requestingPlayer);
+        }
+        else if (e.Name == "ca_debug_integration_report")
+        {
+            CaelumIntegrationDiagnostics.Report(requestingPlayer);
+        }
+        else if (e.Name == "ca_social_refresh")
+        {
+            requestingPlayer.RefreshSocialJournalSnapshot();
+        }
+        else if (e.Name == "ca_reputation_trial")
+        {
+            CaelumReputationTrialState.Open(requestingPlayer);
+        }
+        else if (e.Name == "ca_quest_track")
+        { CaelumQuestTracking.Set(requestingPlayer,e.Args[0],e.Args[1]!=0); }
+        else if (e.Name == "ca_quest_activate")
+        {
+            CaelumSideQuestRules.Activate(requestingPlayer, e.Args[0]);
+        }
+        else if (e.Name == "ca_quest_abandon")
+        {
+            if (CaelumSideQuestRules.End(requestingPlayer.GetPersistentCharacterState(false), e.Args[0], true))
+            {
+                requestingPlayer.RefreshSocialJournalSnapshot();
+                requestingPlayer.PersistCharacterState();
+            }
+        }
+        else if (e.Name == "ca_inventory_next")
+        {
+            requestingPlayer.CycleFormalInventorySelection(1);
+        }
+        else if (e.Name == "ca_inventory_previous")
+        {
+            requestingPlayer.CycleFormalInventorySelection(-1);
+        }
+        else if (e.Name == "ca_inventory_filter")
+        {
+            requestingPlayer.CycleFormalInventoryFilter();
+        }
+        else if (e.Name == "ca_inventory_filter_previous")
+        {
+            requestingPlayer.CycleFormalInventoryFilter(-1);
+        }
+        else if (e.Name == "ca_inventory_activate")
+        {
+            requestingPlayer.ActivateFormalInventorySelection();
+        }
+        else if (e.Name == "ca_inventory_storage")
+        {
+            requestingPlayer.ToggleFormalInventoryStorage();
+        }
+        else if (e.Name == "ca_inventory_boil")
+        { CaelumWaterBoiling.InventoryAction(requestingPlayer); }
+        else if (e.Name == "ca_inventory_water")
+        { CaelumWaterQuality.InventoryAction(requestingPlayer, e.Args[0] == 1); }
+        else if (e.Name == "ca_inventory_water_deposit")
+        { CaelumWaterFurniture.InventoryDeposit(requestingPlayer); }
+        else if (e.Name == "ca_inventory_drop")
+        {
+            requestingPlayer.DropFormalInventorySelection();
+        }
+        else if (e.Name == "ca_palomo_merchant_close")
+        {
+            requestingPlayer.ClosePalomoMerchant();
+        }
+        else if (e.Name == "ca_palomo_merchant_next")
+        {
+            requestingPlayer.CyclePalomoMerchantSelection(1);
+        }
+        else if (e.Name == "ca_palomo_merchant_previous")
+        {
+            requestingPlayer.CyclePalomoMerchantSelection(-1);
+        }
+        else if (e.Name == "ca_palomo_merchant_mode")
+        {
+            requestingPlayer.TogglePalomoMerchantMode();
+        }
+        else if (e.Name == "ca_palomo_merchant_quantity_previous")
+        {
+            requestingPlayer.CyclePalomoMerchantQuantity(-1);
+        }
+        else if (e.Name == "ca_palomo_merchant_quantity_next")
+        {
+            requestingPlayer.CyclePalomoMerchantQuantity(1);
+        }
+        else if (e.Name == "ca_palomo_merchant_transact")
+        {
+            requestingPlayer.ExecutePalomoMerchantTransaction();
+        }
+        else if (e.Name == "ca_journal_menu_move_sound")
+        {
+            requestingPlayer.A_StartSound(
+                "caelum/ui/menu_move",
+                CHAN_6,
+                CHANF_LOCAL | CHANF_UI
+            );
+        }
+        else if (e.Name == "ca_journal_menu_select_sound")
+        {
+            requestingPlayer.A_StartSound(
+                "caelum/ui/menu_select",
+                CHAN_6,
+                CHANF_LOCAL | CHANF_UI
+            );
+        }
+        else if (e.Name == "ca_crafting_page_turn_sound")
+        {
+            requestingPlayer.A_StartSound(
+                "caelum/ui/crafting_page_turn",
+                CHAN_6,
+                CHANF_LOCAL | CHANF_UI
+            );
+        }
+        else if (e.Name == "ca_crafting_session_close")
+        {
+            requestingPlayer.CloseCraftingStationSession();
+        }
+        else if (e.Name == "ca_crafting_toggle")
+        {
+            requestingPlayer.ToggleCraftingMenu();
+        }
+        else if (e.Name == "ca_crafting_recipe_next")
+        {
+            requestingPlayer.CycleCraftingRecipe(1);
+        }
+        else if (e.Name == "ca_crafting_recipe_previous")
+        {
+            requestingPlayer.CycleCraftingRecipe(-1);
+        }
+        else if (e.Name == "ca_crafting_filter")
+        {
+            requestingPlayer.CycleCraftingRecipeFilter();
+        }
+        else if (e.Name == "ca_crafting_tier")
+        {
+            requestingPlayer.CycleCraftingTier();
+        }
+        else if (e.Name == "ca_crafting_size")
+        {
+            requestingPlayer.CycleCraftingSize();
+        }
+        else if (e.Name == "ca_crafting_batch")
+        {
+            requestingPlayer.CycleCraftingBatch();
+        }
+        else if (e.Name == "ca_crafting_efficiency")
+        {
+            requestingPlayer.CycleCraftingEfficiency();
+        }
+        else if (e.Name == "ca_crafting_step_next")
+        {
+            requestingPlayer.CycleCraftingBlueprintSelection(1);
+        }
+        else if (e.Name == "ca_crafting_step_previous")
+        {
+            requestingPlayer.CycleCraftingBlueprintSelection(-1);
+        }
+        else if (e.Name == "ca_crafting_cancel_task")
+        {
+            requestingPlayer.CancelCraftingTask();
+        }
+        else if (e.Name == "ca_crafting_repair_selected")
+        {
+            requestingPlayer.BeginRepairSelectedEquipment();
+        }
+        else if (e.Name == "ca_crafting_dismantle_selected")
+        {
+            requestingPlayer.BeginDismantleSelectedEquipment();
+        }
+        else if (e.Name == "ca_crafting_create")
+        {
+            requestingPlayer.CraftSelectedPhysicalWeapon();
+        }
+        else if (e.Name == "ca_cycle_weapon_slot_2")
+        {
+            requestingPlayer.CycleEquippedWeaponSlot(2);
+        }
+    }
+
+    override void RenderOverlay(RenderEvent event)
+    {
+        let user=consoleplayer>=0?CaelumPlayer(players[consoleplayer].mo):null;
+
+    }
+
+    ui void DrawMenu()
+    {
+        if (consoleplayer < 0
+            || TitleFont == null || TextFont == null || SmallFont == null
+            || InventoryFont == null)
+        {
+            return;
+        }
+        CaelumPlayer localPlayer = CaelumPlayer(players[consoleplayer].mo);
+        if (localPlayer == null) { return; }
+        let skip=CaelumTimeSkipState(localPlayer.FindInventory("CaelumTimeSkipState"));
+        if(skip!=null && skip.Open){CaelumTimeSkipPanel.Draw(self,localPlayer,skip);return;}
+        let plan = CaelumJourneyPlan(localPlayer.FindInventory("CaelumJourneyPlan"));
+        if (plan != null && plan.Open && plan.Available != null) { DrawJourney(plan); return; }
+        let rest = CaelumRestState(localPlayer.FindInventory("CaelumRestState"));
+        if (rest != null && rest.Status == CaelumRestRules.STATUS_ACTIVE)
+        {
+            DrawRest(localPlayer, rest);
+            return;
+        }
+        if (localPlayer.PalomoMerchantMenuOpen)
+        {
+            DrawPalomoMerchant(localPlayer);
+            return;
+        }
+        if (!IsJournalOpen()) { return; }
+        let awakening=CaelumAwakeningMenu.Read(localPlayer);
+        if(awakening!=null && awakening.Opened){DrawAwakening(localPlayer,awakening);return;}
+        int currentPage = GetJournalPage();
+        if (currentPage == 2 && CaelumScheduleCalendar.IsOpen())
+        { CaelumScheduleCalendar.Draw(self, localPlayer); return; }
+
+        CaelumPresentation.MenuBackground(0x05070A,0.92);
+        DrawPanel(16.0, 12.0, 608.0, 336.0);
+        DrawCenteredText(TitleFont, Font.CR_GOLD, 320.0, 16.0,
+            StringTable.Localize("CA_JOURNAL_TITLE", false));
+        DrawNavigation();
+        if (currentPage != 4 && currentPage != 3) DrawCenteredText(TextFont, Font.CR_GOLD, 320.0, 106.0,
+            StringTable.Localize(GetPageKey(currentPage), false));
+
+        if (currentPage == 0) { DrawInventoryPage(localPlayer); }
+        else if (currentPage == 1) { DrawCharacterPage(localPlayer); }
+        else if (currentPage == 2) { DrawWorldPage(localPlayer); }
+        else if (currentPage == 3) { DrawCraftsPage(localPlayer); }
+        else if (currentPage == 4) { DrawQuestPage(localPlayer); }
+        else if (currentPage == 5) { DrawReputationPage(localPlayer); }
+        else { DrawTarotPage(localPlayer); }
+
+
+    }
+}
+
+// El cursor es estado de la interfaz: un handler estático no lo serializa.
+class CaelumJournalInput : StaticEventHandler
+{
+    ui CaelumMenuPointer Pointer;
+    ui int PointerContext;
+    ui Actor PointerOwner;
+    static ui bool SkipOpen(CaelumPlayer user)
+    {
+        let skip=CaelumTimeSkipState(user.FindInventory("CaelumTimeSkipState"));
+        return skip!=null && skip.Open;
+    }
+    static ui CaelumMenuPointer PointerFor(int context)
+    {
+        let handler=CaelumJournalInput(StaticEventHandler.Find("CaelumJournalInput"));
+        if(handler.Pointer==null)handler.Pointer=new("CaelumMenuPointer");
+        let owner=consoleplayer>=0?players[consoleplayer].mo:null;
+        if(handler.PointerContext!=context || handler.PointerOwner!=owner)
+        {handler.Pointer.Reset();handler.PointerContext=context;handler.PointerOwner=owner;}
+        return handler.Pointer;
+    }
+    override void UiTick()
+    {
+        let user=consoleplayer>=0?CaelumPlayer(players[consoleplayer].mo):null;
+        let current=Menu.GetCurrentMenu();
+        // Cerrar la charla por su ruta nativa de volver, sin elegir respuestas.
+        if(CaelumExhaustion.Active(user) && ConversationMenu(current)!=null)
+        {current.MenuEvent(Menu.MKEY_Back,false);return;}
+        if(ConsoleState==c_up && current==null && menuactive==Menu.Off && CaelumLiveMenu.Wanted(user)>0)
+            Menu.SetMenu("CaelumLiveMenu");
+    }
+    override void OnRegister() { SetOrder(101); }
+    override void WorldUnloaded(WorldEvent e) { IsUiProcessor=false; RequireMouse=false; }
+    void CA838Body_CaelumJournalInput_WorldTick()
+    {
+        IsUiProcessor=false; RequireMouse=false;
+        let journal=CaelumJournalOverlay(EventHandler.Find("CaelumJournalOverlay"));
+        if(journal!=null){journal.IsUiProcessor=false;journal.RequireMouse=false;}
+        let user=consoleplayer>=0?CaelumPlayer(players[consoleplayer].mo):null;
+        if(user!=null && user.CraftingMenuOpen && level.Time%7==0)CaelumCraftingBrowser.Get(user).Refresh(user);
+    }
+
+    override void WorldTick()
+    {
+        CA838BurstProfile probe=null;
+        if(level.time>=3599 && level.time<4299)probe=CA838BurstProfile(StaticEventHandler.Find('CA838BurstProfile'));
+        if(probe!=null)probe.Begin(6);
+        CA838Body_CaelumJournalInput_WorldTick();
+        if(probe!=null)probe.End();
+    }
+}

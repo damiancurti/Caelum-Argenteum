@@ -134,13 +134,20 @@ class CaelumVisualPerception : Object play
         {
             double sightUpper=level.GetPortalGroupCount()==1
                 ? CaelumPhysicsUnits.MapUnits(CaelumPerceptionData.VISUAL_BASE_METERS)*InsightFactor(observer) : -1;
+            // #838: estas rutas solo leen relaciones. Residentes y delegados
+            // conservan el orden anterior, incluido el mantenimiento de esquemas.
+            bool readOnlyRelation=!(observer is "CaelumAnchoredResident")
+                && !(observer is "CaelumSummonedZupay")
+                && !(observer is "CaelumTarotAutomaton") && !(observer is "CaelumTarotClone");
             // La lista espacial se comparte; cada miembro conserva sus filtros
             // visuales y dos segundos propios. No constituye un aviso audible.
             for(int i=0;i<group.Candidates.Size();i++)
             {
                 let candidate=group.Candidates[i];
+                if(candidate==null)continue;
+                if(readOnlyRelation && sightUpper>=0 && OutsideGroupReach(observer,candidate,sightUpper))continue;
                 if(!Opponent(observer,candidate))continue;
-                if(sightUpper>=0 && OutsideGroupReach(observer,candidate,sightUpper))continue;
+                if(!readOnlyRelation && sightUpper>=0 && OutsideGroupReach(observer,candidate,sightUpper))continue;
                 double distance=observer.Distance3D(candidate);
                 if(distance<best && CanSee(observer,candidate,distance)){nearest=candidate;best=distance;}
             }

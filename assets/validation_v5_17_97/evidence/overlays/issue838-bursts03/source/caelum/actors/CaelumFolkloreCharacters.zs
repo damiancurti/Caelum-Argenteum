@@ -1,0 +1,909 @@
+// Base funcional para los tres personajes folclóricos incorporados en
+// 4.29.0aq. Conserva la escala visual del paquete y usa el perfil completo de
+// combate de los NPC, sin recursos de supervivencia exclusivos del jugador.
+class CaelumFolkloreCombatActor : CaelumCombatActor abstract
+{
+    Default
+    {
+        // Cubre el semiancho visible de los lienzos humanos a Scale 0.3125.
+        RenderRadius 40;
+        Speed 1;
+        +FLOORCLIP
+        RenderStyle "Normal";
+    }
+
+    void InitializeUniformFolkloreProfile(int attributeLevel)
+    {
+        ClearCombatArmorToBaseClothing();
+        InitializeCombatProfile(
+            attributeLevel, attributeLevel, attributeLevel,
+            attributeLevel, attributeLevel, attributeLevel,
+            attributeLevel, attributeLevel, attributeLevel,
+            attributeLevel, attributeLevel, attributeLevel
+        );
+
+        // El movimiento reutiliza la marcha máxima normal del jugador y su
+        // Agilidad Tipo 2. La masa corporal no penaliza una carga vacía.
+        CombatBaseSpeed = CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED
+            * CalculateActorType4Percent(CombatAgility) / 100.0;
+        Speed = CombatBaseSpeed;
+    }
+}
+
+// Contrato compartido de interacción para NPC. Centraliza el flanco de Use y
+// deja que cada personaje implemente una única operación autoritativa.
+class CaelumInteractiveFolkloreActor : CaelumFolkloreCombatActor abstract
+{
+    virtual bool InteractWithCaelumPlayer(CaelumPlayer user)
+    {
+        return false;
+    }
+
+    override bool Used(Actor user)
+    {
+        CaelumPlayer caelumPlayer = CaelumPlayer(user);
+        if (caelumPlayer == null || caelumPlayer.player == null)
+        {
+            return false;
+        }
+
+        // La interacción sólo nace de una pulsación física de Use. El latch
+        // vive en el jugador porque PlayerThink limpia BT_USE mientras la
+        // tienda está abierta; así Q no puede cerrar y reabrirla en el mismo
+        // pulso cuando Palomo continúa bajo la mira.
+        if ((caelumPlayer.player.cmd.buttons & BT_USE) == 0
+            || caelumPlayer.FolkloreInteractionUseLatched)
+        {
+            return true;
+        }
+        caelumPlayer.FolkloreInteractionUseLatched = true;
+        caelumPlayer.FolkloreInteractionReleaseGuardTics = 0;
+        return InteractWithCaelumPlayer(caelumPlayer);
+    }
+}
+
+class CaelumPalomo : CaelumInteractiveFolkloreActor
+{
+    override bool IsTarotDeity(){return true;}
+
+    override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
+    {
+        if(!CaelumUnifiedTarot.Active(CaelumPlayer(source)))return 0;
+        // Las escenas conservan protección aunque el atacante tenga el poder.
+        if(bInvisible || bInConversation || (NarrativeRevealRequired && !NarrativeRevealed)
+            || (DepartureStarted && !DepartureDone))return 0;
+        bool protectedBefore=bInvulnerable;bInvulnerable=false;
+        int result=Super.DamageMobj(inflictor,source,damage,mod,flags,angle);
+        bInvulnerable=protectedBefore;
+        return result;
+    }
+    override double GetInnateArmorDefense(bool magical)
+    {
+        return CaelumArmorRules.PALOMO_DEFENSE;
+    }
+    Vector3 WanderHome;
+    double WanderDirection;
+    int WanderDirectionTics;
+    bool WanderEnabled;
+    bool MerchantAnchored;
+    bool MerchantReturningHome;
+    double MerchantHomeAngle;
+    bool NarrativeRevealInitialized;
+    bool NarrativeRevealRequired;
+    bool NarrativeRevealed;
+    bool NarrativeDismissed;
+    bool DepartureStarted;
+    bool DepartureDone;
+    int DepartureWaypoint;
+
+    Default
+    {
+        Tag "$CA_PALOMO_NAME";
+        Health 360500;
+        Radius 16;
+        Height 56;
+        Mass 700;
+        Scale 0.3125;
+        +SOLID
+        +SHOOTABLE
+    }
+
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        InitializeUniformFolkloreProfile(100);
+        WanderHome = Pos;
+        WanderDirection = Angle;
+        WanderDirectionTics = 0;
+        MerchantAnchored = args[0]
+            == CaelumConstants.PALOMO_MERCHANT_ANCHORED;
+        WanderEnabled = !MerchantAnchored;
+        MerchantReturningHome = false;
+        MerchantHomeAngle = Angle;
+        InitializeNarrativeReveal();
+    }
+
+    bool IsNarrativeRevealReady()
+    {
+        for (int playerIndex = 0; playerIndex < MAXPLAYERS; playerIndex++)
+        {
+            if (!playeringame[playerIndex]) { continue; }
+            CaelumPlayer caelumPlayer = CaelumPlayer(players[playerIndex].mo);
+            if (caelumPlayer != null && caelumPlayer.HasMainM00Flag(
+                    CaelumConstants.MAIN_M00_FLAG_UNKNOWN_VOICE_HEARD
+                ))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool IsNarrativeFoyerComplete()
+    {
+        for (int playerIndex = 0; playerIndex < MAXPLAYERS; playerIndex++)
+        {
+            if (!playeringame[playerIndex]) { continue; }
+            CaelumPlayer caelumPlayer = CaelumPlayer(players[playerIndex].mo);
+            if (caelumPlayer != null && caelumPlayer.HasMainM00Flag(
+                    CaelumConstants.MAIN_M00_FLAG_PALOMO_MET
+                ))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool IsVisibleToAnyActivePlayer()
+    {
+        for (int playerIndex = 0; playerIndex < MAXPLAYERS; playerIndex++)
+        {
+            if (!playeringame[playerIndex]) { continue; }
+            CaelumPlayer caelumPlayer = CaelumPlayer(players[playerIndex].mo);
+            if (caelumPlayer == null || caelumPlayer.health <= 0
+                || !caelumPlayer.CheckSight(self))
+            {
+                continue;
+            }
+            double viewOffset = Abs(DeltaAngle(
+                caelumPlayer.Angle, caelumPlayer.AngleTo(self)
+            ));
+            if (viewOffset <= 70.0) { return true; }
+        }
+        return false;
+    }
+
+    void InitializeNarrativeReveal()
+    {
+        NarrativeRevealInitialized = true;
+        NarrativeRevealRequired = MerchantAnchored
+            && level.MapName == "MAP01";
+        NarrativeDismissed = false;
+        NarrativeRevealed = !NarrativeRevealRequired || IsNarrativeRevealReady();
+        Alpha = 1.0;
+        bInvisible = !NarrativeRevealed;
+        bSolid = NarrativeRevealed;
+        bShootable = NarrativeRevealed;
+        if (NarrativeRevealRequired) bInvulnerable = true;
+    }
+
+    static Vector3 GetDepartureWaypoint(int index)
+    {
+        switch (index)
+        {
+            case 0: return (-650,0,0);
+            case 1: return (1360,0,0);
+            case 2: return (1360,260,136);
+            case 3: return (1456,260,136);
+            case 4: return (1600,260,136);
+            case 5: return (1600,0,136);
+            case 6: return (1848,0,136);
+            case 7: return (1848,344,136);
+            case 8: return (1750,344,136);
+            case 9: return (1750,0,264);
+            case 10: return (1600,0,264);
+            case 11: return (1200,0,264);
+            case 12: return (1000,0,264);
+            case 13: return (500,0,264);
+            default: return (500,120,264);
+        }
+    }
+
+    void UpdateDeparture()
+    {
+        if (bInConversation) { Vel.X = 0; Vel.Y = 0; return; }
+        // Alpha no oculta actores de RenderStyle Normal. La visibilidad se
+        // controla con INVISIBLE; durante la retirada nunca se oculta.
+        bInvisible = false; Alpha = 1; bSolid = true; bShootable = true;
+        bInvulnerable = true; bCanPass = true;
+        if (!DepartureStarted)
+        {
+            DepartureStarted = true; NarrativeDismissed = false;
+            NarrativeRevealed = true; DepartureWaypoint = 0;
+            SetStateLabel("DepartureRun");
+        }
+        if (DepartureDone) { Vel.X = 0; Vel.Y = 0; return; }
+        Vector3 goal = GetDepartureWaypoint(DepartureWaypoint);
+        Vector2 offset = goal.XY - Pos.XY;
+        if (offset.Length() < 8 && Abs(Pos.Z-goal.Z) < 20)
+        {
+            DepartureWaypoint++;
+            if (DepartureWaypoint > 14)
+            {
+                DepartureDone = true; NarrativeDismissed = true;
+                WanderHome = Pos; Vel.X = 0; Vel.Y = 0;
+                SetStateLabel("DepartureWait"); return;
+            }
+            goal = GetDepartureWaypoint(DepartureWaypoint);
+            offset = goal.XY - Pos.XY;
+        }
+        // Abrir únicamente puertas sin llave cercanas y en su propio nivel.
+        let doors = ThinkerIterator.Create("CaelumSlidingDoorLeaf"); CaelumSlidingDoorLeaf door;
+        while ((door = CaelumSlidingDoorLeaf(doors.Next())) != null)
+            if (door.args[3] == 0 && Abs(door.Pos.Z-Pos.Z) < 32 && Distance2D(door) < 100)
+                door.RequestDoorGroup(self);
+        Angle = VectorAngle(offset.X,offset.Y);
+        double pace = Min(8.0,offset.Length());
+        Vel.X = Cos(Angle)*pace; Vel.Y = Sin(Angle)*pace;
+        CaelumThermalMotion.SetVelocity(self);
+    }
+
+    action void A_EnablePalomoWander()
+    {
+        CaelumPalomo palomo = CaelumPalomo(self);
+        if (palomo != null && !palomo.MerchantAnchored)
+        {
+            palomo.WanderEnabled = true;
+        }
+    }
+
+    action void A_StopPalomoWander()
+    {
+        CaelumPalomo palomo = CaelumPalomo(self);
+        if (palomo == null) { return; }
+        palomo.WanderEnabled = false;
+        palomo.Vel.X = 0.0;
+        palomo.Vel.Y = 0.0;
+    }
+
+    // El movimiento sigue en Tick; esta selección sólo cambia su dibujo.
+    void UpdateLocomotionVisual()
+    {
+        if (health <= 0 || bInConversation || CombatLucidityPhysicalStunRemaining > 0) return;
+        if (CurState == FindState("DepartureWait") && tics < 0) tics = 10;
+        State walkVisual = FindState("Walk");
+        State runVisual = FindState("Run");
+        State idleVisual = FindState("IdleBreathing");
+        if (!InStateSequence(CurState, SpawnState)
+            && !InStateSequence(CurState, walkVisual)
+            && !InStateSequence(CurState, runVisual)
+            && !InStateSequence(CurState, idleVisual)) return;
+        if (DepartureStarted) return;
+        bool moving = Vel.X * Vel.X + Vel.Y * Vel.Y > 0.01;
+        State wanted = !moving ? idleVisual : MerchantReturningHome ? runVisual : walkVisual;
+        if (!InStateSequence(CurState, wanted)) SetState(wanted);
+    }
+
+    override void Tick()
+    {
+        if(CaelumRedemption.Pending(self))return;
+        Super.Tick();
+        UpdateLocomotionVisual();
+        if (!NarrativeRevealInitialized) { InitializeNarrativeReveal(); }
+        // El diálogo no queda unido permanentemente a la clase. Tras cerrar la
+        // conversación, retirar el nodo devuelve la siguiente pulsación a
+        // Actor.Used, donde se resincronizan estado y requisitos por jugador.
+        if (!bInConversation && HasConversation())
+        {
+            Level.ExecuteSpecial(
+                CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
+                self, null, false, 0, 0
+            );
+        }
+        if (NarrativeRevealRequired)
+        {
+            if (IsNarrativeFoyerComplete()) { UpdateDeparture(); return; }
+            if (!NarrativeRevealed)
+            {
+                if (!IsNarrativeRevealReady())
+                { bInvisible = true; bSolid = false; bShootable = false; Vel.X = 0; Vel.Y = 0; return; }
+                NarrativeRevealed = true;
+            }
+            bInvisible = false; Alpha = 1; bSolid = true; bShootable = true;
+        }
+        if (health <= 0 || CombatLucidityPhysicalStunRemaining > 0.0)
+        {
+            return;
+        }
+
+        Vector2 homeOffset = WanderHome.XY - Pos.XY;
+        double homeDistance = homeOffset.Length();
+        if (MerchantAnchored)
+        {
+            if (!MerchantReturningHome
+                && homeDistance
+                    >= CaelumConstants.PALOMO_MERCHANT_RETURN_DISTANCE)
+            {
+                MerchantReturningHome = true;
+            }
+
+            if (!MerchantReturningHome) { return; }
+            if (homeDistance <= 1.0)
+            {
+                Vel.X = 0.0;
+                Vel.Y = 0.0;
+                Angle = MerchantHomeAngle;
+                MerchantReturningHome = false;
+                return;
+            }
+
+            double returnDirection = VectorAngle(homeOffset.X, homeOffset.Y);
+            double returnSpeed = CombatBaseSpeed * CaelumSupportMagic.Factor(self)
+                * CaelumConstants.GZDOOM_BASE_MAX_RUN_SPEED
+                / CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED;
+            double resolvedSpeed = Min(Max(0.0, returnSpeed), homeDistance);
+            Angle = returnDirection;
+            Vel.X = Cos(returnDirection) * resolvedSpeed;
+            Vel.Y = Sin(returnDirection) * resolvedSpeed;
+        CaelumThermalMotion.SetVelocity(self);
+            return;
+        }
+
+        if (!WanderEnabled) { return; }
+        if (homeDistance > CaelumConstants.PALOMO_TEST_WANDER_RADIUS)
+        {
+            WanderDirection = VectorAngle(homeOffset.X, homeOffset.Y);
+            WanderDirectionTics = 8;
+        }
+        else
+        {
+            if (BlockingMobj != null
+                || MovementBlockingLine != null
+                || BlockingLine != null)
+            {
+                WanderDirectionTics = 0;
+            }
+            if (WanderDirectionTics <= 0)
+            {
+                WanderDirection = Random[CaelumPalomoWander](0, 359);
+                WanderDirectionTics = Random[CaelumPalomoWander](35, 105);
+            }
+            else
+            {
+                WanderDirectionTics--;
+            }
+        }
+
+        Angle = WanderDirection;
+        Vel.X = Cos(WanderDirection) * Speed;
+        Vel.Y = Sin(WanderDirection) * Speed;
+        CaelumThermalMotion.SetVelocity(self);
+    }
+
+    override bool InteractWithCaelumPlayer(CaelumPlayer caelumPlayer)
+    {
+        if (NarrativeRevealRequired && IsNarrativeFoyerComplete() && !DepartureDone) return false;
+        return caelumPlayer.OpenPalomoDialogue(self);
+    }
+
+    States
+    {
+    Spawn:
+        PAID A 1 A_EnablePalomoWander;
+        Goto Walk;
+    Walk:
+        PAWK A 0 A_EnablePalomoWander;
+        PAWK AB 4;
+        Loop;
+    Talk:
+        PALM D 0 A_StopPalomoWander;
+        PALM D -1;
+        Stop;
+    Laugh:
+        PLLF A 0 A_StopPalomoWander;
+        PLLF ABCBD 5;
+        Loop;
+    Anger:
+        PLAG A 0 A_StopPalomoWander;
+        PLAG ABC 6;
+        PLAG D -1;
+        Stop;
+    Joy:
+        PLJY A 0 A_StopPalomoWander;
+        PLJY ABCD 6;
+        Loop;
+    Surprise:
+        PLSP A 0 A_StopPalomoWander;
+        PLSP ABC 4;
+        PLSP C 4;
+        PLSP D -1;
+        Stop;
+    Sadness:
+        PLSD A 0 A_StopPalomoWander;
+        PLSD ABC 9;
+        PLSD D -1;
+        Stop;
+    Thought:
+        PLTH A 0 A_StopPalomoWander;
+        PLTH ABCD 7;
+        Loop;
+    Pain:
+        PALM A 0 A_StopPalomoWander;
+        PALM A 5 A_Pain;
+        Goto Walk;
+    Death:
+        PALM A 0 A_StopPalomoWander;
+        PALM A 5 A_Scream;
+        PALM A 0 A_CaelumNoBlocking;
+        PALM A -1;
+        Stop;
+    DepartureRun:
+        PARN AB 4;
+        Goto DepartureRunContinue;
+    DepartureWait:
+        PAID A 10;
+        Goto IdleBreathing;
+
+    // Los estados anteriores mantienen su índice para guardar/cargar.
+    IdleBreathing:
+        PAID AAAABBBB 10;
+        Loop;
+    Run:
+        PARN ABCD 3;
+        Loop;
+    DepartureRunContinue:
+        PARN CD 4;
+        Goto DepartureRun;
+    RestSeated:
+        RSPA A -1 A_StopPalomoWander;
+        Stop;
+    RestLying:
+        RSPA B -1 A_StopPalomoWander;
+        Stop;
+    }
+}
+
+class CaelumMandinga : CaelumFolkloreCombatActor
+{
+    override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {
+        // Inmunidad al dano de contaminacion; conservar contacto y otros danos.
+        if(mod=='CaelumDiseaseDOT')return 0;
+        return Super.TakeSpecialDamage(inflictor,source,damage,mod);
+    }
+    override bool UsesWeaponProjectileDispersion()
+    { return CaelumResidentData.DEMON_PROJECTILE_DISPERSION; }
+    override CaelumMixedMeleeDamage PrepareMixedMelee(Actor victim,double baseDamage)
+    {
+        let hit=new("CaelumMixedMeleeDamage");
+        hit.Attacker=self;hit.Victim=victim;hit.Critical=LastCombatAttackCriticalHit;
+        hit.FireDamage=CalculateActorOutgoingDamage(baseDamage
+            *CalculateActorType1Percent(CombatEffectiveIntelligence)/100.0,true);
+        hit.FireAfterShield=hit.FireDamage;
+        hit.DebuffPower=CaelumElementalStream.Power(self);
+        return hit;
+    }
+
+    override int GetApprovedPersonality(){return CaelumResidentData.MANDINGA_PERSONALITY;}
+    override int GetApprovedPersonalityRevision(){return CaelumResidentData.DEMON_PERSONALITY_REVISION;}
+    // El daño accidental no convierte a otro mandinga del mismo bando en
+    // enemigo. Se respetan lealtades opuestas y órdenes nativas de odio.
+    bool IsAlliedMandinga(Actor other)
+    {
+        return other != null && other != self && other is "CaelumMandinga"
+            && !IsHostile(other) && other.TIDtoHate == TIDtoHate
+            && (TIDtoHate == 0 || other.tid != TIDtoHate);
+    }
+
+    override bool OkayToSwitchTarget(Actor other)
+    { return !IsAlliedMandinga(other) && Super.OkayToSwitchTarget(other); }
+
+    void CA838Body_CaelumMandinga_Tick()
+    {
+        if(CaelumRedemption.Pending(self))return;
+        // También corrige una pelea ya guardada, sin reconstruir al actor ni
+        // tocar heridas, recursos, quemaduras o la transferencia de calor.
+        if (IsAlliedMandinga(target)) target = null;
+        if (IsAlliedMandinga(lastenemy)) lastenemy = null;
+        Super.Tick();
+    }
+
+    CaelumWeaponModel PossessedMachete;
+    bool MandingaBirthInitialized;
+    int SidearmRevision;
+    override CaelumWeaponModel GetPossessedSidearm()
+    {
+        // Materializa una sola vez el machete ya usado por su perfil ofensivo.
+        if(SidearmRevision<1)
+        {
+            SidearmRevision=1;PossessedMachete=new("CaelumWeaponModel");PossessedMachete.InitializeDefaults();
+            PossessedMachete.WeaponType=CaelumConstants.WEAPON_TYPE_MACHETE;
+            PossessedMachete.Durability=PossessedMachete.GetMaximumDurability();
+        }
+        return PossessedMachete;
+    }
+    override int GetArmorRace() { return CaelumConstants.RACE_GOBLIN; }
+    Default
+    {
+        Tag "$CA_MANDINGA_NAME";
+        Health 798;
+        Radius 14.755556;
+        Height 51.644444;
+        Mass 66;
+        MeleeRange 52;
+        Scale 0.3125;
+        Monster;
+        +LOOKALLAROUND
+    }
+
+    override void PostBeginPlay()
+    {
+        if(MandingaBirthInitialized)return;
+        MandingaBirthInitialized=true;
+        Super.PostBeginPlay();
+        InitializeUniformFolkloreProfile(6);
+        ConfigureCombatMagicalRange();
+        CaelumDemonService.Initialize(self);
+    }
+
+    override String GetCaelumRecognitionSound()
+    {
+        return "caelum/enemies/mandinga_alert";
+    }
+
+    override Sound GetCombatPainSound()
+    {
+        return "caelum/enemies/mandinga_pain";
+    }
+
+    States
+    {
+    SiegeWithdrawal:
+        MIRN ABCD 4;
+        Loop;
+    Spawn:
+        MIID A 10 A_CaelumBudgetedLook;
+        Goto IdleBreathing;
+    See:
+        TNT1 A 0 A_JumpIf(
+            CombatLucidityPhysicalStunRemaining > 0.0,
+            "LucidityStun"
+        );
+        MIRN AB 4 A_CaelumBudgetedChase;
+        Goto RunSecondHalf;
+    Walk:
+        Goto WalkCycle;
+    LucidityStun:
+        MNDG A 1;
+        Goto See;
+    Melee:
+    AbsentMeleePrepare:
+        MNDG D 6 A_CaelumBeginResourceAttack(CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_MACHETE), CaelumConstants.WEAPON_TYPE_MACHETE, false, CaelumAttackRules.MANDINGA_MELEE_RELEASE);
+    AbsentMeleeRelease:
+        MNDG E 0 A_CaelumProfiledMeleeAttack(
+            CaelumConstants.MANDINGA_MACHETE_BASE_DAMAGE
+        );
+    AbsentMeleeRecovery:
+        MNDG E 4 A_CaelumWeaponRecovery;
+        Goto See;
+    Missile:
+        // Conserva el punto proporcional del lanzamiento; duración común #37.
+    AbsentMagicPrepare:
+        MNDG D 14 A_CaelumBeginResourceAttack(0, CaelumConstants.WEAPON_TYPE_STAFF, true, CaelumAttackRules.MANDINGA_MAGIC_RELEASE);
+    AbsentMagicRelease:
+        MNDG E 0 A_CaelumSpawnTierOneMagicProjectile(
+            "CaelumActorSimpleElementalProjectile",
+            CaelumAttackRules.NPC_MAGIC_LAUNCH_HEIGHT,
+            CaelumConstants.WEAPON_TYPE_STAFF,
+            CaelumConstants.ESSENCE_FIRE,
+            false
+        );
+    AbsentMagicRecovery:
+        MNDG E 4 A_CaelumWeaponRecovery;
+        Goto See;
+    Attack:
+        Goto Melee;
+    Pain:
+        MNDG F 5 A_Pain;
+        Goto See;
+    Death:
+        MNDG G 5 A_Scream;
+        MNDG HI 5;
+        MNDG J 5 A_CaelumNoBlocking;
+        MNDG K 5;
+        MNDG L -1;
+        Stop;
+
+    // Estados nuevos al final: conservan los índices de partidas anteriores.
+    IdleBreathing:
+        MIID AAA 10 A_CaelumBudgetedLook;
+        MIID BBBB 10 A_CaelumBudgetedLook;
+        Goto Spawn;
+    RunSecondHalf:
+        TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
+        MIRN CD 4 A_CaelumBudgetedChase;
+        Goto See;
+    Run:
+        Goto See;
+    WalkCycle:
+        TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
+        MIWK AB 4 A_CaelumBudgetedChase;
+        Loop;
+    RacialBreath:
+        MDBR ABCD 3;
+        Loop;
+    RestLying:
+        SLMD A -1;
+        Stop;
+    }
+
+    override void Tick()
+    {
+        CA838BurstProfile probe=null;
+        if(level.time>=3599 && level.time<4299)probe=CA838BurstProfile(StaticEventHandler.Find('CA838BurstProfile'));
+        if(probe!=null)probe.Begin(2);
+        CA838Body_CaelumMandinga_Tick();
+        if(probe!=null)probe.End();
+    }
+}
+
+class CaelumZupayColossus : CaelumFolkloreCombatActor
+{
+    override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {
+        // El mismo filtro se aplica a la fisiologia activa y ausente.
+        if(mod=='CaelumDiseaseDOT')return 0;
+        return Super.TakeSpecialDamage(inflictor,source,damage,mod);
+    }
+    bool ZupayBirthInitialized;
+    override bool UsesWeaponProjectileDispersion()
+    { return CaelumResidentData.DEMON_PROJECTILE_DISPERSION; }
+    override int GetApprovedPersonality(){return CaelumResidentData.ZUPAY_PERSONALITY;}
+    override int GetApprovedPersonalityRevision(){return CaelumResidentData.DEMON_PERSONALITY_REVISION;}
+    override int GetArmorRace() { return CaelumConstants.RACE_GOBLIN; }
+    bool SewerFleeing;
+    Actor SewerEscapeTarget;
+
+    virtual bool IsSewerBoss() { return level.MapName == "MAP02" && tid == 43799; }
+
+    virtual bool IsRetreatBoss() { return IsSewerBoss(); }
+    virtual vector3 EscapePosition()
+    {
+        if(CaelumMazeLayout.IsRedesigned())return CaelumMazeLayout6.BossEscapePosition();
+        return CaelumSewerTravel.GatePosition(CaelumWorldCatalogue.CONNECTION_TO_RESERVOIR);
+    }
+    virtual bool ReachedEscape()
+    {
+        CaelumArcanaProgress.ConfirmSewerDefeat();
+        return true;
+    }
+    virtual double EscapeReach()
+    {
+        return Radius + GetDefaultByType("CaelumSewerTravelGate").Radius + Speed;
+    }
+
+    virtual void EscapeStep()
+    {
+        // Navegacion nativa aceptada para el jefe de alcantarillas y saves previos.
+        ThermalChase(null,null,CHF_DONTLOOKALLAROUND);
+    }
+
+    override void Die(Actor source, Actor inflictor, int dmgflags, Name meansOfDeath)
+    {
+        Super.Die(source, inflictor, dmgflags, meansOfDeath);
+        if (IsSewerBoss() && health <= 0) CaelumArcanaProgress.ConfirmSewerDefeat();
+        if (health <= 0 && SewerEscapeTarget != null)
+        { SewerEscapeTarget.Destroy(); SewerEscapeTarget = null; }
+    }
+
+    override void Tick()
+    {
+        if(CaelumRedemption.Pending(self))return;
+        // La reja del jefe es también su activación: ningún sonido, blanco
+        // heredado o impulso inicia la IA antes de abrirla con la llave norte.
+        if(IsSewerBoss() && !CaelumRedemption.PreviouslyRaised(self))
+        {
+            let gate=CaelumMazeBarredGate(ActorIterator.Create(
+                CaelumConstants.PRISONER_BOSS_GATE_TID,"CaelumMazeBarredGate").Next());
+            if(gate!=null && !gate.Opened)
+            {
+                Vel=(0,0,0);Target=null;LastEnemy=null;
+                return;
+            }
+        }
+        if (!CaelumRedemption.PreviouslyRaised(self) && IsRetreatBoss() && health > 0 && CombatMaximumHealth > 0
+            && double(health) / CombatMaximumHealth <= CaelumConstants.HEALTH_WOUNDED_THRESHOLD)
+            SewerFleeing = true;
+        if (!CaelumBolas.Restrained(self) && !CaelumTelekinesisRules.Held(self) && SewerFleeing && IsRetreatBoss() && health > 0)
+        {
+            Vector3 exitPos = EscapePosition();
+            if (SewerEscapeTarget == null)
+                SewerEscapeTarget = Spawn("CaelumSewerEscapeTarget", exitPos, NO_REPLACE);
+            else SewerEscapeTarget.SetOrigin(exitPos, false);
+            target = SewerEscapeTarget; LastEnemy = null;
+            Speed = CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER * CaelumSupportMagic.Factor(self);
+            Vector2 delta = exitPos.XY - Pos.XY;
+            // A_Chase avanza por pasos y la puerta colisiona en XY. Llegar a
+            // un paso del contacto evita exigir penetrar su volumen sólido.
+            if (delta.Length() <= EscapeReach() && Abs(Pos.Z - exitPos.Z) <= MaxStepHeight
+                && SewerEscapeTarget != null && CheckSight(SewerEscapeTarget) && ReachedEscape())
+            {
+                // La retirada concluye sin muerte ficticia ni duplicar botín.
+                A_StopSound(CHAN_7);
+                Destroy();
+                return;
+            }
+            Vel.X = 0; Vel.Y = 0;
+            if (!InStateSequence(CurState, FindState("SewerEscape"))) SetStateLabel("SewerEscape");
+        }
+        Super.Tick();
+        if (SewerFleeing && health > 0)
+            Speed = CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER * CaelumSupportMagic.Factor(self);
+    }
+
+    action void A_CaelumSewerEscapeMove()
+    {
+        let boss = CaelumZupayColossus(self);
+        if (boss == null || boss.SewerEscapeTarget == null) return;
+        boss.target = boss.SewerEscapeTarget;
+        boss.Speed = boss.CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER * CaelumSupportMagic.Factor(boss);
+        // Navegación nativa sin ataques; misma cadencia que la carrera normal.
+        boss.EscapeStep();
+    }
+
+    override void OnDestroy()
+    {
+        if (SewerEscapeTarget != null) SewerEscapeTarget.Destroy();
+        Super.OnDestroy();
+    }
+
+    Default
+    {
+        Tag "$CA_ZUPAY_COLOSSUS_NAME";
+        Health 44022;
+        Radius 26.666667;
+        Height 93.333333;
+        Mass 666;
+        MeleeRange 192;
+        // 208 px desde el pivote al borde × 0,3125.
+        RenderRadius 65;
+        // 384 px visibles × 0,3125 = 120 MU; la caja física mide 93,33 MU.
+        Scale 0.3125;
+        Monster;
+        +LOOKALLAROUND
+    }
+
+    override void PostBeginPlay()
+    {
+        if(ZupayBirthInitialized)return;
+        ZupayBirthInitialized=true;
+        Super.PostBeginPlay();
+        InitializeUniformFolkloreProfile(CaelumConstants.ZUPAY_ATTRIBUTE_LEVEL);
+        ConfigureCombatMagicalRange();
+        CaelumDemonService.Initialize(self);
+    }
+
+    override String GetCaelumRecognitionSound()
+    {
+        return "caelum/enemies/zupay_alert";
+    }
+
+    override Sound GetCombatPainSound()
+    {
+        return "caelum/enemies/zupay_pain";
+    }
+
+    States
+    {
+    Spawn:
+        TNT1 A 0 NoDelay A_StopSound(CHAN_7);
+        ZUID A 10 A_CaelumBudgetedLook;
+        Goto IdleBreathing;
+    See:
+        TNT1 A 0 A_JumpIf(
+            CombatLucidityPhysicalStunRemaining > 0.0,
+            "LucidityStun"
+        );
+        ZUPY B 0 A_StartSoundIfNotSame(
+            "caelum/enemies/zupay_walk",
+            "caelum/enemies/zupay_walk",
+            CHAN_7
+        );
+        ZURN AB 4 A_CaelumBudgetedChase;
+        Goto RunSecondHalf;
+    Walk:
+        Goto WalkCycle;
+    LucidityStun:
+        TNT1 A 0 A_StopSound(CHAN_7);
+        ZUPY A 1;
+        Goto See;
+    Melee:
+        TNT1 A 0 A_StopSound(CHAN_7);
+        // El golpe conserva el mismo punto proporcional de impacto, pero su
+        // ciclo completo aprobado por #37 pasa de 20 a 80 tics.
+    AbsentMeleePrepare:
+        ZUPY D 48 A_CaelumBeginResourceAttack(CaelumAttackRules.SlamAir(), -1, false, 0, true);
+    AbsentMeleeRelease:
+        ZUPY E 0 A_CaelumGroundSlam(
+            CaelumConstants.ZUPAY_SLAM_BASE_DAMAGE,
+            CaelumConstants.ZUPAY_SLAM_RADIUS_MAP_UNITS,
+            CaelumConstants.ZUPAY_SLAM_VERTICAL_SPEED
+        );
+    AbsentMeleeRecovery:
+        ZUPY E 32 A_CaelumThermalAttackFrame;
+        Goto See;
+    Missile:
+        TNT1 A 0 A_StopSound(CHAN_7);
+        // Las poses conservan límites proporcionales sobre la duración #37.
+    AbsentMagicPrepare:
+        ZUPY M 3 A_CaelumBeginResourceAttack(0, CaelumConstants.WEAPON_TYPE_STATUETTE, true, CaelumAttackRules.ZUPAY_MAGIC_WIND_STEP);
+        ZUPY NOPQ 3 A_CaelumMagicWindFrame;
+        // El proyectil nace al pasar de throw_release a throw_recover.
+    AbsentMagicRelease:
+        ZUPY R 0 A_CaelumSpawnTierOneMagicProjectile(
+            "CaelumActorExplosiveElementalProjectile",
+            CaelumAttackRules.NPC_MAGIC_LAUNCH_HEIGHT,
+            CaelumConstants.WEAPON_TYPE_STATUETTE,
+            CaelumConstants.ESSENCE_EARTH,
+            true
+        );
+    AbsentMagicRecovery:
+        ZUPY R 5 A_CaelumMagicLastFrame;
+        Goto See;
+    Attack:
+        Goto Melee;
+    Pain:
+        TNT1 A 0 A_StopSound(CHAN_7);
+        ZUPY F 5 A_Pain;
+        Goto See;
+    Death:
+        TNT1 A 0 A_StopSound(CHAN_7);
+        ZUPY G 5 A_Scream;
+        ZUPY HI 5;
+        ZUPY J 5 A_CaelumNoBlocking;
+        ZUPY K 5;
+        ZUPY L -1;
+        Stop;
+    Lift:
+        TNT1 A 0 A_StopSound(CHAN_7);
+        ZUPY MN 6;
+        ZUPY O -1;
+        Stop;
+    Throw:
+        Goto Missile;
+
+    // Estados nuevos al final: conservan los índices de partidas anteriores.
+    IdleBreathing:
+        ZUID AAA 10 A_CaelumBudgetedLook;
+        ZUID BBBB 10 A_CaelumBudgetedLook;
+        Goto Spawn;
+    RunSecondHalf:
+        TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
+        ZURN CD 4 A_CaelumBudgetedChase;
+        Goto See;
+    Run:
+        Goto See;
+    WalkCycle:
+        TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
+        ZUWK A 0 A_StartSoundIfNotSame("caelum/enemies/zupay_walk", "caelum/enemies/zupay_walk", CHAN_7);
+        ZUWK AB 4 A_CaelumBudgetedChase;
+        Loop;
+    SewerEscape:
+        ZURN ABCD 4 A_CaelumSewerEscapeMove;
+        Loop;
+    RacialBreath:
+        ZUBR ABCD 3;
+        Loop;
+    RestLying:
+        SLZU A -1;
+        Stop;
+    }
+}
+
+// Blanco invisible de navegación, sin colisión, daño, botín ni misión propia.
+class CaelumSewerEscapeTarget : Actor
+{
+    Default { Radius 1; Height 1; +SHOOTABLE +INVULNERABLE +NOBLOCKMAP +NOGRAVITY +NOTARGET }
+    States { Spawn: TNT1 A -1; Stop; }
+}
