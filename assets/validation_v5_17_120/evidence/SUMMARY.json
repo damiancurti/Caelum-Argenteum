@@ -1,0 +1,21 @@
+{
+  "issue": 883,
+  "release": "5.17.120",
+  "full_validation": "passed with no errors",
+  "author_acceptance": false,
+  "native_view_phases": 4,
+  "image_contents_inspected": 16,
+  "performance_endpoint_images_inspected": 4,
+  "view_house_uses": 4,
+  "view_house_returns": 2,
+  "persistence_phases": 3,
+  "persistence_house_uses": 4,
+  "persistence_house_returns": 2,
+  "performance_windows": 4,
+  "private_house_maps": 160,
+  "edited_surface_fields": 321,
+  "deterministic_packages": 3,
+  "deterministic_manifest": true,
+  "production_changes": "Two release log labels only",
+  "qualification": "Private ceiling assignment proposal. Exterior roofing and all non-target map bytes preserved. Same-option save reload and fresh default restoration only; no campaign save conversion, author acceptance or completed-batch claim."
+}

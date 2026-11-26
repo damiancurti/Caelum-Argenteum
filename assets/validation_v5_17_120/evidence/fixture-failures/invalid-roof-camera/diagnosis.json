@@ -1,0 +1,11 @@
+{
+  "issue": 883,
+  "status": "fixture_viewpoint_failure_preserved",
+  "source": "build/issue883-city-views01",
+  "failure": "The added rooftop camera at Z184 has zero native headroom and fails TestMobjLocation in the unchanged control.",
+  "cause": "generate_barracas_map.apply_sky caps civic sectors114/124 (tag1028) at184, equal to the existing roof top. The native roof volume spans160..184; there is no authored walkable roof space at this location.",
+  "correction": "Remove the invalid diagnostic rooftop anchor from final coverage. Retain street/inside anchors, all source geometry and existing low-sky policy. Verify the exterior roofing by unchanged-byte audit and native control ceiling texture, without claiming a native rooftop walkthrough.",
+  "production_change": false,
+  "preserved_log": "control/engine.log",
+  "author_acceptance": false
+}

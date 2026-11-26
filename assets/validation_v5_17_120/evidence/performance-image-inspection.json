@@ -1,0 +1,22 @@
+{
+  "directly_inspected": [
+    {
+      "image": "performance/house-control01/peer0/scene.png",
+      "sha256": "1812a7d2d859af74e483bcbb853bbbba9ba1c248c2adb1883378e36751a355b9"
+    },
+    {
+      "image": "performance/house-candidate01/peer0/scene.png",
+      "sha256": "3a31178931db2fe3b34a8d9aaec73cb97a7110608568f490a0d873debecdebf9"
+    },
+    {
+      "image": "performance/civic-control01/peer0/scene.png",
+      "sha256": "4ff4c9f765c964d5cd7a87cd4cd718cef8c01b66174e987c875cc56c1947f6d9"
+    },
+    {
+      "image": "performance/civic-candidate01/peer0/scene.png",
+      "sha256": "5ed98c6e0e72cf20675df5e048b70c2e4037bf69c8d4ad605e30b29214fbda44"
+    }
+  ],
+  "count": 4,
+  "qualification": "All four final endpoint captures inspected separately from the16 gallery captures. Endpoint diagnostic text is expected; no menu obscures the measured scenes."
+}

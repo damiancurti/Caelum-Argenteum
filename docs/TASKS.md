@@ -1,6 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.119** - 2026-11-21.
+Documentation version: **5.17.120** - 2026-11-21.
+
+## 5.17.120 - Separate interior ceilings from exterior roofing (#883, #463)
+
+Implemented #883: isolated ceiling-assignment options, complete non-target byte
+audit, deterministic composition, four paired native view phases/16 inspected
+captures, three persistence phases and four affected interior frame/tic windows.
+The corrected reload launcher copies the exact disposable save into its phase's
+savedir and passes only its basename to -loadgame. Both the initial failed path
+attempt and invalid rooftop-camera attempt remain in evidence. Final-session
+launcher keeps native menus available and leaves production defaults unchanged.
+
+CA883-CEILING-01 joins the single pending author queue. Exact timber/style choice,
+municipal office/archive finish, street/maintenance/moisture/lighting detail and
+the broader #463 scope remain pending. Continue source-backed municipal finish;
+do not invent furniture ownership, services or ambient schedules. #736 boards
+remain unapproved. No intermediate terminal, author acceptance, merge, issue
+closure or completed-batch claim is recorded.
 
 ## 5.17.119 - Inventory and combine the environment review (#881, #463)
 

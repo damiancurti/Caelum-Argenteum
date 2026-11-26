@@ -1,6 +1,25 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.119** - 2026-11-21.
+Documentation version: **5.17.120** - 2026-11-21.
+
+## 5.17.120 - Separate interior ceilings from exterior roofing (#883, #463)
+
+assets/source/art/interior_ceilings_883/CONFIG.json records the owned CMWD01 source,
+hash, relevant house/city data and explicitly unapproved proposal. No new raster,
+model, actor or material definition is introduced. The deterministic builder
+assets/generators/build_interior_ceiling_review.py patches equal-length surface
+names without reserializing TEXTMAP or changing WAD directories. The321 changed
+fields are enumerated with sector, source values and offsets in the manifest.
+Every other map byte is retained; default src maps/art are unchanged.
+
+Three private variants are available: ceilings25281379 bytes; appearance29890751;
+vaults56523816. The latter two preserve the exact inherited #881 image/model/texture
+composition and optional #875 vault/Justice override. Two builder runs produce
+byte-identical packages and manifests. No permanent art budget is inferred.
+Gallery: assets/validation_v5_17_120/review.html,16 directly inspected native view
+captures. Existing table/chairs, bed, chest, bathroom fixtures and civic courtyard
+remain visible; roof-tile undersides become dark timber. This is a material option,
+not a claim of historical authenticity or completed municipal furnishing.
 
 ## 5.17.119 - Inventory and combine the environment review (#881, #463)
 

@@ -1,0 +1,72 @@
+{
+  "issue": 883,
+  "author_acceptance": false,
+  "scene": "house",
+  "variant": "vaults",
+  "runtime_sha256": "1af275be35cb555e2fe65664af536b23fa3bff11bc10942d90ccd6050e9b5d46",
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue883-review01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue883-ceilings01\\vaults.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue883-persistence02\\candidate_fresh\\review.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue883-persistence02\\candidate_fresh\\review.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue883-persistence02\\candidate_fresh",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue883-persistence02\\candidate_fresh\\engine.log",
+    "+map",
+    "MAP03",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue883-persistence02\\candidate_fresh\\start.cfg"
+  ],
+  "cameras": [
+    {
+      "name": "house_entrance",
+      "point": [
+        -21088,
+        -12416
+      ],
+      "angle": 105.945396,
+      "basis": "Original private house0 bounds + INTERIORS.door_inside, looking toward the existing table"
+    },
+    {
+      "name": "house_living",
+      "point": [
+        -21216.0,
+        -12192.0
+      ],
+      "angle": 90.0,
+      "basis": "Center of authored living room, looking toward the existing table"
+    },
+    {
+      "name": "house_bedroom",
+      "point": [
+        -21536,
+        -12416.0
+      ],
+      "angle": 110.556045,
+      "basis": "Bedroom doorway inner side, offset by existing door_inset"
+    },
+    {
+      "name": "house_bathroom",
+      "point": [
+        -21696.0,
+        -11872
+      ],
+      "angle": 71.565051,
+      "basis": "Bathroom doorway inner side, offset by existing door_inset"
+    }
+  ],
+  "qualification": "Prepare or open one interior-ceiling scene for the final author session.\n\nAll saves/configuration stay in a new build directory. F1 cycles native review\nanchors; menus remain usable. House review enters through real portal travel.\nThe fixture uses invulnerability/notarget and suppresses narrative delivery;\nthis is an art review, not ordinary campaign or multiplayer acceptance.\n",
+  "geometry_save_scope": "Fresh disposable sessions only. Never load visited campaign maps into any ceiling variant; texture-only map edits also change checksums."
+}
