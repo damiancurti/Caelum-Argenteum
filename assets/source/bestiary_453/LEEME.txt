@@ -1,0 +1,53 @@
+CAELUM ARGENTEUM — BESTIARIO DE FOLCLORE
+Paquete reconstruido el 12/11/2026 · 58 referencias originales
+
+CONTENIDO
+58 PNG originales, sin reducir resolución ni modificar sus bytes; catálogo CSV y JSON;
+índice visual para abrir en un navegador; notas de integración y texto para el issue.
+Distribución: 2 humanos, 3 hombres bestia, 21 duendes/demonios, 16 apariciones y 16 bestias mágicas.
+Caelith sigue siendo una categoría del proyecto, pero no se inventan referencias nuevas para ella.
+
+CÓMO CONSULTARLO
+Extraer el ZIP y abrir INDICE_VISUAL.html. Las imágenes están en imagenes/, organizadas por categoría.
+Los nombres descriptivos originales y las sumas SHA-256 figuran en catalogo.csv y catalogo.json.
+
+PARA ADJUNTAR AL ISSUE
+Issue principal: https://github.com/damiancurti/Caelum-Argenteum/issues/453
+El ZIP completo supera los 25 MB permitidos por adjunto en comentarios de GitHub.
+También se entregan seis ZIP independientes de menos de 25 MB cada uno.
+Adjuntar las seis partes al mismo comentario. Para reconstruir el paquete, extraer todas
+en la misma carpeta: todas comparten Bestiario_Caelum_Argenteum/ y documentación idéntica.
+No se necesita un programa de unión ni renombrar extensiones.
+El texto de COMENTARIO_ISSUE.txt puede copiarse en el comentario.
+
+PROCEDENCIA Y ALCANCE
+Las imágenes se recuperaron de la entrega del 20/10/2026. El catálogo se reconstruyó
+a partir de la tabla de ese día y su aprobación posterior, recuperadas del historial.
+La relación nombre–imagen se reconstruyó comparando títulos descriptivos, anatomía
+visible y secuencia. Se conserva el nombre original para permitir su auditoría.
+Los identificadores CA-FOLK-001 a CA-FOLK-058 pertenecen a este paquete;
+no afirman que existan clases o identificadores equivalentes en el código del juego.
+
+CORRECCIÓN DE TEJÚ JAGUÁ
+Se utiliza «Tejú Jaguá con siete cabezas caninas.png». La versión previa titulada
+«Reptil de siete cabezas.png» queda fuera del catálogo para evitar usar el diseño sustituido.
+
+DATOS QUE NO SE RECUPERARON
+No se recuperaron el índice original ni los prompts del ZIP anterior. No se presentan
+prompts recreados como originales. El índice visual y los archivos de catálogo son nuevos.
+No se recuperó una asignación verificable de regiones/mapas del juego por criatura:
+region_juego permanece vacío. Las asociaciones folclóricas conocidas no fijan spawns.
+Los tamaños se conservan como orientativos; cuando el eje de medida no se recuperó,
+no se inventa si corresponde a altura, longitud u otra dimensión.
+
+USO EN EL PROYECTO
+Son referencias conceptuales individuales para modelado 3D y producción de arte.
+No constituyen modelos, rigs, animaciones, sprites direccionales ni actores implementados.
+La aprobación distingue seres únicos, poblaciones múltiples y el grupo limitado Shoort.
+No se agregan estadísticas, daño, habilidades, loot, encuentros, misiones ni balance.
+Lobizón, Uturunco y Ucumar siguen siendo Hombres bestia; Rulo conserva su identidad Ucumar.
+El estado real de Mandinga y Zupay/Supay debe reconciliarse con el código vigente antes
+de cambiar actores, roles o persistencia.
+
+Consulta de límite de adjuntos (12/11/2026):
+https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/attaching-files

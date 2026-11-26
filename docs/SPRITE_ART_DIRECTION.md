@@ -1,6 +1,18 @@
 # Caelum Argenteum - Sprite art direction
 
-Documentation version: **5.16.0** - 2026-11-12.
+Documentation version: **5.16.1** - 2026-11-12.
+
+## Folklore model reference handoff for #453 (2026-11-12)
+
+The author supplied 58 folklore concept images and prefers 3D models where
+feasible. ASSETS and assets/bestiary/CATALOGUE.json own provenance and identities.
+Use these references for anatomy, silhouette, materials and recognizability;
+retain the seven canine heads of Teju Jagua and the distinct shapes of each
+creature. Do not replace them with generic demons or unrelated primitives.
+Retain editable mesh/material/animation sources and verify real in-engine
+rotation and animation before claiming 3D completion. A PNG billboard or a
+promotional render alone is not a finished model. The reference import neither
+replaces accepted actors nor authorizes new statistics or playable races.
 
 ## Port wardrobe brief for #423 (2026-10-29)
 

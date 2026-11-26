@@ -1,6 +1,120 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.16.0** - 2026-11-12.
+Documentation version: **5.16.1** - 2026-11-12.
+
+## 5.16.1 - Recovered folklore reference catalogue (#453, catalogue approved)
+
+The author supplied six ZIP attachments in issue #453 on 2026-11-12. All 58 PNGs
+are preserved byte-for-byte under [the original source directory](../assets/source/bestiary_453).
+The original catalogue, CSV, visual index, notes and checksum list remain intact.
+[PROVENANCE.json](../assets/bestiary/PROVENANCE.json) records attachment URLs,
+archive hashes, original filenames and the reconstruction limits. The original
+October 20 ZIP index/prompts and verified campaign-region assignments were not
+recovered; the supplied catalogue was reconstructed by its author. No provenance
+claim is upgraded to recovery of the missing original material.
+
+The canonical authoring view is [CATALOGUE.json](../assets/bestiary/CATALOGUE.json),
+generated from the immutable source plus [AUTHORING.json](../assets/bestiary/AUTHORING.json).
+Stable CA-FOLK-001..058 keys are package identities, not new engine IDs. Categories:
+2 Human, 3 Beast Man, 21 Duende/Demon, 16 Apparition and 16 Magical Beast references.
+Caelith remains an existing category with no added reference in this set. There
+are 33 unique identities, 24 repeatable references (four described as uncommon)
+and the limited Shoort group. No numerical spawn cap is inferred for that group.
+Lobizon/Uturunco/Ucumar remain Beast Men; Rulo remains the named Ucumar NPC.
+Mandinga and Zupay keep the source's current-game-size qualification and existing
+runtime behavior. A unique Zupay identity does not authorize deleting accepted
+Chapter I encounters or moving his Chapter II death into the opening campaign.
+
+Approximate size wording and explicit axes remain intact. A source range without
+a recovered axis is not silently converted into height, collision dimensions or
+runtime scaling. The author approved all 58 campaign-region assignments on 2026-11-12.
+AUTHORING.json now owns those decisions; CATALOGUE.json includes every region.
+[REGION_PROPOSAL.json](../assets/bestiary/REGION_PROPOSAL.json) preserves the reviewed
+table. These are creative campaign placements, not recovered folklore geography
+or an approved spawn/encounter table.
+
+The author prefers actual 3D models where feasible. These PNGs define anatomy,
+silhouette, materials and identity. The Teju Jagua reference has seven canine
+heads, replacing the earlier reptilian-head proposal. Existing OBJ/MD3 support
+provides an engine path, but this import contains no meshes, rigs, animations or
+new runtime actors. Production must retain editable model/material sources,
+appropriate animation, native bindings and separate visual/engine evidence;
+a reference image on a plane is not a completed 3D creature. #455/#461 own the
+functional creature/art handoff; races are not automatically made playable.
+
+Rebuild with `python assets/generators/build_bestiary_catalogue.py`; `--check`
+verifies freshness and all original checksums read-only. `--require-regions`
+now passes for all 58 approved entries. Normal project validation checks
+integrity; catalogue completion does not claim integrated creatures or models.
+Static evidence is in assets/validation_v5_16_1; native gameplay and author model
+acceptance do not apply to this source-only delivery.
+
+### Approved regional allocation
+
+The author approved the following rows on 2026-11-12. Unique entries crossing regions represent
+one travelling identity, never one copy per region. Existing MAP01/MAP02/MAP03
+roles remain protected. These regional assignments do not create new missions.
+
+| Stable key | Reference | Approved campaign regions |
+| --- | --- | --- |
+| CA-FOLK-001 | Brujas y brujos | Buenos Aires, Pampa, Litoral, Cuyo, Northwest Argentina, Chaco, Selva, Patagonia |
+| CA-FOLK-002 | Brujas y brujos de la Salamanca | Northwest Argentina, Supernatural domains |
+| CA-FOLK-003 | Lobizón / Luisón | Pampa, Litoral |
+| CA-FOLK-004 | Runa Uturunco / Uturunco | Litoral, Selva |
+| CA-FOLK-005 | Ucumar / Ucumarí | Northwest Argentina |
+| CA-FOLK-006 | Pombero | Litoral, Selva |
+| CA-FOLK-007 | Yasí Yateré / Jasy Jaterê | Litoral |
+| CA-FOLK-008 | Curupí / Kurupí | Selva |
+| CA-FOLK-009 | Mikilo | Northwest Argentina |
+| CA-FOLK-010 | Coquena | Northwest Argentina |
+| CA-FOLK-011 | Yastay / Llastay | Cuyo, Northwest Argentina |
+| CA-FOLK-012 | Sachayoj | Chaco |
+| CA-FOLK-013 | Caá Porá | Selva |
+| CA-FOLK-014 | Caá Yarí | Selva |
+| CA-FOLK-015 | Zapam Zucum | Cuyo |
+| CA-FOLK-016 | Pericana | Cuyo |
+| CA-FOLK-017 | Solapa | Pampa |
+| CA-FOLK-018 | Mandinga | Buenos Aires, Supernatural domains |
+| CA-FOLK-019 | Zupay / Supay | Buenos Aires, Northwest Argentina, Supernatural domains |
+| CA-FOLK-020 | Nóshtex / Nosjthej | Chaco |
+| CA-FOLK-021 | Xalpen | Patagonia |
+| CA-FOLK-022 | Shoort | Patagonia |
+| CA-FOLK-023 | Tanu | Patagonia |
+| CA-FOLK-024 | Halaháches / Kótaix | Patagonia |
+| CA-FOLK-025 | Matan | Patagonia |
+| CA-FOLK-026 | Ulen | Patagonia |
+| CA-FOLK-027 | Luz Mala | Pampa, Cuyo, Patagonia |
+| CA-FOLK-028 | Umita | Northwest Argentina |
+| CA-FOLK-029 | Mulánima / Almamula | Northwest Argentina |
+| CA-FOLK-030 | Chancho de Lata | Pampa, Litoral |
+| CA-FOLK-031 | La Viuda | Buenos Aires, Pampa, Litoral, Cuyo |
+| CA-FOLK-032 | La Llorona | Buenos Aires, Litoral |
+| CA-FOLK-033 | Futre | Cuyo |
+| CA-FOLK-034 | Anchimallén | Patagonia |
+| CA-FOLK-035 | Chonchón / Tué Tué | Patagonia |
+| CA-FOLK-036 | Gualicho | Patagonia |
+| CA-FOLK-037 | Pampayoj | Pampa |
+| CA-FOLK-038 | Mayu Maman | Northwest Argentina |
+| CA-FOLK-039 | Orko Maman | Northwest Argentina |
+| CA-FOLK-040 | Uritu Orko | Northwest Argentina |
+| CA-FOLK-041 | Nowet | Chaco |
+| CA-FOLK-042 | Máip | Patagonia |
+| CA-FOLK-043 | Familiar | Northwest Argentina |
+| CA-FOLK-044 | Basilisco criollo | Pampa, Litoral |
+| CA-FOLK-045 | Cachirú / Cachurú | Northwest Argentina |
+| CA-FOLK-046 | Kakuy / Cacuy | Northwest Argentina |
+| CA-FOLK-047 | Tejú Jaguá / Teyú Yaguá | Selva |
+| CA-FOLK-048 | Mbói Tu’ĩ | Litoral |
+| CA-FOLK-049 | Moñái | Selva |
+| CA-FOLK-050 | Ao Ao | Selva |
+| CA-FOLK-051 | Mbói Tatá | Litoral, Selva |
+| CA-FOLK-052 | Mbói Yaguá | Litoral, Selva |
+| CA-FOLK-053 | Cuero / Cuero Uñudo | Patagonia |
+| CA-FOLK-054 | Peuchén / Piuchén | Patagonia |
+| CA-FOLK-055 | Nahuelito | Patagonia |
+| CA-FOLK-056 | Huayrapuca | Northwest Argentina |
+| CA-FOLK-057 | Kasogonaga | Chaco |
+| CA-FOLK-058 | Kélenken | Patagonia |
 
 ## 5.15.4 / #451 - Consequence evidence and author launcher
 

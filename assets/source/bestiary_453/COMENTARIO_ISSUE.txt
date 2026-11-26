@@ -1,0 +1,9 @@
+Recovered October 20 folklore bestiary reference pack for #453.
+
+Attached are six ZIP parts, each below 25 MB. Extract all six into the same directory to obtain the complete Bestiario_Caelum_Argenteum folder.
+
+Contents: all 58 final original PNG references, a reconstructed visual index, CSV/JSON catalogue with names, categories, approximate sizes and unique/repeatable status, SHA-256 checksums and integration notes. Tejú Jaguá uses the corrected seven canine heads.
+
+The original prompts and original ZIP index were not recovered. Image/name assignments are reconstructed and retain the original filenames for review. Campaign-region assignments remain explicitly unset. These are concept references for 3D/art production, not implemented creatures or animated assets.
+
+Use INTEGRATION_NOTES_EN.md and preserve the existing roadmap, authored approval and dependency boundaries. This attachment does not by itself close the issue.

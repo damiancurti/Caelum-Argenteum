@@ -484,7 +484,7 @@
     {
       "issue": 453,
       "scope": "Import the verified 58-reference reconstructed catalogue; retain missing regional assignments explicitly",
-      "status": "reference_pack_verified_regions_pending"
+      "status": "reference_pack_verified_regions_approved"
     },
     {
       "issue": 454,

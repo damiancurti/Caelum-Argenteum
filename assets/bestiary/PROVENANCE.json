@@ -1,0 +1,60 @@
+{
+  "issue": 453,
+  "source_comment": "https://github.com/damiancurti/Caelum-Argenteum/issues/453#issuecomment-6836146548",
+  "uploader": "damiancurti",
+  "received": "2026-11-12",
+  "original_image_date": "2026-10-20",
+  "archives": [
+    {
+      "part": 1,
+      "sha256": "47b12e62e813c1ebfb27d9a87c773fd205bfe2be9e6be0e0496d991686452e49",
+      "bytes": 21956611,
+      "url": "https://github.com/user-attachments/files/34770048/Bestiario_Caelum_Argenteum_PARTE_01_de_06.zip"
+    },
+    {
+      "part": 2,
+      "sha256": "05de2fbbf96509916ac78ebd470e33f4830703f0b8c75a8c031537400e6d418c",
+      "bytes": 21154547,
+      "url": "https://github.com/user-attachments/files/34770047/Bestiario_Caelum_Argenteum_PARTE_02_de_06.zip"
+    },
+    {
+      "part": 3,
+      "sha256": "d780ac8f4af6c8c8434bf539052e709c00dacf1a300383151d3217fe6d7a1467",
+      "bytes": 22382340,
+      "url": "https://github.com/user-attachments/files/34770051/Bestiario_Caelum_Argenteum_PARTE_03_de_06.zip"
+    },
+    {
+      "part": 4,
+      "sha256": "41866c5034e772fe926576793e9262a0a0294caa7f1982c200b50d0590a5efb4",
+      "bytes": 20808829,
+      "url": "https://github.com/user-attachments/files/34770049/Bestiario_Caelum_Argenteum_PARTE_04_de_06.zip"
+    },
+    {
+      "part": 5,
+      "sha256": "bc3b13fb543e4a11bae38d84849eea828745610b2c958a67015ab14f6d524c45",
+      "bytes": 20830860,
+      "url": "https://github.com/user-attachments/files/34770050/Bestiario_Caelum_Argenteum_PARTE_05_de_06.zip"
+    },
+    {
+      "part": 6,
+      "sha256": "1ba07ff2a15b322f985ab22c03b8460ac23216a39c8f784fc9d706180e4a0cc4",
+      "bytes": 14947200,
+      "url": "https://github.com/user-attachments/files/34770052/Bestiario_Caelum_Argenteum_PARTE_06_de_06.zip"
+    }
+  ],
+  "preserved_source_directory": "assets/source/bestiary_453",
+  "original_file_count": 65,
+  "source_catalogue_sha256": "f47bbd169df9c35ca7fe3f86e41b83778242a25e5a7de9d4e39ecd717569b188",
+  "all_original_source_checksums_verified": true,
+  "all_58_png_bytes_preserved": true,
+  "source_status": "Reconstructed catalogue, not a recovered original manifest",
+  "missing_original_material": [
+    "Original ZIP index",
+    "Original generation prompts",
+    "Verified per-entry campaign region assignments"
+  ],
+  "image_name_mapping": "Reconstructed by source author; all 58 labelled references visually inspected during import. This is not a claim to have recovered the original index.",
+  "rights_basis": "Author-supplied project reference pack; original source notices retained. No third-party license or new distribution permission is inferred.",
+  "runtime_packaging": "Only src is packaged. These references, catalogues and source notices stay under assets.",
+  "model_preference": "Author requests 3D models where feasible. No meshes, rigs, animations or runtime actors are delivered by this reference import."
+}

@@ -1,0 +1,29 @@
+{
+  "issue": 453,
+  "verified_entries": 58,
+  "race_counts": {
+    "apparition": 16,
+    "beast_man": 3,
+    "duende_demon": 21,
+    "human": 2,
+    "magical_beast": 16
+  },
+  "population_counts": {
+    "limited_group": 1,
+    "repeatable": 24,
+    "unique": 33
+  },
+  "rare_repeatable_references": 4,
+  "unassigned_regions": 0,
+  "runtime_actors_added": 0,
+  "meshes_delivered": 0,
+  "release": "5.16.1",
+  "source_file_count": 65,
+  "all_source_sha256s_verified": true,
+  "generation_byte_identical": true,
+  "catalogue_sha256": "b16fdbeb26eb6dcf47bf530a061f285d9d8a2d15bccd4fd893bad0a267b64ab3",
+  "region_gate_expected_exit": 0,
+  "visual_review": "All 58 labelled concept references inspected in five contact sheets; source association remains reconstructed.",
+  "native_tests": "Not run for source import; no gameplay/geometry changes. Prior #452 checks do not certify new creatures.",
+  "author_acceptance": "All 58 campaign regional assignments approved 2026-11-12. Concept/source approval retained. Model/gameplay acceptance remains separate under #455/#461."
+}
