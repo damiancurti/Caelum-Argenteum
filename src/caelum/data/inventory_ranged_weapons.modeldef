@@ -1,0 +1,4 @@
+Model CaelumWeaponPickup { Path "models/caelum/inventory/ranged_weapons" Model 0 "carbine.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CCAR A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/ranged_weapons" Model 0 "shotgun.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSGN A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/ranged_weapons" Model 0 "longbow.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CLBW A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/ranged_weapons" Model 0 "crossbow.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CCBW A 0 0 }

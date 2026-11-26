@@ -1,0 +1,11 @@
+{
+  "issue": 773,
+  "mode": "built-in image_gen",
+  "date": "2026-11-15",
+  "intent": "new original opaque olive canvas material",
+  "prompt": "Use case: photorealistic-natural.\nAsset type: original square seamless albedo material for a game.\nPrimary request: a continuous edge-to-edge flat field of dark muted olive-green woven linen canvas, suitable for an old handmade fabric case. Tight fine natural weave, subtle small fiber irregularities, restrained surface wear, sober nineteenth-century textile appearance. Dark desaturated olive green, no shiny or metallic appearance. Completely uniform diffuse illumination, no directional shadow, no highlight, no vignette. Entire square filled by the fabric at one consistent scale. Fully opaque. No objects, folds, seams, embroidery, trim, markings, text, border or symbols.",
+  "transparent_background": false,
+  "source": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-0865fc91-45c5-49b3-b28f-0b91f16338b2.png",
+  "processing": "Byte-for-byte copy; no raster edits.",
+  "status": "candidate_author_review_pending"
+}
