@@ -1,6 +1,55 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.75** - 2026-11-15.
+Documentation version: **5.17.76** - 2026-11-15.
+
+## 5.17.76 - Native Kasogonaga candidate (#795)
+
+CaelumBestiary057 now has an editable anteater-like native model from the owned
+Kasogonaga reference: elongated tapered snout, small lateral eyes and ears,
+arched grey body with ivory fur markings, four clawed limbs and a broad brush
+tail. Geometry, hierarchy, contact witnesses, animation data and OBJ/MTL sources
+live in assets/source/art/kasogonaga_795. The original built-in image_gen atlas
+is unchanged; MATERIALS_PROMPT.json retains the exact prompt and original path.
+Owned Familiar joint/limb topology and iris/dark pixels retain provenance.
+Surface-marking rules live in the editable shape data; the generator assigns
+existing material cells without image postprocessing or gameplay constants.
+
+The model has17,063 vertices,29,036 triangles,
+75 closed components,74 rooted witnesses and592 independent posed contacts.
+All23 inherited combat frames are floor-supported with zero collapsed native
+triangles. Nine artifacts repeat byte-for-byte. The new MODELDEF binds only
+CaelumBestiary057; combat, collision, native timings, identity, loot and save
+fields remain unchanged. Conceptual metres do not set runtime size, and the
+reference's weather association does not introduce a new ability.
+
+The18,574-entry package matches src exactly; all unrelated
+runtime bytes match5.17.75. Native baseline/old-save/fresh/reload/rollback passes
+115 assertions. Active actions/loot/reload passes80 more, including six cases
+with the existing Mandinga control. All23 pose captures contain the model. A further51 native visual assertions
+cover the final inspection cameras on identical runtime/model bytes.
+Final front/side/rear, face/snout/tail, locomotion, attack, pain and lying views
+were inspected. Initial ear contacts were repaired; native review reduced eye
+size, restored grey face fur, added face markings and widened the front view.
+Superseded reports remain evidence. Final cameras use an oblique pose view and
+frame the long snout/tail; the prior continuity fixture remains qualified by its
+recorded camera layout, with unchanged native model bytes.
+
+One sequential700-tic sprite/model pair on Windows11 Pro26200, Ryzen9 5950X,
+32GB/RTX3070Ti, GZDoom4.14.2 Vulkan1280x720, uncapped/no VSync, background unpaused
+and5% audio observes:
+
+- sprite: 1865.05 queue presents/s, p95 0.7349ms, p99 0.8049ms, maximum 1.5089ms
+- model: 1843.93 queue presents/s, p95 0.6815ms, p99 0.8188ms, maximum 1.3091ms
+
+These queue intervals do not establish GPU/display latency, repeatability or
+campaign/crowd budgets. Footprints differ; siege performance remains unresolved.
+Evidence: assets/validation_v5_17_76/evidence/SUMMARY.json.
+CA795-KASOGONAGA-01 retains author review of rounded anatomy, coarse fur markings,
+crest/brush locks and rigid fall/rest poses. Horizontal anatomy extends beyond
+unchanged collision. Regional placement remains separate; no Chaco ground is
+invented. Native candidates cover23 of56 provisional classes;33 remain. Other
+characters, modular fitting and V5.16 progression remain unfinished, with the
+test terminal deferred until the full requested batch is complete.
 
 ## 5.17.75 - Teju Jagua regional inspection (#793)
 

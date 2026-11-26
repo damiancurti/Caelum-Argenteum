@@ -1,0 +1,3622 @@
+{
+  "schema_revision": 1,
+  "issue": 795,
+  "catalogue_id": "CA-FOLK-057",
+  "species": "kasogonaga",
+  "reference": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/57_kasogonaga.png",
+  "reference_role": "Owned anatomy, materials and silhouette; conceptual metres do not authorize runtime scale.",
+  "preview": {
+    "height_map_units": 100
+  },
+  "atlas": {
+    "columns": 3,
+    "rows": 2,
+    "inset": 0.018,
+    "source_file": "materials.png"
+  },
+  "materials": {
+    "fur": {
+      "tile": [
+        0,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "ivory": {
+      "tile": [
+        1,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "tail_fur": {
+      "tile": [
+        2,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "face": {
+      "tile": [
+        0,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "keratin": {
+      "tile": [
+        1,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "nose": {
+      "tile": [
+        2,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "iris": {
+      "uv_rect": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "native_batch": "iris"
+    },
+    "dark": {
+      "uv_rect": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "native_batch": "dark"
+    }
+  },
+  "parts": {
+    "pelvis": {
+      "parent": null,
+      "pivot": [
+        -23,
+        0,
+        48
+      ]
+    },
+    "torso": {
+      "parent": "pelvis",
+      "pivot": [
+        0,
+        0,
+        54
+      ]
+    },
+    "head": {
+      "parent": "torso",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "jaw": {
+      "parent": "head",
+      "pivot": [
+        46,
+        0,
+        48
+      ]
+    },
+    "tail": {
+      "parent": "pelvis",
+      "pivot": [
+        -30,
+        0,
+        54
+      ]
+    },
+    "trunk": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        54
+      ]
+    },
+    "neck": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "cranium": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "snout": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "nose": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "left_nostril": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "left_eye": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "left_iris": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "left_pupil": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "left_ear": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "left_ear_inner": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "fore_left_thigh": {
+      "parent": "torso",
+      "pivot": [
+        18.8,
+        -16.0,
+        49
+      ]
+    },
+    "fore_left_shin": {
+      "parent": "fore_left_thigh",
+      "pivot": [
+        21.2,
+        -16.0,
+        29
+      ]
+    },
+    "fore_left_upper": {
+      "parent": "fore_left_thigh",
+      "pivot": [
+        18.8,
+        -16.0,
+        49
+      ]
+    },
+    "fore_left_lower": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        21.2,
+        -16.0,
+        29
+      ]
+    },
+    "fore_left_foot": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        21.2,
+        -16.0,
+        29
+      ]
+    },
+    "fore_left_toe_0": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        21.2,
+        -16.0,
+        29
+      ]
+    },
+    "fore_left_toe_0_claw": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        21.2,
+        -16.0,
+        29
+      ]
+    },
+    "fore_left_toe_1": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        21.2,
+        -16.0,
+        29
+      ]
+    },
+    "fore_left_toe_1_claw": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        21.2,
+        -16.0,
+        29
+      ]
+    },
+    "fore_left_toe_2": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        21.2,
+        -16.0,
+        29
+      ]
+    },
+    "fore_left_toe_2_claw": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        21.2,
+        -16.0,
+        29
+      ]
+    },
+    "fore_left_toe_3": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        21.2,
+        -16.0,
+        29
+      ]
+    },
+    "fore_left_toe_3_claw": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        21.2,
+        -16.0,
+        29
+      ]
+    },
+    "hind_left_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        -25.0,
+        -15.0,
+        47.5
+      ]
+    },
+    "hind_left_shin": {
+      "parent": "hind_left_thigh",
+      "pivot": [
+        -33.8,
+        -15.0,
+        28.5
+      ]
+    },
+    "hind_left_upper": {
+      "parent": "hind_left_thigh",
+      "pivot": [
+        -25.0,
+        -15.0,
+        47.5
+      ]
+    },
+    "hind_left_lower": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -33.8,
+        -15.0,
+        28.5
+      ]
+    },
+    "hind_left_foot": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -33.8,
+        -15.0,
+        28.5
+      ]
+    },
+    "hind_left_toe_0": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -33.8,
+        -15.0,
+        28.5
+      ]
+    },
+    "hind_left_toe_0_claw": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -33.8,
+        -15.0,
+        28.5
+      ]
+    },
+    "hind_left_toe_1": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -33.8,
+        -15.0,
+        28.5
+      ]
+    },
+    "hind_left_toe_1_claw": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -33.8,
+        -15.0,
+        28.5
+      ]
+    },
+    "hind_left_toe_2": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -33.8,
+        -15.0,
+        28.5
+      ]
+    },
+    "hind_left_toe_2_claw": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -33.8,
+        -15.0,
+        28.5
+      ]
+    },
+    "hind_left_toe_3": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -33.8,
+        -15.0,
+        28.5
+      ]
+    },
+    "hind_left_toe_3_claw": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -33.8,
+        -15.0,
+        28.5
+      ]
+    },
+    "right_nostril": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "right_eye": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "right_iris": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "right_pupil": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "right_ear": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "right_ear_inner": {
+      "parent": "head",
+      "pivot": [
+        25,
+        0,
+        60
+      ]
+    },
+    "fore_right_thigh": {
+      "parent": "torso",
+      "pivot": [
+        18.8,
+        16.0,
+        49
+      ]
+    },
+    "fore_right_shin": {
+      "parent": "fore_right_thigh",
+      "pivot": [
+        21.2,
+        16.0,
+        29
+      ]
+    },
+    "fore_right_upper": {
+      "parent": "fore_right_thigh",
+      "pivot": [
+        18.8,
+        16.0,
+        49
+      ]
+    },
+    "fore_right_lower": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        21.2,
+        16.0,
+        29
+      ]
+    },
+    "fore_right_foot": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        21.2,
+        16.0,
+        29
+      ]
+    },
+    "fore_right_toe_0": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        21.2,
+        16.0,
+        29
+      ]
+    },
+    "fore_right_toe_0_claw": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        21.2,
+        16.0,
+        29
+      ]
+    },
+    "fore_right_toe_1": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        21.2,
+        16.0,
+        29
+      ]
+    },
+    "fore_right_toe_1_claw": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        21.2,
+        16.0,
+        29
+      ]
+    },
+    "fore_right_toe_2": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        21.2,
+        16.0,
+        29
+      ]
+    },
+    "fore_right_toe_2_claw": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        21.2,
+        16.0,
+        29
+      ]
+    },
+    "fore_right_toe_3": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        21.2,
+        16.0,
+        29
+      ]
+    },
+    "fore_right_toe_3_claw": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        21.2,
+        16.0,
+        29
+      ]
+    },
+    "hind_right_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        -25.0,
+        15.0,
+        47.5
+      ]
+    },
+    "hind_right_shin": {
+      "parent": "hind_right_thigh",
+      "pivot": [
+        -33.8,
+        15.0,
+        28.5
+      ]
+    },
+    "hind_right_upper": {
+      "parent": "hind_right_thigh",
+      "pivot": [
+        -25.0,
+        15.0,
+        47.5
+      ]
+    },
+    "hind_right_lower": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -33.8,
+        15.0,
+        28.5
+      ]
+    },
+    "hind_right_foot": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -33.8,
+        15.0,
+        28.5
+      ]
+    },
+    "hind_right_toe_0": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -33.8,
+        15.0,
+        28.5
+      ]
+    },
+    "hind_right_toe_0_claw": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -33.8,
+        15.0,
+        28.5
+      ]
+    },
+    "hind_right_toe_1": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -33.8,
+        15.0,
+        28.5
+      ]
+    },
+    "hind_right_toe_1_claw": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -33.8,
+        15.0,
+        28.5
+      ]
+    },
+    "hind_right_toe_2": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -33.8,
+        15.0,
+        28.5
+      ]
+    },
+    "hind_right_toe_2_claw": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -33.8,
+        15.0,
+        28.5
+      ]
+    },
+    "hind_right_toe_3": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -33.8,
+        15.0,
+        28.5
+      ]
+    },
+    "hind_right_toe_3_claw": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -33.8,
+        15.0,
+        28.5
+      ]
+    },
+    "tail_core": {
+      "parent": "tail",
+      "pivot": [
+        -30,
+        0,
+        54
+      ]
+    },
+    "tail_lock_0": {
+      "parent": "tail",
+      "pivot": [
+        -30,
+        0,
+        54
+      ]
+    },
+    "tail_lock_1": {
+      "parent": "tail",
+      "pivot": [
+        -30,
+        0,
+        54
+      ]
+    },
+    "tail_lock_2": {
+      "parent": "tail",
+      "pivot": [
+        -30,
+        0,
+        54
+      ]
+    },
+    "tail_lock_3": {
+      "parent": "tail",
+      "pivot": [
+        -30,
+        0,
+        54
+      ]
+    },
+    "tail_lock_4": {
+      "parent": "tail",
+      "pivot": [
+        -30,
+        0,
+        54
+      ]
+    },
+    "tail_lock_5": {
+      "parent": "tail",
+      "pivot": [
+        -30,
+        0,
+        54
+      ]
+    },
+    "tail_lock_6": {
+      "parent": "tail",
+      "pivot": [
+        -30,
+        0,
+        54
+      ]
+    },
+    "back_lock_0": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        54
+      ]
+    },
+    "back_lock_1": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        54
+      ]
+    },
+    "back_lock_2": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        54
+      ]
+    },
+    "back_lock_3": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        54
+      ]
+    },
+    "back_lock_4": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        54
+      ]
+    },
+    "back_lock_5": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        54
+      ]
+    }
+  },
+  "shapes": [
+    {
+      "name": "trunk",
+      "part": "trunk",
+      "kind": "ellipsoid",
+      "material": "fur",
+      "center": [
+        -4,
+        0,
+        50
+      ],
+      "radii": [
+        40,
+        22,
+        29
+      ],
+      "latitudes": 30,
+      "longitudes": 48,
+      "markings": [
+        {
+          "material": "ivory",
+          "polyline_xz": [
+            [
+              -33,
+              38
+            ],
+            [
+              -19,
+              43
+            ],
+            [
+              -6,
+              61
+            ],
+            [
+              10,
+              62
+            ],
+            [
+              25,
+              74
+            ]
+          ],
+          "width": 3.2,
+          "minimum_abs_y": 7
+        }
+      ]
+    },
+    {
+      "name": "neck",
+      "part": "neck",
+      "kind": "ellipsoid",
+      "material": "fur",
+      "center": [
+        27,
+        0,
+        59
+      ],
+      "radii": [
+        22,
+        17,
+        21
+      ],
+      "latitudes": 22,
+      "longitudes": 40
+    },
+    {
+      "name": "cranium",
+      "part": "cranium",
+      "kind": "ellipsoid",
+      "material": "fur",
+      "center": [
+        44,
+        0,
+        57
+      ],
+      "radii": [
+        14,
+        12,
+        14
+      ],
+      "latitudes": 18,
+      "longitudes": 32,
+      "markings": [
+        {
+          "material": "ivory",
+          "polyline_xz": [
+            [
+              34,
+              67
+            ],
+            [
+              47,
+              63
+            ],
+            [
+              55,
+              59
+            ]
+          ],
+          "width": 1.3,
+          "minimum_abs_y": 5.5
+        }
+      ]
+    },
+    {
+      "name": "snout",
+      "part": "snout",
+      "kind": "sweep",
+      "material": "fur",
+      "controls": [
+        [
+          43,
+          0,
+          55,
+          10,
+          10
+        ],
+        [
+          54,
+          0,
+          50,
+          8,
+          8
+        ],
+        [
+          70,
+          0,
+          40,
+          5,
+          5
+        ],
+        [
+          85,
+          0,
+          25,
+          2.5,
+          2.5
+        ]
+      ],
+      "samples": 30,
+      "segments": 18,
+      "uv_repeats": 2,
+      "tip_pole": false,
+      "markings": [
+        {
+          "material": "ivory",
+          "polyline_xz": [
+            [
+              44,
+              64
+            ],
+            [
+              56,
+              56
+            ],
+            [
+              72,
+              43.5
+            ],
+            [
+              84,
+              28
+            ]
+          ],
+          "width": 1.0,
+          "minimum_abs_y": 0
+        }
+      ]
+    },
+    {
+      "name": "nose",
+      "part": "nose",
+      "kind": "ellipsoid",
+      "material": "nose",
+      "center": [
+        85,
+        0,
+        25
+      ],
+      "radii": [
+        3,
+        2.8,
+        2.6
+      ],
+      "latitudes": 8,
+      "longitudes": 16
+    },
+    {
+      "name": "left_nostril",
+      "part": "left_nostril",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        86.6,
+        -1.8,
+        24.5
+      ],
+      "radii": [
+        0.85,
+        0.65,
+        0.55
+      ],
+      "latitudes": 4,
+      "longitudes": 10
+    },
+    {
+      "name": "left_eye",
+      "part": "left_eye",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        50,
+        -10.2,
+        60.5
+      ],
+      "radii": [
+        2,
+        1.5,
+        1.6
+      ],
+      "latitudes": 8,
+      "longitudes": 16
+    },
+    {
+      "name": "left_iris",
+      "part": "left_iris",
+      "kind": "ellipsoid",
+      "material": "iris",
+      "center": [
+        50.6,
+        -11.15,
+        60.5
+      ],
+      "radii": [
+        1,
+        0.6,
+        1
+      ],
+      "latitudes": 6,
+      "longitudes": 14
+    },
+    {
+      "name": "left_pupil",
+      "part": "left_pupil",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        51,
+        -11.6,
+        60.5
+      ],
+      "radii": [
+        0.45,
+        0.35,
+        0.65
+      ],
+      "latitudes": 4,
+      "longitudes": 10
+    },
+    {
+      "name": "left_ear",
+      "part": "left_ear",
+      "kind": "ellipsoid",
+      "material": "fur",
+      "center": [
+        37.5,
+        -9.5,
+        67
+      ],
+      "radii": [
+        5,
+        3.2,
+        7
+      ],
+      "latitudes": 10,
+      "longitudes": 18
+    },
+    {
+      "name": "left_ear_inner",
+      "part": "left_ear_inner",
+      "kind": "ellipsoid",
+      "material": "face",
+      "center": [
+        38.7,
+        -11.6,
+        67.5
+      ],
+      "radii": [
+        3,
+        1.1,
+        4.4
+      ],
+      "latitudes": 8,
+      "longitudes": 16
+    },
+    {
+      "name": "fore_left_upper",
+      "part": "fore_left_upper",
+      "kind": "ellipsoid",
+      "center": [
+        21,
+        -13,
+        41
+      ],
+      "radii": [
+        10,
+        8,
+        18
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          21,
+          -13,
+          0
+        ],
+        "target": [
+          20,
+          -16,
+          0
+        ],
+        "scale": [
+          1.2,
+          1.3,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_left_lower",
+      "part": "fore_left_lower",
+      "kind": "ellipsoid",
+      "center": [
+        23,
+        -13,
+        20
+      ],
+      "radii": [
+        6,
+        6,
+        15
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          21,
+          -13,
+          0
+        ],
+        "target": [
+          20,
+          -16,
+          0
+        ],
+        "scale": [
+          1.2,
+          1.3,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_left_foot",
+      "part": "fore_left_foot",
+      "kind": "ellipsoid",
+      "center": [
+        26,
+        -13,
+        6
+      ],
+      "radii": [
+        9,
+        7,
+        6
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          21,
+          -13,
+          0
+        ],
+        "target": [
+          20,
+          -16,
+          0
+        ],
+        "scale": [
+          1.2,
+          1.3,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_left_toe_0",
+      "part": "fore_left_toe_0",
+      "kind": "ellipsoid",
+      "center": [
+        32.5,
+        -17.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          21,
+          -13,
+          0
+        ],
+        "target": [
+          20,
+          -16,
+          0
+        ],
+        "scale": [
+          1.2,
+          1.3,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_left_toe_0_claw",
+      "part": "fore_left_toe_0_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          35,
+          -17.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          38,
+          -17.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          40,
+          -17.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          35,
+          -17.5,
+          4.7
+        ],
+        "target": [
+          36.8,
+          -21.85,
+          4.7
+        ],
+        "scale": [
+          2.04,
+          1.8199999999999998,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_left_toe_1",
+      "part": "fore_left_toe_1",
+      "kind": "ellipsoid",
+      "center": [
+        32.5,
+        -14.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          21,
+          -13,
+          0
+        ],
+        "target": [
+          20,
+          -16,
+          0
+        ],
+        "scale": [
+          1.2,
+          1.3,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_left_toe_1_claw",
+      "part": "fore_left_toe_1_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          35,
+          -14.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          38,
+          -14.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          40,
+          -14.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          35,
+          -14.5,
+          4.7
+        ],
+        "target": [
+          36.8,
+          -17.95,
+          4.7
+        ],
+        "scale": [
+          2.04,
+          1.8199999999999998,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_left_toe_2",
+      "part": "fore_left_toe_2",
+      "kind": "ellipsoid",
+      "center": [
+        32.5,
+        -11.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          21,
+          -13,
+          0
+        ],
+        "target": [
+          20,
+          -16,
+          0
+        ],
+        "scale": [
+          1.2,
+          1.3,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_left_toe_2_claw",
+      "part": "fore_left_toe_2_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          35,
+          -11.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          38,
+          -11.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          40,
+          -11.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          35,
+          -11.5,
+          4.7
+        ],
+        "target": [
+          36.8,
+          -14.05,
+          4.7
+        ],
+        "scale": [
+          2.04,
+          1.8199999999999998,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_left_toe_3",
+      "part": "fore_left_toe_3",
+      "kind": "ellipsoid",
+      "center": [
+        32.5,
+        -8.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          21,
+          -13,
+          0
+        ],
+        "target": [
+          20,
+          -16,
+          0
+        ],
+        "scale": [
+          1.2,
+          1.3,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_left_toe_3_claw",
+      "part": "fore_left_toe_3_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          35,
+          -8.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          38,
+          -8.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          40,
+          -8.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          35,
+          -8.5,
+          4.7
+        ],
+        "target": [
+          36.8,
+          -10.149999999999999,
+          4.7
+        ],
+        "scale": [
+          2.04,
+          1.8199999999999998,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_upper",
+      "part": "hind_left_upper",
+      "kind": "ellipsoid",
+      "center": [
+        -24,
+        -13,
+        40
+      ],
+      "radii": [
+        14,
+        10,
+        19
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          -22,
+          -13,
+          0
+        ],
+        "target": [
+          -25,
+          -15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_lower",
+      "part": "hind_left_lower",
+      "kind": "ellipsoid",
+      "center": [
+        -31,
+        -13,
+        20
+      ],
+      "radii": [
+        6,
+        6,
+        14
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          -22,
+          -13,
+          0
+        ],
+        "target": [
+          -25,
+          -15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_foot",
+      "part": "hind_left_foot",
+      "kind": "ellipsoid",
+      "center": [
+        -26,
+        -13,
+        6
+      ],
+      "radii": [
+        9,
+        7,
+        6
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          -22,
+          -13,
+          0
+        ],
+        "target": [
+          -25,
+          -15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_toe_0",
+      "part": "hind_left_toe_0",
+      "kind": "ellipsoid",
+      "center": [
+        -19.5,
+        -17.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          -22,
+          -13,
+          0
+        ],
+        "target": [
+          -25,
+          -15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_toe_0_claw",
+      "part": "hind_left_toe_0_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          -17,
+          -17.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          -14,
+          -17.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          -12,
+          -17.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          -22,
+          -13,
+          0
+        ],
+        "target": [
+          -25,
+          -15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_toe_1",
+      "part": "hind_left_toe_1",
+      "kind": "ellipsoid",
+      "center": [
+        -19.5,
+        -14.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          -22,
+          -13,
+          0
+        ],
+        "target": [
+          -25,
+          -15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_toe_1_claw",
+      "part": "hind_left_toe_1_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          -17,
+          -14.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          -14,
+          -14.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          -12,
+          -14.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          -22,
+          -13,
+          0
+        ],
+        "target": [
+          -25,
+          -15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_toe_2",
+      "part": "hind_left_toe_2",
+      "kind": "ellipsoid",
+      "center": [
+        -19.5,
+        -11.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          -22,
+          -13,
+          0
+        ],
+        "target": [
+          -25,
+          -15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_toe_2_claw",
+      "part": "hind_left_toe_2_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          -17,
+          -11.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          -14,
+          -11.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          -12,
+          -11.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          -22,
+          -13,
+          0
+        ],
+        "target": [
+          -25,
+          -15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_toe_3",
+      "part": "hind_left_toe_3",
+      "kind": "ellipsoid",
+      "center": [
+        -19.5,
+        -8.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          -22,
+          -13,
+          0
+        ],
+        "target": [
+          -25,
+          -15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_toe_3_claw",
+      "part": "hind_left_toe_3_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          -17,
+          -8.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          -14,
+          -8.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          -12,
+          -8.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          -22,
+          -13,
+          0
+        ],
+        "target": [
+          -25,
+          -15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "right_nostril",
+      "part": "right_nostril",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        86.6,
+        1.8,
+        24.5
+      ],
+      "radii": [
+        0.85,
+        0.65,
+        0.55
+      ],
+      "latitudes": 4,
+      "longitudes": 10
+    },
+    {
+      "name": "right_eye",
+      "part": "right_eye",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        50,
+        10.2,
+        60.5
+      ],
+      "radii": [
+        2,
+        1.5,
+        1.6
+      ],
+      "latitudes": 8,
+      "longitudes": 16
+    },
+    {
+      "name": "right_iris",
+      "part": "right_iris",
+      "kind": "ellipsoid",
+      "material": "iris",
+      "center": [
+        50.6,
+        11.15,
+        60.5
+      ],
+      "radii": [
+        1,
+        0.6,
+        1
+      ],
+      "latitudes": 6,
+      "longitudes": 14
+    },
+    {
+      "name": "right_pupil",
+      "part": "right_pupil",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        51,
+        11.6,
+        60.5
+      ],
+      "radii": [
+        0.45,
+        0.35,
+        0.65
+      ],
+      "latitudes": 4,
+      "longitudes": 10
+    },
+    {
+      "name": "right_ear",
+      "part": "right_ear",
+      "kind": "ellipsoid",
+      "material": "fur",
+      "center": [
+        37.5,
+        9.5,
+        67
+      ],
+      "radii": [
+        5,
+        3.2,
+        7
+      ],
+      "latitudes": 10,
+      "longitudes": 18
+    },
+    {
+      "name": "right_ear_inner",
+      "part": "right_ear_inner",
+      "kind": "ellipsoid",
+      "material": "face",
+      "center": [
+        38.7,
+        11.6,
+        67.5
+      ],
+      "radii": [
+        3,
+        1.1,
+        4.4
+      ],
+      "latitudes": 8,
+      "longitudes": 16
+    },
+    {
+      "name": "fore_right_upper",
+      "part": "fore_right_upper",
+      "kind": "ellipsoid",
+      "center": [
+        21,
+        13,
+        41
+      ],
+      "radii": [
+        10,
+        8,
+        18
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          21,
+          13,
+          0
+        ],
+        "target": [
+          20,
+          16,
+          0
+        ],
+        "scale": [
+          1.2,
+          1.3,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_lower",
+      "part": "fore_right_lower",
+      "kind": "ellipsoid",
+      "center": [
+        23,
+        13,
+        20
+      ],
+      "radii": [
+        6,
+        6,
+        15
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          21,
+          13,
+          0
+        ],
+        "target": [
+          20,
+          16,
+          0
+        ],
+        "scale": [
+          1.2,
+          1.3,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_foot",
+      "part": "fore_right_foot",
+      "kind": "ellipsoid",
+      "center": [
+        26,
+        13,
+        6
+      ],
+      "radii": [
+        9,
+        7,
+        6
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          21,
+          13,
+          0
+        ],
+        "target": [
+          20,
+          16,
+          0
+        ],
+        "scale": [
+          1.2,
+          1.3,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_toe_0",
+      "part": "fore_right_toe_0",
+      "kind": "ellipsoid",
+      "center": [
+        32.5,
+        8.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          21,
+          13,
+          0
+        ],
+        "target": [
+          20,
+          16,
+          0
+        ],
+        "scale": [
+          1.2,
+          1.3,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_toe_0_claw",
+      "part": "fore_right_toe_0_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          35,
+          8.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          38,
+          8.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          40,
+          8.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          35,
+          8.5,
+          4.7
+        ],
+        "target": [
+          36.8,
+          10.149999999999999,
+          4.7
+        ],
+        "scale": [
+          2.04,
+          1.8199999999999998,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_toe_1",
+      "part": "fore_right_toe_1",
+      "kind": "ellipsoid",
+      "center": [
+        32.5,
+        11.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          21,
+          13,
+          0
+        ],
+        "target": [
+          20,
+          16,
+          0
+        ],
+        "scale": [
+          1.2,
+          1.3,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_toe_1_claw",
+      "part": "fore_right_toe_1_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          35,
+          11.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          38,
+          11.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          40,
+          11.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          35,
+          11.5,
+          4.7
+        ],
+        "target": [
+          36.8,
+          14.05,
+          4.7
+        ],
+        "scale": [
+          2.04,
+          1.8199999999999998,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_toe_2",
+      "part": "fore_right_toe_2",
+      "kind": "ellipsoid",
+      "center": [
+        32.5,
+        14.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          21,
+          13,
+          0
+        ],
+        "target": [
+          20,
+          16,
+          0
+        ],
+        "scale": [
+          1.2,
+          1.3,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_toe_2_claw",
+      "part": "fore_right_toe_2_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          35,
+          14.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          38,
+          14.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          40,
+          14.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          35,
+          14.5,
+          4.7
+        ],
+        "target": [
+          36.8,
+          17.95,
+          4.7
+        ],
+        "scale": [
+          2.04,
+          1.8199999999999998,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_toe_3",
+      "part": "fore_right_toe_3",
+      "kind": "ellipsoid",
+      "center": [
+        32.5,
+        17.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          21,
+          13,
+          0
+        ],
+        "target": [
+          20,
+          16,
+          0
+        ],
+        "scale": [
+          1.2,
+          1.3,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_toe_3_claw",
+      "part": "fore_right_toe_3_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          35,
+          17.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          38,
+          17.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          40,
+          17.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          35,
+          17.5,
+          4.7
+        ],
+        "target": [
+          36.8,
+          21.85,
+          4.7
+        ],
+        "scale": [
+          2.04,
+          1.8199999999999998,
+          1
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_upper",
+      "part": "hind_right_upper",
+      "kind": "ellipsoid",
+      "center": [
+        -24,
+        13,
+        40
+      ],
+      "radii": [
+        14,
+        10,
+        19
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          -22,
+          13,
+          0
+        ],
+        "target": [
+          -25,
+          15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_lower",
+      "part": "hind_right_lower",
+      "kind": "ellipsoid",
+      "center": [
+        -31,
+        13,
+        20
+      ],
+      "radii": [
+        6,
+        6,
+        14
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          -22,
+          13,
+          0
+        ],
+        "target": [
+          -25,
+          15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_foot",
+      "part": "hind_right_foot",
+      "kind": "ellipsoid",
+      "center": [
+        -26,
+        13,
+        6
+      ],
+      "radii": [
+        9,
+        7,
+        6
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          -22,
+          13,
+          0
+        ],
+        "target": [
+          -25,
+          15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_toe_0",
+      "part": "hind_right_toe_0",
+      "kind": "ellipsoid",
+      "center": [
+        -19.5,
+        8.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          -22,
+          13,
+          0
+        ],
+        "target": [
+          -25,
+          15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_toe_0_claw",
+      "part": "hind_right_toe_0_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          -17,
+          8.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          -14,
+          8.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          -12,
+          8.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          -22,
+          13,
+          0
+        ],
+        "target": [
+          -25,
+          15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_toe_1",
+      "part": "hind_right_toe_1",
+      "kind": "ellipsoid",
+      "center": [
+        -19.5,
+        11.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          -22,
+          13,
+          0
+        ],
+        "target": [
+          -25,
+          15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_toe_1_claw",
+      "part": "hind_right_toe_1_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          -17,
+          11.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          -14,
+          11.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          -12,
+          11.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          -22,
+          13,
+          0
+        ],
+        "target": [
+          -25,
+          15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_toe_2",
+      "part": "hind_right_toe_2",
+      "kind": "ellipsoid",
+      "center": [
+        -19.5,
+        14.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          -22,
+          13,
+          0
+        ],
+        "target": [
+          -25,
+          15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_toe_2_claw",
+      "part": "hind_right_toe_2_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          -17,
+          14.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          -14,
+          14.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          -12,
+          14.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          -22,
+          13,
+          0
+        ],
+        "target": [
+          -25,
+          15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_toe_3",
+      "part": "hind_right_toe_3",
+      "kind": "ellipsoid",
+      "center": [
+        -19.5,
+        17.5,
+        4.8
+      ],
+      "radii": [
+        4.5,
+        1.8,
+        3.7
+      ],
+      "material": "fur",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          -22,
+          13,
+          0
+        ],
+        "target": [
+          -25,
+          15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_toe_3_claw",
+      "part": "hind_right_toe_3_claw",
+      "kind": "sweep",
+      "controls": [
+        [
+          -17,
+          17.5,
+          4.7,
+          1.05,
+          1.05
+        ],
+        [
+          -14,
+          17.5,
+          4,
+          0.8,
+          0.8
+        ],
+        [
+          -12,
+          17.5,
+          2.2,
+          0,
+          0
+        ]
+      ],
+      "material": "keratin",
+      "samples": 12,
+      "segments": 8,
+      "uv_repeats": 3,
+      "tip_pole": true,
+      "authored_transform": {
+        "origin": [
+          -22,
+          13,
+          0
+        ],
+        "target": [
+          -25,
+          15,
+          0
+        ],
+        "scale": [
+          1.1,
+          1.15,
+          0.95
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "tail_core",
+      "part": "tail_core",
+      "kind": "sweep",
+      "material": "tail_fur",
+      "controls": [
+        [
+          -26,
+          0,
+          54,
+          10,
+          12
+        ],
+        [
+          -43,
+          0,
+          48,
+          18,
+          23
+        ],
+        [
+          -65,
+          0,
+          34,
+          20,
+          25
+        ],
+        [
+          -91,
+          0,
+          21,
+          13,
+          16
+        ],
+        [
+          -108,
+          0,
+          16,
+          0,
+          0
+        ]
+      ],
+      "samples": 36,
+      "segments": 20,
+      "uv_repeats": 3,
+      "tip_pole": true
+    },
+    {
+      "name": "tail_lock_0",
+      "part": "tail_lock_0",
+      "kind": "sweep",
+      "material": "tail_fur",
+      "controls": [
+        [
+          -56,
+          -12,
+          41,
+          4,
+          5
+        ],
+        [
+          -80,
+          -13.799999999999999,
+          32,
+          7,
+          8
+        ],
+        [
+          -107,
+          -21,
+          14,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 10,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "tail_lock_1",
+      "part": "tail_lock_1",
+      "kind": "sweep",
+      "material": "tail_fur",
+      "controls": [
+        [
+          -56,
+          -7,
+          51,
+          4,
+          5
+        ],
+        [
+          -80,
+          -8.049999999999999,
+          42,
+          7,
+          8
+        ],
+        [
+          -107,
+          -13,
+          24,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 10,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "tail_lock_2",
+      "part": "tail_lock_2",
+      "kind": "sweep",
+      "material": "tail_fur",
+      "controls": [
+        [
+          -56,
+          0,
+          56,
+          4,
+          5
+        ],
+        [
+          -80,
+          0.0,
+          47,
+          7,
+          8
+        ],
+        [
+          -107,
+          0,
+          28,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 10,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "tail_lock_3",
+      "part": "tail_lock_3",
+      "kind": "sweep",
+      "material": "tail_fur",
+      "controls": [
+        [
+          -56,
+          7,
+          51,
+          4,
+          5
+        ],
+        [
+          -80,
+          8.049999999999999,
+          42,
+          7,
+          8
+        ],
+        [
+          -107,
+          13,
+          24,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 10,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "tail_lock_4",
+      "part": "tail_lock_4",
+      "kind": "sweep",
+      "material": "tail_fur",
+      "controls": [
+        [
+          -56,
+          12,
+          41,
+          4,
+          5
+        ],
+        [
+          -80,
+          13.799999999999999,
+          32,
+          7,
+          8
+        ],
+        [
+          -107,
+          21,
+          14,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 10,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "tail_lock_5",
+      "part": "tail_lock_5",
+      "kind": "sweep",
+      "material": "tail_fur",
+      "controls": [
+        [
+          -56,
+          -9,
+          26,
+          4,
+          5
+        ],
+        [
+          -80,
+          -10.35,
+          17,
+          7,
+          8
+        ],
+        [
+          -107,
+          -15,
+          6,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 10,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "tail_lock_6",
+      "part": "tail_lock_6",
+      "kind": "sweep",
+      "material": "tail_fur",
+      "controls": [
+        [
+          -56,
+          9,
+          26,
+          4,
+          5
+        ],
+        [
+          -80,
+          10.35,
+          17,
+          7,
+          8
+        ],
+        [
+          -107,
+          15,
+          6,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 10,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "back_lock_0",
+      "part": "back_lock_0",
+      "kind": "sweep",
+      "material": "fur",
+      "controls": [
+        [
+          -30,
+          0,
+          67.33809202267746,
+          5,
+          5
+        ],
+        [
+          -38,
+          0,
+          77.33809202267746,
+          6,
+          5
+        ],
+        [
+          -51,
+          0,
+          79.33809202267746,
+          0,
+          0
+        ]
+      ],
+      "samples": 15,
+      "segments": 10,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "back_lock_1",
+      "part": "back_lock_1",
+      "kind": "sweep",
+      "material": "fur",
+      "controls": [
+        [
+          -20,
+          0,
+          71.87893903074387,
+          5,
+          5
+        ],
+        [
+          -28,
+          0,
+          81.87893903074387,
+          6,
+          5
+        ],
+        [
+          -41,
+          0,
+          83.87893903074387,
+          0,
+          0
+        ]
+      ],
+      "samples": 15,
+      "segments": 10,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "back_lock_2",
+      "part": "back_lock_2",
+      "kind": "sweep",
+      "material": "fur",
+      "controls": [
+        [
+          -10,
+          0,
+          73.97189390326352,
+          5,
+          5
+        ],
+        [
+          -18,
+          0,
+          83.97189390326352,
+          6,
+          5
+        ],
+        [
+          -31,
+          0,
+          85.97189390326352,
+          0,
+          0
+        ]
+      ],
+      "samples": 15,
+      "segments": 10,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "back_lock_3",
+      "part": "back_lock_3",
+      "kind": "sweep",
+      "material": "fur",
+      "controls": [
+        [
+          0,
+          0,
+          74.15463567609198,
+          5,
+          5
+        ],
+        [
+          -8,
+          0,
+          84.15463567609198,
+          6,
+          5
+        ],
+        [
+          -21,
+          0,
+          86.15463567609198,
+          0,
+          0
+        ]
+      ],
+      "samples": 15,
+      "segments": 10,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "back_lock_4",
+      "part": "back_lock_4",
+      "kind": "sweep",
+      "material": "fur",
+      "controls": [
+        [
+          10,
+          0,
+          72.46574129303303,
+          5,
+          5
+        ],
+        [
+          2,
+          0,
+          82.46574129303303,
+          6,
+          5
+        ],
+        [
+          -11,
+          0,
+          84.46574129303303,
+          0,
+          0
+        ]
+      ],
+      "samples": 15,
+      "segments": 10,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "back_lock_5",
+      "part": "back_lock_5",
+      "kind": "sweep",
+      "material": "fur",
+      "controls": [
+        [
+          20,
+          0,
+          68.5,
+          5,
+          5
+        ],
+        [
+          12,
+          0,
+          78.5,
+          6,
+          5
+        ],
+        [
+          -1,
+          0,
+          80.5,
+          0,
+          0
+        ]
+      ],
+      "samples": 15,
+      "segments": 10,
+      "uv_repeats": 2,
+      "tip_pole": true
+    }
+  ],
+  "motion": {
+    "idle": {
+      "frames": 16,
+      "tics": 6,
+      "transforms": {
+        "torso": [
+          {
+            "kind": "scale_xy",
+            "amplitude": 0.012,
+            "phase": 1.5707963267948966,
+            "offset": -0.012
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 0.5,
+            "phase": 1.5707963267948966,
+            "offset": -0.5
+          }
+        ],
+        "tail": [
+          {
+            "kind": "rotate",
+            "axis": "z",
+            "amplitude": 3,
+            "phase": 1.5707963267948966,
+            "offset": -3
+          }
+        ]
+      }
+    },
+    "walk": {
+      "frames": 24,
+      "tics": 3,
+      "transforms": {
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 1.5,
+            "phase": 0
+          }
+        ],
+        "tail": [
+          {
+            "kind": "rotate",
+            "axis": "z",
+            "amplitude": 7,
+            "phase": 0
+          }
+        ],
+        "fore_left_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 12,
+            "phase": 0
+          }
+        ],
+        "fore_left_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -9,
+            "phase": 0,
+            "positive_only": true
+          }
+        ],
+        "fore_right_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 12,
+            "phase": 3.141592653589793
+          }
+        ],
+        "fore_right_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -9,
+            "phase": 3.141592653589793,
+            "positive_only": true
+          }
+        ],
+        "hind_left_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 12,
+            "phase": 3.141592653589793
+          }
+        ],
+        "hind_left_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -9,
+            "phase": 3.141592653589793,
+            "positive_only": true
+          }
+        ],
+        "hind_right_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 12,
+            "phase": 0
+          }
+        ],
+        "hind_right_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -9,
+            "phase": 0,
+            "positive_only": true
+          }
+        ]
+      }
+    }
+  },
+  "reference_features": [
+    "elongated tapered anteater snout",
+    "small ears and lateral eyes",
+    "arched grey shaggy torso",
+    "ivory zigzag shoulder markings",
+    "four clawed limbs with strong forequarters",
+    "broad bushy trailing tail"
+  ]
+}

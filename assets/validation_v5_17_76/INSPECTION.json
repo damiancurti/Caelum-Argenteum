@@ -1,0 +1,50 @@
+{
+  "issue": 795,
+  "purpose": "Inspect anteater snout, markings, foreclaws, bushy tail and lying poses.",
+  "additional_views": [
+    {
+      "name": "lying-oblique",
+      "position": [
+        90,
+        -110,
+        75
+      ],
+      "target": [
+        -10,
+        0,
+        15
+      ],
+      "default_pose": 22
+    },
+    {
+      "name": "snout-detail",
+      "position": [
+        92,
+        -35,
+        40
+      ],
+      "target": [
+        30,
+        0,
+        25
+      ]
+    },
+    {
+      "name": "tail-detail",
+      "position": [
+        -105,
+        -45,
+        42
+      ],
+      "target": [
+        -33,
+        0,
+        21
+      ]
+    }
+  ],
+  "action_views": {
+    "death": 6,
+    "rest": 6
+  }
+}

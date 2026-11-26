@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.75** - 2026-11-15.
+Documentation version: **5.17.76** - 2026-11-15.
+
+## 5.17.76 - Kasogonaga candidate; author review pending (#795)
+
+Kasogonaga passes195 native assertions, independent geometry checks and
+deterministic export. Evidence: assets/validation_v5_17_76/evidence/SUMMARY.json.
+CA795-KASOGONAGA-01 retains author art/combat review for the final handoff.
+Continue remaining creatures, named/modular characters and V5.16 progression.
+Regional placement must reuse an authored ground; no Chaco material or gameplay
+is inferred from this model. Siege rendering remains unresolved. The author's
+instruction to review the complete batch does not accept individual candidates.
 
 ## #793 - Teju regional gallery (5.17.75)
 
