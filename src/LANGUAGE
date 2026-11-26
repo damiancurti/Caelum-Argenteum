@@ -1977,11 +1977,19 @@ CA_MATERIAL_GRADE_LUXURY = "de lujo";
 
 
 
+[enu default]
 CA_PHYSICS_IMPACT = "Impact";
 CA_PHYSICS_KIND = "Type";
 CA_PHYSICS_DELTA_V = "Delta-v";
 CA_PHYSICS_EQUIV_TICS = "Eq. tics";
 CA_PHYSICS_DAMAGE = "Damage";
+
+[es]
+CA_PHYSICS_IMPACT = "Impacto";
+CA_PHYSICS_KIND = "Tipo";
+CA_PHYSICS_DELTA_V = "Delta-v";
+CA_PHYSICS_EQUIV_TICS = "Tics equiv.";
+CA_PHYSICS_DAMAGE = "Daño";
 
 [enu default]
 CA_CONTROL_JOURNAL = "Open/close Journal";
@@ -8543,3 +8551,90 @@ CA_FOLK_056_NAME = "Huayrapuca";
 CA_FOLK_057_NAME = "Kasogonaga";
 CA_FOLK_058_NAME = "Kélenken";
 // END #455 generated folklore names
+
+[enu default]
+CA_CREDITS_TITLE = "Credits";
+CA_CREDITS_PREVIOUS = "Previous notice";
+CA_CREDITS_NEXT = "Next notice";
+CA_CREDITS_UP = "Page up";
+CA_CREDITS_DOWN = "Page down";
+CA_CREDITS_HELP = "Up/Down: scroll | Left/Right: select | Enter: open | Esc: back";
+CA_CREDITS_UNAVAILABLE = "The selected notice is unavailable.";
+[es]
+CA_CREDITS_TITLE = "Créditos";
+CA_CREDITS_PREVIOUS = "Aviso anterior";
+CA_CREDITS_NEXT = "Aviso siguiente";
+CA_CREDITS_UP = "Subir página";
+CA_CREDITS_DOWN = "Bajar página";
+CA_CREDITS_HELP = "Arriba/Abajo: desplazar | Izq./Der.: elegir | Intro: abrir | Esc: volver";
+CA_CREDITS_UNAVAILABLE = "El aviso seleccionado no está disponible.";
+
+// #465: cobertura del selector general de idioma espa?ol.
+[es]
+CA_CAMP_PACKED = "Carpa desmontada; el objeto original está en tu inventario.";
+CA_CAMP_PACKING = "Desmontando carpa: 5 minutos. Podés esperar; usá otra vez la carpa para cancelar.";
+CA_CAMP_PACK_ACTION = "{bind:+use}: Desmontar carpa / cancelar desmontaje";
+CA_CAMP_READY = "Carpa lista. Usala para desmontarla.";
+CA_CAMP_SETTING_UP = "Montando carpa: 10 minutos. Podés esperar; usá otra vez la carpa del inventario para cancelar.";
+CA_CAMP_SITE_FAILED = "La carpa completa necesita terreno permitido, seco, estable y sin bloquear accesos.";
+CA_EXHAUSTION_LOCK = "No puedes levantarte hasta superar el 10% de Sueño.";
+CA_EXHAUSTION_START = "Agotamiento: te tumbas. Podrás levantarte con más del 10% de Sueño.";
+CA_EXHAUSTION_TITLE = "Sueño por agotamiento";
+CA_HUNT_FRAGILE = "Roca resquebrajada";
+CA_HUNT_FREEZE = "Placa de congelación";
+CA_HUNT_RESCUE_BLOCKED = "No hay espacio seguro junto a vos para el rescate.";
+CA_HUNT_RESCUE_NONE = "No hay compañeros cautivos para rescatar.";
+CA_HUNT_RESCUE_TITLE = "El Loco: elegir a quién rescatar";
+CA_HUNT_SPIRIT_HINT = "Los cuatro sectores se conectan por varios caminos. Rodeá los obstáculos; el cautiverio está al sudoeste.";
+CA_HUNT_USE_00 = "Rescatá a un compañero cautivo junto a vos.";
+CA_HUNT_USE_01 = "Despertá al autómata al activar el Tarot.";
+CA_HUNT_USE_02 = "La Sacerdotisa revela este paso oculto.";
+CA_HUNT_USE_03 = "La Emperatriz permite atravesar la vegetación.";
+CA_HUNT_USE_04 = "El Emperador puede controlar al guardián invocado.";
+CA_HUNT_USE_05 = "El Hierofante abre el paso maldito y purifica el depósito.";
+CA_HUNT_USE_06 = "Los Enamorados permiten compartir los daños de este cruce.";
+CA_HUNT_USE_07 = "El Carro puede romper la roca resquebrajada.";
+CA_HUNT_USE_08 = "Justicia permite dañar al espíritu.";
+CA_HUNT_USE_09 = "El Ermitaño prolonga el primer poder para recorrer estos caminos.";
+CA_HUNT_USE_10 = "La Rueda cambia el agua, la luz y las salidas de la habitación.";
+CA_HUNT_USE_11 = "La Fuerza permite levantar esta roca si tu capacidad alcanza.";
+CA_HUNT_USE_12 = "El Colgado permite usar otra habilidad racial bajo el agua.";
+CA_HUNT_USE_13 = "La Muerte permite destruir el obstáculo vivo.";
+CA_HUNT_USE_14 = "La Templanza protege de la congelación.";
+CA_HUNT_USE_15 = "El Diablo permite usar varios poderes pagando su coste de Vida.";
+CA_HUNT_USE_16 = "La Torre destruye la máquina de asedio.";
+CA_HUNT_USE_17 = "La Estrella permite guardar un objeto gigante en la Caja.";
+CA_HUNT_USE_18 = "La Luna permite dejar un clon y regresar a él desde la bifurcación.";
+CA_HUNT_USE_19 = "El Sol y La Estrella permiten guardar temporalmente las rocas peligrosas.";
+CA_HUNT_USE_20 = "El Juicio permite escuchar al espíritu.";
+CA_HUNT_USE_21 = "El Mundo activa los arcanos adquiridos que no están equipados.";
+CA_NOTE_CANCEL = "Cancelar";
+CA_NOTE_CATEGORY = "Nota";
+CA_NOTE_CENTER_READY = "Las notas nuevas usan el centro del mapa al abrir esta lista.";
+CA_NOTE_DELETE = "Borrar";
+CA_NOTE_DELETE_CONFIRM = "¿Borrar esta nota manual?";
+CA_NOTE_EDIT = "Editar";
+CA_NOTE_EDIT_HELP = "Escribe el texto, elige una categoría y guarda. Volver cancela el borrador.";
+CA_NOTE_EMPTY_TEXT = "Escribe un texto antes de guardar.";
+CA_NOTE_MANUAL = "Notas personales. No confirman lugares ni servicios.";
+CA_NOTE_NAVIGATION = "Arriba/Abajo: notas o texto | Izq./Der.: acciones | Enter | Esc: volver";
+CA_NOTE_NEAREST = "Nota manual cerca del centro: %s";
+CA_NOTE_NEED_MAP = "Para colocar: abre y desplaza el mapa; luego abre esta lista.";
+CA_NOTE_NEW = "Nueva en el centro";
+CA_NOTE_NONE = "No hay notas manuales en este mapa.";
+CA_NOTE_OPEN_HINT = "Notas [%s] o Esc > Notas del mapa";
+CA_NOTE_SAVE = "Guardar";
+CA_NOTE_SAVED = "Cambios guardados.";
+CA_NOTE_SAVING = "Guardando...";
+CA_NOTE_STALE = "La nota cambió. Cancela y vuelve a abrirla.";
+CA_NOTE_TEXT = "Escribir texto";
+CA_NOTE_TOO_LONG = "El texto supera la capacidad nativa. Acórtalo para guardar.";
+CA_NOTE_UNAVAILABLE = "Las notas requieren un personaje vivo y creado.";
+CA_POI_BED = "Cama";
+CA_POI_EXIT = "Salida";
+CA_POI_MERCHANT = "Comerciante";
+CA_POI_NEAREST = "Lugar conocido más cercano al centro del mapa: %s";
+CA_POI_STATION = "Estación";
+CA_POI_TRANSPORT = "Transporte";
+CA_TAROT_CAPACITY_REMOVE = "Liberá los espacios adicionales de cartas o de la Caja antes de quitar este Arcano.";
+CA_TAROT_ORDER = "Lugar en la secuencia: %d. Equipar una carta la coloca al final.";

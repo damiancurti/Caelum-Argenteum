@@ -1,6 +1,25 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.125** - 2026-11-26.
+Documentation version: **5.17.126** - 2026-11-26.
+
+## 5.17.126 - Native credits and presentation coverage (#465)
+
+Main menu > Credits opens a read-only native ListMenu. Up/Down and the wheel
+scroll text; PageUp/PageDown scroll a page. Left/Right select the previous
+notice, page controls, next notice or Back; Enter activates the selection.
+Native controller menu events use the same paths. Mouse activation requires
+a matching press/release, layout revision, resolution and UI scale. Escape or
+controller Back closes the menu. The existing presentation scale and pointer
+transform remain authoritative. Text wrapping is cached on notice changes;
+there are no actor queries, network writes or saved fields.
+
+The interface is ES/EN; legal and source notices retain their original wording
+and language. The root proprietary notice is copied verbatim into the runtime
+notice catalogue and does not override separate terms. General `language=es`
+previously fell back to English for 67 entries authored only under esp/esn;
+the same approved Spanish strings now also have es entries. Five physics
+labels accidentally in the Spanish section now resolve correctly in both
+languages. Existing regional strings and all other translations remain intact.
 
 ## 5.17.125 - Verify retained prologue audio (#464)
 

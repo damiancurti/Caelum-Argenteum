@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `720408fbe65cd180ea33dd8f6d30c61f945d7da29d1c41579c7c1495cca475e4`. Locations include every definition; the last one per language wins.
+SHA-256: `5d7b30ee520cbc729742907e9330f754ec522ec95d7fc04f7b5712f3aca7322d`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -67,6 +67,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CRAFTING | 74 | CA_CRAFTING_ACTION_CREATED | CA_CRAFTING_TEN_SHOTGUN_CARTRIDGES |
 | CA_CREATE | 51 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |
 | CA_CREATION | 26 | CA_CREATION_ALLOCATION_NAVIGATION_HELP | CA_CREATION_TITLE_SUMMARY |
+| CA_CREDITS | 7 | CA_CREDITS_DOWN | CA_CREDITS_UP |
 | CA_CRITICAL | 3 | CA_CRITICAL_HIT | CA_CRITICAL_NOT_ATTEMPTED |
 | CA_CRUSHER | 1 | CA_CRUSHER_TRAP | CA_CRUSHER_TRAP |
 | CA_CURRENCY | 15 | CA_CURRENCY_COPPER_COIN | CA_CURRENCY_SILVER_COIN_50 |

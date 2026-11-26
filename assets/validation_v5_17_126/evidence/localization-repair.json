@@ -1,0 +1,347 @@
+{
+  "baseline": "7923b0d14901386260efce2df6db34ac51cfc985",
+  "general_spanish_aliases": [
+    {
+      "key": "CA_CAMP_PACKED",
+      "original_language": "esn",
+      "source": "CA_CAMP_PACKED = \"Carpa desmontada; el objeto original está en tu inventario.\";"
+    },
+    {
+      "key": "CA_CAMP_PACKING",
+      "original_language": "esn",
+      "source": "CA_CAMP_PACKING = \"Desmontando carpa: 5 minutos. Podés esperar; usá otra vez la carpa para cancelar.\";"
+    },
+    {
+      "key": "CA_CAMP_PACK_ACTION",
+      "original_language": "esn",
+      "source": "CA_CAMP_PACK_ACTION = \"{bind:+use}: Desmontar carpa / cancelar desmontaje\";"
+    },
+    {
+      "key": "CA_CAMP_READY",
+      "original_language": "esn",
+      "source": "CA_CAMP_READY = \"Carpa lista. Usala para desmontarla.\";"
+    },
+    {
+      "key": "CA_CAMP_SETTING_UP",
+      "original_language": "esn",
+      "source": "CA_CAMP_SETTING_UP = \"Montando carpa: 10 minutos. Podés esperar; usá otra vez la carpa del inventario para cancelar.\";"
+    },
+    {
+      "key": "CA_CAMP_SITE_FAILED",
+      "original_language": "esn",
+      "source": "CA_CAMP_SITE_FAILED = \"La carpa completa necesita terreno permitido, seco, estable y sin bloquear accesos.\";"
+    },
+    {
+      "key": "CA_EXHAUSTION_LOCK",
+      "original_language": "esp",
+      "source": "CA_EXHAUSTION_LOCK = \"No puedes levantarte hasta superar el 10% de Sueño.\";"
+    },
+    {
+      "key": "CA_EXHAUSTION_START",
+      "original_language": "esp",
+      "source": "CA_EXHAUSTION_START = \"Agotamiento: te tumbas. Podrás levantarte con más del 10% de Sueño.\";"
+    },
+    {
+      "key": "CA_EXHAUSTION_TITLE",
+      "original_language": "esp",
+      "source": "CA_EXHAUSTION_TITLE = \"Sueño por agotamiento\";"
+    },
+    {
+      "key": "CA_HUNT_FRAGILE",
+      "original_language": "esp",
+      "source": "CA_HUNT_FRAGILE = \"Roca resquebrajada\";"
+    },
+    {
+      "key": "CA_HUNT_FREEZE",
+      "original_language": "esp",
+      "source": "CA_HUNT_FREEZE = \"Placa de congelación\";"
+    },
+    {
+      "key": "CA_HUNT_RESCUE_BLOCKED",
+      "original_language": "esp",
+      "source": "CA_HUNT_RESCUE_BLOCKED = \"No hay espacio seguro junto a vos para el rescate.\";"
+    },
+    {
+      "key": "CA_HUNT_RESCUE_NONE",
+      "original_language": "esp",
+      "source": "CA_HUNT_RESCUE_NONE = \"No hay compañeros cautivos para rescatar.\";"
+    },
+    {
+      "key": "CA_HUNT_RESCUE_TITLE",
+      "original_language": "esp",
+      "source": "CA_HUNT_RESCUE_TITLE = \"El Loco: elegir a quién rescatar\";"
+    },
+    {
+      "key": "CA_HUNT_SPIRIT_HINT",
+      "original_language": "esp",
+      "source": "CA_HUNT_SPIRIT_HINT = \"Los cuatro sectores se conectan por varios caminos. Rodeá los obstáculos; el cautiverio está al sudoeste.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_00",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_00 = \"Rescatá a un compañero cautivo junto a vos.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_01",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_01 = \"Despertá al autómata al activar el Tarot.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_02",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_02 = \"La Sacerdotisa revela este paso oculto.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_03",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_03 = \"La Emperatriz permite atravesar la vegetación.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_04",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_04 = \"El Emperador puede controlar al guardián invocado.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_05",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_05 = \"El Hierofante abre el paso maldito y purifica el depósito.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_06",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_06 = \"Los Enamorados permiten compartir los daños de este cruce.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_07",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_07 = \"El Carro puede romper la roca resquebrajada.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_08",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_08 = \"Justicia permite dañar al espíritu.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_09",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_09 = \"El Ermitaño prolonga el primer poder para recorrer estos caminos.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_10",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_10 = \"La Rueda cambia el agua, la luz y las salidas de la habitación.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_11",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_11 = \"La Fuerza permite levantar esta roca si tu capacidad alcanza.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_12",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_12 = \"El Colgado permite usar otra habilidad racial bajo el agua.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_13",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_13 = \"La Muerte permite destruir el obstáculo vivo.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_14",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_14 = \"La Templanza protege de la congelación.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_15",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_15 = \"El Diablo permite usar varios poderes pagando su coste de Vida.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_16",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_16 = \"La Torre destruye la máquina de asedio.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_17",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_17 = \"La Estrella permite guardar un objeto gigante en la Caja.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_18",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_18 = \"La Luna permite dejar un clon y regresar a él desde la bifurcación.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_19",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_19 = \"El Sol y La Estrella permiten guardar temporalmente las rocas peligrosas.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_20",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_20 = \"El Juicio permite escuchar al espíritu.\";"
+    },
+    {
+      "key": "CA_HUNT_USE_21",
+      "original_language": "esp",
+      "source": "CA_HUNT_USE_21 = \"El Mundo activa los arcanos adquiridos que no están equipados.\";"
+    },
+    {
+      "key": "CA_NOTE_CANCEL",
+      "original_language": "esp",
+      "source": "CA_NOTE_CANCEL = \"Cancelar\";"
+    },
+    {
+      "key": "CA_NOTE_CATEGORY",
+      "original_language": "esp",
+      "source": "CA_NOTE_CATEGORY = \"Nota\";"
+    },
+    {
+      "key": "CA_NOTE_CENTER_READY",
+      "original_language": "esp",
+      "source": "CA_NOTE_CENTER_READY = \"Las notas nuevas usan el centro del mapa al abrir esta lista.\";"
+    },
+    {
+      "key": "CA_NOTE_DELETE",
+      "original_language": "esp",
+      "source": "CA_NOTE_DELETE = \"Borrar\";"
+    },
+    {
+      "key": "CA_NOTE_DELETE_CONFIRM",
+      "original_language": "esp",
+      "source": "CA_NOTE_DELETE_CONFIRM = \"¿Borrar esta nota manual?\";"
+    },
+    {
+      "key": "CA_NOTE_EDIT",
+      "original_language": "esp",
+      "source": "CA_NOTE_EDIT = \"Editar\";"
+    },
+    {
+      "key": "CA_NOTE_EDIT_HELP",
+      "original_language": "esp",
+      "source": "CA_NOTE_EDIT_HELP = \"Escribe el texto, elige una categoría y guarda. Volver cancela el borrador.\";"
+    },
+    {
+      "key": "CA_NOTE_EMPTY_TEXT",
+      "original_language": "esp",
+      "source": "CA_NOTE_EMPTY_TEXT = \"Escribe un texto antes de guardar.\";"
+    },
+    {
+      "key": "CA_NOTE_MANUAL",
+      "original_language": "esp",
+      "source": "CA_NOTE_MANUAL = \"Notas personales. No confirman lugares ni servicios.\";"
+    },
+    {
+      "key": "CA_NOTE_NAVIGATION",
+      "original_language": "esp",
+      "source": "CA_NOTE_NAVIGATION = \"Arriba/Abajo: notas o texto | Izq./Der.: acciones | Enter | Esc: volver\";"
+    },
+    {
+      "key": "CA_NOTE_NEAREST",
+      "original_language": "esp",
+      "source": "CA_NOTE_NEAREST = \"Nota manual cerca del centro: %s\";"
+    },
+    {
+      "key": "CA_NOTE_NEED_MAP",
+      "original_language": "esp",
+      "source": "CA_NOTE_NEED_MAP = \"Para colocar: abre y desplaza el mapa; luego abre esta lista.\";"
+    },
+    {
+      "key": "CA_NOTE_NEW",
+      "original_language": "esp",
+      "source": "CA_NOTE_NEW = \"Nueva en el centro\";"
+    },
+    {
+      "key": "CA_NOTE_NONE",
+      "original_language": "esp",
+      "source": "CA_NOTE_NONE = \"No hay notas manuales en este mapa.\";"
+    },
+    {
+      "key": "CA_NOTE_OPEN_HINT",
+      "original_language": "esp",
+      "source": "CA_NOTE_OPEN_HINT = \"Notas [%s] o Esc > Notas del mapa\";"
+    },
+    {
+      "key": "CA_NOTE_SAVE",
+      "original_language": "esp",
+      "source": "CA_NOTE_SAVE = \"Guardar\";"
+    },
+    {
+      "key": "CA_NOTE_SAVED",
+      "original_language": "esp",
+      "source": "CA_NOTE_SAVED = \"Cambios guardados.\";"
+    },
+    {
+      "key": "CA_NOTE_SAVING",
+      "original_language": "esp",
+      "source": "CA_NOTE_SAVING = \"Guardando...\";"
+    },
+    {
+      "key": "CA_NOTE_STALE",
+      "original_language": "esp",
+      "source": "CA_NOTE_STALE = \"La nota cambió. Cancela y vuelve a abrirla.\";"
+    },
+    {
+      "key": "CA_NOTE_TEXT",
+      "original_language": "esp",
+      "source": "CA_NOTE_TEXT = \"Escribir texto\";"
+    },
+    {
+      "key": "CA_NOTE_TOO_LONG",
+      "original_language": "esp",
+      "source": "CA_NOTE_TOO_LONG = \"El texto supera la capacidad nativa. Acórtalo para guardar.\";"
+    },
+    {
+      "key": "CA_NOTE_UNAVAILABLE",
+      "original_language": "esp",
+      "source": "CA_NOTE_UNAVAILABLE = \"Las notas requieren un personaje vivo y creado.\";"
+    },
+    {
+      "key": "CA_POI_BED",
+      "original_language": "esp",
+      "source": "CA_POI_BED = \"Cama\";"
+    },
+    {
+      "key": "CA_POI_EXIT",
+      "original_language": "esp",
+      "source": "CA_POI_EXIT = \"Salida\";"
+    },
+    {
+      "key": "CA_POI_MERCHANT",
+      "original_language": "esp",
+      "source": "CA_POI_MERCHANT = \"Comerciante\";"
+    },
+    {
+      "key": "CA_POI_NEAREST",
+      "original_language": "esp",
+      "source": "CA_POI_NEAREST = \"Lugar conocido más cercano al centro del mapa: %s\";"
+    },
+    {
+      "key": "CA_POI_STATION",
+      "original_language": "esp",
+      "source": "CA_POI_STATION = \"Estación\";"
+    },
+    {
+      "key": "CA_POI_TRANSPORT",
+      "original_language": "esp",
+      "source": "CA_POI_TRANSPORT = \"Transporte\";"
+    },
+    {
+      "key": "CA_TAROT_CAPACITY_REMOVE",
+      "original_language": "esp",
+      "source": "CA_TAROT_CAPACITY_REMOVE = \"Liberá los espacios adicionales de cartas o de la Caja antes de quitar este Arcano.\";"
+    },
+    {
+      "key": "CA_TAROT_ORDER",
+      "original_language": "esp",
+      "source": "CA_TAROT_ORDER = \"Lugar en la secuencia: %d. Equipar una carta la coloca al final.\";"
+    }
+  ],
+  "physics_keys": [
+    "CA_PHYSICS_IMPACT",
+    "CA_PHYSICS_KIND",
+    "CA_PHYSICS_DELTA_V",
+    "CA_PHYSICS_EQUIV_TICS",
+    "CA_PHYSICS_DAMAGE"
+  ]
+}

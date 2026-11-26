@@ -1,14 +1,13 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.17.125** - 2026-11-26.
+Documentation version: **5.17.126** - 2026-11-26.
 
-**5.17.125/#464:** audio verified;131files,19reserved tracks,
-71native checks. #460transitions:5.17.124. Evidence:
-validation_v5_17_124/125;110author checks pending. Next:#465-469.
+**5.17.124-126/#460/#464/#465:** rest/audio/UI implemented; evidence
+validation_v5_17_124/125/126;111 author checks pending. Next:#466-469.
 **2026-11-26 integration:**130PRs/132issues; scope/evidence in
 validation_v5_17_123/integration-decision.json and ASSETS/TASKS/HISTORY.
 #736art and siege fluency remain unresolved; LegacyMap02Revision5 retained.
-**Next #465-469/#403:** independent MAP01-MAP03 beta; existing modes/limits,
+**Next #466-469/#403:** independent MAP01-MAP03 beta; existing modes/limits,
 separate GZDoom4.14.2, current audio,19reserved tracks. Separate commits/tests/PRs;
 open the consolidated author terminal after the batch. Later campaign needs authoring.
 

@@ -1,4 +1,12 @@
 # Document index hashes use exact source bytes. Keep them stable on checkout.
+# #465 retained font inputs, generated catalogue and native evidence.
+/assets/source/ui/typography_465/** -text -diff
+/assets/validation_v5_17_126/** -text -diff
+/assets/validation_v5_17_126/*.py text eol=lf diff
+/assets/validation_v5_17_126/*.zs text eol=lf diff
+/assets/generators/generate_presentation_465.py text eol=lf
+/src/caelum/ui/CaelumCreditsData.zs text eol=lf
+/src/licenses/CAELUM_RIGHTS.md text eol=lf
 # #464 isolated audio evidence and portable probe sources.
 /assets/validation_v5_17_125/** -text -diff
 /assets/validation_v5_17_125/*.py text eol=lf diff

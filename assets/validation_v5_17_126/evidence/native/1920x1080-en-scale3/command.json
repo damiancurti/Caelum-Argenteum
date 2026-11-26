@@ -1,0 +1,22 @@
+[
+  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+  "-noautoload",
+  "-iwad",
+  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+  "-file",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue465-review01.pk3",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue465-final01\\probe.pk3",
+  "-config",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue465-final01\\1920x1080-en-scale3\\session.ini",
+  "-savedir",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue465-final01\\1920x1080-en-scale3",
+  "-fullscreen",
+  "-width",
+  "1920",
+  "-height",
+  "1080",
+  "+logfile",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue465-final01\\1920x1080-en-scale3\\native.log",
+  "+exec",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue465-final01\\1920x1080-en-scale3\\commands.cfg"
+]
