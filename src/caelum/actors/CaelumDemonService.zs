@@ -27,7 +27,8 @@ class CaelumDemonService : Object play
         if(ropes && CaelumBolas.Interrupted(npc))blocked=true;
         bool cold=npc.ThermalState!=null && npc.ThermalState.Exposure<0 && npc.ThermalState.Severity>0;
         bool combat=!blocked && npc.RecoveryPhase==0 && npc.target!=null && npc.target.health>0
-            && npc.target.bSHOOTABLE && CaelumVisualPerception.Identify(npc,npc.target) && CaelumDemonBreath.CanReach(npc,npc.target);
+            && npc.target.bSHOOTABLE && !CaelumDemonBreath.IsRouteMarker(npc.target)
+            && CaelumVisualPerception.Identify(npc,npc.target) && CaelumDemonBreath.CanReach(npc,npc.target);
         if(blocked || (!ropes && !cold && !combat)){StopBreath(npc,!CaelumBattleCry.Active(npc));return;}
         // No se cancela a mitad una acción que ya pagó sus recursos.
         if(!ropes && npc.DemonBreath==null && ((npc.MeleeState!=null && npc.InStateSequence(npc.CurState,npc.MeleeState))

@@ -1,0 +1,265 @@
+{
+  "issue": 855,
+  "version": "5.17.106",
+  "parent_commit": "9269280c505c06769f24de41f6f0dc6dc936c2d3",
+  "source_proof": {
+    "issue": 855,
+    "version": "5.17.106",
+    "members": 18755,
+    "baseline_sha256": "1bf92c28f7317875e10aace435bc730507602e98c6dc4681c79f54a74e48f0cf",
+    "final_sha256": "d2e3f6d0701cbb19455a899959bd87b1f520905d5f39816e81f5b0b44fe049c1",
+    "final_bytes": 1280987351,
+    "changed": [
+      "caelum/actors/CaelumDemonBreath.zs",
+      "caelum/actors/CaelumDemonService.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "final_source_exact": true,
+    "prototype_gameplay_exact": true,
+    "no_added_removed_members": true,
+    "inverse_exact": true,
+    "parent_commit": "9269280c505c06769f24de41f6f0dc6dc936c2d3"
+  },
+  "change": "Reuse the exact existing CaelumSewerEscapeTarget exclusion before Identify in both UpdateBreath and PaidTick. CanReach shares the same type predicate. No fields, schema, cadence, balance, heat, movement or general perception logic changes.",
+  "behavior": "Technical route inspection no longer mutates recognition or consumes its visibility RNG. This intentionally corrects behavior; it is not a claim of identical combat outcomes or an equivalent performance optimization.",
+  "canonical_fixtures": [
+    {
+      "label": "mandinga-warm-base01",
+      "directory": "build/issue855-mandinga-warm-base01",
+      "runtime": "build/issue851-local03.pk3",
+      "load": null,
+      "regression_expected": true,
+      "checks": 9,
+      "failures": [
+        "CA836 EDGE FAIL navigation: excluded navigation preserves ongoing recognition",
+        "CA836 EDGE FAIL navigation: real target identifies after two observed seconds"
+      ],
+      "passed": false,
+      "engine_exit": 0,
+      "passing": 7,
+      "failing": 2
+    },
+    {
+      "label": "mandinga-warm-final01",
+      "directory": "build/issue855-mandinga-warm-final01",
+      "runtime": "build/issue855-navigation02.pk3",
+      "load": null,
+      "regression_expected": false,
+      "checks": 9,
+      "failures": [],
+      "passed": true,
+      "engine_exit": 0,
+      "passing": 9,
+      "failing": 0
+    },
+    {
+      "label": "mandinga-cold-base01",
+      "directory": "build/issue855-mandinga-cold-base01",
+      "runtime": "build/issue851-local03.pk3",
+      "load": null,
+      "regression_expected": true,
+      "checks": 12,
+      "failures": [
+        "CA836 EDGE FAIL navigation: excluded navigation preserves ongoing recognition",
+        "CA836 EDGE FAIL navigation: real target identifies after two observed seconds"
+      ],
+      "passed": false,
+      "engine_exit": 0,
+      "passing": 10,
+      "failing": 2
+    },
+    {
+      "label": "mandinga-cold-final01",
+      "directory": "build/issue855-mandinga-cold-final01",
+      "runtime": "build/issue855-navigation02.pk3",
+      "load": null,
+      "regression_expected": false,
+      "checks": 12,
+      "failures": [],
+      "passed": true,
+      "engine_exit": 0,
+      "passing": 12,
+      "failing": 0
+    },
+    {
+      "label": "mandinga-cold-upgrade01",
+      "directory": "build/issue855-mandinga-cold-upgrade01",
+      "runtime": "build/issue855-navigation02.pk3",
+      "load": "build/issue855-mandinga-cold-base01",
+      "regression_expected": false,
+      "checks": 7,
+      "failures": [],
+      "passed": true,
+      "engine_exit": 0,
+      "passing": 7,
+      "failing": 0
+    },
+    {
+      "label": "mandinga-cold-reload01",
+      "directory": "build/issue855-mandinga-cold-reload01",
+      "runtime": "build/issue855-navigation02.pk3",
+      "load": "build/issue855-mandinga-cold-final01",
+      "regression_expected": false,
+      "checks": 7,
+      "failures": [],
+      "passed": true,
+      "engine_exit": 0,
+      "passing": 7,
+      "failing": 0
+    },
+    {
+      "label": "mandinga-cold-rollback01",
+      "directory": "build/issue855-mandinga-cold-rollback01",
+      "runtime": "build/issue851-local03.pk3",
+      "load": "build/issue855-mandinga-cold-final01",
+      "regression_expected": false,
+      "checks": 7,
+      "failures": [],
+      "passed": true,
+      "engine_exit": 0,
+      "passing": 7,
+      "failing": 0
+    },
+    {
+      "label": "zupay-warm-base01",
+      "directory": "build/issue855-zupay-warm-base01",
+      "runtime": "build/issue851-local03.pk3",
+      "load": null,
+      "regression_expected": true,
+      "checks": 9,
+      "failures": [
+        "CA836 EDGE FAIL navigation: excluded navigation preserves ongoing recognition",
+        "CA836 EDGE FAIL navigation: real target identifies after two observed seconds"
+      ],
+      "passed": false,
+      "engine_exit": 0,
+      "passing": 7,
+      "failing": 2
+    },
+    {
+      "label": "zupay-warm-final01",
+      "directory": "build/issue855-zupay-warm-final01",
+      "runtime": "build/issue855-navigation02.pk3",
+      "load": null,
+      "regression_expected": false,
+      "checks": 9,
+      "failures": [],
+      "passed": true,
+      "engine_exit": 0,
+      "passing": 9,
+      "failing": 0
+    },
+    {
+      "label": "zupay-cold-base01",
+      "directory": "build/issue855-zupay-cold-base01",
+      "runtime": "build/issue851-local03.pk3",
+      "load": null,
+      "regression_expected": true,
+      "checks": 12,
+      "failures": [
+        "CA836 EDGE FAIL navigation: excluded navigation preserves ongoing recognition",
+        "CA836 EDGE FAIL navigation: real target identifies after two observed seconds"
+      ],
+      "passed": false,
+      "engine_exit": 0,
+      "passing": 10,
+      "failing": 2
+    },
+    {
+      "label": "zupay-cold-final01",
+      "directory": "build/issue855-zupay-cold-final01",
+      "runtime": "build/issue855-navigation02.pk3",
+      "load": null,
+      "regression_expected": false,
+      "checks": 12,
+      "failures": [],
+      "passed": true,
+      "engine_exit": 0,
+      "passing": 12,
+      "failing": 0
+    },
+    {
+      "label": "zupay-cold-upgrade01",
+      "directory": "build/issue855-zupay-cold-upgrade01",
+      "runtime": "build/issue855-navigation02.pk3",
+      "load": "build/issue855-zupay-cold-base01",
+      "regression_expected": false,
+      "checks": 7,
+      "failures": [],
+      "passed": true,
+      "engine_exit": 0,
+      "passing": 7,
+      "failing": 0
+    },
+    {
+      "label": "zupay-cold-reload01",
+      "directory": "build/issue855-zupay-cold-reload01",
+      "runtime": "build/issue855-navigation02.pk3",
+      "load": "build/issue855-zupay-cold-final01",
+      "regression_expected": false,
+      "checks": 7,
+      "failures": [],
+      "passed": true,
+      "engine_exit": 0,
+      "passing": 7,
+      "failing": 0
+    },
+    {
+      "label": "zupay-cold-rollback01",
+      "directory": "build/issue855-zupay-cold-rollback01",
+      "runtime": "build/issue851-local03.pk3",
+      "load": "build/issue855-zupay-cold-final01",
+      "regression_expected": false,
+      "checks": 7,
+      "failures": [],
+      "passed": true,
+      "engine_exit": 0,
+      "passing": 7,
+      "failing": 0
+    },
+    {
+      "label": "abilities-base01",
+      "directory": "build/issue855-abilities-base01",
+      "runtime": "build/issue851-local03.pk3",
+      "load": null,
+      "regression_expected": false,
+      "checks": 96,
+      "failures": [],
+      "passed": true,
+      "engine_exit": 0,
+      "passing": 96,
+      "failing": 0
+    },
+    {
+      "label": "abilities-final01",
+      "directory": "build/issue855-abilities-final01",
+      "runtime": "build/issue855-navigation02.pk3",
+      "load": null,
+      "regression_expected": false,
+      "checks": 96,
+      "failures": [],
+      "passed": true,
+      "engine_exit": 0,
+      "passing": 96,
+      "failing": 0
+    }
+  ],
+  "save_scope": "Native saved identity, visual evidence, route, Anima, owned breath, emitter and paid duration survive baseline-to-final upgrade, final reload and final-to-baseline rollback for both cold demon families. Upgrading preserves the old evidence as saved; it does not reconstruct lost observations. Rollback tests serialization before a new update; old gameplay retains the old defect.",
+  "ability_scope": "Both native demon families: known real target, positive exact per-tic costs, continued emission, active-to-route stop, native flags/reference, empty Anima, distant target, independent cold, real bolas release, sleep, stun, recovery, pain, diagnostic scheduling, death and Zupay fleeing. Ability-only cases seed memory explicitly; acquisition uses separate real one/two-second observations.",
+  "fixture_corrections": [
+    "cold-pilot01 rejects boolean constants in native ZScript; use integer constants. The original runner reported Timeout after compile diagnostics; the exact failed source/log remains retained.",
+    "cold-pilot02/03 tested immediately after Spawn before deferred PostBeginPlay. MaximumCombatAnima was zero and the emission could not start. The final fixture waits for native birth, checks initialized positive maximum, then sets conditions. Production code was not changed for this fixture correction.",
+    "The earlier warm pilot establishes recognition behavior but its immediate-spawn resource setup is superseded by the settled canonical warm/cold suite."
+  ],
+  "reproduction": [
+    "python prepare_navigation.py --runtime <5.17.104.pk3> --output <repo/build/new-prototype>",
+    "python run_navigation.py --runtime <runtime.pk3> --output <repo/build/new-case> [--candidate <prototype.pk3>] [--boss] [--cold] [--load <reach.zds>]",
+    "python run_navigation.py --runtime <runtime.pk3> --output <repo/build/new-abilities> --abilities",
+    "Baseline warm/cold cases must exit engine normally with exactly two recognition failures; final cases pass. Load checks preserve serialized evidence instead of re-running acquisition."
+  ],
+  "performance": "Six descriptive final/control and peaceful scene captures retain Vulkan queue presents and paced tic intervals, not GPU scanout or isolated simulation CPU cost. A behavior correction can legitimately alter combat; report actual census, health, camera and timings without assuming equivalence. Siege and complete batch acceptance remain pending.",
+  "private_artifacts": "No engine, IWAD, PK3, WAD, DLL or save binary is shipped.",
+  "author_acceptance": false,
+  "runner_metadata_note": "Canonical ability runs retain the original generic runner qualification; their logged assertions and ability_scope above describe actual known-memory controls. The portable runner now emits mode-specific qualification text. This metadata-only correction leaves fixture source, package bytes and engine commands unchanged."
+}

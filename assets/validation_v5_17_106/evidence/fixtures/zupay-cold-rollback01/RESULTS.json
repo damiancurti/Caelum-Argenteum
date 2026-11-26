@@ -1,0 +1,48 @@
+{
+  "issue": 855,
+  "passed": true,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue851-local03.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-zupay-cold-rollback01\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-zupay-cold-rollback01\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-zupay-cold-rollback01",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-zupay-cold-rollback01\\engine.log",
+    "-loadgame",
+    "input.zds",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-zupay-cold-rollback01\\commands.cfg"
+  ],
+  "exit_code": 0,
+  "errors": [],
+  "checks": [
+    "CA836 EDGE PASS navigation: saved native identities retained",
+    "CA836 EDGE PASS navigation: saved visual evidence retained exactly",
+    "CA836 EDGE PASS navigation: saved route and Anima retained",
+    "CA836 EDGE PASS navigation: saved owned breath identity retained",
+    "CA836 EDGE PASS navigation: saved emitter ownership retained",
+    "CA836 EDGE PASS navigation: saved paid duration retained",
+    "CA836 EDGE PASS navigation: saved breathing state retained",
+    "CA836 EDGE_RESULT checks=7 failures=0 result=PASS"
+  ],
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue851-local03.pk3": "1bf92c28f7317875e10aace435bc730507602e98c6dc4681c79f54a74e48f0cf",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-zupay-cold-rollback01\\checks.pk3": "c00aacf273463e2021bd1ecf2b8205b6064d0db844ef22b53b5a003f77aaa835"
+  },
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "loaded_save_sha256": "abf07da669e7f11b8b773c9fe730a9a0e52797aa57e5d48fb8158ecc513e8a02",
+  "qualification": "Frozen native demon family; real one/two-second visual observations. Warm path checks UpdateBreath exclusion; cold path also exercises real PaidTick, owned emission and one-tic cost. Reload checks serialized identity, evidence, Anima and paid duration before further fixture mutation. No performance/author acceptance claim."
+}

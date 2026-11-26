@@ -1,0 +1,50 @@
+{
+  "issue": 855,
+  "passed": true,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-navigation02.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-portable-final01\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-portable-final01\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-portable-final01",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-portable-final01\\engine.log",
+    "+map",
+    "CA836A",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-portable-final01\\commands.cfg"
+  ],
+  "exit_code": 0,
+  "errors": [],
+  "checks": [
+    "CA836 EDGE PASS navigation: native bodies exist",
+    "CA836 EDGE PASS navigation: native delayed birth completed before ability checks",
+    "CA836 EDGE PASS navigation: real target visible through native predicates",
+    "CA836 EDGE PASS navigation: recognition begins without prior identity",
+    "CA836 EDGE PASS navigation: live route marker is explicitly excluded from breath",
+    "CA836 EDGE PASS navigation: one real second of visual recognition retained",
+    "CA836 EDGE PASS navigation: excluded navigation preserves ongoing recognition",
+    "CA836 EDGE PASS navigation: route does not start breath or spend Anima",
+    "CA836 EDGE PASS navigation: real target identifies after two observed seconds",
+    "CA836 EDGE_RESULT checks=9 failures=0 result=PASS"
+  ],
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-navigation02.pk3": "d2e3f6d0701cbb19455a899959bd87b1f520905d5f39816e81f5b0b44fe049c1",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-portable-final01\\checks.pk3": "ba7ba13f1eaacb3fa315d829af7cc91bdb97940e000e978d92dc85f60f1c8606"
+  },
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "loaded_save_sha256": null,
+  "qualification": "Frozen native demon family; real one/two-second visual observations. Warm path checks UpdateBreath exclusion; cold path also exercises real PaidTick, owned emission and one-tic cost. Reload checks serialized identity, evidence, Anima and paid duration before further fixture mutation. No performance/author acceptance claim."
+}

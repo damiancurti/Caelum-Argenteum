@@ -6,27 +6,37 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
 ## CA-KP-264 - Visual identification has effects before a later eligibility rejection
 
-Status/evidence: OPEN DEFECT, ENGINE-REPRODUCED in 5.17.104; #853 diagnosis /
-5.17.105, correction tracked in #855. GZDoom 4.14.2, 2026-11-19.
+Status/evidence: VERIFIED CORRECTION in 5.17.106 / #855, GZDoom 4.14.2,
+2026-11-19. Baseline defect reproduced in 5.17.104; diagnosis 5.17.105 / #853.
+Native verification is not author acceptance or complete campaign coverage.
 
-An Identify call is not a read-only visibility predicate. CaelumVisualEvidence
-updates continuity, identified subject, visibility flags and memory. Rejecting a
-technical navigation marker later in CanReach can still erase recognition of a
-real target. The native reproduction observes one actual second, then invokes
-UpdateBreath with an excluded live marker: continuity falls from 35 to zero and
-two-second identification fails. Retain this failed baseline and fix the authored
-eligibility ordering in its own behavior patch. Inspect the analogous PaidTick
-ordering; the current baseline fixture establishes UpdateBreath, not every caller.
+Identify is not a read-only visibility predicate. CaelumVisualEvidence updates
+continuity, identified subject, visibility flags and memory. Rejecting a technical
+route marker later in CanReach can still erase recognition of a real target.
+The native baseline changes 35 tics of accumulated recognition to zero and fails
+two-second identification. Apply the authored type eligibility before Identify
+in both UpdateBreath and PaidTick; share the exact existing CanReach exclusion.
+The fixed warm/cold cases preserve recognition for Mandinga and Zupay, while
+legitimate combat, cold/bolas, interruption, paid duration and costs remain tested.
+Do not move this specialized rule into unrelated general perception or chase.
 
-Measure before introducing state caches. The native InStateSequence predicate
-already returns false for a null base, but repeated FindState scopes total only
-0.1794 ms per sampled tic here, including timer overhead. No rewrite is selected.
-Classify actual targets and retain original call effects during instrumentation;
-do not collapse visual checks indiscriminately because native CheckSight can use
-RNG for invisible subjects. Nested timers cannot be added into a frame budget.
+No state cache or lookup rewrite was selected. The native InStateSequence
+predicate returns false for a null base, but repeated FindState scopes measured
+only 0.1794 ms per sampled tic including timer overhead. Classify targets and
+retain original call effects during instrumentation; native CheckSight can use
+RNG for invisible subjects. This correction intentionally removes misdirected
+visual/RNG effects and must not be described as an equivalent combat optimization.
+Nested timers cannot be added into a frame budget.
 
-Evidence: assets/validation_v5_17_105. Contract: SYSTEMS demon navigation-target
-exclusion and visual recognition. Fix and author acceptance remain pending.
+Wait for deferred native PostBeginPlay before testing resource/ability setup.
+An immediate Spawn reference can still have zero MaximumCombatAnima. Assert the
+initialized profile, then set controlled conditions; preserve failed fixture
+evidence and never weaken production initialization to make a test pass.
+Save upgrade/reload/rollback preserves stored evidence; upgrading does not
+reconstruct recognition already lost in an old save.
+
+Evidence: assets/validation_v5_17_105 and assets/validation_v5_17_106. Contract:
+SYSTEMS demon navigation-target exclusion and visual recognition.
 
 
 ## CA-KP-263 - Measure local candidates separately and preserve ally evidence

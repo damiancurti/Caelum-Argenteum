@@ -1,0 +1,179 @@
+[
+  {
+    "label": "mandinga-warm-base01",
+    "directory": "build/issue855-mandinga-warm-base01",
+    "runtime": "build/issue851-local03.pk3",
+    "load": null,
+    "regression_expected": true,
+    "checks": 9,
+    "failures": [
+      "CA836 EDGE FAIL navigation: excluded navigation preserves ongoing recognition",
+      "CA836 EDGE FAIL navigation: real target identifies after two observed seconds"
+    ],
+    "passed": false,
+    "engine_exit": 0
+  },
+  {
+    "label": "mandinga-warm-final01",
+    "directory": "build/issue855-mandinga-warm-final01",
+    "runtime": "build/issue855-navigation02.pk3",
+    "load": null,
+    "regression_expected": false,
+    "checks": 9,
+    "failures": [],
+    "passed": true,
+    "engine_exit": 0
+  },
+  {
+    "label": "mandinga-cold-base01",
+    "directory": "build/issue855-mandinga-cold-base01",
+    "runtime": "build/issue851-local03.pk3",
+    "load": null,
+    "regression_expected": true,
+    "checks": 12,
+    "failures": [
+      "CA836 EDGE FAIL navigation: excluded navigation preserves ongoing recognition",
+      "CA836 EDGE FAIL navigation: real target identifies after two observed seconds"
+    ],
+    "passed": false,
+    "engine_exit": 0
+  },
+  {
+    "label": "mandinga-cold-final01",
+    "directory": "build/issue855-mandinga-cold-final01",
+    "runtime": "build/issue855-navigation02.pk3",
+    "load": null,
+    "regression_expected": false,
+    "checks": 12,
+    "failures": [],
+    "passed": true,
+    "engine_exit": 0
+  },
+  {
+    "label": "mandinga-cold-upgrade01",
+    "directory": "build/issue855-mandinga-cold-upgrade01",
+    "runtime": "build/issue855-navigation02.pk3",
+    "load": "build/issue855-mandinga-cold-base01",
+    "regression_expected": false,
+    "checks": 7,
+    "failures": [],
+    "passed": true,
+    "engine_exit": 0
+  },
+  {
+    "label": "mandinga-cold-reload01",
+    "directory": "build/issue855-mandinga-cold-reload01",
+    "runtime": "build/issue855-navigation02.pk3",
+    "load": "build/issue855-mandinga-cold-final01",
+    "regression_expected": false,
+    "checks": 7,
+    "failures": [],
+    "passed": true,
+    "engine_exit": 0
+  },
+  {
+    "label": "mandinga-cold-rollback01",
+    "directory": "build/issue855-mandinga-cold-rollback01",
+    "runtime": "build/issue851-local03.pk3",
+    "load": "build/issue855-mandinga-cold-final01",
+    "regression_expected": false,
+    "checks": 7,
+    "failures": [],
+    "passed": true,
+    "engine_exit": 0
+  },
+  {
+    "label": "zupay-warm-base01",
+    "directory": "build/issue855-zupay-warm-base01",
+    "runtime": "build/issue851-local03.pk3",
+    "load": null,
+    "regression_expected": true,
+    "checks": 9,
+    "failures": [
+      "CA836 EDGE FAIL navigation: excluded navigation preserves ongoing recognition",
+      "CA836 EDGE FAIL navigation: real target identifies after two observed seconds"
+    ],
+    "passed": false,
+    "engine_exit": 0
+  },
+  {
+    "label": "zupay-warm-final01",
+    "directory": "build/issue855-zupay-warm-final01",
+    "runtime": "build/issue855-navigation02.pk3",
+    "load": null,
+    "regression_expected": false,
+    "checks": 9,
+    "failures": [],
+    "passed": true,
+    "engine_exit": 0
+  },
+  {
+    "label": "zupay-cold-base01",
+    "directory": "build/issue855-zupay-cold-base01",
+    "runtime": "build/issue851-local03.pk3",
+    "load": null,
+    "regression_expected": true,
+    "checks": 12,
+    "failures": [
+      "CA836 EDGE FAIL navigation: excluded navigation preserves ongoing recognition",
+      "CA836 EDGE FAIL navigation: real target identifies after two observed seconds"
+    ],
+    "passed": false,
+    "engine_exit": 0
+  },
+  {
+    "label": "zupay-cold-final01",
+    "directory": "build/issue855-zupay-cold-final01",
+    "runtime": "build/issue855-navigation02.pk3",
+    "load": null,
+    "regression_expected": false,
+    "checks": 12,
+    "failures": [],
+    "passed": true,
+    "engine_exit": 0
+  },
+  {
+    "label": "zupay-cold-upgrade01",
+    "directory": "build/issue855-zupay-cold-upgrade01",
+    "runtime": "build/issue855-navigation02.pk3",
+    "load": "build/issue855-zupay-cold-base01",
+    "regression_expected": false,
+    "checks": 7,
+    "failures": [],
+    "passed": true,
+    "engine_exit": 0
+  },
+  {
+    "label": "zupay-cold-reload01",
+    "directory": "build/issue855-zupay-cold-reload01",
+    "runtime": "build/issue855-navigation02.pk3",
+    "load": "build/issue855-zupay-cold-final01",
+    "regression_expected": false,
+    "checks": 7,
+    "failures": [],
+    "passed": true,
+    "engine_exit": 0
+  },
+  {
+    "label": "zupay-cold-rollback01",
+    "directory": "build/issue855-zupay-cold-rollback01",
+    "runtime": "build/issue851-local03.pk3",
+    "load": "build/issue855-zupay-cold-final01",
+    "regression_expected": false,
+    "checks": 7,
+    "failures": [],
+    "passed": true,
+    "engine_exit": 0
+  },
+  {
+    "label": "abilities-base01",
+    "directory": "build/issue855-abilities-base01",
+    "runtime": "build/issue851-local03.pk3",
+    "load": null,
+    "regression_expected": false,
+    "checks": 96,
+    "failures": [],
+    "passed": true,
+    "engine_exit": 0
+  }
+]

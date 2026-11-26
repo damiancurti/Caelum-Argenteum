@@ -1,0 +1,48 @@
+{
+  "issue": 855,
+  "passed": true,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-navigation02.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-mandinga-cold-upgrade01\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-mandinga-cold-upgrade01\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-mandinga-cold-upgrade01",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-mandinga-cold-upgrade01\\engine.log",
+    "-loadgame",
+    "input.zds",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-mandinga-cold-upgrade01\\commands.cfg"
+  ],
+  "exit_code": 0,
+  "errors": [],
+  "checks": [
+    "CA836 EDGE PASS navigation: saved native identities retained",
+    "CA836 EDGE PASS navigation: saved visual evidence retained exactly",
+    "CA836 EDGE PASS navigation: saved route and Anima retained",
+    "CA836 EDGE PASS navigation: saved owned breath identity retained",
+    "CA836 EDGE PASS navigation: saved emitter ownership retained",
+    "CA836 EDGE PASS navigation: saved paid duration retained",
+    "CA836 EDGE PASS navigation: saved breathing state retained",
+    "CA836 EDGE_RESULT checks=7 failures=0 result=PASS"
+  ],
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-navigation02.pk3": "d2e3f6d0701cbb19455a899959bd87b1f520905d5f39816e81f5b0b44fe049c1",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-mandinga-cold-upgrade01\\checks.pk3": "6aa2ae6b7cd65e6f257d20efdb4a028cf56a91c0ee848b7f1129f9b98b6b2c92"
+  },
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "loaded_save_sha256": "e52918aceabbf712894eca1431eb7400fb903004091bd990b5463c75aad2682c",
+  "qualification": "Frozen native demon family; real one/two-second visual observations. Warm path checks UpdateBreath exclusion; cold path also exercises real PaidTick, owned emission and one-tic cost. Reload checks serialized identity, evidence, Anima and paid duration before further fixture mutation. No performance/author acceptance claim."
+}

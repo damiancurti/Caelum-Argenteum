@@ -1,0 +1,57 @@
+{
+  "issue": 855,
+  "passed": false,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue851-local03.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-navigation01\\prototype.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-cold-pilot03\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-cold-pilot03\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-cold-pilot03",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-cold-pilot03\\engine.log",
+    "+map",
+    "CA836A",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-cold-pilot03\\commands.cfg"
+  ],
+  "exit_code": 0,
+  "errors": [
+    "CA836 EDGE FAIL",
+    "result=FAIL"
+  ],
+  "checks": [
+    "CA836 EDGE PASS navigation: native bodies exist",
+    "CA836 EDGE FAIL navigation: cold starts a legitimate paid emission before recognition",
+    "CA836 EDGE PASS navigation: real target visible through native predicates",
+    "CA836 EDGE PASS navigation: recognition begins without prior identity",
+    "CA836 EDGE PASS navigation: live route marker is explicitly excluded from breath",
+    "CA836 EDGE PASS navigation: one real second of visual recognition retained",
+    "CA836 EDGE PASS navigation: excluded navigation preserves ongoing recognition",
+    "CA836 EDGE FAIL navigation: cold keeps the same owned emission",
+    "CA836 EDGE PASS navigation: cold emission pays exactly one native tic",
+    "CA836 EDGE FAIL navigation: paid path advances emission duration exactly once",
+    "CA836 EDGE PASS navigation: real target identifies after two observed seconds",
+    "CA836 EDGE_RESULT checks=11 failures=3 result=FAIL"
+  ],
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue851-local03.pk3": "1bf92c28f7317875e10aace435bc730507602e98c6dc4681c79f54a74e48f0cf",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-navigation01\\prototype.pk3": "934a7ee9b4bcc31bcf085bd6ff316f75eed9e429683adf18465d3a0695a14041",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue855-cold-pilot03\\checks.pk3": "c6e0d93753194de7b7b3fb6e9fc22f9a17f82d92985841560679cf1a48aa8c8c"
+  },
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "loaded_save_sha256": null,
+  "qualification": "Frozen native demon family; real one/two-second visual observations. Warm path checks UpdateBreath exclusion; cold path also exercises real PaidTick, owned emission and one-tic cost. Reload checks serialized identity, evidence, Anima and paid duration before further fixture mutation. No performance/author acceptance claim."
+}
