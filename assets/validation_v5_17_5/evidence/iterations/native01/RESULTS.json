@@ -1,0 +1,70 @@
+{
+  "issue": 461,
+  "runtime_sha256": "88c41b887676e7a186914506ef5863f0c24d67d9335c42682f66ff207324422f",
+  "baseline_sha256": "5e301d8bbe651d1f3d834b031ba3b505e0ea8c1fed963c215e4686f24613aa9f",
+  "fixture_sha256": "8d17117f28a97b1f636264a35d82abac96ad2a50c7097efd3fb1bc4fe85256c4",
+  "model_overlay_sha256": null,
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "assertions": 15,
+      "expected_assertions": 15,
+      "errors": [],
+      "captures": {}
+    },
+    {
+      "phase": "old-save-model",
+      "exit_code": 0,
+      "passed": true,
+      "assertions": 15,
+      "expected_assertions": 15,
+      "errors": [],
+      "captures": {}
+    },
+    {
+      "phase": "fresh-model",
+      "exit_code": 0,
+      "passed": false,
+      "assertions": 34,
+      "expected_assertions": 38,
+      "errors": [
+        "CA461 FAIL native captured pose matches requested frame",
+        "CA461 FAIL native captured pose matches requested frame",
+        "CA461 FAIL native captured pose matches requested frame",
+        "CA461 FAIL native captured pose matches requested frame"
+      ],
+      "captures": {
+        "empty.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-00-idle.png": "e35ee607287bc2da35fac25136b9bf4cf2c9ff2a2b00166d612aaa81d03a82d6",
+        "pose-01-idle.png": "919b40ee5d491e27f594ce9182d1c4ad6ec651b1f384e7eec245fdbf11093762",
+        "pose-02-run.png": "02d5ad759ebbbcf967b6a9e03ee6f4c29509cacfd6e5e0c7fee833df2824117f",
+        "pose-03-run.png": "70b9aa381ffffa9399e726893147866bac8a6dcbe696ba9b205b5cf34cba7dca",
+        "pose-04-run.png": "95d5641942f17707ed09113a4cefeb14c8288df0d01ea7823fd6244a3d939029",
+        "pose-05-run.png": "253194d800fd789ee629356ca2d07b495482cde4d75f3f914c89987f4f67da5f",
+        "pose-06-walk.png": "fb24dfa71c728a50c94cda67a1df61b3da88eb3d937f884ae6f4eb145941fbe4",
+        "pose-07-walk.png": "0ac74d3cbbb35ea59833803fdc6f21a2b068967500e386b26bf9e00739b74b3a",
+        "pose-08-stun.png": "62d965b1d6d300bc2d7f2b9ca2e27705594382f680bbc44e7183d2cbea7f3835",
+        "pose-09-attack_prepare.png": "821723c0e6f41c498fc9642f872dfff10309bc807c7a49d8b6038c5eb9578aef",
+        "pose-10-attack_release.png": "3028fe5b4ea19b494f34d8f9beca6a10d1c48b74f64ef63e514a7fc62799c37b",
+        "pose-11-pain.png": "7545fc3da21c9487258a717fd8943a87a6cdf65410ee5495a04f55c1987ca91b",
+        "pose-12-death.png": "03f92c2e10e00b74bd3411ae6bf47a13d6fab74ed6d554817cefccd39d8314b9",
+        "pose-13-death.png": "861abbb1d0a9be9c1d5ce657ec1c9dfc1bd64a5df9a787060544c7099ad10ecd",
+        "pose-14-death.png": "f5c7f1e55cc67c8eda2c3259113ff63aeb123f5f505ca7f9e3806cbc62a854b5",
+        "pose-15-death.png": "fdfa829ea2cebb2ef67305116001b531c724ce468aa34acff89de5ca2a5acd68",
+        "pose-16-death.png": "bf86ae6b8ecfc16ca3de59651a2a95ef6bf1cf3ac9517c32c8db30096ec5864a",
+        "pose-17-death.png": "bf86ae6b8ecfc16ca3de59651a2a95ef6bf1cf3ac9517c32c8db30096ec5864a",
+        "pose-18-breath.png": "c14d41a14c739c3bddfd3896f3d47a1a423bb402dcd3d6e47465cf2d16710ee7",
+        "pose-19-breath.png": "f6272f24141abb81317ea2c6d9d78f30e0f42aa3adb795b5fc5d5c40cd850f18",
+        "pose-20-breath.png": "99cd58515399b7d80b19647cdc6130a6c7482d2846d469bc55702c87894418a8",
+        "pose-21-breath.png": "b29b91db14da17a48e551b2974d52e5275b0a4b0bc498f4e291132ba07fb0963",
+        "pose-22-rest.png": "f1b901e9d340a4570cc5a46ec578a83a74ea35eb49644bb4232cd16f48948744",
+        "view-front.png": "9a88c71298ec4cd442280127bdb3a62daf305e313ba3913b631bc19fcfed4e00",
+        "view-rear.png": "0d89b047fa6ca50bc93222e0678da9a0ba01c231a348a55694f9729297926c27",
+        "view-side.png": "c5af2dccd12e4ecdb4e3b8009e8daf497428f202abe2c971e3bd159c845b9d46"
+      }
+    }
+  ]
+}

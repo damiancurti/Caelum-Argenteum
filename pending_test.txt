@@ -52,3 +52,8 @@ CA463-REGIONS-01 | Origin: 5.17.4 / #463
 Prerequisites: current package and preserved original pilot sources. Run python assets/validation_v5_17_4/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/regions-author-01 --interactive. This uses an isolated map/config/save directory, not a campaign save.
 Steps: inspect F2 Litoral, F3 Selva and F4 Patagonia; use F6/F7 for Cuero/Nahuelito and F8-F10 for repeated floor materials. Check joins, repeated patterns, leaf/gravel size and character readability. Use F5 to walk from the cobbled path onto each material plot; save/reload in this isolated session if desired.
 Expected: coherent original ground materials, visible three-dimensional preview creatures, continuous walkable surfaces and no changes to existing campaign art or inventory. Report material and gallery results separately from the still-pending production creature/combat review. Pombero appears twice as a regional display, not two campaign identities.
+
+CA461-POMBERO-01 | Origin: 5.17.5 / #461
+Prerequisites: current package. Run python assets/validation_v5_17_5/run_pombero.py --runtime build/caelum_argenteum_dev.pk3 --output build/pombero-author-01 --interactive in an isolated configuration; do not use a campaign save.
+Steps: inspect F1 idle, F2 movement, F3 stun, F4 attack preparation, F5 release, F6 pain, F7 falling, F8 corpse, F9 breath and F10 lying rest. Judge face, silhouette, joints and contact with the floor; report the provisional body scale separately.
+Expected: actual volume through every inherited pose, original identity and readable motion. The existing provisional Mandinga combat and body rules remain unchanged; this inspection does not approve campaign encounters or the remaining creature roster.

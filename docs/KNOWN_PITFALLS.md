@@ -4,6 +4,22 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-230 - Freeze native model poses without invoking gameplay actions
+
+Status/evidence: ENGINE-VERIFIED fixture correction, #461, 2026-11-13.
+GZDoom 4.14.2 declares SetState(state, bool nofunction=false). Passing false in
+an art fixture invokes Look, attack and death actions; it can move the inspected
+body, replace its pose or clear solidity even though class/profile checks pass.
+Use true for static art inspection, select a nonzero-duration matching state and
+apply the pose after the real actor's Tick. Verify state/sprite/frame and body
+flags, and compare each capture with an empty reference. State identity alone
+does not identify the visible interpolated mesh: a held tics=-1 can show the next
+frame. Disable gl_interpolate_model_frames only for exact-keyframe still review,
+then restore it; live action, continuity and presentation evidence stays separate.
+Evidence: assets/validation_v5_17_5/evidence/SUMMARY.json retains initial compiler,
+initialization and empty/wrong-pose failures. Final checks pass without changing
+gameplay ZScript. This is an inspection technique, not a production freeze rule.
+
 ## CA-KP-229 - Wait for the last diagnostic network event before quitting
 
 Status/evidence: ENGINE-VERIFIED fixture correction, #463, 2026-11-13.

@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.4** - 2026-11-13.
+Documentation version: **5.17.5** - 2026-11-13.
+
+## 5.17.5 - First folklore combat model (#461)
+
+Pombero's real provisional combat class gains a specific model binding with
+inherited idle, movement, attack, pain, death, breath and rest frames. Original
+class/state identities and gameplay remain intact. ASSETS records the model,
+native verification and pending author review; the wider roster is unfinished.
 
 ## 5.17.4 - First regional art inspection slice (#463)
 

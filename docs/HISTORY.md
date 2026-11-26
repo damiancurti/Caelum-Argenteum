@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.4** - 2026-11-13.
+Documentation version: **5.17.5** - 2026-11-13.
+
+## 5.17.5 - Pombero inherited combat model (#461, 2026-11-13)
+
+Reused the original Pombero anatomy/UVs/textures and added presentation poses for
+its unchanged inherited combat states. Native art is bound to CaelumBestiary006;
+the #455 preview remains untouched. Corrected the diagnostic SetState nofunction
+argument, post-Tick pose driver and exact-keyframe interpolation setting after
+earlier empty/wrong-pose captures. Those failures remain preserved. Native
+continuity/rollback pass 115 checks, exact-keyframe inspection 51 and actual
+actions/loot 80; the package matches 18,184 source entries. Binary bounds cover
+301,645 coordinate checks and repeated exports are byte-identical. One isolated
+sprite/model pair records 1719.07/1738.87 queue presents/s, p95 0.7639/0.7640 ms,
+p99 0.9174/0.9117 ms; ASSETS records the environment and limited scope. See
+assets/validation_v5_17_5/evidence/SUMMARY.json. CA461-POMBERO-01 and the remaining
+roster remain pending; no author/campaign/crowd acceptance is implied.
 
 ## 5.17.4 - Regional ground material gallery (#463, 2026-11-13)
 

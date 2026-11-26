@@ -1,0 +1,164 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 16:20:33
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-463/build/issue463-regions01.pk3, 18179 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-461/build/issue461-model02/preview.pk3, 5 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-461/build/issue461-visual02/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+Script error, "fixture.pk3:zscript" line 47:
+Numeric type expected, got "IdleBreathing"
+Script error, "fixture.pk3:zscript" line 47:
+Numeric type expected, got "See"
+Script error, "fixture.pk3:zscript" line 47:
+Numeric type expected, got "RunSecondHalf"
+Script error, "fixture.pk3:zscript" line 47:
+Numeric type expected, got "WalkCycle"
+Script error, "fixture.pk3:zscript" line 48:
+Numeric type expected, got "LucidityStun"
+Script error, "fixture.pk3:zscript" line 48:
+Numeric type expected, got "Melee"
+Script error, "fixture.pk3:zscript" line 48:
+Numeric type expected, got "Missile"
+Script error, "fixture.pk3:zscript" line 48:
+Numeric type expected, got "Pain"
+Script error, "fixture.pk3:zscript" line 48:
+Numeric type expected, got "Death"
+Script error, "fixture.pk3:zscript" line 48:
+Numeric type expected, got "RacialBreath"
+Script error, "fixture.pk3:zscript" line 48:
+Numeric type expected, got "RestLying"
+Script error, "fixture.pk3:zscript" line 51:
+Cannot convert Name to StateLabel
+Script error, "fixture.pk3:zscript" line 51:
+Unknown identifier 'first'
+Script error, "fixture.pk3:zscript" line 52:
+Unknown identifier 'cursor'
+Script error, "fixture.pk3:zscript" line 63:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 64:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 65:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 66:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 67:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 68:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 69:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 70:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 71:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 72:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 73:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 74:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 75:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 76:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 77:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 78:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 79:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 80:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 81:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 82:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 83:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 84:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 85:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 107:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 108:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 109:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 110:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 111:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 112:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 113:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 114:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 115:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 116:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 117:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 118:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 119:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 120:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 121:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 122:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 123:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 124:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 125:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 126:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 127:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 128:
+Call to unknown function 'GetSpriteIndex'
+Script error, "fixture.pk3:zscript" line 129:
+Call to unknown function 'GetSpriteIndex'

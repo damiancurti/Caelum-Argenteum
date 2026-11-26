@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.4** - 2026-11-13.
+Documentation version: **5.17.5** - 2026-11-13.
+
+## 5.17.5 - Pombero native combat art (#461, first slice)
+
+The real CaelumBestiary006 has an explicit 23-frame model binding derived from
+the original #455 source. Old/new/rollback saves pass 115 checks; exact-keyframe
+inspection passes 51, and native actions/loot pass 80. Binary, export, package and
+presentation evidence are recorded in ASSETS. Author review is CA461-POMBERO-01.
+Remaining creatures, modular equipment and production
+campaign placements remain separate outstanding work.
 
 ## 5.17.4 - Regional materials/gallery (#463, first slice)
 

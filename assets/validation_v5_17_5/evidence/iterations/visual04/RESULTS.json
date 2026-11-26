@@ -1,0 +1,45 @@
+{
+  "issue": 461,
+  "runtime_sha256": "5e301d8bbe651d1f3d834b031ba3b505e0ea8c1fed963c215e4686f24613aa9f",
+  "baseline_sha256": "5e301d8bbe651d1f3d834b031ba3b505e0ea8c1fed963c215e4686f24613aa9f",
+  "fixture_sha256": "36be59ee8018d1471614f1a499bbdbc69a9da03fbbc31c0adbf53c953b275f68",
+  "model_overlay_sha256": "71cf947302eab9832fee7c9dff490914af5cd8e7f43c8bb0fabe450cfec58b73",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 0,
+      "passed": true,
+      "assertions": 15,
+      "errors": [],
+      "captures": {
+        "pose-00-idle.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-01-idle.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-02-run.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-03-run.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-04-run.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-05-run.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-06-walk.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-07-walk.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-08-stun.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-09-attack_prepare.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-10-attack_release.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-11-pain.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-12-death.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-13-death.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-14-death.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-15-death.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-16-death.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-17-death.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-18-breath.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-19-breath.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-20-breath.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-21-breath.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "pose-22-rest.png": "db4846213ba95b7c7c2ef96afac618cdd55c670357d5d5a548c7e003eaf0110d",
+        "view-front.png": "564c4119e7e0ab1d686642c69a22ce57cd366e79b2282a4debfa3f76ceb2a616",
+        "view-rear.png": "5daa964a5ba282f09904060f614ec354e520108226e625765c1dcfb877e6c61b",
+        "view-side.png": "fe08ea464c9f35126d7b59a7444b30d14bce73399f9dd78d6e69f2ff0f63f329"
+      }
+    }
+  ]
+}

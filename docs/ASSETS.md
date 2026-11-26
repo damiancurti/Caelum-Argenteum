@@ -1,6 +1,67 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.4** - 2026-11-13.
+Documentation version: **5.17.5** - 2026-11-13.
+
+## 5.17.5 - Pombero inherited combat model (#461, first creature)
+
+CaelumBestiary006 receives an explicit native 3D binding using the original
+Pombero anatomy, UVs and unchanged owned textures from #455. The new editable
+ANIMATION.json in assets/source/art/pombero_461 supplies 23 inherited frame pairs:
+idle, run/walk, stun, shared melee/magic preparation/release, pain, six death
+stages, racial breath and lying rest. The final two death frames share a settled
+pose. The existing gameplay states, action calls, durations and serialization
+remain byte-identical. No new saved fields, classes, encounter or population
+are introduced. The original unintegrated 32-MU pilot and gallery stay intact.
+
+The generator reads the current approved provisional Mandinga Height and Scale
+from their existing source, normalizes the neutral model to that height and
+divides out Actor.Scale in MODELDEF. It retains CorrectPixelStretch; neither
+collision, mass nor the native actor scale changes. This is a provisional combat
+presentation, not approval of final Pombero species dimensions. The fixed
+reference outfit remains separate from the still-unfinished modular equipment
+catalogue. Existing attacks keep their approved provisional Mandinga profile.
+
+Rebuild with `python assets/generators/generate_pombero_combat_model.py --output build/pombero-combat --install`;
+--check verifies deterministic exports. ANIMATION.json and the original design
+remain editable; neutral OBJ/MTL, export hashes and original art provenance are
+preserved. No new image generation or raster edits occur in this patch.
+
+Native inspection uses assets/validation_v5_17_5/run_pombero.py. The native
+signature is SetState(state, nofunction=false): frozen art inspection must pass
+true, select a nonzero-duration state and run after the actor's Tick. Earlier
+fixture calls executed Look/attack/death functions, moved out of view or changed
+body flags. Those iterations are not successful visual evidence. The corrected
+fixture verifies the actual state/sprite/frame and native flags after inspection.
+Still captures disable model-frame interpolation locally; ordinary interpolation
+is restored before saving and remains active in the continuity/presentation runs.
+Otherwise tics=-1 can display an interpolated neighbor despite a correct state.
+
+The final package passes 115 checks across baseline, old-save/model, fresh/model,
+model reload and rollback to the baseline package. These include unchanged body
+and state identity, finite inventory ownership, initialization, solid-body/wall
+collision, free movement and native frame advancement. A separate exact-keyframe
+visual run passes 51 checks, covers all 23 visible frame pairs and supplies front,
+side and rear views. Representative poses and orientation captures were inspected.
+Six actual attacks (Mandinga control and Pombero melee/projectile/breath) plus
+death, finite-stock debiting, repeated-death guards and loot reload pass 80 checks.
+Those actions run normally, without the frozen visual pose driver.
+
+Static checks pass 301,645 binary coordinate/bounds checks, 13,115 vertices,
+22,815 triangles and four material surfaces. Repeated exports are byte-identical;
+the package matches all 18,184 src entries. The five new model/material/definition
+resources and one MODELDEF include are the only art additions; two existing
+diagnostic strings carry the release. All other runtime bytes are unchanged.
+
+One sequential 700-tic pair compares the inherited sprite with the model in the
+same isolated room, with one inspected subject and an offscreen Mandinga control:
+1719.07/1738.87 queue presents/s, p95 0.7639/0.7640 ms, p99 0.9174/0.9117 ms.
+Environment: Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom 4.14.2,
+Vulkan 1280x720, uncapped, vsync off, unpaused background and 5% audio. These are
+queue-present intervals, not GPU/display timing; one pair cannot establish
+repeatability, crowd/campaign budgets or an improvement. Existing maps and armies
+are unchanged and this creature remains unplaced. Evidence and failed iterations:
+assets/validation_v5_17_5/evidence/SUMMARY.json. CA461-POMBERO-01 remains pending;
+this first creature does not complete the #461 roster or author art acceptance.
 
 ## 5.17.4 - Regional materials and inspection gallery (#463)
 
