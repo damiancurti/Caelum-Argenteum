@@ -1,6 +1,32 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.122** - 2026-11-21.
+Documentation version: **5.17.123** - 2026-11-21.
+
+## 5.17.123 - Consolidate the author review terminal (#889)
+
+Implemented #889 as the single consolidated review terminal. Every existing
+author check has at least one concrete scene/reference action, with canonical
+steps and legacy prerequisites retained. Final evidence distinguishes command
+preparation, native menu/save/control checks, direct image inspection and the
+author's still-pending verdict. No new agent-only check is added to the author
+queue; all 108 entries remain byte-for-byte unchanged.
+
+Next: the author reviews the consolidated terminal and supplies acceptance or
+corrections by stable check ID. Record confirmed results in HISTORY and remove
+only explicitly passed entries. Character conversion, new lamp/ambient rules,
+unauthored progression and consent/transport require the missing design decisions.
+The severe normal-siege presentation limitation remains an engineering task,
+not an accepted limitation or a completed performance goal.
+
+On 2026-11-26 the author explicitly authorized integrating the current delivery
+and closing its implemented issues, with later versions supplying further work.
+This covers the 130 stacked PRs and their issues, plus #459/#462 through their
+delivered child PRs; integration-decision.json records the exact scope. It does
+not accept any of the 108 pending manual checks or missing design choices.
+#460, #464-469 and umbrella #403 remain open. Follow-up work must retain the
+remaining scope below and use focused issues. The existing 5.17.123 validation
+still applies to unchanged runtime/art; this integration update affects docs only.
+
 
 ## 5.17.122 - Review damp masonry at the sewer waterline (#887, #463)
 

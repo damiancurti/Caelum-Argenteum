@@ -1,0 +1,55 @@
+{
+  "issue": 889,
+  "passed": true,
+  "rows": [
+    {
+      "issue": 889,
+      "action": "equipment",
+      "passed": true,
+      "exit_code": 0,
+      "errors": [],
+      "ready": true,
+      "menu_available": true,
+      "smoke_save_exists": true,
+      "reloaded": false,
+      "author_acceptance": false
+    },
+    {
+      "issue": 889,
+      "action": "equipment",
+      "passed": true,
+      "exit_code": 0,
+      "errors": [],
+      "ready": true,
+      "menu_available": true,
+      "smoke_save_exists": true,
+      "reloaded": true,
+      "author_acceptance": false
+    },
+    {
+      "issue": 889,
+      "action": "equipment",
+      "passed": true,
+      "exit_code": 0,
+      "errors": [],
+      "ready": true,
+      "menu_available": true,
+      "smoke_save_exists": true,
+      "reloaded": true,
+      "author_acceptance": false
+    }
+  ],
+  "cycle_calls": 33,
+  "all_catalogue_regions": true,
+  "native_weapon_inputs": [
+    "carbine reload",
+    "staff charge"
+  ],
+  "moon_started": true,
+  "attributes100": true,
+  "owned_ids_identical_after_reload_and_return": true,
+  "save_sha256": "b93a84838b15157180b9cbaf671eda74df0b0b7fe3c5d8ae9f1d42734117c999",
+  "wardrobe_body_restored": true,
+  "buckler_restored": true,
+  "qualification": "Fixture setup grants canonical owned objects and diagnostic Moon initialization. Native controls, save and return are exercised; this is not campaign eligibility or author acceptance."
+}

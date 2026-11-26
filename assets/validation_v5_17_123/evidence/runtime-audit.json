@@ -1,0 +1,10 @@
+{
+  "issue": 889,
+  "members": 18767,
+  "unchanged": 18765,
+  "changes": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "runtime_sha256": "ee543c8f7c8acc8aeb8dcfe7e8f475e8e2cd478fd28bc74d8c01c71c860dc87a"
+}

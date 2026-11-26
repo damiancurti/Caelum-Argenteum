@@ -1,6 +1,17 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.17.122** - 2026-11-21.
+Documentation version: **5.17.123** - 2026-11-21.
+
+## 5.17.123 - Consolidate the author review terminal (#889)
+
+The terminal exposes the existing default, appearance, ceiling, vault,
+municipal and waterline options through separate disposable scenes. All seven
+composed environment packages repeat the previously tested bytes exactly;
+new manifests bind them to the current runtime. No map, light placement,
+story assignment, transport or consent sequence is authored by this patch.
+Legacy continuation checks retain their original compatible-package/copy
+prerequisites in pending_test.txt; they are not silently loaded into a candidate.
+
 
 ## 5.17.122 - Review damp masonry at the sewer waterline (#887, #463)
 

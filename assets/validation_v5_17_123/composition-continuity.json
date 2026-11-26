@@ -1,0 +1,41 @@
+{
+  "issue": 889,
+  "rows": [
+    {
+      "component": "components",
+      "package": "appearance.pk3",
+      "byte_identical_to": "build\\issue887-components01\\appearance.pk3"
+    },
+    {
+      "component": "components",
+      "package": "vaults.pk3",
+      "byte_identical_to": "build\\issue887-components01\\vaults.pk3"
+    },
+    {
+      "component": "ceilings",
+      "package": "appearance.pk3",
+      "byte_identical_to": "build\\issue887-ceilings01\\appearance.pk3"
+    },
+    {
+      "component": "ceilings",
+      "package": "ceilings.pk3",
+      "byte_identical_to": "build\\issue887-ceilings01\\ceilings.pk3"
+    },
+    {
+      "component": "ceilings",
+      "package": "vaults.pk3",
+      "byte_identical_to": "build\\issue887-ceilings01\\vaults.pk3"
+    },
+    {
+      "component": "municipal",
+      "package": "municipal.pk3",
+      "byte_identical_to": "build\\issue887-municipal01\\municipal.pk3"
+    },
+    {
+      "component": "waterline",
+      "package": "waterline.pk3",
+      "byte_identical_to": "build\\issue887-waterline02\\waterline.pk3"
+    }
+  ],
+  "qualification": "New manifests bind the same component packages to release123; package bytes remain identical to the tested release122 inputs."
+}

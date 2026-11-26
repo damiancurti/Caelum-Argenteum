@@ -1,0 +1,16 @@
+{
+  "issue": 889,
+  "action": "equipment",
+  "passed": false,
+  "exit_code": 0,
+  "errors": [
+    "CA889 MENU FAIL class=CaelumNarrativeMessageBox",
+    "CA889 MENU FAIL class=CaelumNarrativeMessageBox",
+    "Native save menu or checkpoint smoke check failed"
+  ],
+  "ready": true,
+  "menu_available": false,
+  "smoke_save_exists": false,
+  "reloaded": true,
+  "author_acceptance": false
+}

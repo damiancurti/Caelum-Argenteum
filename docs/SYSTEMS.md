@@ -1,6 +1,35 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.122** - 2026-11-21.
+Documentation version: **5.17.123** - 2026-11-21.
+
+## 5.17.123 - Consolidate the author review terminal (#889)
+
+The terminal preserves normal menu and inventory input. Its equipment room
+supplies canonical owned clothing, light armor, sword/buckler, Box and a chest
+inside a disposable fixture. Attributes100, invulnerability and diagnostic Moon
+initialization are explicitly declared aids; no campaign eligibility is claimed.
+Cycling clothing calls native equip/unequip operations, and reload/travel checks
+compare the actual equipped object IDs. Native carbine reload and staff charge
+inputs are exercised separately from the first-person art viewer.
+
+Campaign launch opens the real character creator without +map's technical
+profile shortcut. Each scene has its own config, log and savedir. Reload verifies
+the original package hashes, copies the chosen save unchanged into a new folder
+and passes only restore.zds to -loadgame. It does not rerun fresh setup or import
+visited saves into different map options. Native SaveMenu checks are explicit
+smoke commands; there is no recurring menu closer during author play.
+The wardrobe review setting is intentionally not saved by production code;
+this room re-enables its declared candidate option on reload, without recreating
+objects. F9 restores the base view. Returning to sword re-equips the room's
+existing buckler. Neither behavior changes campaign equipment or saved schemas.
+The diagnostic equipment room runs one-player cooperative mode, permitting
+native save/load while dead. Final checks retain the dead player's frozen
+four-region wardrobe snapshot across reload; ordinary campaign death rules
+remain authoritative. Earlier-build rollback comparisons require their matching
+runtime and compatible diagnostic fixture, not the terminal's exact-option loader.
+The terminal requests temporary system wakefulness only while open, releases
+it on exit and only terminates a GZDoom process it created.
+
 
 ## 5.17.122 - Review damp masonry at the sewer waterline (#887, #463)
 

@@ -1,0 +1,107 @@
+{
+  "issue": 886,
+  "author_acceptance": false,
+  "variant": "control",
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue889-review01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue889-ceilings01\\vaults.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env886-control\\review.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env886-control\\review.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env886-control",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env886-control\\engine.log",
+    "+map",
+    "MAP03",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env886-control\\start.cfg"
+  ],
+  "runtime_sha256": "ee543c8f7c8acc8aeb8dcfe7e8f475e8e2cd478fd28bc74d8c01c71c860dc87a",
+  "cameras": [
+    {
+      "name": "municipality_entrance",
+      "point": [
+        -16000,
+        -1472
+      ],
+      "angle": 180.0,
+      "basis": "Existing generated door center and authored grid; no gameplay placement"
+    },
+    {
+      "name": "municipality_inside",
+      "point": [
+        -16192,
+        -1472
+      ],
+      "angle": 180.0,
+      "basis": "Existing generated door center and authored grid; no gameplay placement"
+    },
+    {
+      "name": "office_1",
+      "point": [
+        -18304,
+        -661.4570365014642
+      ],
+      "angle": 90,
+      "basis": "Existing owned workstation, viewed from the retained grid circulation gap"
+    },
+    {
+      "name": "office_2",
+      "point": [
+        -17728,
+        -661.4570365014642
+      ],
+      "angle": 90,
+      "basis": "Existing owned workstation, viewed from the retained grid circulation gap"
+    },
+    {
+      "name": "office_3",
+      "point": [
+        -17152,
+        -661.4570365014642
+      ],
+      "angle": 90,
+      "basis": "Existing owned workstation, viewed from the retained grid circulation gap"
+    },
+    {
+      "name": "office_4",
+      "point": [
+        -16512,
+        -661.4570365014642
+      ],
+      "angle": 90,
+      "basis": "Existing owned workstation, viewed from the retained grid circulation gap"
+    },
+    {
+      "name": "archive",
+      "point": [
+        -18210,
+        -1440
+      ],
+      "angle": 180,
+      "basis": "Owned archive shelf row and retained shop doorway width"
+    },
+    {
+      "name": "archive_detail",
+      "point": [
+        -18338.0,
+        -1440
+      ],
+      "angle": 180,
+      "basis": "Owned archive shelf row and retained shop doorway width"
+    }
+  ],
+  "qualification": "Prepare or open the municipal proposal in a fresh disposable review session.\n\nF1 cycles eight sampled anchors; native menus remain available. The fixture\nsuppresses narrative delivery and enables invulnerability/notarget. It does\nnot grant services or inventory. This is art review, not campaign acceptance.\n",
+  "save_scope": "Fresh disposable sessions only. Same-option saves only; never import campaign saves or saves from another map variant."
+}

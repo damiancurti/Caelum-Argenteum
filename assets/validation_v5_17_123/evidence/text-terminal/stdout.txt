@@ -1,0 +1,117 @@
+
+Caelum Argenteum — revisión consolidada V5.16 / V5.17
+108 comprobaciones pendientes. Idioma: ES.
+1 Campaña nueva
+2 Mapas y propuestas de ambiente
+3 Equipo real / vestuario
+4 Buscar comprobaciones por issue o texto
+5 Propuestas de personajes
+6 Recargar un guardado de la última escena
+7 Registrar observación
+8 Estado y decisiones pendientes
+9 Cambiar ES/EN
+0 Salir
+Opción: 
+Este lote reúne el trabajo implementado y verificado para tu revisión; ningún resultado manual está aprobado todavía. Las siete propuestas #736 siguen pendientes. Nuevos faroles y emisores por región/hora/clima requieren ubicaciones, eventos y criterios aún no definidos; los sonidos registrados o reservados no equivalen a emisores implementados. La progresión con asignaciones aún no escritas y el consentimiento/transporte final siguen pendientes de diseño. El asedio normal de 1.000 atacantes/600 defensores conserva una limitación severa de presentación, del orden de 2 cuadros enviados por segundo en las mediciones registradas. Las propuestas de ambiente usan mapas privados: guarda y carga sólo dentro de la misma opción. El directorio de guardados de cada sesión se muestra al abrirla. No se borran comprobaciones ni se cierran issues al terminar una escena.
+
+Caelum Argenteum — revisión consolidada V5.16 / V5.17
+108 comprobaciones pendientes. Idioma: ES.
+1 Campaña nueva
+2 Mapas y propuestas de ambiente
+3 Equipo real / vestuario
+4 Buscar comprobaciones por issue o texto
+5 Propuestas de personajes
+6 Recargar un guardado de la última escena
+7 Registrar observación
+8 Estado y decisiones pendientes
+9 Cambiar ES/EN
+0 Salir
+Opción: 
+Caelum Argenteum — revisión consolidada V5.16 / V5.17
+108 comprobaciones pendientes. Idioma: EN.
+1 Campaña nueva
+2 Mapas y propuestas de ambiente
+3 Equipo real / vestuario
+4 Buscar comprobaciones por issue o texto
+5 Propuestas de personajes
+6 Recargar un guardado de la última escena
+7 Registrar observación
+8 Estado y decisiones pendientes
+9 Cambiar ES/EN
+0 Salir
+Opción: 
+Comparaciones de mapas
+  1. Casa — base
+  2. Casa — materiales y carpintería
+  3. Casa — materiales, carpintería y bóvedas
+  4. Ciudad — base
+  5. Ciudad — materiales y carpintería
+  6. Ciudad — materiales, carpintería y bóvedas
+  7. Mansión — base
+  8. Mansión — materiales y carpintería
+  9. Mansión — materiales, carpintería y bóvedas
+ 10. Alcantarillas — base
+ 11. Alcantarillas — materiales y carpintería
+ 12. Alcantarillas — materiales, carpintería y bóvedas
+ 13. Casa — techos: control
+ 14. Casa — techos: cielorrasos
+ 15. Casa — techos: materiales
+ 16. Casa — techos: bóvedas
+ 17. Ciudad — techos: control
+ 18. Ciudad — techos: cielorrasos
+ 19. Ciudad — techos: materiales
+ 20. Ciudad — techos: bóvedas
+ 21. Municipalidad — base de producción
+ 22. Municipalidad — control
+ 23. Municipalidad — propuesta
+ 24. Humedad de alcantarillas — base de producción
+ 25. Humedad de alcantarillas — control
+ 26. Humedad de alcantarillas — propuesta
+Número (Enter vuelve): 
+Caelum Argenteum — revisión consolidada V5.16 / V5.17
+108 comprobaciones pendientes. Idioma: EN.
+1 Campaña nueva
+2 Mapas y propuestas de ambiente
+3 Equipo real / vestuario
+4 Buscar comprobaciones por issue o texto
+5 Propuestas de personajes
+6 Recargar un guardado de la última escena
+7 Registrar observación
+8 Estado y decisiones pendientes
+9 Cambiar ES/EN
+0 Salir
+Opción: 
+Equipo y cuerpo
+  1. Equipo poseído, Caja/cofre, manos y agarres
+  2. Vestuario: 25 prendas, poses y regiones
+  3. Cuerpo y manos de referencia
+Número (Enter vuelve): 
+Caelum Argenteum — revisión consolidada V5.16 / V5.17
+108 comprobaciones pendientes. Idioma: EN.
+1 Campaña nueva
+2 Mapas y propuestas de ambiente
+3 Equipo real / vestuario
+4 Buscar comprobaciones por issue o texto
+5 Propuestas de personajes
+6 Recargar un guardado de la última escena
+7 Registrar observación
+8 Estado y decisiones pendientes
+9 Cambiar ES/EN
+0 Salir
+Opción: Issue, nombre o palabra (Enter muestra todas): 
+Comprobaciones
+  1. CA887-WATERLINE-01
+Número (Enter vuelve): 
+Caelum Argenteum — revisión consolidada V5.16 / V5.17
+108 comprobaciones pendientes. Idioma: EN.
+1 Campaña nueva
+2 Mapas y propuestas de ambiente
+3 Equipo real / vestuario
+4 Buscar comprobaciones por issue o texto
+5 Propuestas de personajes
+6 Recargar un guardado de la última escena
+7 Registrar observación
+8 Estado y decisiones pendientes
+9 Cambiar ES/EN
+0 Salir
+Opción: 

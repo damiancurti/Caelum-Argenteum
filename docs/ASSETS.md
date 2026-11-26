@@ -1,6 +1,37 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.122** - 2026-11-21.
+Documentation version: **5.17.123** - 2026-11-21.
+
+## 5.17.123 - Consolidate the author review terminal (#889)
+
+assets/validation_v5_17_123 contains the terminal, complete check/action
+catalogue, deterministic composition wrapper and bounded native/static evidence.
+Its catalogue verifies the unchanged pending_test.txt hash and preserves every
+check's exact instructions. The equipment room exposes actual native garments;
+the separate wardrobe/body viewers retain close-up art comparisons. The current
+3D body scope remains the male human sword/shield body without armor; other
+combinations retain their available fallback. The IQM viewer is a historical
+comparison; MD3 remains the selected format. Seven character proposal boards
+remain unapproved, and no all-character conversion is inferred.
+
+Rebuild the complete runtime with build_dev.ps1. prepare_release.py accepts that
+runtime, the existing remasters/vaults/joinery packages, the retained IQM export
+directory and a fresh output directory; its --help documents each input. It
+rebuilds the seven environment options and writes session-config.json. On the
+author's prepared checkout, launch the single terminal with:
+`powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_v5_17_123/author_terminal.ps1 -Config build/issue889-release02/session-config.json`.
+Engine, development IWAD, generated packages and saves remain local. Public
+evidence retains their hashes, commands and outcomes, not those binaries.
+
+The scoped environment audit retains source hashes and its limits: no authored
+lamp placement/radius/budget was found in the inspected layout data, and no
+literal consumer of the registered ambient/rain aliases was found in the scoped
+ZScript sources. This is not proof against every dynamically constructed name.
+The existing magic-mine alias uses thunder_heavy for that hazard, not a weather
+emitter. The ten reserve-pack files remain outside src pending approved events,
+regions, hour/weather mapping, attenuation, repetition and mixing. Existing
+sewer lighting160/176 and climate physics remain unchanged.
+
 
 ## 5.17.122 - Review damp masonry at the sewer waterline (#887, #463)
 

@@ -1,0 +1,54 @@
+{
+  "issue": 883,
+  "author_acceptance": false,
+  "scene": "city",
+  "variant": "ceilings",
+  "runtime_sha256": "ee543c8f7c8acc8aeb8dcfe7e8f475e8e2cd478fd28bc74d8c01c71c860dc87a",
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue889-review01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue889-ceilings01\\ceilings.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env883-city-ceilings\\review.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env883-city-ceilings\\review.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env883-city-ceilings",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env883-city-ceilings\\engine.log",
+    "+map",
+    "MAP03",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\native01\\env883-city-ceilings\\start.cfg"
+  ],
+  "cameras": [
+    {
+      "name": "municipality_entrance",
+      "point": [
+        -16000,
+        -1472
+      ],
+      "angle": 180.0,
+      "basis": "Existing generated door center and authored grid; no gameplay placement"
+    },
+    {
+      "name": "municipality_inside",
+      "point": [
+        -16192,
+        -1472
+      ],
+      "angle": 180.0,
+      "basis": "Existing generated door center and authored grid; no gameplay placement"
+    }
+  ],
+  "qualification": "Prepare or open one interior-ceiling scene for the final author session.\n\nAll saves/configuration stay in a new build directory. F1 cycles native review\nanchors; menus remain usable. House review enters through real portal travel.\nThe fixture uses invulnerability/notarget and suppresses narrative delivery;\nthis is an art review, not ordinary campaign or multiplayer acceptance.\n",
+  "geometry_save_scope": "Fresh disposable sessions only. Never load visited campaign maps into any ceiling variant; texture-only map edits also change checksums."
+}

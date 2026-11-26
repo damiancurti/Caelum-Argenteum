@@ -1,0 +1,22 @@
+{
+  "issue": 889,
+  "passed": true,
+  "menu_navigation": true,
+  "language_selection": true,
+  "search": true,
+  "wake_requested_and_released": true,
+  "scenes_opened": 0,
+  "author_acceptance": false,
+  "state": {
+    "issue": 889,
+    "pid": 34104,
+    "active": false,
+    "system_required": false,
+    "wake_request_succeeded": true,
+    "checks": 108,
+    "actions": 158,
+    "started": "2026-11-21T11:42:11.125621",
+    "author_acceptance": false,
+    "released": "2026-11-21T11:42:11.126634"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "assets/validation_v5_17_123/author_terminal.ps1": "9d87fb208ed6d4daec2027057240797575034b264045bb2afb8dee5015e73b97",
+  "assets/validation_v5_17_123/author_terminal.py": "e02ffc0462a109fd44b6468a798a30c7888fd6a7400603f6ae8834bc2ab301a8",
+  "assets/validation_v5_17_123/CATALOG.json": "4c3d12497d6e1103d3fc765179ad217f82a90452e34be2f78ed764d2176392d2",
+  "assets/validation_v5_17_123/check_catalog.py": "faa792d323759844d845d8aad764078154f86e4ba5236c89883990b5bfe4337a",
+  "assets/validation_v5_17_123/check_death.py": "3d2a5eec517c6d39c48e5d21f39ceb3b346984c88ebfe7345c6af4ac740c99de",
+  "assets/validation_v5_17_123/check_equipment.py": "f7315141657181709b606fda4106de09d126d39d1b61bd10a5e3f77f738248d3",
+  "assets/validation_v5_17_123/check_native.py": "4a70b5210536a31eea5f4b333c5774d8c0765fd0473a86376f294f47eb8010bb",
+  "assets/validation_v5_17_123/check_recovery.py": "574958101dd9945fb274af5033aad1b35deb70bbc5eb6440b747cc2a032019f9",
+  "assets/validation_v5_17_123/check_terminal.py": "144daf837a59cbf938a10c7d3a3d4eef33c6ca85c681f690f7fcf75a484f98eb",
+  "assets/validation_v5_17_123/composition-continuity.json": "959bb42f849a49c1c4c98ab086b4dec2f7a3805944aa11af0508366e13bc8090",
+  "assets/validation_v5_17_123/environment-audit.json": "31cda5eee3a0c609026de20b805dc54b354da53684231c94ff64014e4706213f",
+  "assets/validation_v5_17_123/equipment_author.zs": "ab9ad9e08f308d224c280a1b32d3303b1e06829ea127aa56e6d0b73f6bb510b9",
+  "assets/validation_v5_17_123/prepare_release.py": "5688448dec451c32b6ad7a0475962b65f77f8c4c940a621b524df2d8dbffdc17",
+  "assets/validation_v5_17_123/prepare_runner.py": "675eb12ed30160a04c17a097c6f0e1d38431e72fc426bad9026cf6bde1fe5cfa",
+  "assets/validation_v5_17_123/release-reproduction.json": "926fc1506f6a3e5e864228585f3c2ceddc024d918151d50787d2886ae7e4f773",
+  "assets/validation_v5_17_123/review.html": "749b9bde18ef96eb59a2077f1b79b4bd1373085f1c1ae41500993edba49bb9ae",
+  "assets/validation_v5_17_123/run_equipment.py": "0a459540ed7be15356c49ff8211472d7459d776efb2f84be1ced9dbd958c2c59",
+  "assets/validation_v5_17_123/sessions.py": "18db032d4f7113134944be532f4de3abe8e7c9c999e27cf641543466d7610cfc"
+}

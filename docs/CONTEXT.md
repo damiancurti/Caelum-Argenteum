@@ -1,14 +1,19 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.17.122** - 2026-11-21.
+Documentation version: **5.17.123** - 2026-11-21.
 
-**V5.17 candidates:** inventory/bestiary/regional art (#825:78 displays/56 provisional models);
-#829:25 garments; #847:brick; #866:remasters; #875:vaults; #878:joinery. #736:review pending.
-Verified: #827:body/hands; #851:reach; #855:recognition; #857:equipped wardrobe;
-#859:grips; #861:clothing hands; #864:contact reads;#873:acquisition diagnosis;#871:surface index. #834:retain MD3 (IQM slower).
-#879:facades;#881:combined;#883:ceilings;#886:municipal;#887:damp masonry verified. #889:final review pending. Evidence:ASSETS/TASKS; checks:pending_test.txt; history:HISTORY.
-**V5.16:** #452/453 approved; #454:MAP02/MAP03 rebuilt/tested; siege performance pending (#873).
-#456:World-gate,75assignments pending; #455:56classes/3pilots; #457:eligibility-only. LegacyMap02Revision5.
+**V5.16/V5.17 integration authorized 2026-11-26:** 130 PRs/132 implemented issues;
+release5.17.123 retained. Later versions extend scope;108 manual checks remain.
+Exact scope:validation_v5_17_123/integration-decision.json. #403/460/464-469 stay open.
+V5.17:78 displays/56 provisional models(#825),25garments(#829),brick(#847),
+remasters(#866),vaults(#875),joinery(#878);#736review pending.
+Verified:#827body/hands,#851reach,#855recognition,#857wardrobe,#859grips,
+#861hands,#864contacts,#871surface index,#873diagnosis;#834retains MD3.
+#879facades,#881combined,#883ceilings,#886municipal,#887masonry;
+#889consolidated terminal. Evidence:ASSETS/TASKS/HISTORY;checks:pending_test.txt.
+V5.16:#452/453approved;#454MAP02/MAP03 rebuilt, siege fluency unresolved;
+#456World-gate,75assignments pending;#45556classes/3pilots;#457eligibility-only.
+LegacyMap02Revision5 retained.
 
 **V5.15 accepted2026-11-10:** CA447-01..451-01;#447-451 closed;PR635-639 merged.
 HISTORY/validation_v5_15_0..4. Single-player/attributes100 terminal:

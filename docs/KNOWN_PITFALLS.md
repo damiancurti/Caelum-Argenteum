@@ -4,6 +4,44 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-279 - Verify complete author launch chains and actual native menus
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #889 /5.17.123,2026-11-21,
+GZDoom4.14.2. Evidence: assets/validation_v5_17_123. Author acceptance pending.
+
+An existing runner may place its interactive phase in an output/visual child.
+Retain its absolute fixture paths while normalizing the new wrapper's cwd,
+savedir, logfile and screenshots to one isolated session directory. Prepare
+all catalogue commands before handoff and inspect errors from both engine and
+process logs; absence of engine.log or an empty error list is not success.
+
+The first equipment wrapper ran setup but failed to reach checks appended after
+a nested exec/wait sequence. Expanding the trusted generated configs in order,
+splitting only outside quoted bind/alias bodies and chaining bounded chunks
+passed readiness, actual SaveMenu class, checkpoint and reload checks. This is
+an observed fixture correction; no general engine parser diagnosis is claimed.
+Do not close menus every UI tick in an author-facing launcher. Use explicit
+one-time setup/smoke commands and preserve ordinary Escape/save interactions.
+
+A +map launch creates the project's safe technical profile and is not evidence
+of ordinary character creation. The campaign option instead opens the native
+creator and checks CaelumCharacterCreationMenu before any level/save is expected.
+After fixture attributes change, use the existing native heal to synchronize
+current resources with canonical maxima. Test owned item IDs across exact-option
+reload and a real hub return, rather than inferring persistence from a screenshot.
+Also check the restored body class: this project's candidate CVAR is deliberately
+nosave/noarchive. Owned item IDs survived the first reload while the visible
+body reverted to the base model. Reapply the declared review option without
+replaying fixture setup, explain its F9 toggle, and assert both item identity
+and the final candidate body. Switching two-handed weapons also unequips the
+buckler; the room must restore its owned buckler when selecting sword/shield.
+Finally, a non-null menu after menu_save is insufficient: a dead solo player
+receives CaelumNarrativeMessageBox instead of SaveMenu. A one-player cooperative
+diagnostic room (-host1) permits native corpse checkpoints, matching the prior
+death harness. Verify the frozen outfit after loading the actual dead save;
+do not change production death/save rules to make a fixture pass.
+
+
 ## CA-KP-278 - Resolve native sides through their linedefs
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #887 /5.17.122,2026-11-21,

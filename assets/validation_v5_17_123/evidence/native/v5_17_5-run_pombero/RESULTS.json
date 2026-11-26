@@ -1,0 +1,12 @@
+{
+  "issue": 889,
+  "action": "v5_17_5-run_pombero",
+  "passed": true,
+  "exit_code": 0,
+  "errors": [],
+  "ready": true,
+  "menu_available": true,
+  "smoke_save_exists": true,
+  "reloaded": false,
+  "author_acceptance": false
+}
