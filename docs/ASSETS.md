@@ -1,6 +1,59 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.5** - 2026-11-13.
+Documentation version: **5.17.6** - 2026-11-13.
+
+## 5.17.6 - Document and small-supply world models (#656, parent #647)
+
+Six existing native inventory classes receive five closed 3D meshes: the
+processing manual and recipe book share the original blue/gold book design;
+the sealed letter retains paper and red wax; the native silver-key class retains
+its existing gold key and blue ribbon appearance; the cleaning cloth is folded
+linen; the legacy iron ingot is a beveled metal block. MODELDEF binds each exact
+class and original spawn pair. Native scale, collision, quantities, icons, keys,
+recipe pages, contamination, provenance, Box and Limbo rules are unchanged.
+Dynamic materials, locks, clothing and weapon catalogues remain separate work.
+
+DESIGN.json and PROVENANCE.json in assets/source/art/inventory_models_647/documents
+preserve the editable geometry and owned material sources. No new bitmap or image
+generation is used. The five MD3 files reuse existing cloth, paper, metal, gold,
+wax and linen pixels. Rebuild with
+`python assets/generators/generate_inventory_document_models.py --output build/document-models --install`;
+--check verifies deterministic outputs. The export also emits editable OBJ/MTL.
+Width is normalized to each original opaque sprite extent, preserving Actor.Scale.
+The cloth uses a vertical surface wave over closed subdivided prisms. Existing
+ammunition defaults remain compatible: all eight prior runtime files are identical
+after refreshing the shared generator's source hash.
+
+Native tests use assets/validation_v5_17_6/run_document_drops.py and the shared
+inventory observer. The manual's existing deferred sheet delivery must finish
+before the independent recipe-book test, or that delivery creates another owned
+book and correctly blocks the first book's pickup. The fixture now exercises and
+checks that delivery explicitly. Initial compiler and ordering failures are kept
+as failed evidence. The final complete package passes 472 assertions in five
+phases: sprite baseline, old save with models, fresh models, model save/reload,
+and rollback to the sprite package. Checks cover all six classes, native
+pickup/toss and quantity, five Limbo quest guards, original collision/scale/icons,
+floor contact, companion provenance, contamination, recipe pages, unit weight,
+native key identity and the manual's deferred sheet delivery. No new save field
+or schema is introduced. Ordinary menu and author review remain unconfirmed.
+
+Static checks pass all six bindings, owned sources, MD3 surface/UV/quantized-bound
+and triangle-index checks. The five designs total 48 closed components, 19,756
+source vertices and 10,992 triangles. Fourteen repeated export files are
+byte-identical. The package matches all 18,190 src entries: six new resources,
+one MODELDEF include and two release diagnostics; all other runtime bytes match
+the previous package. Native representative rotations and both book classes
+were inspected; the final fixture records 18 detail views and seven overview views.
+
+A single sequential 700-tic pair with six objects records sprite/model queue
+presents at 1178.42/1144.28 per second, p95 1.0509/1.0821 ms and p99
+1.2602/1.3074 ms. Environment: Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB,
+RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720, uncapped, vsync off, unpaused
+background and 5% audio. This is a small isolated comparison, not GPU/display
+timing, repeatability, a crowd budget or campaign acceptance. The measured model
+run has slightly longer intervals; no performance improvement is claimed.
+Evidence: assets/validation_v5_17_6/evidence/SUMMARY.json. CA656-DOCUMENTS-01
+remains pending, as do the broader #647 inventory and character catalogues.
 
 ## 5.17.5 - Pombero inherited combat model (#461, first creature)
 

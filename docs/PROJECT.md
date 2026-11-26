@@ -1,6 +1,12 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.5** - 2026-11-13.
+Documentation version: **5.17.6** - 2026-11-13.
+
+## 5.17.6 - Documents and small supplies in 3D (#656)
+
+Five world meshes cover six existing inventory classes without changing gameplay
+or their icons. ASSETS records sources and verification; author review and the
+remaining dynamic inventory/character catalogues remain outstanding.
 
 ## 5.17.5 - First folklore combat model (#461)
 

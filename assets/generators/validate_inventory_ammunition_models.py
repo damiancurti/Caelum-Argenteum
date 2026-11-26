@@ -9,10 +9,10 @@ import struct
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def validate(root=ROOT):
+def validate(root=ROOT, family='ammunition', expected_count=7):
     errors = []
     try:
-        directory = root / 'assets/source/art/inventory_models_647/ammunition'
+        directory = root / 'assets/source/art/inventory_models_647' / family
         config = json.loads((directory / 'DESIGN.json').read_text(encoding='utf-8'))
         report = json.loads((directory / 'EXPORT.json').read_text(encoding='utf-8'))
         sources = {directory / name: checksum for name, checksum in report['source_sha256'].items()}
@@ -26,11 +26,12 @@ def validate(root=ROOT):
                 continue
             if hashlib.sha256((root / 'src' / name).read_bytes()).hexdigest() != checksum:
                 errors.append('Stale installed resource: ' + name)
-        expected = [item['class'] for item in config['variants'].values()]
-        definition = (root / 'src/caelum/data/inventory_ammunition.modeldef').read_text()
-        if len(expected) != 7 or len(set(expected)) != 7 or re.findall(r'\bModel\s+(\w+)\s*\{', definition) != expected:
-            errors.append('Expected seven distinct explicit production bindings')
-        include = '#include "caelum/data/inventory_ammunition.modeldef"'
+        expected = [binding['class'] for item in config['variants'].values()
+                    for binding in [item, *item.get('additional_bindings', [])]]
+        definition = (root / 'src/caelum/data' / ('inventory_' + family + '.modeldef')).read_text()
+        if len(expected) != expected_count or len(set(expected)) != expected_count or re.findall(r'\bModel\s+(\w+)\s*\{', definition) != expected:
+            errors.append(f'Expected {expected_count} distinct explicit production bindings')
+        include = '#include "caelum/data/inventory_' + family + '.modeldef"'
         if (root / 'src/MODELDEF').read_text(encoding='utf-8').count(include) != 1:
             errors.append('Expected one production include')
         for name, record in report['variants'].items():
@@ -39,6 +40,8 @@ def validate(root=ROOT):
             if header[:2] != (b'IDP3', 15) or header[4] != 1 or header[6] != len(record['surfaces']) or header[11] != len(blob):
                 errors.append('Invalid MD3 header: ' + name)
             offset = header[10]
+            low = record['native_bounds'][0]['min']
+            high = record['native_bounds'][0]['max']
             for surface in record['surfaces']:
                 fields = struct.unpack_from('<4s64s10I', blob, offset)
                 if fields[3:7] != (1, 1, surface['vertices'], surface['triangles']):
@@ -54,12 +57,21 @@ def validate(root=ROOT):
                     if not (math.isfinite(u) and math.isfinite(v) and left / width - 1e-6 <= u <= right / width + 1e-6 and top / height - 1e-6 <= v <= bottom / height + 1e-6):
                         errors.append('UV leaves its owned material rectangle: ' + name)
                         break
+                    point = struct.unpack_from('<3h', blob, offset + fields[10] + index * 8)
+                    if any(not low[axis] - 1 / 64 <= point[axis] / 64 <= high[axis] + 1 / 64 for axis in range(3)):
+                        errors.append('Quantized vertex leaves its declared bounds: ' + name)
+                        break
+                for index in range(surface['triangles']):
+                    triangle = struct.unpack_from('<3I', blob, offset + fields[7] + index * 12)
+                    if len(set(triangle)) != 3 or any(vertex >= surface['vertices'] for vertex in triangle):
+                        errors.append('Invalid native triangle indices: ' + name)
+                        break
                 offset += fields[-1]
             if offset != len(blob):
                 errors.append('Invalid MD3 container end: ' + name)
     except (OSError, KeyError, ValueError, struct.error) as exc:
         errors.append(str(exc))
-    return ['Inventory ammunition: ' + error for error in errors]
+    return ['Inventory ' + family + ': ' + error for error in errors]
 
 
 if __name__ == '__main__':

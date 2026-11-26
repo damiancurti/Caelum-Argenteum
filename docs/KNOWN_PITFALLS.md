@@ -4,6 +4,20 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-231 - Isolate deferred recipe-sheet delivery in inventory fixtures
+
+Status/evidence: ENGINE-VERIFIED fixture correction, #656, 2026-11-13.
+CaelumProcessingManual pickup offers recipe sheets; subsequent delivery may
+create an owned CaelumRecipeBook. A fixture that immediately discards a separate
+book and later assumes no book is owned can report a false drop/uniqueness
+failure. Assert the manual's pending delivery, call the existing DeliverPending
+service and verify completion before beginning the independent recipe-book case.
+Do not clear pending rewards or change production uniqueness rules to make the
+test pass. Keep the original ordering failure as evidence. The corrected exact
+package passes 472 checks across baseline, old/new saves, reload and rollback:
+assets/validation_v5_17_6/evidence/SUMMARY.json. This is fixture isolation;
+campaign/menu behavior and author review remain separate.
+
 ## CA-KP-230 - Freeze native model poses without invoking gameplay actions
 
 Status/evidence: ENGINE-VERIFIED fixture correction, #461, 2026-11-13.

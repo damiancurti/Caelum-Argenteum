@@ -6,8 +6,11 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.5.** Obtain and update the complete repository,
+**Current release: 5.17.6.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#656 adds world models for books, the sealed letter, native key, cleaning cloth
+and legacy iron ingot. Original inventory icons and gameplay remain intact.
 
 #461 gives Pombero a native combat model while preserving its inherited
 provisional rules. Remaining characters and author art review are still pending.
