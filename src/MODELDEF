@@ -4758,3 +4758,4 @@ Model CaelumBarricadeVisual
 
 #include "caelum/data/inventory_ores.modeldef"
 #include "caelum/data/inventory_headwear.modeldef"
+#include "caelum/data/inventory_gloves.modeldef"

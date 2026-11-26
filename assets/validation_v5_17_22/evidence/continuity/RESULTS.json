@@ -1,0 +1,73 @@
+{
+  "issue": 688,
+  "kind": "gloves",
+  "scope": "Native pickup/toss, quantity and saved ownership for gloves; no normal menu or author acceptance.",
+  "baseline_sha256": "901618565f5e91a7fa3a8de175d721c582cb58f0bf9024cbfbd2150e179dd2d4",
+  "runtime_sha256": "f15f8437e40faa6aa8e7dc7ac9dc18ab6aa7e95c1829313d70f3b9c32f61b852",
+  "model_sha256": null,
+  "fixture_sha256": "4ba034e4e0b0663c4dbc0dd1a2e6e5f109e91f6a2996181b8730b41bfd053037",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 381
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 402
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 381
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 402
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 402
+    }
+  ],
+  "captures": {
+    "baseline.png": "be42626e538e733d574bad1e0c7392227d98882daae482bffa738f3172a8d39a",
+    "candidate-0.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+    "candidate-1.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+    "candidate-2.png": "6a6abc295f6bdcab1ef5edf94cc8ee84341967bef693f7893ac5fc3303404104",
+    "candidate-3.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+    "candidate-5.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+    "candidate-6.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+    "candidate-7.png": "a72fda1cbea7c05182122a79c0aa89d740d58c5e8eded0c8912b78976878a0e8",
+    "detail-0-0.png": "c7d914b4f009f8758409555884ccc6a5fccf8a2ed45628cdbf6bed8e54392bd8",
+    "detail-0-160.png": "abd6ba8ebce93373adff84bcc1a24b59ff583852daa4b263e90edb1511984f1e",
+    "detail-0-270.png": "97584856cd3c59f88b998b53a88b495b09fc02dab583f72d1adc5bff36b26682",
+    "detail-0-90.png": "a4086dea03688b68f623c6c9a2c314cbe135e72b6fd190d0d51ae469c3ec9add",
+    "detail-1-0.png": "5ffcda1e2e2cf9e52e388e3e4643355026ebf2a9577f3d99e19b11a3f4edda52",
+    "detail-1-160.png": "a4abef55e7c4c2591d22f394974d7fc6307c0fd0bb159fc4340783786841e898",
+    "detail-1-270.png": "774e8334cffda833495c99fa8f11ed8e5cdd5c9e7012e8e085510db86e88b5ce",
+    "detail-1-90.png": "3585545d3ff3c7f178652dc3a0d750cf66a33125b4214fde24d88b66522be6a4",
+    "detail-2-0.png": "b90aeab612851ba00155048b2e61c3b5dacfbb856ce6a76c592c30ce4bb7b452",
+    "detail-2-160.png": "f2c52660964258e8ba599a6c85f7d59160bc2959fe473cbe14295bf9a1bc0714",
+    "detail-2-270.png": "7000faed98b35e3853b66147de2e4251d7e58371807d8c2739bd81f853104911",
+    "detail-2-90.png": "a51fb5ee31b2f483edf9abaf3b32be22cbf5e34c3fd9b4a9fa55a3011624b892",
+    "detail-3-0.png": "6b74f15c328d65d0d0edc966d9d27e2900f270661e87351112b3a9adbe97b52b",
+    "detail-3-160.png": "089efa04b1368deea3f6c6a152fd9b22b05bee8f7b5f09974eede65a48d35ef9",
+    "detail-3-270.png": "8053ae0142603ae3ecc3f5eb033409709c46830905a1da276c0642013c5a81aa",
+    "detail-3-90.png": "622ed74a82f650541318f4808c642cf8a5628c11813cae30bcc26a128d3f5b1f"
+  }
+}

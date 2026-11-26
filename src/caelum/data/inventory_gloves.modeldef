@@ -1,0 +1,4 @@
+Model CaelumClothingPickup { Path "models/caelum/inventory/gloves" Model 0 "GF.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC16 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/gloves" Model 0 "GC.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC17 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/gloves" Model 0 "GW.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC18 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/gloves" Model 0 "GP.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC19 A 0 0 }

@@ -1,0 +1,443 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-14 01:07:58
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-686/build/issue686-headwear02.pk3, 18298 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-688/build/issue688-native01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2504.82 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA688 PASS glove pair 0 native pickup
+CA688 PASS glove pair 0 exact acquired instance
+CA688 PASS glove pair 0 assigned persistent identity
+CA688 PASS glove pair 0 Box excludes wet carried mass
+CA688 PASS glove pair 0 temporary quest drop guard
+CA688 PASS glove pair 0 native toss
+CA688 PASS glove pair 0 exact instance leaves inventory
+CA688 PASS glove pair 1 native pickup
+CA688 PASS glove pair 1 exact acquired instance
+CA688 PASS glove pair 1 assigned persistent identity
+CA688 PASS glove pair 1 Box excludes wet carried mass
+CA688 PASS glove pair 1 temporary quest drop guard
+CA688 PASS glove pair 1 native toss
+CA688 PASS glove pair 1 exact instance leaves inventory
+CA688 PASS glove pair 2 native pickup
+CA688 PASS glove pair 2 exact acquired instance
+CA688 PASS glove pair 2 assigned persistent identity
+CA688 PASS glove pair 2 Box excludes wet carried mass
+CA688 PASS glove pair 2 temporary quest drop guard
+CA688 PASS glove pair 2 native toss
+CA688 PASS glove pair 2 exact instance leaves inventory
+CA688 PASS glove pair 3 native pickup
+CA688 PASS glove pair 3 exact acquired instance
+CA688 PASS glove pair 3 assigned persistent identity
+CA688 PASS glove pair 3 Box excludes wet carried mass
+CA688 PASS glove pair 3 temporary quest drop guard
+CA688 PASS glove pair 3 native toss
+CA688 PASS glove pair 3 exact instance leaves inventory
+CA688 PASS glove pair 4 native pickup
+CA688 PASS glove pair 4 exact acquired instance
+CA688 PASS glove pair 4 assigned persistent identity
+CA688 PASS glove pair 4 Box excludes wet carried mass
+CA688 PASS glove pair 4 temporary quest drop guard
+CA688 PASS glove pair 4 native toss
+CA688 PASS glove pair 4 exact instance leaves inventory
+CA688 PASS glove pair 5 native pickup
+CA688 PASS glove pair 5 exact acquired instance
+CA688 PASS glove pair 5 assigned persistent identity
+CA688 PASS glove pair 5 Box excludes wet carried mass
+CA688 PASS glove pair 5 temporary quest drop guard
+CA688 PASS glove pair 5 native toss
+CA688 PASS glove pair 5 exact instance leaves inventory
+CA688 PASS glove pair 6 native pickup
+CA688 PASS glove pair 6 exact acquired instance
+CA688 PASS glove pair 6 assigned persistent identity
+CA688 PASS glove pair 6 Box excludes wet carried mass
+CA688 PASS glove pair 6 temporary quest drop guard
+CA688 PASS glove pair 6 native toss
+CA688 PASS glove pair 6 exact instance leaves inventory
+CA688 PASS glove pair 7 native pickup
+CA688 PASS glove pair 7 exact acquired instance
+CA688 PASS glove pair 7 assigned persistent identity
+CA688 PASS glove pair 7 Box excludes wet carried mass
+CA688 PASS glove pair 7 temporary quest drop guard
+CA688 PASS glove pair 7 native toss
+CA688 PASS glove pair 7 exact instance leaves inventory
+CA688 PASS glove pair 8 native pickup
+CA688 PASS glove pair 8 exact acquired instance
+CA688 PASS glove pair 8 assigned persistent identity
+CA688 PASS glove pair 8 Box excludes wet carried mass
+CA688 PASS glove pair 8 temporary quest drop guard
+CA688 PASS glove pair 8 native toss
+CA688 PASS glove pair 8 exact instance leaves inventory
+CA688 PASS glove pair 9 native pickup
+CA688 PASS glove pair 9 exact acquired instance
+CA688 PASS glove pair 9 assigned persistent identity
+CA688 PASS glove pair 9 Box excludes wet carried mass
+CA688 PASS glove pair 9 temporary quest drop guard
+CA688 PASS glove pair 9 native toss
+CA688 PASS glove pair 9 exact instance leaves inventory
+CA688 PASS glove pair 10 native pickup
+CA688 PASS glove pair 10 exact acquired instance
+CA688 PASS glove pair 10 assigned persistent identity
+CA688 PASS glove pair 10 Box excludes wet carried mass
+CA688 PASS glove pair 10 temporary quest drop guard
+CA688 PASS glove pair 10 native toss
+CA688 PASS glove pair 10 exact instance leaves inventory
+CA688 PASS glove pair 11 native pickup
+CA688 PASS glove pair 11 exact acquired instance
+CA688 PASS glove pair 11 assigned persistent identity
+CA688 PASS glove pair 11 Box excludes wet carried mass
+CA688 PASS glove pair 11 temporary quest drop guard
+CA688 PASS glove pair 11 native toss
+CA688 PASS glove pair 11 exact instance leaves inventory
+CA688 PASS glove pair 12 native pickup
+CA688 PASS glove pair 12 exact acquired instance
+CA688 PASS glove pair 12 assigned persistent identity
+CA688 PASS glove pair 12 Box excludes wet carried mass
+CA688 PASS glove pair 12 temporary quest drop guard
+CA688 PASS glove pair 12 native toss
+CA688 PASS glove pair 12 exact instance leaves inventory
+CA688 PASS glove pair 13 native pickup
+CA688 PASS glove pair 13 exact acquired instance
+CA688 PASS glove pair 13 assigned persistent identity
+CA688 PASS glove pair 13 Box excludes wet carried mass
+CA688 PASS glove pair 13 temporary quest drop guard
+CA688 PASS glove pair 13 native toss
+CA688 PASS glove pair 13 exact instance leaves inventory
+CA688 PASS glove pair 14 native pickup
+CA688 PASS glove pair 14 exact acquired instance
+CA688 PASS glove pair 14 assigned persistent identity
+CA688 PASS glove pair 14 Box excludes wet carried mass
+CA688 PASS glove pair 14 temporary quest drop guard
+CA688 PASS glove pair 14 native toss
+CA688 PASS glove pair 14 exact instance leaves inventory
+CA688 PASS glove pair 15 native pickup
+CA688 PASS glove pair 15 exact acquired instance
+CA688 PASS glove pair 15 assigned persistent identity
+CA688 PASS glove pair 15 Box excludes wet carried mass
+CA688 PASS glove pair 15 temporary quest drop guard
+CA688 PASS glove pair 15 native toss
+CA688 PASS glove pair 15 exact instance leaves inventory
+CA688 PASS glove pair 16 native pickup
+CA688 PASS glove pair 16 exact acquired instance
+CA688 PASS glove pair 16 assigned persistent identity
+CA688 PASS glove pair 16 Box excludes wet carried mass
+CA688 PASS glove pair 16 temporary quest drop guard
+CA688 PASS glove pair 16 native toss
+CA688 PASS glove pair 16 exact instance leaves inventory
+CA688 PASS glove pair 17 native pickup
+CA688 PASS glove pair 17 exact acquired instance
+CA688 PASS glove pair 17 assigned persistent identity
+CA688 PASS glove pair 17 Box excludes wet carried mass
+CA688 PASS glove pair 17 temporary quest drop guard
+CA688 PASS glove pair 17 native toss
+CA688 PASS glove pair 17 exact instance leaves inventory
+CA688 PASS glove pair 18 native pickup
+CA688 PASS glove pair 18 exact acquired instance
+CA688 PASS glove pair 18 assigned persistent identity
+CA688 PASS glove pair 18 Box excludes wet carried mass
+CA688 PASS glove pair 18 temporary quest drop guard
+CA688 PASS glove pair 18 native toss
+CA688 PASS glove pair 18 exact instance leaves inventory
+CA688 PASS glove pair 19 native pickup
+CA688 PASS glove pair 19 exact acquired instance
+CA688 PASS glove pair 19 assigned persistent identity
+CA688 PASS glove pair 19 Box excludes wet carried mass
+CA688 PASS glove pair 19 temporary quest drop guard
+CA688 PASS glove pair 19 native toss
+CA688 PASS glove pair 19 exact instance leaves inventory
+Game saved.
+Captured baseline.png
+CA688 PASS four glove pair types in all native sizes
+CA688 PASS glove pair 0 saved native class
+CA688 PASS glove pair 0 independent world instance
+CA688 PASS glove pair 0 original type, slot and kind
+CA688 PASS glove pair 0 original native size
+CA688 PASS glove pair 0 persistent unique identity
+CA688 PASS glove pair 0 existing wear and water retained
+CA688 PASS glove pair 0 unchanged collision, scale and floor contact
+CA688 PASS glove pair 0 original icon and dynamic sprite
+CA688 PASS glove pair 0 native dry and wet mass
+CA688 PASS glove pair 0 provenance survives copy and save
+CA688 PASS glove pair 0 unequipped world flags
+CA688 PASS glove pair 0 fixed acquired size retained
+CA688 PASS glove pair 1 saved native class
+CA688 PASS glove pair 1 independent world instance
+CA688 PASS glove pair 1 original type, slot and kind
+CA688 PASS glove pair 1 original native size
+CA688 PASS glove pair 1 persistent unique identity
+CA688 PASS glove pair 1 existing wear and water retained
+CA688 PASS glove pair 1 unchanged collision, scale and floor contact
+CA688 PASS glove pair 1 original icon and dynamic sprite
+CA688 PASS glove pair 1 native dry and wet mass
+CA688 PASS glove pair 1 provenance survives copy and save
+CA688 PASS glove pair 1 unequipped world flags
+CA688 PASS glove pair 1 fixed acquired size retained
+CA688 PASS glove pair 2 saved native class
+CA688 PASS glove pair 2 independent world instance
+CA688 PASS glove pair 2 original type, slot and kind
+CA688 PASS glove pair 2 original native size
+CA688 PASS glove pair 2 persistent unique identity
+CA688 PASS glove pair 2 existing wear and water retained
+CA688 PASS glove pair 2 unchanged collision, scale and floor contact
+CA688 PASS glove pair 2 original icon and dynamic sprite
+CA688 PASS glove pair 2 native dry and wet mass
+CA688 PASS glove pair 2 provenance survives copy and save
+CA688 PASS glove pair 2 unequipped world flags
+CA688 PASS glove pair 2 fixed acquired size retained
+CA688 PASS glove pair 3 saved native class
+CA688 PASS glove pair 3 independent world instance
+CA688 PASS glove pair 3 original type, slot and kind
+CA688 PASS glove pair 3 original native size
+CA688 PASS glove pair 3 persistent unique identity
+CA688 PASS glove pair 3 existing wear and water retained
+CA688 PASS glove pair 3 unchanged collision, scale and floor contact
+CA688 PASS glove pair 3 original icon and dynamic sprite
+CA688 PASS glove pair 3 native dry and wet mass
+CA688 PASS glove pair 3 provenance survives copy and save
+CA688 PASS glove pair 3 unequipped world flags
+CA688 PASS glove pair 3 fixed acquired size retained
+CA688 PASS glove pair 4 saved native class
+CA688 PASS glove pair 4 independent world instance
+CA688 PASS glove pair 4 original type, slot and kind
+CA688 PASS glove pair 4 original native size
+CA688 PASS glove pair 4 persistent unique identity
+CA688 PASS glove pair 4 existing wear and water retained
+CA688 PASS glove pair 4 unchanged collision, scale and floor contact
+CA688 PASS glove pair 4 original icon and dynamic sprite
+CA688 PASS glove pair 4 native dry and wet mass
+CA688 PASS glove pair 4 provenance survives copy and save
+CA688 PASS glove pair 4 unequipped world flags
+CA688 PASS glove pair 4 fixed acquired size retained
+CA688 PASS glove pair 5 saved native class
+CA688 PASS glove pair 5 independent world instance
+CA688 PASS glove pair 5 original type, slot and kind
+CA688 PASS glove pair 5 original native size
+CA688 PASS glove pair 5 persistent unique identity
+CA688 PASS glove pair 5 existing wear and water retained
+CA688 PASS glove pair 5 unchanged collision, scale and floor contact
+CA688 PASS glove pair 5 original icon and dynamic sprite
+CA688 PASS glove pair 5 native dry and wet mass
+CA688 PASS glove pair 5 provenance survives copy and save
+CA688 PASS glove pair 5 unequipped world flags
+CA688 PASS glove pair 5 fixed acquired size retained
+CA688 PASS glove pair 6 saved native class
+CA688 PASS glove pair 6 independent world instance
+CA688 PASS glove pair 6 original type, slot and kind
+CA688 PASS glove pair 6 original native size
+CA688 PASS glove pair 6 persistent unique identity
+CA688 PASS glove pair 6 existing wear and water retained
+CA688 PASS glove pair 6 unchanged collision, scale and floor contact
+CA688 PASS glove pair 6 original icon and dynamic sprite
+CA688 PASS glove pair 6 native dry and wet mass
+CA688 PASS glove pair 6 provenance survives copy and save
+CA688 PASS glove pair 6 unequipped world flags
+CA688 PASS glove pair 6 fixed acquired size retained
+CA688 PASS glove pair 7 saved native class
+CA688 PASS glove pair 7 independent world instance
+CA688 PASS glove pair 7 original type, slot and kind
+CA688 PASS glove pair 7 original native size
+CA688 PASS glove pair 7 persistent unique identity
+CA688 PASS glove pair 7 existing wear and water retained
+CA688 PASS glove pair 7 unchanged collision, scale and floor contact
+CA688 PASS glove pair 7 original icon and dynamic sprite
+CA688 PASS glove pair 7 native dry and wet mass
+CA688 PASS glove pair 7 provenance survives copy and save
+CA688 PASS glove pair 7 unequipped world flags
+CA688 PASS glove pair 7 fixed acquired size retained
+CA688 PASS glove pair 8 saved native class
+CA688 PASS glove pair 8 independent world instance
+CA688 PASS glove pair 8 original type, slot and kind
+CA688 PASS glove pair 8 original native size
+CA688 PASS glove pair 8 persistent unique identity
+CA688 PASS glove pair 8 existing wear and water retained
+CA688 PASS glove pair 8 unchanged collision, scale and floor contact
+CA688 PASS glove pair 8 original icon and dynamic sprite
+CA688 PASS glove pair 8 native dry and wet mass
+CA688 PASS glove pair 8 provenance survives copy and save
+CA688 PASS glove pair 8 unequipped world flags
+CA688 PASS glove pair 8 fixed acquired size retained
+CA688 PASS glove pair 9 saved native class
+CA688 PASS glove pair 9 independent world instance
+CA688 PASS glove pair 9 original type, slot and kind
+CA688 PASS glove pair 9 original native size
+CA688 PASS glove pair 9 persistent unique identity
+CA688 PASS glove pair 9 existing wear and water retained
+CA688 PASS glove pair 9 unchanged collision, scale and floor contact
+CA688 PASS glove pair 9 original icon and dynamic sprite
+CA688 PASS glove pair 9 native dry and wet mass
+CA688 PASS glove pair 9 provenance survives copy and save
+CA688 PASS glove pair 9 unequipped world flags
+CA688 PASS glove pair 9 fixed acquired size retained
+CA688 PASS glove pair 10 saved native class
+CA688 PASS glove pair 10 independent world instance
+CA688 PASS glove pair 10 original type, slot and kind
+CA688 PASS glove pair 10 original native size
+CA688 PASS glove pair 10 persistent unique identity
+CA688 PASS glove pair 10 existing wear and water retained
+CA688 PASS glove pair 10 unchanged collision, scale and floor contact
+CA688 PASS glove pair 10 original icon and dynamic sprite
+CA688 PASS glove pair 10 native dry and wet mass
+CA688 PASS glove pair 10 provenance survives copy and save
+CA688 PASS glove pair 10 unequipped world flags
+CA688 PASS glove pair 10 fixed acquired size retained
+CA688 PASS glove pair 11 saved native class
+CA688 PASS glove pair 11 independent world instance
+CA688 PASS glove pair 11 original type, slot and kind
+CA688 PASS glove pair 11 original native size
+CA688 PASS glove pair 11 persistent unique identity
+CA688 PASS glove pair 11 existing wear and water retained
+CA688 PASS glove pair 11 unchanged collision, scale and floor contact
+CA688 PASS glove pair 11 original icon and dynamic sprite
+CA688 PASS glove pair 11 native dry and wet mass
+CA688 PASS glove pair 11 provenance survives copy and save
+CA688 PASS glove pair 11 unequipped world flags
+CA688 PASS glove pair 11 fixed acquired size retained
+CA688 PASS glove pair 12 saved native class
+CA688 PASS glove pair 12 independent world instance
+CA688 PASS glove pair 12 original type, slot and kind
+CA688 PASS glove pair 12 original native size
+CA688 PASS glove pair 12 persistent unique identity
+CA688 PASS glove pair 12 existing wear and water retained
+CA688 PASS glove pair 12 unchanged collision, scale and floor contact
+CA688 PASS glove pair 12 original icon and dynamic sprite
+CA688 PASS glove pair 12 native dry and wet mass
+CA688 PASS glove pair 12 provenance survives copy and save
+CA688 PASS glove pair 12 unequipped world flags
+CA688 PASS glove pair 12 fixed acquired size retained
+CA688 PASS glove pair 13 saved native class
+CA688 PASS glove pair 13 independent world instance
+CA688 PASS glove pair 13 original type, slot and kind
+CA688 PASS glove pair 13 original native size
+CA688 PASS glove pair 13 persistent unique identity
+CA688 PASS glove pair 13 existing wear and water retained
+CA688 PASS glove pair 13 unchanged collision, scale and floor contact
+CA688 PASS glove pair 13 original icon and dynamic sprite
+CA688 PASS glove pair 13 native dry and wet mass
+CA688 PASS glove pair 13 provenance survives copy and save
+CA688 PASS glove pair 13 unequipped world flags
+CA688 PASS glove pair 13 fixed acquired size retained
+CA688 PASS glove pair 14 saved native class
+CA688 PASS glove pair 14 independent world instance
+CA688 PASS glove pair 14 original type, slot and kind
+CA688 PASS glove pair 14 original native size
+CA688 PASS glove pair 14 persistent unique identity
+CA688 PASS glove pair 14 existing wear and water retained
+CA688 PASS glove pair 14 unchanged collision, scale and floor contact
+CA688 PASS glove pair 14 original icon and dynamic sprite
+CA688 PASS glove pair 14 native dry and wet mass
+CA688 PASS glove pair 14 provenance survives copy and save
+CA688 PASS glove pair 14 unequipped world flags
+CA688 PASS glove pair 14 fixed acquired size retained
+CA688 PASS glove pair 15 saved native class
+CA688 PASS glove pair 15 independent world instance
+CA688 PASS glove pair 15 original type, slot and kind
+CA688 PASS glove pair 15 original native size
+CA688 PASS glove pair 15 persistent unique identity
+CA688 PASS glove pair 15 existing wear and water retained
+CA688 PASS glove pair 15 unchanged collision, scale and floor contact
+CA688 PASS glove pair 15 original icon and dynamic sprite
+CA688 PASS glove pair 15 native dry and wet mass
+CA688 PASS glove pair 15 provenance survives copy and save
+CA688 PASS glove pair 15 unequipped world flags
+CA688 PASS glove pair 15 fixed acquired size retained
+CA688 PASS glove pair 16 saved native class
+CA688 PASS glove pair 16 independent world instance
+CA688 PASS glove pair 16 original type, slot and kind
+CA688 PASS glove pair 16 original native size
+CA688 PASS glove pair 16 persistent unique identity
+CA688 PASS glove pair 16 existing wear and water retained
+CA688 PASS glove pair 16 unchanged collision, scale and floor contact
+CA688 PASS glove pair 16 original icon and dynamic sprite
+CA688 PASS glove pair 16 native dry and wet mass
+CA688 PASS glove pair 16 provenance survives copy and save
+CA688 PASS glove pair 16 unequipped world flags
+CA688 PASS glove pair 16 fixed acquired size retained
+CA688 PASS glove pair 17 saved native class
+CA688 PASS glove pair 17 independent world instance
+CA688 PASS glove pair 17 original type, slot and kind
+CA688 PASS glove pair 17 original native size
+CA688 PASS glove pair 17 persistent unique identity
+CA688 PASS glove pair 17 existing wear and water retained
+CA688 PASS glove pair 17 unchanged collision, scale and floor contact
+CA688 PASS glove pair 17 original icon and dynamic sprite
+CA688 PASS glove pair 17 native dry and wet mass
+CA688 PASS glove pair 17 provenance survives copy and save
+CA688 PASS glove pair 17 unequipped world flags
+CA688 PASS glove pair 17 fixed acquired size retained
+CA688 PASS glove pair 18 saved native class
+CA688 PASS glove pair 18 independent world instance
+CA688 PASS glove pair 18 original type, slot and kind
+CA688 PASS glove pair 18 original native size
+CA688 PASS glove pair 18 persistent unique identity
+CA688 PASS glove pair 18 existing wear and water retained
+CA688 PASS glove pair 18 unchanged collision, scale and floor contact
+CA688 PASS glove pair 18 original icon and dynamic sprite
+CA688 PASS glove pair 18 native dry and wet mass
+CA688 PASS glove pair 18 provenance survives copy and save
+CA688 PASS glove pair 18 unequipped world flags
+CA688 PASS glove pair 18 fixed acquired size retained
+CA688 PASS glove pair 19 saved native class
+CA688 PASS glove pair 19 independent world instance
+CA688 PASS glove pair 19 original type, slot and kind
+CA688 PASS glove pair 19 original native size
+CA688 PASS glove pair 19 persistent unique identity
+CA688 PASS glove pair 19 existing wear and water retained
+CA688 PASS glove pair 19 unchanged collision, scale and floor contact
+CA688 PASS glove pair 19 original icon and dynamic sprite
+CA688 PASS glove pair 19 native dry and wet mass
+CA688 PASS glove pair 19 provenance survives copy and save
+CA688 PASS glove pair 19 unequipped world flags
+CA688 PASS glove pair 19 fixed acquired size retained
+CA688 COMPLETE failures=0
+Game saved.

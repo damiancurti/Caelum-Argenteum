@@ -1,0 +1,33 @@
+newmtl GF_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gloves/gf.png
+newmtl GF_trim
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gloves/gf.png
+newmtl GF_button
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gloves/gf.png
+newmtl GC_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gloves/gc.png
+newmtl GW_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gloves/gw.png
+newmtl GP_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gloves/gp.png
+newmtl GP_patch
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gloves/gp.png
+newmtl GF_finger
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gloves/gf.png
+newmtl GC_finger
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gloves/gc.png
+newmtl GW_finger
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gloves/gw.png
+newmtl GP_finger
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gloves/gp.png

@@ -21,6 +21,15 @@ authored thickness. Opening rays separately reject a disk sealing the hat base.
 Final native views confirm the corrected mounting; projected texture seams and
 author visual acceptance remain separate. See validation_v5_17_21/evidence.
 
+
+Extension #688, 2026-11-14: four glove pairs also verify attachment witnesses
+inside both serialized solids with two independent oblique rays and positive
+clearance. Every patch/button vertex is ray-tested against its actual palm;
+eight wrist-opening rays reject sealed cuffs. Fifty contacts and all surface
+tests pass. Closure and an intersecting joint center are separate from fitting
+the whole patch. Native views and author art review remain distinct evidence.
+See validation_v5_17_22/evidence and validate_inventory_gloves_models.py.
+
 ## CA-KP-237 - Derive inventory test cases from native tier normalization
 
 Status/evidence: ENGINE-VERIFIED isolated fixture correction, #684, 2026-11-13.

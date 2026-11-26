@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.21** - 2026-11-14.
+Documentation version: **5.17.22** - 2026-11-14.
+
+## 5.17.22 - Glove-pair world-drop models (#688, 2026-11-14)
+
+The all-dropped-inventory-3D request adds four complete left/right glove pairs
+using accepted #387 designs and unchanged owned PNGs. Original native item
+rules remain intact. The initial exporter rejected touching inner-roof geometry
+and a repeated folded-cuff end ring; corrected closed profiles preserve genuine
+wrist openings. Subsequent art review corrected finger order, dark silk trim
+and finger material scale. Fifty joint witnesses and every surface-mounted
+patch/button vertex are checked independently against serialized triangles.
+Final exports repeat sixteen files, with no shared backend changes. The complete
+package passes 1,968 native assertions and one four-pair comparison records
+1222.62/1198.22 queue presents/s, p95 0.9638/0.9980 ms and p99 1.1720/1.2321 ms.
+ASSETS and SUMMARY retain the environment, source/package proof, earlier
+candidates and limits. CA688-GLOVES-01 remains pending; author acceptance,
+actual worn fitting and completion of the broader batch are not claimed.
 
 ## 5.17.21 - Headwear world-drop models (#686, 2026-11-14)
 

@@ -1,0 +1,7 @@
+{
+  "issue": 688,
+  "authority": "Author requests all dropped inventory in 3D; four #387 glove designs are accepted.",
+  "ownership": "Original owned GF/GC/GW/GP high-resolution images and accepted inventory exports; original pixels preserved.",
+  "creation": "New deterministic geometry with shared closed-volume and MD3 export. No external mesh, new bitmap or raster editing.",
+  "limits": "World props only; actual worn-body/first-person fitting and author art acceptance remain separate."
+}
