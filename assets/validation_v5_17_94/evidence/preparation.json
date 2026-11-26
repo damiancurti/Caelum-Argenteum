@@ -1,0 +1,27 @@
+{
+  "issue": 831,
+  "base_commit": "1d5f778191559821861a33a9ab6dff40f0fb5543",
+  "historical_reference": "160473b3d41426cc1821c2a7a566286dc3b9bfa4",
+  "restored_headings": [
+    {
+      "file": "docs/ASSETS.md",
+      "before": "## 5.17.91 - Xalpen, Luz Mala, Anchimallen and Huayrapuca candidates (#822)",
+      "restored": "## 5.17.90 - Xalpen, Luz Mala, Anchimallen and Huayrapuca candidates (#822)"
+    },
+    {
+      "file": "docs/TASKS.md",
+      "before": "## 5.17.91 - Four distinct forms verified; full batch remains (#822)",
+      "restored": "## 5.17.90 - Four distinct forms verified; full batch remains (#822)"
+    },
+    {
+      "file": "docs/PROJECT.md",
+      "before": "## 5.17.91 - All provisional bestiary classes have native candidates (#822)",
+      "restored": "## 5.17.90 - All provisional bestiary classes have native candidates (#822)"
+    },
+    {
+      "file": "docs/HISTORY.md",
+      "before": "## 5.17.91 - Four distinct bestiary forms (#822, 2026-11-16)",
+      "restored": "## 5.17.90 - Four distinct bestiary forms (#822, 2026-11-16)"
+    }
+  ]
+}
