@@ -1326,3 +1326,9 @@ assets/validation_v5_17_95/evidence/** -text -diff
 /assets/validation_v5_17_98/*.cpp text eol=lf
 /assets/validation_v5_17_98/*.json text eol=lf
 /assets/validation_v5_17_98/evidence/** -text -diff
+
+# Preserve the native shelter source and issue842 evidence across checkouts.
+/src/caelum/survival/CaelumThermalEnvironment.zs text eol=crlf
+/assets/validation_v5_17_99/*.py text eol=lf
+/assets/validation_v5_17_99/*.json text eol=lf
+/assets/validation_v5_17_99/evidence/** -text -diff

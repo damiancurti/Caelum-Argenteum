@@ -1,0 +1,61 @@
+{
+  "runtime_sha256": "8261aeeef2567a32dcbe4f7b01cc9958a11e79d58de7b4c0998908001d4b6c0d",
+  "overlay_sha256": "83703b7aa6daf06a8a052fdfbfa7379589d5d331b57a37f4f125b0bf743a13b0",
+  "originals_restored_exactly": {
+    "caelum/survival/CaelumThermalEnvironment.zs": "be848205e53e07e858aa1a84df3a469de5d8a8302026b8eb991370c02e83eaa7",
+    "caelum/survival/CaelumThermalBody.zs": "066443c40e9ccfd7b908bd107bb7958ff5437c558279e452807327ed7e861a26",
+    "caelum/survival/CaelumThermalService.zs": "e850961e98aea979c3e88ec32ade73a9dfcda08e8093ddcbb5e934cacd5f842e",
+    "caelum/survival/CaelumThermalFire.zs": "a66b78f4a1bc6ad15e38843ee26596b1d14e21c51e5740fb477062dde63ddb08",
+    "caelum/survival/CaelumThermalSurface.zs": "5ab351bd97787d9324ac25d9597a6922e35031858710f6a387d72d1e6908be02",
+    "caelum/actors/CaelumCommunication.zs": "caf7097c0bce6345d81be61c7968b34f99d710922ea3d1fe9fbd59b68895387d"
+  },
+  "period": 17,
+  "metrics": [
+    {
+      "id": 0,
+      "path": "caelum/survival/CaelumThermalEnvironment.zs",
+      "method": "WindBlocked"
+    },
+    {
+      "id": 1,
+      "path": "caelum/survival/CaelumThermalEnvironment.zs",
+      "method": "Roof"
+    },
+    {
+      "id": 2,
+      "path": "caelum/survival/CaelumThermalEnvironment.zs",
+      "method": "Sample"
+    },
+    {
+      "id": 3,
+      "path": "caelum/survival/CaelumThermalBody.zs",
+      "method": "Refresh"
+    },
+    {
+      "id": 4,
+      "path": "caelum/survival/CaelumThermalService.zs",
+      "method": "Integrate"
+    },
+    {
+      "id": 5,
+      "path": "caelum/survival/CaelumThermalFire.zs",
+      "method": "Sample"
+    },
+    {
+      "id": 6,
+      "path": "caelum/survival/CaelumThermalSurface.zs",
+      "method": "Sample"
+    },
+    {
+      "id": 7,
+      "path": "caelum/actors/CaelumCommunication.zs",
+      "method": "ObserveAlly"
+    },
+    {
+      "id": 8,
+      "path": "caelum/actors/CaelumCommunication.zs",
+      "method": "Pending"
+    }
+  ],
+  "qualification": "Inclusive sampled service bodies; nested functions must not be summed twice. Lookup/timer instrumentation overhead remains. This is not production throughput."
+}

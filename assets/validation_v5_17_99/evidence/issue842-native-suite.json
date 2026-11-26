@@ -1,0 +1,22 @@
+[
+  {
+    "label": "final01",
+    "report": "build/issue842-fixture-final01/RESULTS.json",
+    "checks": 73
+  },
+  {
+    "label": "upgrade01",
+    "report": "build/issue842-fixture-upgrade01/RESULTS.json",
+    "checks": 73
+  },
+  {
+    "label": "reload01",
+    "report": "build/issue842-fixture-reload01/RESULTS.json",
+    "checks": 73
+  },
+  {
+    "label": "rollback01",
+    "report": "build/issue842-fixture-rollback01/RESULTS.json",
+    "checks": 73
+  }
+]

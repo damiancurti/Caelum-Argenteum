@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.98** - 2026-11-19.
+Documentation version: **5.17.99** - 2026-11-19.
 
 ## 5.17.43 - Hybrid serpent inspection controls (#729)
 
@@ -14467,6 +14467,11 @@ accumulation of snow, hail, flood or particles yet. The weather phenomena repres
 are fronts, cloudiness, wind and precipitation.
 
 ### Shelter and local microclimate
+
+Historical 4.35 microclimate description: the later "Clothing, water and
+shelter" thermal section is authoritative for current geometric shelter
+sampling (eight local traces and at least three connected wall planes).
+The original description below is retained as provenance.
 
 A vertical trace from the body ignores actors and skies (TRF_NOSKY), but respects roofs,
 slopes, walls and floors 3D. No roof: exterior. In habitats 2..4, a roof implies an

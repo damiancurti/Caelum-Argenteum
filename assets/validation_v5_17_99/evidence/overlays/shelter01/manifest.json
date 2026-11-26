@@ -1,0 +1,9 @@
+{
+  "issue": 842,
+  "runtime_sha256": "8261aeeef2567a32dcbe4f7b01cc9958a11e79d58de7b4c0998908001d4b6c0d",
+  "original_sha256": "be848205e53e07e858aa1a84df3a469de5d8a8302026b8eb991370c02e83eaa7",
+  "candidate_sha256": "5b0c5a25cef8adc120cc060a10e21fe23bb0791701dba1d9b7b8cf94da3dda80",
+  "overlay_sha256": "b62e08404513b406c4cb4029189194021d1436315bbf6da06998358cac3802f0",
+  "inverse_restoration_exact": true,
+  "scope": "Only connectivity after the same eight traces and plane deduplication; no saved fields, rules or timing changes."
+}
