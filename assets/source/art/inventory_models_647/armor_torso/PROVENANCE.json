@@ -1,0 +1,16 @@
+{
+  "issue": 783,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "method": "Original closed cuirasses with real neck/waist/arm apertures follow the four effective owned icons. Fixed plates, belt, trim, rivets, scarf and cape retain existing owned pixels. One newly generated cream/beige fur tile covers a continuous closed curved mantle; FUR_PROMPT.json records exact prompt, built-in tool and source. No existing raster changed.",
+  "references": [
+    "src/graphics/caelum/icons/ca_armor_magic.png",
+    "src/graphics/caelum/icons/ca_armor_light.png",
+    "src/graphics/caelum/icons/ca_armor_medium.png",
+    "src/graphics/caelum/icons/ca_armor_heavy.png"
+  ],
+  "limitations": [
+    "Simplified shared cuirass outline, static cape/scarf, small repeated material samples, faceted trim and simplified continuous fur mantle; no worn fitting or author acceptance."
+  ],
+  "material_note": "Red/navy icon samples preserve minimum alpha253/252. New fur is fully opaque and byte-identical to the generated output."
+}

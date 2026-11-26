@@ -1,6 +1,24 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.69** - 2026-11-15.
+Documentation version: **5.17.70** - 2026-11-15.
+
+## 5.17.70 - Magic, light, medium and heavy torso armor (#783), 2026-11-15
+
+Delivered four original hollow cuirass candidates with fixed shoulder plates,
+belts, trim, rivets, scarf/cape and a continuous fur mantle. One new opaque fur
+texture is copied unchanged from built-in image_gen; exact prompt and provenance
+are retained. Existing pixels and all twelve native identities/gameplay remain
+unchanged. Twenty-one exports repeat; independent checks pass 119 closed parts,
+115 attachments and 80 opening rays. Engine checks pass 1,011 continuity,
+236 visual/control and157 earlier armor/Anima assertions.
+Twenty inspected views cover final models; ten magic/light views were reused
+after byte-identical final MD3 verification. The final overview, regression
+overview and both presentation scenes were inspected. Initial shell UV/cape
+witness errors and weak plate/fur appearance were corrected; superseded evidence
+remains. ASSETS records visual limitations and isolated measurements.
+Evidence: assets/validation_v5_17_70/evidence/SUMMARY.json.
+CA783-TORSO-ARMOR-01 originates here and remains pending. No author check was
+accepted or removed. Wider V5.16, character conversion and worn fitting remain open.
 
 ## 5.17.69 - Magic, light, medium and heavy foot armor (#781), 2026-11-15
 
