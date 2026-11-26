@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.8** - 2026-11-13.
+Documentation version: **5.17.9** - 2026-11-13.
+
+## 5.17.9 - Nahuelito native combat presentation (#662)
+
+The original owned Nahuelito model gains all inherited combat frame bindings.
+Temporary fitting preserves the provisional native body and original full-size
+preview. ASSETS records the scale boundary; final species dimensions, campaign
+placement, author art acceptance and wider creature coverage remain outstanding.
 
 ## 5.17.8 - Cuero Uñudo native combat presentation (#660)
 

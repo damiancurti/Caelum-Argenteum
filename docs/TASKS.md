@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.8** - 2026-11-13.
+Documentation version: **5.17.9** - 2026-11-13.
+
+## 5.17.9 - Nahuelito inherited combat frames (#662)
+
+All 23 inherited native pairs have original Nahuelito geometry and editable
+neck/flipper/tail/jaw/roll controls. Native continuity/rollback passes 115 checks,
+exact keyframes 51 and real actions/loot 80. Export, binary, package and bounded
+presentation evidence is retained. CA662-NAHUELITO-01 still requires author
+review, including temporary small body-envelope fitting.
+Other creatures, final dimensions and campaign placement remain unfinished.
 
 ## 5.17.8 - Cuero inherited combat frames (#660)
 

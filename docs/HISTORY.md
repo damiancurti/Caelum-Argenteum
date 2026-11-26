@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.8** - 2026-11-13.
+Documentation version: **5.17.9** - 2026-11-13.
+
+## 5.17.9 - Nahuelito inherited combat model (#662, 2026-11-13)
+
+Reused original anatomy, topology, UVs and PNG bytes for 23 inherited native
+frames with editable bends/pivots. Body fitting covers all authored poses without
+changing provisional Mandinga gameplay/collision or the original 12m preview.
+Native continuity/rollback passes 115 checks, exact keyframes 51 and real
+actions/loot 80. The closer inspection camera improves pose review without
+altering model bytes. Twelve repeated exports are identical; 119,002 native
+vertex/frame bounds pass; all 18,206 packaged entries match src. One isolated
+sprite/model pair records 1727.77/1708.91 queue presents/s, p95 0.7864/0.7870 ms,
+p99 0.9820/0.9680 ms, with both subjects fully framed. ASSETS records the
+environment, different visible scale and limited measurement scope. Evidence:
+assets/validation_v5_17_9/evidence/SUMMARY.json. CA662-NAHUELITO-01 author review
+remains pending; final dimensions and campaign/crowd acceptance are not approved.
 
 ## 5.17.8 - Cuero Uñudo inherited combat model (#660, 2026-11-13)
 

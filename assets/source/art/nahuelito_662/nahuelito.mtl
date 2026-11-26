@@ -1,0 +1,9 @@
+newmtl hide
+Kd 1 1 1
+map_Kd skin.png
+newmtl iris
+Kd 1 1 1
+map_Kd iris.png
+newmtl dark
+Kd 1 1 1
+map_Kd dark.png
