@@ -4824,3 +4824,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/austral_figure_combat.modeldef"
 #include "caelum/data/witch_figure_combat.modeldef"
 #include "caelum/data/land_figure_combat.modeldef"
+#include "caelum/data/bestiary_figure_combat.modeldef"

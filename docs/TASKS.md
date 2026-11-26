@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.88** - 2026-11-16.
+Documentation version: **5.17.89** - 2026-11-16.
+
+## 5.17.89 - Four figures verified; full batch remains (#821)
+
+Curupi/Gualicho/Uritu Orko/Maip pass16-file repeated export,321 closed components,
+317 rooted contacts,2,536 posed attachment checks and 702 final-package
+native assertions. Preserve CA821-FIGURES-01 and every earlier unconfirmed check.
+Complete Xalpen/Luz Mala/Anchimallen/Huayrapuca under #822, regional displays,
+other characters/modular fitting and V5.16 progression/performance work before
+the consolidated author terminal. No intermediate author acceptance is inferred.
 
 ## 5.17.88 - Land figures verified; complete batch still pending (#819)
 
