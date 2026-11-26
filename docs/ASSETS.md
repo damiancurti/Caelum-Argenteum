@@ -1,6 +1,65 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.46** - 2026-11-14.
+Documentation version: **5.17.47** - 2026-11-14.
+
+## 5.17.47 - Basilisco native animated model (#738, parent #461)
+
+The owned CA-FOLK-044 reference now has a native model bound only to
+CaelumBestiary044: rooster head with a red comb and wattles, russet neck
+and wing feathers, a green scaled torso, copper belly, taloned biped legs
+and a curled scaled tail. Native art now covers nineteen of the 56 new
+folklore classes. The approved repeatable Pampa/Litoral allocation remains;
+campaign spawning and regional gallery placement are separate work.
+
+The model contains 15,564 vertices, 27,336 triangles and 167 parts in 154
+closed components. Independent serialized inspection verifies 153 rooted
+contact witnesses, neutral OBJ/native triangle equivalence, zero collapsed
+triangles and a grounded lowest vertex across all 23 inherited frames.
+1,224 posed attachment checks transport witnesses from serialized geometry
+at frames 0, 10, 17 and 22. They do not establish every interpolation or full
+surface clearance. Nine exports repeat byte-for-byte. Editable geometry,
+animation, contacts, OBJ/MTL and portable materials live in
+assets/source/art/basilisco_738. Regenerate with python
+assets/generators/generate_basilisco_model.py --output build/basilisco --install.
+
+Built-in image_gen produced the six-tile materials.png atlas; its exact prompt
+is MATERIALS_PROMPT.json, with original output path, owned references and
+unchanged-copy SHA-256 in PROVENANCE.json. Iris/dark resources retain their
+owned avian lineage. Model01 exposed eight detached hackle roots (40 contact
+failures); Model02 extends the actual roots. Native inspection prompted a
+rounded comb, smaller beak, fuller plumage and broader separated legs in
+Model03. Detail views exposed stretched tail UVs and grain-like leg material.
+Model05 uses the established continuous serpent sweep with repeated UV seams
+and copper leg scutes; Model06 repeats its nine exports exactly. Earlier
+sources, manifests, failures and selected captures remain retained.
+
+Thirteen final front/side/rear/head/feet/tail and action/death/rest captures,
+the original reference and atlas, seven earlier views and both presentation
+cohorts were inspected. The stylized face/comb, regular feather layers, hard
+belly material boundaries and visible tail UV repetition remain candidate
+art for author review. Standing height fits the unchanged native profile;
+tail/wing geometry can extend beyond collision Radius. This does not authorize
+petrification, flight, new drops, metre-scale resizing or altered gameplay.
+Inherited Mandinga statistics, attacks, loot, collision, Scale, identity and
+save fields are unchanged; no actor scans or schema changes are introduced.
+
+The installed package passes 115 continuity assertions (16/16/51/16/16)
+across baseline, old-save adoption, fresh model, reload and rollback. Six
+inherited combat scenarios including the Mandinga control, finite loot and
+loot reload pass another 80 assertions (40/28/12). One sequential 700-tic
+sprite/model pair records 1274.31/1311.73
+queue presents/s, p95 1.0525/0.9726 ms and
+p99 1.3875/1.2873 ms.
+Environment: Windows 11, Ryzen 9 5950X, RTX 3070 Ti, GZDoom 4.14.2 Vulkan,
+1280x720, uncapped/vsync off, background unpaused/audio 5%. Queue intervals,
+different projected footprints and one pair do not establish GPU/display
+timing, repeatability or campaign/crowd performance. All 18,458 package
+entries match src; four model resources, one definition, MODELDEF and two
+release diagnostics are the only changes from the #733 package.
+
+Evidence: assets/validation_v5_17_47/evidence/SUMMARY.json.
+CA738-BASILISCO-01 retains ordinary combat/save and visual acceptance.
+Other characters, inventory, modular equipment and V5.16 remain unfinished.
 
 ## 5.17.46 - Modular anatomy/style proposals (#736, parent #458)
 

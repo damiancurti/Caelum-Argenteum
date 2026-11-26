@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.46** - 2026-11-14.
+Documentation version: **5.17.47** - 2026-11-14.
+
+## 5.17.47 - Basilisco native model (#738)
+
+The existing Basilisco class gains an editable 23-frame native model from
+its supplied concept, bringing the new folklore coverage to 19 of 56 classes.
+Independent geometry/contact checks, nine repeated exports, 115 continuity
+and 80 combat/loot assertions pass. ASSETS records the qualified isolated
+presentation pair. CA738-BASILISCO-01 retains art and ordinary gameplay
+acceptance; regional display and campaign placement remain separate work.
+The wider character/inventory conversion and V5.16 campaign are unfinished.
 
 ## 5.17.46 - Modular character direction for review (#736)
 

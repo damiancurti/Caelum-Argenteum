@@ -6,8 +6,10 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.46.** Obtain and update the complete repository,
+**Current release: 5.17.47.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#738 adds a native animated Basilisco from the supplied bestiary reference. Author review remains pending.
 
 #736 provides [seven modular character style proposals](assets/source/art/modular_proposals_736/review.html)
 for author review before broad conversion. These are concept boards; the complete campaign and 3D conversion remain unfinished.

@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.46** - 2026-11-14.
+Documentation version: **5.17.47** - 2026-11-14.
+
+## 5.17.47 - Basilisco native model (#738, 2026-11-14)
+
+Bound the supplied rooster/reptile Basilisco to its existing provisional
+actor. Retained exact new atlas prompt/provenance, editable sources and all
+iterations. Geometry checks found eight detached hackle roots; actual root
+extensions fixed them. Native reviews refined the comb, beak, feathers, legs
+and tail UV construction. Final geometry passes 154 closed solids, 153
+contacts and 1,224 independent posed checks; nine outputs repeat exactly.
+The installed package passes 115 continuity and 80 inherited combat/loot
+assertions. ASSETS records the qualified sprite/model presentation pair.
+Evidence: assets/validation_v5_17_47/evidence/SUMMARY.json.
+CA738-BASILISCO-01 originates here and remains pending. No author acceptance
+or regional/campaign placement is claimed; the wider delivery continues.
 
 ## 5.17.46 - Modular style proposals before conversion (#736, 2026-11-14)
 

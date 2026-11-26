@@ -4788,3 +4788,5 @@ Model CaelumBarricadeVisual
 #include "caelum/data/hybrid_serpent_combat.modeldef"
 #include "caelum/data/inventory_hides.modeldef"
 #include "caelum/data/inventory_textiles.modeldef"
+
+#include "caelum/data/basilisco_combat.modeldef"

@@ -1,0 +1,1385 @@
+{
+  "issue": 738,
+  "species": {
+    "basilisco": [
+      {
+        "part": "neck",
+        "target": "trunk",
+        "witness": [
+          0.4,
+          0,
+          45
+        ]
+      },
+      {
+        "part": "cranium",
+        "target": "neck",
+        "witness": [
+          11,
+          0,
+          63
+        ]
+      },
+      {
+        "part": "upper_beak",
+        "target": "cranium",
+        "witness": [
+          17.6,
+          0,
+          67.8
+        ]
+      },
+      {
+        "part": "lower_beak",
+        "target": "cranium",
+        "witness": [
+          16.5,
+          0,
+          64.9
+        ]
+      },
+      {
+        "part": "left_haunch",
+        "target": "trunk",
+        "witness": [
+          -3,
+          -7,
+          28
+        ]
+      },
+      {
+        "part": "left_tarsus",
+        "target": "left_haunch",
+        "witness": [
+          -1.8,
+          -7,
+          17
+        ]
+      },
+      {
+        "part": "left_foot",
+        "target": "left_tarsus",
+        "witness": [
+          1.3,
+          -7,
+          4.8
+        ]
+      },
+      {
+        "part": "left_toe_0",
+        "target": "left_foot",
+        "witness": [
+          4.7,
+          -8.4,
+          3.85
+        ]
+      },
+      {
+        "part": "left_toe_0_talon",
+        "target": "left_toe_0",
+        "witness": [
+          9.8,
+          -10,
+          2.5
+        ]
+      },
+      {
+        "part": "left_toe_1",
+        "target": "left_foot",
+        "witness": [
+          4.7,
+          -7.0,
+          3.85
+        ]
+      },
+      {
+        "part": "left_toe_1_talon",
+        "target": "left_toe_1",
+        "witness": [
+          9.8,
+          -7,
+          2.5
+        ]
+      },
+      {
+        "part": "left_toe_2",
+        "target": "left_foot",
+        "witness": [
+          4.7,
+          -5.6,
+          3.85
+        ]
+      },
+      {
+        "part": "left_toe_2_talon",
+        "target": "left_toe_2",
+        "witness": [
+          9.8,
+          -4,
+          2.5
+        ]
+      },
+      {
+        "part": "left_rear_toe",
+        "target": "left_foot",
+        "witness": [
+          -0.4,
+          -7,
+          3.9
+        ]
+      },
+      {
+        "part": "left_rear_talon",
+        "target": "left_rear_toe",
+        "witness": [
+          -5.8,
+          -7,
+          2.3
+        ]
+      },
+      {
+        "part": "left_eye",
+        "target": "cranium",
+        "witness": [
+          14,
+          -4.7,
+          69
+        ]
+      },
+      {
+        "part": "left_iris",
+        "target": "left_eye",
+        "witness": [
+          14,
+          -5.55,
+          69
+        ]
+      },
+      {
+        "part": "left_pupil",
+        "target": "left_iris",
+        "witness": [
+          14,
+          -5.9,
+          69
+        ]
+      },
+      {
+        "part": "left_wing_upper",
+        "target": "trunk",
+        "witness": [
+          -0.1,
+          -4.891,
+          43.5
+        ]
+      },
+      {
+        "part": "left_wing_fore",
+        "target": "left_wing_upper",
+        "witness": [
+          -3,
+          -15.41,
+          52
+        ]
+      },
+      {
+        "part": "left_secondary_0",
+        "target": "left_wing_upper",
+        "witness": [
+          -0.8954,
+          -6.407210000000001,
+          44.10039999999999
+        ]
+      },
+      {
+        "part": "left_covert_0",
+        "target": "left_wing_upper",
+        "witness": [
+          0.7064000000000001,
+          -6.4454,
+          44.526399999999995
+        ]
+      },
+      {
+        "part": "left_secondary_1",
+        "target": "left_wing_upper",
+        "witness": [
+          -1.0744,
+          -7.414220000000001,
+          44.8944
+        ]
+      },
+      {
+        "part": "left_covert_1",
+        "target": "left_wing_upper",
+        "witness": [
+          0.5064,
+          -7.4504,
+          45.3264
+        ]
+      },
+      {
+        "part": "left_secondary_2",
+        "target": "left_wing_upper",
+        "witness": [
+          -1.2534,
+          -8.421230000000001,
+          45.688399999999994
+        ]
+      },
+      {
+        "part": "left_covert_2",
+        "target": "left_wing_upper",
+        "witness": [
+          0.3064,
+          -8.4554,
+          46.1264
+        ]
+      },
+      {
+        "part": "left_secondary_3",
+        "target": "left_wing_upper",
+        "witness": [
+          -1.4324000000000001,
+          -9.42824,
+          46.4824
+        ]
+      },
+      {
+        "part": "left_covert_3",
+        "target": "left_wing_upper",
+        "witness": [
+          0.10639999999999997,
+          -9.460400000000002,
+          46.9264
+        ]
+      },
+      {
+        "part": "left_secondary_4",
+        "target": "left_wing_upper",
+        "witness": [
+          -1.6114000000000002,
+          -10.43525,
+          47.2764
+        ]
+      },
+      {
+        "part": "left_covert_4",
+        "target": "left_wing_upper",
+        "witness": [
+          -0.09359999999999999,
+          -10.4654,
+          47.7264
+        ]
+      },
+      {
+        "part": "left_secondary_5",
+        "target": "left_wing_upper",
+        "witness": [
+          -1.7904,
+          -11.442260000000001,
+          48.0704
+        ]
+      },
+      {
+        "part": "left_covert_5",
+        "target": "left_wing_upper",
+        "witness": [
+          -0.2935999999999999,
+          -11.4704,
+          48.526399999999995
+        ]
+      },
+      {
+        "part": "left_secondary_6",
+        "target": "left_wing_upper",
+        "witness": [
+          -1.9693999999999998,
+          -12.44927,
+          48.8644
+        ]
+      },
+      {
+        "part": "left_covert_6",
+        "target": "left_wing_upper",
+        "witness": [
+          -0.49359999999999987,
+          -12.475400000000002,
+          49.3264
+        ]
+      },
+      {
+        "part": "left_secondary_7",
+        "target": "left_wing_upper",
+        "witness": [
+          -2.1484,
+          -13.456280000000001,
+          49.6584
+        ]
+      },
+      {
+        "part": "left_covert_7",
+        "target": "left_wing_upper",
+        "witness": [
+          -0.6936,
+          -13.4804,
+          50.1264
+        ]
+      },
+      {
+        "part": "left_secondary_8",
+        "target": "left_wing_upper",
+        "witness": [
+          -2.3274,
+          -14.46329,
+          50.4524
+        ]
+      },
+      {
+        "part": "left_covert_8",
+        "target": "left_wing_upper",
+        "witness": [
+          -0.8936,
+          -14.485400000000002,
+          50.9264
+        ]
+      },
+      {
+        "part": "left_primary_0",
+        "target": "left_wing_fore",
+        "witness": [
+          -3.9844,
+          -17.19086,
+          48.8794
+        ]
+      },
+      {
+        "part": "left_primary_1",
+        "target": "left_wing_fore",
+        "witness": [
+          -4.384399999999999,
+          -18.16102,
+          47.8484
+        ]
+      },
+      {
+        "part": "left_primary_2",
+        "target": "left_wing_fore",
+        "witness": [
+          -4.7844,
+          -19.13118,
+          46.8174
+        ]
+      },
+      {
+        "part": "left_primary_3",
+        "target": "left_wing_fore",
+        "witness": [
+          -5.184399999999999,
+          -20.10134,
+          45.7864
+        ]
+      },
+      {
+        "part": "left_primary_4",
+        "target": "left_wing_fore",
+        "witness": [
+          -5.5844,
+          -21.0715,
+          44.755399999999995
+        ]
+      },
+      {
+        "part": "left_primary_5",
+        "target": "left_wing_fore",
+        "witness": [
+          -5.9844,
+          -22.04166,
+          43.724399999999996
+        ]
+      },
+      {
+        "part": "left_primary_6",
+        "target": "left_wing_fore",
+        "witness": [
+          -6.3843999999999985,
+          -23.01182,
+          42.6934
+        ]
+      },
+      {
+        "part": "left_primary_7",
+        "target": "left_wing_fore",
+        "witness": [
+          -6.7844,
+          -23.98198,
+          41.662400000000005
+        ]
+      },
+      {
+        "part": "left_primary_8",
+        "target": "left_wing_fore",
+        "witness": [
+          -7.184399999999999,
+          -24.952140000000004,
+          40.6314
+        ]
+      },
+      {
+        "part": "right_haunch",
+        "target": "trunk",
+        "witness": [
+          -3,
+          7,
+          28
+        ]
+      },
+      {
+        "part": "right_tarsus",
+        "target": "right_haunch",
+        "witness": [
+          -1.8,
+          7,
+          17
+        ]
+      },
+      {
+        "part": "right_foot",
+        "target": "right_tarsus",
+        "witness": [
+          1.3,
+          7,
+          4.8
+        ]
+      },
+      {
+        "part": "right_toe_0",
+        "target": "right_foot",
+        "witness": [
+          4.7,
+          5.6,
+          3.85
+        ]
+      },
+      {
+        "part": "right_toe_0_talon",
+        "target": "right_toe_0",
+        "witness": [
+          9.8,
+          4,
+          2.5
+        ]
+      },
+      {
+        "part": "right_toe_1",
+        "target": "right_foot",
+        "witness": [
+          4.7,
+          7.0,
+          3.85
+        ]
+      },
+      {
+        "part": "right_toe_1_talon",
+        "target": "right_toe_1",
+        "witness": [
+          9.8,
+          7,
+          2.5
+        ]
+      },
+      {
+        "part": "right_toe_2",
+        "target": "right_foot",
+        "witness": [
+          4.7,
+          8.4,
+          3.85
+        ]
+      },
+      {
+        "part": "right_toe_2_talon",
+        "target": "right_toe_2",
+        "witness": [
+          9.8,
+          10,
+          2.5
+        ]
+      },
+      {
+        "part": "right_rear_toe",
+        "target": "right_foot",
+        "witness": [
+          -0.4,
+          7,
+          3.9
+        ]
+      },
+      {
+        "part": "right_rear_talon",
+        "target": "right_rear_toe",
+        "witness": [
+          -5.8,
+          7,
+          2.3
+        ]
+      },
+      {
+        "part": "right_eye",
+        "target": "cranium",
+        "witness": [
+          14,
+          4.7,
+          69
+        ]
+      },
+      {
+        "part": "right_iris",
+        "target": "right_eye",
+        "witness": [
+          14,
+          5.55,
+          69
+        ]
+      },
+      {
+        "part": "right_pupil",
+        "target": "right_iris",
+        "witness": [
+          14,
+          5.9,
+          69
+        ]
+      },
+      {
+        "part": "right_wing_upper",
+        "target": "trunk",
+        "witness": [
+          -0.1,
+          4.891,
+          43.5
+        ]
+      },
+      {
+        "part": "right_wing_fore",
+        "target": "right_wing_upper",
+        "witness": [
+          -3,
+          15.41,
+          52
+        ]
+      },
+      {
+        "part": "right_secondary_0",
+        "target": "right_wing_upper",
+        "witness": [
+          -0.8954,
+          6.407210000000001,
+          44.10039999999999
+        ]
+      },
+      {
+        "part": "right_covert_0",
+        "target": "right_wing_upper",
+        "witness": [
+          0.7064000000000001,
+          6.4454,
+          44.526399999999995
+        ]
+      },
+      {
+        "part": "right_secondary_1",
+        "target": "right_wing_upper",
+        "witness": [
+          -1.0744,
+          7.414220000000001,
+          44.8944
+        ]
+      },
+      {
+        "part": "right_covert_1",
+        "target": "right_wing_upper",
+        "witness": [
+          0.5064,
+          7.4504,
+          45.3264
+        ]
+      },
+      {
+        "part": "right_secondary_2",
+        "target": "right_wing_upper",
+        "witness": [
+          -1.2534,
+          8.421230000000001,
+          45.688399999999994
+        ]
+      },
+      {
+        "part": "right_covert_2",
+        "target": "right_wing_upper",
+        "witness": [
+          0.3064,
+          8.4554,
+          46.1264
+        ]
+      },
+      {
+        "part": "right_secondary_3",
+        "target": "right_wing_upper",
+        "witness": [
+          -1.4324000000000001,
+          9.42824,
+          46.4824
+        ]
+      },
+      {
+        "part": "right_covert_3",
+        "target": "right_wing_upper",
+        "witness": [
+          0.10639999999999997,
+          9.460400000000002,
+          46.9264
+        ]
+      },
+      {
+        "part": "right_secondary_4",
+        "target": "right_wing_upper",
+        "witness": [
+          -1.6114000000000002,
+          10.43525,
+          47.2764
+        ]
+      },
+      {
+        "part": "right_covert_4",
+        "target": "right_wing_upper",
+        "witness": [
+          -0.09359999999999999,
+          10.4654,
+          47.7264
+        ]
+      },
+      {
+        "part": "right_secondary_5",
+        "target": "right_wing_upper",
+        "witness": [
+          -1.7904,
+          11.442260000000001,
+          48.0704
+        ]
+      },
+      {
+        "part": "right_covert_5",
+        "target": "right_wing_upper",
+        "witness": [
+          -0.2935999999999999,
+          11.4704,
+          48.526399999999995
+        ]
+      },
+      {
+        "part": "right_secondary_6",
+        "target": "right_wing_upper",
+        "witness": [
+          -1.9693999999999998,
+          12.44927,
+          48.8644
+        ]
+      },
+      {
+        "part": "right_covert_6",
+        "target": "right_wing_upper",
+        "witness": [
+          -0.49359999999999987,
+          12.475400000000002,
+          49.3264
+        ]
+      },
+      {
+        "part": "right_secondary_7",
+        "target": "right_wing_upper",
+        "witness": [
+          -2.1484,
+          13.456280000000001,
+          49.6584
+        ]
+      },
+      {
+        "part": "right_covert_7",
+        "target": "right_wing_upper",
+        "witness": [
+          -0.6936,
+          13.4804,
+          50.1264
+        ]
+      },
+      {
+        "part": "right_secondary_8",
+        "target": "right_wing_upper",
+        "witness": [
+          -2.3274,
+          14.46329,
+          50.4524
+        ]
+      },
+      {
+        "part": "right_covert_8",
+        "target": "right_wing_upper",
+        "witness": [
+          -0.8936,
+          14.485400000000002,
+          50.9264
+        ]
+      },
+      {
+        "part": "right_primary_0",
+        "target": "right_wing_fore",
+        "witness": [
+          -3.9844,
+          17.19086,
+          48.8794
+        ]
+      },
+      {
+        "part": "right_primary_1",
+        "target": "right_wing_fore",
+        "witness": [
+          -4.384399999999999,
+          18.16102,
+          47.8484
+        ]
+      },
+      {
+        "part": "right_primary_2",
+        "target": "right_wing_fore",
+        "witness": [
+          -4.7844,
+          19.13118,
+          46.8174
+        ]
+      },
+      {
+        "part": "right_primary_3",
+        "target": "right_wing_fore",
+        "witness": [
+          -5.184399999999999,
+          20.10134,
+          45.7864
+        ]
+      },
+      {
+        "part": "right_primary_4",
+        "target": "right_wing_fore",
+        "witness": [
+          -5.5844,
+          21.0715,
+          44.755399999999995
+        ]
+      },
+      {
+        "part": "right_primary_5",
+        "target": "right_wing_fore",
+        "witness": [
+          -5.9844,
+          22.04166,
+          43.724399999999996
+        ]
+      },
+      {
+        "part": "right_primary_6",
+        "target": "right_wing_fore",
+        "witness": [
+          -6.3843999999999985,
+          23.01182,
+          42.6934
+        ]
+      },
+      {
+        "part": "right_primary_7",
+        "target": "right_wing_fore",
+        "witness": [
+          -6.7844,
+          23.98198,
+          41.662400000000005
+        ]
+      },
+      {
+        "part": "right_primary_8",
+        "target": "right_wing_fore",
+        "witness": [
+          -7.184399999999999,
+          24.952140000000004,
+          40.6314
+        ]
+      },
+      {
+        "part": "left_wattle",
+        "target": "cranium",
+        "witness": [
+          17,
+          -1.5,
+          65.3
+        ]
+      },
+      {
+        "part": "right_wattle",
+        "target": "cranium",
+        "witness": [
+          17,
+          1.5,
+          65.3
+        ]
+      },
+      {
+        "part": "serpent_tail",
+        "target": "trunk",
+        "witness": [
+          -9,
+          0,
+          27
+        ]
+      },
+      {
+        "part": "comb_base",
+        "target": "cranium",
+        "witness": [
+          11,
+          0,
+          72
+        ]
+      },
+      {
+        "part": "comb_lobe_0",
+        "target": "comb_base",
+        "witness": [
+          4.9,
+          0,
+          74
+        ]
+      },
+      {
+        "part": "comb_lobe_1",
+        "target": "comb_base",
+        "witness": [
+          7.9,
+          0,
+          74
+        ]
+      },
+      {
+        "part": "comb_lobe_2",
+        "target": "comb_base",
+        "witness": [
+          10.9,
+          0,
+          74
+        ]
+      },
+      {
+        "part": "comb_lobe_3",
+        "target": "comb_base",
+        "witness": [
+          13.9,
+          0,
+          74
+        ]
+      },
+      {
+        "part": "comb_lobe_4",
+        "target": "comb_base",
+        "witness": [
+          16.9,
+          0,
+          74
+        ]
+      },
+      {
+        "part": "head_hackle_0",
+        "target": "cranium",
+        "witness": [
+          11.164187759374375,
+          3.666205515085603,
+          66.39999999999999
+        ]
+      },
+      {
+        "part": "head_hackle_1",
+        "target": "cranium",
+        "witness": [
+          9.998603132062799,
+          3.505974741670454,
+          66.42099999999999
+        ]
+      },
+      {
+        "part": "head_hackle_2",
+        "target": "cranium",
+        "witness": [
+          8.910000000000002,
+          3.192516048510955,
+          66.442
+        ]
+      },
+      {
+        "part": "head_hackle_3",
+        "target": "cranium",
+        "witness": [
+          7.945955543754508,
+          2.739529084639866,
+          66.39999999999999
+        ]
+      },
+      {
+        "part": "head_hackle_4",
+        "target": "cranium",
+        "witness": [
+          7.148603132062799,
+          2.166811554050973,
+          66.42099999999999
+        ]
+      },
+      {
+        "part": "head_hackle_5",
+        "target": "cranium",
+        "witness": [
+          6.5527908914371755,
+          1.4993939610346307,
+          66.442
+        ]
+      },
+      {
+        "part": "head_hackle_6",
+        "target": "cranium",
+        "witness": [
+          6.184558675817307,
+          0.766445657030588,
+          66.39999999999999
+        ]
+      },
+      {
+        "part": "head_hackle_7",
+        "target": "cranium",
+        "witness": [
+          6.06,
+          4.514537960376802e-16,
+          66.42099999999999
+        ]
+      },
+      {
+        "part": "head_hackle_8",
+        "target": "cranium",
+        "witness": [
+          6.184558675817308,
+          -0.7664456570305886,
+          66.442
+        ]
+      },
+      {
+        "part": "head_hackle_9",
+        "target": "cranium",
+        "witness": [
+          6.552790891437174,
+          -1.4993939610346285,
+          66.39999999999999
+        ]
+      },
+      {
+        "part": "head_hackle_10",
+        "target": "cranium",
+        "witness": [
+          7.148603132062799,
+          -2.1668115540509723,
+          66.42099999999999
+        ]
+      },
+      {
+        "part": "head_hackle_11",
+        "target": "cranium",
+        "witness": [
+          7.945955543754506,
+          -2.739529084639865,
+          66.442
+        ]
+      },
+      {
+        "part": "head_hackle_12",
+        "target": "cranium",
+        "witness": [
+          8.910000000000002,
+          -3.1925160485109556,
+          66.39999999999999
+        ]
+      },
+      {
+        "part": "head_hackle_13",
+        "target": "cranium",
+        "witness": [
+          9.998603132062799,
+          -3.5059747416704536,
+          66.42099999999999
+        ]
+      },
+      {
+        "part": "head_hackle_14",
+        "target": "cranium",
+        "witness": [
+          11.164187759374375,
+          -3.666205515085603,
+          66.442
+        ]
+      },
+      {
+        "part": "neck_hackle_0",
+        "target": "neck",
+        "witness": [
+          5.435961763870274,
+          2.773821018371651,
+          56.46
+        ]
+      },
+      {
+        "part": "neck_hackle_1",
+        "target": "neck",
+        "witness": [
+          4.802047317437663,
+          2.652591729598813,
+          56.484
+        ]
+      },
+      {
+        "part": "neck_hackle_2",
+        "target": "neck",
+        "witness": [
+          4.210000000000002,
+          2.4154314536951778,
+          56.507999999999996
+        ]
+      },
+      {
+        "part": "neck_hackle_3",
+        "target": "neck",
+        "witness": [
+          3.6856951202875394,
+          2.0727052327390005,
+          56.46
+        ]
+      },
+      {
+        "part": "neck_hackle_4",
+        "target": "neck",
+        "witness": [
+          3.252047317437663,
+          1.639391847168937,
+          56.484
+        ]
+      },
+      {
+        "part": "neck_hackle_5",
+        "target": "neck",
+        "witness": [
+          2.9280090813079376,
+          1.1344291712027152,
+          56.507999999999996
+        ]
+      },
+      {
+        "part": "neck_hackle_6",
+        "target": "neck",
+        "witness": [
+          2.727742437725202,
+          0.5798864968598125,
+          56.46
+        ]
+      },
+      {
+        "part": "neck_hackle_7",
+        "target": "neck",
+        "witness": [
+          2.6599999999999997,
+          3.4156623875018827e-16,
+          56.484
+        ]
+      },
+      {
+        "part": "neck_hackle_8",
+        "target": "neck",
+        "witness": [
+          2.7277424377252024,
+          -0.579886496859813,
+          56.507999999999996
+        ]
+      },
+      {
+        "part": "neck_hackle_9",
+        "target": "neck",
+        "witness": [
+          2.9280090813079362,
+          -1.1344291712027132,
+          56.46
+        ]
+      },
+      {
+        "part": "neck_hackle_10",
+        "target": "neck",
+        "witness": [
+          3.252047317437663,
+          -1.6393918471689366,
+          56.484
+        ]
+      },
+      {
+        "part": "neck_hackle_11",
+        "target": "neck",
+        "witness": [
+          3.685695120287539,
+          -2.0727052327389996,
+          56.507999999999996
+        ]
+      },
+      {
+        "part": "neck_hackle_12",
+        "target": "neck",
+        "witness": [
+          4.210000000000002,
+          -2.415431453695178,
+          56.46
+        ]
+      },
+      {
+        "part": "neck_hackle_13",
+        "target": "neck",
+        "witness": [
+          4.802047317437662,
+          -2.6525917295988126,
+          56.484
+        ]
+      },
+      {
+        "part": "neck_hackle_14",
+        "target": "neck",
+        "witness": [
+          5.435961763870274,
+          -2.773821018371651,
+          56.507999999999996
+        ]
+      },
+      {
+        "part": "tail_plume_0_0",
+        "target": "serpent_tail",
+        "witness": [
+          -11.68771794871795,
+          0.0,
+          31.451189743589744
+        ]
+      },
+      {
+        "part": "tail_plume_0_1",
+        "target": "serpent_tail",
+        "witness": [
+          -15.614230769230769,
+          0.0,
+          29.608153846153847
+        ]
+      },
+      {
+        "part": "tail_plume_0_2",
+        "target": "serpent_tail",
+        "witness": [
+          -19.54074358974359,
+          0.0,
+          27.76511794871795
+        ]
+      },
+      {
+        "part": "tail_plume_1_0",
+        "target": "serpent_tail",
+        "witness": [
+          -22.243333333333332,
+          0.0,
+          27.030866666666668
+        ]
+      },
+      {
+        "part": "tail_plume_1_1",
+        "target": "serpent_tail",
+        "witness": [
+          -26.909999999999997,
+          0.0,
+          26.8398
+        ]
+      },
+      {
+        "part": "tail_plume_1_2",
+        "target": "serpent_tail",
+        "witness": [
+          -31.576666666666668,
+          0.0,
+          26.648733333333332
+        ]
+      },
+      {
+        "part": "tail_plume_2_0",
+        "target": "serpent_tail",
+        "witness": [
+          -33.830472,
+          0.0,
+          27.242703999999996
+        ]
+      },
+      {
+        "part": "tail_plume_2_1",
+        "target": "serpent_tail",
+        "witness": [
+          -37.899256,
+          0.0,
+          30.150992
+        ]
+      },
+      {
+        "part": "tail_plume_2_2",
+        "target": "serpent_tail",
+        "witness": [
+          -41.968039999999995,
+          0.0,
+          33.05928
+        ]
+      },
+      {
+        "part": "tail_plume_3_0",
+        "target": "serpent_tail",
+        "witness": [
+          -43.852723770723905,
+          0.0,
+          35.3022691637468
+        ]
+      },
+      {
+        "part": "tail_plume_3_1",
+        "target": "serpent_tail",
+        "witness": [
+          -45.663338827717546,
+          0.0,
+          39.91752569101097
+        ]
+      },
+      {
+        "part": "tail_plume_3_2",
+        "target": "serpent_tail",
+        "witness": [
+          -47.473953884711186,
+          0.0,
+          44.53278221827515
+        ]
+      },
+      {
+        "part": "tail_plume_4_0",
+        "target": "serpent_tail",
+        "witness": [
+          -52.45719092622529,
+          0.0,
+          49.20163140987104
+        ]
+      },
+      {
+        "part": "tail_plume_4_1",
+        "target": "serpent_tail",
+        "witness": [
+          -50.30105823046659,
+          0.0,
+          53.46290349900805
+        ]
+      },
+      {
+        "part": "tail_plume_4_2",
+        "target": "serpent_tail",
+        "witness": [
+          -48.14492553470789,
+          0.0,
+          57.724175588145066
+        ]
+      },
+      {
+        "part": "tail_plume_5_0",
+        "target": "serpent_tail",
+        "witness": [
+          -43.608487928228655,
+          0.0,
+          61.56287220660903
+        ]
+      },
+      {
+        "part": "tail_plume_5_1",
+        "target": "serpent_tail",
+        "witness": [
+          -39.56678150214741,
+          0.0,
+          62.39604650228404
+        ]
+      },
+      {
+        "part": "tail_plume_5_2",
+        "target": "serpent_tail",
+        "witness": [
+          -35.52507507606616,
+          0.0,
+          63.229220797959044
+        ]
+      },
+      {
+        "part": "tail_plume_6_0",
+        "target": "serpent_tail",
+        "witness": [
+          -30.755258666666666,
+          0.0,
+          61.71272266666667
+        ]
+      },
+      {
+        "part": "tail_plume_6_1",
+        "target": "serpent_tail",
+        "witness": [
+          -28.908112,
+          0.0,
+          58.93141599999999
+        ]
+      },
+      {
+        "part": "tail_plume_6_2",
+        "target": "serpent_tail",
+        "witness": [
+          -27.060965333333336,
+          0.0,
+          56.150109333333326
+        ]
+      },
+      {
+        "part": "tail_plume_7_0",
+        "target": "serpent_tail",
+        "witness": [
+          -27.2004932186932,
+          0.0,
+          52.32777243930677
+        ]
+      },
+      {
+        "part": "tail_plume_7_1",
+        "target": "serpent_tail",
+        "witness": [
+          -29.34910820791778,
+          0.0,
+          50.47638742853136
+        ]
+      },
+      {
+        "part": "tail_plume_7_2",
+        "target": "serpent_tail",
+        "witness": [
+          -31.497723197142363,
+          0.0,
+          48.625002417755944
+        ]
+      }
+    ]
+  },
+  "status": "Revised physical roots and rounded source anatomy; independently checked neutral and posed witnesses."
+}

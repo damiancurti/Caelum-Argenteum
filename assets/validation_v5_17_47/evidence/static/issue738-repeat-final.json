@@ -1,0 +1,14 @@
+{
+  "byte_identical": true,
+  "files": {
+    "manifest.json": "eddc0528c500dd1f69c54b7acec7e25bb79108354f2ca960054713335d04fafc",
+    "preview.pk3": "5fdbc9088d252f943eda50e3ba327e46a1f0859bb0d02837c130b59cae6780b6",
+    "editable/basilisco.mtl": "cb9435baac5d8ec1378d0dbbee08bcf756889e75047fc0b5d23411f08cb111f7",
+    "editable/basilisco.obj": "2a1060616cc021599029ac7fe32fade4746a5f5171c64b0cb94051538f35aa63",
+    "caelum/data/basilisco_combat.modeldef": "61d27c499316cf75ac3e1d545d35aa453610bb401de43a94a5c7d57eae37ffa1",
+    "models/caelum/folklore/basilisco/basilisco.md3": "f9471df07131aea8e8919a2b39719d2d856ec1a9809f83d26bc73e87f2144413",
+    "models/caelum/folklore/basilisco/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "models/caelum/folklore/basilisco/iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+    "models/caelum/folklore/basilisco/materials.png": "69e28309c25522d36e66387ebbbdedda4df324dc6a930399d87afc09dac4ba1b"
+  }
+}
