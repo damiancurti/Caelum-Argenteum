@@ -1,0 +1,247 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-15 03:18:59
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue767-polearms02.pk3, 18524 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue767-native02/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2523.64 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+CA767 PASS all ten weapon cases retained
+CA767 PASS polearm 0 saved reference
+CA767 PASS polearm 0 original world quantity and ownership
+CA767 PASS polearm 0 exact native class, state and original icon
+CA767 PASS polearm 0 original scale, collision and floor contact
+CA767 PASS polearm 0 copied provenance
+CA767 PASS polearm 0 native type, quality and valid essence
+CA767 PASS polearm 0 original weight
+CA767 PASS polearm 0 independent saved identity
+CA767 PASS polearm 0 original world flags
+CA767 PASS polearm 0 native durability and size
+CA767 PASS polearm 1 saved reference
+CA767 PASS polearm 1 original world quantity and ownership
+CA767 PASS polearm 1 exact native class, state and original icon
+CA767 PASS polearm 1 original scale, collision and floor contact
+CA767 PASS polearm 1 copied provenance
+CA767 PASS polearm 1 native type, quality and valid essence
+CA767 PASS polearm 1 original weight
+CA767 PASS polearm 1 independent saved identity
+CA767 PASS polearm 1 original world flags
+CA767 PASS polearm 1 native durability and size
+CA767 PASS polearm 2 saved reference
+CA767 PASS polearm 2 original world quantity and ownership
+CA767 PASS polearm 2 exact native class, state and original icon
+CA767 PASS polearm 2 original scale, collision and floor contact
+CA767 PASS polearm 2 copied provenance
+CA767 PASS polearm 2 native type, quality and valid essence
+CA767 PASS polearm 2 original weight
+CA767 PASS polearm 2 independent saved identity
+CA767 PASS polearm 2 original world flags
+CA767 PASS polearm 2 native durability and size
+CA767 PASS polearm 3 saved reference
+CA767 PASS polearm 3 original world quantity and ownership
+CA767 PASS polearm 3 exact native class, state and original icon
+CA767 PASS polearm 3 original scale, collision and floor contact
+CA767 PASS polearm 3 copied provenance
+CA767 PASS polearm 3 native type, quality and valid essence
+CA767 PASS polearm 3 original weight
+CA767 PASS polearm 3 independent saved identity
+CA767 PASS polearm 3 original world flags
+CA767 PASS polearm 3 native durability and size
+CA767 PASS polearm 4 saved reference
+CA767 PASS polearm 4 original world quantity and ownership
+CA767 PASS polearm 4 exact native class, state and original icon
+CA767 PASS polearm 4 original scale, collision and floor contact
+CA767 PASS polearm 4 copied provenance
+CA767 PASS polearm 4 native type, quality and valid essence
+CA767 PASS polearm 4 original weight
+CA767 PASS polearm 4 independent saved identity
+CA767 PASS polearm 4 original world flags
+CA767 PASS polearm 4 native durability and size
+CA767 PASS polearm 5 saved reference
+CA767 PASS polearm 5 original world quantity and ownership
+CA767 PASS polearm 5 exact native class, state and original icon
+CA767 PASS polearm 5 original scale, collision and floor contact
+CA767 PASS polearm 5 copied provenance
+CA767 PASS polearm 5 native type, quality and valid essence
+CA767 PASS polearm 5 original weight
+CA767 PASS polearm 5 independent saved identity
+CA767 PASS polearm 5 original world flags
+CA767 PASS polearm 5 native durability and size
+CA767 PASS polearm 6 saved reference
+CA767 PASS polearm 6 original world quantity and ownership
+CA767 PASS polearm 6 exact native class, state and original icon
+CA767 PASS polearm 6 original scale, collision and floor contact
+CA767 PASS polearm 6 copied provenance
+CA767 PASS polearm 6 native type, quality and valid essence
+CA767 PASS polearm 6 original weight
+CA767 PASS polearm 6 independent saved identity
+CA767 PASS polearm 6 original world flags
+CA767 PASS polearm 6 native durability and size
+CA767 PASS polearm 7 saved reference
+CA767 PASS polearm 7 original world quantity and ownership
+CA767 PASS polearm 7 exact native class, state and original icon
+CA767 PASS polearm 7 original scale, collision and floor contact
+CA767 PASS polearm 7 copied provenance
+CA767 PASS polearm 7 native type, quality and valid essence
+CA767 PASS polearm 7 original weight
+CA767 PASS polearm 7 independent saved identity
+CA767 PASS polearm 7 original world flags
+CA767 PASS polearm 7 native durability and size
+CA767 PASS polearm 8 saved reference
+CA767 PASS polearm 8 original world quantity and ownership
+CA767 PASS polearm 8 exact native class, state and original icon
+CA767 PASS polearm 8 original scale, collision and floor contact
+CA767 PASS polearm 8 copied provenance
+CA767 PASS polearm 8 native type, quality and valid essence
+CA767 PASS polearm 8 original weight
+CA767 PASS polearm 8 independent saved identity
+CA767 PASS polearm 8 original world flags
+CA767 PASS polearm 8 native durability and size
+CA767 PASS polearm 9 saved reference
+CA767 PASS polearm 9 original world quantity and ownership
+CA767 PASS polearm 9 exact native class, state and original icon
+CA767 PASS polearm 9 original scale, collision and floor contact
+CA767 PASS polearm 9 copied provenance
+CA767 PASS polearm 9 native type, quality and valid essence
+CA767 PASS polearm 9 original weight
+CA767 PASS polearm 9 independent saved identity
+CA767 PASS polearm 9 original world flags
+CA767 PASS utility fractional wear survives world/save state
+CA767 PASS polearm 9 native durability and size
+CA767 COMPLETE failures=0
+Captured candidate-0.png
+Captured candidate-1.png
+Captured candidate-2.png
+Captured candidate-3.png
+Captured candidate-5.png
+Captured candidate-6.png
+Captured candidate-7.png
+Captured detail-0-0.png
+Captured detail-0-90.png
+Captured detail-0-160.png
+Captured detail-0-225.png
+Captured detail-0-270.png
+Captured detail-1-0.png
+Captured detail-1-90.png
+Captured detail-1-160.png
+Captured detail-1-225.png
+Captured detail-1-270.png
+Captured detail-2-0.png
+Captured detail-2-90.png
+Captured detail-2-160.png
+Captured detail-2-225.png
+Captured detail-2-270.png
+Captured detail-3-0.png
+Captured detail-3-90.png
+Captured detail-3-160.png
+Captured detail-3-225.png
+Captured detail-3-270.png
+CA767 PASS interactive item/angle and raised-view controls
+CA767 PASS interactive item/angle and raised-view controls
+CA767 PASS interactive item/angle and raised-view controls
+CA767 PASS interactive item/angle and raised-view controls
+CA767 PASS interactive item/angle and raised-view controls
+CA767 PASS interactive item/angle and raised-view controls
+CA767 PASS interactive item/angle and raised-view controls
+Captured nozzle-top.png
+CA767 PASS polearm 0 native repickup
+CA767 PASS polearm 0 recovered exact metadata
+CA767 PASS polearm 0 native equip and unchanged essence
+CA767 PASS polearm 0 native unequip
+CA767 PASS polearm 0 second weapon toss
+CA767 PASS polearm 1 native repickup
+CA767 PASS polearm 1 recovered exact metadata
+CA767 PASS polearm 1 native equip and unchanged essence
+CA767 PASS polearm 1 native unequip
+CA767 PASS polearm 1 second weapon toss
+CA767 PASS polearm 2 native repickup
+CA767 PASS polearm 2 recovered exact metadata
+CA767 PASS polearm 2 native equip and unchanged essence
+CA767 PASS polearm 2 native unequip
+CA767 PASS polearm 2 second weapon toss
+CA767 PASS polearm 3 native repickup
+CA767 PASS polearm 3 recovered exact metadata
+CA767 PASS polearm 3 native equip and unchanged essence
+CA767 PASS polearm 3 native unequip
+CA767 PASS polearm 3 second weapon toss
+CA767 PASS polearm 4 native repickup
+CA767 PASS polearm 4 recovered exact metadata
+CA767 PASS polearm 4 native equip and unchanged essence
+CA767 PASS polearm 4 native unequip
+CA767 PASS polearm 4 second weapon toss
+CA767 PASS polearm 5 native repickup
+CA767 PASS polearm 5 recovered exact metadata
+CA767 PASS polearm 5 native equip and unchanged essence
+CA767 PASS polearm 5 native unequip
+CA767 PASS polearm 5 second weapon toss
+CA767 PASS polearm 6 native repickup
+CA767 PASS polearm 6 recovered exact metadata
+CA767 PASS polearm 6 native equip and unchanged essence
+CA767 PASS polearm 6 native unequip
+CA767 PASS polearm 6 second weapon toss
+CA767 PASS polearm 7 native repickup
+CA767 PASS polearm 7 recovered exact metadata
+CA767 PASS polearm 7 native equip and unchanged essence
+CA767 PASS polearm 7 native unequip
+CA767 PASS polearm 7 second weapon toss
+CA767 PASS polearm 8 native repickup
+CA767 PASS polearm 8 recovered exact metadata
+CA767 PASS polearm 8 native equip and unchanged essence
+CA767 PASS polearm 8 native unequip
+CA767 PASS polearm 8 second weapon toss
+CA767 PASS polearm 9 native repickup
+CA767 PASS polearm 9 recovered exact metadata
+CA767 PASS utility fractional wear survives repickup
+CA767 PASS polearm 9 native equip and unchanged essence
+CA767 PASS polearm 9 native unequip
+CA767 PASS polearm 9 second weapon toss
+CA767 PASS all weapon representations retained after native use
+CA767 COMPLETE failures=0

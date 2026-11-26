@@ -1,0 +1,20 @@
+{
+  "issue": 767,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "authority": "Author requires native3D inventory drops and continued separate issue delivery.",
+  "method": "Original closed assemblies reuse unchanged owned #723 metal, #761 wood, #647 leather and #755 red/blue textures. Utility staff follows its #162 accepted ready reference, including an actual recessed opening. No raster generation or editing.",
+  "limitations": [
+    "Simplified blade/head profiles, static ties, matte fittings, shaft orientation and interpreted hidden surfaces require author review.",
+    "World drops only; held artwork, projectiles, utility effects, Anima cost, fractional contact wear, type/quality rules and saves remain unchanged."
+  ],
+  "reference_resolution": {
+    "javelin": "TEXTURES CJAVA0 -> graphics/caelum/icons/ca_javelin.png, 128x128 unscaled",
+    "spear": "TEXTURES CSPRA0 -> graphics/caelum/icons/ca_spear.png, 128x128 unscaled",
+    "halberd": "TEXTURES CHALA0 -> graphics/caelum/icons/ca_halberd.png, 128x128 unscaled",
+    "utility_staff": "graphics/caelum/utility_staff/staff.textures CUSTA0 -> CAUST_CELL_0 -> atlas first 627x627 cell, X/YScale4.8984375"
+  },
+  "iterations": [
+    "Initial prototype used superseded physical sprite lumps for the three polearms; corrected to their effective TEXTURES icon aliases, matching current color ties, display extent and fittings. Legacy images remain hashed as historical inspiration, not authoritative world references."
+  ]
+}
