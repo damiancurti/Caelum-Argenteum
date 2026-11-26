@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.27** - 2026-11-14.
+Documentation version: **5.17.28** - 2026-11-14.
+
+## #700 - Cuyo material and guardian gallery (5.17.28)
+
+The five-region, ten-figure room passes 139 native assertions, deterministic
+material/map export and a qualified peaceful presentation sample. Retain
+CA700-CUYO-GALLERY-01 for visual and walking review. Earlier models/materials
+remain unchanged. The diagnostic duplicate Yastay does not change his unique
+campaign identity. Wider regional coverage, remaining characters, worn modules,
+inventory drops and campaign implementation remain separate outstanding work.
 
 ## #698 - Yasí Yateré and Yastay combat models (5.17.27)
 

@@ -1,0 +1,387 @@
+{
+  "issue": 700,
+  "scope": "isolated_visual_inspection_not_campaign",
+  "baseline_materials": false,
+  "geometry": {
+    "sectors": 6,
+    "vertices": 18,
+    "linedefs": 23
+  },
+  "subjects": [
+    {
+      "region": "Pampa",
+      "catalogue_id": "CA-FOLK-003",
+      "kind": "lobizon",
+      "class": "CaelumBestiary003",
+      "position": [
+        -768,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-005",
+      "kind": "ucumar",
+      "class": "CaelumBestiary005",
+      "position": [
+        -256,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-003",
+      "kind": "lobizon",
+      "class": "CaelumBestiary003",
+      "position": [
+        128,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-004",
+      "kind": "uturunco",
+      "class": "CaelumBestiary004",
+      "position": [
+        384,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Selva",
+      "catalogue_id": "CA-FOLK-004",
+      "kind": "uturunco",
+      "class": "CaelumBestiary004",
+      "position": [
+        768,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-009",
+      "kind": "mikilo",
+      "class": "CaelumBestiary009",
+      "position": [
+        -384,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-010",
+      "kind": "coquena",
+      "class": "CaelumBestiary010",
+      "position": [
+        -128,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-007",
+      "kind": "yasi",
+      "class": "CaelumBestiary007",
+      "position": [
+        256,
+        180,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-011",
+      "kind": "yastay",
+      "class": "CaelumBestiary011",
+      "position": [
+        -64,
+        180,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Cuyo",
+      "catalogue_id": "CA-FOLK-011",
+      "kind": "yastay",
+      "class": "CaelumBestiary011",
+      "position": [
+        1280,
+        0,
+        0
+      ],
+      "angle": 270
+    }
+  ],
+  "views": [
+    {
+      "id": "overview",
+      "position": [
+        256,
+        -920,
+        1400
+      ],
+      "target": [
+        256,
+        0,
+        0
+      ],
+      "key": "F1"
+    },
+    {
+      "id": "pampa",
+      "position": [
+        -768,
+        -110,
+        60
+      ],
+      "target": [
+        -768,
+        0,
+        26
+      ],
+      "key": "F2"
+    },
+    {
+      "id": "noa",
+      "position": [
+        -256,
+        -280,
+        120
+      ],
+      "target": [
+        -256,
+        0,
+        26
+      ],
+      "key": "F3"
+    },
+    {
+      "id": "litoral",
+      "position": [
+        256,
+        -250,
+        120
+      ],
+      "target": [
+        256,
+        0,
+        26
+      ],
+      "key": "F4"
+    },
+    {
+      "id": "player",
+      "control": true,
+      "key": "F5"
+    },
+    {
+      "id": "selva",
+      "position": [
+        768,
+        -110,
+        60
+      ],
+      "target": [
+        768,
+        0,
+        26
+      ],
+      "key": "F6"
+    },
+    {
+      "id": "pampa-tiles",
+      "position": [
+        -768,
+        -280,
+        150
+      ],
+      "target": [
+        -768,
+        -280,
+        0
+      ],
+      "key": "F7"
+    },
+    {
+      "id": "noa-tiles",
+      "position": [
+        -256,
+        -280,
+        150
+      ],
+      "target": [
+        -256,
+        -280,
+        0
+      ],
+      "key": "F8"
+    },
+    {
+      "id": "litoral-tiles",
+      "position": [
+        256,
+        -280,
+        150
+      ],
+      "target": [
+        256,
+        -280,
+        0
+      ],
+      "key": "F9"
+    },
+    {
+      "id": "selva-tiles",
+      "position": [
+        768,
+        -280,
+        80
+      ],
+      "target": [
+        768,
+        -280,
+        0
+      ],
+      "key": "F10"
+    },
+    {
+      "id": "mikilo",
+      "position": [
+        -384,
+        -65,
+        40
+      ],
+      "target": [
+        -384,
+        0,
+        26
+      ],
+      "key": "F11"
+    },
+    {
+      "id": "coquena",
+      "position": [
+        -128,
+        -65,
+        40
+      ],
+      "target": [
+        -128,
+        0,
+        26
+      ],
+      "key": "F12"
+    },
+    {
+      "id": "yasi-litoral",
+      "key": "1",
+      "position": [
+        256,
+        115,
+        40
+      ],
+      "target": [
+        256,
+        180,
+        26
+      ]
+    },
+    {
+      "id": "cuyo-yastay",
+      "key": "2",
+      "position": [
+        1280,
+        -110,
+        60
+      ],
+      "target": [
+        1280,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "yastay-noa",
+      "key": "3",
+      "position": [
+        -64,
+        115,
+        40
+      ],
+      "target": [
+        -64,
+        180,
+        26
+      ]
+    },
+    {
+      "id": "cuyo-tiles",
+      "key": "4",
+      "position": [
+        1280,
+        -280,
+        150
+      ],
+      "target": [
+        1280,
+        -280,
+        0
+      ]
+    }
+  ],
+  "source_sha256": {
+    "assets/source/art/regional_gallery_682/GALLERY.json": "e77384f9890453e9f6d8fe2f90d8632d2d6f56ad19865c83a77b8ff76e558771",
+    "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
+    "assets/validation_v5_17_19/build_gallery.py": "d070e96ba6c5e0cfd5255b34274ddb31f2afc35c571ac4fdab20fd2c1551927b",
+    "assets/validation_v5_17_4/build_gallery.py": "66647d29c9ea84dc413ddc0413513d31192a97dcbed1374913fe4a2e4de54368",
+    "assets/validation_v5_17_4/gallery.zs": "20e430edd4d518ff9462cbb28e70a70bb9595faa0dbc7153a3a2e852065c1c0d",
+    "src/MODELDEF": "7570644d8492c0704872e51c54c133ad248f97b69d9356e44050946d27bc688d",
+    "assets/source/art/beast_men_680/EXPORT.json": "50a127b8ab72c6b914829e36e77e6a21e178e7ad5e68176ad98e74bb09492790",
+    "assets/source/art/duendes_690/EXPORT.json": "fcf8b02c9c21e821e333ec187ad86c7a1bc612b2a073b963bbab43e7e08205a6",
+    "assets/source/art/guardians_698/EXPORT.json": "1975566e73f64f735f5907c2bcd2b95a40b9bdb7ec1b77acb64d28a52a354e23",
+    "src/models/caelum/folklore/beastmen/lobizon.png": "b3800911466d406a2257ffde20695640984754299e5bd5f6814677d1b48af863",
+    "src/models/caelum/folklore/beastmen/materials.png": "e12bed48a33b010f773a45af498fc77ab9e03bd242f7851e41b2d0be73a537b2",
+    "src/models/caelum/folklore/beastmen/lobizon.md3": "aba8bd1341c6c7c937f6c5f60030a35e2ba1ef501d68a1e44b32a4b58bfb8247",
+    "src/models/caelum/folklore/beastmen/uturunco.png": "91e144d2f2d8e59a49ef73b74d75e623caaee958ee6df6c8a43386533236b393",
+    "src/models/caelum/folklore/beastmen/uturunco.md3": "c28a60a1ba97c29497636b88d59b9325370fa4bc2b4bcbc0270a1dd912fc4cbf",
+    "src/models/caelum/folklore/beastmen/ucumar.png": "61b8e8eaea6206c44c7c52a42e912439b692f06fa219d8d521ea837a78ca61d0",
+    "src/models/caelum/folklore/beastmen/ucumar.md3": "09559d0c7565f3b727eaa5dbbc54bbbec29a7b828f0a4541fd2994689d8321da",
+    "src/caelum/data/beast_men_combat.modeldef": "959827f693ab0a58ee5ca615d03667b9ed8577fa063e77e20a63c0e67f217bd5",
+    "src/models/caelum/folklore/duendes/mikilo-face.png": "fefdb6a3b0b9148c063cc3ab79da88808f509fe2bab9c4a4c8dcc3ac1e7f0c7f",
+    "src/models/caelum/folklore/duendes/materials.png": "44ad4a610ed8d0045a51fcef84b34ee44bf9b2dee7adc107e6fb56ea1f2cd9c4",
+    "src/models/caelum/folklore/duendes/mikilo.md3": "e2e2fd42a8d32cf24cc7b56cc281d0603b4f13c892804507a89995737a641eb8",
+    "src/models/caelum/folklore/duendes/coquena-face.png": "57bc82b6743df393dd1d48baf66734cd1f1479ad719809c4f6e439c85c02f913",
+    "src/models/caelum/folklore/duendes/coquena.md3": "6137f385c6aee2d0be3e79f3162ce14aa4fb8205ad691ac0d9c3e145eee620d3",
+    "src/caelum/data/duende_combat.modeldef": "cf9b0f71efb0d5c9d4503b941e8f51d25041bf2028c7f9b7bc50de36d9f01008",
+    "src/models/caelum/folklore/guardians/yasi-face.png": "2cb2c1da113029d64a932eea191bc0b34153809ac47da1373031785c436374da",
+    "src/models/caelum/folklore/guardians/materials.png": "40fb9de4639f6edb2befe1458d41e64f625ec1f6a1a17ed7cb04f7da8ee027f5",
+    "src/models/caelum/folklore/guardians/body.png": "a9deb5b9e24c655143eaf04d759de856090b7c7bf56ae19c8bcb3cde030cac0d",
+    "src/models/caelum/folklore/guardians/yasi.md3": "377ff62fd4187101a373f87bcdacc4ed859f7f5c57c38ef371c15e80c7643b72",
+    "src/models/caelum/folklore/guardians/yastay-face.png": "29079660655b56461d8ece742b5fa1eb95f380f9b1ae4343bb117fec02cb82be",
+    "src/models/caelum/folklore/guardians/yastay.md3": "1f4b2b7e8e03c6ad7dd702dda03ce07e2600d2178067cd35e53a02dab531ed63",
+    "src/caelum/data/guardian_combat.modeldef": "41d493a94435aa9d848577fbf982df984d917e3febd60be5d4df3ef2b25230a6"
+  },
+  "fixture_sha256": "bd45d32fe11141640223e939f24f16e23697615ac4dc74cc6fcc47eab227093a",
+  "sha256": {
+    "ZSCRIPT": "cf781d3bee241eb85fea9bec30132ea3147c946ce859e8f5bcd9cf13ec760f15",
+    "MAPINFO": "015398f03aa8d078a9d9248228ff4770d2332e5d09bf0de87ae56c6d3cb6c34b",
+    "maps/CA682G.wad": "6f0aea867db38baca411c0402713058c110cd90996f21ed759cdb72ea180207c"
+  }
+}

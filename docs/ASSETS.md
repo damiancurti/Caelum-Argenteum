@@ -1,6 +1,62 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.27** - 2026-11-14.
+Documentation version: **5.17.28** - 2026-11-14.
+
+## 5.17.28 - Cuyo material and guardian regional gallery (#700, parent #463)
+
+The optional CA682G inspection room now contains ten displays of seven native
+species across Pampa, NOA, Litoral, Selva and Cuyo. Yasí Yateré stands in Litoral;
+Yastay is shown in both Cuyo and NOA according to the approved #453 allocation.
+These two Yastay copies compare one unique identity in an isolated catalogue
+room; no campaign duplication or population rule changes. Seven earlier figure
+positions and all F1-F12 functions remain; the overview now frames five plots.
+Number keys 1-4 select Yasí/Litoral, Yastay/Cuyo, Yastay/NOA and Cuyo ground.
+F5 retains ordinary walking. The single gallery source remains
+assets/source/art/regional_gallery_682/GALLERY.json; original CA463G is intact.
+
+One new owned 1254-square image, whose original bytes and exact prompt are under
+assets/source/art/regional_gallery_700, supplies CRCUYGR: pale dry mineral earth
+and irregular foothill gravel. PROVENANCE records the built-in image_gen source
+and hashes. Native Texture/Flat definitions repeat it over 128x128 map units,
+matching the existing study scale. This is a candidate material study, not
+fixed campaign geography or a mandatory habitat. The other regional materials,
+all creature models and original paintings remain byte-identical.
+
+Regenerate the material with python assets/generators/generate_cuyo_regional_materials.py
+--output build/cuyo-materials --install; build the optional room with
+python assets/validation_v5_17_19/build_gallery.py --output build/cuyo-gallery.
+Four material-export files and four gallery files each repeat byte-for-byte.
+The shared regional validator can read an explicit authoritative gallery path;
+the older #463/#682 checks still pass. Key validation rejects duplicates and
+unsupported keys. Region coverage, native class identity and nonoverlapping
+display bodies are checked against existing catalogue and model data.
+
+The six-sector room has 18 vertices and 23 linedefs. Native fresh/reload checks
+pass 45/94 assertions (139 total), including idle-state advancement, saved
+references, silent observer steps and unchanged positions after walking.
+A 630-tic strafe crosses all four regional boundaries, finishing at
+(1426.110,-256,0) inside Cuyo. The existing CA-KP-236 observer-noise suppression
+is retained; no forced figure-reset loop or production perception change is
+introduced. Native review covers the new closeups, ground repeat, overview and
+reload. All 18,356 package entries match src; only the
+new PNG/definition, TEXTURES include and two release diagnostics differ from
+#698. Prior #682 export metadata is refreshed for the new material dependency;
+its runtime outputs remain unchanged. Ammunition, documents, ingots, books and
+locks refresh only their dependent DESIGN/EXPORT hashes after the TEXTURES
+include. Non-hash design data matches the parent; regenerated native bytes and
+portable hashes remain identical. TEXTURES is explicitly LF for stable checkout
+hashes. Both validator failures and the complete dependency proof are retained.
+
+One 700-tic peaceful presentation sample with ten distant figures records
+1533.75 queue presents/s, p95/p99
+0.8503/1.0722 ms and
+28.571142 mean simulation ms/tic. Environment: Windows 11
+Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720,
+uncapped/vsync off, background unpaused at 5% audio. Queue intervals do not
+establish GPU/display timing, repeatability, comparative gains or campaign/siege
+acceptance. Evidence: assets/validation_v5_17_28/evidence/SUMMARY.json.
+CA700-CUYO-GALLERY-01 retains author review; other regions and character/item
+models remain unfinished.
 
 ## 5.17.27 - Yasí Yateré and Yastay combat models (#698, parent #461)
 

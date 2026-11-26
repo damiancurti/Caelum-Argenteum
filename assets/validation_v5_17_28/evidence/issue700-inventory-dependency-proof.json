@@ -1,0 +1,83 @@
+{
+  "ammunition": {
+    "unchanged_outputs": [
+      "models/caelum/inventory/ammunition/carbine.md3",
+      "editable/carbine.obj",
+      "models/caelum/inventory/ammunition/arrow.md3",
+      "editable/arrow.obj",
+      "models/caelum/inventory/ammunition/bolt.md3",
+      "editable/bolt.obj",
+      "models/caelum/inventory/ammunition/javelin_one.md3",
+      "editable/javelin_one.obj",
+      "models/caelum/inventory/ammunition/javelin_two.md3",
+      "editable/javelin_two.obj",
+      "models/caelum/inventory/ammunition/javelin_three.md3",
+      "editable/javelin_three.obj",
+      "models/caelum/inventory/ammunition/shotgun.md3",
+      "editable/shotgun.obj",
+      "editable/ammunition.mtl",
+      "caelum/data/inventory_ammunition.modeldef"
+    ],
+    "native_byte_comparisons": 8,
+    "portable_regeneration_hashes": 8,
+    "metadata_only": true
+  },
+  "documents": {
+    "unchanged_outputs": [
+      "models/caelum/inventory/documents/book.md3",
+      "editable/book.obj",
+      "models/caelum/inventory/documents/letter.md3",
+      "editable/letter.obj",
+      "models/caelum/inventory/documents/key.md3",
+      "editable/key.obj",
+      "models/caelum/inventory/documents/cloth.md3",
+      "editable/cloth.obj",
+      "models/caelum/inventory/documents/ingot.md3",
+      "editable/ingot.obj",
+      "editable/documents.mtl",
+      "caelum/data/inventory_documents.modeldef"
+    ],
+    "native_byte_comparisons": 6,
+    "portable_regeneration_hashes": 6,
+    "metadata_only": true
+  },
+  "ingots": {
+    "unchanged_outputs": [
+      "models/caelum/inventory/ingots/iron.md3",
+      "editable/iron.obj",
+      "models/caelum/inventory/ingots/copper.md3",
+      "editable/copper.obj",
+      "models/caelum/inventory/ingots/tin.md3",
+      "editable/tin.obj",
+      "models/caelum/inventory/ingots/bronze.md3",
+      "editable/bronze.obj",
+      "models/caelum/inventory/ingots/steel.md3",
+      "editable/steel.obj",
+      "models/caelum/inventory/ingots/silver.md3",
+      "editable/silver.obj",
+      "models/caelum/inventory/ingots/gold.md3",
+      "editable/gold.obj",
+      "editable/ingots.mtl",
+      "caelum/data/inventory_ingots.modeldef"
+    ],
+    "native_byte_comparisons": 8,
+    "portable_regeneration_hashes": 8,
+    "metadata_only": true
+  },
+  "books": {
+    "unchanged_outputs": [
+      "caelum/data/inventory_books.modeldef"
+    ],
+    "native_byte_comparisons": 1,
+    "portable_regeneration_hashes": 0,
+    "metadata_only": true
+  },
+  "locks": {
+    "unchanged_outputs": [
+      "caelum/data/inventory_locks.modeldef"
+    ],
+    "native_byte_comparisons": 1,
+    "portable_regeneration_hashes": 0,
+    "metadata_only": true
+  }
+}

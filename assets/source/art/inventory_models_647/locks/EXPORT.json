@@ -62,13 +62,13 @@
     }
   },
   "source_sha256": {
-    "DESIGN.json": "f34d986d71eb365ec81c78b2ffb917e4c2b23dc06f6e7b8553d684fbf194c623",
+    "DESIGN.json": "c43b17560c860db38ca789258f96c9a5b6b574b5dc1fa7b52857c43b9cf3d5ef",
     "PROVENANCE.json": "11f065f722558861a5e39014c2c0464ad4994f4567c26f1cebcb635f426d27da"
   },
   "external_source_sha256": {
     "assets/generators/generate_inventory_document_models.py": "f62ccbf2f7812fc91efda5a0cf8fffb89e7fb239aaef72b659a564b80bea8541",
-    "assets/source/art/inventory_models_647/documents/DESIGN.json": "f42dbe2c495aaf36a4a009ccda3002f14ac5e84851f138590ddf910ba29b9968",
-    "assets/source/art/inventory_models_647/documents/EXPORT.json": "0c32e22ed58f3246c6734338f1835e84b9c84aeb65a1d3a3425629b6eda68b02",
+    "assets/source/art/inventory_models_647/documents/DESIGN.json": "114f2ec0ef237d696adbe4faad3c8f1721d014d15417f50ef14c2364b38f7bed",
+    "assets/source/art/inventory_models_647/documents/EXPORT.json": "4ceddcdaf9f6ac19acd0845c4bcebf204e1d4ba14377ef3362ced7d262b188c7",
     "assets/source/art/inventory_models_647/documents/PROVENANCE.json": "a394355d8dc359d1d82cf281b2d008a0ca3df7de64090c3c1e864c0deac7d071",
     "src/caelum/equipment/CaelumLocks.zs": "836bc9d5871355226f1289c1892130683f15b8dea2e38304ad109d09820a4be4",
     "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04",

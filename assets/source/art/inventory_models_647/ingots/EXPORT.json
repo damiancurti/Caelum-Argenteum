@@ -300,7 +300,7 @@
     }
   },
   "source_sha256": {
-    "DESIGN.json": "b6c3c4020b5b2ed6f7b862747cf9dbb3f165452961890366517bda7052855617",
+    "DESIGN.json": "6378a3da7f94491df6a7cc16ed36b1b8486c1924515f5b551ed7129043b24860",
     "PROVENANCE.json": "0ec3c4ba343d6fdb339473c64dfb044738e1d0bbf494ad5ed299e12479008426"
   },
   "external_source_sha256": {
@@ -311,10 +311,10 @@
     "src/graphics/caelum/icons/materials/ca_material_steel_ingot.png": "353901f4271eaa64e05628b638e2eb3bf799b9f4dcf0bf729e55e46634f9d99a",
     "src/graphics/caelum/icons/materials/ca_material_silver_ingot.png": "d8a652358b9d98322b70e5eb5987a0af3d366e3d352bedb07d301007a5a3d340",
     "src/graphics/caelum/icons/materials/ca_material_gold_ingot.png": "bc95b522850d0ea81d0c059742f102ef9e5c20f015450a1043fbe7a89840268e",
-    "assets/source/art/inventory_models_647/documents/DESIGN.json": "f42dbe2c495aaf36a4a009ccda3002f14ac5e84851f138590ddf910ba29b9968",
+    "assets/source/art/inventory_models_647/documents/DESIGN.json": "114f2ec0ef237d696adbe4faad3c8f1721d014d15417f50ef14c2364b38f7bed",
     "src/caelum/core/CaelumConstants.zs": "08f5510cbf0dd058f9e45b3a46cc9fc0438c63dcdcc9769dbb60ef0a46d65dd4",
     "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04",
-    "src/TEXTURES": "9fee7e6372ca2dd03ddfa91012c5620313753d40a1e3c0ec36e1897183f5eeb1"
+    "src/TEXTURES": "b18f53438055b5d13e985e550629be4578c2d9852888756d3eca9a8f3f58218e"
   },
   "generator_sha256": {
     "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",

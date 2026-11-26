@@ -1,6 +1,6 @@
 {
   "schema_revision": 1,
-  "issue": 692,
+  "issue": 700,
   "status": "isolated_visual_inspection_not_campaign",
   "map": "CA682G",
   "title": "Regional bestiary inspection gallery",
@@ -28,9 +28,9 @@
       0
     ],
     "angle": 90,
-    "destination_plot": "Selva",
-    "input_tics": 420,
-    "duration_basis": "Reuse the verified 420-tic CA463G crossing: x-768 to x631 passes the final new boundary x512 without changing native speed."
+    "destination_plot": "Cuyo",
+    "input_tics": 630,
+    "duration_basis": "Extend the measured 420-tic x-768 to x631 crossing to 630 tics at unchanged native speed, reaching the added Cuyo plot beyond x1024. Verify actual position in the engine."
   },
   "plots": [
     {
@@ -64,6 +64,14 @@
         1024
       ],
       "floor": "CRSELVG"
+    },
+    {
+      "region": "Cuyo",
+      "x": [
+        1024,
+        1536
+      ],
+      "floor": "CRCUYGR"
     }
   ],
   "subjects": [
@@ -150,21 +158,58 @@
         0
       ],
       "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-007",
+      "kind": "yasi",
+      "class": "CaelumBestiary007",
+      "position": [
+        256,
+        180,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-011",
+      "kind": "yastay",
+      "class": "CaelumBestiary011",
+      "position": [
+        -64,
+        180,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Cuyo",
+      "catalogue_id": "CA-FOLK-011",
+      "kind": "yastay",
+      "class": "CaelumBestiary011",
+      "position": [
+        1280,
+        0,
+        0
+      ],
+      "angle": 270
     }
   ],
   "views": [
     {
       "id": "overview",
       "position": [
-        0,
-        -800,
-        1200
+        256,
+        -920,
+        1400
       ],
       "target": [
-        0,
+        256,
         0,
         0
-      ]
+      ],
+      "key": "F1"
     },
     {
       "id": "pampa",
@@ -177,7 +222,8 @@
         -768,
         0,
         26
-      ]
+      ],
+      "key": "F2"
     },
     {
       "id": "noa",
@@ -190,7 +236,8 @@
         -256,
         0,
         26
-      ]
+      ],
+      "key": "F3"
     },
     {
       "id": "litoral",
@@ -203,11 +250,13 @@
         256,
         0,
         26
-      ]
+      ],
+      "key": "F4"
     },
     {
       "id": "player",
-      "control": true
+      "control": true,
+      "key": "F5"
     },
     {
       "id": "selva",
@@ -220,7 +269,8 @@
         768,
         0,
         26
-      ]
+      ],
+      "key": "F6"
     },
     {
       "id": "pampa-tiles",
@@ -233,7 +283,8 @@
         -768,
         -280,
         0
-      ]
+      ],
+      "key": "F7"
     },
     {
       "id": "noa-tiles",
@@ -246,7 +297,8 @@
         -256,
         -280,
         0
-      ]
+      ],
+      "key": "F8"
     },
     {
       "id": "litoral-tiles",
@@ -259,7 +311,8 @@
         256,
         -280,
         0
-      ]
+      ],
+      "key": "F9"
     },
     {
       "id": "selva-tiles",
@@ -272,7 +325,8 @@
         768,
         -280,
         0
-      ]
+      ],
+      "key": "F10"
     },
     {
       "id": "mikilo",
@@ -285,7 +339,8 @@
         -384,
         0,
         26
-      ]
+      ],
+      "key": "F11"
     },
     {
       "id": "coquena",
@@ -298,24 +353,82 @@
         -128,
         0,
         26
+      ],
+      "key": "F12"
+    },
+    {
+      "id": "yasi-litoral",
+      "key": "1",
+      "position": [
+        256,
+        115,
+        40
+      ],
+      "target": [
+        256,
+        180,
+        26
+      ]
+    },
+    {
+      "id": "cuyo-yastay",
+      "key": "2",
+      "position": [
+        1280,
+        -110,
+        60
+      ],
+      "target": [
+        1280,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "yastay-noa",
+      "key": "3",
+      "position": [
+        -64,
+        115,
+        40
+      ],
+      "target": [
+        -64,
+        180,
+        26
+      ]
+    },
+    {
+      "id": "cuyo-tiles",
+      "key": "4",
+      "position": [
+        1280,
+        -280,
+        150
+      ],
+      "target": [
+        1280,
+        -280,
+        0
       ]
     }
   ],
   "notes": [
     "Inspection coordinates only; all campaign maps and encounters remain unchanged.",
     "Existing native actors/models with the established diagnostic passive-AI flag and protected observer. No new production behavior.",
-    "Five displays follow all approved allocations of these three repeatable species; named Rulo remains unchanged.",
     "Ground studies do not fix a campaign biome or mandatory creature habitat.",
-    "Original CA463G and its three visual pilots remain intact."
+    "Original CA463G and its three visual pilots remain intact.",
+    "Ten diagnostic displays cover every approved allocation of these seven candidate species. Two Yastay copies compare the same unique catalogue identity in separate approved regions; this does not authorize duplicate campaign characters."
   ],
   "animation_sample_wait_tics": 11,
   "animation_sample_basis": "Existing MIID native idle states last10 tics; wait11 to cross at least one boundary.",
   "inspection_staging": "Native classes with fixture-only Friendly flag and existing diagnostic simplification; original idle states advance normally. Production hostility is unchanged; no forced position resets.",
   "model_exports": [
     "assets/source/art/beast_men_680/EXPORT.json",
-    "assets/source/art/duendes_690/EXPORT.json"
+    "assets/source/art/duendes_690/EXPORT.json",
+    "assets/source/art/guardians_698/EXPORT.json"
   ],
-  "layout_basis": "Two added diagnostic positions evenly divide the existing NOA plot beside its retained Ucumar; no campaign coordinates or population. F11/F12 closeups preserve the original F1-F10 controls.",
+  "layout_basis": "Retain seven earlier figures and original F1-F12 functions. Add two unobstructed rear-row positions and one contiguous Cuyo plot; number keys1-4 inspect new displays/material. Overview frames all five plots. Coordinates are diagnostic only.",
   "silent_observer_steps": true,
   "inspection_noise_basis": "Mute only the diagnostic observer movement-noise timer; native walking speed, figure idle animation and production perception remain unchanged. Friendly and NOTARGET do not suppress anonymous sound investigation."
 }

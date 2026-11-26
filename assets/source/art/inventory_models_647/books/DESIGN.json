@@ -125,8 +125,8 @@
   },
   "source_sha256": {
     "assets/generators/generate_inventory_document_models.py": "f62ccbf2f7812fc91efda5a0cf8fffb89e7fb239aaef72b659a564b80bea8541",
-    "assets/source/art/inventory_models_647/documents/DESIGN.json": "f42dbe2c495aaf36a4a009ccda3002f14ac5e84851f138590ddf910ba29b9968",
-    "assets/source/art/inventory_models_647/documents/EXPORT.json": "0c32e22ed58f3246c6734338f1835e84b9c84aeb65a1d3a3425629b6eda68b02",
+    "assets/source/art/inventory_models_647/documents/DESIGN.json": "114f2ec0ef237d696adbe4faad3c8f1721d014d15417f50ef14c2364b38f7bed",
+    "assets/source/art/inventory_models_647/documents/EXPORT.json": "4ceddcdaf9f6ac19acd0845c4bcebf204e1d4ba14377ef3362ced7d262b188c7",
     "assets/source/art/inventory_models_647/documents/PROVENANCE.json": "a394355d8dc359d1d82cf281b2d008a0ca3df7de64090c3c1e864c0deac7d071",
     "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
     "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04",

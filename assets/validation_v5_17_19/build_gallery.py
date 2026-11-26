@@ -45,7 +45,8 @@ def build(output,baseline_materials=False):
     }
 
     void Verify()''')
-    template=template.replace('las dos uniones','las tres uniones').replace('crosses both regional boundaries','crosses all three regional boundaries')
+    boundary_count=len(config['plots'])-1
+    template=template.replace('las dos uniones',f'las {boundary_count} uniones').replace('crosses both regional boundaries',f'crosses all {boundary_count} regional boundaries')
     template=template.replace('    void Verify()', "    bool IsIdleState(Actor body, State value)\n    {\n        return value==body.SpawnState || body.InStateSequence(value,body.FindState('IdleBreathing'));\n    }\n\n    void Verify()")
     template=template.replace('Subjects[index].CurState != MotionSnapshot[index]',
         'Subjects[index].CurState != MotionSnapshot[index] && IsIdleState(Subjects[index],MotionSnapshot[index]) && IsIdleState(Subjects[index],Subjects[index].CurState)')

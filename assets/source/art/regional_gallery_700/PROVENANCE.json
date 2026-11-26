@@ -1,0 +1,21 @@
+{
+  "issue": 700,
+  "parent_issue": 463,
+  "ownership": "Original material generated for the author; source and exact prompt retained unchanged.",
+  "images": {
+    "cuyo_ground": {
+      "mode": "built-in image_gen",
+      "original_generated_path": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-2b30b7a3-a9f8-4e68-97ee-829cc33385a6.png",
+      "source_file": "cuyo_ground-v1.png",
+      "sha256": "12888f6754085f2b4954ea542939eb9c09ebf2280426ce35412945b9e13f878f",
+      "prompt": "cuyo_ground-v1.prompt.txt",
+      "prompt_sha256": "80515688b722735270f56950cd2b9395d68b866df426070728be5a872787c9f4",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "editing": "Original output copied unchanged; no raster postprocessing."
+    }
+  },
+  "limitations": "Cuyo dry foothill study, not approved campaign geography, mandatory habitat or final art. Native gallery and repetition reviewed; author art acceptance remains pending."
+}

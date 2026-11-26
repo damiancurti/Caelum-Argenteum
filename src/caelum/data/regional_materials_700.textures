@@ -1,0 +1,15 @@
+Texture "CRCUYGR", 1254, 1254
+{
+    XScale 9.796875
+    YScale 9.796875
+    WorldPanning
+    Patch "graphics/caelum/textures/regions_700/cuyo_ground-v1.png", 0, 0
+}
+
+Flat "CRCUYGR", 1254, 1254
+{
+    XScale 9.796875
+    YScale 9.796875
+    WorldPanning
+    Patch "graphics/caelum/textures/regions_700/cuyo_ground-v1.png", 0, 0
+}

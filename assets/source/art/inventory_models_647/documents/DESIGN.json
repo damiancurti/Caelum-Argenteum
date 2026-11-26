@@ -6,7 +6,7 @@
   "model_path": "models/caelum/inventory/documents",
   "editable_materials_name": "documents.mtl",
   "source_sha256": {
-    "assets/source/art/inventory_models_647/ammunition/DESIGN.json": "d44e2b59ab82e4aba1c8029871de7e788f63b040126c37acdf3a774f4489d004",
+    "assets/source/art/inventory_models_647/ammunition/DESIGN.json": "b30a6875988ba0fb1a31ac4ee443c6f57febc39d2e0eafeb4951e8d814f223ac",
     "assets/source/art/pombero_455/DESIGN.json": "f66b4b190744155748aca7e92afaf8183c1acf6db8b64b295f3cf77b44eea025",
     "src/caelum/crafting/CaelumRecipeLearning.zs": "a02fa0c0bafdf03b93d3e9695343f5580277ac99f8fb7f60dc33b8b023f2c6ff",
     "src/caelum/data/hygiene_resources.textures": "554791a8da7242257380c50b64dcc801c23dc647a7caed4d43ec78b09e17ae99",

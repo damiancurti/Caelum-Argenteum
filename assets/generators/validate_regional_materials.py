@@ -14,7 +14,7 @@ def validate(root=ROOT, issue=463):
         config=json.loads((source/'INVENTORY.json').read_text())
         report=json.loads((source/'EXPORT.json').read_text())
         provenance=json.loads((source/'PROVENANCE.json').read_text())
-        gallery=json.loads((source/'GALLERY.json').read_text())
+        gallery=json.loads((root/config['gallery_source'] if 'gallery_source' in config else source/'GALLERY.json').read_text())
         sources={source/name:checksum for name,checksum in report['source_sha256'].items()}
         sources.update({root/name:checksum for name,checksum in config['source_sha256'].items()})
         sources[root/'assets/generators/generate_regional_materials.py']=report['generator_sha256']
@@ -35,7 +35,7 @@ def validate(root=ROOT, issue=463):
         if (root/'src/TEXTURES').read_text(encoding='utf-8').count(include)!=1:errors.append('Expected one native material include')
         regions=json.loads((root/'assets/bestiary/REGION_PROPOSAL.json').read_text())
         assignments={row['id']:row['proposed_campaign_regions'] for row in regions['entries']}
-        if gallery['map']!=f'CA{issue}G' or gallery['status']!='isolated_visual_inspection_not_campaign':errors.append('Gallery must remain isolated')
+        if gallery['map']!=config.get('gallery_map',f'CA{issue}G') or gallery['status']!='isolated_visual_inspection_not_campaign':errors.append('Gallery must remain isolated')
         for item in gallery['subjects']:
             if item['region'] not in assignments[item['catalogue_id']]:errors.append('Unapproved gallery region for '+item['catalogue_id'])
         material_names={item['texture'] for item in config['gaps']} | set(config.get('reused_materials',[]))

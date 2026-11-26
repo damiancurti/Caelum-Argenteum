@@ -43,6 +43,7 @@ from assets.generators.validate_duende_models import validate as duende_model_pr
 from assets.generators.validate_guardian_models import validate as guardian_model_problems
 from assets.generators.validate_pombero_combat_model import validate as pombero_combat_problems
 from assets.generators.validate_beast_regional_materials import validate as beast_regional_material_problems
+from assets.generators.validate_cuyo_regional_materials import validate as cuyo_regional_material_problems
 from assets.generators.validate_regional_materials import validate as regional_material_problems
 from assets.generators.validate_map02_redesign import audit as sewer_redesign_audit
 from assets.generators.install_barracas_map import validate as barracas_installation_problems
@@ -126,6 +127,7 @@ def validate(root):
     errors.extend(inventory_ingot_problems(root))
     errors.extend(regional_material_problems(root))
     errors.extend(beast_regional_material_problems(root))
+    errors.extend(cuyo_regional_material_problems(root))
     errors.extend(pombero_combat_problems(root))
     errors.extend(beast_men_problems(root))
     errors.extend(duende_model_problems(root))
