@@ -1,0 +1,32 @@
+{
+  "issue": 680,
+  "ownership": "Original supplied bestiary references recovered in #453; source SHA-256 and original names remain in CATALOGUE.json.",
+  "creation": "Original parametric articulated anatomy and garment geometry using existing owned shape/pose helpers. Original concept pixels are retained, with a new built-in ImageGen companion material atlas for usable surface wrapping.",
+  "limits": "Derived 3D appearance is a candidate; catalogue sizes and campaign placements remain unauthorized. Rulo identity/profile is unchanged.",
+  "atlas": {
+    "mode": "built-in image_gen",
+    "original_generated_path": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-b602da20-0a89-40c0-bbe7-81f35a93ea48.png",
+    "source_file": "materials-v2.png",
+    "sha256": "e12bed48a33b010f773a45af498fc77ab9e03bd242f7851e41b2d0be73a537b2",
+    "prompt": "ATLAS-V2-PROMPT.txt",
+    "dimensions": [
+      1448,
+      1086
+    ],
+    "layout": "4 columns x 3 rows; unchanged opaque RGB output",
+    "reference_handling": "New companion atlas from text descriptions of inspected source concepts. Fine hair scale replaces the coarse initial texture; original concepts and atlas v1 retained unchanged. No raster postprocessing."
+  },
+  "previous_atlas": {
+    "mode": "built-in image_gen",
+    "original_generated_path": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-ab1c64b6-e297-4362-85a3-4e9cee4c2f6b.png",
+    "source_file": "materials-v1.png",
+    "sha256": "419852de931e952cdc390f3be8822465b956c993558fa05bfbbcdf6e069c2abb",
+    "prompt": "ATLAS-PROMPT.txt",
+    "dimensions": [
+      1448,
+      1086
+    ],
+    "layout": "4 columns x 3 rows; unchanged opaque RGB output",
+    "reference_handling": "Text descriptions derived from the three inspected original references; source concepts were not edited or replaced. No Python raster editing."
+  }
+}

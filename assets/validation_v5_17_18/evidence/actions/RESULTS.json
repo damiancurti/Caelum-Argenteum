@@ -1,0 +1,51 @@
+{
+  "issue": 680,
+  "runtime_sha256": "520beefcc9565067bb31f0a90886184f62f828b70e36e2f5b95670add57379ba",
+  "source_probe_sha256": "bf298e7c4b3ca7f0285f81c089b18f686ba0a114f65697252662af8b0121b65a",
+  "fixture_sha256": "7c73cf8564eeb01e0acc3e2c78707ea4a1f355fec27d08e20434fadba16fa348",
+  "runs": [
+    {
+      "phase": "actions",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 91,
+      "expected_assertions": 91,
+      "actions": [
+        "CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+        "CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=2 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=2 mode=1 damage=1 air=0 anima=1 projectiles=2 breath=0",
+        "CA455 ACTION PASS index=2 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=3 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=3 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=0",
+        "CA455 ACTION PASS index=3 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=4 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=4 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+        "CA455 ACTION PASS index=4 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1"
+      ],
+      "loot_audits": 0
+    },
+    {
+      "phase": "loot",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 71,
+      "expected_assertions": 71,
+      "actions": [],
+      "loot_audits": 2
+    },
+    {
+      "phase": "loot-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 28,
+      "expected_assertions": 28,
+      "actions": [],
+      "loot_audits": 2
+    }
+  ]
+}

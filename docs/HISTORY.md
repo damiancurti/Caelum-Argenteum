@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.17** - 2026-11-13.
+Documentation version: **5.17.18** - 2026-11-13.
+
+## 5.17.18 - Lobizon, Uturunco and Ucumar models (#680, 2026-11-13)
+
+The author's all-characters-3D request extends to three repeatable beast-men
+from recovered references. Initial isolated visual checks passed but exposed
+facial, shoulder and texture-scale defects. Candidates were revised without
+changing their approved provisional behavior. Original concepts, generated
+atlas versions/prompts and editable geometry remain preserved. Signed-volume
+checks reproduced six inward garment lofts; normalization fixes all twelve
+lofts without modifying shared helpers (CA-KP-235). The final tail revision
+smooths Uturunco's existing curve and tapers its tip.
+
+Static validation passes 704,260 coordinate checks, 30,620 native vertices,
+55,482 triangles, twelve surfaces and sixteen identical repeat-export files.
+The applicable five-phase native suites pass 345 checks; final-package actual
+actions/death/finite loot/reload pass 190. Three 700-tic one-subject sprite/model
+pairs record queue presentation and p95/p99 in ASSETS and evidence SUMMARY.
+The final package changes only Uturunco.md3 relative to the previous tested
+package: Lobizon/Ucumar evidence is reused for identical bytes; final jaguar
+continuity/presentation and all-species action/loot are rerun. All 18,271 src
+entries match the final package. Original concepts and old iterations remain.
+Author acceptance is separately tracked as CA680-BEAST-MEN-01; Rulo is unchanged.
+The simplified candidate anatomy is not an exact reference sculpt; this does
+not complete the roster, modular equipment, regional maps or siege performance.
 
 ## 5.17.17 - Material pendant and gem models (#678, 2026-11-13)
 

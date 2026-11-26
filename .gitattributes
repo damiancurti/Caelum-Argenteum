@@ -714,3 +714,12 @@
 /assets/validation_v5_17_17/*.py text eol=lf
 /assets/validation_v5_17_17/*.zs text eol=lf
 /assets/validation_v5_17_17/evidence/** -text -whitespace
+
+/assets/generators/*beast_men_models.py text eol=lf
+/assets/source/art/beast_men_680/** text eol=lf
+/assets/source/art/beast_men_680/**/*.png binary
+/assets/source/art/beast_men_680/*.png binary
+/src/caelum/data/beast_men_combat.modeldef text eol=lf
+/assets/validation_v5_17_18/*.py text eol=lf
+/assets/validation_v5_17_18/*.zs text eol=lf
+/assets/validation_v5_17_18/evidence/** -text -whitespace

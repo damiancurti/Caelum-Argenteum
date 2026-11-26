@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.17** - 2026-11-13.
+Documentation version: **5.17.18** - 2026-11-13.
+
+## #680 - Three beast-men combat models (5.17.18)
+
+Three distinct fixed-reference models and their 23 inherited frame mappings
+pass static geometry/source checks, 345 applicable native continuity checks,
+190 final-package action/loot checks and three isolated presentation pairs.
+Evidence reuse is restricted to proven unchanged bytes after the tail revision.
+Retain CA680-BEAST-MEN-01 for author visual/articulation review.
+Broader #461 roster and #458/#459 modular character/equipment work remain open.
 
 ## #678 - Pendant, gem and opal-component models (5.17.17)
 

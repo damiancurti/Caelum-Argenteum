@@ -4753,3 +4753,5 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_books.modeldef"
 
 #include "caelum/data/inventory_gems.modeldef"
+
+#include "caelum/data/beast_men_combat.modeldef"

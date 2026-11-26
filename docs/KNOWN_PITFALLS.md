@@ -4,6 +4,23 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-235 - Normalize closed loft row direction before building faces
+
+Status/evidence: STATIC-VERIFIED signed-volume comparison, #680, 2026-11-13.
+The shared Pombero loft helper constructs side faces and caps for ascending Z.
+Feeding descending waist/loincloth rows creates inward triangles and normals,
+even though the component is closed and its bounds and native poses are valid.
+Six garment shells reproduced negative signed volume; the six torso/skull
+lofts were already positive. The beast-men adapter orders loft rows upward
+before subdivision; all twelve shells then have positive signed volume.
+The existing shared helper and previously delivered models remain unchanged.
+
+Check signed volume independently from the generator's index/bounds checks.
+Native loading and visibility assertions alone do not detect inverted normals.
+See assets/validation_v5_17_18/evidence/loft-orientation.json and model10/model11
+iteration manifests. Appearance and author acceptance remain separate from
+this structural check; CA680-BEAST-MEN-01 is pending.
+
 ## CA-KP-234 - Normalize folded profile UVs before selecting atlas pixels
 
 Status/evidence: STATIC-VERIFIED geometry/UV checks and ENGINE-VERIFIED visual

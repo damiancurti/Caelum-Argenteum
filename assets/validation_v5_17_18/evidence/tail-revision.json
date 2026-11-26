@@ -1,0 +1,11 @@
+{
+  "changed_exports": [
+    "manifest.json",
+    "preview.pk3",
+    "editable/uturunco.obj",
+    "models/caelum/folklore/beastmen/uturunco.md3"
+  ],
+  "repeat_files": 16,
+  "repeat_byte_identical": true,
+  "unchanged_other_native_models": true
+}

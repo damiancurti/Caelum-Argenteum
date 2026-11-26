@@ -1,0 +1,102 @@
+{
+  "issue": 680,
+  "scope": "Independent signed triangle-volume comparison for all twelve closed torso/head/garment lofts. Reverse descending row order before shared geometry construction; no shared helper change.",
+  "rows": [
+    {
+      "species": "lobizon",
+      "shape_index": 1,
+      "part": "torso",
+      "material": "fur",
+      "prior_signed_volume": 9555.001632780539,
+      "corrected_signed_volume": 9555.001632780539
+    },
+    {
+      "species": "lobizon",
+      "shape_index": 3,
+      "part": "head",
+      "material": "fur",
+      "prior_signed_volume": 2045.9470933041732,
+      "corrected_signed_volume": 2045.9470933041732
+    },
+    {
+      "species": "lobizon",
+      "shape_index": 58,
+      "part": "pelvis",
+      "material": "cloth",
+      "prior_signed_volume": -2223.01083273566,
+      "corrected_signed_volume": 2223.010832735655
+    },
+    {
+      "species": "lobizon",
+      "shape_index": 59,
+      "part": "pelvis",
+      "material": "rope",
+      "prior_signed_volume": -834.1456817108729,
+      "corrected_signed_volume": 834.1456817108739
+    },
+    {
+      "species": "uturunco",
+      "shape_index": 1,
+      "part": "torso",
+      "material": "fur",
+      "prior_signed_volume": 10128.301730747336,
+      "corrected_signed_volume": 10128.301730747336
+    },
+    {
+      "species": "uturunco",
+      "shape_index": 3,
+      "part": "head",
+      "material": "fur",
+      "prior_signed_volume": 2168.7060155303793,
+      "corrected_signed_volume": 2168.7060155303793
+    },
+    {
+      "species": "uturunco",
+      "shape_index": 60,
+      "part": "pelvis",
+      "material": "cloth",
+      "prior_signed_volume": -2356.3914826997993,
+      "corrected_signed_volume": 2356.3914826997952
+    },
+    {
+      "species": "uturunco",
+      "shape_index": 61,
+      "part": "pelvis",
+      "material": "wrap",
+      "prior_signed_volume": -884.1944226135245,
+      "corrected_signed_volume": 884.194422613524
+    },
+    {
+      "species": "ucumar",
+      "shape_index": 1,
+      "part": "torso",
+      "material": "fur",
+      "prior_signed_volume": 11274.901926681046,
+      "corrected_signed_volume": 11274.901926681046
+    },
+    {
+      "species": "ucumar",
+      "shape_index": 3,
+      "part": "head",
+      "material": "fur",
+      "prior_signed_volume": 2414.2238599827933,
+      "corrected_signed_volume": 2414.2238599827933
+    },
+    {
+      "species": "ucumar",
+      "shape_index": 52,
+      "part": "pelvis",
+      "material": "cloth",
+      "prior_signed_volume": -4836.20589257755,
+      "corrected_signed_volume": 4836.205892577556
+    },
+    {
+      "species": "ucumar",
+      "shape_index": 53,
+      "part": "pelvis",
+      "material": "rope",
+      "prior_signed_volume": -984.2919044188337,
+      "corrected_signed_volume": 984.2919044188302
+    }
+  ]
+}

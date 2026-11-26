@@ -1,6 +1,15 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.17** - 2026-11-13.
+Documentation version: **5.17.18** - 2026-11-13.
+
+## 5.17.18 - Three beast-men receive native models (#680)
+
+CA-FOLK-003/004/005 retain the approved provisional Mandinga behavior, resources,
+collision, action durations, death/loot rules and saved identity. Explicit
+class-specific 23-frame model bindings change presentation only. Rulo remains
+its existing unique actor, not an alias of repeatable Ucumar. No encounter,
+size/balance authorization, new saved field or equipment rule is introduced.
+ASSETS/HISTORY separate native evidence from pending CA680-BEAST-MEN-01.
 
 ## 5.17.17 - Material jewelry and gem world models (#678)
 
