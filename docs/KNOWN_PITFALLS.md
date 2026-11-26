@@ -55,6 +55,17 @@ before/after views and exact source/export hashes are retained in
 assets/validation_v5_17_7/evidence/SUMMARY.json. Small original samples remain
 limited in close-up resolution; the margin does not imply higher-detail art.
 
+Additional STATIC-VERIFIED / NATIVE-VISUAL evidence, #670 (2026-11-13): projecting
+an accepted painted silhouette over closed mate geometry exposed transparent
+gold-foot texels. After correcting that profile, vertex-only alpha checks missed
+the bilinear edge around the curved bombilla. Barycentric samples along triangle
+edges/interiors plus the four neighboring texels found alpha 243-249. Moving the
+curve inside the existing painted stroke retains original pixels and passes the
+>=250 sampled margin. This finite sampling is not a proof over every UV point;
+native front/side/oblique/rear views remain necessary. Also inspect side seams:
+cosine front projection compressed motifs, improved by linear angular wrapping.
+Evidence: assets/validation_v5_17_13/evidence/SUMMARY.json. No bitmap was repainted.
+
 ## CA-KP-231 - Isolate deferred recipe-sheet delivery in inventory fixtures
 
 Status/evidence: ENGINE-VERIFIED fixture correction, #656, 2026-11-13.

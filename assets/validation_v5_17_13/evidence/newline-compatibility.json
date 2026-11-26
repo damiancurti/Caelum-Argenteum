@@ -1,0 +1,9 @@
+{
+  "scope": "Normalize hashed JSON and wrapper source line endings to LF before committing; exact four native model resources unchanged.",
+  "native_sha256": {
+    "src\\models\\caelum\\inventory\\mates\\gold.md3": "f483800c340593cd277348493105484d142ee7fa81d2119be1b10b07944e20bb",
+    "src\\models\\caelum\\inventory\\mates\\gourd.md3": "0608c435f7196a31727f217a4045a4a5f4488f3b895109a9dd91b15b5cd8de35",
+    "src\\models\\caelum\\inventory\\mates\\silver.md3": "d7003aa5dd2a139cf4653f56130b01f73dd716b9192b9a208fc7ef6c9ba4e0ee",
+    "src\\caelum\\data\\inventory_mates.modeldef": "66474385fa03da419b0368b9a0045672cbce63c05e5b9537682d68cbc63bda80"
+  }
+}

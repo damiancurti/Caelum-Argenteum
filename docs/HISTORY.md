@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.12** - 2026-11-13.
+Documentation version: **5.17.13** - 2026-11-13.
+
+## 5.17.13 - Closed mate drop models (#670)
+
+The author requested 3D for every inventory drop and deferred questions. Three
+new mate models follow the corrected #472 designs; rejected hemispheres remain
+unbound. Exact original painted sources, separate body/bombilla geometry and
+portable editing assets are preserved. All gameplay and save identities remain
+unchanged. Initial native visual fixtures passed 133 checks each. The final
+package passes 617 native continuity/rollback and cold-drink hydration checks;
+ten repeat exports and all 18,222 source/package entries match exactly.
+Three-object presentation: 1172.84/1194.33 queue presents/s, p95 1.0619/1.0414 ms,
+p99 1.3183/1.2891 ms. ASSETS records the measurement environment and limits.
+Evidence: assets/validation_v5_17_13/evidence/SUMMARY.json. Author CA670-MATES-01
+remains unconfirmed. No ordinary-menu, campaign or crowd acceptance is claimed.
 
 ## 5.17.12 - Water-ration waterskin (#668)
 
