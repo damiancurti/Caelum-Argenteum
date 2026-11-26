@@ -1,0 +1,29 @@
+{
+  "repeated_files": 23,
+  "byte_identical": true,
+  "sha256": {
+    "manifest.json": "6b27f42852789a40507dc07bf283678c4792a126df4a8d0acb6f0138ad79a270",
+    "preview.pk3": "7946a558fb8dc95237abfdad242d5d701fbc3aaf810af875c9385654f5adea2b",
+    "editable/assembly_components.mtl": "f52bb2f4dc8079f958ca38596c6864629e6c5e45e4075b7a82a1803ce5a4b634",
+    "editable/barrel.obj": "509bdda068c5d0cbc6001638440a58db26764b7c26664ece96ac0f2850f206f9",
+    "editable/bowstring.obj": "9da6500883e698447843c9c86f7e6eb5e3f8e199428e14a434a2b40b7b1e5eb6",
+    "editable/hilt.obj": "e9792f34343b1648c25f459973b58123a1f0791a2617db6fda570cc345b19bbc",
+    "editable/long_hilt.obj": "0cd2cfb12d0e5c115f2dd35b5ba7c1d3a69868c755b3167f8ec92621bd137ed4",
+    "editable/mechanism.obj": "62b7c505ee9bd1e74b067bcc2860f098bc976e96a4266891d41bb6f29d13d679",
+    "editable/point.obj": "eeedbe0d41266e9c0afea5a15f34a8e97df7bcc101bd76e76034c9179d84dbe5",
+    "editable/reinforced_bowstring.obj": "da60c14c3ececd28e31f64376b89c0d379641fe33a696216bc8a57f06246e644",
+    "editable/reinforced_strap.obj": "48b78b66d9e4c9d5234ab73235e09a92a6517320b0b2d1101e9671034eb5263c",
+    "editable/strap.obj": "094300c226e5ef9bfa9a33fbf4fb9494ec9de0118ffa0541748e7e7f234558af",
+    "caelum/data/inventory_assembly_components.modeldef": "f919a2f7c957761da3a9633a1e641b730f258165374a78a81f19982054685dd4",
+    "models/caelum/inventory/assembly_components/barrel.md3": "7ee7311708fd2867d8b3f31c0eef48a24cd531de5c978f6b27be83fb0363a3bb",
+    "models/caelum/inventory/assembly_components/bowstring.md3": "38756b7ac92a4226325737d0b8e9b26aa0a91b6df6503f651b76d65ff569cdf6",
+    "models/caelum/inventory/assembly_components/fibers.png": "d53ee33e337ee7264be88dac540e46ebb022df8540ab222dae73e533fcf0ee62",
+    "models/caelum/inventory/assembly_components/hilt.md3": "f7691357d5836d7d39688620d0e102b664636aa76e61e71cf0be326a8e2eacdf",
+    "models/caelum/inventory/assembly_components/long_hilt.md3": "e1e10fd702b85d9d4e2156d1865da4043b5295d721e6a52617891433a88b2584",
+    "models/caelum/inventory/assembly_components/mechanism.md3": "96137400151d3d4c49f6ee5ce4974c07003610891a2031c4dad41c4bf73b589c",
+    "models/caelum/inventory/assembly_components/point.md3": "d7e981c82411bfa3f9d3e9a32c6bed6a044d307c64262b95dc2e1dcc77719c73",
+    "models/caelum/inventory/assembly_components/reinforced_bowstring.md3": "d4dec6fed0ec2754cdb84131038e0d0bd52c2eb7d5b8900a2f1fd1f75fc864c1",
+    "models/caelum/inventory/assembly_components/reinforced_strap.md3": "79b7c78630dc2739d2a215f7ca90a45182cf8f65199b891919557d65164ea5a3",
+    "models/caelum/inventory/assembly_components/strap.md3": "67da8095f614d1d9491ec1f8d9dbead845acd8c6ddf7c0081f1511203974e2bd"
+  }
+}

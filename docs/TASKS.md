@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.40** - 2026-11-14.
+Documentation version: **5.17.41** - 2026-11-14.
+
+## #725 - Weapon assembly world drops (5.17.41)
+
+Nine native designs/all27 type-tier cases,83 closed solids,75 attachments and
+75 opening rays pass static checks. Native continuity passes3,893 assertions;
+23 exports repeat. CA725-ASSEMBLY-COMPONENTS-01 retains ordinary inventory,
+crafting and art review, including simplified ornament, coils and mechanism.
+The broader #647 inventory and character/modular work remains separate.
 
 ## #723 - Metal weapon crafting world drops (5.17.40)
 

@@ -1,0 +1,578 @@
+{
+  "schema_revision": 1,
+  "issue": 725,
+  "parent_issue": 647,
+  "status": "candidate_pending_author_review",
+  "variants": {
+    "hilt": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "grip",
+        "heel",
+        "collar",
+        "pommel",
+        "wrap",
+        "guard",
+        "scroll_left",
+        "scroll_right"
+      ],
+      "closed_outward_components": 8,
+      "vertices": 3013,
+      "triangles": 5500,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 1314,
+          "triangles": 2408
+        },
+        {
+          "material": "red_leather",
+          "vertices": 1699,
+          "triangles": 3092
+        }
+      ],
+      "reference_opaque_bounds": [
+        13,
+        9,
+        114,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 111.0,
+      "native_bounds": [
+        {
+          "min": [
+            -36.52391985036309,
+            -12.215339656042659,
+            0.0
+          ],
+          "max": [
+            36.52391985036309,
+            12.215339656042659,
+            111.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.8792830240065628,
+        "floor": 0.9349211470276275
+      }
+    },
+    "long_hilt": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "grip",
+        "heel",
+        "collar",
+        "pommel",
+        "wrap"
+      ],
+      "closed_outward_components": 5,
+      "vertices": 2797,
+      "triangles": 5108,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 306,
+          "triangles": 576
+        },
+        {
+          "material": "leather",
+          "vertices": 2491,
+          "triangles": 4532
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        8,
+        119,
+        119
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 111.0,
+      "native_bounds": [
+        {
+          "min": [
+            -11.25,
+            -9.75,
+            0.0
+          ],
+          "max": [
+            11.25,
+            9.75,
+            111.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.5,
+        "floor": 10.0
+      }
+    },
+    "point": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "point",
+        "socket"
+      ],
+      "closed_outward_components": 2,
+      "vertices": 364,
+      "triangles": 576,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 34,
+          "triangles": 64
+        },
+        {
+          "material": "socket_atlas",
+          "vertices": 330,
+          "triangles": 512
+        }
+      ],
+      "reference_opaque_bounds": [
+        16,
+        14,
+        118,
+        113
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 99.0,
+      "native_bounds": [
+        {
+          "min": [
+            -18.926470588235293,
+            -6.988235294117646,
+            0.0
+          ],
+          "max": [
+            18.926470588235293,
+            6.988235294117646,
+            99.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.4558823529411764,
+        "floor": 0.0
+      }
+    },
+    "bowstring": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "cord"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 3759,
+      "triangles": 6936,
+      "surfaces": [
+        {
+          "material": "fiber",
+          "vertices": 3759,
+          "triangles": 6936
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        15,
+        120,
+        113
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.00118587616361,
+            -40.45028814668705,
+            0.0
+          ],
+          "max": [
+            55.99881412383639,
+            40.44937869452974,
+            44.07510149170468
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 2.5930369906862683,
+        "floor": 2.401071868615511
+      }
+    },
+    "reinforced_bowstring": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "cord",
+        "start_ferrule",
+        "end_ferrule"
+      ],
+      "closed_outward_components": 3,
+      "vertices": 2898,
+      "triangles": 5152,
+      "surfaces": [
+        {
+          "material": "socket_atlas",
+          "vertices": 660,
+          "triangles": 1024
+        },
+        {
+          "material": "dark_fiber",
+          "vertices": 2238,
+          "triangles": 4128
+        }
+      ],
+      "reference_opaque_bounds": [
+        14,
+        26,
+        120,
+        106
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 106.0,
+      "native_bounds": [
+        {
+          "min": [
+            -54.182564772109565,
+            -40.634254102742034,
+            0.0
+          ],
+          "max": [
+            51.817435227890435,
+            37.69128289729424,
+            35.23198587628441
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 2.355896164308996,
+        "floor": 0.6641933455871665
+      }
+    },
+    "strap": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "belt",
+        "buckle_left",
+        "buckle_right",
+        "buckle_low",
+        "buckle_high",
+        "pin",
+        "tail"
+      ],
+      "closed_outward_components": 7,
+      "vertices": 682,
+      "triangles": 1312,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 260,
+          "triangles": 480
+        },
+        {
+          "material": "leather",
+          "vertices": 422,
+          "triangles": 832
+        }
+      ],
+      "reference_opaque_bounds": [
+        15,
+        23,
+        115,
+        105
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 100.0,
+      "native_bounds": [
+        {
+          "min": [
+            -50.00000000000001,
+            -42.95454545454546,
+            0.0
+          ],
+          "max": [
+            50.00000000000001,
+            36.36363636363637,
+            52.27272727272728
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 2.272727272727273,
+        "floor": -9.0
+      }
+    },
+    "reinforced_strap": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "belt",
+        "buckle_left",
+        "buckle_right",
+        "buckle_low",
+        "buckle_high",
+        "pin",
+        "tail",
+        "plate_00",
+        "rivet_00_0",
+        "rivet_00_1",
+        "plate_01",
+        "rivet_01_0",
+        "rivet_01_1",
+        "plate_02",
+        "rivet_02_0",
+        "rivet_02_1",
+        "plate_03",
+        "rivet_03_0",
+        "rivet_03_1",
+        "plate_04",
+        "rivet_04_0",
+        "rivet_04_1",
+        "plate_05",
+        "rivet_05_0",
+        "rivet_05_1",
+        "plate_06",
+        "rivet_06_0",
+        "rivet_06_1"
+      ],
+      "closed_outward_components": 28,
+      "vertices": 3566,
+      "triangles": 6716,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 476,
+          "triangles": 924
+        },
+        {
+          "material": "bronze",
+          "vertices": 2668,
+          "triangles": 4960
+        },
+        {
+          "material": "leather",
+          "vertices": 422,
+          "triangles": 832
+        }
+      ],
+      "reference_opaque_bounds": [
+        12,
+        22,
+        118,
+        107
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 106.0,
+      "native_bounds": [
+        {
+          "min": [
+            -51.071524882292024,
+            -43.875082739787246,
+            0.0
+          ],
+          "max": [
+            54.92847511770798,
+            40.968620175946995,
+            53.39295783148712
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 2.321432949195092,
+        "floor": -9.0
+      }
+    },
+    "barrel": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "tube",
+        "muzzle_ring",
+        "rear_ring",
+        "end_ring"
+      ],
+      "closed_outward_components": 4,
+      "vertices": 1320,
+      "triangles": 2048,
+      "surfaces": [
+        {
+          "material": "socket_atlas",
+          "vertices": 1320,
+          "triangles": 2048
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        13,
+        120,
+        115
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 102.0,
+      "native_bounds": [
+        {
+          "min": [
+            -7.026666666666666,
+            -7.026666666666666,
+            0.0
+          ],
+          "max": [
+            7.026666666666666,
+            7.026666666666666,
+            102.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.1333333333333333,
+        "floor": 0.0
+      }
+    },
+    "mechanism": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "backplate",
+        "gear",
+        "hub",
+        "spring",
+        "spring_low",
+        "spring_high",
+        "lever",
+        "lever_cap",
+        "lower_pivot",
+        "upper_pivot"
+      ],
+      "closed_outward_components": 10,
+      "vertices": 3707,
+      "triangles": 6812,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 540,
+          "triangles": 1004
+        },
+        {
+          "material": "steel",
+          "vertices": 2975,
+          "triangles": 5428
+        },
+        {
+          "material": "bronze",
+          "vertices": 192,
+          "triangles": 380
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        14,
+        119,
+        114
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 100.0,
+      "native_bounds": [
+        {
+          "min": [
+            -34.954407294832826,
+            -14.399017636325734,
+            0.0
+          ],
+          "max": [
+            37.99392097264438,
+            3.0395136778115504,
+            100.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.5197568389057752,
+        "floor": 6.0
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "2f62d3df33de76ef359562be5e981a1b369e67b93b214df08fa2925eb9267dc1",
+    "PROVENANCE.json": "c0d33378a372df9178c41b980505926a5f35b584368b1390d504098ca04cb919",
+    "FIBERS_PROMPT.json": "5eaa61975f4e4170a18b7720a3d9219ea3298569257999787243377ca6e57bfa"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/materials/ca_material_hilt.png": "bc70c14aa5199907b7a99e7a68ef11f91621fd4b35dd3a2972d7d0094f20f44f",
+    "src/graphics/caelum/icons/materials/ca_material_long_hilt.png": "850eb85c2ad2c9329109d3d2cf9d8e78b330d5f0962d227ef46cda0858c111cd",
+    "src/graphics/caelum/icons/materials/ca_material_point.png": "7dd3a08df732641f06d4eaf6b118a28e7448259c4a297913e67dc2743a1f979a",
+    "src/graphics/caelum/icons/materials/ca_material_bowstring.png": "dbe554e76b8aac8ff1f12184c7d747b7596c9e858124bfc1796ff6ae285025fa",
+    "src/graphics/caelum/icons/materials/ca_material_reinforced_bowstring.png": "ded1ee45d7dcc1dff61542faac34ac615eed8643ea68dccc9defeb3946485764",
+    "src/graphics/caelum/icons/materials/ca_material_strap.png": "0af22ceb8475822652ab1acde9591277e961a7844b02bd8e740b96659f2bf28c",
+    "src/graphics/caelum/icons/materials/ca_material_reinforced_strap.png": "bb503a3409b75ce76af2fac6e70a189041c0b405904e0972876bf354dbef94ca",
+    "src/graphics/caelum/icons/materials/ca_material_barrel.png": "dacd115c51adacbc8a4eee1fd5ebcf019a845b2bd5192ef01a5a0813d70e2283",
+    "src/graphics/caelum/icons/materials/ca_material_mechanism.png": "22e15d58bf2e1a4ae3e658eab04471f9dda2a8f944af4b4da21c7a57141db9fc",
+    "src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "src/models/caelum/inventory/assembly_components/fibers.png": "d53ee33e337ee7264be88dac540e46ebb022df8540ab222dae73e533fcf0ee62",
+    "assets/generators/generate_inventory_weapon_components_models.py": "49db0176aef05d21f21f7a356e58c4623c285eac15d2d1537bc8ddc8ec227958",
+    "assets/generators/generate_inventory_chains_models.py": "cd9296836666c78bd555c76e3de56d0ccc345c40ecb94a15d5e78f159719f94f",
+    "assets/generators/generate_peuchen_model.py": "0f1873c9fd1da0be0f965ea73ff2cc5c35dc25a35ac9da2df4692b50cef30812",
+    "assets/generators/generate_duende_models.py": "243d46cee79b1723f6b7ac9bd0b8c0c4f87b37f463cf8540cd7d51be2800511f"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_assembly_components_models.py": "312760353468b8f305b044f55c34052477a37c70c933ef355875a47c43965208"
+  },
+  "sha256": {
+    "models/caelum/inventory/assembly_components/hilt.md3": "f7691357d5836d7d39688620d0e102b664636aa76e61e71cf0be326a8e2eacdf",
+    "editable/hilt.obj": "e9792f34343b1648c25f459973b58123a1f0791a2617db6fda570cc345b19bbc",
+    "models/caelum/inventory/assembly_components/long_hilt.md3": "e1e10fd702b85d9d4e2156d1865da4043b5295d721e6a52617891433a88b2584",
+    "editable/long_hilt.obj": "0cd2cfb12d0e5c115f2dd35b5ba7c1d3a69868c755b3167f8ec92621bd137ed4",
+    "models/caelum/inventory/assembly_components/point.md3": "7697e836915ebeb0ba32fb006a69d85db311762a3a3dca7bffc1d6f0c43a78f1",
+    "editable/point.obj": "4e2b5623596a9ee419718696eb46a410daa7e00b9c242b9214e3804c6c3dfbe5",
+    "models/caelum/inventory/assembly_components/bowstring.md3": "fa4a0f9038743f6adafb28f74b395c3e385518617084ecfe2a42ece81c5ba3c2",
+    "editable/bowstring.obj": "63ee6f4354953a22e6959a288432e0673e7384ae44a3f39be6bc16a95b83f5aa",
+    "models/caelum/inventory/assembly_components/reinforced_bowstring.md3": "31f8d4c94efd680b2741b928f046c85b58da91bf46ec7739c4b944302a422a61",
+    "editable/reinforced_bowstring.obj": "62c678cbcff88f6a39f7fe6f24dcfd00f28372301e714f8acc64333ef9c13a7b",
+    "models/caelum/inventory/assembly_components/strap.md3": "0aee51cf8c0e4d3d394d6bb4dfb00cb9db40fca5228672da42dcdaa757bf3a10",
+    "editable/strap.obj": "8ec870d89368e9c7c40c5bc2b87e3e18484096b77245a919fc5a03acd1502f45",
+    "models/caelum/inventory/assembly_components/reinforced_strap.md3": "510d6092bb4a07dd117f9081ae7a1d905b2d48fc0b10691f8a7159f92fa45ae5",
+    "editable/reinforced_strap.obj": "0c571e480da292fbef74b7087682055d468ede6c26a3bd34d6925e3dfbf95c1a",
+    "models/caelum/inventory/assembly_components/barrel.md3": "7ee7311708fd2867d8b3f31c0eef48a24cd531de5c978f6b27be83fb0363a3bb",
+    "editable/barrel.obj": "509bdda068c5d0cbc6001638440a58db26764b7c26664ece96ac0f2850f206f9",
+    "models/caelum/inventory/assembly_components/mechanism.md3": "a09f08ef2c925e8a4f9d37a96e2922b0ee2c9891c34943041509c472f4b23efe",
+    "editable/mechanism.obj": "3e79708e9a9eb1a9ce15270e4a01f8624afee48634f393d8fb4e43905f03b6d0",
+    "editable/assembly_components.mtl": "f52bb2f4dc8079f958ca38596c6864629e6c5e45e4075b7a82a1803ce5a4b634",
+    "caelum/data/inventory_assembly_components.modeldef": "f919a2f7c957761da3a9633a1e641b730f258165374a78a81f19982054685dd4",
+    "models/caelum/inventory/assembly_components/fibers.png": "d53ee33e337ee7264be88dac540e46ebb022df8540ab222dae73e533fcf0ee62"
+  }
+}

@@ -1,6 +1,57 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.40** - 2026-11-14.
+Documentation version: **5.17.41** - 2026-11-14.
+
+## 5.17.41 - Weapon assembly component world models (#725, parent #647)
+
+Nine existing CaelumMaterialPickup designs gain native world models: hilt25,
+long hilt26, point27, bowstring30, reinforced bowstring31, strap32, reinforced
+strap33, barrel34 and mechanism35. Exact M025/026/027/030/031/032/033/034/035 A
+bindings cover all27 type/tier cases. Owned icons guide wrapped red/brown grips,
+a diamond-ridge point, twisted coiled cords/ferrules, leather loops/buckles,
+reinforcement, a hollow tube and a connected mechanical assembly. This is
+static world art: recipes, icons, quantities, tiers, weights, collision,
+Actor.Scale0.25, provenance, quest behavior and save schema are unchanged.
+
+83 closed solids contain34,364 vertices and61,776 triangles. The independent
+serialized inspector verifies outward topology,75 rooted contact witnesses,
+10 opening probes/75 rays, exact noncollapsed quantized MD3 triangles, sprite
+envelopes and floor contact. Probes cover coil/strap space, buckle windows,
+socket exits and the tube bore; they do not claim an unobstructed passage
+through the complete pointed head. Twenty-three exports repeat byte-for-byte.
+The shared #723 inspector now takes an optional source family; its original
+default checks remain unchanged.
+
+Model01 passes geometry and730 preview checks, but visual review finds smooth
+cords, partly occluded buckle rails and a flat mechanical backing. Model02
+adds actual twisted strands, mounting posts, a diamond ridge and open support
+arms; geometry and730 preview checks pass. All45 final detail views, floor
+overview and both presentation cohorts were inspected. Simplified grip
+ornament, regular coils, strap tails and mechanical detail remain candidate
+art requiring CA725-ASSEMBLY-COMPONENTS-01 author review.
+
+Editable sources and portable textures are in
+assets/source/art/inventory_models_647/assembly_components. The original
+fibers.png atlas was generated with built-in image_gen; FIBERS_PROMPT.json
+retains the exact prompt and PROVENANCE.json its origin/hash. #723 metal pixels
+are reused exactly, with their prior provenance. Original icons are preserved;
+no raster edits. Regenerate with python
+assets/generators/generate_inventory_assembly_components_models.py --output
+build/assembly-component-model --install.
+
+The final package passes3,893 native assertions (730/811/730/811/811) across
+baseline, old-save adoption, fresh models, reload and rollback. All27 cases
+retain native pickup/split/merge, lots, provenance, Box weight and quest guards.
+API probes do not establish ordinary menu/crafting acceptance.
+One700-tic nine-object sprite/model pair records 1006.19/998.93 queue presents/s,
+p95 1.1873/1.2344 ms and p99 1.4033/1.3956 ms on Windows11/Ryzen9 5950X/RTX3070Ti,
+GZDoom4.14.2 Vulkan1280x720, uncapped/vsync off, background unpaused/audio5%.
+Queue-only timing and different projected footprints establish no GPU/display,
+repeatability or campaign/crowd acceptance. All18,433 package entries match src;
+nine models, one atlas, one definition, MODELDEF and two release diagnostics
+are the only runtime changes from #723.
+Evidence: assets/validation_v5_17_41/evidence/SUMMARY.json. Other inventory,
+characters, worn/first-person art and the V5.16 campaign remain unfinished.
 
 ## 5.17.40 - Metal weapon crafting component world models (#723, parent #647)
 
