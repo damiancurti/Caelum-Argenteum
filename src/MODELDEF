@@ -4796,3 +4796,5 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_cartridge_kits.modeldef"
 
 #include "caelum/data/inventory_elemental_essences.modeldef"
+
+#include "caelum/data/inventory_orbs.modeldef"

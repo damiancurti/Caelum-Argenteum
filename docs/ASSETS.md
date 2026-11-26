@@ -1,6 +1,59 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.54** - 2026-11-15.
+Documentation version: **5.17.55** - 2026-11-15.
+
+## 5.17.55 - Native baseless Orb drops (#753, parent #647)
+
+The three Orb qualities gain exact S479 D/E/F bindings for CaelumWeaponPickup
+and CA_LimboMagicImplement. M091 A reuses T1 for all three component tiers,
+matching the existing material representation. Seven explicit bindings cover
+nine runtime cases. Original IDs, icons, scale/collision, quantities, weight,
+durability, contamination/provenance, magic, recipes, held art/hands and saves
+remain unchanged. Rejected #479 procedural support models stay inactive.
+
+The accepted baseless orb-floating-source.png is copied byte-for-byte as a
+high-resolution shader atlas. Three fully closed spheres carry shallow radial
+wood relief derived from its owned colors. No pedestal, billboard, raster edit
+or new image generation is introduced. The meshes total 9,030 vertices and
+18,048 triangles. Independent closure, winding, volume, genus, actual relief,
+depth, quantized native/editable triangles, grounded origin, source hashes and
+original icon envelopes pass. Eleven outputs repeat byte-for-byte. Editable
+sources and portable OBJ/MTL are in assets/source/art/inventory_models_647/orbs.
+Regenerate with python assets/generators/generate_inventory_orbs_models.py
+--output build/orbs --install. The shared validator now recognizes explicit
+frame letters while retaining A as its default for existing families.
+
+The first fixture incorrectly copied the Book's quintessence. Existing
+ValidEssence correctly rejects it for offensive Orbs; migration removed those
+invalid test items and the incomplete fixture then dereferenced a null item.
+The corrected fixture uses the already-supported water essence and guards
+incomplete arrays. No production migration or magic rule changed. Visual02
+showed excessive dark edge projection at the sides/top. Restricting UVs to the
+interior painted disk and smoothing/lowering relief corrected that artifact.
+Earlier evidence remains. Final visual03 passes 167 checks; all fifteen detail/
+underside views and the floor overview were inspected. Candidate limitations
+remain: repeated front/rear paint, stretched insets at grazing angles, low
+painted bands in overhead views, shallow carving and baked highlights. The
+2026-10-22 approval accepted the 2D design, not this native conversion.
+
+The installed package passes 720 checks: 160 baseline, 138 old-save adoption,
+160 fresh, 131 reload and 131 rollback. Native automatic equip, explicit
+equip/unequip, toss/repickup, saved identity, durability, material split/merge,
+provenance and prepared Box/quest guards pass. Ordinary menus, casting and real
+crafting remain author checks. One sequential 700-tic nine-object sprite/model
+pair records 646.91/653.02 queue presents/s,
+p95 3.7310/3.7697 ms and
+p99 4.6893/4.7163 ms.
+Both scenes were inspected. Windows 11, Ryzen 9 5950X, RTX 3070 Ti, GZDoom 4.14.2,
+Vulkan 1280x720, uncapped/vsync off, background unpaused/audio 5%. These queue
+intervals and unequal projected footprints do not establish GPU/display timing,
+repeatability or campaign/crowd performance. All 18,490 package entries match
+src; only three meshes, the byte-exact atlas alias, their definition, MODELDEF
+and two release diagnostic strings differ from #751.
+
+Evidence: assets/validation_v5_17_55/evidence/SUMMARY.json.
+CA753-ORB-DROPS-01 retains author visual and ordinary gameplay review.
+Other inventory, characters, modular equipment and V5.16 campaign work remain.
 
 ## 5.17.54 - Native elemental crafting essence drops (#751, parent #647)
 

@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.54** - 2026-11-15.
+Documentation version: **5.17.55** - 2026-11-15.
+
+## #753 - Baseless Orb world drops (5.17.55)
+
+Three closed candidate models cover both weapon classes and the shared material
+base. Geometry, eleven repeated outputs, 720 installed continuity checks and
+167 final visual/control checks pass. CA753-ORB-DROPS-01 retains author art and
+ordinary gameplay review. Six other material bases remain: staff36, bell37,
+statuette39, seal44, censer89 and scepter90. Other weapons, characters, modular
+equipment and V5.16 campaign work remain separate. #736 style proposals still
+require the requested visual review before broad modular character conversion.
 
 ## #751 - Elemental crafting material drops (5.17.54)
 

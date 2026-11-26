@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.54** - 2026-11-15.
+Documentation version: **5.17.55** - 2026-11-15.
+
+## 5.17.55 - Native baseless Orbs (#753, 2026-11-15)
+
+Added three closed Orb models using the unchanged accepted high-resolution
+atlas, preserving both weapon identities and the component base. Corrected a
+copied test essence rejected by existing offensive-magic migration; retained
+the failure/crash evidence and added an incomplete-array guard. Native review
+also corrected excessive dark edge projection and smoothed shallow carving.
+Eleven repeated outputs, 720 installed continuity checks and 167 final visual/
+control checks pass. ASSETS records qualified presentation and art findings.
+Evidence: assets/validation_v5_17_55/evidence/SUMMARY.json.
+CA753-ORB-DROPS-01 originates here and remains pending. No author test was
+accepted or removed; broader 3D and V5.16 campaign work continues.
 
 ## 5.17.54 - Native elemental crafting essences (#751, 2026-11-15)
 

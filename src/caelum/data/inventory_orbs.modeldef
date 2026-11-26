@@ -1,0 +1,7 @@
+Model CaelumWeaponPickup { Path "models/caelum/inventory/orbs" Model 0 "orb_t1.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 D 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/orbs" Model 0 "orb_t1.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 D 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/orbs" Model 0 "orb_t1.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M091 A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/orbs" Model 0 "orb_t2.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 E 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/orbs" Model 0 "orb_t2.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 E 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/orbs" Model 0 "orb_t3.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 F 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/orbs" Model 0 "orb_t3.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex S479 F 0 0 }

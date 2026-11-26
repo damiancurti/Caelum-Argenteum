@@ -1,0 +1,189 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-15 00:26:54
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue753-orbs01.pk3, 18490 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue753-native01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2959.47 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+CA753 PASS three native orb classes and all qualities retained
+CA753 PASS orb 0 saved reference
+CA753 PASS orb 0 original world quantity and ownership
+CA753 PASS orb 0 unchanged icon and orb state
+CA753 PASS orb 0 original scale, collision and floor contact
+CA753 PASS orb 0 copied provenance
+CA753 PASS orb 0 native support-orb identity
+CA753 PASS orb 0 original weapon weight
+CA753 PASS orb 0 independent saved item identity
+CA753 PASS orb 0 original world flags
+CA753 PASS orb 0 native durability and size
+CA753 PASS orb 1 saved reference
+CA753 PASS orb 1 original world quantity and ownership
+CA753 PASS orb 1 unchanged icon and orb state
+CA753 PASS orb 1 original scale, collision and floor contact
+CA753 PASS orb 1 copied provenance
+CA753 PASS orb 1 native support-orb identity
+CA753 PASS orb 1 original weapon weight
+CA753 PASS orb 1 independent saved item identity
+CA753 PASS orb 1 original world flags
+CA753 PASS orb 1 native durability and size
+CA753 PASS orb 2 saved reference
+CA753 PASS orb 2 original world quantity and ownership
+CA753 PASS orb 2 unchanged icon and orb state
+CA753 PASS orb 2 original scale, collision and floor contact
+CA753 PASS orb 2 copied provenance
+CA753 PASS orb 2 native support-orb identity
+CA753 PASS orb 2 original weapon weight
+CA753 PASS orb 2 independent saved item identity
+CA753 PASS orb 2 original world flags
+CA753 PASS orb 2 native durability and size
+CA753 PASS orb 3 saved reference
+CA753 PASS orb 3 original world quantity and ownership
+CA753 PASS orb 3 unchanged icon and orb state
+CA753 PASS orb 3 original scale, collision and floor contact
+CA753 PASS orb 3 copied provenance
+CA753 PASS orb 3 native support-orb identity
+CA753 PASS orb 3 original weapon weight
+CA753 PASS orb 3 independent saved item identity
+CA753 PASS orb 3 original world flags
+CA753 PASS orb 3 native durability and size
+CA753 PASS orb 4 saved reference
+CA753 PASS orb 4 original world quantity and ownership
+CA753 PASS orb 4 unchanged icon and orb state
+CA753 PASS orb 4 original scale, collision and floor contact
+CA753 PASS orb 4 copied provenance
+CA753 PASS orb 4 native support-orb identity
+CA753 PASS orb 4 original weapon weight
+CA753 PASS orb 4 independent saved item identity
+CA753 PASS orb 4 original world flags
+CA753 PASS orb 4 native durability and size
+CA753 PASS orb 5 saved reference
+CA753 PASS orb 5 original world quantity and ownership
+CA753 PASS orb 5 unchanged icon and orb state
+CA753 PASS orb 5 original scale, collision and floor contact
+CA753 PASS orb 5 copied provenance
+CA753 PASS orb 5 native support-orb identity
+CA753 PASS orb 5 original weapon weight
+CA753 PASS orb 5 independent saved item identity
+CA753 PASS orb 5 original world flags
+CA753 PASS orb 5 native durability and size
+CA753 PASS orb 6 saved reference
+CA753 PASS orb 6 original world quantity and ownership
+CA753 PASS orb 6 unchanged icon and orb state
+CA753 PASS orb 6 original scale, collision and floor contact
+CA753 PASS orb 6 copied provenance
+CA753 PASS orb 6 native component identity
+CA753 PASS orb 6 original component unit weight
+CA753 PASS orb 6 distinct retained stack
+CA753 PASS orb 6 original material flags and contamination
+CA753 PASS orb 7 saved reference
+CA753 PASS orb 7 original world quantity and ownership
+CA753 PASS orb 7 unchanged icon and orb state
+CA753 PASS orb 7 original scale, collision and floor contact
+CA753 PASS orb 7 copied provenance
+CA753 PASS orb 7 native component identity
+CA753 PASS orb 7 original component unit weight
+CA753 PASS orb 7 distinct retained stack
+CA753 PASS orb 7 original material flags and contamination
+CA753 PASS orb 8 saved reference
+CA753 PASS orb 8 original world quantity and ownership
+CA753 PASS orb 8 unchanged icon and orb state
+CA753 PASS orb 8 original scale, collision and floor contact
+CA753 PASS orb 8 copied provenance
+CA753 PASS orb 8 native component identity
+CA753 PASS orb 8 original component unit weight
+CA753 PASS orb 8 distinct retained stack
+CA753 PASS orb 8 original material flags and contamination
+CA753 COMPLETE failures=0
+CA753 PASS orb 0 native repickup
+CA753 PASS orb 0 recovered exact weapon metadata
+CA753 PASS orb 0 native support equip
+CA753 PASS orb 0 native unequip
+CA753 PASS orb 0 second weapon toss
+CA753 PASS orb 1 native repickup
+CA753 PASS orb 1 recovered exact weapon metadata
+CA753 PASS orb 1 native support equip
+CA753 PASS orb 1 native unequip
+CA753 PASS orb 1 second weapon toss
+CA753 PASS orb 2 native repickup
+CA753 PASS orb 2 recovered exact weapon metadata
+CA753 PASS orb 2 native support equip
+CA753 PASS orb 2 native unequip
+CA753 PASS orb 2 second weapon toss
+CA753 PASS orb 3 native repickup
+CA753 PASS orb 3 recovered exact weapon metadata
+CA753 PASS orb 3 native support equip
+CA753 PASS orb 3 native unequip
+CA753 PASS orb 3 second weapon toss
+CA753 PASS orb 4 native repickup
+CA753 PASS orb 4 recovered exact weapon metadata
+CA753 PASS orb 4 native support equip
+CA753 PASS orb 4 native unequip
+CA753 PASS orb 4 second weapon toss
+CA753 PASS orb 5 native repickup
+CA753 PASS orb 5 recovered exact weapon metadata
+CA753 PASS orb 5 native support equip
+CA753 PASS orb 5 native unequip
+CA753 PASS orb 5 second weapon toss
+CA753 PASS orb 6 native repickup
+CA753 PASS orb 6 same-tier native merge
+CA753 PASS orb 6 component provenance and contamination
+CA753 PASS orb 6 second component split
+CA753 PASS orb 7 native repickup
+CA753 PASS orb 7 same-tier native merge
+CA753 PASS orb 7 component provenance and contamination
+CA753 PASS orb 7 second component split
+CA753 PASS orb 8 native repickup
+CA753 PASS orb 8 same-tier native merge
+CA753 PASS orb 8 component provenance and contamination
+CA753 PASS orb 8 second component split
+CA753 PASS all orb representations retained after native use
+CA753 COMPLETE failures=0
