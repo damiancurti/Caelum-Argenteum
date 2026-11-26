@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.16.4** - 2026-11-13.
+Documentation version: **5.16.5** - 2026-11-13.
+
+## 5.16.5 / #457 - Approved finale predicate, no new scene
+
+The shared eligibility query now implements the approved personal 78-essence AND
+any approved-faction +250 test, with one qualifying participant sufficient for
+the group condition. It does not implement the actual entrance, group consent,
+Selene combat, revelations or epilogue. Its future checkpoint remains on the Moon
+before Selene, after the World acquisition; lunar travel must remain possible
+before that condition. No authored opening gate or narrative disclosure changed.
 
 ## 5.16.4 / #456 - Essence acquisition authoring ledger
 

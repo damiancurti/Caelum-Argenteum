@@ -1,0 +1,94 @@
+{
+  "issue": 457,
+  "release": "5.16.5",
+  "runtime_sha256": "fb416efdb791b4291b67a12287e8c4725268a3db42e02a90bd1abd3d7db52bab",
+  "all_packaged_source_bytes_match": true,
+  "native": {
+    "eligibility01": "Initial two-peer predicate and reload checks passed before the explicit direct-participant connection check and disconnect case.",
+    "eligibility02": "Final package: two-peer fresh/reload checks and actual guest disconnect pass."
+  },
+  "static": [
+    {
+      "command": [
+        "python",
+        "build_document_index.py"
+      ],
+      "exit_code": 0,
+      "log": "static-1.log"
+    },
+    {
+      "command": [
+        "python",
+        "assets/generators/generate_campaign_finale_data.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "static-2.log"
+    },
+    {
+      "command": [
+        "python",
+        "validate_project.py"
+      ],
+      "exit_code": 0,
+      "log": "static-3.log"
+    }
+  ],
+  "determinism": true,
+  "scope": [
+    "Two native local peers, fresh and reloaded; 48 initial checks per peer and 14 additional reload checks.",
+    "Actual guest departure yields zero eligible participants on the host in both phases.",
+    "Personal collection/reputation boundaries, approved factions, no affiliation, no physical-deck proxy, host/guest ownership, split-requirement rejection, read-only repeated queries."
+  ],
+  "limitations": [
+    "Fixture prepares records; no real acquisitions or narrative state changes.",
+    "Predicate is unbound to scene/travel; no group consent, entry, reward, revelation, combat, control-restoration or postgame acceptance.",
+    "No new saved fields. Existing native record persistence used. No performance or author acceptance claim."
+  ],
+  "files": {
+    "eligibility01/fixture.mapinfo": "76557d8a1d13b9acd6d39259a99c3118f8b3306401aed84cdfbf47eca2404c10",
+    "eligibility01/fixture.zs": "f2396a4a2ae8cabb714b647aca79bd9562f1d1a720cb06d814a9b950bbb93050",
+    "eligibility01/fresh/peer0/commands.cfg": "c71424f0266c8b0eb6393ba17dd7592c1e206c0b45a15c59da14805c49903bca",
+    "eligibility01/fresh/peer0/engine.log": "222724c3eca37726a95ccb8ee6540ae5861092bf28610b2eaa8897ddb034ce00",
+    "eligibility01/fresh/peer0/process.log": "5f72e81246e73adfbfbd30c119cab7bc85b1d51460a3cc588818408bbd694b55",
+    "eligibility01/fresh/peer0/session.ini": "749374737461612e483211b2b6dc0cbce7c97c0a380ff6506b4c88d56652ecd3",
+    "eligibility01/fresh/peer1/commands.cfg": "358ef5a8cbbf88b31c94862e8e796cf7d0917dc647a5f452bbe0113ee28b807a",
+    "eligibility01/fresh/peer1/engine.log": "43055a909ea57088bb28bd5ae2f572293e3859be222acac2b9c6324760e7f556",
+    "eligibility01/fresh/peer1/process.log": "c9434618ef82355036ee8f5938cba2f0be0589a11d07f172fddede4ef79203cb",
+    "eligibility01/fresh/peer1/session.ini": "564ca50dc19eff6340ca906a8f43aa62fb4dfd35409fabf4d48a2c65b721cca7",
+    "eligibility01/qualification.txt": "fb811b6d96e534138b0d1fc4e387eafe37aecc01fab1737c51e1d5e06b6c1a1f",
+    "eligibility01/reload/peer0/commands.cfg": "3606b107529a0f221ac7ba110854a92ef2e45f80b50dd116ea01fda56ccdf404",
+    "eligibility01/reload/peer0/engine.log": "fcfb9cb643c5778d2adb6bc39b1f29fb94b8b7d65d8a7086010f07c9bab2881f",
+    "eligibility01/reload/peer0/process.log": "b63f8982df3625e3d9b82d23c511999282b27529a51fd4a73de1edae660b7829",
+    "eligibility01/reload/peer0/session.ini": "daf04659a1d7dc2b8ede6ae23d55cbd32d49c287fa89242e8aaf64d5c92793ef",
+    "eligibility01/reload/peer1/commands.cfg": "358ef5a8cbbf88b31c94862e8e796cf7d0917dc647a5f452bbe0113ee28b807a",
+    "eligibility01/reload/peer1/engine.log": "493385a0fde721fe61c3ced35347ccf4c5937de3dbfbdcc52054be03a5c8794e",
+    "eligibility01/reload/peer1/process.log": "d3ffeede5f455baf1938385ec11f10f3d13be2756e2d254a0985b286c40f4c43",
+    "eligibility01/reload/peer1/session.ini": "445c7202dc675a9de6c98e44616aab14e1644d266be1f5195559e144ab8aca2c",
+    "eligibility01/results.json": "a471775bd1c39815b210a9736baa52667c2b7b70e44ceffcf3c7d8fca39fca81",
+    "eligibility02/fixture.mapinfo": "76557d8a1d13b9acd6d39259a99c3118f8b3306401aed84cdfbf47eca2404c10",
+    "eligibility02/fixture.zs": "d75cd9328c5276db8bf8a0a5a818eb7d00c4a8851d5025ab375ac97b754a9937",
+    "eligibility02/fresh/peer0/commands.cfg": "991ea62760957467d7b1f690b73df01048c1f13d6b1c9b1ac9b607274d5923e4",
+    "eligibility02/fresh/peer0/engine.log": "0d3c92fe6cf7cccdf13e479eacd502e96dcbc91317d5d1fd10677826bd9d11a0",
+    "eligibility02/fresh/peer0/process.log": "f01fe0298a04061862f27d8dea14ccac44aaf88923d30aaaa60d19b7824e3428",
+    "eligibility02/fresh/peer0/session.ini": "97f18690a3ef9c1950c34d4392b8440218eddbebb2bfe45719d1c77b592a1aef",
+    "eligibility02/fresh/peer1/commands.cfg": "358ef5a8cbbf88b31c94862e8e796cf7d0917dc647a5f452bbe0113ee28b807a",
+    "eligibility02/fresh/peer1/engine.log": "1a7ab3c28fcfa40d911d9e39009acce7a95ffc440b9c2b84e69ea129dd727891",
+    "eligibility02/fresh/peer1/process.log": "7f839d5958ed6f6a1ff7894ebfea49a126236cf1cd051720613b304fb2b0a389",
+    "eligibility02/fresh/peer1/session.ini": "6a98f597a1c6882ca5b0b5be74991c2a1c32aa2bd88dc440991a751dc94c1d51",
+    "eligibility02/qualification.txt": "faba29ee930f62a98c326b214f3de3d009018b2115b5627624c32ea3ffcb239e",
+    "eligibility02/reload/peer0/commands.cfg": "db05cca7f3c82751356c3f0853967287cf955fdc7eb6e5af8bc957d5e438bb60",
+    "eligibility02/reload/peer0/engine.log": "985ed466aaf07bf17dd24986469cc163cf6752550fa01b3c3adce68855b45d4a",
+    "eligibility02/reload/peer0/process.log": "9d79306d5771754ad8e405b0ca75753d86c903eeb0698fb49af76a7edbad14ca",
+    "eligibility02/reload/peer0/session.ini": "69da2779bc7f553b02c0b8c4330d30f1d83c5d98d15338bcdbe815c9f29e2e6c",
+    "eligibility02/reload/peer1/commands.cfg": "358ef5a8cbbf88b31c94862e8e796cf7d0917dc647a5f452bbe0113ee28b807a",
+    "eligibility02/reload/peer1/engine.log": "46ec53a81399b61cf2ba7feeb8f9f845e806ebd4fded30b2b1eaac04b17fb812",
+    "eligibility02/reload/peer1/process.log": "bf60b49a51089a97df2ed1317dc77fbcd865993bf68c06a2471eb62dc84232cd",
+    "eligibility02/reload/peer1/session.ini": "cc0cf24786b63b80345467407335ab301d4ff51a67e7a98360cd227a9465eec6",
+    "eligibility02/results.json": "abca99e2e10f820dec47b5e77589ac9749411f642ca7bbe92695bcbbe7e3010d",
+    "prelaunch-note.txt": "8f4fed7e2d3dfc4c73756688d5ec33e100137d0d5e000916b08614f15ceb09cf",
+    "static-1.log": "466cb8aea652e51c9fb1b08746b0b382ccdfdd17d1dc7d36f22e62093f9f86e1",
+    "static-2.log": "aa6aef9419913e7214cc9edcd56e473f28b61357a045443c969e4eb9393a09d7",
+    "static-3.log": "29457ae4e118a9b9ca8464c2ff655140081e0cfedf7e0586360c9df9ee58d32a"
+  }
+}

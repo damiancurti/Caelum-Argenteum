@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.16.4** - 2026-11-13.
+Documentation version: **5.16.5** - 2026-11-13.
+
+## 5.16.5 - Shared finale eligibility query (#457, in progress)
+
+CaelumCampaignEligibility reads personal acquired-essence and faction records.
+One admitted connected participant must satisfy both approved conditions: all 78
+essences and at least +250 with Unitarians, Federals, Free Peoples or Sun Warriors.
+Faction membership and possession of the physical deck are not substitutes.
+The query has no saved state, rewards, scene activation or travel side effects.
+It does not implement consent or the pre-Selene entrance, and is not a lunar-travel
+gate. Exact scripts, revelations, transitions and finale encounters remain open.
 
 ## 5.16.4 - Essence coverage and recovery contract (#456, in progress)
 

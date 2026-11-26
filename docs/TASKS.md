@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.16.4** - 2026-11-13.
+Documentation version: **5.16.5** - 2026-11-13.
+
+## 5.16.5 - Approved finale predicate, pending scenes (#457)
+
+Implemented the shared read-only personal/connected-roster eligibility query
+from approved PROGRESSION data. It requires one participant to satisfy both the
+78-essence and approved-faction +250 conditions, without affiliation. No scene or
+transport calls it yet. Next: author scripts, reveal gates, chapter outcomes and
+Selene encounter; integrate current-roster consent and verify control restoration,
+alternate routes, one-time outcomes and continued exploration. Existing memory
+and opening narrative behavior remains unchanged.
 
 ## 5.16.4 - Complete identity audit, pending acquisition authoring (#456)
 

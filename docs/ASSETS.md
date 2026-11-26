@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.16.4** - 2026-11-13.
+Documentation version: **5.16.5** - 2026-11-13.
+
+## 5.16.5 - Finale condition data (#457)
+
+`python assets/generators/generate_campaign_finale_data.py` derives the eligibility
+constants and existing faction identifiers from approved PROGRESSION.json.
+`--check` and project validation reject stale generated data. No visual or map
+asset is added, and the query is not attached to a narrative scene. Its isolated
+two-peer fixture lives in assets/validation_v5_16_5; supplied character progress
+must not be presented as normal campaign acquisition or scene acceptance.
 
 ## 5.16.4 - Essence coverage sources (#456)
 

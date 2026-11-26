@@ -1,6 +1,27 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.16.4** - 2026-11-13.
+Documentation version: **5.16.5** - 2026-11-13.
+
+## 5.16.5 / #457 - Finale eligibility query
+
+The approved condition combines all 78 personally acquired essences AND at least
++250 with ANY of Unitarians, Federals, Free Peoples or Sun Warriors. It requires
+no faction affiliation. The same participant must satisfy both parts; combining
+one person's collection with another person's reputation is invalid. Personal
+ownership and reputation are neither copied nor consumed by this query.
+
+CaelumCampaignFinaleData is generated from PROGRESSION.json; CaelumCampaignEligibility
+reuses the Tarot ownership service and native admitted-player authority. Its
+on-demand roster query is bounded by MAXPLAYERS and the fixed card catalogue,
+with no actor census or per-tick work. A disconnected/departed, unadmitted or
+unfinished character cannot qualify. It adds no health restriction to the normal
+participant authority. There is no new save schema or persistent eligibility cache.
+
+This is an available predicate, not an entrance or scene controller. Future
+integration must recheck the current roster and existing group consent at the
+authored pre-Selene checkpoint on the Moon. It must not apply the condition to
+lunar transport, move participants, disclose revelations or grant rewards merely
+because eligibility is true. Those scene bindings remain unimplemented.
 
 ## 5.16.4 / #456 - Approved new-essence recovery policy
 

@@ -1,0 +1,1 @@
+An early CLI attempt referenced eligibility01.pk3 while packaging was still running. Path resolution failed before creating a run directory or launching an engine. Both retained native suites use completed packages.

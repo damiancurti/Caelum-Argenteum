@@ -1,6 +1,56 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.16.4** - 2026-11-13.
+Documentation version: **5.16.5** - 2026-11-13.
+
+2026-11-13 #457 dependency refresh includes #456 commit3860858bb, enforcing
+the approved World-after-other-77 capture prerequisite while retaining old
+acquisitions. Finale eligibility remains unchanged. Combined project validation
+and two-peer eligibility fresh/reload checks are recorded separately under
+validation_v5_16_5/dependency-world-gate. This does not implement finale travel,
+consent, scenes or author acceptance.
+
+2026-11-13 #457 dependency refresh includes #455's Cuero visual pilot
+and its native/binary evidence, preserving this issue's runtime and authored data.
+Combined project validation passes in validation_v5_16_5/dependency-cuero.log;
+visual evidence retains its original #455 model/runtime hashes and qualifications.
+
+## 5.16.5 - Approved finale eligibility query (#457, 2026-11-13, in progress)
+
+Dependency refresh through #456 commit1e16f67f0 includes #455's Pombero facial
+and material refinement. Eligibility source and generated data remain unchanged.
+Combined project validation passes in validation_v5_16_5/dependency-pombero-face.log;
+the unintegrated visual evidence retains its own #455 runtime/model hashes.
+
+Dependency refresh through #456 commit5bc9a0b9c includes #454's tested perception
+change. Eligibility source and generated data remain unchanged. Combined project
+validation passes in validation_v5_16_5/dependency-perception.log; native evidence
+retains its originating build hashes. Scene/travel integration remains pending.
+
+Dependency refresh retains #455's Pombero technical pilot and #456 ancestry,
+without changing the #457 runtime. Combined project validation passes in
+validation_v5_16_5/dependency-pombero.log; existing native eligibility evidence
+continues to cover identical source behavior. Version5.16.5 is retained.
+
+Added generated condition data and a shared personal/connected-roster query for
+the approved 78-essence AND any approved-faction +250 rule. Both conditions belong
+to the same admitted character; no membership, physical-deck proxy or shared
+progress is introduced. The query has no new saved fields and does not mutate
+records. Existing narrative, rewards, travel and consent controllers are unchanged;
+the query is not yet bound to the unimplemented pre-Selene scene. Remaining
+scripts and revelations were left unauthored while questions are postponed.
+
+The isolated two-peer fresh/reload test passes the 77/78 collection boundary,
+249/250 reputation boundary for all four approved factions, no-membership rule,
+physical-deck insufficiency, rejected Caelith/Cult tracks, host/guest eligibility
+and rejection of requirements split between players. Departed and unadmitted
+profiles are excluded. Repeated queries and reload retain distinct personal
+collections/reputations without grants or consumption. The fixture prepares
+records directly; it does not test campaign acquisitions, consent, scenes or
+restoration of control. Evidence stays in assets/validation_v5_16_5. No author
+acceptance or full campaign completion is claimed.
+The final package also verifies an actual guest disconnect after both fresh and
+reloaded checks: the host's eligible roster becomes empty immediately on query.
+Static validation, generated-data freshness and repeatable generation pass.
 
 2026-11-13 #456 capture follow-up: the shared service now enforces the approved
 World-after-other-77 personal acquisition requirement while retaining separate
