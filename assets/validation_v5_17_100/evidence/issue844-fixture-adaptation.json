@@ -1,0 +1,36 @@
+[
+  {
+    "case": "base02",
+    "boxed": 0,
+    "stack_revision": 3,
+    "lots": {
+      "classtype": "CaelumFoodLots",
+      "class:CaelumFoodLots": {
+        "REVISION": 1,
+        "Lots": [
+          451,
+          452
+        ],
+        "kind": 7,
+        "Exposure": 0.0
+      }
+    }
+  },
+  {
+    "case": "base03",
+    "boxed": 1,
+    "stack_revision": 3,
+    "lots": {
+      "classtype": "CaelumFoodLots",
+      "class:CaelumFoodLots": {
+        "REVISION": 1,
+        "Lots": [
+          461,
+          462
+        ],
+        "kind": 7,
+        "Exposure": 0.0
+      }
+    }
+  }
+]

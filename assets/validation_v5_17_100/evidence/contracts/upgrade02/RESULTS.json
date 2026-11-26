@@ -1,0 +1,62 @@
+{
+  "issue": 844,
+  "passed": true,
+  "exit_code": 0,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-null02.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-upgrade02\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-upgrade02\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-upgrade02",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-upgrade02\\engine.log",
+    "-loadgame",
+    "input.zds",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-upgrade02\\commands.cfg"
+  ],
+  "errors": [],
+  "events": [
+    "ca502s_resume",
+    "ca502v_resume",
+    "ca844_null"
+  ],
+  "results": [
+    [
+      4,
+      0
+    ],
+    [
+      31,
+      0
+    ]
+  ],
+  "null_result": [
+    "33",
+    "0"
+  ],
+  "checks": 68,
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-null02.pk3": "cec68c135d044bee1649bb81c1a5d1330a6b21cafa533b34572a8fb1a4df5374",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-upgrade02\\checks.pk3": "1248a80082af8077255ed51c3df93a1937cbd02c022ed589634ebd5750c83069"
+  },
+  "retained_sources": {
+    "stacks.zs": "e74d012acab56cd653b8719e72e91faa40c29cf8c176e70b26f44d88404121e1",
+    "vessels.zs": "e396aba1406cfee7b7ceef0661aff74c198e5b3ee4d617e532411a3fe6ee46db"
+  },
+  "reference_runtime_sha256": "c8fe17e1002348cae5d3eeab3345dc6b57768fce53a59caad71c4519d17cc402",
+  "loaded_save_sha256": "ed25c7d6f1dd0e3b364b9b57dc228a27861bfa0d2dfc968bd749dd5a944d427a",
+  "saved_sha256": "819b38f2af7b6fa6e7da1887494fb80fbc75807e8d7c1d77394cd88e6ce0f450"
+}

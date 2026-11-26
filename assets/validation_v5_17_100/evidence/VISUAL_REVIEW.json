@@ -1,0 +1,47 @@
+{
+  "reviews": [
+    {
+      "label": "siege_final",
+      "path": "evidence/native/siege_final/peer0/scene.png",
+      "sha256": "b19aff00e9480e779990daa47fd2dfe1e6812c39dceddfd0755a07439f857ae2",
+      "directly_viewed": true,
+      "note": "Gate/ram, adjacent attackers, unchanged HUD and framing directly inspected. No visual-content change."
+    },
+    {
+      "label": "siege_control",
+      "path": "evidence/native/siege_control/peer0/scene.png",
+      "sha256": "19dbdec91a2a17851c19856671726274f63f4c79566969ab477ef2862811861a",
+      "directly_viewed": true,
+      "note": "Same gate/ram view and camera as final; apparent scene retained."
+    },
+    {
+      "label": "mansion_final",
+      "path": "evidence/native/mansion_final/peer0/scene.png",
+      "sha256": "961ce75af86f367a1414a15a228f3b053681fde21c4c5618d391e8d7790f0d54",
+      "directly_viewed": true,
+      "note": "Mansion entrance and Palomo with opening conversation overlay. Not unobstructed free-roam or traversal evidence."
+    },
+    {
+      "label": "sewers_final",
+      "path": "evidence/native/sewers_final/peer0/scene.png",
+      "sha256": "20b682f75f1548a5a2f632f2c89e99a21d58e25c7d667cfec24e31b07bb9cac1",
+      "directly_viewed": true,
+      "note": "Dark sewer entrance and HUD contamination68.7, matching preceding reference. Not a complete corridor walkthrough or new art acceptance."
+    },
+    {
+      "label": "city_final",
+      "path": "evidence/native/city_final/peer0/scene.png",
+      "sha256": "0f6d1c8dc9860e19eb308bd8273a3fb7541c6eb4c39fbead1fa8d9c0d730f3f5",
+      "directly_viewed": true,
+      "note": "Quay vehicles, shelter and city wall visible with retained geometry/HUD."
+    },
+    {
+      "label": "city_ground_final",
+      "path": "evidence/native/city_ground_final/peer0/scene.png",
+      "sha256": "3fcbe9ff44c3f6ea82581c21dbcb6f53a6a0e9bb7c2330dc9b4f4ebcf6652725",
+      "directly_viewed": true,
+      "note": "Ground-facing cobblestones and HUD; expected paired viewpoint."
+    }
+  ],
+  "qualification": "Direct image review by the agent; no author acceptance and no complete-map60FPS claim."
+}

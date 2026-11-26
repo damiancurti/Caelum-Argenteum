@@ -1,6 +1,63 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.99** - 2026-11-19.
+Documentation version: **5.17.100** - 2026-11-19.
+
+## 5.17.100 - Avoid empty inventory checks in physical contacts (#844, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Stack eligibility now returns false immediately for a null inventory. This
+avoids repeated pure type predicates when a physical contact endpoint has no
+inventory. All non-null code remains byte-identical, including item-type reads,
+ownership, stack migration, contamination, exposure/contact cadence and water.
+No fields, save schema, resources, collision, balance or population rules change.
+The shortcut is part of ordinary production, including offscreen/high-density work.
+
+The bounded environmental diagnosis separates 22 service scopes; a second
+11-scope pass identifies repeated stack eligibility inside contact/value reads.
+Timings are inclusive and contain nested probe overhead, so they cannot be added
+or compared as production costs across those differently instrumented passes.
+The native null oracle observes 655,541 null and 188,032 non-null calls on 42 sampled
+tics; every null result matches the original predicate. An alternating-order
+160,000-call null microbenchmark records 2.6139/0.4471 ms for original/candidate;
+the candidate uses a small instance wrapper and the reference is static. This
+demonstrates the narrow fast path, not a precise production percentage.
+
+Five canonical native runs pass 642 assertions: 219 each for control/final fresh
+state and 68 each for upgrade/reload/rollback; 355 execute the final package.
+They cover the retained material/potion/vessel catalogue, quantities, heterogeneous
+lots, contacts, NPC ownership, Box/chest storage, immersion, mounted cooking pot,
+nested dining storage and original saved identities/concentrations. All 18,755
+package members match source; only the null guard/comment and two diagnostic
+version strings differ from 5.17.99.
+
+The preserved initial fixture used an unknown map without a climate profile;
+the corrected fixture uses the original vessel test's MAP01 climate. Its older
+resume assertion assumed ledger revision 1 instead of the current authoritative 3.
+Seeding before the Box grant also let normal ownership synchronization unbox the
+test stack; saved-state excerpts verify that setup error. Seed after the other
+checks and the Box grant, and compare against CaelumStackSurfaceData.REVISION.
+These corrections affect the laboratory, not production or saved game rules.
+
+| Scene/package | Queue presents/s | Tic intervals mean / p95 / p99 / max (ms) | Present p95 / p99 / max (ms) |
+| --- | ---: | --- | --- |
+| siege_final | 1.9460 | 30.4782 / 44.9880 / 47.3640 / 57.7063 | 550.4390 / 551.0809 / 551.0809 |
+| siege_control | 1.8840 | 31.4184 / 46.2068 / 49.2872 / 62.0056 | 561.0501 / 576.1364 / 576.1364 |
+| mansion_final | 74.3505 | 28.5856 / 39.6128 / 40.8034 / 44.0329 | 15.3012 / 16.6701 / 19.4388 |
+| sewers_final | 198.3711 | 28.5734 / 32.4488 / 33.8886 / 43.5680 | 6.8831 / 7.9660 / 38.1573 |
+| city_final | 104.5632 | 28.5770 / 36.1456 / 37.6843 / 38.3159 | 10.6833 / 11.5442 / 14.6398 |
+| city_ground_final | 76.4724 | 28.5854 / 38.5510 / 39.9852 / 41.2802 | 15.1732 / 15.9933 / 18.5594 |
+
+All six production scenes run sequentially on Windows 11 / Ryzen 9 5950X /
+RTX 3070 Ti, native GZDoom 4.14.2, Vulkan 1280x720, unpaused background and 5% audio.
+Paired siege health, camera and census match: 988 attackers, 601 defenders and
+the player, 1590 living bodies. Tic intervals include pacing/frame work; they
+are not isolated CPU simulation. Queue presents do not establish monitor scanout.
+Reference entrances are not full walkthroughs; the mansion includes its opening
+conversation overlay. Overall siege rendering remains poor. Author acceptance,
+other V5.16/V5.17 work and the single final author terminal remain pending.
+pending_test.txt is unchanged. Evidence: assets/validation_v5_17_100.
+
 
 ## 5.17.99 - Preserve shelter rules with bounded connectivity (#842, #454)
 

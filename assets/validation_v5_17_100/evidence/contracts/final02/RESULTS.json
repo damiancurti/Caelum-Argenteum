@@ -1,0 +1,127 @@
+{
+  "issue": 844,
+  "passed": true,
+  "exit_code": 0,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-null02.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-final02\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-final02\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-final02",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-final02\\engine.log",
+    "+map",
+    "MAP01",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-final02\\commands.cfg"
+  ],
+  "errors": [],
+  "events": [
+    "ca502s_core",
+    "ca502s_native",
+    "ca502s_exposure",
+    "ca502s_contact",
+    "ca502s_storage",
+    "ca502s_catalogue",
+    "ca502s_npc",
+    "ca502v_catalogue",
+    "ca502v_storage",
+    "ca502v_immersion",
+    "ca502v_camp",
+    "ca502v_packed",
+    "ca502v_contact",
+    "ca502v_seed",
+    "ca502s_seed",
+    "ca844_null"
+  ],
+  "results": [
+    [
+      12,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      29,
+      0
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      100,
+      0
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "null_result": [
+    "33",
+    "0"
+  ],
+  "checks": 219,
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-null02.pk3": "cec68c135d044bee1649bb81c1a5d1330a6b21cafa533b34572a8fb1a4df5374",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue844-fixture-final02\\checks.pk3": "1248a80082af8077255ed51c3df93a1937cbd02c022ed589634ebd5750c83069"
+  },
+  "retained_sources": {
+    "stacks.zs": "e74d012acab56cd653b8719e72e91faa40c29cf8c176e70b26f44d88404121e1",
+    "vessels.zs": "e396aba1406cfee7b7ceef0661aff74c198e5b3ee4d617e532411a3fe6ee46db"
+  },
+  "reference_runtime_sha256": "c8fe17e1002348cae5d3eeab3345dc6b57768fce53a59caad71c4519d17cc402",
+  "loaded_save_sha256": null,
+  "saved_sha256": "4b6970a173debb7f4334509d7ecf8fa6f9e53fbe15f148d79cf6f241ac09b9ff"
+}

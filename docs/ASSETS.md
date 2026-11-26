@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.99** - 2026-11-19.
+Documentation version: **5.17.100** - 2026-11-19.
+
+## 5.17.100 - Avoid empty inventory checks in physical contacts (#844, #454)
+
+No art, audio, model, texture or runtime asset identity changes. The production
+edit only avoids null-inventory stack type checks. assets/validation_v5_17_100
+retains exact-source probes, native stack/vessel and save fixtures, their setup
+corrections, timing traces and reference captures. Private engines, IWADs,
+packages and saves stay local. See HISTORY for results and measurement limits;
+existing artwork and author-review status remain unchanged.
+
 
 ## 5.17.99 - Preserve shelter rules with bounded connectivity (#842, #454)
 
