@@ -1,6 +1,63 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.48** - 2026-11-14.
+Documentation version: **5.17.49** - 2026-11-14.
+
+## 5.17.49 - Native hygiene crafting drops (#741, parent #647)
+
+Three existing untiered CaelumMaterialPickup identities gain exact native
+M105/M106/M107 A bindings: animal fat, alkali and soap. Their owned #502
+images, accepted under CA502-SUPPLIES-01 on 2026-10-25, guide the pale irregular
+fat volume, open russet stoneware jar with white flakes and cream hand-cut
+soap. The jar is presentation, not a recoverable container. Cloth already has
+its own native model and remains unchanged. Recipes, tier normalization,
+amounts, weight, collision, Actor.Scale0.25, provenance, contamination lots,
+soap credit, hygiene tasks and save schema remain unchanged.
+
+The three models contain 4,273 vertices, 7,804 triangles, fifteen closed
+components and twelve independently verified contact witnesses. The jar has
+a continuous outer/inner wall, rolled lip, real cavity and connected alkali
+fill/flakes; five upward rays verify its open mouth. Serialized topology,
+quantized OBJ/MD3 triangle equivalence, floor/original sprite envelopes and
+all 92 soap UV triangles pass. Eleven exports repeat byte-for-byte.
+
+Initial native inspection found bead-like fat lobes and stretched soap side
+UVs. Model02 replaces fat with a single closed deformed volume and maps each
+soap face in two dimensions. Model04 adds broader upper relief and a rounded
+fat outline to distinguish it from soap. Earlier sources, manifests and
+selected inspected captures are retained. A cloned validator initially read
+the wrong source family; its failure and correction are recorded separately
+from the passing geometry checks. All fifteen final front/edge/rear/underside
+views, the three-case floor overview and both presentation cohorts were
+inspected. Simplified raised fat lobes, a visible wrap seam, jar coloration
+and underside UV swirl, flake shapes and regular soap bevels remain candidate
+art requiring author review.
+
+Editable geometry, contacts, OBJ/MTL and portable materials:
+assets/source/art/inventory_models_647/hygiene. Built-in image_gen produced
+materials.png; MATERIALS_PROMPT.json retains its exact prompt, and
+PROVENANCE.json records the original output path/hash and owned references.
+Pixels are unchanged copies. Regenerate with python
+assets/generators/generate_inventory_hygiene_models.py --output build/hygiene
+--install. No other accepted art or production behavior is replaced.
+
+The installed package passes 437 native assertions (82/91/82/91/91) across
+baseline, old-save adoption, fresh models, reload and rollback. All three
+cases retain pickup/toss, split/merge, lot/provenance data and prepared
+Box/quest guards. These API probes do not establish ordinary menus, actual
+washing/crafting tasks or author acceptance. One sequential 700-tic
+three-object sprite/model pair records 947.34/939.89 queue presents/s,
+p95 1.2614/1.2732 ms and p99 1.5115/1.5215 ms.
+Environment: Windows 11, Ryzen 9 5950X, RTX 3070 Ti, GZDoom 4.14.2 Vulkan,
+1280x720, uncapped/vsync off, background unpaused/audio 5%. Queue-only timing,
+one pair and unequal projected footprints do not establish GPU/display
+timing, repeatability or campaign/crowd performance. All 18,463 package
+entries match src; three meshes, one atlas, one definition, MODELDEF and two
+required release diagnostics are the only runtime changes from #739.
+
+Evidence: assets/validation_v5_17_49/evidence/SUMMARY.json.
+CA741-HYGIENE-DROPS-01 retains author art and ordinary hygiene/inventory review.
+Other materials, weapons, armor, characters, modular equipment and the V5.16
+campaign remain unfinished.
 
 ## 5.17.48 - Basilisco regional inspection (#739, parent #463)
 

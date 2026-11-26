@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.48** - 2026-11-14.
+Documentation version: **5.17.49** - 2026-11-14.
+
+## 5.17.49 - Hygiene crafting drop models (#741)
+
+Fat105, alkali106 and soap107 gain native volumes from their accepted icons.
+Fifteen closed components, twelve contacts, five opening rays, 92 soap UV
+triangles, eleven repeated exports and 437 native continuity assertions pass.
+ASSETS records the qualified presentation pair. CA741-HYGIENE-DROPS-01 retains
+art and ordinary hygiene/inventory acceptance. Existing cloth, icons and
+gameplay are unchanged. Other dropped equipment, characters, modular work
+and the original campaign remain incomplete.
 
 ## 5.17.48 - Basilisco regional display (#739)
 

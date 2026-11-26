@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.48** - 2026-11-14.
+Documentation version: **5.17.49** - 2026-11-14.
+
+## #741 - Hygiene world drops (5.17.49)
+
+Three untiered crafting identities have closed native candidate models.
+Independent geometry/contact/opening/UV checks, eleven repeatable outputs
+and 437 native continuity assertions pass. CA741-HYGIENE-DROPS-01 retains
+ordinary inventory/hygiene and visual review, including fat lobes/wrap seam,
+jar color/underside swirl, alkali flakes and soap bevels. Other #647 inventory,
+character and modular work remains separate.
 
 ## #739 - Basilisco regional gallery (5.17.48)
 

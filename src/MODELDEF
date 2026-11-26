@@ -4790,3 +4790,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_textiles.modeldef"
 
 #include "caelum/data/basilisco_combat.modeldef"
+#include "caelum/data/inventory_hygiene.modeldef"
