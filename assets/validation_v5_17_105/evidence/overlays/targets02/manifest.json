@@ -1,0 +1,76 @@
+{
+  "issue": 853,
+  "runtime_sha256": "1bf92c28f7317875e10aace435bc730507602e98c6dc4681c79f54a74e48f0cf",
+  "original_source_sha256": "f0257673fc42823e3cb7f07ae7fa8d20c58159528496da5b97cc038a2832fa33",
+  "overlay_sha256": "b0cb3aa12799078bfafa0b02fe44a8810986125e9d2dde7b0d467ef6124a2871",
+  "inverse_exact": true,
+  "period": 17,
+  "metrics": [
+    {
+      "id": 0,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "FindState_Pain"
+    },
+    {
+      "id": 1,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "FindState_RacialBreath"
+    },
+    {
+      "id": 2,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Sequence_Pain"
+    },
+    {
+      "id": 3,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Sequence_RacialBreath"
+    },
+    {
+      "id": 4,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Sequence_attack"
+    },
+    {
+      "id": 5,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "BattleCry_Active"
+    },
+    {
+      "id": 6,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Telekinesis_Held"
+    },
+    {
+      "id": 7,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Bolas_Restrained"
+    },
+    {
+      "id": 8,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Bolas_Interrupted"
+    },
+    {
+      "id": 9,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Visual_Identify"
+    },
+    {
+      "id": 10,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "Breath_CanReach"
+    },
+    {
+      "id": 11,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "StopBreath"
+    },
+    {
+      "id": 12,
+      "path": "caelum/actors/CaelumDemonService.zs",
+      "method": "UpdateBreath"
+    }
+  ],
+  "qualification": "Original call counts, operands and order preserved. Native state lookups use StateLabel, not String. Inclusive outer scopes contain the nested probes and must not be summed. Timer/helper overhead remains; no production gain is established."
+}

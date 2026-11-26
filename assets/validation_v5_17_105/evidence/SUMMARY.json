@@ -1,0 +1,20 @@
+{
+  "issue": 853,
+  "full_validation_pending": false,
+  "author_queue_unchanged": true,
+  "no_gameplay_change": true,
+  "regression_reproduced": true,
+  "targets": [
+    {
+      "actor": "CaelumSewerEscapeTarget",
+      "calls": 39228,
+      "identified": 143
+    },
+    {
+      "actor": "CaelumPlayer",
+      "calls": 74,
+      "identified": 74
+    }
+  ],
+  "full_validation_passed": true
+}

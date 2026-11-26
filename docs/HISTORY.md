@@ -1,6 +1,48 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.104** - 2026-11-19.
+Documentation version: **5.17.105** - 2026-11-19.
+
+## 5.17.105 - Measure breath queries and reproduce route-induced recognition loss (#853, #855)
+
+Full project validation passes with no errors; the generated document index is current.
+
+The #853 diagnosis uses the immutable 5.17.104 package. No state cache or
+duplicate-lookup rewrite is selected. Pain and RacialBreath FindState each run
+82,992 times in 42 sampled tics and measure 0.0900 and 0.0894 ms per sampled tic.
+These short scopes include timer overhead; they are not intrinsic native costs.
+The outer UpdateBreath scope measures 2.0537 ms with nested probes, compared with
+0.3654 ms for StopBreath and 0.3508 ms for its Visual_Identify scope. Do not add
+these nested numbers or compare them with differently instrumented runs as gains.
+
+Target classification records 39,228 of 39,302 identification calls against
+CaelumSewerEscapeTarget, with 143 identified results; the remaining 74 calls and
+74 identified results target CaelumPlayer. UpdateBreath and PaidTick perform
+visual identification before CanReach rejects the technical route marker.
+Identification mutates the actor's private visual evidence. The current contract
+still excludes those markers from demon combat/aim targets; this ordering is a
+reproduced implementation defect, tracked separately as #855.
+
+A frozen native Mandinga observes a real visible target for one actual second.
+Assigning a live route marker and invoking UpdateBreath changes its accumulated
+recognition from 35 tics to zero and clears PreviousSampleVisible. Consequently
+the real target fails to identify after two observed seconds. Six setup/resource
+checks pass and two recognition assertions fail; the engine exits normally with
+no script/runtime error. The failed baseline is retained as regression evidence,
+not classified as a passed gameplay test or an accepted defect.
+
+The first unexecuted profile helper was renamed from Find to Lookup to avoid an
+inherited-name conflict. The first target counter fails native compilation on
+Name/String ternary inference; explicit Name assignment corrects it. Failed and
+corrected sources/logs are retained. Both completed profiles preserve the same
+siege census, health and camera as the #851 final reference.
+
+All 18,755 current src members match that immutable package except two current
+version diagnostic strings. There is no gameplay/schema/asset/cadence change and
+no new production performance claim. Existing uninstrumented frame/tic evidence
+remains in assets/validation_v5_17_104. Tools and raw diagnosis/regression evidence
+are in assets/validation_v5_17_105. Full batch work, #855 correction and author
+acceptance remain pending; pending_test.txt is unchanged.
+
 
 ## 5.17.104 - Bound dense local perception and measure the remaining siege budget (#851, #454)
 
