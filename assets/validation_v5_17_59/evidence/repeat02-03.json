@@ -1,0 +1,19 @@
+{
+  "byte_identical": true,
+  "files": {
+    "manifest.json": "5c56cf1fbe7723115783b30558ab7778b77cd381dfea61d914b2e189df3968fe",
+    "preview.pk3": "d7a7546d9284c737cfa0a141ed3dc04ca008e4796750658cb1c5fe848d8c6b89",
+    "editable/effigies.mtl": "0b5453da1bf1d8f3fe637d270535bbaebec2f008a0253b759601466cb5bacd41",
+    "editable/effigy_t1.obj": "b1f2e4dbb4879c30d4d0efcabc416824e68a7d206e4c93ea5f373f2429915aec",
+    "editable/effigy_t2.obj": "2db2cd237c8de419d6a08e9729da32dbc96b339a635f07d0a3dec3e9999e3d40",
+    "editable/effigy_t3.obj": "a0939659fed15a7800d8becb3a4b814311db546d574c0737408ee683ea53b7d7",
+    "caelum/data/inventory_effigies.modeldef": "3bc206f47fc798952d4cb83890636570603f9b776e87cf395b9dc136d6acadd8",
+    "editable/src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "models/caelum/inventory/effigies/effigy_t1.md3": "b779d63888aefb88d9bd13d40268f8242801c9817199caaaecbe102b9f0eaa8e",
+    "models/caelum/inventory/effigies/effigy_t2.md3": "dcd0389d2c65c14ce8b2daf543d20db07f26d38930f729ad41334fe4d6dfbf7b",
+    "models/caelum/inventory/effigies/effigy_t3.md3": "0463ae43d2a02c7f078a1a759d5c0f440763d0968dc7fb55e75bce4b8cd41df1",
+    "models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "tool": "image_gen.imagegen",
+  "intent": "generate",
+  "transparent_background": false,
+  "prompt": "Use case: stylized-concept. Asset type: an opaque two-region albedo material atlas for a small carved wooden hooded figurine in a nineteenth-century dark-fantasy game. Generate one square image divided exactly into two equal vertical halves, edge to edge, no margins or dividing line. LEFT HALF: warm dark walnut-brown carved wood, subtle fine mostly vertical grain, softly worn satin surface with restrained golden-brown undertones, small natural irregularities, no broad stripes or high-contrast rings. RIGHT HALF: the same fine wood viewed deep inside a shadowed recess, nearly black warm brown, very low contrast with only faint grain; it must be much darker than the left half. Both halves are flat texture swatches seen orthogonally, evenly colored across each region, not pictures of objects. Hand-painted realistic game texture, delicate surface detail, consistent scale. No object silhouette, no figurine, no face, no letters, no symbols, no border, no watermark, no cast shadows or directional highlights. Every pixel must be fully opaque, including the nearly black region.",
+  "original_path": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-204476f1-040d-4d2a-b033-eab2192f6c2f.png",
+  "saved_path": "assets/source/art/inventory_models_647/effigies/wood.png",
+  "modifications": "None; copied byte-for-byte.",
+  "sha256": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1"
+}

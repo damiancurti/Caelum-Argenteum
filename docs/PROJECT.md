@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.58** - 2026-11-15.
+Documentation version: **5.17.59** - 2026-11-15.
+
+## 5.17.59 - Native hooded effigy drops (#761)
+
+Three original sculptures and six exact class/tier bindings replace support
+effigy drops. Fourteen deterministic exports, closed geometry, 513 continuity
+assertions and 122 final visual/control assertions pass. All fifteen native
+detail views were inspected. ASSETS records the new wood texture, qualified
+visual interpretation and bounded presentation evidence. Author check
+CA761-EFFIGY-DROPS-01 remains pending. Physical weapons, characters, modular
+equipment and the V5.16 campaign remain unfinished.
 
 ## 5.17.58 - Native scepter/censer quality variants (#759)
 

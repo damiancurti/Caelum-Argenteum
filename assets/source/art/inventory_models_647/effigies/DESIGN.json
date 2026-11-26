@@ -1,0 +1,3065 @@
+{
+  "schema_revision": 1,
+  "issue": 761,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "model_path": "models/caelum/inventory/effigies",
+  "editable_materials_name": "effigies.mtl",
+  "materials": {
+    "wood": {
+      "texture": "models/caelum/inventory/effigies/wood.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        12,
+        615,
+        1242
+      ]
+    },
+    "blue": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        430,
+        430,
+        824,
+        824
+      ]
+    },
+    "bronze": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        12,
+        406,
+        406
+      ]
+    },
+    "gold": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        430,
+        12,
+        824,
+        406
+      ]
+    },
+    "silver": {
+      "texture": "models/caelum/inventory/weapon_components/metals.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        639,
+        12,
+        1242,
+        615
+      ]
+    },
+    "hood_surface": {
+      "texture": "models/caelum/inventory/effigies/wood.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        0,
+        0,
+        1254,
+        1254
+      ]
+    }
+  },
+  "tier_materials": {
+    "t1": {
+      "base_trim": "wood",
+      "tip_trim": "blue",
+      "metal_trim": "bronze"
+    },
+    "t2": {
+      "base_trim": "silver",
+      "tip_trim": "silver",
+      "metal_trim": "silver"
+    },
+    "t3": {
+      "base_trim": "gold",
+      "tip_trim": "gold",
+      "metal_trim": "gold"
+    }
+  },
+  "families": {
+    "effigy_t1": {
+      "root": "robe",
+      "parts": [
+        {
+          "part": "robe",
+          "kind": "loft",
+          "rows": [
+            [
+              26,
+              0,
+              0,
+              12,
+              6
+            ],
+            [
+              30,
+              0,
+              0,
+              14,
+              7
+            ],
+            [
+              45,
+              0,
+              0,
+              11,
+              6
+            ],
+            [
+              63,
+              0,
+              0,
+              8,
+              5
+            ],
+            [
+              75,
+              0,
+              0,
+              10,
+              6
+            ],
+            [
+              82,
+              0,
+              0,
+              8,
+              5
+            ],
+            [
+              85,
+              0,
+              0,
+              5,
+              3.5
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1,
+          "material": "wood",
+          "normalize_uv": true,
+          "folds": {
+            "count": 8,
+            "amplitude": 0.1,
+            "phase": 0
+          }
+        },
+        {
+          "part": "base",
+          "kind": "loft",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              6,
+              6
+            ],
+            [
+              3,
+              0,
+              0,
+              7,
+              7
+            ],
+            [
+              6,
+              0,
+              0,
+              6,
+              6
+            ],
+            [
+              11,
+              0,
+              0,
+              7,
+              7
+            ],
+            [
+              14,
+              0,
+              0,
+              10,
+              10
+            ],
+            [
+              18,
+              0,
+              0,
+              15,
+              15
+            ],
+            [
+              20,
+              0,
+              0,
+              17,
+              17
+            ],
+            [
+              24,
+              0,
+              0,
+              17,
+              17
+            ],
+            [
+              27,
+              0,
+              0,
+              14,
+              14
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1,
+          "material": "wood",
+          "normalize_uv": true
+        },
+        {
+          "part": "base_band",
+          "kind": "ring",
+          "radii": [
+            17,
+            17
+          ],
+          "wire": 1.2,
+          "segments": 48,
+          "wire_segments": 12,
+          "phase": 0,
+          "material": "base_trim",
+          "offset": [
+            0,
+            0,
+            22
+          ],
+          "genus": 1,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "part": "hood",
+          "kind": "loft",
+          "rows": [
+            [
+              -6,
+              0,
+              0,
+              1,
+              2
+            ],
+            [
+              -4,
+              0,
+              0,
+              5,
+              13
+            ],
+            [
+              0,
+              0,
+              0,
+              7,
+              18
+            ],
+            [
+              5,
+              0,
+              0,
+              6,
+              19
+            ],
+            [
+              6,
+              0,
+              0,
+              5.5,
+              18
+            ],
+            [
+              6,
+              0,
+              0,
+              4.2,
+              15
+            ],
+            [
+              2,
+              0,
+              0,
+              4.3,
+              14
+            ],
+            [
+              -2,
+              0,
+              0,
+              3,
+              8
+            ],
+            [
+              -3,
+              0,
+              0,
+              0.7,
+              1
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1.4,
+          "material": "hood_surface",
+          "normalize_uv": false,
+          "surface_regions": {
+            "outer": [
+              0.009569377990430622,
+              0.009569377990430622,
+              0.4904306220095694,
+              0.9904306220095693
+            ],
+            "inner": [
+              0.5095693779904307,
+              0.009569377990430622,
+              0.9904306220095693,
+              0.9904306220095693
+            ]
+          },
+          "inner_start_row": 5,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            98
+          ]
+        },
+        {
+          "part": "sleeve-1",
+          "kind": "loft",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              4,
+              3.5
+            ],
+            [
+              4,
+              0,
+              0,
+              4,
+              3.5
+            ],
+            [
+              16,
+              0,
+              0,
+              5,
+              4
+            ],
+            [
+              19,
+              0,
+              0,
+              5.5,
+              4.2
+            ],
+            [
+              19,
+              0,
+              0,
+              3.7,
+              2.8
+            ],
+            [
+              16,
+              0,
+              0,
+              3.4,
+              2.5
+            ],
+            [
+              14,
+              0,
+              0,
+              0.7,
+              0.7
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1,
+          "material": "hood_surface",
+          "normalize_uv": false,
+          "surface_regions": {
+            "outer": [
+              0.009569377990430622,
+              0.009569377990430622,
+              0.4904306220095694,
+              0.9904306220095693
+            ],
+            "inner": [
+              0.5095693779904307,
+              0.009569377990430622,
+              0.9904306220095693,
+              0.9904306220095693
+            ]
+          },
+          "inner_start_row": 4,
+          "rotation": [
+            [
+              -0.9486832980505138,
+              0,
+              -0.31622776601683794
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.31622776601683794,
+              0,
+              -0.9486832980505138
+            ]
+          ],
+          "offset": [
+            -8,
+            0,
+            78
+          ]
+        },
+        {
+          "part": "chest_cord-1",
+          "kind": "tube",
+          "rows": [
+            [
+              -8,
+              -4.5,
+              78,
+              1,
+              1
+            ],
+            [
+              -4,
+              -6.1,
+              75,
+              1,
+              1
+            ],
+            [
+              0,
+              -6.1,
+              72,
+              1,
+              1
+            ],
+            [
+              4,
+              -5.8,
+              69,
+              1,
+              1
+            ],
+            [
+              7,
+              -4.6,
+              67,
+              1,
+              1
+            ]
+          ],
+          "segments": 20,
+          "material": "blue"
+        },
+        {
+          "part": "sleeve1",
+          "kind": "loft",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              4,
+              3.5
+            ],
+            [
+              4,
+              0,
+              0,
+              4,
+              3.5
+            ],
+            [
+              16,
+              0,
+              0,
+              5,
+              4
+            ],
+            [
+              19,
+              0,
+              0,
+              5.5,
+              4.2
+            ],
+            [
+              19,
+              0,
+              0,
+              3.7,
+              2.8
+            ],
+            [
+              16,
+              0,
+              0,
+              3.4,
+              2.5
+            ],
+            [
+              14,
+              0,
+              0,
+              0.7,
+              0.7
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1,
+          "material": "hood_surface",
+          "normalize_uv": false,
+          "surface_regions": {
+            "outer": [
+              0.009569377990430622,
+              0.009569377990430622,
+              0.4904306220095694,
+              0.9904306220095693
+            ],
+            "inner": [
+              0.5095693779904307,
+              0.009569377990430622,
+              0.9904306220095693,
+              0.9904306220095693
+            ]
+          },
+          "inner_start_row": 4,
+          "rotation": [
+            [
+              -0.9486832980505138,
+              0,
+              0.31622776601683794
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.31622776601683794,
+              0,
+              -0.9486832980505138
+            ]
+          ],
+          "offset": [
+            8,
+            0,
+            78
+          ]
+        },
+        {
+          "part": "chest_cord1",
+          "kind": "tube",
+          "rows": [
+            [
+              8,
+              -4.5,
+              78,
+              1,
+              1
+            ],
+            [
+              4,
+              -6.1,
+              75,
+              1,
+              1
+            ],
+            [
+              0,
+              -6.1,
+              72,
+              1,
+              1
+            ],
+            [
+              -4,
+              -5.8,
+              69,
+              1,
+              1
+            ],
+            [
+              -7,
+              -4.6,
+              67,
+              1,
+              1
+            ]
+          ],
+          "segments": 20,
+          "material": "blue"
+        },
+        {
+          "part": "waist_cord",
+          "kind": "ring",
+          "radii": [
+            8.3,
+            5.4
+          ],
+          "wire": 0.8,
+          "segments": 48,
+          "wire_segments": 12,
+          "phase": 0,
+          "material": "blue",
+          "offset": [
+            0,
+            0,
+            65
+          ],
+          "genus": 1,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "part": "knot",
+          "kind": "ellipsoid",
+          "center": [
+            0,
+            -6.2,
+            64
+          ],
+          "radii": [
+            2,
+            1.2,
+            1.6
+          ],
+          "latitudes": 16,
+          "longitudes": 24,
+          "material": "blue"
+        },
+        {
+          "part": "hanging_cord-1",
+          "kind": "tube",
+          "rows": [
+            [
+              -1,
+              -6.6,
+              64,
+              0.8,
+              0.8
+            ],
+            [
+              -2,
+              -7,
+              56,
+              0.8,
+              0.8
+            ],
+            [
+              -2.5,
+              -7.5,
+              49,
+              0.8,
+              0.8
+            ],
+            [
+              -2.8,
+              -8,
+              46,
+              0.8,
+              0.8
+            ]
+          ],
+          "segments": 20,
+          "material": "blue"
+        },
+        {
+          "part": "cord_tip-1",
+          "kind": "ellipsoid",
+          "center": [
+            -2.8,
+            -8,
+            46.5
+          ],
+          "radii": [
+            1.2,
+            1.2,
+            2.3
+          ],
+          "latitudes": 16,
+          "longitudes": 24,
+          "material": "tip_trim"
+        },
+        {
+          "part": "hanging_cord1",
+          "kind": "tube",
+          "rows": [
+            [
+              1,
+              -6.6,
+              64,
+              0.8,
+              0.8
+            ],
+            [
+              2,
+              -7,
+              56,
+              0.8,
+              0.8
+            ],
+            [
+              2.5,
+              -7.5,
+              49,
+              0.8,
+              0.8
+            ],
+            [
+              2.8,
+              -8,
+              43,
+              0.8,
+              0.8
+            ]
+          ],
+          "segments": 20,
+          "material": "blue"
+        },
+        {
+          "part": "cord_tip1",
+          "kind": "ellipsoid",
+          "center": [
+            2.8,
+            -8,
+            43.5
+          ],
+          "radii": [
+            1.2,
+            1.2,
+            2.3
+          ],
+          "latitudes": 16,
+          "longitudes": 24,
+          "material": "tip_trim"
+        }
+      ],
+      "attachments": [
+        {
+          "part": "base",
+          "target": "robe",
+          "witness": [
+            0,
+            0,
+            26.5
+          ]
+        },
+        {
+          "part": "base_band",
+          "target": "base",
+          "witness": [
+            16.5,
+            0,
+            22
+          ]
+        },
+        {
+          "part": "hood",
+          "target": "robe",
+          "witness": [
+            0,
+            0,
+            83
+          ]
+        },
+        {
+          "part": "sleeve-1",
+          "target": "robe",
+          "witness": [
+            -8.632455532033676,
+            0,
+            76.10263340389898
+          ]
+        },
+        {
+          "part": "chest_cord-1",
+          "target": "robe",
+          "witness": [
+            0,
+            -5.5,
+            72
+          ]
+        },
+        {
+          "part": "sleeve1",
+          "target": "robe",
+          "witness": [
+            8.632455532033676,
+            0,
+            76.10263340389898
+          ]
+        },
+        {
+          "part": "chest_cord1",
+          "target": "robe",
+          "witness": [
+            0,
+            -5.5,
+            72
+          ]
+        },
+        {
+          "part": "waist_cord",
+          "target": "robe",
+          "witness": [
+            8.2,
+            0,
+            65
+          ]
+        },
+        {
+          "part": "knot",
+          "target": "waist_cord",
+          "witness": [
+            0,
+            -5.8,
+            65
+          ]
+        },
+        {
+          "part": "hanging_cord-1",
+          "target": "knot",
+          "witness": [
+            -1.1,
+            -6.65,
+            63.5
+          ]
+        },
+        {
+          "part": "cord_tip-1",
+          "target": "hanging_cord-1",
+          "witness": [
+            -2.8,
+            -8,
+            46.5
+          ]
+        },
+        {
+          "part": "hanging_cord1",
+          "target": "knot",
+          "witness": [
+            1.1,
+            -6.65,
+            63.5
+          ]
+        },
+        {
+          "part": "cord_tip1",
+          "target": "hanging_cord1",
+          "witness": [
+            2.8,
+            -8,
+            43.5
+          ]
+        }
+      ],
+      "openings": [
+        {
+          "point": [
+            0,
+            -3,
+            100
+          ],
+          "normal": [
+            0,
+            -1,
+            0
+          ],
+          "axis_u": [
+            1,
+            0,
+            0
+          ],
+          "axis_v": [
+            0,
+            0,
+            1
+          ],
+          "clearance": 1,
+          "signs": [
+            1
+          ]
+        },
+        {
+          "point": [
+            -13.375872022286245,
+            0,
+            61.872383933141265
+          ],
+          "normal": [
+            -0.31622776601683794,
+            0,
+            -0.9486832980505138
+          ],
+          "axis_u": [
+            -0.9486832980505138,
+            0,
+            0.31622776601683794
+          ],
+          "axis_v": [
+            0,
+            1,
+            0
+          ],
+          "clearance": 0.5,
+          "signs": [
+            1
+          ]
+        },
+        {
+          "point": [
+            13.375872022286245,
+            0,
+            61.872383933141265
+          ],
+          "normal": [
+            0.31622776601683794,
+            0,
+            -0.9486832980505138
+          ],
+          "axis_u": [
+            -0.9486832980505138,
+            0,
+            -0.31622776601683794
+          ],
+          "axis_v": [
+            0,
+            1,
+            0
+          ],
+          "clearance": 0.5,
+          "signs": [
+            1
+          ]
+        }
+      ]
+    },
+    "effigy_t2": {
+      "root": "robe",
+      "parts": [
+        {
+          "part": "robe",
+          "kind": "loft",
+          "rows": [
+            [
+              26,
+              0,
+              0,
+              12,
+              6
+            ],
+            [
+              30,
+              0,
+              0,
+              14,
+              7
+            ],
+            [
+              45,
+              0,
+              0,
+              11,
+              6
+            ],
+            [
+              63,
+              0,
+              0,
+              8,
+              5
+            ],
+            [
+              75,
+              0,
+              0,
+              10,
+              6
+            ],
+            [
+              82,
+              0,
+              0,
+              8,
+              5
+            ],
+            [
+              85,
+              0,
+              0,
+              5,
+              3.5
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1,
+          "material": "wood",
+          "normalize_uv": true,
+          "folds": {
+            "count": 8,
+            "amplitude": 0.1,
+            "phase": 0
+          }
+        },
+        {
+          "part": "base",
+          "kind": "loft",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              6,
+              6
+            ],
+            [
+              3,
+              0,
+              0,
+              7,
+              7
+            ],
+            [
+              6,
+              0,
+              0,
+              6,
+              6
+            ],
+            [
+              11,
+              0,
+              0,
+              7,
+              7
+            ],
+            [
+              14,
+              0,
+              0,
+              10,
+              10
+            ],
+            [
+              18,
+              0,
+              0,
+              15,
+              15
+            ],
+            [
+              20,
+              0,
+              0,
+              17,
+              17
+            ],
+            [
+              24,
+              0,
+              0,
+              17,
+              17
+            ],
+            [
+              27,
+              0,
+              0,
+              14,
+              14
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1,
+          "material": "wood",
+          "normalize_uv": true
+        },
+        {
+          "part": "base_band",
+          "kind": "ring",
+          "radii": [
+            17,
+            17
+          ],
+          "wire": 1.2,
+          "segments": 48,
+          "wire_segments": 12,
+          "phase": 0,
+          "material": "base_trim",
+          "offset": [
+            0,
+            0,
+            22
+          ],
+          "genus": 1,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "part": "hood",
+          "kind": "loft",
+          "rows": [
+            [
+              -6,
+              0,
+              0,
+              1,
+              2
+            ],
+            [
+              -4,
+              0,
+              0,
+              5,
+              13
+            ],
+            [
+              0,
+              0,
+              0,
+              7,
+              18
+            ],
+            [
+              5,
+              0,
+              0,
+              6,
+              19
+            ],
+            [
+              6,
+              0,
+              0,
+              5.5,
+              18
+            ],
+            [
+              6,
+              0,
+              0,
+              4.2,
+              15
+            ],
+            [
+              2,
+              0,
+              0,
+              4.3,
+              14
+            ],
+            [
+              -2,
+              0,
+              0,
+              3,
+              8
+            ],
+            [
+              -3,
+              0,
+              0,
+              0.7,
+              1
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1.4,
+          "material": "hood_surface",
+          "normalize_uv": false,
+          "surface_regions": {
+            "outer": [
+              0.009569377990430622,
+              0.009569377990430622,
+              0.4904306220095694,
+              0.9904306220095693
+            ],
+            "inner": [
+              0.5095693779904307,
+              0.009569377990430622,
+              0.9904306220095693,
+              0.9904306220095693
+            ]
+          },
+          "inner_start_row": 5,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            98
+          ]
+        },
+        {
+          "part": "sleeve-1",
+          "kind": "loft",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              4,
+              3.5
+            ],
+            [
+              4,
+              0,
+              0,
+              4,
+              3.5
+            ],
+            [
+              16,
+              0,
+              0,
+              5,
+              4
+            ],
+            [
+              19,
+              0,
+              0,
+              5.5,
+              4.2
+            ],
+            [
+              19,
+              0,
+              0,
+              3.7,
+              2.8
+            ],
+            [
+              16,
+              0,
+              0,
+              3.4,
+              2.5
+            ],
+            [
+              14,
+              0,
+              0,
+              0.7,
+              0.7
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1,
+          "material": "hood_surface",
+          "normalize_uv": false,
+          "surface_regions": {
+            "outer": [
+              0.009569377990430622,
+              0.009569377990430622,
+              0.4904306220095694,
+              0.9904306220095693
+            ],
+            "inner": [
+              0.5095693779904307,
+              0.009569377990430622,
+              0.9904306220095693,
+              0.9904306220095693
+            ]
+          },
+          "inner_start_row": 4,
+          "rotation": [
+            [
+              -0.9486832980505138,
+              0,
+              -0.31622776601683794
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.31622776601683794,
+              0,
+              -0.9486832980505138
+            ]
+          ],
+          "offset": [
+            -8,
+            0,
+            78
+          ]
+        },
+        {
+          "part": "chest_cord-1",
+          "kind": "tube",
+          "rows": [
+            [
+              -8,
+              -4.5,
+              78,
+              1,
+              1
+            ],
+            [
+              -4,
+              -6.1,
+              75,
+              1,
+              1
+            ],
+            [
+              0,
+              -6.1,
+              72,
+              1,
+              1
+            ],
+            [
+              4,
+              -5.8,
+              69,
+              1,
+              1
+            ],
+            [
+              7,
+              -4.6,
+              67,
+              1,
+              1
+            ]
+          ],
+          "segments": 20,
+          "material": "blue"
+        },
+        {
+          "part": "sleeve1",
+          "kind": "loft",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              4,
+              3.5
+            ],
+            [
+              4,
+              0,
+              0,
+              4,
+              3.5
+            ],
+            [
+              16,
+              0,
+              0,
+              5,
+              4
+            ],
+            [
+              19,
+              0,
+              0,
+              5.5,
+              4.2
+            ],
+            [
+              19,
+              0,
+              0,
+              3.7,
+              2.8
+            ],
+            [
+              16,
+              0,
+              0,
+              3.4,
+              2.5
+            ],
+            [
+              14,
+              0,
+              0,
+              0.7,
+              0.7
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1,
+          "material": "hood_surface",
+          "normalize_uv": false,
+          "surface_regions": {
+            "outer": [
+              0.009569377990430622,
+              0.009569377990430622,
+              0.4904306220095694,
+              0.9904306220095693
+            ],
+            "inner": [
+              0.5095693779904307,
+              0.009569377990430622,
+              0.9904306220095693,
+              0.9904306220095693
+            ]
+          },
+          "inner_start_row": 4,
+          "rotation": [
+            [
+              -0.9486832980505138,
+              0,
+              0.31622776601683794
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.31622776601683794,
+              0,
+              -0.9486832980505138
+            ]
+          ],
+          "offset": [
+            8,
+            0,
+            78
+          ]
+        },
+        {
+          "part": "chest_cord1",
+          "kind": "tube",
+          "rows": [
+            [
+              8,
+              -4.5,
+              78,
+              1,
+              1
+            ],
+            [
+              4,
+              -6.1,
+              75,
+              1,
+              1
+            ],
+            [
+              0,
+              -6.1,
+              72,
+              1,
+              1
+            ],
+            [
+              -4,
+              -5.8,
+              69,
+              1,
+              1
+            ],
+            [
+              -7,
+              -4.6,
+              67,
+              1,
+              1
+            ]
+          ],
+          "segments": 20,
+          "material": "blue"
+        },
+        {
+          "part": "waist_cord",
+          "kind": "ring",
+          "radii": [
+            8.3,
+            5.4
+          ],
+          "wire": 0.8,
+          "segments": 48,
+          "wire_segments": 12,
+          "phase": 0,
+          "material": "blue",
+          "offset": [
+            0,
+            0,
+            65
+          ],
+          "genus": 1,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "part": "knot",
+          "kind": "ellipsoid",
+          "center": [
+            0,
+            -6.2,
+            64
+          ],
+          "radii": [
+            2,
+            1.2,
+            1.6
+          ],
+          "latitudes": 16,
+          "longitudes": 24,
+          "material": "blue"
+        },
+        {
+          "part": "hanging_cord-1",
+          "kind": "tube",
+          "rows": [
+            [
+              -1,
+              -6.6,
+              64,
+              0.8,
+              0.8
+            ],
+            [
+              -2,
+              -7,
+              56,
+              0.8,
+              0.8
+            ],
+            [
+              -2.5,
+              -7.5,
+              49,
+              0.8,
+              0.8
+            ],
+            [
+              -2.8,
+              -8,
+              46,
+              0.8,
+              0.8
+            ]
+          ],
+          "segments": 20,
+          "material": "blue"
+        },
+        {
+          "part": "cord_tip-1",
+          "kind": "ellipsoid",
+          "center": [
+            -2.8,
+            -8,
+            46.5
+          ],
+          "radii": [
+            1.2,
+            1.2,
+            2.3
+          ],
+          "latitudes": 16,
+          "longitudes": 24,
+          "material": "tip_trim"
+        },
+        {
+          "part": "hanging_cord1",
+          "kind": "tube",
+          "rows": [
+            [
+              1,
+              -6.6,
+              64,
+              0.8,
+              0.8
+            ],
+            [
+              2,
+              -7,
+              56,
+              0.8,
+              0.8
+            ],
+            [
+              2.5,
+              -7.5,
+              49,
+              0.8,
+              0.8
+            ],
+            [
+              2.8,
+              -8,
+              43,
+              0.8,
+              0.8
+            ]
+          ],
+          "segments": 20,
+          "material": "blue"
+        },
+        {
+          "part": "cord_tip1",
+          "kind": "ellipsoid",
+          "center": [
+            2.8,
+            -8,
+            43.5
+          ],
+          "radii": [
+            1.2,
+            1.2,
+            2.3
+          ],
+          "latitudes": 16,
+          "longitudes": 24,
+          "material": "tip_trim"
+        },
+        {
+          "part": "medallion",
+          "kind": "ellipsoid",
+          "center": [
+            0,
+            -7.1,
+            72
+          ],
+          "radii": [
+            2.6,
+            1,
+            3
+          ],
+          "latitudes": 16,
+          "longitudes": 24,
+          "material": "metal_trim"
+        }
+      ],
+      "attachments": [
+        {
+          "part": "base",
+          "target": "robe",
+          "witness": [
+            0,
+            0,
+            26.5
+          ]
+        },
+        {
+          "part": "base_band",
+          "target": "base",
+          "witness": [
+            16.5,
+            0,
+            22
+          ]
+        },
+        {
+          "part": "hood",
+          "target": "robe",
+          "witness": [
+            0,
+            0,
+            83
+          ]
+        },
+        {
+          "part": "sleeve-1",
+          "target": "robe",
+          "witness": [
+            -8.632455532033676,
+            0,
+            76.10263340389898
+          ]
+        },
+        {
+          "part": "chest_cord-1",
+          "target": "robe",
+          "witness": [
+            0,
+            -5.5,
+            72
+          ]
+        },
+        {
+          "part": "sleeve1",
+          "target": "robe",
+          "witness": [
+            8.632455532033676,
+            0,
+            76.10263340389898
+          ]
+        },
+        {
+          "part": "chest_cord1",
+          "target": "robe",
+          "witness": [
+            0,
+            -5.5,
+            72
+          ]
+        },
+        {
+          "part": "waist_cord",
+          "target": "robe",
+          "witness": [
+            8.2,
+            0,
+            65
+          ]
+        },
+        {
+          "part": "knot",
+          "target": "waist_cord",
+          "witness": [
+            0,
+            -5.8,
+            65
+          ]
+        },
+        {
+          "part": "hanging_cord-1",
+          "target": "knot",
+          "witness": [
+            -1.1,
+            -6.65,
+            63.5
+          ]
+        },
+        {
+          "part": "cord_tip-1",
+          "target": "hanging_cord-1",
+          "witness": [
+            -2.8,
+            -8,
+            46.5
+          ]
+        },
+        {
+          "part": "hanging_cord1",
+          "target": "knot",
+          "witness": [
+            1.1,
+            -6.65,
+            63.5
+          ]
+        },
+        {
+          "part": "cord_tip1",
+          "target": "hanging_cord1",
+          "witness": [
+            2.8,
+            -8,
+            43.5
+          ]
+        },
+        {
+          "part": "medallion",
+          "target": "chest_cord-1",
+          "witness": [
+            0,
+            -6.4,
+            72
+          ]
+        }
+      ],
+      "openings": [
+        {
+          "point": [
+            0,
+            -3,
+            100
+          ],
+          "normal": [
+            0,
+            -1,
+            0
+          ],
+          "axis_u": [
+            1,
+            0,
+            0
+          ],
+          "axis_v": [
+            0,
+            0,
+            1
+          ],
+          "clearance": 1,
+          "signs": [
+            1
+          ]
+        },
+        {
+          "point": [
+            -13.375872022286245,
+            0,
+            61.872383933141265
+          ],
+          "normal": [
+            -0.31622776601683794,
+            0,
+            -0.9486832980505138
+          ],
+          "axis_u": [
+            -0.9486832980505138,
+            0,
+            0.31622776601683794
+          ],
+          "axis_v": [
+            0,
+            1,
+            0
+          ],
+          "clearance": 0.5,
+          "signs": [
+            1
+          ]
+        },
+        {
+          "point": [
+            13.375872022286245,
+            0,
+            61.872383933141265
+          ],
+          "normal": [
+            0.31622776601683794,
+            0,
+            -0.9486832980505138
+          ],
+          "axis_u": [
+            -0.9486832980505138,
+            0,
+            -0.31622776601683794
+          ],
+          "axis_v": [
+            0,
+            1,
+            0
+          ],
+          "clearance": 0.5,
+          "signs": [
+            1
+          ]
+        }
+      ]
+    },
+    "effigy_t3": {
+      "root": "robe",
+      "parts": [
+        {
+          "part": "robe",
+          "kind": "loft",
+          "rows": [
+            [
+              26,
+              0,
+              0,
+              12,
+              6
+            ],
+            [
+              30,
+              0,
+              0,
+              14,
+              7
+            ],
+            [
+              45,
+              0,
+              0,
+              11,
+              6
+            ],
+            [
+              63,
+              0,
+              0,
+              8,
+              5
+            ],
+            [
+              75,
+              0,
+              0,
+              10,
+              6
+            ],
+            [
+              82,
+              0,
+              0,
+              8,
+              5
+            ],
+            [
+              85,
+              0,
+              0,
+              5,
+              3.5
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1,
+          "material": "wood",
+          "normalize_uv": true,
+          "folds": {
+            "count": 8,
+            "amplitude": 0.1,
+            "phase": 0
+          }
+        },
+        {
+          "part": "base",
+          "kind": "loft",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              6,
+              6
+            ],
+            [
+              3,
+              0,
+              0,
+              7,
+              7
+            ],
+            [
+              6,
+              0,
+              0,
+              6,
+              6
+            ],
+            [
+              11,
+              0,
+              0,
+              7,
+              7
+            ],
+            [
+              14,
+              0,
+              0,
+              10,
+              10
+            ],
+            [
+              18,
+              0,
+              0,
+              15,
+              15
+            ],
+            [
+              20,
+              0,
+              0,
+              17,
+              17
+            ],
+            [
+              24,
+              0,
+              0,
+              17,
+              17
+            ],
+            [
+              27,
+              0,
+              0,
+              14,
+              14
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1,
+          "material": "wood",
+          "normalize_uv": true
+        },
+        {
+          "part": "base_band",
+          "kind": "ring",
+          "radii": [
+            17,
+            17
+          ],
+          "wire": 1.2,
+          "segments": 48,
+          "wire_segments": 12,
+          "phase": 0,
+          "material": "base_trim",
+          "offset": [
+            0,
+            0,
+            22
+          ],
+          "genus": 1,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "part": "hood",
+          "kind": "loft",
+          "rows": [
+            [
+              -6,
+              0,
+              0,
+              1,
+              2
+            ],
+            [
+              -4,
+              0,
+              0,
+              5,
+              13
+            ],
+            [
+              0,
+              0,
+              0,
+              7,
+              18
+            ],
+            [
+              5,
+              0,
+              0,
+              6,
+              19
+            ],
+            [
+              6,
+              0,
+              0,
+              5.5,
+              18
+            ],
+            [
+              6,
+              0,
+              0,
+              4.2,
+              15
+            ],
+            [
+              2,
+              0,
+              0,
+              4.3,
+              14
+            ],
+            [
+              -2,
+              0,
+              0,
+              3,
+              8
+            ],
+            [
+              -3,
+              0,
+              0,
+              0.7,
+              1
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1.4,
+          "material": "hood_surface",
+          "normalize_uv": false,
+          "surface_regions": {
+            "outer": [
+              0.009569377990430622,
+              0.009569377990430622,
+              0.4904306220095694,
+              0.9904306220095693
+            ],
+            "inner": [
+              0.5095693779904307,
+              0.009569377990430622,
+              0.9904306220095693,
+              0.9904306220095693
+            ]
+          },
+          "inner_start_row": 5,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            98
+          ]
+        },
+        {
+          "part": "sleeve-1",
+          "kind": "loft",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              4,
+              3.5
+            ],
+            [
+              4,
+              0,
+              0,
+              4,
+              3.5
+            ],
+            [
+              16,
+              0,
+              0,
+              5,
+              4
+            ],
+            [
+              19,
+              0,
+              0,
+              5.5,
+              4.2
+            ],
+            [
+              19,
+              0,
+              0,
+              3.7,
+              2.8
+            ],
+            [
+              16,
+              0,
+              0,
+              3.4,
+              2.5
+            ],
+            [
+              14,
+              0,
+              0,
+              0.7,
+              0.7
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1,
+          "material": "hood_surface",
+          "normalize_uv": false,
+          "surface_regions": {
+            "outer": [
+              0.009569377990430622,
+              0.009569377990430622,
+              0.4904306220095694,
+              0.9904306220095693
+            ],
+            "inner": [
+              0.5095693779904307,
+              0.009569377990430622,
+              0.9904306220095693,
+              0.9904306220095693
+            ]
+          },
+          "inner_start_row": 4,
+          "rotation": [
+            [
+              -0.9486832980505138,
+              0,
+              -0.31622776601683794
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0.31622776601683794,
+              0,
+              -0.9486832980505138
+            ]
+          ],
+          "offset": [
+            -8,
+            0,
+            78
+          ]
+        },
+        {
+          "part": "chest_cord-1",
+          "kind": "tube",
+          "rows": [
+            [
+              -8,
+              -4.5,
+              78,
+              1,
+              1
+            ],
+            [
+              -4,
+              -6.1,
+              75,
+              1,
+              1
+            ],
+            [
+              0,
+              -6.1,
+              72,
+              1,
+              1
+            ],
+            [
+              4,
+              -5.8,
+              69,
+              1,
+              1
+            ],
+            [
+              7,
+              -4.6,
+              67,
+              1,
+              1
+            ]
+          ],
+          "segments": 20,
+          "material": "blue"
+        },
+        {
+          "part": "sleeve1",
+          "kind": "loft",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              4,
+              3.5
+            ],
+            [
+              4,
+              0,
+              0,
+              4,
+              3.5
+            ],
+            [
+              16,
+              0,
+              0,
+              5,
+              4
+            ],
+            [
+              19,
+              0,
+              0,
+              5.5,
+              4.2
+            ],
+            [
+              19,
+              0,
+              0,
+              3.7,
+              2.8
+            ],
+            [
+              16,
+              0,
+              0,
+              3.4,
+              2.5
+            ],
+            [
+              14,
+              0,
+              0,
+              0.7,
+              0.7
+            ]
+          ],
+          "segments": 48,
+          "exponent": 1,
+          "material": "hood_surface",
+          "normalize_uv": false,
+          "surface_regions": {
+            "outer": [
+              0.009569377990430622,
+              0.009569377990430622,
+              0.4904306220095694,
+              0.9904306220095693
+            ],
+            "inner": [
+              0.5095693779904307,
+              0.009569377990430622,
+              0.9904306220095693,
+              0.9904306220095693
+            ]
+          },
+          "inner_start_row": 4,
+          "rotation": [
+            [
+              -0.9486832980505138,
+              0,
+              0.31622776601683794
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -0.31622776601683794,
+              0,
+              -0.9486832980505138
+            ]
+          ],
+          "offset": [
+            8,
+            0,
+            78
+          ]
+        },
+        {
+          "part": "chest_cord1",
+          "kind": "tube",
+          "rows": [
+            [
+              8,
+              -4.5,
+              78,
+              1,
+              1
+            ],
+            [
+              4,
+              -6.1,
+              75,
+              1,
+              1
+            ],
+            [
+              0,
+              -6.1,
+              72,
+              1,
+              1
+            ],
+            [
+              -4,
+              -5.8,
+              69,
+              1,
+              1
+            ],
+            [
+              -7,
+              -4.6,
+              67,
+              1,
+              1
+            ]
+          ],
+          "segments": 20,
+          "material": "blue"
+        },
+        {
+          "part": "waist_cord",
+          "kind": "ring",
+          "radii": [
+            8.3,
+            5.4
+          ],
+          "wire": 0.8,
+          "segments": 48,
+          "wire_segments": 12,
+          "phase": 0,
+          "material": "blue",
+          "offset": [
+            0,
+            0,
+            65
+          ],
+          "genus": 1,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "part": "knot",
+          "kind": "ellipsoid",
+          "center": [
+            0,
+            -6.2,
+            64
+          ],
+          "radii": [
+            2,
+            1.2,
+            1.6
+          ],
+          "latitudes": 16,
+          "longitudes": 24,
+          "material": "blue"
+        },
+        {
+          "part": "hanging_cord-1",
+          "kind": "tube",
+          "rows": [
+            [
+              -1,
+              -6.6,
+              64,
+              0.8,
+              0.8
+            ],
+            [
+              -2,
+              -7,
+              56,
+              0.8,
+              0.8
+            ],
+            [
+              -2.5,
+              -7.5,
+              49,
+              0.8,
+              0.8
+            ],
+            [
+              -2.8,
+              -8,
+              46,
+              0.8,
+              0.8
+            ]
+          ],
+          "segments": 20,
+          "material": "blue"
+        },
+        {
+          "part": "cord_tip-1",
+          "kind": "ellipsoid",
+          "center": [
+            -2.8,
+            -8,
+            46.5
+          ],
+          "radii": [
+            1.2,
+            1.2,
+            2.3
+          ],
+          "latitudes": 16,
+          "longitudes": 24,
+          "material": "tip_trim"
+        },
+        {
+          "part": "hanging_cord1",
+          "kind": "tube",
+          "rows": [
+            [
+              1,
+              -6.6,
+              64,
+              0.8,
+              0.8
+            ],
+            [
+              2,
+              -7,
+              56,
+              0.8,
+              0.8
+            ],
+            [
+              2.5,
+              -7.5,
+              49,
+              0.8,
+              0.8
+            ],
+            [
+              2.8,
+              -8,
+              43,
+              0.8,
+              0.8
+            ]
+          ],
+          "segments": 20,
+          "material": "blue"
+        },
+        {
+          "part": "cord_tip1",
+          "kind": "ellipsoid",
+          "center": [
+            2.8,
+            -8,
+            43.5
+          ],
+          "radii": [
+            1.2,
+            1.2,
+            2.3
+          ],
+          "latitudes": 16,
+          "longitudes": 24,
+          "material": "tip_trim"
+        },
+        {
+          "part": "medallion",
+          "kind": "ellipsoid",
+          "center": [
+            0,
+            -7.1,
+            72
+          ],
+          "radii": [
+            2.6,
+            1,
+            3
+          ],
+          "latitudes": 16,
+          "longitudes": 24,
+          "material": "metal_trim"
+        }
+      ],
+      "attachments": [
+        {
+          "part": "base",
+          "target": "robe",
+          "witness": [
+            0,
+            0,
+            26.5
+          ]
+        },
+        {
+          "part": "base_band",
+          "target": "base",
+          "witness": [
+            16.5,
+            0,
+            22
+          ]
+        },
+        {
+          "part": "hood",
+          "target": "robe",
+          "witness": [
+            0,
+            0,
+            83
+          ]
+        },
+        {
+          "part": "sleeve-1",
+          "target": "robe",
+          "witness": [
+            -8.632455532033676,
+            0,
+            76.10263340389898
+          ]
+        },
+        {
+          "part": "chest_cord-1",
+          "target": "robe",
+          "witness": [
+            0,
+            -5.5,
+            72
+          ]
+        },
+        {
+          "part": "sleeve1",
+          "target": "robe",
+          "witness": [
+            8.632455532033676,
+            0,
+            76.10263340389898
+          ]
+        },
+        {
+          "part": "chest_cord1",
+          "target": "robe",
+          "witness": [
+            0,
+            -5.5,
+            72
+          ]
+        },
+        {
+          "part": "waist_cord",
+          "target": "robe",
+          "witness": [
+            8.2,
+            0,
+            65
+          ]
+        },
+        {
+          "part": "knot",
+          "target": "waist_cord",
+          "witness": [
+            0,
+            -5.8,
+            65
+          ]
+        },
+        {
+          "part": "hanging_cord-1",
+          "target": "knot",
+          "witness": [
+            -1.1,
+            -6.65,
+            63.5
+          ]
+        },
+        {
+          "part": "cord_tip-1",
+          "target": "hanging_cord-1",
+          "witness": [
+            -2.8,
+            -8,
+            46.5
+          ]
+        },
+        {
+          "part": "hanging_cord1",
+          "target": "knot",
+          "witness": [
+            1.1,
+            -6.65,
+            63.5
+          ]
+        },
+        {
+          "part": "cord_tip1",
+          "target": "hanging_cord1",
+          "witness": [
+            2.8,
+            -8,
+            43.5
+          ]
+        },
+        {
+          "part": "medallion",
+          "target": "chest_cord-1",
+          "witness": [
+            0,
+            -6.4,
+            72
+          ]
+        }
+      ],
+      "openings": [
+        {
+          "point": [
+            0,
+            -3,
+            100
+          ],
+          "normal": [
+            0,
+            -1,
+            0
+          ],
+          "axis_u": [
+            1,
+            0,
+            0
+          ],
+          "axis_v": [
+            0,
+            0,
+            1
+          ],
+          "clearance": 1,
+          "signs": [
+            1
+          ]
+        },
+        {
+          "point": [
+            -13.375872022286245,
+            0,
+            61.872383933141265
+          ],
+          "normal": [
+            -0.31622776601683794,
+            0,
+            -0.9486832980505138
+          ],
+          "axis_u": [
+            -0.9486832980505138,
+            0,
+            0.31622776601683794
+          ],
+          "axis_v": [
+            0,
+            1,
+            0
+          ],
+          "clearance": 0.5,
+          "signs": [
+            1
+          ]
+        },
+        {
+          "point": [
+            13.375872022286245,
+            0,
+            61.872383933141265
+          ],
+          "normal": [
+            0.31622776601683794,
+            0,
+            -0.9486832980505138
+          ],
+          "axis_u": [
+            -0.9486832980505138,
+            0,
+            -0.31622776601683794
+          ],
+          "axis_v": [
+            0,
+            1,
+            0
+          ],
+          "clearance": 0.5,
+          "signs": [
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "variants": {
+    "effigy_t1": {
+      "class": "CaelumWeaponPickup",
+      "sprite": "S479",
+      "frame": "P",
+      "family": "effigy_t1",
+      "tier": "t1",
+      "quality": 1,
+      "item_type": 26,
+      "essence": 4,
+      "reference": "src/graphics/caelum/icons/support_sprites/effigy_t1.png",
+      "reference_axis": "height",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "additional_bindings": [
+        {
+          "class": "CA_LimboMagicImplement",
+          "sprite": "S479",
+          "frame": "P",
+          "inventory": true
+        }
+      ]
+    },
+    "effigy_t2": {
+      "class": "CaelumWeaponPickup",
+      "sprite": "S479",
+      "frame": "Q",
+      "family": "effigy_t2",
+      "tier": "t2",
+      "quality": 2,
+      "item_type": 26,
+      "essence": 4,
+      "reference": "src/graphics/caelum/icons/support_sprites/effigy_t2.png",
+      "reference_axis": "height",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "additional_bindings": [
+        {
+          "class": "CA_LimboMagicImplement",
+          "sprite": "S479",
+          "frame": "Q",
+          "inventory": true
+        }
+      ]
+    },
+    "effigy_t3": {
+      "class": "CaelumWeaponPickup",
+      "sprite": "S479",
+      "frame": "R",
+      "family": "effigy_t3",
+      "tier": "t3",
+      "quality": 3,
+      "item_type": 26,
+      "essence": 4,
+      "reference": "src/graphics/caelum/icons/support_sprites/effigy_t3.png",
+      "reference_axis": "height",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "additional_bindings": [
+        {
+          "class": "CA_LimboMagicImplement",
+          "sprite": "S479",
+          "frame": "R",
+          "inventory": true
+        }
+      ]
+    }
+  },
+  "runtime_cases": [
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 26,
+      "tier": 1,
+      "essence": 4
+    },
+    {
+      "actor_class": "CA_LimboMagicImplement",
+      "item_type": 26,
+      "tier": 1,
+      "essence": 4
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 26,
+      "tier": 2,
+      "essence": 4
+    },
+    {
+      "actor_class": "CA_LimboMagicImplement",
+      "item_type": 26,
+      "tier": 2,
+      "essence": 4
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 26,
+      "tier": 3,
+      "essence": 4
+    },
+    {
+      "actor_class": "CA_LimboMagicImplement",
+      "item_type": 26,
+      "tier": 3,
+      "essence": 4
+    }
+  ],
+  "source_sha256": {
+    "assets/art_source/support_sprites/REGISTRATION.json": "f3acb57ca1b76a064dde32d3a939e4d020ee704cdfe1a92067ccb7feefb07a5a",
+    "assets/art_source/support_sprites/effigy-source.png": "ba44d95c36c51a5db2fe39410b211fc7a4563028b5c13be9ca4cdabef7789592",
+    "assets/generators/generate_inventory_chains_models.py": "cd9296836666c78bd555c76e3de56d0ccc345c40ecb94a15d5e78f159719f94f",
+    "assets/generators/generate_inventory_hygiene_models.py": "b85d6bac14b35faf4cc2f232c6c0e2fa8d9e2f6d5633400adc929f452a2c0a8e",
+    "assets/generators/generate_inventory_magic_bases_models.py": "f6043b6b6f1f24f12c8fe1ad67a03bcb6ad1d6f1529354384bf6505df95dbd74",
+    "assets/generators/generate_inventory_weapon_components_models.py": "49db0176aef05d21f21f7a356e58c4623c285eac15d2d1537bc8ddc8ec227958",
+    "assets/generators/generate_peuchen_model.py": "0f1873c9fd1da0be0f965ea73ff2cc5c35dc25a35ac9da2df4692b50cef30812",
+    "assets/source/art/inventory_models_647/magic_bases/PROVENANCE.json": "8f7978aa6fcd0af91b2fcde121c23ae6a36a49c0bbaf0b491f5bd7967210e34d",
+    "assets/source/art/inventory_models_647/weapon_components/PROVENANCE.json": "45898ee185960bad1b569b37f0175a51bd6e4cde1c30c910fa352dc20c2fb230",
+    "src/caelum/data/CaelumSupportImplementData.zs": "a4b0381a2bf2f7ada432c44d81d6c987307a89172c5ce7b240486e8bbe406ad6",
+    "src/caelum/data/support_sprites.textures": "40854287c9d22184a896d952227e3f19ff195f2f9b95ebf88cf264228d169c1f",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumSupportArt.zs": "5933f0ea55b94e5d30894501d7e1ac590a03ef35844a3677370328d79d474762",
+    "src/graphics/caelum/icons/support_sprites/effigy_t1.png": "8d8aa932c6210656272d05ca36ada0cb603a587162a61729413465edc3420fa4",
+    "src/graphics/caelum/icons/support_sprites/effigy_t2.png": "f9bdea1862d7586d0fc0bc21784a436917cf747a8c96c5d4d3518cccfb29e5ef",
+    "src/graphics/caelum/icons/support_sprites/effigy_t3.png": "ac055d968849b5566a892d8fed6b3ad541192aa35a726c1b35a4b406b508727e",
+    "src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "assets/source/art/inventory_models_647/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1"
+  },
+  "dimensions_note": "Original owned 128px icon envelopes define world scale; all three are42x112 opaque pixels. Geometry dimensions describe art only; no gameplay coordinates or physical collision dimensions change."
+}
