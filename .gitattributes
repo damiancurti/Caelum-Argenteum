@@ -1437,3 +1437,9 @@ assets/validation_v5_17_112/*.py text eol=lf diff
 assets/validation_v5_17_112/*.zs text eol=lf diff
 assets/validation_v5_17_112/*.json text eol=lf diff
 assets/validation_v5_17_112/*.txt text eol=lf diff
+
+# Exact full-frame diagnosis evidence and portable tools (#870).
+assets/validation_v5_17_113/** -text -diff
+assets/validation_v5_17_113/*.py text eol=lf diff
+assets/validation_v5_17_113/*.json text eol=lf diff
+assets/validation_v5_17_113/*.txt text eol=lf diff

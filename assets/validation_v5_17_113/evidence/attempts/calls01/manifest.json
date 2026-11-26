@@ -1,0 +1,262 @@
+{
+  "issue": 870,
+  "runtime_sha256": "28e29704db5bb6d145ce6ad1a2aa5160b41627e7697fefbfe76af0f3669f46cb",
+  "overlay_sha256": "1c4d938f95722b0f2f2236ce3b82263568d7d290e30ed3d8af8f4f68992d9a79",
+  "originals_restored_exactly": {
+    "caelum/actors/CaelumCombatActor.zs": "6cb9afd8c4c68311fe6dcf9c01b8e203d20ec493a4532e855bf5e008564bd181",
+    "caelum/actors/CaelumDemonService.zs": "24c6678a923f04e803dae7c22421eada5461b51ee1ac9f39dca9a7a82eed7a53",
+    "caelum/survival/CaelumAltitudeService.zs": "b4de2b38817c47ea3c697a3594f6a8bd553ac03dac8a2078c954dcddcf83e732",
+    "caelum/survival/CaelumBreathing.zs": "810636faaaaf72bccb3443391ca1d8e9fb797f5c2a07262ca048a42c8d421178",
+    "caelum/actors/CaelumCommunication.zs": "caf7097c0bce6345d81be61c7968b34f99d710922ea3d1fe9fbd59b68895387d",
+    "caelum/survival/CaelumThermalRuntime.zs": "fbb3936ca2d205d1baaa6329ff1bcf0c326d87af7ce2df025e5cfebb8e706904",
+    "caelum/survival/CaelumThermalMotion.zs": "79d078e003c49afe2a55fe1ad8635803d8f7beacaac0bca2a61bd2eea3054556",
+    "caelum/world/CaelumSiegeFocus.zs": "1be95494a04ca0674d9eeeb16ad7064334165452c73cff6d9cc3b7733676b0ef",
+    "caelum/world/CaelumPortSiege.zs": "3f40d2ebdf3703a44c6e2f16023ce135206c6e23cd36bbbc969e6939d65ea49a",
+    "caelum/world/CaelumPortDefender.zs": "0677d183cac863aedd64e1db8dfaba42f5a8ef9f3061c2f2ac29b881b4f2b0ea",
+    "caelum/equipment/CaelumRangedRules.zs": "61521844bb13d245007b68ddeb134c338d8d8e68960c162e783f78cf2a9db116"
+  },
+  "metrics": [
+    {
+      "id": 0,
+      "family": "Mandinga",
+      "stage": "CaelumCombatActor.zs:A_CaelumBudgetedLook"
+    },
+    {
+      "id": 1,
+      "family": "Mandinga",
+      "stage": "CaelumCombatActor.zs:A_CaelumBudgetedChase"
+    },
+    {
+      "id": 2,
+      "family": "Mandinga",
+      "stage": "CaelumCombatActor.zs:ThermalChase"
+    },
+    {
+      "id": 3,
+      "family": "Mandinga",
+      "stage": "CaelumCombatActor.zs:ResourceRecoveryActive"
+    },
+    {
+      "id": 4,
+      "family": "Mandinga",
+      "stage": "CaelumDemonService.zs:UpdateBreath"
+    },
+    {
+      "id": 5,
+      "family": "Mandinga",
+      "stage": "CaelumAltitudeService.zs:Update"
+    },
+    {
+      "id": 6,
+      "family": "Mandinga",
+      "stage": "CaelumBreathing.zs:UpdateSound"
+    },
+    {
+      "id": 7,
+      "family": "Mandinga",
+      "stage": "CaelumCommunication.zs:Pulse"
+    },
+    {
+      "id": 8,
+      "family": "Mandinga",
+      "stage": "CaelumThermalRuntime.zs:NPCStep"
+    },
+    {
+      "id": 9,
+      "family": "Mandinga",
+      "stage": "CaelumThermalMotion.zs:Physics"
+    },
+    {
+      "id": 10,
+      "family": "Mandinga",
+      "stage": "CaelumSiegeFocus.zs:ApplyToActor"
+    },
+    {
+      "id": 11,
+      "family": "Mandinga",
+      "stage": "CaelumPortSiege.zs:Pulse"
+    },
+    {
+      "id": 12,
+      "family": "Mandinga",
+      "stage": "CaelumPortSiege.zs:AttackerTarget"
+    },
+    {
+      "id": 13,
+      "family": "Mandinga",
+      "stage": "CaelumPortDefender.zs:RestoreWardrobeState"
+    },
+    {
+      "id": 14,
+      "family": "Mandinga",
+      "stage": "CaelumPortDefender.zs:ApplyWardrobe"
+    },
+    {
+      "id": 15,
+      "family": "Mandinga",
+      "stage": "CaelumRangedRules.zs:Tick"
+    },
+    {
+      "id": 16,
+      "family": "PortDefender",
+      "stage": "CaelumCombatActor.zs:A_CaelumBudgetedLook"
+    },
+    {
+      "id": 17,
+      "family": "PortDefender",
+      "stage": "CaelumCombatActor.zs:A_CaelumBudgetedChase"
+    },
+    {
+      "id": 18,
+      "family": "PortDefender",
+      "stage": "CaelumCombatActor.zs:ThermalChase"
+    },
+    {
+      "id": 19,
+      "family": "PortDefender",
+      "stage": "CaelumCombatActor.zs:ResourceRecoveryActive"
+    },
+    {
+      "id": 20,
+      "family": "PortDefender",
+      "stage": "CaelumDemonService.zs:UpdateBreath"
+    },
+    {
+      "id": 21,
+      "family": "PortDefender",
+      "stage": "CaelumAltitudeService.zs:Update"
+    },
+    {
+      "id": 22,
+      "family": "PortDefender",
+      "stage": "CaelumBreathing.zs:UpdateSound"
+    },
+    {
+      "id": 23,
+      "family": "PortDefender",
+      "stage": "CaelumCommunication.zs:Pulse"
+    },
+    {
+      "id": 24,
+      "family": "PortDefender",
+      "stage": "CaelumThermalRuntime.zs:NPCStep"
+    },
+    {
+      "id": 25,
+      "family": "PortDefender",
+      "stage": "CaelumThermalMotion.zs:Physics"
+    },
+    {
+      "id": 26,
+      "family": "PortDefender",
+      "stage": "CaelumSiegeFocus.zs:ApplyToActor"
+    },
+    {
+      "id": 27,
+      "family": "PortDefender",
+      "stage": "CaelumPortSiege.zs:Pulse"
+    },
+    {
+      "id": 28,
+      "family": "PortDefender",
+      "stage": "CaelumPortSiege.zs:AttackerTarget"
+    },
+    {
+      "id": 29,
+      "family": "PortDefender",
+      "stage": "CaelumPortDefender.zs:RestoreWardrobeState"
+    },
+    {
+      "id": 30,
+      "family": "PortDefender",
+      "stage": "CaelumPortDefender.zs:ApplyWardrobe"
+    },
+    {
+      "id": 31,
+      "family": "PortDefender",
+      "stage": "CaelumRangedRules.zs:Tick"
+    },
+    {
+      "id": 32,
+      "family": "other",
+      "stage": "CaelumCombatActor.zs:A_CaelumBudgetedLook"
+    },
+    {
+      "id": 33,
+      "family": "other",
+      "stage": "CaelumCombatActor.zs:A_CaelumBudgetedChase"
+    },
+    {
+      "id": 34,
+      "family": "other",
+      "stage": "CaelumCombatActor.zs:ThermalChase"
+    },
+    {
+      "id": 35,
+      "family": "other",
+      "stage": "CaelumCombatActor.zs:ResourceRecoveryActive"
+    },
+    {
+      "id": 36,
+      "family": "other",
+      "stage": "CaelumDemonService.zs:UpdateBreath"
+    },
+    {
+      "id": 37,
+      "family": "other",
+      "stage": "CaelumAltitudeService.zs:Update"
+    },
+    {
+      "id": 38,
+      "family": "other",
+      "stage": "CaelumBreathing.zs:UpdateSound"
+    },
+    {
+      "id": 39,
+      "family": "other",
+      "stage": "CaelumCommunication.zs:Pulse"
+    },
+    {
+      "id": 40,
+      "family": "other",
+      "stage": "CaelumThermalRuntime.zs:NPCStep"
+    },
+    {
+      "id": 41,
+      "family": "other",
+      "stage": "CaelumThermalMotion.zs:Physics"
+    },
+    {
+      "id": 42,
+      "family": "other",
+      "stage": "CaelumSiegeFocus.zs:ApplyToActor"
+    },
+    {
+      "id": 43,
+      "family": "other",
+      "stage": "CaelumPortSiege.zs:Pulse"
+    },
+    {
+      "id": 44,
+      "family": "other",
+      "stage": "CaelumPortSiege.zs:AttackerTarget"
+    },
+    {
+      "id": 45,
+      "family": "other",
+      "stage": "CaelumPortDefender.zs:RestoreWardrobeState"
+    },
+    {
+      "id": 46,
+      "family": "other",
+      "stage": "CaelumPortDefender.zs:ApplyWardrobe"
+    },
+    {
+      "id": 47,
+      "family": "other",
+      "stage": "CaelumRangedRules.zs:Tick"
+    }
+  ],
+  "period": 17,
+  "qualification": "Private wrappers retain every original statement and argument. Inclusive times overlap: nested calls must not be summed. Includes wrapper, handler lookup and timing overhead. Selected 42 tics, not production CPU budgets. No actor fields or saved schema changed."
+}

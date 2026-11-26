@@ -1,6 +1,21 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.112** - 2026-11-21.
+Documentation version: **5.17.113** - 2026-11-21.
+
+## 5.17.113 - Measure the full siege frame and identify actor costs (#870, #454)
+
+No production art, model, map or material changes under #870. Evidence and
+portable diagnostic sources are in assets/validation_v5_17_113. Exact logs,
+configuration, observer source, native counters, timestamp traces and captures
+are retained; engine/IWAD/PK3/save binaries are not distributed. Private wrappers
+are reconstructed from the explicitly selected runtime and restore all original
+production source bytes inversely.
+
+Two captures were explicitly inspected: native02 with engine counters and
+calls-run02 with the completed private call report. Both show the same gate/ram
+scene and HUD; still images do not prove fluency. Other retained captures were
+not newly claimed as inspected. The uninstrumented control is the original112
+#868 run, not a113 execution; earlier peaceful references retain110/111 labels.
 
 ## 5.17.112 - Measure endpoint setup and retain the shared production path (#868, #454)
 

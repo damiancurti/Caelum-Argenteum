@@ -1,0 +1,16 @@
+{
+  "issue": 870,
+  "baseline_sha256": "28e29704db5bb6d145ce6ad1a2aa5160b41627e7697fefbfe76af0f3669f46cb",
+  "runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "members": 18767,
+  "unchanged_members": 18765,
+  "changed": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "only_changes": "Two release diagnostic strings:5.17.112 to5.17.113",
+  "production_behavior_unchanged": true,
+  "author_queue_sha256": "87f8a2095c9f53248a5395764e9c870ecadde5611e2343664a65f6acc98084df",
+  "author_queue_unchanged": true,
+  "performance_reuse": "All measured #870 windows and the uninstrumented #868 control used immutable112, not final113. Only two release strings differ in113; no gameplay or art changes. Retain original hashes, labels and diagnostic-overhead qualifications."
+}

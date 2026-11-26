@@ -1,0 +1,54 @@
+Map MAP03: "Barracas al Sud — fortified port",
+x = -4352.0000, y = -14016.0000, z = 41.0000, angle = -90.0000, pitch = 0.0000
+1 fps
+
+Walls: 838 (0 splits, 0 t-splits, 1516 vertices)
+Flats: 9 (9 primitives, 50718 vertices)
+Sprites: 1341, Decals=0, Portals: 2, Command buffers: 6
+BSP = 0.032, Clip=0.207
+W: Render=0.140, Setup=0.868
+F: Render=0.007, Setup=0.006
+S: Render=2.801, Setup=2.792
+2D: 0.364 Finish3D: 0.005
+Main thread total=3.696, Main thread waiting=3.457 Worker thread total=3.676, Worker thread waiting=0.010
+All=9.133, Render=3.034, Setup=3.715, Portal=0.104, Drawcalls=2.382, Postprocess=0.023, Finish=2.152
+DLight - Walls: 2 processed, 1 rendered - Flats: 7 processed, 7 rendered
+
+
+
+Map MAP03: "Barracas al Sud — fortified port",
+x = -4352.0000, y = -14016.0000, z = 41.0000, angle = -90.0000, pitch = 0.0000
+2 fps
+
+Walls: 838 (0 splits, 0 t-splits, 1516 vertices)
+Flats: 9 (9 primitives, 50718 vertices)
+Sprites: 1348, Decals=0, Portals: 2, Command buffers: 5
+BSP = 0.034, Clip=0.231
+W: Render=0.152, Setup=0.934
+F: Render=0.006, Setup=0.006
+S: Render=0.899, Setup=0.910
+2D: 0.315 Finish3D: 0.007
+Main thread total=1.885, Main thread waiting=1.621 Worker thread total=1.863, Worker thread waiting=0.012
+All=5.350, Render=1.139, Setup=1.905, Portal=0.103, Drawcalls=0.550, Postprocess=0.030, Finish=2.049
+DLight - Walls: 0 processed, 0 rendered - Flats: 0 processed, 0 rendered
+
+
+
+Map MAP03: "Barracas al Sud — fortified port",
+x = -4352.0000, y = -14016.0000, z = 41.0000, angle = -90.0000, pitch = 0.0000
+1 fps
+
+Walls: 838 (0 splits, 0 t-splits, 1516 vertices)
+Flats: 9 (9 primitives, 50718 vertices)
+Sprites: 1350, Decals=0, Portals: 2, Command buffers: 5
+BSP = 0.027, Clip=0.198
+W: Render=0.127, Setup=0.856
+F: Render=0.006, Setup=0.005
+S: Render=0.766, Setup=0.661
+2D: 0.285 Finish3D: 0.005
+Main thread total=1.556, Main thread waiting=1.331 Worker thread total=1.533, Worker thread waiting=0.011
+All=4.880, Render=0.978, Setup=1.572, Portal=0.106, Drawcalls=0.576, Postprocess=0.023, Finish=2.094
+DLight - Walls: 0 processed, 0 rendered - Flats: 0 processed, 0 rendered
+
+
+

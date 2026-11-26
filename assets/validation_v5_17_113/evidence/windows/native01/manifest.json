@@ -1,0 +1,8 @@
+{
+  "issue": 870,
+  "mode": "native",
+  "adapter_sha256": "7ec40daea4933748b1d412a5afb41465427aff4bd639cdd5edf2c0060275873f",
+  "shared_driver_sha256": "10bfecf2c7e74a79cc4e4431a7403ed7563adfdb95e386f1fcb1ce56ec0e5d31",
+  "generated_driver_sha256": "f9c417d4c3f4a7572a9d0c017229b95de0e291619bc45d56433e66026d48f1b8",
+  "scope": "Only private observer arrays and console diagnostics change. Production runtime, camera, census, combatants, schedules and resources are unchanged. Native mode adds one-tic profilethinkers snapshots, later bench CPU snapshots and debugfile IO; this is diagnostic overhead, not uninstrumented throughput."
+}

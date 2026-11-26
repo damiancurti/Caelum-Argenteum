@@ -4,6 +4,33 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-269 - Measure simulation grouping before attributing low FPS to rendering
+
+Status/evidence: ENGINE-VERIFIED diagnosis, #870 /5.17.113,2026-11-21,
+official GZDoom4.14.2. Production gameplay unchanged; no author acceptance.
+
+D_DoomLoop runs TryRunTics before D_Display. The approved normal siege shows
+15-17 actual WorldTick callbacks between complete render callbacks, verified with
+monotonic timestamps and matching level.time deltas. Low QueuePresent rate alone
+does not establish a GPU bottleneck. Native-state/physics timings also include
+script state actions; do not relabel them as native movement/collision alone.
+
+profilethinkers -t samples one instrumented tic. A stride140 probe repeats a35-tic
+phase and overstates the recurring Mandinga peak;35 snapshots spaced19 tics cover
+all35 command-marker residues. Record phase coverage and the chosen sample count.
+Selected means are not an uninstrumented whole-window CPU budget. bench records a
+later renderer CPU snapshot, not GPU duration; nested/main/worker phases overlap.
+VM-stat display labels must be checked against when counters shift/reset.
+
+Common-stage and call wrappers restore every production statement/argument
+inversely, but add timing/lookup/call overhead. Retain inclusive nesting and actual
+call counts, including family subclasses that differ from exact native class
+grouping. Keep failed compilation separate; For is a reserved ZScript keyword.
+The next measured costs are PortSiege.Pulse/targets, NPCStep and communication;
+no result authorizes removing perception, audible orders, physiology or collision.
+Evidence: assets/validation_v5_17_113. See CA-KP-110 and SYSTEMS performance policy.
+
+
 ## CA-KP-268 - Validate diagnostic object references before interpreting results
 
 Status/evidence: ENGINE-VERIFIED fixture correction, #868 /5.17.112,

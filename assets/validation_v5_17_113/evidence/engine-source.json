@@ -1,0 +1,10 @@
+{
+  "source": "Official GZDoom g4.14.2, locally retained source; no replacement engine",
+  "files": {
+    "src/d_main.cpp": "eaacfd9446066e1e4f7b439b63c7c601fbee24519d932584530a26304bd57703",
+    "src/d_net.cpp": "23ee15610d63842c7ab8a7c0d5e147bdba428745bc4803f08cfc01c910e2af6c",
+    "src/playsim/dthinker.cpp": "326cfdfdce85c476363322eead6252833d6b9cabcd79c2dd4cb35225fe9de01d",
+    "src/common/engine/stats.cpp": "42bd5b90193b69eb00ade0603676a8dabfc61f1a48b4783930d9ee519665cc89",
+    "src/common/scripting/vm/vmframe.cpp": "3f94e99e3aae399072425618038a171d9cc25536a18497d68edff4c6a3100c3f"
+  }
+}

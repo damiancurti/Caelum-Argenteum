@@ -1,6 +1,87 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.112** - 2026-11-21.
+Documentation version: **5.17.113** - 2026-11-21.
+
+## 5.17.113 - Measure the full siege frame and identify actor costs (#870, #454)
+
+Diagnosis only: all production behavior remains unchanged. The tested immutable
+5.17.112 runtime is 28e29704db5bb6d145ce6ad1a2aa5160b41627e7697fefbfe76af0f3669f46cb.
+Source-backed interpretation uses the pinned official g4.14.2 D_DoomLoop,
+TryRunTics, thinker profiling, renderer counters and VM-stat implementation.
+TryRunTics processes accumulated simulation work before D_Display. A low
+QueuePresent rate therefore does not establish GPU saturation.
+
+Grouping-only observed38 frame timestamps and37 complete intervals: nine with16
+WorldTick callbacks,27 with17 and one with15 (mean16.7027). Monotonic callback
+timestamps agree with frame level.time deltas. It records1.980947 queue presents/s.
+Native02 and stage/call probes likewise show16-17 or17 callbacks per interval.
+The native02 instrumented presentation rate is1.861432; stages1.883417 and
+calls1.884453 are separate overhead-bearing runs, not speed comparisons.
+
+Initial native01 used five snapshots spaced140 tics, repeating the same modulo35
+phase. Its26.037ms Mandinga mean is biased and must not become a general CPU
+budget. Native02 uses35 one-tic snapshots spaced19 tics; all35 command-marker
+residues occur once. Selected-snapshot means: Mandinga10.830764ms (range6.939074
+to27.217613,987 calls), defender9.185263ms (8.130144 to9.889672,600 calls),
+ContaminationObject2.207464ms/1705 calls, ContaminationContact1.680884ms,
+SewerEscapeTarget0.377874ms, ContaminationCarrier0.315715ms and
+StackExposure0.287109ms. These are instrumented selected-tic means, not a measured
+uninstrumented whole-window CPU budget. Native thinker grouping reports600 plain
+defenders; the common-stage family count includes one additional subclass,601.
+
+Three native02 bench All scopes are9.133/5.350/4.880ms. Each is a later renderer
+CPU snapshot after the command's waiting period, not GPU time or a window mean.
+Main/worker/nested counters overlap. The VM stat display's text says last10 tics,
+but its implementation shifts/reset counters when the display is drawn; do not
+convert that label alone into a per-simulation-tic budget during grouped frames.
+
+The stage probe samples42 tics at period17. Both Mandinga and defender common
+paths reach all six stages on every sampled call:987 and601 calls/tic. Mandinga
+services3.712614ms, native-state/physics2.669257ms (max18.3168), thermal section
+1.858417ms; defender services1.653755ms, native-state/physics3.350171ms and thermal
+section1.128433ms. Native-state/physics includes script state actions; it is not
+isolated native collision time. Common/outer totals are nested with these stages.
+
+A separate42-tic call probe identifies the concrete services below. Calls overlap:
+PortSiege.Pulse is within budgeted Look/Chase; AttackerTarget is within Pulse.
+Do not add those inclusive measurements. Each original function body and argument
+is preserved by an exact-inverse verified wrapper; lookup/timer/wrapper overhead
+remains in sampled costs. No actor fields or save schema were changed.
+
+| Selected call (inclusive) | Mandinga mean / max ms | Defender mean / max ms |
+| --- | ---: | ---: |
+| CaelumPortSiege.zs:Pulse | 2.5266 / 20.7527 | 3.2308 / 3.8247 |
+| CaelumPortSiege.zs:AttackerTarget | 1.6526 / 12.7066 | 0.0000 / 0.0000 |
+| CaelumThermalRuntime.zs:NPCStep | 1.8249 / 2.0726 | 1.0643 / 1.2436 |
+| CaelumCommunication.zs:Pulse | 1.4630 / 1.6384 | 0.6447 / 0.8116 |
+| CaelumDemonService.zs:UpdateBreath | 0.5397 / 0.6038 | 0.0242 / 0.0266 |
+
+The next useful investigation is within siege targeting/state actions, thermal
+NPC integration and communication. These measurements do not yet prove a safe
+replacement or authorize skipping their gameplay. Breath/wardrobe costs do not
+justify revisiting rejected state-cache or tiny endpoint alternatives.
+
+Retained failures: calls01 generation used an incorrect carbine argument name and
+was rejected before engine launch. calls02 used For as a helper method, a reserved
+case-insensitive ZScript keyword; native compilation failed. calls03 renames it
+FindFor, uses the actual owner argument, and completes cleanly. Failure files are
+separate from the five passing windows; no failed run is counted as evidence.
+
+All five passed diagnostic windows have the same recorded census/state as the
+original uninstrumented112 control:601 defenders,988 attackers, population1590,
+parked0, dense1, aggregate health1421137; player1248 at(-4352,-14016,0),
+tics3599..4299. This is observer-state equality, not proof of every hidden world
+field. The original control records2.028816 queue presents/s; present mean/p95/
+p99/max492.8983/538.5503/543.2141/543.2141ms;700 tic intervals mean/p95/p99/max
+29.6140/44.6904/48.6968/68.0452ms. It is reused on the exact112 runtime and is not
+presented as a new113 run. Unchanged peaceful references remain in110/111/112.
+
+Windows11/Ryzen9 5950X/RTX3070Ti, official GZDoom4.14.2, Vulkan1280x720,
+unpaused background and5% audio, one engine at a time. QueuePresent is not monitor
+scanout; tic interval tails contain pacing/frame work. No retired6000 case ran.
+Two diagnostic captures were inspected; no author/art acceptance is inferred.
+Evidence: assets/validation_v5_17_113; lesson CA-KP-269. The author queue remains
+byte-for-byte unchanged. Full project validation passes with no errors; the document index is current.
 
 ## 5.17.112 - Measure endpoint setup and retain the shared production path (#868, #454)
 
