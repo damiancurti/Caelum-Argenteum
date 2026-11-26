@@ -1108,3 +1108,10 @@ assets/validation_v5_17_42/evidence/** -text -diff
 /assets/validation_v5_17_65/*.zs text eol=lf
 /assets/validation_v5_17_65/evidence/** -text -diff
 /src/caelum/data/inventory_ranged_weapons.modeldef text eol=lf
+
+# #775 distinct armor/potion aliases and raw native evidence.
+/assets/generators/validate_armor_world_aliases.py text eol=lf
+/assets/validation_v5_17_66/*.py text eol=lf
+/assets/validation_v5_17_66/*.zs text eol=lf
+/assets/validation_v5_17_66/*.json text eol=lf
+/assets/validation_v5_17_66/evidence/** -text -diff

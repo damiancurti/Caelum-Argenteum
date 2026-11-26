@@ -3052,7 +3052,7 @@
     "assets/source/art/inventory_models_647/weapon_components/PROVENANCE.json": "45898ee185960bad1b569b37f0175a51bd6e4cde1c30c910fa352dc20c2fb230",
     "src/caelum/data/CaelumSupportImplementData.zs": "a4b0381a2bf2f7ada432c44d81d6c987307a89172c5ce7b240486e8bbe406ad6",
     "src/caelum/data/support_sprites.textures": "40854287c9d22184a896d952227e3f19ff195f2f9b95ebf88cf264228d169c1f",
-    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
     "src/caelum/equipment/CaelumSupportArt.zs": "5933f0ea55b94e5d30894501d7e1ac590a03ef35844a3677370328d79d474762",
     "src/graphics/caelum/icons/support_sprites/effigy_t1.png": "8d8aa932c6210656272d05ca36ada0cb603a587162a61729413465edc3420fa4",
     "src/graphics/caelum/icons/support_sprites/effigy_t2.png": "f9bdea1862d7586d0fc0bc21784a436917cf747a8c96c5d4d3518cccfb29e5ef",

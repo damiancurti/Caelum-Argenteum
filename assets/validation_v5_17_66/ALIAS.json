@@ -1,0 +1,14 @@
+{
+  "issue": 775,
+  "aliases": {
+    "CMARA0": {
+      "path": "graphics/caelum/icons/ca_armor_medium.png",
+      "sha256": "f8c9f7ff4ee6c128029183dadf480fd6dc30103fb56da99c28cd7bac23598ff7"
+    },
+    "CAMDA0": {
+      "path": "graphics/caelum/icons/potions/anima_medium.png",
+      "sha256": "a12e2e422599d1d55784291cfe53cbf8d7b7e379d86532ca99457d5f49ef1801"
+    }
+  },
+  "scope": "Unique existing-art bindings; no image, balance or model changes."
+}

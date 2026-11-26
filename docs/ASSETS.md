@@ -1,6 +1,38 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.65** - 2026-11-15.
+Documentation version: **5.17.66** - 2026-11-15.
+
+## 5.17.66 - Separate medium armor and Anima potion aliases (#775)
+
+The inventory audit found that both medium torso armor and the medium Anima
+potion selected CAMDA0. The later potion TEXTURES definition replaced the older
+armor alias, so the armor drop displayed a bottle. Medium torso armor now uses
+the unused CMARA0 identifier and the same ca_armor_medium.png image, 128-square
+canvas and Offset 64,120. CAMDA0 retains the potion image. A new registered state
+is appended without renumbering existing registry states. Other armor slots,
+qualities, inventory icons, statistics and native behavior are unchanged.
+
+No new art or models. All packaged images, meshes and MODELDEF files are
+byte-identical to #773. The existing owner-null Tick refresh selects the corrected
+sprite after old-save load; the previous runtime restores its previous display
+on rollback. No persistent field/schema or migration revision is introduced.
+Shared source provenance in 32 metadata files is refreshed for the two affected
+source hashes; their geometry, material and generated-resource hashes do not
+change. The new bounded validator prevents this known duplicate alias and
+checks the original owned reference images.
+
+Fifteen armor cases (all medium slots/qualities and three other torso controls)
+plus a split medium-Anima-potion stack pass 1,193 native assertions across fresh
+pickup/drop, old-save load, equip/unequip, reload and rollback. All five phase
+captures show the expected armor-versus-potion distinction. The initial fixture
+shadowed the Potion field with a case-insensitive local variable; an intermediate
+runner exited before its last queued verification. Both test defects are fixed
+and superseded evidence is retained. Final runtime has 18,535 exact src entries;
+only TEXTURES, the armor selector/registry and two version diagnostics differ.
+Evidence: assets/validation_v5_17_66/evidence/SUMMARY.json. No rendering throughput
+claim is made for this binding-only correction. CA775-ARMOR-ALIAS-01 awaits
+ordinary author confirmation. All sixteen armor world states still need 3D
+models; the inventory discovery is not proof of universal coverage or visibility.
 
 ## 5.17.65 - Native ranged-weapon drops (#773)
 

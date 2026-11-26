@@ -1,0 +1,71 @@
+{
+  "issue": 775,
+  "scope": "Check the medium-armor alias and native save/pickup continuity for #775.",
+  "baseline_sha256": "3433d35f16181933a159ca9039810926a52e8e9a93962361bdc834db4614b841",
+  "runtime_sha256": "f57402ca8a76ba8e4b1dcf06a51b99e4f3392539a4c8cfb675a4c15511b491aa",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "fixture_sha256": "c4df7ef654594506c332c034b4604f1c3a6340bc1a5bf07777fbc3307e11105b",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "errors": [],
+      "assertions": 157,
+      "expected_assertions": 157,
+      "completions": [
+        "0"
+      ],
+      "passed": true
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "errors": [],
+      "assertions": 293,
+      "expected_assertions": 293,
+      "completions": [
+        "0",
+        "0",
+        "0"
+      ],
+      "passed": true
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "errors": [],
+      "assertions": 157,
+      "expected_assertions": 157,
+      "completions": [
+        "0"
+      ],
+      "passed": true
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "errors": [],
+      "assertions": 293,
+      "expected_assertions": 293,
+      "completions": [
+        "0",
+        "0",
+        "0"
+      ],
+      "passed": true
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "errors": [],
+      "assertions": 293,
+      "expected_assertions": 293,
+      "completions": [
+        "0",
+        "0",
+        "0"
+      ],
+      "passed": true
+    }
+  ]
+}

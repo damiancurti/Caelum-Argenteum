@@ -1,0 +1,48 @@
+{
+  "issue": 775,
+  "reason": "Refresh pinned shared source hashes after the isolated medium-armor alias fix; no mesh, portable geometry, material or other alias changes.",
+  "old_sha256": {
+    "src/TEXTURES": "b18f53438055b5d13e985e550629be4578c2d9852888756d3eca9a8f3f58218e",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44"
+  },
+  "new_sha256": {
+    "src/TEXTURES": "fe101bef213d375ca30330deb1f01a3c595caf63d753ed9e5ba505318fc3c6ad",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9"
+  },
+  "metadata_files": [
+    "assets/source/art/inventory_models_647/ammunition/DESIGN.json",
+    "assets/source/art/inventory_models_647/ammunition/EXPORT.json",
+    "assets/source/art/inventory_models_647/articulated_weapons/DESIGN.json",
+    "assets/source/art/inventory_models_647/articulated_weapons/EXPORT.json",
+    "assets/source/art/inventory_models_647/axes/DESIGN.json",
+    "assets/source/art/inventory_models_647/axes/EXPORT.json",
+    "assets/source/art/inventory_models_647/bladed_weapons/DESIGN.json",
+    "assets/source/art/inventory_models_647/bladed_weapons/EXPORT.json",
+    "assets/source/art/inventory_models_647/books/DESIGN.json",
+    "assets/source/art/inventory_models_647/books/EXPORT.json",
+    "assets/source/art/inventory_models_647/documents/DESIGN.json",
+    "assets/source/art/inventory_models_647/documents/EXPORT.json",
+    "assets/source/art/inventory_models_647/effective_weapon_references/PROVENANCE.json",
+    "assets/source/art/inventory_models_647/effigies/DESIGN.json",
+    "assets/source/art/inventory_models_647/effigies/EXPORT.json",
+    "assets/source/art/inventory_models_647/ingots/DESIGN.json",
+    "assets/source/art/inventory_models_647/ingots/EXPORT.json",
+    "assets/source/art/inventory_models_647/locks/DESIGN.json",
+    "assets/source/art/inventory_models_647/locks/EXPORT.json",
+    "assets/source/art/inventory_models_647/magic_tiers/DESIGN.json",
+    "assets/source/art/inventory_models_647/magic_tiers/EXPORT.json",
+    "assets/source/art/inventory_models_647/magic_weapons/DESIGN.json",
+    "assets/source/art/inventory_models_647/magic_weapons/EXPORT.json",
+    "assets/source/art/inventory_models_647/orbs/DESIGN.json",
+    "assets/source/art/inventory_models_647/orbs/EXPORT.json",
+    "assets/source/art/inventory_models_647/orbs/PROVENANCE.json",
+    "assets/source/art/inventory_models_647/polearms/DESIGN.json",
+    "assets/source/art/inventory_models_647/polearms/EXPORT.json",
+    "assets/source/art/inventory_models_647/ranged_weapons/DESIGN.json",
+    "assets/source/art/inventory_models_647/ranged_weapons/EXPORT.json",
+    "assets/source/art/inventory_models_647/shields/DESIGN.json",
+    "assets/source/art/inventory_models_647/shields/EXPORT.json"
+  ],
+  "transitive_dependency": "Refresh the complete metadata chain: ammunition DESIGN -> documents DESIGN/EXPORT -> ingots/books manifests. Geometry/material/resource hashes remain unchanged.",
+  "dependency_refresh_passes": 2
+}

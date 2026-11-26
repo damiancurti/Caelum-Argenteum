@@ -1,0 +1,13 @@
+{
+  "entries": 18535,
+  "exact_src": true,
+  "sha256": "f57402ca8a76ba8e4b1dcf06a51b99e4f3392539a4c8cfb675a4c15511b491aa",
+  "changed": [
+    "TEXTURES",
+    "caelum/equipment/CaelumEquipmentPickups.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "added": [],
+  "all_models_and_images_unchanged": true
+}

@@ -2569,7 +2569,7 @@
     "src/graphics/caelum/icons/ca_shield_kite.png": "045ee7c9ca599708a0da2e3418bd525e9bf6c81d2c00f0632fe69057e1409964",
     "src/graphics/caelum/icons/ca_shield_tower.png": "08261880167ba8a0ff4d39606f5246271bead7874714d77db5de0083a121520e",
     "src/graphics/caelum/icons/ca_shield_magic.png": "ec129df38708d9be7ed9806c5e47652b1bbe3326bd27d29fa8e67151677a2488",
-    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
     "src/caelum/equipment/CaelumShieldModel.zs": "42ed5838d4141c6f28985c148a0aa01f00254e784084d482981c3c469d764085",
     "assets/first_person_shields/COMPOSITION.json": "493af12a5859729e423975071c40464b1a427835f9b33075ca2b182fd8d8d793",
     "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff",

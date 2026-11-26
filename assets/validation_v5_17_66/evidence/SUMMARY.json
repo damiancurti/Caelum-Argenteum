@@ -1,0 +1,253 @@
+{
+  "issue": 775,
+  "parent_issue": 647,
+  "version": "5.17.66",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Separate the existing medium torso armor alias CMAR from CAMD Anima potion. No new image/model, schema, balance, inventory icon or gameplay rules.",
+  "runtime": {
+    "entries": 18535,
+    "exact_src": true,
+    "sha256": "f57402ca8a76ba8e4b1dcf06a51b99e4f3392539a4c8cfb675a4c15511b491aa",
+    "changed": [
+      "TEXTURES",
+      "caelum/equipment/CaelumEquipmentPickups.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "added": [],
+    "all_models_and_images_unchanged": true
+  },
+  "continuity": {
+    "issue": 775,
+    "scope": "Check the medium-armor alias and native save/pickup continuity for #775.",
+    "baseline_sha256": "3433d35f16181933a159ca9039810926a52e8e9a93962361bdc834db4614b841",
+    "runtime_sha256": "f57402ca8a76ba8e4b1dcf06a51b99e4f3392539a4c8cfb675a4c15511b491aa",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "fixture_sha256": "c4df7ef654594506c332c034b4604f1c3a6340bc1a5bf07777fbc3307e11105b",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "errors": [],
+        "assertions": 157,
+        "expected_assertions": 157,
+        "completions": [
+          "0"
+        ],
+        "passed": true
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "errors": [],
+        "assertions": 293,
+        "expected_assertions": 293,
+        "completions": [
+          "0",
+          "0",
+          "0"
+        ],
+        "passed": true
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "errors": [],
+        "assertions": 157,
+        "expected_assertions": 157,
+        "completions": [
+          "0"
+        ],
+        "passed": true
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "errors": [],
+        "assertions": 293,
+        "expected_assertions": 293,
+        "completions": [
+          "0",
+          "0",
+          "0"
+        ],
+        "passed": true
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "errors": [],
+        "assertions": 293,
+        "expected_assertions": 293,
+        "completions": [
+          "0",
+          "0",
+          "0"
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "provenance_refresh": {
+    "issue": 775,
+    "reason": "Refresh pinned shared source hashes after the isolated medium-armor alias fix; no mesh, portable geometry, material or other alias changes.",
+    "old_sha256": {
+      "src/TEXTURES": "b18f53438055b5d13e985e550629be4578c2d9852888756d3eca9a8f3f58218e",
+      "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44"
+    },
+    "new_sha256": {
+      "src/TEXTURES": "fe101bef213d375ca30330deb1f01a3c595caf63d753ed9e5ba505318fc3c6ad",
+      "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9"
+    },
+    "metadata_files": [
+      "assets/source/art/inventory_models_647/ammunition/DESIGN.json",
+      "assets/source/art/inventory_models_647/ammunition/EXPORT.json",
+      "assets/source/art/inventory_models_647/articulated_weapons/DESIGN.json",
+      "assets/source/art/inventory_models_647/articulated_weapons/EXPORT.json",
+      "assets/source/art/inventory_models_647/axes/DESIGN.json",
+      "assets/source/art/inventory_models_647/axes/EXPORT.json",
+      "assets/source/art/inventory_models_647/bladed_weapons/DESIGN.json",
+      "assets/source/art/inventory_models_647/bladed_weapons/EXPORT.json",
+      "assets/source/art/inventory_models_647/books/DESIGN.json",
+      "assets/source/art/inventory_models_647/books/EXPORT.json",
+      "assets/source/art/inventory_models_647/documents/DESIGN.json",
+      "assets/source/art/inventory_models_647/documents/EXPORT.json",
+      "assets/source/art/inventory_models_647/effective_weapon_references/PROVENANCE.json",
+      "assets/source/art/inventory_models_647/effigies/DESIGN.json",
+      "assets/source/art/inventory_models_647/effigies/EXPORT.json",
+      "assets/source/art/inventory_models_647/ingots/DESIGN.json",
+      "assets/source/art/inventory_models_647/ingots/EXPORT.json",
+      "assets/source/art/inventory_models_647/locks/DESIGN.json",
+      "assets/source/art/inventory_models_647/locks/EXPORT.json",
+      "assets/source/art/inventory_models_647/magic_tiers/DESIGN.json",
+      "assets/source/art/inventory_models_647/magic_tiers/EXPORT.json",
+      "assets/source/art/inventory_models_647/magic_weapons/DESIGN.json",
+      "assets/source/art/inventory_models_647/magic_weapons/EXPORT.json",
+      "assets/source/art/inventory_models_647/orbs/DESIGN.json",
+      "assets/source/art/inventory_models_647/orbs/EXPORT.json",
+      "assets/source/art/inventory_models_647/orbs/PROVENANCE.json",
+      "assets/source/art/inventory_models_647/polearms/DESIGN.json",
+      "assets/source/art/inventory_models_647/polearms/EXPORT.json",
+      "assets/source/art/inventory_models_647/ranged_weapons/DESIGN.json",
+      "assets/source/art/inventory_models_647/ranged_weapons/EXPORT.json",
+      "assets/source/art/inventory_models_647/shields/DESIGN.json",
+      "assets/source/art/inventory_models_647/shields/EXPORT.json"
+    ],
+    "transitive_dependency": "Refresh the complete metadata chain: ammunition DESIGN -> documents DESIGN/EXPORT -> ingots/books manifests. Geometry/material/resource hashes remain unchanged.",
+    "dependency_refresh_passes": 2
+  },
+  "static": {
+    "known_alias_check_passed": true,
+    "reference_images_unchanged": true,
+    "metadata_only_changes_verified": 32,
+    "regenerated_ranged_manifest_exact": true,
+    "project_validation_passed": true
+  },
+  "art": {
+    "inspected_final_views": [
+      "native04/baseline.png",
+      "native04/old-save-load.png",
+      "native04/candidate-fresh.png",
+      "native04/candidate-reload.png",
+      "native04/rollback-load.png"
+    ],
+    "author_check": "CA775-ARMOR-ALIAS-01"
+  },
+  "environment": {
+    "engine": "GZDoom4.14.2",
+    "os": "Windows11 Pro26200",
+    "cpu": "Ryzen9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX3070Ti",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05
+  },
+  "qualifications": [
+    "Fifteen armor cases cover twelve medium slot/tier combinations and one torso control for each other armor type, plus one split medium Anima stack. Native APIs do not prove ordinary menus or author acceptance.",
+    "Existing owner-null Tick refreshes the display after load; rollback restores the previous wrong display without losing native identity. No persistent schema change.",
+    "Native01/02 fixture local potion shadowed the Potion field because identifiers are case-insensitive. Native03 passed its engine assertions but exited before its last queued check. Native04 fixes both fixture faults and passes every requested phase.",
+    "Private discovery enumerates856 defaults/catalogue combinations and finds16 unmapped armor states; it is not universal runtime visibility or gameplay certification. Two ancestor-only default cases require separate native visibility review.",
+    "All packaged images/models/MODELDEF remain byte-identical. No new timing or crowd/render acceptance claim for this alias correction.",
+    "Sixteen armor models, other characters, modular equipment and V5.16 remain unfinished. No IWAD/executable/DLL/compiled fixture/save is committed.",
+    "Initial project validation found a transitive documents-to-ammunition DESIGN hash dependency. Refreshed the complete transitive documents/ingots/books metadata chain; no geometry/material changed. Final full validation passes."
+  ],
+  "files": {
+    "build01.log": "f33cdceb1ee8d5e32299f82e757a67ed8416b69dfa067833d481c3f98d02ce3e",
+    "build02.log": "85bedcf4a7712bf91dffcbb1841c271cdfe94b4d016978cb071288bc20be34e9",
+    "discovery/audit.zs": "666da737c922b8deaa6a31fb517591db3f0992a0245e22116887ac012c19f6e8",
+    "discovery/commands.cfg": "560538093055a71975d69121e14f4143d92fdf22b903570e0d50413efe594e69",
+    "discovery/engine.log": "83a497d369b09fa2338f4b125511c13d35a17f5894008ecd385cc48a79c2814c",
+    "discovery/fixture-source/MAPINFO.txt": "5913b0336bc5989cedb6f6b397371cdb540a0c60a3ca75b5c1b3add4c0e84fc6",
+    "discovery/fixture-source/ZSCRIPT.txt": "e26b4bf4c63d58caff7c75fff26ebd813ead6e5a9b1aa2e89b7939ea6c5d589c",
+    "discovery/process.log": "d38a07bcc0c7aaece370d240eb5686dc6d9324e1369571af8448575de6d5c459",
+    "discovery/REPORT.json": "420aaf0cbc86000e9dc6724925b60a7ef0a9561f9282940929bf9063c917a69a",
+    "discovery/session.ini": "c013ca6b7d99cef888ae2424bb1cdfa20b88af8e3c74cf171581fe0095db59a1",
+    "native01/baseline-process.log": "d047cfb289ca03be9f45abe9116721421cf3262a1fc24a2a0176ccf0682ecc0e",
+    "native01/baseline.cfg": "f0168fb640e3b714c4db47c98d29ee0f975a65690df1ea553a8d653012612fb1",
+    "native01/baseline.log": "eb89a6798b0da1a552f084dd1f22e61fc9ed7a46b536a065917b86f2d9d1ed14",
+    "native01/baseline.png": "1eacc2d161991b2f93f814d6980ae1a9cc6410f643bc56539d475c018b750e21",
+    "native01/fixture-source/MAPINFO.txt": "c8743364bd5ffe9a61d13c7cd61210e4a6adecca23b6f47f9dfe36f6fd9c1001",
+    "native01/fixture-source/ZSCRIPT.txt": "ed977a228a553afcd7abcded5aabd3b158b738ba12fc6a23e261ad54cff9cef6",
+    "native01/fixture.zs": "ffba9a3129594dc6d9b2f6e607b9ffc4c3dff83d186d14530e44556015e17a69",
+    "native01/RESULTS.json": "83ce60b99191c90d5236f8f51de095556f0a68003c143c4ac7b208aedbe99b15",
+    "native01/session.ini": "b9dfbd8a6dfcf8d66dea6bdf84c74f38e6e8b91476b8a78aa39c52a0c786a607",
+    "native02/baseline-process.log": "57325d004e7d57626e55dc3551f1e7cb8f760dfeb7c7792ba7bd3df080a4a100",
+    "native02/baseline.cfg": "f0168fb640e3b714c4db47c98d29ee0f975a65690df1ea553a8d653012612fb1",
+    "native02/baseline.log": "e78335a0d744201b605a64c3c3948a4d593baf6f518fe8eca88dfd4a33ea9b7b",
+    "native02/baseline.png": "1eacc2d161991b2f93f814d6980ae1a9cc6410f643bc56539d475c018b750e21",
+    "native02/fixture-source/MAPINFO.txt": "c8743364bd5ffe9a61d13c7cd61210e4a6adecca23b6f47f9dfe36f6fd9c1001",
+    "native02/fixture-source/ZSCRIPT.txt": "a68b08d4ec728689239a6e0fbcc528832b30b75c0bc7ca6bd5562389dc73b504",
+    "native02/fixture.zs": "ae85f3ced311e84ff3a44eb4d3217c54a3b251b0b4c59b0bf5d24db2c86976af",
+    "native02/RESULTS.json": "896143cbb2d25cfc87c4005aebcc19e239d06098c1f7d9cf806c99d140c5be61",
+    "native02/session.ini": "94991fee2faf9959c94240393853b4f739378724fe1aa6791fc42d0899f8efe1",
+    "native03/baseline-process.log": "a9160ac59428c89c134ec453af4a4d7176fd1cbd9923a741877a642a458f0e34",
+    "native03/baseline.cfg": "f0168fb640e3b714c4db47c98d29ee0f975a65690df1ea553a8d653012612fb1",
+    "native03/baseline.log": "18bf655575d3d86112968b382c6b07e05ea7d1e03f8af322719e44cd3b76d7b6",
+    "native03/baseline.png": "1eacc2d161991b2f93f814d6980ae1a9cc6410f643bc56539d475c018b750e21",
+    "native03/fixture-source/MAPINFO.txt": "c8743364bd5ffe9a61d13c7cd61210e4a6adecca23b6f47f9dfe36f6fd9c1001",
+    "native03/fixture-source/ZSCRIPT.txt": "4c27601e1198323b5c1459643dae4b4940915a0de62e5f6718b5ee8497784429",
+    "native03/fixture.zs": "89c6d4c776ebd670035e3d500205f945da6989bcefedd0ee4be19717426c5268",
+    "native03/old-save-load-process.log": "0576a31a78af9d6cdffb6be16bcdf6818e3f0e35327eb082eccaa987fb468c35",
+    "native03/old-save-load.cfg": "3e1e1dd0da59bfb92248ffb9fb3a41d09f2018126770c72c6516fad177fd99e1",
+    "native03/old-save-load.log": "b67ab20b73d47c551962b0076375c2882ace5a07674f0aa3d136748f9ec11a02",
+    "native03/old-save-load.png": "ad01b8611ba993c83508d5c438ec1a07f7f7c4ff3c67dad835b7726fdb724a3b",
+    "native03/RESULTS.json": "c4b5f0269e744b9964c2f68eba6723a802ff9e65797f54c9b3f3e0b9d3aceb91",
+    "native03/session.ini": "1bd9cf0fc66fd32263ab9e130be77a27e033f073dfca280390199bd3c189ad3e",
+    "native04/baseline-process.log": "33ed70142f4985853491104c67a0bc9a9e951a170d1ec668e2f590940b187f91",
+    "native04/baseline.cfg": "f0168fb640e3b714c4db47c98d29ee0f975a65690df1ea553a8d653012612fb1",
+    "native04/baseline.log": "4c5671688be54bbf55bed13ffe56484dc3722ec36356cc809122a72682f13dbb",
+    "native04/baseline.png": "1eacc2d161991b2f93f814d6980ae1a9cc6410f643bc56539d475c018b750e21",
+    "native04/candidate-fresh-process.log": "20bc0f24c4dd94c62b8b86253ed568f89485243f62dd3b529244e35fc2ea64a7",
+    "native04/candidate-fresh.cfg": "806004abe3adc2468ff2581be120f7dcdd8887591feec9b9d6fffce79afa4c39",
+    "native04/candidate-fresh.log": "1a218157cb5678676edbfb91ec1a2509b1688e0bdabed22ee0c71cebd94a310a",
+    "native04/candidate-fresh.png": "d5d3d324e865d57564d2ce0262870391067322011e3f526c6a6f45ac27f85245",
+    "native04/candidate-reload-process.log": "6eb471875989b2cd8021537708d0e04e3eb9c0fb535896a4f015664b917bad7a",
+    "native04/candidate-reload.cfg": "7d71adc1938b7781e200c3c574cab256ac688908f31a9e57713b819526e30358",
+    "native04/candidate-reload.log": "421a87506eccab5877ef3885efd717d2d00a6e1283138a10f69ac47a035df86a",
+    "native04/candidate-reload.png": "ad01b8611ba993c83508d5c438ec1a07f7f7c4ff3c67dad835b7726fdb724a3b",
+    "native04/fixture-source/MAPINFO.txt": "c8743364bd5ffe9a61d13c7cd61210e4a6adecca23b6f47f9dfe36f6fd9c1001",
+    "native04/fixture-source/ZSCRIPT.txt": "4c27601e1198323b5c1459643dae4b4940915a0de62e5f6718b5ee8497784429",
+    "native04/fixture.zs": "89c6d4c776ebd670035e3d500205f945da6989bcefedd0ee4be19717426c5268",
+    "native04/old-save-load-process.log": "266c31e7d9912e501b0becd48ca18ffa2da3923272d45651f0a7ad2e74d2652c",
+    "native04/old-save-load.cfg": "0abd74bd978311d5a21f6c5a92ebfe66603dd82b6fba6d2f6b6e80f4d4950877",
+    "native04/old-save-load.log": "fea072ab8cfedc12adddc3312c51873aeb7cfa4d967b75888c059e65e7618bee",
+    "native04/old-save-load.png": "ad01b8611ba993c83508d5c438ec1a07f7f7c4ff3c67dad835b7726fdb724a3b",
+    "native04/RESULTS.json": "3d3b23dec950226e87be9acc14786d9c857781e22ac5c62c35e2ab48f6f15775",
+    "native04/rollback-load-process.log": "0d6044471ff8991800225dc08fe029712342329e1736002062ba2f1f4fec5833",
+    "native04/rollback-load.cfg": "7e2684acc90bdc87c026d7f84348bb38368ecb9de716f7fb2c62ced4e7b695df",
+    "native04/rollback-load.log": "0996817f5bcf920648b5dc32ef10a86afa6f8c96c8dbfc0d132b272b4dacc26c",
+    "native04/rollback-load.png": "abf75b2e20737b5d0e71b5276324575cfc2b63cce9b7a56c3362f55ab8fed332",
+    "native04/session.ini": "f0c0563db6b08cfc078c434ad92926b0b10349c7cd9acb00e5da7d522e6d651c",
+    "provenance-refresh.json": "d7f1b97ac4be2a61d703f507035c15f486eb07fbc0423b6c13581a55ed71d1fc",
+    "runtime-parity.json": "750c1260acfbb07a5166c1fe0ec1f938bae16b514d06a3f6f24c5658ad07a53f",
+    "validation-final.json": "bf9ad2eb7a66880d623d4869389508468ffbdf2a7a2942b05de6088e54738c1c",
+    "validation-initial-error.json": "edc253cf37cc54de3f368793fc55af89749f60f726c4115393419cdda154d420",
+    "validation-dependency-error.json": "83e458f17bb92c58328790abc97178dbd26d6f7aed1aabb59a92425921971ca9"
+  }
+}
