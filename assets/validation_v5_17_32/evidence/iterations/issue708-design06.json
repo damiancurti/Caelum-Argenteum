@@ -1,0 +1,3698 @@
+{
+  "schema_revision": 1,
+  "issue": 708,
+  "catalogue_id": "CA-FOLK-054",
+  "species": "Peuchen",
+  "reference": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/54_peuchen.png",
+  "reference_role": "Owned anatomy, silhouette and material reference; no runtime-scale authorization.",
+  "preview": {
+    "height_map_units": 100
+  },
+  "atlas": {
+    "columns": 2,
+    "rows": 2,
+    "inset": 0.018,
+    "source_file": "materials.png"
+  },
+  "materials": {
+    "scales": {
+      "tile": [
+        0,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "belly": {
+      "tile": [
+        1,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "membrane": {
+      "tile": [
+        0,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "horn": {
+      "tile": [
+        1,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "iris": {
+      "uv_rect": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "native_batch": "iris"
+    },
+    "dark": {
+      "uv_rect": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "native_batch": "dark"
+    }
+  },
+  "parts": {
+    "pelvis": {
+      "parent": null,
+      "pivot": [
+        -12,
+        0,
+        34
+      ]
+    },
+    "torso": {
+      "parent": "pelvis",
+      "pivot": [
+        -5,
+        0,
+        40
+      ]
+    },
+    "head": {
+      "parent": "torso",
+      "pivot": [
+        4,
+        0,
+        43
+      ]
+    },
+    "jaw": {
+      "parent": "head",
+      "pivot": [
+        27,
+        0,
+        69
+      ]
+    },
+    "trunk": {
+      "parent": "torso",
+      "pivot": [
+        -5,
+        0,
+        40
+      ]
+    },
+    "rising_neck": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "cranium": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "snout": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "lower_jaw": {
+      "parent": "jaw",
+      "pivot": [
+        27,
+        0,
+        69
+      ]
+    },
+    "left_eye": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "left_pupil": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "left_brow": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "left_great_horn": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "left_cheek_horn": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "left_nostril": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "left_upper": {
+      "parent": "torso",
+      "pivot": [
+        7,
+        -8.5,
+        39
+      ]
+    },
+    "left_fore": {
+      "parent": "left_upper",
+      "pivot": [
+        9,
+        -12.5,
+        23
+      ]
+    },
+    "left_hand": {
+      "parent": "left_fore",
+      "pivot": [
+        14,
+        -12.5,
+        6
+      ]
+    },
+    "left_fore_upper": {
+      "parent": "left_upper",
+      "pivot": [
+        7,
+        -8.5,
+        39
+      ]
+    },
+    "left_fore_shank": {
+      "parent": "left_fore",
+      "pivot": [
+        9,
+        -12.5,
+        23
+      ]
+    },
+    "left_fore_palm": {
+      "parent": "left_hand",
+      "pivot": [
+        14,
+        -12.5,
+        6
+      ]
+    },
+    "left_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        -18,
+        -8.2,
+        35
+      ]
+    },
+    "left_shin": {
+      "parent": "left_thigh",
+      "pivot": [
+        -16,
+        -13,
+        19
+      ]
+    },
+    "left_foot": {
+      "parent": "left_shin",
+      "pivot": [
+        -22,
+        -13,
+        5
+      ]
+    },
+    "left_haunch": {
+      "parent": "left_thigh",
+      "pivot": [
+        -18,
+        -8.2,
+        35
+      ]
+    },
+    "left_hind_shank": {
+      "parent": "left_shin",
+      "pivot": [
+        -16,
+        -13,
+        19
+      ]
+    },
+    "left_hind_palm": {
+      "parent": "left_foot",
+      "pivot": [
+        -22,
+        -13,
+        5
+      ]
+    },
+    "left_fore_toe_0": {
+      "parent": "left_hand",
+      "pivot": [
+        14,
+        -12.5,
+        6
+      ]
+    },
+    "left_fore_toe_0_claw": {
+      "parent": "left_hand",
+      "pivot": [
+        14,
+        -12.5,
+        6
+      ]
+    },
+    "left_fore_toe_1": {
+      "parent": "left_hand",
+      "pivot": [
+        14,
+        -12.5,
+        6
+      ]
+    },
+    "left_fore_toe_1_claw": {
+      "parent": "left_hand",
+      "pivot": [
+        14,
+        -12.5,
+        6
+      ]
+    },
+    "left_fore_toe_2": {
+      "parent": "left_hand",
+      "pivot": [
+        14,
+        -12.5,
+        6
+      ]
+    },
+    "left_fore_toe_2_claw": {
+      "parent": "left_hand",
+      "pivot": [
+        14,
+        -12.5,
+        6
+      ]
+    },
+    "left_hind_toe_0": {
+      "parent": "left_foot",
+      "pivot": [
+        -22,
+        -13,
+        5
+      ]
+    },
+    "left_hind_toe_0_claw": {
+      "parent": "left_foot",
+      "pivot": [
+        -22,
+        -13,
+        5
+      ]
+    },
+    "left_hind_toe_1": {
+      "parent": "left_foot",
+      "pivot": [
+        -22,
+        -13,
+        5
+      ]
+    },
+    "left_hind_toe_1_claw": {
+      "parent": "left_foot",
+      "pivot": [
+        -22,
+        -13,
+        5
+      ]
+    },
+    "left_hind_toe_2": {
+      "parent": "left_foot",
+      "pivot": [
+        -22,
+        -13,
+        5
+      ]
+    },
+    "left_hind_toe_2_claw": {
+      "parent": "left_foot",
+      "pivot": [
+        -22,
+        -13,
+        5
+      ]
+    },
+    "left_wing": {
+      "parent": "torso",
+      "pivot": [
+        -6,
+        -7.5,
+        43.5
+      ]
+    },
+    "left_wing_arm": {
+      "parent": "left_wing",
+      "pivot": [
+        -6,
+        -9,
+        47
+      ]
+    },
+    "left_wing_thumb": {
+      "parent": "left_wing",
+      "pivot": [
+        -6,
+        -9,
+        47
+      ]
+    },
+    "left_wing_finger_0": {
+      "parent": "left_wing",
+      "pivot": [
+        -6,
+        -9,
+        47
+      ]
+    },
+    "left_wing_finger_1": {
+      "parent": "left_wing",
+      "pivot": [
+        -6,
+        -9,
+        47
+      ]
+    },
+    "left_wing_finger_2": {
+      "parent": "left_wing",
+      "pivot": [
+        -6,
+        -9,
+        47
+      ]
+    },
+    "left_wing_finger_3": {
+      "parent": "left_wing",
+      "pivot": [
+        -6,
+        -9,
+        47
+      ]
+    },
+    "left_wing_panel_0": {
+      "parent": "left_wing",
+      "pivot": [
+        -6,
+        -9,
+        47
+      ]
+    },
+    "left_wing_panel_1": {
+      "parent": "left_wing",
+      "pivot": [
+        -6,
+        -9,
+        47
+      ]
+    },
+    "left_wing_panel_2": {
+      "parent": "left_wing",
+      "pivot": [
+        -6,
+        -9,
+        47
+      ]
+    },
+    "left_wing_root_web": {
+      "parent": "left_wing",
+      "pivot": [
+        -6,
+        -9,
+        47
+      ]
+    },
+    "right_eye": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "right_pupil": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "right_brow": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "right_great_horn": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "right_cheek_horn": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "right_nostril": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "right_upper": {
+      "parent": "torso",
+      "pivot": [
+        7,
+        8.5,
+        39
+      ]
+    },
+    "right_fore": {
+      "parent": "right_upper",
+      "pivot": [
+        9,
+        12.5,
+        23
+      ]
+    },
+    "right_hand": {
+      "parent": "right_fore",
+      "pivot": [
+        14,
+        12.5,
+        6
+      ]
+    },
+    "right_fore_upper": {
+      "parent": "right_upper",
+      "pivot": [
+        7,
+        8.5,
+        39
+      ]
+    },
+    "right_fore_shank": {
+      "parent": "right_fore",
+      "pivot": [
+        9,
+        12.5,
+        23
+      ]
+    },
+    "right_fore_palm": {
+      "parent": "right_hand",
+      "pivot": [
+        14,
+        12.5,
+        6
+      ]
+    },
+    "right_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        -18,
+        8.2,
+        35
+      ]
+    },
+    "right_shin": {
+      "parent": "right_thigh",
+      "pivot": [
+        -16,
+        13,
+        19
+      ]
+    },
+    "right_foot": {
+      "parent": "right_shin",
+      "pivot": [
+        -22,
+        13,
+        5
+      ]
+    },
+    "right_haunch": {
+      "parent": "right_thigh",
+      "pivot": [
+        -18,
+        8.2,
+        35
+      ]
+    },
+    "right_hind_shank": {
+      "parent": "right_shin",
+      "pivot": [
+        -16,
+        13,
+        19
+      ]
+    },
+    "right_hind_palm": {
+      "parent": "right_foot",
+      "pivot": [
+        -22,
+        13,
+        5
+      ]
+    },
+    "right_fore_toe_0": {
+      "parent": "right_hand",
+      "pivot": [
+        14,
+        12.5,
+        6
+      ]
+    },
+    "right_fore_toe_0_claw": {
+      "parent": "right_hand",
+      "pivot": [
+        14,
+        12.5,
+        6
+      ]
+    },
+    "right_fore_toe_1": {
+      "parent": "right_hand",
+      "pivot": [
+        14,
+        12.5,
+        6
+      ]
+    },
+    "right_fore_toe_1_claw": {
+      "parent": "right_hand",
+      "pivot": [
+        14,
+        12.5,
+        6
+      ]
+    },
+    "right_fore_toe_2": {
+      "parent": "right_hand",
+      "pivot": [
+        14,
+        12.5,
+        6
+      ]
+    },
+    "right_fore_toe_2_claw": {
+      "parent": "right_hand",
+      "pivot": [
+        14,
+        12.5,
+        6
+      ]
+    },
+    "right_hind_toe_0": {
+      "parent": "right_foot",
+      "pivot": [
+        -22,
+        13,
+        5
+      ]
+    },
+    "right_hind_toe_0_claw": {
+      "parent": "right_foot",
+      "pivot": [
+        -22,
+        13,
+        5
+      ]
+    },
+    "right_hind_toe_1": {
+      "parent": "right_foot",
+      "pivot": [
+        -22,
+        13,
+        5
+      ]
+    },
+    "right_hind_toe_1_claw": {
+      "parent": "right_foot",
+      "pivot": [
+        -22,
+        13,
+        5
+      ]
+    },
+    "right_hind_toe_2": {
+      "parent": "right_foot",
+      "pivot": [
+        -22,
+        13,
+        5
+      ]
+    },
+    "right_hind_toe_2_claw": {
+      "parent": "right_foot",
+      "pivot": [
+        -22,
+        13,
+        5
+      ]
+    },
+    "right_wing": {
+      "parent": "torso",
+      "pivot": [
+        -6,
+        7.5,
+        43.5
+      ]
+    },
+    "right_wing_arm": {
+      "parent": "right_wing",
+      "pivot": [
+        -6,
+        9,
+        47
+      ]
+    },
+    "right_wing_thumb": {
+      "parent": "right_wing",
+      "pivot": [
+        -6,
+        9,
+        47
+      ]
+    },
+    "right_wing_finger_0": {
+      "parent": "right_wing",
+      "pivot": [
+        -6,
+        9,
+        47
+      ]
+    },
+    "right_wing_finger_1": {
+      "parent": "right_wing",
+      "pivot": [
+        -6,
+        9,
+        47
+      ]
+    },
+    "right_wing_finger_2": {
+      "parent": "right_wing",
+      "pivot": [
+        -6,
+        9,
+        47
+      ]
+    },
+    "right_wing_finger_3": {
+      "parent": "right_wing",
+      "pivot": [
+        -6,
+        9,
+        47
+      ]
+    },
+    "right_wing_panel_0": {
+      "parent": "right_wing",
+      "pivot": [
+        -6,
+        9,
+        47
+      ]
+    },
+    "right_wing_panel_1": {
+      "parent": "right_wing",
+      "pivot": [
+        -6,
+        9,
+        47
+      ]
+    },
+    "right_wing_panel_2": {
+      "parent": "right_wing",
+      "pivot": [
+        -6,
+        9,
+        47
+      ]
+    },
+    "right_wing_root_web": {
+      "parent": "right_wing",
+      "pivot": [
+        -6,
+        9,
+        47
+      ]
+    },
+    "tail": {
+      "parent": "pelvis",
+      "pivot": [
+        -22,
+        0,
+        34
+      ]
+    },
+    "tail_body": {
+      "parent": "tail",
+      "pivot": [
+        -22,
+        0,
+        34
+      ]
+    },
+    "tail_spine_0": {
+      "parent": "tail",
+      "pivot": [
+        -22,
+        0,
+        34
+      ]
+    },
+    "tail_spine_1": {
+      "parent": "tail",
+      "pivot": [
+        -22,
+        0,
+        34
+      ]
+    },
+    "tail_spine_2": {
+      "parent": "tail",
+      "pivot": [
+        -22,
+        0,
+        34
+      ]
+    },
+    "tail_spine_3": {
+      "parent": "tail",
+      "pivot": [
+        -22,
+        0,
+        34
+      ]
+    },
+    "tail_spine_4": {
+      "parent": "tail",
+      "pivot": [
+        -22,
+        0,
+        34
+      ]
+    },
+    "back_spine_0": {
+      "parent": "torso",
+      "pivot": [
+        -5,
+        0,
+        40
+      ]
+    },
+    "back_spine_1": {
+      "parent": "torso",
+      "pivot": [
+        -5,
+        0,
+        40
+      ]
+    },
+    "back_spine_2": {
+      "parent": "torso",
+      "pivot": [
+        -5,
+        0,
+        40
+      ]
+    },
+    "back_spine_3": {
+      "parent": "torso",
+      "pivot": [
+        -5,
+        0,
+        40
+      ]
+    },
+    "neck_spine_0": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "neck_spine_1": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    },
+    "neck_spine_2": {
+      "parent": "head",
+      "pivot": [
+        10,
+        0,
+        52
+      ]
+    }
+  },
+  "shapes": [
+    {
+      "kind": "ellipsoid",
+      "name": "trunk",
+      "material": "scales",
+      "center": [
+        -7,
+        0,
+        37
+      ],
+      "radii": [
+        20,
+        11,
+        15
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "trunk",
+      "surface_regions": [
+        {
+          "material": "belly",
+          "axis": 2,
+          "maximum": 32,
+          "max_abs_y": 8
+        }
+      ]
+    },
+    {
+      "kind": "tube",
+      "name": "rising_neck",
+      "material": "scales",
+      "rows": [
+        [
+          4,
+          0,
+          43,
+          8,
+          9
+        ],
+        [
+          8,
+          0,
+          50,
+          7,
+          8
+        ],
+        [
+          10,
+          0,
+          61,
+          5.8,
+          6.8
+        ],
+        [
+          14,
+          0,
+          70,
+          4.8,
+          5.5
+        ],
+        [
+          22,
+          0,
+          75,
+          4.2,
+          4.8
+        ]
+      ],
+      "segments": 24,
+      "curve_steps": 3,
+      "part": "rising_neck",
+      "surface_regions": [
+        {
+          "material": "belly",
+          "axis": 0,
+          "minimum": 10,
+          "max_abs_y": 4,
+          "z_range": [
+            44,
+            69
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "cranium",
+      "material": "scales",
+      "center": [
+        23,
+        0,
+        74
+      ],
+      "radii": [
+        7,
+        4.7,
+        5.3
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "cranium"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "snout",
+      "material": "scales",
+      "center": [
+        29,
+        0,
+        72.2
+      ],
+      "radii": [
+        8,
+        3.9,
+        3.4
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "snout"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "lower_jaw",
+      "material": "belly",
+      "center": [
+        29.5,
+        0,
+        69.7
+      ],
+      "radii": [
+        7.5,
+        3.35,
+        1.5
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "lower_jaw"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left_eye",
+      "material": "iris",
+      "center": [
+        26.8,
+        -4.18,
+        75
+      ],
+      "radii": [
+        1.35,
+        0.6,
+        0.85
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "left_eye"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left_pupil",
+      "material": "dark",
+      "center": [
+        27,
+        -4.64,
+        75
+      ],
+      "radii": [
+        0.3,
+        0.18,
+        0.7
+      ],
+      "latitudes": 8,
+      "longitudes": 12,
+      "part": "left_pupil"
+    },
+    {
+      "kind": "tube",
+      "name": "left_brow",
+      "material": "scales",
+      "rows": [
+        [
+          24.8,
+          -4.2,
+          76,
+          1,
+          1
+        ],
+        [
+          27,
+          -4.4,
+          76.3,
+          0.85,
+          0.7
+        ],
+        [
+          29.5,
+          -3.5,
+          75.7,
+          0.4,
+          0.4
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_brow"
+    },
+    {
+      "kind": "tube",
+      "name": "left_great_horn",
+      "material": "horn",
+      "rows": [
+        [
+          20,
+          -3.3,
+          77,
+          1.55,
+          1.55
+        ],
+        [
+          17,
+          -4.4,
+          81,
+          1.35,
+          1.25
+        ],
+        [
+          12,
+          -5,
+          84,
+          0.9,
+          0.8
+        ],
+        [
+          8,
+          -5.4,
+          86,
+          0.14,
+          0.14
+        ]
+      ],
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "left_great_horn"
+    },
+    {
+      "kind": "tube",
+      "name": "left_cheek_horn",
+      "material": "horn",
+      "rows": [
+        [
+          20,
+          -3.6,
+          72,
+          1.2,
+          1.2
+        ],
+        [
+          16,
+          -6,
+          72.8,
+          0.9,
+          0.8
+        ],
+        [
+          12,
+          -7,
+          75,
+          0.13,
+          0.13
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_cheek_horn"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left_nostril",
+      "material": "dark",
+      "center": [
+        35.1,
+        -2.3,
+        73.3
+      ],
+      "radii": [
+        0.75,
+        0.33,
+        0.48
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "left_nostril"
+    },
+    {
+      "kind": "tube",
+      "name": "left_fore_upper",
+      "material": "scales",
+      "rows": [
+        [
+          7,
+          -8.5,
+          39,
+          4.3,
+          5.0
+        ],
+        [
+          7.5,
+          -11,
+          31,
+          3.4,
+          4.0
+        ],
+        [
+          9,
+          -12.5,
+          23,
+          2.7,
+          3.0
+        ]
+      ],
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "left_fore_upper"
+    },
+    {
+      "kind": "tube",
+      "name": "left_fore_shank",
+      "material": "scales",
+      "rows": [
+        [
+          9,
+          -12.5,
+          25,
+          2.9,
+          3.0
+        ],
+        [
+          12,
+          -12.5,
+          15,
+          2.1,
+          2.2
+        ],
+        [
+          14,
+          -12.5,
+          5,
+          1.8,
+          2
+        ]
+      ],
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "left_fore_shank"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left_fore_palm",
+      "material": "scales",
+      "center": [
+        16,
+        -12.5,
+        3.6
+      ],
+      "radii": [
+        4.8,
+        3.3,
+        2.8
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "left_fore_palm"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left_haunch",
+      "material": "scales",
+      "center": [
+        -18,
+        -8.6,
+        30
+      ],
+      "radii": [
+        8,
+        6,
+        11
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "left_haunch"
+    },
+    {
+      "kind": "tube",
+      "name": "left_hind_shank",
+      "material": "scales",
+      "rows": [
+        [
+          -17,
+          -12,
+          21,
+          3.4,
+          3.6
+        ],
+        [
+          -23,
+          -13,
+          12,
+          2.2,
+          2.4
+        ],
+        [
+          -22,
+          -13,
+          4,
+          1.9,
+          2
+        ]
+      ],
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "left_hind_shank"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left_hind_palm",
+      "material": "scales",
+      "center": [
+        -19,
+        -13,
+        3.3
+      ],
+      "radii": [
+        5.5,
+        3.5,
+        2.6
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "left_hind_palm"
+    },
+    {
+      "kind": "tube",
+      "name": "left_fore_toe_0",
+      "material": "scales",
+      "rows": [
+        [
+          17,
+          -14.6,
+          3.5,
+          0.95,
+          1.0
+        ],
+        [
+          20,
+          -14.6,
+          2.5,
+          0.8,
+          0.9
+        ],
+        [
+          21.2,
+          -14.6,
+          2.2,
+          0.55,
+          0.6
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_fore_toe_0"
+    },
+    {
+      "kind": "tube",
+      "name": "left_fore_toe_0_claw",
+      "material": "horn",
+      "rows": [
+        [
+          20.7,
+          -14.6,
+          2.35,
+          0.65,
+          0.65
+        ],
+        [
+          22.4,
+          -14.6,
+          1.8,
+          0.45,
+          0.45
+        ],
+        [
+          23.2,
+          -14.6,
+          0.55,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_fore_toe_0_claw"
+    },
+    {
+      "kind": "tube",
+      "name": "left_fore_toe_1",
+      "material": "scales",
+      "rows": [
+        [
+          17,
+          -12.5,
+          3.5,
+          0.95,
+          1.0
+        ],
+        [
+          20,
+          -12.5,
+          2.5,
+          0.8,
+          0.9
+        ],
+        [
+          21.2,
+          -12.5,
+          2.2,
+          0.55,
+          0.6
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_fore_toe_1"
+    },
+    {
+      "kind": "tube",
+      "name": "left_fore_toe_1_claw",
+      "material": "horn",
+      "rows": [
+        [
+          20.7,
+          -12.5,
+          2.35,
+          0.65,
+          0.65
+        ],
+        [
+          22.4,
+          -12.5,
+          1.8,
+          0.45,
+          0.45
+        ],
+        [
+          23.2,
+          -12.5,
+          0.55,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_fore_toe_1_claw"
+    },
+    {
+      "kind": "tube",
+      "name": "left_fore_toe_2",
+      "material": "scales",
+      "rows": [
+        [
+          17,
+          -10.4,
+          3.5,
+          0.95,
+          1.0
+        ],
+        [
+          20,
+          -10.4,
+          2.5,
+          0.8,
+          0.9
+        ],
+        [
+          21.2,
+          -10.4,
+          2.2,
+          0.55,
+          0.6
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_fore_toe_2"
+    },
+    {
+      "kind": "tube",
+      "name": "left_fore_toe_2_claw",
+      "material": "horn",
+      "rows": [
+        [
+          20.7,
+          -10.4,
+          2.35,
+          0.65,
+          0.65
+        ],
+        [
+          22.4,
+          -10.4,
+          1.8,
+          0.45,
+          0.45
+        ],
+        [
+          23.2,
+          -10.4,
+          0.55,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_fore_toe_2_claw"
+    },
+    {
+      "kind": "tube",
+      "name": "left_hind_toe_0",
+      "material": "scales",
+      "rows": [
+        [
+          -17,
+          -15.1,
+          3.5,
+          0.95,
+          1.0
+        ],
+        [
+          -14,
+          -15.1,
+          2.5,
+          0.8,
+          0.9
+        ],
+        [
+          -12.8,
+          -15.1,
+          2.2,
+          0.55,
+          0.6
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_hind_toe_0"
+    },
+    {
+      "kind": "tube",
+      "name": "left_hind_toe_0_claw",
+      "material": "horn",
+      "rows": [
+        [
+          -13.3,
+          -15.1,
+          2.35,
+          0.65,
+          0.65
+        ],
+        [
+          -11.6,
+          -15.1,
+          1.8,
+          0.45,
+          0.45
+        ],
+        [
+          -10.8,
+          -15.1,
+          0.55,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_hind_toe_0_claw"
+    },
+    {
+      "kind": "tube",
+      "name": "left_hind_toe_1",
+      "material": "scales",
+      "rows": [
+        [
+          -17,
+          -13.0,
+          3.5,
+          0.95,
+          1.0
+        ],
+        [
+          -14,
+          -13.0,
+          2.5,
+          0.8,
+          0.9
+        ],
+        [
+          -12.8,
+          -13.0,
+          2.2,
+          0.55,
+          0.6
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_hind_toe_1"
+    },
+    {
+      "kind": "tube",
+      "name": "left_hind_toe_1_claw",
+      "material": "horn",
+      "rows": [
+        [
+          -13.3,
+          -13.0,
+          2.35,
+          0.65,
+          0.65
+        ],
+        [
+          -11.6,
+          -13.0,
+          1.8,
+          0.45,
+          0.45
+        ],
+        [
+          -10.8,
+          -13.0,
+          0.55,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_hind_toe_1_claw"
+    },
+    {
+      "kind": "tube",
+      "name": "left_hind_toe_2",
+      "material": "scales",
+      "rows": [
+        [
+          -17,
+          -10.9,
+          3.5,
+          0.95,
+          1.0
+        ],
+        [
+          -14,
+          -10.9,
+          2.5,
+          0.8,
+          0.9
+        ],
+        [
+          -12.8,
+          -10.9,
+          2.2,
+          0.55,
+          0.6
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_hind_toe_2"
+    },
+    {
+      "kind": "tube",
+      "name": "left_hind_toe_2_claw",
+      "material": "horn",
+      "rows": [
+        [
+          -13.3,
+          -10.9,
+          2.35,
+          0.65,
+          0.65
+        ],
+        [
+          -11.6,
+          -10.9,
+          1.8,
+          0.45,
+          0.45
+        ],
+        [
+          -10.8,
+          -10.9,
+          0.55,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_hind_toe_2_claw"
+    },
+    {
+      "kind": "tube",
+      "name": "left_wing_arm",
+      "material": "scales",
+      "rows": [
+        [
+          -6,
+          -7.5,
+          43.5,
+          3.2,
+          3.2
+        ],
+        [
+          -2,
+          -20,
+          56,
+          2.7,
+          2.5
+        ],
+        [
+          2,
+          -33,
+          70,
+          1.8,
+          1.8
+        ]
+      ],
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "left_wing_arm"
+    },
+    {
+      "kind": "tube",
+      "name": "left_wing_thumb",
+      "material": "horn",
+      "rows": [
+        [
+          2,
+          -33,
+          70,
+          1.2,
+          1.2
+        ],
+        [
+          6,
+          -35,
+          74,
+          0.8,
+          0.8
+        ],
+        [
+          9,
+          -35,
+          73,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_wing_thumb"
+    },
+    {
+      "kind": "tube",
+      "name": "left_wing_finger_0",
+      "material": "scales",
+      "rows": [
+        [
+          2,
+          -33,
+          70,
+          1.25,
+          1.25
+        ],
+        [
+          -4.0,
+          -49.5,
+          58.5,
+          0.95,
+          0.95
+        ],
+        [
+          -10,
+          -66,
+          43,
+          0.2,
+          0.2
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_wing_finger_0"
+    },
+    {
+      "kind": "tube",
+      "name": "left_wing_finger_1",
+      "material": "scales",
+      "rows": [
+        [
+          2,
+          -33,
+          70,
+          1.25,
+          1.25
+        ],
+        [
+          -13.0,
+          -44.5,
+          51.5,
+          0.95,
+          0.95
+        ],
+        [
+          -28,
+          -56,
+          29,
+          0.2,
+          0.2
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_wing_finger_1"
+    },
+    {
+      "kind": "tube",
+      "name": "left_wing_finger_2",
+      "material": "scales",
+      "rows": [
+        [
+          2,
+          -33,
+          70,
+          1.25,
+          1.25
+        ],
+        [
+          -16.5,
+          -36.0,
+          48.5,
+          0.95,
+          0.95
+        ],
+        [
+          -35,
+          -39,
+          23,
+          0.2,
+          0.2
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_wing_finger_2"
+    },
+    {
+      "kind": "tube",
+      "name": "left_wing_finger_3",
+      "material": "scales",
+      "rows": [
+        [
+          2,
+          -33,
+          70,
+          1.25,
+          1.25
+        ],
+        [
+          -12.0,
+          -26.5,
+          49.5,
+          0.95,
+          0.95
+        ],
+        [
+          -26,
+          -20,
+          25,
+          0.2,
+          0.2
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "left_wing_finger_3"
+    },
+    {
+      "kind": "membrane",
+      "name": "left_wing_panel_0",
+      "material": "membrane",
+      "polygon": [
+        [
+          2,
+          -33,
+          70
+        ],
+        [
+          -10,
+          -66,
+          43
+        ],
+        [
+          -11.02,
+          -50.36,
+          48.92
+        ],
+        [
+          -28,
+          -56,
+          29
+        ]
+      ],
+      "triangles": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "thickness": 0.5,
+      "subdivisions": 8,
+      "billow": 0.7,
+      "part": "left_wing_panel_0"
+    },
+    {
+      "kind": "membrane",
+      "name": "left_wing_panel_1",
+      "material": "membrane",
+      "polygon": [
+        [
+          2,
+          -33,
+          70
+        ],
+        [
+          -28,
+          -56,
+          29
+        ],
+        [
+          -18.77,
+          -41.99,
+          42.72
+        ],
+        [
+          -35,
+          -39,
+          23
+        ]
+      ],
+      "triangles": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "thickness": 0.5,
+      "subdivisions": 8,
+      "billow": 0.7,
+      "part": "left_wing_panel_1"
+    },
+    {
+      "kind": "membrane",
+      "name": "left_wing_panel_2",
+      "material": "membrane",
+      "polygon": [
+        [
+          2,
+          -33,
+          70
+        ],
+        [
+          -35,
+          -39,
+          23
+        ],
+        [
+          -18.15,
+          -30.83,
+          41.480000000000004
+        ],
+        [
+          -26,
+          -20,
+          25
+        ]
+      ],
+      "triangles": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "thickness": 0.5,
+      "subdivisions": 8,
+      "billow": 0.7,
+      "part": "left_wing_panel_2"
+    },
+    {
+      "kind": "membrane",
+      "name": "left_wing_root_web",
+      "material": "membrane",
+      "polygon": [
+        [
+          2,
+          -33,
+          70
+        ],
+        [
+          -26,
+          -20,
+          25
+        ],
+        [
+          -23,
+          -8,
+          33
+        ],
+        [
+          -6,
+          -9,
+          47
+        ]
+      ],
+      "triangles": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "thickness": 0.55,
+      "subdivisions": 8,
+      "billow": 0.5,
+      "part": "left_wing_root_web"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right_eye",
+      "material": "iris",
+      "center": [
+        26.8,
+        4.18,
+        75
+      ],
+      "radii": [
+        1.35,
+        0.6,
+        0.85
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "right_eye"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right_pupil",
+      "material": "dark",
+      "center": [
+        27,
+        4.64,
+        75
+      ],
+      "radii": [
+        0.3,
+        0.18,
+        0.7
+      ],
+      "latitudes": 8,
+      "longitudes": 12,
+      "part": "right_pupil"
+    },
+    {
+      "kind": "tube",
+      "name": "right_brow",
+      "material": "scales",
+      "rows": [
+        [
+          24.8,
+          4.2,
+          76,
+          1,
+          1
+        ],
+        [
+          27,
+          4.4,
+          76.3,
+          0.85,
+          0.7
+        ],
+        [
+          29.5,
+          3.5,
+          75.7,
+          0.4,
+          0.4
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_brow"
+    },
+    {
+      "kind": "tube",
+      "name": "right_great_horn",
+      "material": "horn",
+      "rows": [
+        [
+          20,
+          3.3,
+          77,
+          1.55,
+          1.55
+        ],
+        [
+          17,
+          4.4,
+          81,
+          1.35,
+          1.25
+        ],
+        [
+          12,
+          5,
+          84,
+          0.9,
+          0.8
+        ],
+        [
+          8,
+          5.4,
+          86,
+          0.14,
+          0.14
+        ]
+      ],
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "right_great_horn"
+    },
+    {
+      "kind": "tube",
+      "name": "right_cheek_horn",
+      "material": "horn",
+      "rows": [
+        [
+          20,
+          3.6,
+          72,
+          1.2,
+          1.2
+        ],
+        [
+          16,
+          6,
+          72.8,
+          0.9,
+          0.8
+        ],
+        [
+          12,
+          7,
+          75,
+          0.13,
+          0.13
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_cheek_horn"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right_nostril",
+      "material": "dark",
+      "center": [
+        35.1,
+        2.3,
+        73.3
+      ],
+      "radii": [
+        0.75,
+        0.33,
+        0.48
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "right_nostril"
+    },
+    {
+      "kind": "tube",
+      "name": "right_fore_upper",
+      "material": "scales",
+      "rows": [
+        [
+          7,
+          8.5,
+          39,
+          4.3,
+          5.0
+        ],
+        [
+          7.5,
+          11,
+          31,
+          3.4,
+          4.0
+        ],
+        [
+          9,
+          12.5,
+          23,
+          2.7,
+          3.0
+        ]
+      ],
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "right_fore_upper"
+    },
+    {
+      "kind": "tube",
+      "name": "right_fore_shank",
+      "material": "scales",
+      "rows": [
+        [
+          9,
+          12.5,
+          25,
+          2.9,
+          3.0
+        ],
+        [
+          12,
+          12.5,
+          15,
+          2.1,
+          2.2
+        ],
+        [
+          14,
+          12.5,
+          5,
+          1.8,
+          2
+        ]
+      ],
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "right_fore_shank"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right_fore_palm",
+      "material": "scales",
+      "center": [
+        16,
+        12.5,
+        3.6
+      ],
+      "radii": [
+        4.8,
+        3.3,
+        2.8
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "right_fore_palm"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right_haunch",
+      "material": "scales",
+      "center": [
+        -18,
+        8.6,
+        30
+      ],
+      "radii": [
+        8,
+        6,
+        11
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "right_haunch"
+    },
+    {
+      "kind": "tube",
+      "name": "right_hind_shank",
+      "material": "scales",
+      "rows": [
+        [
+          -17,
+          12,
+          21,
+          3.4,
+          3.6
+        ],
+        [
+          -23,
+          13,
+          12,
+          2.2,
+          2.4
+        ],
+        [
+          -22,
+          13,
+          4,
+          1.9,
+          2
+        ]
+      ],
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "right_hind_shank"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right_hind_palm",
+      "material": "scales",
+      "center": [
+        -19,
+        13,
+        3.3
+      ],
+      "radii": [
+        5.5,
+        3.5,
+        2.6
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "right_hind_palm"
+    },
+    {
+      "kind": "tube",
+      "name": "right_fore_toe_0",
+      "material": "scales",
+      "rows": [
+        [
+          17,
+          10.4,
+          3.5,
+          0.95,
+          1.0
+        ],
+        [
+          20,
+          10.4,
+          2.5,
+          0.8,
+          0.9
+        ],
+        [
+          21.2,
+          10.4,
+          2.2,
+          0.55,
+          0.6
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_fore_toe_0"
+    },
+    {
+      "kind": "tube",
+      "name": "right_fore_toe_0_claw",
+      "material": "horn",
+      "rows": [
+        [
+          20.7,
+          10.4,
+          2.35,
+          0.65,
+          0.65
+        ],
+        [
+          22.4,
+          10.4,
+          1.8,
+          0.45,
+          0.45
+        ],
+        [
+          23.2,
+          10.4,
+          0.55,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_fore_toe_0_claw"
+    },
+    {
+      "kind": "tube",
+      "name": "right_fore_toe_1",
+      "material": "scales",
+      "rows": [
+        [
+          17,
+          12.5,
+          3.5,
+          0.95,
+          1.0
+        ],
+        [
+          20,
+          12.5,
+          2.5,
+          0.8,
+          0.9
+        ],
+        [
+          21.2,
+          12.5,
+          2.2,
+          0.55,
+          0.6
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_fore_toe_1"
+    },
+    {
+      "kind": "tube",
+      "name": "right_fore_toe_1_claw",
+      "material": "horn",
+      "rows": [
+        [
+          20.7,
+          12.5,
+          2.35,
+          0.65,
+          0.65
+        ],
+        [
+          22.4,
+          12.5,
+          1.8,
+          0.45,
+          0.45
+        ],
+        [
+          23.2,
+          12.5,
+          0.55,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_fore_toe_1_claw"
+    },
+    {
+      "kind": "tube",
+      "name": "right_fore_toe_2",
+      "material": "scales",
+      "rows": [
+        [
+          17,
+          14.6,
+          3.5,
+          0.95,
+          1.0
+        ],
+        [
+          20,
+          14.6,
+          2.5,
+          0.8,
+          0.9
+        ],
+        [
+          21.2,
+          14.6,
+          2.2,
+          0.55,
+          0.6
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_fore_toe_2"
+    },
+    {
+      "kind": "tube",
+      "name": "right_fore_toe_2_claw",
+      "material": "horn",
+      "rows": [
+        [
+          20.7,
+          14.6,
+          2.35,
+          0.65,
+          0.65
+        ],
+        [
+          22.4,
+          14.6,
+          1.8,
+          0.45,
+          0.45
+        ],
+        [
+          23.2,
+          14.6,
+          0.55,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_fore_toe_2_claw"
+    },
+    {
+      "kind": "tube",
+      "name": "right_hind_toe_0",
+      "material": "scales",
+      "rows": [
+        [
+          -17,
+          10.9,
+          3.5,
+          0.95,
+          1.0
+        ],
+        [
+          -14,
+          10.9,
+          2.5,
+          0.8,
+          0.9
+        ],
+        [
+          -12.8,
+          10.9,
+          2.2,
+          0.55,
+          0.6
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_hind_toe_0"
+    },
+    {
+      "kind": "tube",
+      "name": "right_hind_toe_0_claw",
+      "material": "horn",
+      "rows": [
+        [
+          -13.3,
+          10.9,
+          2.35,
+          0.65,
+          0.65
+        ],
+        [
+          -11.6,
+          10.9,
+          1.8,
+          0.45,
+          0.45
+        ],
+        [
+          -10.8,
+          10.9,
+          0.55,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_hind_toe_0_claw"
+    },
+    {
+      "kind": "tube",
+      "name": "right_hind_toe_1",
+      "material": "scales",
+      "rows": [
+        [
+          -17,
+          13.0,
+          3.5,
+          0.95,
+          1.0
+        ],
+        [
+          -14,
+          13.0,
+          2.5,
+          0.8,
+          0.9
+        ],
+        [
+          -12.8,
+          13.0,
+          2.2,
+          0.55,
+          0.6
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_hind_toe_1"
+    },
+    {
+      "kind": "tube",
+      "name": "right_hind_toe_1_claw",
+      "material": "horn",
+      "rows": [
+        [
+          -13.3,
+          13.0,
+          2.35,
+          0.65,
+          0.65
+        ],
+        [
+          -11.6,
+          13.0,
+          1.8,
+          0.45,
+          0.45
+        ],
+        [
+          -10.8,
+          13.0,
+          0.55,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_hind_toe_1_claw"
+    },
+    {
+      "kind": "tube",
+      "name": "right_hind_toe_2",
+      "material": "scales",
+      "rows": [
+        [
+          -17,
+          15.1,
+          3.5,
+          0.95,
+          1.0
+        ],
+        [
+          -14,
+          15.1,
+          2.5,
+          0.8,
+          0.9
+        ],
+        [
+          -12.8,
+          15.1,
+          2.2,
+          0.55,
+          0.6
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_hind_toe_2"
+    },
+    {
+      "kind": "tube",
+      "name": "right_hind_toe_2_claw",
+      "material": "horn",
+      "rows": [
+        [
+          -13.3,
+          15.1,
+          2.35,
+          0.65,
+          0.65
+        ],
+        [
+          -11.6,
+          15.1,
+          1.8,
+          0.45,
+          0.45
+        ],
+        [
+          -10.8,
+          15.1,
+          0.55,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_hind_toe_2_claw"
+    },
+    {
+      "kind": "tube",
+      "name": "right_wing_arm",
+      "material": "scales",
+      "rows": [
+        [
+          -6,
+          7.5,
+          43.5,
+          3.2,
+          3.2
+        ],
+        [
+          -2,
+          20,
+          56,
+          2.7,
+          2.5
+        ],
+        [
+          2,
+          33,
+          70,
+          1.8,
+          1.8
+        ]
+      ],
+      "segments": 16,
+      "curve_steps": 3,
+      "part": "right_wing_arm"
+    },
+    {
+      "kind": "tube",
+      "name": "right_wing_thumb",
+      "material": "horn",
+      "rows": [
+        [
+          2,
+          33,
+          70,
+          1.2,
+          1.2
+        ],
+        [
+          6,
+          35,
+          74,
+          0.8,
+          0.8
+        ],
+        [
+          9,
+          35,
+          73,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_wing_thumb"
+    },
+    {
+      "kind": "tube",
+      "name": "right_wing_finger_0",
+      "material": "scales",
+      "rows": [
+        [
+          2,
+          33,
+          70,
+          1.25,
+          1.25
+        ],
+        [
+          -4.0,
+          49.5,
+          58.5,
+          0.95,
+          0.95
+        ],
+        [
+          -10,
+          66,
+          43,
+          0.2,
+          0.2
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_wing_finger_0"
+    },
+    {
+      "kind": "tube",
+      "name": "right_wing_finger_1",
+      "material": "scales",
+      "rows": [
+        [
+          2,
+          33,
+          70,
+          1.25,
+          1.25
+        ],
+        [
+          -13.0,
+          44.5,
+          51.5,
+          0.95,
+          0.95
+        ],
+        [
+          -28,
+          56,
+          29,
+          0.2,
+          0.2
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_wing_finger_1"
+    },
+    {
+      "kind": "tube",
+      "name": "right_wing_finger_2",
+      "material": "scales",
+      "rows": [
+        [
+          2,
+          33,
+          70,
+          1.25,
+          1.25
+        ],
+        [
+          -16.5,
+          36.0,
+          48.5,
+          0.95,
+          0.95
+        ],
+        [
+          -35,
+          39,
+          23,
+          0.2,
+          0.2
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_wing_finger_2"
+    },
+    {
+      "kind": "tube",
+      "name": "right_wing_finger_3",
+      "material": "scales",
+      "rows": [
+        [
+          2,
+          33,
+          70,
+          1.25,
+          1.25
+        ],
+        [
+          -12.0,
+          26.5,
+          49.5,
+          0.95,
+          0.95
+        ],
+        [
+          -26,
+          20,
+          25,
+          0.2,
+          0.2
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "right_wing_finger_3"
+    },
+    {
+      "kind": "membrane",
+      "name": "right_wing_panel_0",
+      "material": "membrane",
+      "polygon": [
+        [
+          2,
+          33,
+          70
+        ],
+        [
+          -10,
+          66,
+          43
+        ],
+        [
+          -11.02,
+          50.36,
+          48.92
+        ],
+        [
+          -28,
+          56,
+          29
+        ]
+      ],
+      "triangles": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "thickness": 0.5,
+      "subdivisions": 8,
+      "billow": 0.7,
+      "part": "right_wing_panel_0"
+    },
+    {
+      "kind": "membrane",
+      "name": "right_wing_panel_1",
+      "material": "membrane",
+      "polygon": [
+        [
+          2,
+          33,
+          70
+        ],
+        [
+          -28,
+          56,
+          29
+        ],
+        [
+          -18.77,
+          41.99,
+          42.72
+        ],
+        [
+          -35,
+          39,
+          23
+        ]
+      ],
+      "triangles": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "thickness": 0.5,
+      "subdivisions": 8,
+      "billow": 0.7,
+      "part": "right_wing_panel_1"
+    },
+    {
+      "kind": "membrane",
+      "name": "right_wing_panel_2",
+      "material": "membrane",
+      "polygon": [
+        [
+          2,
+          33,
+          70
+        ],
+        [
+          -35,
+          39,
+          23
+        ],
+        [
+          -18.15,
+          30.83,
+          41.480000000000004
+        ],
+        [
+          -26,
+          20,
+          25
+        ]
+      ],
+      "triangles": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "thickness": 0.5,
+      "subdivisions": 8,
+      "billow": 0.7,
+      "part": "right_wing_panel_2"
+    },
+    {
+      "kind": "membrane",
+      "name": "right_wing_root_web",
+      "material": "membrane",
+      "polygon": [
+        [
+          2,
+          33,
+          70
+        ],
+        [
+          -26,
+          20,
+          25
+        ],
+        [
+          -23,
+          8,
+          33
+        ],
+        [
+          -6,
+          9,
+          47
+        ]
+      ],
+      "triangles": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "thickness": 0.55,
+      "subdivisions": 8,
+      "billow": 0.5,
+      "part": "right_wing_root_web"
+    },
+    {
+      "kind": "tube",
+      "name": "tail_body",
+      "material": "scales",
+      "rows": [
+        [
+          -22,
+          0,
+          34,
+          5.8,
+          6.1
+        ],
+        [
+          -34,
+          0,
+          28,
+          4.8,
+          5.2
+        ],
+        [
+          -46,
+          2,
+          22,
+          3.6,
+          4
+        ],
+        [
+          -57,
+          8,
+          18,
+          2.7,
+          3
+        ],
+        [
+          -64,
+          16,
+          22,
+          1.8,
+          2
+        ],
+        [
+          -63,
+          24,
+          30,
+          1.1,
+          1.3
+        ],
+        [
+          -55,
+          28,
+          34,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 24,
+      "curve_steps": 3,
+      "part": "tail_body"
+    },
+    {
+      "kind": "tube",
+      "name": "tail_spine_0",
+      "material": "horn",
+      "rows": [
+        [
+          -34,
+          0,
+          32.7,
+          1.0,
+          1.0
+        ],
+        [
+          -36,
+          0,
+          36.2,
+          0.7,
+          0.7
+        ],
+        [
+          -39,
+          0,
+          38.2,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "tail_spine_0"
+    },
+    {
+      "kind": "tube",
+      "name": "tail_spine_1",
+      "material": "horn",
+      "rows": [
+        [
+          -46,
+          2,
+          25.5,
+          1.0,
+          1.0
+        ],
+        [
+          -48,
+          2,
+          29,
+          0.7,
+          0.7
+        ],
+        [
+          -51,
+          2,
+          31,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "tail_spine_1"
+    },
+    {
+      "kind": "tube",
+      "name": "tail_spine_2",
+      "material": "horn",
+      "rows": [
+        [
+          -57,
+          8,
+          20.5,
+          1.0,
+          1.0
+        ],
+        [
+          -59,
+          8,
+          24,
+          0.7,
+          0.7
+        ],
+        [
+          -62,
+          8,
+          26,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "tail_spine_2"
+    },
+    {
+      "kind": "tube",
+      "name": "tail_spine_3",
+      "material": "horn",
+      "rows": [
+        [
+          -64,
+          16,
+          23.5,
+          1.0,
+          1.0
+        ],
+        [
+          -66,
+          16,
+          27,
+          0.7,
+          0.7
+        ],
+        [
+          -69,
+          16,
+          29,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "tail_spine_3"
+    },
+    {
+      "kind": "tube",
+      "name": "tail_spine_4",
+      "material": "horn",
+      "rows": [
+        [
+          -63,
+          24,
+          30.8,
+          1.0,
+          1.0
+        ],
+        [
+          -65,
+          24,
+          34.3,
+          0.7,
+          0.7
+        ],
+        [
+          -68,
+          24,
+          36.3,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "tail_spine_4"
+    },
+    {
+      "kind": "tube",
+      "name": "back_spine_0",
+      "material": "horn",
+      "rows": [
+        [
+          -18,
+          0,
+          48.92746981636755,
+          1.2,
+          1.2
+        ],
+        [
+          -20,
+          0,
+          53.12746981636755,
+          0.9,
+          0.8
+        ],
+        [
+          -23,
+          0,
+          54.92746981636755,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "back_spine_0"
+    },
+    {
+      "kind": "tube",
+      "name": "back_spine_1",
+      "material": "horn",
+      "rows": [
+        [
+          -11,
+          0,
+          51.096938456699064,
+          1.2,
+          1.2
+        ],
+        [
+          -13,
+          0,
+          55.29693845669907,
+          0.9,
+          0.8
+        ],
+        [
+          -16,
+          0,
+          57.096938456699064,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "back_spine_1"
+    },
+    {
+      "kind": "tube",
+      "name": "back_spine_2",
+      "material": "horn",
+      "rows": [
+        [
+          -4,
+          0,
+          51.23028994996389,
+          1.2,
+          1.2
+        ],
+        [
+          -6,
+          0,
+          55.43028994996389,
+          0.9,
+          0.8
+        ],
+        [
+          -9,
+          0,
+          57.23028994996389,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "back_spine_2"
+    },
+    {
+      "kind": "tube",
+      "name": "back_spine_3",
+      "material": "horn",
+      "rows": [
+        [
+          3,
+          0,
+          49.39038105676658,
+          1.2,
+          1.2
+        ],
+        [
+          1,
+          0,
+          53.59038105676658,
+          0.9,
+          0.8
+        ],
+        [
+          -2,
+          0,
+          55.39038105676658,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "back_spine_3"
+    },
+    {
+      "kind": "tube",
+      "name": "neck_spine_0",
+      "material": "horn",
+      "rows": [
+        [
+          3,
+          0,
+          52,
+          1.1,
+          1.1
+        ],
+        [
+          -1,
+          0,
+          53,
+          0.85,
+          0.8
+        ],
+        [
+          -4,
+          0,
+          55,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "neck_spine_0"
+    },
+    {
+      "kind": "tube",
+      "name": "neck_spine_1",
+      "material": "horn",
+      "rows": [
+        [
+          5,
+          0,
+          60,
+          1.1,
+          1.1
+        ],
+        [
+          1,
+          0,
+          61,
+          0.85,
+          0.8
+        ],
+        [
+          -2,
+          0,
+          63,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "neck_spine_1"
+    },
+    {
+      "kind": "tube",
+      "name": "neck_spine_2",
+      "material": "horn",
+      "rows": [
+        [
+          9,
+          0,
+          68,
+          1.1,
+          1.1
+        ],
+        [
+          5,
+          0,
+          69,
+          0.85,
+          0.8
+        ],
+        [
+          2,
+          0,
+          71,
+          0.12,
+          0.12
+        ]
+      ],
+      "segments": 12,
+      "curve_steps": 3,
+      "part": "neck_spine_2"
+    }
+  ],
+  "motion": {
+    "idle": {
+      "frames": 16,
+      "tics": 6,
+      "transforms": {
+        "torso": [
+          {
+            "kind": "scale_xy",
+            "amplitude": 0.012,
+            "phase": 0
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 0.6,
+            "phase": 0
+          }
+        ],
+        "tail": [
+          {
+            "kind": "rotate",
+            "axis": "z",
+            "amplitude": 2,
+            "phase": 0
+          }
+        ],
+        "left_wing": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": -1.0,
+            "phase": 0
+          }
+        ],
+        "right_wing": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.0,
+            "phase": 0
+          }
+        ]
+      }
+    },
+    "walk": {
+      "frames": 24,
+      "tics": 2,
+      "transforms": {
+        "pelvis": [
+          {
+            "kind": "translate_z",
+            "amplitude": 0.5,
+            "frequency": 2
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 1.2,
+            "phase": 1
+          }
+        ],
+        "tail": [
+          {
+            "kind": "rotate",
+            "axis": "z",
+            "amplitude": 4
+          }
+        ],
+        "left_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -14,
+            "phase": 0
+          }
+        ],
+        "left_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 13,
+            "phase": 3.141592653589793
+          }
+        ],
+        "left_upper": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 14,
+            "phase": 0
+          }
+        ],
+        "left_fore": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -10,
+            "phase": 3.141592653589793
+          }
+        ],
+        "left_wing": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": -2,
+            "phase": 0.2
+          }
+        ],
+        "right_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -14,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 13,
+            "phase": 6.283185307179586
+          }
+        ],
+        "right_upper": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 14,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_fore": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -10,
+            "phase": 6.283185307179586
+          }
+        ],
+        "right_wing": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 2,
+            "phase": 0.2
+          }
+        ]
+      }
+    }
+  },
+  "limits": [
+    "Art only: ground combat, collision and existing Mandinga profile remain unchanged.",
+    "Wing membranes have closed thickness; regular body and joint overlaps are candidate art. No flight or cloth physics."
+  ]
+}

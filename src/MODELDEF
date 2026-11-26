@@ -4771,3 +4771,5 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_plates.modeldef"
 
 #include "caelum/data/inventory_chainmail.modeldef"
+
+#include "caelum/data/peuchen_combat.modeldef"

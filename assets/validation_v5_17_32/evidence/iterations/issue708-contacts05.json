@@ -1,0 +1,773 @@
+{
+  "schema_revision": 1,
+  "issue": 708,
+  "species": {
+    "peuchen": [
+      {
+        "part": "rising_neck",
+        "target": "trunk",
+        "witness": [
+          4.0,
+          0.0,
+          45.0
+        ]
+      },
+      {
+        "part": "cranium",
+        "target": "rising_neck",
+        "witness": [
+          21.0,
+          0.0,
+          74.0
+        ]
+      },
+      {
+        "part": "snout",
+        "target": "cranium",
+        "witness": [
+          27.0,
+          0.0,
+          72.8
+        ]
+      },
+      {
+        "part": "lower_jaw",
+        "target": "snout",
+        "witness": [
+          30.0,
+          0.0,
+          70.3
+        ]
+      },
+      {
+        "part": "left_eye",
+        "target": "cranium",
+        "witness": [
+          26.5,
+          -3.9,
+          75.0
+        ]
+      },
+      {
+        "part": "left_pupil",
+        "target": "left_eye",
+        "witness": [
+          27.0,
+          -4.58,
+          75.0
+        ]
+      },
+      {
+        "part": "left_brow",
+        "target": "cranium",
+        "witness": [
+          25.0,
+          -3.8,
+          76.0
+        ]
+      },
+      {
+        "part": "left_great_horn",
+        "target": "cranium",
+        "witness": [
+          20.2,
+          -2.9000000000000004,
+          77.3
+        ]
+      },
+      {
+        "part": "left_cheek_horn",
+        "target": "cranium",
+        "witness": [
+          19.9,
+          -3.5,
+          72.0
+        ]
+      },
+      {
+        "part": "left_nostril",
+        "target": "snout",
+        "witness": [
+          34.8,
+          -2.3,
+          73.1
+        ]
+      },
+      {
+        "part": "left_fore_upper",
+        "target": "trunk",
+        "witness": [
+          6.7,
+          -7.8,
+          38.7
+        ]
+      },
+      {
+        "part": "left_fore_shank",
+        "target": "left_fore_upper",
+        "witness": [
+          9.0,
+          -12.5,
+          24.0
+        ]
+      },
+      {
+        "part": "left_fore_palm",
+        "target": "left_fore_shank",
+        "witness": [
+          14.0,
+          -12.5,
+          5.0
+        ]
+      },
+      {
+        "part": "left_haunch",
+        "target": "trunk",
+        "witness": [
+          -17.0,
+          -7.8,
+          33.0
+        ]
+      },
+      {
+        "part": "left_hind_shank",
+        "target": "left_haunch",
+        "witness": [
+          -17.6,
+          -12.0,
+          21.4
+        ]
+      },
+      {
+        "part": "left_hind_palm",
+        "target": "left_hind_shank",
+        "witness": [
+          -22.3,
+          -13.0,
+          4.0
+        ]
+      },
+      {
+        "part": "left_fore_toe_0",
+        "target": "left_fore_palm",
+        "witness": [
+          17.0,
+          -14.6,
+          3.5
+        ]
+      },
+      {
+        "part": "left_fore_toe_0_claw",
+        "target": "left_fore_toe_0",
+        "witness": [
+          20.7,
+          -14.6,
+          2.35
+        ]
+      },
+      {
+        "part": "left_fore_toe_1",
+        "target": "left_fore_palm",
+        "witness": [
+          17.0,
+          -12.5,
+          3.5
+        ]
+      },
+      {
+        "part": "left_fore_toe_1_claw",
+        "target": "left_fore_toe_1",
+        "witness": [
+          20.7,
+          -12.5,
+          2.35
+        ]
+      },
+      {
+        "part": "left_fore_toe_2",
+        "target": "left_fore_palm",
+        "witness": [
+          17.0,
+          -10.4,
+          3.5
+        ]
+      },
+      {
+        "part": "left_fore_toe_2_claw",
+        "target": "left_fore_toe_2",
+        "witness": [
+          20.7,
+          -10.4,
+          2.35
+        ]
+      },
+      {
+        "part": "left_hind_toe_0",
+        "target": "left_hind_palm",
+        "witness": [
+          -17.0,
+          -15.1,
+          3.5
+        ]
+      },
+      {
+        "part": "left_hind_toe_0_claw",
+        "target": "left_hind_toe_0",
+        "witness": [
+          -13.3,
+          -15.1,
+          2.35
+        ]
+      },
+      {
+        "part": "left_hind_toe_1",
+        "target": "left_hind_palm",
+        "witness": [
+          -17.0,
+          -13.0,
+          3.5
+        ]
+      },
+      {
+        "part": "left_hind_toe_1_claw",
+        "target": "left_hind_toe_1",
+        "witness": [
+          -13.3,
+          -13.0,
+          2.35
+        ]
+      },
+      {
+        "part": "left_hind_toe_2",
+        "target": "left_hind_palm",
+        "witness": [
+          -17.0,
+          -10.9,
+          3.5
+        ]
+      },
+      {
+        "part": "left_hind_toe_2_claw",
+        "target": "left_hind_toe_2",
+        "witness": [
+          -13.3,
+          -10.9,
+          2.35
+        ]
+      },
+      {
+        "part": "left_wing_arm",
+        "target": "trunk",
+        "witness": [
+          -6.0,
+          -8.4,
+          46.4
+        ]
+      },
+      {
+        "part": "left_wing_thumb",
+        "target": "left_wing_arm",
+        "witness": [
+          2.3,
+          -32.7,
+          70.0
+        ]
+      },
+      {
+        "part": "left_wing_finger_0",
+        "target": "left_wing_arm",
+        "witness": [
+          1.7,
+          -33.0,
+          70.0
+        ]
+      },
+      {
+        "part": "left_wing_finger_1",
+        "target": "left_wing_arm",
+        "witness": [
+          1.7,
+          -33.0,
+          70.0
+        ]
+      },
+      {
+        "part": "left_wing_finger_2",
+        "target": "left_wing_arm",
+        "witness": [
+          1.7,
+          -33.0,
+          70.0
+        ]
+      },
+      {
+        "part": "left_wing_finger_3",
+        "target": "left_wing_arm",
+        "witness": [
+          1.7,
+          -33.0,
+          70.0
+        ]
+      },
+      {
+        "part": "left_wing_panel_0",
+        "target": "left_wing_arm",
+        "witness": [
+          1.685,
+          -33.42,
+          69.49000000000001
+        ]
+      },
+      {
+        "part": "left_wing_panel_1",
+        "target": "left_wing_arm",
+        "witness": [
+          1.4975,
+          -33.2175,
+          69.34
+        ]
+      },
+      {
+        "part": "left_wing_panel_2",
+        "target": "left_wing_arm",
+        "witness": [
+          1.5125,
+          -32.947500000000005,
+          69.31
+        ]
+      },
+      {
+        "part": "left_wing_root_web",
+        "target": "left_wing_arm",
+        "witness": [
+          -6.0,
+          -9.3,
+          47.0
+        ]
+      },
+      {
+        "part": "right_eye",
+        "target": "cranium",
+        "witness": [
+          26.5,
+          3.9,
+          75.0
+        ]
+      },
+      {
+        "part": "right_pupil",
+        "target": "right_eye",
+        "witness": [
+          27.0,
+          4.58,
+          75.0
+        ]
+      },
+      {
+        "part": "right_brow",
+        "target": "cranium",
+        "witness": [
+          25.0,
+          3.8,
+          76.0
+        ]
+      },
+      {
+        "part": "right_great_horn",
+        "target": "cranium",
+        "witness": [
+          20.2,
+          2.9000000000000004,
+          77.3
+        ]
+      },
+      {
+        "part": "right_cheek_horn",
+        "target": "cranium",
+        "witness": [
+          19.9,
+          3.5,
+          72.0
+        ]
+      },
+      {
+        "part": "right_nostril",
+        "target": "snout",
+        "witness": [
+          34.8,
+          2.3,
+          73.1
+        ]
+      },
+      {
+        "part": "right_fore_upper",
+        "target": "trunk",
+        "witness": [
+          6.7,
+          7.8,
+          38.7
+        ]
+      },
+      {
+        "part": "right_fore_shank",
+        "target": "right_fore_upper",
+        "witness": [
+          9.0,
+          12.5,
+          24.0
+        ]
+      },
+      {
+        "part": "right_fore_palm",
+        "target": "right_fore_shank",
+        "witness": [
+          14.0,
+          12.5,
+          5.0
+        ]
+      },
+      {
+        "part": "right_haunch",
+        "target": "trunk",
+        "witness": [
+          -17.0,
+          7.8,
+          33.0
+        ]
+      },
+      {
+        "part": "right_hind_shank",
+        "target": "right_haunch",
+        "witness": [
+          -17.6,
+          12.0,
+          21.4
+        ]
+      },
+      {
+        "part": "right_hind_palm",
+        "target": "right_hind_shank",
+        "witness": [
+          -22.3,
+          13.0,
+          4.0
+        ]
+      },
+      {
+        "part": "right_fore_toe_0",
+        "target": "right_fore_palm",
+        "witness": [
+          17.0,
+          10.4,
+          3.5
+        ]
+      },
+      {
+        "part": "right_fore_toe_0_claw",
+        "target": "right_fore_toe_0",
+        "witness": [
+          20.7,
+          10.4,
+          2.35
+        ]
+      },
+      {
+        "part": "right_fore_toe_1",
+        "target": "right_fore_palm",
+        "witness": [
+          17.0,
+          12.5,
+          3.5
+        ]
+      },
+      {
+        "part": "right_fore_toe_1_claw",
+        "target": "right_fore_toe_1",
+        "witness": [
+          20.7,
+          12.5,
+          2.35
+        ]
+      },
+      {
+        "part": "right_fore_toe_2",
+        "target": "right_fore_palm",
+        "witness": [
+          17.0,
+          14.6,
+          3.5
+        ]
+      },
+      {
+        "part": "right_fore_toe_2_claw",
+        "target": "right_fore_toe_2",
+        "witness": [
+          20.7,
+          14.6,
+          2.35
+        ]
+      },
+      {
+        "part": "right_hind_toe_0",
+        "target": "right_hind_palm",
+        "witness": [
+          -17.0,
+          10.9,
+          3.5
+        ]
+      },
+      {
+        "part": "right_hind_toe_0_claw",
+        "target": "right_hind_toe_0",
+        "witness": [
+          -13.3,
+          10.9,
+          2.35
+        ]
+      },
+      {
+        "part": "right_hind_toe_1",
+        "target": "right_hind_palm",
+        "witness": [
+          -17.0,
+          13.0,
+          3.5
+        ]
+      },
+      {
+        "part": "right_hind_toe_1_claw",
+        "target": "right_hind_toe_1",
+        "witness": [
+          -13.3,
+          13.0,
+          2.35
+        ]
+      },
+      {
+        "part": "right_hind_toe_2",
+        "target": "right_hind_palm",
+        "witness": [
+          -17.0,
+          15.1,
+          3.5
+        ]
+      },
+      {
+        "part": "right_hind_toe_2_claw",
+        "target": "right_hind_toe_2",
+        "witness": [
+          -13.3,
+          15.1,
+          2.35
+        ]
+      },
+      {
+        "part": "right_wing_arm",
+        "target": "trunk",
+        "witness": [
+          -6.0,
+          8.4,
+          46.4
+        ]
+      },
+      {
+        "part": "right_wing_thumb",
+        "target": "right_wing_arm",
+        "witness": [
+          2.3,
+          32.7,
+          70.0
+        ]
+      },
+      {
+        "part": "right_wing_finger_0",
+        "target": "right_wing_arm",
+        "witness": [
+          1.7,
+          33.0,
+          70.0
+        ]
+      },
+      {
+        "part": "right_wing_finger_1",
+        "target": "right_wing_arm",
+        "witness": [
+          1.7,
+          33.0,
+          70.0
+        ]
+      },
+      {
+        "part": "right_wing_finger_2",
+        "target": "right_wing_arm",
+        "witness": [
+          1.7,
+          33.0,
+          70.0
+        ]
+      },
+      {
+        "part": "right_wing_finger_3",
+        "target": "right_wing_arm",
+        "witness": [
+          1.7,
+          33.0,
+          70.0
+        ]
+      },
+      {
+        "part": "right_wing_panel_0",
+        "target": "right_wing_arm",
+        "witness": [
+          1.685,
+          33.42,
+          69.49000000000001
+        ]
+      },
+      {
+        "part": "right_wing_panel_1",
+        "target": "right_wing_arm",
+        "witness": [
+          1.4975,
+          33.2175,
+          69.34
+        ]
+      },
+      {
+        "part": "right_wing_panel_2",
+        "target": "right_wing_arm",
+        "witness": [
+          1.5125,
+          32.947500000000005,
+          69.31
+        ]
+      },
+      {
+        "part": "right_wing_root_web",
+        "target": "right_wing_arm",
+        "witness": [
+          -6.0,
+          9.3,
+          47.0
+        ]
+      },
+      {
+        "part": "tail_body",
+        "target": "trunk",
+        "witness": [
+          -23.0,
+          0.0,
+          34.0
+        ]
+      },
+      {
+        "part": "tail_spine_0",
+        "target": "tail_body",
+        "witness": [
+          -34.3,
+          0.0,
+          32.7
+        ]
+      },
+      {
+        "part": "tail_spine_1",
+        "target": "tail_body",
+        "witness": [
+          -46.3,
+          2.0,
+          25.5
+        ]
+      },
+      {
+        "part": "tail_spine_2",
+        "target": "tail_body",
+        "witness": [
+          -57.3,
+          8.0,
+          20.5
+        ]
+      },
+      {
+        "part": "tail_spine_3",
+        "target": "tail_body",
+        "witness": [
+          -64.3,
+          16.0,
+          23.5
+        ]
+      },
+      {
+        "part": "tail_spine_4",
+        "target": "tail_body",
+        "witness": [
+          -63.3,
+          24.0,
+          30.8
+        ]
+      },
+      {
+        "part": "back_spine_0",
+        "target": "trunk",
+        "witness": [
+          -18.3,
+          0.0,
+          48.82746981636755
+        ]
+      },
+      {
+        "part": "back_spine_1",
+        "target": "trunk",
+        "witness": [
+          -11.3,
+          0.0,
+          50.99693845669906
+        ]
+      },
+      {
+        "part": "back_spine_2",
+        "target": "trunk",
+        "witness": [
+          -4.3,
+          0.0,
+          51.13028994996389
+        ]
+      },
+      {
+        "part": "back_spine_3",
+        "target": "trunk",
+        "witness": [
+          2.7,
+          0.0,
+          49.29038105676658
+        ]
+      },
+      {
+        "part": "neck_spine_0",
+        "target": "rising_neck",
+        "witness": [
+          3.0,
+          0.0,
+          52.3
+        ]
+      },
+      {
+        "part": "neck_spine_1",
+        "target": "rising_neck",
+        "witness": [
+          5.0,
+          0.0,
+          60.3
+        ]
+      },
+      {
+        "part": "neck_spine_2",
+        "target": "rising_neck",
+        "witness": [
+          9.0,
+          0.0,
+          68.3
+        ]
+      }
+    ]
+  }
+}

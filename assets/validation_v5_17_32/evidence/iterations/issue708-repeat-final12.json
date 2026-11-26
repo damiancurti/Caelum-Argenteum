@@ -1,0 +1,20 @@
+{
+  "files": 10,
+  "byte_identical": true,
+  "changed_from09": [
+    "manifest.json"
+  ],
+  "prior_art_identical": true,
+  "sha256": {
+    "manifest.json": "9e336cc9abc73ec9064eac13a6d60aeeb8c9ce9a04e0dae35c5fc48af36f910e",
+    "preview.pk3": "fae4f59b4e714f9178053386f93d67f69eba08717f33af4cc971d68f5b7dd08d",
+    "editable/peuchen.mtl": "99828d20d14aab601889c31faf59e3df29ca10eb2c8a08bb77f9b3137b4ad59d",
+    "editable/peuchen.obj": "732a20a9202927bf7639c6b37f8c3d06c50311dbca46c1249115cd518fbcb53e",
+    "caelum/data/peuchen_combat.modeldef": "4c62e44b3267b778563405eb5ae499836411a42d640552a25c41db96534fd7e0",
+    "models/caelum/folklore/peuchen/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "models/caelum/folklore/peuchen/iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+    "models/caelum/folklore/peuchen/materials.png": "c7184bba8e9daf91d224d10756e5094e7e3a366362294a11a22db67fc811e539",
+    "models/caelum/folklore/peuchen/peuchen.md3": "a1fb5fee9e279a9ba0acd363e11afd8271b3265dd34f6b252249c00501b4953f",
+    "models/caelum/folklore/peuchen/scales.png": "45f493ce1dd4ad2ebc4dea596c6352570de6631ed18e007079363b291635a3a4"
+  }
+}

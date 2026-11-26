@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.31** - 2026-11-14.
+Documentation version: **5.17.32** - 2026-11-14.
+
+## #708 - Reference-led Peuchen model (5.17.32)
+
+Exact CaelumBestiary054 binding, 23 mapped states, 86 closed components,
+85 serialized attachment witnesses, repeatability, 115 continuity assertions
+and 80 inherited action/loot assertions pass. CA708-PEUCHEN-01 retains visual
+and ordinary-play acceptance. Check simplified muzzle/horns, ventral edges,
+membrane folds, animation joins and folded corpse. No new flight, collision,
+stats, loot or campaign placement. Regional gallery integration is separate;
+#461 and the broader campaign/character/worn-equipment scope remain incomplete.
 
 ## #706 - Chainmail material model (5.17.31)
 

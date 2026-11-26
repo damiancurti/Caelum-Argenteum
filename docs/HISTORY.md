@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.31** - 2026-11-14.
+Documentation version: **5.17.32** - 2026-11-14.
+
+## 5.17.32 - Peuchen combat model (#708, 2026-11-14)
+
+Implemented the owned CA-FOLK-054 anatomy as 86 closed components and 23 native
+combat poses on the existing class. Preserved provisional Mandinga rules and
+all protected identities. Two built-in image_gen materials and exact prompts
+are retained alongside unchanged concept/eye sources and editable geometry.
+Corrected microscopic quantized pole/pupil triangles, two detached wing roots,
+boundary-only contact witnesses, repeated action/death poses, coarse scales
+and wing-supported lying art. Earlier failures remain evidence. Per-camera
+empty references prevent background changes inflating pose visibility.
+
+Final evidence: ten repeatable exports; 115 continuity and 80 action/loot
+assertions; 18,386 exact runtime entries. One qualified
+700-tic sprite/model sample records 1760.26/1725.56 queue presents/s, p95 0.7686/0.7804 ms and
+p99 0.9615/0.9241 ms. Queue-only timing and unequal footprints limit the result.
+CA-KP-242 records the reusable checks. Evidence:
+assets/validation_v5_17_32/evidence/SUMMARY.json. CA708-PEUCHEN-01 originates
+here and remains pending. Native models now cover eleven of 56 new folklore
+classes; no flight, campaign spawn or broader-batch acceptance is implied.
 
 ## 5.17.31 - Linked-ring chainmail world prop (#706, 2026-11-14)
 

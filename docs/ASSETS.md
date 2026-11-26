@@ -1,6 +1,67 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.31** - 2026-11-14.
+Documentation version: **5.17.32** - 2026-11-14.
+
+## 5.17.32 - Reference-led Peuchen combat model (#708, parent #461)
+
+CA-FOLK-054 Peuchen/Piuchen now has a candidate native model on
+CaelumBestiary054. The owned bestiary concept guides its four clawed legs,
+long neck and tail, horned head, dark scales, pale ventral scutes and paired
+batlike wings. Eight closed membrane panels have actual thickness. Native
+coverage reaches eleven of the 56 new folklore combat classes; the original
+catalogue's import/planning flags are historical, not the runtime coverage list.
+Regional gallery placement remains a separate issue.
+
+The source has 86 closed anatomical components, 105 hierarchy parts, 14,130
+vertices and 26,064 triangles across six native surfaces. All 23 inherited
+sprite/frame/action identities remain intact; quadruped poses use independent
+art data. The earlier strict shared validator remains the default for previous
+families; an explicit mapping-only option permits these new poses while still
+checking the original identities. Mandinga statistics, actions, hostility,
+loot, collision, Scale and saves are unchanged. Neutral visual Height follows
+that existing profile. Wings do not authorize flight, metre-based size changes,
+new population or campaign placement. Rulo, Mandinga and Zupay are untouched.
+
+Source: assets/source/art/peuchen_708, including editable OBJ/MTL, anatomy,
+animation and contact data. Two original bitmap materials were generated using
+built-in image_gen: materials.png and the denser scales.png, with exact prompts
+in MATERIALS_PROMPT.json and SCALES_PROMPT.json. The first atlas remains intact;
+owned Nahuelito iris/dark images are reused byte-for-byte. Regenerate using
+python assets/generators/generate_peuchen_model.py --output build/peuchen-model
+--install. Ten final exports repeat. Adding hashes for unchanged indirect
+backends and original eye sources changes only the manifest; all nine earlier
+art/container files and the tested runtime remain identical.
+
+Independent checks read the serialized anatomy, verify closed outward solids
+and 85 attachment witnesses with two rays and quantization clearance, then
+reject collapsed triangles in every native pose. True pole fans replace tiny
+clipped ellipsoid pole loops locally; lower pupil tessellation avoids native
+collapse. Two wing roots required actual geometric refitting. Contact-search
+boundary candidates were rejected by the stricter final checks. These neutral
+attachment checks do not prove all-pose surface clearance or audit older models.
+
+The first engine preview passed 51 functional assertions but failed its
+distinct-pose gate: idle endpoints, attacks and death progression repeated.
+Explicit pose data, denser scales and per-camera empty references corrected the
+next preview (51 assertions, 20 distinct captures). A later native review found
+wing tips lifting lying art; folding the wings and rolling the body flat fixed
+the candidate, followed by another 51-assertion preview. Front, side, rear,
+head detail, representative actions, all death stages and folded rest were
+inspected. Simplified horns/muzzle, ventral boundaries, membrane folds and rigid
+articulation remain candidate art requiring author review.
+
+The final package passes 115 continuity assertions (16/16/51/16/16) across old
+sprites, old-save/model, fresh model, reload and rollback, plus 80 inherited
+action/loot assertions (40/28/12). One qualified 700-tic sprite/model sample
+records 1760.26/1725.56 queue presents/s, p95 0.7686/0.7804 ms and p99 0.9615/0.9241 ms on the recorded
+Windows 11/Ryzen 9 5950X/RTX 3070 Ti Vulkan environment, 1280x720, background
+unpaused and audio 5%. Different footprints and queue-only timing prevent
+equal-pixel, GPU/display, repeatability or campaign/crowd conclusions. All
+18,386 runtime entries match src; six new resources,
+MODELDEF and two release diagnostics are the only changes from #706.
+Evidence: assets/validation_v5_17_32/evidence/SUMMARY.json. CA708-PEUCHEN-01 is
+pending. Fixed-creature parts do not complete interchangeable playable/worn
+equipment, first-person models or the broader campaign batch.
 
 ## 5.17.31 - Linked-ring chainmail material world prop (#706, parent #647)
 
