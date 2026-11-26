@@ -1,0 +1,8 @@
+{
+  "prompt": "Create an ORIGINAL flat material atlas for native3D serpent models, using the supplied two owned creature concepts only for palette and surface character. Exactly FOUR equal square cells in a2-by-2 grid filling one square image. No text, no cell borders, no gutters, no creature, object, scene or transparency. TOP LEFT: pale warm ivory and muted khaki snake belly scutes, broad shallow overlapping horizontal bands, fine worn surface grain, even lighting. TOP RIGHT: dark weathered brass and bronze snake belly scutes, broad overlapping horizontal bands, no orange glow on this cell. BOTTOM LEFT: aged ivory horn keratin, dense fine longitudinal brown striations, matte cream and taupe, no horn shape. BOTTOM RIGHT: dark charcoal-bronze fin surface with narrow flowing orange-gold vein lines oriented vertically, a painted ember-like accent without bloom, smoke, cast light or flame silhouettes. All four cells have consistent subtle hand-painted dark-fantasy shading, no directional lighting or deep shadow, dense fine detail. Each cell is a uniform material field extending to its boundaries. The top-row bands run horizontally, the bottom-row fibers/veins vertically. Palette and texture only; no eyes, anatomy, ornaments or additional details.",
+  "referenced_image_paths": [
+    "C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/assets/source/bestiary_453/imagenes/05_Bestias_magicas/49_monai.png",
+    "C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/assets/source/bestiary_453/imagenes/05_Bestias_magicas/51_mboi_tata.png"
+  ],
+  "transparent_background": false
+}

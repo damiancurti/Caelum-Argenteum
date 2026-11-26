@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.37** - 2026-11-14.
+Documentation version: **5.17.38** - 2026-11-14.
+
+## 5.17.38 - Two native serpent combat models (#720)
+
+Moñái and Mbói Tatá bring native art to sixteen of 56 new folklore classes.
+Their owned concepts, continuous editable bodies and 23 inherited state
+identities preserve approved provisional Mandinga rules and saves. Fourteen
+exports repeat; 46 closed solids, 44 neutral contacts, 352 critical-pose
+attachment checks, 230 native continuity assertions and 136 combat/loot
+assertions pass. Qualified presentation pairs and their tails are in ASSETS.
+CA720-SERPENTS-01 retains author visual/ordinary-play acceptance. Regional
+gallery integration, remaining characters, worn/first-person equipment and
+original campaign work are still pending. No new fire behavior is implied.
 
 ## 5.17.37 - Wooden crafting drops (#717)
 

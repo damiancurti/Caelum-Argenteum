@@ -889,3 +889,12 @@ assets/validation_v5_17_31/evidence/** -text -diff
 /assets/validation_v5_17_37/*.py text eol=lf
 /assets/validation_v5_17_37/*.zs text eol=lf
 /assets/validation_v5_17_37/evidence/** -text -diff
+
+/assets/source/art/serpents_720/** text eol=lf
+/assets/source/art/serpents_720/**/*.png binary
+/assets/generators/*serpent*.py text eol=lf
+/src/models/caelum/folklore/serpents/** -text -diff
+/src/caelum/data/serpent_combat.modeldef text eol=lf
+/assets/validation_v5_17_38/*.py text eol=lf
+/assets/validation_v5_17_38/*.json text eol=lf
+/assets/validation_v5_17_38/evidence/** -text -diff

@@ -4779,3 +4779,5 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_chains.modeldef"
 
 #include "caelum/data/inventory_wood_components.modeldef"
+
+#include "caelum/data/serpent_combat.modeldef"

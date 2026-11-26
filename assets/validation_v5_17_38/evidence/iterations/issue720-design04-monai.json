@@ -1,0 +1,681 @@
+{
+  "schema_revision": 1,
+  "issue": 720,
+  "catalogue_id": "CA-FOLK-049",
+  "species": "Moñái",
+  "reference": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/49_monai.png",
+  "reference_role": "Owned anatomy/material reference, not authorization for runtime meter sizing.",
+  "atlas": {
+    "columns": 2,
+    "rows": 2,
+    "inset": 0.018,
+    "source_file": "materials.png"
+  },
+  "materials": {
+    "scales": {
+      "uv_rect": [
+        0.005,
+        0.005,
+        0.995,
+        0.995
+      ],
+      "native_batch": "scales"
+    },
+    "belly": {
+      "tile": [
+        0,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "horn": {
+      "tile": [
+        0,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "crest": {
+      "tile": [
+        1,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "iris": {
+      "uv_rect": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "native_batch": "iris"
+    },
+    "dark": {
+      "uv_rect": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "native_batch": "dark"
+    }
+  },
+  "shapes": [
+    {
+      "part": "body",
+      "kind": "sweep",
+      "material": "scales",
+      "belly_material": "belly",
+      "belly_range": [
+        0.625,
+        0.875
+      ],
+      "samples": 192,
+      "segments": 32,
+      "uv_repeats": 6,
+      "controls": [
+        [
+          -48,
+          18,
+          6,
+          0,
+          0
+        ],
+        [
+          -51,
+          8,
+          5,
+          3.5,
+          3.5
+        ],
+        [
+          -47,
+          -5,
+          6,
+          4,
+          4
+        ],
+        [
+          -35,
+          -20,
+          7,
+          4.5,
+          4.5
+        ],
+        [
+          -12,
+          -26,
+          8,
+          6.3,
+          6.3
+        ],
+        [
+          14,
+          -22,
+          9,
+          7.5,
+          7.5
+        ],
+        [
+          29,
+          -5,
+          10,
+          8,
+          8
+        ],
+        [
+          25,
+          18,
+          10,
+          8,
+          8
+        ],
+        [
+          6,
+          29,
+          10,
+          8,
+          8
+        ],
+        [
+          -16,
+          26,
+          12,
+          7.5,
+          7.5
+        ],
+        [
+          -25,
+          10,
+          19,
+          7,
+          7
+        ],
+        [
+          -17,
+          -1,
+          32,
+          6.3,
+          6.3
+        ],
+        [
+          -6,
+          -3,
+          49,
+          5.8,
+          5.8
+        ],
+        [
+          0,
+          0,
+          65,
+          5.2,
+          5.2
+        ],
+        [
+          7,
+          0,
+          78,
+          4.8,
+          4.8
+        ],
+        [
+          16,
+          0,
+          83,
+          4.7,
+          4.7
+        ]
+      ],
+      "tail_pole": true
+    },
+    {
+      "part": "head",
+      "kind": "ellipsoid",
+      "center": [
+        22,
+        0,
+        83.5
+      ],
+      "radii": [
+        12,
+        7,
+        5.5
+      ],
+      "material": "scales",
+      "latitudes": 14,
+      "longitudes": 28,
+      "anchor": 1
+    },
+    {
+      "part": "jaw",
+      "kind": "ellipsoid",
+      "center": [
+        23,
+        0,
+        79
+      ],
+      "radii": [
+        10.5,
+        6.1,
+        1.8
+      ],
+      "material": "belly",
+      "latitudes": 14,
+      "longitudes": 28,
+      "anchor": 1
+    },
+    {
+      "part": "eye_left",
+      "kind": "ellipsoid",
+      "center": [
+        24,
+        -6.5,
+        85.2
+      ],
+      "radii": [
+        1.5,
+        0.7,
+        1.4
+      ],
+      "material": "iris",
+      "latitudes": 14,
+      "longitudes": 28,
+      "anchor": 1
+    },
+    {
+      "part": "pupil_left",
+      "kind": "ellipsoid",
+      "center": [
+        24,
+        -7.12,
+        85.2
+      ],
+      "radii": [
+        0.21,
+        0.14,
+        0.98
+      ],
+      "material": "dark",
+      "latitudes": 6,
+      "longitudes": 12,
+      "anchor": 1
+    },
+    {
+      "part": "brow_left",
+      "kind": "ellipsoid",
+      "center": [
+        23.8,
+        -5.8,
+        86.8
+      ],
+      "radii": [
+        3,
+        1.3,
+        1.2
+      ],
+      "material": "scales",
+      "latitudes": 14,
+      "longitudes": 28,
+      "anchor": 1
+    },
+    {
+      "part": "nostril_left",
+      "kind": "ellipsoid",
+      "center": [
+        31.8,
+        -3.8,
+        84.8
+      ],
+      "radii": [
+        0.9,
+        0.45,
+        0.48
+      ],
+      "material": "dark",
+      "latitudes": 14,
+      "longitudes": 28,
+      "anchor": 1
+    },
+    {
+      "part": "eye_right",
+      "kind": "ellipsoid",
+      "center": [
+        24,
+        6.5,
+        85.2
+      ],
+      "radii": [
+        1.5,
+        0.7,
+        1.4
+      ],
+      "material": "iris",
+      "latitudes": 14,
+      "longitudes": 28,
+      "anchor": 1
+    },
+    {
+      "part": "pupil_right",
+      "kind": "ellipsoid",
+      "center": [
+        24,
+        7.12,
+        85.2
+      ],
+      "radii": [
+        0.21,
+        0.14,
+        0.98
+      ],
+      "material": "dark",
+      "latitudes": 6,
+      "longitudes": 12,
+      "anchor": 1
+    },
+    {
+      "part": "brow_right",
+      "kind": "ellipsoid",
+      "center": [
+        23.8,
+        5.8,
+        86.8
+      ],
+      "radii": [
+        3,
+        1.3,
+        1.2
+      ],
+      "material": "scales",
+      "latitudes": 14,
+      "longitudes": 28,
+      "anchor": 1
+    },
+    {
+      "part": "nostril_right",
+      "kind": "ellipsoid",
+      "center": [
+        31.8,
+        3.8,
+        84.8
+      ],
+      "radii": [
+        0.9,
+        0.45,
+        0.48
+      ],
+      "material": "dark",
+      "latitudes": 14,
+      "longitudes": 28,
+      "anchor": 1
+    },
+    {
+      "part": "horn_left",
+      "kind": "sweep",
+      "material": "horn",
+      "samples": 24,
+      "segments": 18,
+      "uv_repeats": 1,
+      "anchor": 1,
+      "tip_pole": true,
+      "controls": [
+        [
+          18,
+          -3.3,
+          87.2,
+          1.8,
+          1.8
+        ],
+        [
+          16.5,
+          -3.8,
+          92,
+          1.5,
+          1.5
+        ],
+        [
+          13.5,
+          -4.7,
+          98,
+          0.8,
+          0.8
+        ],
+        [
+          10.5,
+          -5.7,
+          103,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "part": "horn_right",
+      "kind": "sweep",
+      "material": "horn",
+      "samples": 24,
+      "segments": 18,
+      "uv_repeats": 1,
+      "anchor": 1,
+      "tip_pole": true,
+      "controls": [
+        [
+          18,
+          3.3,
+          87.2,
+          1.8,
+          1.8
+        ],
+        [
+          16.5,
+          3.8,
+          92,
+          1.5,
+          1.5
+        ],
+        [
+          13.5,
+          4.7,
+          98,
+          0.8,
+          0.8
+        ],
+        [
+          10.5,
+          5.7,
+          103,
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "contacts": [
+    {
+      "part": "head",
+      "target": "body",
+      "witness": [
+        15,
+        0,
+        82.6
+      ]
+    },
+    {
+      "part": "jaw",
+      "target": "head",
+      "witness": [
+        15.5,
+        0,
+        79.4
+      ]
+    },
+    {
+      "part": "eye_left",
+      "target": "head",
+      "witness": [
+        24,
+        -6.25,
+        85.2
+      ]
+    },
+    {
+      "part": "pupil_left",
+      "target": "eye_left",
+      "witness": [
+        24,
+        -7.04,
+        85.2
+      ]
+    },
+    {
+      "part": "brow_left",
+      "target": "head",
+      "witness": [
+        23.8,
+        -5.2,
+        86.5
+      ]
+    },
+    {
+      "part": "nostril_left",
+      "target": "head",
+      "witness": [
+        31.3,
+        -3.6,
+        84.6
+      ]
+    },
+    {
+      "part": "eye_right",
+      "target": "head",
+      "witness": [
+        24,
+        6.25,
+        85.2
+      ]
+    },
+    {
+      "part": "pupil_right",
+      "target": "eye_right",
+      "witness": [
+        24,
+        7.04,
+        85.2
+      ]
+    },
+    {
+      "part": "brow_right",
+      "target": "head",
+      "witness": [
+        23.8,
+        5.2,
+        86.5
+      ]
+    },
+    {
+      "part": "nostril_right",
+      "target": "head",
+      "witness": [
+        31.3,
+        3.6,
+        84.6
+      ]
+    },
+    {
+      "part": "horn_left",
+      "target": "head",
+      "witness": [
+        17.8,
+        -3.35,
+        87.6
+      ]
+    },
+    {
+      "part": "horn_right",
+      "target": "head",
+      "witness": [
+        17.8,
+        3.35,
+        87.6
+      ]
+    }
+  ],
+  "rig": {
+    "neck_start": 0.63,
+    "wave_cycles": 1.5,
+    "fall_side": 27,
+    "fall_flatten": 0.88,
+    "jaw_pivot": [
+      14,
+      0,
+      80
+    ]
+  },
+  "parts": {
+    "body": {
+      "parent": null,
+      "pivot": [
+        -48,
+        18,
+        6
+      ]
+    },
+    "head": {
+      "parent": "body",
+      "pivot": [
+        22,
+        0,
+        83.5
+      ]
+    },
+    "jaw": {
+      "parent": "head",
+      "pivot": [
+        23,
+        0,
+        79
+      ]
+    },
+    "eye_left": {
+      "parent": "head",
+      "pivot": [
+        24,
+        -6.5,
+        85.2
+      ]
+    },
+    "pupil_left": {
+      "parent": "eye_left",
+      "pivot": [
+        24,
+        -7.12,
+        85.2
+      ]
+    },
+    "brow_left": {
+      "parent": "head",
+      "pivot": [
+        23.8,
+        -5.8,
+        86.8
+      ]
+    },
+    "nostril_left": {
+      "parent": "head",
+      "pivot": [
+        31.8,
+        -3.8,
+        84.8
+      ]
+    },
+    "eye_right": {
+      "parent": "head",
+      "pivot": [
+        24,
+        6.5,
+        85.2
+      ]
+    },
+    "pupil_right": {
+      "parent": "eye_right",
+      "pivot": [
+        24,
+        7.12,
+        85.2
+      ]
+    },
+    "brow_right": {
+      "parent": "head",
+      "pivot": [
+        23.8,
+        5.8,
+        86.8
+      ]
+    },
+    "nostril_right": {
+      "parent": "head",
+      "pivot": [
+        31.8,
+        3.8,
+        84.8
+      ]
+    },
+    "horn_left": {
+      "parent": "head",
+      "pivot": [
+        18,
+        -3.3,
+        87.2
+      ]
+    },
+    "horn_right": {
+      "parent": "head",
+      "pivot": [
+        18,
+        3.3,
+        87.2
+      ]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "issue": 720,
+  "owner": "Damián Curti / Caelum Argenteum",
+  "references": {
+    "monai": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/49_monai.png",
+    "mboi_tata": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/51_mboi_tata.png"
+  },
+  "materials": {
+    "monai_scales": "ImageGen original; MONAI_SCALES_PROMPT.json",
+    "mboi_tata_scales": "ImageGen original; TATA_SCALES_PROMPT.json",
+    "atlas": "ImageGen original; MATERIALS_PROMPT.json",
+    "eyes": "Owned #708 iris/dark pixels reused exactly."
+  },
+  "method": "Original continuous swept body with true tail pole and transported deformation frames. Closed attached jaw, horns/crests and eyes; native23 inherited presentations. No raster editing.",
+  "limits": "Candidate fixed-species models. Approved provisional Mandinga gameplay, unique/repeatable identities, regions, collision, actor scale, saves and protected named actors remain. Meter-scale authoring, modular humanoids, campaign spawning and new fire effects are outside this patch.",
+  "generation_date": "2026-11-14",
+  "generated_images": {
+    "monai_scales.png": {
+      "original_output": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-0bcf4a7e-994c-471a-b1e4-d813cefcd29d.png",
+      "sha256": "e81050399fe4297a3dc3f541e7ae7a69b546b50a3b4280b125bf34faee30fb9e",
+      "copied_without_raster_edits": true
+    },
+    "mboi_tata_scales.png": {
+      "original_output": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-6f9ea1de-42da-444f-9334-a9d978d7b22c.png",
+      "sha256": "21b1bd5ab5b3a5262696e2b900a11751250eebc008ac7377907edb7dfcee4b17",
+      "copied_without_raster_edits": true
+    },
+    "materials.png": {
+      "original_output": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-39c6ca3c-cdbe-4efd-8b1e-54ea810ce321.png",
+      "sha256": "d71e0f9b909d3da45cf8fdef5f5e983d306c2e4240abbd324be54cac8762e3f9",
+      "copied_without_raster_edits": true
+    }
+  }
+}
