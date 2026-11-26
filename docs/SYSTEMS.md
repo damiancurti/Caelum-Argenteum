@@ -1,6 +1,22 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.117** - 2026-11-21.
+Documentation version: **5.17.118** - 2026-11-21.
+
+## 5.17.118 - Keep large house facades visible from nearby streets (#879)
+
+CA454Facade31800 now declares RenderRadius781, the ceiling of the unchanged
+model's maximum horizontal vertex radius780.2563681252464. Native rendering links
+the model to touched render sectors beyond its collision radius20; height16 and
+every actor transform/state remain unchanged. This is a visual correctness bound,
+not an enlarged collider, new visibility rule, AI scan or per-tic script task.
+
+GZDoom4.14.2 serializes RenderRadius relative to the class default. In the tested
+old/current saves, values equal to that default are omitted; loading initializes
+the active default and PostSerialize relinks render sectors. Seven native phases
+verify upgrade, reload, rollback, reupgrade and a city retained in a house-interior
+hub save. No saved field, schema revision or custom migration is introduced. This
+does not claim compatibility for third-party modifications that explicitly save a
+different per-instance radius. Operational Used/capture/render-ACK travel remains.
 
 ## 5.17.117 - Review timber joinery on existing Barracas house facades (#878, #463)
 

@@ -5,6 +5,7 @@ trim depth comes from the native door thickness. No raster artwork is edited.
 The caller owns output packaging and static actor/editor bindings.
 """
 from pathlib import Path
+import math
 from generate_environment_models import Mesh
 
 TEXTURES='graphics/caelum/textures/entornos_v1/ciudad/'
@@ -51,4 +52,5 @@ def build(path:Path,width,height,profile,detail,depth,door_y):
                     (width/2,-height/2,width/2+depth,height/2)]:
         box(stone,a,b,top-trim,c,d,top)
     path.parent.mkdir(parents=True,exist_ok=True);mesh.write(path)
-    return {'vertices':len(mesh.vertices),'faces':len(mesh.faces)}
+    return {'vertices':len(mesh.vertices),'faces':len(mesh.faces),
+            'render_radius':math.ceil(max(math.hypot(v[0],v[2]) for v in mesh.vertices))}

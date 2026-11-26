@@ -1,0 +1,351 @@
+{
+  "issue": 879,
+  "old_runtime_sha256": "e39bd42feffdd6bd5bf0456d977f0efbd3643ef61771b1ff199d43d42ecc1dbd",
+  "new_runtime_sha256": "d6d5df5588d3185021a6931cc8b886e5d9f8ce05bab032f3e53dacd03040eb0d",
+  "joinery_sha256": "1194bd5d3504ded9fc6435bc46cd8e60ab55ff16a6223eddad24041422eb97df",
+  "fixture_sha256": "bfbbc4f254e8ca9532afcb01c32d3a2b806a80d40a3c3dffe312d2a9b39010f8",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "cameras": [
+    {
+      "name": "residential_street",
+      "point": [
+        -1568,
+        -4352
+      ],
+      "angle": 90,
+      "basis": "Existing first-house public approach, looking along its facade"
+    },
+    {
+      "name": "door_0",
+      "point": [
+        -1568,
+        -4352
+      ],
+      "angle": 180,
+      "target": [
+        -1660,
+        -4352.0,
+        80.0
+      ],
+      "house": 0
+    },
+    {
+      "name": "window_0",
+      "point": [
+        -1572.0,
+        -4544.0
+      ],
+      "angle": 180,
+      "target": [
+        -1664.0,
+        -4544.0,
+        96.0
+      ],
+      "house": 0
+    },
+    {
+      "name": "door_90",
+      "point": [
+        -12416,
+        -8352
+      ],
+      "angle": 270,
+      "target": [
+        -12416.0,
+        -8444,
+        80.0
+      ],
+      "house": 20
+    },
+    {
+      "name": "window_90",
+      "point": [
+        -12224.0,
+        -8356.0
+      ],
+      "angle": 270,
+      "target": [
+        -12224.0,
+        -8448.0,
+        96.0
+      ],
+      "house": 20
+    },
+    {
+      "name": "door_180",
+      "point": [
+        -23136,
+        -2752
+      ],
+      "angle": 0,
+      "target": [
+        -23044,
+        -2752.0,
+        80.0
+      ],
+      "house": 1
+    },
+    {
+      "name": "window_180",
+      "point": [
+        -23132.0,
+        -2560.0
+      ],
+      "angle": 0,
+      "target": [
+        -23040.0,
+        -2560.0,
+        96.0
+      ],
+      "house": 1
+    },
+    {
+      "name": "door_270",
+      "point": [
+        -27072,
+        3808
+      ],
+      "angle": 90,
+      "target": [
+        -27072.0,
+        3900,
+        80.0
+      ],
+      "house": 19
+    },
+    {
+      "name": "window_270",
+      "point": [
+        -27264.0,
+        3812.0
+      ],
+      "angle": 90,
+      "target": [
+        -27264.0,
+        3904.0,
+        96.0
+      ],
+      "house": 19
+    }
+  ],
+  "production_classes": true,
+  "diagnostic_class_override": false,
+  "runs": [
+    {
+      "label": "control",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "errors": [],
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue878-review01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\facade-views.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\control\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\control",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\control\\engine.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\control\\start.cfg"
+      ],
+      "markers": [
+        "CA866 FACADE index=0 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=618.023 render=0.000",
+        "CA866 VIEW 0 pos=-1568.000,-4352.000,0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=1 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=618.023 render=0.000",
+        "CA866 VIEW 1 pos=-1568.000,-4352.000,0.000 angle=180.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=2 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=707.276 render=0.000",
+        "CA866 VIEW 2 pos=-1572.000,-4544.000,0.000 angle=180.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=3 count=160 pos=-12640.000,-8928.000,0.000 floor=184.000 angle=90.000 distance=618.023 render=0.000",
+        "CA866 VIEW 3 pos=-12416.000,-8352.000,0.000 angle=270.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=4 count=160 pos=-12640.000,-8928.000,0.000 floor=184.000 angle=90.000 distance=707.276 render=0.000",
+        "CA866 VIEW 4 pos=-12224.000,-8356.000,0.000 angle=270.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=5 count=160 pos=-22560.000,-2976.000,0.000 floor=184.000 angle=180.000 distance=618.023 render=0.000",
+        "CA866 VIEW 5 pos=-23136.000,-2752.000,0.000 angle=0.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=6 count=160 pos=-22560.000,-2976.000,0.000 floor=184.000 angle=180.000 distance=707.276 render=0.000",
+        "CA866 VIEW 6 pos=-23132.000,-2560.000,0.000 angle=0.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=7 count=160 pos=-26848.000,4384.000,0.000 floor=184.000 angle=270.000 distance=618.023 render=0.000",
+        "CA866 VIEW 7 pos=-27072.000,3808.000,-0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=8 count=160 pos=-26848.000,4384.000,0.000 floor=184.000 angle=270.000 distance=707.276 render=0.000",
+        "CA866 VIEW 8 pos=-27264.000,3812.000,-0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=0 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=618.023 render=0.000",
+        "CA866 VIEW 0 pos=-1568.000,-4352.000,0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 WALK distance=26.663 pos=-1568.000,-4325.337,0.000",
+        "CA866 PASS views=9"
+      ],
+      "images": {
+        "residential_street.png": "67ea74df1a1030bd144f8d6fc80adf157c6539be337173384881924599c70c06",
+        "door_0.png": "30b0883e0cc8b5984057dd5ac35cd0fbaff95d6912e9e1e8cb331cfb98be8bcf",
+        "window_0.png": "09146579b012da930ecd8cec9493b480875c131fdc005a89dd7ba5e5b11d3c28",
+        "door_90.png": "72ad7a2080f7a3b2eb7c9976e02f286508bf9286e5c2a5019c90e4d356f61e94",
+        "window_90.png": "56b093f2084b77419e588bd384f3a1fbe7d4975f10e3f732564ec10303aa671a",
+        "door_180.png": "101a98f669b56c418115a3363eff7b59f536b1e73ad4f24fa1dce6d5d4aee41a",
+        "window_180.png": "975674051123d78033b9fbe5cc67e273ce25a463156654e4abb7503065ab9376",
+        "door_270.png": "4ac249854905c55b48de0bccc2eaaf4dde42b15e7ed0478400dd8329ec5456ea",
+        "window_270.png": "ff2c0f100fb678cd1c7d0f82f242e2da3a80a4ea1913ba52036951b684a93f14",
+        "walk.png": "e8efbb4aaccb8cc92c465d8dcb01d12ffadfb450c7b98fe9808f4564729f3071"
+      },
+      "native_render_radius_equal": true
+    },
+    {
+      "label": "fixed",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "errors": [],
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-visibility01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\facade-views.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\fixed\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\fixed",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\fixed\\engine.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\fixed\\start.cfg"
+      ],
+      "markers": [
+        "CA866 FACADE index=0 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=618.023 render=781.000",
+        "CA866 VIEW 0 pos=-1568.000,-4352.000,0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=1 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=618.023 render=781.000",
+        "CA866 VIEW 1 pos=-1568.000,-4352.000,0.000 angle=180.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=2 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=707.276 render=781.000",
+        "CA866 VIEW 2 pos=-1572.000,-4544.000,0.000 angle=180.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=3 count=160 pos=-12640.000,-8928.000,0.000 floor=184.000 angle=90.000 distance=618.023 render=781.000",
+        "CA866 VIEW 3 pos=-12416.000,-8352.000,0.000 angle=270.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=4 count=160 pos=-12640.000,-8928.000,0.000 floor=184.000 angle=90.000 distance=707.276 render=781.000",
+        "CA866 VIEW 4 pos=-12224.000,-8356.000,0.000 angle=270.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=5 count=160 pos=-22560.000,-2976.000,0.000 floor=184.000 angle=180.000 distance=618.023 render=781.000",
+        "CA866 VIEW 5 pos=-23136.000,-2752.000,0.000 angle=0.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=6 count=160 pos=-22560.000,-2976.000,0.000 floor=184.000 angle=180.000 distance=707.276 render=781.000",
+        "CA866 VIEW 6 pos=-23132.000,-2560.000,0.000 angle=0.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=7 count=160 pos=-26848.000,4384.000,0.000 floor=184.000 angle=270.000 distance=618.023 render=781.000",
+        "CA866 VIEW 7 pos=-27072.000,3808.000,-0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=8 count=160 pos=-26848.000,4384.000,0.000 floor=184.000 angle=270.000 distance=707.276 render=781.000",
+        "CA866 VIEW 8 pos=-27264.000,3812.000,-0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=0 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=618.023 render=781.000",
+        "CA866 VIEW 0 pos=-1568.000,-4352.000,0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 WALK distance=26.663 pos=-1568.000,-4325.337,0.000",
+        "CA866 PASS views=9"
+      ],
+      "images": {
+        "residential_street.png": "67ea74df1a1030bd144f8d6fc80adf157c6539be337173384881924599c70c06",
+        "door_0.png": "30b0883e0cc8b5984057dd5ac35cd0fbaff95d6912e9e1e8cb331cfb98be8bcf",
+        "window_0.png": "09146579b012da930ecd8cec9493b480875c131fdc005a89dd7ba5e5b11d3c28",
+        "door_90.png": "9ec3210772847585d8767b3e21ccf3ec738285e1a6cd5fb817a1358399c6d6bf",
+        "window_90.png": "56b093f2084b77419e588bd384f3a1fbe7d4975f10e3f732564ec10303aa671a",
+        "door_180.png": "101a98f669b56c418115a3363eff7b59f536b1e73ad4f24fa1dce6d5d4aee41a",
+        "window_180.png": "975674051123d78033b9fbe5cc67e273ce25a463156654e4abb7503065ab9376",
+        "door_270.png": "2e9b683b4368679910f9fa0d57bd89d5839af9b93c6073ecad7f60e925a37905",
+        "window_270.png": "a053932af413f232f9077524b660a9b3cf84dc57c33e5ab67f8231d63c05ea39",
+        "walk.png": "b5580d363bbd6481d32d91319dc10a5b762f43772116f5f1d510fd28de0f67e2"
+      },
+      "native_render_radius_equal": true
+    },
+    {
+      "label": "joinery",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "errors": [],
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-visibility01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue878-joinery02\\candidate.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\facade-views.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\joinery\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\joinery",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\joinery\\engine.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue879-views01\\joinery\\start.cfg"
+      ],
+      "markers": [
+        "CA866 FACADE index=0 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=618.023 render=781.000",
+        "CA866 VIEW 0 pos=-1568.000,-4352.000,0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=1 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=618.023 render=781.000",
+        "CA866 VIEW 1 pos=-1568.000,-4352.000,0.000 angle=180.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=2 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=707.276 render=781.000",
+        "CA866 VIEW 2 pos=-1572.000,-4544.000,0.000 angle=180.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=3 count=160 pos=-12640.000,-8928.000,0.000 floor=184.000 angle=90.000 distance=618.023 render=781.000",
+        "CA866 VIEW 3 pos=-12416.000,-8352.000,0.000 angle=270.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=4 count=160 pos=-12640.000,-8928.000,0.000 floor=184.000 angle=90.000 distance=707.276 render=781.000",
+        "CA866 VIEW 4 pos=-12224.000,-8356.000,0.000 angle=270.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=5 count=160 pos=-22560.000,-2976.000,0.000 floor=184.000 angle=180.000 distance=618.023 render=781.000",
+        "CA866 VIEW 5 pos=-23136.000,-2752.000,0.000 angle=0.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=6 count=160 pos=-22560.000,-2976.000,0.000 floor=184.000 angle=180.000 distance=707.276 render=781.000",
+        "CA866 VIEW 6 pos=-23132.000,-2560.000,0.000 angle=0.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=7 count=160 pos=-26848.000,4384.000,0.000 floor=184.000 angle=270.000 distance=618.023 render=781.000",
+        "CA866 VIEW 7 pos=-27072.000,3808.000,-0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=8 count=160 pos=-26848.000,4384.000,0.000 floor=184.000 angle=270.000 distance=707.276 render=781.000",
+        "CA866 VIEW 8 pos=-27264.000,3812.000,-0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 FACADE index=0 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=618.023 render=781.000",
+        "CA866 VIEW 0 pos=-1568.000,-4352.000,0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 WALK distance=26.663 pos=-1568.000,-4325.337,0.000",
+        "CA866 PASS views=9"
+      ],
+      "images": {
+        "residential_street.png": "f52e3d24e60d41d29357dd3494f54648a1fa1e36ba5b8efa8cf0eae5bbe4f044",
+        "door_0.png": "25df8912f9d26dcc8805e1b7ab7c9328868bba85c297d6d3481c6d1f177ad553",
+        "window_0.png": "ba61021b50802e4f9dd252e797fad6abd777042798aab98aafc11c58d39d6d97",
+        "door_90.png": "04767763a3f8bcf9864a4cfd9b54751b22c6a66c941c7902ffd650862d240aae",
+        "window_90.png": "f356c9420b3b0bd22f0ed61064e68d19c88b5a8089689a633f669676628e48e5",
+        "door_180.png": "8cb95af788cd6333bc89c5a86b4feacf9d7df2e845af229f1819ba35778efa65",
+        "window_180.png": "cbe8bef0ce0d9cc160de7ef9fcaa7a1c6f683da657560d377ba2f427a6ffba85",
+        "door_270.png": "2b2c585921555410ca4aad244d1cb237304d6a040b2e5973f143b91aa9de789f",
+        "window_270.png": "3d1a03de241fb1e8397a592ca6a3e6c423eb4ff896fab423593183fb5d19e4e5",
+        "walk.png": "2fab3fd1a037cd178123bbbcb51dfe6e720674ab9e20a89d9b6245bf204fd204"
+      },
+      "native_render_radius_equal": true
+    }
+  ],
+  "passed": true,
+  "qualification": "Compare original and fixed production facade classes, plus optional joinery.\n\nReuses the retained #878 cameras/probe without its diagnostic class replacement.\nThe actual production class supplies RenderRadius in each runtime. Camera\nteleports, invulnerability/notarget and menu dismissal remain diagnostic.\n"
+}

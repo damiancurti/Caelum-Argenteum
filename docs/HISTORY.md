@@ -1,6 +1,61 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.117** - 2026-11-21.
+Documentation version: **5.17.118** - 2026-11-21.
+
+## 5.17.118 - Keep large house facades visible from nearby streets (#879)
+
+Corrected the production CA454Facade31800 render bound to781, derived from the
+unchanged original model's horizontal envelope. Previously the default0 fell back
+to collision radius20 for render-sector linkage; large detail centered inside an
+opaque building could disappear from nearby streets. Native before/after views
+reproduce and restore the sampled house19 facade and house20 entrance cornice.
+No collider, map, model, actor placement, state layout or saved field changes.
+The runtime audit finds18764 of18767 members identical to release117: only the
+facade property and two release log labels differ. Full recompilation preserves
+the original model/base map/MAPINFO/MODELDEF and final installed MAP03 bytes;
+the manifest refresh is limited to verified source/actor changes and its record.
+
+Seven clean native phases pass: old_fresh, upgrade, new_reload, rollback, reupgrade,
+hub_upgrade and hub_reload. Eight facade samples verify1280 actor observations
+against the authoritative layout, including collision radius20/height16/worldZ0.
+Thirteen actual Used/capture requests and seven exact-position returns retain real
+render-ACK travel. The old storedhub checkpoint is saved inside CAH000 and returns
+to the retained MAP03 under the new runtime. Read-only inspection of eight native
+saves finds160 facade objects each, no explicit renderradius keys, and the same
+MAP03 checksum f552012c9d4d7a2ba59d0809894ad272. Native default-relative serialization
+and relinking handle both upgrade and rollback without a custom migration.
+The bounded house-use harness still supplies diagnostic city setup and invulnerable
+portal placement; it does not establish ordinary walking, purchase or multiplayer.
+
+Three view runs pass with actual production facade classes: old original, corrected
+original and corrected plus the unchanged #878 joinery option. Nine authored camera
+views and a26.663-MU walk per run produce30 image contents inspected:12 directly and
+18 matching previously inspected captures byte-for-byte. Native RenderRadius is
+asserted at every view. Diagnostic teleport/notarget/menu controls are retained;
+no radius subclass override is used. Captures are1520x825, while performance uses
+1280x720, official GZDoom4.14.2/Vulkan, Windows11, Ryzen9 5950X and RTX3070Ti.
+
+| Scene | Queue presents/s | Present mean / p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| street-control01 | 143.812605 | 6.953 / 8.087 / 8.831 / 9.929 | 28.574 / 33.979 / 35.175 / 36.340 |
+| street-fixed01 | 145.748847 | 6.861 / 8.006 / 8.826 / 11.905 | 28.569 / 33.590 / 34.786 / 36.908 |
+| ground-control01 | 141.644668 | 7.060 / 8.174 / 9.057 / 11.830 | 28.580 / 33.628 / 34.820 / 35.736 |
+| ground-fixed01 | 141.197028 | 7.082 / 8.142 / 8.744 / 10.537 | 28.568 / 33.810 / 35.046 / 35.822 |
+| siege-control01 | 2.023352 | 494.229 / 540.781 / 560.135 / 560.135 | 29.721 / 45.143 / 49.615 / 58.174 |
+| siege-fixed01 | 2.004162 | 498.962 / 562.178 / 582.092 / 582.092 | 29.821 / 45.838 / 50.004 / 69.824 |
+
+Each pair has identical observed states/census; all performance runs use the
+original production art. The normal approved1000-attacker/600-defender deployment
+observes601 defenders/988 attackers/population1590/dense1 in these windows. No
+retired6000 scenario runs. One hidden unpaused engine at5% audio runs sequentially,
+without concurrent heavy build/hash/validation work. Street/ground results are
+similar in these single comparisons; siege remains around2 queue presents/s,
+with worse final tails in this pair. No speedup, GPU bottleneck, scanout rate or
+playable siege claim follows. Tic intervals include pacing and frame work.
+
+Evidence: assets/validation_v5_17_118. Full project validation passes with no errors after shortening the current context line below its strict2500-word limit. The first failed report is retained; the document index is current. CA879-VISIBILITY-01 is appended and all prior author checks remain.
+No author acceptance, intermediate terminal, merge or issue closure is recorded.
+Continue the authorized environment work and final consolidated batch preparation.
 
 ## 5.17.117 - Review timber joinery on existing Barracas house facades (#878, #463)
 

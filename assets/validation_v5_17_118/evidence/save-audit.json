@@ -1,0 +1,55 @@
+{
+  "issue": 879,
+  "passed": true,
+  "saves": [
+    {
+      "phase": "hub_reload",
+      "facade_objects": 160,
+      "explicit_render_radius_keys": 0,
+      "map_checksum": "f552012c9d4d7a2ba59d0809894ad272"
+    },
+    {
+      "phase": "hub_upgrade",
+      "facade_objects": 160,
+      "explicit_render_radius_keys": 0,
+      "map_checksum": "f552012c9d4d7a2ba59d0809894ad272"
+    },
+    {
+      "phase": "new_reload",
+      "facade_objects": 160,
+      "explicit_render_radius_keys": 0,
+      "map_checksum": "f552012c9d4d7a2ba59d0809894ad272"
+    },
+    {
+      "phase": "old_fresh",
+      "facade_objects": 160,
+      "explicit_render_radius_keys": 0,
+      "map_checksum": "f552012c9d4d7a2ba59d0809894ad272"
+    },
+    {
+      "phase": "reupgrade",
+      "facade_objects": 160,
+      "explicit_render_radius_keys": 0,
+      "map_checksum": "f552012c9d4d7a2ba59d0809894ad272"
+    },
+    {
+      "phase": "rollback",
+      "facade_objects": 160,
+      "explicit_render_radius_keys": 0,
+      "map_checksum": "f552012c9d4d7a2ba59d0809894ad272"
+    },
+    {
+      "phase": "upgrade",
+      "facade_objects": 160,
+      "explicit_render_radius_keys": 0,
+      "map_checksum": "f552012c9d4d7a2ba59d0809894ad272"
+    },
+    {
+      "phase": "old_fresh/storedhub",
+      "facade_objects": 160,
+      "explicit_render_radius_keys": 0,
+      "map_checksum": "f552012c9d4d7a2ba59d0809894ad272"
+    }
+  ],
+  "qualification": "Read-only JSON inspection of eight native saves; render bound remains omitted because it equals the loaded class default. Native upgrade/reload/rollback/hub-return evidence is separate. Save bytes are never rewritten."
+}

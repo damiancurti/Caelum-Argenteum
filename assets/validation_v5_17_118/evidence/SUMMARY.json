@@ -1,0 +1,15 @@
+{
+  "issue": 879,
+  "release": "5.17.118",
+  "full_validation": "passed with no errors",
+  "author_acceptance": false,
+  "final_native_phases": 7,
+  "facade_samples": 8,
+  "facade_observations": 1280,
+  "native_use_passes": 13,
+  "native_return_passes": 7,
+  "final_image_contents_inspected": 30,
+  "performance_windows": 6,
+  "production_changes": "Native RenderRadius781 plus two release log labels",
+  "qualification": "Actual production facade classes in final views; retained diagnostic city setup and invulnerable portal placement in persistence. No ordinary walkthrough, purchase, multiplayer, siege fluency, author acceptance or completed-batch claim."
+}

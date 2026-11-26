@@ -1,0 +1,13 @@
+{
+  "issue": 879,
+  "old_runtime_sha256": "e39bd42feffdd6bd5bf0456d977f0efbd3643ef61771b1ff199d43d42ecc1dbd",
+  "new_runtime_sha256": "d6d5df5588d3185021a6931cc8b886e5d9f8ce05bab032f3e53dacd03040eb0d",
+  "members": 18767,
+  "identical_members": 18764,
+  "changed": [
+    "caelum/world/CaelumBarracasFacades.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "qualification": "One native render-bound property plus two release log labels. Every map, model, texture, actor placement and state layout is byte-identical."
+}

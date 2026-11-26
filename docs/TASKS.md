@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.117** - 2026-11-21.
+Documentation version: **5.17.118** - 2026-11-21.
+
+## 5.17.118 - Keep large house facades visible from nearby streets (#879)
+
+Implemented #879: derived native facade bound, reproducible source/manifest
+refresh, unchanged map/model audit, seven persistence phases, production-class
+views and six paired presentation measurements. CA879-VISIBILITY-01 is appended
+for the single final author session. The #878 review launcher may now use the
+corrected runtime; its visual proposal remains unapproved.
+
+Continue the remaining authorized #463 environment/furnishing inventory and final
+batch preparation. Preserve the body/style and unauthored progression gates. The
+normal siege remains near2 queue presents/s in this comparison; neither this fix
+nor earlier small subsystem gains resolves that limitation. No intermediate author
+terminal, issue closure, merge or completed-batch claim follows this patch.
 
 ## 5.17.117 - Review timber joinery on existing Barracas house facades (#878, #463)
 

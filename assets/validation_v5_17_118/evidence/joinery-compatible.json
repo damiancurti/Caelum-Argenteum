@@ -1,0 +1,253 @@
+{
+  "issue": 878,
+  "author_acceptance": false,
+  "runtime_sha256": "d6d5df5588d3185021a6931cc8b886e5d9f8ce05bab032f3e53dacd03040eb0d",
+  "config_sha256": "166f77ebfd5d9886a0a51a73e80be42d8d44afb406fabeb7cd89e4afd6b4bf71",
+  "builder_sha256": "334f8fb9b6a8be744220094c1a632da41ac26163e3b3e6b6f19c104d02e88f63",
+  "source_sha256": "a5c2aefec5ead511571bee96562c07e8797aa989eba8e811d252c2ec0e377b8d",
+  "model_sha256": "ac49cc67ace1f715e534d53384adf60db4512cf1f5e1c8d30f43b38ccf8a24a5",
+  "overlay_sha256": "1194bd5d3504ded9fc6435bc46cd8e60ab55ff16a6223eddad24041422eb97df",
+  "original": {
+    "vertices": 1896,
+    "faces": 474,
+    "triangles": 948,
+    "material_count": 2,
+    "native_material_sections": 36,
+    "bounds": [
+      [
+        -484.0,
+        484.0
+      ],
+      [
+        -4.0,
+        184.0
+      ],
+      [
+        -612.0,
+        612.0
+      ]
+    ]
+  },
+  "candidate": {
+    "vertices": 4548,
+    "faces": 1137,
+    "triangles": 2274,
+    "material_count": 3,
+    "native_material_sections": 3,
+    "bounds": [
+      [
+        -484.0,
+        484.0
+      ],
+      [
+        -4.0,
+        184.0
+      ],
+      [
+        -612.0,
+        612.0
+      ]
+    ]
+  },
+  "source_recompiled_exact": true,
+  "original_vertices_retained": true,
+  "retained_faces_and_door_uvs": true,
+  "original_envelope_equal": true,
+  "modified_original_window_uv_faces": [
+    0,
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    175,
+    200,
+    225,
+    250,
+    275,
+    300,
+    325,
+    350,
+    375,
+    400
+  ],
+  "window_count": 17,
+  "windows": [
+    {
+      "axis": 0,
+      "surface": -482.0,
+      "outward": -1,
+      "low": -448.0,
+      "high": -384.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 0,
+      "surface": 482.0,
+      "outward": 1,
+      "low": -448.0,
+      "high": -384.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 0,
+      "surface": -482.0,
+      "outward": -1,
+      "low": -256.0,
+      "high": -192.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 0,
+      "surface": -482.0,
+      "outward": -1,
+      "low": -64.0,
+      "high": 0.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 0,
+      "surface": 482.0,
+      "outward": 1,
+      "low": -64.0,
+      "high": 0.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 0,
+      "surface": -482.0,
+      "outward": -1,
+      "low": 128.0,
+      "high": 192.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 0,
+      "surface": 482.0,
+      "outward": 1,
+      "low": 128.0,
+      "high": 192.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 0,
+      "surface": -482.0,
+      "outward": -1,
+      "low": 320.0,
+      "high": 384.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 0,
+      "surface": 482.0,
+      "outward": 1,
+      "low": 320.0,
+      "high": 384.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 1,
+      "surface": -610.0,
+      "outward": -1,
+      "low": -320.0,
+      "high": -256.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 1,
+      "surface": 610.0,
+      "outward": 1,
+      "low": -320.0,
+      "high": -256.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 1,
+      "surface": -610.0,
+      "outward": -1,
+      "low": -128.0,
+      "high": -64.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 1,
+      "surface": 610.0,
+      "outward": 1,
+      "low": -128.0,
+      "high": -64.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 1,
+      "surface": -610.0,
+      "outward": -1,
+      "low": 64.0,
+      "high": 128.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 1,
+      "surface": 610.0,
+      "outward": 1,
+      "low": 64.0,
+      "high": 128.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 1,
+      "surface": -610.0,
+      "outward": -1,
+      "low": 256.0,
+      "high": 320.0,
+      "bottom": 64.0,
+      "top": 128.0
+    },
+    {
+      "axis": 1,
+      "surface": 610.0,
+      "outward": 1,
+      "low": 256.0,
+      "high": 320.0,
+      "bottom": 64.0,
+      "top": 128.0
+    }
+  ],
+  "house_instances": 160,
+  "materials": {
+    "wood": {
+      "path": "graphics/caelum/textures/entornos_v1/ciudad/CVCI05.png",
+      "bytes": 196400,
+      "sha256": "a4118c25046e21f3c2b6e25b129d160374fc0602718208199d1ae1e7dc7adcba"
+    },
+    "iron": {
+      "path": "models/caelum/props/kitchen/iron-painted-v1.png",
+      "bytes": 122437,
+      "sha256": "4948dc4dc13b930c7cab4461d5ea764332add932488b32fcf46675b0ac8ba65b"
+    }
+  },
+  "added_pixel_bytes": 0,
+  "model_bytes": 311432,
+  "overlay_bytes": 311638,
+  "model_only_members": [
+    "models/caelum/architecture/barracas/house-960-1216.obj"
+  ],
+  "native_map_actor_class_and_door_changes": 0,
+  "scope": "Closed paired timber shutters with modeled rails/stiles and small iron hinge plates. Preserve the original plaster frames/cornice and door backing; operational house door leaves remain separate and unchanged.",
+  "provenance": "Original code-generated model details with existing owned material bytes and authored house positions. No third-party pixels. No new actor, map geometry, collision, saved field or default installation."
+}
