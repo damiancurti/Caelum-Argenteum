@@ -1,0 +1,285 @@
+{
+  "issue": 849,
+  "runtime_sha256": "e94024c02321d0532b55c7faccb5f1e35c241bdc5f4d836cca01f47cf2ee3a36",
+  "overlay_sha256": "1fe0d281c06269f36dd121b4d6d8d8e713c6b564f11ca77143784914cf51967a",
+  "proof": {
+    "ancestry": {
+      "CaelumCombatActor": [
+        "CaelumCombatActor",
+        "Actor"
+      ],
+      "CaelumGateBlocker": [
+        "CaelumGateBlocker",
+        "Actor"
+      ],
+      "CaelumVehiclePart": [
+        "CaelumVehiclePart",
+        "Actor"
+      ],
+      "CaelumMachineBlock": [
+        "CaelumMachineBlock",
+        "CaelumGateBlocker",
+        "Actor"
+      ],
+      "CaelumRamBlock": [
+        "CaelumRamBlock",
+        "CaelumMachineBlock",
+        "CaelumGateBlocker",
+        "Actor"
+      ],
+      "CaelumRamHead": [
+        "CaelumRamHead",
+        "CaelumRamBlock",
+        "CaelumMachineBlock",
+        "CaelumGateBlocker",
+        "Actor"
+      ],
+      "CaelumCannonBlock": [
+        "CaelumCannonBlock",
+        "CaelumMachineBlock",
+        "CaelumGateBlocker",
+        "Actor"
+      ],
+      "Inventory": [
+        "Inventory"
+      ],
+      "CaelumPlayer": [
+        "CaelumPlayer",
+        "DoomPlayer"
+      ],
+      "CaelumDiningBlock": [
+        "CaelumDiningBlock",
+        "Actor"
+      ],
+      "CaelumDiningTable": [
+        "CaelumDiningTable",
+        "Actor"
+      ],
+      "CaelumStorageFurnitureItem": [
+        "CaelumStorageFurnitureItem",
+        "CaelumSpecialInventoryItem",
+        "Inventory"
+      ],
+      "CaelumDecorBody": [
+        "CaelumDecorBody",
+        "CaelumPhysicalScenery",
+        "Actor"
+      ],
+      "CaelumRestFurniture": [
+        "CaelumRestFurniture",
+        "Actor"
+      ],
+      "CaelumPortableDiningTable": [
+        "CaelumPortableDiningTable",
+        "CaelumDiningTable",
+        "Actor"
+      ],
+      "CaelumPortableReadingDesk": [
+        "CaelumPortableReadingDesk",
+        "CaelumReadingDesk",
+        "Actor"
+      ],
+      "CaelumSofa": [
+        "CaelumSofa",
+        "CaelumPhysicalScenery",
+        "Actor"
+      ],
+      "CaelumSofaSeat": [
+        "CaelumSofaSeat",
+        "CaelumRestChair",
+        "CaelumRestFurniture",
+        "Actor"
+      ],
+      "CaelumStashChest": [
+        "CaelumStashChest",
+        "Actor"
+      ],
+      "CaelumPortableReadingShelf": [
+        "CaelumPortableReadingShelf",
+        "CaelumReadingShelf",
+        "Actor"
+      ],
+      "CaelumPortableBookcaseStorage": [
+        "CaelumPortableBookcaseStorage",
+        "CaelumBookcaseStorage",
+        "CaelumStashChest",
+        "Actor"
+      ],
+      "CaelumCityMerchant": [
+        "CaelumCityMerchant",
+        "Actor"
+      ],
+      "CaelumTarotRock": [
+        "CaelumTarotRock",
+        "CaelumMovableProp",
+        "Actor"
+      ],
+      "CaelumPhysicalScenery": [
+        "CaelumPhysicalScenery",
+        "Actor"
+      ]
+    },
+    "class_sources": {
+      "CaelumSofa": {
+        "parent": "CaelumPhysicalScenery",
+        "path": "src/caelum/world/CaelumSofas.zs",
+        "sha256": "c7998157212c8ff09891ddbd4eb54e752b6133d195e6a1166791554126c3be00"
+      },
+      "CaelumVehiclePart": {
+        "parent": "Actor",
+        "path": "src/caelum/world/CaelumTravelVehicles.zs",
+        "sha256": "72af015f4a8fda14285515c4e36f113a412b37311ddbd21d4711620883d9cec2"
+      },
+      "CaelumReadingDesk": {
+        "parent": "Actor",
+        "path": "src/caelum/crafting/CaelumStoredReading.zs",
+        "sha256": "6cda0bca361595efc6028337c0c1161b89abf9594cd978611916ba5dd6501194"
+      },
+      "CaelumPortableBookcaseStorage": {
+        "parent": "CaelumBookcaseStorage",
+        "path": "src/caelum/equipment/CaelumStudyItems.zs",
+        "sha256": "9b8fa591d6a615cb0cd9b47f061ce65c4cacca97db2b8a19ba74c9943652eabf"
+      },
+      "CaelumCannonBlock": {
+        "parent": "CaelumMachineBlock",
+        "path": "src/caelum/world/CaelumCannon.zs",
+        "sha256": "1c68648cb0adbbfc10bd8b46b43d145245f017e4a6349d18409fc4e31a6d98a6"
+      },
+      "CaelumPortableDiningTable": {
+        "parent": "CaelumDiningTable",
+        "path": "src/caelum/equipment/CaelumDiningSetItems.zs",
+        "sha256": "79aa2f4feba7ddc49ddcaeb7ac780dd15c5faf9c802e9b39cd7642ba2255ba64"
+      },
+      "CaelumSofaSeat": {
+        "parent": "CaelumRestChair",
+        "path": "src/caelum/world/CaelumSofas.zs",
+        "sha256": "c7998157212c8ff09891ddbd4eb54e752b6133d195e6a1166791554126c3be00"
+      },
+      "CaelumMachineBlock": {
+        "parent": "CaelumGateBlocker",
+        "path": "src/caelum/world/CaelumMachineStructure.zs",
+        "sha256": "f912369651389011b425d7e073a9344111e6e705016f25bedd62307192a8256e"
+      },
+      "CaelumDiningBlock": {
+        "parent": "Actor",
+        "path": "src/caelum/world/CaelumDining.zs",
+        "sha256": "d55ed76ed8b5957fbffa210822571996dec4d8a12062bf1eb832067b50784f62"
+      },
+      "CaelumRestFurniture": {
+        "parent": "Actor",
+        "path": "src/caelum/world/CaelumRestFurniture.zs",
+        "sha256": "8d4bef18ff3abd3542690c54f6d6a3a0a185a1d12fb99752c3bbc31a8dda7c5d"
+      },
+      "CaelumBookcaseStorage": {
+        "parent": "CaelumStashChest",
+        "path": "src/caelum/crafting/CaelumStoredReading.zs",
+        "sha256": "6cda0bca361595efc6028337c0c1161b89abf9594cd978611916ba5dd6501194"
+      },
+      "CaelumCityMerchant": {
+        "parent": "Actor",
+        "path": "src/caelum/equipment/CaelumCityTrade.zs",
+        "sha256": "6ba2991511d6c5d5536bc15c6e586082cb0cf3044f325683a731277f83ac166e"
+      },
+      "CaelumReadingShelf": {
+        "parent": "Actor",
+        "path": "src/caelum/crafting/CaelumRecipeSession.zs",
+        "sha256": "213a78303a8f60b11bbf698d1216d17aaa1c080b0c74efb4d69a2293021a5ea8"
+      },
+      "CaelumTarotRock": {
+        "parent": "CaelumMovableProp",
+        "path": "src/caelum/core/CaelumTarotSun.zs",
+        "sha256": "d2dffe02360101f1c9b90eda10d3cb8e466b33b6f0b7554d17217b7185579e40"
+      },
+      "CaelumSpecialInventoryItem": {
+        "parent": "Inventory",
+        "path": "src/caelum/equipment/CaelumSpecialItems.zs",
+        "sha256": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04"
+      },
+      "CaelumPortableReadingDesk": {
+        "parent": "CaelumReadingDesk",
+        "path": "src/caelum/equipment/CaelumStudyItems.zs",
+        "sha256": "9b8fa591d6a615cb0cd9b47f061ce65c4cacca97db2b8a19ba74c9943652eabf"
+      },
+      "CaelumRestChair": {
+        "parent": "CaelumRestFurniture",
+        "path": "src/caelum/world/CaelumRestFurniture.zs",
+        "sha256": "8d4bef18ff3abd3542690c54f6d6a3a0a185a1d12fb99752c3bbc31a8dda7c5d"
+      },
+      "CaelumMovableProp": {
+        "parent": "Actor",
+        "path": "src/caelum/actors/CaelumMovableProp.zs",
+        "sha256": "ed3ff4dd58785245c09b37d93552345210fff6adcc5c19e598ae8ff6c6a0970f"
+      },
+      "CaelumGateBlocker": {
+        "parent": "Actor",
+        "path": "src/caelum/world/CaelumBreakableGate.zs",
+        "sha256": "dbe7f944252432c8e716f335590c9d40776a44472344ee8476c5fe875c1e85b9"
+      },
+      "CaelumCombatActor": {
+        "parent": "Actor",
+        "path": "src/caelum/actors/CaelumCombatActor.zs",
+        "sha256": "6cb9afd8c4c68311fe6dcf9c01b8e203d20ec493a4532e855bf5e008564bd181"
+      },
+      "CaelumDiningTable": {
+        "parent": "Actor",
+        "path": "src/caelum/world/CaelumDining.zs",
+        "sha256": "d55ed76ed8b5957fbffa210822571996dec4d8a12062bf1eb832067b50784f62"
+      },
+      "CaelumRamBlock": {
+        "parent": "CaelumMachineBlock",
+        "path": "src/caelum/world/CaelumBatteringRam.zs",
+        "sha256": "2e2ead1345f37565dfd2ca78e187fb7737dc9d8ea653136a8c4d791d132af5f2"
+      },
+      "CaelumRamHead": {
+        "parent": "CaelumRamBlock",
+        "path": "src/caelum/world/CaelumBatteringRam.zs",
+        "sha256": "2e2ead1345f37565dfd2ca78e187fb7737dc9d8ea653136a8c4d791d132af5f2"
+      },
+      "CaelumPortableReadingShelf": {
+        "parent": "CaelumReadingShelf",
+        "path": "src/caelum/equipment/CaelumStudyItems.zs",
+        "sha256": "9b8fa591d6a615cb0cd9b47f061ce65c4cacca97db2b8a19ba74c9943652eabf"
+      },
+      "CaelumDecorBody": {
+        "parent": "CaelumPhysicalScenery",
+        "path": "src/caelum/equipment/CaelumDecorItems.zs",
+        "sha256": "ca02bbb09f291f29e0dd3d784c7a20eed41f79cb19c87901176880d62622250a"
+      },
+      "CaelumStorageFurnitureItem": {
+        "parent": "CaelumSpecialInventoryItem",
+        "path": "src/caelum/equipment/CaelumStorageFurnitureItems.zs",
+        "sha256": "7cb6a2bb5bf39207cc4665cdef0d1be0bbb85790fe6cbd337d1d60fd660947f1"
+      },
+      "CaelumPlayer": {
+        "parent": "DoomPlayer",
+        "path": "src/caelum/player/CaelumPlayer.zs",
+        "sha256": "bc6e0aacfde679f83b01fffbf3c22ce6ba0f0b1fb583b5bc4c393930ce6fa741"
+      },
+      "CaelumStashChest": {
+        "parent": "Actor",
+        "path": "src/caelum/world/CaelumStashChest.zs",
+        "sha256": "0b73c323824da782e994090fa0e0e55acbae7d288d879e4a8637800ebec285b0"
+      },
+      "CaelumPhysicalScenery": {
+        "parent": "Actor",
+        "path": "src/caelum/world/CaelumPhysicalScenery.zs",
+        "sha256": "a07c667848da5e454d63efdcb0acd41ab0e93054725ce6714af019258fcc4d0f"
+      }
+    },
+    "storage_change": "Move the existing warm NPC block before mutually exclusive pure casts. Native GateBlocker (including MachineBlock/Ram/Cannon) and VehiclePart families bypass those same furniture/stack branches. The original carrier tail is copied exactly into GetCarrier; all other dispatch and mutating migration/ownership bodies are unchanged.",
+    "carrier_tail_sha256": "1fd27539b656db0cd12c1b060d28355fa32ccbcc1dd35be240ccfbccf800e5c9",
+    "npc_block_sha256": "beb7a67634ec289e3030caa07dae4a92db569f1bff826af3f1ce42d0784e83ab",
+    "eligibility_change": "After the unchanged null/destroyed/player/NPC/missile guards, the two native-carrier families cannot match any intervening type branch or the DiningTable/PhysicalScenery terms in the final expression. Their result is the same current/default solid and positive dimensions; no state is shared across parts."
+  },
+  "original_sha256": {
+    "caelum/survival/CaelumContaminationState.zs": "108b31d8c72b106247e2f1e819f7d483172ec6b8723321621f55dffce04f04e3",
+    "caelum/survival/CaelumContaminationObject.zs": "a396c2b1a99df2fa070b58d80afa95a5decf6854c89ee9bdbd2bd3e8148634c2",
+    "caelum/survival/CaelumContaminationStack.zs": "ad8858e72eedd9fc66f5c91f5f4c942592c934990ea4dfb91cd4252a4cfbb4bf"
+  },
+  "candidate_sha256": {
+    "caelum/survival/CaelumContaminationState.zs": "184e404f682be717575b3f223161fd7052afe25e75262093450b9ede20866b78",
+    "caelum/survival/CaelumContaminationObject.zs": "fb4bcd36badc5196eaa51bfcb2e10c99d6eda92034f027944a8fdcd20b3c8413"
+  },
+  "no_fields_caches_or_gameplay_data_changed": true,
+  "inverse_exact": true
+}

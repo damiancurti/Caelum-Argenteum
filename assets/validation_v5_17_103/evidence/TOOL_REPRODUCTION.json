@@ -1,0 +1,17 @@
+[
+  {
+    "label": "storage01",
+    "overlay_sha256": "1b4e3c377463776f198f2cba3b167dd6c2e3fcdbcb2b53cd52abf00a7c134174",
+    "exact": true
+  },
+  {
+    "label": "storage-types01",
+    "overlay_sha256": "a0f2db2e3b00f9de9500a7eb1780f7504b99058e77211aee9c829b87b8b88d16",
+    "exact": true
+  },
+  {
+    "label": "carrier01",
+    "overlay_sha256": "1fe0d281c06269f36dd121b4d6d8d8e713c6b564f11ca77143784914cf51967a",
+    "exact": true
+  }
+]

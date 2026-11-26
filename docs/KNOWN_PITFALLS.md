@@ -4,6 +4,35 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-262 - Prove exclusive carrier families before shortening dispatch
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #849 / 5.17.103,
+2026-11-19, GZDoom 4.14.2. Native/static verification; author acceptance pending.
+
+Count concrete runtime classes before optimizing a broad other-actor category.
+The sampled contamination queries are dominated by GateBlocker descendants and
+VehiclePart bodies. Their single-inheritance chains exclude inventory, delegated
+furniture and NPC classes, allowing the existing individual carrier tail to be
+shared directly. Preserve that tail's attachment and idempotent migration code;
+do not replace separate physical-part resources with one aggregate machine state.
+The existing warm NPC block can precede mutually exclusive pure casts for the
+same reason. Any future inheritance/dispatch change requires revisiting the proof.
+
+An exposure shortcut must retain the common rejection guards and the exact
+current/default solidity and size semantics. Original-query tests cover native
+classes and inventory, raw/create modes, legacy revisions, cache reconstruction,
+ownership and reversible saves. Inclusive Get/Value timings nest and cannot be
+added; alternating query loops do not establish whole-frame speedups.
+
+A persistence fixture must distinguish saved state from ordinary time evolution.
+Releasing an exposure node once does not prevent event-driven registration.
+The three private saved probes are made ineligible only after their ordinary
+queries are benchmarked. Preserve failed attempts and serialized evidence;
+do not weaken production exposure to satisfy a fixed-value fixture assertion.
+Retain separate native exposure/contact tests and final/control scene tails.
+Evidence: assets/validation_v5_17_103; contract: SYSTEMS contamination ownership.
+
+
 ## CA-KP-261 - Audit shared texture aliases before a map material revision
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #847 / 5.17.102,

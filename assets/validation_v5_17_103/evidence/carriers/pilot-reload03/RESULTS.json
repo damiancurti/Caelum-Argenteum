@@ -1,0 +1,64 @@
+{
+  "issue": 849,
+  "passed": true,
+  "exit_code": 0,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-review01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-carrier01\\carrier.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-fixture-pilot-reload03\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-fixture-pilot-reload03\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-fixture-pilot-reload03",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-fixture-pilot-reload03\\engine.log",
+    "-loadgame",
+    "input.zds",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-fixture-pilot-reload03\\commands.cfg"
+  ],
+  "errors": [],
+  "events": [
+    "ca502s_resume",
+    "ca502v_resume",
+    "ca849_check"
+  ],
+  "results": [
+    [
+      4,
+      0
+    ],
+    [
+      31,
+      0
+    ]
+  ],
+  "carrier_result": [
+    "271",
+    "0"
+  ],
+  "checks": 306,
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-review01.pk3": "e94024c02321d0532b55c7faccb5f1e35c241bdc5f4d836cca01f47cf2ee3a36",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-carrier01\\carrier.pk3": "1fe0d281c06269f36dd121b4d6d8d8e713c6b564f11ca77143784914cf51967a",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue849-fixture-pilot-reload03\\checks.pk3": "57617e04050291d4e586d3a0327db9c3631b02ec18e7987106685462b8a335b1"
+  },
+  "retained_sources": {
+    "stacks.zs": "e74d012acab56cd653b8719e72e91faa40c29cf8c176e70b26f44d88404121e1",
+    "vessels.zs": "e396aba1406cfee7b7ceef0661aff74c198e5b3ee4d617e532411a3fe6ee46db"
+  },
+  "reference_runtime_sha256": "e94024c02321d0532b55c7faccb5f1e35c241bdc5f4d836cca01f47cf2ee3a36",
+  "loaded_save_sha256": "8dcc659e38286ef537fe78616a9b75e0028375e5d5bf2fe19a33b6eb27797608",
+  "saved_sha256": "45f0a0552c9d2e2dcf3a8ea5bf9dcd9a8180a38dc5b64daf18a015414b2b85d4"
+}

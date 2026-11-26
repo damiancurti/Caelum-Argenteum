@@ -1,0 +1,102 @@
+{
+  "issue": 849,
+  "runtime_sha256": "e94024c02321d0532b55c7faccb5f1e35c241bdc5f4d836cca01f47cf2ee3a36",
+  "original_source_sha256": "108b31d8c72b106247e2f1e819f7d483172ec6b8723321621f55dffce04f04e3",
+  "overlay_sha256": "a0f2db2e3b00f9de9500a7eb1780f7504b99058e77211aee9c829b87b8b88d16",
+  "inverse_exact": true,
+  "sample_tics": [
+    3599,
+    3616,
+    3633,
+    3650,
+    3667,
+    3684,
+    3701,
+    3718,
+    3735,
+    3752,
+    3769,
+    3786,
+    3803,
+    3820,
+    3837,
+    3854,
+    3871,
+    3888,
+    3905,
+    3922,
+    3939,
+    3956,
+    3973,
+    3990,
+    4007,
+    4024,
+    4041,
+    4058,
+    4075,
+    4092,
+    4109,
+    4126,
+    4143,
+    4160,
+    4177,
+    4194,
+    4211,
+    4228,
+    4245,
+    4262,
+    4279,
+    4296
+  ],
+  "metrics": [
+    {
+      "id": 0,
+      "label": "Get.null_or_player"
+    },
+    {
+      "id": 1,
+      "label": "Get.npc_warm_record"
+    },
+    {
+      "id": 2,
+      "label": "Get.npc_warm_empty_read"
+    },
+    {
+      "id": 3,
+      "label": "Get.npc_cold_or_create"
+    },
+    {
+      "id": 4,
+      "label": "Get.inventory"
+    },
+    {
+      "id": 5,
+      "label": "Get.other_actor"
+    },
+    {
+      "id": 6,
+      "label": "Value.null_or_player"
+    },
+    {
+      "id": 7,
+      "label": "Value.npc_warm_record"
+    },
+    {
+      "id": 8,
+      "label": "Value.npc_warm_empty_read"
+    },
+    {
+      "id": 9,
+      "label": "Value.npc_cold_or_create"
+    },
+    {
+      "id": 10,
+      "label": "Value.inventory"
+    },
+    {
+      "id": 11,
+      "label": "Value.other_actor"
+    }
+  ],
+  "qualification": "Classification is outside the timed original body. Get recursion and Get inside Value remain nested/inclusive and include probe overhead. Warm NPC result identity is compared after the original call; this does not prove cold-state migration or author acceptance."
+}

@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.102** - 2026-11-19.
+Documentation version: **5.17.103** - 2026-11-19.
+
+## 5.17.103 - Dispatch measured native contamination carriers directly (#849, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Completed: bounded storage/class diagnosis, equivalent native-carrier dispatch
+and exposure eligibility, exact source/package preservation, original query
+comparison, legacy/current ownership, fresh/upgrade/reload/rollback, retained
+stack/vessel contracts and final/control siege plus four peaceful references.
+
+Remaining: overall siege cost, authorized outstanding V5.16/V5.17 work and
+consolidated author review. Character/art and campaign design gates remain as
+recorded; no new design is inferred. All author checks remain in pending_test.txt.
+HISTORY and assets/validation_v5_17_103 retain evidence and reproduction tools.
+
 
 ## 5.17.102 - Prepare the sewer material comparison (#847, #463)
 

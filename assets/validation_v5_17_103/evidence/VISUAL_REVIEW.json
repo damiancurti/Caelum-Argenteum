@@ -1,0 +1,47 @@
+{
+  "reviews": [
+    {
+      "label": "siege_final",
+      "path": "evidence/native/siege_final/peer0/scene.png",
+      "sha256": "9bbb285d3bf8f4ce6c5f791cb0590694dc288f5f65e05ac6b1595beb08913c23",
+      "directly_viewed": true,
+      "note": "Gate, ram, nearby attackers and unchanged HUD/framing directly inspected."
+    },
+    {
+      "label": "siege_control",
+      "path": "evidence/native/siege_control/peer0/scene.png",
+      "sha256": "62432fd5e397398b56524e0b4ec28b6b42cc2b7028aded5df2e470645dbd680f",
+      "directly_viewed": true,
+      "note": "Matched gate/ram camera and apparent scene retained."
+    },
+    {
+      "label": "mansion_final",
+      "path": "evidence/native/mansion_final/peer0/scene.png",
+      "sha256": "b23879ed01aefdb29d2a063f1938f4c720e8bfa6e4cea961342dadbe2d959c2b",
+      "directly_viewed": true,
+      "note": "Mansion entrance and Palomo with opening conversation; not unobstructed traversal evidence."
+    },
+    {
+      "label": "sewers_final",
+      "path": "evidence/native/sewers_final/peer0/scene.png",
+      "sha256": "00dd56579466116842d4bc56ddfea0b3af616978575e7d235ef6ff5d318159f7",
+      "directly_viewed": true,
+      "note": "Dark sewer entrance with retained rectangular passage, materials and HUD; not a full corridor walkthrough."
+    },
+    {
+      "label": "city_final",
+      "path": "evidence/native/city_final/peer0/scene.png",
+      "sha256": "d7855555a8bc4e9090a1ce28174a472f87ac466248377293d8d9e352861498d3",
+      "directly_viewed": true,
+      "note": "Quay vehicles, shelter and city wall with retained framing and HUD."
+    },
+    {
+      "label": "city_ground_final",
+      "path": "evidence/native/city_ground_final/peer0/scene.png",
+      "sha256": "cad902beb668f1929cd11e7984001d72e7f78f94cf3a2c2f293693b7d6afe2fb",
+      "directly_viewed": true,
+      "note": "Ground-facing paving and HUD with expected camera."
+    }
+  ],
+  "qualification": "Agent visual review, not author acceptance or full-map traversal performance."
+}

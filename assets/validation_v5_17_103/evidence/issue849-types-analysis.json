@@ -1,0 +1,130 @@
+{
+  "types": [
+    {
+      "name": "CaelumAnvilStation",
+      "get": 15,
+      "value": 5
+    },
+    {
+      "name": "CaelumEssenceAltarStation",
+      "get": 30,
+      "value": 10
+    },
+    {
+      "name": "CaelumShopSign",
+      "get": 150,
+      "value": 0
+    },
+    {
+      "name": "CaelumVehiclePart",
+      "get": 29060,
+      "value": 24036
+    },
+    {
+      "name": "CaelumCityMerchant",
+      "get": 228,
+      "value": 76
+    },
+    {
+      "name": "CaelumGateBlocker",
+      "get": 63010,
+      "value": 49754
+    },
+    {
+      "name": "CaelumCannonBlock",
+      "get": 2421,
+      "value": 609
+    },
+    {
+      "name": "CaelumRamBlock",
+      "get": 88096,
+      "value": 73523
+    },
+    {
+      "name": "CaelumRamHead",
+      "get": 1040,
+      "value": 756
+    },
+    {
+      "name": "CaelumFineToolsBenchStation",
+      "get": 42,
+      "value": 14
+    },
+    {
+      "name": "CaelumSawmillStation",
+      "get": 33,
+      "value": 11
+    },
+    {
+      "name": "CaelumSourceCypellaFlower",
+      "get": 9,
+      "value": 3
+    },
+    {
+      "name": "CaelumForgeStation",
+      "get": 63,
+      "value": 21
+    },
+    {
+      "name": "CaelumWorkbenchStation",
+      "get": 81,
+      "value": 27
+    },
+    {
+      "name": "CaelumRangedWorkshopStation",
+      "get": 15,
+      "value": 5
+    },
+    {
+      "name": "CaelumSourceMarcela",
+      "get": 18,
+      "value": 6
+    },
+    {
+      "name": "CaelumSewingMachineStation",
+      "get": 30,
+      "value": 10
+    },
+    {
+      "name": "CaelumArmorWorkshopStation",
+      "get": 15,
+      "value": 5
+    },
+    {
+      "name": "CaelumJewelerBenchStation",
+      "get": 24,
+      "value": 8
+    },
+    {
+      "name": "CaelumPortCompletion",
+      "get": 3,
+      "value": 1
+    },
+    {
+      "name": "CaelumTreePlainsTalaYoung",
+      "get": 3,
+      "value": 1
+    },
+    {
+      "name": "CaelumElementalImpactVisual",
+      "get": 2,
+      "value": 0
+    },
+    {
+      "name": "CaelumSourceHoney",
+      "get": 3,
+      "value": 1
+    },
+    {
+      "name": "CaelumRentalAgent",
+      "get": 3,
+      "value": 1
+    },
+    {
+      "name": "CaelumActorSimpleElementalProjectile",
+      "get": 1,
+      "value": 0
+    }
+  ],
+  "qualification": "Counts outside each Get timer; nested Value timers include this diagnostic counting overhead."
+}
