@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.87** - 2026-11-15.
+Documentation version: **5.17.88** - 2026-11-16.
+
+## 5.17.88 - Land figures verified; complete batch still pending (#819)
+
+Five candidates pass19-file repeated export,380closed components,375rooted
+contacts,3,000posed attachment checks and 871 qualified native assertions
+(460 bounded continuity reuse; the changed model, actions and presentation were
+rerun on the final package). Preserve
+CA819-LAND-01 and all earlier unconfirmed author checks. Complete the eight remaining
+provisional creature models, regional displays, other characters, modular equipment
+fitting and V5.16 progression/performance work before the consolidated test terminal.
 
 ## 5.17.87 - Witch candidates verified; full batch remains (#817)
 

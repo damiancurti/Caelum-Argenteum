@@ -1,0 +1,81 @@
+{
+  "issue": 819,
+  "reviewed": {
+    "pampayoj": {
+      "build/issue819-pampayoj-native02/fresh-model/view-front.png": "f295fb3fbe00ddf375eb5f3fc89568c4690077b49998aeed4d63cdd4fe07fc81",
+      "build/issue819-pampayoj-native02/fresh-model/view-face-detail.png": "d01d3544f9adde1d8b5a5f2cfc5c14074c46d0c291809bf1eba10de2e8fbd025",
+      "build/issue819-pampayoj-native02/fresh-model/view-side.png": "9ceb8d11739b7071260635f0888786249612145b268b6eaeb33ef88d58ae5939",
+      "build/issue819-pampayoj-native02/fresh-model/view-rear.png": "ba61aa4aa628528bff15677031c80a252486fa42f5f45168f857f8b2a1261c15",
+      "build/issue819-pampayoj-native02/fresh-model/pose-03-run.png": "a7a3fd526b0b6ff3e2269e798783894a5b27a919bf48bc5ddd6b6ecc1bcc22d9",
+      "build/issue819-pampayoj-native02/fresh-model/pose-05-run.png": "313b5bcdd1e93dee602854d8ca916910cd752d73e986dffa5e1abbd8afe9949d",
+      "build/issue819-pampayoj-native02/fresh-model/pose-10-attack_release.png": "ac7e9fffae5aedee968893a7ff6420525606ed293b6bb33515896230c763db77",
+      "build/issue819-pampayoj-native02/fresh-model/pose-11-pain.png": "1480e6c798556aa471e80d04203d55a50120690b06f3e044f468ae742e1d4992",
+      "build/issue819-pampayoj-native02/fresh-model/pose-15-death.png": "e9d7fd19bcf3c066ea0fa1f720bbcd508a2f60334cec173b321144f832c44be3",
+      "build/issue819-pampayoj-native02/fresh-model/view-lying-oblique.png": "fbb93503b935386dc4efd8c31b713b0fd25c674e32af14c2366a725537bf19b7"
+    },
+    "noshtex": {
+      "build/issue819-noshtex-native02/fresh-model/view-front.png": "9cc31ce21ee25116ef8e87b059ce3203993dc72e6e46a7bd3772f0ba975e2ad6",
+      "build/issue819-noshtex-native02/fresh-model/view-face-detail.png": "0937e7f5f19bdfc3814e886fceff750c870b4fb2b74ab2e088000215be1a7749",
+      "build/issue819-noshtex-native02/fresh-model/view-side.png": "b294feb2f127e054c10cb1922ddf724d42a1bd18139d499a645934119ec11d3d",
+      "build/issue819-noshtex-native02/fresh-model/view-rear.png": "e47e50d08a05d77e1c10f1f0b011f79d1406d4777c62085afe20a028d529c34d",
+      "build/issue819-noshtex-native02/fresh-model/pose-03-run.png": "2f48901a5bd6f7d4da0f10765ee7eb286d6fe93fcc960830324a1856681b24a3",
+      "build/issue819-noshtex-native02/fresh-model/pose-05-run.png": "8d9f80431aba7496836d245a461a8b7377871b0c4ec795529df192d98dee83b2",
+      "build/issue819-noshtex-native02/fresh-model/pose-10-attack_release.png": "3aff200225e2b176c127727e06cbcde1e492c8d4141e965d5525a207ac7aca95",
+      "build/issue819-noshtex-native02/fresh-model/pose-11-pain.png": "e844e5d68e9bd49557f75a6e537e517e9e9ff9119470196d5da906c80d519b27",
+      "build/issue819-noshtex-native02/fresh-model/pose-15-death.png": "b4517177d676e9c369b822f61fcc6befd851102ee73b732db683b84b4bf954e1",
+      "build/issue819-noshtex-native02/fresh-model/view-lying-oblique.png": "5c01642d32b4599b4757862fe155cd95ef0d03736bd45887ef525bb3b6411025"
+    },
+    "orkomaman": {
+      "build/issue819-orkomaman-native02/fresh-model/view-front.png": "b1b4a81afc813160696040d7c3ad4ce2cb26d4e7f922ad9cdf0607dd2b8c7d9c",
+      "build/issue819-orkomaman-native02/fresh-model/view-face-detail.png": "e9b98c8024ff3bfbc1b7796dc80cdd1a800bcb1f79ceec464c1e83453bad21bd",
+      "build/issue819-orkomaman-native02/fresh-model/view-side.png": "38f341bae543bb39a793577e8d33e79a836cd0f85c8834a25ed6e0e74938e7a2",
+      "build/issue819-orkomaman-native02/fresh-model/view-rear.png": "3208b5e34f6e1e110fa54135ff6d2987abce8c3cf3f376c39e3f0e5cef2c72ed",
+      "build/issue819-orkomaman-native02/fresh-model/pose-03-run.png": "35a50a958b68b0ed576164337adac38282b7983c4c519a8c6b7f8116cd67e670",
+      "build/issue819-orkomaman-native02/fresh-model/pose-05-run.png": "0bf7c961fda33014c2a9531a9aa0a288c096ebb1db7004d63000bfa6c71793b1",
+      "build/issue819-orkomaman-native02/fresh-model/pose-10-attack_release.png": "ed7e263ffc5eac5fa87bef3867c1ca0e41a3dc9eeecde2fa776a54ae92fd9053",
+      "build/issue819-orkomaman-native02/fresh-model/pose-11-pain.png": "02334ae5d88def91774bd7c46a800923954540e241c6860d26ad3566f9e0de98",
+      "build/issue819-orkomaman-native02/fresh-model/pose-15-death.png": "1f5df066b9e17d4cdbe04e4f0d90059da967eee0cf02a3701755b5d4a1f89c60",
+      "build/issue819-orkomaman-native02/fresh-model/view-lying-oblique.png": "607c109128ea8df25611f910c951ca7044485634eed0d461bb660bc05b08c1d1"
+    },
+    "nowet": {
+      "build/issue819-nowet-native02/fresh-model/view-front.png": "ae3ed8b995fbb9a433231ae37c18bdca80f61bb400db44a79abc978dc6996120",
+      "build/issue819-nowet-native02/fresh-model/view-face-detail.png": "4322c859f822b2b33cd8265827415643ac8efe4091b35f09981b75732e165911",
+      "build/issue819-nowet-native02/fresh-model/view-side.png": "629272dd541c6d2f97953f58b21b32c63e0adc5a0232ea5d68416407d079b5ba",
+      "build/issue819-nowet-native02/fresh-model/view-rear.png": "e06384d004731ad8af0e3f28b21124cb3467c4aaa2778d3cfda1ddf432ea03a8",
+      "build/issue819-nowet-native02/fresh-model/pose-03-run.png": "37cebadf683aa41b720cf793b5f5e5526d1f9f93b66ded8a04547d7528108cf2",
+      "build/issue819-nowet-native02/fresh-model/pose-05-run.png": "fe52d75b9970496213c036af0414cdb8d78873f5ad3654b98c2ee38121ed704e",
+      "build/issue819-nowet-native02/fresh-model/pose-10-attack_release.png": "64e18ed227faac5f9f9c536df9351922af4322f6bd37330df9a81f9e630deff5",
+      "build/issue819-nowet-native02/fresh-model/pose-11-pain.png": "e30b23ad42ebfacdef488da56e51e3e7cc4bb0d0a5c97bc8447020e5edd774d7",
+      "build/issue819-nowet-native02/fresh-model/pose-15-death.png": "b66750db7a7770064e3855ab91e63790aa940007c160b8a71e41fb104d34ae71",
+      "build/issue819-nowet-native02/fresh-model/view-lying-oblique.png": "7c7d04132e41b3cec547ca7fb2881ae16e2ff9825f4b3a1c82d04eb452079220"
+    },
+    "mayumaman": {
+      "build/issue819-mayumaman-native03/fresh-model/view-front.png": "1d34902a41f8069331fcb038dffa88b47099a0129b86ad8faca2b4d79e3e359a",
+      "build/issue819-mayumaman-native03/fresh-model/view-face-detail.png": "e3a07745543760b41daf827f2c38452fd44f0970d3f9fc19b0649522c7e09571",
+      "build/issue819-mayumaman-native03/fresh-model/view-side.png": "6396b60cc775fb8865c4b935caa58f6ea8abcd1abbe6fd77ff824243e1f12c5d",
+      "build/issue819-mayumaman-native03/fresh-model/view-rear.png": "5cf1116cf0034d3661fc1ef4cb01389aeeff481fd35b740484ec4c8c0a3086b4",
+      "build/issue819-mayumaman-native03/fresh-model/pose-03-run.png": "e18d8924a31013859b27cc4bd580ecc014dbc98f671ee2cb5584756bd1e3f5e4",
+      "build/issue819-mayumaman-native03/fresh-model/pose-05-run.png": "6544002bd7c2ffcdab5980a3665111da68cc1ed429db401043e66d3d140f7869",
+      "build/issue819-mayumaman-native03/fresh-model/pose-10-attack_release.png": "d1ec801dbc9b51d6c41492b05946ffbc27ed414b588c2e7684c46eb091ecbcbb",
+      "build/issue819-mayumaman-native03/fresh-model/pose-11-pain.png": "320c79e8a3ab9b5566ea97d02cd64bc9e235291b26fd1bbe8864a259920a6d8c",
+      "build/issue819-mayumaman-native03/fresh-model/pose-15-death.png": "93e865d2483eb111c875117a3ace664e02e48421db118a59c1010e45ea8dfc6a",
+      "build/issue819-mayumaman-native03/fresh-model/view-lying-oblique.png": "2adb4470ecd7ecdc8d0165881c2c5cede902c88b83f3478814223a5b0cf492cb"
+    }
+  },
+  "presentation": {
+    "build/issue819-noshtex-presentation01/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build/issue819-noshtex-presentation01/model/scene.png": "644be3fc0e20ade7a17a2864a06ae0271d390a67035a755afacad3ee8ba28151",
+    "build/issue819-pampayoj-presentation01/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build/issue819-pampayoj-presentation01/model/scene.png": "159cd618115fce0036787da3cde561b596b063dcc180140bdb9f718c3b037483",
+    "build/issue819-mayumaman-presentation01/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build/issue819-mayumaman-presentation01/model/scene.png": "ce72d39e009faac84acb8aebd9958d2bd008a642e52fc96ea1a5bfafb063ac72",
+    "build/issue819-orkomaman-presentation01/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build/issue819-orkomaman-presentation01/model/scene.png": "d596da43814f0b1af8b6851864137a61f071bab26b676d974ae3b4553f947f13",
+    "build/issue819-nowet-presentation01/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build/issue819-nowet-presentation01/model/scene.png": "13f36ce31b99a5c0da407afa60122d08a11a795b7b96033a713364aad6647364"
+  },
+  "presentation_repeat": {
+    "build/issue819-nowet-presentation02/sprite/scene.png": "291922c841e28293f1fff9e3d07812f5efc3d93cf6a6ce87289c09def0943d65",
+    "build/issue819-nowet-presentation02/model/scene.png": "13f36ce31b99a5c0da407afa60122d08a11a795b7b96033a713364aad6647364"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "issue": 819,
+  "parent_issue": 461,
+  "status": "candidate_author_review_pending",
+  "author": "Damian Curti",
+  "reference_images": {
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/20_noshtex.png": "183b24a05f6122e22c23e335dfe294858b03a9e3682165cfbba688b1b4b446ac",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/37_pampayoj.png": "931d3fde9784c62237caab683e59042bc0a4d0fe2753b1e8a2a7219eb32b3fbe",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/38_mayu_maman.png": "80dcafc49471d2f256ef4e266c080f66308854fa7cfce5bc703ca972956fe1b8",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/39_orko_maman.png": "40f742d696623ffa3fea6d68491b19fe66a97d7b318c6c5f81b354e82e6349a1",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/41_nowet.png": "a41be78385d3354008913c522fa58e245892401ec58624fb4501c5e1b909b68c"
+  },
+  "material_source": "MATERIALS_PROMPT.json",
+  "geometry": "Original dimensionless controls and owned closed anatomy/garment/native animation tools.",
+  "limits": "Five distinct owned-reference candidates: gray muscular Noshtex; lean straw-haired Pampayoj in ochre poncho; blue-gray Mayu Maman in ivory/teal layered cloth; stone-skinned Orko Maman with stone/cloth layers; muscular older Nowet with pale/dark wraps. Fixed ornaments/clothes are art only. No invented metric scale, powers, rules, inventory or cultural claims."
+}

@@ -4,6 +4,33 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-250 - Swept tube axes can turn thin cloth panels edge-on
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #819, 2026-11-16.
+Affected baseline:5f324f76853715411be07d71b9a83657ec0a0127 plus the archived
+land-figure native01 iteration. Scope: newly authored thin front cloth, crossed
+poncho, drapes, bodice sash and shoulder crossing in land_figures_819 only.
+
+The shared transport_tube selects its first ring normal from the world axis
+least aligned with the path tangent. A small lateral change can choose Y rather
+than X; radius-depth and radius-width assumptions in new thin garment data then
+rotate the wide cloth edge-on. Closure, positive volume, UV bounds and rooted
+contact checks can all pass while frontal cloth coverage is visibly wrong.
+Reproduce with the archived native01 Pampayoj front/face views and controls04;
+the crossed poncho becomes a thin strip instead of a frontal cloth panel.
+
+For these garments, explicit fixed X-depth/Y-width loft sections preserve the
+intended frontal coverage without changing the shared tube behavior or existing
+models. Recheck serialized closure, posed attachments, extreme strides and native
+front/profile/rear/action/fall views. Contact witnesses must be inside both actual
+volumes, away from a cap rim; use the serialized test, not a plausible coordinate
+alone. The final evidence is assets/validation_v5_17_88/evidence/SUMMARY.json.
+
+GZDoom4.14.2/Windows11/Vulkan tests run unpaused in the background at5% audio.
+This is a bounded garment representation lesson, not a prohibition on swept tubes,
+a cloth simulation claim or campaign performance result. CA819-LAND-01 remains
+pending; engineering verification does not establish author art acceptance.
+
 ## CA-KP-249 - Integral swept UV grids must respect atlas-cell boundaries
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #799, 2026-11-15.

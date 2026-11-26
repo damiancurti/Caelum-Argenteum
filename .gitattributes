@@ -1250,3 +1250,10 @@ assets/source/art/witch_figures_817/** -text whitespace=cr-at-eol
 assets/generators/*witch_figure*.py text eol=lf
 src/caelum/data/witch_figure_combat.modeldef text eol=lf
 assets/generators/validate_witch_garment_stride.py text eol=lf
+
+assets/validation_v5_17_88/*.py text eol=lf
+assets/validation_v5_17_88/evidence/** -text -diff
+assets/validation_v5_17_88/*.json -text
+assets/source/art/land_figures_819/** -text
+assets/generators/*land_figure*.py text eol=lf
+src/caelum/data/land_figure_combat.modeldef text eol=lf

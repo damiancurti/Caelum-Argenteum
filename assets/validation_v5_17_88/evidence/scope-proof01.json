@@ -1,0 +1,44 @@
+{
+  "issue": 819,
+  "runtime_sha256": "d167f78bb72a8558afaab52742472ae3ec4bc7dd559e59c2d6ea42b062021f1b",
+  "baseline_sha256": "73f544ba7b08fb3a6f589e4b2e4a54b791e7fc534e880c6f8e2d4d54a3ac07fc",
+  "package_exact_source_bytes": true,
+  "source_entries": 18616,
+  "added_resources": [
+    "caelum/data/land_figure_combat.modeldef",
+    "models/caelum/folklore/landfigures/materials.png",
+    "models/caelum/folklore/landfigures/mayumaman.md3",
+    "models/caelum/folklore/landfigures/noshtex.md3",
+    "models/caelum/folklore/landfigures/nowet.md3",
+    "models/caelum/folklore/landfigures/orkomaman.md3",
+    "models/caelum/folklore/landfigures/pampayoj.md3"
+  ],
+  "changed_resources": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "all_other_runtime_bytes_identical": true,
+  "repeated_files": 19,
+  "export_sha256": {
+    "caelum/data/land_figure_combat.modeldef": "4395ef292271ce664eab1a3636eb39780ed1af3ef88a23daf23643606b5e81e2",
+    "editable/mayumaman.mtl": "7a759d4ac798ea73f1538e9ba5a7c553e5d8e770559b9c9bd7eef308b7b4708b",
+    "editable/mayumaman.obj": "c6b6b56ea8c61e49e357518a9a84c9cc41ffafff024d8d8114c5f8bb5d206915",
+    "editable/noshtex.mtl": "7a759d4ac798ea73f1538e9ba5a7c553e5d8e770559b9c9bd7eef308b7b4708b",
+    "editable/noshtex.obj": "ffaaf9ca17f31e2242f43febcffd6a63592fed3e2b5a3221008be57ca8c73a5f",
+    "editable/nowet.mtl": "7a759d4ac798ea73f1538e9ba5a7c553e5d8e770559b9c9bd7eef308b7b4708b",
+    "editable/nowet.obj": "544e897820639b159f15c16b481c43c0f6346eaa08f19a56c62da6fbe452c09e",
+    "editable/orkomaman.mtl": "7a759d4ac798ea73f1538e9ba5a7c553e5d8e770559b9c9bd7eef308b7b4708b",
+    "editable/orkomaman.obj": "9188492ac1ead975ac2c7c9393e2f11e0b09c56d0a51898f9c14dfca41eda9af",
+    "editable/pampayoj.mtl": "7a759d4ac798ea73f1538e9ba5a7c553e5d8e770559b9c9bd7eef308b7b4708b",
+    "editable/pampayoj.obj": "6aa6b83df5036945237b8ebabc7b2b9d2d9a411de96b81a6f64da1cd40bd719e",
+    "manifest.json": "d6957de1ae3d967907fa0666ee13965767b08e1100da452812f68c2dfb29b484",
+    "models/caelum/folklore/landfigures/materials.png": "dc28009fb7f2e1eed91f542152535ddddcffe3ec77315471d75a98f543240a8a",
+    "models/caelum/folklore/landfigures/mayumaman.md3": "5ab737c5b835901d9c8e4d42ffa5a5d5899ddd5e2e89149b7b5966e8222f1023",
+    "models/caelum/folklore/landfigures/noshtex.md3": "6b4bd2c6ad89c3fd68cf17f472b6d1e77c332a278c890822033b06b799770d60",
+    "models/caelum/folklore/landfigures/nowet.md3": "4aee54c78dd1762601f073ba46b09280a23edc9d8f15181394aae32704198786",
+    "models/caelum/folklore/landfigures/orkomaman.md3": "8d29c2332fa051588c336a154968541658a9a93fe090c4177aae1920f93ab7a9",
+    "models/caelum/folklore/landfigures/pampayoj.md3": "4de84fb92b964253c9d30a6ca4665bd45ae51269c22f4a2ea166c594c2c4cd05",
+    "preview.pk3": "93690ab70b37368177a5fd5f0811e3a4b77fbb35833ffc5afd9eedf0948abc01"
+  }
+}
