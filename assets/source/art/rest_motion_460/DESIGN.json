@@ -1,0 +1,8 @@
+{
+  "issue": 460,
+  "schema_revision": 1,
+  "authority": "Issue #460; docs/SYSTEMS.md section 5.4.23; approved_target_design in domingo_3d_pilot/DESIGN.json",
+  "durations_seconds": {"SIT_DOWN": 2, "STAND_UP": 2, "LIE_DOWN": 3, "GET_UP": 3, "EAT": 4, "DRINK": 4},
+  "presentation_approved_2026_11_26": "Use the current modular body, retain the shield in the left hand, hide only the weapon presentation while the right hand eats or drinks. Equipment and consumption remain authoritative and unchanged.",
+  "rules": "Lock movement, attacks and blocking during rest animations. Damage interrupts immediately. Native jump preparation (10 tics) and landing (35 tics) retain movement, attack and block controls. Preserve consumption rates and quantities."
+}

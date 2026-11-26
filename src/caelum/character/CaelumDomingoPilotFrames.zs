@@ -1180,5 +1180,223 @@ class CaelumDomingoPilotFrames : Actor
     F374:
         D30E K -1;
         Stop;
+    // BEGIN ISSUE460 REST STATES
+    RM0:
+        R400 A 7;
+        Goto RM1;
+    RM1:
+        R400 B 7;
+        Goto RM2;
+    RM2:
+        R400 C 7;
+        Goto RM3;
+    RM3:
+        R400 D 7;
+        Goto RM4;
+    RM4:
+        R400 E 7;
+        Goto RM5;
+    RM5:
+        R400 F 7;
+        Goto RM6;
+    RM6:
+        R400 G 7;
+        Goto RM7;
+    RM7:
+        R400 H 7;
+        Goto RM8;
+    RM8:
+        R400 I 7;
+        Goto RM9;
+    RM9:
+        R400 J 7;
+        Goto RM10;
+    RM10:
+        R400 K -1;
+        Stop;
+    RM11:
+        R400 L 7;
+        Goto RM12;
+    RM12:
+        R400 M 7;
+        Goto RM13;
+    RM13:
+        R400 N 7;
+        Goto RM14;
+    RM14:
+        R400 O 7;
+        Goto RM15;
+    RM15:
+        R400 P 7;
+        Goto RM16;
+    RM16:
+        R400 Q 7;
+        Goto RM17;
+    RM17:
+        R400 R 7;
+        Goto RM18;
+    RM18:
+        R400 S 7;
+        Goto RM19;
+    RM19:
+        R400 T 7;
+        Goto RM20;
+    RM20:
+        R400 U 7;
+        Goto RM21;
+    RM21:
+        R400 V -1;
+        Stop;
+    RM22:
+        R400 W 10;
+        Goto RM23;
+    RM23:
+        R400 X 11;
+        Goto RM24;
+    RM24:
+        R400 Y 11;
+        Goto RM25;
+    RM25:
+        R400 Z 10;
+        Goto RM26;
+    RM26:
+        R401 A 10;
+        Goto RM27;
+    RM27:
+        R401 B 11;
+        Goto RM28;
+    RM28:
+        R401 C 11;
+        Goto RM29;
+    RM29:
+        R401 D 10;
+        Goto RM30;
+    RM30:
+        R401 E 10;
+        Goto RM31;
+    RM31:
+        R401 F 11;
+        Goto RM32;
+    RM32:
+        R401 G -1;
+        Stop;
+    RM33:
+        R401 H 10;
+        Goto RM34;
+    RM34:
+        R401 I 11;
+        Goto RM35;
+    RM35:
+        R401 J 11;
+        Goto RM36;
+    RM36:
+        R401 K 10;
+        Goto RM37;
+    RM37:
+        R401 L 10;
+        Goto RM38;
+    RM38:
+        R401 M 11;
+        Goto RM39;
+    RM39:
+        R401 N 11;
+        Goto RM40;
+    RM40:
+        R401 O 10;
+        Goto RM41;
+    RM41:
+        R401 P 10;
+        Goto RM42;
+    RM42:
+        R401 Q 11;
+        Goto RM43;
+    RM43:
+        R401 R -1;
+        Stop;
+    RM44:
+        R401 S 10;
+        Goto RM45;
+    RM45:
+        R401 T 10;
+        Goto RM46;
+    RM46:
+        R401 U 10;
+        Goto RM47;
+    RM47:
+        R401 V 10;
+        Goto RM48;
+    RM48:
+        R401 W 10;
+        Goto RM49;
+    RM49:
+        R401 X 10;
+        Goto RM50;
+    RM50:
+        R401 Y 10;
+        Goto RM51;
+    RM51:
+        R401 Z 10;
+        Goto RM52;
+    RM52:
+        R402 A 10;
+        Goto RM53;
+    RM53:
+        R402 B 10;
+        Goto RM54;
+    RM54:
+        R402 C 10;
+        Goto RM55;
+    RM55:
+        R402 D 10;
+        Goto RM56;
+    RM56:
+        R402 E 10;
+        Goto RM57;
+    RM57:
+        R402 F 10;
+        Goto RM58;
+    RM58:
+        R402 G 10;
+        Goto RM59;
+    RM59:
+        R402 H 10;
+        Goto RM60;
+    RM60:
+        R402 I 10;
+        Goto RM61;
+    RM61:
+        R402 J 10;
+        Goto RM62;
+    RM62:
+        R402 K 10;
+        Goto RM63;
+    RM63:
+        R402 L 10;
+        Goto RM64;
+    RM64:
+        R402 M 10;
+        Goto RM65;
+    RM65:
+        R402 N 10;
+        Goto RM66;
+    RM66:
+        R402 O 10;
+        Goto RM67;
+    RM67:
+        R402 P 10;
+        Goto RM68;
+    RM68:
+        R402 Q 10;
+        Goto RM69;
+    RM69:
+        R402 R 10;
+        Goto RM70;
+    RM70:
+        R402 S 10;
+        Goto RM71;
+    RM71:
+        R402 T 10;
+        Stop;
+    // END ISSUE460 REST STATES
     }
 }
