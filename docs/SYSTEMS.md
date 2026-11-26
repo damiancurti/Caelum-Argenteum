@@ -1,6 +1,14 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.42** - 2026-11-14.
+Documentation version: **5.17.43** - 2026-11-14.
+
+## 5.17.43 - Hybrid serpent inspection controls (#729)
+
+CA709G adds number key 8 for Mbói Tu’ĩ/Litoral, 9 for Mbói Yaguá/Litoral and 0
+for Mbói Yaguá/Selva. All earlier eighteen controls remain. Fourteen passive
+native figures retain idle animation. Observer footsteps stay silent only in
+this diagnostic fixture; production movement, perception and hostility are
+unchanged. Duplicate regional displays do not establish campaign encounters.
 
 ## 5.17.39 - Serpent inspection controls (#721)
 

@@ -58,7 +58,7 @@ def validate(root=ROOT):
         for a,b in zip(gallery['plots'],gallery['plots'][1:]):assert a['x'][1]==b['x'][0]
         assert gallery['walkway_y'][1]==gallery['plot_y'][0]
         keys=[v['key'] for v in gallery['views']]
-        assert len(keys)==len(set(keys)) and all(re.fullmatch(r'(?:F(?:[1-9]|1[0-2])|[1-7])',k) for k in keys)
+        assert len(keys)==len(set(keys)) and all(re.fullmatch(r'(?:F(?:[1-9]|1[0-2])|[0-9])',k) for k in keys)
         for view in gallery['views']:
             if view.get('control'):continue
             x,y,z=view['position']

@@ -1,0 +1,13 @@
+{
+  "files": [
+    "gallery.pk3",
+    "gallery.zs",
+    "GALLERY_MANIFEST.json",
+    "TEXTMAP.txt"
+  ],
+  "byte_identical": true,
+  "prior_figures_and_views_retained": true,
+  "previous_figures": 11,
+  "previous_controls": 18,
+  "plots_and_crossing_unchanged": true
+}

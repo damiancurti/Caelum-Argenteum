@@ -1,6 +1,17 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.42** - 2026-11-14.
+Documentation version: **5.17.43** - 2026-11-14.
+
+## 5.17.43 - Hybrid serpent regional inspection (#729, 2026-11-14)
+
+Added Tu’ĩ/Litoral and Yaguá/Litoral/Selva to isolated CA709G while preserving
+eleven earlier figures, eighteen controls, four plots and native asset bytes.
+Four fixture files repeat; 61/126 native assertions cover fresh/reload identity,
+positions, idle, silent steps and three crossed boundaries. One 700-tic
+distant overview records 1457.72 queue presents/s, p95 0.8706 ms, p99 1.0173 ms; mean simulation 28.5714 ms/tic; queue-only/small-footprint limits apply.
+Evidence: assets/validation_v5_17_43/evidence/SUMMARY.json.
+CA729-HYBRID-GALLERY-01 originates here and remains unconfirmed. Earlier
+pending gallery runner paths were updated without retiring their tests.
 
 ## 5.17.42 - Hybrid serpents (#727, 2026-11-14)
 
