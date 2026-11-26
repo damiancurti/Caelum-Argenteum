@@ -1,0 +1,25 @@
+{
+  "issue": 825,
+  "parent_issue": 463,
+  "author_accepted": false,
+  "scope": "isolated_visual_inspection_not_campaign",
+  "reused_source_sha256": {
+    "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
+    "assets/source/art/regional_gallery_682/GALLERY.json": "65485227785466d786943a70de0e5901f5071c42d27d4958ce7a886e29195fa5",
+    "assets/source/art/regional_gallery_709/GALLERY.json": "1b8363a09ed993b5e11cdb6287c12c54baec606fb21048efeb3ecc7fd9396fa2",
+    "assets/source/art/witch_figures_817/EXPORT.json": "53cb945b610bf382c3fd8b4fc02403c19ef75675249d32fbde90fbe97133f8c3",
+    "assets/source/art/bestiary_figures_821/EXPORT.json": "2232a6e866184cfb314464d4521a1cc0f80179906f25e85bdbf9242e6bbf1fb7",
+    "assets/source/art/forest_guardians_813/EXPORT.json": "cc4f9fbf6c59d4021226aa511ca7df51445bcbb1af86bac51f16be3152dfca05",
+    "assets/source/art/land_figures_819/EXPORT.json": "727539df1e8b68efbe6a48c850684b7c39764239032306fa3a80a18bb2a2dfe0",
+    "assets/source/art/distinct_forms_822/EXPORT.json": "1ad993b4de49d3ce0e14a27c4ea329c2c30f222488684158fa402c5e241bfa73",
+    "assets/source/art/austral_figures_815/EXPORT.json": "edcd1edb5fc46e774e5ccf522b24255e85af14f14799a48675e90eb9fb47f98d",
+    "assets/source/art/period_apparitions_811/EXPORT.json": "e1ff8ee62c5ad5cd13274c617785c728027c17e8b5dac7b8fe614b9d814af627",
+    "assets/source/art/kasogonaga_795/EXPORT.json": "e99f4cfb1471c062f4b3f4d7697b1f3fa38834cee9907a86a15599c4b0fec63c"
+  },
+  "notes": [
+    "Complete the 44 missing approved catalogue/region pairs; preserve both earlier native galleries.",
+    "Buenos Aires, Chaco and Supernatural domains deliberately use neutral inspection flooring, not a proposed biome.",
+    "Repeated unique identities are diagnostic displays only.",
+    "Protected catalogue identities018/019 and campaign actors/maps remain unchanged."
+  ]
+}
