@@ -1,0 +1,17 @@
+{
+  "issue": 771,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "method": "Original closed native assemblies follow effective owned world images. Existing material pixels stay unchanged; one new opaque leather texture was generated with built-in image_gen and copied without raster edits. LEATHER_PROMPT.json records its exact provenance.",
+  "references": {
+    "flail": "TEXTURES CFLAA0 -> icons/ca_flail.png, scale1",
+    "giant_gauntlets": "TEXTURES CGAUA0 -> CA_GAUNTLET_ICON_1_MUTED/D -> gauntlet_icons/tier1.png, RGB-only transforms and scale10",
+    "bolas": "Last loaded CBOLA0 in bolas.textures -> CABOL_CELL_3 -> atlas.png crop[0,640,426,1280], scale5"
+  },
+  "limitations": [
+    "Static chain/ties/coiled thongs and simplified geometry/ornaments are candidates. Gauntlet diamond plates do not emit light.",
+    "Only world-drop states change; held art, projectiles/restraints, ammunition identity, combat, recovery, saved identity and all quality rules stay unchanged."
+  ],
+  "material_followup": "Native review exposed overly orange leather and hard-to-read cuffs. Original new opaque dark-brown leather generated through built-in image_gen; LEATHER_PROMPT.json preserves the exact request. Reuse unchanged #755 dark pixels on closed cuff liners. The earlier #694 leather sample had partial alpha and was not retained as the final skin; its provenance remains historical.",
+  "leather_sha256": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df"
+}

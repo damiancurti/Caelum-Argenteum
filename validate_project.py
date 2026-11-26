@@ -48,6 +48,7 @@ from assets.generators.validate_inventory_effigies_models import validate as eff
 from assets.generators.validate_inventory_bladed_weapons_models import validate as bladed_weapon_problems
 from assets.generators.validate_inventory_axes_models import validate as axe_problems
 from assets.generators.validate_inventory_polearms_models import validate as polearm_problems
+from assets.generators.validate_inventory_articulated_weapons_models import validate as articulated_weapon_problems
 from assets.generators.validate_effective_weapon_references import validate as effective_weapon_reference_problems
 from assets.generators.validate_inventory_gems_models import validate as inventory_gem_problems
 from assets.generators.validate_inventory_book_bindings import validate as inventory_book_problems
@@ -173,6 +174,7 @@ def validate(root):
     errors.extend(bladed_weapon_problems(root))
     errors.extend(axe_problems(root))
     errors.extend(polearm_problems(root))
+    errors.extend(articulated_weapon_problems(root))
     errors.extend(effective_weapon_reference_problems(root))
     errors.extend(inventory_ingot_problems(root))
     errors.extend(regional_material_problems(root))

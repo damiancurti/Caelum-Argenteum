@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.63** - 2026-11-15.
+Documentation version: **5.17.64** - 2026-11-15.
+
+## 5.17.64 - Flail, giant-gauntlet and bolas world models (#771), 2026-11-15
+
+Delivered three original closed native assemblies and one original opaque
+leather texture with its exact built-in image_gen prompt. Existing effective
+references, seven native type/tier identities and gameplay remain unchanged.
+Independent checks verify 70 closed parts, 60 fixed contacts, six chain links
+and ten cuff rays; sixteen exports repeat byte-for-byte. Native checks pass
+596 continuity and 141 visual/control assertions. Fifteen detail views and
+the overview were inspected; ASSETS records performance and art qualifications.
+Initial winding, attachment, coil and extent defects and subsequent visual
+improvements are retained in the evidence, not reported as accepted art.
+Evidence: assets/validation_v5_17_64/evidence/SUMMARY.json.
+CA771-ARTICULATED-DROPS-01 originates here and remains pending. No prior author
+check was accepted or removed. The broader V5.16/3D request is unfinished.
 
 ## 5.17.63 - Effective weapon-reference correction (#769, 2026-11-15)
 

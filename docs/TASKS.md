@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.63** - 2026-11-15.
+Documentation version: **5.17.64** - 2026-11-15.
+
+## 5.17.64 - #771 world-drop candidate delivered; author review pending
+
+Three assemblies cover flail 8, giant gauntlets 13 and bolas 22, preserving
+all seven existing type/tier combinations and the independent ammo identity.
+Native continuity: 596 assertions; visual/control: 141; fifteen inspected
+detail views; sixteen byte-identical exports; independent topology, linked
+chain, cuff openings, UV and state checks pass. Evidence:
+assets/validation_v5_17_64/evidence/SUMMARY.json. Author review remains
+CA771-ARTICULATED-DROPS-01. Carbine 2, shotgun 14, longbow 15 and crossbow 16
+still need physical drop models; characters/modular equipment and V5.16 remain.
 
 ## #769 - Effective sword/axe references (5.17.63)
 

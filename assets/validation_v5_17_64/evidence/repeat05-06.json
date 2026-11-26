@@ -1,0 +1,22 @@
+{
+  "files": 16,
+  "byte_identical": true,
+  "sha256": {
+    "manifest.json": "f49fbd0e19eccf93f2e24be672a78d2f9c21d7d6508cbd29c2d827e4b0cb97fe",
+    "preview.pk3": "730e99ff2eeadb05dbf1df2c7da7bcab4db503808056862d2d1394ad84d8b3e7",
+    "editable/articulated_weapons.mtl": "7830e7bc40c1c057e43f34e61d3d5a12adb66207b05d608bd8af87d76f2c6084",
+    "editable/bolas.obj": "4b6b0d9f01297f06b4f07d284b7b35ccbcd70d1c6c9c2ce36c9aaf2c1bc7098b",
+    "editable/flail.obj": "6e6578323ebc809dd57fd78f22d452da0a29c57cb42b5860c22d52c6387b48b1",
+    "editable/giant_gauntlets.obj": "dc81ee6cab3811c3a4975ab0cd4db60f82b3f17949ec59f8178276afcaa7e58f",
+    "caelum/data/inventory_articulated_weapons.modeldef": "0e94fe3e87856658715759c87feb91536dc61ee7c9176ccef033940d90fc8014",
+    "editable/src/models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df",
+    "editable/src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "editable/src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "models/caelum/inventory/articulated_weapons/bolas.md3": "515daade1294244a700b437b5ec7f450039418080bd8c80b5687a800734a8811",
+    "models/caelum/inventory/articulated_weapons/flail.md3": "88a49eedfaedccf1f9ba4a6c6d3ebe00e299aafba6cf8a2e5e6218514ec588bc",
+    "models/caelum/inventory/articulated_weapons/giant_gauntlets.md3": "c2a22b164b3b3360487e2fd5c19385faefab0d6f4f96d8c24d5d6f4e4e91ee77",
+    "models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "sha256": "3db7e31d8e294f829920f47b629a0324a8c105bf71c62ba63ccac3d702fbf4c6",
+  "source_entries": 18529,
+  "exact_source_bytes": true,
+  "added": [
+    "caelum/data/inventory_articulated_weapons.modeldef",
+    "models/caelum/inventory/articulated_weapons/bolas.md3",
+    "models/caelum/inventory/articulated_weapons/flail.md3",
+    "models/caelum/inventory/articulated_weapons/giant_gauntlets.md3",
+    "models/caelum/inventory/articulated_weapons/leather.png"
+  ],
+  "changed": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ]
+}
