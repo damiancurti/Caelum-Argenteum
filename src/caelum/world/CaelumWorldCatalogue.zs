@@ -84,7 +84,7 @@ class CaelumWorldCatalogue : Object
     {
         // La mansión de MAP01 pertenece al Limbo. Toda otra ubicación,
         // incluso un mapa de prueba aún sin catalogar, usa el ritmo común.
-        return LocationForMap(mapName) == LOCATION_MANSION;
+        return mapName ~== MapForLocation(LOCATION_MANSION);
     }
 
     static clearscope String LocationNameKey(int id)

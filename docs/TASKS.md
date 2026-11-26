@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.100** - 2026-11-19.
+Documentation version: **5.17.101** - 2026-11-19.
+
+## 5.17.101 - Use the canonical mansion map for the Limbo query (#846, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Completed: bounded clock/location diagnosis, direct canonical Limbo query,
+source proof, original-result comparisons, 552-name clock boundary fixtures,
+upgrade/reload/rollback, exact package preservation and final/control siege plus
+the four representative peaceful reference captures.
+
+Remaining: overall siege cost, authorized outstanding V5.16/V5.17 work and
+consolidated author review. Character/art design gates and campaign decisions
+remain as previously recorded. All author checks remain in pending_test.txt.
+HISTORY and assets/validation_v5_17_101 retain results and reproduction tools.
+
 
 ## 5.17.100 - Avoid empty inventory checks in physical contacts (#844, #454)
 

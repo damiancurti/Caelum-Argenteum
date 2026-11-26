@@ -1,6 +1,24 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.100** - 2026-11-19.
+Documentation version: **5.17.101** - 2026-11-19.
+
+## 5.17.101 - Use the canonical mansion map for the Limbo query (#846, #454)
+
+Full project validation passes with no errors; the generated document index is current.
+
+IsLimboMap now compares its input case-insensitively with the existing
+MapForLocation(LOCATION_MANSION) result. It avoids classifying every other
+location when only the mansion identity is needed. Both canonical mappings,
+map identities, time scales, arithmetic, fractions, migrations and saved fields
+remain unchanged. Ordinary callers, including offscreen environmental/contact
+work and the automatic high-density scene, use the same exact result.
+
+16,566 native predicate/clock/save assertions and 239,600 live comparisons pass.
+Exact package preservation and the catalogue proof retain all existing data.
+HISTORY records final/control siege and four final reference measurements;
+overall siege presentation and consolidated author review remain open.
+Evidence: assets/validation_v5_17_101.
+
 
 ## 5.17.100 - Avoid empty inventory checks in physical contacts (#844, #454)
 
