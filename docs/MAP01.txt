@@ -1,6 +1,17 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.17.116** - 2026-11-21.
+Documentation version: **5.17.117** - 2026-11-21.
+
+## 5.17.117 - Review timber joinery on existing Barracas house facades (#878, #463)
+
+The existing 160 Barracas houses share the optional #878 joinery review. Every
+opening position, span, elevation and house transform comes from the retained
+CITY/INTERIORS data and original model. Opaque walls, door dimensions, private
+interior maps and public approach coordinates are unchanged. Paired closed timber
+leaves and hinge plates are an unapproved art proposal, not a historical claim about
+each house or a new opening/route. No room layout, story or new geographic assignment
+is introduced. Native visibility at house 19 exposed a prior rendering defect,
+tracked separately in #879; it does not alter the house's operational portal.
 
 ## 5.17.116 - Review native sewer vaults with preserved passage minima (#875, #463)
 

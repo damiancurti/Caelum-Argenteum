@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "overlay_sha256": "1194bd5d3504ded9fc6435bc46cd8e60ab55ff16a6223eddad24041422eb97df",
+  "compared": [
+    "build/issue878-joinery02",
+    "build/issue878-joinery-repeat02"
+  ]
+}

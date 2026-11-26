@@ -1,0 +1,8 @@
+{
+  "issue": 878,
+  "author_acceptance": false,
+  "final_overlay": "issue878-joinery02",
+  "superseded": "joinery01 has overlapping central rails and inconsistent new-face normals; retained earlier native continuity evidence is labeled by that hash",
+  "visibility": "Default house19 facade and door90 cornice disappear at selected views in both models. Final view gallery applies the same diagnostic RenderRadius781 subclass to both. Production fix/save/performance work belongs to #879 and is required before the final author terminal.",
+  "gameplay": "No map/class/actor/collision/save-field changes. Native house-use harness replaces city setup with a diagnostic subclass, and teleports an invulnerable player to actual portals. It retains real Used/rendered capture/ACK/map travel; not ordinary approach, purchase, siege or multiplayer acceptance."
+}

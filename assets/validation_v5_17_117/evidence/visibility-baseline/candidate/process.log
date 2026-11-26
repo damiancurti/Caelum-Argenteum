@@ -1,0 +1,93 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-21 07:22:30
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 428 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue875-review01.pk3, 18767 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue878-joinery01/candidate.pk3, 1 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue878-views03/facade-views.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2538.49 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP03 - Barracas al Sud — fortified port
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CITY133 housed=600 attackers=0 revision=3
+CA866 FACADE index=0 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=618.023
+CA866 VIEW 0 pos=-1568.000,-4352.000,0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1
+Captured residential_street.png
+CA866 FACADE index=1 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=618.023
+CA866 VIEW 1 pos=-1568.000,-4352.000,0.000 angle=180.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1
+Captured door_0.png
+CA866 FACADE index=2 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=707.276
+CA866 VIEW 2 pos=-1572.000,-4544.000,0.000 angle=180.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1
+Captured window_0.png
+CA866 FACADE index=3 count=160 pos=-12640.000,-8928.000,0.000 floor=184.000 angle=90.000 distance=618.023
+CA866 VIEW 3 pos=-12416.000,-8352.000,0.000 angle=270.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1
+Captured door_90.png
+CA866 FACADE index=4 count=160 pos=-12640.000,-8928.000,0.000 floor=184.000 angle=90.000 distance=707.276
+CA866 VIEW 4 pos=-12224.000,-8356.000,0.000 angle=270.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1
+Captured window_90.png
+CA866 FACADE index=5 count=160 pos=-22560.000,-2976.000,0.000 floor=184.000 angle=180.000 distance=618.023
+CA866 VIEW 5 pos=-23136.000,-2752.000,0.000 angle=0.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1
+Captured door_180.png
+CA866 FACADE index=6 count=160 pos=-22560.000,-2976.000,0.000 floor=184.000 angle=180.000 distance=707.276
+CA866 VIEW 6 pos=-23132.000,-2560.000,0.000 angle=0.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1
+Captured window_180.png
+CA866 FACADE index=7 count=160 pos=-26848.000,4384.000,0.000 floor=184.000 angle=270.000 distance=618.023
+CA866 VIEW 7 pos=-27072.000,3808.000,-0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1
+Captured door_270.png
+CA866 FACADE index=8 count=160 pos=-26848.000,4384.000,0.000 floor=184.000 angle=270.000 distance=707.276
+CA866 VIEW 8 pos=-27264.000,3812.000,-0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1
+Captured window_270.png
+CA866 FACADE index=0 count=160 pos=-2144.000,-4128.000,0.000 floor=184.000 angle=0.000 distance=618.023
+CA866 VIEW 0 pos=-1568.000,-4352.000,0.000 angle=90.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1
+Captured walk.png
+CA866 WALK distance=26.663 pos=-1568.000,-4325.337,0.000
+CA866 PASS views=9

@@ -1,0 +1,21 @@
+{
+  "issue": 878,
+  "release": "5.17.117",
+  "full_validation": "passed with no errors",
+  "author_acceptance": false,
+  "superseded_native_phases": 3,
+  "final_native_phases": 3,
+  "final_native_use_passes": 24,
+  "final_native_return_passes": 12,
+  "final_image_contents_inspected": 20,
+  "geometry_checks": {
+    "retained_faces": 474,
+    "retained_vertices": 1896,
+    "new_outward_rail_faces": 595,
+    "new_outward_hinge_faces": 68
+  },
+  "deterministic_overlay_sha256": "1194bd5d3504ded9fc6435bc46cd8e60ab55ff16a6223eddad24041422eb97df",
+  "performance_windows": 4,
+  "production_changes": "two release log labels only",
+  "qualification": "Private model-only candidate. Comparison gallery uses identical diagnostic radius781 subclasses on both models; #879 production fix is required before final author terminal. No ordinary walkthrough, purchase, multiplayer, siege fluency, author acceptance or completed-batch claim."
+}

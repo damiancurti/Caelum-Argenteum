@@ -1,6 +1,19 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.116** - 2026-11-21.
+Documentation version: **5.17.117** - 2026-11-21.
+
+## 5.17.117 - Review timber joinery on existing Barracas house facades (#878, #463)
+
+Prepared for #878: deterministic model-only joinery overlay, original mesh and
+envelope audit, outward-normal checks, owned texture provenance, paired native views,
+actual house portal/capture/render-ACK travel in four orientations, save/reload and
+candidate removal, and peaceful/siege presentation tails. CA878-JOINERY-01 joins the
+single final author queue. The exact style, texture detail and mesh cost await review.
+
+Next: complete #879 production facade visibility with old-save/rollback and measured
+rendering checks; then continue the authorized #463 furnishing/environment work.
+No intermediate terminal, merge, closure or author acceptance follows this proposal.
+The remaining body/style decisions and unauthored progression retain their gates.
 
 ## 5.17.116 - Review native sewer vaults with preserved passage minima (#875, #463)
 

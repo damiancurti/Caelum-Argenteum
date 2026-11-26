@@ -1,6 +1,71 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.116** - 2026-11-21.
+Documentation version: **5.17.117** - 2026-11-21.
+
+## 5.17.117 - Review timber joinery on existing Barracas house facades (#878, #463)
+
+Prepared paired closed timber shutter detail on the existing shared facade,
+using unchanged owned green wood and painted-iron texture bytes. No installed art,
+map, class, actor placement or saved field changes. The runtime package differs from
+release 116 only in two release log labels; 18,765 of 18,767 members are byte-identical.
+The private overlay contains exactly one OBJ member. Final SHA256:
+1194bd5d3504ded9fc6435bc46cd8e60ab55ff16a6223eddad24041422eb97df.
+
+Both original and final candidate builders repeat byte-identically. The final audit
+retains 1,896 original vertices and 474 faces, unchanged bounds and door UVs; 17 window
+panel UVs change. All 595 new rail faces and 68 hinge faces are nondegenerate and face
+outward. The first joinery01 prototype had overlapping middle rail/stile faces and
+inconsistent new-face orientation; joinery02 corrects these and raises the triangle
+inventory from its intermediate 2,104 to final 2,274. Earlier native evidence remains
+labeled with the superseded overlay hash rather than relabeled as final.
+
+The final release117/model02 native house-use suite passes fresh and actual reload
+phases, each with eight Used/capture requests and four exact-position returns across
+four orientations. A third phase loads the candidate checkpoint without the overlay
+and repeats all eight requests/four returns. Travel follows real rendered capture/ACK,
+not fabricated acknowledgements or direct ChangeMap calls. The retained harness uses
+a diagnostic city setup subclass that prepares houses/residents without normal army
+setup, and places an invulnerable player at portals. It does not prove ordinary
+walking to entrances, purchase, siege behavior, multiplayer or author acceptance.
+
+All twenty final image contents were inspected: eighteen match previously viewed
+captures byte-for-byte, and both final walk images were newly inspected.
+Native view pairs capture the residential street, doors/windows in four orientations
+and a 26.663-MU forward movement in each run. Default-class captures expose a prior
+visibility defect: house19's facade and house20's entrance cornice can disappear
+although all160 actors exist at the correct world Z0/roof FloorZ184. The separate
+door actor remains usable. Engine source links a larger RenderRadius to additional
+render sectors; the matched private radius781 subclass restores the sampled views.
+Final comparison images use that same diagnostic subclass on both sides. #879 owns
+the production fix, persistence/rollback and its own performance checks. No hidden
+production class change or completed visibility delivery is claimed here.
+
+The first view wrapper failed before launching GZDoom because a guessed city_street
+camera did not exist. The corrected wrapper derives the residential approach from
+the actual first house. Preserve that failed log separately. Native captures are
+1520x825; performance collection is 1280x720, official GZDoom4.14.2/Vulkan on Windows11,
+Ryzen9 5950X and RTX3070Ti, one hidden unpaused engine at 5% audio.
+
+| Scene | Queue presents/s | Present mean / p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| street-control01 | 132.135490 | 7.568 / 9.118 / 9.856 / 12.299 | 28.570 / 33.830 / 35.218 / 36.752 |
+| street-candidate01 | 135.120822 | 7.401 / 8.956 / 9.730 / 12.804 | 28.568 / 33.544 / 35.257 / 38.175 |
+| siege-control01 | 1.735978 | 576.044 / 616.912 / 636.961 / 636.961 | 33.815 / 49.922 / 54.242 / 63.231 |
+| siege-candidate01 | 1.865194 | 536.137 / 576.347 / 577.197 / 577.197 | 31.512 / 47.231 / 50.265 / 63.925 |
+
+These single paired windows use the production facade class, without the gallery's
+diagnostic radius subclass. They measure the model proposal in the existing scene,
+including its existing visibility limitation. All normal siege rules and the approved
+1000-attacker/600-defender scenario remain; no retired6000 case runs. No heavy build,
+hash audit or validator overlaps performance startup or collection. Queue presents
+are not monitor scanout, and tic intervals include pacing/frame work. Neither extra
+mesh detail nor fewer material sections establishes a speedup, GPU saturation or
+playable siege fluency. The separate #879 fix requires new paired measurements.
+
+Evidence: assets/validation_v5_17_117. Full project validation passes with no errors; the document index is current. CA878-JOINERY-01 is appended; every previous author check is retained.
+The candidate's exact style, sampled texture clarity and permanent mesh budget remain
+unapproved. No branch merge, issue closure, intermediate terminal or completed-batch
+claim is made. Continue #879 and the authorized environment/furnishing work.
 
 ## 5.17.116 - Review native sewer vaults with preserved passage minima (#875, #463)
 

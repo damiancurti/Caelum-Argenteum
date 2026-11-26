@@ -1,6 +1,46 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.116** - 2026-11-21.
+Documentation version: **5.17.117** - 2026-11-21.
+
+## 5.17.117 - Review timber joinery on existing Barracas house facades (#878, #463)
+
+Source: assets/source/art/house_joinery_878/CONFIG.json. Gallery: that folder's
+review.html. Build a private overlay with assets/generators/build_house_joinery_review.py;
+the installed production OBJ, PNGs, MODELDEF and map remain unchanged. The builder
+first recompiles the original byte-for-byte and retains its complete geometry/door
+UVs. It selects an existing green timber field through UVs, avoiding repeated door
+handles on the shutters, and reuses the exact #410 painted-iron texture. No raster
+pixels are edited, generated or copied from third parties; added pixel bytes: zero.
+
+The official Casa Ezeiza page dates the house to 1876 and describes original wood/
+iron joinery, framing and paired timber entrance leaves. That vocabulary informs
+the proposal, not the affluent plan or later alterations. The COAC house-chorizo
+article spans 1880-1930; later examples do not establish exact 1889 details. Conflicting
+Colonia Sola dates are excluded. URLs and source hashes remain in CONFIG.json.
+
+| Shared facade inventory | Original | Candidate |
+| --- | ---: | ---: |
+| Vertices | 1,896 | 4,548 |
+| Quad faces | 474 | 1,137 |
+| Triangles | 948 | 2,274 |
+| Distinct materials | 2 | 3 |
+| Native OBJ material sections | 36 | 3 |
+| Placed house instances | 160 | 160 |
+
+The candidate OBJ is 311,432 bytes. Its 17 windows receive seven open-backed rail
+pieces and four hinge plates each, with outward normals and no overlapping central
+rail/stile faces. All original bounds are identical: OBJ X -484..484, Y -4..184,
+Z -612..612. Grouping opaque faces by material avoids extra native usemtl surfaces;
+the section count is not a measured GPU or frame-time improvement. These are explicit
+proposal costs, not an approved permanent budget. Final overlay SHA256:
+1194bd5d3504ded9fc6435bc46cd8e60ab55ff16a6223eddad24041422eb97df.
+Repeated generation is byte-identical. Evidence: assets/validation_v5_17_117.
+
+The native gallery's final paired views use the same diagnostic RenderRadius 781
+subclass for both models, derived by rounding up the original horizontal vertex
+radius. This exposes the whole facade for comparison and proves a #879 visibility
+hypothesis; it is not a production actor fix in #878. Default-class missing-facade
+captures are retained separately. The final terminal must use the completed #879 fix.
 
 ## 5.17.116 - Review native sewer vaults with preserved passage minima (#875, #463)
 
