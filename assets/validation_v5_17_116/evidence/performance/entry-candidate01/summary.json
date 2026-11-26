@@ -1,0 +1,59 @@
+{
+  "label": "entry-candidate01",
+  "directory": "build/v516/barracas-profile-20261121-063036-092586",
+  "runtime_sha256": "767c48ed4fc15a1c6ec13af1d07cc6565d27ed338a3ccef3a37fa2afe1099c9e",
+  "overlays": [
+    {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue875-vault01\\candidate.pk3",
+      "sha256": "8d3d0eb89224bf8149d81449f75d0d0d34b5d11fca9211861decc2aaf9b10a2a"
+    }
+  ],
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "states": [
+    "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+    "CA435PERF STATE slot=0 health=1248 pos=0.000000,-4864.000000,-0.000000",
+    "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+    "CA435PERF STATE slot=0 health=1248 pos=0.000000,-4864.000000,-0.000000"
+  ],
+  "census": [
+    "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+    "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+  ],
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 28.564737285714287,
+    "p95_ms": 33.4092,
+    "p99_ms": 34.545,
+    "max_ms": 44.2611
+  },
+  "presentation": {
+    "pid": 28648,
+    "trace_sha256": "215bf31b581d7398d5ce09322fc16175f9628dfad00bf39ed2cb0bf79cddd6c8",
+    "rows": 5060,
+    "scene_presents": 2798,
+    "mean_present_fps": 159.2234504388923,
+    "present_intervals": {
+      "samples": 2797,
+      "mean_ms": 6.28048190918828,
+      "p50_ms": 6.233800053596497,
+      "p95_ms": 7.903800010681152,
+      "p99_ms": 8.807700037956238,
+      "max_ms": 41.360599994659424
+    },
+    "native_call_duration": {
+      "samples": 2798,
+      "mean_ms": 0.08098363079625935,
+      "p50_ms": 0.0708000659942627,
+      "p95_ms": 0.13259994983673096,
+      "p99_ms": 0.18040001392364502,
+      "max_ms": 0.4978001117706299
+    }
+  }
+}

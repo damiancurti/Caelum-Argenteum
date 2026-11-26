@@ -1,6 +1,20 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.115** - 2026-11-21.
+Documentation version: **5.17.116** - 2026-11-21.
+
+## 5.17.116 - Review native sewer vaults with preserved passage minima (#875, #463)
+
+Production gameplay, collision, populations, resources, keys, trap controls,
+routes, save schema and all-map >=500 combatant policy are unchanged. The private
+proposal preserves all source floor/cell values, things and original boundaries.
+Its ordinary roofs rise above the existing 96-MU spring line toward128 MU. Raising
+physical roof space can affect jump/projectile clearance even with unchanged
+logic; that proposal remains subject to author review, not a cosmetic-only claim.
+
+Do not load a visited campaign map/save with this geometry overlay. Use a dedicated
+fresh review session and its own saves. Candidate save/reload and native hub return
+are verified separately from the restored default fresh/save/reload session. These
+are not a cross-geometry save migration or permission to replace revision6.
 
 ## 5.17.115 - Measure target acquisition and retain current perception (#873, #454)
 

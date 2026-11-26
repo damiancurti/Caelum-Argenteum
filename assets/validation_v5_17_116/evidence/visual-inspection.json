@@ -1,0 +1,27 @@
+{
+  "issue": 875,
+  "reviewed": [
+    "control/entrance.png",
+    "control/junction.png",
+    "control/channel.png",
+    "control/refuge.png",
+    "control/boss_access.png",
+    "control/main_horizontal.png",
+    "control/main_vertical.png",
+    "control/service.png",
+    "control/maintenance.png",
+    "control/walk.png",
+    "candidate/entrance.png",
+    "candidate/junction.png",
+    "candidate/channel.png",
+    "candidate/refuge.png",
+    "candidate/boss_access.png",
+    "candidate/main_horizontal.png",
+    "candidate/main_vertical.png",
+    "candidate/service.png",
+    "candidate/maintenance.png",
+    "candidate/walk.png"
+  ],
+  "observations": "All twenty final view images inspected. Native shallow vaults, preserved flat chambers, dry shelf/channel and barred/locked access remain visible. No visible missing textures in these sampled views. Retained gates, props, translucent prompts, facets and art style remain subject to author review; images do not prove full-map traversal or rendering fluency.",
+  "author_acceptance": false
+}

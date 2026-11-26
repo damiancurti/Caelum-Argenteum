@@ -1,0 +1,11 @@
+{
+  "runtime_sha256": "815c549eb97a988b034d85899c819affa4c7a21ea077c77ad1e28a14b0651189",
+  "baseline_sha256": "767c48ed4fc15a1c6ec13af1d07cc6565d27ed338a3ccef3a37fa2afe1099c9e",
+  "members": 18767,
+  "identical_members": 18765,
+  "changed": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "qualification": "Only release log labels differ. Candidate geometry/material/index are private overlay members, not production resources."
+}

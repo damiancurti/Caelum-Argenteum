@@ -1,0 +1,415 @@
+{
+  "issue": 875,
+  "collision_parameters": {
+    "issue": 875,
+    "source": "Existing LAYOUT dimensions and actual vaulted dry cells; diagnostic viewpoints, not new game coordinates.",
+    "radius": 21.333333,
+    "height": 74.7,
+    "step_mu": 4.0,
+    "rows": [
+      {
+        "name": "main_horizontal",
+        "point": [
+          768.0,
+          -3104.0
+        ],
+        "angle": 0,
+        "axis": 0,
+        "span_mu": 160,
+        "dry_width_mu": 96,
+        "start": [
+          232.0,
+          -3104.0,
+          0
+        ],
+        "end": [
+          1304.0,
+          -3104.0,
+          0
+        ],
+        "bodies": 2,
+        "lane_offsets": [
+          -24.0,
+          24.0
+        ],
+        "segment": {
+          "axis": 0,
+          "cross": -3072,
+          "low": 0,
+          "high": 1536,
+          "width": 160,
+          "label": "south:main"
+        },
+        "clear_run_mu": 1072.0
+      },
+      {
+        "name": "main_vertical",
+        "point": [
+          -3104.0,
+          -2560.0
+        ],
+        "angle": 90,
+        "axis": 1,
+        "span_mu": 160,
+        "dry_width_mu": 96,
+        "start": [
+          -3104.0,
+          -2840.0,
+          0
+        ],
+        "end": [
+          -3104.0,
+          -2280.0,
+          0
+        ],
+        "bodies": 2,
+        "lane_offsets": [
+          -24.0,
+          24.0
+        ],
+        "segment": {
+          "axis": 1,
+          "cross": -3072,
+          "low": -3072,
+          "high": -2048,
+          "width": 160,
+          "label": "south:main"
+        },
+        "clear_run_mu": 560.0
+      },
+      {
+        "name": "service",
+        "point": [
+          0,
+          2920.0
+        ],
+        "angle": 90,
+        "axis": 1,
+        "span_mu": 128,
+        "dry_width_mu": 128,
+        "start": [
+          0,
+          824.0,
+          0
+        ],
+        "end": [
+          0,
+          5016.0,
+          0
+        ],
+        "bodies": 2,
+        "lane_offsets": [
+          -32.0,
+          32.0
+        ],
+        "segment": {
+          "axis": 1,
+          "cross": 0,
+          "low": 0,
+          "high": 5120,
+          "width": 128,
+          "label": "service"
+        },
+        "clear_run_mu": 4192.0
+      },
+      {
+        "name": "maintenance",
+        "point": [
+          -1536,
+          -3752.0
+        ],
+        "angle": 90,
+        "axis": 1,
+        "span_mu": 64,
+        "dry_width_mu": 64,
+        "start": [
+          -1536,
+          -3864.0,
+          0
+        ],
+        "end": [
+          -1536,
+          -3640.0,
+          0
+        ],
+        "bodies": 1,
+        "lane_offsets": [
+          0
+        ],
+        "segment": {
+          "axis": 1,
+          "cross": -1536,
+          "low": -4096,
+          "high": -3072,
+          "width": 64,
+          "label": "south:shortcut"
+        },
+        "clear_run_mu": 224.0
+      }
+    ]
+  },
+  "runtime_sha256": "767c48ed4fc15a1c6ec13af1d07cc6565d27ed338a3ccef3a37fa2afe1099c9e",
+  "overlay_sha256": "ff3f5b7e956b95797e0bf0e0a6559e778f0d186c8e004aa2e33f800721f47823",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "probe_sha256": "b518a7a628abce2b6db8a8cea960d8ab4237e99ef90cc656596c4e09e5535325",
+  "cameras": [
+    {
+      "name": "entrance",
+      "point": [
+        0,
+        -4864
+      ],
+      "angle": 90
+    },
+    {
+      "name": "junction",
+      "point": [
+        -160.0,
+        -4256.0
+      ],
+      "angle": 45
+    },
+    {
+      "name": "channel",
+      "point": [
+        -2304.0,
+        -4128.0
+      ],
+      "angle": 0
+    },
+    {
+      "name": "refuge",
+      "point": [
+        -3936.0,
+        -3232.0
+      ],
+      "angle": 135
+    },
+    {
+      "name": "boss_access",
+      "point": [
+        -2912,
+        8160.0
+      ],
+      "angle": 180
+    },
+    {
+      "name": "main_horizontal",
+      "point": [
+        768.0,
+        -3104.0
+      ],
+      "angle": 0,
+      "axis": 0,
+      "span_mu": 160,
+      "dry_width_mu": 96,
+      "start": [
+        232.0,
+        -3104.0,
+        0
+      ],
+      "end": [
+        1304.0,
+        -3104.0,
+        0
+      ],
+      "bodies": 2,
+      "lane_offsets": [
+        -24.0,
+        24.0
+      ],
+      "segment": {
+        "axis": 0,
+        "cross": -3072,
+        "low": 0,
+        "high": 1536,
+        "width": 160,
+        "label": "south:main"
+      },
+      "clear_run_mu": 1072.0
+    },
+    {
+      "name": "main_vertical",
+      "point": [
+        -3104.0,
+        -2560.0
+      ],
+      "angle": 90,
+      "axis": 1,
+      "span_mu": 160,
+      "dry_width_mu": 96,
+      "start": [
+        -3104.0,
+        -2840.0,
+        0
+      ],
+      "end": [
+        -3104.0,
+        -2280.0,
+        0
+      ],
+      "bodies": 2,
+      "lane_offsets": [
+        -24.0,
+        24.0
+      ],
+      "segment": {
+        "axis": 1,
+        "cross": -3072,
+        "low": -3072,
+        "high": -2048,
+        "width": 160,
+        "label": "south:main"
+      },
+      "clear_run_mu": 560.0
+    },
+    {
+      "name": "service",
+      "point": [
+        0,
+        2920.0
+      ],
+      "angle": 90,
+      "axis": 1,
+      "span_mu": 128,
+      "dry_width_mu": 128,
+      "start": [
+        0,
+        824.0,
+        0
+      ],
+      "end": [
+        0,
+        5016.0,
+        0
+      ],
+      "bodies": 2,
+      "lane_offsets": [
+        -32.0,
+        32.0
+      ],
+      "segment": {
+        "axis": 1,
+        "cross": 0,
+        "low": 0,
+        "high": 5120,
+        "width": 128,
+        "label": "service"
+      },
+      "clear_run_mu": 4192.0
+    },
+    {
+      "name": "maintenance",
+      "point": [
+        -1536,
+        -3752.0
+      ],
+      "angle": 90,
+      "axis": 1,
+      "span_mu": 64,
+      "dry_width_mu": 64,
+      "start": [
+        -1536,
+        -3864.0,
+        0
+      ],
+      "end": [
+        -1536,
+        -3640.0,
+        0
+      ],
+      "bodies": 1,
+      "lane_offsets": [
+        0
+      ],
+      "segment": {
+        "axis": 1,
+        "cross": -1536,
+        "low": -4096,
+        "high": -3072,
+        "width": 64,
+        "label": "south:shortcut"
+      },
+      "clear_run_mu": 224.0
+    }
+  ],
+  "runs": [
+    {
+      "label": "control",
+      "passed": false,
+      "exit_code": 1,
+      "timed_out": false,
+      "errors": [
+        "CA875 COLLISION FAIL",
+        "CA875 COLLISION_COMPLETE FAIL"
+      ],
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue873-diagnosis01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue875-views04\\views.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue875-views04\\control\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue875-views04\\control",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue875-views04\\control\\engine.log",
+        "+map",
+        "MAP02",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue875-views04\\control\\start.cfg"
+      ],
+      "markers": [
+        "CA847 VIEW 0 pos=0.000,-4864.000,-0.000 angle=90.000 headroom=96.000",
+        "CA847 VIEW 1 pos=-160.000,-4256.000,0.000 angle=45.000 headroom=128.000",
+        "CA847 VIEW 2 pos=-2304.000,-4128.000,0.000 angle=0.000 headroom=128.000",
+        "CA847 VIEW 3 pos=-3936.000,-3232.000,0.000 angle=135.000 headroom=128.000",
+        "CA847 VIEW 4 pos=-2912.000,8160.000,-0.000 angle=180.000 headroom=96.000",
+        "CA847 VIEW 5 pos=768.000,-3104.000,-0.000 angle=0.000 headroom=96.000",
+        "CA847 VIEW 6 pos=-3104.000,-2560.000,0.000 angle=90.000 headroom=96.000",
+        "CA847 VIEW 7 pos=0.000,2920.000,-0.000 angle=90.000 headroom=96.000",
+        "CA847 VIEW 8 pos=-1536.000,-3752.000,0.000 angle=90.000 headroom=96.000",
+        "CA847 VIEW 2 pos=-2304.000,-4128.000,0.000 angle=0.000 headroom=128.000",
+        "CA847 WALK distance=26.663 pos=-2277.337,-4128.000,0.000",
+        "CA847 PASS views=9",
+        "CA875 COLLISION PASS case=main_horizontal bodies=2 length=1072.000 radius=21.333333 height=74.700",
+        "CA875 COLLISION FAIL case=main_vertical bodies=2 length=560.000 radius=21.333333 height=74.700",
+        "CA875 BODY pos=-3128.000,-2828.000,0.000 ceiling=96.000",
+        "CA875 BLOCKER body=0 class=CaelumGiantRat",
+        "CA875 LINEBLOCK body=0 line=0 movement=0",
+        "CA875 LINEBLOCK body=1 line=0 movement=0",
+        "CA875 COLLISION PASS case=service bodies=2 length=4192.000 radius=21.333333 height=74.700",
+        "CA875 COLLISION FAIL case=maintenance bodies=1 length=224.000 radius=21.333333 height=74.700",
+        "CA875 BODY pos=-1536.000,-3864.000,0.000 ceiling=96.000",
+        "CA875 LINEBLOCK body=0 line=0 movement=0",
+        "CA875 LINEBLOCK body=1 line=0 movement=0",
+        "CA875 COLLISION_COMPLETE FAIL cases=4 moves=5495"
+      ],
+      "images": {
+        "entrance.png": "bc13094445b4acec9a5b52e6a2ecb6fd914450b38f046b860d973088225d9756",
+        "junction.png": "a22f3b66b538cfb80b67739be3d05e3096c3b75fa017bf1cefe3ebe648b921cd",
+        "channel.png": "2b4b8a80e68da8ffd5bb2905d3fe4d805e6f4c6653dd4fe0753097a06bed2d67",
+        "refuge.png": "49fd20c060152629758599cfff30234cb297f25335e700a6766db60e573d61bd",
+        "boss_access.png": "4e38947386665c15b28ac604a8d31c6f4e6edc69a6206d0fa511c56cbc620c87",
+        "main_horizontal.png": "1167dd01b21a8558768f3e0e4ec49143a1be4a47c43f382d06527defe3704ec9",
+        "main_vertical.png": "e055268b3db8162ce3bba8bddaa805dfda768d9737920e6275f67bf3c53027ad",
+        "service.png": "19b4a2bd0419f505d91fa4f09376f55af67c94bf842a949cc5cac059deadbe92",
+        "maintenance.png": "f0de64992b974c9abaa1554e09f2575c173ea2a66bbbb7106d96c9f797fdd839",
+        "walk.png": "f0cd937e751a4175f79c3e0f3a5ba4383318051e89ff7b81daea76df8064a904"
+      }
+    }
+  ],
+  "passed": false,
+  "qualification": "Capture private vault views and test maximum-size collision cylinders.\n\nThe placement teleports and invulnerability belong only to the disposable\ninspection player. Collision cylinders use native TryMove in four selected dry\nruns, with opposing pairs where two maximum-radius bodies fit. This is bounded\ngeometry evidence, not player movement, escort AI or author acceptance.\n"
+}

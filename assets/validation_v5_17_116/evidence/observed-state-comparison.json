@@ -1,0 +1,26 @@
+[
+  {
+    "control": "entry-control01",
+    "candidate": "entry-candidate01",
+    "states_equal": true,
+    "census_equal": true
+  },
+  {
+    "control": "entry-control02",
+    "candidate": "entry-candidate02",
+    "states_equal": true,
+    "census_equal": true
+  },
+  {
+    "control": "main-control01",
+    "candidate": "main-candidate01",
+    "states_equal": true,
+    "census_equal": true
+  },
+  {
+    "control": "service-control01",
+    "candidate": "service-candidate01",
+    "states_equal": true,
+    "census_equal": true
+  }
+]

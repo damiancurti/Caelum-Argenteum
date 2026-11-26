@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "overlay_sha256": "ff3f5b7e956b95797e0bf0e0a6559e778f0d186c8e004aa2e33f800721f47823",
+  "compared": [
+    "build/issue875-vault02",
+    "build/issue875-vault-repeat02"
+  ]
+}

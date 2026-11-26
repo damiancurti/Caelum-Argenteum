@@ -1,6 +1,88 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.115** - 2026-11-21.
+Documentation version: **5.17.116** - 2026-11-21.
+
+## 5.17.116 - Review native sewer vaults with preserved passage minima (#875, #463)
+
+Prepared the private revision6-derived vault proposal without replacing the
+approved production map. Selected unambiguous straight ordinary spans gain native
+ceiling slopes between96 and128 MU on the existing 16-MU grid. Original floors,
+cell values,445 things,32,524 boundaries, controls and arena position are identical.
+The base map changes 104 to 539 sectors,32,524 to 67,120 lines and32,001 to 65,578
+vertices. All 42,702 selected cells are derived from current layout data. There is
+no invented gameplay value, production migration or default art binding.
+
+Final overlay SHA256: ff3f5b7e956b95797e0bf0e0a6559e778f0d186c8e004aa2e33f800721f47823.
+MAP02 SHA256: df70e78dbc37d11197b5a13354485ff5f214a35e8ef5d3624ccbe4cd353f103e.
+Native checksum: f6b7917b3ec920216788dc92cc4db44c.
+Byte-identical repeated generation passes. Private CA875WAL/CA875FLR aliases
+replace only this candidate map's old material references; other maps retain their
+original CASWR bindings. The exact #847 brick bytes are reused. The first vault01
+overlay used global aliases; its earlier native/save/performance evidence is
+retained as superseded, not relabeled as the final map-local build.
+
+Native geometry probes evaluate 439 sloped sectors and175,724 line endpoints per
+sample, with minimum 96.000000000 and maximum 128.000000000 MU and at least 74.7-MU
+body clearance. Endpoint evaluations are not unique vertices. Each candidate
+fresh/reload/hub suite passes; the fresh phase samples again after visiting MAP03.
+Justice lookup returns the appended sector 539 at unchanged center(8960,9984,0).
+Default fresh/save/reload is checked separately after the candidate sessions.
+Native disposable saves exist locally; no cross-geometry campaign migration is
+claimed, and no engine, IWAD, map/overlay or save binaries are distributed.
+
+Final paired view runs pass with 9 viewpoints each and one short movement capture:
+all 20 images were inspected for roof continuity, legible routes, channel/shelf,
+flat chambers, refuge props and locked/barred access. No missing textures are
+visible in those views. Native forward movement is26.663 MU in both; camera
+teleports and invulnerability/notarget mean this is not an ordinary walkthrough.
+Four selected dry runs test 74.7-height/21.333333-radius cylinders: opposing pairs
+over 1,072/560/4,192 MU and one body over 224 MU, forward and back. Each map passes
+5,936 native TryMove steps. A live rat blocks the original run; the corrected
+synchronous geometry fixture records its position, temporarily disables solidity
+and restores it before returning (one cleared/one restored in each final run).
+This isolates geometry; it does not verify escort AI or authorize passing through
+actors in gameplay. Existing unchanged-floor escort/recovery evidence retains its
+original #454 release labels rather than being counted as new tests.
+
+The private view fixture initially failed to compile because EventHandler needs
+Actor.Spawn. Its next runs exposed the live rat and a stale local body1 reference
+carried into the single-body case; explicitly initializing both actor locals fixed
+the fixture. Retain failed logs/probes separately from final passes. Native UDMF
+normalization also requires D at unit-normal scale; source inspection and all
+native endpoint checks verify this convention. See CA-KP-272.
+
+| Scene | Queue presents/s | Present mean / p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| entry-control01 | 162.119834 | 6.168 / 7.785 / 8.667 / 41.333 | 28.568 / 33.180 / 34.574 / 47.542 |
+| entry-candidate01 | 159.223450 | 6.280 / 7.904 / 8.808 / 41.361 | 28.565 / 33.409 / 34.545 / 44.261 |
+| entry-control02 | 163.011561 | 6.135 / 7.628 / 8.642 / 39.933 | 28.573 / 32.792 / 33.791 / 47.347 |
+| entry-candidate02 | 149.173738 | 6.704 / 8.139 / 8.957 / 39.276 | 28.579 / 33.505 / 35.050 / 42.714 |
+| main-control01 | 157.440928 | 6.352 / 7.773 / 8.775 / 41.066 | 28.569 / 33.326 / 34.400 / 46.861 |
+| main-candidate01 | 154.599785 | 6.468 / 8.331 / 9.089 / 40.144 | 28.565 / 33.043 / 34.778 / 44.710 |
+| service-control01 | 157.635283 | 6.344 / 7.851 / 8.747 / 40.324 | 28.576 / 33.526 / 34.640 / 46.224 |
+| service-candidate01 | 156.920225 | 6.373 / 7.941 / 8.855 / 37.766 | 28.577 / 33.050 / 34.367 / 40.553 |
+
+entry-candidate01 uses the superseded global-alias overlay; candidate02/main/
+service use the final map-local overlay on immutable release 115. All paired
+recorded state/census agree: population 294, dense 0, no registered city army,
+player health 1248 at the corresponding viewpoint. That is not proof of every
+hidden state field. The release 116 runtime has only two changed release log
+labels; the package byte audit identifies them explicitly. No performance
+improvement is claimed. The final entrance pair is149.174 versus 163.012 queue
+presents/s; the main passage154.600 versus 157.441 and service156.920 versus 157.635.
+Costs vary with the viewpoint and include both geometry and material changes;
+these single pairs are not a repeatable isolated geometry percentage or approval
+of the doubled line count. Preserve all tails above when reviewing the budget.
+
+Windows 11/Ryzen 9 5950X/RTX 3070Ti, official GZDoom 4.14.2, Vulkan 1280x720, one hidden
+unpaused engine at 5% audio. No heavy build/hash/validator overlaps the performance
+runs. Queue presents are not monitor scanout; tic intervals include pacing/frame
+work. These peaceful MAP02 checks do not establish siege fluency, GPU saturation,
+full-map author acceptance or a completed batch. No retired6,000 case ran.
+
+Evidence: assets/validation_v5_17_116. Full project validation passes with no errors; the document index is current. CA875-VAULT-01 is appended for final consolidated review; all
+previous pending checks remain. No merge, closure, intermediate terminal or author
+acceptance is inferred. Continue the authorized city/furnishing work under #463.
 
 ## 5.17.115 - Measure target acquisition and retain current perception (#873, #454)
 
