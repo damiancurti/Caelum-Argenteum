@@ -1,0 +1,383 @@
+{
+  "schema_revision": 1,
+  "issue": 704,
+  "parent_issue": 647,
+  "status": "candidate_pending_author_review",
+  "variants": {
+    "plate": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "plate_body",
+        "plate_paint",
+        "plate_edge"
+      ],
+      "closed_outward_components": 3,
+      "vertices": 1460,
+      "triangles": 2912,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 786,
+          "triangles": 1568
+        },
+        {
+          "material": "plate_front",
+          "vertices": 674,
+          "triangles": 1344
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        16,
+        120,
+        112
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.50450450450451,
+            -1.78729371860638,
+            0.0
+          ],
+          "max": [
+            55.4954954954955,
+            3.166063158674159,
+            95.85585585585588
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0213106963465028,
+        "floor": 17.566115000000003
+      }
+    },
+    "round_plate": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "plate_body",
+        "plate_paint",
+        "plate_edge"
+      ],
+      "closed_outward_components": 3,
+      "vertices": 2084,
+      "triangles": 4160,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 1122,
+          "triangles": 2240
+        },
+        {
+          "material": "round_plate_front",
+          "vertices": 962,
+          "triangles": 1920
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        11,
+        119,
+        116
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 110.0,
+      "native_bounds": [
+        {
+          "min": [
+            -55.5045871559633,
+            -13.636731495078404,
+            0.0
+          ],
+          "max": [
+            54.49541284403669,
+            3.1665818452991052,
+            104.95412844036699
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0214780146126146,
+        "floor": 13.620317500000006
+      }
+    },
+    "kite_plate": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "plate_body",
+        "plate_paint",
+        "plate_edge"
+      ],
+      "closed_outward_components": 3,
+      "vertices": 1668,
+      "triangles": 3328,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 898,
+          "triangles": 1792
+        },
+        {
+          "material": "kite_plate_front",
+          "vertices": 770,
+          "triangles": 1536
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        8,
+        117,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -54.498788173823975,
+            -3.421390832760784,
+            0.0
+          ],
+          "max": [
+            51.44715777212196,
+            3.166063158674158,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0213106963465026,
+        "floor": 9.662475000000008
+      }
+    },
+    "tower_plate": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "plate_body",
+        "plate_paint",
+        "plate_edge"
+      ],
+      "closed_outward_components": 3,
+      "vertices": 1148,
+      "triangles": 2288,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 618,
+          "triangles": 1232
+        },
+        {
+          "material": "tower_plate_front",
+          "vertices": 530,
+          "triangles": 1056
+        }
+      ],
+      "reference_opaque_bounds": [
+        23,
+        8,
+        104,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -41.37552021303811,
+            -5.322088889470552,
+            0.0
+          ],
+          "max": [
+            39.3452005076826,
+            3.166063158674158,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0213106963465026,
+        "floor": 9.662475000000008
+      }
+    },
+    "magic_plate": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "plate_body",
+        "plate_paint",
+        "plate_edge"
+      ],
+      "closed_outward_components": 3,
+      "vertices": 1252,
+      "triangles": 2496,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 674,
+          "triangles": 1344
+        },
+        {
+          "material": "magic_plate_front",
+          "vertices": 578,
+          "triangles": 1152
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        8,
+        118,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -54.98802494224755,
+            -6.7124288797713785,
+            0.0
+          ],
+          "max": [
+            52.93924778502517,
+            3.1948455510257414,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0305953390405618,
+        "floor": 10.650430000000007
+      }
+    },
+    "large_plate": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "band_0_body",
+        "band_0_paint",
+        "band_0_edge",
+        "band_1_body",
+        "band_1_paint",
+        "band_1_edge",
+        "band_2_body",
+        "band_2_paint",
+        "band_2_edge",
+        "band_3_body",
+        "band_3_paint",
+        "band_3_edge"
+      ],
+      "closed_outward_components": 12,
+      "vertices": 1680,
+      "triangles": 3328,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 904,
+          "triangles": 1792
+        },
+        {
+          "material": "large_plate_front",
+          "vertices": 776,
+          "triangles": 1536
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        17,
+        120,
+        110
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 111.0,
+      "native_bounds": [
+        {
+          "min": [
+            -55.490024234240835,
+            -5.469808534274212,
+            0.0
+          ],
+          "max": [
+            55.509975765759165,
+            3.1694217675233753,
+            92.72374953157487
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0223941185559275,
+        "floor": 19.646117500000003
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "1dc3910576b9a1736ccb4b2235c4e77d89f136f6b87bad5f15dbfbc21427a8cb",
+    "PROVENANCE.json": "1e8668b5580ac9f9867384534ff26727530e7fe057c6170659c7be31e5fd52ec"
+  },
+  "external_source_sha256": {
+    "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff",
+    "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "src/graphics/caelum/icons/materials/ca_material_plate.png": "e574f392b1458855f6f55a0a151afe94d5d717bef62e779aa9895442fe2264a7",
+    "src/graphics/caelum/icons/materials/ca_material_round_plate.png": "46afc549efa87795d69b835ac78334afcaa974513ad1703e5ef33b1be7251047",
+    "src/graphics/caelum/icons/materials/ca_material_kite_plate.png": "b8bbf211cec42ae1068a527bc4d796856542e9f4d64dbbef2cdd50ecc06ae145",
+    "src/graphics/caelum/icons/materials/ca_material_tower_plate.png": "10942f564a5b3f8e7dd363c65fb6b99244b0681e994a7bf567b8916df21ccd2b",
+    "src/graphics/caelum/icons/materials/ca_material_magic_plate.png": "74deb8a7a5f494b40ee9cdca69f9ae755f8b72cf4aa5e139dae43541c603bfa3",
+    "src/graphics/caelum/icons/materials/ca_material_large_plate.png": "1ec39ac36b71e0a6d3ef474d3924dfb9762efa812acbbfee3aa284a5385d8515",
+    "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04",
+    "src/caelum/core/CaelumConstants.zs": "08f5510cbf0dd058f9e45b3a46cc9fc0438c63dcdcc9769dbb60ef0a46d65dd4"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_plate_models.py": "10a423aae0e8e94c53250e2d76542190018be669d7c20df4290ade3de9ec00ef",
+    "generate_inventory_shield_models.py": "09a4318be02f74e071e8f90a9a485c533b41bbffc83400ed2f6770dead8ea05a"
+  },
+  "sha256": {
+    "models/caelum/inventory/plates/plate.md3": "c6221d9e446482a2e6df9464e390b66eddb95ee271d1c64f745c2a0ab1687eaf",
+    "editable/plate.obj": "c957433687c86644a72b8bdb3c918e0dbb9ecadb08fe9e9ea639b3ddfb52a592",
+    "models/caelum/inventory/plates/round_plate.md3": "4ab0f740564be441b8d072a3376a9d85dd994663e4f60d0d21e1524e8558032e",
+    "editable/round_plate.obj": "1f8227d5469af1004b85622f2d9989daa4301f28a04cee728c154495d3e36fc3",
+    "models/caelum/inventory/plates/kite_plate.md3": "1d0d47ab12fe88bb1d3e219dd086f41a099e50284acd61b962815b20606c7def",
+    "editable/kite_plate.obj": "653877c3c4e994787ccb85da2270e3f4ea5fb98ba066b4d76e41a3945b8452db",
+    "models/caelum/inventory/plates/tower_plate.md3": "4437878628fce581e99aea36e1102cd6cc7ab7368998bfa25a4b1f827345d846",
+    "editable/tower_plate.obj": "6a7cf49402d418b5cf3122c534e6324f6227d102d307cd1ba87a0558f6ff695b",
+    "models/caelum/inventory/plates/magic_plate.md3": "681cea6b544070a277df129f6631860155b59c69f41fa0172c2e384178df1510",
+    "editable/magic_plate.obj": "bcd80657fff866942baa688a7934b5b433cfab61c9c39e79a8181c23b7f3b1f8",
+    "models/caelum/inventory/plates/large_plate.md3": "07b9ede1cfd94c61a3355e4ff0085a5cb1e9349803c586ccd8f4fb62f5af43b2",
+    "editable/large_plate.obj": "e1b98c93fa2392256d82d386b119ea4c7dfcc1dd37a351e5d6968cfa4d475c25",
+    "editable/plates.mtl": "6ad74c06a26c59e901e6ad180756155b4f80aae5773f8aaeed310235d1d186aa",
+    "caelum/data/inventory_plates.modeldef": "d90173cbaca8711ca8b91bb3256453d6712b7739d8c3dddb159dea8b2da4a76d",
+    "models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff",
+    "models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "models/caelum/inventory/plates/plate.png": "e574f392b1458855f6f55a0a151afe94d5d717bef62e779aa9895442fe2264a7",
+    "models/caelum/inventory/plates/round_plate.png": "46afc549efa87795d69b835ac78334afcaa974513ad1703e5ef33b1be7251047",
+    "models/caelum/inventory/plates/kite_plate.png": "b8bbf211cec42ae1068a527bc4d796856542e9f4d64dbbef2cdd50ecc06ae145",
+    "models/caelum/inventory/plates/tower_plate.png": "10942f564a5b3f8e7dd363c65fb6b99244b0681e994a7bf567b8916df21ccd2b",
+    "models/caelum/inventory/plates/magic_plate.png": "74deb8a7a5f494b40ee9cdca69f9ae755f8b72cf4aa5e139dae43541c603bfa3",
+    "models/caelum/inventory/plates/large_plate.png": "1ec39ac36b71e0a6d3ef474d3924dfb9762efa812acbbfee3aa284a5385d8515"
+  }
+}

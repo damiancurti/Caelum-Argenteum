@@ -1,6 +1,55 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.29** - 2026-11-14.
+Documentation version: **5.17.30** - 2026-11-14.
+
+## 5.17.30 - Six metal plate crafting world props (#704, parent #647)
+
+Material IDs 11-16 gain candidate closed 3D world props: plate, round plate,
+kite plate, tower plate, magic plate and large plate. Exact CaelumMaterialPickup
+M011..M016 frame-A bindings retain the original shared appearance across all
+three tiers. Six original owned icon PNGs, native Scale 0.25, collision, stacking,
+mass, contamination, provenance and inventory behavior remain unchanged.
+Chainmail and the remaining crafting components are separate work.
+
+The models have 27 closed components, 9,292 source vertices, 18,512 triangles
+and 12 native surfaces. Curved metal backs, original painted faces and narrow
+edges reuse the #702 geometry backend without changing it. The large plate
+has four overlapping closed bands; its rear planes are slightly staggered to
+avoid coplanar overlap. Independent checks verify 21 positive-volume assembly
+witnesses, closed winding, native quantized triangle area and original sprite
+envelopes. Original fractional alpha exposes solid iron/bronze backing; no
+bitmap was repainted. Source softness, painted gaps and simplified curvature
+remain visible in closeups and require author art review.
+
+DESIGN/PROVENANCE/EXPORT, OBJ/MTL and byte-identical portable texture references
+live at assets/source/art/inventory_models_647/plates. Regenerate with python
+assets/generators/generate_inventory_plate_models.py --output build/plate-models
+--install. All 24 final export files repeat exactly. Staggering the large
+plate's back planes changes only that MD3/OBJ plus manifest/container; the other
+five designs remain identical. Sources and all earlier runtime art are intact.
+
+The first preview passes 469 assertions. A later redundant fixture collision
+check redeclared a local variable and failed compilation before any assertion;
+removing that duplicate restored the existing checks while retaining the new
+explicit class/frame/sprite assertion. Final native tests pass 2,597 checks:
+[487, 541, 487, 541, 541] across original sprites, old-save/model, fresh model, reload and
+reverse load. All 18 type/tier cases preserve split/merged quantities, typed
+ownership, contamination lot boundaries, provenance, Box-weight exclusion,
+temporary quest guards, native sprite/icon and collision. The fixture calls
+native APIs; ordinary menus, crafting and author acceptance remain separate.
+
+All six fronts and final rear-oblique views, selected edge/underside views,
+the floor overview and both presentation cohorts were inspected. Five unchanged
+front views reuse the byte-identical preview art. One qualified
+700-tic six-object sprite/model sample records 1126.92/1057.17 queue presents/s,
+p95 1.0888/1.1330 ms and p99 1.3519/1.3477 ms on the recorded Windows 11/Ryzen 9 5950X/RTX
+3070 Ti Vulkan environment at 1280x720, background unpaused and audio 5%.
+Different model/billboard footprints prevent equal-pixel cost claims; these
+queue intervals do not establish GPU/display timing or campaign/siege rendering.
+All 18,378 runtime entries match src, with thirteen new resources,
+MODELDEF and two release diagnostics as the only differences from #702.
+Evidence: assets/validation_v5_17_30/evidence/SUMMARY.json. CA704-PLATES-01 stays
+pending. Worn armor, recipes and balance are unchanged.
 
 ## 5.17.29 - Four native shield world models (#702, parent #647)
 

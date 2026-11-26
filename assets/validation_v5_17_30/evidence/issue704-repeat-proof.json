@@ -1,0 +1,10 @@
+{
+  "repeat_files": 24,
+  "changed_from02": [
+    "manifest.json",
+    "preview.pk3",
+    "editable/large_plate.obj",
+    "models/caelum/inventory/plates/large_plate.md3"
+  ],
+  "other_five_native_and_portable_models_unchanged": true
+}

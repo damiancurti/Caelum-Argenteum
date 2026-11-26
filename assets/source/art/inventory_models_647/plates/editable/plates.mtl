@@ -1,0 +1,24 @@
+newmtl iron
+Kd 1 1 1
+map_Kd src/models/caelum/actors/training/ca_training_dummy.png
+newmtl bronze
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/consumables/materials.png
+newmtl plate_front
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/plates/plate.png
+newmtl round_plate_front
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/plates/round_plate.png
+newmtl kite_plate_front
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/plates/kite_plate.png
+newmtl tower_plate_front
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/plates/tower_plate.png
+newmtl magic_plate_front
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/plates/magic_plate.png
+newmtl large_plate_front
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/plates/large_plate.png

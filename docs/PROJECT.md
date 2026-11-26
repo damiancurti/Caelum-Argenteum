@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.29** - 2026-11-14.
+Documentation version: **5.17.30** - 2026-11-14.
+
+## 5.17.30 - Six crafting plate world models (#704)
+
+Six metal plate materials gain candidate 3D props preserving existing icons,
+three tiers and inventory behavior. The large plate uses four overlapping
+bands. Independent geometry checks, 24 repeated exports and 2,597 native
+assertions cover all 18 type/tier combinations and both save directions.
+One qualified six-object comparison records 1126.92/1057.17 queue presents/s,
+p95 1.0888/1.1330 ms and p99 1.3519/1.3477 ms; it does not certify campaign/siege performance.
+CA704-PLATES-01 retains author art and ordinary-use acceptance. The broader
+campaign, characters, worn equipment and remaining world drops are unfinished.
 
 ## 5.17.29 - Native shield world props (#702)
 

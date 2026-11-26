@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.29** - 2026-11-14.
+Documentation version: **5.17.30** - 2026-11-14.
+
+## 5.17.30 - Six metal plate material models (#704, 2026-11-14)
+
+Applied the all-world-drops 3D request to material IDs 11-16 without changing
+icons, tiers, crafting recipes or balance. Original painted fronts cover
+closed curved iron/bronze backings. Twenty-seven components and 21 assembly
+witnesses include four overlapping large-plate bands with staggered rear
+planes. This corrects a geometric coplanarity risk; runtime flicker was not
+claimed as observed. Existing alpha and simplified closeup art remain pending
+author review.
+
+Preview: 469 assertions. A redundant later fixture local caused a compile
+failure before assertions; removing the duplicate fixed the fixture. Final
+native tests: 2,597 assertions across [487, 541, 487, 541, 541], all 18 type/tier combinations,
+stack split/merge, metadata and both save directions. Twenty-four exports
+repeat; all 18,378 package entries match src. One qualified 700-tic
+comparison records 1126.92/1057.17 queue presents/s, p95 1.0888/1.1330 ms and p99 1.3519/1.3477 ms;
+different footprints and queue-only timing limit the result. Evidence:
+assets/validation_v5_17_30/evidence/SUMMARY.json. CA704-PLATES-01 originates here
+and remains pending. The broader batch and worn equipment fitting are incomplete.
 
 ## 5.17.29 - Four shield world props (#702, 2026-11-14)
 

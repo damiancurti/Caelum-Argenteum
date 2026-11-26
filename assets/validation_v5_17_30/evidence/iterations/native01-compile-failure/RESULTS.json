@@ -1,0 +1,23 @@
+{
+  "issue": 704,
+  "kind": "plates",
+  "scope": "Native pickup/toss, quantity and saved ownership for plates; no normal menu or author acceptance.",
+  "baseline_sha256": "5b3ff9d0825a9a26b86375715a8244fc0545debe61723b67e57345d4898e44c8",
+  "runtime_sha256": "17e0ea4210dc5a617792fd6db16e23fc40fcf672b1ce7b507af740197cb7a8d7",
+  "model_sha256": null,
+  "fixture_sha256": "e03e927b9bc0c155d97fc8ba382a9b82f5b149ebe9df61b5dbf6563d0d789217",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 1,
+      "passed": false,
+      "errors": [
+        "Script error, \"fixture.pk3:zscript\" line 61:",
+        "Script error, \"fixture.pk3:zscript\" line 56:"
+      ],
+      "assertions": 0
+    }
+  ],
+  "captures": {}
+}
