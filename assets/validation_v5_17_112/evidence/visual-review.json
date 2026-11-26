@@ -1,0 +1,6 @@
+{
+  "images_explicitly_inspected": 1,
+  "image": "scene/peer0/scene.png",
+  "observations": "Native1280x720 view remains at the gate toward the small ram, with existing masonry/wood/actors and HUD; no new scene art or geometry. The completion marker is visible. A static frame cannot establish fluency. Prior reference visuals retain their original review records in validation110/111.",
+  "author_acceptance": false
+}

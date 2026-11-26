@@ -1,0 +1,20 @@
+{
+  "native_crash_observation": {
+    "tool": "Windows CUA accessibility",
+    "title": "GZDoom Very Fatal Error",
+    "code": "C0000005",
+    "operation": "read",
+    "address": "0x40000000",
+    "instruction_address": "0x7ff7e764e555",
+    "run": "upgrade02",
+    "external_report_sent": false
+  },
+  "chained_assertion": "CaelumContaminationContacts.Get(SavedPair.First).Pairs[0]==SavedPair && CaelumContaminationContacts.Get(SavedPair.Second).Pairs[0]==SavedPair",
+  "interpreter": "The old expression also aborts with a null-address VM error under vm_jit=false and vm_jit_aot=false (seed-interpreter01); not demonstrated as JIT-only.",
+  "correction": "Store both method results in local references, validate each non-null record and nonempty list, then compare pair identities. Full and minimal reload/reversal pass. No production method changed; the underlying engine/compiler cause was not isolated beyond the failing diagnostic expression.",
+  "other_failures": [
+    "seed-control02 diagnostic Name/String ternary did not compile; corrected to Name literal.",
+    "reload01 and rollback01 were refused by the single-engine guard before process launch; their empty local output directories remain.",
+    "upgrade01 was timed out by the original runner whose JSON error list was empty; passed=false and exit1 remain authoritative. The revised runner records timeout explicitly."
+  ]
+}

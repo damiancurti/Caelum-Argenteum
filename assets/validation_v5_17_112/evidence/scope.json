@@ -1,0 +1,21 @@
+{
+  "issue": 868,
+  "baseline_sha256": "8759722962a6bee612d347b671610045b6aee59f447af029a6ef83963d72c5c4",
+  "runtime_sha256": "28e29704db5bb6d145ce6ad1a2aa5160b41627e7697fefbfe76af0f3669f46cb",
+  "members": 18767,
+  "changed": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "unchanged_members": 18765,
+  "only_changes": "Two release diagnostic strings:5.17.111 to5.17.112",
+  "production_endpoints_unchanged": true,
+  "author_queue_sha256": "87f8a2095c9f53248a5395764e9c870ecadde5611e2343664a65f6acc98084df",
+  "author_queue_unchanged": true,
+  "reference_performance": "assets/validation_v5_17_111/evidence/performance.json",
+  "performance_reuse": "All production bytes apart from two release diagnostic labels are exact. Reuse prior uninstrumented mansion, Justice/sewer-consumer, peaceful city and ground windows with their original111 hash and recorded limitations. A final112 normal-siege window is recorded separately; do not describe the reused windows as112 executions.",
+  "sewer_reference_runtime_sha256": "1a0b1348399d3afe0e84418e54dd9c5b012fee17756eb57ccaf2faad5d30fad5",
+  "sewer_reference_performance": "assets/validation_v5_17_110/evidence/production-performance.json",
+  "sewer_relation": "110->112 has only the same two release diagnostic label changes; normal sewer reference is reused transparently.",
+  "public_prototypes_reproduce_original_bytes": true
+}

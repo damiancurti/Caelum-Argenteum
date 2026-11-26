@@ -1,0 +1,20 @@
+{
+  "issue": 868,
+  "event": "seed",
+  "passed": false,
+  "exit_code": 1,
+  "checks": 0,
+  "errors": [
+    "VM execution aborted: tried to read from address zero."
+  ],
+  "benchmark": [],
+  "runtime_sha256": "8759722962a6bee612d347b671610045b6aee59f447af029a6ef83963d72c5c4",
+  "reference_runtime_sha256": "8759722962a6bee612d347b671610045b6aee59f447af029a6ef83963d72c5c4",
+  "candidate_sha256": null,
+  "fixture_sha256": "6204b151e58bbaef2f1e0f8ccb221a3a5005539c33a5546875e32e3f1e6e0b9d",
+  "checks_sha256": "c8a786c699c654e0b571c9fb1fde36f47c86f05653a7d46533a16b22b7bbcf0e",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "input_save_sha256": "b5bfc529059fea4f1ea6bd0b24fd0ad7b9eeeaba992b053c10a9ec264f55b1c9",
+  "output_save_sha256": null,
+  "qualification": "Private counterfactual comparison and alternating repeated-call timer, not full-scene throughput. Saved probe bodies disable Tick and use bMissile to isolate concentration from background exposure; the saved contact subclass disables automatic Tick, but inherits the production Exchange and transient endpoint fields. Exact production references remain in reference.zs."
+}

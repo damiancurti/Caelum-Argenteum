@@ -1,0 +1,74 @@
+{
+  "issue": 868,
+  "passed": true,
+  "exit_code": 0,
+  "checks": 1144,
+  "errors": [],
+  "benchmark": [
+    {
+      "type": "CA868GateProbe",
+      "armor": 0,
+      "calls": 160000,
+      "original_ms": 4.7046,
+      "candidate_ms": 1.3467
+    },
+    {
+      "type": "CA868VehicleProbe",
+      "armor": 0,
+      "calls": 160000,
+      "original_ms": 4.7667,
+      "candidate_ms": 1.9325
+    },
+    {
+      "type": "CA868NpcProbe",
+      "armor": 0,
+      "calls": 160000,
+      "original_ms": 4.9245,
+      "candidate_ms": 6.1328
+    },
+    {
+      "type": "CA868NpcProbe",
+      "armor": 1,
+      "calls": 160000,
+      "original_ms": 3.6505,
+      "candidate_ms": 4.8776
+    },
+    {
+      "type": "CA868RatProbe",
+      "armor": 0,
+      "calls": 160000,
+      "original_ms": 5.1597,
+      "candidate_ms": 6.2431
+    },
+    {
+      "type": "CaelumMaterialPickup",
+      "armor": 0,
+      "calls": 160000,
+      "original_ms": 7.9915,
+      "candidate_ms": 9.0706
+    },
+    {
+      "type": "CaelumShopSign",
+      "armor": 0,
+      "calls": 160000,
+      "original_ms": 4.7952,
+      "candidate_ms": 5.8013
+    },
+    {
+      "type": "CaelumPlayer",
+      "armor": 0,
+      "calls": 160000,
+      "original_ms": 30.9645,
+      "candidate_ms": 35.3351
+    }
+  ],
+  "runtime_sha256": "8759722962a6bee612d347b671610045b6aee59f447af029a6ef83963d72c5c4",
+  "reference_runtime_sha256": "8759722962a6bee612d347b671610045b6aee59f447af029a6ef83963d72c5c4",
+  "candidate_sha256": "ffebec2e9e3f83365ae94d19f74ae047db16fb6544d30ead5a9c1d9e3320dde6",
+  "fixture_sha256": "9a395817241c76dce3ab5507c3da467732182651b040b7af5da687fab62606d3",
+  "checks_sha256": "37b65e783bac3beab098258e58ab203cade76e547c71ad8532b8a8fc5c9176fc",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "input_save_sha256": null,
+  "output_save_sha256": "643c16fcd4125ce34d23ebb19ee79897186bf7bdb61bc15f9c10872fc61c4a43",
+  "qualification": "Private counterfactual comparison and alternating repeated-call timer, not full-scene throughput. Saved probe bodies disable Tick and use bMissile to isolate concentration from background exposure; the saved contact subclass disables automatic Tick, but inherits the production Exchange and transient endpoint fields. Exact production references remain in reference.zs."
+}

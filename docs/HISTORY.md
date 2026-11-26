@@ -1,6 +1,79 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.111** - 2026-11-21.
+Documentation version: **5.17.112** - 2026-11-21.
+
+## 5.17.112 - Measure endpoint setup and retain the shared production path (#868, #454)
+
+Production choice: retain the existing Exterior/ActorPoint path. This is a
+diagnosis delivery, not an implemented optimization. Runtime SHA-256:
+28e29704db5bb6d145ce6ad1a2aa5160b41627e7697fefbfe76af0f3669f46cb.
+Relative to both110 and111, only the two release-diagnostic strings differ;
+18,765 of18,767 members are identical, including all endpoint logic and assets.
+
+The immutable111 deep profile sampled42 tics at period17 in the approved normal
+siege. Inclusive means: Contact.Exchange3.446448ms, Transfer2.068702ms,
+Value1.250940ms, Exterior0.816762ms and ActorPoint0.439310ms. Exterior had149,637
+sampled calls. Nested timers include lookup/wrapper overhead and are not additive
+or production CPU budgets. No retired6000 case was run.
+
+The native-family-first prototype passed1,144 comparisons but increased bare-NPC
+repeated-call time from4.9245 to6.1328ms and armored NPC from3.6505 to4.8776ms per
+160,000 calls; rats/materials/signs/player also regressed in that window. Gate
+4.7046->1.3467 and vehicle4.7667->1.9325 do not justify penalizing the other paths.
+That prototype is rejected.
+
+Inline-only removes one terminal call while preserving its exact four-line body.
+In the corrected fresh run, gate4.7136->4.3186 and vehicle4.7893->4.4141ms per
+160,000 calls; the unchanged-code control already shows gate4.7223->4.5298 and
+vehicle4.7931->4.6192ms. Repeated reload/rollback controls are retained. Alternating
+16 rounds/10,000 calls per side reduces order bias but does not remove function
+layout, loop, timer or warm-cache effects. These tiny absolute differences do not
+establish a full-scene gain; shared live guards are retained instead of duplicated.
+
+Five corrected runs pass5,744 assertions: baseline/fresh1,144 each and prototype
+upgrade/reload/original rollback1,152 each. They cover fresh/reused points, null,
+Box/closed-chest/contained-rock rejection, player mass/outer surface, NPC armor,
+fur/bare body, stale Record/Body/Dose reset, all four slots, native piece families,
+both transfer directions/equality, body versus vertical-support area, saved
+individual concentrations, symmetric contact links and lazy transient rebuild.
+The portable runner additionally reloads the final112 package with9 checks:
+5,753 corrected full/final assertions, all with clean process exit.
+Probe bodies disable Tick and use bMissile to isolate environmental exposure;
+the saved contact subclass disables automatic Tick but inherits production
+Exchange and transient fields. This does not prove normal free-running collision
+or whole-campaign save acceptance. No production behavior changed.
+
+Rejected diagnostics remain explicit. The original chained returned-object/list
+assertion caused native C0000005 read0x40000000 or a VM null-address abort on load.
+The same old assertion aborts with vm_jit and vm_jit_aot disabled; it is not proven
+JIT-only. Local record references plus null/size checks remove the observed
+failure in minimal and full runs. No record was missing in the corrected load;
+the underlying engine/compiler cause was not further isolated. A diagnostic
+Name/String ternary also failed compilation before correction. Two attempted
+follow-on launches were refused by the single-engine guard before launch. The
+first timeout JSON had errors[] but passed=false/exit1 and is not counted as pass;
+the maintained runner explicitly records timeout/native-dialog uncertainty.
+
+Windows11/Ryzen9 5950X/RTX3070Ti, GZDoom4.14.2, Vulkan1280x720, unpaused
+background and5% audio. The unchanged-source mansion/city/ground111 and normal
+sewer110 windows are reused with original hashes; they are not claimed as112
+executions. Only the final normal-siege row is newly run with112. QueuePresent
+is not monitor scanout, and tic interval tails include pacing/frame work rather
+than isolated simulation CPU time. No causal production speedup is claimed.
+
+| Window (original release retained) | Queue presents/s | Present p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| mansion-control01 (111) | 72.341 | 15.700 / 17.183 / 20.174 | 28.561 / 39.266 / 40.833 / 41.882 |
+| city-control01 (111) | 105.049 | 10.636 / 11.814 / 14.327 | 28.574 / 36.121 / 37.371 / 37.999 |
+| ground-control01 (111) | 77.753 | 14.782 / 15.762 / 17.644 | 28.568 / 38.030 / 39.752 / 42.635 |
+| sewers-final01 (110) | 178.420 | 7.330 / 8.170 / 39.478 | 28.572 / 32.476 / 34.256 / 45.980 |
+| siege-final01 (112) | 2.029 | 538.550 / 543.214 / 543.214 | 29.614 / 44.690 / 48.697 / 68.045 |
+
+The final siege keeps the approved1,000-attacker/600-defender scenario; its actual
+census and observer state are retained separately. Overall siege fluency remains
+unresolved. No author test is added or removed, and no author acceptance is
+inferred. Reproducible tools/evidence: assets/validation_v5_17_112; CA-KP-268.
+Full project validation passes with no errors; the document index is current.
 
 ## 5.17.111 - Recover the author-provided environment remasters for review (#866, #463)
 
