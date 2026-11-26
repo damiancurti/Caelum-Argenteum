@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.15** - 2026-11-13.
+Documentation version: **5.17.16** - 2026-11-13.
+
+## #676 - Support-book model reuse (5.17.16)
+
+Three class/CBOO/A bindings reuse the unchanged #656 book mesh. Final native
+compatibility/equip/stack checks pass 713 assertions, with automatic pickup
+equip preserved. Three exports repeat, all 18,234 package entries match src,
+and nine-book presentation plus final views are recorded in ASSETS/evidence.
+Retain CA676-BOOKS-01 and earlier author checks; other #647 states remain pending.
 
 ## #674 - Jewelry drop models (5.17.15)
 

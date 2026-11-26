@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.15** - 2026-11-13.
+Documentation version: **5.17.16** - 2026-11-13.
+
+## 5.17.16 - Support-book and component model reuse (#676)
+
+Three focused bindings reuse the original owned book mesh for current support
+books, their legacy quest subclass and book-base materials. The existing art
+and gameplay rules are preserved; broader weapon/character conversion remains
+unfinished. ASSETS records native evidence and pending CA676-BOOKS-01 review.
 
 ## 5.17.15 - Jewelry drop models (#674)
 

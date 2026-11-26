@@ -1,0 +1,147 @@
+{
+  "schema_revision": 1,
+  "issue": 676,
+  "parent_issue": 647,
+  "status": "native_candidate_pending_author_review",
+  "model_path": "models/caelum/inventory/documents",
+  "materials": {
+    "gold": {
+      "texture": "models/caelum/inventory/consumables/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        640,
+        326,
+        928,
+        614
+      ]
+    },
+    "iron": {
+      "texture": "models/caelum/actors/training/ca_training_dummy.png",
+      "image_size": [
+        512,
+        256
+      ],
+      "rect_pixels": [
+        264,
+        136,
+        376,
+        248
+      ]
+    },
+    "red": {
+      "texture": "models/caelum/inventory/consumables/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        16,
+        956,
+        65,
+        1006
+      ]
+    },
+    "leather": {
+      "texture": "models/caelum/inventory/consumables/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        12,
+        302,
+        302
+      ]
+    },
+    "blue": {
+      "texture": "models/caelum/props/stations/ca_station_cloth.png",
+      "image_size": [
+        128,
+        128
+      ],
+      "rect_pixels": [
+        0,
+        0,
+        128,
+        128
+      ]
+    },
+    "paper": {
+      "texture": "models/caelum/equipment/support_implements/paper_0.png",
+      "image_size": [
+        64,
+        64
+      ],
+      "rect_pixels": [
+        0,
+        0,
+        64,
+        64
+      ]
+    },
+    "linen": {
+      "texture": "models/caelum/folklore/pombero461/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        21.945000000000004,
+        324.47249999999997,
+        605.055,
+        616.0275
+      ]
+    }
+  },
+  "variants": {
+    "book": {
+      "family": "book",
+      "tier": "base",
+      "class": "CaelumWeaponPickup",
+      "sprite": "CBOO",
+      "reference": "src/graphics/caelum/icons/ca_book.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "additional_bindings": [
+        {
+          "class": "CA_LimboMagicImplement",
+          "sprite": "CBOO",
+          "inventory": true
+        },
+        {
+          "class": "CaelumMaterialPickup",
+          "sprite": "CBOO",
+          "inventory": true
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "assets/generators/generate_inventory_document_models.py": "f62ccbf2f7812fc91efda5a0cf8fffb89e7fb239aaef72b659a564b80bea8541",
+    "assets/source/art/inventory_models_647/documents/DESIGN.json": "33e580db7c01373d75dfd0b5b5ac526d73519841cf2a0f174a28fab2c6db55b5",
+    "assets/source/art/inventory_models_647/documents/EXPORT.json": "49c58fc3c63d335c569ed8e358fb6e23130b12ba8dddbb5b3c76fc4aea9f153d",
+    "assets/source/art/inventory_models_647/documents/PROVENANCE.json": "a394355d8dc359d1d82cf281b2d008a0ca3df7de64090c3c1e864c0deac7d071",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04",
+    "src/caelum/equipment/CaelumSupportArt.zs": "5933f0ea55b94e5d30894501d7e1ac590a03ef35844a3677370328d79d474762",
+    "src/graphics/caelum/icons/ca_book.png": "02457fa302004e61899e38293c0fe3148deac32b2f541f1506f9a6b4fea42acd",
+    "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff",
+    "src/models/caelum/equipment/support_implements/paper_0.png": "bd21c6ec26062a3346df51e76b4d2769725487f53cc71742347b863d67cb6df2",
+    "src/models/caelum/folklore/pombero461/materials.png": "6d72eeb0a43b98a279fb3119f28b06bffd5d353e9e39da0ab8036559e06f62cc",
+    "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "src/models/caelum/inventory/documents/book.md3": "b61151ce14971ca16900341189f3a87a7880cb4fc8c2aa296dd84a2260bf57d8",
+    "src/models/caelum/props/stations/ca_station_cloth.png": "0e1d06ccc24a99753bcce3653856ba6477b7ee2bf5342d2680272e901bcd523e"
+  },
+  "source_export": "assets/source/art/inventory_models_647/documents/EXPORT.json",
+  "source_variant": "book",
+  "scope": "Three bindings reuse the existing #656 blue/gold sun-covered book for current support-book type23, its legacy quest subclass and material book-base38. All three qualities retain their original shared world artwork.",
+  "dimensions_note": "Original actor scales, collision and the original image-fitted model remain unchanged. No physical-size interpretation or first-person conversion.",
+  "exclusion": "Does not reactivate rejected #479 models or retire/change valid Quintessence support rules. Old offensive IDs18/19 keep their current Scepter/Orb meaning; invalid old Quintessence offensive trial pieces are not restored."
+}

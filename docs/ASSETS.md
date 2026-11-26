@@ -1,6 +1,51 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.15** - 2026-11-13.
+Documentation version: **5.17.16** - 2026-11-13.
+
+## 5.17.16 - Support-book and component model reuse (#676, parent #647)
+
+Three explicit CBOO/A bindings reuse the unchanged #656 book.md3 for
+CaelumWeaponPickup, CA_LimboMagicImplement and CaelumMaterialPickup. Current
+support-book type 23 and book-base material 38 resolve the same original
+ca_book.png blue/gold sun-covered art; all three qualities keep that shared
+world representation. Ordinary/legacy weapon identity and material stack
+identity remain distinct. No support ability, recipe, icon, mass, collision,
+actor scale, ownership, saved field or first-person presentation changes.
+Rejected #479 implement models remain inactive; old offensive IDs 18/19 retain
+their current Scepter/Orb meaning. Invalid old trial equipment is not restored.
+
+The reused model has 14,096 vertices, 5,120 triangles and 28 closed editable
+components. Original parametric controls remain in the documents/DESIGN.json
+under assets/source/art/inventory_models_647; the original document generator
+recreates editable/book.obj and documents.mtl in its selected output directory.
+Those generated OBJ/MTL files are not claimed as tracked original sources.
+New reuse hashes/provenance live in assets/source/art/inventory_models_647/books.
+Rebuild its binding with python assets/generators/generate_inventory_book_bindings.py
+--output build/book-bindings --install. No mesh or bitmap is duplicated or edited.
+
+The corrected isolated visual fixture passes 160 checks across three qualities
+of each of the three classes. Native weapon pickup automatically equips a
+compatible book; the first fixture bypassed unequip before direct CreateTossable
+and incorrectly expected an unequipped world flag (142 passes, six failures).
+The corrected fixture asserts automatic equip, invokes native unequip, then
+tests drop; production behavior is unchanged. Final complete-package native
+checks pass 713 assertions: 160/131/160/131/131 across baseline, previous-save/
+new-binding, fresh/new-binding, reload and rollback. Native equip/unequip,
+weapon identity/durability, material split/merge, provenance, contamination,
+quest/Box guards and original physical properties remain intact. Three exports
+repeat exactly; all 18,234 package entries match src. Only the new binding file,
+root MODELDEF include and two release diagnostics differ from #674. Every
+original mesh, PNG and gameplay byte is retained; project/focused validation pass.
+
+One isolated 700-tic nine-book pair records 1172.29/1124.36 queue presents/s for
+sprites/models, p95 1.0380/1.0902 ms and p99 1.2525/1.3244 ms. Both cohorts and final
+front/side/oblique/rear/overview views were inspected. Environment: Windows 11
+Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720,
+uncapped, vsync off, background unpaused, 5% audio. Queue intervals do not
+establish GPU/display timing, repeatability or campaign/crowd acceptance.
+Evidence: assets/validation_v5_17_16/evidence/SUMMARY.json. Author appearance and
+ordinary-menu review remain pending as CA676-BOOKS-01. No new casting/crafting
+acceptance is claimed; their production rules remain unchanged.
 
 ## 5.17.15 - Volumetric amulet and seal drops (#674, parent #647)
 

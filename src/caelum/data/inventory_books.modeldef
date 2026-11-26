@@ -1,0 +1,3 @@
+Model CaelumWeaponPickup { Path "models/caelum/inventory/documents" Model 0 "book.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CBOO A 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/documents" Model 0 "book.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CBOO A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/documents" Model 0 "book.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CBOO A 0 0 }

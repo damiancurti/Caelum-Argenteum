@@ -1,0 +1,143 @@
+version "4.14.2"
+// #676: el mismo libro conserva sus identidades de arma y componente.
+class CA676BookCamera : Actor
+{Default {CameraHeight 0;Height 0;Radius 0;+NOINTERACTION +NOGRAVITY} States {Spawn:TNT1 A -1;Stop;}}
+class CA676BookEvents : EventHandler
+{
+    Array<Inventory> Drops;
+    Array<CaelumMaterialPickup> Remainders;
+    Array<int> Ids,Durabilities;
+    Array<double> Weights;
+    Array<String> Icons;
+    CA676BookCamera Camera;
+    int Failures,DetailIndex,DetailAngle;
+    void Check(bool okay,String label)
+    {if(!okay)Failures++;Console.Printf("CA676 %s %s",okay?"PASS":"FAIL",label);}
+    CaelumCompanionHistory History(Inventory item)
+    {
+        let equipment=CaelumEquipmentItem(item);if(equipment!=null)return equipment.CompanionHistory;
+        let material=CaelumMaterialPickup(item);return material!=null?material.CompanionHistory:null;
+    }
+    bool Provenance(Inventory item,int index)
+    {let h=History(item);return h!=null && h.Records.Size()==1 && h.Records[0].RefusedStage==index+10;}
+    CaelumEquipmentItem ExactOwned(CaelumPlayer user,int index)
+    {
+        for(Inventory entry=user.Inv;entry!=null;entry=entry.Inv)
+        {let item=CaelumEquipmentItem(entry);if(item!=null && Provenance(item,index))return item;}
+        return null;
+    }
+    void Verify()
+    {
+        Check(Drops.Size()==9 && Remainders.Size()==9 && Ids.Size()==9,"three native book classes and all qualities retained");
+        let user=CaelumPlayer(players[0].mo);
+        for(int i=0;i<Drops.Size();i++)
+        {
+            let item=Drops[i];String label=String.Format("book %d",i);bool weapon=i<6;int tier=i%3+1;
+            Check(item!=null,label.." saved reference");if(item==null)continue;
+            let equipment=CaelumEquipmentItem(item);let material=CaelumMaterialPickup(item);
+            Check(item.Owner==null && item.Amount==(weapon?1:2),label.." original world quantity and ownership");
+            Check(item.sprite==Actor.GetSpriteIndex("CBOO") && item.frame==0 && TexMan.GetName(item.Icon)==Icons[i],label.." unchanged icon and book state");
+            let defaults=GetDefaultByType(item.GetClass());
+            Check(item.Radius==defaults.Radius && item.Height==defaults.Height && item.Scale==defaults.Scale && Abs(item.Pos.Z-item.floorz)<.01,label.." original scale, collision and floor contact");
+            Check(Provenance(item,i),label.." copied provenance");
+            if(weapon)
+            {
+                Check(equipment.ItemType==CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK && equipment.Tier==tier && equipment.EssenceType==CaelumConstants.ESSENCE_QUINTESSENCE,label.." native support-book identity");
+                Check(equipment.UnitWeight==Weights[i] && equipment.GetCarriedWeight()==Weights[i],label.." original weapon weight");
+                Check(equipment.ItemId==Ids[i] && Ids[i]>0 && ExactOwned(user,i)==null,label.." independent saved item identity");
+                Check(!equipment.InMagicBox && !equipment.Equipped && equipment.ItemFlags==0,label.." original world flags");
+                Check(equipment.Durability==Durabilities[i] && equipment.EquipmentSize==CaelumConstants.EQUIPMENT_SIZE_M,label.." native durability and size");
+            }
+            else
+            {
+                Check(material.GetSpecialType()==CaelumConstants.MATERIAL_BOOK_BASE && material.GetSpecialTier()==tier,label.." native component identity");
+                Check(material.GetUnitWeight()==Weights[i],label.." original component unit weight");
+                let held=Remainders[i];Check(held!=null && held.Owner==user && held.Amount==3 && user.FindNativeSpecialItem(CaelumConstants.EQUIPMENT_KIND_MATERIAL,CaelumConstants.MATERIAL_BOOK_BASE,tier)==held,label.." distinct retained stack");
+                Check(!material.InMagicBox && material.LimboQuestUnits==0 && CaelumContaminationStack.Value(material)>0,label.." original material flags and contamination");
+            }
+        }
+        Console.Printf("CA676 COMPLETE failures=%d",Failures);
+    }
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name=="ca676_prepare")
+        {
+            let user=CaelumPlayer(players[0].mo);user.CharacterCreationComplete=true;user.CreationWizardOpen=false;
+            static const class<Inventory> kinds[]={'CaelumWeaponPickup','CA_LimboMagicImplement','CaelumMaterialPickup'};
+            for(int i=0;i<9;i++)
+            {
+                String label=String.Format("book %d",i);bool weapon=i<6;int tier=i%3+1;
+                let incoming=Inventory(Actor.Spawn(kinds[i/3],(0,0,0),NO_REPLACE));incoming.args[0]=weapon?CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK:CaelumConstants.MATERIAL_BOOK_BASE;incoming.args[1]=tier;incoming.args[4]=CaelumConstants.ESSENCE_QUINTESSENCE+1;incoming.Amount=weapon?1:5;
+                let history=new('CaelumCompanionHistory');history.Revision=1;let record=new('CaelumCompanionItemRecord');record.RefusedStage=i+10;history.Records.Push(record);
+                if(weapon)CaelumEquipmentItem(incoming).CompanionHistory=history;
+                else{CaelumMaterialPickup(incoming).CompanionHistory=history;CaelumContaminationStack.Set(incoming,25+i);CaelumMaterialPickup(incoming).UpdateMaterialVisuals();}
+                user.DerivedStats.CarryCapacity=10000;Check(incoming.CallTryPickup(user),label.." native pickup");Inventory owned;
+                if(weapon)owned=ExactOwned(user,i);else owned=user.FindNativeSpecialItem(CaelumConstants.EQUIPMENT_KIND_MATERIAL,CaelumConstants.MATERIAL_BOOK_BASE,tier);
+                Check(owned!=null && owned.Amount==(weapon?1:5),label.." exact native ownership");if(owned==null)continue;
+                Icons.Push(TexMan.GetName(owned.Icon));Inventory drop;
+                if(weapon)
+                {
+                    let item=CaelumEquipmentItem(owned);Ids.Push(item.ItemId);Durabilities.Push(item.Durability);Weights.Push(item.UnitWeight);Remainders.Push(null);
+                    Check(item.ItemId>0,label.." assigned persistent identity");item.InMagicBox=true;Check(item.GetCarriedWeight()==0,label.." Box excludes carried mass");item.InMagicBox=false;
+                    item.ItemFlags=CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;Check(item.CreateTossable(1)==null,label.." temporary quest guard");item.ItemFlags=0;
+                    drop=item.CreateTossable(1);Check(drop!=null,label.." native weapon toss");Check(ExactOwned(user,i)==null,label.." exact weapon leaves inventory");
+                }
+                else
+                {
+                    let item=CaelumMaterialPickup(owned);Ids.Push(0);Durabilities.Push(0);Weights.Push(item.GetUnitWeight());Remainders.Push(item);
+                    item.InMagicBox=true;Check(item.GetCarriedWeight()==0,label.." Box excludes carried mass");item.InMagicBox=false;
+                    item.LimboQuestUnits=1;Check(item.CreateTossable(2)==null,label.." temporary quest guard");item.LimboQuestUnits=0;
+                    drop=item.CreateTossable(2);Check(drop!=null,label.." native component split");Check(item.Amount==3,label.." native split remainder");
+                }
+                if(drop!=null){drop.SetOrigin(((i%3-1)*40,(i/3-1)*48,0),false);Drops.Push(drop);}
+            }
+            Camera=CA676BookCamera(Actor.Spawn('CA676BookCamera',(0,-160,150),NO_REPLACE));Camera.Angle=90;Camera.Pitch=40;players[0].camera=Camera;user.bInvisible=true;
+            let hud=CaelumHUDOverlay(EventHandler.Find('CaelumHUDOverlay'));if(hud!=null)hud.HUDFont=null;
+        }
+        if(e.Name=="ca676_verify")Verify();
+        if(e.Name=="ca676_pickup")
+        {
+            let user=CaelumPlayer(players[0].mo);
+            for(int i=0;i<Drops.Size();i++)
+            {
+                String label=String.Format("book %d",i);user.DerivedStats.CarryCapacity=10000;Check(Drops[i].CallTryPickup(user),label.." native repickup");
+                if(i<6)
+                {
+                    let owned=user.FindNativeEquipmentItemById(Ids[i]);Check(owned!=null && owned.Tier==i%3+1 && Provenance(owned,i),label.." recovered exact weapon metadata");if(owned==null)continue;
+                    user.EquipmentSelectionItemId=owned.ItemId;user.EquipmentSelectionKind=owned.EquipmentKind;user.EquipSelectedNativeEquipment();
+                    Check(owned.Equipped && user.ActiveWeaponItemId==owned.ItemId && user.WeaponModel.EssenceType==CaelumConstants.ESSENCE_QUINTESSENCE,label.." native support equip");
+                    user.UnequipSelectedNativeEquipment();Check(!owned.Equipped,label.." native unequip");
+                    let drop=CaelumEquipmentItem(owned.CreateTossable(1));Check(drop!=null && drop.ItemId==Ids[i] && drop.Tier==i%3+1,label.." second weapon toss");Drops[i]=drop;
+                }
+                else
+                {
+                    let owned=CaelumMaterialPickup(user.FindNativeSpecialItem(CaelumConstants.EQUIPMENT_KIND_MATERIAL,CaelumConstants.MATERIAL_BOOK_BASE,i%3+1));
+                    Check(owned!=null && owned.Amount==5 && owned.GetSpecialTier()==i%3+1,label.." same-tier native merge");if(owned==null)continue;
+                    Check(Provenance(owned,i) && CaelumContaminationStack.Value(owned)>0,label.." component provenance and contamination");
+                    let drop=CaelumMaterialPickup(owned.CreateTossable(2));Check(drop!=null && drop.Amount==2 && owned.Amount==3 && drop.GetSpecialTier()==i%3+1,label.." second component split");Drops[i]=drop;Remainders[i]=owned;
+                }
+            }
+            Check(Drops.Size()==9,"all book representations retained after native use");Console.Printf("CA676 COMPLETE failures=%d",Failures);
+        }
+        if(e.Name=="ca676_view")
+        {
+            for(int i=0;i<Drops.Size();i++)Drops[i].bInvisible=false;
+            if(e.Args[0]==4)players[0].camera=players[0].mo;else players[0].camera=Camera;players[0].mo.bInvisible=e.Args[0]!=4;
+            let hud=CaelumHUDOverlay(EventHandler.Find('CaelumHUDOverlay'));if(hud!=null){if(e.Args[0]==4)hud.HUDFont=Font.GetFont("CaelumMono");else hud.HUDFont=null;}
+            Camera.SetOrigin(e.Args[0]==2?(160,0,70):e.Args[0]==7?(0,160,70):e.Args[0]==1?(0,-160,30):(0,-160,150),false);
+            Camera.Angle=e.Args[0]==2?180:e.Args[0]==7?270:90;Camera.Pitch=e.Args[0]==1?5:e.Args[0]==2 || e.Args[0]==7?20:40;Camera.ClearInterpolation();
+        }
+        if(e.Name=="ca676_detail" || e.Name=="ca676_next" || e.Name=="ca676_rotate")
+        {
+            if(Drops.Size()!=9)return;
+            if(e.Name=="ca676_detail"){DetailIndex=e.Args[0];DetailAngle=e.Args[1];}
+            if(e.Name=="ca676_next")DetailIndex=(DetailIndex+1)%3;
+            if(e.Name=="ca676_rotate")DetailAngle=(DetailAngle+90)%360;
+            if(DetailIndex<0 || DetailIndex>=3)return;int selected=DetailIndex*3;
+            for(int i=0;i<Drops.Size();i++)Drops[i].bInvisible=i!=selected;
+            static const double extents[]={108.07017543859648,108.07017543859648,108.07017543859648};static const double heights[]={8.007017543859648,8.007017543859648,8.007017543859648};
+            let item=Drops[selected];double distance=max(9.,extents[DetailIndex]*item.Scale.X*1.4);double angle=DetailAngle;vector3 center=item.Pos+(0,0,heights[DetailIndex]*item.Scale.Y);
+            Camera.SetOrigin(center+(-cos(angle)*distance,-sin(angle)*distance,distance*.4),false);Camera.Angle=angle;Camera.Pitch=21.801409;players[0].camera=Camera;Camera.ClearInterpolation();
+        }
+    }
+}

@@ -1,0 +1,324 @@
+{
+  "issue": 676,
+  "parent_issue": 647,
+  "version": "5.17.16",
+  "date": "2026-11-13",
+  "author_accepted": false,
+  "scope": "Three exact class/CBOO/A bindings reuse the original #656 blue/gold sun-covered book for current support-book type23, legacy CA_LimboMagicImplement and book-base material38. All three qualities retain their original shared world art.",
+  "runtime": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-676\\build\\issue676-books01.pk3",
+    "sha256": "b5c69300c222b1a7527f0d0cd8617d0b40ee3b58fa420f4fd796f6d61beb5797",
+    "source_entries": 18234,
+    "mismatches": []
+  },
+  "baseline": {
+    "sha256": "8b0d53fca44f3bfb4ba1fb85a7accab795b129c05da2702f792aaf3ffce74faf",
+    "new_resources": [
+      "caelum/data/inventory_books.modeldef"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 3,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "reused_vertices": 14096,
+    "reused_triangles": 5120,
+    "reused_closed_components": 28,
+    "checks": [
+      "Exact original book mesh/material/source hashes",
+      "Three exact class/sprite/A bindings and original scale",
+      "Native MD3 bounds, UVs, shaders and triangles",
+      "Rejected #479 implementation remains inactive",
+      "Four observer count-guard cases",
+      "Project validation"
+    ],
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 676,
+    "kind": "books",
+    "scope": "Native pickup/toss, quantity and saved ownership for books; no normal menu or author acceptance.",
+    "baseline_sha256": "8b0d53fca44f3bfb4ba1fb85a7accab795b129c05da2702f792aaf3ffce74faf",
+    "runtime_sha256": "b5c69300c222b1a7527f0d0cd8617d0b40ee3b58fa420f4fd796f6d61beb5797",
+    "model_sha256": null,
+    "fixture_sha256": "0fecd1453f3bc5b708c720ecc0ae0d5d9169c50aefcca4275c6941f183a4b2c8",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 160
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 131
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 160
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 131
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 131
+      }
+    ],
+    "captures": {
+      "baseline.png": "80c1f6405ff83a97925d64179e023e20e633605d90519d78378eb86b32e1c4b9",
+      "candidate-0.png": "a72fb9c26c97515c11ebbc38a1c60962637d26ec4bf1e59fa6286560b0d17fd0",
+      "candidate-1.png": "943f73fc14b93ba310cd051f5bd5ca8ec83006e0d304bbdd8e3a39e93dba4e8b",
+      "candidate-2.png": "bfcebcb6aba223782882f02fa91599982604c353d2efbf7283923d5e5ff0239b",
+      "candidate-3.png": "a72fb9c26c97515c11ebbc38a1c60962637d26ec4bf1e59fa6286560b0d17fd0",
+      "candidate-5.png": "a72fb9c26c97515c11ebbc38a1c60962637d26ec4bf1e59fa6286560b0d17fd0",
+      "candidate-6.png": "a72fb9c26c97515c11ebbc38a1c60962637d26ec4bf1e59fa6286560b0d17fd0",
+      "candidate-7.png": "2a16eac43f329de6717de6cc3b1c95a59b5b0d68e58996a09668aed73db41f32",
+      "detail-0-0.png": "1e345560695ac1300c13171c2be23373c4f0f36afb2aba0fafde15bdf42b25a9",
+      "detail-0-160.png": "165895c8aa28afab3dbc4d08d275f8f9008a659b5254052c08765d62c046cc6f",
+      "detail-0-270.png": "208195cdbddce3d26d3c2b7fd40e079fbc78e855942b3dc659db0d7d65bdcb69",
+      "detail-0-90.png": "930116c660be62da5487fd4a68e5593f38f154c29c869321ba83ec77b542f972",
+      "detail-1-0.png": "aa038359881609e55377255f29d615b202689982023e64985c1f2183f11554b5",
+      "detail-1-160.png": "2ee4264de5d5f8ffe96a89fe6ed3590ea14696497e6ed30fb1098daf96e320b9",
+      "detail-1-270.png": "4f13db2b4e87751cd06ebf7375c580437a518e726408135ea16e086c947b7fb2",
+      "detail-1-90.png": "e4a753188013082aec211e6678605013d2ea79d0f52711ff9791d26f173d0aa6",
+      "detail-2-0.png": "4f64f6a91921837d4ae5a9ebb314a07d9e0e69a7349d6946dddc4549365dbd7f",
+      "detail-2-160.png": "04f445e9dee46f497bb646cf324ca7a7dfad0a19a6c643c27a9a664a4091137d",
+      "detail-2-270.png": "05fd1b3558fe71805388b1a169b5ba7cc28578db62982d4f7f0231b0f9477cf7",
+      "detail-2-90.png": "4618d77b86cef5fb8d220fe9d9f3bffef2960ed117d22c7514f99f044d7f6959"
+    }
+  },
+  "presentation": {
+    "issue": 676,
+    "kind": "books",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "8b0d53fca44f3bfb4ba1fb85a7accab795b129c05da2702f792aaf3ffce74faf",
+    "runtime_sha256": "b5c69300c222b1a7527f0d0cd8617d0b40ee3b58fa420f4fd796f6d61beb5797",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 9,
+        "pid": 50348,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 229319593.856,
+          "END": 229339510.31489998
+        },
+        "fixture_sha256": "066c9f0d279b374f7b0bba04e67e9774f7da584354f9fd135a985cd9bb9c5d98",
+        "passed": true,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.570855142857145,
+          "p50_ms": 28.5602,
+          "p95_ms": 29.1544,
+          "p99_ms": 29.2676,
+          "max_ms": 29.6948
+        },
+        "presentation": {
+          "pid": 50348,
+          "trace_sha256": "4d1dcd37245971ca738e4e8dbe450da2c4e1e46caca0abeecb98f35062147378",
+          "rows": 30540,
+          "scene_presents": 20417,
+          "mean_present_fps": 1172.2940744251373,
+          "present_intervals": {
+            "samples": 20416,
+            "mean_ms": 0.8530282817392677,
+            "p50_ms": 0.8273000121116638,
+            "p95_ms": 1.0379999876022339,
+            "p99_ms": 1.2524999976158142,
+            "max_ms": 2.8476000130176544
+          },
+          "native_call_duration": {
+            "samples": 20417,
+            "mean_ms": 0.07461258753708681,
+            "p50_ms": 0.07370001077651978,
+            "p95_ms": 0.09839999675750732,
+            "p99_ms": 0.12850001454353333,
+            "max_ms": 0.5965000092983246
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 9,
+        "pid": 45164,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 229353474.72219998,
+          "END": 229373495.5018
+        },
+        "fixture_sha256": "066c9f0d279b374f7b0bba04e67e9774f7da584354f9fd135a985cd9bb9c5d98",
+        "passed": true,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571487142857144,
+          "p50_ms": 28.5761,
+          "p95_ms": 29.1618,
+          "p99_ms": 29.3168,
+          "max_ms": 29.4736
+        },
+        "presentation": {
+          "pid": 45164,
+          "trace_sha256": "b51d8f35149e53787faefcfec42a5e773b0e6a053cb2a0f9e949213d8c18ded4",
+          "rows": 29217,
+          "scene_presents": 19700,
+          "mean_present_fps": 1124.3629432860914,
+          "present_intervals": {
+            "samples": 19699,
+            "mean_ms": 0.8893925275386387,
+            "p50_ms": 0.8604999780654907,
+            "p95_ms": 1.0902000069618225,
+            "p99_ms": 1.3243999779224396,
+            "max_ms": 2.4363000094890594
+          },
+          "native_call_duration": {
+            "samples": 19700,
+            "mean_ms": 0.07476483255776052,
+            "p50_ms": 0.06869998574256897,
+            "p95_ms": 0.09880000352859497,
+            "p99_ms": 0.1290999948978424,
+            "max_ms": 0.3917999863624573
+          }
+        }
+      }
+    ]
+  },
+  "fixture_correction": "First direct-toss fixture omitted native unequip after automatic compatible weapon pickup/equip. Six world-flag failures (142PASS) resulted. Corrected fixture asserts automatic equip and calls native UnequipSelectedNativeEquipment before direct toss, matching the production drop ordering. Visual02 passes160; final full five-phase suite passes713. No runtime rule changed.",
+  "art": {
+    "source": "assets/source/art/inventory_models_647/books",
+    "geometry_owner": "assets/source/art/inventory_models_647/documents",
+    "new_image_generation": false,
+    "original_pixels_preserved": true,
+    "reviewed_views": "Three book representations, front/side/oblique/rear, nine-object overview and both presentation cohorts.",
+    "author_check": "CA676-BOOKS-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "One sequential700-tic nine-object presentation pair; queue-present intervals, not GPU/display timing, repeatability or campaign/crowd acceptance.",
+    "Native fixture directly invokes pickup/toss/equip/unequip and prepares Box/quest flags. Ordinary menus, casting, hub travel and crafting acceptance remain separate.",
+    "Original parametric DESIGN.json and exporter recreate editable/book.obj and documents.mtl. No redundant mesh/PNG copy is introduced or claimed.",
+    "All three qualities preserve original world art; support Quintessence/type23 rules remain native. Deprecated offensive trial items are not restored.",
+    "Material stacks split5 into2+3, then merge/re-split per quality, preserving identity, provenance and contamination.",
+    "No PK3, WAD, executable, DLL, development IWAD or save is committed."
+  ],
+  "files": {
+    "build.log": "d1dc9f180d5606045ea4d9c7f6f6cff545f3d36b2764d4a3ab7ab293d511549c",
+    "continuity/baseline-process.log": "ef68455c7b6d98652d170fb3d783a1a6dee28d079a74aa1801f9c519e7f512c1",
+    "continuity/baseline.cfg": "286e3dc5c066d9e2af7d1fab904ba54e9046331086d89eb97d99ee7239ac5f11",
+    "continuity/baseline.log": "ec2020729164553da14b57812543fff02eb4aac266226770495465bba689e8d0",
+    "continuity/baseline.png": "80c1f6405ff83a97925d64179e023e20e633605d90519d78378eb86b32e1c4b9",
+    "continuity/candidate-0.png": "a72fb9c26c97515c11ebbc38a1c60962637d26ec4bf1e59fa6286560b0d17fd0",
+    "continuity/candidate-1.png": "943f73fc14b93ba310cd051f5bd5ca8ec83006e0d304bbdd8e3a39e93dba4e8b",
+    "continuity/candidate-2.png": "bfcebcb6aba223782882f02fa91599982604c353d2efbf7283923d5e5ff0239b",
+    "continuity/candidate-3.png": "a72fb9c26c97515c11ebbc38a1c60962637d26ec4bf1e59fa6286560b0d17fd0",
+    "continuity/candidate-5.png": "a72fb9c26c97515c11ebbc38a1c60962637d26ec4bf1e59fa6286560b0d17fd0",
+    "continuity/candidate-6.png": "a72fb9c26c97515c11ebbc38a1c60962637d26ec4bf1e59fa6286560b0d17fd0",
+    "continuity/candidate-7.png": "2a16eac43f329de6717de6cc3b1c95a59b5b0d68e58996a09668aed73db41f32",
+    "continuity/candidate-fresh-process.log": "0ad9be8cd76a472160a2b0ac7528bb024120df97e6d5e8733f224d969f438e20",
+    "continuity/candidate-fresh.cfg": "a296c2e3b93227075a2b820e0368726f920ccb01742b12750f8c52ac7b9037cc",
+    "continuity/candidate-fresh.log": "bb193f494c2e46c72de96c8ce2f991aafaeec6f56ec30891ad033663e03aead7",
+    "continuity/candidate-reload-process.log": "82da270a2a86ceb7d72cebad113650ba74a40d958f45251eda19a6aec6293b7f",
+    "continuity/candidate-reload.cfg": "f4b98c536c47ebaad4240076b16cf149f6d2c8434afe4007aae09a52f45abcef",
+    "continuity/candidate-reload.log": "ca5b6aeb8b541328595972af3da4fb5001c63609a903d9d151d9845a89057bb9",
+    "continuity/detail-0-0.png": "1e345560695ac1300c13171c2be23373c4f0f36afb2aba0fafde15bdf42b25a9",
+    "continuity/detail-0-160.png": "165895c8aa28afab3dbc4d08d275f8f9008a659b5254052c08765d62c046cc6f",
+    "continuity/detail-0-270.png": "208195cdbddce3d26d3c2b7fd40e079fbc78e855942b3dc659db0d7d65bdcb69",
+    "continuity/detail-0-90.png": "930116c660be62da5487fd4a68e5593f38f154c29c869321ba83ec77b542f972",
+    "continuity/detail-1-0.png": "aa038359881609e55377255f29d615b202689982023e64985c1f2183f11554b5",
+    "continuity/detail-1-160.png": "2ee4264de5d5f8ffe96a89fe6ed3590ea14696497e6ed30fb1098daf96e320b9",
+    "continuity/detail-1-270.png": "4f13db2b4e87751cd06ebf7375c580437a518e726408135ea16e086c947b7fb2",
+    "continuity/detail-1-90.png": "e4a753188013082aec211e6678605013d2ea79d0f52711ff9791d26f173d0aa6",
+    "continuity/detail-2-0.png": "4f64f6a91921837d4ae5a9ebb314a07d9e0e69a7349d6946dddc4549365dbd7f",
+    "continuity/detail-2-160.png": "04f445e9dee46f497bb646cf324ca7a7dfad0a19a6c643c27a9a664a4091137d",
+    "continuity/detail-2-270.png": "05fd1b3558fe71805388b1a169b5ba7cc28578db62982d4f7f0231b0f9477cf7",
+    "continuity/detail-2-90.png": "4618d77b86cef5fb8d220fe9d9f3bffef2960ed117d22c7514f99f044d7f6959",
+    "continuity/fixture-source/MAPINFO.txt": "2d996b9ae7ee73cf65281a4dff5e30be505c7f7291e3f269f2b6747082df4930",
+    "continuity/fixture-source/ZSCRIPT.txt": "001159853913f92cfc89cb1d6de97312620c1a59958157592fb33c9334c6a621",
+    "continuity/fixture.zs": "cba42d3da6394859a13aeedccc769c7210768afaa6b00dbe825d14a99b004b83",
+    "continuity/old-save-load-process.log": "15eec8c5c48896676c2a0c47571dd0cf9b53e3121d26b4878dc7ddaa0a20b8fb",
+    "continuity/old-save-load.cfg": "434a02901fca46aa0979972eb6358b4695e37cd4e28c9a2505aa06c22446e053",
+    "continuity/old-save-load.log": "1fa45a75afb984740e03e4b57a19ad35150cd2c816d26fa4f64315e23cce2372",
+    "continuity/RESULTS.json": "849a785b758d34101d721fd07a79a17335c1e09e7ab264be406140817d661d90",
+    "continuity/rollback-load-process.log": "5a8477d99a7467e9c4bd015196054f0dcf10509da12e1f867bcbf1e21201885a",
+    "continuity/rollback-load.cfg": "f4b98c536c47ebaad4240076b16cf149f6d2c8434afe4007aae09a52f45abcef",
+    "continuity/rollback-load.log": "c1909c02004036483226efb554565a0d39318070458f42062feda399fbdd0c28",
+    "continuity/session.ini": "6c1fb1e6b85c75e21a16694d4e99f66aabf8e9e3e18009eba8a63a3c87d94924",
+    "exports/model01.json": "f6fa823b135b65315b9b19c2b07aeb67c93944378af12410124d55dcf4a4ef39",
+    "exports/model02.json": "f6fa823b135b65315b9b19c2b07aeb67c93944378af12410124d55dcf4a4ef39",
+    "iterations/automatic-equip/fixture-source/MAPINFO.txt": "2d996b9ae7ee73cf65281a4dff5e30be505c7f7291e3f269f2b6747082df4930",
+    "iterations/automatic-equip/fixture-source/ZSCRIPT.txt": "154958494738ce0053331375a9c656ebd7d4bc3bbc9d2eda7c1dd967ef1d3a5e",
+    "iterations/automatic-equip/fixture.zs": "19f8b2e88de384d3d9c1514d8ef471205601292bf5517d2f26a1a27cfc01ae1f",
+    "iterations/automatic-equip/RESULTS.json": "36bc8ad51dcb1714dfb9f841d206e2996f1d7915496f2452a82f51608872daa5",
+    "iterations/automatic-equip/session.ini": "2df7a7945d8f29d95e1723423ebacc43f5e47f0e3105064f4681828db1039392",
+    "iterations/automatic-equip/visual-process.log": "93c8ed1a3885458ad960abfed619a553510470c119470009a91d93ddd261ba80",
+    "iterations/automatic-equip/visual.cfg": "75b689201c1e77e4ca593df8b1240ecb1ca0a3f18a56136c04beef0b2a51d6c2",
+    "iterations/automatic-equip/visual.log": "1e02d195feb681a0c9dbdc47a42d91e3cdd3f7eb2952bfa93a3613b991f436da",
+    "observer-guard.json": "be6f16e62f31b82f509a35650455c7442584b69e4180a0345740307c7f3402b2",
+    "presentation/models-9/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-9/engine.log": "86a0de0790cfe484ba8be92a1a0fa7a0ddbd97726301d9275841f2e7121649d7",
+    "presentation/models-9/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-9/fixture-source/ZSCRIPT.txt": "802a948887e57303a20df15986b14450098f885fc01542651a81512e7fc93d0e",
+    "presentation/models-9/presents.csv": "b51d8f35149e53787faefcfec42a5e773b0e6a053cb2a0f9e949213d8c18ded4",
+    "presentation/models-9/process.log": "fd268afd263eafca02c9a062569fab629e159a0897955da9a5ac927220eab901",
+    "presentation/models-9/scene.png": "3c7dbc915de5204209aff8a16b7ebfce91e93c1b8c1e93c99373a42b7f5d2176",
+    "presentation/models-9/session.ini": "b43ccd6ff396f393d0ce1b1d507d2dd10b86a712c0343877c80d16f27869d28f",
+    "presentation/RESULTS.json": "5e5da8a55f2e1baf4e19f8e1a7c18f41cbc1d85aca99d5ad4f4ccf53e28c723b",
+    "presentation/sprites-9/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-9/engine.log": "fb5370526534b5eb0735e940c3a70a3a608e1b84d24fd36c4db1ac91ff135f02",
+    "presentation/sprites-9/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-9/fixture-source/ZSCRIPT.txt": "802a948887e57303a20df15986b14450098f885fc01542651a81512e7fc93d0e",
+    "presentation/sprites-9/presents.csv": "4d1dcd37245971ca738e4e8dbe450da2c4e1e46caca0abeecb98f35062147378",
+    "presentation/sprites-9/process.log": "e85718fc6d06de398b64be363f6121cca2d1acb6e2e8eb6d0e7e7fb4b888ead5",
+    "presentation/sprites-9/scene.png": "9d3a2117d9e7ee3fc71737ad9c812f8b4e2b7556c281dcb02c613c367da5b8bf",
+    "presentation/sprites-9/session.ini": "616ed5fa67928ef20efeab5cb29df4df030de203de106aa80d29f6726fd54343",
+    "visual/fixture-source/MAPINFO.txt": "2d996b9ae7ee73cf65281a4dff5e30be505c7f7291e3f269f2b6747082df4930",
+    "visual/fixture-source/ZSCRIPT.txt": "001159853913f92cfc89cb1d6de97312620c1a59958157592fb33c9334c6a621",
+    "visual/fixture.zs": "cba42d3da6394859a13aeedccc769c7210768afaa6b00dbe825d14a99b004b83",
+    "visual/RESULTS.json": "629a07ad96014872d6012714e7f73f1cfe9d84ac4f4a9c278544db4b3a509b51",
+    "visual/session.ini": "9ab35d27004e57aade159cab7dc37cbce763dacbefcc1d7ef7af2506759db00d",
+    "visual/visual-process.log": "18d437206959f41f44a8dbd1d4c213abd751ae33b2745cc79b20e419017b272e",
+    "visual/visual.cfg": "75b689201c1e77e4ca593df8b1240ecb1ca0a3f18a56136c04beef0b2a51d6c2",
+    "visual/visual.log": "ed8a52456be82e774c80b97b39e0f6ff393afc0091f9e0a8f7375a08ee5077b0",
+    "validation-final.json": "1d4dde74f0f8261ded7387edb33108513fb294f3f86e08c40a58a1eeb639ec48"
+  }
+}
