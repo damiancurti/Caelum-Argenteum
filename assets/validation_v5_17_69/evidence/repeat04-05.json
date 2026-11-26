@@ -1,0 +1,23 @@
+{
+  "files": 17,
+  "byte_identical": true,
+  "sha256": {
+    "manifest.json": "2b987ee7ef3246b57de9bd3737780fe0b0d3d0682382450aefe04c308cff376e",
+    "preview.pk3": "a1ab3a8c7f0dd13dda8a3cae02ebdde6b1fdd34902133a67f28226d69e8f12f0",
+    "editable/armor_feet.mtl": "054140946b4446ed1eb802638938cd351aa0fb132cbb90bffc0167e75582f905",
+    "editable/heavy.obj": "0641a56412024d75de0885dbca0ba2b657a55ecbc482733c64d0b5b23d964345",
+    "editable/light.obj": "fbd435c52e7a831fb812a2669084d1d414748ec74535d6c2252eca3c65678f40",
+    "editable/magic.obj": "f22f0a3bb486b965e0e9503d66d7ae355a6a149133693394fc45017c121cb71e",
+    "editable/medium.obj": "4be946586a378da321b2d9b6656b066248703f4122e505a0d7d3005d6790b8a1",
+    "caelum/data/inventory_armor_feet.modeldef": "e3f012211f211f2ce1a29a9ed13066da3645b83787dcf117a134c9d8a2a33857",
+    "editable/src/graphics/caelum/icons/ca_boots.png": "07bd942c46642a40637dc2906a0cdfacc5304fecb465d44dae2d03988484b884",
+    "editable/src/models/caelum/inventory/armor_helmets/gold.png": "4e6123410914b56260ca5f406e873315063659043072852e2ebe433973be17dc",
+    "editable/src/models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "models/caelum/inventory/armor_feet/heavy.md3": "7d63ca951221b13d11d5d0d30c31e0797e523acd6fd821393072ca8c028a5e54",
+    "models/caelum/inventory/armor_feet/light.md3": "f83e86e7fc1ef52cd61ac2011bca57257d8664b0eee8d2e8a87c735d9d1b5b5a",
+    "models/caelum/inventory/armor_feet/magic.md3": "dc9ee7fdc98ceaa1133048de48909dc2b8b88036d79595abe060f4839c711f4d",
+    "models/caelum/inventory/armor_feet/medium.md3": "d97841f98fffbeaa820631134556086e3de7ef0405df2ab85d1a4a5f3918f3a2"
+  }
+}

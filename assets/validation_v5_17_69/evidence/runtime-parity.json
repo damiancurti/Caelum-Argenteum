@@ -1,0 +1,17 @@
+{
+  "entries": 18551,
+  "exact_source": true,
+  "added": [
+    "caelum/data/inventory_armor_feet.modeldef",
+    "models/caelum/inventory/armor_feet/heavy.md3",
+    "models/caelum/inventory/armor_feet/light.md3",
+    "models/caelum/inventory/armor_feet/magic.md3",
+    "models/caelum/inventory/armor_feet/medium.md3"
+  ],
+  "changed": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "sha256": "7679bbbf25ab7569967b6e027a02a6fd2395afc2729afe6d71c02c221e71eb64"
+}

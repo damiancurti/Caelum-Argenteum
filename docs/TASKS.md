@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.68** - 2026-11-15.
+Documentation version: **5.17.69** - 2026-11-15.
+
+## 5.17.69 - #781 foot armor delivered; author review pending
+
+Four boot pairs cover twelve existing type/tier cases. Seventeen exports repeat;
+120 closed components, 112 attachments, 40 opening rays and eight shaft/lining
+checks each pass. Native continuity: 1,011; visual/control: 236; prior hand-armor
+regression: 236. Twenty final detail views were inspected. Evidence:
+assets/validation_v5_17_69/evidence/SUMMARY.json. Author check: CA781-FOOT-ARMOR-01.
+Next: four torso armor states and ancestor-only pickup bindings. Other characters,
+modular fitting and wider V5.16 remain unfinished.
 
 ## 5.17.68 - #779 hand armor delivered; author review pending
 

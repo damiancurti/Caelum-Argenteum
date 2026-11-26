@@ -1,0 +1,1014 @@
+{
+  "issue": 781,
+  "parent_issue": 647,
+  "version": "5.17.69",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Four paired foot armor world drops and twelve native type/tier cases. Existing owned materials and hollow footwear anatomy are reused; no raster generation or edits. Inventory art, identity, protection, scale/collision, size, durability, recipes and persistence are unchanged. Worn modular fitting is not delivered.",
+  "runtime": {
+    "sha256": "7679bbbf25ab7569967b6e027a02a6fd2395afc2729afe6d71c02c221e71eb64",
+    "source_entries": 18551,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "8fc5cd6b16c0ca5ed14fd30ce0a92cae79242dbe617cb69ff66193ab3063889b",
+    "new_resources": [
+      "caelum/data/inventory_armor_feet.modeldef",
+      "models/caelum/inventory/armor_feet/heavy.md3",
+      "models/caelum/inventory/armor_feet/light.md3",
+      "models/caelum/inventory/armor_feet/magic.md3",
+      "models/caelum/inventory/armor_feet/medium.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 17,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "magic": {
+        "closed_components": 20,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 18,
+        "connected_components": 20,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 10,
+        "cuff_depth_checks": 2,
+        "lining_checks": 2,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 10872
+      },
+      "light": {
+        "closed_components": 46,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 44,
+        "connected_components": 46,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 10,
+        "cuff_depth_checks": 2,
+        "lining_checks": 2,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 14720
+      },
+      "medium": {
+        "closed_components": 26,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 24,
+        "connected_components": 26,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 10,
+        "cuff_depth_checks": 2,
+        "lining_checks": 2,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 13440
+      },
+      "heavy": {
+        "closed_components": 28,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 26,
+        "connected_components": 28,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 10,
+        "cuff_depth_checks": 2,
+        "lining_checks": 2,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 14400
+      }
+    },
+    "variants": {
+      "magic": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "left_upper",
+          "left_lining",
+          "left_sole",
+          "left_heel",
+          "right_upper",
+          "right_lining",
+          "right_sole",
+          "right_heel",
+          "left_band0",
+          "left_band1",
+          "left_band2",
+          "left_blue_cloth",
+          "left_gold_mark0",
+          "left_gold_mark1",
+          "right_band0",
+          "right_band1",
+          "right_band2",
+          "right_blue_cloth",
+          "right_gold_mark0",
+          "right_gold_mark1"
+        ],
+        "closed_outward_components": 20,
+        "vertices": 24936,
+        "triangles": 10872,
+        "surfaces": [
+          {
+            "material": "leather",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "leather",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "leather",
+            "vertices": 1602,
+            "triangles": 534
+          },
+          {
+            "material": "gold",
+            "vertices": 1920,
+            "triangles": 3200
+          },
+          {
+            "material": "lining",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "lining",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "lining",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "lining",
+            "vertices": 771,
+            "triangles": 257
+          },
+          {
+            "material": "blue",
+            "vertices": 168,
+            "triangles": 56
+          }
+        ],
+        "reference_opaque_bounds": [
+          15,
+          6,
+          112,
+          122
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 116.0,
+        "native_bounds": [
+          {
+            "min": [
+              -48.33087939630588,
+              -61.14320612724145,
+              0.0
+            ],
+            "max": [
+              48.33087939630588,
+              45.570193888385624,
+              116.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.9333333333333333,
+          "floor": 0.0
+        }
+      },
+      "light": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "left_upper",
+          "left_lining",
+          "left_sole",
+          "left_heel",
+          "right_upper",
+          "right_lining",
+          "right_sole",
+          "right_heel",
+          "left_band0",
+          "left_band1",
+          "left_band2",
+          "left_toe_cap",
+          "left_buckle0_left",
+          "left_buckle0_right",
+          "left_buckle0_top",
+          "left_buckle0_bottom",
+          "left_buckle0_pin",
+          "left_buckle1_left",
+          "left_buckle1_right",
+          "left_buckle1_top",
+          "left_buckle1_bottom",
+          "left_buckle1_pin",
+          "left_buckle2_left",
+          "left_buckle2_right",
+          "left_buckle2_top",
+          "left_buckle2_bottom",
+          "left_buckle2_pin",
+          "right_band0",
+          "right_band1",
+          "right_band2",
+          "right_toe_cap",
+          "right_buckle0_left",
+          "right_buckle0_right",
+          "right_buckle0_top",
+          "right_buckle0_bottom",
+          "right_buckle0_pin",
+          "right_buckle1_left",
+          "right_buckle1_right",
+          "right_buckle1_top",
+          "right_buckle1_bottom",
+          "right_buckle1_pin",
+          "right_buckle2_left",
+          "right_buckle2_right",
+          "right_buckle2_top",
+          "right_buckle2_bottom",
+          "right_buckle2_pin"
+        ],
+        "closed_outward_components": 46,
+        "vertices": 33628,
+        "triangles": 14720,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 4094,
+            "triangles": 1840
+          },
+          {
+            "material": "steel",
+            "vertices": 4094,
+            "triangles": 1840
+          },
+          {
+            "material": "steel",
+            "vertices": 1056,
+            "triangles": 352
+          },
+          {
+            "material": "leather",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "leather",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "leather",
+            "vertices": 3138,
+            "triangles": 3606
+          },
+          {
+            "material": "lining",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "lining",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "lining",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "lining",
+            "vertices": 771,
+            "triangles": 257
+          }
+        ],
+        "reference_opaque_bounds": [
+          12,
+          8,
+          115,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -48.10752303933753,
+              -61.5093099230289,
+              0.0
+            ],
+            "max": [
+              48.10752303933753,
+              43.998807892234396,
+              112.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.8666666666666667,
+          "floor": 0.0
+        }
+      },
+      "medium": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "left_upper",
+          "left_lining",
+          "left_sole",
+          "left_heel",
+          "right_upper",
+          "right_lining",
+          "right_sole",
+          "right_heel",
+          "left_band0",
+          "left_band1",
+          "left_band2",
+          "left_toe_cap",
+          "left_shin_plate",
+          "left_gold_mark0",
+          "left_gold_mark1",
+          "left_gold_mark2",
+          "left_gold_mark3",
+          "right_band0",
+          "right_band1",
+          "right_band2",
+          "right_toe_cap",
+          "right_shin_plate",
+          "right_gold_mark0",
+          "right_gold_mark1",
+          "right_gold_mark2",
+          "right_gold_mark3"
+        ],
+        "closed_outward_components": 26,
+        "vertices": 29788,
+        "triangles": 13440,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 2908,
+            "triangles": 1920
+          },
+          {
+            "material": "leather",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "leather",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "leather",
+            "vertices": 3138,
+            "triangles": 3606
+          },
+          {
+            "material": "gold",
+            "vertices": 2496,
+            "triangles": 832
+          },
+          {
+            "material": "lining",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "lining",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "lining",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "lining",
+            "vertices": 771,
+            "triangles": 257
+          }
+        ],
+        "reference_opaque_bounds": [
+          11,
+          9,
+          116,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 111.0,
+        "native_bounds": [
+          {
+            "min": [
+              -47.67799158362916,
+              -60.960119655859,
+              0.0
+            ],
+            "max": [
+              47.67799158362916,
+              43.605961393196594,
+              111.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.85,
+          "floor": 0.0
+        }
+      },
+      "heavy": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "left_upper",
+          "left_lining",
+          "left_sole",
+          "left_heel",
+          "right_upper",
+          "right_lining",
+          "right_sole",
+          "right_heel",
+          "left_band0",
+          "left_band1",
+          "left_band2",
+          "left_toe_cap",
+          "left_shin_plate",
+          "left_gold_mark0",
+          "left_gold_mark1",
+          "left_gold_mark2",
+          "left_gold_mark3",
+          "left_lower_shin",
+          "right_band0",
+          "right_band1",
+          "right_band2",
+          "right_toe_cap",
+          "right_shin_plate",
+          "right_gold_mark0",
+          "right_gold_mark1",
+          "right_gold_mark2",
+          "right_gold_mark3",
+          "right_lower_shin"
+        ],
+        "closed_outward_components": 28,
+        "vertices": 32668,
+        "triangles": 14400,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 2908,
+            "triangles": 1920
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 3906,
+            "triangles": 1302
+          },
+          {
+            "material": "gold",
+            "vertices": 4095,
+            "triangles": 3925
+          },
+          {
+            "material": "gold",
+            "vertices": 513,
+            "triangles": 171
+          },
+          {
+            "material": "lining",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "lining",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "lining",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "lining",
+            "vertices": 771,
+            "triangles": 257
+          }
+        ],
+        "reference_opaque_bounds": [
+          12,
+          8,
+          115,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -48.10752303933753,
+              -61.5093099230289,
+              0.0
+            ],
+            "max": [
+              48.10752303933753,
+              43.998807892234396,
+              112.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.8666666666666667,
+          "floor": 0.0
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 781,
+    "kind": "armor_feet",
+    "scope": "Native pickup/toss, quantity and saved ownership for armor_feet; no normal menu or author acceptance.",
+    "baseline_sha256": "8fc5cd6b16c0ca5ed14fd30ce0a92cae79242dbe617cb69ff66193ab3063889b",
+    "runtime_sha256": "7679bbbf25ab7569967b6e027a02a6fd2395afc2729afe6d71c02c221e71eb64",
+    "model_sha256": null,
+    "fixture_sha256": "e12c51523e746fc6d25b94f5c1c248eb85631e4afa9038773075bd0804f3416f",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 229
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 189
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 229
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 182
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 182
+      }
+    ],
+    "captures": {
+      "baseline.png": "b20ee70bc033af6f3ab8dd5848f5e3bb26fed6c44fd8299023b46de3acc90ddd",
+      "candidate-0.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+      "candidate-1.png": "5ed291eacdff218b5c63034b7fd3085a53adf634af8700b63916e34aceb7bb0a",
+      "candidate-2.png": "8229b9e1c5d6aca2a8d0445c314ef506708856cd7b8d3e95f363c64298692e1b",
+      "candidate-3.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+      "candidate-5.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+      "candidate-6.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+      "candidate-7.png": "26f21e0eb8affdaa111b684e7ad76b406935e3562053be817176198ba0d813be",
+      "detail-0-0.png": "c4673f0cd60c58ff22d1b62b88f902d5c88a54b36046765ebfe8b6dd07ec4a8e",
+      "detail-0-160.png": "4cb2835487421088fe4cbd477eafa0c022133638486ca8abde647483720791e2",
+      "detail-0-225.png": "7e26de4262f5e1781a9f4fc157ab0f89695f01c014590404f7d8a79771449d48",
+      "detail-0-270.png": "fe2897b5a1bc8b0ce4490cb90f7b77c437d41002c9279802eb29229930678122",
+      "detail-0-90.png": "1941dd0bf1ddcc7f948edc06ed2339705c46b71786e773ca7ed2dc0cce168f05",
+      "detail-1-0.png": "3ce72cdfc7c4d5d945b0ab2ff54a8ce98aca387f45adbbcc907d9326c2d40303",
+      "detail-1-160.png": "70163b41f9522e763e7147a1445fe125f83db3c414f1db27db7897a2f3d57ef1",
+      "detail-1-225.png": "7b30e0df41da6584df5ab5b6b790f05a7b6ae4df38b08b5d3a441dbb5cb6c775",
+      "detail-1-270.png": "260106803cfe2535ba39bb8ebe98bdaa52a4c8204fcb294bbeafb46526e163c0",
+      "detail-1-90.png": "0e3cd8f6287444be3020bd318c6a71db0381a1c47f63c64aade3eea1a993d3eb",
+      "detail-2-0.png": "f7828ba51a72afe44c996f0a3b6b7db2a20103176a1a0c350cc0370b13cf5f2d",
+      "detail-2-160.png": "b238353e6a4eb34129a5f85ae9d031bb6debbb8abab2ee7169afffb8654e39de",
+      "detail-2-225.png": "efa00ce4f6a7a79d0fe3465b1fda0097575ba279f78e88970d9faa37c1eac084",
+      "detail-2-270.png": "596bc7aaee5f85ac1bd15b02a8490bed182a7baa3e872a9b42b7fcfc501b8350",
+      "detail-2-90.png": "a215a08ecb8c87d2539f6c54e6687ddd44a164cf2a7f672866ae3c7bd3892842",
+      "detail-3-0.png": "b76f1b07508dd3d5f7d24a44e4d831dfbbc163377489873810dfaac8cb170980",
+      "detail-3-160.png": "127fade2776201122ab8778132e4512eacd92a8f8cc768b9a82fb5c17e39866b",
+      "detail-3-225.png": "98a555f71e6ce9ab1630bc3a90df548c1477b04ff2508a3638e7356fe324b5e0",
+      "detail-3-270.png": "e0320e448abe124dd7515874f807c2d1f313bcf84adcf481073a72a153f02bfb",
+      "detail-3-90.png": "b8ebad11b512ed46e394d6c0a64464124fc8fd391289ae8b9f06abe33b7bd209"
+    }
+  },
+  "visual": {
+    "issue": 781,
+    "kind": "armor_feet",
+    "scope": "Native pickup/toss, quantity and saved ownership for armor_feet; no normal menu or author acceptance.",
+    "baseline_sha256": "8fc5cd6b16c0ca5ed14fd30ce0a92cae79242dbe617cb69ff66193ab3063889b",
+    "runtime_sha256": "8fc5cd6b16c0ca5ed14fd30ce0a92cae79242dbe617cb69ff66193ab3063889b",
+    "model_sha256": "a1ab3a8c7f0dd13dda8a3cae02ebdde6b1fdd34902133a67f28226d69e8f12f0",
+    "fixture_sha256": "e12c51523e746fc6d25b94f5c1c248eb85631e4afa9038773075bd0804f3416f",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "visual",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 236
+      }
+    ],
+    "captures": {
+      "candidate-0.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+      "candidate-1.png": "5ed291eacdff218b5c63034b7fd3085a53adf634af8700b63916e34aceb7bb0a",
+      "candidate-2.png": "8229b9e1c5d6aca2a8d0445c314ef506708856cd7b8d3e95f363c64298692e1b",
+      "candidate-3.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+      "candidate-5.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+      "candidate-6.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+      "candidate-7.png": "26f21e0eb8affdaa111b684e7ad76b406935e3562053be817176198ba0d813be",
+      "detail-0-0.png": "c4673f0cd60c58ff22d1b62b88f902d5c88a54b36046765ebfe8b6dd07ec4a8e",
+      "detail-0-160.png": "4cb2835487421088fe4cbd477eafa0c022133638486ca8abde647483720791e2",
+      "detail-0-225.png": "7e26de4262f5e1781a9f4fc157ab0f89695f01c014590404f7d8a79771449d48",
+      "detail-0-270.png": "fe2897b5a1bc8b0ce4490cb90f7b77c437d41002c9279802eb29229930678122",
+      "detail-0-90.png": "1941dd0bf1ddcc7f948edc06ed2339705c46b71786e773ca7ed2dc0cce168f05",
+      "detail-1-0.png": "3ce72cdfc7c4d5d945b0ab2ff54a8ce98aca387f45adbbcc907d9326c2d40303",
+      "detail-1-160.png": "70163b41f9522e763e7147a1445fe125f83db3c414f1db27db7897a2f3d57ef1",
+      "detail-1-225.png": "7b30e0df41da6584df5ab5b6b790f05a7b6ae4df38b08b5d3a441dbb5cb6c775",
+      "detail-1-270.png": "260106803cfe2535ba39bb8ebe98bdaa52a4c8204fcb294bbeafb46526e163c0",
+      "detail-1-90.png": "0e3cd8f6287444be3020bd318c6a71db0381a1c47f63c64aade3eea1a993d3eb",
+      "detail-2-0.png": "f7828ba51a72afe44c996f0a3b6b7db2a20103176a1a0c350cc0370b13cf5f2d",
+      "detail-2-160.png": "b238353e6a4eb34129a5f85ae9d031bb6debbb8abab2ee7169afffb8654e39de",
+      "detail-2-225.png": "efa00ce4f6a7a79d0fe3465b1fda0097575ba279f78e88970d9faa37c1eac084",
+      "detail-2-270.png": "596bc7aaee5f85ac1bd15b02a8490bed182a7baa3e872a9b42b7fcfc501b8350",
+      "detail-2-90.png": "a215a08ecb8c87d2539f6c54e6687ddd44a164cf2a7f672866ae3c7bd3892842",
+      "detail-3-0.png": "b76f1b07508dd3d5f7d24a44e4d831dfbbc163377489873810dfaac8cb170980",
+      "detail-3-160.png": "127fade2776201122ab8778132e4512eacd92a8f8cc768b9a82fb5c17e39866b",
+      "detail-3-225.png": "98a555f71e6ce9ab1630bc3a90df548c1477b04ff2508a3638e7356fe324b5e0",
+      "detail-3-270.png": "e0320e448abe124dd7515874f807c2d1f313bcf84adcf481073a72a153f02bfb",
+      "detail-3-90.png": "b8ebad11b512ed46e394d6c0a64464124fc8fd391289ae8b9f06abe33b7bd209"
+    }
+  },
+  "hand_regression": {
+    "issue": 779,
+    "kind": "armor_hands",
+    "scope": "Native pickup/toss, quantity and saved ownership for armor_hands; no normal menu or author acceptance.",
+    "baseline_sha256": "7679bbbf25ab7569967b6e027a02a6fd2395afc2729afe6d71c02c221e71eb64",
+    "runtime_sha256": "7679bbbf25ab7569967b6e027a02a6fd2395afc2729afe6d71c02c221e71eb64",
+    "model_sha256": null,
+    "fixture_sha256": "9768ded38a5736956a507b3727e1ed67f664fb464967ad4917a62e452e866f78",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "visual",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 236
+      }
+    ],
+    "captures": {
+      "candidate-0.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+      "candidate-1.png": "ddcf787aef4d6d171237891df8713b4dd832b8ddfb12f80e623b8fb1237f21bf",
+      "candidate-2.png": "29b5a20b2bf4e6092677b0af4d2dfc8f8150742d7a30cbca127551ba2a41d4ea",
+      "candidate-3.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+      "candidate-5.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+      "candidate-6.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+      "candidate-7.png": "0dad2654b27fd9db4f2a1d7bd6065a1405f7ba244c8b5bc850ed8744ee4bd7ed",
+      "detail-0-0.png": "11545026ebbb44e4b1e1fe051bb77100541c0ccc0e626191f61829a4fd1e336d",
+      "detail-0-160.png": "fa4a0f4320e0b77df780965e3ae5afd02e00055aaa88e1229c39811619e2556e",
+      "detail-0-225.png": "d03bf9c7edaaea46a302645943903ec13829804e6aee42d4ac0c88b70213d2c4",
+      "detail-0-270.png": "c364c395571ccf513f9340b31e07c99e9ef242d62120de80070550445d21a75f",
+      "detail-0-90.png": "62b9cc08f872a75bc1f09dc8fe1370da1c87a69b0c25381fb99af57715970d30",
+      "detail-1-0.png": "8fa124f90b5803778252270f84addb95a72daf96ca2de4cd953e7ab46fdba24c",
+      "detail-1-160.png": "e05c06ce8d88090bf1ffae68442a5e79f689086035ee3b3fe43b5da5f03cb88a",
+      "detail-1-225.png": "bb4817ee1e6c61031f8eaa56ba2106fc07b9f2d1166e3e3e9e58dac5215c3f0d",
+      "detail-1-270.png": "4d79cfc8ad1f8d8214d8837888c6ea5f6d6ea100e556588d94602b533c7f4151",
+      "detail-1-90.png": "48c62c2ec0e80882b715c159939db7d514149c4c5c3038a82bd9c2389d110c19",
+      "detail-2-0.png": "295ad8260b1f75dd656a3c3780c6b9e6de1566cb9fe841e9447f191e49ae04b9",
+      "detail-2-160.png": "f68499f7433104d45fe5b9bc418d77162b8e5cae03407999e77b9e88e3b4105d",
+      "detail-2-225.png": "67557e6967fdf97499182f73ce702f76b5fb6703240959ba88861e5ccfa51191",
+      "detail-2-270.png": "000faf6db418069c93125a68c80378c8c9d4e7b877941ab542c3d076ec2a516d",
+      "detail-2-90.png": "860d60c64e4cf70bd2821d945439ac1242a8ff7eafdf721d0cb5d6eae48b99c4",
+      "detail-3-0.png": "27dbe2f07bc09d91725d7e747a8459738c0545f05a2818330f7a197303443952",
+      "detail-3-160.png": "04829d86c75c775156eab79bfa32fec35849530cfc2cc4bceac3209e0772d3b6",
+      "detail-3-225.png": "8c8d80e31e33580c9635b1e2370de3fcf8e35f33904fb2dc45fb94b66e206d10",
+      "detail-3-270.png": "de80273050f3db9733d0d72a34bd5b6448d3186f04291d2a774e19c65a0d807f",
+      "detail-3-90.png": "c6af6765a95d178dacafdc3f5ec9951de1d40df2358e0d7cc06c8bde2c7a2b0f"
+    }
+  },
+  "presentation": {
+    "issue": 781,
+    "kind": "armor_feet",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "8fc5cd6b16c0ca5ed14fd30ce0a92cae79242dbe617cb69ff66193ab3063889b",
+    "runtime_sha256": "7679bbbf25ab7569967b6e027a02a6fd2395afc2729afe6d71c02c221e71eb64",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 12,
+        "pid": 35024,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 348649505.2263,
+          "END": 348669517.5148
+        },
+        "fixture_sha256": "0aaa74775c5c1a9751d37aea7866d318be27ad787d0a8dff7e2fb283d5311e21",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            12,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57187757142857,
+          "p50_ms": 28.5816,
+          "p95_ms": 29.1643,
+          "p99_ms": 29.3559,
+          "max_ms": 29.8335
+        },
+        "presentation": {
+          "pid": 35024,
+          "trace_sha256": "60cfb4755c8bace825ff338bfea345d63a3aa99bad463c58265b8d6c3722d30e",
+          "rows": 29472,
+          "scene_presents": 20266,
+          "mean_present_fps": 1157.2331511838313,
+          "present_intervals": {
+            "samples": 20265,
+            "mean_ms": 0.8641301011615643,
+            "p50_ms": 0.8373000025749207,
+            "p95_ms": 1.0374999642372131,
+            "p99_ms": 1.2878999710083008,
+            "max_ms": 1.8829999566078186
+          },
+          "native_call_duration": {
+            "samples": 20266,
+            "mean_ms": 0.07594941788066543,
+            "p50_ms": 0.07660001516342163,
+            "p95_ms": 0.09970003366470337,
+            "p99_ms": 0.13359999656677246,
+            "max_ms": 0.34060001373291016
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 12,
+        "pid": 43904,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 348684079.7785,
+          "END": 348704100.56990004
+        },
+        "fixture_sha256": "0aaa74775c5c1a9751d37aea7866d318be27ad787d0a8dff7e2fb283d5311e21",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            12,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571869857142858,
+          "p50_ms": 28.5738,
+          "p95_ms": 29.1879,
+          "p99_ms": 29.395,
+          "max_ms": 29.5595
+        },
+        "presentation": {
+          "pid": 43904,
+          "trace_sha256": "a35a995d57bc3a0a2e0cb352f617575dc2df56c1e4d786725e28eb0b3f806749",
+          "rows": 28100,
+          "scene_presents": 19239,
+          "mean_present_fps": 1098.1132447478885,
+          "present_intervals": {
+            "samples": 19238,
+            "mean_ms": 0.9106528901120632,
+            "p50_ms": 0.8894999623298645,
+            "p95_ms": 1.0652000308036804,
+            "p99_ms": 1.1632999777793884,
+            "max_ms": 1.6536999940872192
+          },
+          "native_call_duration": {
+            "samples": 19239,
+            "mean_ms": 0.07553066135822187,
+            "p50_ms": 0.07420003414154053,
+            "p95_ms": 0.0988999605178833,
+            "p99_ms": 0.12790000438690186,
+            "max_ms": 0.457099974155426
+          }
+        }
+      }
+    ]
+  },
+  "art": {
+    "inspected_views": [
+      "visual/detail-0-0.png",
+      "visual/detail-0-90.png",
+      "visual/detail-0-160.png",
+      "visual/detail-0-225.png",
+      "visual/detail-0-270.png",
+      "visual/detail-1-0.png",
+      "visual/detail-1-90.png",
+      "visual/detail-1-160.png",
+      "visual/detail-1-225.png",
+      "visual/detail-1-270.png",
+      "visual/detail-2-0.png",
+      "visual/detail-2-90.png",
+      "visual/detail-2-160.png",
+      "visual/detail-2-225.png",
+      "visual/detail-2-270.png",
+      "visual/detail-3-0.png",
+      "visual/detail-3-90.png",
+      "visual/detail-3-160.png",
+      "visual/detail-3-225.png",
+      "visual/detail-3-270.png"
+    ],
+    "overview": "visual/candidate-0.png",
+    "author_check": "CA781-HAND-ARMOR-01"
+  },
+  "iterations": [
+    "The initial magic silhouette exceeded the effective width by 2.65 source-scale pixels. A 3% horizontal fit corrected it without changing actor scale/collision.",
+    "Initial native front views showed solid buckle plates and shin-plate intersections. Final open buckle frames/pins and subdivided curved plates with raised gold trim correct those observations. Superseded evidence is retained."
+  ],
+  "environment": {
+    "os": "Windows11 Pro26200",
+    "cpu": "Ryzen9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX3070Ti",
+    "engine": "GZDoom4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "All twenty final detail/underside views, overview, hand-regression overview and both presentation scenes were inspected. 120 closed components,112 attachments,40 opening rays,8 shaft-depth probes and8 lining-visibility probes pass independent checks.",
+    "Simplified elongated profiles, rounded toe caps, understated leather straps, faceted plate edges, static flat cloth, repeated materials, matte shading, interpreted backs/soles and omitted fine ornament require author review.",
+    "One sequential700-tic twelve-object pair measures queue intervals only, not GPU/display latency, repeatability or campaign/crowd performance. Projected footprints differ.",
+    "Native APIs and prepared metadata do not establish normal menus, crafting, ordinary handling or author acceptance. Four torso armor states, ancestor-only pickup bindings, other characters, modular equipment and V5.16 remain unfinished.",
+    "No executable, IWAD, compiled test package, DLL or save is committed."
+  ],
+  "files": {
+    "build01.log": "bdf17ed2a23725c98267b36292edc7728ff13767af0abdc176d1c4d5f9294330",
+    "continuity/baseline-process.log": "4f78a7d7b44a7e58fc4bd70be4de04458cb10c11331123b127fbccebbd1d65ce",
+    "continuity/baseline.cfg": "5d971f1704316794d09f35aa8fee20cf324e545fd412402e3a9543b19d29a2f5",
+    "continuity/baseline.log": "8af4bebc9f9d038a0003a65d6f0d763c584febe234ba2d8876e958f145b86c33",
+    "continuity/candidate-fresh-process.log": "9469d39cb2d79a777924dcd65afeaa4c9d5dd8804216a10cc96301b1c8538828",
+    "continuity/candidate-fresh.cfg": "34f4290a516d8683702f000e60dbb63a268ad4f48c12c099d4d42ea75cb77d2e",
+    "continuity/candidate-fresh.log": "a71bf8bee41d96f5d5c2743c36c14403f8046b7146d1b31c57d2d777ea3ecda0",
+    "continuity/candidate-reload-process.log": "9ca2fe77c895262f26b84622b53225043dbddc38e37039fd8de7b7f4296a25ff",
+    "continuity/candidate-reload.cfg": "10899d195660159b4de4adc6bfdab7920509dc13aa7f7ba2b51b6c7544711f19",
+    "continuity/candidate-reload.log": "985db2ad30215eb8cd9ff4ca8b2c13b62877154e48ccaea4ac49dd46d6225417",
+    "continuity/fixture-source/MAPINFO.txt": "d76f5dd38351b0638888c4d8c15ae81a122864c001a2af87d28ff7e1e4497422",
+    "continuity/fixture-source/ZSCRIPT.txt": "9bf43782635c08dc27f747e0bb84eca925f6d9612c99f0ae6640b98ab3608e6b",
+    "continuity/fixture.zs": "4043859fb5110781bdbd2908305c5e01fb6fba6eaa10d6dd173f99dbd5444d5c",
+    "continuity/old-save-load-part-1.cfg": "43121a2c065c006addbd59bc95932d2a3eb98012b4a771df4ad2c740747bd13b",
+    "continuity/old-save-load-process.log": "f883a609ec274917f101b12bfed24ad3b9bb8543fb4673a6c420dcd6ab187b1d",
+    "continuity/old-save-load.cfg": "2898bd907c5b54b5effcc7e21e596ea3119956d3a14cd39c11e009b76be240b5",
+    "continuity/old-save-load.log": "761d39a057483e3362d93946ecbba66d3e5d6120c92da1d4110e5d6bd36736ed",
+    "continuity/RESULTS.json": "4179c24321c02c4efea04c5014b78331b55165e8076bfc7d7d3d60d628822429",
+    "continuity/rollback-load-process.log": "a6fe0fcafd6aa9142b82e4c0e181bcb90a14b0d99a52d7658eef85d704e26d6a",
+    "continuity/rollback-load.cfg": "10899d195660159b4de4adc6bfdab7920509dc13aa7f7ba2b51b6c7544711f19",
+    "continuity/rollback-load.log": "4f7cac6965723cf15689a935a5ceef254e24a630d36c8910006a3eadf49c4d7d",
+    "continuity/session.ini": "1e9f9ab5aebe3a199b5a2a7f9520612f6bee511691a46d594928f1e83afc35dc",
+    "export-check-final.log": "979d2ce4d10b4297ccc9f6f413f53977796a317901893ca4a5175b97b61bf612",
+    "exports/model01.json": "18141a4344cad5895cd0e608761fc99618e997ee7a99f5cbb54b1f4d1bcee521",
+    "exports/model02.json": "f5048ded7afe6aa0a14e8f3b287e50cdf738b982c572851d52afd5d939a43b6f",
+    "exports/model03.json": "f5048ded7afe6aa0a14e8f3b287e50cdf738b982c572851d52afd5d939a43b6f",
+    "exports/model04.json": "2b987ee7ef3246b57de9bd3737780fe0b0d3d0682382450aefe04c308cff376e",
+    "exports/model05.json": "2b987ee7ef3246b57de9bd3737780fe0b0d3d0682382450aefe04c308cff376e",
+    "geometry01.log": "108715e211d5096770d442541b8b1752fe247317b21dcad500c4627eee59f043",
+    "geometry02.log": "21e200e5320116cae5fbbe79da415131ef1dfc38e9425eef0aaf82b0b50568c5",
+    "geometry03.log": "c06836530e81d820b39e3f61052cdf86ae778acf33321d8bc37a779232005ed3",
+    "hand-regression/candidate-0.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+    "hand-regression/fixture-source/MAPINFO.txt": "4756f3aa6492fa3e7bb5ddb5870ce4d73592641bc3a6197956cc6cb063028b4d",
+    "hand-regression/fixture-source/ZSCRIPT.txt": "8c0c3428011127060c5e1dddb8847049f05f85b04f5107f924c29baad580a2f6",
+    "hand-regression/fixture.zs": "abb5e1f60ec7219494a7a2a8e5129cbd058359484ac9e3ff61b6750b61f10049",
+    "hand-regression/RESULTS.json": "162875254a43c560c2061f7fd37db40b38096889d23c646ff896b3f7ca562a1c",
+    "hand-regression/session.ini": "14bed1df94edbeaed567574faf0b7d1540c9b944c843fea0c803335f2a9c7cf5",
+    "hand-regression/visual-part-1.cfg": "a45c9f78ad78fbbd9870ac8c205e52bd9c8174879699a4fc00a7b45321cdbbc7",
+    "hand-regression/visual-process.log": "ba505d1e9653b9c5f047c140b3568d9ff64215da59853e7829634375be87b372",
+    "hand-regression/visual.cfg": "17ab8819124e2b797506afd3ab7766e81c55ec31cf982844aa3f54902b0577c8",
+    "hand-regression/visual.log": "aea0ca0aec1263d2f27d9dfc8b2c2cbf372ff8bbb361a9ba5c1541b4142bc241",
+    "presentation/models-12/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-12/engine.log": "8e65d5eeb0e5a31c3a11acbce532238259fa24466e1a4a7dec13f390047a0387",
+    "presentation/models-12/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-12/fixture-source/ZSCRIPT.txt": "3fc87d35f8821dc4c5608abac3d4eb977bfbfdd7ef96533f8680bb52caf38d1f",
+    "presentation/models-12/presents.csv": "a35a995d57bc3a0a2e0cb352f617575dc2df56c1e4d786725e28eb0b3f806749",
+    "presentation/models-12/process.log": "0617ea611a899dd52074840f477e1d51064003fffdf3e848a28a5b0fcfe21524",
+    "presentation/models-12/scene.png": "500fd9045cd58b91f02a7a08af301ba22b59ba61b1be9f83dc00615d74590d1e",
+    "presentation/models-12/session.ini": "79508e01449e3414ff83097a08413aea2da96eb896b0bc629a46d631ea25dc1a",
+    "presentation/RESULTS.json": "ef9a5b738321db301016ac59d118040aad4ef5a91a2e7f6a4f1a3d9c4d1788ea",
+    "presentation/sprites-12/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-12/engine.log": "ac10c0cfe49f82ade0c8c2d6808a7749549343097ab66e7d99a461615910e512",
+    "presentation/sprites-12/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-12/fixture-source/ZSCRIPT.txt": "3fc87d35f8821dc4c5608abac3d4eb977bfbfdd7ef96533f8680bb52caf38d1f",
+    "presentation/sprites-12/presents.csv": "60cfb4755c8bace825ff338bfea345d63a3aa99bad463c58265b8d6c3722d30e",
+    "presentation/sprites-12/process.log": "7687f0383ee491786ee2d9692aadc87aa6c11ae4488b81fcefb7e20424eba9a8",
+    "presentation/sprites-12/scene.png": "6f182ef29592141ae5508e8fa8e3088e09c2110acd52c81a3de62a89c8e0a27d",
+    "presentation/sprites-12/session.ini": "83ee3d3c0c1ed1b9084788725b4ec7b0c20f84b62c90b17076a392af87875a73",
+    "repeat04-05.json": "112fa7d6d64edd16d6f8bd06490fcfff29a2d8b4d8e8c83d75a29fb5e821d8c0",
+    "runtime-parity.json": "65702e46b5dd0636f7e1b47270279ae4413ea8849184eb13b5f8a9bef94e6218",
+    "superseded/visual01/detail-0-90.png": "1941dd0bf1ddcc7f948edc06ed2339705c46b71786e773ca7ed2dc0cce168f05",
+    "superseded/visual01/detail-1-90.png": "132cf2a6aceae669d30600acd98f899bd31668058d4e28e03423f42ff9c84e37",
+    "superseded/visual01/detail-2-90.png": "0436370f683f3c1b49943503a2f32869765ad4476871bafd959b23df530f8153",
+    "superseded/visual01/detail-3-90.png": "1db7ac7b8d865e524e088c30dcf2d99f76a34306cea8aa590dae373c568aae43",
+    "superseded/visual01/fixture-source/MAPINFO.txt": "d76f5dd38351b0638888c4d8c15ae81a122864c001a2af87d28ff7e1e4497422",
+    "superseded/visual01/fixture-source/ZSCRIPT.txt": "9bf43782635c08dc27f747e0bb84eca925f6d9612c99f0ae6640b98ab3608e6b",
+    "superseded/visual01/fixture.zs": "4043859fb5110781bdbd2908305c5e01fb6fba6eaa10d6dd173f99dbd5444d5c",
+    "superseded/visual01/RESULTS.json": "78971326b3dc1e21c0127d5af9b4ba36c572ae1aba5c14b8cfcab5b8deb3e18e",
+    "superseded/visual01/session.ini": "29581845e609ba6286e8ceafc075243bc7a5c79853e81506dae6e700fbb0c23c",
+    "superseded/visual01/visual-part-1.cfg": "78d10d1b027bf9c02f4b9788ea1026db69ab8b413cfa72f4cb7fb82ab8c4f040",
+    "superseded/visual01/visual-process.log": "067c10a6bf8d66fe45b898d651e28704dfd55905bfc4a2b846a96adf5e5b3901",
+    "superseded/visual01/visual.cfg": "4eb912da535f0ce2ede321a3004da14a67b548658d915b625ae6f3dc595258a2",
+    "superseded/visual01/visual.log": "f18c2f480775bd573b5b9c64dfb3ee31d173a4bf8bce12a6c10d5098df50980f",
+    "visual/candidate-0.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+    "visual/candidate-1.png": "5ed291eacdff218b5c63034b7fd3085a53adf634af8700b63916e34aceb7bb0a",
+    "visual/candidate-2.png": "8229b9e1c5d6aca2a8d0445c314ef506708856cd7b8d3e95f363c64298692e1b",
+    "visual/candidate-3.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+    "visual/candidate-5.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+    "visual/candidate-6.png": "86913d7b84d0f5b292ccae2e53e8a070fd90a44cca1d7b348d3d30d0bceda248",
+    "visual/candidate-7.png": "26f21e0eb8affdaa111b684e7ad76b406935e3562053be817176198ba0d813be",
+    "visual/detail-0-0.png": "c4673f0cd60c58ff22d1b62b88f902d5c88a54b36046765ebfe8b6dd07ec4a8e",
+    "visual/detail-0-160.png": "4cb2835487421088fe4cbd477eafa0c022133638486ca8abde647483720791e2",
+    "visual/detail-0-225.png": "7e26de4262f5e1781a9f4fc157ab0f89695f01c014590404f7d8a79771449d48",
+    "visual/detail-0-270.png": "fe2897b5a1bc8b0ce4490cb90f7b77c437d41002c9279802eb29229930678122",
+    "visual/detail-0-90.png": "1941dd0bf1ddcc7f948edc06ed2339705c46b71786e773ca7ed2dc0cce168f05",
+    "visual/detail-1-0.png": "3ce72cdfc7c4d5d945b0ab2ff54a8ce98aca387f45adbbcc907d9326c2d40303",
+    "visual/detail-1-160.png": "70163b41f9522e763e7147a1445fe125f83db3c414f1db27db7897a2f3d57ef1",
+    "visual/detail-1-225.png": "7b30e0df41da6584df5ab5b6b790f05a7b6ae4df38b08b5d3a441dbb5cb6c775",
+    "visual/detail-1-270.png": "260106803cfe2535ba39bb8ebe98bdaa52a4c8204fcb294bbeafb46526e163c0",
+    "visual/detail-1-90.png": "0e3cd8f6287444be3020bd318c6a71db0381a1c47f63c64aade3eea1a993d3eb",
+    "visual/detail-2-0.png": "f7828ba51a72afe44c996f0a3b6b7db2a20103176a1a0c350cc0370b13cf5f2d",
+    "visual/detail-2-160.png": "b238353e6a4eb34129a5f85ae9d031bb6debbb8abab2ee7169afffb8654e39de",
+    "visual/detail-2-225.png": "efa00ce4f6a7a79d0fe3465b1fda0097575ba279f78e88970d9faa37c1eac084",
+    "visual/detail-2-270.png": "596bc7aaee5f85ac1bd15b02a8490bed182a7baa3e872a9b42b7fcfc501b8350",
+    "visual/detail-2-90.png": "a215a08ecb8c87d2539f6c54e6687ddd44a164cf2a7f672866ae3c7bd3892842",
+    "visual/detail-3-0.png": "b76f1b07508dd3d5f7d24a44e4d831dfbbc163377489873810dfaac8cb170980",
+    "visual/detail-3-160.png": "127fade2776201122ab8778132e4512eacd92a8f8cc768b9a82fb5c17e39866b",
+    "visual/detail-3-225.png": "98a555f71e6ce9ab1630bc3a90df548c1477b04ff2508a3638e7356fe324b5e0",
+    "visual/detail-3-270.png": "e0320e448abe124dd7515874f807c2d1f313bcf84adcf481073a72a153f02bfb",
+    "visual/detail-3-90.png": "b8ebad11b512ed46e394d6c0a64464124fc8fd391289ae8b9f06abe33b7bd209",
+    "visual/fixture-source/MAPINFO.txt": "d76f5dd38351b0638888c4d8c15ae81a122864c001a2af87d28ff7e1e4497422",
+    "visual/fixture-source/ZSCRIPT.txt": "9bf43782635c08dc27f747e0bb84eca925f6d9612c99f0ae6640b98ab3608e6b",
+    "visual/fixture.zs": "4043859fb5110781bdbd2908305c5e01fb6fba6eaa10d6dd173f99dbd5444d5c",
+    "visual/RESULTS.json": "53857ad81ea54873e3813485dfee41e18fb817e531fe4ac969b10f594347a41c",
+    "visual/session.ini": "4bb0bca19706d1b8c5952a1eb770c675bbe25247044cb9ea993e5184fa547c7e",
+    "visual/visual-part-1.cfg": "78d10d1b027bf9c02f4b9788ea1026db69ab8b413cfa72f4cb7fb82ab8c4f040",
+    "visual/visual-process.log": "c93c1d124db93e0c4d1191eedbb5d5c13714847deb5fa5eb64dc1f0d63c2831d",
+    "visual/visual.cfg": "e44b0467a6db22dce8dc1e6d043c9e4f87f5829c329e3fea439380c7db7376b4",
+    "visual/visual.log": "5f4df83da21b13127b8268b90f7ed4bf15ae49bdebe3d1f45b21854d0d27445a",
+    "validation-final.json": "6a9de93eba122ccd4df7356282b5b4121e0d70273662613bf3ee538b921b3837"
+  }
+}

@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.68** - 2026-11-15.
+Documentation version: **5.17.69** - 2026-11-15.
+
+## 5.17.69 - Four foot armor world models (#781)
+
+Four original paired boot candidates cover twelve native cases using unchanged
+owned materials and adapted hollow footwear. Seventeen exports repeat; topology,
+attachments, shaft and lining checks pass. Native continuity: 1,011 assertions;
+visual/control: 236; prior hand-armor regression: 236. Twenty final detail views
+were inspected. ASSETS records isolated measurements and visual qualifications.
+CA781-FOOT-ARMOR-01 awaits author review. Four torso armor states, ancestor-only
+bindings, remaining characters, modular fitting and V5.16 are unfinished.
 
 ## 5.17.68 - Four hand armor world models (#779)
 
