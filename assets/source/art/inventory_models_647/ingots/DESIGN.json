@@ -1,0 +1,312 @@
+{
+  "schema_revision": 1,
+  "issue": 658,
+  "parent_issue": 647,
+  "status": "native_candidate_pending_author_review",
+  "model_path": "models/caelum/inventory/ingots",
+  "editable_materials_name": "ingots.mtl",
+  "source_sha256": {
+    "src/graphics/caelum/icons/materials/ca_material_iron_ingot.png": "82dd215ceb46deee151ab1674847f80d9798f168e72b3f2ec71b961f30dd6c74",
+    "src/graphics/caelum/icons/materials/ca_material_copper_ingot.png": "687238a41812d2269d2ed936bb2f073bbe195c6195c4e18460e2a6bbe49d17c6",
+    "src/graphics/caelum/icons/materials/ca_material_tin_ingot.png": "4c9e53f85cc4c85cd05aad0774d65204b2d1dcd1f14fc3699713622ae0d76889",
+    "src/graphics/caelum/icons/materials/ca_material_bronze_ingot.png": "432cf7a1a10ea198e2282cf3c4e20b24098cab21758bf9d05c873fb834c75677",
+    "src/graphics/caelum/icons/materials/ca_material_steel_ingot.png": "353901f4271eaa64e05628b638e2eb3bf799b9f4dcf0bf729e55e46634f9d99a",
+    "src/graphics/caelum/icons/materials/ca_material_silver_ingot.png": "d8a652358b9d98322b70e5eb5987a0af3d366e3d352bedb07d301007a5a3d340",
+    "src/graphics/caelum/icons/materials/ca_material_gold_ingot.png": "bc95b522850d0ea81d0c059742f102ef9e5c20f015450a1043fbe7a89840268e",
+    "assets/source/art/inventory_models_647/documents/DESIGN.json": "33e580db7c01373d75dfd0b5b5ac526d73519841cf2a0f174a28fab2c6db55b5",
+    "src/caelum/core/CaelumConstants.zs": "08f5510cbf0dd058f9e45b3a46cc9fc0438c63dcdcc9769dbb60ef0a46d65dd4",
+    "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04",
+    "src/TEXTURES": "e93b59094575efbdc7361e0093fe84f798095571a2e34728a1e15530f1146640"
+  },
+  "materials": {
+    "iron": {
+      "texture": "graphics/caelum/icons/materials/ca_material_iron_ingot.png",
+      "image_size": [
+        128,
+        128
+      ],
+      "rect_pixels": [
+        75,
+        26,
+        88,
+        40
+      ]
+    },
+    "copper": {
+      "texture": "graphics/caelum/icons/materials/ca_material_copper_ingot.png",
+      "image_size": [
+        128,
+        128
+      ],
+      "rect_pixels": [
+        75,
+        26,
+        94,
+        45
+      ]
+    },
+    "tin": {
+      "texture": "graphics/caelum/icons/materials/ca_material_tin_ingot.png",
+      "image_size": [
+        128,
+        128
+      ],
+      "rect_pixels": [
+        74,
+        27,
+        89,
+        33
+      ]
+    },
+    "bronze": {
+      "texture": "graphics/caelum/icons/materials/ca_material_bronze_ingot.png",
+      "image_size": [
+        128,
+        128
+      ],
+      "rect_pixels": [
+        75,
+        26,
+        94,
+        45
+      ]
+    },
+    "steel": {
+      "texture": "graphics/caelum/icons/materials/ca_material_steel_ingot.png",
+      "image_size": [
+        128,
+        128
+      ],
+      "rect_pixels": [
+        75,
+        26,
+        94,
+        45
+      ]
+    },
+    "silver": {
+      "texture": "graphics/caelum/icons/materials/ca_material_silver_ingot.png",
+      "image_size": [
+        128,
+        128
+      ],
+      "rect_pixels": [
+        75,
+        26,
+        94,
+        45
+      ]
+    },
+    "gold": {
+      "texture": "graphics/caelum/icons/materials/ca_material_gold_ingot.png",
+      "image_size": [
+        128,
+        128
+      ],
+      "rect_pixels": [
+        75,
+        26,
+        94,
+        45
+      ]
+    }
+  },
+  "tier_materials": {
+    "iron": {
+      "iron": "iron"
+    },
+    "copper": {
+      "iron": "copper"
+    },
+    "tin": {
+      "iron": "tin"
+    },
+    "bronze": {
+      "iron": "bronze"
+    },
+    "steel": {
+      "iron": "steel"
+    },
+    "silver": {
+      "iron": "silver"
+    },
+    "gold": {
+      "iron": "gold"
+    }
+  },
+  "families": {
+    "ingot": {
+      "parts": [
+        {
+          "kind": "loft",
+          "part": "tapered iron ingot",
+          "material": "iron",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              10.8,
+              3.5
+            ],
+            [
+              0.3,
+              0,
+              0,
+              11,
+              3.7
+            ],
+            [
+              4.7,
+              0,
+              0,
+              9.6,
+              3.0
+            ],
+            [
+              5.0,
+              0,
+              0,
+              9.3,
+              2.7
+            ]
+          ],
+          "exponent": 0.16,
+          "segments": 32,
+          "uv_projection": "box"
+        }
+      ]
+    }
+  },
+  "variants": {
+    "iron": {
+      "family": "ingot",
+      "tier": "iron",
+      "class": "CaelumMaterialPickup",
+      "sprite": "M000",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_iron_ingot.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "material_id": 0,
+      "native_tiers": [
+        1,
+        2,
+        3
+      ]
+    },
+    "copper": {
+      "family": "ingot",
+      "tier": "copper",
+      "class": "CaelumMaterialPickup",
+      "sprite": "M059",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_copper_ingot.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "material_id": 59,
+      "native_tiers": [
+        1,
+        2,
+        3
+      ]
+    },
+    "tin": {
+      "family": "ingot",
+      "tier": "tin",
+      "class": "CaelumMaterialPickup",
+      "sprite": "M060",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_tin_ingot.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "material_id": 60,
+      "native_tiers": [
+        1,
+        2,
+        3
+      ]
+    },
+    "bronze": {
+      "family": "ingot",
+      "tier": "bronze",
+      "class": "CaelumMaterialPickup",
+      "sprite": "M067",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_bronze_ingot.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "material_id": 67,
+      "native_tiers": [
+        1,
+        2,
+        3
+      ]
+    },
+    "steel": {
+      "family": "ingot",
+      "tier": "steel",
+      "class": "CaelumMaterialPickup",
+      "sprite": "M068",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_steel_ingot.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "material_id": 68,
+      "native_tiers": [
+        1,
+        2,
+        3
+      ]
+    },
+    "silver": {
+      "family": "ingot",
+      "tier": "silver",
+      "class": "CaelumMaterialPickup",
+      "sprite": "M069",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_silver_ingot.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "material_id": 69,
+      "native_tiers": [
+        1,
+        2,
+        3
+      ]
+    },
+    "gold": {
+      "family": "ingot",
+      "tier": "gold",
+      "class": "CaelumMaterialPickup",
+      "sprite": "M070",
+      "reference": "src/graphics/caelum/icons/materials/ca_material_gold_ingot.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ],
+      "material_id": 70,
+      "native_tiers": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "policy": "Seven existing material identities, all three existing tiers. Presentation only; no quantity, value, tier, recipe, collision, ownership or saved-field changes.",
+  "identities": "CaelumMaterialPickup keeps its native args[0]/args[1] and original Mxxx/A mappings. CaelumIronIngot legacy model remains unchanged.",
+  "scope_limits": "Only iron/copper/tin/bronze/steel/silver/gold ingots. Other components, ores, equipment and furniture remain separate."
+}

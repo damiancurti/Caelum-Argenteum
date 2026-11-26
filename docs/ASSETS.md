@@ -1,6 +1,54 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.6** - 2026-11-13.
+Documentation version: **5.17.7** - 2026-11-13.
+
+## 5.17.7 - Native metal-ingot material models (#658, parent #647)
+
+The shared CaelumMaterialPickup now has explicit model bindings for iron,
+copper, tin, bronze, steel, silver and gold (existing IDs 0,59,60,67,68,69,70).
+Their original Mxxx/A pairs select seven closed beveled meshes; all three native
+tiers keep their existing common appearance and distinct inventory identity.
+The legacy CaelumIronIngot model from #656 is unchanged. No item class, saved
+field, polling loop or gameplay mutation is added.
+
+Editable sources are in assets/source/art/inventory_models_647/ingots. The
+geometry reuses #656's closed ingot family. Each material samples a stored opaque
+rectangle inside its existing 128px icon; original PNG pixels are untouched.
+A one-pixel opaque margin keeps bilinear filtering inside the source material.
+These reused small patches are deliberately limited in close-up resolution;
+author art review remains required. No new image generation occurs. Rebuild with
+`python assets/generators/generate_inventory_ingot_models.py --output build/ingot-models --install`;
+--check verifies deterministic exports. Editable OBJ/MTL is emitted beside MD3.
+Width is normalized to the original opaque sprite extent; native scale and
+collision remain authoritative. Materials, recipes, value, unit weight, quality,
+surface ledgers, provenance, Box and Limbo rules remain unchanged.
+
+The native fixture exercises seven identities times three tiers. It verifies
+native pickup, split/merge, distinct stacks, FIFO surface-lot markers, original
+metadata and saved ownership without invoking ordinary inventory menus.
+The complete package passes 2,924 native assertions across sprite baseline,
+old save with models, fresh models, model save/reload and rollback. Checks cover
+all 21 material/tier identities, quantities and ownership, original sprite/icon,
+weight/collision/scale, floor contact, distinct native stacks, FIFO surface lots,
+contamination/provenance, direct Box weight and Limbo quest guards. Menus and
+author art review remain separate.
+
+Static checks pass source hashes, seven unique class/sprite/A pairs, opaque
+bilinear margins, MD3 headers/surfaces/UVs/quantized bounds and triangle indices.
+Seven closed components total 5,376 source vertices and 1,792 triangles. Eighteen
+repeated exports are identical. All 18,198 packaged entries match src: eight new
+resources, one MODELDEF include and two release diagnostics; all other bytes,
+including the legacy ingot and every existing model, match the prior package.
+All seven materials received native visual inspection; the final fixture records
+21 detail rotations and seven overview views. Earlier compiler and pre-margin
+captures remain in the evidence.
+
+One sequential 700-tic pair with seven objects records 1019.78/1017.60 queue presents/s, p95 1.2371/1.2283 ms and p99 1.4418/1.4359 ms.
+Environment: Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti,
+GZDoom 4.14.2, Vulkan 1280x720, uncapped, vsync off, unpaused background and
+5% audio. This bounded comparison is not GPU/display timing, repeatability or
+a campaign/crowd budget. Evidence: assets/validation_v5_17_7/evidence/SUMMARY.json.
+CA658-INGOTS-01 and the wider #647 inventory/character work remain pending.
 
 ## 5.17.6 - Document and small-supply world models (#656, parent #647)
 

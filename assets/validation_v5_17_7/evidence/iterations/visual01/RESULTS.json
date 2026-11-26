@@ -1,0 +1,22 @@
+{
+  "issue": 658,
+  "kind": "ingots",
+  "scope": "Native pickup/toss, quantity and saved ownership for ingots; no normal menu or author acceptance.",
+  "baseline_sha256": "5daffc3d84ca6f1be18d9f1d6171507e5ce0f6201f792ecb705f668f9ab0ca8b",
+  "runtime_sha256": "5daffc3d84ca6f1be18d9f1d6171507e5ce0f6201f792ecb705f668f9ab0ca8b",
+  "model_sha256": "ebb90a5187b808a66b798cdd55f854c45706a9b7e592d08f0520574578e3bbd3",
+  "fixture_sha256": "e8db653c4cef09eade341f8354045f03274a8c9dfdba5bd2ee0970c513c7fe36",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 1,
+      "passed": false,
+      "errors": [
+        "Script error, \"fixture.pk3:zscript\" line 86:"
+      ],
+      "assertions": 0
+    }
+  ],
+  "captures": {}
+}

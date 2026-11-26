@@ -1,0 +1,19 @@
+{
+  "issue": 658,
+  "parent_issue": 647,
+  "geometry": "Reuse the original closed beveled-ingot family from #656, normalized to each unchanged original icon width.",
+  "materials": "Read-only selection of fully opaque top-face pixels in each existing owned ingot PNG. Native shader UVs point to these original pixels; no raster is modified, generated, recolored or copied.",
+  "sampling": "Largest axis-aligned rectangle with alpha >=250 inside the existing icon top-face quadrilateral [(82,17),(108,32),(45,91),(20,75)]. Stored rectangles remain editable source data. The final UV rectangle is inset by one pixel on every side to keep bilinear sampling inside opaque source pixels.",
+  "source_geometry": "assets/source/art/inventory_models_647/documents/DESIGN.json",
+  "reference_icons": [
+    "src/graphics/caelum/icons/materials/ca_material_iron_ingot.png",
+    "src/graphics/caelum/icons/materials/ca_material_copper_ingot.png",
+    "src/graphics/caelum/icons/materials/ca_material_tin_ingot.png",
+    "src/graphics/caelum/icons/materials/ca_material_bronze_ingot.png",
+    "src/graphics/caelum/icons/materials/ca_material_steel_ingot.png",
+    "src/graphics/caelum/icons/materials/ca_material_silver_ingot.png",
+    "src/graphics/caelum/icons/materials/ca_material_gold_ingot.png"
+  ],
+  "image_generation": "None. Original project attribution and provenance remain with the existing icons.",
+  "exclusions": "No new material type, balancing, tier artwork policy, external assets or rejected mate art."
+}

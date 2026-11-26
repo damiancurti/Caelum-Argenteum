@@ -1,0 +1,7 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/ingots" Model 0 "iron.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M000 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/ingots" Model 0 "copper.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M059 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/ingots" Model 0 "tin.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M060 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/ingots" Model 0 "bronze.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M067 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/ingots" Model 0 "steel.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M068 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/ingots" Model 0 "silver.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M069 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/ingots" Model 0 "gold.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M070 A 0 0 }

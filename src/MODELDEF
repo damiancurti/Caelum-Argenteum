@@ -4740,3 +4740,4 @@ Model CaelumBarricadeVisual
 // #461: Pombero conserva estados, combate y cuerpo provisionales.
 #include "caelum/data/pombero_combat.modeldef"
 #include "caelum/data/inventory_documents.modeldef"
+#include "caelum/data/inventory_ingots.modeldef"

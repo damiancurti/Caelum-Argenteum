@@ -1,0 +1,344 @@
+{
+  "schema_revision": 1,
+  "issue": 658,
+  "parent_issue": 647,
+  "status": "art_candidate_pending_native_and_author_review",
+  "variants": {
+    "iron": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "tapered iron ingot"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 768,
+      "triangles": 256,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 768,
+          "triangles": 256
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        9,
+        120,
+        118
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.0,
+            -18.836363636363636,
+            0.0
+          ],
+          "max": [
+            56.0,
+            18.836363636363636,
+            25.454545454545453
+          ]
+        }
+      ]
+    },
+    "copper": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "tapered iron ingot"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 768,
+      "triangles": 256,
+      "surfaces": [
+        {
+          "material": "copper",
+          "vertices": 768,
+          "triangles": 256
+        }
+      ],
+      "reference_opaque_bounds": [
+        6,
+        9,
+        122,
+        118
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 116.0,
+      "native_bounds": [
+        {
+          "min": [
+            -58.0,
+            -19.509090909090908,
+            0.0
+          ],
+          "max": [
+            58.0,
+            19.509090909090908,
+            26.363636363636363
+          ]
+        }
+      ]
+    },
+    "tin": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "tapered iron ingot"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 768,
+      "triangles": 256,
+      "surfaces": [
+        {
+          "material": "tin",
+          "vertices": 768,
+          "triangles": 256
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        8,
+        120,
+        119
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.0,
+            -18.836363636363636,
+            0.0
+          ],
+          "max": [
+            56.0,
+            18.836363636363636,
+            25.454545454545453
+          ]
+        }
+      ]
+    },
+    "bronze": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "tapered iron ingot"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 768,
+      "triangles": 256,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 768,
+          "triangles": 256
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        9,
+        120,
+        119
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.0,
+            -18.836363636363636,
+            0.0
+          ],
+          "max": [
+            56.0,
+            18.836363636363636,
+            25.454545454545453
+          ]
+        }
+      ]
+    },
+    "steel": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "tapered iron ingot"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 768,
+      "triangles": 256,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 768,
+          "triangles": 256
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        9,
+        120,
+        119
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.0,
+            -18.836363636363636,
+            0.0
+          ],
+          "max": [
+            56.0,
+            18.836363636363636,
+            25.454545454545453
+          ]
+        }
+      ]
+    },
+    "silver": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "tapered iron ingot"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 768,
+      "triangles": 256,
+      "surfaces": [
+        {
+          "material": "silver",
+          "vertices": 768,
+          "triangles": 256
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        8,
+        120,
+        119
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.0,
+            -18.836363636363636,
+            0.0
+          ],
+          "max": [
+            56.0,
+            18.836363636363636,
+            25.454545454545453
+          ]
+        }
+      ]
+    },
+    "gold": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "tapered iron ingot"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 768,
+      "triangles": 256,
+      "surfaces": [
+        {
+          "material": "gold",
+          "vertices": 768,
+          "triangles": 256
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        9,
+        120,
+        119
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.0,
+            -18.836363636363636,
+            0.0
+          ],
+          "max": [
+            56.0,
+            18.836363636363636,
+            25.454545454545453
+          ]
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "be0ee9f256546244032b87d60c0c64042d5c22f7999ed2ff26005183bdbf3c05",
+    "PROVENANCE.json": "0ec3c4ba343d6fdb339473c64dfb044738e1d0bbf494ad5ed299e12479008426"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/materials/ca_material_iron_ingot.png": "82dd215ceb46deee151ab1674847f80d9798f168e72b3f2ec71b961f30dd6c74",
+    "src/graphics/caelum/icons/materials/ca_material_copper_ingot.png": "687238a41812d2269d2ed936bb2f073bbe195c6195c4e18460e2a6bbe49d17c6",
+    "src/graphics/caelum/icons/materials/ca_material_tin_ingot.png": "4c9e53f85cc4c85cd05aad0774d65204b2d1dcd1f14fc3699713622ae0d76889",
+    "src/graphics/caelum/icons/materials/ca_material_bronze_ingot.png": "432cf7a1a10ea198e2282cf3c4e20b24098cab21758bf9d05c873fb834c75677",
+    "src/graphics/caelum/icons/materials/ca_material_steel_ingot.png": "353901f4271eaa64e05628b638e2eb3bf799b9f4dcf0bf729e55e46634f9d99a",
+    "src/graphics/caelum/icons/materials/ca_material_silver_ingot.png": "d8a652358b9d98322b70e5eb5987a0af3d366e3d352bedb07d301007a5a3d340",
+    "src/graphics/caelum/icons/materials/ca_material_gold_ingot.png": "bc95b522850d0ea81d0c059742f102ef9e5c20f015450a1043fbe7a89840268e",
+    "assets/source/art/inventory_models_647/documents/DESIGN.json": "33e580db7c01373d75dfd0b5b5ac526d73519841cf2a0f174a28fab2c6db55b5",
+    "src/caelum/core/CaelumConstants.zs": "08f5510cbf0dd058f9e45b3a46cc9fc0438c63dcdcc9769dbb60ef0a46d65dd4",
+    "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04",
+    "src/TEXTURES": "e93b59094575efbdc7361e0093fe84f798095571a2e34728a1e15530f1146640"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "447863f9bff1c357bd459c37324ed7bfec6443581184425c15d71f7cb2fe3796",
+    "generate_inventory_consumable_models.py": "1e0f81ac23de88c55271cccba6fd7f56c64c3b38d76ddda50da1348bd1d269a7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_ingot_models.py": "4d7244630e04b466509055c55043738240e0469c2fdaeba6e1b8f28cd69660f6"
+  },
+  "sha256": {
+    "models/caelum/inventory/ingots/iron.md3": "e0ba864e60c31a3b5fd63f4804216cf3f9ed5db321fdafccb52a84cdf92b8f4a",
+    "editable/iron.obj": "9f9fa5bba4f393a07d643cdfc48b0e4fb9761d16f1296d77103b988dd42e4b54",
+    "models/caelum/inventory/ingots/copper.md3": "c01b8d7cf2cb65ba9f100270b6f8943b4041b79214c97b7ed96baaf281c9aec5",
+    "editable/copper.obj": "071c2406736b37b7f123fa28ecc8b716a27130eae41a7247d7e6a2a4006bbaac",
+    "models/caelum/inventory/ingots/tin.md3": "242e4104c0930deeafcdf668559afd2a3443c11188295624cc00b8dadf153e44",
+    "editable/tin.obj": "bb57660e2d81bd8d365f9413027f49c706113541c1ad4eb55dacc4f445583eef",
+    "models/caelum/inventory/ingots/bronze.md3": "eeaf8ddd4b8eb5b3388e4e9bf32bd75da5424d563cd0b2fc2809c30dfbca4b3c",
+    "editable/bronze.obj": "db19c77f88c181b9370fe959e9f66688d6e1088c749f0aa599f1f109ab8627ef",
+    "models/caelum/inventory/ingots/steel.md3": "8195eea3c2b26309b4585f9f547949cefd3d88e325047d51e0ba4e5c0b5380ba",
+    "editable/steel.obj": "21cafa73cb2925cc0da9239b0ef36df4e989156a2027d681aec21b12fd336c65",
+    "models/caelum/inventory/ingots/silver.md3": "aa5d66478862fc74d944c75052a28ec815380684623c71a2538cc7086a8867ee",
+    "editable/silver.obj": "c7fac93aa94508a7b79a430a298d61bcb1135bd1a53ed36b7c931500338d7065",
+    "models/caelum/inventory/ingots/gold.md3": "9635b2587ad23b7e229ef50d9aa0b206a421bd00df41e54eb1706ee3aeb39508",
+    "editable/gold.obj": "c14afb7106de85fa8e2149071589736ec43ee039abdbd9ae10e1e33261a608ee",
+    "editable/ingots.mtl": "27b2d9c6cdcaf7415611ff6c7aa66915a378ac06f287bbe07c4abfcae78bca6b",
+    "caelum/data/inventory_ingots.modeldef": "2a2597ff3829ea3232a772c9e96db0ea9cd9ee69fe02a5682f2935a82fe9e43c"
+  }
+}

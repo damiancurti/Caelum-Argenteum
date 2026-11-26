@@ -28,14 +28,14 @@ def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main(default_kind='coins'):
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ['baseline','runtime','presentation-layer','output']:parser.add_argument('--'+name,type=Path,required=True)
-    parser.add_argument('--kind',choices=('coins','consumables','water','food','ammunition','documents'),default=default_kind)
+    parser.add_argument('--kind',choices=('coins','consumables','water','food','ammunition','documents','ingots'),default=default_kind)
     args=parser.parse_args();baseline=args.baseline.resolve(strict=True);runtime=args.runtime.resolve(strict=True);layer=args.presentation_layer.resolve(strict=True)
     existing=subprocess.check_output(['tasklist','/FI','IMAGENAME eq gzdoom.exe','/FO','CSV','/NH']).decode(errors='replace')
     if '"gzdoom.exe"' in existing.lower():parser.error('Another native engine is running.')
     out=args.output.resolve();out.relative_to(ROOT/'build');out.mkdir(parents=True,exist_ok=False)
-    report={'issue':656 if args.kind=='documents' else 652 if args.kind=='ammunition' else 647,'kind':args.kind,'scope':__doc__.strip(),'baseline_sha256':digest(baseline),'runtime_sha256':digest(runtime),'engine_sha256':digest(ENGINE),
+    report={'issue':658 if args.kind=='ingots' else 656 if args.kind=='documents' else 652 if args.kind=='ammunition' else 647,'kind':args.kind,'scope':__doc__.strip(),'baseline_sha256':digest(baseline),'runtime_sha256':digest(runtime),'engine_sha256':digest(ENGINE),
             'layer_sha256':digest(layer/'ca_presentation.dll'),'runs':[]}
-    count={'coins':15,'consumables':9,'water':6,'food':6,'ammunition':7,'documents':6}[args.kind]
+    count={'coins':15,'consumables':9,'water':6,'food':6,'ammunition':7,'documents':6,'ingots':7}[args.kind]
     for kind in ['sprites','models']:
         folder=out/f'{kind}-{count}';folder.mkdir()
         if args.kind=='coins':
@@ -75,6 +75,11 @@ class CA647Bench : EventHandler
         }
     }
 }""".replace('KINDS',kinds)
+        if args.kind=='ingots':
+            ids=','.join(str(item['material_id']) for item in config['variants'].values())
+            source=source.replace("static const class<Inventory> kinds[]={KINDS};".replace('KINDS',kinds), 'static const int materialIds[]={'+ids+'};')
+            source=source.replace('index<kinds.Size()', 'index<materialIds.Size()')
+            source=source.replace("Bodies.Push(Actor.Spawn(kinds[index],((index%5-2)*20,(index/5-1)*20,0),NO_REPLACE));", "{let item=CaelumMaterialPickup(Actor.Spawn('CaelumMaterialPickup',((index%5-2)*20,(index/5-1)*20,0),NO_REPLACE));item.args[0]=materialIds[index];item.args[1]=2;item.UpdateMaterialVisuals();Bodies.Push(item);}")
         if args.kind!='coins':
             source=source.replace('(0,-100,110)','(0,-180,180)').replace('camera.Pitch=47','camera.Pitch=43')
             source=source.replace('(index%5-2)*20,(index/5-1)*20','(index%3-1)*55,(index/3-1)*55')

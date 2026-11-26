@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.6** - 2026-11-13.
+Documentation version: **5.17.7** - 2026-11-13.
+
+## 5.17.7 - Seven metal-ingot model variants (#658, 2026-11-13)
+
+Added explicit CaelumMaterialPickup bindings for the seven existing metal ingots,
+preserving all three tiers and the #656 legacy ingot. Reused closed geometry and
+original icon pixels with opaque UV margins. No new raster, class, schema or
+gameplay rule is introduced. The final package passes 2,924 native checks across
+21 material/tier combinations, including old/new/reload/rollback saves. Eighteen
+repeated exports are identical; all 18,198 package entries match src. One
+seven-object sprite/model comparison records 1019.78/1017.60 queue presents/s, p95 1.2371/1.2283 ms and p99 1.4418/1.4359 ms. ASSETS records the
+environment and limits; assets/validation_v5_17_7/evidence/SUMMARY.json preserves
+failed iterations and final evidence. CA658-INGOTS-01 remains pending.
 
 ## 5.17.6 - Document and supply models (#656, 2026-11-13)
 

@@ -1,0 +1,636 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 17:25:09
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-656/build/issue656-documents01.pk3, 18190 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-658/build/issue658-model02/preview.pk3, 8 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-658/build/issue658-visual03/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2490.94 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA658 PASS ingot 0 native pickup
+CA658 PASS ingot 0 native distinct ownership
+CA658 PASS ingot 0 existing boxed weight
+CA658 PASS ingot 0 quest drop guard
+CA658 PASS ingot 0 native split
+CA658 PASS ingot 1 native pickup
+CA658 PASS ingot 1 native distinct ownership
+CA658 PASS ingot 1 existing boxed weight
+CA658 PASS ingot 1 quest drop guard
+CA658 PASS ingot 1 native split
+CA658 PASS ingot 2 native pickup
+CA658 PASS ingot 2 native distinct ownership
+CA658 PASS ingot 2 existing boxed weight
+CA658 PASS ingot 2 quest drop guard
+CA658 PASS ingot 2 native split
+CA658 PASS ingot 3 native pickup
+CA658 PASS ingot 3 native distinct ownership
+CA658 PASS ingot 3 existing boxed weight
+CA658 PASS ingot 3 quest drop guard
+CA658 PASS ingot 3 native split
+CA658 PASS ingot 4 native pickup
+CA658 PASS ingot 4 native distinct ownership
+CA658 PASS ingot 4 existing boxed weight
+CA658 PASS ingot 4 quest drop guard
+CA658 PASS ingot 4 native split
+CA658 PASS ingot 5 native pickup
+CA658 PASS ingot 5 native distinct ownership
+CA658 PASS ingot 5 existing boxed weight
+CA658 PASS ingot 5 quest drop guard
+CA658 PASS ingot 5 native split
+CA658 PASS ingot 6 native pickup
+CA658 PASS ingot 6 native distinct ownership
+CA658 PASS ingot 6 existing boxed weight
+CA658 PASS ingot 6 quest drop guard
+CA658 PASS ingot 6 native split
+CA658 PASS ingot 7 native pickup
+CA658 PASS ingot 7 native distinct ownership
+CA658 PASS ingot 7 existing boxed weight
+CA658 PASS ingot 7 quest drop guard
+CA658 PASS ingot 7 native split
+CA658 PASS ingot 8 native pickup
+CA658 PASS ingot 8 native distinct ownership
+CA658 PASS ingot 8 existing boxed weight
+CA658 PASS ingot 8 quest drop guard
+CA658 PASS ingot 8 native split
+CA658 PASS ingot 9 native pickup
+CA658 PASS ingot 9 native distinct ownership
+CA658 PASS ingot 9 existing boxed weight
+CA658 PASS ingot 9 quest drop guard
+CA658 PASS ingot 9 native split
+CA658 PASS ingot 10 native pickup
+CA658 PASS ingot 10 native distinct ownership
+CA658 PASS ingot 10 existing boxed weight
+CA658 PASS ingot 10 quest drop guard
+CA658 PASS ingot 10 native split
+CA658 PASS ingot 11 native pickup
+CA658 PASS ingot 11 native distinct ownership
+CA658 PASS ingot 11 existing boxed weight
+CA658 PASS ingot 11 quest drop guard
+CA658 PASS ingot 11 native split
+CA658 PASS ingot 12 native pickup
+CA658 PASS ingot 12 native distinct ownership
+CA658 PASS ingot 12 existing boxed weight
+CA658 PASS ingot 12 quest drop guard
+CA658 PASS ingot 12 native split
+CA658 PASS ingot 13 native pickup
+CA658 PASS ingot 13 native distinct ownership
+CA658 PASS ingot 13 existing boxed weight
+CA658 PASS ingot 13 quest drop guard
+CA658 PASS ingot 13 native split
+CA658 PASS ingot 14 native pickup
+CA658 PASS ingot 14 native distinct ownership
+CA658 PASS ingot 14 existing boxed weight
+CA658 PASS ingot 14 quest drop guard
+CA658 PASS ingot 14 native split
+CA658 PASS ingot 15 native pickup
+CA658 PASS ingot 15 native distinct ownership
+CA658 PASS ingot 15 existing boxed weight
+CA658 PASS ingot 15 quest drop guard
+CA658 PASS ingot 15 native split
+CA658 PASS ingot 16 native pickup
+CA658 PASS ingot 16 native distinct ownership
+CA658 PASS ingot 16 existing boxed weight
+CA658 PASS ingot 16 quest drop guard
+CA658 PASS ingot 16 native split
+CA658 PASS ingot 17 native pickup
+CA658 PASS ingot 17 native distinct ownership
+CA658 PASS ingot 17 existing boxed weight
+CA658 PASS ingot 17 quest drop guard
+CA658 PASS ingot 17 native split
+CA658 PASS ingot 18 native pickup
+CA658 PASS ingot 18 native distinct ownership
+CA658 PASS ingot 18 existing boxed weight
+CA658 PASS ingot 18 quest drop guard
+CA658 PASS ingot 18 native split
+CA658 PASS ingot 19 native pickup
+CA658 PASS ingot 19 native distinct ownership
+CA658 PASS ingot 19 existing boxed weight
+CA658 PASS ingot 19 quest drop guard
+CA658 PASS ingot 19 native split
+CA658 PASS ingot 20 native pickup
+CA658 PASS ingot 20 native distinct ownership
+CA658 PASS ingot 20 existing boxed weight
+CA658 PASS ingot 20 quest drop guard
+CA658 PASS ingot 20 native split
+Game saved.
+CA658 PASS all seven metals and three tiers
+CA658 PASS ingot 0 saved references
+CA658 PASS ingot 0 world and held ownership
+CA658 PASS ingot 0 split quantities
+CA658 PASS ingot 0 material and tier identity
+CA658 PASS ingot 0 distinct native stack
+CA658 PASS ingot 0 original sprite and icon
+CA658 PASS ingot 0 native collision and scale
+CA658 PASS ingot 0 unit weight
+CA658 PASS ingot 0 floor contact
+CA658 PASS ingot 0 dropped provenance record
+CA658 PASS ingot 0 dropped provenance marker
+CA658 PASS ingot 0 dropped surface ledger units
+CA658 PASS ingot 0 dropped original lot boundaries
+CA658 PASS ingot 0 dropped contamination retained
+CA658 PASS ingot 0 dropped location and quest flags
+CA658 PASS ingot 0 held provenance record
+CA658 PASS ingot 0 held provenance marker
+CA658 PASS ingot 0 held surface ledger units
+CA658 PASS ingot 0 held original lot boundaries
+CA658 PASS ingot 0 held contamination retained
+CA658 PASS ingot 0 held location and quest flags
+CA658 PASS ingot 1 saved references
+CA658 PASS ingot 1 world and held ownership
+CA658 PASS ingot 1 split quantities
+CA658 PASS ingot 1 material and tier identity
+CA658 PASS ingot 1 distinct native stack
+CA658 PASS ingot 1 original sprite and icon
+CA658 PASS ingot 1 native collision and scale
+CA658 PASS ingot 1 unit weight
+CA658 PASS ingot 1 floor contact
+CA658 PASS ingot 1 dropped provenance record
+CA658 PASS ingot 1 dropped provenance marker
+CA658 PASS ingot 1 dropped surface ledger units
+CA658 PASS ingot 1 dropped original lot boundaries
+CA658 PASS ingot 1 dropped contamination retained
+CA658 PASS ingot 1 dropped location and quest flags
+CA658 PASS ingot 1 held provenance record
+CA658 PASS ingot 1 held provenance marker
+CA658 PASS ingot 1 held surface ledger units
+CA658 PASS ingot 1 held original lot boundaries
+CA658 PASS ingot 1 held contamination retained
+CA658 PASS ingot 1 held location and quest flags
+CA658 PASS ingot 2 saved references
+CA658 PASS ingot 2 world and held ownership
+CA658 PASS ingot 2 split quantities
+CA658 PASS ingot 2 material and tier identity
+CA658 PASS ingot 2 distinct native stack
+CA658 PASS ingot 2 original sprite and icon
+CA658 PASS ingot 2 native collision and scale
+CA658 PASS ingot 2 unit weight
+CA658 PASS ingot 2 floor contact
+CA658 PASS ingot 2 dropped provenance record
+CA658 PASS ingot 2 dropped provenance marker
+CA658 PASS ingot 2 dropped surface ledger units
+CA658 PASS ingot 2 dropped original lot boundaries
+CA658 PASS ingot 2 dropped contamination retained
+CA658 PASS ingot 2 dropped location and quest flags
+CA658 PASS ingot 2 held provenance record
+CA658 PASS ingot 2 held provenance marker
+CA658 PASS ingot 2 held surface ledger units
+CA658 PASS ingot 2 held original lot boundaries
+CA658 PASS ingot 2 held contamination retained
+CA658 PASS ingot 2 held location and quest flags
+CA658 PASS ingot 3 saved references
+CA658 PASS ingot 3 world and held ownership
+CA658 PASS ingot 3 split quantities
+CA658 PASS ingot 3 material and tier identity
+CA658 PASS ingot 3 distinct native stack
+CA658 PASS ingot 3 original sprite and icon
+CA658 PASS ingot 3 native collision and scale
+CA658 PASS ingot 3 unit weight
+CA658 PASS ingot 3 floor contact
+CA658 PASS ingot 3 dropped provenance record
+CA658 PASS ingot 3 dropped provenance marker
+CA658 PASS ingot 3 dropped surface ledger units
+CA658 PASS ingot 3 dropped original lot boundaries
+CA658 PASS ingot 3 dropped contamination retained
+CA658 PASS ingot 3 dropped location and quest flags
+CA658 PASS ingot 3 held provenance record
+CA658 PASS ingot 3 held provenance marker
+CA658 PASS ingot 3 held surface ledger units
+CA658 PASS ingot 3 held original lot boundaries
+CA658 PASS ingot 3 held contamination retained
+CA658 PASS ingot 3 held location and quest flags
+CA658 PASS ingot 4 saved references
+CA658 PASS ingot 4 world and held ownership
+CA658 PASS ingot 4 split quantities
+CA658 PASS ingot 4 material and tier identity
+CA658 PASS ingot 4 distinct native stack
+CA658 PASS ingot 4 original sprite and icon
+CA658 PASS ingot 4 native collision and scale
+CA658 PASS ingot 4 unit weight
+CA658 PASS ingot 4 floor contact
+CA658 PASS ingot 4 dropped provenance record
+CA658 PASS ingot 4 dropped provenance marker
+CA658 PASS ingot 4 dropped surface ledger units
+CA658 PASS ingot 4 dropped original lot boundaries
+CA658 PASS ingot 4 dropped contamination retained
+CA658 PASS ingot 4 dropped location and quest flags
+CA658 PASS ingot 4 held provenance record
+CA658 PASS ingot 4 held provenance marker
+CA658 PASS ingot 4 held surface ledger units
+CA658 PASS ingot 4 held original lot boundaries
+CA658 PASS ingot 4 held contamination retained
+CA658 PASS ingot 4 held location and quest flags
+CA658 PASS ingot 5 saved references
+CA658 PASS ingot 5 world and held ownership
+CA658 PASS ingot 5 split quantities
+CA658 PASS ingot 5 material and tier identity
+CA658 PASS ingot 5 distinct native stack
+CA658 PASS ingot 5 original sprite and icon
+CA658 PASS ingot 5 native collision and scale
+CA658 PASS ingot 5 unit weight
+CA658 PASS ingot 5 floor contact
+CA658 PASS ingot 5 dropped provenance record
+CA658 PASS ingot 5 dropped provenance marker
+CA658 PASS ingot 5 dropped surface ledger units
+CA658 PASS ingot 5 dropped original lot boundaries
+CA658 PASS ingot 5 dropped contamination retained
+CA658 PASS ingot 5 dropped location and quest flags
+CA658 PASS ingot 5 held provenance record
+CA658 PASS ingot 5 held provenance marker
+CA658 PASS ingot 5 held surface ledger units
+CA658 PASS ingot 5 held original lot boundaries
+CA658 PASS ingot 5 held contamination retained
+CA658 PASS ingot 5 held location and quest flags
+CA658 PASS ingot 6 saved references
+CA658 PASS ingot 6 world and held ownership
+CA658 PASS ingot 6 split quantities
+CA658 PASS ingot 6 material and tier identity
+CA658 PASS ingot 6 distinct native stack
+CA658 PASS ingot 6 original sprite and icon
+CA658 PASS ingot 6 native collision and scale
+CA658 PASS ingot 6 unit weight
+CA658 PASS ingot 6 floor contact
+CA658 PASS ingot 6 dropped provenance record
+CA658 PASS ingot 6 dropped provenance marker
+CA658 PASS ingot 6 dropped surface ledger units
+CA658 PASS ingot 6 dropped original lot boundaries
+CA658 PASS ingot 6 dropped contamination retained
+CA658 PASS ingot 6 dropped location and quest flags
+CA658 PASS ingot 6 held provenance record
+CA658 PASS ingot 6 held provenance marker
+CA658 PASS ingot 6 held surface ledger units
+CA658 PASS ingot 6 held original lot boundaries
+CA658 PASS ingot 6 held contamination retained
+CA658 PASS ingot 6 held location and quest flags
+CA658 PASS ingot 7 saved references
+CA658 PASS ingot 7 world and held ownership
+CA658 PASS ingot 7 split quantities
+CA658 PASS ingot 7 material and tier identity
+CA658 PASS ingot 7 distinct native stack
+CA658 PASS ingot 7 original sprite and icon
+CA658 PASS ingot 7 native collision and scale
+CA658 PASS ingot 7 unit weight
+CA658 PASS ingot 7 floor contact
+CA658 PASS ingot 7 dropped provenance record
+CA658 PASS ingot 7 dropped provenance marker
+CA658 PASS ingot 7 dropped surface ledger units
+CA658 PASS ingot 7 dropped original lot boundaries
+CA658 PASS ingot 7 dropped contamination retained
+CA658 PASS ingot 7 dropped location and quest flags
+CA658 PASS ingot 7 held provenance record
+CA658 PASS ingot 7 held provenance marker
+CA658 PASS ingot 7 held surface ledger units
+CA658 PASS ingot 7 held original lot boundaries
+CA658 PASS ingot 7 held contamination retained
+CA658 PASS ingot 7 held location and quest flags
+CA658 PASS ingot 8 saved references
+CA658 PASS ingot 8 world and held ownership
+CA658 PASS ingot 8 split quantities
+CA658 PASS ingot 8 material and tier identity
+CA658 PASS ingot 8 distinct native stack
+CA658 PASS ingot 8 original sprite and icon
+CA658 PASS ingot 8 native collision and scale
+CA658 PASS ingot 8 unit weight
+CA658 PASS ingot 8 floor contact
+CA658 PASS ingot 8 dropped provenance record
+CA658 PASS ingot 8 dropped provenance marker
+CA658 PASS ingot 8 dropped surface ledger units
+CA658 PASS ingot 8 dropped original lot boundaries
+CA658 PASS ingot 8 dropped contamination retained
+CA658 PASS ingot 8 dropped location and quest flags
+CA658 PASS ingot 8 held provenance record
+CA658 PASS ingot 8 held provenance marker
+CA658 PASS ingot 8 held surface ledger units
+CA658 PASS ingot 8 held original lot boundaries
+CA658 PASS ingot 8 held contamination retained
+CA658 PASS ingot 8 held location and quest flags
+CA658 PASS ingot 9 saved references
+CA658 PASS ingot 9 world and held ownership
+CA658 PASS ingot 9 split quantities
+CA658 PASS ingot 9 material and tier identity
+CA658 PASS ingot 9 distinct native stack
+CA658 PASS ingot 9 original sprite and icon
+CA658 PASS ingot 9 native collision and scale
+CA658 PASS ingot 9 unit weight
+CA658 PASS ingot 9 floor contact
+CA658 PASS ingot 9 dropped provenance record
+CA658 PASS ingot 9 dropped provenance marker
+CA658 PASS ingot 9 dropped surface ledger units
+CA658 PASS ingot 9 dropped original lot boundaries
+CA658 PASS ingot 9 dropped contamination retained
+CA658 PASS ingot 9 dropped location and quest flags
+CA658 PASS ingot 9 held provenance record
+CA658 PASS ingot 9 held provenance marker
+CA658 PASS ingot 9 held surface ledger units
+CA658 PASS ingot 9 held original lot boundaries
+CA658 PASS ingot 9 held contamination retained
+CA658 PASS ingot 9 held location and quest flags
+CA658 PASS ingot 10 saved references
+CA658 PASS ingot 10 world and held ownership
+CA658 PASS ingot 10 split quantities
+CA658 PASS ingot 10 material and tier identity
+CA658 PASS ingot 10 distinct native stack
+CA658 PASS ingot 10 original sprite and icon
+CA658 PASS ingot 10 native collision and scale
+CA658 PASS ingot 10 unit weight
+CA658 PASS ingot 10 floor contact
+CA658 PASS ingot 10 dropped provenance record
+CA658 PASS ingot 10 dropped provenance marker
+CA658 PASS ingot 10 dropped surface ledger units
+CA658 PASS ingot 10 dropped original lot boundaries
+CA658 PASS ingot 10 dropped contamination retained
+CA658 PASS ingot 10 dropped location and quest flags
+CA658 PASS ingot 10 held provenance record
+CA658 PASS ingot 10 held provenance marker
+CA658 PASS ingot 10 held surface ledger units
+CA658 PASS ingot 10 held original lot boundaries
+CA658 PASS ingot 10 held contamination retained
+CA658 PASS ingot 10 held location and quest flags
+CA658 PASS ingot 11 saved references
+CA658 PASS ingot 11 world and held ownership
+CA658 PASS ingot 11 split quantities
+CA658 PASS ingot 11 material and tier identity
+CA658 PASS ingot 11 distinct native stack
+CA658 PASS ingot 11 original sprite and icon
+CA658 PASS ingot 11 native collision and scale
+CA658 PASS ingot 11 unit weight
+CA658 PASS ingot 11 floor contact
+CA658 PASS ingot 11 dropped provenance record
+CA658 PASS ingot 11 dropped provenance marker
+CA658 PASS ingot 11 dropped surface ledger units
+CA658 PASS ingot 11 dropped original lot boundaries
+CA658 PASS ingot 11 dropped contamination retained
+CA658 PASS ingot 11 dropped location and quest flags
+CA658 PASS ingot 11 held provenance record
+CA658 PASS ingot 11 held provenance marker
+CA658 PASS ingot 11 held surface ledger units
+CA658 PASS ingot 11 held original lot boundaries
+CA658 PASS ingot 11 held contamination retained
+CA658 PASS ingot 11 held location and quest flags
+CA658 PASS ingot 12 saved references
+CA658 PASS ingot 12 world and held ownership
+CA658 PASS ingot 12 split quantities
+CA658 PASS ingot 12 material and tier identity
+CA658 PASS ingot 12 distinct native stack
+CA658 PASS ingot 12 original sprite and icon
+CA658 PASS ingot 12 native collision and scale
+CA658 PASS ingot 12 unit weight
+CA658 PASS ingot 12 floor contact
+CA658 PASS ingot 12 dropped provenance record
+CA658 PASS ingot 12 dropped provenance marker
+CA658 PASS ingot 12 dropped surface ledger units
+CA658 PASS ingot 12 dropped original lot boundaries
+CA658 PASS ingot 12 dropped contamination retained
+CA658 PASS ingot 12 dropped location and quest flags
+CA658 PASS ingot 12 held provenance record
+CA658 PASS ingot 12 held provenance marker
+CA658 PASS ingot 12 held surface ledger units
+CA658 PASS ingot 12 held original lot boundaries
+CA658 PASS ingot 12 held contamination retained
+CA658 PASS ingot 12 held location and quest flags
+CA658 PASS ingot 13 saved references
+CA658 PASS ingot 13 world and held ownership
+CA658 PASS ingot 13 split quantities
+CA658 PASS ingot 13 material and tier identity
+CA658 PASS ingot 13 distinct native stack
+CA658 PASS ingot 13 original sprite and icon
+CA658 PASS ingot 13 native collision and scale
+CA658 PASS ingot 13 unit weight
+CA658 PASS ingot 13 floor contact
+CA658 PASS ingot 13 dropped provenance record
+CA658 PASS ingot 13 dropped provenance marker
+CA658 PASS ingot 13 dropped surface ledger units
+CA658 PASS ingot 13 dropped original lot boundaries
+CA658 PASS ingot 13 dropped contamination retained
+CA658 PASS ingot 13 dropped location and quest flags
+CA658 PASS ingot 13 held provenance record
+CA658 PASS ingot 13 held provenance marker
+CA658 PASS ingot 13 held surface ledger units
+CA658 PASS ingot 13 held original lot boundaries
+CA658 PASS ingot 13 held contamination retained
+CA658 PASS ingot 13 held location and quest flags
+CA658 PASS ingot 14 saved references
+CA658 PASS ingot 14 world and held ownership
+CA658 PASS ingot 14 split quantities
+CA658 PASS ingot 14 material and tier identity
+CA658 PASS ingot 14 distinct native stack
+CA658 PASS ingot 14 original sprite and icon
+CA658 PASS ingot 14 native collision and scale
+CA658 PASS ingot 14 unit weight
+CA658 PASS ingot 14 floor contact
+CA658 PASS ingot 14 dropped provenance record
+CA658 PASS ingot 14 dropped provenance marker
+CA658 PASS ingot 14 dropped surface ledger units
+CA658 PASS ingot 14 dropped original lot boundaries
+CA658 PASS ingot 14 dropped contamination retained
+CA658 PASS ingot 14 dropped location and quest flags
+CA658 PASS ingot 14 held provenance record
+CA658 PASS ingot 14 held provenance marker
+CA658 PASS ingot 14 held surface ledger units
+CA658 PASS ingot 14 held original lot boundaries
+CA658 PASS ingot 14 held contamination retained
+CA658 PASS ingot 14 held location and quest flags
+CA658 PASS ingot 15 saved references
+CA658 PASS ingot 15 world and held ownership
+CA658 PASS ingot 15 split quantities
+CA658 PASS ingot 15 material and tier identity
+CA658 PASS ingot 15 distinct native stack
+CA658 PASS ingot 15 original sprite and icon
+CA658 PASS ingot 15 native collision and scale
+CA658 PASS ingot 15 unit weight
+CA658 PASS ingot 15 floor contact
+CA658 PASS ingot 15 dropped provenance record
+CA658 PASS ingot 15 dropped provenance marker
+CA658 PASS ingot 15 dropped surface ledger units
+CA658 PASS ingot 15 dropped original lot boundaries
+CA658 PASS ingot 15 dropped contamination retained
+CA658 PASS ingot 15 dropped location and quest flags
+CA658 PASS ingot 15 held provenance record
+CA658 PASS ingot 15 held provenance marker
+CA658 PASS ingot 15 held surface ledger units
+CA658 PASS ingot 15 held original lot boundaries
+CA658 PASS ingot 15 held contamination retained
+CA658 PASS ingot 15 held location and quest flags
+CA658 PASS ingot 16 saved references
+CA658 PASS ingot 16 world and held ownership
+CA658 PASS ingot 16 split quantities
+CA658 PASS ingot 16 material and tier identity
+CA658 PASS ingot 16 distinct native stack
+CA658 PASS ingot 16 original sprite and icon
+CA658 PASS ingot 16 native collision and scale
+CA658 PASS ingot 16 unit weight
+CA658 PASS ingot 16 floor contact
+CA658 PASS ingot 16 dropped provenance record
+CA658 PASS ingot 16 dropped provenance marker
+CA658 PASS ingot 16 dropped surface ledger units
+CA658 PASS ingot 16 dropped original lot boundaries
+CA658 PASS ingot 16 dropped contamination retained
+CA658 PASS ingot 16 dropped location and quest flags
+CA658 PASS ingot 16 held provenance record
+CA658 PASS ingot 16 held provenance marker
+CA658 PASS ingot 16 held surface ledger units
+CA658 PASS ingot 16 held original lot boundaries
+CA658 PASS ingot 16 held contamination retained
+CA658 PASS ingot 16 held location and quest flags
+CA658 PASS ingot 17 saved references
+CA658 PASS ingot 17 world and held ownership
+CA658 PASS ingot 17 split quantities
+CA658 PASS ingot 17 material and tier identity
+CA658 PASS ingot 17 distinct native stack
+CA658 PASS ingot 17 original sprite and icon
+CA658 PASS ingot 17 native collision and scale
+CA658 PASS ingot 17 unit weight
+CA658 PASS ingot 17 floor contact
+CA658 PASS ingot 17 dropped provenance record
+CA658 PASS ingot 17 dropped provenance marker
+CA658 PASS ingot 17 dropped surface ledger units
+CA658 PASS ingot 17 dropped original lot boundaries
+CA658 PASS ingot 17 dropped contamination retained
+CA658 PASS ingot 17 dropped location and quest flags
+CA658 PASS ingot 17 held provenance record
+CA658 PASS ingot 17 held provenance marker
+CA658 PASS ingot 17 held surface ledger units
+CA658 PASS ingot 17 held original lot boundaries
+CA658 PASS ingot 17 held contamination retained
+CA658 PASS ingot 17 held location and quest flags
+CA658 PASS ingot 18 saved references
+CA658 PASS ingot 18 world and held ownership
+CA658 PASS ingot 18 split quantities
+CA658 PASS ingot 18 material and tier identity
+CA658 PASS ingot 18 distinct native stack
+CA658 PASS ingot 18 original sprite and icon
+CA658 PASS ingot 18 native collision and scale
+CA658 PASS ingot 18 unit weight
+CA658 PASS ingot 18 floor contact
+CA658 PASS ingot 18 dropped provenance record
+CA658 PASS ingot 18 dropped provenance marker
+CA658 PASS ingot 18 dropped surface ledger units
+CA658 PASS ingot 18 dropped original lot boundaries
+CA658 PASS ingot 18 dropped contamination retained
+CA658 PASS ingot 18 dropped location and quest flags
+CA658 PASS ingot 18 held provenance record
+CA658 PASS ingot 18 held provenance marker
+CA658 PASS ingot 18 held surface ledger units
+CA658 PASS ingot 18 held original lot boundaries
+CA658 PASS ingot 18 held contamination retained
+CA658 PASS ingot 18 held location and quest flags
+CA658 PASS ingot 19 saved references
+CA658 PASS ingot 19 world and held ownership
+CA658 PASS ingot 19 split quantities
+CA658 PASS ingot 19 material and tier identity
+CA658 PASS ingot 19 distinct native stack
+CA658 PASS ingot 19 original sprite and icon
+CA658 PASS ingot 19 native collision and scale
+CA658 PASS ingot 19 unit weight
+CA658 PASS ingot 19 floor contact
+CA658 PASS ingot 19 dropped provenance record
+CA658 PASS ingot 19 dropped provenance marker
+CA658 PASS ingot 19 dropped surface ledger units
+CA658 PASS ingot 19 dropped original lot boundaries
+CA658 PASS ingot 19 dropped contamination retained
+CA658 PASS ingot 19 dropped location and quest flags
+CA658 PASS ingot 19 held provenance record
+CA658 PASS ingot 19 held provenance marker
+CA658 PASS ingot 19 held surface ledger units
+CA658 PASS ingot 19 held original lot boundaries
+CA658 PASS ingot 19 held contamination retained
+CA658 PASS ingot 19 held location and quest flags
+CA658 PASS ingot 20 saved references
+CA658 PASS ingot 20 world and held ownership
+CA658 PASS ingot 20 split quantities
+CA658 PASS ingot 20 material and tier identity
+CA658 PASS ingot 20 distinct native stack
+CA658 PASS ingot 20 original sprite and icon
+CA658 PASS ingot 20 native collision and scale
+CA658 PASS ingot 20 unit weight
+CA658 PASS ingot 20 floor contact
+CA658 PASS ingot 20 dropped provenance record
+CA658 PASS ingot 20 dropped provenance marker
+CA658 PASS ingot 20 dropped surface ledger units
+CA658 PASS ingot 20 dropped original lot boundaries
+CA658 PASS ingot 20 dropped contamination retained
+CA658 PASS ingot 20 dropped location and quest flags
+CA658 PASS ingot 20 held provenance record
+CA658 PASS ingot 20 held provenance marker
+CA658 PASS ingot 20 held surface ledger units
+CA658 PASS ingot 20 held original lot boundaries
+CA658 PASS ingot 20 held contamination retained
+CA658 PASS ingot 20 held location and quest flags
+CA658 COMPLETE failures=0
+Captured candidate-0.png
+Captured candidate-1.png
+Captured candidate-2.png
+Captured candidate-3.png
+Captured candidate-5.png
+Captured candidate-6.png
+Captured candidate-7.png
+Captured detail-0-90.png
+Captured detail-0-160.png
+Captured detail-0-270.png
+Captured detail-1-90.png
+Captured detail-1-160.png
+Captured detail-1-270.png
+Captured detail-2-90.png
+Captured detail-2-160.png
+Captured detail-2-270.png
+Captured detail-3-90.png
+Captured detail-3-160.png
+Captured detail-3-270.png
+Captured detail-4-90.png
+Captured detail-4-160.png
+Captured detail-4-270.png
+Captured detail-5-90.png
+Captured detail-5-160.png
+Captured detail-5-270.png
+Captured detail-6-90.png
+Captured detail-6-160.png
+Captured detail-6-270.png

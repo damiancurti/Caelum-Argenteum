@@ -62,3 +62,8 @@ CA656-DOCUMENTS-01 | Origin: 5.17.6 / #656
 Prerequisites: current package. Run python assets/validation_v5_17_6/run_document_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/documents-author-01 --interactive in an isolated configuration; do not use a campaign save.
 Steps: inspect F1-F4 and F6-F8, F9 next object and F10 rotation. F5 restores player control; collect the six displayed native objects, inspect their original icons and discard them using the ordinary inventory UI. Inspect the recipe-book pages and the key's identity; compare scale, folded cloth, book binding, wax seal and metal silhouette.
 Expected: actual 3D volume and the original quantity, identity and icon after pickup/drop. Report appearance and ordinary-menu results separately; agent-only tests do not constitute author acceptance.
+
+CA658-INGOTS-01 | Origin: 5.17.7 / #658
+Prerequisites: current package. Run python assets/validation_v5_17_7/run_ingot_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/ingots-author-01 --interactive in an isolated configuration; do not use a campaign save.
+Steps: inspect the seven metal columns and three quality rows. F9 chooses the next metal close-up and F10 rotates it; F1-F4/F6-F8 give wider views. F5 restores player control. Collect and discard ingots through the ordinary inventory interface, comparing material, tier, amount and original icon.
+Expected: volumetric iron/copper/tin/bronze/steel/silver/gold, correct separate tier stacks and conserved amounts. Report scale, close-up material resolution and ordinary-menu results separately. Agent fixtures do not constitute author acceptance.

@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.6** - 2026-11-13.
+Documentation version: **5.17.7** - 2026-11-13.
+
+## 5.17.7 - Metal-ingot drop models (#658)
+
+Seven material identities now have exact native class/sprite model bindings.
+The final package passes 2,924 old/new/rollback and transfer checks across the
+three quality tiers; static, repeat-export, package and bounded presentation
+evidence is recorded in ASSETS. CA658-INGOTS-01 remains an author check;
+other material, equipment and character families remain separate work.
 
 ## 5.17.6 - Native document/supply models (#656)
 
