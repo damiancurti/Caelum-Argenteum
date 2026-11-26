@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `4d4dbaf426b657824c8b32c90537c6dc6b8181b76f914ca8511a60de805fbc2c`. Locations include every definition; the last one per language wins.
+SHA-256: `720408fbe65cd180ea33dd8f6d30c61f945d7da29d1c41579c7c1495cca475e4`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -90,6 +90,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_FAST | 10 | CA_FAST_ACTIVITY | CA_FAST_ZONE |
 | CA_FERMENT | 17 | CA_FERMENT_ACTION_OK | CA_FERMENT_WITHDRAW_UNITS |
 | CA_FERMENTATION | 2 | CA_FERMENTATION_MISSING_CHEMISTRY | CA_FERMENTATION_TITLE |
+| CA_FOLK | 56 | CA_FOLK_001_NAME | CA_FOLK_058_NAME |
 | CA_FOOD | 5 | CA_FOOD_CLEAN | CA_FOOD_LOTS_DETAIL |
 | CA_FOOL | 9 | CA_FOOL_JOURNEY_COST | CA_FOOL_VISIT_TALK |
 | CA_FORMATION | 1 | CA_FORMATION_BREAKER_CAST | CA_FORMATION_BREAKER_CAST |

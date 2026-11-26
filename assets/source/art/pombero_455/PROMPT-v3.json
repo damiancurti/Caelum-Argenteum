@@ -1,0 +1,8 @@
+{
+  "issue": 455,
+  "mode": "Built-in image_gen edit; original output pixels retained",
+  "reference": "materials-v2.png",
+  "output": "materials-v3.png",
+  "transparent_background": false,
+  "prompt": "Edit this square material atlas for the same realistic nineteenth-century Pombero 3D character. Keep exactly the same 2-column by 4-row grid, tile boundaries, full-bleed rectangles, eight material identities and earthy palette. No labels, text, borders, objects or perspective. Main correction: reduce the apparent scale of fabric weave and straw by roughly six times, so these are full garment / full hat surface samples, not extreme macro photographs. Row2 left: weathered muted ivory-beige woven linen, very fine threads, subtle irregular stains and tiny worn spots, soft low-contrast surface, not bright yellow burlap. Row2 right: dark earthy brown workwear cloth, fine dense weave with restrained mottled wear, not a large open grid or bricks. Row3 left: weathered muted tan straw hat weave made of many dozens of narrow fine interlaced strands across the whole tile, not a few enormous straw beams; subtle irregular fibers and subdued shading. Row4 left: natural dark tan rope fiber texture with many fine twisted strands, subdued contrast, not orange glossy cables. Keep row1 left weathered tan skin, row1 right coarse body hair on matching skin, row3 right dark brown hair, row4 right worn dark brown leather; these four tiles can stay close to the original. All eight panels should have broad even neutral diffuse albedo lighting, no cast shadows or glossy highlights. Match the reference's realistic rugged materials; avoid cartoon or plastic appearance. Preserve the grid perfectly so existing UV coordinates remain valid."
+}

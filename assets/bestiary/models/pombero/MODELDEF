@@ -1,0 +1,46 @@
+Model CA455PomberoPreview
+{
+    Path "models/caelum/folklore/pombero"
+    Model 0 "pombero.md3"
+    Scale 1 1 1
+    FrameIndex PBMI A 0 0
+    FrameIndex PBMI B 0 1
+    FrameIndex PBMI C 0 2
+    FrameIndex PBMI D 0 3
+    FrameIndex PBMI E 0 4
+    FrameIndex PBMI F 0 5
+    FrameIndex PBMI G 0 6
+    FrameIndex PBMI H 0 7
+    FrameIndex PBMI I 0 8
+    FrameIndex PBMI J 0 9
+    FrameIndex PBMI K 0 10
+    FrameIndex PBMI L 0 11
+    FrameIndex PBMI M 0 12
+    FrameIndex PBMI N 0 13
+    FrameIndex PBMI O 0 14
+    FrameIndex PBMI P 0 15
+    FrameIndex PBMW A 0 16
+    FrameIndex PBMW B 0 17
+    FrameIndex PBMW C 0 18
+    FrameIndex PBMW D 0 19
+    FrameIndex PBMW E 0 20
+    FrameIndex PBMW F 0 21
+    FrameIndex PBMW G 0 22
+    FrameIndex PBMW H 0 23
+    FrameIndex PBMW I 0 24
+    FrameIndex PBMW J 0 25
+    FrameIndex PBMW K 0 26
+    FrameIndex PBMW L 0 27
+    FrameIndex PBMW M 0 28
+    FrameIndex PBMW N 0 29
+    FrameIndex PBMW O 0 30
+    FrameIndex PBMW P 0 31
+    FrameIndex PBMW Q 0 32
+    FrameIndex PBMW R 0 33
+    FrameIndex PBMW S 0 34
+    FrameIndex PBMW T 0 35
+    FrameIndex PBMW U 0 36
+    FrameIndex PBMW V 0 37
+    FrameIndex PBMW W 0 38
+    FrameIndex PBMW X 0 39
+}

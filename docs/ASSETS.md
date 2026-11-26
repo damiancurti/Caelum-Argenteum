@@ -1,6 +1,113 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.16.2** - 2026-11-12.
+Documentation version: **5.16.3** - 2026-11-12.
+
+## 5.16.3 - Animated folklore model pilots (#455, unintegrated)
+
+Cuero / Cuero Uñudo (CA-FOLK-053) adds a third unintegrated technical pilot.
+Its editable DESIGN.json in assets/source/art/cuero_455 describes a closed,
+folded aquatic hide, pale underside, 24 curved marginal claws, dorsal relief and
+paired raised eyes. The source's 3m lower diameter sets only the 96-MU preview
+width; it does not authorize runtime body size or collision. The owned generator
+reuses the Nahuelito MD3 writer and Pombero tube construction. OBJ/MTL and MD3
+exports contain 9,536 native vertices, 16,032 triangles, three surfaces and
+40 distinct frames (16 idle, 24 swim); motion is geometric deformation only.
+
+Built-in image_gen produced the four-panel material atlas. Original PNG bytes,
+the exact PROMPT.json and provenance hashes remain beside the editable design.
+Rebuild with `python assets/generators/generate_cuero_model.py --output build/cuero`;
+`--check` verifies generated files read-only. The shared binary validator and
+native runner accept `--kind cuero`. Nine views include an inverted underside;
+F1-F9 select views and F10 animates in optional interactive mode.
+
+Binary bounds/material coverage, all 381,440 coordinate checks, byte-identical
+independent generation and native fresh/reload/state advancement pass. Evidence
+in assets/validation_v5_16_3/cuero/SUMMARY.json retains four visual iterations,
+including early angular claws/rim seams and the subsequent curved claws, tighter
+eyelids and underside strip. Studio captures establish technical presentation,
+not ordinary lighting, encounter-scale performance or author acceptance. Membrane
+folds and silhouette still require art review. No production appearance, actual
+swimming/wrapping behavior, combat animation set, encounter or physical body is
+activated. The catalogue and provisional Mandinga combat template stay distinct.
+
+Pombero (CA-FOLK-006) adds a second technical visual pilot. Its editable DESIGN.json
+in assets/source/art/pombero_455 describes 15 hierarchical parts, sculpted face,
+pointed ears, straw hat, shirt/waistcoat, rope belt and bare hands/feet. The owned
+generate_pombero_model.py reuses the Nahuelito MD3 writer and exports OBJ/MTL plus
+40 native frames (16 idle, 24 walk), 13,115 native vertices, 22,815 triangles and
+four surfaces. These are prototype costs, without encounter-scale performance
+acceptance. The mesh's 32-MU neutral height uses the source's 1m lower bound only
+for preview; no final collision or production actor binding is supplied.
+
+Built-in image_gen produced the eight-panel atlas, its two material revisions,
+and a separate reference-led facial diffuse plate. All original PNG outputs,
+PROMPT.json/PROMPT-v2.json/PROMPT-v3.json, FACE-PROMPT.json and PROVENANCE.json
+remain in the source directory. The face follows a continuous sculpted head
+with separate front/rear material ownership; it is not a billboard. The refined
+cloth/straw scale retains the original UV grid. Ear rims are curved and recessed;
+side hair is moved behind them after native captures exposed intersections.
+The existing owned dark material and source concept remain preserved. Rebuild using
+`python assets/generators/generate_pombero_model.py --output build/pombero`.
+The shared native runner accepts `--kind pombero`; its optional `--interactive`
+mode remains a visual inspection fixture. Native fresh/reload, explicit state
+advancement, binary bounds/material checks and deterministic regeneration pass;
+assets/validation_v5_16_3/pombero-face/SUMMARY.json qualifies the follow-up evidence;
+the earlier pombero/SUMMARY.json retains its original model hashes and iterations.
+The camera uses explicit zero eye-height and this fixture adds two studio lights;
+captures do not establish normal map lighting. The facial surface now better
+matches the reference; hair/clothing geometry and seams still need production art
+review. The new runner rejects a model-file argument before opening the engine.
+This pilot is not final art or author acceptance, and supplies no combat animation
+set, ordinary encounters, species physiology or campaign population.
+
+CA-FOLK-055 now has a reference-led real 3D visual pilot: continuous neck/body/tail,
+four swept flippers, jaw, eyes, nostrils and dorsal scutes. The editable anatomy
+and motion controls are in assets/source/art/nahuelito_455/DESIGN.json;
+generate_nahuelito_model.py exports a neutral OBJ/MTL and native MD3. The export
+has 5,174 vertices, 9,272 triangles, three material surfaces and 40 frames
+(16 idle, 24 swim). It uses procedural articulation; no skeletal armature is
+claimed. The source's 12m lower bound sets only the preview's nose-to-tail length.
+No collision radius, combat statistics, aquatic AI or encounters are inferred.
+
+The skin is an unchanged built-in image_gen output. PROMPT.json retains the exact
+prompt; PROVENANCE.json identifies the approved reference and original owned
+brass/dark materials reused for iris and mouth detail. Original concept pixels
+are untouched. Exported artifacts live in assets/bestiary/models/nahuelito;
+AUTHORING/CATALOGUE identify this as an unintegrated visual pilot, with no engine
+campaign identity and no author acceptance. No production actor/model is replaced.
+
+Rebuild with `python assets/generators/generate_nahuelito_model.py --output build/nahuelito`;
+`--check` compares all generated files read-only. The visual fixture and binary
+validator live in assets/validation_v5_16_3. SUMMARY.json retains native captures,
+failed fixture attempts and exact hashes. Native single-instance animation and
+save/reload pass; binary/material/frame coverage and deterministic regeneration
+pass. These checks do not establish ordinary aquatic gameplay, encounter-scale
+performance, uniqueness across campaign maps, or final visual acceptance.
+CA455-VIS-01 requests that separate Nahuelito author review. The other 55 references remain
+without new models; #455 is unfinished.
+
+The complete 5.16.3 project audit and package build pass. The final package's
+isolated native run also confirms one subject before/after load and explicit
+CurState advancement during swimming; evidence is in native-release. No gameplay
+or encounter-scale performance acceptance is inferred from this visual test.
+
+The author subsequently approved provisional Mandinga statistics and the current
+Mandinga attacks, hostility and available-potion loot for new folklore creatures.
+BEHAVIOR.json now generates 56 unplaced classes in CaelumBestiaryCombat.zs,
+excluding the existing Mandinga and Zupay references. Repeatable Ucumar is distinct
+from Rulo. Source names, taxonomy and population categories remain available;
+LANGUAGE contains generated ES/EN names, preserving folklore proper names.
+`python assets/generators/generate_bestiary_actors.py` rebuilds the classes/names;
+then run `python build_dialogue_index.py build`. Both generators support checks,
+and project validation rejects stale outputs. The source catalogue remains the
+identity authority, with only translated descriptive names in BEHAVIOR.json.
+
+The classes inherit Mandinga sprites, collision and armor/thermal/altitude adapter
+as development placeholders. They do not integrate either pilot mesh, authorize
+species-specific physiology or add playable races. No encounters or campaign
+unique-instance ownership are supplied. Native evidence for profiles, actions and
+finite inventory is kept separately from the visual pilot under
+assets/validation_v5_16_3/combat; neither constitutes author visual acceptance.
 
 ## 5.16.2 - Approved map references and preserved sewer sources (#454)
 

@@ -1,0 +1,1 @@
+PASS: 56 profiles and finite inventory, fresh/reload, final runtime.

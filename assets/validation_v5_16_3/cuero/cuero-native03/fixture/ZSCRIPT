@@ -1,0 +1,64 @@
+version "4.14.2"
+class CA455Camera : Actor { Default { CameraHeight 0; Height 0; Radius 0; +NOINTERACTION +NOGRAVITY } States { Spawn: TNT1 A -1; Stop; } }
+class CA455VisualDriver : Actor
+{
+    Actor Subject; Actor View; bool LightingReady; int Sample; int ViewIndex; State MotionSnapshot;
+    Default { +NOINTERACTION +NOGRAVITY }
+    States { Spawn: TNT1 A -1; Stop; }
+    override void Tick()
+    {
+        Super.Tick();
+        if(Subject!=null && Sample==0)Subject.SetState(Subject.FindState("Frame0"),false);
+        if(Subject!=null && Sample==22)Subject.SetState(Subject.FindState("Frame22"),false);
+        if(Subject!=null && Sample==34)Subject.SetState(Subject.FindState("Frame34"),false);
+    }
+    void Configure(int index)
+    {
+        if(!LightingReady) { LightingReady=true;{let lamp=Actor.Spawn("CA455Camera",(90,-60,100),NO_REPLACE);lamp.A_AttachLight('Pilot',DynamicLight.PointLight,( 245 << 16 ) | ( 236 << 8 ) | 220,180,0,DynamicLight.LF_ATTENUATE|DynamicLight.LF_NOSHADOWMAP);}{let lamp=Actor.Spawn("CA455Camera",(-50,80,80),NO_REPLACE);lamp.A_AttachLight('Pilot',DynamicLight.PointLight,( 190 << 16 ) | ( 207 << 8 ) | 225,150,0,DynamicLight.LF_ATTENUATE|DynamicLight.LF_NOSHADOWMAP);}} ViewIndex=index;
+        if(Subject==null)Subject=Actor.Spawn("CA455CueroPreview",(0,0,0),NO_REPLACE);
+        if(View==null)View=Actor.Spawn("CA455Camera",(0,0,160),NO_REPLACE);
+        Sample=0; Subject.Angle=0; Subject.Pitch=0; Subject.SetOrigin((0,0,0),false);
+if(index==0){View.SetOrigin((110,-100,75),false);View.Angle=137.72631099390625;View.Pitch=22;Subject.Angle=0;Subject.Pitch=0;Subject.SetOrigin((0,0,0),false);Sample=0;}
+if(index==1){View.SetOrigin((135,0,60),false);View.Angle=180.0;View.Pitch=20;Subject.Angle=0;Subject.Pitch=0;Subject.SetOrigin((0,0,0),false);Sample=0;}
+if(index==2){View.SetOrigin((0,-135,65),false);View.Angle=90.0;View.Pitch=23;Subject.Angle=0;Subject.Pitch=0;Subject.SetOrigin((0,0,0),false);Sample=0;}
+if(index==3){View.SetOrigin((-135,0,60),false);View.Angle=0.0;View.Pitch=20;Subject.Angle=0;Subject.Pitch=0;Subject.SetOrigin((0,0,0),false);Sample=0;}
+if(index==4){View.SetOrigin((110,-100,75),false);View.Angle=137.72631099390625;View.Pitch=22;Subject.Angle=90;Subject.Pitch=0;Subject.SetOrigin((0,0,0),false);Sample=0;}
+if(index==5){View.SetOrigin((110,-100,75),false);View.Angle=137.72631099390625;View.Pitch=22;Subject.Angle=0;Subject.Pitch=0;Subject.SetOrigin((0,0,0),false);Sample=22;}
+if(index==6){View.SetOrigin((110,-100,75),false);View.Angle=137.72631099390625;View.Pitch=22;Subject.Angle=0;Subject.Pitch=0;Subject.SetOrigin((0,0,0),false);Sample=34;}
+if(index==7){View.SetOrigin((65,-28,40),false);View.Angle=146.92932217723833;View.Pitch=22;Subject.Angle=0;Subject.Pitch=0;Subject.SetOrigin((0,0,0),false);Sample=0;}
+if(index==8){View.SetOrigin((100,-90,75),false);View.Angle=138.01278750418336;View.Pitch=21;Subject.Angle=0;Subject.Pitch=180;Subject.SetOrigin((0,0,35),false);Sample=0;}
+View.ClearInterpolation(); Subject.ClearInterpolation(); players[0].camera=View;
+        Console.Printf("CA455 VIEW index=%d sample=%d angle=%.1f",ViewIndex,Sample,Subject.Angle);
+    }
+}
+class CA455VisualEvents : EventHandler
+{
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        let driver=CA455VisualDriver(ActorIterator.Create(455001,"CA455VisualDriver").Next());
+        if(driver==null)
+        {
+            driver=CA455VisualDriver(Actor.Spawn("CA455VisualDriver",(0,0,0),NO_REPLACE));
+            driver.ChangeTID(455001);
+        }
+if(e.Name=="ca455view0")driver.Configure(0);
+if(e.Name=="ca455view1")driver.Configure(1);
+if(e.Name=="ca455view2")driver.Configure(2);
+if(e.Name=="ca455view3")driver.Configure(3);
+if(e.Name=="ca455view4")driver.Configure(4);
+if(e.Name=="ca455view5")driver.Configure(5);
+if(e.Name=="ca455view6")driver.Configure(6);
+if(e.Name=="ca455view7")driver.Configure(7);
+if(e.Name=="ca455view8")driver.Configure(8);
+if(e.Name=="ca455animate") { driver.Sample=-1;driver.Subject.SetStateLabel("Swim");Console.Printf("CA455 ANIMATION running"); }
+        if(e.Name=="ca455motion_a")driver.MotionSnapshot=driver.Subject.CurState;
+        if(e.Name=="ca455motion_b")Console.Printf("CA455 MOTION result=%s",driver.Subject.CurState!=driver.MotionSnapshot?"PASS":"FAIL");
+        if(e.Name=="ca455verify")
+        {
+            int subjects=0;let it=ThinkerIterator.Create("CA455CueroPreview");
+            while(it.Next()!=null)subjects++;
+            bool ok=subjects==1 && driver.Subject!=null && driver.View!=null && players[0].camera==driver.View;
+            Console.Printf("CA455 VERIFY subjects=%d state=%d view=%d result=%s",subjects,driver.Sample,driver.ViewIndex,ok?"PASS":"FAIL");
+        }
+    }
+}

@@ -1,0 +1,95 @@
+version "4.14.2"
+// Piloto visual sin combate, población ni colisión final.
+class CA455PomberoPreview : Actor
+{
+    Default { RenderRadius 40; +NOINTERACTION +NOGRAVITY }
+    States
+    {
+    Spawn:
+        Goto Idle;
+    Idle:
+    Frame0:
+        PBMI A 6;
+    Frame1:
+        PBMI B 6;
+    Frame2:
+        PBMI C 6;
+    Frame3:
+        PBMI D 6;
+    Frame4:
+        PBMI E 6;
+    Frame5:
+        PBMI F 6;
+    Frame6:
+        PBMI G 6;
+    Frame7:
+        PBMI H 6;
+    Frame8:
+        PBMI I 6;
+    Frame9:
+        PBMI J 6;
+    Frame10:
+        PBMI K 6;
+    Frame11:
+        PBMI L 6;
+    Frame12:
+        PBMI M 6;
+    Frame13:
+        PBMI N 6;
+    Frame14:
+        PBMI O 6;
+    Frame15:
+        PBMI P 6;
+        Goto Idle;
+    Walk:
+    Frame16:
+        PBMW A 2;
+    Frame17:
+        PBMW B 2;
+    Frame18:
+        PBMW C 2;
+    Frame19:
+        PBMW D 2;
+    Frame20:
+        PBMW E 2;
+    Frame21:
+        PBMW F 2;
+    Frame22:
+        PBMW G 2;
+    Frame23:
+        PBMW H 2;
+    Frame24:
+        PBMW I 2;
+    Frame25:
+        PBMW J 2;
+    Frame26:
+        PBMW K 2;
+    Frame27:
+        PBMW L 2;
+    Frame28:
+        PBMW M 2;
+    Frame29:
+        PBMW N 2;
+    Frame30:
+        PBMW O 2;
+    Frame31:
+        PBMW P 2;
+    Frame32:
+        PBMW Q 2;
+    Frame33:
+        PBMW R 2;
+    Frame34:
+        PBMW S 2;
+    Frame35:
+        PBMW T 2;
+    Frame36:
+        PBMW U 2;
+    Frame37:
+        PBMW V 2;
+    Frame38:
+        PBMW W 2;
+    Frame39:
+        PBMW X 2;
+        Goto Walk;
+    }
+}

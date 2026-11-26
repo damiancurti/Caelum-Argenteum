@@ -1,0 +1,43 @@
+{
+  "issue": 455,
+  "scope": "Compare all approved provisional actors with the live Mandinga template.\n\nReuse the owned visual-pilot room, without a model overlay or campaign placement.\nPassive AI isolates profile/state/inventory equivalence; actual action execution\nand campaign population/visual acceptance require separate evidence.",
+  "runtime_sha256": "6ea80ba6fbbe22d1bb67422fbf90b22e067a861dcf5628e339349897dff50672",
+  "fixture_sha256": "3ec63fe8c03f1978ba311b386b62c49a3b65d7b0d01e2f8292b1e6779938c367",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "actions",
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\issue455-combat01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-actions02\\profile-probe.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-actions02\\actions\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-actions02\\actions",
+        "-window",
+        "-width",
+        "960",
+        "-height",
+        "720",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-actions02\\actions\\engine.log",
+        "+map",
+        "CA455V",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-actions02\\actions\\commands.cfg"
+      ],
+      "exit_code": 4294967295,
+      "errors": [
+        "Script error, \"profile-probe.pk3:zscript\" line 88:",
+        "Script error, \"profile-probe.pk3:zscript\" line 89:"
+      ],
+      "passed": false,
+      "checks": []
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "issue": 455,
+  "tool": "image_gen built-in",
+  "date": "2026-11-12",
+  "input": "Text description of the inspected approved CA-FOLK-055 reference; no source pixels edited.",
+  "prompt": "Use case: stylized-concept. Asset type: diffuse/albedo UV skin texture for an actual 3D Nahuelito plesiosaur creature in Caelum Argenteum, an Argentine dark fantasy game. Create a square 1024 x 1024 flat texture, filling every pixel, no animal silhouette, no anatomy drawing, no text, no labels, no border. Small irregular reptilian pebble scales and worn larger scales, fine pale irregular creases, painterly realistic detail without glossy highlights. Reference colors: desaturated deep slate blue/olive green mottled dorsal hide and warm bone ivory underside, natural age markings. UV layout IMPORTANT: horizontal direction tiles seamlessly; top and bottom edges are both warm ivory belly scales, transitioning progressively through olive gray side scales to a broad dark slate green band across the middle third. This allows the vertical axis to wrap around a creature body, with back at vertical center and belly at both edges. Make transition softly mottled and organic, not straight painted bands. Even neutral diffuse lighting, no baked directional shadows or shiny lighting, no background. Scale detail consistently fine across the whole sheet, approximately 40 small scales across its width. No spines, eyes, limbs or other objects in the texture. This is only a material sheet, not a model or a render.",
+  "output": "skin.png",
+  "status": "Material sheet only; mesh and visual acceptance are separate."
+}

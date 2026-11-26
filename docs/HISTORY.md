@@ -1,6 +1,125 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.16.2** - 2026-11-12.
+Documentation version: **5.16.3** - 2026-11-12.
+
+## 5.16.3 - Folklore combat classes and model pilot (#455, 2026-11-12)
+
+2026-11-13 Cuero visual follow-up: CA-FOLK-053 gains an editable closed membrane,
+curved marginal claws, dorsal relief and paired eyes. The built-in image_gen
+atlas, exact prompt and provenance remain preserved. Its OBJ/MD3 pilot has
+9,536 native vertices, 16,032 triangles, three surfaces and 40 idle/swim frames.
+Four native iterations retain fresh/reload/state evidence and visual corrections;
+the final nine-view run includes the underside. Binary validation and independent
+byte-identical regeneration pass. The shared validator also passes the unchanged
+Nahuelito and Pombero exports. validation_v5_16_3/cuero/SUMMARY.json records exact
+model/runtime hashes and limitations. This changes no production actor or save
+schema. Art review, physical body, behavior, combat animation and encounters remain
+outstanding; no author check is removed and no final terminal is opened.
+
+2026-11-13 facial/material follow-up: Pombero gains a reference-led diffuse face
+plate on its continuous sculpted head, finer cloth/straw materials, curved ear
+rims and hair positioned behind the ears. Built-in image_gen originals and exact
+prompts remain preserved. The native model now has 13,115 vertices, 22,815
+triangles and four surfaces across 40 frames. Binary checks, deterministic
+generation and native fresh/reload/state advancement pass; evidence and limits
+are in validation_v5_16_3/pombero-face/SUMMARY.json. Hair/clothing geometry,
+production combat animation coverage and author review remain outstanding.
+The first launcher call supplied preview.pk3 where a directory was required,
+so the model class was absent; that failed run remains preserved. Explicit input
+validation now rejects that argument before launching the engine or creating a
+fixture directory. No production model binding or author acceptance is inferred.
+
+2026-11-13 dependency update: merge #454's native-distance reuse and its retained
+visibility/save/performance evidence. #455 combat and visual assets are unchanged;
+project validation is recorded in validation_v5_16_3/dependency-perception.log.
+The inherited siege presentation problem remains unresolved.
+An initial local conflict resolver truncated two documents; the unexpectedly
+short context count exposed it before staging or committing. Both were restored
+from the unchanged merge stages, resolved with bounded marker matching, and
+validated again; the rejected intermediate validation log is retained separately.
+
+2026-11-13 visual follow-up: CA-FOLK-006 Pombero received an unintegrated technical
+mesh/OBJ/MD3 with 40 idle/walk frames. Built-in image_gen material originals and
+both exact prompts are retained with the editable geometry/pose data. Native
+fresh/reload/state advancement, binary coverage and deterministic regeneration
+pass. Earlier camera and detached-face iterations are retained in
+assets/validation_v5_16_3/pombero. The final technical prototype still needs face,
+hair and clothing refinement against the source; no production appearance,
+combat animation set, encounters or author acceptance is claimed. The reused
+Nahuelito binary validator passes its original model unchanged. No author check
+was removed or final V5.16 terminal opened. #455 remains unfinished.
+
+2026-11-13 combat follow-up: 56 generated unplaced classes inherit the approved
+Mandinga template, preserving source species/population metadata and bilingual
+names. Existing Rulo/Mandinga/Zupay sources remain unchanged. There are no new
+saved fields, numeric balance copies, map placements or automatic spawners. The
+Mandinga body/art/physiology adapter remains a development placeholder; the
+Nahuelito model is still an independent visual pilot.
+
+Native profile checks cover all 56 classes and compare attributes, derived maxima,
+body, inherited action states, identity, hostility and finite potion inventories
+with an actual Mandinga. Eighteen isolated action checks cover five taxonomy
+representatives plus that control: melee damage/air, projectile emission/anima,
+and automatic breath initiation/anima pass. The fixture supplies targets, waits
+for native identification and invokes attack states. It does not establish normal
+encounter AI, breath contact damage, campaign population ownership or performance.
+
+Earlier action attempts exposed fixture defects: spectator projectile counts,
+passive AI blocking breath, attacks before native identification, a class/name
+ternary compile error, maxima read before the first native tick, and Look dropping
+the inert test target. The native Mandinga control reproduced the same failures.
+The final fixture isolates fresh attackers and uses each actor's projectile count;
+no production combat rule was changed. Failed runs and exact fixture sources are
+retained with the successful evidence under assets/validation_v5_16_3/combat.
+
+The final package also passes fresh/reload profile checks and 56 native death-drop
+checks: only the retained available potion family can drop, its finite stock is
+debited, and repeated death/service calls do not duplicate drops before or after
+load. The fixture deliberately supplies fatal health and removes the other two
+families; it does not claim a full combat encounter. The first loot observer missed
+deferred spawn notifications; keeping its collection window open fixed that test.
+Static validation, bilingual indexes and deterministic generation pass. No author
+acceptance was inferred and no outstanding manual test was removed.
+
+2026-11-13 dependency follow-up preserves the approved campaign decisions and
+city validation ancestry. Restored the two Spanish approval quotes in
+BEHAVIOR.json as UTF-8 and kept CONTEXT below2500 words; no combat rule changed.
+
+The author requested actual3D models where feasible from the approved bestiary.
+CA-FOLK-055 received the first isolated reference-led mesh, editable anatomy/motion
+controls, a neutral OBJ/MTL, an original image_gen skin and native MD3 bindings.
+There are 40 idle/swim frames and three material surfaces; no gameplay actor,
+statistics, collision, encounter or unique-campaign authority was added.
+Provenance and exact image prompt are retained with the source.
+
+Binary bounds/material/frame checks and byte-identical regeneration pass. Native
+view rotation, differing swim poses, continuous animation and single-instance
+save/reload pass. The first fixture failed on a dynamic String-to-StateLabel;
+explicit state labels fixed the compilation. The second used an untagged TID0
+lookup for its controller, repeatedly created actors and aborted animation on a
+null subject. A dedicated driver TID plus an explicit fixture-only typed census
+resolved it; subsequent fresh/reload checks require exactly one subject. Raw failed
+logs are retained, not reported as successful game tests. CA-KP-216 records the
+lookup lesson. The eye socket/lip/scutes were refined after the initial views.
+A later capture review found camera interpolation in the animation pair; clearing
+interpolation and settling the view fixed the fixture. The corrected pair in
+camera-settled confirms unchanged framing and native state advancement.
+
+SUMMARY.json in assets/validation_v5_16_3 owns qualified evidence and exact hashes.
+Visual acceptance remains pending as CA455-VIS-01. No existing author check was
+removed; no final V5.16 terminal was opened. The remaining creature/campaign work
+is still in progress.
+
+The complete 5.16.3 project audit and package build pass. The final package's
+isolated native run also confirms one subject before/after load and explicit
+CurState advancement during swimming; evidence is in native-release. No gameplay
+or encounter-scale performance acceptance is inferred from this visual test.
+
+The author subsequently approved provisional Mandinga statistics and the current
+Mandinga attacks, hostility and available-potion loot for new folklore creatures.
+At that approval point BEHAVIOR.json recorded the decision without activating
+actors. The combat follow-up above implements the shared template; encounter
+rosters and visual acceptance remain outstanding.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
 

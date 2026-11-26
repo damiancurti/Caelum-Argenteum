@@ -1,0 +1,8 @@
+{
+  "tool": "image_gen built-in",
+  "mode": "edit",
+  "date": "2026-11-13",
+  "input": "materials.png",
+  "output": "materials-v2.png",
+  "prompt": "Use case: precise-object-edit. Edit this opaque 2-column by 4-row material atlas for the Pombero model. Change only the skin hue in the two panels of the TOP ROW: replace the conspicuous burnt-orange cast with a muted natural weathered tan/taupe skin tone, slightly rosy beige undertones, substantially less saturated orange. Preserve the pore detail on the left, and preserve all the fine dark brown body hair on the right while changing the skin beneath it. The intended reference is a mature earthy forest goblin with natural human-like tan skin, not orange or red fantasy skin. Keep the two-column/four-row layout, exact panel boundaries and material scales. Keep the six fabric, straw, long hair, rope and leather panels visually unchanged. Retain opaque full coverage, flat neutral albedo lighting, and no text, labels, borders, objects or highlights. This remains a material texture sheet, not a character render."
+}

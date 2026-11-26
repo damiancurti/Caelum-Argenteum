@@ -1,6 +1,38 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.16.2** - 2026-11-12.
+Documentation version: **5.16.3** - 2026-11-12.
+
+## 5.16.3 - Folklore combat classes and model pilot (#455, in progress)
+
+Cuero (CA-FOLK-053) adds a third unintegrated editable OBJ/MD3 pilot with
+40 idle/swim frames, a closed underside and curved marginal claws. Deterministic
+generation, binary bounds/material coverage and native fresh/reload/state
+advancement pass; evidence and qualifications are in validation_v5_16_3/cuero.
+It supplies no production body, collision, aquatic/wrapping behavior or encounters.
+Art review and combat animations remain pending.
+
+Pombero also has an unintegrated 40-frame technical mesh/OBJ/MD3. Native playback,
+save/reload and deterministic binary checks pass. The facial surface, cloth/straw
+scale and ear rims are refined; hair/clothing geometry, production animation
+coverage and author acceptance remain outstanding. See ASSETS and
+validation_v5_16_3/pombero-face; no production actor appearance is replaced.
+
+Nahuelito (CA-FOLK-055) has an editable real 3D visual pilot, a native 40-frame
+idle/swim export and reproducible native fresh/reload evidence. ASSETS records
+sources, generation and limits. It is unintegrated: no new statistics, encounters,
+aquatic behavior, collision or campaign unique-instance persistence is activated.
+Together with Pombero and Cuero, three references now have visual pilots;
+the other 55 models and per-creature design remain outstanding. Catalogue
+acceptance is distinct from CA455-VIS-01 visual review and creature integration.
+The V5.16 batch and final author terminal are not ready.
+
+The author subsequently approved provisional Mandinga statistics and the current
+Mandinga attacks, hostility and available-potion loot for new folklore creatures.
+BEHAVIOR.json now generates 56 unplaced classes inheriting that shared template;
+species and protected Rulo/Mandinga/Zupay profiles remain distinct. There are no
+new saved fields, automatic spawns or campaign placements. Source taxonomy is
+retained separately from the temporary Mandinga body and physiology adapter.
+Encounter rosters, campaign uniqueness and visual acceptance remain pending.
 
 ## 5.16.2 - Approved map redesign slices (#454, in progress)
 

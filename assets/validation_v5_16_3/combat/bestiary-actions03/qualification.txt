@@ -1,0 +1,1 @@
+Fixture failure: derived maxima read before native initialization.

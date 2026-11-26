@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "subject": "pombero",
+  "frames": 40,
+  "surfaces": 5,
+  "vertices": 15754,
+  "triangles": 27403,
+  "distinct_frames_per_surface": [
+    40,
+    40,
+    40,
+    40,
+    40
+  ],
+  "binary_coordinate_checks": 630160,
+  "scope": "Binary structure/materials/bounds and non-static animation only; not gameplay behavior or visual acceptance."
+}

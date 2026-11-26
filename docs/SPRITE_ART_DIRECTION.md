@@ -1,6 +1,6 @@
 # Caelum Argenteum - Sprite art direction
 
-Documentation version: **5.16.2** - 2026-11-12.
+Documentation version: **5.16.3** - 2026-11-12.
 
 ## Folklore model reference handoff for #453 (2026-11-12)
 
@@ -13,6 +13,11 @@ Retain editable mesh/material/animation sources and verify real in-engine
 rotation and animation before claiming 3D completion. A PNG billboard or a
 promotional render alone is not a finished model. The reference import neither
 replaces accepted actors nor authorizes new statistics or playable races.
+
+The #455 Nahuelito pilot (5.16.3) now supplies a real mesh and 40 idle/swim
+frames, with source/control data and native evidence in ASSETS. It remains an
+unintegrated derived model pending CA455-VIS-01; the reference's conceptual
+approval does not certify this mesh, aquatic behavior or the other 57 models.
 
 ## Port wardrobe brief for #423 (2026-10-29)
 

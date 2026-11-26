@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA455CombatProbe" }
+map CA455V "Folklore profile diagnostic" { sky1="CABASKY",0 nointermission }

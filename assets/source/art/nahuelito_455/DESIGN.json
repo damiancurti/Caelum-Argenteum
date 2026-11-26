@@ -1,0 +1,431 @@
+{
+  "schema_revision": 1,
+  "issue": 455,
+  "catalogue_id": "CA-FOLK-055",
+  "status": "Isolated visual model pilot; no combat, collision, spawning or campaign activation",
+  "reference": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/55_nahuelito.png",
+  "units": "Native X forward, Y left, Z up; 32 map units per metre. The 384-unit nose-to-tail preview uses the reference's 12 m lower bound; collision dimensions remain unauthored.",
+  "materials": {
+    "hide": "models/caelum/folklore/nahuelito/skin.png",
+    "iris": "models/caelum/props/stations/ca_station_brass.png",
+    "dark": "models/caelum/props/stash/ca_stash_inside.png"
+  },
+  "geometry": {
+    "ring_segments": 24,
+    "subdivisions": 3,
+    "skin_repeat_distance": 72,
+    "body_neck_tail": [
+      [
+        -240,
+        0,
+        95,
+        0.08,
+        0.08
+      ],
+      [
+        -225,
+        0,
+        86,
+        2,
+        2
+      ],
+      [
+        -205,
+        0,
+        73,
+        5,
+        4
+      ],
+      [
+        -170,
+        0,
+        63,
+        9,
+        8
+      ],
+      [
+        -130,
+        0,
+        60,
+        14,
+        13
+      ],
+      [
+        -96,
+        0,
+        61,
+        21,
+        20
+      ],
+      [
+        -72,
+        0,
+        65,
+        32,
+        30
+      ],
+      [
+        -40,
+        0,
+        70,
+        43,
+        39
+      ],
+      [
+        0,
+        0,
+        70,
+        43,
+        40
+      ],
+      [
+        35,
+        0,
+        75,
+        36,
+        35
+      ],
+      [
+        60,
+        0,
+        88,
+        24,
+        26
+      ],
+      [
+        72,
+        0,
+        115,
+        16,
+        20
+      ],
+      [
+        74,
+        0,
+        145,
+        12,
+        17
+      ],
+      [
+        76,
+        0,
+        180,
+        10,
+        14
+      ],
+      [
+        78,
+        0,
+        210,
+        10,
+        12
+      ],
+      [
+        84,
+        0,
+        224,
+        10,
+        10
+      ]
+    ],
+    "head": [
+      [
+        80,
+        0,
+        223,
+        1,
+        1
+      ],
+      [
+        86,
+        0,
+        227,
+        10,
+        10
+      ],
+      [
+        95,
+        0,
+        228,
+        13,
+        10
+      ],
+      [
+        106,
+        0,
+        225,
+        11,
+        7
+      ],
+      [
+        120,
+        0,
+        222,
+        8,
+        5
+      ],
+      [
+        138,
+        0,
+        221,
+        6,
+        4
+      ],
+      [
+        144,
+        0,
+        221,
+        0.08,
+        0.08
+      ]
+    ],
+    "jaw": [
+      [
+        88,
+        0,
+        218,
+        2,
+        1
+      ],
+      [
+        98,
+        0,
+        217,
+        10,
+        3.5
+      ],
+      [
+        117,
+        0,
+        216.8,
+        7.3,
+        2.6
+      ],
+      [
+        137,
+        0,
+        218,
+        5,
+        2
+      ],
+      [
+        141,
+        0,
+        219,
+        0.08,
+        0.08
+      ]
+    ],
+    "front_flipper": [
+      [
+        38,
+        28,
+        60,
+        16,
+        10
+      ],
+      [
+        36,
+        43,
+        55,
+        23,
+        8
+      ],
+      [
+        24,
+        70,
+        42,
+        26,
+        5
+      ],
+      [
+        6,
+        97,
+        28,
+        19,
+        2.8
+      ],
+      [
+        -17,
+        124,
+        17,
+        8,
+        1
+      ],
+      [
+        -30,
+        134,
+        15,
+        0.08,
+        0.08
+      ]
+    ],
+    "rear_flipper": [
+      [
+        -57,
+        27,
+        57,
+        12,
+        9
+      ],
+      [
+        -62,
+        43,
+        51,
+        18,
+        6
+      ],
+      [
+        -79,
+        66,
+        39,
+        20,
+        4
+      ],
+      [
+        -101,
+        91,
+        26,
+        12,
+        2
+      ],
+      [
+        -124,
+        111,
+        22,
+        0.08,
+        0.08
+      ]
+    ],
+    "eyes": {
+      "center": [
+        102,
+        10.9,
+        229
+      ],
+      "socket_radii": [
+        5.5,
+        1.1,
+        4.1
+      ],
+      "iris_radii": [
+        2.1,
+        0.8,
+        2.4
+      ],
+      "pupil_radii": [
+        0.65,
+        0.85,
+        1.8
+      ]
+    },
+    "nostrils": {
+      "center": [
+        136,
+        4.5,
+        223
+      ],
+      "radii": [
+        1.5,
+        0.7,
+        0.8
+      ]
+    },
+    "brow": [
+      [
+        96,
+        10,
+        232.5
+      ],
+      [
+        101,
+        12.2,
+        233.5
+      ],
+      [
+        106,
+        10.8,
+        231.8
+      ]
+    ],
+    "crest_spacing": 12,
+    "crest_height": 5,
+    "crest_width": 1.4,
+    "crest_length": 8,
+    "lip_radius": 0.22,
+    "lip": [
+      [
+        94,
+        9.6,
+        219
+      ],
+      [
+        105,
+        9.1,
+        219
+      ],
+      [
+        118,
+        7.8,
+        219
+      ],
+      [
+        136,
+        5.3,
+        219.8
+      ],
+      [
+        140,
+        0,
+        220
+      ]
+    ],
+    "brow_radius": 1.3,
+    "head_scutes": [
+      [
+        85,
+        0,
+        237,
+        4
+      ],
+      [
+        94,
+        0,
+        239,
+        3.6
+      ],
+      [
+        103,
+        0,
+        233,
+        2.5
+      ]
+    ]
+  },
+  "motion": {
+    "idle": {
+      "frames": 16,
+      "sample_tics": 4,
+      "flipper_degrees": 3,
+      "tail_sway": 3,
+      "neck_sway": 1,
+      "heave": 0.8
+    },
+    "swim": {
+      "frames": 24,
+      "sample_tics": 3,
+      "flipper_degrees": 17,
+      "tail_sway": 10,
+      "neck_sway": 2.2,
+      "heave": 2
+    }
+  },
+  "preview": {
+    "editor_number": 31801,
+    "render_radius": 300,
+    "camera_distance": 580,
+    "camera_height": 168,
+    "camera_pitch": 5,
+    "waterline": 64
+  }
+}

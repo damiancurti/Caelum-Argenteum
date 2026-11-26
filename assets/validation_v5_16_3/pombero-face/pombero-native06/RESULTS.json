@@ -1,0 +1,11 @@
+{
+  "fresh": {
+    "exit_code": 4294967295,
+    "errors": [
+      "Script error"
+    ],
+    "verify_pass": false,
+    "native_state_advanced": false
+  },
+  "scope": "Capture native orientation/animation and save continuation of the #455 pilot.\n\nThe generated visual actor uses a temporary flat viewing map and optional studio\nlighting. This is not an encounter, gameplay AI, collision or author-acceptance test.\n"
+}

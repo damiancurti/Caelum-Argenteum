@@ -1,0 +1,95 @@
+version "4.14.2"
+// Piloto visual aislado: no define combate, población ni colisión final.
+class CA455NahuelitoPreview : Actor
+{
+    Default { RenderRadius 300; +NOINTERACTION +NOGRAVITY }
+    States
+    {
+    Spawn:
+        Goto Idle;
+    Idle:
+    Frame0:
+        NHAI A 4;
+    Frame1:
+        NHAI B 4;
+    Frame2:
+        NHAI C 4;
+    Frame3:
+        NHAI D 4;
+    Frame4:
+        NHAI E 4;
+    Frame5:
+        NHAI F 4;
+    Frame6:
+        NHAI G 4;
+    Frame7:
+        NHAI H 4;
+    Frame8:
+        NHAI I 4;
+    Frame9:
+        NHAI J 4;
+    Frame10:
+        NHAI K 4;
+    Frame11:
+        NHAI L 4;
+    Frame12:
+        NHAI M 4;
+    Frame13:
+        NHAI N 4;
+    Frame14:
+        NHAI O 4;
+    Frame15:
+        NHAI P 4;
+        Goto Idle;
+    Swim:
+    Frame16:
+        NHAS A 3;
+    Frame17:
+        NHAS B 3;
+    Frame18:
+        NHAS C 3;
+    Frame19:
+        NHAS D 3;
+    Frame20:
+        NHAS E 3;
+    Frame21:
+        NHAS F 3;
+    Frame22:
+        NHAS G 3;
+    Frame23:
+        NHAS H 3;
+    Frame24:
+        NHAS I 3;
+    Frame25:
+        NHAS J 3;
+    Frame26:
+        NHAS K 3;
+    Frame27:
+        NHAS L 3;
+    Frame28:
+        NHAS M 3;
+    Frame29:
+        NHAS N 3;
+    Frame30:
+        NHAS O 3;
+    Frame31:
+        NHAS P 3;
+    Frame32:
+        NHAS Q 3;
+    Frame33:
+        NHAS R 3;
+    Frame34:
+        NHAS S 3;
+    Frame35:
+        NHAS T 3;
+    Frame36:
+        NHAS U 3;
+    Frame37:
+        NHAS V 3;
+    Frame38:
+        NHAS W 3;
+    Frame39:
+        NHAS X 3;
+        Goto Swim;
+    }
+}

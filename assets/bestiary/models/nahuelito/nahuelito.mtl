@@ -1,0 +1,9 @@
+newmtl hide
+Kd 1 1 1
+map_Kd models/caelum/folklore/nahuelito/skin.png
+newmtl iris
+Kd 1 1 1
+map_Kd models/caelum/props/stations/ca_station_brass.png
+newmtl dark
+Kd 1 1 1
+map_Kd models/caelum/props/stash/ca_stash_inside.png

@@ -1,0 +1,1 @@
+Diagnostic reproduced zero victim health; stopped after identifying fixture cause.

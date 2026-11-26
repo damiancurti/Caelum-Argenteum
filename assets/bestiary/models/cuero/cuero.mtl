@@ -1,0 +1,12 @@
+newmtl hide
+Kd 1 1 1
+map_Kd models/caelum/folklore/cuero/materials.png
+newmtl underside
+Kd 1 1 1
+map_Kd models/caelum/folklore/cuero/materials.png
+newmtl horn
+Kd 1 1 1
+map_Kd models/caelum/folklore/cuero/materials.png
+newmtl iris
+Kd 1 1 1
+map_Kd models/caelum/folklore/cuero/materials.png
