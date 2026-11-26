@@ -12,6 +12,8 @@ from assets.generators.generate_siege_reinforcements import render as reinforcem
 from assets.generators.generate_tarot_justice import validate as justice_geometry_problems
 from assets.generators.generate_tarot_examples import render as tarot_example_data
 from assets.generators.build_bestiary_catalogue import assemble as bestiary_catalogue
+from assets.generators.validate_map02_redesign import audit as sewer_redesign_audit
+from assets.generators.install_barracas_map import validate as barracas_installation_problems
 
 from build_document_index import (
     INDEX_NAME as DOC_INDEX_NAME,
@@ -69,6 +71,7 @@ def index_problems(root):
 
 def validate(root):
     errors = dialogue_problems(root)
+    errors.extend(barracas_installation_problems(root))
     try:
         errors.extend(justice_geometry_problems(root))
         if (root/'src/caelum/data/CaelumTarotExampleData.zs').read_bytes() != tarot_example_data(root):
@@ -255,6 +258,14 @@ def validate(root):
               'Bestiary catalogue is stale; run python assets/generators/build_bestiary_catalogue.py')
     except (OSError, KeyError, ValueError) as exc:
         check(False, f'Bestiary source/catalogue validation failed: {exc}')
+
+    # Validate the generated collision graph and preserved rollback sources.
+    try:
+        sewer = sewer_redesign_audit(root)
+        for result in sewer['checks']:
+            check(result['passed'], 'MAP02 redesign: ' + result['check'])
+    except (OSError, KeyError, ValueError) as exc:
+        check(False, f'MAP02 redesign validation failed: {exc}')
 
     # Check contributor premises when the file can be read.
     agents = root/'AGENTS.md'

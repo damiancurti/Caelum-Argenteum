@@ -1,0 +1,28 @@
+{
+  "issue": 454,
+  "geometry": {
+    "sector": 391,
+    "origin": [
+      2176,
+      20288,
+      0
+    ],
+    "center": [
+      2560.0,
+      20672.0,
+      0
+    ],
+    "width_mu": 768,
+    "original_vertices": 37173,
+    "original_sectors": 391,
+    "checksum": "f552012c9d4d7a2ba59d0809894ad272",
+    "settings_sha256": "885f1ddb374b3204bfef51c92224700cf75dc1bff7af0e40a7344c33bf03a3d5"
+  },
+  "existing_textmap_prefix_unchanged": true,
+  "input_package_sha256": "1d2bb60078bbf390fed026f1985b14c54bcd2622f0e996d08c1254538f4b3d2b",
+  "input_map_sha256": "1fef4bd06015e3dfa11405eeb6b19d90f0c2a6bf3f1db35ca2c162a6c50ca04f",
+  "candidate_map_sha256": "45bfdbba591b642fd9a2c8c991cd9e9913d9e4158f3e317913efbae0d3df98da",
+  "candidate_package_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "production_maps_modified": false,
+  "registered": false
+}

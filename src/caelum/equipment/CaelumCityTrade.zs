@@ -44,6 +44,7 @@ class CaelumCityMerchant : Actor
                 vendor=CaelumCityMerchant(Actor.Spawn("CaelumCityMerchant",CaelumCityData.ShopPosition(i),NO_REPLACE));
                 if(vendor==null)return false;
                 vendor.ShopIdentity=i;vendor.WalletCopper=CaelumCityData.MERCHANT_COPPER;vendor.Revision=1;
+                if(CaelumBarracasData.IsCurrent())vendor.Angle+=CaelumBarracasData.ShopAngle(i);
             }
             vendor.Category=CaelumShopCatalogue.Category(i);
             vendor.TradesClothing=vendor.Category==CaelumShopCatalogue.CLOTHING;

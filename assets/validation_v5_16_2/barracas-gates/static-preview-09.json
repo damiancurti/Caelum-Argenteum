@@ -1,0 +1,7962 @@
+{
+  "issue": 454,
+  "scope": "Static cell-centre routes from Plaza Alsina; opaque house shells end at external portal approaches. Not native collision/AI or siege evidence.",
+  "clearance_source": "assets/map02_maze/LAYOUT.json accepted largest player radius/height",
+  "height": 74.7,
+  "radius": 21.333333,
+  "walkable": 202872,
+  "reachable": 202872,
+  "targets": [
+    {
+      "id": 0,
+      "kind": "factory",
+      "point": [
+        -3552,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 0,
+      "kind": "interior_factory",
+      "point": [
+        -3744.0,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 1,
+      "kind": "factory",
+      "point": [
+        -27488,
+        10432
+      ],
+      "reachable": true
+    },
+    {
+      "id": 1,
+      "kind": "interior_factory",
+      "point": [
+        -27296.0,
+        10432
+      ],
+      "reachable": true
+    },
+    {
+      "id": 2,
+      "kind": "factory",
+      "point": [
+        -20448,
+        10688
+      ],
+      "reachable": true
+    },
+    {
+      "id": 2,
+      "kind": "interior_factory",
+      "point": [
+        -20640.0,
+        10688
+      ],
+      "reachable": true
+    },
+    {
+      "id": 3,
+      "kind": "factory",
+      "point": [
+        -25952,
+        10432
+      ],
+      "reachable": true
+    },
+    {
+      "id": 3,
+      "kind": "interior_factory",
+      "point": [
+        -25760.0,
+        10432
+      ],
+      "reachable": true
+    },
+    {
+      "id": 18,
+      "kind": "factory",
+      "point": [
+        -5088,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 18,
+      "kind": "interior_factory",
+      "point": [
+        -5280.0,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 19,
+      "kind": "factory",
+      "point": [
+        -3488,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 19,
+      "kind": "interior_factory",
+      "point": [
+        -3296.0,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 20,
+      "kind": "factory",
+      "point": [
+        -27552,
+        10432
+      ],
+      "reachable": true
+    },
+    {
+      "id": 20,
+      "kind": "interior_factory",
+      "point": [
+        -27744.0,
+        10432
+      ],
+      "reachable": true
+    },
+    {
+      "id": 21,
+      "kind": "factory",
+      "point": [
+        -21184,
+        11552
+      ],
+      "reachable": true
+    },
+    {
+      "id": 21,
+      "kind": "interior_factory",
+      "point": [
+        -21184,
+        11744.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 36,
+      "kind": "factory",
+      "point": [
+        -26752,
+        12768
+      ],
+      "reachable": true
+    },
+    {
+      "id": 36,
+      "kind": "interior_factory",
+      "point": [
+        -26752,
+        12576.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 37,
+      "kind": "factory",
+      "point": [
+        -4288,
+        7968
+      ],
+      "reachable": true
+    },
+    {
+      "id": 37,
+      "kind": "interior_factory",
+      "point": [
+        -4288,
+        8160.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 38,
+      "kind": "factory",
+      "point": [
+        -4288,
+        12640
+      ],
+      "reachable": true
+    },
+    {
+      "id": 38,
+      "kind": "interior_factory",
+      "point": [
+        -4288,
+        12448.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 39,
+      "kind": "factory",
+      "point": [
+        -26752,
+        8096
+      ],
+      "reachable": true
+    },
+    {
+      "id": 39,
+      "kind": "interior_factory",
+      "point": [
+        -26752,
+        8288.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 54,
+      "kind": "factory",
+      "point": [
+        -21184,
+        9824
+      ],
+      "reachable": true
+    },
+    {
+      "id": 54,
+      "kind": "interior_factory",
+      "point": [
+        -21184,
+        9632.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 55,
+      "kind": "factory",
+      "point": [
+        -25888,
+        12096
+      ],
+      "reachable": true
+    },
+    {
+      "id": 55,
+      "kind": "interior_factory",
+      "point": [
+        -25696.0,
+        12096
+      ],
+      "reachable": true
+    },
+    {
+      "id": 56,
+      "kind": "factory",
+      "point": [
+        -25088,
+        9568
+      ],
+      "reachable": true
+    },
+    {
+      "id": 56,
+      "kind": "interior_factory",
+      "point": [
+        -25088,
+        9376.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 57,
+      "kind": "factory",
+      "point": [
+        -29088,
+        12096
+      ],
+      "reachable": true
+    },
+    {
+      "id": 57,
+      "kind": "interior_factory",
+      "point": [
+        -28896.0,
+        12096
+      ],
+      "reachable": true
+    },
+    {
+      "id": 72,
+      "kind": "factory",
+      "point": [
+        -5152,
+        8640
+      ],
+      "reachable": true
+    },
+    {
+      "id": 72,
+      "kind": "interior_factory",
+      "point": [
+        -5344.0,
+        8640
+      ],
+      "reachable": true
+    },
+    {
+      "id": 73,
+      "kind": "factory",
+      "point": [
+        -3424,
+        8640
+      ],
+      "reachable": true
+    },
+    {
+      "id": 73,
+      "kind": "interior_factory",
+      "point": [
+        -3232.0,
+        8640
+      ],
+      "reachable": true
+    },
+    {
+      "id": 74,
+      "kind": "factory",
+      "point": [
+        -5952,
+        12640
+      ],
+      "reachable": true
+    },
+    {
+      "id": 74,
+      "kind": "interior_factory",
+      "point": [
+        -5952,
+        12448.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 75,
+      "kind": "factory",
+      "point": [
+        -29088,
+        8768
+      ],
+      "reachable": true
+    },
+    {
+      "id": 75,
+      "kind": "interior_factory",
+      "point": [
+        -28896.0,
+        8768
+      ],
+      "reachable": true
+    },
+    {
+      "id": 90,
+      "kind": "factory",
+      "point": [
+        -18848,
+        12800
+      ],
+      "reachable": true
+    },
+    {
+      "id": 90,
+      "kind": "interior_factory",
+      "point": [
+        -19040.0,
+        12800
+      ],
+      "reachable": true
+    },
+    {
+      "id": 91,
+      "kind": "factory",
+      "point": [
+        -8096,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 91,
+      "kind": "interior_factory",
+      "point": [
+        -7904.0,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 92,
+      "kind": "factory",
+      "point": [
+        -3392,
+        7776
+      ],
+      "reachable": true
+    },
+    {
+      "id": 92,
+      "kind": "interior_factory",
+      "point": [
+        -3392,
+        7584.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 93,
+      "kind": "factory",
+      "point": [
+        -1888,
+        8896
+      ],
+      "reachable": true
+    },
+    {
+      "id": 93,
+      "kind": "interior_factory",
+      "point": [
+        -1696.0,
+        8896
+      ],
+      "reachable": true
+    },
+    {
+      "id": 4,
+      "kind": "house",
+      "point": [
+        -1568,
+        -4352.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 5,
+      "kind": "house",
+      "point": [
+        -23136,
+        -2752.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 6,
+      "kind": "house",
+      "point": [
+        -17504,
+        -9920.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 10,
+      "kind": "house",
+      "point": [
+        -27488,
+        -3520.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 11,
+      "kind": "house",
+      "point": [
+        -7520,
+        -10688.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 12,
+      "kind": "house",
+      "point": [
+        -27424,
+        3264.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 13,
+      "kind": "house",
+      "point": [
+        -12064,
+        -10496.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 14,
+      "kind": "house",
+      "point": [
+        -17120,
+        10880.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 15,
+      "kind": "house",
+      "point": [
+        -10848,
+        -10496.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 16,
+      "kind": "house",
+      "point": [
+        -19872,
+        -9472.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 17,
+      "kind": "house",
+      "point": [
+        -25120,
+        -3968.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 22,
+      "kind": "house",
+      "point": [
+        -26208,
+        3264.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 23,
+      "kind": "house",
+      "point": [
+        -2784,
+        -4352.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 24,
+      "kind": "house",
+      "point": [
+        -1504,
+        -3904.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 28,
+      "kind": "house",
+      "point": [
+        -16288,
+        -9920.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 29,
+      "kind": "house",
+      "point": [
+        -28704,
+        -3520.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 30,
+      "kind": "house",
+      "point": [
+        -27488,
+        2816.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 31,
+      "kind": "house",
+      "point": [
+        -9888,
+        -10240.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 32,
+      "kind": "house",
+      "point": [
+        -13280,
+        -10496.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 33,
+      "kind": "house",
+      "point": [
+        -27072.0,
+        3808
+      ],
+      "reachable": true
+    },
+    {
+      "id": 34,
+      "kind": "house",
+      "point": [
+        -12416.0,
+        -8352
+      ],
+      "reachable": true
+    },
+    {
+      "id": 35,
+      "kind": "house",
+      "point": [
+        -2368.0,
+        -3360
+      ],
+      "reachable": true
+    },
+    {
+      "id": 40,
+      "kind": "house",
+      "point": [
+        -22336.0,
+        -1056
+      ],
+      "reachable": true
+    },
+    {
+      "id": 41,
+      "kind": "house",
+      "point": [
+        -18304.0,
+        -11616
+      ],
+      "reachable": true
+    },
+    {
+      "id": 42,
+      "kind": "house",
+      "point": [
+        -26688.0,
+        -1824
+      ],
+      "reachable": true
+    },
+    {
+      "id": 46,
+      "kind": "house",
+      "point": [
+        -2368.0,
+        -6048
+      ],
+      "reachable": true
+    },
+    {
+      "id": 47,
+      "kind": "house",
+      "point": [
+        -22336.0,
+        -3744
+      ],
+      "reachable": true
+    },
+    {
+      "id": 48,
+      "kind": "house",
+      "point": [
+        -18304.0,
+        -8928
+      ],
+      "reachable": true
+    },
+    {
+      "id": 49,
+      "kind": "house",
+      "point": [
+        -26688.0,
+        -4512
+      ],
+      "reachable": true
+    },
+    {
+      "id": 50,
+      "kind": "house",
+      "point": [
+        -8320.0,
+        -12384
+      ],
+      "reachable": true
+    },
+    {
+      "id": 51,
+      "kind": "house",
+      "point": [
+        -26624.0,
+        2272
+      ],
+      "reachable": true
+    },
+    {
+      "id": 52,
+      "kind": "house",
+      "point": [
+        -12864.0,
+        -12192
+      ],
+      "reachable": true
+    },
+    {
+      "id": 53,
+      "kind": "house",
+      "point": [
+        -16064.0,
+        9888
+      ],
+      "reachable": true
+    },
+    {
+      "id": 58,
+      "kind": "house",
+      "point": [
+        -8896.0,
+        -9696
+      ],
+      "reachable": true
+    },
+    {
+      "id": 59,
+      "kind": "house",
+      "point": [
+        -16832.0,
+        12576
+      ],
+      "reachable": true
+    },
+    {
+      "id": 60,
+      "kind": "house",
+      "point": [
+        -18336,
+        10880.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 64,
+      "kind": "house",
+      "point": [
+        -10720,
+        -9024.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 65,
+      "kind": "house",
+      "point": [
+        -26080,
+        4736.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 66,
+      "kind": "house",
+      "point": [
+        -18848,
+        -11392.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 67,
+      "kind": "house",
+      "point": [
+        -26144,
+        -2048.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 68,
+      "kind": "house",
+      "point": [
+        -27616,
+        4288.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 69,
+      "kind": "house",
+      "point": [
+        -4064,
+        -2432.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 70,
+      "kind": "house",
+      "point": [
+        -224,
+        -2880.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 71,
+      "kind": "house",
+      "point": [
+        -11392.0,
+        -12192
+      ],
+      "reachable": true
+    },
+    {
+      "id": 76,
+      "kind": "house",
+      "point": [
+        -13408,
+        -9024.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 77,
+      "kind": "house",
+      "point": [
+        -17312,
+        -10944.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 78,
+      "kind": "house",
+      "point": [
+        -19328.0,
+        -7776
+      ],
+      "reachable": true
+    },
+    {
+      "id": 82,
+      "kind": "house",
+      "point": [
+        -28832,
+        -2048.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 83,
+      "kind": "house",
+      "point": [
+        -25152.0,
+        2272
+      ],
+      "reachable": true
+    },
+    {
+      "id": 84,
+      "kind": "house",
+      "point": [
+        -3840.0,
+        -6048
+      ],
+      "reachable": true
+    },
+    {
+      "id": 85,
+      "kind": "house",
+      "point": [
+        -448.0,
+        -4896
+      ],
+      "reachable": true
+    },
+    {
+      "id": 86,
+      "kind": "house",
+      "point": [
+        -17312,
+        -8000.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 87,
+      "kind": "house",
+      "point": [
+        -8864,
+        -12160.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 88,
+      "kind": "house",
+      "point": [
+        -28544.0,
+        1120
+      ],
+      "reachable": true
+    },
+    {
+      "id": 89,
+      "kind": "house",
+      "point": [
+        -13408,
+        -11968.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 94,
+      "kind": "house",
+      "point": [
+        -17984.0,
+        8736
+      ],
+      "reachable": true
+    },
+    {
+      "id": 95,
+      "kind": "house",
+      "point": [
+        -13728,
+        11392.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 96,
+      "kind": "house",
+      "point": [
+        -24480,
+        -4544.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 100,
+      "kind": "house",
+      "point": [
+        -4000,
+        -4352.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 101,
+      "kind": "house",
+      "point": [
+        -10592,
+        -8768.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 102,
+      "kind": "house",
+      "point": [
+        -15072,
+        -9920.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 103,
+      "kind": "house",
+      "point": [
+        -12864.0,
+        -8288
+      ],
+      "reachable": true
+    },
+    {
+      "id": 104,
+      "kind": "house",
+      "point": [
+        -22336.0,
+        160
+      ],
+      "reachable": true
+    },
+    {
+      "id": 105,
+      "kind": "house",
+      "point": [
+        -18304.0,
+        -12832
+      ],
+      "reachable": true
+    },
+    {
+      "id": 106,
+      "kind": "house",
+      "point": [
+        -26688.0,
+        -608
+      ],
+      "reachable": true
+    },
+    {
+      "id": 107,
+      "kind": "house",
+      "point": [
+        -2368.0,
+        -7264
+      ],
+      "reachable": true
+    },
+    {
+      "id": 148,
+      "kind": "house",
+      "point": [
+        -17856.0,
+        -6560
+      ],
+      "reachable": true
+    },
+    {
+      "id": 149,
+      "kind": "house",
+      "point": [
+        -8320.0,
+        -13600
+      ],
+      "reachable": true
+    },
+    {
+      "id": 150,
+      "kind": "house",
+      "point": [
+        -12416.0,
+        -12256
+      ],
+      "reachable": true
+    },
+    {
+      "id": 152,
+      "kind": "house",
+      "point": [
+        -15744.0,
+        3040
+      ],
+      "reachable": true
+    },
+    {
+      "id": 153,
+      "kind": "house",
+      "point": [
+        -15744.0,
+        4256
+      ],
+      "reachable": true
+    },
+    {
+      "id": 154,
+      "kind": "house",
+      "point": [
+        -15776,
+        -10944.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 155,
+      "kind": "house",
+      "point": [
+        -20640,
+        -768.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 156,
+      "kind": "house",
+      "point": [
+        -14848.0,
+        12384
+      ],
+      "reachable": true
+    },
+    {
+      "id": 157,
+      "kind": "house",
+      "point": [
+        -4128,
+        -2880.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 158,
+      "kind": "house",
+      "point": [
+        -19776.0,
+        -7712
+      ],
+      "reachable": true
+    },
+    {
+      "id": 159,
+      "kind": "house",
+      "point": [
+        -10944.0,
+        -12256
+      ],
+      "reachable": true
+    },
+    {
+      "id": 160,
+      "kind": "house",
+      "point": [
+        -896.0,
+        -7264
+      ],
+      "reachable": true
+    },
+    {
+      "id": 161,
+      "kind": "house",
+      "point": [
+        -14944,
+        -8448.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 162,
+      "kind": "house",
+      "point": [
+        -9408.0,
+        -8224
+      ],
+      "reachable": true
+    },
+    {
+      "id": 163,
+      "kind": "house",
+      "point": [
+        -17536.0,
+        8672
+      ],
+      "reachable": true
+    },
+    {
+      "id": 164,
+      "kind": "house",
+      "point": [
+        -11392.0,
+        -8032
+      ],
+      "reachable": true
+    },
+    {
+      "id": 165,
+      "kind": "house",
+      "point": [
+        -19328.0,
+        -11936
+      ],
+      "reachable": true
+    },
+    {
+      "id": 166,
+      "kind": "house",
+      "point": [
+        -14336.0,
+        -8032
+      ],
+      "reachable": true
+    },
+    {
+      "id": 167,
+      "kind": "house",
+      "point": [
+        -16384.0,
+        -11936
+      ],
+      "reachable": true
+    },
+    {
+      "id": 169,
+      "kind": "house",
+      "point": [
+        -25536.0,
+        5280
+      ],
+      "reachable": true
+    },
+    {
+      "id": 170,
+      "kind": "house",
+      "point": [
+        -4384,
+        -5824.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 171,
+      "kind": "house",
+      "point": [
+        -16832.0,
+        -7456
+      ],
+      "reachable": true
+    },
+    {
+      "id": 172,
+      "kind": "house",
+      "point": [
+        -9344.0,
+        -12704
+      ],
+      "reachable": true
+    },
+    {
+      "id": 173,
+      "kind": "house",
+      "point": [
+        -14336.0,
+        -13664
+      ],
+      "reachable": true
+    },
+    {
+      "id": 174,
+      "kind": "house",
+      "point": [
+        -24800,
+        -1024.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 175,
+      "kind": "house",
+      "point": [
+        -13664,
+        11840.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 176,
+      "kind": "house",
+      "point": [
+        -28672.0,
+        1056
+      ],
+      "reachable": true
+    },
+    {
+      "id": 177,
+      "kind": "house",
+      "point": [
+        -20192,
+        11264.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 178,
+      "kind": "house",
+      "point": [
+        -12928.0,
+        9632
+      ],
+      "reachable": true
+    },
+    {
+      "id": 179,
+      "kind": "house",
+      "point": [
+        -26752.0,
+        -7904
+      ],
+      "reachable": true
+    },
+    {
+      "id": 180,
+      "kind": "house",
+      "point": [
+        -5216,
+        -4352.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 181,
+      "kind": "house",
+      "point": [
+        -15232.0,
+        13600
+      ],
+      "reachable": true
+    },
+    {
+      "id": 182,
+      "kind": "house",
+      "point": [
+        -12704,
+        12864.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 183,
+      "kind": "house",
+      "point": [
+        -1408.0,
+        -928
+      ],
+      "reachable": true
+    },
+    {
+      "id": 184,
+      "kind": "house",
+      "point": [
+        -5344,
+        -2880.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 185,
+      "kind": "house",
+      "point": [
+        -4800.0,
+        -13152
+      ],
+      "reachable": true
+    },
+    {
+      "id": 187,
+      "kind": "house",
+      "point": [
+        -11968.0,
+        10848
+      ],
+      "reachable": true
+    },
+    {
+      "id": 188,
+      "kind": "house",
+      "point": [
+        -2880.0,
+        -544
+      ],
+      "reachable": true
+    },
+    {
+      "id": 189,
+      "kind": "house",
+      "point": [
+        -18432.0,
+        -4000
+      ],
+      "reachable": true
+    },
+    {
+      "id": 190,
+      "kind": "house",
+      "point": [
+        -6752,
+        -5376.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 191,
+      "kind": "house",
+      "point": [
+        -27776.0,
+        7840
+      ],
+      "reachable": true
+    },
+    {
+      "id": 192,
+      "kind": "house",
+      "point": [
+        -12448,
+        11840.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 193,
+      "kind": "house",
+      "point": [
+        -13312.0,
+        15008
+      ],
+      "reachable": true
+    },
+    {
+      "id": 194,
+      "kind": "house",
+      "point": [
+        -17216.0,
+        5600
+      ],
+      "reachable": true
+    },
+    {
+      "id": 195,
+      "kind": "house",
+      "point": [
+        -12416.0,
+        8416
+      ],
+      "reachable": true
+    },
+    {
+      "id": 196,
+      "kind": "house",
+      "point": [
+        -15744.0,
+        5472
+      ],
+      "reachable": true
+    },
+    {
+      "id": 197,
+      "kind": "house",
+      "point": [
+        -26688.0,
+        -7968
+      ],
+      "reachable": true
+    },
+    {
+      "id": 198,
+      "kind": "house",
+      "point": [
+        -12640,
+        13312.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 199,
+      "kind": "house",
+      "point": [
+        -5888.0,
+        -736
+      ],
+      "reachable": true
+    },
+    {
+      "id": 200,
+      "kind": "house",
+      "point": [
+        -7584,
+        -3904.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 201,
+      "kind": "house",
+      "point": [
+        -1920.0,
+        -8416
+      ],
+      "reachable": true
+    },
+    {
+      "id": 202,
+      "kind": "house",
+      "point": [
+        -4352.0,
+        -224
+      ],
+      "reachable": true
+    },
+    {
+      "id": 203,
+      "kind": "house",
+      "point": [
+        -11456.0,
+        9632
+      ],
+      "reachable": true
+    },
+    {
+      "id": 205,
+      "kind": "house",
+      "point": [
+        -12480.0,
+        -5920
+      ],
+      "reachable": true
+    },
+    {
+      "id": 206,
+      "kind": "house",
+      "point": [
+        -16960.0,
+        -4192
+      ],
+      "reachable": true
+    },
+    {
+      "id": 207,
+      "kind": "house",
+      "point": [
+        -18912,
+        6336.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 208,
+      "kind": "house",
+      "point": [
+        -960.0,
+        1440
+      ],
+      "reachable": true
+    },
+    {
+      "id": 209,
+      "kind": "house",
+      "point": [
+        -3808,
+        -11904.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 210,
+      "kind": "house",
+      "point": [
+        -10496.0,
+        -4896
+      ],
+      "reachable": true
+    },
+    {
+      "id": 211,
+      "kind": "house",
+      "point": [
+        -13952.0,
+        -5792
+      ],
+      "reachable": true
+    },
+    {
+      "id": 212,
+      "kind": "house",
+      "point": [
+        -6560,
+        -2880.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 213,
+      "kind": "house",
+      "point": [
+        -15936.0,
+        -5536
+      ],
+      "reachable": true
+    },
+    {
+      "id": 214,
+      "kind": "house",
+      "point": [
+        -2432.0,
+        1824
+      ],
+      "reachable": true
+    },
+    {
+      "id": 215,
+      "kind": "house",
+      "point": [
+        -10944.0,
+        9696
+      ],
+      "reachable": true
+    },
+    {
+      "id": 216,
+      "kind": "house",
+      "point": [
+        -11840.0,
+        15008
+      ],
+      "reachable": true
+    },
+    {
+      "id": 217,
+      "kind": "house",
+      "point": [
+        -11232,
+        11840.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 218,
+      "kind": "house",
+      "point": [
+        -16768.0,
+        5536
+      ],
+      "reachable": true
+    },
+    {
+      "id": 219,
+      "kind": "house",
+      "point": [
+        -11872,
+        7936.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 220,
+      "kind": "house",
+      "point": [
+        -1632,
+        -10688.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 221,
+      "kind": "house",
+      "point": [
+        -6048,
+        960.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 223,
+      "kind": "house",
+      "point": [
+        -10272,
+        12864.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 224,
+      "kind": "house",
+      "point": [
+        -13440.0,
+        10848
+      ],
+      "reachable": true
+    },
+    {
+      "id": 225,
+      "kind": "house",
+      "point": [
+        -3904.0,
+        2144
+      ],
+      "reachable": true
+    },
+    {
+      "id": 226,
+      "kind": "house",
+      "point": [
+        -27136.0,
+        -10336
+      ],
+      "reachable": true
+    },
+    {
+      "id": 227,
+      "kind": "house",
+      "point": [
+        -6880,
+        -1408.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 228,
+      "kind": "house",
+      "point": [
+        -14752,
+        5248.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 229,
+      "kind": "house",
+      "point": [
+        -10560.0,
+        -3680
+      ],
+      "reachable": true
+    },
+    {
+      "id": 230,
+      "kind": "house",
+      "point": [
+        -1408.0,
+        1504
+      ],
+      "reachable": true
+    },
+    {
+      "id": 231,
+      "kind": "house",
+      "point": [
+        -9984.0,
+        9632
+      ],
+      "reachable": true
+    },
+    {
+      "id": 236,
+      "kind": "house",
+      "point": [
+        -8928,
+        -2496.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 237,
+      "kind": "house",
+      "point": [
+        -17760,
+        4416.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 238,
+      "kind": "house",
+      "point": [
+        -2880.0,
+        1888
+      ],
+      "reachable": true
+    },
+    {
+      "id": 239,
+      "kind": "house",
+      "point": [
+        -11456.0,
+        6368
+      ],
+      "reachable": true
+    },
+    {
+      "id": 241,
+      "kind": "house",
+      "point": [
+        -10816.0,
+        13856
+      ],
+      "reachable": true
+    },
+    {
+      "id": 242,
+      "kind": "house",
+      "point": [
+        -6112,
+        768.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 243,
+      "kind": "house",
+      "point": [
+        -18944.0,
+        2144
+      ],
+      "reachable": true
+    },
+    {
+      "id": 244,
+      "kind": "house",
+      "point": [
+        -4896,
+        1984.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 245,
+      "kind": "house",
+      "point": [
+        -10656,
+        7936.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 246,
+      "kind": "house",
+      "point": [
+        -16768.0,
+        4320
+      ],
+      "reachable": true
+    },
+    {
+      "id": 247,
+      "kind": "house",
+      "point": [
+        -9472.0,
+        9696
+      ],
+      "reachable": true
+    },
+    {
+      "id": 248,
+      "kind": "house",
+      "point": [
+        -16512.0,
+        7520
+      ],
+      "reachable": true
+    },
+    {
+      "id": 249,
+      "kind": "house",
+      "point": [
+        -9248,
+        -1024.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 300,
+      "kind": "house",
+      "point": [
+        -8864,
+        11392.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 301,
+      "kind": "house",
+      "point": [
+        -9056,
+        12864.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 232,
+      "kind": "construction",
+      "point": [
+        -2112.0,
+        4064
+      ],
+      "reachable": true
+    },
+    {
+      "id": 232,
+      "kind": "interior_construction",
+      "point": [
+        -2112.0,
+        3872.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 233,
+      "kind": "construction",
+      "point": [
+        -1824,
+        3584.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 233,
+      "kind": "interior_construction",
+      "point": [
+        -1632.0,
+        3584.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 234,
+      "kind": "construction",
+      "point": [
+        -3040,
+        3328.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 234,
+      "kind": "interior_construction",
+      "point": [
+        -3232.0,
+        3328.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 235,
+      "kind": "construction",
+      "point": [
+        -26816.0,
+        -11360
+      ],
+      "reachable": true
+    },
+    {
+      "id": 235,
+      "kind": "interior_construction",
+      "point": [
+        -26816.0,
+        -11168.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 250,
+      "kind": "construction",
+      "point": [
+        -24160,
+        -10240.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 250,
+      "kind": "interior_construction",
+      "point": [
+        -24352.0,
+        -10240.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 251,
+      "kind": "construction",
+      "point": [
+        -2752.0,
+        4128
+      ],
+      "reachable": true
+    },
+    {
+      "id": 251,
+      "kind": "interior_construction",
+      "point": [
+        -2752.0,
+        4320.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 252,
+      "kind": "construction",
+      "point": [
+        -960.0,
+        4832
+      ],
+      "reachable": true
+    },
+    {
+      "id": 252,
+      "kind": "interior_construction",
+      "point": [
+        -960.0,
+        4640.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 253,
+      "kind": "construction",
+      "point": [
+        -800,
+        3584.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 253,
+      "kind": "interior_construction",
+      "point": [
+        -608.0,
+        3584.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 254,
+      "kind": "construction",
+      "point": [
+        -4064,
+        3200.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 254,
+      "kind": "interior_construction",
+      "point": [
+        -4256.0,
+        3200.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 255,
+      "kind": "construction",
+      "point": [
+        -3904.0,
+        4256
+      ],
+      "reachable": true
+    },
+    {
+      "id": 255,
+      "kind": "interior_construction",
+      "point": [
+        -3904.0,
+        4448.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 256,
+      "kind": "construction",
+      "point": [
+        -24384.0,
+        -10528
+      ],
+      "reachable": true
+    },
+    {
+      "id": 256,
+      "kind": "interior_construction",
+      "point": [
+        -24384.0,
+        -10720.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 257,
+      "kind": "construction",
+      "point": [
+        -28160.0,
+        -7904
+      ],
+      "reachable": true
+    },
+    {
+      "id": 257,
+      "kind": "interior_construction",
+      "point": [
+        -28160.0,
+        -7712.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 258,
+      "kind": "construction",
+      "point": [
+        544,
+        1792.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 258,
+      "kind": "interior_construction",
+      "point": [
+        352.0,
+        1792.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 259,
+      "kind": "construction",
+      "point": [
+        -5152,
+        4992.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 259,
+      "kind": "interior_construction",
+      "point": [
+        -4960.0,
+        4992.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 260,
+      "kind": "construction",
+      "point": [
+        -23872.0,
+        -6560
+      ],
+      "reachable": true
+    },
+    {
+      "id": 260,
+      "kind": "interior_construction",
+      "point": [
+        -23872.0,
+        -6752.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 261,
+      "kind": "construction",
+      "point": [
+        -6048,
+        3840.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 261,
+      "kind": "interior_construction",
+      "point": [
+        -5856.0,
+        3840.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 262,
+      "kind": "construction",
+      "point": [
+        -1408.0,
+        6880
+      ],
+      "reachable": true
+    },
+    {
+      "id": 262,
+      "kind": "interior_construction",
+      "point": [
+        -1408.0,
+        6688.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 263,
+      "kind": "construction",
+      "point": [
+        -6176,
+        4992.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 263,
+      "kind": "interior_construction",
+      "point": [
+        -5984.0,
+        4992.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 264,
+      "kind": "construction",
+      "point": [
+        -192.0,
+        6624
+      ],
+      "reachable": true
+    },
+    {
+      "id": 264,
+      "kind": "interior_construction",
+      "point": [
+        -192.0,
+        6432.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 265,
+      "kind": "construction",
+      "point": [
+        -28640,
+        -5312.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 265,
+      "kind": "interior_construction",
+      "point": [
+        -28448.0,
+        -5312.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 266,
+      "kind": "construction",
+      "point": [
+        -6112,
+        2432.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 266,
+      "kind": "interior_construction",
+      "point": [
+        -6304.0,
+        2432.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 267,
+      "kind": "construction",
+      "point": [
+        -23584,
+        -6464.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 267,
+      "kind": "interior_construction",
+      "point": [
+        -23392.0,
+        -6464.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 268,
+      "kind": "construction",
+      "point": [
+        -6240,
+        3584.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 268,
+      "kind": "interior_construction",
+      "point": [
+        -6432.0,
+        3584.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 269,
+      "kind": "construction",
+      "point": [
+        -896.0,
+        6688
+      ],
+      "reachable": true
+    },
+    {
+      "id": 269,
+      "kind": "interior_construction",
+      "point": [
+        -896.0,
+        6880.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 270,
+      "kind": "construction",
+      "point": [
+        -6240,
+        4736.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 270,
+      "kind": "interior_construction",
+      "point": [
+        -6432.0,
+        4736.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 271,
+      "kind": "construction",
+      "point": [
+        -5120.0,
+        6560
+      ],
+      "reachable": true
+    },
+    {
+      "id": 271,
+      "kind": "interior_construction",
+      "point": [
+        -5120.0,
+        6752.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 272,
+      "kind": "construction",
+      "point": [
+        -22272.0,
+        -12128
+      ],
+      "reachable": true
+    },
+    {
+      "id": 272,
+      "kind": "interior_construction",
+      "point": [
+        -22272.0,
+        -12320.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 273,
+      "kind": "construction",
+      "point": [
+        -22560,
+        -6336.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 273,
+      "kind": "interior_construction",
+      "point": [
+        -22368.0,
+        -6336.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 274,
+      "kind": "construction",
+      "point": [
+        -7136,
+        2432.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 274,
+      "kind": "interior_construction",
+      "point": [
+        -7328.0,
+        2432.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 275,
+      "kind": "construction",
+      "point": [
+        -8224,
+        4224.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 275,
+      "kind": "interior_construction",
+      "point": [
+        -8032.0,
+        4224.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 276,
+      "kind": "construction",
+      "point": [
+        -7328,
+        1280.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 276,
+      "kind": "interior_construction",
+      "point": [
+        -7520.0,
+        1280.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 277,
+      "kind": "construction",
+      "point": [
+        -6272.0,
+        6816
+      ],
+      "reachable": true
+    },
+    {
+      "id": 277,
+      "kind": "interior_construction",
+      "point": [
+        -6272.0,
+        7008.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 278,
+      "kind": "construction",
+      "point": [
+        -7264,
+        4736.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 278,
+      "kind": "interior_construction",
+      "point": [
+        -7456.0,
+        4736.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 279,
+      "kind": "construction",
+      "point": [
+        -9120,
+        3072.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 279,
+      "kind": "interior_construction",
+      "point": [
+        -8928.0,
+        3072.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 280,
+      "kind": "construction",
+      "point": [
+        -23328,
+        -3776.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 280,
+      "kind": "interior_construction",
+      "point": [
+        -23520.0,
+        -3776.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 281,
+      "kind": "construction",
+      "point": [
+        -9248,
+        4224.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 281,
+      "kind": "interior_construction",
+      "point": [
+        -9056.0,
+        4224.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 282,
+      "kind": "construction",
+      "point": [
+        -8352,
+        1280.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 282,
+      "kind": "interior_construction",
+      "point": [
+        -8544.0,
+        1280.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 283,
+      "kind": "construction",
+      "point": [
+        -7648,
+        7744.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 283,
+      "kind": "interior_construction",
+      "point": [
+        -7456.0,
+        7744.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 284,
+      "kind": "construction",
+      "point": [
+        -8288,
+        4736.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 284,
+      "kind": "interior_construction",
+      "point": [
+        -8480.0,
+        4736.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 285,
+      "kind": "construction",
+      "point": [
+        -10144,
+        3072.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 285,
+      "kind": "interior_construction",
+      "point": [
+        -9952.0,
+        3072.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 7,
+      "kind": "shop",
+      "point": [
+        -15968,
+        -1472
+      ],
+      "reachable": true
+    },
+    {
+      "id": 7,
+      "kind": "interior_shop",
+      "point": [
+        -16160.0,
+        -1472
+      ],
+      "reachable": true
+    },
+    {
+      "id": 8,
+      "kind": "shop",
+      "point": [
+        -9728,
+        3552
+      ],
+      "reachable": true
+    },
+    {
+      "id": 8,
+      "kind": "interior_shop",
+      "point": [
+        -9728,
+        3744.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 9,
+      "kind": "shop",
+      "point": [
+        -8064,
+        -3488
+      ],
+      "reachable": true
+    },
+    {
+      "id": 9,
+      "kind": "interior_shop",
+      "point": [
+        -8064,
+        -3680.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 25,
+      "kind": "shop",
+      "point": [
+        -14336,
+        3296
+      ],
+      "reachable": true
+    },
+    {
+      "id": 25,
+      "kind": "interior_shop",
+      "point": [
+        -14336,
+        3488.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 26,
+      "kind": "shop",
+      "point": [
+        -9728,
+        5536
+      ],
+      "reachable": true
+    },
+    {
+      "id": 26,
+      "kind": "interior_shop",
+      "point": [
+        -9728,
+        5344.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 27,
+      "kind": "shop",
+      "point": [
+        -17632,
+        2688
+      ],
+      "reachable": true
+    },
+    {
+      "id": 27,
+      "kind": "interior_shop",
+      "point": [
+        -17440.0,
+        2688
+      ],
+      "reachable": true
+    },
+    {
+      "id": 43,
+      "kind": "shop",
+      "point": [
+        -4384,
+        -1472
+      ],
+      "reachable": true
+    },
+    {
+      "id": 43,
+      "kind": "interior_shop",
+      "point": [
+        -4576.0,
+        -1472
+      ],
+      "reachable": true
+    },
+    {
+      "id": 44,
+      "kind": "shop",
+      "point": [
+        -14336,
+        2272
+      ],
+      "reachable": true
+    },
+    {
+      "id": 44,
+      "kind": "interior_shop",
+      "point": [
+        -14336,
+        2464.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 45,
+      "kind": "shop",
+      "point": [
+        -8384,
+        12128
+      ],
+      "reachable": true
+    },
+    {
+      "id": 45,
+      "kind": "interior_shop",
+      "point": [
+        -8384,
+        11936.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 61,
+      "kind": "shop",
+      "point": [
+        -7776,
+        -5312
+      ],
+      "reachable": true
+    },
+    {
+      "id": 61,
+      "kind": "interior_shop",
+      "point": [
+        -7584.0,
+        -5312
+      ],
+      "reachable": true
+    },
+    {
+      "id": 62,
+      "kind": "shop",
+      "point": [
+        -10624,
+        4512
+      ],
+      "reachable": true
+    },
+    {
+      "id": 62,
+      "kind": "interior_shop",
+      "point": [
+        -10624,
+        4320.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 63,
+      "kind": "shop",
+      "point": [
+        -8576,
+        12384
+      ],
+      "reachable": true
+    },
+    {
+      "id": 63,
+      "kind": "interior_shop",
+      "point": [
+        -8576,
+        12576.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 79,
+      "kind": "shop",
+      "point": [
+        -13440,
+        4256
+      ],
+      "reachable": true
+    },
+    {
+      "id": 79,
+      "kind": "interior_shop",
+      "point": [
+        -13440,
+        4064.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 80,
+      "kind": "shop",
+      "point": [
+        -10624,
+        2528
+      ],
+      "reachable": true
+    },
+    {
+      "id": 80,
+      "kind": "interior_shop",
+      "point": [
+        -10624,
+        2720.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 81,
+      "kind": "shop",
+      "point": [
+        -8480,
+        9216
+      ],
+      "reachable": true
+    },
+    {
+      "id": 81,
+      "kind": "interior_shop",
+      "point": [
+        -8672.0,
+        9216
+      ],
+      "reachable": true
+    },
+    {
+      "id": 97,
+      "kind": "shop",
+      "point": [
+        -10336,
+        1728
+      ],
+      "reachable": true
+    },
+    {
+      "id": 97,
+      "kind": "interior_shop",
+      "point": [
+        -10144.0,
+        1728
+      ],
+      "reachable": true
+    },
+    {
+      "id": 98,
+      "kind": "shop",
+      "point": [
+        -13440,
+        3232
+      ],
+      "reachable": true
+    },
+    {
+      "id": 98,
+      "kind": "interior_shop",
+      "point": [
+        -13440,
+        3040.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 99,
+      "kind": "shop",
+      "point": [
+        -9824,
+        14272
+      ],
+      "reachable": true
+    },
+    {
+      "id": 99,
+      "kind": "interior_shop",
+      "point": [
+        -9632.0,
+        14272
+      ],
+      "reachable": true
+    },
+    {
+      "id": 108,
+      "kind": "shop",
+      "point": [
+        -7488,
+        12128
+      ],
+      "reachable": true
+    },
+    {
+      "id": 108,
+      "kind": "interior_shop",
+      "point": [
+        -7488,
+        11936.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 109,
+      "kind": "shop",
+      "point": [
+        -15840,
+        1216
+      ],
+      "reachable": true
+    },
+    {
+      "id": 109,
+      "kind": "interior_shop",
+      "point": [
+        -15648.0,
+        1216
+      ],
+      "reachable": true
+    },
+    {
+      "id": 110,
+      "kind": "shop",
+      "point": [
+        -8128,
+        7840
+      ],
+      "reachable": true
+    },
+    {
+      "id": 110,
+      "kind": "interior_shop",
+      "point": [
+        -8128,
+        7648.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 111,
+      "kind": "shop",
+      "point": [
+        -7680,
+        12192
+      ],
+      "reachable": true
+    },
+    {
+      "id": 111,
+      "kind": "interior_shop",
+      "point": [
+        -7680,
+        12384.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 112,
+      "kind": "shop",
+      "point": [
+        -7840,
+        13824
+      ],
+      "reachable": true
+    },
+    {
+      "id": 112,
+      "kind": "interior_shop",
+      "point": [
+        -8032.0,
+        13824
+      ],
+      "reachable": true
+    },
+    {
+      "id": 113,
+      "kind": "shop",
+      "point": [
+        -9440,
+        8320
+      ],
+      "reachable": true
+    },
+    {
+      "id": 113,
+      "kind": "interior_shop",
+      "point": [
+        -9248.0,
+        8320
+      ],
+      "reachable": true
+    },
+    {
+      "id": 114,
+      "kind": "shop",
+      "point": [
+        -11520,
+        5152
+      ],
+      "reachable": true
+    },
+    {
+      "id": 114,
+      "kind": "interior_shop",
+      "point": [
+        -11520,
+        4960.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 115,
+      "kind": "shop",
+      "point": [
+        -8000,
+        8480
+      ],
+      "reachable": true
+    },
+    {
+      "id": 115,
+      "kind": "interior_shop",
+      "point": [
+        -8000,
+        8672.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 116,
+      "kind": "shop",
+      "point": [
+        -7360,
+        14176
+      ],
+      "reachable": true
+    },
+    {
+      "id": 116,
+      "kind": "interior_shop",
+      "point": [
+        -7360,
+        13984.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 117,
+      "kind": "shop",
+      "point": [
+        -15648,
+        320
+      ],
+      "reachable": true
+    },
+    {
+      "id": 117,
+      "kind": "interior_shop",
+      "point": [
+        -15456.0,
+        320
+      ],
+      "reachable": true
+    },
+    {
+      "id": 118,
+      "kind": "shop",
+      "point": [
+        -7104,
+        9440
+      ],
+      "reachable": true
+    },
+    {
+      "id": 118,
+      "kind": "interior_shop",
+      "point": [
+        -7104,
+        9248.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 119,
+      "kind": "shop",
+      "point": [
+        -4320,
+        -6528
+      ],
+      "reachable": true
+    },
+    {
+      "id": 119,
+      "kind": "interior_shop",
+      "point": [
+        -4128.0,
+        -6528
+      ],
+      "reachable": true
+    },
+    {
+      "id": 120,
+      "kind": "shop",
+      "point": [
+        -6464,
+        13664
+      ],
+      "reachable": true
+    },
+    {
+      "id": 120,
+      "kind": "interior_shop",
+      "point": [
+        -6464,
+        13472.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 121,
+      "kind": "shop",
+      "point": [
+        -15392,
+        -576
+      ],
+      "reachable": true
+    },
+    {
+      "id": 121,
+      "kind": "interior_shop",
+      "point": [
+        -15200.0,
+        -576
+      ],
+      "reachable": true
+    },
+    {
+      "id": 122,
+      "kind": "shop",
+      "point": [
+        -19840,
+        8544
+      ],
+      "reachable": true
+    },
+    {
+      "id": 122,
+      "kind": "interior_shop",
+      "point": [
+        -19840,
+        8352.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 123,
+      "kind": "shop",
+      "point": [
+        -5568,
+        12704
+      ],
+      "reachable": true
+    },
+    {
+      "id": 123,
+      "kind": "interior_shop",
+      "point": [
+        -5568,
+        12896.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 124,
+      "kind": "shop",
+      "point": [
+        -11968,
+        -3744
+      ],
+      "reachable": true
+    },
+    {
+      "id": 124,
+      "kind": "interior_shop",
+      "point": [
+        -11968,
+        -3936.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 125,
+      "kind": "shop",
+      "point": [
+        -21792,
+        6528
+      ],
+      "reachable": true
+    },
+    {
+      "id": 125,
+      "kind": "interior_shop",
+      "point": [
+        -21600.0,
+        6528
+      ],
+      "reachable": true
+    },
+    {
+      "id": 126,
+      "kind": "shop",
+      "point": [
+        -19296,
+        9024
+      ],
+      "reachable": true
+    },
+    {
+      "id": 126,
+      "kind": "interior_shop",
+      "point": [
+        -19488.0,
+        9024
+      ],
+      "reachable": true
+    },
+    {
+      "id": 127,
+      "kind": "shop",
+      "point": [
+        -14720,
+        -2016
+      ],
+      "reachable": true
+    },
+    {
+      "id": 127,
+      "kind": "interior_shop",
+      "point": [
+        -14720,
+        -1824.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 128,
+      "kind": "shop",
+      "point": [
+        -16608,
+        13056
+      ],
+      "reachable": true
+    },
+    {
+      "id": 128,
+      "kind": "interior_shop",
+      "point": [
+        -16800.0,
+        13056
+      ],
+      "reachable": true
+    },
+    {
+      "id": 129,
+      "kind": "shop",
+      "point": [
+        -22272,
+        6048
+      ],
+      "reachable": true
+    },
+    {
+      "id": 129,
+      "kind": "interior_shop",
+      "point": [
+        -22272,
+        6240.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 130,
+      "kind": "shop",
+      "point": [
+        -1568,
+        7360
+      ],
+      "reachable": true
+    },
+    {
+      "id": 130,
+      "kind": "interior_shop",
+      "point": [
+        -1760.0,
+        7360
+      ],
+      "reachable": true
+    },
+    {
+      "id": 131,
+      "kind": "shop",
+      "point": [
+        0,
+        -1248
+      ],
+      "reachable": true
+    },
+    {
+      "id": 131,
+      "kind": "interior_shop",
+      "point": [
+        0,
+        -1056.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 132,
+      "kind": "shop",
+      "point": [
+        0,
+        736
+      ],
+      "reachable": true
+    },
+    {
+      "id": 132,
+      "kind": "interior_shop",
+      "point": [
+        0,
+        544.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 133,
+      "kind": "shop",
+      "point": [
+        -22464,
+        7648
+      ],
+      "reachable": true
+    },
+    {
+      "id": 133,
+      "kind": "interior_shop",
+      "point": [
+        -22464,
+        7840.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 134,
+      "kind": "shop",
+      "point": [
+        -3008,
+        12128
+      ],
+      "reachable": true
+    },
+    {
+      "id": 134,
+      "kind": "interior_shop",
+      "point": [
+        -3008,
+        11936.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 135,
+      "kind": "shop",
+      "point": [
+        -14272,
+        -4576
+      ],
+      "reachable": true
+    },
+    {
+      "id": 135,
+      "kind": "interior_shop",
+      "point": [
+        -14272,
+        -4384.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 136,
+      "kind": "shop",
+      "point": [
+        288,
+        4288
+      ],
+      "reachable": true
+    },
+    {
+      "id": 136,
+      "kind": "interior_shop",
+      "point": [
+        96.0,
+        4288
+      ],
+      "reachable": true
+    },
+    {
+      "id": 137,
+      "kind": "shop",
+      "point": [
+        -21728,
+        -1728
+      ],
+      "reachable": true
+    },
+    {
+      "id": 137,
+      "kind": "interior_shop",
+      "point": [
+        -21536.0,
+        -1728
+      ],
+      "reachable": true
+    },
+    {
+      "id": 138,
+      "kind": "shop",
+      "point": [
+        -10368,
+        -9760
+      ],
+      "reachable": true
+    },
+    {
+      "id": 138,
+      "kind": "interior_shop",
+      "point": [
+        -10368,
+        -9952.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 139,
+      "kind": "shop",
+      "point": [
+        -15776,
+        -3840
+      ],
+      "reachable": true
+    },
+    {
+      "id": 139,
+      "kind": "interior_shop",
+      "point": [
+        -15584.0,
+        -3840
+      ],
+      "reachable": true
+    },
+    {
+      "id": 140,
+      "kind": "shop",
+      "point": [
+        -2112,
+        12128
+      ],
+      "reachable": true
+    },
+    {
+      "id": 140,
+      "kind": "interior_shop",
+      "point": [
+        -2112,
+        11936.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 141,
+      "kind": "shop",
+      "point": [
+        -21312,
+        -3168
+      ],
+      "reachable": true
+    },
+    {
+      "id": 141,
+      "kind": "interior_shop",
+      "point": [
+        -21312,
+        -2976.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 142,
+      "kind": "shop",
+      "point": [
+        -1536,
+        10720
+      ],
+      "reachable": true
+    },
+    {
+      "id": 142,
+      "kind": "interior_shop",
+      "point": [
+        -1536,
+        10528.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 143,
+      "kind": "shop",
+      "point": [
+        -15296,
+        -7328
+      ],
+      "reachable": true
+    },
+    {
+      "id": 143,
+      "kind": "interior_shop",
+      "point": [
+        -15296,
+        -7136.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 144,
+      "kind": "shop",
+      "point": [
+        -23872,
+        10592
+      ],
+      "reachable": true
+    },
+    {
+      "id": 144,
+      "kind": "interior_shop",
+      "point": [
+        -23872,
+        10400.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 145,
+      "kind": "shop",
+      "point": [
+        -21376,
+        -4192
+      ],
+      "reachable": true
+    },
+    {
+      "id": 145,
+      "kind": "interior_shop",
+      "point": [
+        -21376,
+        -4000.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 146,
+      "kind": "shop",
+      "point": [
+        -19840,
+        -4064
+      ],
+      "reachable": true
+    },
+    {
+      "id": 146,
+      "kind": "interior_shop",
+      "point": [
+        -19840,
+        -4256.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 147,
+      "kind": "shop",
+      "point": [
+        -6912,
+        -13344
+      ],
+      "reachable": true
+    },
+    {
+      "id": 147,
+      "kind": "interior_shop",
+      "point": [
+        -6912,
+        -13152.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 151,
+      "kind": "shop",
+      "point": [
+        -23744,
+        -1440
+      ],
+      "reachable": true
+    },
+    {
+      "id": 151,
+      "kind": "interior_shop",
+      "point": [
+        -23744,
+        -1632.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 168,
+      "kind": "shop",
+      "point": [
+        -23744,
+        10656
+      ],
+      "reachable": true
+    },
+    {
+      "id": 168,
+      "kind": "interior_shop",
+      "point": [
+        -23744,
+        10848.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 186,
+      "kind": "shop",
+      "point": [
+        -20384,
+        13504
+      ],
+      "reachable": true
+    },
+    {
+      "id": 186,
+      "kind": "interior_shop",
+      "point": [
+        -20576.0,
+        13504
+      ],
+      "reachable": true
+    },
+    {
+      "id": 204,
+      "kind": "shop",
+      "point": [
+        -26400,
+        7616
+      ],
+      "reachable": true
+    },
+    {
+      "id": 204,
+      "kind": "interior_shop",
+      "point": [
+        -26208.0,
+        7616
+      ],
+      "reachable": true
+    },
+    {
+      "id": 222,
+      "kind": "shop",
+      "point": [
+        -26560,
+        5984
+      ],
+      "reachable": true
+    },
+    {
+      "id": 222,
+      "kind": "interior_shop",
+      "point": [
+        -26560,
+        5792.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 240,
+      "kind": "shop",
+      "point": [
+        -21824,
+        13088
+      ],
+      "reachable": true
+    },
+    {
+      "id": 240,
+      "kind": "interior_shop",
+      "point": [
+        -21824,
+        13280.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": "north",
+      "kind": "gate_-1",
+      "point": [
+        -16832.0,
+        14720.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": "north",
+      "kind": "gate_1",
+      "point": [
+        -16832.0,
+        15744.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": "west",
+      "kind": "gate_-1",
+      "point": [
+        -29248.0,
+        -320.00000000000006
+      ],
+      "reachable": true
+    },
+    {
+      "id": "west",
+      "kind": "gate_1",
+      "point": [
+        -30272.0,
+        -319.99999999999994
+      ],
+      "reachable": true
+    },
+    {
+      "id": "east",
+      "kind": "gate_-1",
+      "point": [
+        -128.0,
+        -1472.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": "east",
+      "kind": "gate_1",
+      "point": [
+        896.0,
+        -1472.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": "south",
+      "kind": "gate_-1",
+      "point": [
+        -4352.0,
+        -13696.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": "south",
+      "kind": "gate_1",
+      "point": [
+        -4352.0,
+        -14720.0
+      ],
+      "reachable": true
+    }
+  ],
+  "failures": [],
+  "closed_gate_cell_audit": {
+    "scope": "Block one grid row across each of the four gate centres; native 96-MU blocker collision still requires an engine test.",
+    "escaped_cells": 35716,
+    "escape_trace": [
+      [
+        -12096,
+        -1472
+      ],
+      [
+        -12160,
+        -1472
+      ],
+      [
+        -12224,
+        -1472
+      ],
+      [
+        -12288,
+        -1472
+      ],
+      [
+        -12352,
+        -1472
+      ],
+      [
+        -12416,
+        -1472
+      ],
+      [
+        -12480,
+        -1472
+      ],
+      [
+        -12544,
+        -1472
+      ],
+      [
+        -12608,
+        -1472
+      ],
+      [
+        -12672,
+        -1472
+      ],
+      [
+        -12736,
+        -1472
+      ],
+      [
+        -12800,
+        -1472
+      ],
+      [
+        -12864,
+        -1472
+      ],
+      [
+        -12928,
+        -1472
+      ],
+      [
+        -12992,
+        -1472
+      ],
+      [
+        -13056,
+        -1472
+      ],
+      [
+        -13120,
+        -1472
+      ],
+      [
+        -13184,
+        -1472
+      ],
+      [
+        -13248,
+        -1472
+      ],
+      [
+        -13312,
+        -1472
+      ],
+      [
+        -13376,
+        -1472
+      ],
+      [
+        -13440,
+        -1472
+      ],
+      [
+        -13504,
+        -1472
+      ],
+      [
+        -13568,
+        -1472
+      ],
+      [
+        -13632,
+        -1472
+      ],
+      [
+        -13696,
+        -1472
+      ],
+      [
+        -13760,
+        -1472
+      ],
+      [
+        -13824,
+        -1472
+      ],
+      [
+        -13888,
+        -1472
+      ],
+      [
+        -13952,
+        -1472
+      ],
+      [
+        -14016,
+        -1472
+      ],
+      [
+        -14080,
+        -1472
+      ],
+      [
+        -14144,
+        -1472
+      ],
+      [
+        -14208,
+        -1472
+      ],
+      [
+        -14272,
+        -1472
+      ],
+      [
+        -14336,
+        -1472
+      ],
+      [
+        -14400,
+        -1472
+      ],
+      [
+        -14400,
+        -1408
+      ],
+      [
+        -14400,
+        -1344
+      ],
+      [
+        -14400,
+        -1280
+      ],
+      [
+        -14400,
+        -1216
+      ],
+      [
+        -14400,
+        -1152
+      ],
+      [
+        -14464,
+        -1152
+      ],
+      [
+        -14528,
+        -1152
+      ],
+      [
+        -14528,
+        -1088
+      ],
+      [
+        -14528,
+        -1024
+      ],
+      [
+        -14528,
+        -960
+      ],
+      [
+        -14528,
+        -896
+      ],
+      [
+        -14528,
+        -832
+      ],
+      [
+        -14528,
+        -768
+      ],
+      [
+        -14528,
+        -704
+      ],
+      [
+        -14528,
+        -640
+      ],
+      [
+        -14528,
+        -576
+      ],
+      [
+        -14528,
+        -512
+      ],
+      [
+        -14528,
+        -448
+      ],
+      [
+        -14528,
+        -384
+      ],
+      [
+        -14528,
+        -320
+      ],
+      [
+        -14528,
+        -256
+      ],
+      [
+        -14592,
+        -256
+      ],
+      [
+        -14656,
+        -256
+      ],
+      [
+        -14720,
+        -256
+      ],
+      [
+        -14784,
+        -256
+      ],
+      [
+        -14784,
+        -192
+      ],
+      [
+        -14784,
+        -128
+      ],
+      [
+        -14784,
+        -64
+      ],
+      [
+        -14784,
+        0
+      ],
+      [
+        -14784,
+        64
+      ],
+      [
+        -14784,
+        128
+      ],
+      [
+        -14784,
+        192
+      ],
+      [
+        -14784,
+        256
+      ],
+      [
+        -14784,
+        320
+      ],
+      [
+        -14784,
+        384
+      ],
+      [
+        -14784,
+        448
+      ],
+      [
+        -14784,
+        512
+      ],
+      [
+        -14784,
+        576
+      ],
+      [
+        -14784,
+        640
+      ],
+      [
+        -14848,
+        640
+      ],
+      [
+        -14912,
+        640
+      ],
+      [
+        -14912,
+        704
+      ],
+      [
+        -14912,
+        768
+      ],
+      [
+        -14912,
+        832
+      ],
+      [
+        -14912,
+        896
+      ],
+      [
+        -14912,
+        960
+      ],
+      [
+        -14912,
+        1024
+      ],
+      [
+        -14912,
+        1088
+      ],
+      [
+        -14912,
+        1152
+      ],
+      [
+        -14912,
+        1216
+      ],
+      [
+        -14912,
+        1280
+      ],
+      [
+        -14912,
+        1344
+      ],
+      [
+        -14912,
+        1408
+      ],
+      [
+        -14912,
+        1472
+      ],
+      [
+        -14912,
+        1536
+      ],
+      [
+        -14912,
+        1600
+      ],
+      [
+        -14912,
+        1664
+      ],
+      [
+        -14912,
+        1728
+      ],
+      [
+        -14912,
+        1792
+      ],
+      [
+        -14912,
+        1856
+      ],
+      [
+        -14912,
+        1920
+      ],
+      [
+        -14912,
+        1984
+      ],
+      [
+        -14912,
+        2048
+      ],
+      [
+        -14912,
+        2112
+      ],
+      [
+        -14912,
+        2176
+      ],
+      [
+        -14912,
+        2240
+      ],
+      [
+        -14912,
+        2304
+      ],
+      [
+        -14912,
+        2368
+      ],
+      [
+        -14912,
+        2432
+      ],
+      [
+        -14912,
+        2496
+      ],
+      [
+        -14912,
+        2560
+      ],
+      [
+        -14912,
+        2624
+      ],
+      [
+        -14912,
+        2688
+      ],
+      [
+        -14912,
+        2752
+      ],
+      [
+        -14912,
+        2816
+      ],
+      [
+        -14912,
+        2880
+      ],
+      [
+        -14912,
+        2944
+      ],
+      [
+        -14912,
+        3008
+      ],
+      [
+        -14912,
+        3072
+      ],
+      [
+        -14912,
+        3136
+      ],
+      [
+        -14912,
+        3200
+      ],
+      [
+        -14912,
+        3264
+      ],
+      [
+        -14912,
+        3328
+      ],
+      [
+        -14912,
+        3392
+      ],
+      [
+        -14912,
+        3456
+      ],
+      [
+        -14912,
+        3520
+      ],
+      [
+        -14912,
+        3584
+      ],
+      [
+        -14912,
+        3648
+      ],
+      [
+        -14912,
+        3712
+      ],
+      [
+        -14912,
+        3776
+      ],
+      [
+        -14912,
+        3840
+      ],
+      [
+        -14912,
+        3904
+      ],
+      [
+        -14912,
+        3968
+      ],
+      [
+        -14912,
+        4032
+      ],
+      [
+        -14912,
+        4096
+      ],
+      [
+        -14912,
+        4160
+      ],
+      [
+        -14912,
+        4224
+      ],
+      [
+        -14912,
+        4288
+      ],
+      [
+        -14912,
+        4352
+      ],
+      [
+        -14912,
+        4416
+      ],
+      [
+        -14912,
+        4480
+      ],
+      [
+        -14912,
+        4544
+      ],
+      [
+        -14912,
+        4608
+      ],
+      [
+        -14912,
+        4672
+      ],
+      [
+        -14912,
+        4736
+      ],
+      [
+        -14912,
+        4800
+      ],
+      [
+        -14912,
+        4864
+      ],
+      [
+        -14912,
+        4928
+      ],
+      [
+        -14912,
+        4992
+      ],
+      [
+        -14912,
+        5056
+      ],
+      [
+        -14912,
+        5120
+      ],
+      [
+        -14912,
+        5184
+      ],
+      [
+        -14912,
+        5248
+      ],
+      [
+        -14912,
+        5312
+      ],
+      [
+        -14912,
+        5376
+      ],
+      [
+        -14912,
+        5440
+      ],
+      [
+        -14912,
+        5504
+      ],
+      [
+        -14912,
+        5568
+      ],
+      [
+        -14912,
+        5632
+      ],
+      [
+        -14912,
+        5696
+      ],
+      [
+        -14912,
+        5760
+      ],
+      [
+        -14912,
+        5824
+      ],
+      [
+        -14912,
+        5888
+      ],
+      [
+        -14912,
+        5952
+      ],
+      [
+        -14912,
+        6016
+      ],
+      [
+        -14912,
+        6080
+      ],
+      [
+        -14912,
+        6144
+      ],
+      [
+        -14912,
+        6208
+      ],
+      [
+        -14912,
+        6272
+      ],
+      [
+        -14912,
+        6336
+      ],
+      [
+        -14912,
+        6400
+      ],
+      [
+        -14912,
+        6464
+      ],
+      [
+        -14912,
+        6528
+      ],
+      [
+        -14976,
+        6528
+      ],
+      [
+        -15040,
+        6528
+      ],
+      [
+        -15104,
+        6528
+      ],
+      [
+        -15168,
+        6528
+      ],
+      [
+        -15232,
+        6528
+      ],
+      [
+        -15296,
+        6528
+      ],
+      [
+        -15360,
+        6528
+      ],
+      [
+        -15424,
+        6528
+      ],
+      [
+        -15488,
+        6528
+      ],
+      [
+        -15552,
+        6528
+      ],
+      [
+        -15616,
+        6528
+      ],
+      [
+        -15680,
+        6528
+      ],
+      [
+        -15680,
+        6592
+      ],
+      [
+        -15680,
+        6656
+      ],
+      [
+        -15680,
+        6720
+      ],
+      [
+        -15680,
+        6784
+      ],
+      [
+        -15680,
+        6848
+      ],
+      [
+        -15680,
+        6912
+      ],
+      [
+        -15680,
+        6976
+      ],
+      [
+        -15680,
+        7040
+      ],
+      [
+        -15680,
+        7104
+      ],
+      [
+        -15680,
+        7168
+      ],
+      [
+        -15680,
+        7232
+      ],
+      [
+        -15680,
+        7296
+      ],
+      [
+        -15680,
+        7360
+      ],
+      [
+        -15680,
+        7424
+      ],
+      [
+        -15680,
+        7488
+      ],
+      [
+        -15680,
+        7552
+      ],
+      [
+        -15680,
+        7616
+      ],
+      [
+        -15680,
+        7680
+      ],
+      [
+        -15680,
+        7744
+      ],
+      [
+        -15680,
+        7808
+      ],
+      [
+        -15680,
+        7872
+      ],
+      [
+        -15680,
+        7936
+      ],
+      [
+        -15680,
+        8000
+      ],
+      [
+        -15680,
+        8064
+      ],
+      [
+        -15680,
+        8128
+      ],
+      [
+        -15680,
+        8192
+      ],
+      [
+        -15680,
+        8256
+      ],
+      [
+        -15680,
+        8320
+      ],
+      [
+        -15680,
+        8384
+      ],
+      [
+        -15680,
+        8448
+      ],
+      [
+        -15680,
+        8512
+      ],
+      [
+        -15680,
+        8576
+      ],
+      [
+        -15680,
+        8640
+      ],
+      [
+        -15680,
+        8704
+      ],
+      [
+        -15680,
+        8768
+      ],
+      [
+        -15680,
+        8832
+      ],
+      [
+        -15680,
+        8896
+      ],
+      [
+        -15680,
+        8960
+      ],
+      [
+        -15680,
+        9024
+      ],
+      [
+        -15680,
+        9088
+      ],
+      [
+        -15680,
+        9152
+      ],
+      [
+        -15680,
+        9216
+      ],
+      [
+        -15680,
+        9280
+      ],
+      [
+        -15680,
+        9344
+      ],
+      [
+        -15680,
+        9408
+      ],
+      [
+        -15680,
+        9472
+      ],
+      [
+        -15680,
+        9536
+      ],
+      [
+        -15680,
+        9600
+      ],
+      [
+        -15680,
+        9664
+      ],
+      [
+        -15680,
+        9728
+      ],
+      [
+        -15680,
+        9792
+      ],
+      [
+        -15744,
+        9792
+      ],
+      [
+        -15808,
+        9792
+      ],
+      [
+        -15872,
+        9792
+      ],
+      [
+        -15936,
+        9792
+      ],
+      [
+        -16000,
+        9792
+      ],
+      [
+        -16064,
+        9792
+      ],
+      [
+        -16064,
+        9856
+      ],
+      [
+        -16064,
+        9920
+      ],
+      [
+        -16064,
+        9984
+      ],
+      [
+        -16064,
+        10048
+      ],
+      [
+        -16064,
+        10112
+      ],
+      [
+        -16064,
+        10176
+      ],
+      [
+        -16064,
+        10240
+      ],
+      [
+        -16064,
+        10304
+      ],
+      [
+        -16064,
+        10368
+      ],
+      [
+        -16064,
+        10432
+      ],
+      [
+        -16064,
+        10496
+      ],
+      [
+        -16064,
+        10560
+      ],
+      [
+        -16064,
+        10624
+      ],
+      [
+        -16064,
+        10688
+      ],
+      [
+        -16064,
+        10752
+      ],
+      [
+        -16064,
+        10816
+      ],
+      [
+        -16064,
+        10880
+      ],
+      [
+        -16064,
+        10944
+      ],
+      [
+        -16064,
+        11008
+      ],
+      [
+        -16064,
+        11072
+      ],
+      [
+        -16064,
+        11136
+      ],
+      [
+        -16064,
+        11200
+      ],
+      [
+        -16064,
+        11264
+      ],
+      [
+        -16128,
+        11264
+      ],
+      [
+        -16192,
+        11264
+      ],
+      [
+        -16256,
+        11264
+      ],
+      [
+        -16320,
+        11264
+      ],
+      [
+        -16384,
+        11264
+      ],
+      [
+        -16448,
+        11264
+      ],
+      [
+        -16448,
+        11328
+      ],
+      [
+        -16448,
+        11392
+      ],
+      [
+        -16448,
+        11456
+      ],
+      [
+        -16448,
+        11520
+      ],
+      [
+        -16448,
+        11584
+      ],
+      [
+        -16448,
+        11648
+      ],
+      [
+        -16448,
+        11712
+      ],
+      [
+        -16448,
+        11776
+      ],
+      [
+        -16448,
+        11840
+      ],
+      [
+        -16448,
+        11904
+      ],
+      [
+        -16448,
+        11968
+      ],
+      [
+        -16448,
+        12032
+      ],
+      [
+        -16448,
+        12096
+      ],
+      [
+        -16448,
+        12160
+      ],
+      [
+        -16448,
+        12224
+      ],
+      [
+        -16448,
+        12288
+      ],
+      [
+        -16448,
+        12352
+      ],
+      [
+        -16448,
+        12416
+      ],
+      [
+        -16448,
+        12480
+      ],
+      [
+        -16512,
+        12480
+      ],
+      [
+        -16576,
+        12480
+      ],
+      [
+        -16640,
+        12480
+      ],
+      [
+        -16704,
+        12480
+      ],
+      [
+        -16704,
+        12544
+      ],
+      [
+        -16704,
+        12608
+      ],
+      [
+        -16704,
+        12672
+      ],
+      [
+        -16704,
+        12736
+      ],
+      [
+        -16704,
+        12800
+      ],
+      [
+        -16704,
+        12864
+      ],
+      [
+        -16704,
+        12928
+      ],
+      [
+        -16704,
+        12992
+      ],
+      [
+        -16704,
+        13056
+      ],
+      [
+        -16704,
+        13120
+      ],
+      [
+        -16704,
+        13184
+      ],
+      [
+        -16704,
+        13248
+      ],
+      [
+        -16704,
+        13312
+      ],
+      [
+        -16704,
+        13376
+      ],
+      [
+        -16768,
+        13376
+      ],
+      [
+        -16832,
+        13376
+      ],
+      [
+        -16896,
+        13376
+      ],
+      [
+        -16896,
+        13440
+      ],
+      [
+        -16896,
+        13504
+      ],
+      [
+        -16896,
+        13568
+      ],
+      [
+        -16896,
+        13632
+      ],
+      [
+        -16896,
+        13696
+      ],
+      [
+        -16896,
+        13760
+      ],
+      [
+        -16896,
+        13824
+      ],
+      [
+        -16896,
+        13888
+      ],
+      [
+        -16896,
+        13952
+      ],
+      [
+        -16896,
+        14016
+      ],
+      [
+        -16896,
+        14080
+      ],
+      [
+        -16896,
+        14144
+      ],
+      [
+        -16896,
+        14208
+      ],
+      [
+        -16896,
+        14272
+      ],
+      [
+        -16896,
+        14336
+      ],
+      [
+        -16896,
+        14400
+      ],
+      [
+        -16896,
+        14464
+      ],
+      [
+        -16896,
+        14528
+      ],
+      [
+        -16896,
+        14592
+      ],
+      [
+        -16896,
+        14656
+      ],
+      [
+        -16896,
+        14720
+      ],
+      [
+        -16896,
+        14784
+      ],
+      [
+        -16896,
+        14848
+      ],
+      [
+        -16896,
+        14912
+      ],
+      [
+        -16896,
+        14976
+      ],
+      [
+        -16896,
+        15040
+      ],
+      [
+        -16896,
+        15104
+      ],
+      [
+        -16896,
+        15168
+      ],
+      [
+        -16960,
+        15168
+      ],
+      [
+        -17024,
+        15168
+      ],
+      [
+        -17088,
+        15168
+      ],
+      [
+        -17152,
+        15168
+      ],
+      [
+        -17216,
+        15168
+      ],
+      [
+        -17280,
+        15168
+      ],
+      [
+        -17344,
+        15168
+      ],
+      [
+        -17408,
+        15168
+      ],
+      [
+        -17472,
+        15168
+      ],
+      [
+        -17536,
+        15168
+      ],
+      [
+        -17600,
+        15168
+      ],
+      [
+        -17664,
+        15168
+      ],
+      [
+        -17728,
+        15168
+      ],
+      [
+        -17792,
+        15168
+      ],
+      [
+        -17856,
+        15168
+      ],
+      [
+        -17920,
+        15168
+      ],
+      [
+        -17984,
+        15168
+      ],
+      [
+        -18048,
+        15168
+      ],
+      [
+        -18112,
+        15168
+      ],
+      [
+        -18176,
+        15168
+      ],
+      [
+        -18240,
+        15168
+      ],
+      [
+        -18304,
+        15168
+      ],
+      [
+        -18368,
+        15168
+      ],
+      [
+        -18432,
+        15168
+      ],
+      [
+        -18496,
+        15168
+      ],
+      [
+        -18560,
+        15168
+      ],
+      [
+        -18624,
+        15168
+      ],
+      [
+        -18688,
+        15168
+      ],
+      [
+        -18752,
+        15168
+      ],
+      [
+        -18816,
+        15168
+      ],
+      [
+        -18880,
+        15168
+      ],
+      [
+        -18944,
+        15168
+      ],
+      [
+        -19008,
+        15168
+      ],
+      [
+        -19072,
+        15168
+      ],
+      [
+        -19136,
+        15168
+      ],
+      [
+        -19200,
+        15168
+      ],
+      [
+        -19264,
+        15168
+      ],
+      [
+        -19328,
+        15168
+      ],
+      [
+        -19392,
+        15168
+      ],
+      [
+        -19456,
+        15168
+      ],
+      [
+        -19520,
+        15168
+      ],
+      [
+        -19584,
+        15168
+      ],
+      [
+        -19648,
+        15168
+      ],
+      [
+        -19712,
+        15168
+      ],
+      [
+        -19776,
+        15168
+      ],
+      [
+        -19840,
+        15168
+      ],
+      [
+        -19904,
+        15168
+      ],
+      [
+        -19968,
+        15168
+      ],
+      [
+        -20032,
+        15168
+      ],
+      [
+        -20096,
+        15168
+      ],
+      [
+        -20160,
+        15168
+      ],
+      [
+        -20224,
+        15168
+      ],
+      [
+        -20288,
+        15168
+      ],
+      [
+        -20352,
+        15168
+      ],
+      [
+        -20416,
+        15168
+      ],
+      [
+        -20480,
+        15168
+      ],
+      [
+        -20544,
+        15168
+      ],
+      [
+        -20608,
+        15168
+      ],
+      [
+        -20672,
+        15168
+      ],
+      [
+        -20736,
+        15168
+      ],
+      [
+        -20800,
+        15168
+      ],
+      [
+        -20864,
+        15168
+      ],
+      [
+        -20928,
+        15168
+      ],
+      [
+        -20992,
+        15168
+      ],
+      [
+        -21056,
+        15168
+      ],
+      [
+        -21120,
+        15168
+      ],
+      [
+        -21184,
+        15168
+      ],
+      [
+        -21248,
+        15168
+      ],
+      [
+        -21312,
+        15168
+      ],
+      [
+        -21376,
+        15168
+      ],
+      [
+        -21440,
+        15168
+      ],
+      [
+        -21504,
+        15168
+      ],
+      [
+        -21568,
+        15168
+      ],
+      [
+        -21632,
+        15168
+      ],
+      [
+        -21696,
+        15168
+      ],
+      [
+        -21760,
+        15168
+      ],
+      [
+        -21824,
+        15168
+      ],
+      [
+        -21888,
+        15168
+      ],
+      [
+        -21952,
+        15168
+      ],
+      [
+        -22016,
+        15168
+      ],
+      [
+        -22080,
+        15168
+      ],
+      [
+        -22144,
+        15168
+      ],
+      [
+        -22208,
+        15168
+      ],
+      [
+        -22272,
+        15168
+      ],
+      [
+        -22336,
+        15168
+      ],
+      [
+        -22400,
+        15168
+      ],
+      [
+        -22464,
+        15168
+      ],
+      [
+        -22528,
+        15168
+      ],
+      [
+        -22592,
+        15168
+      ],
+      [
+        -22656,
+        15168
+      ],
+      [
+        -22720,
+        15168
+      ],
+      [
+        -22784,
+        15168
+      ],
+      [
+        -22848,
+        15168
+      ],
+      [
+        -22912,
+        15168
+      ],
+      [
+        -22976,
+        15168
+      ],
+      [
+        -23040,
+        15168
+      ],
+      [
+        -23104,
+        15168
+      ],
+      [
+        -23168,
+        15168
+      ],
+      [
+        -23232,
+        15168
+      ],
+      [
+        -23296,
+        15168
+      ],
+      [
+        -23360,
+        15168
+      ],
+      [
+        -23424,
+        15168
+      ],
+      [
+        -23488,
+        15168
+      ],
+      [
+        -23552,
+        15168
+      ],
+      [
+        -23616,
+        15168
+      ],
+      [
+        -23680,
+        15168
+      ],
+      [
+        -23744,
+        15168
+      ],
+      [
+        -23808,
+        15168
+      ],
+      [
+        -23872,
+        15168
+      ],
+      [
+        -23936,
+        15168
+      ],
+      [
+        -24000,
+        15168
+      ],
+      [
+        -24064,
+        15168
+      ],
+      [
+        -24128,
+        15168
+      ],
+      [
+        -24192,
+        15168
+      ],
+      [
+        -24256,
+        15168
+      ],
+      [
+        -24320,
+        15168
+      ],
+      [
+        -24384,
+        15168
+      ],
+      [
+        -24448,
+        15168
+      ],
+      [
+        -24512,
+        15168
+      ],
+      [
+        -24576,
+        15168
+      ],
+      [
+        -24640,
+        15168
+      ],
+      [
+        -24704,
+        15168
+      ],
+      [
+        -24768,
+        15168
+      ],
+      [
+        -24832,
+        15168
+      ],
+      [
+        -24896,
+        15168
+      ],
+      [
+        -24960,
+        15168
+      ],
+      [
+        -25024,
+        15168
+      ],
+      [
+        -25088,
+        15168
+      ],
+      [
+        -25152,
+        15168
+      ],
+      [
+        -25216,
+        15168
+      ],
+      [
+        -25280,
+        15168
+      ],
+      [
+        -25344,
+        15168
+      ],
+      [
+        -25408,
+        15168
+      ],
+      [
+        -25472,
+        15168
+      ],
+      [
+        -25536,
+        15168
+      ],
+      [
+        -25600,
+        15168
+      ],
+      [
+        -25664,
+        15168
+      ],
+      [
+        -25728,
+        15168
+      ],
+      [
+        -25792,
+        15168
+      ],
+      [
+        -25856,
+        15168
+      ],
+      [
+        -25920,
+        15168
+      ],
+      [
+        -25984,
+        15168
+      ],
+      [
+        -26048,
+        15168
+      ],
+      [
+        -26112,
+        15168
+      ],
+      [
+        -26176,
+        15168
+      ],
+      [
+        -26240,
+        15168
+      ],
+      [
+        -26304,
+        15168
+      ],
+      [
+        -26368,
+        15168
+      ],
+      [
+        -26432,
+        15168
+      ],
+      [
+        -26496,
+        15168
+      ],
+      [
+        -26560,
+        15168
+      ],
+      [
+        -26624,
+        15168
+      ],
+      [
+        -26688,
+        15168
+      ],
+      [
+        -26752,
+        15168
+      ],
+      [
+        -26816,
+        15168
+      ],
+      [
+        -26880,
+        15168
+      ],
+      [
+        -26944,
+        15168
+      ],
+      [
+        -27008,
+        15168
+      ],
+      [
+        -27072,
+        15168
+      ],
+      [
+        -27136,
+        15168
+      ],
+      [
+        -27200,
+        15168
+      ],
+      [
+        -27264,
+        15168
+      ],
+      [
+        -27328,
+        15168
+      ],
+      [
+        -27392,
+        15168
+      ],
+      [
+        -27456,
+        15168
+      ],
+      [
+        -27520,
+        15168
+      ],
+      [
+        -27584,
+        15168
+      ],
+      [
+        -27648,
+        15168
+      ],
+      [
+        -27712,
+        15168
+      ],
+      [
+        -27776,
+        15168
+      ],
+      [
+        -27840,
+        15168
+      ],
+      [
+        -27904,
+        15168
+      ],
+      [
+        -27968,
+        15168
+      ],
+      [
+        -28032,
+        15168
+      ],
+      [
+        -28096,
+        15168
+      ],
+      [
+        -28160,
+        15168
+      ],
+      [
+        -28224,
+        15168
+      ],
+      [
+        -28288,
+        15168
+      ],
+      [
+        -28352,
+        15168
+      ],
+      [
+        -28416,
+        15168
+      ],
+      [
+        -28480,
+        15168
+      ],
+      [
+        -28544,
+        15168
+      ],
+      [
+        -28608,
+        15168
+      ],
+      [
+        -28672,
+        15168
+      ],
+      [
+        -28736,
+        15168
+      ],
+      [
+        -28800,
+        15168
+      ],
+      [
+        -28864,
+        15168
+      ],
+      [
+        -28928,
+        15168
+      ],
+      [
+        -28992,
+        15168
+      ],
+      [
+        -29056,
+        15168
+      ],
+      [
+        -29120,
+        15168
+      ],
+      [
+        -29184,
+        15168
+      ],
+      [
+        -29248,
+        15168
+      ],
+      [
+        -29312,
+        15168
+      ],
+      [
+        -29376,
+        15168
+      ],
+      [
+        -29440,
+        15168
+      ],
+      [
+        -29504,
+        15168
+      ],
+      [
+        -29568,
+        15168
+      ],
+      [
+        -29632,
+        15168
+      ],
+      [
+        -29696,
+        15168
+      ],
+      [
+        -29760,
+        15168
+      ],
+      [
+        -29824,
+        15168
+      ],
+      [
+        -29888,
+        15168
+      ],
+      [
+        -29952,
+        15168
+      ],
+      [
+        -30016,
+        15168
+      ],
+      [
+        -30080,
+        15168
+      ],
+      [
+        -30144,
+        15168
+      ],
+      [
+        -30208,
+        15168
+      ],
+      [
+        -30272,
+        15168
+      ],
+      [
+        -30336,
+        15168
+      ],
+      [
+        -30336,
+        15104
+      ],
+      [
+        -30336,
+        15040
+      ],
+      [
+        -30336,
+        14976
+      ],
+      [
+        -30336,
+        14912
+      ],
+      [
+        -30336,
+        14848
+      ],
+      [
+        -30336,
+        14784
+      ],
+      [
+        -30336,
+        14720
+      ],
+      [
+        -30336,
+        14656
+      ],
+      [
+        -30336,
+        14592
+      ],
+      [
+        -30336,
+        14528
+      ],
+      [
+        -30336,
+        14464
+      ],
+      [
+        -30336,
+        14400
+      ],
+      [
+        -30336,
+        14336
+      ],
+      [
+        -30336,
+        14272
+      ],
+      [
+        -30336,
+        14208
+      ],
+      [
+        -30336,
+        14144
+      ],
+      [
+        -30336,
+        14080
+      ],
+      [
+        -30336,
+        14016
+      ],
+      [
+        -30336,
+        13952
+      ],
+      [
+        -30336,
+        13888
+      ],
+      [
+        -30336,
+        13824
+      ],
+      [
+        -30336,
+        13760
+      ],
+      [
+        -30336,
+        13696
+      ],
+      [
+        -30336,
+        13632
+      ],
+      [
+        -30336,
+        13568
+      ],
+      [
+        -30336,
+        13504
+      ],
+      [
+        -30336,
+        13440
+      ],
+      [
+        -30336,
+        13376
+      ],
+      [
+        -30336,
+        13312
+      ],
+      [
+        -30336,
+        13248
+      ],
+      [
+        -30336,
+        13184
+      ],
+      [
+        -30336,
+        13120
+      ],
+      [
+        -30336,
+        13056
+      ],
+      [
+        -30336,
+        12992
+      ],
+      [
+        -30336,
+        12928
+      ],
+      [
+        -30336,
+        12864
+      ],
+      [
+        -30336,
+        12800
+      ],
+      [
+        -30336,
+        12736
+      ],
+      [
+        -30336,
+        12672
+      ],
+      [
+        -30336,
+        12608
+      ],
+      [
+        -30336,
+        12544
+      ],
+      [
+        -30336,
+        12480
+      ],
+      [
+        -30336,
+        12416
+      ],
+      [
+        -30336,
+        12352
+      ],
+      [
+        -30336,
+        12288
+      ],
+      [
+        -30336,
+        12224
+      ],
+      [
+        -30336,
+        12160
+      ],
+      [
+        -30336,
+        12096
+      ],
+      [
+        -30336,
+        12032
+      ],
+      [
+        -30336,
+        11968
+      ],
+      [
+        -30336,
+        11904
+      ],
+      [
+        -30336,
+        11840
+      ],
+      [
+        -30336,
+        11776
+      ],
+      [
+        -30336,
+        11712
+      ],
+      [
+        -30336,
+        11648
+      ],
+      [
+        -30336,
+        11584
+      ],
+      [
+        -30336,
+        11520
+      ],
+      [
+        -30336,
+        11456
+      ],
+      [
+        -30336,
+        11392
+      ],
+      [
+        -30336,
+        11328
+      ],
+      [
+        -30336,
+        11264
+      ],
+      [
+        -30336,
+        11200
+      ],
+      [
+        -30336,
+        11136
+      ],
+      [
+        -30336,
+        11072
+      ],
+      [
+        -30336,
+        11008
+      ],
+      [
+        -30336,
+        10944
+      ],
+      [
+        -30336,
+        10880
+      ],
+      [
+        -30336,
+        10816
+      ],
+      [
+        -30336,
+        10752
+      ],
+      [
+        -30336,
+        10688
+      ],
+      [
+        -30336,
+        10624
+      ],
+      [
+        -30336,
+        10560
+      ],
+      [
+        -30336,
+        10496
+      ],
+      [
+        -30336,
+        10432
+      ],
+      [
+        -30336,
+        10368
+      ],
+      [
+        -30336,
+        10304
+      ],
+      [
+        -30336,
+        10240
+      ],
+      [
+        -30336,
+        10176
+      ],
+      [
+        -30336,
+        10112
+      ],
+      [
+        -30336,
+        10048
+      ],
+      [
+        -30336,
+        9984
+      ],
+      [
+        -30336,
+        9920
+      ],
+      [
+        -30336,
+        9856
+      ],
+      [
+        -30336,
+        9792
+      ],
+      [
+        -30336,
+        9728
+      ],
+      [
+        -30336,
+        9664
+      ],
+      [
+        -30336,
+        9600
+      ],
+      [
+        -30336,
+        9536
+      ],
+      [
+        -30336,
+        9472
+      ],
+      [
+        -30336,
+        9408
+      ],
+      [
+        -30336,
+        9344
+      ],
+      [
+        -30336,
+        9280
+      ],
+      [
+        -30336,
+        9216
+      ],
+      [
+        -30336,
+        9152
+      ],
+      [
+        -30336,
+        9088
+      ],
+      [
+        -30336,
+        9024
+      ],
+      [
+        -30336,
+        8960
+      ],
+      [
+        -30336,
+        8896
+      ],
+      [
+        -30336,
+        8832
+      ],
+      [
+        -30336,
+        8768
+      ],
+      [
+        -30336,
+        8704
+      ],
+      [
+        -30336,
+        8640
+      ],
+      [
+        -30336,
+        8576
+      ],
+      [
+        -30336,
+        8512
+      ],
+      [
+        -30336,
+        8448
+      ],
+      [
+        -30336,
+        8384
+      ],
+      [
+        -30336,
+        8320
+      ],
+      [
+        -30336,
+        8256
+      ],
+      [
+        -30336,
+        8192
+      ],
+      [
+        -30336,
+        8128
+      ],
+      [
+        -30336,
+        8064
+      ],
+      [
+        -30336,
+        8000
+      ],
+      [
+        -30336,
+        7936
+      ],
+      [
+        -30336,
+        7872
+      ],
+      [
+        -30336,
+        7808
+      ],
+      [
+        -30336,
+        7744
+      ],
+      [
+        -30336,
+        7680
+      ],
+      [
+        -30336,
+        7616
+      ],
+      [
+        -30336,
+        7552
+      ],
+      [
+        -30336,
+        7488
+      ],
+      [
+        -30336,
+        7424
+      ],
+      [
+        -30336,
+        7360
+      ],
+      [
+        -30336,
+        7296
+      ],
+      [
+        -30336,
+        7232
+      ],
+      [
+        -30336,
+        7168
+      ],
+      [
+        -30336,
+        7104
+      ],
+      [
+        -30336,
+        7040
+      ],
+      [
+        -30336,
+        6976
+      ],
+      [
+        -30336,
+        6912
+      ],
+      [
+        -30336,
+        6848
+      ],
+      [
+        -30336,
+        6784
+      ],
+      [
+        -30336,
+        6720
+      ],
+      [
+        -30336,
+        6656
+      ],
+      [
+        -30336,
+        6592
+      ],
+      [
+        -30336,
+        6528
+      ],
+      [
+        -30336,
+        6464
+      ],
+      [
+        -30336,
+        6400
+      ],
+      [
+        -30336,
+        6336
+      ],
+      [
+        -30336,
+        6272
+      ],
+      [
+        -30336,
+        6208
+      ],
+      [
+        -30336,
+        6144
+      ],
+      [
+        -30336,
+        6080
+      ],
+      [
+        -30336,
+        6016
+      ],
+      [
+        -30336,
+        5952
+      ],
+      [
+        -30336,
+        5888
+      ],
+      [
+        -30336,
+        5824
+      ],
+      [
+        -30336,
+        5760
+      ],
+      [
+        -30336,
+        5696
+      ],
+      [
+        -30336,
+        5632
+      ],
+      [
+        -30336,
+        5568
+      ],
+      [
+        -30336,
+        5504
+      ],
+      [
+        -30336,
+        5440
+      ],
+      [
+        -30336,
+        5376
+      ],
+      [
+        -30336,
+        5312
+      ],
+      [
+        -30336,
+        5248
+      ],
+      [
+        -30336,
+        5184
+      ],
+      [
+        -30336,
+        5120
+      ],
+      [
+        -30336,
+        5056
+      ],
+      [
+        -30336,
+        4992
+      ],
+      [
+        -30336,
+        4928
+      ],
+      [
+        -30336,
+        4864
+      ],
+      [
+        -30336,
+        4800
+      ],
+      [
+        -30336,
+        4736
+      ],
+      [
+        -30336,
+        4672
+      ],
+      [
+        -30336,
+        4608
+      ],
+      [
+        -30336,
+        4544
+      ],
+      [
+        -30336,
+        4480
+      ],
+      [
+        -30336,
+        4416
+      ],
+      [
+        -30336,
+        4352
+      ],
+      [
+        -30336,
+        4288
+      ],
+      [
+        -30336,
+        4224
+      ],
+      [
+        -30336,
+        4160
+      ],
+      [
+        -30336,
+        4096
+      ],
+      [
+        -30336,
+        4032
+      ],
+      [
+        -30336,
+        3968
+      ],
+      [
+        -30336,
+        3904
+      ],
+      [
+        -30336,
+        3840
+      ],
+      [
+        -30336,
+        3776
+      ],
+      [
+        -30336,
+        3712
+      ],
+      [
+        -30336,
+        3648
+      ],
+      [
+        -30336,
+        3584
+      ],
+      [
+        -30336,
+        3520
+      ],
+      [
+        -30336,
+        3456
+      ],
+      [
+        -30336,
+        3392
+      ],
+      [
+        -30336,
+        3328
+      ],
+      [
+        -30336,
+        3264
+      ],
+      [
+        -30336,
+        3200
+      ],
+      [
+        -30336,
+        3136
+      ],
+      [
+        -30336,
+        3072
+      ],
+      [
+        -30336,
+        3008
+      ],
+      [
+        -30336,
+        2944
+      ],
+      [
+        -30336,
+        2880
+      ],
+      [
+        -30336,
+        2816
+      ],
+      [
+        -30336,
+        2752
+      ],
+      [
+        -30336,
+        2688
+      ],
+      [
+        -30336,
+        2624
+      ],
+      [
+        -30336,
+        2560
+      ],
+      [
+        -30336,
+        2496
+      ],
+      [
+        -30336,
+        2432
+      ],
+      [
+        -30336,
+        2368
+      ],
+      [
+        -30336,
+        2304
+      ],
+      [
+        -30336,
+        2240
+      ],
+      [
+        -30336,
+        2176
+      ],
+      [
+        -30336,
+        2112
+      ],
+      [
+        -30336,
+        2048
+      ],
+      [
+        -30336,
+        1984
+      ],
+      [
+        -30336,
+        1920
+      ],
+      [
+        -30336,
+        1856
+      ],
+      [
+        -30336,
+        1792
+      ],
+      [
+        -30336,
+        1728
+      ],
+      [
+        -30336,
+        1664
+      ],
+      [
+        -30336,
+        1600
+      ],
+      [
+        -30336,
+        1536
+      ],
+      [
+        -30336,
+        1472
+      ],
+      [
+        -30336,
+        1408
+      ],
+      [
+        -30336,
+        1344
+      ],
+      [
+        -30336,
+        1280
+      ],
+      [
+        -30336,
+        1216
+      ],
+      [
+        -30336,
+        1152
+      ],
+      [
+        -30336,
+        1088
+      ],
+      [
+        -30336,
+        1024
+      ],
+      [
+        -30336,
+        960
+      ],
+      [
+        -30336,
+        896
+      ],
+      [
+        -30336,
+        832
+      ],
+      [
+        -30336,
+        768
+      ],
+      [
+        -30336,
+        704
+      ],
+      [
+        -30336,
+        640
+      ],
+      [
+        -30336,
+        576
+      ],
+      [
+        -30336,
+        512
+      ],
+      [
+        -30336,
+        448
+      ],
+      [
+        -30336,
+        384
+      ],
+      [
+        -30336,
+        320
+      ],
+      [
+        -30336,
+        256
+      ],
+      [
+        -30336,
+        192
+      ],
+      [
+        -30336,
+        128
+      ],
+      [
+        -30336,
+        64
+      ],
+      [
+        -30336,
+        0
+      ],
+      [
+        -30336,
+        -64
+      ],
+      [
+        -30336,
+        -128
+      ],
+      [
+        -30336,
+        -192
+      ],
+      [
+        -30336,
+        -256
+      ],
+      [
+        -30336,
+        -320
+      ],
+      [
+        -30336,
+        -384
+      ],
+      [
+        -30336,
+        -448
+      ],
+      [
+        -30336,
+        -512
+      ],
+      [
+        -30336,
+        -576
+      ],
+      [
+        -30336,
+        -640
+      ],
+      [
+        -30336,
+        -704
+      ],
+      [
+        -30336,
+        -768
+      ],
+      [
+        -30336,
+        -832
+      ],
+      [
+        -30336,
+        -896
+      ],
+      [
+        -30336,
+        -960
+      ],
+      [
+        -30336,
+        -1024
+      ],
+      [
+        -30336,
+        -1088
+      ],
+      [
+        -30336,
+        -1152
+      ],
+      [
+        -30336,
+        -1216
+      ],
+      [
+        -30336,
+        -1280
+      ],
+      [
+        -30336,
+        -1344
+      ],
+      [
+        -30336,
+        -1408
+      ],
+      [
+        -30336,
+        -1472
+      ],
+      [
+        -30336,
+        -1536
+      ],
+      [
+        -30336,
+        -1600
+      ],
+      [
+        -30336,
+        -1664
+      ],
+      [
+        -30336,
+        -1728
+      ],
+      [
+        -30336,
+        -1792
+      ],
+      [
+        -30336,
+        -1856
+      ],
+      [
+        -30336,
+        -1920
+      ],
+      [
+        -30336,
+        -1984
+      ],
+      [
+        -30336,
+        -2048
+      ],
+      [
+        -30336,
+        -2112
+      ],
+      [
+        -30336,
+        -2176
+      ],
+      [
+        -30336,
+        -2240
+      ],
+      [
+        -30336,
+        -2304
+      ],
+      [
+        -30336,
+        -2368
+      ],
+      [
+        -30336,
+        -2432
+      ],
+      [
+        -30336,
+        -2496
+      ],
+      [
+        -30336,
+        -2560
+      ],
+      [
+        -30336,
+        -2624
+      ],
+      [
+        -30336,
+        -2688
+      ],
+      [
+        -30336,
+        -2752
+      ],
+      [
+        -30336,
+        -2816
+      ],
+      [
+        -30336,
+        -2880
+      ],
+      [
+        -30336,
+        -2944
+      ],
+      [
+        -30336,
+        -3008
+      ],
+      [
+        -30336,
+        -3072
+      ],
+      [
+        -30336,
+        -3136
+      ],
+      [
+        -30336,
+        -3200
+      ],
+      [
+        -30336,
+        -3264
+      ],
+      [
+        -30336,
+        -3328
+      ],
+      [
+        -30336,
+        -3392
+      ],
+      [
+        -30336,
+        -3456
+      ],
+      [
+        -30336,
+        -3520
+      ],
+      [
+        -30336,
+        -3584
+      ],
+      [
+        -30336,
+        -3648
+      ],
+      [
+        -30336,
+        -3712
+      ],
+      [
+        -30336,
+        -3776
+      ],
+      [
+        -30336,
+        -3840
+      ],
+      [
+        -30336,
+        -3904
+      ],
+      [
+        -30336,
+        -3968
+      ],
+      [
+        -30336,
+        -4032
+      ],
+      [
+        -30336,
+        -4096
+      ],
+      [
+        -30336,
+        -4160
+      ],
+      [
+        -30336,
+        -4224
+      ],
+      [
+        -30336,
+        -4288
+      ],
+      [
+        -30336,
+        -4352
+      ],
+      [
+        -30336,
+        -4416
+      ],
+      [
+        -30336,
+        -4480
+      ],
+      [
+        -30336,
+        -4544
+      ],
+      [
+        -30336,
+        -4608
+      ],
+      [
+        -30336,
+        -4672
+      ],
+      [
+        -30336,
+        -4736
+      ],
+      [
+        -30336,
+        -4800
+      ],
+      [
+        -30336,
+        -4864
+      ],
+      [
+        -30336,
+        -4928
+      ],
+      [
+        -30336,
+        -4992
+      ],
+      [
+        -30336,
+        -5056
+      ],
+      [
+        -30336,
+        -5120
+      ],
+      [
+        -30336,
+        -5184
+      ],
+      [
+        -30336,
+        -5248
+      ],
+      [
+        -30336,
+        -5312
+      ],
+      [
+        -30336,
+        -5376
+      ],
+      [
+        -30336,
+        -5440
+      ],
+      [
+        -30336,
+        -5504
+      ],
+      [
+        -30336,
+        -5568
+      ],
+      [
+        -30336,
+        -5632
+      ],
+      [
+        -30336,
+        -5696
+      ],
+      [
+        -30336,
+        -5760
+      ],
+      [
+        -30336,
+        -5824
+      ],
+      [
+        -30336,
+        -5888
+      ],
+      [
+        -30336,
+        -5952
+      ],
+      [
+        -30336,
+        -6016
+      ],
+      [
+        -30336,
+        -6080
+      ],
+      [
+        -30336,
+        -6144
+      ],
+      [
+        -30336,
+        -6208
+      ],
+      [
+        -30336,
+        -6272
+      ],
+      [
+        -30336,
+        -6336
+      ],
+      [
+        -30336,
+        -6400
+      ],
+      [
+        -30336,
+        -6464
+      ],
+      [
+        -30336,
+        -6528
+      ],
+      [
+        -30336,
+        -6592
+      ],
+      [
+        -30336,
+        -6656
+      ],
+      [
+        -30336,
+        -6720
+      ],
+      [
+        -30336,
+        -6784
+      ],
+      [
+        -30336,
+        -6848
+      ],
+      [
+        -30336,
+        -6912
+      ],
+      [
+        -30336,
+        -6976
+      ],
+      [
+        -30336,
+        -7040
+      ],
+      [
+        -30336,
+        -7104
+      ],
+      [
+        -30336,
+        -7168
+      ],
+      [
+        -30336,
+        -7232
+      ],
+      [
+        -30336,
+        -7296
+      ],
+      [
+        -30336,
+        -7360
+      ],
+      [
+        -30336,
+        -7424
+      ],
+      [
+        -30336,
+        -7488
+      ],
+      [
+        -30336,
+        -7552
+      ],
+      [
+        -30336,
+        -7616
+      ],
+      [
+        -30336,
+        -7680
+      ],
+      [
+        -30336,
+        -7744
+      ],
+      [
+        -30336,
+        -7808
+      ],
+      [
+        -30336,
+        -7872
+      ],
+      [
+        -30336,
+        -7936
+      ],
+      [
+        -30336,
+        -8000
+      ],
+      [
+        -30336,
+        -8064
+      ],
+      [
+        -30336,
+        -8128
+      ],
+      [
+        -30336,
+        -8192
+      ],
+      [
+        -30336,
+        -8256
+      ],
+      [
+        -30336,
+        -8320
+      ],
+      [
+        -30336,
+        -8384
+      ],
+      [
+        -30336,
+        -8448
+      ],
+      [
+        -30336,
+        -8512
+      ],
+      [
+        -30336,
+        -8576
+      ],
+      [
+        -30336,
+        -8640
+      ],
+      [
+        -30336,
+        -8704
+      ],
+      [
+        -30336,
+        -8768
+      ],
+      [
+        -30336,
+        -8832
+      ],
+      [
+        -30336,
+        -8896
+      ],
+      [
+        -30336,
+        -8960
+      ],
+      [
+        -30336,
+        -9024
+      ],
+      [
+        -30336,
+        -9088
+      ],
+      [
+        -30336,
+        -9152
+      ],
+      [
+        -30336,
+        -9216
+      ],
+      [
+        -30336,
+        -9280
+      ],
+      [
+        -30336,
+        -9344
+      ],
+      [
+        -30336,
+        -9408
+      ],
+      [
+        -30336,
+        -9472
+      ],
+      [
+        -30336,
+        -9536
+      ],
+      [
+        -30336,
+        -9600
+      ],
+      [
+        -30336,
+        -9664
+      ],
+      [
+        -30336,
+        -9728
+      ],
+      [
+        -30336,
+        -9792
+      ],
+      [
+        -30336,
+        -9856
+      ],
+      [
+        -30336,
+        -9920
+      ],
+      [
+        -30336,
+        -9984
+      ],
+      [
+        -30336,
+        -10048
+      ],
+      [
+        -30336,
+        -10112
+      ],
+      [
+        -30336,
+        -10176
+      ],
+      [
+        -30336,
+        -10240
+      ],
+      [
+        -30336,
+        -10304
+      ],
+      [
+        -30336,
+        -10368
+      ],
+      [
+        -30336,
+        -10432
+      ],
+      [
+        -30336,
+        -10496
+      ],
+      [
+        -30336,
+        -10560
+      ],
+      [
+        -30336,
+        -10624
+      ],
+      [
+        -30336,
+        -10688
+      ],
+      [
+        -30336,
+        -10752
+      ],
+      [
+        -30336,
+        -10816
+      ],
+      [
+        -30336,
+        -10880
+      ],
+      [
+        -30336,
+        -10944
+      ],
+      [
+        -30336,
+        -11008
+      ],
+      [
+        -30336,
+        -11072
+      ],
+      [
+        -30336,
+        -11136
+      ],
+      [
+        -30336,
+        -11200
+      ],
+      [
+        -30336,
+        -11264
+      ],
+      [
+        -30336,
+        -11328
+      ],
+      [
+        -30336,
+        -11392
+      ],
+      [
+        -30336,
+        -11456
+      ],
+      [
+        -30336,
+        -11520
+      ],
+      [
+        -30336,
+        -11584
+      ],
+      [
+        -30336,
+        -11648
+      ],
+      [
+        -30336,
+        -11712
+      ],
+      [
+        -30336,
+        -11776
+      ],
+      [
+        -30336,
+        -11840
+      ],
+      [
+        -30336,
+        -11904
+      ],
+      [
+        -30336,
+        -11968
+      ],
+      [
+        -30336,
+        -12032
+      ],
+      [
+        -30336,
+        -12096
+      ],
+      [
+        -30336,
+        -12160
+      ],
+      [
+        -30336,
+        -12224
+      ],
+      [
+        -30336,
+        -12288
+      ],
+      [
+        -30336,
+        -12352
+      ],
+      [
+        -30336,
+        -12416
+      ],
+      [
+        -30336,
+        -12480
+      ],
+      [
+        -30336,
+        -12544
+      ],
+      [
+        -30336,
+        -12608
+      ],
+      [
+        -30336,
+        -12672
+      ],
+      [
+        -30336,
+        -12736
+      ],
+      [
+        -30336,
+        -12800
+      ],
+      [
+        -30336,
+        -12864
+      ],
+      [
+        -30336,
+        -12928
+      ],
+      [
+        -30336,
+        -12992
+      ],
+      [
+        -30336,
+        -13056
+      ],
+      [
+        -30336,
+        -13120
+      ],
+      [
+        -30336,
+        -13184
+      ],
+      [
+        -30336,
+        -13248
+      ],
+      [
+        -30336,
+        -13312
+      ],
+      [
+        -30336,
+        -13376
+      ],
+      [
+        -30336,
+        -13440
+      ],
+      [
+        -30336,
+        -13504
+      ],
+      [
+        -30336,
+        -13568
+      ],
+      [
+        -30336,
+        -13632
+      ],
+      [
+        -30336,
+        -13696
+      ],
+      [
+        -30336,
+        -13760
+      ],
+      [
+        -30336,
+        -13824
+      ],
+      [
+        -30336,
+        -13888
+      ],
+      [
+        -30336,
+        -13952
+      ],
+      [
+        -30336,
+        -14016
+      ],
+      [
+        -30336,
+        -14080
+      ],
+      [
+        -30336,
+        -14144
+      ],
+      [
+        -30336,
+        -14208
+      ],
+      [
+        -30336,
+        -14272
+      ],
+      [
+        -30336,
+        -14336
+      ],
+      [
+        -30336,
+        -14400
+      ],
+      [
+        -30336,
+        -14464
+      ],
+      [
+        -30336,
+        -14528
+      ],
+      [
+        -30336,
+        -14592
+      ],
+      [
+        -30336,
+        -14656
+      ],
+      [
+        -30336,
+        -14720
+      ],
+      [
+        -30336,
+        -14784
+      ],
+      [
+        -30336,
+        -14848
+      ],
+      [
+        -30336,
+        -14912
+      ],
+      [
+        -30336,
+        -14976
+      ],
+      [
+        -30336,
+        -15040
+      ],
+      [
+        -30336,
+        -15104
+      ],
+      [
+        -30336,
+        -15168
+      ],
+      [
+        -30336,
+        -15232
+      ],
+      [
+        -30336,
+        -15296
+      ],
+      [
+        -30336,
+        -15360
+      ],
+      [
+        -30336,
+        -15424
+      ],
+      [
+        -30336,
+        -15488
+      ],
+      [
+        -30336,
+        -15552
+      ],
+      [
+        -30336,
+        -15616
+      ],
+      [
+        -30336,
+        -15680
+      ],
+      [
+        -30336,
+        -15744
+      ],
+      [
+        -30336,
+        -15808
+      ],
+      [
+        -30336,
+        -15872
+      ],
+      [
+        -30336,
+        -15936
+      ]
+    ]
+  }
+}

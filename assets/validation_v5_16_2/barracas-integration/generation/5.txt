@@ -1,0 +1,2 @@
+MAP03: 25 sectors, 4366 lines, 7 things
+{"routes": 600, "waypoints": 9453, "maximum_grid_steps": 726}

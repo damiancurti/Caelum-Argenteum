@@ -1,0 +1,20 @@
+{
+  "issue": 454,
+  "version": "5.16.2",
+  "runtime": "build/v516/issue454-knight01.pk3",
+  "runtime_sha256": "1cb2039081bd7ff9016954f59e01f4b8a0d7555275ee5d6303900ad55537a261",
+  "status": "Existing Knight source follows the revised quay; original city and preceding saved source retained/migrated. Native isolated checks pass; city activation/author acceptance still pending.",
+  "behavior": "Reuse CurrentPortPoint on the original (0,640,14) authored location. Only revision4 city resolves (-896,15488,14). PlacementRevision1 migrates that exact known old position once, deferring while CaptureUser is active.",
+  "native": {
+    "capture": "capture/results.json",
+    "active_capture_migration": "active-migration/results.json",
+    "original_active_and_hub_compatibility": "legacy/results.json"
+  },
+  "static": "saved-source-audit.json",
+  "package_delta": "package-delta.json",
+  "limitations": [
+    "Fixture supplies completed narrative/victory and physical Box/deck; no battle victory or reward grant is simulated as gameplay acceptance.",
+    "Native +use opens the actual source; fixture chooses the capture response and clears its conversation pointers. UI response selection itself is not tested.",
+    "No cooperative acquisition, new card, changed acquisition requirement or author acceptance."
+  ]
+}

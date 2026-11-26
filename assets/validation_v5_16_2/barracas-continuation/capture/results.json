@@ -1,0 +1,28 @@
+{
+  "issue": 454,
+  "scope": "Native capture of three active rams and one reserve; enemy reserve activation and captured reserve exclusion persist after reload. Empty enemy crews and fixture faction membership. No timed work, combat, refill or author acceptance.",
+  "runtime_sha256": "6efffa2932be0333debccfa727ae471826a84e3916f077fd0fb47802273a6d73",
+  "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "fixture_sha256": "cd2d8c66081829d4053b0164a7274087d0ce199ef28750432391127d9576afc2",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 CAPTURE COMPLETE passed=4 failures=0"
+      ]
+    },
+    {
+      "phase": "reload",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 CAPTURE RESUME PASS",
+        "CA454 CAPTURE COMPLETE passed=4 failures=0"
+      ]
+    }
+  ]
+}

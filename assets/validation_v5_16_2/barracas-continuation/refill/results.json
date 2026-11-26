@@ -1,0 +1,57 @@
+{
+  "issue": 454,
+  "scope": "Full native city controller,600 defender records and1000 living attacker cap, finite6600 cumulative reserve, five fixture deaths through native Die followed by actual refill opportunities. Thermal exposure neutralized; no accelerated time or frozen combatants. Not full battle completion, FPS, climate survival or author acceptance.",
+  "runtime_sha256": "6efffa2932be0333debccfa727ae471826a84e3916f077fd0fb47802273a6d73",
+  "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "fixture_sha256": "a55781243ceaa80e58cea197be41599c0ac132656ed5996e4fb22bab268cae54",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 REFILL START defenders=600",
+        "CA454 REFILL PROGRESS elapsed=350 successful=100 living=113 remaining=6500 pending=0 opportunities=1",
+        "CA454 REFILL PROGRESS elapsed=700 successful=200 living=213 remaining=6400 pending=0 opportunities=2",
+        "CA454 REFILL PROGRESS elapsed=1050 successful=300 living=313 remaining=6300 pending=0 opportunities=3",
+        "CA454 REFILL PROGRESS elapsed=1400 successful=400 living=413 remaining=6200 pending=0 opportunities=4",
+        "CA454 REFILL PROGRESS elapsed=1750 successful=500 living=513 remaining=6100 pending=0 opportunities=5",
+        "CA454 REFILL PROGRESS elapsed=2100 successful=600 living=613 remaining=6000 pending=0 opportunities=6",
+        "CA454 REFILL PROGRESS elapsed=2450 successful=700 living=713 remaining=5900 pending=0 opportunities=7",
+        "CA454 REFILL PROGRESS elapsed=2800 successful=800 living=813 remaining=5800 pending=0 opportunities=8",
+        "CA454 REFILL PROGRESS elapsed=3150 successful=900 living=913 remaining=5700 pending=0 opportunities=9",
+        "CA454 REFILL CASUALTIES successful=987 living_before=1000 peak=1000",
+        "CA454 REFILL PROGRESS elapsed=3500 successful=987 living=995 remaining=5613 pending=13 opportunities=10",
+        "CA454 REFILL REPLACED successful=992 remaining=5608 living=1000",
+        "CA454 REFILL PROGRESS elapsed=3850 successful=992 living=1000 remaining=5608 pending=8 opportunities=11",
+        "CA454 REFILL PROGRESS elapsed=4200 successful=992 living=1000 remaining=5608 pending=8 opportunities=12",
+        "CA454 REFILL COMPLETE passed=1 failures=0 elapsed=4235 successful=992 remaining=5608 living=1000 peak=1000 opportunities=13 defenders=601"
+      ]
+    },
+    {
+      "phase": "reload",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 REFILL RESUME PASS elapsed=37 stage=0",
+        "CA454 REFILL PROGRESS elapsed=350 successful=100 living=113 remaining=6500 pending=0 opportunities=1",
+        "CA454 REFILL PROGRESS elapsed=700 successful=200 living=213 remaining=6400 pending=0 opportunities=2",
+        "CA454 REFILL PROGRESS elapsed=1050 successful=300 living=313 remaining=6300 pending=0 opportunities=3",
+        "CA454 REFILL PROGRESS elapsed=1400 successful=400 living=413 remaining=6200 pending=0 opportunities=4",
+        "CA454 REFILL PROGRESS elapsed=1750 successful=500 living=513 remaining=6100 pending=0 opportunities=5",
+        "CA454 REFILL PROGRESS elapsed=2100 successful=600 living=613 remaining=6000 pending=0 opportunities=6",
+        "CA454 REFILL PROGRESS elapsed=2450 successful=700 living=713 remaining=5900 pending=0 opportunities=7",
+        "CA454 REFILL PROGRESS elapsed=2800 successful=800 living=813 remaining=5800 pending=0 opportunities=8",
+        "CA454 REFILL PROGRESS elapsed=3150 successful=900 living=913 remaining=5700 pending=0 opportunities=9",
+        "CA454 REFILL CASUALTIES successful=987 living_before=1000 peak=1000",
+        "CA454 REFILL PROGRESS elapsed=3500 successful=987 living=995 remaining=5613 pending=13 opportunities=10",
+        "CA454 REFILL REPLACED successful=992 remaining=5608 living=1000",
+        "CA454 REFILL PROGRESS elapsed=3850 successful=992 living=1000 remaining=5608 pending=8 opportunities=11",
+        "CA454 REFILL PROGRESS elapsed=4200 successful=992 living=1000 remaining=5608 pending=8 opportunities=12",
+        "CA454 REFILL COMPLETE passed=1 failures=0 elapsed=4235 successful=992 remaining=5608 living=1000 peak=1000 opportunities=13 defenders=601"
+      ]
+    }
+  ]
+}

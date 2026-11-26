@@ -1,0 +1,25 @@
+{
+  "issue": 454,
+  "scope": "Isolated native service endpoints, rotated leaves, private-interior coordinates and four gate closures/open passages. No ordinary travel/siege/author acceptance.",
+  "runtime_sha256": "00bf36d908c63dc9db63d7c00746b83f71d386a755eddcac6c1a7d7656180a67",
+  "exit_code": 0,
+  "passed": true,
+  "diagnostics": [
+    "CA454 SERVICES GATES checks=160 failures=0",
+    "CA454 SERVICES total=224 portals=160 leaves=320 failures=0",
+    "CA454 SERVICES GATE USE PASS gate=0",
+    "CA454 SERVICES GATE USE PASS gate=1",
+    "CA454 SERVICES GATE USE PASS gate=2",
+    "CA454 SERVICES GATE USE PASS gate=3"
+  ],
+  "captures": [
+    "gate-0.png",
+    "gate-0-open.png",
+    "gate-1.png",
+    "gate-1-open.png",
+    "gate-2.png",
+    "gate-2-open.png",
+    "gate-3.png",
+    "gate-3-open.png"
+  ]
+}

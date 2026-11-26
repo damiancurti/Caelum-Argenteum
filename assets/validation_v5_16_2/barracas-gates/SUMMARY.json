@@ -1,0 +1,54 @@
+{
+  "issue": 454,
+  "scope": "Isolated native service endpoints, rotated leaves, private-interior coordinates and four gate closures/open passages. No ordinary travel/siege/author acceptance.",
+  "runtime_sha256": "63cd5de73099dcb050335d4667dcfc1efa9608be9c7c84849913ce2b71f58524",
+  "exit_code": 0,
+  "passed": true,
+  "diagnostics": [
+    "CA454 SERVICES GATES checks=160 failures=0",
+    "CA454 SERVICES total=224 portals=160 leaves=320 failures=0",
+    "CA454 SERVICES GATE USE PASS gate=0",
+    "CA454 SERVICES GATE USE PASS gate=1",
+    "CA454 SERVICES GATE USE PASS gate=2",
+    "CA454 SERVICES GATE USE PASS gate=3"
+  ],
+  "captures": [
+    "gate-0.png",
+    "gate-0-open.png",
+    "gate-1.png",
+    "gate-1-open.png",
+    "gate-2.png",
+    "gate-2-open.png",
+    "gate-3.png",
+    "gate-3-open.png"
+  ],
+  "release": "5.16.2",
+  "author_acceptance": false,
+  "static_route_targets": 424,
+  "closed_gate_escaped_cells": 0,
+  "native_gate_samples": 160,
+  "used_handler_passes": 4,
+  "visual_review": "All four closed and open native views inspected; matching existing materials and continuous masonry jambs. No final art/ordinary travel acceptance.",
+  "retained_dimensions": "128-MU original masonry opening, 96-MU original gate, existing height/statistics.",
+  "geometry_fixes": [
+    "Include the entire irregular southern perimeter beyond the nominal lot envelope.",
+    "Align the northern gate and bridge start to y15232 on the actual wall.",
+    "Keep the wide bridge outside the narrow gate passage; add full-depth jambs through oblique wall sections."
+  ],
+  "failures_retained": {
+    "static-preview-08/09": "Closed-grid audit found35716 exterior cells reachable; trace located bypass beside northern gate. Full-depth jambs in10 eliminate it.",
+    "run-02": "NOINTERACTION fixture ignored solid blockers, producing12 false open samples.",
+    "run-03": "Solid physical probe passed all160 samples.",
+    "run-04": "Final runtime passed; gate captures showed automatic closure after fixture-set Opened with no hold timer.",
+    "run-05": "Retained collision passes plus four direct Used handler calls and closed/open images; no ordinary keyboard interaction claim."
+  },
+  "layout_sha256": "6698de7680e7bcdd2dd923de5fa04380312c703609e9d52194e10508a5ade29b",
+  "source_sha256": {
+    "assets/generators/generate_barracas_preview.py": "93ea9d8fce1204c89c594256a784cec64064df132c0d5c94c487ada716c4a8d3",
+    "assets/validation_v5_16_2/run_barracas_services.py": "78f6215a33fc4fa3d469ca7dc2d0b2605806b4c7d1d5ace899ffe60f02354991"
+  },
+  "determinism": {
+    "CABAPRV.wad": "ec65fec44aab137012fc6eedaf119b37b513bdbc8e8ba65a23deb53b6da84ca8",
+    "preview.pk3": "e7e49645fe13e60bc1614ac9bdaba8bba0cc3895cdc667a59bf7387e5e2ff8a1"
+  }
+}

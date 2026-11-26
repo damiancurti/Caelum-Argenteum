@@ -1,0 +1,19 @@
+{
+  "issue": 454,
+  "scope": "Expanded inclusive perception/actor timing; unchanged runtime rules. Nested scopes and diagnostic overhead must not be summed or treated as production savings.",
+  "runtime_sha256": "0d534413b6c837388f85c1c74a9c0606bf0f541a65776e476d252dc8ef099fe2",
+  "overlay_sha256": "3e4e594371fb70e11f072bafe0577730378a1881f2f835945029a7a0e3ce63e4",
+  "instrumented_functions": [
+    "CaelumCityNavigation.BuildFor",
+    "CaelumVisualPerception.Candidate",
+    "CaelumVisualPerception.Acquire",
+    "CaelumNoise.Emit",
+    "CaelumCommunication.Pulse",
+    "CaelumVisualPerception.Opponent",
+    "CaelumVisualPerception.CanSee",
+    "CaelumCommunication.CandidatesFor",
+    "CaelumCommandCandidates.Refresh",
+    "CaelumCombatActor.Tick"
+  ],
+  "qualification": "Timing wrappers add diagnostic overhead. Overlapping inclusive scopes must not be summed as independent costs."
+}

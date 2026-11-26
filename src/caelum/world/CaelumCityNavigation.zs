@@ -12,6 +12,9 @@ class CaelumCityNavigation : Object play
     vector2 Point(int i){return (PointX[i],PointY[i]);}
 
     vector2 Next(CaelumPortDefender body,vector3 goal)
+    {return NextFor(body,goal);}
+
+    vector2 NextFor(Actor body,vector3 goal)
     {
         if((goal.XY-self.Goal).Length()>1 || goal.Z!=GoalHeight){Clear();self.Goal=goal.XY;GoalHeight=goal.Z;}
         while(Cursor<PointX.Size() && (Point(Cursor)-body.Pos.XY).Length()<0.5)Cursor++;
@@ -26,6 +29,21 @@ class CaelumCityNavigation : Object play
     }
 
     bool Build(CaelumPortDefender body)
+    {return BuildFor(body);}
+
+    void RequestFront(CaelumSiegeCombatant entry,vector3 goal)
+    {
+        // Con muchos cuerpos la cola puede tardar varios cientos de tics.
+        // No descartar el desvio vigente por un bloqueo temporal: cada paso
+        // sigue comprobando colision y BuildFor lo reemplaza al llegar su turno.
+        // NextFor ya invalida una ruta cuando cambia su destino.
+        self.Goal=goal.XY;GoalHeight=goal.Z;
+        let port=entry!=null?CaelumPortSiege(entry.Encounter):null;
+        if(port==null || Queued || level.time<RetryTic)return;
+        port.FrontPathQueue.Push(entry);Queued=true;
+    }
+
+    bool BuildFor(CaelumCombatActor body)
     {
         Clear();Queued=false;vector2 goal=self.Goal;
         RetryTic=level.time+TICRATE;

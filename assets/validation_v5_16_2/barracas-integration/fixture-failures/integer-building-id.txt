@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\GZDooMProjects\CaelumArgenteum\assets\validation_v5_16_2\run_barracas_cartography.py", line 83, in <module>
+    main()
+  File "C:\GZDooMProjects\CaelumArgenteum\assets\validation_v5_16_2\run_barracas_cartography.py", line 56, in main
+    for name, text in {'ZSCRIPT': 'version "4.14.2"\n' + expected(revised) + Path(__file__).with_name('barracas_cartography_probe.zs').read_text(encoding='utf-8'),
+                                                         ^^^^^^^^^^^^^^^^^
+  File "C:\GZDooMProjects\CaelumArgenteum\assets\validation_v5_16_2\run_barracas_cartography.py", line 28, in expected
+    points.append((*xy, 0)); ids.append('city-factory-' + building['id'] + '-' + kind)
+                                        ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "int") to str

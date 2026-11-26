@@ -1,0 +1,13 @@
+{
+  "issue": 454,
+  "scope": "Compile an isolated #454 architectural preview; never replace production maps.\n\nThe approved reference traces and placements live in barracas_redesign/LAYOUT.\nExisting city profiles provide dimensions/materials. This preview has no siege,\nquest, service migration or save-compatibility acceptance claim.\n",
+  "buildings": 288,
+  "cells": 339242,
+  "geometry_reduction": {
+    "open_boundary_merges": 7404,
+    "invisible_redundant_lines": 0,
+    "control_sectors_preserved": 97
+  },
+  "runtime_enabled": false,
+  "static_route_failures": 0
+}

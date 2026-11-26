@@ -3,11 +3,16 @@
 Authored layout data is in assets/map02_maze/LAYOUT.json. No other map is written.
 """
 from pathlib import Path
+import runpy
+import sys
 from collections import deque, Counter
 import random, struct, json, hashlib
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'assets/map02_maze';OUT.mkdir(exist_ok=True)
 cfg=json.loads((OUT/'LAYOUT.json').read_text(encoding='utf-8'))
+if cfg['revision'] >= 6:
+ runpy.run_path(str(Path(__file__).with_name('generate_map02_redesign.py')), run_name='__main__')
+ sys.exit(0)
 CELL=cfg['grid'];rng=random.Random(cfg['seed'])
 cells={};things=[];rooms=[];zones=[];locks={};contents=[];features=[];gates=[];refuges=[];prisoners=[];rats=[];drops=[]
 prisoner_types=[(30988,'CaelumPrisonerUnitario'),(30989,'CaelumPrisonerFederal'),(30990,'CaelumPrisonerBestia'),(30991,'CaelumPrisonerTarot')]

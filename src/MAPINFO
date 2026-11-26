@@ -6,6 +6,7 @@ include "caelum/data/transport.mapinfo"
 include "caelum/data/transport_scenes.mapinfo"
 include "caelum/data/cartography.mapinfo"
 include "caelum/data/house_hubs.mapinfo"
+include "caelum/data/barracas_facades.mapinfo"
 
 // GameInfo modifica ajustes globales suministrados por el proyecto.
 GameInfo

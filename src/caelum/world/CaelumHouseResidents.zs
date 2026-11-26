@@ -266,7 +266,7 @@ class CaelumHouseResidents : Inventory
                 entry.GunIndex=6+identity/CaelumCannonData.CREW;
                 entry.GunSlot=identity%CaelumCannonData.CREW;
                 body.Station=CaelumPortData.GunPosition(entry.GunIndex)+CaelumPortData.OperatorOffset(entry.GunIndex,entry.GunSlot);
-                body.Lane=CaelumPortSiege.NearestLane(body.Station.X);
+                body.Lane=CaelumPortSiege.NearestLaneAt(body.Station);
             }
             else
             {

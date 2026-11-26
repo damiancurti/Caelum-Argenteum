@@ -1,7 +1,7 @@
 // Rutas de suelo calculadas desde la geometría autoral; escaleras en CaelumPortData.
 class CaelumCityRoutes : Object play
 {
-    static int Count(int soldier){switch(soldier){
+    static int Count(int soldier){if(CaelumBarracasData.IsCurrent())return CaelumBarracasDeployment.Count(soldier);switch(soldier){
         case 0:return 6;
         case 1:return 6;
         case 2:return 6;
@@ -603,7 +603,7 @@ class CaelumCityRoutes : Object play
         case 598:return 6;
         case 599:return 6;
         }return 0;}
-    static vector3 Point(int soldier,int step){switch(soldier){
+    static vector3 Point(int soldier,int step){if(CaelumBarracasData.IsCurrent())return CaelumBarracasDeployment.Point(soldier,step);switch(soldier){
         case 0:return Route0(step);
         case 1:return Route1(step);
         case 2:return Route2(step);

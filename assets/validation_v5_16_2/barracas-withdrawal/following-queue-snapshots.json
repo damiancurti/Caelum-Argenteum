@@ -1,0 +1,19 @@
+{
+  "scope": "Two native saved states in a continuous recovered run, not a timing benchmark or isolated ablation.",
+  "snapshots": [
+    {
+      "save": "barracas-aftermath08/fresh/withdrawal-progress.zds",
+      "sha256": "4f28293c5b8648e62f7b7e577749f449fb736e0abc9b2a234b39f5a0cc4fef59",
+      "elapsed": 33181,
+      "pending": 621,
+      "queued_local_searches": 489
+    },
+    {
+      "save": "barracas-aftermath09/reload/following-progress.zds",
+      "sha256": "bd65b4d6cb82a9c0f07d101cc0438f34d6386f746efde653d76aa94bb5a5757a",
+      "elapsed": 36683,
+      "pending": 550,
+      "queued_local_searches": 1
+    }
+  ]
+}

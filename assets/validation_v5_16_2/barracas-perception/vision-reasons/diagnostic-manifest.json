@@ -1,0 +1,7 @@
+{
+  "issue": 454,
+  "scope": "Diagnostic CanSee rejection counters preserving predicate order and short-circuit rules. No production source changes.",
+  "runtime_sha256": "0d534413b6c837388f85c1c74a9c0606bf0f541a65776e476d252dc8ef099fe2",
+  "original_source_sha256": "7426b15d3b6c52686f46aeb305f1a3d1fa54d4f7045177872b30e3602146aa4e",
+  "profile_sha256": "b7bf78f194e843275d5ddc371521bd99a01fd66600e90788554abd2d89fc0f5b"
+}

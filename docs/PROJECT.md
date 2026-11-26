@@ -1,6 +1,61 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.16.1** - 2026-11-12.
+Documentation version: **5.16.2** - 2026-11-12.
+
+## 5.16.2 - Approved map redesign slices (#454, in progress)
+
+The perception follow-up reuses each candidate's already-computed native 3D
+distance in the same synchronous iteration. It introduces no saved state, delayed
+observations or changed contact/angle/range/occlusion rules. The native comparison
+covers 18,886,906 queries and 16,687,214 supplied distances, with zero differences.
+Visibility boundaries and original/current save continuation pass. Siege frame
+presentation remains severely limited; barracas-perception/SUMMARY.json separates
+instrumented costs, uninstrumented windows and single-tic/renderer snapshots.
+
+MAP02 revision6 implements the approved sewer board with twelve main circuits,
+four shortcuts, maintenance/recovery branches and retained gameplay content.
+Static and native fresh/reload/hub, old-save compatibility, cleared escorts,
+maximum-body passage, boss retreat and lower branches/grates/lift pass. Qualified
+before/after Vulkan evidence is recorded; ordinary combat/hazard traversal and
+author acceptance remain pending. MAP01 owns geometry and compatibility modes;
+assets/validation_v5_16_2/RESULTS.json owns the evidence.
+
+Barracas revision4 is installed in production MAP03. Its approved
+street/plaza/perimeter structure retains288 building identities,160 private
+interiors, four gates and three siege fronts. Native geometry, services, gates,
+artillery access, six complete ram routes and600 deployment paths pass. Actual
+600-resident deployment also passes a fresh-save audit and early-checkpoint
+replay, retaining collision,72 operators and the automatic>=500 census policy.
+
+Long infantry routes, isolated withdrawals, five wounded-commander origins,
+ram capture ownership and the full-controller1000-cap refill pass. Four house
+orientations retain normal Used/rendered-ACK travel,64 shops open and a purchase
+preserves stock/money;96 factory stations and four vehicle sessions also pass
+native Use. Recipe completion and ticket/journey transactions are separate.
+Justice placement/save/return and original active/stored-hub saves pass.
+The existing Knight essence now follows the relocated quay. Native Use/capture,
+interrupted retry, mid-capture reload and inactive/active preceding-source
+migration pass; original-city behavior remains compatible. The fixture supplies
+completed narrative/victory and the Box/deck; barracas-arcana/SUMMARY.json records
+that boundary separately from playing the battle or selecting the UI response.
+
+Combined aftermath testing exposed opposing assigned-exit streams and repeated
+local detours among bodies moving in the same direction. Revision4 separates
+retreat exit from assault front and retains physical progress/queued routes.
+Fresh and saved congested aftermaths now complete all1000 surviving physical exits,
+preserving reserve/victory accounting and no automatic essence grant. Fresh and
+early-checkpoint replay both finish at30,205tics. Native presentation measures
+100.07/s at the revised quay,75.63/s facing ground and1.50/s during full-cap siege.
+The original city with the same code measures106.95,76.68 and1.28/s respectively;
+these are corresponding views, not identical rendered workloads or an accepted-main
+runtime comparison. Severe siege stalls remain unresolved. Integrated
+new/legacy evidence is recorded in barracas-integration/SUMMARY.json. Thermal-isolated
+navigation does not establish climate survival or a fully played battle.
+Architectural readability/author review remain pending; final art completion is
+coordinated with #463. No new folklore actors, regional maps, essence placements
+or memory scripts are claimed here. See TASKS and
+assets/validation_v5_16_2/barracas-continuation/SUMMARY.json.
+The focused crowd correction is recorded in barracas-withdrawal/SUMMARY.json.
 
 ## 5.16.1 - Folklore reference recovery (#453, catalogue approved)
 

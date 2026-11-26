@@ -45,10 +45,10 @@ class CaelumFermentationEvents : StaticEventHandler
         // Reintento local una vez por segundo, sin desplazar actores existentes.
         if(level.Time%TICRATE!=0)return;
         station=CaelumFermentationStation(Actor.Spawn("CaelumFermentationStation",
-            CaelumFermentationData.Position(level.MapName),NO_REPLACE));
+            CaelumBarracasData.CurrentPortPoint(CaelumFermentationData.Position(level.MapName)),NO_REPLACE));
         if(station==null)return;
         station.CraftingRoomGroup=CaelumFermentationData.Group(level.MapName);
-        station.Angle=CaelumFermentationData.Angle(level.MapName);
+        station.Angle=CaelumBarracasData.CurrentPortAngle(CaelumFermentationData.Angle(level.MapName));
         Roster.PendingStation=station;
     }
 }

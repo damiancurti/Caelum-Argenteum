@@ -1,0 +1,28 @@
+{
+  "issue": 454,
+  "scope": "Six complete withdrawals from three inner gate approaches and three residential road positions, native speed/collision, opened gates, no crowd/battle/FPS/author acceptance.",
+  "runtime_sha256": "975fa1aec314841715ac458a4d2279d3328b9dc9588d282f8bd234ee81e7fd00",
+  "candidate_sha256": "1d2bb60078bbf390fed026f1985b14c54bcd2622f0e996d08c1254538f4b3d2b",
+  "fixture_sha256": "a4842da9ab5da3651bf0b73462b2e229b268106a20b54f7921b71fa80ef1b2e0",
+  "runs": [
+    {
+      "phase": "reload",
+      "passed": false,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 RETREAT RESUME PASS elapsed=37 actors=6",
+        "CA454 RETREAT FAIL actor=3 elapsed=2628 missing=0 confirmed=1 exited=0",
+        "CA454 RETREAT BODY health=0 position=(-2784.0,-5603.8,0.0) floor=0.0 impact=0.000 kind=0",
+        "CA454 RETREAT THERMAL exposure=-24.124 severity=2.000 damage=728.000 wet=99.959 air=11.731",
+        "CA454 RETREAT FAIL actor=4 elapsed=2628 missing=0 confirmed=1 exited=0",
+        "CA454 RETREAT BODY health=0 position=(-14944.0,1341.6,0.0) floor=-0.0 impact=0.000 kind=0",
+        "CA454 RETREAT THERMAL exposure=-24.124 severity=2.000 damage=728.000 wet=99.959 air=11.731",
+        "CA454 RETREAT FAIL actor=5 elapsed=2628 missing=0 confirmed=1 exited=0",
+        "CA454 RETREAT BODY health=0 position=(-9952.0,11288.4,0.0) floor=-0.0 impact=0.000 kind=0",
+        "CA454 RETREAT THERMAL exposure=-24.123 severity=2.000 damage=728.000 wet=99.959 air=11.731"
+      ]
+    }
+  ],
+  "seed_save_sha256": "8afa2e75e291eb3cdeb05f8c10556038d09be45be924e8d2d7f0b999db9ba58c"
+}

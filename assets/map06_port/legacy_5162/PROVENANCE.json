@@ -1,0 +1,39 @@
+{
+  "issue": 454,
+  "source_commit": "0842fb00b97bd7185ef476dc65dca8270aa04652",
+  "purpose": "Exact original Barracas geometry and relevant data/generator/helper bytes preserved before redesign. No original house-interior WAD is changed.",
+  "files": {
+    "SOURCES.zip": {
+      "sha256": "d943b87ccba35319dc4ee7ed373e41f02a52e6e6e44ad90e489b360bbec8dfee",
+      "bytes": 82375
+    },
+    "MAP03.wad": {
+      "sha256": "85f0a1c00d80354c9899bf4289e1cf47fd2bae45313816ad939dccbe75c12151",
+      "bytes": 15999800
+    }
+  },
+  "archive_entries": {
+    "assets/generators/generate_city_ceilings.py": "51d9dfd7f4ab99faac54aae6aa521218913ce19abbad6ae45e3e66c5a46af1fc",
+    "assets/generators/generate_city_interiors.py": "cfb7f965ae01c13ec31a5567529ade6b9ef35d84d1600c377bd440d96c7b7f49",
+    "assets/generators/generate_coastal_trials.py": "2561cfeea3bcc39fee0565b20cd2081957a0cbff04deaf77a78287bdd2e41c96",
+    "assets/generators/generate_house_hubs.py": "d7c082136e6e7e892539c37cfb9c31f6b9d1f0cf5afc63e2d65554a8135d3e94",
+    "assets/generators/generate_map06_port.py": "7fb9ed291a603308d8622ca9a80ee95c2f95c7e6e71785de7a145e6938efc716",
+    "assets/generators/generate_native_city_doors.py": "733594e732ccdfa919dbed3b0b1d1cffe35593b92db9009ebbec016dc7049554",
+    "assets/generators/generate_port_city.py": "4bd8f05b5aba134c0f9a1e0881cde8cffbe510baa954b53a77e42a97b8afd777",
+    "assets/map06_port/ARRIVAL_HOUSEHOLD.json": "29ff6e8ac75a4307987624081bde24410b4813fa9198a4f0ee4e9342e0c9fff3",
+    "assets/map06_port/CEILINGS.json": "3d51e6b96c6fb301bfc8809acf26c53f4c761e46140ecbc2491e47eb05c3900a",
+    "assets/map06_port/CITY.json": "06282795525e61c8c47179c7f9d18b9eb426f6ecc5f0af5a1986c7702bf067df",
+    "assets/map06_port/HOUSE_HUBS.json": "ab17aa4fa90e63f339d650624367b8a42fcea3ae8270f88125ad7f145cb2c071",
+    "assets/map06_port/INTERIORS.json": "fefca2c364e2273055076c007caf783eb044b607937a39a24f8fafb23506b076",
+    "assets/map06_port/LAYOUT.json": "486a730eea4e15281d006a136b58f5046a4c62baec2c1797e2a19e3d30bed6d6",
+    "assets/map06_port/NATIVE_DOORS.json": "a8ba94dd76fd19842bb47791066b756b28cff0af9e3a0479a1d0367292f1c371",
+    "assets/map06_port/REINFORCEMENTS.json": "41a04e0d3c832159b4c525c052c3ea3fbbeb1f7e41de78c43e91f8586067c1f0",
+    "assets/map06_port/SHOP_CATALOGUE.json": "e5e23a193cba4797a13c0e3fb102627877ce3ac2a7881ed04eaf39448f5fbe88",
+    "assets/map06_port/SOUTH.json": "81955e52444ca97baa9f47f385005d1f764e84ba5d6f42e12d3aa20bf3c935fa",
+    "src/caelum/data/CaelumJusticeGeometry.zs": "e74c332c571634afebe9683d92509dd9ffb013d65699438b6317299ae8ca678d",
+    "src/caelum/world/CaelumCityData.zs": "4d71641976e46e0c5d32d770c5e7654b396ebe553a03dce5ee781fe6dc63b736",
+    "src/caelum/world/CaelumCityRoutes.zs": "472c81cffae27b4cef40c6757d1bfa1b1bafb2b7658692fb5cedfae90f2b05a5",
+    "src/caelum/world/CaelumHouseHubData.zs": "19b31cd62d6def108b02b4282751983070ab29ef0fc3fd788dbbc09f5da22bca",
+    "src/caelum/world/CaelumPortData.zs": "5fe7effc483f0bd06d163b1419562057aff51e1f4b907a10d9e2596fd2495f1f"
+  }
+}

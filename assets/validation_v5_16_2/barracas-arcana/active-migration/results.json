@@ -1,0 +1,41 @@
+{
+  "issue": 454,
+  "scope": "Check quay essence placement, native Use/capture and saved-source migration.\n\nFixture victory and Box ownership isolate the map endpoint. The battle, menu\nresponse selection, cooperative capture and author acceptance are not tested.",
+  "runtime_sha256": "1cb2039081bd7ff9016954f59e01f4b8a0d7555275ee5d6303900ad55537a261",
+  "baseline_sha256": "ef5c0747a5136a719601a7c13b5cb8947245ab73217a227c77a15e4e1057e959",
+  "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "fixture_sha256": "9de613afd7020f18e0e6233f466ba658c43429ae459af8f8c18416a2a9170447",
+  "runs": [
+    {
+      "phase": "old-capture",
+      "passed": true,
+      "exit_code": 0,
+      "errors": [],
+      "checks": [
+        "CA454 ARCANA PASS physical deck in owned Box",
+        "CA454 ARCANA PASS no initial Knight",
+        "CA454 ARCANA PASS native source appeared",
+        "CA454 ARCANA PASS same source identity",
+        "CA454 ARCANA PASS source at current quay",
+        "CA454 ARCANA PASS victory offers capture without granting it",
+        "CA454 ARCANA PASS native standing space and reach",
+        "CA454 ARCANA PASS native Use opens source",
+        "CA454 ARCANA PASS capture response accepted"
+      ]
+    },
+    {
+      "phase": "migrated-capture",
+      "passed": true,
+      "exit_code": 0,
+      "errors": [],
+      "checks": [
+        "CA454 ARCANA PASS saved active capture stays at preceding source until completion",
+        "CA454 ARCANA PASS exactly one acquired essence",
+        "CA454 ARCANA PASS repeat capture rejected",
+        "CA454 ARCANA PASS source placement stable after completion",
+        "CA454 ARCANA COMPLETE failures=0"
+      ],
+      "seed_sha256": "c36892e9f8935278efd7b81b7280658987cbe208e3c4d891bf4b3dd0077cb482"
+    }
+  ]
+}

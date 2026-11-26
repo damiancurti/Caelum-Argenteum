@@ -1,0 +1,359 @@
+Log started: 2026-11-13 05:29:38
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/barracas-aftermath08/fresh/caelum_argenteum_dev.pk3, 18113 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/barracas-justice01/preview.pk3, 5 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/barracas-aftermath08/front-probe.pk3, 2 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_copy_memory_indirect VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_clamp_zero_one VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_internally_synchronized_queues VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance10 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_maintenance8 VK_KHR_maintenance9 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_id2 VK_KHR_present_mode_fifo_latest_ready VK_KHR_present_wait VK_KHR_present_wait2 VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_robustness2 VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_bfloat16 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_fma VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_shader_untyped_pointers VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_maintenance1 VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_unified_image_layouts VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_decode_vp9 VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_intra_refresh VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_custom_resolve VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_heap VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_decompression VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_present_timing VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_ray_tracing_invocation_reorder VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_64bit_indexing VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_long_vector VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_partitioned VK_EXT_shader_subgroup_vote VK_EXT_shader_uniform_buffer_unsized_array VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_EXT_zero_initialize_device_memory VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_occupancy_priority VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_compute_queue VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_push_constant_bank VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2623.40 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP03 - Barracas al Sud — fortified port
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CITY133 housed=600 attackers=0 revision=3
+PORT16 deployed Mandingas=100 commander=1 defenders=600 hostileMachines=12 guns=42
+CA454 REFILL START defenders=600
+Game saved.
+CA454 REFILL PROGRESS elapsed=350 successful=100 living=113 remaining=6500 pending=0 opportunities=1
+CA454 REFILL PROGRESS elapsed=700 successful=200 living=213 remaining=6400 pending=0 opportunities=2
+CA454 REFILL PROGRESS elapsed=1050 successful=300 living=313 remaining=6300 pending=0 opportunities=3
+CA454 REFILL PROGRESS elapsed=1400 successful=400 living=413 remaining=6200 pending=0 opportunities=4
+CA454 REFILL PROGRESS elapsed=1750 successful=500 living=513 remaining=6100 pending=0 opportunities=5
+CA454 REFILL PROGRESS elapsed=2100 successful=600 living=613 remaining=6000 pending=0 opportunities=6
+CA454 REFILL PROGRESS elapsed=2450 successful=700 living=713 remaining=5900 pending=0 opportunities=7
+CA454 REFILL PROGRESS elapsed=2800 successful=800 living=813 remaining=5800 pending=0 opportunities=8
+CA454 REFILL PROGRESS elapsed=3150 successful=900 living=913 remaining=5700 pending=0 opportunities=9
+CA454 REFILL CASUALTIES successful=987 living_before=1000 peak=1000
+CA454 REFILL PROGRESS elapsed=3500 successful=987 living=995 remaining=5613 pending=13 opportunities=10
+CA454 REFILL REPLACED successful=992 remaining=5608 living=1000
+CA454 REFILL PROGRESS elapsed=3850 successful=992 living=1000 remaining=5608 pending=8 opportunities=11
+CA454 REFILL PROGRESS elapsed=4200 successful=992 living=1000 remaining=5608 pending=8 opportunities=12
+CA454 REFILL OBJECTIVES neutralized=12 boss_health=6899
+CA454 REFILL PROGRESS elapsed=4550 successful=992 living=988 remaining=5608 pending=8 opportunities=13
+CA454 REFILL PROGRESS elapsed=4900 successful=1000 living=996 remaining=5600 pending=0 opportunities=14
+CA454 REFILL PROGRESS elapsed=5250 successful=1004 living=1000 remaining=5596 pending=96 opportunities=15
+CA454 REFILL PROGRESS elapsed=5600 successful=1004 living=1000 remaining=5596 pending=96 opportunities=16
+CA454 REFILL PROGRESS elapsed=5950 successful=1004 living=1000 remaining=5596 pending=96 opportunities=17
+CA454 REFILL PROGRESS elapsed=6300 successful=1004 living=1000 remaining=5596 pending=96 opportunities=18
+CA454 REFILL VICTORY elapsed=6370 admitted=1004 count=1
+CA454 REFILL WITHDRAWAL elapsed=6650 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=6650 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=7000 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=7000 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=7350 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=7350 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=7700 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=7700 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=8050 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=8050 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=8400 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=8400 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=8750 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=8750 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=9100 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=9100 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=9450 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=9450 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=9800 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=9800 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=10150 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=10150 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=10500 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=10500 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=10850 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=10850 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=11200 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=11200 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=11550 pending=999 exited=1 dead=5
+CA454 REFILL PROGRESS elapsed=11550 successful=1004 living=999 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=11900 pending=998 exited=2 dead=5
+CA454 REFILL PROGRESS elapsed=11900 successful=1004 living=998 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=12250 pending=993 exited=7 dead=5
+CA454 REFILL PROGRESS elapsed=12250 successful=1004 living=993 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=12600 pending=987 exited=13 dead=5
+CA454 REFILL PROGRESS elapsed=12600 successful=1004 living=987 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=12950 pending=955 exited=45 dead=5
+CA454 REFILL PROGRESS elapsed=12950 successful=1004 living=955 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=13300 pending=931 exited=69 dead=5
+CA454 REFILL PROGRESS elapsed=13300 successful=1004 living=931 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=13650 pending=913 exited=87 dead=5
+CA454 REFILL PROGRESS elapsed=13650 successful=1004 living=913 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=14000 pending=894 exited=106 dead=5
+CA454 REFILL PROGRESS elapsed=14000 successful=1004 living=894 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=14350 pending=879 exited=121 dead=5
+CA454 REFILL PROGRESS elapsed=14350 successful=1004 living=879 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=14700 pending=869 exited=131 dead=5
+CA454 REFILL PROGRESS elapsed=14700 successful=1004 living=869 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=15050 pending=852 exited=148 dead=5
+CA454 REFILL PROGRESS elapsed=15050 successful=1004 living=852 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=15400 pending=843 exited=157 dead=5
+CA454 REFILL PROGRESS elapsed=15400 successful=1004 living=843 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=15750 pending=832 exited=168 dead=5
+CA454 REFILL PROGRESS elapsed=15750 successful=1004 living=832 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=16100 pending=825 exited=175 dead=5
+CA454 REFILL PROGRESS elapsed=16100 successful=1004 living=825 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=16450 pending=819 exited=181 dead=5
+CA454 REFILL PROGRESS elapsed=16450 successful=1004 living=819 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=16800 pending=816 exited=184 dead=5
+CA454 REFILL PROGRESS elapsed=16800 successful=1004 living=816 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=17150 pending=812 exited=188 dead=5
+CA454 REFILL PROGRESS elapsed=17150 successful=1004 living=812 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=17500 pending=810 exited=190 dead=5
+CA454 REFILL PROGRESS elapsed=17500 successful=1004 living=810 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=17850 pending=809 exited=191 dead=5
+CA454 REFILL PROGRESS elapsed=17850 successful=1004 living=809 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=18200 pending=804 exited=196 dead=5
+CA454 REFILL PROGRESS elapsed=18200 successful=1004 living=804 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=18550 pending=794 exited=206 dead=5
+CA454 REFILL PROGRESS elapsed=18550 successful=1004 living=794 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=18900 pending=786 exited=214 dead=5
+CA454 REFILL PROGRESS elapsed=18900 successful=1004 living=786 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=19250 pending=782 exited=218 dead=5
+CA454 REFILL PROGRESS elapsed=19250 successful=1004 living=782 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=19600 pending=780 exited=220 dead=5
+CA454 REFILL PROGRESS elapsed=19600 successful=1004 living=780 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=19950 pending=776 exited=224 dead=5
+CA454 REFILL PROGRESS elapsed=19950 successful=1004 living=776 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=20300 pending=770 exited=230 dead=5
+CA454 REFILL PROGRESS elapsed=20300 successful=1004 living=770 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=20650 pending=768 exited=232 dead=5
+CA454 REFILL PROGRESS elapsed=20650 successful=1004 living=768 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=21000 pending=764 exited=236 dead=5
+CA454 REFILL PROGRESS elapsed=21000 successful=1004 living=764 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=21350 pending=754 exited=246 dead=5
+CA454 REFILL PROGRESS elapsed=21350 successful=1004 living=754 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=21700 pending=751 exited=249 dead=5
+CA454 REFILL PROGRESS elapsed=21700 successful=1004 living=751 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=22050 pending=748 exited=252 dead=5
+CA454 REFILL PROGRESS elapsed=22050 successful=1004 living=748 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=22400 pending=744 exited=256 dead=5
+CA454 REFILL PROGRESS elapsed=22400 successful=1004 living=744 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=22750 pending=742 exited=258 dead=5
+CA454 REFILL PROGRESS elapsed=22750 successful=1004 living=742 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=23100 pending=735 exited=265 dead=5
+CA454 REFILL PROGRESS elapsed=23100 successful=1004 living=735 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=23450 pending=733 exited=267 dead=5
+CA454 REFILL PROGRESS elapsed=23450 successful=1004 living=733 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=23800 pending=726 exited=274 dead=5
+CA454 REFILL PROGRESS elapsed=23800 successful=1004 living=726 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=24150 pending=726 exited=274 dead=5
+CA454 REFILL PROGRESS elapsed=24150 successful=1004 living=726 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=24500 pending=724 exited=276 dead=5
+CA454 REFILL PROGRESS elapsed=24500 successful=1004 living=724 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=24850 pending=721 exited=279 dead=5
+CA454 REFILL PROGRESS elapsed=24850 successful=1004 living=721 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=25200 pending=714 exited=286 dead=5
+CA454 REFILL PROGRESS elapsed=25200 successful=1004 living=714 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=25550 pending=706 exited=294 dead=5
+CA454 REFILL PROGRESS elapsed=25550 successful=1004 living=706 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=25900 pending=704 exited=296 dead=5
+CA454 REFILL PROGRESS elapsed=25900 successful=1004 living=704 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=26250 pending=701 exited=299 dead=5
+CA454 REFILL PROGRESS elapsed=26250 successful=1004 living=701 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=26600 pending=699 exited=301 dead=5
+CA454 REFILL PROGRESS elapsed=26600 successful=1004 living=699 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=26950 pending=693 exited=307 dead=5
+CA454 REFILL PROGRESS elapsed=26950 successful=1004 living=693 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=27300 pending=693 exited=307 dead=5
+CA454 REFILL PROGRESS elapsed=27300 successful=1004 living=693 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=27650 pending=688 exited=312 dead=5
+CA454 REFILL PROGRESS elapsed=27650 successful=1004 living=688 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=28000 pending=688 exited=312 dead=5
+CA454 REFILL PROGRESS elapsed=28000 successful=1004 living=688 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=28350 pending=683 exited=317 dead=5
+CA454 REFILL PROGRESS elapsed=28350 successful=1004 living=683 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=28700 pending=679 exited=321 dead=5
+CA454 REFILL PROGRESS elapsed=28700 successful=1004 living=679 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=29050 pending=677 exited=323 dead=5
+CA454 REFILL PROGRESS elapsed=29050 successful=1004 living=677 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=29400 pending=677 exited=323 dead=5
+CA454 REFILL PROGRESS elapsed=29400 successful=1004 living=677 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=29750 pending=659 exited=341 dead=5
+CA454 REFILL PROGRESS elapsed=29750 successful=1004 living=659 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=30100 pending=646 exited=354 dead=5
+CA454 REFILL PROGRESS elapsed=30100 successful=1004 living=646 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=30450 pending=642 exited=358 dead=5
+CA454 REFILL PROGRESS elapsed=30450 successful=1004 living=642 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=30800 pending=642 exited=358 dead=5
+CA454 REFILL PROGRESS elapsed=30800 successful=1004 living=642 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=31150 pending=640 exited=360 dead=5
+CA454 REFILL PROGRESS elapsed=31150 successful=1004 living=640 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=31500 pending=638 exited=362 dead=5
+CA454 REFILL PROGRESS elapsed=31500 successful=1004 living=638 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=31850 pending=634 exited=366 dead=5
+CA454 REFILL PROGRESS elapsed=31850 successful=1004 living=634 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=32200 pending=632 exited=368 dead=5
+CA454 REFILL PROGRESS elapsed=32200 successful=1004 living=632 remaining=5596 pending=96 opportunities=19
+Game saved.
+CA454 REFILL WITHDRAWAL elapsed=32550 pending=625 exited=375 dead=5
+CA454 REFILL PROGRESS elapsed=32550 successful=1004 living=625 remaining=5596 pending=96 opportunities=19
+Game saved.
+Game saved.
+Game saved.
+Game saved.
+Game saved.
+CA454 REFILL WITHDRAWAL elapsed=32900 pending=624 exited=376 dead=5
+CA454 REFILL PROGRESS elapsed=32900 successful=1004 living=624 remaining=5596 pending=96 opportunities=19
+Game saved.
+Game saved.
+Game saved.
+Game saved.
+Game saved.
+CA454 REFILL WITHDRAWAL elapsed=33250 pending=619 exited=381 dead=5
+CA454 REFILL PROGRESS elapsed=33250 successful=1004 living=619 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=33600 pending=615 exited=385 dead=5
+CA454 REFILL PROGRESS elapsed=33600 successful=1004 living=615 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=33950 pending=610 exited=390 dead=5
+CA454 REFILL PROGRESS elapsed=33950 successful=1004 living=610 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=34300 pending=610 exited=390 dead=5
+CA454 REFILL PROGRESS elapsed=34300 successful=1004 living=610 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=34650 pending=609 exited=391 dead=5
+CA454 REFILL PROGRESS elapsed=34650 successful=1004 living=609 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=35000 pending=608 exited=392 dead=5
+CA454 REFILL PROGRESS elapsed=35000 successful=1004 living=608 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=35350 pending=606 exited=394 dead=5
+CA454 REFILL PROGRESS elapsed=35350 successful=1004 living=606 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=35700 pending=602 exited=398 dead=5
+CA454 REFILL PROGRESS elapsed=35700 successful=1004 living=602 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=36050 pending=601 exited=399 dead=5
+CA454 REFILL PROGRESS elapsed=36050 successful=1004 living=601 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=36400 pending=599 exited=401 dead=5
+CA454 REFILL PROGRESS elapsed=36400 successful=1004 living=599 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=36750 pending=596 exited=404 dead=5
+CA454 REFILL PROGRESS elapsed=36750 successful=1004 living=596 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=37100 pending=596 exited=404 dead=5
+CA454 REFILL PROGRESS elapsed=37100 successful=1004 living=596 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=37450 pending=595 exited=405 dead=5
+CA454 REFILL PROGRESS elapsed=37450 successful=1004 living=595 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=37800 pending=592 exited=408 dead=5
+CA454 REFILL PROGRESS elapsed=37800 successful=1004 living=592 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=38150 pending=592 exited=408 dead=5
+CA454 REFILL PROGRESS elapsed=38150 successful=1004 living=592 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=38500 pending=592 exited=408 dead=5
+CA454 REFILL PROGRESS elapsed=38500 successful=1004 living=592 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=38850 pending=591 exited=409 dead=5
+CA454 REFILL PROGRESS elapsed=38850 successful=1004 living=591 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=39200 pending=591 exited=409 dead=5
+CA454 REFILL PROGRESS elapsed=39200 successful=1004 living=591 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=39550 pending=585 exited=415 dead=5
+CA454 REFILL PROGRESS elapsed=39550 successful=1004 living=585 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=39900 pending=584 exited=416 dead=5
+CA454 REFILL PROGRESS elapsed=39900 successful=1004 living=584 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=40250 pending=584 exited=416 dead=5
+CA454 REFILL PROGRESS elapsed=40250 successful=1004 living=584 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=40600 pending=582 exited=418 dead=5
+CA454 REFILL PROGRESS elapsed=40600 successful=1004 living=582 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=40950 pending=581 exited=419 dead=5
+CA454 REFILL PROGRESS elapsed=40950 successful=1004 living=581 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=41300 pending=577 exited=423 dead=5
+CA454 REFILL PROGRESS elapsed=41300 successful=1004 living=577 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=41650 pending=571 exited=429 dead=5
+CA454 REFILL PROGRESS elapsed=41650 successful=1004 living=571 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=42000 pending=568 exited=432 dead=5
+CA454 REFILL PROGRESS elapsed=42000 successful=1004 living=568 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=42350 pending=565 exited=435 dead=5
+CA454 REFILL PROGRESS elapsed=42350 successful=1004 living=565 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=42700 pending=560 exited=440 dead=5
+CA454 REFILL PROGRESS elapsed=42700 successful=1004 living=560 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=43050 pending=560 exited=440 dead=5
+CA454 REFILL PROGRESS elapsed=43050 successful=1004 living=560 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=43400 pending=559 exited=441 dead=5
+CA454 REFILL PROGRESS elapsed=43400 successful=1004 living=559 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=43750 pending=554 exited=446 dead=5
+CA454 REFILL PROGRESS elapsed=43750 successful=1004 living=554 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=44100 pending=547 exited=453 dead=5
+CA454 REFILL PROGRESS elapsed=44100 successful=1004 living=547 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=44450 pending=546 exited=454 dead=5
+CA454 REFILL PROGRESS elapsed=44450 successful=1004 living=546 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=44800 pending=543 exited=457 dead=5
+CA454 REFILL PROGRESS elapsed=44800 successful=1004 living=543 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=45150 pending=541 exited=459 dead=5
+CA454 REFILL PROGRESS elapsed=45150 successful=1004 living=541 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=45500 pending=536 exited=464 dead=5
+CA454 REFILL PROGRESS elapsed=45500 successful=1004 living=536 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=45850 pending=534 exited=466 dead=5
+CA454 REFILL PROGRESS elapsed=45850 successful=1004 living=534 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=46200 pending=533 exited=467 dead=5
+CA454 REFILL PROGRESS elapsed=46200 successful=1004 living=533 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=46550 pending=532 exited=468 dead=5
+CA454 REFILL PROGRESS elapsed=46550 successful=1004 living=532 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=46900 pending=526 exited=474 dead=5
+CA454 REFILL PROGRESS elapsed=46900 successful=1004 living=526 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=47250 pending=521 exited=479 dead=5
+CA454 REFILL PROGRESS elapsed=47250 successful=1004 living=521 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=47600 pending=519 exited=481 dead=5
+CA454 REFILL PROGRESS elapsed=47600 successful=1004 living=519 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=47950 pending=519 exited=481 dead=5
+CA454 REFILL PROGRESS elapsed=47950 successful=1004 living=519 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=48300 pending=516 exited=484 dead=5
+CA454 REFILL PROGRESS elapsed=48300 successful=1004 living=516 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=48650 pending=512 exited=488 dead=5
+CA454 REFILL PROGRESS elapsed=48650 successful=1004 living=512 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=49000 pending=506 exited=494 dead=5
+CA454 REFILL PROGRESS elapsed=49000 successful=1004 living=506 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=49350 pending=498 exited=502 dead=5
+CA454 REFILL PROGRESS elapsed=49350 successful=1004 living=498 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=49700 pending=490 exited=510 dead=5
+CA454 REFILL PROGRESS elapsed=49700 successful=1004 living=490 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=50050 pending=488 exited=512 dead=5
+CA454 REFILL PROGRESS elapsed=50050 successful=1004 living=488 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=50400 pending=486 exited=514 dead=5
+CA454 REFILL PROGRESS elapsed=50400 successful=1004 living=486 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=50750 pending=483 exited=517 dead=5
+CA454 REFILL PROGRESS elapsed=50750 successful=1004 living=483 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=51100 pending=479 exited=521 dead=5
+CA454 REFILL PROGRESS elapsed=51100 successful=1004 living=479 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=51450 pending=472 exited=528 dead=5
+CA454 REFILL PROGRESS elapsed=51450 successful=1004 living=472 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=51800 pending=471 exited=529 dead=5
+CA454 REFILL PROGRESS elapsed=51800 successful=1004 living=471 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=52150 pending=469 exited=531 dead=5
+CA454 REFILL PROGRESS elapsed=52150 successful=1004 living=469 remaining=5596 pending=96 opportunities=19
+CA454 REFILL WITHDRAWAL elapsed=52500 pending=462 exited=538 dead=5
+CA454 REFILL PROGRESS elapsed=52500 successful=1004 living=462 remaining=5596 pending=96 opportunities=19

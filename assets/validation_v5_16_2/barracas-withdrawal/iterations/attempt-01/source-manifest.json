@@ -1,0 +1,8 @@
+{
+  "base_commit": "7bc1094b5ad8647b224b0f999b13746026634d8c",
+  "base_runtime_sha256": "6efffa2932be0333debccfa727ae471826a84e3916f077fd0fb47802273a6d73",
+  "runtime": "issue454-commander01.pk3",
+  "runtime_sha256": "6efffa2932be0333debccfa727ae471826a84e3916f077fd0fb47802273a6d73",
+  "changed_sources": {},
+  "scope": "Exact owned ZScript differences for the interrupted diagnostic iteration. No packaged runtime, test PK3, engine, IWAD or save."
+}

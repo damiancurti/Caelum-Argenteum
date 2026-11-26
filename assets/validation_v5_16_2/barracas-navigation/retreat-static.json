@@ -1,0 +1,200 @@
+{
+  "usable_cells": 257131,
+  "bounds": [
+    -31488,
+    -22784,
+    2112,
+    20224
+  ],
+  "unreachable_ground": [
+    {
+      "cell": [
+        -29312,
+        12352
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -29312,
+        12416
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -29312,
+        12480
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -29312,
+        12544
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -29312,
+        12608
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -29312,
+        12672
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -29312,
+        12736
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -29312,
+        12800
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -29312,
+        12864
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -2432,
+        -13568
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -2368,
+        -13440
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -2304,
+        -13312
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -2240,
+        -13120
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -2176,
+        -12992
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -2112,
+        -12864
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -2048,
+        -12672
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -1344,
+        12864
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -1280,
+        12608
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -1280,
+        12672
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -1216,
+        12416
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -1152,
+        12160
+      ],
+      "buildings": []
+    },
+    {
+      "cell": [
+        -1152,
+        12224
+      ],
+      "buildings": []
+    }
+  ],
+  "fronts": [
+    {
+      "front": "south",
+      "gate_index": 3,
+      "goal_cell": [
+        -4352,
+        -22528
+      ],
+      "reachable_cells": 257109,
+      "unreachable_cells": 22,
+      "maximum_grid_steps": 1017
+    },
+    {
+      "front": "east",
+      "gate_index": 2,
+      "goal_cell": [
+        1536,
+        -22528
+      ],
+      "reachable_cells": 257109,
+      "unreachable_cells": 22,
+      "maximum_grid_steps": 1109
+    },
+    {
+      "front": "west",
+      "gate_index": 1,
+      "goal_cell": [
+        -30976,
+        -22528
+      ],
+      "reachable_cells": 257109,
+      "unreachable_cells": 22,
+      "maximum_grid_steps": 1124
+    }
+  ]
+}

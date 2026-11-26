@@ -1,0 +1,36 @@
+{
+  "issue": 454,
+  "scope": "Native wound-triggered commander escape from original southern spawn, three inner gates and house159 road, sequential identities, unchanged flee speed/collision. Fixture holds gates open and neutralizes thermal exposure. No combat, gate permissions, crowds, climate survival, FPS or author acceptance.",
+  "runtime_sha256": "ef5c0747a5136a719601a7c13b5cb8947245ab73217a227c77a15e4e1057e959",
+  "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "fixture_sha256": "5b640a298148d0f8beebba73d52cffa504128866b360b933bbbbace6351cccfc",
+  "runs": [
+    {
+      "phase": "reload",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 COMMANDER RESUME PASS elapsed=37 case=0",
+        "CA454 COMMANDER EXIT case=0 elapsed=2807 case_elapsed=2805",
+        "CA454 COMMANDER CASE index=1 lane=0 health=6899 maximum=13798.000 radius=26.667 height=93.333 base_speed=5.337",
+        "CA454 COMMANDER PROGRESS case=1 elapsed=3500 position=(-4320.0,-16795.3,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER EXIT case=1 elapsed=4913 case_elapsed=2105",
+        "CA454 COMMANDER CASE index=2 lane=2 health=6899 maximum=13798.000 radius=26.667 height=93.333 base_speed=5.337",
+        "CA454 COMMANDER PROGRESS case=2 elapsed=7000 position=(672.0,-9349.3,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER EXIT case=2 elapsed=10483 case_elapsed=5569",
+        "CA454 COMMANDER CASE index=3 lane=4 health=6899 maximum=13798.000 radius=26.667 height=93.333 base_speed=5.337",
+        "CA454 COMMANDER PROGRESS case=3 elapsed=10500 position=(-29618.6,-345.3,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER PROGRESS case=3 elapsed=14000 position=(-30048.0,-13913.3,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER EXIT case=3 elapsed=16345 case_elapsed=5861",
+        "CA454 COMMANDER CASE index=4 lane=4 health=6899 maximum=13798.000 radius=26.667 height=93.333 base_speed=5.337",
+        "CA454 COMMANDER PROGRESS case=4 elapsed=17500 position=(-8544.0,8746.2,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER PROGRESS case=4 elapsed=21000 position=(-7712.0,-4413.9,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER PROGRESS case=4 elapsed=24500 position=(-4384.0,-15088.7,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER EXIT case=4 elapsed=26335 case_elapsed=9989",
+        "CA454 COMMANDER COMPLETE passed=5 failures=0 elapsed=26335"
+      ]
+    }
+  ],
+  "seed_save_sha256": "f9863c89f490e21524c01e3aa01105e4191a9498005e3e55bd490147d3aff2b8"
+}

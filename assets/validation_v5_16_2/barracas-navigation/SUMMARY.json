@@ -1,0 +1,48 @@
+{
+  "issue": 454,
+  "version": "5.16.2",
+  "status": "Unactivated navigation candidate; long fresh/reloaded approach and full-city withdrawal probes still running. Not complete battle or author acceptance.",
+  "runtime": "build/v516/issue454-front-retreat03.pk3",
+  "runtime_sha256": "af09f64fe9e4aabe936973ec9bb7f5f51be11d0c94f0b971250b434af4967d15",
+  "candidate": "build/v516/barracas-ram-crews03/preview.pk3",
+  "candidate_sha256": "1d2bb60078bbf390fed026f1985b14c54bcd2622f0e996d08c1254538f4b3d2b",
+  "packaged_maps": {
+    "count": 238,
+    "changed_from_front_controller02": []
+  },
+  "static": {
+    "project_errors": [],
+    "deterministic_generators": [
+      "generate_barracas_march.py --check",
+      "generate_barracas_retreat.py --output build/v516/barracas-retreat-data05 --check"
+    ],
+    "ground_cells": 257131,
+    "connected_to_each_southern_exit": 257109,
+    "unconnected_ground_cells": 22,
+    "qualification": "Ground/headroom graph only; elevated bodies use existing reverse artillery routes. The22 ground islands are not a claim of physically inaccessible geometry."
+  },
+  "native": {
+    "retreat_local": "retreat-local/results.json:42 cases fresh/reload (six exits531-600tics;36 descents1129-2652tics), normal3.820 speed, runtime02. Current03 additionally requests normal gate Used after victory.",
+    "march_continuation": "march-continuation/results.json: all15 complete by43607tics after restoring41893-tic checkpoint and correcting diagnostic open-gate hold. Twelve operators were already at their posts; three infantry arrived after continuation. Full fresh/early-reload replay pending.",
+    "legacy": "legacy/results.json: old active and stored house-hub continuation passes runtime02; current03 gate request is qualified by new geometry and cannot execute there. Original checksum03f80198bfae8ba82cc435775001ba91, Justice767, eight gates preserved."
+  },
+  "failed_attempts": {
+    "march01": "Anonymous footsteps displaced explicit approach destinations; separate formation groups were verified in the save. Newfront orders retain their route over anonymous search, actual visible threats unchanged.",
+    "march02": "Fixture gates closed automatically after being opened once, blocking the final three gate-centre arrivals. Corrected diagnostic hold; production gate timers remain unchanged.",
+    "retreat_compile01": "GZDoom string-switch register limit. Generated return functions now contain at most64 rows.",
+    "retreat_full01": "Three exposed city walkers die at2628tics with728 thermal damage, nearly100% wetness and exposure-24.124. This is unmodified survival behavior, not a navigation pass. Full movement isolation now neutralizes thermal exposure each fixture tick without altering health/speed/body/collision; integrated climate survival remains pending."
+  },
+  "running": {
+    "march": "build/v516/barracas-march-native04",
+    "withdrawal": "build/v516/barracas-retreat-full02"
+  },
+  "remaining": [
+    "Complete long native approach/withdrawal evidence",
+    "Commander wounded escape",
+    "600 real defender AI and crowds",
+    "Capture/refill and full battle",
+    "Justice annex and ordinary services",
+    "Rendering/frame-time comparisons",
+    "Author acceptance"
+  ]
+}

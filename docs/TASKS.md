@@ -1,6 +1,67 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.16.1** - 2026-11-12.
+Documentation version: **5.16.2** - 2026-11-12.
+
+## 5.16.2 - Approved sewer and Barracas redesign (#454)
+
+Candidate selection now supplies its existing native distance to visibility
+checks, without storing it across tics or changing filters. Native old/new query
+equivalence and boundary/save checks pass; see barracas-perception/SUMMARY.json.
+This modest reduction of repeated work does not resolve severe siege frame gaps.
+Do not interpret diagnostic renderer/thinker snapshots as whole-window costs or
+remove perception, contamination, collision or offscreen behavior on that basis.
+
+MAP02 revision6 is packaged. Static routes, retained supply identities,
+deterministic generation and rollback hashes pass. Native fresh/reload/hub,
+old active/stored-hub compatibility, four cleared escorts, maximum-body passage,
+boss retreat, lower branches/grates/lift and qualified Vulkan measurements pass.
+Ordinary combat/hazard navigation and author review remain outstanding under
+CA454-MAP02-01. Evidence: assets/validation_v5_16_2/RESULTS.json.
+
+Barracas revision4 is packaged in MAP03. Approved street/plaza/perimeter
+geometry retains288 building identities and160 private interiors. Native checks
+cover424 architectural endpoints,224 service endpoints,160 portals/320 leaves,
+four gate interactions and160 closed/open samples. The closed-perimeter grid
+has no exterior bypass. Services and original-city active/stored-hub saves pass.
+
+Completed candidate evidence:
+- 36 defensive guns,72 operator walks,528 guard posts and648 component clearances;
+  600 generated paths/9453 waypoints and866538 continuous collision samples.
+- Actual600-resident deployment,72 operators and automatic high-density mode:
+  fresh-save audit and early-checkpoint replay, preserving identities/collision.
+- Six complete ram approaches, both crew sizes and persistent active/reserve
+  ownership;15 long pedestrian approaches and five wounded-commander origins.
+- Four native ram captures and full-controller1000-cap refill, preserving the
+  finite6600 ledger and existing subcaptain alongside600 residents.
+- Four house orientations through Used/rendered capture-ACK/return;64 shops,
+  one finite-stock purchase per phase,96 crafting stations and four vehicles
+  through native Use. Recipe completion and ticket/journey transactions were
+  outside these access checks.
+- Existing Justice arena, active-save pair/timer and exact survivor return;
+  original city/hub saves retain their earlier arena and geometry.
+- Existing Knight source at the relocated quay: native Use/capture, interrupted
+  retry, mid-capture reload and inactive/active preceding-source migration.
+  Original city retains its source; no duplicate/granted essence. See
+  barracas-arcana/SUMMARY.json for fixture provisioning and response limits.
+
+The combined aftermath probe exposed severe congestion from assigned-exit
+counterflow and repeated detours among same-direction bodies. The revised
+nearest-exit/progress/following policy completes all1000 survivors from fresh
+and saved congested aftermaths. Original assault lanes, five fixture deaths, the finite
+reserve and exactly one victory remain intact; no essence is granted. Fresh and
+early replay both finish at30,205tics; six full routes and five commander origins
+also pass replay. Retain failed/incomplete runs and original saves. Peaceful,
+ground-facing and full-cap siege presentation traces are recorded; the revised
+siege still measures only1.50 requests/s, with p99791.28ms. Local navigation is
+about0.4% of the separate timing window, so speculative pathfinding optimization
+is unsupported. Preserve this unresolved performance limitation. Integrated
+new/legacy evidence is recorded in barracas-integration/SUMMARY.json.
+Keep fixture thermal isolation separate from integrated climate survival.
+Architectural readability and author acceptance remain outstanding; final art
+completion belongs to #463 and is not claimed by this map slice.
+See barracas-continuation/SUMMARY.json and the focused geometry/navigation
+and barracas-withdrawal/SUMMARY.json under assets/validation_v5_16_2.
+CA454-MAP03-01 covers the outstanding author review. Regional layouts still require authoring.
 
 ## 5.16.1 - Bestiary source import (#453)
 
@@ -27,7 +88,7 @@ There is no new actionable gameplay test for pending_test.txt in this delivery.
 The planning source is assets/campaign/PROGRESSION.json; canonical narrative
 constraints are in MAP01. Run assets/generators/validate_campaign_progression.py
 for the bounded audit. --require-complete intentionally fails while authoring is
-open. No new manual gameplay check exists yet, so pending_test.txt remains empty.
+open. CA454-MAP02-01 now tracks the outstanding author sewer review.
 The author selected all 78 acquired essences and Respected (+250) with any one
 of four resistance factions for the finale. This matches the existing deity
 power. One eligible participant admits the consenting group; scripts and encounter statistics remain pending.

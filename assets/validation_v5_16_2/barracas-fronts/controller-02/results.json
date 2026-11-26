@@ -1,0 +1,29 @@
+{
+  "issue": 454,
+  "scope": "Run production gate/machine deployment and reserve policy in isolation.\n\nSuppress automatic battle-controller Tick. This checks object ownership,\ncounts, gate labels and persistent reserve activation, not crowd traversal,\ncapture transactions, firing coverage or full battle performance.",
+  "runtime_sha256": "07db2045ff0539cf326c042b500b617f1deadd3beaf7733880f16dc24da922aa",
+  "candidate_sha256": "1d2bb60078bbf390fed026f1985b14c54bcd2622f0e996d08c1254538f4b3d2b",
+  "fixture_sha256": "2ecf5fb87e3ca6a8bbe756d2fffc4f1bc5806b84067b6dd1993569e45adba129",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 FRONT DEPLOY PASS failures=0 gates=4 machines=12 active_rams=3 large=1 queued=74 living=113",
+        "CA454 FRONT POLICY PASS failures=0"
+      ]
+    },
+    {
+      "phase": "reload",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 FRONT RESUME PASS failures=0 gates=4 machines=12 active_rams=3 large=1 queued=74 living=112",
+        "CA454 FRONT CONTINUATION PASS failures=0"
+      ]
+    }
+  ]
+}

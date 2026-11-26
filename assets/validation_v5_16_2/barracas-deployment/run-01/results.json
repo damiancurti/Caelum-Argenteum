@@ -1,0 +1,27 @@
+{
+  "issue": 454,
+  "scope": "Check600 exterior paths with bounded native TryMove sampling and save reload.\n\nThe fixture suppresses siege and ignores actors, retaining geometry collision,\nthe defender body and exact floor support. It does not validate AI/crowds.",
+  "runtime_sha256": "7d5391270ce383b2db33846c73040901258743200c426ce0ec63734a38f1502c",
+  "candidate_sha256": "c0e52e25200f6b288d8dcb2b1a52d523d66f79d25a743186040de846243fb5a9",
+  "fixture_sha256": "ab0f9808ddd6366227947aaaf86bd62675db277b3932213a215a07126058a351",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 DEPLOY PASS routes=600 points=9453 samples=866538 failures=0"
+      ]
+    },
+    {
+      "phase": "reload",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 DEPLOY PASS routes=600 points=9453 samples=866538 failures=0"
+      ]
+    }
+  ]
+}

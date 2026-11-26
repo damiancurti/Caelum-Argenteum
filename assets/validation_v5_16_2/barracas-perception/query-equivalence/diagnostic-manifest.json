@@ -1,0 +1,7 @@
+{
+  "issue": 454,
+  "scope": "Compare candidate visibility and supplied distance against original expressions for every real query in the700-tic siege window. Diagnostic overhead; not a performance measurement.",
+  "runtime_sha256": "0d534413b6c837388f85c1c74a9c0606bf0f541a65776e476d252dc8ef099fe2",
+  "candidate_sha256": "108fa7b31622adbfe867246076f9371f347df20f60b0c390d1b443bdfc219943",
+  "checks_sha256": "8129f4d0764d459ed3fcf6444edb79e79d15bfb14c7fd7111677aba9a48a569d"
+}

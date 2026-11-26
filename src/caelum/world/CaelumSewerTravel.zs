@@ -38,7 +38,7 @@ class CaelumSewerTravel : Object play
             while ((gate = CaelumSewerTravelGate(existing.Next())) != null)
                 if (gate.Placed && gate.ConnectionId == id) { found = true; break; }
             if (found) continue;
-            gate = CaelumSewerTravelGate(Actor.Spawn("CaelumSewerTravelGate", GatePosition(id), NO_REPLACE));
+            gate = CaelumSewerTravelGate(Actor.Spawn("CaelumSewerTravelGate", CaelumBarracasData.CurrentPortPoint(GatePosition(id)), NO_REPLACE));
             if (gate == null) continue;
             gate.ConnectionId = id;
             gate.Placed = true;
@@ -48,6 +48,7 @@ class CaelumSewerTravel : Object play
                     || id == CaelumWorldCatalogue.CONNECTION_TO_PORT
                     || id == CaelumWorldCatalogue.CONNECTION_TO_COAST ? 270 : 90;
             if(level.MapName=="MAP02" && id!=14)gate.Angle=id==4?180:0;
+            gate.Angle=CaelumBarracasData.CurrentPortAngle(gate.Angle);
         }
     }
 

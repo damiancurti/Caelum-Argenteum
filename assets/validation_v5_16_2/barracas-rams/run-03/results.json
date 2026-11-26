@@ -1,0 +1,67 @@
+{
+  "issue": 454,
+  "scope": "Sweep both existing ram sizes through four forecourts and right-angle turns.\n\nCalls the production physical route step32 times per diagnostic tic without\nchanging movement/rotation constants. No crew AI, combat timing or FPS claim.\nAlso retains fixed-heading legacy routes and reloads an in-progress turn.",
+  "runtime_sha256": "930410d36090d2098a3a5c8d6695ec3752b2e9790dfa404529f47c52df973385",
+  "candidate_sha256": "ad8fcde73170ba61c73218f49dfb9054318528cd1a3162a7b5f360ca39d53cfe",
+  "fixture_sha256": "83572cfc5bdcbec3db86ddbe7a1984bf06c7ca047d7eab9b8fa4f2646eddf15b",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 RAM START case=0 large=0 legacy=0",
+        "CA454 RAM CASE PASS case=0 steps=2174 impacts=1 damage=6500 position=(-16832.000,15294.000) angle=270.000",
+        "CA454 RAM START case=1 large=1 legacy=0",
+        "CA454 RAM CASE PASS case=1 steps=2541 impacts=1 damage=6500 position=(-16832.000,15340.324) angle=270.000",
+        "CA454 RAM START case=2 large=0 legacy=0",
+        "CA454 RAM CASE PASS case=2 steps=2174 impacts=1 damage=11000 position=(-29822.000,-320.000) angle=360.000",
+        "CA454 RAM START case=3 large=1 legacy=0",
+        "CA454 RAM CASE PASS case=3 steps=2541 impacts=1 damage=11000 position=(-29868.324,-320.000) angle=360.000",
+        "CA454 RAM START case=4 large=0 legacy=0",
+        "CA454 RAM CASE PASS case=4 steps=2174 impacts=1 damage=6500 position=(446.000,-1472.000) angle=180.000",
+        "CA454 RAM START case=5 large=1 legacy=0",
+        "CA454 RAM CASE PASS case=5 steps=2541 impacts=1 damage=6500 position=(492.324,-1472.000) angle=180.000",
+        "CA454 RAM START case=6 large=0 legacy=0",
+        "CA454 RAM CASE PASS case=6 steps=2174 impacts=1 damage=5500 position=(-4352.000,-14270.000) angle=450.000",
+        "CA454 RAM START case=7 large=1 legacy=0",
+        "CA454 RAM CASE PASS case=7 steps=2541 impacts=1 damage=5500 position=(-4352.000,-14316.324) angle=450.000",
+        "CA454 RAM START case=8 large=0 legacy=1",
+        "CA454 RAM CASE PASS case=8 steps=1548 impacts=1 damage=5500 position=(-4352.000,-14270.000) angle=450.000",
+        "CA454 RAM START case=9 large=1 legacy=1",
+        "CA454 RAM CASE PASS case=9 steps=1447 impacts=1 damage=5500 position=(-4352.000,-14316.324) angle=450.000",
+        "CA454 RAM COMPLETE passed=10 failures=0"
+      ]
+    },
+    {
+      "phase": "reload",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 RAM RESUME case=0 steps=224 revision=1 heading=1",
+        "CA454 RAM CASE PASS case=0 steps=2174 impacts=1 damage=6500 position=(-16832.000,15294.000) angle=270.000",
+        "CA454 RAM START case=1 large=1 legacy=0",
+        "CA454 RAM CASE PASS case=1 steps=2541 impacts=1 damage=6500 position=(-16832.000,15340.324) angle=270.000",
+        "CA454 RAM START case=2 large=0 legacy=0",
+        "CA454 RAM CASE PASS case=2 steps=2174 impacts=1 damage=11000 position=(-29822.000,-320.000) angle=360.000",
+        "CA454 RAM START case=3 large=1 legacy=0",
+        "CA454 RAM CASE PASS case=3 steps=2541 impacts=1 damage=11000 position=(-29868.324,-320.000) angle=360.000",
+        "CA454 RAM START case=4 large=0 legacy=0",
+        "CA454 RAM CASE PASS case=4 steps=2174 impacts=1 damage=6500 position=(446.000,-1472.000) angle=180.000",
+        "CA454 RAM START case=5 large=1 legacy=0",
+        "CA454 RAM CASE PASS case=5 steps=2541 impacts=1 damage=6500 position=(492.324,-1472.000) angle=180.000",
+        "CA454 RAM START case=6 large=0 legacy=0",
+        "CA454 RAM CASE PASS case=6 steps=2174 impacts=1 damage=5500 position=(-4352.000,-14270.000) angle=450.000",
+        "CA454 RAM START case=7 large=1 legacy=0",
+        "CA454 RAM CASE PASS case=7 steps=2541 impacts=1 damage=5500 position=(-4352.000,-14316.324) angle=450.000",
+        "CA454 RAM START case=8 large=0 legacy=1",
+        "CA454 RAM CASE PASS case=8 steps=1548 impacts=1 damage=5500 position=(-4352.000,-14270.000) angle=450.000",
+        "CA454 RAM START case=9 large=1 legacy=1",
+        "CA454 RAM CASE PASS case=9 steps=1447 impacts=1 damage=5500 position=(-4352.000,-14316.324) angle=450.000",
+        "CA454 RAM COMPLETE passed=10 failures=0"
+      ]
+    }
+  ]
+}

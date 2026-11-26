@@ -1,0 +1,639 @@
+Log started: 2026-11-13 03:34:09
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/barracas-crowd-native02/fresh/caelum_argenteum_dev.pk3, 18113 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/barracas-justice01/preview.pk3, 5 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/barracas-crowd-native02/front-probe.pk3, 2 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_copy_memory_indirect VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_clamp_zero_one VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_internally_synchronized_queues VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance10 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_maintenance8 VK_KHR_maintenance9 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_id2 VK_KHR_present_mode_fifo_latest_ready VK_KHR_present_wait VK_KHR_present_wait2 VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_robustness2 VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_bfloat16 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_fma VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_shader_untyped_pointers VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_maintenance1 VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_unified_image_layouts VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_decode_vp9 VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_intra_refresh VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_custom_resolve VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_heap VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_decompression VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_present_timing VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_ray_tracing_invocation_reorder VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_64bit_indexing VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_long_vector VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_partitioned VK_EXT_shader_subgroup_vote VK_EXT_shader_uniform_buffer_unsized_array VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_EXT_zero_initialize_device_memory VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_occupancy_priority VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_compute_queue VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_push_constant_bank VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2610.72 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP03 - Barracas al Sud — fortified port
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CITY133 housed=600 attackers=0 revision=3
+CA454 CROWD START records=600 guns=36
+Game saved.
+CA454 CROWD ARRIVED id=319 elapsed=2290 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=530 elapsed=2573 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=47 elapsed=2650 distance=13.352 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=412 elapsed=3247 distance=0.000 speed=4.336 crew=0
+CA454 CROWD BODY id=0 step=7 crew_step=0 complete=0 following=0 position=(-4926.2,-4770.6,0.0) remaining=22573.8
+CA454 CROWD BODY id=100 step=9 crew_step=0 complete=0 following=0 position=(-8448.1,-3366.9,0.0) remaining=15482.9
+CA454 CROWD BODY id=200 step=7 crew_step=0 complete=0 following=0 position=(-27357.9,7616.0,0.0) remaining=26476.1
+CA454 CROWD BODY id=300 step=7 crew_step=0 complete=0 following=0 position=(-9506.1,-543.0,0.0) remaining=16438.6
+CA454 CROWD BODY id=400 step=7 crew_step=0 complete=0 following=0 position=(-20577.7,8360.7,0.0) remaining=14967.4
+CA454 CROWD BODY id=500 step=10 crew_step=0 complete=0 following=0 position=(-10049.6,-8269.5,0.0) remaining=8769.7
+CA454 CROWD PROGRESS elapsed=3500 emitted=600 arrived=4 crew=72 queue=1 living=601 high=1
+CA454 CROWD ARRIVED id=318 elapsed=3637 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=410 elapsed=4937 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=309 elapsed=5504 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=426 elapsed=5837 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=237 elapsed=5856 distance=0.165 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=290 elapsed=6233 distance=4.283 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=48 elapsed=6247 distance=14.993 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=501 elapsed=6496 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=315 elapsed=6522 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=82 elapsed=6689 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=177 elapsed=6832 distance=0.219 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=32 elapsed=6863 distance=13.199 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=480 elapsed=6887 distance=4.336 speed=4.336 crew=0
+CA454 CROWD BODY id=0 step=7 crew_step=0 complete=0 following=0 position=(-8642.8,-4801.5,0.0) remaining=19135.7
+CA454 CROWD BODY id=100 step=9 crew_step=0 complete=0 following=0 position=(-12164.5,-3364.4,0.0) remaining=12982.8
+CA454 CROWD BODY id=200 step=10 crew_step=0 complete=0 following=0 position=(-25617.0,9652.4,0.0) remaining=24514.7
+CA454 CROWD BODY id=300 step=8 crew_step=0 complete=0 following=0 position=(-11046.2,1676.4,0.0) remaining=13838.7
+CA454 CROWD BODY id=400 step=9 crew_step=0 complete=0 following=0 position=(-23650.3,7711.5,0.0) remaining=13146.5
+CA454 CROWD BODY id=500 step=10 crew_step=0 complete=0 following=0 position=(-6255.2,-8277.5,0.0) remaining=4975.3
+CA454 CROWD PROGRESS elapsed=7000 emitted=600 arrived=17 crew=72 queue=1 living=601 high=1
+CA454 CROWD ARRIVED id=484 elapsed=7027 distance=4.276 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=58 elapsed=7357 distance=13.419 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=227 elapsed=7566 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=492 elapsed=7627 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=384 elapsed=7691 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=253 elapsed=7888 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=296 elapsed=7943 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=53 elapsed=8032 distance=15.026 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=493 elapsed=8076 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=166 elapsed=8217 distance=3.394 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=415 elapsed=8346 distance=0.998 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=197 elapsed=8380 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=89 elapsed=8388 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=291 elapsed=8538 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=6 elapsed=8649 distance=13.531 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=95 elapsed=8678 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=217 elapsed=8780 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=2 elapsed=8925 distance=13.228 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=529 elapsed=8960 distance=3.913 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=266 elapsed=8981 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=127 elapsed=9094 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=583 elapsed=9658 distance=0.844 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=75 elapsed=9706 distance=1.481 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=377 elapsed=9724 distance=2.191 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=84 elapsed=9775 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=178 elapsed=9925 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=579 elapsed=9938 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=386 elapsed=10137 distance=0.545 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=497 elapsed=10160 distance=0.645 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=236 elapsed=10239 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=304 elapsed=10271 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=301 elapsed=10280 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=441 elapsed=10372 distance=4.336 speed=4.336 crew=0
+Game saved.
+CA454 CROWD ARRIVED id=273 elapsed=10468 distance=4.336 speed=4.336 crew=0
+CA454 CROWD BODY id=0 step=7 crew_step=0 complete=0 following=0 position=(-12255.5,-4768.3,0.0) remaining=15946.0
+CA454 CROWD BODY id=100 step=9 crew_step=0 complete=0 following=0 position=(-15811.8,-3361.9,0.0) remaining=11205.8
+CA454 CROWD BODY id=200 step=12 crew_step=0 complete=0 following=0 position=(-22644.9,9914.0,0.0) remaining=21531.3
+CA454 CROWD BODY id=300 step=8 crew_step=0 complete=0 following=0 position=(-11041.7,5362.6,0.0) remaining=10385.2
+CA454 CROWD BODY id=400 step=11 crew_step=0 complete=0 following=0 position=(-26811.8,7263.9,0.0) remaining=12083.3
+CA454 CROWD BODY id=500 step=10 crew_step=0 complete=0 following=0 position=(-2460.8,-8285.5,0.0) remaining=1180.9
+CA454 CROWD PROGRESS elapsed=10500 emitted=600 arrived=51 crew=72 queue=1 living=601 high=1
+CA454 CROWD ARRIVED id=292 elapsed=10531 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=59 elapsed=10550 distance=13.219 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=190 elapsed=10553 distance=3.971 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=509 elapsed=10584 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=395 elapsed=10622 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=142 elapsed=10821 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=104 elapsed=10831 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=281 elapsed=10860 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=365 elapsed=10896 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=8 elapsed=10907 distance=13.192 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=224 elapsed=10915 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=172 elapsed=10923 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=392 elapsed=10943 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=125 elapsed=11076 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=367 elapsed=11122 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=598 elapsed=11177 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=34 elapsed=11201 distance=13.715 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=223 elapsed=11278 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=554 elapsed=11293 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=9 elapsed=11488 distance=13.425 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=228 elapsed=11687 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=366 elapsed=11745 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=268 elapsed=11751 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=119 elapsed=11806 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=195 elapsed=11862 distance=4.314 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=257 elapsed=12048 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=1 elapsed=12100 distance=13.536 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=213 elapsed=12244 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=327 elapsed=12338 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=12 elapsed=12423 distance=13.181 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=16 elapsed=12523 distance=13.803 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=500 elapsed=12587 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=240 elapsed=12623 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=173 elapsed=12700 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=220 elapsed=12755 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=258 elapsed=12917 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=180 elapsed=12975 distance=0.739 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=590 elapsed=13061 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=181 elapsed=13196 distance=0.004 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=557 elapsed=13296 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=194 elapsed=13313 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=429 elapsed=13460 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=78 elapsed=13473 distance=3.735 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=587 elapsed=13526 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=252 elapsed=13555 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=597 elapsed=13572 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=112 elapsed=13587 distance=2.812 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=382 elapsed=13593 distance=4.267 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=371 elapsed=13626 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=192 elapsed=13723 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=574 elapsed=13785 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=452 elapsed=13867 distance=3.660 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=13 elapsed=13996 distance=13.217 speed=4.336 crew=1
+CA454 CROWD BODY id=0 step=9 crew_step=0 complete=0 following=0 position=(-14866.4,-5728.3,0.0) remaining=13217.7
+CA454 CROWD BODY id=100 step=10 crew_step=0 complete=0 following=0 position=(-18013.4,-4942.6,0.0) remaining=9053.6
+CA454 CROWD BODY id=200 step=14 crew_step=0 complete=0 following=0 position=(-19785.5,10020.8,0.0) remaining=18672.4
+CA454 CROWD BODY id=300 step=10 crew_step=0 complete=0 following=0 position=(-11998.0,8220.6,0.0) remaining=7389.0
+CA454 CROWD BODY id=400 step=14 crew_step=0 complete=0 following=0 position=(-27541.7,4265.2,0.0) remaining=9051.3
+CA454 CROWD PROGRESS elapsed=14000 emitted=600 arrived=104 crew=72 queue=0 living=601 high=1
+CA454 CROWD ARRIVED id=55 elapsed=14082 distance=14.755 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=174 elapsed=14145 distance=2.129 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=183 elapsed=14226 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=271 elapsed=14390 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=522 elapsed=14393 distance=3.920 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=566 elapsed=14405 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=157 elapsed=14424 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=35 elapsed=14430 distance=13.593 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=184 elapsed=14439 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=124 elapsed=14467 distance=3.633 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=316 elapsed=14559 distance=4.229 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=65 elapsed=14692 distance=14.820 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=431 elapsed=14902 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=352 elapsed=15011 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=14 elapsed=15057 distance=13.257 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=594 elapsed=15317 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=222 elapsed=15341 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=162 elapsed=15357 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=202 elapsed=15389 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=250 elapsed=15405 distance=3.721 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=402 elapsed=15441 distance=3.863 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=278 elapsed=15469 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=576 elapsed=15503 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=486 elapsed=15533 distance=3.731 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=245 elapsed=15556 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=311 elapsed=15622 distance=4.137 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=516 elapsed=15707 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=72 elapsed=15739 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=381 elapsed=15760 distance=3.022 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=364 elapsed=15819 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=306 elapsed=15853 distance=0.928 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=3 elapsed=15942 distance=13.835 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=403 elapsed=15958 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=221 elapsed=15968 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=571 elapsed=15970 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=521 elapsed=16020 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=4 elapsed=16043 distance=13.322 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=363 elapsed=16162 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=368 elapsed=16287 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=549 elapsed=16296 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=83 elapsed=16446 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=24 elapsed=16467 distance=13.469 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=46 elapsed=16509 distance=13.617 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=476 elapsed=16715 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=188 elapsed=16771 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=40 elapsed=16935 distance=14.781 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=314 elapsed=16961 distance=2.042 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=588 elapsed=17131 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=313 elapsed=17400 distance=4.127 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=61 elapsed=17452 distance=14.686 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=488 elapsed=17455 distance=0.746 speed=4.336 crew=0
+CA454 CROWD BODY id=0 step=9 crew_step=0 complete=0 following=0 position=(-18660.8,-5728.2,0.0) remaining=10224.5
+CA454 CROWD BODY id=100 step=12 crew_step=0 complete=0 following=0 position=(-18770.1,-7989.3,0.0) remaining=5917.2
+CA454 CROWD BODY id=200 step=15 crew_step=0 complete=0 following=0 position=(-16044.1,10063.7,0.0) remaining=14942.4
+CA454 CROWD BODY id=300 step=15 crew_step=0 complete=0 following=0 position=(-13342.1,10785.7,0.0) remaining=4495.5
+CA454 CROWD BODY id=400 step=16 crew_step=0 complete=0 following=0 position=(-27614.4,611.4,0.0) remaining=5396.8
+CA454 CROWD PROGRESS elapsed=17500 emitted=600 arrived=155 crew=72 queue=1 living=601 high=1
+CA454 CROWD ARRIVED id=507 elapsed=17506 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=85 elapsed=17548 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=210 elapsed=17577 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=471 elapsed=17654 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=407 elapsed=17658 distance=0.290 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=45 elapsed=17684 distance=13.453 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=593 elapsed=17748 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=550 elapsed=17757 distance=2.788 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=391 elapsed=17782 distance=3.852 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=545 elapsed=17888 distance=2.708 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=424 elapsed=17891 distance=0.540 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=494 elapsed=17929 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=380 elapsed=18107 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=123 elapsed=18126 distance=0.004 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=150 elapsed=18137 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=404 elapsed=18183 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=69 elapsed=18212 distance=13.730 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=20 elapsed=18299 distance=13.980 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=120 elapsed=18447 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=44 elapsed=18523 distance=13.571 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=140 elapsed=18615 distance=4.225 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=474 elapsed=18645 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=26 elapsed=18785 distance=13.621 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=79 elapsed=18854 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=591 elapsed=18986 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=219 elapsed=18994 distance=3.728 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=214 elapsed=19037 distance=3.227 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=461 elapsed=19284 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=251 elapsed=19434 distance=0.318 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=379 elapsed=19490 distance=4.169 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=345 elapsed=19860 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=209 elapsed=19896 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=459 elapsed=19910 distance=3.653 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=92 elapsed=20119 distance=3.426 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=440 elapsed=20119 distance=3.976 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=595 elapsed=20142 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=201 elapsed=20184 distance=3.300 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=503 elapsed=20250 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=23 elapsed=20458 distance=13.944 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=186 elapsed=20465 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=126 elapsed=20477 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=473 elapsed=20496 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=212 elapsed=20555 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=390 elapsed=20601 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=524 elapsed=20631 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=354 elapsed=20637 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=585 elapsed=20748 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=60 elapsed=20775 distance=14.996 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=589 elapsed=20864 distance=0.000 speed=4.336 crew=0
+Game saved.
+CA454 CROWD ARRIVED id=399 elapsed=20890 distance=2.593 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=469 elapsed=20980 distance=4.336 speed=4.336 crew=0
+CA454 CROWD BODY id=0 step=9 crew_step=0 complete=0 following=0 position=(-22455.2,-5728.1,0.0) remaining=7947.8
+CA454 CROWD BODY id=100 step=14 crew_step=0 complete=0 following=0 position=(-18897.7,-11681.3,0.0) remaining=2338.7
+CA454 CROWD BODY id=200 step=16 crew_step=0 complete=0 following=0 position=(-13286.7,10970.5,0.0) remaining=12124.6
+CA454 CROWD BODY id=300 step=20 crew_step=0 complete=0 following=0 position=(-14342.1,13593.5,0.0) remaining=1548.7
+CA454 CROWD BODY id=400 step=16 crew_step=0 complete=0 following=0 position=(-27615.6,-3183.0,0.0) remaining=1605.5
+CA454 CROWD PROGRESS elapsed=21000 emitted=600 arrived=206 crew=72 queue=0 living=601 high=1
+CA454 CROWD ARRIVED id=430 elapsed=21005 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=534 elapsed=21009 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=464 elapsed=21035 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=401 elapsed=21120 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=539 elapsed=21190 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=30 elapsed=21201 distance=13.770 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=498 elapsed=21209 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=267 elapsed=21262 distance=2.478 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=531 elapsed=21302 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=388 elapsed=21503 distance=3.561 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=121 elapsed=21536 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=135 elapsed=21558 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=132 elapsed=21767 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=70 elapsed=21825 distance=14.819 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=333 elapsed=21916 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=139 elapsed=21946 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=447 elapsed=22034 distance=4.242 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=280 elapsed=22055 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=238 elapsed=22061 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=596 elapsed=22103 distance=3.958 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=147 elapsed=22110 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=133 elapsed=22160 distance=4.308 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=312 elapsed=22203 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=152 elapsed=22263 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=231 elapsed=22274 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=475 elapsed=22294 distance=0.004 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=264 elapsed=22323 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=468 elapsed=22367 distance=3.806 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=553 elapsed=22412 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=114 elapsed=22417 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=285 elapsed=22440 distance=4.028 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=43 elapsed=22446 distance=13.642 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=153 elapsed=22756 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=255 elapsed=22898 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=561 elapsed=22984 distance=0.173 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=478 elapsed=22989 distance=0.470 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=526 elapsed=23053 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=559 elapsed=23162 distance=2.664 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=111 elapsed=23166 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=143 elapsed=23178 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=287 elapsed=23214 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=148 elapsed=23299 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=532 elapsed=23331 distance=0.705 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=154 elapsed=23665 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=298 elapsed=23685 distance=3.524 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=577 elapsed=23700 distance=0.834 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=151 elapsed=23810 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=293 elapsed=23820 distance=0.004 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=289 elapsed=23896 distance=0.004 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=86 elapsed=23933 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=155 elapsed=23962 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=100 elapsed=23991 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=375 elapsed=24026 distance=4.289 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=109 elapsed=24124 distance=0.004 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=578 elapsed=24197 distance=0.737 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=105 elapsed=24200 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=450 elapsed=24221 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=383 elapsed=24242 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=10 elapsed=24285 distance=13.470 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=394 elapsed=24285 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=438 elapsed=24333 distance=3.453 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=51 elapsed=24334 distance=13.231 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=573 elapsed=24380 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=456 elapsed=24443 distance=2.340 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=445 elapsed=24444 distance=4.336 speed=4.336 crew=0
+CA454 CROWD BODY id=0 step=10 crew_step=0 complete=0 following=0 position=(-25861.3,-6118.3,0.0) remaining=6720.2
+CA454 CROWD BODY id=200 step=16 crew_step=0 complete=0 following=0 position=(-9492.3,10975.3,0.0) remaining=8336.2
+CA454 CROWD BODY id=300 step=24 crew_step=0 complete=1 following=0 position=(-15152.0,14744.0,-0.0) remaining=143.1
+CA454 CROWD BODY id=400 step=20 crew_step=0 complete=1 following=0 position=(-27585.7,-4767.8,0.0) remaining=151.2
+CA454 CROWD PROGRESS elapsed=24500 emitted=600 arrived=271 crew=72 queue=0 living=601 high=1
+CA454 CROWD ARRIVED id=5 elapsed=24528 distance=13.502 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=432 elapsed=24599 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=482 elapsed=24601 distance=4.177 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=389 elapsed=24624 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=307 elapsed=24746 distance=2.267 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=28 elapsed=24815 distance=14.410 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=146 elapsed=24849 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=400 elapsed=24859 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=134 elapsed=24897 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=300 elapsed=24991 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=414 elapsed=25161 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=565 elapsed=25204 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=141 elapsed=25280 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=317 elapsed=25376 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=286 elapsed=25445 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=93 elapsed=25460 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=409 elapsed=25460 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=560 elapsed=25495 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=62 elapsed=25513 distance=14.807 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=547 elapsed=25674 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=439 elapsed=25698 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=137 elapsed=25752 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=67 elapsed=25806 distance=13.443 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=523 elapsed=25818 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=449 elapsed=25832 distance=0.004 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=128 elapsed=25847 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=302 elapsed=25917 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=158 elapsed=25953 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=568 elapsed=26031 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=416 elapsed=26043 distance=4.097 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=272 elapsed=26079 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=537 elapsed=26120 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=353 elapsed=26336 distance=4.321 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=563 elapsed=26394 distance=0.024 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=168 elapsed=26471 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=328 elapsed=26471 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=332 elapsed=26483 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=434 elapsed=26513 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=303 elapsed=26562 distance=4.325 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=324 elapsed=26607 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=36 elapsed=26643 distance=13.349 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=340 elapsed=26651 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=320 elapsed=26659 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=558 elapsed=26713 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=138 elapsed=26845 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=337 elapsed=26884 distance=0.402 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=536 elapsed=27047 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=417 elapsed=27200 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=7 elapsed=27230 distance=13.573 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=444 elapsed=27235 distance=4.035 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=215 elapsed=27266 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=27 elapsed=27270 distance=13.560 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=428 elapsed=27307 distance=4.302 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=77 elapsed=27312 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=411 elapsed=27326 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=567 elapsed=27334 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=369 elapsed=27336 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=106 elapsed=27361 distance=4.151 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=118 elapsed=27457 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=552 elapsed=27519 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=584 elapsed=27571 distance=3.748 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=360 elapsed=27627 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=385 elapsed=27628 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=63 elapsed=27634 distance=15.209 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=170 elapsed=27837 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=397 elapsed=27848 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=406 elapsed=27869 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=164 elapsed=27871 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=279 elapsed=27918 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=372 elapsed=27927 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=131 elapsed=27938 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=349 elapsed=27992 distance=4.336 speed=4.336 crew=0
+CA454 CROWD BODY id=0 step=10 crew_step=0 complete=0 following=0 position=(-25879.9,-9912.7,0.0) remaining=2933.4
+CA454 CROWD BODY id=200 step=18 crew_step=0 complete=0 following=0 position=(-5931.8,11216.7,0.0) remaining=4767.6
+CA454 CROWD PROGRESS elapsed=28000 emitted=600 arrived=343 crew=72 queue=0 living=601 high=1
+CA454 CROWD ARRIVED id=455 elapsed=28122 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=115 elapsed=28218 distance=3.887 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=433 elapsed=28284 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=481 elapsed=28288 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=448 elapsed=28331 distance=3.550 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=325 elapsed=28432 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=356 elapsed=28451 distance=3.616 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=218 elapsed=28477 distance=3.938 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=435 elapsed=28514 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=479 elapsed=28538 distance=4.153 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=247 elapsed=28546 distance=4.205 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=462 elapsed=28621 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=234 elapsed=28709 distance=3.316 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=66 elapsed=28713 distance=13.629 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=342 elapsed=28725 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=326 elapsed=28761 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=37 elapsed=28772 distance=13.337 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=538 elapsed=28925 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=458 elapsed=28973 distance=3.997 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=57 elapsed=29056 distance=14.467 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=339 elapsed=29090 distance=4.311 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=232 elapsed=29155 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=110 elapsed=29185 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=274 elapsed=29241 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=122 elapsed=29269 distance=4.018 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=80 elapsed=29355 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=527 elapsed=29450 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=81 elapsed=29524 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=331 elapsed=29570 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=548 elapsed=29595 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=502 elapsed=29657 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=235 elapsed=29734 distance=0.585 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=163 elapsed=29738 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=535 elapsed=29746 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=229 elapsed=29756 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=357 elapsed=29792 distance=4.246 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=284 elapsed=29795 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=420 elapsed=29839 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=398 elapsed=29945 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=242 elapsed=29965 distance=3.675 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=321 elapsed=29996 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=408 elapsed=30023 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=33 elapsed=30080 distance=13.346 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=156 elapsed=30135 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=425 elapsed=30192 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=42 elapsed=30209 distance=13.594 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=239 elapsed=30218 distance=0.004 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=68 elapsed=30375 distance=13.757 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=161 elapsed=30376 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=277 elapsed=30448 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=442 elapsed=30465 distance=4.310 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=544 elapsed=30587 distance=4.264 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=413 elapsed=30588 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=275 elapsed=30606 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=504 elapsed=30723 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=0 elapsed=30747 distance=13.754 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=551 elapsed=30810 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=64 elapsed=30839 distance=14.684 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=564 elapsed=30843 distance=4.327 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=419 elapsed=30862 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=427 elapsed=30918 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=130 elapsed=30929 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=31 elapsed=31002 distance=13.897 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=243 elapsed=31174 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=495 elapsed=31222 distance=1.426 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=446 elapsed=31245 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=102 elapsed=31285 distance=0.000 speed=4.336 crew=0
+Game saved.
+CA454 CROWD ARRIVED id=204 elapsed=31375 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=136 elapsed=31391 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=546 elapsed=31425 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=510 elapsed=31429 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=334 elapsed=31481 distance=4.336 speed=4.336 crew=0
+CA454 CROWD BODY id=200 step=18 crew_step=0 complete=0 following=0 position=(-2137.4,11230.6,0.0) remaining=1013.7
+CA454 CROWD PROGRESS elapsed=31500 emitted=600 arrived=415 crew=72 queue=0 living=601 high=1
+CA454 CROWD ARRIVED id=370 elapsed=31509 distance=3.782 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=470 elapsed=31589 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=169 elapsed=31728 distance=0.935 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=208 elapsed=31743 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=11 elapsed=31750 distance=13.314 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=41 elapsed=31768 distance=15.189 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=94 elapsed=31785 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=129 elapsed=31832 distance=2.248 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=472 elapsed=31911 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=99 elapsed=31918 distance=0.004 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=203 elapsed=31922 distance=0.803 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=159 elapsed=31962 distance=4.076 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=322 elapsed=32033 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=350 elapsed=32073 distance=1.138 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=477 elapsed=32112 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=91 elapsed=32270 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=490 elapsed=32325 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=489 elapsed=32340 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=21 elapsed=32452 distance=13.685 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=465 elapsed=32536 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=22 elapsed=32621 distance=13.701 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=113 elapsed=32876 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=15 elapsed=32886 distance=13.351 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=96 elapsed=33035 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=200 elapsed=33103 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=346 elapsed=33237 distance=3.375 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=519 elapsed=33278 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=244 elapsed=33323 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=108 elapsed=33355 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=167 elapsed=33438 distance=2.647 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=387 elapsed=33474 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=263 elapsed=33534 distance=4.325 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=260 elapsed=33771 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=49 elapsed=33872 distance=14.611 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=361 elapsed=33936 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=56 elapsed=34207 distance=14.871 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=336 elapsed=34223 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=329 elapsed=34472 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=562 elapsed=34493 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=330 elapsed=34573 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=88 elapsed=34723 distance=2.862 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=256 elapsed=34883 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=18 elapsed=34953 distance=13.726 speed=4.336 crew=1
+CA454 CROWD PROGRESS elapsed=35000 emitted=600 arrived=458 crew=72 queue=1 living=601 high=1
+CA454 CROWD ARRIVED id=206 elapsed=35157 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=225 elapsed=35240 distance=0.853 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=211 elapsed=35382 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=171 elapsed=35594 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=175 elapsed=35726 distance=0.004 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=101 elapsed=35756 distance=3.170 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=19 elapsed=35770 distance=13.781 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=338 elapsed=35813 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=71 elapsed=35818 distance=14.973 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=347 elapsed=35926 distance=0.709 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=499 elapsed=35970 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=487 elapsed=35986 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=359 elapsed=36010 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=165 elapsed=36040 distance=4.079 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=205 elapsed=36088 distance=3.922 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=176 elapsed=36127 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=179 elapsed=36402 distance=2.399 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=73 elapsed=36460 distance=4.242 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=249 elapsed=36652 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=491 elapsed=36858 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=39 elapsed=37170 distance=13.740 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=191 elapsed=37602 distance=0.136 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=50 elapsed=37717 distance=13.213 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=335 elapsed=37718 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=196 elapsed=37791 distance=0.289 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=299 elapsed=37842 distance=3.415 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=294 elapsed=37909 distance=3.632 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=351 elapsed=38030 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=457 elapsed=38172 distance=2.789 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=246 elapsed=38345 distance=4.336 speed=4.336 crew=0
+CA454 CROWD PROGRESS elapsed=38500 emitted=600 arrived=488 crew=72 queue=0 living=601 high=1
+CA454 CROWD ARRIVED id=54 elapsed=38557 distance=14.620 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=436 elapsed=38643 distance=4.336 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=575 elapsed=38738 distance=4.106 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=241 elapsed=38784 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=38 elapsed=38801 distance=13.842 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=348 elapsed=39019 distance=3.967 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=29 elapsed=39324 distance=14.850 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=570 elapsed=39441 distance=0.915 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=207 elapsed=39674 distance=3.696 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=344 elapsed=39899 distance=3.269 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=25 elapsed=40900 distance=13.367 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=52 elapsed=41263 distance=14.867 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=248 elapsed=41511 distance=4.336 speed=4.336 crew=0
+Game saved.
+CA454 CROWD PROGRESS elapsed=42000 emitted=600 arrived=501 crew=72 queue=0 living=601 high=1
+CA454 CROWD ARRIVED id=463 elapsed=42110 distance=2.234 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=341 elapsed=43260 distance=1.815 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=283 elapsed=43294 distance=4.244 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=460 elapsed=43371 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=17 elapsed=43644 distance=13.749 speed=4.336 crew=1
+CA454 CROWD ARRIVED id=343 elapsed=44642 distance=1.313 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=592 elapsed=44975 distance=0.000 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=599 elapsed=45110 distance=0.004 speed=4.336 crew=0
+CA454 CROWD PROGRESS elapsed=45500 emitted=600 arrived=509 crew=72 queue=0 living=601 high=1
+CA454 CROWD ARRIVED id=586 elapsed=45729 distance=3.147 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=540 elapsed=46015 distance=3.236 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=254 elapsed=46809 distance=4.210 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=581 elapsed=47252 distance=3.226 speed=4.336 crew=0
+CA454 CROWD PROGRESS elapsed=49000 emitted=600 arrived=513 crew=72 queue=0 living=601 high=1
+CA454 CROWD ARRIVED id=569 elapsed=50960 distance=3.064 speed=4.336 crew=0
+Game saved.
+CA454 CROWD PROGRESS elapsed=52500 emitted=600 arrived=514 crew=72 queue=0 living=601 high=1
+CA454 CROWD ARRIVED id=198 elapsed=53869 distance=2.679 speed=4.336 crew=0
+CA454 CROWD ARRIVED id=199 elapsed=55878 distance=0.869 speed=4.336 crew=0
+CA454 CROWD PROGRESS elapsed=56000 emitted=600 arrived=516 crew=72 queue=0 living=601 high=1
+CA454 CROWD ARRIVED id=323 elapsed=57010 distance=3.625 speed=4.336 crew=0

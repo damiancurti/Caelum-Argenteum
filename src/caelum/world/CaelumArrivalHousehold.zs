@@ -70,7 +70,7 @@ class CaelumArrivalHousehold : Inventory
     }
     static Actor Original(int index)
     {
-        vector3 point=CaelumArrivalHouseholdData.Origin(index);
+        vector3 point=CaelumBarracasData.CurrentPortPoint(CaelumArrivalHouseholdData.Origin(index));
         // Cuatro consultas locales durante instalación/carga, no censo global.
         let it=BlockThingsIterator.CreateFromPos(point.X,point.Y,point.Z,128,1,false);
         while(it.Next())if(it.thing.GetClassName()==CaelumArrivalHouseholdData.Kind(index)

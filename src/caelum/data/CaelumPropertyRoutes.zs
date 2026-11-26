@@ -1,13 +1,13 @@
 // Rutas derivadas de la geometria existente; conserva los destinos de cada defensor.
 class CaelumPropertyRoutes : Object play
 {
-    static int Count(int identity){switch(identity){
+    static int Count(int identity){if(CaelumBarracasData.IsCurrent())return CaelumBarracasDeployment.Count(identity);switch(identity){
         case 69:return 6;
         case 229:return 6;
         case 389:return 6;
         case 549:return 8;
         }return CaelumCityRoutes.Count(identity);}
-    static vector3 Point(int identity,int step){switch(identity){
+    static vector3 Point(int identity,int step){if(CaelumBarracasData.IsCurrent())return CaelumBarracasDeployment.Point(identity,step);switch(identity){
         case 69:return Route69(step);
         case 229:return Route229(step);
         case 389:return Route389(step);

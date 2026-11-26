@@ -1,0 +1,28 @@
+{
+  "issue": 454,
+  "scope": "Exercise all four original native escorts on the redesigned map.\n\nAn isolated leader follows generated collision paths in cleared corridors.\nEnemies and active non-pit hazards are removed only in this fixture; the test\ndoes not certify combat, hazard navigation or ordinary player acquisition.\nNative escort AI, closed pit covers, gates, resources and extraction run.",
+  "passed": true,
+  "timed_out": false,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-final-map02.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-escorts-03\\escorts.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-escorts-03\\isolated.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-escorts-03",
+    "-window",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-escorts-03\\engine.log",
+    "+map",
+    "MAP02"
+  ],
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runtime_sha256": "2b98fa4a15e931a83786831aaaa0dab67d8ffb5ed7030cb90c7946bf709afc95",
+  "fixture_sha256": "749c1c7a20cf94381ccae125e9bf4c6d682753703e1aba339c2ddc1329e279db",
+  "cleanup": "Own disposable engine process terminated after success/failure; no production save modified."
+}

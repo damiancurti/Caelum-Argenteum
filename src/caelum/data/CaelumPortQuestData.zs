@@ -16,6 +16,7 @@ class CaelumPortQuestData : Object
     {
         // Junto a la entrada ya definida, dejando libre el paso con dos diámetros.
         double radius=GetDefaultByType("CaelumCityMerchant").Radius;
-        return CaelumCityData.DoorOutside(CaelumPropertyData.CENTRAL_HOUSE)+(0,radius*4,0);
+        double facing=CaelumBarracasData.IsCurrent()?CaelumBarracasData.HouseAngle(CaelumPropertyData.CENTRAL_HOUSE):0;
+        return CaelumCityData.DoorOutside(CaelumPropertyData.CENTRAL_HOUSE)+(-Sin(facing),Cos(facing),0)*radius*4;
     }
 }

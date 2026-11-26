@@ -1,0 +1,7 @@
+{
+  "issue": 454,
+  "scope": "Diagnostic reuse of the identical Distance3D already computed within each Candidate loop. Original predicate order/contact exception retained. No production change yet.",
+  "runtime_sha256": "0d534413b6c837388f85c1c74a9c0606bf0f541a65776e476d252dc8ef099fe2",
+  "original_source_sha256": "7426b15d3b6c52686f46aeb305f1a3d1fa54d4f7045177872b30e3602146aa4e",
+  "candidate_source_sha256": "a5e298bbfb08b796a7e8cff564efea1390f14780a0439c15bd21b76ffc715e18"
+}

@@ -1,32 +1,24 @@
 {
-  "revision": 5,
+  "revision": 6,
+  "issue": 454,
   "seed": 436009,
-  "grid": 32,
-  "nodes_per_axis": 5,
-  "node_spacing": 768,
-  "room_width": 640,
-  "passage_width": 384,
+  "grid": 16,
+  "authority": "Approved MAP02_Alcantarillas_Propuesta_v2.png and board 3 dimensions, author confirmation 2026-11-12.",
+  "interpretation": "Rectilinear construction from the non-uniform conceptual board. Three independent main circuits per sector plus one internal keyless maintenance shortcut. Preserve existing populations, loot identities and lock rules; no claim of twice the current map length.",
+  "reference": "assets/references/issue_454_maps_20261112/MAP02_Alcantarillas_Propuesta_v2.png",
+  "units_per_metre": 32,
+  "passage_width": 160,
   "channel_width": 64,
   "channel_depth": 16,
-  "ceiling": 320,
-  "gate_height": 128,
-  "arrival": {
-    "chair": [
-      -448,
-      -448,
-      0
-    ],
-    "bed": [
-      -448,
-      320,
-      0
-    ],
-    "workbench": [
-      320,
-      -448,
-      0
-    ]
-  },
+  "dry_width": 96,
+  "ceiling": 96,
+  "chamber_width": 384,
+  "chamber_height": 128,
+  "service_width": 128,
+  "shortcut_width": 64,
+  "gate_height": 96,
+  "boss_height": 224,
+  "dimension_basis": "Normal total 5 m, continuous dry shelf 3 m, height 3 m; chambers 4 m high; final cistern 7 m. Service/escort links 4 m wide; optional maintenance shortcuts 2 m wide. Existing collision sizes are unchanged.",
   "section_names": [
     "south",
     "west",
@@ -39,267 +31,1288 @@
     "B6ADB9",
     "A6BDCC"
   ],
-  "chests_per_section": [
-    10,
-    10,
-    10,
-    9
-  ],
-  "traps_per_section": [
-    12,
-    11,
-    11,
-    11
-  ],
-  "mandingas_per_section": [
-    24,
-    24,
-    24,
-    24
-  ],
-  "rats_per_mandinga": 2,
-  "arrow_bundles_per_section": [
-    3,
-    3,
-    3,
-    3
-  ],
-  "bolt_bundles_per_section": [
-    1,
-    2,
-    1,
-    2
-  ],
-  "bullet_bundles_per_section": [
-    2,
-    1,
-    2,
-    1
-  ],
-  "ammunition_bundle_units": 20,
   "largest_player_radius": 21.333333,
   "largest_prisoner_radius": 21.3,
   "largest_supported_height": 74.7,
-  "clearance_basis": "Two 160-MU dry walkways flank a 64-MU, 16-deep channel. Each walkway exceeds three maximum player diameters (128 MU); level crossings and open gates provide 384 MU. Endpoint-cell and refuge routes use the same clearance. Existing supported player and prisoner collision sizes are unchanged.",
-  "gate_rule": "Transparent barred rendering with native closed movement, Use, hitscan, projectile and AI-sight blocking. Accepted runtime sight blocking keeps the boss from alerting through the closed arena gate. Keys open permanently without consumption.",
-  "section_origins": [
-    [
-      -1536,
-      -5280
-    ],
-    [
-      -5280,
-      -1536
-    ],
-    [
-      2208,
-      -1536
-    ],
-    [
-      -1536,
-      2208
-    ]
-  ],
-  "entry_nodes": [
-    [
-      2,
-      4
-    ],
-    [
-      4,
-      2
-    ],
-    [
-      0,
-      2
-    ],
-    [
-      2,
-      0
-    ]
-  ],
-  "hub_bounds": [
-    -640,
-    -640,
-    640,
-    640
-  ],
   "player_start": [
     0,
-    0
+    -4864
   ],
-  "entrance_gates": [
-    [
-      0,
-      -1536
-    ],
-    [
-      -1536,
+  "arrival_bounds": [
+    -640,
+    -5504,
+    640,
+    -4480
+  ],
+  "arrival": {
+    "chair": [
+      -448,
+      -5312,
       0
     ],
-    [
-      1536,
+    "bed": [
+      -448,
+      -4672,
       0
     ],
-    [
-      0,
-      1536
+    "workbench": [
+      320,
+      -5312,
+      0
     ]
-  ],
-  "elevator_reservation": [
-    -256,
-    -256,
-    256,
-    256
-  ],
-  "cardinal_spacing_basis": "Author requested minimum-length hub approaches on 2026-10-02. Entry distance = half the junction grid span + room width + one collision-grid cell. Adjacent section floors retain exactly one 32-MU solid wall strip; no overlap or unintended connection.",
-  "return_network": {
-    "revision": 1,
-    "floor": -160,
-    "ceiling": -32,
-    "water_depth": 16,
-    "width": 128,
-    "ring_radius": 512,
-    "elevator_tag": 44900,
-    "elevator_speed": 16,
-    "grate_tags": [
-      44910,
-      44911,
-      44912,
-      44913
-    ],
-    "grate_width": 384,
-    "grate_thickness": 32,
-    "control_origin": [
-      -16000,
-      -16000
-    ],
-    "paths": [
-      {
-        "trap": 43905,
-        "points": [
-          [
-            -832,
-            -4544
-          ],
-          [
-            -832,
-            -512
-          ],
-          [
-            0,
-            -512
-          ]
-        ],
-        "grate": 44910
-      },
-      {
-        "trap": 43916,
-        "points": [
-          [
-            -3808,
-            1504
-          ],
-          [
-            -3808,
-            1856
-          ],
-          [
-            -512,
-            1856
-          ],
-          [
-            -512,
-            0
-          ]
-        ],
-        "grate": 44911
-      },
-      {
-        "trap": 43925,
-        "points": [
-          [
-            5216,
-            736
-          ],
-          [
-            5216,
-            640
-          ],
-          [
-            512,
-            640
-          ],
-          [
-            512,
-            0
-          ]
-        ],
-        "grate": 44912
-      },
-      {
-        "trap": 43929,
-        "points": [
-          [
-            5216,
-            -1568
-          ],
-          [
-            5216,
-            640
-          ]
-        ],
-        "grate": 44912
-      },
-      {
-        "trap": 43930,
-        "points": [
-          [
-            2912,
-            1504
-          ],
-          [
-            2912,
-            640
-          ]
-        ],
-        "grate": 44912
-      },
-      {
-        "trap": 43933,
-        "points": [
-          [
-            2144,
-            1504
-          ],
-          [
-            2048,
-            1504
-          ],
-          [
-            2048,
-            640
-          ]
-        ],
-        "grate": 44913
-      }
-    ],
-    "basis": "128 MU width/headroom derives from four existing 32-MU grid cells and exceeds the accepted 74.7-MU maximum actor height. Lower ceiling -32 keeps one grid cell of solid slab under the upper floor. Water reuses the existing 16-MU harmless channel depth; no current or damage. Elevator uses the accepted MAP01 speed 16. Pits retain their 128x128 openings; no ladder or stair exit.",
-    "activation": "Four independent permanent keyless grates: south/west/east/north, opened only from outside the lift enclosure below the upper slab. Use at either face then calls the platform from either landing; Use from inside sends it to the other landing.",
-    "progression_rule": "Author approved on 2026-10-02: a closed block keeps all its trapdoor covers solid/inactive, including for enemies, until the normal keyed entrance opens. This prevents upward jumps through remotely opened pits. South is initially accessible.",
-    "save_policy": "Author explicitly waived prior-save compatibility for issue #74 on 2026-10-02. New-layout mechanism state must persist through save/load and hub travel.",
-    "moving_sector_isolation": "Lower paths avoid every surface gate and crusher panel. East branches detour around crusher 43923 so its original base floor and complete sector remain unchanged."
   },
-  "shotgun_bundles_per_section": [
-    2,
-    1,
-    2,
-    1
+  "hub_bounds": [
+    -384,
+    -384,
+    384,
+    384
   ],
-  "ammunition_replacements": {
-    "CaelumCarbineAmmo": "CaelumArrowAmmo",
-    "CaelumShotgunAmmo": "CaelumBoltAmmo"
-  },
+  "links": [
+    {
+      "zone": 0,
+      "points": [
+        [
+          0,
+          -4864
+        ],
+        [
+          0,
+          -4096
+        ]
+      ]
+    },
+    {
+      "zone": 0,
+      "points": [
+        [
+          0,
+          -1024
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "zone": 1,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -1536,
+          0
+        ],
+        [
+          -1536,
+          1024
+        ],
+        [
+          -3072,
+          1024
+        ]
+      ],
+      "gate": [
+        -768,
+        0
+      ],
+      "axis": "x",
+      "tag": 44700,
+      "lock": 203
+    },
+    {
+      "zone": 2,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1536,
+          0
+        ],
+        [
+          1536,
+          1024
+        ],
+        [
+          3072,
+          1024
+        ]
+      ],
+      "gate": [
+        768,
+        0
+      ],
+      "axis": "x",
+      "tag": 44701,
+      "lock": 204
+    },
+    {
+      "zone": 3,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          5120
+        ],
+        [
+          1024,
+          5120
+        ],
+        [
+          1024,
+          6144
+        ]
+      ],
+      "gate": [
+        0,
+        768
+      ],
+      "axis": "y",
+      "tag": 44702,
+      "lock": 205
+    }
+  ],
+  "sections": [
+    {
+      "name": "south",
+      "nodes": [
+        [
+          -3072,
+          -4096
+        ],
+        [
+          -1536,
+          -4096
+        ],
+        [
+          0,
+          -4096
+        ],
+        [
+          1536,
+          -4096
+        ],
+        [
+          3072,
+          -4096
+        ],
+        [
+          -3072,
+          -3072
+        ],
+        [
+          -1536,
+          -3072
+        ],
+        [
+          0,
+          -3072
+        ],
+        [
+          1536,
+          -3072
+        ],
+        [
+          3072,
+          -3072
+        ],
+        [
+          -3072,
+          -2048
+        ],
+        [
+          -1536,
+          -2048
+        ],
+        [
+          0,
+          -2048
+        ],
+        [
+          1536,
+          -2048
+        ],
+        [
+          3072,
+          -2048
+        ],
+        [
+          -3072,
+          -1024
+        ],
+        [
+          -1536,
+          -1024
+        ],
+        [
+          0,
+          -1024
+        ],
+        [
+          1536,
+          -1024
+        ],
+        [
+          3072,
+          -1024
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          13,
+          18
+        ],
+        [
+          14,
+          19
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "shortcut": [
+        1,
+        6
+      ],
+      "entry": 2,
+      "exit": 17,
+      "key": 0,
+      "cell_key": 15,
+      "refuge_node": 5,
+      "refuge": [
+        -4096,
+        -3072
+      ],
+      "cell_node": 4,
+      "cell": [
+        4096,
+        -4096
+      ],
+      "encounter_anchors": [
+        [
+          -3072,
+          -4096
+        ],
+        [
+          -1536,
+          -4096
+        ],
+        [
+          1536,
+          -4096
+        ],
+        [
+          3072,
+          -4096
+        ],
+        [
+          -3072,
+          -3072
+        ],
+        [
+          -1536,
+          -3072
+        ],
+        [
+          0,
+          -3072
+        ],
+        [
+          1536,
+          -3072
+        ],
+        [
+          3072,
+          -3072
+        ],
+        [
+          -3072,
+          -2048
+        ],
+        [
+          -1536,
+          -2048
+        ],
+        [
+          0,
+          -2048
+        ],
+        [
+          1536,
+          -2048
+        ],
+        [
+          3072,
+          -2048
+        ],
+        [
+          -3072,
+          -1024
+        ],
+        [
+          -1536,
+          -1024
+        ],
+        [
+          0,
+          -1024
+        ],
+        [
+          1536,
+          -1024
+        ],
+        [
+          3072,
+          -1024
+        ],
+        [
+          -2304,
+          -4096
+        ],
+        [
+          -768,
+          -4096
+        ],
+        [
+          768,
+          -4096
+        ],
+        [
+          2304,
+          -4096
+        ],
+        [
+          -2304,
+          -3072
+        ]
+      ],
+      "key_anchor": 0,
+      "cell_key_anchor": 14
+    },
+    {
+      "name": "west",
+      "nodes": [
+        [
+          -7168,
+          1024
+        ],
+        [
+          -6144,
+          1024
+        ],
+        [
+          -5120,
+          1024
+        ],
+        [
+          -4096,
+          1024
+        ],
+        [
+          -3072,
+          1024
+        ],
+        [
+          -7168,
+          2048
+        ],
+        [
+          -6144,
+          2048
+        ],
+        [
+          -5120,
+          2048
+        ],
+        [
+          -4096,
+          2048
+        ],
+        [
+          -3072,
+          2048
+        ],
+        [
+          -7168,
+          3072
+        ],
+        [
+          -6144,
+          3072
+        ],
+        [
+          -5120,
+          3072
+        ],
+        [
+          -4096,
+          3072
+        ],
+        [
+          -3072,
+          3072
+        ],
+        [
+          -7168,
+          4096
+        ],
+        [
+          -6144,
+          4096
+        ],
+        [
+          -5120,
+          4096
+        ],
+        [
+          -4096,
+          4096
+        ],
+        [
+          -3072,
+          4096
+        ]
+      ],
+      "edges": [
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          17,
+          18
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          12,
+          17
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          14,
+          19
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          18,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "shortcut": [
+        8,
+        9
+      ],
+      "entry": 4,
+      "exit": 4,
+      "key": 0,
+      "cell_key": 1,
+      "refuge_node": 15,
+      "refuge": [
+        -7168,
+        5120
+      ],
+      "cell_node": 2,
+      "cell": [
+        -5120,
+        256
+      ],
+      "encounter_anchors": [
+        [
+          -7168,
+          1024
+        ],
+        [
+          -6144,
+          1024
+        ],
+        [
+          -5120,
+          1024
+        ],
+        [
+          -4096,
+          1024
+        ],
+        [
+          -7168,
+          2048
+        ],
+        [
+          -6144,
+          2048
+        ],
+        [
+          -5120,
+          2048
+        ],
+        [
+          -4096,
+          2048
+        ],
+        [
+          -3072,
+          2048
+        ],
+        [
+          -7168,
+          3072
+        ],
+        [
+          -6144,
+          3072
+        ],
+        [
+          -5120,
+          3072
+        ],
+        [
+          -4096,
+          3072
+        ],
+        [
+          -3072,
+          3072
+        ],
+        [
+          -7168,
+          4096
+        ],
+        [
+          -6144,
+          4096
+        ],
+        [
+          -5120,
+          4096
+        ],
+        [
+          -4096,
+          4096
+        ],
+        [
+          -3072,
+          4096
+        ],
+        [
+          -7168,
+          1536
+        ],
+        [
+          -6144,
+          1536
+        ],
+        [
+          -5120,
+          1536
+        ],
+        [
+          -3584,
+          1024
+        ],
+        [
+          -3072,
+          1536
+        ]
+      ],
+      "key_anchor": 0,
+      "cell_key_anchor": 1
+    },
+    {
+      "name": "east",
+      "nodes": [
+        [
+          7168,
+          1024
+        ],
+        [
+          6144,
+          1024
+        ],
+        [
+          5120,
+          1024
+        ],
+        [
+          4096,
+          1024
+        ],
+        [
+          3072,
+          1024
+        ],
+        [
+          7168,
+          2048
+        ],
+        [
+          6144,
+          2048
+        ],
+        [
+          5120,
+          2048
+        ],
+        [
+          4096,
+          2048
+        ],
+        [
+          3072,
+          2048
+        ],
+        [
+          7168,
+          3072
+        ],
+        [
+          6144,
+          3072
+        ],
+        [
+          5120,
+          3072
+        ],
+        [
+          4096,
+          3072
+        ],
+        [
+          3072,
+          3072
+        ],
+        [
+          7168,
+          4096
+        ],
+        [
+          6144,
+          4096
+        ],
+        [
+          5120,
+          4096
+        ],
+        [
+          4096,
+          4096
+        ],
+        [
+          3072,
+          4096
+        ]
+      ],
+      "edges": [
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          17,
+          18
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          12,
+          17
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          14,
+          19
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          18,
+          13
+        ],
+        [
+          13,
+          14
+        ]
+      ],
+      "shortcut": [
+        8,
+        9
+      ],
+      "entry": 4,
+      "exit": 4,
+      "key": 3,
+      "cell_key": 1,
+      "refuge_node": 15,
+      "refuge": [
+        7168,
+        5120
+      ],
+      "cell_node": 2,
+      "cell": [
+        5120,
+        256
+      ],
+      "encounter_anchors": [
+        [
+          7168,
+          1024
+        ],
+        [
+          6144,
+          1024
+        ],
+        [
+          5120,
+          1024
+        ],
+        [
+          4096,
+          1024
+        ],
+        [
+          7168,
+          2048
+        ],
+        [
+          6144,
+          2048
+        ],
+        [
+          5120,
+          2048
+        ],
+        [
+          4096,
+          2048
+        ],
+        [
+          3072,
+          2048
+        ],
+        [
+          7168,
+          3072
+        ],
+        [
+          6144,
+          3072
+        ],
+        [
+          5120,
+          3072
+        ],
+        [
+          4096,
+          3072
+        ],
+        [
+          3072,
+          3072
+        ],
+        [
+          7168,
+          4096
+        ],
+        [
+          6144,
+          4096
+        ],
+        [
+          5120,
+          4096
+        ],
+        [
+          4096,
+          4096
+        ],
+        [
+          3072,
+          4096
+        ],
+        [
+          7168,
+          1536
+        ],
+        [
+          6144,
+          1536
+        ],
+        [
+          5120,
+          1536
+        ],
+        [
+          3584,
+          1024
+        ],
+        [
+          3072,
+          1536
+        ]
+      ],
+      "key_anchor": 3,
+      "cell_key_anchor": 1
+    },
+    {
+      "name": "north",
+      "nodes": [
+        [
+          -1024,
+          6144
+        ],
+        [
+          1024,
+          6144
+        ],
+        [
+          3072,
+          6144
+        ],
+        [
+          5120,
+          6144
+        ],
+        [
+          7168,
+          6144
+        ],
+        [
+          -1024,
+          7168
+        ],
+        [
+          1024,
+          7168
+        ],
+        [
+          3072,
+          7168
+        ],
+        [
+          5120,
+          7168
+        ],
+        [
+          7168,
+          7168
+        ],
+        [
+          -1024,
+          8192
+        ],
+        [
+          1024,
+          8192
+        ],
+        [
+          3072,
+          8192
+        ],
+        [
+          5120,
+          8192
+        ],
+        [
+          7168,
+          8192
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "shortcut": [
+        7,
+        8
+      ],
+      "entry": 1,
+      "exit": 10,
+      "key": 14,
+      "cell_key": 2,
+      "refuge_node": 10,
+      "refuge": [
+        -1024,
+        9216
+      ],
+      "cell_node": 9,
+      "cell": [
+        8192,
+        7168
+      ],
+      "encounter_anchors": [
+        [
+          -1024,
+          6144
+        ],
+        [
+          3072,
+          6144
+        ],
+        [
+          5120,
+          6144
+        ],
+        [
+          7168,
+          6144
+        ],
+        [
+          -1024,
+          7168
+        ],
+        [
+          1024,
+          7168
+        ],
+        [
+          3072,
+          7168
+        ],
+        [
+          5120,
+          7168
+        ],
+        [
+          7168,
+          7168
+        ],
+        [
+          -1024,
+          8192
+        ],
+        [
+          1024,
+          8192
+        ],
+        [
+          3072,
+          8192
+        ],
+        [
+          5120,
+          8192
+        ],
+        [
+          7168,
+          8192
+        ],
+        [
+          0,
+          6144
+        ],
+        [
+          2048,
+          6144
+        ],
+        [
+          4096,
+          6144
+        ],
+        [
+          6144,
+          6144
+        ],
+        [
+          2048,
+          7168
+        ],
+        [
+          0,
+          8192
+        ],
+        [
+          2048,
+          8192
+        ],
+        [
+          4096,
+          8192
+        ],
+        [
+          6144,
+          8192
+        ],
+        [
+          -1024,
+          6656
+        ]
+      ],
+      "key_anchor": 13,
+      "cell_key_anchor": 1
+    }
+  ],
   "refuge_station_offsets": [
     [
       18004,
@@ -327,6 +1340,195 @@
       0
     ]
   ],
+  "refuge_half_size": 320,
+  "cell_half_size": 320,
+  "cell_bed_offset": [
+    -96,
+    -160
+  ],
+  "prisoner_offset": [
+    96,
+    96
+  ],
+  "enemy_offset": [
+    96,
+    -96
+  ],
+  "rat_offsets": [
+    [
+      -96,
+      -128
+    ],
+    [
+      96,
+      96
+    ]
+  ],
+  "chest_offset": [
+    -128,
+    128
+  ],
   "crusher_panel_half_width": 64,
-  "crusher_panel_basis": "Retains the existing 128x128-MU authored footprint. Issue #323 stamps these panels after all upper corridors so refuge construction cannot overwrite their sector group."
+  "pit_offset": [
+    -64,
+    -32
+  ],
+  "pit_half_size": 64,
+  "rolling_rock_offset": [
+    0,
+    80
+  ],
+  "rolling_trigger_offset": [
+    0,
+    -48
+  ],
+  "falling_rock_offset": [
+    0,
+    48
+  ],
+  "falling_rock_height": 96,
+  "boss": {
+    "center": [
+      -5120,
+      8192
+    ],
+    "bounds": [
+      -6144,
+      7232,
+      -4096,
+      9152
+    ],
+    "approach": [
+      [
+        -1024,
+        8192
+      ],
+      [
+        -5120,
+        8192
+      ]
+    ],
+    "gate": [
+      -3072,
+      8192
+    ],
+    "extraction": [
+      -2048,
+      7168
+    ],
+    "extraction_bounds": [
+      -2432,
+      6784,
+      -1664,
+      7552
+    ],
+    "service_link": [
+      [
+        -2048,
+        8192
+      ],
+      [
+        -2048,
+        7168
+      ]
+    ],
+    "card": [
+      -5504,
+      8832
+    ],
+    "return_start": [
+      -2048,
+      7168
+    ],
+    "travel": {
+      "2": [
+        -2208,
+        7072,
+        0
+      ],
+      "4": [
+        -1888,
+        7072,
+        0
+      ],
+      "6": [
+        -2208,
+        7360,
+        0
+      ],
+      "14": [
+        -1888,
+        7360,
+        0
+      ]
+    },
+    "escape": [
+      -5888,
+      8832,
+      -16
+    ],
+    "drain_bounds": [
+      -6016,
+      8608,
+      -4224,
+      9024
+    ],
+    "escape_basis": "The approved northern cistern drain is inside the boss chamber; retain a directly reachable retreat target when the player service exit moves outside P4."
+  },
+  "elevator_reservation": [
+    -256,
+    -256,
+    256,
+    256
+  ],
+  "return_network": {
+    "revision": 1,
+    "floor": -160,
+    "ceiling": -32,
+    "water_depth": 16,
+    "width": 128,
+    "ring_radius": 512,
+    "elevator_tag": 44900,
+    "elevator_speed": 16,
+    "grate_tags": [
+      44910,
+      44911,
+      44912,
+      44913
+    ],
+    "grate_width": 384,
+    "grate_thickness": 32,
+    "control_origin": [
+      -16000,
+      -16000
+    ],
+    "basis": "128 MU width/headroom derives from four existing 32-MU grid cells and exceeds the accepted 74.7-MU maximum actor height. Lower ceiling -32 keeps one grid cell of solid slab under the upper floor. Water reuses the existing 16-MU harmless channel depth; no current or damage. Elevator uses the accepted MAP01 speed 16. Pits retain their 128x128 openings; no ladder or stair exit.",
+    "activation": "Four independent permanent keyless grates: south/west/east/north, opened only from outside the lift enclosure below the upper slab. Use at either face then calls the platform from either landing; Use from inside sends it to the other landing.",
+    "progression_rule": "Author approved on 2026-10-02: a closed block keeps all its trapdoor covers solid/inactive, including for enemies, until the normal keyed entrance opens. This prevents upward jumps through remotely opened pits. South is initially accessible."
+  },
+  "return_routing": {
+    "search_margin": 512,
+    "surface_panel_clearance": 64,
+    "basis": "Shortest deterministic grid path to the existing central ring, avoiding moving surface panels and gates. Native slabs isolate closed sectors; existing pit activation guards remain authoritative."
+  },
+  "conduit": {
+    "width": 64,
+    "length": 256,
+    "clearance": 112
+  },
+  "materials": {
+    "floor": "CASWRFLR",
+    "wall": "CASWRWAL",
+    "pipe": "CASWRPIP",
+    "water": "CAPOOL01",
+    "bars": "CMGT02"
+  },
+  "light": {
+    "corridor": 160,
+    "boss": 176
+  },
+  "legacy": {
+    "directory": "assets/map02_maze/legacy_5161",
+    "compatibility_switch": "-LegacyMap02Revision5"
+  }
 }

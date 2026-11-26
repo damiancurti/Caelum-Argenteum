@@ -661,6 +661,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
     virtual bool IsRetreatBoss() { return IsSewerBoss(); }
     virtual vector3 EscapePosition()
     {
+        if(CaelumMazeLayout.IsRedesigned())return CaelumMazeLayout6.BossEscapePosition();
         return CaelumSewerTravel.GatePosition(CaelumWorldCatalogue.CONNECTION_TO_RESERVOIR);
     }
     virtual bool ReachedEscape()
@@ -671,6 +672,12 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
     virtual double EscapeReach()
     {
         return Radius + GetDefaultByType("CaelumSewerTravelGate").Radius + Speed;
+    }
+
+    virtual void EscapeStep()
+    {
+        // Navegacion nativa aceptada para el jefe de alcantarillas y saves previos.
+        ThermalChase(null,null,CHF_DONTLOOKALLAROUND);
     }
 
     override void Die(Actor source, Actor inflictor, int dmgflags, Name meansOfDeath)
@@ -733,7 +740,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         boss.target = boss.SewerEscapeTarget;
         boss.Speed = boss.CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER * CaelumSupportMagic.Factor(boss);
         // Navegación nativa sin ataques; misma cadencia que la carrera normal.
-        boss.ThermalChase(null, null, CHF_DONTLOOKALLAROUND);
+        boss.EscapeStep();
     }
 
     override void OnDestroy()

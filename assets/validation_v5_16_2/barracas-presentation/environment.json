@@ -1,0 +1,30 @@
+﻿{
+    "recorded_utc":  "2026-11-13T09:38:31.3797507Z",
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "BuildNumber":  "26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "cpu":  {
+                "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                "NumberOfCores":  16,
+                "NumberOfLogicalProcessors":  32
+            },
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0",
+                    "CurrentHorizontalResolution":  null,
+                    "CurrentVerticalResolution":  null,
+                    "CurrentRefreshRate":  null
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.16.1088",
+                    "CurrentHorizontalResolution":  1920,
+                    "CurrentVerticalResolution":  1080,
+                    "CurrentRefreshRate":  60
+                }
+            ]
+}

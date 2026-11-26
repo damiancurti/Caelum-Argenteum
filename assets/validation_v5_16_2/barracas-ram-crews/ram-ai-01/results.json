@@ -1,0 +1,49 @@
+{
+  "issue": 454,
+  "scope": "Two isolated rams with38 real Mandingas following production crew AI at normal cadence; no teleports or accelerated movement. Not the full three-front siege, crowd/performance or author acceptance.",
+  "live_crews": true,
+  "crew_clearance": false,
+  "runtime_sha256": "585232378a3b01235b14b3b86c0347f448efa8a63276eb568061cfdf52d3f133",
+  "candidate_sha256": "1d2bb60078bbf390fed026f1985b14c54bcd2622f0e996d08c1254538f4b3d2b",
+  "fixture_sha256": "89157ef3a9d59930640a57ef46b8938107ea57149096ada4eb1d85d34fc1e51d",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": false,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 RAM AI START crews=6,32 failures=0",
+        "CA454 RAM AI PROGRESS test=0 elapsed=0 route=0 angle=450.00 crew=1 max_distance=112.00 blocked=0",
+        "CA454 RAM AI PROGRESS test=1 elapsed=0 route=0 angle=360.00 crew=1 max_distance=345.62 blocked=0",
+        "CA454 RAM AI PROGRESS test=0 elapsed=350 route=0 angle=522.24 crew=1 max_distance=112.04 blocked=0",
+        "CA454 RAM AI PROGRESS test=1 elapsed=350 route=0 angle=383.56 crew=1 max_distance=246.36 blocked=1",
+        "CA454 RAM AI PROGRESS test=0 elapsed=700 route=0 angle=540.00 crew=1 max_distance=174.44 blocked=1",
+        "CA454 RAM AI PROGRESS test=1 elapsed=700 route=0 angle=396.41 crew=1 max_distance=280.84 blocked=1",
+        "CA454 RAM AI PROGRESS test=0 elapsed=1050 route=0 angle=540.00 crew=1 max_distance=255.09 blocked=0",
+        "CA454 RAM AI PROGRESS test=1 elapsed=1050 route=0 angle=425.73 crew=1 max_distance=269.37 blocked=1",
+        "CA454 RAM AI PROGRESS test=0 elapsed=1400 route=1 angle=454.52 crew=1 max_distance=196.96 blocked=0",
+        "CA454 RAM AI PROGRESS test=1 elapsed=1400 route=0 angle=448.96 crew=1 max_distance=315.20 blocked=0",
+        "CA454 RAM AI PROGRESS test=0 elapsed=1750 route=1 angle=450.00 crew=0 max_distance=546.50 blocked=0",
+        "CA454 RAM AI PROGRESS test=1 elapsed=1750 route=0 angle=450.00 crew=0 max_distance=538.33 blocked=0",
+        "CA454 RAM AI PROGRESS test=0 elapsed=2100 route=1 angle=450.00 crew=0 max_distance=881.62 blocked=0",
+        "CA454 RAM AI PROGRESS test=1 elapsed=2100 route=0 angle=450.00 crew=1 max_distance=518.12 blocked=0",
+        "CA454 RAM AI PROGRESS test=0 elapsed=2450 route=1 angle=450.00 crew=0 max_distance=1213.51 blocked=0",
+        "CA454 RAM AI PROGRESS test=1 elapsed=2450 route=1 angle=444.40 crew=0 max_distance=530.15 blocked=0",
+        "CA454 RAM AI PROGRESS test=0 elapsed=2800 route=1 angle=450.00 crew=0 max_distance=1549.43 blocked=0",
+        "CA454 RAM AI PROGRESS test=1 elapsed=2800 route=1 angle=444.40 crew=0 max_distance=591.22 blocked=0",
+        "CA454 RAM AI PROGRESS test=0 elapsed=3150 route=1 angle=450.00 crew=0 max_distance=1881.63 blocked=0",
+        "CA454 RAM AI PROGRESS test=1 elapsed=3150 route=1 angle=443.41 crew=1 max_distance=522.35 blocked=0",
+        "CA454 RAM AI PROGRESS test=0 elapsed=3500 route=1 angle=450.00 crew=0 max_distance=2217.70 blocked=0",
+        "CA454 RAM AI PROGRESS test=1 elapsed=3500 route=1 angle=403.54 crew=1 max_distance=486.18 blocked=0",
+        "CA454 RAM AI PROGRESS test=0 elapsed=3850 route=1 angle=450.00 crew=0 max_distance=2549.99 blocked=0",
+        "CA454 RAM AI PROGRESS test=1 elapsed=3850 route=1 angle=382.13 crew=1 max_distance=512.68 blocked=0",
+        "CA454 RAM AI PROGRESS test=0 elapsed=4200 route=1 angle=450.00 crew=0 max_distance=2886.11 blocked=0",
+        "CA454 RAM AI CASE FAIL test=0 elapsed=4200 impacts=0 damage=0 crew=0 max_distance=2886.11",
+        "CA454 RAM AI PROGRESS test=1 elapsed=4200 route=1 angle=360.00 crew=0 max_distance=528.25 blocked=0",
+        "CA454 RAM AI CASE FAIL test=1 elapsed=4200 impacts=0 damage=0 crew=0 max_distance=528.25",
+        "CA454 RAM AI COMPLETE passed=0 failures=2"
+      ]
+    }
+  ]
+}

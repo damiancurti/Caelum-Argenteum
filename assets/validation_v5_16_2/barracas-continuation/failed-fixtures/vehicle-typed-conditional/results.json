@@ -1,0 +1,25 @@
+{
+  "issue": 454,
+  "scope": "Native +use input at four parked vehicles and their reachable physical boarding parts; validates source-specific transport sessions. Fixture places user. No ticket purchase, actual journey, siege, multiplayer or author acceptance.",
+  "runtime_sha256": "6efffa2932be0333debccfa727ae471826a84e3916f077fd0fb47802273a6d73",
+  "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "fixture_sha256": "7627a0ad48aa1b07ddd184a1d7979cbe1f74474526e50c888a5cc3fb3ef59601",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": false,
+      "exit_code": 1,
+      "timeout": false,
+      "checks": [
+        "Script error, \"house-use.pk3:zscript\" line 47:",
+        "Script error, \"house-use.pk3:zscript\" line 47:",
+        "Script error, \"house-use.pk3:zscript\" line 48:",
+        "Script error, \"house-use.pk3:zscript\" line 48:",
+        "Script error, \"house-use.pk3:zscript\" line 49:",
+        "Script error, \"house-use.pk3:zscript\" line 49:",
+        "Script error, \"house-use.pk3:zscript\" line 50:",
+        "Script error, \"house-use.pk3:zscript\" line 50:"
+      ]
+    }
+  ]
+}

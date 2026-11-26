@@ -1,0 +1,45 @@
+{
+  "issue": 454,
+  "scope": "Create old-city saves and test exact-geometry continuation with current code.\n\nNative changemap exercises stored hub persistence; it does not represent ordinary\ndoor use, existing author saves, siege performance or author acceptance.",
+  "baseline_sha256": "2b98fa4a15e931a83786831aaaa0dab67d8ffb5ed7030cb90c7946bf709afc95",
+  "runtime_sha256": "33b0f43e2611442f8d1ea614ad2c4c5af4eb8e2c3697e24c5b99715641324680",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "fixture_sha256": "a3c43eede99136ec08c19feaa0db7504fd7f4fb4632313fe2b91046365f3a244",
+  "runs": [
+    {
+      "phase": "old_seed",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "checks": [
+        "CA454 LEGACY CITY checksum=03f80198bfae8ba82cc435775001ba91 justice=767 gates=8",
+        "CA454 LEGACY PASS map=MAP03 stamp=3",
+        "CA454 LEGACY PASS map=CAH069 stamp=69"
+      ]
+    },
+    {
+      "phase": "active_continue",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "checks": [
+        "CA454 LEGACY CITY checksum=03f80198bfae8ba82cc435775001ba91 justice=767 gates=8",
+        "CA454 LEGACY PASS map=MAP03 stamp=3",
+        "CA454 LEGACY PASS map=CAH069 stamp=69",
+        "CA454 LEGACY CITY checksum=03f80198bfae8ba82cc435775001ba91 justice=767 gates=8",
+        "CA454 LEGACY PASS map=MAP03 stamp=3"
+      ]
+    },
+    {
+      "phase": "hub_continue",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "checks": [
+        "CA454 LEGACY PASS map=CAH069 stamp=69",
+        "CA454 LEGACY CITY checksum=03f80198bfae8ba82cc435775001ba91 justice=767 gates=8",
+        "CA454 LEGACY PASS map=MAP03 stamp=3"
+      ]
+    }
+  ]
+}

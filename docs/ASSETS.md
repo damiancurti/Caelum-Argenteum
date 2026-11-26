@@ -1,6 +1,134 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.16.1** - 2026-11-12.
+Documentation version: **5.16.2** - 2026-11-12.
+
+## 5.16.2 - Approved map references and preserved sewer sources (#454)
+
+The perception follow-up changes only CaelumVisualPerception.zs in the packaged
+runtime; all geometry, models and other packaged entries match the preceding
+integrated build. barracas-perception retains owned diagnostic overlays, raw
+native logs, Vulkan queue-present traces and the isolated visibility fixtures.
+Development packages, saves, engine binaries and the private IWAD stay local.
+
+The existing Knight source reuses the quay's authored quarter-turn/translation:
+CaelumArcanaPlacement resolves the original(0,640,14) to(-896,15488,14) only in
+revision4 Barracas. It introduces no card art, new reward or new coordinate
+authority. The original location remains the legacy source and migration input.
+Native placement/capture evidence: barracas-arcana/SUMMARY.json.
+
+The reviewed city is installed by `generate_barracas_map.py --output <build/path>`
+followed by `install_barracas_map.py --compiled <build/path>`. The latter retains
+the owned pre-Justice geometry in barracas_redesign/BASE_MAP03.wad, packages the
+tested facade class/model/bindings, and delegates arena assembly to the existing
+Justice generator. INSTALLATION.json records canonical-LF text-input hashes and
+exact installed-asset hashes, preserving the tested model bytes across checkout.
+Project
+validation checks them and the three binding includes read-only. LAYOUT.json
+owns activation. Installation also regenerates cartography and tactical-entry
+catalogues, retaining identities and exact legacy geometry recognition. Repeated
+full compilation and installation preserve identical
+map/facade bytes; the final map matches the previously native-tested candidate.
+All160 CAH maps retain their bytes. The source WAD and generated facade OBJ are
+owned resources; engine binaries, IWADs, runtime packages and saves stay local.
+Native installed/legacy checks are in barracas-integration/SUMMARY.json; separate
+presentation traces retain severe siege stalls and do not imply author acceptance.
+
+`generate_barracas_justice.py --candidate <preview.pk3> --output <build/path>
+--register` appends the existing ARENA.json room without changing the input
+TEXTMAP prefix or any production map. Optional registration writes candidate
+geometry into the single assets/tarot_justice/MAPS.json manifest and regenerates
+its runtime index. Two outputs repeat byte-identically. The candidate room is
+sector391, centre(2560,20672,0), checksum f552012c9d4d7a2ba59d0809894ad272;
+original MAP03 retains its checksum-qualified sector767. Source, native and
+compatibility evidence: barracas-justice/SUMMARY.json.
+
+MARCH.json derives six infantry approaches and12 southern gun-crew starts from
+FRONTS/SOUTH/CITY and the retained operator offsets. RETREAT.json derives three
+64-MU ground flow fields from assembled geometry to the southern exits:257109
+connected cells per field;22 other ground cells require separate interpretation.
+These fields are not a claim of complete multilayer connectivity. Elevated
+withdrawal reverses the existing36 artillery routes. Both generators are
+deterministic; generated string-return switches are split into64-row functions
+to fit GZDoom registers. Navigation evidence is in barracas-navigation/SUMMARY.json.
+Revision4 adds three-digit hexadecimal ground distances with an explicit
+unreachable sentinel, retaining the original row-first direction fields. The
+native helper decodes and caches costs by current/target cell. An independent
+audit checks771327 reachable costs and257106 nearest-exit basin edges; native
+save inspection also checks identity, original assault lane, selected exit and
+decoded caches. Generated source/generator LF attributes keep byte checks stable.
+See barracas-withdrawal/SUMMARY.json; no map/art asset changes accompany this fix.
+
+FRONTS.json and CaelumBarracasFrontData derive six machine slots/three fronts
+from the approved layout and original SOUTH/CITY/LAYOUT distances. The generator
+records source hashes, gate materials, initial/reserve positions and complete
+side approaches. No external art, machine profile or combat value is introduced.
+Native deployment and physical-route evidence: barracas-fronts/SUMMARY.json.
+
+The reference branch's ancestry and original PDF/PNGs are preserved under
+assets/references/issue_454_maps_20261112. MAP01 owns their implementation
+interpretation. Revision 6 reuses existing owned sewer/stone/water/bar textures;
+it adds no third-party art or new creature models. LAYOUT.json is the editable
+geometry source; BASE_MAP02.wad is its generated pre-Justice output. The normal
+map generator reapplies the existing Justice arena from that explicit current
+source without changing the immutable historical Justice archive.
+
+assets/map02_maze/legacy_5161 preserves the exact previous WAD, layout, manifest,
+helper and generator with source hashes. These are rollback evidence, not current
+generation inputs except for the retained content identities and compatibility
+helper. Do not regenerate or normalize those archived bytes.
+
+assets/validation_v5_16_2 contains the reproducible isolated probes, static
+audits, original/new chamber captures, full native logs and Vulkan presentation
+traces. RESULTS.json separates agent evidence from CA454-MAP02-01 acceptance;
+no engine, IWAD, disposable fixture package or save is distributed.
+
+The intermediate Barracas source uses the same reference board and owned city
+materials. generate_barracas_preview.py writes only an isolated build/ map/package;
+generate_barracas_facades.py creates real geometric window frames, closed shutters
+and cornices using existing CVCI01/CVCI05 textures. No raster is edited and no
+bestiary model completion is implied. Preview evidence is under
+validation_v5_16_2/barracas-preview. legacy_5162 preserves original MAP03 bytes and
+a deterministic ZIP of relevant data/generator/helper sources before redesign.
+RUNTIME.json/CaelumBarracasData are deterministic exterior-coordinate outputs of
+generate_barracas_data.py. Private CAH coordinates retain their original source.
+The city compatibility mode packages legacy_5162/MAP03.wad after verifying its
+provenance checksum. barracas-legacy/ holds native continuation logs; all 160 CAH
+map bytes match baseline. Loaded-map checksum selects the original Justice arena.
+The isolated native service/rotated-leaf fixture and results live under
+validation_v5_16_2/run_barracas_services.py and barracas-services/. Its subsequent
+barracas-gates/ evidence adds full-perimeter closure and physical native gate
+checks, preserving failed fixtures and final closed/open views. Existing gate
+materials and dimensions are reused; no new raster, mass or resistance is added.
+generate_barracas_map.py assembles a candidate only under build/, using the
+reviewed shell, original transformed quay, existing workshops and low residential
+sky policy. barracas-candidate/ preserves its native service/private-house proof
+and qualified fixtures; no preview package or save is distributed.
+generate_barracas_siege.py derives SIEGE.json from the approved layout and
+retained city/siege profiles; it supplies 36 posts, existing tower geometry,
+access flights and 528 guard positions. The candidate generator reuses owned
+stone materials. Native geometry/crew evidence and failed iterations are in
+validation_v5_16_2/barracas-forts; this does not activate the production siege.
+generate_barracas_routes.py reuses the same in-memory candidate geometry to emit
+DEPLOYMENT.json/CaelumBarracasDeployment: 600 routes and 9453 waypoints, with stable
+resident identities and original private coordinates. Generated siege/route
+helpers dispatch by loaded geometry. Native continuous traversal evidence is in
+validation_v5_16_2/barracas-deployment; no fixture PK3 or save is distributed.
+The candidate also opens exterior gate forecourts and fills missing ground for
+the approved side fronts using existing walkway/artillery dimensions. Inner
+gate throats/blockers retain their original dimensions. Physical ram-turn/contact
+and gate evidence lives in validation_v5_16_2/barracas-rams; no new art is claimed.
+generate_barracas_ram_crews.py derives RAM_CREWS.json and the shared runtime
+post table from retained machine constants and accepted body bounds. It changes
+positions, not combat profiles, counts or models. Native physical/live-crew
+evidence and failed iterations are in validation_v5_16_2/barracas-ram-crews.
+Qualified long-route, commander, capture, full-controller refill and shop evidence
+now lives in validation_v5_16_2/barracas-continuation; house Used/rendered-ACK
+round trips are in barracas-house-use. Native saves and PK3s remain local. The
+read-only deployment-save auditor records600 retained identities and completion
+flags without copying a binary save into the repository. Its early-checkpoint
+replay now passes, alongside native Use at96 factory stations and four vehicles;
+the access fixtures reuse the existing factory catalogue and live boarding parts.
+No new art or production map bytes belong to this slice.
 
 ## 5.16.1 - Recovered folklore reference catalogue (#453, catalogue approved)
 

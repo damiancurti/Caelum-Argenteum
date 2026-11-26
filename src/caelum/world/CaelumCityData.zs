@@ -21,7 +21,7 @@ class CaelumCityData : Object play
     const SHOP_COUNT = 64;
     static bool Enabled(){let p=CaelumPortSiege.Get();return p!=null && p.args[0]>=LAYOUT_REVISION;}
     const CREW_COUNT = 72;
-    static vector2 FormationInward(int guard){switch(guard){
+    static vector2 FormationInward(int guard){if(CaelumBarracasData.IsCurrent())return CaelumBarracasSiegeData.FormationInward(guard);switch(guard){
         case 0:return (0,1);
         case 1:return (0,1);
         case 2:return (0,1);
@@ -551,7 +551,7 @@ class CaelumCityData : Object play
         case 526:return (-1,0);
         case 527:return (-1,0);
         }return (0,0);}
-    static vector3 GuardStation(int i){switch(i){
+    static vector3 GuardStation(int i){if(CaelumBarracasData.IsCurrent())return CaelumBarracasSiegeData.GuardPosition(i);switch(i){
         case 140:return (-29456,-12840,0);
         case 141:return (-29496,-12840,0);
         case 142:return (-29536,-12840,0);
@@ -902,22 +902,22 @@ class CaelumCityData : Object play
         case 1:return HouseOrigin(house)+(192,864,0);
         }return HouseOrigin(house);}
     static vector3 InteriorDoorLeafPosition(int house,int door,int side){return InteriorDoorCenter(house,door)+(InteriorDoorAxis(door)==0?side*32:0,InteriorDoorAxis(door)==1?side*32:0,0);}
-    static int HouseAt(vector3 point){for(int i=0;i<HOUSE_COUNT;i++){vector3 p=point-HouseOrigin(i);
+    static int HouseAt(vector3 point){if(CaelumBarracasData.IsCurrent())return CaelumBarracasData.HouseAt(point);for(int i=0;i<HOUSE_COUNT;i++){vector3 p=point-HouseOrigin(i);
         if(p.X>=0 && p.Y>=0 && p.X<960 && p.Y<1216 && Abs(p.Z)<=16)return i;
         }return -1;}
     static vector3 TablePosition(int i){return HouseOrigin(i)+(672,832,0);}
     static vector3 ChestPosition(int i){return HouseOrigin(i)+(864,832,0);}
     static vector3 BedPosition(int i){return HouseOrigin(i)+(256,640,0);}
     static vector3 DoorInside(int i){return HouseOrigin(i)+(800,384,0);}
-    static vector3 DoorOutside(int i){return HouseOrigin(i)+(1056,384,0);}
-    static vector3 HouseRoad(int i){if(i==159)return HouseOrigin(i)+(1408,384,0);return HouseOrigin(i)+(1280,384,0);}
+    static vector3 DoorOutside(int i){if(CaelumBarracasData.IsCurrent())return CaelumBarracasData.DoorOutside(i);return HouseOrigin(i)+(1056,384,0);}
+    static vector3 HouseRoad(int i){if(CaelumBarracasData.IsCurrent())return CaelumBarracasData.HouseRoad(i);if(i==159)return HouseOrigin(i)+(1408,384,0);return HouseOrigin(i)+(1280,384,0);}
     static vector3 HomePosition(int soldier){int house=soldier%HOUSE_COUNT; switch(soldier/HOUSE_COUNT){
         case 0:return HouseOrigin(house)+(528,160,0);
         case 1:return HouseOrigin(house)+(656,160,0);
         case 2:return HouseOrigin(house)+(784,160,0);
         case 3:return HouseOrigin(house)+(528,288,0);
         }return HouseOrigin(house);}
-    static vector3 ShopPosition(int i){switch(i){
+    static vector3 ShopPosition(int i){if(CaelumBarracasData.IsCurrent())return CaelumBarracasData.ShopPosition(i);switch(i){
         case 0:return (-16768,-12224,0);
         case 1:return (-15232,-12224,0);
         case 2:return (-13696,-12224,0);

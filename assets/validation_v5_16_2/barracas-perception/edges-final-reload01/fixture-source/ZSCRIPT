@@ -1,0 +1,67 @@
+version "4.14.2"
+class CA454VisionProbe : CaelumCombatActor
+{
+    Default { Health 100; Radius 16; Height 56; +SHOOTABLE +ISMONSTER +NOGRAVITY }
+    override void Tick() {}
+    States { Spawn: TNT1 A -1; Stop; }
+}
+class CA454VisionEdges : EventHandler
+{
+    CA454VisionProbe Observer,Subject;
+    int Checks,Failures;
+    bool Known(Actor subject)
+    {
+        return CaelumVisualPerception.CanSee(Observer,subject,Observer.Distance3D(subject));
+    }
+    void Check(bool expected,String label)
+    {
+        bool ordinary=CaelumVisualPerception.CanSee(Observer,Subject);
+        bool known=Known(Subject);Checks++;
+        bool okay=ordinary==expected && known==expected;
+        if(!okay)Failures++;
+        Console.Printf("CA454 EDGE %s %s",okay?"PASS":"FAIL",label);
+    }
+    void Suite(bool restored)
+    {
+        if(restored)
+        {
+            bool okay=Observer!=null && Subject!=null && Observer.health==100 && Subject.health==100
+                && Subject.Pos==(256,0,0) && Observer.CombatEffectiveInsight==0 && Subject.CombatAgility==0;
+            Checks++;if(!okay)Failures++;
+            Console.Printf("CA454 EDGE %s saved probes retained",okay?"PASS":"FAIL");
+            if(!okay)return;
+        }
+        else
+        {
+            let user=CaelumPlayer(players[0].mo);user.player.cheats|=CF_GODMODE;user.SetOrigin((-1700,-1700,0),false);
+            Observer=CA454VisionProbe(Actor.Spawn('CA454VisionProbe',(0,0,0),NO_REPLACE));
+            Subject=CA454VisionProbe(Actor.Spawn('CA454VisionProbe',(256,0,0),NO_REPLACE));
+        }
+        Observer.CombatEffectiveInsight=0;Subject.CombatAgility=0;Observer.Angle=0;
+        Observer.CurSector.SetLightLevel(255);
+        Check(true,"front visible");Observer.Angle=180;Check(false,"behind");
+        Observer.Angle=90;Check(true,"inclusive field edge");Observer.Angle=0;
+        Subject.SetOrigin((1024,0,0),false);Check(true,"inclusive range edge");
+        Subject.SetOrigin((1024.001,0,0),false);Check(false,"outside range edge");
+        Observer.CombatEffectiveInsight=100;Check(true,"insight changes immediately");
+        Observer.CombatEffectiveInsight=0;Subject.SetOrigin((256,0,0),false);
+        Observer.CurSector.SetLightLevel(0);Check(false,"darkness changes immediately");Observer.CurSector.SetLightLevel(255);
+        Subject.SetOrigin((700,0,0),false);Subject.Height=28;Check(false,"height changes immediately");Subject.Height=56;
+        Subject.SetOrigin((256,0,0),false);Subject.CombatAgility=100;Check(false,"full stealth");
+        Subject.SetOrigin((32,0,0),false);Observer.Angle=180;Check(true,"contact behind despite stealth");
+        Subject.CombatAgility=0;Observer.Angle=0;Observer.SetOrigin((384,768,0),false);Subject.SetOrigin((704,768,0),false);
+        Check(false,"solid pillar");Observer.SetOrigin((0,0,0),false);Subject.SetOrigin((256,0,0),false);
+        Observer.bDormant=true;Check(false,"dormant");Observer.bDormant=false;
+        Observer.ForcedSleepTics=1;Check(false,"sleeping");Observer.ForcedSleepTics=0;
+        Observer.CombatLucidityPhysicalStunRemaining=1;Check(false,"stunned");Observer.CombatLucidityPhysicalStunRemaining=0;
+        Observer.health=0;Check(false,"dead observer");Observer.health=100;
+        Subject.health=0;Check(false,"dead subject");Subject.health=100;
+        Check(true,"conditions restored");
+        Console.Printf("CA454 EDGE_RESULT checks=%d failures=%d result=%s",Checks,Failures,Failures==0?"PASS":"FAIL");
+    }
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name=="ca454seed")Suite(false);
+        if(e.Name=="ca454reload")Suite(true);
+    }
+}

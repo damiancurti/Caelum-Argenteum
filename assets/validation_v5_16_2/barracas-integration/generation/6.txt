@@ -1,0 +1,2 @@
+MAP03: 25 sectors, 4366 lines, 7 things
+{"usable_cells": 257131, "bounds": [-31488, -22784, 2112, 20224], "fronts": [{"front": "south", "gate_index": 3, "goal_cell": [-4352, -22528], "reachable_cells": 257109, "unreachable_cells": 22, "maximum_grid_steps": 1017}, {"front": "east", "gate_index": 2, "goal_cell": [1536, -22528], "reachable_cells": 257109, "unreachable_cells": 22, "maximum_grid_steps": 1109}, {"front": "west", "gate_index": 1, "goal_cell": [-30976, -22528], "reachable_cells": 257109, "unreachable_cells": 22, "maximum_grid_steps": 1124}]}

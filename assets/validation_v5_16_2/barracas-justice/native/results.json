@@ -1,0 +1,46 @@
+{
+  "issue": 454,
+  "scope": "Check the appended Barracas Justice arena, active save and native return.",
+  "runtime_sha256": "a84dc05d9d3bd636ff0d58063b17923c020a2e70948fb904cbc43a4067c78d4f",
+  "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "fixture_sha256": "7ed13495696c024d90736105a645dfa01ff64a7e6f12eaee5f4b3005cfdb09f3",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 JUSTICE GEOMETRY checksum=f552012c9d4d7a2ba59d0809894ad272 sector=391",
+        "CA454 JUSTICE PASS registered candidate arena",
+        "CA454 JUSTICE PASS preserved arena envelope",
+        "CA454 JUSTICE PASS clear original positions",
+        "CA454 JUSTICE PASS native duel starts",
+        "CA454 JUSTICE PASS exact pair links",
+        "CA454 JUSTICE PASS both bodies fit appended room",
+        "CA454 JUSTICE CAPTURE passed=6 failures=0",
+        "CA454 JUSTICE PASS expiry clears pair links",
+        "CA454 JUSTICE PASS both survivors return to exact origins",
+        "CA454 JUSTICE PASS no death or replacement",
+        "CA454 JUSTICE COMPLETE passed=9 failures=0"
+      ]
+    },
+    {
+      "phase": "reload",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 JUSTICE PASS saved pair exists",
+        "CA454 JUSTICE PASS saved pair references",
+        "CA454 JUSTICE PASS timer continues without restart",
+        "CA454 JUSTICE PASS saved arena placement",
+        "CA454 JUSTICE RESUME failures=0",
+        "CA454 JUSTICE PASS expiry clears pair links",
+        "CA454 JUSTICE PASS both survivors return to exact origins",
+        "CA454 JUSTICE PASS no death or replacement",
+        "CA454 JUSTICE COMPLETE passed=13 failures=0"
+      ]
+    }
+  ]
+}

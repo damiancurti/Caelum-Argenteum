@@ -2,8 +2,8 @@
 """Audit MAP02 counts, keyed topology and conservative collision clearance.
 
 This is static evidence, not a replacement for native movement or combat tests.
-The search uses generated 32-MU cells and collision-size clearance, rather than
-the generator's logical maze graph, so accidental room/corridor bypasses count.
+Revision 6 delegates to its current collision audit. Earlier revisions retain
+the historical 32-MU search and its documented flooded-network limitations.
 """
 from collections import Counter, deque
 from pathlib import Path
@@ -36,6 +36,9 @@ def read_map(path):
 
 def main():
     current = json.loads((SOURCE / "MAP02_MANIFEST.json").read_text(encoding="utf-8"))
+    if current['layout_revision'] >= 6:
+        from validate_map02_redesign import main as current_audit
+        return current_audit()
     legacy = json.loads((SOURCE / "legacy_4364/MAP02_MANIFEST.json").read_text(encoding="utf-8"))
     data = json.loads((SOURCE / "LAYOUT.json").read_text(encoding="utf-8"))
     actual = read_map(ROOT / "src/maps/MAP02.wad")

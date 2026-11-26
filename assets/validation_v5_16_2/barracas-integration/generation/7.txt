@@ -1,0 +1,3 @@
+MAP03: 25 sectors, 4366 lines, 7 things
+MAP03: 391 sectors, 38460 lines, 651 things
+{"route_targets": 424, "unreachable": [], "unguarded_cells": 0}

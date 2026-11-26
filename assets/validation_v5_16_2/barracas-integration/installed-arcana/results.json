@@ -1,0 +1,51 @@
+{
+  "issue": 454,
+  "scope": "Check quay essence placement, native Use/capture and saved-source migration.\n\nFixture victory and Box ownership isolate the map endpoint. The battle, menu\nresponse selection, cooperative capture and author acceptance are not tested.",
+  "runtime_sha256": "8671e633e41059d2875e4b5f6f2c392732185b0c060117899f865d51e2265e28",
+  "baseline_sha256": null,
+  "candidate_sha256": null,
+  "fixture_sha256": "9de613afd7020f18e0e6233f466ba658c43429ae459af8f8c18416a2a9170447",
+  "runs": [
+    {
+      "phase": "candidate",
+      "passed": true,
+      "exit_code": 0,
+      "errors": [],
+      "checks": [
+        "CA454 ARCANA PASS physical deck in owned Box",
+        "CA454 ARCANA PASS no initial Knight",
+        "CA454 ARCANA PASS native source appeared",
+        "CA454 ARCANA PASS same source identity",
+        "CA454 ARCANA PASS source at current quay",
+        "CA454 ARCANA PASS victory offers capture without granting it",
+        "CA454 ARCANA PASS native standing space and reach",
+        "CA454 ARCANA PASS native Use opens source",
+        "CA454 ARCANA PASS capture response accepted",
+        "CA454 ARCANA PASS interrupted capture leaves same essence available",
+        "CA454 ARCANA PASS same source identity",
+        "CA454 ARCANA PASS source at current quay",
+        "CA454 ARCANA PASS victory offers capture without granting it",
+        "CA454 ARCANA PASS native standing space and reach",
+        "CA454 ARCANA PASS native Use opens source",
+        "CA454 ARCANA PASS capture response accepted",
+        "CA454 ARCANA PASS exactly one acquired essence",
+        "CA454 ARCANA PASS repeat capture rejected",
+        "CA454 ARCANA PASS source placement stable after completion",
+        "CA454 ARCANA COMPLETE failures=0"
+      ]
+    },
+    {
+      "phase": "candidate-reload",
+      "passed": true,
+      "exit_code": 0,
+      "errors": [],
+      "checks": [
+        "CA454 ARCANA PASS exactly one acquired essence",
+        "CA454 ARCANA PASS repeat capture rejected",
+        "CA454 ARCANA PASS source placement stable after completion",
+        "CA454 ARCANA COMPLETE failures=0"
+      ],
+      "seed_sha256": "caabb3c418960b7717a51a8f2f84958e6f0ce647c448e3f8ebad5f2bad715421"
+    }
+  ]
+}

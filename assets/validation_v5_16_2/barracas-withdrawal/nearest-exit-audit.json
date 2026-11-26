@@ -1,0 +1,9 @@
+{
+  "issue": 454,
+  "schema_revision": 4,
+  "original_directions_restored": true,
+  "cells": 771327,
+  "errors": [],
+  "nearest_exit_edges_checked": 257106,
+  "passed": true
+}

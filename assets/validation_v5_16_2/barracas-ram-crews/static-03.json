@@ -1,0 +1,10 @@
+{
+  "scope": "Static cell-centre routes from Plaza Alsina; opaque house shells end at external portal approaches. Not native collision/AI or siege evidence.",
+  "targets": 424,
+  "failures": [],
+  "closed_gate_cell_audit": {
+    "scope": "Block one grid row across each of the four gate centres; native 96-MU blocker collision still requires an engine test.",
+    "escaped_cells": 0,
+    "escape_trace": []
+  }
+}

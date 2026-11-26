@@ -1,0 +1,15 @@
+{
+  "issue": 454,
+  "scope": "Test all36 artillery access paths and528 guard posts in the native engine.\n\nThe isolated walking body retains defender dimensions/step height. It ignores\nother test walkers, not geometry. No live deployment or combat acceptance.",
+  "views_only": true,
+  "runtime_sha256": "e0afb3b55f6611d42d09cc475c88821fb8938ccf0fa0795b11f575015f1a4629",
+  "candidate_sha256": "c0e52e25200f6b288d8dcb2b1a52d523d66f79d25a743186040de846243fb5a9",
+  "siege_sha256": "acbc8a8d2d2d12393f31694b15ce80e3b2e8491cbdf999f7e3f76c46986d0479",
+  "fixture_sha256": "386d8272bf2aeea980023d5b35a2a4c317a12d143d0c432a5941184e703ce60a",
+  "passed": true,
+  "exit_code": 0,
+  "timeout": false,
+  "checks": [
+    "CA454 FORT FIT points=698 guards=528 operators=72 components=648 failures=0"
+  ]
+}

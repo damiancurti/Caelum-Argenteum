@@ -1,0 +1,70 @@
+{
+  "issue": 454,
+  "sources": [
+    {
+      "run": "barracas-arcana06",
+      "phase": "original",
+      "save_sha256": "e518596df942ae4084e6d622906862706f8b3c417ed0ae967aa5c06a6a1e71a4",
+      "source_count": 1,
+      "position": [
+        0.0,
+        640.0,
+        14.0
+      ],
+      "placement_revision": 0,
+      "capture_tics": 2
+    },
+    {
+      "run": "barracas-arcana06",
+      "phase": "candidate",
+      "save_sha256": "7f6b568ffd7e78f4897ad98e5763c9ae6cb0c0ebad2b69920b552b9fa4380ea7",
+      "source_count": 1,
+      "position": [
+        -896.0,
+        15488.0,
+        14.0
+      ],
+      "placement_revision": 1,
+      "capture_tics": 2
+    },
+    {
+      "run": "barracas-arcana06",
+      "phase": "old-source",
+      "save_sha256": "d79700dd304a75fc876e115b8467b94b8eccc1e6f8fac3c06e60abc5428e708a",
+      "source_count": 1,
+      "position": [
+        0.0,
+        640.0,
+        14.0
+      ],
+      "placement_revision": 0,
+      "capture_tics": 0
+    },
+    {
+      "run": "barracas-arcana06",
+      "phase": "migrated-source",
+      "save_sha256": "519fa97f2cdd5bed689c82b63e3f9f26e0719a3eeccdd6b47c301458b8823172",
+      "source_count": 1,
+      "position": [
+        -896.0,
+        15488.0,
+        14.0
+      ],
+      "placement_revision": 1,
+      "capture_tics": 2
+    },
+    {
+      "run": "barracas-arcana07",
+      "phase": "old-capture",
+      "save_sha256": "c36892e9f8935278efd7b81b7280658987cbe208e3c4d891bf4b3dd0077cb482",
+      "source_count": 1,
+      "position": [
+        0.0,
+        640.0,
+        14.0
+      ],
+      "placement_revision": 0,
+      "capture_tics": 2
+    }
+  ]
+}

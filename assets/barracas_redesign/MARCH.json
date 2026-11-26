@@ -1,0 +1,345 @@
+{
+  "schema_revision": 1,
+  "issue": 454,
+  "geometry_revision": 4,
+  "status": "Generated revision4 southern pedestrian approaches; LAYOUT.json owns production activation.",
+  "entry_line_y": -16640,
+  "lanes": [
+    {
+      "lane": 0,
+      "front": "south",
+      "infantry": [
+        [
+          -4352,
+          -16640,
+          0
+        ],
+        [
+          -4352,
+          -14208,
+          0
+        ]
+      ],
+      "gun_approach": [
+        [
+          -4608,
+          -16640,
+          0
+        ],
+        [
+          -4608,
+          -15904,
+          0
+        ]
+      ],
+      "gun_crew_start": [
+        [
+          -4698,
+          -17664,
+          0
+        ],
+        [
+          -4518,
+          -17664,
+          0
+        ]
+      ],
+      "gun_final_approach_offset": [
+        0,
+        -180,
+        0
+      ]
+    },
+    {
+      "lane": 1,
+      "front": "south",
+      "infantry": [
+        [
+          -4352,
+          -16640,
+          0
+        ],
+        [
+          -4352,
+          -14208,
+          0
+        ]
+      ],
+      "gun_approach": [
+        [
+          -4096,
+          -16640,
+          0
+        ],
+        [
+          -4096,
+          -15904,
+          0
+        ]
+      ],
+      "gun_crew_start": [
+        [
+          -4186,
+          -18176,
+          0
+        ],
+        [
+          -4006,
+          -18176,
+          0
+        ]
+      ],
+      "gun_final_approach_offset": [
+        0,
+        -180,
+        0
+      ]
+    },
+    {
+      "lane": 2,
+      "front": "east",
+      "infantry": [
+        [
+          2080,
+          -16640,
+          0
+        ],
+        [
+          2080,
+          -2496,
+          0
+        ],
+        [
+          928,
+          -2496,
+          0
+        ],
+        [
+          928,
+          -1472,
+          0
+        ],
+        [
+          384,
+          -1472,
+          0
+        ]
+      ],
+      "gun_approach": [
+        [
+          2080,
+          -16640,
+          0
+        ],
+        [
+          2080,
+          -2240,
+          0
+        ]
+      ],
+      "gun_crew_start": [
+        [
+          2080,
+          -17754,
+          0
+        ],
+        [
+          2080,
+          -17574,
+          0
+        ]
+      ],
+      "gun_final_approach_offset": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "lane": 3,
+      "front": "east",
+      "infantry": [
+        [
+          2080,
+          -16640,
+          0
+        ],
+        [
+          2080,
+          -2496,
+          0
+        ],
+        [
+          928,
+          -2496,
+          0
+        ],
+        [
+          928,
+          -1472,
+          0
+        ],
+        [
+          384,
+          -1472,
+          0
+        ]
+      ],
+      "gun_approach": [
+        [
+          2080,
+          -16640,
+          0
+        ],
+        [
+          2080,
+          -1728,
+          0
+        ]
+      ],
+      "gun_crew_start": [
+        [
+          2080,
+          -18266,
+          0
+        ],
+        [
+          2080,
+          -18086,
+          0
+        ]
+      ],
+      "gun_final_approach_offset": [
+        180,
+        0,
+        0
+      ]
+    },
+    {
+      "lane": 4,
+      "front": "west",
+      "infantry": [
+        [
+          -31456,
+          -16640,
+          0
+        ],
+        [
+          -31456,
+          -1344,
+          0
+        ],
+        [
+          -30304,
+          -1344,
+          0
+        ],
+        [
+          -30304,
+          -320,
+          0
+        ],
+        [
+          -29760,
+          -320,
+          0
+        ]
+      ],
+      "gun_approach": [
+        [
+          -31456,
+          -16640,
+          0
+        ],
+        [
+          -31456,
+          -576,
+          0
+        ]
+      ],
+      "gun_crew_start": [
+        [
+          -31456,
+          -17574,
+          0
+        ],
+        [
+          -31456,
+          -17754,
+          0
+        ]
+      ],
+      "gun_final_approach_offset": [
+        -180,
+        0,
+        0
+      ]
+    },
+    {
+      "lane": 5,
+      "front": "west",
+      "infantry": [
+        [
+          -31456,
+          -16640,
+          0
+        ],
+        [
+          -31456,
+          -1344,
+          0
+        ],
+        [
+          -30304,
+          -1344,
+          0
+        ],
+        [
+          -30304,
+          -320,
+          0
+        ],
+        [
+          -29760,
+          -320,
+          0
+        ]
+      ],
+      "gun_approach": [
+        [
+          -31456,
+          -16640,
+          0
+        ],
+        [
+          -31456,
+          -1088,
+          0
+        ]
+      ],
+      "gun_crew_start": [
+        [
+          -31456,
+          -18086,
+          0
+        ],
+        [
+          -31456,
+          -18266,
+          0
+        ]
+      ],
+      "gun_final_approach_offset": [
+        -180,
+        0,
+        0
+      ]
+    }
+  ],
+  "source_sha256": {
+    "assets/barracas_redesign/FRONTS.json": "f9a19c2e2ebbaf15325b1c7b50ac1548a03d8ffa8c11718f1f107d27c89615e9",
+    "assets/map06_port/SOUTH.json": "81955e52444ca97baa9f47f385005d1f764e84ba5d6f42e12d3aa20bf3c935fa",
+    "assets/map06_port/CITY.json": "d251e8aff3fb4f7c30c94e176b10eb95cd1a00e888c1a53f3846160d7e0e6d35",
+    "assets/map06_port/LAYOUT.json": "56bc2e815b46e78d4f141f97d21e15d038a6d991e4be376a2fa8022f818c7a86"
+  }
+}

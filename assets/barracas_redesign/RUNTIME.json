@@ -1,0 +1,5005 @@
+{
+  "schema_revision": 1,
+  "issue": 454,
+  "geometry_revision": 4,
+  "status": "Generated revision4 exterior coordinates; LAYOUT.json owns production activation.",
+  "private_interior_contract": "HouseOrigin/Table/Bed/Chest/DoorInside/HomePosition retain original CAH coordinates, including calls made from MAP03.",
+  "public_approach_contract": "Use the already audited exterior doorstep as the deployment route origin; the legacy1280-MU local offset can land in a neighboring rotated lot.",
+  "source_sha256": {
+    "assets/barracas_redesign/LAYOUT.json": "4ac292be6105b2926669a7f93b43fe5f0643f73e8610ef18c02bfdc0aa3f4aed",
+    "assets/map06_port/CITY.json": "d251e8aff3fb4f7c30c94e176b10eb95cd1a00e888c1a53f3846160d7e0e6d35",
+    "assets/map06_port/INTERIORS.json": "340df2d2f9a5df6e2e7e7d05d1adf8528b3a0b18e4f47783783e32dcf95913ef",
+    "assets/map06_port/HOUSE_HUBS.json": "d1fa5c729046e3324bb6de98650052a87b4b7591a85760b73f240e9da660f9d9",
+    "assets/map06_port/NATIVE_DOORS.json": "a8ba94dd76fd19842bb47791066b756b28cff0af9e3a0479a1d0367292f1c371",
+    "assets/map06_port/LAYOUT.json": "56bc2e815b46e78d4f141f97d21e15d038a6d991e4be376a2fa8022f818c7a86"
+  },
+  "houses": [
+    {
+      "identity": 0,
+      "building_id": 4,
+      "bounds": [
+        -2624,
+        -4736,
+        -1664,
+        -3520
+      ],
+      "portal": [
+        -1660,
+        -4352.0,
+        0
+      ],
+      "door_outside": [
+        -1568,
+        -4352,
+        0
+      ],
+      "public_approach": [
+        -1568,
+        -4352,
+        0
+      ],
+      "angle": 0,
+      "start_index": 1
+    },
+    {
+      "identity": 1,
+      "building_id": 5,
+      "bounds": [
+        -23040,
+        -3584,
+        -22080,
+        -2368
+      ],
+      "portal": [
+        -23044,
+        -2752.0,
+        0
+      ],
+      "door_outside": [
+        -23136,
+        -2752,
+        0
+      ],
+      "public_approach": [
+        -23136,
+        -2752,
+        0
+      ],
+      "angle": 180,
+      "start_index": 2
+    },
+    {
+      "identity": 2,
+      "building_id": 6,
+      "bounds": [
+        -18560,
+        -10304,
+        -17600,
+        -9088
+      ],
+      "portal": [
+        -17596,
+        -9920.0,
+        0
+      ],
+      "door_outside": [
+        -17504,
+        -9920,
+        0
+      ],
+      "public_approach": [
+        -17504,
+        -9920,
+        0
+      ],
+      "angle": 0,
+      "start_index": 3
+    },
+    {
+      "identity": 3,
+      "building_id": 10,
+      "bounds": [
+        -27392,
+        -4352,
+        -26432,
+        -3136
+      ],
+      "portal": [
+        -27396,
+        -3520.0,
+        0
+      ],
+      "door_outside": [
+        -27488,
+        -3520,
+        0
+      ],
+      "public_approach": [
+        -27488,
+        -3520,
+        0
+      ],
+      "angle": 180,
+      "start_index": 4
+    },
+    {
+      "identity": 4,
+      "building_id": 11,
+      "bounds": [
+        -8576,
+        -11072,
+        -7616,
+        -9856
+      ],
+      "portal": [
+        -7612,
+        -10688.0,
+        0
+      ],
+      "door_outside": [
+        -7520,
+        -10688,
+        0
+      ],
+      "public_approach": [
+        -7520,
+        -10688,
+        0
+      ],
+      "angle": 0,
+      "start_index": 5
+    },
+    {
+      "identity": 5,
+      "building_id": 12,
+      "bounds": [
+        -27328,
+        2432,
+        -26368,
+        3648
+      ],
+      "portal": [
+        -27332,
+        3264.0,
+        0
+      ],
+      "door_outside": [
+        -27424,
+        3264,
+        0
+      ],
+      "public_approach": [
+        -27424,
+        3264,
+        0
+      ],
+      "angle": 180,
+      "start_index": 6
+    },
+    {
+      "identity": 6,
+      "building_id": 13,
+      "bounds": [
+        -13120,
+        -10880,
+        -12160,
+        -9664
+      ],
+      "portal": [
+        -12156,
+        -10496.0,
+        0
+      ],
+      "door_outside": [
+        -12064,
+        -10496,
+        0
+      ],
+      "public_approach": [
+        -12064,
+        -10496,
+        0
+      ],
+      "angle": 0,
+      "start_index": 7
+    },
+    {
+      "identity": 7,
+      "building_id": 14,
+      "bounds": [
+        -17024,
+        10048,
+        -16064,
+        11264
+      ],
+      "portal": [
+        -17028,
+        10880.0,
+        0
+      ],
+      "door_outside": [
+        -17120,
+        10880,
+        0
+      ],
+      "public_approach": [
+        -17120,
+        10880,
+        0
+      ],
+      "angle": 180,
+      "start_index": 8
+    },
+    {
+      "identity": 8,
+      "building_id": 15,
+      "bounds": [
+        -11904,
+        -10880,
+        -10944,
+        -9664
+      ],
+      "portal": [
+        -10940,
+        -10496.0,
+        0
+      ],
+      "door_outside": [
+        -10848,
+        -10496,
+        0
+      ],
+      "public_approach": [
+        -10848,
+        -10496,
+        0
+      ],
+      "angle": 0,
+      "start_index": 9
+    },
+    {
+      "identity": 9,
+      "building_id": 16,
+      "bounds": [
+        -19776,
+        -10304,
+        -18816,
+        -9088
+      ],
+      "portal": [
+        -19780,
+        -9472.0,
+        0
+      ],
+      "door_outside": [
+        -19872,
+        -9472,
+        0
+      ],
+      "public_approach": [
+        -19872,
+        -9472,
+        0
+      ],
+      "angle": 180,
+      "start_index": 10
+    },
+    {
+      "identity": 10,
+      "building_id": 17,
+      "bounds": [
+        -26176,
+        -4352,
+        -25216,
+        -3136
+      ],
+      "portal": [
+        -25212,
+        -3968.0,
+        0
+      ],
+      "door_outside": [
+        -25120,
+        -3968,
+        0
+      ],
+      "public_approach": [
+        -25120,
+        -3968,
+        0
+      ],
+      "angle": 0,
+      "start_index": 11
+    },
+    {
+      "identity": 11,
+      "building_id": 22,
+      "bounds": [
+        -26112,
+        2432,
+        -25152,
+        3648
+      ],
+      "portal": [
+        -26116,
+        3264.0,
+        0
+      ],
+      "door_outside": [
+        -26208,
+        3264,
+        0
+      ],
+      "public_approach": [
+        -26208,
+        3264,
+        0
+      ],
+      "angle": 180,
+      "start_index": 12
+    },
+    {
+      "identity": 12,
+      "building_id": 23,
+      "bounds": [
+        -3840,
+        -4736,
+        -2880,
+        -3520
+      ],
+      "portal": [
+        -2876,
+        -4352.0,
+        0
+      ],
+      "door_outside": [
+        -2784,
+        -4352,
+        0
+      ],
+      "public_approach": [
+        -2784,
+        -4352,
+        0
+      ],
+      "angle": 0,
+      "start_index": 13
+    },
+    {
+      "identity": 13,
+      "building_id": 24,
+      "bounds": [
+        -1408,
+        -4736,
+        -448,
+        -3520
+      ],
+      "portal": [
+        -1412,
+        -3904.0,
+        0
+      ],
+      "door_outside": [
+        -1504,
+        -3904,
+        0
+      ],
+      "public_approach": [
+        -1504,
+        -3904,
+        0
+      ],
+      "angle": 180,
+      "start_index": 14
+    },
+    {
+      "identity": 14,
+      "building_id": 28,
+      "bounds": [
+        -17344,
+        -10304,
+        -16384,
+        -9088
+      ],
+      "portal": [
+        -16380,
+        -9920.0,
+        0
+      ],
+      "door_outside": [
+        -16288,
+        -9920,
+        0
+      ],
+      "public_approach": [
+        -16288,
+        -9920,
+        0
+      ],
+      "angle": 0,
+      "start_index": 15
+    },
+    {
+      "identity": 15,
+      "building_id": 29,
+      "bounds": [
+        -28608,
+        -4352,
+        -27648,
+        -3136
+      ],
+      "portal": [
+        -28612,
+        -3520.0,
+        0
+      ],
+      "door_outside": [
+        -28704,
+        -3520,
+        0
+      ],
+      "public_approach": [
+        -28704,
+        -3520,
+        0
+      ],
+      "angle": 180,
+      "start_index": 16
+    },
+    {
+      "identity": 16,
+      "building_id": 30,
+      "bounds": [
+        -28544,
+        2432,
+        -27584,
+        3648
+      ],
+      "portal": [
+        -27580,
+        2816.0,
+        0
+      ],
+      "door_outside": [
+        -27488,
+        2816,
+        0
+      ],
+      "public_approach": [
+        -27488,
+        2816,
+        0
+      ],
+      "angle": 0,
+      "start_index": 17
+    },
+    {
+      "identity": 17,
+      "building_id": 31,
+      "bounds": [
+        -9792,
+        -11072,
+        -8832,
+        -9856
+      ],
+      "portal": [
+        -9796,
+        -10240.0,
+        0
+      ],
+      "door_outside": [
+        -9888,
+        -10240,
+        0
+      ],
+      "public_approach": [
+        -9888,
+        -10240,
+        0
+      ],
+      "angle": 180,
+      "start_index": 18
+    },
+    {
+      "identity": 18,
+      "building_id": 32,
+      "bounds": [
+        -14336,
+        -10880,
+        -13376,
+        -9664
+      ],
+      "portal": [
+        -13372,
+        -10496.0,
+        0
+      ],
+      "door_outside": [
+        -13280,
+        -10496,
+        0
+      ],
+      "public_approach": [
+        -13280,
+        -10496,
+        0
+      ],
+      "angle": 0,
+      "start_index": 19
+    },
+    {
+      "identity": 19,
+      "building_id": 33,
+      "bounds": [
+        -27456,
+        3904,
+        -26240,
+        4864
+      ],
+      "portal": [
+        -27072.0,
+        3900,
+        0
+      ],
+      "door_outside": [
+        -27072,
+        3808,
+        0
+      ],
+      "public_approach": [
+        -27072,
+        3808,
+        0
+      ],
+      "angle": 270,
+      "start_index": 20
+    },
+    {
+      "identity": 20,
+      "building_id": 34,
+      "bounds": [
+        -13248,
+        -9408,
+        -12032,
+        -8448
+      ],
+      "portal": [
+        -12416.0,
+        -8444,
+        0
+      ],
+      "door_outside": [
+        -12416,
+        -8352,
+        0
+      ],
+      "public_approach": [
+        -12416,
+        -8352,
+        0
+      ],
+      "angle": 90,
+      "start_index": 21
+    },
+    {
+      "identity": 21,
+      "building_id": 35,
+      "bounds": [
+        -2752,
+        -3264,
+        -1536,
+        -2304
+      ],
+      "portal": [
+        -2368.0,
+        -3268,
+        0
+      ],
+      "door_outside": [
+        -2368,
+        -3360,
+        0
+      ],
+      "public_approach": [
+        -2368,
+        -3360,
+        0
+      ],
+      "angle": 270,
+      "start_index": 22
+    },
+    {
+      "identity": 22,
+      "building_id": 40,
+      "bounds": [
+        -23168,
+        -2112,
+        -21952,
+        -1152
+      ],
+      "portal": [
+        -22336.0,
+        -1148,
+        0
+      ],
+      "door_outside": [
+        -22336,
+        -1056,
+        0
+      ],
+      "public_approach": [
+        -22336,
+        -1056,
+        0
+      ],
+      "angle": 90,
+      "start_index": 23
+    },
+    {
+      "identity": 23,
+      "building_id": 41,
+      "bounds": [
+        -18688,
+        -11520,
+        -17472,
+        -10560
+      ],
+      "portal": [
+        -18304.0,
+        -11524,
+        0
+      ],
+      "door_outside": [
+        -18304,
+        -11616,
+        0
+      ],
+      "public_approach": [
+        -18304,
+        -11616,
+        0
+      ],
+      "angle": 270,
+      "start_index": 24
+    },
+    {
+      "identity": 24,
+      "building_id": 42,
+      "bounds": [
+        -27520,
+        -2880,
+        -26304,
+        -1920
+      ],
+      "portal": [
+        -26688.0,
+        -1916,
+        0
+      ],
+      "door_outside": [
+        -26688,
+        -1824,
+        0
+      ],
+      "public_approach": [
+        -26688,
+        -1824,
+        0
+      ],
+      "angle": 90,
+      "start_index": 25
+    },
+    {
+      "identity": 25,
+      "building_id": 46,
+      "bounds": [
+        -2752,
+        -5952,
+        -1536,
+        -4992
+      ],
+      "portal": [
+        -2368.0,
+        -5956,
+        0
+      ],
+      "door_outside": [
+        -2368,
+        -6048,
+        0
+      ],
+      "public_approach": [
+        -2368,
+        -6048,
+        0
+      ],
+      "angle": 270,
+      "start_index": 26
+    },
+    {
+      "identity": 26,
+      "building_id": 47,
+      "bounds": [
+        -23168,
+        -4800,
+        -21952,
+        -3840
+      ],
+      "portal": [
+        -22336.0,
+        -3836,
+        0
+      ],
+      "door_outside": [
+        -22336,
+        -3744,
+        0
+      ],
+      "public_approach": [
+        -22336,
+        -3744,
+        0
+      ],
+      "angle": 90,
+      "start_index": 27
+    },
+    {
+      "identity": 27,
+      "building_id": 48,
+      "bounds": [
+        -18688,
+        -8832,
+        -17472,
+        -7872
+      ],
+      "portal": [
+        -18304.0,
+        -8836,
+        0
+      ],
+      "door_outside": [
+        -18304,
+        -8928,
+        0
+      ],
+      "public_approach": [
+        -18304,
+        -8928,
+        0
+      ],
+      "angle": 270,
+      "start_index": 28
+    },
+    {
+      "identity": 28,
+      "building_id": 49,
+      "bounds": [
+        -27520,
+        -5568,
+        -26304,
+        -4608
+      ],
+      "portal": [
+        -26688.0,
+        -4604,
+        0
+      ],
+      "door_outside": [
+        -26688,
+        -4512,
+        0
+      ],
+      "public_approach": [
+        -26688,
+        -4512,
+        0
+      ],
+      "angle": 90,
+      "start_index": 29
+    },
+    {
+      "identity": 29,
+      "building_id": 50,
+      "bounds": [
+        -8704,
+        -12288,
+        -7488,
+        -11328
+      ],
+      "portal": [
+        -8320.0,
+        -12292,
+        0
+      ],
+      "door_outside": [
+        -8320,
+        -12384,
+        0
+      ],
+      "public_approach": [
+        -8320,
+        -12384,
+        0
+      ],
+      "angle": 270,
+      "start_index": 30
+    },
+    {
+      "identity": 30,
+      "building_id": 51,
+      "bounds": [
+        -27456,
+        1216,
+        -26240,
+        2176
+      ],
+      "portal": [
+        -26624.0,
+        2180,
+        0
+      ],
+      "door_outside": [
+        -26624,
+        2272,
+        0
+      ],
+      "public_approach": [
+        -26624,
+        2272,
+        0
+      ],
+      "angle": 90,
+      "start_index": 31
+    },
+    {
+      "identity": 31,
+      "building_id": 52,
+      "bounds": [
+        -13248,
+        -12096,
+        -12032,
+        -11136
+      ],
+      "portal": [
+        -12864.0,
+        -12100,
+        0
+      ],
+      "door_outside": [
+        -12864,
+        -12192,
+        0
+      ],
+      "public_approach": [
+        -12864,
+        -12192,
+        0
+      ],
+      "angle": 270,
+      "start_index": 32
+    },
+    {
+      "identity": 32,
+      "building_id": 53,
+      "bounds": [
+        -16896,
+        8832,
+        -15680,
+        9792
+      ],
+      "portal": [
+        -16064.0,
+        9796,
+        0
+      ],
+      "door_outside": [
+        -16064,
+        9888,
+        0
+      ],
+      "public_approach": [
+        -16064,
+        9888,
+        0
+      ],
+      "angle": 90,
+      "start_index": 33
+    },
+    {
+      "identity": 33,
+      "building_id": 58,
+      "bounds": [
+        -9280,
+        -9600,
+        -8064,
+        -8640
+      ],
+      "portal": [
+        -8896.0,
+        -9604,
+        0
+      ],
+      "door_outside": [
+        -8896,
+        -9696,
+        0
+      ],
+      "public_approach": [
+        -8896,
+        -9696,
+        0
+      ],
+      "angle": 270,
+      "start_index": 34
+    },
+    {
+      "identity": 34,
+      "building_id": 59,
+      "bounds": [
+        -17664,
+        11520,
+        -16448,
+        12480
+      ],
+      "portal": [
+        -16832.0,
+        12484,
+        0
+      ],
+      "door_outside": [
+        -16832,
+        12576,
+        0
+      ],
+      "public_approach": [
+        -16832,
+        12576,
+        0
+      ],
+      "angle": 90,
+      "start_index": 35
+    },
+    {
+      "identity": 35,
+      "building_id": 60,
+      "bounds": [
+        -18240,
+        10048,
+        -17280,
+        11264
+      ],
+      "portal": [
+        -18244,
+        10880.0,
+        0
+      ],
+      "door_outside": [
+        -18336,
+        10880,
+        0
+      ],
+      "public_approach": [
+        -18336,
+        10880,
+        0
+      ],
+      "angle": 180,
+      "start_index": 36
+    },
+    {
+      "identity": 36,
+      "building_id": 64,
+      "bounds": [
+        -11776,
+        -9408,
+        -10816,
+        -8192
+      ],
+      "portal": [
+        -10812,
+        -9024.0,
+        0
+      ],
+      "door_outside": [
+        -10720,
+        -9024,
+        0
+      ],
+      "public_approach": [
+        -10720,
+        -9024,
+        0
+      ],
+      "angle": 0,
+      "start_index": 37
+    },
+    {
+      "identity": 37,
+      "building_id": 65,
+      "bounds": [
+        -25984,
+        3904,
+        -25024,
+        5120
+      ],
+      "portal": [
+        -25988,
+        4736.0,
+        0
+      ],
+      "door_outside": [
+        -26080,
+        4736,
+        0
+      ],
+      "public_approach": [
+        -26080,
+        4736,
+        0
+      ],
+      "angle": 180,
+      "start_index": 38
+    },
+    {
+      "identity": 38,
+      "building_id": 66,
+      "bounds": [
+        -19904,
+        -11776,
+        -18944,
+        -10560
+      ],
+      "portal": [
+        -18940,
+        -11392.0,
+        0
+      ],
+      "door_outside": [
+        -18848,
+        -11392,
+        0
+      ],
+      "public_approach": [
+        -18848,
+        -11392,
+        0
+      ],
+      "angle": 0,
+      "start_index": 39
+    },
+    {
+      "identity": 39,
+      "building_id": 67,
+      "bounds": [
+        -26048,
+        -2880,
+        -25088,
+        -1664
+      ],
+      "portal": [
+        -26052,
+        -2048.0,
+        0
+      ],
+      "door_outside": [
+        -26144,
+        -2048,
+        0
+      ],
+      "public_approach": [
+        -26144,
+        -2048,
+        0
+      ],
+      "angle": 180,
+      "start_index": 40
+    },
+    {
+      "identity": 40,
+      "building_id": 68,
+      "bounds": [
+        -28672,
+        3904,
+        -27712,
+        5120
+      ],
+      "portal": [
+        -27708,
+        4288.0,
+        0
+      ],
+      "door_outside": [
+        -27616,
+        4288,
+        0
+      ],
+      "public_approach": [
+        -27616,
+        4288,
+        0
+      ],
+      "angle": 0,
+      "start_index": 41
+    },
+    {
+      "identity": 41,
+      "building_id": 69,
+      "bounds": [
+        -3968,
+        -3264,
+        -3008,
+        -2048
+      ],
+      "portal": [
+        -3972,
+        -2432.0,
+        0
+      ],
+      "door_outside": [
+        -4064,
+        -2432,
+        0
+      ],
+      "public_approach": [
+        -4064,
+        -2432,
+        0
+      ],
+      "angle": 180,
+      "start_index": 42
+    },
+    {
+      "identity": 42,
+      "building_id": 70,
+      "bounds": [
+        -1280,
+        -3264,
+        -320,
+        -2048
+      ],
+      "portal": [
+        -316,
+        -2880.0,
+        0
+      ],
+      "door_outside": [
+        -224,
+        -2880,
+        0
+      ],
+      "public_approach": [
+        -224,
+        -2880,
+        0
+      ],
+      "angle": 0,
+      "start_index": 43
+    },
+    {
+      "identity": 43,
+      "building_id": 71,
+      "bounds": [
+        -11776,
+        -12096,
+        -10560,
+        -11136
+      ],
+      "portal": [
+        -11392.0,
+        -12100,
+        0
+      ],
+      "door_outside": [
+        -11392,
+        -12192,
+        0
+      ],
+      "public_approach": [
+        -11392,
+        -12192,
+        0
+      ],
+      "angle": 270,
+      "start_index": 44
+    },
+    {
+      "identity": 44,
+      "building_id": 76,
+      "bounds": [
+        -14464,
+        -9408,
+        -13504,
+        -8192
+      ],
+      "portal": [
+        -13500,
+        -9024.0,
+        0
+      ],
+      "door_outside": [
+        -13408,
+        -9024,
+        0
+      ],
+      "public_approach": [
+        -13408,
+        -9024,
+        0
+      ],
+      "angle": 0,
+      "start_index": 45
+    },
+    {
+      "identity": 45,
+      "building_id": 77,
+      "bounds": [
+        -17216,
+        -11776,
+        -16256,
+        -10560
+      ],
+      "portal": [
+        -17220,
+        -10944.0,
+        0
+      ],
+      "door_outside": [
+        -17312,
+        -10944,
+        0
+      ],
+      "public_approach": [
+        -17312,
+        -10944,
+        0
+      ],
+      "angle": 180,
+      "start_index": 46
+    },
+    {
+      "identity": 46,
+      "building_id": 78,
+      "bounds": [
+        -20160,
+        -8832,
+        -18944,
+        -7872
+      ],
+      "portal": [
+        -19328.0,
+        -7868,
+        0
+      ],
+      "door_outside": [
+        -19328,
+        -7776,
+        0
+      ],
+      "public_approach": [
+        -19328,
+        -7776,
+        0
+      ],
+      "angle": 90,
+      "start_index": 47
+    },
+    {
+      "identity": 47,
+      "building_id": 82,
+      "bounds": [
+        -28736,
+        -2880,
+        -27776,
+        -1664
+      ],
+      "portal": [
+        -28740,
+        -2048.0,
+        0
+      ],
+      "door_outside": [
+        -28832,
+        -2048,
+        0
+      ],
+      "public_approach": [
+        -28832,
+        -2048,
+        0
+      ],
+      "angle": 180,
+      "start_index": 48
+    },
+    {
+      "identity": 48,
+      "building_id": 83,
+      "bounds": [
+        -25984,
+        1216,
+        -24768,
+        2176
+      ],
+      "portal": [
+        -25152.0,
+        2180,
+        0
+      ],
+      "door_outside": [
+        -25152,
+        2272,
+        0
+      ],
+      "public_approach": [
+        -25152,
+        2272,
+        0
+      ],
+      "angle": 90,
+      "start_index": 49
+    },
+    {
+      "identity": 49,
+      "building_id": 84,
+      "bounds": [
+        -4224,
+        -5952,
+        -3008,
+        -4992
+      ],
+      "portal": [
+        -3840.0,
+        -5956,
+        0
+      ],
+      "door_outside": [
+        -3840,
+        -6048,
+        0
+      ],
+      "public_approach": [
+        -3840,
+        -6048,
+        0
+      ],
+      "angle": 270,
+      "start_index": 50
+    },
+    {
+      "identity": 50,
+      "building_id": 85,
+      "bounds": [
+        -1280,
+        -5952,
+        -64,
+        -4992
+      ],
+      "portal": [
+        -448.0,
+        -4988,
+        0
+      ],
+      "door_outside": [
+        -448,
+        -4896,
+        0
+      ],
+      "public_approach": [
+        -448,
+        -4896,
+        0
+      ],
+      "angle": 90,
+      "start_index": 51
+    },
+    {
+      "identity": 51,
+      "building_id": 86,
+      "bounds": [
+        -17216,
+        -8832,
+        -16256,
+        -7616
+      ],
+      "portal": [
+        -17220,
+        -8000.0,
+        0
+      ],
+      "door_outside": [
+        -17312,
+        -8000,
+        0
+      ],
+      "public_approach": [
+        -17312,
+        -8000,
+        0
+      ],
+      "angle": 180,
+      "start_index": 52
+    },
+    {
+      "identity": 52,
+      "building_id": 87,
+      "bounds": [
+        -9920,
+        -12544,
+        -8960,
+        -11328
+      ],
+      "portal": [
+        -8956,
+        -12160.0,
+        0
+      ],
+      "door_outside": [
+        -8864,
+        -12160,
+        0
+      ],
+      "public_approach": [
+        -8864,
+        -12160,
+        0
+      ],
+      "angle": 0,
+      "start_index": 53
+    },
+    {
+      "identity": 53,
+      "building_id": 88,
+      "bounds": [
+        -28928,
+        1216,
+        -27712,
+        2176
+      ],
+      "portal": [
+        -28544.0,
+        1212,
+        0
+      ],
+      "door_outside": [
+        -28544,
+        1120,
+        0
+      ],
+      "public_approach": [
+        -28544,
+        1120,
+        0
+      ],
+      "angle": 270,
+      "start_index": 54
+    },
+    {
+      "identity": 54,
+      "building_id": 89,
+      "bounds": [
+        -14464,
+        -12352,
+        -13504,
+        -11136
+      ],
+      "portal": [
+        -13500,
+        -11968.0,
+        0
+      ],
+      "door_outside": [
+        -13408,
+        -11968,
+        0
+      ],
+      "public_approach": [
+        -13408,
+        -11968,
+        0
+      ],
+      "angle": 0,
+      "start_index": 55
+    },
+    {
+      "identity": 55,
+      "building_id": 94,
+      "bounds": [
+        -18368,
+        8832,
+        -17152,
+        9792
+      ],
+      "portal": [
+        -17984.0,
+        8828,
+        0
+      ],
+      "door_outside": [
+        -17984,
+        8736,
+        0
+      ],
+      "public_approach": [
+        -17984,
+        8736,
+        0
+      ],
+      "angle": 270,
+      "start_index": 56
+    },
+    {
+      "identity": 56,
+      "building_id": 95,
+      "bounds": [
+        -14784,
+        11008,
+        -13824,
+        12224
+      ],
+      "portal": [
+        -13820,
+        11392.0,
+        0
+      ],
+      "door_outside": [
+        -13728,
+        11392,
+        0
+      ],
+      "public_approach": [
+        -13728,
+        11392,
+        0
+      ],
+      "angle": 0,
+      "start_index": 57
+    },
+    {
+      "identity": 57,
+      "building_id": 96,
+      "bounds": [
+        -24384,
+        -5376,
+        -23424,
+        -4160
+      ],
+      "portal": [
+        -24388,
+        -4544.0,
+        0
+      ],
+      "door_outside": [
+        -24480,
+        -4544,
+        0
+      ],
+      "public_approach": [
+        -24480,
+        -4544,
+        0
+      ],
+      "angle": 180,
+      "start_index": 58
+    },
+    {
+      "identity": 58,
+      "building_id": 100,
+      "bounds": [
+        -5056,
+        -4736,
+        -4096,
+        -3520
+      ],
+      "portal": [
+        -4092,
+        -4352.0,
+        0
+      ],
+      "door_outside": [
+        -4000,
+        -4352,
+        0
+      ],
+      "public_approach": [
+        -4000,
+        -4352,
+        0
+      ],
+      "angle": 0,
+      "start_index": 59
+    },
+    {
+      "identity": 59,
+      "building_id": 101,
+      "bounds": [
+        -10496,
+        -9600,
+        -9536,
+        -8384
+      ],
+      "portal": [
+        -10500,
+        -8768.0,
+        0
+      ],
+      "door_outside": [
+        -10592,
+        -8768,
+        0
+      ],
+      "public_approach": [
+        -10592,
+        -8768,
+        0
+      ],
+      "angle": 180,
+      "start_index": 60
+    },
+    {
+      "identity": 60,
+      "building_id": 102,
+      "bounds": [
+        -16128,
+        -10304,
+        -15168,
+        -9088
+      ],
+      "portal": [
+        -15164,
+        -9920.0,
+        0
+      ],
+      "door_outside": [
+        -15072,
+        -9920,
+        0
+      ],
+      "public_approach": [
+        -15072,
+        -9920,
+        0
+      ],
+      "angle": 0,
+      "start_index": 61
+    },
+    {
+      "identity": 61,
+      "building_id": 103,
+      "bounds": [
+        -13248,
+        -8192,
+        -12032,
+        -7232
+      ],
+      "portal": [
+        -12864.0,
+        -8196,
+        0
+      ],
+      "door_outside": [
+        -12864,
+        -8288,
+        0
+      ],
+      "public_approach": [
+        -12864,
+        -8288,
+        0
+      ],
+      "angle": 270,
+      "start_index": 62
+    },
+    {
+      "identity": 62,
+      "building_id": 104,
+      "bounds": [
+        -23168,
+        -896,
+        -21952,
+        64
+      ],
+      "portal": [
+        -22336.0,
+        68,
+        0
+      ],
+      "door_outside": [
+        -22336,
+        160,
+        0
+      ],
+      "public_approach": [
+        -22336,
+        160,
+        0
+      ],
+      "angle": 90,
+      "start_index": 63
+    },
+    {
+      "identity": 63,
+      "building_id": 105,
+      "bounds": [
+        -18688,
+        -12736,
+        -17472,
+        -11776
+      ],
+      "portal": [
+        -18304.0,
+        -12740,
+        0
+      ],
+      "door_outside": [
+        -18304,
+        -12832,
+        0
+      ],
+      "public_approach": [
+        -18304,
+        -12832,
+        0
+      ],
+      "angle": 270,
+      "start_index": 64
+    },
+    {
+      "identity": 64,
+      "building_id": 106,
+      "bounds": [
+        -27520,
+        -1664,
+        -26304,
+        -704
+      ],
+      "portal": [
+        -26688.0,
+        -700,
+        0
+      ],
+      "door_outside": [
+        -26688,
+        -608,
+        0
+      ],
+      "public_approach": [
+        -26688,
+        -608,
+        0
+      ],
+      "angle": 90,
+      "start_index": 65
+    },
+    {
+      "identity": 65,
+      "building_id": 107,
+      "bounds": [
+        -2752,
+        -7168,
+        -1536,
+        -6208
+      ],
+      "portal": [
+        -2368.0,
+        -7172,
+        0
+      ],
+      "door_outside": [
+        -2368,
+        -7264,
+        0
+      ],
+      "public_approach": [
+        -2368,
+        -7264,
+        0
+      ],
+      "angle": 270,
+      "start_index": 66
+    },
+    {
+      "identity": 66,
+      "building_id": 148,
+      "bounds": [
+        -18688,
+        -7616,
+        -17472,
+        -6656
+      ],
+      "portal": [
+        -17856.0,
+        -6652,
+        0
+      ],
+      "door_outside": [
+        -17856,
+        -6560,
+        0
+      ],
+      "public_approach": [
+        -17856,
+        -6560,
+        0
+      ],
+      "angle": 90,
+      "start_index": 67
+    },
+    {
+      "identity": 67,
+      "building_id": 149,
+      "bounds": [
+        -8704,
+        -13504,
+        -7488,
+        -12544
+      ],
+      "portal": [
+        -8320.0,
+        -13508,
+        0
+      ],
+      "door_outside": [
+        -8320,
+        -13600,
+        0
+      ],
+      "public_approach": [
+        -8320,
+        -13600,
+        0
+      ],
+      "angle": 270,
+      "start_index": 68
+    },
+    {
+      "identity": 68,
+      "building_id": 150,
+      "bounds": [
+        -13248,
+        -13312,
+        -12032,
+        -12352
+      ],
+      "portal": [
+        -12416.0,
+        -12348,
+        0
+      ],
+      "door_outside": [
+        -12416,
+        -12256,
+        0
+      ],
+      "public_approach": [
+        -12416,
+        -12256,
+        0
+      ],
+      "angle": 90,
+      "start_index": 69
+    },
+    {
+      "identity": 69,
+      "building_id": 152,
+      "bounds": [
+        -16128,
+        3136,
+        -14912,
+        4096
+      ],
+      "portal": [
+        -15744.0,
+        3132,
+        0
+      ],
+      "door_outside": [
+        -15744,
+        3040,
+        0
+      ],
+      "public_approach": [
+        -15744,
+        3040,
+        0
+      ],
+      "angle": 270,
+      "start_index": 70
+    },
+    {
+      "identity": 70,
+      "building_id": 153,
+      "bounds": [
+        -16128,
+        4352,
+        -14912,
+        5312
+      ],
+      "portal": [
+        -15744.0,
+        4348,
+        0
+      ],
+      "door_outside": [
+        -15744,
+        4256,
+        0
+      ],
+      "public_approach": [
+        -15744,
+        4256,
+        0
+      ],
+      "angle": 270,
+      "start_index": 71
+    },
+    {
+      "identity": 71,
+      "building_id": 154,
+      "bounds": [
+        -15680,
+        -11776,
+        -14720,
+        -10560
+      ],
+      "portal": [
+        -15684,
+        -10944.0,
+        0
+      ],
+      "door_outside": [
+        -15776,
+        -10944,
+        0
+      ],
+      "public_approach": [
+        -15776,
+        -10944,
+        0
+      ],
+      "angle": 180,
+      "start_index": 72
+    },
+    {
+      "identity": 72,
+      "building_id": 155,
+      "bounds": [
+        -21696,
+        -1152,
+        -20736,
+        64
+      ],
+      "portal": [
+        -20732,
+        -768.0,
+        0
+      ],
+      "door_outside": [
+        -20640,
+        -768,
+        0
+      ],
+      "public_approach": [
+        -20640,
+        -768,
+        0
+      ],
+      "angle": 0,
+      "start_index": 73
+    },
+    {
+      "identity": 73,
+      "building_id": 156,
+      "bounds": [
+        -15232,
+        12480,
+        -14016,
+        13440
+      ],
+      "portal": [
+        -14848.0,
+        12476,
+        0
+      ],
+      "door_outside": [
+        -14848,
+        12384,
+        0
+      ],
+      "public_approach": [
+        -14848,
+        12384,
+        0
+      ],
+      "angle": 270,
+      "start_index": 74
+    },
+    {
+      "identity": 74,
+      "building_id": 157,
+      "bounds": [
+        -5184,
+        -3264,
+        -4224,
+        -2048
+      ],
+      "portal": [
+        -4220,
+        -2880.0,
+        0
+      ],
+      "door_outside": [
+        -4128,
+        -2880,
+        0
+      ],
+      "public_approach": [
+        -4128,
+        -2880,
+        0
+      ],
+      "angle": 0,
+      "start_index": 75
+    },
+    {
+      "identity": 75,
+      "building_id": 158,
+      "bounds": [
+        -20160,
+        -7616,
+        -18944,
+        -6656
+      ],
+      "portal": [
+        -19776.0,
+        -7620,
+        0
+      ],
+      "door_outside": [
+        -19776,
+        -7712,
+        0
+      ],
+      "public_approach": [
+        -19776,
+        -7712,
+        0
+      ],
+      "angle": 270,
+      "start_index": 76
+    },
+    {
+      "identity": 76,
+      "building_id": 159,
+      "bounds": [
+        -11776,
+        -13312,
+        -10560,
+        -12352
+      ],
+      "portal": [
+        -10944.0,
+        -12348,
+        0
+      ],
+      "door_outside": [
+        -10944,
+        -12256,
+        0
+      ],
+      "public_approach": [
+        -10944,
+        -12256,
+        0
+      ],
+      "angle": 90,
+      "start_index": 77
+    },
+    {
+      "identity": 77,
+      "building_id": 160,
+      "bounds": [
+        -1280,
+        -7168,
+        -64,
+        -6208
+      ],
+      "portal": [
+        -896.0,
+        -7172,
+        0
+      ],
+      "door_outside": [
+        -896,
+        -7264,
+        0
+      ],
+      "public_approach": [
+        -896,
+        -7264,
+        0
+      ],
+      "angle": 270,
+      "start_index": 78
+    },
+    {
+      "identity": 78,
+      "building_id": 161,
+      "bounds": [
+        -16000,
+        -8832,
+        -15040,
+        -7616
+      ],
+      "portal": [
+        -15036,
+        -8448.0,
+        0
+      ],
+      "door_outside": [
+        -14944,
+        -8448,
+        0
+      ],
+      "public_approach": [
+        -14944,
+        -8448,
+        0
+      ],
+      "angle": 0,
+      "start_index": 79
+    },
+    {
+      "identity": 79,
+      "building_id": 162,
+      "bounds": [
+        -9792,
+        -8128,
+        -8576,
+        -7168
+      ],
+      "portal": [
+        -9408.0,
+        -8132,
+        0
+      ],
+      "door_outside": [
+        -9408,
+        -8224,
+        0
+      ],
+      "public_approach": [
+        -9408,
+        -8224,
+        0
+      ],
+      "angle": 270,
+      "start_index": 80
+    },
+    {
+      "identity": 80,
+      "building_id": 163,
+      "bounds": [
+        -18368,
+        7616,
+        -17152,
+        8576
+      ],
+      "portal": [
+        -17536.0,
+        8580,
+        0
+      ],
+      "door_outside": [
+        -17536,
+        8672,
+        0
+      ],
+      "public_approach": [
+        -17536,
+        8672,
+        0
+      ],
+      "angle": 90,
+      "start_index": 81
+    },
+    {
+      "identity": 81,
+      "building_id": 164,
+      "bounds": [
+        -11776,
+        -7936,
+        -10560,
+        -6976
+      ],
+      "portal": [
+        -11392.0,
+        -7940,
+        0
+      ],
+      "door_outside": [
+        -11392,
+        -8032,
+        0
+      ],
+      "public_approach": [
+        -11392,
+        -8032,
+        0
+      ],
+      "angle": 270,
+      "start_index": 82
+    },
+    {
+      "identity": 82,
+      "building_id": 165,
+      "bounds": [
+        -20160,
+        -12992,
+        -18944,
+        -12032
+      ],
+      "portal": [
+        -19328.0,
+        -12028,
+        0
+      ],
+      "door_outside": [
+        -19328,
+        -11936,
+        0
+      ],
+      "public_approach": [
+        -19328,
+        -11936,
+        0
+      ],
+      "angle": 90,
+      "start_index": 83
+    },
+    {
+      "identity": 83,
+      "building_id": 166,
+      "bounds": [
+        -14720,
+        -7936,
+        -13504,
+        -6976
+      ],
+      "portal": [
+        -14336.0,
+        -7940,
+        0
+      ],
+      "door_outside": [
+        -14336,
+        -8032,
+        0
+      ],
+      "public_approach": [
+        -14336,
+        -8032,
+        0
+      ],
+      "angle": 270,
+      "start_index": 84
+    },
+    {
+      "identity": 84,
+      "building_id": 167,
+      "bounds": [
+        -17216,
+        -12992,
+        -16000,
+        -12032
+      ],
+      "portal": [
+        -16384.0,
+        -12028,
+        0
+      ],
+      "door_outside": [
+        -16384,
+        -11936,
+        0
+      ],
+      "public_approach": [
+        -16384,
+        -11936,
+        0
+      ],
+      "angle": 90,
+      "start_index": 85
+    },
+    {
+      "identity": 85,
+      "building_id": 169,
+      "bounds": [
+        -25920,
+        5376,
+        -24704,
+        6336
+      ],
+      "portal": [
+        -25536.0,
+        5372,
+        0
+      ],
+      "door_outside": [
+        -25536,
+        5280,
+        0
+      ],
+      "public_approach": [
+        -25536,
+        5280,
+        0
+      ],
+      "angle": 270,
+      "start_index": 86
+    },
+    {
+      "identity": 86,
+      "building_id": 170,
+      "bounds": [
+        -5440,
+        -6208,
+        -4480,
+        -4992
+      ],
+      "portal": [
+        -4476,
+        -5824.0,
+        0
+      ],
+      "door_outside": [
+        -4384,
+        -5824,
+        0
+      ],
+      "public_approach": [
+        -4384,
+        -5824,
+        0
+      ],
+      "angle": 0,
+      "start_index": 87
+    },
+    {
+      "identity": 87,
+      "building_id": 171,
+      "bounds": [
+        -17216,
+        -7360,
+        -16000,
+        -6400
+      ],
+      "portal": [
+        -16832.0,
+        -7364,
+        0
+      ],
+      "door_outside": [
+        -16832,
+        -7456,
+        0
+      ],
+      "public_approach": [
+        -16832,
+        -7456,
+        0
+      ],
+      "angle": 270,
+      "start_index": 88
+    },
+    {
+      "identity": 88,
+      "building_id": 172,
+      "bounds": [
+        -10176,
+        -13760,
+        -8960,
+        -12800
+      ],
+      "portal": [
+        -9344.0,
+        -12796,
+        0
+      ],
+      "door_outside": [
+        -9344,
+        -12704,
+        0
+      ],
+      "public_approach": [
+        -9344,
+        -12704,
+        0
+      ],
+      "angle": 90,
+      "start_index": 89
+    },
+    {
+      "identity": 89,
+      "building_id": 173,
+      "bounds": [
+        -14720,
+        -13568,
+        -13504,
+        -12608
+      ],
+      "portal": [
+        -14336.0,
+        -13572,
+        0
+      ],
+      "door_outside": [
+        -14336,
+        -13664,
+        0
+      ],
+      "public_approach": [
+        -14336,
+        -13664,
+        0
+      ],
+      "angle": 270,
+      "start_index": 90
+    },
+    {
+      "identity": 90,
+      "building_id": 174,
+      "bounds": [
+        -25856,
+        -1408,
+        -24896,
+        -192
+      ],
+      "portal": [
+        -24892,
+        -1024.0,
+        0
+      ],
+      "door_outside": [
+        -24800,
+        -1024,
+        0
+      ],
+      "public_approach": [
+        -24800,
+        -1024,
+        0
+      ],
+      "angle": 0,
+      "start_index": 91
+    },
+    {
+      "identity": 91,
+      "building_id": 175,
+      "bounds": [
+        -13568,
+        11008,
+        -12608,
+        12224
+      ],
+      "portal": [
+        -13572,
+        11840.0,
+        0
+      ],
+      "door_outside": [
+        -13664,
+        11840,
+        0
+      ],
+      "public_approach": [
+        -13664,
+        11840,
+        0
+      ],
+      "angle": 180,
+      "start_index": 92
+    },
+    {
+      "identity": 92,
+      "building_id": 176,
+      "bounds": [
+        -29504,
+        0,
+        -28288,
+        960
+      ],
+      "portal": [
+        -28672.0,
+        964,
+        0
+      ],
+      "door_outside": [
+        -28672,
+        1056,
+        0
+      ],
+      "public_approach": [
+        -28672,
+        1056,
+        0
+      ],
+      "angle": 90,
+      "start_index": 93
+    },
+    {
+      "identity": 93,
+      "building_id": 177,
+      "bounds": [
+        -20096,
+        10432,
+        -19136,
+        11648
+      ],
+      "portal": [
+        -20100,
+        11264.0,
+        0
+      ],
+      "door_outside": [
+        -20192,
+        11264,
+        0
+      ],
+      "public_approach": [
+        -20192,
+        11264,
+        0
+      ],
+      "angle": 180,
+      "start_index": 94
+    },
+    {
+      "identity": 94,
+      "building_id": 178,
+      "bounds": [
+        -13760,
+        8576,
+        -12544,
+        9536
+      ],
+      "portal": [
+        -12928.0,
+        9540,
+        0
+      ],
+      "door_outside": [
+        -12928,
+        9632,
+        0
+      ],
+      "public_approach": [
+        -12928,
+        9632,
+        0
+      ],
+      "angle": 90,
+      "start_index": 95
+    },
+    {
+      "identity": 95,
+      "building_id": 179,
+      "bounds": [
+        -27136,
+        -7808,
+        -25920,
+        -6848
+      ],
+      "portal": [
+        -26752.0,
+        -7812,
+        0
+      ],
+      "door_outside": [
+        -26752,
+        -7904,
+        0
+      ],
+      "public_approach": [
+        -26752,
+        -7904,
+        0
+      ],
+      "angle": 270,
+      "start_index": 96
+    },
+    {
+      "identity": 96,
+      "building_id": 180,
+      "bounds": [
+        -6272,
+        -4736,
+        -5312,
+        -3520
+      ],
+      "portal": [
+        -5308,
+        -4352.0,
+        0
+      ],
+      "door_outside": [
+        -5216,
+        -4352,
+        0
+      ],
+      "public_approach": [
+        -5216,
+        -4352,
+        0
+      ],
+      "angle": 0,
+      "start_index": 97
+    },
+    {
+      "identity": 97,
+      "building_id": 181,
+      "bounds": [
+        -15616,
+        13696,
+        -14400,
+        14656
+      ],
+      "portal": [
+        -15232.0,
+        13692,
+        0
+      ],
+      "door_outside": [
+        -15232,
+        13600,
+        0
+      ],
+      "public_approach": [
+        -15232,
+        13600,
+        0
+      ],
+      "angle": 270,
+      "start_index": 98
+    },
+    {
+      "identity": 98,
+      "building_id": 182,
+      "bounds": [
+        -13760,
+        12480,
+        -12800,
+        13696
+      ],
+      "portal": [
+        -12796,
+        12864.0,
+        0
+      ],
+      "door_outside": [
+        -12704,
+        12864,
+        0
+      ],
+      "public_approach": [
+        -12704,
+        12864,
+        0
+      ],
+      "angle": 0,
+      "start_index": 99
+    },
+    {
+      "identity": 99,
+      "building_id": 183,
+      "bounds": [
+        -1792,
+        -832,
+        -576,
+        128
+      ],
+      "portal": [
+        -1408.0,
+        -836,
+        0
+      ],
+      "door_outside": [
+        -1408,
+        -928,
+        0
+      ],
+      "public_approach": [
+        -1408,
+        -928,
+        0
+      ],
+      "angle": 270,
+      "start_index": 100
+    },
+    {
+      "identity": 100,
+      "building_id": 184,
+      "bounds": [
+        -6400,
+        -3264,
+        -5440,
+        -2048
+      ],
+      "portal": [
+        -5436,
+        -2880.0,
+        0
+      ],
+      "door_outside": [
+        -5344,
+        -2880,
+        0
+      ],
+      "public_approach": [
+        -5344,
+        -2880,
+        0
+      ],
+      "angle": 0,
+      "start_index": 101
+    },
+    {
+      "identity": 101,
+      "building_id": 185,
+      "bounds": [
+        -5184,
+        -13056,
+        -3968,
+        -12096
+      ],
+      "portal": [
+        -4800.0,
+        -13060,
+        0
+      ],
+      "door_outside": [
+        -4800,
+        -13152,
+        0
+      ],
+      "public_approach": [
+        -4800,
+        -13152,
+        0
+      ],
+      "angle": 270,
+      "start_index": 102
+    },
+    {
+      "identity": 102,
+      "building_id": 187,
+      "bounds": [
+        -12800,
+        9792,
+        -11584,
+        10752
+      ],
+      "portal": [
+        -11968.0,
+        10756,
+        0
+      ],
+      "door_outside": [
+        -11968,
+        10848,
+        0
+      ],
+      "public_approach": [
+        -11968,
+        10848,
+        0
+      ],
+      "angle": 90,
+      "start_index": 103
+    },
+    {
+      "identity": 103,
+      "building_id": 188,
+      "bounds": [
+        -3264,
+        -448,
+        -2048,
+        512
+      ],
+      "portal": [
+        -2880.0,
+        -452,
+        0
+      ],
+      "door_outside": [
+        -2880,
+        -544,
+        0
+      ],
+      "public_approach": [
+        -2880,
+        -544,
+        0
+      ],
+      "angle": 270,
+      "start_index": 104
+    },
+    {
+      "identity": 104,
+      "building_id": 189,
+      "bounds": [
+        -19264,
+        -5056,
+        -18048,
+        -4096
+      ],
+      "portal": [
+        -18432.0,
+        -4092,
+        0
+      ],
+      "door_outside": [
+        -18432,
+        -4000,
+        0
+      ],
+      "public_approach": [
+        -18432,
+        -4000,
+        0
+      ],
+      "angle": 90,
+      "start_index": 105
+    },
+    {
+      "identity": 105,
+      "building_id": 190,
+      "bounds": [
+        -6656,
+        -6208,
+        -5696,
+        -4992
+      ],
+      "portal": [
+        -6660,
+        -5376.0,
+        0
+      ],
+      "door_outside": [
+        -6752,
+        -5376,
+        0
+      ],
+      "public_approach": [
+        -6752,
+        -5376,
+        0
+      ],
+      "angle": 180,
+      "start_index": 106
+    },
+    {
+      "identity": 106,
+      "building_id": 191,
+      "bounds": [
+        -28608,
+        6784,
+        -27392,
+        7744
+      ],
+      "portal": [
+        -27776.0,
+        7748,
+        0
+      ],
+      "door_outside": [
+        -27776,
+        7840,
+        0
+      ],
+      "public_approach": [
+        -27776,
+        7840,
+        0
+      ],
+      "angle": 90,
+      "start_index": 107
+    },
+    {
+      "identity": 107,
+      "building_id": 192,
+      "bounds": [
+        -12352,
+        11008,
+        -11392,
+        12224
+      ],
+      "portal": [
+        -12356,
+        11840.0,
+        0
+      ],
+      "door_outside": [
+        -12448,
+        11840,
+        0
+      ],
+      "public_approach": [
+        -12448,
+        11840,
+        0
+      ],
+      "angle": 180,
+      "start_index": 108
+    },
+    {
+      "identity": 108,
+      "building_id": 193,
+      "bounds": [
+        -14144,
+        13952,
+        -12928,
+        14912
+      ],
+      "portal": [
+        -13312.0,
+        14916,
+        0
+      ],
+      "door_outside": [
+        -13312,
+        15008,
+        0
+      ],
+      "public_approach": [
+        -13312,
+        15008,
+        0
+      ],
+      "angle": 90,
+      "start_index": 109
+    },
+    {
+      "identity": 109,
+      "building_id": 194,
+      "bounds": [
+        -17600,
+        5696,
+        -16384,
+        6656
+      ],
+      "portal": [
+        -17216.0,
+        5692,
+        0
+      ],
+      "door_outside": [
+        -17216,
+        5600,
+        0
+      ],
+      "public_approach": [
+        -17216,
+        5600,
+        0
+      ],
+      "angle": 270,
+      "start_index": 110
+    },
+    {
+      "identity": 110,
+      "building_id": 195,
+      "bounds": [
+        -13248,
+        7360,
+        -12032,
+        8320
+      ],
+      "portal": [
+        -12416.0,
+        8324,
+        0
+      ],
+      "door_outside": [
+        -12416,
+        8416,
+        0
+      ],
+      "public_approach": [
+        -12416,
+        8416,
+        0
+      ],
+      "angle": 90,
+      "start_index": 111
+    },
+    {
+      "identity": 111,
+      "building_id": 196,
+      "bounds": [
+        -16128,
+        5568,
+        -14912,
+        6528
+      ],
+      "portal": [
+        -15744.0,
+        5564,
+        0
+      ],
+      "door_outside": [
+        -15744,
+        5472,
+        0
+      ],
+      "public_approach": [
+        -15744,
+        5472,
+        0
+      ],
+      "angle": 270,
+      "start_index": 112
+    },
+    {
+      "identity": 112,
+      "building_id": 197,
+      "bounds": [
+        -27520,
+        -9024,
+        -26304,
+        -8064
+      ],
+      "portal": [
+        -26688.0,
+        -8060,
+        0
+      ],
+      "door_outside": [
+        -26688,
+        -7968,
+        0
+      ],
+      "public_approach": [
+        -26688,
+        -7968,
+        0
+      ],
+      "angle": 90,
+      "start_index": 113
+    },
+    {
+      "identity": 113,
+      "building_id": 198,
+      "bounds": [
+        -12544,
+        12480,
+        -11584,
+        13696
+      ],
+      "portal": [
+        -12548,
+        13312.0,
+        0
+      ],
+      "door_outside": [
+        -12640,
+        13312,
+        0
+      ],
+      "public_approach": [
+        -12640,
+        13312,
+        0
+      ],
+      "angle": 180,
+      "start_index": 114
+    },
+    {
+      "identity": 114,
+      "building_id": 199,
+      "bounds": [
+        -6720,
+        -1792,
+        -5504,
+        -832
+      ],
+      "portal": [
+        -5888.0,
+        -828,
+        0
+      ],
+      "door_outside": [
+        -5888,
+        -736,
+        0
+      ],
+      "public_approach": [
+        -5888,
+        -736,
+        0
+      ],
+      "angle": 90,
+      "start_index": 115
+    },
+    {
+      "identity": 115,
+      "building_id": 200,
+      "bounds": [
+        -7488,
+        -4736,
+        -6528,
+        -3520
+      ],
+      "portal": [
+        -7492,
+        -3904.0,
+        0
+      ],
+      "door_outside": [
+        -7584,
+        -3904,
+        0
+      ],
+      "public_approach": [
+        -7584,
+        -3904,
+        0
+      ],
+      "angle": 180,
+      "start_index": 116
+    },
+    {
+      "identity": 116,
+      "building_id": 201,
+      "bounds": [
+        -2752,
+        -9472,
+        -1536,
+        -8512
+      ],
+      "portal": [
+        -1920.0,
+        -8508,
+        0
+      ],
+      "door_outside": [
+        -1920,
+        -8416,
+        0
+      ],
+      "public_approach": [
+        -1920,
+        -8416,
+        0
+      ],
+      "angle": 90,
+      "start_index": 117
+    },
+    {
+      "identity": 117,
+      "building_id": 202,
+      "bounds": [
+        -4736,
+        -128,
+        -3520,
+        832
+      ],
+      "portal": [
+        -4352.0,
+        -132,
+        0
+      ],
+      "door_outside": [
+        -4352,
+        -224,
+        0
+      ],
+      "public_approach": [
+        -4352,
+        -224,
+        0
+      ],
+      "angle": 270,
+      "start_index": 118
+    },
+    {
+      "identity": 118,
+      "building_id": 203,
+      "bounds": [
+        -12288,
+        8576,
+        -11072,
+        9536
+      ],
+      "portal": [
+        -11456.0,
+        9540,
+        0
+      ],
+      "door_outside": [
+        -11456,
+        9632,
+        0
+      ],
+      "public_approach": [
+        -11456,
+        9632,
+        0
+      ],
+      "angle": 90,
+      "start_index": 119
+    },
+    {
+      "identity": 119,
+      "building_id": 205,
+      "bounds": [
+        -12864,
+        -5824,
+        -11648,
+        -4864
+      ],
+      "portal": [
+        -12480.0,
+        -5828,
+        0
+      ],
+      "door_outside": [
+        -12480,
+        -5920,
+        0
+      ],
+      "public_approach": [
+        -12480,
+        -5920,
+        0
+      ],
+      "angle": 270,
+      "start_index": 120
+    },
+    {
+      "identity": 120,
+      "building_id": 206,
+      "bounds": [
+        -17792,
+        -5248,
+        -16576,
+        -4288
+      ],
+      "portal": [
+        -16960.0,
+        -4284,
+        0
+      ],
+      "door_outside": [
+        -16960,
+        -4192,
+        0
+      ],
+      "public_approach": [
+        -16960,
+        -4192,
+        0
+      ],
+      "angle": 90,
+      "start_index": 121
+    },
+    {
+      "identity": 121,
+      "building_id": 207,
+      "bounds": [
+        -18816,
+        5504,
+        -17856,
+        6720
+      ],
+      "portal": [
+        -18820,
+        6336.0,
+        0
+      ],
+      "door_outside": [
+        -18912,
+        6336,
+        0
+      ],
+      "public_approach": [
+        -18912,
+        6336,
+        0
+      ],
+      "angle": 180,
+      "start_index": 122
+    },
+    {
+      "identity": 122,
+      "building_id": 208,
+      "bounds": [
+        -1792,
+        384,
+        -576,
+        1344
+      ],
+      "portal": [
+        -960.0,
+        1348,
+        0
+      ],
+      "door_outside": [
+        -960,
+        1440,
+        0
+      ],
+      "public_approach": [
+        -960,
+        1440,
+        0
+      ],
+      "angle": 90,
+      "start_index": 123
+    },
+    {
+      "identity": 123,
+      "building_id": 209,
+      "bounds": [
+        -3712,
+        -12736,
+        -2752,
+        -11520
+      ],
+      "portal": [
+        -3716,
+        -11904.0,
+        0
+      ],
+      "door_outside": [
+        -3808,
+        -11904,
+        0
+      ],
+      "public_approach": [
+        -3808,
+        -11904,
+        0
+      ],
+      "angle": 180,
+      "start_index": 124
+    },
+    {
+      "identity": 124,
+      "building_id": 210,
+      "bounds": [
+        -11328,
+        -5952,
+        -10112,
+        -4992
+      ],
+      "portal": [
+        -10496.0,
+        -4988,
+        0
+      ],
+      "door_outside": [
+        -10496,
+        -4896,
+        0
+      ],
+      "public_approach": [
+        -10496,
+        -4896,
+        0
+      ],
+      "angle": 90,
+      "start_index": 125
+    },
+    {
+      "identity": 125,
+      "building_id": 211,
+      "bounds": [
+        -14336,
+        -5696,
+        -13120,
+        -4736
+      ],
+      "portal": [
+        -13952.0,
+        -5700,
+        0
+      ],
+      "door_outside": [
+        -13952,
+        -5792,
+        0
+      ],
+      "public_approach": [
+        -13952,
+        -5792,
+        0
+      ],
+      "angle": 270,
+      "start_index": 126
+    },
+    {
+      "identity": 126,
+      "building_id": 212,
+      "bounds": [
+        -7616,
+        -3264,
+        -6656,
+        -2048
+      ],
+      "portal": [
+        -6652,
+        -2880.0,
+        0
+      ],
+      "door_outside": [
+        -6560,
+        -2880,
+        0
+      ],
+      "public_approach": [
+        -6560,
+        -2880,
+        0
+      ],
+      "angle": 0,
+      "start_index": 127
+    },
+    {
+      "identity": 127,
+      "building_id": 213,
+      "bounds": [
+        -16320,
+        -5440,
+        -15104,
+        -4480
+      ],
+      "portal": [
+        -15936.0,
+        -5444,
+        0
+      ],
+      "door_outside": [
+        -15936,
+        -5536,
+        0
+      ],
+      "public_approach": [
+        -15936,
+        -5536,
+        0
+      ],
+      "angle": 270,
+      "start_index": 128
+    },
+    {
+      "identity": 128,
+      "building_id": 214,
+      "bounds": [
+        -3264,
+        768,
+        -2048,
+        1728
+      ],
+      "portal": [
+        -2432.0,
+        1732,
+        0
+      ],
+      "door_outside": [
+        -2432,
+        1824,
+        0
+      ],
+      "public_approach": [
+        -2432,
+        1824,
+        0
+      ],
+      "angle": 90,
+      "start_index": 129
+    },
+    {
+      "identity": 129,
+      "building_id": 215,
+      "bounds": [
+        -11328,
+        9792,
+        -10112,
+        10752
+      ],
+      "portal": [
+        -10944.0,
+        9788,
+        0
+      ],
+      "door_outside": [
+        -10944,
+        9696,
+        0
+      ],
+      "public_approach": [
+        -10944,
+        9696,
+        0
+      ],
+      "angle": 270,
+      "start_index": 130
+    },
+    {
+      "identity": 130,
+      "building_id": 216,
+      "bounds": [
+        -12672,
+        13952,
+        -11456,
+        14912
+      ],
+      "portal": [
+        -11840.0,
+        14916,
+        0
+      ],
+      "door_outside": [
+        -11840,
+        15008,
+        0
+      ],
+      "public_approach": [
+        -11840,
+        15008,
+        0
+      ],
+      "angle": 90,
+      "start_index": 131
+    },
+    {
+      "identity": 131,
+      "building_id": 217,
+      "bounds": [
+        -11136,
+        11008,
+        -10176,
+        12224
+      ],
+      "portal": [
+        -11140,
+        11840.0,
+        0
+      ],
+      "door_outside": [
+        -11232,
+        11840,
+        0
+      ],
+      "public_approach": [
+        -11232,
+        11840,
+        0
+      ],
+      "angle": 180,
+      "start_index": 132
+    },
+    {
+      "identity": 132,
+      "building_id": 218,
+      "bounds": [
+        -17600,
+        4480,
+        -16384,
+        5440
+      ],
+      "portal": [
+        -16768.0,
+        5444,
+        0
+      ],
+      "door_outside": [
+        -16768,
+        5536,
+        0
+      ],
+      "public_approach": [
+        -16768,
+        5536,
+        0
+      ],
+      "angle": 90,
+      "start_index": 133
+    },
+    {
+      "identity": 133,
+      "building_id": 219,
+      "bounds": [
+        -11776,
+        7104,
+        -10816,
+        8320
+      ],
+      "portal": [
+        -11780,
+        7936.0,
+        0
+      ],
+      "door_outside": [
+        -11872,
+        7936,
+        0
+      ],
+      "public_approach": [
+        -11872,
+        7936,
+        0
+      ],
+      "angle": 180,
+      "start_index": 134
+    },
+    {
+      "identity": 134,
+      "building_id": 220,
+      "bounds": [
+        -2688,
+        -11072,
+        -1728,
+        -9856
+      ],
+      "portal": [
+        -1724,
+        -10688.0,
+        0
+      ],
+      "door_outside": [
+        -1632,
+        -10688,
+        0
+      ],
+      "public_approach": [
+        -1632,
+        -10688,
+        0
+      ],
+      "angle": 0,
+      "start_index": 135
+    },
+    {
+      "identity": 135,
+      "building_id": 221,
+      "bounds": [
+        -5952,
+        128,
+        -4992,
+        1344
+      ],
+      "portal": [
+        -5956,
+        960.0,
+        0
+      ],
+      "door_outside": [
+        -6048,
+        960,
+        0
+      ],
+      "public_approach": [
+        -6048,
+        960,
+        0
+      ],
+      "angle": 180,
+      "start_index": 136
+    },
+    {
+      "identity": 136,
+      "building_id": 223,
+      "bounds": [
+        -11328,
+        12480,
+        -10368,
+        13696
+      ],
+      "portal": [
+        -10364,
+        12864.0,
+        0
+      ],
+      "door_outside": [
+        -10272,
+        12864,
+        0
+      ],
+      "public_approach": [
+        -10272,
+        12864,
+        0
+      ],
+      "angle": 0,
+      "start_index": 137
+    },
+    {
+      "identity": 137,
+      "building_id": 224,
+      "bounds": [
+        -14272,
+        9792,
+        -13056,
+        10752
+      ],
+      "portal": [
+        -13440.0,
+        10756,
+        0
+      ],
+      "door_outside": [
+        -13440,
+        10848,
+        0
+      ],
+      "public_approach": [
+        -13440,
+        10848,
+        0
+      ],
+      "angle": 90,
+      "start_index": 138
+    },
+    {
+      "identity": 138,
+      "building_id": 225,
+      "bounds": [
+        -4736,
+        1088,
+        -3520,
+        2048
+      ],
+      "portal": [
+        -3904.0,
+        2052,
+        0
+      ],
+      "door_outside": [
+        -3904,
+        2144,
+        0
+      ],
+      "public_approach": [
+        -3904,
+        2144,
+        0
+      ],
+      "angle": 90,
+      "start_index": 139
+    },
+    {
+      "identity": 139,
+      "building_id": 226,
+      "bounds": [
+        -27520,
+        -10240,
+        -26304,
+        -9280
+      ],
+      "portal": [
+        -27136.0,
+        -10244,
+        0
+      ],
+      "door_outside": [
+        -27136,
+        -10336,
+        0
+      ],
+      "public_approach": [
+        -27136,
+        -10336,
+        0
+      ],
+      "angle": 270,
+      "start_index": 140
+    },
+    {
+      "identity": 140,
+      "building_id": 227,
+      "bounds": [
+        -7936,
+        -1792,
+        -6976,
+        -576
+      ],
+      "portal": [
+        -6972,
+        -1408.0,
+        0
+      ],
+      "door_outside": [
+        -6880,
+        -1408,
+        0
+      ],
+      "public_approach": [
+        -6880,
+        -1408,
+        0
+      ],
+      "angle": 0,
+      "start_index": 141
+    },
+    {
+      "identity": 141,
+      "building_id": 228,
+      "bounds": [
+        -14656,
+        4416,
+        -13696,
+        5632
+      ],
+      "portal": [
+        -14660,
+        5248.0,
+        0
+      ],
+      "door_outside": [
+        -14752,
+        5248,
+        0
+      ],
+      "public_approach": [
+        -14752,
+        5248,
+        0
+      ],
+      "angle": 180,
+      "start_index": 142
+    },
+    {
+      "identity": 142,
+      "building_id": 229,
+      "bounds": [
+        -11392,
+        -4736,
+        -10176,
+        -3776
+      ],
+      "portal": [
+        -10560.0,
+        -3772,
+        0
+      ],
+      "door_outside": [
+        -10560,
+        -3680,
+        0
+      ],
+      "public_approach": [
+        -10560,
+        -3680,
+        0
+      ],
+      "angle": 90,
+      "start_index": 143
+    },
+    {
+      "identity": 143,
+      "building_id": 230,
+      "bounds": [
+        -1792,
+        1600,
+        -576,
+        2560
+      ],
+      "portal": [
+        -1408.0,
+        1596,
+        0
+      ],
+      "door_outside": [
+        -1408,
+        1504,
+        0
+      ],
+      "public_approach": [
+        -1408,
+        1504,
+        0
+      ],
+      "angle": 270,
+      "start_index": 144
+    },
+    {
+      "identity": 144,
+      "building_id": 231,
+      "bounds": [
+        -10816,
+        8576,
+        -9600,
+        9536
+      ],
+      "portal": [
+        -9984.0,
+        9540,
+        0
+      ],
+      "door_outside": [
+        -9984,
+        9632,
+        0
+      ],
+      "public_approach": [
+        -9984,
+        9632,
+        0
+      ],
+      "angle": 90,
+      "start_index": 145
+    },
+    {
+      "identity": 145,
+      "building_id": 236,
+      "bounds": [
+        -8832,
+        -3328,
+        -7872,
+        -2112
+      ],
+      "portal": [
+        -8836,
+        -2496.0,
+        0
+      ],
+      "door_outside": [
+        -8928,
+        -2496,
+        0
+      ],
+      "public_approach": [
+        -8928,
+        -2496,
+        0
+      ],
+      "angle": 180,
+      "start_index": 146
+    },
+    {
+      "identity": 146,
+      "building_id": 237,
+      "bounds": [
+        -18816,
+        4032,
+        -17856,
+        5248
+      ],
+      "portal": [
+        -17852,
+        4416.0,
+        0
+      ],
+      "door_outside": [
+        -17760,
+        4416,
+        0
+      ],
+      "public_approach": [
+        -17760,
+        4416,
+        0
+      ],
+      "angle": 0,
+      "start_index": 147
+    },
+    {
+      "identity": 147,
+      "building_id": 238,
+      "bounds": [
+        -3264,
+        1984,
+        -2048,
+        2944
+      ],
+      "portal": [
+        -2880.0,
+        1980,
+        0
+      ],
+      "door_outside": [
+        -2880,
+        1888,
+        0
+      ],
+      "public_approach": [
+        -2880,
+        1888,
+        0
+      ],
+      "angle": 270,
+      "start_index": 148
+    },
+    {
+      "identity": 148,
+      "building_id": 239,
+      "bounds": [
+        -12288,
+        5312,
+        -11072,
+        6272
+      ],
+      "portal": [
+        -11456.0,
+        6276,
+        0
+      ],
+      "door_outside": [
+        -11456,
+        6368,
+        0
+      ],
+      "public_approach": [
+        -11456,
+        6368,
+        0
+      ],
+      "angle": 90,
+      "start_index": 149
+    },
+    {
+      "identity": 149,
+      "building_id": 241,
+      "bounds": [
+        -11200,
+        13952,
+        -9984,
+        14912
+      ],
+      "portal": [
+        -10816.0,
+        13948,
+        0
+      ],
+      "door_outside": [
+        -10816,
+        13856,
+        0
+      ],
+      "public_approach": [
+        -10816,
+        13856,
+        0
+      ],
+      "angle": 270,
+      "start_index": 150
+    },
+    {
+      "identity": 150,
+      "building_id": 242,
+      "bounds": [
+        -7168,
+        384,
+        -6208,
+        1600
+      ],
+      "portal": [
+        -6204,
+        768.0,
+        0
+      ],
+      "door_outside": [
+        -6112,
+        768,
+        0
+      ],
+      "public_approach": [
+        -6112,
+        768,
+        0
+      ],
+      "angle": 0,
+      "start_index": 151
+    },
+    {
+      "identity": 151,
+      "building_id": 243,
+      "bounds": [
+        -19328,
+        2240,
+        -18112,
+        3200
+      ],
+      "portal": [
+        -18944.0,
+        2236,
+        0
+      ],
+      "door_outside": [
+        -18944,
+        2144,
+        0
+      ],
+      "public_approach": [
+        -18944,
+        2144,
+        0
+      ],
+      "angle": 270,
+      "start_index": 152
+    },
+    {
+      "identity": 152,
+      "building_id": 244,
+      "bounds": [
+        -5952,
+        1600,
+        -4992,
+        2816
+      ],
+      "portal": [
+        -4988,
+        1984.0,
+        0
+      ],
+      "door_outside": [
+        -4896,
+        1984,
+        0
+      ],
+      "public_approach": [
+        -4896,
+        1984,
+        0
+      ],
+      "angle": 0,
+      "start_index": 153
+    },
+    {
+      "identity": 153,
+      "building_id": 245,
+      "bounds": [
+        -10560,
+        7104,
+        -9600,
+        8320
+      ],
+      "portal": [
+        -10564,
+        7936.0,
+        0
+      ],
+      "door_outside": [
+        -10656,
+        7936,
+        0
+      ],
+      "public_approach": [
+        -10656,
+        7936,
+        0
+      ],
+      "angle": 180,
+      "start_index": 154
+    },
+    {
+      "identity": 154,
+      "building_id": 246,
+      "bounds": [
+        -17600,
+        3264,
+        -16384,
+        4224
+      ],
+      "portal": [
+        -16768.0,
+        4228,
+        0
+      ],
+      "door_outside": [
+        -16768,
+        4320,
+        0
+      ],
+      "public_approach": [
+        -16768,
+        4320,
+        0
+      ],
+      "angle": 90,
+      "start_index": 155
+    },
+    {
+      "identity": 155,
+      "building_id": 247,
+      "bounds": [
+        -9856,
+        9792,
+        -8640,
+        10752
+      ],
+      "portal": [
+        -9472.0,
+        9788,
+        0
+      ],
+      "door_outside": [
+        -9472,
+        9696,
+        0
+      ],
+      "public_approach": [
+        -9472,
+        9696,
+        0
+      ],
+      "angle": 270,
+      "start_index": 156
+    },
+    {
+      "identity": 156,
+      "building_id": 248,
+      "bounds": [
+        -16896,
+        7616,
+        -15680,
+        8576
+      ],
+      "portal": [
+        -16512.0,
+        7612,
+        0
+      ],
+      "door_outside": [
+        -16512,
+        7520,
+        0
+      ],
+      "public_approach": [
+        -16512,
+        7520,
+        0
+      ],
+      "angle": 270,
+      "start_index": 157
+    },
+    {
+      "identity": 157,
+      "building_id": 249,
+      "bounds": [
+        -9152,
+        -1856,
+        -8192,
+        -640
+      ],
+      "portal": [
+        -9156,
+        -1024.0,
+        0
+      ],
+      "door_outside": [
+        -9248,
+        -1024,
+        0
+      ],
+      "public_approach": [
+        -9248,
+        -1024,
+        0
+      ],
+      "angle": 180,
+      "start_index": 158
+    },
+    {
+      "identity": 158,
+      "building_id": 300,
+      "bounds": [
+        -9920,
+        11008,
+        -8960,
+        12224
+      ],
+      "portal": [
+        -8956,
+        11392.0,
+        0
+      ],
+      "door_outside": [
+        -8864,
+        11392,
+        0
+      ],
+      "public_approach": [
+        -8864,
+        11392,
+        0
+      ],
+      "angle": 0,
+      "start_index": 159
+    },
+    {
+      "identity": 159,
+      "building_id": 301,
+      "bounds": [
+        -10112,
+        12480,
+        -9152,
+        13696
+      ],
+      "portal": [
+        -9148,
+        12864.0,
+        0
+      ],
+      "door_outside": [
+        -9056,
+        12864,
+        0
+      ],
+      "public_approach": [
+        -9056,
+        12864,
+        0
+      ],
+      "angle": 0,
+      "start_index": 160
+    }
+  ],
+  "shops": [
+    {
+      "identity": 0,
+      "building_id": 7,
+      "vendor": [
+        -18176,
+        -2240,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "identity": 1,
+      "building_id": 8,
+      "vendor": [
+        -9728,
+        4032,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 2,
+      "building_id": 9,
+      "vendor": [
+        -8064,
+        -3968,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 3,
+      "building_id": 25,
+      "vendor": [
+        -14336,
+        3776,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 4,
+      "building_id": 26,
+      "vendor": [
+        -9728,
+        5056,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 5,
+      "building_id": 27,
+      "vendor": [
+        -17152,
+        2688,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "identity": 6,
+      "building_id": 43,
+      "vendor": [
+        -4864,
+        -1472,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "identity": 7,
+      "building_id": 44,
+      "vendor": [
+        -14336,
+        2752,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 8,
+      "building_id": 45,
+      "vendor": [
+        -8384,
+        11648,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 9,
+      "building_id": 61,
+      "vendor": [
+        -7296,
+        -5312,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "identity": 10,
+      "building_id": 62,
+      "vendor": [
+        -10624,
+        4032,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 11,
+      "building_id": 63,
+      "vendor": [
+        -8576,
+        12864,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 12,
+      "building_id": 79,
+      "vendor": [
+        -13440,
+        3776,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 13,
+      "building_id": 80,
+      "vendor": [
+        -10624,
+        3008,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 14,
+      "building_id": 81,
+      "vendor": [
+        -8960,
+        9216,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "identity": 15,
+      "building_id": 97,
+      "vendor": [
+        -9856,
+        1728,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "identity": 16,
+      "building_id": 98,
+      "vendor": [
+        -13440,
+        2752,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 17,
+      "building_id": 99,
+      "vendor": [
+        -9344,
+        14272,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "identity": 18,
+      "building_id": 108,
+      "vendor": [
+        -7488,
+        11648,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 19,
+      "building_id": 109,
+      "vendor": [
+        -15360,
+        1216,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "identity": 20,
+      "building_id": 110,
+      "vendor": [
+        -8128,
+        7360,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 21,
+      "building_id": 111,
+      "vendor": [
+        -7680,
+        12672,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 22,
+      "building_id": 112,
+      "vendor": [
+        -8320,
+        13824,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "identity": 23,
+      "building_id": 113,
+      "vendor": [
+        -8960,
+        8320,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "identity": 24,
+      "building_id": 114,
+      "vendor": [
+        -11520,
+        4672,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 25,
+      "building_id": 115,
+      "vendor": [
+        -8000,
+        8960,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 26,
+      "building_id": 116,
+      "vendor": [
+        -7360,
+        13696,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 27,
+      "building_id": 117,
+      "vendor": [
+        -15168,
+        320,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "identity": 28,
+      "building_id": 118,
+      "vendor": [
+        -7104,
+        8960,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 29,
+      "building_id": 119,
+      "vendor": [
+        -3840,
+        -6528,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "identity": 30,
+      "building_id": 120,
+      "vendor": [
+        -6464,
+        13184,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 31,
+      "building_id": 121,
+      "vendor": [
+        -14912,
+        -576,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "identity": 32,
+      "building_id": 122,
+      "vendor": [
+        -19840,
+        8064,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 33,
+      "building_id": 123,
+      "vendor": [
+        -5568,
+        13184,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 34,
+      "building_id": 124,
+      "vendor": [
+        -11968,
+        -4224,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 35,
+      "building_id": 125,
+      "vendor": [
+        -21312,
+        6528,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "identity": 36,
+      "building_id": 126,
+      "vendor": [
+        -19776,
+        9024,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "identity": 37,
+      "building_id": 127,
+      "vendor": [
+        -14720,
+        -1536,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 38,
+      "building_id": 128,
+      "vendor": [
+        -17088,
+        13056,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "identity": 39,
+      "building_id": 129,
+      "vendor": [
+        -22272,
+        6528,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 40,
+      "building_id": 130,
+      "vendor": [
+        -2048,
+        7360,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "identity": 41,
+      "building_id": 131,
+      "vendor": [
+        0,
+        -768,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 42,
+      "building_id": 132,
+      "vendor": [
+        0,
+        256,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 43,
+      "building_id": 133,
+      "vendor": [
+        -22464,
+        8128,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 44,
+      "building_id": 134,
+      "vendor": [
+        -3008,
+        11648,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 45,
+      "building_id": 135,
+      "vendor": [
+        -14272,
+        -4096,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 46,
+      "building_id": 136,
+      "vendor": [
+        -192,
+        4288,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "identity": 47,
+      "building_id": 137,
+      "vendor": [
+        -21248,
+        -1728,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "identity": 48,
+      "building_id": 138,
+      "vendor": [
+        -10368,
+        -10240,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 49,
+      "building_id": 139,
+      "vendor": [
+        -15296,
+        -3840,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "identity": 50,
+      "building_id": 140,
+      "vendor": [
+        -2112,
+        11648,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 51,
+      "building_id": 141,
+      "vendor": [
+        -21312,
+        -2688,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 52,
+      "building_id": 142,
+      "vendor": [
+        -1536,
+        10240,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 53,
+      "building_id": 143,
+      "vendor": [
+        -15296,
+        -6848,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 54,
+      "building_id": 144,
+      "vendor": [
+        -23872,
+        10112,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 55,
+      "building_id": 145,
+      "vendor": [
+        -21376,
+        -3712,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 56,
+      "building_id": 146,
+      "vendor": [
+        -19840,
+        -4544,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 57,
+      "building_id": 147,
+      "vendor": [
+        -6912,
+        -12864,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 58,
+      "building_id": 151,
+      "vendor": [
+        -23744,
+        -1920,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 59,
+      "building_id": 168,
+      "vendor": [
+        -23744,
+        11136,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "identity": 60,
+      "building_id": 186,
+      "vendor": [
+        -20864,
+        13504,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "identity": 61,
+      "building_id": 204,
+      "vendor": [
+        -25920,
+        7616,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "identity": 62,
+      "building_id": 222,
+      "vendor": [
+        -26560,
+        5504,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "identity": 63,
+      "building_id": 240,
+      "vendor": [
+        -21824,
+        13568,
+        0
+      ],
+      "angle": 270
+    }
+  ],
+  "port_transform": {
+    "quarter_turns": 1,
+    "offset": [
+      -256,
+      15488
+    ],
+    "basis": "Rotate the existing east-facing docks toward the northern river, on the outer northeastern quay; access to the walled city uses its north/bridge gate, not a fifth wall opening."
+  },
+  "services": {
+    "resource_bed": [
+      -768,
+      1664,
+      0
+    ],
+    "resource_workbench": [
+      -768,
+      1472,
+      0
+    ],
+    "completion_position": [
+      128,
+      1856,
+      0
+    ]
+  }
+}

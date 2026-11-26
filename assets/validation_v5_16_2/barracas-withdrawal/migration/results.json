@@ -1,0 +1,20 @@
+{
+  "issue": 454,
+  "scope": "Load a preceding-revision aftermath checkpoint, retain all saved actors and native withdrawal. After35 tics require every surviving withdrawing body to hold the current route revision; repeated initialization preserves its position, health and cached route. Save the migrated world. This checks continuation/idempotence, not completed army withdrawal.",
+  "runtime_sha256": "fd95d6be6a83492df11bd139fe765a485b29ee1c95e45ed674560f31a122e170",
+  "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "fixture_sha256": "218ef3d321ef3b5b87ed334ed7b0ed68e423df73876a727bc175b204acf91076",
+  "runs": [
+    {
+      "phase": "reload",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 REFILL RESUME PASS elapsed=35809 stage=4",
+        "CA454 REFILL COMPLETE passed=1 failures=0 mode=migration retained=882 revision=4 victory_count=1"
+      ]
+    }
+  ],
+  "seed_save_sha256": "22014ad4c2cb1c0a83b4253ebb08cfe78c480d6cdcbc2aafc31aa2272179a367"
+}

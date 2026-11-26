@@ -1,0 +1,157 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 02:32:53
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/barracas-march-native02/fresh/caelum_argenteum_dev.pk3, 18112 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/barracas-ram-crews03/preview.pk3, 5 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/barracas-march-native02/front-probe.pk3, 2 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2419.45 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP03 - Barracas al Sud — fortified port
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA454 MARCH START actors=15
+Game saved.
+CA454 MARCH ARRIVED actor=4 lane=0 elapsed=2659 distance=14.002 speed=3.820
+CA454 MARCH ARRIVED actor=3 lane=0 elapsed=2699 distance=13.440 speed=3.820
+CA454 MARCH ARRIVED actor=5 lane=1 elapsed=2963 distance=14.033 speed=3.820
+CA454 MARCH ARRIVED actor=6 lane=1 elapsed=3091 distance=13.814 speed=3.820
+CA454 MARCH PROGRESS actor=0 lane=0 cursor=0 elapsed=3500 position=(-27128.8,-16640.0) remaining=22906.3
+CA454 MARCH PROGRESS actor=1 lane=2 cursor=0 elapsed=3500 position=(-19128.8,-16640.0) remaining=24714.7
+CA454 MARCH PROGRESS actor=2 lane=4 cursor=0 elapsed=3500 position=(-17799.2,-16640.0) remaining=20233.7
+CA454 MARCH PROGRESS actor=7 lane=2 cursor=1 elapsed=3500 position=(2080.0,-14418.8) remaining=12791.0
+CA454 MARCH PROGRESS actor=8 lane=2 cursor=1 elapsed=3500 position=(2080.0,-14238.8) remaining=12431.3
+CA454 MARCH PROGRESS actor=9 lane=3 cursor=1 elapsed=3500 position=(2080.0,-14930.8) remaining=13814.3
+CA454 MARCH PROGRESS actor=10 lane=3 cursor=1 elapsed=3500 position=(2080.0,-14750.8) remaining=13454.5
+CA454 MARCH PROGRESS actor=11 lane=4 cursor=1 elapsed=3500 position=(-31456.0,-14238.8) remaining=14094.1
+CA454 MARCH PROGRESS actor=12 lane=4 cursor=1 elapsed=3500 position=(-31456.0,-14418.8) remaining=14453.9
+CA454 MARCH PROGRESS actor=13 lane=5 cursor=1 elapsed=3500 position=(-31456.0,-14750.8) remaining=14094.1
+CA454 MARCH PROGRESS actor=14 lane=5 cursor=1 elapsed=3500 position=(-31456.0,-14930.8) remaining=14453.9
+CA454 MARCH PROGRESS actor=0 lane=0 cursor=0 elapsed=7000 position=(-23785.9,-16640.0) remaining=19585.5
+CA454 MARCH PROGRESS actor=1 lane=2 cursor=0 elapsed=7000 position=(-15920.4,-16640.0) remaining=22268.9
+CA454 MARCH PROGRESS actor=2 lane=4 cursor=0 elapsed=7000 position=(-21038.1,-16640.0) remaining=18504.4
+CA454 MARCH PROGRESS actor=7 lane=2 cursor=1 elapsed=7000 position=(2080.0,-11075.9) remaining=9451.8
+CA454 MARCH PROGRESS actor=8 lane=2 cursor=1 elapsed=7000 position=(2080.0,-10895.9) remaining=9092.4
+CA454 MARCH PROGRESS actor=9 lane=3 cursor=1 elapsed=7000 position=(2080.0,-11587.9) remaining=10474.5
+CA454 MARCH PROGRESS actor=10 lane=3 cursor=1 elapsed=7000 position=(2080.0,-11407.9) remaining=10114.9
+CA454 MARCH PROGRESS actor=11 lane=4 cursor=1 elapsed=7000 position=(-31456.0,-10895.9) remaining=10754.1
+CA454 MARCH PROGRESS actor=12 lane=4 cursor=1 elapsed=7000 position=(-31456.0,-11075.9) remaining=11113.7
+CA454 MARCH PROGRESS actor=13 lane=5 cursor=1 elapsed=7000 position=(-31456.0,-11407.9) remaining=10754.1
+CA454 MARCH PROGRESS actor=14 lane=5 cursor=1 elapsed=7000 position=(-31456.0,-11587.9) remaining=11113.7
+Game saved.
+CA454 MARCH PROGRESS actor=0 lane=0 cursor=0 elapsed=10500 position=(-20508.8,-16640.0) remaining=16338.8
+CA454 MARCH PROGRESS actor=1 lane=2 cursor=0 elapsed=10500 position=(-12577.6,-16640.0) remaining=19951.7
+CA454 MARCH PROGRESS actor=2 lane=4 cursor=0 elapsed=10500 position=(-24315.3,-16640.0) remaining=17204.3
+CA454 MARCH PROGRESS actor=7 lane=2 cursor=1 elapsed=10500 position=(2080.0,-7733.1) remaining=6116.6
+CA454 MARCH PROGRESS actor=8 lane=2 cursor=1 elapsed=10500 position=(2080.0,-7553.1) remaining=5757.9
+CA454 MARCH PROGRESS actor=9 lane=3 cursor=1 elapsed=10500 position=(2080.0,-8245.1) remaining=7137.5
+CA454 MARCH PROGRESS actor=10 lane=3 cursor=1 elapsed=10500 position=(2080.0,-8065.1) remaining=6778.5
+CA454 MARCH PROGRESS actor=11 lane=4 cursor=1 elapsed=10500 position=(-31456.0,-7553.1) remaining=7416.8
+CA454 MARCH PROGRESS actor=12 lane=4 cursor=1 elapsed=10500 position=(-31456.0,-7733.1) remaining=7776.0
+CA454 MARCH PROGRESS actor=13 lane=5 cursor=1 elapsed=10500 position=(-31456.0,-8065.1) remaining=7416.8
+CA454 MARCH PROGRESS actor=14 lane=5 cursor=1 elapsed=10500 position=(-31456.0,-8245.1) remaining=7776.0
+CA454 MARCH PROGRESS actor=0 lane=0 cursor=0 elapsed=14000 position=(-17166.0,-16640.0) remaining=13042.7
+CA454 MARCH PROGRESS actor=1 lane=2 cursor=0 elapsed=14000 position=(-9234.7,-16640.0) remaining=17960.7
+CA454 MARCH PROGRESS actor=2 lane=4 cursor=0 elapsed=14000 position=(-27658.1,-16640.0) remaining=16454.8
+CA454 MARCH PROGRESS actor=7 lane=2 cursor=1 elapsed=14000 position=(2080.0,-4390.2) remaining=2799.5
+CA454 MARCH PROGRESS actor=8 lane=2 cursor=1 elapsed=14000 position=(2080.0,-4210.2) remaining=2446.4
+CA454 MARCH PROGRESS actor=9 lane=3 cursor=1 elapsed=14000 position=(2080.0,-4902.2) remaining=3810.8
+CA454 MARCH PROGRESS actor=10 lane=3 cursor=1 elapsed=14000 position=(2080.0,-4722.2) remaining=3454.4
+CA454 MARCH PROGRESS actor=11 lane=4 cursor=1 elapsed=14000 position=(-31456.0,-4210.2) remaining=4088.4
+CA454 MARCH PROGRESS actor=12 lane=4 cursor=1 elapsed=14000 position=(-31456.0,-4390.2) remaining=4445.8
+CA454 MARCH PROGRESS actor=13 lane=5 cursor=1 elapsed=14000 position=(-31456.0,-4722.2) remaining=4088.4
+CA454 MARCH PROGRESS actor=14 lane=5 cursor=1 elapsed=14000 position=(-31456.0,-4902.2) remaining=4445.8
+CA454 MARCH ARRIVED actor=8 lane=2 elapsed=16791 distance=12.629 speed=3.820
+CA454 MARCH ARRIVED actor=7 lane=2 elapsed=17135 distance=14.422 speed=3.820
+CA454 MARCH PROGRESS actor=0 lane=0 cursor=0 elapsed=17500 position=(-13823.1,-16640.0) remaining=9778.4
+CA454 MARCH PROGRESS actor=1 lane=2 cursor=0 elapsed=17500 position=(-5891.9,-16640.0) remaining=16415.1
+CA454 MARCH PROGRESS actor=2 lane=4 cursor=0 elapsed=17500 position=(-30920.7,-16566.2) remaining=16287.6
+CA454 MARCH PROGRESS actor=9 lane=3 cursor=2 elapsed=17500 position=(1994.5,-1581.1) remaining=623.7
+CA454 MARCH PROGRESS actor=10 lane=3 cursor=2 elapsed=17500 position=(1860.2,-1453.5) remaining=327.3
+CA454 MARCH PROGRESS actor=11 lane=4 cursor=1 elapsed=17500 position=(-31456.0,-867.4) remaining=878.1
+CA454 MARCH PROGRESS actor=12 lane=4 cursor=1 elapsed=17500 position=(-31456.0,-1047.4) remaining=1189.3
+CA454 MARCH PROGRESS actor=13 lane=5 cursor=1 elapsed=17500 position=(-31456.0,-1379.4) remaining=878.1
+CA454 MARCH PROGRESS actor=14 lane=5 cursor=1 elapsed=17500 position=(-31456.0,-1559.4) remaining=1189.3
+CA454 MARCH ARRIVED actor=10 lane=3 elapsed=17863 distance=12.696 speed=3.820
+CA454 MARCH ARRIVED actor=9 lane=3 elapsed=18207 distance=14.754 speed=3.820
+CA454 MARCH ARRIVED actor=11 lane=4 elapsed=18535 distance=11.774 speed=3.820
+CA454 MARCH ARRIVED actor=13 lane=5 elapsed=18535 distance=11.774 speed=3.820
+CA454 MARCH ARRIVED actor=12 lane=4 elapsed=18879 distance=13.653 speed=3.820
+CA454 MARCH ARRIVED actor=14 lane=5 elapsed=18879 distance=13.653 speed=3.820
+Game saved.
+CA454 MARCH PROGRESS actor=0 lane=0 cursor=0 elapsed=21000 position=(-10480.3,-16640.0) remaining=6593.2
+CA454 MARCH PROGRESS actor=1 lane=2 cursor=0 elapsed=21000 position=(-2549.0,-16640.0) remaining=15449.0
+CA454 MARCH PROGRESS actor=2 lane=4 cursor=1 elapsed=21000 position=(-31445.6,-13897.0) remaining=13681.2
+CA454 MARCH PROGRESS actor=0 lane=0 cursor=0 elapsed=24500 position=(-7137.4,-16640.0) remaining=3697.7
+CA454 MARCH PROGRESS actor=1 lane=2 cursor=0 elapsed=24500 position=(793.8,-16640.0) remaining=15173.5
+CA454 MARCH PROGRESS actor=2 lane=4 cursor=1 elapsed=24500 position=(-31448.4,-10554.1) remaining=10372.4
+CA454 MARCH PROGRESS actor=0 lane=0 cursor=1 elapsed=28000 position=(-4361.1,-16070.8) remaining=1862.8
+CA454 MARCH PROGRESS actor=1 lane=2 cursor=1 elapsed=28000 position=(2070.5,-14729.8) remaining=13364.6
+CA454 MARCH PROGRESS actor=2 lane=4 cursor=1 elapsed=28000 position=(-31451.1,-7211.3) remaining=7095.7
+Game saved.
+CA454 MARCH PROGRESS actor=0 lane=0 cursor=1 elapsed=31500 position=(-4403.9,-14224.8) remaining=54.6
+CA454 MARCH PROGRESS actor=1 lane=2 cursor=1 elapsed=31500 position=(2073.1,-11387.0) remaining=10057.8
+CA454 MARCH PROGRESS actor=2 lane=4 cursor=1 elapsed=31500 position=(-31453.9,-3868.4) remaining=3932.0
+CA454 MARCH PROGRESS actor=0 lane=0 cursor=1 elapsed=35000 position=(-4390.2,-14224.8) remaining=41.7
+CA454 MARCH PROGRESS actor=1 lane=2 cursor=1 elapsed=35000 position=(2075.7,-8044.1) remaining=6786.3
+CA454 MARCH PROGRESS actor=2 lane=4 cursor=2 elapsed=35000 position=(-30623.2,-1348.0) remaining=1342.3
+CA454 MARCH PROGRESS actor=0 lane=0 cursor=1 elapsed=38500 position=(-4356.1,-14224.8) remaining=17.2
+CA454 MARCH PROGRESS actor=1 lane=2 cursor=1 elapsed=38500 position=(2078.3,-4701.3) remaining=3646.7
+CA454 MARCH PROGRESS actor=2 lane=4 cursor=4 elapsed=38500 position=(-29777.1,-261.3) remaining=61.1
+Game saved.
+CA454 MARCH PROGRESS actor=0 lane=0 cursor=1 elapsed=42000 position=(-4377.2,-14224.8) remaining=30.3
+CA454 MARCH PROGRESS actor=1 lane=2 cursor=3 elapsed=42000 position=(941.4,-2484.7) remaining=1156.0
+CA454 MARCH PROGRESS actor=2 lane=4 cursor=4 elapsed=42000 position=(-29777.1,-290.1) remaining=34.5
+CA454 MARCH PROGRESS actor=0 lane=0 cursor=1 elapsed=45500 position=(-4411.3,-14224.8) remaining=61.6
+CA454 MARCH PROGRESS actor=1 lane=2 cursor=4 elapsed=45500 position=(401.1,-1474.4) remaining=17.2
+CA454 MARCH PROGRESS actor=2 lane=4 cursor=4 elapsed=45500 position=(-29777.1,-320.4) remaining=17.1
+CA454 MARCH PROGRESS actor=0 lane=0 cursor=1 elapsed=49000 position=(-4382.6,-14224.8) remaining=34.9
+CA454 MARCH PROGRESS actor=1 lane=2 cursor=4 elapsed=49000 position=(401.1,-1508.7) remaining=40.5
+CA454 MARCH PROGRESS actor=2 lane=4 cursor=4 elapsed=49000 position=(-29777.1,-287.8) remaining=36.4

@@ -51,21 +51,21 @@
 /assets/map06_port/legacy_4379_north/*.json whitespace=cr-at-eol
 /assets/validation_4379/*.json text eol=lf
 # Native CPU identification includes a trailing space; preserve engine output.
-/assets/validation_4379/*.log text eol=lf whitespace=-blank-at-eol
+/assets/validation_4379/*.log text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab=-blank-at-eol
 /assets/validation_4379/south/*.json text eol=lf
-/assets/validation_4379/south/*.log text eol=lf whitespace=-blank-at-eol
+/assets/validation_4379/south/*.log text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab=-blank-at-eol
 
 # Preserve #78 native evidence and validator records across Windows checkouts.
 /assets/validation_43710/*.json text eol=lf
-/assets/validation_43710/*.txt text eol=lf whitespace=-blank-at-eol
+/assets/validation_43710/*.txt text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab=-blank-at-eol
 
 # Preserve #79 evidence on Windows checkouts.
 /assets/validation_43711/*.json text eol=lf
-/assets/validation_43711/*.txt text eol=lf whitespace=-blank-at-eol
+/assets/validation_43711/*.txt text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab=-blank-at-eol
 
 # Preserve #80 evidence on Windows checkouts.
 /assets/validation_43712/*.json text eol=lf
-/assets/validation_43712/*.txt text eol=lf whitespace=-blank-at-eol
+/assets/validation_43712/*.txt text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab=-blank-at-eol
 
 # Preserve #81 evidence on Windows checkouts.
 /assets/validation_43713/*.json text eol=lf
@@ -87,7 +87,7 @@
 
 # Preserve the final V4.37 integration evidence byte-for-byte.
 /assets/validation_43724/*.json text eol=lf
-/assets/validation_43724/*.txt text eol=lf whitespace=-blank-at-eol
+/assets/validation_43724/*.txt text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab=-blank-at-eol
 
 # #121 hashes identify exact native output, configuration and fixture bytes.
 /assets/validation_505/* -text whitespace=cr-at-eol
@@ -419,7 +419,7 @@
 /src/caelum/data/CaelumContaminationData.zs text eol=lf
 
 # Unified patch context includes a leading space before tabs and blank lines.
-/assets/validation_v5_12_7/engine_timer.patch text eol=lf whitespace=-blank-at-eol,-space-before-tab
+/assets/validation_v5_12_7/engine_timer.patch text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab=-blank-at-eol,-space-before-tab
 
 # Preserve the reversible hunt baseline and deterministic Arcana data (#616).
 /assets/hunt/legacy_51311/* -text
@@ -450,3 +450,51 @@
 /assets/validation_v5_15_4/*.md text eol=lf
 /assets/validation_v5_15_4/*.json text eol=lf
 /assets/validation_v5_15_4/*.ps1 text eol=lf
+
+# Exact pre-redesign sewer sources; provenance checks cover original bytes.
+/assets/map02_maze/legacy_5161/* -text -whitespace
+/assets/map02_maze/*.json text eol=lf
+/assets/generators/generate_map02_redesign.py text eol=lf
+/assets/generators/generate_map02_maze.py text eol=lf
+/assets/generators/validate_map02_redesign.py text eol=lf
+/src/caelum/world/CaelumMazeLayout.zs text eol=lf
+/assets/validation_v5_16_2/** -text -whitespace
+/assets/validation_v5_16_2/*.py text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab
+/assets/validation_v5_16_2/*.zs text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab
+/assets/validation_v5_16_2/*.json text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab
+/assets/validation_v5_16_2/*.txt text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab
+
+# Barracas source/isolated preview; exact preceding map is rollback evidence.
+/assets/barracas_redesign/*.json text eol=lf
+/assets/map06_port/legacy_5162/* -text -whitespace
+/assets/generators/generate_barracas_preview.py text eol=lf
+/assets/generators/generate_barracas_facades.py text eol=lf
+
+# Current Barracas helper inputs/outputs; immutable archives keep original bytes.
+/assets/map06_port/*.json text eol=lf
+/assets/generators/generate_barracas_data.py text eol=lf
+/assets/generators/generate_city_interiors.py text eol=lf
+/src/caelum/world/CaelumBarracasData.zs text eol=lf
+/src/caelum/world/CaelumCityData.zs text eol=lf
+
+/assets/generators/generate_barracas_map.py text eol=lf
+/assets/generators/generate_barracas_fronts.py text eol=lf
+/src/caelum/world/CaelumBarracasFrontData.zs text eol=lf
+/assets/generators/generate_barracas_retreat.py text eol=lf
+/src/caelum/world/CaelumBarracasRetreatData.zs text eol=lf
+/assets/generators/install_barracas_map.py text eol=lf
+/assets/generators/generate_barracas_siege.py text eol=lf
+/assets/generators/generate_barracas_ram_crews.py text eol=lf
+/assets/generators/generate_barracas_routes.py text eol=lf
+/assets/generators/generate_barracas_march.py text eol=lf
+/src/caelum/world/CaelumBarracasFacades.zs text eol=lf
+/src/caelum/data/barracas_facades.mapinfo text eol=lf
+/src/caelum/data/barracas_facades.modeldef text eol=lf
+/src/models/caelum/architecture/barracas/*.obj -text whitespace=cr-at-eol
+/src/caelum/world/CaelumBarracasSiegeData.zs text eol=lf
+/src/caelum/world/CaelumBarracasDeployment.zs text eol=lf
+/src/caelum/world/CaelumBarracasRamCrewData.zs text eol=lf
+/src/caelum/world/CaelumBarracasMarchData.zs text eol=lf
+
+# Preserve the native-tested #454 perception source bytes on checkout.
+/src/caelum/actors/CaelumVisualPerception.zs -text whitespace=cr-at-eol
