@@ -14,6 +14,13 @@ ROOT=Path(__file__).resolve().parents[2]
 
 
 
+def identity_policy_errors(config):
+    """Keep explicit class names in descriptive policy aligned with its species."""
+    declared=set(re.findall(r'\bCaelumBestiary\d{3}\b',config['identity_policy']))
+    expected={item['actor'] for item in config['species'].values()}
+    return [] if declared==expected else ['Descriptive identity policy classes differ from configured species: '+str(sorted(declared))+' != '+str(sorted(expected))]
+
+
 def validate_sweep_grid(shape, species):
     """Reject repeat boundaries that could sample outside an authored atlas cell."""
     if shape['kind'] != 'sweep':

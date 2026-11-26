@@ -1,6 +1,16 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.80** - 2026-11-15.
+Documentation version: **5.17.81** - 2026-11-15.
+
+## 5.17.81 - Descriptive identity-policy correction (#805, 2026-11-15)
+
+Corrected copied Familiar/Ao Ao wording in the Teju Jagua, Kasogonaga and
+Mulanima/Chancho animation metadata. Their actual classes and native bindings
+were already correct. Three source-report hashes refresh; all native/editable
+art and regional fixture bytes are unchanged. The new narrow text/class guard
+rejects the original descriptions. Evidence and qualified native-test reuse:
+assets/validation_v5_17_81/evidence/SUMMARY.json. Only the two required runtime
+version diagnostics change. No author test is accepted, added or removed.
 
 ## 5.17.80 - Umita and Chonchon native candidates (#803, 2026-11-15)
 

@@ -880,6 +880,6 @@
   },
   "scale_policy": "Match neutral standing art height to the unchanged provisional native Height, divide out Actor.Scale, and report every posed bound. Moving arms and nonblocking horizontal death poses may exceed native Radius, as original biped art does; no collision or gameplay reach changes. Catalogue reference heights remain unauthorised.",
   "timing_policy": "Only existing inherited sprite/frame bindings; no action, AI, state timing, saved field, spawn or loot change.",
-  "identity_policy": "Only CaelumBestiary043 and050 are bound; approved Northwest Argentina/Selva allocations and named identities remain unchanged.",
+  "identity_policy": "Only CaelumBestiary047 (Teju Jagua) is bound. Preserve its documented Selva association and protected named identities; no campaign placement.",
   "art_policy": "Seven canine heads, reptilian body and tail from the supplied reference. Candidate native geometry; author acceptance occurs in the consolidated handoff."
 }

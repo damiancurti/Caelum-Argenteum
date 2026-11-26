@@ -4,13 +4,13 @@ import math
 import struct
 from collections import Counter,defaultdict
 try:
-    from .validate_beast_men_models import ROOT,validate as shared_validate
+    from .validate_beast_men_models import ROOT,validate as shared_validate,identity_policy_errors
     from .generate_beast_men_models import prepared_design
     from .generate_kasogonaga_model import geometry
     from .validate_inventory_chainmail_models import dot,cross,sub
     from .validate_inventory_gloves_models import inside
 except ImportError:
-    from validate_beast_men_models import ROOT,validate as shared_validate
+    from validate_beast_men_models import ROOT,validate as shared_validate,identity_policy_errors
     from generate_beast_men_models import prepared_design
     from generate_kasogonaga_model import geometry
     from validate_inventory_chainmail_models import dot,cross,sub
@@ -116,6 +116,7 @@ def validate(root=ROOT):
     errors=shared_validate(root,'assets/source/art/kasogonaga_795','models/caelum/folklore/kasogonaga','caelum/data/kasogonaga_combat.modeldef',geometry,frame_mapping_only=True)
     try:
         config=json.loads((root/'assets/source/art/kasogonaga_795/ANIMATION.json').read_text())
+        errors.extend(identity_policy_errors(config))
         expected=[('kasogonaga','CaelumBestiary057','CA-FOLK-057')]
         if [(k,v['actor'],v['catalogue_id']) for k,v in config['species'].items()]!=expected:errors.append('Unexpected Kasogonaga class binding')
         for species,_,_ in expected:
