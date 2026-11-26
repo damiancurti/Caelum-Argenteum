@@ -1200,3 +1200,6 @@ src/caelum/data/apparition_combat.modeldef text eol=lf
 assets/validation_v5_17_78/*.py text eol=lf
 assets/validation_v5_17_78/*.json text eol=lf
 assets/validation_v5_17_78/evidence/** -text -diff
+
+/assets/validation_v5_17_79/*.py text eol=lf
+/assets/validation_v5_17_79/evidence/** -text -diff

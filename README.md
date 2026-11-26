@@ -6,8 +6,10 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.78.** Obtain and update the complete repository,
+**Current release: 5.17.79.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#801 adds Mulanima/NOA and Chancho de Lata/Pampa/Litoral to the regional inspection gallery. Native checks pass; consolidated author review remains pending.
 
 #799 repairs nine Ao Ao/Kasogonaga texture-repeat curves and adds a validation guard. All native checks pass; consolidated author review remains pending.
 

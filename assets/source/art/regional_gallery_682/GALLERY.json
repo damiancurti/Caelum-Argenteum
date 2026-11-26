@@ -1,6 +1,6 @@
 {
   "schema_revision": 1,
-  "issue": 793,
+  "issue": 801,
   "status": "isolated_visual_inspection_not_campaign",
   "map": "CA682G",
   "title": "Regional bestiary inspection gallery",
@@ -251,6 +251,42 @@
       "position": [
         928,
         200,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-029",
+      "kind": "mulanima",
+      "class": "CaelumBestiary029",
+      "position": [
+        -224,
+        300,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Pampa",
+      "catalogue_id": "CA-FOLK-030",
+      "kind": "chancho-pampa",
+      "class": "CaelumBestiary030",
+      "position": [
+        -640,
+        180,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-030",
+      "kind": "chancho-litoral",
+      "class": "CaelumBestiary030",
+      "position": [
+        128,
+        300,
         0
       ],
       "angle": 270
@@ -541,6 +577,48 @@
         26
       ],
       "key": "9"
+    },
+    {
+      "id": "mulanima",
+      "position": [
+        -224,
+        190,
+        60
+      ],
+      "target": [
+        -224,
+        300,
+        26
+      ],
+      "key": "0"
+    },
+    {
+      "id": "chancho-pampa",
+      "position": [
+        -640,
+        70,
+        60
+      ],
+      "target": [
+        -640,
+        180,
+        26
+      ],
+      "key": "j"
+    },
+    {
+      "id": "chancho-litoral",
+      "position": [
+        128,
+        190,
+        60
+      ],
+      "target": [
+        128,
+        300,
+        26
+      ],
+      "key": "k"
     }
   ],
   "notes": [
@@ -548,7 +626,7 @@
     "Existing native actors/models with the established diagnostic passive-AI flag and protected observer. No new production behavior.",
     "Ground studies do not fix a campaign biome or mandatory creature habitat.",
     "Original CA463G and its three visual pilots remain intact.",
-    "Fifteen diagnostic displays cover every approved allocation of these eleven candidate species. Repeated displays compare regional associations; the two Yastay copies do not authorize duplicate campaign identities."
+    "Eighteen diagnostic displays cover every approved allocation of these thirteen candidate species. Repeated displays compare regional associations; the two Yastay copies do not authorize duplicate campaign identities."
   ],
   "animation_sample_wait_tics": 11,
   "animation_sample_basis": "Existing MIID native idle states last10 tics; wait11 to cross at least one boundary.",
@@ -559,9 +637,10 @@
     "assets/source/art/guardians_698/EXPORT.json",
     "assets/source/art/basilisco_738/EXPORT.json",
     "assets/source/art/quadrupeds_787/EXPORT.json",
-    "assets/source/art/teju_791/EXPORT.json"
+    "assets/source/art/teju_791/EXPORT.json",
+    "assets/source/art/apparitions_797/EXPORT.json"
   ],
-  "layout_basis": "Retain all fourteen earlier figures, five grounds, twenty controls and four-boundary crossing path. Add Teju Jagua in the free rear Selva position with key9. Coordinates are diagnostic only.",
+  "layout_basis": "Retain all fifteen earlier figures, five grounds, twenty-one controls and four-boundary crossing path. Add Mulanima/NOA and Chancho/Pampa/Litoral in free rear positions with keys0/J/K. Coordinates are diagnostic only.",
   "silent_observer_steps": true,
   "inspection_noise_basis": "Mute only the diagnostic observer movement-noise timer; native walking speed, figure idle animation and production perception remain unchanged. Friendly and NOTARGET do not suppress anonymous sound investigation."
 }

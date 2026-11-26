@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.78** - 2026-11-15.
+Documentation version: **5.17.79** - 2026-11-15.
+
+## 5.17.79 - Apparition gallery implemented; batch remains (#801)
+
+The three documented regional allocations now have optional displays. Existing
+fifteen subjects, twenty-one controls and grounds remain exact;235 native checks
+pass. Keep CA801-APPARITIONS-GALLERY-01 alongside CA797-APPARITIONS-01 for the
+final consolidated review. Continue remaining creatures, named/modular characters,
+fitting and V5.16 progression/performance work. No author acceptance is inferred.
 
 ## 5.17.78 - UV follow-up implemented; full batch remains (#799)
 
