@@ -1,0 +1,1260 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-14 05:56:59
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-702/build/issue702-shields01.pk3, 18365 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-702/build/issue702-native01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2475.70 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+CA702 PASS four shield types and three tiers in all native sizes
+CA702 PASS shield 0 saved native class
+CA702 PASS shield 0 independent world instance
+CA702 PASS shield 0 original type, slot and kind
+CA702 PASS shield 0 original native size
+CA702 PASS shield 0 persistent unique identity
+CA702 PASS shield 0 existing wear and water retained
+CA702 PASS shield 0 unchanged collision, scale and floor contact
+CA702 PASS shield 0 original icon and dynamic sprite
+CA702 PASS shield 0 native dry and wet mass
+CA702 PASS shield 0 provenance survives copy and save
+CA702 PASS shield 0 unequipped world flags
+CA702 PASS shield 0 fixed acquired size retained
+CA702 PASS shield 1 saved native class
+CA702 PASS shield 1 independent world instance
+CA702 PASS shield 1 original type, slot and kind
+CA702 PASS shield 1 original native size
+CA702 PASS shield 1 persistent unique identity
+CA702 PASS shield 1 existing wear and water retained
+CA702 PASS shield 1 unchanged collision, scale and floor contact
+CA702 PASS shield 1 original icon and dynamic sprite
+CA702 PASS shield 1 native dry and wet mass
+CA702 PASS shield 1 provenance survives copy and save
+CA702 PASS shield 1 unequipped world flags
+CA702 PASS shield 1 fixed acquired size retained
+CA702 PASS shield 2 saved native class
+CA702 PASS shield 2 independent world instance
+CA702 PASS shield 2 original type, slot and kind
+CA702 PASS shield 2 original native size
+CA702 PASS shield 2 persistent unique identity
+CA702 PASS shield 2 existing wear and water retained
+CA702 PASS shield 2 unchanged collision, scale and floor contact
+CA702 PASS shield 2 original icon and dynamic sprite
+CA702 PASS shield 2 native dry and wet mass
+CA702 PASS shield 2 provenance survives copy and save
+CA702 PASS shield 2 unequipped world flags
+CA702 PASS shield 2 fixed acquired size retained
+CA702 PASS shield 3 saved native class
+CA702 PASS shield 3 independent world instance
+CA702 PASS shield 3 original type, slot and kind
+CA702 PASS shield 3 original native size
+CA702 PASS shield 3 persistent unique identity
+CA702 PASS shield 3 existing wear and water retained
+CA702 PASS shield 3 unchanged collision, scale and floor contact
+CA702 PASS shield 3 original icon and dynamic sprite
+CA702 PASS shield 3 native dry and wet mass
+CA702 PASS shield 3 provenance survives copy and save
+CA702 PASS shield 3 unequipped world flags
+CA702 PASS shield 3 fixed acquired size retained
+CA702 PASS shield 4 saved native class
+CA702 PASS shield 4 independent world instance
+CA702 PASS shield 4 original type, slot and kind
+CA702 PASS shield 4 original native size
+CA702 PASS shield 4 persistent unique identity
+CA702 PASS shield 4 existing wear and water retained
+CA702 PASS shield 4 unchanged collision, scale and floor contact
+CA702 PASS shield 4 original icon and dynamic sprite
+CA702 PASS shield 4 native dry and wet mass
+CA702 PASS shield 4 provenance survives copy and save
+CA702 PASS shield 4 unequipped world flags
+CA702 PASS shield 4 fixed acquired size retained
+CA702 PASS shield 5 saved native class
+CA702 PASS shield 5 independent world instance
+CA702 PASS shield 5 original type, slot and kind
+CA702 PASS shield 5 original native size
+CA702 PASS shield 5 persistent unique identity
+CA702 PASS shield 5 existing wear and water retained
+CA702 PASS shield 5 unchanged collision, scale and floor contact
+CA702 PASS shield 5 original icon and dynamic sprite
+CA702 PASS shield 5 native dry and wet mass
+CA702 PASS shield 5 provenance survives copy and save
+CA702 PASS shield 5 unequipped world flags
+CA702 PASS shield 5 fixed acquired size retained
+CA702 PASS shield 6 saved native class
+CA702 PASS shield 6 independent world instance
+CA702 PASS shield 6 original type, slot and kind
+CA702 PASS shield 6 original native size
+CA702 PASS shield 6 persistent unique identity
+CA702 PASS shield 6 existing wear and water retained
+CA702 PASS shield 6 unchanged collision, scale and floor contact
+CA702 PASS shield 6 original icon and dynamic sprite
+CA702 PASS shield 6 native dry and wet mass
+CA702 PASS shield 6 provenance survives copy and save
+CA702 PASS shield 6 unequipped world flags
+CA702 PASS shield 6 fixed acquired size retained
+CA702 PASS shield 7 saved native class
+CA702 PASS shield 7 independent world instance
+CA702 PASS shield 7 original type, slot and kind
+CA702 PASS shield 7 original native size
+CA702 PASS shield 7 persistent unique identity
+CA702 PASS shield 7 existing wear and water retained
+CA702 PASS shield 7 unchanged collision, scale and floor contact
+CA702 PASS shield 7 original icon and dynamic sprite
+CA702 PASS shield 7 native dry and wet mass
+CA702 PASS shield 7 provenance survives copy and save
+CA702 PASS shield 7 unequipped world flags
+CA702 PASS shield 7 fixed acquired size retained
+CA702 PASS shield 8 saved native class
+CA702 PASS shield 8 independent world instance
+CA702 PASS shield 8 original type, slot and kind
+CA702 PASS shield 8 original native size
+CA702 PASS shield 8 persistent unique identity
+CA702 PASS shield 8 existing wear and water retained
+CA702 PASS shield 8 unchanged collision, scale and floor contact
+CA702 PASS shield 8 original icon and dynamic sprite
+CA702 PASS shield 8 native dry and wet mass
+CA702 PASS shield 8 provenance survives copy and save
+CA702 PASS shield 8 unequipped world flags
+CA702 PASS shield 8 fixed acquired size retained
+CA702 PASS shield 9 saved native class
+CA702 PASS shield 9 independent world instance
+CA702 PASS shield 9 original type, slot and kind
+CA702 PASS shield 9 original native size
+CA702 PASS shield 9 persistent unique identity
+CA702 PASS shield 9 existing wear and water retained
+CA702 PASS shield 9 unchanged collision, scale and floor contact
+CA702 PASS shield 9 original icon and dynamic sprite
+CA702 PASS shield 9 native dry and wet mass
+CA702 PASS shield 9 provenance survives copy and save
+CA702 PASS shield 9 unequipped world flags
+CA702 PASS shield 9 fixed acquired size retained
+CA702 PASS shield 10 saved native class
+CA702 PASS shield 10 independent world instance
+CA702 PASS shield 10 original type, slot and kind
+CA702 PASS shield 10 original native size
+CA702 PASS shield 10 persistent unique identity
+CA702 PASS shield 10 existing wear and water retained
+CA702 PASS shield 10 unchanged collision, scale and floor contact
+CA702 PASS shield 10 original icon and dynamic sprite
+CA702 PASS shield 10 native dry and wet mass
+CA702 PASS shield 10 provenance survives copy and save
+CA702 PASS shield 10 unequipped world flags
+CA702 PASS shield 10 fixed acquired size retained
+CA702 PASS shield 11 saved native class
+CA702 PASS shield 11 independent world instance
+CA702 PASS shield 11 original type, slot and kind
+CA702 PASS shield 11 original native size
+CA702 PASS shield 11 persistent unique identity
+CA702 PASS shield 11 existing wear and water retained
+CA702 PASS shield 11 unchanged collision, scale and floor contact
+CA702 PASS shield 11 original icon and dynamic sprite
+CA702 PASS shield 11 native dry and wet mass
+CA702 PASS shield 11 provenance survives copy and save
+CA702 PASS shield 11 unequipped world flags
+CA702 PASS shield 11 fixed acquired size retained
+CA702 PASS shield 12 saved native class
+CA702 PASS shield 12 independent world instance
+CA702 PASS shield 12 original type, slot and kind
+CA702 PASS shield 12 original native size
+CA702 PASS shield 12 persistent unique identity
+CA702 PASS shield 12 existing wear and water retained
+CA702 PASS shield 12 unchanged collision, scale and floor contact
+CA702 PASS shield 12 original icon and dynamic sprite
+CA702 PASS shield 12 native dry and wet mass
+CA702 PASS shield 12 provenance survives copy and save
+CA702 PASS shield 12 unequipped world flags
+CA702 PASS shield 12 fixed acquired size retained
+CA702 PASS shield 13 saved native class
+CA702 PASS shield 13 independent world instance
+CA702 PASS shield 13 original type, slot and kind
+CA702 PASS shield 13 original native size
+CA702 PASS shield 13 persistent unique identity
+CA702 PASS shield 13 existing wear and water retained
+CA702 PASS shield 13 unchanged collision, scale and floor contact
+CA702 PASS shield 13 original icon and dynamic sprite
+CA702 PASS shield 13 native dry and wet mass
+CA702 PASS shield 13 provenance survives copy and save
+CA702 PASS shield 13 unequipped world flags
+CA702 PASS shield 13 fixed acquired size retained
+CA702 PASS shield 14 saved native class
+CA702 PASS shield 14 independent world instance
+CA702 PASS shield 14 original type, slot and kind
+CA702 PASS shield 14 original native size
+CA702 PASS shield 14 persistent unique identity
+CA702 PASS shield 14 existing wear and water retained
+CA702 PASS shield 14 unchanged collision, scale and floor contact
+CA702 PASS shield 14 original icon and dynamic sprite
+CA702 PASS shield 14 native dry and wet mass
+CA702 PASS shield 14 provenance survives copy and save
+CA702 PASS shield 14 unequipped world flags
+CA702 PASS shield 14 fixed acquired size retained
+CA702 PASS shield 15 saved native class
+CA702 PASS shield 15 independent world instance
+CA702 PASS shield 15 original type, slot and kind
+CA702 PASS shield 15 original native size
+CA702 PASS shield 15 persistent unique identity
+CA702 PASS shield 15 existing wear and water retained
+CA702 PASS shield 15 unchanged collision, scale and floor contact
+CA702 PASS shield 15 original icon and dynamic sprite
+CA702 PASS shield 15 native dry and wet mass
+CA702 PASS shield 15 provenance survives copy and save
+CA702 PASS shield 15 unequipped world flags
+CA702 PASS shield 15 fixed acquired size retained
+CA702 PASS shield 16 saved native class
+CA702 PASS shield 16 independent world instance
+CA702 PASS shield 16 original type, slot and kind
+CA702 PASS shield 16 original native size
+CA702 PASS shield 16 persistent unique identity
+CA702 PASS shield 16 existing wear and water retained
+CA702 PASS shield 16 unchanged collision, scale and floor contact
+CA702 PASS shield 16 original icon and dynamic sprite
+CA702 PASS shield 16 native dry and wet mass
+CA702 PASS shield 16 provenance survives copy and save
+CA702 PASS shield 16 unequipped world flags
+CA702 PASS shield 16 fixed acquired size retained
+CA702 PASS shield 17 saved native class
+CA702 PASS shield 17 independent world instance
+CA702 PASS shield 17 original type, slot and kind
+CA702 PASS shield 17 original native size
+CA702 PASS shield 17 persistent unique identity
+CA702 PASS shield 17 existing wear and water retained
+CA702 PASS shield 17 unchanged collision, scale and floor contact
+CA702 PASS shield 17 original icon and dynamic sprite
+CA702 PASS shield 17 native dry and wet mass
+CA702 PASS shield 17 provenance survives copy and save
+CA702 PASS shield 17 unequipped world flags
+CA702 PASS shield 17 fixed acquired size retained
+CA702 PASS shield 18 saved native class
+CA702 PASS shield 18 independent world instance
+CA702 PASS shield 18 original type, slot and kind
+CA702 PASS shield 18 original native size
+CA702 PASS shield 18 persistent unique identity
+CA702 PASS shield 18 existing wear and water retained
+CA702 PASS shield 18 unchanged collision, scale and floor contact
+CA702 PASS shield 18 original icon and dynamic sprite
+CA702 PASS shield 18 native dry and wet mass
+CA702 PASS shield 18 provenance survives copy and save
+CA702 PASS shield 18 unequipped world flags
+CA702 PASS shield 18 fixed acquired size retained
+CA702 PASS shield 19 saved native class
+CA702 PASS shield 19 independent world instance
+CA702 PASS shield 19 original type, slot and kind
+CA702 PASS shield 19 original native size
+CA702 PASS shield 19 persistent unique identity
+CA702 PASS shield 19 existing wear and water retained
+CA702 PASS shield 19 unchanged collision, scale and floor contact
+CA702 PASS shield 19 original icon and dynamic sprite
+CA702 PASS shield 19 native dry and wet mass
+CA702 PASS shield 19 provenance survives copy and save
+CA702 PASS shield 19 unequipped world flags
+CA702 PASS shield 19 fixed acquired size retained
+CA702 PASS shield 20 saved native class
+CA702 PASS shield 20 independent world instance
+CA702 PASS shield 20 original type, slot and kind
+CA702 PASS shield 20 original native size
+CA702 PASS shield 20 persistent unique identity
+CA702 PASS shield 20 existing wear and water retained
+CA702 PASS shield 20 unchanged collision, scale and floor contact
+CA702 PASS shield 20 original icon and dynamic sprite
+CA702 PASS shield 20 native dry and wet mass
+CA702 PASS shield 20 provenance survives copy and save
+CA702 PASS shield 20 unequipped world flags
+CA702 PASS shield 20 fixed acquired size retained
+CA702 PASS shield 21 saved native class
+CA702 PASS shield 21 independent world instance
+CA702 PASS shield 21 original type, slot and kind
+CA702 PASS shield 21 original native size
+CA702 PASS shield 21 persistent unique identity
+CA702 PASS shield 21 existing wear and water retained
+CA702 PASS shield 21 unchanged collision, scale and floor contact
+CA702 PASS shield 21 original icon and dynamic sprite
+CA702 PASS shield 21 native dry and wet mass
+CA702 PASS shield 21 provenance survives copy and save
+CA702 PASS shield 21 unequipped world flags
+CA702 PASS shield 21 fixed acquired size retained
+CA702 PASS shield 22 saved native class
+CA702 PASS shield 22 independent world instance
+CA702 PASS shield 22 original type, slot and kind
+CA702 PASS shield 22 original native size
+CA702 PASS shield 22 persistent unique identity
+CA702 PASS shield 22 existing wear and water retained
+CA702 PASS shield 22 unchanged collision, scale and floor contact
+CA702 PASS shield 22 original icon and dynamic sprite
+CA702 PASS shield 22 native dry and wet mass
+CA702 PASS shield 22 provenance survives copy and save
+CA702 PASS shield 22 unequipped world flags
+CA702 PASS shield 22 fixed acquired size retained
+CA702 PASS shield 23 saved native class
+CA702 PASS shield 23 independent world instance
+CA702 PASS shield 23 original type, slot and kind
+CA702 PASS shield 23 original native size
+CA702 PASS shield 23 persistent unique identity
+CA702 PASS shield 23 existing wear and water retained
+CA702 PASS shield 23 unchanged collision, scale and floor contact
+CA702 PASS shield 23 original icon and dynamic sprite
+CA702 PASS shield 23 native dry and wet mass
+CA702 PASS shield 23 provenance survives copy and save
+CA702 PASS shield 23 unequipped world flags
+CA702 PASS shield 23 fixed acquired size retained
+CA702 PASS shield 24 saved native class
+CA702 PASS shield 24 independent world instance
+CA702 PASS shield 24 original type, slot and kind
+CA702 PASS shield 24 original native size
+CA702 PASS shield 24 persistent unique identity
+CA702 PASS shield 24 existing wear and water retained
+CA702 PASS shield 24 unchanged collision, scale and floor contact
+CA702 PASS shield 24 original icon and dynamic sprite
+CA702 PASS shield 24 native dry and wet mass
+CA702 PASS shield 24 provenance survives copy and save
+CA702 PASS shield 24 unequipped world flags
+CA702 PASS shield 24 fixed acquired size retained
+CA702 PASS shield 25 saved native class
+CA702 PASS shield 25 independent world instance
+CA702 PASS shield 25 original type, slot and kind
+CA702 PASS shield 25 original native size
+CA702 PASS shield 25 persistent unique identity
+CA702 PASS shield 25 existing wear and water retained
+CA702 PASS shield 25 unchanged collision, scale and floor contact
+CA702 PASS shield 25 original icon and dynamic sprite
+CA702 PASS shield 25 native dry and wet mass
+CA702 PASS shield 25 provenance survives copy and save
+CA702 PASS shield 25 unequipped world flags
+CA702 PASS shield 25 fixed acquired size retained
+CA702 PASS shield 26 saved native class
+CA702 PASS shield 26 independent world instance
+CA702 PASS shield 26 original type, slot and kind
+CA702 PASS shield 26 original native size
+CA702 PASS shield 26 persistent unique identity
+CA702 PASS shield 26 existing wear and water retained
+CA702 PASS shield 26 unchanged collision, scale and floor contact
+CA702 PASS shield 26 original icon and dynamic sprite
+CA702 PASS shield 26 native dry and wet mass
+CA702 PASS shield 26 provenance survives copy and save
+CA702 PASS shield 26 unequipped world flags
+CA702 PASS shield 26 fixed acquired size retained
+CA702 PASS shield 27 saved native class
+CA702 PASS shield 27 independent world instance
+CA702 PASS shield 27 original type, slot and kind
+CA702 PASS shield 27 original native size
+CA702 PASS shield 27 persistent unique identity
+CA702 PASS shield 27 existing wear and water retained
+CA702 PASS shield 27 unchanged collision, scale and floor contact
+CA702 PASS shield 27 original icon and dynamic sprite
+CA702 PASS shield 27 native dry and wet mass
+CA702 PASS shield 27 provenance survives copy and save
+CA702 PASS shield 27 unequipped world flags
+CA702 PASS shield 27 fixed acquired size retained
+CA702 PASS shield 28 saved native class
+CA702 PASS shield 28 independent world instance
+CA702 PASS shield 28 original type, slot and kind
+CA702 PASS shield 28 original native size
+CA702 PASS shield 28 persistent unique identity
+CA702 PASS shield 28 existing wear and water retained
+CA702 PASS shield 28 unchanged collision, scale and floor contact
+CA702 PASS shield 28 original icon and dynamic sprite
+CA702 PASS shield 28 native dry and wet mass
+CA702 PASS shield 28 provenance survives copy and save
+CA702 PASS shield 28 unequipped world flags
+CA702 PASS shield 28 fixed acquired size retained
+CA702 PASS shield 29 saved native class
+CA702 PASS shield 29 independent world instance
+CA702 PASS shield 29 original type, slot and kind
+CA702 PASS shield 29 original native size
+CA702 PASS shield 29 persistent unique identity
+CA702 PASS shield 29 existing wear and water retained
+CA702 PASS shield 29 unchanged collision, scale and floor contact
+CA702 PASS shield 29 original icon and dynamic sprite
+CA702 PASS shield 29 native dry and wet mass
+CA702 PASS shield 29 provenance survives copy and save
+CA702 PASS shield 29 unequipped world flags
+CA702 PASS shield 29 fixed acquired size retained
+CA702 PASS shield 30 saved native class
+CA702 PASS shield 30 independent world instance
+CA702 PASS shield 30 original type, slot and kind
+CA702 PASS shield 30 original native size
+CA702 PASS shield 30 persistent unique identity
+CA702 PASS shield 30 existing wear and water retained
+CA702 PASS shield 30 unchanged collision, scale and floor contact
+CA702 PASS shield 30 original icon and dynamic sprite
+CA702 PASS shield 30 native dry and wet mass
+CA702 PASS shield 30 provenance survives copy and save
+CA702 PASS shield 30 unequipped world flags
+CA702 PASS shield 30 fixed acquired size retained
+CA702 PASS shield 31 saved native class
+CA702 PASS shield 31 independent world instance
+CA702 PASS shield 31 original type, slot and kind
+CA702 PASS shield 31 original native size
+CA702 PASS shield 31 persistent unique identity
+CA702 PASS shield 31 existing wear and water retained
+CA702 PASS shield 31 unchanged collision, scale and floor contact
+CA702 PASS shield 31 original icon and dynamic sprite
+CA702 PASS shield 31 native dry and wet mass
+CA702 PASS shield 31 provenance survives copy and save
+CA702 PASS shield 31 unequipped world flags
+CA702 PASS shield 31 fixed acquired size retained
+CA702 PASS shield 32 saved native class
+CA702 PASS shield 32 independent world instance
+CA702 PASS shield 32 original type, slot and kind
+CA702 PASS shield 32 original native size
+CA702 PASS shield 32 persistent unique identity
+CA702 PASS shield 32 existing wear and water retained
+CA702 PASS shield 32 unchanged collision, scale and floor contact
+CA702 PASS shield 32 original icon and dynamic sprite
+CA702 PASS shield 32 native dry and wet mass
+CA702 PASS shield 32 provenance survives copy and save
+CA702 PASS shield 32 unequipped world flags
+CA702 PASS shield 32 fixed acquired size retained
+CA702 PASS shield 33 saved native class
+CA702 PASS shield 33 independent world instance
+CA702 PASS shield 33 original type, slot and kind
+CA702 PASS shield 33 original native size
+CA702 PASS shield 33 persistent unique identity
+CA702 PASS shield 33 existing wear and water retained
+CA702 PASS shield 33 unchanged collision, scale and floor contact
+CA702 PASS shield 33 original icon and dynamic sprite
+CA702 PASS shield 33 native dry and wet mass
+CA702 PASS shield 33 provenance survives copy and save
+CA702 PASS shield 33 unequipped world flags
+CA702 PASS shield 33 fixed acquired size retained
+CA702 PASS shield 34 saved native class
+CA702 PASS shield 34 independent world instance
+CA702 PASS shield 34 original type, slot and kind
+CA702 PASS shield 34 original native size
+CA702 PASS shield 34 persistent unique identity
+CA702 PASS shield 34 existing wear and water retained
+CA702 PASS shield 34 unchanged collision, scale and floor contact
+CA702 PASS shield 34 original icon and dynamic sprite
+CA702 PASS shield 34 native dry and wet mass
+CA702 PASS shield 34 provenance survives copy and save
+CA702 PASS shield 34 unequipped world flags
+CA702 PASS shield 34 fixed acquired size retained
+CA702 PASS shield 35 saved native class
+CA702 PASS shield 35 independent world instance
+CA702 PASS shield 35 original type, slot and kind
+CA702 PASS shield 35 original native size
+CA702 PASS shield 35 persistent unique identity
+CA702 PASS shield 35 existing wear and water retained
+CA702 PASS shield 35 unchanged collision, scale and floor contact
+CA702 PASS shield 35 original icon and dynamic sprite
+CA702 PASS shield 35 native dry and wet mass
+CA702 PASS shield 35 provenance survives copy and save
+CA702 PASS shield 35 unequipped world flags
+CA702 PASS shield 35 fixed acquired size retained
+CA702 PASS shield 36 saved native class
+CA702 PASS shield 36 independent world instance
+CA702 PASS shield 36 original type, slot and kind
+CA702 PASS shield 36 original native size
+CA702 PASS shield 36 persistent unique identity
+CA702 PASS shield 36 existing wear and water retained
+CA702 PASS shield 36 unchanged collision, scale and floor contact
+CA702 PASS shield 36 original icon and dynamic sprite
+CA702 PASS shield 36 native dry and wet mass
+CA702 PASS shield 36 provenance survives copy and save
+CA702 PASS shield 36 unequipped world flags
+CA702 PASS shield 36 fixed acquired size retained
+CA702 PASS shield 37 saved native class
+CA702 PASS shield 37 independent world instance
+CA702 PASS shield 37 original type, slot and kind
+CA702 PASS shield 37 original native size
+CA702 PASS shield 37 persistent unique identity
+CA702 PASS shield 37 existing wear and water retained
+CA702 PASS shield 37 unchanged collision, scale and floor contact
+CA702 PASS shield 37 original icon and dynamic sprite
+CA702 PASS shield 37 native dry and wet mass
+CA702 PASS shield 37 provenance survives copy and save
+CA702 PASS shield 37 unequipped world flags
+CA702 PASS shield 37 fixed acquired size retained
+CA702 PASS shield 38 saved native class
+CA702 PASS shield 38 independent world instance
+CA702 PASS shield 38 original type, slot and kind
+CA702 PASS shield 38 original native size
+CA702 PASS shield 38 persistent unique identity
+CA702 PASS shield 38 existing wear and water retained
+CA702 PASS shield 38 unchanged collision, scale and floor contact
+CA702 PASS shield 38 original icon and dynamic sprite
+CA702 PASS shield 38 native dry and wet mass
+CA702 PASS shield 38 provenance survives copy and save
+CA702 PASS shield 38 unequipped world flags
+CA702 PASS shield 38 fixed acquired size retained
+CA702 PASS shield 39 saved native class
+CA702 PASS shield 39 independent world instance
+CA702 PASS shield 39 original type, slot and kind
+CA702 PASS shield 39 original native size
+CA702 PASS shield 39 persistent unique identity
+CA702 PASS shield 39 existing wear and water retained
+CA702 PASS shield 39 unchanged collision, scale and floor contact
+CA702 PASS shield 39 original icon and dynamic sprite
+CA702 PASS shield 39 native dry and wet mass
+CA702 PASS shield 39 provenance survives copy and save
+CA702 PASS shield 39 unequipped world flags
+CA702 PASS shield 39 fixed acquired size retained
+CA702 PASS shield 40 saved native class
+CA702 PASS shield 40 independent world instance
+CA702 PASS shield 40 original type, slot and kind
+CA702 PASS shield 40 original native size
+CA702 PASS shield 40 persistent unique identity
+CA702 PASS shield 40 existing wear and water retained
+CA702 PASS shield 40 unchanged collision, scale and floor contact
+CA702 PASS shield 40 original icon and dynamic sprite
+CA702 PASS shield 40 native dry and wet mass
+CA702 PASS shield 40 provenance survives copy and save
+CA702 PASS shield 40 unequipped world flags
+CA702 PASS shield 40 fixed acquired size retained
+CA702 PASS shield 41 saved native class
+CA702 PASS shield 41 independent world instance
+CA702 PASS shield 41 original type, slot and kind
+CA702 PASS shield 41 original native size
+CA702 PASS shield 41 persistent unique identity
+CA702 PASS shield 41 existing wear and water retained
+CA702 PASS shield 41 unchanged collision, scale and floor contact
+CA702 PASS shield 41 original icon and dynamic sprite
+CA702 PASS shield 41 native dry and wet mass
+CA702 PASS shield 41 provenance survives copy and save
+CA702 PASS shield 41 unequipped world flags
+CA702 PASS shield 41 fixed acquired size retained
+CA702 PASS shield 42 saved native class
+CA702 PASS shield 42 independent world instance
+CA702 PASS shield 42 original type, slot and kind
+CA702 PASS shield 42 original native size
+CA702 PASS shield 42 persistent unique identity
+CA702 PASS shield 42 existing wear and water retained
+CA702 PASS shield 42 unchanged collision, scale and floor contact
+CA702 PASS shield 42 original icon and dynamic sprite
+CA702 PASS shield 42 native dry and wet mass
+CA702 PASS shield 42 provenance survives copy and save
+CA702 PASS shield 42 unequipped world flags
+CA702 PASS shield 42 fixed acquired size retained
+CA702 PASS shield 43 saved native class
+CA702 PASS shield 43 independent world instance
+CA702 PASS shield 43 original type, slot and kind
+CA702 PASS shield 43 original native size
+CA702 PASS shield 43 persistent unique identity
+CA702 PASS shield 43 existing wear and water retained
+CA702 PASS shield 43 unchanged collision, scale and floor contact
+CA702 PASS shield 43 original icon and dynamic sprite
+CA702 PASS shield 43 native dry and wet mass
+CA702 PASS shield 43 provenance survives copy and save
+CA702 PASS shield 43 unequipped world flags
+CA702 PASS shield 43 fixed acquired size retained
+CA702 PASS shield 44 saved native class
+CA702 PASS shield 44 independent world instance
+CA702 PASS shield 44 original type, slot and kind
+CA702 PASS shield 44 original native size
+CA702 PASS shield 44 persistent unique identity
+CA702 PASS shield 44 existing wear and water retained
+CA702 PASS shield 44 unchanged collision, scale and floor contact
+CA702 PASS shield 44 original icon and dynamic sprite
+CA702 PASS shield 44 native dry and wet mass
+CA702 PASS shield 44 provenance survives copy and save
+CA702 PASS shield 44 unequipped world flags
+CA702 PASS shield 44 fixed acquired size retained
+CA702 PASS shield 45 saved native class
+CA702 PASS shield 45 independent world instance
+CA702 PASS shield 45 original type, slot and kind
+CA702 PASS shield 45 original native size
+CA702 PASS shield 45 persistent unique identity
+CA702 PASS shield 45 existing wear and water retained
+CA702 PASS shield 45 unchanged collision, scale and floor contact
+CA702 PASS shield 45 original icon and dynamic sprite
+CA702 PASS shield 45 native dry and wet mass
+CA702 PASS shield 45 provenance survives copy and save
+CA702 PASS shield 45 unequipped world flags
+CA702 PASS shield 45 fixed acquired size retained
+CA702 PASS shield 46 saved native class
+CA702 PASS shield 46 independent world instance
+CA702 PASS shield 46 original type, slot and kind
+CA702 PASS shield 46 original native size
+CA702 PASS shield 46 persistent unique identity
+CA702 PASS shield 46 existing wear and water retained
+CA702 PASS shield 46 unchanged collision, scale and floor contact
+CA702 PASS shield 46 original icon and dynamic sprite
+CA702 PASS shield 46 native dry and wet mass
+CA702 PASS shield 46 provenance survives copy and save
+CA702 PASS shield 46 unequipped world flags
+CA702 PASS shield 46 fixed acquired size retained
+CA702 PASS shield 47 saved native class
+CA702 PASS shield 47 independent world instance
+CA702 PASS shield 47 original type, slot and kind
+CA702 PASS shield 47 original native size
+CA702 PASS shield 47 persistent unique identity
+CA702 PASS shield 47 existing wear and water retained
+CA702 PASS shield 47 unchanged collision, scale and floor contact
+CA702 PASS shield 47 original icon and dynamic sprite
+CA702 PASS shield 47 native dry and wet mass
+CA702 PASS shield 47 provenance survives copy and save
+CA702 PASS shield 47 unequipped world flags
+CA702 PASS shield 47 fixed acquired size retained
+CA702 PASS shield 48 saved native class
+CA702 PASS shield 48 independent world instance
+CA702 PASS shield 48 original type, slot and kind
+CA702 PASS shield 48 original native size
+CA702 PASS shield 48 persistent unique identity
+CA702 PASS shield 48 existing wear and water retained
+CA702 PASS shield 48 unchanged collision, scale and floor contact
+CA702 PASS shield 48 original icon and dynamic sprite
+CA702 PASS shield 48 native dry and wet mass
+CA702 PASS shield 48 provenance survives copy and save
+CA702 PASS shield 48 unequipped world flags
+CA702 PASS shield 48 fixed acquired size retained
+CA702 PASS shield 49 saved native class
+CA702 PASS shield 49 independent world instance
+CA702 PASS shield 49 original type, slot and kind
+CA702 PASS shield 49 original native size
+CA702 PASS shield 49 persistent unique identity
+CA702 PASS shield 49 existing wear and water retained
+CA702 PASS shield 49 unchanged collision, scale and floor contact
+CA702 PASS shield 49 original icon and dynamic sprite
+CA702 PASS shield 49 native dry and wet mass
+CA702 PASS shield 49 provenance survives copy and save
+CA702 PASS shield 49 unequipped world flags
+CA702 PASS shield 49 fixed acquired size retained
+CA702 PASS shield 50 saved native class
+CA702 PASS shield 50 independent world instance
+CA702 PASS shield 50 original type, slot and kind
+CA702 PASS shield 50 original native size
+CA702 PASS shield 50 persistent unique identity
+CA702 PASS shield 50 existing wear and water retained
+CA702 PASS shield 50 unchanged collision, scale and floor contact
+CA702 PASS shield 50 original icon and dynamic sprite
+CA702 PASS shield 50 native dry and wet mass
+CA702 PASS shield 50 provenance survives copy and save
+CA702 PASS shield 50 unequipped world flags
+CA702 PASS shield 50 fixed acquired size retained
+CA702 PASS shield 51 saved native class
+CA702 PASS shield 51 independent world instance
+CA702 PASS shield 51 original type, slot and kind
+CA702 PASS shield 51 original native size
+CA702 PASS shield 51 persistent unique identity
+CA702 PASS shield 51 existing wear and water retained
+CA702 PASS shield 51 unchanged collision, scale and floor contact
+CA702 PASS shield 51 original icon and dynamic sprite
+CA702 PASS shield 51 native dry and wet mass
+CA702 PASS shield 51 provenance survives copy and save
+CA702 PASS shield 51 unequipped world flags
+CA702 PASS shield 51 fixed acquired size retained
+CA702 PASS shield 52 saved native class
+CA702 PASS shield 52 independent world instance
+CA702 PASS shield 52 original type, slot and kind
+CA702 PASS shield 52 original native size
+CA702 PASS shield 52 persistent unique identity
+CA702 PASS shield 52 existing wear and water retained
+CA702 PASS shield 52 unchanged collision, scale and floor contact
+CA702 PASS shield 52 original icon and dynamic sprite
+CA702 PASS shield 52 native dry and wet mass
+CA702 PASS shield 52 provenance survives copy and save
+CA702 PASS shield 52 unequipped world flags
+CA702 PASS shield 52 fixed acquired size retained
+CA702 PASS shield 53 saved native class
+CA702 PASS shield 53 independent world instance
+CA702 PASS shield 53 original type, slot and kind
+CA702 PASS shield 53 original native size
+CA702 PASS shield 53 persistent unique identity
+CA702 PASS shield 53 existing wear and water retained
+CA702 PASS shield 53 unchanged collision, scale and floor contact
+CA702 PASS shield 53 original icon and dynamic sprite
+CA702 PASS shield 53 native dry and wet mass
+CA702 PASS shield 53 provenance survives copy and save
+CA702 PASS shield 53 unequipped world flags
+CA702 PASS shield 53 fixed acquired size retained
+CA702 PASS shield 54 saved native class
+CA702 PASS shield 54 independent world instance
+CA702 PASS shield 54 original type, slot and kind
+CA702 PASS shield 54 original native size
+CA702 PASS shield 54 persistent unique identity
+CA702 PASS shield 54 existing wear and water retained
+CA702 PASS shield 54 unchanged collision, scale and floor contact
+CA702 PASS shield 54 original icon and dynamic sprite
+CA702 PASS shield 54 native dry and wet mass
+CA702 PASS shield 54 provenance survives copy and save
+CA702 PASS shield 54 unequipped world flags
+CA702 PASS shield 54 fixed acquired size retained
+CA702 PASS shield 55 saved native class
+CA702 PASS shield 55 independent world instance
+CA702 PASS shield 55 original type, slot and kind
+CA702 PASS shield 55 original native size
+CA702 PASS shield 55 persistent unique identity
+CA702 PASS shield 55 existing wear and water retained
+CA702 PASS shield 55 unchanged collision, scale and floor contact
+CA702 PASS shield 55 original icon and dynamic sprite
+CA702 PASS shield 55 native dry and wet mass
+CA702 PASS shield 55 provenance survives copy and save
+CA702 PASS shield 55 unequipped world flags
+CA702 PASS shield 55 fixed acquired size retained
+CA702 PASS shield 56 saved native class
+CA702 PASS shield 56 independent world instance
+CA702 PASS shield 56 original type, slot and kind
+CA702 PASS shield 56 original native size
+CA702 PASS shield 56 persistent unique identity
+CA702 PASS shield 56 existing wear and water retained
+CA702 PASS shield 56 unchanged collision, scale and floor contact
+CA702 PASS shield 56 original icon and dynamic sprite
+CA702 PASS shield 56 native dry and wet mass
+CA702 PASS shield 56 provenance survives copy and save
+CA702 PASS shield 56 unequipped world flags
+CA702 PASS shield 56 fixed acquired size retained
+CA702 PASS shield 57 saved native class
+CA702 PASS shield 57 independent world instance
+CA702 PASS shield 57 original type, slot and kind
+CA702 PASS shield 57 original native size
+CA702 PASS shield 57 persistent unique identity
+CA702 PASS shield 57 existing wear and water retained
+CA702 PASS shield 57 unchanged collision, scale and floor contact
+CA702 PASS shield 57 original icon and dynamic sprite
+CA702 PASS shield 57 native dry and wet mass
+CA702 PASS shield 57 provenance survives copy and save
+CA702 PASS shield 57 unequipped world flags
+CA702 PASS shield 57 fixed acquired size retained
+CA702 PASS shield 58 saved native class
+CA702 PASS shield 58 independent world instance
+CA702 PASS shield 58 original type, slot and kind
+CA702 PASS shield 58 original native size
+CA702 PASS shield 58 persistent unique identity
+CA702 PASS shield 58 existing wear and water retained
+CA702 PASS shield 58 unchanged collision, scale and floor contact
+CA702 PASS shield 58 original icon and dynamic sprite
+CA702 PASS shield 58 native dry and wet mass
+CA702 PASS shield 58 provenance survives copy and save
+CA702 PASS shield 58 unequipped world flags
+CA702 PASS shield 58 fixed acquired size retained
+CA702 PASS shield 59 saved native class
+CA702 PASS shield 59 independent world instance
+CA702 PASS shield 59 original type, slot and kind
+CA702 PASS shield 59 original native size
+CA702 PASS shield 59 persistent unique identity
+CA702 PASS shield 59 existing wear and water retained
+CA702 PASS shield 59 unchanged collision, scale and floor contact
+CA702 PASS shield 59 original icon and dynamic sprite
+CA702 PASS shield 59 native dry and wet mass
+CA702 PASS shield 59 provenance survives copy and save
+CA702 PASS shield 59 unequipped world flags
+CA702 PASS shield 59 fixed acquired size retained
+CA702 COMPLETE failures=0
+CA702 PASS shield 0 native repickup
+CA702 PASS shield 0 recovered exact worn and wet metadata
+CA702 PASS shield 0 native selection size eligibility
+CA702 PASS shield 0 native equip or incompatible-size refusal
+CA702 PASS shield 0 no water created by native equip
+CA702 PASS shield 0 native unequip
+CA702 PASS shield 0 second toss retains identity, size, wear and water
+CA702 PASS shield 0 no duplicate owned instance
+CA702 PASS shield 1 native repickup
+CA702 PASS shield 1 recovered exact worn and wet metadata
+CA702 PASS shield 1 native selection size eligibility
+CA702 PASS shield 1 native equip or incompatible-size refusal
+CA702 PASS shield 1 no water created by native equip
+CA702 PASS shield 1 native unequip
+CA702 PASS shield 1 second toss retains identity, size, wear and water
+CA702 PASS shield 1 no duplicate owned instance
+CA702 PASS shield 2 native repickup
+CA702 PASS shield 2 recovered exact worn and wet metadata
+CA702 PASS shield 2 native selection size eligibility
+CA702 PASS shield 2 native equip or incompatible-size refusal
+CA702 PASS shield 2 no water created by native equip
+CA702 PASS shield 2 native unequip
+CA702 PASS shield 2 second toss retains identity, size, wear and water
+CA702 PASS shield 2 no duplicate owned instance
+CA702 PASS shield 3 native repickup
+CA702 PASS shield 3 recovered exact worn and wet metadata
+CA702 PASS shield 3 native selection size eligibility
+CA702 PASS shield 3 native equip or incompatible-size refusal
+CA702 PASS shield 3 no water created by native equip
+CA702 PASS shield 3 native unequip
+CA702 PASS shield 3 second toss retains identity, size, wear and water
+CA702 PASS shield 3 no duplicate owned instance
+CA702 PASS shield 4 native repickup
+CA702 PASS shield 4 recovered exact worn and wet metadata
+CA702 PASS shield 4 native selection size eligibility
+CA702 PASS shield 4 native equip or incompatible-size refusal
+CA702 PASS shield 4 no water created by native equip
+CA702 PASS shield 4 native unequip
+CA702 PASS shield 4 second toss retains identity, size, wear and water
+CA702 PASS shield 4 no duplicate owned instance
+CA702 PASS shield 5 native repickup
+CA702 PASS shield 5 recovered exact worn and wet metadata
+CA702 PASS shield 5 native selection size eligibility
+CA702 PASS shield 5 native equip or incompatible-size refusal
+CA702 PASS shield 5 no water created by native equip
+CA702 PASS shield 5 native unequip
+CA702 PASS shield 5 second toss retains identity, size, wear and water
+CA702 PASS shield 5 no duplicate owned instance
+CA702 PASS shield 6 native repickup
+CA702 PASS shield 6 recovered exact worn and wet metadata
+CA702 PASS shield 6 native selection size eligibility
+CA702 PASS shield 6 native equip or incompatible-size refusal
+CA702 PASS shield 6 no water created by native equip
+CA702 PASS shield 6 native unequip
+CA702 PASS shield 6 second toss retains identity, size, wear and water
+CA702 PASS shield 6 no duplicate owned instance
+CA702 PASS shield 7 native repickup
+CA702 PASS shield 7 recovered exact worn and wet metadata
+CA702 PASS shield 7 native selection size eligibility
+CA702 PASS shield 7 native equip or incompatible-size refusal
+CA702 PASS shield 7 no water created by native equip
+CA702 PASS shield 7 native unequip
+CA702 PASS shield 7 second toss retains identity, size, wear and water
+CA702 PASS shield 7 no duplicate owned instance
+CA702 PASS shield 8 native repickup
+CA702 PASS shield 8 recovered exact worn and wet metadata
+CA702 PASS shield 8 native selection size eligibility
+CA702 PASS shield 8 native equip or incompatible-size refusal
+CA702 PASS shield 8 no water created by native equip
+CA702 PASS shield 8 native unequip
+CA702 PASS shield 8 second toss retains identity, size, wear and water
+CA702 PASS shield 8 no duplicate owned instance
+CA702 PASS shield 9 native repickup
+CA702 PASS shield 9 recovered exact worn and wet metadata
+CA702 PASS shield 9 native selection size eligibility
+CA702 PASS shield 9 native equip or incompatible-size refusal
+CA702 PASS shield 9 no water created by native equip
+CA702 PASS shield 9 native unequip
+CA702 PASS shield 9 second toss retains identity, size, wear and water
+CA702 PASS shield 9 no duplicate owned instance
+CA702 PASS shield 10 native repickup
+CA702 PASS shield 10 recovered exact worn and wet metadata
+CA702 PASS shield 10 native selection size eligibility
+CA702 PASS shield 10 native equip or incompatible-size refusal
+CA702 PASS shield 10 no water created by native equip
+CA702 PASS shield 10 native unequip
+CA702 PASS shield 10 second toss retains identity, size, wear and water
+CA702 PASS shield 10 no duplicate owned instance
+CA702 PASS shield 11 native repickup
+CA702 PASS shield 11 recovered exact worn and wet metadata
+CA702 PASS shield 11 native selection size eligibility
+CA702 PASS shield 11 native equip or incompatible-size refusal
+CA702 PASS shield 11 no water created by native equip
+CA702 PASS shield 11 native unequip
+CA702 PASS shield 11 second toss retains identity, size, wear and water
+CA702 PASS shield 11 no duplicate owned instance
+CA702 PASS shield 12 native repickup
+CA702 PASS shield 12 recovered exact worn and wet metadata
+CA702 PASS shield 12 native selection size eligibility
+CA702 PASS shield 12 native equip or incompatible-size refusal
+CA702 PASS shield 12 no water created by native equip
+CA702 PASS shield 12 native unequip
+CA702 PASS shield 12 second toss retains identity, size, wear and water
+CA702 PASS shield 12 no duplicate owned instance
+CA702 PASS shield 13 native repickup
+CA702 PASS shield 13 recovered exact worn and wet metadata
+CA702 PASS shield 13 native selection size eligibility
+CA702 PASS shield 13 native equip or incompatible-size refusal
+CA702 PASS shield 13 no water created by native equip
+CA702 PASS shield 13 native unequip
+CA702 PASS shield 13 second toss retains identity, size, wear and water
+CA702 PASS shield 13 no duplicate owned instance
+CA702 PASS shield 14 native repickup
+CA702 PASS shield 14 recovered exact worn and wet metadata
+CA702 PASS shield 14 native selection size eligibility
+CA702 PASS shield 14 native equip or incompatible-size refusal
+CA702 PASS shield 14 no water created by native equip
+CA702 PASS shield 14 native unequip
+CA702 PASS shield 14 second toss retains identity, size, wear and water
+CA702 PASS shield 14 no duplicate owned instance
+CA702 PASS shield 15 native repickup
+CA702 PASS shield 15 recovered exact worn and wet metadata
+CA702 PASS shield 15 native selection size eligibility
+CA702 PASS shield 15 native equip or incompatible-size refusal
+CA702 PASS shield 15 no water created by native equip
+CA702 PASS shield 15 native unequip
+CA702 PASS shield 15 second toss retains identity, size, wear and water
+CA702 PASS shield 15 no duplicate owned instance
+CA702 PASS shield 16 native repickup
+CA702 PASS shield 16 recovered exact worn and wet metadata
+CA702 PASS shield 16 native selection size eligibility
+CA702 PASS shield 16 native equip or incompatible-size refusal
+CA702 PASS shield 16 no water created by native equip
+CA702 PASS shield 16 native unequip
+CA702 PASS shield 16 second toss retains identity, size, wear and water
+CA702 PASS shield 16 no duplicate owned instance
+CA702 PASS shield 17 native repickup
+CA702 PASS shield 17 recovered exact worn and wet metadata
+CA702 PASS shield 17 native selection size eligibility
+CA702 PASS shield 17 native equip or incompatible-size refusal
+CA702 PASS shield 17 no water created by native equip
+CA702 PASS shield 17 native unequip
+CA702 PASS shield 17 second toss retains identity, size, wear and water
+CA702 PASS shield 17 no duplicate owned instance
+CA702 PASS shield 18 native repickup
+CA702 PASS shield 18 recovered exact worn and wet metadata
+CA702 PASS shield 18 native selection size eligibility
+CA702 PASS shield 18 native equip or incompatible-size refusal
+CA702 PASS shield 18 no water created by native equip
+CA702 PASS shield 18 native unequip
+CA702 PASS shield 18 second toss retains identity, size, wear and water
+CA702 PASS shield 18 no duplicate owned instance
+CA702 PASS shield 19 native repickup
+CA702 PASS shield 19 recovered exact worn and wet metadata
+CA702 PASS shield 19 native selection size eligibility
+CA702 PASS shield 19 native equip or incompatible-size refusal
+CA702 PASS shield 19 no water created by native equip
+CA702 PASS shield 19 native unequip
+CA702 PASS shield 19 second toss retains identity, size, wear and water
+CA702 PASS shield 19 no duplicate owned instance
+CA702 PASS shield 20 native repickup
+CA702 PASS shield 20 recovered exact worn and wet metadata
+CA702 PASS shield 20 native selection size eligibility
+CA702 PASS shield 20 native equip or incompatible-size refusal
+CA702 PASS shield 20 no water created by native equip
+CA702 PASS shield 20 native unequip
+CA702 PASS shield 20 second toss retains identity, size, wear and water
+CA702 PASS shield 20 no duplicate owned instance
+CA702 PASS shield 21 native repickup
+CA702 PASS shield 21 recovered exact worn and wet metadata
+CA702 PASS shield 21 native selection size eligibility
+CA702 PASS shield 21 native equip or incompatible-size refusal
+CA702 PASS shield 21 no water created by native equip
+CA702 PASS shield 21 native unequip
+CA702 PASS shield 21 second toss retains identity, size, wear and water
+CA702 PASS shield 21 no duplicate owned instance
+CA702 PASS shield 22 native repickup
+CA702 PASS shield 22 recovered exact worn and wet metadata
+CA702 PASS shield 22 native selection size eligibility
+CA702 PASS shield 22 native equip or incompatible-size refusal
+CA702 PASS shield 22 no water created by native equip
+CA702 PASS shield 22 native unequip
+CA702 PASS shield 22 second toss retains identity, size, wear and water
+CA702 PASS shield 22 no duplicate owned instance
+CA702 PASS shield 23 native repickup
+CA702 PASS shield 23 recovered exact worn and wet metadata
+CA702 PASS shield 23 native selection size eligibility
+CA702 PASS shield 23 native equip or incompatible-size refusal
+CA702 PASS shield 23 no water created by native equip
+CA702 PASS shield 23 native unequip
+CA702 PASS shield 23 second toss retains identity, size, wear and water
+CA702 PASS shield 23 no duplicate owned instance
+CA702 PASS shield 24 native repickup
+CA702 PASS shield 24 recovered exact worn and wet metadata
+CA702 PASS shield 24 native selection size eligibility
+CA702 PASS shield 24 native equip or incompatible-size refusal
+CA702 PASS shield 24 no water created by native equip
+CA702 PASS shield 24 native unequip
+CA702 PASS shield 24 second toss retains identity, size, wear and water
+CA702 PASS shield 24 no duplicate owned instance
+CA702 PASS shield 25 native repickup
+CA702 PASS shield 25 recovered exact worn and wet metadata
+CA702 PASS shield 25 native selection size eligibility
+CA702 PASS shield 25 native equip or incompatible-size refusal
+CA702 PASS shield 25 no water created by native equip
+CA702 PASS shield 25 native unequip
+CA702 PASS shield 25 second toss retains identity, size, wear and water
+CA702 PASS shield 25 no duplicate owned instance
+CA702 PASS shield 26 native repickup
+CA702 PASS shield 26 recovered exact worn and wet metadata
+CA702 PASS shield 26 native selection size eligibility
+CA702 PASS shield 26 native equip or incompatible-size refusal
+CA702 PASS shield 26 no water created by native equip
+CA702 PASS shield 26 native unequip
+CA702 PASS shield 26 second toss retains identity, size, wear and water
+CA702 PASS shield 26 no duplicate owned instance
+CA702 PASS shield 27 native repickup
+CA702 PASS shield 27 recovered exact worn and wet metadata
+CA702 PASS shield 27 native selection size eligibility
+CA702 PASS shield 27 native equip or incompatible-size refusal
+CA702 PASS shield 27 no water created by native equip
+CA702 PASS shield 27 native unequip
+CA702 PASS shield 27 second toss retains identity, size, wear and water
+CA702 PASS shield 27 no duplicate owned instance
+CA702 PASS shield 28 native repickup
+CA702 PASS shield 28 recovered exact worn and wet metadata
+CA702 PASS shield 28 native selection size eligibility
+CA702 PASS shield 28 native equip or incompatible-size refusal
+CA702 PASS shield 28 no water created by native equip
+CA702 PASS shield 28 native unequip
+CA702 PASS shield 28 second toss retains identity, size, wear and water
+CA702 PASS shield 28 no duplicate owned instance
+CA702 PASS shield 29 native repickup
+CA702 PASS shield 29 recovered exact worn and wet metadata
+CA702 PASS shield 29 native selection size eligibility
+CA702 PASS shield 29 native equip or incompatible-size refusal
+CA702 PASS shield 29 no water created by native equip
+CA702 PASS shield 29 native unequip
+CA702 PASS shield 29 second toss retains identity, size, wear and water
+CA702 PASS shield 29 no duplicate owned instance
+CA702 PASS shield 30 native repickup
+CA702 PASS shield 30 recovered exact worn and wet metadata
+CA702 PASS shield 30 native selection size eligibility
+CA702 PASS shield 30 native equip or incompatible-size refusal
+CA702 PASS shield 30 no water created by native equip
+CA702 PASS shield 30 native unequip
+CA702 PASS shield 30 second toss retains identity, size, wear and water
+CA702 PASS shield 30 no duplicate owned instance
+CA702 PASS shield 31 native repickup
+CA702 PASS shield 31 recovered exact worn and wet metadata
+CA702 PASS shield 31 native selection size eligibility
+CA702 PASS shield 31 native equip or incompatible-size refusal
+CA702 PASS shield 31 no water created by native equip
+CA702 PASS shield 31 native unequip
+CA702 PASS shield 31 second toss retains identity, size, wear and water
+CA702 PASS shield 31 no duplicate owned instance
+CA702 PASS shield 32 native repickup
+CA702 PASS shield 32 recovered exact worn and wet metadata
+CA702 PASS shield 32 native selection size eligibility
+CA702 PASS shield 32 native equip or incompatible-size refusal
+CA702 PASS shield 32 no water created by native equip
+CA702 PASS shield 32 native unequip
+CA702 PASS shield 32 second toss retains identity, size, wear and water
+CA702 PASS shield 32 no duplicate owned instance
+CA702 PASS shield 33 native repickup
+CA702 PASS shield 33 recovered exact worn and wet metadata
+CA702 PASS shield 33 native selection size eligibility
+CA702 PASS shield 33 native equip or incompatible-size refusal
+CA702 PASS shield 33 no water created by native equip
+CA702 PASS shield 33 native unequip
+CA702 PASS shield 33 second toss retains identity, size, wear and water
+CA702 PASS shield 33 no duplicate owned instance
+CA702 PASS shield 34 native repickup
+CA702 PASS shield 34 recovered exact worn and wet metadata
+CA702 PASS shield 34 native selection size eligibility
+CA702 PASS shield 34 native equip or incompatible-size refusal
+CA702 PASS shield 34 no water created by native equip
+CA702 PASS shield 34 native unequip
+CA702 PASS shield 34 second toss retains identity, size, wear and water
+CA702 PASS shield 34 no duplicate owned instance
+CA702 PASS shield 35 native repickup
+CA702 PASS shield 35 recovered exact worn and wet metadata
+CA702 PASS shield 35 native selection size eligibility
+CA702 PASS shield 35 native equip or incompatible-size refusal
+CA702 PASS shield 35 no water created by native equip
+CA702 PASS shield 35 native unequip
+CA702 PASS shield 35 second toss retains identity, size, wear and water
+CA702 PASS shield 35 no duplicate owned instance
+CA702 PASS shield 36 native repickup
+CA702 PASS shield 36 recovered exact worn and wet metadata
+CA702 PASS shield 36 native selection size eligibility
+CA702 PASS shield 36 native equip or incompatible-size refusal
+CA702 PASS shield 36 no water created by native equip
+CA702 PASS shield 36 native unequip
+CA702 PASS shield 36 second toss retains identity, size, wear and water
+CA702 PASS shield 36 no duplicate owned instance
+CA702 PASS shield 37 native repickup
+CA702 PASS shield 37 recovered exact worn and wet metadata
+CA702 PASS shield 37 native selection size eligibility
+CA702 PASS shield 37 native equip or incompatible-size refusal
+CA702 PASS shield 37 no water created by native equip
+CA702 PASS shield 37 native unequip
+CA702 PASS shield 37 second toss retains identity, size, wear and water
+CA702 PASS shield 37 no duplicate owned instance
+CA702 PASS shield 38 native repickup
+CA702 PASS shield 38 recovered exact worn and wet metadata
+CA702 PASS shield 38 native selection size eligibility
+CA702 PASS shield 38 native equip or incompatible-size refusal
+CA702 PASS shield 38 no water created by native equip
+CA702 PASS shield 38 native unequip
+CA702 PASS shield 38 second toss retains identity, size, wear and water
+CA702 PASS shield 38 no duplicate owned instance
+CA702 PASS shield 39 native repickup
+CA702 PASS shield 39 recovered exact worn and wet metadata
+CA702 PASS shield 39 native selection size eligibility
+CA702 PASS shield 39 native equip or incompatible-size refusal
+CA702 PASS shield 39 no water created by native equip
+CA702 PASS shield 39 native unequip
+CA702 PASS shield 39 second toss retains identity, size, wear and water
+CA702 PASS shield 39 no duplicate owned instance
+CA702 PASS shield 40 native repickup
+CA702 PASS shield 40 recovered exact worn and wet metadata
+CA702 PASS shield 40 native selection size eligibility
+CA702 PASS shield 40 native equip or incompatible-size refusal
+CA702 PASS shield 40 no water created by native equip
+CA702 PASS shield 40 native unequip
+CA702 PASS shield 40 second toss retains identity, size, wear and water
+CA702 PASS shield 40 no duplicate owned instance
+CA702 PASS shield 41 native repickup
+CA702 PASS shield 41 recovered exact worn and wet metadata
+CA702 PASS shield 41 native selection size eligibility
+CA702 PASS shield 41 native equip or incompatible-size refusal
+CA702 PASS shield 41 no water created by native equip
+CA702 PASS shield 41 native unequip
+CA702 PASS shield 41 second toss retains identity, size, wear and water
+CA702 PASS shield 41 no duplicate owned instance
+CA702 PASS shield 42 native repickup
+CA702 PASS shield 42 recovered exact worn and wet metadata
+CA702 PASS shield 42 native selection size eligibility
+CA702 PASS shield 42 native equip or incompatible-size refusal
+CA702 PASS shield 42 no water created by native equip
+CA702 PASS shield 42 native unequip
+CA702 PASS shield 42 second toss retains identity, size, wear and water
+CA702 PASS shield 42 no duplicate owned instance
+CA702 PASS shield 43 native repickup
+CA702 PASS shield 43 recovered exact worn and wet metadata
+CA702 PASS shield 43 native selection size eligibility
+CA702 PASS shield 43 native equip or incompatible-size refusal
+CA702 PASS shield 43 no water created by native equip
+CA702 PASS shield 43 native unequip
+CA702 PASS shield 43 second toss retains identity, size, wear and water
+CA702 PASS shield 43 no duplicate owned instance
+CA702 PASS shield 44 native repickup
+CA702 PASS shield 44 recovered exact worn and wet metadata
+CA702 PASS shield 44 native selection size eligibility
+CA702 PASS shield 44 native equip or incompatible-size refusal
+CA702 PASS shield 44 no water created by native equip
+CA702 PASS shield 44 native unequip
+CA702 PASS shield 44 second toss retains identity, size, wear and water
+CA702 PASS shield 44 no duplicate owned instance
+CA702 PASS shield 45 native repickup
+CA702 PASS shield 45 recovered exact worn and wet metadata
+CA702 PASS shield 45 native selection size eligibility
+CA702 PASS shield 45 native equip or incompatible-size refusal
+CA702 PASS shield 45 no water created by native equip
+CA702 PASS shield 45 native unequip
+CA702 PASS shield 45 second toss retains identity, size, wear and water
+CA702 PASS shield 45 no duplicate owned instance
+CA702 PASS shield 46 native repickup
+CA702 PASS shield 46 recovered exact worn and wet metadata
+CA702 PASS shield 46 native selection size eligibility
+CA702 PASS shield 46 native equip or incompatible-size refusal
+CA702 PASS shield 46 no water created by native equip
+CA702 PASS shield 46 native unequip
+CA702 PASS shield 46 second toss retains identity, size, wear and water
+CA702 PASS shield 46 no duplicate owned instance
+CA702 PASS shield 47 native repickup
+CA702 PASS shield 47 recovered exact worn and wet metadata
+CA702 PASS shield 47 native selection size eligibility
+CA702 PASS shield 47 native equip or incompatible-size refusal
+CA702 PASS shield 47 no water created by native equip
+CA702 PASS shield 47 native unequip
+CA702 PASS shield 47 second toss retains identity, size, wear and water
+CA702 PASS shield 47 no duplicate owned instance
+CA702 PASS shield 48 native repickup
+CA702 PASS shield 48 recovered exact worn and wet metadata
+CA702 PASS shield 48 native selection size eligibility
+CA702 PASS shield 48 native equip or incompatible-size refusal
+CA702 PASS shield 48 no water created by native equip
+CA702 PASS shield 48 native unequip
+CA702 PASS shield 48 second toss retains identity, size, wear and water
+CA702 PASS shield 48 no duplicate owned instance
+CA702 PASS shield 49 native repickup
+CA702 PASS shield 49 recovered exact worn and wet metadata
+CA702 PASS shield 49 native selection size eligibility
+CA702 PASS shield 49 native equip or incompatible-size refusal
+CA702 PASS shield 49 no water created by native equip
+CA702 PASS shield 49 native unequip
+CA702 PASS shield 49 second toss retains identity, size, wear and water
+CA702 PASS shield 49 no duplicate owned instance
+CA702 PASS shield 50 native repickup
+CA702 PASS shield 50 recovered exact worn and wet metadata
+CA702 PASS shield 50 native selection size eligibility
+CA702 PASS shield 50 native equip or incompatible-size refusal
+CA702 PASS shield 50 no water created by native equip
+CA702 PASS shield 50 native unequip
+CA702 PASS shield 50 second toss retains identity, size, wear and water
+CA702 PASS shield 50 no duplicate owned instance
+CA702 PASS shield 51 native repickup
+CA702 PASS shield 51 recovered exact worn and wet metadata
+CA702 PASS shield 51 native selection size eligibility
+CA702 PASS shield 51 native equip or incompatible-size refusal
+CA702 PASS shield 51 no water created by native equip
+CA702 PASS shield 51 native unequip
+CA702 PASS shield 51 second toss retains identity, size, wear and water
+CA702 PASS shield 51 no duplicate owned instance
+CA702 PASS shield 52 native repickup
+CA702 PASS shield 52 recovered exact worn and wet metadata
+CA702 PASS shield 52 native selection size eligibility
+CA702 PASS shield 52 native equip or incompatible-size refusal
+CA702 PASS shield 52 no water created by native equip
+CA702 PASS shield 52 native unequip
+CA702 PASS shield 52 second toss retains identity, size, wear and water
+CA702 PASS shield 52 no duplicate owned instance
+CA702 PASS shield 53 native repickup
+CA702 PASS shield 53 recovered exact worn and wet metadata
+CA702 PASS shield 53 native selection size eligibility
+CA702 PASS shield 53 native equip or incompatible-size refusal
+CA702 PASS shield 53 no water created by native equip
+CA702 PASS shield 53 native unequip
+CA702 PASS shield 53 second toss retains identity, size, wear and water
+CA702 PASS shield 53 no duplicate owned instance
+CA702 PASS shield 54 native repickup
+CA702 PASS shield 54 recovered exact worn and wet metadata
+CA702 PASS shield 54 native selection size eligibility
+CA702 PASS shield 54 native equip or incompatible-size refusal
+CA702 PASS shield 54 no water created by native equip
+CA702 PASS shield 54 native unequip
+CA702 PASS shield 54 second toss retains identity, size, wear and water
+CA702 PASS shield 54 no duplicate owned instance
+CA702 PASS shield 55 native repickup
+CA702 PASS shield 55 recovered exact worn and wet metadata
+CA702 PASS shield 55 native selection size eligibility
+CA702 PASS shield 55 native equip or incompatible-size refusal
+CA702 PASS shield 55 no water created by native equip
+CA702 PASS shield 55 native unequip
+CA702 PASS shield 55 second toss retains identity, size, wear and water
+CA702 PASS shield 55 no duplicate owned instance
+CA702 PASS shield 56 native repickup
+CA702 PASS shield 56 recovered exact worn and wet metadata
+CA702 PASS shield 56 native selection size eligibility
+CA702 PASS shield 56 native equip or incompatible-size refusal
+CA702 PASS shield 56 no water created by native equip
+CA702 PASS shield 56 native unequip
+CA702 PASS shield 56 second toss retains identity, size, wear and water
+CA702 PASS shield 56 no duplicate owned instance
+CA702 PASS shield 57 native repickup
+CA702 PASS shield 57 recovered exact worn and wet metadata
+CA702 PASS shield 57 native selection size eligibility
+CA702 PASS shield 57 native equip or incompatible-size refusal
+CA702 PASS shield 57 no water created by native equip
+CA702 PASS shield 57 native unequip
+CA702 PASS shield 57 second toss retains identity, size, wear and water
+CA702 PASS shield 57 no duplicate owned instance
+CA702 PASS shield 58 native repickup
+CA702 PASS shield 58 recovered exact worn and wet metadata
+CA702 PASS shield 58 native selection size eligibility
+CA702 PASS shield 58 native equip or incompatible-size refusal
+CA702 PASS shield 58 no water created by native equip
+CA702 PASS shield 58 native unequip
+CA702 PASS shield 58 second toss retains identity, size, wear and water
+CA702 PASS shield 58 no duplicate owned instance
+CA702 PASS shield 59 native repickup
+CA702 PASS shield 59 recovered exact worn and wet metadata
+CA702 PASS shield 59 native selection size eligibility
+CA702 PASS shield 59 native equip or incompatible-size refusal
+CA702 PASS shield 59 no water created by native equip
+CA702 PASS shield 59 native unequip
+CA702 PASS shield 59 second toss retains identity, size, wear and water
+CA702 PASS shield 59 no duplicate owned instance
+CA702 PASS all native shield sizes remain independent
+CA702 COMPLETE failures=0

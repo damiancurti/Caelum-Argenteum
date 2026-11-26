@@ -1,0 +1,8 @@
+{
+  "issue": 702,
+  "owner": "Damián Curti / Caelum Argenteum",
+  "source": "Existing owned shield world icons; existing #106 first-person composition informs rear grip purpose.",
+  "method": "Original shield PNG bytes and identities retained. Smooth outer hull, curved front relief and closed backing preserve volume despite internal alpha cutouts. Shared owned material UVs supply rear wood/metal, rim and leather straps. No new or repainted bitmap.",
+  "limits": "Candidate world props. Tiers keep their existing shared world appearance. Worn and first-person art/fit unchanged; author acceptance pending.",
+  "shared_materials": "Unchanged owned training-dummy wood/iron and #647 consumable leather/bronze atlas; original shader paths retained, portable references copied byte-for-byte."
+}

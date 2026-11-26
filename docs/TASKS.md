@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.28** - 2026-11-14.
+Documentation version: **5.17.29** - 2026-11-14.
+
+## #702 - Shield world models (5.17.29)
+
+Four exact native bindings, deterministic export, independent geometry checks
+and 5,888 native inventory/save assertions pass. Keep CA702-SHIELDS-01 pending
+for author review of all four silhouettes, front relief, painted alpha gaps,
+backs, straps and ordinary inventory use. Existing first-person art and modular
+worn-body fit remain separate. Continue remaining characters, armor, weapons,
+materials, regional displays and original campaign issues; do not treat this
+focused slice or its draft PR as broad-batch completion.
 
 ## #700 - Cuyo material and guardian gallery (5.17.28)
 

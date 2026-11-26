@@ -1,0 +1,48 @@
+newmtl buckler_front
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/shields/buckler.png
+newmtl buckler_back
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/shields/buckler.png
+newmtl buckler_metal
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/shields/buckler.png
+newmtl kite_front
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/shields/kite.png
+newmtl kite_back
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/shields/kite.png
+newmtl kite_metal
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/shields/kite.png
+newmtl tower_front
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/shields/tower.png
+newmtl tower_back
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/shields/tower.png
+newmtl tower_metal
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/shields/tower.png
+newmtl magic_front
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/shields/magic.png
+newmtl magic_back
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/shields/magic.png
+newmtl magic_metal
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/shields/magic.png
+newmtl wood
+Kd 1 1 1
+map_Kd src/models/caelum/actors/training/ca_training_dummy.png
+newmtl leather
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/consumables/materials.png
+newmtl bronze
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/consumables/materials.png
+newmtl iron
+Kd 1 1 1
+map_Kd src/models/caelum/actors/training/ca_training_dummy.png

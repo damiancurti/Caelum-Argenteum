@@ -1,6 +1,59 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.28** - 2026-11-14.
+Documentation version: **5.17.29** - 2026-11-14.
+
+## 5.17.29 - Four native shield world models (#702, parent #647)
+
+The existing buckler, kite, tower and magic shield world drops now use candidate
+closed 3D props at exact CaelumShieldPickup CBUC/CSHK/CSHT/CSHM frame-A bindings.
+Original icons, three tiers, five sizes, Scale 0.25, collision, balance and
+equipment identity remain unchanged. Every tier already shares its type's
+world sprite; one model per type preserves that policy. First-person #106 art
+and worn-body fitting are unchanged and remain distinct from world inspection.
+
+Four original 128-pixel owned PNGs remain byte-identical. Raised boss/crest/gem
+profiles, a curved painted front, closed backing, rim and rear leather band(s)
+provide volume. Reused owned training-dummy wood/iron and #647 leather/bronze
+materials cover rear surfaces and edges. The front artwork contains internal
+alpha cutouts; they expose the solid backing instead of defining holes in the
+mesh. Close views retain original softness, visible paint gaps and simplified
+relief. Author art review remains pending.
+
+DESIGN/PROVENANCE/EXPORT and portable OBJ/MTL sources live at
+assets/source/art/inventory_models_647/shields. Regenerate with python
+assets/generators/generate_inventory_shield_models.py --output
+build/shield-models --install. All 18 export files repeat exactly.
+The four models have 19 closed components, 6,332 source vertices, 12,604 triangles
+and 15 native surfaces. Independent checks cover serialized closure,
+winding, positive volumes, 22 actual assembly witnesses, seven empty grip
+clearance points, native quantized triangle area and both original sprite
+envelopes. No shared exporter or older native art changes.
+Final LF normalization refreshes only provenance after a staged-byte check;
+17 final art/portable files remain byte-identical. The failed check and the
+source compatibility proof are retained in the evidence.
+
+Two previews each pass 1,141 native assertions. Native visual inspection still
+required replacing an alpha-derived notched contour, wide flat rim and polar
+back UVs with smooth hulls, thinner edges and planar opaque backing. Final
+front/rear/edge/underside/rear-oblique views, the floor overview and both
+presentation cohorts were inspected. Geometry alone did not certify appearance.
+
+The complete runtime passes 5,888 native assertions across original sprites,
+old-save/model, fresh-model, model reload and reverse load: [1141, 1202, 1141, 1202, 1202].
+All 60 type/tier/size cases retain identity, provenance, condition, water and
+native sprites. Native selection/equip, incompatible-size refusal, temporary
+drop guard and Box-weight exclusion pass. The fixture invokes native APIs;
+ordinary menus, crafting and author acceptance remain separate. All
+18,365 packaged entries match src. Only nine new shield resources,
+MODELDEF and two release diagnostics differ from #700.
+
+One qualified 700-tic four-shield Vulkan comparison, sprites/models, records
+1164.76/1216.96 queue presents/s, p95 1.0510/1.0164 ms, p99 1.3199/1.2224 ms and
+28.5721/28.5711 simulation ms/tic on the recorded Windows 11/Ryzen 9 5950X/RTX 3070 Ti
+environment at 1280x720, background unpaused, audio 5%. Different model/billboard
+footprints prevent equal-pixel cost claims. These are queue intervals, not GPU
+or display timing, campaign/crowd performance or author acceptance. Evidence:
+assets/validation_v5_17_29/evidence/SUMMARY.json. CA702-SHIELDS-01 remains pending.
 
 ## 5.17.28 - Cuyo material and guardian regional gallery (#700, parent #463)
 

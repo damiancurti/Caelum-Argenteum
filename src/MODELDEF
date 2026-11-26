@@ -4765,3 +4765,5 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_clothing.modeldef"
 
 #include "caelum/data/guardian_combat.modeldef"
+
+#include "caelum/data/inventory_shields.modeldef"
