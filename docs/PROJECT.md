@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.45** - 2026-11-14.
+Documentation version: **5.17.46** - 2026-11-14.
+
+## 5.17.46 - Modular character direction for review (#736)
+
+The author requested visual proposals before broad #458 conversion.
+Seven family boards cover fourteen male/female variants, with exact prompts,
+owned references and a single review page linked from ASSETS. All are
+pending author direction under CA736-MODULAR-STYLE-01. Concept images do
+not establish native geometry, interchangeable parts, garment fit, animation
+or performance. The broader V5.16 campaign and V5.17 conversion remain
+unfinished.
 
 ## 5.17.45 - Textile crafting drops (#733)
 

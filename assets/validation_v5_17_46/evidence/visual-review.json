@@ -1,0 +1,34 @@
+{
+  "issue": 736,
+  "review": "Agent visual inspection, not author acceptance",
+  "inspected_outputs": [
+    "human/proposal-v1.png",
+    "goblin/proposal-v1.png",
+    "caelith/proposal-v1.png",
+    "caelith/proposal-v2.png",
+    "wolf/proposal-v1.png",
+    "bear/proposal-v1.png",
+    "puma/proposal-v1.png",
+    "jaguar/proposal-v1.png"
+  ],
+  "selected": {
+    "human": "human/proposal-v1.png",
+    "goblin": "goblin/proposal-v1.png",
+    "caelith": "caelith/proposal-v2.png",
+    "wolf": "wolf/proposal-v1.png",
+    "bear": "bear/proposal-v1.png",
+    "puma": "puma/proposal-v1.png",
+    "jaguar": "jaguar/proposal-v1.png"
+  },
+  "family_notes": {
+    "human": "Grounded adult proportions and plain garments. Male facial hair and female shoulder-length hair are examples only; the four faces and four hairstyles per sex remain separate work.",
+    "goblin": "Natural tan skin and pointed ears preserve the owned references. Review whether the body silhouette and ear-to-head proportions distinguish this family enough from humans.",
+    "caelith": "Green skin with white hair is one example of independent skin/hair choices. Version 1 shortened the ears; version 2 restores the longer pointed silhouette. Skin RGB and all six hair colors remain required.",
+    "wolf": "Gray/brown/cream fur and a full animal muzzle. Review the neck ruff and transition into the collar, head scale and male/female body distinction.",
+    "bear": "Brown fur, round ears and a broad animal muzzle. The clothed body remains close to the common humanoid base; review whether the shoulder/torso mass is sufficient for the intended bear form.",
+    "puma": "Unspotted tawny coat and a feline muzzle, using the corrected puma_head_v2 reference. Review head scale, muzzle depth and collar transition.",
+    "jaguar": "Golden coat, dark rosettes and a broad feline muzzle. Review jaguar identity, head scale and whether rosettes remain readable at gameplay distance."
+  },
+  "observed_correction": "Caelith v1 ears were shorter than owned references; retained v2 enlarges the ear silhouette.",
+  "limitation": "All views are generated concept artwork. No mesh, anatomy under clothing, palette masking or native modular assembly was tested."
+}

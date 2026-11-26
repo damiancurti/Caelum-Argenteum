@@ -1,0 +1,115 @@
+{
+  "issue": 736,
+  "parent": 458,
+  "mode": "Built-in image_gen",
+  "date": "2026-11-14",
+  "author_acceptance": "Pending: the author requested visual proposals before broad conversion.",
+  "rights": "New generated concept boards guided by owned project references. Existing reference attribution remains authoritative; no external reference was imported.",
+  "deterministic_scope": "Saved copies and hashes are reproducible; image generation itself is not claimed deterministic.",
+  "outputs": [
+    {
+      "file": "human/proposal-v1.png",
+      "original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-6f7f587a-0eae-445e-8f07-0dd612b8cff1.png",
+      "sha256": "9a1d84c4113a7acba1c6d03847e982f4a8dd836957d0e7a8c818a1f0ec1d8e5c",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "opaque": true,
+      "processing": "Unchanged byte-for-byte copy."
+    },
+    {
+      "file": "goblin/proposal-v1.png",
+      "original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-7dbd42c2-c5b0-4bfd-9122-55347bf1ab52.png",
+      "sha256": "b4735070005c8105f0e4def0b0e3d95d5bdbd77fd255728c7326290b24aff6fb",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "opaque": true,
+      "processing": "Unchanged byte-for-byte copy."
+    },
+    {
+      "file": "caelith/proposal-v1.png",
+      "original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-beaffa78-88c1-4b10-91a4-d76ca15bfb5d.png",
+      "sha256": "5d3f913ad7ad9613f26309a91324580ad861bbce3a9990574e0fd07e03cca5e4",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "opaque": true,
+      "processing": "Unchanged byte-for-byte copy."
+    },
+    {
+      "file": "caelith/proposal-v2.png",
+      "original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-c2d6d95b-09ae-4225-b572-7d7e60c0b429.png",
+      "sha256": "08e00c5aef68cc64a03a084e6da99b89e2e81feffbc8e4f708177788841bb89a",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "opaque": true,
+      "processing": "Unchanged byte-for-byte copy."
+    },
+    {
+      "file": "wolf/proposal-v1.png",
+      "original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-081514c5-1297-4bf6-861e-73d3607781e2.png",
+      "sha256": "1f14ceef4b8411da4023b8ac330b338526ce59b858213a3d194f4580dcc5e8d0",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "opaque": true,
+      "processing": "Unchanged byte-for-byte copy."
+    },
+    {
+      "file": "bear/proposal-v1.png",
+      "original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-81d529ed-b4f9-423e-9fbd-4c29887ea91d.png",
+      "sha256": "539c8655ade499ead1fbbfcc03a7742f5ec1b2fd9e961701e408571f84c7923c",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "opaque": true,
+      "processing": "Unchanged byte-for-byte copy."
+    },
+    {
+      "file": "puma/proposal-v1.png",
+      "original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-9f0bc39f-1ec1-4d60-bb3b-15d14d246267.png",
+      "sha256": "db756248e31dda331817f70d6fb0c7ec95312aea95aad8118c2176778973dd6a",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "opaque": true,
+      "processing": "Unchanged byte-for-byte copy."
+    },
+    {
+      "file": "jaguar/proposal-v1.png",
+      "original": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-970fb865-1878-4556-b14e-261b5fb43166.png",
+      "sha256": "e0b5b16ba6c7dc1aacaeb768b1591f52006dc9e9ab33a2edea474f9c1316fed0",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "opaque": true,
+      "processing": "Unchanged byte-for-byte copy."
+    }
+  ],
+  "reference_sha256": {
+    "assets/source/art/modular_proposals_736/human/proposal-v1.png": "9a1d84c4113a7acba1c6d03847e982f4a8dd836957d0e7a8c818a1f0ec1d8e5c",
+    "assets/source/art/appearance_5213/bear_head_v1.png": "cebd00cc2e07df262611cf4a64e4ed0f4352e07ab29b2ab031f40afe776dda2e",
+    "assets/source/art/appearance_5213/caelith_male_head_green_v1.png": "a7990bcec52b18b2efd47335c4c8a1cc9880a888f7540ac34788705130825115",
+    "assets/source/art/appearance_5213/caelith_female_head_green_v1.png": "d377c19ff8380eaf25675b6e511d09832e4774ab8b022aff42a59dca0090f574",
+    "assets/source/art/modular_proposals_736/caelith/proposal-v1.png": "5d3f913ad7ad9613f26309a91324580ad861bbce3a9990574e0fd07e03cca5e4",
+    "assets/source/art/appearance_5213/goblin_male_head_v1.png": "7de1706cac716a8bfab86158c96ee8d62ac1a6bc8f14093078515593c54d549a",
+    "assets/source/art/appearance_5213/goblin_female_faces_v1.png": "3505ddece85439ef152fe2ef467b134fb0afc97bd61c770c58e8ab9ba81f337c",
+    "assets/source/art/appearance_5213/human_male_plain_v1.png": "b9889ef3b5b796869270ad7527894c4f70c0850723e9da7fabaabaee5f57cdfb",
+    "assets/source/art/appearance_5213/human_female_idle_v1.png": "c2b285bb305eb7167f3ee245e699f7f8c6f6210b77ece5db1ebe75be5af528c5",
+    "assets/source/art/appearance_5213/body_plain_female_module_v1.png": "f09b3d94b5d6bea6057e3ee63ad6b1467fe4fba1590df47fff3bb2fba09d3770",
+    "assets/validation_v5_17_0/evidence/visual/07/modular.png": "7f3bb5f4ee980f658d7f5ccc7262ff51d14a8c6557baafb87e4c7d8979f97d37",
+    "assets/source/art/appearance_5213/jaguar_head_v1.png": "735ba7ef32efd67aab4069455b033711c5203f9bc0e81e8949549e3ecf4d0bae",
+    "assets/source/art/appearance_5213/puma_head_v2.png": "470163bc26c5121565d4c5ac80277f9e5fc96592e957c27e88ad24c7bdc75fe9",
+    "assets/source/art/appearance_5213/wolf_male_head_v1.png": "8663415a97dc5eee3a9db9047a7c29a89b6093b5e06f1fdf66efdd5ed38e4711"
+  }
+}

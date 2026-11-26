@@ -1,6 +1,6 @@
 # Caelum Argenteum - Sprite art direction
 
-Documentation version: **5.17.45** - 2026-11-14.
+Documentation version: **5.17.46** - 2026-11-14.
 
 ## Folklore model reference handoff for #453 (2026-11-12)
 
@@ -176,6 +176,13 @@ applicable, face, hairstyle and hair color. Race, sex and profession remain fixe
 Pain and breathing voices follow saved sex automatically.
 
 ## Modular construction
+
+For #736 (5.17.46), the author requested visual proposals before broad
+conversion. The seven-family review surface is
+[modular_proposals_736/review.html](../assets/source/art/modular_proposals_736/review.html).
+It shows one male/female style example per family, not the complete face/hair
+catalog. These concepts and their body/neck/ear proportions remain pending.
+They do not replace owned references or prove native modular construction.
 
 The author accepted the Domingo 3D prototype (#283) on 2026-10-15 and deferred
 sprite-to-model migration to the V5.17 presentation roadmap in PROJECT. Future
