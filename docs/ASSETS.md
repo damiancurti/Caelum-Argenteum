@@ -1,6 +1,70 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.94** - 2026-11-19.
+Documentation version: **5.17.95** - 2026-11-19.
+
+## 5.17.95 - Skeletal native-format assessment (#834, parent #458)
+
+The isolated comparison does not support migrating production characters to
+this IQM export. It reduces the seven model files from 32,510,864 to 2,024,448
+bytes, but the matched 64-figure scene produces 236.24 queue presents/s versus
+873.40 for MD3. A hybrid retaining the original cape occupies 2,354,400 bytes
+and produces 246.13 queue presents/s. Production MD3 bindings remain unchanged.
+These measurements do not isolate the cause of the regression or establish a
+general engine-format ranking.
+
+The deterministic exporter reads the unchanged accepted Domingo source and
+preserves its seven module identities, owned material, 73 meshes, 26 bones,
+10,689 vertices, 17,447 triangles and 24 actions/375 samples. Existing numeric
+FrameIndex/state durations remain authoritative; no uniform clip rate is
+invented for nonuniform source samples. Two complete exports repeat all ten
+files byte for byte. Nine raw source/export files are retained under
+assets/source/art/iqm_assessment_834/export; runners rebuild the local overlay.
+Pinned IQM specification/engine references and existing art rights are recorded
+in PROVENANCE.json. No engine, IWAD, private test package or save is distributed.
+
+The cape applies thickness after nonrigid deformation. Rest-baking that modifier
+introduces a maximum 0.511826-MU pipeline difference; combined encoding/source
+difference reaches 0.523182 MU. The hybrid preserves every original MD3 cape
+sample. The six other modules differ from the sampled Blender source by at
+most 0.005551 MU after native weight/channel quantization. The independently
+parsed IQM hierarchy, indices, UVs, weights, frame channels and bounds pass
+4,008,375 sampled-vertex checks against retained MD3 geometry. Arithmetic
+roundoff bounds are diagnostic calculations, not approved artistic tolerances.
+The reconstruction does not establish exact fractional interpolation equality.
+
+Final native04 uses the final package and passes 257 fresh plus six IQM-load
+and six hybrid-load assertions (269 total). It records all 24 registered poses
+from front/rear quarters, four additional rest directions, independent module
+visibility, walking and retained selections after save/load. Both saved/reloaded
+images match exactly. Twenty comparison views, six benchmark scenes and the
+walking viewer were directly inspected; all 160 comparison capture hashes are
+retained. The bounded viewer smoke adds six assertions. No author review has
+occurred, and CA834-FORMAT-01 is reserved for the final consolidated session.
+
+Sequential peaceful measurements use one or 64 identical figures, Vulkan,
+1280x720, a fixed room/camera, uncapped presentation, background simulation and
+5% audio. Each case records 700 simulation intervals; no heavy build/export
+or full validator overlaps the captures. The recorded device is RTX 3070 Ti.
+
+| Figures / format | Queue presents/s | Presentation p95 / p99 / max (ms) | Simulation p95 / p99 / max (ms) |
+| --- | ---: | --- | --- |
+| 1 / md3 | 1136.91 | 1.0356 / 1.2090 / 1.7343 | 29.1791 / 29.2800 / 29.6321 |
+| 1 / iqm | 1099.76 | 1.0667 / 1.2369 / 2.0382 | 29.1655 / 29.3236 / 29.4318 |
+| 1 / hybrid | 1126.14 | 1.0537 / 1.2517 / 2.1550 | 29.1726 / 29.3355 / 29.5755 |
+| 64 / hybrid | 246.13 | 4.9619 / 5.5703 / 7.2589 | 31.7668 / 32.2385 / 33.4394 |
+| 64 / iqm | 236.24 | 5.1944 / 6.1660 / 8.0092 | 31.9702 / 32.4096 / 33.9434 |
+| 64 / md3 | 873.40 | 1.2921 / 1.4285 / 2.4734 | 29.3526 / 29.6561 / 29.9114 |
+
+Queue intervals are not monitor latency or scene GPU execution time. These six
+single-run comparisons do not establish campaign/siege fluency or arbitrary
+population behavior. They give sufficient evidence to retain the production
+format while investigating any future skeletal implementation separately.
+CA-KP-254 records fidelity and cost lessons. Existing models, animation timing,
+equipment/collision/save owners and original source art are unchanged; the
+18,719-member package differs only in its two required diagnostic version
+strings. Evidence and full project validation: assets/validation_v5_17_95/evidence.
+Other body/species/sex variants, production garment integration and first-person
+equipment remain separate work; no final batch completion is claimed.
 
 ## 5.17.94 - Historical release labels restored (#831)
 

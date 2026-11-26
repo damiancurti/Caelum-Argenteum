@@ -1,0 +1,31 @@
+{
+  "issue": 834,
+  "base_commit": "d1d501e9e586f3e95a16044304304e9f1bb6c8e9",
+  "runtime_sha256": "4bcf0a9ada804fd7ce1d3fe52f2f09222d6cd53498a001dbc28571a6a3d627c0",
+  "runtime_members": 18719,
+  "only_two_diagnostic_release_strings_changed": [
+    {
+      "path": "src/caelum/world/CaelumPhysicalHazards.zs",
+      "before_sha256": "5670b681bf75d86fbf5e9622df1a3025e61de3eba01895343448e7f80487c98a",
+      "after_sha256": "3ff1012d88eb68d78b9e46d0b5ee56c0319534e8972ae9e776a8e1a19e7ef238"
+    },
+    {
+      "path": "src/caelum/world/CaelumSewerMaze.zs",
+      "before_sha256": "ae7eda7d131ba5c07a1ccd670dfe6937270e2be204260b3badc6a84272144b54",
+      "after_sha256": "cb95aebc4b9141d51ae1e65688cdf02ae89c4c2df41c981ca184b39ada07d972"
+    }
+  ],
+  "all_package_members_match_source": true,
+  "protected_sources_unchanged": [
+    "assets/source/art/domingo_3d_pilot",
+    "assets/source/art/character_modules_458",
+    "assets/source/art/underbody_827",
+    "assets/source/art/worn_clothing_829",
+    "src/models",
+    "src/caelum/character",
+    "src/caelum/equipment",
+    "src/sprites"
+  ],
+  "no_removed_files": true,
+  "production_format_equipment_collision_save_ownership_unchanged": true
+}
