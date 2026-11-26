@@ -1,0 +1,110 @@
+{
+  "schema_revision": 1,
+  "issue": 847,
+  "status": "candidate_not_author_accepted",
+  "scope": "MAP02-only review launch. The overlay aliases are global while loaded; do not include it in normal campaign or other-map launch profiles.",
+  "authority": "Parent #463 October30 city/sewer visual finish; exact materials reviewed at consolidated delivery. Original bindings remain active.",
+  "wall": {
+    "source": "brick-v1.png",
+    "sha256": "a4ba1734835ccdfe4768a0c5ee706e0865d27423aacbdde68102a7120a8fcae8",
+    "pixels": [
+      1254,
+      1254
+    ],
+    "display_repeat_mu": 64,
+    "display_metres": 2,
+    "display_basis": "Art presentation scale, not a collision/balance dimension. About eight brick lengths across the generated square.",
+    "decoded_rgba_bytes": 6290064
+  },
+  "floor": {
+    "runtime_source": "graphics/caelum/textures/sewer/CASWRFLR.png",
+    "sha256": "1e6df429b4161a92cb46a4631d3e52720badd10ec20d016aa6293af7ea2c9cfa",
+    "pixels": [
+      256,
+      256
+    ],
+    "display_repeat_mu": 128,
+    "display_metres": 4,
+    "display_basis": "Retained owned stone paving, shown at half its original repeat length; pixel bytes unchanged."
+  },
+  "original_bindings": {
+    "wall_repeat_mu": 256,
+    "floor_repeat_mu": 256,
+    "wall_source_sha256": "c69668ea36f5158736e203f2d3e03de2ec04bda50802a346d14b2499db53a92a"
+  },
+  "map_consumers": [
+    {
+      "map": "CABAIRES.wad",
+      "sha256": "cc031512b1e77f864377ddf2fb59dfd1c544f6194a1e168e64b737665c7b1916",
+      "literal_occurrences": {
+        "CASWRWAL": 644,
+        "CASWRFLR": 0
+      }
+    },
+    {
+      "map": "MAP02.wad",
+      "sha256": "1f7052ef2c1bf5bbe612579c6675e2f4541f6c1e256f374d5fd9afabf6eb9fad",
+      "literal_occurrences": {
+        "CASWRWAL": 107068,
+        "CASWRFLR": 64
+      }
+    },
+    {
+      "map": "MAP03.wad",
+      "sha256": "45bfdbba591b642fd9a2c8c991cd9e9913d9e4158f3e317913efbae0d3df98da",
+      "literal_occurrences": {
+        "CASWRWAL": 27200,
+        "CASWRFLR": 0
+      }
+    },
+    {
+      "map": "TACTORS.wad",
+      "sha256": "224b2cf67a207f65b78a1600fc028159246ac952b5508d6472a6f99128a7f83b",
+      "literal_occurrences": {
+        "CASWRWAL": 526,
+        "CASWRFLR": 9
+      }
+    },
+    {
+      "map": "THAZARD.wad",
+      "sha256": "e93a3ac04b90262b6c889b10b403d273bcd1a96fde23b06d1810950e064ee814",
+      "literal_occurrences": {
+        "CASWRWAL": 8956,
+        "CASWRFLR": 936
+      }
+    },
+    {
+      "map": "TMAINT.wad",
+      "sha256": "36f500839101b3363d461eb6bde6025d0c6f4e549af1b16cf7820a05ca8df7ac",
+      "literal_occurrences": {
+        "CASWRWAL": 4768,
+        "CASWRFLR": 480
+      }
+    },
+    {
+      "map": "TRESERV.wad",
+      "sha256": "585efd1c35957e83d4e1316c27a236cdd544a0a72168ad5fa0b97e47d65ca89e",
+      "literal_occurrences": {
+        "CASWRWAL": 7136,
+        "CASWRFLR": 704
+      }
+    },
+    {
+      "map": "TTAROT.wad",
+      "sha256": "cb608c1706d97a09d89f3de2f240035d75a42543e60e681c1c0e372edb619836",
+      "literal_occurrences": {
+        "CASWRWAL": 2056,
+        "CASWRFLR": 208
+      }
+    }
+  ],
+  "no_geometry_or_saved_state_changes": true,
+  "unmodified": [
+    "production TEXTURES and images",
+    "all map bytes",
+    "lighting and tint",
+    "water, iron and bars",
+    "triggers, hazards, content, collision and saves"
+  ],
+  "visual_limits": "Brickwork is a wall/flat ceiling material candidate; it does not add missing vault geometry or complete the broader city/sewer finish."
+}

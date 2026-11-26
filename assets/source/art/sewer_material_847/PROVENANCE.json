@@ -1,0 +1,23 @@
+{
+  "issue": 847,
+  "generator": "Built-in image_gen tool",
+  "generation_date": "2026-11-19",
+  "output": "brick-v1.png",
+  "prompt": "brick-v1.prompt.txt",
+  "original_sha256": "a4ba1734835ccdfe4768a0c5ee706e0865d27423aacbdde68102a7120a8fcae8",
+  "original_pixels": [
+    1254,
+    1254
+  ],
+  "no_bitmap_postprocessing": true,
+  "reference": {
+    "url": "https://www.aysa.com.ar/Quienes-Somos/nuestra_historia",
+    "title": "AySA - Nuestra historia",
+    "consulted": "2026-11-19",
+    "image_url": "https://www.aysa.com.ar/media-library/quienes_somos/nuestra_historia/1872.jpg",
+    "caption": "Construccion de la sala de maquinas de la Estacion Elevadora de Puente Chico, Hoy Wilde, ca. 1884",
+    "use": "Read/viewed for local period masonry and arch context only. No third-party pixels are included. Original colour, wear and bond are artistic interpretation, not exact archaeological reconstruction."
+  },
+  "retained_floor": "Existing owned src/graphics/caelum/textures/sewer/CASWRFLR.png; no edits",
+  "author_acceptance": false
+}

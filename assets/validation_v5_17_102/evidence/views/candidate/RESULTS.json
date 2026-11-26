@@ -1,0 +1,53 @@
+{
+  "label": "candidate",
+  "passed": true,
+  "exit_code": 0,
+  "timed_out": false,
+  "errors": [],
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-review01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-material01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\views.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\candidate\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\candidate",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "-rngseed",
+    "428",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\candidate\\engine.log",
+    "+map",
+    "MAP02",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\candidate\\start.cfg"
+  ],
+  "markers": [
+    "CA847 VIEW 0 pos=0.000,-4864.000,-0.000 angle=90.000 headroom=96.000",
+    "CA847 VIEW 1 pos=-160.000,-4256.000,0.000 angle=45.000 headroom=128.000",
+    "CA847 VIEW 2 pos=-2304.000,-4128.000,0.000 angle=0.000 headroom=128.000",
+    "CA847 VIEW 3 pos=-3936.000,-3232.000,0.000 angle=135.000 headroom=128.000",
+    "CA847 VIEW 4 pos=-2912.000,8160.000,-0.000 angle=180.000 headroom=96.000",
+    "CA847 VIEW 2 pos=-2304.000,-4128.000,0.000 angle=0.000 headroom=128.000",
+    "CA847 WALK distance=24.493 pos=-2279.509,-4127.695,0.000",
+    "CA847 PASS views=5"
+  ],
+  "images": {
+    "entrance.png": "56e1fb1d8f35d5852547986fc31ed76ed1457a3b3bd05ea3a0474f79cedb0b53",
+    "junction.png": "f12f9267e0ce81acd4087af13cf2a279dff41b0f2a035b54df37ac8d30fbbec7",
+    "channel.png": "4f42f9d2bb3c54ead6a11d9ce6b7fbfcc450bd99c18d441e7029ef41df8cc219",
+    "refuge.png": "b72f75f68c913f50a0ec82a484cad2c671df94de21cf27c467e8bf3be77fdc69",
+    "boss_access.png": "dc86ca16e981c93efddcd8fc6c6642ba40f6e537204676c9ca30299bb080f15a",
+    "walk.png": "5dc226c8c50ac3d1b5f8698dce44ae37886699cb7417f5d4da5ac6dfe8ee34c5"
+  }
+}

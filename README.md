@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.101.** Obtain and update the complete repository,
+**Current release: 5.17.102.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#847 adds an opt-in sewer material comparison for consolidated author review.
+Production art remains unchanged. Fourteen native captures, matched short
+movement and paired entrance presentation evidence are recorded in HISTORY.
+Gallery: assets/source/art/sewer_material_847/review.html.
+Evidence: assets/validation_v5_17_102; author check: CA847-MATERIAL-01.
 
 #846 uses the canonical mansion map directly for the Limbo query.
 16,566 native name/clock/save assertions and 239,600 live comparisons pass.

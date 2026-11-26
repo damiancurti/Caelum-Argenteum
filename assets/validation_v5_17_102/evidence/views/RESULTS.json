@@ -1,0 +1,158 @@
+{
+  "issue": 847,
+  "runtime_sha256": "e94024c02321d0532b55c7faccb5f1e35c241bdc5f4d836cca01f47cf2ee3a36",
+  "overlay_sha256": "2269d19bb5ca491bff3fb3677c3161523375621dbfc980435c73258c6499d80c",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "probe_sha256": "d450ddf6162f8200dab7e027a82a37d9640c85ec85106ade00ef8537723694bf",
+  "cameras": [
+    {
+      "name": "entrance",
+      "point": [
+        0,
+        -4864
+      ],
+      "angle": 90
+    },
+    {
+      "name": "junction",
+      "point": [
+        -160.0,
+        -4256.0
+      ],
+      "angle": 45
+    },
+    {
+      "name": "channel",
+      "point": [
+        -2304.0,
+        -4128.0
+      ],
+      "angle": 0
+    },
+    {
+      "name": "refuge",
+      "point": [
+        -3936.0,
+        -3232.0
+      ],
+      "angle": 135
+    },
+    {
+      "name": "boss_access",
+      "point": [
+        -2912,
+        8160.0
+      ],
+      "angle": 180
+    }
+  ],
+  "runs": [
+    {
+      "label": "control",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "errors": [],
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-review01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\views.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\control\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\control",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\control\\engine.log",
+        "+map",
+        "MAP02",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\control\\start.cfg"
+      ],
+      "markers": [
+        "CA847 VIEW 0 pos=0.000,-4864.000,-0.000 angle=90.000 headroom=96.000",
+        "CA847 VIEW 1 pos=-160.000,-4256.000,0.000 angle=45.000 headroom=128.000",
+        "CA847 VIEW 2 pos=-2304.000,-4128.000,0.000 angle=0.000 headroom=128.000",
+        "CA847 VIEW 3 pos=-3936.000,-3232.000,0.000 angle=135.000 headroom=128.000",
+        "CA847 VIEW 4 pos=-2912.000,8160.000,-0.000 angle=180.000 headroom=96.000",
+        "CA847 VIEW 2 pos=-2304.000,-4128.000,0.000 angle=0.000 headroom=128.000",
+        "CA847 WALK distance=24.493 pos=-2279.509,-4127.695,0.000",
+        "CA847 PASS views=5"
+      ],
+      "images": {
+        "entrance.png": "a8b4afa6a2003456ddcbb40ed745adc4085c1d930a1733d2ffe497a273bf9d6d",
+        "junction.png": "b30b61aec1ff5ef3f679d789100ee7dc68d190e140890864868758c036e5f500",
+        "channel.png": "f962045d7bd78c750c99b663cba20080d9a7b3422b004cb4a0cc6ebe75f55a40",
+        "refuge.png": "72468e9ff22c576a25e0e0e74d67bc780d92a97d6f783d8a2904d18bd8881379",
+        "boss_access.png": "bb735b3986556e73fa698c7be90f0699e33c7cdd40d3b77e3db3189b4afca1ca",
+        "walk.png": "f058deae74ae546fe935481f6f5ac314bf5038144453751bab2670efadf9924a"
+      }
+    },
+    {
+      "label": "candidate",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "errors": [],
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-review01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-material01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\views.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\candidate\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\candidate",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\candidate\\engine.log",
+        "+map",
+        "MAP02",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue847-views01\\candidate\\start.cfg"
+      ],
+      "markers": [
+        "CA847 VIEW 0 pos=0.000,-4864.000,-0.000 angle=90.000 headroom=96.000",
+        "CA847 VIEW 1 pos=-160.000,-4256.000,0.000 angle=45.000 headroom=128.000",
+        "CA847 VIEW 2 pos=-2304.000,-4128.000,0.000 angle=0.000 headroom=128.000",
+        "CA847 VIEW 3 pos=-3936.000,-3232.000,0.000 angle=135.000 headroom=128.000",
+        "CA847 VIEW 4 pos=-2912.000,8160.000,-0.000 angle=180.000 headroom=96.000",
+        "CA847 VIEW 2 pos=-2304.000,-4128.000,0.000 angle=0.000 headroom=128.000",
+        "CA847 WALK distance=24.493 pos=-2279.509,-4127.695,0.000",
+        "CA847 PASS views=5"
+      ],
+      "images": {
+        "entrance.png": "56e1fb1d8f35d5852547986fc31ed76ed1457a3b3bd05ea3a0474f79cedb0b53",
+        "junction.png": "f12f9267e0ce81acd4087af13cf2a279dff41b0f2a035b54df37ac8d30fbbec7",
+        "channel.png": "4f42f9d2bb3c54ead6a11d9ce6b7fbfcc450bd99c18d441e7029ef41df8cc219",
+        "refuge.png": "b72f75f68c913f50a0ec82a484cad2c671df94de21cf27c467e8bf3be77fdc69",
+        "boss_access.png": "dc86ca16e981c93efddcd8fc6c6642ba40f6e537204676c9ca30299bb080f15a",
+        "walk.png": "5dc226c8c50ac3d1b5f8698dce44ae37886699cb7417f5d4da5ac6dfe8ee34c5"
+      }
+    }
+  ],
+  "passed": true,
+  "qualification": "Capture matched MAP02 material views and a bounded native corridor walk.\n\nTeleports place diagnostic cameras, not ordinary campaign traversal. Existing\ngeometry and content remain live. The observer grants invulnerability/notarget\nonly to its disposable inspection player. No production source is changed.\n"
+}
