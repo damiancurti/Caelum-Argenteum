@@ -1,6 +1,6 @@
 """Validate the new regional studies and their approved creature associations."""
 from pathlib import Path
-import json
+import json,math
 try:
     from .validate_regional_materials import validate as shared_validate
 except ImportError:
@@ -10,7 +10,12 @@ def validate(root=ROOT):
     errors=shared_validate(root,issue=682)
     try:
         gallery=json.loads((root/'assets/source/art/regional_gallery_682/GALLERY.json').read_text())
-        models=json.loads((root/'assets/source/art/beast_men_680/ANIMATION.json').read_text())['species']
+        models={}
+        for name in gallery['model_exports']:
+            export=json.loads((root/name).read_text())
+            for kind,item in export['species'].items():
+                assert kind not in models,'Duplicate model species'
+                models[kind]=item
         actors={item['catalogue_id']:item['actor'] for item in models.values()}
         regions=json.loads((root/'assets/bestiary/REGION_PROPOSAL.json').read_text())['entries']
         expected={(row['id'],region) for row in regions if row['id'] in actors for region in row['proposed_campaign_regions']}
@@ -22,10 +27,15 @@ def validate(root=ROOT):
             assert row['class']==actors[row['catalogue_id']],'Incorrect native species class'
             x,y,z=row['position'];left,right=plots[row['region']]['x']
             assert left<x<right and gallery['plot_y'][0]<y<gallery['plot_y'][1] and z==0,'Display outside its regional floor'
+        radii={item['actor']:item['native_profile']['Radius'] for item in models.values()}
+        for index,left in enumerate(gallery['subjects']):
+            for right in gallery['subjects'][index+1:]:
+                assert math.dist(left['position'][:2],right['position'][:2])>radii[left['class']]+radii[right['class']],'Overlapping native display bodies'
         for left,right in zip(gallery['plots'],gallery['plots'][1:]):
             assert left['x'][1]==right['x'][0],'Noncontiguous plot boundary'
         assert gallery['walkway_y'][1]==gallery['plot_y'][0],'Walkway is disconnected'
         assert sum(bool(row.get('control')) for row in gallery['views'])==1,'Expected one player-control view'
+        assert len(gallery['views'])<=12,'Gallery views exceed function-key bindings'
     except (OSError,KeyError,ValueError,AssertionError) as exc:
         errors.append('Beast regional gallery: '+(str(exc) or 'Invalid display layout'))
     return errors

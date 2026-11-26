@@ -1,6 +1,52 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.23** - 2026-11-14.
+Documentation version: **5.17.24** - 2026-11-14.
+
+## 5.17.24 - NOA gallery with Mikilo and Coquena (#692, parent #463)
+
+The optional CA682G regional inspection map now places one native Mikilo and
+one native Coquena beside Ucumar on the existing NOA ground. Their approved
+#453 allocations remain authoritative; the unique Coquena display is not a
+second campaign individual. All five earlier displays and four regional plots
+remain. GALLERY.json owns the two added positions, group camera, closeups and
+model-export list. The shared builder verifies every referenced native resource
+and reuses the existing map/event template; no duplicate engine logic or raster
+asset was introduced. All model, texture, combat and campaign bytes remain
+unchanged from #690. Only two packaged release diagnostics differ.
+
+Run python assets/validation_v5_17_19/run_gallery.py --runtime
+build/caelum_argenteum_dev.pk3 --output build/noa-gallery-author-01 --interactive.
+F1 overview; F2 Pampa; F3 the three NOA figures; F4 Litoral; F5 walk; F6 Selva;
+F7-F10 repeated regional ground materials; F11 Mikilo; F12 Coquena. The closeups
+and wider NOA camera keep native scale. Friendly/passive fixture staging and a silent observer retain
+idle motion without a position-reset loop. The fixture alone mutes the one player
+movement-noise timer using its native interval; native speed and production
+hearing remain unchanged. This optional developer fixture is
+not a campaign destination, new encounter or adopted biome design.
+
+Four generated gallery files repeat byte-for-byte. Static checks cover all
+approved class/region associations, plot containment, nonoverlapping collision
+bodies and control bindings. Native fresh/reload phases pass 33/70 checks:
+seven saved identities/positions before and after walking, a stable observer
+movement-noise serial, advancement within native idle sequences,
+normal player movement and the 420-tic crossing of all three plot boundaries.
+The overview, regional views, duende closeups, tiling and reload were inspected.
+Initial checks ran only before walking; its final capture exposed movement. A
+stronger old-save diagnostic records 54 PASS/14 FAIL for changed positions and
+non-idle states. Silencing observer steps fixes anonymous noise investigation
+without changing production hearing or forcibly resetting bodies (CA-KP-236).
+Existing #680/#690 model and combat evidence applies to identical runtime bytes;
+the save test here covers this new isolated gallery, not older fixture saves.
+
+One 700-tic seven-display run records 1590.01 queue presents/s, p95 0.8581 ms, p99 1.0526 ms; mean simulation 28.5720 ms/tic.
+Environment: Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom
+4.14.2, Vulkan 1280x720, uncapped/vsync off, background unpaused at 5% audio.
+The distant overview renders small projected figures.
+This single queue measurement establishes no comparative cost, close-up budget, repeatability,
+GPU/display timing or city/siege acceptance. All 18,313
+packaged entries match src. Evidence: assets/validation_v5_17_24/evidence/SUMMARY.json.
+CA692-NOA-GALLERY-01 and prior art/play checks remain pending. Other creatures,
+regions, worn modules and the campaign batch remain unfinished.
 
 ## 5.17.23 - Mikilo and Coquena combat models (#690, parent #461)
 

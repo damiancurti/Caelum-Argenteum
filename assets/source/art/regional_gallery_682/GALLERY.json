@@ -1,9 +1,9 @@
 {
   "schema_revision": 1,
-  "issue": 682,
+  "issue": 692,
   "status": "isolated_visual_inspection_not_campaign",
   "map": "CA682G",
-  "title": "Beast-men regional material gallery",
+  "title": "Regional bestiary inspection gallery",
   "ambient": 208,
   "ceiling_height": 2048,
   "outer_wall": "CACVROCK",
@@ -126,6 +126,30 @@
         0
       ],
       "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-009",
+      "kind": "mikilo",
+      "class": "CaelumBestiary009",
+      "position": [
+        -384,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-010",
+      "kind": "coquena",
+      "class": "CaelumBestiary010",
+      "position": [
+        -128,
+        0,
+        0
+      ],
+      "angle": 270
     }
   ],
   "views": [
@@ -159,8 +183,8 @@
       "id": "noa",
       "position": [
         -256,
-        -110,
-        60
+        -280,
+        120
       ],
       "target": [
         -256,
@@ -249,6 +273,32 @@
         -280,
         0
       ]
+    },
+    {
+      "id": "mikilo",
+      "position": [
+        -384,
+        -65,
+        40
+      ],
+      "target": [
+        -384,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "coquena",
+      "position": [
+        -128,
+        -65,
+        40
+      ],
+      "target": [
+        -128,
+        0,
+        26
+      ]
     }
   ],
   "notes": [
@@ -260,5 +310,12 @@
   ],
   "animation_sample_wait_tics": 11,
   "animation_sample_basis": "Existing MIID native idle states last10 tics; wait11 to cross at least one boundary.",
-  "inspection_staging": "Native classes with fixture-only Friendly flag and existing diagnostic simplification; original idle states advance normally. Production hostility is unchanged; no forced position resets."
+  "inspection_staging": "Native classes with fixture-only Friendly flag and existing diagnostic simplification; original idle states advance normally. Production hostility is unchanged; no forced position resets.",
+  "model_exports": [
+    "assets/source/art/beast_men_680/EXPORT.json",
+    "assets/source/art/duendes_690/EXPORT.json"
+  ],
+  "layout_basis": "Two added diagnostic positions evenly divide the existing NOA plot beside its retained Ucumar; no campaign coordinates or population. F11/F12 closeups preserve the original F1-F10 controls.",
+  "silent_observer_steps": true,
+  "inspection_noise_basis": "Mute only the diagnostic observer movement-noise timer; native walking speed, figure idle animation and production perception remain unchanged. Friendly and NOTARGET do not suppress anonymous sound investigation."
 }

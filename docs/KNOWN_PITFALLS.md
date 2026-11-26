@@ -66,6 +66,21 @@ PASS; the original failure and position diagnostic remain under
 assets/validation_v5_17_19/evidence/iterations. This does not test campaign AI
 or imply acceptance of the art; CA682-REGIONS-01 remains pending.
 
+#692 follow-up (ENGINE-VERIFIED, 2026-11-14): Friendly/NOTARGET also do not
+prevent anonymous footstep investigation. A gallery check made only before the
+walk passed while its final screenshot showed all seven figures displaced.
+The extended reload probe records 54 PASS/14 FAIL (seven positions and seven
+idle-state memberships). CaelumNoise delivers anonymous evidence independently
+of faction; CaelumVisualPerception.Look can select SearchGoal without an enemy.
+The fixture now mutes only its observer's movement-noise timer, using the existing
+interval constant, and verifies a stable event serial, positions and native idle
+states again after the complete walk. One player field is updated per world tic;
+no actor scan, position-reset loop, speed change or production perception edit.
+Final native results: 33/70 PASS. Preserve the original incomplete check and the
+failed diagnostic in validation_v5_17_24/evidence/iterations. Always verify
+passive display invariants after interactive actions as well as on load.
+
+
 ## CA-KP-235 - Normalize closed loft row direction before building faces
 
 Status/evidence: STATIC-VERIFIED signed-volume comparison, #680, 2026-11-13.

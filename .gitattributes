@@ -765,3 +765,5 @@ assets/generators/validate_inventory_gloves_models.py text eol=lf
 /assets/validation_v5_17_23/evidence/** -text -diff
 /assets/generators/generate_duende_models.py text eol=lf
 /assets/generators/validate_duende_models.py text eol=lf
+
+/assets/validation_v5_17_24/evidence/** -text -diff

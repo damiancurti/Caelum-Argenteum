@@ -18,17 +18,33 @@ def build(output,baseline_materials=False):
         for plot in config['plots']:plot['floor']=config['walkway_flat']
     regions=json.loads((ROOT/'assets/bestiary/REGION_PROPOSAL.json').read_text())
     allowed={row['id']:row['proposed_campaign_regions'] for row in regions['entries']}
-    inputs=[SOURCE/'GALLERY.json',ROOT/'assets/bestiary/REGION_PROPOSAL.json',Path(__file__),COMMON/'build_gallery.py',COMMON/'gallery.zs',ROOT/'assets/source/art/beast_men_680/EXPORT.json',ROOT/'src/MODELDEF']
+    exports=[ROOT/name for name in config['model_exports']]
+    inputs=[SOURCE/'GALLERY.json',ROOT/'assets/bestiary/REGION_PROPOSAL.json',Path(__file__),COMMON/'build_gallery.py',COMMON/'gallery.zs',ROOT/'src/MODELDEF',*exports]
     sources={p.relative_to(ROOT).as_posix():digest(p.read_bytes()) for p in inputs}
-    original=json.loads(inputs[-2].read_text())
-    for name,checksum in original['sha256'].items():
-        if name.startswith('editable/'):continue
-        path=ROOT/'src'/name
-        if digest(path.read_bytes())!=checksum:raise ValueError('Changed #680 native model source: '+name)
-        sources['src/'+name]=checksum
+    for export in exports:
+        original=json.loads(export.read_text())
+        for name,checksum in original['sha256'].items():
+            if name.startswith('editable/'):continue
+            path=ROOT/'src'/name
+            if digest(path.read_bytes())!=checksum:raise ValueError('Changed native model source: '+name)
+            sources['src/'+name]=checksum
     template=(COMMON/'gallery.zs').read_text(encoding='utf-8').replace('CA463','CA682').replace('ca463','ca682').replace('#463','#682')
     template=template.replace('CaelumPlayer(players[0].mo).CreationWizardOpen = false;',
         'CaelumPlayer(players[0].mo).CreationWizardOpen = false;\n            players[0].mo.bNOTARGET=true;players[0].mo.bInvulnerable=true;')
+    if config.get('silent_observer_steps'):
+        template=template.replace('    int Failures;', '    int Failures;\n    int ObserverNoiseSerial;')
+        template=template.replace('            SPAWN_CASES', '            ObserverNoiseSerial=CaelumPlayer(players[0].mo).MovementNoiseEventSerial;\n            SPAWN_CASES')
+        template=template.replace('        VERIFY_CASES', '        Check(CaelumPlayer(players[0].mo).MovementNoiseEventSerial==ObserverNoiseSerial,"inspection observer footsteps remain silent");\n        VERIFY_CASES')
+        template=template.replace('    void Verify()', '''    // #692: silenciar sólo los pasos del observador en esta sala aislada.
+    // La búsqueda por sonido es independiente de Friendly y NOTARGET.
+    override void WorldTick()
+    {
+        if(level.MapName!="CA682G" || Subjects.Size()==0)return;
+        let user=CaelumPlayer(players[0].mo);
+        if(user!=null)user.MovementNoiseTimer=-CaelumConstants.MOVEMENT_NOISE_INTERVAL_SECONDS;
+    }
+
+    void Verify()''')
     template=template.replace('las dos uniones','las tres uniones').replace('crosses both regional boundaries','crosses all three regional boundaries')
     template=template.replace('    void Verify()', "    bool IsIdleState(Actor body, State value)\n    {\n        return value==body.SpawnState || body.InStateSequence(value,body.FindState('IdleBreathing'));\n    }\n\n    void Verify()")
     template=template.replace('Subjects[index].CurState != MotionSnapshot[index]',
@@ -62,7 +78,7 @@ def build(output,baseline_materials=False):
     with zipfile.ZipFile(fixture,'w') as archive:
         for name,blob in sorted(files.items()):archive.writestr(zipfile.ZipInfo(name,(2026,11,13,0,0,0)),blob)
     (output/'gallery.zs').write_bytes(template.encode());(output/'TEXTMAP.txt').write_bytes(textmap)
-    report=dict(issue=682,scope=config['status'],baseline_materials=baseline_materials,geometry=stats,subjects=config['subjects'],views=config['views'],
+    report=dict(issue=config['issue'],scope=config['status'],baseline_materials=baseline_materials,geometry=stats,subjects=config['subjects'],views=config['views'],
         source_sha256=sources,fixture_sha256=digest(fixture.read_bytes()),sha256={name:digest(blob) for name,blob in files.items()})
     (output/'GALLERY_MANIFEST.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8',newline='\n')
     return fixture,report
