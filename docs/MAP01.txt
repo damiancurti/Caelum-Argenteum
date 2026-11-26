@@ -1,6 +1,103 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.15.4** - 2026-11-10.
+Documentation version: **5.16.0** - 2026-11-12.
+
+## 5.16.0 / #452 - Regional campaign allocation (in progress)
+
+On 2026-11-12 the author approved this regional allocation as the base for V5.16:
+
+| Stage | Tier | Major essences | Approved regional allocation |
+| --- | --- | --- | --- |
+| Prologue | Existing tutorial | 1 | Limbo mansion, MAP01 |
+| Chapter I | 1 | 7 | Buenos Aires, Pampa, Litoral |
+| Chapter II | 2 | 7 | Cuyo, Northwest Argentina, Chaco, Selva, supernatural domains |
+| Chapter III | 3 | 7 | Patagonia, coasts, Antarctica, deep sea, aerial cities, Moon |
+
+This approves chapter placement as a base, not the order of every region,
+mandatory visits, exact geography, map layouts, encounters or ability locks.
+The existing three-chapter story in section 9 remains authoritative: Chapter II
+ends with the infernal prince's banishment; Chapter III culminates with Selene.
+The World remains the final card. The 56 Minor essences belong to secondary
+missions across the three chapters. One formal Tarot mission grants one essence.
+
+The author also approved these Major assignments as a chapter allocation base:
+
+| Chapter | Major essences and approved anchors |
+| --- | --- |
+| Prologue | Fool (0), retaining MAP01 |
+| I | Strength (11, Rulo), Hermit (9, Ronnie), Emperor (4, Argento), High Priestess (2, Caella), Magician (1), Hierophant (5), Chariot (7) |
+| II | Empress (3), Lovers (6), Wheel of Fortune (10), Justice (8), Hanged Man (12), Death (13, definitive Zupay encounter), Devil (15, prince's banishment) |
+| III | Temperance (14), Tower (16), Star (17), Moon (18), Sun (19), Judgement (20), World (21) |
+
+IDs retain the existing deck: Justice is8 and Strength is11. This table is not a
+mandatory acquisition order within each chapter, nor an authored map/encounter
+or reintegration script. Opening acquisitions0/36/60 remain unchanged.
+
+The machine-readable planning graph is [PROGRESSION.json](../assets/campaign/PROGRESSION.json).
+It records each chapter's systems, narrative endpoint, information boundaries,
+the implemented opening route and separately staged issues #452-457. Its schema
+revision is for authoring data, not a new save revision; runtime is not enabled.
+
+```mermaid
+flowchart LR
+  A[MAP01: mansion / Fool] -->|Existing return to body| B[MAP02: sewers / Ace of Cups]
+  B -->|Existing workshop exit| C[MAP03: Barracas / Knight of Wands]
+  C -. Regional routes and exit gate pending .-> D[Rest of Chapter I: Buenos Aires / Pampa / Litoral]
+  D -. Entry and routes pending .-> E[Chapter II: Cuyo / NOA / Chaco / Selva / supernatural]
+  E -. Entry and routes pending .-> F[Chapter III: Patagonia / coasts / Antarctica / deep sea / aerial / Moon]
+```
+
+Dashed edges denote authoring dependencies, not working travel links. Existing
+transport connections, optional returns, siege outcomes and private cooperative
+progress remain unchanged. The opening graph is not the complete travel graph.
+
+Guard recognition does not restore the captain's memories. The port briefing
+does not reveal Selene, implanted souls or the true residents remaining in Limbo.
+The earlier four resident-body boss/reintegration plan remains pending; chapter
+allocation does not authorize turning the rescued prisoners into those bosses.
+Zupay survives Chapter I; the specific Chapter II death encounter is unauthored.
+Main events and optional exploration both supply memories, but exact scripts,
+required revelations and their gates remain decisions for #457.
+
+Regions normally remain revisitable except for authored blocks. Story and Major
+abilities can open regions; specific assignments must prevent an essence from
+being locked behind its own ability. The full geographic/ability graph and its
+circular-lock audit are pending, not established by the opening-route audit.
+
+Finale base approved by the author on 2026-11-12: after the Chapter II banishment,
+the protagonist gains lunar travel in Chapter III, obtains the World as the last
+card and defeats Selene with the unified Tarot. Entry to Selene's combat requires all 78 acquired
+essences AND at least +250 reputation (existing Respected rank) with any one of
+Unitarians, Federals, Free Peoples or Sun Warriors. Faction membership is not
+required; physical deck possession alone does not satisfy acquisition. This
+matches the existing all-78 deity-damage power without changing its costs or
+duration. The protagonist retains custody of the Tarot without consuming the
+essences. An epilogue reflects existing city/faction outcomes and exploration
+continues afterward. This does not resurrect casualties or reset consequences.
+For cooperative entry, the author approved one participant meeting both
+requirements for the entire consenting group. This neither combines incomplete
+requirements from different players nor copies their personal essences or
+reputation. Encounter statistics, lunar transport and exact scripts remain unauthored. This is approved design, not implemented finale behavior.
+The author placed that eligibility check on the Moon immediately before Selene's
+combat, not at lunar departure. The World is obtained there after the other77
+essences and is not granted automatically. Requiring it for lunar travel would
+create a circular lock; the separate means/requirements for that travel remain
+unauthored. This ordering preserves the existing deity-damage requirement.
+
+#454 includes reference-backed redesign of MAP02 and existing cities as well as
+new regional slices. The author supplied approved sewer-v2 and Barracas-v1 boards
+on branch references/issue-454-maps-20261112 (f7c9a1d4) and explicitly chose four
+city gates with corresponding siege adaptation on 2026-11-12. These supersede
+the preliminary local topology proposal, not the need for native validation. Each layout needs review, ordinary traversal and preserved
+services/triggers. Replaced geometry requires exact old-WAD compatibility for
+both active-map and visited-hub saves before adoption. #453 requires the original
+approved bestiary manifest. The author supplied six attachments in #453; all 58
+concept images pass catalogue SHA-256 checks. Their reconstructed catalogue
+leaves campaign regions unassigned. Concept references alone are not integrated
+actors; the author prefers 3D models where feasible.
+The 78-map target counts authored campaign content, not the catalogue's technical
+or standalone map entries. Prologue beta scope and full-campaign completion stay
+distinct. This planning increment does not complete any of #452-457.
 
 ## 5.15.4 / #451 - Barracas occupation and recovery
 

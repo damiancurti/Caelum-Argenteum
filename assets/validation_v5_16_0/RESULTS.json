@@ -1,0 +1,51 @@
+{
+  "issue": 452,
+  "release": "5.16.0",
+  "date": "2026-11-12",
+  "author_approval": "Regional chapter allocation and basic finale with all 78 acquired essences and Respected reputation (+250); cooperative aggregation pending",
+  "completion": "Incomplete: unresolved authoring is reported and the completion gate rejects it",
+  "static_checks": [
+    {
+      "command": [
+        "python",
+        "assets/generators/validate_campaign_progression.py"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "assets/generators/validate_campaign_progression.py",
+        "--require-complete"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1
+    }
+  ],
+  "planning_audit_repeatable": true,
+  "runtime_diff": "Only two diagnostic version strings",
+  "native": {
+    "fresh": "passed",
+    "reload": "passed",
+    "scope": "Unmodified MAP02 initialization, diagnostic labels and a newly created save",
+    "runtime_sha256": "dd5a8ef8e25ae25bfe77e65873e8e293b89ccba20dd4e9ba6dfbd2f17344be6c",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "not_tested": [
+    "Full campaign progression",
+    "Ordinary navigation",
+    "New map geometry",
+    "Historical-save migration",
+    "Frame presentation or performance",
+    "V5.16 author gameplay acceptance"
+  ],
+  "open_issues": [
+    452,
+    453,
+    454,
+    455,
+    456,
+    457
+  ]
+}

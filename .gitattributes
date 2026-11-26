@@ -1,4 +1,11 @@
 # Document index hashes use exact source bytes. Keep them stable on checkout.
+# Keep #452 authoring/probe inputs and recorded native evidence reproducible.
+/assets/campaign/PROGRESSION.json text eol=lf
+/assets/generators/validate_campaign_progression.py text eol=lf
+/assets/validation_v5_16_0/*.py text eol=lf
+/assets/validation_v5_16_0/*.zs text eol=lf
+/assets/validation_v5_16_0/*.json text eol=lf
+/assets/validation_v5_16_0/*.txt -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 # Preserve #410 decorative source/output hashes and native evidence.
 /assets/art_source/ornamental_decor/*.json text eol=lf
 /assets/art_source/ornamental_decor/GENERATED.json -text whitespace=cr-at-eol

@@ -1,6 +1,32 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.15.4** - 2026-11-10.
+Documentation version: **5.16.0** - 2026-11-12.
+
+## 5.16.0 / #452 - Approved regional allocation; campaign authoring in progress
+
+The author approved the regional chapter allocation on 2026-11-12. MAP01's new
+V5.16 section and assets/campaign/PROGRESSION.json retain the 1+7+7+7 Major
+structure, existing opening route, concealed information and staged #452-457
+deliveries. Exact routes, ability locks, encounters, memories, remaining essence
+locations and exact finale encounters are still unauthored. The author approved
+the basic finale and its all-78/+250 reputation conditions. One eligible
+participant admits the consenting cooperative group; MAP01 owns the full contract. The 58-image bestiary source and approved sewer/city plans are now
+recovered and verified; import and implementation stay in #453/#454. No campaign
+expansion is claimed implemented.
+The named Major allocation is now approved, including the four resident anchors,
+Death/Zupay and Devil/banishment. All-78/+250 eligibility is checked before Selene
+on the Moon; the World is acquired there after the other77. Exact maps, travel
+means and encounter scripts remain unauthored.
+
+Static authoring audit passes for the opening graph and 22/56 counts. Its explicit
+completion mode rejects unresolved authoring. Gameplay remains the accepted V5.15
+code and maps; only two diagnostic release labels advance. There is no new
+save-compatibility or author-playtest claim. The official build and isolated
+MAP02 startup/new-save reload pass; evidence: assets/validation_v5_16_0.
+Each subsequent issue retains its own branch, commits, evidence and linked PR.
+The added Major/finale audit validates all22 assigned identities and77 World
+prerequisites, with three rejected invalid controls. It is authoring evidence;
+the complete campaign graph and runtime gates remain unfinished.
 
 ## 5.15.4 / #451 - Persistent siege outcomes
 
@@ -7407,7 +7433,7 @@ existing position. Preserve accepted work and historical numbering.
 | **V5.13** | Remaining Tarot powers and awakening | Remaining authored Major powers, collection/acquisition hooks and essence-weapon awakening; reuse accepted deck, Minor passives and activation. Campaign placement continues in V5.16 rather than claiming all 78 acquisitions already exist. |
 | **V5.14** | Expanded Trucazo and network teams | Remaining Major modifiers, Magic Senses, wagers/consequences and casual/ranked/team modes up to 4v4, on Tarot and multiplayer authority. Preserve the accepted NPC slice. |
 | **V5.15** | Dynamic sieges and world consequences | Battle director, reinforcements/tactics/commanders, machines/barricades/sabotage, alternative routes and permanent city/faction/travel consequences. Depends on physics, calendar/world, quests/factions and group AI; network behavior uses V5.12 contracts. |
-| **V5.16** | Campaign and world expansion | Authored chapters, maps, encounters, memories/revelations and complete card-acquisition content toward the existing 78-card/at-least-78-map target. Integrate geographic/biome/travel/faction systems without rewriting canon or making that target a condition for every earlier playtest. |
+| **V5.16** | Campaign and world expansion | Authored chapters, maps, encounters, memories/revelations and complete card-acquisition content toward the existing 78-card/at-least-78-map target. Integrate geographic/biome/travel/faction systems without rewriting canon or making that target a condition for every earlier playtest. Includes reference-backed architectural/layout redesign of existing cities and MAP02 sewers, delivered map by map with reviewed layouts and exact old-geometry save compatibility (#454). |
 | **V5.17** | Art, audio and presentation completion | Sprite-to-model character migration with interchangeable weapon, shield, armor, hair and face modules, using the accepted #283 prototype as a reference. Remaining first-person views, map/character/effect assets, regional/hour/weather emitters, typography/icons/credits and replacement of temporary stock resources. Assets required by earlier blocks are delivered with those blocks; this is the completion pass, not a ban on earlier art work. Complete and polish furniture, character sprite and NPC clothing models introduced in V5.6/V5.8/V5.9; initial assets accompany their corresponding content. |
 | **V5.18** | Independent distribution and release validation | Complete removal of distributable Doom dependencies, provenance/licenses/own packaging, clean installation/startup and integrated campaign/save/game-mode checks. Version numbering alone does not certify standalone readiness or complete content. |
 

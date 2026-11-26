@@ -1,0 +1,71 @@
+{
+  "issue": 452,
+  "runtime_sha256": "dd5a8ef8e25ae25bfe77e65873e8e293b89ccba20dd4e9ba6dfbd2f17344be6c",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "fixture_sha256": "906e9bbc3d56c959c78103b3cc565476e96127a87caf5b3e81ed5a171bc34ea0",
+  "scope": "Check #452 diagnostic release labels in the unchanged sewer and a new save.\n\nUses disposable profiles and an additive probe only. This is not an ordinary\ncampaign walkthrough, a historical-save migration test or V5.16 acceptance.",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": true,
+      "timed_out": false,
+      "errors": [],
+      "exit_code": 0,
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue452-release.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue452-native-01\\probe.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue452-native-01\\fresh\\isolated.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue452-native-01\\fresh",
+        "-window",
+        "-width",
+        "960",
+        "-height",
+        "720",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue452-native-01\\fresh\\engine.log",
+        "+map",
+        "MAP02",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue452-native-01\\fresh\\commands.cfg"
+      ]
+    },
+    {
+      "phase": "reload",
+      "passed": true,
+      "timed_out": false,
+      "errors": [],
+      "exit_code": 0,
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue452-release.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue452-native-01\\probe.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue452-native-01\\reload\\isolated.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue452-native-01\\reload",
+        "-window",
+        "-width",
+        "960",
+        "-height",
+        "720",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue452-native-01\\reload\\engine.log",
+        "-loadgame",
+        "checkpoint.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue452-native-01\\reload\\commands.cfg"
+      ]
+    }
+  ]
+}
