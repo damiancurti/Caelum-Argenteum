@@ -1,0 +1,12 @@
+{
+  "issue": 836,
+  "candidate_sha256": "ef078983dd05b251e04e91dda0588f82374d6ed9e0a1b5fcc0c8668bcaf76390",
+  "oracle_sha256": "db0ee99dc80e2794d1b1fd10e6db08331cce342847e8020e4610da3ab8f123ba",
+  "restores_exact_candidate_source": true,
+  "interval": 37,
+  "window": [
+    3600,
+    4300
+  ],
+  "qualification": "Diagnostic original predicate oracle, including original ordered nearest opponent and ally. Runs in one scene; extra cache accesses and timings are not production performance evidence."
+}

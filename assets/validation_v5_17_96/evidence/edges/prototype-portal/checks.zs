@@ -1,0 +1,103 @@
+class CA836FrozenPort : CaelumPortSiege { override void PostBeginPlay() {} override void Tick() {} }
+class CA836VisionProbe : CaelumCombatActor
+{
+    Default { Health 100; Radius 16; Height 56; +SHOOTABLE +ISMONSTER +NOGRAVITY }
+    override void Tick() {}
+    States { Spawn: TNT1 A -1; Stop; }
+}
+class CA836VisionEdges : EventHandler
+{
+    CA836VisionProbe Observer,Subject;
+    int Checks,Failures;
+    bool Known(Actor subject)
+    {
+        let population=CaelumPopulationState.Get();if(population==null)return false;
+        bool originalDense=population.HighDensity;population.HighDensity=true;
+        if(Observer.SiegeCombatant==null)
+        {
+            Observer.SiegeCombatant=new("CaelumSiegeCombatant");
+            let entry=Observer.SiegeCombatant;entry.Body=Observer;entry.CommandLeader=entry;
+            entry.Encounter=CaelumSiegeEncounter(Actor.Spawn('CA836FrozenPort',(-1800,-1800,0),NO_REPLACE));
+            entry.GroupCandidates=new("CaelumCommandCandidates");
+        }
+        let group=Observer.SiegeCombatant.GroupCandidates;
+        group.Candidates.Clear();group.Candidates.Push(subject);group.Ready=true;group.SampleTic=level.time;
+        let evidence=CaelumVisualPerception.Evidence(Observer);evidence.CandidateCacheReady=false;evidence.PreviousSampleVisible=false;
+        Observer.bFriendly=true;
+        Actor found=CaelumVisualPerception.Candidate(Observer);
+        population.HighDensity=originalDense;
+        return found==subject;
+    }
+    void Check(bool expected,String label)
+    {
+        bool ordinary=CaelumVisualPerception.CanSee(Observer,Subject);
+        bool known=Known(Subject);Checks++;
+        bool okay=ordinary==expected && known==expected;
+        if(!okay)Failures++;
+        Console.Printf("CA836 EDGE %s %s",okay?"PASS":"FAIL",label);
+    }
+    void Suite(bool restored)
+    {
+        if(restored)
+        {
+            bool okay=Observer!=null && Subject!=null && Observer.health==100 && Subject.health==100
+                && Subject.Pos==(256,0,0) && Observer.CombatEffectiveInsight==0 && Subject.CombatAgility==0;
+            Checks++;if(!okay)Failures++;
+            Console.Printf("CA836 EDGE %s saved probes retained",okay?"PASS":"FAIL");
+            if(!okay)return;
+        }
+        else
+        {
+            let user=CaelumPlayer(players[0].mo);user.player.cheats|=CF_GODMODE;user.SetOrigin((-1700,-1700,0),false);
+            Observer=CA836VisionProbe(Actor.Spawn('CA836VisionProbe',(0,0,0),NO_REPLACE));
+            Subject=CA836VisionProbe(Actor.Spawn('CA836VisionProbe',(256,0,0),NO_REPLACE));
+        }
+        Observer.CombatEffectiveInsight=0;Subject.CombatAgility=0;Observer.Angle=0;
+        Observer.CurSector.SetLightLevel(255);
+        Check(true,"front visible");Observer.Angle=180;Check(false,"behind");
+        Observer.Angle=90;Check(true,"inclusive field edge");Observer.Angle=0;
+        Subject.SetOrigin((1024,0,0),false);Check(true,"inclusive range edge");
+        Subject.SetOrigin((1024.001,0,0),false);Check(false,"outside range edge");
+        Observer.CombatEffectiveInsight=100;Check(true,"insight changes immediately");
+        Observer.CombatEffectiveInsight=0;Subject.SetOrigin((256,0,0),false);
+        Observer.CurSector.SetLightLevel(0);Check(false,"darkness changes immediately");Observer.CurSector.SetLightLevel(255);
+        Subject.SetOrigin((700,0,0),false);Subject.Height=28;Check(false,"height changes immediately");Subject.Height=56;
+        Subject.SetOrigin((256,0,0),false);Subject.CombatAgility=100;Check(false,"full stealth");
+        Subject.SetOrigin((32,0,0),false);Observer.Angle=180;Check(true,"contact behind despite stealth");
+        Subject.CombatAgility=0;Observer.Angle=0;Observer.SetOrigin((384,768,0),false);Subject.SetOrigin((704,768,0),false);
+        Check(false,"solid pillar");Observer.SetOrigin((0,0,0),false);Subject.SetOrigin((256,0,0),false);
+        Observer.bDormant=true;Check(false,"dormant");Observer.bDormant=false;
+        Observer.ForcedSleepTics=1;Check(false,"sleeping");Observer.ForcedSleepTics=0;
+        Observer.CombatLucidityPhysicalStunRemaining=1;Check(false,"stunned");Observer.CombatLucidityPhysicalStunRemaining=0;
+        Observer.health=0;Check(false,"dead observer");Observer.health=100;
+        Subject.health=0;Check(false,"dead subject");Subject.health=100;
+        Check(true,"conditions restored");
+        Subject.SetOrigin((1800,0,0),false);Check(false,"far X beyond broadphase");
+        Subject.SetOrigin((0,1800,0),false);Observer.Angle=90;Check(false,"far Y beyond broadphase");
+        Subject.SetOrigin((900,900,0),false);Observer.Angle=45;Check(false,"diagonal retained for exact distance");
+        Subject.SetOrigin((1500,0,0),false);Subject.Height=112;Observer.Angle=0;Check(true,"tall target retained immediately");
+        Subject.Height=56;Check(false,"target shrinks immediately");
+        Observer.CombatEffectiveInsight=100;Check(true,"far target becomes visible after insight change");
+        Observer.CombatEffectiveInsight=0;Subject.CombatAgility=100;Subject.Height=1;Subject.SetOrigin((32.005,0,0),false);Observer.Angle=180;
+        Check(true,"contact margin behind with minimal height");
+        Subject.SetOrigin((32.02,0,0),false);Check(false,"outside contact margin in full stealth");
+        Subject.CombatAgility=0;Subject.Height=56;Subject.SetOrigin((256,0,0),false);Observer.Angle=0;
+
+        Checks++;bool portals=level.GetPortalGroupCount()>1;if(!portals)Failures++;
+        Console.Printf("CA836 EDGE %s linked portal groups=%d",portals?"PASS":"FAIL",level.GetPortalGroupCount());
+        Observer.SetOrigin((1800,0,0),false);Subject.SetOrigin((8440,0,0),false);
+        Checks++;bool distance=Abs(Observer.Distance3D(Subject)-496)<0.00001 && Abs(Observer.Pos.X-Subject.Pos.X)>6000;
+        if(!distance)Failures++;Console.Printf("CA836 EDGE %s native linked distance=%.6f raw=%.6f",distance?"PASS":"FAIL",Observer.Distance3D(Subject),Abs(Observer.Pos.X-Subject.Pos.X));
+        Check(true,"visible through linked portal despite distant coordinates");
+        Observer.Angle=180;Check(false,"linked portal behind");Observer.Angle=0;
+        Subject.CombatAgility=100;Check(false,"linked portal respects stealth");Subject.CombatAgility=0;
+        Observer.SetOrigin((0,0,0),false);Subject.SetOrigin((256,0,0),false);
+
+        Console.Printf("CA836 EDGE_RESULT checks=%d failures=%d result=%s",Checks,Failures,Failures==0?"PASS":"FAIL");
+    }
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name=="ca836seed")Suite(false);
+        if(e.Name=="ca836reload")Suite(true);
+    }
+}

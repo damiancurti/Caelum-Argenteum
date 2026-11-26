@@ -1,6 +1,32 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.95** - 2026-11-19.
+Documentation version: **5.17.96** - 2026-11-19.
+
+## 5.17.96 - Conservative shared-candidate reach rejection (#836, #454)
+
+The existing high-density shared perception query now rejects bodies outside
+a conservative horizontal reach bound before calculating native distances and
+visibility. In the final approved siege measurement, queue presentation reaches
+1.78 presents/s; simulation p95/p99 are 56.4111/59.7041 ms.
+This is a measured production reduction, not fluent siege acceptance. Severe
+presentation stalls remain and require further focused engineering work.
+
+Completed scope: sparse section/method diagnosis; a measured conservative
+shared-list filter; native same-scene equivalence; linked-portal fallback;
+final-package edge/save/upgrade/rollback checks; repeated baseline control;
+package/source preservation. The nine final/control fixture runs pass 256
+assertions; 169 execute the final package. The sampled oracle checks 2,066
+queries and 517,373 candidate visits, safely rejects 488,912, and reports zero
+visibility, nearest-enemy or nearest-ally mismatches. No new scan or cadence.
+
+Next: profile the remaining simulation/presentation stalls on this production
+baseline and continue one measured reduction per issue. Existing mansion/sewer,
+city and ground-facing references remain preserved; this siege comparison does
+not replace them or claim their 60-FPS expectation is established by 35 tics/s.
+Other body/species/sex proposals, equipment integration, first-person work,
+regional scenery and unauthored campaign assignments remain under their parent
+issues. CA454-MAP03-01 and all earlier author checks remain for the completed
+batch; no partial terminal or acceptance is recorded.
 
 ## 5.17.95 - Skeletal native-format assessment (#834, parent #458)
 

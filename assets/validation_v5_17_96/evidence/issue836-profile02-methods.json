@@ -1,0 +1,72 @@
+{
+  "issue": 836,
+  "rows": [
+    {
+      "method": "Candidate",
+      "ms": 287.9695,
+      "calls": 5015,
+      "max_ms": 0.6991
+    },
+    {
+      "method": "Acquire",
+      "ms": 290.2721,
+      "calls": 5067,
+      "max_ms": 0.6999
+    },
+    {
+      "method": "CanSee",
+      "ms": 161.6473,
+      "calls": 533680,
+      "max_ms": 0.0622
+    },
+    {
+      "method": "Touching",
+      "ms": 53.1887,
+      "calls": 548619,
+      "max_ms": 0.0335
+    },
+    {
+      "method": "Range",
+      "ms": 22.7683,
+      "calls": 386614,
+      "max_ms": 0.0318
+    },
+    {
+      "method": "Opponent",
+      "ms": 41.091,
+      "calls": 546549,
+      "max_ms": 0.0147
+    },
+    {
+      "method": "Chase",
+      "ms": 0.7459,
+      "calls": 91,
+      "max_ms": 0.0199
+    },
+    {
+      "method": "Contact",
+      "ms": 44.1945,
+      "calls": 33477,
+      "max_ms": 0.0068
+    },
+    {
+      "method": "ObjectExposure",
+      "ms": 45.0496,
+      "calls": 32395,
+      "max_ms": 0.1433
+    },
+    {
+      "method": "Thermal",
+      "ms": 53.9313,
+      "calls": 30191,
+      "max_ms": 0.2116
+    },
+    {
+      "method": "Communication",
+      "ms": 46.0189,
+      "calls": 30191,
+      "max_ms": 0.0353
+    }
+  ],
+  "qualification": "Sparse inclusive timings overlap; no production savings inferred."
+}

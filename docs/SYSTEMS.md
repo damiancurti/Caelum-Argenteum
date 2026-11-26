@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.95** - 2026-11-19.
+Documentation version: **5.17.96** - 2026-11-19.
 
 ## 5.17.43 - Hybrid serpent inspection controls (#729)
 
@@ -2657,6 +2657,19 @@ it by its percentage. Crouching changes visible height once. Cosmetic dynamic
 flashes do not contribute in this initial delivery. Native geometric sight is
 required. Physical body contact reveals even behind the observer or at full
 stealth. Sleeping, stunned, dormant and dead observers cannot observe.
+
+#836 / 5.17.96 adds a conservative broadphase only within the existing shared
+high-density group query. Once per query, it derives maximum sight from the
+observer's current Insight. Each candidate's current height gives the full-light,
+zero-stealth upper reach; nonnegative physical radii and the existing 0.01-MU
+contact margin enlarge that bound. A body farther away on either horizontal
+axis cannot satisfy sight or contact. All retained bodies keep their original
+relationship, native distance, contact, field, light, stealth and sight checks,
+ordered nearest selection and private recognition. The bound is recomputed from
+current data, not a saved cache or another actor scan. GZDoom portal-group count
+must be exactly one; linked-portal maps retain native portal-aware queries.
+The shared CONTACT_MARGIN constant relocates the existing value without changing
+it. No gameplay value, cadence, saved field or revision changes.
 
 A previously unknown body requires two active seconds of continuous visual
 observation. General suspicion is 0-100; after two seconds without evidence it
