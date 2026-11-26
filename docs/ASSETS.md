@@ -1,6 +1,45 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.47** - 2026-11-14.
+Documentation version: **5.17.48** - 2026-11-14.
+
+## 5.17.48 - Basilisco regional inspection (#739, parent #463)
+
+The optional CA682G gallery now displays the #738 Basilisco on both approved
+Pampa and Litoral grounds. Its twelve figures cover eight species across the
+existing five plots. New keys 5/6 inspect the two Basiliscos; all ten previous
+positions, sixteen controls and the four-boundary walking path remain exact.
+The source remains assets/source/art/regional_gallery_682/GALLERY.json.
+No model, texture, campaign encounter, population rule or production behavior
+changes. Regenerate through assets/validation_v5_17_48/build_gallery.py.
+
+Complete approved associations, nonoverlapping native bodies and all existing
+material contracts pass. Four fixture outputs repeat byte-for-byte. Cuyo700
+and Pampa/NOA682 INVENTORY/EXPORT metadata refresh dependent source hashes;
+all five native material files regenerate identically. CA709G provenance
+refreshes two borrowed source pins, with its layout unchanged. The Cuyo
+validator retains its five plots and original sixteen-control prefix while
+allowing later displays; the shared gallery validator checks all associations.
+
+The actual engine passes 53 fresh and 110 reload/idle/walking checks. Both
+new closeups, overview, affected ground repeats, reloaded overview and the
+presentation cohort were inspected. Prior identical art reuses its recorded
+evidence. Native passive idle states continue while the protected observer
+walks; only observer footstep noise is suppressed in the diagnostic fixture.
+No forced subject position resets or production actor scans are introduced.
+
+One 700-tic overview cohort records 1207.15 queue presents/s,
+p95 0.9736 ms and p99 1.1507 ms on Windows 11,
+Ryzen 9 5950X, RTX 3070 Ti, GZDoom 4.14.2 Vulkan, 1280x720, uncapped/vsync
+off, background unpaused/audio 5%. Distant figures, queue-only timing and
+one cohort do not establish close-up cost, GPU/display timing, repeatability,
+a comparison gain or campaign/crowd performance. All 18,458 package entries
+match src; only two required release diagnostics differ from the #738 package.
+
+Evidence: assets/validation_v5_17_48/evidence/SUMMARY.json.
+CA739-BASILISCO-GALLERY-01 retains author framing/ground/walking review;
+CA738-BASILISCO-01 separately retains model art and ordinary gameplay review.
+All earlier checks remain pending. Other characters, inventory, modular
+equipment and the original V5.16 campaign remain unfinished.
 
 ## 5.17.47 - Basilisco native animated model (#738, parent #461)
 

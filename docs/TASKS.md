@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.47** - 2026-11-14.
+Documentation version: **5.17.48** - 2026-11-14.
+
+## #739 - Basilisco regional gallery (5.17.48)
+
+CA682G adds two native Basilisco displays in approved Pampa/Litoral regions.
+Twelve figures, five plots, eighteen controls and 163 native checks pass;
+four fixture files repeat. CA739-BASILISCO-GALLERY-01 retains author review
+of framing, ground transitions and walking. Model art/gameplay acceptance
+stays separately pending under CA738-BASILISCO-01. Other work remains open.
 
 ## #738 - Basilisco native art (5.17.47)
 

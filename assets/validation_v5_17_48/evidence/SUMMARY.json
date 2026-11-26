@@ -1,0 +1,223 @@
+{
+  "issue": 739,
+  "parent_issue": 463,
+  "version": "5.17.48",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Optional CA682G adds the native Basilisco on approved Pampa/Litoral grounds. Twelve figures, eight species, five plots and eighteen controls. Prior ten figures, sixteen controls and four-boundary crossing path remain exact.",
+  "runtime": {
+    "sha256": "57db296e64d80325ac81760d6d02d18fd7b4a5b694d477e1e13344ef56c8bd1d",
+    "source_entries": 18458,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "03a2a135dcca7ff831ae1bee548127c5662704516acea3abad9b8740327e09f0",
+    "changed_resources": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_gallery_files": 4,
+    "repeat_byte_identical": true,
+    "approved_allocations_complete": true,
+    "nonoverlapping_native_bodies": true,
+    "exact_model_and_material_reuse": true,
+    "dependency_proof": {
+      "700": {
+        "native_files_unchanged": 2,
+        "non_hash_design_unchanged": true
+      },
+      "682": {
+        "native_files_unchanged": 3,
+        "non_hash_design_unchanged": true
+      },
+      "709": {
+        "metadata_only_refreshed_sources": [
+          "assets/source/art/regional_gallery_682/GALLERY.json",
+          "assets/source/art/regional_gallery_682/EXPORT.json"
+        ],
+        "layout_unchanged": true
+      }
+    },
+    "project_validation_passed": true
+  },
+  "native": {
+    "issue": 739,
+    "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+    "runtime_sha256": "57db296e64d80325ac81760d6d02d18fd7b4a5b694d477e1e13344ef56c8bd1d",
+    "materials_sha256": null,
+    "fixture_sha256": "ed4ca0ad7dff13c94fbeb81893d62f173626775b317c0f0c52dfac14f88d5772",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 53,
+        "expected_assertions": 53
+      },
+      {
+        "phase": "reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 110,
+        "expected_assertions": 110
+      }
+    ],
+    "captures": {
+      "basilisco-litoral.png": "425021395e696919ccd70857ef436fa36dc740ad81dc3c41adfa1fab5a256542",
+      "basilisco-pampa.png": "318c9b5e958b742e172b8ea30849e107aadc1b961e5059a30e063e80d6b43cde",
+      "coquena.png": "7b97ac64254b39b1200713ff96d09597ec95ae6cba32d43668365758fa21637c",
+      "cuyo-tiles.png": "c4e1d5ce0c6913d74dc05b124cdb066b4867a48fd71f870806a49dc29aa69310",
+      "cuyo-yastay.png": "bc8f1c3385bab92a3ca02f54630c9d2ad323f899477a3b03bcebbaa6f855a92d",
+      "litoral-tiles.png": "c9ec25364ad03552e9a0ff39c2ff76eaf8b2bdf1cd9d766066b8540da5033727",
+      "litoral.png": "d5f411f635c5940e9b6f5d324cfecd7fd3aa9b5c99d9a64fcc755637ec85fa00",
+      "mikilo.png": "b352b7efb944d6028b51165b625a5c298f855c97ce556c07255068dfc184653e",
+      "noa-tiles.png": "6dfe9052a5da67c85cb1e177af3e330d7d01f0f1756cc75f313b8f114b73f536",
+      "noa.png": "04a3f6e40e92ea7e0b56909c9e01e95e871809c3c4b48ae35a0e045c710c4d92",
+      "overview.png": "d946576af37f4ae8a4e1b316c1030f77ac605d3e768de33e16b03d5d8a0f75d8",
+      "pampa-tiles.png": "58f96a40c3408e670cf5746b16abbc6973f0bc197d34505e2fd8e3ce25b99d12",
+      "pampa.png": "a49870189ad1a939c2bcbd4eedb110712278f1ffb0eb6e48b3956989082be6b5",
+      "reload.png": "22e86ad89846c03430598045e33be924166a74966c1549539dcbef80c0c82704",
+      "selva-tiles.png": "a91556c9d7b3dfb011708f84f5ca4c285f81b836918a186ce6d9964a87ecf04c",
+      "selva.png": "8b4c5b73fe2372088fb734b4b2dec1fb1ccfcc9151dcdf6d47ec3505c4ee61af",
+      "yasi-litoral.png": "4ad18658664782e49a4b851c663a119b3280d5bca04bf00158a13469750ed067",
+      "yastay-noa.png": "afc3d32c1acd6698f3363ffc3b95867bec5b474e9b44b7e7fdeecd35cc56849e"
+    }
+  },
+  "presentation": {
+    "issue": 739,
+    "scope": "One isolated regional gallery cohort; no comparison, repeatability or campaign acceptance.",
+    "baseline_sha256": "57db296e64d80325ac81760d6d02d18fd7b4a5b694d477e1e13344ef56c8bd1d",
+    "runtime_sha256": "57db296e64d80325ac81760d6d02d18fd7b4a5b694d477e1e13344ef56c8bd1d",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "regional-materials",
+        "pid": 42712,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 318086287.8243,
+          "END": 318106323.8999
+        },
+        "fixture_sha256": "ed4ca0ad7dff13c94fbeb81893d62f173626775b317c0f0c52dfac14f88d5772",
+        "bench_sha256": "db471b2cf7558fde31633a03401c5adad534018fb95ae26d014d269592132015",
+        "passed": true,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57133285714286,
+          "p50_ms": 28.5881,
+          "p95_ms": 29.1425,
+          "p99_ms": 29.2399,
+          "max_ms": 29.424
+        },
+        "presentation": {
+          "pid": 42712,
+          "trace_sha256": "904b7122842e644ee7460835465568654185328294f739ef6a57da7baa515074",
+          "rows": 29889,
+          "scene_presents": 21169,
+          "mean_present_fps": 1207.1529560984561,
+          "present_intervals": {
+            "samples": 21168,
+            "mean_ms": 0.8283954365087429,
+            "p50_ms": 0.8123000264167786,
+            "p95_ms": 0.9736000299453735,
+            "p99_ms": 1.1506999731063843,
+            "max_ms": 1.6712999939918518
+          },
+          "native_call_duration": {
+            "samples": 21169,
+            "mean_ms": 0.09173236807099175,
+            "p50_ms": 0.08710002899169922,
+            "p95_ms": 0.11149996519088745,
+            "p99_ms": 0.1647999882698059,
+            "max_ms": 0.6640000343322754
+          }
+        }
+      }
+    ]
+  },
+  "reviewed": "Two added closeups, expanded overview, Pampa/Litoral ground repeats, reloaded overview and presentation cohort. Identical prior model/ground bytes reuse their existing evidence.",
+  "dependencies": "Cuyo700 INVENTORY refreshes only the CA682G source hash and regenerates its manifest;682 refreshes the resulting700 export pin and manifest. All five native material bytes remain exact. CA709G provenance refreshes those two borrowed source pins; its layout and generated behavior are unchanged.",
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Optional diagnostic display, not campaign placement or population rules. No flight, petrification, gameplay, balance, save schema or routine actor scan added.",
+    "One700-tic distant-overview cohort measures queue presentation, not GPU/display timing, repeatability, comparison, close-up cost or campaign/crowd acceptance.",
+    "Fresh/save/reload applies to this isolated fixture, not migration of older optional gallery checkpoints.",
+    "Friendly/passive subjects advance native idle states; only diagnostic observer noise is suppressed. Native speed and production perception are unchanged.",
+    "CA738-BASILISCO-01 retains model art/ordinary-combat review; CA739-BASILISCO-GALLERY-01 retains regional fixture review. All prior author checks remain pending.",
+    "No new imagery or meshes; all production models/materials are byte-identical. Other inventory, characters, modular equipment and the V5.16 campaign remain incomplete. No PK3/WAD/IWAD, executable, DLL or save is committed."
+  ],
+  "files": {
+    "GALLERY_MANIFEST.json": "699ce1a27bacd7e9706939af2ae90c747e559ed1fd177e64612769e7ff1b63af",
+    "issue739-build01.log": "1086f7be978f25a0957f1411b408128805b8715a5023ef068d34b5100820f00a",
+    "issue739-dependency-proof.json": "8cf5719d3477e29b5a09b00c656a7443b2efb9d86aa0202428d91cae653d65d1",
+    "issue739-previous-gallery.json": "e77384f9890453e9f6d8fe2f90d8632d2d6f56ad19865c83a77b8ff76e558771",
+    "issue739-repeat-final.json": "451f02520728e4d475ca52500461a23a51048e8ad193afcf51e5ce9ab1de09e1",
+    "native/basilisco-litoral.png": "425021395e696919ccd70857ef436fa36dc740ad81dc3c41adfa1fab5a256542",
+    "native/basilisco-pampa.png": "318c9b5e958b742e172b8ea30849e107aadc1b961e5059a30e063e80d6b43cde",
+    "native/coquena.png": "7b97ac64254b39b1200713ff96d09597ec95ae6cba32d43668365758fa21637c",
+    "native/cuyo-tiles.png": "c4e1d5ce0c6913d74dc05b124cdb066b4867a48fd71f870806a49dc29aa69310",
+    "native/cuyo-yastay.png": "bc8f1c3385bab92a3ca02f54630c9d2ad323f899477a3b03bcebbaa6f855a92d",
+    "native/fixture-source/MAPINFO.txt": "015398f03aa8d078a9d9248228ff4770d2332e5d09bf0de87ae56c6d3cb6c34b",
+    "native/fixture-source/ZSCRIPT.txt": "9a5852c9f228dcbae70a1022b2067f2493fe33ad882f75e888117380c8cef0c2",
+    "native/fresh-process.log": "8bb45a8c487c3a3f1b970a90ab2f7e6acf0e74e49f205bcf203a2623d304c107",
+    "native/fresh.cfg": "f428e052f5a77077556b77402a2164dd0a1fdff13da5e74fd7d4d88fb108d2f3",
+    "native/fresh.log": "3badb5122821fc92122b817db0ff5792af93452c9c87867932fb1285357407d9",
+    "native/gallery.zs": "46f3f7ee8541b0d719f265767f804139c9ec957d11badd348b3cf0736b1b6062",
+    "native/GALLERY_MANIFEST.json": "699ce1a27bacd7e9706939af2ae90c747e559ed1fd177e64612769e7ff1b63af",
+    "native/litoral-tiles.png": "c9ec25364ad03552e9a0ff39c2ff76eaf8b2bdf1cd9d766066b8540da5033727",
+    "native/litoral.png": "d5f411f635c5940e9b6f5d324cfecd7fd3aa9b5c99d9a64fcc755637ec85fa00",
+    "native/mikilo.png": "b352b7efb944d6028b51165b625a5c298f855c97ce556c07255068dfc184653e",
+    "native/noa-tiles.png": "6dfe9052a5da67c85cb1e177af3e330d7d01f0f1756cc75f313b8f114b73f536",
+    "native/noa.png": "04a3f6e40e92ea7e0b56909c9e01e95e871809c3c4b48ae35a0e045c710c4d92",
+    "native/overview.png": "d946576af37f4ae8a4e1b316c1030f77ac605d3e768de33e16b03d5d8a0f75d8",
+    "native/pampa-tiles.png": "58f96a40c3408e670cf5746b16abbc6973f0bc197d34505e2fd8e3ce25b99d12",
+    "native/pampa.png": "a49870189ad1a939c2bcbd4eedb110712278f1ffb0eb6e48b3956989082be6b5",
+    "native/reload-process.log": "31e03aaea29750dda2e1a403a913ede5eda59e508281f67ea9cddfcc323f9fff",
+    "native/reload.cfg": "3fb2f93afbd8fb7d1e92f88f08ba0fcbe62465c2409ac43b5716d79b719e5eff",
+    "native/reload.log": "1a47c9888c44f4b7d1b0cb2ef729ec032a5aa20db74541d57778394e22836f17",
+    "native/reload.png": "22e86ad89846c03430598045e33be924166a74966c1549539dcbef80c0c82704",
+    "native/RESULTS.json": "d97e028bd65d0e0e3d1374dc682ee068471f48c17370c2098f85d6e442507cd8",
+    "native/selva-tiles.png": "a91556c9d7b3dfb011708f84f5ca4c285f81b836918a186ce6d9964a87ecf04c",
+    "native/selva.png": "8b4c5b73fe2372088fb734b4b2dec1fb1ccfcc9151dcdf6d47ec3505c4ee61af",
+    "native/session.ini": "45f96d10677945cc6e7297a868a8efb9b8174fb2ef3218d58531efbd8b818e60",
+    "native/TEXTMAP.txt": "a02a2243b19412edc767aabcd06d9aa7e9ba997fbf063730d6d1457912f68411",
+    "native/yasi-litoral.png": "4ad18658664782e49a4b851c663a119b3280d5bca04bf00158a13469750ed067",
+    "native/yastay-noa.png": "afc3d32c1acd6698f3363ffc3b95867bec5b474e9b44b7e7fdeecd35cc56849e",
+    "presentation/regional-materials/commands.cfg": "91a227051d3d24fb6aad5465a0109d6900ac0d6829faa33a77d37b649d354c8a",
+    "presentation/regional-materials/engine.log": "5f289b1f2dcbb6b70b6752d5f6fb5299bebb7cccb68d0284959a2f8edfc0720f",
+    "presentation/regional-materials/fixture-source/MAPINFO.txt": "015398f03aa8d078a9d9248228ff4770d2332e5d09bf0de87ae56c6d3cb6c34b",
+    "presentation/regional-materials/fixture-source/ZSCRIPT.txt": "9a5852c9f228dcbae70a1022b2067f2493fe33ad882f75e888117380c8cef0c2",
+    "presentation/regional-materials/gallery.zs": "46f3f7ee8541b0d719f265767f804139c9ec957d11badd348b3cf0736b1b6062",
+    "presentation/regional-materials/GALLERY_MANIFEST.json": "699ce1a27bacd7e9706939af2ae90c747e559ed1fd177e64612769e7ff1b63af",
+    "presentation/regional-materials/presents.csv": "904b7122842e644ee7460835465568654185328294f739ef6a57da7baa515074",
+    "presentation/regional-materials/process.log": "49a472e05cef3a1cb889aac2b1fdfdc858bb86df6871327d6d1f4f3b084019c3",
+    "presentation/regional-materials/scene.png": "d946576af37f4ae8a4e1b316c1030f77ac605d3e768de33e16b03d5d8a0f75d8",
+    "presentation/regional-materials/session.ini": "f5dd1b21605d3b88cd1126e38eac006606503fd3a69506c8e8a7531f750ec652",
+    "presentation/regional-materials/TEXTMAP.txt": "a02a2243b19412edc767aabcd06d9aa7e9ba997fbf063730d6d1457912f68411",
+    "presentation/RESULTS.json": "5e07865a9f45a41b86cdac72091f5c25073101359e5ec37a6f3f37e69b3e6eeb",
+    "validation-final.json": "b98397f9aa87c8db28474db656a41802dc1d6a8d663fb7ed840dd3fa009ab5a1"
+  }
+}

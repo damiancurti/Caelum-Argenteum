@@ -1,0 +1,46 @@
+{
+  "issue": 739,
+  "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+  "runtime_sha256": "57db296e64d80325ac81760d6d02d18fd7b4a5b694d477e1e13344ef56c8bd1d",
+  "materials_sha256": null,
+  "fixture_sha256": "ed4ca0ad7dff13c94fbeb81893d62f173626775b317c0f0c52dfac14f88d5772",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 53,
+      "expected_assertions": 53
+    },
+    {
+      "phase": "reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 110,
+      "expected_assertions": 110
+    }
+  ],
+  "captures": {
+    "basilisco-litoral.png": "425021395e696919ccd70857ef436fa36dc740ad81dc3c41adfa1fab5a256542",
+    "basilisco-pampa.png": "318c9b5e958b742e172b8ea30849e107aadc1b961e5059a30e063e80d6b43cde",
+    "coquena.png": "7b97ac64254b39b1200713ff96d09597ec95ae6cba32d43668365758fa21637c",
+    "cuyo-tiles.png": "c4e1d5ce0c6913d74dc05b124cdb066b4867a48fd71f870806a49dc29aa69310",
+    "cuyo-yastay.png": "bc8f1c3385bab92a3ca02f54630c9d2ad323f899477a3b03bcebbaa6f855a92d",
+    "litoral-tiles.png": "c9ec25364ad03552e9a0ff39c2ff76eaf8b2bdf1cd9d766066b8540da5033727",
+    "litoral.png": "d5f411f635c5940e9b6f5d324cfecd7fd3aa9b5c99d9a64fcc755637ec85fa00",
+    "mikilo.png": "b352b7efb944d6028b51165b625a5c298f855c97ce556c07255068dfc184653e",
+    "noa-tiles.png": "6dfe9052a5da67c85cb1e177af3e330d7d01f0f1756cc75f313b8f114b73f536",
+    "noa.png": "04a3f6e40e92ea7e0b56909c9e01e95e871809c3c4b48ae35a0e045c710c4d92",
+    "overview.png": "d946576af37f4ae8a4e1b316c1030f77ac605d3e768de33e16b03d5d8a0f75d8",
+    "pampa-tiles.png": "58f96a40c3408e670cf5746b16abbc6973f0bc197d34505e2fd8e3ce25b99d12",
+    "pampa.png": "a49870189ad1a939c2bcbd4eedb110712278f1ffb0eb6e48b3956989082be6b5",
+    "reload.png": "22e86ad89846c03430598045e33be924166a74966c1549539dcbef80c0c82704",
+    "selva-tiles.png": "a91556c9d7b3dfb011708f84f5ca4c285f81b836918a186ce6d9964a87ecf04c",
+    "selva.png": "8b4c5b73fe2372088fb734b4b2dec1fb1ccfcc9151dcdf6d47ec3505c4ee61af",
+    "yasi-litoral.png": "4ad18658664782e49a4b851c663a119b3280d5bca04bf00158a13469750ed067",
+    "yastay-noa.png": "afc3d32c1acd6698f3363ffc3b95867bec5b474e9b44b7e7fdeecd35cc56849e"
+  }
+}
