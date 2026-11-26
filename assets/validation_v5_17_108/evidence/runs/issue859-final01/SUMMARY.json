@@ -1,0 +1,116 @@
+[
+  {
+    "label": "bare",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 20,
+    "fail_lines": 0,
+    "errors": [],
+    "capture_pose_checks": {
+      "expected": {
+        "idle.png": 0,
+        "walk.png": 1,
+        "run.png": 2,
+        "attack.png": 4,
+        "guard.png": 18,
+        "jump-preparation.png": 15,
+        "jump-air.png": 17,
+        "jump-late.png": 17,
+        "landing.png": 16,
+        "death.png": 6,
+        "death-side.png": 6
+      },
+      "observed": {
+        "idle.png": 0,
+        "walk.png": 1,
+        "run.png": 2,
+        "attack.png": 4,
+        "guard.png": 18,
+        "jump-preparation.png": 15,
+        "jump-air.png": 17,
+        "jump-late.png": 17,
+        "landing.png": 16,
+        "death.png": 6,
+        "death-side.png": 6
+      },
+      "passed": true
+    },
+    "runtime": "final"
+  },
+  {
+    "label": "GF",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 20,
+    "fail_lines": 0,
+    "errors": [],
+    "capture_pose_checks": {
+      "expected": {
+        "idle.png": 0,
+        "walk.png": 1,
+        "run.png": 2,
+        "attack.png": 4,
+        "guard.png": 18,
+        "jump-preparation.png": 15,
+        "jump-air.png": 17,
+        "jump-late.png": 17,
+        "landing.png": 16,
+        "death.png": 6,
+        "death-side.png": 6
+      },
+      "observed": {
+        "idle.png": 0,
+        "walk.png": 1,
+        "run.png": 2,
+        "attack.png": 4,
+        "guard.png": 18,
+        "jump-preparation.png": 15,
+        "jump-air.png": 17,
+        "jump-late.png": 17,
+        "landing.png": 16,
+        "death.png": 6,
+        "death-side.png": 6
+      },
+      "passed": true
+    },
+    "runtime": "final"
+  },
+  {
+    "label": "GC",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 20,
+    "fail_lines": 0,
+    "errors": [],
+    "capture_pose_checks": {
+      "expected": {
+        "idle.png": 0,
+        "walk.png": 1,
+        "run.png": 2,
+        "attack.png": 4,
+        "guard.png": 18,
+        "jump-preparation.png": 15,
+        "jump-air.png": 17,
+        "jump-late.png": 17,
+        "landing.png": 16,
+        "death.png": 6,
+        "death-side.png": 6
+      },
+      "observed": {
+        "idle.png": 0,
+        "walk.png": 1,
+        "run.png": 2,
+        "attack.png": 4,
+        "guard.png": 18,
+        "jump-preparation.png": 15,
+        "jump-air.png": 17,
+        "jump-late.png": 17,
+        "landing.png": 16,
+        "death.png": 6,
+        "death-side.png": 6
+      },
+      "passed": true
+    },
+    "runtime": "final"
+  }
+]

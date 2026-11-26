@@ -1,0 +1,91 @@
+{
+  "issue": 859,
+  "runtime_sha256": "7aa0a9c8e11ccf878ce099142b29a5b9fbc3c9d1a03e11f139677ff6287a226e",
+  "prototype_sha256": "4ac204b3efb797320edf319ad1e7f055cc0e80a3a51515a194e48b7b292adc19",
+  "members": 18767,
+  "new": [
+    "licenses/GRIPS_859.txt",
+    "models/caelum/characters/grips/GC.md3",
+    "models/caelum/characters/grips/GF.md3",
+    "models/caelum/characters/grips/GP.md3",
+    "models/caelum/characters/grips/GW.md3",
+    "models/caelum/characters/grips/left_hand.md3",
+    "models/caelum/characters/grips/right_hand.md3",
+    "models/caelum/characters/grips/shield.md3",
+    "models/caelum/characters/grips/weapon.md3"
+  ],
+  "changed": [
+    "caelum/data/CaelumWornClothingModelData.zs",
+    "caelum/data/wardrobe_candidate.modeldef",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "unchanged_members": 18754,
+  "all_runtime_bytes_match_src": true,
+  "all_prototype_members_match_final": true,
+  "independent_rebuild_md3_identical": true,
+  "original_sources_unchanged": true,
+  "resolved_frames": 375,
+  "slots": 17,
+  "frame_directives_unchanged": true,
+  "same_geometry_counts_and_model_bytes": {
+    "left_hand": {
+      "frames": 375,
+      "surfaces": 1,
+      "vertices": 353,
+      "triangles": 702,
+      "bytes": 1091532
+    },
+    "shield": {
+      "frames": 375,
+      "surfaces": 1,
+      "vertices": 1748,
+      "triangles": 2124,
+      "bytes": 5304756
+    },
+    "GF": {
+      "frames": 375,
+      "surfaces": 1,
+      "vertices": 743,
+      "triangles": 1406,
+      "bytes": 2273100
+    },
+    "GC": {
+      "frames": 375,
+      "surfaces": 1,
+      "vertices": 707,
+      "triangles": 1406,
+      "bytes": 2164812
+    },
+    "GW": {
+      "frames": 375,
+      "surfaces": 1,
+      "vertices": 707,
+      "triangles": 1406,
+      "bytes": 2164812
+    },
+    "GP": {
+      "frames": 375,
+      "surfaces": 1,
+      "vertices": 833,
+      "triangles": 1406,
+      "bytes": 2543820
+    },
+    "right_hand": {
+      "frames": 375,
+      "surfaces": 1,
+      "vertices": 354,
+      "triangles": 704,
+      "bytes": 1094564
+    },
+    "weapon": {
+      "frames": 375,
+      "surfaces": 1,
+      "vertices": 222,
+      "triangles": 264,
+      "bytes": 692228
+    }
+  },
+  "quantized_wrist_checks": 23625,
+  "rigid_grip_vertex_checks": 1057500
+}

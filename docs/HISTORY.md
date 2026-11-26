@@ -1,6 +1,96 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.107** - 2026-11-19.
+Documentation version: **5.17.108** - 2026-11-19.
+
+## 5.17.108 - Fit first-body hands and retained equipment across native poses (#859)
+
+Full project validation passes with no errors; the generated document index is current.
+
+#859 follows the corrected #857 frame bindings and fits the retained equipment
+to closed first-body hands. Eight new MD3 files and a provenance notice are
+added. Only the two candidate binding/data files and two release diagnostic
+strings change among existing runtime members; all18,754 other members are
+byte-identical to5.17.107. All18,767 final package members match src. The ten
+prototype members match the final package exactly. Runtime SHA256:
+7aa0a9c8e11ccf878ce099142b29a5b9fbc3c9d1a03e11f139677ff6287a226e.
+
+The retained Blender4.5.3 authoring source is independently reconstructed.
+Both sources produce identical native exports. The editable .blend container
+itself is not asserted byte-reproducible. Existing anatomical finger landmarks
+drive editable construction bones; shared wrist positions and native weights
+are preserved. Four glove shells use their original offsets and UVs. Rigid
+sword/shield placement and compensated sample transforms preserve contact even
+when the original Run action rotates the sword independently from the hand.
+All375 samples,24 actions,17 model slots and FrameIndex directives remain.
+23,625 quantized seam comparisons and1,057,500 rigid-grip vertex checks pass;
+fitted-center error is zero before native quantization.
+
+An independent serialized-model comparison caught a rejected export defect:
+raw mesh topology omitted25 shield vertices/72 triangles from the evaluated
+Solidify result, although native assertions had passed. Final topology, UVs
+and sampled positions all come from the evaluated mesh. The restored shield
+has1,748 vertices/2,124 triangles. All eight final modules retain the original
+counts, UVs and byte lengths; the six equipment/glove triangle arrays are exact.
+Bare-hand vertex ordering is reindexed, preserving the same topology. Existing
+CA-KP-254 is extended with this recurrence; rejected native images/builds remain
+explicitly rejected evidence and are not reused as final qualification.
+
+Thirteen canonical native runs produce517 passing assertion lines:503 on the
+final package and14 on the previous-build rollback. Coverage includes bare/GF/
+GC/GW/GP motion, fresh state, prior candidate save, reload, disabling, rollback,
+death/dead reload and281 ownership assertions. The five motion runs additionally
+match all55 captured poses against native traces. Six corrected close-camera
+runs add120 native assertions and66 capture/pose matches. Counts use actual
+PASS lines per process, excluding inherited EventHandler counters. Death uses
+native -host 1 mode because single-player correctly refuses dead-player saves.
+No save classes/fields, gameplay logic, resources, collision, rig timing or
+equipment rules change. The original default seven-module body is retained.
+
+Direct visual review covers native walking/running, attack, guard, jump,
+landing, death and bare/four-glove grips. The exact viewed-image list and hashes
+are retained; captured-pose assertions do not claim every image was inspected.
+Source studies and misframed camera attempts remain labeled separately. The
+correct close camera accounts for native CameraHeight and MD3 level.pixelstretch.
+One oblique close guard image leaves the hand outside the view; the canonical
+front guard image is usable. That oblique image is not grip-contact evidence.
+The initial static-array diagnostic camera aborted; its exact engine/compiler
+cause was not isolated. The replacement uses a literal sampled-anchor switch.
+
+Flat sampled construction skin, angular hand/wrist shading and the original
+clothing, face, hair and death-pose limitations remain visible. This correction
+does not establish final art, first-person equipment, other bodies/weapons or
+#736 approval. CA859-GRIP-01 remains in the outstanding author queue. All author
+acceptance and the requested test terminal remain deferred to the final batch.
+
+Eight fresh paired one-player windows compare the107 equipped candidate
+against108 in studio/mansion/sewer/city fixed views (208 additional passing
+fixture assertions). All eight screenshots were directly inspected. GZDoom
+4.14.2, Ryzen9 5950X, RTX3070Ti,1280x720, unpaused background and5% audio are
+recorded. No heavy build/hash/validator overlaps these windows.
+
+| Scene / mode | Queue presents/s | Present p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| studio / control | 1020.634 | 1.211 / 1.383 / 8.262 | 28.571 / 29.256 / 29.502 / 29.745 |
+| studio / candidate | 1033.643 | 1.184 / 1.362 / 2.068 | 28.572 / 29.260 / 29.432 / 29.626 |
+| mansion / control | 142.749 | 8.797 / 9.817 / 12.188 | 28.576 / 33.725 / 34.882 / 36.620 |
+| mansion / candidate | 145.079 | 8.484 / 9.350 / 10.995 | 28.569 / 33.423 / 34.736 / 37.030 |
+| sewers / control | 179.904 | 7.054 / 8.131 / 39.304 | 28.574 / 32.468 / 33.909 / 46.645 |
+| sewers / candidate | 180.708 | 7.267 / 8.621 / 38.324 | 28.570 / 32.392 / 33.858 / 46.060 |
+| city / control | 101.751 | 11.504 / 12.931 / 15.400 | 28.576 / 35.134 / 36.868 / 38.154 |
+| city / candidate | 97.721 | 11.861 / 12.907 / 16.991 | 28.578 / 34.497 / 37.279 / 39.769 |
+
+The city candidate has about4% fewer queue presents/s in this pair, with nearly
+equal p99 intervals. This observation does not isolate a causal regression or
+prove a speed improvement. The other three means are close. Queue presents are
+not monitor scanout; tic intervals include pacing/frame work. These single-view,
+one-player measurements do not establish crowd, combat, full-map or siege
+performance. The mansion retains its opening dialogue; sewer/city entrances
+keep their original world rules. Siege performance remains unresolved.
+
+Evidence: assets/validation_v5_17_108, including exact runtime/source hashes,
+canonical/close suites, all recorded attempts and the viewed-image list. The
+portable camera-anchor generator reproduces the retained JSON byte-for-byte.
+Full project validation passes; the archived report has no errors.
 
 ## 5.17.107 - Bind the opt-in first-body wardrobe to owned clothing (#857)
 

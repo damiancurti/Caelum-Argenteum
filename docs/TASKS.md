@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.107** - 2026-11-19.
+Documentation version: **5.17.108** - 2026-11-19.
+
+## 5.17.108 - Fit first-body hands and retained equipment across native poses (#859)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Implemented the finite sword/shield contact correction following #857's
+separate frame-binding fix. Closed bare hands and four glove shells retain the
+original rig samples, equipment geometry budgets, UVs and wrist seams. Native
+pose, ownership, upgrade/reload/disable/rollback/death checks pass; final paired
+presentation results and remaining visual limits are recorded in HISTORY.
+
+Author check CA859-GRIP-01 remains pending. Continue the authorized broader
+#462/#459/#458 and scenery/performance work without treating this candidate or
+the unapproved #736 proposals as production conversion approval. The requested
+single test terminal follows the remaining batch; no partial author handoff.
 
 ## 5.17.107 - Bind the opt-in first-body wardrobe to owned clothing (#857)
 

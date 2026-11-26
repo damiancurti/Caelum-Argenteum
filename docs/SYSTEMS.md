@@ -1,6 +1,21 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.107** - 2026-11-19.
+Documentation version: **5.17.108** - 2026-11-19.
+
+## 5.17.108 - Fit first-body hands and retained equipment across native poses (#859)
+
+The default-off ca_wardrobe_candidate now uses the #859 hand/glove and
+sword/shield variants in its five existing affected model slots. Its #857
+reference-profile eligibility, actual inventory ownership and fallback rules
+remain authoritative. This patch adds no classes, saved fields, revision or
+migration; revision1 wardrobe state and native equipment identity remain intact.
+Item weight, durability, resources, collision, actions and combat are unchanged.
+
+Old candidate saves, reload, disabled presentation, cleaned rollback and the
+retained death outfit were checked with the final runtime. The original
+seven-module presentation remains available. Bare hands and all four equipped
+glove types keep contact through native walk/run/attack/guard/jump/landing/death
+checks. Visual approval remains CA859-GRIP-01 at the final consolidated terminal.
 
 ## 5.17.107 - Bind the opt-in first-body wardrobe to owned clothing (#857)
 

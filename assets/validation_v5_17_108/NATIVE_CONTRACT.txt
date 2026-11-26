@@ -1,0 +1,48 @@
+Issue859 - finite first-body sword/shield grips
+
+These are diagnostic tools, not the requested final consolidated author terminal.
+Use local GZDoom4.14.2 and owned development dependencies. Run one native engine
+at a time, unpaused in the background with5% audio. Every output directory must
+be new and remain under build/. Private engines, IWADs, PK3s, WADs and saves are
+not distributed. Existing default presentation and native gameplay are retained.
+
+Pinned Blender4.5.3 source/export reproduction, from the repository root:
+blender.exe --background --python assets/generators/author_equipment_grips.py -- --output build/grip-source-review
+blender.exe --background --python assets/generators/export_equipment_grips.py -- --source build/grip-source-review/grips.blend --output build/grip-export-review
+python assets/generators/build_equipment_grip_bindings.py --export build/grip-export-review --output build/grip-binding-review
+The optional --install on the last tool deliberately updates candidate src files.
+Independent source rebuilds yield identical native bytes. Retained .blend bytes
+are provenance, not a claim that Blender container serialization is reproducible.
+Compare exported counts/UVs/lengths and all375 samples, including evaluated
+Solidify output. Preserve every original source/hash listed in DESIGN.json.
+
+Native motion using actual equipped items:
+python assets/validation_v5_17_108/run_grip_motion859.py --glove bare --runtime build/caelum_argenteum_dev.pk3 --output build/grip-motion-review
+Repeat in fresh output folders with GF, GC, GW, GP. --focus Left or Right follows
+the sampled grip center; omitted focus uses the full-body camera. Native trace
+checks verify11 capture poses per run independently from ownership assertions.
+Oblique close views may be occluded/misframed; canonical front views and the
+full-body sequence are complementary. A capture assertion is not visual review.
+
+Rebuild close-camera anchors without changing the retained file:
+blender.exe --background --python assets/validation_v5_17_108/build_grip_anchors859.py -- --output build/grip-anchors-review.json
+Compare that JSON byte-for-byte to grip_anchors.json. Anchors use the original
+rig action samples; native camera positioning applies actor scale/yaw and
+MD3 level.pixelstretch. No camera changes enter src or the packaged gameplay.
+
+Continuity, ownership and paired presentation use the retained portable #857
+run_wardrobe_continuity857.py and run_wardrobe_ownership857.py tools. Their
+NATIVE_CONTRACT.txt explains modes/dependencies. #859's canonical13-phase plan,
+actual commands, package hashes, raw engine traces and separate assertions are
+archived in evidence/. Count actual PASS log lines, not saved handler counters.
+Death/dead reload uses native -host 1; single-player dead saving stays disallowed.
+For rollback disable the candidate, wait for native visual cleanup, save, then
+load that cleaned save on the earlier complete runtime.
+
+Performance windows compare5.17.107/108 with one actually equipped player in
+studio/mansion/sewer/city views. Queue presents are not monitor scanout; tic
+intervals include pacing/frame work. No heavy build/hash/validator overlaps the
+measurements. These are not crowd, combat, full traversal or siege results.
+The source/capture gallery and exact directly viewed-image list retain visual
+limitations. Rejected initial exports/cameras remain labeled evidence. No
+author acceptance is inferred; CA859-GRIP-01 waits for the final batch terminal.
