@@ -1,0 +1,2 @@
+gameinfo { PlayerClasses="CaelumDomingoPilotPlayer" AddEventHandlers="CA861PresentationProbe" }
+cluster 98 { hub } map CA836A "Wardrobe continuity" { cluster=98 } map CA857B "Wardrobe hub" { cluster=98 }

@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.108** - 2026-11-19.
+Documentation version: **5.17.109** - 2026-11-19.
+
+## 5.17.109 - Select shared hand art from actual clothing gloves (#861)
+
+Full project validation passes with no errors; the generated document index is current.
+
+Implemented the explicit extension from historical armor-only hand selection
+to actual clothing gloves, retaining outer-armor priority and shared male/female
+art. Verified native ownership, replacement/drop/Box/chest, save/hub/death,
+preview/Moon consumers and representative first-person action clocks. Transient
+references reconstruct after load; no saved schema or gameplay values change.
+
+CA861-HANDS-01 remains in the single author queue for the final consolidated
+terminal. Continue the broader #462/#459/#458 and #463/scenery/performance scope;
+the existing shared glove image does not complete material-specific first-person
+art, other-body equipment or #736 approval. Preserve all prior author checks.
 
 ## 5.17.108 - Fit first-body hands and retained equipment across native poses (#859)
 

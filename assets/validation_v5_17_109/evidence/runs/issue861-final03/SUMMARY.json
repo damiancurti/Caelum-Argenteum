@@ -1,0 +1,88 @@
+[
+  {
+    "label": "fresh",
+    "directory": "build/issue861-final03/fresh",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 13,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "upgrade",
+    "directory": "build/issue861-final03/upgrade",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 7,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "reload",
+    "directory": "build/issue861-final03/reload",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 7,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "rollback",
+    "directory": "build/issue861-final03/rollback",
+    "runtime": "baseline",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 5,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "hub",
+    "directory": "build/issue861-final03/hub",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 21,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "death",
+    "directory": "build/issue861-final03/death",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 16,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "dead-load",
+    "directory": "build/issue861-final03/dead-load",
+    "runtime": "final",
+    "passed": true,
+    "exit_code": 0,
+    "pass_lines": 3,
+    "failed": [],
+    "errors": []
+  },
+  {
+    "label": "motion-0-bare",
+    "directory": "build/issue861-final03/motion-0-bare",
+    "runtime": "final",
+    "passed": false,
+    "exit_code": 1,
+    "pass_lines": 32,
+    "failed": [
+      "CA836 EDGE FAIL hands861: rendered sword hand uses actual current glove selection",
+      "CA836 EDGE_RESULT checks=33 failures=1 result=FAIL"
+    ],
+    "errors": [
+      "CA836 EDGE FAIL",
+      "result=FAIL"
+    ]
+  }
+]

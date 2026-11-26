@@ -1,0 +1,48 @@
+{
+  "issue": 861,
+  "passed": true,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-hands01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-final01\\upgrade\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-final01\\upgrade\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-final01\\upgrade",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-final01\\upgrade\\engine.log",
+    "-loadgame",
+    "input.zds",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-final01\\upgrade\\commands.cfg"
+  ],
+  "exit_code": 0,
+  "errors": [],
+  "checks": [
+    "CA836 EDGE PASS hands861: actual player and saved fixture survive",
+    "CA836 EDGE PASS hands861: native saved glove identity and data remain intact",
+    "CA836 EDGE PASS hands861: current build selects its documented glove scope",
+    "CA836 EDGE PASS hands861: saved sex and actual glove choose the expected existing art",
+    "CA836 EDGE PASS hands861: world and preview flag share actual selection",
+    "CA836 EDGE PASS hands861: transient selection caches reconstruct on demand",
+    "CA836 EDGE PASS hands861: reconstructed cache references actual native owned object",
+    "CA836 EDGE_RESULT checks=18 failures=0 result=PASS"
+  ],
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-hands01.pk3": "8fcef709b7615d6dd6f808f1de6e46a37718b97b0d35ecf1d6568eb66de7a574",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-final01\\upgrade\\checks.pk3": "f4b94d9e7a9fd9b43a3b70ad3e7a3243fb00d39d9b5003b335b93a193e74ddb7"
+  },
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "loaded_save_sha256": "7c190c1969471d8d52ab0bab15d993aecb95ccd39dfe78ed6dca3604eb537d83",
+  "qualification": "Actual native hand selection, save and visual fixture. Diagnostic setup supplies owned equipment and invulnerability; native resources/timing remain authoritative. Death uses native one-player cooperative mode. Not author acceptance."
+}

@@ -1,0 +1,42 @@
+{
+  "issue": 861,
+  "passed": false,
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-hands01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-final04\\motion-0-bare\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-final04\\motion-0-bare\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-final04\\motion-0-bare",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-final04\\motion-0-bare\\engine.log",
+    "+map",
+    "CA836A",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-final04\\motion-0-bare\\commands.cfg"
+  ],
+  "exit_code": 1,
+  "errors": [
+    "Script error",
+    "Native error"
+  ],
+  "checks": [],
+  "sha256": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-hands01.pk3": "8fcef709b7615d6dd6f808f1de6e46a37718b97b0d35ecf1d6568eb66de7a574",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue861-final04\\motion-0-bare\\checks.pk3": "c3a0c4c03ebfe348fc4f2cfb2482c2570f759b23d7ec4c3b37e543b1b4f51e6d"
+  },
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "loaded_save_sha256": null,
+  "qualification": "Actual native hand selection, save and visual fixture. Diagnostic setup supplies owned equipment and invulnerability; native resources/timing remain authoritative. Death uses native one-player cooperative mode. Not author acceptance."
+}

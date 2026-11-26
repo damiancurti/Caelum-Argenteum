@@ -1674,6 +1674,7 @@ class CaelumInventoryService : Object play
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         CaelumWardrobeVisual.Invalidate(user);
+        CaelumAppearanceHands.Invalidate(user);
         CaelumTarotStar.Changed(user);
         CaelumDiningSession.Invalidate(user);
         user.ApplyCharacterProfile();

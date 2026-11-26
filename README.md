@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.108.** Obtain and update the complete repository,
+**Current release: 5.17.109.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#861 connects actual clothing gloves to the existing shared first-person,
+world and preview hand art. Ownership/save/action checks and frame measurements
+are recorded in docs/HISTORY.md and assets/validation_v5_17_109. The capture
+gallery is assets/validation_v5_17_109/review.html. Material-specific art and the
+broader batch remain open; author review stays at the final consolidated terminal.
 
 #859 fits closed hands and four glove variants to the retained sword/shield
 across the first-body candidate's native poses. Deterministic exports,

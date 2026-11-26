@@ -1,6 +1,32 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.108** - 2026-11-19.
+Documentation version: **5.17.109** - 2026-11-19.
+
+## 5.17.109 - Select shared hand art from actual clothing gloves (#861)
+
+The shared hand selector now accepts either legitimate worn hand armor or
+the actual worn GF/GC/GW/GP clothing item. The historical #148 implementation
+was armor-only; this is an explicit scope extension, not a retroactive claim
+that the documented old rule was broken. Outer armor retains precedence.
+An item must belong to the current player, match its equipped native ID and
+hand region, have the correct kind/type, be equipped and remain outside Box.
+Broken but still worn gloves retain their visual presence. No defense, weight,
+durability, resource, collision, targeting or combat rule changes.
+
+Five transient cache declarations retain the persistent record and two possible
+hand-layer references. Cold access reads the existing record directly without
+invoking its general migration accessor. Equipment-ID changes or the existing
+native inventory event refresh references; each use still validates the actual
+record/item owner and identity. Load reconstructs the unsaved references. No
+new saved gameplay fields, classes, schema or migration are introduced; native
+upgrade/reload/hub/death and direct older-build rollback remain supported.
+
+First-person layers, world appearance, appearance preview and new Moon clones
+use the same selector. Death and existing clones retain their saved creation
+snapshots: upgrading an old bare-hand corpse does not retroactively glove it.
+The existing male/female shared glove artwork, bare skin/fur variants, weapon
+pivots and animation clocks remain unchanged. Material-specific glove imagery
+is separate artwork. CA861-HANDS-01 remains pending consolidated author review.
 
 ## 5.17.108 - Fit first-body hands and retained equipment across native poses (#859)
 

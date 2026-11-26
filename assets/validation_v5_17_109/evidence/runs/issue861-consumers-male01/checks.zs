@@ -1,0 +1,331 @@
+// Escenario aislado: equipa objetos reales; no forma parte del PK3 del juego.
+class CA259Session : EventHandler
+{
+    CaelumEquipmentItem TestItem;
+    int Choice,Tier,LucidityChoice;
+    bool Pinned,Manual;
+    double FixedLucidity;
+    override void UiTick()
+    { if(!Pinned && Menu.GetCurrentMenu()!=null)Menu.GetCurrentMenu().Close(); }
+    int Kind()
+    {
+        static const int kinds[]={1,18,19,17,0,2,14,15,16};
+        return kinds[Clamp(Choice,0,8)];
+    }
+    void Equip(CaelumPlayer user)
+    {
+        if(TestItem!=null && TestItem.Owner==user)
+        {
+            user.EquipmentSelectionItemId=TestItem.ItemId;
+            user.RefreshEquipmentSelectionPreview();user.UnequipSelectedNativeEquipment();
+            TestItem.Destroy();TestItem=null;
+        }
+        let model=new("CaelumWeaponModel");model.InitializeDefaults();
+        TestItem=CaelumEquipmentItem(Actor.Spawn("CaelumWeaponPickup",user.Pos,NO_REPLACE));
+        TestItem.EquipmentKind=CaelumConstants.EQUIPMENT_KIND_WEAPON;TestItem.ItemType=Kind();
+        TestItem.Tier=Tier;TestItem.EquipmentSize=CaelumEquipmentRules.GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier());
+        TestItem.EssenceType=CaelumConstants.ESSENCE_FIRE;
+        TestItem.Durability=model.GetMaximumDurabilityFor(Kind(),Tier,TestItem.EquipmentSize);
+        TestItem.UnitWeight=model.GetWeightFor(Kind(),Tier,TestItem.EquipmentSize);
+        TestItem.PickupDataInitialized=true;TestItem.AcquisitionResolved=true;
+        TestItem.WeaponDurabilityRevision=CaelumAttackRules.DURABILITY_REVISION;
+        TestItem.AttachToOwner(user);user.EnsureEquipmentItemId(TestItem);
+        user.EquipmentSelectionKind=CaelumConstants.EQUIPMENT_KIND_WEAPON;
+        user.EquipmentSelectionItemId=TestItem.ItemId;
+        user.EquipmentSelectionWeaponType=Kind();user.EquipmentSelectionTier=Tier;
+        user.EquipmentSelectionSize=TestItem.EquipmentSize;
+        user.EquipmentSelectionWeaponEssenceType=CaelumConstants.ESSENCE_FIRE;
+        user.RefreshEquipmentSelectionPreview();user.EquipSelectedNativeEquipment();
+        Console.Printf("CA259 EQUIP action=%d compatible=%d id=%d selected=%d itemtier=%d modeltier=%d equipped=%d",
+            user.LastEquipmentAction,user.EquipmentSelectionSizeCompatible,TestItem.ItemId,user.EquipmentSelectionItemId,
+            TestItem.Tier,user.WeaponModel.Tier,TestItem.Equipped);
+        user.SelectNativeWeaponConfiguration(Kind(),CaelumConstants.ESSENCE_FIRE,Tier);
+        if(!TestItem.Equipped || user.WeaponModel.Tier!=Tier || user.WeaponModel.WeaponType!=Kind())
+            Console.Printf("CA259 FAIL native equipment selection");
+        user.EquipmentMenuOpen=false;
+    }
+    void Show(CaelumPlayer user)
+    {
+        static const String names[]={"CA_WEAPON_TYPE_STAFF","CA_WEAPON_TYPE_BOOK","CA_WEAPON_TYPE_STATUETTE",
+            "CA_WEAPON_TYPE_BELL","CA_WEAPON_TYPE_SWORD","CA_WEAPON_TYPE_CARBINE","CA_WEAPON_TYPE_SHOTGUN",
+            "CA_WEAPON_TYPE_LONGBOW","CA_WEAPON_TYPE_CROSSBOW"};
+        String text=String.Format("#259 | %s T%d | Lucidez %.1f%% | F6 Lucidez / F7 tier / F8 arma",
+            StringTable.Localize(names[Choice],false),Tier,FixedLucidity);
+        CaelumNotifications.Notify(user,text);Console.Printf("CA259 SESSION %s",text);
+    }
+    override void WorldTick()
+    {
+        let user=CaelumPlayer(players[0].mo);
+        if(!Pinned || user==null)return;
+        user.CurrentLucidity=FixedLucidity;user.UpdateLucidityState();
+        if(Manual)
+        {
+            // Recursos y stun fijos sólo para comparar trayectorias sin esperas.
+            user.CurrentAir=100000;user.CurrentAnima=100000;user.LucidityPhysicalStunRemaining=0;
+            user.SetRangedMagazineCount(Kind(),user.GetRangedMagazineCapacity(Kind()));
+        }
+    }
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        let user=CaelumPlayer(players[e.Player].mo);if(user==null)return;
+        if(e.Name=="c259_seed" || e.Name=="c259_manual")
+        {
+            user.CreationWizardOpen=false;user.CharacterCreationComplete=true;user.ApplyCharacterProfile();
+            user.Attributes.Dexterity=0;user.Attributes.Insight=0;user.Attributes.Strength=100;
+            user.DerivedStats.Recalculate(user.Attributes,user.CharacterProfile);
+            user.player.ConversationNPC=null;user.player.ConversationPC=null;
+            user.CurrentAir=100000;user.CurrentAnima=100000;
+            Manual=e.Name=="c259_manual";Pinned=true;Choice=0;Tier=Manual?1:3;
+            FixedLucidity=Manual?100:9.999;user.CurrentLucidity=FixedLucidity;
+            Equip(user);user.UpdateLucidityState();user.PersistCharacterState();
+            if(Manual)
+            {
+                user.bInvulnerable=true;
+                let dummy=Actor.Spawn("CaelumTrainingDummy",user.Pos+(256,0,0),NO_REPLACE);
+                if(dummy!=null){dummy.bInvulnerable=true;dummy.health=1000000;user.Angle=user.AngleTo(dummy);}
+                Show(user);
+            }
+            Console.Printf("CA259 DONE failures=%d seeded-tier=%d item-tier=%d equipped=%d",
+                user.WeaponModel.Tier==Tier && TestItem.Equipped?0:1,user.WeaponModel.Tier,TestItem.Tier,TestItem.Equipped);
+        }
+        if(e.Name=="c259_verify" || e.Name=="c259_verify_old")
+        {
+            bool legacy=e.Name=="c259_verify_old";
+            bool ok=TestItem!=null && TestItem.Owner==user && TestItem.Tier==3 && TestItem.Equipped
+                && user.WeaponModel.Tier==3 && user.WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_STAFF
+                && Abs(user.CurrentLucidity-FixedLucidity)<=CaelumConstants.MAXIMUM_LUCIDITY/CaelumConstants.LUCIDITY_FULL_RECOVERY_SECONDS/TICRATE+0.00001
+                && Abs(user.LucidityAccuracyMultiplier-(legacy?0.5:1.0))<0.00001
+                && Abs(user.WeaponModel.GetMaximumSpreadFor(CaelumConstants.WEAPON_TYPE_STAFF)-(legacy?20:30))<0.00001;
+            Console.Printf("CA259 %s save inventory-tier=%d model-tier=%d lucidity=%.4f multiplier=%.2f spread=%.1f",
+                ok?"PASS":"FAIL",TestItem!=null?TestItem.Tier:-1,user.WeaponModel.Tier,user.CurrentLucidity,
+                user.LucidityAccuracyMultiplier,user.WeaponModel.GetMaximumSpreadFor(CaelumConstants.WEAPON_TYPE_STAFF));
+            Console.Printf("CA259 DONE failures=%d",ok?0:1);
+        }
+        if(!Manual)return;
+        if(e.Name=="c259_lucidity")
+        {
+            static const double values[]={100,50,49.9,10,9.9};
+            LucidityChoice=(LucidityChoice+1)%5;FixedLucidity=values[LucidityChoice];Show(user);
+        }
+        if(e.Name=="c259_tier"){Tier=Tier%3+1;Equip(user);Show(user);}
+        if(e.Name=="c259_weapon"){Choice=(Choice+1)%9;Equip(user);Show(user);}
+    }
+}
+
+// Baseline-compatible saved fixture fields; native gameplay remains authoritative.
+class CA861HandProbe : EventHandler
+{
+    CaelumDomingoPilotPlayer User,DeadUser;
+    int Checks,Failures,GloveId,GloveType,GloveWear;
+    double GloveWeight;
+    bool Seeded;
+    void Check(bool okay,String label)
+    {Checks++;if(!okay)Failures++;Console.Printf("CA836 EDGE %s hands861: %s",okay?"PASS":"FAIL",label);}
+    void Select(CaelumEquipmentItem item)
+    {User.EquipmentSelectionKind=item.EquipmentKind;User.EquipmentSelectionItemId=item.ItemId;User.RefreshEquipmentSelectionPreview();}
+    void Setup()
+    {
+        User=CaelumDomingoPilotPlayer(players[0].mo);
+        Check(User!=null,"existing opt-in native player");if(User==null)return;
+        User.CharacterCreationComplete=true;User.CreationWizardOpen=false;
+        User.CharacterProfile.Race=CaelumConstants.RACE_HUMAN;User.CharacterProfile.Sex=CaelumConstants.SEX_MALE;
+        User.ApplyCharacterProfile();User.bInvulnerable=true;
+        let session=new('CA259Session');session.Choice=4;session.Tier=1;session.Equip(User);
+        let shield=CaelumEquipmentItem(Actor.Spawn('CaelumShieldPickup',User.Pos,NO_REPLACE));
+        shield.EquipmentKind=CaelumConstants.EQUIPMENT_KIND_SHIELD;shield.ItemType=CaelumConstants.SHIELD_TYPE_BUCKLER;shield.Tier=1;
+        shield.EquipmentSize=User.WeaponModel.Size;
+        shield.Durability=User.ShieldModel.GetMaximumDurabilityFor(shield.ItemType,shield.Tier,shield.EquipmentSize);
+        shield.UnitWeight=User.ShieldModel.GetWeightFor(shield.ItemType,shield.Tier,shield.EquipmentSize);
+        shield.PickupDataInitialized=true;shield.AcquisitionResolved=true;shield.AttachToOwner(User);User.EnsureEquipmentItemId(shield);
+        Select(shield);User.EquipSelectedNativeEquipment();
+        Check(shield.Equipped && User.ShieldModel.Equipped,"native sword/shield fixture equipped");
+        for(int slot=0;slot<CaelumConstants.ARMOR_SLOT_COUNT;slot++)
+        {
+            let armor=User.FindNativeEquipmentItemById(User.EquippedArmorItemId[slot]);
+            if(armor!=null){Select(armor);User.UnequipSelectedNativeEquipment();}
+            Check(User.ArmorModel.ArmorType[slot]==CaelumConstants.ARMOR_TYPE_BASE_CLOTHING,"unsupported armor removed through native equipment operation");
+        }
+        User.EquipmentMenuOpen=false;User.PersistCharacterState();User.GetPersistentCharacterState(true).ProfileCommitted=true;
+    }
+
+
+    void Seed()
+    {
+        Setup();if(User==null)return;
+        User.CharacterProfile.Sex=0;User.ApplyCharacterProfile();
+        let previous=CaelumClothing.Equipped(User,CaelumConstants.ARMOR_SLOT_HANDS);
+        if(previous!=null){Select(previous);User.UnequipSelectedNativeEquipment();}
+        if(CaelumClothingData.GP>=0)
+        {
+            int size=CaelumEquipmentRules.GetDefaultSizeForCharacterTier(User.CharacterProfile.GetSizeTier());
+            let item=CaelumClothing.Create(User,CaelumClothingData.GP,size);item.AttachToOwner(User);User.EnsureEquipmentItemId(item);
+            Select(item);User.EquipSelectedNativeEquipment();
+            GloveId=item.ItemId;GloveType=item.ItemType;GloveWear=item.Durability;GloveWeight=item.UnitWeight;
+        }
+        User.EquipmentMenuOpen=false;User.PersistCharacterState();Seeded=true;Loaded();
+    }
+    void Witness()
+    {
+        let witness=CA861HandWitness(User.FindInventory('CA861HandWitness'));
+        if(witness==null && Seeded)
+        {
+            witness=CA861HandWitness(Actor.Spawn('CA861HandWitness',User.Pos,NO_REPLACE));witness.AttachToOwner(User);
+            witness.Identity=GloveId;witness.Kind=GloveType;witness.Wear=GloveWear;witness.Weight=GloveWeight;
+        }
+        else if(witness!=null && !Seeded)
+        {
+            GloveId=witness.Identity;GloveType=witness.Kind;GloveWear=witness.Wear;GloveWeight=witness.Weight;Seeded=true;
+        }
+    }
+    void Loaded()
+    {
+        User=CaelumDomingoPilotPlayer(players[0].mo);
+        if(User!=null)Witness();
+        Check(User!=null && Seeded,"actual player and saved fixture survive");if(User==null)return;
+        let item=CaelumClothing.Equipped(User,CaelumConstants.ARMOR_SLOT_HANDS);
+        Check(GloveId==0?item==null:item!=null && item.Owner==User && item.ItemId==GloveId
+            && item.ItemType==GloveType && item.Durability==GloveWear && item.UnitWeight==GloveWeight,"native saved glove identity and data remain intact");
+        bool wanted=true && GloveId>0;
+        Check(CaelumAppearanceHands.HasGloves(User)==wanted,"current build selects its documented glove scope");
+        int expected=wanted?(User.CharacterProfile.Sex==1?36:-1):User.CharacterProfile.Sex==1?18:0;
+        Check(CaelumAppearanceHands.Variant(User)==expected,"saved sex and actual glove choose the expected existing art");
+        CaelumAppearance.Apply(User);Check(User.AppearanceHasGloves==wanted,"world and preview flag share actual selection");
+        // CACHE861
+    }
+    void Dead()
+    {
+        User=DeadUser!=null?DeadUser:CaelumDomingoPilotPlayer(players[0].mo);
+        Check(User!=null && User.health<=0,"native player remains dead");if(User==null)return;
+        Check(User.AppearanceDeathProfile!=null && User.AppearanceDeathGloves==(true && GloveId>0),"death snapshot retains the actual pre-death glove selection");
+        CaelumAppearance.Apply(User);Check(User.AppearanceHasGloves==User.AppearanceDeathGloves,"corpse uses saved appearance after equipment cleanup");
+    }
+    void Pose(int expected)
+    {
+        bool attacking=User.AttackAnimationDurationTics>0
+            && level.time-User.AttackAnimationStartTic<User.AttackAnimationDurationTics
+            && User.AttackAnimationItemId==User.ActiveWeaponItemId;
+        Check(expected==1?attacking:!attacking,"capture agrees with native attack timer");
+        Check(User.CombatBlockModeActive==(expected==2),"capture agrees with native block mode");
+        let hand=User.player.FindPSprite(52);
+        if(expected==2)
+        {
+            Check(hand==null,"native frontal shield guard clears the sword hand layer");
+            let shield=User.player.FindPSprite(CaelumFirstPersonShield.BODY_LAYER);
+            let left=User.player.FindPSprite(CaelumFirstPersonShield.HAND_LAYER);
+            Check(shield!=null && shield.CurState==CaelumFirstPersonShield.Pose("Buckler","Hold"),"native guard renders the actual buckler hold");
+            Check(left!=null && left.CurState==CaelumAppearanceHands.Resolve(User,"Shield_Hold",CaelumFirstPersonShield.Pose("Hand","Hold")),"native guard left hand uses actual current glove selection");
+            Check(User.HasActiveBlockSource(),"native guard retains its actual shield");
+        }
+        else Check(hand!=null && hand.CurState==CaelumAppearanceHands.Hand(User,0),"rendered sword hand uses actual current glove selection");
+        Console.Printf("CA861 POSE tic=%d expected=%d attack=%d block=%d variant=%d",level.time,expected,attacking,User.CombatBlockModeActive,CaelumAppearanceHands.Variant(User));
+    }
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name=='ca861seed')Seed();
+        if(e.Name=='ca861loaded')Loaded();
+        if(e.Name=='ca861pose')Pose(e.Args[0]);
+        if(e.Name=='ca861kill')
+        {DeadUser=User;User.bInvulnerable=false;User.DamageMobj(User,User,10000000,'CaelumPhysicalTest',DMG_FORCED,0);}
+        if(e.Name=='ca861dead')Dead();
+        if(e.Name=='ca861done')Console.Printf("CA836 EDGE_RESULT checks=%d failures=%d result=%s",Checks,Failures,Failures==0?"PASS":"FAIL");
+    }
+}
+class CA861HandWitness : Inventory
+{
+    int Identity,Kind,Wear;double Weight;
+    Default { Inventory.MaxAmount 1; Inventory.InterHubAmount 1; +INVENTORY.UNDROPPABLE -INVENTORY.INVBAR }
+}
+
+// Isolated ownership and presentation consumers; no production rule changes.
+class CA861ConsumerProbe : CA861HandProbe
+{
+    int OriginalEditSerial;
+    CaelumEquipmentItem MakeGlove(int kind)
+    {
+        int size=CaelumEquipmentRules.GetDefaultSizeForCharacterTier(User.CharacterProfile.GetSizeTier());
+        let item=CaelumClothing.Create(User,kind,size);item.AttachToOwner(User);User.EnsureEquipmentItemId(item);
+        Select(item);User.EquipSelectedNativeEquipment();return item;
+    }
+    void Consumers()
+    {
+        let first=CaelumClothing.Equipped(User,CaelumConstants.ARMOR_SLOT_HANDS);
+        let second=MakeGlove(CaelumClothingData.GW);
+        Check(first!=null && !first.Equipped && second.Equipped && CaelumAppearanceHands.HandLayer(User,true)==second,"native replacement binds the new owned glove");
+        Select(second);CaelumInventoryService.DropSelectedNativeInventoryItem(User);
+        Check(second==null || second.bDestroyed || second.Owner!=User,"native drop releases the actual worn object");
+        Check(!CaelumAppearanceHands.HasGloves(User),"native drop removes glove presentation");
+        Select(first);User.EquipSelectedNativeEquipment();
+        Check(CaelumAppearanceHands.HandLayer(User,true)==first,"retained owned glove can be equipped after drop");
+
+        // A same-ID replacement requires the existing native inventory event.
+        int identity=first.ItemId,kind=first.ItemType;
+        User.RemoveInventory(first);first.Destroy();
+        let replacement=CaelumClothing.Create(User,kind,CaelumEquipmentRules.GetDefaultSizeForCharacterTier(User.CharacterProfile.GetSizeTier()));
+        replacement.ItemId=identity;replacement.Equipped=true;replacement.AttachToOwner(User);
+        User.OnNativeInventoryChanged();
+        Check(CaelumAppearanceHands.HandLayer(User,true)==replacement,"inventory event rebinds a replacement object with the same saved ID");
+        let record=User.GetPersistentCharacterState(false);
+        let chest=CaelumStashChest(Actor.Spawn('CaelumStashChest',User.Pos+(64,0,0),NO_REPLACE));chest.EnsureStorage();
+        User.RemoveInventory(record);record.AttachToOwner(chest);
+        Check(!CaelumAppearanceHands.HasGloves(User),"cached foreign persistent record cannot supply a hand ID");
+        chest.RemoveInventory(record);record.AttachToOwner(User);User.OnNativeInventoryChanged();
+        Check(CaelumAppearanceHands.HandLayer(User,true)==replacement,"restored owned record resolves its actual glove");
+
+        let armor=CaelumEquipmentItem(Actor.Spawn('CaelumArmorPickup',User.Pos,NO_REPLACE));
+        armor.EquipmentKind=CaelumConstants.EQUIPMENT_KIND_ARMOR;armor.ItemType=CaelumConstants.ARMOR_TYPE_LIGHT;
+        armor.ArmorSlot=CaelumConstants.ARMOR_SLOT_HANDS;armor.Tier=1;armor.EquipmentSize=replacement.EquipmentSize;
+        armor.Durability=User.ArmorModel.GetMaximumDurabilityFor(armor.ItemType,armor.Tier,armor.EquipmentSize);
+        armor.UnitWeight=User.ArmorModel.GetWeightFor(armor.ArmorSlot,armor.ItemType,armor.Tier,armor.EquipmentSize);
+        armor.PickupDataInitialized=true;armor.AcquisitionResolved=true;armor.AttachToOwner(User);User.EnsureEquipmentItemId(armor);
+        Select(armor);User.EquipSelectedNativeEquipment();
+        Check(CaelumAppearanceHands.HandLayer(User,false)==armor && CaelumAppearanceHands.HandLayer(User,true)==replacement,"actual armor and clothing coexist as separate owned layers");
+        armor.Durability=0;User.ArmorModel.Durability[CaelumConstants.ARMOR_SLOT_HANDS]=0;
+        Check(CaelumAppearanceHands.HasGloves(User),"broken but worn outer armor remains visible over clothing");
+        Select(armor);User.UnequipSelectedNativeEquipment();
+        Check(CaelumAppearanceHands.HandLayer(User,false)==null && CaelumAppearanceHands.HandLayer(User,true)==replacement,"removing outer armor retains actual clothing gloves");
+        User.EquipmentMenuOpen=false;
+
+        Check(CaelumTarotMoon.Start(User,TICRATE),"native Moon initialization creates local fixture clones");
+        let binding=CaelumTarotMoon.View(User);
+        for(int i=0;i<2;i++)Check(binding!=null && binding.Bodies[i]!=null && binding.Bodies[i].Gloves,"both native Moon clones snapshot the clothing glove selection");
+        Select(replacement);User.UnequipSelectedNativeEquipment();
+        Check(!CaelumAppearanceHands.HasGloves(User),"caster becomes bare through native unequip");
+        for(int i=0;i<2;i++)Check(binding!=null && binding.Bodies[i]!=null && binding.Bodies[i].Gloves,"existing clone retains its original private glove snapshot");
+        if(binding!=null)binding.End();
+        Check(CaelumTarotMoon.Start(User,TICRATE),"bare native Moon initialization succeeds");binding=CaelumTarotMoon.View(User);
+        for(int i=0;i<2;i++)Check(binding!=null && binding.Bodies[i]!=null && !binding.Bodies[i].Gloves,"new clone snapshots actual bare hands");
+        if(binding!=null)binding.End();
+        Select(replacement);User.EquipSelectedNativeEquipment();User.EquipmentMenuOpen=false;
+        CaelumAppearance.Apply(User);OriginalEditSerial=User.CharacterProfile.AppearanceEditSerial;
+    }
+    override void InterfaceProcess(ConsoleEvent e)
+    {
+        if(e.Name=='ca861openui')Menu.SetMenu('CaelumAppearanceMenu');
+        if(e.Name=='ca861inspectui')
+        {
+            let menu=CaelumAppearanceMenu(Menu.GetCurrentMenu());
+            bool okay=menu!=null && menu.Preview!=null && menu.Preview.Gloved==(e.Args[0]!=0)
+                && menu.EditSubject==players[consoleplayer].mo && menu.Preview.Sex==0;
+            EventHandler.SendNetworkEvent('ca861previewresult',okay?1:0,e.Args[0]);
+        }
+        if(e.Name=='ca861closeui' && Menu.GetCurrentMenu()!=null)Menu.GetCurrentMenu().Close();
+    }
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        Super.NetworkProcess(e);
+        if(e.Name=='ca861consumers')Consumers();
+        if(e.Name=='ca861open')EventHandler.SendInterfaceEvent(0,'ca861openui');
+        if(e.Name=='ca861inspect')EventHandler.SendInterfaceEvent(0,'ca861inspectui',e.Args[0]);
+        if(e.Name=='ca861previewresult')Check(e.Args[0]!=0,"actual appearance menu preview matches worn glove and sex");
+        if(e.Name=='ca861bare')
+        {
+            let glove=CaelumClothing.Equipped(User,CaelumConstants.ARMOR_SLOT_HANDS);Select(glove);User.UnequipSelectedNativeEquipment();
+            User.EquipmentMenuOpen=false;CaelumAppearance.Apply(User);
+        }
+        if(e.Name=='ca861close')
+        {
+            EventHandler.SendInterfaceEvent(0,'ca861closeui');
+            Check(User.CharacterProfile.AppearanceEditSerial==OriginalEditSerial,"preview inspection does not commit appearance changes");
+        }
+    }
+}
