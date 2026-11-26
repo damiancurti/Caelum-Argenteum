@@ -1,6 +1,64 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.19** - 2026-11-13.
+Documentation version: **5.17.20** - 2026-11-13.
+
+## 5.17.20 - Coal and raw-metal material drops (#684, parent #647)
+
+Six candidate closed rock clusters replace only M061..M066/A world presentation
+on CaelumMaterialPickup: coal, raw copper, tin, iron, silver and gold. Canonical single-tier stacks reuse each type's original icon, identity, native Scale 0.25,
+Radius/Height, weight and rules. Coal red details remain painted, non-emissive
+artwork and do not add heat or a fuel rule. Existing inventory icons are intact.
+
+The six unchanged owned 128px PNGs are projected over separate closed faceted
+pieces. Each protruding rock has an inset opaque undercoat sampled from the same
+image; a recessed core joins the pieces and uses the largest opaque rectangular
+source crop. No PNG pixel is edited. All 42 rock/core intersections have a
+positive-area cross-section witness; all 90 parts are closed and outward. DESIGN.json retains art
+coordinates, depth profiles and source hashes; each rock/undercoat has an editable
+OBJ group. Portable MTL/PNG sources accompany the short native shader aliases.
+No image generation, raster editing or external mesh is used in this slice.
+These are prop components, not runtime interchangeable wearable equipment.
+
+The shared gem exporter and validator now accept a separate family while their
+default native gem output stays byte-identical (29 resources). New geometry uses
+the existing closed-part builder and MD3 writer. Rebuild with python
+assets/generators/generate_inventory_ores_models.py --output build/ore-models
+--install. Source/provenance/export records are in
+assets/source/art/inventory_models_647/ores. Final complete-package compatibility passes 875 native checks: 175 each for
+original sprites, old-save/model load, fresh models, reload and reverse load
+without models. Eighteen normalization probes and six canonical stacks retain
+identity, native physical properties, floor contact, 2+3 split quantities,
+merged 5-unit stacks, provenance and contamination-lot boundaries; direct
+Box-weight and quest-drop guards remain intact. All 18,287 package entries
+match src exactly. Only six models, six original-pixel aliases, their MODELDEF
+binding and two release diagnostics differ from #682.
+
+One sequential six-object 700-tic sprite/model pair records 916.75/902.12
+queue presentations/s, p95 1.2602/1.2812 ms and p99 1.5619/1.5864 ms.
+Simulation means are 28.5718/28.5726 ms per tic. Windows 11 Pro 26200, Ryzen 9
+5950X, 32 GB, RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720, uncapped/vsync off,
+background unpaused, 5% audio. Both cohorts visibly contain all six types.
+This is isolated queue timing, not GPU/display timing, repeatability or a
+campaign/crowd budget. Evidence: assets/validation_v5_17_20/evidence/SUMMARY.json.
+Runtime SHA-256: 73f84eafbaf8c67d49948a1a9871ddb03df15a75f59b59e997846e658cbafdeb.
+Static closed-volume/binding checks pass. Six models
+contain 4,680 source vertices and 6,000 triangles on twelve native surfaces.
+Two final exports reproduce 22 files. Front/oblique/rear review covers all six
+materials; source resolution and UV seams remain art-review limitations.
+
+An inherited gem fixture initially assumed distinct tiers and failed: these six
+raw materials belong to no tiered family and normalize requested tiers to one.
+The corrected fixture probes all eighteen requested type/tier combinations and
+tests six canonical stacks. No production tier rule was changed (CA-KP-237).
+The first geometry candidate also had disconnected fragments; preserved later
+iterations refine a recessed connected core without covering the original faces.
+
+Use python assets/validation_v5_17_20/run_ore_drops.py --runtime
+build/caelum_argenteum_dev.pk3 --output build/ore-author-01 --interactive.
+F1/F2/F3 overview/front/side; F5 player view, F8 rear; F9 selects the next type
+and F10 rotates its close-up. CA684-ORES-01 retains author review of silhouette,
+material projection, depth, floor contact and ordinary pickup/drop behavior.
+Other inventory, character/modular equipment and campaign work remain open.
 
 ## 5.17.19 - Pampa/NOA materials and regional beast-men gallery (#682)
 

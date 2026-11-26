@@ -1,0 +1,380 @@
+[
+  {
+    "material": "coal",
+    "part": "rock_0",
+    "shared_interior_point": [
+      69.21180357477887,
+      0,
+      -47.22832427682426
+    ]
+  },
+  {
+    "material": "coal",
+    "part": "rock_1",
+    "shared_interior_point": [
+      42.82287155129045,
+      0,
+      -68.39870479108012
+    ]
+  },
+  {
+    "material": "coal",
+    "part": "rock_2",
+    "shared_interior_point": [
+      87.2560720197486,
+      0,
+      -68.97287085239556
+    ]
+  },
+  {
+    "material": "coal",
+    "part": "rock_3",
+    "shared_interior_point": [
+      62.02832333912113,
+      0,
+      -85.51289872178182
+    ]
+  },
+  {
+    "material": "coal",
+    "part": "rock_4",
+    "shared_interior_point": [
+      32.849887157544096,
+      0,
+      -82.19614241438225
+    ]
+  },
+  {
+    "material": "coal",
+    "part": "rock_5",
+    "shared_interior_point": [
+      89.92413469786933,
+      0,
+      -85.23031717989167
+    ]
+  },
+  {
+    "material": "coal",
+    "part": "rock_6",
+    "shared_interior_point": [
+      44.07727485161603,
+      5.1,
+      -93.38891525167443
+    ]
+  },
+  {
+    "material": "raw_copper",
+    "part": "rock_0",
+    "shared_interior_point": [
+      55.93683702988415,
+      0,
+      -42.92609355021662
+    ]
+  },
+  {
+    "material": "raw_copper",
+    "part": "rock_1",
+    "shared_interior_point": [
+      39.44331843224014,
+      0,
+      -63.230290656004485
+    ]
+  },
+  {
+    "material": "raw_copper",
+    "part": "rock_2",
+    "shared_interior_point": [
+      83.42217054415214,
+      0,
+      -62.38142223335142
+    ]
+  },
+  {
+    "material": "raw_copper",
+    "part": "rock_3",
+    "shared_interior_point": [
+      55.14636478520502,
+      0,
+      -90.2424095473042
+    ]
+  },
+  {
+    "material": "raw_copper",
+    "part": "rock_4",
+    "shared_interior_point": [
+      87.71304005887008,
+      0,
+      -86.99076374774783
+    ]
+  },
+  {
+    "material": "raw_copper",
+    "part": "rock_5",
+    "shared_interior_point": [
+      25.208187392534494,
+      6.15,
+      -88.15583757426728
+    ]
+  },
+  {
+    "material": "raw_copper",
+    "part": "rock_6",
+    "shared_interior_point": [
+      68.48628127624497,
+      5.449999999999999,
+      -104.00615555062772
+    ]
+  },
+  {
+    "material": "raw_tin",
+    "part": "rock_0",
+    "shared_interior_point": [
+      76.88961070448454,
+      0,
+      -42.432455458491916
+    ]
+  },
+  {
+    "material": "raw_tin",
+    "part": "rock_1",
+    "shared_interior_point": [
+      61.982185278515054,
+      0,
+      -56.42637266716268
+    ]
+  },
+  {
+    "material": "raw_tin",
+    "part": "rock_2",
+    "shared_interior_point": [
+      36.8750433975626,
+      0,
+      -70.82560507642673
+    ]
+  },
+  {
+    "material": "raw_tin",
+    "part": "rock_3",
+    "shared_interior_point": [
+      78.24773009297776,
+      0,
+      -84.57477020600773
+    ]
+  },
+  {
+    "material": "raw_tin",
+    "part": "rock_4",
+    "shared_interior_point": [
+      45.42810358603243,
+      0,
+      -93.55930768369127
+    ]
+  },
+  {
+    "material": "raw_tin",
+    "part": "rock_5",
+    "shared_interior_point": [
+      92.46918634485255,
+      0,
+      -84.788743648707
+    ]
+  },
+  {
+    "material": "raw_tin",
+    "part": "rock_6",
+    "shared_interior_point": [
+      62.914302961001766,
+      5.449999999999999,
+      -105.06899366666666
+    ]
+  },
+  {
+    "material": "raw_iron",
+    "part": "rock_0",
+    "shared_interior_point": [
+      72.93825786252714,
+      0,
+      -43.285735585659815
+    ]
+  },
+  {
+    "material": "raw_iron",
+    "part": "rock_1",
+    "shared_interior_point": [
+      52.29301575926617,
+      0,
+      -60.56102536765015
+    ]
+  },
+  {
+    "material": "raw_iron",
+    "part": "rock_2",
+    "shared_interior_point": [
+      87.02938684094681,
+      0,
+      -67.69562349737386
+    ]
+  },
+  {
+    "material": "raw_iron",
+    "part": "rock_3",
+    "shared_interior_point": [
+      36.78943798915449,
+      0,
+      -83.09831061673043
+    ]
+  },
+  {
+    "material": "raw_iron",
+    "part": "rock_4",
+    "shared_interior_point": [
+      67.30609581511409,
+      0,
+      -87.03322198845186
+    ]
+  },
+  {
+    "material": "raw_iron",
+    "part": "rock_5",
+    "shared_interior_point": [
+      91.4695548593835,
+      0,
+      -83.50874793880116
+    ]
+  },
+  {
+    "material": "raw_iron",
+    "part": "rock_6",
+    "shared_interior_point": [
+      51.27223412727643,
+      1.25,
+      -95.92002867644243
+    ]
+  },
+  {
+    "material": "raw_silver",
+    "part": "rock_0",
+    "shared_interior_point": [
+      75.31907977950395,
+      0,
+      -41.64312691512697
+    ]
+  },
+  {
+    "material": "raw_silver",
+    "part": "rock_1",
+    "shared_interior_point": [
+      57.14543365322472,
+      0,
+      -59.98024772315684
+    ]
+  },
+  {
+    "material": "raw_silver",
+    "part": "rock_2",
+    "shared_interior_point": [
+      34.11655982227399,
+      0,
+      -72.00391680743174
+    ]
+  },
+  {
+    "material": "raw_silver",
+    "part": "rock_3",
+    "shared_interior_point": [
+      79.90379811194593,
+      0,
+      -85.20183198229405
+    ]
+  },
+  {
+    "material": "raw_silver",
+    "part": "rock_4",
+    "shared_interior_point": [
+      48.98132894474758,
+      0,
+      -89.10214954188874
+    ]
+  },
+  {
+    "material": "raw_silver",
+    "part": "rock_5",
+    "shared_interior_point": [
+      92.1537249023867,
+      0,
+      -87.7715050848572
+    ]
+  },
+  {
+    "material": "raw_silver",
+    "part": "rock_6",
+    "shared_interior_point": [
+      70.56593319455598,
+      5.8,
+      -105.29011386737254
+    ]
+  },
+  {
+    "material": "raw_gold",
+    "part": "rock_0",
+    "shared_interior_point": [
+      71.7502476117666,
+      0,
+      -44.512540407785494
+    ]
+  },
+  {
+    "material": "raw_gold",
+    "part": "rock_1",
+    "shared_interior_point": [
+      49.43262060925406,
+      0,
+      -57.50585904634678
+    ]
+  },
+  {
+    "material": "raw_gold",
+    "part": "rock_2",
+    "shared_interior_point": [
+      87.13893133719775,
+      0,
+      -72.93516996076174
+    ]
+  },
+  {
+    "material": "raw_gold",
+    "part": "rock_3",
+    "shared_interior_point": [
+      35.03910357145516,
+      0,
+      -79.9452211378806
+    ]
+  },
+  {
+    "material": "raw_gold",
+    "part": "rock_4",
+    "shared_interior_point": [
+      60.53346104869113,
+      0,
+      -88.8999046946179
+    ]
+  },
+  {
+    "material": "raw_gold",
+    "part": "rock_5",
+    "shared_interior_point": [
+      93.95085467581723,
+      0,
+      -83.74033738447048
+    ]
+  },
+  {
+    "material": "raw_gold",
+    "part": "rock_6",
+    "shared_interior_point": [
+      50.810894414639634,
+      5.449999999999999,
+      -98.95309588577328
+    ]
+  }
+]

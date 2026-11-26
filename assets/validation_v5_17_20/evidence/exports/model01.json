@@ -1,0 +1,373 @@
+{
+  "schema_revision": 1,
+  "issue": 684,
+  "parent_issue": 647,
+  "status": "candidate_native_inspection_pending",
+  "variants": {
+    "coal": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "rock_0": 12782.13031238975,
+        "rock_0_undercoat": 11665.905214611155,
+        "rock_1": 11503.914194333243,
+        "rock_1_undercoat": 10499.311885847159,
+        "rock_2": 11503.914055579166,
+        "rock_2_undercoat": 10499.311754273303,
+        "rock_3": 19072.281924198953,
+        "rock_3_undercoat": 17406.756761827197,
+        "rock_4": 2466.7264069406556,
+        "rock_4_undercoat": 2251.3145873170047,
+        "rock_5": 3935.551351349043,
+        "rock_5_undercoat": 3591.871453738485,
+        "rock_6": 1614.5848028027299,
+        "rock_6_undercoat": 1473.5879540565825
+      },
+      "closed_outward_components": 14,
+      "vertices": 616,
+      "triangles": 784,
+      "surfaces": [
+        {
+          "material": "coal",
+          "vertices": 616,
+          "triangles": 784
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -50.502609923904245,
+            -28.751635562921283,
+            0.0
+          ],
+          "max": [
+            46.06659461417851,
+            14.908255477070295,
+            87.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        20,
+        120,
+        107
+      ],
+      "reference_sprite_scale": [
+        0.25,
+        0.25
+      ],
+      "uniform_fit": 1.0648753912193067
+    },
+    "raw_copper": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "rock_0": 14060.344184770389,
+        "rock_0_undercoat": 12832.496524712626,
+        "rock_1": 16482.219440337027,
+        "rock_1_undercoat": 15042.87666619734,
+        "rock_2": 28883.12934701683,
+        "rock_2_undercoat": 26360.852306559485,
+        "rock_3": 24487.87123223169,
+        "rock_3_undercoat": 22349.418907924533,
+        "rock_4": 6475.158606278305,
+        "rock_4_undercoat": 5909.702429601121,
+        "rock_5": 3632.8158211012383,
+        "rock_5_undercoat": 3315.5729159534726,
+        "rock_6": 1648.221884106347,
+        "rock_6_undercoat": 1504.287610119969
+      },
+      "closed_outward_components": 14,
+      "vertices": 616,
+      "triangles": 784,
+      "surfaces": [
+        {
+          "material": "raw_copper",
+          "vertices": 616,
+          "triangles": 784
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -57.83713632118096,
+            -29.914910980539286,
+            0.0
+          ],
+          "max": [
+            44.93856389525015,
+            19.231014201775256,
+            104.00000000000001
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        12,
+        120,
+        116
+      ],
+      "reference_sprite_scale": [
+        0.25,
+        0.25
+      ],
+      "uniform_fit": 1.068389677876403
+    },
+    "raw_tin": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "rock_0": 12378.481717270233,
+        "rock_0_undercoat": 11297.506036359913,
+        "rock_1": 27851.590972969756,
+        "rock_1_undercoat": 25419.39507725444,
+        "rock_2": 14833.996317335319,
+        "rock_2_undercoat": 13538.587933647577,
+        "rock_3": 25160.61479330887,
+        "rock_3_undercoat": 22963.413780437124,
+        "rock_4": 7215.175079618892,
+        "rock_4_undercoat": 6585.095488913377,
+        "rock_5": 5466.042921218381,
+        "rock_5_undercoat": 4988.709788797015,
+        "rock_6": 1883.6814532218468,
+        "rock_6_undercoat": 1719.1852054669246
+      },
+      "closed_outward_components": 14,
+      "vertices": 616,
+      "triangles": 784,
+      "surfaces": [
+        {
+          "material": "raw_tin",
+          "vertices": 616,
+          "triangles": 784
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -46.9444623248853,
+            -29.14997475403972,
+            0.0
+          ],
+          "max": [
+            49.7665026129397,
+            18.739269484739822,
+            106.00000000000001
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        11,
+        120,
+        117
+      ],
+      "reference_sprite_scale": [
+        0.25,
+        0.25
+      ],
+      "uniform_fit": 1.04107052692999
+    },
+    "raw_iron": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "rock_0": 14699.449762535507,
+        "rock_0_undercoat": 13415.790908221852,
+        "rock_1": 25227.890147794413,
+        "rock_1_undercoat": 23024.814200828034,
+        "rock_2": 23680.576277361077,
+        "rock_2_undercoat": 21612.622585669153,
+        "rock_3": 16482.223053525162,
+        "rock_3_undercoat": 15042.87995105548,
+        "rock_4": 24016.95065093356,
+        "rock_4_undercoat": 21919.62240227322,
+        "rock_5": 5466.0427814803625,
+        "rock_5_undercoat": 4988.7096678942735,
+        "rock_6": 1648.2221547256727,
+        "rock_6_undercoat": 1504.2878586260833
+      },
+      "closed_outward_components": 14,
+      "vertices": 616,
+      "triangles": 784,
+      "surfaces": [
+        {
+          "material": "raw_iron",
+          "vertices": 616,
+          "triangles": 784
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -53.16501957659564,
+            -30.184427988601023,
+            0.0
+          ],
+          "max": [
+            47.68328806012647,
+            17.69431985538681,
+            101.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        13,
+        120,
+        114
+      ],
+      "reference_sprite_scale": [
+        0.25,
+        0.25
+      ],
+      "uniform_fit": 1.040842344434518
+    },
+    "raw_silver": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "rock_0": 14060.343392074714,
+        "rock_0_undercoat": 12832.495787371356,
+        "rock_1": 25788.51087748264,
+        "rock_1_undercoat": 23536.47758682267,
+        "rock_2": 14912.481578984038,
+        "rock_2_undercoat": 13610.219305414445,
+        "rock_3": 24112.25326727103,
+        "rock_3_undercoat": 22006.602513604532,
+        "rock_4": 17575.430337310536,
+        "rock_4_undercoat": 16040.620723598842,
+        "rock_5": 5101.639650151296,
+        "rock_5_undercoat": 4656.1287648263915,
+        "rock_6": 2152.7802236614816,
+        "rock_6_undercoat": 1964.7843812873589
+      },
+      "closed_outward_components": 14,
+      "vertices": 616,
+      "triangles": 784,
+      "surfaces": [
+        {
+          "material": "raw_silver",
+          "vertices": 616,
+          "triangles": 784
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -56.396158975674815,
+            -29.990624271332223,
+            0.0
+          ],
+          "max": [
+            47.2043325427542,
+            16.54655132211433,
+            106.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        11,
+        120,
+        117
+      ],
+      "reference_sprite_scale": [
+        0.25,
+        0.25
+      ],
+      "uniform_fit": 1.0341594576321456
+    },
+    "raw_gold": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "rock_0": 13320.323945357422,
+        "rock_0_undercoat": 12157.100011677481,
+        "rock_1": 22200.543408285394,
+        "rock_1_undercoat": 20261.83654965196,
+        "rock_2": 22693.889224293842,
+        "rock_2_undercoat": 20712.099949524014,
+        "rock_3": 16482.2220124891,
+        "rock_3_undercoat": 15042.879009528042,
+        "rock_4": 25017.654534154797,
+        "rock_4_undercoat": 22832.93782443517,
+        "rock_5": 4737.237769115472,
+        "rock_5_undercoat": 4323.549006695389,
+        "rock_6": 1510.8700360734392,
+        "rock_6_undercoat": 1378.9302897842836
+      },
+      "closed_outward_components": 14,
+      "vertices": 616,
+      "triangles": 784,
+      "surfaces": [
+        {
+          "material": "raw_gold",
+          "vertices": 616,
+          "triangles": 784
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -53.03489569941254,
+            -28.496980794017595,
+            0.0
+          ],
+          "max": [
+            46.48391148903275,
+            17.68778118249368,
+            96.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        16,
+        120,
+        112
+      ],
+      "reference_sprite_scale": [
+        0.25,
+        0.25
+      ],
+      "uniform_fit": 0.9826545101385378
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "537ee1d9e2c8ab465cf266c7921edfa05f4943f9d0b8af700796f4479438864a",
+    "PROVENANCE.json": "1ff515dddf89631eb17c291f047b65fc5df42e35eebf60ef96dacfb9d46561c7"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/materials/ca_material_coal.png": "c7df4776a41daa7ca62753b12ea48c7826b8d3002b6dc9946b154d1faccbaa1a",
+    "src/graphics/caelum/icons/materials/ca_material_raw_copper.png": "ac7392bfa8e856df417f06d66e23efc7e7ed2d6229f35f5aec0c3d581e2c028d",
+    "src/graphics/caelum/icons/materials/ca_material_raw_tin.png": "314ccf34e9bbd5d3c91a6be3092408a243c4cd6e1e0751f6e3865a6f62706337",
+    "src/graphics/caelum/icons/materials/ca_material_raw_iron.png": "c3f1fd7c4283375af675268a331b95a9f785f46590b0126b2fc6be80a2a0ea83",
+    "src/graphics/caelum/icons/materials/ca_material_raw_silver.png": "80ce77812414f4f8c6a9fa86cc28d59e3b935f1546c181174c6859594fd5e54c",
+    "src/graphics/caelum/icons/materials/ca_material_raw_gold.png": "d950367b679dd570040a5212f32466b2c326790d4207b7fb292b14758e07634e"
+  },
+  "generator_sha256": {
+    "generate_inventory_ores_models.py": "9a07583815697cb5f7195d53df8f15bfbc414a1816ab887626895be01a8daf95",
+    "generate_inventory_gems_models.py": "4e7d26672028353d503beed2087411e2c3720dda839e975c6788f8f69cc7e448",
+    "generate_inventory_jewelry_models.py": "2d2942e5c68ae1f5311377cbc85ec153347e4e569acf7468d56bee3c94620c3a",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2"
+  },
+  "sha256": {
+    "models/caelum/inventory/ores/coal.png": "c7df4776a41daa7ca62753b12ea48c7826b8d3002b6dc9946b154d1faccbaa1a",
+    "models/caelum/inventory/ores/raw_copper.png": "ac7392bfa8e856df417f06d66e23efc7e7ed2d6229f35f5aec0c3d581e2c028d",
+    "models/caelum/inventory/ores/raw_tin.png": "314ccf34e9bbd5d3c91a6be3092408a243c4cd6e1e0751f6e3865a6f62706337",
+    "models/caelum/inventory/ores/raw_iron.png": "c3f1fd7c4283375af675268a331b95a9f785f46590b0126b2fc6be80a2a0ea83",
+    "models/caelum/inventory/ores/raw_silver.png": "80ce77812414f4f8c6a9fa86cc28d59e3b935f1546c181174c6859594fd5e54c",
+    "models/caelum/inventory/ores/raw_gold.png": "d950367b679dd570040a5212f32466b2c326790d4207b7fb292b14758e07634e",
+    "models/caelum/inventory/ores/coal.md3": "1f0d47204c76942925a215fcd2d20a532806baca1c63ba9e6135ea6d40c35e55",
+    "editable/coal.obj": "81ed28e8dc6ee14ac286d2a8c4b80208f6c000889444840216932a8cbe36b1b1",
+    "models/caelum/inventory/ores/raw_copper.md3": "940fe4543e22c13fdb93482c4c92e9749565d65db82bc57c68d43b4126a93720",
+    "editable/raw_copper.obj": "412cf81693379bd04c650dcb5985e7cb848ab3d9cffe77ae178a1b248eaf1b46",
+    "models/caelum/inventory/ores/raw_tin.md3": "3445d9d4b06a94a077f5f3d887f9e230930665a0b1171d7da69628524fa11bd1",
+    "editable/raw_tin.obj": "6e765ec45ea959da1039a390a49f663f3c88ff120657516816da9a4f82270180",
+    "models/caelum/inventory/ores/raw_iron.md3": "d7ef09e65a4cca1caebb4446bded17052fe26f63d1afbddec0e61b456e4348d4",
+    "editable/raw_iron.obj": "46277ef85cff4a3adcbd6abc0216625395afa28ca1628512946d0cf07b892b58",
+    "models/caelum/inventory/ores/raw_silver.md3": "580b6abeb9d48e69456cf04f37c35c7b9c87ec69381e9106d21e1764a3bc1b5d",
+    "editable/raw_silver.obj": "ea508c1ed3c9b397bf46f7758a7f6ba49b09a703945edbe334c40b74b9825b77",
+    "models/caelum/inventory/ores/raw_gold.md3": "c26c27dd5e4f7cc533f566a6b5696a376bee169d80a72a86da161599de7195a4",
+    "editable/raw_gold.obj": "7c4d5e54a1321ac7fb72b74d6444b608bd6061faff6bb7a847623e3bbf22e1bf",
+    "editable/ores.mtl": "85778e4e0eecee59ef72912da565370f6e9e75fdb77c65b943d5963771556524",
+    "caelum/data/inventory_ores.modeldef": "a395133da41bf2120524952546cf7af5cdb2d1c59e0497da1a5c0b93a181ace6"
+  }
+}

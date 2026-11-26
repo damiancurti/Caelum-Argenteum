@@ -1,6 +1,15 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.19** - 2026-11-13.
+Documentation version: **5.17.20** - 2026-11-13.
+
+## 5.17.20 - Six raw-material drop models (#684)
+
+Coal61 and raw copper62/tin63/iron64/silver65/gold66 receive visual world models
+on their existing M061..M066/A states. Canonical single-tier stacks keep native
+material identity, quantities, weight, prices, crafting, Box, contamination,
+provenance and collision. Coal paint does not define heat or emitted light.
+No new actor fields or save migration are introduced. Native compatibility
+and author art acceptance remain separate evidence levels.
 
 ## 5.17.19 - Isolated regional beast-men inspection (#682)
 

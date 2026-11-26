@@ -4,6 +4,24 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-237 - Derive inventory test cases from native tier normalization
+
+Status/evidence: ENGINE-VERIFIED isolated fixture correction, #684, 2026-11-13.
+CaelumMaterialRules.HasTier uses material-family membership. Coal and raw
+copper/tin/iron/silver/gold (61..66) have no tiered family; requested tiers 1..3
+all resolve to tier 1. Reusing the gem fixture's distinct-tier matrix therefore
+merges quantities into existing native stacks and invalidates its ownership,
+quantity and contamination-lot expectations. The first run preserves 78 native
+failures plus its exact-assertion-count mismatch; it is not a gameplay regression.
+
+The corrected fixture explicitly verifies all eighteen requested-tier identities,
+then tests six canonical stacks through the original pickup/split/toss methods.
+A visual run passes 175 assertions; final five-phase continuity passes 875. Existing material rules, quantities, surface
+lots and provenance remain authoritative. See the #684 evidence and
+CaelumSpecialItems.zs ResolveTier. Derive expected identities before selecting
+fixture counts; a Cartesian type/tier list is not proof of distinct native stacks.
+This isolated fixture does not establish normal-menu or author art acceptance.
+
 ## CA-KP-236 - Diagnostic simplification is not an AI off switch
 
 Status/evidence: ENGINE-VERIFIED isolated gallery failure and correction, #682,

@@ -1,0 +1,7 @@
+{
+  "issue": 684,
+  "ownership": "Six original Caelum Argenteum material icons, preserved byte-for-byte.",
+  "creation": "New deterministic closed geometry; no external mesh, bitmap generation or raster editing.",
+  "editable_sources": "DESIGN.json and grouped OBJ/MTL with unchanged portable texture copies.",
+  "limits": "Low-resolution painted detail is projected onto candidate volumes; no new mineral composition, thermal behavior or author art acceptance."
+}
