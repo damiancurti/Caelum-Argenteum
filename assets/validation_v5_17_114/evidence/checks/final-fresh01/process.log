@@ -1,0 +1,89 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-21 04:49:38
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue871-index01.pk3, 18767 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue871-index-final-fresh01/checks.pk3, 6 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2482.20 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+CA871_COMMANDS_START
+
+----------------------------------------
+
+MAP01 - Surface index checks
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA871 GROW tiles=1 before=0 after=1024 ms=0.003500
+CA871 GROW tiles=4097 before=1024 after=2048 ms=0.045100
+CA871 GROW tiles=8193 before=2048 after=4096 ms=0.090300
+CA871 GROW tiles=16385 before=4096 after=8192 ms=0.180700
+CA871 GROW tiles=32769 before=8192 after=16384 ms=0.878100
+CA871 VERIFY label=fresh_dataset tiles=62253 buckets=16384 mismatches=0
+CA871 FIRST_FIND label=fresh_dataset tiles=62253 before=16384 after=16384 ms=0.000300
+CA871 POPULATE growths=5
+CA871 VERIFY label=negative_and_extreme_keys tiles=62265 buckets=16384 mismatches=0
+CA871 FIRST_FIND label=negative_and_extreme_keys tiles=62265 before=16384 after=16384 ms=0.001000
+CA871 VERIFY label=explicit_index_rebuild tiles=62265 buckets=16384 mismatches=0
+CA871 FIRST_FIND label=explicit_index_rebuild tiles=62265 before=16384 after=16384 ms=0.000900
+CA871 VERIFY label=before_benchmark tiles=62265 buckets=16384 mismatches=0
+CA871 FIRST_FIND label=before_benchmark tiles=62265 before=16384 after=16384 ms=0.000600
+CA871 ROUND i=0 calls=62265 original_ms=53.441600 candidate_ms=11.577200
+CA871 ROUND i=1 calls=62265 original_ms=46.359100 candidate_ms=6.624200
+CA871 ROUND i=2 calls=62265 original_ms=45.190700 candidate_ms=12.236500
+CA871 ROUND i=3 calls=62265 original_ms=48.629600 candidate_ms=6.773700
+CA871 ROUND i=4 calls=62265 original_ms=47.723700 candidate_ms=11.970500
+CA871 ROUND i=5 calls=62265 original_ms=46.487100 candidate_ms=5.571100
+CA871 ROUND i=6 calls=62265 original_ms=45.214000 candidate_ms=13.714600
+CA871 ROUND i=7 calls=62265 original_ms=55.869200 candidate_ms=7.896300
+CA871 BENCH tiles=62265 calls=498120 original_ms=388.915000 candidate_ms=76.364100 buckets=16384
+CA871 SMALL tiles=16 calls=500000 original_ms=8.791000 candidate_ms=8.361500 buckets=1024
+CA871 SMALL tiles=512 calls=500000 original_ms=10.117900 candidate_ms=9.842700 buckets=1024
+CA871 SMALL tiles=4096 calls=500000 original_ms=17.619800 candidate_ms=13.766000 buckets=2048
+CA871 VERIFY label=before_native_save tiles=62265 buckets=16384 mismatches=0
+CA871 FIRST_FIND label=before_native_save tiles=62265 before=16384 after=16384 ms=0.001300
+CA871 RESULT checks=62339 errors=0 loads=0
+Game saved.

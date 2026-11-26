@@ -1,0 +1,24 @@
+{
+  "issue": 871,
+  "event": "check",
+  "adaptive": false,
+  "interpret": false,
+  "passed": false,
+  "exit_code": 1,
+  "checks": 0,
+  "errors": [
+    "Script error, \"checks.pk3:checks.zs\" line 104:",
+    "Script error, \"checks.pk3:checks.zs\" line 106:"
+  ],
+  "benchmark": [],
+  "runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "reference_runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "candidate_sha256": null,
+  "fixture_sha256": "fb7668a15b10218d1dcf32b1e75f300837c94e1d85f3e17df65b88fa171b9965",
+  "key_data_sha256": "564accedb3bafe492d8ff9bbbfd67dbae1c874ddc93fa912bf94a74c52e9343a",
+  "checks_sha256": "1a9b3d309541110392a34696c49632037111ebec8630a6ad8d651b917db714b2",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "input_save_sha256": null,
+  "output_save_sha256": null,
+  "qualification": "Private original-map-class oracle on62253 actual current-map tile keys, plus signed/absent/duplicate-key and identity tests. Native saved objects preserve tile references and all authoritative tile/map fields; only derived bucket/Next links may change. Alternating repeated lookup timings are not whole-scene frame rates."
+}

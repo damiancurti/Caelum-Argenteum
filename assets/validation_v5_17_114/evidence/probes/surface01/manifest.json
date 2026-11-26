@@ -1,0 +1,134 @@
+{
+  "issue": 871,
+  "runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "overlay_sha256": "f005f76bb78a8dceb31746c9acfed87f70dd7b57465415c9f998323fbd929008",
+  "originals_restored_exactly": {
+    "caelum/survival/CaelumContaminationSurface.zs": "9e5796074c7c3c9de69f82c35c8409377ca7e2b4e373673bc7f6a6a9bddc69cb",
+    "caelum/survival/CaelumThermalEnvironment.zs": "5b0c5a25cef8adc120cc060a10e21fe23bb0791701dba1d9b7b8cf94da3dda80",
+    "caelum/survival/CaelumContaminationCombat.zs": "52c176d389b88de0f0143283585931af6682b757404b24decaf71ec6283abc7c"
+  },
+  "metrics": [
+    {
+      "id": 0,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationSurface.zs:NPCContact"
+    },
+    {
+      "id": 1,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationSurface.zs:ConfigureObject"
+    },
+    {
+      "id": 2,
+      "family": "Mandinga",
+      "stage": "CaelumThermalEnvironment.zs:Roof"
+    },
+    {
+      "id": 3,
+      "family": "Mandinga",
+      "stage": "CaelumThermalEnvironment.zs:WindBlocked"
+    },
+    {
+      "id": 4,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationSurface.zs:WallTile"
+    },
+    {
+      "id": 5,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationSurface.zs:FloorTile"
+    },
+    {
+      "id": 6,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationSurface.zs:SyncContact"
+    },
+    {
+      "id": 7,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationCombat.zs:Transfer"
+    },
+    {
+      "id": 8,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationSurface.zs:NPCContact"
+    },
+    {
+      "id": 9,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationSurface.zs:ConfigureObject"
+    },
+    {
+      "id": 10,
+      "family": "PortDefender",
+      "stage": "CaelumThermalEnvironment.zs:Roof"
+    },
+    {
+      "id": 11,
+      "family": "PortDefender",
+      "stage": "CaelumThermalEnvironment.zs:WindBlocked"
+    },
+    {
+      "id": 12,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationSurface.zs:WallTile"
+    },
+    {
+      "id": 13,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationSurface.zs:FloorTile"
+    },
+    {
+      "id": 14,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationSurface.zs:SyncContact"
+    },
+    {
+      "id": 15,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationCombat.zs:Transfer"
+    },
+    {
+      "id": 16,
+      "family": "other",
+      "stage": "CaelumContaminationSurface.zs:NPCContact"
+    },
+    {
+      "id": 17,
+      "family": "other",
+      "stage": "CaelumContaminationSurface.zs:ConfigureObject"
+    },
+    {
+      "id": 18,
+      "family": "other",
+      "stage": "CaelumThermalEnvironment.zs:Roof"
+    },
+    {
+      "id": 19,
+      "family": "other",
+      "stage": "CaelumThermalEnvironment.zs:WindBlocked"
+    },
+    {
+      "id": 20,
+      "family": "other",
+      "stage": "CaelumContaminationSurface.zs:WallTile"
+    },
+    {
+      "id": 21,
+      "family": "other",
+      "stage": "CaelumContaminationSurface.zs:FloorTile"
+    },
+    {
+      "id": 22,
+      "family": "other",
+      "stage": "CaelumContaminationSurface.zs:SyncContact"
+    },
+    {
+      "id": 23,
+      "family": "other",
+      "stage": "CaelumContaminationCombat.zs:Transfer"
+    }
+  ],
+  "period": 17,
+  "qualification": "Private inclusive maintenance timers; no production statements changed. NPCContact tags nested calls by actor family and restores the prior tag; subordinate metrics record only inside that call stack. Nested timers include wrapper overhead and must not be added as independent CPU costs."
+}

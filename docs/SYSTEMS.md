@@ -1,6 +1,24 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.113** - 2026-11-21.
+Documentation version: **5.17.114** - 2026-11-21.
+
+## 5.17.114 - Grow the derived contamination surface index (#871, #454)
+
+The surface ledger now grows its derived bucket array as a map accumulates zones.
+It starts at 1,024 buckets and doubles when integer tile count / capacity reaches
+four. These are technical index parameters, not zone, actor or population limits.
+All floor, wall and other surface callers retain the original exact key comparison,
+creation defaults, tile objects, concentrations, timestamps, weather settlement,
+contact rules and insertion/rebuild precedence. No balance or cadence changes.
+
+Only existing Buckets and Next links are rebuilt. No primary-state field or save
+schema changes, so SURFACE_REVISION remains unchanged. First lookup of an old dense
+ledger rebuilds the derived index once; later lookups are idempotent until growth.
+The original runtime rebuilds its 1,024-bucket index after loading the new capacity;
+native upgrade, reload and reversal preserve saved object identities and values.
+Small ledgers keep the original initial allocation. Growth does not scan actors,
+drop offscreen zones, cache mutable concentration or alter the whole-map >=500
+living-combatant census. The deferred dry-thermal idea was not integrated.
 
 ## 5.17.113 - Measure the full siege frame and identify actor costs (#870, #454)
 

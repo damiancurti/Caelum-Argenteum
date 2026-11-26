@@ -1,0 +1,72 @@
+{
+  "issue": 871,
+  "runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "overlay_sha256": "9991e7730d1ab6036e29098cf8d82d76bb67d9aa2150e39799aac4acfd4a7d56",
+  "originals_restored_exactly": {
+    "caelum/survival/CaelumContaminationSurface.zs": "9e5796074c7c3c9de69f82c35c8409377ca7e2b4e373673bc7f6a6a9bddc69cb"
+  },
+  "metrics": [
+    {
+      "id": 0,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationSurface.zs:FloorTile"
+    },
+    {
+      "id": 1,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationSurface.zs:Find"
+    },
+    {
+      "id": 2,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationSurface.zs:Index"
+    },
+    {
+      "id": 3,
+      "family": "Mandinga",
+      "stage": "CaelumContaminationSurface.zs:Hash"
+    },
+    {
+      "id": 4,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationSurface.zs:FloorTile"
+    },
+    {
+      "id": 5,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationSurface.zs:Find"
+    },
+    {
+      "id": 6,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationSurface.zs:Index"
+    },
+    {
+      "id": 7,
+      "family": "PortDefender",
+      "stage": "CaelumContaminationSurface.zs:Hash"
+    },
+    {
+      "id": 8,
+      "family": "other",
+      "stage": "CaelumContaminationSurface.zs:FloorTile"
+    },
+    {
+      "id": 9,
+      "family": "other",
+      "stage": "CaelumContaminationSurface.zs:Find"
+    },
+    {
+      "id": 10,
+      "family": "other",
+      "stage": "CaelumContaminationSurface.zs:Index"
+    },
+    {
+      "id": 11,
+      "family": "other",
+      "stage": "CaelumContaminationSurface.zs:Hash"
+    }
+  ],
+  "period": 17,
+  "qualification": "Private inclusive maintenance timers; no production statements changed. FloorTile tags nested calls by actor family and restores the prior tag; subordinate metrics record only inside that call stack. Nested timers include wrapper overhead and must not be added as independent CPU costs."
+}

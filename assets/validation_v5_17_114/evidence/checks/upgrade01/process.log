@@ -1,0 +1,75 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-21 04:35:29
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue870-diagnosis01.pk3, 18767 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue871-index-prototype01/prototype.pk3, 1 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue871-index-upgrade01/checks.pk3, 6 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2472.87 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+CA871_COMMANDS_START
+
+----------------------------------------
+
+MAP01 - Surface index checks
+
+CA871 VERIFY label=native_reload tiles=62265 buckets=16384 mismatches=0
+CA871 VERIFY label=before_benchmark tiles=62265 buckets=16384 mismatches=0
+CA871 ROUND i=0 calls=62265 original_ms=50.192100 candidate_ms=9.313500
+CA871 ROUND i=1 calls=62265 original_ms=47.528200 candidate_ms=4.810200
+CA871 ROUND i=2 calls=62265 original_ms=42.992400 candidate_ms=9.267600
+CA871 ROUND i=3 calls=62265 original_ms=45.303700 candidate_ms=4.759900
+CA871 ROUND i=4 calls=62265 original_ms=47.363900 candidate_ms=9.616100
+CA871 ROUND i=5 calls=62265 original_ms=49.597300 candidate_ms=5.191100
+CA871 ROUND i=6 calls=62265 original_ms=48.418200 candidate_ms=9.350800
+CA871 ROUND i=7 calls=62265 original_ms=45.047900 candidate_ms=4.579600
+CA871 BENCH tiles=62265 calls=498120 original_ms=376.443700 candidate_ms=56.888800 buckets=16384
+CA871 SMALL tiles=16 calls=500000 original_ms=8.538400 candidate_ms=8.241400 buckets=1024
+CA871 SMALL tiles=512 calls=500000 original_ms=10.349700 candidate_ms=10.067300 buckets=1024
+CA871 SMALL tiles=4096 calls=500000 original_ms=17.180200 candidate_ms=13.655400 buckets=2048
+CA871 VERIFY label=before_native_save tiles=62265 buckets=16384 mismatches=0
+CA871 RESULT checks=18 errors=0 loads=1
+Game saved.

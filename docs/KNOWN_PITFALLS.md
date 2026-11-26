@@ -4,6 +4,40 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-270 - Size a derived lookup index for the retained state, not actor count
+
+Status/evidence: ENGINE-VERIFIED production index, #871 / 5.17.114, 2026-11-21,
+GZDoom 4.14.2. Native identity/save/reversal and frame/tic evidence pass; no author
+acceptance or claim of siege fluency.
+
+A map with 62,253 persistent surface keys had 1,024 fixed buckets, calculated mean
+successful depth 31.2043 and maximum chain 86. Grow the existing derived index
+without discarding zones or caching live concentrations. Starting at 1,024 and
+doubling at integer load four gives 16,384 buckets for this dataset, 64 KiB of int
+payload rather than 4 KiB; calculated depth 2.7750, maximum chain 11. This is a
+technical allocation rule, not a gameplay cap or an actor census.
+
+Retain exact key arithmetic/comparisons, insertion order and object identity.
+Only Buckets/Next links change; no primary schema is added. Test native old-save
+first lookup, repeated reload and rollback: the old Index detects a non-1,024
+capacity and reconstructs its original links. Idempotence and reversal must be
+verified on actual serialized objects, not assumed from a build. Measure cold
+rebuild/growth as well as alternating lookup rounds and unchanged-code/small-table
+controls. A detached fixture save is not author acceptance of a campaign save.
+
+Separate nested probes before optimizing an apparent cost: NPCStep includes
+contamination maintenance, so dry physiology was not the dominant target. Do not
+reuse shelter values across geometry and later gameplay overrides. Inclusive
+timers have overhead; computed uniform key depth is not actual query frequency.
+Preserve failures: reserved identifiers, case-insensitive field shadowing and an
+absent save invalidate a fixture result. Clean assertions alone are insufficient.
+
+Finally compare uninstrumented campaign scenes and presentation tails. A lookup
+speedup does not establish playable rendering; preserve offscreen state and the
+authoritative >=500 rule. Evidence: assets/validation_v5_17_114; see CA-KP-110..115
+and CA-KP-269. Larger future ledgers require their own memory/growth measurement.
+
+
 ## CA-KP-269 - Measure simulation grouping before attributing low FPS to rendering
 
 Status/evidence: ENGINE-VERIFIED diagnosis, #870 /5.17.113,2026-11-21,

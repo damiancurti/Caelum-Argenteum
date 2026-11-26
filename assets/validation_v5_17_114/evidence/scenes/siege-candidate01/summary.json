@@ -1,0 +1,59 @@
+{
+  "label": "siege-candidate01",
+  "directory": "build/v516/barracas-profile-20261121-044458-738060",
+  "runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "overlays": [
+    {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue871-index-prototype01\\prototype.pk3",
+      "sha256": "e71a1c534b19204a724d13e69a0e6b5019a38c53d8c408f57f3927739df218ab"
+    }
+  ],
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "states": [
+    "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+    "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+  ],
+  "census": [
+    "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+    "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+  ],
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 29.37151242857143,
+    "p95_ms": 44.4719,
+    "p99_ms": 48.7451,
+    "max_ms": 61.5845
+  },
+  "presentation": {
+    "pid": 52816,
+    "trace_sha256": "509c356ccef38e153487fc4f4fb3843de6d4fb0074746f7f34247c9fd8f18e0d",
+    "rows": 2320,
+    "scene_presents": 38,
+    "mean_present_fps": 2.1275237383701517,
+    "present_intervals": {
+      "samples": 37,
+      "mean_ms": 470.0300081098402,
+      "p50_ms": 462.409500002861,
+      "p95_ms": 532.8416999578476,
+      "p99_ms": 547.8543000221252,
+      "max_ms": 547.8543000221252
+    },
+    "native_call_duration": {
+      "samples": 38,
+      "mean_ms": 0.1794657864068684,
+      "p50_ms": 0.17170000076293945,
+      "p95_ms": 0.2436000108718872,
+      "p99_ms": 0.2576000690460205,
+      "max_ms": 0.2576000690460205
+    }
+  }
+}

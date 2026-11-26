@@ -1,0 +1,29 @@
+{
+  "issue": 871,
+  "event": "check",
+  "adaptive": true,
+  "interpret": false,
+  "passed": true,
+  "exit_code": 0,
+  "checks": 62336,
+  "errors": [],
+  "benchmark": [
+    {
+      "tiles": 62265,
+      "calls": 498120,
+      "original_ms": 412.3307,
+      "candidate_ms": 74.276,
+      "buckets": 16384
+    }
+  ],
+  "runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "reference_runtime_sha256": "3a20341dbe787d1e3303cf03c96301a64dee1e415df758f7d2902b489d01b99a",
+  "candidate_sha256": "e71a1c534b19204a724d13e69a0e6b5019a38c53d8c408f57f3927739df218ab",
+  "fixture_sha256": "5a0608088a907cb07be7933e6adcf3fe470336d9435bdb6ae73d9412fd1767c4",
+  "key_data_sha256": "564accedb3bafe492d8ff9bbbfd67dbae1c874ddc93fa912bf94a74c52e9343a",
+  "checks_sha256": "3c5d8467b1bc4bdf3928f478dd72e0eb034e56467abd013e24a0bfe8b3493ef8",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "input_save_sha256": null,
+  "output_save_sha256": "0218a2f779ae9a51377216ff39a3e72d64170cbd9bc9a3bbbfbacc3d8c8523b2",
+  "qualification": "Private original-map-class oracle on62253 actual current-map tile keys, plus signed/absent/duplicate-key and identity tests. Native saved objects preserve tile references and all authoritative tile/map fields; only derived bucket/Next links may change. Alternating repeated lookup timings are not whole-scene frame rates."
+}
