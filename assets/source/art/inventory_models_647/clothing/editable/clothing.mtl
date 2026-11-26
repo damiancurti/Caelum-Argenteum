@@ -1,0 +1,192 @@
+newmtl F_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/f.png
+newmtl F_shirt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/f.png
+newmtl F_pants
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/f.png
+newmtl F_button
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/f.png
+newmtl F_vest
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/f.png
+newmtl FW_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/fw.png
+newmtl FW_shirt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/fw.png
+newmtl FW_pants
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/fw.png
+newmtl FW_button
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/fw.png
+newmtl FW_vest
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/fw.png
+newmtl CS_shirt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/cs.png
+newmtl CS_pants
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/cs.png
+newmtl CS_button
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/cs.png
+newmtl CS_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/cs.png
+newmtl CS_vest
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/cs.png
+newmtl CE_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/ce.png
+newmtl CE_shirt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/ce.png
+newmtl CE_pants
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/ce.png
+newmtl CE_button
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/ce.png
+newmtl CE_vest
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/ce.png
+newmtl CW_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/cw.png
+newmtl CW_shirt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/cw.png
+newmtl CW_vest
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/cw.png
+newmtl CW_pants
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/cw.png
+newmtl CW_button
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/cw.png
+newmtl RS_shirt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/rs.png
+newmtl RS_pants
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/rs.png
+newmtl RS_belt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/rs.png
+newmtl RS_button
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/rs.png
+newmtl RS_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/rs.png
+newmtl RS_vest
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/rs.png
+newmtl RE_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/re.png
+newmtl RE_shirt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/re.png
+newmtl RE_pants
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/re.png
+newmtl RE_belt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/re.png
+newmtl RE_button
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/re.png
+newmtl RE_vest
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/re.png
+newmtl RW_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/rw.png
+newmtl RW_shirt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/rw.png
+newmtl RW_pants
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/rw.png
+newmtl RW_belt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/rw.png
+newmtl RW_stripe
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/rw.png
+newmtl RW_button
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/rw.png
+newmtl RW_vest
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/rw.png
+newmtl PS_shirt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/ps.png
+newmtl PS_pants
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/ps.png
+newmtl PS_patch
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/ps.png
+newmtl PS_button
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/ps.png
+newmtl PS_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/ps.png
+newmtl PS_vest
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/ps.png
+newmtl PE_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/pe.png
+newmtl PE_shirt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/pe.png
+newmtl PE_pants
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/pe.png
+newmtl PE_patch
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/pe.png
+newmtl PE_button
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/pe.png
+newmtl PE_vest
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/pe.png
+newmtl PW_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/pw.png
+newmtl PW_shirt
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/pw.png
+newmtl PW_pants
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/pw.png
+newmtl PW_patch
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/pw.png
+newmtl PW_button
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/pw.png
+newmtl PW_vest
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/pw.png
+newmtl F_tie
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/f.png
+newmtl FW_tie
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/clothing/fw.png

@@ -1,0 +1,11 @@
+Model CaelumClothingPickup { Path "models/caelum/inventory/clothing" Model 0 "F.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC00 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/clothing" Model 0 "FW.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC01 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/clothing" Model 0 "CS.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC02 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/clothing" Model 0 "CE.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC03 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/clothing" Model 0 "CW.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC04 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/clothing" Model 0 "RS.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC05 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/clothing" Model 0 "RE.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC06 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/clothing" Model 0 "RW.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC07 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/clothing" Model 0 "PS.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC08 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/clothing" Model 0 "PE.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC09 A 0 0 }
+Model CaelumClothingPickup { Path "models/caelum/inventory/clothing" Model 0 "PW.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex WC10 A 0 0 }

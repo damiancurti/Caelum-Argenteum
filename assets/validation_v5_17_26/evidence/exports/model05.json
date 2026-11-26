@@ -1,0 +1,1127 @@
+{
+  "schema_revision": 1,
+  "issue": 696,
+  "parent_issue": 647,
+  "status": "native_art_candidate_unverified",
+  "variants": {
+    "F": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "shirt_body",
+        "shirt_collar",
+        "left_shirt_sleeve",
+        "left_shirt_cuff",
+        "right_shirt_sleeve",
+        "right_shirt_cuff",
+        "shirt_placket",
+        "shirt_button_0",
+        "shirt_button_1",
+        "shirt_button_2",
+        "shirt_button_3",
+        "folded_trousers_0",
+        "folded_trousers_1",
+        "waistcoat",
+        "waistcoat_front",
+        "waistcoat_button_0",
+        "waistcoat_button_1",
+        "waistcoat_button_2",
+        "waistcoat_button_3",
+        "silk_tie",
+        "outer_coat",
+        "left_coat_sleeve",
+        "left_coat_cuff",
+        "left_lapel",
+        "left_pocket",
+        "right_coat_sleeve",
+        "right_coat_cuff",
+        "right_lapel",
+        "right_pocket",
+        "coat_button_0",
+        "coat_button_1",
+        "coat_button_2",
+        "coat_button_3"
+      ],
+      "closed_outward_components": 33,
+      "vertices": 9348,
+      "triangles": 14612,
+      "surfaces": [
+        {
+          "material": "F_cloth",
+          "vertices": 2804,
+          "triangles": 5524
+        },
+        {
+          "material": "F_shirt",
+          "vertices": 2612,
+          "triangles": 5124
+        },
+        {
+          "material": "F_pants",
+          "vertices": 2304,
+          "triangles": 768
+        },
+        {
+          "material": "F_button",
+          "vertices": 792,
+          "triangles": 1536
+        },
+        {
+          "material": "F_vest",
+          "vertices": 554,
+          "triangles": 1100
+        },
+        {
+          "material": "F_tie",
+          "vertices": 282,
+          "triangles": 560
+        }
+      ],
+      "reference_opaque_bounds": [
+        29,
+        10,
+        101,
+        117
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 107.0,
+      "native_bounds": [
+        {
+          "min": [
+            -34.54416243654822,
+            -12.640924477999459,
+            0.0
+          ],
+          "max": [
+            34.54416243654822,
+            15.859898477157358,
+            106.99999999999999
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0862944162436547,
+        "floor": 4.0
+      }
+    },
+    "FW": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "shirt_body",
+        "shirt_collar",
+        "left_shirt_sleeve",
+        "left_shirt_cuff",
+        "right_shirt_sleeve",
+        "right_shirt_cuff",
+        "shirt_placket",
+        "shirt_button_0",
+        "shirt_button_1",
+        "shirt_button_2",
+        "shirt_button_3",
+        "folded_trousers_0",
+        "folded_trousers_1",
+        "waistcoat",
+        "waistcoat_front",
+        "waistcoat_button_0",
+        "waistcoat_button_1",
+        "waistcoat_button_2",
+        "waistcoat_button_3",
+        "silk_tie",
+        "outer_coat",
+        "left_coat_sleeve",
+        "left_coat_cuff",
+        "left_lapel",
+        "left_pocket",
+        "right_coat_sleeve",
+        "right_coat_cuff",
+        "right_lapel",
+        "right_pocket",
+        "coat_button_0",
+        "coat_button_1",
+        "coat_button_2",
+        "coat_button_3",
+        "raised_coat_collar"
+      ],
+      "closed_outward_components": 34,
+      "vertices": 9544,
+      "triangles": 15000,
+      "surfaces": [
+        {
+          "material": "FW_cloth",
+          "vertices": 3000,
+          "triangles": 5912
+        },
+        {
+          "material": "FW_shirt",
+          "vertices": 2612,
+          "triangles": 5124
+        },
+        {
+          "material": "FW_pants",
+          "vertices": 2304,
+          "triangles": 768
+        },
+        {
+          "material": "FW_button",
+          "vertices": 792,
+          "triangles": 1536
+        },
+        {
+          "material": "FW_vest",
+          "vertices": 554,
+          "triangles": 1100
+        },
+        {
+          "material": "FW_tie",
+          "vertices": 282,
+          "triangles": 560
+        }
+      ],
+      "reference_opaque_bounds": [
+        28,
+        5,
+        114,
+        122
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 117.0,
+      "native_bounds": [
+        {
+          "min": [
+            -35.434285714285714,
+            -12.966651904468604,
+            0.0
+          ],
+          "max": [
+            35.434285714285714,
+            16.26857142857143,
+            117.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.1142857142857143,
+        "floor": 0.0
+      }
+    },
+    "CS": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "shirt_body",
+        "shirt_collar",
+        "left_shirt_sleeve",
+        "left_shirt_cuff",
+        "right_shirt_sleeve",
+        "right_shirt_cuff",
+        "shirt_placket",
+        "shirt_button_0",
+        "shirt_button_1",
+        "shirt_button_2",
+        "shirt_button_3",
+        "trouser_hips",
+        "left_trouser_leg",
+        "left_trouser_cuff",
+        "right_trouser_leg",
+        "right_trouser_cuff"
+      ],
+      "closed_outward_components": 16,
+      "vertices": 5112,
+      "triangles": 8612,
+      "surfaces": [
+        {
+          "material": "CS_shirt",
+          "vertices": 2612,
+          "triangles": 5124
+        },
+        {
+          "material": "CS_pants",
+          "vertices": 2236,
+          "triangles": 2976
+        },
+        {
+          "material": "CS_button",
+          "vertices": 264,
+          "triangles": 512
+        }
+      ],
+      "reference_opaque_bounds": [
+        35,
+        10,
+        92,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 110.0,
+      "native_bounds": [
+        {
+          "min": [
+            -27.301204819277107,
+            -9.122489959839356,
+            0.0
+          ],
+          "max": [
+            27.301204819277107,
+            8.835341365461847,
+            110.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.8835341365461847,
+        "floor": 0.0
+      }
+    },
+    "CE": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "shirt_body",
+        "shirt_collar",
+        "left_shirt_sleeve",
+        "left_shirt_cuff",
+        "right_shirt_sleeve",
+        "right_shirt_cuff",
+        "shirt_placket",
+        "shirt_button_0",
+        "shirt_button_1",
+        "shirt_button_2",
+        "shirt_button_3",
+        "trouser_hips",
+        "left_trouser_leg",
+        "left_trouser_cuff",
+        "right_trouser_leg",
+        "right_trouser_cuff",
+        "outer_coat",
+        "left_coat_sleeve",
+        "left_coat_cuff",
+        "left_lapel",
+        "left_pocket",
+        "right_coat_sleeve",
+        "right_coat_cuff",
+        "right_lapel",
+        "right_pocket",
+        "coat_button_0",
+        "coat_button_1",
+        "coat_button_2",
+        "coat_button_3"
+      ],
+      "closed_outward_components": 29,
+      "vertices": 8180,
+      "triangles": 14648,
+      "surfaces": [
+        {
+          "material": "CE_cloth",
+          "vertices": 2804,
+          "triangles": 5524
+        },
+        {
+          "material": "CE_shirt",
+          "vertices": 2612,
+          "triangles": 5124
+        },
+        {
+          "material": "CE_pants",
+          "vertices": 2236,
+          "triangles": 2976
+        },
+        {
+          "material": "CE_button",
+          "vertices": 528,
+          "triangles": 1024
+        }
+      ],
+      "reference_opaque_bounds": [
+        36,
+        5,
+        98,
+        123
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 118.0,
+      "native_bounds": [
+        {
+          "min": [
+            -30.13975903614458,
+            -11.029198304078948,
+            0.0
+          ],
+          "max": [
+            30.13975903614458,
+            11.373493975903614,
+            118.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.9477911646586346,
+        "floor": 0.0
+      }
+    },
+    "CW": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "shirt_body",
+        "shirt_collar",
+        "left_shirt_sleeve",
+        "left_shirt_cuff",
+        "right_shirt_sleeve",
+        "right_shirt_cuff",
+        "shirt_placket",
+        "shirt_button_0",
+        "shirt_button_1",
+        "shirt_button_2",
+        "shirt_button_3",
+        "folded_trousers_0",
+        "folded_trousers_1",
+        "waistcoat",
+        "waistcoat_front",
+        "waistcoat_button_0",
+        "waistcoat_button_1",
+        "waistcoat_button_2",
+        "waistcoat_button_3",
+        "outer_coat",
+        "left_coat_sleeve",
+        "left_coat_cuff",
+        "left_lapel",
+        "left_pocket",
+        "right_coat_sleeve",
+        "right_coat_cuff",
+        "right_lapel",
+        "right_pocket",
+        "coat_button_0",
+        "coat_button_1",
+        "coat_button_2",
+        "coat_button_3",
+        "raised_coat_collar"
+      ],
+      "closed_outward_components": 33,
+      "vertices": 9262,
+      "triangles": 14440,
+      "surfaces": [
+        {
+          "material": "CW_cloth",
+          "vertices": 3000,
+          "triangles": 5912
+        },
+        {
+          "material": "CW_shirt",
+          "vertices": 2612,
+          "triangles": 5124
+        },
+        {
+          "material": "CW_vest",
+          "vertices": 554,
+          "triangles": 1100
+        },
+        {
+          "material": "CW_pants",
+          "vertices": 2304,
+          "triangles": 768
+        },
+        {
+          "material": "CW_button",
+          "vertices": 792,
+          "triangles": 1536
+        }
+      ],
+      "reference_opaque_bounds": [
+        16,
+        14,
+        119,
+        111
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 97.0,
+      "native_bounds": [
+        {
+          "min": [
+            -30.54059405940594,
+            -11.175877942541485,
+            0.0
+          ],
+          "max": [
+            30.54059405940594,
+            14.021782178217821,
+            97.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.9603960396039604,
+        "floor": 4.0
+      }
+    },
+    "RS": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "shirt_body",
+        "shirt_collar",
+        "left_shirt_sleeve",
+        "left_shirt_cuff",
+        "right_shirt_sleeve",
+        "right_shirt_cuff",
+        "shirt_placket",
+        "shirt_button_0",
+        "shirt_button_1",
+        "shirt_button_2",
+        "shirt_button_3",
+        "trouser_hips",
+        "left_trouser_leg",
+        "left_trouser_cuff",
+        "right_trouser_leg",
+        "right_trouser_cuff",
+        "leather_waistband",
+        "belt_buckle"
+      ],
+      "closed_outward_components": 18,
+      "vertices": 5470,
+      "triangles": 9316,
+      "surfaces": [
+        {
+          "material": "RS_shirt",
+          "vertices": 2612,
+          "triangles": 5124
+        },
+        {
+          "material": "RS_pants",
+          "vertices": 2236,
+          "triangles": 2976
+        },
+        {
+          "material": "RS_belt",
+          "vertices": 196,
+          "triangles": 384
+        },
+        {
+          "material": "RS_button",
+          "vertices": 426,
+          "triangles": 832
+        }
+      ],
+      "reference_opaque_bounds": [
+        31,
+        4,
+        99,
+        113
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 109.0,
+      "native_bounds": [
+        {
+          "min": [
+            -27.05301204819277,
+            -9.148995983935743,
+            0.0
+          ],
+          "max": [
+            27.05301204819277,
+            8.755020080321286,
+            109.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.8755020080321285,
+        "floor": 0.0
+      }
+    },
+    "RE": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "shirt_body",
+        "shirt_collar",
+        "left_shirt_sleeve",
+        "left_shirt_cuff",
+        "right_shirt_sleeve",
+        "right_shirt_cuff",
+        "shirt_placket",
+        "shirt_button_0",
+        "shirt_button_1",
+        "shirt_button_2",
+        "shirt_button_3",
+        "trouser_hips",
+        "left_trouser_leg",
+        "left_trouser_cuff",
+        "right_trouser_leg",
+        "right_trouser_cuff",
+        "outer_coat",
+        "left_coat_sleeve",
+        "left_coat_cuff",
+        "left_lapel",
+        "left_pocket",
+        "right_coat_sleeve",
+        "right_coat_cuff",
+        "right_lapel",
+        "right_pocket",
+        "coat_button_0",
+        "coat_button_1",
+        "coat_button_2",
+        "coat_button_3",
+        "leather_waistband",
+        "belt_buckle"
+      ],
+      "closed_outward_components": 31,
+      "vertices": 8538,
+      "triangles": 15352,
+      "surfaces": [
+        {
+          "material": "RE_cloth",
+          "vertices": 2804,
+          "triangles": 5524
+        },
+        {
+          "material": "RE_shirt",
+          "vertices": 2612,
+          "triangles": 5124
+        },
+        {
+          "material": "RE_pants",
+          "vertices": 2236,
+          "triangles": 2976
+        },
+        {
+          "material": "RE_belt",
+          "vertices": 196,
+          "triangles": 384
+        },
+        {
+          "material": "RE_button",
+          "vertices": 690,
+          "triangles": 1344
+        }
+      ],
+      "reference_opaque_bounds": [
+        33,
+        4,
+        103,
+        122
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 118.0,
+      "native_bounds": [
+        {
+          "min": [
+            -30.13975903614458,
+            -11.029198304078948,
+            0.0
+          ],
+          "max": [
+            30.13975903614458,
+            11.373493975903614,
+            118.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.9477911646586346,
+        "floor": 0.0
+      }
+    },
+    "RW": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "shirt_body",
+        "shirt_collar",
+        "left_shirt_sleeve",
+        "left_shirt_cuff",
+        "right_shirt_sleeve",
+        "right_shirt_cuff",
+        "shirt_placket",
+        "shirt_button_0",
+        "shirt_button_1",
+        "shirt_button_2",
+        "shirt_button_3",
+        "trouser_hips",
+        "left_trouser_leg",
+        "left_trouser_cuff",
+        "right_trouser_leg",
+        "right_trouser_cuff",
+        "leather_waistband",
+        "belt_buckle",
+        "poncho",
+        "poncho_woven_band",
+        "poncho_fringe_0",
+        "poncho_fringe_1",
+        "poncho_fringe_2",
+        "poncho_fringe_3",
+        "poncho_fringe_4",
+        "poncho_fringe_5",
+        "poncho_fringe_6",
+        "poncho_fringe_7",
+        "poncho_fringe_8",
+        "poncho_fringe_9",
+        "poncho_fringe_10",
+        "poncho_fringe_11",
+        "poncho_fringe_12",
+        "poncho_fringe_13",
+        "poncho_fringe_14",
+        "poncho_fringe_15",
+        "poncho_fringe_16",
+        "poncho_fringe_17",
+        "poncho_fringe_18",
+        "poncho_fringe_19",
+        "poncho_fringe_20",
+        "poncho_fringe_21",
+        "poncho_fringe_22",
+        "poncho_fringe_23",
+        "poncho_fringe_24",
+        "poncho_fringe_25",
+        "poncho_fringe_26",
+        "poncho_fringe_27",
+        "poncho_fringe_28",
+        "poncho_fringe_29",
+        "poncho_fringe_30",
+        "poncho_fringe_31",
+        "poncho_fringe_32",
+        "poncho_fringe_33",
+        "poncho_fringe_34",
+        "poncho_fringe_35",
+        "poncho_fringe_36",
+        "poncho_fringe_37",
+        "poncho_fringe_38",
+        "poncho_fringe_39"
+      ],
+      "closed_outward_components": 60,
+      "vertices": 6858,
+      "triangles": 11748,
+      "surfaces": [
+        {
+          "material": "RW_cloth",
+          "vertices": 392,
+          "triangles": 768
+        },
+        {
+          "material": "RW_shirt",
+          "vertices": 2612,
+          "triangles": 5124
+        },
+        {
+          "material": "RW_pants",
+          "vertices": 2236,
+          "triangles": 2976
+        },
+        {
+          "material": "RW_belt",
+          "vertices": 196,
+          "triangles": 384
+        },
+        {
+          "material": "RW_stripe",
+          "vertices": 996,
+          "triangles": 1664
+        },
+        {
+          "material": "RW_button",
+          "vertices": 426,
+          "triangles": 832
+        }
+      ],
+      "reference_opaque_bounds": [
+        22,
+        8,
+        108,
+        116
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 108.0,
+      "native_bounds": [
+        {
+          "min": [
+            -29.580372457522294,
+            -13.96591462619699,
+            0.0
+          ],
+          "max": [
+            29.580372457522294,
+            13.96591462619699,
+            108.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.8674698795180723,
+        "floor": 0.0
+      }
+    },
+    "PS": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "shirt_body",
+        "shirt_collar",
+        "left_shirt_sleeve",
+        "left_shirt_cuff",
+        "right_shirt_sleeve",
+        "right_shirt_cuff",
+        "shirt_placket",
+        "shirt_button_0",
+        "shirt_button_1",
+        "shirt_button_2",
+        "shirt_button_3",
+        "trouser_hips",
+        "left_trouser_leg",
+        "left_trouser_cuff",
+        "left_trouser_patch",
+        "right_trouser_leg",
+        "right_trouser_cuff",
+        "right_trouser_patch",
+        "shirt_chest_patch"
+      ],
+      "closed_outward_components": 19,
+      "vertices": 5598,
+      "triangles": 9572,
+      "surfaces": [
+        {
+          "material": "PS_shirt",
+          "vertices": 2612,
+          "triangles": 5124
+        },
+        {
+          "material": "PS_pants",
+          "vertices": 2236,
+          "triangles": 2976
+        },
+        {
+          "material": "PS_patch",
+          "vertices": 486,
+          "triangles": 960
+        },
+        {
+          "material": "PS_button",
+          "vertices": 264,
+          "triangles": 512
+        }
+      ],
+      "reference_opaque_bounds": [
+        33,
+        6,
+        94,
+        119
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 113.0,
+      "native_bounds": [
+        {
+          "min": [
+            -28.04578313253012,
+            -9.371285140562248,
+            0.0
+          ],
+          "max": [
+            28.04578313253012,
+            9.076305220883533,
+            113.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.9076305220883534,
+        "floor": 0.0
+      }
+    },
+    "PE": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "shirt_body",
+        "shirt_collar",
+        "left_shirt_sleeve",
+        "left_shirt_cuff",
+        "right_shirt_sleeve",
+        "right_shirt_cuff",
+        "shirt_placket",
+        "shirt_button_0",
+        "shirt_button_1",
+        "shirt_button_2",
+        "shirt_button_3",
+        "trouser_hips",
+        "left_trouser_leg",
+        "left_trouser_cuff",
+        "left_trouser_patch",
+        "right_trouser_leg",
+        "right_trouser_cuff",
+        "right_trouser_patch",
+        "outer_coat",
+        "left_coat_sleeve",
+        "left_coat_cuff",
+        "left_lapel",
+        "left_pocket",
+        "left_elbow_patch",
+        "right_coat_sleeve",
+        "right_coat_cuff",
+        "right_lapel",
+        "right_pocket",
+        "right_elbow_patch",
+        "coat_button_0",
+        "coat_button_1",
+        "coat_button_2",
+        "coat_button_3"
+      ],
+      "closed_outward_components": 33,
+      "vertices": 8828,
+      "triangles": 15928,
+      "surfaces": [
+        {
+          "material": "PE_cloth",
+          "vertices": 2804,
+          "triangles": 5524
+        },
+        {
+          "material": "PE_shirt",
+          "vertices": 2612,
+          "triangles": 5124
+        },
+        {
+          "material": "PE_pants",
+          "vertices": 2236,
+          "triangles": 2976
+        },
+        {
+          "material": "PE_patch",
+          "vertices": 648,
+          "triangles": 1280
+        },
+        {
+          "material": "PE_button",
+          "vertices": 528,
+          "triangles": 1024
+        }
+      ],
+      "reference_opaque_bounds": [
+        30,
+        7,
+        104,
+        121
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 114.0,
+      "native_bounds": [
+        {
+          "min": [
+            -29.118072289156625,
+            -10.65532717512712,
+            0.0
+          ],
+          "max": [
+            29.118072289156625,
+            10.987951807228916,
+            114.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.9156626506024096,
+        "floor": 0.0
+      }
+    },
+    "PW": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "shirt_body",
+        "shirt_collar",
+        "left_shirt_sleeve",
+        "left_shirt_cuff",
+        "right_shirt_sleeve",
+        "right_shirt_cuff",
+        "shirt_placket",
+        "shirt_button_0",
+        "shirt_button_1",
+        "shirt_button_2",
+        "shirt_button_3",
+        "folded_trousers_0",
+        "folded_trousers_1",
+        "outer_coat",
+        "left_coat_sleeve",
+        "left_coat_cuff",
+        "left_lapel",
+        "left_pocket",
+        "left_elbow_patch",
+        "right_coat_sleeve",
+        "right_coat_cuff",
+        "right_lapel",
+        "right_pocket",
+        "right_elbow_patch",
+        "coat_button_0",
+        "coat_button_1",
+        "coat_button_2",
+        "coat_button_3",
+        "raised_coat_collar",
+        "coat_patch_0",
+        "coat_patch_1",
+        "coat_patch_2"
+      ],
+      "closed_outward_components": 32,
+      "vertices": 9254,
+      "triangles": 14428,
+      "surfaces": [
+        {
+          "material": "PW_cloth",
+          "vertices": 3000,
+          "triangles": 5912
+        },
+        {
+          "material": "PW_shirt",
+          "vertices": 2612,
+          "triangles": 5124
+        },
+        {
+          "material": "PW_pants",
+          "vertices": 2304,
+          "triangles": 768
+        },
+        {
+          "material": "PW_patch",
+          "vertices": 810,
+          "triangles": 1600
+        },
+        {
+          "material": "PW_button",
+          "vertices": 528,
+          "triangles": 1024
+        }
+      ],
+      "reference_opaque_bounds": [
+        16,
+        4,
+        115,
+        115
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 111.0,
+      "native_bounds": [
+        {
+          "min": [
+            -34.94851485148515,
+            -12.788891253836134,
+            0.0
+          ],
+          "max": [
+            34.94851485148515,
+            16.045544554455446,
+            111.00000000000001
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.099009900990099,
+        "floor": 4.0
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "32b243144a6ff920405a12556fa984b971e413c895660021d74fa2b61cc5b7bf",
+    "PROVENANCE.json": "058a62519f7c3a7236f4800201a2a6e6db0107e870a39699397545c41d5b2e1f"
+  },
+  "external_source_sha256": {
+    "assets/art_source/clothing/F-v1.png": "e51ddca40c8b75f250f48c24b36dd07f7492aa1edf3dcd45abbf7a3c8a954f4d",
+    "src/graphics/caelum/icons/clothing/ca_clothing_00.png": "e12a9e9832aedf4faaae7f763e97c39778db485624541e5f8585a44e6a40101e",
+    "assets/art_source/clothing/FW-v1.png": "ca9ffd807eaa326b02624f3fa3034f99d09fddc01d20225113418e727cc3bbc9",
+    "src/graphics/caelum/icons/clothing/ca_clothing_01.png": "497e39ea69b3f748a45620d3f263dca286ba2cd005d347f708da1fe3bfdc4afe",
+    "assets/art_source/clothing/CS-v1.png": "bd1ec47e5249e12996d1812eedddd3a475126387454594e2db5379a2e448ec13",
+    "src/graphics/caelum/icons/clothing/ca_clothing_02.png": "3ebae11e61a0736b7dad65a5bd4577832d0cca55b5f6986690b417be89715590",
+    "assets/art_source/clothing/CE-v1.png": "e9fce10d974fa36253feed3c02743889207f0802eade40983522042788d97a03",
+    "src/graphics/caelum/icons/clothing/ca_clothing_03.png": "93706364f5e1efc05a8d184de325df49168d0915229aa3fbef231853b234b1af",
+    "assets/art_source/clothing/CW-v1.png": "2645631d3518206e6362887d1c38b8aaed7c74555160fb1fd74bdc026f353c14",
+    "src/graphics/caelum/icons/clothing/ca_clothing_04.png": "6e4b6c977e30114724fefb60ab26836bc05a9fc448a81138410f421ef44c57ad",
+    "assets/art_source/clothing/RS-v1.png": "cb86321dbcb5a4ec86243677fb5a2677e92986b6b53270a9b3acb10d64fe45df",
+    "src/graphics/caelum/icons/clothing/ca_clothing_05.png": "ed3da7e2559e071abfdb80ba9b72097d931ec0fead93c7e12e9a124a00149c76",
+    "assets/art_source/clothing/RE-v1.png": "772de4cc36dd8862a6407441f4c9f7e8d48f7f4e4508cad2b576bfda63f633ac",
+    "src/graphics/caelum/icons/clothing/ca_clothing_06.png": "08ccc7288356bcc73ec93e738641e6e865f02ec0afcaf1c2377beb3d3b91dddc",
+    "assets/art_source/clothing/RW-v1.png": "4b75a18329001b441a9acc0fc1a83ce6e2c13df434f1b398db1d161973ce15a5",
+    "src/graphics/caelum/icons/clothing/ca_clothing_07.png": "64cf6dca2f1ad340e2753912bfe4cb2340351c47a47e16c5028ad69739e99d94",
+    "assets/art_source/clothing/PS-v1.png": "3acd5546a8e04c9533e02b55f5870079c79040cf1bee719ee0316d11a97ef8cb",
+    "src/graphics/caelum/icons/clothing/ca_clothing_08.png": "927912066f0ac80c2b41e5c83bdddaf9571dac308b51c16c5e72c556e8e4d9fe",
+    "assets/art_source/clothing/PE-v1.png": "1614e3f8bc2bd0b5bfe7f92b68c662af061ecad7218e2fdb12d26ad1994b86f1",
+    "src/graphics/caelum/icons/clothing/ca_clothing_09.png": "12e9afdc4b38e3a13c9f148324e5ade0c3559dcf2ec523ecc5e7828091260c6d",
+    "assets/art_source/clothing/PW-v1.png": "683c3a83c1502110729a8429e9c1dee89dd4fad0483ba2942453265917ffc686",
+    "src/graphics/caelum/icons/clothing/ca_clothing_10.png": "91c6c8dc612836383b96b51e4bb50c092fc957e74cce0a75bed5493dd1dc0220",
+    "assets/art_source/clothing/manifest.json": "685855aee029d06cbff3139744526ca6b5321fad01a96806ed12a375db05b526",
+    "assets/art_source/clothing/exports.json": "f6a526f4556682785d7b129c623a55472bd1b089d065dd506e9c52269ce9d40c",
+    "src/caelum/data/CaelumClothingData.zs": "1fbe4a774bebf0adaba0b2a3f327ef2d74a66c8cd9c12c4bd702114d9e0e0a41",
+    "src/caelum/equipment/CaelumClothing.zs": "af9d4d3a99d037f11b109ac371a7f18c497c857aa79a89012dd54fa9c8e34666"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_clothing_models.py": "105e9107d4b0ec4c82a6a168127fb3968f8d19ca72bf48320cb01c90062217d3"
+  },
+  "sha256": {
+    "models/caelum/inventory/clothing/F.md3": "1c2957654a825463ecb48df7fbdd227823d7f808cf77c5e6016f0c8be2811d95",
+    "editable/F.obj": "7d1c44cc4e941aaba3288720924675abd770ef9a75b060ad39f7c670e497b69f",
+    "models/caelum/inventory/clothing/FW.md3": "90961be8a924c5134490917a941e8f062e28de904b782ee7793973f68fb85e3b",
+    "editable/FW.obj": "a9afff4c8088d7fb8a611027908419c1713a649d7ccf5c7af0b9196645f41ede",
+    "models/caelum/inventory/clothing/CS.md3": "48722af0ad8d635df9579025dabda98fab8fcd36de58953c867eb334d4479c62",
+    "editable/CS.obj": "ccb2a6832269cca1d047327de8af297dbacf29264a06802a31cb33472ddd2b19",
+    "models/caelum/inventory/clothing/CE.md3": "599af1b36a641e7587019d1289e7541302ff7ab34f52bf8f9394904f1fe1cfe2",
+    "editable/CE.obj": "0fcce1bbbebbdaf398481a68858f7851c77de58fe67c4173fb1dd95e858aa2da",
+    "models/caelum/inventory/clothing/CW.md3": "c7c19005baa12810db360f488e22362b0fc6a75ac6c10451f9d12b8d1ef0081f",
+    "editable/CW.obj": "9fec40daed31f4350cb62fd18104fbec69e49a54adaa3a3c8e6443b9a3e6543b",
+    "models/caelum/inventory/clothing/RS.md3": "ced7c4c053a458ba4b5887c5aea389c3cd0fb59eddb194918d105ef844b14195",
+    "editable/RS.obj": "919f9188a51e7e233ddef7aadb1e361a7a6d5c8517337d3d8e324e9fc051e30d",
+    "models/caelum/inventory/clothing/RE.md3": "ffd20a2fd4c96f4e4c12ac67f7c7ff2a0f03d73fc5b73ca818bbb521626cffba",
+    "editable/RE.obj": "a43c0cdb3c1d028b644d08a4c569fe4a8a0754c174a39c247de5fb65c8843d00",
+    "models/caelum/inventory/clothing/RW.md3": "4921b0ab78b3ec469f0013396b6e444ef70b0eab9fe9fb2079eb3430042587d9",
+    "editable/RW.obj": "bf71854ac74125fc889860d0bef500696ba4eb33e44fec60b99d88c11ea98ae1",
+    "models/caelum/inventory/clothing/PS.md3": "c67a20955883c5dff5a6dfbc0a96ace812c2dd5eea54509849cf533957a12595",
+    "editable/PS.obj": "15e4bb5d4ee9ca9c904d2b4a65c542eaa8f4b8739ef6d82afc2d8bc919022f7b",
+    "models/caelum/inventory/clothing/PE.md3": "c59f2c44b060c4da88a4fc641273cccfca7bc80368f9ba8037119a53c75f37e4",
+    "editable/PE.obj": "3dafcd4a44b8975eb4ff0dd85871436e6d263d37ec050f5121d35e56e9735e87",
+    "models/caelum/inventory/clothing/PW.md3": "5db75219fd44d66c24ecaf2c516bc50040ef9a5f847f6520abc6f66cdd32eec8",
+    "editable/PW.obj": "3fbf4014f66e775112374ce51699ab3324da82e76d7007e885ea01c6688b3aa5",
+    "editable/clothing.mtl": "7b49fe0a7f4d4b29754a753e289ab59c1ed80db63111d187b02fc4c4c79deeea",
+    "caelum/data/inventory_clothing.modeldef": "4f51e5bb8e2a490392bcd9d7323c062ee8639d4a37f0034fb242e17ba8d85051",
+    "models/caelum/inventory/clothing/f.png": "e51ddca40c8b75f250f48c24b36dd07f7492aa1edf3dcd45abbf7a3c8a954f4d",
+    "models/caelum/inventory/clothing/fw.png": "ca9ffd807eaa326b02624f3fa3034f99d09fddc01d20225113418e727cc3bbc9",
+    "models/caelum/inventory/clothing/cs.png": "bd1ec47e5249e12996d1812eedddd3a475126387454594e2db5379a2e448ec13",
+    "models/caelum/inventory/clothing/ce.png": "e9fce10d974fa36253feed3c02743889207f0802eade40983522042788d97a03",
+    "models/caelum/inventory/clothing/cw.png": "2645631d3518206e6362887d1c38b8aaed7c74555160fb1fd74bdc026f353c14",
+    "models/caelum/inventory/clothing/rs.png": "cb86321dbcb5a4ec86243677fb5a2677e92986b6b53270a9b3acb10d64fe45df",
+    "models/caelum/inventory/clothing/re.png": "772de4cc36dd8862a6407441f4c9f7e8d48f7f4e4508cad2b576bfda63f633ac",
+    "models/caelum/inventory/clothing/rw.png": "4b75a18329001b441a9acc0fc1a83ce6e2c13df434f1b398db1d161973ce15a5",
+    "models/caelum/inventory/clothing/ps.png": "3acd5546a8e04c9533e02b55f5870079c79040cf1bee719ee0316d11a97ef8cb",
+    "models/caelum/inventory/clothing/pe.png": "1614e3f8bc2bd0b5bfe7f92b68c662af061ecad7218e2fdb12d26ad1994b86f1",
+    "models/caelum/inventory/clothing/pw.png": "683c3a83c1502110729a8429e9c1dee89dd4fad0483ba2942453265917ffc686"
+  }
+}

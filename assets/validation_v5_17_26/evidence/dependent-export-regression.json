@@ -1,0 +1,18 @@
+{
+  "locks": {
+    "previous_document_export_sha256": "b0ae51d51bb579d97fc313be44943ac1f5ce0f0c26ec43788725b9933c498cdc",
+    "current_document_export_sha256": "0c32e22ed58f3246c6734338f1835e84b9c84aeb65a1d3a3425629b6eda68b02",
+    "binding_and_variant_metadata_unchanged": true,
+    "native_files": [
+      "caelum/data/inventory_locks.modeldef"
+    ]
+  },
+  "books": {
+    "previous_document_export_sha256": "b0ae51d51bb579d97fc313be44943ac1f5ce0f0c26ec43788725b9933c498cdc",
+    "current_document_export_sha256": "0c32e22ed58f3246c6734338f1835e84b9c84aeb65a1d3a3425629b6eda68b02",
+    "binding_and_variant_metadata_unchanged": true,
+    "native_files": [
+      "caelum/data/inventory_books.modeldef"
+    ]
+  }
+}

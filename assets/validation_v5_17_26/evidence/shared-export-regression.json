@@ -1,0 +1,187 @@
+{
+  "native_files": 55,
+  "editable_files": 41,
+  "families": {
+    "ammunition": {
+      "byte_identical_files": [
+        "models/caelum/inventory/ammunition/carbine.md3",
+        "editable/carbine.obj",
+        "models/caelum/inventory/ammunition/arrow.md3",
+        "editable/arrow.obj",
+        "models/caelum/inventory/ammunition/bolt.md3",
+        "editable/bolt.obj",
+        "models/caelum/inventory/ammunition/javelin_one.md3",
+        "editable/javelin_one.obj",
+        "models/caelum/inventory/ammunition/javelin_two.md3",
+        "editable/javelin_two.obj",
+        "models/caelum/inventory/ammunition/javelin_three.md3",
+        "editable/javelin_three.obj",
+        "models/caelum/inventory/ammunition/shotgun.md3",
+        "editable/shotgun.obj",
+        "editable/ammunition.mtl",
+        "caelum/data/inventory_ammunition.modeldef"
+      ],
+      "old_export_sha256": "aec982e762ddd5c8bc05cc241aee0db68f78ba3a9c1dfbe0471fae1230d9e411",
+      "new_generator_sha256": {
+        "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+        "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+        "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+        "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2"
+      }
+    },
+    "documents": {
+      "byte_identical_files": [
+        "models/caelum/inventory/documents/book.md3",
+        "editable/book.obj",
+        "models/caelum/inventory/documents/letter.md3",
+        "editable/letter.obj",
+        "models/caelum/inventory/documents/key.md3",
+        "editable/key.obj",
+        "models/caelum/inventory/documents/cloth.md3",
+        "editable/cloth.obj",
+        "models/caelum/inventory/documents/ingot.md3",
+        "editable/ingot.obj",
+        "editable/documents.mtl",
+        "caelum/data/inventory_documents.modeldef"
+      ],
+      "old_export_sha256": "b0ae51d51bb579d97fc313be44943ac1f5ce0f0c26ec43788725b9933c498cdc",
+      "new_generator_sha256": {
+        "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+        "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+        "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+        "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+        "generate_inventory_document_models.py": "f62ccbf2f7812fc91efda5a0cf8fffb89e7fb239aaef72b659a564b80bea8541"
+      }
+    },
+    "footwear": {
+      "byte_identical_files": [
+        "models/caelum/inventory/footwear/BF.md3",
+        "editable/BF.obj",
+        "models/caelum/inventory/footwear/BC.md3",
+        "editable/BC.obj",
+        "models/caelum/inventory/footwear/BR.md3",
+        "editable/BR.obj",
+        "models/caelum/inventory/footwear/BS.md3",
+        "editable/BS.obj",
+        "models/caelum/inventory/footwear/BP.md3",
+        "editable/BP.obj",
+        "editable/footwear.mtl",
+        "caelum/data/inventory_footwear.modeldef",
+        "models/caelum/inventory/footwear/bf.png",
+        "models/caelum/inventory/footwear/bc.png",
+        "models/caelum/inventory/footwear/br.png",
+        "models/caelum/inventory/footwear/bs.png",
+        "models/caelum/inventory/footwear/bp.png"
+      ],
+      "old_export_sha256": "669ce27826e1a1f7be3ffed16d5c7d99a783be51ac5bbb13123690f30feeb5c8",
+      "new_generator_sha256": {
+        "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+        "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+        "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+        "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+        "generate_inventory_footwear_models.py": "eb425ec8a1b43fda79e2679951c1f11a11c58ce1fb15b908fea47a4984e8e0ad"
+      }
+    },
+    "gloves": {
+      "byte_identical_files": [
+        "models/caelum/inventory/gloves/GF.md3",
+        "editable/GF.obj",
+        "models/caelum/inventory/gloves/GC.md3",
+        "editable/GC.obj",
+        "models/caelum/inventory/gloves/GW.md3",
+        "editable/GW.obj",
+        "models/caelum/inventory/gloves/GP.md3",
+        "editable/GP.obj",
+        "editable/gloves.mtl",
+        "caelum/data/inventory_gloves.modeldef",
+        "models/caelum/inventory/gloves/gf.png",
+        "models/caelum/inventory/gloves/gc.png",
+        "models/caelum/inventory/gloves/gw.png",
+        "models/caelum/inventory/gloves/gp.png"
+      ],
+      "old_export_sha256": "e45ac403999e18bb834a55f12f4894ca8f58e319c28b36346a7f01ea02c8633e",
+      "new_generator_sha256": {
+        "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+        "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+        "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+        "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+        "generate_inventory_gloves_models.py": "878145d926739818b8521d860e1bc21c6fd24033f08e5ba16275b49b7b9ab47f"
+      }
+    },
+    "headwear": {
+      "byte_identical_files": [
+        "models/caelum/inventory/headwear/HF.md3",
+        "editable/HF.obj",
+        "models/caelum/inventory/headwear/HC.md3",
+        "editable/HC.obj",
+        "models/caelum/inventory/headwear/HR.md3",
+        "editable/HR.obj",
+        "models/caelum/inventory/headwear/HW.md3",
+        "editable/HW.obj",
+        "models/caelum/inventory/headwear/HP.md3",
+        "editable/HP.obj",
+        "editable/headwear.mtl",
+        "caelum/data/inventory_headwear.modeldef",
+        "models/caelum/inventory/headwear/hf.png",
+        "models/caelum/inventory/headwear/hc.png",
+        "models/caelum/inventory/headwear/hr.png",
+        "models/caelum/inventory/headwear/hw.png",
+        "models/caelum/inventory/headwear/hp.png"
+      ],
+      "old_export_sha256": "1a0057c76a413137586da550aaf5e3b125470daddfa085fc35ee1ecee438e4b1",
+      "new_generator_sha256": {
+        "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+        "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+        "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+        "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+        "generate_inventory_headwear_models.py": "a87596c8213403e474f1ba1861aa10bd85cbb0f03e39c92eefc45d41a02e6146"
+      }
+    },
+    "ingots": {
+      "byte_identical_files": [
+        "models/caelum/inventory/ingots/iron.md3",
+        "editable/iron.obj",
+        "models/caelum/inventory/ingots/copper.md3",
+        "editable/copper.obj",
+        "models/caelum/inventory/ingots/tin.md3",
+        "editable/tin.obj",
+        "models/caelum/inventory/ingots/bronze.md3",
+        "editable/bronze.obj",
+        "models/caelum/inventory/ingots/steel.md3",
+        "editable/steel.obj",
+        "models/caelum/inventory/ingots/silver.md3",
+        "editable/silver.obj",
+        "models/caelum/inventory/ingots/gold.md3",
+        "editable/gold.obj",
+        "editable/ingots.mtl",
+        "caelum/data/inventory_ingots.modeldef"
+      ],
+      "old_export_sha256": "a1c28e1a581a002e1ee0db3e1dd8ba0d9481ad58b9d6a39749d210ee45ae708f",
+      "new_generator_sha256": {
+        "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+        "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+        "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+        "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+        "generate_inventory_ingot_models.py": "4d7244630e04b466509055c55043738240e0469c2fdaeba6e1b8f28cd69660f6"
+      }
+    },
+    "waterskin": {
+      "byte_identical_files": [
+        "models/caelum/inventory/waterskin/waterskin.md3",
+        "editable/waterskin.obj",
+        "editable/waterskin.mtl",
+        "caelum/data/inventory_waterskin.modeldef"
+      ],
+      "old_export_sha256": "1e35a19c04f8f36ac6c6cb9948a0be105c692301ba8784b9607b4362da5efd27",
+      "new_generator_sha256": {
+        "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+        "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+        "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+        "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+        "generate_inventory_waterskin_models.py": "1226cec2c0996d2434cba7a2d3b5640788c6c42fe34060e08d04a45ce061b1f5"
+      }
+    }
+  },
+  "all_generated_native_and_editable_bytes_unchanged": true,
+  "only_changed_metadata": "generate_inventory_ammunition_models.py SHA256"
+}

@@ -1,6 +1,68 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.25** - 2026-11-14.
+Documentation version: **5.17.26** - 2026-11-14.
+
+## 5.17.26 - Eleven clothing-ensemble world props (#696, parent #647)
+
+The existing #387 body outfits gain candidate native 3D world props at exact
+CaelumClothingPickup WC00..10/A bindings: F/FW formal, CS/CE/CW casual,
+RS/RE/RW country and PS/PE/PW patched poor clothing. One item remains one
+complete ensemble. F/FW/CW/PW retain folded trousers beside the coat, while the
+other seven show full trousers as in their actual source paintings. Eleven
+original owned PNGs, icons, all five sizes, identity, condition, wetness,
+equipment eligibility, native Scale 0.25, collision and all balance stay intact.
+Combined with #686/#688/#694, all 25 native clothing designs have candidate
+world models. Worn-body and first-person modular fitting remain under #459;
+other inventory classes and characters remain unfinished.
+
+Sources live at assets/source/art/inventory_models_647/clothing with
+DESIGN/PROVENANCE/EXPORT, portable OBJ/MTL and unchanged PNG aliases. Regenerate
+using python assets/generators/generate_inventory_clothing_models.py --output
+build/clothing-models --install. All 37 final export files repeat exactly.
+The eleven ensembles contain 338 closed outward parts,
+85,992 source vertices, 143,656 triangles
+and 53 native surfaces. Shirt, collar, sleeves, cuffs,
+trousers, coat, waistcoat, belt, patches and poncho components are independently
+editable where present; these fixed world assemblies are not worn modules.
+
+A dedicated thin-wall garment primitive supports hollow sleeves/collars and
+open-front coats. Independent serialized checks verify 155 solid assembly
+witnesses, 47 opening rays, every vertex of 143 fitted details and their
+solid attachment. Surface fitting uses actual parent triangles; lapels and
+waistcoat fronts explicitly allow free edges. All parts have closed topology,
+consistent winding and positive volume; both original sprite envelopes fit.
+The shared writer accepts the dedicated geometry backend. Regenerating seven
+previous families proves 55 native and 41 editable files unchanged against
+existing outputs/hashes; only their shared-generator metadata hash changes.
+
+Three preview runs each pass 1,046 functional assertions. Visual inspection
+still required corrections to shirt/button crops, shoulder rims, visible leg
+length, the poncho/fringe profile and patch/cloth material selection. Original
+pixels were not repainted. Enlarged crops retain visible seams, texture
+stretching and simplified silhouettes; author art acceptance remains pending.
+Source crop margins retain alpha >=250/255, not full opacity.
+
+The complete package passes 5,398 native checks: 1,046 original-sprite,
+1,102 old-save/model, 1,046 fresh-model, 1,102 model-reload and 1,102 reverse-load.
+All 55 type/size cases retain IDs, provenance, wear, water and icons. Native
+selection/equip, size refusal, Box-weight exclusion and temporary-drop guards
+pass. The fixture calls native APIs; ordinary menus/crafting remain separate.
+All 18,347 package entries match src. Only eleven MD3s,
+eleven source-PNG aliases, their binding/include and two release diagnostics
+differ from #694. Earlier candidates and evidence remain in
+assets/validation_v5_17_26/evidence/SUMMARY.json.
+
+One sequential eleven-ensemble, 700-tic sprite/model comparison records 1174.66/1109.72
+queue presents/s, p95 1.0227/1.0859 ms, p99 1.2329/1.3152 ms and simulation means 28.5716/28.5719 ms/tic.
+Environment: Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti,
+GZDoom 4.14.2 Vulkan 1280x720, uncapped/vsync off, background unpaused at 5%
+audio. This is isolated queue timing, not GPU/display timing, repeatability or
+campaign/crowd performance acceptance. CA696-CLOTHING-01 remains pending.
+
+The first project validation also detected stale document-export provenance
+pins in the existing book and lock reuse manifests. Both source pins were
+refreshed, and their two native bindings and reused variant records regenerate
+identically. The initial failure and metadata-only correction are preserved.
 
 ## 5.17.25 - Five paired footwear world props (#694, parent #647)
 

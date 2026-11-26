@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.25** - 2026-11-14.
+Documentation version: **5.17.26** - 2026-11-14.
+
+## #696 - Eleven clothing-ensemble world props (5.17.26)
+
+F/FW/CS/CE/CW/RS/RE/RW/PS/PE/PW now have exact WC00..10/A bindings, closed
+editable components and hollow garment openings. Static/export checks, 5,398
+native assertions and one eleven-ensemble presentation comparison pass.
+CA696-CLOTHING-01 retains author art and ordinary-menu review. All 25 clothing
+world designs now have candidate models across #686/#688/#694/#696; #459 worn
+fitting, other #647 inventory classes and the all-character request stay open.
 
 ## #694 - Five footwear-pair world props (5.17.25)
 

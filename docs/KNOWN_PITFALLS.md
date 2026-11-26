@@ -44,6 +44,17 @@ intact. See validation_v5_17_25/evidence/iterations/lining-regression.json and
 validate_inventory_footwear_models.py. Native continuity and author art review
 remain distinct evidence levels.
 
+Extension #696, 2026-11-14: an analytical ellipse does not guarantee that a patch
+follows a garment whose rings also move laterally and contain folds. Fit detail
+vertices to the actual parent triangles, then check the serialized result with
+independent rays and a point inside both volumes. Deliberate free lapel edges
+must be explicit exceptions. A watertight sleeve is also not proof of a usable
+opening or an attached cuff: verify deep rays against the complete outfit and
+separate positive-volume assembly witnesses. Clothing validation covers 155
+assembly witnesses and 47 openings; native continuity and art acceptance remain
+separate. See validate_inventory_clothing_models.py and
+validation_v5_17_26/evidence/SUMMARY.json.
+
 ## CA-KP-237 - Derive inventory test cases from native tier normalization
 
 Status/evidence: ENGINE-VERIFIED isolated fixture correction, #684, 2026-11-13.
