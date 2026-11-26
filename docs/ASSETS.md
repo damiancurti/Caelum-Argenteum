@@ -1,6 +1,33 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.70** - 2026-11-15.
+Documentation version: **5.17.71** - 2026-11-15.
+
+## 5.17.71 - Exact inventory default-state bindings (#785)
+
+The reproducible native audit reads recursively included ZSCRIPT/MODELDEF from
+its supplied runtime. Of 597 project Inventory defaults, 87 visible droppable
+states are inspected, alongside 315 legal weapon combinations, 342 material
+inputs, 48 armor, 25 clothing, 12 shields, 12 amulets and 15 seals: 856 rows.
+Some material-tier inputs normalize to one identity. All observed rows now have
+direct class/sprite/frame bindings; fixture bytes, census and rows repeat.
+
+Two ancestor-only candidates actually rendered sprites: CA_LimboMagicImplement
+at CSWD A and CaelumJavelinAmmo at CCAA A. Explicit child aliases reuse the
+current sword and carbine-ammunition models exactly. The base javelin class keeps
+its existing carbine default; real tiered javelins retain their separate models.
+No new pixels, geometry, gameplay, class identity or persistence data are added.
+Twelve final detail captures and the overview were inspected beside the two
+parent controls. The baseline/final view fixture is identical and passes 32
+metadata/camera checks on each package. Its first strict scale comparison was
+corrected for declared0.100000001 versus settled0.100000000; gameplay is unchanged.
+
+Run `python assets/validation_v5_17_71/run_inventory_model_audit.py --runtime build/caelum_argenteum_dev.pk3 --output build/ca785-audit` and
+`python assets/validation_v5_17_71/run_inherited_defaults.py --runtime build/caelum_argenteum_dev.pk3 --output build/ca785-views` using new output directories.
+The alias checker is integrated into validate_project.py. Evidence:
+assets/validation_v5_17_71/evidence/SUMMARY.json. CA-KP-248 records the diagnostic
+pitfalls. Exact state association is bounded coverage, not certification of all
+future/custom subclasses, ordinary handling or art acceptance. Existing author
+checks remain pending. Other characters, modular fitting and V5.16 remain open.
 
 ## 5.17.70 - Native torso armor drops (#783)
 

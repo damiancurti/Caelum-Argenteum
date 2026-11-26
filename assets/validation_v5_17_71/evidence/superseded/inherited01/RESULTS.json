@@ -1,0 +1,63 @@
+{
+  "issue": 785,
+  "scope": "Capture four inherited/default pickup states beside their native parent references.",
+  "runtime_sha256": "1c883a38c616428c38f2655d0ad7628afd1f0f0bc95e78f0ae28068108956963",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "fixture_sha256": "b305c9e3c526a0ca144252a94c7a3bad07e94c8e76dc5728353bef09b9e3b0d5",
+  "cases": [
+    [
+      "CaelumWeaponPickup",
+      "CSWD"
+    ],
+    [
+      "CA_LimboMagicImplement",
+      "CSWD"
+    ],
+    [
+      "CaelumCarbineAmmo",
+      "CCAA"
+    ],
+    [
+      "CaelumJavelinAmmo",
+      "CCAA"
+    ]
+  ],
+  "dimensions": {
+    "CSWD": {
+      "model": "models/caelum/inventory/bladed_weapons/sword.md3",
+      "extent": 87.0,
+      "height": 43.5
+    },
+    "CCAA": {
+      "model": "models/caelum/inventory/ammunition/carbine.md3",
+      "extent": 109.05439376831055,
+      "height": 47.5
+    }
+  },
+  "exit_code": 0,
+  "assertions": 28,
+  "errors": [
+    "CA785 FAIL native world metadata 2",
+    "CA785 FAIL native world metadata 3",
+    "CA785 FAIL native world metadata 2",
+    "CA785 FAIL native world metadata 3",
+    "Incomplete native metadata/control checks"
+  ],
+  "passed": false,
+  "captures": [
+    "detail-0-90.png",
+    "detail-0-160.png",
+    "detail-0-270.png",
+    "detail-1-90.png",
+    "detail-1-160.png",
+    "detail-1-270.png",
+    "detail-2-90.png",
+    "detail-2-160.png",
+    "detail-2-270.png",
+    "detail-3-90.png",
+    "detail-3-160.png",
+    "detail-3-270.png"
+  ],
+  "author_accepted": false,
+  "visual_acceptance": "Requires inspection; assertions only verify native states, world metadata and camera controls."
+}

@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.70** - 2026-11-15.
+Documentation version: **5.17.71** - 2026-11-15.
+
+## 5.17.71 - #785 inventory model coverage and default-state aliases (2026-11-15)
+
+A native census of597 project Inventory classes and856 current default/catalogue
+rows exposed two ancestor-only candidates. Visual comparison proved both child
+states still rendered sprites. Explicit CSWD A / CCAA A bindings reuse the parent
+sword/ammunition models; no art/gameplay/persistence changes. Repeated audit
+fixture/data and32 native metadata/camera checks pass. Twelve final detail views
+and an overview were inspected. Initial class-name typing, unsupported conversion
+and floating-point diagnostic failures remain recorded as superseded evidence.
+Evidence: assets/validation_v5_17_71/evidence/SUMMARY.json; lesson: CA-KP-248.
+No author check was accepted or removed. Wider work remains pending.
 
 ## 5.17.70 - Magic, light, medium and heavy torso armor (#783), 2026-11-15
 

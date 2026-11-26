@@ -1,0 +1,44 @@
+// #785: solo observa las representaciones heredadas junto a sus padres nativos.
+class CA785Camera : Actor
+{Default {CameraHeight 0;Height 0;Radius 0;+NOINTERACTION +NOGRAVITY} States {Spawn:TNT1 A -1;Stop;}}
+class CA785InheritedViews : EventHandler
+{
+    Array<Inventory> Items;
+    CA785Camera Camera;
+    int Failures;
+    void Check(bool okay,String label)
+    {if(!okay)Failures++;Console.Printf("CA785 %s %s",okay?"PASS":"FAIL",label);}
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name=="ca785_prepare")
+        {
+            let user=CaelumPlayer(players[0].mo);user.CharacterCreationComplete=true;user.CreationWizardOpen=false;user.bInvisible=true;
+            static const class<Inventory> kinds[]={'CaelumWeaponPickup','CA_LimboMagicImplement','CaelumCarbineAmmo','CaelumJavelinAmmo'};
+            for(int i=0;i<kinds.Size();i++)
+            {let item=Inventory(Actor.Spawn(kinds[i],((i%2)*48,(i/2)*48,0),NO_REPLACE));Items.Push(item);Check(item!=null && item.GetClass()==kinds[i],String.Format("original class %d",i));}
+            Camera=CA785Camera(Actor.Spawn('CA785Camera',(24,-120,90),NO_REPLACE));Camera.Angle=90;Camera.Pitch=33;players[0].camera=Camera;
+            let hud=CaelumHUDOverlay(EventHandler.Find('CaelumHUDOverlay'));if(hud!=null)hud.HUDFont=null;
+        }
+        if(e.Name=="ca785_verify")
+        {
+            for(int i=0;i<Items.Size();i++)
+            {
+                let item=Items[i];let parent=Items[i-i%2];let defaults=GetDefaultByType(item.GetClass());
+                Check(item.sprite==parent.sprite && item.frame==parent.frame,String.Format("matching parent state %d",i));
+                Check(item.Owner==null && item.Amount==defaults.Amount && item.Radius==defaults.Radius && item.Height==defaults.Height && item.Scale==defaults.Scale,String.Format("native world metadata %d",i));
+                Console.Printf("CA785 VISUAL|%s|%d|%d",item.GetClassName(),item.sprite,item.frame);
+            }
+            Console.Printf("CA785 COMPLETE failures=%d",Failures);
+        }
+        if(e.Name=="ca785_detail")
+        {
+            int index=e.Args[0];double angle=e.Args[1];if(index<0 || index>=Items.Size())return;
+            static const double extents[]={87.0,87.0,109.05439376831055,109.05439376831055};static const double heights[]={43.5,43.5,47.5,47.5};
+            for(int i=0;i<Items.Size();i++)Items[i].bInvisible=i!=index;
+            let item=Items[index];double distance=max(9.,extents[index]*item.Scale.X*1.4);
+            vector3 center=item.Pos+(0,0,heights[index]*item.Scale.Y);
+            Camera.SetOrigin(center+(-cos(angle)*distance,-sin(angle)*distance,distance*.5),false);Camera.Angle=angle;Camera.Pitch=26.565051;Camera.ClearInterpolation();
+            Check(players[0].camera==Camera && !item.bInvisible && Camera.Angle==angle,String.Format("detail %d angle %d",index,e.Args[1]));
+        }
+    }
+}
