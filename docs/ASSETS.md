@@ -1,6 +1,50 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.67** - 2026-11-15.
+Documentation version: **5.17.68** - 2026-11-15.
+
+## 5.17.68 - Native hand armor drops (#779)
+
+Four original paired glove/gauntlet assemblies replace only the hand-slot states
+CGMM, CGLT, CGMD and CGHV of CaelumArmorPickup. Magic, light, medium and heavy
+retain all three qualities (twelve native cases). Effective references remain
+the original ca_gloves.png, ca_gloves_light.png, ca_gloves_medium.png and
+ca_gloves_heavy.png TEXTURES aliases, including their individual offsets.
+Inventory art, protection, size, weight, durability, scale/collision, recipes
+and persistence are unchanged. Clothing gloves and giant-gauntlet weapons retain
+their own models. These candidates do not deliver worn modular hand fitting.
+
+Editable DESIGN/OBJ/MTL and provenance: inventory_models_647/armor_hands.
+Existing owned hollow-glove anatomy is adapted with separate fingers/thumbs,
+open cuffs, fixed curved finger plates, knuckles, straps and simplified trim.
+All leather/steel/gold pixels are reused unchanged; no raster generation/edit.
+Independent serialized checks verify 65,840 vertices, 30,400 triangles, 164
+closed components, 156 fixed attachments, 40 clear opening rays and eight cuff
+depth probes. Sixteen exports repeat byte-for-byte; effective envelopes and UVs pass.
+
+Initial export setup required the existing prism backend and correct ellipsoid
+schema keys; those attempts stopped before installation. The first native front
+review showed round finger pads resembling studs. Closed curved plate segments
+now wrap the medium/heavy fingers; initial evidence remains as superseded.
+All twenty final detail/underside views and the overview were inspected.
+Shared simplified anatomy, fixed upright paired pose, understated leather straps,
+flat matte shading, simplified plates/runes, repeated materials, interpreted palms
+and omitted stitching/fine ornament remain subject to author review.
+
+GZDoom 4.14.2 passes 1,011 native pickup/equip/toss and old-save/reload/rollback
+assertions plus 236 visual/control assertions. A further 236-assertion helmet
+regression checks the earlier head-state bindings after adding hand bindings
+to the same class. Its overview was inspected. Prepared API transactions do not
+establish ordinary menus, crafting, manual handling or author acceptance.
+
+Both twelve-object, 700-tic presentation scenes were inspected. Sprite/model
+queue rates were 1143.29/1117.61 per second, p95
+1.054/1.071 ms and p99 1.279/1.260 ms.
+This single sequential pair measures queue intervals, not GPU/display latency,
+repeatability or campaign performance. Projected footprints differ. Evidence:
+assets/validation_v5_17_68/evidence/SUMMARY.json.
+
+CA779-HAND-ARMOR-01 remains pending. Eight torso/foot armor states, ancestor-only
+pickup bindings, other characters, modular equipment and V5.16 remain unfinished.
 
 ## 5.17.67 - Native armor helmet drops (#777)
 
