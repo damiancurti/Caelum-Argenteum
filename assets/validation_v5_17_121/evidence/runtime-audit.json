@@ -1,0 +1,11 @@
+{
+  "issue": 886,
+  "runtime_sha256": "5cb225caf95f95d19b1fc372312262b40ba8cc9c8240fef8c7de6ec7ef86254f",
+  "members": 18767,
+  "unchanged": 18765,
+  "release_only_changes": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "production_map_art_gameplay_unchanged": true
+}

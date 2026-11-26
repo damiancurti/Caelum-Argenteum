@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.120** - 2026-11-21.
+Documentation version: **5.17.121** - 2026-11-21.
+
+## 5.17.121 - Furnish the municipal office and archive for review (#886, #463)
+
+The existing civic layout calls for office/archive/courtyard use. A private
+proposal now adds eight owned desk/chair workstations with shelves in four open
+northern bays and eighteen shelves along the western archive wing. All original
+map geometry and actor placements remain byte-identical; the entrance, courtyard
+and southern public vendor wing are preserved. These are fixed visual props,
+not new reading/rest/storage/trade services or enclosed rooms. Production defaults
+stay intact. Paired views, native routes/collision, existing vendor Use, matching
+save/reload and fresh default restoration pass. Style and placement await the
+single final author session. Street/maintenance/moisture/lighting finish, character
+decisions, unauthored progression and the severe normal-siege limit remain open.
 
 ## 5.17.120 - Separate interior ceilings from exterior roofing (#883, #463)
 

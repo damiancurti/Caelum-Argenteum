@@ -1,0 +1,64 @@
+{
+  "issue": 886,
+  "label": "siege-candidate01",
+  "scene": "siege",
+  "directory": "build/v516/barracas-profile-20261121-100859-439799",
+  "runtime_sha256": "5cb225caf95f95d19b1fc372312262b40ba8cc9c8240fef8c7de6ec7ef86254f",
+  "overlays": [
+    {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-municipal03\\municipal.pk3",
+      "sha256": "b510512be4638c7ff396df490c942bb3c1bdcff622e299e70ec497a6b177e916"
+    }
+  ],
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "real_house_uses": 0,
+  "states": [
+    "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+    "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+    "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+  ],
+  "census": [
+    "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+    "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+  ],
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 28.782373857142858,
+    "p95_ms": 44.4627,
+    "p99_ms": 49.6337,
+    "max_ms": 57.1889
+  },
+  "presentation": {
+    "pid": 51664,
+    "trace_sha256": "c4b9a64d0e0559d19970635d639585c10ae86502ad3091a2f53ba6cf82559b3e",
+    "rows": 2396,
+    "scene_presents": 40,
+    "mean_present_fps": 2.247449969783503,
+    "present_intervals": {
+      "samples": 39,
+      "mean_ms": 444.9487256423021,
+      "p50_ms": 438.6895999908447,
+      "p95_ms": 511.27770006656647,
+      "p99_ms": 515.0500999689102,
+      "max_ms": 515.0500999689102
+    },
+    "native_call_duration": {
+      "samples": 40,
+      "mean_ms": 0.23937750458717347,
+      "p50_ms": 0.23899996280670166,
+      "p95_ms": 0.25849997997283936,
+      "p99_ms": 0.26620006561279297,
+      "max_ms": 0.26620006561279297
+    }
+  },
+  "author_acceptance": false,
+  "qualification": "Municipal interior or approved normal1000-attacker/600-defender siege; unchanged native gameplay and original geometry. Queue presentation is not monitor scanout; no author acceptance."
+}

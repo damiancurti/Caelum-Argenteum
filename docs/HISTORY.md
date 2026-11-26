@@ -1,6 +1,72 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.120** - 2026-11-21.
+Documentation version: **5.17.121** - 2026-11-21.
+
+## 5.17.121 - Furnish the municipal office and archive for review (#886, #463)
+
+Prepared #886 against the existing municipal office/archive/courtyard description.
+The proposal appends 42 native-sized fixed actors:8 desks,8 chairs,26 shelves.
+Four open northern workspace bays and a western archive row leave the entrance,
+courtyard and southern vendor wing intact. No partitions, new geometry, functional
+furniture, inventory, ownership, service, light, raster or model are added. The
+original TEXTMAP prefix and 651 prior things remain exact; geometry counts stay
+37177 vertices/38464 lines/74142 sides/392 sectors. Native current Justice lookup
+passes. The 121 runtime differs from 120 only in two release log labels, with 18765
+of 18767 members identical. Production maps/art/gameplay/save layout stay unchanged.
+
+Two complete public-builder runs produce byte-identical municipal packages and
+manifests. Package SHA256:b510512be4638c7ff396df490c942bb3c1bdcff622e299e70ec497a6b177e916.
+The inherited #883 composition remains exact except for the targeted MAP03 suffix
+and private registrations/labels. 42 instances total 42120 source triangles; three
+owned models total 3672 vertices/1836 triangles/7 material sections/236392 bytes.
+These costs do not establish a permanent art budget or visible draw-call count.
+
+Final paired gallery runs pass 18 scene samples, camera occupancy/headroom and a
+26.663-MU walk each. All 18 final1520x825 images were inspected directly. Four route
+phases(control, candidate fresh, exact same-option reload, fresh default) each
+pass 451 native TryMove steps,42 collision centers, two scene checks and actual
+native vendor 0 Use; totals 1804/168/8/4, with four checkpoints. Candidate prop
+centers block 42/42; controls 0/42. Four 1280x720 Spanish label captures were inspected.
+Only the current radius 16 / height 56 probe body is tested; no all-body/all-map claim.
+The matching disposable save is copied byte-for-byte before basename-only loading;
+the reload subsequently writes its own new checkpoint. No campaign save is read
+or migrated. The final review helper cycles eight anchors and leaves native menus
+available; three hidden smoke phases exercise wraparound and saves. These are
+agent-only checks, not an author review or ordinary campaign progression.
+
+Retained corrections: an initial out-vector fixture helper triggered an unexpected
+GZDoom 4.14.2 JIT error and REGT_ADDROF vector abort; direct boolean predicates
+replace that specific helper. Intermediate views passed geometry but showed the
+raw CA886SceneShelf aim label; private generic ES/EN tags now replace it and the
+complete pair was rerun. Two vendor attempts lacked a persistent Box prerequisite;
+setting both pawn and character record then PersistCharacterState follows the
+existing author-fixture pattern. Final native Use checks pass without changing
+production gates. Some final control gallery images show Aira 1/1084 versus the
+candidate 1084/1084; the cause was not established. Those teleport captures are
+not evidence of identical HUD/gameplay state, and their pixels are retained.
+
+| Scene | Queue presents/s | Present mean / p95 / p99 / max ms | Tic mean / p95 / p99 / max ms |
+| --- | ---: | --- | --- |
+| civic-control01 | 181.882985 | 5.498 / 7.163 / 8.252 / 10.147 | 28.564 / 32.391 / 33.623 / 34.490 |
+| civic-candidate 01 | 168.373931 | 5.939 / 7.361 / 8.230 / 9.660 | 28.569 / 33.160 / 34.199 / 35.245 |
+| siege-control01 | 2.293488 | 436.017 / 515.589 / 556.604 / 556.604 | 28.949 / 44.567 / 51.449 / 60.822 |
+| siege-candidate 01 | 2.247450 | 444.949 / 511.278 / 515.050 / 515.050 | 28.782 / 44.463 / 49.634 / 57.189 |
+
+All four windows complete 700 simulation samples with native frame/presentation
+capture. Paired observed state comparison: civic states_equal=True, census_equal=True; siege states_equal=True, census_equal=True.
+One hidden unpaused official GZDoom 4.14.2/Vulkan process runs at 5% audio,1280x720 on
+Windows 11 / Ryzen 9 5950X / RTX 3070 Ti. No heavy build/hash/validation overlaps startup or
+measurement. Civic runs keep normal city AI; siege runs use normal deployment of
+the approved 1000-attacker/600-defender case. Four endpoint images were inspected
+separately. The furnishing candidate costs more in the civic pair; single pairs
+do not establish a general speedup. Severe siege stalls remain. Queue presents
+are not monitor scanout FPS, and tic intervals include pacing/frame work. No
+retired 6000-attacker case is run; unchanged representative #881 scenes remain
+reference evidence, not a test of this new municipal arrangement.
+
+Evidence: assets/validation_v5_17_121. Full project validation passes with no errors; the generated document index is current. CA886-MUNICIPAL-01 joins the single author queue; all previous checks
+remain pending. No author acceptance, merge, issue closure or completed-batch
+claim is recorded.
 
 ## 5.17.120 - Separate interior ceilings from exterior roofing (#883, #463)
 

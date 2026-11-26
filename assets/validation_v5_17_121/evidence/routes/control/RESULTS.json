@@ -1,0 +1,41 @@
+{
+  "phase": "control",
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-review01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-ceilings01\\vaults.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-routes03\\routes.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-routes03\\control\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-routes03\\control",
+    "-rngseed",
+    "428",
+    "+map",
+    "MAP03",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-routes03\\control\\engine.log",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-routes03\\control\\start.cfg"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "errors": [],
+  "markers": [
+    "CA886 SERVICE PREP previous_box=0 wizard=0",
+    "CA886 ROUTE PASS moves=451 pos=-18112.000,-2240.000,0.000",
+    "CA886 SCENE PASS candidate=0 props=0 invalid=0 vendor=1",
+    "CA886 COLLISION PASS blocked=0 samples=42 radius=16.000 height=56.000",
+    "CA886 SERVICE STATE box=1 wizard=0 aim=1 range=64.000 distance=64.000 angle=180.000 pitch=0.000 latched=1 menu=1 trade=1 available=1",
+    "CA886 SERVICE PASS identity=0",
+    "CA886 SCENE PASS candidate=0 props=0 invalid=0 vendor=1",
+    "CA886 LABEL CA886_SCENE_SHELF"
+  ],
+  "checkpoint_exists": true,
+  "passed": true
+}

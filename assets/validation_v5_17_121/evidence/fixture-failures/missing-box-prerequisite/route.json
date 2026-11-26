@@ -1,0 +1,72 @@
+{
+  "points": [
+    [
+      -16000,
+      -1472
+    ],
+    [
+      -16192,
+      -1472
+    ],
+    [
+      -17344.0,
+      -1472.0
+    ],
+    [
+      -16192,
+      -1472
+    ],
+    [
+      -16192,
+      -661.4570365014642
+    ],
+    [
+      -16512,
+      -661.4570365014642
+    ],
+    [
+      -17152,
+      -661.4570365014642
+    ],
+    [
+      -17728,
+      -661.4570365014642
+    ],
+    [
+      -18304,
+      -661.4570365014642
+    ],
+    [
+      -18210,
+      -661.4570365014642
+    ],
+    [
+      -18210,
+      -1440
+    ],
+    [
+      -18210,
+      -2176
+    ],
+    [
+      -18112,
+      -2176
+    ],
+    [
+      -18112,
+      -2240
+    ]
+  ],
+  "vendor": {
+    "identity": 0,
+    "building_id": 7,
+    "vendor": [
+      -18176,
+      -2240,
+      0
+    ],
+    "angle": 0
+  },
+  "probe_step": 16.0,
+  "scope": "Continuous native TryMove from the valid entrance through the courtyard, all office bays, archive and unchanged vendor approach. Centre collision samples use a non-player probe at the current player dimensions; this is not all-map or largest-body acceptance."
+}

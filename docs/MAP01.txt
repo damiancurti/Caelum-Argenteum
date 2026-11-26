@@ -1,6 +1,24 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.17.120** - 2026-11-21.
+Documentation version: **5.17.121** - 2026-11-21.
+
+## 5.17.121 - Furnish the municipal office and archive for review (#886, #463)
+
+The private municipal proposal uses existing building7/shop0/tag1028. Derive
+the northern workspace bays from its inner frontage, the retained city grid and
+existing bedroom length. Workstation spacing uses the retained window_step;
+archive spacing rounds the owned shelf width upward to the city grid. All source
+values and derived positions are recorded in the proposal config/manifest. Four
+open bays contain two desk/chair/shelf sets each; the western wing receives18
+additional shelves. No partition or new room geometry is introduced. The eastern
+entrance, open courtyard and southern vendor wing remain intact.
+
+The original TEXTMAP is retained as an exact prefix before 42 appended things:
+651 original things become 693;37177 vertices,38464 lines,74142 sides and 392 sectors
+remain unchanged. The existing Justice fallback remains valid and is checked in
+native sessions. The continuous sampled route crosses the entrance/courtyard,
+four work bays and western archive, then reaches the original merchant. It is
+not a claim that every possible route or larger body has been tested.
 
 ## 5.17.120 - Separate interior ceilings from exterior roofing (#883, #463)
 

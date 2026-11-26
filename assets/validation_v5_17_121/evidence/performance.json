@@ -1,0 +1,258 @@
+[
+  {
+    "issue": 886,
+    "label": "civic-control01",
+    "scene": "civic",
+    "directory": "build/v516/ceiling-profile-20261121-095957-091506",
+    "runtime_sha256": "5cb225caf95f95d19b1fc372312262b40ba8cc9c8240fef8c7de6ec7ef86254f",
+    "overlays": [
+      {
+        "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-ceilings01\\vaults.pk3",
+        "sha256": "c0fd4ee810407a1c4710207f678d6b45961f142ef936b5d1cf58110ae6aeb6d1"
+      }
+    ],
+    "engine": {
+      "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    "layer": {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+      "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+    },
+    "real_house_uses": 0,
+    "states": [
+      "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+      "CA435PERF STATE slot=0 health=1248 pos=-16192.000000,-1472.000000,0.000000",
+      "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+      "CA435PERF STATE slot=0 health=1248 pos=-16192.000000,-1472.000000,0.000000"
+    ],
+    "census": [
+      "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+      "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+    ],
+    "simulation": {
+      "samples": 700,
+      "mean_ms": 28.563623285714286,
+      "p95_ms": 32.3911,
+      "p99_ms": 33.6225,
+      "max_ms": 34.4902
+    },
+    "presentation": {
+      "pid": 35400,
+      "trace_sha256": "4527b86beead9e008c81fe018d668ae3c64198d0fe9fb93aebd1f5729e077c4a",
+      "rows": 5076,
+      "scene_presents": 3152,
+      "mean_present_fps": 181.88298507670913,
+      "present_intervals": {
+        "samples": 3151,
+        "mean_ms": 5.498040399866156,
+        "p50_ms": 5.220899939537048,
+        "p95_ms": 7.162899971008301,
+        "p99_ms": 8.252100110054016,
+        "max_ms": 10.147000074386597
+      },
+      "native_call_duration": {
+        "samples": 3152,
+        "mean_ms": 0.0991854392710676,
+        "p50_ms": 0.09300005435943604,
+        "p95_ms": 0.1313999891281128,
+        "p99_ms": 0.1902000904083252,
+        "max_ms": 0.3825000524520874
+      }
+    },
+    "author_acceptance": false,
+    "qualification": "Municipal interior or approved normal1000-attacker/600-defender siege; unchanged native gameplay and original geometry. Queue presentation is not monitor scanout; no author acceptance."
+  },
+  {
+    "issue": 886,
+    "label": "civic-candidate01",
+    "scene": "civic",
+    "directory": "build/v516/ceiling-profile-20261121-100445-281179",
+    "runtime_sha256": "5cb225caf95f95d19b1fc372312262b40ba8cc9c8240fef8c7de6ec7ef86254f",
+    "overlays": [
+      {
+        "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-municipal03\\municipal.pk3",
+        "sha256": "b510512be4638c7ff396df490c942bb3c1bdcff622e299e70ec497a6b177e916"
+      }
+    ],
+    "engine": {
+      "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    "layer": {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+      "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+    },
+    "real_house_uses": 0,
+    "states": [
+      "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+      "CA435PERF STATE slot=0 health=1248 pos=-16192.000000,-1472.000000,0.000000",
+      "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+      "CA435PERF STATE slot=0 health=1248 pos=-16192.000000,-1472.000000,0.000000"
+    ],
+    "census": [
+      "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+      "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+    ],
+    "simulation": {
+      "samples": 700,
+      "mean_ms": 28.56929357142857,
+      "p95_ms": 33.1596,
+      "p99_ms": 34.1989,
+      "max_ms": 35.2452
+    },
+    "presentation": {
+      "pid": 29172,
+      "trace_sha256": "aceb6d91192378b944d748dc629276290ed92cdad43ebe487a08775e98f4d9a3",
+      "rows": 4784,
+      "scene_presents": 2960,
+      "mean_present_fps": 168.37393129034172,
+      "present_intervals": {
+        "samples": 2959,
+        "mean_ms": 5.9391616762550585,
+        "p50_ms": 5.6646000146865845,
+        "p95_ms": 7.361199975013733,
+        "p99_ms": 8.23039996623993,
+        "max_ms": 9.660099983215332
+      },
+      "native_call_duration": {
+        "samples": 2960,
+        "mean_ms": 0.10198949148526062,
+        "p50_ms": 0.0943000316619873,
+        "p95_ms": 0.13989996910095215,
+        "p99_ms": 0.1952000856399536,
+        "max_ms": 0.6416000127792358
+      }
+    },
+    "author_acceptance": false,
+    "qualification": "Municipal interior or approved normal1000-attacker/600-defender siege; unchanged native gameplay and original geometry. Queue presentation is not monitor scanout; no author acceptance."
+  },
+  {
+    "issue": 886,
+    "label": "siege-control01",
+    "scene": "siege",
+    "directory": "build/v516/barracas-profile-20261121-100634-116920",
+    "runtime_sha256": "5cb225caf95f95d19b1fc372312262b40ba8cc9c8240fef8c7de6ec7ef86254f",
+    "overlays": [
+      {
+        "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-ceilings01\\vaults.pk3",
+        "sha256": "c0fd4ee810407a1c4710207f678d6b45961f142ef936b5d1cf58110ae6aeb6d1"
+      }
+    ],
+    "engine": {
+      "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    "layer": {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+      "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+    },
+    "real_house_uses": 0,
+    "states": [
+      "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+      "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+      "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+      "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+    ],
+    "census": [
+      "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+      "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+    ],
+    "simulation": {
+      "samples": 700,
+      "mean_ms": 28.948646999999998,
+      "p95_ms": 44.5672,
+      "p99_ms": 51.4492,
+      "max_ms": 60.8221
+    },
+    "presentation": {
+      "pid": 5928,
+      "trace_sha256": "bdb50be9397b5339823bb150c8f3637837a455820d9a5f8fb9c20dda407672d7",
+      "rows": 2460,
+      "scene_presents": 41,
+      "mean_present_fps": 2.2934884251216867,
+      "present_intervals": {
+        "samples": 40,
+        "mean_ms": 436.01702500283716,
+        "p50_ms": 435.90439999103546,
+        "p95_ms": 515.5888999700546,
+        "p99_ms": 556.6042000055313,
+        "max_ms": 556.6042000055313
+      },
+      "native_call_duration": {
+        "samples": 41,
+        "mean_ms": 0.24197073389844195,
+        "p50_ms": 0.24000000953674316,
+        "p95_ms": 0.2618999481201172,
+        "p99_ms": 0.31560003757476807,
+        "max_ms": 0.31560003757476807
+      }
+    },
+    "author_acceptance": false,
+    "qualification": "Municipal interior or approved normal1000-attacker/600-defender siege; unchanged native gameplay and original geometry. Queue presentation is not monitor scanout; no author acceptance."
+  },
+  {
+    "issue": 886,
+    "label": "siege-candidate01",
+    "scene": "siege",
+    "directory": "build/v516/barracas-profile-20261121-100859-439799",
+    "runtime_sha256": "5cb225caf95f95d19b1fc372312262b40ba8cc9c8240fef8c7de6ec7ef86254f",
+    "overlays": [
+      {
+        "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-municipal03\\municipal.pk3",
+        "sha256": "b510512be4638c7ff396df490c942bb3c1bdcff622e299e70ec497a6b177e916"
+      }
+    ],
+    "engine": {
+      "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+    },
+    "layer": {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+      "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+    },
+    "real_house_uses": 0,
+    "states": [
+      "CA435PERF STATE tic=3599 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+      "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000",
+      "CA435PERF STATE tic=4299 defenders=601 attackers=988 registered_health=1421137 parked=0 population=1590 dense=1",
+      "CA435PERF STATE slot=0 health=1248 pos=-4352.000000,-14016.000000,0.000000"
+    ],
+    "census": [
+      "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+      "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+    ],
+    "simulation": {
+      "samples": 700,
+      "mean_ms": 28.782373857142858,
+      "p95_ms": 44.4627,
+      "p99_ms": 49.6337,
+      "max_ms": 57.1889
+    },
+    "presentation": {
+      "pid": 51664,
+      "trace_sha256": "c4b9a64d0e0559d19970635d639585c10ae86502ad3091a2f53ba6cf82559b3e",
+      "rows": 2396,
+      "scene_presents": 40,
+      "mean_present_fps": 2.247449969783503,
+      "present_intervals": {
+        "samples": 39,
+        "mean_ms": 444.9487256423021,
+        "p50_ms": 438.6895999908447,
+        "p95_ms": 511.27770006656647,
+        "p99_ms": 515.0500999689102,
+        "max_ms": 515.0500999689102
+      },
+      "native_call_duration": {
+        "samples": 40,
+        "mean_ms": 0.23937750458717347,
+        "p50_ms": 0.23899996280670166,
+        "p95_ms": 0.25849997997283936,
+        "p99_ms": 0.26620006561279297,
+        "max_ms": 0.26620006561279297
+      }
+    },
+    "author_acceptance": false,
+    "qualification": "Municipal interior or approved normal1000-attacker/600-defender siege; unchanged native gameplay and original geometry. Queue presentation is not monitor scanout; no author acceptance."
+  }
+]

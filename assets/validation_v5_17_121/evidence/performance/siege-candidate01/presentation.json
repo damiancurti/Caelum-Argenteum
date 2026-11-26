@@ -1,0 +1,32 @@
+{
+  "issue": 886,
+  "map": "MAP03",
+  "siege": true,
+  "ground": false,
+  "peers": [
+    {
+      "pid": 51664,
+      "trace_sha256": "c4b9a64d0e0559d19970635d639585c10ae86502ad3091a2f53ba6cf82559b3e",
+      "rows": 2396,
+      "scene_presents": 40,
+      "mean_present_fps": 2.247449969783503,
+      "present_intervals": {
+        "samples": 39,
+        "mean_ms": 444.9487256423021,
+        "p50_ms": 438.6895999908447,
+        "p95_ms": 511.27770006656647,
+        "p99_ms": 515.0500999689102,
+        "max_ms": 515.0500999689102
+      },
+      "native_call_duration": {
+        "samples": 40,
+        "mean_ms": 0.23937750458717347,
+        "p50_ms": 0.23899996280670166,
+        "p95_ms": 0.25849997997283936,
+        "p99_ms": 0.26620006561279297,
+        "max_ms": 0.26620006561279297
+      }
+    }
+  ],
+  "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+}

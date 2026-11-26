@@ -1,0 +1,254 @@
+{
+  "issue": 886,
+  "cameras": [
+    {
+      "name": "municipality_entrance",
+      "point": [
+        -16000,
+        -1472
+      ],
+      "angle": 180.0,
+      "basis": "Existing generated door center and authored grid; no gameplay placement"
+    },
+    {
+      "name": "municipality_inside",
+      "point": [
+        -16192,
+        -1472
+      ],
+      "angle": 180.0,
+      "basis": "Existing generated door center and authored grid; no gameplay placement"
+    },
+    {
+      "name": "office_1",
+      "point": [
+        -18304,
+        -661.4570365014642
+      ],
+      "angle": 90,
+      "basis": "Existing owned workstation, viewed from the retained grid circulation gap"
+    },
+    {
+      "name": "office_2",
+      "point": [
+        -17728,
+        -661.4570365014642
+      ],
+      "angle": 90,
+      "basis": "Existing owned workstation, viewed from the retained grid circulation gap"
+    },
+    {
+      "name": "office_3",
+      "point": [
+        -17152,
+        -661.4570365014642
+      ],
+      "angle": 90,
+      "basis": "Existing owned workstation, viewed from the retained grid circulation gap"
+    },
+    {
+      "name": "office_4",
+      "point": [
+        -16512,
+        -661.4570365014642
+      ],
+      "angle": 90,
+      "basis": "Existing owned workstation, viewed from the retained grid circulation gap"
+    },
+    {
+      "name": "archive",
+      "point": [
+        -18210,
+        -1440
+      ],
+      "angle": 180,
+      "basis": "Owned archive shelf row and retained shop doorway width"
+    },
+    {
+      "name": "archive_detail",
+      "point": [
+        -18338.0,
+        -1440
+      ],
+      "angle": 180,
+      "basis": "Owned archive shelf row and retained shop doorway width"
+    }
+  ],
+  "runtime_sha256": "5cb225caf95f95d19b1fc372312262b40ba8cc9c8240fef8c7de6ec7ef86254f",
+  "control_sha256": "c0fd4ee810407a1c4710207f678d6b45961f142ef936b5d1cf58110ae6aeb6d1",
+  "candidate_sha256": "b510512be4638c7ff396df490c942bb3c1bdcff622e299e70ec497a6b177e916",
+  "fixture_sha256": "c88cacfea9b430622315147adb152d3156917285f6fdbb97e80b49b33f7ac1db",
+  "runs": [
+    {
+      "label": "control",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "errors": [],
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-review01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-ceilings01\\vaults.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-views03\\municipal-views.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-views03\\control\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-views03\\control",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-views03\\control\\engine.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-views03\\control\\start.cfg"
+      ],
+      "markers": [
+        "CA866 SIZE CMEX01 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMEX01 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMEX04 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMEX04 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR01 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR01 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR01A kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR01A kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR01B kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR01B kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR02 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR02 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMRF01 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMRF01 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMST01 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMST01 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMST02 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMST02 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMTB04 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMTB04 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMWD01 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMWD01 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMWV01 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMWV01 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 VIEW 0 pos=-16000.000,-1472.000,0.000 angle=180.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 VIEW 1 pos=-16192.000,-1472.000,0.000 angle=180.000 headroom=160.000 height=56.000 floor=CVCI06 ceiling=F_SKY1",
+        "CA866 VIEW 2 pos=-18304.000,-661.457,0.000 angle=90.000 headroom=160.000 height=56.000 floor=CVCI06 ceiling=F_SKY1",
+        "CA866 VIEW 3 pos=-17728.000,-661.457,0.000 angle=90.000 headroom=160.000 height=56.000 floor=CVCI06 ceiling=F_SKY1",
+        "CA866 VIEW 4 pos=-17152.000,-661.457,0.000 angle=90.000 headroom=160.000 height=56.000 floor=CVCI06 ceiling=F_SKY1",
+        "CA866 VIEW 5 pos=-16512.000,-661.457,0.000 angle=90.000 headroom=160.000 height=56.000 floor=CVCI06 ceiling=F_SKY1",
+        "CA866 VIEW 6 pos=-18210.000,-1440.000,0.000 angle=180.000 headroom=160.000 height=56.000 floor=CVCI06 ceiling=F_SKY1",
+        "CA866 VIEW 7 pos=-18338.000,-1440.000,0.000 angle=180.000 headroom=160.000 height=56.000 floor=CVCI06 ceiling=F_SKY1",
+        "CA866 VIEW 0 pos=-16000.000,-1472.000,0.000 angle=180.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 WALK distance=26.663 pos=-16026.663,-1472.000,0.000",
+        "CA866 PASS views=8"
+      ],
+      "images": {
+        "municipality_entrance.png": "72c2476cbf0ccda93b9f04834833110fcd5b364e92e0a338ae66a1c0ecabf303",
+        "municipality_inside.png": "655daf8a37c8445301364ba87fb85f2beb6dea96e2e5c29b00a173aa70a859e3",
+        "office_1.png": "f0d90fee1e3660f8dd00915330154fadde85b326adb1123b4c45bc1ed90140eb",
+        "office_2.png": "eec85836f5d15feace42ec631dea0433ca5e7b16b6ba6d729e00b81a8b275ff6",
+        "office_3.png": "b9e44cf50c16627d4df0aee8fb0f7eb2e5a851ce00fc2222c14dab4d47d89547",
+        "office_4.png": "82c2c35a393ceec66dc50ae3607beb9c3cf1d63a46a388d631f7be1a7d345e11",
+        "archive.png": "8b0ccc4a7bb8acda285967927bf9927e8b39bb7e82dbc9fb4275c87e8736059e",
+        "archive_detail.png": "c91c6402f793fc2d7ba9469ce337836333abadf1995ab8cb4d9ba32b304b4fa9",
+        "walk.png": "efe8af501a534ab126978612013196cd97427ce1191beeb42e628881fd4badbc"
+      },
+      "scene_passes": 9
+    },
+    {
+      "label": "candidate",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "errors": [],
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-review01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-municipal02\\municipal.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-views03\\municipal-views.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-views03\\candidate\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-views03\\candidate",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-views03\\candidate\\engine.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-views03\\candidate\\start.cfg"
+      ],
+      "markers": [
+        "CA866 SIZE CMEX01 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMEX01 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMEX04 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMEX04 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR01 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR01 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR01A kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR01A kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR01B kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR01B kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR02 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMGR02 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMRF01 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMRF01 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMST01 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMST01 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMST02 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMST02 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMTB04 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMTB04 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMWD01 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMWD01 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMWV01 kind=1 display_int=128x128 scaled=128.000x128.000",
+        "CA866 SIZE CMWV01 kind=2 display_int=128x128 scaled=128.000x128.000",
+        "CA866 VIEW 0 pos=-16000.000,-1472.000,0.000 angle=180.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 VIEW 1 pos=-16192.000,-1472.000,0.000 angle=180.000 headroom=160.000 height=56.000 floor=CVCI06 ceiling=F_SKY1",
+        "CA866 VIEW 2 pos=-18304.000,-661.457,0.000 angle=90.000 headroom=160.000 height=56.000 floor=CVCI06 ceiling=F_SKY1",
+        "CA866 VIEW 3 pos=-17728.000,-661.457,0.000 angle=90.000 headroom=160.000 height=56.000 floor=CVCI06 ceiling=F_SKY1",
+        "CA866 VIEW 4 pos=-17152.000,-661.457,0.000 angle=90.000 headroom=160.000 height=56.000 floor=CVCI06 ceiling=F_SKY1",
+        "CA866 VIEW 5 pos=-16512.000,-661.457,0.000 angle=90.000 headroom=160.000 height=56.000 floor=CVCI06 ceiling=F_SKY1",
+        "CA866 VIEW 6 pos=-18210.000,-1440.000,0.000 angle=180.000 headroom=160.000 height=56.000 floor=CVCI06 ceiling=F_SKY1",
+        "CA866 VIEW 7 pos=-18338.000,-1440.000,0.000 angle=180.000 headroom=160.000 height=56.000 floor=CVCI06 ceiling=F_SKY1",
+        "CA866 VIEW 0 pos=-16000.000,-1472.000,0.000 angle=180.000 headroom=184.000 height=56.000 floor=CMST02 ceiling=F_SKY1",
+        "CA866 WALK distance=26.663 pos=-16026.663,-1472.000,0.000",
+        "CA866 PASS views=8"
+      ],
+      "images": {
+        "municipality_entrance.png": "43fba6d26d64cbfccffddcc9df73029f34ae21cab275beeedc3970d886b54c3a",
+        "municipality_inside.png": "10f5e4815eac9dac488eb048d57726c49f202c6f9ae3bd309b66119b98789392",
+        "office_1.png": "66f4ad0d370aff23e63e0f9d38fd5ebf5d9986d52db56d7388b7ba7ee0aac682",
+        "office_2.png": "4898f9a7749cb96288b7422caa7a5d74297b8a345a37236a4e87229cacb49f78",
+        "office_3.png": "f11730dac1bead98a814052b596dd7312699c1a72a010e2e7e21fa2cd8bdd015",
+        "office_4.png": "b2d486b36193b4c4b279abec881b263c4864b56edac2ab33c995b227ed355266",
+        "archive.png": "e921c0f7b1c56698939e925e47f70b59af6d125b2cc97487acee4714022e5a09",
+        "archive_detail.png": "103f3f56a7efd0abcd15d7a9830fcc081d61605161279c5905c8019b42950f88",
+        "walk.png": "9a1173c15cc34bc6451ed0254fee16645c06ab9c596bffcd1acbdbe1f77abec5"
+      },
+      "scene_passes": 9
+    }
+  ],
+  "passed": true,
+  "qualification": "Compare the fixed municipal furnishing proposal with its inherited art control.\n\nCamera teleports and bounded local actor checks are diagnostic only. The normal\ncity setup and retained vendor remain active; no new service is exercised.\n",
+  "author_acceptance": false
+}

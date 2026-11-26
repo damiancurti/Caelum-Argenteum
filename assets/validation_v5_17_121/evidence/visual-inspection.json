@@ -1,0 +1,98 @@
+{
+  "issue": 886,
+  "directly_inspected": [
+    {
+      "image": "views/candidate/archive.png",
+      "sha256": "e921c0f7b1c56698939e925e47f70b59af6d125b2cc97487acee4714022e5a09"
+    },
+    {
+      "image": "views/candidate/archive_detail.png",
+      "sha256": "103f3f56a7efd0abcd15d7a9830fcc081d61605161279c5905c8019b42950f88"
+    },
+    {
+      "image": "views/candidate/municipality_entrance.png",
+      "sha256": "43fba6d26d64cbfccffddcc9df73029f34ae21cab275beeedc3970d886b54c3a"
+    },
+    {
+      "image": "views/candidate/municipality_inside.png",
+      "sha256": "10f5e4815eac9dac488eb048d57726c49f202c6f9ae3bd309b66119b98789392"
+    },
+    {
+      "image": "views/candidate/office_1.png",
+      "sha256": "66f4ad0d370aff23e63e0f9d38fd5ebf5d9986d52db56d7388b7ba7ee0aac682"
+    },
+    {
+      "image": "views/candidate/office_2.png",
+      "sha256": "4898f9a7749cb96288b7422caa7a5d74297b8a345a37236a4e87229cacb49f78"
+    },
+    {
+      "image": "views/candidate/office_3.png",
+      "sha256": "f11730dac1bead98a814052b596dd7312699c1a72a010e2e7e21fa2cd8bdd015"
+    },
+    {
+      "image": "views/candidate/office_4.png",
+      "sha256": "b2d486b36193b4c4b279abec881b263c4864b56edac2ab33c995b227ed355266"
+    },
+    {
+      "image": "views/candidate/walk.png",
+      "sha256": "9a1173c15cc34bc6451ed0254fee16645c06ab9c596bffcd1acbdbe1f77abec5"
+    },
+    {
+      "image": "views/control/archive.png",
+      "sha256": "8b0ccc4a7bb8acda285967927bf9927e8b39bb7e82dbc9fb4275c87e8736059e"
+    },
+    {
+      "image": "views/control/archive_detail.png",
+      "sha256": "c91c6402f793fc2d7ba9469ce337836333abadf1995ab8cb4d9ba32b304b4fa9"
+    },
+    {
+      "image": "views/control/municipality_entrance.png",
+      "sha256": "72c2476cbf0ccda93b9f04834833110fcd5b364e92e0a338ae66a1c0ecabf303"
+    },
+    {
+      "image": "views/control/municipality_inside.png",
+      "sha256": "655daf8a37c8445301364ba87fb85f2beb6dea96e2e5c29b00a173aa70a859e3"
+    },
+    {
+      "image": "views/control/office_1.png",
+      "sha256": "f0d90fee1e3660f8dd00915330154fadde85b326adb1123b4c45bc1ed90140eb"
+    },
+    {
+      "image": "views/control/office_2.png",
+      "sha256": "eec85836f5d15feace42ec631dea0433ca5e7b16b6ba6d729e00b81a8b275ff6"
+    },
+    {
+      "image": "views/control/office_3.png",
+      "sha256": "b9e44cf50c16627d4df0aee8fb0f7eb2e5a851ce00fc2222c14dab4d47d89547"
+    },
+    {
+      "image": "views/control/office_4.png",
+      "sha256": "82c2c35a393ceec66dc50ae3607beb9c3cf1d63a46a388d631f7be1a7d345e11"
+    },
+    {
+      "image": "views/control/walk.png",
+      "sha256": "efe8af501a534ab126978612013196cd97427ce1191beeb42e628881fd4badbc"
+    },
+    {
+      "image": "routes/candidate_fresh/label-es.png",
+      "sha256": "528852b005bf27b80ae7ea56eeca364aec6535fb2c2a641aab438fa38a2528e3"
+    },
+    {
+      "image": "routes/candidate_reload/label-es.png",
+      "sha256": "528852b005bf27b80ae7ea56eeca364aec6535fb2c2a641aab438fa38a2528e3"
+    },
+    {
+      "image": "routes/control/label-es.png",
+      "sha256": "c3c03ac1c12bbbb18fd9ed4cb6fd078a0ec43181d272940ec10b82f272cc44d6"
+    },
+    {
+      "image": "routes/default_restored/label-es.png",
+      "sha256": "c3c03ac1c12bbbb18fd9ed4cb6fd078a0ec43181d272940ec10b82f272cc44d6"
+    }
+  ],
+  "image_contents_inspected": 22,
+  "gallery_images": 18,
+  "spanish_route_images": 4,
+  "author_acceptance": false,
+  "findings": "Owned desks, chairs and filled shelves identify four open northern work bays and a western archive row. Entrance, courtyard and southern vendor wing remain recognizable. Candidate Spanish labels read Estanter\u00eda de archivo in fresh/reload views; controls show the original empty wall. All 18 final gallery images and four route images were inspected directly. Control office_4/archive_detail captures show Aira 1/1084 while corresponding candidate captures show 1084/1084. The cause was not established; these unpaused teleport captures do not prove identical HUD/gameplay state."
+}

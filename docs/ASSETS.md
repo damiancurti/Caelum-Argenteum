@@ -1,6 +1,30 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.120** - 2026-11-21.
+Documentation version: **5.17.121** - 2026-11-21.
+
+## 5.17.121 - Furnish the municipal office and archive for review (#886, #463)
+
+assets/source/art/municipal_review_886/CONFIG.json records owned sources and
+placement rules. assets/generators/build_municipal_review.py composes the exact
+#883 vaults option with a private MAP03 thing suffix and three fixed scene classes.
+Native MODELDEF bindings, scale and pixels are reused unchanged. Candidate-only
+Tag/LANGUAGE entries provide generic English/Spanish labels. No new historical
+document title, functional furniture behavior, light or raster/model is invented.
+
+The three source models total 3672 vertices,1836 triangles,7 OBJ material sections
+and 236392 bytes. Eight desks/eight chairs/twenty-six shelves total 42120 instance
+triangles; these are source counts, not visible triangles, draw calls, GPU memory
+or an approved permanent budget. The municipal option is56536617 bytes, SHA256
+b510512be4638c7ff396df490c942bb3c1bdcff622e299e70ec497a6b177e916.
+Two public-builder runs reproduce both package and manifest byte-for-byte.
+
+Gallery: assets/validation_v5_17_121/review.html,18 directly inspected native
+captures. Four Spanish route captures additionally verify the archive label in
+fresh/reloaded candidates and the empty control/default wall. These views show
+open work bays and an archive row; exact period appearance and placement await
+author review. Some control gallery HUD Aira values differ from the candidate;
+the cause is unestablished and identical gameplay state is not claimed for those
+unpaused teleport captures. The original images remain unchanged.
 
 ## 5.17.120 - Separate interior ceilings from exterior roofing (#883, #463)
 

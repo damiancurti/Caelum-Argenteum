@@ -1,0 +1,53 @@
+{
+  "issue": 886,
+  "runs": [
+    {
+      "phase": "control",
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-review01.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-ceilings01\\vaults.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-routes02\\routes.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-routes02\\control\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-routes02\\control",
+        "-rngseed",
+        "428",
+        "+map",
+        "MAP03",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-routes02\\control\\engine.log",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue886-routes02\\control\\start.cfg"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "errors": [
+        "CA886 SERVICE FAIL"
+      ],
+      "markers": [
+        "CA886 SERVICE PREP previous_box=0 wizard=0",
+        "CA886 ROUTE PASS moves=451 pos=-18112.000,-2240.000,0.000",
+        "CA886 SCENE PASS candidate=0 props=0 invalid=0 vendor=1",
+        "CA886 COLLISION PASS blocked=0 samples=42 radius=16.000 height=56.000",
+        "CA886 SERVICE FAIL identity=0",
+        "CA886 SCENE PASS candidate=0 props=0 invalid=0 vendor=1",
+        "CA886 LABEL CA886_SCENE_SHELF"
+      ],
+      "checkpoint_exists": false,
+      "passed": false
+    }
+  ],
+  "passed": false,
+  "runtime_sha256": "5cb225caf95f95d19b1fc372312262b40ba8cc9c8240fef8c7de6ec7ef86254f",
+  "candidate_sha256": "b510512be4638c7ff396df490c942bb3c1bdcff622e299e70ec497a6b177e916",
+  "fixture_sha256": "27261306c0e3ec227a8235fcd4740a1f0226c6efeac71136743a7bfcddd7fb4c",
+  "author_acceptance": false,
+  "qualification": "Check municipal routes, prop collision, native vendor Use and disposable saves."
+}

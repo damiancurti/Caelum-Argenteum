@@ -1,0 +1,30 @@
+{
+  "issue": 886,
+  "schema_revision": 1,
+  "status": "private_proposal_not_author_accepted",
+  "layout": "assets/barracas_redesign/LAYOUT.json",
+  "city": "assets/map06_port/CITY.json",
+  "interiors": "assets/map06_port/INTERIORS.json",
+  "study": "assets/art_source/study_furniture/DATA.json",
+  "rest": "assets/art_source/basic_rest_furniture/DATA.json",
+  "reading": "assets/map01_mansion/READING.json",
+  "reference": "assets/references/issue_454_maps_20261112/README.md",
+  "inherited_issue": 883,
+  "inherited_variant": "vaults",
+  "placement": {
+    "office_wing": "north",
+    "archive_wing": "west",
+    "public_service_wing": "south",
+    "entry_wing": "east",
+    "office_bay_basis": "Divide the inner northern frontage into bays no longer than the existing house bedroom length; snap boundaries to the retained city grid.",
+    "desk_spacing_basis": "Retained city window_step, with one such step clear at bay boundaries; one desk, chair and visual shelf per retained workstation.",
+    "archive_spacing_basis": "Owned shelf width rounded upward to the retained city grid; cover only the west wing opposite the existing courtyard, leaving the vendor's south wing untouched.",
+    "clearance_basis": "Native owned furniture dimensions; retained grid clearance between desk and chair. No room partition, changed floor or altered roof geometry."
+  },
+  "models": {
+    "desk": {"source_class": "CaelumPortableReadingDesk", "model": "src/models/caelum/props/study/ca_study_desk.obj", "sprite": "CAHC", "label_en": "Office desk", "label_es": "Escritorio de oficina"},
+    "chair": {"source_class": "CaelumRestChair", "model": "src/models/caelum/props/rest/ca_rest_chair.obj", "sprite": "CAHC", "label_en": "Wooden chair", "label_es": "Silla de madera"},
+    "shelf": {"source_class": "CaelumReadingShelf", "model": "src/models/caelum/props/reading/ca_reading_shelf.obj", "sprite": "CBOO", "label_en": "Archive shelving", "label_es": "Estantería de archivo"}
+  },
+  "scope": "Fixed visual scene props only, at owned native scale with collision. No Use, reading, rest, storage, items, ownership, carrying, rewards or new services. Visible books belong to the retained shelf mesh. All original map geometry and existing things remain byte-identical before appended prop things. Fresh disposable review sessions only; final author approval is pending."
+}

@@ -1,0 +1,5 @@
+{
+  "original_sha256": "a234e366d8b95c8043cba625948615408686c8c640bf560555fa2c55d6a9cc3f",
+  "reloaded_resaved_sha256": "c1522bcc795fd195d5d29a654cfce61cfa1e1279b47d9339b08fbf76a4a7e602",
+  "qualification": "The runner copies and asserts exact checkpoint bytes before -loadgame checkpoint.zds. The reload phase subsequently writes its own new checkpoint after repeating the route. Those later save bytes are not asserted equal. No campaign save is read or converted; binaries are not published."
+}
