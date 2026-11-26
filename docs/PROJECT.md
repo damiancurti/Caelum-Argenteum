@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.49** - 2026-11-14.
+Documentation version: **5.17.50** - 2026-11-14.
+
+## 5.17.50 - Kitchen ingredient drop models (#743)
+
+Flour108 through dough113 gain native candidate volumes from the owned #410
+sources.97 closed components,91 contacts, ten opening rays,15,080 UV triangles,
+1,483 contained fill vertices,17 repeated outputs and876 live continuity/control
+checks pass. ASSETS records visual qualifications and the bounded presentation
+pair. CA743-KITCHEN-DROPS-01 retains visual and ordinary cooking/inventory review.
+Existing icons, recipes and gameplay are unchanged. Other inventory, character,
+modular and campaign work remains incomplete.
 
 ## 5.17.49 - Hygiene crafting drop models (#741)
 

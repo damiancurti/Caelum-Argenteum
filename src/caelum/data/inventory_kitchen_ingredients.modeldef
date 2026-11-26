@@ -1,0 +1,6 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/kitchen_ingredients" Model 0 "flour.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M108 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/kitchen_ingredients" Model 0 "beef.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M109 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/kitchen_ingredients" Model 0 "fish.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M110 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/kitchen_ingredients" Model 0 "vegetables.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M111 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/kitchen_ingredients" Model 0 "salt.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M112 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/kitchen_ingredients" Model 0 "dough.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M113 A 0 0 }

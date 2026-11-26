@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "scope": "Independent serialized containment check reproduces the observed old model05 wall/base leaks. Final model09 is checked separately.",
+  "checked_vertices": 1498,
+  "expected_failures": {
+    "Fill protrudes through package: flour": 21,
+    "Fill protrudes through package: salt": 8
+  },
+  "files": {
+    "source-before/assets/source/art/inventory_models_647/kitchen_ingredients/DESIGN.json": "2cf48a35191d46381a6baeb6992e0e3904f3c490af5bab7b9054d4d413954533",
+    "source-before/assets/source/art/inventory_models_647/kitchen_ingredients/EXPORT.json": "6e0e20ecf00ce9e41ca2bfc7174b1c640bf2394760d05aaf3464fe7096a39375",
+    "source-before/assets/source/art/inventory_models_647/kitchen_ingredients/editable/flour.obj": "350ea1bd6bb968860a02e9e281b06d01837908272481513d0b43d27c080c7105",
+    "source-before/assets/source/art/inventory_models_647/kitchen_ingredients/editable/salt.obj": "268426cddcaae2cc33b5d67495ec27e1dc0d9969c32d2748a3911e9a4e9e128d"
+  }
+}
