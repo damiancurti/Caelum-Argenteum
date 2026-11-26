@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.82** - 2026-11-15.
+Documentation version: **5.17.83** - 2026-11-15.
+
+## 5.17.83 - Head galleries implemented; full batch remains (#809)
+
+The two head candidates now appear on their documented grounds. Eight fixture
+files repeat exactly;446 native checks and47 key registrations pass. Keep
+CA809-HEAD-GALLERIES-01 with CA803-HEADS-01 for the final consolidated review.
+Continue the remaining29 creatures, named/modular characters, equipment fitting,
+first-person and V5.16 progression/performance. No author acceptance is inferred.
 
 ## 5.17.82 - Metadata/history follow-ups complete; batch remains (#806)
 

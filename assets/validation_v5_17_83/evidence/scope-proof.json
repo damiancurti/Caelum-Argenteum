@@ -1,0 +1,69 @@
+{
+  "issue": 809,
+  "base_commit": "7768bd0cc640b8f5c07bcaa8a151a94ca65d5a85",
+  "layouts": {
+    "682": {
+      "previous_subjects": 18,
+      "previous_controls": 24,
+      "current_subjects": 19,
+      "current_controls": 25,
+      "prior_subjects_and_controls_exact": true,
+      "retained_fields": [
+        "plots",
+        "crossing_test",
+        "walkway_y",
+        "plot_y",
+        "player_start",
+        "ambient",
+        "ceiling_height",
+        "outer_wall",
+        "walkway_flat",
+        "silent_observer_steps",
+        "animation_sample_wait_tics"
+      ]
+    },
+    "709": {
+      "previous_subjects": 14,
+      "previous_controls": 21,
+      "current_subjects": 15,
+      "current_controls": 22,
+      "prior_subjects_and_controls_exact": true,
+      "retained_fields": [
+        "plots",
+        "crossing_test",
+        "walkway_y",
+        "plot_y",
+        "player_start",
+        "ambient",
+        "ceiling_height",
+        "outer_wall",
+        "walkway_flat",
+        "silent_observer_steps",
+        "animation_sample_wait_tics"
+      ]
+    }
+  },
+  "repeated_fixtures": {
+    "682": {
+      "GALLERY_MANIFEST.json": "e893c317cbc540b85c964968b8cfca1557d04c1a9ab22a4d84e7fadaa2b77450",
+      "TEXTMAP.txt": "a02a2243b19412edc767aabcd06d9aa7e9ba997fbf063730d6d1457912f68411",
+      "gallery.pk3": "15917eec609a9eb7f99815fbb690a2222d1e49f7ff9fda63260da623d884bb55",
+      "gallery.zs": "780f6773df6ebcadc81307b5fc8c2bfb0144de8894ae2f25883e8b3933b5616a"
+    },
+    "709": {
+      "GALLERY_MANIFEST.json": "ea9080a69726fa370153f035816e55702deed684b40ec14285792830a1ebbbd0",
+      "TEXTMAP.txt": "7f60a1560176b49442b641b138992f73d7a821b28a6622a847c3a2abbe67d575",
+      "gallery.pk3": "b1e8ecdf743a32a1682c102463554dc1b6de8c9c6c0be1fba74a334b84116ca1",
+      "gallery.zs": "5ad8457e54e92487a6203618e9b9568fd38db1bb4e931772821a21021f7e7fac"
+    }
+  },
+  "repeated_files": 8,
+  "all_production_art_and_behavior_exact": true,
+  "changed_runtime_resources": [
+    "src/caelum/world/CaelumPhysicalHazards.zs",
+    "src/caelum/world/CaelumSewerMaze.zs"
+  ],
+  "runtime_sha256": "7bc1583b95bc30fdc6a8b9b04d4afba4de73de4461872f53cb5cbab07a55f539",
+  "runtime_source_entries": 18584,
+  "package_exact_source_bytes": true
+}

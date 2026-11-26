@@ -1,6 +1,17 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.82** - 2026-11-15.
+Documentation version: **5.17.83** - 2026-11-15.
+
+## 5.17.83 - Umita and Chonchon regional galleries (#809)
+
+Added optional Umita/NOA and Chonchon/Patagonia figures and cameras while
+retaining32 prior figures,45 controls,nine grounds and both crossing routes.
+A narrow CA682G species selector splits the shared head export by documented
+regional association; CA709G retains explicit model bindings. Production art
+and behavior remain exact. Eight fixture files repeat,446 native assertions
+and47 key registrations pass; ASSETS records qualified presentation samples.
+CA809-HEAD-GALLERIES-01 originates here and remains pending. No previous
+author check was removed, no final terminal opened and no batch acceptance claimed.
 
 ## 5.17.82 - Restore four historical release headings (#806, 2026-11-15)
 

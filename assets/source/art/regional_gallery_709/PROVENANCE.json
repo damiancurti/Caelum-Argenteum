@@ -1,5 +1,5 @@
 {
-  "issue": 729,
+  "issue": 809,
   "parent_issue": 463,
   "status": "candidate_author_review_pending",
   "ownership": "Reuse existing owned regional materials and native folklore models; no image or geometry generation.",
@@ -10,14 +10,15 @@
     "assets/source/art/peuchen_708/EXPORT.json": "9e336cc9abc73ec9064eac13a6d60aeeb8c9ce9a04e0dae35c5fc48af36f910e",
     "assets/source/art/regional_gallery_463/GALLERY.json": "c4414a14c9d1b30414a6c3e97ecd3494e56301dd4c21fda43a09f0583251bc37",
     "assets/source/art/regional_gallery_463/EXPORT.json": "94eb9cbd972314d6a7fa8407c7131faee15cc1c87cfafed02f7a4fce6a615b38",
-    "assets/source/art/regional_gallery_682/GALLERY.json": "a78ccd0dcec8c3198d170d1fda9434c561d1b8f21fb3e7b03d4ea438d7fbcfee",
+    "assets/source/art/regional_gallery_682/GALLERY.json": "65485227785466d786943a70de0e5901f5071c42d27d4958ce7a886e29195fa5",
     "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
     "assets/source/art/avian_711/EXPORT.json": "7278f91fcb6a88025256d4d3c4c48fa9aca420c97f24abf00255ece7f73419f4",
-    "assets/source/art/regional_gallery_682/EXPORT.json": "a42f15705e0781e902b416ce7185fc88706e48a7cb3a40dce764bd0b7b9c1356",
+    "assets/source/art/regional_gallery_682/EXPORT.json": "9a16d5deafe0557630ab32a9722a6aa53ac5218206c9ceb88f7c70aab89a5a56",
     "assets/source/art/serpents_720/EXPORT.json": "733d78855eab137c4d8ac5abc8346ba064c8cbf988200490dfd20df144e57b17",
-    "assets/source/art/hybrid_serpents_727/EXPORT.json": "c88af1b4beee5a4441799e1802bd84d3b18df26eb17997bac98fc81ed07d8392"
+    "assets/source/art/hybrid_serpents_727/EXPORT.json": "c88af1b4beee5a4441799e1802bd84d3b18df26eb17997bac98fc81ed07d8392",
+    "assets/source/art/heads_803/EXPORT.json": "0d610e348290c403ce76d3dfb8c1fc3041cd2a9d647ae0518331693140b95c69"
   },
-  "scope": "Isolated diagnostic gallery; fourteen native figures, eleven species, four reused regional grounds.",
+  "scope": "Isolated diagnostic gallery; fifteen native figures, twelve species and four reused regional grounds.",
   "origin_issue": 709,
-  "previous_gallery_sha256": "8322ad13c3c5c18739dbbe6da82c6c7018ffabcdd9d27b274019ec668745d845"
+  "previous_gallery_sha256": "aec7fbdd617f7318c6c799625af14c6235d78feaffb078e0263917eef712ef27"
 }
