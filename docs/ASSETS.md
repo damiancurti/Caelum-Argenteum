@@ -1,6 +1,56 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.71** - 2026-11-15.
+Documentation version: **5.17.72** - 2026-11-15.
+
+## 5.17.72 - Familiar and Ao Ao quadruped candidates (#787)
+
+CaelumBestiary043 and050 now use original native models based on the supplied
+black mastiff and woolly ram references. Familiar has drooping ears, amber eyes,
+jowls, four clawed paws and a swept tail. Ao Ao has paired curled horns, short
+ears, horizontal pupils, wool locks, cloven hooves and a short tail. Editable
+shape/pose data, OBJ/MTL and provenance live in assets/source/art/quadrupeds_787.
+One new built-in image_gen diffuse atlas is copied unchanged; MATERIALS_PROMPT.json
+records its exact prompt and original path. Iris/dark sources retain provenance.
+Wool uses explicit UV repeats with seam vertices; nose width narrows below center.
+
+The two models contain 36,800 vertices and 47,376 triangles in total, 113 closed
+components and 111 rooted attachment witnesses. Independent checks cover 888
+posed attachments, all 23 existing combat frames per creature, floor contact
+and quantized triangles. Twelve generated artifacts repeat byte for byte;
+installed output/source checks pass. Only exact MODELDEF aliases and owned model
+resources are added. Existing Mandinga statistics, collision, movement, attacks,
+state timings, loot, class identities and save fields remain unchanged. Visual
+standing height follows that provisional profile, not conceptual metre sizes.
+Horizontal silhouettes and lying poses extend beyond its unchanged collision.
+
+The final 18,564-entry package matches src exactly. Five-phase native baseline,
+old-save, fresh, reload and rollback checks pass 115 assertions per species;
+action/death/loot/reload checks pass another 134, including nine action cases
+with the unchanged Mandinga control. Thirty-six final captures were inspected:
+eight views and ten representative action poses per species. Initial eye bulges,
+contrasting muzzle, high horn coils and coarse wool mapping were refined before
+the final build. Superseded geometry and visual evidence remain recorded.
+
+One sequential 700-tic sprite/model pair per species, Windows11 Pro26200,
+Ryzen9 5950X/32GB/RTX3070Ti, GZDoom4.14.2 Vulkan at1280x720, background unpaused,
+5% audio, uncapped/no VSync: Familiar observed1906.14/1881.20 queue presents/s,
+p95 0.6471/0.6648ms, p99 0.8224/0.7959ms, maximum1.2519/1.1987ms; Ao Ao observed
+1791.59/1843.13, p95 0.7533/0.6764ms, p99 0.8949/0.8050ms, maximum1.3875/1.2546ms.
+Mean simulation spacing was approximately28.571ms. All four scenes were inspected.
+These bounded queue measurements do not establish GPU/display latency,
+repeatability, crowd/campaign performance or resolution of the siege limitation.
+Sprite and model silhouettes/projected footprints differ.
+
+Evidence: assets/validation_v5_17_72/evidence/SUMMARY.json. Run
+`python assets/validation_v5_17_72/run_quadrupeds.py --species familiar --runtime build/caelum_argenteum_dev.pk3 --output build/ca787-familiar-review --interactive`;
+repeat with `--species ao_ao` and another new output directory. F1-F10 select
+documented poses; 1-9 select views. CA787-QUADRUPEDS-01 awaits author review of
+simplified rounded anatomy, broad/faceted noses and horns, repeated matte fur/wool,
+simple joint rotations and rigid falling/rest poses. These are candidate art,
+not exact concept reproduction or ordinary-gameplay acceptance. Twenty-one of
+the56 provisional new catalogue classes now have native models;35 remain.
+Regional gallery additions are separate. Named characters, player modular style
+and fitting, unauthored V5.16 progression and siege performance remain unfinished.
 
 ## 5.17.71 - Exact inventory default-state bindings (#785)
 

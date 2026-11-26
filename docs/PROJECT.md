@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.71** - 2026-11-15.
+Documentation version: **5.17.72** - 2026-11-15.
+
+## 5.17.72 - Familiar and Ao Ao native candidates (#787)
+
+Two reference-based quadrupeds add native presentation for CaelumBestiary043/050,
+bringing the modelled provisional catalogue classes to21 of56. Original anatomy,
+separate pose parts and an owned generated diffuse atlas preserve the approved
+combat profiles. Twelve artifacts repeat; closed topology and888 posed attachment
+checks pass. Native continuity:230; combat/death/loot:134. Thirty-six final views
+were inspected. ASSETS records bounded measurements and visual qualifications.
+CA787-QUADRUPEDS-01 remains pending. Next: their separate regional gallery update,
+the remaining35 catalogue models and other character/campaign work.
 
 ## 5.17.71 - Inventory coverage and two default-state repairs (#785)
 

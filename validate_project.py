@@ -74,6 +74,7 @@ from assets.generators.validate_guardian_models import validate as guardian_mode
 from assets.generators.validate_peuchen_model import validate as peuchen_model_problems
 from assets.generators.validate_avian_models import validate as avian_model_problems
 from assets.generators.validate_basilisco_model import validate as basilisco_model_problems
+from assets.generators.validate_quadruped_models import validate as quadruped_model_problems
 from assets.generators.validate_serpent_models import validate as serpent_problems
 from assets.generators.validate_hybrid_serpent_models import validate as hybrid_serpent_problems
 from assets.generators.validate_native_regional_gallery import validate as native_regional_gallery_problems
@@ -201,6 +202,7 @@ def validate(root):
     errors.extend(peuchen_model_problems(root))
     errors.extend(avian_model_problems(root))
     errors.extend(basilisco_model_problems(root))
+    errors.extend(quadruped_model_problems(root))
     errors.extend(serpent_problems(root))
     errors.extend(hybrid_serpent_problems(root))
     errors.extend(native_regional_gallery_problems(root))

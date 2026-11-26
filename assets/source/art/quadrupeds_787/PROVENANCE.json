@@ -1,0 +1,26 @@
+{
+  "issue": 787,
+  "parent_issue": 461,
+  "ownership": "Owned supplied mastiff and ram concepts; original editable anatomy and generated diffuse atlas.",
+  "references": {
+    "assets/source/bestiary_453/imagenes/05_Bestias_magicas/43_familiar.png": "8d051140b6e03ea69da2e08efa626fbdd5d2130d49c0671abfc79122b2c3b8e1",
+    "assets/source/bestiary_453/imagenes/05_Bestias_magicas/50_ao_ao.png": "dbd5d81273e6970420b92da45db5d6bd3fa00f0461164b944d328681d0d30308"
+  },
+  "material": {
+    "mode": "built-in image_gen",
+    "prompt": "MATERIALS_PROMPT.json",
+    "sha256": "b63c9fa16efda5e0ffb4f30dde62eb3dc1ff4d76be178c30c3c024a578c3bb5c",
+    "processing": "Unchanged generated pixels"
+  },
+  "reused": {
+    "iris.png": {
+      "source": "assets/source/art/basilisco_738/iris.png",
+      "sha256": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc"
+    },
+    "dark.png": {
+      "source": "assets/source/art/basilisco_738/dark.png",
+      "sha256": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4"
+    }
+  },
+  "limits": "Candidate native art. Provisional Mandinga behavior, collision and state timings unchanged; no author acceptance."
+}
