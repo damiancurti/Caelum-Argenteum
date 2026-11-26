@@ -996,3 +996,6 @@ assets/validation_v5_17_42/evidence/** -text -diff
 /assets/validation_v5_17_52/evidence/** -text -diff
 /src/models/caelum/inventory/cartridge_kits/** -text -diff
 /src/caelum/data/inventory_cartridge_kits.modeldef text eol=lf
+
+# #749 isolated hide assertion-count evidence.
+/assets/validation_v5_17_53/evidence/** -text -diff

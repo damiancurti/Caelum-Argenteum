@@ -1,6 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.52** - 2026-11-14.
+Documentation version: **5.17.53** - 2026-11-14.
+
+## #749 - Hide assertion-count regression (5.17.53)
+
+Reproduced both visual and old-save false negatives, then restored the original
+hide-specific aggregate counts.163 visual and869 continuity assertions pass;
+the actual Check calls and other fixture branches are unchanged. Existing
+author checks remain pending. Evidence and reuse limits are in ASSETS.
 
 ## #747 - Prepared-kit world drops (5.17.52)
 

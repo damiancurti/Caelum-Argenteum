@@ -1,6 +1,26 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.52** - 2026-11-14.
+Documentation version: **5.17.53** - 2026-11-14.
+
+## 5.17.53 - Restore hide assertion expectations (#749)
+
+The shared runner accidentally inherited the kitchen fixture's seven extra
+navigation assertions in its hide count branch under #743. Actual hide checks
+remained163 for baseline/fresh/visual and181 for old-save/reload/rollback.
+The native reproduction reports163 successes but falsely expects170 in visual
+mode; old-save mode reports181 successes but falsely expects188. No native
+Check fails. Restoring the hide-specific counts makes the same fixture/runtime
+pass163 visual and869 continuity assertions across the five normal phases.
+The native fixture and every other runner branch remain byte-identical.
+
+All four before/after fixture checksums agree. No assertion was removed or
+skipped; kitchen/kit navigation coverage remains. Native probes use the same
+installed #747 kits01 package. The final #749 package matches all18,474 src
+entries and differs from #747 kits02 only in two release diagnostic strings.
+Compared with the tested kits01, MODELDEF also retains #747's documented CRLF
+correction; normalized contents are identical. No art or performance change.
+Evidence: assets/validation_v5_17_53/evidence/SUMMARY.json.
+CA731-HIDE-DROPS-01 and all other author checks remain pending and unchanged.
 
 ## 5.17.52 - Native cartridge-kit drops (#747, parent #647)
 
