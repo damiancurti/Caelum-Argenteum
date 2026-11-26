@@ -1,6 +1,22 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.1** - 2026-11-13.
+Documentation version: **5.17.2** - 2026-11-13.
+
+## 5.17.2 - Native ammunition class lookup (#650)
+
+FindNativeAmmunition and AcquireDistinctAmmunition use the existing
+GetAmmunitionClassName mapping for carbine, arrows, bolts, the three javelin tiers
+and shotgun cartridges. A query for a javelin must select that tier's native
+stack; it must not select carbine ammunition merely because the latter exists.
+The prior query omitted the three javelin branches although creation mapped them.
+
+This is an identity correction to existing rules. Amount, native Owner/Inv,
+CompanionLots provenance, Box/capacity policy, mass, projectiles and saved fields
+retain their authority. One native inventory lookup remains; no new registry,
+actor scan or periodic work is introduced. No save schema changes are needed.
+Already merged historical rounds cannot be classified from the surviving carbine
+stack, so loading does not infer or redistribute them. Rollback preserves existing
+typed data but restores the old lookup defect when acquiring new ammunition.
 
 ## 5.17.1 / #647 - Inventory presentation boundary
 

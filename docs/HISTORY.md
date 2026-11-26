@@ -1,6 +1,27 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.1** - 2026-11-13.
+Documentation version: **5.17.2** - 2026-11-13.
+
+## 5.17.2 - Preserve native javelin stacks (#650, 2026-11-13)
+
+During #647 model tests, native pickup of all three javelin tiers added units to
+the existing carbine stack. The same failure reproduces without the model overlay.
+FindNativeAmmunition had a separate incomplete mapping; it now uses the existing
+GetAmmunitionClassName mapping already used by acquisition. No gameplay values,
+art, item schema or saved inventory fields change.
+
+The baseline reproduces six expected ownership failures as a negative control.
+The complete-package suite passes 678 assertions in six positive native runs:
+old-runtime typed save, candidate old-save load, fresh candidate, reload, rollback
+of typed state and reverse acquisition order. The old-save fixture attaches typed
+stacks directly because the old pickup path cannot create them correctly alongside
+carbine ammo. Rollback verifies saved data without exercising the known old bug.
+All seven types, split/recombined quantities, provenance markers, native collision
+and icons are checked. A fixture-only exact Scale .10 comparison was changed to
+a 1e-6 tolerance; this was distinct from the production ownership failure.
+Evidence: assets/validation_v5_17_2/evidence/SUMMARY.json. Ordinary menus, firing,
+multiplayer and CA650-AMMO-01 author acceptance are not established by these tests.
+Historical merged rounds are not redistributed: their original type is unavailable.
 
 ## 5.17.1 - Initial inventory model coverage (#647, 2026-11-13, in progress)
 

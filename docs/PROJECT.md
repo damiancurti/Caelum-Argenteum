@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.1** - 2026-11-13.
+Documentation version: **5.17.2** - 2026-11-13.
+
+## 5.17.2 - Native ammunition identity repair (#650)
+
+The inventory-model tests exposed a pre-existing lookup error: javelin pickup
+could add units to an existing carbine stack. Query and creation now share the
+existing ammunition-class mapping. Native seven-type, provenance and save checks
+pass; author confirmation remains pending. SYSTEMS and HISTORY record the limits.
+The unfinished V5.16 campaign and V5.17 art scopes remain tracked separately.
 
 ## 5.17.1 - Physical coin drop models (#647, in progress)
 

@@ -1,0 +1,71 @@
+{
+  "issue": 650,
+  "baseline_sha256": "68436c1245879efedd627771469252aaffe70978e4b3aadfbf4f2f8fd7cdc23a",
+  "runtime_sha256": "23adb7917f961a41c33b9382873e9017abd4b2b1c46fdb5f789da1a871a59485",
+  "fixture_sha256": "ba06a069a77641a327edea3b0c8bcc2eac85a2d13f5b52f363492b8c0dc15b59",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline-regression",
+      "exit_code": 0,
+      "passed": true,
+      "expected_regression": true,
+      "engine_errors": [],
+      "failed_assertions": [
+        "CA650 FAIL all seven ammunition types retained",
+        "CA650 FAIL ammunition 0 split provenance units",
+        "CA650 FAIL ammunition 0 split quantities",
+        "CA650 FAIL ammunition 3 owned quantity",
+        "CA650 FAIL ammunition 4 owned quantity",
+        "CA650 FAIL ammunition 5 owned quantity"
+      ],
+      "passed_assertions": 65
+    },
+    {
+      "phase": "baseline-typed-save",
+      "exit_code": 0,
+      "passed": true,
+      "expected_regression": false,
+      "engine_errors": [],
+      "failed_assertions": [],
+      "passed_assertions": 99
+    },
+    {
+      "phase": "candidate-old-load",
+      "exit_code": 0,
+      "passed": true,
+      "expected_regression": false,
+      "engine_errors": [],
+      "failed_assertions": [],
+      "passed_assertions": 120
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "expected_regression": false,
+      "engine_errors": [],
+      "failed_assertions": [],
+      "passed_assertions": 113
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "expected_regression": false,
+      "engine_errors": [],
+      "failed_assertions": [],
+      "passed_assertions": 120
+    },
+    {
+      "phase": "rollback-typed-load",
+      "exit_code": 0,
+      "passed": true,
+      "expected_regression": false,
+      "engine_errors": [],
+      "failed_assertions": [],
+      "passed_assertions": 85
+    }
+  ],
+  "qualification": "Old-runtime seed directly attaches correctly typed stacks to preserve a load fixture despite its broken pickup. Rollback verifies retained state only; old acquisition remains defective. No historical merged rounds are inferred or redistributed."
+}

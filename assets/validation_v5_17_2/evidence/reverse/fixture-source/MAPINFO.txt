@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA650AmmoEvents" }
+map CA455V "Native ammunition identity" { sky1="CABASKY",0 nointermission }
