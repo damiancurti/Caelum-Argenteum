@@ -1,0 +1,4 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/hides" Model 0 "leather.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M019 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/hides" Model 0 "cow_hide.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M076 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/hides" Model 0 "predator_hide.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M077 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/hides" Model 0 "monster_hide.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M078 A 0 0 }

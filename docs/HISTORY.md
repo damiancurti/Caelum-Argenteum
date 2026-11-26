@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.43** - 2026-11-14.
+Documentation version: **5.17.44** - 2026-11-14.
+
+## 5.17.44 - Leather and hide drops (#731, 2026-11-14)
+
+Added four closed native sheets for materials19/76/77/78, preserving all six
+type/tier cases and gameplay. New image_gen materials retain exact prompt,
+provenance and original pixels. Native review prompted leather reverse/rim
+UVs; initial sources and previews remain retained. Four closed solids,
+serialized surface UVs, 13 repeated exports and 869 native assertions pass.
+One qualified four-object pair records 1152.26/1132.35 queue presents/s, p95
+1.0432/1.0793 ms and p99 1.2830/1.3327 ms; small-scene queue-only limits apply.
+Evidence: assets/validation_v5_17_44/evidence/SUMMARY.json.
+CA731-HIDE-DROPS-01 originates here and remains pending. The broader delivery
+and author acceptance are not complete.
 
 ## 5.17.43 - Hybrid serpent regional inspection (#729, 2026-11-14)
 

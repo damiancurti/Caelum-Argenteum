@@ -1,0 +1,224 @@
+{
+  "schema_revision": 1,
+  "issue": 731,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "variants": {
+    "leather": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "sheet"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 762,
+      "triangles": 816,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 762,
+          "triangles": 816
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        30,
+        120,
+        98
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.0,
+            -38.857142857142854,
+            0.0
+          ],
+          "max": [
+            56.0,
+            33.14285714285714,
+            12.235173690627269
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.1428571428571428,
+        "floor": -5.344197933525973
+      }
+    },
+    "cow_hide": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "sheet"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 1302,
+      "triangles": 1416,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1302,
+          "triangles": 1416
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        14,
+        120,
+        113
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.0,
+            -62.22222222222222,
+            0.0
+          ],
+          "max": [
+            56.0,
+            60.97777777777778,
+            13.422605954404721
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.2444444444444445,
+        "floor": -5.388726975843556
+      }
+    },
+    "predator_hide": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "sheet"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 1302,
+      "triangles": 1416,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1302,
+          "triangles": 1416
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        13,
+        120,
+        115
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.0,
+            -63.46666666666667,
+            0.0
+          ],
+          "max": [
+            56.0,
+            60.97777777777778,
+            13.404746958147383
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.2444444444444445,
+        "floor": -5.384671558598971
+      }
+    },
+    "monster_hide": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "sheet"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 1050,
+      "triangles": 1136,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1050,
+          "triangles": 1136
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        17,
+        120,
+        111
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.0,
+            -59.50000000000001,
+            0.0
+          ],
+          "max": [
+            56.0,
+            58.333333333333336,
+            13.13417749358845
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.1666666666666667,
+        "floor": -5.584056095923755
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "60b3a9d23b3e1761591ac627fccf273cf0771443afdb7fa682e622dce6811fcf",
+    "PROVENANCE.json": "d03c50e6b98bcac33f7c0e764f548ee285916e06c66ba3dbd97b4b26540393d9",
+    "MATERIALS_PROMPT.json": "403a1b355a8ebdd7883ad788e49f067130915269daf545f3d88bdc2136aab01c"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/materials/ca_material_leather.png": "aac950544be9567e206adc2785255d3afb4315057ab00a7d3ba6b1e7a6627939",
+    "src/graphics/caelum/icons/materials/ca_material_cow_hide.png": "26e19622777b3c5b64268287feaa7ad36a8c27ab9553aec3f94bded8c52179d3",
+    "src/graphics/caelum/icons/materials/ca_material_predator_hide.png": "e15e834b71ef4811053210cc63a940992f03eca339a0d84d7bd79e1ada7afca6",
+    "src/graphics/caelum/icons/materials/ca_material_monster_hide.png": "8a79edde12d7ce82c0937b116de352d6e5381ba7c7effb032df99e80966551c8",
+    "assets/source/art/inventory_models_647/hides/materials.png": "cea34a9774411ba52d742358d854791940f578403ba1787e65f9515729cec7f6"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_hide_models.py": "1898a01efc9611906e7b041707e75856d017ff1dc80846d77bdd8e4fd5d0677c"
+  },
+  "sha256": {
+    "models/caelum/inventory/hides/leather.md3": "7d637246ea3fbb51babf88e82267d44f8ee2cda9d6cf61fa531db9493cba0595",
+    "editable/leather.obj": "5731c625a2cc5af4ca2afd225846e8fe56b60574d844acc21804f54349644886",
+    "models/caelum/inventory/hides/cow_hide.md3": "ee08e4dc5e528014ed98d6621626f8e3a09108024b16e910253e8d932f568154",
+    "editable/cow_hide.obj": "b3b464435e2b0e120117d4ebec1e38c213292fed7f4ae42068fb2d417054006d",
+    "models/caelum/inventory/hides/predator_hide.md3": "a774e9cb90e8acb38c23f062e89e55fd33843669e53224fdc0de01fb5356a4ad",
+    "editable/predator_hide.obj": "c2b8445ef32f91894f0e704138c86d5cc1fbf4f233b5d4ab0d785f069d05d4d9",
+    "models/caelum/inventory/hides/monster_hide.md3": "7d95fa381b2f9d4793b25089f94f45af98bb2ac0a25099b905c17cc2d50788b9",
+    "editable/monster_hide.obj": "636f7bc74db707aa877eb691fba102beb230e117ad2b33b1f8dea0364ff567cc",
+    "editable/hides.mtl": "7bf37a0f943166791921f62ec31075ebbb17d4bbcd997829a746e31da73761ce",
+    "caelum/data/inventory_hides.modeldef": "0c8223575dd2a59744db39b20f4d20f77339c86705a4cf20cd483e5c3613c9ea",
+    "models/caelum/inventory/hides/materials.png": "cea34a9774411ba52d742358d854791940f578403ba1787e65f9515729cec7f6"
+  }
+}

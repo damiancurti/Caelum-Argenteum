@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.43** - 2026-11-14.
+Documentation version: **5.17.44** - 2026-11-14.
+
+## #731 - Leather and hide world drops (5.17.44)
+
+Four closed sheets cover leather19 and hides76/77/78, six existing cases.
+Independent geometry/surface checks, 13 repeated exports and 869 native
+continuity assertions pass. CA731-HIDE-DROPS-01 retains ordinary inventory,
+crafting and art review, including outlines, folds, leather reverse/rims and
+painted scale size. Other #647 inventory and character work remains separate.
 
 ## #729 - Hybrid serpent regional display (5.17.43)
 
