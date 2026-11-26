@@ -1,6 +1,24 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.16** - 2026-11-13.
+Documentation version: **5.17.17** - 2026-11-13.
+
+## 5.17.17 - Material pendant and gem models (#678, 2026-11-13)
+
+The author's all-dropped-inventory request extends to fourteen material states
+45..58 using closed editable volumes and unchanged original source pixels.
+Initial isolated native runs pass 1,093 assertions each; visual inspection
+required textured backs, thinner brooch scrolls and a connected rock matrix.
+The initial export exposed MD3's shader-path length limit; short byte-identical
+aliases preserve the original icons. A duplicate preview alias entry was
+corrected before native inspection. Final inspection added five support stems
+to connect brooch leaves. Native02 on the final package passes 5,843 checks
+(1093/1219/1093/1219/1219); final visual04 passes 1,093. Two identical exports
+contain 46 files and independent closed-component/source checks pass. The
+fourteen-object isolated presentation pair records 965.08/942.89 queue
+presentations/s, p95 1.2898/1.3394 ms and p99 1.5574/1.5846 ms.
+No campaign/display/repeatability claim follows. Project/package validation
+passes; evidence: assets/validation_v5_17_17/evidence/SUMMARY.json.
+CA678-GEMS-01 remains unconfirmed; no author test is removed.
 
 ## 5.17.16 - Support-book model reuse (#676, 2026-11-13)
 

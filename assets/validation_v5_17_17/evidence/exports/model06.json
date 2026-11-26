@@ -1,0 +1,1035 @@
+{
+  "schema_revision": 1,
+  "issue": 678,
+  "parent_issue": 647,
+  "status": "native_candidate_pending_author_review",
+  "variants": {
+    "ruby_pendant": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "pendant_back": 9889.484800000002,
+        "painted_setting": 1862.2437600000003,
+        "faceted_gem": 2395.336635936595,
+        "faceted_gem_undercoat": 2395.3366359365973,
+        "bail": 88.01147689119054,
+        "left_chain_00": 10.395529905286883,
+        "left_chain_01": 10.39553034507148,
+        "left_chain_02": 10.395529905286896,
+        "left_chain_03": 10.395530345071045,
+        "left_chain_04": 10.395529905286752,
+        "left_chain_05": 10.395530345072101,
+        "left_chain_06": 10.39552990528678,
+        "left_chain_07": 10.395530345072293,
+        "left_chain_08": 10.395529905286981,
+        "left_chain_09": 10.39553034507014,
+        "right_chain_00": 10.395529905286892,
+        "right_chain_01": 10.395530345071343,
+        "right_chain_02": 10.39552990528686,
+        "right_chain_03": 10.395530345071645,
+        "right_chain_04": 10.395529905286772,
+        "right_chain_05": 10.39553034507156,
+        "right_chain_06": 10.395529905286917,
+        "right_chain_07": 10.395530345071027,
+        "right_chain_08": 10.395529905287052,
+        "right_chain_09": 10.39553034507248
+      },
+      "closed_outward_components": 25,
+      "vertices": 2306,
+      "triangles": 4388,
+      "surfaces": [
+        {
+          "material": "gold",
+          "vertices": 2128,
+          "triangles": 4182
+        },
+        {
+          "material": "ruby_pendant",
+          "vertices": 178,
+          "triangles": 206
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -31.197533819759524,
+            -8.319342351935873,
+            0.0
+          ],
+          "max": [
+            29.117698231775556,
+            2.0925629235263266,
+            110.99999999999999
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        32,
+        9,
+        94,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.0399177939919841
+    },
+    "sapphire_pendant": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "pendant_back": 9889.484800000002,
+        "painted_setting": 1862.2437600000003,
+        "faceted_gem": 2395.336635936595,
+        "faceted_gem_undercoat": 2395.3366359365973,
+        "bail": 88.01147689119054,
+        "left_chain_00": 10.395529905286883,
+        "left_chain_01": 10.39553034507148,
+        "left_chain_02": 10.395529905286896,
+        "left_chain_03": 10.395530345071045,
+        "left_chain_04": 10.395529905286752,
+        "left_chain_05": 10.395530345072101,
+        "left_chain_06": 10.39552990528678,
+        "left_chain_07": 10.395530345072293,
+        "left_chain_08": 10.395529905286981,
+        "left_chain_09": 10.39553034507014,
+        "right_chain_00": 10.395529905286892,
+        "right_chain_01": 10.395530345071343,
+        "right_chain_02": 10.39552990528686,
+        "right_chain_03": 10.395530345071645,
+        "right_chain_04": 10.395529905286772,
+        "right_chain_05": 10.39553034507156,
+        "right_chain_06": 10.395529905286917,
+        "right_chain_07": 10.395530345071027,
+        "right_chain_08": 10.395529905287052,
+        "right_chain_09": 10.39553034507248
+      },
+      "closed_outward_components": 25,
+      "vertices": 2306,
+      "triangles": 4388,
+      "surfaces": [
+        {
+          "material": "silver",
+          "vertices": 2128,
+          "triangles": 4182
+        },
+        {
+          "material": "sapphire_pendant",
+          "vertices": 178,
+          "triangles": 206
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -31.197533819759524,
+            -8.319342351935873,
+            0.0
+          ],
+          "max": [
+            29.117698231775556,
+            2.0925629235263266,
+            110.99999999999999
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        30,
+        9,
+        96,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.0399177939919841
+    },
+    "emerald_pendant": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "pendant_back": 9889.484800000002,
+        "painted_setting": 1862.2437600000003,
+        "faceted_gem": 2395.336635936595,
+        "faceted_gem_undercoat": 2395.3366359365973,
+        "bail": 88.01147689119054,
+        "left_chain_00": 10.395529905286883,
+        "left_chain_01": 10.39553034507148,
+        "left_chain_02": 10.395529905286896,
+        "left_chain_03": 10.395530345071045,
+        "left_chain_04": 10.395529905286752,
+        "left_chain_05": 10.395530345072101,
+        "left_chain_06": 10.39552990528678,
+        "left_chain_07": 10.395530345072293,
+        "left_chain_08": 10.395529905286981,
+        "left_chain_09": 10.39553034507014,
+        "right_chain_00": 10.395529905286892,
+        "right_chain_01": 10.395530345071343,
+        "right_chain_02": 10.39552990528686,
+        "right_chain_03": 10.395530345071645,
+        "right_chain_04": 10.395529905286772,
+        "right_chain_05": 10.39553034507156,
+        "right_chain_06": 10.395529905286917,
+        "right_chain_07": 10.395530345071027,
+        "right_chain_08": 10.395529905287052,
+        "right_chain_09": 10.39553034507248
+      },
+      "closed_outward_components": 25,
+      "vertices": 2306,
+      "triangles": 4388,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 2128,
+          "triangles": 4182
+        },
+        {
+          "material": "emerald_pendant",
+          "vertices": 178,
+          "triangles": 206
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -30.916474956518446,
+            -8.244393321738253,
+            0.0
+          ],
+          "max": [
+            28.855376626083885,
+            2.0737110052963597,
+            109.99999999999999
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        31,
+        10,
+        96,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.0305491652172816
+    },
+    "topaz_pendant": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "pendant_back": 9889.484800000002,
+        "painted_setting": 1862.2437600000003,
+        "faceted_gem": 2395.336635936595,
+        "faceted_gem_undercoat": 2395.3366359365973,
+        "bail": 88.01147689119054,
+        "left_chain_00": 10.395529905286883,
+        "left_chain_01": 10.39553034507148,
+        "left_chain_02": 10.395529905286896,
+        "left_chain_03": 10.395530345071045,
+        "left_chain_04": 10.395529905286752,
+        "left_chain_05": 10.395530345072101,
+        "left_chain_06": 10.39552990528678,
+        "left_chain_07": 10.395530345072293,
+        "left_chain_08": 10.395529905286981,
+        "left_chain_09": 10.39553034507014,
+        "right_chain_00": 10.395529905286892,
+        "right_chain_01": 10.395530345071343,
+        "right_chain_02": 10.39552990528686,
+        "right_chain_03": 10.395530345071645,
+        "right_chain_04": 10.395529905286772,
+        "right_chain_05": 10.39553034507156,
+        "right_chain_06": 10.395529905286917,
+        "right_chain_07": 10.395530345071027,
+        "right_chain_08": 10.395529905287052,
+        "right_chain_09": 10.39553034507248
+      },
+      "closed_outward_components": 25,
+      "vertices": 2306,
+      "triangles": 4388,
+      "surfaces": [
+        {
+          "material": "gold",
+          "vertices": 2128,
+          "triangles": 4182
+        },
+        {
+          "material": "topaz_pendant",
+          "vertices": 178,
+          "triangles": 206
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -31.197533819759524,
+            -8.319342351935873,
+            0.0
+          ],
+          "max": [
+            29.117698231775556,
+            2.0925629235263266,
+            110.99999999999999
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        32,
+        9,
+        96,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.0399177939919841
+    },
+    "ruby_gem": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "connected_matrix_core": 24182.28749578951,
+        "connected_matrix_core_undercoat": 22070.520882415152,
+        "central_crystal": 19907.7824,
+        "central_crystal_undercoat": 18169.29548635521,
+        "left_crystal": 5870.8544,
+        "left_crystal_undercoat": 5358.1702978112025,
+        "right_crystal": 6575.976000000001,
+        "right_crystal_undercoat": 6001.715743848003,
+        "upper_left_crystal": 1647.1952000000006,
+        "upper_left_crystal_undercoat": 1503.3505847695997,
+        "upper_right_crystal": 1637.6839999999997,
+        "upper_right_crystal_undercoat": 1494.6699693319993,
+        "lower_left_crystal": 3322.8432,
+        "lower_left_crystal_undercoat": 3032.669271873601,
+        "lower_right_crystal": 2442.240000000002,
+        "lower_right_crystal_undercoat": 2228.96650752,
+        "matrix_rock_0": 2424.8711199999993,
+        "matrix_rock_0_undercoat": 2213.1144049727995,
+        "matrix_rock_1": 1454.9226725495917,
+        "matrix_rock_1_undercoat": 1327.8686478261266,
+        "matrix_rock_2": 2909.8453458999998,
+        "matrix_rock_2_undercoat": 2655.7372970229353,
+        "matrix_rock_3": 1600.414948492353,
+        "matrix_rock_3_undercoat": 1460.6555207776212,
+        "matrix_rock_4": 1527.6688057000006,
+        "matrix_rock_4_undercoat": 1394.262078228425,
+        "matrix_rock_5": 1939.8969053979572,
+        "matrix_rock_5_undercoat": 1770.491519389988
+      },
+      "closed_outward_components": 28,
+      "vertices": 866,
+      "triangles": 972,
+      "surfaces": [
+        {
+          "material": "ruby_gem",
+          "vertices": 866,
+          "triangles": 972
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -45.281092076112564,
+            -20.671802904312255,
+            0.0
+          ],
+          "max": [
+            47.64401619010772,
+            11.812458802464146,
+            112.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        17,
+        8,
+        111,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 0.9843715668720122
+    },
+    "sapphire_gem": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "connected_matrix_core": 24182.28749578951,
+        "connected_matrix_core_undercoat": 22070.520882415152,
+        "central_crystal": 19907.7824,
+        "central_crystal_undercoat": 18169.29548635521,
+        "left_crystal": 5870.8544,
+        "left_crystal_undercoat": 5358.1702978112025,
+        "right_crystal": 6575.976000000001,
+        "right_crystal_undercoat": 6001.715743848003,
+        "upper_left_crystal": 1647.1952000000006,
+        "upper_left_crystal_undercoat": 1503.3505847695997,
+        "upper_right_crystal": 1637.6839999999997,
+        "upper_right_crystal_undercoat": 1494.6699693319993,
+        "lower_left_crystal": 3322.8432,
+        "lower_left_crystal_undercoat": 3032.669271873601,
+        "lower_right_crystal": 2442.240000000002,
+        "lower_right_crystal_undercoat": 2228.96650752,
+        "matrix_rock_0": 2424.8711199999993,
+        "matrix_rock_0_undercoat": 2213.1144049727995,
+        "matrix_rock_1": 1454.9226725495917,
+        "matrix_rock_1_undercoat": 1327.8686478261266,
+        "matrix_rock_2": 2909.8453458999998,
+        "matrix_rock_2_undercoat": 2655.7372970229353,
+        "matrix_rock_3": 1600.414948492353,
+        "matrix_rock_3_undercoat": 1460.6555207776212,
+        "matrix_rock_4": 1527.6688057000006,
+        "matrix_rock_4_undercoat": 1394.262078228425,
+        "matrix_rock_5": 1939.8969053979572,
+        "matrix_rock_5_undercoat": 1770.491519389988
+      },
+      "closed_outward_components": 28,
+      "vertices": 866,
+      "triangles": 972,
+      "surfaces": [
+        {
+          "material": "sapphire_gem",
+          "vertices": 866,
+          "triangles": 972
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -45.281092076112564,
+            -20.671802904312255,
+            0.0
+          ],
+          "max": [
+            47.64401619010772,
+            11.812458802464146,
+            112.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        16,
+        8,
+        110,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 0.9843715668720122
+    },
+    "emerald_gem": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "connected_matrix_core": 24182.28749578951,
+        "connected_matrix_core_undercoat": 22070.520882415152,
+        "central_crystal": 19907.7824,
+        "central_crystal_undercoat": 18169.29548635521,
+        "left_crystal": 5870.8544,
+        "left_crystal_undercoat": 5358.1702978112025,
+        "right_crystal": 6575.976000000001,
+        "right_crystal_undercoat": 6001.715743848003,
+        "upper_left_crystal": 1647.1952000000006,
+        "upper_left_crystal_undercoat": 1503.3505847695997,
+        "upper_right_crystal": 1637.6839999999997,
+        "upper_right_crystal_undercoat": 1494.6699693319993,
+        "lower_left_crystal": 3322.8432,
+        "lower_left_crystal_undercoat": 3032.669271873601,
+        "lower_right_crystal": 2442.240000000002,
+        "lower_right_crystal_undercoat": 2228.96650752,
+        "matrix_rock_0": 2424.8711199999993,
+        "matrix_rock_0_undercoat": 2213.1144049727995,
+        "matrix_rock_1": 1454.9226725495917,
+        "matrix_rock_1_undercoat": 1327.8686478261266,
+        "matrix_rock_2": 2909.8453458999998,
+        "matrix_rock_2_undercoat": 2655.7372970229353,
+        "matrix_rock_3": 1600.414948492353,
+        "matrix_rock_3_undercoat": 1460.6555207776212,
+        "matrix_rock_4": 1527.6688057000006,
+        "matrix_rock_4_undercoat": 1394.262078228425,
+        "matrix_rock_5": 1939.8969053979572,
+        "matrix_rock_5_undercoat": 1770.491519389988
+      },
+      "closed_outward_components": 28,
+      "vertices": 866,
+      "triangles": 972,
+      "surfaces": [
+        {
+          "material": "emerald_gem",
+          "vertices": 866,
+          "triangles": 972
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -45.281092076112564,
+            -20.671802904312255,
+            0.0
+          ],
+          "max": [
+            47.64401619010772,
+            11.812458802464146,
+            112.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        14,
+        8,
+        113,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 0.9843715668720122
+    },
+    "topaz_gem": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "connected_matrix_core": 24182.28749578951,
+        "connected_matrix_core_undercoat": 22070.520882415152,
+        "central_crystal": 19907.7824,
+        "central_crystal_undercoat": 18169.29548635521,
+        "left_crystal": 5870.8544,
+        "left_crystal_undercoat": 5358.1702978112025,
+        "right_crystal": 6575.976000000001,
+        "right_crystal_undercoat": 6001.715743848003,
+        "upper_left_crystal": 1647.1952000000006,
+        "upper_left_crystal_undercoat": 1503.3505847695997,
+        "upper_right_crystal": 1637.6839999999997,
+        "upper_right_crystal_undercoat": 1494.6699693319993,
+        "lower_left_crystal": 3322.8432,
+        "lower_left_crystal_undercoat": 3032.669271873601,
+        "lower_right_crystal": 2442.240000000002,
+        "lower_right_crystal_undercoat": 2228.96650752,
+        "matrix_rock_0": 2424.8711199999993,
+        "matrix_rock_0_undercoat": 2213.1144049727995,
+        "matrix_rock_1": 1454.9226725495917,
+        "matrix_rock_1_undercoat": 1327.8686478261266,
+        "matrix_rock_2": 2909.8453458999998,
+        "matrix_rock_2_undercoat": 2655.7372970229353,
+        "matrix_rock_3": 1600.414948492353,
+        "matrix_rock_3_undercoat": 1460.6555207776212,
+        "matrix_rock_4": 1527.6688057000006,
+        "matrix_rock_4_undercoat": 1394.262078228425,
+        "matrix_rock_5": 1939.8969053979572,
+        "matrix_rock_5_undercoat": 1770.491519389988
+      },
+      "closed_outward_components": 28,
+      "vertices": 866,
+      "triangles": 972,
+      "surfaces": [
+        {
+          "material": "topaz_gem",
+          "vertices": 866,
+          "triangles": 972
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -45.281092076112564,
+            -20.671802904312255,
+            0.0
+          ],
+          "max": [
+            47.64401619010772,
+            11.812458802464146,
+            112.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        17,
+        8,
+        110,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 0.9843715668720122
+    },
+    "opal_brooch": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "brooch_back": 17331.41773429458,
+        "painted_setting": 2411.0268683682298,
+        "opal_cabochon": 6697.778676261353,
+        "opal_cabochon_undercoat": 6697.778676261351,
+        "upper_scroll": 196.7533029089893,
+        "right_scroll": 291.9565137320422,
+        "lower_scroll": 139.63137501425604,
+        "upper_leaf": 413.0177325317806,
+        "left_leaf": 525.658933428629,
+        "lower_leaf": 525.6589337979999,
+        "right_leaf": 450.5648020616709,
+        "upper_right_leaf": 386.19839915974046,
+        "upper_leaf_stem": 119.62820413000227,
+        "left_leaf_stem": 75.0580430460375,
+        "lower_leaf_stem": 93.9191960360066,
+        "right_leaf_stem": 111.30303324341334,
+        "upper_right_leaf_stem": 58.54167194417301
+      },
+      "closed_outward_components": 17,
+      "vertices": 1320,
+      "triangles": 1960,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 943,
+          "triangles": 1524
+        },
+        {
+          "material": "opal_brooch",
+          "vertices": 377,
+          "triangles": 436
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -51.66637906539211,
+            -10.327065093635737,
+            0.0
+          ],
+          "max": [
+            51.073666390920835,
+            3.098119528090721,
+            112.00000000000001
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        10,
+        8,
+        117,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 1.0327065093635737
+    },
+    "raw_ruby": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "connected_matrix_core": 24182.28749578951,
+        "connected_matrix_core_undercoat": 22070.520882415152,
+        "central_crystal": 19907.7824,
+        "central_crystal_undercoat": 18169.29548635521,
+        "left_crystal": 5870.8544,
+        "left_crystal_undercoat": 5358.1702978112025,
+        "right_crystal": 6575.976000000001,
+        "right_crystal_undercoat": 6001.715743848003,
+        "upper_left_crystal": 1647.1952000000006,
+        "upper_left_crystal_undercoat": 1503.3505847695997,
+        "upper_right_crystal": 1637.6839999999997,
+        "upper_right_crystal_undercoat": 1494.6699693319993,
+        "lower_left_crystal": 3322.8432,
+        "lower_left_crystal_undercoat": 3032.669271873601,
+        "lower_right_crystal": 2442.240000000002,
+        "lower_right_crystal_undercoat": 2228.96650752,
+        "matrix_rock_0": 2424.8711199999993,
+        "matrix_rock_0_undercoat": 2213.1144049727995,
+        "matrix_rock_1": 1454.9226725495917,
+        "matrix_rock_1_undercoat": 1327.8686478261266,
+        "matrix_rock_2": 2909.8453458999998,
+        "matrix_rock_2_undercoat": 2655.7372970229353,
+        "matrix_rock_3": 1600.414948492353,
+        "matrix_rock_3_undercoat": 1460.6555207776212,
+        "matrix_rock_4": 1527.6688057000006,
+        "matrix_rock_4_undercoat": 1394.262078228425,
+        "matrix_rock_5": 1939.8969053979572,
+        "matrix_rock_5_undercoat": 1770.491519389988
+      },
+      "closed_outward_components": 28,
+      "vertices": 866,
+      "triangles": 972,
+      "surfaces": [
+        {
+          "material": "raw_ruby",
+          "vertices": 866,
+          "triangles": 972
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -44.87679661114728,
+            -20.487233235523757,
+            0.0
+          ],
+          "max": [
+            47.218623188410334,
+            11.706990420299288,
+            111.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        17,
+        8,
+        111,
+        119
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 0.9755825350249407
+    },
+    "raw_sapphire": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "connected_matrix_core": 24182.28749578951,
+        "connected_matrix_core_undercoat": 22070.520882415152,
+        "central_crystal": 19907.7824,
+        "central_crystal_undercoat": 18169.29548635521,
+        "left_crystal": 5870.8544,
+        "left_crystal_undercoat": 5358.1702978112025,
+        "right_crystal": 6575.976000000001,
+        "right_crystal_undercoat": 6001.715743848003,
+        "upper_left_crystal": 1647.1952000000006,
+        "upper_left_crystal_undercoat": 1503.3505847695997,
+        "upper_right_crystal": 1637.6839999999997,
+        "upper_right_crystal_undercoat": 1494.6699693319993,
+        "lower_left_crystal": 3322.8432,
+        "lower_left_crystal_undercoat": 3032.669271873601,
+        "lower_right_crystal": 2442.240000000002,
+        "lower_right_crystal_undercoat": 2228.96650752,
+        "matrix_rock_0": 2424.8711199999993,
+        "matrix_rock_0_undercoat": 2213.1144049727995,
+        "matrix_rock_1": 1454.9226725495917,
+        "matrix_rock_1_undercoat": 1327.8686478261266,
+        "matrix_rock_2": 2909.8453458999998,
+        "matrix_rock_2_undercoat": 2655.7372970229353,
+        "matrix_rock_3": 1600.414948492353,
+        "matrix_rock_3_undercoat": 1460.6555207776212,
+        "matrix_rock_4": 1527.6688057000006,
+        "matrix_rock_4_undercoat": 1394.262078228425,
+        "matrix_rock_5": 1939.8969053979572,
+        "matrix_rock_5_undercoat": 1770.491519389988
+      },
+      "closed_outward_components": 28,
+      "vertices": 866,
+      "triangles": 972,
+      "surfaces": [
+        {
+          "material": "raw_sapphire",
+          "vertices": 866,
+          "triangles": 972
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -45.281092076112564,
+            -20.671802904312255,
+            0.0
+          ],
+          "max": [
+            47.64401619010772,
+            11.812458802464146,
+            112.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        16,
+        8,
+        112,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 0.9843715668720122
+    },
+    "raw_emerald": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "connected_matrix_core": 24182.28749578951,
+        "connected_matrix_core_undercoat": 22070.520882415152,
+        "central_crystal": 19907.7824,
+        "central_crystal_undercoat": 18169.29548635521,
+        "left_crystal": 5870.8544,
+        "left_crystal_undercoat": 5358.1702978112025,
+        "right_crystal": 6575.976000000001,
+        "right_crystal_undercoat": 6001.715743848003,
+        "upper_left_crystal": 1647.1952000000006,
+        "upper_left_crystal_undercoat": 1503.3505847695997,
+        "upper_right_crystal": 1637.6839999999997,
+        "upper_right_crystal_undercoat": 1494.6699693319993,
+        "lower_left_crystal": 3322.8432,
+        "lower_left_crystal_undercoat": 3032.669271873601,
+        "lower_right_crystal": 2442.240000000002,
+        "lower_right_crystal_undercoat": 2228.96650752,
+        "matrix_rock_0": 2424.8711199999993,
+        "matrix_rock_0_undercoat": 2213.1144049727995,
+        "matrix_rock_1": 1454.9226725495917,
+        "matrix_rock_1_undercoat": 1327.8686478261266,
+        "matrix_rock_2": 2909.8453458999998,
+        "matrix_rock_2_undercoat": 2655.7372970229353,
+        "matrix_rock_3": 1600.414948492353,
+        "matrix_rock_3_undercoat": 1460.6555207776212,
+        "matrix_rock_4": 1527.6688057000006,
+        "matrix_rock_4_undercoat": 1394.262078228425,
+        "matrix_rock_5": 1939.8969053979572,
+        "matrix_rock_5_undercoat": 1770.491519389988
+      },
+      "closed_outward_components": 28,
+      "vertices": 866,
+      "triangles": 972,
+      "surfaces": [
+        {
+          "material": "raw_emerald",
+          "vertices": 866,
+          "triangles": 972
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -45.281092076112564,
+            -20.671802904312255,
+            0.0
+          ],
+          "max": [
+            47.64401619010772,
+            11.812458802464146,
+            112.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        17,
+        8,
+        111,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 0.9843715668720122
+    },
+    "raw_topaz": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "connected_matrix_core": 24182.28749578951,
+        "connected_matrix_core_undercoat": 22070.520882415152,
+        "central_crystal": 19907.7824,
+        "central_crystal_undercoat": 18169.29548635521,
+        "left_crystal": 5870.8544,
+        "left_crystal_undercoat": 5358.1702978112025,
+        "right_crystal": 6575.976000000001,
+        "right_crystal_undercoat": 6001.715743848003,
+        "upper_left_crystal": 1647.1952000000006,
+        "upper_left_crystal_undercoat": 1503.3505847695997,
+        "upper_right_crystal": 1637.6839999999997,
+        "upper_right_crystal_undercoat": 1494.6699693319993,
+        "lower_left_crystal": 3322.8432,
+        "lower_left_crystal_undercoat": 3032.669271873601,
+        "lower_right_crystal": 2442.240000000002,
+        "lower_right_crystal_undercoat": 2228.96650752,
+        "matrix_rock_0": 2424.8711199999993,
+        "matrix_rock_0_undercoat": 2213.1144049727995,
+        "matrix_rock_1": 1454.9226725495917,
+        "matrix_rock_1_undercoat": 1327.8686478261266,
+        "matrix_rock_2": 2909.8453458999998,
+        "matrix_rock_2_undercoat": 2655.7372970229353,
+        "matrix_rock_3": 1600.414948492353,
+        "matrix_rock_3_undercoat": 1460.6555207776212,
+        "matrix_rock_4": 1527.6688057000006,
+        "matrix_rock_4_undercoat": 1394.262078228425,
+        "matrix_rock_5": 1939.8969053979572,
+        "matrix_rock_5_undercoat": 1770.491519389988
+      },
+      "closed_outward_components": 28,
+      "vertices": 866,
+      "triangles": 972,
+      "surfaces": [
+        {
+          "material": "raw_topaz",
+          "vertices": 866,
+          "triangles": 972
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -45.281092076112564,
+            -20.671802904312255,
+            0.0
+          ],
+          "max": [
+            47.64401619010772,
+            11.812458802464146,
+            112.0
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        16,
+        8,
+        111,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 0.9843715668720122
+    },
+    "raw_opal": {
+      "class": "CaelumMaterialPickup",
+      "parts": {
+        "connected_matrix_core": 24182.28749578951,
+        "connected_matrix_core_undercoat": 22070.520882415152,
+        "central_crystal": 19907.7824,
+        "central_crystal_undercoat": 18169.29548635521,
+        "left_crystal": 5870.8544,
+        "left_crystal_undercoat": 5358.1702978112025,
+        "right_crystal": 6575.976000000001,
+        "right_crystal_undercoat": 6001.715743848003,
+        "upper_left_crystal": 1647.1952000000006,
+        "upper_left_crystal_undercoat": 1503.3505847695997,
+        "upper_right_crystal": 1637.6839999999997,
+        "upper_right_crystal_undercoat": 1494.6699693319993,
+        "lower_left_crystal": 3322.8432,
+        "lower_left_crystal_undercoat": 3032.669271873601,
+        "lower_right_crystal": 2442.240000000002,
+        "lower_right_crystal_undercoat": 2228.96650752,
+        "matrix_rock_0": 2424.8711199999993,
+        "matrix_rock_0_undercoat": 2213.1144049727995,
+        "matrix_rock_1": 1454.9226725495917,
+        "matrix_rock_1_undercoat": 1327.8686478261266,
+        "matrix_rock_2": 2909.8453458999998,
+        "matrix_rock_2_undercoat": 2655.7372970229353,
+        "matrix_rock_3": 1600.414948492353,
+        "matrix_rock_3_undercoat": 1460.6555207776212,
+        "matrix_rock_4": 1527.6688057000006,
+        "matrix_rock_4_undercoat": 1394.262078228425,
+        "matrix_rock_5": 1939.8969053979572,
+        "matrix_rock_5_undercoat": 1770.491519389988
+      },
+      "closed_outward_components": 28,
+      "vertices": 866,
+      "triangles": 972,
+      "surfaces": [
+        {
+          "material": "raw_opal",
+          "vertices": 866,
+          "triangles": 972
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -44.34301402287564,
+            -20.243549880008445,
+            0.0
+          ],
+          "max": [
+            46.656985977124364,
+            11.567742788576254,
+            109.67972155384564
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        18,
+        9,
+        109,
+        120
+      ],
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "uniform_fit": 0.9639785657146879
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "11ef65a46caccf55c1f2238c5613387f2f4eaabfdcdcc1354e580c3f8f478a8b",
+    "PROVENANCE.json": "05de7d329b64e58c9bd3aa7ad7251462889d6816bc6ba06766d230ade0f0b6a4"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/materials/ca_material_ruby_pendant.png": "fbfd40f35d0f9b9994e25587b7bdc7650fa7ece93bdd762e9d4d89b03a2db360",
+    "src/graphics/caelum/icons/materials/ca_material_sapphire_pendant.png": "0fc1567fe625c4a61141a943226a691d03116f5641b7b837033e572e6c34741a",
+    "src/graphics/caelum/icons/materials/ca_material_emerald_pendant.png": "16fcca27e8ab7f1c407637ac7935e53fe422b7520c095e4ca036054feb5bb858",
+    "src/graphics/caelum/icons/materials/ca_material_topaz_pendant.png": "281906fd21a2d70309f61f9877ea5a64e0ab236e6aef97a4b1ba6f68832a33d9",
+    "src/graphics/caelum/icons/materials/ca_material_ruby_gem.png": "b05ca2af74668d51145218aa1e1426010b01c971d80cd6f6cfe6af592491f9b5",
+    "src/graphics/caelum/icons/materials/ca_material_sapphire_gem.png": "5bf753d7a16d8db51622a9bbc7f9670aaf63ecc956903bdc4236fab88889652f",
+    "src/graphics/caelum/icons/materials/ca_material_emerald_gem.png": "b35bded87a438d5e14cd858ec2e4fcb50c3e68bbd0bdf943faadbf7af0cf074f",
+    "src/graphics/caelum/icons/materials/ca_material_topaz_gem.png": "dde9c018ac07dde1a17467903dd8c57a90f1af588f0f811e34309c8cb0332266",
+    "src/graphics/caelum/icons/materials/ca_material_opal_brooch.png": "058fc3b5893c8492c45030b2df0fcbc983e78979c83fdcda8d28312323e5e044",
+    "src/graphics/caelum/icons/materials/ca_material_raw_ruby.png": "646753d85f824c71960f1781656925066a00d28ae6378cf35ab5215ba807f2ef",
+    "src/graphics/caelum/icons/materials/ca_material_raw_sapphire.png": "ba23a4834eefdf7b20a33f8453176da6c1747386a380e7c623f9da0b3dca22f1",
+    "src/graphics/caelum/icons/materials/ca_material_raw_emerald.png": "e88cce74cccec0bded005a747cc6d94313a8ee69ba9a2807b35d53fe8aeeff2f",
+    "src/graphics/caelum/icons/materials/ca_material_raw_topaz.png": "45f830828c36e878d8776daf462f8c2f45e7ed0c4b6dd9e2716fd5514de14a17",
+    "src/graphics/caelum/icons/materials/ca_material_raw_opal.png": "a5bd0b418befbb1abfcbd3b412146657fa591a99f604f2c7b52bee98a73b8d56",
+    "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e"
+  },
+  "generator_sha256": {
+    "generate_inventory_gems_models.py": "d6abe93a3364fcfe2cc94130704ea2b1ec2e59d81880c0b3be3d4985a8dc2c79",
+    "generate_inventory_jewelry_models.py": "2d2942e5c68ae1f5311377cbc85ec153347e4e569acf7468d56bee3c94620c3a",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2"
+  },
+  "sha256": {
+    "models/caelum/inventory/gems/ruby_pendant.png": "fbfd40f35d0f9b9994e25587b7bdc7650fa7ece93bdd762e9d4d89b03a2db360",
+    "models/caelum/inventory/gems/sapphire_pendant.png": "0fc1567fe625c4a61141a943226a691d03116f5641b7b837033e572e6c34741a",
+    "models/caelum/inventory/gems/emerald_pendant.png": "16fcca27e8ab7f1c407637ac7935e53fe422b7520c095e4ca036054feb5bb858",
+    "models/caelum/inventory/gems/topaz_pendant.png": "281906fd21a2d70309f61f9877ea5a64e0ab236e6aef97a4b1ba6f68832a33d9",
+    "models/caelum/inventory/gems/ruby_gem.png": "b05ca2af74668d51145218aa1e1426010b01c971d80cd6f6cfe6af592491f9b5",
+    "models/caelum/inventory/gems/sapphire_gem.png": "5bf753d7a16d8db51622a9bbc7f9670aaf63ecc956903bdc4236fab88889652f",
+    "models/caelum/inventory/gems/emerald_gem.png": "b35bded87a438d5e14cd858ec2e4fcb50c3e68bbd0bdf943faadbf7af0cf074f",
+    "models/caelum/inventory/gems/topaz_gem.png": "dde9c018ac07dde1a17467903dd8c57a90f1af588f0f811e34309c8cb0332266",
+    "models/caelum/inventory/gems/opal_brooch.png": "058fc3b5893c8492c45030b2df0fcbc983e78979c83fdcda8d28312323e5e044",
+    "models/caelum/inventory/gems/raw_ruby.png": "646753d85f824c71960f1781656925066a00d28ae6378cf35ab5215ba807f2ef",
+    "models/caelum/inventory/gems/raw_sapphire.png": "ba23a4834eefdf7b20a33f8453176da6c1747386a380e7c623f9da0b3dca22f1",
+    "models/caelum/inventory/gems/raw_emerald.png": "e88cce74cccec0bded005a747cc6d94313a8ee69ba9a2807b35d53fe8aeeff2f",
+    "models/caelum/inventory/gems/raw_topaz.png": "45f830828c36e878d8776daf462f8c2f45e7ed0c4b6dd9e2716fd5514de14a17",
+    "models/caelum/inventory/gems/raw_opal.png": "a5bd0b418befbb1abfcbd3b412146657fa591a99f604f2c7b52bee98a73b8d56",
+    "models/caelum/inventory/gems/ruby_pendant.md3": "6b0baf1909a5b2d083facb559b6908268a6a9c26e104678d5da47b859f770d77",
+    "editable/ruby_pendant.obj": "8c54ef9872df11d43c3b18c1d3f28eeab35ae1c9f5f525aa5765ff5e34122d79",
+    "models/caelum/inventory/gems/sapphire_pendant.md3": "307e64fbe4ccc96e25c0b4aeedfb9e43c323a3b87fea5f90083d8497ccc62cb1",
+    "editable/sapphire_pendant.obj": "a683d7bbb6fe371f14055bbf8b5dc607b96d65f8eaff09ee00c636fd804a93b0",
+    "models/caelum/inventory/gems/emerald_pendant.md3": "c40e4ba2d7a39d490bf1100bfaac91997fdf5de6e8166915909c1284e6862b8e",
+    "editable/emerald_pendant.obj": "b43e3c37d5caa7f3b8ee13b6696ac3f8c18229dc96cc80be62e5524889d77a4d",
+    "models/caelum/inventory/gems/topaz_pendant.md3": "cc234537586401b14334e0ef1b769ef3aeae13e905610768dff4473142801f97",
+    "editable/topaz_pendant.obj": "5785850a518f4b7682ebf2f573a79b5380490bb6d5f7de9fc670c13bb3ca409b",
+    "models/caelum/inventory/gems/ruby_gem.md3": "2f5b3a24bb1211187b5557a59ab1a5b491050bca779521b63558b1db1ad740e0",
+    "editable/ruby_gem.obj": "b8c511b7be6be1ecd0a3dec5b146488b0c75d0bcdd515cfde6a1bfb88ffbcd8b",
+    "models/caelum/inventory/gems/sapphire_gem.md3": "e2517a0401b1b1ab7280debc4d579e88a7bdfa46389ddd5a2353e9f2f1a1aa75",
+    "editable/sapphire_gem.obj": "799856863a866a9ae7e5e11deb6fda8ba39a9253b17fa11bac9737fab716a230",
+    "models/caelum/inventory/gems/emerald_gem.md3": "d83b1129e6ea78f90ba2205574a34dd5bd7bceffea4b0e6d7558b09aa33802c3",
+    "editable/emerald_gem.obj": "316d43f1ea3e79525888abc38978f4a005fcc2fd4f5a57a8da243727dadd4c77",
+    "models/caelum/inventory/gems/topaz_gem.md3": "b34400d33428548bd122e62c3260ee78712e8e6f7b6548d5bddabf0615aaead7",
+    "editable/topaz_gem.obj": "4838a183fea008fb1ccb51c90b1340bd14f2c3e051d6e62bbbc0bb753905ac94",
+    "models/caelum/inventory/gems/opal_brooch.md3": "d1904c3990b8585a67bd7d4e55a811e3752133677f7a71d562fd210ddd6c5f71",
+    "editable/opal_brooch.obj": "058c23588548a19775b32c2b325cb1c1574f37db8f8dae9465420174a6a54498",
+    "models/caelum/inventory/gems/raw_ruby.md3": "dcd983eae50b469729837b7d8b9f9b89261d77ef26cc24bb05781772838d1131",
+    "editable/raw_ruby.obj": "5959191905874682833cc08501bc4aba1dac9a34dec017be3e6314e4f190da7b",
+    "models/caelum/inventory/gems/raw_sapphire.md3": "af40dba6d383a822c4f5fcdbf3c1172dfa811dda98b6cc51f2e9402b672265b8",
+    "editable/raw_sapphire.obj": "dd8c80d2bd2a2508c08389194c4a13db3a14caf17a543fda9a1f9dc9df6eb740",
+    "models/caelum/inventory/gems/raw_emerald.md3": "33d55286aabcaea55691825316e3804def6af6602ef4cd7217cb7b09c766a9d5",
+    "editable/raw_emerald.obj": "8a80e64540c4231110155c1f0015aa15ea2361a29978d185a037484c447dec78",
+    "models/caelum/inventory/gems/raw_topaz.md3": "a30feb54b7e34a470a9cbbce8402c7293632c73d910ac07a44ec13786c1e637d",
+    "editable/raw_topaz.obj": "e73ae3ab1061c87d96d40789bca26f9cb100fd5dbfbe1a186810f8243ff523bc",
+    "models/caelum/inventory/gems/raw_opal.md3": "5312e9efa4c7fd0ad68bc1731d73d4ee9a1c47a4f0502b37aa6a56178e52f8b4",
+    "editable/raw_opal.obj": "9efa6ff8f4849793fd5fcbfe41a58260fa4e729c625634fb654c018292924e79",
+    "editable/gems.mtl": "35ef3044be41d59204ea2de8960d448624121d5af2773f406de5daa825856ebb",
+    "caelum/data/inventory_gems.modeldef": "a177b51886b4062ed7fee5551d25d77474bce98faf4d9c8b08ee1b8dd7582c5c"
+  }
+}

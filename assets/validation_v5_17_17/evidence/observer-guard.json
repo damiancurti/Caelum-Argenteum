@@ -1,0 +1,34 @@
+[
+  {
+    "label": "candidate-fresh",
+    "count": 1093,
+    "expected_pass": true,
+    "passed": true,
+    "errors": []
+  },
+  {
+    "label": "candidate-fresh",
+    "count": 1092,
+    "expected_pass": false,
+    "passed": false,
+    "errors": [
+      "Expected 1093 native assertions, observed 1092"
+    ]
+  },
+  {
+    "label": "old-save-load",
+    "count": 1219,
+    "expected_pass": true,
+    "passed": true,
+    "errors": []
+  },
+  {
+    "label": "old-save-load",
+    "count": 1218,
+    "expected_pass": false,
+    "passed": false,
+    "errors": [
+      "Expected 1219 native assertions, observed 1218"
+    ]
+  }
+]

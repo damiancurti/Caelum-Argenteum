@@ -1,6 +1,59 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.16** - 2026-11-13.
+Documentation version: **5.17.17** - 2026-11-13.
+
+## 5.17.17 - Pendant, gem and opal-component drops (#678, parent #647)
+
+Fourteen CaelumMaterialPickup states M045..M058/A now have distinct closed
+models: four pendants, four gem components, an opal brooch and five raw gems.
+Original individual 128-pixel PNGs, material IDs, three qualities, quantity,
+recipes, mass, collision, Actor.Scale .25, icons and save rules remain intact.
+Fourteen byte-identical texture aliases have short MD3-compatible paths;
+the original icons are not replaced. Gem components and raw gems retain
+their separate source images even where their silhouettes resemble each other.
+
+The editable models contain 18,338 vertices, 28,260 triangles and 369 closed
+outward components. Separate settings, stones, chain links, scrolls, crystal
+facets and a connected rock matrix provide depth. Geometry fits uniformly
+inside each original opaque width/height. Owned #647 metal tiles furnish
+jewelry backs; original stone pixels also cover crystal/matrix backs.
+No new bitmap, raster edit, third-party mesh or image generator is involved.
+These are world props, not fitted character wearables.
+
+Sources/provenance and portable OBJ/MTL/textures live in
+assets/source/art/inventory_models_647/gems. Rebuild with python
+assets/generators/generate_inventory_gems_models.py --output build/gem-models
+--install. The existing #674 closed-component builder and MD3 exporter are
+reused without modification. Two exports reproduce 46 files byte-for-byte.
+The validator checks each closed component, winding, depth, source hashes,
+native bindings and original sprite envelope. Source fractional alpha is
+preserved: interior undercoat samples have alpha >=250/255 across a 3x3
+neighborhood, not an invented claim that these PNGs are fully opaque.
+
+Initial visual fixtures each passed 1,093 assertions over 42 material/quality
+combinations. Visual review required textured crystal/rock reverses, thinner
+brooch scrolls, a connected matrix base and explicit leaf-support stems; the first variants remain evidence.
+Final complete-package native checks pass 5,843 assertions in five phases:
+baseline 1,093, old-save load 1,219, fresh candidate 1,093, reload 1,219 and
+reverse-load 1,219. The 42 material/quality cases preserve split 2+3 quantities,
+merged 5-unit stacks, original IDs/icons, mass, floor contact, native physical
+properties, provenance and contamination, with direct Box-weight/quest guards.
+The final visual fixture also passes 1,093 checks; brooch ornaments now have
+five closed support stems. All 18,263 package entries match src exactly;
+only fourteen models, fourteen byte-identical texture aliases, their binding
+include and the two release diagnostics differ from #676.
+
+One isolated fourteen-object, 700-tic sprite/model pair on Windows 11 Pro
+26200, Ryzen 9 5950X, 32 GB RAM, RTX 3070 Ti and GZDoom 4.14.2 Vulkan at
+1280x720, uncapped/vsync off, background unpaused and 5% audio measured
+965.08/942.89 queue presentations/s; p95 1.2898/1.3394 ms,
+p99 1.5574/1.5846 ms. Both cohorts visibly contain all fourteen types.
+This is neither GPU/display timing nor campaign/crowd/repeatability acceptance.
+Source/export hashes, prior visual iterations, native logs, captures and traces:
+assets/validation_v5_17_17/evidence/SUMMARY.json. Runtime SHA-256:
+bfc644b9b05ae9887fb4d3761928d9800cf7b2351cfaf1ed3c9e032fb35787c7.
+The original 128-pixel detail limits extreme close-ups; author appearance and
+normal-menu acceptance remain CA678-GEMS-01. Other #647 categories remain open.
 
 ## 5.17.16 - Support-book and component model reuse (#676, parent #647)
 

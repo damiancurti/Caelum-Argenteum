@@ -1,0 +1,14 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/gems" Model 0 "ruby_pendant.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M045 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/gems" Model 0 "sapphire_pendant.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M046 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/gems" Model 0 "emerald_pendant.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M047 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/gems" Model 0 "topaz_pendant.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M048 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/gems" Model 0 "ruby_gem.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M049 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/gems" Model 0 "sapphire_gem.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M050 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/gems" Model 0 "emerald_gem.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M051 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/gems" Model 0 "topaz_gem.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M052 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/gems" Model 0 "opal_brooch.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M053 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/gems" Model 0 "raw_ruby.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M054 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/gems" Model 0 "raw_sapphire.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M055 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/gems" Model 0 "raw_emerald.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M056 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/gems" Model 0 "raw_topaz.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M057 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/gems" Model 0 "raw_opal.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M058 A 0 0 }

@@ -28,14 +28,14 @@ def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main(default_kind='coins'):
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ['baseline','runtime','presentation-layer','output']:parser.add_argument('--'+name,type=Path,required=True)
-    parser.add_argument('--kind',choices=('coins','consumables','water','food','ammunition','documents','ingots','camp','furniture','waterskin','mates','locks','jewelry','books'),default=default_kind)
+    parser.add_argument('--kind',choices=('coins','consumables','water','food','ammunition','documents','ingots','camp','furniture','waterskin','mates','locks','jewelry','books','gems'),default=default_kind)
     args=parser.parse_args();baseline=args.baseline.resolve(strict=True);runtime=args.runtime.resolve(strict=True);layer=args.presentation_layer.resolve(strict=True)
     existing=subprocess.check_output(['tasklist','/FI','IMAGENAME eq gzdoom.exe','/FO','CSV','/NH']).decode(errors='replace')
     if '"gzdoom.exe"' in existing.lower():parser.error('Another native engine is running.')
     out=args.output.resolve();out.relative_to(ROOT/'build');out.mkdir(parents=True,exist_ok=False)
-    report={'issue':676 if args.kind=='books' else 674 if args.kind=='jewelry' else 672 if args.kind=='locks' else 670 if args.kind=='mates' else 668 if args.kind=='waterskin' else 666 if args.kind=='furniture' else 664 if args.kind=='camp' else 658 if args.kind=='ingots' else 656 if args.kind=='documents' else 652 if args.kind=='ammunition' else 647,'kind':args.kind,'scope':__doc__.strip(),'baseline_sha256':digest(baseline),'runtime_sha256':digest(runtime),'engine_sha256':digest(ENGINE),
+    report={'issue':678 if args.kind=='gems' else 676 if args.kind=='books' else 674 if args.kind=='jewelry' else 672 if args.kind=='locks' else 670 if args.kind=='mates' else 668 if args.kind=='waterskin' else 666 if args.kind=='furniture' else 664 if args.kind=='camp' else 658 if args.kind=='ingots' else 656 if args.kind=='documents' else 652 if args.kind=='ammunition' else 647,'kind':args.kind,'scope':__doc__.strip(),'baseline_sha256':digest(baseline),'runtime_sha256':digest(runtime),'engine_sha256':digest(ENGINE),
             'layer_sha256':digest(layer/'ca_presentation.dll'),'runs':[]}
-    count={'coins':15,'consumables':9,'water':6,'food':6,'ammunition':7,'documents':6,'ingots':7,'camp':2,'furniture':17,'waterskin':2,'mates':3,'locks':16,'jewelry':9,'books':9}[args.kind]
+    count={'coins':15,'consumables':9,'water':6,'food':6,'ammunition':7,'documents':6,'ingots':7,'camp':2,'furniture':17,'waterskin':2,'mates':3,'locks':16,'jewelry':9,'books':9,'gems':14}[args.kind]
     for kind in ['sprites','models']:
         folder=out/f'{kind}-{count}';folder.mkdir()
         if args.kind=='coins':
@@ -77,14 +77,15 @@ class CA647Bench : EventHandler
 }""".replace('KINDS',kinds)
         if args.kind=='mates':
             source=source.replace('(0,-100,110)','(0,-36,25)').replace('camera.Pitch=47','camera.Pitch=30').replace('(index%5-2)*20,(index/5-1)*20','(index-1)*12,0')
-        if args.kind=='ingots':
-            ids=','.join(str(item['material_id']) for item in config['variants'].values())
+        if args.kind in ('ingots','gems'):
+            ids=','.join(str(item['item_type'] if args.kind=='gems' else item['material_id']) for item in config['variants'].values())
             source=source.replace("static const class<Inventory> kinds[]={KINDS};".replace('KINDS',kinds), 'static const int materialIds[]={'+ids+'};')
             source=source.replace('index<kinds.Size()', 'index<materialIds.Size()')
             source=source.replace("Bodies.Push(Actor.Spawn(kinds[index],((index%5-2)*20,(index/5-1)*20,0),NO_REPLACE));", "{let item=CaelumMaterialPickup(Actor.Spawn('CaelumMaterialPickup',((index%5-2)*20,(index/5-1)*20,0),NO_REPLACE));item.args[0]=materialIds[index];item.args[1]=2;item.UpdateMaterialVisuals();Bodies.Push(item);}")
         if args.kind!='coins':
             source=source.replace('(0,-100,110)','(0,-180,180)').replace('camera.Pitch=47','camera.Pitch=43')
             source=source.replace('(index%5-2)*20,(index/5-1)*20','(index%3-1)*55,(index/3-1)*55')
+        if args.kind=='gems':source=source.replace('(index%3-1)*55,(index/3-1)*55','(index%5-2)*38,(index/5-1)*50')
         if args.kind=='camp':
             # Original PNG sprites have no bottom offset and clip below floor Z.
             # Raise both cohorts and the camera equally for visible cost evidence.
@@ -134,6 +135,11 @@ class CA647Bench : EventHandler
         samples=[float(value) for value in re.findall(r'CA647 TIC ([\d.]+)',log)]
         result={'kind':kind,'bodies':count,'pid':process.pid,'exit_code':process.returncode,'errors':errors,'markers_qpc_ms':markers,
             'fixture_sha256':digest(fixture),'passed':process.returncode==0 and not errors and len(samples)==700 and set(markers)=={'BEGIN','END'}}
+        if args.kind=='gems':
+            observed=[tuple(map(int,values)) for values in re.findall(r'CA647 COMPLETE bodies=(\d+) samples=(\d+)',log)]
+            result['observed_completion_counts']=observed
+            if observed!=[(14,700)]:
+                errors.append('Expected fourteen native objects and 700 samples: '+str(observed));result['passed']=False
         if result['passed']:
             result['simulation']=summarize(samples)
             result['presentation']=inspect(folder/'presents.csv',process.pid,markers['BEGIN'],markers['END'])
