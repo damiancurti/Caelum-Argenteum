@@ -1,0 +1,50 @@
+{
+  "issue": 797,
+  "purpose": "Inspect distinct mule and plated-boar anatomy, hooves, tails and lying poses.",
+  "additional_views": [
+    {
+      "name": "lying-oblique",
+      "position": [
+        85,
+        -100,
+        70
+      ],
+      "target": [
+        0,
+        0,
+        15
+      ],
+      "default_pose": 22
+    },
+    {
+      "name": "head-detail",
+      "position": [
+        82,
+        -35,
+        48
+      ],
+      "target": [
+        25,
+        0,
+        30
+      ]
+    },
+    {
+      "name": "tail-detail",
+      "position": [
+        -105,
+        -40,
+        50
+      ],
+      "target": [
+        -30,
+        0,
+        25
+      ]
+    }
+  ],
+  "action_views": {
+    "death": 6,
+    "rest": 6
+  }
+}

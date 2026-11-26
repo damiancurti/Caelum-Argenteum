@@ -1,0 +1,1471 @@
+{
+  "issue": 797,
+  "parent_issue": 461,
+  "version": "5.17.77",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Distinct native dark mule and plated-boar candidates for CaelumBestiary029/030; no new gameplay or campaign placement.",
+  "runtime": {
+    "sha256": "7ad0cc7fa0027113ce87bb1d8b1e2e45365f1b3c96a522428f621f4ff6355d2a",
+    "source_entries": 18580,
+    "exact_source_bytes": true,
+    "baseline_sha256": "08dec7bb57872676b07e4b304b2d30c1dbd0249f15881c1629bc6e79d8018dc2",
+    "added": [
+      "caelum/data/apparition_combat.modeldef",
+      "models/caelum/folklore/apparitions/chancho_lata.md3",
+      "models/caelum/folklore/apparitions/dark.png",
+      "models/caelum/folklore/apparitions/iris.png",
+      "models/caelum/folklore/apparitions/materials.png",
+      "models/caelum/folklore/apparitions/mulanima.md3"
+    ],
+    "changed": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "removed": [],
+    "unrelated_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_artifacts": 12,
+    "repeat_byte_identical": true,
+    "geometry": {
+      "mulanima": {
+        "closed_components": 48,
+        "attachment_witnesses": 47,
+        "rooted_components": 48,
+        "combat_frames": 23,
+        "collapsed_native_triangles": 0,
+        "native_pose_floor_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "independent_posed_attachment_checks": 376,
+        "attachment_frames": [
+          0,
+          10,
+          17,
+          22
+        ]
+      },
+      "chancho_lata": {
+        "closed_components": 124,
+        "attachment_witnesses": 123,
+        "rooted_components": 124,
+        "combat_frames": 23,
+        "collapsed_native_triangles": 0,
+        "native_pose_floor_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "independent_posed_attachment_checks": 984,
+        "attachment_frames": [
+          0,
+          10,
+          17,
+          22
+        ]
+      }
+    },
+    "models": {
+      "mulanima": {
+        "actor": "CaelumBestiary029",
+        "catalogue_id": "CA-FOLK-029",
+        "vertices": 11862,
+        "triangles": 21172,
+        "hierarchical_parts": 61,
+        "surfaces": [
+          {
+            "material": "iris",
+            "vertices": 184,
+            "triangles": 336
+          },
+          {
+            "material": "dark",
+            "vertices": 552,
+            "triangles": 1008
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7670
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7582
+          },
+          {
+            "material": "atlas",
+            "vertices": 2999,
+            "triangles": 4576
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -57.75756468249378,
+              -12.718855760351365,
+              0.0
+            ],
+            "max": [
+              43.69687579309607,
+              12.718855760351365,
+              99.99999999999999
+            ]
+          },
+          {
+            "min": [
+              -57.83252898266854,
+              -12.713386699625522,
+              0.0
+            ],
+            "max": [
+              42.52685932031209,
+              12.713386699625522,
+              100.09926902535004
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -12.718855760351365,
+              0.0
+            ],
+            "max": [
+              43.69687579309607,
+              12.718855760351365,
+              99.99999999999999
+            ]
+          },
+          {
+            "min": [
+              -57.81375299981745,
+              -12.718855760351365,
+              0.0
+            ],
+            "max": [
+              43.90163539948132,
+              12.718855760351365,
+              100.21192213215839
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -12.718855760351365,
+              0.0
+            ],
+            "max": [
+              43.69687579309607,
+              12.718855760351365,
+              99.99999999999999
+            ]
+          },
+          {
+            "min": [
+              -57.81375299981745,
+              -12.718855760351365,
+              0.0
+            ],
+            "max": [
+              43.48278658115795,
+              12.718855760351365,
+              100.57841484819137
+            ]
+          },
+          {
+            "min": [
+              -57.81375299981745,
+              -12.718855760351365,
+              0.0
+            ],
+            "max": [
+              43.90163539948132,
+              12.718855760351365,
+              100.21192213215839
+            ]
+          },
+          {
+            "min": [
+              -57.81375299981745,
+              -12.718855760351365,
+              0.0
+            ],
+            "max": [
+              43.48278658115795,
+              12.718855760351365,
+              100.57841484819137
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -13.734357434316994,
+              0.0
+            ],
+            "max": [
+              42.73901991433428,
+              12.713386699625522,
+              100.25626069442815
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -12.718855760351365,
+              0.0
+            ],
+            "max": [
+              42.28267501226331,
+              12.718855760351365,
+              100.17105329546266
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -12.718855760351365,
+              0.0
+            ],
+            "max": [
+              44.3938034538936,
+              12.718855760351365,
+              97.84287663402476
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -12.713386699625522,
+              0.0
+            ],
+            "max": [
+              42.73901991433428,
+              13.734357434316994,
+              100.25626069442815
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -15.589693403772618,
+              0.0
+            ],
+            "max": [
+              43.782989802935845,
+              17.190453278525652,
+              101.02156181419419
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -32.34363125010247,
+              0.0
+            ],
+            "max": [
+              43.94733257469952,
+              26.225755127242994,
+              97.38079822854439
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -48.821711817147154,
+              0.0
+            ],
+            "max": [
+              44.108045976710656,
+              33.85614316947098,
+              82.67785498661814
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -59.35282316027242,
+              0.0
+            ],
+            "max": [
+              44.23329810232018,
+              37.319218222022926,
+              58.25834119506116
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -62.57967910582177,
+              0.0
+            ],
+            "max": [
+              44.30387230527188,
+              36.99257450630852,
+              35.716407956153155
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -62.33669008691441,
+              0.0
+            ],
+            "max": [
+              44.339767491440966,
+              35.78255893655967,
+              25.43771152070273
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -12.718855760351365,
+              0.0
+            ],
+            "max": [
+              43.09668429217499,
+              12.718855760351365,
+              100.27209481847704
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -12.718855760351365,
+              0.0
+            ],
+            "max": [
+              43.69687579309607,
+              12.718855760351365,
+              99.99999999999999
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -12.718855760351365,
+              0.0
+            ],
+            "max": [
+              43.99082544809914,
+              12.718855760351365,
+              99.65838130617907
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -12.718855760351365,
+              0.0
+            ],
+            "max": [
+              43.69687579309607,
+              12.718855760351365,
+              99.99999999999999
+            ]
+          },
+          {
+            "min": [
+              -57.75756468249378,
+              -62.33669008691441,
+              0.0
+            ],
+            "max": [
+              44.339767491440966,
+              35.78255893655967,
+              25.43771152070273
+            ]
+          }
+        ],
+        "modeldef_scale": 1.6526222080000004,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 68.26087868401737,
+        "maximum_authored_height": 101.02156181419419,
+        "source_sha256": "88b6b3baf05a8a2301a55872c9a5cb324b48e343c90bf47871b289871de12974"
+      },
+      "chancho_lata": {
+        "actor": "CaelumBestiary030",
+        "catalogue_id": "CA-FOLK-030",
+        "vertices": 20392,
+        "triangles": 32184,
+        "hierarchical_parts": 137,
+        "surfaces": [
+          {
+            "material": "iris",
+            "vertices": 184,
+            "triangles": 336
+          },
+          {
+            "material": "dark",
+            "vertices": 644,
+            "triangles": 1184
+          },
+          {
+            "material": "atlas",
+            "vertices": 4094,
+            "triangles": 7154
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 4352
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 5362
+          },
+          {
+            "material": "atlas",
+            "vertices": 4095,
+            "triangles": 7732
+          },
+          {
+            "material": "atlas",
+            "vertices": 3210,
+            "triangles": 6064
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -72.13592619051765,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              92.84926808471145,
+              37.992536822580476,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -72.02365335077252,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              90.73936044325896,
+              37.992536822580476,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              92.84926808471145,
+              37.992536822580476,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -71.96934919761424,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              92.62655205289755,
+              37.992536822580476,
+              100.50332873448288
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              92.84926808471145,
+              37.992536822580476,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -71.96934919761424,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              93.03578674844056,
+              37.992536822580476,
+              100.50332873448288
+            ]
+          },
+          {
+            "min": [
+              -71.96934919761424,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              92.62655205289755,
+              37.992536822580476,
+              100.50332873448288
+            ]
+          },
+          {
+            "min": [
+              -71.96934919761424,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              93.03578674844056,
+              37.992536822580476,
+              100.50332873448288
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -38.038561391155625,
+              0.0
+            ],
+            "max": [
+              93.25361177518049,
+              37.992536822580476,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              93.28119734257392,
+              37.992536822580476,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              90.41848567166588,
+              37.992536822580476,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              93.25361177518049,
+              38.038561391155625,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -35.486050562534565,
+              0.0
+            ],
+            "max": [
+              92.7696288351569,
+              40.05552885149332,
+              103.1655024016646
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -36.809197387274345,
+              0.0
+            ],
+            "max": [
+              92.55858475519787,
+              51.770612859970804,
+              108.70189753456988
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -43.20801800563744,
+              0.0
+            ],
+            "max": [
+              92.237717673958,
+              61.36348824578472,
+              104.57150625142218
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -44.113747033561594,
+              0.0
+            ],
+            "max": [
+              91.83876058913519,
+              64.54624549767998,
+              88.21136055055217
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -43.15937890923698,
+              0.0
+            ],
+            "max": [
+              91.48858504975527,
+              62.31289847918896,
+              76.46790719543586
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -43.71476026284375,
+              0.0
+            ],
+            "max": [
+              91.24550964103938,
+              58.60748204804877,
+              75.98507364516095
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              93.1672781993214,
+              37.992536822580476,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              92.84926808471145,
+              37.992536822580476,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              92.48571193237552,
+              37.992536822580476,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -37.992536822580476,
+              0.0
+            ],
+            "max": [
+              92.84926808471145,
+              37.992536822580476,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -72.13592619051765,
+              -43.71476026284375,
+              0.0
+            ],
+            "max": [
+              91.24550964103938,
+              58.60748204804877,
+              75.98507364516095
+            ]
+          }
+        ],
+        "modeldef_scale": 1.652622208,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 93.31003142283888,
+        "maximum_authored_height": 108.70189753456988,
+        "source_sha256": "1327f3492e5341888d436286d93d78d2bd4aaf1a5e5f0cecc135ac0cb4e32933"
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "mulanima": {
+      "issue": 797,
+      "species": "mulanima",
+      "studio": false,
+      "runtime_sha256": "7ad0cc7fa0027113ce87bb1d8b1e2e45365f1b3c96a522428f621f4ff6355d2a",
+      "baseline_sha256": "08dec7bb57872676b07e4b304b2d30c1dbd0249f15881c1629bc6e79d8018dc2",
+      "fixture_sha256": "85d81d10119ad958db8c0d35a2ae1275cbb34d1e77063a5bab6333575e317de1",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "26b28854108ca9dd302cb0f64f46d2675714a01910b51dd5bf37ce98c518e71c",
+            "empty-view-6.png": "82a024cdd834ca748ab437228e5ed1a1f48c1c663e59b6bb7106359b775f7a49",
+            "empty.png": "26b28854108ca9dd302cb0f64f46d2675714a01910b51dd5bf37ce98c518e71c",
+            "pose-00-idle.png": "33361e44a44a6cd2f91552044d265c46780c9dd15b8812e90d364b7626226ec9",
+            "pose-01-idle.png": "3c1be7d387c923b522727fed76b950dd09ceb9ae38e8cb8ddd96dc48e433d3ab",
+            "pose-02-run.png": "33361e44a44a6cd2f91552044d265c46780c9dd15b8812e90d364b7626226ec9",
+            "pose-03-run.png": "2afcc4d20011c974c41f848eddafb5a1a9a5acb4e0218a81979262c93677282d",
+            "pose-04-run.png": "33361e44a44a6cd2f91552044d265c46780c9dd15b8812e90d364b7626226ec9",
+            "pose-05-run.png": "ce56931b1ed8b79cdc239ce36f5f39d16719c6325b21be12b2a320a07166504c",
+            "pose-06-walk.png": "2afcc4d20011c974c41f848eddafb5a1a9a5acb4e0218a81979262c93677282d",
+            "pose-07-walk.png": "ce56931b1ed8b79cdc239ce36f5f39d16719c6325b21be12b2a320a07166504c",
+            "pose-08-stun.png": "5f1b518788c24b9ab2e2ac6f98d7fe48a54cf2ff0e0ba41574c305d33f697cc9",
+            "pose-09-attack_prepare.png": "65373bee9e02dc43375c167410744a4589a7c8a6197970c39276e920c82b33af",
+            "pose-10-attack_release.png": "0561b1464ee60801232a788eff30b09daf59f4a09b683215359494e883faf0ee",
+            "pose-11-pain.png": "1f2cb8a85a6a0bec25bde56e9d807d26e118588fb914006816b7d2387b6a91be",
+            "pose-12-death.png": "1affdb1f56de6167a1a73a7e4af63f697db171d68e35d0937e6ac636eaa06d0c",
+            "pose-13-death.png": "82293d92992968ec9634ea3406536ba263080af90b6c9e490b5ceaa202944fdd",
+            "pose-14-death.png": "d81b4d1015bf31978b1f45225e0702df7d09bc34feab1227a7e2238c6ebd3810",
+            "pose-15-death.png": "4595ee8e7c863aa6a9270d10bec5368357b327609af634126f5058d377b3807d",
+            "pose-16-death.png": "ee81671cdc1a184bef2d2ce7046b6fcd7fc0bc862c8ccf9e7c5e440ce6fd79e6",
+            "pose-17-death.png": "a2fb80a9bb5c73e559ccdc661d3723494c88f7191ca950f61f92de3988e317e2",
+            "pose-18-breath.png": "f656646223d8034415df0f9f6e681b33ace39c71721bc309f36a9dcf196b3418",
+            "pose-19-breath.png": "6e62ec7cc7cc876267458dd4089a4b4f021471f5dd7a08e9485110fee65e3420",
+            "pose-20-breath.png": "25e2b4344a3dc6b141caf5745696827a04994c114cb181b36ada79a8d0fb739e",
+            "pose-21-breath.png": "3837fe00da5d2db5c21b61966e8a8bbbd1cd9b23201d004b5ac702849c1dbbb8",
+            "pose-22-rest.png": "a2fb80a9bb5c73e559ccdc661d3723494c88f7191ca950f61f92de3988e317e2",
+            "view-front.png": "063446f0c154f66396b870505cec4934979a928c80a3274ffdb453afe5bb3fad",
+            "view-head-detail.png": "12bb2cd9b533f90d78cdcbd0f20e687a71ecda4313121f2f1341798561965808",
+            "view-head-front.png": "f586680cc55c5ab80a14bbd7b5c771cbcf6bea525f4ca558bafefce223946884",
+            "view-head-oblique.png": "3d01277cf409efa4ef011536fef8457a9ff5daa48d962d9675e04d36a2833be4",
+            "view-lying-oblique.png": "a2fb80a9bb5c73e559ccdc661d3723494c88f7191ca950f61f92de3988e317e2",
+            "view-rear.png": "f3406545ff8deb981849543b763d30835e92c41a40e872f7dc3f17f701e14bdb",
+            "view-side.png": "6890f7aa495efd4a37ef37a3660504aba15a88d942135e420bf80ba4bb05970f",
+            "view-tail-detail.png": "81a1da157e555020f857536e9a9d77abefe670ab43c262961f3667749cc8f742"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 5665,
+            "pose-01-idle.png": 5477,
+            "pose-02-run.png": 5665,
+            "pose-03-run.png": 5763,
+            "pose-04-run.png": 5665,
+            "pose-05-run.png": 5578,
+            "pose-06-walk.png": 5763,
+            "pose-07-walk.png": 5578,
+            "pose-08-stun.png": 5461,
+            "pose-09-attack_prepare.png": 5635,
+            "pose-10-attack_release.png": 5721,
+            "pose-11-pain.png": 5762,
+            "pose-12-death.png": 5421,
+            "pose-13-death.png": 4656,
+            "pose-14-death.png": 2747,
+            "pose-15-death.png": 2689,
+            "pose-16-death.png": 3788,
+            "pose-17-death.png": 4413,
+            "pose-18-breath.png": 5617,
+            "pose-19-breath.png": 5665,
+            "pose-20-breath.png": 5663,
+            "pose-21-breath.png": 5675,
+            "pose-22-rest.png": 4413
+          },
+          "distinct_pose_captures": 18
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    },
+    "chancho_lata": {
+      "issue": 797,
+      "species": "chancho_lata",
+      "studio": false,
+      "runtime_sha256": "7ad0cc7fa0027113ce87bb1d8b1e2e45365f1b3c96a522428f621f4ff6355d2a",
+      "baseline_sha256": "08dec7bb57872676b07e4b304b2d30c1dbd0249f15881c1629bc6e79d8018dc2",
+      "fixture_sha256": "5d987aae8c30848f8f8e2a1a278394d9cb4ded2418f592fae21b86f23fa416f3",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "26b28854108ca9dd302cb0f64f46d2675714a01910b51dd5bf37ce98c518e71c",
+            "empty-view-6.png": "82a024cdd834ca748ab437228e5ed1a1f48c1c663e59b6bb7106359b775f7a49",
+            "empty.png": "26b28854108ca9dd302cb0f64f46d2675714a01910b51dd5bf37ce98c518e71c",
+            "pose-00-idle.png": "4ca6034ed0434f294e35bad1ff23c44f64a7f4c3f8494a0088cae31b5d67c46f",
+            "pose-01-idle.png": "de647f6c7f7fcd681228a8ebc71ba96d6137678070ec62558eae0467837edf27",
+            "pose-02-run.png": "4ca6034ed0434f294e35bad1ff23c44f64a7f4c3f8494a0088cae31b5d67c46f",
+            "pose-03-run.png": "54136cf7e77b6fb7af0559c23fee7926ca4595f4c89a9e86af4951d0bdba3971",
+            "pose-04-run.png": "4ca6034ed0434f294e35bad1ff23c44f64a7f4c3f8494a0088cae31b5d67c46f",
+            "pose-05-run.png": "23d0c9f991edfeab24a01f985ba4b1f13c0c31d2693b487ebb7a135c01a15bca",
+            "pose-06-walk.png": "54136cf7e77b6fb7af0559c23fee7926ca4595f4c89a9e86af4951d0bdba3971",
+            "pose-07-walk.png": "23d0c9f991edfeab24a01f985ba4b1f13c0c31d2693b487ebb7a135c01a15bca",
+            "pose-08-stun.png": "b7b5e2deee30aa1e3f51dc26f19c31d6651d7fd61c169894d04b1a8dce90337e",
+            "pose-09-attack_prepare.png": "df0e208b65f664a1204e0243e8fafb41eef1b470034cd33cfff53a1baf9a4865",
+            "pose-10-attack_release.png": "7a12c2aa453c5aefe9c681416a211d601f153491f6de2c9437022f60bea2dcf7",
+            "pose-11-pain.png": "daf0ae51596a71af5faf91a21985be2de3e163af7fc5a9395c22d531fb3489ff",
+            "pose-12-death.png": "b9426b28df669380da43b09f9443d99c3792e6fe27b9c3797e54cc0a79962426",
+            "pose-13-death.png": "2954281ce864475c4f6d0c3e3d55a766f42380db5c4ddb9891951c2e13fd3197",
+            "pose-14-death.png": "ad1ffa7a8fc1f8db0a6aabe3b85e0fab15600a5b8795841a6804f7b8f872440f",
+            "pose-15-death.png": "b1a116039c44386450419c0e17a05240d61a5f842f0896351325d368be871a3c",
+            "pose-16-death.png": "88bd88cf4a112fe90ce7540c98d2bcd1c4040ca75ce71f691dde29b350243a03",
+            "pose-17-death.png": "9784b95d165514e6781e25b675c38d7103d6a86f85a4e77b8b81bb987377e814",
+            "pose-18-breath.png": "a15cc970afd80364afbbe424b32b5626d670e24322dda2dc095616b1d250e8ea",
+            "pose-19-breath.png": "4ca6034ed0434f294e35bad1ff23c44f64a7f4c3f8494a0088cae31b5d67c46f",
+            "pose-20-breath.png": "561337e002c00dcfc75d7168f062fd6e61f572495e39b05b206ec17b5649c4c8",
+            "pose-21-breath.png": "4ca6034ed0434f294e35bad1ff23c44f64a7f4c3f8494a0088cae31b5d67c46f",
+            "pose-22-rest.png": "9784b95d165514e6781e25b675c38d7103d6a86f85a4e77b8b81bb987377e814",
+            "view-front.png": "62e66002b4a3b9900f5e1db2ed5c53bcb2d2a9d7cef525fe4d08c55ff3941a58",
+            "view-head-detail.png": "8c324268daef0146cc806cf1bfa6ad485bc7332340de332df14a80a80001c635",
+            "view-head-front.png": "8ce7c7ccf39553f742e237c65fd2b6e8a3675cc7ec052bbdd2e6c0fe314b8ea8",
+            "view-head-oblique.png": "ea34407637cb2b4cd06eb39b5c280aeba500166f489a14c630ad4cb3696d7c14",
+            "view-lying-oblique.png": "9784b95d165514e6781e25b675c38d7103d6a86f85a4e77b8b81bb987377e814",
+            "view-rear.png": "961aab091713edf5b8eb2a55c0bd72d9997e6f51178ca93be57dc91cbe60b0a5",
+            "view-side.png": "1a4f6f95e331fc6dffa429e9456eb9f145f7d37fbcfbdd1b508b292e315f8921",
+            "view-tail-detail.png": "50eae0ecd8fba8e2d19f645b252c1cdb3003dd550d2f7cef3b221e09b3ffa484"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 21675,
+            "pose-01-idle.png": 21257,
+            "pose-02-run.png": 21675,
+            "pose-03-run.png": 21435,
+            "pose-04-run.png": 21675,
+            "pose-05-run.png": 21661,
+            "pose-06-walk.png": 21435,
+            "pose-07-walk.png": 21661,
+            "pose-08-stun.png": 21624,
+            "pose-09-attack_prepare.png": 21574,
+            "pose-10-attack_release.png": 21481,
+            "pose-11-pain.png": 21633,
+            "pose-12-death.png": 21080,
+            "pose-13-death.png": 20127,
+            "pose-14-death.png": 18688,
+            "pose-15-death.png": 17647,
+            "pose-16-death.png": 17542,
+            "pose-17-death.png": 17603,
+            "pose-18-breath.png": 21744,
+            "pose-19-breath.png": 21675,
+            "pose-20-breath.png": 21630,
+            "pose-21-breath.png": 21675,
+            "pose-22-rest.png": 17603
+          },
+          "distinct_pose_captures": 16
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    }
+  },
+  "actions": {
+    "issue": 797,
+    "runtime_sha256": "7ad0cc7fa0027113ce87bb1d8b1e2e45365f1b3c96a522428f621f4ff6355d2a",
+    "source_probe_sha256": "bf298e7c4b3ca7f0285f81c089b18f686ba0a114f65697252662af8b0121b65a",
+    "fixture_sha256": "be66614fe4d3d13ccdd3ec1c3dc096f474edf28337dcc4e3b2e35deba1ddcd15",
+    "runs": [
+      {
+        "phase": "actions",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 65,
+        "actions": [
+          "CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=0",
+          "CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=28 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=28 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=0",
+          "CA455 ACTION PASS index=28 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=29 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=29 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=29 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1"
+        ],
+        "loot_audits": 0
+      },
+      {
+        "phase": "loot",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 49,
+        "actions": [],
+        "loot_audits": 2
+      },
+      {
+        "phase": "loot-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 20,
+        "actions": [],
+        "loot_audits": 2
+      }
+    ]
+  },
+  "presentation": {
+    "mulanima": {
+      "issue": 797,
+      "species": "mulanima",
+      "scope": "Measure one 700-tic sprite/model pair for a real Mulanima/Chancho de Lata; no campaign or crowd budget.",
+      "baseline_sha256": "08dec7bb57872676b07e4b304b2d30c1dbd0249f15881c1629bc6e79d8018dc2",
+      "runtime_sha256": "7ad0cc7fa0027113ce87bb1d8b1e2e45365f1b3c96a522428f621f4ff6355d2a",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 31528,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 390932961.2608,
+            "END": 390952971.12350005
+          },
+          "fixture_sha256": "85d81d10119ad958db8c0d35a2ae1275cbb34d1e77063a5bab6333575e317de1",
+          "bench_sha256": "fcebc14477754ed18aefdd44eb934b485eee7712ec527b6c1140b42ccb82aced",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.571179571428573,
+            "p50_ms": 28.5695,
+            "p95_ms": 28.9502,
+            "p99_ms": 29.0259,
+            "max_ms": 29.3595
+          },
+          "presentation": {
+            "pid": 31528,
+            "trace_sha256": "e4d21decfc89b9ef02fa13d7f9235609e53d3278cccdba7e9d0d19b40c9d269b",
+            "rows": 45848,
+            "scene_presents": 33235,
+            "mean_present_fps": 1898.0748430078722,
+            "present_intervals": {
+              "samples": 33234,
+              "mean_ms": 0.5268496148525438,
+              "p50_ms": 0.5120999813079834,
+              "p95_ms": 0.6237999796867371,
+              "p99_ms": 0.76910001039505,
+              "max_ms": 1.0883000493049622
+            },
+            "native_call_duration": {
+              "samples": 33235,
+              "mean_ms": 0.06336132712125311,
+              "p50_ms": 0.05900001525878906,
+              "p95_ms": 0.08630001544952393,
+              "p99_ms": 0.1029999852180481,
+              "max_ms": 0.6610000133514404
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 41544,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 390967784.6134,
+            "END": 390987792.05340004
+          },
+          "fixture_sha256": "85d81d10119ad958db8c0d35a2ae1275cbb34d1e77063a5bab6333575e317de1",
+          "bench_sha256": "fcebc14477754ed18aefdd44eb934b485eee7712ec527b6c1140b42ccb82aced",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.570916285714286,
+            "p50_ms": 28.5664,
+            "p95_ms": 28.9375,
+            "p99_ms": 29.0405,
+            "max_ms": 29.2596
+          },
+          "presentation": {
+            "pid": 41544,
+            "trace_sha256": "927e366a5154a3b21e5ecdb373085eb976d76896ae25d718090edd91e9e26ae0",
+            "rows": 45112,
+            "scene_presents": 32088,
+            "mean_present_fps": 1832.790156404543,
+            "present_intervals": {
+              "samples": 32087,
+              "mean_ms": 0.5456161997081759,
+              "p50_ms": 0.5296000242233276,
+              "p95_ms": 0.6667999625205994,
+              "p99_ms": 0.7893999814987183,
+              "max_ms": 1.6026999950408936
+            },
+            "native_call_duration": {
+              "samples": 32088,
+              "mean_ms": 0.06388355456469096,
+              "p50_ms": 0.0591999888420105,
+              "p95_ms": 0.08740001916885376,
+              "p99_ms": 0.107200026512146,
+              "max_ms": 0.5232999920845032
+            }
+          }
+        }
+      ]
+    },
+    "chancho_lata": {
+      "issue": 797,
+      "species": "chancho_lata",
+      "scope": "Measure one 700-tic sprite/model pair for a real Mulanima/Chancho de Lata; no campaign or crowd budget.",
+      "baseline_sha256": "08dec7bb57872676b07e4b304b2d30c1dbd0249f15881c1629bc6e79d8018dc2",
+      "runtime_sha256": "7ad0cc7fa0027113ce87bb1d8b1e2e45365f1b3c96a522428f621f4ff6355d2a",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 46492,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 391004460.0864,
+            "END": 391024473.8948
+          },
+          "fixture_sha256": "5d987aae8c30848f8f8e2a1a278394d9cb4ded2418f592fae21b86f23fa416f3",
+          "bench_sha256": "fcebc14477754ed18aefdd44eb934b485eee7712ec527b6c1140b42ccb82aced",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57134614285714,
+            "p50_ms": 28.575,
+            "p95_ms": 28.9521,
+            "p99_ms": 29.0855,
+            "max_ms": 29.17
+          },
+          "presentation": {
+            "pid": 46492,
+            "trace_sha256": "61e9a28f771f583f841aa672f796295060670e2dae5df938604e6150440bb33d",
+            "rows": 46752,
+            "scene_presents": 33063,
+            "mean_present_fps": 1887.8003542953443,
+            "present_intervals": {
+              "samples": 33062,
+              "mean_ms": 0.5297170316366786,
+              "p50_ms": 0.5115000009536743,
+              "p95_ms": 0.6769999861717224,
+              "p99_ms": 0.7835000157356262,
+              "max_ms": 1.1446999907493591
+            },
+            "native_call_duration": {
+              "samples": 33063,
+              "mean_ms": 0.06381682850353097,
+              "p50_ms": 0.059300005435943604,
+              "p95_ms": 0.08749997615814209,
+              "p99_ms": 0.1054999828338623,
+              "max_ms": 0.5618000030517578
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 31988,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 391039289.6984,
+            "END": 391059303.28970003
+          },
+          "fixture_sha256": "5d987aae8c30848f8f8e2a1a278394d9cb4ded2418f592fae21b86f23fa416f3",
+          "bench_sha256": "fcebc14477754ed18aefdd44eb934b485eee7712ec527b6c1140b42ccb82aced",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.570430142857145,
+            "p50_ms": 28.5734,
+            "p95_ms": 28.9331,
+            "p99_ms": 29.0553,
+            "max_ms": 29.1721
+          },
+          "presentation": {
+            "pid": 31988,
+            "trace_sha256": "85ca3513142175ed79937b164f654e4390d06fb3c7f49005c4c7f750dba1696a",
+            "rows": 44672,
+            "scene_presents": 31828,
+            "mean_present_fps": 1817.3194431438346,
+            "present_intervals": {
+              "samples": 31827,
+              "mean_ms": 0.5502609922392457,
+              "p50_ms": 0.5364000201225281,
+              "p95_ms": 0.656499981880188,
+              "p99_ms": 0.7919999957084656,
+              "max_ms": 1.083299994468689
+            },
+            "native_call_duration": {
+              "samples": 31828,
+              "mean_ms": 0.06418386961671595,
+              "p50_ms": 0.05960005521774292,
+              "p95_ms": 0.08809995651245117,
+              "p99_ms": 0.1085999608039856,
+              "max_ms": 0.40459996461868286
+            }
+          }
+        }
+      ]
+    }
+  },
+  "art": {
+    "source": "assets/source/art/apparitions_797",
+    "generated_atlas": "assets/source/art/apparitions_797/materials.png",
+    "atlas_sha256": "e4dde1a5fc04882282444f42d151c528859ea20c412dfefef95005a6146c26a0",
+    "prompt": "assets/source/art/apparitions_797/MATERIALS_PROMPT.json",
+    "mode": "built-in image_gen",
+    "author_check": "CA797-APPARITIONS-01"
+  },
+  "iterations": [
+    "An odd sample count with two UV repeats let the new tail ember rows exceed their atlas cell; changed those new sweeps to16 samples. The final geometry/UV checks pass. A bounded audit also identified older Ao Ao/Kasogonaga curves; #799 owns their separate repair and shared validation guard.",
+    "Native review elongated the mule torso and downward muzzle, shifted the hindquarters/tail, adjusted eyes/ears and flame tips, and replaced the boar rounded ears with closed pointed volumes. Final source, package and captures include these changes."
+  ],
+  "reviewed": "Final frontal/side/rear, head/tail, hoof/plate details and selected run/attack/pain/lying poses for each species; both presentation scenes per species.",
+  "qualifications": [
+    "Simplified component anatomy and rigid fall/rest articulation remain candidates. Mule mane/tail embers are opaque colored volumes, not a new flame/light/damage system. Metal panels/tusks do not add armor or special attacks.",
+    "Existing inherited collision, scale policy, combat timing, statistics, loot, identity and saved fields are unchanged. Conceptual metre scales and apparition powers are not implemented; horizontal/lying silhouettes can extend beyond collision.",
+    "One sequential700-tic sprite/model pair per species measures queue intervals and simulation spacing, not GPU/display latency, repeatability, campaign/crowd acceptance or cross-species gains.",
+    "Native candidates cover25 of56 provisional classes;31 remain. #799 must repair atlas-cell overflow in older Ao Ao/Kasogonaga curves before the final handoff. Other characters, modular fitting, campaign progression and siege performance remain incomplete.",
+    "No author test has been confirmed or removed. The consolidated terminal remains deferred until the requested batch is complete."
+  ],
+  "files": {
+    "actions/actions/commands.cfg": "4c2b747b4c163343258d77d649d9290152f1863d747af8420dcc931180e2c3a7",
+    "actions/actions/engine.log": "fa9031e029550e78910ba57adac2698c107aaf2bfca073c4df077b5b7631f683",
+    "actions/actions/process.log": "70ce2c2e31765ab99424afe50471fbe52eb6e403b8d598e6303c77b2219e44ec",
+    "actions/actions/session.ini": "704493d7957ef817125e4596d7231080e0c5d1dc1a65d4ab826dcb7e9a7015b8",
+    "actions/fixture.zs": "49665312e9b3198c48faeadec07618d67987f0070bb9626d5463c0ee0c53797c",
+    "actions/loot/commands.cfg": "c7131f87f9df9188e2301d6730516e731540216e6417b470aab866467fbd8ad7",
+    "actions/loot/engine.log": "00f80ca0e8e61b95ecef4be0ba1529fea7904cd127f7e5be9414cc5b2dd31c8d",
+    "actions/loot/process.log": "3d113f817bb9c3f8b87d67aa417a499f383b059d2d309cb52f26ee632b17de1e",
+    "actions/loot/session.ini": "8972d703f04ad4621ccf585bb49e48e27a4ec2a20d08ac0257cf10436ced8717",
+    "actions/loot-reload/commands.cfg": "ad82c3110081fb6cd15b9a00885b6cc0747127803c4e52c0e06a730955dcf399",
+    "actions/loot-reload/engine.log": "423707183213657274b99160cac6878361d961baece47b672537215d6a3dc9e6",
+    "actions/loot-reload/process.log": "09b4b68245ab1e3dc56ce6ac1cac969c587694e039789fbbcce3255ca6648099",
+    "actions/loot-reload/session.ini": "3330273056910f5a580c5c69f31171c97ab39c82d98cdc6b88ca86d977daff95",
+    "actions/MAPINFO.txt": "f7778d46eeb1b87ea7e2fe99784c12a00b8d072e39e77bbb896708d8a07cd799",
+    "actions/RESULTS.json": "5515da62e56c997b493bae01a9498f5150778b61d3aca25c00b3d0d30fca7c22",
+    "actions/ZSCRIPT.txt": "f59a13013bde276c891528b164fb0b792d9f3f7b178a5da834e2b3aa5b3a874d",
+    "build01.log": "9a4898bbb465325ab9483a1c52e8cfe597089ff3cd677f0bce86f86e2cbc495a",
+    "continuity/chancho_lata/baseline/commands.cfg": "3b4c1f7060953f24b78460cb11db97344ab25be45baddd89e318ee0176c85fbb",
+    "continuity/chancho_lata/baseline/engine.log": "e74c78052b4a2b099adbc5b3d0c162380f1ca1b9886649bf1d2d492e2dbdd2ed",
+    "continuity/chancho_lata/baseline/process.log": "59f276cebae75a907510d1f08fdee5d2852944f476aad9fd6601d495479d8dc8",
+    "continuity/chancho_lata/baseline/session.ini": "0e1767d5215e1dd66187eeb27be383b5122a24bde950db95b0c441fec8c55dc9",
+    "continuity/chancho_lata/fixture.zs": "8de64fd524c6e1ef3df700a99df0a0797c558a4d783c70e91e1f275131362a9c",
+    "continuity/chancho_lata/fresh-model/commands.cfg": "8ab27a9270b401b8aa0de22b6b2ce7b7aeb1cee1eb75ad52a2500af6d540b7ed",
+    "continuity/chancho_lata/fresh-model/empty-view-0.png": "26b28854108ca9dd302cb0f64f46d2675714a01910b51dd5bf37ce98c518e71c",
+    "continuity/chancho_lata/fresh-model/empty-view-6.png": "82a024cdd834ca748ab437228e5ed1a1f48c1c663e59b6bb7106359b775f7a49",
+    "continuity/chancho_lata/fresh-model/empty.png": "26b28854108ca9dd302cb0f64f46d2675714a01910b51dd5bf37ce98c518e71c",
+    "continuity/chancho_lata/fresh-model/engine.log": "168f62985879ffa68ca26d0d4bb27b41ceae1d803238826ffa06c25ccfbb9b6e",
+    "continuity/chancho_lata/fresh-model/pose-00-idle.png": "4ca6034ed0434f294e35bad1ff23c44f64a7f4c3f8494a0088cae31b5d67c46f",
+    "continuity/chancho_lata/fresh-model/pose-01-idle.png": "de647f6c7f7fcd681228a8ebc71ba96d6137678070ec62558eae0467837edf27",
+    "continuity/chancho_lata/fresh-model/pose-02-run.png": "4ca6034ed0434f294e35bad1ff23c44f64a7f4c3f8494a0088cae31b5d67c46f",
+    "continuity/chancho_lata/fresh-model/pose-03-run.png": "54136cf7e77b6fb7af0559c23fee7926ca4595f4c89a9e86af4951d0bdba3971",
+    "continuity/chancho_lata/fresh-model/pose-04-run.png": "4ca6034ed0434f294e35bad1ff23c44f64a7f4c3f8494a0088cae31b5d67c46f",
+    "continuity/chancho_lata/fresh-model/pose-05-run.png": "23d0c9f991edfeab24a01f985ba4b1f13c0c31d2693b487ebb7a135c01a15bca",
+    "continuity/chancho_lata/fresh-model/pose-06-walk.png": "54136cf7e77b6fb7af0559c23fee7926ca4595f4c89a9e86af4951d0bdba3971",
+    "continuity/chancho_lata/fresh-model/pose-07-walk.png": "23d0c9f991edfeab24a01f985ba4b1f13c0c31d2693b487ebb7a135c01a15bca",
+    "continuity/chancho_lata/fresh-model/pose-08-stun.png": "b7b5e2deee30aa1e3f51dc26f19c31d6651d7fd61c169894d04b1a8dce90337e",
+    "continuity/chancho_lata/fresh-model/pose-09-attack_prepare.png": "df0e208b65f664a1204e0243e8fafb41eef1b470034cd33cfff53a1baf9a4865",
+    "continuity/chancho_lata/fresh-model/pose-10-attack_release.png": "7a12c2aa453c5aefe9c681416a211d601f153491f6de2c9437022f60bea2dcf7",
+    "continuity/chancho_lata/fresh-model/pose-11-pain.png": "daf0ae51596a71af5faf91a21985be2de3e163af7fc5a9395c22d531fb3489ff",
+    "continuity/chancho_lata/fresh-model/pose-12-death.png": "b9426b28df669380da43b09f9443d99c3792e6fe27b9c3797e54cc0a79962426",
+    "continuity/chancho_lata/fresh-model/pose-13-death.png": "2954281ce864475c4f6d0c3e3d55a766f42380db5c4ddb9891951c2e13fd3197",
+    "continuity/chancho_lata/fresh-model/pose-14-death.png": "ad1ffa7a8fc1f8db0a6aabe3b85e0fab15600a5b8795841a6804f7b8f872440f",
+    "continuity/chancho_lata/fresh-model/pose-15-death.png": "b1a116039c44386450419c0e17a05240d61a5f842f0896351325d368be871a3c",
+    "continuity/chancho_lata/fresh-model/pose-16-death.png": "88bd88cf4a112fe90ce7540c98d2bcd1c4040ca75ce71f691dde29b350243a03",
+    "continuity/chancho_lata/fresh-model/pose-17-death.png": "9784b95d165514e6781e25b675c38d7103d6a86f85a4e77b8b81bb987377e814",
+    "continuity/chancho_lata/fresh-model/pose-18-breath.png": "a15cc970afd80364afbbe424b32b5626d670e24322dda2dc095616b1d250e8ea",
+    "continuity/chancho_lata/fresh-model/pose-19-breath.png": "4ca6034ed0434f294e35bad1ff23c44f64a7f4c3f8494a0088cae31b5d67c46f",
+    "continuity/chancho_lata/fresh-model/pose-20-breath.png": "561337e002c00dcfc75d7168f062fd6e61f572495e39b05b206ec17b5649c4c8",
+    "continuity/chancho_lata/fresh-model/pose-21-breath.png": "4ca6034ed0434f294e35bad1ff23c44f64a7f4c3f8494a0088cae31b5d67c46f",
+    "continuity/chancho_lata/fresh-model/pose-22-rest.png": "9784b95d165514e6781e25b675c38d7103d6a86f85a4e77b8b81bb987377e814",
+    "continuity/chancho_lata/fresh-model/process.log": "c7064ee81f52420b8168cc0e77b336d7644c04bd4cb1a144f59c78afe355cbb1",
+    "continuity/chancho_lata/fresh-model/session.ini": "f7948d947beee4f51f36f80d14a02bea0e5206b3c1a6f2976f78b96da116ac7f",
+    "continuity/chancho_lata/fresh-model/view-front.png": "62e66002b4a3b9900f5e1db2ed5c53bcb2d2a9d7cef525fe4d08c55ff3941a58",
+    "continuity/chancho_lata/fresh-model/view-head-detail.png": "8c324268daef0146cc806cf1bfa6ad485bc7332340de332df14a80a80001c635",
+    "continuity/chancho_lata/fresh-model/view-head-front.png": "8ce7c7ccf39553f742e237c65fd2b6e8a3675cc7ec052bbdd2e6c0fe314b8ea8",
+    "continuity/chancho_lata/fresh-model/view-head-oblique.png": "ea34407637cb2b4cd06eb39b5c280aeba500166f489a14c630ad4cb3696d7c14",
+    "continuity/chancho_lata/fresh-model/view-lying-oblique.png": "9784b95d165514e6781e25b675c38d7103d6a86f85a4e77b8b81bb987377e814",
+    "continuity/chancho_lata/fresh-model/view-rear.png": "961aab091713edf5b8eb2a55c0bd72d9997e6f51178ca93be57dc91cbe60b0a5",
+    "continuity/chancho_lata/fresh-model/view-side.png": "1a4f6f95e331fc6dffa429e9456eb9f145f7d37fbcfbdd1b508b292e315f8921",
+    "continuity/chancho_lata/fresh-model/view-tail-detail.png": "50eae0ecd8fba8e2d19f645b252c1cdb3003dd550d2f7cef3b221e09b3ffa484",
+    "continuity/chancho_lata/MAPINFO.txt": "6e50cad6b31ab2218b37739d0cc1d83ea72253d22916eee1bd76f7e5d1693c4f",
+    "continuity/chancho_lata/model-reload/commands.cfg": "663d178feedbcf3635200d38b3655211c517749cc352277f6274b788a5b2545b",
+    "continuity/chancho_lata/model-reload/engine.log": "70d713142228deebd335d67846c135b2b6fa375a718c132a96f2e46b19269e8d",
+    "continuity/chancho_lata/model-reload/process.log": "995b74932bb93dfb5f40cf98baf239d1e153d178eeb7cbc3a7294dd936c6d27a",
+    "continuity/chancho_lata/model-reload/session.ini": "092b9ec3bde0f102892096b96887e7d0f169b6ec5780b1de2f25044f62ee95cd",
+    "continuity/chancho_lata/old-save-model/commands.cfg": "663d178feedbcf3635200d38b3655211c517749cc352277f6274b788a5b2545b",
+    "continuity/chancho_lata/old-save-model/engine.log": "1ad0e82d4dd28ceef03b219d4510f21aaee996f00d63fd7ecf90154dab2cf3c2",
+    "continuity/chancho_lata/old-save-model/process.log": "5706a99d96bcacd7b0fbbe511ecc0c22043a17c8b851bec739f15fa87ea1895a",
+    "continuity/chancho_lata/old-save-model/session.ini": "4bd6f47c6d3d798efaba2ff6020eb9a02cffd310457e5c4f37448f433b7e853f",
+    "continuity/chancho_lata/RESULTS.json": "833f350bd150da06f2f366f4d3b529e429299e35a9fad57431e91234d35d2646",
+    "continuity/chancho_lata/rollback/commands.cfg": "663d178feedbcf3635200d38b3655211c517749cc352277f6274b788a5b2545b",
+    "continuity/chancho_lata/rollback/engine.log": "a07d0b47e3b03ddcf8c84baa28ed2ca7a806c7cae032f8120c1a6322352a213c",
+    "continuity/chancho_lata/rollback/process.log": "faf54f9182167207bc487d2a7fc953d244b0e681955ebc391f915a1abbd3e151",
+    "continuity/chancho_lata/rollback/session.ini": "e91118d30544e03d7de01743c382b5eeec75d8add4c0e1985531f7021334f871",
+    "continuity/chancho_lata/ZSCRIPT.txt": "235cfe41980dbea67f2e7f972a4c4b193ed0c1a79e149a3ff978efebadbb11db",
+    "continuity/mulanima/baseline/commands.cfg": "3b4c1f7060953f24b78460cb11db97344ab25be45baddd89e318ee0176c85fbb",
+    "continuity/mulanima/baseline/engine.log": "dcc93630cfda3203a492f016c1312f46e80a643fec9599270791004d677d4764",
+    "continuity/mulanima/baseline/process.log": "3f2f066a623363103a4f0d154e406ce16fb078ece22ae789c7a2ef14a01a718c",
+    "continuity/mulanima/baseline/session.ini": "9735f9d0baae214254b91ae60216ca76736f7715ab2744b355320dc960086b06",
+    "continuity/mulanima/fixture.zs": "7fab80f1f3e03e697d3afce964f2c8ddec8680e5c32d791ac37bee9838522e35",
+    "continuity/mulanima/fresh-model/commands.cfg": "8ab27a9270b401b8aa0de22b6b2ce7b7aeb1cee1eb75ad52a2500af6d540b7ed",
+    "continuity/mulanima/fresh-model/empty-view-0.png": "26b28854108ca9dd302cb0f64f46d2675714a01910b51dd5bf37ce98c518e71c",
+    "continuity/mulanima/fresh-model/empty-view-6.png": "82a024cdd834ca748ab437228e5ed1a1f48c1c663e59b6bb7106359b775f7a49",
+    "continuity/mulanima/fresh-model/empty.png": "26b28854108ca9dd302cb0f64f46d2675714a01910b51dd5bf37ce98c518e71c",
+    "continuity/mulanima/fresh-model/engine.log": "2364ef9d94f99dd6b796baff4fa1d660b582dd51a62e20a3ae1e8968393796ba",
+    "continuity/mulanima/fresh-model/pose-00-idle.png": "33361e44a44a6cd2f91552044d265c46780c9dd15b8812e90d364b7626226ec9",
+    "continuity/mulanima/fresh-model/pose-01-idle.png": "3c1be7d387c923b522727fed76b950dd09ceb9ae38e8cb8ddd96dc48e433d3ab",
+    "continuity/mulanima/fresh-model/pose-02-run.png": "33361e44a44a6cd2f91552044d265c46780c9dd15b8812e90d364b7626226ec9",
+    "continuity/mulanima/fresh-model/pose-03-run.png": "2afcc4d20011c974c41f848eddafb5a1a9a5acb4e0218a81979262c93677282d",
+    "continuity/mulanima/fresh-model/pose-04-run.png": "33361e44a44a6cd2f91552044d265c46780c9dd15b8812e90d364b7626226ec9",
+    "continuity/mulanima/fresh-model/pose-05-run.png": "ce56931b1ed8b79cdc239ce36f5f39d16719c6325b21be12b2a320a07166504c",
+    "continuity/mulanima/fresh-model/pose-06-walk.png": "2afcc4d20011c974c41f848eddafb5a1a9a5acb4e0218a81979262c93677282d",
+    "continuity/mulanima/fresh-model/pose-07-walk.png": "ce56931b1ed8b79cdc239ce36f5f39d16719c6325b21be12b2a320a07166504c",
+    "continuity/mulanima/fresh-model/pose-08-stun.png": "5f1b518788c24b9ab2e2ac6f98d7fe48a54cf2ff0e0ba41574c305d33f697cc9",
+    "continuity/mulanima/fresh-model/pose-09-attack_prepare.png": "65373bee9e02dc43375c167410744a4589a7c8a6197970c39276e920c82b33af",
+    "continuity/mulanima/fresh-model/pose-10-attack_release.png": "0561b1464ee60801232a788eff30b09daf59f4a09b683215359494e883faf0ee",
+    "continuity/mulanima/fresh-model/pose-11-pain.png": "1f2cb8a85a6a0bec25bde56e9d807d26e118588fb914006816b7d2387b6a91be",
+    "continuity/mulanima/fresh-model/pose-12-death.png": "1affdb1f56de6167a1a73a7e4af63f697db171d68e35d0937e6ac636eaa06d0c",
+    "continuity/mulanima/fresh-model/pose-13-death.png": "82293d92992968ec9634ea3406536ba263080af90b6c9e490b5ceaa202944fdd",
+    "continuity/mulanima/fresh-model/pose-14-death.png": "d81b4d1015bf31978b1f45225e0702df7d09bc34feab1227a7e2238c6ebd3810",
+    "continuity/mulanima/fresh-model/pose-15-death.png": "4595ee8e7c863aa6a9270d10bec5368357b327609af634126f5058d377b3807d",
+    "continuity/mulanima/fresh-model/pose-16-death.png": "ee81671cdc1a184bef2d2ce7046b6fcd7fc0bc862c8ccf9e7c5e440ce6fd79e6",
+    "continuity/mulanima/fresh-model/pose-17-death.png": "a2fb80a9bb5c73e559ccdc661d3723494c88f7191ca950f61f92de3988e317e2",
+    "continuity/mulanima/fresh-model/pose-18-breath.png": "f656646223d8034415df0f9f6e681b33ace39c71721bc309f36a9dcf196b3418",
+    "continuity/mulanima/fresh-model/pose-19-breath.png": "6e62ec7cc7cc876267458dd4089a4b4f021471f5dd7a08e9485110fee65e3420",
+    "continuity/mulanima/fresh-model/pose-20-breath.png": "25e2b4344a3dc6b141caf5745696827a04994c114cb181b36ada79a8d0fb739e",
+    "continuity/mulanima/fresh-model/pose-21-breath.png": "3837fe00da5d2db5c21b61966e8a8bbbd1cd9b23201d004b5ac702849c1dbbb8",
+    "continuity/mulanima/fresh-model/pose-22-rest.png": "a2fb80a9bb5c73e559ccdc661d3723494c88f7191ca950f61f92de3988e317e2",
+    "continuity/mulanima/fresh-model/process.log": "5212556bbe3a522400944193dad98e7278e8727cad06daca16ccca6cdacca3b0",
+    "continuity/mulanima/fresh-model/session.ini": "f6f334145b202b26ffd1c632920f1ff8e4fc7736a236294c008984f5b78d5e62",
+    "continuity/mulanima/fresh-model/view-front.png": "063446f0c154f66396b870505cec4934979a928c80a3274ffdb453afe5bb3fad",
+    "continuity/mulanima/fresh-model/view-head-detail.png": "12bb2cd9b533f90d78cdcbd0f20e687a71ecda4313121f2f1341798561965808",
+    "continuity/mulanima/fresh-model/view-head-front.png": "f586680cc55c5ab80a14bbd7b5c771cbcf6bea525f4ca558bafefce223946884",
+    "continuity/mulanima/fresh-model/view-head-oblique.png": "3d01277cf409efa4ef011536fef8457a9ff5daa48d962d9675e04d36a2833be4",
+    "continuity/mulanima/fresh-model/view-lying-oblique.png": "a2fb80a9bb5c73e559ccdc661d3723494c88f7191ca950f61f92de3988e317e2",
+    "continuity/mulanima/fresh-model/view-rear.png": "f3406545ff8deb981849543b763d30835e92c41a40e872f7dc3f17f701e14bdb",
+    "continuity/mulanima/fresh-model/view-side.png": "6890f7aa495efd4a37ef37a3660504aba15a88d942135e420bf80ba4bb05970f",
+    "continuity/mulanima/fresh-model/view-tail-detail.png": "81a1da157e555020f857536e9a9d77abefe670ab43c262961f3667749cc8f742",
+    "continuity/mulanima/MAPINFO.txt": "6e50cad6b31ab2218b37739d0cc1d83ea72253d22916eee1bd76f7e5d1693c4f",
+    "continuity/mulanima/model-reload/commands.cfg": "663d178feedbcf3635200d38b3655211c517749cc352277f6274b788a5b2545b",
+    "continuity/mulanima/model-reload/engine.log": "d7bd08afa7e5a020c37edb1e8343bd9b5500b99f32523377166e50f64207cd9d",
+    "continuity/mulanima/model-reload/process.log": "2f543164aff8c44d12ae0c9df716b089a7ebeb076e6409608da8512d7554a358",
+    "continuity/mulanima/model-reload/session.ini": "2d2cf236d62956d759803f59211760e21705d698c98b96b586598f4727de3d57",
+    "continuity/mulanima/old-save-model/commands.cfg": "663d178feedbcf3635200d38b3655211c517749cc352277f6274b788a5b2545b",
+    "continuity/mulanima/old-save-model/engine.log": "6fc3a0a7999563b8de5f92e7ced8234fecbf9d8ac7ef54a0945984bf66e21545",
+    "continuity/mulanima/old-save-model/process.log": "2b225681c0373c98f4df3de6d62f446fdd1b1c7a0b5e4117f6988b19b870a415",
+    "continuity/mulanima/old-save-model/session.ini": "7933e9a68f30223d7d0e2546400bc28bc8733f8693697a6967842f4c574097ce",
+    "continuity/mulanima/RESULTS.json": "f46337f9c90a172f9dc221f307c9d714f830eb64ed38b174ddaf11e866ba68c2",
+    "continuity/mulanima/rollback/commands.cfg": "663d178feedbcf3635200d38b3655211c517749cc352277f6274b788a5b2545b",
+    "continuity/mulanima/rollback/engine.log": "28092e56981f698a786964668216c570a53b0ede9393d6cd537967191c6cff74",
+    "continuity/mulanima/rollback/process.log": "493512d04388b056c50086ae42dcab8f22235d10cbb1a8a3f75ce4be6c447431",
+    "continuity/mulanima/rollback/session.ini": "8ce44e4c03bf976aab567abb73fbd1d46a369ea1127ffaa5dca0ed9cf1d39247",
+    "continuity/mulanima/ZSCRIPT.txt": "f836fa64520c34ea0d55db69edb57240fbaa12d1d098114793c400bb2d79f14e",
+    "export01.json": "206eb06f9441c62fb1d3836ca8a4329bffc31995b1ec5f2e47052d0eeb356fc9",
+    "export02.json": "24290dfe1ce8b282ed0925f803ada495bcf8e672235e5f72069217bb030d06fb",
+    "export03.json": "52b06061bcd4a4e9db7714711e3fd9f96187719e4b263ac59aedeccf5a04671d",
+    "export04.json": "52b06061bcd4a4e9db7714711e3fd9f96187719e4b263ac59aedeccf5a04671d",
+    "geometry01.json": "f37143c35b4bf893983d91aecec492a517a889f1a34c4c2ddf4612716076d9e7",
+    "geometry02.json": "30e63cf531fafb37792b60076588bdc1dff931251effe92a1e9c376d64418395",
+    "geometry03.json": "30e63cf531fafb37792b60076588bdc1dff931251effe92a1e9c376d64418395",
+    "presentation/chancho_lata/model/commands.cfg": "19a1b0c58532a172d613f1dfc5a7bb13c6b609691a1cde7cf6d52a9260692488",
+    "presentation/chancho_lata/model/engine.log": "b46806c2c9bd3c75aecfaff23782f464881a303d67b28263c7da8192425976cf",
+    "presentation/chancho_lata/model/fixture.zs": "8de64fd524c6e1ef3df700a99df0a0797c558a4d783c70e91e1f275131362a9c",
+    "presentation/chancho_lata/model/MAPINFO.txt": "6e50cad6b31ab2218b37739d0cc1d83ea72253d22916eee1bd76f7e5d1693c4f",
+    "presentation/chancho_lata/model/presents.csv": "85ca3513142175ed79937b164f654e4390d06fb3c7f49005c4c7f750dba1696a",
+    "presentation/chancho_lata/model/process.log": "62961aef67797bf6c00c75dfe851afd1a3371076afede7f58a720cb294ce33f4",
+    "presentation/chancho_lata/model/scene.png": "4ca6034ed0434f294e35bad1ff23c44f64a7f4c3f8494a0088cae31b5d67c46f",
+    "presentation/chancho_lata/model/session.ini": "7a6b5dbf95a9ec9cc9c28ab646d31ecacd0cd65b88ca490427decf427d995314",
+    "presentation/chancho_lata/model/ZSCRIPT.txt": "235cfe41980dbea67f2e7f972a4c4b193ed0c1a79e149a3ff978efebadbb11db",
+    "presentation/chancho_lata/RESULTS.json": "2daf895f0999e825ee35277672f6070a262c36c2967305a29fe3ef87b4a158f8",
+    "presentation/chancho_lata/sprite/commands.cfg": "19a1b0c58532a172d613f1dfc5a7bb13c6b609691a1cde7cf6d52a9260692488",
+    "presentation/chancho_lata/sprite/engine.log": "50a5e68f8ef35d4a197cc1fc3b71dfc022161ae9f58ed36da807d80a2cca161e",
+    "presentation/chancho_lata/sprite/fixture.zs": "8de64fd524c6e1ef3df700a99df0a0797c558a4d783c70e91e1f275131362a9c",
+    "presentation/chancho_lata/sprite/MAPINFO.txt": "6e50cad6b31ab2218b37739d0cc1d83ea72253d22916eee1bd76f7e5d1693c4f",
+    "presentation/chancho_lata/sprite/presents.csv": "61e9a28f771f583f841aa672f796295060670e2dae5df938604e6150440bb33d",
+    "presentation/chancho_lata/sprite/process.log": "2228baf61419403c0698c20b2d6cbecb65af40be7d0cda9649cbf722de7657ee",
+    "presentation/chancho_lata/sprite/scene.png": "a366a0e96a247141e68d38a0a5e12c385dee2386b3e007889e5e5e72a05b34b9",
+    "presentation/chancho_lata/sprite/session.ini": "3acc82bd1d386b5240fdb2ed33bb909a624680e80a3d57b25a26ae02e03ffe6e",
+    "presentation/chancho_lata/sprite/ZSCRIPT.txt": "235cfe41980dbea67f2e7f972a4c4b193ed0c1a79e149a3ff978efebadbb11db",
+    "presentation/mulanima/model/commands.cfg": "19a1b0c58532a172d613f1dfc5a7bb13c6b609691a1cde7cf6d52a9260692488",
+    "presentation/mulanima/model/engine.log": "accce00db17bc20f175dc83688af6ac7b26925bc31fcb920dd709844d5b36278",
+    "presentation/mulanima/model/fixture.zs": "7fab80f1f3e03e697d3afce964f2c8ddec8680e5c32d791ac37bee9838522e35",
+    "presentation/mulanima/model/MAPINFO.txt": "6e50cad6b31ab2218b37739d0cc1d83ea72253d22916eee1bd76f7e5d1693c4f",
+    "presentation/mulanima/model/presents.csv": "927e366a5154a3b21e5ecdb373085eb976d76896ae25d718090edd91e9e26ae0",
+    "presentation/mulanima/model/process.log": "a7172046a0bc34eb9ecfd767496d38c1b56b6808ac481a0641a6681514e8eb54",
+    "presentation/mulanima/model/scene.png": "33361e44a44a6cd2f91552044d265c46780c9dd15b8812e90d364b7626226ec9",
+    "presentation/mulanima/model/session.ini": "dd980ebe9ad87f690ecb728095b67cf6c7b13145c64cfb82e86f079bb97815cf",
+    "presentation/mulanima/model/ZSCRIPT.txt": "f836fa64520c34ea0d55db69edb57240fbaa12d1d098114793c400bb2d79f14e",
+    "presentation/mulanima/RESULTS.json": "9df977920b55efbdd8a7d3732abc7cc80dd4a6c32174ee0ff65c62b1b98de887",
+    "presentation/mulanima/sprite/commands.cfg": "19a1b0c58532a172d613f1dfc5a7bb13c6b609691a1cde7cf6d52a9260692488",
+    "presentation/mulanima/sprite/engine.log": "54f333bad0c69019e8c19a9fd857f5fbda169c61d5f3931617edb7c58c7e70e1",
+    "presentation/mulanima/sprite/fixture.zs": "7fab80f1f3e03e697d3afce964f2c8ddec8680e5c32d791ac37bee9838522e35",
+    "presentation/mulanima/sprite/MAPINFO.txt": "6e50cad6b31ab2218b37739d0cc1d83ea72253d22916eee1bd76f7e5d1693c4f",
+    "presentation/mulanima/sprite/presents.csv": "e4d21decfc89b9ef02fa13d7f9235609e53d3278cccdba7e9d0d19b40c9d269b",
+    "presentation/mulanima/sprite/process.log": "481ce59663f6b037a536b060d1772612868ea581abaa393f633d8837883fa42e",
+    "presentation/mulanima/sprite/scene.png": "a366a0e96a247141e68d38a0a5e12c385dee2386b3e007889e5e5e72a05b34b9",
+    "presentation/mulanima/sprite/session.ini": "6a2afe719c78e81cfe1b731b883ebf4e79c660a7be4bd13b0736d71617b6fbdf",
+    "presentation/mulanima/sprite/ZSCRIPT.txt": "f836fa64520c34ea0d55db69edb57240fbaa12d1d098114793c400bb2d79f14e",
+    "repeat03-04.json": "dc6bbc0f284175063415b69cbe78c8c3336cb2cd4f1d5259fe2aa5720d771037",
+    "runtime-parity.json": "347743e22225aa7c3b73481108e84cec5d087ededbf2b2011f28b9eb215319a3",
+    "superseded/chancho_lata/fixture.zs": "8de64fd524c6e1ef3df700a99df0a0797c558a4d783c70e91e1f275131362a9c",
+    "superseded/chancho_lata/MAPINFO.txt": "6e50cad6b31ab2218b37739d0cc1d83ea72253d22916eee1bd76f7e5d1693c4f",
+    "superseded/chancho_lata/RESULTS.json": "fb24dcb77019b53da2b0941d6f9dd81f7a134eb19767ff3b66138ae5348cddf8",
+    "superseded/chancho_lata/visual/commands.cfg": "8ab27a9270b401b8aa0de22b6b2ce7b7aeb1cee1eb75ad52a2500af6d540b7ed",
+    "superseded/chancho_lata/visual/engine.log": "59731c75be4c7575505190627369e9eec9278348b66d299dc4e1f94c3ff9ff52",
+    "superseded/chancho_lata/visual/process.log": "687608e21a3a3371635ff97ffbc6006842cfd9214b357b6f1dbbf351f7328861",
+    "superseded/chancho_lata/visual/session.ini": "b5a8dd4d3cf53ae2870d000791e3b72f380100248c5f235f76cd64a43d153d56",
+    "superseded/chancho_lata/ZSCRIPT.txt": "235cfe41980dbea67f2e7f972a4c4b193ed0c1a79e149a3ff978efebadbb11db",
+    "superseded/mulanima/fixture.zs": "7fab80f1f3e03e697d3afce964f2c8ddec8680e5c32d791ac37bee9838522e35",
+    "superseded/mulanima/MAPINFO.txt": "6e50cad6b31ab2218b37739d0cc1d83ea72253d22916eee1bd76f7e5d1693c4f",
+    "superseded/mulanima/RESULTS.json": "aef94c313f20e0ddded0bd6a7152c24b74e107e7250adeeda2c0d514460bf320",
+    "superseded/mulanima/visual/commands.cfg": "8ab27a9270b401b8aa0de22b6b2ce7b7aeb1cee1eb75ad52a2500af6d540b7ed",
+    "superseded/mulanima/visual/engine.log": "0436f994c96b83061d0a07fa01d186dbc1a3953e8503d93275260891b3c72928",
+    "superseded/mulanima/visual/process.log": "c8e4ec44178b3346dea47c9abc53b3066939f89aaf18329e99d4ad1f207527c9",
+    "superseded/mulanima/visual/session.ini": "883b80cb9fc773e23840241b28974270f718f72050036aa47d230ae7669fe285",
+    "superseded/mulanima/ZSCRIPT.txt": "f836fa64520c34ea0d55db69edb57240fbaa12d1d098114793c400bb2d79f14e",
+    "sweep-grid-audit.json": "255460e87d202a79d68706819d2f66e241dd3cfab81b86931caccc340b505579",
+    "validation-final.json": "2e42108fc600295c32b0ee6ef03f819acaf90bd6c1e853dd7d295be1c016f3fc"
+  }
+}

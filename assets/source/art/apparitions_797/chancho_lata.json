@@ -1,0 +1,4763 @@
+{
+  "schema_revision": 1,
+  "issue": 797,
+  "catalogue_id": "CA-FOLK-030",
+  "species": "chancho_lata",
+  "reference": "assets/source/bestiary_453/imagenes/04_Apariciones/30_chancho_lata.png",
+  "reference_role": "Owned anatomy, materials and silhouette; conceptual metres do not authorize runtime scale.",
+  "preview": {
+    "height_map_units": 100
+  },
+  "atlas": {
+    "columns": 3,
+    "rows": 3,
+    "inset": 0.018,
+    "source_file": "materials.png"
+  },
+  "materials": {
+    "coat": {
+      "tile": [
+        0,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "mane": {
+      "tile": [
+        1,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "muzzle": {
+      "tile": [
+        2,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "metal": {
+      "tile": [
+        0,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "brass": {
+      "tile": [
+        1,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "iron": {
+      "tile": [
+        2,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "ivory": {
+      "tile": [
+        0,
+        2
+      ],
+      "native_batch": "atlas"
+    },
+    "hoof": {
+      "tile": [
+        1,
+        2
+      ],
+      "native_batch": "atlas"
+    },
+    "flame": {
+      "tile": [
+        2,
+        2
+      ],
+      "native_batch": "atlas"
+    },
+    "iris": {
+      "uv_rect": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "native_batch": "iris"
+    },
+    "dark": {
+      "uv_rect": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "native_batch": "dark"
+    }
+  },
+  "parts": {
+    "pelvis": {
+      "parent": null,
+      "pivot": [
+        -22,
+        0,
+        48
+      ]
+    },
+    "torso": {
+      "parent": "pelvis",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "head": {
+      "parent": "torso",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "jaw": {
+      "parent": "head",
+      "pivot": [
+        48,
+        0,
+        40
+      ]
+    },
+    "tail": {
+      "parent": "pelvis",
+      "pivot": [
+        -33,
+        0,
+        55
+      ]
+    },
+    "trunk": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "neck": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "nose": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "left_nostril": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "left_eye": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "left_iris": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "left_pupil": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "left_ear": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "left_ear_inner": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "left_tusk": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "right_nostril": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "right_eye": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "right_iris": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "right_pupil": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "right_ear": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "right_ear_inner": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "right_tusk": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "fore_left_thigh": {
+      "parent": "torso",
+      "pivot": [
+        20,
+        -18.900000000000002,
+        41.65
+      ]
+    },
+    "fore_left_shin": {
+      "parent": "fore_left_thigh",
+      "pivot": [
+        22,
+        -18.900000000000002,
+        24.65
+      ]
+    },
+    "fore_left_upper": {
+      "parent": "fore_left_thigh",
+      "pivot": [
+        20,
+        -18.900000000000002,
+        41.65
+      ]
+    },
+    "fore_left_lower": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        22,
+        -18.900000000000002,
+        24.65
+      ]
+    },
+    "fore_left_foot": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        22,
+        -18.900000000000002,
+        24.65
+      ]
+    },
+    "fore_left_hoof_0": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        22,
+        -18.900000000000002,
+        24.65
+      ]
+    },
+    "fore_left_hoof_1": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        22,
+        -18.900000000000002,
+        24.65
+      ]
+    },
+    "hind_left_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        -22,
+        -18.900000000000002,
+        42.5
+      ]
+    },
+    "hind_left_shin": {
+      "parent": "hind_left_thigh",
+      "pivot": [
+        -30,
+        -18.900000000000002,
+        25.5
+      ]
+    },
+    "hind_left_upper": {
+      "parent": "hind_left_thigh",
+      "pivot": [
+        -22,
+        -18.900000000000002,
+        42.5
+      ]
+    },
+    "hind_left_lower": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -30,
+        -18.900000000000002,
+        25.5
+      ]
+    },
+    "hind_left_foot": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -30,
+        -18.900000000000002,
+        25.5
+      ]
+    },
+    "hind_left_hoof_0": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -30,
+        -18.900000000000002,
+        25.5
+      ]
+    },
+    "hind_left_hoof_1": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -30,
+        -18.900000000000002,
+        25.5
+      ]
+    },
+    "fore_right_thigh": {
+      "parent": "torso",
+      "pivot": [
+        20,
+        18.900000000000002,
+        41.65
+      ]
+    },
+    "fore_right_shin": {
+      "parent": "fore_right_thigh",
+      "pivot": [
+        22,
+        18.900000000000002,
+        24.65
+      ]
+    },
+    "fore_right_upper": {
+      "parent": "fore_right_thigh",
+      "pivot": [
+        20,
+        18.900000000000002,
+        41.65
+      ]
+    },
+    "fore_right_lower": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        22,
+        18.900000000000002,
+        24.65
+      ]
+    },
+    "fore_right_foot": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        22,
+        18.900000000000002,
+        24.65
+      ]
+    },
+    "fore_right_hoof_0": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        22,
+        18.900000000000002,
+        24.65
+      ]
+    },
+    "fore_right_hoof_1": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        22,
+        18.900000000000002,
+        24.65
+      ]
+    },
+    "hind_right_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        -22,
+        18.900000000000002,
+        42.5
+      ]
+    },
+    "hind_right_shin": {
+      "parent": "hind_right_thigh",
+      "pivot": [
+        -30,
+        18.900000000000002,
+        25.5
+      ]
+    },
+    "hind_right_upper": {
+      "parent": "hind_right_thigh",
+      "pivot": [
+        -22,
+        18.900000000000002,
+        42.5
+      ]
+    },
+    "hind_right_lower": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -30,
+        18.900000000000002,
+        25.5
+      ]
+    },
+    "hind_right_foot": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -30,
+        18.900000000000002,
+        25.5
+      ]
+    },
+    "hind_right_hoof_0": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -30,
+        18.900000000000002,
+        25.5
+      ]
+    },
+    "hind_right_hoof_1": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -30,
+        18.900000000000002,
+        25.5
+      ]
+    },
+    "trunk_plate_0": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_0_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_1": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_1_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_2": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_2_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_3": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_3_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_4": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_4_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_5": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_5_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_6": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_6_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_7": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_7_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_8": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_8_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_9": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_9_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_10": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_10_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_11": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_11_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_12": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_12_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_13": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_13_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_14": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_14_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_15": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_15_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_16": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_16_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_17": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "trunk_plate_17_rivet": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        48
+      ]
+    },
+    "neck_plate_0": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_0_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_1": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_1_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_2": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_2_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_3": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_3_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_4": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_4_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_5": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_5_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_6": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_6_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_7": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "neck_plate_7_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_0": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_0_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_1": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_1_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_2": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_2_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_3": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_3_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_4": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_4_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_5": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_5_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_6": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_6_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_7": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "cranium_plate_7_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_0": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_0_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_1": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_1_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_2": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_2_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_3": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_3_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_4": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_4_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_5": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_5_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_6": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_6_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_7": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "muzzle_plate_7_rivet": {
+      "parent": "head",
+      "pivot": [
+        24,
+        0,
+        48
+      ]
+    },
+    "curled_tail": {
+      "parent": "tail",
+      "pivot": [
+        -33,
+        0,
+        55
+      ]
+    }
+  },
+  "shapes": [
+    {
+      "name": "trunk",
+      "part": "trunk",
+      "kind": "ellipsoid",
+      "material": "iron",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitudes": 18,
+      "longitudes": 32
+    },
+    {
+      "name": "neck",
+      "part": "neck",
+      "kind": "ellipsoid",
+      "material": "iron",
+      "center": [
+        25,
+        0,
+        49
+      ],
+      "radii": [
+        21,
+        20,
+        22
+      ],
+      "latitudes": 18,
+      "longitudes": 32
+    },
+    {
+      "name": "cranium",
+      "part": "cranium",
+      "kind": "ellipsoid",
+      "material": "iron",
+      "center": [
+        44,
+        0,
+        48
+      ],
+      "radii": [
+        18,
+        16,
+        18
+      ],
+      "latitudes": 18,
+      "longitudes": 32
+    },
+    {
+      "name": "muzzle",
+      "part": "muzzle",
+      "kind": "ellipsoid",
+      "material": "iron",
+      "center": [
+        60,
+        0,
+        42
+      ],
+      "radii": [
+        17,
+        11,
+        10
+      ],
+      "latitudes": 18,
+      "longitudes": 32
+    },
+    {
+      "name": "nose",
+      "part": "nose",
+      "kind": "ellipsoid",
+      "material": "metal",
+      "center": [
+        75,
+        0,
+        42
+      ],
+      "radii": [
+        4,
+        11,
+        10
+      ],
+      "latitudes": 14,
+      "longitudes": 24
+    },
+    {
+      "name": "left_nostril",
+      "part": "left_nostril",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        78,
+        -4.4,
+        43
+      ],
+      "radii": [
+        1.2,
+        2.1,
+        3
+      ],
+      "latitudes": 8,
+      "longitudes": 16
+    },
+    {
+      "name": "left_eye",
+      "part": "left_eye",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        53,
+        -12.8,
+        53
+      ],
+      "radii": [
+        3,
+        2.3,
+        2.8
+      ],
+      "latitudes": 8,
+      "longitudes": 16
+    },
+    {
+      "name": "left_iris",
+      "part": "left_iris",
+      "kind": "ellipsoid",
+      "material": "iris",
+      "center": [
+        54,
+        -14,
+        53
+      ],
+      "radii": [
+        1.6,
+        1.3,
+        1.8
+      ],
+      "latitudes": 6,
+      "longitudes": 14
+    },
+    {
+      "name": "left_pupil",
+      "part": "left_pupil",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        54.5,
+        -14.8,
+        53
+      ],
+      "radii": [
+        0.7,
+        0.6,
+        1
+      ],
+      "latitudes": 4,
+      "longitudes": 10
+    },
+    {
+      "name": "left_ear",
+      "part": "left_ear",
+      "kind": "feather",
+      "material": "metal",
+      "start": [
+        40,
+        -9,
+        57
+      ],
+      "end": [
+        34,
+        -19,
+        82
+      ],
+      "bend": [
+        -1,
+        -1,
+        2
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0.04,
+          3,
+          2.5
+        ],
+        [
+          0.25,
+          7,
+          2.8
+        ],
+        [
+          0.55,
+          6,
+          2.4
+        ],
+        [
+          0.83,
+          3,
+          0.9
+        ],
+        [
+          0.96,
+          0.7,
+          0.35
+        ]
+      ],
+      "segments": 16
+    },
+    {
+      "name": "left_ear_inner",
+      "part": "left_ear_inner",
+      "kind": "feather",
+      "material": "iron",
+      "start": [
+        40.9,
+        -10,
+        60
+      ],
+      "end": [
+        34.5,
+        -18,
+        78
+      ],
+      "bend": [
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0.08,
+          2,
+          1
+        ],
+        [
+          0.3,
+          4.5,
+          1.2
+        ],
+        [
+          0.6,
+          3.5,
+          1
+        ],
+        [
+          0.85,
+          1.5,
+          0.7
+        ],
+        [
+          0.96,
+          0.4,
+          0.2
+        ]
+      ],
+      "segments": 16
+    },
+    {
+      "name": "left_tusk",
+      "part": "left_tusk",
+      "kind": "sweep",
+      "material": "ivory",
+      "controls": [
+        [
+          59,
+          -9,
+          37,
+          4.5,
+          4.5
+        ],
+        [
+          68,
+          -14,
+          43,
+          3.8,
+          3.8
+        ],
+        [
+          70,
+          -17,
+          53,
+          2.2,
+          2.2
+        ],
+        [
+          64,
+          -18,
+          63,
+          0,
+          0
+        ]
+      ],
+      "samples": 22,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "right_nostril",
+      "part": "right_nostril",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        78,
+        4.4,
+        43
+      ],
+      "radii": [
+        1.2,
+        2.1,
+        3
+      ],
+      "latitudes": 8,
+      "longitudes": 16
+    },
+    {
+      "name": "right_eye",
+      "part": "right_eye",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        53,
+        12.8,
+        53
+      ],
+      "radii": [
+        3,
+        2.3,
+        2.8
+      ],
+      "latitudes": 8,
+      "longitudes": 16
+    },
+    {
+      "name": "right_iris",
+      "part": "right_iris",
+      "kind": "ellipsoid",
+      "material": "iris",
+      "center": [
+        54,
+        14,
+        53
+      ],
+      "radii": [
+        1.6,
+        1.3,
+        1.8
+      ],
+      "latitudes": 6,
+      "longitudes": 14
+    },
+    {
+      "name": "right_pupil",
+      "part": "right_pupil",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        54.5,
+        14.8,
+        53
+      ],
+      "radii": [
+        0.7,
+        0.6,
+        1
+      ],
+      "latitudes": 4,
+      "longitudes": 10
+    },
+    {
+      "name": "right_ear",
+      "part": "right_ear",
+      "kind": "feather",
+      "material": "metal",
+      "start": [
+        40,
+        9,
+        57
+      ],
+      "end": [
+        34,
+        19,
+        82
+      ],
+      "bend": [
+        -1,
+        1,
+        2
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0.04,
+          3,
+          2.5
+        ],
+        [
+          0.25,
+          7,
+          2.8
+        ],
+        [
+          0.55,
+          6,
+          2.4
+        ],
+        [
+          0.83,
+          3,
+          0.9
+        ],
+        [
+          0.96,
+          0.7,
+          0.35
+        ]
+      ],
+      "segments": 16
+    },
+    {
+      "name": "right_ear_inner",
+      "part": "right_ear_inner",
+      "kind": "feather",
+      "material": "iron",
+      "start": [
+        40.9,
+        10,
+        60
+      ],
+      "end": [
+        34.5,
+        18,
+        78
+      ],
+      "bend": [
+        0,
+        0,
+        0
+      ],
+      "normal": [
+        1,
+        0,
+        0
+      ],
+      "profile": [
+        [
+          0.08,
+          2,
+          1
+        ],
+        [
+          0.3,
+          4.5,
+          1.2
+        ],
+        [
+          0.6,
+          3.5,
+          1
+        ],
+        [
+          0.85,
+          1.5,
+          0.7
+        ],
+        [
+          0.96,
+          0.4,
+          0.2
+        ]
+      ],
+      "segments": 16
+    },
+    {
+      "name": "right_tusk",
+      "part": "right_tusk",
+      "kind": "sweep",
+      "material": "ivory",
+      "controls": [
+        [
+          59,
+          9,
+          37,
+          4.5,
+          4.5
+        ],
+        [
+          68,
+          14,
+          43,
+          3.8,
+          3.8
+        ],
+        [
+          70,
+          17,
+          53,
+          2.2,
+          2.2
+        ],
+        [
+          64,
+          18,
+          63,
+          0,
+          0
+        ]
+      ],
+      "samples": 22,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "fore_left_upper",
+      "part": "fore_left_upper",
+      "kind": "ellipsoid",
+      "center": [
+        21,
+        -14,
+        41
+      ],
+      "radii": [
+        11,
+        9,
+        18
+      ],
+      "material": "metal",
+      "latitudes": 11,
+      "longitudes": 24,
+      "material_repeat": [
+        2,
+        2
+      ],
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_left_lower",
+      "part": "fore_left_lower",
+      "kind": "ellipsoid",
+      "center": [
+        23,
+        -14,
+        20
+      ],
+      "radii": [
+        7,
+        6,
+        15
+      ],
+      "material": "metal",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_left_foot",
+      "part": "fore_left_foot",
+      "kind": "ellipsoid",
+      "center": [
+        26,
+        -14,
+        6
+      ],
+      "radii": [
+        9,
+        7,
+        6
+      ],
+      "material": "metal",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_left_hoof_0",
+      "part": "fore_left_hoof_0",
+      "kind": "ellipsoid",
+      "center": [
+        30,
+        -17.2,
+        3.7
+      ],
+      "radii": [
+        8,
+        2.8,
+        3.7
+      ],
+      "material": "iron",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_left_hoof_1",
+      "part": "fore_left_hoof_1",
+      "kind": "ellipsoid",
+      "center": [
+        30,
+        -10.8,
+        3.7
+      ],
+      "radii": [
+        8,
+        2.8,
+        3.7
+      ],
+      "material": "iron",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_upper",
+      "part": "hind_left_upper",
+      "kind": "ellipsoid",
+      "center": [
+        -24,
+        -14,
+        40
+      ],
+      "radii": [
+        14,
+        10,
+        19
+      ],
+      "material": "metal",
+      "latitudes": 11,
+      "longitudes": 24,
+      "material_repeat": [
+        2,
+        2
+      ],
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_lower",
+      "part": "hind_left_lower",
+      "kind": "ellipsoid",
+      "center": [
+        -31,
+        -14,
+        20
+      ],
+      "radii": [
+        7,
+        6,
+        14
+      ],
+      "material": "metal",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_foot",
+      "part": "hind_left_foot",
+      "kind": "ellipsoid",
+      "center": [
+        -26,
+        -14,
+        6
+      ],
+      "radii": [
+        9,
+        7,
+        6
+      ],
+      "material": "metal",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_hoof_0",
+      "part": "hind_left_hoof_0",
+      "kind": "ellipsoid",
+      "center": [
+        -22,
+        -17.2,
+        3.7
+      ],
+      "radii": [
+        8,
+        2.8,
+        3.7
+      ],
+      "material": "iron",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_left_hoof_1",
+      "part": "hind_left_hoof_1",
+      "kind": "ellipsoid",
+      "center": [
+        -22,
+        -10.8,
+        3.7
+      ],
+      "radii": [
+        8,
+        2.8,
+        3.7
+      ],
+      "material": "iron",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_upper",
+      "part": "fore_right_upper",
+      "kind": "ellipsoid",
+      "center": [
+        21,
+        14,
+        41
+      ],
+      "radii": [
+        11,
+        9,
+        18
+      ],
+      "material": "metal",
+      "latitudes": 11,
+      "longitudes": 24,
+      "material_repeat": [
+        2,
+        2
+      ],
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_lower",
+      "part": "fore_right_lower",
+      "kind": "ellipsoid",
+      "center": [
+        23,
+        14,
+        20
+      ],
+      "radii": [
+        7,
+        6,
+        15
+      ],
+      "material": "metal",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_foot",
+      "part": "fore_right_foot",
+      "kind": "ellipsoid",
+      "center": [
+        26,
+        14,
+        6
+      ],
+      "radii": [
+        9,
+        7,
+        6
+      ],
+      "material": "metal",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_hoof_0",
+      "part": "fore_right_hoof_0",
+      "kind": "ellipsoid",
+      "center": [
+        30,
+        10.8,
+        3.7
+      ],
+      "radii": [
+        8,
+        2.8,
+        3.7
+      ],
+      "material": "iron",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "fore_right_hoof_1",
+      "part": "fore_right_hoof_1",
+      "kind": "ellipsoid",
+      "center": [
+        30,
+        17.2,
+        3.7
+      ],
+      "radii": [
+        8,
+        2.8,
+        3.7
+      ],
+      "material": "iron",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_upper",
+      "part": "hind_right_upper",
+      "kind": "ellipsoid",
+      "center": [
+        -24,
+        14,
+        40
+      ],
+      "radii": [
+        14,
+        10,
+        19
+      ],
+      "material": "metal",
+      "latitudes": 11,
+      "longitudes": 24,
+      "material_repeat": [
+        2,
+        2
+      ],
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_lower",
+      "part": "hind_right_lower",
+      "kind": "ellipsoid",
+      "center": [
+        -31,
+        14,
+        20
+      ],
+      "radii": [
+        7,
+        6,
+        14
+      ],
+      "material": "metal",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_foot",
+      "part": "hind_right_foot",
+      "kind": "ellipsoid",
+      "center": [
+        -26,
+        14,
+        6
+      ],
+      "radii": [
+        9,
+        7,
+        6
+      ],
+      "material": "metal",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_hoof_0",
+      "part": "hind_right_hoof_0",
+      "kind": "ellipsoid",
+      "center": [
+        -22,
+        10.8,
+        3.7
+      ],
+      "radii": [
+        8,
+        2.8,
+        3.7
+      ],
+      "material": "iron",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "hind_right_hoof_1",
+      "part": "hind_right_hoof_1",
+      "kind": "ellipsoid",
+      "center": [
+        -22,
+        17.2,
+        3.7
+      ],
+      "radii": [
+        8,
+        2.8,
+        3.7
+      ],
+      "material": "iron",
+      "latitudes": 10,
+      "longitudes": 20,
+      "authored_transform": {
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1.35,
+          0.85
+        ],
+        "yaw": 0
+      }
+    },
+    {
+      "name": "trunk_plate_0",
+      "part": "trunk_plate_0",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        -52,
+        -5
+      ],
+      "longitude": [
+        -165,
+        -112
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_0_rivet",
+      "part": "trunk_plate_0_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        -30.51209879135361,
+        -14.814267547650717,
+        31.355292853120375
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_1",
+      "part": "trunk_plate_1",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        -52,
+        -5
+      ],
+      "longitude": [
+        -108,
+        -55
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_1_rivet",
+      "part": "trunk_plate_1_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        1.2322688797032821,
+        -22.11153382419832,
+        31.355292853120375
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_2",
+      "part": "trunk_plate_2",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        -52,
+        -5
+      ],
+      "longitude": [
+        -51,
+        2
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_2_rivet",
+      "part": "trunk_plate_2_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        28.21149453851511,
+        -9.271341341776292,
+        31.355292853120375
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_3",
+      "part": "trunk_plate_3",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        -52,
+        -5
+      ],
+      "longitude": [
+        6,
+        59
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_3_rivet",
+      "part": "trunk_plate_3_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        25.855005723994093,
+        12.012465020838388,
+        31.355292853120375
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_4",
+      "part": "trunk_plate_4",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        -52,
+        -5
+      ],
+      "longitude": [
+        63,
+        116
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_4_rivet",
+      "part": "trunk_plate_4_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        -3.6910915227466137,
+        22.356256055978665,
+        31.355292853120375
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_5",
+      "part": "trunk_plate_5",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        -52,
+        -5
+      ],
+      "longitude": [
+        120,
+        173
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_5_rivet",
+      "part": "trunk_plate_5_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        -33.51851849407559,
+        12.339714428915764,
+        31.355292853120375
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_6",
+      "part": "trunk_plate_6",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        -3,
+        48
+      ],
+      "longitude": [
+        -165,
+        -112
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_6_rivet",
+      "part": "trunk_plate_6_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        -31.871539008902264,
+        -15.573887193620436,
+        54.14111095767488
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_7",
+      "part": "trunk_plate_7",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        -3,
+        48
+      ],
+      "longitude": [
+        -108,
+        -55
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_7_rivet",
+      "part": "trunk_plate_7_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        1.5005598513111815,
+        -23.245329703161545,
+        54.14111095767488
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_8",
+      "part": "trunk_plate_8",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        -3,
+        48
+      ],
+      "longitude": [
+        -51,
+        2
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_8_rivet",
+      "part": "trunk_plate_8_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        29.86317822782331,
+        -9.74674068265166,
+        54.14111095767488
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_9",
+      "part": "trunk_plate_9",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        -3,
+        48
+      ],
+      "longitude": [
+        6,
+        59
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_9_rivet",
+      "part": "trunk_plate_9_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        27.38585757377594,
+        12.628418823279329,
+        54.14111095767488
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_10",
+      "part": "trunk_plate_10",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        -3,
+        48
+      ],
+      "longitude": [
+        63,
+        116
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_10_rivet",
+      "part": "trunk_plate_10_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        -3.6752518636224965,
+        23.50260036600458,
+        54.14111095767488
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_11",
+      "part": "trunk_plate_11",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        -3,
+        48
+      ],
+      "longitude": [
+        120,
+        173
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_11_rivet",
+      "part": "trunk_plate_11_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        -35.032116550536784,
+        12.972448344089782,
+        54.14111095767488
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_12",
+      "part": "trunk_plate_12",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        50,
+        78
+      ],
+      "longitude": [
+        -165,
+        -112
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_12_rivet",
+      "part": "trunk_plate_12_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        -17.224752890561227,
+        -7.389646105129743,
+        67.81804222692793
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_13",
+      "part": "trunk_plate_13",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        50,
+        78
+      ],
+      "longitude": [
+        -108,
+        -55
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_13_rivet",
+      "part": "trunk_plate_13_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        -1.3900420507781064,
+        -11.02966510337823,
+        67.81804222692793
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_14",
+      "part": "trunk_plate_14",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        50,
+        78
+      ],
+      "longitude": [
+        -51,
+        2
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_14_rivet",
+      "part": "trunk_plate_14_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        12.067722848349248,
+        -4.624726211755932,
+        67.81804222692793
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_15",
+      "part": "trunk_plate_15",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        50,
+        78
+      ],
+      "longitude": [
+        6,
+        59
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_15_rivet",
+      "part": "trunk_plate_15_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        10.89226018480578,
+        5.992052261019324,
+        67.81804222692793
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_16",
+      "part": "trunk_plate_16",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        50,
+        78
+      ],
+      "longitude": [
+        63,
+        116
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_16_rivet",
+      "part": "trunk_plate_16_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        -3.845910415858593,
+        11.151737334158284,
+        67.81804222692793
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "trunk_plate_17",
+      "part": "trunk_plate_17",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        -4,
+        0,
+        44
+      ],
+      "radii": [
+        38,
+        24,
+        25
+      ],
+      "latitude": [
+        50,
+        78
+      ],
+      "longitude": [
+        120,
+        173
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "trunk_plate_17_rivet",
+      "part": "trunk_plate_17_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        -18.724413779980488,
+        6.155290659814713,
+        67.81804222692793
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "neck_plate_0",
+      "part": "neck_plate_0",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        25,
+        0,
+        49
+      ],
+      "radii": [
+        21,
+        20,
+        22
+      ],
+      "latitude": [
+        -45,
+        0
+      ],
+      "longitude": [
+        -160,
+        -85
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "neck_plate_0_rivet",
+      "part": "neck_plate_0_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        13.950133529630582,
+        -16.518872407250495,
+        40.07582235724611
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "neck_plate_1",
+      "part": "neck_plate_1",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        25,
+        0,
+        49
+      ],
+      "radii": [
+        21,
+        20,
+        22
+      ],
+      "latitude": [
+        -45,
+        0
+      ],
+      "longitude": [
+        -80,
+        -5
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "neck_plate_1_rivet",
+      "part": "neck_plate_1_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        40.162520122521144,
+        -13.23227606184058,
+        40.07582235724611
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "neck_plate_2",
+      "part": "neck_plate_2",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        25,
+        0,
+        49
+      ],
+      "radii": [
+        21,
+        20,
+        22
+      ],
+      "latitude": [
+        -45,
+        0
+      ],
+      "longitude": [
+        5,
+        80
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "neck_plate_2_rivet",
+      "part": "neck_plate_2_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        40.162520122521144,
+        13.23227606184058,
+        40.07582235724611
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "neck_plate_3",
+      "part": "neck_plate_3",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        25,
+        0,
+        49
+      ],
+      "radii": [
+        21,
+        20,
+        22
+      ],
+      "latitude": [
+        -45,
+        0
+      ],
+      "longitude": [
+        85,
+        160
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "neck_plate_3_rivet",
+      "part": "neck_plate_3_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        13.950133529630582,
+        16.518872407250495,
+        40.07582235724611
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "neck_plate_4",
+      "part": "neck_plate_4",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        25,
+        0,
+        49
+      ],
+      "radii": [
+        21,
+        20,
+        22
+      ],
+      "latitude": [
+        3,
+        55
+      ],
+      "longitude": [
+        -160,
+        -85
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "neck_plate_4_rivet",
+      "part": "neck_plate_4_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        14.539295291049365,
+        -15.638111722023638,
+        60.30576034414458
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "neck_plate_5",
+      "part": "neck_plate_5",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        25,
+        0,
+        49
+      ],
+      "radii": [
+        21,
+        20,
+        22
+      ],
+      "latitude": [
+        3,
+        55
+      ],
+      "longitude": [
+        -80,
+        -5
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "neck_plate_5_rivet",
+      "part": "neck_plate_5_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        39.354078039814816,
+        -12.526751602058312,
+        60.30576034414458
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "neck_plate_6",
+      "part": "neck_plate_6",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        25,
+        0,
+        49
+      ],
+      "radii": [
+        21,
+        20,
+        22
+      ],
+      "latitude": [
+        3,
+        55
+      ],
+      "longitude": [
+        5,
+        80
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "neck_plate_6_rivet",
+      "part": "neck_plate_6_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        39.354078039814816,
+        12.526751602058312,
+        60.30576034414458
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "neck_plate_7",
+      "part": "neck_plate_7",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        25,
+        0,
+        49
+      ],
+      "radii": [
+        21,
+        20,
+        22
+      ],
+      "latitude": [
+        3,
+        55
+      ],
+      "longitude": [
+        85,
+        160
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "neck_plate_7_rivet",
+      "part": "neck_plate_7_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        14.539295291049365,
+        15.638111722023638,
+        60.30576034414458
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "cranium_plate_0",
+      "part": "cranium_plate_0",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        44,
+        0,
+        48
+      ],
+      "radii": [
+        18,
+        16,
+        18
+      ],
+      "latitude": [
+        -35,
+        0
+      ],
+      "longitude": [
+        -150,
+        -85
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "cranium_plate_0_rivet",
+      "part": "cranium_plate_0_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        35.597597692537825,
+        -14.34743525000545,
+        42.262533345458465
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "cranium_plate_1",
+      "part": "cranium_plate_1",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        44,
+        0,
+        48
+      ],
+      "radii": [
+        18,
+        16,
+        18
+      ],
+      "latitude": [
+        -35,
+        0
+      ],
+      "longitude": [
+        -80,
+        -15
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "cranium_plate_1_rivet",
+      "part": "cranium_plate_1_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        56.29366056910982,
+        -11.925490034070792,
+        42.262533345458465
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "cranium_plate_2",
+      "part": "cranium_plate_2",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        44,
+        0,
+        48
+      ],
+      "radii": [
+        18,
+        16,
+        18
+      ],
+      "latitude": [
+        -35,
+        0
+      ],
+      "longitude": [
+        15,
+        80
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "cranium_plate_2_rivet",
+      "part": "cranium_plate_2_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        56.29366056910982,
+        11.925490034070792,
+        42.262533345458465
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "cranium_plate_3",
+      "part": "cranium_plate_3",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        44,
+        0,
+        48
+      ],
+      "radii": [
+        18,
+        16,
+        18
+      ],
+      "latitude": [
+        -35,
+        0
+      ],
+      "longitude": [
+        85,
+        150
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "cranium_plate_3_rivet",
+      "part": "cranium_plate_3_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        35.597597692537825,
+        14.34743525000545,
+        42.262533345458465
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "cranium_plate_4",
+      "part": "cranium_plate_4",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        44,
+        0,
+        48
+      ],
+      "radii": [
+        18,
+        16,
+        18
+      ],
+      "latitude": [
+        5,
+        55
+      ],
+      "longitude": [
+        -150,
+        -85
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "cranium_plate_4_rivet",
+      "part": "cranium_plate_4_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        36.37017456241038,
+        -13.028229597795223,
+        57.54
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "cranium_plate_5",
+      "part": "cranium_plate_5",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        44,
+        0,
+        48
+      ],
+      "radii": [
+        18,
+        16,
+        18
+      ],
+      "latitude": [
+        5,
+        55
+      ],
+      "longitude": [
+        -80,
+        -15
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "cranium_plate_5_rivet",
+      "part": "cranium_plate_5_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        55.16329362710759,
+        -10.828975320173273,
+        57.54
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "cranium_plate_6",
+      "part": "cranium_plate_6",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        44,
+        0,
+        48
+      ],
+      "radii": [
+        18,
+        16,
+        18
+      ],
+      "latitude": [
+        5,
+        55
+      ],
+      "longitude": [
+        15,
+        80
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "cranium_plate_6_rivet",
+      "part": "cranium_plate_6_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        55.16329362710759,
+        10.828975320173273,
+        57.54
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "cranium_plate_7",
+      "part": "cranium_plate_7",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        44,
+        0,
+        48
+      ],
+      "radii": [
+        18,
+        16,
+        18
+      ],
+      "latitude": [
+        5,
+        55
+      ],
+      "longitude": [
+        85,
+        150
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "cranium_plate_7_rivet",
+      "part": "cranium_plate_7_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        36.37017456241038,
+        13.028229597795223,
+        57.54
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "muzzle_plate_0",
+      "part": "muzzle_plate_0",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        60,
+        0,
+        42
+      ],
+      "radii": [
+        17,
+        11,
+        10
+      ],
+      "latitude": [
+        -55,
+        0
+      ],
+      "longitude": [
+        -165,
+        -80
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "muzzle_plate_0_rivet",
+      "part": "muzzle_plate_0_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        51.4118378697458,
+        -8.722815089874876,
+        37.10546469970864
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "muzzle_plate_1",
+      "part": "muzzle_plate_1",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        60,
+        0,
+        42
+      ],
+      "radii": [
+        17,
+        11,
+        10
+      ],
+      "latitude": [
+        -55,
+        0
+      ],
+      "longitude": [
+        -75,
+        5
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "muzzle_plate_1_rivet",
+      "part": "muzzle_plate_1_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        73.09327320622569,
+        -5.932240858071933,
+        37.10546469970864
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "muzzle_plate_2",
+      "part": "muzzle_plate_2",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        60,
+        0,
+        42
+      ],
+      "radii": [
+        17,
+        11,
+        10
+      ],
+      "latitude": [
+        -55,
+        0
+      ],
+      "longitude": [
+        10,
+        90
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "muzzle_plate_2_rivet",
+      "part": "muzzle_plate_2_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        70.274275509509,
+        7.922850132197685,
+        37.10546469970864
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "muzzle_plate_3",
+      "part": "muzzle_plate_3",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        60,
+        0,
+        42
+      ],
+      "radii": [
+        17,
+        11,
+        10
+      ],
+      "latitude": [
+        -55,
+        0
+      ],
+      "longitude": [
+        95,
+        175
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "muzzle_plate_3_rivet",
+      "part": "muzzle_plate_3_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        48.697651020224974,
+        7.313284633972075,
+        37.10546469970864
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "muzzle_plate_4",
+      "part": "muzzle_plate_4",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        60,
+        0,
+        42
+      ],
+      "radii": [
+        17,
+        11,
+        10
+      ],
+      "latitude": [
+        5,
+        55
+      ],
+      "longitude": [
+        -165,
+        -80
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "muzzle_plate_4_rivet",
+      "part": "muzzle_plate_4_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        51.615021712902546,
+        -8.516445546982478,
+        47.3
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "muzzle_plate_5",
+      "part": "muzzle_plate_5",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        60,
+        0,
+        42
+      ],
+      "radii": [
+        17,
+        11,
+        10
+      ],
+      "latitude": [
+        5,
+        55
+      ],
+      "longitude": [
+        -75,
+        5
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "muzzle_plate_5_rivet",
+      "part": "muzzle_plate_5_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        72.78350476809032,
+        -5.791892378642516,
+        47.3
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "muzzle_plate_6",
+      "part": "muzzle_plate_6",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        60,
+        0,
+        42
+      ],
+      "radii": [
+        17,
+        11,
+        10
+      ],
+      "latitude": [
+        5,
+        55
+      ],
+      "longitude": [
+        10,
+        90
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "muzzle_plate_6_rivet",
+      "part": "muzzle_plate_6_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        70.03120059406008,
+        7.735406635649822,
+        47.3
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "muzzle_plate_7",
+      "part": "muzzle_plate_7",
+      "kind": "ellipsoid_patch",
+      "material": "metal",
+      "center": [
+        60,
+        0,
+        42
+      ],
+      "radii": [
+        17,
+        11,
+        10
+      ],
+      "latitude": [
+        5,
+        55
+      ],
+      "longitude": [
+        95,
+        175
+      ],
+      "radial": [
+        0.97,
+        1.06
+      ],
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "muzzle_plate_7_rivet",
+      "part": "muzzle_plate_7_rivet",
+      "kind": "ellipsoid",
+      "material": "brass",
+      "center": [
+        48.965048708761785,
+        7.1402626002129645,
+        47.3
+      ],
+      "radii": [
+        0.95,
+        0.95,
+        0.95
+      ],
+      "latitudes": 6,
+      "longitudes": 12
+    },
+    {
+      "name": "curled_tail",
+      "part": "curled_tail",
+      "kind": "tube",
+      "material": "metal",
+      "rows": [
+        [
+          -29,
+          0,
+          55,
+          3,
+          3
+        ],
+        [
+          -42,
+          0,
+          59,
+          3,
+          3
+        ],
+        [
+          -55,
+          0,
+          66,
+          2.8,
+          2.8
+        ],
+        [
+          -59,
+          0,
+          76,
+          2.6,
+          2.6
+        ],
+        [
+          -53,
+          0,
+          83,
+          2.4,
+          2.4
+        ],
+        [
+          -46,
+          0,
+          79,
+          2.2,
+          2.2
+        ],
+        [
+          -46,
+          0,
+          73,
+          2,
+          2
+        ],
+        [
+          -51,
+          0,
+          70,
+          1.4,
+          1.4
+        ]
+      ],
+      "segments": 14
+    }
+  ],
+  "motion": {
+    "idle": {
+      "frames": 16,
+      "tics": 6,
+      "transforms": {
+        "torso": [
+          {
+            "kind": "scale_xy",
+            "amplitude": 0.012,
+            "phase": 1.5707963267948966,
+            "offset": -0.012
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 0.6,
+            "phase": 1.5707963267948966,
+            "offset": -0.6
+          }
+        ],
+        "tail": [
+          {
+            "kind": "rotate",
+            "axis": "z",
+            "amplitude": 3,
+            "phase": 1.5707963267948966,
+            "offset": -3
+          }
+        ]
+      }
+    },
+    "walk": {
+      "frames": 24,
+      "tics": 3,
+      "transforms": {
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 2,
+            "phase": 0
+          }
+        ],
+        "tail": [
+          {
+            "kind": "rotate",
+            "axis": "z",
+            "amplitude": 7,
+            "phase": 0
+          }
+        ],
+        "fore_left_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 12,
+            "phase": 0
+          }
+        ],
+        "fore_left_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -9,
+            "phase": 0,
+            "positive_only": true
+          }
+        ],
+        "fore_right_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 12,
+            "phase": 3.141592653589793
+          }
+        ],
+        "fore_right_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -9,
+            "phase": 3.141592653589793,
+            "positive_only": true
+          }
+        ],
+        "hind_left_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 12,
+            "phase": 3.141592653589793
+          }
+        ],
+        "hind_left_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -9,
+            "phase": 3.141592653589793,
+            "positive_only": true
+          }
+        ],
+        "hind_right_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 12,
+            "phase": 0
+          }
+        ],
+        "hind_right_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -9,
+            "phase": 0,
+            "positive_only": true
+          }
+        ]
+      }
+    }
+  },
+  "reference_features": [
+    "metal boar body",
+    "closed overlapping anatomical plates with rivets",
+    "broad snout and paired upward tusks",
+    "four cloven hooves",
+    "curled metal tail",
+    "no gameplay armor bonus"
+  ]
+}
