@@ -1,0 +1,76 @@
+{
+  "issue": 815,
+  "species": "halahaches",
+  "studio": false,
+  "runtime_sha256": "b25ae303ea593ad84bc2555ff5def5b7c59b352033d2792ad276aaeb36bfd50a",
+  "baseline_sha256": "b25ae303ea593ad84bc2555ff5def5b7c59b352033d2792ad276aaeb36bfd50a",
+  "fixture_sha256": "47fe3351e7bb396b09d632c3d78125558e905e410011372324f3af55aba77b16",
+  "model_overlay_sha256": null,
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "assertions": 16,
+      "expected_assertions": 16,
+      "errors": [],
+      "captures": {}
+    },
+    {
+      "phase": "old-save-model",
+      "exit_code": 0,
+      "passed": true,
+      "assertions": 16,
+      "expected_assertions": 16,
+      "errors": [],
+      "captures": {}
+    },
+    {
+      "phase": "fresh-model",
+      "exit_code": 0,
+      "passed": false,
+      "assertions": 50,
+      "expected_assertions": 51,
+      "errors": [
+        "CA815 FAIL native captured pose matches requested frame"
+      ],
+      "captures": {
+        "empty-view-0.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+        "empty-view-6.png": "eefc46ec23b99102cc8c6c1333ad3d98f6cff6e2b626a723baa2fa4558dfa46e",
+        "empty.png": "73f0c3ef857070113bba9e0e8d5f698e20e37b1e66c12ebb85abd25b7d37ff09",
+        "pose-00-idle.png": "da3a437fc501618a62ba738cf91911e153404b8a1a0aa5758a24009699bb790c",
+        "pose-01-idle.png": "da3a437fc501618a62ba738cf91911e153404b8a1a0aa5758a24009699bb790c",
+        "pose-02-run.png": "71ac97725c405046abea19797908c875b5e9a8260707f76f6b7b62a0682cffb1",
+        "pose-03-run.png": "ca5b9b3d1b79a26f828b8a715d4f7b3a5da38433a4c4efd9879ba87a6a2bcf21",
+        "pose-04-run.png": "71ac97725c405046abea19797908c875b5e9a8260707f76f6b7b62a0682cffb1",
+        "pose-05-run.png": "401d0a8579cbb20e9e817a451248a36ca0555efc1a1633be0dddaadf3f3272d6",
+        "pose-06-walk.png": "ca5b9b3d1b79a26f828b8a715d4f7b3a5da38433a4c4efd9879ba87a6a2bcf21",
+        "pose-07-walk.png": "401d0a8579cbb20e9e817a451248a36ca0555efc1a1633be0dddaadf3f3272d6",
+        "pose-08-stun.png": "e269524362b2e0796d8f4af8d7773b8e748e36f8b15fb3cc9b2fad89e588de21",
+        "pose-09-attack_prepare.png": "fd2f70289aadcb8a030fcf383e66606f8e54487ddad89db46cbf7bb114c04be3",
+        "pose-10-attack_release.png": "b52f38b14503546e7d184affefaf29c86327b0de503693cf3052cafc32e97c3a",
+        "pose-11-pain.png": "61ec5b6911a5f2ed61157913c774ffcc2acea00265b8c9f7a00fccb83247d7cf",
+        "pose-12-death.png": "eab9265bf8ffa115b860016fb5bd8c9289820c8372b16ecbac709884cb9d8dc4",
+        "pose-13-death.png": "c911a59d799c55c15796bab87f0eb0e95adcfce6f9e572c9ba0c1fd324fc5de0",
+        "pose-14-death.png": "aba8971bef4b2053950d4687f1e9b7543a05e86168873cf494d9d251ea06a493",
+        "pose-15-death.png": "30c46ef9b65a548cc8b115086b516def96096c5eed3452bb73a8288484a5c7fc",
+        "pose-16-death.png": "fdb672e542e3fd752360e189f88c0332e1cc49286ea16cf3c5936f4bd0e85f9d",
+        "pose-17-death.png": "06d6434b9d39f483a98dd07748563821f8cd08dea2c0809ccfbd07f98d38ad4d",
+        "pose-18-breath.png": "06d6434b9d39f483a98dd07748563821f8cd08dea2c0809ccfbd07f98d38ad4d",
+        "pose-19-breath.png": "69421fd9af6c98ad41614888dda3cf43bf52631de498a36bb5f9dd398bf14b34",
+        "pose-20-breath.png": "07c2b8b45f5b4609b7e1f2fc270ea28ac9c7c824c00c488782030c10cef931a1",
+        "pose-21-breath.png": "964a22ca078015f4bb85d9b14b6f408f1de11400aaabaa40f559d422320787a7",
+        "pose-22-rest.png": "c30a175e03cfd16fed5e423cc90371283ddaaccae0f431825d6333e4784c7fc4",
+        "view-face-detail.png": "fe6cfb8f909746a496358448858ee46f567a9b3611d4e832193eac9a6c46c886",
+        "view-front.png": "a265ce73474e216aa52aa26bef853cfd397537fd33f62306b0afc63b63f2e631",
+        "view-garment-rear.png": "99cf2898873bc4d627fff4dfe779032cff666d4f2563408c00ce4202be9e9586",
+        "view-head-front.png": "2ff156ea29d974efafb058ecf01fcf862c2c6334e7bc00d84348c282e58fe9b6",
+        "view-head-oblique.png": "0299c382d9d35abae1f2e9b51c830d60a489fe8a46288e0adfe656fab469ebcc",
+        "view-lying-oblique.png": "c30a175e03cfd16fed5e423cc90371283ddaaccae0f431825d6333e4784c7fc4",
+        "view-rear.png": "fde0213406ea9f6257d2e8ac935da4f74b25327a073256892c6e0f552d566eb0",
+        "view-side.png": "d190ad1b280518eb6f5296f8865763e4c38f13ef34f397c3a56c5e80b05fa367"
+      }
+    }
+  ]
+}

@@ -1235,3 +1235,10 @@ assets/validation_v5_17_85/*.json -text
 assets/source/art/forest_guardians_813/** -text
 assets/generators/*forest_guardian*.py text eol=lf
 src/caelum/data/forest_guardian_combat.modeldef text eol=lf
+
+assets/validation_v5_17_86/*.py text eol=lf
+assets/validation_v5_17_86/evidence/** -text -diff
+assets/validation_v5_17_86/*.json -text
+assets/source/art/austral_figures_815/** -text
+assets/generators/*austral_figure*.py text eol=lf
+src/caelum/data/austral_figure_combat.modeldef text eol=lf

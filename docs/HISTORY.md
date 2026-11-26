@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.85** - 2026-11-15.
+Documentation version: **5.17.86** - 2026-11-15.
+
+## 5.17.86 - Five austral figure candidates (#815, 2026-11-15)
+
+Added native Shoort, Tanu, Halahaches, Matan and Ulen candidates with editable
+sources, original generated materials and inherited combat mappings. Nineteen
+exports repeat. Geometry/contacts pass; 871 qualified native assertions cover
+continuity, actual actions and loot, with exact-byte bounded reuse recorded in
+ASSETS and assets/validation_v5_17_86/evidence/SUMMARY.json. Reviewed native art
+and five presentation pairs remain isolated evidence. Paint, hood/belly/belt,
+hair and capture-order/parser corrections retain their earlier diagnostics.
+CA815-AUSTRAL-01 originates here and remains pending; no previous author check
+was accepted or removed. Coverage reaches 39/56; the wider batch and final
+consolidated author review remain unfinished.
 
 ## 5.17.85 - Four forest guardian candidates (#813, 2026-11-15)
 

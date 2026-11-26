@@ -1,6 +1,66 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.85** - 2026-11-15.
+Documentation version: **5.17.86** - 2026-11-15.
+
+## 5.17.86 - Native austral figure candidates (#815)
+
+Shoort 022, Tanu 023, Halahaches 024, Matan 025 and Ulen 026 now have distinct
+native candidates based on their owned references. Shoort has a swept crest,
+forearm spurs and red/ivory paint; Tanu has a broad body, horizontal horns,
+open hood/veil, clothed chest and ornaments; Halahaches has tall horns, long
+dark hair and ivory/red bands. Matan has a long mask nose, head cords/feathers
+and dark/ivory paint; Ulen has a slender body, seven swept spines and curved
+red/ivory markings. Fixed cloth, claws and ornaments do not add inventory.
+Editable anatomy, animation, contact controls, OBJ/MTL and the unchanged original
+built-in image_gen atlas/prompt/provenance live in assets/source/art/austral_figures_815.
+
+Nineteen exported files repeat byte-for-byte. The five designs contain 389 closed
+components, 384 rooted witnesses and 3,072 independent posed attachment checks.
+All 23 inherited frames have noncollapsed triangles and valid material cells.
+Open wraps intentionally expose legs; no closed-skirt containment is claimed.
+Native review corrected body-paint discontinuities, an obscured Tanu forehead
+and chest, a detached-looking rear belt loop and Halahaches hair buried in the
+back. Earlier sources, captures and failed checks remain evidence.
+
+The final 18,603-entry package matches src exactly. Against #813 it adds seven
+model/material/binding resources and one MODELDEF include; only the two release
+diagnostics change elsewhere. Scale, collision, statistics, combat timing,
+abilities, loot, identity and saved fields remain unchanged. Reference metric
+dimensions, new powers, population and campaign placement are not adopted.
+
+Qualified native evidence contains 871 assertions: 575 continuity checks
+across baseline, old save, fresh model, reload and rollback; 296 actual
+action/loot/reload checks. Halahaches continuity and all actions use the final
+package. Four continuity runs are reused from the immediately preceding package:
+an exact ZIP comparison proves that only halahaches.md3 changed, with their
+models, material, bindings, actor code, maps and saved-state definitions identical.
+The separate reuse audit also bounds earlier reviewed static captures to unchanged
+art. Front, profile, rear, face/horn/hair/cloth details, extreme strides, attack,
+pain, intermediate death and lying views were inspected. Superseded visual runs
+and the first screenshot-order/parser failures are diagnostic evidence only.
+
+One sequential 700-tic sprite/model pair per species ran on Windows 11 Pro 26200,
+Ryzen 9 5950X / 32 GB / RTX 3070 Ti, GZDoom 4.14.2 Vulkan at 1280x720, uncapped
+without VSync, unpaused in the background at 5% audio:
+
+- shoort/sprite: 1335.69 queue presents/s; presentation p95/p99/max 0.9010/1.1183/2.2243 ms; simulation mean/p95/p99/max 28.5717/29.1210/29.2577/29.7217 ms.
+- shoort/model: 1268.71 queue presents/s; presentation p95/p99/max 0.9839/1.2130/2.1259 ms; simulation mean/p95/p99/max 28.5718/29.1018/29.2642/29.3993 ms.
+- tanu/sprite: 1252.70 queue presents/s; presentation p95/p99/max 1.0082/1.2608/2.1119 ms; simulation mean/p95/p99/max 28.5715/29.1416/29.3111/29.5737 ms.
+- tanu/model: 1274.16 queue presents/s; presentation p95/p99/max 0.9762/1.2021/2.2306 ms; simulation mean/p95/p99/max 28.5712/29.0964/29.3116/29.4166 ms.
+- halahaches/sprite: 1273.11 queue presents/s; presentation p95/p99/max 1.0018/1.2491/2.3789 ms; simulation mean/p95/p99/max 28.5715/29.1385/29.2936/29.4199 ms.
+- halahaches/model: 1276.50 queue presents/s; presentation p95/p99/max 0.9915/1.2315/2.0934 ms; simulation mean/p95/p99/max 28.5708/29.1751/29.4002/29.5209 ms.
+- matan/sprite: 1306.93 queue presents/s; presentation p95/p99/max 0.9400/1.1827/1.9921 ms; simulation mean/p95/p99/max 28.5716/29.1492/29.4494/29.7051 ms.
+- matan/model: 1269.29 queue presents/s; presentation p95/p99/max 0.9820/1.2035/2.2137 ms; simulation mean/p95/p99/max 28.5714/29.1132/29.3013/29.5134 ms.
+- ulen/sprite: 1229.12 queue presents/s; presentation p95/p99/max 1.0294/1.5815/18.2177 ms; simulation mean/p95/p99/max 28.5713/29.1892/29.9203/40.7944 ms.
+- ulen/model: 1252.79 queue presents/s; presentation p95/p99/max 1.0138/1.2158/2.1053 ms; simulation mean/p95/p99/max 28.5714/29.1140/29.2636/29.4368 ms.
+
+These queue intervals do not measure GPU/display latency, establish repeatability
+or an optimization, or certify a campaign/crowd budget. Stylized component anatomy,
+painted faces, opaque hair and rigid fall/rest poses remain candidates. Wide
+silhouettes may exceed provisional collision. CA815-AUSTRAL-01 remains pending
+for the consolidated handoff. Evidence: assets/validation_v5_17_86/evidence/SUMMARY.json.
+Native coverage reaches 39/56 provisional classes; 17 remain, alongside regional
+views, other characters, modular fitting, campaign authoring and siege rendering.
 
 ## 5.17.85 - Native forest guardian candidates (#813)
 

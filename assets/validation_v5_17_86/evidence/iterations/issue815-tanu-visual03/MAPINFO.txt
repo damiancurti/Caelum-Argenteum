@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA815Events" }
+map CA455V "Shoort/Tanu/Halahaches/Matan/Ulen inherited combat model" { sky1="CABASKY",0 nointermission }

@@ -4821,3 +4821,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/head_apparition_combat.modeldef"
 #include "caelum/data/period_apparition_combat.modeldef"
 #include "caelum/data/forest_guardian_combat.modeldef"
+#include "caelum/data/austral_figure_combat.modeldef"
