@@ -1,6 +1,50 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.97** - 2026-11-19.
+Documentation version: **5.17.98** - 2026-11-19.
+
+## 5.17.98 - Lossless projectile frames avoid atlas-loading stalls (#840, #454)
+
+The 36 projectile frames now use exact RGBA crop PNGs generated from the
+original elemental atlas. Sprite names, dimensions, scales, pivots, frame timing,
+status bindings and gameplay remain unchanged. The original atlas remains for
+provenance and existing model consumers. No saved fields, actor identities,
+combat rules, scans, controls or rendering features change.
+
+Five native runs (parent control, final fresh, upgrade, reload and rollback)
+pass 360 texture-metadata/saved-frame assertions and 540 paired pixel-cell
+comparisons. All 15 complete image-half comparisons are identical, with the
+actual black/gray/white backgrounds verified. These are isolated native
+compositing and persisted sprite/frame checks, not author acceptance.
+Independent RGBA checks, exact inverse binding restoration, byte-identical
+regeneration and complete package preservation pass. The package adds 36 PNGs;
+only the binding file, provenance notice and two diagnostic version strings
+change among existing members. Source art and all other package bytes remain.
+
+| Package | Queue presents/s | Simulation mean / p95 / p99 / max (ms) | Present p95 / p99 / max (ms) |
+| --- | ---: | --- | --- |
+| control | 1.7705 | 33.2239 / 48.1369 / 55.5244 / 214.8553 | 620.4514 / 708.4784 / 708.4784 |
+| final | 1.8182 | 32.4629 / 47.4458 / 49.5117 / 59.6394 | 581.0159 / 581.9046 / 581.9046 |
+
+Both production measurements use the approved normal siege: 988 attacker
+NPCs, 601 defenders including the subcaptain, and the player; 1,590 living
+combatants, identical health/state observations and the same camera. Tests run
+sequentially on Windows 11 / Ryzen 9 5950X / RTX 3070 Ti at 1280x720, native
+GZDoom 4.14.2, Vulkan, unpaused background execution and 5% audio. Queue
+presentation is not monitor scanout. Large first-use stalls are reduced, but
+overall siege rendering remains poor; the remaining simulation cost needs a
+separate measured patch. No 6,000-attacker test was run.
+
+Full project validation passes with no errors; the final source/package audit
+and deterministic regeneration also pass.
+
+Evidence and reproducible tools: assets/validation_v5_17_98, including
+NATIVE_CONTRACT.json, exact source hashes, full timing traces, retained harness
+failures and final/control reports. Native fixtures initially required literal
+StateLabel values, a savedir-relative load name, delayed screenshot commands and
+a transient WorldTick check after save loading; corrected runs above supersede
+those failures without deleting them. CA454-MAP03-01 and all author checks stay
+in pending_test.txt for the final consolidated V5.16/V5.17 review. No author
+acceptance, issue-batch completion or final author-terminal handoff is claimed.
 
 ## 5.17.97 - Skip unreachable read-only relationship queries (#838, #454)
 

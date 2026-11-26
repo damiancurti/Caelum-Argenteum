@@ -1,6 +1,49 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.97** - 2026-11-19.
+Documentation version: **5.17.98** - 2026-11-19.
+
+## 5.17.98 - Lossless projectile frames avoid atlas-loading stalls (#840, #454)
+
+The 36 projectile frames now use exact RGBA crop PNGs generated from the
+original elemental atlas. Sprite names, dimensions, scales, pivots, frame timing,
+status bindings and gameplay remain unchanged. The original atlas remains for
+provenance and existing model consumers. No saved fields, actor identities,
+combat rules, scans, controls or rendering features change.
+
+The complete 700-tic diagnostic separates PlayerThink, game callbacks,
+end-of-tic, first RenderUnderlay and last RenderOverlay boundaries. HUD and
+PlayerThink costs do not explain the large pauses. Temporary no-audio and
+general-precache comparisons retain them; neither setting is adopted. A private
+Vulkan layer records selected API durations and image creation sizes. Clock
+offsets are bounded by all overlay/present/next-tic inequalities, not assumed
+exact. The largest gaps coincide with first-use fire-projectile images, while
+their Vulkan creation calls take microseconds. Native source creates the full
+atlas bitmap before applying each texture clip outside the precache block.
+The lossless crop candidate lowers the largest end-of-tic-to-HUD gap from
+168.7586 to 13.2859 ms in matched diagnostic scenes. This is CPU preparation
+evidence; it is not a GPU-time measurement or a universal timing guarantee.
+
+Five native runs (parent control, final fresh, upgrade, reload and rollback)
+pass 360 texture-metadata/saved-frame assertions and 540 paired pixel-cell
+comparisons. All 15 complete image-half comparisons are identical, with the
+actual black/gray/white backgrounds verified. These are isolated native
+compositing and persisted sprite/frame checks, not author acceptance.
+Independent RGBA checks, exact inverse binding restoration, byte-identical
+regeneration and complete package preservation pass. The package adds 36 PNGs;
+only the binding file, provenance notice and two diagnostic version strings
+change among existing members. Source art and all other package bytes remain.
+
+Full project validation passes with no errors; the final source/package audit
+and deterministic regeneration also pass.
+
+Evidence and reproducible tools: assets/validation_v5_17_98, including
+NATIVE_CONTRACT.json, exact source hashes, full timing traces, retained harness
+failures and final/control reports. Native fixtures initially required literal
+StateLabel values, a savedir-relative load name, delayed screenshot commands and
+a transient WorldTick check after save loading; corrected runs above supersede
+those failures without deleting them. CA454-MAP03-01 and all author checks stay
+in pending_test.txt for the final consolidated V5.16/V5.17 review. No author
+acceptance, issue-batch completion or final author-terminal handoff is claimed.
 
 ## 5.17.97 - Skip unreachable read-only relationship queries (#838, #454)
 

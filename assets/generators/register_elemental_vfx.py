@@ -1,11 +1,26 @@
-"""Register untouched original VFX atlases and deterministic cosmetic data (#137)."""
+"""Register original VFX art and lossless projectile-frame crops (#137, #840)."""
 from pathlib import Path
-import json, shutil, hashlib
+import json, shutil, hashlib, struct, zlib
 from register_carbine_world import rgba,alpha_bounds
 
 ROOT=Path(__file__).resolve().parents[2]
 SOURCE=ROOT/'assets/source/art/elemental_518'
 OUT=ROOT/'src/graphics/caelum/vfx'
+
+
+def cropped_png(rows, x1, y1, x2, y2):
+    """Encode the exact RGBA rectangle with fixed PNG filtering/compression."""
+    def chunk(kind, payload):
+        return (struct.pack('>I',len(payload))+kind+payload
+                +struct.pack('>I',zlib.crc32(kind+payload)&0xffffffff))
+    pixels=b''.join(bytes(row[x1*4:x2*4]) for row in rows[y1:y2])
+    width,height=x2-x1,y2-y1
+    raw=b''.join(b'\0'+pixels[y*width*4:(y+1)*width*4] for y in range(height))
+    encoded=(b'\x89PNG\r\n\x1a\n'
+             +chunk(b'IHDR',struct.pack('>IIBBBBB',width,height,8,6,0,0,0))
+             +chunk(b'IDAT',zlib.compress(raw,9))+chunk(b'IEND',b''))
+    return encoded,hashlib.sha256(pixels).hexdigest()
+
 
 def main():
     data=json.loads((SOURCE/'DESIGN.json').read_text())
@@ -30,9 +45,18 @@ def main():
                 pivot=ch//2 if name=='projectiles' else max(b[3] for b in bounds)-y1+1
                 sx=cw/size[0] if name=='projectiles' else visible_width/size[0]
                 sy=ch/size[1] if name=='projectiles' else visible_height/size[1]
-                lines.append(f'Sprite "{sprite}", {cw}, {ch} {{ XScale {sx:.9f} YScale {sy:.9f} Offset {cw//2}, {pivot} Patch "graphics/caelum/vfx/{name}.png", {-x1}, {-y1} }}')
-                frames.append({'name':sprite,'clip':[x1,y1,x2,y2],'pivot':[cw//2,pivot]})
-    (OUT/'elemental.textures').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+                patch=f'graphics/caelum/vfx/{name}.png';px,py=-x1,-y1
+                record={'name':sprite,'clip':[x1,y1,x2,y2],'pivot':[cw//2,pivot]}
+                if name=='projectiles':
+                    # Avoid decoding the complete atlas for each first-use cell.
+                    patch=f'graphics/caelum/vfx/projectile_frames/{sprite}.png';px=py=0
+                    target=ROOT/'src'/patch;target.parent.mkdir(parents=True,exist_ok=True)
+                    encoded,pixel_hash=cropped_png(rows,x1,y1,x2,y2)
+                    target.write_bytes(encoded)
+                    record.update(patch=patch,rgba_sha256=pixel_hash,png_sha256=hashlib.sha256(encoded).hexdigest())
+                lines.append(f'Sprite "{sprite}", {cw}, {ch} {{ XScale {sx:.9f} YScale {sy:.9f} Offset {cw//2}, {pivot} Patch "{patch}", {px}, {py} }}')
+                frames.append(record)
+    (OUT/'elemental.textures').write_text('\n'.join(lines)+'\n',encoding='utf-8',newline='\r\n')
     zs=['// Datos cosméticos generados desde DESIGN.json; sin valores de combate.', 'class CaelumElementalVFXData : Object {']
     for key in ['frame_tics','particle_life','trail_interval','dense_trail_interval','detail_distance','dense_detail_distance','impact_tics']:
         zs.append(f' const {key.upper()}={data[key]};')
@@ -46,9 +70,10 @@ def main():
     for p in data['projectile_prefixes']+data['status_prefixes']:zs.append(f' {p} ABCD 1 Bright;')
     zs.append(' Stop; } }')
     target=ROOT/'src/caelum/actors/CaelumElementalVFXData.zs'
-    target.write_text('\n'.join(zs)+'\n',encoding='utf-8')
-    manifest={'frames':frames,'sha256':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(OUT.glob('*'))}}
-    (SOURCE/'REGISTRATION.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
-    print('Registered 52 original VFX frames and shared cosmetic data.')
+    target.write_text('\n'.join(zs)+'\n',encoding='utf-8',newline='\r\n')
+    outputs=[p for p in OUT.glob('*') if p.is_file()]+list((OUT/'projectile_frames').glob('*.png'))
+    manifest={'frames':frames,'sha256':{p.relative_to(OUT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(outputs)}}
+    (SOURCE/'REGISTRATION.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8',newline='\r\n')
+    print('Registered 52 VFX frames, including 36 lossless projectile crops, and shared cosmetic data.')
 
 if __name__=='__main__':main()

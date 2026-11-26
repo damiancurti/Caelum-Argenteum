@@ -11,7 +11,10 @@
       "pivot": [
         133,
         85
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFFRA0.png",
+      "rgba_sha256": "3357365337298cf04b1a46392cd0a381657605af354f067d09cc6c93da663fd4",
+      "png_sha256": "8ca03f7e89b8bf2a2918c8f4e0b35a80d3538432ecf38462f83d7dfd549a7eb4"
     },
     {
       "name": "VFFRB0",
@@ -24,7 +27,10 @@
       "pivot": [
         122,
         85
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFFRB0.png",
+      "rgba_sha256": "bf40c2d624845a95252ac28c57cbca84c26fabe8c9f14e359fc5501cd24b4dcd",
+      "png_sha256": "f57018f0266026cd147750f41099ceafeeda7b8d19ed5a599a3e5f53a89ba2fc"
     },
     {
       "name": "VFFRC0",
@@ -37,7 +43,10 @@
       "pivot": [
         122,
         85
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFFRC0.png",
+      "rgba_sha256": "5e724907dc1ce5b17c78a58d0bba7f7aa875a231bd1df20dc6de07a55a2f5543",
+      "png_sha256": "3f5a9dffa6274c055cee25e3567548586d925fff6bb56e26115f13e26d758842"
     },
     {
       "name": "VFFRD0",
@@ -50,7 +59,10 @@
       "pivot": [
         134,
         85
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFFRD0.png",
+      "rgba_sha256": "4eb7ae8f2a3b4fc7ca534bbc7f6e081f8e09d62a3381ff3214853365c61a7db9",
+      "png_sha256": "047f3074c158436d58606b794e85dee0a5f439e3346b8c481813cf33fb7f12c6"
     },
     {
       "name": "VFLTA0",
@@ -63,7 +75,10 @@
       "pivot": [
         133,
         72
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFLTA0.png",
+      "rgba_sha256": "863661a9e1c7cc1f789cae994711b431ef7618e3167cf32f7696cd663df84f93",
+      "png_sha256": "54ead7afdcafbe7fe1590057c8f19f6c2053b5ff2079ce98505fbc7403f988e5"
     },
     {
       "name": "VFLTB0",
@@ -76,7 +91,10 @@
       "pivot": [
         122,
         72
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFLTB0.png",
+      "rgba_sha256": "a15cf2a395e2038c661def510bc01462da518a7b972f21e0a2369448786c1b59",
+      "png_sha256": "fdb55cf9f4697f53ab33bd59e53e8f0645c5b975c88b74c426b79dc6808c71d2"
     },
     {
       "name": "VFLTC0",
@@ -89,7 +107,10 @@
       "pivot": [
         122,
         72
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFLTC0.png",
+      "rgba_sha256": "35f7a0f01f52ba805f1d01a3080d43459c3b09d8b70a46cded6b4fc00380afa4",
+      "png_sha256": "1e90d324121acae5c97b74c92d1db04849db9fe40dc7a18698221e7cbe6861dc"
     },
     {
       "name": "VFLTD0",
@@ -102,7 +123,10 @@
       "pivot": [
         134,
         72
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFLTD0.png",
+      "rgba_sha256": "ff6f50ceb62ee6ed6761e10bdcefc69aa7d57a1c6039b32d9a5171db91c980bf",
+      "png_sha256": "2257639b7cb6ab531c7ed8f0e093c36f46680c8d1946ce3807f89f931ae69cce"
     },
     {
       "name": "VFWAA0",
@@ -115,7 +139,10 @@
       "pivot": [
         133,
         78
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFWAA0.png",
+      "rgba_sha256": "3a41af3863923aaaced0b02352dd99b01eacbac074faadaa7c92e9bf497fa924",
+      "png_sha256": "1026a777403b213cab786e8fe137417313290da5f99864844333b92f011651d1"
     },
     {
       "name": "VFWAB0",
@@ -128,7 +155,10 @@
       "pivot": [
         122,
         78
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFWAB0.png",
+      "rgba_sha256": "1bc6f5a7cb463b8ee2aec9104d7a658df8db8b021a60508cb7ce7b37670f4650",
+      "png_sha256": "b5b78f5d6f323dd597804c96ab80168065f46faba839d2c61e17f3f2086161dd"
     },
     {
       "name": "VFWAC0",
@@ -141,7 +171,10 @@
       "pivot": [
         122,
         78
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFWAC0.png",
+      "rgba_sha256": "456b9652a39cf365d5e109844d82afd34b4b61b8e3034657c57bb1b5b371c6d9",
+      "png_sha256": "71ef86f2d042cf3069f5235e4823064c7693e53b0afc6bfd13830e2865018bc2"
     },
     {
       "name": "VFWAD0",
@@ -154,7 +187,10 @@
       "pivot": [
         134,
         78
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFWAD0.png",
+      "rgba_sha256": "dbf7869e5d8efd82752b1da7bbbdffce9b04d5b79ffd93f73449a1668d83cae6",
+      "png_sha256": "21fb25e2ac27dd3feb68fcdbc231a0540f903003768d6b0bfbe9ef2878d098fb"
     },
     {
       "name": "VFICA0",
@@ -167,7 +203,10 @@
       "pivot": [
         133,
         92
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFICA0.png",
+      "rgba_sha256": "ee847e2bad0072031bd2dcec93a32934641a1afc3deb95df77a4d67aec5f18d9",
+      "png_sha256": "d0c68a4ad3c562e949bbe0ed229d84f63f1ffaeb9e6202e9cf04e7c8a49857b5"
     },
     {
       "name": "VFICB0",
@@ -180,7 +219,10 @@
       "pivot": [
         122,
         92
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFICB0.png",
+      "rgba_sha256": "318c34295816d9fe55f0e8dec3d926bbb383d6803472f53ccdd42f464633c19b",
+      "png_sha256": "49d0aa161ab89c696398182d7adbb077065651058a1e252434ae3dc25a657403"
     },
     {
       "name": "VFICC0",
@@ -193,7 +235,10 @@
       "pivot": [
         122,
         92
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFICC0.png",
+      "rgba_sha256": "91650e47ba284c4e1213332e91384cd49c6f5ece55748141d3026be6e35ac111",
+      "png_sha256": "aaa506b06cdd36fecdd00d12e4c74ed932f2ad0dcd288ab243117ef310878e9e"
     },
     {
       "name": "VFICD0",
@@ -206,7 +251,10 @@
       "pivot": [
         134,
         92
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFICD0.png",
+      "rgba_sha256": "eeb34286b648ddcf5145252ac390c371cd4f7b3c16ca33b87f34062419cfbbb2",
+      "png_sha256": "06130b8e25bea0e23f62d5427ad2e175aebb9315e73a1ba2942252f22704851f"
     },
     {
       "name": "VFEAA0",
@@ -219,7 +267,10 @@
       "pivot": [
         133,
         90
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFEAA0.png",
+      "rgba_sha256": "6c848db54b5327276d8ad352b3cf5767c08edc1ae6ab3f5a1e93164ac886625f",
+      "png_sha256": "808e74c5c95bfdf665e717b7a5c03e080656519acb68d8fc0feafeefdf2f5532"
     },
     {
       "name": "VFEAB0",
@@ -232,7 +283,10 @@
       "pivot": [
         122,
         90
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFEAB0.png",
+      "rgba_sha256": "9bc02eac9d56e9b32c042678ab3b2f2c6f951bb0b4106c2087a6cbcb4c399a92",
+      "png_sha256": "7eec1688b41310737392a4ffe5b74b1e9bf9af08ce6ed46cbc5acd226cc12616"
     },
     {
       "name": "VFEAC0",
@@ -245,7 +299,10 @@
       "pivot": [
         122,
         90
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFEAC0.png",
+      "rgba_sha256": "6e5a9456ef656153c5701d77e409915391ac3d14831ec293f7d6535ab7d934d6",
+      "png_sha256": "049e352ff495552a54c4bbdd3bd5aadc1af93ed63c1e21fec3ed3d5551e6e675"
     },
     {
       "name": "VFEAD0",
@@ -258,7 +315,10 @@
       "pivot": [
         134,
         90
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFEAD0.png",
+      "rgba_sha256": "0a75d785415b265471967769cb3010bb05d537cc98f7a2a7a86ca23afd3062fa",
+      "png_sha256": "ff54b9431e4b63598ae182cefa4594654170aeb6de4a690707495a9fbc68dcbb"
     },
     {
       "name": "VFPOA0",
@@ -271,7 +331,10 @@
       "pivot": [
         133,
         83
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFPOA0.png",
+      "rgba_sha256": "626c263cae34cef0a0b1a4100a95f3bfdc6a4efef7560fda93a9f9c63d56149b",
+      "png_sha256": "fd5987766d2ef8d420944fa3b8dfe0c9ffc94af4db14c00eacdf735f723d5836"
     },
     {
       "name": "VFPOB0",
@@ -284,7 +347,10 @@
       "pivot": [
         122,
         83
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFPOB0.png",
+      "rgba_sha256": "35d83d058a2571cc05220aef7dcecbf0b031a522f679a744075c4166c332a630",
+      "png_sha256": "4f73665b3d9e2713b2987e11f0c081cb744804699d3a3cc827fc8ecc21df2567"
     },
     {
       "name": "VFPOC0",
@@ -297,7 +363,10 @@
       "pivot": [
         122,
         83
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFPOC0.png",
+      "rgba_sha256": "0d0b0d4ae77e17316eca1e6db2be6ab0b54f8109afefae81cebc42587faaaeee",
+      "png_sha256": "772cf105df0b90d4d24714775657ca92519c89cf7eec7430521a128c64f44cdd"
     },
     {
       "name": "VFPOD0",
@@ -310,7 +379,10 @@
       "pivot": [
         134,
         83
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFPOD0.png",
+      "rgba_sha256": "019d4481284fdd12dc9faefefea68481de3c38199244efdea05ce480e63459a6",
+      "png_sha256": "cb61666e3727eb82be512b8a935cc573efcf71b6a50f6edc0157b180078129f2"
     },
     {
       "name": "VFAIA0",
@@ -323,7 +395,10 @@
       "pivot": [
         133,
         91
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFAIA0.png",
+      "rgba_sha256": "c8319013358d56341fd2f44b6ffcf3bdacaabcfb049ea1d8a86b3bb5d134aaef",
+      "png_sha256": "9eb8002f150a49b496de0f8b6749924614bf2eed2d7fa24f44ec08d796dbf78f"
     },
     {
       "name": "VFAIB0",
@@ -336,7 +411,10 @@
       "pivot": [
         122,
         91
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFAIB0.png",
+      "rgba_sha256": "43154f2c0867e420dba065294edbbeb8c35ba23344cf8efe40fb5b8a63e6ca16",
+      "png_sha256": "3a86fa2fec70698ae242360c64769a44487b3e982b1ef263a66b3da3049eb863"
     },
     {
       "name": "VFAIC0",
@@ -349,7 +427,10 @@
       "pivot": [
         122,
         91
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFAIC0.png",
+      "rgba_sha256": "69a5fc27d7b7cfc975f38c36ff340e75a54ad5ecfdbf3f4b6d351926824c41fb",
+      "png_sha256": "0229a0f5634cf83256901b3523797a669075b62a02abb37b8d0f397036311ebd"
     },
     {
       "name": "VFAID0",
@@ -362,7 +443,10 @@
       "pivot": [
         134,
         91
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFAID0.png",
+      "rgba_sha256": "33fdfa6a3714184a5ceb5a8c172500224746c1bed7cf67f779755a968815d5dc",
+      "png_sha256": "ebee64f86cadba6fc597c1cf7c7837bbd37cfb02796a4c5898b87a4548004628"
     },
     {
       "name": "VFLIA0",
@@ -375,7 +459,10 @@
       "pivot": [
         133,
         80
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFLIA0.png",
+      "rgba_sha256": "076913bcea74fe9a4456de9f934f7f3ff032a5f936ee6b7f5d630bb1743ddd7d",
+      "png_sha256": "5c1fc696a11f1a7ea4f9710dbb772c8e95a6b77faa0bc45f0ba86926cb318f9f"
     },
     {
       "name": "VFLIB0",
@@ -388,7 +475,10 @@
       "pivot": [
         122,
         80
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFLIB0.png",
+      "rgba_sha256": "7725c667742d1175f78bea87607f5fc4bcfb8cd743b62169014f86082d1e96bd",
+      "png_sha256": "636e62d33c21096accd379d012f8f1f151265ef90b434c87d481065ad0acb5e5"
     },
     {
       "name": "VFLIC0",
@@ -401,7 +491,10 @@
       "pivot": [
         122,
         80
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFLIC0.png",
+      "rgba_sha256": "3da5d6e64707bc8d4997431c0fb213f57e136586b8efbafa201347d7ffc988c6",
+      "png_sha256": "0006526446a9cb72e150168742854380ca89284243678abf9202689ef65241d4"
     },
     {
       "name": "VFLID0",
@@ -414,7 +507,10 @@
       "pivot": [
         134,
         80
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFLID0.png",
+      "rgba_sha256": "5874844706ab6b189083d13a7b8fe1997c3e0faaccb0d347955801577d590f1f",
+      "png_sha256": "3e6373e2b0ec5a60cd2125c008378df063fd64428376089348c3c6becc99a5ee"
     },
     {
       "name": "VFQUA0",
@@ -427,7 +523,10 @@
       "pivot": [
         133,
         94
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFQUA0.png",
+      "rgba_sha256": "58851ef2356d38cfd9613757c8d08159e65a603d46ffcb2cec7335f470948e76",
+      "png_sha256": "d7cba50ab0b136d39e6756641b5cda8219b56ee5dbc07f46ff4809b27ff4263b"
     },
     {
       "name": "VFQUB0",
@@ -440,7 +539,10 @@
       "pivot": [
         122,
         94
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFQUB0.png",
+      "rgba_sha256": "7a70c6ef78e44978b54361c14d143f7501dfd205b9852b099fbaa4ee4b535479",
+      "png_sha256": "e89b704cf8f40963aa394a5b676485767ad6e9d0ddca6ce0908e4d0fd3c29293"
     },
     {
       "name": "VFQUC0",
@@ -453,7 +555,10 @@
       "pivot": [
         122,
         94
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFQUC0.png",
+      "rgba_sha256": "73fb714dc2aecc34ddc81e068ea51cc09467fb0ad639146315d8218bbab63aa1",
+      "png_sha256": "d6902627e96a3fb384aa29afe23629a0c85a8ec2980e4c1f29f0399c55a0fa2c"
     },
     {
       "name": "VFQUD0",
@@ -466,7 +571,10 @@
       "pivot": [
         134,
         94
-      ]
+      ],
+      "patch": "graphics/caelum/vfx/projectile_frames/VFQUD0.png",
+      "rgba_sha256": "bade23bb022af50dbae4774ff88360dc4aa131ce2d0ee584bd3a9a478c915f67",
+      "png_sha256": "5dcb87034c96e4a995f0136fa061f6f6de88c7b7ce0aa3a617fbe5507be5f10b"
     },
     {
       "name": "VFBUA0",
@@ -679,7 +787,43 @@
   ],
   "sha256": {
     "breath.textures": "46bda953fa191602ebc5ff12c126df4f49542147ed93695a770208c7878b18fb",
-    "elemental.textures": "a0b70a8e5b1e3fcab65eb07ab4c18c727ea42a97d9fd98bac1a6ae7c363c7ccf",
+    "elemental.textures": "4676746a7e7b9e846d3e964fdfe02dec73cc6f9e28325a40fdec994baa19f694",
+    "projectile_frames/VFAIA0.png": "9eb8002f150a49b496de0f8b6749924614bf2eed2d7fa24f44ec08d796dbf78f",
+    "projectile_frames/VFAIB0.png": "3a86fa2fec70698ae242360c64769a44487b3e982b1ef263a66b3da3049eb863",
+    "projectile_frames/VFAIC0.png": "0229a0f5634cf83256901b3523797a669075b62a02abb37b8d0f397036311ebd",
+    "projectile_frames/VFAID0.png": "ebee64f86cadba6fc597c1cf7c7837bbd37cfb02796a4c5898b87a4548004628",
+    "projectile_frames/VFEAA0.png": "808e74c5c95bfdf665e717b7a5c03e080656519acb68d8fc0feafeefdf2f5532",
+    "projectile_frames/VFEAB0.png": "7eec1688b41310737392a4ffe5b74b1e9bf9af08ce6ed46cbc5acd226cc12616",
+    "projectile_frames/VFEAC0.png": "049e352ff495552a54c4bbdd3bd5aadc1af93ed63c1e21fec3ed3d5551e6e675",
+    "projectile_frames/VFEAD0.png": "ff54b9431e4b63598ae182cefa4594654170aeb6de4a690707495a9fbc68dcbb",
+    "projectile_frames/VFFRA0.png": "8ca03f7e89b8bf2a2918c8f4e0b35a80d3538432ecf38462f83d7dfd549a7eb4",
+    "projectile_frames/VFFRB0.png": "f57018f0266026cd147750f41099ceafeeda7b8d19ed5a599a3e5f53a89ba2fc",
+    "projectile_frames/VFFRC0.png": "3f5a9dffa6274c055cee25e3567548586d925fff6bb56e26115f13e26d758842",
+    "projectile_frames/VFFRD0.png": "047f3074c158436d58606b794e85dee0a5f439e3346b8c481813cf33fb7f12c6",
+    "projectile_frames/VFICA0.png": "d0c68a4ad3c562e949bbe0ed229d84f63f1ffaeb9e6202e9cf04e7c8a49857b5",
+    "projectile_frames/VFICB0.png": "49d0aa161ab89c696398182d7adbb077065651058a1e252434ae3dc25a657403",
+    "projectile_frames/VFICC0.png": "aaa506b06cdd36fecdd00d12e4c74ed932f2ad0dcd288ab243117ef310878e9e",
+    "projectile_frames/VFICD0.png": "06130b8e25bea0e23f62d5427ad2e175aebb9315e73a1ba2942252f22704851f",
+    "projectile_frames/VFLIA0.png": "5c1fc696a11f1a7ea4f9710dbb772c8e95a6b77faa0bc45f0ba86926cb318f9f",
+    "projectile_frames/VFLIB0.png": "636e62d33c21096accd379d012f8f1f151265ef90b434c87d481065ad0acb5e5",
+    "projectile_frames/VFLIC0.png": "0006526446a9cb72e150168742854380ca89284243678abf9202689ef65241d4",
+    "projectile_frames/VFLID0.png": "3e6373e2b0ec5a60cd2125c008378df063fd64428376089348c3c6becc99a5ee",
+    "projectile_frames/VFLTA0.png": "54ead7afdcafbe7fe1590057c8f19f6c2053b5ff2079ce98505fbc7403f988e5",
+    "projectile_frames/VFLTB0.png": "fdb55cf9f4697f53ab33bd59e53e8f0645c5b975c88b74c426b79dc6808c71d2",
+    "projectile_frames/VFLTC0.png": "1e90d324121acae5c97b74c92d1db04849db9fe40dc7a18698221e7cbe6861dc",
+    "projectile_frames/VFLTD0.png": "2257639b7cb6ab531c7ed8f0e093c36f46680c8d1946ce3807f89f931ae69cce",
+    "projectile_frames/VFPOA0.png": "fd5987766d2ef8d420944fa3b8dfe0c9ffc94af4db14c00eacdf735f723d5836",
+    "projectile_frames/VFPOB0.png": "4f73665b3d9e2713b2987e11f0c081cb744804699d3a3cc827fc8ecc21df2567",
+    "projectile_frames/VFPOC0.png": "772cf105df0b90d4d24714775657ca92519c89cf7eec7430521a128c64f44cdd",
+    "projectile_frames/VFPOD0.png": "cb61666e3727eb82be512b8a935cc573efcf71b6a50f6edc0157b180078129f2",
+    "projectile_frames/VFQUA0.png": "d7cba50ab0b136d39e6756641b5cda8219b56ee5dbc07f46ff4809b27ff4263b",
+    "projectile_frames/VFQUB0.png": "e89b704cf8f40963aa394a5b676485767ad6e9d0ddca6ce0908e4d0fd3c29293",
+    "projectile_frames/VFQUC0.png": "d6902627e96a3fb384aa29afe23629a0c85a8ec2980e4c1f29f0399c55a0fa2c",
+    "projectile_frames/VFQUD0.png": "5dcb87034c96e4a995f0136fa061f6f6de88c7b7ce0aa3a617fbe5507be5f10b",
+    "projectile_frames/VFWAA0.png": "1026a777403b213cab786e8fe137417313290da5f99864844333b92f011651d1",
+    "projectile_frames/VFWAB0.png": "b5b78f5d6f323dd597804c96ab80168065f46faba839d2c61e17f3f2086161dd",
+    "projectile_frames/VFWAC0.png": "71ef86f2d042cf3069f5235e4823064c7693e53b0afc6bfd13830e2865018bc2",
+    "projectile_frames/VFWAD0.png": "21fb25e2ac27dd3feb68fcdbc231a0540f903003768d6b0bfbe9ef2878d098fb",
     "projectiles.png": "927157f2b294f9d646f1dba712781c440324b6a30a1dc02f1d3e124d4a1511ea",
     "statuses.png": "da1edcd06e71a9bf58aab0a8861248c90b07081355d715258e177764b08a1a55"
   }

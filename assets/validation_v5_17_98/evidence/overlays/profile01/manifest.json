@@ -1,0 +1,252 @@
+{
+  "issue": 840,
+  "runtime_sha256": "6411c05ac7202c510238d989faf4193100015d75e527b898d77364d60512eda4",
+  "overlay_sha256": "4ebeca4b965d6737ec2cdae113fa85811085fe6ebbee6cc7ce2ffa300a78260a",
+  "metrics": [
+    {
+      "id": 0,
+      "path": "caelum/actors/CaelumAnchoredResident.zs",
+      "class": "CaelumAnchoredResident",
+      "method": "Tick"
+    },
+    {
+      "id": 1,
+      "path": "caelum/actors/CaelumCombatActor.zs",
+      "class": "CaelumCombatActor",
+      "method": "Tick"
+    },
+    {
+      "id": 2,
+      "path": "caelum/actors/CaelumFolkloreCharacters.zs",
+      "class": "CaelumMandinga",
+      "method": "Tick"
+    },
+    {
+      "id": 3,
+      "path": "caelum/actors/CaelumMassAIScheduler.zs",
+      "class": "CaelumMassAIScheduler",
+      "method": "WorldTick"
+    },
+    {
+      "id": 4,
+      "path": "caelum/crafting/CaelumAlchemyPlacement.zs",
+      "class": "CaelumAlchemyEvents",
+      "method": "WorldTick"
+    },
+    {
+      "id": 5,
+      "path": "caelum/crafting/CaelumFermentationPlacement.zs",
+      "class": "CaelumFermentationEvents",
+      "method": "WorldTick"
+    },
+    {
+      "id": 6,
+      "path": "caelum/hud/CaelumJournalOverlay.zs",
+      "class": "CaelumJournalInput",
+      "method": "WorldTick"
+    },
+    {
+      "id": 7,
+      "path": "caelum/player/CaelumPlayer.zs",
+      "class": "CaelumPlayer",
+      "method": "Tick"
+    },
+    {
+      "id": 8,
+      "path": "caelum/player/CaelumPlayer.zs",
+      "class": "CaelumPlayer",
+      "method": "PlayerThink"
+    },
+    {
+      "id": 9,
+      "path": "caelum/quests/CaelumMainM00QuestController.zs",
+      "class": "CaelumMainM00QuestController",
+      "method": "WorldTick"
+    },
+    {
+      "id": 10,
+      "path": "caelum/survival/CaelumContaminationContact.zs",
+      "class": "CaelumContaminationContact",
+      "method": "Tick"
+    },
+    {
+      "id": 11,
+      "path": "caelum/survival/CaelumContaminationObject.zs",
+      "class": "CaelumContaminationObject",
+      "method": "Tick"
+    },
+    {
+      "id": 12,
+      "path": "caelum/survival/CaelumThermalEnvironment.zs",
+      "class": "CaelumThermalWorld",
+      "method": "WorldTick"
+    },
+    {
+      "id": 13,
+      "path": "caelum/ui/CaelumConversationResume.zs",
+      "class": "CaelumConversationResume",
+      "method": "WorldTick"
+    },
+    {
+      "id": 14,
+      "path": "caelum/ui/CaelumMenuAudio.zs",
+      "class": "CaelumMenuAudio",
+      "method": "WorldTick"
+    },
+    {
+      "id": 15,
+      "path": "caelum/world/CaelumArenaMenu.zs",
+      "class": "CaelumArenaEvents",
+      "method": "WorldTick"
+    },
+    {
+      "id": 16,
+      "path": "caelum/world/CaelumAutosaveEvents.zs",
+      "class": "CaelumAutosaveEvents",
+      "method": "WorldTick"
+    },
+    {
+      "id": 17,
+      "path": "caelum/world/CaelumHouseHub.zs",
+      "class": "CaelumHouseHubEvents",
+      "method": "WorldTick"
+    },
+    {
+      "id": 18,
+      "path": "caelum/world/CaelumLandSources.zs",
+      "class": "CaelumLandSourceEvents",
+      "method": "WorldTick"
+    },
+    {
+      "id": 19,
+      "path": "caelum/world/CaelumPortDefender.zs",
+      "class": "CaelumPortDefender",
+      "method": "Tick"
+    },
+    {
+      "id": 20,
+      "path": "caelum/world/CaelumPortSiege.zs",
+      "class": "CaelumPortSiege",
+      "method": "Tick"
+    },
+    {
+      "id": 21,
+      "path": "caelum/world/CaelumProfileEvents.zs",
+      "class": "CaelumProfileEvents",
+      "method": "WorldTick"
+    },
+    {
+      "id": 22,
+      "path": "caelum/world/CaelumProfileVacancy.zs",
+      "class": "CaelumProfileVacancyEvents",
+      "method": "WorldTick"
+    },
+    {
+      "id": 23,
+      "path": "caelum/world/CaelumSessionIdentity.zs",
+      "class": "CaelumSessionIdentity",
+      "method": "WorldTick"
+    },
+    {
+      "id": 24,
+      "path": "caelum/world/CaelumSessionLifecycle.zs",
+      "class": "CaelumSessionLifecycleEvents",
+      "method": "WorldTick"
+    },
+    {
+      "id": 25,
+      "path": "caelum/world/CaelumSiegeEncounter.zs",
+      "class": "CaelumSiegeEvents",
+      "method": "WorldTick"
+    },
+    {
+      "id": 26,
+      "path": "caelum/world/CaelumStandaloneMatch.zs",
+      "class": "CaelumStandaloneMatchEvents",
+      "method": "WorldTick"
+    },
+    {
+      "id": 27,
+      "path": "caelum/world/CaelumTravelVehicles.zs",
+      "class": "CaelumVehicleWorld",
+      "method": "WorldTick"
+    },
+    {
+      "id": 28,
+      "path": "caelum/world/CaelumWorldClock.zs",
+      "class": "CaelumWorldClockTicker",
+      "method": "WorldTick"
+    }
+  ],
+  "ui_metrics": [
+    {
+      "id": 0,
+      "path": "caelum/debug/CaelumDebugOverlay.zs",
+      "class": "CaelumDebugOverlay",
+      "method": "RenderOverlay"
+    },
+    {
+      "id": 1,
+      "path": "caelum/hud/CaelumJournalOverlay.zs",
+      "class": "CaelumJournalOverlay",
+      "method": "RenderOverlay"
+    },
+    {
+      "id": 2,
+      "path": "caelum/hud/CaelumHUDOverlay.zs",
+      "class": "CaelumHUDOverlay",
+      "method": "RenderOverlay"
+    },
+    {
+      "id": 3,
+      "path": "caelum/ui/CaelumMenuAudio.zs",
+      "class": "CaelumMenuAudio",
+      "method": "RenderOverlay"
+    },
+    {
+      "id": 4,
+      "path": "caelum/hud/CaelumStatusBar.zs",
+      "class": "CaelumStatusBar",
+      "method": "Draw"
+    }
+  ],
+  "exact_source_restoration": {
+    "caelum/actors/CaelumAnchoredResident.zs": "e02b21752ccec38c1e6ad245b0e35cced386e1b03e030e84e6401bee93014a43",
+    "caelum/actors/CaelumCombatActor.zs": "6cb9afd8c4c68311fe6dcf9c01b8e203d20ec493a4532e855bf5e008564bd181",
+    "caelum/actors/CaelumFolkloreCharacters.zs": "80c5a00ef221395a6688125d8871c3f84ccf21e2aeb63b5c0bd4adb99dd2e420",
+    "caelum/actors/CaelumMassAIScheduler.zs": "4eba23b1806096e08b2c96a8750da22a28e161ecc56a2abdf8559a0073f86be7",
+    "caelum/crafting/CaelumAlchemyPlacement.zs": "c70a0280dc7d1ea6d00f8723f2426630da8fbb956de7d4aa3d8d2034b71ddf8c",
+    "caelum/crafting/CaelumFermentationPlacement.zs": "b84cf870ef013ec025bdaf63fa739ccf5d507f5b8ea5fb36ceba2c4f3bac2653",
+    "caelum/hud/CaelumJournalOverlay.zs": "96df63a2aa6ab23a83a3b60c7fcdb0b2e2b27d3baed9aef1c19d2a1ed33d4a19",
+    "caelum/player/CaelumPlayer.zs": "bc6e0aacfde679f83b01fffbf3c22ce6ba0f0b1fb583b5bc4c393930ce6fa741",
+    "caelum/quests/CaelumMainM00QuestController.zs": "5a5997b578754f37018b229ad897bff6f2aade306577c5f71f70d41f94dec0cd",
+    "caelum/survival/CaelumContaminationContact.zs": "77c658e7ec1b6bfe1babd6c23fa03cd3c5fa1782ef7db4efd43c3d6d8faa372c",
+    "caelum/survival/CaelumContaminationObject.zs": "a396c2b1a99df2fa070b58d80afa95a5decf6854c89ee9bdbd2bd3e8148634c2",
+    "caelum/survival/CaelumThermalEnvironment.zs": "be848205e53e07e858aa1a84df3a469de5d8a8302026b8eb991370c02e83eaa7",
+    "caelum/ui/CaelumConversationResume.zs": "b43a750c88c31a0dac9141eff0788ba8c3cfaa9b4d3db8ee4a6071e44a9afad6",
+    "caelum/ui/CaelumMenuAudio.zs": "e5fd3cfc474f94aba16f5c0a54e5477acc3a0df9f9a4e0fae779db73f2b3730e",
+    "caelum/world/CaelumArenaMenu.zs": "2c3d0729dda684afaeb5730c3c31d77c1e0d598332ec570fac14522f99fcc0f3",
+    "caelum/world/CaelumAutosaveEvents.zs": "c142edf32c1150f88c55275a7d85bbe32a3471d2575623bea5cabdbd7b81583e",
+    "caelum/world/CaelumHouseHub.zs": "924920bc901a4291798a0ebde4a1012bc7ab73ac96237ccede8c79b0920cc566",
+    "caelum/world/CaelumLandSources.zs": "1a725a93307132712c05c7a8bd478dfdf6b6935268fca87242d2d201bc4dd9ba",
+    "caelum/world/CaelumPortDefender.zs": "0677d183cac863aedd64e1db8dfaba42f5a8ef9f3061c2f2ac29b881b4f2b0ea",
+    "caelum/world/CaelumPortSiege.zs": "3f40d2ebdf3703a44c6e2f16023ce135206c6e23cd36bbbc969e6939d65ea49a",
+    "caelum/world/CaelumProfileEvents.zs": "e72c879d8cf056f52447172d6193a3770538b35fb4db855df0e7a6dc299784ea",
+    "caelum/world/CaelumProfileVacancy.zs": "796f437c19005c404b087ff50bbf7ac62f8d0a97628395e7c771e9d78660f8b9",
+    "caelum/world/CaelumSessionIdentity.zs": "0e651c08c4d7bbdeb0153e66de57004831d914f5bca6530b86a515e7ddecd224",
+    "caelum/world/CaelumSessionLifecycle.zs": "c705a76eac1da87979d220126c9ec243829854a72c758f5a393c658e9d5719df",
+    "caelum/world/CaelumSiegeEncounter.zs": "7dcb282c12a899d9e7d06dd3f06e3b42299af490666335c703955100aeb88004",
+    "caelum/world/CaelumStandaloneMatch.zs": "90f6a1f90e5b8e26526ad9d7fe5cdde0a1bef82094aba131f517ea112f0f0839",
+    "caelum/world/CaelumTravelVehicles.zs": "72af015f4a8fda14285515c4e36f113a412b37311ddbd21d4711620883d9cec2",
+    "caelum/world/CaelumWorldClock.zs": "df425dd3859f329b3b2137763bfac88d050a4536c15f2ba0584e570c328eaa2c",
+    "caelum/debug/CaelumDebugOverlay.zs": "2097c776b00812ba40846ac3ffb45fe610487e6bd40deff93c023ae27a7b0bfe",
+    "caelum/hud/CaelumHUDOverlay.zs": "0f5bbbcf314c68d7952cb0dcc3656d70154df4b2dba1132549e684a9e1eedbff",
+    "caelum/hud/CaelumStatusBar.zs": "b152cd17d4eb9653ed64ed236f64e084b803c11f20cfe122a8b9401d06905dda"
+  },
+  "window_tics": [
+    3599,
+    4299
+  ],
+  "report_tic": 4350,
+  "qualification": "Diagnostic every-tic nested scope timers: inclusive contains children; exclusive subtracts measured child bodies. Lookup/stack/timer overhead and uninstrumented work remain. PlayerThink entry of player0 defines each interval before WorldTick and Thinkers; HUD samples are assigned to the preceding simulation tic because native level.time increments before drawing. RenderUnderlay is after3D rendering; last RenderOverlay bounds the HUD callback phase. Remaining native/frame work is residual, not GPU time. No production performance or universal equivalence claim."
+}

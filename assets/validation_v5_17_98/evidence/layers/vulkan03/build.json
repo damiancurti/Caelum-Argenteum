@@ -1,0 +1,40 @@
+{
+  "issue": 840,
+  "command": [
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\mingw64\\bin\\g++.exe",
+    "-std=c++17",
+    "-O2",
+    "-shared",
+    "-static",
+    "-static-libgcc",
+    "-static-libstdc++",
+    "-Wl,--no-insert-timestamp",
+    "-IC:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\gzdoom-g4.14.2\\libraries\\ZVulkan\\include",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-vulkan03\\presentation_layer.cpp",
+    "-o",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue840-vulkan03\\ca_presentation.dll"
+  ],
+  "source_sha256": "07a03145e50de649633c79a28a79dc23859a5f5082b0665b384016e35a2fe450",
+  "binary_sha256": "477bba84b6bd15f3c16c06a5df3eb4850532ff2edc8f2c1029a0645920d7ca83",
+  "original_source_sha256": "3f67b76e1e40a3b1920a5366164b0bfcfe7a383566d77fc35d8e1f9c928b3493",
+  "compiler_sha256": "eccc5963340f7b57805b3750efc182c25c6d4eddb828c8cee2b0f974a0d943ac",
+  "minimum_recorded_cpu_ms": 1.0,
+  "maximum_rows": 120000,
+  "calls": [
+    "vkCreateGraphicsPipelines",
+    "vkCreateComputePipelines",
+    "vkAcquireNextImageKHR",
+    "vkQueueSubmit",
+    "vkWaitForFences",
+    "vkDeviceWaitIdle",
+    "vkQueueWaitIdle",
+    "vkAllocateMemory",
+    "vkMapMemory",
+    "vkCreateImage",
+    "vkCreateBuffer",
+    "vkResetCommandPool",
+    "vkResetFences",
+    "vkUpdateDescriptorSets"
+  ],
+  "qualification": "Private diagnostic child-process layer only. Slow selected API CPU durations, not GPU timing. Original presentation timing is retained; no engine, installed layer or production setting is replaced."
+}
