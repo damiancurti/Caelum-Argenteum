@@ -4819,3 +4819,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/kasogonaga_combat.modeldef"
 #include "caelum/data/apparition_combat.modeldef"
 #include "caelum/data/head_apparition_combat.modeldef"
+#include "caelum/data/period_apparition_combat.modeldef"

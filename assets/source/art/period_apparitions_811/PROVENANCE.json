@@ -1,0 +1,15 @@
+{
+  "issue": 811,
+  "status": "candidate_author_review_pending",
+  "author": "Damian Curti",
+  "reference_images": {
+    "assets/source/bestiary_453/imagenes/04_Apariciones/31_viuda.png": "20056af4424bdabfebc4027aa3a3ac4e5e32b627405d9754ab1b4dde7468c19c",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/32_llorona.png": "a061df9b00fcf7e51d2331cd0fd23c5bbd38ed8b450ccbb643de3c67a7d3f9e3",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/33_futre.png": "b7b16e44dd3b6c8eeabbc2916fe69d2b8ee9093f209a42f77e9b3c4e2592be3b"
+  },
+  "material_source": "MATERIALS_PROMPTS.json",
+  "geometry": "Original editable dimensionless anatomy/garment data authored against the supplied silhouettes. Existing owned deterministic mesh, closed cloth, face and animation pipeline.",
+  "limits": "Distinct period mourning/ivory dresses and a headless embroidered coat with empty collar. Fixed reference garments are candidate artwork, not new equipped inventory, alpha effects, powers or author approval.",
+  "fine_cloth_source": "FINE_CLOTH_PROMPT.json",
+  "native_refinement": "Initial native closeup exposed oversized lace, incomplete crown framing and missing reference high mourning collar; refine these original candidates, add Llorona toe volumes and closer inspection cameras."
+}

@@ -1219,3 +1219,12 @@ src/caelum/data/head_apparition_combat.modeldef text eol=lf
 
 /assets/validation_v5_17_83/*.py text eol=lf
 /assets/validation_v5_17_83/evidence/** -text -diff
+
+assets/validation_v5_17_84/*.py text eol=lf
+assets/validation_v5_17_84/evidence/** -text -diff
+assets/validation_v5_17_84/*.json -text
+assets/source/art/period_apparitions_811/** -text
+assets/generators/generate_period_apparition_models.py text eol=lf
+assets/generators/validate_period_apparition_models.py text eol=lf
+assets/generators/validate_period_garment_stride.py text eol=lf
+src/caelum/data/period_apparition_combat.modeldef text eol=lf

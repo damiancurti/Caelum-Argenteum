@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA811Events" }
+map CA455V "Viuda/Llorona/Futre inherited combat model" { sky1="CABASKY",0 nointermission }

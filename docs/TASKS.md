@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.83** - 2026-11-15.
+Documentation version: **5.17.84** - 2026-11-15.
+
+## 5.17.84 - Period candidates verified; full batch remains (#811)
+
+Viuda/Llorona/Futre pass deterministic export, 144 closed components, 1128 posed
+contact checks, 1488 extreme-stride coverage samples and 686 qualified native
+assertions. Keep CA811-PERIOD-01 and every earlier unconfirmed author check.
+Continue regional inspection and the remaining 26 creature models, other
+characters/modular fitting and V5.16 progression/performance work. Do not infer
+author acceptance or open the consolidated terminal before batch completion.
 
 ## 5.17.83 - Head galleries implemented; full batch remains (#809)
 

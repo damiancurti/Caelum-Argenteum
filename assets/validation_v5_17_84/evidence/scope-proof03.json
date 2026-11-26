@@ -1,0 +1,38 @@
+{
+  "issue": 811,
+  "runtime_sha256": "63040843cdb73fce9700872a700498a78982efd0a3834e2ce35cf10be4188dcb",
+  "baseline_sha256": "7bc1583b95bc30fdc6a8b9b04d4afba4de73de4461872f53cb5cbab07a55f539",
+  "package_exact_source_bytes": true,
+  "source_entries": 18590,
+  "added_resources": [
+    "caelum/data/period_apparition_combat.modeldef",
+    "models/caelum/folklore/periodapparitions/fine-cloth.png",
+    "models/caelum/folklore/periodapparitions/futre.md3",
+    "models/caelum/folklore/periodapparitions/llorona.md3",
+    "models/caelum/folklore/periodapparitions/materials.png",
+    "models/caelum/folklore/periodapparitions/viuda.md3"
+  ],
+  "changed_resources": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "all_other_runtime_bytes_identical": true,
+  "repeated_files": 14,
+  "export_sha256": {
+    "caelum/data/period_apparition_combat.modeldef": "ee4dfe8135de04fb942a82c920feae73036743bbbfb4fb0616e9e10a41a2a1f3",
+    "editable/futre.mtl": "5575112d33d455be956be68efcd8026031218ee35f7ba91bd27ce13c9cf8dfe8",
+    "editable/futre.obj": "391e2d3c3fff47c4a240a91cb87de49c1bb5a19584516a59877d3afa5c4e7527",
+    "editable/llorona.mtl": "5575112d33d455be956be68efcd8026031218ee35f7ba91bd27ce13c9cf8dfe8",
+    "editable/llorona.obj": "f65497f43e8b53355ac30e59272522b65e2564c4ecbd1c27a7eb48ef84ea7ea0",
+    "editable/viuda.mtl": "5575112d33d455be956be68efcd8026031218ee35f7ba91bd27ce13c9cf8dfe8",
+    "editable/viuda.obj": "ca17e6188aa1554422d7d52d4e8e6266f7c8ae92596f65b699ed7127e6f1586c",
+    "manifest.json": "e1ff8ee62c5ad5cd13274c617785c728027c17e8b5dac7b8fe614b9d814af627",
+    "models/caelum/folklore/periodapparitions/fine-cloth.png": "0464311a9011e636d6c70befd93640f32205d88978748e7f271123014b589e5a",
+    "models/caelum/folklore/periodapparitions/futre.md3": "7ffacef4f5cee12195ac78118b55c97fbbc37a547ec4e734ec2ecb3c6abcdc68",
+    "models/caelum/folklore/periodapparitions/llorona.md3": "12735c2174a2775e02d5ad2c28962efffcb6dcbea547fc7bb7f0316eabc52b3d",
+    "models/caelum/folklore/periodapparitions/materials.png": "101d1fd458732f45e887a24d8a0ea77d8864c8269b2b5dd11ba7c51fd3bf1a8e",
+    "models/caelum/folklore/periodapparitions/viuda.md3": "243ee5be009baba55b3244aed006d53ae4cec9b5b8b7ac057401a1b8609206da",
+    "preview.pk3": "e786258be659328f45e59452a80d763f39739e374d71ae7b0354e71c18d14cce"
+  }
+}
