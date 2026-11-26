@@ -4769,3 +4769,5 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_shields.modeldef"
 
 #include "caelum/data/inventory_plates.modeldef"
+
+#include "caelum/data/inventory_chainmail.modeldef"

@@ -1,0 +1,353 @@
+{
+  "issue": 706,
+  "parent_issue": 647,
+  "version": "5.17.31",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Chainmail material ID17, exact CaelumMaterialPickup M017/A, existing three tiers and native inventory behavior.",
+  "runtime": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-706\\build\\issue706-chainmail01.pk3",
+    "sha256": "a20a22e8501f2bd352a60061b15cfd7a307b6152d3d5ababd5cb166973b9fee2",
+    "source_entries": 18380,
+    "mismatches": []
+  },
+  "baseline": {
+    "sha256": "17e0ea4210dc5a617792fd6db16e23fc40fcf672b1ce7b507af740197cb7a8d7",
+    "new_resources": [
+      "caelum/data/inventory_chainmail.modeldef",
+      "models/caelum/inventory/chainmail/chainmail.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 6,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "vertices": 10560,
+    "triangles": 21120,
+    "surfaces": 3,
+    "rings": 55,
+    "linked_pairs": 90,
+    "connected_rings": 55,
+    "nearby_pairs_checked": 135,
+    "minimum_capsule_clearance": 0.5745693679115138,
+    "quantization_margin": 0.027065293868263705,
+    "native_triangles": 21120,
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 706,
+    "kind": "chainmail",
+    "scope": "Native pickup/toss, quantity and saved ownership for chainmail; no normal menu or author acceptance.",
+    "baseline_sha256": "17e0ea4210dc5a617792fd6db16e23fc40fcf672b1ce7b507af740197cb7a8d7",
+    "runtime_sha256": "a20a22e8501f2bd352a60061b15cfd7a307b6152d3d5ababd5cb166973b9fee2",
+    "model_sha256": null,
+    "fixture_sha256": "293461880a1719fd6083c83cb73d670a6e1cf8df6f8109379257dae37f7ea196",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 82
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 91
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 82
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 91
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 91
+      }
+    ],
+    "captures": {
+      "baseline.png": "0523f8dfe94f84003ff4c57f488e29d1d776ff471b7ac8921fcbab1f9fdf6405",
+      "candidate-0.png": "e2d9fc5fe14a478b4a910556fff07609d2f3e9eac42368993f73c86ae553d500",
+      "candidate-1.png": "6ced59a981e7a75ab775a3370f59f666942ded0df8f1b0ce8c2e1ac7192b8626",
+      "candidate-2.png": "13f29478d0982cd50fe2bc3ec836104d4893c6be71be1c0f22232b93310e2d4e",
+      "candidate-3.png": "79e23d241691e6c42beb80a6990899bef0e5ddb28c5007ab980e3172e6944134",
+      "candidate-5.png": "984b59aec7776c4cdefdc6e6090345817ef47b69600c2ae52491fbb679a1c208",
+      "candidate-6.png": "a2a63054fb36f38561cbfee20e49bce5d07842186e6271cd5f231f4754747eb5",
+      "candidate-7.png": "157278b44f618effabd9444d4cd3afbedd3bf08d5de033001874459547e69ef3",
+      "detail-0-0.png": "d4cbe2e405fe99bf55be241c8588d3cf760da3963604a9120cca36be1d4fc209",
+      "detail-0-160.png": "50d17f3ed12b42689fc67bd86ea1735ba8f9904298626f8a413ad80f9493dad7",
+      "detail-0-225.png": "d4b2e5133c38bf968078200cdf9851ac4e6aaa09a88300e6f2cbd0fd480907a6",
+      "detail-0-270.png": "7028c146b0594b2c120884df79570806f46edda61410d5a7e20931a12994e470",
+      "detail-0-90.png": "d19f900435b80b119cd6342f7f62b5c0659c830174b910045808ba4a9fe840d4"
+    }
+  },
+  "presentation": {
+    "issue": 706,
+    "kind": "chainmail",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "17e0ea4210dc5a617792fd6db16e23fc40fcf672b1ce7b507af740197cb7a8d7",
+    "runtime_sha256": "a20a22e8501f2bd352a60061b15cfd7a307b6152d3d5ababd5cb166973b9fee2",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 1,
+        "pid": 43964,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 263947543.27580002,
+          "END": 263967560.5953
+        },
+        "fixture_sha256": "b0d471a78852140d1d6f5c821426bb3815eef5a490e432a9d06a1258c842541f",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            1,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.570762142857145,
+          "p50_ms": 28.5704,
+          "p95_ms": 29.1816,
+          "p99_ms": 29.3328,
+          "max_ms": 29.8365
+        },
+        "presentation": {
+          "pid": 43964,
+          "trace_sha256": "2e3896ac248d0b6c9b746c70a6581949bbebe8bea83b8b43529f5d3b1387a200",
+          "rows": 30744,
+          "scene_presents": 20768,
+          "mean_present_fps": 1185.5749931104797,
+          "present_intervals": {
+            "samples": 20767,
+            "mean_ms": 0.843472581499375,
+            "p50_ms": 0.8183999955654144,
+            "p95_ms": 1.0130999982357025,
+            "p99_ms": 1.271800011396408,
+            "max_ms": 2.0617999732494354
+          },
+          "native_call_duration": {
+            "samples": 20768,
+            "mean_ms": 0.07552998842031498,
+            "p50_ms": 0.07500001788139343,
+            "p95_ms": 0.09860000014305115,
+            "p99_ms": 0.12880000472068787,
+            "max_ms": 0.5101000070571899
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 1,
+        "pid": 44332,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 263981822.827,
+          "END": 264001841.5235
+        },
+        "fixture_sha256": "b0d471a78852140d1d6f5c821426bb3815eef5a490e432a9d06a1258c842541f",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            1,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.570995857142858,
+          "p50_ms": 28.5796,
+          "p95_ms": 29.2137,
+          "p99_ms": 29.3663,
+          "max_ms": 29.6004
+        },
+        "presentation": {
+          "pid": 44332,
+          "trace_sha256": "06094226ec7029ee9c8da676b6fc81bf59e928a4dac93de311b7e2f578e633a6",
+          "rows": 30919,
+          "scene_presents": 20601,
+          "mean_present_fps": 1175.951806115292,
+          "present_intervals": {
+            "samples": 20600,
+            "mean_ms": 0.8503749854370807,
+            "p50_ms": 0.8183000087738037,
+            "p95_ms": 1.038100004196167,
+            "p99_ms": 1.2694000005722046,
+            "max_ms": 2.3339000046253204
+          },
+          "native_call_duration": {
+            "samples": 20601,
+            "mean_ms": 0.07592988209807522,
+            "p50_ms": 0.07590001821517944,
+            "p95_ms": 0.09999999403953552,
+            "p99_ms": 0.12919998168945312,
+            "max_ms": 0.3845999836921692
+          }
+        }
+      }
+    ]
+  },
+  "iterations": "First static check rejected excessive height from width-only fitting. Height fitting then preserves both sprite envelopes. First native preview passes82 assertions but shows flat-looking texture bands. Reorienting the unchanged iron UVs around wire thickness improves volume cues; second preview passes82. All geometry remains unchanged between model02/03; final03/04 repeats six files. Initial staging lacked raw-evidence attributes and flagged original engine log whitespace. Explicit -text/-diff attributes now preserve those bytes; no log was trimmed and no runtime asset changed.",
+  "art": {
+    "source": "assets/source/art/inventory_models_647/chainmail",
+    "new_image_generation": false,
+    "original_pixels_preserved": true,
+    "reviewed_views": "Original icon and owned iron atlas; first preview front/edge; final front, edge, rear-oblique, rear, raised underside, floor overview and both presentation cohorts.",
+    "author_check": "CA706-CHAINMAIL-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "A static simplified panel, not cloth simulation or worn equipment. The uniform reused iron and regular weave remain candidate art.",
+    "One sequential700-tic single-object sprite/model sample: queue intervals, not GPU/display timing, repeated-run statistics or campaign/crowd acceptance. Different footprints prevent equal-pixel claims.",
+    "The native fixture directly calls pickup/toss and prepares Box/quest state; ordinary menus/crafting and author acceptance remain separate.",
+    "No balance, recipes, inventory schema, collision or old source texture changes.",
+    "No executable, IWAD, PK3, WAD, DLL or save is committed."
+  ],
+  "files": {
+    "continuity/baseline-process.log": "471049bae20aad185b885792c9e117e4493607e013b6f56b574ad6689fe5c7e3",
+    "continuity/baseline.cfg": "dec4f61732b214da8279b95f053e44eec7e3ee5bec6397463d7ffefbe31be717",
+    "continuity/baseline.log": "2caca955087d51295d8f218c155c612d841878a5a49930bda02192b7771ab854",
+    "continuity/baseline.png": "0523f8dfe94f84003ff4c57f488e29d1d776ff471b7ac8921fcbab1f9fdf6405",
+    "continuity/candidate-0.png": "e2d9fc5fe14a478b4a910556fff07609d2f3e9eac42368993f73c86ae553d500",
+    "continuity/candidate-1.png": "6ced59a981e7a75ab775a3370f59f666942ded0df8f1b0ce8c2e1ac7192b8626",
+    "continuity/candidate-2.png": "13f29478d0982cd50fe2bc3ec836104d4893c6be71be1c0f22232b93310e2d4e",
+    "continuity/candidate-3.png": "79e23d241691e6c42beb80a6990899bef0e5ddb28c5007ab980e3172e6944134",
+    "continuity/candidate-5.png": "984b59aec7776c4cdefdc6e6090345817ef47b69600c2ae52491fbb679a1c208",
+    "continuity/candidate-6.png": "a2a63054fb36f38561cbfee20e49bce5d07842186e6271cd5f231f4754747eb5",
+    "continuity/candidate-7.png": "157278b44f618effabd9444d4cd3afbedd3bf08d5de033001874459547e69ef3",
+    "continuity/candidate-fresh-process.log": "567b2282a0b6de8a4e0ea29c9dee65c4d6bbcfe5d5f2eea922480bce4e376f2b",
+    "continuity/candidate-fresh.cfg": "62df4a5000ed2b285006a83c029a8fc3a4206fb1765b9997300ed1bded9ce936",
+    "continuity/candidate-fresh.log": "8c1fbb9530789495e2d982ebc1e0bac793dfeb3ec4c94b626f944ae02d8066cf",
+    "continuity/candidate-reload-process.log": "1960aee1d7aec48e649f3fcc8186fcce295d46833499246172f52b1502b76ea4",
+    "continuity/candidate-reload.cfg": "6949f0f7e4ba3aca70723d659c046f286c51426200c836c5fbe7be7b72e86561",
+    "continuity/candidate-reload.log": "781c8f6485a1b4796e02fbe3abbf89953e0547f59f61c74e1e3cef4cb1cf9a21",
+    "continuity/detail-0-0.png": "d4cbe2e405fe99bf55be241c8588d3cf760da3963604a9120cca36be1d4fc209",
+    "continuity/detail-0-160.png": "50d17f3ed12b42689fc67bd86ea1735ba8f9904298626f8a413ad80f9493dad7",
+    "continuity/detail-0-225.png": "d4b2e5133c38bf968078200cdf9851ac4e6aaa09a88300e6f2cbd0fd480907a6",
+    "continuity/detail-0-270.png": "7028c146b0594b2c120884df79570806f46edda61410d5a7e20931a12994e470",
+    "continuity/detail-0-90.png": "d19f900435b80b119cd6342f7f62b5c0659c830174b910045808ba4a9fe840d4",
+    "continuity/fixture-source/MAPINFO.txt": "5f10b2ad89a41e618457df9f2af65d711b2c865d595aafd27841e1bc06572e9e",
+    "continuity/fixture-source/ZSCRIPT.txt": "e35b4d82ba508807597aeb9931775a4f93b4012400c7043e73bdd4e0442f0007",
+    "continuity/fixture.zs": "b5bc6a55e0d7fdac5dd41bc23205275ddac6199965347d3184f6e1b9907c0e98",
+    "continuity/old-save-load-process.log": "cd424496a944d675c918ae28a922e50b69e97757b9362d40e744fa410545a8f9",
+    "continuity/old-save-load.cfg": "69a90985f6ebd9b803820a46f71ed1094a19799d8ee6ba5140eb2cdfd77cfc05",
+    "continuity/old-save-load.log": "51eb223a6e6c5588426aab16e4c70d016aed52e968019c3eacf89bdfda41536b",
+    "continuity/RESULTS.json": "086195f059476059fd0e0478b389573eb1dc2536b8f1917cbba64f2f6ba8278b",
+    "continuity/rollback-load-process.log": "8c0dfb20f395eafa31f3d6735f88ffd1abfcc25ccce199f9192f971b0a97e7a8",
+    "continuity/rollback-load.cfg": "6949f0f7e4ba3aca70723d659c046f286c51426200c836c5fbe7be7b72e86561",
+    "continuity/rollback-load.log": "ba19b717dd35313389cf4e8f8a4de8a5b5e19679381471e5bfb49a9bf646bc7d",
+    "continuity/session.ini": "6f374c03633ff86e3e2ab622048d27dc7d443c8ff57eee9d2eae3a6670cd31c9",
+    "exports/model01.json": "51d48eb4ec21c0b1563c0f8f470b0117bef76e3251cb4eecb3e42c0258d49675",
+    "exports/model02.json": "e55712f885aaed9c28d72e1d1d82b450377921dce4511945884be5dbfc54e708",
+    "exports/model03.json": "a58d82ce1e755e4ce86153869ec41c69aef4d407257d9c5c34abf07433a45d99",
+    "exports/model04.json": "a58d82ce1e755e4ce86153869ec41c69aef4d407257d9c5c34abf07433a45d99",
+    "issue706-build01.log": "a64ea08d2fbd6cf637f9b8cba779205fd2c6f7b073cbc407048fe97c6caf4826",
+    "issue706-design01.json": "47dade6702b41f7f728bd6cb4efad563ff5f0c52c7039276f08745f1872ebdff",
+    "issue706-generator01.py": "875723c6549ae7b3de3ff1f76c1610173aaeb91401700a804fbce92ab94c9995",
+    "issue706-geometry-final.log": "b1caaaa8423023e11cdb5e924928b27c107dbb1f1406eb5b513675b29f1fc504",
+    "issue706-geometry01.log": "c4604739242225ae2f3513c04f0a7b92082be6b38c21bad609a04e18269e05bd",
+    "issue706-geometry02.log": "b1caaaa8423023e11cdb5e924928b27c107dbb1f1406eb5b513675b29f1fc504",
+    "issue706-installed-check.log": "8b8371a086393ded175adcf399926d12286accf9071c219385eb00792bf624c2",
+    "issue706-repeat-proof.json": "57b306815735c5c6b67c4bb2a954b42bcdbbe4e046428a6b05dbb285945523ec",
+    "iterations/visual01/candidate-0.png": "53e113db00a9266712c032d2194105a555b311d9cb159e07c8bfe0331d6a7905",
+    "iterations/visual01/candidate-1.png": "26dc335e592ea5db0ff0465e8b8af569ca8ae5e2908f45164200aa107a4dd0aa",
+    "iterations/visual01/candidate-2.png": "42362f4b0872b4a994a8939b6608eaf6c956f819d6846063399e9a4d2176a9a4",
+    "iterations/visual01/candidate-3.png": "a15a061d634f8d81fff65f2736214c29ed67d0efad9313d4b780477b4ce06abc",
+    "iterations/visual01/candidate-5.png": "ec1b6cb4b37304c8f0786762447f99508b1cfc070e00eb44a46ce9698a143320",
+    "iterations/visual01/candidate-6.png": "7016f5cdb4ae456256b0575131975148f3bde7d71728957d0aa4502a287d667b",
+    "iterations/visual01/candidate-7.png": "4a1704d85114b581c9e5dd4eec3767d6c3b062d8366cc46300b0c388ca3415a7",
+    "iterations/visual01/detail-0-0.png": "cb1b002f8d302b2a7463741d70e2621f11f160ee6eb9acb13a78539a3adffca8",
+    "iterations/visual01/detail-0-160.png": "de55e39cf3378d7d8952295c4cf38a234da0eccadc7b5a6a5de562cce57c3cca",
+    "iterations/visual01/detail-0-225.png": "66992f9fd002befb740c7e68875c7a6e692e7eb2d0c4b45b70f7cb90579036cc",
+    "iterations/visual01/detail-0-270.png": "ba09399c92976b070dcfd1e4742fe7bbb631f4eb22b99619cbc557ad6517f329",
+    "iterations/visual01/detail-0-90.png": "e903ca3de0f8d56a4b186f9a431eb75a3c7aeb04ae078a47505609f7fd6d7f32",
+    "iterations/visual01/fixture-source/MAPINFO.txt": "5f10b2ad89a41e618457df9f2af65d711b2c865d595aafd27841e1bc06572e9e",
+    "iterations/visual01/fixture-source/ZSCRIPT.txt": "e35b4d82ba508807597aeb9931775a4f93b4012400c7043e73bdd4e0442f0007",
+    "iterations/visual01/fixture.zs": "b5bc6a55e0d7fdac5dd41bc23205275ddac6199965347d3184f6e1b9907c0e98",
+    "iterations/visual01/RESULTS.json": "f8e6a3efde7097d1e7a1005cf2a9f720563d21f1c8c5802c04263ec40175d24c",
+    "iterations/visual01/session.ini": "a0aa45595d0a65434d911c71e2c8c426093f78e90f6fc681745ea57f27e4a2a0",
+    "iterations/visual01/visual-process.log": "748264d7ca373fed9a11263224887d75a60fd1deb266a9ad6292507a5d171116",
+    "iterations/visual01/visual.cfg": "ddd3267da6cacb6069ede134db6dd417021653e9b7feb0d9607482e917377c43",
+    "iterations/visual01/visual.log": "07d40ff0befec14c9e2730961f92078c0d9ff26234dc0a311b96593e5a0e7825",
+    "iterations/visual02/candidate-0.png": "e2d9fc5fe14a478b4a910556fff07609d2f3e9eac42368993f73c86ae553d500",
+    "iterations/visual02/candidate-1.png": "6ced59a981e7a75ab775a3370f59f666942ded0df8f1b0ce8c2e1ac7192b8626",
+    "iterations/visual02/candidate-2.png": "13f29478d0982cd50fe2bc3ec836104d4893c6be71be1c0f22232b93310e2d4e",
+    "iterations/visual02/candidate-3.png": "79e23d241691e6c42beb80a6990899bef0e5ddb28c5007ab980e3172e6944134",
+    "iterations/visual02/candidate-5.png": "984b59aec7776c4cdefdc6e6090345817ef47b69600c2ae52491fbb679a1c208",
+    "iterations/visual02/candidate-6.png": "a2a63054fb36f38561cbfee20e49bce5d07842186e6271cd5f231f4754747eb5",
+    "iterations/visual02/candidate-7.png": "157278b44f618effabd9444d4cd3afbedd3bf08d5de033001874459547e69ef3",
+    "iterations/visual02/detail-0-0.png": "d4cbe2e405fe99bf55be241c8588d3cf760da3963604a9120cca36be1d4fc209",
+    "iterations/visual02/detail-0-160.png": "50d17f3ed12b42689fc67bd86ea1735ba8f9904298626f8a413ad80f9493dad7",
+    "iterations/visual02/detail-0-225.png": "d4b2e5133c38bf968078200cdf9851ac4e6aaa09a88300e6f2cbd0fd480907a6",
+    "iterations/visual02/detail-0-270.png": "7028c146b0594b2c120884df79570806f46edda61410d5a7e20931a12994e470",
+    "iterations/visual02/detail-0-90.png": "d19f900435b80b119cd6342f7f62b5c0659c830174b910045808ba4a9fe840d4",
+    "iterations/visual02/fixture-source/MAPINFO.txt": "5f10b2ad89a41e618457df9f2af65d711b2c865d595aafd27841e1bc06572e9e",
+    "iterations/visual02/fixture-source/ZSCRIPT.txt": "e35b4d82ba508807597aeb9931775a4f93b4012400c7043e73bdd4e0442f0007",
+    "iterations/visual02/fixture.zs": "b5bc6a55e0d7fdac5dd41bc23205275ddac6199965347d3184f6e1b9907c0e98",
+    "iterations/visual02/RESULTS.json": "2631fa9811ca75e5a86719efc1090bfc8cca72c124ad19f2946ab94f6ac7a12b",
+    "iterations/visual02/session.ini": "f88705f917c8a0c7c76340dd4970fceaaa4bdb77ddff3178c63b4eb711afe85e",
+    "iterations/visual02/visual-process.log": "08395232928abfcda2735ec8cc61bb369ec38d6fe09819f5aac1d4be415a49d4",
+    "iterations/visual02/visual.cfg": "ddd3267da6cacb6069ede134db6dd417021653e9b7feb0d9607482e917377c43",
+    "iterations/visual02/visual.log": "5a1ec31006e8b4bf53eb5f71b75029f40da3ef8f194b76a3781e26ea3a4d09c0",
+    "presentation/models-1/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-1/engine.log": "d312618bf6ed8fd7d54f3bd18e6195c8b234972d70fb4a6dce79813a5e1c64fd",
+    "presentation/models-1/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-1/fixture-source/ZSCRIPT.txt": "14c8785cfb17e0bdcf639ca654e3c6390b978f7a2e051cc885b1c0cd4887bff6",
+    "presentation/models-1/presents.csv": "06094226ec7029ee9c8da676b6fc81bf59e928a4dac93de311b7e2f578e633a6",
+    "presentation/models-1/process.log": "0a8048337991905736d815d74b1cbf4accf7667a2d9bdc3e1faed70a8d387ed0",
+    "presentation/models-1/scene.png": "f6b9120de0aaa21a1d9251078ad97405ddf373bae05b856ff9e11f80757fb8af",
+    "presentation/models-1/session.ini": "ac5ac13fc3b24cec4975c45685f1db8e11405cbc36d12dd3387d6338cc62c223",
+    "presentation/RESULTS.json": "0a5636ce7f17e0733c612c248732cfa626c76c92d6e744ee80990f2359d70eee",
+    "presentation/sprites-1/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-1/engine.log": "3ea329c10f791b1a952cfc0dc38f32eaf2ecc971cc466938dcb739193f06d197",
+    "presentation/sprites-1/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-1/fixture-source/ZSCRIPT.txt": "14c8785cfb17e0bdcf639ca654e3c6390b978f7a2e051cc885b1c0cd4887bff6",
+    "presentation/sprites-1/presents.csv": "2e3896ac248d0b6c9b746c70a6581949bbebe8bea83b8b43529f5d3b1387a200",
+    "presentation/sprites-1/process.log": "f47b1835ddf7a78d218951004a0e8f26f5bf5d648ce32b82991a8c8d50fdc31d",
+    "presentation/sprites-1/scene.png": "d98a2fb4cacafccdf0d6bb41441a6c0099f82a62af3d09cc39841fa685550a9a",
+    "presentation/sprites-1/session.ini": "bf59f2e2d8f71418bd1b961c19624e978b16da0856550e9fa104728d301870f8",
+    "validation-final.json": "74fbebe178aa49ec1037fda918dc0607bb4e2fc19985f464e06e41b564c41b91",
+    "initial-staged-diffcheck.log": "8a28996f918671f857512e6106b705a1f61c0033b041c0bb33dedf688aeefc83"
+  }
+}

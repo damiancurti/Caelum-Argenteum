@@ -1,0 +1,33 @@
+{
+  "issue": 706,
+  "kind": "chainmail",
+  "scope": "Native pickup/toss, quantity and saved ownership for chainmail; no normal menu or author acceptance.",
+  "baseline_sha256": "17e0ea4210dc5a617792fd6db16e23fc40fcf672b1ce7b507af740197cb7a8d7",
+  "runtime_sha256": "17e0ea4210dc5a617792fd6db16e23fc40fcf672b1ce7b507af740197cb7a8d7",
+  "model_sha256": "b53101546169ffb7c0234d1a417e42429e2b4fb3c3253bfaaad9ed7f0d3d16cc",
+  "fixture_sha256": "293461880a1719fd6083c83cb73d670a6e1cf8df6f8109379257dae37f7ea196",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 82
+    }
+  ],
+  "captures": {
+    "candidate-0.png": "53e113db00a9266712c032d2194105a555b311d9cb159e07c8bfe0331d6a7905",
+    "candidate-1.png": "26dc335e592ea5db0ff0465e8b8af569ca8ae5e2908f45164200aa107a4dd0aa",
+    "candidate-2.png": "42362f4b0872b4a994a8939b6608eaf6c956f819d6846063399e9a4d2176a9a4",
+    "candidate-3.png": "a15a061d634f8d81fff65f2736214c29ed67d0efad9313d4b780477b4ce06abc",
+    "candidate-5.png": "ec1b6cb4b37304c8f0786762447f99508b1cfc070e00eb44a46ce9698a143320",
+    "candidate-6.png": "7016f5cdb4ae456256b0575131975148f3bde7d71728957d0aa4502a287d667b",
+    "candidate-7.png": "4a1704d85114b581c9e5dd4eec3767d6c3b062d8366cc46300b0c388ca3415a7",
+    "detail-0-0.png": "cb1b002f8d302b2a7463741d70e2621f11f160ee6eb9acb13a78539a3adffca8",
+    "detail-0-160.png": "de55e39cf3378d7d8952295c4cf38a234da0eccadc7b5a6a5de562cce57c3cca",
+    "detail-0-225.png": "66992f9fd002befb740c7e68875c7a6e692e7eb2d0c4b45b70f7cb90579036cc",
+    "detail-0-270.png": "ba09399c92976b070dcfd1e4742fe7bbb631f4eb22b99619cbc557ad6517f329",
+    "detail-0-90.png": "e903ca3de0f8d56a4b186f9a431eb75a3c7aeb04ae078a47505609f7fd6d7f32"
+  }
+}

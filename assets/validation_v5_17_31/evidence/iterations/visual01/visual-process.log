@@ -1,0 +1,155 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-14 06:41:42
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-704/build/issue704-plates02.pk3, 18378 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-706/build/issue706-model02/preview.pk3, 3 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-706/build/issue706-visual01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2493.57 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA706 PASS chainmail 0 native pickup
+CA706 PASS chainmail 0 native distinct ownership
+CA706 PASS chainmail 0 existing boxed weight
+CA706 PASS chainmail 0 quest drop guard
+CA706 PASS chainmail 0 native split
+CA706 PASS chainmail 1 native pickup
+CA706 PASS chainmail 1 native distinct ownership
+CA706 PASS chainmail 1 existing boxed weight
+CA706 PASS chainmail 1 quest drop guard
+CA706 PASS chainmail 1 native split
+CA706 PASS chainmail 2 native pickup
+CA706 PASS chainmail 2 native distinct ownership
+CA706 PASS chainmail 2 existing boxed weight
+CA706 PASS chainmail 2 quest drop guard
+CA706 PASS chainmail 2 native split
+Game saved.
+CA706 PASS chainmail and three tiers
+CA706 PASS chainmail 0 saved references
+CA706 PASS chainmail 0 world and held ownership
+CA706 PASS chainmail 0 split quantities
+CA706 PASS chainmail 0 material and tier identity
+CA706 PASS chainmail 0 distinct native stack
+CA706 PASS chainmail 0 original sprite and icon
+CA706 PASS chainmail 0 native collision and scale
+CA706 PASS chainmail 0 unit weight
+CA706 PASS chainmail 0 floor contact
+CA706 PASS chainmail 0 native class, sprite and icon
+CA706 PASS chainmail 0 dropped provenance record
+CA706 PASS chainmail 0 dropped provenance marker
+CA706 PASS chainmail 0 dropped surface ledger units
+CA706 PASS chainmail 0 dropped original lot boundaries
+CA706 PASS chainmail 0 dropped contamination retained
+CA706 PASS chainmail 0 dropped location and quest flags
+CA706 PASS chainmail 0 held provenance record
+CA706 PASS chainmail 0 held provenance marker
+CA706 PASS chainmail 0 held surface ledger units
+CA706 PASS chainmail 0 held original lot boundaries
+CA706 PASS chainmail 0 held contamination retained
+CA706 PASS chainmail 0 held location and quest flags
+CA706 PASS chainmail 1 saved references
+CA706 PASS chainmail 1 world and held ownership
+CA706 PASS chainmail 1 split quantities
+CA706 PASS chainmail 1 material and tier identity
+CA706 PASS chainmail 1 distinct native stack
+CA706 PASS chainmail 1 original sprite and icon
+CA706 PASS chainmail 1 native collision and scale
+CA706 PASS chainmail 1 unit weight
+CA706 PASS chainmail 1 floor contact
+CA706 PASS chainmail 1 native class, sprite and icon
+CA706 PASS chainmail 1 dropped provenance record
+CA706 PASS chainmail 1 dropped provenance marker
+CA706 PASS chainmail 1 dropped surface ledger units
+CA706 PASS chainmail 1 dropped original lot boundaries
+CA706 PASS chainmail 1 dropped contamination retained
+CA706 PASS chainmail 1 dropped location and quest flags
+CA706 PASS chainmail 1 held provenance record
+CA706 PASS chainmail 1 held provenance marker
+CA706 PASS chainmail 1 held surface ledger units
+CA706 PASS chainmail 1 held original lot boundaries
+CA706 PASS chainmail 1 held contamination retained
+CA706 PASS chainmail 1 held location and quest flags
+CA706 PASS chainmail 2 saved references
+CA706 PASS chainmail 2 world and held ownership
+CA706 PASS chainmail 2 split quantities
+CA706 PASS chainmail 2 material and tier identity
+CA706 PASS chainmail 2 distinct native stack
+CA706 PASS chainmail 2 original sprite and icon
+CA706 PASS chainmail 2 native collision and scale
+CA706 PASS chainmail 2 unit weight
+CA706 PASS chainmail 2 floor contact
+CA706 PASS chainmail 2 native class, sprite and icon
+CA706 PASS chainmail 2 dropped provenance record
+CA706 PASS chainmail 2 dropped provenance marker
+CA706 PASS chainmail 2 dropped surface ledger units
+CA706 PASS chainmail 2 dropped original lot boundaries
+CA706 PASS chainmail 2 dropped contamination retained
+CA706 PASS chainmail 2 dropped location and quest flags
+CA706 PASS chainmail 2 held provenance record
+CA706 PASS chainmail 2 held provenance marker
+CA706 PASS chainmail 2 held surface ledger units
+CA706 PASS chainmail 2 held original lot boundaries
+CA706 PASS chainmail 2 held contamination retained
+CA706 PASS chainmail 2 held location and quest flags
+CA706 COMPLETE failures=0
+Captured candidate-0.png
+Captured candidate-1.png
+Captured candidate-2.png
+Captured candidate-3.png
+Captured candidate-5.png
+Captured candidate-6.png
+Captured candidate-7.png
+Captured detail-0-0.png
+Captured detail-0-90.png
+Captured detail-0-160.png
+Captured detail-0-225.png
+Captured detail-0-270.png

@@ -1,0 +1,62 @@
+{
+  "issue": 706,
+  "kind": "chainmail",
+  "scope": "Native pickup/toss, quantity and saved ownership for chainmail; no normal menu or author acceptance.",
+  "baseline_sha256": "17e0ea4210dc5a617792fd6db16e23fc40fcf672b1ce7b507af740197cb7a8d7",
+  "runtime_sha256": "a20a22e8501f2bd352a60061b15cfd7a307b6152d3d5ababd5cb166973b9fee2",
+  "model_sha256": null,
+  "fixture_sha256": "293461880a1719fd6083c83cb73d670a6e1cf8df6f8109379257dae37f7ea196",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 82
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 91
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 82
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 91
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 91
+    }
+  ],
+  "captures": {
+    "baseline.png": "0523f8dfe94f84003ff4c57f488e29d1d776ff471b7ac8921fcbab1f9fdf6405",
+    "candidate-0.png": "e2d9fc5fe14a478b4a910556fff07609d2f3e9eac42368993f73c86ae553d500",
+    "candidate-1.png": "6ced59a981e7a75ab775a3370f59f666942ded0df8f1b0ce8c2e1ac7192b8626",
+    "candidate-2.png": "13f29478d0982cd50fe2bc3ec836104d4893c6be71be1c0f22232b93310e2d4e",
+    "candidate-3.png": "79e23d241691e6c42beb80a6990899bef0e5ddb28c5007ab980e3172e6944134",
+    "candidate-5.png": "984b59aec7776c4cdefdc6e6090345817ef47b69600c2ae52491fbb679a1c208",
+    "candidate-6.png": "a2a63054fb36f38561cbfee20e49bce5d07842186e6271cd5f231f4754747eb5",
+    "candidate-7.png": "157278b44f618effabd9444d4cd3afbedd3bf08d5de033001874459547e69ef3",
+    "detail-0-0.png": "d4cbe2e405fe99bf55be241c8588d3cf760da3963604a9120cca36be1d4fc209",
+    "detail-0-160.png": "50d17f3ed12b42689fc67bd86ea1735ba8f9904298626f8a413ad80f9493dad7",
+    "detail-0-225.png": "d4b2e5133c38bf968078200cdf9851ac4e6aaa09a88300e6f2cbd0fd480907a6",
+    "detail-0-270.png": "7028c146b0594b2c120884df79570806f46edda61410d5a7e20931a12994e470",
+    "detail-0-90.png": "d19f900435b80b119cd6342f7f62b5c0659c830174b910045808ba4a9fe840d4"
+  }
+}

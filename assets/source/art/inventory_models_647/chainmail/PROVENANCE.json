@@ -1,0 +1,8 @@
+{
+  "issue": 706,
+  "owner": "Dami\u00e1n Curti / Caelum Argenteum",
+  "reference": "src/graphics/caelum/icons/materials/ca_material_chainmail.png",
+  "material": "Existing owned training-dummy iron, byte-identical. No new bitmap or external model.",
+  "method": "Original editable closed torus links assembled into a connected interlaced panel. Deterministic native MD3 through the unchanged inventory exporter.",
+  "limits": "Candidate art, static prop only. Worn chainmail and other chain materials are separate."
+}

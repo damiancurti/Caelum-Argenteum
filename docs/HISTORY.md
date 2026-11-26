@@ -1,6 +1,24 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.30** - 2026-11-14.
+Documentation version: **5.17.31** - 2026-11-14.
+
+## 5.17.31 - Linked-ring chainmail world prop (#706, 2026-11-14)
+
+Applied the all-dropped-items 3D request to chainmail material ID 17, preserving
+all three tiers and inventory rules. The original icon remains untouched;
+55 closed links reuse owned iron. Independent serialized checks verify all
+90 interlaces, open centers, surface clearance and quantized native triangles.
+Corrected an initial height-envelope failure and flat-looking UV orientation;
+both native previews pass 82 assertions, with no geometry change for the UV fix.
+
+Final native evidence: 437 assertions ([82, 91, 82, 91, 91]), all three tiers and both
+save directions. Six exported files repeat and all 18,380
+package entries match src. One qualified 700-tic single-object comparison
+records 1185.57/1175.95 queue presents/s, p95 1.0131/1.0381 ms and p99 1.2718/1.2694 ms. Different
+footprints and queue-only timing limit the result. CA-KP-241 records linked
+assembly verification. Evidence: assets/validation_v5_17_31/evidence/SUMMARY.json.
+CA706-CHAINMAIL-01 originates here and remains pending. This static regular
+panel remains candidate art; worn armor and the broader batch are unfinished.
 
 ## 5.17.30 - Six metal plate material models (#704, 2026-11-14)
 
