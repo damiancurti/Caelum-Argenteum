@@ -12,3 +12,8 @@ CA904-EQUIPMENT-01 | Origin: 5.18.7 / #904
 Prerequisites: hardware renderer and the model inspection room.
 Steps: inspect the held weapon, shield and worn armor stations from all sides. In third person equip and remove a weapon, shield, helmet, torso piece, gloves and boots.
 Expected: each piece occupies its own socket and follows the actor. Removing it uncovers the base clothing. Note the item, family and angle of any clipping.
+
+CA905-BULL-01 | Origin: 5.18.8 / #905
+Prerequisites: model gallery or a map containing a bull with the 3D model enabled.
+Steps: inspect the forehead, horn spread, muzzle, brisket, withers and hooves from front and side. Watch the walk and charge in play.
+Expected: a recognizable bull in every view with the original gait and attack timings.

@@ -965,4 +965,183 @@
     "factor": 1.5,
     "gait_stride": "Scale distance-driven visual stride by the same factor; native movement and attack timing remain unchanged."
   }
+,
+  "anatomy_refinement": [
+    {
+      "part": "withers",
+      "center": [
+        0.105,
+        0.055,
+        0.46
+      ],
+      "radius": [
+        0.18,
+        0.16,
+        0.105
+      ],
+      "width": 0.32,
+      "forward": 0,
+      "raise": 0.06
+    },
+    {
+      "part": "shoulder",
+      "center": [
+        0.12,
+        0.115,
+        0.32
+      ],
+      "radius": [
+        0.12,
+        0.09,
+        0.13
+      ],
+      "width": 0.27,
+      "forward": 0.01,
+      "raise": 0.012
+    },
+    {
+      "part": "brisket",
+      "center": [
+        0.19,
+        0.04,
+        0.25
+      ],
+      "radius": [
+        0.11,
+        0.095,
+        0.06
+      ],
+      "width": 0.16,
+      "forward": 0.025,
+      "raise": -0.047
+    },
+    {
+      "part": "dewlap",
+      "center": [
+        0.275,
+        0.019,
+        0.286
+      ],
+      "radius": [
+        0.115,
+        0.047,
+        0.045
+      ],
+      "width": 0.025,
+      "forward": 0.017,
+      "raise": -0.045
+    },
+    {
+      "part": "forehead",
+      "center": [
+        0.31,
+        0.04,
+        0.438
+      ],
+      "radius": [
+        0.105,
+        0.105,
+        0.07
+      ],
+      "width": 0.15,
+      "forward": 0,
+      "raise": 0.019
+    },
+    {
+      "part": "muzzle",
+      "center": [
+        0.465,
+        0.054,
+        0.288
+      ],
+      "radius": [
+        0.073,
+        0.11,
+        0.04
+      ],
+      "width": 0.16,
+      "forward": 0.018,
+      "raise": -0.011
+    },
+    {
+      "part": "horn flare",
+      "center": [
+        0.26,
+        0.205,
+        0.52
+      ],
+      "radius": [
+        0.115,
+        0.075,
+        0.095
+      ],
+      "width": 0.32,
+      "forward": 0.008,
+      "raise": 0.017
+    },
+    {
+      "part": "horn tips",
+      "center": [
+        0.31,
+        0.17,
+        0.598
+      ],
+      "radius": [
+        0.07,
+        0.08,
+        0.04
+      ],
+      "width": 0.38,
+      "forward": 0.029,
+      "raise": 0.016
+    },
+    {
+      "part": "hindquarters",
+      "center": [
+        -0.25,
+        0.08,
+        0.355
+      ],
+      "radius": [
+        0.135,
+        0.12,
+        0.11
+      ],
+      "width": 0.105,
+      "forward": 0,
+      "raise": 0.012
+    },
+    {
+      "part": "front hoof",
+      "center": [
+        0.205,
+        0.105,
+        0.025
+      ],
+      "radius": [
+        0.07,
+        0.06,
+        0.035
+      ],
+      "width": 0.1,
+      "forward": 0.009,
+      "raise": 0
+    },
+    {
+      "part": "hind hoof",
+      "center": [
+        -0.28,
+        0.105,
+        0.025
+      ],
+      "radius": [
+        0.08,
+        0.06,
+        0.035
+      ],
+      "width": 0.1,
+      "forward": 0.004,
+      "raise": 0
+    }
+  ]
 }

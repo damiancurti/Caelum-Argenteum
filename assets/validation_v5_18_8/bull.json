@@ -1,0 +1,42 @@
+{
+  "issue": 905,
+  "source": "c28b9701ff2a2727d6cd27c017165aef6976c094e718d76810b26c6163cb0a52",
+  "sha256": "6d7bb9104e5a60160daaef565ca51b1d4750de7f9152f067d5ffc11387f8ca33",
+  "frames": 136,
+  "triangles": 10580,
+  "vertices": 9273,
+  "actions": [
+    "Idle",
+    "Walk",
+    "Run",
+    "Prepare",
+    "PrepareTrial",
+    "Charge",
+    "Gore",
+    "Pain",
+    "Death",
+    "Corpse",
+    "Rest",
+    "Stun"
+  ],
+  "repeat_exports_equal": true,
+  "triangles_and_uv_unchanged": true,
+  "native_angle_and_frame": [
+    [
+      270,
+      0
+    ],
+    [
+      0,
+      20
+    ],
+    [
+      330,
+      24
+    ],
+    [
+      315,
+      52
+    ]
+  ]
+}

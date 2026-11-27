@@ -26,6 +26,31 @@ def fixed(value, length):
     return value.ljust(length, b'\0')
 
 
+from math import exp
+
+
+def sculpt_bull(obj, design):
+    """Shape the supplied rest mesh before armature evaluation; keep every UV and weight."""
+    from mathutils import Vector
+    world = obj.matrix_world.copy()
+    local = world.inverted()
+    for vertex in obj.data.vertices:
+        x,y,z = world @ vertex.co
+        width = 1.0
+        dx = dz = 0.0
+        for part in design["anatomy_refinement"]:
+            center, radius = part["center"], part["radius"]
+            # Bilateral fields use distance from the midline. The two sides keep
+            # their authored lean and their original pose relative to the legs.
+            weight = exp(-sum(((a-b)/c)**2 for a,b,c in zip((x,abs(y),z),center,radius)))
+            width += part.get("width",0)*weight
+            dx += part.get("forward",0)*weight
+            dz += part.get("raise",0)*weight
+        vertex.co = local @ Vector((x+dx,y*width,z+dz))
+    obj.data.update()
+
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
@@ -43,6 +68,7 @@ def main():
     objects = [bpy.data.objects['Bull_surface']]
     # Sample counts/timings are art data. Runtime action timings remain native.
     design = json.loads((ART / 'DESIGN.json').read_text(encoding='utf-8'))
+    sculpt_bull(objects[0], design)
     config = design['export_actions']
     visual_scale = design.get('visual_scale_revision', {}).get('factor', 1)
     export_scale = design['export_transform']['scale'] * visual_scale

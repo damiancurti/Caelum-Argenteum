@@ -110,8 +110,8 @@
     },
     {
       "path": "caelum/actors/CaelumBullModelFrames.zs",
-      "sha256": "38cda23e4a5b9053620230bcb02587a0fb1f6994f763de70f0129b97d4766550",
-      "bytes": 7864,
+      "sha256": "20e37abda24d91b1b699234bdab2e838f30b2891e1eaa12f1cb21bcc630c349d",
+      "bytes": 7865,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -8083,7 +8083,7 @@
     },
     {
       "path": "caelum/world/CaelumPhysicalHazards.zs",
-      "sha256": "67fb19a58bd34db9977a27fa14824cbc2002caac4cc5bd10328f492fb7c2c364",
+      "sha256": "b2cefa11eb823d7e944828ac71750aa626ad86e13c2874707208ac6cee8121da",
       "bytes": 20720,
       "decision": "project-source",
       "additional_provenance": [
@@ -8411,7 +8411,7 @@
     },
     {
       "path": "caelum/world/CaelumSewerMaze.zs",
-      "sha256": "48571b3cbf6b0ab1c96540a25988ce0aaf4a3ed3f3b6a95f51a9608cc9cc52d2",
+      "sha256": "99f5ef23c9fd3152acbc4ab41a2234c3875f480a7665452d7ed1d32fbef98fb1",
       "bytes": 15765,
       "decision": "project-source",
       "additional_provenance": [],
@@ -204972,7 +204972,7 @@
     },
     {
       "path": "models/caelum/bull/bull.md3",
-      "sha256": "2b81a402f57c1db427cb5f860ea1a1bfccfaa2a3dffcc3b688ec4654feeffc99",
+      "sha256": "6d7bb9104e5a60160daaef565ca51b1d4750de7f9152f067d5ffc11387f8ca33",
       "bytes": 10298068,
       "decision": "project-art",
       "additional_provenance": [],
