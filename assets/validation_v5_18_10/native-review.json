@@ -260,5 +260,10 @@
   "unique_stations_visited": 205,
   "fixture_sha256": "ab236b764e4440f8ba7f643c23221a3d4660052d401bf29c322a33eed4e5de19",
   "repeat_fixture_byte_identical": true,
-  "representative_screenshots": 12
+  "representative_screenshots": 12,
+  "project_validation": {
+    "version": "5.18.10",
+    "documents": 11,
+    "errors": []
+  }
 }
