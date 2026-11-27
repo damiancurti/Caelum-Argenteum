@@ -16,7 +16,7 @@ import subprocess
 import uuid
 import zipfile
 
-from caelum_sessions import manifest, verify_manifest, write_new, control_preset
+from caelum_sessions import manifest, verify_manifest, write_new, control_preset, resource_arguments
 from caelum_profiles import ProfileError
 
 ROOT = Path(__file__).resolve().parent
@@ -95,8 +95,7 @@ def prepare(selection: dict, directory: Path, engine: Path, iwad: Path,
         setup=runtime.read('caelum/data/standalone.mapinfo')
     with zipfile.ZipFile(activation,'x') as package:
         package.writestr(zipfile.ZipInfo('MAPINFO',(2000,1,1,0,0,0)),setup)
-    cmd = [str(engine), '-noautoload', '-iwad', str(iwad), '-file', *map(str, packages),
-           str(activation),
+    cmd = [str(engine), '-noautoload', *resource_arguments(iwad,[*packages,activation]),
            '-config', str(directory/'game.ini'), '-savedir', str(directory), *network,
            '+logfile', str(directory/'engine.log'), '+exec', str(directory/'controls.cfg'),
            '+ca_standalone_mode', str(session['mode']+1),
@@ -117,9 +116,12 @@ def run_menu(engine: Path, iwad: Path, packages: list[Path], config: Path, root:
         attempt = root/(datetime.datetime.now().strftime('%Y%m%d-%H%M%S-')+uuid.uuid4().hex[:8])
         attempt.mkdir()
         log=attempt/'menu.log'
-        cmd=[str(engine),'-noautoload','-iwad',str(iwad),'-file',*map(str,packages),
+        cmd=[str(engine),'-noautoload',*resource_arguments(iwad,packages),
              '-config',str(config),'+logfile',str(log),'+ca_standalone_bridge','1']
-        if not config.exists():cmd+=['+exec',str(ROOT/'assets/playtest/default_controls.cfg')]
+        if not config.exists():
+            controls=attempt/'controls.cfg'
+            write_new(controls,control_preset(packages[0]).encode())
+            cmd+=['+exec',str(controls)]
         code=subprocess.call(cmd)
         text=log.read_text(encoding='utf-8',errors='replace') if log.exists() else ''
         lines=[line for line in text.splitlines() if line.startswith(MARKER)]

@@ -1,0 +1,33 @@
+{
+  "campaign": "a",
+  "players": 1,
+  "commands": [
+    [
+      "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "-noautoload",
+      "-iwad",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+      "-file",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\destination\\verification.pk3",
+      "-config",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\destination\\peer0\\session.ini",
+      "-savedir",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\destination\\peer0",
+      "+logfile",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\destination\\peer0\\engine.log",
+      "-loadgame",
+      "recovery.zds",
+      "+exec",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\destination\\peer0\\start.cfg",
+      "-window",
+      "-width",
+      "640",
+      "-height",
+      "480"
+    ]
+  ],
+  "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\destination\\peer0\\save00.zds",
+  "checkpoint_title": "Caelum verified profile transfer 383826644",
+  "snapshot": "02dd7319c8ded6584d24ee97459835fd4ae890abb47f7e236cec4f9df47ff8f5",
+  "passed": true
+}

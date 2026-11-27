@@ -1,0 +1,28 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-26 23:02:19
+Command line: C:\Program Files (x86)\GZDoom\gzdoom.exe -noautoload -iwad C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue468-review01\caelum_argenteum.ipk3 -norun -nosound -errorlog C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue468-references01\menu\compile.log -config C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue468-references01\menu\compile.ini -file C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue468-references01\menu\checks.pk3 
+GZDoom version g4.14.2
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue468-review01/caelum_argenteum.ipk3, 19055 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue468-references01/menu/checks.pk3, 3 lumps
+No GENMIDI lump found. OPL playback not available.
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1920 x 1080
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading

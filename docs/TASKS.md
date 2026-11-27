@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.18.1** - 2026-11-26.
+Documentation version: **5.18.2** - 2026-11-26.
+
+## 5.18.2 - Approved prologue/mode integration (#468)
+
+The independent resource/manifest/control launch correction is implemented.
+Integration checks passed under assets/validation_v5_18_2, keeping
+scenario logs, saves and original probe ownership separate. Eighteen retained
+mode/route cases, vacancy creation, managed outbound/imported-play/return,
+native menu routing and three peaceful presentation references were checked.
+The native transfer timeout caused by an additional narrative checkpoint is
+fixed without deleting saves. The approved scope
+is the current MAP01-MAP03 prologue and existing modes, with later scenes,
+Internet/separate-machine verification, siege fluency and author art decisions
+explicitly outside automated acceptance. Preserve all 114 outstanding author
+checks. After its focused PR, #469 prepares versioned artifacts,
+player guidance and one visible terminal covering the entire pending queue.
 
 ## 5.18.1 - Independent startup and packaging (#467)
 

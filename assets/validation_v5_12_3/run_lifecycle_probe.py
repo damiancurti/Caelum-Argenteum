@@ -9,10 +9,13 @@ import re
 from pathlib import Path
 import struct
 import subprocess
+import sys
 import time
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT))
+from caelum_sessions import resource_arguments
 SOURCE = Path(__file__).resolve().parent
 ENGINE = Path("C:/Program Files (x86)/GZDoom/gzdoom.exe")
 IWAD = Path("C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD")
@@ -22,7 +25,7 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def fixture(path: Path, peers: int, source_overlay: bool = False, persistence: bool = False, travel: bool = False, transport: bool = False, transport_stop: bool = False, transport_mode: int = 3, tutorial: bool = False, rewards: bool = False, legacy_rewards: bool = False, house: bool = False, legacy_house: bool = False, disconnect: str = "none", spirit_save: bool = False) -> None:
+def fixture(path: Path, peers: int, source_overlay: bool = False, persistence: bool = False, travel: bool = False, transport: bool = False, transport_stop: bool = False, transport_mode: int = 3, tutorial: bool = False, rewards: bool = False, legacy_rewards: bool = False, house: bool = False, legacy_house: bool = False, disconnect: str = "none", spirit_save: bool = False, owned_surfaces: bool = False) -> None:
     departure={"none":-1,"host":0,"peer":1}[disconnect]
     # Disposable geometry; installed development IWAD textures are not distributed.
     text = '''namespace="ZDoom";
@@ -35,6 +38,8 @@ linedef{v1=2;v2=1;sidefront=0;blocking=true;}
 linedef{v1=3;v2=2;sidefront=0;blocking=true;}
 linedef{v1=0;v2=3;sidefront=0;blocking=true;}
 '''
+    if owned_surfaces:
+        for name in ('FLOOR4_8','CEIL3_5','STARTAN3'):text=text.replace(name,'CMST01')
     for player in range(peers):
         kind = player + 1 if player < 4 else 4001 + player - 4
         text += f"thing{{x={-448 + player * 128};y=0;type={kind};skill1=true;skill2=true;skill3=true;skill4=true;skill5=true;single=true;coop=true;}}\n"
@@ -82,6 +87,8 @@ linedef{v1=0;v2=3;sidefront=0;blocking=true;}
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--runtime", type=Path, required=True)
+    parser.add_argument("--iwad",type=Path,default=IWAD)
+    parser.add_argument("--output",type=Path)
     parser.add_argument("--disconnect", choices=("none","peer","host"), default="none")
     parser.add_argument("--players", type=int, choices=(1, 2, 4, 8), default=2)
     parser.add_argument("--port", type=int, default=30160)
@@ -103,14 +110,14 @@ def main() -> None:
     if args.transport_stop:
         args.transport = True
     runtime = args.runtime.resolve(strict=True)
-    out = ROOT / "build/issue437" / datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    out = args.output.resolve() if args.output else ROOT / "build/issue437" / datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     out.mkdir(parents=True)
     package = out / "checks.pk3"
-    fixture(package, args.players, args.source_overlay, args.persistence, args.travel, args.transport, args.transport_stop, args.transport_mode, args.tutorial, args.rewards, args.legacy_rewards, args.house, args.legacy_house, args.disconnect, args.spirit_save)
+    fixture(package, args.players, args.source_overlay, args.persistence, args.travel, args.transport, args.transport_stop, args.transport_mode, args.tutorial, args.rewards, args.legacy_rewards, args.house, args.legacy_house, args.disconnect, args.spirit_save, args.iwad.resolve()==runtime)
     processes, streams, commands = [], [], []
     startup = subprocess.STARTUPINFO()
     startup.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-    startup.wShowWindow = 0
+    startup.wShowWindow = 4
     try:
         for index in range(args.players):
             peer = out / f"peer{index}"
@@ -137,7 +144,7 @@ def main() -> None:
                 with (peer / "recovery.zds").open("xb") as recovery:
                     recovery.write(saves[0].resolve(strict=True).read_bytes())
                 entry = ["-loadgame", "recovery.zds"]
-            command = [str(ENGINE), "-noautoload", "-iwad", str(IWAD), "-file", str(runtime), str(package),
+            command = [str(ENGINE), "-noautoload", *resource_arguments(args.iwad.resolve(strict=True),[runtime,package]),
                        "-config", str(config), "-savedir", str(peer), "-window", "-width", "640", "-height", "480",
                        "-rngseed", "437", *network, "+logfile", str(peer / "engine.log"), *entry,
                        "+exec", str(commands_file)]
@@ -182,7 +189,7 @@ def main() -> None:
         reports.append({"peer": index, "exit": process.returncode, "passed": success, "checks": checks, "errors": errors})
     same_order = True
     result = {"spirit_save":args.spirit_save,"disconnect":args.disconnect,"house":args.house,"legacy_house":args.legacy_house,"legacy_rewards":args.legacy_rewards,"rewards":args.rewards,"tutorial":args.tutorial, "persistence": args.persistence, "travel": args.travel, "transport": args.transport, "transport_stop": args.transport_stop, "transport_mode": args.transport_mode, "load_directory": str(args.load_directory) if args.load_directory else None, "issue": 437, "baseline": "5.11.8", "source_overlay": args.source_overlay, "real_processes": args.players, "runtime_sha256": digest(runtime),
-              "engine_sha256": digest(ENGINE), "iwad_sha256": digest(IWAD), "fixture_sha256": digest(package),
+              "engine_sha256": digest(ENGINE), "iwad_sha256": digest(args.iwad.resolve(strict=True)), "fixture_sha256": digest(package),
               "commands": commands, "peers": reports, "same_order": same_order,
               "passed": same_order and all(x["passed"] for x in reports)}
     (out / "results.json").write_text(json.dumps(result, indent=2), encoding="utf-8")

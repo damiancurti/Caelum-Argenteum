@@ -4,6 +4,30 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-283 - Select the verifier checkpoint without suppressing narrative saves
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #468 / 5.18.2,
+2026-11-26, Windows 11 / GZDoom g4.14.2-m. Evidence: assets/validation_v5_18_2.
+
+Managed admission into an actual vacant MAP01 can write a narrative checkpoint
+before the transfer verifier writes its checkpoint. Waiting for exactly one
+save*.zds timed out even though both native identity gates passed. Preserve
+both files; give the verifier an attempt-specific title and inspect native
+info.json to select it. Retry incomplete archives, reject multiple matching
+checkpoints, then retain full checksum/roster validation and atomic publication.
+Never select an arbitrary newest save or delete the narrative checkpoint.
+
+An active native conversation is a separate valid transfer refusal. Close it
+through ConversationMenu.SendConversationReply(-1,0), then make a new native
+save; do not clear serialized actor flags to manufacture a transferable profile.
+The native outbound/imported-play/return sequence passed after the selection fix.
+
+Keep a primary independent IPK3 in the logical schema/control input list, but
+omit it from actual -file additions and manifest counts. Resolve native resource
+paths before changing child working directories. Old development IWAD arguments
+must retain their separate runtime. Fresh controls come from packaged KEYCONF,
+not a source-only assets path absent from an extracted player distribution.
+
 ## CA-KP-282 - Standalone core configuration, aliases and save ownership
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #467 / 5.18.1,
@@ -4643,6 +4667,15 @@ instead of presenting a false exact CPU/GPU split. See the pinned
 
 Regression: repeat city pitch 0/75 and reference-map runs with the final build.
 Production improvement and author acceptance under #318 remain pending.
+
+**#468 / 5.18.2 follow-up (ENGINE-VERIFIED, 2026-11-26):** inspect a native
+capture before naming a performance reference. The retained city camera was
+inside a redesigned house, while the mansion greeting left a menu overlay open.
+Use the authored current start and close the native menu for the intended view;
+keep the old traces with their actual scene qualification. The final mansion
+reference averaged 62.82 QueuePresent FPS but p95 was 18.29 ms, so even that
+average does not establish a strict 60-FPS budget. Exact views, traces and
+limits: assets/validation_v5_18_2 and the 5.18.2 HISTORY entry.
 
 ## CA-KP-111 - A ground-facing view can increase large-map geometry work
 

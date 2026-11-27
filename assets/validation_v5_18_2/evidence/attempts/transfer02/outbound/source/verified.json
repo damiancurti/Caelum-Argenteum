@@ -1,0 +1,32 @@
+{
+  "campaign": "a",
+  "players": 1,
+  "commands": [
+    [
+      "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "-noautoload",
+      "-iwad",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+      "-file",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\outbound\\source\\verification.pk3",
+      "-config",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\outbound\\source\\peer0\\session.ini",
+      "-savedir",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\outbound\\source\\peer0",
+      "+logfile",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\outbound\\source\\peer0\\engine.log",
+      "-loadgame",
+      "recovery.zds",
+      "+exec",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\outbound\\source\\peer0\\start.cfg",
+      "-window",
+      "-width",
+      "640",
+      "-height",
+      "480"
+    ]
+  ],
+  "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\outbound\\source\\peer0\\save00.zds",
+  "snapshot": "37a2131a5602796ed10e7ba784c090b900b71ca24b66f88c3d223a864783b040",
+  "passed": true
+}

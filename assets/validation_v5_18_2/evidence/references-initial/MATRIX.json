@@ -1,0 +1,91 @@
+{
+  "issue": 468,
+  "rows": [
+    {
+      "case": "MAP01",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_18_2\\run_reference.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references01\\MAP01",
+        "--map",
+        "MAP01",
+        "--players",
+        "1",
+        "--presentation-layer",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation"
+      ],
+      "passed": true
+    },
+    {
+      "case": "MAP02",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_18_2\\run_reference.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references01\\MAP02",
+        "--map",
+        "MAP02",
+        "--players",
+        "1",
+        "--presentation-layer",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation"
+      ],
+      "passed": true
+    },
+    {
+      "case": "MAP03",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_18_2\\run_reference.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references01\\MAP03",
+        "--map",
+        "MAP03",
+        "--players",
+        "1",
+        "--presentation-layer",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation"
+      ],
+      "passed": true
+    },
+    {
+      "case": "menu",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_13_4\\run_menu_probe.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references01\\menu",
+        "--engine",
+        "C:/Program Files (x86)/GZDoom/gzdoom.exe",
+        "--console-event"
+      ],
+      "passed": false
+    }
+  ],
+  "author_acceptance": false
+}

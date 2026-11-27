@@ -1,0 +1,21 @@
+Started 2 native peers: C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue468-matrix01\coop
+{
+  "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\coop",
+  "passed": true,
+  "peers": [
+    {
+      "peer": 0,
+      "passed": true,
+      "pass_count": 11,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "peer": 1,
+      "passed": true,
+      "pass_count": 11,
+      "errors": [],
+      "failures": []
+    }
+  ]
+}

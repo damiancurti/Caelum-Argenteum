@@ -5,11 +5,14 @@ import json
 import re
 import shutil
 import subprocess
+import sys
 import time
 import zipfile
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT))
+from caelum_sessions import resource_arguments
 ENGINE=Path('C:/Program Files (x86)/GZDoom/gzdoom.exe')
 IWAD=Path('C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD')
 
@@ -19,6 +22,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--runtime',type=Path,default=ROOT/'build/issue460-review02.pk3')
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--iwad',type=Path,default=IWAD,help='Primary game; select the runtime IPK3 for independent integration')
     parser.add_argument('--only',help='Comma-separated phase names')
     args=parser.parse_args();out=args.output.resolve();out.relative_to(ROOT/'build');out.mkdir(parents=True,exist_ok=False)
     assert not subprocess.check_output(['tasklist','/FI','IMAGENAME eq gzdoom.exe','/FO','CSV','/NH']).decode(errors='replace').lower().startswith('"gzdoom.exe"')
@@ -46,7 +50,7 @@ def main():
         entry=['+map',map_name] if map_name else []
         if save:
             source=out/save;target=case/'music.zds';shutil.copyfile(source,target);assert digest(source)==digest(target);entry=['-loadgame',target.name]
-        command=[str(ENGINE),'-noautoload','-iwad',str(IWAD),'-file',str(args.runtime.resolve()),str(fixture),'-config',str(case/'session.ini'),'-savedir',str(case),'-window','-width','1280','-height','720','+logfile',str(case/'native.log'),*entry,'+exec',str(case/'commands.cfg')]
+        command=[str(ENGINE),'-noautoload',*resource_arguments(args.iwad.resolve(strict=True),[args.runtime.resolve(),fixture]),'-config',str(case/'session.ini'),'-savedir',str(case),'-window','-width','1280','-height','720','+logfile',str(case/'native.log'),*entry,'+exec',str(case/'commands.cfg')]
         (case/'command.json').write_text(json.dumps(command,indent=2)+'\n')
         startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=4
         with (case/'stdout.txt').open('wb') as stream:

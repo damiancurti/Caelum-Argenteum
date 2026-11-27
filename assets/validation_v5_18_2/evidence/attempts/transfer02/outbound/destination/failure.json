@@ -1,0 +1,37 @@
+{
+  "campaign": "b",
+  "commands": [
+    [
+      "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "-noautoload",
+      "-iwad",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+      "-file",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\outbound\\destination\\verification.pk3",
+      "-config",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\outbound\\destination\\peer0\\session.ini",
+      "-savedir",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\outbound\\destination\\peer0",
+      "+logfile",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\outbound\\destination\\peer0\\engine.log",
+      "-loadgame",
+      "recovery.zds",
+      "+exec",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\outbound\\destination\\peer0\\start.cfg",
+      "-window",
+      "-width",
+      "640",
+      "-height",
+      "480"
+    ]
+  ],
+  "observed_before_cleanup": [
+    {
+      "slot": 0,
+      "pid": 15320,
+      "exit_code": null
+    }
+  ],
+  "error": "Native verification timed out; original campaign heads remain intact: C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\outbound\\destination",
+  "passed": false
+}

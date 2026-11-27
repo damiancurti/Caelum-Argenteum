@@ -1,6 +1,56 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.18.1** - 2026-11-26.
+Documentation version: **5.18.2** - 2026-11-26.
+
+## 5.18.2 - Independent beta integration (#468, 2026-11-26)
+
+Corrected the external profile/multiplayer launch bridges to distinguish their
+logical runtime from actual -file additions when that runtime is already the
+primary IPK3. Manifests now pin the same actual resource list; development IWAD
+behavior is retained. Vacant profile bootstrap uses the IWADINFO Config section;
+fresh menu controls use the packaged KEYCONF preset. No gameplay rules, geometry,
+new saved fields or original profile stores are changed.
+
+The retained native suites now accept an explicit primary game and separate
+evidence directories. Cooperative/card fixtures can use owned diagnostic surfaces
+without changing their geometry/assertions. Evidence in assets/validation_v5_18_2
+separates static checks, real engine peers, save reload, route/audio coverage,
+queue presentation and author acceptance. The machine uses GZDoom g4.14.2-m;
+loopback peers are not Internet/separate-machine proof. The later campaign and
+known siege rendering limitation remain outside completion claims. CA468-BETA-01
+joins the 113 earlier checks; no author test is accepted or removed.
+
+Managed integration reproduced a verifier timeout when admission produced both
+a narrative save and the verifier save. The old sole-file assumption is replaced
+by an attempt-specific native save title; unrelated saves remain intact and
+ambiguous verifier matches refuse publication. The corrected native outbound,
+ordinary imported play/recovery, and return transfer passed. An earlier anchor
+with an active conversation was correctly refused; a copied anchor was closed
+through the native Escape-equivalent message and saved without editing objects.
+All failed attempts and original stores/checkpoints remain available.
+
+Final native coverage includes eighteen retained mode/route cases (fresh/reload
+Deathmatch, teams, capture, hunts, cooperative lifecycle/travel and Trucazo,
+plus prologue audio/finale predicate), actual vacancy creation and managed
+outbound/imported-play/recovery/return. The title probe passes both the main
+Multiplayer entry and its independent-match submenu; its earlier direct-link
+expectation was stale, not a production menu regression. No physical-click or
+Internet verdict follows from those scripted checks.
+
+Peaceful Vulkan presentation at 1280x720 on Ryzen 9 5950X / RTX 3070 Ti:
+
+| Actual captured view | Mean QueuePresent FPS | p95 / p99 / max interval (ms) |
+| --- | ---: | ---: |
+| MAP01 exterior/player start, dialogue menu closed | 62.82 | 18.29 / 19.85 / 22.56 |
+| MAP02 player-start sewer corridor | 179.09 | 7.02 / 8.30 / 31.86 |
+| MAP03 current player-start quay/gate view | 94.76 | 12.30 / 13.67 / 15.04 |
+
+These are bounded stationary references, not whole-map or siege guarantees;
+the mansion does not sustain a strict 16.67-ms budget. QueuePresent is not
+monitor scanout. The obsolete city viewpoint inside a house and mansion captures
+with a dialogue overlay remain separately qualified. Final screenshots were
+inspected before selecting the reported views. No runtime optimization, weather,
+population or gameplay feature was changed to obtain these measurements.
 
 ## 5.18.1 - Independent startup and release construction (#467, 2026-11-26)
 

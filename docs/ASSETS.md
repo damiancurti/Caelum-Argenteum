@@ -1,6 +1,29 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.18.1** - 2026-11-26.
+Documentation version: **5.18.2** - 2026-11-26.
+
+## 5.18.2 - Integration evidence and diagnostic resources (#468)
+
+No gameplay art, audio, map geometry or source-rights decisions change. Existing
+native suites accept an explicit primary IPK3 and retain their original default
+development paths. Their original assertions are reused. Legacy cooperative/
+card-table fixtures optionally replace three diagnostic Doom texture names with
+the existing owned CMST01 surface; this changes no production map and ships no
+fixture. Each run records the actual command, package and original runner.
+
+The shared campaign observer retains its approved observation window and typed
+census. The optional diagnostic Vulkan layer records queue presentation and
+frame-time tails separately from simulation callbacks; it is enabled only for
+the measured child processes, never bundled or installed globally. Scene
+captures remain native PNGs. Evidence and qualifications are consolidated in
+assets/validation_v5_18_2; no image, author verdict or performance acceptance is
+inferred from a successful parse, 35 simulation tics/s or a loopback match.
+The current-view adapter retains authored player starts and closes native menu
+presentation for the mansion observation. The old city reference now points
+inside a redesigned house; that capture remains evidence but is not the reported
+quay view. Final native screenshots and p95/p99/maximum presentation intervals
+are retained separately from the original views. The menu fixture now follows
+the already-existing Multiplayer submenu instead of its historical direct link.
 
 ## 5.18.1 - Owned independent-startup resources (#467)
 

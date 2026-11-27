@@ -1,0 +1,30 @@
+{
+  "players": 1,
+  "save": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-vacancy01\\peer0\\save00.zds",
+  "sha256": "a9ecedc9f2c5c106b857361d5fc7df868d17452dbb485b9f77dd2a514960f0ee",
+  "commands": [
+    [
+      "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "-noautoload",
+      "-iwad",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+      "-config",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-vacancy01\\peer0\\bootstrap.ini",
+      "-savedir",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-vacancy01\\peer0",
+      "-window",
+      "-width",
+      "640",
+      "-height",
+      "480",
+      "+logfile",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-vacancy01\\peer0\\engine.log",
+      "+set",
+      "ca_profile_bootstrap",
+      "true",
+      "-warp",
+      "1"
+    ]
+  ],
+  "passed": true
+}

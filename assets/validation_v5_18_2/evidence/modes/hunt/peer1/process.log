@@ -1,0 +1,205 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-26 22:44:24
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue467-final04/caelum_argenteum.ipk3, 19055 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue468-matrix01/hunt/checks.pk3, 4 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue468-matrix01/hunt/peer1/standalone.pk3, 1 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+No GENMIDI lump found. OPL playback not available.
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2756.98 ms
+R_Init: Init CaelumArgenteum refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+using alternate port 0
+Node number 0, address 127.0.0.1
+Total players: 4
+Console player number: 1
+Received All Here, sending ACK.
+Received All Here, sending ACK.
+Received "Go."
+Total players: 4
+Found Player (node 1, player 1)
+Found Player (node 0, player 2)
+Found Player (node 2, player 3)
+Found Player (node 3, player 4)
+Arbitrator selected peer to peer networking mode.
+player 2 of 4 (4 nodes)
+
+----------------------------------------
+
+CAHUNT - Palomo's labyrinth
+
+CA435SYNC OK peer=1 map=CAHUNT tic=0
+[Caelum] Character creation values loaded. Attribute total: 0.00
+[Caelum] Character creation values loaded. Attribute total: 0.00
+[Caelum] Character creation values loaded. Attribute total: 0.00
+[Caelum] Character creation values loaded. Attribute total: 0.00
+CA_MATCH PRESET player=0 preset=0
+CA_MATCH PRESET player=1 preset=1
+CA_MATCH PRESET player=2 preset=2
+CA_MATCH PRESET player=3 preset=3
+Game saved.
+CA601 PASS four clients enter exclusive hunt map
+CA601 PASS Palomo retains actual profile and body
+CA601 PASS new maze contains Justice arena
+CA601 PASS native damage between teammates is prevented
+The Fool: 1 / 78 essences
+Game saved.
+CA601 PASS native contact collects first distinct essence
+CA601 PASS duplicate simultaneous contacts cannot duplicate essence
+The Magician: 2 / 78 essences
+CA601 PASS split collection shares the same counter
+Player was captured by Palomo.
+CA601 PASS contact capture retains live body and resources
+CA601 PASS captive cannot perform material actions
+CA601 PASS captive resources remain unchanged
+CA601 PASS free teammates keep round alive
+CA601 PASS releasing Use cancels incomplete rescue
+Captured objectives.png
+CA435SYNC OK peer=1 map=CAHUNT tic=175
+Captured death.png
+Game saved.
+CA601 PASS common save has captive and collected cards
+Player has been rescued.
+CA601 PASS rescue restores captured resources
+Player was captured by Palomo.
+CA601 PASS lethal trap captures with pre-trap resources
+CA601 PASS trap capture creates neither corpse nor respawn debt
+Player has been rescued.
+The High Priestess: 3 / 78 essences
+The Empress: 4 / 78 essences
+The Emperor: 5 / 78 essences
+The Hierophant: 6 / 78 essences
+The Lovers: 7 / 78 essences
+The Chariot: 8 / 78 essences
+Justice: 9 / 78 essences
+The Hermit: 10 / 78 essences
+Wheel of Fortune: 11 / 78 essences
+Strength: 12 / 78 essences
+The Hanged Man: 13 / 78 essences
+Death: 14 / 78 essences
+Temperance: 15 / 78 essences
+The Devil: 16 / 78 essences
+The Tower: 17 / 78 essences
+The Star: 18 / 78 essences
+The Moon: 19 / 78 essences
+The Sun: 20 / 78 essences
+Judgement: 21 / 78 essences
+The World: 22 / 78 essences
+Ace of Swords: 23 / 78 essences
+2 of Swords: 24 / 78 essences
+3 of Swords: 25 / 78 essences
+4 of Swords: 26 / 78 essences
+5 of Swords: 27 / 78 essences
+6 of Swords: 28 / 78 essences
+7 of Swords: 29 / 78 essences
+8 of Swords: 30 / 78 essences
+9 of Swords: 31 / 78 essences
+10 of Swords: 32 / 78 essences
+Knight of Swords: 33 / 78 essences
+Page of Swords: 34 / 78 essences
+Queen of Swords: 35 / 78 essences
+King of Swords: 36 / 78 essences
+Ace of Cups: 37 / 78 essences
+2 of Cups: 38 / 78 essences
+3 of Cups: 39 / 78 essences
+4 of Cups: 40 / 78 essences
+5 of Cups: 41 / 78 essences
+6 of Cups: 42 / 78 essences
+7 of Cups: 43 / 78 essences
+8 of Cups: 44 / 78 essences
+9 of Cups: 45 / 78 essences
+10 of Cups: 46 / 78 essences
+Knight of Cups: 47 / 78 essences
+Page of Cups: 48 / 78 essences
+Queen of Cups: 49 / 78 essences
+King of Cups: 50 / 78 essences
+Ace of Wands: 51 / 78 essences
+2 of Wands: 52 / 78 essences
+3 of Wands: 53 / 78 essences
+4 of Wands: 54 / 78 essences
+5 of Wands: 55 / 78 essences
+6 of Wands: 56 / 78 essences
+7 of Wands: 57 / 78 essences
+8 of Wands: 58 / 78 essences
+9 of Wands: 59 / 78 essences
+10 of Wands: 60 / 78 essences
+Knight of Wands: 61 / 78 essences
+Page of Wands: 62 / 78 essences
+Queen of Wands: 63 / 78 essences
+King of Wands: 64 / 78 essences
+Ace of Coins: 65 / 78 essences
+2 of Coins: 66 / 78 essences
+3 of Coins: 67 / 78 essences
+4 of Coins: 68 / 78 essences
+5 of Coins: 69 / 78 essences
+6 of Coins: 70 / 78 essences
+7 of Coins: 71 / 78 essences
+8 of Coins: 72 / 78 essences
+9 of Coins: 73 / 78 essences
+10 of Coins: 74 / 78 essences
+Knight of Coins: 75 / 78 essences
+Page of Coins: 76 / 78 essences
+Queen of Coins: 77 / 78 essences
+King of Coins: 78 / 78 essences
+CA601 PASS last distinct essence wins once for everyone
+CA601 PASS finished collection cannot award again
+CA601 PASS rematch waits for all four votes
+
+----------------------------------------
+
+CAHUNT - Palomo's labyrinth
+
+CA435SYNC OK peer=1 map=CAHUNT tic=0
+CA_MATCH PRESET player=0 preset=0
+CA_MATCH PRESET player=1 preset=1
+CA_MATCH PRESET player=2 preset=2
+CA_MATCH PRESET player=3 preset=3
+CA601 PASS unanimous rematch resets hunt state
+CA601 PASS rematch restores four resident presets
+CA601 RESULT hunt
+CA435SYNC OK peer=1 map=CAHUNT tic=175
+CA435SYNC OK peer=1 map=CAHUNT tic=350
+Captured deathmatch.png
+Game saved.
+Player left the game
+Player left the game
+CA435SYNC OK peer=1 map=CAHUNT tic=525

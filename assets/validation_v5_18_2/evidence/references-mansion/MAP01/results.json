@@ -1,0 +1,103 @@
+{
+  "issue": 435,
+  "started_utc": "2026-11-27T02:07:34.997556+00:00",
+  "ended_utc": "2026-11-27T02:08:14.877257+00:00",
+  "environment_overrides": {
+    "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+  },
+  "engine": {
+    "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+  },
+  "presentation_layer": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+    "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+  },
+  "runtime_sha256": "f93b170bbf4f19617aff142c6d15787f986fec4827feb01f8e719082108f745e",
+  "commands": [
+    [
+      "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "-noautoload",
+      "-nomouse",
+      "-iwad",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+      "-file",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references03\\MAP01\\observer.pk3",
+      "-config",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references03\\MAP01\\peer0\\session.ini",
+      "-savedir",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references03\\MAP01\\peer0",
+      "-rngseed",
+      "428",
+      "-warp",
+      "1",
+      "+logfile",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references03\\MAP01\\peer0\\engine.log",
+      "+exec",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references03\\MAP01\\peer0\\start.cfg"
+    ]
+  ],
+  "observed_before_cleanup": [
+    0
+  ],
+  "observer_sha256": "05e77dfdd65b678646eea1bc419ec07eb39eaccaf2d6067509ae4b75ac9f135f",
+  "overlays": [],
+  "map": "MAP01",
+  "siege": false,
+  "direct_deployment": false,
+  "ground": false,
+  "players": 1,
+  "peers": [
+    {
+      "slot": 0,
+      "pid": 30232,
+      "exit_code": 0,
+      "window": {
+        "BEGIN": {
+          "utc": "2026-11-27T02:07:51.775066+00:00",
+          "qpc_ms": 1359582961.7296002
+        },
+        "END": {
+          "utc": "2026-11-27T02:08:11.860675+00:00",
+          "qpc_ms": 1359603047.1608999
+        }
+      },
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.581342714285714,
+        "p95_ms": 35.2347,
+        "p99_ms": 38.1221,
+        "max_ms": 44.1782
+      },
+      "render_callbacks": {
+        "samples": 1131,
+        "mean_ms": 15.924862245800176,
+        "p95_ms": 18.288,
+        "p99_ms": 19.8023,
+        "max_ms": 22.5935
+      },
+      "states": [
+        "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=8 dense=0",
+        "CA435PERF STATE slot=0 health=1248 pos=-1600.000000,0.000000,-0.000000",
+        "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=8 dense=0",
+        "CA435PERF STATE slot=0 health=1248 pos=-1600.000000,0.000000,-0.000000"
+      ],
+      "census": [
+        "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+        "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+      ],
+      "scopes": [],
+      "native_sync": true,
+      "passed": true,
+      "complete_window": true
+    }
+  ],
+  "same_state": true,
+  "scenario_valid": true,
+  "error": null,
+  "passed": true,
+  "performance_accepted": false,
+  "author_accepted": false,
+  "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+}

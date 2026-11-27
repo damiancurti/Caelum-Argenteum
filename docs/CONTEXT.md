@@ -1,9 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.18.1** - 2026-11-26.
+Documentation version: **5.18.2** - 2026-11-26.
 
-**5.18.1/#467:** independent startup/save copies; validation_v5_18_1,113 pending.
-#460/#464-466 implemented; evidence in their version folders. Next:#468-469.
+**5.18.2/#468:** independent profile/mode integration; validation_v5_18_2,114 pending.
+#460/#464-467 implemented; per-version evidence. Next:#469 delivery/terminal.
 **2026-11-26 integration:**130PRs/132issues; scope/evidence in
 validation_v5_17_123/integration-decision.json and ASSETS/TASKS/HISTORY.
 #736art and siege fluency remain unresolved; LegacyMap02Revision5 retained.

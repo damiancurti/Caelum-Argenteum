@@ -8039,7 +8039,7 @@
     },
     {
       "path": "caelum/world/CaelumPhysicalHazards.zs",
-      "sha256": "0e4bc959ef54587830e50d9f6bf2aee687e701956d775bd291c5ff26518fddbb",
+      "sha256": "ac06b820502667e4b5033e5638d9ff4596a2d74a9c9da91deecf271f974a7912",
       "bytes": 20720,
       "decision": "project-source",
       "additional_provenance": [
@@ -8367,7 +8367,7 @@
     },
     {
       "path": "caelum/world/CaelumSewerMaze.zs",
-      "sha256": "c1e89b9a676a7bfeff95687a354938da1c07cc09b732df6414dccbafc5d2fa9d",
+      "sha256": "9159723edf2426a6cdf0dc880088e9f0029a61e9e8a2923b382265d08568c3e1",
       "bytes": 15765,
       "decision": "project-source",
       "additional_provenance": [],

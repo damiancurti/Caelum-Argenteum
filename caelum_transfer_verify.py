@@ -22,15 +22,33 @@ from caelum_campaigns import Campaigns, unpack, personal_record
 from caelum_sessions import manifest, command, write_new, require_native_sync
 
 
-def verification_overlay(path: Path) -> None:
+def verification_overlay(path: Path, title: str) -> None:
     source=Path(__file__).parent/'assets/profiles/verification.zs'
+    script=source.read_text(encoding='utf-8')
+    marker='"CA_TRANSFER_CHECKPOINT_TITLE"'
+    if script.count(marker)!=1:raise ProfileError('Transfer verification source has no unique checkpoint title marker.')
+    script=script.replace(marker,json.dumps(title))
     entries={'MAPINFO':b'gameinfo { AddEventHandlers="CaelumTransferVerification" }\n',
              'ZSCRIPT':b'version "4.14.2"\n#include "verification.zs"\n',
-             'verification.zs':source.read_bytes()}
+             'verification.zs':script.encode('utf-8')}
     with zipfile.ZipFile(path,'x',compression=zipfile.ZIP_DEFLATED) as archive:
         for name,data in entries.items():
             item=zipfile.ZipInfo(name,(1980,1,1,0,0,0));item.compress_type=zipfile.ZIP_DEFLATED
             archive.writestr(item,data)
+
+
+def checkpoint_candidates(directory: Path, title: str) -> list[Path]:
+    """Identify this verifier's save, keeping unrelated narrative saves intact."""
+    matches=[]
+    for path in directory.glob('save*.zds'):
+        try:
+            with zipfile.ZipFile(path) as archive:
+                if json.loads(archive.read('info.json')).get('Title')==title:matches.append(path)
+        except (OSError,zipfile.BadZipFile,KeyError,json.JSONDecodeError,UnicodeError):
+            # A native writer may not have completed the archive yet.
+            continue
+    if len(matches)>1:raise ProfileError('Multiple verification checkpoints match; retained for diagnosis.')
+    return matches
 
 
 def native_checkpoint(data: bytes, campaign: str, directory: Path, engine: Path,
@@ -46,8 +64,10 @@ def native_checkpoint(data: bytes, campaign: str, directory: Path, engine: Path,
             raise ProfileError('Every verification slot must have a registered or departed identity.')
         roster.append(dict(slot=slot,identity=f'vacant:{slot}' if record.get('ProfileDeparted') else record['ExternalProfileId']))
     directory.mkdir(parents=True,exist_ok=False)
-    overlay=directory/'verification.pk3';verification_overlay(overlay)
-    files=[*packages,overlay];nonce=secrets.randbelow(2147483646)+1
+    nonce=secrets.randbelow(2147483646)+1
+    title=f'Caelum verified profile transfer {nonce}'
+    overlay=directory/'verification.pk3';verification_overlay(overlay,title)
+    files=[*packages,overlay]
     request=dict(campaign=campaign,manifest=manifest(engine,iwad,files),roster=roster,
                  nonce=nonce,head=dict(snapshot=hashlib.sha256(data).hexdigest()))
     write_new(directory/'recovery.zds',data)
@@ -72,14 +92,14 @@ def native_checkpoint(data: bytes, campaign: str, directory: Path, engine: Path,
                 raise ProfileError(f'Native verification failed; retained evidence: {directory}')
             if any(p.poll() is not None for p in processes):raise ProfileError(f'A verification peer exited early: {directory}')
             ready=all(f'CA_SESSION READY peer={i} nonce={nonce}' in log and f'CA_PROFILE VERIFIED peer={i}' in log for i,log in enumerate(logs))
-            saves=list(peers[0].glob('save*.zds'))
+            saves=checkpoint_candidates(peers[0],title) if ready else []
             if ready and len(saves)==1:
                 stat=saves[0].stat();fingerprint=(stat.st_size,stat.st_mtime_ns)
                 if fingerprint==last:
                     output=saves[0].read_bytes();validate_anchor(output,0)
                     require_native_sync(unpack(output)[2])
                     result=dict(campaign=campaign,players=len(roster),commands=commands,
-                                output=str(saves[0]),snapshot=hashlib.sha256(output).hexdigest(),passed=True)
+                                output=str(saves[0]),checkpoint_title=title,snapshot=hashlib.sha256(output).hexdigest(),passed=True)
                     write_new(directory/'verified.json',(json.dumps(result,indent=2)+'\n').encode())
                     return output,result
                 last=fingerprint

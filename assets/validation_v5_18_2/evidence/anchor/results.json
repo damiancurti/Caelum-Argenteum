@@ -1,0 +1,9 @@
+{
+  "issue": 468,
+  "passed": true,
+  "source": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final-native04\\standalone.zds",
+  "source_sha256": "8cb086ef7ef9104869ff3acc181ddd76958533be66df716ab39abcf6b7ccb49a",
+  "target": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-anchor01\\transfer_anchor.zds",
+  "exit": 0,
+  "author_acceptance": false
+}

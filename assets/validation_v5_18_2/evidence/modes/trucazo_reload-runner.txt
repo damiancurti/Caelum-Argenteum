@@ -1,0 +1,19 @@
+C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue468-matrix01\trucazo_reload
+{
+  "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\trucazo_reload",
+  "passed": true,
+  "peers": [
+    {
+      "peer": 0,
+      "passed": true,
+      "checks": 8,
+      "errors": []
+    },
+    {
+      "peer": 1,
+      "passed": true,
+      "checks": 8,
+      "errors": []
+    }
+  ]
+}
