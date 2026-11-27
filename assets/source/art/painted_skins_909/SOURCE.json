@@ -21,5 +21,16 @@
     "models/caelum/folklore/nahuelito662/skin.png": "602ef95f83053451576bf9b976ee45bdd3376763c990f06f27f905d89e7776e5",
     "models/caelum/folklore/pombero461/face.png": "d342e4b31ec8da9f7933f216a14ca9fd92299ec8315ca72dd68cb857ff9b3a0c",
     "models/caelum/folklore/pombero461/materials.png": "6d72eeb0a43b98a279fb3119f28b06bffd5d353e9e39da0ab8036559e06f62cc"
+  },
+  "destinations": {
+    "models/caelum/folklore/pombero461/materials.png": "models/caelum/folklore/pombero461/painted.png"
+  },
+  "surface_binding": {
+    "mesh": "models/caelum/folklore/pombero461/pombero.md3",
+    "from": "models/caelum/folklore/pombero461/materials.png",
+    "to": "models/caelum/folklore/pombero461/painted.png",
+    "surfaces": 2,
+    "original": "5ad5da0a1dad91e20ad5045bd9eeb435f687034bfa31cdea2bc08de601ed0bda",
+    "painted": "04da15300d9f293fe6e5de5c616afb604e70827d9a2500ad17dc422f9cfdafc2"
   }
 }

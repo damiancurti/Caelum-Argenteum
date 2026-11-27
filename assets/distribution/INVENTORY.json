@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "issue": 466,
-  "runtime_files": 19736,
+  "runtime_files": 19737,
   "metadata_documents": 702,
   "origin_decisions": "assets/distribution/ORIGINS.json",
   "dependency_findings": "assets/distribution/DEPENDENCIES.json",
@@ -17,12 +17,12 @@
   "origin_counts": {
     "project-source": 1062,
     "dejavu-font": 2352,
-    "project-art": 15846,
+    "project-art": 15847,
     "retained-notice": 30,
     "human-mesh": 315,
     "source-specific-audio": 131
   },
-  "exact_metadata_files": 14338,
+  "exact_metadata_files": 14339,
   "files": [
     {
       "path": "ANIMDEFS",
@@ -205048,12 +205048,10 @@
       "bytes": 532209,
       "decision": "human-mesh",
       "additional_provenance": [
-        "assets/source/art/painted_skins_909/SOURCE.json",
-        "assets/source/art/worn_clothing_829/AUTHORING.json"
+        "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "exact_metadata": [
-        "assets/source/art/painted_skins_909/SOURCE.json",
-        "assets/source/art/worn_clothing_829/AUTHORING.json"
+        "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -214492,25 +214490,47 @@
     },
     {
       "path": "models/caelum/folklore/pombero461/materials.png",
+      "sha256": "6d72eeb0a43b98a279fb3119f28b06bffd5d353e9e39da0ab8036559e06f62cc",
+      "bytes": 3103639,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/bestiary/models/pombero/manifest.json",
+        "assets/source/art/inventory_models_647/books/DESIGN.json",
+        "assets/source/art/inventory_models_647/books/EXPORT.json",
+        "assets/source/art/inventory_models_647/documents/DESIGN.json",
+        "assets/source/art/inventory_models_647/documents/EXPORT.json",
+        "assets/source/art/inventory_models_647/locks/DESIGN.json",
+        "assets/source/art/inventory_models_647/locks/EXPORT.json",
+        "assets/source/art/painted_skins_909/SOURCE.json",
+        "assets/source/art/pombero_455/PROVENANCE.json",
+        "assets/source/art/pombero_461/ANIMATION.json",
+        "assets/source/art/pombero_461/EXPORT.json"
+      ],
+      "exact_metadata": [
+        "assets/bestiary/models/pombero/manifest.json",
+        "assets/source/art/inventory_models_647/books/DESIGN.json",
+        "assets/source/art/inventory_models_647/books/EXPORT.json",
+        "assets/source/art/inventory_models_647/documents/DESIGN.json",
+        "assets/source/art/inventory_models_647/documents/EXPORT.json",
+        "assets/source/art/inventory_models_647/locks/DESIGN.json",
+        "assets/source/art/inventory_models_647/locks/EXPORT.json",
+        "assets/source/art/painted_skins_909/SOURCE.json",
+        "assets/source/art/pombero_455/PROVENANCE.json",
+        "assets/source/art/pombero_461/ANIMATION.json",
+        "assets/source/art/pombero_461/EXPORT.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/folklore/pombero461/painted.png",
       "sha256": "c758560b2803c3cfaedf7ebe746790a29a6e56449cae7e1df5727a63a2f9fab0",
       "bytes": 261438,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/source/art/inventory_models_647/books/DESIGN.json",
-        "assets/source/art/inventory_models_647/books/EXPORT.json",
-        "assets/source/art/inventory_models_647/documents/DESIGN.json",
-        "assets/source/art/inventory_models_647/documents/EXPORT.json",
-        "assets/source/art/inventory_models_647/locks/DESIGN.json",
-        "assets/source/art/inventory_models_647/locks/EXPORT.json",
         "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "exact_metadata": [
-        "assets/source/art/inventory_models_647/books/DESIGN.json",
-        "assets/source/art/inventory_models_647/books/EXPORT.json",
-        "assets/source/art/inventory_models_647/documents/DESIGN.json",
-        "assets/source/art/inventory_models_647/documents/EXPORT.json",
-        "assets/source/art/inventory_models_647/locks/DESIGN.json",
-        "assets/source/art/inventory_models_647/locks/EXPORT.json",
         "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "distribution": "retain-with-source-terms",
@@ -214518,14 +214538,14 @@
     },
     {
       "path": "models/caelum/folklore/pombero461/pombero.md3",
-      "sha256": "5ad5da0a1dad91e20ad5045bd9eeb435f687034bfa31cdea2bc08de601ed0bda",
+      "sha256": "04da15300d9f293fe6e5de5c616afb604e70827d9a2500ad17dc422f9cfdafc2",
       "bytes": 2793960,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/source/art/pombero_461/EXPORT.json"
+        "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "exact_metadata": [
-        "assets/source/art/pombero_461/EXPORT.json"
+        "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []

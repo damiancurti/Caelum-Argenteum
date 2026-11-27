@@ -2,7 +2,7 @@
   "issue": 829,
   "config_sha256": "703899cbc637a8d791d69c435f4b84f135a3db509536820d432a050ab8400b2f",
   "geometry_sha256": "cb4513cae86ed6a7571b0520ad7c76826550f234c8f45ac5012430c2460f333a",
-  "authoring_sha256": "f15f48548dd5b8b48cb4f2515c1e7a3a567d9f9f122058553743258bbe161eab",
+  "authoring_sha256": "d883e0f90653327abe02c724c52818fd33db421ab2d57bdc36ed0d5dd12ece9b",
   "modules": {
     "F": [
       {
@@ -9226,7 +9226,7 @@
       "sha256": "6cf9ea66f6671ba3235c2f2ad8af7cc139b20286013e2a9789670b8df60da597"
     },
     "domingo_skin.png.001": {
-      "source": "src/models/caelum/characters/domingo/domingo_skin.png",
+      "source": "assets/source/art/domingo_3d_pilot/domingo_skin.png",
       "sha256": "6cf9ea66f6671ba3235c2f2ad8af7cc139b20286013e2a9789670b8df60da597"
     },
     "f.png": {
