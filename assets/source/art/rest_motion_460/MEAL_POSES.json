@@ -1,0 +1,12 @@
+{
+  "issue": 460,
+  "scope": "Visual gesture on the retained first-body rigs; no root motion or gameplay data",
+  "base_actions": ["Seated", "Sleeping"],
+  "source_frames": [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65],
+  "samples_per_pose": 14,
+  "wrist_target_from_head": {"eat": [5, 0, 5], "drink": [8, 0, 3]},
+  "target_note": "Offsets in the retained 170-unit art rig, transformed by the head's authored orientation; fitted near the lower face. These are editable visual candidate coordinates, not world placements or balance.",
+  "reach_envelope": "sin(pi * sample / sample_count)^2; native playback uses the approved four seconds",
+  "left_hand": "Keep authored shield hand unchanged",
+  "right_weapon": "Hide only the visual module during the meal gesture"
+}

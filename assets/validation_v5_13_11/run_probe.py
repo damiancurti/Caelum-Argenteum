@@ -5,11 +5,13 @@ ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT))
 sys.path.insert(0,str(ROOT/'assets/validation_v5_12_7'))
 import native_sync
 from caelum_standalone import prepare
-from caelum_sessions import digest
+from caelum_sessions import digest, resource_arguments
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--runtime',type=Path,required=True);p.add_argument('--engine',type=Path,required=True)
+    p.add_argument('--iwad',type=Path,help='Primary game; use the runtime IPK3 for independent integration')
+    p.add_argument('--output',type=Path,help='New evidence directory')
     p.add_argument('--palomo',type=int,default=1)
     p.add_argument('--players',type=int,default=4)
     p.add_argument('--force-palomo',type=int)
@@ -20,8 +22,8 @@ def main():
     p.add_argument('--map',choices=('CASEWER','CAHUNT','CARING'),default='CAHUNT')
     a=p.parse_args()
     a.runtime=a.runtime.resolve(strict=True);a.engine=a.engine.resolve(strict=True)
-    out=ROOT/'build/issue617'/datetime.datetime.now().strftime(f'hunt-{a.port}-%Y%m%d-%H%M%S-%f');out.mkdir(parents=True)
-    iw=Path('C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/base/doom2/DOOM2.WAD')
+    out=a.output.resolve() if a.output else ROOT/'build/issue617'/datetime.datetime.now().strftime(f'hunt-{a.port}-%Y%m%d-%H%M%S-%f');out.mkdir(parents=True)
+    iw=a.iwad.resolve(strict=True) if a.iwad else Path('C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/base/doom2/DOOM2.WAD')
     addon=out/'checks.pk3'
     members=native_sync.instrument({'ZSCRIPT':b'version "4.14.2"\n#include "match_probe.zs"\n',
             'MAPINFO':b'gameinfo { AddEventHandlers="CA617Probe" }\n',
@@ -30,7 +32,7 @@ def main():
         for name,data in members.items():
             z.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),data)
     packages=[a.runtime,addon]
-    base=[str(a.engine),'-noautoload','-iwad',str(iw),'-file',*map(str,packages)]
+    base=[str(a.engine),'-noautoload',*resource_arguments(iw,packages)]
     r=subprocess.run(base+['-norun','-nosound','-errorlog',str(out/'compile.log'),'-config',str(out/'compile.ini')],stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=60)
     (out/'compile-process.log').write_bytes(r.stdout)
     if r.returncode!=1337:
@@ -42,7 +44,7 @@ def main():
         if len(unique)>100:print(f'{len(unique)-100} additional unique lines retained in {out}/compile.log')
         return 1
     processes=[];streams=[];commands=[];error=None
-    startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
+    startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=4
     try:
         for slot in range(a.players):
             selection=dict(role=min(slot,1),mode=3,palomo=a.palomo,preset=slot%4,players=a.players,port=a.port,venue=a.venue,

@@ -85,7 +85,7 @@
     }
   },
   "source_sha256": {
-    "src/TEXTURES": "fe101bef213d375ca30330deb1f01a3c595caf63d753ed9e5ba505318fc3c6ad"
+    "src/TEXTURES": "3958df53c3bed45aa802252f0f7a15d14b4260370609d290826a8faf3207aa21"
   },
   "greatsword": "CGRSA0 -> CA_GSICON1_M -> CA_GSICON1_M_D -> original tier1 source; Desaturate20 and Blend205,198,188 alter RGB only, X/YScale9.796875 determines extent. The model uses owned muted material pixels rather than editing that reference.",
   "method": "No raster generation/editing or gameplay modification; correct reference data, fittings/handle colors and static tassels. Keep original exports/evidence in history. Pickaxe remains byte-identical."

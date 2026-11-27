@@ -1,0 +1,2684 @@
+{
+  "issue": 469,
+  "version": "5.18.3",
+  "pending_sha256": "57a6ab34ca0276a7a8dd5f9a0154a575b137b6a63e3c552ecad89f35d037a5f5",
+  "checks": [
+    {
+      "id": "CA454-MAP02-01",
+      "instructions": "CA454-MAP02-01 | Origin: 5.16.2 / #454\nPrerequisites: final 5.16.2+ default package, a fresh campaign, original old saves retained separately; do not load a visited revision-5 MAP02 in the new-geometry package.\nSteps: enter MAP02 normally; inspect arrival services, drainage/chamber proportions, the south-west-east-north route and internal shortcuts. Obtain sector/cell keys, escort each prisoner to extraction before opening P4, use refuges and lower pit recovery/lift, confront Zupay and capture the Ace of Cups, then depart and return. Save/reload during progress. Separately use the LegacyMap02Revision5 package for an original active/stored-hub save.\nExpected: readable approved layout, comfortable normal/large-character and follower passage, no bypass or softlock, retained services/resources/rewards, boss/card departure guards, persistent progress and unchanged old-map continuation in compatibility mode. Report visual, combat/hazard and frame-presentation problems; agent diagnostics do not confirm this author test.",
+      "actions": [
+        "campaign",
+        "env881-sewer-control",
+        "env887-candidate"
+      ]
+    },
+    {
+      "id": "CA454-MAP03-01",
+      "instructions": "CA454-MAP03-01 | Origin: 5.16.2 / #454\nPrerequisites: rebuilt5.16.2+ default package and a fresh campaign; keep original saves separately. Use --legacy-map03-revision3 for saves that have already visited the original city, including saves inside its private houses. Siege presentation is already known to stall severely; fluent combat is not claimed.\nSteps: reach Barracas normally from the sewer; explore the quay, plaza, residential blocks, shops and workshops. Enter/leave houses facing each direction, use existing services, and save/reload inside and outside. Inspect the four gates and the northern bridge. When the siege occurs, inspect the south/east/west fronts, active/reserve rams, defensive cannon access, victory withdrawal and the Knight essence at the relocated quay. Separately continue an original active-city and stored-hub save with the legacy package.\nExpected: readable approved architecture and routes, retained services and identities, working doors/house returns, persistent progress and no new collision/access softlock. Three fronts use their approved gates; victory and essence capture occur once through existing requirements. Legacy mode retains original geometry. Report navigation, visual, combat and performance problems separately; agent fixtures do not confirm this author test.",
+      "actions": [
+        "campaign",
+        "env881-city-control",
+        "env886-candidate"
+      ]
+    },
+    {
+      "id": "CA455-VIS-01",
+      "instructions": "CA455-VIS-01 | Origin: 5.16.3 / #455\nPrerequisites: current complete repository and local development engine/IWAD; rebuild the normal development package. This is an isolated visual pilot, not a campaign encounter.\nSteps: run `python assets/generators/generate_nahuelito_model.py --output build/nahuelito`, then `python assets/validation_v5_16_3/run_nahuelito_preview.py --model build/nahuelito --runtime build/caelum_argenteum_dev.pk3 --output build/nahuelito-author --interactive`. Use F1-F8 to inspect viewpoints/poses, F9 for swimming. Compare with assets/source/bestiary_453/imagenes/05_Bestias_magicas/55_nahuelito.png. Save/reload if desired, then close the game.\nExpected: recognizable Nahuelito silhouette, four volumetric flippers, long neck/tail, separate head/jaw/eyes/scutes, legible material and continuous idle/swim motion from every side, one model after reload. Confirm or request visual corrections; this does not accept combat, aquatic navigation, campaign population or final collision size.",
+      "actions": [
+        "v5_16_3-run_nahuelito_preview"
+      ]
+    },
+    {
+      "id": "CA458-MODULES-01",
+      "instructions": "CA458-MODULES-01 | Origin: 5.17.0 / #458\nPrerequisites: rebuilt5.17.0+ complete development package and local engine/IWAD; preserve original saves. This checks the Domingo module pipeline, not all-character conversion.\nSteps: run `python assets/validation_v5_17_0/run_modular_preview.py --runtime build/caelum_argenteum_dev.pk3 --output build/modular-author-01 --interactive` (use a new output folder when repeating). F1/F2 compare fixed/modular; F3 hides sword/shield, F4 restores all, F5 hides hair/shield, F6 walks and F7 freezes. Save with hair/shield hidden, reload, inspect and restore. Close the game when finished.\nExpected: the complete modular model retains Domingo's accepted identity and poses; the selected pieces disappear and return independently, including after loading. No equipment, physics or ordinary character conversion is claimed. Report visual seams, animation and performance separately; agent captures do not confirm author acceptance.",
+      "actions": [
+        "v5_17_0-run_modular_preview"
+      ]
+    },
+    {
+      "id": "CA647-COINS-01",
+      "instructions": "CA647-COINS-01 | Origin: 5.17.1 / #647\nPrerequisites: rebuilt 5.17.1+ complete package and local development engine/IWAD; preserve original saves. Other inventory categories remain unfinished.\nSteps: run `python assets/validation_v5_17_1/run_coin_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/coins-author-01 --interactive`. F1-F4 inspect top/low/side/close views. F5 restores player control; walk toward the grid at the room center, collect coins and use the normal inventory to drop a selected denomination. Save/reload with coins held and on the floor. Close the game after review.\nExpected: actual closed copper/silver/gold volume from every direction, retained sun-face art and legible scale; correct denomination, quantity and value after normal pickup/drop/reload. Report art, interaction and presentation problems separately. Agent fixture assertions do not confirm this author check.",
+      "actions": [
+        "v5_17_1-run_coin_drops-coins"
+      ]
+    },
+    {
+      "id": "CA647-CONSUMABLES-01",
+      "instructions": "CA647-CONSUMABLES-01 | Origin: 5.17.1 / #647\nPrerequisites: rebuilt current 5.17.1+ package containing inventory_consumables.modeldef; preserve original saves. This checks nine medikit/Anima/energy drops, not all inventory art.\nSteps: run `python assets/validation_v5_17_1/run_coin_drops.py --kind consumables --runtime build/caelum_argenteum_dev.pk3 --output build/consumables-author-01 --interactive`. F1-F4 inspect the room/medikit, F6 Anima, F7 energy and F8 rear. F5 restores player control/HUD. Walk toward the room center, collect items, use normal inventory to drop each family/tier, and save/reload with items held and on the floor.\nExpected: closed bodies and visible handles/straps/caps/ornaments from every side, recognizable existing families and silver-medium/silver-plus-gold-large fittings, appropriate scale/materials and unchanged quantities/effects/ownership. Report visual seams, clipping, interactions or performance; agent evidence does not confirm this author check.",
+      "actions": [
+        "v5_17_1-run_coin_drops-consumables"
+      ]
+    },
+    {
+      "id": "CA647-WATER-01",
+      "instructions": "CA647-WATER-01 | Origin: 5.17.1 / #647\nPrerequisites: rebuilt current package containing inventory_water.modeldef and local development engine/IWAD; preserve original saves. This checks six bottles/canteens; legacy rations, maze water and cooking vessels remain separate.\nSteps: run `python assets/validation_v5_17_1/run_coin_drops.py --kind water --runtime build/caelum_argenteum_dev.pk3 --output build/water-author-01 --interactive`. F1-F4 and F6-F8 inspect front/side/rear/close views; F5 restores player control/HUD. Collect the six containers, check their contents/quality, drop them through the normal inventory, and save/reload with held and dropped containers.\nExpected: distinct green/amber glass, leather sleeves/straps and wicker basket/handle, actual volume and sensible floor contact/scale. Contents, quality, container identity and weight persist; temperature follows normal cooling. Report visual/interaction issues separately; no agent-only result confirms this author check.",
+      "actions": [
+        "v5_17_1-run_coin_drops-water"
+      ]
+    },
+    {
+      "id": "CA647-FOOD-01",
+      "instructions": "CA647-FOOD-01 | Origin: 5.17.1 / #647\nPrerequisites: rebuilt current package containing inventory_food.modeldef and local development engine/IWAD; preserve original saves. Covers ration/maze ration, bread, roast beef, roast hake and puchero, plus four prepared table displays.\nSteps: run `python assets/validation_v5_17_1/run_coin_drops.py --kind food --runtime build/caelum_argenteum_dev.pk3 --output build/food-author-01 --interactive`. F1-F4/F6-F8 inspect dropped meals, F9 the table, F5 restores player control/HUD. Collect and drop food through normal inventory, inspect its lot details, place/withdraw a prepared meal through the table menu, and save/reload with held, dropped and table-owned portions.\nExpected: recognizable approved foods with volume, sensible footprint and floor/table contact, no raised bread spikes or stretched cut faces. Portion counts, lot chronology/contamination and ownership persist. Depicted plates/bowl do not create extra container items. Agent evidence does not confirm this author check.",
+      "actions": [
+        "v5_17_1-run_coin_drops-food"
+      ]
+    },
+    {
+      "id": "CA650-AMMO-01",
+      "instructions": "CA650-AMMO-01 | Origin: 5.17.2 / #650\nPrerequisites: current package with the #650 lookup fix, normal character inventory and a preserved copy of the original save. Use legitimately acquired carbine ammunition and all three javelin tiers; other ammunition families should also remain separate.\nSteps: while holding carbine ammunition, pick up each javelin tier, inspect quantities and weight, then drop/repick each type through normal inventory. Repeat with javelins held before acquiring carbine rounds. Save/reload with ammunition held and on the ground; check weapon/ammunition selection and normal use.\nExpected: each of the seven ammunition types retains its own identity and quantity; javelins never increase the carbine stack. Existing provenance and saved typed stacks persist. Previously misclassified rounds are not automatically redistributed. Agent fixture checks do not establish this author result.",
+      "actions": [
+        "v5_17_3-run_ammunition_drops"
+      ]
+    },
+    {
+      "id": "CA652-AMMUNITION-01",
+      "instructions": "CA652-AMMUNITION-01 | Origin: 5.17.3 / #652\nPrerequisites: current package with #650 and #652, normal inventory controls, an original-save backup and the seven legitimately acquired ammunition types. For isolated art review, run assets/validation_v5_17_3/run_ammunition_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/ammunition-author-01 --interactive.\nSteps: inspect carbine rounds, red-fletched arrows, blue-fletched bolts, the three tiered javelins and shotgun shells from the front, side and rear. Drop part of each stack with normal controls; save, reload and collect it again. The inspection room offers F1-F8 viewpoints; F9 selects the next close-up and F10 rotates it. F5 restores player control and normal field of view.\nExpected: actual volume on every side, distinct tier fittings, original icons and readable materials. Native quantities, weight and ownership remain unchanged through split/recombine/save; each ammunition type stays separate. Report art and normal-control results independently. Decorative bundle size is not the native stack quantity.",
+      "actions": [
+        "v5_17_3-run_ammunition_drops"
+      ]
+    },
+    {
+      "id": "CA463-REGIONS-01",
+      "instructions": "CA463-REGIONS-01 | Origin: 5.17.4 / #463\nPrerequisites: current package and preserved original pilot sources. Run python assets/validation_v5_17_4/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/regions-author-01 --interactive. This uses an isolated map/config/save directory, not a campaign save.\nSteps: inspect F2 Litoral, F3 Selva and F4 Patagonia; use F6/F7 for Cuero/Nahuelito and F8-F10 for repeated floor materials. Check joins, repeated patterns, leaf/gravel size and character readability. Use F5 to walk from the cobbled path onto each material plot; save/reload in this isolated session if desired.\nExpected: coherent original ground materials, visible three-dimensional preview creatures, continuous walkable surfaces and no changes to existing campaign art or inventory. Report material and gallery results separately from the still-pending production creature/combat review. Pombero appears twice as a regional display, not two campaign identities.",
+      "actions": [
+        "v5_17_4-run_gallery"
+      ]
+    },
+    {
+      "id": "CA461-POMBERO-01",
+      "instructions": "CA461-POMBERO-01 | Origin: 5.17.5 / #461\nPrerequisites: current package. Run python assets/validation_v5_17_5/run_pombero.py --runtime build/caelum_argenteum_dev.pk3 --output build/pombero-author-01 --interactive in an isolated configuration; do not use a campaign save.\nSteps: inspect F1 idle, F2 movement, F3 stun, F4 attack preparation, F5 release, F6 pain, F7 falling, F8 corpse, F9 breath and F10 lying rest. Judge face, silhouette, joints and contact with the floor; report the provisional body scale separately.\nExpected: actual volume through every inherited pose, original identity and readable motion. The existing provisional Mandinga combat and body rules remain unchanged; this inspection does not approve campaign encounters or the remaining creature roster.",
+      "actions": [
+        "v5_17_5-run_pombero"
+      ]
+    },
+    {
+      "id": "CA656-DOCUMENTS-01",
+      "instructions": "CA656-DOCUMENTS-01 | Origin: 5.17.6 / #656\nPrerequisites: current package. Run python assets/validation_v5_17_6/run_document_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/documents-author-01 --interactive in an isolated configuration; do not use a campaign save.\nSteps: inspect F1-F4 and F6-F8, F9 next object and F10 rotation. F5 restores player control; collect the six displayed native objects, inspect their original icons and discard them using the ordinary inventory UI. Inspect the recipe-book pages and the key's identity; compare scale, folded cloth, book binding, wax seal and metal silhouette.\nExpected: actual 3D volume and the original quantity, identity and icon after pickup/drop. Report appearance and ordinary-menu results separately; agent-only tests do not constitute author acceptance.",
+      "actions": [
+        "v5_17_6-run_document_drops"
+      ]
+    },
+    {
+      "id": "CA658-INGOTS-01",
+      "instructions": "CA658-INGOTS-01 | Origin: 5.17.7 / #658\nPrerequisites: current package. Run python assets/validation_v5_17_7/run_ingot_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/ingots-author-01 --interactive in an isolated configuration; do not use a campaign save.\nSteps: inspect the seven metal columns and three quality rows. F9 chooses the next metal close-up and F10 rotates it; F1-F4/F6-F8 give wider views. F5 restores player control. Collect and discard ingots through the ordinary inventory interface, comparing material, tier, amount and original icon.\nExpected: volumetric iron/copper/tin/bronze/steel/silver/gold, correct separate tier stacks and conserved amounts. Report scale, close-up material resolution and ordinary-menu results separately. Agent fixtures do not constitute author acceptance.",
+      "actions": [
+        "v5_17_7-run_ingot_drops"
+      ]
+    },
+    {
+      "id": "CA660-CUERO-01",
+      "instructions": "CA660-CUERO-01 | Origin: 5.17.8 / #660\nPrerequisites: current package. Run python assets/validation_v5_17_8/run_cuero.py --runtime build/caelum_argenteum_dev.pk3 --output build/cuero-author-01 --interactive in an isolated configuration; do not use a campaign save.\nSteps: inspect F1 idle, F2 movement, F3 stun, F4 preparation, F5 release, F6 pain, F7 falling, F8 corpse, F9 breath and F10 rest. Compare the original sheet, claws and eyes through each fold and floor contact. Report the temporary diameter fitting and inherited tall hitbox separately from appearance.\nExpected: original creature identity and real volume in all inherited poses. Native provisional Mandinga gameplay/body remain intact. This review does not approve final species dimensions, mesh/hitbox matching, aquatic rules, encounter placement or the remaining roster.",
+      "actions": [
+        "v5_17_8-run_cuero"
+      ]
+    },
+    {
+      "id": "CA662-NAHUELITO-01",
+      "instructions": "CA662-NAHUELITO-01 | Origin: 5.17.9 / #662\nPrerequisites: current package. Run python assets/validation_v5_17_9/run_nahuelito.py --runtime build/caelum_argenteum_dev.pk3 --output build/nahuelito-author-01 --interactive in an isolated configuration; do not use a campaign save.\nSteps: inspect F1 idle, F2 movement, F3 stun, F4 preparation, F5 release, F6 pain, F7 falling, F8 corpse, F9 breath and F10 rest. Check neck continuity, flipper/jaw contact and floor placement. Report appearance and provisional small body fitting separately from the original full-size regional preview.\nExpected: original creature identity and real volume in all inherited poses. Existing Mandinga stats/body remain unchanged. This does not approve final dimensions, mesh/hitbox matching, aquatic mechanics, encounter placement or remaining creatures.",
+      "actions": [
+        "v5_17_9-run_nahuelito"
+      ]
+    },
+    {
+      "id": "CA664-CAMP-01",
+      "instructions": "CA664-CAMP-01 | Origin: 5.17.10 / #664\nPrerequisites: current package. Run python assets/validation_v5_17_10/run_camp_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/camp-author-01 --interactive in an isolated configuration; do not use a campaign save.\nSteps: inspect F1-F4/F6-F8 overview angles, F9 next item, F10 rotation and F5 player control. Review the miniature pitched tent, pot interior/handles and integral trivet from multiple directions. Check ordinary pickup/drop and each pot's separate contents in the normal inventory UI.\nExpected: actual 3D drops with recognizable original camp art; unchanged icons and native item/container behavior. Inventory display fitting is separate from deployed physical scale. This does not accept earlier pending deployed-pot/trivet visuals or complete the inventory roster.",
+      "actions": [
+        "v5_17_10-run_camp_drops"
+      ]
+    },
+    {
+      "id": "CA666-FURNITURE-01",
+      "instructions": "CA666-FURNITURE-01 | Origin: 5.17.11 / #666\nPrerequisites: current package. Run python assets/validation_v5_17_11/run_furniture_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/furniture-author-01 --interactive in an isolated configuration; do not use a campaign save.\nSteps: inspect F1-F4/F6-F8 overview angles, F9 next isolated item, F10 rotation and F5 player control. Review all seventeen designs, especially the complete 2/6/12/6-chair dining sets and front/back of both paintings. Check ordinary pickup/drop and original icons through the inventory UI.\nExpected: real 3D drops with original furniture identity, separate copies and unchanged item behavior. Inventory fitting is separate from placed physical scale. This does not approve earlier placement, cargo, locked storage or furniture visual checks, or complete the inventory roster.",
+      "actions": [
+        "v5_17_11-run_furniture_drops"
+      ]
+    },
+    {
+      "id": "CA668-WATERSKIN-01",
+      "instructions": "CA668-WATERSKIN-01 | Origin: 5.17.12 / #668\nPrerequisites: current package. Run python assets/validation_v5_17_12/run_waterskin_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/waterskin-author-01 --interactive in an isolated configuration; do not use a campaign save.\nSteps: use F9 for each ration's close-up and F10 for all sides; inspect the closed leather body, neck, strap, pendant and hollow cup. Use F5 for player control and ordinary inventory pickup/drop/use. Compare the unchanged icon and thirst effect, including the legacy maze ration stack.\nExpected: real 3D volume with original ration identity and conserved quantity; use consumes one ration and applies the existing thirst restoration. It remains a consumable, distinct from refillable containers. Report appearance, scale and ordinary-menu checks separately. Earlier mate art decisions and all unrelated author checks remain unchanged.",
+      "actions": [
+        "v5_17_12-run_waterskin_drops"
+      ]
+    },
+    {
+      "id": "CA670-MATES-01",
+      "instructions": "CA670-MATES-01 | Origin: 5.17.13 / #670\nPrerequisites: current package. Run python assets/validation_v5_17_13/run_mate_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/mates-author-01 --interactive in an isolated configuration; do not use a campaign save.\nSteps: F9 selects each design and F10 rotates it; inspect the closed gourd, silver rosette/scrollwork, gold floral panel, narrow mouth and bronze bombilla from all sides. F5 restores player control. Pick up filled and empty vessels separately, inspect their unchanged icons/contents, use the ordinary mate menu and drop them again.\nExpected: actual 3D volume following the accepted corrected #472 art; unchanged unique-vessel inventory rules, water, yerba, temperature and remaining uses. The original front motif repeats on the rear. Report appearance and ordinary-menu checks separately; all earlier author checks remain pending.",
+      "actions": [
+        "v5_17_13-run_mate_drops"
+      ]
+    },
+    {
+      "id": "CA672-LOCKS-01",
+      "instructions": "CA672-LOCKS-01 | Origin: 5.17.14 / #672\nPrerequisites: current package. Run python assets/validation_v5_17_14/run_lock_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/locks-author-01 --interactive in an isolated configuration; do not use a campaign save.\nSteps: F9 selects an item and F10 rotates it; F5 restores player control. Inspect the sixteen instances, collect them and confirm the ordinary inventory shows two distinct copies of all eight lock/key/tool types. Move eligible tools through the Box and drop/recover individual items using normal menus.\nExpected: actual 3D volume using the existing shared gold-key/blue-ribbon representation, original icons and distinct native type/pair identities. No separate padlock/picks art is introduced here. Report appearance and ordinary-menu results separately; #382 acceptance and earlier pending author checks remain unchanged.",
+      "actions": [
+        "v5_17_14-run_lock_drops"
+      ]
+    },
+    {
+      "id": "CA674-JEWELRY-01",
+      "instructions": "CA674-JEWELRY-01 | Origin: 5.17.15 / #674\nPrerequisites: current package. Run python assets/validation_v5_17_15/run_jewelry_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/jewelry-author-01 --interactive in an isolated configuration; do not use a campaign save.\nSteps: F9 selects one of the nine designs and F10 rotates it; F5 restores player control. Inspect fronts, edges, backs and independent links, then collect several types/qualities and use the ordinary equip, unequip, Box and drop menus. Repeat after saving/loading.\nExpected: volumetric gems/medallions and chains, original quality icons and equipment behavior, preserved type/quality/ownership. World quality presentation remains one image per type, as before. Report appearance separately from normal-menu results; worn models and channeling effects are outside this patch.",
+      "actions": [
+        "v5_17_15-run_jewelry_drops"
+      ]
+    },
+    {
+      "id": "CA676-BOOKS-01",
+      "instructions": "CA676-BOOKS-01 | Origin: 5.17.16 / #676\nPrerequisites: current package. Run python assets/validation_v5_17_16/run_book_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/books-author-01 --interactive in an isolated configuration; do not use a campaign save.\nSteps: F9 selects a book representation and F10 rotates it; F5 restores player control. Inspect the weapon/legacy/component drops, collect different qualities, equip/unequip support books, and split/drop/recover book-base components through normal menus. Repeat after saving/loading.\nExpected: the existing blue/gold sun-covered 3D book, original icons and separate weapon/component identities. Compatible weapons still equip automatically when picked up; support books retain Quintessence and their existing abilities. Component quantities/qualities remain separate. First-person art is unchanged. Report appearance and ordinary-menu results separately.",
+      "actions": [
+        "v5_17_16-run_book_drops"
+      ]
+    },
+    {
+      "id": "CA678-GEMS-01",
+      "instructions": "CA678-GEMS-01 | Origin: 5.17.17 / #678\nPrerequisites: current package. Run python assets/validation_v5_17_17/run_gem_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/gems-author-01 --interactive with an isolated configuration; do not use a campaign save.\nSteps: F9 selects each of fourteen material models and F10 rotates it; F5 restores player control. Inspect pendants, gem clusters, opal brooch and raw gems. Pick up distinct materials/qualities, split/drop/recover them through the normal inventory menu, then save/reload.\nExpected: visible settings, chain links, faceted stones and rock bases from front/side/back; original icons and fourteen distinct material IDs, separate quantities/qualities and unchanged crafting identity. Record appearance and ordinary-menu results separately. World models do not imply fitted character wearables.",
+      "actions": [
+        "v5_17_17-run_gem_drops"
+      ]
+    },
+    {
+      "id": "CA680-BEAST-MEN-01",
+      "instructions": "CA680-BEAST-MEN-01 | Origin: 5.17.18 / #680\nPrerequisites: current package. For each species lobizon, uturunco and ucumar, run python assets/validation_v5_17_18/run_beast_men.py --species SPECIES --runtime build/caelum_argenteum_dev.pk3 --output build/beast-SPECIES-author-01 --interactive. Use a new isolated output directory and no campaign save.\nSteps: inspect the silhouette, eyes/muzzle, shoulder/neck joins, fixed clothing, claws and jaguar tail against the original CA-FOLK-003/004/005 images. F1..F10 select representative idle, walk, attack, pain/death and terminal poses. Console netevent ca680_view 0 1 selects front; use final argument 2 for side, 3 for rear, 4/5 for head details. Report seams, intersections and appearance per species.\nExpected: distinct wolf, jaguar and bear forms and visible volumetric fixed outfits; no detached facial parts or missing poses. Existing combat, inventory resources and Rulo identity remain unchanged. Simplified candidate geometry and provisional body size require explicit author acceptance; this does not approve the remaining modular equipment catalogue.",
+      "actions": [
+        "v5_17_18-run_beast_men-lobizon",
+        "v5_17_18-run_beast_men-uturunco",
+        "v5_17_18-run_beast_men-ucumar"
+      ]
+    },
+    {
+      "id": "CA682-REGIONS-01",
+      "instructions": "CA682-REGIONS-01 | Origin: 5.17.19 / #682\nPrerequisites: current package. Run python assets/validation_v5_17_19/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/beast-regions-author-01 --interactive. Use a fresh isolated output directory and no campaign save.\nSteps: F1 overview; F2 Pampa/Lobizon, F3 NOA/Ucumar, F4 Litoral/Lobizon+Uturunco, F6 Selva/Uturunco. F7-F10 inspect repeated floor textures; F5 restores walking. Walk between all four plots, then save/reload this isolated map and inspect the same subjects.\nExpected: readable model silhouettes, plausible ground-feature size and unobtrusive repeated tile edges; five stable native identities/positions with idle animation; all three regional boundaries walkable without steps or invisible walls. Models, source regional assignments and previous CA463G remain intact. These studies do not approve final campaign habitats, physical species sizes or remaining regional artwork.",
+      "actions": [
+        "v5_17_19-run_gallery"
+      ]
+    },
+    {
+      "id": "CA684-ORES-01",
+      "instructions": "CA684-ORES-01 | Origin: 5.17.20 / #684 | Pending author acceptance.\nPrerequisites: build the current PK3; run assets/validation_v5_17_20/run_ore_drops.py with --runtime build/caelum_argenteum_dev.pk3 --output build/ore-author-01 --interactive.\nSteps: inspect coal and all five raw metals using F1-F3/F8, then F9 next type and F10 rotate. Return with F5; inspect floor contact and ordinary pickup/drop. Save, reload, and check all six canonical material stacks and their original icons.\nExpected: volumetric original-art rock clusters, distinct material identities and intact native quantities/tiers/weight; no source-alpha holes or floating pieces. Coal paint adds no heat/light. Record visual reservations separately from save/stack results.",
+      "actions": [
+        "v5_17_20-run_ore_drops"
+      ]
+    },
+    {
+      "id": "CA686-HEADWEAR-01",
+      "instructions": "CA686-HEADWEAR-01 | Origin: 5.17.21 / #686 | Pending author acceptance.\nPrerequisites: current package. Run python assets/validation_v5_17_21/run_headwear_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/headwear-author-01 --interactive with a fresh isolated output directory and no campaign save.\nSteps: inspect all five designs with F1-F3/F8. F9 selects the next medium-size design; F10 cycles front, oblique, rear and raised underside views. F5 restores ordinary walking/HUD. Pick up pieces from the five-size rows, inspect their original icons and sizes, equip a compatible size, try an incompatible size, drop again, then save/reload this isolated session.\nExpected: hollow crowns, visible brims/visors and attached bands/patches without floating parts; original identity, quantity, sizes, wear, water and equipment eligibility remain intact. Review source-texture seams and simplified shapes explicitly. One prop per design is shared across native sizes; this does not approve worn-body fitting or the other twenty garments.",
+      "actions": [
+        "v5_17_21-run_headwear_drops"
+      ]
+    },
+    {
+      "id": "CA688-GLOVES-01",
+      "instructions": "CA688-GLOVES-01 | Origin: 5.17.22 / #688 | Pending author acceptance.\nPrerequisites: current package. Run python assets/validation_v5_17_22/run_glove_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/gloves-author-01 --interactive with a fresh isolated output directory and no campaign save.\nSteps: inspect the four designs with F1-F3/F8. F9 selects the next medium-size pair; F10 cycles front, oblique, rear and raised underside views. F5 restores ordinary walking/HUD. Pick up pairs from the five-size rows, inspect their original icons and sizes, equip a compatible size, try an incompatible one, drop again, then save/reload this isolated session.\nExpected: complete left/right pairs with five fingers each, open cuffs and attached trim/buttons/patches; original identity, one-pair quantity, sizes, wear, water and equipment eligibility remain intact. Review close-up texture seams, knit scale and simplified fingers explicitly. Each design shares one prop across native sizes; this does not approve worn fitting or the other sixteen garments.",
+      "actions": [
+        "v5_17_22-run_glove_drops"
+      ]
+    },
+    {
+      "id": "CA690-DUENDES-01",
+      "instructions": "CA690-DUENDES-01 | Origin: 5.17.23 / #690 | Pending author acceptance.\nPrerequisites: current package and an isolated fresh output directory. Run python assets/validation_v5_17_23/run_duendes.py --species mikilo --runtime build/caelum_argenteum_dev.pk3 --output build/mikilo-author-01 --interactive; repeat with --species coquena and a different output directory. Do not use a campaign save.\nSteps: follow the terminal's view/pose controls through front/side/rear and face details, then idle, walking, attack, pain, death, breath and rest. Inspect felt hat/hair/cloth/pouch/patches on Mikilo and chullo/poncho/strap/bag/sandals on Coquena. Return to normal play to inspect native movement, collision and attacks; save/reload this isolated room.\nExpected: distinct real 3D creatures with attached editable costume pieces and unchanged native rules. Review material seams, coarse weave, simplified hands/feet and clothing motion explicitly. Catalogue dimensions, new behavior, campaign placement, runtime interchangeable equipment and final art acceptance remain separate decisions.",
+      "actions": [
+        "v5_17_23-run_duendes-mikilo",
+        "v5_17_23-run_duendes-coquena"
+      ]
+    },
+    {
+      "id": "CA692-NOA-GALLERY-01",
+      "instructions": "CA692-NOA-GALLERY-01 | Origin: 5.17.24 / #692 | Pending author acceptance.\nPrerequisites: current package and a new isolated output directory. Run python assets/validation_v5_17_19/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/noa-gallery-author-01 --interactive. Do not use a campaign or older fixture save.\nSteps: use F1 overview, F3 NOA group, F11 Mikilo and F12 Coquena. Inspect their 3D silhouettes and existing regional ground; use F5 to walk between all four plots, then inspect the retained Pampa/Litoral/Selva views and F7-F10 ground tiles. Save/reload this isolated room.\nExpected: seven native diagnostic figures retain their identities, positions and idle animation; the two duendes stand beside Ucumar within the NOA plot. Ordinary walking crosses all three regional boundaries. Report framing, material seams and art concerns; this is not campaign placement or final artwork acceptance.",
+      "actions": [
+        "v5_17_19-run_gallery"
+      ]
+    },
+    {
+      "id": "CA694-FOOTWEAR-01",
+      "instructions": "CA694-FOOTWEAR-01 | Origin: 5.17.25 / #694 | Pending author acceptance.\nPrerequisites: current package. Run python assets/validation_v5_17_25/run_footwear_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/footwear-author-01 --interactive with a fresh isolated output directory and no campaign save.\nSteps: inspect the five designs with F1-F3/F8. F9 selects the next medium-size pair; F10 cycles front, oblique, rear and raised underside views. F5 restores ordinary walking/HUD. Pick up pairs from the five-size rows, inspect original icons/sizes, equip a compatible size, try an incompatible one, drop again and save/reload the isolated session.\nExpected: complete shoe/boot pairs with hollow openings and attached soles, heels, laces or patches as appropriate. Identity, one-pair quantity, size, wear, water and equipment eligibility remain intact. Review simplified silhouettes, crop stretching and close-up seams explicitly. Each design shares a world prop across native sizes; this does not approve worn fitting or the eleven body garments.",
+      "actions": [
+        "v5_17_25-run_footwear_drops"
+      ]
+    },
+    {
+      "id": "CA696-CLOTHING-01",
+      "instructions": "CA696-CLOTHING-01 | Origin: 5.17.26 / #696 | Pending author acceptance.\nPrerequisites: current package. Run python assets/validation_v5_17_26/run_clothing_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/clothing-author-01 --interactive with a fresh isolated output directory and no campaign save.\nSteps: inspect the eleven outfits with F1-F3/F8. F9 selects the next medium-size outfit; F10 cycles raised underside, front, side and rear views. F5 restores ordinary walking/HUD. Pick up ensembles from the five-size rows, inspect original icons/sizes, equip a compatible size, try an incompatible one, drop again and save/reload the isolated session.\nExpected: complete shirts/trousers and appropriate coats, waistcoats, belts, patches or fringed poncho; hollow garment openings and attached components. Each item remains one ensemble with intact identity, size, wear, water and eligibility. Review simplified silhouettes, enlarged material crops and seams explicitly. F/FW/CW/PW have folded trousers as in the paintings. Shared world meshes across sizes do not approve worn/first-person fitting.",
+      "actions": [
+        "v5_17_26-run_clothing_drops"
+      ]
+    },
+    {
+      "id": "CA698-GUARDIANS-01",
+      "instructions": "CA698-GUARDIANS-01 | Origin: 5.17.27 / #698 | Pending author acceptance.\nPrerequisites: current package and a new isolated output directory. Run python assets/validation_v5_17_27/run_guardians.py --species yasi --runtime build/caelum_argenteum_dev.pk3 --output build/yasi-author-01 --interactive; repeat with --species yastay and a different directory. Do not load a campaign save in this fixture.\nSteps: F1-F10 select representative poses; keys 1-6 select idle front/side/rear and facial views; 7 shows lying art. Console netevent ca698_view <pose 0-22> <view 0-6> combines any frame/view; view 6 also gives clearance for raised limbs. Inspect Yasí's face, hair flowers, tunic, sash, hands/feet and staff; inspect Yastay's camelid face, mantle/clasp, wrap and leg bindings. Save/reload this isolated room and repeat selected views.\nExpected: distinct volumetric creatures with attached editable components and retained identities. Review enlarged weave, facial proportions, seams, simplified extremities and rigid garment motion explicitly. Native combat/loot evidence is automated separately. This does not approve runtime size changes, new behavior, campaign placement, interchangeable wardrobe modules or the remaining broad 3D batch.",
+      "actions": [
+        "v5_17_27-run_guardians-yasi",
+        "v5_17_27-run_guardians-yastay"
+      ]
+    },
+    {
+      "id": "CA700-CUYO-GALLERY-01",
+      "instructions": "CA700-CUYO-GALLERY-01 | Origin: 5.17.28 / #700 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory. Run python assets/validation_v5_17_19/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/cuyo-gallery-author-01 --interactive. Do not use a campaign or older fixture save.\nSteps: F1 shows all five plots; 1 selects Yasí/Litoral, 2 Yastay/Cuyo, 3 Yastay/NOA and 4 the new Cuyo ground. Retain F2-F4/F6 regional views, F7-F10 prior ground tiles and F11/F12 the earlier duendes. Use F5 to walk from Pampa through NOA/Litoral/Selva into Cuyo, then save/reload the isolated room and revisit the new views.\nExpected: ten native diagnostic figures retain identities, positions and idle animation; Cuyo soil repeats without disruptive edges or scale changes. Review palette, repeat visibility, model readability and closeup framing. The two Yastay displays compare the same unique identity and do not authorize duplicated campaign characters; no final geography, art or broad-batch acceptance is implied.",
+      "actions": [
+        "v5_17_19-run_gallery"
+      ]
+    },
+    {
+      "id": "CA702-SHIELDS-01",
+      "instructions": "CA702-SHIELDS-01 | Origin: 5.17.29 / #702 | Pending author acceptance.\nPrerequisites: current package, isolated output directory and no campaign save. Run python assets/validation_v5_17_29/run_shield_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/shields-author-01 --interactive.\nSteps: inspect all four shields using F9 to select and F10 to rotate through front, edge, rear-oblique, rear and raised underside. F1-F3/F8 show the rows; F5 returns ordinary walking/HUD. Pick up different tiers and sizes, inspect existing icons, equip a compatible size, try an incompatible one, drop and save/reload the isolated session.\nExpected: recognizable buckler, crescent kite, sun tower and blue magic shield; curved front relief, solid backing, edge thickness and connected rear grips with clearance. Review original low-resolution pixels, internal alpha paint gaps over the backing and simplified silhouettes explicitly. Identity, tier, size, condition and eligibility remain unchanged. This check does not approve worn/first-person fitting.",
+      "actions": [
+        "v5_17_29-run_shield_drops"
+      ]
+    },
+    {
+      "id": "CA704-PLATES-01",
+      "instructions": "CA704-PLATES-01 | Origin: 5.17.30 / #704 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, with no campaign save. Run python assets/validation_v5_17_30/run_plate_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/plates-author-01 --interactive.\nSteps: use F9 to select each of the six plates and F10 to rotate front/edge/rear-oblique/rear/raised underside. Inspect the large plate's four bands. F5 restores ordinary walking/HUD. Pick up the three-tier stacks, inspect original icons, split/drop and merge matching materials, then save/reload the isolated session.\nExpected: recognizable plates with curved closed backing and edges; large plate bands overlap without coplanar backs. Review low-resolution original paint, internal alpha gaps over metal and simplified shapes explicitly. Quantities, tiers, provenance and contamination remain intact; different tiers stay separate. This does not approve worn armor or change recipes.",
+      "actions": [
+        "v5_17_30-run_plate_drops"
+      ]
+    },
+    {
+      "id": "CA706-CHAINMAIL-01",
+      "instructions": "CA706-CHAINMAIL-01 | Origin: 5.17.31 / #706 | Pending author acceptance.\nPrerequisites: current package and a new isolated output directory, with no campaign save. Run python assets/validation_v5_17_31/run_chainmail_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/chainmail-author-01 --interactive.\nSteps: F9 selects the chainmail closeup; F10 rotates front/edge/rear-oblique/rear/raised underside. Inspect visible interlacing and open link centers. F5 restores ordinary walking/HUD. Pick up all three-tier stacks, inspect the unchanged icon, split/drop and merge matching materials, then save/reload the isolated session.\nExpected: recognizable chainmail with real linked volumes and open centers. Review the regular rigid weave and uniform reused iron explicitly. Quantities, tiers, provenance and contamination remain intact; different tiers stay separate. Worn armor and crafting recipes are not changed or accepted by this test.",
+      "actions": [
+        "v5_17_31-run_chainmail_drops"
+      ]
+    },
+    {
+      "id": "CA708-PEUCHEN-01",
+      "instructions": "CA708-PEUCHEN-01 | Origin: 5.17.32 / #708 | Pending author acceptance.\nPrerequisites: current package, a fresh isolated output directory and no campaign save. Run python assets/validation_v5_17_32/run_peuchen.py --runtime build/caelum_argenteum_dev.pk3 --output build/peuchen-author-01 --species peuchen --interactive.\nSteps: F1-F10 inspect the documented idle/run/stun/attack/pain/death/breath/rest poses; keys 1-6 inspect ordinary and head views, 7 the folded lying view. Compare against the owned 54_peuchen.png. Save/reload only this isolated session; verify the selected pose and existing collision/health. Review native action/loot evidence separately from an ordinary combat play session.\nExpected: recognizable four-legged, horned, winged Peuchen with long neck/tail, actual thick membranes and smooth visible state transitions. Review simplified muzzle/horns, ventral boundaries, membrane folds and rigid joints explicitly. The corpse folds its wings beside the body. Existing provisional Mandinga statistics, hostility, attacks, loot and collision remain; wings do not add flight. Native checks are not author art or campaign acceptance.",
+      "actions": [
+        "v5_17_32-run_peuchen-peuchen"
+      ]
+    },
+    {
+      "id": "CA709-NATIVE-GALLERY-01",
+      "instructions": "CA709-NATIVE-GALLERY-01 | Origin: 5.17.33 / #709 | Pending author acceptance.\nPrerequisites: current package and a new isolated output directory. Run python assets/validation_v5_17_43/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/native-regions-author-01 --interactive. Use this room's save only.\nSteps: inspect F1 overview, F2/F3 Pombero, F4 Patagonia, F6 Cuero, F7 Nahuelito and F11 Peuchen. Check the original repeated materials with number keys 1-3. Use F5 to walk through both regional boundaries, then save/reload and revisit the figures.\nExpected: the five original native figures in the expanded room keep their identity, position and idle animation; the original three regional areas are walkable. Report model framing, material seams and art concerns. This check does not confirm campaign placement or automatically accept the individual creature artwork.",
+      "actions": [
+        "v5_17_43-run_gallery"
+      ]
+    },
+    {
+      "id": "CA711-AVIAN-01",
+      "instructions": "CA711-AVIAN-01 | Origin: 5.17.34 / #711 | Pending author acceptance.\nPrerequisites: current package, fresh isolated output directories and no campaign save. Run python assets/validation_v5_17_34/run_avian.py --runtime build/caelum_argenteum_dev.pk3 --output build/avian-author-cachiru --species cachiru --interactive. Repeat with kakuy and kelenken and a different output path each time.\nSteps: F1-F10 inspect idle/run/stun/attack/pain/death/breath/rest; keys 1-6 inspect ordinary and head views, 7 the folded lying view. Compare each with owned references 45_cachiru.png, 46_kakuy.png and 58_kelenken.png. Save/reload only isolated sessions; verify pose, collision and health. Review native action/loot evidence separately from ordinary combat play.\nExpected: three recognizable avian identities with volumetric feathers, wings/tails, beaks and clawed legs. Check simplified faces/beaks, feather layering, talons, rigid joints and folded corpse explicitly. Provisional Mandinga combat, hostility, loot and collision remain; wings do not add flight or authorize new scale. Native tests are not author art or campaign acceptance.",
+      "actions": [
+        "v5_17_34-run_avian-cachiru",
+        "v5_17_34-run_avian-kakuy",
+        "v5_17_34-run_avian-kelenken"
+      ]
+    },
+    {
+      "id": "CA713-AVIAN-GALLERY-01",
+      "instructions": "CA713-AVIAN-GALLERY-01 | Origin: 5.17.35 / #713 | Pending author acceptance.\nPrerequisites: current package, fresh isolated output directory and no campaign save. Run python assets/validation_v5_17_43/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/avian-regions-author-01 --interactive.\nSteps: use F1 overview, F8 Cachiru, F9 Kakuy and F12 Kelenken; number key4 shows NOA ground tiling. Inspect Patagonia with F4, walk from NOA through all three boundaries with F5, then save/reload and revisit the eight original figures in the expanded room. Retain separate artwork acceptance under CA711-AVIAN-01.\nExpected: the added birds appear on their approved grounds, keep native identity/position/idle animation and remain passive while walking. All four regional plots connect; cameras stay inside the room. Check framing and repeated-texture seams. This optional fixture does not approve campaign placement or complete the broader 3D batch.",
+      "actions": [
+        "v5_17_43-run_gallery"
+      ]
+    },
+    {
+      "id": "CA716-CHAINS-01",
+      "instructions": "CA716-CHAINS-01 | Origin: 5.17.36 / #716 | Pending author acceptance.\nPrerequisites: current package and a new isolated output directory, without a campaign save. Run python assets/validation_v5_17_36/run_chain_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/chains-author-01 --interactive.\nSteps: inspect floor/front/rear views with F1-F8; use F9 for each design and F10 for rotated detail/raised underside. Compare with the owned chain and silver-chain icons. Inspect ordinary pickup/drop and save/reload separately; preserve the existing three iron tiers and single untiered silver stack.\nExpected: linked volumetric rings with real holes, recognizable spiked head and coiled silver chain, stable floor contact and preserved amounts/identity. Review uniform metals, simplified spikes and regular coil explicitly. Native API tests do not confirm menus/crafting, chain physics or author visual acceptance.",
+      "actions": [
+        "v5_17_36-run_chain_drops"
+      ]
+    },
+    {
+      "id": "CA717-WOOD-COMPONENTS-01",
+      "instructions": "CA717-WOOD-COMPONENTS-01 | Origin: 5.17.37 / #717 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_37/run_wood_component_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/wood-components-author-01 --interactive.\nSteps: inspect floor/front/rear views with F1-F8, cycle six designs with F9 and rotate details/raised undersides with F10. Compare shaft, two bow frames, short/long handles and timber with their owned material icons. Test ordinary pickup/drop and save/reload separately, retaining all eighteen type/tier identities.\nExpected: closed volumetric components, open space inside each bow, attached strings, distinct profiles and stable floor contact. Review uniform brown material and simplified decoration explicitly. Amounts, original icons, tiers and collision remain unchanged; API probes do not establish menu/crafting or author visual acceptance.",
+      "actions": [
+        "v5_17_37-run_wood_component_drops"
+      ]
+    },
+    {
+      "id": "CA720-SERPENTS-01",
+      "instructions": "CA720-SERPENTS-01 | Origin: 5.17.38 / #720 | Pending author acceptance.\nPrerequisites: current package, fresh isolated output directories and no campaign save. Run python assets/validation_v5_17_38/run_serpent.py --runtime build/caelum_argenteum_dev.pk3 --output build/serpent-author-monai --species monai --interactive. Repeat with mboi_tata and a different output path.\nSteps: F1-F10 inspect documented idle/run/stun/attack/pain/death/breath/rest poses; keys 1-6 inspect ordinary/head views and 7 the lying view. Compare owned references 49_monai.png and 51_mboi_tata.png. Check jaws during attacks, crest orientation, underside UVs and the complete coil. Save/reload only isolated sessions; check pose, collision and health. Assess ordinary combat separately from the archived automated probes.\nExpected: distinct volumetric olive horned Moñái and bronze/ember crested Mbói Tatá, attached anatomy and stable grounded lowest vertices. Review simplified heads, regular coil, belly transitions and rigid jaw/crest explicitly. Inherited Mandinga rules and collision remain; the visible coil can extend beyond collision Radius. No new fire effect, size rule or campaign placement. Native checks do not establish author art or campaign acceptance.",
+      "actions": [
+        "v5_17_38-run_serpent-monai",
+        "v5_17_38-run_serpent-mboi_tata"
+      ]
+    },
+    {
+      "id": "CA721-SERPENT-GALLERY-01",
+      "instructions": "CA721-SERPENT-GALLERY-01 | Origin: 5.17.39 / #721 | Pending author acceptance.\nPrerequisites: current package, fresh isolated output directory and no campaign save. Run python assets/validation_v5_17_43/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/serpent-regions-author-01 --interactive.\nSteps: F1 overview; number key5 Moñái/Selva, key6 Mbói Tatá/Litoral, key7 Mbói Tatá/Selva. Ground keys1/2 inspect Litoral/Selva. F5 walk across all three boundaries; save/reload and revisit the eleven earlier figures in the expanded room. Retain separate artwork acceptance under CA720-SERPENTS-01 and the prior model checks.\nExpected: three new appearances match approved regions, remain attached to their native models, retain identity/position/idle and stay passive during walking. Prior plots, figures and controls remain. Review framing and ground seams. This optional fixture does not approve campaign placement or complete the broader 3D batch.",
+      "actions": [
+        "v5_17_43-run_gallery"
+      ]
+    },
+    {
+      "id": "CA723-WEAPON-COMPONENTS-01",
+      "instructions": "CA723-WEAPON-COMPONENTS-01 | Origin: 5.17.40 / #723 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_40/run_weapon_component_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/weapon-components-author-01 --interactive.\nSteps: inspect floor/front/rear views with F1-F8, cycle eight designs with F9 and rotate details/raised undersides with F10. Compare straight, small, curved, long and broad blades and the three heads with their owned material icons. Inspect socket mouths; test ordinary pickup/drop and save/reload separately while retaining all24 type/tier identities.\nExpected: closed volumetric components, attached mounts/spikes, actual socket openings and stable floor contact. Review simplified blade outlines, uniform wear, regular spikes and the axe hub explicitly. Amounts, original icons, tiers and collision remain unchanged; API probes do not establish ordinary menu/crafting or visual acceptance.",
+      "actions": [
+        "v5_17_40-run_weapon_component_drops"
+      ]
+    },
+    {
+      "id": "CA725-ASSEMBLY-COMPONENTS-01",
+      "instructions": "CA725-ASSEMBLY-COMPONENTS-01 | Origin: 5.17.41 / #725 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_41/run_assembly_component_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/assembly-components-author-01 --interactive.\nSteps: inspect floor/front/rear views with F1-F8, cycle nine designs with F9 and rotate details/raised undersides with F10. Compare both hilts, point, two cords, two straps, tube and mechanism with the original icons. Inspect hollow spaces and connected parts, then test ordinary pickup/drop, crafting and save/reload separately, preserving all27 type/tier identities.\nExpected: closed volumes, actual coil/strap space and socket/bore openings, attached ferrules/buckles/supports and stable floor contact. Review simplified grip ornament, regular braided coils, strap tails and mechanical detail explicitly. Original icons, tiers, amounts, rules and collision remain unchanged; API probes are not ordinary menu/crafting or author visual acceptance.",
+      "actions": [
+        "v5_17_41-run_assembly_component_drops"
+      ]
+    },
+    {
+      "id": "CA727-HYBRID-SERPENTS-01",
+      "instructions": "CA727-HYBRID-SERPENTS-01 | Origin: 5.17.42 / #727 | Pending author acceptance.\nPrerequisites: current package, fresh isolated output directories and no campaign save. Run python assets/validation_v5_17_42/run_serpent.py --runtime build/caelum_argenteum_dev.pk3 --output build/hybrid-author-tui-01 --species mboi_tui --interactive, then repeat with --species mboi_yagua and a different output directory.\nSteps: compare each creature with the original bestiary concept; use F1-F10 for documented poses, 1-6 for rotation/head views and 7 for the lying pose. Inspect beak/muzzle, eyes, ears, feather/fur roots, belly orientation and the visual footprint against collision. Save/reload only this isolated session. Then summon each existing creature in a disposable test map and exercise ordinary combat and finite loot.\nExpected: recognizable species with solid animated anatomy through turns, attacks, pain and death; no detached features, invisible surfaces or stale sprite frames. Existing identity, provisional Mandinga combat/loot, collision and saves remain consistent. Assess the simplified facial surfaces, sparse regular tufts and rigid jaw/crest as candidate art; no campaign placement or crowd-performance acceptance is implied.",
+      "actions": [
+        "v5_17_42-run_serpent-mboi_tui",
+        "v5_17_42-run_serpent-mboi_yagua"
+      ]
+    },
+    {
+      "id": "CA729-HYBRID-GALLERY-01",
+      "instructions": "CA729-HYBRID-GALLERY-01 | Origin: 5.17.43 / #729 | Pending author acceptance.\nPrerequisites: current package, fresh isolated output directory and no campaign save. Run python assets/validation_v5_17_43/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/hybrid-regions-author-01 --interactive.\nSteps: F1 overview; key 8 Tu’ĩ/Litoral, key 9 Yaguá/Litoral, key 0 Yaguá/Selva. Ground keys 1/2 inspect Litoral/Selva. F5 walk across three boundaries; save/reload and revisit all fourteen figures. Retain separate artwork acceptance under CA727-HYBRID-SERPENTS-01 and the previous model tests.\nExpected: three new appearances match approved regions, remain bound to their native models, retain identity/position/idle and stay passive during walking. Prior plots, figures and controls remain. Review framing and ground seams. This optional fixture does not approve campaign encounters or complete the broader 3D batch.",
+      "actions": [
+        "v5_17_43-run_gallery"
+      ]
+    },
+    {
+      "id": "CA731-HIDE-DROPS-01",
+      "instructions": "CA731-HIDE-DROPS-01 | Origin: 5.17.44 / #731 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_44/run_hide_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/hides-author-01 --interactive.\nControls correction (5.17.51/#745): F10 now cycles90,160,225,270,raised underside0,90; F9 selects the next design. Original test origin and pending acceptance are unchanged.\nSteps: inspect floor/front/rear views with F1-F8, cycle four designs with F9 and rotate details with F10. For a raised underside, open the console and run netevent ca731_detail 0 0 (replace the first 0 with design index 1, 2 or 3). Compare leather, cow hide, predator hide and monster hide with the original icons. Inspect folds, reverse surfaces and closed edges, then test ordinary pickup/drop, crafting and save/reload separately, preserving three leather tiers and the three untiered hides.\nExpected: actual closed thickness, stable floor contact and correct exterior versus leather reverse/rim materials. Review polygonal outlines, folds, russet edge contrast and painted scale size explicitly. Icons, amounts, tiers, rules and collision remain unchanged; API probes are not ordinary menu/crafting or author visual acceptance.",
+      "actions": [
+        "v5_17_44-run_hide_drops"
+      ]
+    },
+    {
+      "id": "CA733-TEXTILE-DROPS-01",
+      "instructions": "CA733-TEXTILE-DROPS-01 | Origin: 5.17.45 / #733 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_45/run_textile_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/textiles-author-01 --interactive.\nControls correction (5.17.51/#745): F10 now cycles90,160,225,270,raised underside0,90; F9 selects the next design. Original test origin and pending acceptance are unchanged.\nSteps: inspect floor/front/rear views with F1-F8, cycle six designs with F9 and rotate details/raised undersides with F10. Compare cloth, wool, cotton, raw silk, plant fiber and rope with their original icons. Inspect open folds, coils and connected fibers/husks, then test ordinary pickup/drop, crafting and save/reload separately, preserving three fabric tiers and the five untiered materials.\nExpected: actual closed volumes, visible fold/coil spaces, joined parts and stable floor contact. Review regular folds, shallow fleece locks, upright cotton posture and silk/fiber/binding details explicitly. Icons, tiers, amounts, rules and collision remain unchanged; API probes are not ordinary menu/crafting or author visual acceptance.",
+      "actions": [
+        "v5_17_45-run_textile_drops"
+      ]
+    },
+    {
+      "id": "CA736-MODULAR-STYLE-01",
+      "instructions": "CA736-MODULAR-STYLE-01 | Origin: 5.17.46 / #736 (parent #458) | Pending author visual direction.\nPrerequisites: open assets/source/art/modular_proposals_736/review.html in a browser; no engine or saved game required.\nSteps: inspect human, goblin, Caelith, wolf, bear, puma and jaguar boards. For each family, review male/female proportions, head/neck/ear silhouette, material style and plain clothing. Check the family-specific notes and separate-module contract. Identify accepted directions and requested corrections by family.\nExpected: readable species identities, practical plain clothes, restrained realistic materials and suitable adult sex variants. These are concept images only. Accepting their direction does not accept unseen faces/hairstyles, hidden body/hands/feet anatomy, numeric heights, garment fit, animation, performance or final native models.",
+      "actions": [
+        "gallery-CA736-MODULAR-STYLE-01"
+      ]
+    },
+    {
+      "id": "CA738-BASILISCO-01",
+      "instructions": "CA738-BASILISCO-01 | Origin: 5.17.47 / #738 | Pending author acceptance.\nPrerequisites: current package, a fresh isolated output directory and no campaign save. Run python assets/validation_v5_17_47/run_basilisco.py --runtime build/caelum_argenteum_dev.pk3 --output build/basilisco-author-01 --species basilisco --interactive.\nSteps: compare with the original Basilisco concept. F1-F10 select documented poses; 1-6 select rotation/head views, 7 the lying view, 8 the feet and 9 the tail. Inspect the comb, beak, feather joins, talons, belly and tail through attacks, pain and death. Save/reload only this isolated session. Then summon CaelumBestiary044 in a disposable test map and exercise ordinary combat and finite loot.\nExpected: recognizable solid rooster/reptile anatomy, grounded standing and lying poses, no detached surfaces or stale sprite frames. Review the stylized face/comb, regular feather layers, hard belly boundaries and tail UV repetition as candidate art. Existing provisional Mandinga rules, collision and saves remain unchanged; visual tail/wing extent is not collision. No new flight, petrification, campaign placement or crowd-performance acceptance is implied.",
+      "actions": [
+        "v5_17_47-run_basilisco-basilisco"
+      ]
+    },
+    {
+      "id": "CA739-BASILISCO-GALLERY-01",
+      "instructions": "CA739-BASILISCO-GALLERY-01 | Origin: 5.17.48 / #739 | Pending author acceptance.\nPrerequisites: current package, a fresh isolated output directory and no campaign save. Run python assets/validation_v5_17_48/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/basilisco-regions-author-01 --interactive.\nSteps: F1 overview; key 5 Basilisco/Pampa and key 6 Basilisco/Litoral. F7/F9 inspect those grounds. F5 walk across all four region boundaries; save/reload and revisit twelve figures. Retain separate model artwork/combat acceptance under CA738-BASILISCO-01 and prior creature checks.\nExpected: both appearances match approved regions, retain native model/identity/position and advance passive idle states during walking and after reload. Earlier figures, controls and grounds remain. Review camera framing and ground seams. This optional fixture does not approve campaign encounters or complete the broader batch.",
+      "actions": [
+        "v5_17_48-run_gallery"
+      ]
+    },
+    {
+      "id": "CA741-HYGIENE-DROPS-01",
+      "instructions": "CA741-HYGIENE-DROPS-01 | Origin: 5.17.49 / #741 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_49/run_hygiene_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/hygiene-author-01 --interactive.\nControls correction (5.17.51/#745): F10 now cycles90,160,225,270,raised underside0,90; F9 selects the next design. Original test origin and pending acceptance are unchanged.\nSteps: inspect floor/front/rear views with F1-F8; F9 cycles the three designs and F10 rotates details/raised undersides. Compare with the accepted fat, alkali and soap icons. Inspect fat lobes and seam, jar color/rim/interior/flakes/underside and soap bevels. Separately exercise ordinary pickup/drop, soap crafting, washing and save/reload in a disposable test session.\nExpected: solid grounded objects with a real open jar mouth and complete undersides. Review simplified fat relief/wrap seam, russet ceramic/underside UV swirl, flake shapes and regular soap bevels explicitly. Icons, normalized tier1, quantities, lot/provenance data and hygiene rules stay unchanged. The jar does not become a new item; the cloth remains unchanged. API probes do not establish ordinary menu/hygiene or author visual acceptance.",
+      "actions": [
+        "v5_17_49-run_hygiene_drops"
+      ]
+    },
+    {
+      "id": "CA743-KITCHEN-DROPS-01",
+      "instructions": "CA743-KITCHEN-DROPS-01 | Origin: 5.17.50 / #743 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_50/run_kitchen_ingredient_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/kitchen-author-01 --interactive.\nSteps: inspect floor/front/rear with F1-F8; F9 cycles six ingredients and F10 cycles detail/raised underside views. Compare their owned icons and inspect sack weave/mouth, meat/fat edge, tapered hake/skin, all four vegetables, paper/crystals and dough folds/seam. Separately exercise ordinary pickup/drop, recipes/preparation/cooking and save/reload in a disposable session.\nExpected: complete grounded volumes, open sack/packet mouths with contained fills and full undersides; original icons, normalized tier1, quantities, provenance/lots and all cooking rules retained. Sacks/paper are not separate recoverable items. Review coarse weave, regular paper folds/corn kernels, thick squash rind, visible material seams and dough underside swirl explicitly. API probes are not ordinary-menu/cooking or author visual acceptance.",
+      "actions": [
+        "v5_17_50-run_kitchen_ingredient_drops"
+      ]
+    },
+    {
+      "id": "CA747-CARTRIDGE-KIT-DROPS-01",
+      "instructions": "CA747-CARTRIDGE-KIT-DROPS-01 | Origin: 5.17.52 / #747 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_52/run_cartridge_kit_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/cartridge-kits-author-01 --interactive.\nSteps: F1-F8 inspect floor/front/rear; F9 cycles the two kits and F10 cycles details and raised undersides. Compare with the accepted #380 icons. Inspect wrapper folds, case mouths, bronze/projectile versus paper/shot and sealed packets. Separately test ordinary pickup/drop, existing workbench/chemistry crafting and save/reload in a disposable session.\nExpected: grounded complete volumes, clear case mouths, joined contents and full underside. Review the regular wrapper shape, pale paper contrast, coarse bronze mottling, simple shot and material seams. Each kit remains one indivisible item; displayed pieces do not encode quantities or new products. Icons, tiers, provenance/lots and recipes remain unchanged. API probes do not establish ordinary menus/crafting or author visual acceptance.",
+      "actions": [
+        "v5_17_52-run_cartridge_kit_drops"
+      ]
+    },
+    {
+      "id": "CA751-ELEMENTAL-DROPS-01",
+      "instructions": "CA751-ELEMENTAL-DROPS-01 | Origin: 5.17.54 / #751 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_54/run_elemental_essence_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/elemental-essences-author-01 --interactive.\nSteps: F1-F8 inspect floor/front/rear; F9 cycles the five designs and F10 cycles details and raised undersides. Compare with the original material icons, including earth leaves and the quintessence orbit/satellites. Separately test ordinary pickup/drop, existing crafting/enchantment and save/reload in a disposable session.\nExpected: complete grounded volumes and visible depth on all sides; preserve five identities and three tiers each. Review low-resolution projected facets, repeated paint, saturated tubular surrounds and the pink/gold orbit. Static decorative surrounds introduce no new effects or rules. Icons, quantities, tiers, provenance/lots and recipes remain unchanged. These are crafting materials, not Tarot essences. API checks do not establish ordinary menus/crafting or author visual acceptance.",
+      "actions": [
+        "v5_17_54-run_elemental_essence_drops"
+      ]
+    },
+    {
+      "id": "CA753-ORB-DROPS-01",
+      "instructions": "CA753-ORB-DROPS-01 | Origin: 5.17.55 / #753 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_55/run_orb_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/orbs-author-01 --interactive.\nSteps: F1-F8 inspect floor/front/rear; F9 cycles the three qualities and F10 cycles details and raised undersides. Compare with the accepted baseless #479 Orb. Separately test ordinary pickup/equip/unequip/drop, existing elemental casting/crafting and save/reload in a disposable session.\nExpected: complete spherical volumes with shallow carving, blue insets and preserved wood/silver/gold designs; no pedestal. Review repeated front/rear paint, stretched side insets, low painted bands in overhead views and baked highlights. The component base retains T1 appearance across its three material tiers. Icons, valid offensive essences, quantities, durability, provenance and recipes remain unchanged; held art/hands remain original. API probes and the accepted 2D design do not establish ordinary gameplay or native visual acceptance.",
+      "actions": [
+        "v5_17_55-run_orb_drops"
+      ]
+    },
+    {
+      "id": "CA755-MAGIC-BASE-DROPS-01",
+      "instructions": "CA755-MAGIC-BASE-DROPS-01 | Origin: 5.17.56 / #755 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_56/run_magic_base_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/magic-bases-author-01 --interactive.\nSteps: F1-F8 inspect all eighteen tier cases; F9 cycles the six designs, and F10 cycles details and raised undersides. Compare with the existing staff, bell, statuette, blank seal, censer and scepter icons. Separately test ordinary inventory pickup/drop, existing material crafting and save/reload in a disposable session.\nExpected: complete volumes, attached parts, real bell/clapper cavity and perforated censer; stable blank seal face, original blue/red accents and grounded scale. Review the simplified face, static ribbon folds, heavy painted ornament, subdued depth and new hidden surfaces. All three material tiers retain their existing shared appearance. Original icons, quantities, tier identity, weight, metadata and recipes remain unchanged; weapons/held art remain outside this patch. Native API probes and prior 2D approval do not establish ordinary gameplay or native visual acceptance.",
+      "actions": [
+        "v5_17_56-run_magic_base_drops"
+      ]
+    },
+    {
+      "id": "CA757-MAGIC-WEAPON-DROPS-01",
+      "instructions": "CA757-MAGIC-WEAPON-DROPS-01 | Origin: 5.17.57 / #757 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_57/run_magic_weapon_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/magic-weapons-author-01 --interactive.\nSteps: F1-F8 inspect eighteen class/type/tier cases; F9 cycles the six bindings and F10 cycles their details/raised undersides. Compare staff, bell and support statuette against #755 material models and original icons. Separately test ordinary pickup/equip/unequip/drop, valid elemental staff/bell casting, quintessence statuette support use, crafting and save/reload in a disposable session.\nExpected: the same complete #755 volumes in both native weapon classes, original scale and grounded placement; no missing or duplicate parts. Review the simplified face, static ribbons, strong ornament and subdued depth. All three qualities retain their current shared world appearance. Original icons, quality, essence, identity, weight, durability and recipes remain unchanged. Native API probes and prior 2D acceptance do not establish ordinary gameplay or native visual acceptance.",
+      "actions": [
+        "v5_17_57-run_magic_weapon_drops"
+      ]
+    },
+    {
+      "id": "CA759-MAGIC-QUALITY-DROPS-01",
+      "instructions": "CA759-MAGIC-QUALITY-DROPS-01 | Origin: 5.17.58 / #759 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_58/run_magic_tier_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/magic-qualities-author-01 --interactive.\nSteps: F1-F8 inspect all twelve class/type/tier cases. F9 cycles six unique quality models; F10 cycles details and raised undersides. Compare with the original scepter/censer three-quality sources. Separately test ordinary pickup/equip/unequip/drop, valid elemental scepter casting, quintessence censer support use, crafting and save/reload in a disposable session.\nExpected: complete volumes and connected trim, open censer apertures, unchanged tier-one models and clear silver/gold quality details at close range. Review subdued silver, strong painted ornament, static cloth, simplified profiles and similar warm bronze/gold at distance. Original icons, tier statistics, essence, identity, weight, durability and recipes remain unchanged. Prior 2D approval and native API probes do not establish ordinary gameplay or native visual acceptance.",
+      "actions": [
+        "v5_17_58-run_magic_tier_drops"
+      ]
+    },
+    {
+      "id": "CA761-EFFIGY-DROPS-01",
+      "instructions": "CA761-EFFIGY-DROPS-01 | Origin: 5.17.59 / #761 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_59/run_effigy_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/effigies-author-01 --interactive.\nSteps: F1-F8 inspect all six class/tier cases. F9 cycles three unique quality models; F10 cycles details and raised undersides. Compare with assets/art_source/support_sprites/effigy-source.png. Separately test ordinary pickup/equip/unequip/drop, quintessence support use, crafting and save/reload in a disposable session.\nExpected: connected complete volumes, genuinely recessed hood/sleeves, blue cords and silver/gold quality details. Review the simplified symmetric carving, static cords, plain medallions/base trim, dark matte wood and interpreted hidden surfaces. Original icons, tier statistics, essence, identity, weight, durability and recipes remain unchanged. Prior 2D approval and native API probes do not establish ordinary gameplay or native visual acceptance.",
+      "actions": [
+        "v5_17_59-run_effigy_drops"
+      ]
+    },
+    {
+      "id": "CA763-BLADED-WEAPON-DROPS-01",
+      "instructions": "CA763-BLADED-WEAPON-DROPS-01 | Origin: 5.17.60 / #763 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_60/run_bladed_weapon_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/bladed-weapons-author-01 --interactive.\nSteps: F1-F8 inspect all sixteen class/type/tier cases. F9 cycles four unique designs; F10 cycles details and raised undersides. Compare with CSWD/CDAG/CMAC/CGRS original world sprites. Separately test ordinary pickup/equip/unequip/drop, blade combat, crafting and save/reload in a disposable session; check Ronnie's loan and the MAP01 tutorial sword in disposable quest sessions.\nExpected: complete connected volumes and beveled blade edges, preserved shared appearance across qualities, icons, first-person views and all item rules. Review simplified profiles/guards, matte gray steel, repeating grain, diagonal standing pickup orientation and interpreted hidden surfaces. The tutorial sword remains T1 with its normal character-size acquisition rule. Prior 2D approval and native API probes do not establish ordinary gameplay or native visual acceptance.",
+      "actions": [
+        "v5_17_60-run_bladed_weapon_drops"
+      ]
+    },
+    {
+      "id": "CA765-AXE-DROPS-01",
+      "instructions": "CA765-AXE-DROPS-01 | Origin: 5.17.61 / #765 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_61/run_axe_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/axes-author-01 --interactive.\nSteps: F1-F8 inspect all ten type/tier cases. F9 cycles four designs; F10 cycles details and raised undersides. Compare with original CHAT/CAXE/CWAX sprites and the #89 pickaxe reference. Separately test ordinary pickup/equip/unequip/drop, combat, chopping/mining, crafting and save/reload in disposable sessions.\nExpected: complete connected volumes, beveled heads and the pickaxe's left chopping blade/opposite curved mining point. Review simplified profiles/fittings, matte gray steel, repeating grain, warm grip colors, static wraps, standing orientation and interpreted hidden surfaces. Shared quality appearances, icons, held/rest poses, item/tool rules and saves remain unchanged. Prior 2D approval and native API probes do not establish ordinary gameplay or native visual acceptance.",
+      "actions": [
+        "v5_17_61-run_axe_drops"
+      ]
+    },
+    {
+      "id": "CA767-POLEARM-DROPS-01",
+      "instructions": "CA767-POLEARM-DROPS-01 | Origin: 5.17.62 / #767 | Pending author acceptance.\nPrerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_62/run_polearm_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/polearms-author-01 --interactive.\nSteps: F1-F8 inspect all ten type/tier cases. F9 cycles four designs; F10 cycles details and raised undersides. Compare with the effective TEXTURES icon references for javelin/spear/halberd and #162 utility ready art. Separately test ordinary pickup/equip/unequip/drop, combat/throwing, utility fire/ice, crafting and save/reload in disposable sessions.\nExpected: connected closed assemblies, current red/blue ties, bronze fittings and a real utility nozzle cavity. Review simplified heads/fittings, matte materials, static tassels, repeating grain, warm grips, standing orientation and interpreted backs. Shared qualities, icons, held poses/effects, Anima costs and fractional wear remain unchanged. Native API checks and former2D acceptance do not establish ordinary gameplay or native visual acceptance.",
+      "actions": [
+        "v5_17_62-run_polearm_drops"
+      ]
+    },
+    {
+      "id": "CA769-EFFECTIVE-WEAPON-REFERENCES-01",
+      "instructions": "CA769-EFFECTIVE-WEAPON-REFERENCES-01 | Origin: 5.17.63 / #769 | Pending author acceptance.\nPrerequisites: current package and fresh isolated output directories. Run the #763 bladed-weapon and #765 axe review commands already listed above with this package; use no campaign save.\nSteps: F9/F10 inspect the four blade designs and three changed axes from every side and raised underside. Compare the effective TEXTURES icon references, including the scaled greatsword source. Recheck ordinary pickup/equip/drop and save/reload in disposable sessions; existing #763/#765 checks remain pending.\nExpected: corrected display extents and grip/tassel colors, clean axe caps and unchanged pickaxe. Review simplified profiles/guards, matte plain steel without painted stains, omitted fine ornament/axe chain, static tassels, repeating grain, standing orientation and interpreted backs. Original icons, held artwork, quality rules, gameplay and saved identity remain unchanged. Confirm visual acceptability explicitly; technical checks do not imply author acceptance.",
+      "actions": [
+        "v5_17_60-run_bladed_weapon_drops",
+        "v5_17_61-run_axe_drops"
+      ]
+    },
+    {
+      "id": "CA771-ARTICULATED-DROPS-01",
+      "instructions": "CA771-ARTICULATED-DROPS-01 | Origin: 5.17.64 / #771 | Pending author acceptance.\nPrerequisites: build the current package; choose a new output directory. From the repository: python assets/validation_v5_17_64/run_articulated_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/ca771-author-review --interactive. Use disposable sessions, not a campaign save.\nSteps: F9 cycles flail, giant gauntlets and bolas; F10 rotates the view and includes raised underside inspection. Review all three assemblies and cuffs, chain openings and leather. In ordinary disposable play, pick up/equip/drop/save/reload each available quality; exercise the unchanged bolas throw, restraint and intact recovery flow.\nExpected: seven existing type/tier cases retain icons, identity, size, weight, durability and gameplay. Inspect simplified/static chain and ties, dark leather grain, finger shells and hollow cuffs, non-emissive diamond plates, omitted fine rivets/runes and rope braid, subdued shading and standing orientation. Three bolas weights remain visible; the actual tool is separate from ammunition. Confirm art and normal handling explicitly; isolated native checks are not author acceptance.",
+      "actions": [
+        "v5_17_64-run_articulated_drops"
+      ]
+    },
+    {
+      "id": "CA773-RANGED-DROPS-01",
+      "instructions": "CA773-RANGED-DROPS-01 | Origin: 5.17.65 / #773 | Pending author acceptance.\nPrerequisites: build the current package; choose a new output directory. From the repository: python assets/validation_v5_17_65/run_ranged_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/ca773-author-review --interactive. Use disposable sessions, not a campaign save.\nSteps: F9 cycles carbine, shotgun, longbow and crossbow; F10 rotates the view and includes raised underside inspection. Review each assembly, hollow muzzles, trigger guards, strings, quiver and material surfaces. In ordinary disposable play, pick up/equip/drop/save/reload all three qualities and check normal firing/reload/ammunition behavior.\nExpected: twelve existing type/tier cases retain icons, identity, size, weight, durability and gameplay. Review simplified profiles, static accessories, interpreted backs, omitted ornament, repeated grain, matte shading and standing orientation. Cosmetic cartridges and arrows grant or consume no ammunition. Confirm art and ordinary handling explicitly; isolated native checks are not author acceptance.",
+      "actions": [
+        "v5_17_65-run_ranged_drops"
+      ]
+    },
+    {
+      "id": "CA775-ARMOR-ALIAS-01",
+      "instructions": "CA775-ARMOR-ALIAS-01 | Origin: 5.17.66 / #775 | Pending author confirmation.\nPrerequisites: current package and a disposable session with medium torso armor and a medium Anima potion. Preserve original campaign saves.\nSteps: drop each object separately; inspect the world picture, pick up the armor, equip/unequip it, drop it again and save/reload. Repeat with all three medium-armor qualities; check the unchanged head/hands/feet and other torso classes.\nExpected: medium torso armor shows the original steel/brown/blue armor image, never the potion picture. The potion retains its existing appearance and quantity. Inventory icons, stats, identities, durability and normal handling remain unchanged. This correction does not add armor 3D meshes. Confirm ordinary behavior explicitly; native test automation is not author acceptance.",
+      "actions": [
+        "v5_17_70-run_torso_armor_drops",
+        "v5_17_1-run_coin_drops-consumables"
+      ]
+    },
+    {
+      "id": "CA777-ARMOR-HELMETS-01",
+      "instructions": "CA777-ARMOR-HELMETS-01 | Origin: 5.17.67 / #777 | Pending author acceptance.\nPrerequisites: build the current package; choose a new output directory. From the repository: python assets/validation_v5_17_67/run_helmet_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/ca777-author-review --interactive. Use disposable sessions, not a campaign save.\nSteps: F9 cycles magic/light/medium/heavy helmets; F10 rotates the view and includes a raised underside inspection. Review crown, visor openings, neck cavity, plumes, trim and fixed medium mail relief. In ordinary disposable play, pick up/equip/drop/save/reload all three qualities; compare identity, protection, size, weight and durability.\nExpected: twelve existing head armor cases retain icons, stats and gameplay. Review the shared simplified visor, static ribbon-like plumes, fixed mail relief, rust-toned metal, flat matte gold, repeated color samples, interpreted backs and omitted ornament. These drops do not establish worn modular fitting. Confirm art and ordinary handling explicitly; isolated native tests are not author acceptance.",
+      "actions": [
+        "v5_17_67-run_helmet_drops"
+      ]
+    },
+    {
+      "id": "CA779-HAND-ARMOR-01",
+      "instructions": "CA779-HAND-ARMOR-01 | Origin: 5.17.68 / #779 | Pending author acceptance.\nPrerequisites: build the current package; choose a new output directory. From the repository: python assets/validation_v5_17_68/run_hand_armor_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/ca779-author-review --interactive. Use disposable sessions, not a campaign save.\nSteps: F9 cycles magic/light/medium/heavy pairs; F10 rotates the view and includes raised underside inspection. Review separate fingers/thumbs, open cuffs, fixed curved plates, knuckles, straps and trim. In ordinary disposable play, pick up/equip/drop/save/reload all three qualities; compare identity, protection, size, weight and durability. Earlier helmet models should remain visible.\nExpected: twelve existing hand armor cases retain icons, stats and gameplay. Review simplified anatomy, upright paired pose, understated straps, matte shading, plates/runes, repeated materials, interpreted palms and omitted stitching/fine ornament. These drops do not establish worn modular fitting. Explicitly confirm art and ordinary handling; isolated native tests are not author acceptance.",
+      "actions": [
+        "v5_17_68-run_hand_armor_drops"
+      ]
+    },
+    {
+      "id": "CA781-FOOT-ARMOR-01",
+      "instructions": "CA781-FOOT-ARMOR-01 | Origin: 5.17.69 / #781 | Pending author acceptance.\nPrerequisites: build the current package; choose a new output directory. From the repository: python assets/validation_v5_17_69/run_foot_armor_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/ca781-author-review --interactive. Use disposable sessions, not a campaign save.\nSteps: F9 cycles magic/light/medium/heavy boot pairs; F10 rotates the view and includes raised underside inspection. Review shafts, lining, soles/heels, toe caps, buckles, shin plates and static blue cloth. In ordinary disposable play, pick up/equip/drop/save/reload all three qualities; compare identity, protection, size, weight and durability. Prior helmet/hand models should remain visible.\nExpected: twelve existing foot armor cases retain icons, stats and gameplay. Review elongated simplified profiles, rounded toe caps, understated straps, faceted plate edges, static cloth, repeated materials, matte shading, interpreted backs/soles and omitted ornament. These drops do not establish worn modular fitting. Explicitly confirm art and ordinary handling; isolated native tests are not author acceptance.",
+      "actions": [
+        "v5_17_69-run_foot_armor_drops"
+      ]
+    },
+    {
+      "id": "CA783-TORSO-ARMOR-01",
+      "instructions": "CA783-TORSO-ARMOR-01 | Origin: 5.17.70 / #783 | Pending author acceptance.\nPrerequisites: build the current package; choose a new output directory. From the repository: python assets/validation_v5_17_70/run_torso_armor_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/ca783-author-review --interactive. Use disposable sessions, not a campaign save.\nSteps: F9 cycles magic/light/medium/heavy cuirasses; F10 rotates and includes raised underside inspection. Review neck/waist/arm apertures, plates, shoulder pads, belts, rivets, scarf/cape and continuous fur mantle. In ordinary disposable play, pick up/equip/drop/save/reload all three qualities; compare identity, protection, size, weight and durability. Prior armor-slot models and medium Anima potion should remain correct.\nExpected: twelve existing torso cases retain their icons, stats and gameplay. Review shared simplified outlines, disc-like shoulders, faceted trim, static cloth, repeated matte materials, simplified fur patches, interpreted backs and omitted ornament. These drops do not establish worn modular fitting. Explicitly confirm art and ordinary handling; isolated tests do not establish author acceptance.",
+      "actions": [
+        "v5_17_70-run_torso_armor_drops"
+      ]
+    },
+    {
+      "id": "CA787-QUADRUPEDS-01",
+      "instructions": "CA787-QUADRUPEDS-01 | Origin: 5.17.72 / #787 | Pending author acceptance.\nPrerequisites: build the current package. From the repository, run python assets/validation_v5_17_72/run_quadrupeds.py --species familiar --runtime build/caelum_argenteum_dev.pk3 --output build/ca787-familiar-author --interactive. Repeat with --species ao_ao and a different new output directory. Use disposable sessions, not campaign saves.\nSteps: F1-F10 select the documented idle/run/stun/attack/pain/death/breath/rest poses; 1-9 inspect front/side/rear/head/lying/feet/tail views. Compare the supplied mastiff and ram references with silhouette, ears, eyes, jowls, paws/hooves, horn curls and fur/wool. In disposable ordinary play, confirm existing attacks, collision, death, loot and save/reload behavior for both actual classes.\nExpected: both species keep their existing provisional Mandinga rules and saved identity. Review simplified rounded anatomy, broad/faceted noses and horns, repeated matte materials, simple joint rotations and rigid falling/rest poses. Art extends beyond unchanged collision in places; conceptual metre sizes were not introduced. This check does not approve playable-race style, modular clothing, gallery placement or campaign encounters. Explicitly confirm art and ordinary handling; isolated agent tests do not establish author acceptance.",
+      "actions": [
+        "v5_17_72-run_quadrupeds-familiar",
+        "v5_17_72-run_quadrupeds-ao_ao"
+      ]
+    },
+    {
+      "id": "CA790-QUADRUPED-GALLERY-01",
+      "instructions": "CA790-QUADRUPED-GALLERY-01 | Origin: 5.17.73 / #790 | Pending author acceptance.\nPrerequisites: current package, a fresh isolated output directory and no campaign save. Run python assets/validation_v5_17_73/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/quadruped-regions-author-01 --interactive.\nSteps: F1 overview; key7 Familiar/NOA and key8 Ao Ao/Selva. F8/F10 inspect those grounds. F5 walk across all four region boundaries; save/reload and revisit fourteen figures. Retain separate model artwork/combat review under CA787-QUADRUPEDS-01 and prior creature checks.\nExpected: both appearances match approved regions, retain native models/identities/positions and advance passive idle states during walking and after reload. Earlier figures, controls and grounds remain. Review camera framing and ground seams. This optional fixture does not approve campaign encounters or complete the broader batch.",
+      "actions": [
+        "v5_17_73-run_gallery"
+      ]
+    },
+    {
+      "id": "CA791-TEJU-01",
+      "instructions": "CA791-TEJU-01 | Origin: 5.17.74 / #791 | Pending consolidated author acceptance.\nPrerequisites: final candidate package; separate new output directory and no campaign save. Run python assets/validation_v5_17_74/run_teju.py --species teju_jagua --runtime build/caelum_argenteum_dev.pk3 --output build/teju-author-01 --interactive.\nSteps: inspect seven distinct canine heads from front/oblique, reptilian body, four feet, curved tail and spines using views1-9. F1-F10 inspect documented locomotion, attack, pain, death and resting poses. Save/reload this isolated scene. Later inspect ordinary combat and existing potion drops without treating the seven heads as seven gameplay attacks.\nExpected: recognizable supplied species identity, readable seven-head silhouette, continuous attachments and acceptable materials/poses; appearance survives reload without changing inherited Mandinga rules, collision, rewards or save identity. Rounded anatomy, neck fan, broad scales and rigid fall/rest poses need visual approval. No conceptual metre scale or campaign placement is claimed.",
+      "actions": [
+        "v5_17_74-run_teju-teju_jagua"
+      ]
+    },
+    {
+      "id": "CA793-TEJU-GALLERY-01",
+      "instructions": "CA793-TEJU-GALLERY-01 | Origin: 5.17.75 / #793 | Pending author acceptance.\nPrerequisites: current package, a fresh isolated output directory and no campaign save. Run python assets/validation_v5_17_75/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/teju-regions-author-01 --interactive, as part of the final consolidated author handoff.\nSteps: F1 overview; key9 Teju Jagua/Selva; F10 Selva ground; F5 walk across the four boundaries, save/reload and revisit fifteen figures. Keep separate model/combat review under CA791-TEJU-01.\nExpected: seven visible heads from key9; correct Selva association; native identity, position and passive idle animation retained after movement/reload. Prior figures, controls and grounds remain. Review camera framing and ground seams. This optional fixture does not approve campaign encounters or complete the full batch.",
+      "actions": [
+        "v5_17_75-run_gallery"
+      ]
+    },
+    {
+      "id": "CA795-KASOGONAGA-01",
+      "instructions": "CA795-KASOGONAGA-01 | Origin: 5.17.76 / #795 | Pending consolidated author acceptance.\nPrerequisites: final candidate package, separate new output directory and no campaign save. Run python assets/validation_v5_17_76/run_kasogonaga.py --species kasogonaga --runtime build/caelum_argenteum_dev.pk3 --output build/kasogonaga-author-01 --interactive as part of the final batch handoff.\nSteps: inspect anteater snout, small eyes/ears, ivory fur markings, four clawed legs and broad tail using views1-9. F1-F10 inspect documented locomotion, attack, pain, death and resting poses. Save/reload the isolated scene; later inspect ordinary combat and existing potion drops.\nExpected: recognizable supplied species, continuous attachments, readable materials and acceptable poses after reload. Rounded anatomy, coarse markings, crest/brush locks and rigid fall/rest poses need visual review. Inherited Mandinga rules, collision, rewards and save identity remain unchanged; no conceptual metre scale, weather ability or campaign placement is claimed.",
+      "actions": [
+        "v5_17_76-run_kasogonaga-kasogonaga"
+      ]
+    },
+    {
+      "id": "CA797-APPARITIONS-01",
+      "instructions": "CA797-APPARITIONS-01 | Origin: 5.17.77 / #797 | Pending consolidated author acceptance.\nPrerequisites: final candidate package after the #799 follow-up, separate new output directories and no campaign save. Run python assets/validation_v5_17_77/run_apparitions.py --species mulanima --runtime build/caelum_argenteum_dev.pk3 --output build/mulanima-author-01 --interactive; repeat with --species chancho_lata and --output build/chancho-lata-author-01 as part of the final handoff.\nSteps: use views1-9 to inspect the mule ears/downward muzzle, undivided hooves, mane/tail ember forms and the boar snout/plates/rivets, tusks, cloven hooves and curled tail. F1-F10 inspect locomotion, attack, pain, death and rest. Save/reload each isolated scene; later inspect ordinary combat and existing potion drops.\nExpected: distinct recognizable references, continuous attachments, readable materials and acceptable poses after reload. Simplified anatomy, opaque ember volumes, plate/tusk silhouettes and rigid fall/rest articulation require visual review. Inherited rules, collision, rewards and save identity remain; no metre-scale, flame damage, armor bonus, apparition powers or campaign placement are claimed.",
+      "actions": [
+        "v5_17_77-run_apparitions-mulanima",
+        "v5_17_77-run_apparitions-chancho_lata"
+      ]
+    },
+    {
+      "id": "CA799-UV-01",
+      "instructions": "CA799-UV-01 | Origin: 5.17.78 / #799 | Pending consolidated author acceptance.\nPrerequisites: final candidate package and the isolated Ao Ao/Kasogonaga inspection rooms from CA787-QUADRUPEDS-01 and CA795-KASOGONAGA-01; no campaign save. Inspect during the final consolidated terminal.\nSteps: examine both Ao Ao curled horns, short tail and regional appearance; examine Kasogonaga's six back locks in front/side/rear/detail and moving poses, then save/reload. Compare with the owned concepts and verify no adjacent atlas material appears across those curves.\nExpected: material repeats stay within the intended surface; continuous attachments, prior rules/loot/identity and save behavior remain. This check supplements rather than replaces the two earlier art reviews. No campaign performance, anatomical fidelity or full-batch acceptance is inferred from automated checks.",
+      "actions": [
+        "v5_17_72-run_quadrupeds-familiar",
+        "v5_17_72-run_quadrupeds-ao_ao",
+        "v5_17_76-run_kasogonaga-kasogonaga"
+      ]
+    },
+    {
+      "id": "CA801-APPARITIONS-GALLERY-01",
+      "instructions": "CA801-APPARITIONS-GALLERY-01 | Origin: 5.17.79 / #801 | Pending consolidated author acceptance.\nPrerequisites: current candidate package, a fresh isolated output directory and no campaign save. Run python assets/validation_v5_17_79/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/apparition-regions-author-01 --interactive as part of the final consolidated terminal.\nSteps: F1 overview; key0 Mulanima/NOA; J Chancho/Pampa; K Chancho/Litoral. Inspect the retained ground views, then F5 walk across all four boundaries, save/reload and revisit eighteen figures. Keep model/ordinary-combat review under CA797-APPARITIONS-01.\nExpected: clear framing and the documented regional allocations; native positions, identity and passive idle animation retained after movement/reload. All prior figures, controls and grounds remain. Review ground seams and walking clearance. This optional diagnostic does not approve campaign encounters or complete the full batch.",
+      "actions": [
+        "v5_17_79-run_gallery"
+      ]
+    },
+    {
+      "id": "CA803-HEADS-01",
+      "instructions": "CA803-HEADS-01 | Origin: 5.17.80 / #803 | Pending consolidated author acceptance.\nPrerequisites: final candidate package, separate new output directories and no campaign save. Run python assets/validation_v5_17_80/run_heads.py --species umita --runtime build/caelum_argenteum_dev.pk3 --output build/umita-author-01 --interactive; repeat with --species chonchon and --output build/chonchon-author-01 as part of the final handoff.\nSteps: views1-9 inspect the face, profile, rear, lying pose and hair/ear-wing details. F1-F10 inspect locomotion, attack, pain, death and rest. Rotate around both heads, save/reload the isolated scene, then inspect ordinary combat and existing potion drops.\nExpected: recognizable owned head concepts, readable faces/hair/membranes, continuous joints and acceptable poses after reload. Opaque locks, projected facial colors, fixed visual hover through death/rest and rigid fall articulation require author review. Broad wings may exceed unchanged collision. No gameplay flight, metre-scale adoption, apparition power, new reward or campaign placement is claimed.",
+      "actions": [
+        "v5_17_80-run_heads-umita",
+        "v5_17_80-run_heads-chonchon"
+      ]
+    },
+    {
+      "id": "CA809-HEAD-GALLERIES-01",
+      "instructions": "CA809-HEAD-GALLERIES-01 | Origin: 5.17.83 / #809 | Pending consolidated author acceptance.\nPrerequisites: current candidate package, no campaign save, a fresh isolated output directory for each runner. As part of the final consolidated terminal run python assets/validation_v5_17_83/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/head-regions-682-author-01 --interactive, then after closing it run python assets/validation_v5_17_83/run_native_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/head-regions-709-author-01 --interactive.\nSteps: in CA682G use L for Umita/NOA, F1 overview and F5 walking; cross the four boundaries, save/reload and revisit the nineteen figures. In CA709G use F10 for Chonchon/Patagonia, F1 overview and F5 walking; cross the three boundaries, save/reload and revisit the fifteen figures. Review model actions/combat separately under CA803-HEADS-01.\nExpected: recognizable head silhouettes, clear framing and documented regional grounds; native identity, positions and idle animation retained after walking/reload. Every prior figure, control and ground remains. Check ground seams and walking clearance. These optional galleries do not approve campaign encounters or complete the full batch.",
+      "actions": [
+        "v5_17_83-run_gallery",
+        "v5_17_83-run_native_gallery"
+      ]
+    },
+    {
+      "id": "CA811-PERIOD-01",
+      "instructions": "CA811-PERIOD-01 | Origin: 5.17.84 / #811 | Pending consolidated author acceptance.\nPrerequisites: final candidate package, separate new output directories and no campaign save. As part of the final handoff, run python assets/validation_v5_17_84/run_period.py --species viuda --runtime build/caelum_argenteum_dev.pk3 --output build/viuda-author-01 --interactive; repeat with --species llorona and --species futre in separate output directories.\nSteps: inspect front, side, rear, face/hair and collar views, then walk/run, attack, pain, death and lying poses. Check skirt clearance through motion and Futre's headless collar from above. Save/reload the isolated scene; inspect ordinary combat and existing potion drops.\nExpected: recognizable owned concepts, readable period clothing and faces, continuous joints, acceptable stride and fall/rest articulation after reload. Painted facial detail, opaque hair and fixed clothing remain visual candidates. No modular equipment, metric-scale adoption, new apparition powers, reward or campaign placement is claimed.",
+      "actions": [
+        "v5_17_84-run_period-viuda",
+        "v5_17_84-run_period-llorona",
+        "v5_17_84-run_period-futre"
+      ]
+    },
+    {
+      "id": "CA813-FOREST-01",
+      "instructions": "CA813-FOREST-01 | Origin: 5.17.85 / #813 | Pending consolidated author acceptance.\nPrerequisites: final candidate package, separate new output directories and no campaign save. During the final handoff, run python assets/validation_v5_17_85/run_forest.py --species sachayoj --runtime build/caelum_argenteum_dev.pk3 --output build/sachayoj-author-01 --interactive; repeat with caapora, caayari and zapamzucum in separate directories.\nSteps: inspect front, side, rear, face, pointed ears, long hair/beards, wraps/dresses and feet. Cycle walk/run, attack, pain, death and lying poses; check beard visibility and closed-skirt clearance. Save/reload the isolated scene and inspect ordinary combat and existing potion drops.\nExpected: recognizable owned concepts with readable materials and fixed clothing, continuous joints, acceptable gait and fall/rest articulation after reload. Simplified anatomy, painted faces and opaque hair remain candidates. No modular equipment, metric-scale adoption, new powers, reward or campaign placement is claimed.",
+      "actions": [
+        "v5_17_85-run_forest-sachayoj",
+        "v5_17_85-run_forest-caapora",
+        "v5_17_85-run_forest-caayari",
+        "v5_17_85-run_forest-zapamzucum"
+      ]
+    },
+    {
+      "id": "CA815-AUSTRAL-01",
+      "instructions": "CA815-AUSTRAL-01 | Origin: 5.17.86 / #815 | Pending consolidated author acceptance.\nPrerequisites: final candidate package, separate new output directories and no campaign save. During the final handoff, run python assets/validation_v5_17_86/run_austral.py --species shoort --runtime build/caelum_argenteum_dev.pk3 --output build/shoort-author-01 --interactive; repeat with tanu, halahaches, matan and ulen in separate directories.\nSteps: inspect front, side, rear, face masks, horns/crests, hair, body paint, fixed wraps and ornaments. Cycle walk/run, attack, pain, death and lying poses; check Halahaches hair continuity and Tanu hood/belt visibility. Save/reload the isolated scene and inspect ordinary combat and existing potion drops.\nExpected: recognizable owned concepts, readable materials, continuous joints and hair, acceptable gait and fall/rest articulation after reload. Stylized anatomy, painted faces and opaque hair remain candidates. No modular equipment, metric-scale adoption, new powers, rewards or campaign placement is claimed.",
+      "actions": [
+        "v5_17_86-run_austral-shoort",
+        "v5_17_86-run_austral-tanu",
+        "v5_17_86-run_austral-halahaches",
+        "v5_17_86-run_austral-matan",
+        "v5_17_86-run_austral-ulen"
+      ]
+    },
+    {
+      "id": "CA817-WITCH-01",
+      "instructions": "CA817-WITCH-01 | Origin: 5.17.87 / #817 | Pending consolidated author acceptance.\nPrerequisites: final candidate package, separate new output directories and no campaign save. During the final handoff, run python assets/validation_v5_17_87/run_witch.py --species witch --runtime build/caelum_argenteum_dev.pk3 --output build/witch-author-01 --interactive; repeat with salamanca, pericana and solapa in separate directories.\nSteps: inspect front, side, rear, faces, gray hair/braids, poncho, shawls, skirts, bare wrists, claws, pouches and Solapa's hat. Cycle walk/run, attack, pain, death and lying poses. Save/reload the isolated scene and inspect ordinary combat and existing potion drops.\nExpected: recognizable owned references, readable eyes/materials, continuous joints/braids and acceptable gait/fall/rest articulation after reload. Stylized anatomy, painted faces and opaque hair remain candidates. No modular equipment, metric-scale adoption, new powers/rewards or campaign placement is claimed.",
+      "actions": [
+        "v5_17_87-run_witch-witch",
+        "v5_17_87-run_witch-salamanca",
+        "v5_17_87-run_witch-pericana",
+        "v5_17_87-run_witch-solapa"
+      ]
+    },
+    {
+      "id": "CA819-LAND-01",
+      "instructions": "CA819-LAND-01 | Origin:5.17.88 / #819 | Pending consolidated author acceptance.\nPrerequisites: final candidate package, separate new output directories and no campaign save. During final handoff, run python assets/validation_v5_17_88/run_land.py --species noshtex --runtime build/caelum_argenteum_dev.pk3 --output build/noshtex-author-01 --interactive; repeat for pampayoj, mayumaman, orkomaman and nowet in separate directories.\nSteps: inspect front/profile/rear, faces, rounded ears, short beards, long hair, gray/blue/brown skin, ochre poncho, ivory/teal/stone layers and pale wraps. Cycle run/walk, attack, pain, death and lying poses. Save/reload the isolated scene; inspect existing combat and potion drops.\nExpected: recognizable owned-reference silhouettes/materials with continuous joints, attached hair/cloth and acceptable movement after reload. Open garment fronts intentionally expose a leg. Stylized anatomy, painted faces and opaque hair remain candidates. No new modular equipment, metric scale, powers, rewards or campaign placement is claimed.",
+      "actions": [
+        "v5_17_88-run_land-noshtex",
+        "v5_17_88-run_land-pampayoj",
+        "v5_17_88-run_land-mayumaman",
+        "v5_17_88-run_land-orkomaman",
+        "v5_17_88-run_land-nowet"
+      ]
+    },
+    {
+      "id": "CA821-FIGURES-01",
+      "instructions": "CA821-FIGURES-01 | Origin:5.17.89 / #821 | Pending consolidated author acceptance.\nPrerequisites: final candidate package, separate new output directories and no campaign save. During final handoff run python assets/validation_v5_17_89/run_bestiary.py --species curupi --runtime build/caelum_argenteum_dev.pk3 --output build/curupi-author-01 --interactive; repeat for gualicho, urituorko and maip in separate directories.\nSteps: inspect front/profile/rear, facial features, ears, hair/braids, twig/feather crests, ribs/spikes, feathers, clawed hands and talons, fixed clothing and wrist transitions. Cycle walk/run, attack, pain, death and lying poses. Save/reload the isolated scene; inspect existing combat and potion drops.\nExpected: recognizable distinct owned-reference forms, continuous joints and attached feathers/spikes/clothing, acceptable movement after reload. Stylized anatomy, painted faces and opaque hair/feathers remain candidates. No modular inventory, metric-scale adoption, new powers/rewards, shared taxonomy or campaign placement is claimed.",
+      "actions": [
+        "v5_17_89-run_bestiary-curupi",
+        "v5_17_89-run_bestiary-gualicho",
+        "v5_17_89-run_bestiary-urituorko",
+        "v5_17_89-run_bestiary-maip"
+      ]
+    },
+    {
+      "id": "CA822-FORMS-01",
+      "instructions": "CA822-FORMS-01 | Origin:5.17.90 / #822 | Pending consolidated author acceptance.\nPrerequisites: final candidate package, separate new output directories and no campaign save. During final handoff run python assets/validation_v5_17_90/run_forms.py --species xalpen --runtime build/caelum_argenteum_dev.pk3 --output build/xalpen-author-01 --interactive; repeat for luzmala, anchimallen and huayrapuca in separate directories.\nSteps: inspect front/profile/rear, faces, ears, hair, Xalpen's clothing and four-legged body/tail, Luz Mala's skull/flame volume, Anchimallen's tunic/cord and Huayrapuca's throat, legs, wings and tail. Cycle walk/run or hover, attack, pain, death and lying poses. Save/reload the isolated scene; inspect existing combat and potion drops.\nExpected: recognizable distinct owned-reference forms, continuous joints and attached clothing/flames/feathers, acceptable movement after reload. Stylized anatomy, painted faces and opaque hair/flames/feathers remain candidates. No modular inventory, illumination mechanic, metric-scale adoption, new powers/rewards, shared taxonomy or campaign placement is claimed.",
+      "actions": [
+        "v5_17_90-run_forms-xalpen",
+        "v5_17_90-run_forms-luzmala",
+        "v5_17_90-run_forms-anchimallen",
+        "v5_17_90-run_forms-huayrapuca"
+      ]
+    },
+    {
+      "id": "CA825-REGIONS-01",
+      "instructions": "CA825-REGIONS-01 | Origin:5.17.91 / #825 | Pending consolidated author acceptance.\nPrerequisites: final consolidated candidate package and a separate output directory, with no campaign save. During final handoff run python assets/validation_v5_17_91/run_gallery.py --runtime build/caelum_argenteum_dev.pk3 --output build/regions-author-01 --interactive.\nSteps: inspect F1 overview, F3-F11 regional views and every individual camera listed in the terminal; F2 returns to walking with WASD. Inspect creature names, regional associations, idle motion, silhouette separation and ground repetition. Save/reload the isolated gallery and walk across its regional boundaries.\nExpected: all 44 added displays remain intact in their approved associations. Buenos Aires, Chaco and Supernatural domains explicitly use neutral inspection floors. Earlier galleries complete the 78 approved pairs. Repeated unique figures are diagnostic only; no campaign placements, population counts, new biomes, creature acceptance or siege performance are inferred.",
+      "actions": [
+        "v5_17_91-run_gallery"
+      ]
+    },
+    {
+      "id": "CA827-BODY-01",
+      "instructions": "CA827-BODY-01 | Origin:5.17.92 / #827 | Pending consolidated author acceptance.\nPrerequisites: final consolidated candidate package and local engine/IWAD; preserve original saves. At final handoff run python assets/validation_v5_17_92/run_underbody.py --runtime build/caelum_argenteum_dev.pk3 --output build/underbody-author-01 --interactive, using a new output folder each time.\nSteps: F1 compares the original fixed model, F2 shows the assembled candidate, F3 exposes construction anatomy, F4 shows the raw legacy clothing overlay; F5 rotates, F6 cycles poses, F7 walks and F8 freezes. Inspect neck/head and wrist joins, hands and anatomy from every direction. Save/reload while inspecting and compare restored visibility/pose.\nExpected: independent body/hands follow all sampled actions and retain attached neck/wrists after reload. The single sampled skin color is construction material. Raw legacy clothing has recorded pelvis/leg/toe intersections and coverage gaps; report them separately from this body foundation and inspect later fitted garments in their own check. No production character conversion, item-specific grips, final skin or author acceptance is inferred from agent tests.",
+      "actions": [
+        "v5_17_92-run_underbody"
+      ]
+    },
+    {
+      "id": "CA829-WARDROBE-01",
+      "instructions": "CA829-WARDROBE-01 | Origin 5.17.93 / #829 | Pending\nPrerequisites: consolidated final batch terminal, GZDoom4.14.2 and complete\nruntime; the author has requested no intermediate test handoff.\nSteps: enter the first-body wardrobe preview. Cycle all 11 body ensembles;\ninspect the five hats, four gloves and five footwear pairs from front/back/sides.\nRotate and inspect standing, walking, running, seated, crouched, jumping, sleeping and combat poses;\nremove each region independently, inspect each shoe/boot pair without body\nclothing, then restore clothing and change footwear to inspect the trouser hem.\nSave/load the final selection.\nExpected: period cuts/materials remain recognizable, covered skin and hair do\nnot protrude, exposed regions stay connected, and garment choices survive load.\nThis check concerns first-body art, not acceptance of other species/sexes,\nproduction ownership, first-person equipment or the full batch.",
+      "actions": [
+        "wardrobe-art"
+      ]
+    },
+    {
+      "id": "CA834-FORMAT-01",
+      "instructions": "CA834-FORMAT-01 | Origin 5.17.95 / #834 | Pending\nPrerequisites: final consolidated batch terminal, full runtime and local GZDoom4.14.2/IWAD. Preserve campaign saves. The diagnostic exporter is not installed in production.\nSteps: at final handoff use python assets/validation_v5_17_95/run_iqm_viewer.py --runtime build/caelum_argenteum_dev.pk3 --candidate assets/source/art/iqm_assessment_834/export --output build/iqm-author-01 (choose a fresh folder each time). F1/F2/F3 select MD3/IQM/hybrid; F4 rotates; F5 cycles all24 poses; F6 walks; F7 restores rest. With IQM/hybrid selected, F8 hides hair and F9 restores modules. Save/load through the native menu and compare the selected format/visibility.\nExpected: the same character, material and module identities remain coherent. Report changed contours, shading or interpolation; the pure IQM cape has a measured thickness discrepancy, while hybrid retains the MD3 cape. Both candidates were slower than MD3 in the64-body diagnostic; visual review does not authorize a production migration or confirm campaign performance.",
+      "actions": [
+        "v5_17_95-run_iqm_viewer"
+      ]
+    },
+    {
+      "id": "CA847-MATERIAL-01",
+      "instructions": "CA847-MATERIAL-01 | Origin: 5.17.102 / #847 (parent #463)\nPrerequisites: assets/source/art/sewer_material_847/review.html and its linked native images, source, prompt and inventory; review during the requested consolidated author session.\nSteps: compare the current/candidate entrance, junction, channel, refuge, locked boss access and short movement views. Inspect brick/paving scale, repeats, colour, route and object readability. Review the explicit texture cost and shared-alias scope.\nExpected: coherent period masonry and legible routes/objects under unchanged lighting. Confirm or request corrections to this visual candidate; this does not accept unrelated gates/props, full-map traversal, production-wide alias replacement or campaign gameplay.",
+      "actions": [
+        "gallery-CA847-MATERIAL-01",
+        "env881-sewer-control",
+        "env881-sewer-vaults"
+      ]
+    },
+    {
+      "id": "CA857-EQUIPMENT-01",
+      "instructions": "CA857-EQUIPMENT-01 | Origin 5.17.107 / #857 (parents #459/#462) | Pending\nPrerequisites: the final consolidated batch terminal; complete runtime and existing Domingo candidate. Review after the remaining equipment/grip work; no intermediate handoff is requested.\nSteps: enable the equipped first-body candidate, change each native clothing region, replace/unequip/re-equip garments and use native Box/coffer/drop operations. Compare supported clothing against armor/appearance fallback. Save/load, change maps and return. Disable the candidate before making a separate rollback save for an older build.\nExpected: the visible selection follows the actual owned/equipped object without changing inventory identity, stats, collision or resources; load/travel reconstructs the same outfit and disabling restores the existing presentation. Inspect attachments through the later equipment review. This check does not accept other bodies/species, first-person equipment, unmodeled armor, performance or the complete batch.",
+      "actions": [
+        "equipment",
+        "wardrobe-art"
+      ]
+    },
+    {
+      "id": "CA859-GRIP-01",
+      "instructions": "CA859-GRIP-01 | Origin 5.17.108 / #859 (parent #462) | Pending\nPrerequisites: the final consolidated batch terminal, full runtime and opt-in reference human-male sword/shield candidate without armor. Preserve original campaign saves. Source/capture gallery: assets/source/art/grips_859/review.html.\nSteps: inspect bare hands and all four actually equipped glove kinds, from front/back/sides, during idle, walking, running, attack, guard, jump/landing and death. Inspect both sword and shield contact and wrist seams. Save/reload, disable the candidate, then create a separate cleaned rollback save before comparing the earlier build.\nExpected: the existing equipment stays attached to the closed hands through those poses; native inventory identity, weight, durability and gameplay remain intact. Report contact/clipping and shading concerns separately from the retained construction skin, original rig/body/garment limitations and first-person or other-body work. This does not accept #736, the wider equipment scope or the full batch.",
+      "actions": [
+        "equipment",
+        "gallery-CA859-GRIP-01"
+      ]
+    },
+    {
+      "id": "CA861-HANDS-01",
+      "instructions": "CA861-HANDS-01 | Origin 5.17.109 / #861 (parent #462) | Pending\nPrerequisites: the final consolidated batch terminal and full runtime; preserve original saves. Capture gallery: assets/validation_v5_17_109/review.html. This uses the existing shared male/female glove art, not new material-specific imagery.\nSteps: equip each actual GF/GC/GW/GP clothing glove, compare bare hands and outer hand armor, then replace/unequip/re-equip and use Box/chest/drop. Check sword rest/attack/guard, carbine reload, staff charge and the appearance preview for male/female profiles. Save/reload and travel between maps. Compare a newly created Moon clone and a separately saved corpse with their original appearance.\nExpected: visible hands follow actual owned/worn layers; bare skin/fur returns when neither layer is worn. Existing clone/corpse snapshots remain intact. Equipment identity, resources, timing and weapon pivots stay unchanged. Report visual/material concerns separately; this does not accept #736, all equipment art, siege performance or the complete batch.",
+      "actions": [
+        "equipment",
+        "gallery-CA861-HANDS-01"
+      ]
+    },
+    {
+      "id": "CA866-MATERIAL-01",
+      "instructions": "CA866-MATERIAL-01 | Origin 5.17.111 / #866 (parent #463) | Pending\nPrerequisites: final consolidated batch terminal; preserve original campaign saves. Gallery: assets/source/art/environment_remasters_866/review.html. The opt-in overlay has global aliases while loaded; normal production art remains unchanged.\nSteps: compare all eight source materials and paired native repeats, then the mansion garden/exterior/interior, port, city street/factory and actual MAP02 Justice stone consumer. In the dedicated final review session inspect scale, tiling motifs, grass contrast, plank/stone joins, route/object readability and movement. Review the explicit image cost and unchanged composites/gable before selecting materials.\nExpected: the authored 128-MU repeat and existing layout remain coherent. Confirm selected materials or name corrections; this does not authorize every shared consumer, derived-image transformation, ordinary locked-room access or the complete #463 scenery finish. No intermediate acceptance is assumed.",
+      "actions": [
+        "gallery-CA866-MATERIAL-01",
+        "env881-house-control",
+        "env881-house-appearance",
+        "env881-city-appearance",
+        "env881-sewer-vaults",
+        "env881-mansion-appearance"
+      ]
+    },
+    {
+      "id": "CA875-VAULT-01",
+      "instructions": "CA875-VAULT-01 | Origin 5.17.116 / #875 (parent #463) | Pending\nPrerequisites: final consolidated batch terminal; full runtime and dedicated fresh candidate session, with original campaign saves preserved. Gallery: assets/source/art/sewer_structure_875/review.html. Exact roof form and geometry budget remain unapproved.\nSteps: use the final terminal's private vault review. F1 cycles entrance, junction, channel, refuge, boss access, horizontal/vertical main passage, service and maintenance views. Walk between viewpoints; inspect brick scale, shallow facets, overhead joins, channel/shelf, locked accesses and prop readability. Compare jump/projectile clearance in the raised roof space, save/reload only this isolated candidate, then return to the ordinary runtime in a separate default session. Review the explicit sector/line/image cost and measured frame tails.\nExpected: a coherent masonry proposal with unchanged ground routes and96-MU minimum clearance. Confirm or request corrections to the128-MU crown, material treatment and budget. The raised physical roof is a design choice; this does not approve a visited-map migration, unrelated gate/furniture art, escort behavior, siege fluency or completion of #463.",
+      "actions": [
+        "gallery-CA875-VAULT-01",
+        "env881-sewer-control",
+        "env881-sewer-vaults"
+      ]
+    },
+    {
+      "id": "CA878-JOINERY-01",
+      "instructions": "CA878-JOINERY-01 | Origin 5.17.117 / #878 (parent #463) | Pending\nPrerequisites: final consolidated batch terminal after #879 visibility fix; dedicated fresh model-review session and preserved campaign saves. Gallery: assets/source/art/house_joinery_878/review.html.\nSteps: compare the residential street and closed window joinery in four house orientations; F1 cycles the prepared views. Inspect rails/stiles, hinges, green wood clarity, frames and retained operational doors. Walk along the facades, use a house entrance, return, save/reload the disposable session and compare the original model after removing the option. Review the 2,274-triangle/three-section shared-model cost and native frame tails.\nExpected: coherent period-inspired closed timber leaves on existing opaque windows, with unchanged passages, door identity and interior travel. Confirm or request corrections to exact style, texture clarity and cost. This does not accept unreviewed #463 furnishing, unrelated models, siege fluency or all-map traversal.",
+      "actions": [
+        "gallery-CA878-JOINERY-01",
+        "env881-house-control",
+        "env881-house-appearance",
+        "env881-city-appearance",
+        "env881-sewer-vaults",
+        "env881-mansion-appearance"
+      ]
+    },
+    {
+      "id": "CA879-VISIBILITY-01",
+      "instructions": "CA879-VISIBILITY-01 | Origin 5.17.118 / #879 | Pending\nPrerequisites: final consolidated batch terminal, corrected runtime and disposable saves. Gallery: assets/validation_v5_17_118/review.html. Preserve campaign saves.\nSteps: compare original and corrected Window270/Door90 and all four house orientations; walk toward/along the facades and turn away/back. Use an entrance and return. Save inside a house, reload and return; compare an existing city save using a preserved copy. Inspect the original art and the separate optional #878 joinery.\nExpected: windows, frames and cornices remain visible at the sampled nearby approaches; unchanged collision, passages, portal identity and returns. Report any missing facade or new obstruction. This test does not accept the joinery style, full-map visibility, multiplayer or siege performance.",
+      "actions": [
+        "gallery-CA879-VISIBILITY-01",
+        "env881-house-control",
+        "env881-house-appearance",
+        "env881-city-appearance",
+        "env881-sewer-vaults",
+        "env881-mansion-appearance"
+      ]
+    },
+    {
+      "id": "CA881-ENVIRONMENT-01",
+      "instructions": "CA881-ENVIRONMENT-01 | Origin 5.17.119 / #881, parent #463 | Pending\nPrerequisites: final consolidated batch terminal, corrected runtime, combined options and fresh disposable sessions. Gallery: assets/validation_v5_17_119/review.html. Preserve campaign saves; the vault option changes MAP02 geometry.\nSteps: compare default/appearance/vault options at house rooms, municipal and workshop entrances, mansion, sewer junction/channel/refuge/maintenance/service and return-service access. Walk between nearby anchors, inspect furniture/interactions and gates, enter/return from a house, and save/reload only within its matching disposable option. Review the source inventory and explicit remaining gaps together with individual #847/#866/#875/#878 proposals.\nExpected: no missing material/model or misleading new obstruction in the reviewed views; recognizable routes and existing usable objects remain. Report style, proportions, ceiling/municipal finish, repetition and any frame stalls. Passing selected views does not approve all-map completion, gameplay progression, multiplayer, budgets or siege fluency.",
+      "actions": [
+        "gallery-CA881-ENVIRONMENT-01",
+        "env881-house-control",
+        "env881-house-appearance",
+        "env881-city-appearance",
+        "env881-sewer-vaults",
+        "env881-mansion-appearance"
+      ]
+    },
+    {
+      "id": "CA883-CEILING-01",
+      "instructions": "CA883-CEILING-01 | Origin 5.17.120 / #883, parent #463 | Pending\nPrerequisites: final consolidated batch terminal, matching runtime/options and fresh disposable sessions only. Gallery: assets/validation_v5_17_120/review.html. Preserve campaign saves; even texture-only map variants change checksums.\nSteps: compare existing roof-tile undersides with the timber option in the house living/bedroom/bathroom/window recesses and municipal entrance/interior. Inspect upward, walk through existing doors, use the real house entrance/return and save/reload only within the matching disposable option. Start a fresh default session to compare original materials. Inspect the unchanged exterior roofing from valid ground positions; the civic roof is not a walkable review route.\nExpected: interior ceilings show the selected timber option without changing exterior roofing, room dimensions, furniture, courtyard opening, portals or services. Report timber/style preference and any missing surface, collision issue or frame stall. This does not approve municipal office/archive completion, historical authenticity, all-map traversal, multiplayer or the broader batch.",
+      "actions": [
+        "gallery-CA883-CEILING-01",
+        "env883-house-ceilings",
+        "env883-house-vaults",
+        "env883-city-ceilings",
+        "env883-city-vaults"
+      ]
+    },
+    {
+      "id": "CA886-MUNICIPAL-01",
+      "instructions": "CA886-MUNICIPAL-01 | Origin 5.17.121 / #886, parent #463 | Pending\nPrerequisites: final consolidated batch terminal, matching runtime/options and fresh disposable sessions only. Gallery: assets/validation_v5_17_121/review.html. Preserve campaign saves; review variants have different map checksums. The existing merchant still requires the normal Box prerequisite, prepared explicitly only in the service diagnostic.\nSteps: compare the inherited empty perimeter with the municipal proposal. Walk from the entrance through the courtyard circulation to the four open northern work bays, western archive row and original southern merchant. Inspect desk/chair/shelf proportions, book display, collision and ES/EN aim labels. Save/reload only within the matching disposable option; start a new default session to compare original art. Report frame stalls and inspect the paired timing evidence.\nExpected: recognizable office workstations and archive shelving without obstructing the sampled main route, courtyard or original service. Fixed props provide no new reading/rest/storage/ownership or inventory; visible books are mesh decoration. Report exact style/placement preference, scale/collision issues or confusing interaction cues. This does not approve enclosed office rooms, historical authenticity, all-body/all-map routes, multiplayer or siege fluency.",
+      "actions": [
+        "gallery-CA886-MUNICIPAL-01",
+        "env886-default",
+        "env886-control",
+        "env886-candidate"
+      ]
+    },
+    {
+      "id": "CA887-WATERLINE-01",
+      "instructions": "CA887-WATERLINE-01 | Origin 5.17.122 / #887, parent #463 | Pending\nPrerequisites: final consolidated batch terminal, matching runtime/options and fresh disposable saves only. Gallery: assets/validation_v5_17_122/review.html. The private option has its own map checksum; preserve campaign saves.\nSteps: compare control and damp masonry at both close waterline anchors and the channel view; walk through entrance, junction, refuge, boss access and maintenance. Inspect material scale, narrow lower-face placement, seams, legibility and route/contact behavior. Save/reload only within the same option, then start a new default session. Inspect frame/tic evidence and report stalls separately.\nExpected: restrained damp masonry on the existing 16-MU exposed channel risers, with unchanged upper walls, geometry, light, water and services. Report exact style preference, unwanted bands/seams or readability problems. Source relief is visually comparable, not pixel-identical. Agent views and same-option reloads do not establish campaign migration, all-body routes, historical authenticity, multiplayer or author acceptance.",
+      "actions": [
+        "gallery-CA887-WATERLINE-01",
+        "env887-default",
+        "env887-control",
+        "env887-candidate"
+      ]
+    },
+    {
+      "id": "CA460-MOTION-01",
+      "instructions": "CA460-MOTION-01 | Origin 5.17.124 / #460 | Pending\nPrerequisites: final consolidated beta terminal, retained supported human male sword/shield body, base and owned-clothing views; disposable matched saves. Preserve campaign saves and the original copy before any backward conversion.\nSteps: sit/stand at a chair, lie/get up on bed and floor; observe the 2/3-second transitions. Eat and drink with real provisions; inspect four-second right-hand gestures, retained shield and temporarily hidden weapon. Try movement/attack/block during entry, meals and exit; cancel voluntarily, take damage and remove support in the diagnostic. Save/reload during entry, meal and exit. Compare original and owned-clothing bodies, then verify the existing jump preparation/landing and normal controls after rest. Report framing, limb contact, clipping, timing, equipment, duplicate consumption or stuck controls.\nExpected: voluntary exit waits for the current gesture and exit clip; damage/support loss interrupt immediately. The existing forced-exhaustion lock remains independent. Equipment and progressive provision rates stay unchanged, the weapon returns on exit, and pending phases reload without restarting. Record visual acceptance or corrections; passing this scene does not approve all pending body families, maps, multiplayer or siege performance.",
+      "actions": [
+        "motion-author",
+        "equipment",
+        "campaign"
+      ]
+    },
+    {
+      "id": "CA464-AUDIO-01",
+      "instructions": "CA464-AUDIO-01 | Origin 5.17.125 / #464 | Pending\nPrerequisites: final consolidated beta terminal, audible output device, disposable native profiles and matching saves. Tests start at 5% master volume; choose a comfortable review volume without changing the permanent profile.\nSteps: listen at the title and MAP01, MAP02 and MAP03; open/close a Fool conversation and the pause menu, traverse/return and reload a MAP02 save. Adjust music volume, mute and restore it. Check breathing recovery and the existing cue samples. Listen through track/loop boundaries and report abrupt cuts, stacking, silence, clipping or disproportionate levels.\nExpected: title War Drums plays once; MAP01/02/03 retain their assigned looping tracks; conversation closure restores the level mix and menu/travel/load retain the music preference. Existing cues and breathing use their native bounded channels. Future-region tracks stay reserved. Report auditory acceptance or exact corrections; native metadata/decoder checks do not substitute for listening or approve new weather/region designs.",
+      "actions": [
+        "independent-play",
+        "campaign"
+      ]
+    },
+    {
+      "id": "CA465-UI-01",
+      "instructions": "CA465-UI-01 | Origin 5.17.126 / #465 | Pending\nPrerequisites: final consolidated beta terminal; ES and EN; keyboard, mouse/wheel and a supported controller if available. Use disposable native profiles.\nSteps: open Credits from the main menu in both languages. Read the notices, change documents, scroll and return with keyboard, mouse/wheel and controller. Try the available window/full-screen resolutions and native UI scale preferences; inspect Spanish accents, Guarani i-tilde and typographic punctuation. Check the unchanged Journal, inventory, cursor and menu icons. Check camping, exhaustion, hunt and map-note labels in general Spanish. Review the retained names, sources and licenses against the final distribution audit.\nExpected: text and controls remain legible and within the display; no missing glyphs, stale mouse activation or inaccessible notices. Original legal wording is retained and the interface is localized. Gameplay, equipment and saves are unchanged. Report visual/usability and attribution acceptance or exact corrections; scripted controller-path checks do not substitute for physical input or author approval.",
+      "actions": [
+        "independent-play",
+        "campaign",
+        "beta-guide"
+      ]
+    },
+    {
+      "id": "CA466-RIGHTS-01",
+      "instructions": "CA466-RIGHTS-01 | Origin 5.18.0 / #466 | Pending\nPrerequisites: final consolidated beta terminal and assets/distribution inventory, origin decisions and dependency findings; native Credits menu.\nSteps: review the listed project/third-party source notices and credited creators, including DejaVu, MakeHuman, CC BY audio, Pixabay and the recorded music permissions. Inspect the final #467 replacement effects, switch, sky and voice presentation in the corresponding test scenes. Report any incorrect attribution, unowned source, missing notice or unacceptable replacement.\nExpected: source-specific grants remain intact; project rights do not override them. No commercial IWAD, engine executable, development-map WAD or diagnostic fixture is included. Recorded source/author claims remain distinguishable from independently verified evidence. Attribution and visual approval require your explicit verdict; this audit alone does not grant rights or approve later campaign content.",
+      "actions": [
+        "independent-resources",
+        "independent-play",
+        "effect-source",
+        "effect-prompt",
+        "beta-guide"
+      ]
+    },
+    {
+      "id": "CA467-STARTUP-01",
+      "instructions": "CA467-STARTUP-01 | Origin 5.18.1 / #467 | Pending\nPrerequisites: final consolidated beta terminal/package, Windows 11 and GZDoom 4.14.2 installed separately; a new disposable profile. Keep original saves and exact original packages. Select matching legacy MAP02/MAP03 variants for previously visited old layouts.\nSteps: launch the independent package without a Doom IWAD; start a character, enter MAP01 and inspect sky, owned impact/blood effects, exit lever, armor icons, title/menus and male/female native pain/death/use sounds. Check normal controls, inventory and retained preferences. Save/reload normally. Separately convert a copy of a matching old save, load it, return through its stored hub and save again; test rollback only with a further copy and the exact prior runtime. Review the source prompt and notices with CA466-RIGHTS-01.\nExpected: no commercial asset requirement, missing-resource error or duplicated save path; original saves remain untouched, incompatible layouts are rejected, and each variant keeps a separate profile. Report installation, visual/audio, control and save problems. Agent clean-profile checks do not certify another machine, final art/rights, all historical layouts or later campaign completion.",
+      "actions": [
+        "independent-resources",
+        "independent-play",
+        "effect-source",
+        "effect-prompt",
+        "beta-guide"
+      ]
+    },
+    {
+      "id": "CA468-BETA-01",
+      "instructions": "CA468-BETA-01 | Origin 5.18.2 / #468 | Pending\nPrerequisites: final consolidated independent-beta terminal; fresh disposable profiles and matching package variants. Preserve real campaigns/stores. Multiplayer checks need the same engine/package on each participant; report unavailable hardware/players as untested.\nSteps: create a character and play the authored MAP01-MAP03 route, using normal services, gates and returns; save/reload in each map and check inventory, identity and progress. Review managed profile preparation/recovery using copies. Try the existing solo/cooperative, Deathmatch, Team Deathmatch, Capture the Arcana, Tarot hunt and Trucazo choices available to you, including saved matches and return to menus. Inspect the retained performance references and report stalls separately from gameplay defects.\nExpected: one primary game package, intact native controls/profile ownership, no duplicate content, corruption or new progression softlock. Existing consent, scores, resources and saves retain their documented rules. The later campaign is not present; siege fluency, Internet/separate-machine play and pending artwork remain qualified. Record your actual completed scenarios and failures; automatic loopback/fixture checks do not confirm this verdict.",
+      "actions": [
+        "campaign",
+        "beta-multiplayer",
+        "beta-profiles",
+        "beta-guide"
+      ]
+    },
+    {
+      "id": "CA469-DELIVERY-01",
+      "instructions": "CA469-DELIVERY-01 | Origin 5.18.3 / #469 | Pending\nPrerequisites: the final complete review-beta ZIP and its external SHA-256 file; Windows 11 and GZDoom 4.14.2 installed separately. Optional multiplayer/profile bridges need Python 3.12. Keep original packages, saves and profile-store backups.\nSteps: verify and extract the archive into a new folder. Follow PLAYER_GUIDE.txt to launch Play in a disposable ProfileDirectory, create a character, check project controls and Credits, save/reload, change a binding/volume and restart to confirm preservation. Open Multiplayer and Profiles from the supplied launcher; inspect the existing choices and native session workflow with compatible copied saves. Separately check a matching legacy variant or copy-only migration/rollback if you have an applicable old save. Use the consolidated terminal to review all earlier pending scenes and record exact observations.\nExpected: the extracted game needs no Doom IWAD or source checkout; no engine, commercial asset, development fixture or test save is included. Version/manifests/checksums match the delivered files, optional tooling finds all its resources, existing preferences/original saves remain intact, and actual mode/performance/campaign limits are clear. Report your installation and complete-batch verdict explicitly; another-machine, physical-input, art or Internet acceptance is never inferred from agent checks.",
+      "actions": [
+        "independent-play",
+        "beta-multiplayer",
+        "beta-profiles",
+        "beta-guide"
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "v5_16_3-run_nahuelito_preview",
+      "kind": "runner",
+      "title": "Nahuelito: piloto de referencia",
+      "script": "assets/validation_v5_16_3/run_nahuelito_preview.py",
+      "arguments": [
+        "--model",
+        "{nahuelito_model}",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_0-run_modular_preview",
+      "kind": "runner",
+      "title": "Piloto modular existente",
+      "script": "assets/validation_v5_17_0/run_modular_preview.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_1-run_coin_drops-coins",
+      "kind": "runner",
+      "title": "Monedas",
+      "script": "assets/validation_v5_17_1/run_coin_drops.py",
+      "arguments": [
+        "--kind",
+        "coins",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_1-run_coin_drops-consumables",
+      "kind": "runner",
+      "title": "Consumibles",
+      "script": "assets/validation_v5_17_1/run_coin_drops.py",
+      "arguments": [
+        "--kind",
+        "consumables",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_1-run_coin_drops-water",
+      "kind": "runner",
+      "title": "Agua",
+      "script": "assets/validation_v5_17_1/run_coin_drops.py",
+      "arguments": [
+        "--kind",
+        "water",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_1-run_coin_drops-food",
+      "kind": "runner",
+      "title": "Alimentos",
+      "script": "assets/validation_v5_17_1/run_coin_drops.py",
+      "arguments": [
+        "--kind",
+        "food",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_3-run_ammunition_drops",
+      "kind": "runner",
+      "title": "Munición",
+      "script": "assets/validation_v5_17_3/run_ammunition_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_4-run_gallery",
+      "kind": "runner",
+      "title": "Galería de referencia",
+      "script": "assets/validation_v5_17_4/run_gallery.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_5-run_pombero",
+      "kind": "runner",
+      "title": "pombero",
+      "script": "assets/validation_v5_17_5/run_pombero.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_6-run_document_drops",
+      "kind": "runner",
+      "title": "Documentos",
+      "script": "assets/validation_v5_17_6/run_document_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_7-run_ingot_drops",
+      "kind": "runner",
+      "title": "Lingotes",
+      "script": "assets/validation_v5_17_7/run_ingot_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_8-run_cuero",
+      "kind": "runner",
+      "title": "cuero",
+      "script": "assets/validation_v5_17_8/run_cuero.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_9-run_nahuelito",
+      "kind": "runner",
+      "title": "nahuelito",
+      "script": "assets/validation_v5_17_9/run_nahuelito.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_10-run_camp_drops",
+      "kind": "runner",
+      "title": "Equipo de campamento",
+      "script": "assets/validation_v5_17_10/run_camp_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_11-run_furniture_drops",
+      "kind": "runner",
+      "title": "Mobiliario",
+      "script": "assets/validation_v5_17_11/run_furniture_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_12-run_waterskin_drops",
+      "kind": "runner",
+      "title": "Odres",
+      "script": "assets/validation_v5_17_12/run_waterskin_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_13-run_mate_drops",
+      "kind": "runner",
+      "title": "Mate",
+      "script": "assets/validation_v5_17_13/run_mate_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_14-run_lock_drops",
+      "kind": "runner",
+      "title": "Cerraduras",
+      "script": "assets/validation_v5_17_14/run_lock_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_15-run_jewelry_drops",
+      "kind": "runner",
+      "title": "Joyas",
+      "script": "assets/validation_v5_17_15/run_jewelry_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_16-run_book_drops",
+      "kind": "runner",
+      "title": "Libros",
+      "script": "assets/validation_v5_17_16/run_book_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_17-run_gem_drops",
+      "kind": "runner",
+      "title": "Gemas",
+      "script": "assets/validation_v5_17_17/run_gem_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_18-run_beast_men-lobizon",
+      "kind": "runner",
+      "title": "lobizon",
+      "script": "assets/validation_v5_17_18/run_beast_men.py",
+      "arguments": [
+        "--species",
+        "lobizon",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_18-run_beast_men-uturunco",
+      "kind": "runner",
+      "title": "uturunco",
+      "script": "assets/validation_v5_17_18/run_beast_men.py",
+      "arguments": [
+        "--species",
+        "uturunco",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_18-run_beast_men-ucumar",
+      "kind": "runner",
+      "title": "ucumar",
+      "script": "assets/validation_v5_17_18/run_beast_men.py",
+      "arguments": [
+        "--species",
+        "ucumar",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_19-run_gallery",
+      "kind": "runner",
+      "title": "Galería de referencia",
+      "script": "assets/validation_v5_17_19/run_gallery.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_20-run_ore_drops",
+      "kind": "runner",
+      "title": "Minerales",
+      "script": "assets/validation_v5_17_20/run_ore_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_21-run_headwear_drops",
+      "kind": "runner",
+      "title": "Sombreros",
+      "script": "assets/validation_v5_17_21/run_headwear_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_22-run_glove_drops",
+      "kind": "runner",
+      "title": "Guantes",
+      "script": "assets/validation_v5_17_22/run_glove_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_23-run_duendes-mikilo",
+      "kind": "runner",
+      "title": "mikilo",
+      "script": "assets/validation_v5_17_23/run_duendes.py",
+      "arguments": [
+        "--species",
+        "mikilo",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_23-run_duendes-coquena",
+      "kind": "runner",
+      "title": "coquena",
+      "script": "assets/validation_v5_17_23/run_duendes.py",
+      "arguments": [
+        "--species",
+        "coquena",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_25-run_footwear_drops",
+      "kind": "runner",
+      "title": "Calzado",
+      "script": "assets/validation_v5_17_25/run_footwear_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_26-run_clothing_drops",
+      "kind": "runner",
+      "title": "Ropa",
+      "script": "assets/validation_v5_17_26/run_clothing_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_27-run_guardians-yasi",
+      "kind": "runner",
+      "title": "yasi",
+      "script": "assets/validation_v5_17_27/run_guardians.py",
+      "arguments": [
+        "--species",
+        "yasi",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_27-run_guardians-yastay",
+      "kind": "runner",
+      "title": "yastay",
+      "script": "assets/validation_v5_17_27/run_guardians.py",
+      "arguments": [
+        "--species",
+        "yastay",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_29-run_shield_drops",
+      "kind": "runner",
+      "title": "Escudos",
+      "script": "assets/validation_v5_17_29/run_shield_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_30-run_plate_drops",
+      "kind": "runner",
+      "title": "Placas",
+      "script": "assets/validation_v5_17_30/run_plate_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_31-run_chainmail_drops",
+      "kind": "runner",
+      "title": "Cota de malla",
+      "script": "assets/validation_v5_17_31/run_chainmail_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_32-run_peuchen-peuchen",
+      "kind": "runner",
+      "title": "peuchen",
+      "script": "assets/validation_v5_17_32/run_peuchen.py",
+      "arguments": [
+        "--species",
+        "peuchen",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_43-run_gallery",
+      "kind": "runner",
+      "title": "Galería de referencia",
+      "script": "assets/validation_v5_17_43/run_gallery.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_34-run_avian-cachiru",
+      "kind": "runner",
+      "title": "cachiru",
+      "script": "assets/validation_v5_17_34/run_avian.py",
+      "arguments": [
+        "--species",
+        "cachiru",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_34-run_avian-kakuy",
+      "kind": "runner",
+      "title": "kakuy",
+      "script": "assets/validation_v5_17_34/run_avian.py",
+      "arguments": [
+        "--species",
+        "kakuy",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_34-run_avian-kelenken",
+      "kind": "runner",
+      "title": "kelenken",
+      "script": "assets/validation_v5_17_34/run_avian.py",
+      "arguments": [
+        "--species",
+        "kelenken",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_36-run_chain_drops",
+      "kind": "runner",
+      "title": "Cadenas",
+      "script": "assets/validation_v5_17_36/run_chain_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_37-run_wood_component_drops",
+      "kind": "runner",
+      "title": "Componentes de madera",
+      "script": "assets/validation_v5_17_37/run_wood_component_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_38-run_serpent-monai",
+      "kind": "runner",
+      "title": "monai",
+      "script": "assets/validation_v5_17_38/run_serpent.py",
+      "arguments": [
+        "--species",
+        "monai",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_38-run_serpent-mboi_tata",
+      "kind": "runner",
+      "title": "mboi_tata",
+      "script": "assets/validation_v5_17_38/run_serpent.py",
+      "arguments": [
+        "--species",
+        "mboi_tata",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_40-run_weapon_component_drops",
+      "kind": "runner",
+      "title": "Componentes de armas",
+      "script": "assets/validation_v5_17_40/run_weapon_component_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_41-run_assembly_component_drops",
+      "kind": "runner",
+      "title": "Componentes de ensamblaje",
+      "script": "assets/validation_v5_17_41/run_assembly_component_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_42-run_serpent-mboi_tui",
+      "kind": "runner",
+      "title": "mboi_tui",
+      "script": "assets/validation_v5_17_42/run_serpent.py",
+      "arguments": [
+        "--species",
+        "mboi_tui",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_42-run_serpent-mboi_yagua",
+      "kind": "runner",
+      "title": "mboi_yagua",
+      "script": "assets/validation_v5_17_42/run_serpent.py",
+      "arguments": [
+        "--species",
+        "mboi_yagua",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_44-run_hide_drops",
+      "kind": "runner",
+      "title": "Pieles",
+      "script": "assets/validation_v5_17_44/run_hide_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_45-run_textile_drops",
+      "kind": "runner",
+      "title": "Textiles",
+      "script": "assets/validation_v5_17_45/run_textile_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "gallery-CA736-MODULAR-STYLE-01",
+      "kind": "gallery",
+      "path": "assets/source/art/modular_proposals_736/review.html",
+      "title": "Galería CA736-MODULAR-STYLE-01"
+    },
+    {
+      "id": "v5_17_47-run_basilisco-basilisco",
+      "kind": "runner",
+      "title": "basilisco",
+      "script": "assets/validation_v5_17_47/run_basilisco.py",
+      "arguments": [
+        "--species",
+        "basilisco",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_48-run_gallery",
+      "kind": "runner",
+      "title": "Galería de referencia",
+      "script": "assets/validation_v5_17_48/run_gallery.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_49-run_hygiene_drops",
+      "kind": "runner",
+      "title": "Higiene",
+      "script": "assets/validation_v5_17_49/run_hygiene_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_50-run_kitchen_ingredient_drops",
+      "kind": "runner",
+      "title": "Ingredientes de cocina",
+      "script": "assets/validation_v5_17_50/run_kitchen_ingredient_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_52-run_cartridge_kit_drops",
+      "kind": "runner",
+      "title": "Kits de cartuchos",
+      "script": "assets/validation_v5_17_52/run_cartridge_kit_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_54-run_elemental_essence_drops",
+      "kind": "runner",
+      "title": "Esencias elementales",
+      "script": "assets/validation_v5_17_54/run_elemental_essence_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_55-run_orb_drops",
+      "kind": "runner",
+      "title": "Orbes",
+      "script": "assets/validation_v5_17_55/run_orb_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_56-run_magic_base_drops",
+      "kind": "runner",
+      "title": "Bases mágicas",
+      "script": "assets/validation_v5_17_56/run_magic_base_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_57-run_magic_weapon_drops",
+      "kind": "runner",
+      "title": "Armas mágicas",
+      "script": "assets/validation_v5_17_57/run_magic_weapon_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_58-run_magic_tier_drops",
+      "kind": "runner",
+      "title": "Niveles de armas mágicas",
+      "script": "assets/validation_v5_17_58/run_magic_tier_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_59-run_effigy_drops",
+      "kind": "runner",
+      "title": "Efigies",
+      "script": "assets/validation_v5_17_59/run_effigy_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_60-run_bladed_weapon_drops",
+      "kind": "runner",
+      "title": "Armas de hoja",
+      "script": "assets/validation_v5_17_60/run_bladed_weapon_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_61-run_axe_drops",
+      "kind": "runner",
+      "title": "Hachas",
+      "script": "assets/validation_v5_17_61/run_axe_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_62-run_polearm_drops",
+      "kind": "runner",
+      "title": "Armas de asta",
+      "script": "assets/validation_v5_17_62/run_polearm_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_64-run_articulated_drops",
+      "kind": "runner",
+      "title": "Armas articuladas",
+      "script": "assets/validation_v5_17_64/run_articulated_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_65-run_ranged_drops",
+      "kind": "runner",
+      "title": "Armas a distancia",
+      "script": "assets/validation_v5_17_65/run_ranged_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_67-run_helmet_drops",
+      "kind": "runner",
+      "title": "Cascos",
+      "script": "assets/validation_v5_17_67/run_helmet_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_68-run_hand_armor_drops",
+      "kind": "runner",
+      "title": "Armadura de manos",
+      "script": "assets/validation_v5_17_68/run_hand_armor_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_69-run_foot_armor_drops",
+      "kind": "runner",
+      "title": "Armadura de pies",
+      "script": "assets/validation_v5_17_69/run_foot_armor_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_70-run_torso_armor_drops",
+      "kind": "runner",
+      "title": "Armadura de torso",
+      "script": "assets/validation_v5_17_70/run_torso_armor_drops.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_72-run_quadrupeds-familiar",
+      "kind": "runner",
+      "title": "familiar",
+      "script": "assets/validation_v5_17_72/run_quadrupeds.py",
+      "arguments": [
+        "--species",
+        "familiar",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_72-run_quadrupeds-ao_ao",
+      "kind": "runner",
+      "title": "ao_ao",
+      "script": "assets/validation_v5_17_72/run_quadrupeds.py",
+      "arguments": [
+        "--species",
+        "ao_ao",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_73-run_gallery",
+      "kind": "runner",
+      "title": "Galería de referencia",
+      "script": "assets/validation_v5_17_73/run_gallery.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_74-run_teju-teju_jagua",
+      "kind": "runner",
+      "title": "teju_jagua",
+      "script": "assets/validation_v5_17_74/run_teju.py",
+      "arguments": [
+        "--species",
+        "teju_jagua",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_75-run_gallery",
+      "kind": "runner",
+      "title": "Galería de referencia",
+      "script": "assets/validation_v5_17_75/run_gallery.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_76-run_kasogonaga-kasogonaga",
+      "kind": "runner",
+      "title": "kasogonaga",
+      "script": "assets/validation_v5_17_76/run_kasogonaga.py",
+      "arguments": [
+        "--species",
+        "kasogonaga",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_77-run_apparitions-mulanima",
+      "kind": "runner",
+      "title": "mulanima",
+      "script": "assets/validation_v5_17_77/run_apparitions.py",
+      "arguments": [
+        "--species",
+        "mulanima",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_77-run_apparitions-chancho_lata",
+      "kind": "runner",
+      "title": "chancho_lata",
+      "script": "assets/validation_v5_17_77/run_apparitions.py",
+      "arguments": [
+        "--species",
+        "chancho_lata",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_79-run_gallery",
+      "kind": "runner",
+      "title": "Galería de referencia",
+      "script": "assets/validation_v5_17_79/run_gallery.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_80-run_heads-umita",
+      "kind": "runner",
+      "title": "umita",
+      "script": "assets/validation_v5_17_80/run_heads.py",
+      "arguments": [
+        "--species",
+        "umita",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_80-run_heads-chonchon",
+      "kind": "runner",
+      "title": "chonchon",
+      "script": "assets/validation_v5_17_80/run_heads.py",
+      "arguments": [
+        "--species",
+        "chonchon",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_83-run_gallery",
+      "kind": "runner",
+      "title": "Galería de referencia",
+      "script": "assets/validation_v5_17_83/run_gallery.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_83-run_native_gallery",
+      "kind": "runner",
+      "title": "Galería nativa",
+      "script": "assets/validation_v5_17_83/run_native_gallery.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_84-run_period-viuda",
+      "kind": "runner",
+      "title": "viuda",
+      "script": "assets/validation_v5_17_84/run_period.py",
+      "arguments": [
+        "--species",
+        "viuda",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_84-run_period-llorona",
+      "kind": "runner",
+      "title": "llorona",
+      "script": "assets/validation_v5_17_84/run_period.py",
+      "arguments": [
+        "--species",
+        "llorona",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_84-run_period-futre",
+      "kind": "runner",
+      "title": "futre",
+      "script": "assets/validation_v5_17_84/run_period.py",
+      "arguments": [
+        "--species",
+        "futre",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_85-run_forest-sachayoj",
+      "kind": "runner",
+      "title": "sachayoj",
+      "script": "assets/validation_v5_17_85/run_forest.py",
+      "arguments": [
+        "--species",
+        "sachayoj",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_85-run_forest-caapora",
+      "kind": "runner",
+      "title": "caapora",
+      "script": "assets/validation_v5_17_85/run_forest.py",
+      "arguments": [
+        "--species",
+        "caapora",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_85-run_forest-caayari",
+      "kind": "runner",
+      "title": "caayari",
+      "script": "assets/validation_v5_17_85/run_forest.py",
+      "arguments": [
+        "--species",
+        "caayari",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_85-run_forest-zapamzucum",
+      "kind": "runner",
+      "title": "zapamzucum",
+      "script": "assets/validation_v5_17_85/run_forest.py",
+      "arguments": [
+        "--species",
+        "zapamzucum",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_86-run_austral-shoort",
+      "kind": "runner",
+      "title": "shoort",
+      "script": "assets/validation_v5_17_86/run_austral.py",
+      "arguments": [
+        "--species",
+        "shoort",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_86-run_austral-tanu",
+      "kind": "runner",
+      "title": "tanu",
+      "script": "assets/validation_v5_17_86/run_austral.py",
+      "arguments": [
+        "--species",
+        "tanu",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_86-run_austral-halahaches",
+      "kind": "runner",
+      "title": "halahaches",
+      "script": "assets/validation_v5_17_86/run_austral.py",
+      "arguments": [
+        "--species",
+        "halahaches",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_86-run_austral-matan",
+      "kind": "runner",
+      "title": "matan",
+      "script": "assets/validation_v5_17_86/run_austral.py",
+      "arguments": [
+        "--species",
+        "matan",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_86-run_austral-ulen",
+      "kind": "runner",
+      "title": "ulen",
+      "script": "assets/validation_v5_17_86/run_austral.py",
+      "arguments": [
+        "--species",
+        "ulen",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_87-run_witch-witch",
+      "kind": "runner",
+      "title": "witch",
+      "script": "assets/validation_v5_17_87/run_witch.py",
+      "arguments": [
+        "--species",
+        "witch",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_87-run_witch-salamanca",
+      "kind": "runner",
+      "title": "salamanca",
+      "script": "assets/validation_v5_17_87/run_witch.py",
+      "arguments": [
+        "--species",
+        "salamanca",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_87-run_witch-pericana",
+      "kind": "runner",
+      "title": "pericana",
+      "script": "assets/validation_v5_17_87/run_witch.py",
+      "arguments": [
+        "--species",
+        "pericana",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_87-run_witch-solapa",
+      "kind": "runner",
+      "title": "solapa",
+      "script": "assets/validation_v5_17_87/run_witch.py",
+      "arguments": [
+        "--species",
+        "solapa",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_88-run_land-noshtex",
+      "kind": "runner",
+      "title": "noshtex",
+      "script": "assets/validation_v5_17_88/run_land.py",
+      "arguments": [
+        "--species",
+        "noshtex",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_88-run_land-pampayoj",
+      "kind": "runner",
+      "title": "pampayoj",
+      "script": "assets/validation_v5_17_88/run_land.py",
+      "arguments": [
+        "--species",
+        "pampayoj",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_88-run_land-mayumaman",
+      "kind": "runner",
+      "title": "mayumaman",
+      "script": "assets/validation_v5_17_88/run_land.py",
+      "arguments": [
+        "--species",
+        "mayumaman",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_88-run_land-orkomaman",
+      "kind": "runner",
+      "title": "orkomaman",
+      "script": "assets/validation_v5_17_88/run_land.py",
+      "arguments": [
+        "--species",
+        "orkomaman",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_88-run_land-nowet",
+      "kind": "runner",
+      "title": "nowet",
+      "script": "assets/validation_v5_17_88/run_land.py",
+      "arguments": [
+        "--species",
+        "nowet",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_89-run_bestiary-curupi",
+      "kind": "runner",
+      "title": "curupi",
+      "script": "assets/validation_v5_17_89/run_bestiary.py",
+      "arguments": [
+        "--species",
+        "curupi",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_89-run_bestiary-gualicho",
+      "kind": "runner",
+      "title": "gualicho",
+      "script": "assets/validation_v5_17_89/run_bestiary.py",
+      "arguments": [
+        "--species",
+        "gualicho",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_89-run_bestiary-urituorko",
+      "kind": "runner",
+      "title": "urituorko",
+      "script": "assets/validation_v5_17_89/run_bestiary.py",
+      "arguments": [
+        "--species",
+        "urituorko",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_89-run_bestiary-maip",
+      "kind": "runner",
+      "title": "maip",
+      "script": "assets/validation_v5_17_89/run_bestiary.py",
+      "arguments": [
+        "--species",
+        "maip",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_90-run_forms-xalpen",
+      "kind": "runner",
+      "title": "xalpen",
+      "script": "assets/validation_v5_17_90/run_forms.py",
+      "arguments": [
+        "--species",
+        "xalpen",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_90-run_forms-luzmala",
+      "kind": "runner",
+      "title": "luzmala",
+      "script": "assets/validation_v5_17_90/run_forms.py",
+      "arguments": [
+        "--species",
+        "luzmala",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_90-run_forms-anchimallen",
+      "kind": "runner",
+      "title": "anchimallen",
+      "script": "assets/validation_v5_17_90/run_forms.py",
+      "arguments": [
+        "--species",
+        "anchimallen",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_90-run_forms-huayrapuca",
+      "kind": "runner",
+      "title": "huayrapuca",
+      "script": "assets/validation_v5_17_90/run_forms.py",
+      "arguments": [
+        "--species",
+        "huayrapuca",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_91-run_gallery",
+      "kind": "runner",
+      "title": "Galería de referencia",
+      "script": "assets/validation_v5_17_91/run_gallery.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_92-run_underbody",
+      "kind": "runner",
+      "title": "Cuerpo y manos de referencia",
+      "script": "assets/validation_v5_17_92/run_underbody.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "v5_17_95-run_iqm_viewer",
+      "kind": "runner",
+      "title": "Comparación histórica MD3 / IQM — se conserva MD3",
+      "script": "assets/validation_v5_17_95/run_iqm_viewer.py",
+      "arguments": [
+        "--candidate",
+        "{iqm_model}"
+      ]
+    },
+    {
+      "id": "gallery-CA847-MATERIAL-01",
+      "kind": "gallery",
+      "path": "assets/source/art/sewer_material_847/review.html",
+      "title": "Galería CA847-MATERIAL-01"
+    },
+    {
+      "id": "gallery-CA859-GRIP-01",
+      "kind": "gallery",
+      "path": "assets/source/art/grips_859/review.html",
+      "title": "Galería CA859-GRIP-01"
+    },
+    {
+      "id": "gallery-CA861-HANDS-01",
+      "kind": "gallery",
+      "path": "assets/validation_v5_17_109/review.html",
+      "title": "Galería CA861-HANDS-01"
+    },
+    {
+      "id": "gallery-CA866-MATERIAL-01",
+      "kind": "gallery",
+      "path": "assets/source/art/environment_remasters_866/review.html",
+      "title": "Galería CA866-MATERIAL-01"
+    },
+    {
+      "id": "gallery-CA875-VAULT-01",
+      "kind": "gallery",
+      "path": "assets/source/art/sewer_structure_875/review.html",
+      "title": "Galería CA875-VAULT-01"
+    },
+    {
+      "id": "gallery-CA878-JOINERY-01",
+      "kind": "gallery",
+      "path": "assets/source/art/house_joinery_878/review.html",
+      "title": "Galería CA878-JOINERY-01"
+    },
+    {
+      "id": "gallery-CA879-VISIBILITY-01",
+      "kind": "gallery",
+      "path": "assets/validation_v5_17_118/review.html",
+      "title": "Galería CA879-VISIBILITY-01"
+    },
+    {
+      "id": "gallery-CA881-ENVIRONMENT-01",
+      "kind": "gallery",
+      "path": "assets/validation_v5_17_119/review.html",
+      "title": "Galería CA881-ENVIRONMENT-01"
+    },
+    {
+      "id": "gallery-CA883-CEILING-01",
+      "kind": "gallery",
+      "path": "assets/validation_v5_17_120/review.html",
+      "title": "Galería CA883-CEILING-01"
+    },
+    {
+      "id": "gallery-CA886-MUNICIPAL-01",
+      "kind": "gallery",
+      "path": "assets/validation_v5_17_121/review.html",
+      "title": "Galería CA886-MUNICIPAL-01"
+    },
+    {
+      "id": "gallery-CA887-WATERLINE-01",
+      "kind": "gallery",
+      "path": "assets/validation_v5_17_122/review.html",
+      "title": "Galería CA887-WATERLINE-01"
+    },
+    {
+      "id": "wardrobe-art",
+      "kind": "runner",
+      "title": "Vestuario: 25 prendas, poses y regiones",
+      "script": "assets/validation_v5_17_93/run_worn_preview.py",
+      "arguments": [
+        "--interactive"
+      ]
+    },
+    {
+      "id": "campaign",
+      "title": "Campaña nueva — reglas normales",
+      "kind": "campaign",
+      "map": "MAP01",
+      "help": "Campaña nueva con creación normal del personaje. Usa Escape para guardar y volver. Las pruebas de continuidad antigua requieren una copia del paquete compatible; no importes esas partidas aquí."
+    },
+    {
+      "id": "equipment",
+      "title": "Equipo poseído, Caja/cofre, manos y agarres",
+      "kind": "runner",
+      "close_setup_menu": true,
+      "help": "F1 cámara; F2 cuerpo; F3 sombrero; F4 guantes; F5 calzado; F6 arma; F7 sexo; F8 clones de diagnóstico con duración canónica; F9 candidato; F10 viajar; F11 regresar; F12 muerte de prueba. Inventario normal, Caja/cofre y Escape para guardar. Las ayudas crean objetos sólo en esta sala. El cuerpo 3D de referencia sigue limitado al varón humano con espada/escudo sin armadura; las demás combinaciones conservan su presentación disponible. Atributos de prueba a 100, como en la terminal anterior; no representan un personaje de campaña. La preparación repone salud, ánima y aire con la función nativa de prueba y activa protección; luego las operaciones de inventario siguen siendo normales. Al recargar, esta sala vuelve al vestuario candidato; F9 alterna la vista base. Sala cooperativa con un solo jugador para poder guardar al morir. Para comparar versiones anteriores, usa el paquete y la herramienta compatibles con esa prueba; la recarga de esta terminal conserva la misma version.",
+      "script": "assets/validation_v5_17_123/run_equipment.py",
+      "arguments": [
+        "--interactive"
+      ],
+      "reload_setup": [
+        "set ca_wardrobe_candidate true"
+      ]
+    },
+    {
+      "id": "env881-house-control",
+      "title": "Casa — base",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_119/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{components}",
+        "--scene",
+        "house",
+        "--variant",
+        "control",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env881-house-appearance",
+      "title": "Casa — materiales y carpintería",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_119/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{components}",
+        "--scene",
+        "house",
+        "--variant",
+        "appearance",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env881-house-vaults",
+      "title": "Casa — materiales, carpintería y bóvedas",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_119/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{components}",
+        "--scene",
+        "house",
+        "--variant",
+        "vaults",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env881-city-control",
+      "title": "Ciudad — base",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_119/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{components}",
+        "--scene",
+        "city",
+        "--variant",
+        "control",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env881-city-appearance",
+      "title": "Ciudad — materiales y carpintería",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_119/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{components}",
+        "--scene",
+        "city",
+        "--variant",
+        "appearance",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env881-city-vaults",
+      "title": "Ciudad — materiales, carpintería y bóvedas",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_119/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{components}",
+        "--scene",
+        "city",
+        "--variant",
+        "vaults",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env881-mansion-control",
+      "title": "Mansión — base",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_119/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{components}",
+        "--scene",
+        "mansion",
+        "--variant",
+        "control",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env881-mansion-appearance",
+      "title": "Mansión — materiales y carpintería",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_119/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{components}",
+        "--scene",
+        "mansion",
+        "--variant",
+        "appearance",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env881-mansion-vaults",
+      "title": "Mansión — materiales, carpintería y bóvedas",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_119/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{components}",
+        "--scene",
+        "mansion",
+        "--variant",
+        "vaults",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env881-sewer-control",
+      "title": "Alcantarillas — base",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_119/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{components}",
+        "--scene",
+        "sewer",
+        "--variant",
+        "control",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env881-sewer-appearance",
+      "title": "Alcantarillas — materiales y carpintería",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_119/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{components}",
+        "--scene",
+        "sewer",
+        "--variant",
+        "appearance",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env881-sewer-vaults",
+      "title": "Alcantarillas — materiales, carpintería y bóvedas",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_119/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{components}",
+        "--scene",
+        "sewer",
+        "--variant",
+        "vaults",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env883-house-control",
+      "title": "Casa — techos: control",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_120/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{ceilings}",
+        "--scene",
+        "house",
+        "--variant",
+        "control",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env883-house-ceilings",
+      "title": "Casa — techos: cielorrasos",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_120/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{ceilings}",
+        "--scene",
+        "house",
+        "--variant",
+        "ceilings",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env883-house-appearance",
+      "title": "Casa — techos: materiales",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_120/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{ceilings}",
+        "--scene",
+        "house",
+        "--variant",
+        "appearance",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env883-house-vaults",
+      "title": "Casa — techos: bóvedas",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_120/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{ceilings}",
+        "--scene",
+        "house",
+        "--variant",
+        "vaults",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env883-city-control",
+      "title": "Ciudad — techos: control",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_120/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{ceilings}",
+        "--scene",
+        "city",
+        "--variant",
+        "control",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env883-city-ceilings",
+      "title": "Ciudad — techos: cielorrasos",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_120/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{ceilings}",
+        "--scene",
+        "city",
+        "--variant",
+        "ceilings",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env883-city-appearance",
+      "title": "Ciudad — techos: materiales",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_120/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{ceilings}",
+        "--scene",
+        "city",
+        "--variant",
+        "appearance",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env883-city-vaults",
+      "title": "Ciudad — techos: bóvedas",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_120/run_review.py",
+      "arguments": [
+        "--overlay-directory",
+        "{ceilings}",
+        "--scene",
+        "city",
+        "--variant",
+        "vaults",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env886-default",
+      "title": "Municipalidad — base de producción",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_121/run_review.py",
+      "arguments": [
+        "--control-overlay",
+        "{municipal_control}",
+        "--overlay",
+        "{municipal_overlay}",
+        "--manifest",
+        "{municipal_manifest}",
+        "--variant",
+        "default",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env886-control",
+      "title": "Municipalidad — control",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_121/run_review.py",
+      "arguments": [
+        "--control-overlay",
+        "{municipal_control}",
+        "--overlay",
+        "{municipal_overlay}",
+        "--manifest",
+        "{municipal_manifest}",
+        "--variant",
+        "control",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env886-candidate",
+      "title": "Municipalidad — propuesta",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_121/run_review.py",
+      "arguments": [
+        "--control-overlay",
+        "{municipal_control}",
+        "--overlay",
+        "{municipal_overlay}",
+        "--manifest",
+        "{municipal_manifest}",
+        "--variant",
+        "candidate",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env887-default",
+      "title": "Humedad de alcantarillas — base de producción",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_122/run_review.py",
+      "arguments": [
+        "--control-overlay",
+        "{waterline_control}",
+        "--overlay",
+        "{waterline_overlay}",
+        "--manifest",
+        "{waterline_manifest}",
+        "--variant",
+        "default",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env887-control",
+      "title": "Humedad de alcantarillas — control",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_122/run_review.py",
+      "arguments": [
+        "--control-overlay",
+        "{waterline_control}",
+        "--overlay",
+        "{waterline_overlay}",
+        "--manifest",
+        "{waterline_manifest}",
+        "--variant",
+        "control",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "env887-candidate",
+      "title": "Humedad de alcantarillas — propuesta",
+      "kind": "runner",
+      "group": "environment",
+      "script": "assets/validation_v5_17_122/run_review.py",
+      "arguments": [
+        "--control-overlay",
+        "{waterline_control}",
+        "--overlay",
+        "{waterline_overlay}",
+        "--manifest",
+        "{waterline_manifest}",
+        "--variant",
+        "candidate",
+        "--interactive"
+      ]
+    },
+    {
+      "id": "motion-author",
+      "title": "Sentarse, acostarse, levantarse, comer y beber (#460)",
+      "kind": "runner",
+      "group": "beta",
+      "script": "assets/validation_v5_18_3/run_motion_author.py",
+      "arguments": [
+        "--interactive"
+      ],
+      "close_setup_menu": true,
+      "help": "F1 silla; F2 cama; F3 suelo; F4 levantarse; F5 comer; F6 beber; F7 cámara; F8 cuerpo base/candidato. Primero siéntate o acuéstate. Revisa transiciones, escudo visible, arma oculta durante el gesto y retorno al equipo normal. Sala diagnóstica: sus objetos y atributos no representan una campaña.",
+      "smoke_commands": "netevent ca460_begin 0 0; wait 75; netevent ca460_meal 0; wait 65; netevent ca460_meal_check 5; wait 90; netevent ca460_cancel; wait 75; "
+    },
+    {
+      "id": "independent-resources",
+      "title": "Efectos y recursos propios del juego independiente (#467)",
+      "kind": "runner",
+      "group": "beta",
+      "independent": true,
+      "script": "assets/validation_v5_18_3/run_resource_author.py",
+      "arguments": [
+        "--interactive"
+      ],
+      "close_setup_menu": true,
+      "help": "F1 muestra sangre, impactos, armadura y palanca; F2 vuelve al mundo. La escena comprueba también voces y menús. Usa Escape para guardar. El juego usa su propio IPK3 como archivo principal; el observador de revisión es local."
+    },
+    {
+      "id": "independent-play",
+      "title": "Iniciar la entrega independiente con su lanzador",
+      "kind": "tool",
+      "group": "beta",
+      "mode": "Play",
+      "help": "Abre la beta entregada, sin observadores ni Doom. Perfil de revisión separado; conserva aquí tus preferencias y guardados. Cierra GZDoom para volver."
+    },
+    {
+      "id": "beta-multiplayer",
+      "title": "Multijugador: modos independientes y host/unirse",
+      "kind": "tool",
+      "group": "beta",
+      "mode": "Multiplayer",
+      "help": "El lanzador abre el menú nativo y coordina host/unirse. Cada partida usa su propia carpeta. Cierra el título al terminar para volver a esta terminal. Las pruebas locales no certifican Internet."
+    },
+    {
+      "id": "beta-profiles",
+      "title": "Perfiles de campaña, sesiones, transferencia y copias",
+      "kind": "tool",
+      "group": "beta",
+      "mode": "Profiles",
+      "help": "Coordinador con almacén separado para esta revisión. Usa copias compatibles de tus guardados y conserva los originales. Elige 0 para volver; ninguna transferencia se realiza sin tu selección explícita en este menú."
+    },
+    {
+      "id": "beta-guide",
+      "title": "Guía de instalación, controles, actualización y límites",
+      "kind": "gallery",
+      "group": "beta",
+      "path": "{release_directory}/PLAYER_GUIDE.txt"
+    },
+    {
+      "id": "effect-source",
+      "title": "Fuente de arte: impactos y sangre (#467)",
+      "kind": "gallery",
+      "group": "beta",
+      "path": "assets/source/art/standalone_467/impact-blood-source.png"
+    },
+    {
+      "id": "effect-prompt",
+      "title": "Prompt y procedencia del nuevo arte (#467)",
+      "kind": "gallery",
+      "group": "beta",
+      "path": "assets/source/art/standalone_467/PROMPT.json"
+    }
+  ],
+  "status_es": "Beta independiente del prólogo MAP01–MAP03. Los issues #460 y #464–469 tienen implementaciones y evidencia separadas; las PR quedan para revisión. Todas las 115 comprobaciones siguen pendientes de tu veredicto. La campaña posterior necesita diseño. Persisten las limitaciones de fluidez del asedio, Internet/equipos separados y las decisiones visuales pendientes. La opción 10 abre la entrega, modos, perfiles y nuevas pruebas. Las escenas antiguas usan sus fixtures locales; nunca se distribuyen con el juego. Registrar una observación no aprueba ni cierra una prueba."
+}

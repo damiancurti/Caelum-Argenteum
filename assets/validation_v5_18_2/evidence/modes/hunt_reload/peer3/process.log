@@ -1,0 +1,94 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-26 22:45:26
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue467-final04/caelum_argenteum.ipk3, 19055 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue468-matrix01/hunt_reload/checks.pk3, 4 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue468-matrix01/hunt_reload/peer3/standalone.pk3, 1 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+No GENMIDI lump found. OPL playback not available.
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2585.70 ms
+R_Init: Init CaelumArgenteum refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+using alternate port 0
+Node number 0, address 127.0.0.1
+Total players: 4
+Console player number: 3
+Received All Here, sending ACK.
+Received All Here, sending ACK.
+Received "Go."
+Total players: 4
+Found Player (node 1, player 1)
+Found Player (node 2, player 2)
+Found Player (node 3, player 3)
+Found Player (node 0, player 4)
+Arbitrator selected peer to peer networking mode.
+player 4 of 4 (4 nodes)
+
+----------------------------------------
+
+CAHUNT - Palomo's labyrinth
+
+Found Player's (0) data
+Found Player's (1) data
+Found Player's (2) data
+Found Player's (3) data
+CA601 PASS saved hunt mode restores without launch CVar
+CA601 PASS recovery preserves distinct collection
+CA601 PASS recovery preserves captive resources
+Player has been rescued.
+CA601 PASS saved captive can be rescued
+Player was captured by Palomo.
+Player was captured by Palomo.
+Player was captured by Palomo.
+Player was captured by Palomo.
+CA601 PASS all four captured lose together
+CA601 RESULT hunt
+CA435SYNC OK peer=3 map=CAHUNT tic=202
+Captured objectives.png
+CA435SYNC OK peer=3 map=CAHUNT tic=377
+Captured death.png
+Game saved.
+CA435SYNC OK peer=3 map=CAHUNT tic=552
+CA435SYNC OK peer=3 map=CAHUNT tic=727
+Captured deathmatch.png
+Game saved.
+CA435SYNC OK peer=3 map=CAHUNT tic=902

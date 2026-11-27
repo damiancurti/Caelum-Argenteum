@@ -1,0 +1,50 @@
+Campaign peers started: C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue468-references02\MAP01
+{
+  "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references02\\MAP01",
+  "passed": true,
+  "peers": [
+    {
+      "slot": 0,
+      "pid": 42424,
+      "exit_code": 0,
+      "window": {
+        "BEGIN": {
+          "utc": "2026-11-27T02:04:43.730817+00:00",
+          "qpc_ms": 1359394918.1599
+        },
+        "END": {
+          "utc": "2026-11-27T02:05:03.815463+00:00",
+          "qpc_ms": 1359415002.5452
+        }
+      },
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.573291857142856,
+        "p95_ms": 34.6533,
+        "p99_ms": 41.3192,
+        "max_ms": 43.2597
+      },
+      "render_callbacks": {
+        "samples": 1124,
+        "mean_ms": 16.028993861209965,
+        "p95_ms": 18.0155,
+        "p99_ms": 18.9075,
+        "max_ms": 23.2015
+      },
+      "states": [
+        "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=8 dense=0",
+        "CA435PERF STATE slot=0 health=1248 pos=-1600.000000,0.000000,-0.000000",
+        "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=8 dense=0",
+        "CA435PERF STATE slot=0 health=1248 pos=-1600.000000,0.000000,-0.000000"
+      ],
+      "census": [
+        "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+        "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+      ],
+      "scopes": [],
+      "native_sync": true,
+      "passed": true,
+      "complete_window": true
+    }
+  ]
+}

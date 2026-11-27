@@ -1,0 +1,122 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-26 22:35:06
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue467-final04/caelum_argenteum.ipk3, 19055 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue468-deathmatch01/checks.pk3, 4 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue468-deathmatch01/peer1/standalone.pk3, 1 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+No GENMIDI lump found. OPL playback not available.
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2587.05 ms
+R_Init: Init CaelumArgenteum refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+using alternate port 0
+Node number 0, address 127.0.0.1
+Total players: 2
+Console player number: 1
+Received All Here, sending ACK.
+Console player number: 1
+Received All Here, sending ACK.
+Received "Go."
+Total players: 2
+Found Player (node 1, player 1)
+Found Player (node 0, player 2)
+Arbitrator selected peer to peer networking mode.
+player 2 of 2 (2 nodes)
+
+----------------------------------------
+
+CARING - Ring
+
+CA435SYNC OK peer=1 map=CARING tic=0
+[Caelum] Character creation values loaded. Attribute total: 0.00
+[Caelum] Character creation values loaded. Attribute total: 0.00
+CA_MATCH PRESET player=0 preset=0
+CA_MATCH PRESET player=1 preset=1
+CA598 PASS two native players share one match
+CA598 PASS new match starts at zero
+CA598 PASS offensive abilities recognize the opposing participant
+CA598 PASS support abilities do not treat an opponent as a cooperative ally
+Player defeated Player.
+CA598 PASS real player kill gives one frag
+CA598 PASS duplicate death does not award twice
+CA435SYNC OK peer=1 map=CARING tic=175
+CA598 DIAG dead item=CaelumPersistentCharacterState
+CA598 PASS dead equipment cannot become loot
+Captured death.png
+Game saved.
+CA598 PASS respawn cannot occur before three seconds
+[Caelum] Character creation values loaded. Attribute total: 0.00
+CA_MATCH PRESET player=1 preset=1
+CA598 DIAG same=1 health=2105 max=2105 rev=1 victimnull=0
+CA598 PASS native respawn restores the dead participant
+CA598 PASS respawn restores selected resident
+CA598 PASS respawn restores health and usable equipment
+CA598 PASS respawn has one initial equipment set
+Player lost one point.
+CA598 PASS suicide subtracts one from its author
+CA435SYNC OK peer=1 map=CARING tic=350
+[Caelum] Character creation values loaded. Attribute total: 0.00
+CA_MATCH PRESET player=1 preset=1
+CA598 PASS time limit tie enters overtime
+Player defeated Player.
+CA_MATCH RESULT mode=1 winner=0 score=3
+CA598 PASS next lead resolves overtime
+CA598 PASS finished match rejects later damage
+CA598 PASS finished match rejects late scoring
+CA598 PASS one vote cannot restart for everyone
+CA435SYNC OK peer=1 map=CARING tic=525
+[Caelum] Character creation values loaded. Attribute total: 0.00
+
+----------------------------------------
+
+CARING - Ring
+
+CA435SYNC OK peer=1 map=CARING tic=0
+CA_MATCH PRESET player=0 preset=0
+CA_MATCH PRESET player=1 preset=1
+CA598 PASS unanimous rematch resets score and deaths
+CA598 PASS unanimous rematch resets the match clock
+CA598 PASS rematch restores both living and dead participants
+CA598 RESULT deathmatch
+Game saved.
+Captured deathmatch.png
+Game saved.

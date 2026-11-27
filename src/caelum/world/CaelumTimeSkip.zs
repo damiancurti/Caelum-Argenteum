@@ -203,7 +203,7 @@ class CaelumTimeSkipState : Inventory
         let s=Get(user,true);let rest=CaelumRestState.Get(user);
         s.Sleeping=CaelumRestState.IsSleeping(user);
         s.AnchorFurniture=rest!=null && CaelumRestState.IsActive(user)?rest.Furniture:null;
-        if(rest!=null)rest.Finish(user,CaelumRestRules.STATUS_CANCELLED,"");
+        if(rest!=null)rest.Finish(user,CaelumRestRules.STATUS_CANCELLED,"",false);
         CaelumTimeAdvanceState.Halt(user);
         s.Open=true;s.Active=false;s.Completed=false;s.OriginMap=level.MapName;s.OriginPosition=user.Pos;
         s.HadTask=TaskActive(user);s.TaskDone=false;s.Station=TaskAnchor(user);

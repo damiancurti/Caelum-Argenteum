@@ -1,0 +1,660 @@
+{
+  "issue": 468,
+  "version": "5.18.2",
+  "package_sha256": "f93b170bbf4f19617aff142c6d15787f986fec4827feb01f8e719082108f745e",
+  "pilot_sha256": "41beb814296c4b619a91c6c57273f14e6484ebc4a2a1083172a09de2eae818eb",
+  "equivalent_runtime_except_printed_labels": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "production_sources": {
+    "caelum_sessions.py": "b7d0b2c2ab73791ee811cb114f6d86b4149021f37ee2a6cfd5b25432c49319e2",
+    "caelum_standalone.py": "c2a47b4f7f61b934e002eab1fee3818416e12de65c0d796aa74668d903082268",
+    "caelum_new_campaign.py": "042195ca79620d1f50088ea85f79e681ecd7368bf451b9d4fe529a2d3e371744",
+    "caelum_transfer_verify.py": "53357d74935ed826dcadcdd0ad5fd72edc88c131c63b738321c37a20f1463072",
+    "assets/profiles/verification.zs": "d3ad265ad032e01b5b2cb1b2257e7a9ac339246abef720b267e87406dd1589dd"
+  },
+  "cases": {
+    "vacancy": {
+      "report": "result.json",
+      "passed": true,
+      "source": "issue468-vacancy01"
+    },
+    "deathmatch": {
+      "report": "results.json",
+      "passed": true,
+      "source": "issue468-deathmatch01"
+    },
+    "deathmatch_reload": {
+      "report": "results.json",
+      "passed": true,
+      "source": "issue468-deathmatch-reload01"
+    },
+    "team": {
+      "report": "results.json",
+      "passed": true,
+      "source": "issue468-team01"
+    },
+    "team_reload": {
+      "report": "results.json",
+      "passed": true,
+      "source": "issue468-team-reload01"
+    },
+    "capture": {
+      "report": "results.json",
+      "passed": true,
+      "source": "issue468-capture01"
+    },
+    "anchor": {
+      "report": "results.json",
+      "passed": true,
+      "source": "issue468-anchor01"
+    },
+    "transfer": {
+      "report": "results.json",
+      "passed": true,
+      "source": "issue468-transfer03"
+    },
+    "static": {
+      "report": "results.json",
+      "passed": true,
+      "source": "issue468-static01"
+    }
+  },
+  "mode_cases": [
+    {
+      "case": "capture_reload",
+      "origin_runner": "assets/validation_v5_13_7/run_capture_probe.py",
+      "runner_sha256": "cb8802a3c2d1f60638f41ac49713d4faa78fedb5ecad536a146f2d81974f41e9",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_13_7\\run_capture_probe.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\capture_reload",
+        "--engine",
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "--port",
+        "32946",
+        "--reload",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-capture01"
+      ],
+      "exit": 0,
+      "report": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\capture_reload\\results.json",
+      "passed": true
+    },
+    {
+      "case": "hunt",
+      "origin_runner": "assets/validation_v5_13_8/run_hunt_probe.py",
+      "runner_sha256": "69c93ba5d5501c006abf38dcf5d489af76ecb79e3c956105c09b6f7e0d4f8a4b",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_13_8\\run_hunt_probe.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\hunt",
+        "--engine",
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "--port",
+        "32960"
+      ],
+      "exit": 0,
+      "report": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\hunt\\results.json",
+      "passed": true
+    },
+    {
+      "case": "hunt_reload",
+      "origin_runner": "assets/validation_v5_13_8/run_hunt_probe.py",
+      "runner_sha256": "69c93ba5d5501c006abf38dcf5d489af76ecb79e3c956105c09b6f7e0d4f8a4b",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_13_8\\run_hunt_probe.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\hunt_reload",
+        "--engine",
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "--port",
+        "32960",
+        "--reload",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\hunt"
+      ],
+      "exit": 0,
+      "report": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\hunt_reload\\results.json",
+      "passed": true
+    },
+    {
+      "case": "human_hunt",
+      "origin_runner": "assets/validation_v5_13_11/run_probe.py",
+      "runner_sha256": "3d3707b3d8bbc41185b384ccb0852dfd5c538c7f4dcd75227ab495d27bd0ea7d",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_13_11\\run_probe.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\human_hunt",
+        "--engine",
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "--port",
+        "32980"
+      ],
+      "exit": 0,
+      "report": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\human_hunt\\results.json",
+      "passed": true
+    },
+    {
+      "case": "human_hunt_reload",
+      "origin_runner": "assets/validation_v5_13_11/run_probe.py",
+      "runner_sha256": "3d3707b3d8bbc41185b384ccb0852dfd5c538c7f4dcd75227ab495d27bd0ea7d",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_13_11\\run_probe.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\human_hunt_reload",
+        "--engine",
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "--port",
+        "32980",
+        "--reload",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\human_hunt"
+      ],
+      "exit": 0,
+      "report": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\human_hunt_reload\\results.json",
+      "passed": true
+    },
+    {
+      "case": "audio_routes",
+      "origin_runner": "assets/validation_v5_17_125/run_audio.py",
+      "runner_sha256": "d4e20aa1bb52954669317d7ea0ccb04951134199a37a42870994f178ad28b0e1",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_17_125\\run_audio.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\audio_routes"
+      ],
+      "exit": 0,
+      "report": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\audio_routes\\SUMMARY.json",
+      "passed": true
+    },
+    {
+      "case": "finale_predicate",
+      "origin_runner": "assets/validation_v5_16_5/run_eligibility.py",
+      "runner_sha256": "e8ff6fff33a82775959ae456bde139109aa3b9b237b84cc2197a6e288a917718",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_16_5\\run_eligibility.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\finale_predicate",
+        "--port",
+        "32957"
+      ],
+      "exit": 0,
+      "report": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\finale_predicate\\results.json",
+      "passed": true
+    },
+    {
+      "case": "coop",
+      "origin_runner": "assets/validation_v5_12_3/run_lifecycle_probe.py",
+      "runner_sha256": "041c1fa8572b281b48b9f95bb6ade61314902eb37e8c292c0cc87ef4c05d4de7",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_12_3\\run_lifecycle_probe.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\coop",
+        "--port",
+        "32910",
+        "--persistence"
+      ],
+      "exit": 0,
+      "report": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\coop\\results.json",
+      "passed": true
+    },
+    {
+      "case": "coop_reload",
+      "origin_runner": "assets/validation_v5_12_3/run_lifecycle_probe.py",
+      "runner_sha256": "041c1fa8572b281b48b9f95bb6ade61314902eb37e8c292c0cc87ef4c05d4de7",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_12_3\\run_lifecycle_probe.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\coop_reload",
+        "--port",
+        "32910",
+        "--persistence",
+        "--load-directory",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\coop"
+      ],
+      "exit": 0,
+      "report": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\coop_reload\\results.json",
+      "passed": true
+    },
+    {
+      "case": "coop_travel",
+      "origin_runner": "assets/validation_v5_12_3/run_lifecycle_probe.py",
+      "runner_sha256": "041c1fa8572b281b48b9f95bb6ade61314902eb37e8c292c0cc87ef4c05d4de7",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_12_3\\run_lifecycle_probe.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\coop_travel",
+        "--port",
+        "32910",
+        "--travel"
+      ],
+      "exit": 0,
+      "report": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\coop_travel\\results.json",
+      "passed": true
+    },
+    {
+      "case": "trucazo_ranked",
+      "origin_runner": "assets/validation_v5_14_3/run_native.py",
+      "runner_sha256": "bee89b67ddf930db745bbaed0b0d59f0632643346c779b1b2f6e2df28ff330ca",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_14_3\\run_native.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\trucazo_ranked",
+        "--port",
+        "32943"
+      ],
+      "exit": 0,
+      "report": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\trucazo_ranked\\results.json",
+      "passed": true
+    },
+    {
+      "case": "trucazo_reload",
+      "origin_runner": "assets/validation_v5_14_3/run_native.py",
+      "runner_sha256": "bee89b67ddf930db745bbaed0b0d59f0632643346c779b1b2f6e2df28ff330ca",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_14_3\\run_native.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\trucazo_reload",
+        "--port",
+        "32943",
+        "--load-directory",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\trucazo_ranked"
+      ],
+      "exit": 0,
+      "report": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\trucazo_reload\\results.json",
+      "passed": true
+    },
+    {
+      "case": "trucazo_tournament",
+      "origin_runner": "assets/validation_v5_14_3/run_native.py",
+      "runner_sha256": "bee89b67ddf930db745bbaed0b0d59f0632643346c779b1b2f6e2df28ff330ca",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_14_3\\run_native.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\trucazo_tournament",
+        "--port",
+        "32943",
+        "--suite",
+        "tournament",
+        "--players",
+        "4"
+      ],
+      "exit": 0,
+      "report": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\trucazo_tournament\\results.json",
+      "passed": true
+    }
+  ],
+  "references": [
+    {
+      "case": "MAP01",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_18_2\\run_reference.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references01\\MAP01",
+        "--map",
+        "MAP01",
+        "--players",
+        "1",
+        "--presentation-layer",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation"
+      ],
+      "passed": true
+    },
+    {
+      "case": "MAP02",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_18_2\\run_reference.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references01\\MAP02",
+        "--map",
+        "MAP02",
+        "--players",
+        "1",
+        "--presentation-layer",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation"
+      ],
+      "passed": true
+    },
+    {
+      "case": "MAP03",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_18_2\\run_reference.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references01\\MAP03",
+        "--map",
+        "MAP03",
+        "--players",
+        "1",
+        "--presentation-layer",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation"
+      ],
+      "passed": true
+    },
+    {
+      "case": "menu",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_13_4\\run_menu_probe.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references01\\menu",
+        "--engine",
+        "C:/Program Files (x86)/GZDoom/gzdoom.exe",
+        "--console-event"
+      ],
+      "passed": false
+    }
+  ],
+  "current_references": [
+    {
+      "case": "MAP01",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_18_2\\run_reference.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references02\\MAP01",
+        "--map",
+        "MAP01",
+        "--players",
+        "1",
+        "--presentation-layer",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+        "--current-view"
+      ],
+      "passed": true
+    },
+    {
+      "case": "MAP03",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_18_2\\run_reference.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references02\\MAP03",
+        "--map",
+        "MAP03",
+        "--players",
+        "1",
+        "--presentation-layer",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+        "--current-view"
+      ],
+      "passed": true
+    },
+    {
+      "case": "menu",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_13_4\\run_menu_probe.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references02\\menu",
+        "--engine",
+        "C:/Program Files (x86)/GZDoom/gzdoom.exe",
+        "--console-event"
+      ],
+      "passed": true
+    }
+  ],
+  "mansion_reference": [
+    {
+      "case": "MAP01",
+      "command": [
+        "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_18_2\\run_reference.py",
+        "--runtime",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--iwad",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+        "--output",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references03\\MAP01",
+        "--map",
+        "MAP01",
+        "--players",
+        "1",
+        "--presentation-layer",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+        "--current-view"
+      ],
+      "passed": true
+    }
+  ],
+  "performance": {
+    "MAP01": {
+      "pid": 30232,
+      "trace_sha256": "17da9d315f3617575ce3aa688954f5f614945e062423d189ce41edd84e1cc734",
+      "rows": 2013,
+      "scene_presents": 1104,
+      "mean_present_fps": 62.82025873265171,
+      "present_intervals": {
+        "samples": 1103,
+        "mean_ms": 15.918431731645128,
+        "p50_ms": 15.677599906921387,
+        "p95_ms": 18.28600001335144,
+        "p99_ms": 19.850499868392944,
+        "max_ms": 22.559799909591675
+      },
+      "native_call_duration": {
+        "samples": 1104,
+        "mean_ms": 0.23720996470555014,
+        "p50_ms": 0.23040008544921875,
+        "p95_ms": 0.2934999465942383,
+        "p99_ms": 0.35429978370666504,
+        "max_ms": 0.48129987716674805
+      }
+    },
+    "MAP02": {
+      "pid": 27556,
+      "trace_sha256": "44f026c2dfdd9c6e35340ef4a2b1987d4e1e309753ab3f1785335e66b89ce038",
+      "rows": 5749,
+      "scene_presents": 3149,
+      "mean_present_fps": 179.08869794469354,
+      "present_intervals": {
+        "samples": 3148,
+        "mean_ms": 5.583825285886112,
+        "p50_ms": 5.337100028991699,
+        "p95_ms": 7.0192999839782715,
+        "p99_ms": 8.30400013923645,
+        "max_ms": 31.859699964523315
+      },
+      "native_call_duration": {
+        "samples": 3149,
+        "mean_ms": 0.11209190130309477,
+        "p50_ms": 0.10329985618591309,
+        "p95_ms": 0.15560007095336914,
+        "p99_ms": 0.22239995002746582,
+        "max_ms": 0.6596999168395996
+      }
+    },
+    "MAP03": {
+      "pid": 11916,
+      "trace_sha256": "e93472c622f3e8d091a827865fc7d5d2bb24b00efbee6c1bd81e0c0c0076429d",
+      "rows": 3036,
+      "scene_presents": 1642,
+      "mean_present_fps": 94.75659502169331,
+      "present_intervals": {
+        "samples": 1641,
+        "mean_ms": 10.553355149275497,
+        "p50_ms": 10.401000022888184,
+        "p95_ms": 12.303099870681763,
+        "p99_ms": 13.669600009918213,
+        "max_ms": 15.038400173187256
+      },
+      "native_call_duration": {
+        "samples": 1642,
+        "mean_ms": 0.18030078968670712,
+        "p50_ms": 0.17170000076293945,
+        "p95_ms": 0.2361001968383789,
+        "p99_ms": 0.2899000644683838,
+        "max_ms": 0.49720001220703125
+      }
+    }
+  },
+  "attempts": [
+    {
+      "case": "transfer01",
+      "result": "Correct refusal: anchor had an active native conversation. Original untouched; native cancellation saved a new anchor."
+    },
+    {
+      "case": "transfer02",
+      "result": "Real verifier timeout: narrative and verification saves coexisted. Original heads/reservations retained; selection fixed before transfer03."
+    },
+    {
+      "case": "references01/menu",
+      "result": "Outdated fixture expected a direct main-menu link. Current accepted menu routes through CaelumMultiplayerMenu; fixture now verifies both links. No production menu change."
+    },
+    {
+      "case": "references01/MAP01+MAP03",
+      "result": "Native traces completed but captures showed an active mansion dialogue and an obsolete city camera inside a house. Current views retain authored player-start positions."
+    },
+    {
+      "case": "references02/MAP01",
+      "result": "Native conversation cancellation alone left the visible menu open. The final mansion observer also closes the current native menu before observation; the third capture is checked explicitly."
+    }
+  ],
+  "validation": "Full project validation passed before the final external verifier selection fix; final affected Python regression and native transfer checks passed afterward. Document-index freshness checked after final prose.",
+  "environment": "Windows 11 build 26200; Ryzen 9 5950X; RTX 3070 Ti; GZDoom startup g4.14.2 / file version g4.14.2-m; Vulkan; 5% background audio, unpaused.",
+  "reuse": "The #467 matching-map forward/rollback evidence applies to identical runtime actor/map bytes. Mode matrix uses that identical pilot runtime; transfer, peaceful references and native menu use the final #468 package.",
+  "limits": [
+    "QueuePresent calls measure application presentation requests, not monitor scanout.",
+    "Loopback peers share one machine; no Internet/separate-machine acceptance.",
+    "Peaceful real-map references do not resolve the documented severe siege rendering limitation.",
+    "Finale predicate checks do not author later campaign routes/scenes.",
+    "All 114 author checks remain pending."
+  ],
+  "author_acceptance": false
+}

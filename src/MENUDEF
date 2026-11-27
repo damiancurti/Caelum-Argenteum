@@ -19,7 +19,32 @@ ListMenu "MainMenu"
     TextItem "$CA_MENU_SINGLE_PLAYER", "u", "CaelumSinglePlayerMenu"
     TextItem "$CA_MENU_MULTIPLAYER", "m", "CaelumMultiplayerMenu"
     TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
+    TextItem "$CA_CREDITS_TITLE", "c", "CaelumCreditsMenu"
     TextItem "$CA_MENU_QUIT", "s", "CaelumExitMenu"
+}
+
+ListMenu "CaelumCreditsMenu"
+{
+    Class "CaelumCreditsMenu"
+}
+
+// #467: encabezados nativos localizados, sin parches de un IWAD comercial.
+ListMenu "EpisodeMenu"
+{
+    NetgameMessage "$NEWGAME"
+    Font "CaelumText", "Gold"
+    Position 48, 63
+    StaticText 54, 38, "$MNU_EPISODE"
+    Linespacing 16
+}
+
+ListMenu "SkillMenu"
+{
+    Font "CaelumText", "Gold"
+    StaticText 96, 14, "$MNU_NEWGAME"
+    StaticText 54, 38, "$MNU_CHOOSESKILL"
+    Position 48, 63
+    Linespacing 16
 }
 
 ListMenu "CaelumSinglePlayerMenu"

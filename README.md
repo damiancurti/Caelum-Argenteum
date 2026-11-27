@@ -4,14 +4,63 @@
 
 An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
-on Windows 11. The final game is intended to be independent of Doom assets.
+on Windows 11. The independent beta uses GZDoom installed separately; it requires no Doom IWAD.
 
-**Current release: 5.17.124.** Obtain and update the complete repository,
-validate it, then rebuild with `run_dev.bat` as described below.
+**Current release: 5.18.4.** #899 adds campaign custody, multiplayer arrival and hunt fixes, plus Windows launcher and export repairs.
 
-The 5.17.124 maintenance release repairs cooperative starts, hunt departures,
-campaign recovery, bilingual messages and the playtest export for all 238 maps.
-The Windows launcher accepts all 13 compatibility switches from the builder.
+In 5.18.3, #469 supplies the independent MAP01-MAP03 review
+beta, player guide, optional mode/profile tools and consolidated author terminal.
+The extracted ZIP, deterministic repeat and fresh Play/Multiplayer controls and
+preferences checks passed, along with ten focused native terminal checks. Evidence:
+assets/validation_v5_18_3. The author confirmed all 115 checks on 2026-11-27. GZDoom is
+installed separately and no Doom IWAD is needed.
+
+The complete review terminal is assets/validation_v5_18_3/author_terminal.ps1.
+Option 4 lists outstanding checks when present. Option 10 opens the delivered
+game, multiplayer, profiles, player guide and new rest/meal/resource scenes.
+The original instructions are archived in assets/validation_v5_18_3/CATALOG.json.
+The following patch notes describe status at delivery. HISTORY records acceptance by release.
+
+#468 integrates the approved independent
+MAP01-MAP03 review beta with the existing profile/multiplayer launchers. The
+IPK3 is loaded once as the primary game, manifests describe actual loaded
+packages, and fresh controls come from the packaged authoritative preset.
+Transfer verification selects its own checkpoint even when native admission
+also writes a narrative save; both files are preserved.
+Evidence: assets/validation_v5_18_2. The later campaign remains unauthored;
+Internet/separate-machine play, siege fluency and final author acceptance are
+not established. #469 supplies the complete review artifacts and terminal.
+
+#467 implemented own bootstrap/resources, deterministic filtered packaging and
+copy-only matching-map save conversion. Its native/static/launcher evidence is
+retained in assets/validation_v5_18_1. CA467-STARTUP-01 remains pending.
+
+#466 inventories recorded origins/permissions for every source runtime member
+and identifies the remaining independent-startup dependencies. Five development
+maps will be excluded from distribution; their sources remain intact. Evidence:
+assets/validation_v5_18_0 and assets/distribution. The subsequent #467 startup
+and #468 integration evidence are recorded above; #469 supplies the review delivery.
+Author attribution acceptance is pending CA466-RIGHTS-01.
+
+#465 adds Credits to the native main menu, completes six missing font
+characters and repairs general Spanish/physics localization coverage. Existing
+glyphs, icons, scaling and save state are preserved. Evidence:
+assets/validation_v5_17_126. CA465-UI-01 awaits the consolidated author terminal;
+The consolidated review terminal is supplied under #469.
+
+#464 verifies the retained prologue audio: 131 decoded recordings, 19 future
+tracks still reserved, and native music/volume/dialogue/travel/save checks.
+Audio bytes and assignments remain unchanged. Evidence is in
+assets/validation_v5_17_125; CA464-AUDIO-01 awaits the final author terminal.
+The independent-beta delivery and review terminal are supplied under #469.
+
+#460 adds timed chair/bed/floor transitions and eating/drinking gestures on the
+retained supported modular body. The shield stays visible and the weapon visual
+returns when the gesture ends. Existing saves upgrade without restarting rest;
+backward conversion preserves the original save (SYSTEMS, 5.17.124). Native and
+static evidence: assets/validation_v5_17_124. CA460-MOTION-01 awaits the final
+consolidated author session. The #460/#464-469 implementations have separate
+commits and PRs for the approved independent MAP01-MAP03 review beta.
 
 **Integration decision, 2026-11-26:** the author authorized merging the 130
 implemented V5.16/V5.17 PRs and closing their 130 issues plus parent scopes #459
@@ -19,8 +68,8 @@ and #462 for the work delivered so far. Later versions will complement it.
 Release 5.17.123 is retained. The 108 manual checks, visual decisions and known
 limitations remain pending; closure does not certify the full campaign or art.
 The exact integration scope is recorded in
-`assets/validation_v5_17_123/integration-decision.json`. Unimplemented roadmap
-issues #460, #464-469 and umbrella #403 remain open.
+`assets/validation_v5_17_123/integration-decision.json`. At that integration point #460, #464-469 and umbrella #403 remained open.
+The current #460 implementation is described above.
 
 #889 supplies the consolidated author terminal for all108 outstanding checks:
 `assets/validation_v5_17_123/author_terminal.ps1`. Its scene catalogue includes
@@ -3389,7 +3438,12 @@ no #17 author checks remain pending. The accepted ZIP is unchanged, identified
 by source commit 8415f225 and checksums in assets/validation_43628/RESULTS.json.
 
 <!-- PLAYTEST_INSTRUCTIONS_BEGIN -->
-## Playtest installation and route
+## Historical development playtest installation and route (superseded)
+
+This retained export records an earlier development delivery. Its dependencies,
+population figures and mode limitations are historical, not current instructions
+or permission to rerun retired stress cases. Use the independent review-beta
+guide below for the current delivery; HISTORY retains original acceptance.
 
 This is a single-player development playtest, not the final standalone game.
 Supply GZDoom 4.14.2 for Windows and your legally obtained Doom II DOOM2.WAD
@@ -4476,7 +4530,168 @@ The #8 bow correction is engine-verified and author-accepted (CA-4362-BOW-EMPTY-
 Long-term encounter/provision balance and unfinished 4.36 systems are development
 work in PROJECT/TASKS, not additional author checks for this patch.
 
-## Build and run
+<!-- independent-player-guide:start -->
+## Caelum Argenteum 5.18.4 - independent review beta
+
+This author-review beta contains the current MAP01-MAP03 prologue and existing
+campaign, cooperative, competitive and Trucazo systems. Later campaign locations,
+essence acquisition and scenes still need authoring. The author confirmed the 115 prologue review checks on 2026-11-27. No public-store launch is implied.
+
+### Install and start
+
+1. Install GZDoom 4.14.2 separately on Windows 11, retaining its normal support
+   files beside gzdoom.exe. The game requires no Doom IWAD. The recorded test
+   installation reports g4.14.2-m (timer-fixed build); another clean computer
+   and other engine versions have not been certified.
+2. Compare the ZIP with its supplied external SHA-256 file using
+   `Get-FileHash -Algorithm SHA256`. Extract the entire archive into a new
+   writable folder. Keep its files together, including assets/profiles.
+   SHA256SUMS.txt covers the delivered files; DELIVERY.json identifies their
+   hashes and version, while MANIFEST.json lists the IPK3's runtime members.
+3. From that folder run:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./run_release.ps1
+```
+
+Use `-Engine "C:/path/to/gzdoom.exe"` for another installation location. Fresh
+solo play needs no Python. The launcher disables autoload and creates
+`%LOCALAPPDATA%/CaelumArgenteum/current` for preferences, saves and latest.log.
+First launch is windowed, unpaused in the background, at 5% master volume with
+the project's control preset; subsequent launches preserve your settings.
+Use `-ProfileDirectory "C:/path/to/profile"` for a separate profile.
+
+Start a new character and follow the Journal through the mansion, sewers and
+Barracas. Save distinct checkpoints before and after travel. Use the native
+Save/Load menus. For a direct load, pass `-LoadSave save00.zds`: this must be a
+filename inside the selected profile, not an absolute path. Keep original saves.
+
+### Controls and presentation
+
+Options > Customize Controls is authoritative for current bindings. The fresh
+project preset supplies Tab for Journal/inventory, M for automap, B for the
+equipped Seal, R for Reload, F for Zoom, T for selected Tarot powers, Y for
+rest/wait and L for map legend. Review movement, look, Jump, Crouch, Use, Fire
+and AltFire there. Use interacts with people, doors, chests and stations.
+Fire attacks; AltFire provides secondary attack or ranged aim; Reload reloads
+or charges eligible attacks; Zoom blocks, sweeps eligible heavy weapons or
+aims down ranged sights. Native settings retain UI scale, language and volume.
+Change the 5% initial volume to taste. Credits is available from the main menu.
+
+### Multiplayer and managed profiles
+
+These optional launch bridges require Python 3.12 with its standard library;
+the archive includes their project modules and data. Install Python separately,
+or pass `-Python "C:/path/to/python.exe"`. Start the native standalone-mode menu:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./run_release.ps1 -Mode Multiplayer
+```
+
+Select the existing Deathmatch, team, Capture the Arcana or Tarot Hunt modes,
+host/join settings, participant count and resident preset. Human Palomo retains
+the existing Tarot Hunt participant requirements. Each match gets an isolated
+configuration and saves; closing it returns to the title. In ordinary Play mode
+the external host/join action is unavailable until this bridge is running.
+
+For coordinated campaign profiles, transfers, session bundles and backups:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./run_release.ps1 -Mode Profiles -Language es
+```
+
+The coordinator uses profiles.sqlite3 inside the selected profile directory.
+Register a copy of a compatible native save, prepare a session, then use the
+same exact game/engine resources and assigned native roster on every peer.
+Close sessions before transferring; finish conversations and active operations
+first. A transfer verifies both copied worlds before changing custody. Keep the
+coordinator's backups and recovery history; never reuse a departed slot as an
+ordinary living player or silently replace a pinned runtime. Existing campaign
+Trucazo and multiplayer rules remain unchanged. This batch verifies local
+loopback peers on one machine, not Internet or separate-machine play.
+
+### Update, old saves and rollback
+
+Extract an update beside the prior version; keep the original package,
+preferences, saves and profile-store backup. Test with a separate
+ProfileDirectory before adopting it. Managed sessions pin exact resources:
+retain their original launcher/package and export recovery copies before moving
+to a new coordinator. No existing manifest/store is silently rewritten.
+
+To convert a matching development save into an independent copy, use Python:
+
+```powershell
+python migrate_standalone_save.py old.zds C:/profiles/review/converted.zds --source-package old-runtime.pk3 --target-package caelum_argenteum.ipk3
+```
+
+The converter requires native format 4560 and identical bytes for every stored
+map. It refuses an existing destination or mismatched geometry and writes a
+receipt; the original is untouched. A previously visited old sewer/city needs
+the separately built matching legacy-map02-r5 and/or legacy-map03-r3 variant,
+whose default profile is separate. Other historical layouts and saved diagnostic
+actors retain their exact original runtime/fixture. Do not bypass these guards.
+For a reversible development copy, swap source/target packages and supply the
+original `--target-iwad DOOM2.WAD`; this optional rollback requires the author's
+own prior development installation, which is never included in this delivery.
+
+### Scope, limits and credits
+
+The later full campaign, pending author art decisions and earlier manual checks
+remain open for review. Siege rendering is known to stall severely. Stationary
+1280x720 Vulkan references on Ryzen 9 5950X / RTX 3070 Ti averaged 62.82 FPS at
+the mansion exterior, 179.09 at the sewer start and 94.76 at the quay/gate;
+mansion p95 was 18.29 ms. These QueuePresent samples are not a whole-map,
+monitor-scanout, minimum-hardware or stable-60-FPS guarantee.
+
+Current prologue music/sounds are retained; 19 future tracks remain reserved.
+Read LICENSE.md, ORIGINS.json and the game's Credits for project and individual
+source terms. Runtime notices are inside the IPK3 under licenses/. No engine,
+commercial IWAD, development-map fixture or test save is distributed.
+Report the version, package SHA-256, engine build, renderer/resolution, CPU/GPU,
+reproduction steps and relevant latest.log at
+https://github.com/damiancurti/Caelum-Argenteum/issues. Share only the needed
+diagnostic evidence, never an engine or commercial IWAD.
+<!-- independent-player-guide:end -->
+
+## Building the independent review beta from source
+
+Install GZDoom 4.14.2 separately on Windows 11. Do not copy a Doom IWAD, an
+engine executable or development fixtures into the distribution. From a complete
+review-branch checkout, validate and build a new directory:
+
+```powershell
+python validate_project.py
+python build_release.py --output build/independent-review
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File build/independent-review/run_release.ps1
+```
+
+Pass `-Engine "C:/path/to/gzdoom.exe"` when it is installed elsewhere. The
+generated directory contains the standalone IPK3, per-file provenance manifest,
+origin decisions, launcher and optional save converter; no engine is bundled.
+The launcher creates a separate `%LOCALAPPDATA%/CaelumArgenteum/current` profile
+at 5% master volume and preserves existing preferences. `-ProfileDirectory`
+selects another profile; `-LoadSave` accepts only a filename inside it, avoiding
+GZDoom's duplicated absolute-save-path failure. Fresh solo campaign play requires no Python
+after the package has been built. Source builds, optional historical-save
+conversion and the existing advanced profile/multiplayer launcher tools use Python;
+the preceding player guide documents the included advanced tools.
+
+Keep original saves and their exact original packages. The converter copies
+format-4560 saves only when every stored map is byte-identical in both packages:
+
+```powershell
+python migrate_standalone_save.py old.zds profile/converted.zds --source-package old-runtime.pk3 --target-package build/independent-review/caelum_argenteum.ipk3
+```
+
+For a visited pre-redesign sewer/city, build a separate directory with
+`--legacy-map02-revision5` and/or `--legacy-map03-revision3`. These retain verified
+map bytes and separate default profiles. Older layouts/add-on saves keep their
+original runtime and fixtures; never bypass the converter's map mismatch guard.
+SYSTEMS documents the revision-1 conversion and deliberate development rollback.
+This is the approved MAP01-MAP03 review beta with existing mode/performance/art
+limitations, not author acceptance or completion of the later campaign.
+
+## Development build and run
 
 GitHub is the primary working source. To obtain a complete checkout:
 
@@ -4510,7 +4725,7 @@ For maintained docs longer than 5,000 words, query
 
 Rebuild the PK3 after updating; launching an old PK3 keeps old code. The commands
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` must identify
-**5.2.16**. This patch requires no save-schema migration.
+**5.18.4**. Independent package-identity conversion is documented above.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. Check `GZDOOM_EXE` and `DOOM2_IWAD` in that file on
@@ -4569,13 +4784,13 @@ must preserve save/input compatibility through incremental changes.
 
 Run `python validate_project.py` before preparing a release to check version,
 documentation, structure, Caella translations, station models and audio references. Development engine/IWAD files,
-test observers and archives are not part of the playable PK3 or source delivery.
+test observers and archives are not part of the player distribution.
 
 Patch versions use MAJOR.MINOR.PATCH with an optional lowercase letter for
 author-requested documentation/hotfix patches: 4.36.0i -> 4.36.1 -> 4.36.1b -> 4.36.2 -> 4.36.3 -> 4.36.4.
 Implementation commits and later acceptance do not each create a new patch.
 Historical labels stay intact; PROJECT records the current roadmap and the
-author-approved three-map playtest requirement. All seven docs and AGENTS declare
+author-approved three-map playtest requirement. All eight versioned docs and AGENTS declare
 a current version; the two engineering guides and the generated index inherit
 this README's release.
 

@@ -1,10 +1,104 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.124** - 2026-11-27.
+Documentation version: **5.18.4** - 2026-11-27.
 
-## 5.17.124 - Repository audit repairs (#899)
+## 5.18.4 - Repository audit integration (#899)
 
-Track repository-audit fixes in #899. The native Windows batch launcher, the approved siege performance target and the 108 outstanding author checks retain their respective manual verification requirements.
+The audit fixes are integrated with the independent beta. The 115 checks from 5.18.3 were accepted on 2026-11-27. The original audit evidence is under assets/validation_v5_17_124 and the integrated Windows results are under assets/validation_v5_18_4.
+
+## 5.18.3 - Complete independent review-beta handoff (#469)
+
+Release support-file export, player guidance and launcher modes are implemented.
+Extracted-package, controls/preferences, coordinator and ten focused native
+terminal checks passed under assets/validation_v5_18_3. On 2026-11-27 the
+author confirmed all 115 checks. HISTORY records the results by originating
+release. The queue is empty. PRs #892-898 deliver the seven implementation issues.
+No later campaign authoring, public store launch, Internet certification or
+siege performance acceptance is inferred from this delivery.
+
+## 5.18.2 - Approved prologue/mode integration (#468)
+
+The independent resource/manifest/control launch correction is implemented.
+Integration checks passed under assets/validation_v5_18_2, keeping
+scenario logs, saves and original probe ownership separate. Eighteen retained
+mode/route cases, vacancy creation, managed outbound/imported-play/return,
+native menu routing and three peaceful presentation references were checked.
+The native transfer timeout caused by an additional narrative checkpoint is
+fixed without deleting saves. The approved scope
+is the current MAP01-MAP03 prologue and existing modes, with later scenes,
+Internet/separate-machine verification, siege fluency and author art decisions
+explicitly outside automated acceptance. Preserve all 114 outstanding author
+checks. After its focused PR, #469 prepares versioned artifacts,
+player guidance and one visible terminal covering the entire pending queue.
+
+## 5.18.1 - Independent startup and packaging (#467)
+
+Implemented owned bootstrap/effect/switch/armor/menu resources, native voice
+aliases, deterministic filtered packaging, external-engine launcher and copy-only
+save-identity migration. Native checks and failed-attempt explanations are in
+assets/validation_v5_18_1; all 113 author checks remain outstanding. Keep #467
+commits/tests/PR separate. #468 must verify the integrated approved prologue and
+existing modes with documented limits; #469 must prepare reproducible versioned
+artifacts and the single visible terminal covering every prior/new author check.
+No manual result may be inferred from agent checks or a merged/closed issue.
+
+## 5.18.0 - Standalone dependency/provenance audit (#466)
+
+Inventory and source-term decisions are implemented; native/bootstrap evidence
+is retained under assets/validation_v5_18_0. CA466-RIGHTS-01 adds final attribution
+review without accepting any earlier author check. #467 resolves the enumerated
+palette/episode, effects, voice, sky/switch and menu resources and implements
+filtered deterministic packaging. #468 integrates approved prologue/mode/save
+checks; #469 prepares the complete review beta and consolidated visible terminal.
+No public-store launch, later campaign authoring or pending visual acceptance
+is inferred. Each remaining issue retains separate commits/tests/PRs.
+
+## 5.17.126 - Native credits and presentation coverage (#465)
+
+Implemented #465's concrete presentation gaps without replacing accepted
+interfaces: native credits, six missing glyphs across twelve fonts, general
+Spanish aliases for 67 retained regional translations and five physics labels.
+Static audit covers unchanged old glyphs, generated outputs, authored character
+coverage, project ES/EN keys and literal UI graphics. Native matrix and final
+package evidence are retained under assets/validation_v5_17_126. CA465-UI-01
+joins the existing author queue; no earlier manual check is accepted or removed.
+Continue the independent prologue beta with #466 dependency/provenance audit,
+#467 external-engine startup, #468 integrated validation and #469 delivery.
+
+## 5.17.125 - Verify retained prologue audio (#464)
+
+Completed the author-approved audio verification scope: deterministic index
+of 131 recordings, preserved credit/source locators, full PCM decode, 19 reserved
+tracks and three native phases with71 checks. Existing music, conversation,
+cue-channel and preference ownership is unchanged. The eight container/decode
+duration differences are recorded with independent-decoder agreement.
+
+CA464-AUDIO-01 joins the pending author queue; all prior109 checks remain.
+Continue #465 UI/icon/font/credit coverage. #466 resolves distributable asset
+permissions; this audio verification does not certify unrelated third-party
+rights or implement future weather/region designs. #467-469 deliver and validate
+the approved independent prologue beta and final consolidated terminal.
+
+## 5.17.124 - Complete native rest/meal transitions (#460)
+
+Implemented revisioned rest phases, approved durations, native input guards,
+damage/support interruption and retained-body meal gestures. Preserve the
+existing 108 author checks and add CA460-MOTION-01. Its verdict is pending;
+automated fixtures and a PR do not constitute author acceptance.
+
+Evidence: deterministic 208-model export; unchanged UV/topology and neutral
+samples; native chair/bed/floor, held input, damage, support loss, meal/equipment,
+jump charge, entry/meal/exit saves, hub return, exhaustion, old-save upgrade and
+copied rollback. The rollback tool preserves original saves and is idempotent.
+Raw current-to-old loading warns about unknown states/models, so use the copy
+conversion with matched package/maps. Failed fixture/migration attempts remain
+recorded in the evidence summary rather than being counted as passing checks.
+
+Continue #464 and #465 independently, then #466/#467 dependency removal and
+#468/#469 integrated beta validation/release preparation. Approved scope:
+MAP01-MAP03 with existing modes/limits; GZDoom4.14.2 installed separately;
+current audio assignments retained and 19 future tracks reserved. Leave the
+consolidated terminal open only after the full remaining batch is prepared.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 

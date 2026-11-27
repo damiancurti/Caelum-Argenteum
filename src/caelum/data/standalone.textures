@@ -1,0 +1,24 @@
+// #467: recortes RGBA propios; dimensiones y estados conservados.
+Sprite "PUFFA0", 140, 150 { XScale 28.000000000 YScale 30.000000000 Offset 56, 90 Patch "graphics/caelum/vfx/standalone_467.png", -152, -160 }
+Sprite "PUFFB0", 303, 251 { XScale 33.666666667 YScale 31.375000000 Offset 135, 126 Patch "graphics/caelum/vfx/standalone_467.png", -518, -93 }
+Sprite "PUFFC0", 322, 265 { XScale 26.833333333 YScale 24.090909091 Offset 161, 120 Patch "graphics/caelum/vfx/standalone_467.png", -941, -83 }
+Sprite "PUFFD0", 284, 245 { XScale 18.933333333 YScale 16.333333333 Offset 151, 114 Patch "graphics/caelum/vfx/standalone_467.png", -1396, -93 }
+Sprite "BLUDC0", 161, 157 { XScale 13.416666667 YScale 14.272727273 Offset 94, 86 Patch "graphics/caelum/vfx/standalone_467.png", -158, -595 }
+Sprite "BLUDB0", 270, 226 { XScale 33.750000000 YScale 28.250000000 Offset 135, 113 Patch "graphics/caelum/vfx/standalone_467.png", -536, -556 }
+Sprite "BLUDA0", 186, 247 { XScale 37.200000000 YScale 41.166666667 Offset 74, 124 Patch "graphics/caelum/vfx/standalone_467.png", -1439, -578 }
+Sprite "FAXEF0", 161, 157 { XScale 13.416666667 YScale 14.272727273 Offset 94, 86 Patch "graphics/caelum/vfx/standalone_467.png", -158, -595 }
+Sprite "FAXEG0", 161, 157 { XScale 13.416666667 YScale 14.272727273 Offset 94, 86 Patch "graphics/caelum/vfx/standalone_467.png", -158, -595 }
+Sprite "FAXEH0", 270, 226 { XScale 22.500000000 YScale 20.545454545 Offset 158, 123 Patch "graphics/caelum/vfx/standalone_467.png", -536, -556 }
+Sprite "FAXEI0", 255, 258 { XScale 21.250000000 YScale 23.454545455 Offset 149, 141 Patch "graphics/caelum/vfx/standalone_467.png", -974, -557 }
+Sprite "FAXEJ0", 186, 247 { XScale 15.500000000 YScale 22.454545455 Offset 108, 135 Patch "graphics/caelum/vfx/standalone_467.png", -1439, -578 }
+Sprite "FAXEK0", 186, 247 { XScale 15.500000000 YScale 22.454545455 Offset 108, 135 Patch "graphics/caelum/vfx/standalone_467.png", -1439, -578 }
+Flat "F_SKY1", 64, 64 { Patch "graphics/caelum/domingo_invisible.png", 0, 0 }
+Graphic "M_EPISOD", 1, 1 { Patch "graphics/caelum/domingo_invisible.png", 0, 0 }
+Graphic "M_NEWG", 1, 1 { Patch "graphics/caelum/domingo_invisible.png", 0, 0 }
+Graphic "M_SKILL", 1, 1 { Patch "graphics/caelum/domingo_invisible.png", 0, 0 }
+Texture "SW1EXIT", 320, 887 { XScale 10.000000000 YScale 12.319444444 Patch "graphics/caelum/world/ca_lever_states.png", -375, 0 }
+Texture "SW2EXIT", 320, 887 { XScale 10.000000000 YScale 12.319444444 Patch "graphics/caelum/world/ca_lever_states.png", -1080, 0 }
+Sprite "ARM1A0", 128, 128 { XScale 4.129032258 YScale 7.529411765 Offset 62, 128 Patch "graphics/caelum/icons/ca_armor_light.png", 0, 0 }
+Sprite "ARM1B0", 128, 128 { XScale 4.129032258 YScale 7.529411765 Offset 62, 128 Patch "graphics/caelum/icons/ca_armor_light.png", 0, 0 }
+Sprite "ARM2A0", 128, 128 { XScale 4.129032258 YScale 7.529411765 Offset 62, 128 Patch "graphics/caelum/icons/ca_armor_heavy.png", 0, 0 }
+Sprite "ARM2B0", 128, 128 { XScale 4.129032258 YScale 7.529411765 Offset 62, 128 Patch "graphics/caelum/icons/ca_armor_heavy.png", 0, 0 }

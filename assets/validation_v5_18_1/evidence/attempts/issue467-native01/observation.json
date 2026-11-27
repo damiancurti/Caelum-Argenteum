@@ -1,0 +1,6 @@
+{
+  "fatal": "File caelum_argenteum.ipk3 is overriding core lump caelum/data/standalone-base.mapinfo.",
+  "observed": "Native fatal window, Windows Computer Use",
+  "correction": "IWADINFO Mapinfo must reference an installed engine core resource. Point it to mapinfo/doomcommon.txt; include project overrides from the ordinary root MAPINFO instead.",
+  "status": "Failed attempt retained; owned fatal window closed."
+}

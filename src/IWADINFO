@@ -1,0 +1,8 @@
+IWAD
+{
+    Name = "Caelum Argenteum"
+    Game = "Doom"
+    Config = "CaelumArgenteum"
+    Mapinfo = "mapinfo/doomcommon.txt"
+    MustContain = "PLAYPAL", "ZSCRIPT", "MAP01"
+}

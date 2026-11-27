@@ -1,0 +1,23 @@
+[
+  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+  "-noautoload",
+  "-iwad",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+  "-file",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\audio_routes\\audio.pk3",
+  "-config",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\audio_routes\\maps\\session.ini",
+  "-savedir",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\audio_routes\\maps",
+  "-window",
+  "-width",
+  "1280",
+  "-height",
+  "720",
+  "+logfile",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\audio_routes\\maps\\native.log",
+  "+map",
+  "MAP01",
+  "+exec",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\audio_routes\\maps\\commands.cfg"
+]

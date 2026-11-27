@@ -1,0 +1,69 @@
+{
+  "purpose": "Metadata dimensions/anchors only, to preserve world-space extent; no commercial artwork/pixels retained.",
+  "sprites": {
+    "PUFFA0": {
+      "width": 5,
+      "height": 5,
+      "left": 2,
+      "top": 3
+    },
+    "PUFFB0": {
+      "width": 9,
+      "height": 8,
+      "left": 4,
+      "top": 4
+    },
+    "PUFFC0": {
+      "width": 12,
+      "height": 11,
+      "left": 6,
+      "top": 5
+    },
+    "PUFFD0": {
+      "width": 15,
+      "height": 15,
+      "left": 8,
+      "top": 7
+    },
+    "BLUDA0": {
+      "width": 5,
+      "height": 6,
+      "left": 2,
+      "top": 3
+    },
+    "BLUDB0": {
+      "width": 8,
+      "height": 8,
+      "left": 4,
+      "top": 4
+    },
+    "BLUDC0": {
+      "width": 12,
+      "height": 11,
+      "left": 7,
+      "top": 6
+    },
+    "ARM1A0": {
+      "width": 31,
+      "height": 17,
+      "left": 15,
+      "top": 17
+    },
+    "ARM2A0": {
+      "width": 31,
+      "height": 17,
+      "left": 15,
+      "top": 17
+    }
+  },
+  "textures": {
+    "SW1EXIT": {
+      "width": 32,
+      "height": 72
+    },
+    "SW2EXIT": {
+      "width": 32,
+      "height": 72
+    }
+  }
+}

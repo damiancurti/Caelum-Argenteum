@@ -1,0 +1,7 @@
+{
+  "issue": 460,
+  "package": "issue460-review02.pk3",
+  "sha256": "cd41d68418d5a85aff66b9668a12f7a8dbf5280594f6a253e67ec7b99a218f29",
+  "files": 18978,
+  "build_log": "Dialogue sources, ordered runtime and localization index are current.\nPK3 created successfully: C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue460-review02.pk3\nJustice geometry: new campaigns. Pre-Justice visited-map saves require -LegacyTarotMaps.\nMAP01 layout: follows the Justice mode above. Pre-5.8.2 mansion saves additionally need -LegacyMap01.\nMAP02 layout: follows the Justice mode above. Visited pre-redesign sewer saves need -LegacyMap02Revision5; older layouts need -LegacyMap02Revision4 (pre-5.4.33) or -LegacyMap02 (original 4.36.4).\nFiles included: 18978\nMAP03: Barracas revision 4, four gates and retained private interiors. For visited original-city saves use -LegacyMap03Revision3. Siege rendering remains limited; preserve original saves.\nDirectory entries: 0\n"
+}

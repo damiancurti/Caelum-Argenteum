@@ -11,8 +11,13 @@ class CA597MenuProbe : StaticEventHandler
             let main=ListMenuDescriptor(MenuDescriptor.GetDescriptor('MainMenu'));
             bool found=false;
             for(int i=0;i<main.mItems.Size();i++)
-                if(main.mItems[i].GetAction()=='CaelumStandaloneMenu')found=true;
+                if(main.mItems[i].GetAction()=='CaelumMultiplayerMenu')found=true;
             Check(found,"main menu exposes localized Multiplayer entry");
+            let modes=ListMenuDescriptor(MenuDescriptor.GetDescriptor('CaelumMultiplayerMenu'));
+            found=false;
+            for(int i=0;i<modes.mItems.Size();i++)
+                if(modes.mItems[i].GetAction()=='CaelumStandaloneMenu')found=true;
+            Check(found,"Multiplayer submenu exposes independent matches");
             CVar.GetCVar('ca_standalone_bridge').SetBool(false);
             Menu.SetMenu('CaelumStandaloneMenu');
             let menu=CaelumStandaloneMenu(Menu.GetCurrentMenu());

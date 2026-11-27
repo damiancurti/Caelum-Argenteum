@@ -1,0 +1,29 @@
+{
+  "issue": 460,
+  "runtime_sha256": "5e69ad0e8528c4cbecac2153152defdaac17c2fc558e7510260eaee69d3591c3",
+  "fixture_sha256": "89f6713cf9bd613e34ce824782c0c51f996648b21f2f4246ac942193f34e329e",
+  "runs": [
+    {
+      "name": "eat",
+      "passed": true,
+      "counts": [
+        [
+          "22",
+          "0"
+        ]
+      ],
+      "exit": 0
+    },
+    {
+      "name": "drink",
+      "passed": true,
+      "counts": [
+        [
+          "44",
+          "0"
+        ]
+      ],
+      "exit": 0
+    }
+  ]
+}

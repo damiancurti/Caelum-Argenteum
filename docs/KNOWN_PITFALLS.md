@@ -4,6 +4,97 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-283 - Select the verifier checkpoint without suppressing narrative saves
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #468 / 5.18.2,
+2026-11-26, Windows 11 / GZDoom g4.14.2-m. Evidence: assets/validation_v5_18_2.
+
+Managed admission into an actual vacant MAP01 can write a narrative checkpoint
+before the transfer verifier writes its checkpoint. Waiting for exactly one
+save*.zds timed out even though both native identity gates passed. Preserve
+both files; give the verifier an attempt-specific title and inspect native
+info.json to select it. Retry incomplete archives, reject multiple matching
+checkpoints, then retain full checksum/roster validation and atomic publication.
+Never select an arbitrary newest save or delete the narrative checkpoint.
+
+An active native conversation is a separate valid transfer refusal. Close it
+through ConversationMenu.SendConversationReply(-1,0), then make a new native
+save; do not clear serialized actor flags to manufacture a transferable profile.
+The native outbound/imported-play/return sequence passed after the selection fix.
+
+Keep a primary independent IPK3 in the logical schema/control input list, but
+omit it from actual -file additions and manifest counts. Resolve native resource
+paths before changing child working directories. Old development IWAD arguments
+must retain their separate runtime. Fresh controls come from packaged KEYCONF,
+not a source-only assets path absent from an extracted player distribution.
+
+## CA-KP-282 - Standalone core configuration, aliases and save ownership
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #467 / 5.18.1,
+2026-11-26, Windows 11 / GZDoom g4.14.2-m. Evidence: assets/validation_v5_18_1.
+
+IWADINFO MustContain uses short lump names; its Mapinfo selects installed core
+configuration and cannot point at a project override. Include own overrides
+from ordinary MAPINFO. A separate root TEXTURES.caelum467 can register resources
+without changing a shared TEXTURES file pinned by earlier source manifests; a
+nested caelum/data/TEXTURES did not register them in this tested package.
+Diagnostic filenames such as textures.zs still collide
+with reserved short lump names: use texture_probe.zs. Keep base parser resource
+compatibility separate from localized menu display text.
+
+IsActorPlayingSound compares the original requested sound ID. After starting
+"*death", query that alias, not the concrete sound it resolves to. Use native
+playersounds to verify class/gender mappings separately. A PowerShell GUI
+launch needs an output pipeline (Out-Host) to wait and populate LASTEXITCODE. Preserve previously
+silent events instead of inventing a new cue while repairing dependencies.
+
+Standalone saves change Game WAD/Map WAD ownership. Copy-only identity migration
+must verify every stored map against both exact packages, retain the original
+and refuse mismatched geometry. Restore original diagnostic classes when a saved
+hub needs them; never strip unknown objects. Pass only a basename to -loadgame
+under the intended -savedir. Native load/save, hub return and reverse conversion
+are separate checks; metadata edits alone do not establish compatibility.
+
+## CA-KP-281 - Separate standalone startup evidence from dependency inventory
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #466 / 5.18.0,
+2026-11-26, Windows 11 / GZDoom 4.14.2. Evidence: assets/validation_v5_18_0.
+
+A custom IPK3 needs its own palette and episode setup before gameplay resources
+can be audited. Use disposable bootstrap fixtures and explicitly exclude them
+from production. Successful script compilation with a Doom development IWAD
+does not prove independent resource completeness. Check native texture lookup,
+inherited actor defaults, base-menu resources and source map texture references.
+A legacy resource name is not proof of copied artwork: inspect its actual source.
+
+GZDoom prints three missing native menu headers as "Script error" but continues
+initialization. An audit runner must distinguish these known nonfatal findings
+from fatal parsing/VM errors, and require a completion marker plus process exit
+status. Process disappearance alone is not an exit-code record. Preserve failed
+probe evidence and do not treat a diagnostic grayscale palette as approved art.
+
+## CA-KP-280 - Preserve complete font folders in diagnostic overlays
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #465 / 5.17.126,
+2026-11-26, Windows 11 / GZDoom 4.14.2. Evidence:
+assets/validation_v5_17_126; author visual acceptance remains pending.
+
+Folder fonts are selected as complete definitions. An overlay containing only
+new Unicode PNGs can replace the original letters and font.inf. Native menu
+commands and line-width assertions may still pass while the screen lacks most
+text. Include the complete font folder in an isolated overlay, or test the
+complete final package. Verify retained glyph metrics and inspect captures;
+successful command dispatch is not proof of readable presentation. A root
+ZSCRIPT overlay must include only new classes: loading the full project's root
+again produces duplicate class/default errors.
+
+Record actual Screen.GetWidth/GetHeight in native resolution tests. This
+Windows environment clamps decorated 640x360 clients to 640x400 and oversized
+1920x1080 windows to the work area. Native full-screen provides the latter
+resolution. Requested command-line dimensions alone are not evidence of the
+rendered size. Preserve the engine's UI-scale policy and test its pointer
+transform at the actual dimensions.
+
 ## CA-KP-279 - Verify complete author launch chains and actual native menus
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #889 /5.17.123,2026-11-21,
@@ -1625,6 +1716,20 @@ changes them, and the reconstructed reload matches the hidden pre-save capture.
 Test other skin/model replacements separately; this is evidence for these slots
 and the existing375-frame MD3 rig, not every native model format.
 
+### 5.17.124 / #460 - Backward visual-state conversion
+
+ENGINE-VERIFIED, GZDoom4.14.2/Windows11/Vulkan, 2026-11-26. The previous
+runtime can retain rest gameplay while warning about appended state offsets
+and unavailable model override paths in a current save. Successful loading
+alone is insufficient rollback evidence. Convert a separate copy, restore
+known native frame identities and model paths, and preserve the original.
+The #460 converter is byte-idempotent and native-tested on the matched fixture.
+Do not replace serialized ActorModelData with a bare object or JSON null:
+the native reader rejected those attempted resets. Preserve the object shape
+and remap only owned bindings; restore the hidden weapon slot explicitly.
+Evidence: assets/validation_v5_17_124/evidence/SUMMARY.json and rollback_save.py.
+
+
 ## CA-KP-225 - Reuse exact local measurements before changing perception rules
 
 Status/evidence: ENGINE-VERIFIED, 2026-11-13. Issue/PR: #454/#643.
@@ -2688,6 +2793,22 @@ Remote key injection did not reach this game window. Binding queries and scripte
 commands are not proof of physical-key acceptance; CA411-FIRE-01 remains pending.
 Regression: prepare.py, then run_native.ps1 -Script manual-smoke -Runtime final05
 -Checks with a fresh label; also verify the unchanged manual interactive entry.
+
+Reverified under #469 (5.18.3): a fresh rest/meal author scene passed, but its
+reloaded StaticEventHandler reset the inherited Manual flag. The automatic
+probe's UiTick then closed SaveGameMenu on the next tick. Immediate menu-opening
+success was insufficient; a small observer established the following-tick
+closure. The manual subclass disables that automatic menu closer and recovers
+its existing camera on WorldLoaded(IsSaveGame), without rerunning equipment or
+consumption setup. Its only fallback is a typed camera lookup once per restore
+in the single-camera diagnostic room. SaveGameMenu is the descriptor; SaveMenu
+is the implementation class. See assets/validation_v5_18_3.
+
+Legacy fixtures also need their original installed development IWAD palette
+when the development runtime contains an independent PLAYPAL. The local
+terminal observer restores that dependency only for development sessions;
+independent sessions and exported artifacts never receive it. Inspect actual
+captures as well as error-free logs: palette corruption need not log an error.
 
 ## CA-KP-170 - Camp fuel stacks and immutable native test archives
 
@@ -4562,6 +4683,15 @@ instead of presenting a false exact CPU/GPU split. See the pinned
 
 Regression: repeat city pitch 0/75 and reference-map runs with the final build.
 Production improvement and author acceptance under #318 remain pending.
+
+**#468 / 5.18.2 follow-up (ENGINE-VERIFIED, 2026-11-26):** inspect a native
+capture before naming a performance reference. The retained city camera was
+inside a redesigned house, while the mansion greeting left a menu overlay open.
+Use the authored current start and close the native menu for the intended view;
+keep the old traces with their actual scene qualification. The final mansion
+reference averaged 62.82 QueuePresent FPS but p95 was 18.29 ms, so even that
+average does not establish a strict 60-FPS budget. Exact views, traces and
+limits: assets/validation_v5_18_2 and the 5.18.2 HISTORY entry.
 
 ## CA-KP-111 - A ground-facing view can increase large-map geometry work
 
@@ -8184,6 +8314,14 @@ from the verified runtime's KEYCONF instead, retaining one authoritative mapping
 The focused diagnostic uses two real admitted peers, native +user3 input,
 per-viewer page acknowledgements and native checksum checks. Physical-key author
 acceptance remains separate. See assets/validation_v5_12_7a.
+
+Reverified under #469 (5.18.3): the standalone PowerShell launcher must also
+expand the packaged preset before the first native startup. Direct
++ca_controls_defaults produced Unknown command even though KEYCONF later supplied
+default bindings. The extracted delivery now passes all eight bindings, normal
+exit and subsequent remapping/language/music-volume preservation in both Play
+and Multiplayer entry paths. See assets/validation_v5_18_3; UI-injected Escape
+did not establish physical menu navigation and is not counted as acceptance.
 
 ## CA-KP-207 - Verify which native checkpoint is actually loaded
 

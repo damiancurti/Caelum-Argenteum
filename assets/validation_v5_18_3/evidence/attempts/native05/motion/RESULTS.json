@@ -1,0 +1,18 @@
+{
+  "issue": 469,
+  "action": "motion-author",
+  "passed": false,
+  "exit_code": 1,
+  "errors": [
+    "Script error, \"motion.pk3:manual.zs\" line 16:",
+    "Script error, \"motion.pk3:manual.zs\" line 16:",
+    "Native error",
+    "Expected scene/title marker missing",
+    "Native save menu or checkpoint smoke check failed"
+  ],
+  "ready": false,
+  "menu_available": false,
+  "smoke_save_exists": false,
+  "reloaded": false,
+  "author_acceptance": false
+}

@@ -1,10 +1,209 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.124** - 2026-11-27.
+Documentation version: **5.18.4** - 2026-11-27.
 
-## 5.17.124 - Repository audit repairs (#899)
+## 5.18.4 - Repository audit integration (#899)
 
 Historic source integrity accepts LF and CRLF checkouts of approved text assets. Binary assets retain exact byte checks. The Cuero UV signature now covers the decimal coordinates stored in the exported OBJ. Playtest manifests authorize the 238 packaged maps individually. The review terminal checks the original executable, IWAD and ordered packages before reloading. For older review sessions supply the independently recorded original IWAD hash with --original-iwad-sha256.
+
+## 5.18.3 - Review-beta artifact contents (#469)
+
+The deterministic release directory and optional ZIP contain only the audited
+standalone runtime plus project launch/support sources, their three profile
+resources, LICENSE.md, origin records and generated player guidance/checksums.
+The profile resources are personal-boundary.json, session-menu.json and the
+native verification source; they are required production tooling, not test
+characters or development maps. Native runtime notices remain under licenses/
+inside the IPK3 and in Credits. The engine and commercial IWAD are external.
+
+PLAYER_GUIDE.txt is generated from the explicit README player-guide markers.
+DELIVERY.json and SHA256SUMS.txt identify delivered bytes; the ZIP has a separate
+checksum. MANIFEST.json retains every packaged runtime member's provenance and
+the five excluded development-map names. Review-terminal diagnostic artifacts
+remain local and are never added to the player distribution. No new artwork,
+audio assignment or source-rights decision is introduced by this delivery.
+
+The final review03 ZIP is reproducible byte for byte (SHA-256
+e72b3fc20cd662ed05dbc5e8832b069077ede2588fb9ab3d33fe72d46942d440),
+with 21 delivery files and 19,055 runtime members. Native local legacy fixtures
+retain the installed development IWAD palette through their generated observer
+only; this avoids applying the independent RGB332 palette to old indexed Doom
+textures. That palette and all diagnostic packages remain outside distribution
+and source-control evidence. Seven regenerated environment overlays are identical
+to the prior review artifacts; their manifests pin the new diagnostic runtime.
+
+## 5.18.2 - Integration evidence and diagnostic resources (#468)
+
+No gameplay art, audio, map geometry or source-rights decisions change. Existing
+native suites accept an explicit primary IPK3 and retain their original default
+development paths. Their original assertions are reused. Legacy cooperative/
+card-table fixtures optionally replace three diagnostic Doom texture names with
+the existing owned CMST01 surface; this changes no production map and ships no
+fixture. Each run records the actual command, package and original runner.
+
+The shared campaign observer retains its approved observation window and typed
+census. The optional diagnostic Vulkan layer records queue presentation and
+frame-time tails separately from simulation callbacks; it is enabled only for
+the measured child processes, never bundled or installed globally. Scene
+captures remain native PNGs. Evidence and qualifications are consolidated in
+assets/validation_v5_18_2; no image, author verdict or performance acceptance is
+inferred from a successful parse, 35 simulation tics/s or a loopback match.
+The current-view adapter retains authored player starts and closes native menu
+presentation for the mansion observation. The old city reference now points
+inside a redesigned house; that capture remains evidence but is not the reported
+quay view. Final native screenshots and p95/p99/maximum presentation intervals
+are retained separately from the original views. The menu fixture now follows
+the already-existing Multiplayer submenu instead of its historical direct link.
+
+## 5.18.1 - Owned independent-startup resources (#467)
+
+The #466 audit baseline remains historical; DEPENDENCIES.json now records its
+implemented #467 resolutions. IWADINFO selects the installed engine's
+mapinfo/doomcommon.txt; project MAPINFO supplies its own episode, pages, sky and
+menu defaults. PLAYPAL is independently calculated RGB332, never copied from an
+IWAD. Existing true-color artwork/audio remains unchanged.
+
+assets/source/art/standalone_467 retains the original transparent impact/blood
+atlas, exact built-in image-generation prompt, SHA-256, native crop registration
+and metadata-only baseline dimensions. The generator copies the source PNG
+unchanged and emits native TEXTURES crops: PUFF A-D, BLUD A-C and FAXE F-K retain
+native state slots/timing and world extents. Root TEXTURES.caelum467 registers
+them without changing the shared TEXTURES hash used by earlier model manifests.
+Own lever artwork supplies SW1EXIT/
+SW2EXIT at the measured 32x72 native extent; own armor icons cover ARM1/ARM2
+saved inventory references. Invisible project art supplies the F_SKY1 marker
+and parser-only menu headers; localized StaticText supplies actual headings.
+The new notice is included in the native Credits catalogue (30 notices).
+This is implemented review artwork, not author-approved final presentation.
+
+build_release.py filters the five catalogue test WADs, sorts members, fixes ZIP
+metadata and records per-member hashes/origins. It retains all source files and
+ships no executable, commercial IWAD or diagnostic fixture. Identical input bytes
+produce identical output; text checkout normalization is not an identical input.
+Optional verified legacy MAP02 revision 5 and MAP03 revision 3 bytes preserve
+matching stored layouts. All other retained grants and public-release audio
+quality qualifications remain in force.
+
+Native clean-profile evidence includes title/world/resource rendering, 100 checks
+and 60 resolved voice targets, plus old-save forward/rollback and legacy MAP02
+reload evidence. These are disposable profiles on the recorded Windows 11 /
+GZDoom g4.14.2-m installation, not a separately provisioned clean machine.
+CA467-STARTUP-01 and CA466-RIGHTS-01 retain author installation/art/rights review.
+
+## 5.18.0 - Distribution origins and dependency decisions (#466)
+
+assets/distribution/ORIGINS.json records source-specific permission categories;
+INVENTORY.json records every src file's hash, size, origin decision, exact
+metadata locators, distribution disposition and affected dependency IDs.
+Resolve provenance as the union of the decision's references and per-file
+additional_provenance. Broad project categories preserve recorded author/source
+claims; they do not certify third-party ownership. The audit found 19,053 src
+files, 13,718 with exact hash/path metadata, including 131 audio files checked
+against #464. Five map-catalogue test WADs are excluded from the planned release.
+All source files remain retained. Regenerate with
+`python assets/generators/audit_distribution.py`; `--check` rejects stale output.
+Hashes describe actual source/package bytes, not normalized Git blobs. A checkout
+that changes text line endings needs a regenerated inventory before packaging;
+the retained evidence identifies the exact tested package independently.
+
+Keep DejaVu/Bitstream Vera, MakeHuman CC0, CC BY audio, Pixabay Content License
+and documented creator permissions separate from the root project rights.
+The Pixabay pages for PhatPhrogStudio asset 503867 and 53439420 asset 451598
+were checked on 2026-11-26; their displayed terms confirm the author's existing
+2026-10-01 inclusion decision. AUDIO_ISSUE_31_CREDITS.md now removes the stale
+unrecorded-terms wording while preserving historical verification limits.
+No sound bytes, music assignments or permissions were changed. Existing
+Freesound preview-source quality limits remain applicable before final public
+release; the author selected these recordings for the present review beta.
+
+A disposable grayscale PLAYPAL and minimal episode permit an isolated native
+audit, not a production palette/art choice. Of 58 native texture lookups, 12
+are missing: BLUD A-C, PUFF A-D, F_SKY1, SW1EXIT and three native menu headers.
+Player and combat-actor defaults retain Blood/BloodSplatter/AxeBlood; static
+engine inspection also identifies FAXE F-K and inherited player voice aliases.
+DEPENDENCIES.json retains scope/evidence/decisions. #467 must resolve those
+resources using owned material and native functions while retaining state/model
+bindings, timing, voices, map geometry and save compatibility. GENMIDI is an
+optional unused OPL capability, not a reason to distribute Doom data. GZDoom's
+own installed support resources remain external. Author review is pending.
+
+## 5.17.126 - Native credits and presentation coverage (#465)
+
+The six missing authored codepoints U+0129, U+2013, U+2014, U+2019,
+U+201C and U+201D now exist in all twelve existing font folders (72 new PNGs).
+All 2,268 original glyphs and twelve font.inf files are byte-identical to
+7923b0d1. The recovered DejaVu Bold renderer matches the original A/i pixels,
+baseline, white fill and dark outline exactly. Source TTF hashes and upstream
+locations are retained in assets/source/ui/typography_465/PROVENANCE.json;
+the DejaVu notice remains applicable. Regular source fonts are retained but
+are not used or packaged. The deterministic generator verifies the retained
+renderer and produces only the missing glyphs plus the notice catalogue.
+
+The native Credits menu reads 29 original notices, including an exact LF copy
+of LICENSE.md. It does not paraphrase third-party licenses or grant new rights.
+Final provenance and replacement decisions remain #466 and author review.
+The audit resolves all authored LANGUAGE characters against all twelve fonts,
+all project keys against ES/EN, and 50 literal UI graphic references. Dynamic
+inventory icons/models retain their existing per-issue validators; no icon or
+accepted visual asset is replaced. Native OptionMenu font selection remains
+engine-owned; aliases alone do not prove that engine font was substituted.
+
+Evidence and reproducible probes: assets/validation_v5_17_126. Windows clamps
+a requested 640x360 decorated client to 640x400 and oversized decorated
+1920x1080 windows to the monitor work area; record actual client dimensions.
+The final matrix uses 640x400, 1280x720 and 1520x825 windows and native
+1920x1080 full-screen, ES/EN, plus explicit UI-scale cases. Physical wheel and
+controller usability, legibility and final attribution remain CA465-UI-01.
+
+## 5.17.125 - Verify retained prologue audio (#464)
+
+The author approved retaining current prologue assignments and keeping the
+19 future tracks reserved. assets/validation_v5_17_125 contains the reproducible
+audit, native probe/runner and bounded evidence. The current inventory has 131
+recordings; each index entry records a hash, aliases, literal consumer locators
+and existing credit/provenance references. A reference is not a new rights grant;
+the independent-distribution permission audit remains #466.
+
+All 131 files decode to non-silent PCM. Eight retained ambient/weather OGGs
+advertise slightly more frames than they decode (414-4,618 samples at 48kHz).
+libsndfile and FFmpeg7.1 agree on decoded counts and finish without errors or
+warnings. Both advertised and actual durations remain recorded; the original
+audio bytes are preserved. Nineteen future tracks have no map binding or literal
+runtime consumer. Their approved catalogue and Damián Curti/Suno provenance
+remain intact; no soundtrack generation or new weather mix is claimed.
+
+Native evidence: three phases,71 checks, title-once/map-loop policy, prologue
+travel/return, real Fool conversation, volume preferences, nine cues on one
+channel, breathing and saved MAP02 reload. Auditory judgement and loop/mix
+quality remain CA464-AUDIO-01 for the author. The historical pack-04 harp
+derivative record is superseded for dialogue_open by the issue-31 Suno recording;
+its original harp-loop attribution remains applicable to that separate file.
+
+## 5.17.124 - Rest and meal clips on retained rigs (#460)
+
+assets/source/art/rest_motion_460 retains approved durations, editable gesture
+targets and MODELS.json with source/output hashes. The original four transition
+clips keep their model-frame identities and are retimed by generated native RM
+states. New meal clips use the same Seated/Sleeping rigs, with 14 samples per
+pose and the approved four-second cycle. Right-arm IK supplies the gesture;
+the left arm keeps its authored shield pose. Weapon hiding is a runtime visual
+binding, never inventory removal. The author approved this presentation on
+2026-11-26; the exact art still awaits the consolidated review.
+
+export_rest_motion_models.py uses pinned Blender4.5.3 and the retained body,
+base outfit, worn clothing and grip sources. Its 208 new MD3 files cover both
+gestures and all existing garment combinations without overwriting the original
+375-frame models. Two independent exports match byte for byte. Checks preserve
+all UVs/topology, 444,156 neutral sample vertex positions and 7,056 wrist joins.
+The body/source attribution and licenses continue to apply. No new raster art,
+music, animation timing or gameplay values are introduced outside this scope.
+
+generate_rest_motion_data.py generates native durations, frame/model/texture
+bindings and the appended states; validate_rest_motion.py checks freshness and
+source/output hashes through validate_project.py. Focused native evidence and
+inspected captures live in assets/validation_v5_17_124/evidence. The previous
+#889 catalogue remains historical; the final beta terminal will incorporate
+CA460-MOTION-01 with the outstanding checks from the remaining issues.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 
@@ -10505,7 +10704,7 @@ Sitting/crouching does not itself activate healing, camera or calendar.
 | Map Exit button | `caelum/stock/menu_strings_start` | switches/exitbutn. |
 
 MAP01 now uses the former MAP02 track (`CA_MUS02`); MAP02 uses the new sewer track
-`CA_MUS03_SEWER`, MAP06 uses `CA_MUS04_PORT` and MAP07 uses `CA_MUS05_COAST`.
+`CA_MUS03_SEWER`, MAP03 uses `CA_MUS04_PORT` and TCOAST uses `CA_MUS05_COAST`.
 The former MAP01 track (`CA_MUS01`) becomes the opening and reserved chapter-intermission
 music. Opening the pause menu during a game retains that map's music. The original
 dialogue harp remains in `ca_stock_tarot_harp_loop.ogg`; the new opening cue is another
@@ -10601,8 +10800,8 @@ file does not imply that there is already a climate or scene emitter.
 | `music/CA_MUS01.mp3` | Reserved chapter-end story intermissions. |
 | `music/CA_MUS02.mp3` | MAP01 music. |
 | `music/CA_MUS03_SEWER.ogg` | MAP02 sewer music. |
-| `music/CA_MUS04_PORT.ogg` | MAP06 port music. |
-| `music/CA_MUS05_COAST.ogg` | MAP07 coast music. |
+| `music/CA_MUS04_PORT.ogg` | MAP03 port/Barracas music (formerly MAP06). |
+| `music/CA_MUS05_COAST.ogg` | TCOAST diagnostic coast music (formerly MAP07). |
 | `sounds/caelum/gathering/chop.wav` | One confirmed wood/fiber extraction impact, any eligible weapon. |
 | `sounds/caelum/gathering/stone.ogg` | Confirmed stone/coal extraction. |
 | `sounds/caelum/gathering/metal.ogg` | Confirmed metal-ore extraction. |

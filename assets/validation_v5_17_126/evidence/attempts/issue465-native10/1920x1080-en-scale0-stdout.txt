@@ -1,0 +1,131 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-26 20:21:16
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue464-review01.pk3, 18978 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue465-stage06/changes.pk3, 2358 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue465-native10/probe.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1920 x 1080
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2481.75 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+CA465 PASS credits opens from native descriptor
+CA465 PASS ES/EN interface
+CA465 PASS actual client resolution matches case
+CA465 SCREEN 1920x1080
+CA465 PASS retained letters and extension print
+CA465 PASS font retains original glyph metrics
+CA465 PASS physics ES/EN label
+CA465 PASS all 79 affected locale entries resolve correctly
+CA465 LOCALE note=To place a note: open and pan the map, then open this list. camp={bind:+use}: Pack tent / cancel packing exhaustion=Exhaustion sleep hunt=Cracked rock
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS notice available
+CA465 PASS all notice lines fit
+CA465 PASS keyboard scroll
+CA465 PASS keyboard page
+CA465 PASS controller navigation path
+CA465 PASS upper bound
+CA465 PASS lower bound
+CA465 PASS controller selects next notice
+CA465 PASS scaled mouse hit opens next notice
+CA465 PASS stale mouse gesture rejected
+CA465 PASS native controller back closes credits
+Captured credits.png
+CA465 RESULT passed=74 failed=0
+Captured main.png

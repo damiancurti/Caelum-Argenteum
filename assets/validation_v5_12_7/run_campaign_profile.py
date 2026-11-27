@@ -4,9 +4,11 @@ Reuses the accepted #428/#431 observation window and approved normal siege.
 Callback timings are not frame presentation or an Internet-latency measurement.
 """
 from pathlib import Path
-import argparse,datetime,hashlib,importlib.util,json,re,subprocess,time,zipfile
+import argparse,datetime,hashlib,importlib.util,json,re,subprocess,sys,time,zipfile
 
 ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT))
+from caelum_sessions import resource_arguments
 ENGINE=Path('C:/Program Files (x86)/GZDoom/gzdoom.exe')
 IWAD=Path('C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD')
 
@@ -14,6 +16,8 @@ IWAD=Path('C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--runtime',type=Path,required=True)
+    parser.add_argument('--iwad',type=Path,default=IWAD,help='Primary game; use the runtime IPK3 for independent integration')
+    parser.add_argument('--output',type=Path,help='New evidence directory')
     parser.add_argument('--engine',type=Path,default=ENGINE,help='Isolated diagnostic engine; never replaces the installed executable')
     parser.add_argument('--presentation-layer',type=Path,help='Explicit diagnostic Vulkan layer directory, enabled only in these children')
     parser.add_argument('--players',type=int,choices=(1,2,4,8),default=2)
@@ -27,7 +31,7 @@ def main():
     overlays=[p.resolve(strict=True) for p in args.overlay]
     if args.siege and args.map!='MAP03':parser.error('The approved siege is in MAP03.')
     if args.direct_deployment and not args.siege:parser.error('Direct deployment requires the siege scenario.')
-    out=ROOT/'build/issue435'/datetime.datetime.now().strftime('campaign-profile-%Y%m%d-%H%M%S-%f');out.mkdir(parents=True)
+    out=args.output.resolve() if args.output else ROOT/'build/issue435'/datetime.datetime.now().strftime('campaign-profile-%Y%m%d-%H%M%S-%f');out.mkdir(parents=True)
     source=(ROOT/'assets/validation_5103/performance.zs').read_text(encoding='utf-8')
     source=source.replace('const SIEGE=0;',f'const SIEGE={int(args.siege)};').replace('const GROUND=0;',f'const GROUND={int(args.ground)};')
     source=source.replace('if(Age==5)\n        {','if(Age==5) for(int slot=0;slot<MAXPLAYERS;slot++) if(playeringame[slot])\n        {\n            let user=CaelumPlayer(players[slot].mo);if(user==null)continue;')
@@ -53,7 +57,7 @@ def main():
     spec=importlib.util.spec_from_file_location('previous_profile',ROOT/'assets/validation_v5_11_0/run_profile.py')
     previous=importlib.util.module_from_spec(spec);spec.loader.exec_module(previous)
     processes=[];streams=[];commands=[];peers=[];markers=[{} for _ in range(args.players)];offsets=[0]*args.players
-    startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
+    startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=4
     import os
     child_environment=os.environ.copy();environment_overrides={}
     if args.isolate_capture_layers:
@@ -75,7 +79,7 @@ def main():
             duration=(4350 if args.siege else 1100)+(args.players-slot)*35
             (peer/'start.cfg').write_text(f'wait {duration}; event ca510_frames; wait 3; quit\n')
             network=[] if args.players==1 else ['-host',str(args.players),'-port','31335','-netmode','0'] if slot==0 else ['-join','127.0.0.1:31335','-port',str(31335+slot)]
-            command=[str(engine),'-noautoload','-nomouse','-iwad',str(IWAD),'-file',str(runtime),*[str(p) for p in overlays],str(overlay),
+            command=[str(engine),'-noautoload','-nomouse',*resource_arguments(args.iwad.resolve(strict=True),[runtime,*overlays,overlay]),
                 '-config',str(peer/'session.ini'),'-savedir',str(peer),*network,'-rngseed','428','-warp',str(int(args.map[3:])),
                 '+logfile',str(peer/'engine.log'),'+exec',str(peer/'start.cfg')]
             commands.append(command);stream=(peer/'process.log').open('wb');streams.append(stream)

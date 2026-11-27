@@ -22,7 +22,7 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def fixture(path: Path, peers: int, source_overlay: bool = False, integration: bool = False, magic: bool = False, npc: bool = False, disconnect: bool = False) -> None:
+def fixture(path: Path, peers: int, source_overlay: bool = False, integration: bool = False, magic: bool = False, npc: bool = False, disconnect: bool = False, owned_surfaces: bool = False) -> None:
     # Disposable geometry; installed development IWAD textures are not distributed.
     text = '''namespace="ZDoom";
 vertex{x=-1024;y=-1024;} vertex{x=1024;y=-1024;}
@@ -34,6 +34,8 @@ linedef{v1=2;v2=1;sidefront=0;blocking=true;}
 linedef{v1=3;v2=2;sidefront=0;blocking=true;}
 linedef{v1=0;v2=3;sidefront=0;blocking=true;}
 '''
+    if owned_surfaces:
+        for name in ('FLOOR4_8','CEIL3_5','STARTAN3'):text=text.replace(name,'CMST01')
     for player in range(peers):
         kind = player + 1 if player < 4 else 4001 + player - 4
         text += f"thing{{x={-448 + player * 128};y=0;type={kind};skill1=true;skill2=true;skill3=true;skill4=true;skill5=true;single=true;coop=true;}}\n"

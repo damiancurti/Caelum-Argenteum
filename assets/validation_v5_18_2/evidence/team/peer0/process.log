@@ -1,0 +1,134 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-26 22:37:20
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue467-final04/caelum_argenteum.ipk3, 19055 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue468-team01/checks.pk3, 4 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue468-team01/peer0/standalone.pk3, 1 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+No GENMIDI lump found. OPL playback not available.
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2732.15 ms
+R_Init: Init CaelumArgenteum refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+using alternate port 32930
+Console player number: 0
+Got connect from node 1.
+Got connect from node 2.
+Got connect from node 3.
+Sending all here.
+Go
+Total players: 4
+Selected peer to peer networking mode. (forced)
+Found Player (node 3, player 4)
+Found Player (node 2, player 3)
+Found Player (node 1, player 2)
+player 1 of 4 (4 nodes)
+Use changemap instead. Map is for single-player only.
+
+----------------------------------------
+
+CARING - Ring
+
+CA435SYNC OK peer=0 map=CARING tic=0
+[Caelum] Character creation values loaded. Attribute total: 0.00
+[Caelum] Character creation values loaded. Attribute total: 0.00
+[Caelum] Character creation values loaded. Attribute total: 0.00
+[Caelum] Character creation values loaded. Attribute total: 0.00
+CA_MATCH PRESET player=0 preset=0
+CA_MATCH PRESET player=1 preset=1
+CA_MATCH PRESET player=2 preset=2
+CA_MATCH PRESET player=3 preset=3
+CA599 PASS four real peers share team mode
+CA599 PASS entry order yields balanced teams
+CA599 PASS support recognizes actual teammate
+CA599 PASS support and offense distinguish opposing team
+CA599 PASS unforced native damage permits friendly fire
+Player derrotó a Player.
+CA599 PASS enemy kill credits player and team once
+Player eliminó a su compañero Player (-1).
+CA599 PASS teamkill penalizes responsible player and team
+Player perdió un punto.
+CA599 PASS suicide penalizes responsible team
+CA599 PASS duplicate teammate death cannot penalize twice
+CA435SYNC OK peer=0 map=CARING tic=175
+Captured death.png
+Partida guardada.
+[Caelum] Character creation values loaded. Attribute total: 0.00
+[Caelum] Character creation values loaded. Attribute total: 0.00
+[Caelum] Character creation values loaded. Attribute total: 0.00
+CA_MATCH PRESET player=1 preset=1
+CA_MATCH PRESET player=2 preset=2
+CA_MATCH PRESET player=3 preset=3
+CA599 PASS three native deaths respawn after their delay
+CA599 PASS body replacement preserves teams
+CA599 PASS respawn retains each resident preset
+CA599 PASS respawn does not reset score
+CA435SYNC OK peer=0 map=CARING tic=350
+Player derrotó a Player.
+CA_MATCH RESULT mode=2 team=0 score=20
+CA599 PASS combined twentieth frag wins for team
+CA599 PASS no individual needs twenty frags
+CA599 PASS frag victory precedes clock limit
+CA599 PASS three of four votes cannot restart
+CA435SYNC OK peer=0 map=CARING tic=525
+[Caelum] Character creation values loaded. Attribute total: 0.00
+
+----------------------------------------
+
+CARING - Ring
+
+CA435SYNC OK peer=0 map=CARING tic=0
+CA_MATCH PRESET player=0 preset=0
+CA_MATCH PRESET player=1 preset=1
+CA_MATCH PRESET player=2 preset=2
+CA_MATCH PRESET player=3 preset=3
+CA599 PASS rematch preserves mode and roster
+CA599 PASS rematch preserves balanced entry-order teams
+CA599 PASS rematch resets both teams and time
+CA599 PASS rematch restores all participants
+CA599 RESULT deathmatch
+Partida guardada.
+Captured deathmatch.png
+Partida guardada.
+CA435SYNC OK peer=0 map=CARING tic=175
+Player salió de la partida
+Player salió de la partida
+Player salió de la partida

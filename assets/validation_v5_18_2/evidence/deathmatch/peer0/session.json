@@ -1,0 +1,39 @@
+{
+  "revision": 2,
+  "token": "be7ba437-092e-4145-ad73-62ac6cd43e2d",
+  "mode": 0,
+  "palomo": 0,
+  "venue": 0,
+  "players": 2,
+  "port": 32908,
+  "manifest": {
+    "revision": 1,
+    "files": [
+      {
+        "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.pk3",
+        "sha256": "ac7e0152951eba345d94d2802aafd922d68b58dbd2800f555e742e1998ab960d"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\GZDoom\\game_support.pk3",
+        "sha256": "2430b69251c34a38573dc397ade6ecfd2c69187ff6658bd7dcf624da7f7dbcd8"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\GZDoom\\game_widescreen_gfx.pk3",
+        "sha256": "6f17bed21690f13b734402f26e07bb91c9ec3361d67a634d28f22f0b57c05b33"
+      },
+      {
+        "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "sha256": "41beb814296c4b619a91c6c57273f14e6484ebc4a2a1083172a09de2eae818eb"
+      },
+      {
+        "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-deathmatch01\\checks.pk3",
+        "sha256": "ccd85f949952c37e8334aefcb1b49343eda20113a3775487dc5ef793ad4c96da"
+      }
+    ],
+    "explicit_packages": 1
+  }
+}

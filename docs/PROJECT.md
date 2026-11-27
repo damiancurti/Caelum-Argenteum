@@ -1,10 +1,115 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.124** - 2026-11-27.
+Documentation version: **5.18.4** - 2026-11-27.
 
-## 5.17.124 - Repository audit repairs (#899)
+## 5.18.4 - Repository audit integration (#899)
 
 Patch #899 addresses the repository audit across native cooperative play, fixed-roster campaign custody, localization, legacy launch options, asset validation and the committed-source playtest exporter.
+
+## 5.18.3 - Independent review-beta delivery (#469)
+
+The delivery contains the approved MAP01-MAP03 prologue, existing modes and
+documented limits, with GZDoom installed separately. The deterministic release
+builder exports the standalone IPK3, native launcher, optional Python mode/profile
+tools and their actual policy/localization/verifier resources, license notices,
+player guidance and per-file/versioned checksums. No engine, commercial IWAD,
+diagnostic map package or test save is distributed. The player guide is generated
+from the canonical README section, not maintained as a second source.
+
+Delivery, extraction and the focused ten-case native terminal matrix passed
+under assets/validation_v5_18_3. The author confirmed all 115 checks on 2026-11-27,
+including earlier art/environment proposals. Existing local diagnostic scenes
+retain their original fixture dependencies separately from independent game
+play. A packaged beta or draft PR does not accept art, Internet play, siege
+fluency, later campaign scenes or any manual test. No public store is launched.
+
+## 5.18.2 - Independent prologue integration (#468)
+
+The approved delivery remains a MAP01-MAP03 review beta with existing modes and
+documented limitations. The profile/multiplayer bridges now load a primary IPK3
+once, pin actual resources and obtain fresh controls from the runtime. Native
+integration reuses existing assertions for profiles, cooperative lifecycle,
+standalone modes, Trucazo and the finale query; no later route/essence/scene is
+authored. Evidence lives in assets/validation_v5_18_2 with exact scenario and
+environment coverage. Author acceptance is CA468-BETA-01; all 113 prior checks
+remain pending. #469 owns the final versioned artifacts and visible terminal.
+
+Native managed transfers also exposed and fixed the verifier's assumption that
+only one manual-format save exists: narrative and verification checkpoints can
+coexist. An attempt-specific checkpoint title now identifies the correct save
+without deleting either; native identity/custody gates and rollback sources remain.
+
+## 5.18.1 - Independent startup implemented for review (#467)
+
+The approved MAP01-MAP03 beta now starts with an external GZDoom 4.14.2
+installation and no commercial IWAD. Owned compatibility resources resolve
+the #466 findings; deterministic packaging filters development maps and retains
+per-file provenance. Clean-profile native checks, reversible matching-map save
+conversion and legacy MAP02 reload are recorded in assets/validation_v5_18_1.
+This machine reports engine g4.14.2-m; clean-machine author installation remains
+pending. No later campaign, multiplayer Internet availability, siege fluency,
+source-rights clearance or final art acceptance is inferred. Continue #468
+integrated validation and #469 complete beta/terminal delivery. CA467-STARTUP-01
+joins the previous 112 outstanding author checks.
+
+## 5.18.0 - Standalone dependency and provenance audit (#466)
+
+The approved beta remains MAP01-MAP03 with existing modes/limitations and an
+external GZDoom 4.14.2 installation. A per-file source inventory resolves recorded
+origins and permission notices; five catalogue-labelled development maps must
+be omitted from distribution. No commercial IWAD, engine executable or external
+test fixture is authorized for packaging. Exact hashes establish traceability,
+not independent ownership clearance. Native diagnostics without a commercial
+IWAD identify bootstrap, inherited effect/voice, map and menu dependencies.
+These findings are recorded in assets/distribution/DEPENDENCIES.json for #467;
+this audit does not claim standalone startup is implemented. Final attribution
+and replacement presentation remain subject to author review, CA466-RIGHTS-01.
+
+## 5.17.126 - Native credits and presentation coverage (#465)
+
+The #465 presentation audit retains accepted interfaces and fixes concrete
+coverage gaps: a native Credits entry exposes the 29 retained rights/source
+notices; six already-used characters extend the existing bitmap fonts; 67
+regional Spanish strings also resolve through the general Spanish selector;
+five physics labels receive correct ES/EN sections. No character art, icon,
+balance, story, equipment or save schema is replaced. The author's final visual
+and attribution review remains CA465-UI-01; standalone rights and dependencies
+continue in #466 before packaging #467-469.
+
+## 5.17.125 - Verify retained prologue audio (#464)
+
+The author narrowed #464 to the current prologue audio: retain assignments,
+verify playback, volume, transitions and saves, and keep the 19 future-region
+tracks in reserve. The audit covers all 131 runtime recordings and their retained
+credit/source locators. No new weather/time/region emitters or music assignments
+are authorized by this delivery. #466 still audits distribution permissions.
+
+Native GZDoom4.14.2 checks cover title, MAP01-MAP02-MAP03 and hub return,
+actual conversation opening/closure, music preferences, cue channel ownership,
+breathing and save/reload. Final listening acceptance is CA464-AUDIO-01.
+Continue typography/credits coverage under #465, then standalone work #466-469.
+
+## 5.17.124 - Native rest and meal transitions (#460)
+
+Rest owns a revisioned visual clock: chair sit/stand takes two seconds,
+bed/floor lie/get-up three seconds, and eating/drinking four seconds. Actual
+movement, attacks and blocking stay unavailable during those rest animations;
+voluntary cancellation completes the current gesture and exit, while damage or
+support loss releases the animation immediately. Existing forced exhaustion
+retains its independent sleep lock and immediate collapse pose.
+
+The retained optional human male modular body supplies the rendered clips.
+The author approved keeping the shield in the left hand and hiding the weapon
+visual while the right hand gestures. Consumption, progressive resource rates,
+equipment and the 10-tic/35-tic jump transitions keep their native owners.
+Other appearance fallbacks retain their existing poses; this delivery does not
+approve the seven pending #736 families or convert all characters.
+
+Static model/binding checks and focused native scenarios pass. Exact old-save
+upgrade and copied rollback are covered; direct rollback needs the documented
+visual-state conversion. Final visual acceptance is CA460-MOTION-01. The next
+focused issues are #464-469: existing audio, presentation, provenance and an
+independent MAP01-MAP03 beta using separately installed GZDoom4.14.2.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 

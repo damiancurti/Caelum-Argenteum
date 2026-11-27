@@ -1,0 +1,4 @@
+{
+  "rejected": true,
+  "reason": "Probe launched before the package builder completed. No final package existed, so this is not final-build evidence. Owned test process 41104 was stopped; rerun only after builder exit 0."
+}

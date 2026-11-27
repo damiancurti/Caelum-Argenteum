@@ -163,10 +163,11 @@ def start_engine(args, directory, probe, options, language="enu", *, low_memory=
     software = "vid_rendermode=0\n" if low_memory else ""
     config.write_text(
         f"[GlobalSettings]\n{software}vid_preferbackend=0\nvid_fullscreen=false\nvid_maxfps=65\n"
-        "i_pauseinbackground=false\nvid_activeinbackground=true\nsnd_mastervolume=0.05\n"
+        "i_pauseinbackground=false\ni_soundinbackground=true\nvid_lowerinbackground=false\nvid_activeinbackground=true\nsnd_mastervolume=0.05\n"
         f"language={language}\n", encoding="utf-8")
-    command = [str(args.engine), "-stdout", "-noautoload", "-nosound", "-iwad", str(args.iwad),
-               "-file", str(args.package), str(probe), "-config", str(config), "-savedir",
+    resources = [] if args.iwad == args.package else [str(args.package)]
+    command = [str(args.engine), "-stdout", "-noautoload", "-iwad", str(args.iwad),
+               "-file", *resources, str(probe), "-config", str(config), "-savedir",
                str(directory), "-window", "-width", "320", "-height", "240", "+logfile",
                str(directory / "engine.log"), "+vid_preferbackend", "0"]
     if low_memory:
@@ -184,8 +185,13 @@ def start_engine(args, directory, probe, options, language="enu", *, low_memory=
                    XDG_DATA_HOME=str(directory.parent / "data"))
     if low_memory:
         env.update(LP_NUM_THREADS="1", MALLOC_ARENA_MAX="1")
+    startup = None
+    if os.name == "nt":
+        startup = subprocess.STARTUPINFO()
+        startup.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        startup.wShowWindow = 4  # Show without activating the test window.
     with (directory / "process.log").open("wb") as output:
-        return subprocess.Popen(command, cwd=directory, env=env, stdout=output, stderr=subprocess.STDOUT)
+        return subprocess.Popen(command, cwd=directory, env=env, startupinfo=startup, stdout=output, stderr=subprocess.STDOUT)
 
 
 def read_log(directory):
@@ -371,7 +377,7 @@ def check_language(args, directory, language):
     probe = directory / "language-probe.pk3"
     make_probe(probe, "\n".join(source), "CaelumAuditLanguageRegression")
     peer = directory / "process-0"
-    process = start_engine(args, peer, probe, ["+language", language, "+map", "TACTORS"], language)
+    process = start_engine(args, peer, probe, ["+language", language, "+map", "MAP01" if args.iwad == args.package else "TACTORS"], language)
     try:
         deadline = time.monotonic() + args.timeout
         while time.monotonic() < deadline:

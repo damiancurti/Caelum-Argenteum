@@ -3,25 +3,27 @@ import argparse,datetime,json,subprocess,sys,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT))
-from caelum_sessions import digest
+from caelum_sessions import digest,resource_arguments
 from caelum_standalone import request,MARKER,isolated_config
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--runtime',type=Path,required=True);p.add_argument('--engine',type=Path,required=True)
+    p.add_argument('--iwad',type=Path,default=Path('C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/base/doom2/DOOM2.WAD'))
+    p.add_argument('--output',type=Path)
     p.add_argument('--language',choices=('es','enu'),default='es')
     p.add_argument('--console-event',action='store_true',help='Check the launch event via startup CFG; this does not verify a physical menu click.')
     a=p.parse_args()
     a.runtime=a.runtime.resolve(strict=True);a.engine=a.engine.resolve(strict=True)
-    out=ROOT/'build/issue597'/datetime.datetime.now().strftime('menu-native-%Y%m%d-%H%M%S-%f');out.mkdir(parents=True)
-    iw=Path('C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/base/doom2/DOOM2.WAD')
+    out=(a.output or ROOT/'build/issue597'/datetime.datetime.now().strftime('menu-native-%Y%m%d-%H%M%S-%f')).resolve();out.mkdir(parents=True)
+    iw=a.iwad.resolve(strict=True)
     addon=out/'checks.pk3'
     with zipfile.ZipFile(addon,'w') as z:
         z.writestr('ZSCRIPT','version "4.14.2"\n#include "menu_probe.zs"\n')
         z.writestr('MAPINFO','gameinfo { AddEventHandlers="CA597MenuProbe" }\n')
         z.writestr('menu_probe.zs',Path(__file__).with_name('menu_probe.zs').read_bytes())
     (out/'game.ini').write_bytes(isolated_config()+b'vid_maxfps=60\n')
-    base=[str(a.engine),'-noautoload','-iwad',str(iw),'-file',str(a.runtime),str(addon)]
+    base=[str(a.engine),'-noautoload',*resource_arguments(iw,[a.runtime,addon])]
     preflight=subprocess.run(base+['-norun','-nosound','-errorlog',str(out/'compile.log'),'-config',str(out/'compile.ini')],stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=60)
     (out/'compile-process.log').write_bytes(preflight.stdout)
     if preflight.returncode!=1337:
@@ -33,7 +35,7 @@ def main():
     (out/'start.cfg').write_text('wait 60; screenshot menu.png; '+('wait 150; event ca_standalone_launch; quit' if a.console_event else '')+'\n')
     command=base+['-config',str(out/'game.ini'),'-savedir',str(out),'+logfile',str(out/'engine.log'),
                  '+language',a.language,'+ca_standalone_bridge','1','+exec',str(out/'start.cfg'),'-window','-width','1000','-height','700']
-    startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
+    startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=4
     error=None
     try:
         print(out,flush=True)

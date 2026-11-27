@@ -1,0 +1,10 @@
+C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue468-matrix01\human_hunt
+{
+  "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\human_hunt",
+  "error": null,
+  "passed": true
+}
+0 0 []
+1 0 []
+2 0 []
+3 0 []

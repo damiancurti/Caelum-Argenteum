@@ -2,6 +2,8 @@
 from pathlib import Path
 import argparse, datetime, hashlib, importlib.util, json, subprocess, sys, time, zipfile
 ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT))
+from caelum_sessions import resource_arguments
 sys.path.insert(0,str(ROOT/'assets/validation_v5_12_7'))
 import native_sync
 spec=importlib.util.spec_from_file_location('legacy_fixture',ROOT/'assets/validation_v5_12_5/run_card_probe.py')
@@ -10,10 +12,12 @@ def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--runtime',type=Path,required=True);p.add_argument('--overlay',action='store_true')
  p.add_argument('--suite',choices=('ranked','tournament','migration'),default='ranked');p.add_argument('--players',type=int,choices=(2,4,6,8),default=2);p.add_argument('--port',type=int,default=31443)
+ p.add_argument('--iwad',type=Path);p.add_argument('--output',type=Path)
  p.add_argument('--disconnect',action='store_true');p.add_argument('--load-directory',type=Path);p.add_argument('--hold',action='store_true');p.add_argument('--load-slot',type=int,choices=(0,1),default=0);p.add_argument('--travel',action='store_true');p.add_argument('--mode',choices=('practice','casual','ranked'),default='ranked');p.add_argument('--tier',type=int,choices=(0,1),default=0);a=p.parse_args()
  if a.suite=='tournament' and a.players not in (4,8):p.error('Tournament checks require four or eight players.')
- out=ROOT/'build/issue446'/datetime.datetime.now().strftime('%Y%m%d-%H%M%S-%f');out.mkdir(parents=True)
- package=out/'checks.pk3';fixture.fixture(package,a.players)
+ out=a.output.resolve() if a.output else ROOT/'build/issue446'/datetime.datetime.now().strftime('%Y%m%d-%H%M%S-%f');out.mkdir(parents=True)
+ iwad=a.iwad.resolve(strict=True) if a.iwad else fixture.IWAD
+ package=out/'checks.pk3';fixture.fixture(package,a.players,owned_surfaces=iwad==a.runtime.resolve())
  with zipfile.ZipFile(package) as archive:members={n:archive.read(n) for n in archive.namelist()}
  source=(Path(__file__).parent/(a.suite+'_probe.zs')).read_bytes()
  source=source.replace(b'const MODE=2;',f'const MODE={dict(practice=0,casual=1,ranked=2)[a.mode]};'.encode()).replace(b'const TIER=0;',f'const TIER={a.tier};'.encode())
@@ -31,7 +35,7 @@ def main():
    members['caelum/data/CaelumTrucazoData.zs'] += b'\n#include "caelum/trucazo/CaelumTrucazoCompetitive.zs"\n#include "caelum/trucazo/CaelumTrucazoTournament.zs"\n#include "caelum/trucazo/CaelumTrucazoTournamentMenu.zs"\n'
  with zipfile.ZipFile(package,'w',compression=zipfile.ZIP_STORED) as archive:
   for name,data in sorted(members.items()):archive.writestr(zipfile.ZipInfo(name,(2026,11,8,0,0,0)),data)
- processes=[];streams=[];commands=[];startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
+ processes=[];streams=[];commands=[];startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=4
  try:
   for i in range(a.players):
    peer=out/f'peer{i}';peer.mkdir();config=peer/'isolated.ini';cfg=peer/'commands.cfg'
@@ -42,7 +46,7 @@ def main():
    if a.load_directory:
     source=a.load_directory/f'peer0/save{a.load_slot:02d}.zds';(peer/'restore.zds').write_bytes(source.read_bytes());entry=['-loadgame','restore.zds']
    net=['-host',str(a.players),'-port',str(a.port),'-netmode','0'] if i==0 else ['-join',f'127.0.0.1:{a.port}','-port',str(a.port+i)]
-   cmd=[str(fixture.ENGINE),'-noautoload','-iwad',str(fixture.IWAD),'-file',str(a.runtime.resolve()),str(package),'-config',str(config),'-savedir',str(peer),'-window','-width','960','-height','720',*net,'+logfile',str(peer/'engine.log'),*entry,'+exec',str(cfg)]
+   cmd=[str(fixture.ENGINE),'-noautoload',*resource_arguments(iwad,[a.runtime.resolve(),package]),'-config',str(config),'-savedir',str(peer),'-window','-width','960','-height','720',*net,'+logfile',str(peer/'engine.log'),*entry,'+exec',str(cfg)]
    stream=(peer/'process.log').open('wb');streams.append(stream);commands.append(cmd);processes.append(subprocess.Popen(cmd,cwd=peer,startupinfo=startup,stdout=stream,stderr=stream));time.sleep(.3)
   print(str(out),flush=True);deadline=time.monotonic()+(160 if a.hold else 100)
   fatal=('Script error','Execution could not continue','VM execution aborted','compile errors','Unable to resolve','Attempt to redefine','Internal script compiler','Attempting to open menu of unknown type','DIED WITH FATAL ERROR')

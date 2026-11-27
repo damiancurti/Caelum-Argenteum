@@ -1,0 +1,33 @@
+C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue468-references01\menu
+{
+  "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-references01\\menu",
+  "runtime_sha256": "f93b170bbf4f19617aff142c6d15787f986fec4827feb01f8e719082108f745e",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "language": "es",
+  "exit": 0,
+  "error": null,
+  "physical_button_verified": false,
+  "checks": [
+    "CA597 FAIL main menu exposes localized Multiplayer entry",
+    "CA597 PASS native Multiplayer menu opens on title",
+    "CA597 PASS direct engine launch cannot request an unavailable bridge",
+    "CA597 PASS native mode selector changes the request",
+    "CA597 PASS native resident selector changes the request",
+    "CA597 PASS bridge enables explicit fresh-match launch",
+    "CA597 RESULT menu"
+  ],
+  "launches": [
+    {
+      "role": 0,
+      "mode": 1,
+      "preset": 1,
+      "players": 2,
+      "port": 5029,
+      "palomo": 0,
+      "venue": 0,
+      "host": "127.0.0.1",
+      "session": ""
+    }
+  ],
+  "passed": false
+}

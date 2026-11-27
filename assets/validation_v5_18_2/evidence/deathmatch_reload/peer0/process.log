@@ -1,0 +1,86 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-26 22:36:01
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue467-final04/caelum_argenteum.ipk3, 19055 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue468-deathmatch-reload01/checks.pk3, 4 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue468-deathmatch-reload01/peer0/standalone.pk3, 1 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+No GENMIDI lump found. OPL playback not available.
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2599.66 ms
+R_Init: Init CaelumArgenteum refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+using alternate port 32908
+Console player number: 0
+Got connect from node 1.
+Sending all here.
+Go
+Total players: 2
+Selected peer to peer networking mode. (forced)
+Found Player (node 1, player 2)
+player 1 of 2 (2 nodes)
+
+----------------------------------------
+
+CARING - Ring
+
+Found Player's (0) data
+Found Player's (1) data
+CA598 PASS common save preserves in-progress score
+CA598 PASS common save preserves remaining respawn deadline
+CA598 PASS common save preserves elapsed active time
+CA598 PASS common save preserves authoritative mode and roster
+CA435SYNC OK peer=0 map=CARING tic=202
+[Caelum] Character creation values loaded. Attribute total: 0.00
+CA_MATCH PRESET player=1 preset=1
+CA598 PASS recovered death respawns once at original deadline
+CA598 PASS recovery does not score the same death twice
+CA598 PASS recovered respawn grants one preset set
+CA598 RESULT deathmatch
+CA435SYNC OK peer=0 map=CARING tic=377
+Captured death.png
+Partida guardada.
+CA435SYNC OK peer=0 map=CARING tic=552
+CA435SYNC OK peer=0 map=CARING tic=727
+Captured deathmatch.png
+Partida guardada.
+CA435SYNC OK peer=0 map=CARING tic=902
+Player salió de la partida

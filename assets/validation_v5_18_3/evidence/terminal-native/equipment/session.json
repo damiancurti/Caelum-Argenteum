@@ -1,0 +1,69 @@
+{
+  "issue": 469,
+  "action": "equipment",
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-host",
+    "1",
+    "-noautoload",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-diagnostic01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment\\equipment.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment\\terminal-observer.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment\\engine.log",
+    "+map",
+    "CA836A",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment\\terminal-start.cfg",
+    "+language",
+    "es",
+    "+snd_mastervolume",
+    "0.05",
+    "+vid_maxfps",
+    "60",
+    "+vid_activeinbackground",
+    "true",
+    "+i_pauseinbackground",
+    "false",
+    "+vid_lowerinbackground",
+    "false",
+    "+i_soundinbackground",
+    "true"
+  ],
+  "cwd": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment",
+  "language": "es",
+  "smoke": true,
+  "title_only": false,
+  "author_acceptance": false,
+  "source_runner": "assets\\validation_v5_17_123\\run_equipment.py",
+  "reload_setup": [
+    "set ca_wardrobe_candidate true"
+  ],
+  "controls_help": [
+    "F1 c�mara / F2 cuerpo / F3 sombrero / F4 guantes / F5 calzado / F6 espada-carabina-bast�n / F7 sexo / F8 clones de diagn�stico / F9 candidato / F10 otra sala / F11 regresar / F12 muerte de prueba. Inventario normal, Caja y cofre disponibles. Guardar desde Escape."
+  ],
+  "packages": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-diagnostic01.pk3": "5efdaab15f60e793367bda1617e2cf367159c7b0356e74f439f928f4a5820253",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment\\equipment.pk3": "3a485afd0feefa0de663c5e86c0e2b8346826d4eb01b0fcb7251d53ea55087b6",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment\\terminal-observer.pk3": "95a96e7786032d329e3c42fe5c514275aba53334ef1e93f4f921daa06e4c377d"
+  },
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "primary_iwad": {
+    "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+    "sha256": "10d67824b11025ddd9198e8cfc87ca335ee6e2d3e63af4180fa9b8a471893255"
+  },
+  "independent": false,
+  "save_scope": "Only saves made in this exact disposable session/options; no campaign import."
+}

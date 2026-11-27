@@ -1,0 +1,571 @@
+{
+  "issue": 460,
+  "version": "5.17.124",
+  "author_acceptance": "pending CA460-MOTION-01",
+  "environment": "Windows11; GZDoom4.14.2; Vulkan RTX3070Ti; unpaused background; 5% master volume; 60FPS cap; 1520x825",
+  "source": {
+    "src/MODELDEF": "b7c112f2917de117ae85ea1717553ebb77fe95aca72ef62799afd98eb91f0f15",
+    "src/TEXTURES": "3958df53c3bed45aa802252f0f7a15d14b4260370609d290826a8faf3207aa21",
+    "src/caelum/character/CaelumDomingoPilot.zs": "9f701263134d0137ddebc792190d6491c57c9b7742068fe9acb9eb306c27fde4",
+    "src/caelum/character/CaelumDomingoPilotFrames.zs": "72364c20052c738ccccf458ca505854efdf53bfb858b07986b6c749240bfdcdd",
+    "src/caelum/character/CaelumWardrobePilot.zs": "34d04c40d4536eb12cfafc437b95e29f2aa98fdebb687f7c337ed541159e4691",
+    "src/caelum/data/CaelumRestMotionData.zs": "84c95450a212537ab23899b0f24dda42b21a2c1b8ae3fcaf52c43001a8539794",
+    "src/caelum/data/rest_motion.modeldef": "2bf87ee05a7d1a8edead4366db9b1dafaeb43f307682a77f8980532c4e62ae76",
+    "src/caelum/data/rest_motion.textures": "c6cb21c8587c0fc4beb9c0b270a41906f6fc8e5d036cfc77615ba5096f528d67",
+    "src/caelum/player/CaelumPlayer.zs": "1ba85f55c3c3e2f8c9b829c4c731d5a0ea9411dbf7eb4b7995254fc9687da5f8",
+    "src/caelum/world/CaelumExhaustion.zs": "d277d819dc73fb98ba820919f4ec588310f3de0373e7f7a4070fca7d5723302c",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "f8317eb89d111598509d0ed27ac4cb4118c0b49a708cb9d7b4c6d5eb0d71d560",
+    "src/caelum/world/CaelumRest.zs": "b46ce1b0c355c06ed2b81eb1d5ae3103e92289ae04a8b72cd777d056f4aa6fe3",
+    "src/caelum/world/CaelumSewerMaze.zs": "47827905d95541df556fee171ff74978de6dae2c396a4162a3119e7b7e86c6b3",
+    "src/caelum/world/CaelumTimeSkip.zs": "3e1e26ce35a2f59a94eb4c6867be2559532b03f86cc7393e494242d8821e6a6d",
+    "src/models/caelum/characters/rest_motion/drink/domingo/armor.md3": "7d349a2546e611fac151ab1cdd39a73e61f1ab3b17c2e7b792252f8ed2e62646",
+    "src/models/caelum/characters/rest_motion/drink/domingo/cape.md3": "aad1a40540a497e60912042220bc2ac33cc0101fce1c49c08ba28d0df43b55e2",
+    "src/models/caelum/characters/rest_motion/drink/domingo/clothing.md3": "fb40635c5914e8f8a3051c70355dbd781e43b757184ddeb9b1d3f5b8005d92a7",
+    "src/models/caelum/characters/rest_motion/drink/domingo/face.md3": "7a2db047b0f549d1c090545b947189d008510683940cd0391fb0e1cae04d8b65",
+    "src/models/caelum/characters/rest_motion/drink/domingo/hair.md3": "8629bbaf2638743e4c6d873447d619255d9d429b337491af9ab4bfaf7fcb7a24",
+    "src/models/caelum/characters/rest_motion/drink/domingo/left_hand.md3": "89d39c315079e3e2f8f63d4f8041000d4f002fd27e012f5331dae470f200144b",
+    "src/models/caelum/characters/rest_motion/drink/domingo/right_hand.md3": "d80dbe159fda7153872fef0fdbe9b29de91ee1b22c28e8c4dacba40579f6bb0a",
+    "src/models/caelum/characters/rest_motion/drink/domingo/shield.md3": "9c2086506c4bcc87deb8f54f786242c64d4bbe476e636a72cb1997a12986f0cc",
+    "src/models/caelum/characters/rest_motion/drink/domingo/underbody.md3": "30c46bdb60609ededd88b4af2f113a72cb91b31d54f5b6f5bf280f5c1d2f9553",
+    "src/models/caelum/characters/rest_motion/drink/domingo/weapon.md3": "0ec1cf4c380dd10eea9b1231b9edb3473fde0323952277a9b73e94e21018fa21",
+    "src/models/caelum/characters/rest_motion/drink/grips/GC.md3": "31b8d81da27c1decf4fc67921253e35127829a7c21719e4085da2ecbedc75186",
+    "src/models/caelum/characters/rest_motion/drink/grips/GF.md3": "e5d957b37e6d7f5f44e271e200d2af46cdf609e606047ba373432707b2c4a275",
+    "src/models/caelum/characters/rest_motion/drink/grips/GP.md3": "6f8d9ba998499a211fd2db3e55e2fe0cb14de92e5f7e2251094bc0672a4d5479",
+    "src/models/caelum/characters/rest_motion/drink/grips/GW.md3": "439295675499895ed2ee63c3fce61d160e4f457c19fe6305710bdd033445c149",
+    "src/models/caelum/characters/rest_motion/drink/grips/left_hand.md3": "7ea2854812770d3d6f3213de3504fc44e78bb50c326e95d54376fcefb4f8cbfc",
+    "src/models/caelum/characters/rest_motion/drink/grips/right_hand.md3": "8bbd09acd38c8cfede6721cbade731dbfba35c8288345ea6463822c159289081",
+    "src/models/caelum/characters/rest_motion/drink/grips/shield.md3": "0d4547189900fa64d9f78b4b97e6490d7b804b0bc665706a7bd0467d0bf415b6",
+    "src/models/caelum/characters/rest_motion/drink/grips/weapon.md3": "f7b390ad54bce941104f16dec7540ab13e3f5c65790cd3013f39e5b75423c720",
+    "src/models/caelum/characters/rest_motion/drink/worn/BC.md3": "19d102384c99a885e5dd7441d67dd5a30c9ee071126b3f29358581f3f84fdd55",
+    "src/models/caelum/characters/rest_motion/drink/worn/BF.md3": "8963552f6da35e15c6394c6970b91ff0dde302e15e9d7242df65b852053832b6",
+    "src/models/caelum/characters/rest_motion/drink/worn/BP.md3": "a857e55760a210b13db0b93f74f1b968ed1e849ce2b52e6041ff14ed0db5d2df",
+    "src/models/caelum/characters/rest_motion/drink/worn/BR.md3": "bb0447a448180552c477141720ea900b6cb0e4a880507d09e259012b25fa346a",
+    "src/models/caelum/characters/rest_motion/drink/worn/BS.md3": "3a0e8c5c6d65b3bfe3194f427fefb83c26060ec85439e3e29d2f62606fa0e1e5",
+    "src/models/caelum/characters/rest_motion/drink/worn/CE.md3": "ce7386519872de1dd028626b64bbe8cd6fd0afe1a1073324fe55c903536f07a0",
+    "src/models/caelum/characters/rest_motion/drink/worn/CS.md3": "bf7eaa514468f6a71bad973a91a5d0892bff37a954bc21737eb60977695d2100",
+    "src/models/caelum/characters/rest_motion/drink/worn/CW.md3": "4ad6957d7c0f653f922a167dafa70c7f33c543dbb6e335db392d0426aae42977",
+    "src/models/caelum/characters/rest_motion/drink/worn/F.md3": "d449da8693156d5a500b44a39872ebc7e7a65dba23467987c138fa33da113617",
+    "src/models/caelum/characters/rest_motion/drink/worn/FW.md3": "14fd09d82a9e21cddc8a6abf664294d227f74887b74f49d7e5c90e6a225370df",
+    "src/models/caelum/characters/rest_motion/drink/worn/GC.md3": "1150189eeb4ffe83d438c2cd53ec947de9434ca691493aa69325f7c003f50024",
+    "src/models/caelum/characters/rest_motion/drink/worn/GF.md3": "bfef53777ad46fe2af0dfba9068575bc52c62921b539dfa60e19c568d254b4b3",
+    "src/models/caelum/characters/rest_motion/drink/worn/GP.md3": "b710eab32c365b571f2fd5b088cf1d7a20257c34cf1cc8640cb54490d5f388a1",
+    "src/models/caelum/characters/rest_motion/drink/worn/GW.md3": "0d1e069795c4b356242cc711f0b9c95fc9ae401bf3f8c21921b1c0cb6026e7ad",
+    "src/models/caelum/characters/rest_motion/drink/worn/HC.md3": "0b66003ae0fc9d14c4fae77055be081b2cbf07982df564b75d68ac2b7ecc56ac",
+    "src/models/caelum/characters/rest_motion/drink/worn/HF.md3": "92fa0772f100e1d96e2a1b4a2119b91a3a23fb9fbb5bcec8d3bdfc6479aebbd8",
+    "src/models/caelum/characters/rest_motion/drink/worn/HP.md3": "bb6749a222a099260c8a8aea8b025a0c90019a778621e51d61be9564971e8630",
+    "src/models/caelum/characters/rest_motion/drink/worn/HR.md3": "478e7d2adc5aa898e85449540530d8fc3bfcf8a8fe0f87195823e3b4b7eb082a",
+    "src/models/caelum/characters/rest_motion/drink/worn/HW.md3": "8fb9422a679e510501fee0666b365cde1e68e4740ed0855a0b31346d7b91e34b",
+    "src/models/caelum/characters/rest_motion/drink/worn/PE.md3": "68487c8b74b35c34fbe6eb43ef39aaab25273a3bcbe88f2d280975d0ba013816",
+    "src/models/caelum/characters/rest_motion/drink/worn/PS.md3": "5cd1a5650a19c0f3222c1b61ebbe52e5f8ea9b21547d6e0dc1ccc7358164bfaa",
+    "src/models/caelum/characters/rest_motion/drink/worn/PW.md3": "a7def7109f338c211ca7d4adffcbf55f67669caf327ee5593851ba890b024962",
+    "src/models/caelum/characters/rest_motion/drink/worn/RE.md3": "dd5406d118870c8fa3b8897f163d33926dc71572d39b0cbcaad09cdbcdfc1278",
+    "src/models/caelum/characters/rest_motion/drink/worn/RS.md3": "359619628268d0eb0f9c14f5a9705f93e9f0410f75a53dd7bce67c51adffc2de",
+    "src/models/caelum/characters/rest_motion/drink/worn/RW.md3": "e22abdd75ad93b7cf4d1ac50d127d4baacf49004a3cd4ff8c68a9898539adebd",
+    "src/models/caelum/characters/rest_motion/drink/worn/base_arms.md3": "dde845ae271daf09bf6f2d368b8a514e8835f023685cf03dacb1badb73d5e92e",
+    "src/models/caelum/characters/rest_motion/drink/worn/base_core.md3": "e93a03b31aefcd066930651a1e61e16b80bad322cd590b2e641baf6dc83f5b38",
+    "src/models/caelum/characters/rest_motion/drink/worn/base_feet.md3": "a107f1f7003fa0d2267c10aa1a08dcd80388ead12db4579210a24273bfc91211",
+    "src/models/caelum/characters/rest_motion/drink/worn/base_forearms.md3": "39b8c8993c6026359ce0825c602557eeec5c57bec6630b2faa6a0381926d9f76",
+    "src/models/caelum/characters/rest_motion/drink/worn/base_neck.md3": "e760eed5ea3d6faa62a1412a05641b0e618c33d2f8a4dac20b7796c6cb49f176",
+    "src/models/caelum/characters/rest_motion/drink/worn/hair_lower.md3": "32fdaef571b9c52b9fed2c2d7733b87f817b4d9f8389f17a1d05e536d50442a4",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CE_ankle.md3": "a640e2373e03da7dc48b016fe182d8684818d37ec21b1016141c989c3a418db0",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CE_bare.md3": "c63cd9279232ab8fcb80effeed36c330250e16bbe2b98bf9e6e0b3a4cba0b8b4",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CE_formal.md3": "cc305b0771cf19db9d7ff9fb07d22acc5b2a018c8c16aa14c41eb4329dc5c287",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CE_low.md3": "c576adfd8d92e9e961789759487ea19f60e468a46091bd955a3640a0687d9b08",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CE_tall.md3": "70553c9fa8085c3adf640987e7b81edb960c5d853bc4c33eb63706d9186e292a",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CS_ankle.md3": "a4d11b3addd6c628146c053c33896ac56abd1d60d4f3f51397198cd5ddb19c76",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CS_bare.md3": "98b229db1e008a4fd4ae2d59a3e16f8fe696cb40f1843adbe1be37833dd4964b",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CS_formal.md3": "d86643cd80a90d48324e9bc0c176e4eb56bd09c86f4564f759ee4c354c2a3bb1",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CS_low.md3": "b7b9b6c2b71b7f48650e52f7c09162c14036adfa96717ee553b67ea3003619d6",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CS_tall.md3": "c656885371597317353d549903435f04813b8312db42ff88875c387a1a04fe7c",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CW_ankle.md3": "fd9f46dec216220a48a56f7646446c580be9b28401cda292fd60792834de4cf5",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CW_bare.md3": "084e9120202b5e7ad3573f8ee0067366d45fb4769d86634c6d30e8f941d912bc",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CW_formal.md3": "4dbc622032386332a3ad7fd295d2930bb79424e29c4c59f65a28f98ebb279ba2",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CW_low.md3": "ad421a07cd63d0bdbd31b57a41eca9bbac7a879e0a86e10777f56ee7bf0ea3c2",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_CW_tall.md3": "d5989612e7c2cbe9d0757eaf3547731ec5fae730adc68d2e6cdb339329881a98",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_FW_ankle.md3": "2910b6047a96e5c8918e46e76cb5e0e0f495bc912450cf4fbf723a4f3278735f",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_FW_bare.md3": "a47fd95994c0dbe44d1dea2da20eaae9c956420b4b0ab8ee391117a71a998208",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_FW_formal.md3": "a6e0562c3a583719ab844b7473f5f5eeff8ec6b1a7f5da60a285eeea25a9efd6",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_FW_low.md3": "6ffc3464a48dd716ee74c26475f5d03b1b7cd25a2e6a60c4f1b629d1272b7428",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_FW_tall.md3": "ce76d02bbbefffc3761dd5077808b2a8e830ee87d3b363c671b32d9067739ce2",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_F_ankle.md3": "972eedcacda9dad5dc1cef6a2286f0dd9d946304b8e799c6356bcd2f53d5f6bd",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_F_bare.md3": "098bd4bdfa1aaf19a7808416d4e403ae04a10c02c630717b4423e5ca036c9906",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_F_formal.md3": "e9e3329e2a6aee78e558f9bb1a30c2bd3f9ae33b16134ea06c2a353045b49627",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_F_low.md3": "e5d815e8ca17b1f69286e0b876cde1c5e82e3aa8f821e011eadb439595f1cb44",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_F_tall.md3": "593d9942570edd0f6fa05a0d6899212bfbe8199afd3a93366d96024489d12c6f",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PE_ankle.md3": "59ae0cb65e9baeb6c8dc4863bbb1463daea301e32d7acefab4222fe540c8a133",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PE_bare.md3": "a03a16328e0f1818dbc7ac26a79a555e10759b1fb6db2e8a740d8fcc35cae95e",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PE_formal.md3": "bdc7567e3514248c0a261ba8192270293291b5b218438cea9fed6a61a874976d",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PE_low.md3": "4556544a302a5a96fbcb6a4a8fce46fd65582191036c2e6ecb81e91ca00d7497",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PE_tall.md3": "aa80889acb45be30bb27845067b434447e4efb7c9d9837187b58b1dd635a69c1",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PS_ankle.md3": "b01725287af3423a5060d89ef45f8f5b03cef838d27ca84fd8f5f164d08cb8b5",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PS_bare.md3": "9cbc02c01f9e551f49ec5eb554054023f02112a9e9b2ba2b2b33176247575c69",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PS_formal.md3": "bcf6c644bda133f282331dec93e0a2d050fc06d0c5315921dca501a4a56857cd",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PS_low.md3": "8a488c882765a074af381258075041f4799318a27b6f3e60a39a72e6a59933fc",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PS_tall.md3": "9facedf37296bdcba64629665e2a55c68ef073683546a8ea89ca3870e5ad4cd5",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PW_ankle.md3": "67357357dc21285269d6d95e1deebb5ccbfc7cbec59a45c6dcce93f327488c6b",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PW_bare.md3": "572112e365cb8ac0e91090f1c401abdf515b8e021b54927f7148b5bc3fc84fc9",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PW_formal.md3": "1ba19908d2ea7da58dc07a864dffa0c81eba7d677aa364a7ae4d8c808cea01ad",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PW_low.md3": "a302738d8c66ea1331d7012605e809e0006102471af1e638f2cb920ef52a74ad",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_PW_tall.md3": "689c085bec6ad90924d54ed180d0d1bbb1597ac53e0687f9263be47d4bf01dbf",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RE_ankle.md3": "b76c033c97f900058c52d79981239cf22e64d08c4f5b6175921c313e1f200aa9",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RE_bare.md3": "b20554945d74d3f9bf0de7c6868b4959447c9b1216508a92504d9a50ae09d278",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RE_formal.md3": "91efe56170e4ae5fd9ad2c71a4b667ad041fe04cd357e3a38733fc76b6b5c795",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RE_low.md3": "62419ddbccb5122b0aa8f2a82f41e51be62e25a9b7a778904695c0506505bfe6",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RE_tall.md3": "c4b42e1a46c9e4b92eb4ac67fcf4ff9966cc84541cc0f0c0bb01f7be1a1cd045",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RS_ankle.md3": "15ede498c561f5b5d54526e0cfbf7ba9723249434ea6f46053767da2f94531e4",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RS_bare.md3": "4caa31ebe0057a90b8c904f47c2a72d900ceb37d818089a5a63c496dd0a9f8c1",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RS_formal.md3": "9a6bf9c92f3b063235f7ffb5772037b570fd9d878da571fe057d23ed26ad3749",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RS_low.md3": "fa0be34e6fdfaaefa62500aa157d504924afef6ba9168134787fea2caad4112d",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RS_tall.md3": "8416c46cdc3ae8a54de372d678dbd8c8a4472fbab060283dc1674acbc8816928",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RW_ankle.md3": "f9cc006663830c919b9deac9a1d40500132a44c7ba560adb2485a7ae9f9487d9",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RW_bare.md3": "3ac631d988704ba2fdd3f4b6933891fdf0fd8a92cff1176fe54cff59c318dff4",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RW_formal.md3": "7b09d4ea3215e6129fa7180e63ffb06b2e2f0335314c5c1c5ecc1740fbd2c755",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RW_low.md3": "1c58ee1b944a2220160a076d9b576d058f65103f651278a1f03ffa5d36e3cf8e",
+    "src/models/caelum/characters/rest_motion/drink/worn/pants_RW_tall.md3": "d4bd706ad242428d86cbe2ead73040908707babb7f695a08d247b4c589809778",
+    "src/models/caelum/characters/rest_motion/eat/domingo/armor.md3": "e667e23e1e2002df0b06c170caba4b09a5a416762f0362409aefcfb2d1801a03",
+    "src/models/caelum/characters/rest_motion/eat/domingo/cape.md3": "aad1a40540a497e60912042220bc2ac33cc0101fce1c49c08ba28d0df43b55e2",
+    "src/models/caelum/characters/rest_motion/eat/domingo/clothing.md3": "d38d4d82c2cd215219f7ae69a8780f1cf9eab07977410b3e3ca4469084c2a5e5",
+    "src/models/caelum/characters/rest_motion/eat/domingo/face.md3": "7a2db047b0f549d1c090545b947189d008510683940cd0391fb0e1cae04d8b65",
+    "src/models/caelum/characters/rest_motion/eat/domingo/hair.md3": "8629bbaf2638743e4c6d873447d619255d9d429b337491af9ab4bfaf7fcb7a24",
+    "src/models/caelum/characters/rest_motion/eat/domingo/left_hand.md3": "89d39c315079e3e2f8f63d4f8041000d4f002fd27e012f5331dae470f200144b",
+    "src/models/caelum/characters/rest_motion/eat/domingo/right_hand.md3": "0a2204640c2928ee71879c4c2e42952d4536d73cf219e1474de0d41b0802f23a",
+    "src/models/caelum/characters/rest_motion/eat/domingo/shield.md3": "9c2086506c4bcc87deb8f54f786242c64d4bbe476e636a72cb1997a12986f0cc",
+    "src/models/caelum/characters/rest_motion/eat/domingo/underbody.md3": "ad4532135d6ea267db7093ef16ccd6b827301932a62330f07b76dd5134a27019",
+    "src/models/caelum/characters/rest_motion/eat/domingo/weapon.md3": "52a40f9e78e9bcccd80f3bad6b12414dbb275fc08e769c00cc9c2faefc19093d",
+    "src/models/caelum/characters/rest_motion/eat/grips/GC.md3": "3051770fc156b1287dfaeb2e33a763b59fcdf2bf56efdbd9389755a60ab8c3c4",
+    "src/models/caelum/characters/rest_motion/eat/grips/GF.md3": "cc7762f23e37c1587d18c243d77600a31a339d780c125344c35cb9191e30135e",
+    "src/models/caelum/characters/rest_motion/eat/grips/GP.md3": "00fb69204f134eea3114018b98a4d3ced6e631b248ff6060bf619f8fc268bf3c",
+    "src/models/caelum/characters/rest_motion/eat/grips/GW.md3": "8767ec4bed27fdadcf505de0f6bf74a7afb92ab19d7c4a267298532907411d27",
+    "src/models/caelum/characters/rest_motion/eat/grips/left_hand.md3": "7ea2854812770d3d6f3213de3504fc44e78bb50c326e95d54376fcefb4f8cbfc",
+    "src/models/caelum/characters/rest_motion/eat/grips/right_hand.md3": "358dca56bd35f14a3eeb0dcd57c1835923d26f899fc4777f0b9d09043f03aac5",
+    "src/models/caelum/characters/rest_motion/eat/grips/shield.md3": "0d4547189900fa64d9f78b4b97e6490d7b804b0bc665706a7bd0467d0bf415b6",
+    "src/models/caelum/characters/rest_motion/eat/grips/weapon.md3": "f4eb73cd116bb96fb3139522d8dceaa662aa4b857d59727083b2adc225acc9e3",
+    "src/models/caelum/characters/rest_motion/eat/worn/BC.md3": "19d102384c99a885e5dd7441d67dd5a30c9ee071126b3f29358581f3f84fdd55",
+    "src/models/caelum/characters/rest_motion/eat/worn/BF.md3": "8963552f6da35e15c6394c6970b91ff0dde302e15e9d7242df65b852053832b6",
+    "src/models/caelum/characters/rest_motion/eat/worn/BP.md3": "a857e55760a210b13db0b93f74f1b968ed1e849ce2b52e6041ff14ed0db5d2df",
+    "src/models/caelum/characters/rest_motion/eat/worn/BR.md3": "bb0447a448180552c477141720ea900b6cb0e4a880507d09e259012b25fa346a",
+    "src/models/caelum/characters/rest_motion/eat/worn/BS.md3": "3a0e8c5c6d65b3bfe3194f427fefb83c26060ec85439e3e29d2f62606fa0e1e5",
+    "src/models/caelum/characters/rest_motion/eat/worn/CE.md3": "3fefa8d54d70ecdc57cecf0a0171b4cae5ccf945e455ca1601a128b4f1c64378",
+    "src/models/caelum/characters/rest_motion/eat/worn/CS.md3": "8356fc6f771e2983314342133fc7b407e15d79eecf9d30df2ca4443f1ace1950",
+    "src/models/caelum/characters/rest_motion/eat/worn/CW.md3": "1fd1b5d463e7a1c4cdf915fcc246fa8466fb479f371bb171f3ca31262a06f001",
+    "src/models/caelum/characters/rest_motion/eat/worn/F.md3": "285de74c90efdbdd484e5be68482f6e6cbefa05f9ad6cb3bace1fd7003581769",
+    "src/models/caelum/characters/rest_motion/eat/worn/FW.md3": "07523d85c40de0b25e0be9b9b48154ec368a522172ec3677de89a9c291d55c0e",
+    "src/models/caelum/characters/rest_motion/eat/worn/GC.md3": "c10b7e13b81badba99091a5a24f67df7bd5caaba1d63797b4fa15e901f3fe4c5",
+    "src/models/caelum/characters/rest_motion/eat/worn/GF.md3": "59c639bde1b8aeffc6ee583076a911b4c06bfe1e4af77c409d03903757fbf955",
+    "src/models/caelum/characters/rest_motion/eat/worn/GP.md3": "0a320a07c7f37c2045d5bfea9d42b183cd162c5f1565fdc87e03b9fb11cb719c",
+    "src/models/caelum/characters/rest_motion/eat/worn/GW.md3": "e3a43600991ed75f75b42a8311b2533e3bc99243b9e9a766704e0dd5d11ea32c",
+    "src/models/caelum/characters/rest_motion/eat/worn/HC.md3": "0b66003ae0fc9d14c4fae77055be081b2cbf07982df564b75d68ac2b7ecc56ac",
+    "src/models/caelum/characters/rest_motion/eat/worn/HF.md3": "92fa0772f100e1d96e2a1b4a2119b91a3a23fb9fbb5bcec8d3bdfc6479aebbd8",
+    "src/models/caelum/characters/rest_motion/eat/worn/HP.md3": "bb6749a222a099260c8a8aea8b025a0c90019a778621e51d61be9564971e8630",
+    "src/models/caelum/characters/rest_motion/eat/worn/HR.md3": "478e7d2adc5aa898e85449540530d8fc3bfcf8a8fe0f87195823e3b4b7eb082a",
+    "src/models/caelum/characters/rest_motion/eat/worn/HW.md3": "8fb9422a679e510501fee0666b365cde1e68e4740ed0855a0b31346d7b91e34b",
+    "src/models/caelum/characters/rest_motion/eat/worn/PE.md3": "49c8116505a887a7c2624bd0da1438e6fb1cffb3f70e1ffd1a6b01fb7984a1d8",
+    "src/models/caelum/characters/rest_motion/eat/worn/PS.md3": "1b565b01cfe2134dacc05c076db6f6406339f7de2199925046556217d24e09a2",
+    "src/models/caelum/characters/rest_motion/eat/worn/PW.md3": "87becd07e6c5247b45fac97fcbcaac1b84dd52197f6f99b7237fb24bfb0aa708",
+    "src/models/caelum/characters/rest_motion/eat/worn/RE.md3": "0608c197e158fc95f6c4b92902545cd620dc74343de70b233ddef83dcb49387e",
+    "src/models/caelum/characters/rest_motion/eat/worn/RS.md3": "274916ddae2047ec852ccdad0a83338fb0aabcf819f08bf691a3f6dd60e35068",
+    "src/models/caelum/characters/rest_motion/eat/worn/RW.md3": "af8b3a680c770567ed85397f4581548e40ad00530ea961f7e6f78c582971485d",
+    "src/models/caelum/characters/rest_motion/eat/worn/base_arms.md3": "298888912619624b24f07e76861d6bd0b698c98e2d144ed8ffb3dadec05c0760",
+    "src/models/caelum/characters/rest_motion/eat/worn/base_core.md3": "a1b3784ffed8e8ad876b5a874b7c1072aed2567d844eaa2d91b109474fc67225",
+    "src/models/caelum/characters/rest_motion/eat/worn/base_feet.md3": "a107f1f7003fa0d2267c10aa1a08dcd80388ead12db4579210a24273bfc91211",
+    "src/models/caelum/characters/rest_motion/eat/worn/base_forearms.md3": "88b4e21ef2c817249b4ed171de0d97c56a4b22d249eda915dc85bd6faab7b10c",
+    "src/models/caelum/characters/rest_motion/eat/worn/base_neck.md3": "0cbfafa7d706be4f239349a401a017cea73a0a59cdd0d87e1a8b5fa81f66ae60",
+    "src/models/caelum/characters/rest_motion/eat/worn/hair_lower.md3": "32fdaef571b9c52b9fed2c2d7733b87f817b4d9f8389f17a1d05e536d50442a4",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CE_ankle.md3": "a640e2373e03da7dc48b016fe182d8684818d37ec21b1016141c989c3a418db0",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CE_bare.md3": "c63cd9279232ab8fcb80effeed36c330250e16bbe2b98bf9e6e0b3a4cba0b8b4",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CE_formal.md3": "cc305b0771cf19db9d7ff9fb07d22acc5b2a018c8c16aa14c41eb4329dc5c287",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CE_low.md3": "c576adfd8d92e9e961789759487ea19f60e468a46091bd955a3640a0687d9b08",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CE_tall.md3": "70553c9fa8085c3adf640987e7b81edb960c5d853bc4c33eb63706d9186e292a",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CS_ankle.md3": "a4d11b3addd6c628146c053c33896ac56abd1d60d4f3f51397198cd5ddb19c76",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CS_bare.md3": "98b229db1e008a4fd4ae2d59a3e16f8fe696cb40f1843adbe1be37833dd4964b",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CS_formal.md3": "d86643cd80a90d48324e9bc0c176e4eb56bd09c86f4564f759ee4c354c2a3bb1",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CS_low.md3": "b7b9b6c2b71b7f48650e52f7c09162c14036adfa96717ee553b67ea3003619d6",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CS_tall.md3": "c656885371597317353d549903435f04813b8312db42ff88875c387a1a04fe7c",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CW_ankle.md3": "fd9f46dec216220a48a56f7646446c580be9b28401cda292fd60792834de4cf5",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CW_bare.md3": "084e9120202b5e7ad3573f8ee0067366d45fb4769d86634c6d30e8f941d912bc",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CW_formal.md3": "4dbc622032386332a3ad7fd295d2930bb79424e29c4c59f65a28f98ebb279ba2",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CW_low.md3": "ad421a07cd63d0bdbd31b57a41eca9bbac7a879e0a86e10777f56ee7bf0ea3c2",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_CW_tall.md3": "d5989612e7c2cbe9d0757eaf3547731ec5fae730adc68d2e6cdb339329881a98",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_FW_ankle.md3": "2910b6047a96e5c8918e46e76cb5e0e0f495bc912450cf4fbf723a4f3278735f",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_FW_bare.md3": "a47fd95994c0dbe44d1dea2da20eaae9c956420b4b0ab8ee391117a71a998208",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_FW_formal.md3": "a6e0562c3a583719ab844b7473f5f5eeff8ec6b1a7f5da60a285eeea25a9efd6",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_FW_low.md3": "6ffc3464a48dd716ee74c26475f5d03b1b7cd25a2e6a60c4f1b629d1272b7428",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_FW_tall.md3": "ce76d02bbbefffc3761dd5077808b2a8e830ee87d3b363c671b32d9067739ce2",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_F_ankle.md3": "972eedcacda9dad5dc1cef6a2286f0dd9d946304b8e799c6356bcd2f53d5f6bd",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_F_bare.md3": "098bd4bdfa1aaf19a7808416d4e403ae04a10c02c630717b4423e5ca036c9906",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_F_formal.md3": "e9e3329e2a6aee78e558f9bb1a30c2bd3f9ae33b16134ea06c2a353045b49627",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_F_low.md3": "e5d815e8ca17b1f69286e0b876cde1c5e82e3aa8f821e011eadb439595f1cb44",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_F_tall.md3": "593d9942570edd0f6fa05a0d6899212bfbe8199afd3a93366d96024489d12c6f",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PE_ankle.md3": "59ae0cb65e9baeb6c8dc4863bbb1463daea301e32d7acefab4222fe540c8a133",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PE_bare.md3": "a03a16328e0f1818dbc7ac26a79a555e10759b1fb6db2e8a740d8fcc35cae95e",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PE_formal.md3": "bdc7567e3514248c0a261ba8192270293291b5b218438cea9fed6a61a874976d",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PE_low.md3": "4556544a302a5a96fbcb6a4a8fce46fd65582191036c2e6ecb81e91ca00d7497",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PE_tall.md3": "aa80889acb45be30bb27845067b434447e4efb7c9d9837187b58b1dd635a69c1",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PS_ankle.md3": "b01725287af3423a5060d89ef45f8f5b03cef838d27ca84fd8f5f164d08cb8b5",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PS_bare.md3": "9cbc02c01f9e551f49ec5eb554054023f02112a9e9b2ba2b2b33176247575c69",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PS_formal.md3": "bcf6c644bda133f282331dec93e0a2d050fc06d0c5315921dca501a4a56857cd",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PS_low.md3": "8a488c882765a074af381258075041f4799318a27b6f3e60a39a72e6a59933fc",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PS_tall.md3": "9facedf37296bdcba64629665e2a55c68ef073683546a8ea89ca3870e5ad4cd5",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PW_ankle.md3": "67357357dc21285269d6d95e1deebb5ccbfc7cbec59a45c6dcce93f327488c6b",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PW_bare.md3": "572112e365cb8ac0e91090f1c401abdf515b8e021b54927f7148b5bc3fc84fc9",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PW_formal.md3": "1ba19908d2ea7da58dc07a864dffa0c81eba7d677aa364a7ae4d8c808cea01ad",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PW_low.md3": "a302738d8c66ea1331d7012605e809e0006102471af1e638f2cb920ef52a74ad",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_PW_tall.md3": "689c085bec6ad90924d54ed180d0d1bbb1597ac53e0687f9263be47d4bf01dbf",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RE_ankle.md3": "b76c033c97f900058c52d79981239cf22e64d08c4f5b6175921c313e1f200aa9",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RE_bare.md3": "b20554945d74d3f9bf0de7c6868b4959447c9b1216508a92504d9a50ae09d278",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RE_formal.md3": "91efe56170e4ae5fd9ad2c71a4b667ad041fe04cd357e3a38733fc76b6b5c795",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RE_low.md3": "62419ddbccb5122b0aa8f2a82f41e51be62e25a9b7a778904695c0506505bfe6",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RE_tall.md3": "c4b42e1a46c9e4b92eb4ac67fcf4ff9966cc84541cc0f0c0bb01f7be1a1cd045",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RS_ankle.md3": "15ede498c561f5b5d54526e0cfbf7ba9723249434ea6f46053767da2f94531e4",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RS_bare.md3": "4caa31ebe0057a90b8c904f47c2a72d900ceb37d818089a5a63c496dd0a9f8c1",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RS_formal.md3": "9a6bf9c92f3b063235f7ffb5772037b570fd9d878da571fe057d23ed26ad3749",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RS_low.md3": "fa0be34e6fdfaaefa62500aa157d504924afef6ba9168134787fea2caad4112d",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RS_tall.md3": "8416c46cdc3ae8a54de372d678dbd8c8a4472fbab060283dc1674acbc8816928",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RW_ankle.md3": "f9cc006663830c919b9deac9a1d40500132a44c7ba560adb2485a7ae9f9487d9",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RW_bare.md3": "3ac631d988704ba2fdd3f4b6933891fdf0fd8a92cff1176fe54cff59c318dff4",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RW_formal.md3": "7b09d4ea3215e6129fa7180e63ffb06b2e2f0335314c5c1c5ecc1740fbd2c755",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RW_low.md3": "1c58ee1b944a2220160a076d9b576d058f65103f651278a1f03ffa5d36e3cf8e",
+    "src/models/caelum/characters/rest_motion/eat/worn/pants_RW_tall.md3": "d4bd706ad242428d86cbe2ead73040908707babb7f695a08d247b4c589809778"
+  },
+  "native": [
+    {
+      "directory": "issue460-transitions02",
+      "issue": 460,
+      "runtime_sha256": "5e69ad0e8528c4cbecac2153152defdaac17c2fc558e7510260eaee69d3591c3",
+      "fixture_sha256": "3f8c6953e2ebb15482d74ee9cef1c04cb3ee950db1969e8b675270940d7f7a29",
+      "runs": [
+        {
+          "name": "chair",
+          "passed": true,
+          "counts": [
+            [
+              "29",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "bed",
+          "passed": true,
+          "counts": [
+            [
+              "29",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "floor",
+          "passed": true,
+          "counts": [
+            [
+              "23",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "damage",
+          "passed": true,
+          "counts": [
+            [
+              "12",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "support",
+          "passed": true,
+          "counts": [
+            [
+              "10",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "save-entry",
+          "passed": true,
+          "counts": [
+            [
+              "12",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "reload-entry",
+          "passed": true,
+          "counts": [
+            [
+              "17",
+              "0"
+            ]
+          ],
+          "exit": 0
+        }
+      ]
+    },
+    {
+      "directory": "issue460-meals02",
+      "issue": 460,
+      "runtime_sha256": "5e69ad0e8528c4cbecac2153152defdaac17c2fc558e7510260eaee69d3591c3",
+      "fixture_sha256": "4d931c7c76b964dad6b540dae65e3ff4d326f071b7056bae623c177292f1e204",
+      "runs": [
+        {
+          "name": "input",
+          "passed": true,
+          "counts": [
+            [
+              "20",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "eat",
+          "passed": true,
+          "counts": [
+            [
+              "22",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "drink",
+          "passed": true,
+          "counts": [
+            [
+              "44",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "reload-meal",
+          "passed": true,
+          "counts": [
+            [
+              "14",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "reload-exit",
+          "passed": true,
+          "counts": [
+            [
+              "12",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "jump",
+          "passed": true,
+          "counts": [
+            [
+              "10",
+              "0"
+            ]
+          ],
+          "exit": 0
+        }
+      ]
+    },
+    {
+      "directory": "issue460-visual01",
+      "issue": 460,
+      "runtime_sha256": "5e69ad0e8528c4cbecac2153152defdaac17c2fc558e7510260eaee69d3591c3",
+      "fixture_sha256": "89f6713cf9bd613e34ce824782c0c51f996648b21f2f4246ac942193f34e329e",
+      "runs": [
+        {
+          "name": "eat",
+          "passed": true,
+          "counts": [
+            [
+              "22",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "drink",
+          "passed": true,
+          "counts": [
+            [
+              "44",
+              "0"
+            ]
+          ],
+          "exit": 0
+        }
+      ]
+    },
+    {
+      "directory": "issue460-upgrade01",
+      "issue": 460,
+      "runtime_sha256": "2d03c994f9c0ebc4d9b39ad93b18fafde81ca950edad1be613da990c8a30325a",
+      "fixture_sha256": "312dadf7a9480d32b1039f8d5fce5647255e66feb6563f6250d2593674d1bf80",
+      "runs": [
+        {
+          "name": "drink",
+          "passed": true,
+          "counts": [
+            [
+              "44",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "hub",
+          "passed": true,
+          "counts": [
+            [
+              "31",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "exhaustion",
+          "passed": true,
+          "counts": [
+            [
+              "21",
+              "0"
+            ]
+          ],
+          "exit": 0
+        },
+        {
+          "name": "import",
+          "passed": true,
+          "counts": [
+            [
+              "10",
+              "0"
+            ]
+          ],
+          "exit": 0
+        }
+      ]
+    },
+    {
+      "directory": "issue460-rollback03",
+      "issue": 460,
+      "runtime_sha256": "fab9e9355f2ab5700bb1ddac11a1332a2cc2d3297f5ca89941c7151ade45904d",
+      "fixture_sha256": "9dcb0663cc477bdcfc5881950bdebfa7f5c8366923d6dce6392d9a73d62aeeac",
+      "runs": [
+        {
+          "name": "import",
+          "passed": true,
+          "counts": [
+            [
+              "9",
+              "0"
+            ]
+          ],
+          "exit": 0
+        }
+      ]
+    },
+    {
+      "directory": "issue460-presentation01",
+      "issue": 460,
+      "runtime_sha256": "2d03c994f9c0ebc4d9b39ad93b18fafde81ca950edad1be613da990c8a30325a",
+      "fixture_sha256": "1015ab4f7ac285a815f4cb841b710df0104a5d526ff3358ba16ff67c2d54e3d2",
+      "runs": [
+        {
+          "name": "presentation",
+          "passed": true,
+          "counts": [
+            [
+              "7",
+              "0"
+            ]
+          ],
+          "exit": 0,
+          "presentation_windows": [
+            {
+              "frames": 299,
+              "mean_ms": 16.66615719063545,
+              "p50_ms": 16.6564,
+              "p95_ms": 16.8478,
+              "p99_ms": 17.121,
+              "max_ms": 17.2415
+            },
+            {
+              "frames": 299,
+              "mean_ms": 16.665202675585284,
+              "p50_ms": 16.6601,
+              "p95_ms": 16.8331,
+              "p99_ms": 16.977,
+              "max_ms": 17.1215
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "known_failed_attempts": [
+    {
+      "run": "issue460-meals01",
+      "reason": "Fixture used nonexistent ShieldModel.ItemType; corrected to ShieldType."
+    },
+    {
+      "run": "issue460-legacy01",
+      "reason": "Raw backward load warns about unknown appended states and meal paths; not valid visual rollback."
+    },
+    {
+      "run": "issue460-rollback01",
+      "reason": "Replacing modelData with JSON null rejected by native save reader."
+    },
+    {
+      "run": "issue460-rollback02",
+      "reason": "Bare ActorModelData reset rejected; final converter preserves object shape."
+    }
+  ],
+  "static_models": {
+    "issue": 460,
+    "models": 208,
+    "neutral_vertices": 444156,
+    "wrist_checks": 7056,
+    "errors": []
+  },
+  "rollback_idempotent": true,
+  "rollback": {
+    "issue": 460,
+    "migration_revision": 1,
+    "source_sha256": "aa43629e2086c101383b18782122210b8229ff16a190c7c257da23840f752944",
+    "body_states": 1,
+    "model_bindings": 1,
+    "rest_owners": 1,
+    "destination_sha256": "724324226a96ea0418647635ac2106cdf138bd1c03ec77773b193611fd98c9cf"
+  },
+  "reuse": "Transition/meal evidence applies to unchanged paths. Later exhaustion reset is covered by upgrade01; final native compilation/presentation uses that source. Fresh current package still requires author acceptance.",
+  "limitations": [
+    "Optional supported modular body only; other appearances retain fallback poses.",
+    "Five-second frame windows measure this single-body fixture, not all maps or siege fluency.",
+    "Initial minimized captures were inadequate; later visible-background captures were inspected.",
+    "Independent beta packaging and final consolidated terminal belong to remaining issues."
+  ]
+}

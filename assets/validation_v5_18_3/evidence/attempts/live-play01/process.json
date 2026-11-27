@@ -1,0 +1,18 @@
+{
+  "pid": 47428,
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-extract02\\extracted\\run_release.ps1",
+    "-Mode",
+    "Play",
+    "-ProfileDirectory",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-live-play01\\profile",
+    "-Python",
+    "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
+  ],
+  "owned": true
+}

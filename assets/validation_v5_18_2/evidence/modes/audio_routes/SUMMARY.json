@@ -1,0 +1,58 @@
+{
+  "issue": 464,
+  "runtime": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+  "runtime_sha256": "41beb814296c4b619a91c6c57273f14e6484ebc4a2a1083172a09de2eae818eb",
+  "fixture_sha256": "0244cba831b18a5c7ec2caac9d1ef34a172eaf5c8ffc33d5721873fdf32553b4",
+  "phases": [
+    {
+      "name": "title",
+      "passed": true,
+      "exit": 0,
+      "counts": [
+        [
+          "5",
+          "0"
+        ]
+      ],
+      "music": [
+        "name=sounds/caelum/stock/music/ca_stock_war_drums.ogg loop=0 volume=1.0000"
+      ]
+    },
+    {
+      "name": "maps",
+      "passed": true,
+      "exit": 0,
+      "counts": [
+        [
+          "49",
+          "0"
+        ]
+      ],
+      "music": [
+        "name=CA_MUS02 loop=1 volume=1.0000",
+        "name=CA_MUS02 loop=1 volume=0.3700",
+        "name=CA_MUS02 loop=1 volume=0.3700",
+        "name=CA_MUS02 loop=1 volume=0.3700",
+        "name=CA_MUS03_SEWER loop=1 volume=0.3700",
+        "name=CA_MUS04_PORT loop=1 volume=0.3700",
+        "name=CA_MUS02 loop=1 volume=0.3700"
+      ]
+    },
+    {
+      "name": "reload",
+      "passed": true,
+      "exit": 0,
+      "counts": [
+        [
+          "17",
+          "0"
+        ]
+      ],
+      "music": [
+        "name=CA_MUS03_SEWER loop=1 volume=0.3700",
+        "name=CA_MUS03_SEWER loop=1 volume=0.0000",
+        "name=CA_MUS03_SEWER loop=1 volume=0.3700"
+      ]
+    }
+  ]
+}

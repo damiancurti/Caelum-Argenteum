@@ -1,0 +1,2435 @@
+{
+  "decoder": "soundfile 0.13.1; libsndfile 1.2.2",
+  "files": [
+    {
+      "path": "music/CA_MUS01.mp3",
+      "sha256": "28f2b92c8bf11a9bde0b40f325e880b6d951d437bcbcce263f1aeee05992703e",
+      "frames": 6872328,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 143.1735,
+      "codec": "MPEG_LAYER_III",
+      "peak": 0.9509422183036804,
+      "rms": 0.13086685101709117,
+      "first_frame": [
+        -0.0004633036151062697,
+        -0.00037421900196932256
+      ],
+      "last_frame": [
+        1.4323280765893287e-06,
+        -2.3831789803807624e-06
+      ]
+    },
+    {
+      "path": "music/CA_MUS02.mp3",
+      "sha256": "87cd3e7b9c971d6f1166915f6f9f8f65edd6700a3b565e6cb041fed97c80ab70",
+      "frames": 7198728,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 149.9735,
+      "codec": "MPEG_LAYER_III",
+      "peak": 0.9746267795562744,
+      "rms": 0.13655671347226314,
+      "first_frame": [
+        -0.0002624394837766886,
+        0.0003139820764772594
+      ],
+      "last_frame": [
+        5.285048700898187e-07,
+        -2.9137199817341752e-06
+      ]
+    },
+    {
+      "path": "music/CA_MUS03_SEWER.ogg",
+      "sha256": "b2c2e0f3aae1abb2046b7ec680c6e7224487ab3c0d99ec796bd4a8289b69518d",
+      "frames": 10425600,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 217.2,
+      "codec": "VORBIS",
+      "peak": 0.709801971912384,
+      "rms": 0.1375312934715516,
+      "first_frame": [
+        0.002317167352885008,
+        -0.0010682574938982725
+      ],
+      "last_frame": [
+        -0.013546476140618324,
+        0.008766748942434788
+      ]
+    },
+    {
+      "path": "music/CA_MUS04_PORT.ogg",
+      "sha256": "4247915c400ea448288218f98c564125a260a1f7a2f6917d8f398647bad02c36",
+      "frames": 9004800,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 187.6,
+      "codec": "VORBIS",
+      "peak": 0.7844082117080688,
+      "rms": 0.12491411621401353,
+      "first_frame": [
+        0.026640789583325386,
+        0.00060402846429497
+      ],
+      "last_frame": [
+        0.001192855299450457,
+        0.0006763928104192019
+      ]
+    },
+    {
+      "path": "music/CA_MUS05_COAST.ogg",
+      "sha256": "ecb3c6c9dc37878f1f9ada5637a7c4d8c9251298e9f47e7189e196530a3057e9",
+      "frames": 10982400,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 228.8,
+      "codec": "VORBIS",
+      "peak": 0.7096748352050781,
+      "rms": 0.13300490436653709,
+      "first_frame": [
+        0.010386449284851551,
+        -0.012921827845275402
+      ],
+      "last_frame": [
+        -0.004224803298711777,
+        -0.0013596651842817664
+      ]
+    },
+    {
+      "path": "music/CA_MUS_ANTARCTICA.ogg",
+      "sha256": "f6b540de62b6aabf3f75301342b61af90993c3ef829cbdbca3924c7b1ce49f84",
+      "frames": 9507840,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 198.08,
+      "codec": "VORBIS",
+      "peak": 0.5614426136016846,
+      "rms": 0.1167632025947978,
+      "first_frame": [
+        0.0006490836967714131,
+        3.5662389564095065e-05
+      ],
+      "last_frame": [
+        0.0003904042241629213,
+        0.00044344199704937637
+      ]
+    },
+    {
+      "path": "music/CA_MUS_ARGENTINE_SEA.ogg",
+      "sha256": "b0d7707c07b6df4e63eda8e5f29546bccadb29995798b664cffd8d226a09c8e1",
+      "frames": 6894720,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 143.64,
+      "codec": "VORBIS",
+      "peak": 0.7388683557510376,
+      "rms": 0.22289443905586076,
+      "first_frame": [
+        0.000710973225068301,
+        0.0006482330500148237
+      ],
+      "last_frame": [
+        -0.0015200013294816017,
+        -0.0028462009504437447
+      ]
+    },
+    {
+      "path": "music/CA_MUS_BA_COUNTRYSIDE.ogg",
+      "sha256": "2b4c9034a77d36eadc75e3ffbedac3a78af52136e20bc64d778000aaf981d220",
+      "frames": 8812800,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 183.6,
+      "codec": "VORBIS",
+      "peak": 0.6429410576820374,
+      "rms": 0.12418406736900475,
+      "first_frame": [
+        -0.006953066680580378,
+        -0.012659729458391666
+      ],
+      "last_frame": [
+        0.010157296434044838,
+        0.013814877718687057
+      ]
+    },
+    {
+      "path": "music/CA_MUS_BARILOCHE.ogg",
+      "sha256": "0baae39ab9f78a6e7b1fa6290c1af5bf772a3f8a535d5eeeb85a102c07bc42fb",
+      "frames": 7608960,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 158.52,
+      "codec": "VORBIS",
+      "peak": 0.7338525056838989,
+      "rms": 0.1358494185006264,
+      "first_frame": [
+        0.0007227908354252577,
+        0.0006314858910627663
+      ],
+      "last_frame": [
+        0.000815163308288902,
+        0.0004031779244542122
+      ]
+    },
+    {
+      "path": "music/CA_MUS_CAELITH_SKY.ogg",
+      "sha256": "e76c3ebe0fca5e024b0aeb2d5b51665770b7e1e2b07070df3ed2fc246c396ba2",
+      "frames": 7833600,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 163.2,
+      "codec": "VORBIS",
+      "peak": 0.6389751434326172,
+      "rms": 0.12821944824217507,
+      "first_frame": [
+        -0.004453850910067558,
+        -0.0102515434846282
+      ],
+      "last_frame": [
+        0.003139306791126728,
+        0.003941482864320278
+      ]
+    },
+    {
+      "path": "music/CA_MUS_CAELITH_UNDERWATER.ogg",
+      "sha256": "7c07d90863286a15fdbf5752c6313bae79643a30a65bca9b5e4705a3f7e4cb48",
+      "frames": 8256000,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 172.0,
+      "codec": "VORBIS",
+      "peak": 0.700664758682251,
+      "rms": 0.13248573806589775,
+      "first_frame": [
+        0.005789388902485371,
+        -0.0005701991613022983
+      ],
+      "last_frame": [
+        0.00297274487093091,
+        0.005175305996090174
+      ]
+    },
+    {
+      "path": "music/CA_MUS_CIUDAD.ogg",
+      "sha256": "3e02eddc4ecce0ca63395055b39fe3fd174cdc17989faf006c90f9b59d067922",
+      "frames": 9062400,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 188.8,
+      "codec": "VORBIS",
+      "peak": 0.7618956565856934,
+      "rms": 0.12289258320789766,
+      "first_frame": [
+        0.030275098979473114,
+        0.014185220003128052
+      ],
+      "last_frame": [
+        -0.0042509413324296474,
+        0.006623513996601105
+      ]
+    },
+    {
+      "path": "music/CA_MUS_CORDOBA_CITY.ogg",
+      "sha256": "8ba7c50a864ef193cebb8296eb9e7fa9c4ad672c62cdb3237419aee3f6bd007b",
+      "frames": 8751360,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 182.32,
+      "codec": "VORBIS",
+      "peak": 0.6346113681793213,
+      "rms": 0.11755094917663131,
+      "first_frame": [
+        -0.0011472331825643778,
+        -0.0030107588972896338
+      ],
+      "last_frame": [
+        0.013424552977085114,
+        0.0012919717701151967
+      ]
+    },
+    {
+      "path": "music/CA_MUS_CORDOBA_HILLS.ogg",
+      "sha256": "ccda37cfb37e212047be92ea778c251ddf7200c3b8b3453d6a588de97bb6f6ec",
+      "frames": 9310080,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 193.96,
+      "codec": "VORBIS",
+      "peak": 0.6514359712600708,
+      "rms": 0.13235549338895441,
+      "first_frame": [
+        0.0009757904917933047,
+        -0.0011465054703876376
+      ],
+      "last_frame": [
+        3.087695949943736e-05,
+        3.4068754757754505e-05
+      ]
+    },
+    {
+      "path": "music/CA_MUS_ENTRE_RIOS_SPRINGS.ogg",
+      "sha256": "024041f2a89a2fa2ef80af0d095988b2b52b46ff67fa023fa8072a9bbab551a9",
+      "frames": 10039680,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 209.16,
+      "codec": "VORBIS",
+      "peak": 0.592279314994812,
+      "rms": 0.12888483441749718,
+      "first_frame": [
+        0.0022440911270678043,
+        -0.00023797187895979732
+      ],
+      "last_frame": [
+        0.00019583344692364335,
+        0.00022567382256966084
+      ]
+    },
+    {
+      "path": "music/CA_MUS_HELL.ogg",
+      "sha256": "6280df1f1962157acf5f3fbc6f6fad2b8623faac0fc9c8a6f29ad8752e4a3628",
+      "frames": 6132480,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 127.76,
+      "codec": "VORBIS",
+      "peak": 0.5849526524543762,
+      "rms": 0.11127175682266671,
+      "first_frame": [
+        6.828737241448835e-05,
+        -0.001148780225776136
+      ],
+      "last_frame": [
+        0.0060088494792580605,
+        0.000860787695273757
+      ]
+    },
+    {
+      "path": "music/CA_MUS_MALVINAS.ogg",
+      "sha256": "b68761a70d17e5eafb21d370affe73bb9b2c702c13a4ba7338fefc4b0a718693",
+      "frames": 10020480,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 208.76,
+      "codec": "VORBIS",
+      "peak": 0.5896985530853271,
+      "rms": 0.10903525227339697,
+      "first_frame": [
+        0.0012219148920848966,
+        0.00015977096336428076
+      ],
+      "last_frame": [
+        0.0024754523765295744,
+        -0.0006337398663163185
+      ]
+    },
+    {
+      "path": "music/CA_MUS_MOON.ogg",
+      "sha256": "0d1910309a32e4a9cec0bfcc69ad43790aa3dbe920b8dac7fadc45393a09e26c",
+      "frames": 9048960,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 188.52,
+      "codec": "VORBIS",
+      "peak": 0.603736162185669,
+      "rms": 0.1144474617556026,
+      "first_frame": [
+        0.0008409553556703031,
+        -0.0010521025396883488
+      ],
+      "last_frame": [
+        0.013040711171925068,
+        0.015786292031407356
+      ]
+    },
+    {
+      "path": "music/CA_MUS_NORTHEAST_JUNGLE.ogg",
+      "sha256": "b05c597402eb7f56659c686e48248a46f9014ce22e99d5f2976f7d317129b5c7",
+      "frames": 9004800,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 187.6,
+      "codec": "VORBIS",
+      "peak": 0.6651321053504944,
+      "rms": 0.1183106047684476,
+      "first_frame": [
+        0.0024002010468393564,
+        -0.0004312809614930302
+      ],
+      "last_frame": [
+        -0.000568893738090992,
+        -0.0004937245976179838
+      ]
+    },
+    {
+      "path": "music/CA_MUS_NORTHWEST_DESERT.ogg",
+      "sha256": "fe58efe061f0b92fe39714d74ac9b230629a3694464ce094030e1c34fc12cdd2",
+      "frames": 10252800,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 213.6,
+      "codec": "VORBIS",
+      "peak": 0.6956403851509094,
+      "rms": 0.1222572562149716,
+      "first_frame": [
+        0.0015379172982648015,
+        0.0008874586783349514
+      ],
+      "last_frame": [
+        0.0008727730019018054,
+        -0.0005434392369352281
+      ]
+    },
+    {
+      "path": "music/CA_MUS_PACHAMAMA_MINES.ogg",
+      "sha256": "906c512c4b3db78def4ce39fddbf24e6c8a6f0186014cabea5a932285a54199c",
+      "frames": 10287360,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 214.32,
+      "codec": "VORBIS",
+      "peak": 0.739524781703949,
+      "rms": 0.14894857310799578,
+      "first_frame": [
+        0.0034687211737036705,
+        -0.0007718401029706001
+      ],
+      "last_frame": [
+        0.0017343175131827593,
+        0.0019522021757438779
+      ]
+    },
+    {
+      "path": "music/CA_MUS_SELENE_FINAL.ogg",
+      "sha256": "b4c294559288571ca5c9436eddfb6db3d446955e1ba1e7a803dee0522c58d745",
+      "frames": 7825920,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 163.04,
+      "codec": "VORBIS",
+      "peak": 0.6175801753997803,
+      "rms": 0.10787743763705,
+      "first_frame": [
+        0.012613729573786259,
+        -0.009164436720311642
+      ],
+      "last_frame": [
+        0.01165035367012024,
+        0.001381027977913618
+      ]
+    },
+    {
+      "path": "music/CA_MUS_SKY_TRAIN.ogg",
+      "sha256": "c1716fc52c0c85838f4c8dd53122548a42025a0ee7fc88279b0fbff22e27f4c7",
+      "frames": 7793280,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 162.36,
+      "codec": "VORBIS",
+      "peak": 0.6529057025909424,
+      "rms": 0.11226397466476878,
+      "first_frame": [
+        -0.012394833378493786,
+        -0.022240446880459785
+      ],
+      "last_frame": [
+        0.010301261208951473,
+        0.00385925080627203
+      ]
+    },
+    {
+      "path": "music/CA_MUS_SOUTHERN_TUNDRA.ogg",
+      "sha256": "e1bc2ba2e08632b03384bdd4d19d6239443520470e73a92f7673021856924979",
+      "frames": 5971200,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 124.4,
+      "codec": "VORBIS",
+      "peak": 0.5635483264923096,
+      "rms": 0.1151257289259499,
+      "first_frame": [
+        -7.64736469136551e-05,
+        -0.0013399868039414287
+      ],
+      "last_frame": [
+        -0.00521554471924901,
+        -0.0013941725483164191
+      ]
+    },
+    {
+      "path": "music/CA_MUS_TIERRA_DEL_FUEGO.ogg",
+      "sha256": "2369c5f9e1cb29a7cc743138400889dcb9229dc84c7da0293541726cb3508f08",
+      "frames": 10195200,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 212.4,
+      "codec": "VORBIS",
+      "peak": 0.5598007440567017,
+      "rms": 0.11348631778338998,
+      "first_frame": [
+        0.005144917406141758,
+        -0.001417329884134233
+      ],
+      "last_frame": [
+        0.0030847969464957714,
+        0.00633847713470459
+      ]
+    },
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_blacksmith_loop.ogg",
+      "sha256": "b1b74c509fd27bd65c0d300a03dabaead91c4d00f9b737f64683f99f35ffbbc9",
+      "frames": 337377,
+      "channels": 1,
+      "sample_rate": 48000,
+      "duration_seconds": 7.0286875,
+      "codec": "VORBIS",
+      "peak": 0.31944403052330017,
+      "rms": 0.044715430438219454,
+      "first_frame": [
+        0.006304694339632988
+      ],
+      "last_frame": [
+        0.014414584264159203
+      ]
+    },
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_crowd_murmur_loop.ogg",
+      "sha256": "e0fa7a07ed0439f9140dd5cf63b996270cd58f5606f6ebf2a71d627253ce6747",
+      "frames": 369600,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 7.7,
+      "codec": "VORBIS",
+      "peak": 0.297840416431427,
+      "rms": 0.04575653786897557,
+      "first_frame": [
+        0.025058044120669365,
+        0.052242740988731384
+      ],
+      "last_frame": [
+        0.01966019719839096,
+        0.04932617023587227
+      ]
+    },
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_fire_loop.ogg",
+      "sha256": "f70a458828a55764100f944aebcd178aebda757cc79b301243a465fb585b378c",
+      "frames": 879326,
+      "channels": 1,
+      "sample_rate": 48000,
+      "duration_seconds": 18.31929166666667,
+      "codec": "VORBIS",
+      "peak": 0.8051453232765198,
+      "rms": 0.06979055701564059,
+      "first_frame": [
+        -0.03978188708424568
+      ],
+      "last_frame": [
+        -0.011444877833127975
+      ]
+    },
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_fountain_loop.ogg",
+      "sha256": "64e1499ff3a6d8af1d903a1278f38bd21b6e9c227fcbea9cdf0abda4db5c4776",
+      "frames": 331360,
+      "channels": 1,
+      "sample_rate": 48000,
+      "duration_seconds": 6.903333333333333,
+      "codec": "VORBIS",
+      "peak": 0.45957809686660767,
+      "rms": 0.046977446760708544,
+      "first_frame": [
+        -0.0037979907356202602
+      ],
+      "last_frame": [
+        -0.019877806305885315
+      ]
+    },
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_rio_waves_loop.ogg",
+      "sha256": "3a9b1f8dd6579eac6ed9b05b332ebb20d6de3495cc922c167086892c25a766c7",
+      "frames": 729782,
+      "channels": 1,
+      "sample_rate": 48000,
+      "duration_seconds": 15.203791666666667,
+      "codec": "VORBIS",
+      "peak": 0.6130297780036926,
+      "rms": 0.0586248249609545,
+      "first_frame": [
+        0.03326132893562317
+      ],
+      "last_frame": [
+        0.017488228157162666
+      ]
+    },
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_sewer_water_loop.ogg",
+      "sha256": "fc3f4879f859e1b79b328acd057740554a33cd08a2f3bc4a14bf376f363f1028",
+      "frames": 373986,
+      "channels": 1,
+      "sample_rate": 48000,
+      "duration_seconds": 7.791375,
+      "codec": "VORBIS",
+      "peak": 0.7725573778152466,
+      "rms": 0.0451604769756717,
+      "first_frame": [
+        0.00256324396468699
+      ],
+      "last_frame": [
+        0.03992198407649994
+      ]
+    },
+    {
+      "path": "sounds/caelum/breathing/female.wav",
+      "sha256": "1ddb9fd0edb7c9116fc959d493d57bd1e61b871be18e12f07355eed9602117bd",
+      "frames": 1533528,
+      "channels": 1,
+      "sample_rate": 22050,
+      "duration_seconds": 69.54775510204081,
+      "codec": "PCM_16",
+      "peak": 0.345458984375,
+      "rms": 0.04746434866198201,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        0.0
+      ]
+    },
+    {
+      "path": "sounds/caelum/breathing/female_high.wav",
+      "sha256": "0b2300d9c1ed2bc301ef2684867ac66a251923392b442d967fc4e4fca195a7c4",
+      "frames": 1150566,
+      "channels": 1,
+      "sample_rate": 22050,
+      "duration_seconds": 52.179863945578234,
+      "codec": "PCM_16",
+      "peak": 0.348724365234375,
+      "rms": 0.04518567395583094,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        -3.0517578125e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/breathing/male.wav",
+      "sha256": "61350765991f9036704d24b43c608bb697ae05091c4721ad1091329da24d5851",
+      "frames": 274363,
+      "channels": 1,
+      "sample_rate": 22050,
+      "duration_seconds": 12.442766439909297,
+      "codec": "PCM_16",
+      "peak": 0.682159423828125,
+      "rms": 0.046442975382860595,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        0.0
+      ]
+    },
+    {
+      "path": "sounds/caelum/breathing/male_high.wav",
+      "sha256": "597ff92b30dd8b0ab81c2d1c97ca1bfb9561e38e38e4112b4c48fa42d3236463",
+      "frames": 205892,
+      "channels": 1,
+      "sample_rate": 22050,
+      "duration_seconds": 9.33750566893424,
+      "codec": "PCM_16",
+      "peak": 0.767608642578125,
+      "rms": 0.045163477911008484,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        0.0
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_01.ogg",
+      "sha256": "59d883b4b4bdf032be3ab593941480628f345bc3a6233422af114b2cdda76b41",
+      "frames": 40572,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.92,
+      "codec": "VORBIS",
+      "peak": 0.5122911930084229,
+      "rms": 0.16404918890161163,
+      "first_frame": [
+        -0.0007070318679325283
+      ],
+      "last_frame": [
+        0.00028536649188026786
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_02.ogg",
+      "sha256": "899fe3c3710604b24fe5036b29cb1a195d1740d5d38fe0d046d804529c814c1f",
+      "frames": 30429,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.69,
+      "codec": "VORBIS",
+      "peak": 0.4986470937728882,
+      "rms": 0.1488231427627811,
+      "first_frame": [
+        3.883123645209707e-05
+      ],
+      "last_frame": [
+        3.579126496333629e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_03.ogg",
+      "sha256": "35f48699af7de59105d9b327f2ffdd8dff4f6dc8d359d2f60d34145ba13bd3dc",
+      "frames": 37926,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.86,
+      "codec": "VORBIS",
+      "peak": 0.5047286152839661,
+      "rms": 0.12762211928117254,
+      "first_frame": [
+        0.00014236191054806113
+      ],
+      "last_frame": [
+        -0.0011846160050481558
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_04.ogg",
+      "sha256": "103da82d6ee1e83a07669f555745a4d9abba952558fc80d33f9da653dbcd9f45",
+      "frames": 37044,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.84,
+      "codec": "VORBIS",
+      "peak": 0.4933356046676636,
+      "rms": 0.14696757576619915,
+      "first_frame": [
+        0.0005125352763570845
+      ],
+      "last_frame": [
+        -0.009789387695491314
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_05.ogg",
+      "sha256": "958bbdc70fec0d9db4ec39751a1b3696c2d61623330d78425a257ebfed5962c8",
+      "frames": 46746,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 1.06,
+      "codec": "VORBIS",
+      "peak": 0.5056362748146057,
+      "rms": 0.11808549831238255,
+      "first_frame": [
+        0.0001600818504812196
+      ],
+      "last_frame": [
+        0.0015868357149884105
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_06.ogg",
+      "sha256": "d5dbf8e50bac4140c275d02609f4f284b003f2d6e2233411db2cdd9fd1f71d49",
+      "frames": 68355,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 1.55,
+      "codec": "VORBIS",
+      "peak": 0.494316041469574,
+      "rms": 0.12023798702840269,
+      "first_frame": [
+        0.0004943392123095691
+      ],
+      "last_frame": [
+        0.00023743940982967615
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_07.ogg",
+      "sha256": "bea85bc701b092b5e05a0c2062fe36e184907a856466cbbdd7a3b7fe094b4925",
+      "frames": 45864,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 1.04,
+      "codec": "VORBIS",
+      "peak": 0.5079878568649292,
+      "rms": 0.10329592178987808,
+      "first_frame": [
+        0.00016455919831059873
+      ],
+      "last_frame": [
+        0.0003167299146298319
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_08.ogg",
+      "sha256": "9f1990a70e264d8c608850fb2ae19158756619bfdddf9c540adc98eaf2650afe",
+      "frames": 49392,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 1.12,
+      "codec": "VORBIS",
+      "peak": 0.5079331398010254,
+      "rms": 0.157797983605693,
+      "first_frame": [
+        0.0004264013550709933
+      ],
+      "last_frame": [
+        0.001483967644162476
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_09.ogg",
+      "sha256": "c3b5b7b978e6ea8e27e3f9f9bf746d98238a393e90289aa1c472da6fda26fb54",
+      "frames": 39249,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.89,
+      "codec": "VORBIS",
+      "peak": 0.5020217895507812,
+      "rms": 0.1673368975069454,
+      "first_frame": [
+        0.00042071263305842876
+      ],
+      "last_frame": [
+        0.014049854129552841
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_10.ogg",
+      "sha256": "b064a309bcd36017898b121767630acb62881440f506cb01827f6c1c3a3761a8",
+      "frames": 39249,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.89,
+      "codec": "VORBIS",
+      "peak": 0.5016241669654846,
+      "rms": 0.14419198649883475,
+      "first_frame": [
+        0.0005270159454084933
+      ],
+      "last_frame": [
+        0.00042969893547706306
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_11.ogg",
+      "sha256": "001e56b118742ce8c3ddd51f53cfd93bcbf09f00038eed60e5fd71dcf735881c",
+      "frames": 149058,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 3.38,
+      "codec": "VORBIS",
+      "peak": 0.5031773447990417,
+      "rms": 0.1154348516583261,
+      "first_frame": [
+        0.00032219014246948063
+      ],
+      "last_frame": [
+        3.388077675481327e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_12.ogg",
+      "sha256": "024f70f76adcbddedcae7a5e8be7ad085f58efaa4982e1ca9056da051d54c45e",
+      "frames": 44541,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 1.01,
+      "codec": "VORBIS",
+      "peak": 0.5090774297714233,
+      "rms": 0.15629495505055774,
+      "first_frame": [
+        0.0001501362130511552
+      ],
+      "last_frame": [
+        0.004087821580469608
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/mandinga/ca_mandinga_alert.ogg",
+      "sha256": "e83b9fa64788b6f58a7a8f192d142056d00ec2c62fcf848c45cd5299f0a18059",
+      "frames": 53747,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 1.2187528344671201,
+      "codec": "VORBIS",
+      "peak": 0.9720643162727356,
+      "rms": 0.19613886899909666,
+      "first_frame": [
+        -2.2392843675334007e-05,
+        8.968815382104367e-05
+      ],
+      "last_frame": [
+        -0.0020505476277321577,
+        -0.0026232050731778145
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/mandinga/ca_mandinga_pain.ogg",
+      "sha256": "896e3bdc618349ef007bc1c91b3dd5e513f4f4eaed0155c6e70b60cac0989f71",
+      "frames": 54144,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 1.2277551020408164,
+      "codec": "VORBIS",
+      "peak": 0.5033111572265625,
+      "rms": 0.0500299585010704,
+      "first_frame": [
+        -0.0009795773075893521
+      ],
+      "last_frame": [
+        -0.0009517956059426069
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/rat/alert.wav",
+      "sha256": "bce5cb2a8ebcaa8aac9074a8a1ef8a594605bf7348d67c139a60ff81486e4cbb",
+      "frames": 8379,
+      "channels": 1,
+      "sample_rate": 22050,
+      "duration_seconds": 0.38,
+      "codec": "PCM_16",
+      "peak": 0.319976806640625,
+      "rms": 0.11521687888305839,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        0.0
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/rat/bite.wav",
+      "sha256": "427b011557db55252f36b7ab876496de2de8d9a3570eeb08df42544e2b549ed1",
+      "frames": 3749,
+      "channels": 1,
+      "sample_rate": 22050,
+      "duration_seconds": 0.17002267573696145,
+      "codec": "PCM_16",
+      "peak": 0.319976806640625,
+      "rms": 0.10546739013054438,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        0.0
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/rat/death.wav",
+      "sha256": "1fed456ba349c6699bd2a6dcc3751697a2ea479bc5233b7db34eac00096b1096",
+      "frames": 12789,
+      "channels": 1,
+      "sample_rate": 22050,
+      "duration_seconds": 0.58,
+      "codec": "PCM_16",
+      "peak": 0.319976806640625,
+      "rms": 0.10725530613188743,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        0.0
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/rat/pain.wav",
+      "sha256": "1d252c33a593229d49c166872c8a7893749cded775193458d996f15fa3cd3f93",
+      "frames": 6394,
+      "channels": 1,
+      "sample_rate": 22050,
+      "duration_seconds": 0.28997732426303857,
+      "codec": "PCM_16",
+      "peak": 0.319976806640625,
+      "rms": 0.110077419968809,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        0.0
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/zupay/ca_zupay_alert.ogg",
+      "sha256": "ef393ea41adcf1a2e23036bf635ca06f41413f3c17ae451079c6e581b3023909",
+      "frames": 46320,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 1.0503401360544218,
+      "codec": "VORBIS",
+      "peak": 1.2690505981445312,
+      "rms": 0.4679303102499548,
+      "first_frame": [
+        0.005673419218510389,
+        0.01496509462594986
+      ],
+      "last_frame": [
+        -0.00011999069101875648,
+        0.03327434882521629
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/zupay/ca_zupay_pain.ogg",
+      "sha256": "1e2a8f9d3536b15e19d322158aef23d288becf5eb877966bdbae570ddf28daa6",
+      "frames": 109368,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 2.48,
+      "codec": "VORBIS",
+      "peak": 0.5385876893997192,
+      "rms": 0.2283167512063756,
+      "first_frame": [
+        0.03756288066506386
+      ],
+      "last_frame": [
+        0.0016888811951503158
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/zupay/ca_zupay_walk.ogg",
+      "sha256": "36dbf09d13d50e6c9d5b0e2ffffadfa7161f4420f2fbe8a939b970c784278ad1",
+      "frames": 129947,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 2.9466439909297053,
+      "codec": "VORBIS",
+      "peak": 0.7983732223510742,
+      "rms": 0.14344337062412538,
+      "first_frame": [
+        -1.888293127194629e-06,
+        -1.0370871450504637e-06
+      ],
+      "last_frame": [
+        -3.5558339732233435e-05,
+        3.0450326448772103e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/gathering/chop.wav",
+      "sha256": "4499d53a95fc1780cb5ef9f1f0b8054f626287470ef6631846a6f49e01224a60",
+      "frames": 37440,
+      "channels": 1,
+      "sample_rate": 48000,
+      "duration_seconds": 0.78,
+      "codec": "PCM_16",
+      "peak": 0.364227294921875,
+      "rms": 0.008710062562711153,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        0.0
+      ]
+    },
+    {
+      "path": "sounds/caelum/gathering/crystal.ogg",
+      "sha256": "3c7972b3d95f79289b1ebc07e68c6b938e16149e5c5a95885098b5281ff11ebc",
+      "frames": 7212,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.1635374149659864,
+      "codec": "VORBIS",
+      "peak": 1.5712933540344238,
+      "rms": 0.16791875147048768,
+      "first_frame": [
+        -0.0016439325409010053
+      ],
+      "last_frame": [
+        -0.0058916183188557625
+      ]
+    },
+    {
+      "path": "sounds/caelum/gathering/metal.ogg",
+      "sha256": "5bf14afc7f63234ff8d425c0b6bbda63c045a73bb4d1ce426012d01547991fa2",
+      "frames": 7212,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.1635374149659864,
+      "codec": "VORBIS",
+      "peak": 1.4653582572937012,
+      "rms": 0.2829378305410605,
+      "first_frame": [
+        -0.01120785903185606
+      ],
+      "last_frame": [
+        -0.02334105595946312
+      ]
+    },
+    {
+      "path": "sounds/caelum/gathering/stone.ogg",
+      "sha256": "a24bcd03d1c6b2d1ddb43e9833ed50523a1954a760136fb9502cbc5a9350b405",
+      "frames": 7212,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.1635374149659864,
+      "codec": "VORBIS",
+      "peak": 1.9906591176986694,
+      "rms": 0.27586987232075777,
+      "first_frame": [
+        -0.011013521812856197
+      ],
+      "last_frame": [
+        -0.03360237181186676
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/ca_item_pickup.ogg",
+      "sha256": "522ed753d5ec74d0c271a9a67b04647d71b03a71622d54ade7a8a99a2ce74e4e",
+      "frames": 54745,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 1.2413832199546486,
+      "codec": "VORBIS",
+      "peak": 0.11528287827968597,
+      "rms": 0.012517822602919185,
+      "first_frame": [
+        0.0,
+        0.0
+      ],
+      "last_frame": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/ca_weapon_pickup.ogg",
+      "sha256": "35ac5c960624449c24284b15adec591fcbdc2a8662adde835d91a6299ae9a72b",
+      "frames": 53569,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 1.2147165532879818,
+      "codec": "VORBIS",
+      "peak": 1.4900363683700562,
+      "rms": 0.08467125109784375,
+      "first_frame": [
+        -0.007822608575224876,
+        -0.007822608575224876
+      ],
+      "last_frame": [
+        1.6942610727710417e-06,
+        3.852634563372703e-06
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_01.ogg",
+      "sha256": "5f6ccafcf0bbc567190a057c9226f450d3f9f8bbb5e52ef26a64e0cbdec0a35b",
+      "frames": 17905,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.40600907029478456,
+      "codec": "VORBIS",
+      "peak": 0.5263667106628418,
+      "rms": 0.03482208254127333,
+      "first_frame": [
+        -1.029071518132696e-05
+      ],
+      "last_frame": [
+        -1.3889622323404183e-06
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_02.ogg",
+      "sha256": "0210dedf6186632925b7748d74d9ba8a26181fa8885046bbdd1fd461a61c220c",
+      "frames": 14156,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.32099773242630386,
+      "codec": "VORBIS",
+      "peak": 0.5025544166564941,
+      "rms": 0.04138083936979986,
+      "first_frame": [
+        -7.139773515518755e-05
+      ],
+      "last_frame": [
+        1.2000702554360032e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_03.ogg",
+      "sha256": "d56d2ac39840400dc3dfc7e4330833b15ed1c9339caf258b5c385f0fd26ca72b",
+      "frames": 14994,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.34,
+      "codec": "VORBIS",
+      "peak": 0.5156456828117371,
+      "rms": 0.04321840267518836,
+      "first_frame": [
+        -1.7367923646816052e-05
+      ],
+      "last_frame": [
+        -4.4025611714459956e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_04.ogg",
+      "sha256": "e7f575d19fae9e86d36edfa5cf3c56524560888c263debec4255bb3831499388",
+      "frames": 14774,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.33501133786848075,
+      "codec": "VORBIS",
+      "peak": 0.4847280979156494,
+      "rms": 0.033304154481134204,
+      "first_frame": [
+        1.7710352040012367e-05
+      ],
+      "last_frame": [
+        3.893190296366811e-06
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_05.ogg",
+      "sha256": "675d1f513bfaba69e89fda9e2b193ef459eefa1dc1bb591e7f18ffb9f1f1e373",
+      "frames": 13097,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.29698412698412696,
+      "codec": "VORBIS",
+      "peak": 0.446479856967926,
+      "rms": 0.03394938805951362,
+      "first_frame": [
+        0.00012939958833158016
+      ],
+      "last_frame": [
+        -5.316636588759138e-07
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_06.ogg",
+      "sha256": "ef026f52b6fc31261bbcef7124bd1e6fa13cc103dbfa726b3689aeb67e26ce5b",
+      "frames": 13142,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.2980045351473923,
+      "codec": "VORBIS",
+      "peak": 0.44637951254844666,
+      "rms": 0.030603303504021382,
+      "first_frame": [
+        -5.975353360554436e-06
+      ],
+      "last_frame": [
+        8.082267868303461e-07
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_07.ogg",
+      "sha256": "ca2e63503a357a0775b49cdfa30cb2b6adbb9546f1ca9a250b1bac5add8d1ef9",
+      "frames": 18875,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.4280045351473923,
+      "codec": "VORBIS",
+      "peak": 0.48293980956077576,
+      "rms": 0.024834033452990907,
+      "first_frame": [
+        7.252342766150832e-05
+      ],
+      "last_frame": [
+        -4.7180428737192415e-06
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_08.ogg",
+      "sha256": "d3cd539f58ac7136469771b6240b837801134c6962bbf2db0b4ebb0bf03a213e",
+      "frames": 15732,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.356734693877551,
+      "codec": "VORBIS",
+      "peak": 0.4490034580230713,
+      "rms": 0.053992974145849006,
+      "first_frame": [
+        -0.0004137094656471163
+      ],
+      "last_frame": [
+        -0.002783244475722313
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_09.ogg",
+      "sha256": "8f3cf7e189bbdb1987f2a6393bbd70ce593e8ae895a85522631a47dffa774966",
+      "frames": 12260,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.2780045351473923,
+      "codec": "VORBIS",
+      "peak": 0.47215110063552856,
+      "rms": 0.02957680107914491,
+      "first_frame": [
+        -0.0003047850332222879
+      ],
+      "last_frame": [
+        3.4381693694740534e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_10.ogg",
+      "sha256": "46ea08d1252335e3c32152d33ad6a527ed28ec82ee3fbf5a0d797736de8c3ed8",
+      "frames": 16670,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.3780045351473923,
+      "codec": "VORBIS",
+      "peak": 0.4847109317779541,
+      "rms": 0.04396046314987075,
+      "first_frame": [
+        1.8829316104529426e-05
+      ],
+      "last_frame": [
+        -1.072290433512535e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_11.ogg",
+      "sha256": "814f320cd58eeb4c270ca3818cb3157137d8f15cb4776688d66391653ea4e01c",
+      "frames": 15876,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.36,
+      "codec": "VORBIS",
+      "peak": 0.4839397668838501,
+      "rms": 0.03669430607544001,
+      "first_frame": [
+        0.00019755569519475102
+      ],
+      "last_frame": [
+        -4.6183078666217625e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_12.ogg",
+      "sha256": "c4f08222db5409f7e14651c0620f5a0840ae0858b4c94427e29137466bf7f4be",
+      "frames": 12392,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.2809977324263039,
+      "codec": "VORBIS",
+      "peak": 0.5075165629386902,
+      "rms": 0.04591691798028381,
+      "first_frame": [
+        -0.00016295339446514845
+      ],
+      "last_frame": [
+        4.7172092308755964e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/npcs/palomo/ca_palomo_disappear.ogg",
+      "sha256": "9e1103b74f77f4700a0bfe4c42533aba5bda36495baa5f394ef651d3f29e69b7",
+      "frames": 235200,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 5.333333333333333,
+      "codec": "VORBIS",
+      "peak": 0.6414861679077148,
+      "rms": 0.07781839141946445,
+      "first_frame": [
+        -5.907470495003508e-06,
+        1.842541496444028e-05
+      ],
+      "last_frame": [
+        -2.539905381127028e-06,
+        6.804085387557279e-06
+      ]
+    },
+    {
+      "path": "sounds/caelum/npcs/rulo/ca_rulo_alert.ogg",
+      "sha256": "a03cbfb4681b7797d0f11eeab149aa79c6f3722b8dba323b7e31209ad09fd067",
+      "frames": 112667,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 2.5548072562358275,
+      "codec": "VORBIS",
+      "peak": 0.5567968487739563,
+      "rms": 0.09842451073762871,
+      "first_frame": [
+        7.074030691001099e-06,
+        -2.684906348804361e-06
+      ],
+      "last_frame": [
+        -0.005920613184571266,
+        -0.0018578171730041504
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/anima/ca_anima_restored.ogg",
+      "sha256": "01f21a7828922fe67451652e1aee024c69a31e9172fac1d56088a4567022ad04",
+      "frames": 278001,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 5.7916875,
+      "codec": "VORBIS",
+      "peak": 0.9925270080566406,
+      "rms": 0.14820098190989214,
+      "first_frame": [
+        5.173298632143997e-06,
+        5.173298632143997e-06
+      ],
+      "last_frame": [
+        0.0025991403963416815,
+        0.0025991403963416815
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/ca_low_health_heartbeat.ogg",
+      "sha256": "c6a3f172283d048bbceeb3bb06ef1d94a25f75105124bf9fe13dba27cb2cdf02",
+      "frames": 46546,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 1.0554648526077097,
+      "codec": "VORBIS",
+      "peak": 1.0492782592773438,
+      "rms": 0.2645507428423845,
+      "first_frame": [
+        -0.00011957168317167088,
+        -9.70885666902177e-05
+      ],
+      "last_frame": [
+        -6.11709197073651e-07,
+        -6.11709197073651e-07
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/ca_footstep_grass.ogg",
+      "sha256": "d14fda07d5dcda46a7532a0ec79a1a9c14a53e5f6719b5afbff145c20a1862c4",
+      "frames": 16782,
+      "channels": 1,
+      "sample_rate": 22050,
+      "duration_seconds": 0.7610884353741496,
+      "codec": "VORBIS",
+      "peak": 0.7009289860725403,
+      "rms": 0.05535345392257935,
+      "first_frame": [
+        0.000882822903804481
+      ],
+      "last_frame": [
+        -0.0018147618975490332
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_01.ogg",
+      "sha256": "b61b771345635a0210e61f7a75fa4da00e0e525da0cc66677fde30bb784c45b2",
+      "frames": 11157,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.25299319727891156,
+      "codec": "VORBIS",
+      "peak": 0.5056048631668091,
+      "rms": 0.06644472939245388,
+      "first_frame": [
+        -0.0003079863963648677
+      ],
+      "last_frame": [
+        4.8422265535918996e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_02.ogg",
+      "sha256": "169d28ca07045d0a09973612db67dddc0cdf0007ef2f938d563493c7edfbf23a",
+      "frames": 13141,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.2979818594104308,
+      "codec": "VORBIS",
+      "peak": 0.4985402226448059,
+      "rms": 0.05175063507230091,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        -1.6149348311955691e-06
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_03.ogg",
+      "sha256": "a86d56fe5fa99cd4a6c6943a083d6bf5e6196bb0bfd230eb50618f830a476c6f",
+      "frames": 15568,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.353015873015873,
+      "codec": "VORBIS",
+      "peak": 0.5075093507766724,
+      "rms": 0.07061285565045124,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        -1.9623486878117546e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_04.ogg",
+      "sha256": "21a0362908c452316490c94e124da7c10a6da29e21541acc92932784f4d3c764",
+      "frames": 12966,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.29401360544217686,
+      "codec": "VORBIS",
+      "peak": 0.4979090392589569,
+      "rms": 0.058415454871682024,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        -2.3426395273418166e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_05.ogg",
+      "sha256": "346b66cb9cc0b6f594e8cb44ae0b1e034aac4a0618b55faba67f591d2dd81f62",
+      "frames": 15524,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.35201814058956915,
+      "codec": "VORBIS",
+      "peak": 0.5043774843215942,
+      "rms": 0.04029239775454908,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        1.3017954188399017e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_06.ogg",
+      "sha256": "991cc165cf36c1c7d187a80a700b473e197f32d5f9e4c51c1a7d5aa816296eb9",
+      "frames": 13627,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.30900226757369614,
+      "codec": "VORBIS",
+      "peak": 0.5192810893058777,
+      "rms": 0.07675488959475955,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        1.954534241122019e-07
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_07.ogg",
+      "sha256": "d8dc32fd890d15def5bcf2d83a0d742bb58e10bf36bb8458a5f3f03655991c15",
+      "frames": 15964,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.3619954648526077,
+      "codec": "VORBIS",
+      "peak": 0.4902728796005249,
+      "rms": 0.052268896731489885,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        -1.4623410038439033e-07
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_08.ogg",
+      "sha256": "28eb3029a1fb8706f1575797fb42b2546ec688184007901b0565b2c708b01a00",
+      "frames": 16695,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.37857142857142856,
+      "codec": "VORBIS",
+      "peak": 0.4963468909263611,
+      "rms": 0.05783097501127001,
+      "first_frame": [
+        0.0
+      ],
+      "last_frame": [
+        -0.0011245134519413114
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/movement/ca_swim_loop.ogg",
+      "sha256": "449315cc6fc32e5c1019aeccb10339b28553e0a56288338f742021d64433abbb",
+      "frames": 217744,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 4.93750566893424,
+      "codec": "VORBIS",
+      "peak": 0.1752995401620865,
+      "rms": 0.011077960705986593,
+      "first_frame": [
+        6.105424836277962e-05,
+        1.5866042701873084e-08
+      ],
+      "last_frame": [
+        0.00026449246797710657,
+        0.0002672539558261633
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/pain/ca_player_pain_female.ogg",
+      "sha256": "d5ec91e4af0a88a1d350991d005800f49bf55224fdfafe8ff77e0b93b1dfdd1e",
+      "frames": 44271,
+      "channels": 1,
+      "sample_rate": 48000,
+      "duration_seconds": 0.9223125,
+      "codec": "VORBIS",
+      "peak": 0.4976988136768341,
+      "rms": 0.09428081875046512,
+      "first_frame": [
+        0.001000637887045741
+      ],
+      "last_frame": [
+        0.00202528340741992
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/pain/ca_player_pain_male.ogg",
+      "sha256": "61b8db4f8832f4bc471361bb900aea3d8ad1a091144d9e21506f030c9cb1cae0",
+      "frames": 48290,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 1.0950113378684807,
+      "codec": "VORBIS",
+      "peak": 0.49716687202453613,
+      "rms": 0.044896379090870034,
+      "first_frame": [
+        -0.00016219461394939572
+      ],
+      "last_frame": [
+        0.0
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/progression/ca_level_up.ogg",
+      "sha256": "a716480ba03a0ac7a730d9c7e7aa0fd5784f9087fb863143f1c7cf62a0126ab1",
+      "frames": 242991,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 5.51,
+      "codec": "VORBIS",
+      "peak": 0.3260498344898224,
+      "rms": 0.03597247014243555,
+      "first_frame": [
+        -0.0010424285428598523,
+        0.0009087115176953375
+      ],
+      "last_frame": [
+        -1.6464660745896254e-07,
+        -7.61383311953523e-09
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/status/ca_player_cough.ogg",
+      "sha256": "7308d7694b32edc10019e938ae9c3b1c77e4a9888a9560b58f10c1ee01ac2ee5",
+      "frames": 261760,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 5.935600907029478,
+      "codec": "VORBIS",
+      "peak": 0.9394927024841309,
+      "rms": 0.06282498115614266,
+      "first_frame": [
+        5.9806516219396144e-05,
+        3.0731255264981883e-06
+      ],
+      "last_frame": [
+        -3.412764999666251e-05,
+        -2.901886728068348e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/ambient/ca_stock_cricket.ogg",
+      "sha256": "854c7217067aa1b139859307adabde9230358a3fe2e75229546eb41462e06e00",
+      "frames": 101847,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 2.1218125,
+      "codec": "VORBIS",
+      "peak": 0.34000200033187866,
+      "rms": 0.05559945697378702,
+      "first_frame": [
+        -0.0004549536679405719,
+        -0.0004549536679405719
+      ],
+      "last_frame": [
+        2.2866282961331308e-05,
+        2.2866282961331308e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/music/ca_stock_piano_progression.ogg",
+      "sha256": "69a2ca34dc74ed58747708eeb080b3b79e72637c6e547bab992847cd4b6232f2",
+      "frames": 302592,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 6.861496598639456,
+      "codec": "VORBIS",
+      "peak": 0.626560628414154,
+      "rms": 0.1098794004089316,
+      "first_frame": [
+        9.23614518200111e-11,
+        1.5196342795231743e-10
+      ],
+      "last_frame": [
+        -0.008173706009984016,
+        0.005027690902352333
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/music/ca_stock_tarot_harp_loop.ogg",
+      "sha256": "2e8616f258e9ad9bb829911b1ed1b57830a6832a489dc9fe1704f734cfed0beb",
+      "frames": 226800,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 5.142857142857143,
+      "codec": "VORBIS",
+      "peak": 0.7295123934745789,
+      "rms": 0.05496513273181939,
+      "first_frame": [
+        0.0015622229548171163,
+        0.0006114222924225032
+      ],
+      "last_frame": [
+        -0.0005028345040045679,
+        -0.000981614924967289
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/music/ca_stock_war_drums.ogg",
+      "sha256": "1a5e286322413d6279907a045d8ceb35b25a9c6e3a339984987a30fb3fcd1ea8",
+      "frames": 264600,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 6.0,
+      "codec": "VORBIS",
+      "peak": 0.9998723268508911,
+      "rms": 0.08654929303278724,
+      "first_frame": [
+        -4.517350191690639e-07,
+        -3.615311072735494e-07
+      ],
+      "last_frame": [
+        0.00021015520906075835,
+        -0.00015398443792946637
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/ui/ca_stock_menu_strings_start.ogg",
+      "sha256": "758ffa0f7e6298fea705ab3228f847e85d1d1a1668b9ecacc2c7b00f5a28b355",
+      "frames": 177379,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 4.022199546485261,
+      "codec": "VORBIS",
+      "peak": 0.18535593152046204,
+      "rms": 0.033695472439146314,
+      "first_frame": [
+        -0.0013344621984288096,
+        -0.000866880000103265
+      ],
+      "last_frame": [
+        -0.0,
+        -0.0
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/ui/ca_stock_reveal_sting.ogg",
+      "sha256": "bb0aff86c28d3e568be908576ec5d3db0a8a7934e670faa627fe760935a5eece",
+      "frames": 226560,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 5.137414965986395,
+      "codec": "VORBIS",
+      "peak": 0.9618105888366699,
+      "rms": 0.11547671537374826,
+      "first_frame": [
+        -2.8772639780072495e-05,
+        -0.0017991651548072696
+      ],
+      "last_frame": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/voices/ca_stock_evil_laugh.ogg",
+      "sha256": "1450509be5fd0f67f6e82a31a26a82d78014877f178dba15634c9ca5a3c01702",
+      "frames": 104992,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 2.380770975056689,
+      "codec": "VORBIS",
+      "peak": 1.096265435218811,
+      "rms": 0.21017536077156282,
+      "first_frame": [
+        0.03642265498638153,
+        0.035821475088596344
+      ],
+      "last_frame": [
+        0.028471119701862335,
+        0.03248893842101097
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/voices/ca_stock_ghoul_laugh.ogg",
+      "sha256": "fa6bd9e3e2ba2d38c30f6c44310949424b9862e63df86c7b7e1972f3231b42a6",
+      "frames": 134987,
+      "channels": 1,
+      "sample_rate": 22050,
+      "duration_seconds": 6.121859410430839,
+      "codec": "VORBIS",
+      "peak": 1.079031229019165,
+      "rms": 0.1871167054117893,
+      "first_frame": [
+        -0.006921087857335806
+      ],
+      "last_frame": [
+        0.00014609412755817175
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/voices/ca_stock_npc_mumble_male.ogg",
+      "sha256": "09e6b3901b557744977615f237bac6bc8942ef2a5a4c02f52ac89e8ecfb1c7e0",
+      "frames": 176016,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 3.9912925170068028,
+      "codec": "VORBIS",
+      "peak": 0.1063918024301529,
+      "rms": 0.018374756807590854,
+      "first_frame": [
+        8.346144750248641e-05,
+        0.0001835730072343722
+      ],
+      "last_frame": [
+        1.900973620649893e-05,
+        6.125421805336373e-06
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/world/ca_stock_iron_gate.ogg",
+      "sha256": "8a179cfcff9048b5d767c753cad2f98a9f10aa5c84fbeeb29ec711d0e9e7f868",
+      "frames": 98105,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 2.2246031746031747,
+      "codec": "VORBIS",
+      "peak": 0.2457161545753479,
+      "rms": 0.02725336708201024,
+      "first_frame": [
+        -5.3421154007082805e-06,
+        4.539789188129362e-06
+      ],
+      "last_frame": [
+        1.2805794540327042e-05,
+        -2.1881335214857245e-06
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/ca_crafting_page_turn.ogg",
+      "sha256": "ee0aedd681cc747248afefc8783fad6145207309d4277b0e2b17b645e580f9cd",
+      "frames": 33792,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.7662585034013606,
+      "codec": "VORBIS",
+      "peak": 0.10812656581401825,
+      "rms": 0.01216057324448928,
+      "first_frame": [
+        -0.0017841423396021128
+      ],
+      "last_frame": [
+        -2.33008850045735e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/ca_dialogue_open.ogg",
+      "sha256": "0ee4699f3b4c269e2f0925a4de1a6a12804cbca1881ef0cfff58b1472eab7e86",
+      "frames": 134400,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 2.8,
+      "codec": "VORBIS",
+      "peak": 0.3949587941169739,
+      "rms": 0.08615888139539078,
+      "first_frame": [
+        0.011581405997276306,
+        -0.013218041509389877
+      ],
+      "last_frame": [
+        0.007997727021574974,
+        0.03454885259270668
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/ca_map_transition.ogg",
+      "sha256": "b171b939bae1454ff56062159b2676a51b28362510c6db8088022189e0ebf316",
+      "frames": 91648,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 2.078185941043084,
+      "codec": "VORBIS",
+      "peak": 0.545775830745697,
+      "rms": 0.138391998789432,
+      "first_frame": [
+        0.01855522207915783
+      ],
+      "last_frame": [
+        0.011841000989079475
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/ca_menu_move.ogg",
+      "sha256": "6be9afa1016bf4eafda1fab5060d4c9c0f29f71a2e1c0e8a5834ef295153db57",
+      "frames": 3324,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 0.06925,
+      "codec": "VORBIS",
+      "peak": 0.911461591720581,
+      "rms": 0.064939483624192,
+      "first_frame": [
+        -0.01293911598622799,
+        -0.012847313657402992
+      ],
+      "last_frame": [
+        -4.909604467684403e-05,
+        -5.474952558870427e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/ca_menu_open.ogg",
+      "sha256": "f5759f0cffaf187a43f683e97be01ff516a9e1c9d3984db01da72e65b5ad9f8c",
+      "frames": 2192,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 0.04970521541950113,
+      "codec": "VORBIS",
+      "peak": 0.3767208755016327,
+      "rms": 0.031928647189308754,
+      "first_frame": [
+        0.00015761567919980735,
+        -0.00024365294666495174
+      ],
+      "last_frame": [
+        2.297562787134666e-05,
+        7.353923137998208e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/ca_menu_select.ogg",
+      "sha256": "f5759f0cffaf187a43f683e97be01ff516a9e1c9d3984db01da72e65b5ad9f8c",
+      "frames": 2192,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 0.04970521541950113,
+      "codec": "VORBIS",
+      "peak": 0.3767208755016327,
+      "rms": 0.031928647189308754,
+      "first_frame": [
+        0.00015761567919980735,
+        -0.00024365294666495174
+      ],
+      "last_frame": [
+        2.297562787134666e-05,
+        7.353923137998208e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/ca_recipe_learned.ogg",
+      "sha256": "f991b6f99274058681ed2d0ab35936055dc1d82da3b463768a7900457b7ffd93",
+      "frames": 51755,
+      "channels": 1,
+      "sample_rate": 48000,
+      "duration_seconds": 1.0782291666666666,
+      "codec": "VORBIS",
+      "peak": 0.06417872756719589,
+      "rms": 0.004297649953091877,
+      "first_frame": [
+        -1.1777362487919163e-05
+      ],
+      "last_frame": [
+        -2.60845226875972e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/tarot/ca_tarot_card_capture.ogg",
+      "sha256": "ecba2d30e9d6d78a529dd0e06b86f3dcf6547be24d5c788873914cb66951c793",
+      "frames": 158827,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 3.308895833333333,
+      "codec": "VORBIS",
+      "peak": 0.457187294960022,
+      "rms": 0.08043314292462639,
+      "first_frame": [
+        -0.0005162549787200987,
+        -0.00026289455126971006
+      ],
+      "last_frame": [
+        0.0002506306627765298,
+        0.00046197191113606095
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/travel/ca_travel_carriage.ogg",
+      "sha256": "21605b799803cb7686c4d3cf642df38873a9c6b5292c62f45c8534d48247b8d8",
+      "frames": 288000,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 6.0,
+      "codec": "VORBIS",
+      "peak": 0.5009291172027588,
+      "rms": 0.04323410999011861,
+      "first_frame": [
+        -2.0451951058930717e-05,
+        -1.874459849204868e-05
+      ],
+      "last_frame": [
+        7.075656185406842e-07,
+        4.973992986379017e-07
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/travel/ca_travel_ship.ogg",
+      "sha256": "5885e41d3bb96c133437c9512dde4ff12a6ccaa98dd6d915f0d1175fb0029f10",
+      "frames": 288000,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 6.0,
+      "codec": "VORBIS",
+      "peak": 0.5569093823432922,
+      "rms": 0.028662762956374526,
+      "first_frame": [
+        -6.205555109772831e-05,
+        -6.205555109772831e-05
+      ],
+      "last_frame": [
+        9.546552064421121e-06,
+        9.546552064421121e-06
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/travel/ca_travel_ship_first_seconds.ogg",
+      "sha256": "f42ed8d90fd5363fff6e4086f648c6830071d2dfc4f3f2cfa0e23cb93c9cf1a5",
+      "frames": 288000,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 6.0,
+      "codec": "VORBIS",
+      "peak": 0.5569093823432922,
+      "rms": 0.029350939185613906,
+      "first_frame": [
+        2.2853031623526476e-05,
+        2.2853031623526476e-05
+      ],
+      "last_frame": [
+        6.308872980298474e-05,
+        6.308872980298474e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/weapons/ca_carabine_fire.ogg",
+      "sha256": "8a6a2692743d83b9b15631330516aa6802e28ed44168bdf5e7718b162de780cf",
+      "frames": 36095,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 0.8184807256235828,
+      "codec": "VORBIS",
+      "peak": 1.505433440208435,
+      "rms": 0.17815415803559673,
+      "first_frame": [
+        -0.022027792409062386,
+        -0.019147194921970367
+      ],
+      "last_frame": [
+        4.568710210151039e-05,
+        4.200072726234794e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_rain_heavy_loop.ogg",
+      "sha256": "48d735d0c766bb73d3bb7c5adec2c1c0ca0fcf179e4fd766ff0cee7c54329ae3",
+      "frames": 648000,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 13.5,
+      "codec": "VORBIS",
+      "peak": 0.5112473368644714,
+      "rms": 0.033212401357120634,
+      "first_frame": [
+        0.02553826943039894,
+        0.02553826943039894
+      ],
+      "last_frame": [
+        0.01877579465508461,
+        0.01877579465508461
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_rain_light_loop.ogg",
+      "sha256": "c95942108ab1a9387fa3badfdd140c74e30a72971bd3a08faabc0e95517ad61b",
+      "frames": 243792,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 5.079,
+      "codec": "VORBIS",
+      "peak": 0.521633505821228,
+      "rms": 0.035655251997268926,
+      "first_frame": [
+        -0.06051899865269661,
+        -0.06251077353954315
+      ],
+      "last_frame": [
+        -0.03215934336185455,
+        -0.03479943051934242
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_rain_soft_loop.ogg",
+      "sha256": "491c0a1f652a34d43cbeeb612e563e4ee77e945324a75c29b308385851c9227f",
+      "frames": 592593,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 12.3456875,
+      "codec": "VORBIS",
+      "peak": 0.7254447340965271,
+      "rms": 0.041353983038684046,
+      "first_frame": [
+        -0.07040806114673615,
+        -0.07148215174674988
+      ],
+      "last_frame": [
+        0.009376918897032738,
+        0.014157544821500778
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_rain_steady_loop.ogg",
+      "sha256": "6532c2d8e9bea21db7d1bfb20e6dee32255b665febd942e90f7ed93261ab0ca4",
+      "frames": 594194,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 12.379041666666666,
+      "codec": "VORBIS",
+      "peak": 0.783083438873291,
+      "rms": 0.03635009827648127,
+      "first_frame": [
+        -0.023201389238238335,
+        -0.02419339492917061
+      ],
+      "last_frame": [
+        -0.026537777855992317,
+        -0.026536818593740463
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_thunder_distant_01.ogg",
+      "sha256": "0766fd8be2fa11580e7e00c5fafbd633e0db1df7a0eec9578a38c4521373d889",
+      "frames": 525375,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 10.9453125,
+      "codec": "VORBIS",
+      "peak": 0.7985217571258545,
+      "rms": 0.07026967247566691,
+      "first_frame": [
+        -1.1240969115533517e-06,
+        -1.2412185697030509e-06
+      ],
+      "last_frame": [
+        -3.1800928468328493e-07,
+        1.2619570952665526e-06
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_thunder_heavy_01.ogg",
+      "sha256": "8b1560674b2e73dcc29523f734b8c8f81b4982dad55f5c9d3c100ce133427093",
+      "frames": 538947,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 11.2280625,
+      "codec": "VORBIS",
+      "peak": 0.6538922786712646,
+      "rms": 0.08142849143592161,
+      "first_frame": [
+        1.0566720447968692e-05,
+        3.618936534621753e-05
+      ],
+      "last_frame": [
+        1.3321967344381846e-05,
+        -6.5014910433092155e-06
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_thunder_roomy_01.ogg",
+      "sha256": "58e1c9848a229d0b84fb00527ac2c336bb44c725d1186612a8a508caaa6c723e",
+      "frames": 574975,
+      "channels": 2,
+      "sample_rate": 48000,
+      "duration_seconds": 11.978645833333333,
+      "codec": "VORBIS",
+      "peak": 0.6475614309310913,
+      "rms": 0.06518735749730083,
+      "first_frame": [
+        -4.194344728603028e-05,
+        3.236038173781708e-05
+      ],
+      "last_frame": [
+        3.764533903449774e-05,
+        5.461112596094608e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_wind_loop.ogg",
+      "sha256": "e9c124e92093557e77c5775becd153ec1529b5005561b826b9f1f2469de48caf",
+      "frames": 899894,
+      "channels": 1,
+      "sample_rate": 48000,
+      "duration_seconds": 18.747791666666668,
+      "codec": "VORBIS",
+      "peak": 0.7960644364356995,
+      "rms": 0.10587364952431448,
+      "first_frame": [
+        0.03288878872990608
+      ],
+      "last_frame": [
+        0.02597641944885254
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/doors/ca_door_large_open.ogg",
+      "sha256": "ad173418a31d51d7c8458c971ce93e5bedfc628dcf16fbd8ba6354089759e1fe",
+      "frames": 30554,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 0.6928344671201814,
+      "codec": "VORBIS",
+      "peak": 0.961909294128418,
+      "rms": 0.10572457880240811,
+      "first_frame": [
+        -1.3154556199879153e-06
+      ],
+      "last_frame": [
+        -9.444150782655925e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/doors/ca_door_locked.ogg",
+      "sha256": "fb09ab075871f4e202d2d1fa8fc6893595509ef0cd5750e91bc8e1abde2a7700",
+      "frames": 44032,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 0.9984580498866213,
+      "codec": "VORBIS",
+      "peak": 0.3410780727863312,
+      "rms": 0.033406629747900644,
+      "first_frame": [
+        0.0,
+        0.0
+      ],
+      "last_frame": [
+        -0.0037270430475473404,
+        -0.0037270430475473404
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/doors/ca_door_open.ogg",
+      "sha256": "a70991b3c9eed1cd115a393356d8a4217476a34b27ede67283ba9bb871aa0f69",
+      "frames": 13504,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 0.30621315192743764,
+      "codec": "VORBIS",
+      "peak": 0.27495408058166504,
+      "rms": 0.02961340546246699,
+      "first_frame": [
+        -0.0029986663721501827,
+        -0.0034631050657480955
+      ],
+      "last_frame": [
+        0.002541734604164958,
+        0.0025538611225783825
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/fire/ca_fire_loop.ogg",
+      "sha256": "10bd0a733b2c7cddd6405958d80b23c6bdb44871a5ffc558c2f43ed121e59a80",
+      "frames": 103475,
+      "channels": 1,
+      "sample_rate": 44100,
+      "duration_seconds": 2.3463718820861676,
+      "codec": "VORBIS",
+      "peak": 0.5871546864509583,
+      "rms": 0.06873239833205555,
+      "first_frame": [
+        -0.018558062613010406
+      ],
+      "last_frame": [
+        -0.025229673832654953
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/hazards/ca_rock_roll_loop.ogg",
+      "sha256": "69f991860ee463e4232051294c594bc8d2bc0006d480a48dd39b4c8246c3f32c",
+      "frames": 182400,
+      "channels": 1,
+      "sample_rate": 48000,
+      "duration_seconds": 3.8,
+      "codec": "VORBIS",
+      "peak": 0.4989035725593567,
+      "rms": 0.0454202174918007,
+      "first_frame": [
+        0.0510527566075325
+      ],
+      "last_frame": [
+        0.044926807284355164
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/mechanisms/ca_lever_activate.ogg",
+      "sha256": "05db244a4f6e91dc0779cca2838f0e5bc2fd3cc136bf66f7d9d2f26898203f76",
+      "frames": 7386,
+      "channels": 1,
+      "sample_rate": 48000,
+      "duration_seconds": 0.153875,
+      "codec": "VORBIS",
+      "peak": 0.503465473651886,
+      "rms": 0.036865193143814076,
+      "first_frame": [
+        6.538627985719359e-07
+      ],
+      "last_frame": [
+        1.0098035090777557e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/seals/ca_quintessence_seal_activate.ogg",
+      "sha256": "3e53be8b8f3fe5d53aaea527ae55d70dc2f489b629169f98c1f0baa67add8178",
+      "frames": 226164,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 5.12843537414966,
+      "codec": "VORBIS",
+      "peak": 1.004582405090332,
+      "rms": 0.19193865715595684,
+      "first_frame": [
+        2.509159912733594e-06,
+        -0.00045583100290969014
+      ],
+      "last_frame": [
+        5.8854417147813365e-05,
+        -1.1408104910515249e-05
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/seals/ca_quintessence_seal_deactivate.ogg",
+      "sha256": "30f481eac713c23090e2f81648b9b39bcca0305b1dd838e7358021d6521f9720",
+      "frames": 226164,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 5.12843537414966,
+      "codec": "VORBIS",
+      "peak": 1.0244581699371338,
+      "rms": 0.19203063242208787,
+      "first_frame": [
+        -6.0454192862380296e-05,
+        -2.7183754355064593e-05
+      ],
+      "last_frame": [
+        -0.00010337292769690976,
+        -0.00048063197755254805
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/weather/ca_rain_loop.ogg",
+      "sha256": "4a205e9b1c685b48679bfab3109f0c3e319d48df5918b9b6bb54d688b0fbb2a1",
+      "frames": 295661,
+      "channels": 2,
+      "sample_rate": 44100,
+      "duration_seconds": 6.7043310657596376,
+      "codec": "VORBIS",
+      "peak": 0.1186523362994194,
+      "rms": 0.007148169123095728,
+      "first_frame": [
+        -0.0002830627781804651,
+        -0.00044780236203223467
+      ],
+      "last_frame": [
+        -0.009169106371700764,
+        -0.009390022605657578
+      ]
+    }
+  ],
+  "errors": [],
+  "container_differences": [
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_fire_loop.ogg",
+      "advertised_frames": 883200,
+      "decoded_frames": 879326,
+      "ffmpeg_frames": 879326,
+      "ffmpeg_sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+      "qualification": "Both decoders finish without errors and agree on output; retain original bytes and record actual decoded duration."
+    },
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_rio_waves_loop.ogg",
+      "advertised_frames": 734400,
+      "decoded_frames": 729782,
+      "ffmpeg_frames": 729782,
+      "ffmpeg_sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+      "qualification": "Both decoders finish without errors and agree on output; retain original bytes and record actual decoded duration."
+    },
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_sewer_water_loop.ogg",
+      "advertised_frames": 374400,
+      "decoded_frames": 373986,
+      "ffmpeg_frames": 373986,
+      "ffmpeg_sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+      "qualification": "Both decoders finish without errors and agree on output; retain original bytes and record actual decoded duration."
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_rain_steady_loop.ogg",
+      "advertised_frames": 595200,
+      "decoded_frames": 594194,
+      "ffmpeg_frames": 594194,
+      "ffmpeg_sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+      "qualification": "Both decoders finish without errors and agree on output; retain original bytes and record actual decoded duration."
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_thunder_distant_01.ogg",
+      "advertised_frames": 528000,
+      "decoded_frames": 525375,
+      "ffmpeg_frames": 525375,
+      "ffmpeg_sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+      "qualification": "Both decoders finish without errors and agree on output; retain original bytes and record actual decoded duration."
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_thunder_heavy_01.ogg",
+      "advertised_frames": 542400,
+      "decoded_frames": 538947,
+      "ffmpeg_frames": 538947,
+      "ffmpeg_sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+      "qualification": "Both decoders finish without errors and agree on output; retain original bytes and record actual decoded duration."
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_thunder_roomy_01.ogg",
+      "advertised_frames": 576000,
+      "decoded_frames": 574975,
+      "ffmpeg_frames": 574975,
+      "ffmpeg_sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+      "qualification": "Both decoders finish without errors and agree on output; retain original bytes and record actual decoded duration."
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_wind_loop.ogg",
+      "advertised_frames": 902400,
+      "decoded_frames": 899894,
+      "ffmpeg_frames": 899894,
+      "ffmpeg_sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+      "qualification": "Both decoders finish without errors and agree on output; retain original bytes and record actual decoded duration."
+    }
+  ]
+}

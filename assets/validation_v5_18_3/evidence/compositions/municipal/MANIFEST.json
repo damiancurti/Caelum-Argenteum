@@ -1,0 +1,806 @@
+{
+  "issue": 886,
+  "author_acceptance": false,
+  "runtime_sha256": "5efdaab15f60e793367bda1617e2cf367159c7b0356e74f439f928f4a5820253",
+  "inherited_sha256": "c0fd4ee810407a1c4710207f678d6b45961f142ef936b5d1cf58110ae6aeb6d1",
+  "builder_sha256": "4b808b1ee28c40b05a452c6aa2a255ec2ecadfe75998be702b5ca426d9a244d5",
+  "config_sha256": "a468e62a474bb0e7f069bbd81fb40b55271918961cb8856e39970586809d07a3",
+  "sources": {
+    "assets/barracas_redesign/LAYOUT.json": "4ac292be6105b2926669a7f93b43fe5f0643f73e8610ef18c02bfdc0aa3f4aed",
+    "assets/map06_port/CITY.json": "d251e8aff3fb4f7c30c94e176b10eb95cd1a00e888c1a53f3846160d7e0e6d35",
+    "assets/map06_port/INTERIORS.json": "340df2d2f9a5df6e2e7e7d05d1adf8528b3a0b18e4f47783783e32dcf95913ef",
+    "assets/art_source/study_furniture/DATA.json": "6bb63a10b4051290733481c8953b0d79ac709c5d42398cd3b5c581d8015c5b5f",
+    "assets/art_source/basic_rest_furniture/DATA.json": "45d2f7d6a95f2bf0ea965bcdf206f108a77981bc11cadf7f6a3f2855804a1986",
+    "assets/map01_mansion/READING.json": "d0217cc71b2438ca5641b9de3010bfbc13ec119c6900ea060d28fc49cafa62bd",
+    "assets/references/issue_454_maps_20261112/README.md": "943c3f331d2b7647555ed2c799a6a8c85023286a5a79a27c0edc3a6f5a879bf4"
+  },
+  "source_map_sha256": "a64f90142ce8fd43b10714b9f06ff526af114721f5bb1fe8f8be8db939a6ebb3",
+  "candidate_map_sha256": "004fd24b1ccb7bd172fa378b0288d642aad0aa6fb86b998d7f90db7269f5886e",
+  "source_checksum": "7ad2fd5a73065dfdc435119c806a8a0c",
+  "candidate_checksum": "b9e9c82d3ba489f368cf286c942913d4",
+  "default_checksum": "f552012c9d4d7a2ba59d0809894ad272",
+  "original_textmap_prefix_unchanged": true,
+  "original_things": 651,
+  "added_things": 42,
+  "geometry_counts": {
+    "vertex": 37177,
+    "linedef": 38464,
+    "sidedef": 74142,
+    "sector": 392
+  },
+  "civic": {
+    "id": 7,
+    "kind": "shop",
+    "bounds": [
+      -18560,
+      -2560,
+      -16064,
+      -320
+    ],
+    "lot": [
+      -18560,
+      -2560,
+      -16064,
+      -320
+    ],
+    "tag": 1028,
+    "wall": "CVCI02",
+    "floor": "CVCI06",
+    "stage": 3,
+    "shop_index": 0,
+    "angle": 0,
+    "district": "municipality",
+    "original_bounds": [
+      -17152,
+      -12544,
+      -16384,
+      -11904
+    ],
+    "civic": true,
+    "original_door_y": -12288
+  },
+  "courtyard": [
+    -17984,
+    -2048,
+    -16704,
+    -896
+  ],
+  "office_bays": [
+    {
+      "name": "office_1",
+      "bounds": [
+        -18496,
+        -896,
+        -17920,
+        -384
+      ]
+    },
+    {
+      "name": "office_2",
+      "bounds": [
+        -17920,
+        -896,
+        -17344,
+        -384
+      ]
+    },
+    {
+      "name": "office_3",
+      "bounds": [
+        -17344,
+        -896,
+        -16704,
+        -384
+      ]
+    },
+    {
+      "name": "office_4",
+      "bounds": [
+        -16704,
+        -896,
+        -16128,
+        -384
+      ]
+    }
+  ],
+  "dimensions": {
+    "desk": {
+      "width": 57.088,
+      "depth": 28.864,
+      "height": 24.8,
+      "radius": 31.985036501464243,
+      "class": "CA886SceneDesk",
+      "editor": 31801
+    },
+    "chair": {
+      "width": 13.76,
+      "depth": 14.08,
+      "height": 28.16,
+      "radius": 9.843576585774095,
+      "class": "CA886SceneChair",
+      "editor": 31802
+    },
+    "shelf": {
+      "width": 60,
+      "depth": 20,
+      "height": 72,
+      "radius": 30,
+      "class": "CA886SceneShelf",
+      "editor": 31803
+    }
+  },
+  "positions": [
+    {
+      "kind": "shelf",
+      "point": [
+        -18304,
+        -414,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_1"
+    },
+    {
+      "kind": "desk",
+      "point": [
+        -18304,
+        -479.98503650146426,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_1"
+    },
+    {
+      "kind": "chair",
+      "point": [
+        -18304,
+        -533.4570365014642,
+        0
+      ],
+      "angle": 270,
+      "zone": "office_1"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18112,
+        -414,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_1"
+    },
+    {
+      "kind": "desk",
+      "point": [
+        -18112,
+        -479.98503650146426,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_1"
+    },
+    {
+      "kind": "chair",
+      "point": [
+        -18112,
+        -533.4570365014642,
+        0
+      ],
+      "angle": 270,
+      "zone": "office_1"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -17728,
+        -414,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_2"
+    },
+    {
+      "kind": "desk",
+      "point": [
+        -17728,
+        -479.98503650146426,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_2"
+    },
+    {
+      "kind": "chair",
+      "point": [
+        -17728,
+        -533.4570365014642,
+        0
+      ],
+      "angle": 270,
+      "zone": "office_2"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -17536,
+        -414,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_2"
+    },
+    {
+      "kind": "desk",
+      "point": [
+        -17536,
+        -479.98503650146426,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_2"
+    },
+    {
+      "kind": "chair",
+      "point": [
+        -17536,
+        -533.4570365014642,
+        0
+      ],
+      "angle": 270,
+      "zone": "office_2"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -17152,
+        -414,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_3"
+    },
+    {
+      "kind": "desk",
+      "point": [
+        -17152,
+        -479.98503650146426,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_3"
+    },
+    {
+      "kind": "chair",
+      "point": [
+        -17152,
+        -533.4570365014642,
+        0
+      ],
+      "angle": 270,
+      "zone": "office_3"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -16960,
+        -414,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_3"
+    },
+    {
+      "kind": "desk",
+      "point": [
+        -16960,
+        -479.98503650146426,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_3"
+    },
+    {
+      "kind": "chair",
+      "point": [
+        -16960,
+        -533.4570365014642,
+        0
+      ],
+      "angle": 270,
+      "zone": "office_3"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -16512,
+        -414,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_4"
+    },
+    {
+      "kind": "desk",
+      "point": [
+        -16512,
+        -479.98503650146426,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_4"
+    },
+    {
+      "kind": "chair",
+      "point": [
+        -16512,
+        -533.4570365014642,
+        0
+      ],
+      "angle": 270,
+      "zone": "office_4"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -16320,
+        -414,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_4"
+    },
+    {
+      "kind": "desk",
+      "point": [
+        -16320,
+        -479.98503650146426,
+        0
+      ],
+      "angle": 90,
+      "zone": "office_4"
+    },
+    {
+      "kind": "chair",
+      "point": [
+        -16320,
+        -533.4570365014642,
+        0
+      ],
+      "angle": 270,
+      "zone": "office_4"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -2016,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1952,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1888,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1824,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1760,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1696,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1632,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1568,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1504,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1440,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1376,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1312,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1248,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1184,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1120,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -1056,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -992,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    },
+    {
+      "kind": "shelf",
+      "point": [
+        -18466,
+        -928,
+        0
+      ],
+      "angle": 180,
+      "zone": "archive"
+    }
+  ],
+  "models": {
+    "desk": {
+      "sha256": "85d07a7a7583440ef1de27fc73f0478f1753018cecbebdb323805d655744dc70",
+      "bytes": 20167,
+      "vertices": 312,
+      "triangles": 156,
+      "material_sections": 2,
+      "render_radius": 32,
+      "bounds": [
+        [
+          -28.544,
+          28.544
+        ],
+        [
+          0.0,
+          24.8
+        ],
+        [
+          -14.432,
+          14.432
+        ]
+      ]
+    },
+    "chair": {
+      "sha256": "a2531e42c20dc717dcbef74ec039cdb3f7cd01bcf2ae75eb1a1b61f3796f336b",
+      "bytes": 19490,
+      "vertices": 312,
+      "triangles": 156,
+      "material_sections": 1,
+      "render_radius": 10,
+      "bounds": [
+        [
+          -6.88,
+          6.88
+        ],
+        [
+          0.0,
+          28.16
+        ],
+        [
+          -7.04,
+          7.04
+        ]
+      ]
+    },
+    "shelf": {
+      "sha256": "6a3872d5fba1309fb03ab9340ef201b2134088640efa5e5b9945ce7fd3ace549",
+      "bytes": 196735,
+      "vertices": 3048,
+      "triangles": 1524,
+      "material_sections": 4,
+      "render_radius": 32,
+      "bounds": [
+        [
+          -30.0,
+          30.0
+        ],
+        [
+          0.0,
+          72.0
+        ],
+        [
+          -10.0,
+          10.0
+        ]
+      ]
+    }
+  },
+  "total_instance_triangles": 42120,
+  "package_sha256": "b510512be4638c7ff396df490c942bb3c1bdcff622e299e70ec497a6b177e916",
+  "package_bytes": 56536617,
+  "members": {
+    "LANGUAGE": "b519e0ced6211a0926a85173adddbec1ecf7082ec7d59473dc54f2ac58ee2730",
+    "MAPINFO": "1dd1f1b090eaae278b391ebcb0f50d91e21dc9c45efc10021d1156e6702eaa10",
+    "MODELDEF": "117a0e1e470e12a7b176e33fa7447e46d2c904aa681ee23ea509c06aacb525ee",
+    "TEXTURES": "8ac6f58f9ed70923dba0c1808a104773ceda0ccebe085a550057ec24614aa93f",
+    "ZSCRIPT": "9dde48052fc374a371a542a0e2569905ddd106853ca4005c2b968d771439f216",
+    "caelum/data/CaelumJusticeGeometry.zs": "34ff9cf2c969608dfa87d742f7f4ca0ba5e56eddcf0789e77d68068e3ec90922",
+    "graphics/caelum/review847/brick-v1.png": "a4ba1734835ccdfe4768a0c5ee706e0865d27423aacbdde68102a7120a8fcae8",
+    "graphics/caelum/textures/entornos_v1/mejoradas/CMEX01.png": "54b60ae5b4dda073bc6c2cb56da6b0666a72556059a3dc3d4eba895e57e7ce98",
+    "graphics/caelum/textures/entornos_v1/mejoradas/CMEX04.png": "e42da1a288e1511a84ab0581dfe7e3c42bc3e8a74b23e4c440428402a4b607ec",
+    "graphics/caelum/textures/entornos_v1/mejoradas/CMGR01.png": "1f9cef646e051960b7277aa88b0d7ea41f7fca9d6212fcd728cff5c027492493",
+    "graphics/caelum/textures/entornos_v1/mejoradas/CMGR02.png": "555467b7232bd8a6bfa792a56e972ca20c8678e5a4296400e8c54b39970f08b3",
+    "graphics/caelum/textures/entornos_v1/mejoradas/CMST01.png": "5a99180c563a1f45e4ee78accf8507ab39441076aa90eabb34f91992e4039297",
+    "graphics/caelum/textures/entornos_v1/mejoradas/CMST02.png": "ac0874f6e51d41cc3f026e2be415c3cbc495a539a3c904befbfe433091205f87",
+    "graphics/caelum/textures/entornos_v1/mejoradas/CMTB04.png": "972fe9427805fd34daa761326f773e93e6cb1d42cf0aa71264d7d3de5adda0aa",
+    "graphics/caelum/textures/entornos_v1/mejoradas/CMWD01.png": "f93949046493c66aa77cb4015ebfa955dff539192009b74fbb4ceb13704dd1fc",
+    "maps/CAH000.wad": "1622e11a380c06134956525e5f94c868fc50bbb3e8f9cab4b0103eb108d82009",
+    "maps/CAH001.wad": "e1dd21be83357f8063ee945ecf4337d1c696fcc4da822372c2b70247d61bbb51",
+    "maps/CAH002.wad": "46fab0df8b94973b5578b59f6a42a205bb6132752a0f8ea16081da63b233e1c9",
+    "maps/CAH003.wad": "3bdf71ba0c3b1afbd57c02e1c40544a91133e90afbc28aca13653ee3599f86d3",
+    "maps/CAH004.wad": "187a64d8b93b820e9845eee771073ea5c19f67b695862a1d0bbab044821c12ff",
+    "maps/CAH005.wad": "f52169b196b06eb1149ffb34051fb37d160c439c6eb7f81dc3f498d384822fa2",
+    "maps/CAH006.wad": "5a61dce94125444a3169f4c9b33ddc392113154d1953ebb20f5d5106c6a9ab0d",
+    "maps/CAH007.wad": "b14f6d3249f4fe31836b495593992378fdc421d84252054121a81518bc956618",
+    "maps/CAH008.wad": "8b591f8acbb20b626bbe8a9d99fee075fb6d081f0d6ab4946ef1a417672573b0",
+    "maps/CAH009.wad": "2e9a79910099f819465435881076da26d9e932316a5b9a2aff63da6829d236ac",
+    "maps/CAH010.wad": "ff0681d8ba4d8c848bac8b950a0457c1e751c457da285deac508bea6c253958d",
+    "maps/CAH011.wad": "cda47a1be5c79b1ff22abd271534cd1ab3f68cd141392d9a8c7569d496ae86e0",
+    "maps/CAH012.wad": "935b5b96f9b932e8a969d79b8939df1a9bfc47d55707a65a6274abb77bdaeb78",
+    "maps/CAH013.wad": "b395bdebd63602af971105366f715f1c04d2e55583c69386c7378415cf9ff8d9",
+    "maps/CAH014.wad": "bc47207c7de56820b61f4bb8862c023b2776c9bc71a6d1007a2945825989bf0a",
+    "maps/CAH015.wad": "ed44592eda16b4a56ae61d7dbd4f7c2697dccfb9ce73bb2a77921a7c4acfed2c",
+    "maps/CAH016.wad": "e14b0e7e1e099b777e69c4cf8dd4ab82c22ae8eb4936a38bbe29ab4eb8dda699",
+    "maps/CAH017.wad": "1257a11b766d8093a78221040f90968ee05abe236c26268956f3be4089d03936",
+    "maps/CAH018.wad": "3e0cbd2b3dee99c6a891002e9d5ad1fe0067608ce7ee4b8d38e8c170b3d44938",
+    "maps/CAH019.wad": "167db6bf5b8796d65c844d290836ac1003e3a0a5e14fb806bed2d503c03b8eac",
+    "maps/CAH020.wad": "9907a47ce0715aa0ae77920d1a8257760364c9578f9309ac60b4b34330467096",
+    "maps/CAH021.wad": "e97ac9f85bb6ad01b7f71c59c2b30420efb0b312fee87c8870c660153777524b",
+    "maps/CAH022.wad": "b4dd9ccea6f7bcdf5b82f769050e7aa0163c3c6f47279fc4dd5274130a055787",
+    "maps/CAH023.wad": "d0915424c0e814831a8050d30760fa1c7cb0e8a0f77ed8d1ca0a83cf9c5d292d",
+    "maps/CAH024.wad": "fab79f6f6557038e6b372ad9b0f3c5598c1f7eafacbaa57fe4d59cf2a7153cbe",
+    "maps/CAH025.wad": "b1abf0c0997b62b0851334a5dc4f2bb84d01f6d69bc6847b8af15f2a2817facb",
+    "maps/CAH026.wad": "de1295e98d627d8c41a705eef77f30ab14906256f3bc9d589c1759e63e7deb71",
+    "maps/CAH027.wad": "b955293aaf2386326f4c77e2ea5fe842ccf9e2edb0b0556aed7570e55e3b4f10",
+    "maps/CAH028.wad": "9f2b32e52f5c7acafc4a11170298c1626744f6fd9f7d0e74d796d116b8a8354b",
+    "maps/CAH029.wad": "633736a1e8aec34ab443a6e08d55a0855c11964ebc24caf5604eb7e9fc625d71",
+    "maps/CAH030.wad": "d2114fac4a7f766f9ce22f30bebc8fbc89dc3aa0a272d7c24e136fa555282168",
+    "maps/CAH031.wad": "70ed556f1b2b298416b2fed477871ba00181bcae4c0ed54167712587ad8a0ef4",
+    "maps/CAH032.wad": "19158d9afd39a884db02779d214fd60a5b2698ce6b12e34c890e82cda08244db",
+    "maps/CAH033.wad": "a24b71c706639fba9c74a3f4647934282c797b64750a3b7e5e4986c54873246a",
+    "maps/CAH034.wad": "844039daa2acf5733b36ddf0874eecc4b82a6fe9e1fc540ce6e35ffd1b56269d",
+    "maps/CAH035.wad": "ee81eb073e9cc6a505877a6d7640c907c051adac737bdcb2e398702c7c08fd02",
+    "maps/CAH036.wad": "5bc09d40046b41f84719dd5c314526fa13dcda76b11ffce1af0601cd26875211",
+    "maps/CAH037.wad": "cfa262ece352f11f97f1a7126d027a3a96b5073ec36f30c58a9b5b4d55557d29",
+    "maps/CAH038.wad": "5a9263fb6d91d1b75ba997e8a2eb02f6b4585536bf250ae3bc6249ead70b2e1a",
+    "maps/CAH039.wad": "d34c3e2f385a9a70aa8132f7a0e8bbb4229767b3c0d3a8b7fcb39955e114dc0a",
+    "maps/CAH040.wad": "9e1d1b3ed31d79bc9807fcf251e4f2e89e7a59e28bcc993286a970ee4a3f3bc1",
+    "maps/CAH041.wad": "ea854accb9ae110f27e7979dea3f3f92f881423ba542e371d8184b57cdb34799",
+    "maps/CAH042.wad": "eb1c1e265032b139ee5b02e7ab0c3ced76ae5c69ee0dee109a5b481341ce1263",
+    "maps/CAH043.wad": "5d76b2ae9dd4022f337e4526c64d6992414e73ea97023af59ccfbea91cb7495f",
+    "maps/CAH044.wad": "836e2bbba489789bbf6ec20ac9b2793977532e72720938147df3912f15abeed1",
+    "maps/CAH045.wad": "1662e92c44597c050b1e1c9ca494b8ab608feaf78c854c4cd26d6a5352ffc616",
+    "maps/CAH046.wad": "f0bbbdd875fb26fc344abc4b7935fd40da4904b0cf7cc3c681b224ba3870a023",
+    "maps/CAH047.wad": "f5357be2f14c0432569583ca7c599f6a013cf73dd4c396fbfcb699841c89bd9f",
+    "maps/CAH048.wad": "56b27d6617074271017dcdab67b120d9107414a5827d253fcda9a27b3355a281",
+    "maps/CAH049.wad": "235d6ac3c863c3a6ddeb8a3d751fae8478402cbc6bd1fa0099fa35de4337998e",
+    "maps/CAH050.wad": "54df950049d24fd94de02a360510ab56ee2b390b7e7198b9a9f8a010883356fa",
+    "maps/CAH051.wad": "bdd6e901fa8b5661ff88a3de10c5d062c78d3156b3616e1074d9fce237ec1402",
+    "maps/CAH052.wad": "d00dd78ee8652b2d328b609e722e2f1ac66ed6c53fcc9f4c6ee12d5f5548e1f2",
+    "maps/CAH053.wad": "62051849ba275661b4e6e3f1159a40fa29538218748efa4f5e7d48aaba4a988d",
+    "maps/CAH054.wad": "c6b91ed751885a4a1b208b64d6a73de84fe750ddbc282a3c55962a03b2bb9982",
+    "maps/CAH055.wad": "4cbf1e48d5436029fe4f18788424dd2bda4177047b38964b5f90cb99fa053928",
+    "maps/CAH056.wad": "4632df499f33a39707ef5bc0df3ba5cf54db8706703bb43e786763720a889cf4",
+    "maps/CAH057.wad": "5e3875f179e076bd8f475e2057c00572b6290c2040b09b6078f02ffe0efdfbb6",
+    "maps/CAH058.wad": "f93d085da49b098026e8eb7f0a3e23b56b66475287d5dc915f3b8b0173272f2b",
+    "maps/CAH059.wad": "54a533de882fee55664ad23d4e62182fb26af90955e1974f319cec2924cbcbde",
+    "maps/CAH060.wad": "935d360f759369a54815fcdda5e4061d64259a8aad1d824b97ddbca8155560c9",
+    "maps/CAH061.wad": "f499a622ec40a238513d0dfbbb95464a1b853f32dd7d97097bc8e1636a46708a",
+    "maps/CAH062.wad": "5525fec47fb5469623dae94b2444b77c1140d9817446fdd283b458b4f93e3818",
+    "maps/CAH063.wad": "a95439e5be43e61f5e4adbb114b7ae5c5688f70b9b2cd8a6d84156d2fc025eba",
+    "maps/CAH064.wad": "e84c354f318b6b7c5eeaac4ef0c5532dabe49162de8117d9b170dfa8f2220ec7",
+    "maps/CAH065.wad": "76dd13cb48adec7c67ce3676de52f012c8af0325496386c1d96885dba173f4e8",
+    "maps/CAH066.wad": "9163579f8967e5e55c2c88fc340c1660ac1681937faf2d2ee497c1008c9aecd2",
+    "maps/CAH067.wad": "083e4f18cda5af2d23a2450dff330bf600dd388dc13717146c13214fa49d6e26",
+    "maps/CAH068.wad": "5a000a9dd507ce9497794a178a0ee0ee7ad892c87ec4f4e6aeb69355445f7ba6",
+    "maps/CAH069.wad": "b38480dedfd8c36eced4bcbab0c76185f7e4c42a2bcb7bd79cf2d94212669991",
+    "maps/CAH070.wad": "3ad671870d20cff6c182268e4cf044ab9da60c534569ec33771cab6a744158b8",
+    "maps/CAH071.wad": "0bed9f521da3f15448017de7c8f51a748a88dec39cdaa172a75eafbda2e9596b",
+    "maps/CAH072.wad": "f81a4329ccbb75b3a921290fe109e5cc857b7d6cf0c609d138b89813dd7f517e",
+    "maps/CAH073.wad": "b973e7e6a88dcba390028eef1c451c8d44ddf27e23a6be11b0b8d1dd7d3c93a4",
+    "maps/CAH074.wad": "05af284ef63c4d5af54bb8aabb7f01f14ca3c4248f05682a119b7c833ce7f518",
+    "maps/CAH075.wad": "9efdfde577c8da7c6608267cab2d9dca81e493f0ffcea19ed0b8cdd940d8360e",
+    "maps/CAH076.wad": "9c37d21dd623aee073a886fdb042e7bab2595acc3ba5eb342e894d2b9d21228e",
+    "maps/CAH077.wad": "42e573f3564af75643fdd9eef5db9996b5a00dfa8c3eaa85d64409668f29e10e",
+    "maps/CAH078.wad": "aa6925d7375e822dab04eaf3e22ab3b533df393743bc447acbfd62e3cb99577a",
+    "maps/CAH079.wad": "bdc272d83ba2ca33edac116759278fb81a3408ba653f2f80cc9695af84b79b81",
+    "maps/CAH080.wad": "926d8daede4fcb7c41d26d709f394f37506e186241c2e4fc00e53c9e9a650cb1",
+    "maps/CAH081.wad": "5a4e9fa6c893f4f8817dd37b526a715d9a3b37c77d211f34a0f82ea8c0536403",
+    "maps/CAH082.wad": "ce7d5e5b1343f3bd8c61bbf85a9334de88927ebb515c204cba2f07ed2dde6590",
+    "maps/CAH083.wad": "cfc86b8f3bc5a61dbac482742f874ca0d0a6a53e33d0b07f036cd75e73492426",
+    "maps/CAH084.wad": "f80273519caba815e9b3b584a87ee9f5e168254291a326215c55cac1b622714c",
+    "maps/CAH085.wad": "34fcf63814b24cac08509cd98cfc410ad2aed2e5c9d524c01b1c76ed28fc8a59",
+    "maps/CAH086.wad": "784a5b9a2924656839224dbd04f7de0ab2c76759c65d1d1846b1194c681d9d9b",
+    "maps/CAH087.wad": "abf51f8b9a4fb195318400f6ed731eb44c8fa867b3a218c68a4fa71d74685102",
+    "maps/CAH088.wad": "ea9f04e887c64b8d4d7a9bc3cfd841228babc65267d764f9ecf058a19ae85f2d",
+    "maps/CAH089.wad": "fafc903afe1219dfe58a8e8bc2714dbbe6c1f7be43a046ee4375342ffeea6d75",
+    "maps/CAH090.wad": "db6c10ca217d70f3fc1f8387668592ea6a984179b153c68e5e43e2da8832e94a",
+    "maps/CAH091.wad": "ecf369edefc8d589fb2ff11f0418d48b01fea3d11df5c58263a84f802abf956b",
+    "maps/CAH092.wad": "f5e82a94cf058aeb29143106653b3dad607f0f76d56bf68affb72d71e3e8970a",
+    "maps/CAH093.wad": "adaf1d25e4af7561f396421bb59536e0c11cb4d193a73bac16842d24b231e531",
+    "maps/CAH094.wad": "0dd9d71daa3844ebe78d5a32a5b4ca4205159a140f084251841780f830a6deb9",
+    "maps/CAH095.wad": "9347883cb157a94b58fc9466d2408e3d9422bee24a01f8014a258984b41e5a8f",
+    "maps/CAH096.wad": "ccbf93c55e2c4d0b2ad77c42628bc5a4d57bd5013bcf69de596dabbf6e264c0a",
+    "maps/CAH097.wad": "198c63df4e307b6d1c660fe48d7c88a7e1f730acb2853be36fd781e2597be57f",
+    "maps/CAH098.wad": "a04273e8652d86e87653231f775df9f5359559d1e611dcc4ae47489bb0e36102",
+    "maps/CAH099.wad": "849f6fd73ac18ef59551be3e0dbad376e0f4f37d927b1b5cae79d3b4406b5754",
+    "maps/CAH100.wad": "b71782c83876de764c79ff93a7e461d3cbf672afd2b5d77dd5c01e8a7716a14f",
+    "maps/CAH101.wad": "86745f04a2bca453d26e92b0ad3abc76f1d1b4f721bebccf76c186e5c97d6690",
+    "maps/CAH102.wad": "d135d006b9ba257a5ad51f850176fe135f7faaccf0a863f7288bd880452ce8de",
+    "maps/CAH103.wad": "600788dbaebb59cd4ec14805947d4e9284a4378445659a7aac4c0f3ff0d47d7d",
+    "maps/CAH104.wad": "3f8d664b381e7a7a8a8ff451ec68919fc483e5446d040caa97b39c53666257fd",
+    "maps/CAH105.wad": "69e5b8041a0b7673c5c51945607c076cbd6467e1f49c3fe2584e547968b9d9b4",
+    "maps/CAH106.wad": "81b64efcd499c73faac267eeb801eaf66c5db861e759c34246c1ae5b9a013ab8",
+    "maps/CAH107.wad": "a2660b785f820dac15ae5cd198c568bd970da9a6bd07ba1269af0f2d27e16a2d",
+    "maps/CAH108.wad": "6e02ed905e6ae53720b3c4ac8875471b61cba4272c695ad8240491ec08c99442",
+    "maps/CAH109.wad": "49e81f6c834418b0af40935b49734a17ce7a1f68283da15fb289924f01e16c5a",
+    "maps/CAH110.wad": "715c2dcdd78521a9c7a0e19c6a1327f03fbed34a4fa5fd2822b9794ce36f221c",
+    "maps/CAH111.wad": "c3701a738a1cb924eccda13e6cf1622e80581db822c61fe353b8e0593d374132",
+    "maps/CAH112.wad": "686ad14a60671f6603ad59dd137222636f70c10172dee5f401a1c2695bbf5e4b",
+    "maps/CAH113.wad": "4c10303119bc6b2df0e2c9580511293abb85a8533469f72e354619113607b493",
+    "maps/CAH114.wad": "042ae4d0357254cda1596412f4624bb8b63b2a7e025c2a557b93ebdb155be6dc",
+    "maps/CAH115.wad": "942babbe8f80683f40ae18c1dfb6369236bee957b04ce7c920f2bfe9dfcab3b5",
+    "maps/CAH116.wad": "a75ccfb52939e0bc80b2491a9eb3245c2de28656d5bc31f8175a6170f17cbfa6",
+    "maps/CAH117.wad": "bcaa8137593593999d4f1e46c3fb4cfeccbe8503e073b9629bf3474a9be2ca51",
+    "maps/CAH118.wad": "d176b9b74edad81ec821277c22c8d901376975bb57fae8254ac360194b0a793b",
+    "maps/CAH119.wad": "8a274105f3233d06fbba186d3ea871b34066700394d751450c64ed1a9e9591c0",
+    "maps/CAH120.wad": "1d3f38f69995292091f8a2237add1746d262bf76816e2c40bbefc76a640eb5c3",
+    "maps/CAH121.wad": "e043deb67eb3dce7ea315b2d5dbd367d32c806a3485a2306f888b1496ca1be86",
+    "maps/CAH122.wad": "e1f959aac8876aa8909d6eabbaeb871e2b419f0b77dd8c5e2a7c0d1e102f0632",
+    "maps/CAH123.wad": "552c0d66cc1c25c22510af4f28e7d7a30f2dda1a33099205b6e285ec88ca3652",
+    "maps/CAH124.wad": "9384c709f8172ab20b60c043511405e336855472ce156a878f14a0dc0c7fd457",
+    "maps/CAH125.wad": "263fbbf8a218557928c7eff6d5cff0522603e129e13cb504e1afa657cce52cf5",
+    "maps/CAH126.wad": "4ced37b4c3f2b9080c645e3c3fc9ff2fbaf99b35d5625b619a3a2b79cb0cfed8",
+    "maps/CAH127.wad": "d5a7360d012139736b41905c3f831bf569202be648749007cae071fd926533e7",
+    "maps/CAH128.wad": "d21ffe5bbd04d20d5e9bc22cc9e05a5a6ad8b8ebc5611c0cc11a58feba5faa1f",
+    "maps/CAH129.wad": "aaabbe860259513958580c5a2bf2dc53700c362971072d44aca09f92d93c627b",
+    "maps/CAH130.wad": "c9637a832904da31f0d703ec61f4b23af8b912cdb352a27a1133383671e21fe3",
+    "maps/CAH131.wad": "df9d79fd8b83ff6c40a9f98437189985833fb3b8095e2782b12f12129dde17cd",
+    "maps/CAH132.wad": "d909b367e1cbed5ad863c9b1ccabc505cc6bfc3940b82ac2d508aec095413c07",
+    "maps/CAH133.wad": "70aad02be755671d1b07cb48e28175c2c670ddf5e328a64beaaaecbf3914e874",
+    "maps/CAH134.wad": "491578d6e6cc33d5e519b3fdf312081b6c0aa5e3f6b96efad8418353e120a8f8",
+    "maps/CAH135.wad": "0a92a71092c7957f124a833655d78bb32aabf53f6d328bed1dd599822672d409",
+    "maps/CAH136.wad": "79029899898b648404c423d296c9642db77f13781c1df4a16ca0dac1ea6f8d4c",
+    "maps/CAH137.wad": "55f8169fc31723498b6d7b278e9ce09a095f82f3bc0c783f7dfc8a9c96c1f713",
+    "maps/CAH138.wad": "eb4dd26f144105d32694e62f7dcbfc7c3033874bccfcf219a6defbb199e30529",
+    "maps/CAH139.wad": "5beba48211bbfa1771c6ac1d946932e54e4740451982070a858332b81b217974",
+    "maps/CAH140.wad": "8ca1d7cc1a0619e43424223f265e1f4962bb3d7236789545f7de65e8b33177ec",
+    "maps/CAH141.wad": "5be85bb97204cafb0fe13cd21862b25a67d42ad85296edd27d6def5dc8139bec",
+    "maps/CAH142.wad": "3347abde7da97514779ffd28f4c815214119497ca62a544325d90d17edb2f63a",
+    "maps/CAH143.wad": "3b307a638c3418762d129f46558f35c09c612c2941a9d8cb1aca9b6d6ad132d1",
+    "maps/CAH144.wad": "d445c6bbfdbe428c5be56f4a7d8bc40e9fb4e1738580c07836a270d7b63c4526",
+    "maps/CAH145.wad": "112c734bb13ca7d9c7af259cf2d359cc5e08df7271a228217cbe832f602688dd",
+    "maps/CAH146.wad": "7bb85c45d929bb5e9185a67d9bf61f104a818f86af1fcae26b0c1213642022af",
+    "maps/CAH147.wad": "f95554389fb368a40bd92ec58610069c1391d7dc942c1d77bd6b05817bb7a237",
+    "maps/CAH148.wad": "e1ab4f9e4c14a0dca4acf7ef0a2cac88cb0b43724d3f6e906de09954a0eec44f",
+    "maps/CAH149.wad": "f5f691e80f1621f0b5817bc35b36617a4710fc6ec259c17171f86bb63ece7ad2",
+    "maps/CAH150.wad": "10ee8e4b707218023f0b92ca2b4b62dda96ccfc0e51cfc4011538d3dcdae0ba1",
+    "maps/CAH151.wad": "be0bb2487bfd67ac49e5f60d6b4537620c893b505ff7cd33770a5c12c2b99c05",
+    "maps/CAH152.wad": "2cd31bb779cf4eca1090c2525080207bcac0b9700eabe658869b60532559177f",
+    "maps/CAH153.wad": "4548eedc4eaabc9c874fc03cc307c82340ebee8c1cee7326d1dab7dcd61bc1fe",
+    "maps/CAH154.wad": "3ee35c3be13ef91bc5a18ec72c66d29b5ccde9c4e417ad38a965757a0555f30b",
+    "maps/CAH155.wad": "dc17bd209317407b3984a1c9c9294f4ed0e692876beecc4ccef3de06b1796e8d",
+    "maps/CAH156.wad": "f3ce38e82a87052df48ff61e40477021fd14bbad9ab8e58ee63749f2c964d175",
+    "maps/CAH157.wad": "a0a512752644535686964fb4f0f420ce836aacf496cc74a25b05fbd56d73adb4",
+    "maps/CAH158.wad": "c8e9ba78cc3d5c93a5cec0cb1410f966551f9a151184e41d1aff52fd6a0f2f26",
+    "maps/CAH159.wad": "27341845dd55e1d87210f0bd6c9c17f3fcfc9cca35ae442113ae365cedf090f3",
+    "maps/MAP02.wad": "df70e78dbc37d11197b5a13354485ff5f214a35e8ef5d3624ccbe4cd353f103e",
+    "maps/MAP03.wad": "004fd24b1ccb7bd172fa378b0288d642aad0aa6fb86b998d7f90db7269f5886e",
+    "models/caelum/architecture/barracas/house-960-1216.obj": "ac49cc67ace1f715e534d53384adf60db4512cf1f5e1c8d30f43b38ccf8a24a5"
+  },
+  "qualification": "Fixed visual scene props only, at owned native scale with collision. No Use, reading, rest, storage, items, ownership, carrying, rewards or new services. Visible books belong to the retained shelf mesh. All original map geometry and existing things remain byte-identical before appended prop things. Fresh disposable review sessions only; final author approval is pending."
+}

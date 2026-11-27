@@ -1,0 +1,3 @@
+gameinfo { AddEventHandlers="CA510Performance","CA468ReferenceSetup" }
+
+gameinfo { AddEventHandlers="CA435NativeSyncProbe" }

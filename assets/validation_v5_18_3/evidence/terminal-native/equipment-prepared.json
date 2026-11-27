@@ -1,0 +1,39 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-host",
+    "1",
+    "-noautoload",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-diagnostic01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment\\equipment.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment\\engine.log",
+    "+map",
+    "CA836A",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment\\start.cfg"
+  ],
+  "cwd": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment",
+  "script": "assets\\validation_v5_17_123\\run_equipment.py",
+  "arguments": [
+    "--",
+    "--interactive",
+    "--runtime",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-diagnostic01.pk3",
+    "--output",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\equipment"
+  ],
+  "author_acceptance": false
+}

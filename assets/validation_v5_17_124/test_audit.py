@@ -165,6 +165,7 @@ class ToolTests(unittest.TestCase):
                     Path(command[command.index('+logfile') + 1]).write_text(
                         standalone.MARKER + f'1|0|0|2|5029|0|localhost|{path}\n')
                 return 0
+            (root / 'game.ini').touch()
             output = io.StringIO()
             with patch.object(standalone.subprocess, 'call', side_effect=call), \
                  patch.object(standalone, 'prepare', return_value=(['engine'], data)), contextlib.redirect_stdout(output):

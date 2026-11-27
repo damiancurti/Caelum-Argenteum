@@ -1,10 +1,161 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.124** - 2026-11-27.
+Documentation version: **5.18.4** - 2026-11-27.
 
-## 5.17.124 - Repository audit repairs (#899)
+## 5.18.4 - Repository audit integration (#899)
 
-When cooperative starts overlap, the game reserves reachable, unoccupied positions for the whole group before moving any player. Loading a save retains its saved positions. Standalone hunt victory and rematch voting use currently connected participants. When a human Palomo leaves, AI Palomo takes over. Campaign checkpoints retain all slots, including vacancies. Session invitations support retry before native admission; after admission recovery uses the last valid shared checkpoint.
+When cooperative starts overlap, the game reserves reachable, unoccupied positions for the whole group before moving any player. Loading a save retains its saved positions. Standalone hunt victory and rematch voting use currently connected participants. When a human Palomo leaves, AI Palomo takes over. Campaign checkpoints retain all slots, including vacancies. Session invitations support retry before native admission. after admission recovery uses the last valid shared checkpoint.
+
+## 5.18.3 - Packaged launch modes and profile isolation (#469)
+
+run_release.ps1 uses the independent IPK3 as the primary game and accepts Play,
+Multiplayer and Profiles. Play needs no Python. Optional multiplayer/profile
+bridges use the supplied Python modules and assets/profiles data with separately
+installed Python 3.12. The selected variant has its own LOCALAPPDATA profile;
+an explicit ProfileDirectory selects a separate review/recovery location.
+
+Fresh Play expands the authoritative ca_controls_defaults preset from packaged
+KEYCONF into its initial controls file, once; startup runs before aliases exist. Fresh
+multiplayer setup writes the existing isolated configuration and extracts its
+controls from KEYCONF. Subsequent starts preserve settings/remapping. The
+profile menu coordinates profiles.sqlite3 inside the selected profile, including
+native verification, backup and recovery; previous stores and pinned manifests
+are not rewritten. A direct LoadSave remains a verified basename under that
+profile. These external-launch changes add no gameplay or saved-state schema.
+
+## 5.18.2 - Independent profile and mode launch integration (#468)
+
+The logical package list retains its first runtime entry for native schema and
+control readers. Actual engine arguments and session manifests omit that entry
+from -file when it is already the primary -iwad IPK3. Extra overlays retain their
+order. A primary-only game omits -file entirely. Legacy development IWAD/package
+arguments and revision-1 manifest semantics remain unchanged; mismatched hashes,
+counts or ordering still refuse a session. Existing session records are never
+silently rewritten for a different runtime.
+
+Vacant-campaign preparation reads the primary IPK3's IWADINFO Config name for
+its native bootstrap preference. Fresh multiplayer menu controls are extracted
+from the packaged KEYCONF preset instead of a source-checkout-only file. Native
+slots, consent, ownership, match rules, inventories and saved gameplay schemas
+are unchanged. Managed tools still require Python; fresh solo engine play does
+not. Original profile stores and checkpoints remain the recovery source.
+
+Native transfer verification labels its own checkpoint with that attempt's
+nonce and selects the matching save title. A separate narrative checkpoint may
+be written during admission and is retained. Incomplete saves are retried;
+multiple matching verifier checkpoints refuse publication. The original native
+identity, checksum, common-roster and atomic custody checks remain mandatory.
+An active conversation still blocks transfer until closed through native input.
+
+Integration fixtures reuse the retained cooperative, PvP, Trucazo, prologue audio
+and finale-predicate assertions. Disposable legacy test rooms may select owned
+CMST01 surfaces when using the independent primary game; their geometry and
+assertions remain unchanged, and these rooms are never distributed. Loopback
+peers on one computer do not establish Internet or separate-machine behavior.
+The 78-essence/+250 predicate remains separate from unauthored later scenes.
+
+## 5.18.1 - Independent runtime and save identities (#467)
+
+Windows 11 / external GZDoom 4.14.2 starts the independent IPK3 without a Doom
+IWAD. Native engine classes/input remain authoritative; no balance, geometry,
+inventory consumption, state timing or gameplay schema changes. Existing native
+PlayerPawn.SoundClass is repaired idempotently from CharacterIdentity.VoiceSex
+to caelum_male/female. Ten inherited death/pain/grunt/land/use-failure aliases
+for all three native gender selectors use the existing credited male/female
+pain recordings. Previously silent/unassigned jump and unused aliases are not
+new sounds. Rulo's combat-pain rule remains unchanged.
+
+migrate_standalone_save.py is copy-only migration revision 1 for native format
+4560. It verifies the source map owner and byte equality of every stored map,
+then updates only Game WAD/Map WAD identities for independent startup. The
+original and a checksum receipt remain. Repeating an already-converted copy is
+byte-idempotent. Mismatched layouts, existing destinations and source overwrite
+are refused before output; missing diagnostic/add-on classes require their
+original fixtures, never deletion of saved objects.
+
+For deliberate rollback, convert a newly saved independent copy with its
+standalone source package, the exact previous development target package and
+`--target-iwad DOOM2.WAD`; the existing native voice field returns to player.
+No other map payload changes. Native MAP02 load, MAP01 stored-hub return and
+subsequent saves passed in both directions. #460's separate motion rollback is
+still required when returning further than its supported runtime. Original
+packages/saves are always the recovery path. Legacy map build options select
+matching retained WADs; they do not convert one geometry into another.
+
+## 5.18.0 - Dependency audit boundary (#466)
+
+No gameplay, balance, map geometry, inventory or saved-state schema changes.
+Native audit identifies inherited Blood/BloodSplatter/AxeBlood and player sound
+aliases that the independent startup patch must resolve without altering their
+ownership/timing contracts. Existing true-color art and state/model identifiers
+remain the compatibility baseline. The five catalogue test maps stay in source
+and development builds; #467 excludes their WADs from distribution. The audit's
+gray palette/episode are disposable fixtures, never the game delivery.
+
+## 5.17.126 - Native credits and presentation coverage (#465)
+
+Main menu > Credits opens a read-only native ListMenu. Up/Down and the wheel
+scroll text; PageUp/PageDown scroll a page. Left/Right select the previous
+notice, page controls, next notice or Back; Enter activates the selection.
+Native controller menu events use the same paths. Mouse activation requires
+a matching press/release, layout revision, resolution and UI scale. Escape or
+controller Back closes the menu. The existing presentation scale and pointer
+transform remain authoritative. Text wrapping is cached on notice changes;
+there are no actor queries, network writes or saved fields.
+
+The interface is ES/EN; legal and source notices retain their original wording
+and language. The root proprietary notice is copied verbatim into the runtime
+notice catalogue and does not override separate terms. General `language=es`
+previously fell back to English for 67 entries authored only under esp/esn;
+the same approved Spanish strings now also have es entries. Five physics
+labels accidentally in the Spanish section now resolve correctly in both
+languages. Existing regional strings and all other translations remain intact.
+
+## 5.17.125 - Verify retained prologue audio (#464)
+
+Existing music ownership remains authoritative: the title plays War Drums
+once; MAP01 loops CA_MUS02, MAP02 loops CA_MUS03_SEWER and MAP03 loops
+CA_MUS04_PORT. The accepted original Ciudad assignment remains CABAIRES.
+The native conversation menu retains its existing relative-volume behavior;
+the Fool conversation applies one quarter of Level.MusicVolume and its native
+destructor restores the level volume. Music preference CVars are not rewritten.
+
+The native audit traversed prologue maps and returned to MAP01 with the same
+37% diagnostic music preference and 5% master preference, including a copied
+MAP02 save reload, mute/restore and breathing reconstruction. Nine cue checks
+reuse one disposable diagnostic channel and release it afterward. They verify
+buffer playback without placing new production ambient/weather emitters.
+The 19 future tracks remain reserved by their existing catalogue destinations.
+
+## 5.17.124 - Rest animation ownership (#460)
+
+CaelumRestState MotionRevision1 stores phase, native start tic, last advanced
+tic and an optional queued exit. Missing fields migrate idempotently without
+restarting an old rest or changing its elapsed game time. The visual clock
+advances at most once per native tic, including during accelerated rest.
+Active phases last 70 tics for chair entry/exit, 105 for lying/getting up and
+140 for eating/drinking. Movement/attack input queues a voluntary exit and is
+filtered until it finishes. Blocking cannot be entered while motion is locked.
+Damage, support loss and ordinary map travel interrupt without waiting. Forced
+exhaustion keeps its existing lock; collapse/travel discards stale visual phases.
+
+The existing DiningSession alone consumes provisions and starts native hunger
+or thirst regeneration. A supported resting player with an active regeneration
+effect receives the matching four-second gesture, alternating when both effects
+are present. Visual updates neither consume nor refill items. The supported
+modular body's weapon slot is hidden only for the gesture; its shield and actual
+equipment remain. Bindings reconstruct after load and restore on interruption.
+Jump preparation/landing still use their accepted 10/35 tics and native controls.
+
+Old saves upgrade in place without resetting rest progress. To return a save
+made during a new clip to the exact prior package, preserve the original and run
+`python assets/validation_v5_17_124/rollback_save.py SOURCE.zds COPY.zds`.
+Use the matching legacy maps/package and a copied basename in that session's
+save directory. The tool resets only new visual states/model paths and motion
+fields; inventory, resources, rest progress, map data and the original save stay
+intact. Repeating conversion is byte-idempotent. Restore the original save with
+the current package to reverse it. Native proof is scoped to the retained
+GZDoom4.14.2 fixture and matched packages, not arbitrary historical map variants.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 

@@ -1,0 +1,5 @@
+{
+  "visible_error": "You cannot use clearepisodes in a MAPINFO if you do not define any new episodes after it.",
+  "cause": "No built-in base Mapinfo is selected by the minimal custom IWAD definition.",
+  "observation": "Selected native error window, Windows Computer Use, 2026-11-26; closed after observation."
+}

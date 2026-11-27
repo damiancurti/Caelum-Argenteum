@@ -23,7 +23,7 @@ def exercise_imported_session(sessions,out,engine,iwad,packages):
     cmd,peer=command(bundle,0,engine,iwad,files,31235,'127.0.0.1')
     with (peer/'session.ini').open('a') as f:f.write('vid_fullscreen=false\nuse_mouse=false\nvid_maxfps=60\n')
     with (peer/'start.cfg').open('a') as f:f.write('\nwait 105; +forward; wait 7; -forward; wait 200; quit\n')
-    startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
+    startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=4
     sessions.claim(token,0)
     with (peer/'process.log').open('wb') as log:
         process=subprocess.Popen(cmd,cwd=peer,startupinfo=startup,stdout=log,stderr=log)
@@ -46,12 +46,14 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--runtime',type=Path,required=True);parser.add_argument('--anchor',type=Path,required=True)
     parser.add_argument('--engine',type=Path,default=Path('C:/Program Files (x86)/GZDoom/gzdoom.exe'))
+    parser.add_argument('--iwad',type=Path,default=Path('C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD'))
+    parser.add_argument('--output',type=Path)
     parser.add_argument('--map-fixture',type=Path,help='Original diagnostic map archive; copy geometry only, not its test script')
     parser.add_argument('--native-vacancy',action='store_true',help='Create an actual one-slot MAP01 target, without editing a character into a vacancy')
     args=parser.parse_args();runtime=args.runtime.resolve(strict=True)
-    out=ROOT/'build/issue435'/datetime.datetime.now().strftime('managed-transfer-%Y%m%d-%H%M%S-%f');out.mkdir(parents=True)
+    out=(args.output or ROOT/'build/issue435'/datetime.datetime.now().strftime('managed-transfer-%Y%m%d-%H%M%S-%f')).resolve();out.mkdir(parents=True)
     engine=args.engine.resolve(strict=True)
-    iwad=Path('C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD')
+    iwad=args.iwad.resolve(strict=True)
     packages=[runtime]
     if args.map_fixture:
         with zipfile.ZipFile(args.map_fixture) as source,zipfile.ZipFile(out/'checks.pk3','x') as target:

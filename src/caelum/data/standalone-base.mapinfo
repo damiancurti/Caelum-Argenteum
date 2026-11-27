@@ -1,0 +1,23 @@
+// #467: conserva las reglas nativas del desarrollo desde el motor instalado.
+// Se referencia su configuracion, nunca se copia ni distribuye un IWAD comercial.
+GameInfo
+{
+    TitlePage = "TITLEPIC"
+    CreditPage = "TITLEPIC"
+    InfoPage = "TITLEPIC"
+    FinalePage = "TITLEPIC"
+    FinaleFlat = "CMLMSKY"
+    BorderFlat = "CMLMSKY"
+    // Borde propio: el modo reducido usa el fondo, sin parches comerciales.
+    Border = 0, 0, "", "", "", "", "", "", "", ""
+    SkyFlatName = "F_SKY1"
+    TitleMusic = "sounds/caelum/stock/music/ca_stock_war_drums.ogg"
+    // Las secuencias propias conservan sus emisores; no se activa musica reservada.
+    FinaleMusic = ""
+    IntermissionMusic = ""
+    Endoom = ""
+    CursorPic = "cursor"
+}
+
+// El horizonte propio del Limbo cubre mapas sin cielo especifico.
+DefaultMap { sky1 = "CMLMSKY", 0 }

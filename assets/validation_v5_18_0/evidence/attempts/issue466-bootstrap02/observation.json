@@ -1,0 +1,15 @@
+{
+  "engine": "GZDoom 4.14.2",
+  "date": "2026-11-26",
+  "result": "fatal before sound/script startup",
+  "visible_error": "Execution could not continue. GetNumForName: PLAYPAL not found!",
+  "observation": "Native Fatal Error window inspected through Windows Computer Use; accessibility did not expose the client text. Activated the selected GZDoom window to capture the actual dialog. Closed owned diagnostic afterward.",
+  "loaded_commercial_iwad": false,
+  "loaded_resources": [
+    "gzdoom.pk3",
+    "game_support.pk3",
+    "probe.ipk3",
+    "game_widescreen_gfx.pk3",
+    "issue465-review01.pk3"
+  ]
+}

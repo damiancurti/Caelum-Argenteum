@@ -25,7 +25,7 @@ import time
 
 from caelum_profiles import ProfileStore, ProfileError
 from caelum_profile_graph import NativeSchema, PersonalGraph
-from caelum_campaigns import Campaigns, personal_record, require_native_sync as require_native_sync
+from caelum_campaigns import Campaigns, personal_record, require_native_sync
 
 
 def digest(path: Path) -> str:
@@ -33,13 +33,25 @@ def digest(path: Path) -> str:
         return hashlib.file_digest(stream,'sha256').hexdigest()
 
 
+def explicit_packages(iwad: Path, packages: list[Path]) -> list[Path]:
+    """Keep the logical runtime for schema readers, but load a primary IPK3 once."""
+    primary=iwad.resolve(strict=True)
+    return [path for path in packages if path.resolve(strict=True)!=primary]
+
+
+def resource_arguments(iwad: Path, packages: list[Path]) -> list[str]:
+    additional=explicit_packages(iwad,packages)
+    return ['-iwad',str(iwad.resolve(strict=True))]+(['-file',*[str(p.resolve(strict=True)) for p in additional]] if additional else [])
+
+
 def manifest(engine: Path, iwad: Path, packages: list[Path]) -> dict:
     """Pin binary, engine resources, IWAD and every explicit package in order."""
-    paths=[engine,engine.parent/'gzdoom.pk3',engine.parent/'game_support.pk3',
-           engine.parent/'game_widescreen_gfx.pk3',iwad,*packages]
     if not packages:raise ProfileError('A complete Caelum runtime package is required.')
+    additional=explicit_packages(iwad,packages)
+    paths=[engine,engine.parent/'gzdoom.pk3',engine.parent/'game_support.pk3',
+           engine.parent/'game_widescreen_gfx.pk3',iwad,*additional]
     return dict(revision=1,files=[dict(path=str(p.resolve(strict=True)),sha256=digest(p)) for p in paths],
-                explicit_packages=len(packages))
+                explicit_packages=len(additional))
 
 
 def verify_manifest(expected: dict, engine: Path, iwad: Path, packages: list[Path]) -> None:
@@ -47,7 +59,7 @@ def verify_manifest(expected: dict, engine: Path, iwad: Path, packages: list[Pat
             or not all(isinstance(row,dict) and isinstance(row.get('sha256'),str) for row in expected['files'])):
         raise ProfileError('Invalid file manifest in the invitation.')
     actual=manifest(engine,iwad,packages)
-    if (expected.get('revision')!=1 or expected.get('explicit_packages')!=len(packages)
+    if (expected.get('revision')!=1 or expected.get('explicit_packages')!=actual['explicit_packages']
             or [f['sha256'] for f in expected.get('files',[])]!=[f['sha256'] for f in actual['files']]):
         raise ProfileError('Engine, IWAD, package bytes or package order differ; session not started.')
 
@@ -295,7 +307,7 @@ def command(bundle: Path,slot: int,engine: Path,iwad: Path,packages: list[Path],
     cfg=f'ca_session_profile "{identity}"\nca_session_slot {slot}\nca_session_nonce {request["nonce"]}\n'+control_preset(packages[0])
     write_new(peer/'start.cfg',cfg.encode())
     network=[] if len(roster)==1 else ['-host',str(len(roster)),'-port',str(port),'-netmode','0'] if slot==0 else ['-join',f'{host}:{port}','-port',str(port+slot)]
-    cmd=[str(engine.resolve()),'-noautoload','-iwad',str(iwad.resolve()),'-file',*[str(p.resolve()) for p in packages],
+    cmd=[str(engine.resolve()),'-noautoload',*resource_arguments(iwad.resolve(),packages),
          '-config',str((peer/'session.ini').resolve()),'-savedir',str(peer.resolve()),*network,
          '+logfile',str((peer/'engine.log').resolve()),'-loadgame','recovery.zds','+exec',str((peer/'start.cfg').resolve())]
     write_new(peer/'command.json',(json.dumps(cmd,indent=2)+'\n').encode())

@@ -274,7 +274,7 @@
     "src/graphics/caelum/icons/ca_dagger.png": "30ac5bf3f2f4d0b30910cd2f3cbe23b4a168ba34cbcc496539c25bc6f0e02c82",
     "src/graphics/caelum/icons/ca_machete.png": "58b2cbf5d8aad9a1201b9050ecd8cb4f9758be756d452b544eea72dd1da91a5c",
     "src/graphics/caelum/first_person/v5/greatsword_icon_t1_source.png": "6f435da5cdb388a78095a7c0609086b679e7c629294ae0935e4fcca5b7fca996",
-    "src/TEXTURES": "fe101bef213d375ca30330deb1f01a3c595caf63d753ed9e5ba505318fc3c6ad"
+    "src/TEXTURES": "3958df53c3bed45aa802252f0f7a15d14b4260370609d290826a8faf3207aa21"
   },
   "generator_sha256": {
     "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",

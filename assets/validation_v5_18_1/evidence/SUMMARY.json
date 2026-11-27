@@ -1,0 +1,193 @@
+{
+  "issue": 467,
+  "version": "5.18.1",
+  "package_sha256": "41beb814296c4b619a91c6c57273f14e6484ebc4a2a1083172a09de2eae818eb",
+  "package_bytes": 1327114403,
+  "source_files": 19060,
+  "distribution_files": 19055,
+  "manifest_matches_package": true,
+  "deterministic_repeat": true,
+  "inventory_sha256": "a25167f70ee857582fa65b81f5e488435f2f6388ef07b14b1cd73290822956c6",
+  "manifest_sha256": "f67aca22a3069d0f93aab24b87948f0bf69452b5c88b8449f6a242d480615b7b",
+  "launcher_sha256": "e40a25ca5c548a019e68bb38af90283d6812a9b27ff9e3a914fd9e28d16b5b32",
+  "converter_sha256": "1aed5b36624b331dcdf87a0c700d927c82029dbcc0eb9546f52108bdddc0d28e",
+  "pilot_reuse_changes": {
+    "labels_and_include_registration": [
+      "TEXTURES",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "new_registration_lump": "TEXTURES.caelum467",
+    "actor_and_map_behavior_unchanged": true
+  },
+  "runs": {
+    "native": {
+      "issue": 467,
+      "registration_overlay": false,
+      "map": "MAP01",
+      "loaded_save": null,
+      "package_sha256": "41beb814296c4b619a91c6c57273f14e6484ebc4a2a1083172a09de2eae818eb",
+      "unchanged": true,
+      "exit": 0,
+      "passed_checks": 100,
+      "failures": [],
+      "completed": true,
+      "commercial_iwad_loaded": false,
+      "native_voice_targets_verified": 60,
+      "saved": true
+    },
+    "migration": {
+      "issue": 467,
+      "migration_revision": 1,
+      "forward": {
+        "issue": 467,
+        "migration_revision": 1,
+        "source": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue464-native03\\maps\\music.zds",
+        "source_sha256": "6a55e15b99d80ca9d50c08d55636297d212de712efda4fd559766d636fb77238",
+        "destination_sha256": "aeea5d4fa0742f1d3caa6eed4d8d7bcf5c6c5914e2935a38ec0b79139f504122",
+        "source_package_sha256": "cd41d68418d5a85aff66b9668a12f7a8dbf5280594f6a253e67ec7b99a218f29",
+        "target_package_sha256": "568bd6994515c8f1acc3f0832fa4ddf8e5598fa68c3a126006c7b27e2571e95f",
+        "original_metadata": {
+          "Game WAD": "DOOM2.WAD",
+          "Map WAD": "issue460-review02.pk3"
+        },
+        "target_metadata": {
+          "Game WAD": "caelum_argenteum.ipk3",
+          "Map WAD": "caelum_argenteum.ipk3"
+        },
+        "metadata_fields_changed": 2,
+        "native_voice_fields_restored": 0,
+        "identical_maps": [
+          {
+            "map": "maps/map01.wad",
+            "sha256": "fe7adb9480353fd8faf06d7e09d967836f45ba2fde8748e2fca356226e577de0"
+          },
+          {
+            "map": "maps/map02.wad",
+            "sha256": "1f7052ef2c1bf5bbe612579c6675e2f4541f6c1e256f374d5fd9afabf6eb9fad"
+          }
+        ],
+        "original_preserved": true,
+        "native_load_required": true,
+        "rollback": "Use the preserved original save with its exact original package, or convert a new save back with matching source/target maps and --target-iwad DOOM2.WAD. Earlier motion rollback remains a separate #460 step."
+      },
+      "forward_native": {
+        "exit": 0,
+        "passed_checks": 10,
+        "failures": [],
+        "completed": true,
+        "saved_after_load": true,
+        "saved_after_hub_return": true,
+        "commercial_iwad_loaded": false
+      },
+      "rollback": {
+        "issue": 467,
+        "migration_revision": 1,
+        "source": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-migration02\\forward\\loaded.zds",
+        "source_sha256": "c06647eb6301b4ed888272d12b5d1460b1543a93b2acf1f410b905d7d83b9886",
+        "destination_sha256": "8e38603dbedc77e51a08b49dd8b7aab5e29484ffa24f1c2705d4684bab9600cc",
+        "source_package_sha256": "568bd6994515c8f1acc3f0832fa4ddf8e5598fa68c3a126006c7b27e2571e95f",
+        "target_package_sha256": "cd41d68418d5a85aff66b9668a12f7a8dbf5280594f6a253e67ec7b99a218f29",
+        "original_metadata": {
+          "Game WAD": "caelum_argenteum.ipk3",
+          "Map WAD": "caelum_argenteum.ipk3"
+        },
+        "target_metadata": {
+          "Game WAD": "DOOM2.WAD",
+          "Map WAD": "issue460-review02.pk3"
+        },
+        "metadata_fields_changed": 2,
+        "native_voice_fields_restored": 1,
+        "identical_maps": [
+          {
+            "map": "maps/map01.wad",
+            "sha256": "fe7adb9480353fd8faf06d7e09d967836f45ba2fde8748e2fca356226e577de0"
+          },
+          {
+            "map": "maps/map02.wad",
+            "sha256": "1f7052ef2c1bf5bbe612579c6675e2f4541f6c1e256f374d5fd9afabf6eb9fad"
+          }
+        ],
+        "original_preserved": true,
+        "native_load_required": true,
+        "rollback": "Use the preserved original save with its exact original package, or convert a new save back with matching source/target maps and --target-iwad DOOM2.WAD. Earlier motion rollback remains a separate #460 step."
+      },
+      "rollback_native": {
+        "exit": 0,
+        "passed_checks": 10,
+        "failures": [],
+        "completed": true,
+        "saved_after_load": true,
+        "saved_after_hub_return": true,
+        "commercial_iwad_loaded": true
+      },
+      "forward_map_payloads_unchanged": true,
+      "forward_idempotent_bytes": true,
+      "rollback_idempotent_bytes": true,
+      "mismatched_layout_rejected": true,
+      "source_overwrite_rejected": true,
+      "original_preserved": true,
+      "limits": "This verifies identical MAP01/MAP02 geometry and prior #460 runtime rollback; other historical layouts require their matching compatibility packages."
+    },
+    "legacy-fresh": {
+      "issue": 467,
+      "map": "MAP02",
+      "loaded_save": null,
+      "package_sha256": "3adea80157f49130de67e384a5cdbc37ec873dd75c321d72f95b7f4a2116aa0f",
+      "unchanged": true,
+      "exit": 0,
+      "passed_checks": 97,
+      "failures": [],
+      "completed": true,
+      "commercial_iwad_loaded": false,
+      "native_voice_targets_verified": 60,
+      "saved": true
+    },
+    "legacy-reload": {
+      "issue": 467,
+      "map": "MAP02",
+      "loaded_save": "build\\issue467-legacy-native01\\standalone.zds",
+      "package_sha256": "3adea80157f49130de67e384a5cdbc37ec873dd75c321d72f95b7f4a2116aa0f",
+      "unchanged": true,
+      "exit": 0,
+      "passed_checks": 97,
+      "failures": [],
+      "completed": true,
+      "commercial_iwad_loaded": false,
+      "native_voice_targets_verified": 60,
+      "saved": true
+    },
+    "launcher": {
+      "issue": 467,
+      "launcher_exit": 0,
+      "native_completion": true,
+      "commercial_iwad_loaded": false,
+      "existing_language_volume_preserved": true,
+      "absolute_save_path_rejected": true,
+      "profile": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-launcher04"
+    }
+  },
+  "attempts": {
+    "issue467-native01": "Project IWADINFO Mapinfo tried to override a core lump. Fixed installed core selection plus ordinary project MAPINFO include.",
+    "issue467-native02": "Fixture textures.zs collided with reserved TEXTURES short lump. Renamed texture_probe.zs.",
+    "issue467-native03": "Two false resolved-name sound assertions; title menu also left world paused. Rejected active-world evidence.",
+    "issue467-native04": "Unpaused world; two false sound queries. Native channel stores original alias ID, not resolved target.",
+    "issue467-native05": "Successful earlier 82-check pilot; final native evidence adds armor/dimensions/live effects.",
+    "issue467-native06": "Gallery fixture used CR_WHITE without Font qualification. Compile failure; fixed fixture, not runtime.",
+    "issue467-native07": "97 checks passed. Gallery captured at title did not render; image rejected as resource evidence.",
+    "issue467-migration01": "MAP02 loaded, but stored hub needed original CA464AudioPoint diagnostic class. Restored exact fixture declaration; never stripped saved objects. Also resolved saved ARM1A0 using own icons.",
+    "issue467-launcher01": "PowerShell GUI invocation returned before GZDoom and LASTEXITCODE was empty. Added Out-Host pipeline to wait and report actual exit.",
+    "issue467-final-native01": "100 checks passed; first gallery still overlapped the gameplay HUD. Moved diagnostic cells above HUD.",
+    "issue467-final-native03": "Nested caelum/data/TEXTURES was not registered; known missing native menu textures stopped the probe. Root TEXTURES.caelum467 registration fixes this without changing the pinned shared TEXTURES source.",
+    "issue467-root-registration01": "Diagnostic root registration overlay passed 100 checks; final evidence repeats without this overlay in the actual corrected package."
+  },
+  "environment": "Windows 11 build 26200; GZDoom startup g4.14.2, executable version g4.14.2-m; Ryzen 9 5950X / RTX 3070 Ti; Vulkan; 1280x720; unpaused background, 5% master volume.",
+  "author_acceptance": "Pending CA467-STARTUP-01 and all 112 earlier author checks.",
+  "limits": [
+    "Clean disposable profiles on the recorded machine, not another provisioned machine.",
+    "Legacy MAP02 evidence uses a fresh matching revision-5 checkpoint, not an arbitrary historical author save.",
+    "Native rollback intentionally loads the prior development IWAD; independent forward/startup tests do not.",
+    "Later campaign, full mode integration, Internet multiplayer and siege fluency are not established here.",
+    "Art/voice/attribution remain subject to author review; source-specific rights and audio quality qualifications remain."
+  ]
+}

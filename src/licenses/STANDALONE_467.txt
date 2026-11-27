@@ -1,0 +1,24 @@
+Caelum Argenteum - independent startup resources (#467)
+
+The impact/blood atlas is original artwork generated for this project with the
+built-in OpenAI image generation tool on 2026-11-26. Source, exact prompt, hash
+and native crop registration are retained in assets/source/art/standalone_467
+in the source repository. It contains no imported Doom pixels. Existing native
+sprite names, state timing and metadata dimensions remain compatibility names;
+they do not identify the artwork's ownership. Source PNG pixels are unchanged.
+Author visual acceptance is pending the consolidated beta review.
+
+PLAYPAL is an independently computed RGB332 compatibility palette. It is not
+copied from Doom, Freedoom or another game. True-color project textures retain
+their original bytes. The sky-marker flat, menu headers and switch compatibility
+textures reuse existing owned project artwork and preserve its earlier notices.
+
+Existing native player-event voices reuse the separately credited project pain
+recordings; their source terms remain in AUDIO_ISSUE_31_CREDITS.md. No recording
+is relicensed, downloaded or re-encoded by this patch.
+
+GZDoom 4.14.2 is installed separately. Its native Doom-compatible classes and
+configuration are engine interfaces, not distributed Doom game assets. The
+project package does not include a commercial IWAD, engine executable or engine
+support archive. The root project notice applies only to owned contributions;
+all third-party grants and earlier attributions remain in force.

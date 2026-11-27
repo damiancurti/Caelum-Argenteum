@@ -1,0 +1,1736 @@
+{
+  "issue": 464,
+  "scope": "Existing MAP01-MAP03 prologue audio; future tracks reserved",
+  "sndinfo_sha256": "4a1b944ec20e6a2c5115edeaefebf04433f7df07abab5605ea7e79cdbf5c84c4",
+  "runtime_count": 131,
+  "reserved_tracks": 19,
+  "assets": [
+    {
+      "path": "music/CA_MUS01.mp3",
+      "sha256": "28f2b92c8bf11a9bde0b40f325e880b6d951d437bcbcce263f1aeee05992703e",
+      "bytes": 3276195,
+      "aliases": [],
+      "literal_consumers": [
+        "caelum/ui/CaelumNarrativeArtwork.zs",
+        "caelum/ui/CaelumStoryIntermission.zs",
+        "caelum/world/CaelumPortSiege.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_EVENTOS_V1_CREDITS.md",
+        "licenses/AUDIO_ISSUE_31_CREDITS.md",
+        "assets/audio_eventos_v1/EDICIONES_Y_FUENTES.json"
+      ]
+    },
+    {
+      "path": "music/CA_MUS02.mp3",
+      "sha256": "87cd3e7b9c971d6f1166915f6f9f8f65edd6700a3b565e6cb041fed97c80ab70",
+      "bytes": 3457969,
+      "aliases": [],
+      "literal_consumers": [
+        "caelum/ui/CaelumStoryIntermission.zs",
+        "MAPINFO"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "music/CA_MUS03_SEWER.ogg",
+      "sha256": "b2c2e0f3aae1abb2046b7ec680c6e7224487ab3c0d99ec796bd4a8289b69518d",
+      "bytes": 4403408,
+      "aliases": [],
+      "literal_consumers": [
+        "caelum/data/arenas.mapinfo",
+        "caelum/data/hunt.mapinfo",
+        "caelum/data/standalone.mapinfo",
+        "MAPINFO"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "music/CA_MUS04_PORT.ogg",
+      "sha256": "4247915c400ea448288218f98c564125a260a1f7a2f6917d8f398647bad02c36",
+      "bytes": 3789315,
+      "aliases": [],
+      "literal_consumers": [
+        "caelum/data/arenas.mapinfo",
+        "caelum/data/house_hubs.mapinfo",
+        "caelum/data/standalone.mapinfo",
+        "MAPINFO"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "music/CA_MUS05_COAST.ogg",
+      "sha256": "ecb3c6c9dc37878f1f9ada5637a7c4d8c9251298e9f47e7189e196530a3057e9",
+      "bytes": 4839287,
+      "aliases": [],
+      "literal_consumers": [
+        "MAPINFO"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "music/CA_MUS_ANTARCTICA.ogg",
+      "sha256": "f6b540de62b6aabf3f75301342b61af90993c3ef829cbdbca3924c7b1ce49f84",
+      "bytes": 4002070,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Antártida"
+    },
+    {
+      "path": "music/CA_MUS_ARGENTINE_SEA.ogg",
+      "sha256": "b0d7707c07b6df4e63eda8e5f29546bccadb29995798b664cffd8d226a09c8e1",
+      "bytes": 3118272,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Mar argentino"
+    },
+    {
+      "path": "music/CA_MUS_BA_COUNTRYSIDE.ogg",
+      "sha256": "2b4c9034a77d36eadc75e3ffbedac3a78af52136e20bc64d778000aaf981d220",
+      "bytes": 3992783,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Campo de Buenos Aires"
+    },
+    {
+      "path": "music/CA_MUS_BARILOCHE.ogg",
+      "sha256": "0baae39ab9f78a6e7b1fa6290c1af5bf772a3f8a535d5eeeb85a102c07bc42fb",
+      "bytes": 3586026,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Bariloche"
+    },
+    {
+      "path": "music/CA_MUS_CAELITH_SKY.ogg",
+      "sha256": "e76c3ebe0fca5e024b0aeb2d5b51665770b7e1e2b07070df3ed2fc246c396ba2",
+      "bytes": 3600081,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Ciudad Caelith en el aire"
+    },
+    {
+      "path": "music/CA_MUS_CAELITH_UNDERWATER.ogg",
+      "sha256": "7c07d90863286a15fdbf5752c6313bae79643a30a65bca9b5e4705a3f7e4cb48",
+      "bytes": 3671533,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Ciudad Caelith bajo el agua"
+    },
+    {
+      "path": "music/CA_MUS_CIUDAD.ogg",
+      "sha256": "3e02eddc4ecce0ca63395055b39fe3fd174cdc17989faf006c90f9b59d067922",
+      "bytes": 4539783,
+      "aliases": [],
+      "literal_consumers": [
+        "caelum/data/transport.mapinfo"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md",
+        "assets/validation_5856/PROVENANCE.json"
+      ]
+    },
+    {
+      "path": "music/CA_MUS_CORDOBA_CITY.ogg",
+      "sha256": "8ba7c50a864ef193cebb8296eb9e7fa9c4ad672c62cdb3237419aee3f6bd007b",
+      "bytes": 4001801,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Ciudad de Córdoba"
+    },
+    {
+      "path": "music/CA_MUS_CORDOBA_HILLS.ogg",
+      "sha256": "ccda37cfb37e212047be92ea778c251ddf7200c3b8b3453d6a588de97bb6f6ec",
+      "bytes": 4253133,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Sierras de Córdoba"
+    },
+    {
+      "path": "music/CA_MUS_ENTRE_RIOS_SPRINGS.ogg",
+      "sha256": "024041f2a89a2fa2ef80af0d095988b2b52b46ff67fa023fa8072a9bbab551a9",
+      "bytes": 4593296,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Termas de Entre Ríos"
+    },
+    {
+      "path": "music/CA_MUS_HELL.ogg",
+      "sha256": "6280df1f1962157acf5f3fbc6f6fad2b8623faac0fc9c8a6f29ad8752e4a3628",
+      "bytes": 2616392,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "El infierno"
+    },
+    {
+      "path": "music/CA_MUS_MALVINAS.ogg",
+      "sha256": "b68761a70d17e5eafb21d370affe73bb9b2c702c13a4ba7338fefc4b0a718693",
+      "bytes": 4407563,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Islas Malvinas"
+    },
+    {
+      "path": "music/CA_MUS_MOON.ogg",
+      "sha256": "0d1910309a32e4a9cec0bfcc69ad43790aa3dbe920b8dac7fadc45393a09e26c",
+      "bytes": 3980920,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "La luna"
+    },
+    {
+      "path": "music/CA_MUS_NORTHEAST_JUNGLE.ogg",
+      "sha256": "b05c597402eb7f56659c686e48248a46f9014ce22e99d5f2976f7d317129b5c7",
+      "bytes": 4161561,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Jungla del noreste"
+    },
+    {
+      "path": "music/CA_MUS_NORTHWEST_DESERT.ogg",
+      "sha256": "fe58efe061f0b92fe39714d74ac9b230629a3694464ce094030e1c34fc12cdd2",
+      "bytes": 4652729,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Desierto del noroeste"
+    },
+    {
+      "path": "music/CA_MUS_PACHAMAMA_MINES.ogg",
+      "sha256": "906c512c4b3db78def4ce39fddbf24e6c8a6f0186014cabea5a932285a54199c",
+      "bytes": 4873929,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Minas de la Pachamama"
+    },
+    {
+      "path": "music/CA_MUS_SELENE_FINAL.ogg",
+      "sha256": "b4c294559288571ca5c9436eddfb6db3d446955e1ba1e7a803dee0522c58d745",
+      "bytes": 3587612,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Batalla final contra Selene"
+    },
+    {
+      "path": "music/CA_MUS_SKY_TRAIN.ogg",
+      "sha256": "c1716fc52c0c85838f4c8dd53122548a42025a0ee7fc88279b0fbff22e27f4c7",
+      "bytes": 3698571,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Tren del cielo"
+    },
+    {
+      "path": "music/CA_MUS_SOUTHERN_TUNDRA.ogg",
+      "sha256": "e1bc2ba2e08632b03384bdd4d19d6239443520470e73a92f7673021856924979",
+      "bytes": 2544099,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Tundra del sur"
+    },
+    {
+      "path": "music/CA_MUS_TIERRA_DEL_FUEGO.ogg",
+      "sha256": "2369c5f9e1cb29a7cc743138400889dcb9229dc84c7da0293541726cb3508f08",
+      "bytes": 4452098,
+      "aliases": [],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/source/audio/map_music_496/PROVENANCE.json"
+      ],
+      "reserved_destination": "Tierra del Fuego"
+    },
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_blacksmith_loop.ogg",
+      "sha256": "b1b74c509fd27bd65c0d300a03dabaead91c4d00f9b737f64683f99f35ffbbc9",
+      "bytes": 96854,
+      "aliases": [
+        "caelum/ambience/blacksmith"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_05_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_crowd_murmur_loop.ogg",
+      "sha256": "e0fa7a07ed0439f9140dd5cf63b996270cd58f5606f6ebf2a71d627253ce6747",
+      "bytes": 130660,
+      "aliases": [
+        "caelum/ambience/crowd_murmur"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_05_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_fire_loop.ogg",
+      "sha256": "f70a458828a55764100f944aebcd178aebda757cc79b301243a465fb585b378c",
+      "bytes": 211111,
+      "aliases": [
+        "caelum/ambience/fire"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_05_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_fountain_loop.ogg",
+      "sha256": "64e1499ff3a6d8af1d903a1278f38bd21b6e9c227fcbea9cdf0abda4db5c4776",
+      "bytes": 75166,
+      "aliases": [
+        "caelum/ambience/fountain"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_05_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_rio_waves_loop.ogg",
+      "sha256": "3a9b1f8dd6579eac6ed9b05b332ebb20d6de3495cc922c167086892c25a766c7",
+      "bytes": 137154,
+      "aliases": [
+        "caelum/ambience/rio_waves"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_05_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ambience/ca_ambience_sewer_water_loop.ogg",
+      "sha256": "fc3f4879f859e1b79b328acd057740554a33cd08a2f3bc4a14bf376f363f1028",
+      "bytes": 125252,
+      "aliases": [
+        "caelum/ambience/sewer_water"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_05_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/breathing/female.wav",
+      "sha256": "1ddb9fd0edb7c9116fc959d493d57bd1e61b871be18e12f07355eed9602117bd",
+      "bytes": 3067100,
+      "aliases": [
+        "caelum/breathing/female"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumCaella.zs",
+        "caelum/character/CaelumAppearanceHands.zs",
+        "caelum/player/CaelumPlayer.zs",
+        "caelum/survival/CaelumBreathing.zs"
+      ],
+      "credit_records": [
+        "assets/source/audio/breathing_514/PROVENANCE.json"
+      ]
+    },
+    {
+      "path": "sounds/caelum/breathing/female_high.wav",
+      "sha256": "0b2300d9c1ed2bc301ef2684867ac66a251923392b442d967fc4e4fca195a7c4",
+      "bytes": 2301176,
+      "aliases": [
+        "caelum/breathing/female_high"
+      ],
+      "literal_consumers": [
+        "caelum/survival/CaelumBreathing.zs"
+      ],
+      "credit_records": [
+        "assets/source/audio/breathing_514/PROVENANCE.json"
+      ]
+    },
+    {
+      "path": "sounds/caelum/breathing/male.wav",
+      "sha256": "61350765991f9036704d24b43c608bb697ae05091c4721ad1091329da24d5851",
+      "bytes": 548770,
+      "aliases": [
+        "caelum/breathing/male"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumArgento.zs",
+        "caelum/actors/CaelumCaella.zs",
+        "caelum/actors/CaelumCombatActor.zs",
+        "caelum/actors/CaelumEscortNavigation.zs",
+        "caelum/actors/CaelumRonnie.zs",
+        "caelum/character/CaelumAppearanceHands.zs",
+        "caelum/core/CaelumConstants.zs",
+        "caelum/crafting/CaelumStorageFurnitureCrafting.zs",
+        "caelum/equipment/CaelumPersistentCharacterState.zs",
+        "caelum/player/CaelumPlayer.zs",
+        "caelum/survival/CaelumBreathing.zs",
+        "caelum/world/CaelumCalendar.zs",
+        "caelum/world/CaelumCityNavigation.zs",
+        "caelum/world/CaelumPortDefender.zs",
+        "caelum/world/CaelumPortSiege.zs",
+        "caelum/world/CaelumWeather.zs"
+      ],
+      "credit_records": [
+        "assets/source/audio/breathing_514/PROVENANCE.json"
+      ]
+    },
+    {
+      "path": "sounds/caelum/breathing/male_high.wav",
+      "sha256": "597ff92b30dd8b0ab81c2d1c97ca1bfb9561e38e38e4112b4c48fa42d3236463",
+      "bytes": 411828,
+      "aliases": [
+        "caelum/breathing/male_high"
+      ],
+      "literal_consumers": [
+        "caelum/survival/CaelumBreathing.zs"
+      ],
+      "credit_records": [
+        "assets/source/audio/breathing_514/PROVENANCE.json"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_01.ogg",
+      "sha256": "59d883b4b4bdf032be3ab593941480628f345bc3a6233422af114b2cdda76b41",
+      "bytes": 14042,
+      "aliases": [
+        "caelum/enemies/bull_pain_01"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_02.ogg",
+      "sha256": "899fe3c3710604b24fe5036b29cb1a195d1740d5d38fe0d046d804529c814c1f",
+      "bytes": 11217,
+      "aliases": [
+        "caelum/enemies/bull_pain_02"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_03.ogg",
+      "sha256": "35f48699af7de59105d9b327f2ffdd8dff4f6dc8d359d2f60d34145ba13bd3dc",
+      "bytes": 12759,
+      "aliases": [
+        "caelum/enemies/bull_pain_03"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_04.ogg",
+      "sha256": "103da82d6ee1e83a07669f555745a4d9abba952558fc80d33f9da653dbcd9f45",
+      "bytes": 12729,
+      "aliases": [
+        "caelum/enemies/bull_pain_04"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_05.ogg",
+      "sha256": "958bbdc70fec0d9db4ec39751a1b3696c2d61623330d78425a257ebfed5962c8",
+      "bytes": 14845,
+      "aliases": [
+        "caelum/enemies/bull_pain_05"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_06.ogg",
+      "sha256": "d5dbf8e50bac4140c275d02609f4f284b003f2d6e2233411db2cdd9fd1f71d49",
+      "bytes": 20465,
+      "aliases": [
+        "caelum/enemies/bull_pain_06"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_07.ogg",
+      "sha256": "bea85bc701b092b5e05a0c2062fe36e184907a856466cbbdd7a3b7fe094b4925",
+      "bytes": 15038,
+      "aliases": [
+        "caelum/enemies/bull_pain_07"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_08.ogg",
+      "sha256": "9f1990a70e264d8c608850fb2ae19158756619bfdddf9c540adc98eaf2650afe",
+      "bytes": 16117,
+      "aliases": [
+        "caelum/enemies/bull_pain_08"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_09.ogg",
+      "sha256": "c3b5b7b978e6ea8e27e3f9f9bf746d98238a393e90289aa1c472da6fda26fb54",
+      "bytes": 13828,
+      "aliases": [
+        "caelum/enemies/bull_pain_09"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_10.ogg",
+      "sha256": "b064a309bcd36017898b121767630acb62881440f506cb01827f6c1c3a3761a8",
+      "bytes": 13865,
+      "aliases": [
+        "caelum/enemies/bull_pain_10"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_11.ogg",
+      "sha256": "001e56b118742ce8c3ddd51f53cfd93bcbf09f00038eed60e5fd71dcf735881c",
+      "bytes": 39113,
+      "aliases": [
+        "caelum/enemies/bull_pain_11"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/bull/ca_bull_pain_12.ogg",
+      "sha256": "024f70f76adcbddedcae7a5e8be7ad085f58efaa4982e1ca9056da051d54c45e",
+      "bytes": 14508,
+      "aliases": [
+        "caelum/enemies/bull_pain_12"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/mandinga/ca_mandinga_alert.ogg",
+      "sha256": "e83b9fa64788b6f58a7a8f192d142056d00ec2c62fcf848c45cd5299f0a18059",
+      "bytes": 14877,
+      "aliases": [
+        "caelum/enemies/mandinga_alert"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumFolkloreCharacters.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/mandinga/ca_mandinga_pain.ogg",
+      "sha256": "896e3bdc618349ef007bc1c91b3dd5e513f4f4eaed0155c6e70b60cac0989f71",
+      "bytes": 19338,
+      "aliases": [
+        "caelum/enemies/mandinga_pain"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumFolkloreCharacters.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/rat/alert.wav",
+      "sha256": "bce5cb2a8ebcaa8aac9074a8a1ef8a594605bf7348d67c139a60ff81486e4cbb",
+      "bytes": 16802,
+      "aliases": [
+        "caelum/enemies/rat_alert"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumCombatActor.zs",
+        "caelum/actors/CaelumFolkloreCharacters.zs",
+        "caelum/actors/CaelumGiantRat.zs",
+        "caelum/actors/CaelumRulo.zs",
+        "caelum/world/CaelumCompanions.zs",
+        "caelum/world/CaelumMazeGates.zs"
+      ],
+      "credit_records": [
+        "licenses/rat_audio_543.txt"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/rat/bite.wav",
+      "sha256": "427b011557db55252f36b7ab876496de2de8d9a3570eeb08df42544e2b549ed1",
+      "bytes": 7542,
+      "aliases": [
+        "caelum/enemies/rat_bite"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumGiantRat.zs"
+      ],
+      "credit_records": [
+        "licenses/rat_audio_543.txt"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/rat/death.wav",
+      "sha256": "1fed456ba349c6699bd2a6dcc3751697a2ea479bc5233b7db34eac00096b1096",
+      "bytes": 25622,
+      "aliases": [
+        "caelum/enemies/rat_death"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumGiantRat.zs",
+        "caelum/core/CaelumTarotLovers.zs",
+        "caelum/debug/CaelumDebugOverlay.zs",
+        "caelum/player/CaelumPlayer.zs",
+        "caelum/world/CaelumProfileEvents.zs",
+        "caelum/world/CaelumRedemption.zs",
+        "caelum/world/CaelumSleepRules.zs",
+        "caelum/world/CaelumTentRest.zs"
+      ],
+      "credit_records": [
+        "licenses/rat_audio_543.txt"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/rat/pain.wav",
+      "sha256": "1d252c33a593229d49c166872c8a7893749cded775193458d996f15fa3cd3f93",
+      "bytes": 12832,
+      "aliases": [
+        "caelum/enemies/rat_pain"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumAnchoredResident.zs",
+        "caelum/actors/CaelumArgento.zs",
+        "caelum/actors/CaelumBull.zs",
+        "caelum/actors/CaelumCaella.zs",
+        "caelum/actors/CaelumCombatActor.zs",
+        "caelum/actors/CaelumFolkloreCharacters.zs",
+        "caelum/actors/CaelumGiantRat.zs",
+        "caelum/actors/CaelumRonnie.zs",
+        "caelum/debug/CaelumDebugOverlay.zs",
+        "caelum/player/CaelumPlayer.zs",
+        "caelum/world/CaelumPortDefender.zs"
+      ],
+      "credit_records": [
+        "licenses/rat_audio_543.txt"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/zupay/ca_zupay_alert.ogg",
+      "sha256": "ef393ea41adcf1a2e23036bf635ca06f41413f3c17ae451079c6e581b3023909",
+      "bytes": 15734,
+      "aliases": [
+        "caelum/enemies/zupay_alert"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumFolkloreCharacters.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/zupay/ca_zupay_pain.ogg",
+      "sha256": "1e2a8f9d3536b15e19d322158aef23d288becf5eb877966bdbae570ddf28daa6",
+      "bytes": 31085,
+      "aliases": [
+        "caelum/enemies/zupay_pain"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumFolkloreCharacters.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/enemies/zupay/ca_zupay_walk.ogg",
+      "sha256": "36dbf09d13d50e6c9d5b0e2ffffadfa7161f4420f2fbe8a939b970c784278ad1",
+      "bytes": 25966,
+      "aliases": [
+        "caelum/enemies/zupay_walk"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumFolkloreCharacters.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/gathering/chop.wav",
+      "sha256": "4499d53a95fc1780cb5ef9f1f0b8054f626287470ef6631846a6f49e01224a60",
+      "bytes": 74924,
+      "aliases": [
+        "caelum/gathering/chop"
+      ],
+      "literal_consumers": [
+        "caelum/world/CaelumEnvironmentProps.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_GATHERING_ISSUE89_CREDITS.md",
+        "licenses/AUDIO_GATHERING_ISSUE89_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/gathering/crystal.ogg",
+      "sha256": "3c7972b3d95f79289b1ebc07e68c6b938e16149e5c5a95885098b5281ff11ebc",
+      "bytes": 6860,
+      "aliases": [
+        "caelum/gathering/crystal"
+      ],
+      "literal_consumers": [
+        "caelum/world/CaelumEnvironmentProps.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_GATHERING_ISSUE89_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/gathering/metal.ogg",
+      "sha256": "5bf14afc7f63234ff8d425c0b6bbda63c045a73bb4d1ce426012d01547991fa2",
+      "bytes": 6416,
+      "aliases": [
+        "caelum/gathering/metal"
+      ],
+      "literal_consumers": [
+        "caelum/core/CaelumConstants.zs",
+        "caelum/equipment/CaelumSpecialItems.zs",
+        "caelum/survival/CaelumThermalData.zs",
+        "caelum/world/CaelumEnvironmentProps.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_GATHERING_ISSUE89_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/gathering/stone.ogg",
+      "sha256": "a24bcd03d1c6b2d1ddb43e9833ed50523a1954a760136fb9502cbc5a9350b405",
+      "bytes": 6150,
+      "aliases": [
+        "caelum/gathering/stone"
+      ],
+      "literal_consumers": [
+        "caelum/world/CaelumEnvironmentProps.zs",
+        "MAPINFO"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_GATHERING_ISSUE89_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/ca_item_pickup.ogg",
+      "sha256": "522ed753d5ec74d0c271a9a67b04647d71b03a71622d54ade7a8a99a2ce74e4e",
+      "bytes": 9821,
+      "aliases": [
+        "caelum/items/pickup"
+      ],
+      "literal_consumers": [
+        "caelum/equipment/CaelumConsumables.zs",
+        "caelum/equipment/CaelumEquipmentPickups.zs",
+        "caelum/equipment/CaelumInventoryService.zs",
+        "caelum/equipment/CaelumShotgunRules.zs",
+        "caelum/equipment/CaelumSpecialItems.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/ca_weapon_pickup.ogg",
+      "sha256": "35ac5c960624449c24284b15adec591fcbdc2a8662adde835d91a6299ae9a72b",
+      "bytes": 11467,
+      "aliases": [
+        "caelum/items/weapon_pickup"
+      ],
+      "literal_consumers": [
+        "caelum/equipment/CaelumEquipmentPickups.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_01.ogg",
+      "sha256": "5f6ccafcf0bbc567190a057c9226f450d3f9f8bbb5e52ef26a64e0cbdec0a35b",
+      "bytes": 8404,
+      "aliases": [
+        "caelum/items/coin_pickup_01"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_02.ogg",
+      "sha256": "0210dedf6186632925b7748d74d9ba8a26181fa8885046bbdd1fd461a61c220c",
+      "bytes": 8149,
+      "aliases": [
+        "caelum/items/coin_pickup_02"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_03.ogg",
+      "sha256": "d56d2ac39840400dc3dfc7e4330833b15ed1c9339caf258b5c385f0fd26ca72b",
+      "bytes": 8039,
+      "aliases": [
+        "caelum/items/coin_pickup_03"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_04.ogg",
+      "sha256": "e7f575d19fae9e86d36edfa5cf3c56524560888c263debec4255bb3831499388",
+      "bytes": 7875,
+      "aliases": [
+        "caelum/items/coin_pickup_04"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_05.ogg",
+      "sha256": "675d1f513bfaba69e89fda9e2b193ef459eefa1dc1bb591e7f18ffb9f1f1e373",
+      "bytes": 7377,
+      "aliases": [
+        "caelum/items/coin_pickup_05"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_06.ogg",
+      "sha256": "ef026f52b6fc31261bbcef7124bd1e6fa13cc103dbfa726b3689aeb67e26ce5b",
+      "bytes": 7168,
+      "aliases": [
+        "caelum/items/coin_pickup_06"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_07.ogg",
+      "sha256": "ca2e63503a357a0775b49cdfa30cb2b6adbb9546f1ca9a250b1bac5add8d1ef9",
+      "bytes": 9189,
+      "aliases": [
+        "caelum/items/coin_pickup_07"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_08.ogg",
+      "sha256": "d3cd539f58ac7136469771b6240b837801134c6962bbf2db0b4ebb0bf03a213e",
+      "bytes": 8260,
+      "aliases": [
+        "caelum/items/coin_pickup_08"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_09.ogg",
+      "sha256": "8f3cf7e189bbdb1987f2a6393bbd70ce593e8ae895a85522631a47dffa774966",
+      "bytes": 7126,
+      "aliases": [
+        "caelum/items/coin_pickup_09"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_10.ogg",
+      "sha256": "46ea08d1252335e3c32152d33ad6a527ed28ec82ee3fbf5a0d797736de8c3ed8",
+      "bytes": 8508,
+      "aliases": [
+        "caelum/items/coin_pickup_10"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_11.ogg",
+      "sha256": "814f320cd58eeb4c270ca3818cb3157137d8f15cb4776688d66391653ea4e01c",
+      "bytes": 8012,
+      "aliases": [
+        "caelum/items/coin_pickup_11"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/items/currency/ca_coin_pickup_12.ogg",
+      "sha256": "c4f08222db5409f7e14651c0620f5a0840ae0858b4c94427e29137466bf7f4be",
+      "bytes": 7271,
+      "aliases": [
+        "caelum/items/coin_pickup_12"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/npcs/palomo/ca_palomo_disappear.ogg",
+      "sha256": "9e1103b74f77f4700a0bfe4c42533aba5bda36495baa5f394ef651d3f29e69b7",
+      "bytes": 95378,
+      "aliases": [
+        "caelum/npcs/palomo_disappear"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/npcs/rulo/ca_rulo_alert.ogg",
+      "sha256": "a03cbfb4681b7797d0f11eeab149aa79c6f3722b8dba323b7e31209ad09fd067",
+      "bytes": 25900,
+      "aliases": [
+        "caelum/npcs/rulo_alert"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumRulo.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/anima/ca_anima_restored.ogg",
+      "sha256": "01f21a7828922fe67451652e1aee024c69a31e9172fac1d56088a4567022ad04",
+      "bytes": 81089,
+      "aliases": [
+        "caelum/player/anima_restored"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/ca_low_health_heartbeat.ogg",
+      "sha256": "c6a3f172283d048bbceeb3bb06ef1d94a25f75105124bf9fe13dba27cb2cdf02",
+      "bytes": 9191,
+      "aliases": [
+        "caelum/player/low_health_heartbeat"
+      ],
+      "literal_consumers": [
+        "caelum/player/CaelumPlayer.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/ca_footstep_grass.ogg",
+      "sha256": "d14fda07d5dcda46a7532a0ec79a1a9c14a53e5f6719b5afbff145c20a1862c4",
+      "bytes": 6434,
+      "aliases": [
+        "caelum/player/footstep_grass"
+      ],
+      "literal_consumers": [
+        "TERRAIN"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_01.ogg",
+      "sha256": "b61b771345635a0210e61f7a75fa4da00e0e525da0cc66677fde30bb784c45b2",
+      "bytes": 6697,
+      "aliases": [
+        "caelum/player/footstep_wood_01"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_02.ogg",
+      "sha256": "169d28ca07045d0a09973612db67dddc0cdf0007ef2f938d563493c7edfbf23a",
+      "bytes": 6735,
+      "aliases": [
+        "caelum/player/footstep_wood_02"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_03.ogg",
+      "sha256": "a86d56fe5fa99cd4a6c6943a083d6bf5e6196bb0bfd230eb50618f830a476c6f",
+      "bytes": 7422,
+      "aliases": [
+        "caelum/player/footstep_wood_03"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_04.ogg",
+      "sha256": "21a0362908c452316490c94e124da7c10a6da29e21541acc92932784f4d3c764",
+      "bytes": 6737,
+      "aliases": [
+        "caelum/player/footstep_wood_04"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_05.ogg",
+      "sha256": "346b66cb9cc0b6f594e8cb44ae0b1e034aac4a0618b55faba67f591d2dd81f62",
+      "bytes": 7282,
+      "aliases": [
+        "caelum/player/footstep_wood_05"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_06.ogg",
+      "sha256": "991cc165cf36c1c7d187a80a700b473e197f32d5f9e4c51c1a7d5aa816296eb9",
+      "bytes": 6689,
+      "aliases": [
+        "caelum/player/footstep_wood_06"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_07.ogg",
+      "sha256": "d8dc32fd890d15def5bcf2d83a0d742bb58e10bf36bb8458a5f3f03655991c15",
+      "bytes": 7096,
+      "aliases": [
+        "caelum/player/footstep_wood_07"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/footsteps/wood/ca_footstep_wood_08.ogg",
+      "sha256": "28eb3029a1fb8706f1575797fb42b2546ec688184007901b0565b2c708b01a00",
+      "bytes": 7601,
+      "aliases": [
+        "caelum/player/footstep_wood_08"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/movement/ca_swim_loop.ogg",
+      "sha256": "449315cc6fc32e5c1019aeccb10339b28553e0a56288338f742021d64433abbb",
+      "bytes": 142005,
+      "aliases": [
+        "caelum/player/swim_loop"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/pain/ca_player_pain_female.ogg",
+      "sha256": "d5ec91e4af0a88a1d350991d005800f49bf55224fdfafe8ff77e0b93b1dfdd1e",
+      "bytes": 15545,
+      "aliases": [
+        "caelum/player/pain_female"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumCaella.zs",
+        "caelum/player/CaelumPlayer.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/pain/ca_player_pain_male.ogg",
+      "sha256": "61b8db4f8832f4bc471361bb900aea3d8ad1a091144d9e21506f030c9cb1cae0",
+      "bytes": 15225,
+      "aliases": [
+        "caelum/player/pain_male"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumArgento.zs",
+        "caelum/actors/CaelumRonnie.zs",
+        "caelum/player/CaelumPlayer.zs",
+        "caelum/world/CaelumPortDefender.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/progression/ca_level_up.ogg",
+      "sha256": "a716480ba03a0ac7a730d9c7e7aa0fd5784f9087fb863143f1c7cf62a0126ab1",
+      "bytes": 104448,
+      "aliases": [
+        "caelum/player/level_up"
+      ],
+      "literal_consumers": [
+        "caelum/ui/CaelumMenuAudio.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/player/status/ca_player_cough.ogg",
+      "sha256": "7308d7694b32edc10019e938ae9c3b1c77e4a9888a9560b58f10c1ee01ac2ee5",
+      "bytes": 103123,
+      "aliases": [
+        "caelum/player/cough"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/ambient/ca_stock_cricket.ogg",
+      "sha256": "854c7217067aa1b139859307adabde9230358a3fe2e75229546eb41462e06e00",
+      "bytes": 10501,
+      "aliases": [
+        "caelum/stock/cricket"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/music/ca_stock_piano_progression.ogg",
+      "sha256": "69a2ca34dc74ed58747708eeb080b3b79e72637c6e547bab992847cd4b6232f2",
+      "bytes": 121233,
+      "aliases": [
+        "caelum/stock/piano_progression"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/music/ca_stock_tarot_harp_loop.ogg",
+      "sha256": "2e8616f258e9ad9bb829911b1ed1b57830a6832a489dc9fe1704f734cfed0beb",
+      "bytes": 112771,
+      "aliases": [
+        "caelum/stock/tarot_harp_loop"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/music/ca_stock_war_drums.ogg",
+      "sha256": "1a5e286322413d6279907a045d8ceb35b25a9c6e3a339984987a30fb3fcd1ea8",
+      "bytes": 152093,
+      "aliases": [
+        "caelum/stock/war_drums"
+      ],
+      "literal_consumers": [
+        "MAPINFO"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/ui/ca_stock_menu_strings_start.ogg",
+      "sha256": "758ffa0f7e6298fea705ab3228f847e85d1d1a1668b9ecacc2c7b00f5a28b355",
+      "bytes": 66018,
+      "aliases": [
+        "caelum/stock/menu_strings_start"
+      ],
+      "literal_consumers": [
+        "caelum/ui/CaelumMenuAudio.zs",
+        "MAPINFO"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/ui/ca_stock_reveal_sting.ogg",
+      "sha256": "bb0aff86c28d3e568be908576ec5d3db0a8a7934e670faa627fe760935a5eece",
+      "bytes": 63836,
+      "aliases": [
+        "caelum/stock/reveal_sting"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/voices/ca_stock_evil_laugh.ogg",
+      "sha256": "1450509be5fd0f67f6e82a31a26a82d78014877f178dba15634c9ca5a3c01702",
+      "bytes": 22974,
+      "aliases": [
+        "caelum/stock/evil_laugh"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/voices/ca_stock_ghoul_laugh.ogg",
+      "sha256": "fa6bd9e3e2ba2d38c30f6c44310949424b9862e63df86c7b7e1972f3231b42a6",
+      "bytes": 46314,
+      "aliases": [
+        "caelum/stock/ghoul_laugh"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/voices/ca_stock_npc_mumble_male.ogg",
+      "sha256": "09e6b3901b557744977615f237bac6bc8942ef2a5a4c02f52ac89e8ecfb1c7e0",
+      "bytes": 69622,
+      "aliases": [
+        "caelum/stock/npc_mumble_male"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/stock/world/ca_stock_iron_gate.ogg",
+      "sha256": "8a179cfcff9048b5d767c753cad2f98a9f10aa5c84fbeeb29ec711d0e9e7f868",
+      "bytes": 24118,
+      "aliases": [
+        "caelum/stock/iron_gate"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/ca_crafting_page_turn.ogg",
+      "sha256": "ee0aedd681cc747248afefc8783fad6145207309d4277b0e2b17b645e580f9cd",
+      "bytes": 9563,
+      "aliases": [
+        "caelum/ui/crafting_page_turn"
+      ],
+      "literal_consumers": [
+        "caelum/hud/CaelumJournalOverlay.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/ca_dialogue_open.ogg",
+      "sha256": "0ee4699f3b4c269e2f0925a4de1a6a12804cbca1881ef0cfff58b1472eab7e86",
+      "bytes": 62762,
+      "aliases": [
+        "caelum/ui/dialogue_open"
+      ],
+      "literal_consumers": [
+        "MAPINFO"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_ISSUE_31_CREDITS.md",
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/ca_map_transition.ogg",
+      "sha256": "b171b939bae1454ff56062159b2676a51b28362510c6db8088022189e0ebf316",
+      "bytes": 16789,
+      "aliases": [
+        "caelum/ui/map_transition"
+      ],
+      "literal_consumers": [
+        "caelum/player/CaelumPlayer.zs",
+        "caelum/ui/CaelumMenuAudio.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/ca_menu_move.ogg",
+      "sha256": "6be9afa1016bf4eafda1fab5060d4c9c0f29f71a2e1c0e8a5834ef295153db57",
+      "bytes": 4475,
+      "aliases": [
+        "caelum/ui/menu_move"
+      ],
+      "literal_consumers": [
+        "caelum/character/CaelumCharacterCreationMenu.zs",
+        "caelum/hud/CaelumJournalOverlay.zs",
+        "caelum/quests/CaelumMainM00MagicTrial.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/ca_menu_open.ogg",
+      "sha256": "f5759f0cffaf187a43f683e97be01ff516a9e1c9d3984db01da72e65b5ad9f8c",
+      "bytes": 6079,
+      "aliases": [
+        "caelum/ui/menu_open"
+      ],
+      "literal_consumers": [
+        "caelum/character/CaelumCharacterCreationMenu.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/ca_menu_select.ogg",
+      "sha256": "f5759f0cffaf187a43f683e97be01ff516a9e1c9d3984db01da72e65b5ad9f8c",
+      "bytes": 6079,
+      "aliases": [
+        "caelum/ui/menu_select"
+      ],
+      "literal_consumers": [
+        "caelum/character/CaelumCharacterCreationMenu.zs",
+        "caelum/equipment/CaelumMerchantCoordinator.zs",
+        "caelum/hud/CaelumJournalOverlay.zs",
+        "caelum/quests/CaelumMainM00MagicTrial.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/ca_recipe_learned.ogg",
+      "sha256": "f991b6f99274058681ed2d0ab35936055dc1d82da3b463768a7900457b7ffd93",
+      "bytes": 10954,
+      "aliases": [
+        "caelum/ui/recipe_learned"
+      ],
+      "literal_consumers": [
+        "caelum/player/CaelumPlayer.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/tarot/ca_tarot_card_capture.ogg",
+      "sha256": "ecba2d30e9d6d78a529dd0e06b86f3dcf6547be24d5c788873914cb66951c793",
+      "bytes": 71793,
+      "aliases": [
+        "caelum/tarot/card_capture"
+      ],
+      "literal_consumers": [
+        "caelum/ui/CaelumMenuAudio.zs"
+      ],
+      "credit_records": [
+        "assets/audio_eventos_v1/EDICIONES_Y_FUENTES.json"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/travel/ca_travel_carriage.ogg",
+      "sha256": "21605b799803cb7686c4d3cf642df38873a9c6b5292c62f45c8534d48247b8d8",
+      "bytes": 104283,
+      "aliases": [
+        "caelum/travel/carriage"
+      ],
+      "literal_consumers": [
+        "caelum/ui/CaelumMenuAudio.zs"
+      ],
+      "credit_records": [
+        "assets/audio_eventos_v1/EDICIONES_Y_FUENTES.json"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/travel/ca_travel_ship.ogg",
+      "sha256": "5885e41d3bb96c133437c9512dde4ff12a6ccaa98dd6d915f0d1175fb0029f10",
+      "bytes": 161675,
+      "aliases": [
+        "caelum/travel/ship"
+      ],
+      "literal_consumers": [
+        "caelum/ui/CaelumMenuAudio.zs"
+      ],
+      "credit_records": [
+        "assets/audio_eventos_v1/EDICIONES_Y_FUENTES.json"
+      ]
+    },
+    {
+      "path": "sounds/caelum/ui/travel/ca_travel_ship_first_seconds.ogg",
+      "sha256": "f42ed8d90fd5363fff6e4086f648c6830071d2dfc4f3f2cfa0e23cb93c9cf1a5",
+      "bytes": 166636,
+      "aliases": [
+        "caelum/travel/ship_first_seconds"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "assets/audio_eventos_v1/EDICIONES_Y_FUENTES.json"
+      ]
+    },
+    {
+      "path": "sounds/caelum/weapons/ca_carabine_fire.ogg",
+      "sha256": "8a6a2692743d83b9b15631330516aa6802e28ed44168bdf5e7718b162de780cf",
+      "bytes": 10927,
+      "aliases": [
+        "caelum/weapons/carabine_fire"
+      ],
+      "literal_consumers": [
+        "caelum/equipment/CaelumCompanionRanged.zs",
+        "caelum/equipment/CaelumRangedRules.zs",
+        "caelum/player/CaelumPlayer.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_rain_heavy_loop.ogg",
+      "sha256": "48d735d0c766bb73d3bb7c5adec2c1c0ca0fcf179e4fd766ff0cee7c54329ae3",
+      "bytes": 159617,
+      "aliases": [
+        "caelum/weather/rain_heavy"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_05_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_rain_light_loop.ogg",
+      "sha256": "c95942108ab1a9387fa3badfdd140c74e30a72971bd3a08faabc0e95517ad61b",
+      "bytes": 75798,
+      "aliases": [
+        "caelum/weather/rain_light"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_05_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_rain_soft_loop.ogg",
+      "sha256": "491c0a1f652a34d43cbeeb612e563e4ee77e945324a75c29b308385851c9227f",
+      "bytes": 185962,
+      "aliases": [
+        "caelum/weather/rain_soft"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_05_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_rain_steady_loop.ogg",
+      "sha256": "6532c2d8e9bea21db7d1bfb20e6dee32255b665febd942e90f7ed93261ab0ca4",
+      "bytes": 195675,
+      "aliases": [
+        "caelum/weather/rain_steady"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_05_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_thunder_distant_01.ogg",
+      "sha256": "0766fd8be2fa11580e7e00c5fafbd633e0db1df7a0eec9578a38c4521373d889",
+      "bytes": 180646,
+      "aliases": [
+        "caelum/weather/thunder_distant"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_05_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_thunder_heavy_01.ogg",
+      "sha256": "8b1560674b2e73dcc29523f734b8c8f81b4982dad55f5c9d3c100ce133427093",
+      "bytes": 189716,
+      "aliases": [
+        "caelum/weather/thunder_heavy"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_05_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_thunder_roomy_01.ogg",
+      "sha256": "58e1c9848a229d0b84fb00527ac2c336bb44c725d1186612a8a508caaa6c723e",
+      "bytes": 166074,
+      "aliases": [
+        "caelum/weather/thunder_roomy"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_05_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/weather/ca_weather_wind_loop.ogg",
+      "sha256": "e9c124e92093557e77c5775becd153ec1529b5005561b826b9f1f2469de48caf",
+      "bytes": 137071,
+      "aliases": [
+        "caelum/weather/wind"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_05_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/doors/ca_door_large_open.ogg",
+      "sha256": "ad173418a31d51d7c8458c971ce93e5bedfc628dcf16fbd8ba6354089759e1fe",
+      "bytes": 9154,
+      "aliases": [
+        "caelum/world/door_large_open"
+      ],
+      "literal_consumers": [
+        "caelum/world/CaelumBreakableGate.zs",
+        "caelum/world/CaelumPolyDoors.zs",
+        "caelum/world/CaelumSlidingDoor.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/doors/ca_door_locked.ogg",
+      "sha256": "fb09ab075871f4e202d2d1fa8fc6893595509ef0cd5750e91bc8e1abde2a7700",
+      "bytes": 11524,
+      "aliases": [
+        "caelum/world/door_locked"
+      ],
+      "literal_consumers": [
+        "caelum/world/CaelumStashChest.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/doors/ca_door_open.ogg",
+      "sha256": "a70991b3c9eed1cd115a393356d8a4217476a34b27ede67283ba9bb871aa0f69",
+      "bytes": 6693,
+      "aliases": [
+        "caelum/world/door_open"
+      ],
+      "literal_consumers": [
+        "caelum/quests/CaelumMainM00RonnieTrial.zs",
+        "caelum/world/CaelumMazeGates.zs",
+        "caelum/world/CaelumPhysicalHazards.zs",
+        "caelum/world/CaelumSewerMaze.zs",
+        "caelum/world/CaelumSlidingDoor.zs",
+        "caelum/world/CaelumStashChest.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/fire/ca_fire_loop.ogg",
+      "sha256": "10bd0a733b2c7cddd6405958d80b23c6bdb44871a5ffc558c2f43ed121e59a80",
+      "bytes": 19680,
+      "aliases": [
+        "caelum/world/fire_loop"
+      ],
+      "literal_consumers": [
+        "caelum/actors/CaelumElementalVisualEffects.zs"
+      ],
+      "credit_records": [
+        "licenses/AUDIO_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/hazards/ca_rock_roll_loop.ogg",
+      "sha256": "69f991860ee463e4232051294c594bc8d2bc0006d480a48dd39b4c8246c3f32c",
+      "bytes": 53843,
+      "aliases": [
+        "caelum/world/rock_roll"
+      ],
+      "literal_consumers": [
+        "caelum/world/CaelumPhysicalHazards.zs"
+      ],
+      "credit_records": [
+        "assets/audio_eventos_v1/EDICIONES_Y_FUENTES.json"
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/mechanisms/ca_lever_activate.ogg",
+      "sha256": "05db244a4f6e91dc0779cca2838f0e5bc2fd3cc136bf66f7d9d2f26898203f76",
+      "bytes": 5883,
+      "aliases": [
+        "caelum/world/lever_activate"
+      ],
+      "literal_consumers": [
+        "caelum/world/CaelumConnectedWaterWorld.zs",
+        "caelum/world/CaelumHazardReset.zs",
+        "caelum/world/CaelumPhysicalHazards.zs"
+      ],
+      "credit_records": [
+        "assets/audio_eventos_v1/EDICIONES_Y_FUENTES.json"
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/seals/ca_quintessence_seal_activate.ogg",
+      "sha256": "3e53be8b8f3fe5d53aaea527ae55d70dc2f489b629169f98c1f0baa67add8178",
+      "bytes": 85377,
+      "aliases": [
+        "caelum/world/quintessence_seal_activate"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/seals/ca_quintessence_seal_deactivate.ogg",
+      "sha256": "30f481eac713c23090e2f81648b9b39bcca0305b1dd838e7358021d6521f9720",
+      "bytes": 85701,
+      "aliases": [
+        "caelum/world/quintessence_seal_deactivate"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    },
+    {
+      "path": "sounds/caelum/world/weather/ca_rain_loop.ogg",
+      "sha256": "4a205e9b1c685b48679bfab3109f0c3e319d48df5918b9b6bb54d688b0fbb2a1",
+      "bytes": 123998,
+      "aliases": [
+        "caelum/world/rain_loop"
+      ],
+      "literal_consumers": [],
+      "credit_records": [
+        "licenses/AUDIO_PACK_04_CREDITS.md"
+      ]
+    }
+  ],
+  "errors": [],
+  "qualification": "Literal consumers are a locator, not proof of placed emitters. Licensing decisions are retained in source notices and audited separately under #466."
+}

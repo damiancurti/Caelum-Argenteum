@@ -1,0 +1,14 @@
+{
+  "issue": 467,
+  "map": "MAP01",
+  "loaded_save": null,
+  "package_sha256": "8d8eb0a37a6560fd904bfd7fce8bc14d603dd146e8c903b33f414be9156bd94a",
+  "unchanged": true,
+  "exit": 0,
+  "passed_checks": 100,
+  "failures": [],
+  "completed": true,
+  "commercial_iwad_loaded": false,
+  "native_voice_targets_verified": 60,
+  "saved": true
+}

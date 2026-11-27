@@ -1,0 +1,31 @@
+C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue468-matrix01\trucazo_tournament
+{
+  "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-matrix01\\trucazo_tournament",
+  "passed": true,
+  "peers": [
+    {
+      "peer": 0,
+      "passed": true,
+      "checks": 27,
+      "errors": []
+    },
+    {
+      "peer": 1,
+      "passed": true,
+      "checks": 27,
+      "errors": []
+    },
+    {
+      "peer": 2,
+      "passed": true,
+      "checks": 27,
+      "errors": []
+    },
+    {
+      "peer": 3,
+      "passed": true,
+      "checks": 27,
+      "errors": []
+    }
+  ]
+}

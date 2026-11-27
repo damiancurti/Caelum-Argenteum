@@ -1,0 +1,2 @@
+// #467: registro adicional; conserva el archivo compartido con hashes historicos.
+#include "caelum/data/standalone.textures"
