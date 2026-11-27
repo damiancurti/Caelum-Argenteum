@@ -1,0 +1,46 @@
+{
+  "issue": 467,
+  "switch_source": "graphics/caelum/world/ca_lever_states.png",
+  "switch_crop_size": [
+    320,
+    887
+  ],
+  "switches": [
+    {
+      "name": "SW1EXIT",
+      "left": 375,
+      "top": 0
+    },
+    {
+      "name": "SW2EXIT",
+      "left": 1080,
+      "top": 0
+    }
+  ],
+  "armor_icons": [
+    {
+      "prefix": "ARM1",
+      "source": "graphics/caelum/icons/ca_armor_light.png",
+      "size": [
+        128,
+        128
+      ],
+      "baseline": "ARM1A0"
+    },
+    {
+      "prefix": "ARM2",
+      "source": "graphics/caelum/icons/ca_armor_heavy.png",
+      "size": [
+        128,
+        128
+      ],
+      "baseline": "ARM2A0"
+    }
+  ],
+  "menu_headers": [
+    "M_EPISOD",
+    "M_NEWG",
+    "M_SKILL"
+  ],
+  "invisible": "graphics/caelum/domingo_invisible.png"
+}

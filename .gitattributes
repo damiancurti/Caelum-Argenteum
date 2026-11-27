@@ -1558,3 +1558,18 @@ assets/generators/audit_distribution.py text eol=lf diff
 assets/validation_v5_18_0/** -text -diff
 assets/validation_v5_18_0/*.py text eol=lf diff
 /src/licenses/AUDIO_ISSUE_31_CREDITS.md -text whitespace=cr-at-eol
+
+# Independent startup sources and exact generated assets (#467).
+/assets/source/art/standalone_467/** -text -diff
+/assets/generators/generate_standalone_467.py text eol=lf
+/src/IWADINFO text eol=lf
+/src/PLAYPAL -text
+/src/caelum/data/standalone* text eol=lf
+/src/TEXTURES.caelum467 text eol=lf
+/src/licenses/STANDALONE_467.txt text eol=lf
+/build_release.py text eol=lf
+/run_release.ps1 text eol=lf
+/migrate_standalone_save.py text eol=lf
+/assets/validation_v5_18_1/** -text -diff
+/assets/validation_v5_18_1/*.py text eol=lf diff
+/assets/validation_v5_18_1/*.zs text eol=lf diff

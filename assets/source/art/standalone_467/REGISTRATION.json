@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "issue": 467,
+  "source": "assets/source/art/standalone_467/impact-blood-source.png",
+  "runtime": "src/graphics/caelum/vfx/standalone_467.png",
+  "sha256": "ce8ec1979d23a7ed2f5e4ff77d246d7989e3bb8c6acb4c5790ad7d9955190eec",
+  "source_size": [
+    1774,
+    887
+  ],
+  "registration": "Measured alpha >=8 support plus four-pixel fringe, clamped to equal cells. Native TEXTURES crops preserve all original RGBA bytes within each registered rectangle. No repainting, new combat values or timing changes.",
+  "frames": [
+    {
+      "row": 0,
+      "column": 0,
+      "bounds": [
+        152,
+        160,
+        292,
+        310
+      ]
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "bounds": [
+        518,
+        93,
+        821,
+        344
+      ]
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "bounds": [
+        941,
+        83,
+        1263,
+        348
+      ]
+    },
+    {
+      "row": 0,
+      "column": 3,
+      "bounds": [
+        1396,
+        93,
+        1680,
+        338
+      ]
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "bounds": [
+        158,
+        595,
+        319,
+        752
+      ]
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "bounds": [
+        536,
+        556,
+        806,
+        782
+      ]
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "bounds": [
+        974,
+        557,
+        1229,
+        815
+      ]
+    },
+    {
+      "row": 1,
+      "column": 3,
+      "bounds": [
+        1439,
+        578,
+        1625,
+        825
+      ]
+    }
+  ],
+  "palette": {
+    "format": "RGB332",
+    "red_levels": 8,
+    "green_levels": 8,
+    "blue_levels": 4,
+    "use": "Independent 256-color compatibility lookup only; project true-color PNG/MD3 textures retain their original bytes."
+  },
+  "baseline_dimensions": "BASELINE_DIMENSIONS.json",
+  "author_acceptance": "Pending final consolidated review; proposal prepared under the author request to implement the beta before final verdict."
+}

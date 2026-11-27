@@ -1,2 +1,5 @@
 // Captura de origen para wipes nativos dentro del hub.
 cameratexture CAJVIEW 960 540
+
+// #467: misma palanca propia para el nombre de compatibilidad del muro.
+switch SW1EXIT on pic SW2EXIT tics 0
