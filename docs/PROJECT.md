@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.126** - 2026-11-26.
+Documentation version: **5.18.0** - 2026-11-26.
+
+## 5.18.0 - Standalone dependency and provenance audit (#466)
+
+The approved beta remains MAP01-MAP03 with existing modes/limitations and an
+external GZDoom 4.14.2 installation. A per-file source inventory resolves recorded
+origins and permission notices; five catalogue-labelled development maps must
+be omitted from distribution. No commercial IWAD, engine executable or external
+test fixture is authorized for packaging. Exact hashes establish traceability,
+not independent ownership clearance. Native diagnostics without a commercial
+IWAD identify bootstrap, inherited effect/voice, map and menu dependencies.
+These findings are recorded in assets/distribution/DEPENDENCIES.json for #467;
+this audit does not claim standalone startup is implemented. Final attribution
+and replacement presentation remain subject to author review, CA466-RIGHTS-01.
 
 ## 5.17.126 - Native credits and presentation coverage (#465)
 

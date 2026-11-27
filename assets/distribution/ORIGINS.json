@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "issue": 466,
+  "scope": "Author-requested independent MAP01-MAP03 review beta, with existing modes and documented limitations; no public-store publication",
+  "authority": "Recorded source/credit notices and the author's supplied project materials. This catalogue does not create a new third-party grant or convert author-reported provenance into independent ownership verification.",
+  "project_notice": "LICENSE.md",
+  "source_catalogue": "docs/ASSETS.md",
+  "audio_catalogue": "assets/validation_v5_17_125/evidence/audio-index.json",
+  "decisions": {
+    "project-source": {
+      "origin": "Project-authored runtime code, configuration, dialogue, data, map geometry or generated metadata retained in the repository",
+      "permission": "Author-directed project beta; LICENSE.md applies only to owned contributions",
+      "references": ["LICENSE.md", "docs/ASSETS.md", "assets/map_catalogue/MAPS.json", "src/dialogues/index.json"]
+    },
+    "project-art": {
+      "origin": "Retained author-supplied or project-generated raster/mesh resources and their deterministic derivatives; exact per-file source metadata is attached where recorded",
+      "permission": "Retain the documented project artwork for the author-requested beta; preserve separate source terms and author review qualifications",
+      "references": ["LICENSE.md", "docs/ASSETS.md", "src/licenses/VISUAL_ASSETS_4_31.md", "assets/manifests/sprites_v4.json", "assets/source/art/appearance_5213/PROVENANCE.json", "assets/source/art/appearance_5218/PROVENANCE.json", "assets/branding/PROVENANCE.json"]
+    },
+    "human-mesh": {
+      "origin": "Project meshes/animations/materials, including recorded MakeHuman hm08 CC0-derived body/head geometry",
+      "permission": "Retain CC0 terms for upstream geometry; the project notice only covers owned additions",
+      "references": ["LICENSE.md", "src/licenses/MAKEHUMAN_CC0.txt", "src/licenses/DOMINGO_3D_PILOT.txt", "src/licenses/UNDERBODY_827.txt", "src/licenses/WORN_CLOTHING_829.txt", "src/licenses/GRIPS_859.txt", "assets/source/art/character_modules_458/MODULES.json", "assets/source/art/rest_motion_460/MODELS.json"]
+    },
+    "dejavu-font": {
+      "origin": "Retained DejaVu bitmap derivatives, plus the six missing authored characters added under #465",
+      "permission": "Bitstream Vera/DejaVu terms; retain notices and distinguish project font names from upstream trademarks",
+      "references": ["src/licenses/DejaVu-copyright.txt", "assets/source/ui/typography_465/PROVENANCE.json"]
+    },
+    "source-specific-audio": {
+      "origin": "131 author-selected runtime recordings; individual aliases, source/credit locators and byte hashes are retained by #464",
+      "permission": "Source-specific CC0, CC BY, Pixabay Content License or documented author/creator permission as recorded in the linked notices; no blanket relicensing",
+      "references": ["assets/validation_v5_17_125/evidence/audio-index.json", "src/licenses/AUDIO_CREDITS.md", "src/licenses/AUDIO_PACK_04_CREDITS.md", "src/licenses/AUDIO_ISSUE_31_CREDITS.md", "src/licenses/AUDIO_EVENTOS_V1_CREDITS.md", "src/licenses/MAP_MUSIC_496.txt"]
+    },
+    "retained-notice": {
+      "origin": "Source-specific license, copyright and attribution notices retained with the associated material",
+      "permission": "Preserve required attribution and legal wording; these notices do not transfer ownership to the project",
+      "references": ["LICENSE.md", "docs/ASSETS.md"]
+    }
+  },
+  "rules": [
+    {"patterns": ["fonts/**"], "decision": "dejavu-font"},
+    {"patterns": ["music/**", "sounds/**"], "decision": "source-specific-audio"},
+    {"patterns": ["licenses/**"], "decision": "retained-notice"},
+    {"patterns": ["models/caelum/characters/**", "models/caelum/domingo/**"], "decision": "human-mesh"},
+    {"patterns": ["graphics/**", "sprites/**", "models/**", "hires/**"], "decision": "project-art"},
+    {"patterns": ["caelum/**", "crafting/**", "impactphysics/**", "shaders/**", "maps/**", "dialogues/**", "localization/**", "ANIMDEFS", "CAPALOMO", "CVARINFO", "DEFBINDS", "FONTDEFS", "GLDEFS", "KEYCONF", "LANGUAGE", "LOCKDEFS", "MAPINFO", "MENUDEF", "MODELDEF", "SNDINFO", "SNDSEQ", "TERRAIN", "TEXTURES", "ZSCRIPT"], "decision": "project-source"}
+  ],
+  "excluded": {
+    "commercial_iwads": "Doom/Doom II and id24res WADs are development dependencies only; never include them",
+    "engine": "GZDoom 4.14.2 and its installed support files are external, under the author's explicit distribution choice",
+    "tools": "Python, Blender, FFmpeg, source fonts, generators and authoring references are not runtime package members",
+    "tests": "Diagnostic IWAD/PK3 fixtures, saves, profiles, screenshots and logs remain outside the distributed game package"
+  }
+}
