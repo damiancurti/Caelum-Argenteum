@@ -7,6 +7,8 @@ def catalog(config=None):
     path=Path(config['catalog']) if config and config.get('catalog') else HERE/'CATALOG.json'
     data=json.loads(path.read_text(encoding='utf-8'))
     text=(ROOT/'pending_test.txt').read_text(encoding='utf-8')
+    if not text.strip():
+        return dict(data, checks=[], status_es='No hay comprobaciones pendientes. El historial conserva los resultados confirmados.')
     assert data['pending_sha256']==sha(ROOT/'pending_test.txt'),'El catálogo quedó desactualizado; regenerar antes de revisar.'
     for row in data['checks']:assert row['instructions'] in text
     return data

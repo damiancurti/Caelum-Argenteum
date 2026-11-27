@@ -4,6 +4,10 @@ Documentation version: **5.18.3** - 2026-11-26.
 
 ## 5.18.3 - Independent beta delivery and author handoff (#469, 2026-11-26)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA469-DELIVERY-01 (#469). The result covers the listed steps and prerequisites.
+
+The author confirmed all 115 checks in the MAP01?MAP03 review on 2026-11-27. Each originating release records its individual result below or in its own entry. The seven implementation PRs are #892?898. Earlier pending statements describe the status at delivery. The published catalogue preserves the original steps, prerequisites and expected outcomes.
+
 Prepared versioned standalone artifacts with a deterministic ZIP, per-file
 checksums, player instructions generated from README and complete optional
 profile/multiplayer tooling. GZDoom and Python are installed separately; fresh
@@ -43,6 +47,8 @@ signature; both diagnostic errors are retained with the successful final evidenc
 These fixture failures do not establish author acceptance or alter gameplay.
 
 ## 5.18.2 - Independent beta integration (#468, 2026-11-26)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA468-BETA-01 (#468). The result covers the listed steps and prerequisites.
 
 Corrected the external profile/multiplayer launch bridges to distinguish their
 logical runtime from actual -file additions when that runtime is already the
@@ -94,6 +100,8 @@ population or gameplay feature was changed to obtain these measurements.
 
 ## 5.18.1 - Independent startup and release construction (#467, 2026-11-26)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA467-STARTUP-01 (#467). The result covers the listed steps and prerequisites.
+
 Added original impact/blood source+prompt, native-compatible resource aliases,
 independently calculated RGB332 palette, own episode/page/menu defaults and
 native player voice classes using existing recordings. No Doom pixels/audio,
@@ -128,6 +136,8 @@ The 113 manual checks remain pending; no author acceptance is recorded.
 
 ## 5.18.0 - Standalone dependency/provenance audit (#466, 2026-11-26)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA466-RIGHTS-01 (#466). The result covers the listed steps and prerequisites.
+
 Recorded 19,053 src members, per-file origin/permission locators and planned
 release disposition. Five authoritative test-map entries are excluded from the
 planned distribution; sources remain intact. Preserved source-specific rights,
@@ -151,6 +161,8 @@ CA466-RIGHTS-01 and all prior author checks remain pending; no manual acceptance
 
 ## 5.17.126 - Native credits and presentation coverage (#465)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA465-UI-01 (#465). The result covers the listed steps and prerequisites.
+
 #465 adds an accessible Credits menu using native controls, existing fonts,
 background and presentation transforms. It reads the 29 retained notices and
 caches wrapping on selection changes. Six missing codepoints extend twelve
@@ -172,6 +184,8 @@ outputs and original font-file identity pass the static audit. Manual review
 remains CA465-UI-01 and 110 earlier outstanding checks.
 
 ## 5.17.125 - Verify retained prologue audio (#464)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA464-AUDIO-01 (#464). The result covers the listed steps and prerequisites.
 
 The author selected existing prologue assignments, volume/transition/save
 verification and 19 future tracks held in reserve. No audio, SNDINFO, MAPINFO or
@@ -197,6 +211,8 @@ its final native title smoke passes five additional checks. Unchanged audio
 and ownership-code identity links the broader native evidence to this package.
 
 ## 5.17.124 - Native rest and meal transitions (#460, 2026-11-26)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA460-MOTION-01 (#460). The result covers the listed steps and prerequisites.
 
 The author approved using the current modular body, retaining the left-hand
 shield and hiding the weapon visual during right-hand meal gestures. This
@@ -319,6 +335,8 @@ visible and awaits author review. The ordinary campaign launch is unchanged.
 
 ## 5.17.122 - Review damp masonry at the sewer waterline (#887, #463)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA887-WATERLINE-01 (#887). The result covers the listed steps and prerequisites.
+
 Prepared an owned damp-brick proposal using the built-in imagegen tool and the
 retained #847 input. Source prompt, output and attribution are preserved without
 pixel postprocessing. A private deterministic builder replaces only 4,638
@@ -382,6 +400,8 @@ Evidence: assets/validation_v5_17_122. Full project validation passes with no er
 No author acceptance, merge, issue closure or completed-batch claim is recorded.
 
 ## 5.17.121 - Furnish the municipal office and archive for review (#886, #463)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA886-MUNICIPAL-01 (#886). The result covers the listed steps and prerequisites.
 
 Prepared #886 against the existing municipal office/archive/courtyard description.
 The proposal appends 42 native-sized fixed actors:8 desks,8 chairs,26 shelves.
@@ -449,6 +469,8 @@ claim is recorded.
 
 ## 5.17.120 - Separate interior ceilings from exterior roofing (#883, #463)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA883-CEILING-01 (#883). The result covers the listed steps and prerequisites.
+
 Prepared the #883 ceiling proposal after native #881 views exposed roof-tile
 undersides. Only321 equal-length material names change across161 private maps:
 two ceilings in each of160 houses and one municipal3D-floor underside. The original
@@ -506,6 +528,8 @@ Evidence: assets/validation_v5_17_120. Full project validation passes with no er
 No author acceptance, merge, issue closure or completed-batch claim is recorded.
 
 ## 5.17.119 - Inventory and combine the environment review (#881, #463)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA881-ENVIRONMENT-01 (#881). The result covers the listed steps and prerequisites.
 
 Added the #881 read-only resource inventory and private combined environment review.
 Production changes are two release log labels only:18765 of18767 runtime members
@@ -567,6 +591,8 @@ No author acceptance, merge, issue closure or completed-batch claim is recorded.
 
 ## 5.17.118 - Keep large house facades visible from nearby streets (#879)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA879-VISIBILITY-01 (#879). The result covers the listed steps and prerequisites.
+
 Corrected the production CA454Facade31800 render bound to781, derived from the
 unchanged original model's horizontal envelope. Previously the default0 fell back
 to collision radius20 for render-sector linkage; large detail centered inside an
@@ -621,6 +647,8 @@ No author acceptance, intermediate terminal, merge or issue closure is recorded.
 Continue the authorized environment work and final consolidated batch preparation.
 
 ## 5.17.117 - Review timber joinery on existing Barracas house facades (#878, #463)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA878-JOINERY-01 (#878). The result covers the listed steps and prerequisites.
 
 Prepared paired closed timber shutter detail on the existing shared facade,
 using unchanged owned green wood and painted-iron texture bytes. No installed art,
@@ -686,6 +714,8 @@ unapproved. No branch merge, issue closure, intermediate terminal or completed-b
 claim is made. Continue #879 and the authorized environment/furnishing work.
 
 ## 5.17.116 - Review native sewer vaults with preserved passage minima (#875, #463)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA875-VAULT-01 (#875). The result covers the listed steps and prerequisites.
 
 Prepared the private revision6-derived vault proposal without replacing the
 approved production map. Selected unambiguous straight ordinary spans gain native
@@ -1117,6 +1147,8 @@ Full project validation passes with no errors; the document index is current.
 
 ## 5.17.111 - Recover the author-provided environment remasters for review (#866, #463)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA866-MATERIAL-01 (#866). The result covers the listed steps and prerequisites.
+
 Full project validation passes with no errors; the generated document index is current.
 
 Recovered 27 source/provenance files from the author's retained ZIP, whose hash
@@ -1265,6 +1297,8 @@ broader batch remain open. Evidence/reproduction: assets/validation_v5_17_110.
 
 ## 5.17.109 - Select shared hand art from actual clothing gloves (#861)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA861-HANDS-01 (#861). The result covers the listed steps and prerequisites.
+
 Full project validation passes with no errors; the generated document index is current.
 
 The historical #148 contract selected gloves from armor only. #861 explicitly
@@ -1357,6 +1391,8 @@ CA861-HANDS-01 at the requested final consolidated terminal.
 
 ## 5.17.108 - Fit first-body hands and retained equipment across native poses (#859)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA859-GRIP-01 (#859). The result covers the listed steps and prerequisites.
+
 Full project validation passes with no errors; the generated document index is current.
 
 #859 follows the corrected #857 frame bindings and fits the retained equipment
@@ -1446,6 +1482,8 @@ portable camera-anchor generator reproduces the retained JSON byte-for-byte.
 Full project validation passes; the archived report has no errors.
 
 ## 5.17.107 - Bind the opt-in first-body wardrobe to owned clothing (#857)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA857-EQUIPMENT-01 (#857). The result covers the listed steps and prerequisites.
 
 Full project validation passes with no errors; the generated document index is current.
 
@@ -1774,6 +1812,8 @@ Evidence: assets/validation_v5_17_103; pending_test.txt is unchanged.
 
 
 ## 5.17.102 - Prepare the sewer material comparison (#847, #463)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA847-MATERIAL-01 (#847). The result covers the listed steps and prerequisites.
 
 Full project validation passes with no errors; the generated document index is current.
 
@@ -2183,6 +2223,8 @@ pending; neither this issue nor a PR constitutes author acceptance.
 
 ## 5.17.95 - Skeletal native-format assessment (#834, parent #458)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA834-FORMAT-01 (#834). The result covers the listed steps and prerequisites.
+
 The isolated comparison does not support migrating production characters to
 this IQM export. It reduces the seven model files from 32,510,864 to 2,024,448
 bytes, but the matched 64-figure scene produces 236.24 queue presents/s versus
@@ -2227,6 +2269,8 @@ The V5.16/V5.17 batch and its final author terminal remain unfinished.
 
 ## 5.17.93 - First-body fitted clothing candidates (#829)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA829-WARDROBE-01 (#829). The result covers the listed steps and prerequisites.
+
 2026-11-19: added 25 independently fitted garment identities, five body masks
 and lower hair using the retained 24-action/375-sample rig. All 473 source parts
 are closed with positive rest volume; eleven trousers are connected surfaces.
@@ -2250,6 +2294,8 @@ batch terminal has not been opened and author acceptance is not inferred.
 
 ## 5.17.92 - Reusable Domingo anatomy foundation (#827, 2026-11-18)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA827-BODY-01 (#827). The result covers the listed steps and prerequisites.
+
 Added three independent body/hand MD3 modules and an editable CC0-derived source
 without changing original accepted artwork, rig/actions or production bindings.
 Six final repeated export files, closed connected geometry and 23,625 quantized
@@ -2270,6 +2316,8 @@ The larger batch and consolidated terminal remain unfinished.
 
 ## 5.17.91 - Complete regional diagnostic gallery coverage (#825, 2026-11-16)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA825-REGIONS-01 (#825). The result covers the listed steps and prerequisites.
+
 Added CA825G for the 44 missing approved associations of 30 candidate classes,
 preserving earlier galleries and all production art/behavior. Neutral floors
 explicitly label the three regional concepts without owned ground studies.
@@ -2282,6 +2330,8 @@ and remains pending; no author check was accepted or removed. Full batch work
 and the final consolidated terminal remain unfinished.
 
 ## 5.17.90 - Four distinct bestiary forms (#822, 2026-11-16)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA822-FORMS-01 (#822). The result covers the listed steps and prerequisites.
 
 Added Xalpen, Luz Mala, Anchimallen and Huayrapuca owned-reference candidates,
 original materials, editable geometry/animation and inherited combat mappings.
@@ -2296,6 +2346,8 @@ complete batch and consolidated review remain unfinished.
 
 ## 5.17.89 - Curupi, Gualicho, Uritu Orko and Maip candidates (#821, 2026-11-16)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA821-FIGURES-01 (#821). The result covers the listed steps and prerequisites.
+
 Added four distinct owned-reference native candidates, original materials,
 editable geometry/animation and inherited combat mappings. Sixteen exports repeat;
 closed/posed geometry and 702 final-package native assertions pass. Native
@@ -2307,6 +2359,8 @@ no author check was accepted or removed. Coverage reaches52/56. The complete
 batch and consolidated review remain unfinished.
 
 ## 5.17.88 - Five land and river figure candidates (#819, 2026-11-16)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA819-LAND-01 (#819). The result covers the listed steps and prerequisites.
 
 Added editable native Noshtex, Pampayoj, Mayu Maman, Orko Maman and Nowet candidates,
 original generated materials and inherited combat mappings. Nineteen exports repeat;
@@ -2321,6 +2375,8 @@ consolidated review remain unfinished.
 
 ## 5.17.87 - Four witch and rural figure candidates (#817, 2026-11-15)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA817-WITCH-01 (#817). The result covers the listed steps and prerequisites.
+
 Added editable native witch, Salamanca, Pericana and Solapa candidates, original
 generated materials and inherited combat mappings. Sixteen exports repeat;
 closed/posed geometry and skirt checks pass. The 702 qualified native assertions include exact-byte bounded reuse for
@@ -2333,6 +2389,8 @@ pending; no author check was accepted or removed. Coverage reaches 43/56;
 the wider batch and final consolidated review remain unfinished.
 
 ## 5.17.86 - Five austral figure candidates (#815, 2026-11-15)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA815-AUSTRAL-01 (#815). The result covers the listed steps and prerequisites.
 
 Added native Shoort, Tanu, Halahaches, Matan and Ulen candidates with editable
 sources, original generated materials and inherited combat mappings. Nineteen
@@ -2347,6 +2405,8 @@ consolidated author review remain unfinished.
 
 ## 5.17.85 - Four forest guardian candidates (#813, 2026-11-15)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA813-FOREST-01 (#813). The result covers the listed steps and prerequisites.
+
 Added distinct native Sachayoj, Caa Pora, Caa Yari and Zapam Zucum models,
 editable sources, original generated material atlas and inherited combat mappings.
 Sixteen exports repeat. Geometry, posed contacts and closed-skirt coverage pass;
@@ -2360,6 +2420,8 @@ and consolidated author review remain unfinished.
 
 ## 5.17.84 - Viuda, Llorona and Futre candidates (#811, 2026-11-15)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA811-PERIOD-01 (#811). The result covers the listed steps and prerequisites.
+
 Added distinct native period apparitions, editable sources, original generated
 materials, provenance and inherited combat mappings. Fourteen exports repeat;
 geometry, joint and stride-coverage checks pass. Native evidence totals 686
@@ -2372,6 +2434,8 @@ was removed or accepted. Native creature coverage reaches 30/56; the wider batch
 and final consolidated review remain unfinished.
 
 ## 5.17.83 - Umita and Chonchon regional galleries (#809)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA809-HEAD-GALLERIES-01 (#809). The result covers the listed steps and prerequisites.
 
 Added optional Umita/NOA and Chonchon/Patagonia figures and cameras while
 retaining32 prior figures,45 controls,nine grounds and both crossing routes.
@@ -2407,6 +2471,8 @@ version diagnostics change. No author test is accepted, added or removed.
 
 ## 5.17.80 - Umita and Chonchon native candidates (#803, 2026-11-15)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA803-HEADS-01 (#803). The result covers the listed steps and prerequisites.
+
 Added real closed head/hair/beard/ear-wing meshes, editable sources, unchanged
 generated atlas, provenance and inherited combat mappings for classes 028/035.
 Ten artifacts repeat; 65 components and 504 posed contacts pass. Native save/
@@ -2421,6 +2487,8 @@ Metadata/history follow-ups #805/#806 and the wider batch remain unfinished.
 
 ## 5.17.79 - Apparition regional gallery (#801)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA801-APPARITIONS-GALLERY-01 (#801). The result covers the listed steps and prerequisites.
+
 Added Mulanima/NOA and Chancho de Lata/Pampa/Litoral to optional CA682G. Exact
 existing artwork, fifteen previous figures, twenty-one controls, five grounds
 and the crossing path remain; only required dependency pins refresh. Four
@@ -2431,6 +2499,8 @@ originates here and remains pending; no earlier author check was removed.
 
 ## 5.17.78 - Ao Ao/Kasogonaga material-cell repair (#799)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA799-UV-01 (#799). The result covers the listed steps and prerequisites.
+
 Changed only the nine nonintegral sampling grids and required exports, adding a
 shared regression guard. Native before/after UV evidence preserves the defect;
 21 exports repeat and563 engine assertions pass. ASSETS records exact sampling
@@ -2439,6 +2509,8 @@ originates here and remains pending alongside existing art checks. No author
 acceptance was inferred and no pending test was removed.
 
 ## 5.17.77 - Native apparition quadrupeds (#797, 2026-11-15)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA797-APPARITIONS-01 (#797). The result covers the listed steps and prerequisites.
 
 Added distinct native Mulanima and Chancho de Lata, editable sources, inherited
 combat-state bindings, original atlas and retained provenance. Twelve exports
@@ -2451,6 +2523,8 @@ CA797-APPARITIONS-01 originates here and remains pending. No prior test was remo
 
 ## 5.17.76 - Kasogonaga native candidate (#795, 2026-11-15)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA795-KASOGONAGA-01 (#795). The result covers the listed steps and prerequisites.
+
 Added reference-led anteater geometry, editable material/animation/contact sources
 and native combat-state bindings. Existing gameplay and saves remain unchanged.
 Nine exports repeat;75 closed components,74 witnesses and592 posed contacts pass.
@@ -2461,6 +2535,8 @@ here, pending the consolidated author test. No earlier author check was removed.
 
 ## 5.17.75 - Teju regional gallery (#793, 2026-11-15)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA793-TEJU-GALLERY-01 (#793). The result covers the listed steps and prerequisites.
+
 Added Teju Jagua/Selva to optional CA682G, preserving fourteen previous figures,
 twenty controls, five grounds and the crossing path. Refreshed dependent source
 pins only; production artwork and model bytes remain exact. Four fixture files
@@ -2470,6 +2546,8 @@ assets/validation_v5_17_75/evidence/SUMMARY.json. CA793-TEJU-GALLERY-01 originat
 here and remains pending. No author acceptance or prior test removal occurred.
 
 ## 5.17.74 - Teju Jagua native candidate (#791, 2026-11-15)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA791-TEJU-01 (#791). The result covers the listed steps and prerequisites.
 
 Added reference-led seven-headed Teju Jagua geometry, native combat-state bindings,
 editable source and an original diffuse atlas. Existing rules and saves remain.
@@ -2482,6 +2560,8 @@ check was removed, and the full batch remains unfinished.
 
 ## 5.17.73 - Quadruped regional gallery (#790, 2026-11-15)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA790-QUADRUPED-GALLERY-01 (#790). The result covers the listed steps and prerequisites.
+
 Added Familiar/NOA and Ao Ao/Selva to optional CA682G. Preserved twelve previous
 figures, eighteen controls, all five grounds and the crossing path. Refreshed
 only dependent source/manifest hashes, with all production artwork unchanged.
@@ -2491,6 +2571,8 @@ assets/validation_v5_17_73/evidence/SUMMARY.json. CA790-QUADRUPED-GALLERY-01
 originates here and remains pending. No prior author check was removed.
 
 ## 5.17.72 - #787 Familiar and Ao Ao models (2026-11-15)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA787-QUADRUPEDS-01 (#787). The result covers the listed steps and prerequisites.
 
 Added original native quadruped candidates for CaelumBestiary043/050. Existing
 Mandinga gameplay and saved identities are unchanged. Twelve deterministic
@@ -2518,6 +2600,8 @@ No author check was accepted or removed. Wider work remains pending.
 
 ## 5.17.70 - Magic, light, medium and heavy torso armor (#783), 2026-11-15
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA783-TORSO-ARMOR-01 (#783). The result covers the listed steps and prerequisites.
+
 Delivered four original hollow cuirass candidates with fixed shoulder plates,
 belts, trim, rivets, scarf/cape and a continuous fur mantle. One new opaque fur
 texture is copied unchanged from built-in image_gen; exact prompt and provenance
@@ -2536,6 +2620,8 @@ accepted or removed. Wider V5.16, character conversion and worn fitting remain o
 
 ## 5.17.69 - Magic, light, medium and heavy foot armor (#781), 2026-11-15
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA781-FOOT-ARMOR-01 (#781). The result covers the listed steps and prerequisites.
+
 Delivered four original paired boot world models using owned hollow footwear
 anatomy and unchanged raster sources. All twelve identities and gameplay remain
 unchanged. Seventeen exports repeat; independent checks pass 120 closed
@@ -2550,6 +2636,8 @@ CA781-FOOT-ARMOR-01 originates here and remains pending. No author check was
 accepted or removed. The broader V5.16/3D request remains unfinished.
 
 ## 5.17.68 - Magic, light, medium and heavy hand armor (#779), 2026-11-15
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA779-HAND-ARMOR-01 (#779). The result covers the listed steps and prerequisites.
 
 Delivered four original paired world-drop assemblies using existing owned
 textures and hollow-glove geometry. All twelve native qualities retain identity
@@ -2566,6 +2654,8 @@ accepted or removed. The broader V5.16/3D request remains unfinished.
 
 ## 5.17.67 - Magic, light, medium and heavy helmet drops (#777), 2026-11-15
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA777-ARMOR-HELMETS-01 (#777). The result covers the listed steps and prerequisites.
+
 Delivered four original hollow native world models with portable editable
 sources and an original opaque gold material/exact built-in image_gen prompt.
 Twelve existing head armor identities and gameplay remain unchanged. Nineteen
@@ -2581,6 +2671,8 @@ test was accepted or removed. The broader V5.16/3D request remains unfinished.
 
 ## 5.17.66 - Medium torso armor no longer uses potion art (#775), 2026-11-15
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA775-ARMOR-ALIAS-01 (#775). The result covers the listed steps and prerequisites.
+
 Separated the existing medium-armor alias to CMAR while retaining CAMD for the
 Anima potion. Preserved images, models, stats, inventory icons and schema. Shared
 source metadata hashes are refreshed without geometry or material changes.
@@ -2595,6 +2687,8 @@ was accepted or removed. Sixteen armor world states and wider 3D/V5.16 remain.
 
 ## 5.17.65 - Carbine, shotgun, longbow and crossbow drops (#773), 2026-11-15
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA773-RANGED-DROPS-01 (#773). The result covers the listed steps and prerequisites.
+
 Delivered four original native world-drop assemblies and one original opaque
 canvas texture with its exact built-in image_gen prompt. Existing references,
 twelve type/tier cases, held art, ammunition ownership and gameplay are preserved.
@@ -2608,6 +2702,8 @@ CA773-RANGED-DROPS-01 originates here and remains pending. No prior author check
 was accepted or removed. The broader V5.16/3D request is unfinished.
 
 ## 5.17.64 - Flail, giant-gauntlet and bolas world models (#771), 2026-11-15
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA771-ARTICULATED-DROPS-01 (#771). The result covers the listed steps and prerequisites.
 
 Delivered three original closed native assemblies and one original opaque
 leather texture with its exact built-in image_gen prompt. Existing effective
@@ -2624,6 +2720,8 @@ check was accepted or removed. The broader V5.16/3D request is unfinished.
 
 ## 5.17.63 - Effective weapon-reference correction (#769, 2026-11-15)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA769-EFFECTIVE-WEAPON-REFERENCES-01 (#769). The result covers the listed steps and prerequisites.
+
 Corrected the seven #763/#765 candidates that used physical sprite images
 overridden by TEXTURES. Current aliases/scales and distinctive grip/tassel
 colors now guide their simplified art; the pickaxe remains byte-identical.
@@ -2638,6 +2736,8 @@ no previous author check was accepted or removed. Broader work is unfinished.
 
 ## 5.17.62 - Polearm/tool drops (#767, 2026-11-15)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA767-POLEARM-DROPS-01 (#767). The result covers the listed steps and prerequisites.
+
 Added four complete assemblies and exact world bindings. Corrected the
 prototype's legacy polearm references to effective TEXTURES aliases and its
 utility-staff lean to the scaled source envelope. Retained superseded evidence;
@@ -2651,6 +2751,8 @@ Broader3D and V5.16 remain incomplete.
 
 ## 5.17.61 - Axe/tool drops (#765, 2026-11-15)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA765-AXE-DROPS-01 (#765). The result covers the listed steps and prerequisites.
+
 Added four closed head/handle assemblies using unchanged owned textures and
 four exact state bindings. Corrected an attachment witness inside the curved
 mining pick without changing geometry. Sixteen deterministic outputs,
@@ -2662,6 +2764,8 @@ CA765-AXE-DROPS-01 originates here and remains pending. No author check was
 accepted or removed. Broader3D and V5.16 remain incomplete.
 
 ## 5.17.60 - Physical blade drops (#763, 2026-11-15)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA763-BLADED-WEAPON-DROPS-01 (#763). The result covers the listed steps and prerequisites.
 
 Added four native blade/hilt assemblies and six exact state bindings with
 unchanged source textures, quality appearance and gameplay. Improved blade
@@ -2675,6 +2779,8 @@ check was accepted or removed. Broader3D and V5.16 remain incomplete.
 
 ## 5.17.59 - Hooded effigy drops (#761, 2026-11-15)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA761-EFFIGY-DROPS-01 (#761). The result covers the listed steps and prerequisites.
+
 Added three original hooded sculptures and six exact support-weapon bindings.
 Native inspection prompted a new wood/deep-recess texture, with its full
 image-generation prompt and unchanged output retained. Fourteen deterministic
@@ -2686,6 +2792,8 @@ CA761-EFFIGY-DROPS-01 originates here and remains pending. No author check was
 accepted or removed. Broader 3D and V5.16 work remains incomplete.
 
 ## 5.17.58 - Scepter/censer quality models (#759, 2026-11-15)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA759-MAGIC-QUALITY-DROPS-01 (#759). The result covers the listed steps and prerequisites.
 
 Reused exact #755 tier-one geometry and existing atlases; added four quality
 variants and twelve exact weapon bindings. Native inspection prompted the
@@ -2699,6 +2807,8 @@ check was accepted or removed. Broader 3D and V5.16 work remains incomplete.
 
 ## 5.17.57 - Reused magical weapon drops (#757, 2026-11-15)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA757-MAGIC-WEAPON-DROPS-01 (#757). The result covers the listed steps and prerequisites.
+
 Bound staff1, bell17 and support-statuette25 to exact #755 geometry/material
 bytes for both native weapon classes, preserving original shared tier art and
 gameplay. Three deterministic outputs, 1,509 native continuity checks and
@@ -2710,6 +2820,8 @@ CA757-MAGIC-WEAPON-DROPS-01 originates here and remains pending. No author
 check was accepted or removed. Broader 3D and V5.16 work remains incomplete.
 
 ## 5.17.56 - Native magical crafting bases (#755, 2026-11-15)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA755-MAGIC-BASE-DROPS-01 (#755). The result covers the listed steps and prerequisites.
 
 Added six original volumetric material models and a generated, unchanged-byte
 atlas with prompt/provenance. Corrected attachment witnesses and seal extent;
@@ -2723,6 +2835,8 @@ accepted or removed. Broader 3D and V5.16 campaign work remains incomplete.
 
 ## 5.17.55 - Native baseless Orbs (#753, 2026-11-15)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA753-ORB-DROPS-01 (#753). The result covers the listed steps and prerequisites.
+
 Added three closed Orb models using the unchanged accepted high-resolution
 atlas, preserving both weapon identities and the component base. Corrected a
 copied test essence rejected by existing offensive-magic migration; retained
@@ -2735,6 +2849,8 @@ CA753-ORB-DROPS-01 originates here and remains pending. No author test was
 accepted or removed; broader 3D and V5.16 campaign work continues.
 
 ## 5.17.54 - Native elemental crafting essences (#751, 2026-11-15)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA751-ELEMENTAL-DROPS-01 (#751). The result covers the listed steps and prerequisites.
 
 Added five native models using byte-exact owned icon textures. Native review
 prompted textured elemental curves, the colored orbit and thinner joined earth
@@ -2758,6 +2874,8 @@ assets/validation_v5_17_53/evidence/SUMMARY.json.
 No author test was accepted or removed; CA731-HIDE-DROPS-01 remains pending.
 
 ## 5.17.52 - Native prepared-kit models (#747, 2026-11-14)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA747-CARTRIDGE-KIT-DROPS-01 (#747). The result covers the listed steps and prerequisites.
 
 Added two native drop models based on the accepted #380 references, preserving
 the #379 indivisible-kit rules. Existing opaque textures are reused unchanged.
@@ -2787,6 +2905,8 @@ No author test was accepted or removed; production gameplay/art is unchanged.
 
 ## 5.17.50 - Kitchen ingredient models (#743, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA743-KITCHEN-DROPS-01 (#743). The result covers the listed steps and prerequisites.
+
 Added native flour, raw beef, raw hake, vegetables, salt and dough drops,
 preserving original #410 icons and existing material/cooking rules. Retained
 the built-in image_gen atlas, exact prompt/provenance and editable sources.
@@ -2802,6 +2922,8 @@ removed or accepted. The broader 3D conversion and campaign work continue.
 
 ## 5.17.49 - Hygiene drop models (#741, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA741-HYGIENE-DROPS-01 (#741). The result covers the listed steps and prerequisites.
+
 Added native fat, alkali and soap models, preserving accepted #502 icons and
 all three normalized type/tier cases. Retained the new image_gen atlas,
 exact prompt/provenance and editable sources. Native review replaced rounded
@@ -2816,6 +2938,8 @@ was removed or accepted; the broader campaign and 3D conversion continue.
 
 ## 5.17.48 - Basilisco regional gallery (#739, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA739-BASILISCO-GALLERY-01 (#739). The result covers the listed steps and prerequisites.
+
 Added native Basilisco appearances on the approved Pampa/Litoral plots of
 optional CA682G. Retained ten previous figures, sixteen previous controls,
 five grounds and the crossing path. Refreshed only dependent material/source
@@ -2827,6 +2951,8 @@ CA739-BASILISCO-GALLERY-01 originates here and remains pending. No prior
 author check was removed; model acceptance and the wider delivery continue.
 
 ## 5.17.47 - Basilisco native model (#738, 2026-11-14)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA738-BASILISCO-01 (#738). The result covers the listed steps and prerequisites.
 
 Bound the supplied rooster/reptile Basilisco to its existing provisional
 actor. Retained exact new atlas prompt/provenance, editable sources and all
@@ -2842,6 +2968,8 @@ or regional/campaign placement is claimed; the wider delivery continues.
 
 ## 5.17.46 - Modular style proposals before conversion (#736, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA736-MODULAR-STYLE-01 (#736). The result covers the listed steps and prerequisites.
+
 The author answered "Revisar propuestas visuales antes" to the #458 style
 proposal. Prepared seven concept boards for human/goblin/Caelith and four
 animal forms, fourteen sex variants, using owned references. Preserved all
@@ -2853,6 +2981,8 @@ is claimed. Only the two required release diagnostics change in src.
 CA736-MODULAR-STYLE-01 originates here and remains pending.
 
 ## 5.17.45 - Fabric, raw fibers and rope drops (#733, 2026-11-14)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA733-TEXTILE-DROPS-01 (#733). The result covers the listed steps and prerequisites.
 
 Added six native crafting models for materials18/71..75, preserving all eight
 cases and gameplay. A new image_gen material atlas retains exact prompt and
@@ -2868,6 +2998,8 @@ delivery and author acceptance are not complete.
 
 ## 5.17.44 - Leather and hide drops (#731, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA731-HIDE-DROPS-01 (#731). The result covers the listed steps and prerequisites.
+
 Added four closed native sheets for materials19/76/77/78, preserving all six
 type/tier cases and gameplay. New image_gen materials retain exact prompt,
 provenance and original pixels. Native review prompted leather reverse/rim
@@ -2881,6 +3013,8 @@ and author acceptance are not complete.
 
 ## 5.17.43 - Hybrid serpent regional inspection (#729, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA729-HYBRID-GALLERY-01 (#729). The result covers the listed steps and prerequisites.
+
 Added Tu’ĩ/Litoral and Yaguá/Litoral/Selva to isolated CA709G while preserving
 eleven earlier figures, eighteen controls, four plots and native asset bytes.
 Four fixture files repeat; 61/126 native assertions cover fresh/reload identity,
@@ -2891,6 +3025,8 @@ CA729-HYBRID-GALLERY-01 originates here and remains unconfirmed. Earlier
 pending gallery runner paths were updated without retiring their tests.
 
 ## 5.17.42 - Hybrid serpents (#727, 2026-11-14)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA727-HYBRID-SERPENTS-01 (#727). The result covers the listed steps and prerequisites.
 
 Delivered candidate native models for the supplied parrot-headed Mbói Tu’ĩ
 and canine-headed Mbói Yaguá, preserving their provisional actor profiles.
@@ -2907,6 +3043,8 @@ was accepted or removed. The broader campaign and art conversion continue.
 
 ## 5.17.41 - Weapon assembly components (#725, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA725-ASSEMBLY-COMPONENTS-01 (#725). The result covers the listed steps and prerequisites.
+
 Added nine native crafting drops for materials25/26/27/30/31/32/33/34/35 and
 all27 tiers, preserving gameplay and icons. New image_gen leather/fiber pixels
 and exact prompt/provenance complement unchanged #723 metals. Initial native
@@ -2920,6 +3058,8 @@ CA725-ASSEMBLY-COMPONENTS-01 originates here and remains pending; broader
 delivery and author acceptance are not complete.
 
 ## 5.17.40 - Metal weapon components (#723, 2026-11-14)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA723-WEAPON-COMPONENTS-01 (#723). The result covers the listed steps and prerequisites.
 
 Added eight native world models for existing materials1/2/3/4/5/9/10/40,
 preserving their24 type/tier cases and gameplay. Closed beveled blades, a
@@ -2937,6 +3077,8 @@ author acceptance are not complete.
 
 ## 5.17.39 - Serpent regional inspection (#721, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA721-SERPENT-GALLERY-01 (#721). The result covers the listed steps and prerequisites.
+
 Extended optional CA709G with Moñái/Selva and Mbói Tatá/Litoral/Selva, keeping
 all earlier displays/plots/controls and native model/material bytes. Four
 fixture files repeat; 49/102 native checks cover fresh/reload identity,
@@ -2947,6 +3089,8 @@ CA721-SERPENT-GALLERY-01 originates here and remains unconfirmed. Updated
 earlier pending gallery runner paths without retiring their checks.
 
 ## 5.17.38 - Native serpent family (#720, 2026-11-14)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA720-SERPENTS-01 (#720). The result covers the listed steps and prerequisites.
 
 Implemented reference-led Moñái and Mbói Tatá with continuous volumetric
 bodies, closed attached anatomy and all 23 inherited combat identities.
@@ -2968,6 +3112,8 @@ worn equipment and original campaign work remain unfinished.
 
 ## 5.17.37 - Wooden crafting components (#717, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA717-WOOD-COMPONENTS-01 (#717). The result covers the listed steps and prerequisites.
+
 Added native drops for existing materials6/7/8/28/29/42, preserving all three
 tiers and gameplay. Six owned icon silhouettes use closed rounded profiles,
 curved bow limbs/strings and cut timber with unchanged owned texture pixels.
@@ -2981,6 +3127,8 @@ CA717-WOOD-COMPONENTS-01 originates here and remains pending. Broader work and
 author acceptance are not complete.
 
 ## 5.17.36 - Chain material world props (#716, 2026-11-14)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA716-CHAINS-01 (#716). The result covers the listed steps and prerequisites.
 
 Implemented existing material41/M041 and43/M043 as editable closed native
 models following owned icons. Preserved three iron tiers and untiered silver,
@@ -2996,6 +3144,8 @@ here and remains pending. No broader inventory/character/campaign acceptance.
 
 ## 5.17.35 - Avian regional inspection (#713, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA713-AVIAN-GALLERY-01 (#713). The result covers the listed steps and prerequisites.
+
 Extended optional CA709G with Cachiru/Kakuy in NOA and Kelenken in Patagonia,
 retaining previous plots/figures and all native model/material bytes. Added
 data-driven views and camera containment checks. Four fixture files repeat;
@@ -3007,6 +3157,8 @@ originates here; it and CA709-NATIVE-GALLERY-01 remain unconfirmed. Updated
 the older pending test's instructions to the current keys without retiring it.
 
 ## 5.17.34 - Native avian family (#711, 2026-11-14)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA711-AVIAN-01 (#711). The result covers the listed steps and prerequisites.
 
 Implemented reference-led Cachiru, Kakuy and Kelenken with editable anatomy,
 curved closed feather solids and all 23 inherited combat identities. Preserved
@@ -3029,6 +3181,8 @@ work remain unfinished. No author acceptance is inferred.
 
 ## 5.17.33 - Native regional gallery (#709, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA709-NATIVE-GALLERY-01 (#709). The result covers the listed steps and prerequisites.
+
 Added isolated CA709G with actual native Pombero in Litoral/Selva and Cuero,
 Nahuelito and Peuchen in Patagonia. Preserved original galleries, model/texture
 bytes and production behavior. Reused geometry/event tools and the established
@@ -3039,6 +3193,8 @@ limits apply. Evidence: assets/validation_v5_17_33/evidence/SUMMARY.json.
 CA709-NATIVE-GALLERY-01 originates here and remains pending author acceptance.
 
 ## 5.17.32 - Peuchen combat model (#708, 2026-11-14)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA708-PEUCHEN-01 (#708). The result covers the listed steps and prerequisites.
 
 Implemented the owned CA-FOLK-054 anatomy as 86 closed components and 23 native
 combat poses on the existing class. Preserved provisional Mandinga rules and
@@ -3060,6 +3216,8 @@ classes; no flight, campaign spawn or broader-batch acceptance is implied.
 
 ## 5.17.31 - Linked-ring chainmail world prop (#706, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA706-CHAINMAIL-01 (#706). The result covers the listed steps and prerequisites.
+
 Applied the all-dropped-items 3D request to chainmail material ID 17, preserving
 all three tiers and inventory rules. The original icon remains untouched;
 55 closed links reuse owned iron. Independent serialized checks verify all
@@ -3077,6 +3235,8 @@ CA706-CHAINMAIL-01 originates here and remains pending. This static regular
 panel remains candidate art; worn armor and the broader batch are unfinished.
 
 ## 5.17.30 - Six metal plate material models (#704, 2026-11-14)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA704-PLATES-01 (#704). The result covers the listed steps and prerequisites.
 
 Applied the all-world-drops 3D request to material IDs 11-16 without changing
 icons, tiers, crafting recipes or balance. Original painted fronts cover
@@ -3098,6 +3258,8 @@ and remains pending. The broader batch and worn equipment fitting are incomplete
 
 ## 5.17.29 - Four shield world props (#702, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA702-SHIELDS-01 (#702). The result covers the listed steps and prerequisites.
+
 Implemented the author's all-world-drops 3D request for the four existing shield
 types. Original PNGs and native gameplay remain unchanged. Nineteen closed
 parts include curved painted fronts, solid backs, rims and rear grips using
@@ -3117,6 +3279,8 @@ campaign/art batch remain incomplete.
 
 ## 5.17.28 - Cuyo material and guardian gallery (#700, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA700-CUYO-GALLERY-01 (#700). The result covers the listed steps and prerequisites.
+
 The author's regional inspection request adds one original Cuyo ground study
 and Yasí/Litoral plus Yastay/Cuyo/NOA displays to CA682G. Five plots retain the
 seven earlier positions and F1-F12 functions; number keys expose four new views.
@@ -3128,6 +3292,8 @@ new texture include and release diagnostics. CA700-CUYO-GALLERY-01 remains
 pending; this is not author art acceptance or completion of the broader batch.
 
 ## 5.17.27 - Yasí Yateré and Yastay models (#698, 2026-11-14)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA698-GUARDIANS-01 (#698). The result covers the listed steps and prerequisites.
 
 The all-characters-3D request adds two unique native candidates with original
 generated face/material sources and editable anatomical/costume groups. The
@@ -3142,6 +3308,8 @@ CA698-GUARDIANS-01 remains pending. No author acceptance or completed broad-batc
 claim is recorded; gallery/campaign placement remains separate work.
 
 ## 5.17.26 - Clothing-ensemble world props (#696, 2026-11-14)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA696-CLOTHING-01 (#696). The result covers the listed steps and prerequisites.
 
 Eleven #387 body outfits gain candidate 3D world models without changing owned
 pixels or inventory rules. Three previews each pass 1,046 functional checks;
@@ -3163,6 +3331,8 @@ identically. The initial failure and metadata-only correction are preserved.
 
 ## 5.17.25 - Footwear-pair world props (#694, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA694-FOOTWEAR-01 (#694). The result covers the listed steps and prerequisites.
+
 Five accepted #387 footwear designs gain candidate closed 3D pairs without
 changing original pixels or native inventory rules. Initial attachment/opening
 checks failed; later native views led to a fully fitted lining, circumferential
@@ -3177,6 +3347,8 @@ completion of the broader batch are not claimed.
 
 ## 5.17.24 - NOA gallery extension (#692, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA692-NOA-GALLERY-01 (#692). The result covers the listed steps and prerequisites.
+
 The author's regional small-map request adds Mikilo and Coquena diagnostic
 displays beside retained Ucumar. All previous plots/displays and original art
 bytes remain. Data owns model sources, positions and group/closeup cameras;
@@ -3187,6 +3359,8 @@ sample and its limits. CA692-NOA-GALLERY-01 remains pending author acceptance;
 prior art checks and the broad batch remain unfinished.
 
 ## 5.17.23 - Mikilo and Coquena models (#690, 2026-11-14)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA690-DUENDES-01 (#690). The result covers the listed steps and prerequisites.
 
 The all-characters-3D request adds two native folklore candidates from the
 verified references, using three owned generated diffuse textures and editable
@@ -3200,6 +3374,8 @@ hashes, earlier candidates and qualifications. CA690-DUENDES-01 remains pending;
 this does not establish author art acceptance or complete the broad 3D batch.
 
 ## 5.17.22 - Glove-pair world-drop models (#688, 2026-11-14)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA688-GLOVES-01 (#688). The result covers the listed steps and prerequisites.
 
 The all-dropped-inventory-3D request adds four complete left/right glove pairs
 using accepted #387 designs and unchanged owned PNGs. Original native item
@@ -3217,6 +3393,8 @@ actual worn fitting and completion of the broader batch are not claimed.
 
 ## 5.17.21 - Headwear world-drop models (#686, 2026-11-14)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA686-HEADWEAR-01 (#686). The result covers the listed steps and prerequisites.
+
 The author's all-dropped-inventory-3D request adds five closed, hollow headwear
 props based on the accepted #387 designs, with original images and native rules
 unchanged. Separate editable parts retain bands, bow, visors, seams, buttons and
@@ -3231,6 +3409,8 @@ proof, earlier evidence and limits. CA686-HEADWEAR-01 remains pending; no author
 acceptance, worn-body fitting or completion of the broader batch is claimed.
 
 ## 5.17.20 - Raw-material world-drop models (#684, 2026-11-13)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA684-ORES-01 (#684). The result covers the listed steps and prerequisites.
 
 The author's all-dropped-inventory-3D request extends to coal and five raw-metal
 materials. Candidate closed rock clusters preserve six original icon images and
@@ -3248,6 +3428,8 @@ remains pending; broader inventory/campaign work is unfinished.
 
 ## 5.17.19 - Regional beast-men inspection map (#682, 2026-11-13)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA682-REGIONS-01 (#682). The result covers the listed steps and prerequisites.
+
 The author requested regional texture studies alongside their monsters while
 deferring questions. Two built-in image_gen ground studies and a new isolated
 map reuse existing native beast-men in all five approved regional associations.
@@ -3263,6 +3445,8 @@ CA682-REGIONS-01 remains pending. ASSETS and the evidence SUMMARY retain the
 environment, package hash, failed run and measurement qualifications.
 
 ## 5.17.18 - Lobizon, Uturunco and Ucumar models (#680, 2026-11-13)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA680-BEAST-MEN-01 (#680). The result covers the listed steps and prerequisites.
 
 The author's all-characters-3D request extends to three repeatable beast-men
 from recovered references. Initial isolated visual checks passed but exposed
@@ -3288,6 +3472,8 @@ not complete the roster, modular equipment, regional maps or siege performance.
 
 ## 5.17.17 - Material pendant and gem models (#678, 2026-11-13)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA678-GEMS-01 (#678). The result covers the listed steps and prerequisites.
+
 The author's all-dropped-inventory request extends to fourteen material states
 45..58 using closed editable volumes and unchanged original source pixels.
 Initial isolated native runs pass 1,093 assertions each; visual inspection
@@ -3306,6 +3492,8 @@ CA678-GEMS-01 remains unconfirmed; no author test is removed.
 
 ## 5.17.16 - Support-book model reuse (#676, 2026-11-13)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA676-BOOKS-01 (#676). The result covers the listed steps and prerequisites.
+
 The author's all-dropped-inventory request is extended to current support-book
 and book-base material states through three bindings to the unchanged #656
 mesh. Native weapon/stack identity, qualities and rules remain authoritative.
@@ -3319,6 +3507,8 @@ Evidence: assets/validation_v5_17_16/evidence/SUMMARY.json. CA676-BOOKS-01 remai
 unconfirmed, and all earlier author checks are retained.
 
 ## 5.17.15 - Jewelry drop models (#674, 2026-11-13)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA674-JEWELRY-01 (#674). The result covers the listed steps and prerequisites.
 
 The author's all-dropped-inventory request is extended to four amulet and five
 seal designs, with nine original volumetric models and fourteen bindings.
@@ -3335,6 +3525,8 @@ unconfirmed author check; other pending author entries are retained.
 
 ## 5.17.14 - Shared key model for lock inventory (#672)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA672-LOCKS-01 (#672). The result covers the listed steps and prerequisites.
+
 The author's all-drop 3D request is applied to CaelumLockItem by reusing the
 original #656 key model. All eight native types retain the existing shared key
 icon representation; no distinct lock/tool design or gameplay rule is authored.
@@ -3347,6 +3539,8 @@ and environment. Evidence: assets/validation_v5_17_14/evidence/SUMMARY.json.
 CA672-LOCKS-01 remains an unconfirmed author visual/menu check.
 
 ## 5.17.13 - Closed mate drop models (#670)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA670-MATES-01 (#670). The result covers the listed steps and prerequisites.
 
 The author requested 3D for every inventory drop and deferred questions. Three
 new mate models follow the corrected #472 designs; rejected hemispheres remain
@@ -3361,6 +3555,8 @@ Evidence: assets/validation_v5_17_13/evidence/SUMMARY.json. Author CA670-MATES-0
 remains unconfirmed. No ordinary-menu, campaign or crowd acceptance is claimed.
 
 ## 5.17.12 - Water-ration waterskin (#668)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA668-WATERSKIN-01 (#668). The result covers the listed steps and prerequisites.
 
 The author-requested 3D inventory conversion adds a closed leather waterskin,
 strap/loop, blue pendant and hollow drinking cup for the existing water ration
@@ -3379,6 +3575,8 @@ pending; no ordinary-menu, campaign-performance or author acceptance is implied.
 
 ## 5.17.11 - Unplaced furniture models (#666)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA666-FURNITURE-01 (#666). The result covers the listed steps and prerequisites.
+
 The author's all-dropped-inventory request is implemented for seventeen furniture
 classes using existing owned geometry, UVs and pixels. Complete table/chair sets
 retain native seat placement. Drop-only bindings preserve physical ownership,
@@ -3392,6 +3590,8 @@ and scope limitations. Evidence: assets/validation_v5_17_11/evidence/SUMMARY.jso
 CA666-FURNITURE-01 and all earlier author checks remain pending.
 
 ## 5.17.10 - Camp inventory drop models (#664, 2026-11-13)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA664-CAMP-01 (#664). The result covers the listed steps and prerequisites.
 
 Reused the accepted enlarged tent and extracted only original iron pot/trivet
 geometry for class-specific native drop presentation. Original geometry, UVs,
@@ -3410,6 +3610,8 @@ earlier deployed-pot visual acceptance and campaign/crowd performance are not im
 
 ## 5.17.9 - Nahuelito inherited combat model (#662, 2026-11-13)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA662-NAHUELITO-01 (#662). The result covers the listed steps and prerequisites.
+
 Reused original anatomy, topology, UVs and PNG bytes for 23 inherited native
 frames with editable bends/pivots. Body fitting covers all authored poses without
 changing provisional Mandinga gameplay/collision or the original 12m preview.
@@ -3424,6 +3626,8 @@ assets/validation_v5_17_9/evidence/SUMMARY.json. CA662-NAHUELITO-01 author revie
 remains pending; final dimensions and campaign/crowd acceptance are not approved.
 
 ## 5.17.8 - Cuero Uñudo inherited combat model (#660, 2026-11-13)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA660-CUERO-01 (#660). The result covers the listed steps and prerequisites.
 
 Reused original anatomy, topology, UVs and PNG bytes for 23 inherited native
 frames. The continuous sheet rig adds presentation poses; native behavior,
@@ -3440,6 +3644,8 @@ pending; provisional diameter fitting is not final species-size approval.
 
 ## 5.17.7 - Seven metal-ingot model variants (#658, 2026-11-13)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA658-INGOTS-01 (#658). The result covers the listed steps and prerequisites.
+
 Added explicit CaelumMaterialPickup bindings for the seven existing metal ingots,
 preserving all three tiers and the #656 legacy ingot. Reused closed geometry and
 original icon pixels with opaque UV margins. No new raster, class, schema or
@@ -3451,6 +3657,8 @@ environment and limits; assets/validation_v5_17_7/evidence/SUMMARY.json preserve
 failed iterations and final evidence. CA658-INGOTS-01 remains pending.
 
 ## 5.17.6 - Document and supply models (#656, 2026-11-13)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA656-DOCUMENTS-01 (#656). The result covers the listed steps and prerequisites.
 
 Added five closed meshes and six explicit native bindings, reusing original
 owned textures and preserving icons/gameplay. Generalized the ammunition export
@@ -3467,6 +3675,8 @@ are not inferred from agent-only tests.
 
 ## 5.17.5 - Pombero inherited combat model (#461, 2026-11-13)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA461-POMBERO-01 (#461). The result covers the listed steps and prerequisites.
+
 Reused the original Pombero anatomy/UVs/textures and added presentation poses for
 its unchanged inherited combat states. Native art is bound to CaelumBestiary006;
 the #455 preview remains untouched. Corrected the diagnostic SetState nofunction
@@ -3481,6 +3691,8 @@ assets/validation_v5_17_5/evidence/SUMMARY.json. CA461-POMBERO-01 and the remain
 roster remain pending; no author/campaign/crowd acceptance is implied.
 
 ## 5.17.4 - Regional ground material gallery (#463, 2026-11-13)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA463-REGIONS-01 (#463). The result covers the listed steps and prerequisites.
 
 Recorded an explicit reuse/gap inventory, generated three separate owned ground
 images with built-in image_gen and preserved original PNGs/prompts/provenance.
@@ -3499,6 +3711,8 @@ combat, campaign or siege performance acceptance is claimed by this art fixture.
 
 ## 5.17.3 - Ammunition drop models (#652, 2026-11-13)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA652-AMMUNITION-01 (#652). The result covers the listed steps and prerequisites.
+
 Separated seven ammunition drop models from the preceding #650 behavior repair.
 Reused owned textures unchanged after the new atlas request failed; preserved its
 prompt/failure record and the original uncommitted #647 candidate. Added explicit
@@ -3513,6 +3727,8 @@ assets/validation_v5_17_3/evidence/SUMMARY.json. CA652-AMMUNITION-01 is pending;
 no ordinary-menu, firing, multiplayer, author or campaign performance acceptance.
 
 ## 5.17.2 - Preserve native javelin stacks (#650, 2026-11-13)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA650-AMMO-01 (#650). The result covers the listed steps and prerequisites.
 
 During #647 model tests, native pickup of all three javelin tiers added units to
 the existing carbine stack. The same failure reproduces without the model overlay.
@@ -3534,6 +3750,8 @@ multiplayer and CA650-AMMO-01 author acceptance are not established by these tes
 Historical merged rounds are not redistributed: their original type is unavailable.
 
 ## 5.17.1 - Initial inventory model coverage (#647, 2026-11-13, in progress)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA647-COINS-01 (#647), CA647-CONSUMABLES-01 (#647), CA647-WATER-01 (#647), CA647-FOOD-01 (#647). The result covers the listed steps and prerequisites.
 
 Added five closed food models for six inventory classes and four prepared table
 displays, preserving approved #410 icons, portions, recipes and native lots.
@@ -3593,6 +3811,8 @@ Static generation/installation and all 18,141 packaged source entries match.
 CA647-COINS-01 remains an author check; no manual acceptance or removal of earlier pending tests is recorded.
 
 ## 5.17.0 - Modular Domingo export (#458, 2026-11-13, in progress)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA458-MODULES-01 (#458). The result covers the listed steps and prerequisites.
 
 The author expanded the active batch to actual3D characters, modular designs,
 inventory drops and regional inspection maps, with weapon visual simplification
@@ -3737,6 +3957,8 @@ claimed, and outstanding manual checks remain untouched.
 
 ## 5.16.3 - Folklore combat classes and model pilot (#455, 2026-11-12)
 
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA455-VIS-01 (#455). The result covers the listed steps and prerequisites.
+
 2026-11-13 Cuero visual follow-up: CA-FOLK-053 gains an editable closed membrane,
 curved marginal claws, dorsal relief and paired eyes. The built-in image_gen
 atlas, exact prompt and provenance remain preserved. Its OBJ/MD3 pilot has
@@ -3855,6 +4077,8 @@ actors. The combat follow-up above implements the shared template; encounter
 rosters and visual acceptance remain outstanding.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
+
+Author confirmation, 2026-11-27. Passed in the consolidated 5.18.3 review: CA454-MAP02-01 (#454), CA454-MAP03-01 (#454). The result covers the listed steps and prerequisites.
 
 2026-11-13 perception follow-up: reuse the native 3D distance already calculated
 inside each candidate-selection iteration. Original contact, field, range and

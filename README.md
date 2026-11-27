@@ -10,13 +10,14 @@ on Windows 11. The independent beta uses GZDoom installed separately; it require
 beta, player guide, optional mode/profile tools and consolidated author terminal.
 The extracted ZIP, deterministic repeat and fresh Play/Multiplayer controls and
 preferences checks passed, along with ten focused native terminal checks. Evidence:
-assets/validation_v5_18_3. All 115 author checks remain pending. GZDoom is
+assets/validation_v5_18_3. The author confirmed all 115 checks on 2026-11-27. GZDoom is
 installed separately and no Doom IWAD is needed.
 
 The complete review terminal is assets/validation_v5_18_3/author_terminal.ps1.
-Option 4 finds each issue/check and its exact steps; option 10 opens the delivered
+Option 4 lists outstanding checks when present. Option 10 opens the delivered
 game, multiplayer, profiles, player guide and new rest/meal/resource scenes.
-The author decides acceptance after reviewing the entire batch.
+The original instructions are archived in assets/validation_v5_18_3/CATALOG.json.
+The following patch notes describe status at delivery. HISTORY records acceptance by release.
 
 #468 integrates the approved independent
 MAP01-MAP03 review beta with the existing profile/multiplayer launchers. The
