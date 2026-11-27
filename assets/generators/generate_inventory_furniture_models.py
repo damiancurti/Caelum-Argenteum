@@ -7,8 +7,10 @@ import re
 import zipfile
 from PIL import Image
 try:
+    from .source_integrity import matches_source_digest
     from .generate_inventory_camp_models import ROOT, digest, read_obj, obj
 except ImportError:
+    from source_integrity import matches_source_digest
     from generate_inventory_camp_models import ROOT, digest, read_obj, obj
 
 SOURCE=ROOT/'assets/source/art/inventory_models_647/furniture'
@@ -56,7 +58,7 @@ def assemble(item,config,root=ROOT):
 
 def verify_sources(config,root=ROOT):
     for name,checksum in config['source_sha256'].items():
-        if digest((root/name).read_bytes())!=checksum:raise ValueError('Changed furniture source: '+name)
+        if not matches_source_digest(root/name, checksum):raise ValueError('Changed furniture source: '+name)
     for cls,entry in config['original_model_blocks'].items():
         blocks=re.findall(r'\bModel\s+'+re.escape(cls)+r'\s*\{[^}]+\}',(root/entry['file']).read_text())
         if len(blocks)!=1 or ' '.join(blocks[0].split())!=entry['text']:raise ValueError('Changed original body binding: '+cls)

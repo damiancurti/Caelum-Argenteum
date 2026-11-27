@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.123** - 2026-11-21.
+Documentation version: **5.17.124** - 2026-11-27.
+
+## 5.17.124 - Repository audit repairs (#899)
+
+Issue #899 covers the twenty audit findings. It also restores export of the current 238-map playtest. Cooperative starts in the mansion and Barracas interior, eight-player mansion placement, restored positions and disconnected hunt roles were tested with native GZDoom 4.14.2 peers. Repeatable regression checks and their platform coverage are recorded in assets/validation_v5_17_124. The existing Windows/Vulkan siege performance measurement and outstanding author checks retain their original status.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 

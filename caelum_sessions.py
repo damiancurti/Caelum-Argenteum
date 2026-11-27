@@ -6,13 +6,17 @@ GZDoom lockstep; this tool is not a game server or an authentication service.
 """
 from __future__ import annotations
 
+from contextlib import contextmanager
+
 import argparse
 import hashlib
 import json
 import os
 from pathlib import Path
+import tempfile
 import secrets
 import sqlite3
+import sys
 import subprocess
 import uuid
 import zipfile
@@ -21,18 +25,12 @@ import time
 
 from caelum_profiles import ProfileStore, ProfileError
 from caelum_profile_graph import NativeSchema, PersonalGraph
-from caelum_campaigns import Campaigns, personal_record, unpack
+from caelum_campaigns import Campaigns, personal_record, require_native_sync as require_native_sync
 
 
 def digest(path: Path) -> str:
     with path.open('rb') as stream:
         return hashlib.file_digest(stream,'sha256').hexdigest()
-
-
-def require_native_sync(level: dict) -> None:
-    """Never publish a native checkpoint that already records desynchronization."""
-    if any(player.get('inconsistant',0)!=0 for player in level['players']):
-        raise ProfileError('The native save records desynchronization; retain it for diagnosis and recover the last synchronized common checkpoint.')
 
 
 def manifest(engine: Path, iwad: Path, packages: list[Path]) -> dict:
@@ -45,6 +43,9 @@ def manifest(engine: Path, iwad: Path, packages: list[Path]) -> dict:
 
 
 def verify_manifest(expected: dict, engine: Path, iwad: Path, packages: list[Path]) -> None:
+    if (not isinstance(expected,dict) or not isinstance(expected.get('files'),list)
+            or not all(isinstance(row,dict) and isinstance(row.get('sha256'),str) for row in expected['files'])):
+        raise ProfileError('Invalid file manifest in the invitation.')
     actual=manifest(engine,iwad,packages)
     if (expected.get('revision')!=1 or expected.get('explicit_packages')!=len(packages)
             or [f['sha256'] for f in expected.get('files',[])]!=[f['sha256'] for f in actual['files']]):
@@ -58,6 +59,13 @@ def write_new(path: Path, data: bytes) -> None:
 
 def process_stamp(pid: int) -> int | None:
     """Use creation time as well as PID; reused Windows PIDs are not this session."""
+    if sys.platform.startswith('linux'):
+        try:
+            stat = Path(f'/proc/{pid}/stat').read_text()
+        except (FileNotFoundError, ProcessLookupError):
+            return None
+        fields = stat.rsplit(')', 1)[1].split()
+        return None if fields[0] == 'Z' else int(fields[19])
     kernel=ctypes.WinDLL('kernel32',use_last_error=True)
     kernel.OpenProcess.restype=ctypes.c_void_p
     kernel.GetProcessTimes.argtypes=[ctypes.c_void_p,*([ctypes.c_void_p]*4)]
@@ -104,41 +112,68 @@ class Sessions:
         row=self.db.execute('SELECT token FROM campaign_locks WHERE campaign=?',(campaign,)).fetchone()
         if row is None or row[0]!=token:raise ProfileError('The session no longer holds campaign custody.')
 
-    def prepare(self,campaign: str,files: dict,token: str) -> dict:
+    def prepare(self,campaign: str,files: dict,token: str, *, directory: Path | None = None) -> dict:
         self.store._key(token,'session token')
-        with self.store.transaction():
-            if self.db.execute('SELECT 1 FROM network_sessions WHERE token=?',(token,)).fetchone():
-                previous=self.get(token)
-                if previous['request']['campaign']!=campaign or previous['request']['manifest']!=files:
-                    raise ProfileError('Session token belongs to another request.')
-                if any(r['identity'].startswith('vacant:') for r in previous['request']['roster']):
-                    raise ProfileError('Fill every native slot before playing this fixed-roster campaign.')
-                return previous
-            self.campaigns.unlocked(campaign)
-            head=self.campaigns.head(campaign);data=self.store.anchor(head['snapshot'])
-            level=self.campaigns.validate(campaign,data,current=True)
-            require_native_sync(level)
-            if not 1<=len(level['players'])<=8:raise ProfileError('Native roster must contain one to eight slots.')
-            roster=[]
-            for slot in range(len(level['players'])):
-                record=personal_record(level,slot)
-                if record.get('ExternalProfileCampaign')!=campaign:raise ProfileError('Initialize/import every native slot before managed launch.')
-                if record.get('ProfileDeparted') or not record.get('ProfileCommitted') or not record.get('ExternalProfileId'):
-                    raise ProfileError('Fill every native slot before playing this fixed-roster campaign.')
-                roster.append(dict(slot=slot,identity=record['ExternalProfileId'],
-                                   name=level['players'][slot].get('playername','Character')))
-            request=dict(revision=1,campaign=campaign,head=head,manifest=files,roster=roster,nonce=secrets.randbelow(2147483646)+1)
-            self.db.execute('INSERT INTO network_sessions VALUES (?,?,NULL)',(token,json.dumps(request,sort_keys=True)))
-            self.db.execute('INSERT INTO campaign_locks VALUES (?,?)',(campaign,token))
-            return self.get(token)
+        published = False
+        try:
+            with self.store.transaction():
+                session = self._reserve(campaign, files, token)
+                if directory is not None:
+                    self.export(token, directory)
+                    published = True
+            return session
+        except BaseException:
+            # A filesystem publication can finish just before the SQLite commit fails.
+            if published:
+                for name in ('session.json', 'recovery.zds'):
+                    (directory / name).unlink(missing_ok=True)
+                directory.rmdir()
+            raise
+
+    def _reserve(self, campaign: str, files: dict, token: str) -> dict:
+        if self.db.execute('SELECT 1 FROM network_sessions WHERE token=?',(token,)).fetchone():
+            previous=self.get(token)
+            if previous['request']['campaign']!=campaign or previous['request']['manifest']!=files:
+                raise ProfileError('Session token belongs to another request.')
+            if any(r['identity'].startswith('vacant:') for r in previous['request']['roster']):
+                raise ProfileError('Fill every native slot before playing this fixed-roster campaign.')
+            return previous
+        self.campaigns.unlocked(campaign)
+        head=self.campaigns.head(campaign);data=self.store.anchor(head['snapshot'])
+        level=self.campaigns.validate(campaign,data,current=True)
+        if not 1<=len(level['players'])<=8:raise ProfileError('Native roster must contain one to eight slots.')
+        roster=[]
+        for slot in range(len(level['players'])):
+            record=personal_record(level,slot)
+            if record.get('ExternalProfileCampaign')!=campaign:raise ProfileError('Initialize/import every native slot before managed launch.')
+            if record.get('ProfileDeparted') or not record.get('ProfileCommitted') or not record.get('ExternalProfileId'):
+                raise ProfileError('Fill every native slot before playing this fixed-roster campaign.')
+            roster.append(dict(slot=slot,identity=record['ExternalProfileId'],
+                               name=level['players'][slot].get('playername','Character')))
+        request=dict(revision=1,campaign=campaign,head=head,manifest=files,roster=roster,nonce=secrets.randbelow(2147483646)+1)
+        self.db.execute('INSERT INTO network_sessions VALUES (?,?,NULL)',(token,json.dumps(request,sort_keys=True)))
+        self.db.execute('INSERT INTO campaign_locks VALUES (?,?)',(campaign,token))
+        return self.get(token)
 
     def export(self,token: str,directory: Path) -> None:
         session=self.get(token)
         if session['result'] is not None:raise ProfileError('Closed sessions cannot be launched again.')
-        directory.mkdir(parents=True,exist_ok=False)
         request=session['request'];data=self.store.anchor(request['head']['snapshot'])
-        write_new(directory/'recovery.zds',data)
-        write_new(directory/'session.json',(json.dumps(session,indent=2)+'\n').encode())
+        directory.parent.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=directory.parent) as temporary:
+            staged = Path(temporary)
+            write_new(staged/'recovery.zds', data)
+            write_new(staged/'session.json', (json.dumps(session,indent=2)+'\n').encode())
+            directory.mkdir(exist_ok=False)
+            try:
+                for name in ('recovery.zds', 'session.json'):
+                    (staged/name).replace(directory/name)
+            except OSError:
+                # Only remove files owned by this failed publication.
+                if not (staged/'recovery.zds').exists():
+                    (directory/'recovery.zds').unlink(missing_ok=True)
+                directory.rmdir()
+                raise
 
     def publish(self,token: str,data: bytes,expected_revision: int) -> dict:
         with self.store.transaction():
@@ -147,8 +182,7 @@ class Sessions:
             campaign=session['request']['campaign'];self.lease(campaign,token)
             head=self.campaigns.head(campaign)
             if head['revision']!=expected_revision:raise ProfileError('Checkpoint revision advanced; late write rejected.')
-            level=self.campaigns.validate(campaign,data)
-            require_native_sync(level)
+            self.campaigns.validate(campaign,data)
             snapshot=self.store._snapshot(data,0)
             if snapshot!=head['snapshot']:
                 self.db.execute('UPDATE campaigns SET revision=revision+1,snapshot=? WHERE identity=?',(snapshot,campaign))
@@ -172,9 +206,17 @@ class Sessions:
             if stamp is None:raise ProfileError('Native process ended before session registration.')
             self.db.execute('UPDATE network_session_launches SET pid=?,stamp=? WHERE token=? AND slot=?',(pid,stamp,token,slot))
 
+    def failed_start(self,token: str,slot: int) -> None:
+        with self.store.transaction():
+            self.db.execute('DELETE FROM network_session_launches WHERE token=? AND slot=?', (token,slot))
+
     def finished(self,token: str,slot: int) -> None:
         with self.store.transaction():
             self.db.execute('UPDATE network_session_launches SET finished=1 WHERE token=? AND slot=?',(token,slot))
+
+    def host_finished(self,token: str) -> bool:
+        return self.db.execute('SELECT 1 FROM network_session_launches WHERE token=? AND slot=0 AND finished=1',
+                               (token,)).fetchone() is not None
 
     def close(self,token: str) -> dict:
         """End the lease; the most recently published valid checkpoint is recovery."""
@@ -203,7 +245,29 @@ def control_preset(runtime: Path) -> str:
     raise ProfileError('Runtime is missing its generated control preset.')
 
 
-def command(bundle: Path,slot: int,engine: Path,iwad: Path,packages: list[Path],port: int,host: str,*,verification: bool=False) -> tuple[list[str],Path]:
+@contextmanager
+def participant_lock(bundle: Path, slot: int):
+    """Hold a local OS lock across preflight and the full lifetime of a native peer."""
+    if not 0 <= slot < 8:
+        raise ProfileError('Unknown native player slot.')
+    with (bundle/f'peer{slot}.lock').open('a+b') as lock:
+        if lock.tell()==0:
+            lock.write(b'0')
+            lock.flush()
+        lock.seek(0)
+        try:
+            if os.name=='nt':
+                import msvcrt
+                msvcrt.locking(lock.fileno(),msvcrt.LK_NBLCK,1)
+            else:
+                import fcntl
+                fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        except (BlockingIOError,PermissionError) as exc:
+            raise ProfileError('This local player slot already has an active launch.') from exc
+        yield
+
+
+def command(bundle: Path,slot: int,engine: Path,iwad: Path,packages: list[Path],port: int,host: str,*,verification: bool=False, allow_retry: bool=False) -> tuple[list[str],Path]:
     """Prepare one native process. Joining order is checked by the runtime gate."""
     session=json.loads((bundle/'session.json').read_text(encoding='utf-8'));request=session['request']
     if session.get('result') is not None:raise ProfileError('Closed session bundle.')
@@ -214,7 +278,13 @@ def command(bundle: Path,slot: int,engine: Path,iwad: Path,packages: list[Path],
     if isinstance(slot,bool) or not 0<=slot<len(roster):raise ProfileError('Unknown native player slot.')
     data=(bundle/'recovery.zds').read_bytes()
     if hashlib.sha256(data).hexdigest()!=request['head']['snapshot']:raise ProfileError('Common recovery checkpoint does not match manifest.')
-    peer=bundle/f'peer{slot}';peer.mkdir(exist_ok=False)
+    peer=bundle/f'peer{slot}'
+    try:
+        peer.mkdir(exist_ok=False)
+    except FileExistsError:
+        if not allow_retry or verification:
+            raise
+        peer=Path(tempfile.mkdtemp(prefix=f'peer{slot}-retry-',dir=bundle))
     write_new(peer/'recovery.zds',data)
     identity=roster[slot]['identity']
     if not all(c in 'abcdefghijklmnopqrstuvwxyz0123456789-:' for c in identity):raise ProfileError('Invalid stored profile identifier.')
@@ -239,7 +309,7 @@ def watch(process,peer: Path,sessions: Sessions | None,token: str,slot: int) -> 
     nonce=session['request']['nonce'] if session else 0
     while True:
         ended=process.poll() is not None
-        if sessions and slot==0:
+        if sessions:
             path=peer/'engine.log';log=''
             if path.exists():
                 if path.stat().st_size<log_offset:log_offset=0;log_tail=''
@@ -248,12 +318,22 @@ def watch(process,peer: Path,sessions: Sessions | None,token: str,slot: int) -> 
                 log=log_tail+chunk.decode('utf-8',errors='replace')
                 # Retain an incomplete trailing line without rereading the log.
                 split=log.rfind('\n');log_tail=log[split+1:];log=log[:split+1]
-            ready=ready or f'CA_SESSION READY peer=0 nonce={nonce}' in log
+            if ended:
+                log += log_tail
+            ready=ready or f'CA_SESSION READY peer={slot} nonce={nonce}' in log.splitlines()
             rejected=rejected or 'CA_SESSION REJECT' in log
-            if ready and not rejected:
-                for save in sorted(peer.glob('*.zds'),key=lambda p:p.stat().st_mtime_ns):
-                    if save.name=='recovery.zds':continue
-                    stat=save.stat();fingerprint=(stat.st_mtime_ns,stat.st_size)
+            if slot==0 and ready and not rejected:
+                saves = []
+                for save in peer.glob('*.zds'):
+                    if save.name == 'recovery.zds':
+                        continue
+                    try:
+                        stat = save.stat()
+                    except FileNotFoundError:
+                        continue
+                    saves.append((stat.st_mtime_ns, save, stat.st_size))
+                for modified, save, size in sorted(saves):
+                    fingerprint = (modified, size)
                     stable=seen.get(save.name)==fingerprint;seen[save.name]=fingerprint
                     if published.get(save.name)==fingerprint or not (stable or ended):continue
                     try:
@@ -267,8 +347,52 @@ def watch(process,peer: Path,sessions: Sessions | None,token: str,slot: int) -> 
                         # last valid common checkpoint. Retain the native file.
                         if ended:
                             with (peer/'checkpoint-errors.log').open('a',encoding='utf-8') as stream:stream.write(f'{save.name}: {exc}\n')
-        if ended:return process.returncode
+        if ended:
+            if sessions:
+                if not ready:
+                    sessions.failed_start(token,slot)
+                    return process.returncode or 1
+                sessions.finished(token,slot)
+                if rejected:
+                    return process.returncode or 1
+            return process.returncode
         time.sleep(.5)
+
+
+def start_participant(args):
+    session=json.loads((args.directory/'session.json').read_text(encoding='utf-8'))
+    if args.slot==0 and args.store is None:raise ProfileError('The native host requires --store to hold and verify campaign custody.')
+    store=ProfileStore(args.store) if args.store else None
+    sessions=Sessions(Campaigns(store,PersonalGraph(NativeSchema(args.engine.parent/'gzdoom.pk3',args.package[0])))) if store else None
+    claimed=False
+    process=None
+    try:
+        cmd,peer=command(args.directory.resolve(),args.slot,args.engine,args.iwad,args.package,args.port,args.host,allow_retry=True)
+        if sessions:
+            sessions.claim(session['token'],args.slot)
+            claimed=True
+        process=subprocess.Popen(cmd,cwd=peer)
+        if sessions:sessions.attach(session['token'],args.slot,process.pid)
+        write_new(peer/'process.json',json.dumps(dict(pid=process.pid)).encode())
+        code=watch(process,peer,sessions,session['token'],args.slot)
+    except BaseException:
+        if process is not None and process.poll() is None:
+            process.terminate()
+            try:process.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                process.kill()
+                process.wait()
+        if claimed:
+            log=peer/'engine.log'
+            marker=f"CA_SESSION READY peer={args.slot} nonce={session['request']['nonce']}"
+            if log.is_file() and marker in log.read_text(errors='replace').splitlines():
+                sessions.finished(session['token'],args.slot)
+            else:
+                sessions.failed_start(session['token'],args.slot)
+        raise
+    finally:
+        if store:store.close()
+    return code
 
 
 def main():
@@ -284,30 +408,15 @@ def main():
     p=sub.add_parser('close');p.add_argument('token')
     args=parser.parse_args()
     if args.action=='start':
-        session=json.loads((args.directory/'session.json').read_text(encoding='utf-8'))
-        if args.slot==0 and args.store is None:parser.error('The native host requires --store to hold and verify campaign custody')
-        store=ProfileStore(args.store) if args.store else None
-        sessions=Sessions(Campaigns(store,PersonalGraph(NativeSchema(args.engine.parent/'gzdoom.pk3',args.package[0])))) if store else None
-        cmd,peer=command(args.directory.resolve(),args.slot,args.engine,args.iwad,args.package,args.port,args.host)
-        if sessions:sessions.claim(session['token'],args.slot)
-        # An explicitly requested interactive game window remains visible.
-        process=None
-        try:
-            process=subprocess.Popen(cmd,cwd=peer)
-            if sessions:sessions.attach(session['token'],args.slot,process.pid)
-            write_new(peer/'process.json',json.dumps(dict(pid=process.pid)).encode())
-            code=watch(process,peer,sessions,session['token'],args.slot)
-        finally:
-            if sessions and (process is None or process.poll() is not None):sessions.finished(session['token'],args.slot)
-            if store:store.close()
-        raise SystemExit(code)
+        with participant_lock(args.directory,args.slot):
+            raise SystemExit(start_participant(args))
     if args.store is None:parser.error('--store is required for coordinated campaign operations')
     store=ProfileStore(args.store)
     try:
         adapter=PersonalGraph(NativeSchema(args.engine.parent/'gzdoom.pk3',args.package[0]))
         sessions=Sessions(Campaigns(store,adapter))
         if args.action=='prepare':
-            token=str(uuid.uuid4());result=sessions.prepare(args.campaign,manifest(args.engine,args.iwad,args.package),token);sessions.export(token,args.directory)
+            result=sessions.prepare(args.campaign,manifest(args.engine,args.iwad,args.package),str(uuid.uuid4()),directory=args.directory)
         elif args.action=='publish':
             verify_manifest(sessions.get(args.token)['request']['manifest'],args.engine,args.iwad,args.package)
             result=sessions.publish(args.token,args.save.read_bytes(),args.revision)

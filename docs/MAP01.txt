@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.17.123** - 2026-11-21.
+Documentation version: **5.17.124** - 2026-11-27.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 

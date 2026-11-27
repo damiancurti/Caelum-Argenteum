@@ -52,8 +52,7 @@ def main():
                     result=worlds.register(name,save.read_bytes());print(text('registered')+result['identity'])
                 elif action=='3':
                     selected=world();token=str(uuid.uuid4());directory=folder('sessions')
-                    result=sessions.prepare(selected['identity'],manifest(engine,iwad,packages),token)
-                    sessions.export(token,directory)
+                    result=sessions.prepare(selected['identity'],manifest(engine,iwad,packages),token,directory=directory)
                     print(text('bundle')+str(directory));print(text('share'))
                     for member in result['request']['roster']:print(member['slot']+1,member['name'])
                 elif action=='4':
@@ -66,7 +65,8 @@ def main():
                     if slot==0:cmd+=['--store',str(args.store)]
                     cmd+=['start',str(directory),'--slot',str(slot),'--host',host]
                     result=subprocess.run(cmd)
-                    if slot==0:sessions.close(session['token'])
+                    if slot==0 and sessions.host_finished(session['token']):
+                        sessions.close(session['token'])
                     print(text('finished'),result.returncode)
                 elif action=='5':
                     active=[dict(r) for r in store.connection.execute('SELECT token,request FROM network_sessions WHERE result IS NULL')]

@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.123** - 2026-11-21.
+Documentation version: **5.17.124** - 2026-11-27.
+
+## 5.17.124 - Repository audit repairs (#899)
+
+Track repository-audit fixes in #899. The native Windows batch launcher, the approved siege performance target and the 108 outstanding author checks retain their respective manual verification requirements.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 

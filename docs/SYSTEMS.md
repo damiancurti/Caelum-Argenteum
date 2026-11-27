@@ -1,6 +1,10 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.123** - 2026-11-21.
+Documentation version: **5.17.124** - 2026-11-27.
+
+## 5.17.124 - Repository audit repairs (#899)
+
+When cooperative starts overlap, the game reserves reachable, unoccupied positions for the whole group before moving any player. Loading a save retains its saved positions. Standalone hunt victory and rematch voting use currently connected participants. When a human Palomo leaves, AI Palomo takes over. Campaign checkpoints retain all slots, including vacancies. Session invitations support retry before native admission; after admission recovery uses the last valid shared checkpoint.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 

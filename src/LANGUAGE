@@ -1977,11 +1977,11 @@ CA_MATERIAL_GRADE_LUXURY = "de lujo";
 
 
 
-CA_PHYSICS_IMPACT = "Impact";
-CA_PHYSICS_KIND = "Type";
+CA_PHYSICS_IMPACT = "Impacto";
+CA_PHYSICS_KIND = "Tipo";
 CA_PHYSICS_DELTA_V = "Delta-v";
-CA_PHYSICS_EQUIV_TICS = "Eq. tics";
-CA_PHYSICS_DAMAGE = "Damage";
+CA_PHYSICS_EQUIV_TICS = "Tics equiv.";
+CA_PHYSICS_DAMAGE = "Daño";
 
 [enu default]
 CA_CONTROL_JOURNAL = "Open/close Journal";
@@ -5830,7 +5830,7 @@ CA_EXHAUSTION_TITLE = "Exhaustion sleep";
 CA_EXHAUSTION_START = "Exhausted: you lie down. Standing unlocks above 10% Sleep.";
 CA_EXHAUSTION_LOCK = "You cannot stand until Sleep exceeds 10%.";
 
-[esp]
+[esp es]
 CA_EXHAUSTION_TITLE = "Sueño por agotamiento";
 CA_EXHAUSTION_START = "Agotamiento: te tumbas. Podrás levantarte con más del 10% de Sueño.";
 CA_EXHAUSTION_LOCK = "No puedes levantarte hasta superar el 10% de Sueño.";
@@ -5868,7 +5868,7 @@ CA_POI_EXIT = "Exit";
 CA_POI_TRANSPORT = "Transport";
 CA_POI_NEAREST = "Known place nearest the map center: %s";
 
-[esp]
+[esp es]
 CA_POI_BED = "Cama";
 CA_POI_STATION = "Estación";
 CA_POI_MERCHANT = "Comerciante";
@@ -5901,7 +5901,7 @@ CA_NOTE_NAVIGATION = "Up/Down: notes or text | Left/Right: actions | Enter | Esc
 CA_NOTE_OPEN_HINT = "Notes [%s] or Esc > Map notes";
 CA_NOTE_NEAREST = "Manual note near map center: %s";
 
-[esp]
+[esp es]
 CA_NOTE_TITLE = "Notas del mapa";
 CA_NOTE_CATEGORY = "Nota";
 CA_NOTE_NEW = "Nueva en el centro";
@@ -6620,7 +6620,7 @@ CA_CAMP_SETTING_UP = "Setting up tent: 10 minutes. You can wait; use the invento
 CA_CAMP_PACKING = "Packing tent: 5 minutes. You can wait; use the tent again to cancel.";
 CA_CAMP_READY = "Tent ready. Use it to pack it away.";
 CA_CAMP_PACKED = "Tent packed; the original item is in your inventory.";
-[esn]
+[esn es]
 CA_CAMP_SITE_FAILED = "La carpa completa necesita terreno permitido, seco, estable y sin bloquear accesos.";
 CA_CAMP_SETTING_UP = "Montando carpa: 10 minutos. Podés esperar; usá otra vez la carpa del inventario para cancelar.";
 CA_CAMP_PACKING = "Desmontando carpa: 5 minutos. Podés esperar; usá otra vez la carpa para cancelar.";
@@ -6629,7 +6629,7 @@ CA_CAMP_PACKED = "Carpa desmontada; el objeto original está en tu inventario.";
 
 [enu default]
 CA_CAMP_PACK_ACTION = "{bind:+use}: Pack tent / cancel packing";
-[esn]
+[esn es]
 CA_CAMP_PACK_ACTION = "{bind:+use}: Desmontar carpa / cancelar desmontaje";
 
 // #502: concentración del ambiente, separada de la barra corporal.
@@ -7574,7 +7574,7 @@ CA_AWAKEN_REMOVED = "Asociación retirada. La esencia vuelve a estar disponible.
 [enu default]
 CA_TAROT_CAPACITY_REMOVE = "Free the extra card or Box slots before removing this Major.";
 CA_TAROT_ORDER = "Sequence position: %d. Equipping a card places it last.";
-[esp]
+[esp es]
 CA_TAROT_CAPACITY_REMOVE = "Liberá los espacios adicionales de cartas o de la Caja antes de quitar este Arcano.";
 CA_TAROT_ORDER = "Lugar en la secuencia: %d. Equipar una carta la coloca al final.";
 
@@ -7788,7 +7788,7 @@ CA_HUNT_FLOOR = "Falling floor";
 CA_HUNT_TEAM = "The team";
 CA_HUNT_PALOMO = "Palomo";
 
-[esp]
+[esp es]
 CA_HUNT_RESCUE_NONE = "No hay compañeros cautivos para rescatar.";
 CA_HUNT_RESCUE_BLOCKED = "No hay espacio seguro junto a vos para el rescate.";
 CA_HUNT_RESCUE_TITLE = "El Loco: elegir a quién rescatar";
@@ -7797,7 +7797,7 @@ CA_HUNT_RESCUE_NONE = "There are no captive teammates to rescue.";
 CA_HUNT_RESCUE_BLOCKED = "There is no safe space beside you for the rescue.";
 CA_HUNT_RESCUE_TITLE = "The Fool: choose whom to rescue";
 
-[esp]
+[esp es]
 CA_HUNT_FRAGILE = "Roca resquebrajada";
 CA_HUNT_FREEZE = "Placa de congelación";
 CA_HUNT_SPIRIT_HINT = "Los cuatro sectores se conectan por varios caminos. Rodeá los obstáculos; el cautiverio está al sudoeste.";
@@ -8543,3 +8543,10 @@ CA_FOLK_056_NAME = "Huayrapuca";
 CA_FOLK_057_NAME = "Kasogonaga";
 CA_FOLK_058_NAME = "Kélenken";
 // END #455 generated folklore names
+
+[enu default]
+CA_PHYSICS_IMPACT = "Impact";
+CA_PHYSICS_KIND = "Type";
+CA_PHYSICS_DELTA_V = "Delta-v";
+CA_PHYSICS_EQUIV_TICS = "Eq. tics";
+CA_PHYSICS_DAMAGE = "Damage";

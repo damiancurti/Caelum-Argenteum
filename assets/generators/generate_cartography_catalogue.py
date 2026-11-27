@@ -18,16 +18,16 @@ def map_checksum(name, root=ROOT):
 
 
 def wad_checksum(path):
-    return blob_checksum(path.read_bytes())
+    return blob_checksum(path.read_bytes(), path)
 
 
-def blob_checksum(data):
+def blob_checksum(data, source='<WAD bytes>'):
     _, count, directory = struct.unpack_from('<4sii', data)
     for i in range(count):
         start, size, lump = struct.unpack_from('<ii8s', data, directory + i * 16)
         if lump.rstrip(b'\0') == b'TEXTMAP':
             return hashlib.md5(data[start:start + size]).hexdigest()
-    raise ValueError(f'Missing TEXTMAP: {path}')
+    raise ValueError(f'Missing TEXTMAP: {source}')
 
 
 def render(root=ROOT):
@@ -56,8 +56,8 @@ def render(root=ROOT):
     # Original layouts share coordinates; revision4 keeps IDs at relocated sites.
     furnished = wad_checksum(root/'assets/map06_port/legacy_5427/MAP06.wad')
     with zipfile.ZipFile(root/'assets/tarot_justice/legacy_5133.zip') as legacy:
-        prejustice_city=blob_checksum(legacy.read(map_name('port',root)+'.wad'))
-        assert blob_checksum(legacy.read('MAP01.wad'))==mansion['pre_justice_checksum']
+        prejustice_city=blob_checksum(legacy.read(map_name('port',root)+'.wad'),map_name('port',root)+'.wad')
+        assert blob_checksum(legacy.read('MAP01.wad'),'MAP01.wad')==mansion['pre_justice_checksum']
     lines += [f'    const MAP06_FURNISHED_CHECKSUM = "{furnished}";',
               f'    const MAP06_PREJUSTICE_CHECKSUM = "{prejustice_city}";',
               f'    const MAP06_REVISION3_CHECKSUM = "{wad_checksum(root / "assets/map06_port/legacy_5162/MAP03.wad")}";',

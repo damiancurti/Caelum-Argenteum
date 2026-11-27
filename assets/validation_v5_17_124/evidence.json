@@ -1,0 +1,313 @@
+{
+  "issue": 899,
+  "release": "5.17.124",
+  "audit_base": "0953a15e056d02ea65e24b62c7b3be4909b1451c",
+  "platform": "Linux x86_64, GZDoom 4.14.2, Freedoom 2 v0.13.0, local native lockstep",
+  "development_package": {
+    "members": 18767,
+    "sha256": "4bddf0008714d2857c0766d3f537d9012f07b6cf1eeefa817073177a82127684"
+  },
+  "python": {
+    "tracked_source_syntax": {
+      "files": 2004,
+      "errors": []
+    },
+    "profile_store_passed": 8,
+    "session_registry_passed": 12,
+    "standalone_launcher_passed": 4,
+    "audit_regressions_passed": 10,
+    "platform_specific_skip": "Native cmd.exe and Windows PowerShell forwarding from a directory containing a literal exclamation mark. Static checks cover all 13 switches and delayed-expansion boundaries."
+  },
+  "native_invitations": {
+    "preflight": "The normal menu rejected a mismatched package and retained the reservation and token.",
+    "retry": "Both native peers accepted the original invitation after correcting the package. The host published checkpoint revision 1 and closed the session."
+  },
+  "fresh_coop_starts": {
+    "MAP01": [
+      [
+        -1600,
+        0,
+        0
+      ],
+      [
+        -1567,
+        0,
+        0
+      ]
+    ],
+    "CAH000": [
+      [
+        -21088,
+        -12416,
+        0
+      ],
+      [
+        -21121,
+        -12416,
+        0
+      ]
+    ]
+  },
+  "saved_coop_starts": {
+    "map": "MAP01",
+    "coordinates": [
+      [
+        -1600,
+        0,
+        0
+      ],
+      [
+        -1600,
+        0,
+        0
+      ]
+    ],
+    "verified_by_both_clients_after_8_tics": true
+  },
+  "human_palomo_departure": {
+    "clients": 4,
+    "before": {
+      "selected_player": 4,
+      "connected": true,
+      "human_body": true,
+      "npc": false
+    },
+    "after": {
+      "selected_player": 0,
+      "connected": false,
+      "human_body": false,
+      "npc": true,
+      "finished": false
+    }
+  },
+  "native_regressions": {
+    "free-departure": {
+      "departed_slot": 1,
+      "slots_to_processes": {
+        "0": 0,
+        "1": 1,
+        "2": 2
+      },
+      "markers": {
+        "0": [
+          "CA899_READY slot=0 members=7",
+          "CA899_DEPART slot=0 left=1 active=5 seekers=5 ghost=0",
+          "CA899_WIN slot=0 active=5 captive=5 finished=1 winner=-1",
+          "CA899_VOTES slot=0 active=5 votes=5 restarting=1",
+          "CA899_NEW slot=0 active=5 members=5 finished=0 votes=0"
+        ],
+        "2": [
+          "CA899_READY slot=2 members=7",
+          "CA899_DEPART slot=2 left=1 active=5 seekers=5 ghost=0",
+          "CA899_WIN slot=2 active=5 captive=5 finished=1 winner=-1",
+          "CA899_VOTES slot=2 active=5 votes=5 restarting=1",
+          "CA899_NEW slot=2 active=5 members=5 finished=0 votes=0"
+        ]
+      }
+    },
+    "es": {
+      "language": "es",
+      "matched": 72
+    },
+    "enu": {
+      "language": "enu",
+      "matched": 72
+    },
+    "votes-before-departure": {
+      "departed_slot": 2,
+      "slots_to_processes": {
+        "0": 0,
+        "1": 1,
+        "2": 2
+      },
+      "markers": {
+        "0": [
+          "CA899_READY slot=0 members=7",
+          "CA899_WAIT slot=0 votes=3 restarting=0",
+          "CA899_NEW slot=0 active=3 members=3 finished=0 votes=0"
+        ],
+        "1": [
+          "CA899_READY slot=1 members=7",
+          "CA899_WAIT slot=1 votes=3 restarting=0",
+          "CA899_NEW slot=1 active=3 members=3 finished=0 votes=0"
+        ]
+      }
+    },
+    "captive-departure": {
+      "departed_slot": 2,
+      "slots_to_processes": {
+        "0": 0,
+        "1": 1,
+        "2": 2
+      },
+      "markers": {
+        "0": [
+          "CA899_READY slot=0 members=7",
+          "CA899_CAPTURED slot=0 target=2 held=1",
+          "CA899_DEPART slot=0 left=2 active=3 seekers=3 ghost=0",
+          "CA899_WIN slot=0 active=3 captive=3 finished=1 winner=-1",
+          "CA899_VOTES slot=0 active=3 votes=3 restarting=1",
+          "CA899_NEW slot=0 active=3 members=3 finished=0 votes=0"
+        ],
+        "1": [
+          "CA899_READY slot=1 members=7",
+          "CA899_CAPTURED slot=1 target=2 held=1",
+          "CA899_DEPART slot=1 left=2 active=3 seekers=3 ghost=0",
+          "CA899_WIN slot=1 active=3 captive=3 finished=1 winner=-1",
+          "CA899_VOTES slot=1 active=3 votes=3 restarting=1",
+          "CA899_NEW slot=1 active=3 members=3 finished=0 votes=0"
+        ]
+      }
+    },
+    "eight-arrivals": {
+      "MAP01": {
+        "peers": {
+          "0": "CA899_ARRIVALS peer=0 map=MAP01 count=8 pairs=28 overlaps=0",
+          "1": "CA899_ARRIVALS peer=1 map=MAP01 count=8 pairs=28 overlaps=0",
+          "5": "CA899_ARRIVALS peer=5 map=MAP01 count=8 pairs=28 overlaps=0",
+          "2": "CA899_ARRIVALS peer=2 map=MAP01 count=8 pairs=28 overlaps=0",
+          "3": "CA899_ARRIVALS peer=3 map=MAP01 count=8 pairs=28 overlaps=0",
+          "7": "CA899_ARRIVALS peer=7 map=MAP01 count=8 pairs=28 overlaps=0",
+          "4": "CA899_ARRIVALS peer=4 map=MAP01 count=8 pairs=28 overlaps=0",
+          "6": "CA899_ARRIVALS peer=6 map=MAP01 count=8 pairs=28 overlaps=0"
+        },
+        "position_and_radius_by_slot": {
+          "0": [
+            -1600.0,
+            0.0,
+            -0.0,
+            16.0
+          ],
+          "1": [
+            -1567.0,
+            0.0,
+            -0.0,
+            16.0
+          ],
+          "2": [
+            -1600.0,
+            33.0,
+            -0.0,
+            16.0
+          ],
+          "3": [
+            -1633.0,
+            0.0,
+            -0.0,
+            16.0
+          ],
+          "4": [
+            -1600.0,
+            -33.0,
+            -0.0,
+            16.0
+          ],
+          "5": [
+            -1666.0,
+            0.0,
+            -0.0,
+            16.0
+          ],
+          "6": [
+            -1646.66904676,
+            -46.66904676,
+            -0.0,
+            16.0
+          ],
+          "7": [
+            -1600.0,
+            -66.0,
+            -0.0,
+            16.0
+          ]
+        },
+        "pairs_per_peer": 28
+      },
+      "CAH000": {
+        "peers": {
+          "0": "CA899_ARRIVALS peer=0 map=CAH000 count=8 pairs=28 overlaps=0",
+          "1": "CA899_ARRIVALS peer=1 map=CAH000 count=8 pairs=28 overlaps=0",
+          "5": "CA899_ARRIVALS peer=5 map=CAH000 count=8 pairs=28 overlaps=0",
+          "2": "CA899_ARRIVALS peer=2 map=CAH000 count=8 pairs=28 overlaps=0",
+          "3": "CA899_ARRIVALS peer=3 map=CAH000 count=8 pairs=28 overlaps=0",
+          "7": "CA899_ARRIVALS peer=7 map=CAH000 count=8 pairs=28 overlaps=0",
+          "4": "CA899_ARRIVALS peer=4 map=CAH000 count=8 pairs=28 overlaps=0",
+          "6": "CA899_ARRIVALS peer=6 map=CAH000 count=8 pairs=28 overlaps=0"
+        },
+        "position_and_radius_by_slot": {
+          "0": [
+            -21088.0,
+            -12416.0,
+            0.0,
+            16.0
+          ],
+          "1": [
+            -21121.0,
+            -12416.0,
+            0.0,
+            16.0
+          ],
+          "2": [
+            -21088.0,
+            -12449.0,
+            0.0,
+            16.0
+          ],
+          "3": [
+            -21055.0,
+            -12416.0,
+            0.0,
+            16.0
+          ],
+          "4": [
+            -21088.0,
+            -12383.0,
+            0.0,
+            16.0
+          ],
+          "5": [
+            -21022.0,
+            -12416.0,
+            0.0,
+            16.0
+          ],
+          "6": [
+            -21041.33095324,
+            -12369.33095324,
+            0.0,
+            16.0
+          ],
+          "7": [
+            -21088.0,
+            -12350.0,
+            0.0,
+            16.0
+          ]
+        },
+        "pairs_per_peer": 28
+      }
+    }
+  },
+  "source_validation": {
+    "LF": {
+      "tool": "python validate_project.py",
+      "version": "5.17.124",
+      "errors": [],
+      "context_words": 2491
+    },
+    "CRLF": {
+      "tool": "python validate_project.py",
+      "version": "5.17.124",
+      "errors": [],
+      "context_words": 2491
+    }
+  },
+  "playtest_export": {
+    "approved_maps": 238,
+    "runtime_members": 18767,
+    "packaged_runtime_sha256": "d2b2c393d855e4e8f27eeeb8cd8ab55aa6f189195796b1363de4671dedc50c85",
+    "crc": "All outer and inner archive members passed.",
+    "historical_format": "A fixture exported with the previous and streaming implementations produced identical ZIP and PK3 bytes; a conflicting existing ZIP was preserved."
+  },
+  "pending": "Windows-native launcher execution and the historical Windows/Vulkan Barracas siege presentation limit remain separate. The author queue retains its existing 108 checks."
+}

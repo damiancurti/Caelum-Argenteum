@@ -53,9 +53,11 @@ class CaelumTarotHunt : Object play
             trap.SetTag(trap.Kind==0?"$CA_HUNT_DOOR":trap.Kind==1?"$CA_HUNT_FLOOR":"$CA_CRUSHER_TRAP");
         }
         let match=CaelumStandaloneMatch.View();
-        if(match.PlayerPalomo==0)Hunter=CaelumHuntPalomo(Actor.Spawn('CaelumHuntPalomo',CaelumHuntData.HunterStart(),NO_REPLACE));
-        else
-        {let body=CaelumPlayer(players[match.PlayerPalomo-1].mo);body.TeleportMove(CaelumHuntData.HunterStart(),false);body.ClearInterpolation();}
+        if(match.PlayerPalomo>0 && playeringame[match.PlayerPalomo-1])
+        {
+            let body=CaelumPlayer(players[match.PlayerPalomo-1].mo);
+            if(body!=null){body.TeleportMove(CaelumHuntData.HunterStart(),false);body.ClearInterpolation();}
+        }
     }
     void Collect(CaelumPlayer p,int card)
     {
@@ -114,6 +116,12 @@ class CaelumTarotHunt : Object play
     }
     void Tick(CaelumStandaloneMatch m)
     {
+        // Si sale el perseguidor humano, la IA retoma el papel en esta ronda.
+        if(m.PlayerPalomo>0 && !playeringame[m.PlayerPalomo-1])m.PlayerPalomo=0;
+        if(m.PlayerPalomo==0 && Hunter==null)
+            Hunter=CaelumHuntPalomo(Actor.Spawn('CaelumHuntPalomo',CaelumHuntData.HunterStart(),NO_REPLACE));
+        int seekers=m.Seekers();
+        CaptiveMask&=seekers;
         if(Arcana==null){Arcana=new('CaelumHuntArcana');Arcana.Initialize(self,m);}
         Arcana.Tick(self,m);
         // La consulta sólo recorre los ocho puestos de la sesión.
@@ -140,7 +148,7 @@ class CaelumTarotHunt : Object play
             if(RescueProgress[slot]>=CaelumHuntData.RESCUE_TICS)
             {Rescue(nearby);RescueTarget[slot]=-1;RescueProgress[slot]=0;}
         }
-        if(Collected>=CaelumConstants.TAROT_CARD_COUNT || (CaptiveMask&m.Seekers())==m.Seekers())
+        if(Collected>=CaelumConstants.TAROT_CARD_COUNT || (CaptiveMask&seekers)==seekers)
         {m.Finished=true;m.Winner=Collected>=CaelumConstants.TAROT_CARD_COUNT?0:-1;}
     }
 }

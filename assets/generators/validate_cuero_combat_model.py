@@ -3,9 +3,11 @@ import hashlib
 import json
 try:
     from .validate_pombero_combat_model import ROOT, validate as validate_native
+    from .generate_cuero_combat_model import obj_uv_lines, uv_digest
     from .generate_cuero_model import geometry
 except ImportError:
     from validate_pombero_combat_model import ROOT, validate as validate_native
+    from generate_cuero_combat_model import obj_uv_lines, uv_digest
     from generate_cuero_model import geometry
 
 def validate(root=ROOT):
@@ -19,9 +21,12 @@ def validate(root=ROOT):
         if 'map_Kd materials.png' not in (source/'cuero.mtl').read_text():
             errors.append('Portable OBJ material link changed')
         mesh=geometry(json.loads((root/config['source_design']).read_text()))
-        for field,value in [('source_topology_sha256',mesh.faces),('source_uv_sha256',mesh.uv)]:
-            if hashlib.sha256(json.dumps(value,separators=(',',':')).encode()).hexdigest()!=report[field]:
-                errors.append('Original Cuero topology/UV changed: '+field)
+        topology = hashlib.sha256(json.dumps(mesh.faces,separators=(',',':')).encode()).hexdigest()
+        if topology!=report['source_topology_sha256']:
+            errors.append('Original Cuero topology changed')
+        exported_uv=[line for line in (source/'cuero.obj').read_text().splitlines() if line.startswith('vt ')]
+        if uv_digest(mesh.uv)!=report['source_uv_sha256'] or obj_uv_lines(mesh.uv)!=exported_uv:
+            errors.append('Original Cuero OBJ texture coordinates changed')
         expected=2*report['inherited_defaults']['Radius']/(report['neutral_diameter']*report['inherited_defaults']['Scale'])
         if abs(expected-report['modeldef_scale'])>1e-10:errors.append('Provisional diameter fitting changed')
     except (OSError,KeyError,ValueError) as exc:errors.append(str(exc))

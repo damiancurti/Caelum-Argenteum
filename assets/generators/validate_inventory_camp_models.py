@@ -4,8 +4,10 @@ import hashlib
 import json
 import re
 try:
+    from .source_integrity import matches_source_digest
     from .generate_inventory_camp_models import ROOT, read_obj
 except ImportError:
+    from source_integrity import matches_source_digest
     from generate_inventory_camp_models import ROOT, read_obj
 
 def validate(root=ROOT):
@@ -14,7 +16,7 @@ def validate(root=ROOT):
         source=root/'assets/source/art/inventory_models_647/camp'
         config=json.loads((source/'DESIGN.json').read_text());report=json.loads((source/'EXPORT.json').read_text())
         for name,checksum in config['source_sha256'].items():
-            if hashlib.sha256((root/name).read_bytes()).hexdigest()!=checksum:errors.append('Original camp resource changed: '+name)
+            if not matches_source_digest(root/name, checksum):errors.append('Original camp resource changed: '+name)
         if hashlib.sha256(Path(__file__).with_name('generate_inventory_camp_models.py').read_bytes()).hexdigest()!=report['generator_sha256']:errors.append('Stale camp generator hash')
         for name,checksum in report['source_sha256'].items():
             if hashlib.sha256((source/name).read_bytes()).hexdigest()!=checksum:errors.append('Stale camp source: '+name)

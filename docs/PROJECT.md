@@ -1,6 +1,10 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.123** - 2026-11-21.
+Documentation version: **5.17.124** - 2026-11-27.
+
+## 5.17.124 - Repository audit repairs (#899)
+
+Patch #899 addresses the repository audit across native cooperative play, fixed-roster campaign custody, localization, legacy launch options, asset validation and the committed-source playtest exporter.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 

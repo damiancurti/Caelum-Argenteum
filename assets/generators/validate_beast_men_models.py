@@ -6,8 +6,10 @@ import math
 import re
 import struct
 try:
+    from .source_integrity import matches_source_digest
     from .generate_beast_men_models import prepared_design, geometry
 except ImportError:
+    from source_integrity import matches_source_digest
     from generate_beast_men_models import prepared_design, geometry
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -40,7 +42,7 @@ def validate(root=ROOT, source_relative='assets/source/art/beast_men_680', model
         report=json.loads((source/'EXPORT.json').read_text(encoding='utf-8'))
         config=json.loads((source/'ANIMATION.json').read_text(encoding='utf-8'))
         for name,want in report['source_sha256'].items():
-            assert hashlib.sha256((root/name).read_bytes()).hexdigest()==want,'Stale source: '+name
+            assert matches_source_digest(root/name, want),'Stale source: '+name
         for name,want in report['sha256'].items():
             path=source/name if name.startswith('editable/') else root/'src'/name
             assert hashlib.sha256(path.read_bytes()).hexdigest()==want,'Stale export: '+name

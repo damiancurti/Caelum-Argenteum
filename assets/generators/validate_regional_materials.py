@@ -1,4 +1,9 @@
 """Validate installed regional textures and the approved gallery source associations."""
+try:
+    from .source_integrity import matches_source_digest
+except ImportError:
+    from source_integrity import matches_source_digest
+
 from pathlib import Path
 import hashlib
 import json
@@ -19,7 +24,7 @@ def validate(root=ROOT, issue=463):
         sources.update({root/name:checksum for name,checksum in config['source_sha256'].items()})
         sources[root/'assets/generators/generate_regional_materials.py']=report['generator_sha256']
         for path,want in sources.items():
-            if hashlib.sha256(path.read_bytes()).hexdigest()!=want:errors.append('Stale source: '+str(path.relative_to(root)))
+            if not matches_source_digest(path, want):errors.append('Stale source: '+str(path.relative_to(root)))
         for name,want in report['sha256'].items():
             if hashlib.sha256((root/'src'/name).read_bytes()).hexdigest()!=want:errors.append('Stale installed material: '+name)
         for item in config['gaps']:

@@ -1,9 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.17.123** - 2026-11-21.
+Documentation version: **5.17.124** - 2026-11-27.
 
 **V5.16/V5.17 integration authorized 2026-11-26:** 130 PRs/132 implemented issues;
-release5.17.123 retained. Later versions extend scope;108 manual checks remain.
+then 5.17.123; #899 audit patch 5.17.124. Later versions extend scope;108 manual checks remain.
 Exact scope:validation_v5_17_123/integration-decision.json. #403/460/464-469 stay open.
 V5.17:78 displays/56 provisional models(#825),25garments(#829),brick(#847),
 remasters(#866),vaults(#875),joinery(#878);#736review pending.

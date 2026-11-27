@@ -3,8 +3,10 @@ from pathlib import Path
 import hashlib
 import json
 try:
+    from .source_integrity import matches_source_digest
     from .validate_inventory_consumable_models import validate as validate_shared
 except ImportError:
+    from source_integrity import matches_source_digest
     from validate_inventory_consumable_models import validate as validate_shared
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -21,7 +23,7 @@ def validate(root=ROOT):
             errors.append('Inventory water: stale wrapper source')
         for item in report['reused_variants']:
             for name, checksum in item['source_sha256'].items():
-                if hashlib.sha256((root / name).read_bytes()).hexdigest() != checksum:
+                if not matches_source_digest(root / name, checksum):
                     errors.append('Inventory water: changed reused source ' + name)
             original = (root / item['obj']).read_text(encoding='utf-8').splitlines()
             target = (root / 'src' / config['model_path'] / (item['key'] + '.obj')).read_text(encoding='utf-8').splitlines()
