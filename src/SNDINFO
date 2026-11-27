@@ -202,3 +202,65 @@ $limit caelum/enemies/rat_alert 3 512
 $limit caelum/enemies/rat_bite 3 512
 $limit caelum/enemies/rat_pain 3 512
 $limit caelum/enemies/rat_death 3 512
+
+// #467: voces nativas segun el perfil, con las grabaciones ya acreditadas.
+$playeralias caelum_male male *death caelum/player/pain_male
+$playeralias caelum_male male *xdeath caelum/player/pain_male
+$playeralias caelum_male male *gibbed caelum/player/pain_male
+$playeralias caelum_male male *pain100 caelum/player/pain_male
+$playeralias caelum_male male *pain75 caelum/player/pain_male
+$playeralias caelum_male male *pain50 caelum/player/pain_male
+$playeralias caelum_male male *pain25 caelum/player/pain_male
+$playeralias caelum_male male *grunt caelum/player/pain_male
+$playeralias caelum_male male *land caelum/player/pain_male
+$playeralias caelum_male male *usefail caelum/player/pain_male
+$playeralias caelum_male female *death caelum/player/pain_male
+$playeralias caelum_male female *xdeath caelum/player/pain_male
+$playeralias caelum_male female *gibbed caelum/player/pain_male
+$playeralias caelum_male female *pain100 caelum/player/pain_male
+$playeralias caelum_male female *pain75 caelum/player/pain_male
+$playeralias caelum_male female *pain50 caelum/player/pain_male
+$playeralias caelum_male female *pain25 caelum/player/pain_male
+$playeralias caelum_male female *grunt caelum/player/pain_male
+$playeralias caelum_male female *land caelum/player/pain_male
+$playeralias caelum_male female *usefail caelum/player/pain_male
+$playeralias caelum_male other *death caelum/player/pain_male
+$playeralias caelum_male other *xdeath caelum/player/pain_male
+$playeralias caelum_male other *gibbed caelum/player/pain_male
+$playeralias caelum_male other *pain100 caelum/player/pain_male
+$playeralias caelum_male other *pain75 caelum/player/pain_male
+$playeralias caelum_male other *pain50 caelum/player/pain_male
+$playeralias caelum_male other *pain25 caelum/player/pain_male
+$playeralias caelum_male other *grunt caelum/player/pain_male
+$playeralias caelum_male other *land caelum/player/pain_male
+$playeralias caelum_male other *usefail caelum/player/pain_male
+$playeralias caelum_female male *death caelum/player/pain_female
+$playeralias caelum_female male *xdeath caelum/player/pain_female
+$playeralias caelum_female male *gibbed caelum/player/pain_female
+$playeralias caelum_female male *pain100 caelum/player/pain_female
+$playeralias caelum_female male *pain75 caelum/player/pain_female
+$playeralias caelum_female male *pain50 caelum/player/pain_female
+$playeralias caelum_female male *pain25 caelum/player/pain_female
+$playeralias caelum_female male *grunt caelum/player/pain_female
+$playeralias caelum_female male *land caelum/player/pain_female
+$playeralias caelum_female male *usefail caelum/player/pain_female
+$playeralias caelum_female female *death caelum/player/pain_female
+$playeralias caelum_female female *xdeath caelum/player/pain_female
+$playeralias caelum_female female *gibbed caelum/player/pain_female
+$playeralias caelum_female female *pain100 caelum/player/pain_female
+$playeralias caelum_female female *pain75 caelum/player/pain_female
+$playeralias caelum_female female *pain50 caelum/player/pain_female
+$playeralias caelum_female female *pain25 caelum/player/pain_female
+$playeralias caelum_female female *grunt caelum/player/pain_female
+$playeralias caelum_female female *land caelum/player/pain_female
+$playeralias caelum_female female *usefail caelum/player/pain_female
+$playeralias caelum_female other *death caelum/player/pain_female
+$playeralias caelum_female other *xdeath caelum/player/pain_female
+$playeralias caelum_female other *gibbed caelum/player/pain_female
+$playeralias caelum_female other *pain100 caelum/player/pain_female
+$playeralias caelum_female other *pain75 caelum/player/pain_female
+$playeralias caelum_female other *pain50 caelum/player/pain_female
+$playeralias caelum_female other *pain25 caelum/player/pain_female
+$playeralias caelum_female other *grunt caelum/player/pain_female
+$playeralias caelum_female other *land caelum/player/pain_female
+$playeralias caelum_female other *usefail caelum/player/pain_female

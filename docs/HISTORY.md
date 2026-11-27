@@ -1,6 +1,40 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.18.0** - 2026-11-26.
+Documentation version: **5.18.1** - 2026-11-26.
+
+## 5.18.1 - Independent startup and release construction (#467, 2026-11-26)
+
+Added original impact/blood source+prompt, native-compatible resource aliases,
+independently calculated RGB332 palette, own episode/page/menu defaults and
+native player voice classes using existing recordings. No Doom pixels/audio,
+map geometry, gameplay timing, balance or new saved fields were introduced.
+Saved BasicArmor's inherited ARM1A0 reference was discovered during native
+reload and resolved with existing owned light/heavy armor icons.
+
+Added deterministic filtered IPK3 construction, source manifests, external-engine
+launcher with leaf-only save paths and revision-1 copy-only conversion. Native
+100-check resource/input/voice/world passes and 60 voice-target checks ran without
+a commercial IWAD. MAP02+stored MAP01 imported, saved and returned to the prior
+development runtime with 10 checks each direction; byte-idempotence, layout
+mismatch, overwrite and unchanged-original guards passed. A fresh retained
+legacy MAP02 revision-5 checkpoint also loaded and saved natively. This is
+technical compatibility evidence, not confirmation of arbitrary historical saves.
+
+Rejected attempts are retained: project IWADINFO Mapinfo cannot override an
+engine core lump; fixture textures.zs collided with TEXTURES; one title menu
+kept the world paused; two audio queries incorrectly compared a resolved target
+instead of the original alias; a saved diagnostic CA464AudioPoint required its
+original fixture class; a gallery color constant lacked Font qualification.
+The first full validator found twelve pinned shared-TEXTURES source hashes;
+restoring its exact audited bytes and registering root TEXTURES.caelum467
+preserves those earlier generated assets. A nested TEXTURES registration failed
+natively; the root registration passed, first in a diagnostic overlay and then
+in the independent package. The launcher also needed an
+Out-Host pipeline to wait for the GUI process and obtain its actual exit code.
+The corrected checks require explicit completion, process exit and unchanged
+package hashes. Native gallery captures distinguish failed title-only/HUD-covered
+views from actual resource presentation. Evidence: assets/validation_v5_18_1.
+The 113 manual checks remain pending; no author acceptance is recorded.
 
 ## 5.18.0 - Standalone dependency/provenance audit (#466, 2026-11-26)
 

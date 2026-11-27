@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.18.0** - 2026-11-26.
+Documentation version: **5.18.1** - 2026-11-26.
+
+## 5.18.1 - Independent startup implemented for review (#467)
+
+The approved MAP01-MAP03 beta now starts with an external GZDoom 4.14.2
+installation and no commercial IWAD. Owned compatibility resources resolve
+the #466 findings; deterministic packaging filters development maps and retains
+per-file provenance. Clean-profile native checks, reversible matching-map save
+conversion and legacy MAP02 reload are recorded in assets/validation_v5_18_1.
+This machine reports engine g4.14.2-m; clean-machine author installation remains
+pending. No later campaign, multiplayer Internet availability, siege fluency,
+source-rights clearance or final art acceptance is inferred. Continue #468
+integrated validation and #469 complete beta/terminal delivery. CA467-STARTUP-01
+joins the previous 112 outstanding author checks.
 
 ## 5.18.0 - Standalone dependency and provenance audit (#466)
 

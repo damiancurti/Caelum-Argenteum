@@ -1,8 +1,5 @@
-// CaelumPlayer is the base class for every playable character.
-//
-// It currently inherits DoomPlayer so that Doom II's temporary weapons,
-// animations, sounds, and inventory remain usable during early development.
-// These inherited resources will be replaced by original assets later.
+// Base jugable: conserva el contrato nativo de DoomPlayer suministrado por
+// GZDoom, con equipo, imagenes y sonidos del proyecto (#467).
 class CaelumPlayer : DoomPlayer
 {
     // #434: plaza nativa vacante tras un traslado confirmado del perfil.
@@ -827,6 +824,7 @@ class CaelumPlayer : DoomPlayer
 
         // Prefijo facial propio para evitar resolver iconos/rostros heredados de Doom.
         Player.Face "CAF";
+        Player.SoundClass "caelum_male";
 
         // Domingo reemplaza la apariencia mundial heredada de DoomPlayer. El
         // rango 0,0 conserva su paleta original. "None" elimina PLYC; la
@@ -7069,6 +7067,15 @@ class CaelumPlayer : DoomPlayer
         return "caelum/player/pain_male";
     }
 
+    void UpdateNativeVoiceClass()
+    {
+        // Campo nativo derivado del perfil: reparacion idempotente tras cargar,
+        // sin CVAR global, inventario nuevo ni cambio de sexo del usuario.
+        Name expected=CaelumCharacterIdentity.VoiceSex(self)==CaelumConstants.SEX_FEMALE
+            ? 'caelum_female' : 'caelum_male';
+        if(SoundClass!=expected)SoundClass=expected;
+    }
+
     // Sum the finite states from Pain until the sequence returns to Spawn.
     // DoomPlayer uses two four-tic pain frames, so its live duration is 8/35 s.
     // Future player actors can use a different animation without duplicating a
@@ -7321,6 +7328,7 @@ class CaelumPlayer : DoomPlayer
     override void Tick()
     {
         if(ProfileDeparted || SessionIdentityPending)return;
+        UpdateNativeVoiceClass();
         if(CaelumTarotHunt.Held(self) || CaelumTarotHunt.HumanHunter(self)){Super.Tick();return;}
         if(CaelumSpirit.Active(self)){Super.Tick();CaelumTarotService.Advance(self);return;}
         // También repara flags/selección de saves anteriores sin duplicar stock.

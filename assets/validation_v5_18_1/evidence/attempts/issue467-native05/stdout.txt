@@ -1,0 +1,272 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-26 21:33:42
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue467-dist04/caelum_argenteum.ipk3, 19054 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue467-native05/checks.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+No GENMIDI lump found. OPL playback not available.
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2497.78 ms
+R_Init: Init CaelumArgenteum refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+CA467 PASS texture BLUDA0
+CA467 PASS texture BLUDB0
+CA467 PASS texture BLUDC0
+CA467 PASS texture CACVROCK
+CA467 PASS texture CAPODR
+CA467 PASS texture CAPOOL01
+CA467 PASS texture CASWRFLR
+CA467 PASS texture CASWRPIP
+CA467 PASS texture CASWRWAL
+CA467 PASS texture CMCL01
+CA467 PASS texture CMDR03
+CA467 PASS texture CMEX01
+CA467 PASS texture CMGR01A
+CA467 PASS texture CMGR02
+CA467 PASS texture CMGR03
+CA467 PASS texture CMGT02
+CA467 PASS texture CMIN01
+CA467 PASS texture CMPLS36
+CA467 PASS texture CMPNL36
+CA467 PASS texture CMPW01
+CA467 PASS texture CMRF01
+CA467 PASS texture CMRLBAL
+CA467 PASS texture CMSHT36
+CA467 PASS texture CMSP03
+CA467 PASS texture CMST01
+CA467 PASS texture CMST02
+CA467 PASS texture CMST03
+CA467 PASS texture CMST04
+CA467 PASS texture CMTB02
+CA467 PASS texture CMTB04
+CA467 PASS texture CMWD01
+CA467 PASS texture CMWD03
+CA467 PASS texture CVCI01
+CA467 PASS texture CVCI02
+CA467 PASS texture CVCI03
+CA467 PASS texture CVCI04
+CA467 PASS texture CVCI06
+CA467 PASS texture CVPL01
+CA467 PASS texture CVPL02
+CA467 PASS texture CVPL03
+CA467 PASS texture CVPL04
+CA467 PASS texture CVPL05
+CA467 PASS texture CVPL06
+CA467 PASS texture CVPO01
+CA467 PASS texture CVPO02
+CA467 PASS texture CVPO03
+CA467 PASS texture CVPO04
+CA467 PASS texture CVPO05
+CA467 PASS texture CVPO06
+CA467 PASS texture FAXEF0
+CA467 PASS texture FAXEG0
+CA467 PASS texture FAXEH0
+CA467 PASS texture FAXEI0
+CA467 PASS texture FAXEJ0
+CA467 PASS texture FAXEK0
+CA467 PASS texture F_SKY1
+CA467 PASS texture M_EPISOD
+CA467 PASS texture M_NEWG
+CA467 PASS texture M_SKILL
+CA467 PASS texture PUFFA0
+CA467 PASS texture PUFFB0
+CA467 PASS texture PUFFC0
+CA467 PASS texture PUFFD0
+CA467 PASS texture SW1EXIT
+CA467 PASS texture SW2EXIT
+CA467 PASS retained native forward input
+CA467 PASS retained native sideways input
+CA467 PASS prologue maps included
+CA467 PASS five development maps excluded
+CA467 PASS all thirty notices indexed
+
+caelum_female, male:
+ *death          caelum/player/pain_female
+ *xdeath         caelum/player/pain_female
+ *gibbed         caelum/player/pain_female
+ *pain100        caelum/player/pain_female
+ *pain75         caelum/player/pain_female
+ *pain50         caelum/player/pain_female
+ *pain25         caelum/player/pain_female
+ *grunt          caelum/player/pain_female
+ *land           caelum/player/pain_female
+ *jump           { no sound }
+ *fist           { no sound }
+ *usefail        caelum/player/pain_female
+
+caelum_female, female:
+ *death          caelum/player/pain_female
+ *xdeath         caelum/player/pain_female
+ *gibbed         caelum/player/pain_female
+ *pain100        caelum/player/pain_female
+ *pain75         caelum/player/pain_female
+ *pain50         caelum/player/pain_female
+ *pain25         caelum/player/pain_female
+ *grunt          caelum/player/pain_female
+ *land           caelum/player/pain_female
+ *jump           { no sound }
+ *fist           { no sound }
+ *usefail        caelum/player/pain_female
+
+caelum_female, other:
+ *death          caelum/player/pain_female
+ *xdeath         caelum/player/pain_female
+ *gibbed         caelum/player/pain_female
+ *pain100        caelum/player/pain_female
+ *pain75         caelum/player/pain_female
+ *pain50         caelum/player/pain_female
+ *pain25         caelum/player/pain_female
+ *grunt          caelum/player/pain_female
+ *land           caelum/player/pain_female
+ *jump           { no sound }
+ *fist           { no sound }
+ *usefail        caelum/player/pain_female
+
+caelum_male, male:
+ *death          caelum/player/pain_male
+ *xdeath         caelum/player/pain_male
+ *gibbed         caelum/player/pain_male
+ *pain100        caelum/player/pain_male
+ *pain75         caelum/player/pain_male
+ *pain50         caelum/player/pain_male
+ *pain25         caelum/player/pain_male
+ *grunt          caelum/player/pain_male
+ *land           caelum/player/pain_male
+ *jump           { no sound }
+ *fist           { no sound }
+ *usefail        caelum/player/pain_male
+
+caelum_male, female:
+ *death          caelum/player/pain_male
+ *xdeath         caelum/player/pain_male
+ *gibbed         caelum/player/pain_male
+ *pain100        caelum/player/pain_male
+ *pain75         caelum/player/pain_male
+ *pain50         caelum/player/pain_male
+ *pain25         caelum/player/pain_male
+ *grunt          caelum/player/pain_male
+ *land           caelum/player/pain_male
+ *jump           { no sound }
+ *fist           { no sound }
+ *usefail        caelum/player/pain_male
+
+caelum_male, other:
+ *death          caelum/player/pain_male
+ *xdeath         caelum/player/pain_male
+ *gibbed         caelum/player/pain_male
+ *pain100        caelum/player/pain_male
+ *pain75         caelum/player/pain_male
+ *pain50         caelum/player/pain_male
+ *pain25         caelum/player/pain_male
+ *grunt          caelum/player/pain_male
+ *land           caelum/player/pain_male
+ *jump           { no sound }
+ *fist           { no sound }
+ *usefail        caelum/player/pain_male
+
+player, male:
+ *death          player"0"*death
+ *xdeath         player"0"*xdeath
+ *gibbed         player"0"*gibbed
+ *pain100        player"0"*pain100
+ *pain75         player"0"*pain100
+ *pain50         player"0"*pain100
+ *pain25         player"0"*pain100
+ *grunt          player"0"*grunt
+ *land           player"0"*grunt
+ *jump           player"0"*jump
+ *fist           player"0"*fist
+ *usefail        player"0"*usefail
+
+player, female:
+ *death          player"1"*death
+ *xdeath         player"1"*xdeath
+ *gibbed         player"1"*gibbed
+ *pain100        player"1"*pain100
+ *pain75         player"1"*pain100
+ *pain50         player"1"*pain100
+ *pain25         player"1"*pain100
+ *grunt          player"1"*grunt
+ *land           player"1"*grunt
+ *jump           player"1"*jump
+ *fist           player"1"*fist
+ *usefail        player"1"*usefail
+
+player, other:
+ *death          player"3"*death
+ *xdeath         player"3"*xdeath
+ *gibbed         player"3"*gibbed
+ *pain100        player"3"*pain100
+ *pain75         player"3"*pain100
+ *pain50         player"3"*pain100
+ *pain25         player"3"*pain100
+ *grunt          player"3"*grunt
+ *land           player"3"*grunt
+ *jump           player"3"*jump
+ *fist           player"3"*fist
+ *usefail        player"3"*usefail
+Captured title.png
+
+----------------------------------------
+
+MAP01 - La mansión
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA467 PASS native project player
+CA467 PASS no inherited Doom starting inventory
+CA467 PASS native blood ownership retained
+CA467 PASS character identity available
+CA467 PASS male profile native voice class
+CA467 SOUND male any=1 alias=1 concrete=0
+CA467 PASS male native death alias starts voice channel
+CA467 PASS female profile native voice class
+CA467 SOUND female any=1 alias=1 concrete=0
+CA467 PASS female native death alias starts voice channel
+CA467 PASS legacy native voice class repaired
+CA467 PASS voice repair idempotent
+CA467 PASS native mansion loaded
+CA467 PASS mansion advances unpaused
+CA467 WORLD COMPLETE
+Captured mansion.png
+Partida guardada.
+CA467 COMPLETE

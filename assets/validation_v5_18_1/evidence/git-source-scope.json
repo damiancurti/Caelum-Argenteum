@@ -1,0 +1,18 @@
+{
+  "scope": "Final package and inventory pin actual tested working bytes. Existing Git text normalization is retained; a differently normalized checkout regenerates its inventory before packaging, as documented under #466. No gameplay source difference is hidden by this comparison.",
+  "normalized_files": [
+    {
+      "path": "src/MENUDEF",
+      "working_sha256": "290f4579d4491830206c6de7ab0267648fae2616bcc1d6884b7dfcf3f0a71ede",
+      "git_sha256": "9efa687ebd6211eb93b5a8df2db72da782f841b08d8bce23863d2226b7219510",
+      "difference": "Only Git text CRLF-to-LF normalization"
+    },
+    {
+      "path": "src/caelum/player/CaelumPlayer.zs",
+      "working_sha256": "2fc27e71198be7be8134eb11e0f86fb0acf7487ece73131f35724dc50628510c",
+      "git_sha256": "12cbb449c519b529f528bd922290b079270760566eebe9d91ccf87c00dccc0ac",
+      "difference": "Only Git text CRLF-to-LF normalization"
+    }
+  ],
+  "all_other_changed_runtime_and_tool_files_byte_identical": true
+}

@@ -1,4 +1,5 @@
 // #438: el fuego amigo aprobado usa el factor nativo completo.
+include "caelum/data/standalone-base.mapinfo"
 defaultmap { teamdamage=1 }
 include "caelum/data/arenas.mapinfo"
 include "caelum/data/hunt.mapinfo"
@@ -49,6 +50,8 @@ GameInfo
 // enemigos sin respetar esas reglas, por lo que se sustituyen por un único modo
 // neutral. Al existir una sola opción GZDoom omite la pantalla de dificultad.
 clearskills
+clearepisodes
+episode MAP01 { name = "$CA_MENU_NEW_GAME" }
 skill Caelum
 {
     Name = "$CA_SKILL_CAELUM"

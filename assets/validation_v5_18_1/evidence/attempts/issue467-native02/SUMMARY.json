@@ -1,0 +1,11 @@
+{
+  "issue": 467,
+  "package_sha256": "0858277b78affd439db0a2f6f4c8cdfa703b657e7f880a5bd53ac3e68144a21f",
+  "unchanged": true,
+  "exit": 4294967295,
+  "passed_checks": 0,
+  "failures": [],
+  "completed": false,
+  "commercial_iwad_loaded": false,
+  "saved": false
+}

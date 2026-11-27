@@ -1,6 +1,41 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.18.0** - 2026-11-26.
+Documentation version: **5.18.1** - 2026-11-26.
+
+## 5.18.1 - Owned independent-startup resources (#467)
+
+The #466 audit baseline remains historical; DEPENDENCIES.json now records its
+implemented #467 resolutions. IWADINFO selects the installed engine's
+mapinfo/doomcommon.txt; project MAPINFO supplies its own episode, pages, sky and
+menu defaults. PLAYPAL is independently calculated RGB332, never copied from an
+IWAD. Existing true-color artwork/audio remains unchanged.
+
+assets/source/art/standalone_467 retains the original transparent impact/blood
+atlas, exact built-in image-generation prompt, SHA-256, native crop registration
+and metadata-only baseline dimensions. The generator copies the source PNG
+unchanged and emits native TEXTURES crops: PUFF A-D, BLUD A-C and FAXE F-K retain
+native state slots/timing and world extents. Root TEXTURES.caelum467 registers
+them without changing the shared TEXTURES hash used by earlier model manifests.
+Own lever artwork supplies SW1EXIT/
+SW2EXIT at the measured 32x72 native extent; own armor icons cover ARM1/ARM2
+saved inventory references. Invisible project art supplies the F_SKY1 marker
+and parser-only menu headers; localized StaticText supplies actual headings.
+The new notice is included in the native Credits catalogue (30 notices).
+This is implemented review artwork, not author-approved final presentation.
+
+build_release.py filters the five catalogue test WADs, sorts members, fixes ZIP
+metadata and records per-member hashes/origins. It retains all source files and
+ships no executable, commercial IWAD or diagnostic fixture. Identical input bytes
+produce identical output; text checkout normalization is not an identical input.
+Optional verified legacy MAP02 revision 5 and MAP03 revision 3 bytes preserve
+matching stored layouts. All other retained grants and public-release audio
+quality qualifications remain in force.
+
+Native clean-profile evidence includes title/world/resource rendering, 100 checks
+and 60 resolved voice targets, plus old-save forward/rollback and legacy MAP02
+reload evidence. These are disposable profiles on the recorded Windows 11 /
+GZDoom g4.14.2-m installation, not a separately provisioned clean machine.
+CA467-STARTUP-01 and CA466-RIGHTS-01 retain author installation/art/rights review.
 
 ## 5.18.0 - Distribution origins and dependency decisions (#466)
 

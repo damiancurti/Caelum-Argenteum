@@ -1,0 +1,17 @@
+[
+  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+  "-noautoload",
+  "-iwad",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final03\\caelum_argenteum.ipk3",
+  "-file",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final-native03\\checks.pk3",
+  "-config",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final-native03\\session.ini",
+  "-savedir",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final-native03",
+  "-window",
+  "+logfile",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final-native03\\native.log",
+  "+exec",
+  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final-native03\\commands.cfg"
+]

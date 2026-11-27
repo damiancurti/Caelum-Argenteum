@@ -1,0 +1,5 @@
+{
+  "fatal": "checks.pk3:textures.zs line 1: Texture definition expected, found class",
+  "correction": "The diagnostic filename textures.zs collided with the reserved TEXTURES lump name. Rename the included script to texture_probe.zs; no runtime resource was implicated.",
+  "status": "Failed fixture retained; owned fatal window closed."
+}

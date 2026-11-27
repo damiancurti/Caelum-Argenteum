@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.18.0** - 2026-11-26.
+Documentation version: **5.18.1** - 2026-11-26.
+
+## 5.18.1 - Independent startup and packaging (#467)
+
+Implemented owned bootstrap/effect/switch/armor/menu resources, native voice
+aliases, deterministic filtered packaging, external-engine launcher and copy-only
+save-identity migration. Native checks and failed-attempt explanations are in
+assets/validation_v5_18_1; all 113 author checks remain outstanding. Keep #467
+commits/tests/PR separate. #468 must verify the integrated approved prologue and
+existing modes with documented limits; #469 must prepare reproducible versioned
+artifacts and the single visible terminal covering every prior/new author check.
+No manual result may be inferred from agent checks or a merged/closed issue.
 
 ## 5.18.0 - Standalone dependency/provenance audit (#466)
 
