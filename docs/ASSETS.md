@@ -1,6 +1,32 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.123** - 2026-11-21.
+Documentation version: **5.17.124** - 2026-11-26.
+
+## 5.17.124 - Rest and meal clips on retained rigs (#460)
+
+assets/source/art/rest_motion_460 retains approved durations, editable gesture
+targets and MODELS.json with source/output hashes. The original four transition
+clips keep their model-frame identities and are retimed by generated native RM
+states. New meal clips use the same Seated/Sleeping rigs, with 14 samples per
+pose and the approved four-second cycle. Right-arm IK supplies the gesture;
+the left arm keeps its authored shield pose. Weapon hiding is a runtime visual
+binding, never inventory removal. The author approved this presentation on
+2026-11-26; the exact art still awaits the consolidated review.
+
+export_rest_motion_models.py uses pinned Blender4.5.3 and the retained body,
+base outfit, worn clothing and grip sources. Its 208 new MD3 files cover both
+gestures and all existing garment combinations without overwriting the original
+375-frame models. Two independent exports match byte for byte. Checks preserve
+all UVs/topology, 444,156 neutral sample vertex positions and 7,056 wrist joins.
+The body/source attribution and licenses continue to apply. No new raster art,
+music, animation timing or gameplay values are introduced outside this scope.
+
+generate_rest_motion_data.py generates native durations, frame/model/texture
+bindings and the appended states; validate_rest_motion.py checks freshness and
+source/output hashes through validate_project.py. Focused native evidence and
+inspected captures live in assets/validation_v5_17_124/evidence. The previous
+#889 catalogue remains historical; the final beta terminal will incorporate
+CA460-MOTION-01 with the outstanding checks from the remaining issues.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 

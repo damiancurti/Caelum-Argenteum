@@ -159,7 +159,10 @@ def main():
                    '        Stop;' if terminal else f'        Goto F{action["start"] if last else number+1};']
     states += ['    }', '}', '']
     model += ['}', '']
-    (output / 'frames.zs').write_text('\n'.join(states), encoding='utf-8', newline='\n')
+    # Preserve the source pose samples while adding the approved #460 playback states.
+    sys.path.insert(0,str(Path(__file__).parent))
+    from generate_rest_motion_data import merge_states
+    (output / 'frames.zs').write_text(merge_states('\n'.join(states)), encoding='utf-8', newline='\n')
     (output / 'MODELDEF').write_text('\n'.join(model), encoding='utf-8', newline='\n')
     (output / 'TEXTURES').write_text('\n'.join(textures) + '\n', encoding='utf-8', newline='\n')
     def chunk(kind, data):

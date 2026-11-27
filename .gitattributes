@@ -1,4 +1,14 @@
 # Document index hashes use exact source bytes. Keep them stable on checkout.
+# #460 retains exact source/evidence bytes and deterministic generated bindings.
+/assets/source/art/rest_motion_460/** -text
+/assets/validation_v5_17_124/** -text
+/assets/generators/export_rest_motion_models.py text eol=lf
+/assets/generators/generate_rest_motion_data.py text eol=lf
+/assets/generators/validate_rest_motion.py text eol=lf
+/src/caelum/data/CaelumRestMotionData.zs text eol=lf
+/src/caelum/data/rest_motion.modeldef text eol=lf
+/src/caelum/data/rest_motion.textures text eol=lf
+/src/caelum/character/CaelumDomingoPilotFrames.zs text eol=lf
 # #453 original author reference bytes and deterministic derived catalogue.
 /assets/source/bestiary_453/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /assets/bestiary/*.json text eol=lf

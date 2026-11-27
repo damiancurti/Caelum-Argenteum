@@ -1,0 +1,18 @@
+{
+  "issue": 460,
+  "runtime_sha256": "fab9e9355f2ab5700bb1ddac11a1332a2cc2d3297f5ca89941c7151ade45904d",
+  "fixture_sha256": "9dcb0663cc477bdcfc5881950bdebfa7f5c8366923d6dce6392d9a73d62aeeac",
+  "runs": [
+    {
+      "name": "import",
+      "passed": true,
+      "counts": [
+        [
+          "9",
+          "0"
+        ]
+      ],
+      "exit": 0
+    }
+  ]
+}

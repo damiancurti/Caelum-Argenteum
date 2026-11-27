@@ -4828,3 +4828,5 @@ Model CaelumBarricadeVisual
 #include "caelum/data/distinct_form_combat.modeldef"
 
 #include "caelum/data/wardrobe_candidate.modeldef"
+
+#include "caelum/data/rest_motion.modeldef"

@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.123.** Obtain and update the complete repository,
+**Current release: 5.17.124.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#460 adds timed chair/bed/floor transitions and eating/drinking gestures on the
+retained supported modular body. The shield stays visible and the weapon visual
+returns when the gesture ends. Existing saves upgrade without restarting rest;
+backward conversion preserves the original save (SYSTEMS, 5.17.124). Native and
+static evidence: assets/validation_v5_17_124. CA460-MOTION-01 awaits the final
+consolidated author session; #464-469 remain in progress toward the approved
+independent MAP01-MAP03 beta with GZDoom installed separately.
 
 **Integration decision, 2026-11-26:** the author authorized merging the 130
 implemented V5.16/V5.17 PRs and closing their 130 issues plus parent scopes #459
@@ -15,8 +23,8 @@ and #462 for the work delivered so far. Later versions will complement it.
 Release 5.17.123 is retained. The 108 manual checks, visual decisions and known
 limitations remain pending; closure does not certify the full campaign or art.
 The exact integration scope is recorded in
-`assets/validation_v5_17_123/integration-decision.json`. Unimplemented roadmap
-issues #460, #464-469 and umbrella #403 remain open.
+`assets/validation_v5_17_123/integration-decision.json`. At that integration point #460, #464-469 and umbrella #403 remained open.
+The current #460 implementation is described above.
 
 #889 supplies the consolidated author terminal for all108 outstanding checks:
 `assets/validation_v5_17_123/author_terminal.ps1`. Its scene catalogue includes

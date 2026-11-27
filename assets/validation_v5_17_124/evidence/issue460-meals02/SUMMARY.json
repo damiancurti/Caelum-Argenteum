@@ -1,0 +1,73 @@
+{
+  "issue": 460,
+  "runtime_sha256": "5e69ad0e8528c4cbecac2153152defdaac17c2fc558e7510260eaee69d3591c3",
+  "fixture_sha256": "4d931c7c76b964dad6b540dae65e3ff4d326f071b7056bae623c177292f1e204",
+  "runs": [
+    {
+      "name": "input",
+      "passed": true,
+      "counts": [
+        [
+          "20",
+          "0"
+        ]
+      ],
+      "exit": 0
+    },
+    {
+      "name": "eat",
+      "passed": true,
+      "counts": [
+        [
+          "22",
+          "0"
+        ]
+      ],
+      "exit": 0
+    },
+    {
+      "name": "drink",
+      "passed": true,
+      "counts": [
+        [
+          "44",
+          "0"
+        ]
+      ],
+      "exit": 0
+    },
+    {
+      "name": "reload-meal",
+      "passed": true,
+      "counts": [
+        [
+          "14",
+          "0"
+        ]
+      ],
+      "exit": 0
+    },
+    {
+      "name": "reload-exit",
+      "passed": true,
+      "counts": [
+        [
+          "12",
+          "0"
+        ]
+      ],
+      "exit": 0
+    },
+    {
+      "name": "jump",
+      "passed": true,
+      "counts": [
+        [
+          "10",
+          "0"
+        ]
+      ],
+      "exit": 0
+    }
+  ]
+}

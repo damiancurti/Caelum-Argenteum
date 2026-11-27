@@ -1,0 +1,51 @@
+{
+  "issue": 460,
+  "runtime_sha256": "2d03c994f9c0ebc4d9b39ad93b18fafde81ca950edad1be613da990c8a30325a",
+  "fixture_sha256": "312dadf7a9480d32b1039f8d5fce5647255e66feb6563f6250d2593674d1bf80",
+  "runs": [
+    {
+      "name": "drink",
+      "passed": true,
+      "counts": [
+        [
+          "44",
+          "0"
+        ]
+      ],
+      "exit": 0
+    },
+    {
+      "name": "hub",
+      "passed": true,
+      "counts": [
+        [
+          "31",
+          "0"
+        ]
+      ],
+      "exit": 0
+    },
+    {
+      "name": "exhaustion",
+      "passed": true,
+      "counts": [
+        [
+          "21",
+          "0"
+        ]
+      ],
+      "exit": 0
+    },
+    {
+      "name": "import",
+      "passed": true,
+      "counts": [
+        [
+          "10",
+          "0"
+        ]
+      ],
+      "exit": 0
+    }
+  ]
+}

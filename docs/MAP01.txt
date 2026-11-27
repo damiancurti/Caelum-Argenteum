@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.17.123** - 2026-11-21.
+Documentation version: **5.17.124** - 2026-11-26.
+
+## 5.17.124 - Rest presentation integration (#460)
+
+Existing chair, bed and floor-rest ownership now drives the approved 2/3-second
+entry/exit and 4-second meal gestures for the retained supported modular body.
+The implementation reuses actual provision effects and equipment; this patch
+introduces no map placement, story, recipe, resource rate or campaign rule.
+Native fixture evidence covers interruptions, transitions and matched saves.
+Final in-world visual review remains CA460-MOTION-01 alongside prior checks.
 
 ## 5.17.123 - Consolidate the author review terminal (#889)
 

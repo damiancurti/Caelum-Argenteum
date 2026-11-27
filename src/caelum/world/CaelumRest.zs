@@ -1,3 +1,5 @@
+#include "caelum/data/CaelumRestMotionData.zs"
+
 // Sesión de descanso. El avance rápido reutiliza sus pasos y sus guardas.
 class CaelumRestRules : Object
 {
@@ -74,6 +76,65 @@ class CaelumRestState : Inventory
     double OriginalPitch;
     double CameraYaw;
     double CameraPitch;
+    // Revisión 1: el reloj visual no consume recursos ni avanza el descanso.
+    int MotionRevision,MotionPhase,MotionStarted,MotionLastTic;
+    int MotionExitResult,MotionLastMeal;
+    String MotionExitKey;
+    bool MotionExitQueued;
+
+    void EnsureMotion()
+    {
+        if(MotionRevision>=CaelumRestMotionData.REVISION)return;
+        MotionRevision=CaelumRestMotionData.REVISION;
+        MotionPhase=CaelumRestMotionData.NONE;MotionExitQueued=false;
+        MotionLastTic=-1;MotionLastMeal=CaelumRestMotionData.DRINK;
+    }
+
+    bool MotionExiting()
+    {
+        return MotionPhase==CaelumRestMotionData.STAND_UP
+            || MotionPhase==CaelumRestMotionData.GET_UP;
+    }
+
+    void StartMotion(CaelumPlayer user,int phase)
+    {
+        EnsureMotion();MotionPhase=phase;MotionStarted=level.time;
+        MotionLastTic=level.time;
+        if(user.CombatBlockModeActive)user.CancelCombatBlockMode();
+    }
+
+    static bool MotionLocked(CaelumPlayer user)
+    {
+        let rest=Get(user);
+        return rest!=null && rest.Status==CaelumRestRules.STATUS_ACTIVE
+            && rest.OriginMap==level.MapName && rest.MotionPhase!=CaelumRestMotionData.NONE;
+    }
+
+    void AdvanceMotion(CaelumPlayer user)
+    {
+        EnsureMotion();
+        if(MotionLastTic==level.time)return;
+        MotionLastTic=level.time;
+        if(Status!=CaelumRestRules.STATUS_ACTIVE)
+        {MotionPhase=CaelumRestMotionData.NONE;MotionExitQueued=false;return;}
+        if(MotionPhase!=CaelumRestMotionData.NONE)
+        {
+            if(level.time-MotionStarted<CaelumRestMotionData.Duration(MotionPhase))return;
+            bool exiting=MotionExiting();MotionPhase=CaelumRestMotionData.NONE;
+            if(exiting){Finish(user,MotionExitResult,MotionExitKey,false);return;}
+            if(MotionExitQueued)
+            {MotionExitQueued=false;Finish(user,MotionExitResult,MotionExitKey);return;}
+        }
+        // Sólo representa provisiones durante el descanso, no el umbral de
+        // consumo automático que ya funciona al caminar o combatir.
+        if(!CaelumDiningSession.HasMealSupport(user) || CaelumTimeSkipState.IsActive(user))return;
+        bool food=user.FindInventory('CaelumHungerRegeneration')!=null;
+        bool water=user.FindInventory('CaelumThirstRegeneration')!=null;
+        if(!food && !water)return;
+        int wanted=water && (!food || MotionLastMeal==CaelumRestMotionData.EAT)
+            ?CaelumRestMotionData.DRINK:CaelumRestMotionData.EAT;
+        MotionLastMeal=wanted;StartMotion(user,wanted);
+    }
 
     static CaelumRestState Get(CaelumPlayer user, bool create = false)
     {
@@ -191,6 +252,11 @@ class CaelumRestState : Inventory
         rest.ResultKey = "";
         rest.InputArmed = false;
         rest.Status = CaelumRestRules.STATUS_ACTIVE;
+        rest.EnsureMotion();rest.MotionExitQueued=false;
+        if(mode==CaelumRestRules.MODE_SLEEP)
+            rest.StartMotion(user,CaelumRestMotionData.LIE_DOWN);
+        else if(furniture!=null)rest.StartMotion(user,CaelumRestMotionData.SIT_DOWN);
+        else rest.MotionPhase=CaelumRestMotionData.NONE;
         // Cada búsqueda recibe una etiqueta literal, no un String condicional.
         if (mode == CaelumRestRules.MODE_SLEEP) user.SetState(user.FindState("RestLying"));
         else user.SetState(user.FindState("RestSeated"));
@@ -199,15 +265,34 @@ class CaelumRestState : Inventory
         return true;
     }
 
-    void Finish(CaelumPlayer user, int result, String key)
+    void Finish(CaelumPlayer user, int result, String key, bool animateExit=true)
     {
         // Completar, cancelar o interrumpir es terminal para esta sesión.
         if (Status != CaelumRestRules.STATUS_ACTIVE) return;
         if(CaelumExhaustion.Locked(user))
         {
+            if(result==CaelumRestRules.STATUS_INTERRUPTED)
+            {MotionPhase=CaelumRestMotionData.NONE;MotionExitQueued=false;}
             if(result==CaelumRestRules.STATUS_CANCELLED)CaelumExhaustion.NotifyLocked(user);
             return;
         }
+        EnsureMotion();
+        if(animateExit && result!=CaelumRestRules.STATUS_INTERRUPTED && user!=null
+            && user.health>0 && OriginMap==level.MapName
+            && (Mode==CaelumRestRules.MODE_SLEEP || (UsesFurniture && Furniture!=null)))
+        {
+            if(MotionExiting() || MotionExitQueued)return;
+            MotionExitResult=result;MotionExitKey=key;
+            CaelumTimeAdvanceState.Halt(user);
+            // Una cancelación voluntaria espera el final del gesto actual;
+            // daño, pérdida de soporte o viaje lo interrumpen sin esta espera.
+            if(MotionPhase!=CaelumRestMotionData.NONE)
+            {MotionExitQueued=true;return;}
+            StartMotion(user,Mode==CaelumRestRules.MODE_SLEEP
+                ?CaelumRestMotionData.GET_UP:CaelumRestMotionData.STAND_UP);
+            return;
+        }
+        MotionPhase=CaelumRestMotionData.NONE;MotionExitQueued=false;
         bool exhaustedWake=Exhaustion;Exhaustion=false;
         CaelumTimeAdvanceState.Halt(user);
         AutoEating=false;AutoDrinking=false;DiningTable=null;
@@ -251,7 +336,8 @@ class CaelumRestState : Inventory
         CaelumExhaustion.Sync(user);
         let rest = Get(user);
         if (rest == null || rest.Status != CaelumRestRules.STATUS_ACTIVE) return;
-        if(CaelumExhaustion.Active(user))return;
+        rest.EnsureMotion();
+        if(CaelumExhaustion.Active(user)){rest.AdvanceMotion(user);return;}
         String reason = rest.OriginMap != level.MapName ? "CA_REST_MOVED" : BlockReason(user);
         if (reason.Length() == 0 && rest.UsesFurniture
             && (rest.Furniture == null || !rest.Furniture.SupportsRest(user)
@@ -271,6 +357,7 @@ class CaelumRestState : Inventory
         }
         if (user.health < rest.LastHealth) reason = "CA_REST_DAMAGE";
         if (reason.Length() != 0) rest.Finish(user, CaelumRestRules.STATUS_INTERRUPTED, reason);
+        else rest.AdvanceMotion(user);
     }
 
     static void HandleInput(CaelumPlayer user)

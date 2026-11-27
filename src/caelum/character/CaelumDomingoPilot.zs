@@ -167,6 +167,20 @@ class CaelumDomingoPilotPlayer : CaelumPlayer
 class CaelumDomingoPilotBody : CaelumDomingoPilotFrames
 {
     int Pose,Elapsed,ModelFrame;
+    int MealVisualPhase;
+    transient bool MealBindingsReady;
+
+    virtual void SyncMealBindings(int phase)
+    {
+        if(MealBindingsReady && MealVisualPhase==phase)return;
+        MealVisualPhase=phase;MealBindingsReady=true;
+        for(int slot=0;slot<7;slot++)
+            A_ChangeModel('None',slot,
+                CaelumRestMotionData.ModelPath("models/caelum/characters/domingo",phase),
+                CaelumRestMotionData.BaseFile(slot),slot,
+                "models/caelum/characters/domingo","domingo_skin.png",
+                phase!=0 && slot==5?CMDL_HIDEMODEL:0);
+    }
 
     int NativeElapsed(CaelumPlayer user,State beginning)
     {
@@ -230,9 +244,30 @@ class CaelumDomingoPilotBody : CaelumDomingoPilotFrames
             else if(Pose==JUMPAIR)Pose=GUARDJUMPAIR;
         }
         ModelFrame=FrameFor(Pose,Elapsed);
-        let wanted=FindStateByString(String.Format('F%d',ModelFrame));
+        let rest=CaelumRestState.Get(user);
+        int restFrame=-1,restElapsed=0,mealPhase=0;
+        if(user.health>0 && rest!=null && CaelumRestState.MotionLocked(user))
+        {
+            restElapsed=Max(0,level.time-rest.MotionStarted);
+            restFrame=CaelumRestMotionData.StateIndex(rest.MotionPhase,restElapsed,
+                rest.Mode==CaelumRestRules.MODE_SLEEP);
+            if(rest.MotionPhase==CaelumRestMotionData.EAT || rest.MotionPhase==CaelumRestMotionData.DRINK)
+                mealPhase=rest.MotionPhase;
+        }
+        SyncMealBindings(mealPhase);
+        if(restFrame>=0)ModelFrame=CaelumRestMotionData.NativeFrame(restFrame);
+        let wanted=restFrame>=0?FindStateByString(String.Format('RM%d',restFrame))
+            :FindStateByString(String.Format('F%d',ModelFrame));
         if(CurState!=wanted)SetState(wanted);
-        if(tics>0)tics=Max(1,CurState.Tics-(Elapsed-Sample(ModelFrame)));
+        if(tics>0)
+        {
+            if(restFrame>=0)
+            {
+                int sample=CaelumRestMotionData.SampleTic(restFrame);
+                tics=Max(1,CurState.Tics-(restElapsed-sample));
+            }
+            else tics=Max(1,CurState.Tics-(Elapsed-Sample(ModelFrame)));
+        }
     }
 
     override void Tick(){Super.Tick();UpdateVisual();}
