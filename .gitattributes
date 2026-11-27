@@ -1644,3 +1644,6 @@ assets/source/art/native_creatures_902/PROVENANCE.json text eol=lf
 
 src/caelum/data/player_families.modeldef text eol=lf
 assets/source/art/player_families_903/PROVENANCE.json text eol=lf
+
+assets/source/art/worn_equipment_904/MODULES.json text eol=lf
+src/caelum/character/CaelumWornEquipment.zs text eol=lf

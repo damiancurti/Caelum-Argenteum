@@ -7,6 +7,9 @@ DIR='models/caelum/players'
 SLOTS=[('b0_'+part,'b0') for part in ('shirt','trousers','belt','boots','gloves')]+[('head0_0','head0_0_0'),('hair0_0','hair0_0_0')]
 
 
+SLOTS.extend(("gear/"+part,"gear/"+part) for part in ("w0_1","s0","a0_0","a1_0","a2_0","a3_0"))
+
+
 def register():
     configs=[]
     # Each prefix has one native body per pose. The game owns identity and color.

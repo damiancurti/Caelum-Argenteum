@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "issue": 466,
-  "runtime_files": 19617,
-  "metadata_documents": 700,
+  "runtime_files": 19736,
+  "metadata_documents": 701,
   "origin_decisions": "assets/distribution/ORIGINS.json",
   "dependency_findings": "assets/distribution/DEPENDENCIES.json",
   "provenance_resolution": "Union of the decision references and per-file additional_provenance; exact_metadata is traceability, not a license grant.",
@@ -15,14 +15,14 @@
     "maps/TTAROT.wad"
   ],
   "origin_counts": {
-    "project-source": 1061,
+    "project-source": 1062,
     "dejavu-font": 2352,
-    "project-art": 15728,
+    "project-art": 15846,
     "retained-notice": 30,
     "human-mesh": 315,
     "source-specific-audio": 131
   },
-  "exact_metadata_files": 14278,
+  "exact_metadata_files": 14337,
   "files": [
     {
       "path": "ANIMDEFS",
@@ -568,8 +568,8 @@
     },
     {
       "path": "caelum/character/CaelumAppearance.zs",
-      "sha256": "ccca49e0340ce23b0882b8349ab693a82c6f5247e0caf9b1d8a231fde0fdf3ca",
-      "bytes": 5942,
+      "sha256": "5c0a8c169987fe1ed4a6384e0a555ff29b5c6fa9e5cf7713e0a63ed0303fdcdf",
+      "bytes": 6033,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -764,6 +764,16 @@
       "path": "caelum/character/CaelumWardrobePilot.zs",
       "sha256": "34d04c40d4536eb12cfafc437b95e29f2aa98fdebb687f7c337ed541159e4691",
       "bytes": 5406,
+      "decision": "project-source",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "caelum/character/CaelumWornEquipment.zs",
+      "sha256": "f162188ee17d77918ca669a2ed7a88a5e498c2f1764cb9508f1397f47ccb35d8",
+      "bytes": 2075,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -3820,8 +3830,8 @@
     },
     {
       "path": "caelum/data/player_families.modeldef",
-      "sha256": "11a0e3b1c791be9a538e9fffc339aa35efd533ece636512f12cc3e5c09132a2a",
-      "bytes": 1780204,
+      "sha256": "0dba7438562409f365b00ae724d7f0c94b7e8d8f66bae80942b345d99fce675b",
+      "bytes": 3138220,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -5636,8 +5646,8 @@
     },
     {
       "path": "caelum/player/CaelumPlayer.zs",
-      "sha256": "1013b81c23a980c07c82d6196bfa994a50ed2b90d7e33f12a5efecc0ed47758e",
-      "bytes": 462158,
+      "sha256": "5fb247b59a971a662bcb07a7803003a507421947542605204d0b4dfe47837e1a",
+      "bytes": 462195,
       "decision": "project-source",
       "additional_provenance": [
         "assets/first_person_v6/VALIDATION.json"
@@ -8073,7 +8083,7 @@
     },
     {
       "path": "caelum/world/CaelumPhysicalHazards.zs",
-      "sha256": "19cfc2235516cb3764d6e92a02e9e476953bebcca1474fca9fa41d72db012fbf",
+      "sha256": "67fb19a58bd34db9977a27fa14824cbc2002caac4cc5bd10328f492fb7c2c364",
       "bytes": 20720,
       "decision": "project-source",
       "additional_provenance": [
@@ -8401,7 +8411,7 @@
     },
     {
       "path": "caelum/world/CaelumSewerMaze.zs",
-      "sha256": "d8a7b505ca78af4878b03c4b674db6541b9de093f7a95b7b597c16e16a369b15",
+      "sha256": "48571b3cbf6b0ab1c96540a25988ce0aaf4a3ed3f3b6a95f51a9608cc9cc52d2",
       "bytes": 15765,
       "decision": "project-source",
       "additional_provenance": [],
@@ -221605,6 +221615,1422 @@
       "exact_metadata": [
         "assets/source/art/player_families_903/PROVENANCE.json"
       ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_0.md3",
+      "sha256": "96b175d3ea18d58b3901bad5fa49b8049f27117fe9650ac2a568031b0f4c8127",
+      "bytes": 1830980,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_0.png",
+      "sha256": "3547fac72782333d6dfa5d8a067b661ced48970ad0865bf4e41564d85b1da123",
+      "bytes": 428542,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_1.md3",
+      "sha256": "d5f110852f46c07faac8c7b64f47ff4e8120e2bde85cf8889eedf3f6a65f3170",
+      "bytes": 960036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_1.png",
+      "sha256": "01b2bb0155630e42ecd8bd34ac81e425a5860303d3b5f2992d2ddc7ff9f80047",
+      "bytes": 355195,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_2.md3",
+      "sha256": "53e6fee7be679179d080d92566f4efaa66a1757b7c2049b23deda0c9df60426a",
+      "bytes": 1812516,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_2.png",
+      "sha256": "f6371bdbb259369d755e99108f12934a7bbc3103b844bb78271b7b6d283b2188",
+      "bytes": 247571,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_3.md3",
+      "sha256": "5f436d38e6af9e02c97924e1b6659e41518583b3e2f0f11e503333ecd44d7f45",
+      "bytes": 1829348,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_3.png",
+      "sha256": "6ca230a47ad6fd49dfd1f5f282a4c0d747053d4f12bc7069b5c9df0c90b710c1",
+      "bytes": 557777,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a1_0.md3",
+      "sha256": "8990ac3e22f8a699ab5aaebbfdb44c5a4051103bc13463ca0d85bcdf82e0ac3b",
+      "bytes": 2711860,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a1_0.png",
+      "sha256": "1abb4e0b823b9050e5cd9ecba5f2371eb7142cd91bde9ab10c2fcb3125714dba",
+      "bytes": 255847,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a1_1.md3",
+      "sha256": "54cc3a826e562832f309df4c98c260309f743c4870f97e546996fec44b7251f6",
+      "bytes": 2315652,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a1_1.png",
+      "sha256": "a78b39859d2ccd688caf98714a8c15708aeef64c274302b21522d7c140ee6038",
+      "bytes": 386685,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a1_2.md3",
+      "sha256": "7a31e6077c3ff8eefd6b92384526b9f5b35982212770b3d9080b5b4fb3dea8af",
+      "bytes": 2571716,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a1_2.png",
+      "sha256": "46663c5618db335d9824b09d6c17c1771670c2c257c80cacce07be3cba3a3ced",
+      "bytes": 520713,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a1_3.md3",
+      "sha256": "ef478eccafbda3e3f832bccd764e95596865b64af1d1cc8e671142e75fa86cd5",
+      "bytes": 2725396,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a1_3.png",
+      "sha256": "bddca71300e0dbcab6c6023b54dc0ca00a7906cd31c335ad048ee98d78206c67",
+      "bytes": 414666,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a2_0.md3",
+      "sha256": "a49c33e86404a3f408d68947c28780e03c671ee5287186cc43c91a055136c36d",
+      "bytes": 960964,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a2_0.png",
+      "sha256": "cf945ea3259c41a3b4f3f5a3a2c8dd01ac3a44fcf98c1d12b1c57691002a14c5",
+      "bytes": 193555,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a2_1.md3",
+      "sha256": "65639b8a7f2edc6ea9019d5bdccd51bae5f6c11e49e791017a137de733f2dc64",
+      "bytes": 1231892,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a2_1.png",
+      "sha256": "d62fa65f1ce6a6afa458bce7711b94d8afce1dcc77e2de939460a0cfa413ea03",
+      "bytes": 211198,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a2_2.md3",
+      "sha256": "72a04e163f1d7c85fabce8e6ca0c7048c0d0c2703117fe340ef920f8047bbe3d",
+      "bytes": 2278420,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a2_2.png",
+      "sha256": "d62fa65f1ce6a6afa458bce7711b94d8afce1dcc77e2de939460a0cfa413ea03",
+      "bytes": 211198,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a2_3.md3",
+      "sha256": "8716adea8a5c1dfda2dd4cdf1d86962898f55af33166aa740541eba2b3ff1abf",
+      "bytes": 2273876,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a2_3.png",
+      "sha256": "c6bc22a0743377769f775e57463e486337ea6da51a6f9166ec35d14748442063",
+      "bytes": 210843,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a3_0.md3",
+      "sha256": "12dacd4a20376f55b4851e205904c70a95a23e59aff5efb26d0f507d90874cbd",
+      "bytes": 2270724,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a3_0.png",
+      "sha256": "a84d42817d3af996860eff3d215ce3f00d7753a147a15aa26193edcd972ab300",
+      "bytes": 403978,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a3_1.md3",
+      "sha256": "ebe02fb1c82adb822f4aa5e03b5ec947518b9e71049236df5b67383b43ffc5e0",
+      "bytes": 3030804,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a3_1.png",
+      "sha256": "01b2bb0155630e42ecd8bd34ac81e425a5860303d3b5f2992d2ddc7ff9f80047",
+      "bytes": 355195,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a3_2.md3",
+      "sha256": "af18305dc87b85589e94a54c42be478e0f8cc0137a3c77dac7bff1be9041db49",
+      "bytes": 2697748,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a3_2.png",
+      "sha256": "c8b65fdf52b0c92ab8dd5fec5753c639f633d9eaf2bb55a665c30734d6985d64",
+      "bytes": 436888,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a3_3.md3",
+      "sha256": "c33ec57389d9e6a54c1898749d5489cd624ac801622f2c4b6b8d7900f7375126",
+      "bytes": 2872916,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a3_3.png",
+      "sha256": "9883d5a6e5ece0d558f240e61bd0f265b5be4bf5c84bd28fbcafaedd073776da",
+      "bytes": 345618,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/s0.md3",
+      "sha256": "7c9463022365862e759ef887462b22b65fa5690215b55d989dd1279aea888727",
+      "bytes": 633588,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/s0.png",
+      "sha256": "17585219cd28fe3f7274ce227776c5885fc236d07da95141cd7d2b5c83e438fb",
+      "bytes": 305209,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/s1.md3",
+      "sha256": "bdfb950911c8d08e3d65f84dff52fa88d3b555682f553f0d1cad67135d33a6ec",
+      "bytes": 509220,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/s1.png",
+      "sha256": "9eb5eb182b54d7249c07a9af90e43d77fa9f55d1c49ca8aa88d56697dacf00e5",
+      "bytes": 283154,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/s2.md3",
+      "sha256": "b8ab0cad44a4cae71f8c461916577258ac612359937ea05892fbd01e6a897bb4",
+      "bytes": 309124,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/s2.png",
+      "sha256": "f7f18d665c307e62b294010e701b7c1b2a02cc309c637bb6a3e7dc2049d5308e",
+      "bytes": 284288,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/s3.md3",
+      "sha256": "3855c8f293035b13a5c486365981250e7c16425ddd67acede3a65d0a10e2814f",
+      "bytes": 432084,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/s3.png",
+      "sha256": "b40343fa09ffd670ac075cca427d309778db50430289a19e336cf9a7796d6877",
+      "bytes": 245409,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w0_1.md3",
+      "sha256": "cefa56bfdd38984a04edd5d76386c703b4915cea4222f2cb115baa9216f6012a",
+      "bytes": 215764,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w0_1.png",
+      "sha256": "f6371bdbb259369d755e99108f12934a7bbc3103b844bb78271b7b6d283b2188",
+      "bytes": 247571,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w10_1.md3",
+      "sha256": "e8e23c073f9c7989ad3842098bfce43a3bb9062364f3f7924172c14068cc90fd",
+      "bytes": 139764,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w10_1.png",
+      "sha256": "f6371bdbb259369d755e99108f12934a7bbc3103b844bb78271b7b6d283b2188",
+      "bytes": 247571,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w11_1.md3",
+      "sha256": "63d64e810a4fa1c9643187e4e7170daa6119d409b708f83105480c089cfebfd0",
+      "bytes": 272676,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w11_1.png",
+      "sha256": "4b2cee49d782a58a2c333e973f7fcaf0d6bc205fab24b331e38b0d6d39528cc8",
+      "bytes": 465009,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w12_1.md3",
+      "sha256": "cf8600c921cc6e3dcf754345fd71a1cf2a36065a3111a5bedb07e89ff9235f19",
+      "bytes": 303668,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w12_1.png",
+      "sha256": "b1a70561d617bed0dedc99f0c07c75518c9b29b234d37bf40f4cf0f32d937d7c",
+      "bytes": 333618,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w13_1.md3",
+      "sha256": "879dbe1eb905d3274df1bf546d68b15b7d8b0209b132db58a32b54e6c1ad9c0e",
+      "bytes": 1526724,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w13_1.png",
+      "sha256": "f6371bdbb259369d755e99108f12934a7bbc3103b844bb78271b7b6d283b2188",
+      "bytes": 247571,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w14_1.md3",
+      "sha256": "c7606d9a78e68bbed0e93c51d4b7839ca47fdeb3463f68ce927bcb807ff59cc5",
+      "bytes": 496148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w14_1.png",
+      "sha256": "fd974335552b0209ef88152d3be1c0d5b5ce2b9add25543aeb74b1b70d75f00e",
+      "bytes": 200824,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w15_1.md3",
+      "sha256": "98bcc27520d1bf1118d11cc161b8501f94aaca27f01fb43b4e2b986938d3954f",
+      "bytes": 416788,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w15_1.png",
+      "sha256": "94c27055f86f7f38fdddb524a183b1b3b641b9fe336253b19f5da601a2a16b2f",
+      "bytes": 569389,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w16_1.md3",
+      "sha256": "ff99379eb398e26221e515dcabba6088e4968a94a7fd421cb69e4de181a41333",
+      "bytes": 479300,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w16_1.png",
+      "sha256": "5d1993410fafdd3aff4cd85b228d4e9eba990ff905209c7395d5cebd935d6aa2",
+      "bytes": 428201,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w17_1.md3",
+      "sha256": "0f0408d66529f711f14ee742bffffb187416a6b8634294fc6af588631bd3f850",
+      "bytes": 684500,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w17_1.png",
+      "sha256": "12f1ac23bf384d7bb2f35a999df0dbeb1345917564f60a363ec0a5d24e3f6377",
+      "bytes": 127075,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w18_1.md3",
+      "sha256": "a02c314b17a8a28e0b161e23a13156357c44d12583dd50875513c8b8f1a993bd",
+      "bytes": 162324,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w18_1.png",
+      "sha256": "7f0d49d270a9bc34db38cab4793e2f829e268260db4fe8ee7eb8a9b54fa300ad",
+      "bytes": 432062,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w18_2.md3",
+      "sha256": "50400479214b549b8ec2f0f3dd2eedf734033c6c5a288cf3f7c7fe8ad6f8f05d",
+      "bytes": 186996,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w18_2.png",
+      "sha256": "9761751953cae6df2b572b79ed0981f205a3a5528c7bee92634f8943a322cdae",
+      "bytes": 628502,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w18_3.md3",
+      "sha256": "12f6d932ffb70d1d3bac70a911d3f2ea9b6ec3f828252df0c06272e02900adca",
+      "bytes": 275572,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w18_3.png",
+      "sha256": "1bfcf8c477cd5efb7204e6377ff76c4b3867c1480c5f20924aba55e11492ce55",
+      "bytes": 866481,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w19_1.md3",
+      "sha256": "0f7713829e547022cf500de59c7ae06d0c62cdfead915b1dae12df9f2b1246ca",
+      "bytes": 138740,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w19_1.png",
+      "sha256": "c501597694726665188c4527ac0f712cb7b4924f28810283b15e2a87e925af7b",
+      "bytes": 246851,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w19_2.md3",
+      "sha256": "96eed77a95904a9218a6defcf1af86f1e54cac46e266845053cfb74dbc0165ef",
+      "bytes": 163412,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w19_2.png",
+      "sha256": "052396a6121f021317247235cc071121b037fdff189d909bffb58bc272caddba",
+      "bytes": 430993,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w19_3.md3",
+      "sha256": "09a72666512a2b032a2733cf32840711bd0ca44ab7b31985044acb063b3b02d7",
+      "bytes": 188084,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w19_3.png",
+      "sha256": "5ad40435ab91206a17e7b08891785932c73c8898f54a51c7985657c78e926c7a",
+      "bytes": 615177,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w1_1.md3",
+      "sha256": "33d9d75a0779951a7c0b456b7ebdee16569efcd84624757c98414217010da12b",
+      "bytes": 1295812,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w1_1.png",
+      "sha256": "12f1ac23bf384d7bb2f35a999df0dbeb1345917564f60a363ec0a5d24e3f6377",
+      "bytes": 127075,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w20_1.md3",
+      "sha256": "65781bec59996a35ae01e9115d80019b4409e4525e5a353978e122bd5e7d6352",
+      "bytes": 228292,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w20_1.png",
+      "sha256": "a9c8ac29bc701efa9625f9b8b7145dcb9ef62765f5a423b49121c7df656fd7c2",
+      "bytes": 341910,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w21_1.md3",
+      "sha256": "3f8da2dedde6e3b133b58eb289502bbe8a8ca4f4c1e8f0a1f33790081ce72f88",
+      "bytes": 321028,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w21_1.png",
+      "sha256": "a9c8ac29bc701efa9625f9b8b7145dcb9ef62765f5a423b49121c7df656fd7c2",
+      "bytes": 341910,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w22_1.md3",
+      "sha256": "19116af103880d8024ef9ab911c6854c3a3eb1e95271e8e8afd1747f874193ef",
+      "bytes": 1330884,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w22_1.png",
+      "sha256": "34e1cb65a9b16d0defa29195d6e820b98459170dc0ae40b06376b86e359e8b9f",
+      "bytes": 90784,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w23_1.md3",
+      "sha256": "1fd5d55daf1ad7422807dc3ac2f937c86b9096d6cabf07d1e2736cc389e829f2",
+      "bytes": 125492,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w23_1.png",
+      "sha256": "c90cb04ab4eaeafd9b62b4bedededc63cc66f5ae1de263df9ca6bec0ef4aa965",
+      "bytes": 543577,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w23_2.md3",
+      "sha256": "607ca73824e146480634b0382cb1edae3d1aae1bf76e7bab0dfff5c9e173c98f",
+      "bytes": 138276,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w23_2.png",
+      "sha256": "0413a3dbf309b4e63fcc11866140769bc00dcac0f88b4986ef9d9bfdefb8207b",
+      "bytes": 690319,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w23_3.md3",
+      "sha256": "e4ac51c8784347183c17cd7085f52e02c4ba9542b5ce4737b191fe9ec3509822",
+      "bytes": 229028,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w23_3.png",
+      "sha256": "89048e055ad9b05baed957c3df2724aef6ffd4785d1a5d80fe25f7d59d4bc9bb",
+      "bytes": 926521,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w24_1.md3",
+      "sha256": "73d7118a3c3498185169cc74d09fe28e02e8c920bbf5a17de5e84227ed5bae33",
+      "bytes": 477876,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w24_1.png",
+      "sha256": "32ec2de2c8a3420a9dd58b8c47633a068fafacf8567f38db0fa48a4f7b4245b9",
+      "bytes": 474319,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w24_2.md3",
+      "sha256": "a947a667fc7bae5ea34e9b58d73ef82627d71b03a3d51dcd35a5c96a76aece95",
+      "bytes": 502548,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w24_2.png",
+      "sha256": "4959fa2100efa1750990f64552616fb8ec576159a47b17fbf5f1db5cfac0bce8",
+      "bytes": 661368,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w24_3.md3",
+      "sha256": "d3c01107111afef3d712329348d16fab65950a497e3f514bf614f5e1ce741e52",
+      "bytes": 591124,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w24_3.png",
+      "sha256": "7cb525e96b5dc7782612a7bc393fd8ac5a9bb39d6798e534bfb67ad039508637",
+      "bytes": 897525,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w25_1.md3",
+      "sha256": "4df37ef3604944270755b5d8dda0807e1d63cb5fb2b3bb876dbe5edafc38d5c1",
+      "bytes": 218260,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w25_1.png",
+      "sha256": "c501597694726665188c4527ac0f712cb7b4924f28810283b15e2a87e925af7b",
+      "bytes": 246851,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w25_2.md3",
+      "sha256": "c810155d28352f501dc48e655f23580ea8355e97ebf5fbdc6cc78374c930c59c",
+      "bytes": 242932,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w25_2.png",
+      "sha256": "052396a6121f021317247235cc071121b037fdff189d909bffb58bc272caddba",
+      "bytes": 430993,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w25_3.md3",
+      "sha256": "b98c7d65fd5cfdeeeb808390f1252bbb7ff6d3c1b6e7419011de050ef25a7b56",
+      "bytes": 332324,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w25_3.png",
+      "sha256": "013de8d048351401273402a2b965bd85b0ea08e173bfa8828f882e29d19d07af",
+      "bytes": 671962,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w26_1.md3",
+      "sha256": "e6725a472c3aa6d2a96392394824e0a28616ca139a80625f413320c7fbf6b057",
+      "bytes": 260372,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w26_1.png",
+      "sha256": "7f0d49d270a9bc34db38cab4793e2f829e268260db4fe8ee7eb8a9b54fa300ad",
+      "bytes": 432062,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w26_2.md3",
+      "sha256": "3522dbd1c3001024d0c4fe73b396b8663b1fdd6ffddf86a8993248b15e464ac6",
+      "bytes": 285044,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w26_2.png",
+      "sha256": "9761751953cae6df2b572b79ed0981f205a3a5528c7bee92634f8943a322cdae",
+      "bytes": 628502,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w26_3.md3",
+      "sha256": "818701eb7dba946475e1114f8f03cd414bca5c6995f0c0154379a0ac6cf116d5",
+      "bytes": 374436,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w26_3.png",
+      "sha256": "1bfcf8c477cd5efb7204e6377ff76c4b3867c1480c5f20924aba55e11492ce55",
+      "bytes": 866481,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w2_1.md3",
+      "sha256": "c2691f0501e7c1c65e6613d33c2bd755054af6683209fcd5d9e2aefb13cda9fe",
+      "bytes": 789156,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w2_1.png",
+      "sha256": "5d1993410fafdd3aff4cd85b228d4e9eba990ff905209c7395d5cebd935d6aa2",
+      "bytes": 428201,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w3_1.md3",
+      "sha256": "8805da73dc22ff55af370bfec65c53df9c8645c5ccec7a4aa9018e9774028579",
+      "bytes": 139764,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w3_1.png",
+      "sha256": "f6371bdbb259369d755e99108f12934a7bbc3103b844bb78271b7b6d283b2188",
+      "bytes": 247571,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w4_1.md3",
+      "sha256": "519fef207c3665e40ba061d068463831b198e9608182b0b501fa236ed6c97025",
+      "bytes": 270948,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w4_1.png",
+      "sha256": "4b2cee49d782a58a2c333e973f7fcaf0d6bc205fab24b331e38b0d6d39528cc8",
+      "bytes": 465009,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w5_1.md3",
+      "sha256": "78f06a788a2f650e33b822e0563133e5ce25ce44ee9d4a8bc1420a3c8854f605",
+      "bytes": 141988,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w5_1.png",
+      "sha256": "f6371bdbb259369d755e99108f12934a7bbc3103b844bb78271b7b6d283b2188",
+      "bytes": 247571,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w6_1.md3",
+      "sha256": "67a4096424c0916e30fd10acd2430751526b9f2db498861d853268d439cdc24a",
+      "bytes": 197428,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w6_1.png",
+      "sha256": "b1a70561d617bed0dedc99f0c07c75518c9b29b234d37bf40f4cf0f32d937d7c",
+      "bytes": 333618,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w7_1.md3",
+      "sha256": "49629e0f77296d7a2afc444b8e6f0a61ff5208707357ea0d2c68d65b614af7ad",
+      "bytes": 195140,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w7_1.png",
+      "sha256": "fd974335552b0209ef88152d3be1c0d5b5ce2b9add25543aeb74b1b70d75f00e",
+      "bytes": 200824,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w8_1.md3",
+      "sha256": "5f223d8795b184a5fd619c5a6405272ff0878b7c8416d23da28452b364188f4e",
+      "bytes": 1192196,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w8_1.png",
+      "sha256": "5d1993410fafdd3aff4cd85b228d4e9eba990ff905209c7395d5cebd935d6aa2",
+      "bytes": 428201,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w9_1.md3",
+      "sha256": "d057ce3edbd62f22cda9bcddf94dadf3c6dacd7d66e50bc3aae5850359dac586",
+      "bytes": 243316,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/w9_1.png",
+      "sha256": "b1a70561d617bed0dedc99f0c07c75518c9b29b234d37bf40f4cf0f32d937d7c",
+      "bytes": 333618,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
     },
