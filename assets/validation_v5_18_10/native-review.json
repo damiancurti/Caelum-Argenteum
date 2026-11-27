@@ -1,0 +1,67 @@
+{
+  "engine": "GZDoom 4.14.2",
+  "renderer": "Vulkan",
+  "release": "5.18.10",
+  "independent_release": true,
+  "game_sha256": "deebde02df5bfdcffb5e9a1b6867f3d8cc11a8a4896e3d79c3d5c2016c80d66c",
+  "game_members": 19732,
+  "prologue_maps": [
+    "MAP01",
+    "MAP02",
+    "MAP03"
+  ],
+  "frozen_exhibits": [
+    [
+      4,
+      205,
+      205
+    ],
+    [
+      109,
+      205,
+      205
+    ]
+  ],
+  "stations_visited": [
+    1,
+    1,
+    15,
+    16,
+    17,
+    18,
+    19,
+    22,
+    29,
+    74,
+    76,
+    147,
+    205,
+    204,
+    205
+  ],
+  "exhibit_groups": {
+    "Jugadores": 14,
+    "Nuevos modelos": 3,
+    "Personajes": 6,
+    "Bestiario": 56,
+    "Vestuario": 67,
+    "Equipo": 59
+  },
+  "painted_texture_matches": 7,
+  "duplicated_runtime_script_overrides": 0,
+  "author_accepted": false,
+  "live_player_save_reload": {
+    "map": "MAP01",
+    "independent_game": true,
+    "save_reload": true,
+    "last_sample": [
+      "CaelumPlayer",
+      "13",
+      "7490",
+      "56",
+      "3",
+      "4"
+    ],
+    "loadout": "Female jaguar, tier-two scepter, tower shield and heavy helmet."
+  }
+}
