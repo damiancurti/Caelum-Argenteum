@@ -6,7 +6,9 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The independent beta uses GZDoom installed separately; it requires no Doom IWAD.
 
-**Current release: 5.18.3.** #469 supplies the independent MAP01-MAP03 review
+**Current release: 5.18.4.** #899 adds campaign custody, multiplayer arrival and hunt fixes, plus Windows launcher and export repairs.
+
+In 5.18.3, #469 supplies the independent MAP01-MAP03 review
 beta, player guide, optional mode/profile tools and consolidated author terminal.
 The extracted ZIP, deterministic repeat and fresh Play/Multiplayer controls and
 preferences checks passed, along with ten focused native terminal checks. Evidence:
@@ -4529,12 +4531,11 @@ Long-term encounter/provision balance and unfinished 4.36 systems are developmen
 work in PROJECT/TASKS, not additional author checks for this patch.
 
 <!-- independent-player-guide:start -->
-## Caelum Argenteum 5.18.3 - independent review beta
+## Caelum Argenteum 5.18.4 - independent review beta
 
 This author-review beta contains the current MAP01-MAP03 prologue and existing
 campaign, cooperative, competitive and Trucazo systems. Later campaign locations,
-essence acquisition and scenes still need authoring. Visual decisions and the
-consolidated author checklist remain pending. No public-store launch is implied.
+essence acquisition and scenes still need authoring. The author confirmed the 115 prologue review checks on 2026-11-27. No public-store launch is implied.
 
 ### Install and start
 
@@ -4724,7 +4725,7 @@ For maintained docs longer than 5,000 words, query
 
 Rebuild the PK3 after updating; launching an old PK3 keeps old code. The commands
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` must identify
-**5.18.3**. Independent package-identity conversion is documented above.
+**5.18.4**. Independent package-identity conversion is documented above.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. Check `GZDOOM_EXE` and `DOOM2_IWAD` in that file on

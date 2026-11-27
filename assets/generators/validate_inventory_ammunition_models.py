@@ -1,4 +1,9 @@
 """Check the seven installed ammunition models and their unchanged owned textures."""
+try:
+    from .source_integrity import matches_source_digest
+except ImportError:
+    from source_integrity import matches_source_digest
+
 from pathlib import Path
 import hashlib
 import json
@@ -19,7 +24,7 @@ def validate(root=ROOT, family='ammunition', expected_count=7, distinct_classes=
         sources.update({root / name: checksum for name, checksum in report['external_source_sha256'].items()})
         sources.update({root / 'assets/generators' / name: checksum for name, checksum in report['generator_sha256'].items()})
         for path, checksum in sources.items():
-            if hashlib.sha256(path.read_bytes()).hexdigest() != checksum:
+            if not matches_source_digest(path, checksum):
                 errors.append('Stale owned source: ' + str(path.relative_to(root)))
         for name, checksum in report['sha256'].items():
             if name.startswith('editable/'):

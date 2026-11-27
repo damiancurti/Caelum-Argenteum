@@ -13,8 +13,10 @@ sys.path.insert(0,str(ROOT/"assets/validation_v5_12_6"))
 from campaign_fixture import independent_world
 
 runtime=Path(sys.argv[1]).resolve();source=Path(sys.argv[2]).resolve();original=source.read_bytes()
-adapter=PersonalGraph(NativeSchema(Path('C:/Program Files (x86)/GZDoom/gzdoom.pk3'),runtime))
-out=ROOT/'build/issue435'/datetime.datetime.now().strftime('transactions-%Y%m%d-%H%M%S-%f');out.mkdir()
+engine=Path(sys.argv[3] if len(sys.argv)>3 else 'C:/Program Files (x86)/GZDoom/gzdoom.exe').resolve()
+iwad=Path(sys.argv[4] if len(sys.argv)>4 else 'C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD').resolve()
+adapter=PersonalGraph(NativeSchema(engine.parent/'gzdoom.pk3',runtime))
+out=ROOT/'build/issue435'/datetime.datetime.now().strftime('transactions-%Y%m%d-%H%M%S-%f');out.mkdir(parents=True)
 sys.argv[1:]=[]
 FILES={'revision':1,'files':[],'explicit_packages':1}
 
@@ -33,7 +35,11 @@ class SessionTests(unittest.TestCase):
 
     def modified(self):
         members,name,level=unpack(self.store.anchor(self.head['snapshot']))
-        coin=next(o for o in level['objects'] if o.get('classtype')=='CaelumCopperCoin');coin['class:Inventory']['Amount']+=12
+        coin=next((o for o in level['objects'] if o.get('classtype')=='CaelumCopperCoin'),None)
+        if coin is None:
+            level['maptime']+=1
+        else:
+            coin['class:Inventory']['Amount']+=12
         return pack(members,name,level)
 
     def test_prepare_is_idempotent_and_reserves_campaign(self):
@@ -74,10 +80,10 @@ class SessionTests(unittest.TestCase):
         path=self.path/'rejected.sqlite3'
         store=ProfileStore(path,create=True)
         try:
-            worlds=Campaigns(store,adapter);head=worlds.register('bad',pack(members,name,level))
+            worlds=Campaigns(store,adapter)
             with self.assertRaisesRegex(ProfileError,'desynchronization'):
-                Sessions(worlds).prepare('bad',FILES,'bad-session')
-            self.assertEqual(worlds.head('bad'),head)
+                worlds.register('bad',pack(members,name,level))
+            self.assertEqual(store.connection.execute('SELECT COUNT(*) FROM campaigns').fetchone()[0],0)
             self.assertEqual(store.connection.execute('SELECT COUNT(*) FROM campaign_locks').fetchone()[0],0)
         finally:store.close()
 
@@ -130,6 +136,21 @@ class SessionTests(unittest.TestCase):
         identity=self.store.connection.execute("SELECT identity FROM campaign_slots WHERE campaign='world' AND player=0").fetchone()[0]
         staged=self.worlds.stage(identity,'destination',1,'retry')
         source_data=self.store.anchor(staged['source_draft'])
+        destination_draft=self.store.anchor(staged['destination_draft'])
+        for side in ('source','destination'):
+            before=source_data if side=='source' else destination_draft
+            for corruption in ('desync','truncate'):
+                members,name,level=unpack(before)
+                if corruption=='desync':
+                    level['players'][0]['inconsistant']=72
+                else:
+                    level['players'].pop()
+                corrupted=pack(members,name,level)
+                with self.subTest(side=side,corruption=corruption), self.assertRaises(ProfileError):
+                    self.worlds.finish('retry',corrupted if side=='source' else source_data,
+                                       corrupted if side=='destination' else destination_draft)
+                self.assertEqual(self.worlds.head('world'),self.head)
+                self.assertEqual(self.worlds.head('destination'),target)
         with patch('caelum_transfer_verify.native_checkpoint',side_effect=[(source_data,{'passed':True}),ProfileError('injected peer failure')]):
             with self.assertRaisesRegex(ProfileError,'injected peer failure'):
                 verify_transfer(self.worlds,'retry',self.path/'failed',Path('unused'),Path('unused'),[runtime])
@@ -142,8 +163,7 @@ class SessionTests(unittest.TestCase):
         record=personal_record(level,1);record['ProfileImportApplied']=record['ProfileImportSerial']
         destination_data=pack(members,name,level)
         arguments=['menu','--store',str(self.path/'profiles.sqlite3'),
-            '--engine','C:/Program Files (x86)/GZDoom/gzdoom.exe',
-            '--iwad','C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD',
+            '--engine',str(engine),'--iwad',str(iwad),
             '--package',str(runtime),'--language','en']
         output=io.StringIO()
         with patch('caelum_transfer_verify.native_checkpoint',side_effect=[(source_data,{'passed':True}),(destination_data,{'passed':True})]), \

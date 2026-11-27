@@ -29,6 +29,7 @@ def main():
     p.add_argument('--smoke',action='store_true')
     p.add_argument('--reload',type=Path)
     p.add_argument('--save',type=Path)
+    p.add_argument('--original-iwad-sha256',help='Original verified IWAD digest for older author sessions')
     p.add_argument('--output',type=Path)
     a=p.parse_args();config=load_config(a.config);data=catalog(config)
     actions={row['id']:row for row in data['actions']}
@@ -44,7 +45,7 @@ def main():
     if a.action or a.reload:
         out=a.output or new_output(a.action or 'reload')
         if a.reload:
-            assert a.save;record=reload_session(a.reload,a.save,out,smoke=a.smoke)
+            assert a.save;record=reload_session(a.reload,a.save,out,smoke=a.smoke,original_iwad_sha256=a.original_iwad_sha256)
         else:record=prepare(actions[a.action],config,out,smoke=a.smoke)
         if a.prepare_only:print(record['cwd']);return
         result=run(record,hidden=a.smoke)
@@ -118,7 +119,7 @@ def main():
                     saves=sorted(last.glob('*.zds'))
                     row=choose([dict(id=p.name,title=p.name,path=p) for p in saves],'Guardados de la última escena')
                     if row:
-                        out=new_output('reload');record=reload_session(last,row['path'],out)
+                        out=new_output('reload');record=reload_session(last,row['path'],out,original_iwad_sha256=a.original_iwad_sha256)
                         last=out;print('Recarga aislada: '+str(out),flush=True);result=run(record)
                         print('Recarga terminada; tu veredicto sigue pendiente.' if result['passed'] else str(result['errors']))
                 elif option=='7':

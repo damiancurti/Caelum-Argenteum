@@ -1,6 +1,10 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.18.3** - 2026-11-26.
+Documentation version: **5.18.4** - 2026-11-27.
+
+## 5.18.4 - Repository audit integration (#899)
+
+Historic source integrity accepts LF and CRLF checkouts of approved text assets. Binary assets retain exact byte checks. The Cuero UV signature now covers the decimal coordinates stored in the exported OBJ. Playtest manifests authorize the 238 packaged maps individually. The review terminal checks the original executable, IWAD and ordered packages before reloading. For older review sessions supply the independently recorded original IWAD hash with --original-iwad-sha256.
 
 ## 5.18.3 - Review-beta artifact contents (#469)
 

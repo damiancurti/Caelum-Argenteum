@@ -1,4 +1,9 @@
 """Check the installed combat model, inherited frame coverage and original pixels."""
+try:
+    from .source_integrity import matches_source_digest
+except ImportError:
+    from source_integrity import matches_source_digest
+
 from pathlib import Path
 import hashlib
 import json
@@ -17,7 +22,7 @@ def validate(root=ROOT, kind='pombero', issue=461, original_textures=None):
         report=json.loads((source/'EXPORT.json').read_text())
         config=json.loads((source/'ANIMATION.json').read_text())
         for name,want in report['source_sha256'].items():
-            if hashlib.sha256((root/name).read_bytes()).hexdigest()!=want:errors.append('Stale source: '+name)
+            if not matches_source_digest(root/name, want):errors.append('Stale source: '+name)
         for name,want in report['sha256'].items():
             path=(source/name if '/' not in name else root/'src'/name)
             if hashlib.sha256(path.read_bytes()).hexdigest()!=want:errors.append('Stale export: '+name)

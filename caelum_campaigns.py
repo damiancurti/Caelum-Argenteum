@@ -7,7 +7,6 @@ results must be verified before one SQLite transaction changes profile custody.
 from __future__ import annotations
 
 import argparse
-import copy
 import io
 import json
 from pathlib import Path
@@ -39,6 +38,12 @@ def pack(members: dict[str, bytes], name: str, level: dict) -> bytes:
             archive.writestr(entry, json.dumps(level, separators=(',', ':')).encode()
                              if member == name else data)
     return result.getvalue()
+
+
+def require_native_sync(level: dict) -> None:
+    """Never publish a native checkpoint that already records desynchronization."""
+    if any(player.get('inconsistant',0)!=0 for player in level['players']):
+        raise ProfileError('The native save records desynchronization; retain it for diagnosis and recover the last synchronized common checkpoint.')
 
 
 def personal_record(level: dict, slot: int) -> dict:
@@ -144,6 +149,9 @@ class Campaigns:
         except (ValueError, KeyError, zipfile.BadZipFile) as exc:
             raise ProfileError(f'Cannot migrate the native checkpoint: {exc}') from exc
         members, name, level = unpack(data)
+        require_native_sync(level)
+        if not 1 <= len(level['players']) <= 8:
+            raise ProfileError('Native roster must contain one to eight slots.')
         with self.store.transaction():
             if self.db.execute('SELECT 1 FROM campaigns WHERE identity=?', (campaign,)).fetchone():
                 raise ProfileError('Campaign already registered; use its current checkpoint.')
@@ -183,6 +191,9 @@ class Campaigns:
                 if record.get('ExternalProfileId') or record.get('ProfileDeparted'):
                     raise ProfileError('Already managed characters cannot be enrolled into a second world.')
                 if not record.get('ProfileCommitted'):
+                    if record.get('ExternalProfileCampaign'):
+                        raise ProfileError('Vacant native slot is already registered to another campaign.')
+                    record['ExternalProfileCampaign'] = campaign
                     continue
                 self.adapter.capture(level, slot)
                 token=native_identity(level,slot)
@@ -204,18 +215,49 @@ class Campaigns:
                 self.db.execute('UPDATE profiles SET snapshot=? WHERE identity=?', (stamped, identity))
             return self.head(campaign)
 
+    def require_capacity(self, snapshot: str, level: dict, *, recovery: bytes | None = None, campaign: str | None = None) -> None:
+        previous = unpack(self.store.anchor(snapshot))[2]
+        count = len(level['players'])
+        previous_count = len(previous['players'])
+        changed_owner = False
+        for slot in range(min(count, previous_count)):
+            owner = personal_record(previous, slot).get('ExternalProfileCampaign')
+            if owner and personal_record(level, slot).get('ExternalProfileCampaign') != owner:
+                if owner == campaign:
+                    raise ProfileError('Native slot lost or changed its campaign identity.')
+                changed_owner = True
+        if count == previous_count and not changed_owner:
+            return
+        # Old coordinators could truncate vacancies or accept another world's
+        # vacant roster. Restore only an exact, previously stored native anchor.
+        if recovery is not None and previous_count <= count <= 8:
+            digest = validate_anchor(recovery, 0)
+            known = self.db.execute('SELECT 1 FROM snapshots WHERE digest=?', (digest,)).fetchone()
+            if known:
+                owners = {personal_record(level, i).get('ExternalProfileCampaign') for i in range(count)}
+                if campaign in owners and owners <= {campaign, None, ''}:
+                    return
+        if changed_owner:
+            raise ProfileError('Native slot lost or changed its campaign identity.')
+        raise ProfileError('A fixed-roster checkpoint must retain every native slot, including vacancies.')
+
     def validate(self, campaign: str, data: bytes, *, current: bool = False) -> dict:
         """Check native identities against custody, never player display names."""
         head = self.head(campaign)
         if current and validate_anchor(data, 0) != head['snapshot']:
             raise ProfileError('Stale campaign checkpoint; recover through the registered current head.')
         _, _, level = unpack(data)
+        require_native_sync(level)
+        if not current:
+            self.require_capacity(head['snapshot'], level, recovery=data, campaign=campaign)
         expected = {r['player']: r['identity'] for r in self.db.execute(
             'SELECT player,identity FROM campaign_slots WHERE campaign=?', (campaign,))}
         seen = set()
         for slot in range(len(level['players'])):
             record = personal_record(level, slot)
             if slot not in expected:
+                if record.get('ExternalProfileCampaign') not in (None, '', campaign):
+                    raise ProfileError('Vacant native slot belongs to another campaign.')
                 if record.get('ProfileCommitted') and not record.get('ProfileDeparted'):
                     raise ProfileError('Checkpoint contains an unregistered character.')
                 continue
@@ -274,8 +316,8 @@ class Campaigns:
             target_data = self.store.anchor(target_head['snapshot'])
             source_level = self.validate(profile.campaign, source_data, current=True)
             target_level = self.validate(destination, target_data, current=True)
-            require_world_ledger(source_level,profile.player);require_world_ledger(target_level,slot)
             target_record = personal_record(target_level, slot)
+            require_world_ledger(source_level,profile.player);require_world_ledger(target_level,slot)
             if target_record.get('ProfileCommitted') and not target_record.get('ProfileDeparted'):
                 raise ProfileError('Destination slot is occupied; move its character first.')
             self.adapter.transfer_ready(source_level, profile.player)
@@ -325,6 +367,9 @@ class Campaigns:
                 raise ProfileError('Profile custody changed during transfer.')
             _, _, source = unpack(source_data)
             _, _, destination = unpack(destination_data)
+            for side, level in (('source', source), ('destination', destination)):
+                require_native_sync(level)
+                self.require_capacity(row[side+'_draft'], level)
             departed = personal_record(source, request['source_slot'])
             imported = personal_record(destination, request['slot'])
             if not departed.get('ProfileDeparted') or departed.get('ExternalProfileId') != profile.identity:
@@ -355,8 +400,8 @@ class Campaigns:
                 self.db.execute('UPDATE profiles SET snapshot=? WHERE campaign=?', (digest, campaign))
                 self.db.execute('DELETE FROM campaign_locks WHERE campaign=? AND token=?', (campaign, token))
             # Validate every other participant too, inside the same rollback boundary.
-            self.validate(request['source'], source_data)
-            self.validate(request['destination'], destination_data)
+            self.validate(request['source'], source_data, current=True)
+            self.validate(request['destination'], destination_data, current=True)
             result = dict(identity=profile.identity, campaign=request['destination'], revision=profile.revision + 1,
                           source_snapshot=source_digest, destination_snapshot=target_digest)
             self.db.execute('UPDATE transfers SET result=? WHERE token=?', (json.dumps(result, sort_keys=True), token))

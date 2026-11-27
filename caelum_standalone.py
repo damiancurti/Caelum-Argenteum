@@ -77,12 +77,19 @@ def prepare(selection: dict, directory: Path, engine: Path, iwad: Path,
         network = ['-host', str(session['players']), '-port', str(session['port']), '-netmode', '0']
     else:
         session = json.loads(Path(selection['session']).resolve(strict=True).read_text(encoding='utf-8'))
-        if (session.get('revision') not in (1,2) or session.get('mode') not in range(4)
-                or session.get('venue') not in (0, 1) or not 2 <= session.get('players', 0) <= 8
-                or not 1024 <= session.get('port', 0) <= 65527):
+        if not isinstance(session, dict):
             raise ValueError('Invalid standalone session file.')
-        validate_palomo(session['mode'],session['players'],session.get('palomo',0))
-        verify_manifest(session['manifest'], engine, iwad, packages)
+        limits = {'revision': (1,2), 'mode': (0,3), 'venue': (0,1),
+                  'players': (2,8), 'port': (1024,65527)}
+        for field,(minimum,maximum) in limits.items():
+            value=session.get(field)
+            if type(value) is not int or not minimum<=value<=maximum:
+                raise ValueError(f'Invalid standalone session field: {field}.')
+        palomo=session.get('palomo',0)
+        if type(palomo) is not int:
+            raise ValueError('Invalid Palomo slot.')
+        validate_palomo(session['mode'],session['players'],palomo)
+        verify_manifest(session.get('manifest'), engine, iwad, packages)
         # Native joining assigns the slot; no campaign identity is claimed.
         host=selection['host'];host=f'[{host}]' if ':' in host else host
         network = ['-join', f'{host}:{session["port"]}', '-port', '0']
@@ -132,7 +139,8 @@ def run_menu(engine: Path, iwad: Path, packages: list[Path], config: Path, root:
             if len(lines)!=1:raise ValueError('Multiple launch requests; no session started.')
             selection=request(lines[0])
             command,session=prepare(selection,attempt/'match',engine,iwad,packages)
-            print('Session:',attempt/'match/session.json',flush=True)
+            invitation=attempt/'match/session.json' if selection['role']==0 else Path(selection['session']).resolve()
+            print('Session:',invitation,flush=True)
             print('Players:',session['players'],'Port:',session['port'],flush=True)
             code=subprocess.call(command)
             print('Match ended:',code,flush=True)

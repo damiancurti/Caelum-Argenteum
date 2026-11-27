@@ -1293,7 +1293,7 @@
     "src/sprites/caelum/rest_furniture/CSF2A0.png": "031c2e16d2bd4ababe5c5564fca3041d4278e2d59afc7a67da43ef4bd335a073",
     "src/sprites/caelum/rest_furniture/CSF3A0.png": "2fdbb6e23672c5ebc66700e4076797742a9412260458807be60060b633a18457"
   },
-  "generator_sha256": "4fb66b62bf897f31b090ab857c9a8c9d6e6144aa39d481304cd6d7896f8665f3",
+  "generator_sha256": "66005fec12f3f171d04e306aa5b0132654fc92f5b40dfcd73f655cb28ff7bd9b",
   "sha256": {
     "editable/materials/material_0.png": "467d97247a5f612e20bf15cdb539b26ff4eafaba48ce26a886c3c906e7f1f1b4",
     "editable/materials/material_1.png": "d8b2c712ad38af0fbc1cbc8c770fc14f4520f71279698f3244237d3e822e3f67",

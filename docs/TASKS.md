@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.18.3** - 2026-11-26.
+Documentation version: **5.18.4** - 2026-11-27.
+
+## 5.18.4 - Repository audit integration (#899)
+
+The audit fixes are integrated with the independent beta. The 115 checks from 5.18.3 were accepted on 2026-11-27. The original audit evidence is under assets/validation_v5_17_124 and the integrated Windows results are under assets/validation_v5_18_4.
 
 ## 5.18.3 - Complete independent review-beta handoff (#469)
 
@@ -8,7 +12,7 @@ Release support-file export, player guidance and launcher modes are implemented.
 Extracted-package, controls/preferences, coordinator and ten focused native
 terminal checks passed under assets/validation_v5_18_3. On 2026-11-27 the
 author confirmed all 115 checks. HISTORY records the results by originating
-release. The queue is empty. PRs #892?898 deliver the seven implementation issues.
+release. The queue is empty. PRs #892-898 deliver the seven implementation issues.
 No later campaign authoring, public store launch, Internet certification or
 siege performance acceptance is inferred from this delivery.
 

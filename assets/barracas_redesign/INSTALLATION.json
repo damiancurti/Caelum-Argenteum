@@ -23,7 +23,7 @@
     "assets/generators/generate_barracas_retreat.py": "ae2b0f857532aa6265820021a533a9d4a5a11420576fde6aa982674ab1fddf15",
     "assets/generators/generate_barracas_routes.py": "5bca7fdae1e21934e3df01bb49aac46c83b5788855ba9862fe43c5e6437541f5",
     "assets/generators/generate_barracas_siege.py": "811d521f658bf171dddf89ca864b6c2533c1b767c2ce2c09ea3afed897c467e0",
-    "assets/generators/generate_cartography_catalogue.py": "a56022da832ee92c693f8f2f63796a115b1818c20c3d86e47c782a8a1b8fe573",
+    "assets/generators/generate_cartography_catalogue.py": "0dfd85f857d4cc7a742327e63beb97eb113fed8fb74acb93ff621ebe2294428f",
     "assets/generators/generate_city_ceilings.py": "51d9dfd7f4ab99faac54aae6aa521218913ce19abbad6ae45e3e66c5a46af1fc",
     "assets/generators/generate_coastal_trials.py": "2561cfeea3bcc39fee0565b20cd2081957a0cbff04deaf77a78287bdd2e41c96",
     "assets/generators/generate_environment_models.py": "fb4acf2c09681d59d26916babd3dec97fce0e6ca9e4ce76306e80ea81625cb95",

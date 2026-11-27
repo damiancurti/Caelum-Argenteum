@@ -1,0 +1,290 @@
+{
+  "CA_EXHAUSTION_TITLE": {
+    "es": "Sueño por agotamiento",
+    "enu": "Exhaustion sleep"
+  },
+  "CA_EXHAUSTION_START": {
+    "es": "Agotamiento: te tumbas. Podrás levantarte con más del 10% de Sueño.",
+    "enu": "Exhausted: you lie down. Standing unlocks above 10% Sleep."
+  },
+  "CA_EXHAUSTION_LOCK": {
+    "es": "No puedes levantarte hasta superar el 10% de Sueño.",
+    "enu": "You cannot stand until Sleep exceeds 10%."
+  },
+  "CA_POI_BED": {
+    "es": "Cama",
+    "enu": "Bed"
+  },
+  "CA_POI_STATION": {
+    "es": "Estación",
+    "enu": "Station"
+  },
+  "CA_POI_MERCHANT": {
+    "es": "Comerciante",
+    "enu": "Merchant"
+  },
+  "CA_POI_EXIT": {
+    "es": "Salida",
+    "enu": "Exit"
+  },
+  "CA_POI_TRANSPORT": {
+    "es": "Transporte",
+    "enu": "Transport"
+  },
+  "CA_POI_NEAREST": {
+    "es": "Lugar conocido más cercano al centro del mapa: %s",
+    "enu": "Known place nearest the map center: %s"
+  },
+  "CA_NOTE_CATEGORY": {
+    "es": "Nota",
+    "enu": "Note"
+  },
+  "CA_NOTE_NEW": {
+    "es": "Nueva en el centro",
+    "enu": "New at center"
+  },
+  "CA_NOTE_EDIT": {
+    "es": "Editar",
+    "enu": "Edit"
+  },
+  "CA_NOTE_DELETE": {
+    "es": "Borrar",
+    "enu": "Delete"
+  },
+  "CA_NOTE_TEXT": {
+    "es": "Escribir texto",
+    "enu": "Write text"
+  },
+  "CA_NOTE_SAVE": {
+    "es": "Guardar",
+    "enu": "Save"
+  },
+  "CA_NOTE_CANCEL": {
+    "es": "Cancelar",
+    "enu": "Cancel"
+  },
+  "CA_NOTE_SAVED": {
+    "es": "Cambios guardados.",
+    "enu": "Note changes saved."
+  },
+  "CA_NOTE_SAVING": {
+    "es": "Guardando...",
+    "enu": "Saving..."
+  },
+  "CA_NOTE_STALE": {
+    "es": "La nota cambió. Cancela y vuelve a abrirla.",
+    "enu": "The note changed. Cancel and open it again."
+  },
+  "CA_NOTE_EMPTY_TEXT": {
+    "es": "Escribe un texto antes de guardar.",
+    "enu": "Write some text before saving."
+  },
+  "CA_NOTE_TOO_LONG": {
+    "es": "El texto supera la capacidad nativa. Acórtalo para guardar.",
+    "enu": "Text exceeds the native command capacity. Shorten it to save."
+  },
+  "CA_NOTE_UNAVAILABLE": {
+    "es": "Las notas requieren un personaje vivo y creado.",
+    "enu": "Notes need a living, initialized character."
+  },
+  "CA_NOTE_NONE": {
+    "es": "No hay notas manuales en este mapa.",
+    "enu": "No manual notes on this map."
+  },
+  "CA_NOTE_MANUAL": {
+    "es": "Notas personales. No confirman lugares ni servicios.",
+    "enu": "Personal notes. They do not confirm places or services."
+  },
+  "CA_NOTE_CENTER_READY": {
+    "es": "Las notas nuevas usan el centro del mapa al abrir esta lista.",
+    "enu": "New notes use the map center captured when opening this list."
+  },
+  "CA_NOTE_NEED_MAP": {
+    "es": "Para colocar: abre y desplaza el mapa; luego abre esta lista.",
+    "enu": "To place a note: open and pan the map, then open this list."
+  },
+  "CA_NOTE_DELETE_CONFIRM": {
+    "es": "¿Borrar esta nota manual?",
+    "enu": "Delete this manual note?"
+  },
+  "CA_NOTE_EDIT_HELP": {
+    "es": "Escribe el texto, elige una categoría y guarda. Volver cancela el borrador.",
+    "enu": "Write the text, choose a category and save. Back cancels the draft."
+  },
+  "CA_NOTE_NAVIGATION": {
+    "es": "Arriba/Abajo: notas o texto | Izq./Der.: acciones | Enter | Esc: volver",
+    "enu": "Up/Down: notes or text | Left/Right: actions | Enter | Esc: back"
+  },
+  "CA_NOTE_OPEN_HINT": {
+    "es": "Notas [%s] o Esc > Notas del mapa",
+    "enu": "Notes [%s] or Esc > Map notes"
+  },
+  "CA_NOTE_NEAREST": {
+    "es": "Nota manual cerca del centro: %s",
+    "enu": "Manual note near map center: %s"
+  },
+  "CA_CAMP_SITE_FAILED": {
+    "es": "La carpa completa necesita terreno permitido, seco, estable y sin bloquear accesos.",
+    "enu": "The whole tent needs permitted, dry, stable ground and clear access."
+  },
+  "CA_CAMP_SETTING_UP": {
+    "es": "Montando carpa: 10 minutos. Podés esperar; usá otra vez la carpa del inventario para cancelar.",
+    "enu": "Setting up tent: 10 minutes. You can wait; use the inventory tent again to cancel."
+  },
+  "CA_CAMP_PACKING": {
+    "es": "Desmontando carpa: 5 minutos. Podés esperar; usá otra vez la carpa para cancelar.",
+    "enu": "Packing tent: 5 minutes. You can wait; use the tent again to cancel."
+  },
+  "CA_CAMP_READY": {
+    "es": "Carpa lista. Usala para desmontarla.",
+    "enu": "Tent ready. Use it to pack it away."
+  },
+  "CA_CAMP_PACKED": {
+    "es": "Carpa desmontada; el objeto original está en tu inventario.",
+    "enu": "Tent packed; the original item is in your inventory."
+  },
+  "CA_CAMP_PACK_ACTION": {
+    "es": "{bind:+use}: Desmontar carpa / cancelar desmontaje",
+    "enu": "{bind:+use}: Pack tent / cancel packing"
+  },
+  "CA_TAROT_CAPACITY_REMOVE": {
+    "es": "Liberá los espacios adicionales de cartas o de la Caja antes de quitar este Arcano.",
+    "enu": "Free the extra card or Box slots before removing this Major."
+  },
+  "CA_TAROT_ORDER": {
+    "es": "Lugar en la secuencia: %d. Equipar una carta la coloca al final.",
+    "enu": "Sequence position: %d. Equipping a card places it last."
+  },
+  "CA_HUNT_RESCUE_NONE": {
+    "es": "No hay compañeros cautivos para rescatar.",
+    "enu": "There are no captive teammates to rescue."
+  },
+  "CA_HUNT_RESCUE_BLOCKED": {
+    "es": "No hay espacio seguro junto a vos para el rescate.",
+    "enu": "There is no safe space beside you for the rescue."
+  },
+  "CA_HUNT_RESCUE_TITLE": {
+    "es": "El Loco: elegir a quién rescatar",
+    "enu": "The Fool: choose whom to rescue"
+  },
+  "CA_HUNT_FRAGILE": {
+    "es": "Roca resquebrajada",
+    "enu": "Cracked rock"
+  },
+  "CA_HUNT_FREEZE": {
+    "es": "Placa de congelación",
+    "enu": "Freezing plate"
+  },
+  "CA_HUNT_SPIRIT_HINT": {
+    "es": "Los cuatro sectores se conectan por varios caminos. Rodeá los obstáculos; el cautiverio está al sudoeste.",
+    "enu": "Several paths connect the four sectors. Go around obstacles; the captives are held in the southwest."
+  },
+  "CA_HUNT_USE_00": {
+    "es": "Rescatá a un compañero cautivo junto a vos.",
+    "enu": "Rescue a captive teammate beside you."
+  },
+  "CA_HUNT_USE_01": {
+    "es": "Despertá al autómata al activar el Tarot.",
+    "enu": "Awaken the automaton by activating Tarot."
+  },
+  "CA_HUNT_USE_02": {
+    "es": "La Sacerdotisa revela este paso oculto.",
+    "enu": "The High Priestess reveals this hidden passage."
+  },
+  "CA_HUNT_USE_03": {
+    "es": "La Emperatriz permite atravesar la vegetación.",
+    "enu": "The Empress lets you pass through vegetation."
+  },
+  "CA_HUNT_USE_04": {
+    "es": "El Emperador puede controlar al guardián invocado.",
+    "enu": "The Emperor can control the summoned guardian."
+  },
+  "CA_HUNT_USE_05": {
+    "es": "El Hierofante abre el paso maldito y purifica el depósito.",
+    "enu": "The Hierophant opens the cursed passage and purifies the basin."
+  },
+  "CA_HUNT_USE_06": {
+    "es": "Los Enamorados permiten compartir los daños de este cruce.",
+    "enu": "The Lovers can share damage at this crossing."
+  },
+  "CA_HUNT_USE_07": {
+    "es": "El Carro puede romper la roca resquebrajada.",
+    "enu": "The Chariot can break the cracked rock."
+  },
+  "CA_HUNT_USE_08": {
+    "es": "Justicia permite dañar al espíritu.",
+    "enu": "Justice allows you to harm the spirit."
+  },
+  "CA_HUNT_USE_09": {
+    "es": "El Ermitaño prolonga el primer poder para recorrer estos caminos.",
+    "enu": "The Hermit extends the first power for these winding paths."
+  },
+  "CA_HUNT_USE_10": {
+    "es": "La Rueda cambia el agua, la luz y las salidas de la habitación.",
+    "enu": "The Wheel changes the room water, light and exits."
+  },
+  "CA_HUNT_USE_11": {
+    "es": "La Fuerza permite levantar esta roca si tu capacidad alcanza.",
+    "enu": "Strength lets you lift this rock if your capacity is sufficient."
+  },
+  "CA_HUNT_USE_12": {
+    "es": "El Colgado permite usar otra habilidad racial bajo el agua.",
+    "enu": "The Hanged Man allows another racial ability underwater."
+  },
+  "CA_HUNT_USE_13": {
+    "es": "La Muerte permite destruir el obstáculo vivo.",
+    "enu": "Death allows you to destroy the living obstacle."
+  },
+  "CA_HUNT_USE_14": {
+    "es": "La Templanza protege de la congelación.",
+    "enu": "Temperance protects against freezing."
+  },
+  "CA_HUNT_USE_15": {
+    "es": "El Diablo permite usar varios poderes pagando su coste de Vida.",
+    "enu": "The Devil allows consecutive powers at its Life cost."
+  },
+  "CA_HUNT_USE_16": {
+    "es": "La Torre destruye la máquina de asedio.",
+    "enu": "The Tower destroys the siege machine."
+  },
+  "CA_HUNT_USE_17": {
+    "es": "La Estrella permite guardar un objeto gigante en la Caja.",
+    "enu": "The Star allows one giant object in the Box."
+  },
+  "CA_HUNT_USE_18": {
+    "es": "La Luna permite dejar un clon y regresar a él desde la bifurcación.",
+    "enu": "The Moon allows you to leave a clone and return from the fork."
+  },
+  "CA_HUNT_USE_19": {
+    "es": "El Sol y La Estrella permiten guardar temporalmente las rocas peligrosas.",
+    "enu": "The Sun and the Star allow temporary containment of hazardous rocks."
+  },
+  "CA_HUNT_USE_20": {
+    "es": "El Juicio permite escuchar al espíritu.",
+    "enu": "Judgement allows you to hear the spirit."
+  },
+  "CA_HUNT_USE_21": {
+    "es": "El Mundo activa los arcanos adquiridos que no están equipados.",
+    "enu": "The World activates acquired Arcana that are not equipped."
+  },
+  "CA_PHYSICS_IMPACT": {
+    "es": "Impacto",
+    "enu": "Impact"
+  },
+  "CA_PHYSICS_KIND": {
+    "es": "Tipo",
+    "enu": "Type"
+  },
+  "CA_PHYSICS_DELTA_V": {
+    "es": "Delta-v",
+    "enu": "Delta-v"
+  },
+  "CA_PHYSICS_EQUIV_TICS": {
+    "es": "Tics equiv.",
+    "enu": "Eq. tics"
+  },
+  "CA_PHYSICS_DAMAGE": {
+    "es": "Daño",
+    "enu": "Damage"
+  }
+}

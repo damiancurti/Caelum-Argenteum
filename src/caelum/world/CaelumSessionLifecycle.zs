@@ -25,10 +25,82 @@ class CaelumSessionLifecycle : EventHandler
 class CaelumSessionLifecycleEvents : StaticEventHandler
 {
     bool DeadFoolHeld[MAXPLAYERS];
+    bool CheckArrival;
+    transient Vector3 ArrivalPlaces[MAXPLAYERS];
+
+    bool ClearOfPlayers(CaelumPlayer body, vector3 spot)
+    {
+        for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
+        {
+            let other=players[i].mo;
+            if(other==null || other==body || other.health<=0)continue;
+            double width=body.Radius+other.Radius;
+            vector3 otherSpot=ArrivalPlaces[i];
+            if(spot.Z<otherSpot.Z+other.Height && spot.Z+body.Height>otherSpot.Z
+                && Abs(spot.X-otherSpot.X)<width && Abs(spot.Y-otherSpot.Y)<width)return false;
+        }
+        return true;
+    }
+
+    void PlanArrival(int slot,CaelumPlayer body)
+    {
+        // Sólo corrige un punto inicial compartido. Conserva el del primer puesto.
+        bool shared=false;
+        for(int i=0;i<slot;i++)if(playeringame[i] && players[i].mo!=null && players[i].mo.Pos==body.Pos)
+            shared=true;
+        if(!shared)return;
+        // Búsqueda local una vez al llegar. Comprobar también el trayecto evita
+        // colocar al compañero tras un muro fino o al otro lado de un desnivel.
+        for(int ring=1;ring<=MAXPLAYERS;ring++)for(int spoke=0;spoke<8;spoke++)
+        {
+            double angle=body.Angle+45*(spoke+slot-1);
+            double stride=Max(1.,body.Radius*2+1);
+            vector2 delta=(cos(angle),sin(angle))*stride*ring;
+            FCheckPosition fit;
+            bool clear=true;
+            double floor=body.FloorZ;
+            for(int step=1;step<=4*ring;step++)
+            {
+                vector2 point=body.Pos.XY+delta*step/(4*ring);
+                if(!body.CheckPosition(point,false,fit) || fit.ceilingz-fit.floorz<body.Height
+                    || Abs(fit.floorz-floor)>body.MaxStepHeight || fit.floorz-fit.dropoffz>body.MaxDropOffHeight)
+                {clear=false;break;}
+                floor=fit.floorz;
+            }
+            vector3 spot=(body.Pos.XY+delta,floor);
+            if(clear && ClearOfPlayers(body,spot))
+            {ArrivalPlaces[slot]=spot;return;}
+        }
+    }
     override void WorldLoaded(WorldEvent e)
-    {for(int i=0;i<MAXPLAYERS;i++)DeadFoolHeld[i]=false;}
+    {
+        for(int i=0;i<MAXPLAYERS;i++)DeadFoolHeld[i]=false;
+        CheckArrival=multiplayer && !e.IsSaveGame;
+    }
     override void WorldTick()
     {
+        if(CheckArrival)
+        {
+            bool ready=true;
+            for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo==null)ready=false;
+            if(ready)
+            {
+                CheckArrival=false;
+                // Reservar primero todos los destinos: los primeros cuerpos no deben
+                // bloquear el trayecto de las últimas plazas durante la búsqueda.
+                for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])ArrivalPlaces[i]=players[i].mo.Pos;
+                for(int i=1;i<MAXPLAYERS;i++)if(playeringame[i])
+                {
+                    let body=CaelumPlayer(players[i].mo);
+                    if(body!=null && body.health>0 && !(body is 'CaelumStandalonePlayer'))PlanArrival(i,body);
+                }
+                for(int i=1;i<MAXPLAYERS;i++)if(playeringame[i])
+                {
+                    let body=players[i].mo;
+                    if(body.Pos!=ArrivalPlaces[i] && body.TryMove(ArrivalPlaces[i].XY,false))body.ClearInterpolation();
+                }
+            }
+        }
         for(int i=0;i<MAXPLAYERS;i++)
         {
             if(!playeringame[i]){DeadFoolHeld[i]=false;continue;}

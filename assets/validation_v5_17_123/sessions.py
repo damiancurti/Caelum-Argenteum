@@ -205,23 +205,32 @@ def prepare(action,config,out,language='es',smoke=False):
                 smoke=smoke,title_only=title_only,author_acceptance=False,source_runner=original.get('script'),
                 reload_setup=action.get('reload_setup',[]),
                 controls_help=original.get('controls_help',[]),
-                packages={str(p):sha(p) for p in packages(command)},engine_sha256=sha(ENGINE),
+                packages={str(p):sha(p) for p in packages(command)},engine_sha256=sha(command[0]),
                 primary_iwad=dict(path=str(primary),sha256=sha(primary)),independent=independent,
                 save_scope='Only saves made in this exact disposable session/options; no campaign import.')
     write_json(out/'session.json',record)
     return record
 
-def reload_session(previous,save,out,smoke=False):
+def reload_session(previous,save,out,smoke=False,original_iwad_sha256=None):
     no_engine();previous=Path(previous).resolve(strict=True);previous.relative_to(ROOT/'build/author-889')
     data=json.loads((previous/'session.json').read_text(encoding='utf-8'))
-    assert data['issue'] in (889,469)
-    if data.get('primary_iwad'):
-        assert sha(data['primary_iwad']['path'])==data['primary_iwad']['sha256'],'El juego principal cambió; conserva la versión original de esta sesión.'
-    for path,expected in data['packages'].items():assert sha(path)==expected,'El paquete cambió: conserva esta partida con su versión original.'
+    if data.get('issue') not in (889,469):
+        raise ValueError('Invalid author session.')
+    command=data['command'].copy()
+    primary=data.get('primary_iwad',{})
+    expected_iwad=data.get('iwad_sha256') or primary.get('sha256') or original_iwad_sha256
+    if primary and (Path(primary['path']).resolve()!=Path(command[command.index('-iwad')+1]).resolve() or primary['sha256']!=expected_iwad):
+        raise ValueError('Primary game identity differs from the recorded session.')
+    if not expected_iwad:
+        raise ValueError('This older session needs --original-iwad-sha256 from the original installation.')
+    if sha(command[0])!=data['engine_sha256'] or sha(command[command.index('-iwad')+1])!=expected_iwad.lower():
+        raise ValueError('Engine or IWAD changed since the original author session.')
+    for path,expected in data['packages'].items():
+        if sha(path)!=expected:
+            raise ValueError('A package changed since the original author session.')
     save=Path(save).resolve(strict=True);assert save.parent==previous and save.suffix.lower()=='.zds'
     out=Path(out).resolve();out.relative_to(ROOT/'build/author-889');out.mkdir(parents=True,exist_ok=False)
     copied=out/'restore.zds';shutil.copyfile(save,copied);assert sha(save)==sha(copied)
-    command=data['command'].copy()
     for flag in ['+map','-loadgame']:
         if flag in command:
             i=command.index(flag);del command[i:i+2]
@@ -234,6 +243,7 @@ def reload_session(previous,save,out,smoke=False):
     if smoke:setup+='event ca889_save_menu; wait 10; event ca889_menu; wait 5; save terminal-smoke; wait 20; screenshot terminal.png; wait 5; quit; '
     cfg.write_text(setup+'\n',encoding='utf-8',newline='\n');replace_value(command,'+exec',cfg)
     record=dict(data,command=command,cwd=str(out),smoke=smoke,title_only=False,reloaded_from=str(save),
+                iwad_sha256=expected_iwad.lower(),
                 original_save_sha256=sha(save),copied_save_sha256=sha(copied))
     write_json(out/'session.json',record);return record
 

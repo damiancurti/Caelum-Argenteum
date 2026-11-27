@@ -7,9 +7,11 @@ import math
 import re
 import zipfile
 try:
+    from .source_integrity import matches_source_digest
     from .generate_cuero_model import geometry, poses, surface
     from .generate_nahuelito_model import Mesh, md3, fixed
 except ImportError:
+    from source_integrity import matches_source_digest
     from generate_cuero_model import geometry, poses, surface
     from generate_nahuelito_model import Mesh, md3, fixed
 ROOT=Path(__file__).resolve().parents[2]
@@ -17,6 +19,12 @@ SOURCE=ROOT/'assets/source/art/cuero_660'
 MODEL_PATH='models/caelum/folklore/cuero660'
 DEFINITION='caelum/data/cuero_combat.modeldef'
 def digest(blob):return hashlib.sha256(blob).hexdigest()
+
+def obj_uv_lines(uv):
+    return [f'vt {u:.6f} {1-v:.6f}' for u,v in uv]
+
+def uv_digest(uv):
+    return digest(('\n'.join(obj_uv_lines(uv))+'\n').encode('ascii'))
 
 def deform(point,control,design,rig):
     x,y,z=point;rx,ry=design['geometry']['radii'];hinge=rx*rig['front_hinge_fraction']
@@ -36,7 +44,7 @@ def deform(point,control,design,rig):
 def output_files():
     config=json.loads((SOURCE/'ANIMATION.json').read_text(encoding='utf-8'))
     for name,checksum in config['source_sha256'].items():
-        if digest((ROOT/name).read_bytes())!=checksum:raise ValueError('Changed source: '+name)
+        if not matches_source_digest(ROOT/name, checksum):raise ValueError('Changed source: '+name)
     design_path=ROOT/config['source_design'];design=json.loads(design_path.read_text(encoding='utf-8'))
     mesh=geometry(design);cycles,labels=poses(mesh,design)
     lookup={(row['action'],row['sample']):points for row,points in zip(labels,cycles)}
@@ -64,7 +72,7 @@ def output_files():
             DEFINITION:('\n'.join(definition+['}',''])).encode()}
     obj=['# Cuero neutral mesh; X forward, Y up. Sheet deformation rig: ANIMATION.json.','mtllib cuero.mtl']
     obj += [f'v {x:.6f} {z:.6f} {-y:.6f}' for x,y,z in frames[0]]
-    obj += [f'vt {u:.6f} {1-v:.6f}' for u,v in mesh.uv];previous=None
+    obj += obj_uv_lines(mesh.uv);previous=None
     for _,triangle in native.faces:
         part=mesh.parts[triangle[0]]
         if part!=previous:obj+=['g '+part,'usemtl atlas'];previous=part
@@ -77,7 +85,7 @@ def output_files():
         'assets/generators/generate_cuero_combat_model.py':digest(Path(__file__).read_bytes())},
         inherited_defaults=defaults,modeldef_scale=factor,neutral_diameter=neutral,frames=config['frames'],
         source_topology_sha256=digest(json.dumps(mesh.faces,separators=(',',':')).encode()),
-        source_uv_sha256=digest(json.dumps(mesh.uv,separators=(',',':')).encode()),
+        source_uv_sha256=uv_digest(mesh.uv),
         vertices=len(mesh.vertices),triangles=len(mesh.faces),surfaces=surfaces,bounds=bounds,
         sha256={name:digest(blob) for name,blob in output.items()})
     output['manifest.json']=(json.dumps(manifest,indent=2)+'\n').encode();return output

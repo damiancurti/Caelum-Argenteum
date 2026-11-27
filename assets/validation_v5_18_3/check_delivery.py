@@ -10,6 +10,7 @@ def sha(path):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--archive',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--expected-version',default='5.18.3')
     a=p.parse_args();archive=a.archive.resolve(strict=True);out=a.output.resolve();out.relative_to(ROOT/'build')
     out.mkdir(parents=True,exist_ok=False);extracted=out/'extracted';extracted.mkdir()
     expected=archive.with_suffix('.zip.sha256').read_text().split()[0];assert sha(archive)==expected
@@ -20,7 +21,7 @@ def main():
             assert (extracted/name).resolve().is_relative_to(extracted)
         assert z.testzip() is None
         z.extractall(extracted)
-    delivery=json.loads((extracted/'DELIVERY.json').read_text());assert delivery['version']=='5.18.3'
+    delivery=json.loads((extracted/'DELIVERY.json').read_text());assert delivery['version']==a.expected_version
     assert set(names)=={r['path'] for r in delivery['files']}|{'DELIVERY.json','SHA256SUMS.txt'}
     for row in delivery['files']:
         target=extracted/row['path'];assert target.stat().st_size==row['bytes'] and sha(target)==row['sha256'],row['path']
@@ -45,7 +46,7 @@ def main():
         assert db.execute('pragma application_id').fetchone()[0]==0x43415052
         assert db.execute('select count(*) from campaigns').fetchone()[0]==0
     for row in delivery['files']:assert sha(extracted/row['path'])==row['sha256']
-    report=dict(issue=469,passed=True,version='5.18.3',archive=str(archive),archive_sha256=expected,
+    report=dict(issue=469,passed=True,version=a.expected_version,archive=str(archive),archive_sha256=expected,
         runtime_sha256=manifest['sha256'],delivered_files=len(names),runtime_members=len(manifest['files']),
         excluded_development_maps=manifest['excluded_development_maps'],extracted=str(extracted),
         profile_menu_command=command,profile_menu_exit=0,packaged_resources_resolved=True,

@@ -40,8 +40,14 @@ class CaelumStandaloneMatch : Object play
     }
     clearscope bool Member(int slot){return slot>=0 && slot<MAXPLAYERS && (Members&(1<<slot))!=0;}
     clearscope bool HunterPlayer(int slot){return Mode==CaelumStandaloneData.TAROT_HUNT && PlayerPalomo>0 && slot==PlayerPalomo-1;}
-    clearscope bool Seeker(int slot){return Member(slot) && !HunterPlayer(slot);}
-    clearscope int Seekers(){return PlayerPalomo>0?Members&~(1<<(PlayerPalomo-1)):Members;}
+    clearscope int ActiveMembers()
+    {
+        int active=0;
+        for(int i=0;i<MAXPLAYERS;i++)if(Member(i) && playeringame[i])active|=1<<i;
+        return active;
+    }
+    clearscope bool Seeker(int slot){return Member(slot) && playeringame[slot] && !HunterPlayer(slot);}
+    clearscope int Seekers(){int active=ActiveMembers();return PlayerPalomo>0?active&~(1<<(PlayerPalomo-1)):active;}
     clearscope bool RespawnAllowed(int slot)
     {return Member(slot) && (Restarting || (Started && !Finished && RespawnAt[slot]>0 && level.time>=RespawnAt[slot]));}
 
@@ -71,7 +77,7 @@ class CaelumStandaloneMatch : Object play
                 body.ClearMatchInventory();
             if(Finished)body.player.cheats|=CF_TOTALLYFROZEN;
         }
-        if(Finished)return;
+        if(Finished){if(RematchVotes!=0)TryRematch();return;}
         if(Powerups==null && CaelumPowerupData.PointCount()>0)
         {Powerups=new('CaelumLabyrinthPowerups');Powerups.Initialize();}
         if(Powerups!=null)Powerups.Tick(self);
@@ -131,7 +137,13 @@ class CaelumStandaloneMatch : Object play
     {
         if(!Finished || !Member(slot) || !playeringame[slot])return;
         RematchVotes|=1<<slot;
-        if((RematchVotes&Members)!=Members)return;
+        TryRematch();
+    }
+    void TryRematch()
+    {
+        int active=ActiveMembers();
+        // Una nueva partida requiere al menos dos participantes conectados.
+        if(Restarting || (active&(active-1))==0 || (RematchVotes&active)!=active)return;
         Restarting=true;
         // El modo guardado manda también tras recuperar con un CVar diferente.
         let events=CaelumStandaloneMatchEvents(StaticEventHandler.Find('CaelumStandaloneMatchEvents'));
