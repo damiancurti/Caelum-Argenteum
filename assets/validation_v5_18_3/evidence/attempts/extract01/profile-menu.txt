@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue469-extract01\extracted\caelum_session_menu.py", line 7, in <module>
+    from caelum_campaigns import Campaigns
+  File "C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue469-extract01\extracted\caelum_campaigns.py", line 19, in <module>
+    from migrate_arena_save import migrate as migrate_arena_rules
+ModuleNotFoundError: No module named 'migrate_arena_save'
+The Profiles launcher exited with code 1. Existing saves and profile stores are preserved.
+En C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue469-extract01\extracted\run_release.ps1: 47 
+Carácter: 32
++ ... DE -ne 0) { throw "The $Mode launcher exited with code $LASTEXITCODE. ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (The Profiles la... are preserved.:String) [], RuntimeException
+    + FullyQualifiedErrorId : The Profiles launcher exited with code 1. Existing saves and profile stores are preserve 
+   d.
+ 

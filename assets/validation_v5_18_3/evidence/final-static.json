@@ -1,0 +1,65 @@
+{
+  "issue": 469,
+  "passed": true,
+  "version": "5.18.3",
+  "archive_sha256": "e72b3fc20cd662ed05dbc5e8832b069077ede2588fb9ab3d33fe72d46942d440",
+  "runtime_sha256": "0dc90c90de9cbc2b684894d0487a6609a80225b5a55e131bbec9f31165b8c78d",
+  "deterministic_repeat": true,
+  "preserved_previous_checks": 114,
+  "pending_checks": 115,
+  "catalog_actions": 166,
+  "prepared_native_actions": 148,
+  "omitted_import_refused": true,
+  "existing_directory_and_zip_preserved": true,
+  "source_guide_and_support_files_match": true,
+  "runtime_equivalence_except_version_labels": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "identical_review_compositions": [
+    {
+      "path": "components/appearance.pk3",
+      "sha256": "8b4b22a055e8e125e0ca8ad8ce6752d04d46ced5f2c0bce88ab0f45f50f4b04a"
+    },
+    {
+      "path": "components/vaults.pk3",
+      "sha256": "693161894176086f541c13677c8e116dced7ea93e41638f929af6f8bac3a3074"
+    },
+    {
+      "path": "ceilings/appearance.pk3",
+      "sha256": "2403f9e99b859d420cea7b1cd5ef8cc150ace60b6ed5f0f3eb9736abcd80fabb"
+    },
+    {
+      "path": "ceilings/ceilings.pk3",
+      "sha256": "c2fcee30f56ad8e278483c8579f8adbec329471f96798a773486113f21337935"
+    },
+    {
+      "path": "ceilings/vaults.pk3",
+      "sha256": "c0fd4ee810407a1c4710207f678d6b45961f142ef936b5d1cf58110ae6aeb6d1"
+    },
+    {
+      "path": "municipal/municipal.pk3",
+      "sha256": "b510512be4638c7ff396df490c942bb3c1bdcff622e299e70ec497a6b177e916"
+    },
+    {
+      "path": "waterline/waterline.pk3",
+      "sha256": "172d0b4e284a31c8de751e1e18fdee850a9d7d1430781b15636a9a9ab1c8973c"
+    }
+  ],
+  "source_sha256": {
+    "build_release.py": "70e802ef39a3db61346bc34606e0784341c660f5b42c152f62bb87d2ebd2f4d4",
+    "caelum_standalone.py": "259ef4089510544ab15af9fd3c94adcdd36f1f7b928da88ef315b53ec9e163c7",
+    "assets/validation_v5_17_123/sessions.py": "d23b86d8bc11ce97aa1a2a21695ac6b5876894358a62a6968163f8f5ef749ab2",
+    "assets/validation_v5_17_123/author_terminal.py": "3b85514a455736b1883d8ac968b8098c8f0dd42f2a9d50e044c097b9edc9036b",
+    "assets/validation_v5_17_123/check_catalog.py": "b7a753a9e7e53bfd8c1758218495bb1bdbe23164a4eba1f4daef236d8c95ed7f",
+    "assets/validation_v5_18_3/build_catalog.py": "879f11c3f3cc47a5f33e236110b0718f92643e2558d1f83f7f8b7921f38c5b68",
+    "assets/validation_v5_18_3/check_delivery.py": "639a6cf0afcaf71dabf22b441fc6ace0ff3b5c8a87ff80987c85365cdcde2116",
+    "assets/validation_v5_18_3/check_final.py": "d978982de0c9ea242aff34b1408f1a3ac595952cb4592d91be8d55b75b8c4cbe",
+    "assets/validation_v5_18_3/collect_evidence.py": "48808d17a3eaea2aeba37cdac2e7b88adef7325f9b68fc3a756a5964b174ec01",
+    "assets/validation_v5_18_3/run_live_launcher.py": "425b034b3ba956a7cbb169d21919d0ca166206d99c82551686b318fd391be7b8",
+    "assets/validation_v5_18_3/run_motion_author.py": "07279de70c4cb5e00ee944124949060291eaede529e00a94d63fc88f6c542c24",
+    "assets/validation_v5_18_3/run_resource_author.py": "41928893a09a95421ef084bfc2a086a26526c0b822c6c71ef0973943cab70b4a",
+    "assets/validation_v5_18_3/run_terminal_checks.py": "a437a7ea17692d7dccda282a60bc17269d6c47e1f6f191d671657a006a21bcc6"
+  },
+  "author_acceptance": false
+}

@@ -1,6 +1,46 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.18.2** - 2026-11-26.
+Documentation version: **5.18.3** - 2026-11-26.
+
+## 5.18.3 - Independent beta delivery and author handoff (#469, 2026-11-26)
+
+Prepared versioned standalone artifacts with a deterministic ZIP, per-file
+checksums, player instructions generated from README and complete optional
+profile/multiplayer tooling. GZDoom and Python are installed separately; fresh
+solo play needs only GZDoom. The native launcher now exposes those optional
+tools, applies project controls once for a fresh Play profile, and preserves
+later preferences. Fresh multiplayer setup also creates the existing isolated
+5%-volume/background configuration before native startup.
+
+The extracted delivery, packaged profile coordinator, deterministic repeat and
+fresh Play/Multiplayer startup passed. Eight controls initialize once; subsequent
+remapping, language and music volume persist. Absolute save paths are refused.
+Completed 2026-11-27: all ten final native terminal cases passed, including
+rest/meal, independent resources, equipment, environment and reload paths. The
+campaign entry opens native character creation. All 148 native action paths
+were prepared, with the final common observer corrections checked by the
+focused native matrix. Full project validation passed before the external
+launcher/terminal fixes; final targeted checks cover their actual delivery.
+Evidence is retained in assets/validation_v5_18_3. CA469-DELIVERY-01 joins all 114 earlier pending checks;
+no previous check is removed or accepted. Retained historical development-export
+instructions in README are explicitly marked superseded; their unique content
+is preserved and does not authorize retired stress tests. Later campaign,
+Internet/separate-machine behavior, siege fluency and author visual decisions
+remain qualified. Publication is limited to the requested source commits/PR;
+no public store launch is performed.
+
+Failed attempts are retained: extraction exposed the omitted transitive
+migrate_arena_save.py; an import guard now rejects incomplete support exports.
+The first launcher invoked a KEYCONF alias too early; it now expands the packaged
+preset. Twenty-six stale environment manifests were rebuilt by their original
+builders, preserving seven overlay packages byte for byte. An old diagnostic
+room exposed palette mismatch, fixed only in local development observers.
+The inherited automated static motion probe reset its Manual flag after loading
+and closed native menus on the next UI tick. The manual subclass now preserves
+menus and recovers its existing camera once on restoration. Intermediate probes
+used the menu class name instead of its descriptor and an incorrect iterator
+signature; both diagnostic errors are retained with the successful final evidence.
+These fixture failures do not establish author acceptance or alter gameplay.
 
 ## 5.18.2 - Independent beta integration (#468, 2026-11-26)
 

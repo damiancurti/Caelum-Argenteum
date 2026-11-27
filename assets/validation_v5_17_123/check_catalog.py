@@ -11,16 +11,16 @@ def main():
     p.add_argument('--only',nargs='*')
     a=p.parse_args();config=load_config(a.config);out=a.output.resolve()
     out.relative_to(ROOT/'build/author-889');out.mkdir(parents=True,exist_ok=False)
-    data=catalog();rows=[]
+    data=catalog(config);rows=[]
     for action in data['actions']:
-        if action['kind']=='gallery' or a.only and action['id'] not in a.only:continue
+        if action['kind'] in ('gallery','tool') or a.only and action['id'] not in a.only:continue
         try:
             record=prepare(action,config,out/action['id'])
             row=dict(action=action['id'],passed=True,session=record['cwd'],packages=len(record['packages']))
         except Exception as e:
             row=dict(action=action['id'],passed=False,error=str(e),traceback=traceback.format_exc())
         rows.append(row);print(json.dumps({k:v for k,v in row.items() if k!='traceback'}),flush=True)
-        write_json(out/'RESULTS.json',dict(issue=889,passed=all(r['passed'] for r in rows),rows=rows,
+        write_json(out/'RESULTS.json',dict(issue=config['issue'],passed=all(r['passed'] for r in rows),rows=rows,
             qualification='Prepared commands and fixtures only; no native execution or author acceptance.'))
     raise SystemExit(any(not r['passed'] for r in rows))
 

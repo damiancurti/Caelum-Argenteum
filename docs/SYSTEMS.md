@@ -1,6 +1,23 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.18.2** - 2026-11-26.
+Documentation version: **5.18.3** - 2026-11-26.
+
+## 5.18.3 - Packaged launch modes and profile isolation (#469)
+
+run_release.ps1 uses the independent IPK3 as the primary game and accepts Play,
+Multiplayer and Profiles. Play needs no Python. Optional multiplayer/profile
+bridges use the supplied Python modules and assets/profiles data with separately
+installed Python 3.12. The selected variant has its own LOCALAPPDATA profile;
+an explicit ProfileDirectory selects a separate review/recovery location.
+
+Fresh Play expands the authoritative ca_controls_defaults preset from packaged
+KEYCONF into its initial controls file, once; startup runs before aliases exist. Fresh
+multiplayer setup writes the existing isolated configuration and extracts its
+controls from KEYCONF. Subsequent starts preserve settings/remapping. The
+profile menu coordinates profiles.sqlite3 inside the selected profile, including
+native verification, backup and recovery; previous stores and pinned manifests
+are not rewritten. A direct LoadSave remains a verified basename under that
+profile. These external-launch changes add no gameplay or saved-state schema.
 
 ## 5.18.2 - Independent profile and mode launch integration (#468)
 

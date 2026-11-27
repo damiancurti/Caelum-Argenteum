@@ -59,7 +59,7 @@ def validate_palomo(mode: int, count: int, palomo: int) -> None:
 
 def isolated_config() -> bytes:
     return (b'[GlobalSettings]\nvid_fullscreen=false\nvid_activeinbackground=true\n'
-            b'i_pauseinbackground=false\nvid_lowerinbackground=false\nsnd_mastervolume=0.05\n')
+            b'i_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nsnd_mastervolume=0.05\n')
 
 
 def prepare(selection: dict, directory: Path, engine: Path, iwad: Path,
@@ -119,6 +119,8 @@ def run_menu(engine: Path, iwad: Path, packages: list[Path], config: Path, root:
         cmd=[str(engine),'-noautoload',*resource_arguments(iwad,packages),
              '-config',str(config),'+logfile',str(log),'+ca_standalone_bridge','1']
         if not config.exists():
+            config.parent.mkdir(parents=True,exist_ok=True)
+            write_new(config,isolated_config())
             controls=attempt/'controls.cfg'
             write_new(controls,control_preset(packages[0]).encode())
             cmd+=['+exec',str(controls)]

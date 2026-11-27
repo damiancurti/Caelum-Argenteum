@@ -1,0 +1,163 @@
+{
+  "issue": 469,
+  "passed": true,
+  "rows": [
+    {
+      "action": "env881-house-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env881-house-control",
+      "packages": 3
+    },
+    {
+      "action": "env881-house-appearance",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env881-house-appearance",
+      "packages": 4
+    },
+    {
+      "action": "env881-house-vaults",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env881-house-vaults",
+      "packages": 4
+    },
+    {
+      "action": "env881-city-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env881-city-control",
+      "packages": 3
+    },
+    {
+      "action": "env881-city-appearance",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env881-city-appearance",
+      "packages": 4
+    },
+    {
+      "action": "env881-city-vaults",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env881-city-vaults",
+      "packages": 4
+    },
+    {
+      "action": "env881-mansion-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env881-mansion-control",
+      "packages": 3
+    },
+    {
+      "action": "env881-mansion-appearance",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env881-mansion-appearance",
+      "packages": 4
+    },
+    {
+      "action": "env881-mansion-vaults",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env881-mansion-vaults",
+      "packages": 4
+    },
+    {
+      "action": "env881-sewer-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env881-sewer-control",
+      "packages": 3
+    },
+    {
+      "action": "env881-sewer-appearance",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env881-sewer-appearance",
+      "packages": 4
+    },
+    {
+      "action": "env881-sewer-vaults",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env881-sewer-vaults",
+      "packages": 4
+    },
+    {
+      "action": "env883-house-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env883-house-control",
+      "packages": 3
+    },
+    {
+      "action": "env883-house-ceilings",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env883-house-ceilings",
+      "packages": 4
+    },
+    {
+      "action": "env883-house-appearance",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env883-house-appearance",
+      "packages": 4
+    },
+    {
+      "action": "env883-house-vaults",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env883-house-vaults",
+      "packages": 4
+    },
+    {
+      "action": "env883-city-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env883-city-control",
+      "packages": 3
+    },
+    {
+      "action": "env883-city-ceilings",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env883-city-ceilings",
+      "packages": 4
+    },
+    {
+      "action": "env883-city-appearance",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env883-city-appearance",
+      "packages": 4
+    },
+    {
+      "action": "env883-city-vaults",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env883-city-vaults",
+      "packages": 4
+    },
+    {
+      "action": "env886-default",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env886-default",
+      "packages": 3
+    },
+    {
+      "action": "env886-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env886-control",
+      "packages": 4
+    },
+    {
+      "action": "env886-candidate",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env886-candidate",
+      "packages": 4
+    },
+    {
+      "action": "env887-default",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env887-default",
+      "packages": 3
+    },
+    {
+      "action": "env887-control",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env887-control",
+      "packages": 4
+    },
+    {
+      "action": "env887-candidate",
+      "passed": true,
+      "session": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-catalog02\\env887-candidate",
+      "packages": 4
+    }
+  ],
+  "qualification": "Prepared commands and fixtures only; no native execution or author acceptance."
+}

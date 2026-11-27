@@ -1,0 +1,39 @@
+{
+  "issue": 469,
+  "passed": true,
+  "mode": "Play",
+  "fresh_controls_verified": 8,
+  "initial_master_volume": 0.05,
+  "subsequent_bindings_language_music_volume_preserved": true,
+  "absolute_load_refused": true,
+  "original_command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-extract03\\extracted\\run_release.ps1",
+    "-Mode",
+    "Play",
+    "-ProfileDirectory",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-live-play02\\profile",
+    "-Python",
+    "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
+  ],
+  "restart_command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-extract03\\extracted\\run_release.ps1",
+    "-Mode",
+    "Play",
+    "-ProfileDirectory",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-live-play02\\profile",
+    "-Python",
+    "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
+  ],
+  "commercial_iwad_loaded": false,
+  "author_acceptance": false
+}

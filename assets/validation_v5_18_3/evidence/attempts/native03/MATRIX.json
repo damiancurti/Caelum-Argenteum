@@ -1,0 +1,23 @@
+{
+  "issue": 469,
+  "passed": false,
+  "rows": [
+    {
+      "case": "motion",
+      "issue": 469,
+      "action": "motion-author",
+      "passed": false,
+      "exit_code": 0,
+      "errors": [
+        "CA889 MENU FAIL class=CaelumLiveMenu",
+        "CA889 MENU FAIL class=CaelumLiveMenu",
+        "Native save menu or checkpoint smoke check failed"
+      ],
+      "ready": true,
+      "menu_available": false,
+      "smoke_save_exists": true,
+      "reloaded": false,
+      "author_acceptance": false
+    }
+  ]
+}

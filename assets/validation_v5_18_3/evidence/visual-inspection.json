@@ -1,0 +1,11 @@
+{
+  "issue": 469,
+  "author_acceptance": false,
+  "observations": [
+    "Inspected initial motion capture: independent palette visibly corrupted legacy diagnostic walls/floor.",
+    "Inspected corrected motion capture: legacy surfaces restored; rest panel and native body visible. This does not judge animation aesthetics.",
+    "Resource gallery displays project blood, impact sequence, switch and armor icons.",
+    "Final ceiling capture displays the intended wood ceiling/interior material proposal.",
+    "Final sewer reload displays the retained vaulted corridor and native HUD; it is not a performance measurement."
+  ]
+}

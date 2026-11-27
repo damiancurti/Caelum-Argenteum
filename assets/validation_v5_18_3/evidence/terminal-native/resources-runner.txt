@@ -1,0 +1,1 @@
+{"issue": 469, "action": "independent-resources", "passed": true, "exit_code": 0, "errors": [], "ready": true, "menu_available": true, "smoke_save_exists": true, "reloaded": false, "author_acceptance": false}

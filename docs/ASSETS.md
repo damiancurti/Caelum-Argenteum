@@ -1,6 +1,32 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.18.2** - 2026-11-26.
+Documentation version: **5.18.3** - 2026-11-26.
+
+## 5.18.3 - Review-beta artifact contents (#469)
+
+The deterministic release directory and optional ZIP contain only the audited
+standalone runtime plus project launch/support sources, their three profile
+resources, LICENSE.md, origin records and generated player guidance/checksums.
+The profile resources are personal-boundary.json, session-menu.json and the
+native verification source; they are required production tooling, not test
+characters or development maps. Native runtime notices remain under licenses/
+inside the IPK3 and in Credits. The engine and commercial IWAD are external.
+
+PLAYER_GUIDE.txt is generated from the explicit README player-guide markers.
+DELIVERY.json and SHA256SUMS.txt identify delivered bytes; the ZIP has a separate
+checksum. MANIFEST.json retains every packaged runtime member's provenance and
+the five excluded development-map names. Review-terminal diagnostic artifacts
+remain local and are never added to the player distribution. No new artwork,
+audio assignment or source-rights decision is introduced by this delivery.
+
+The final review03 ZIP is reproducible byte for byte (SHA-256
+e72b3fc20cd662ed05dbc5e8832b069077ede2588fb9ab3d33fe72d46942d440),
+with 21 delivery files and 19,055 runtime members. Native local legacy fixtures
+retain the installed development IWAD palette through their generated observer
+only; this avoids applying the independent RGB332 palette to old indexed Doom
+textures. That palette and all diagnostic packages remain outside distribution
+and source-control evidence. Seven regenerated environment overlays are identical
+to the prior review artifacts; their manifests pin the new diagnostic runtime.
 
 ## 5.18.2 - Integration evidence and diagnostic resources (#468)
 

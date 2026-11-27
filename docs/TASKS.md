@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.18.2** - 2026-11-26.
+Documentation version: **5.18.3** - 2026-11-26.
+
+## 5.18.3 - Complete independent review-beta handoff (#469)
+
+Release support-file export, player guidance and launcher modes are implemented.
+Extracted-package, controls/preferences, coordinator and ten focused native
+terminal checks passed under assets/validation_v5_18_3. Keep
+each issue's commits, native evidence and linked PR separate. Preserve all 115
+pending author checks. Open one visible consolidated terminal only after the
+entire authorized batch is complete, then await the author's actual verdict.
+No later campaign authoring, public store launch, Internet certification or
+siege performance acceptance is inferred from this delivery.
 
 ## 5.18.2 - Approved prologue/mode integration (#468)
 

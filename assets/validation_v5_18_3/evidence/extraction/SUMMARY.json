@@ -1,0 +1,39 @@
+{
+  "issue": 469,
+  "passed": true,
+  "version": "5.18.3",
+  "archive": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\CaelumArgenteum-5.18.3-prologue-review03.zip",
+  "archive_sha256": "e72b3fc20cd662ed05dbc5e8832b069077ede2588fb9ab3d33fe72d46942d440",
+  "runtime_sha256": "0dc90c90de9cbc2b684894d0487a6609a80225b5a55e131bbec9f31165b8c78d",
+  "delivered_files": 21,
+  "runtime_members": 19055,
+  "excluded_development_maps": [
+    "maps/TACTORS.wad",
+    "maps/THAZARD.wad",
+    "maps/TMAINT.wad",
+    "maps/TRESERV.wad",
+    "maps/TTAROT.wad"
+  ],
+  "extracted": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-extract03\\extracted",
+  "profile_menu_command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-extract03\\extracted\\run_release.ps1",
+    "-Mode",
+    "Profiles",
+    "-ProfileDirectory",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-extract03\\profiles",
+    "-Python",
+    "C:\\Users\\dcc70\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-Language",
+    "en"
+  ],
+  "profile_menu_exit": 0,
+  "packaged_resources_resolved": true,
+  "delivered_files_unchanged_after_use": true,
+  "author_acceptance": false,
+  "qualification": "Fresh extracted folder and disposable coordinator on the recorded Windows machine; no second-machine certification."
+}

@@ -1,13 +1,14 @@
 """Isolated native author sessions, explicit smoke checks and exact-option reload."""
 from pathlib import Path
-import datetime,hashlib,json,re,shutil,subprocess,sys,time,zipfile
+import datetime,hashlib,json,re,shutil,struct,subprocess,sys,time,zipfile
 
 ROOT=Path(__file__).resolve().parents[2]
 HERE=Path(__file__).resolve().parent
 ENGINE=Path('C:/Program Files (x86)/GZDoom/gzdoom.exe')
 IWAD=Path('C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD')
 FATAL=('Script error','Execution could not continue','VM execution aborted','FATAL ERROR',
-       'Cannot find savegame','Unexpected JIT error','Unknown command','Unknown texture','Unable to load model')
+       'Cannot find savegame','Unexpected JIT error','Unknown command','Unknown texture','Unable to load model',
+       'Attempting to open menu of unknown type')
 PROBE='''version "4.14.2"
 class CA889AuthorSession : EventHandler
 {
@@ -18,6 +19,11 @@ class CA889AuthorSession : EventHandler
         if(e.Name=='ca889_ready')
             Console.Printf("CA889 READY map=%s player=%d",level.MapName,players[0].mo!=null);
         if(e.Name=='ca889_close_setup' && Menu.GetCurrentMenu()!=null)Menu.GetCurrentMenu().Close();
+        if(e.Name=='ca889_save_menu')
+        {
+            menuactive=Menu.On;
+            Menu.SetMenu('SaveGameMenu');
+        }
         if(e.Name=='ca889_menu')
         {
             let menu=Menu.GetCurrentMenu();
@@ -50,7 +56,7 @@ def write_json(path,value):
 
 def load_config(path):
     data=json.loads(Path(path).read_text(encoding='utf-8'))
-    assert data['issue']==889
+    assert data['issue'] in (889,469)
     return data
 
 def no_engine():
@@ -70,6 +76,22 @@ def packages(command):
 
 def replace_value(command,key,value):
     command[command.index(key)+1]=str(value)
+
+
+def development_palette(iwad):
+    """Read the installed development IWAD palette for local legacy fixtures only."""
+    with Path(iwad).open('rb') as stream:
+        magic,count,offset=struct.unpack('<4sii',stream.read(12))
+        assert magic in (b'IWAD',b'PWAD') and count>=0 and offset>=12
+        stream.seek(offset);directory=stream.read(count*16)
+        assert len(directory)==count*16
+        for index in range(count):
+            position,size,name=struct.unpack_from('<ii8s',directory,index*16)
+            if name.rstrip(b'\0')==b'PLAYPAL':
+                assert position>=12 and size>=768 and size%768==0
+                stream.seek(position);blob=stream.read(size);assert len(blob)==size
+                return blob
+    raise ValueError('Development fixture IWAD has no PLAYPAL')
 
 def console_commands(text):
     """Split only outside quoted alias/bind bodies."""
@@ -113,6 +135,9 @@ def prepare(action,config,out,language='es',smoke=False):
     no_engine();out=Path(out).resolve();out.relative_to(ROOT/'build');assert not out.exists()
     out.parent.mkdir(parents=True,exist_ok=True)
     runtime=Path(config['runtime']).resolve(strict=True)
+    independent=bool(action.get('independent') or action['kind']=='campaign' and config.get('independent'))
+    if action['kind']=='runner' and not independent:
+        runtime=Path(config.get('diagnostic_runtime',runtime)).resolve(strict=True)
     if action['kind']=='campaign':
         out.mkdir(parents=True)
         ini=out/'session.ini';ini.write_text('[GlobalSettings]\nvid_preferbackend=1\nvid_fullscreen=false\n',encoding='utf-8')
@@ -142,12 +167,21 @@ def prepare(action,config,out,language='es',smoke=False):
     if '-nomouse' in command:command.remove('-nomouse')
     with zipfile.ZipFile(runtime) as z:
         controls=re.search(r'^alias ca_controls_defaults "([^"]+)"',z.read('KEYCONF').decode('utf-8'),re.M)[1]
+        restore_palette=not independent and 'PLAYPAL' in z.namelist()
     original_cfg=Path(command[command.index('+exec')+1])
     probe=out/'terminal-observer.pk3'
     with zipfile.ZipFile(probe,'x') as z:
         for name,value in [('ZSCRIPT',PROBE),('MAPINFO','gameinfo { AddEventHandlers="CA889AuthorSession","CA889AuthorTitle" }\n')]:
             z.writestr(zipfile.ZipInfo(name,(2026,11,21,0,0,0)),value.encode())
+        if restore_palette:
+            # Never copy this local dependency into src or a player delivery.
+            z.writestr(zipfile.ZipInfo('PLAYPAL',(2026,11,21,0,0,0)),
+                       development_palette(command[command.index('-iwad')+1]))
     index=command.index('-file')+1+len(packages(command));command.insert(index,str(probe))
+    if independent:
+        replace_value(command,'-iwad',runtime)
+        first=command.index('-file')+1
+        if Path(command[first]).resolve()==runtime:del command[first]
     # Existing fixture bindings override ordinary F-keys after common controls.
     initial=console_commands(controls)+expand_config(original_cfg,out)
     title_only=action['kind']=='campaign'
@@ -160,17 +194,19 @@ def prepare(action,config,out,language='es',smoke=False):
         setup+='event ca889_ready; '
         if smoke:
             setup+=action.get('smoke_commands','')
-            setup+='menu_save; wait 10; event ca889_menu; wait 5; save terminal-smoke; wait 20; screenshot terminal.png; wait 5; quit; '
+            setup+='event ca889_save_menu; wait 10; event ca889_menu; wait 5; save terminal-smoke; wait 20; screenshot terminal.png; wait 5; quit; '
     cfg=write_chain(out,'terminal-start',initial+console_commands(setup))
     replace_value(command,'+exec',cfg);replace_value(command,'+logfile',out/'engine.log')
     command+=['+language',language,'+snd_mastervolume','0.05','+vid_maxfps','60',
               '+vid_activeinbackground','true','+i_pauseinbackground','false',
               '+vid_lowerinbackground','false','+i_soundinbackground','true']
-    record=dict(issue=889,action=action['id'],command=command,cwd=str(out),language=language,
+    primary=Path(command[command.index('-iwad')+1]).resolve(strict=True)
+    record=dict(issue=config['issue'],action=action['id'],command=command,cwd=str(out),language=language,
                 smoke=smoke,title_only=title_only,author_acceptance=False,source_runner=original.get('script'),
                 reload_setup=action.get('reload_setup',[]),
                 controls_help=original.get('controls_help',[]),
                 packages={str(p):sha(p) for p in packages(command)},engine_sha256=sha(ENGINE),
+                primary_iwad=dict(path=str(primary),sha256=sha(primary)),independent=independent,
                 save_scope='Only saves made in this exact disposable session/options; no campaign import.')
     write_json(out/'session.json',record)
     return record
@@ -178,7 +214,9 @@ def prepare(action,config,out,language='es',smoke=False):
 def reload_session(previous,save,out,smoke=False):
     no_engine();previous=Path(previous).resolve(strict=True);previous.relative_to(ROOT/'build/author-889')
     data=json.loads((previous/'session.json').read_text(encoding='utf-8'))
-    assert data['issue']==889
+    assert data['issue'] in (889,469)
+    if data.get('primary_iwad'):
+        assert sha(data['primary_iwad']['path'])==data['primary_iwad']['sha256'],'El juego principal cambió; conserva la versión original de esta sesión.'
     for path,expected in data['packages'].items():assert sha(path)==expected,'El paquete cambió: conserva esta partida con su versión original.'
     save=Path(save).resolve(strict=True);assert save.parent==previous and save.suffix.lower()=='.zds'
     out=Path(out).resolve();out.relative_to(ROOT/'build/author-889');out.mkdir(parents=True,exist_ok=False)
@@ -193,7 +231,7 @@ def reload_session(previous,save,out,smoke=False):
     cfg=out/'reload.cfg'
     setup=''.join(command+'; ' for command in data.get('reload_setup',[]))
     setup+='wait 70; event ca889_ready; '
-    if smoke:setup+='menu_save; wait 10; event ca889_menu; wait 5; save terminal-smoke; wait 20; screenshot terminal.png; wait 5; quit; '
+    if smoke:setup+='event ca889_save_menu; wait 10; event ca889_menu; wait 5; save terminal-smoke; wait 20; screenshot terminal.png; wait 5; quit; '
     cfg.write_text(setup+'\n',encoding='utf-8',newline='\n');replace_value(command,'+exec',cfg)
     record=dict(data,command=command,cwd=str(out),smoke=smoke,title_only=False,reloaded_from=str(save),
                 original_save_sha256=sha(save),copied_save_sha256=sha(copied))
@@ -201,7 +239,7 @@ def reload_session(previous,save,out,smoke=False):
 
 def run(record,hidden=False,timeout=180):
     no_engine();out=Path(record['cwd']);start=subprocess.STARTUPINFO()
-    start.dwFlags|=subprocess.STARTF_USESHOWWINDOW;start.wShowWindow=0 if hidden else 1
+    start.dwFlags|=subprocess.STARTF_USESHOWWINDOW;start.wShowWindow=4 if hidden else 1
     with (out/'process.log').open('wb') as stream:
         process=subprocess.Popen(record['command'],cwd=out,startupinfo=start,stdout=stream,stderr=stream)
         write_json(out/'process.json',dict(pid=process.pid,owned_by_terminal=True))
@@ -230,7 +268,7 @@ def run(record,hidden=False,timeout=180):
     if not ready:errors.append('Expected scene/title marker missing')
     if not checks_ok:errors.append('Native save menu or checkpoint smoke check failed')
     passed=code==0 and not errors and ready and checks_ok
-    result=dict(issue=889,action=record['action'],passed=passed,exit_code=code,errors=errors,
+    result=dict(issue=record['issue'],action=record['action'],passed=passed,exit_code=code,errors=errors,
                 ready=ready,menu_available=menu if record['smoke'] else None,smoke_save_exists=save,
                 reloaded=bool(record.get('reloaded_from')),author_acceptance=False)
     write_json(out/'RESULTS.json',result)

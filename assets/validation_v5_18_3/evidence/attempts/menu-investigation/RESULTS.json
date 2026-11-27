@@ -1,0 +1,12 @@
+{
+  "issue": 469,
+  "action": "motion-author",
+  "passed": true,
+  "exit_code": 0,
+  "errors": [],
+  "ready": true,
+  "menu_available": null,
+  "smoke_save_exists": false,
+  "reloaded": true,
+  "author_acceptance": false
+}

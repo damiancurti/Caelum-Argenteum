@@ -1,0 +1,17 @@
+
+Caelum Argenteum — Profiles and multiplayer
+1. List campaigns and characters
+2. Register an existing save
+3. Prepare a session or resume a campaign
+4. Open a prepared session (host or guest)
+5. Close an ended session
+6. Transfer a character between campaigns
+7. Cancel a pending transfer
+8. Create a complete backup
+9. Recover a backup to a new location
+10. Export the current save
+11. Create a new campaign for transferred characters
+12. Retry a pending transfer
+0. Exit
+Registry: C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue469-extract03\profiles\profiles.sqlite3
+Choose an option: 

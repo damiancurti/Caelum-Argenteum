@@ -1,0 +1,29 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-iwad",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\CaelumArgenteum-5.18.3-prologue-review03\\caelum_argenteum.ipk3",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\resources\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\resources\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\resources",
+    "-window",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\resources\\native.log",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\resources\\commands.cfg"
+  ],
+  "cwd": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\resources",
+  "script": "assets\\validation_v5_18_1\\run_standalone.py",
+  "arguments": [
+    "--",
+    "--package",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\CaelumArgenteum-5.18.3-prologue-review03\\caelum_argenteum.ipk3",
+    "--output",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native06\\resources"
+  ],
+  "author_acceptance": false
+}

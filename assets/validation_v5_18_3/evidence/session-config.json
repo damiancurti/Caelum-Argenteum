@@ -1,0 +1,20 @@
+{
+  "issue": 469,
+  "runtime": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\CaelumArgenteum-5.18.3-prologue-review03\\caelum_argenteum.ipk3",
+  "components": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-compositions01\\components",
+  "ceilings": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-compositions01\\ceilings",
+  "municipal_control": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-compositions01\\ceilings\\vaults.pk3",
+  "municipal_overlay": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-compositions01\\municipal\\municipal.pk3",
+  "municipal_manifest": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-compositions01\\municipal\\MANIFEST.json",
+  "waterline_control": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-compositions01\\municipal\\municipal.pk3",
+  "waterline_overlay": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-compositions01\\waterline\\waterline.pk3",
+  "waterline_manifest": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-compositions01\\waterline\\MANIFEST.json",
+  "nahuelito_model": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-compositions01\\nahuelito",
+  "iqm_model": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue834-export03",
+  "diagnostic_runtime": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-diagnostic01.pk3",
+  "independent": true,
+  "release_directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\CaelumArgenteum-5.18.3-prologue-review03",
+  "catalog": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\validation_v5_18_3\\CATALOG.json",
+  "title": "Caelum Argenteum — beta 5.18.3 / revisión completa",
+  "review_profile": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\beta-5.18.3-profile"
+}
