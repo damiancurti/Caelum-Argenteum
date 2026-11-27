@@ -31,7 +31,7 @@ python build_document_index.py read SYSTEMS.md 3643 3676
 
 ## [ASSETS.md](ASSETS.md) - 93979 words
 
-SHA-256: `a0a1a2185cf5c5606468ee5abb14c2cbd37c6f1ce1952cf0df0ee0ca3e8f0a4f`
+SHA-256: `842bd88f5454c3f194d9dd6d2ca2912bfb05f5f6ea194e1eec466645aa4f6f42`
 
 - Lines 1-4 - [Caelum Argenteum — Audio and art](ASSETS.md#caelum-argenteum--audio-and-art) - context: -
 - Lines 5-8 - `5.18.5 - Character presentation (#902)` - context: Caelum Argenteum — Audio and art
@@ -492,7 +492,7 @@ SHA-256: `56e479e3893e27831a42d1dfe6ac0d5fcc80b556d6235ac8b9a076bb118376bb`
 
 ## [HISTORY.md](HISTORY.md) - 317931 words
 
-SHA-256: `7608796c3d9300ba9424388f8ef35a2b0efdb20bf2131d641e6aecb897e36138`
+SHA-256: `745ec90da9a70c05e4a4420e160efa18bccf55c74fa999573192c2d28eddbb61`
 
 - Lines 1-4 - [Caelum Argenteum — Consolidated history](HISTORY.md#caelum-argenteum--consolidated-history) - context: -
 - Lines 5-8 - `5.18.5 - Character presentation (#902)` - context: Caelum Argenteum — Consolidated history
@@ -1604,7 +1604,7 @@ SHA-256: `3632a4773fd8fbcb25012b7a46aaf773fea515918e3f5fe3b05a3198d280ea73`
 
 ## [PROJECT.md](PROJECT.md) - 89152 words
 
-SHA-256: `1ef768016d23c1d8949acd8d5f66b7bd8ee00c4c12132a17ef005cb581571b13`
+SHA-256: `64d7ec0393608a9abca27925f698922a60333b7790922cbf2f741390cbc74108`
 
 - Lines 1-4 - [Caelum Argenteum — Project, status and roadmap](PROJECT.md#caelum-argenteum--project-status-and-roadmap) - context: -
 - Lines 5-8 - `5.18.5 - Character presentation (#902)` - context: Caelum Argenteum — Project, status and roadmap
@@ -2689,7 +2689,7 @@ SHA-256: `1e356484eda22a546b5354f7db57b04ca16a69b53475424af2a972a1ad45c55c`
 
 ## [TASKS.md](TASKS.md) - 53306 words
 
-SHA-256: `528d2013de241fd287099352210a6b9ba318de2e36cebe0cc62b4cb714ff19ab`
+SHA-256: `a55b914639c1083948396444a64a195947d2971e80605c3353ebe23db33119aa`
 
 - Lines 1-4 - [TASKS.md — Active tasks](TASKS.md#tasksmd--active-tasks) - context: -
 - Lines 5-8 - `5.18.5 - Character presentation (#902)` - context: TASKS.md — Active tasks
@@ -3143,6 +3143,6 @@ SHA-256: `528d2013de241fd287099352210a6b9ba318de2e36cebe0cc62b4cb714ff19ab`
 - Lines 6553-6565 - [Integration and closing of 4.36](TASKS.md#integration-and-closing-of-436) - context: TASKS.md — Active tasks
 
 <!-- DOCUMENT_INDEX_META
-{"documents": [{"path": "ASSETS.md", "sha256": "a0a1a2185cf5c5606468ee5abb14c2cbd37c6f1ce1952cf0df0ee0ca3e8f0a4f", "words": 93979}, {"path": "GZDOOM_DEVELOPMENT.md", "sha256": "56e479e3893e27831a42d1dfe6ac0d5fcc80b556d6235ac8b9a076bb118376bb", "words": 5089}, {"path": "HISTORY.md", "sha256": "7608796c3d9300ba9424388f8ef35a2b0efdb20bf2131d641e6aecb897e36138", "words": 317931}, {"path": "KNOWN_PITFALLS.md", "sha256": "c431f2f83419f8978b2f8b748f596b886e8d690487dd16783a73a44b70007bee", "words": 70288}, {"path": "MAP01.txt", "sha256": "3632a4773fd8fbcb25012b7a46aaf773fea515918e3f5fe3b05a3198d280ea73", "words": 43317}, {"path": "PROJECT.md", "sha256": "1ef768016d23c1d8949acd8d5f66b7bd8ee00c4c12132a17ef005cb581571b13", "words": 89152}, {"path": "SYSTEMS.md", "sha256": "1e356484eda22a546b5354f7db57b04ca16a69b53475424af2a972a1ad45c55c", "words": 176478}, {"path": "TASKS.md", "sha256": "528d2013de241fd287099352210a6b9ba318de2e36cebe0cc62b4cb714ff19ab", "words": 53306}], "generated_by": "build_document_index.py", "threshold_words": 5000}
+{"documents": [{"path": "ASSETS.md", "sha256": "842bd88f5454c3f194d9dd6d2ca2912bfb05f5f6ea194e1eec466645aa4f6f42", "words": 93979}, {"path": "GZDOOM_DEVELOPMENT.md", "sha256": "56e479e3893e27831a42d1dfe6ac0d5fcc80b556d6235ac8b9a076bb118376bb", "words": 5089}, {"path": "HISTORY.md", "sha256": "745ec90da9a70c05e4a4420e160efa18bccf55c74fa999573192c2d28eddbb61", "words": 317931}, {"path": "KNOWN_PITFALLS.md", "sha256": "c431f2f83419f8978b2f8b748f596b886e8d690487dd16783a73a44b70007bee", "words": 70288}, {"path": "MAP01.txt", "sha256": "3632a4773fd8fbcb25012b7a46aaf773fea515918e3f5fe3b05a3198d280ea73", "words": 43317}, {"path": "PROJECT.md", "sha256": "64d7ec0393608a9abca27925f698922a60333b7790922cbf2f741390cbc74108", "words": 89152}, {"path": "SYSTEMS.md", "sha256": "1e356484eda22a546b5354f7db57b04ca16a69b53475424af2a972a1ad45c55c", "words": 176478}, {"path": "TASKS.md", "sha256": "a55b914639c1083948396444a64a195947d2971e80605c3353ebe23db33119aa", "words": 53306}], "generated_by": "build_document_index.py", "threshold_words": 5000}
 DOCUMENT_INDEX_META -->
 
