@@ -1,0 +1,8 @@
+LoadSave must be a filename inside ProfileDirectory, not an absolute or relative path.
+En C:\GZDooMProjects\CaelumArgenteum\build\v517\work-713\build\issue469-extract03\extracted\run_release.ps1: 74 
+Carácter: 9
++         throw 'LoadSave must be a filename inside ProfileDirectory, n ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (LoadSave must b... relative path.:String) [], RuntimeException
+    + FullyQualifiedErrorId : LoadSave must be a filename inside ProfileDirectory, not an absolute or relative path.
+ 

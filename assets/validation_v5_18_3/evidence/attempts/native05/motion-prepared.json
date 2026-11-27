@@ -1,0 +1,37 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-diagnostic01.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native05\\motion\\motion.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native05\\motion\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native05\\motion",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native05\\motion\\engine.log",
+    "+map",
+    "MAP99",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native05\\motion\\start.cfg"
+  ],
+  "cwd": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native05\\motion",
+  "script": "assets\\validation_v5_18_3\\run_motion_author.py",
+  "arguments": [
+    "--",
+    "--interactive",
+    "--runtime",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue469-diagnostic01.pk3",
+    "--output",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\author-889\\issue469-terminal-native05\\motion"
+  ],
+  "author_acceptance": false
+}

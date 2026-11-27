@@ -1,6 +1,23 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.18.2** - 2026-11-26.
+Documentation version: **5.18.3** - 2026-11-26.
+
+## 5.18.3 - Independent review-beta delivery (#469)
+
+The delivery contains the approved MAP01-MAP03 prologue, existing modes and
+documented limits, with GZDoom installed separately. The deterministic release
+builder exports the standalone IPK3, native launcher, optional Python mode/profile
+tools and their actual policy/localization/verifier resources, license notices,
+player guidance and per-file/versioned checksums. No engine, commercial IWAD,
+diagnostic map package or test save is distributed. The player guide is generated
+from the canonical README section, not maintained as a second source.
+
+Delivery, extraction and the focused ten-case native terminal matrix passed
+under assets/validation_v5_18_3. The terminal preserves all 115 pending checks,
+including earlier art/environment proposals. Existing local diagnostic scenes
+retain their original fixture dependencies separately from independent game
+play. A packaged beta or draft PR does not accept art, Internet play, siege
+fluency, later campaign scenes or any manual test. No public store is launched.
 
 ## 5.18.2 - Independent prologue integration (#468)
 

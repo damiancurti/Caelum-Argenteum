@@ -1,0 +1,1 @@
+{"issue": 469, "action": "campaign", "passed": true, "exit_code": 0, "errors": [], "ready": true, "menu_available": false, "smoke_save_exists": false, "reloaded": false, "author_acceptance": false}

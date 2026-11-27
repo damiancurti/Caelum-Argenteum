@@ -2794,6 +2794,22 @@ commands are not proof of physical-key acceptance; CA411-FIRE-01 remains pending
 Regression: prepare.py, then run_native.ps1 -Script manual-smoke -Runtime final05
 -Checks with a fresh label; also verify the unchanged manual interactive entry.
 
+Reverified under #469 (5.18.3): a fresh rest/meal author scene passed, but its
+reloaded StaticEventHandler reset the inherited Manual flag. The automatic
+probe's UiTick then closed SaveGameMenu on the next tick. Immediate menu-opening
+success was insufficient; a small observer established the following-tick
+closure. The manual subclass disables that automatic menu closer and recovers
+its existing camera on WorldLoaded(IsSaveGame), without rerunning equipment or
+consumption setup. Its only fallback is a typed camera lookup once per restore
+in the single-camera diagnostic room. SaveGameMenu is the descriptor; SaveMenu
+is the implementation class. See assets/validation_v5_18_3.
+
+Legacy fixtures also need their original installed development IWAD palette
+when the development runtime contains an independent PLAYPAL. The local
+terminal observer restores that dependency only for development sessions;
+independent sessions and exported artifacts never receive it. Inspect actual
+captures as well as error-free logs: palette corruption need not log an error.
+
 ## CA-KP-170 - Camp fuel stacks and immutable native test archives
 
 Status/evidence: ENGINE-VERIFIED, #411, 2026-10-26; assets/validation_5813.
@@ -8298,6 +8314,14 @@ from the verified runtime's KEYCONF instead, retaining one authoritative mapping
 The focused diagnostic uses two real admitted peers, native +user3 input,
 per-viewer page acknowledgements and native checksum checks. Physical-key author
 acceptance remains separate. See assets/validation_v5_12_7a.
+
+Reverified under #469 (5.18.3): the standalone PowerShell launcher must also
+expand the packaged preset before the first native startup. Direct
++ca_controls_defaults produced Unknown command even though KEYCONF later supplied
+default bindings. The extracted delivery now passes all eight bindings, normal
+exit and subsequent remapping/language/music-volume preservation in both Play
+and Multiplayer entry paths. See assets/validation_v5_18_3; UI-injected Escape
+did not establish physical menu navigation and is not counted as acceptance.
 
 ## CA-KP-207 - Verify which native checkpoint is actually loaded
 

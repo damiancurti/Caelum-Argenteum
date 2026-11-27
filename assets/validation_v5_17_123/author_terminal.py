@@ -1,10 +1,11 @@
 """One consolidated V5.16/V5.17 author terminal; every verdict remains manual."""
 from pathlib import Path
-import argparse,ctypes,datetime,json,os,sys
-from sessions import ROOT,HERE,load_config,new_output,prepare,reload_session,run,sha,write_json
+import argparse,ctypes,datetime,json,os,subprocess,sys
+from sessions import ROOT,HERE,load_config,new_output,prepare,reload_session,run,sha,write_json,no_engine
 
-def catalog():
-    data=json.loads((HERE/'CATALOG.json').read_text(encoding='utf-8'))
+def catalog(config=None):
+    path=Path(config['catalog']) if config and config.get('catalog') else HERE/'CATALOG.json'
+    data=json.loads(path.read_text(encoding='utf-8'))
     text=(ROOT/'pending_test.txt').read_text(encoding='utf-8')
     assert data['pending_sha256']==sha(ROOT/'pending_test.txt'),'El catálogo quedó desactualizado; regenerar antes de revisar.'
     for row in data['checks']:assert row['instructions'] in text
@@ -27,13 +28,14 @@ def main():
     p.add_argument('--reload',type=Path)
     p.add_argument('--save',type=Path)
     p.add_argument('--output',type=Path)
-    a=p.parse_args();config=load_config(a.config);data=catalog()
+    a=p.parse_args();config=load_config(a.config);data=catalog(config)
     actions={row['id']:row for row in data['actions']}
     assert len(actions)==len(data['actions'])
     for row in data['checks']:assert row['actions'] and all(key in actions for key in row['actions'])
     for row in actions.values():
         if row['kind']=='runner':assert (ROOT/row['script']).is_file()
-        elif row['kind']=='gallery':assert (ROOT/row['path']).is_file()
+        elif row['kind']=='gallery':assert (ROOT/row['path'].format(**config)).is_file()
+        elif row['kind']=='tool':assert (Path(config['release_directory'])/'run_release.ps1').is_file()
     if a.check:
         print(json.dumps(dict(checks=len(data['checks']),actions=len(actions),covered=True,author_acceptance=False)))
         return
@@ -51,13 +53,22 @@ def main():
     if not awake:print('No se pudo solicitar protección temporal contra suspensión.')
     notes=ROOT/'build/author-889/author-notes.jsonl'
     state_path=notes.parent/'terminal-state.json'
-    state=dict(issue=889,pid=os.getpid(),active=True,system_required=bool(awake),wake_request_succeeded=bool(awake),
+    state=dict(issue=config['issue'],pid=os.getpid(),active=True,system_required=bool(awake),wake_request_succeeded=bool(awake),
                checks=len(data['checks']),actions=len(actions),
                started=datetime.datetime.now().isoformat(),author_acceptance=False)
     def open_action(action):
         nonlocal last
         if action['kind']=='gallery':
-            os.startfile(str((ROOT/action['path']).resolve(strict=True)));return
+            os.startfile(str((ROOT/action['path'].format(**config)).resolve(strict=True)));return
+        if action['kind']=='tool':
+            no_engine()
+            command=['powershell.exe','-NoProfile','-ExecutionPolicy','Bypass','-File',
+                str(Path(config['release_directory'])/'run_release.ps1'),'-Mode',action['mode'],
+                '-ProfileDirectory',config['review_profile'],'-Language',language]
+            print('\n'+action['help']);print('Perfil de revisión: '+config['review_profile'],flush=True)
+            result=subprocess.run(command,cwd=ROOT)
+            print('Lanzador terminado. Ninguna comprobación fue aprobada automáticamente. Código: '+str(result.returncode))
+            return
         print('\n'+action.get('help','Cierra GZDoom para volver a esta terminal. Guarda desde el menú Escape; los archivos quedan en la carpeta de esta sesión.'))
         out=new_output(action['id'])
         record=prepare(action,config,out,language=language);last=out
@@ -70,9 +81,9 @@ def main():
         notes.parent.mkdir(parents=True,exist_ok=True)
         write_json(state_path,state)
         while True:
-            print('\nCaelum Argenteum — revisión consolidada V5.16 / V5.17')
+            print('\n'+config.get('title','Caelum Argenteum — revisión consolidada V5.16 / V5.17'))
             print(f'{len(data["checks"])} comprobaciones pendientes. Idioma: {language.upper()}.')
-            print('1 Campaña nueva\n2 Mapas y propuestas de ambiente\n3 Equipo real / vestuario\n4 Buscar comprobaciones por issue o texto\n5 Propuestas de personajes\n6 Recargar un guardado de la última escena\n7 Registrar observación\n8 Estado y decisiones pendientes\n9 Cambiar ES/EN\n0 Salir')
+            print('1 Campaña nueva\n2 Mapas y propuestas de ambiente\n3 Equipo real / vestuario\n4 Buscar comprobaciones por issue o texto\n5 Propuestas de personajes\n6 Recargar un guardado de la última escena\n7 Registrar observación\n8 Estado y decisiones pendientes\n9 Cambiar ES/EN\n10 Entrega independiente / modos / perfiles / nuevas pruebas\n0 Salir')
             option=input('Opción: ').strip()
             try:
                 if option=='0':break
@@ -117,6 +128,9 @@ def main():
                         print('Observación guardada localmente. Comunica tu aprobación o corrección en la conversación.')
                 elif option=='8':print('\n'+data['status_es'])
                 elif option=='9':language='en' if language=='es' else 'es'
+                elif option=='10':
+                    row=choose([r for r in actions.values() if r.get('group')=='beta'],'Beta independiente')
+                    if row:open_action(row)
             except (Exception,KeyboardInterrupt) as error:
                 print('No se completó esa acción: '+str(error))
                 print('Los archivos y guardados anteriores se conservaron.')

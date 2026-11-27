@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "issue": 469,
+  "version": "5.18.3",
+  "variant": "current",
+  "engine_bundled": false,
+  "commercial_iwad_required": false,
+  "advanced_tools": "Python 3.12 standard library; optional for solo play",
+  "files": [
+    {
+      "path": "assets/profiles/personal-boundary.json",
+      "sha256": "104fd26375ee03b2aa81b788c58a9e2f8583e2c4cf7ee884dcf307d1559c86b8",
+      "bytes": 3485
+    },
+    {
+      "path": "assets/profiles/session-menu.json",
+      "sha256": "2602a1749ff8f6af0267a1bc8df4e83ad49875f176f9a6a603d3820b75df2704",
+      "bytes": 4790
+    },
+    {
+      "path": "assets/profiles/verification.zs",
+      "sha256": "d3ad265ad032e01b5b2cb1b2257e7a9ac339246abef720b267e87406dd1589dd",
+      "bytes": 1659
+    },
+    {
+      "path": "caelum_argenteum.ipk3",
+      "sha256": "0dc90c90de9cbc2b684894d0487a6609a80225b5a55e131bbec9f31165b8c78d",
+      "bytes": 1327114404
+    },
+    {
+      "path": "caelum_campaigns.py",
+      "sha256": "a2b09140d5a795be05ecad2882fa72135e2997902fcf25e6aad95851b8ea3e27",
+      "bytes": 28464
+    },
+    {
+      "path": "caelum_new_campaign.py",
+      "sha256": "042195ca79620d1f50088ea85f79e681ecd7368bf451b9d4fe529a2d3e371744",
+      "bytes": 6475
+    },
+    {
+      "path": "caelum_profile_graph.py",
+      "sha256": "b1188fc716b94dc92ec31f8afd87f7db40b4437f9be5eccbe2051605bcdf7ed4",
+      "bytes": 29632
+    },
+    {
+      "path": "caelum_profiles.py",
+      "sha256": "849757e0d21fb11025340ba7fb590387f64091140cd7c1af6c5cde950b944970",
+      "bytes": 15588
+    },
+    {
+      "path": "caelum_session_menu.py",
+      "sha256": "b96cadac246f281a1bfb2034661ce6bf3073f6d0074869b1b31962df40af07a1",
+      "bytes": 8026
+    },
+    {
+      "path": "caelum_sessions.py",
+      "sha256": "b7d0b2c2ab73791ee811cb114f6d86b4149021f37ee2a6cfd5b25432c49319e2",
+      "bytes": 21037
+    },
+    {
+      "path": "caelum_standalone.py",
+      "sha256": "259ef4089510544ab15af9fd3c94adcdd36f1f7b928da88ef315b53ec9e163c7",
+      "bytes": 8521
+    },
+    {
+      "path": "caelum_transfer_verify.py",
+      "sha256": "53357d74935ed826dcadcdd0ad5fd72edc88c131c63b738321c37a20f1463072",
+      "bytes": 9621
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "ee0c754860dc56f9676323abb50589735bd4b4394e0de13068839c14f0d97224",
+      "bytes": 2450
+    },
+    {
+      "path": "MANIFEST.json",
+      "sha256": "07c142286d2e319a60be6c7e17ad77fa9c96eb750dc988400bb48cc9d2455332",
+      "bytes": 9532326
+    },
+    {
+      "path": "migrate_arena_save.py",
+      "sha256": "6e7ca1a9634c0896dbb2e360be6bc9b146c322a64083f7ae77fd6a94c347f048",
+      "bytes": 2780
+    },
+    {
+      "path": "migrate_standalone_save.py",
+      "sha256": "1aed5b36624b331dcdf87a0c700d927c82029dbcc0eb9546f52108bdddc0d28e",
+      "bytes": 5458
+    },
+    {
+      "path": "ORIGINS.json",
+      "sha256": "131617b3d71dad50c043d49b55dbe34be1842ca8cc6a0c9610fd1f44235fdb3a",
+      "bytes": 5671
+    },
+    {
+      "path": "PLAYER_GUIDE.txt",
+      "sha256": "7501bad66d6eae392478245416bbdc9c01efb78d2da3d4c5eb2aacb33f8e737f",
+      "bytes": 6741
+    },
+    {
+      "path": "run_release.ps1",
+      "sha256": "056156e30c6d06ef7acbd67f4dc65bc32bcc055c565680f22b21287e576fe497",
+      "bytes": 5005
+    }
+  ]
+}
