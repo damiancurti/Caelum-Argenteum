@@ -8083,8 +8083,8 @@
     },
     {
       "path": "caelum/world/CaelumPhysicalHazards.zs",
-      "sha256": "22281bceee5969556869aa86a5fcc44daa2eae6cdc4ffa90af471c905cedcbbe",
-      "bytes": 20720,
+      "sha256": "c01957a1a4eb4b3655efe37957cc7be9fa4436bc63d8425b1556161b964b8052",
+      "bytes": 20721,
       "decision": "project-source",
       "additional_provenance": [
         "assets/first_person_v4/VALIDATION.json",
@@ -8411,8 +8411,8 @@
     },
     {
       "path": "caelum/world/CaelumSewerMaze.zs",
-      "sha256": "0b75269b69fb2c6d02f547a12938756398941df244c7de2476a02b77de8d422a",
-      "bytes": 15765,
+      "sha256": "ebea3a12966bb9d5b3e50f5e5761e00acb0a0ab9ac8f663664fe59d1970d0619",
+      "bytes": 15766,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],

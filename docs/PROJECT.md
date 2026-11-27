@@ -1,6 +1,10 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.18.9** - 2026-11-27.
+Documentation version: **5.18.10** - 2026-11-27.
+
+## 5.18.10 - Character presentation (#913)
+
+The Windows inspection terminal opens a closed room with 205 individually labeled, stationary exhibits. It includes all fourteen player forms, Mandinga, Zupay, the giant rat, the modeled bestiary, bull, character rigs, wardrobe configurations and every fitted equipment module. Hardware inspection and author review are tracked separately.
 
 ## 5.18.9 - Character presentation (#909)
 

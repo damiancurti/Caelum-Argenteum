@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.18.9** - 2026-11-27.
+Documentation version: **5.18.10** - 2026-11-27.
+
+## 5.18.10 - Character presentation (#913)
+
+The Windows inspection terminal opens a closed room with 205 individually labeled, stationary exhibits. It includes all fourteen player forms, Mandinga, Zupay, the giant rat, the modeled bestiary, bull, character rigs, wardrobe configurations and every fitted equipment module. Hardware inspection and author review are tracked separately. Native checks counted 205 exhibits in their original positions at tics 4 and 109. Direct jumps and the next/previous keys were exercised. The camera frames each idle mesh at its own size. The launcher holds a temporary Windows sleep request while the engine runs.
 
 ## 5.18.9 - Character presentation (#909)
 
