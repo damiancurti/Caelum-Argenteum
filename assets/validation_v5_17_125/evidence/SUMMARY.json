@@ -1,0 +1,111 @@
+{
+  "issue": 464,
+  "version": "5.17.125",
+  "author_acceptance": "pending CA464-AUDIO-01",
+  "native": {
+    "issue": 464,
+    "runtime": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue460-review02.pk3",
+    "runtime_sha256": "cd41d68418d5a85aff66b9668a12f7a8dbf5280594f6a253e67ec7b99a218f29",
+    "fixture_sha256": "0244cba831b18a5c7ec2caac9d1ef34a172eaf5c8ffc33d5721873fdf32553b4",
+    "phases": [
+      {
+        "name": "title",
+        "passed": true,
+        "exit": 0,
+        "counts": [
+          [
+            "5",
+            "0"
+          ]
+        ],
+        "music": [
+          "name=sounds/caelum/stock/music/ca_stock_war_drums.ogg loop=0 volume=1.0000"
+        ]
+      },
+      {
+        "name": "maps",
+        "passed": true,
+        "exit": 0,
+        "counts": [
+          [
+            "49",
+            "0"
+          ]
+        ],
+        "music": [
+          "name=CA_MUS02 loop=1 volume=1.0000",
+          "name=CA_MUS02 loop=1 volume=0.3700",
+          "name=CA_MUS02 loop=1 volume=0.3700",
+          "name=CA_MUS02 loop=1 volume=0.3700",
+          "name=CA_MUS03_SEWER loop=1 volume=0.3700",
+          "name=CA_MUS04_PORT loop=1 volume=0.3700",
+          "name=CA_MUS02 loop=1 volume=0.3700"
+        ]
+      },
+      {
+        "name": "reload",
+        "passed": true,
+        "exit": 0,
+        "counts": [
+          [
+            "17",
+            "0"
+          ]
+        ],
+        "music": [
+          "name=CA_MUS03_SEWER loop=1 volume=0.3700",
+          "name=CA_MUS03_SEWER loop=1 volume=0.0000",
+          "name=CA_MUS03_SEWER loop=1 volume=0.3700"
+        ]
+      }
+    ]
+  },
+  "baseline_commit": "5b84421650fe5043ae01faeddee0cb5941a75665",
+  "runtime_changes": [
+    "src/caelum/world/CaelumPhysicalHazards.zs",
+    "src/caelum/world/CaelumSewerMaze.zs"
+  ],
+  "only_runtime_difference": "Two diagnostic release labels; all audio bytes, assignments and ownership code unchanged",
+  "decode_count": 131,
+  "container_differences": 8,
+  "reserve_count": 19,
+  "credit_locator_count": 131,
+  "failed_attempts": [
+    {
+      "directory": "issue464-native01",
+      "reason": "Fixture referenced unavailable CompareNoCase; replaced with exact approved name comparison."
+    },
+    {
+      "directory": "issue464-native02",
+      "reason": "Console event used InterfaceProcess instead of ConsoleProcess; missing assertions were rejected."
+    }
+  ],
+  "limits": [
+    "Decoder and native metadata/channel evidence does not establish subjective mix/loop listening acceptance.",
+    "No new region/weather emitter; nine cues play only in the isolated probe.",
+    "Distribution permissions and final release validation remain #466-469."
+  ],
+  "final_package_smoke": {
+    "issue": 464,
+    "runtime": "build\\issue464-review01.pk3",
+    "runtime_sha256": "1eb6c8e4fb657a74c3de144831e6c777d05acaccd8cba43c7f61a979384b5f44",
+    "fixture_sha256": "0244cba831b18a5c7ec2caac9d1ef34a172eaf5c8ffc33d5721873fdf32553b4",
+    "phases": [
+      {
+        "name": "title",
+        "passed": true,
+        "exit": 0,
+        "counts": [
+          [
+            "5",
+            "0"
+          ]
+        ],
+        "music": [
+          "name=sounds/caelum/stock/music/ca_stock_war_drums.ogg loop=0 volume=1.0000"
+        ]
+      }
+    ]
+  },
+  "full_project_validation": "project-validation.json: no errors"
+}

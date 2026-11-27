@@ -1,6 +1,14 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.17.124** - 2026-11-26.
+Documentation version: **5.17.125** - 2026-11-26.
+
+## 5.17.125 - Verify retained prologue audio (#464)
+
+The current MAP01-MAP03 soundtrack assignments are retained and verified in
+native travel/return and saved-session checks. No new story cue, region,
+weather schedule, ambient placement or final-Selene encounter is created.
+Future-region music remains reserved. Native route commands used disposable
+diagnostic profiles; the full playable beta route belongs to #468.
 
 ## 5.17.124 - Rest presentation integration (#460)
 

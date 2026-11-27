@@ -1,6 +1,22 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.124** - 2026-11-26.
+Documentation version: **5.17.125** - 2026-11-26.
+
+## 5.17.125 - Verify retained prologue audio (#464)
+
+Existing music ownership remains authoritative: the title plays War Drums
+once; MAP01 loops CA_MUS02, MAP02 loops CA_MUS03_SEWER and MAP03 loops
+CA_MUS04_PORT. The accepted original Ciudad assignment remains CABAIRES.
+The native conversation menu retains its existing relative-volume behavior;
+the Fool conversation applies one quarter of Level.MusicVolume and its native
+destructor restores the level volume. Music preference CVars are not rewritten.
+
+The native audit traversed prologue maps and returned to MAP01 with the same
+37% diagnostic music preference and 5% master preference, including a copied
+MAP02 save reload, mute/restore and breathing reconstruction. Nine cue checks
+reuse one disposable diagnostic channel and release it afterward. They verify
+buffer playback without placing new production ambient/weather emitters.
+The 19 future tracks remain reserved by their existing catalogue destinations.
 
 ## 5.17.124 - Rest animation ownership (#460)
 

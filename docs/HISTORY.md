@@ -1,6 +1,31 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.124** - 2026-11-26.
+Documentation version: **5.17.125** - 2026-11-26.
+
+## 5.17.125 - Verify retained prologue audio (#464)
+
+The author selected existing prologue assignments, volume/transition/save
+verification and 19 future tracks held in reserve. No audio, SNDINFO, MAPINFO or
+music-owner logic was changed. The maintained audio table now uses the current
+MAP03 and TCOAST identifiers instead of their historical MAP06/MAP07 names.
+
+Static evidence: all131 recordings indexed and decoded, non-silent PCM, source
+and credit locators preserved, 19 unbound future tracks. Eight OGG duration
+differences were reproduced by libsndfile and FFmpeg7.1 without decoder errors;
+actual sample counts are retained, with original bytes unchanged. Native
+GZDoom4.14.2/Windows11/Vulkan evidence: title, prologue travel/return, real Fool
+dialogue, volume/mute restoration, nine cue checks, breathing and matching-save
+reload; three phases/71checks. These tests retain the full validated #460 runtime
+audio unchanged. Early probe attempts used a nonexistent string helper and the
+wrong console-event callback; corrected runs pass and failed attempts remain.
+
+Author acceptance: CA464-AUDIO-01 pending, alongside109 earlier checks. This
+does not approve new emitters, future regions, subjective loop/mix quality or
+the independent distribution rights audited by #466.
+
+Full project validation passes for 5.17.125. The 18,978-file package builds and
+its final native title smoke passes five additional checks. Unchanged audio
+and ownership-code identity links the broader native evidence to this package.
 
 ## 5.17.124 - Native rest and meal transitions (#460, 2026-11-26)
 
