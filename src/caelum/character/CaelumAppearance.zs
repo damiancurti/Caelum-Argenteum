@@ -111,6 +111,7 @@ class CaelumAppearance : Object play
             user.Scale=ScaleFor(profile.Race,profile.Sex,profile.BeastForm,user.DerivedStats.ActorHeight,user.AppearanceHasGloves);
         if(authoredCrouch)user.crouchsprite=user.sprite;
         user.bNoSkin=true;
+        CaelumFamilyModels.Bind(user,profile,user.AppearanceHasGloves);
         if(user.AppearanceHead==null)
         {
             user.AppearanceHead=CaelumAppearanceHead(Actor.Spawn("CaelumAppearanceHead",user.Pos,NO_REPLACE));
@@ -119,3 +120,5 @@ class CaelumAppearance : Object play
         if(user.AppearanceHead!=null)user.AppearanceHead.UpdateVisual();
     }
 }
+
+#include "caelum/character/CaelumFamilyModels.zs"

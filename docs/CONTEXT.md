@@ -1,14 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.18.5** - 2026-11-27.
+Documentation version: **5.18.6** - 2026-11-27.
 
-#902 visual models ready for author inspection.
-
-**5.18.4/#899:** audit fixes integrated with independent beta.
-All 115 author checks passed 2026-11-27 (#892-898).
-**2026-11-26 integration:**130PRs/132issues; scope/evidence in
-validation_v5_17_123/integration-decision.json and ASSETS/TASKS/HISTORY.
-#736art and siege fluency remain unresolved; LegacyMap02Revision5 retained.
+#902/903 meshes pending visual review. Seven #736 families approved.
+5.18.4/#899 integrated. 115 checks accepted (#892-898).
+2026-11-26:130PRs/132issues; validation_v5_17_123/integration-decision.json.
+Siege fluency pending; LegacyMap02Revision5 retained.
 **#403 scope:** independent MAP01-MAP03 beta; existing modes/limits,
 separate GZDoom4.14.2, current audio,19reserved tracks. Separate commits/tests/PRs;
  Later campaign needs authoring.

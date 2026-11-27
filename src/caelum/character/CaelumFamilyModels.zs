@@ -1,0 +1,34 @@
+// Presentación modular. Los índices proceden del perfil ya validado por el juego.
+class CaelumFamilyModels : Object play
+{
+    static void BindSlot(Actor body,int slot,String mesh,String skin,bool visible=true)
+    {
+        body.A_ChangeModel('None',slot,"models/caelum/players",Name(mesh),slot,
+            "models/caelum/players",Name(skin),visible?0:CMDL_HIDEMODEL);
+    }
+
+    static void Bind(CaelumPlayer body,CaelumCharacterProfile profile,bool gloves)
+    {
+        int id=CaelumAppearance.Identity(profile.Race,profile.Sex,profile.BeastForm);
+        int tone=Clamp(profile.SkinTone,0,2);
+        int face=id<6?Clamp(profile.Face,0,3):0;
+        int hair=id<6?Clamp(profile.HairStyle,0,3):0;
+        int color=id<6?Clamp(profile.HairColor,0,5):0;
+        int key=(((((id*3+tone)*4+face)*4+hair)*6+color)*2+int(gloves))+1;
+        if(body.FamilyVisualKey==key)return;
+        body.FamilyVisualKey=key;
+        String base=String.Format("b%d",id);
+        String cloth=base..".png";
+        BindSlot(body,0,base.."_shirt.md3",cloth);
+        BindSlot(body,1,base.."_trousers.md3",cloth);
+        BindSlot(body,2,base.."_belt.md3",cloth);
+        BindSlot(body,3,base.."_boots.md3",cloth);
+        int skin=id>=6?6+((id-6)/2)*3+tone:id>=2 && id<=3?3+tone:tone;
+        BindSlot(body,4,base..(gloves?"_gloves.md3":"_hands.md3"),
+            gloves?cloth:String.Format("hskin%d.png",skin));
+        String head=String.Format("head%d_%d",id,face);
+        BindSlot(body,5,head..".md3",String.Format("%s_%d.png",head,tone));
+        String style=String.Format("hair%d_%d",id<6?id:0,hair);
+        BindSlot(body,6,style..".md3",String.Format("%s_%d.png",style,color),id<6);
+    }
+}

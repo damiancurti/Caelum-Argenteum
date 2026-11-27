@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.18.5** - 2026-11-27.
+Documentation version: **5.18.6** - 2026-11-27.
+
+## 5.18.6 - Character presentation (#903)
+
+All seven approved families and both sexes have modular world models, fitted hands and feet, separate face and hair meshes, and 33 pose bindings. Faces use a reduced painted palette. The original player profiles select the meshes and colors. Native visual review is pending.
 
 ## 5.18.5 - Character presentation (#902)
 

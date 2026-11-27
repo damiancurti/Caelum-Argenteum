@@ -1641,3 +1641,6 @@ assets/validation_v5_18_0/*.py text eol=lf diff
 
 src/caelum/data/native_creatures.modeldef text eol=lf
 assets/source/art/native_creatures_902/PROVENANCE.json text eol=lf
+
+src/caelum/data/player_families.modeldef text eol=lf
+assets/source/art/player_families_903/PROVENANCE.json text eol=lf
