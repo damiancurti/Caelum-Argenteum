@@ -3,6 +3,10 @@ from pathlib import Path
 import hashlib
 import json
 import struct
+try:
+    from .import_painted_skins import manifest as painted_manifest, runtime_digest
+except ImportError:
+    from import_painted_skins import manifest as painted_manifest, runtime_digest
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -19,7 +23,9 @@ def validate(root=ROOT):
         for name, path in sources.items():
             if hashlib.sha256(path.read_bytes()).hexdigest() != report[name+'_sha256']:
                 errors.append('Character modules: stale source '+name)
+        paint = painted_manifest(root)
         for name, checksum in report['sha256'].items():
+            checksum = runtime_digest(paint,name,checksum)
             if name == 'MODELDEF':
                 continue  # Isolated preview registration, never a production include.
             path = root/'src'/name

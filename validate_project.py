@@ -16,6 +16,7 @@ from assets.generators.generate_bestiary_actors import render as bestiary_actor_
 from assets.generators.build_essence_coverage import build as essence_coverage, encoded as essence_coverage_bytes, native_data as essence_native_data
 from assets.generators.generate_campaign_finale_data import render as campaign_finale_data
 from assets.generators.validate_character_modules import validate as character_module_problems
+from assets.generators.import_painted_skins import validate as painted_skins_problems
 from assets.generators.validate_rest_motion import validate as rest_motion_problems
 from assets.generators.generate_presentation_465 import generate as presentation_data
 from assets.generators.generate_standalone_467 import generate as standalone_data
@@ -159,6 +160,7 @@ def index_problems(root):
 def validate(root):
     errors = dialogue_problems(root)
     errors.extend(character_module_problems(root))
+    errors.extend(painted_skins_problems(root))
     errors.extend(rest_motion_problems(root))
     for name, expected in presentation_data(root).items():
         if not (root/name).is_file() or (root/name).read_bytes() != expected:

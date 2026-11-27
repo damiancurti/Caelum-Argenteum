@@ -1,7 +1,9 @@
 """Check the installed combat model, inherited frame coverage and original pixels."""
 try:
+    from .import_painted_skins import manifest as painted_manifest, runtime_digest
     from .source_integrity import matches_source_digest
 except ImportError:
+    from import_painted_skins import manifest as painted_manifest, runtime_digest
     from source_integrity import matches_source_digest
 
 from pathlib import Path
@@ -23,7 +25,9 @@ def validate(root=ROOT, kind='pombero', issue=461, original_textures=None):
         config=json.loads((source/'ANIMATION.json').read_text())
         for name,want in report['source_sha256'].items():
             if not matches_source_digest(root/name, want):errors.append('Stale source: '+name)
+        paint = painted_manifest(root)
         for name,want in report['sha256'].items():
+            want = runtime_digest(paint,name,want)
             path=(source/name if '/' not in name else root/'src'/name)
             if hashlib.sha256(path.read_bytes()).hexdigest()!=want:errors.append('Stale export: '+name)
         design_path=root/config['source_design'];design=json.loads(design_path.read_text())
@@ -32,7 +36,12 @@ def validate(root=ROOT, kind='pombero', issue=461, original_textures=None):
             original={'materials.png':design['atlas']['source_file'],'dark.png':'dark.png'}
             original.update({Path(row['path']).name:row['source_file'] for row in design['materials'].values() if 'source_file' in row})
         for name,original_name in original.items():
-            if (model_path/name).read_bytes()!=(design_path.parent/original_name).read_bytes():errors.append('Original texture changed: '+name)
+            path=model_path/name
+            key=path.relative_to(root/'src').as_posix()
+            original_bytes=(design_path.parent/original_name).read_bytes()
+            if key in paint['source_files']:
+                if hashlib.sha256(original_bytes).hexdigest()!=paint['original_runtime_sha256'][key]:errors.append('Original source texture changed: '+name)
+            elif path.read_bytes()!=original_bytes:errors.append('Original texture changed: '+name)
         modeldef=(root/'src/caelum/data'/(kind+'_combat.modeldef')).read_text()
         if (root/'src/MODELDEF').read_text().count('#include "caelum/data/'+kind+'_combat.modeldef"')!=1:errors.append('Expected one native model include')
         if re.findall(r'\bModel\s+(\w+)\s*\{',modeldef)!=[config['actor']]:errors.append('Binding must be specific to '+kind)

@@ -6,7 +6,7 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The independent beta uses GZDoom installed separately; it requires no Doom IWAD.
 
-**Current release: 5.18.8.** The bull has broader withers, brisket and muzzle, a lower dewlap, more outward horn sweep and weight-bearing hooves. Blender 4.5.3 produced two identical 136-frame exports with the original triangles, UVs and timings. Native front, profile and moving-pose views are recorded for author review.
+**Current release: 5.18.9.** Seven painted atlas replacements from the author's campaign reference now appear on Domingo, the bull, Pombero, Cuero Unudo and Nahuelito. All seven match the pinned PR #908 bytes. The importer can reapply them after an original art export. Their UVs and the regional allocation are preserved.
 
 In 5.18.3, #469 supplies the independent MAP01-MAP03 review
 beta, player guide, optional mode/profile tools and consolidated author terminal.
@@ -4531,7 +4531,7 @@ Long-term encounter/provision balance and unfinished 4.36 systems are developmen
 work in PROJECT/TASKS, not additional author checks for this patch.
 
 <!-- independent-player-guide:start -->
-## Caelum Argenteum 5.18.8 - independent review beta
+## Caelum Argenteum 5.18.9 - independent review beta
 
 This author-review beta contains the current MAP01-MAP03 prologue and existing
 campaign, cooperative, competitive and Trucazo systems. Later campaign locations,

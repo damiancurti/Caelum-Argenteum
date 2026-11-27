@@ -2,7 +2,7 @@
   "schema": 1,
   "issue": 466,
   "runtime_files": 19736,
-  "metadata_documents": 701,
+  "metadata_documents": 702,
   "origin_decisions": "assets/distribution/ORIGINS.json",
   "dependency_findings": "assets/distribution/DEPENDENCIES.json",
   "provenance_resolution": "Union of the decision references and per-file additional_provenance; exact_metadata is traceability, not a license grant.",
@@ -22,7 +22,7 @@
     "human-mesh": 315,
     "source-specific-audio": 131
   },
-  "exact_metadata_files": 14337,
+  "exact_metadata_files": 14338,
   "files": [
     {
       "path": "ANIMDEFS",
@@ -8083,7 +8083,7 @@
     },
     {
       "path": "caelum/world/CaelumPhysicalHazards.zs",
-      "sha256": "b2cefa11eb823d7e944828ac71750aa626ad86e13c2874707208ac6cee8121da",
+      "sha256": "22281bceee5969556869aa86a5fcc44daa2eae6cdc4ffa90af471c905cedcbbe",
       "bytes": 20720,
       "decision": "project-source",
       "additional_provenance": [
@@ -8411,7 +8411,7 @@
     },
     {
       "path": "caelum/world/CaelumSewerMaze.zs",
-      "sha256": "99f5ef23c9fd3152acbc4ab41a2234c3875f480a7665452d7ed1d32fbef98fb1",
+      "sha256": "0b75269b69fb2c6d02f547a12938756398941df244c7de2476a02b77de8d422a",
       "bytes": 15765,
       "decision": "project-source",
       "additional_provenance": [],
@@ -204982,11 +204982,15 @@
     },
     {
       "path": "models/caelum/bull/bull_skin.png",
-      "sha256": "e37184cafca3f09b2c6aa8a6e6c3a980fc068d7883de37109b0e185f1c7bbe33",
-      "bytes": 1566098,
+      "sha256": "dd608978ba4f3e1930b3cbf00c8e700f6bc7a87f5d09041550f6465759eaa61d",
+      "bytes": 290938,
       "decision": "project-art",
-      "additional_provenance": [],
-      "exact_metadata": [],
+      "additional_provenance": [
+        "assets/source/art/painted_skins_909/SOURCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/painted_skins_909/SOURCE.json"
+      ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
     },
@@ -205040,19 +205044,15 @@
     },
     {
       "path": "models/caelum/characters/domingo/domingo_skin.png",
-      "sha256": "6cf9ea66f6671ba3235c2f2ad8af7cc139b20286013e2a9789670b8df60da597",
-      "bytes": 1863217,
+      "sha256": "c1572d498869c79d2b5be7fab41e9ee275b23d255f6ff19d83a20c35d332da03",
+      "bytes": 532209,
       "decision": "human-mesh",
       "additional_provenance": [
-        "assets/source/art/character_modules_458/EXPORT.json",
-        "assets/source/art/underbody_827/DESIGN.json",
-        "assets/source/art/underbody_827/EXPORT.json",
+        "assets/source/art/painted_skins_909/SOURCE.json",
         "assets/source/art/worn_clothing_829/AUTHORING.json"
       ],
       "exact_metadata": [
-        "assets/source/art/character_modules_458/EXPORT.json",
-        "assets/source/art/underbody_827/DESIGN.json",
-        "assets/source/art/underbody_827/EXPORT.json",
+        "assets/source/art/painted_skins_909/SOURCE.json",
         "assets/source/art/worn_clothing_829/AUTHORING.json"
       ],
       "distribution": "retain-with-source-terms",
@@ -211388,20 +211388,14 @@
     },
     {
       "path": "models/caelum/domingo/domingo_skin.png",
-      "sha256": "6cf9ea66f6671ba3235c2f2ad8af7cc139b20286013e2a9789670b8df60da597",
-      "bytes": 1863217,
+      "sha256": "c1572d498869c79d2b5be7fab41e9ee275b23d255f6ff19d83a20c35d332da03",
+      "bytes": 532209,
       "decision": "human-mesh",
       "additional_provenance": [
-        "assets/source/art/character_modules_458/EXPORT.json",
-        "assets/source/art/underbody_827/DESIGN.json",
-        "assets/source/art/underbody_827/EXPORT.json",
-        "assets/source/art/worn_clothing_829/AUTHORING.json"
+        "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "exact_metadata": [
-        "assets/source/art/character_modules_458/EXPORT.json",
-        "assets/source/art/underbody_827/DESIGN.json",
-        "assets/source/art/underbody_827/EXPORT.json",
-        "assets/source/art/worn_clothing_829/AUTHORING.json"
+        "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -213076,20 +213070,14 @@
     },
     {
       "path": "models/caelum/folklore/cuero660/materials.png",
-      "sha256": "9cbf0cc1e59a6bd09e6bcae65a714b08c8f6ea45f63271fc73678913dea4afd4",
-      "bytes": 3207312,
+      "sha256": "6eedd2cbc68fcbc20ac8aa0e5a53df21154cf3e7d0328504a2422b1f4f6547e9",
+      "bytes": 222918,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/bestiary/models/cuero/manifest.json",
-        "assets/source/art/cuero_455/PROVENANCE.json",
-        "assets/source/art/cuero_660/ANIMATION.json",
-        "assets/source/art/cuero_660/EXPORT.json"
+        "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "exact_metadata": [
-        "assets/bestiary/models/cuero/manifest.json",
-        "assets/source/art/cuero_455/PROVENANCE.json",
-        "assets/source/art/cuero_660/ANIMATION.json",
-        "assets/source/art/cuero_660/EXPORT.json"
+        "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -214118,20 +214106,14 @@
     },
     {
       "path": "models/caelum/folklore/nahuelito662/skin.png",
-      "sha256": "602ef95f83053451576bf9b976ee45bdd3376763c990f06f27f905d89e7776e5",
-      "bytes": 3511722,
+      "sha256": "f359d42ef76b783d8320b1a0052b2431b30a5a8fda06ae87620048044c633074",
+      "bytes": 53565,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/bestiary/models/nahuelito/manifest.json",
-        "assets/source/art/nahuelito_455/PROVENANCE.json",
-        "assets/source/art/nahuelito_662/ANIMATION.json",
-        "assets/source/art/nahuelito_662/EXPORT.json"
+        "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "exact_metadata": [
-        "assets/bestiary/models/nahuelito/manifest.json",
-        "assets/source/art/nahuelito_455/PROVENANCE.json",
-        "assets/source/art/nahuelito_662/ANIMATION.json",
-        "assets/source/art/nahuelito_662/EXPORT.json"
+        "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -214496,52 +214478,40 @@
     },
     {
       "path": "models/caelum/folklore/pombero461/face.png",
-      "sha256": "d342e4b31ec8da9f7933f216a14ca9fd92299ec8315ca72dd68cb857ff9b3a0c",
-      "bytes": 3442737,
+      "sha256": "ab2884245c7b49090edce306f162297a1b5a5654f745933daeb54ba077a3ca8a",
+      "bytes": 284717,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/bestiary/models/pombero/manifest.json",
-        "assets/source/art/pombero_455/PROVENANCE.json",
-        "assets/source/art/pombero_461/ANIMATION.json",
-        "assets/source/art/pombero_461/EXPORT.json"
+        "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "exact_metadata": [
-        "assets/bestiary/models/pombero/manifest.json",
-        "assets/source/art/pombero_455/PROVENANCE.json",
-        "assets/source/art/pombero_461/ANIMATION.json",
-        "assets/source/art/pombero_461/EXPORT.json"
+        "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
     },
     {
       "path": "models/caelum/folklore/pombero461/materials.png",
-      "sha256": "6d72eeb0a43b98a279fb3119f28b06bffd5d353e9e39da0ab8036559e06f62cc",
-      "bytes": 3103639,
+      "sha256": "c758560b2803c3cfaedf7ebe746790a29a6e56449cae7e1df5727a63a2f9fab0",
+      "bytes": 261438,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/bestiary/models/pombero/manifest.json",
         "assets/source/art/inventory_models_647/books/DESIGN.json",
         "assets/source/art/inventory_models_647/books/EXPORT.json",
         "assets/source/art/inventory_models_647/documents/DESIGN.json",
         "assets/source/art/inventory_models_647/documents/EXPORT.json",
         "assets/source/art/inventory_models_647/locks/DESIGN.json",
         "assets/source/art/inventory_models_647/locks/EXPORT.json",
-        "assets/source/art/pombero_455/PROVENANCE.json",
-        "assets/source/art/pombero_461/ANIMATION.json",
-        "assets/source/art/pombero_461/EXPORT.json"
+        "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "exact_metadata": [
-        "assets/bestiary/models/pombero/manifest.json",
         "assets/source/art/inventory_models_647/books/DESIGN.json",
         "assets/source/art/inventory_models_647/books/EXPORT.json",
         "assets/source/art/inventory_models_647/documents/DESIGN.json",
         "assets/source/art/inventory_models_647/documents/EXPORT.json",
         "assets/source/art/inventory_models_647/locks/DESIGN.json",
         "assets/source/art/inventory_models_647/locks/EXPORT.json",
-        "assets/source/art/pombero_455/PROVENANCE.json",
-        "assets/source/art/pombero_461/ANIMATION.json",
-        "assets/source/art/pombero_461/EXPORT.json"
+        "assets/source/art/painted_skins_909/SOURCE.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []

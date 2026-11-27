@@ -1,0 +1,25 @@
+{
+  "issue": 906,
+  "reference_pr": 908,
+  "commit": "a13887e3dd2b3e243fffc97cdc4483ca37cb22f3",
+  "reference": "assets/references/campaign_atlas_80_20261127/paquete/modelos/Caelum_pieles_pintadas.pk3",
+  "pk3_sha256": "4afd87cf92a08f154d6c47106b9f9c94950fe7a5360249fa2acde55fe6df611e",
+  "source_files": {
+    "models/caelum/bull/bull_skin.png": "dd608978ba4f3e1930b3cbf00c8e700f6bc7a87f5d09041550f6465759eaa61d",
+    "models/caelum/characters/domingo/domingo_skin.png": "c1572d498869c79d2b5be7fab41e9ee275b23d255f6ff19d83a20c35d332da03",
+    "models/caelum/domingo/domingo_skin.png": "c1572d498869c79d2b5be7fab41e9ee275b23d255f6ff19d83a20c35d332da03",
+    "models/caelum/folklore/cuero660/materials.png": "6eedd2cbc68fcbc20ac8aa0e5a53df21154cf3e7d0328504a2422b1f4f6547e9",
+    "models/caelum/folklore/nahuelito662/skin.png": "f359d42ef76b783d8320b1a0052b2431b30a5a8fda06ae87620048044c633074",
+    "models/caelum/folklore/pombero461/face.png": "ab2884245c7b49090edce306f162297a1b5a5654f745933daeb54ba077a3ca8a",
+    "models/caelum/folklore/pombero461/materials.png": "c758560b2803c3cfaedf7ebe746790a29a6e56449cae7e1df5727a63a2f9fab0"
+  },
+  "original_runtime_sha256": {
+    "models/caelum/bull/bull_skin.png": "e37184cafca3f09b2c6aa8a6e6c3a980fc068d7883de37109b0e185f1c7bbe33",
+    "models/caelum/characters/domingo/domingo_skin.png": "6cf9ea66f6671ba3235c2f2ad8af7cc139b20286013e2a9789670b8df60da597",
+    "models/caelum/domingo/domingo_skin.png": "6cf9ea66f6671ba3235c2f2ad8af7cc139b20286013e2a9789670b8df60da597",
+    "models/caelum/folklore/cuero660/materials.png": "9cbf0cc1e59a6bd09e6bcae65a714b08c8f6ea45f63271fc73678913dea4afd4",
+    "models/caelum/folklore/nahuelito662/skin.png": "602ef95f83053451576bf9b976ee45bdd3376763c990f06f27f905d89e7776e5",
+    "models/caelum/folklore/pombero461/face.png": "d342e4b31ec8da9f7933f216a14ca9fd92299ec8315ca72dd68cb857ff9b3a0c",
+    "models/caelum/folklore/pombero461/materials.png": "6d72eeb0a43b98a279fb3119f28b06bffd5d353e9e39da0ab8036559e06f62cc"
+  }
+}

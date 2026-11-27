@@ -1647,3 +1647,5 @@ assets/source/art/player_families_903/PROVENANCE.json text eol=lf
 
 assets/source/art/worn_equipment_904/MODULES.json text eol=lf
 src/caelum/character/CaelumWornEquipment.zs text eol=lf
+
+assets/source/art/painted_skins_909/SOURCE.json text eol=lf

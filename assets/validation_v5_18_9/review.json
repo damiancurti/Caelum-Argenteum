@@ -1,0 +1,15 @@
+{
+  "engine": "GZDoom 4.14.2",
+  "game_sha256": "00366e1a734f4fc30a4508742ce25c7e935814b6377085b2c9b6dd029d525ee4",
+  "source_commit": "a13887e3dd2b3e243fffc97cdc4483ca37cb22f3",
+  "matches_in_installed_ipk3": 7,
+  "screens": [
+    "domingo",
+    "domingo_original",
+    "toro",
+    "pombero",
+    "cuero",
+    "nahuelito"
+  ],
+  "accepted": false
+}

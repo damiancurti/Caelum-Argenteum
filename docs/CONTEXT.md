@@ -1,12 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.18.8** - 2026-11-27.
+Documentation version: **5.18.9** - 2026-11-27.
 
-#905 visual models ready for author inspection.
-
-#904 visual models ready for author inspection.
-
-#902/903 meshes pending visual review. Seven #736 families approved.
+#902-905/#909 await visual review. Seven #736 families approved.
 5.18.4/#899 integrated. 115 checks accepted (#892-898).
 2026-11-26:130PRs/132issues; validation_v5_17_123/integration-decision.json.
 Siege fluency pending; LegacyMap02Revision5 retained.
