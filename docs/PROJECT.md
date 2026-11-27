@@ -13,7 +13,7 @@ diagnostic map package or test save is distributed. The player guide is generate
 from the canonical README section, not maintained as a second source.
 
 Delivery, extraction and the focused ten-case native terminal matrix passed
-under assets/validation_v5_18_3. The terminal preserves all 115 pending checks,
+under assets/validation_v5_18_3. The author confirmed all 115 checks on 2026-11-27,
 including earlier art/environment proposals. Existing local diagnostic scenes
 retain their original fixture dependencies separately from independent game
 play. A packaged beta or draft PR does not accept art, Internet play, siege

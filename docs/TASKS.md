@@ -6,10 +6,9 @@ Documentation version: **5.18.3** - 2026-11-26.
 
 Release support-file export, player guidance and launcher modes are implemented.
 Extracted-package, controls/preferences, coordinator and ten focused native
-terminal checks passed under assets/validation_v5_18_3. Keep
-each issue's commits, native evidence and linked PR separate. Preserve all 115
-pending author checks. Open one visible consolidated terminal only after the
-entire authorized batch is complete, then await the author's actual verdict.
+terminal checks passed under assets/validation_v5_18_3. On 2026-11-27 the
+author confirmed all 115 checks. HISTORY records the results by originating
+release. The queue is empty. PRs #892?898 deliver the seven implementation issues.
 No later campaign authoring, public store launch, Internet certification or
 siege performance acceptance is inferred from this delivery.
 
