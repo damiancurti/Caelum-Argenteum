@@ -65,11 +65,22 @@ samples = dict(familia=1,mandinga=15,zupay=16,rata=17,domingo=18,domingo_origina
                pombero=by_label["Pombero"],cuero=next(row["station"] for row in roster if "Cuero /" in row["label"]),
                nahuelito=by_label["Nahuelito"],arma=groups["Equipo"],armadura=len(roster))
 if args.check:
-    commands=["wait 140"]
-    for label,station in samples.items():
-        commands.extend([f"netevent fila_puesto {station}","wait 8",f"screenshot {label}.png","wait 3"])
-    commands.extend(["netevent fila_anterior","wait 5","netevent fila_siguiente","wait 5","quit"])
-    binds.append("; ".join(commands))
+    # Visit each rendered station, retaining representative screenshots. Short
+    # chained configs keep the engine console parser below its line limit.
+    names_by_station={station:name for name,station in samples.items()}
+    per_page=16
+    for start in range(0,len(roster),per_page):
+        commands=[]
+        for station in range(start+1,min(start+per_page,len(roster))+1):
+            commands.extend([f"netevent fila_puesto {station}","wait 4"])
+            if station in names_by_station:
+                commands.extend([f"screenshot {names_by_station[station]}.png","wait 3"])
+        if start+per_page<len(roster):
+            commands.append(f"exec walk{start+per_page}.cfg")
+        else:
+            commands.extend(["netevent fila_anterior","wait 5","netevent fila_siguiente","wait 5","quit"])
+        (run/f"walk{start}.cfg").write_bytes(("; ".join(commands)+"\n").encode())
+    binds.append("wait 140; exec walk0.cfg")
 cfg.write_bytes(("\n".join(binds)+"\n").encode())
 print("Galería 3D de Caelum Argenteum\nWASD para caminar. Ratón para mirar. RePág y AvPág para cambiar de puesto.\n"
       "1 Jugadores   2 Mandinga, Zupay y rata   3 Toro   4 Bestiario   5 Vestuario   6 Equipo",flush=True)
@@ -87,11 +98,11 @@ if args.check:
     if rows!=[(str(t),str(len(roster)),str(len(roster))) for t in (4,109)]:
         raise SystemExit(f"Unexpected exhibit census {rows}. {log}")
     visits=[int(value) for value in re.findall(r"GALERIA puesto=(\d+)",text)]
-    expected=[1,*samples.values(),len(roster)-1,len(roster)]
+    expected=[1,*range(1,len(roster)+1),len(roster)-1,len(roster)]
     if visits!=expected:
         raise SystemExit(f"Unexpected station navigation {visits}.")
     for name in samples:
         if f"Captured {name}.png" not in text or not (run/(name+".png")).is_file():
             raise SystemExit(f"Missing capture for {name}.")
-    print(f"GZDoom verified {len(roster)} stationary exhibits and {len(samples)} camera stations.")
+    print(f"GZDoom verified {len(roster)} stationary exhibits and visited each station. Captured {len(samples)} representative views.")
 
