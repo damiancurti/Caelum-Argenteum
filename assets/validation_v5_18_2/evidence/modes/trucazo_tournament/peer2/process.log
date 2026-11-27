@@ -1,0 +1,113 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-26 22:52:39
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue467-final04/caelum_argenteum.ipk3, 19055 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue468-matrix01/trucazo_tournament/checks.pk3, 6 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+No GENMIDI lump found. OPL playback not available.
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2797.19 ms
+R_Init: Init CaelumArgenteum refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+using alternate port 32945
+Node number 0, address 127.0.0.1
+Total players: 4
+Console player number: 2
+Received All Here, sending ACK.
+Received All Here, sending ACK.
+Received "Go."
+Total players: 4
+Found Player (node 1, player 1)
+Found Player (node 2, player 2)
+Found Player (node 0, player 3)
+Found Player (node 3, player 4)
+Arbitrator selected peer to peer networking mode.
+player 3 of 4 (4 nodes)
+Use changemap instead. Map is for single-player only.
+
+----------------------------------------
+
+MAP03 - Barracas al Sud — fortified port
+
+CA435SYNC OK peer=2 map=MAP03 tic=0
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA446 PASS production tournament table placed
+CA446 PASS native entrant sits at the shared tournament table
+CA446 PASS native entrant sits at the shared tournament table
+CA446 PASS native entrant sits at the shared tournament table
+CA446 PASS native entrant sits at the shared tournament table
+CA446 PASS one below-threshold entrant cannot enter the bracket
+CA446 PASS visible fixed bracket waits for unanimous enrollment
+CA446 PASS stale tournament acceptance cannot join
+CA446 PASS all original humans accept before the first pairing
+CA446 PASS each bracket creates an individual ranked lobby with optional stakes
+CA446 PASS tournament lobby cannot become a team or unranked match
+CA446 PASS same-table entrant supplies the physical deck across pairings
+CA446 PASS both current humans explicitly accept before ranked start
+CA446 PASS every tournament match starts with a fresh health reserve
+CA446 PASS individual ranked pairing uses shared attribute minima
+CA446 PASS one completed bracket result follows committed rating and stake settlement
+CA446 PASS replayed match completion cannot advance the bracket twice
+Game saved.
+CA446 PASS each bracket creates an individual ranked lobby with optional stakes
+CA446 PASS tournament lobby cannot become a team or unranked match
+CA446 PASS same-table entrant supplies the physical deck across pairings
+CA446 PASS both current humans explicitly accept before ranked start
+CA446 PASS every tournament match starts with a fresh health reserve
+CA446 PASS individual ranked pairing uses shared attribute minima
+CA446 PASS one completed bracket result follows committed rating and stake settlement
+CA446 PASS replayed match completion cannot advance the bracket twice
+CA446 PASS first round advances exactly one winner per pairing
+CA446 RESULT PASS checks=26 fresh
+Game saved.
+CA435SYNC OK peer=2 map=MAP03 tic=175
+CA435SYNC OK peer=2 map=MAP03 tic=350
+CA435SYNC OK peer=2 map=MAP03 tic=525
+CA435SYNC OK peer=2 map=MAP03 tic=700
+CA435SYNC OK peer=2 map=MAP03 tic=875
+Player left the game

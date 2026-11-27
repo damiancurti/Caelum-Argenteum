@@ -1,0 +1,26 @@
+{
+  "issue": 468,
+  "published": false,
+  "original_heads_unchanged": true,
+  "campaigns": [
+    {
+      "side": "source",
+      "unchanged": true,
+      "head": {
+        "identity": "a",
+        "revision": 0,
+        "snapshot": "f9de5872dbf6bf4b9182a769b85d480672a7ad151425ee2eac4f014d5a400758"
+      }
+    },
+    {
+      "side": "destination",
+      "unchanged": true,
+      "head": {
+        "identity": "b",
+        "revision": 0,
+        "snapshot": "536dc2985b9cbdf793abbf3378d183c5b4b141b879be0f55ee3902040871127e"
+      }
+    }
+  ],
+  "passed": true
+}

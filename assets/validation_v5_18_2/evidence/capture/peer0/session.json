@@ -1,0 +1,39 @@
+{
+  "revision": 2,
+  "token": "5ef2beb6-ab37-40b6-899c-6951375515e3",
+  "mode": 2,
+  "palomo": 0,
+  "venue": 0,
+  "players": 4,
+  "port": 32946,
+  "manifest": {
+    "revision": 1,
+    "files": [
+      {
+        "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.pk3",
+        "sha256": "ac7e0152951eba345d94d2802aafd922d68b58dbd2800f555e742e1998ab960d"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\GZDoom\\game_support.pk3",
+        "sha256": "2430b69251c34a38573dc397ade6ecfd2c69187ff6658bd7dcf624da7f7dbcd8"
+      },
+      {
+        "path": "C:\\Program Files (x86)\\GZDoom\\game_widescreen_gfx.pk3",
+        "sha256": "6f17bed21690f13b734402f26e07bb91c9ec3361d67a634d28f22f0b57c05b33"
+      },
+      {
+        "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-final04\\caelum_argenteum.ipk3",
+        "sha256": "41beb814296c4b619a91c6c57273f14e6484ebc4a2a1083172a09de2eae818eb"
+      },
+      {
+        "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-capture01\\checks.pk3",
+        "sha256": "c4de6d492702d2f405a0f57d3006bf3f52461d0f7f5f0db1b8487bdfead24597"
+      }
+    ],
+    "explicit_packages": 1
+  }
+}

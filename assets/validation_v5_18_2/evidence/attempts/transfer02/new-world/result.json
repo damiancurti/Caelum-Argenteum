@@ -1,0 +1,30 @@
+{
+  "players": 1,
+  "save": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\new-world\\peer0\\save00.zds",
+  "sha256": "afd4e23dfbfdebe7c7d20a38149fd6a381b56d0bd2f871364105ee1cc188b4e0",
+  "commands": [
+    [
+      "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "-noautoload",
+      "-iwad",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+      "-config",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\new-world\\peer0\\bootstrap.ini",
+      "-savedir",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\new-world\\peer0",
+      "-window",
+      "-width",
+      "640",
+      "-height",
+      "480",
+      "+logfile",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer02\\new-world\\peer0\\engine.log",
+      "+set",
+      "ca_profile_bootstrap",
+      "true",
+      "-warp",
+      "1"
+    ]
+  ],
+  "passed": true
+}

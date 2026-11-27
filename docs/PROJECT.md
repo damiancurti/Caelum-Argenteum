@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.18.1** - 2026-11-26.
+Documentation version: **5.18.2** - 2026-11-26.
+
+## 5.18.2 - Independent prologue integration (#468)
+
+The approved delivery remains a MAP01-MAP03 review beta with existing modes and
+documented limitations. The profile/multiplayer bridges now load a primary IPK3
+once, pin actual resources and obtain fresh controls from the runtime. Native
+integration reuses existing assertions for profiles, cooperative lifecycle,
+standalone modes, Trucazo and the finale query; no later route/essence/scene is
+authored. Evidence lives in assets/validation_v5_18_2 with exact scenario and
+environment coverage. Author acceptance is CA468-BETA-01; all 113 prior checks
+remain pending. #469 owns the final versioned artifacts and visible terminal.
+
+Native managed transfers also exposed and fixed the verifier's assumption that
+only one manual-format save exists: narrative and verification checkpoints can
+coexist. An attempt-specific checkpoint title now identifies the correct save
+without deleting either; native identity/custody gates and rollback sources remain.
 
 ## 5.18.1 - Independent startup implemented for review (#467)
 

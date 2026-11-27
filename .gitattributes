@@ -1573,3 +1573,7 @@ assets/validation_v5_18_0/*.py text eol=lf diff
 /assets/validation_v5_18_1/** -text -diff
 /assets/validation_v5_18_1/*.py text eol=lf diff
 /assets/validation_v5_18_1/*.zs text eol=lf diff
+
+# Independent integration evidence retains exact native bytes (#468).
+/assets/validation_v5_18_2/** -text -diff
+/assets/validation_v5_18_2/*.py text eol=lf diff

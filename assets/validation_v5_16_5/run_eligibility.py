@@ -10,10 +10,13 @@ import json
 import shutil
 import struct
 import subprocess
+import sys
 import time
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT))
+from caelum_sessions import resource_arguments
 ENGINE = Path('C:/Program Files (x86)/GZDoom/gzdoom.exe')
 IWAD = Path('C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD')
 
@@ -40,6 +43,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--runtime',type=Path,required=True)
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--iwad',type=Path,default=IWAD,help='Primary game; select the runtime IPK3 for independent integration')
     parser.add_argument('--port',type=int,default=31957)
     args = parser.parse_args();runtime=args.runtime.resolve(strict=True);out=args.output.resolve()
     out.relative_to(ROOT/'build');out.mkdir(exist_ok=False)
@@ -65,9 +69,9 @@ def main():
                 if phase=='reload':
                     shutil.copyfile(out/'fresh'/f'peer{slot}'/'checkpoint.zds',folder/'checkpoint.zds');entry=['-loadgame','checkpoint.zds']
                 network=['-host','2','-port',str(args.port),'-netmode','0'] if slot==0 else ['-join',f'127.0.0.1:{args.port}','-port',str(args.port+1)]
-                command=[str(ENGINE),'-noautoload','-iwad',str(IWAD),'-file',str(runtime),str(addon),'-config',str(folder/'session.ini'),'-savedir',str(folder),*network,'-window','-width','800','-height','600','+logfile',str(folder/'engine.log'),*entry,'+exec',str(folder/'commands.cfg')]
+                command=[str(ENGINE),'-noautoload',*resource_arguments(args.iwad.resolve(strict=True),[runtime,addon]),'-config',str(folder/'session.ini'),'-savedir',str(folder),*network,'-window','-width','800','-height','600','+logfile',str(folder/'engine.log'),*entry,'+exec',str(folder/'commands.cfg')]
                 commands.append(command);stream=(folder/'process.log').open('wb');streams.append(stream)
-                startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
+                startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=4
                 processes.append(subprocess.Popen(command,cwd=folder,stdout=stream,stderr=stream,startupinfo=startup))
                 time.sleep(0.5)
             deadline=time.monotonic()+120

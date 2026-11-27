@@ -1,0 +1,51 @@
+{
+  "token": "native-imported-play",
+  "request": {
+    "campaign": "b",
+    "head": {
+      "identity": "b",
+      "revision": 1,
+      "snapshot": "1230a6cfb6c33186e6ad1530cd606bc36a2e41ff8c7c43454080ca3724242974"
+    },
+    "manifest": {
+      "explicit_packages": 1,
+      "files": [
+        {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.pk3",
+          "sha256": "ac7e0152951eba345d94d2802aafd922d68b58dbd2800f555e742e1998ab960d"
+        },
+        {
+          "path": "C:\\Program Files (x86)\\GZDoom\\game_support.pk3",
+          "sha256": "2430b69251c34a38573dc397ade6ecfd2c69187ff6658bd7dcf624da7f7dbcd8"
+        },
+        {
+          "path": "C:\\Program Files (x86)\\GZDoom\\game_widescreen_gfx.pk3",
+          "sha256": "6f17bed21690f13b734402f26e07bb91c9ec3361d67a634d28f22f0b57c05b33"
+        },
+        {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+          "sha256": "f93b170bbf4f19617aff142c6d15787f986fec4827feb01f8e719082108f745e"
+        },
+        {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\imported-play\\input.pk3",
+          "sha256": "9c5c8e87f894a91febbfed909f7b6eefce7e36b9636d7794c8b0cd13c256a0c2"
+        }
+      ],
+      "revision": 1
+    },
+    "nonce": 1569527689,
+    "revision": 1,
+    "roster": [
+      {
+        "identity": "a03b9ba5-0c9d-4f70-82c1-a862e6bc40ab",
+        "name": "Player",
+        "slot": 0
+      }
+    ]
+  },
+  "result": null
+}

@@ -5,19 +5,21 @@ ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT))
 sys.path.insert(0,str(ROOT/'assets/validation_v5_12_7'))
 import native_sync
 from caelum_standalone import prepare
-from caelum_sessions import digest
+from caelum_sessions import digest, resource_arguments
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--runtime',type=Path,required=True);p.add_argument('--engine',type=Path,required=True)
+    p.add_argument('--iwad',type=Path,help='Primary game; use the runtime IPK3 for independent integration')
+    p.add_argument('--output',type=Path,help='New evidence directory')
     p.add_argument('--port',type=int,default=32546)
     p.add_argument('--scenario',choices=('match','overtime','drop'),default='match')
     p.add_argument('--venue',type=int,choices=(0,1),default=0)
     p.add_argument('--reload',type=Path)
     a=p.parse_args()
     a.runtime=a.runtime.resolve(strict=True);a.engine=a.engine.resolve(strict=True)
-    out=ROOT/'build/issue600'/datetime.datetime.now().strftime(f'capture-{a.port}-%Y%m%d-%H%M%S-%f');out.mkdir(parents=True)
-    iw=Path('C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/base/doom2/DOOM2.WAD')
+    out=a.output.resolve() if a.output else ROOT/'build/issue600'/datetime.datetime.now().strftime(f'capture-{a.port}-%Y%m%d-%H%M%S-%f');out.mkdir(parents=True)
+    iw=a.iwad.resolve(strict=True) if a.iwad else Path('C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/base/doom2/DOOM2.WAD')
     addon=out/'checks.pk3'
     members=native_sync.instrument({'ZSCRIPT':b'version "4.14.2"\n#include "match_probe.zs"\n',
             'MAPINFO':b'gameinfo { AddEventHandlers="CA600MatchProbe" }\n',
@@ -26,7 +28,7 @@ def main():
         for name,data in members.items():
             z.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),data)
     packages=[a.runtime,addon]
-    base=[str(a.engine),'-noautoload','-iwad',str(iw),'-file',*map(str,packages)]
+    base=[str(a.engine),'-noautoload',*resource_arguments(iw,packages)]
     r=subprocess.run(base+['-norun','-nosound','-errorlog',str(out/'compile.log'),'-config',str(out/'compile.ini')],stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=60)
     (out/'compile-process.log').write_bytes(r.stdout)
     if r.returncode!=1337:
@@ -36,7 +38,7 @@ def main():
         print('\n'.join(line for line in lines[start:] if not line.startswith('Vulkan extensions:')))
         return 1
     processes=[];streams=[];commands=[];error=None
-    startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
+    startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=4
     try:
         for slot in range(4):
             selection=dict(role=min(slot,1),mode=2,preset=slot,players=4,port=a.port,venue=a.venue,

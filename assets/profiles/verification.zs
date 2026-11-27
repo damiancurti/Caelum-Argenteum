@@ -33,6 +33,6 @@ class CaelumTransferVerification : StaticEventHandler
         if(!Ready || Saved || consoleplayer!=0)return;
         Saved=true;
         let manager=SavegameManager.GetManager();manager.ReadSaveStrings();
-        manager.InsertNewSaveNode();manager.DoSave(0,"Caelum verified profile transfer");manager.RemoveNewSaveNode();
+        manager.InsertNewSaveNode();manager.DoSave(0,"CA_TRANSFER_CHECKPOINT_TITLE");manager.RemoveNewSaveNode();
     }
 }

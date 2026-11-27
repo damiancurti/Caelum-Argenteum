@@ -6,31 +6,38 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The independent beta uses GZDoom installed separately; it requires no Doom IWAD.
 
-**Current release: 5.18.1.** #467 implements independent startup, owned missing
-effects/compatibility resources and deterministic IPK3 packaging. Native tests
-start without commercial IWADs, preserve player input/inventory and migrate
-matching saves through copies. Evidence: assets/validation_v5_18_1. Art, voices
-and installation await CA467-STARTUP-01 and the consolidated author terminal;
-#468 integrated validation and #469 complete delivery remain in progress.
+**Current release: 5.18.2.** #468 integrates the approved independent
+MAP01-MAP03 review beta with the existing profile/multiplayer launchers. The
+IPK3 is loaded once as the primary game, manifests describe actual loaded
+packages, and fresh controls come from the packaged authoritative preset.
+Transfer verification selects its own checkpoint even when native admission
+also writes a narrative save; both files are preserved.
+Evidence: assets/validation_v5_18_2. The later campaign remains unauthored;
+Internet/separate-machine play, siege fluency and final author acceptance are
+not established. #469 prepares the complete review artifacts and terminal.
+
+#467 implemented own bootstrap/resources, deterministic filtered packaging and
+copy-only matching-map save conversion. Its native/static/launcher evidence is
+retained in assets/validation_v5_18_1. CA467-STARTUP-01 remains pending.
 
 #466 inventories recorded origins/permissions for every source runtime member
 and identifies the remaining independent-startup dependencies. Five development
 maps will be excluded from distribution; their sources remain intact. Evidence:
-assets/validation_v5_18_0 and assets/distribution. This is an audit; #467 startup,
-#468 integrated validation and #469 review-beta delivery remain in progress.
+assets/validation_v5_18_0 and assets/distribution. The subsequent #467 startup
+and #468 integration evidence are recorded above; #469 delivery remains in progress.
 Author attribution acceptance is pending CA466-RIGHTS-01.
 
 #465 adds Credits to the native main menu, completes six missing font
 characters and repairs general Spanish/physics localization coverage. Existing
 glyphs, icons, scaling and save state are preserved. Evidence:
 assets/validation_v5_17_126. CA465-UI-01 awaits the consolidated author terminal;
-standalone dependency, startup, validation and delivery work continues #466-469.
+independent-beta delivery continues under #469.
 
 #464 verifies the retained prologue audio: 131 decoded recordings, 19 future
 tracks still reserved, and native music/volume/dialogue/travel/save checks.
 Audio bytes and assignments remain unchanged. Evidence is in
 assets/validation_v5_17_125; CA464-AUDIO-01 awaits the final author terminal.
-The remaining independent-beta work is #465-469.
+The remaining independent-beta delivery work is #469.
 
 #460 adds timed chair/bed/floor transitions and eating/drinking gestures on the
 retained supported modular body. The shield stays visible and the weapon visual
@@ -4575,7 +4582,7 @@ For maintained docs longer than 5,000 words, query
 
 Rebuild the PK3 after updating; launching an old PK3 keeps old code. The commands
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` must identify
-**5.18.1**. Independent package-identity conversion is documented above.
+**5.18.2**. Independent package-identity conversion is documented above.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. Check `GZDOOM_EXE` and `DOOM2_IWAD` in that file on

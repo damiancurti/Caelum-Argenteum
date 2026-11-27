@@ -4,15 +4,22 @@ The engine builds the world. No existing save, character or map is replaced, and
 the vacancy mode does not grant development equipment or create playable profiles.
 """
 from __future__ import annotations
-import argparse,hashlib,json,subprocess,time
+import argparse,hashlib,json,re,subprocess,time,zipfile
 from pathlib import Path
 from caelum_profiles import ProfileStore,ProfileError,validate_anchor
 from caelum_profile_graph import NativeSchema,PersonalGraph
 from caelum_campaigns import Campaigns,unpack,personal_record,require_world_ledger
+from caelum_sessions import resource_arguments
 
 def create_vacant_save(engine: Path,iwad: Path,packages: list[Path],players: int,directory: Path,port: int=31135) -> Path:
     if type(players) is not int or not 1<=players<=8:raise ProfileError('Vacant campaigns support one to eight native slots.')
     directory.mkdir(parents=True,exist_ok=False)
+    config_section='Doom'
+    if zipfile.is_zipfile(iwad):
+        with zipfile.ZipFile(iwad) as primary:
+            if 'IWADINFO' in primary.namelist():
+                match=re.search(r'\bConfig\s*=\s*"([A-Za-z0-9_]+)"',primary.read('IWADINFO').decode('utf-8-sig'))
+                if match:config_section=match[1]
     processes=[];streams=[];peers=[];commands=[];result=None
     startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
     try:
@@ -21,9 +28,9 @@ def create_vacant_save(engine: Path,iwad: Path,packages: list[Path],players: int
             config=peer/'bootstrap.ini'
             config.write_text('[GlobalSettings]\nvid_preferbackend=1\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\nsnd_mastervolume=0.05\n'
                 'vid_fullscreen=false\nvid_defwidth=640\nvid_defheight=480\nwin_w=656\nwin_h=519\n'
-                '[Doom.LocalServerInfo.Mod]\nca_profile_bootstrap=true\n',encoding='utf-8')
+                f'[{config_section}.LocalServerInfo.Mod]\nca_profile_bootstrap=true\n',encoding='utf-8')
             network=[] if players==1 else ['-host',str(players),'-netmode','0','-port',str(port)] if slot==0 else ['-join',f'127.0.0.1:{port}','-port',str(port+slot)]
-            cmd=[str(engine),'-noautoload','-iwad',str(iwad),'-file',*[str(p) for p in packages],'-config',str(config),'-savedir',str(peer),'-window','-width','640','-height','480',*network,'+logfile',str(peer/'engine.log'),'+set','ca_profile_bootstrap','true','-warp','1']
+            cmd=[str(engine),'-noautoload',*resource_arguments(iwad,packages),'-config',str(config),'-savedir',str(peer),'-window','-width','640','-height','480',*network,'+logfile',str(peer/'engine.log'),'+set','ca_profile_bootstrap','true','-warp','1']
             commands.append(cmd);stream=(peer/'process.log').open('wb');streams.append(stream)
             processes.append(subprocess.Popen(cmd,cwd=peer,startupinfo=startup,stdout=stream,stderr=stream));time.sleep(.4)
         deadline=time.monotonic()+120;last=None

@@ -1,0 +1,23 @@
+{
+  "issue": 468,
+  "passed": true,
+  "checks": [
+    "primary-only and overlay arguments use absolute paths",
+    "independent manifest records five native resources, zero additional packages",
+    "equivalent relative/absolute resource identity accepted",
+    "changed resource identity rejected",
+    "development IWAD keeps separate runtime and six-resource manifest",
+    "native narrative save retained while verifier checkpoint selected",
+    "incomplete native archive ignored while writer finishes",
+    "foreign title not selected",
+    "ambiguous verification refuses publication",
+    "affected Python syntax"
+  ],
+  "sources": {
+    "caelum_sessions.py": "b7d0b2c2ab73791ee811cb114f6d86b4149021f37ee2a6cfd5b25432c49319e2",
+    "caelum_standalone.py": "c2a47b4f7f61b934e002eab1fee3818416e12de65c0d796aa74668d903082268",
+    "caelum_new_campaign.py": "042195ca79620d1f50088ea85f79e681ecd7368bf451b9d4fe529a2d3e371744",
+    "caelum_transfer_verify.py": "53357d74935ed826dcadcdd0ad5fd72edc88c131c63b738321c37a20f1463072"
+  },
+  "author_acceptance": false
+}

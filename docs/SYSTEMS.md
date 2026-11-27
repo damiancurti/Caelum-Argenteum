@@ -1,6 +1,37 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.18.1** - 2026-11-26.
+Documentation version: **5.18.2** - 2026-11-26.
+
+## 5.18.2 - Independent profile and mode launch integration (#468)
+
+The logical package list retains its first runtime entry for native schema and
+control readers. Actual engine arguments and session manifests omit that entry
+from -file when it is already the primary -iwad IPK3. Extra overlays retain their
+order. A primary-only game omits -file entirely. Legacy development IWAD/package
+arguments and revision-1 manifest semantics remain unchanged; mismatched hashes,
+counts or ordering still refuse a session. Existing session records are never
+silently rewritten for a different runtime.
+
+Vacant-campaign preparation reads the primary IPK3's IWADINFO Config name for
+its native bootstrap preference. Fresh multiplayer menu controls are extracted
+from the packaged KEYCONF preset instead of a source-checkout-only file. Native
+slots, consent, ownership, match rules, inventories and saved gameplay schemas
+are unchanged. Managed tools still require Python; fresh solo engine play does
+not. Original profile stores and checkpoints remain the recovery source.
+
+Native transfer verification labels its own checkpoint with that attempt's
+nonce and selects the matching save title. A separate narrative checkpoint may
+be written during admission and is retained. Incomplete saves are retried;
+multiple matching verifier checkpoints refuse publication. The original native
+identity, checksum, common-roster and atomic custody checks remain mandatory.
+An active conversation still blocks transfer until closed through native input.
+
+Integration fixtures reuse the retained cooperative, PvP, Trucazo, prologue audio
+and finale-predicate assertions. Disposable legacy test rooms may select owned
+CMST01 surfaces when using the independent primary game; their geometry and
+assertions remain unchanged, and these rooms are never distributed. Loopback
+peers on one computer do not establish Internet or separate-machine behavior.
+The 78-essence/+250 predicate remains separate from unauthored later scenes.
 
 ## 5.18.1 - Independent runtime and save identities (#467)
 

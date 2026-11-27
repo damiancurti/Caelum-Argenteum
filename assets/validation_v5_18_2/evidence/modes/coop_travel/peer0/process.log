@@ -1,0 +1,96 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-26 22:50:38
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 437 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue467-final04/caelum_argenteum.ipk3, 19055 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue468-matrix01/coop_travel/checks.pk3, 6 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+No GENMIDI lump found. OPL playback not available.
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2604.35 ms
+R_Init: Init CaelumArgenteum refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+using alternate port 32910
+Console player number: 0
+Got connect from node 1.
+Sending all here.
+Go
+Total players: 2
+Selected peer to peer networking mode. (forced)
+Found Player (node 1, player 2)
+player 1 of 2 (2 nodes)
+Use changemap instead. Map is for single-player only.
+
+----------------------------------------
+
+MAP03 - Barracas al Sud — fortified port
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+Player died.
+CA437 PASS traveler starts with an actual native corpse
+
+----------------------------------------
+
+TRESERV - Sewers: reservoir
+
+CA437 PASS map transfer keeps the same dead pawn
+CA437 PASS destination never revives the traveler
+CA437 PASS destination keeps the same personal record
+CA437 PASS destination neither replaces nor duplicates owned inventory
+CA437 PASS absent corpse keeps its original map and remains unavailable
+
+----------------------------------------
+
+MAP03 - Barracas al Sud — fortified port
+
+CA437 PASS return keeps the original player body
+CA437 PASS return restores visible corpse without resurrection
+CA437 PASS corpse returns to its actual death location
+CA437 PASS round trip retains the exact original currency item
+CA437 PASS hub round trip preserves unrelated world stock
+CA437 RESULT peer=0 travel
+A game save is still pending.
+Game saved.
+Save failed
+Player left the game

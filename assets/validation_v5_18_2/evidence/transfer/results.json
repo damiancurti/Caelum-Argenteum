@@ -1,0 +1,184 @@
+{
+  "issue": 435,
+  "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03",
+  "runs": [
+    {
+      "token": "outbound",
+      "native": [
+        {
+          "campaign": "a",
+          "players": 1,
+          "commands": [
+            [
+              "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\outbound\\source\\verification.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\outbound\\source\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\outbound\\source\\peer0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\outbound\\source\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\outbound\\source\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "640",
+              "-height",
+              "480"
+            ]
+          ],
+          "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\outbound\\source\\peer0\\save00.zds",
+          "checkpoint_title": "Caelum verified profile transfer 234787062",
+          "snapshot": "d22a602f160f6f4efe8e2f3889fc58fe3e0175021cc73febb8a8a20550a9333a",
+          "passed": true
+        },
+        {
+          "campaign": "b",
+          "players": 1,
+          "commands": [
+            [
+              "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\outbound\\destination\\verification.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\outbound\\destination\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\outbound\\destination\\peer0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\outbound\\destination\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\outbound\\destination\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "640",
+              "-height",
+              "480"
+            ]
+          ],
+          "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\outbound\\destination\\peer0\\save01.zds",
+          "checkpoint_title": "Caelum verified profile transfer 315143487",
+          "snapshot": "1230a6cfb6c33186e6ad1530cd606bc36a2e41ff8c7c43454080ca3724242974",
+          "passed": true
+        }
+      ],
+      "published": {
+        "identity": "a03b9ba5-0c9d-4f70-82c1-a862e6bc40ab",
+        "campaign": "b",
+        "revision": 1,
+        "source_snapshot": "d22a602f160f6f4efe8e2f3889fc58fe3e0175021cc73febb8a8a20550a9333a",
+        "destination_snapshot": "1230a6cfb6c33186e6ad1530cd606bc36a2e41ff8c7c43454080ca3724242974"
+      }
+    },
+    {
+      "token": "return",
+      "native": [
+        {
+          "campaign": "b",
+          "players": 1,
+          "commands": [
+            [
+              "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\source\\verification.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\source\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\source\\peer0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\source\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\source\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "640",
+              "-height",
+              "480"
+            ]
+          ],
+          "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\source\\peer0\\save00.zds",
+          "checkpoint_title": "Caelum verified profile transfer 1449973801",
+          "snapshot": "b302a62b99ba9494f5052c84d96bd197c3201c4accc25530dca21611ca13e052",
+          "passed": true
+        },
+        {
+          "campaign": "a",
+          "players": 1,
+          "commands": [
+            [
+              "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-review01\\caelum_argenteum.ipk3",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\destination\\verification.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\destination\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\destination\\peer0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\destination\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\destination\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "640",
+              "-height",
+              "480"
+            ]
+          ],
+          "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\return\\destination\\peer0\\save00.zds",
+          "checkpoint_title": "Caelum verified profile transfer 383826644",
+          "snapshot": "02dd7319c8ded6584d24ee97459835fd4ae890abb47f7e236cec4f9df47ff8f5",
+          "passed": true
+        }
+      ],
+      "published": {
+        "identity": "a03b9ba5-0c9d-4f70-82c1-a862e6bc40ab",
+        "campaign": "a",
+        "revision": 2,
+        "source_snapshot": "b302a62b99ba9494f5052c84d96bd197c3201c4accc25530dca21611ca13e052",
+        "destination_snapshot": "02dd7319c8ded6584d24ee97459835fd4ae890abb47f7e236cec4f9df47ff8f5"
+      }
+    }
+  ],
+  "native_vacancy": true,
+  "native_play": {
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue468-transfer03\\imported-play",
+    "checks": 2,
+    "recovery": {
+      "status": "closed",
+      "recovery": {
+        "identity": "b",
+        "revision": 2,
+        "snapshot": "2d4637d247aaa387812936a576a830a26047f7960b269aaaaf37956d7505de04"
+      }
+    },
+    "passed": true
+  },
+  "admission": [
+    "a vacant normal launch refused",
+    "b occupied normal session prepared",
+    "b vacant normal launch refused",
+    "a occupied normal session prepared"
+  ],
+  "passed": true,
+  "author_acceptance": false
+}
