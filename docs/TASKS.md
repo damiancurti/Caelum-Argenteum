@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.126** - 2026-11-26.
+Documentation version: **5.18.0** - 2026-11-26.
+
+## 5.18.0 - Standalone dependency/provenance audit (#466)
+
+Inventory and source-term decisions are implemented; native/bootstrap evidence
+is retained under assets/validation_v5_18_0. CA466-RIGHTS-01 adds final attribution
+review without accepting any earlier author check. #467 resolves the enumerated
+palette/episode, effects, voice, sky/switch and menu resources and implements
+filtered deterministic packaging. #468 integrates approved prologue/mode/save
+checks; #469 prepares the complete review beta and consolidated visible terminal.
+No public-store launch, later campaign authoring or pending visual acceptance
+is inferred. Each remaining issue retains separate commits/tests/PRs.
 
 ## 5.17.126 - Native credits and presentation coverage (#465)
 

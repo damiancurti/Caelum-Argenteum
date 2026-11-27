@@ -1,6 +1,29 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.126** - 2026-11-26.
+Documentation version: **5.18.0** - 2026-11-26.
+
+## 5.18.0 - Standalone dependency/provenance audit (#466, 2026-11-26)
+
+Recorded 19,053 src members, per-file origin/permission locators and planned
+release disposition. Five authoritative test-map entries are excluded from the
+planned distribution; sources remain intact. Preserved source-specific rights,
+audio bytes and author-confirmed permissions. Public Pixabay checks now confirm
+the two retained pain-source license labels; the former blocked lookup and
+2026-10-01 author confirmation remain historical evidence.
+
+Native GZDoom 4.14.2 without a commercial IWAD first exposed missing PLAYPAL,
+then missing episode setup. Diagnostic grayscale palette/episode permitted a
+58-texture probe: 12 missing, 46 resolving; native blood defaults confirmed.
+Three missing menu headers produce nonfatal parser warnings. The first scripted
+probe incorrectly terminated on those warnings; the corrected second probe
+completed with exit 0. Static engine review additionally identifies FAXE frames
+and inherited player aliases. All findings remain separate from #467 fixes.
+No diagnostic bootstrap is distributable. Evidence: assets/validation_v5_18_0.
+Full static validation passed with zero errors, and package members match the
+regenerated inventory byte for byte. One early final probe started before build
+completion and was rejected; the retained final probe waited for builder exit 0.
+The runner now rejects missing/invalid packages before launching the engine.
+CA466-RIGHTS-01 and all prior author checks remain pending; no manual acceptance.
 
 ## 5.17.126 - Native credits and presentation coverage (#465)
 

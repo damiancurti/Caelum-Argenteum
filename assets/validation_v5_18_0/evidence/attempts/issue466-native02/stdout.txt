@@ -1,0 +1,119 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-26 20:53:17
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue466-native02/probe.ipk3, 3 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue465-review01.pk3, 19053 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue466-native02/checks.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+No GENMIDI lump found. OPL playback not available.
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2478.18 ms
+R_Init: Init CaelumArgenteumAudit refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+Script error, "gzdoom.pk3:menudef.txt" line 211:
+Unknown texture M_EPISOD
+Script error, "gzdoom.pk3:menudef.txt" line 237:
+Unknown texture M_NEWG
+Script error, "gzdoom.pk3:menudef.txt" line 246:
+Unknown texture M_SKILL
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading default status bar definition.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+CA466 TEXTURE BLUDA0 0
+CA466 TEXTURE BLUDB0 0
+CA466 TEXTURE BLUDC0 0
+CA466 TEXTURE CACVROCK 1
+CA466 TEXTURE CAPODR 1
+CA466 TEXTURE CAPOOL01 1
+CA466 TEXTURE CASWRFLR 1
+CA466 TEXTURE CASWRPIP 1
+CA466 TEXTURE CASWRWAL 1
+CA466 TEXTURE CMCL01 1
+CA466 TEXTURE CMDR03 1
+CA466 TEXTURE CMEX01 1
+CA466 TEXTURE CMGR01A 1
+CA466 TEXTURE CMGR02 1
+CA466 TEXTURE CMGR03 1
+CA466 TEXTURE CMGT02 1
+CA466 TEXTURE CMIN01 1
+CA466 TEXTURE CMPLS36 1
+CA466 TEXTURE CMPNL36 1
+CA466 TEXTURE CMPW01 1
+CA466 TEXTURE CMRF01 1
+CA466 TEXTURE CMRLBAL 1
+CA466 TEXTURE CMSHT36 1
+CA466 TEXTURE CMSP03 1
+CA466 TEXTURE CMST01 1
+CA466 TEXTURE CMST02 1
+CA466 TEXTURE CMST03 1
+CA466 TEXTURE CMST04 1
+CA466 TEXTURE CMTB02 1
+CA466 TEXTURE CMTB04 1
+CA466 TEXTURE CMWD01 1
+CA466 TEXTURE CMWD03 1
+CA466 TEXTURE CVCI01 1
+CA466 TEXTURE CVCI02 1
+CA466 TEXTURE CVCI03 1
+CA466 TEXTURE CVCI04 1
+CA466 TEXTURE CVCI06 1
+CA466 TEXTURE CVPL01 1
+CA466 TEXTURE CVPL02 1
+CA466 TEXTURE CVPL03 1
+CA466 TEXTURE CVPL04 1
+CA466 TEXTURE CVPL05 1
+CA466 TEXTURE CVPL06 1
+CA466 TEXTURE CVPO01 1
+CA466 TEXTURE CVPO02 1
+CA466 TEXTURE CVPO03 1
+CA466 TEXTURE CVPO04 1
+CA466 TEXTURE CVPO05 1
+CA466 TEXTURE CVPO06 1
+CA466 TEXTURE F_SKY1 0
+CA466 TEXTURE M_EPISOD 0
+CA466 TEXTURE M_NEWG 0
+CA466 TEXTURE M_SKILL 0
+CA466 TEXTURE PUFFA0 0
+CA466 TEXTURE PUFFB0 0
+CA466 TEXTURE PUFFC0 0
+CA466 TEXTURE PUFFD0 0
+CA466 TEXTURE SW1EXIT 0
+CA466 BLOOD player Blood BloodSplatter AxeBlood
+CA466 BLOOD combat Blood BloodSplatter AxeBlood
+CA466 COMPLETE

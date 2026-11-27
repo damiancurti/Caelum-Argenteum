@@ -1551,3 +1551,10 @@ assets/validation_v5_17_123/*.ps1 text eol=lf diff
 assets/validation_v5_17_123/*.zs text eol=lf diff
 assets/validation_v5_17_123/*.json text eol=lf diff
 assets/validation_v5_17_123/*.html text eol=lf diff
+
+# Reproducible dependency inventory and retained native audit (#466).
+assets/distribution/*.json text eol=lf diff
+assets/generators/audit_distribution.py text eol=lf diff
+assets/validation_v5_18_0/** -text -diff
+assets/validation_v5_18_0/*.py text eol=lf diff
+/src/licenses/AUDIO_ISSUE_31_CREDITS.md -text whitespace=cr-at-eol

@@ -47,10 +47,10 @@ The existing MAP01/MAP02 tracks remain **The Argentine Omen** by `marjaja197`
 
 | Actor / voice profile | Runtime file | Verified credited creator | Source URL | Displayed terms |
 | --- | --- | --- | --- | --- |
-| Mandinga | `sounds/caelum/enemies/mandinga/ca_mandinga_pain.ogg` | **PhatPhrogStudio** | https://pixabay.com/sound-effects/horror-demon-voice-damage-grunt-503867/ | Pixabay asset 503867; displayed license/terms not recorded in the author's update. |
+| Mandinga | `sounds/caelum/enemies/mandinga/ca_mandinga_pain.ogg` | **PhatPhrogStudio** | https://pixabay.com/sound-effects/horror-demon-voice-damage-grunt-503867/ | Pixabay Content License; author confirmed 2026-10-01, public page checked 2026-11-26 (#466). |
 | Male human / male Caelith, Argento, Ronnie | `sounds/caelum/player/pain/ca_player_pain_male.ogg` | **Snaginneb** | https://dev.creazilla.com/media/audio/15427820/gruntsound | Author-supplied screenshot: Author Snaginneb, Source Freesound.org, Public Domain (CC0). Original Freesound URL not yet verified. |
 | Female human / female Caelith, Caella | `sounds/caelum/player/pain/ca_player_pain_female.ogg` | **freesman** | https://directory.audio/es/efectos-de-sonido/gente/36688-mujer-gritos-de-dolor | Directory.audio asset 36688 displayed as CC0. |
-| Bull | `sounds/caelum/enemies/bull/ca_bull_pain_01.ogg` through `ca_bull_pain_12.ogg` | **53439420** | https://pixabay.com/sound-effects/people-weird-bull-bellow-451598/ | Pixabay asset 451598; displayed account name retained for all variants. Displayed license/terms not recorded in the author's update. |
+| Bull | `sounds/caelum/enemies/bull/ca_bull_pain_01.ogg` through `ca_bull_pain_12.ogg` | **53439420** | https://pixabay.com/sound-effects/people-weird-bull-bellow-451598/ | Pixabay Content License; author confirmed 2026-10-01, public page checked 2026-11-26 (#466). Credited account retained for all variants. |
 | Zupay | `sounds/caelum/enemies/zupay/ca_zupay_pain.ogg` | **Brorsan Beppe** | https://www.summerengine.com/asset-store/sfx-deep-monstrous-demon-boss-roar-433fab20 | Author-supplied screenshot: Creator Brorsan Beppe, License CC0, Generated via ElevenLabs sound_effects, source Summerengine. |
 
 Rulo remains silent for combat pain; it is not assigned the human profile.
@@ -96,9 +96,13 @@ mechanism; the full sequence is never played for one injury.
   downloaded these assets under the Pixabay Content License and authorizes
   their inclusion integrated into this playtest under that license.
   License reference: https://pixabay.com/service/license-summary/ .
-  This records the author's source/terms confirmation; the independent
-  automated lookup was blocked by the website. No standalone sound library
-  or new CC0 license is granted by this project.
+  The original automated lookup was blocked; a public-page check on
+  2026-11-26 (#466) independently confirmed the displayed source accounts and
+  Pixabay Content License labels. The terms at https://pixabay.com/service/terms/
+  (dated 2026-10-20) permit integration into creative works subject to their
+  restrictions, including no standalone stock resale/distribution or ownership
+  misrepresentation. Other rights are not guaranteed by that label. No
+  standalone sound library or new CC0 license is granted by this project.
 
 ## Existing credits
 

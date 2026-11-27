@@ -4,6 +4,24 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-281 - Separate standalone startup evidence from dependency inventory
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #466 / 5.18.0,
+2026-11-26, Windows 11 / GZDoom 4.14.2. Evidence: assets/validation_v5_18_0.
+
+A custom IPK3 needs its own palette and episode setup before gameplay resources
+can be audited. Use disposable bootstrap fixtures and explicitly exclude them
+from production. Successful script compilation with a Doom development IWAD
+does not prove independent resource completeness. Check native texture lookup,
+inherited actor defaults, base-menu resources and source map texture references.
+A legacy resource name is not proof of copied artwork: inspect its actual source.
+
+GZDoom prints three missing native menu headers as "Script error" but continues
+initialization. An audit runner must distinguish these known nonfatal findings
+from fatal parsing/VM errors, and require a completion marker plus process exit
+status. Process disappearance alone is not an exit-code record. Preserve failed
+probe evidence and do not treat a diagnostic grayscale palette as approved art.
+
 ## CA-KP-280 - Preserve complete font folders in diagnostic overlays
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #465 / 5.17.126,

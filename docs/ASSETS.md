@@ -1,6 +1,43 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.126** - 2026-11-26.
+Documentation version: **5.18.0** - 2026-11-26.
+
+## 5.18.0 - Distribution origins and dependency decisions (#466)
+
+assets/distribution/ORIGINS.json records source-specific permission categories;
+INVENTORY.json records every src file's hash, size, origin decision, exact
+metadata locators, distribution disposition and affected dependency IDs.
+Resolve provenance as the union of the decision's references and per-file
+additional_provenance. Broad project categories preserve recorded author/source
+claims; they do not certify third-party ownership. The audit found 19,053 src
+files, 13,718 with exact hash/path metadata, including 131 audio files checked
+against #464. Five map-catalogue test WADs are excluded from the planned release.
+All source files remain retained. Regenerate with
+`python assets/generators/audit_distribution.py`; `--check` rejects stale output.
+Hashes describe actual source/package bytes, not normalized Git blobs. A checkout
+that changes text line endings needs a regenerated inventory before packaging;
+the retained evidence identifies the exact tested package independently.
+
+Keep DejaVu/Bitstream Vera, MakeHuman CC0, CC BY audio, Pixabay Content License
+and documented creator permissions separate from the root project rights.
+The Pixabay pages for PhatPhrogStudio asset 503867 and 53439420 asset 451598
+were checked on 2026-11-26; their displayed terms confirm the author's existing
+2026-10-01 inclusion decision. AUDIO_ISSUE_31_CREDITS.md now removes the stale
+unrecorded-terms wording while preserving historical verification limits.
+No sound bytes, music assignments or permissions were changed. Existing
+Freesound preview-source quality limits remain applicable before final public
+release; the author selected these recordings for the present review beta.
+
+A disposable grayscale PLAYPAL and minimal episode permit an isolated native
+audit, not a production palette/art choice. Of 58 native texture lookups, 12
+are missing: BLUD A-C, PUFF A-D, F_SKY1, SW1EXIT and three native menu headers.
+Player and combat-actor defaults retain Blood/BloodSplatter/AxeBlood; static
+engine inspection also identifies FAXE F-K and inherited player voice aliases.
+DEPENDENCIES.json retains scope/evidence/decisions. #467 must resolve those
+resources using owned material and native functions while retaining state/model
+bindings, timing, voices, map geometry and save compatibility. GENMIDI is an
+optional unused OPL capability, not a reason to distribute Doom data. GZDoom's
+own installed support resources remain external. Author review is pending.
 
 ## 5.17.126 - Native credits and presentation coverage (#465)
 

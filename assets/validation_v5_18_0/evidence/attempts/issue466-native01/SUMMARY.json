@@ -1,0 +1,11 @@
+{
+  "issue": 466,
+  "runtime_sha256": "88fdc1987a6d0d4c9a6fbd1e22200637bcad768d97a9c9e006591ec6f6eaf96c",
+  "exit": 1,
+  "completed": false,
+  "texture_results": {},
+  "missing_textures": [],
+  "blood_defaults": [],
+  "commercial_iwad_loaded": false,
+  "scope": "Diagnostic bootstrap only; missing resources are findings, not resolved production behavior."
+}

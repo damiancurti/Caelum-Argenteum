@@ -1,6 +1,16 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.126** - 2026-11-26.
+Documentation version: **5.18.0** - 2026-11-26.
+
+## 5.18.0 - Dependency audit boundary (#466)
+
+No gameplay, balance, map geometry, inventory or saved-state schema changes.
+Native audit identifies inherited Blood/BloodSplatter/AxeBlood and player sound
+aliases that the independent startup patch must resolve without altering their
+ownership/timing contracts. Existing true-color art and state/model identifiers
+remain the compatibility baseline. The five catalogue test maps stay in source
+and development builds; #467 excludes their WADs from distribution. The audit's
+gray palette/episode are disposable fixtures, never the game delivery.
 
 ## 5.17.126 - Native credits and presentation coverage (#465)
 
