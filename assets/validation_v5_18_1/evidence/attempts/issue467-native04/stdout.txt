@@ -1,0 +1,145 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-26 21:31:08
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue467-dist03/caelum_argenteum.ipk3, 19054 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue467-native04/checks.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+No GENMIDI lump found. OPL playback not available.
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2480.02 ms
+R_Init: Init CaelumArgenteum refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+CA467 PASS texture BLUDA0
+CA467 PASS texture BLUDB0
+CA467 PASS texture BLUDC0
+CA467 PASS texture CACVROCK
+CA467 PASS texture CAPODR
+CA467 PASS texture CAPOOL01
+CA467 PASS texture CASWRFLR
+CA467 PASS texture CASWRPIP
+CA467 PASS texture CASWRWAL
+CA467 PASS texture CMCL01
+CA467 PASS texture CMDR03
+CA467 PASS texture CMEX01
+CA467 PASS texture CMGR01A
+CA467 PASS texture CMGR02
+CA467 PASS texture CMGR03
+CA467 PASS texture CMGT02
+CA467 PASS texture CMIN01
+CA467 PASS texture CMPLS36
+CA467 PASS texture CMPNL36
+CA467 PASS texture CMPW01
+CA467 PASS texture CMRF01
+CA467 PASS texture CMRLBAL
+CA467 PASS texture CMSHT36
+CA467 PASS texture CMSP03
+CA467 PASS texture CMST01
+CA467 PASS texture CMST02
+CA467 PASS texture CMST03
+CA467 PASS texture CMST04
+CA467 PASS texture CMTB02
+CA467 PASS texture CMTB04
+CA467 PASS texture CMWD01
+CA467 PASS texture CMWD03
+CA467 PASS texture CVCI01
+CA467 PASS texture CVCI02
+CA467 PASS texture CVCI03
+CA467 PASS texture CVCI04
+CA467 PASS texture CVCI06
+CA467 PASS texture CVPL01
+CA467 PASS texture CVPL02
+CA467 PASS texture CVPL03
+CA467 PASS texture CVPL04
+CA467 PASS texture CVPL05
+CA467 PASS texture CVPL06
+CA467 PASS texture CVPO01
+CA467 PASS texture CVPO02
+CA467 PASS texture CVPO03
+CA467 PASS texture CVPO04
+CA467 PASS texture CVPO05
+CA467 PASS texture CVPO06
+CA467 PASS texture FAXEF0
+CA467 PASS texture FAXEG0
+CA467 PASS texture FAXEH0
+CA467 PASS texture FAXEI0
+CA467 PASS texture FAXEJ0
+CA467 PASS texture FAXEK0
+CA467 PASS texture F_SKY1
+CA467 PASS texture M_EPISOD
+CA467 PASS texture M_NEWG
+CA467 PASS texture M_SKILL
+CA467 PASS texture PUFFA0
+CA467 PASS texture PUFFB0
+CA467 PASS texture PUFFC0
+CA467 PASS texture PUFFD0
+CA467 PASS texture SW1EXIT
+CA467 PASS texture SW2EXIT
+CA467 PASS retained native forward input
+CA467 PASS retained native sideways input
+CA467 PASS prologue maps included
+CA467 PASS five development maps excluded
+CA467 PASS all thirty notices indexed
+Captured title.png
+
+----------------------------------------
+
+MAP01 - La mansión
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA467 PASS native project player
+CA467 PASS no inherited Doom starting inventory
+CA467 PASS native blood ownership retained
+CA467 PASS character identity available
+CA467 PASS male profile native voice class
+CA467 SOUND male any=1 alias=1 concrete=0
+CA467 FAIL male death uses retained recording
+CA467 PASS female profile native voice class
+CA467 SOUND female any=1 alias=1 concrete=0
+CA467 FAIL female death uses retained recording
+CA467 PASS legacy native voice class repaired
+CA467 PASS voice repair idempotent
+CA467 PASS native mansion loaded
+CA467 WORLD COMPLETE
+Captured mansion.png
+Partida guardada.
+CA467 COMPLETE

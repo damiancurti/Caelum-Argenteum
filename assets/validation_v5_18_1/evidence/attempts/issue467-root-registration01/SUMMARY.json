@@ -1,0 +1,15 @@
+{
+  "issue": 467,
+  "registration_overlay": true,
+  "map": "MAP01",
+  "loaded_save": null,
+  "package_sha256": "e879bf93a83e52acf7719b049d03b0c4c1589d4ca038a928988e27bc3b4a1d60",
+  "unchanged": true,
+  "exit": 0,
+  "passed_checks": 100,
+  "failures": [],
+  "completed": true,
+  "commercial_iwad_loaded": false,
+  "native_voice_targets_verified": 60,
+  "saved": true
+}

@@ -18,6 +18,7 @@ from assets.generators.generate_campaign_finale_data import render as campaign_f
 from assets.generators.validate_character_modules import validate as character_module_problems
 from assets.generators.validate_rest_motion import validate as rest_motion_problems
 from assets.generators.generate_presentation_465 import generate as presentation_data
+from assets.generators.generate_standalone_467 import generate as standalone_data
 from assets.generators.validate_inventory_coin_models import validate as inventory_coin_problems
 from assets.generators.validate_inventory_consumable_models import validate as inventory_consumable_problems
 from assets.generators.validate_inventory_water_models import validate as inventory_water_problems
@@ -162,6 +163,9 @@ def validate(root):
     for name, expected in presentation_data(root).items():
         if not (root/name).is_file() or (root/name).read_bytes() != expected:
             errors.append('Stale generated presentation: '+name)
+    for name, expected in standalone_data(root).items():
+        if not (root/name).is_file() or (root/name).read_bytes() != expected:
+            errors.append('Stale generated standalone resource: '+name)
     errors.extend(inventory_coin_problems(root))
     errors.extend(inventory_consumable_problems(root))
     errors.extend(inventory_water_problems(root))

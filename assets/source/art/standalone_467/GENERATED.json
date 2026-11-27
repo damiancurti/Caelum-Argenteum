@@ -1,0 +1,17 @@
+{
+  "issue": 467,
+  "outputs": {
+    "src/graphics/caelum/vfx/standalone_467.png": {
+      "sha256": "ce8ec1979d23a7ed2f5e4ff77d246d7989e3bb8c6acb4c5790ad7d9955190eec",
+      "bytes": 655405
+    },
+    "src/PLAYPAL": {
+      "sha256": "4b4de0b9f9429917e75b73ecbe397d4908026f9c4088837cc97e0a83573c7cdf",
+      "bytes": 768
+    },
+    "src/caelum/data/standalone.textures": {
+      "sha256": "9dca4bba767fca7807134ccb728fccd1c96c36501151600d8a7e7df5c060bd25",
+      "bytes": 3077
+    }
+  }
+}

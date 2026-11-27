@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "issue": 466,
-  "runtime_files": 19053,
-  "metadata_documents": 693,
+  "runtime_files": 19060,
+  "metadata_documents": 698,
   "origin_decisions": "assets/distribution/ORIGINS.json",
   "dependency_findings": "assets/distribution/DEPENDENCIES.json",
   "provenance_resolution": "Union of the decision references and per-file additional_provenance; exact_metadata is traceability, not a license grant.",
@@ -15,19 +15,19 @@
     "maps/TTAROT.wad"
   ],
   "origin_counts": {
-    "project-source": 1053,
+    "project-source": 1058,
     "dejavu-font": 2352,
-    "project-art": 15173,
-    "retained-notice": 29,
+    "project-art": 15174,
+    "retained-notice": 30,
     "human-mesh": 315,
     "source-specific-audio": 131
   },
-  "exact_metadata_files": 13718,
+  "exact_metadata_files": 13721,
   "files": [
     {
       "path": "ANIMDEFS",
-      "sha256": "db4cee4cdfc20f8b5c4cbdd2515ead8988da59a8c7bcf6fadda747211cc33fba",
-      "bytes": 88,
+      "sha256": "50ad01c907e2a6bfacc4a16344f7d9d8b9553244c3acf330aa660dde0de7b689",
+      "bytes": 197,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -3929,12 +3929,36 @@
       "dependency_ids": []
     },
     {
+      "path": "caelum/data/standalone-base.mapinfo",
+      "sha256": "ce0dc454b514a6d8a9dc5c9ce04c554b5836f53ee7fd4c88aff6d136d33d0807",
+      "bytes": 836,
+      "decision": "project-source",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "caelum/data/standalone.mapinfo",
       "sha256": "d11c19885649a3c79bc78a85ead03f05d636d2a480899513dbb80615bbe1b9a1",
       "bytes": 374,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "caelum/data/standalone.textures",
+      "sha256": "9dca4bba767fca7807134ccb728fccd1c96c36501151600d8a7e7df5c060bd25",
+      "bytes": 3077,
+      "decision": "project-source",
+      "additional_provenance": [
+        "assets/source/art/standalone_467/GENERATED.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/standalone_467/GENERATED.json"
+      ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
     },
@@ -5578,8 +5602,8 @@
     },
     {
       "path": "caelum/player/CaelumPlayer.zs",
-      "sha256": "1ba85f55c3c3e2f8c9b829c4c731d5a0ea9411dbf7eb4b7995254fc9687da5f8",
-      "bytes": 461796,
+      "sha256": "2fc27e71198be7be8134eb11e0f86fb0acf7487ece73131f35724dc50628510c",
+      "bytes": 462122,
       "decision": "project-source",
       "additional_provenance": [
         "assets/first_person_v6/VALIDATION.json"
@@ -6547,8 +6571,8 @@
     },
     {
       "path": "caelum/ui/CaelumCreditsData.zs",
-      "sha256": "a7da2f16634450cbf8c17f94755d096d5bd5098152c2c1706e00f9982a5fc771",
-      "bytes": 2016,
+      "sha256": "ddf4d4e88dd4e10f2e28ce037e9487650d2ce220864dbb6464868146d42683d9",
+      "bytes": 2075,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -8015,7 +8039,7 @@
     },
     {
       "path": "caelum/world/CaelumPhysicalHazards.zs",
-      "sha256": "7346c6e87e86ac2f42c55fc73c9c24f7cb5ac1533cab33f46a638621c8c8fcfe",
+      "sha256": "0e4bc959ef54587830e50d9f6bf2aee687e701956d775bd291c5ff26518fddbb",
       "bytes": 20720,
       "decision": "project-source",
       "additional_provenance": [
@@ -8343,7 +8367,7 @@
     },
     {
       "path": "caelum/world/CaelumSewerMaze.zs",
-      "sha256": "16b096656f2d1162488babcadc18d95ee154354ecda7079ba6cbfed285e78e36",
+      "sha256": "c1e89b9a676a7bfeff95687a354938da1c07cc09b732df6414dccbafc5d2fa9d",
       "bytes": 15765,
       "decision": "project-source",
       "additional_provenance": [],
@@ -199496,6 +199520,22 @@
       "dependency_ids": []
     },
     {
+      "path": "graphics/caelum/vfx/standalone_467.png",
+      "sha256": "ce8ec1979d23a7ed2f5e4ff77d246d7989e3bb8c6acb4c5790ad7d9955190eec",
+      "bytes": 655405,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/standalone_467/GENERATED.json",
+        "assets/source/art/standalone_467/REGISTRATION.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/standalone_467/GENERATED.json",
+        "assets/source/art/standalone_467/REGISTRATION.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "graphics/caelum/vfx/statuses.png",
       "sha256": "da1edcd06e71a9bf58aab0a8861248c90b07081355d715258e177764b08a1a55",
       "bytes": 2221643,
@@ -200516,6 +200556,16 @@
       "dependency_ids": []
     },
     {
+      "path": "IWADINFO",
+      "sha256": "71c2b59ebaeefb466dd5174d4a2ea9315666585275ba2847aacdebcac8923e4a",
+      "bytes": 175,
+      "decision": "project-source",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "KEYCONF",
       "sha256": "714b1966a487ac462384036c039e70979a3851a38f546467e7e1fd7b4fe53df9",
       "bytes": 7025,
@@ -200772,6 +200822,16 @@
       "dependency_ids": []
     },
     {
+      "path": "licenses/STANDALONE_467.txt",
+      "sha256": "46a03b5a5aeb6b6c092665b762afe1ccc49f53bf0974eeb47ad6a2cf43d21abd",
+      "bytes": 1508,
+      "decision": "retained-notice",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "licenses/SUPPORT_IMPLEMENTS_578.md",
       "sha256": "90becd14ccc040cdd594094d975f06e2cd1db8ba8c2860e9556ee1639c325bc1",
       "bytes": 770,
@@ -200879,8 +200939,8 @@
     },
     {
       "path": "MAPINFO",
-      "sha256": "ed6422d3c4b175564218434ca9f04bb7b58ca7d5321f328293389450a51710ae",
-      "bytes": 19876,
+      "sha256": "6c18d970ec572563bfa78c9252f9cefbcdf4201bbc6d08c77039ea66375e072c",
+      "bytes": 19981,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -204740,8 +204800,8 @@
     },
     {
       "path": "MENUDEF",
-      "sha256": "a45ee0b9425513016f5434f197db3629bc656feeba18b8047112da7dd8653f5c",
-      "bytes": 9717,
+      "sha256": "290f4579d4491830206c6de7ab0267648fae2616bcc1d6884b7dfcf3f0a71ede",
+      "bytes": 10152,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -224768,6 +224828,20 @@
       "dependency_ids": []
     },
     {
+      "path": "PLAYPAL",
+      "sha256": "4b4de0b9f9429917e75b73ecbe397d4908026f9c4088837cc97e0a83573c7cdf",
+      "bytes": 768,
+      "decision": "project-source",
+      "additional_provenance": [
+        "assets/source/art/standalone_467/GENERATED.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/standalone_467/GENERATED.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "shaders/caelum/rain_cloud.fp",
       "sha256": "215f38b87dc1891d67be5fecdf13f46e0eb7942f892c9c3dcdb4038f39ac12e2",
       "bytes": 497,
@@ -224783,8 +224857,8 @@
     },
     {
       "path": "SNDINFO",
-      "sha256": "4a1b944ec20e6a2c5115edeaefebf04433f7df07abab5605ea7e79cdbf5c84c4",
-      "bytes": 13143,
+      "sha256": "e75ce9dd0bcab1cc6eaa3ed7db264b25da45aacddb6d0604e7589210e3817f28",
+      "bytes": 16904,
       "decision": "project-source",
       "additional_provenance": [
         "assets/source/art/environment_review_881/REVIEW.json"
@@ -258485,6 +258559,16 @@
       ]
     },
     {
+      "path": "TEXTURES.caelum467",
+      "sha256": "510b432890800a28ad28dc6b6583ed36276ef426a7feab0ec589e8c81e175722",
+      "bytes": 126,
+      "decision": "project-source",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "ZSCRIPT",
       "sha256": "fbb6ffc0926bde7c3a6de9662d12609af21acbd5fb36a7a011693e75bc4cbc34",
       "bytes": 31597,
@@ -260354,11 +260438,7 @@
     ]
   },
   "explicit_sprite_prefixes": 3864,
-  "unresolved_explicit_sprites": {
-    "PUFF": [
-      "src/caelum/equipment/CaelumPlayableWeapons.zs"
-    ]
-  },
+  "unresolved_explicit_sprites": {},
   "errors": [],
   "limits": [
     "Recorded origins and author statements are preserved; hash/path matches are not independent legal clearance.",

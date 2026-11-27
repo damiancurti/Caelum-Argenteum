@@ -1,6 +1,34 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.18.0** - 2026-11-26.
+Documentation version: **5.18.1** - 2026-11-26.
+
+## 5.18.1 - Independent runtime and save identities (#467)
+
+Windows 11 / external GZDoom 4.14.2 starts the independent IPK3 without a Doom
+IWAD. Native engine classes/input remain authoritative; no balance, geometry,
+inventory consumption, state timing or gameplay schema changes. Existing native
+PlayerPawn.SoundClass is repaired idempotently from CharacterIdentity.VoiceSex
+to caelum_male/female. Ten inherited death/pain/grunt/land/use-failure aliases
+for all three native gender selectors use the existing credited male/female
+pain recordings. Previously silent/unassigned jump and unused aliases are not
+new sounds. Rulo's combat-pain rule remains unchanged.
+
+migrate_standalone_save.py is copy-only migration revision 1 for native format
+4560. It verifies the source map owner and byte equality of every stored map,
+then updates only Game WAD/Map WAD identities for independent startup. The
+original and a checksum receipt remain. Repeating an already-converted copy is
+byte-idempotent. Mismatched layouts, existing destinations and source overwrite
+are refused before output; missing diagnostic/add-on classes require their
+original fixtures, never deletion of saved objects.
+
+For deliberate rollback, convert a newly saved independent copy with its
+standalone source package, the exact previous development target package and
+`--target-iwad DOOM2.WAD`; the existing native voice field returns to player.
+No other map payload changes. Native MAP02 load, MAP01 stored-hub return and
+subsequent saves passed in both directions. #460's separate motion rollback is
+still required when returning further than its supported runtime. Original
+packages/saves are always the recovery path. Legacy map build options select
+matching retained WADs; they do not convert one geometry into another.
 
 ## 5.18.0 - Dependency audit boundary (#466)
 

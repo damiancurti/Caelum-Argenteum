@@ -4,10 +4,14 @@
 
 An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
-on Windows 11. The final game is intended to be independent of Doom assets.
+on Windows 11. The independent beta uses GZDoom installed separately; it requires no Doom IWAD.
 
-**Current release: 5.18.0.** Obtain and update the complete repository,
-validate it, then rebuild with `run_dev.bat` as described below.
+**Current release: 5.18.1.** #467 implements independent startup, owned missing
+effects/compatibility resources and deterministic IPK3 packaging. Native tests
+start without commercial IWADs, preserve player input/inventory and migrate
+matching saves through copies. Evidence: assets/validation_v5_18_1. Art, voices
+and installation await CA467-STARTUP-01 and the consolidated author terminal;
+#468 integrated validation and #469 complete delivery remain in progress.
 
 #466 inventories recorded origins/permissions for every source runtime member
 and identifies the remaining independent-startup dependencies. Five development
@@ -4499,7 +4503,45 @@ The #8 bow correction is engine-verified and author-accepted (CA-4362-BOW-EMPTY-
 Long-term encounter/provision balance and unfinished 4.36 systems are development
 work in PROJECT/TASKS, not additional author checks for this patch.
 
-## Build and run
+## Independent review-beta build and run
+
+Install GZDoom 4.14.2 separately on Windows 11. Do not copy a Doom IWAD, an
+engine executable or development fixtures into the distribution. From a complete
+review-branch checkout, validate and build a new directory:
+
+```powershell
+python validate_project.py
+python build_release.py --output build/independent-review
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File build/independent-review/run_release.ps1
+```
+
+Pass `-Engine "C:/path/to/gzdoom.exe"` when it is installed elsewhere. The
+generated directory contains the standalone IPK3, per-file provenance manifest,
+origin decisions, launcher and optional save converter; no engine is bundled.
+The launcher creates a separate `%LOCALAPPDATA%/CaelumArgenteum/current` profile
+at 5% master volume and preserves existing preferences. `-ProfileDirectory`
+selects another profile; `-LoadSave` accepts only a filename inside it, avoiding
+GZDoom's duplicated absolute-save-path failure. Fresh solo campaign play requires no Python
+after the package has been built. Source builds, optional historical-save
+conversion and the existing advanced profile/multiplayer launcher tools use Python;
+#468-469 integrate and document those tools for the complete beta delivery.
+
+Keep original saves and their exact original packages. The converter copies
+format-4560 saves only when every stored map is byte-identical in both packages:
+
+```powershell
+python migrate_standalone_save.py old.zds profile/converted.zds --source-package old-runtime.pk3 --target-package build/independent-review/caelum_argenteum.ipk3
+```
+
+For a visited pre-redesign sewer/city, build a separate directory with
+`--legacy-map02-revision5` and/or `--legacy-map03-revision3`. These retain verified
+map bytes and separate default profiles. Older layouts/add-on saves keep their
+original runtime and fixtures; never bypass the converter's map mismatch guard.
+SYSTEMS documents the revision-1 conversion and deliberate development rollback.
+This is the approved MAP01-MAP03 review beta with existing mode/performance/art
+limitations, not author acceptance or completion of the later campaign.
+
+## Development build and run
 
 GitHub is the primary working source. To obtain a complete checkout:
 
@@ -4533,7 +4575,7 @@ For maintained docs longer than 5,000 words, query
 
 Rebuild the PK3 after updating; launching an old PK3 keeps old code. The commands
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` must identify
-**5.2.16**. This patch requires no save-schema migration.
+**5.18.1**. Independent package-identity conversion is documented above.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. Check `GZDOOM_EXE` and `DOOM2_IWAD` in that file on

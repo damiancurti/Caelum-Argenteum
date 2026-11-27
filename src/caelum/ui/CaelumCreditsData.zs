@@ -1,7 +1,7 @@
 // Generado desde los avisos conservados; no concede derechos nuevos.
 class CaelumCreditsData : Object ui
 {
-    const COUNT=29;
+    const COUNT=30;
     static String Path(int index)
     {
         switch(index)
@@ -28,13 +28,14 @@ class CaelumCreditsData : Object ui
             case 19: return "licenses/rat_audio_543.txt";
             case 20: return "licenses/SHOP_SIGNS_5428.txt";
             case 21: return "licenses/sleep_creatures_544.txt";
-            case 22: return "licenses/SUPPORT_IMPLEMENTS_578.md";
-            case 23: return "licenses/SUPPORT_SPRITES_578.md";
-            case 24: return "licenses/UNDERBODY_827.txt";
-            case 25: return "licenses/UTILITY_STAFF_5115.txt";
-            case 26: return "licenses/VISUAL_ASSETS_4_31.md";
-            case 27: return "licenses/WORN_CLOTHING_829.txt";
-            case 28: return "licenses/ZUPAY_ROCK_5424.txt";
+            case 22: return "licenses/STANDALONE_467.txt";
+            case 23: return "licenses/SUPPORT_IMPLEMENTS_578.md";
+            case 24: return "licenses/SUPPORT_SPRITES_578.md";
+            case 25: return "licenses/UNDERBODY_827.txt";
+            case 26: return "licenses/UTILITY_STAFF_5115.txt";
+            case 27: return "licenses/VISUAL_ASSETS_4_31.md";
+            case 28: return "licenses/WORN_CLOTHING_829.txt";
+            case 29: return "licenses/ZUPAY_ROCK_5424.txt";
         }
         return "";
     }

@@ -4,6 +4,33 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-282 - Standalone core configuration, aliases and save ownership
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #467 / 5.18.1,
+2026-11-26, Windows 11 / GZDoom g4.14.2-m. Evidence: assets/validation_v5_18_1.
+
+IWADINFO MustContain uses short lump names; its Mapinfo selects installed core
+configuration and cannot point at a project override. Include own overrides
+from ordinary MAPINFO. A separate root TEXTURES.caelum467 can register resources
+without changing a shared TEXTURES file pinned by earlier source manifests; a
+nested caelum/data/TEXTURES did not register them in this tested package.
+Diagnostic filenames such as textures.zs still collide
+with reserved short lump names: use texture_probe.zs. Keep base parser resource
+compatibility separate from localized menu display text.
+
+IsActorPlayingSound compares the original requested sound ID. After starting
+"*death", query that alias, not the concrete sound it resolves to. Use native
+playersounds to verify class/gender mappings separately. A PowerShell GUI
+launch needs an output pipeline (Out-Host) to wait and populate LASTEXITCODE. Preserve previously
+silent events instead of inventing a new cue while repairing dependencies.
+
+Standalone saves change Game WAD/Map WAD ownership. Copy-only identity migration
+must verify every stored map against both exact packages, retain the original
+and refuse mismatched geometry. Restore original diagnostic classes when a saved
+hub needs them; never strip unknown objects. Pass only a basename to -loadgame
+under the intended -savedir. Native load/save, hub return and reverse conversion
+are separate checks; metadata edits alone do not establish compatibility.
+
 ## CA-KP-281 - Separate standalone startup evidence from dependency inventory
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #466 / 5.18.0,

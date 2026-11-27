@@ -1,0 +1,6 @@
+{
+  "status": "Rejected migration fixture, source save untouched",
+  "reason": "Stored MAP01 hub contains original CA464AudioPoint diagnostic actor. Reload fixture must include that exact original class; never strip unknown objects to force a load.",
+  "additional_dependency": "Legacy BasicArmor inventory Icon serializes ARM1A0; provide an alias to existing own light armor icon.",
+  "measurement_correction": "Existing SW1EXIT/SW2EXIT metadata dimensions are 32x72; preserve those exact dimensions using the own lever crop."
+}

@@ -1,0 +1,32 @@
+{
+  "issue": 467,
+  "migration_revision": 1,
+  "source": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue467-migration02\\rollback\\converted.zds",
+  "source_sha256": "8e38603dbedc77e51a08b49dd8b7aab5e29484ffa24f1c2705d4684bab9600cc",
+  "destination_sha256": "8e38603dbedc77e51a08b49dd8b7aab5e29484ffa24f1c2705d4684bab9600cc",
+  "source_package_sha256": "cd41d68418d5a85aff66b9668a12f7a8dbf5280594f6a253e67ec7b99a218f29",
+  "target_package_sha256": "cd41d68418d5a85aff66b9668a12f7a8dbf5280594f6a253e67ec7b99a218f29",
+  "original_metadata": {
+    "Game WAD": "DOOM2.WAD",
+    "Map WAD": "issue460-review02.pk3"
+  },
+  "target_metadata": {
+    "Game WAD": "DOOM2.WAD",
+    "Map WAD": "issue460-review02.pk3"
+  },
+  "metadata_fields_changed": 0,
+  "native_voice_fields_restored": 0,
+  "identical_maps": [
+    {
+      "map": "maps/map01.wad",
+      "sha256": "fe7adb9480353fd8faf06d7e09d967836f45ba2fde8748e2fca356226e577de0"
+    },
+    {
+      "map": "maps/map02.wad",
+      "sha256": "1f7052ef2c1bf5bbe612579c6675e2f4541f6c1e256f374d5fd9afabf6eb9fad"
+    }
+  ],
+  "original_preserved": true,
+  "native_load_required": true,
+  "rollback": "Use the preserved original save with its exact original package, or convert a new save back with matching source/target maps and --target-iwad DOOM2.WAD. Earlier motion rollback remains a separate #460 step."
+}

@@ -1,0 +1,14 @@
+{
+  "issue": 467,
+  "package_sha256": "0858277b78affd439db0a2f6f4c8cdfa703b657e7f880a5bd53ac3e68144a21f",
+  "unchanged": true,
+  "exit": 0,
+  "passed_checks": 79,
+  "failures": [
+    "male death uses retained recording",
+    "female death uses retained recording"
+  ],
+  "completed": true,
+  "commercial_iwad_loaded": false,
+  "saved": true
+}

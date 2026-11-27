@@ -2,17 +2,143 @@
   "schema": 1,
   "issue": 466,
   "baseline": "5.17.126 / 73f27f61127e9b86ee816749b0ec3ba80e5fbd6d",
-  "scope": "Audit findings, not implemented replacements. #467 owns independent startup and resolution; author visual/attribution acceptance remains pending.",
+  "scope": "Preserved #466 baseline findings with #467 implementation resolutions; final author visual/attribution acceptance remains pending.",
   "findings": [
-    {"id":"CA466-BOOT", "resources":["IWADINFO","PLAYPAL","episode definition"], "evidence":"Native failures without palette and episode; diagnostic grayscale palette plus episode permits initialization without a commercial IWAD.", "decision":"Provide project bootstrap metadata and an independently generated compatibility palette in #467; retain true-color artwork and existing gameplay data.", "affected_sources":["src/MAPINFO"]},
-    {"id":"CA466-IMPACT", "resources":["PUFF A-D"], "evidence":"Explicit projectile states, inherited BulletPuff and MODELDEF bindings; all four textures absent in native standalone probe.", "decision":"Supply owned replacement impact frames while preserving state names/timing/model bindings; no damage or collision change.", "affected_sources":["src/caelum/actors/CaelumActorProjectile.zs","src/caelum/equipment/CaelumPlayableWeapons.zs","src/MODELDEF"]},
-    {"id":"CA466-BLOOD", "resources":["BLUD A-C","FAXE F-K"], "evidence":"Native CaelumPlayer/CaelumCombatActor defaults are Blood/BloodSplatter/AxeBlood. Engine Blood/BloodSplatter use BLUD; AxeBlood uses FAXE. BLUD textures absent in native probe. AxeBlood availability is a static inherited-state finding, not an observed gameplay call.", "decision":"Retain blood behavior with owned frames; no dependency on commercial blood sprites. Verify native default and active effects in #467.", "affected_sources":["src/caelum/player/CaelumPlayer.zs","src/caelum/actors/CaelumCombatActor.zs"]},
-    {"id":"CA466-SKY", "resources":["F_SKY1"], "evidence":"Authored map ceilings reference the engine sky marker; TexMan cannot resolve a texture in the diagnostic bootstrap.", "decision":"Provide a project-owned sky-marker flat and verify actual sky rendering; the lookup alone does not establish a visible defect.", "affected_sources":["src/MAPINFO"]},
-    {"id":"CA466-SWITCH", "resources":["SW1EXIT"], "evidence":"Only MAP01's TEXTMAP references it; native texture lookup fails without Doom. Own two-state lever atlas exists.", "decision":"Reuse the retained lever artwork for compatible switch names, preserving map bytes/geometry and normal switch operation.", "affected_sources":["src/maps/MAP01.wad","src/TEXTURES","src/ANIMDEFS"]},
-    {"id":"CA466-MENUS", "resources":["M_EPISOD","M_NEWG","M_SKILL"], "evidence":"Installed gzdoom.pk3 base-menu parsing reports three unknown textures; the native probe confirms them absent. These messages are nonfatal warnings.", "decision":"Use project typography/native menu text and own compatibility resources; retain controls and localization.", "affected_sources":["src/MENUDEF","src/FONTDEFS"]},
-    {"id":"CA466-VOICE", "resources":["inherited player sound aliases"], "evidence":"CaelumPlayer inherits DoomPlayer and calls A_PlayerScream; no project $playersound/$playeralias override. Engine Doom filter maps default male/female death, grunt, land, usefail and pain to commercial lumps. Existing project pain recordings are separately credited.", "decision":"Resolve inherited aliases using retained project recordings/native handling in #467; preserve Rulo's silent combat-pain contract and voice selection. Verify actual events, not just alias declarations.", "affected_sources":["src/SNDINFO","src/caelum/player/CaelumPlayer.zs"]},
-    {"id":"CA466-DEV-MAPS", "resources":["TACTORS","THAZARD","TMAINT","TRESERV","TTAROT"], "evidence":"The authoritative map catalogue marks these five retained maps as kind=test.", "decision":"Exclude their WAD members from the independent distribution, retain source files and development packages; no file deletion.", "affected_sources":["src/maps/TACTORS.wad","src/maps/THAZARD.wad","src/maps/TMAINT.wad","src/maps/TRESERV.wad","src/maps/TTAROT.wad"]},
-    {"id":"CA466-OPL", "resources":["GENMIDI"], "evidence":"Native bootstrap reports optional OPL playback unavailable. All 131 project recordings are OGG, MP3 or WAV; no MIDI runtime music.", "decision":"Do not include Doom GENMIDI. Document unused optional OPL capability; verify retained streamed audio under #467/#468.", "affected_sources":[]}
+    {
+      "id": "CA466-BOOT",
+      "resources": [
+        "IWADINFO",
+        "PLAYPAL",
+        "episode definition"
+      ],
+      "evidence": "Native failures without palette and episode; diagnostic grayscale palette plus episode permits initialization without a commercial IWAD.",
+      "decision": "Provide project bootstrap metadata and an independently generated compatibility palette in #467; retain true-color artwork and existing gameplay data.",
+      "affected_sources": [
+        "src/MAPINFO"
+      ],
+      "resolution_issue": 467,
+      "resolution": "Implemented by independent bootstrap/resources/voice configuration or filtered build_release.py; native and static evidence in assets/validation_v5_18_1. Original baseline evidence above is retained."
+    },
+    {
+      "id": "CA466-IMPACT",
+      "resources": [
+        "PUFF A-D"
+      ],
+      "evidence": "Explicit projectile states, inherited BulletPuff and MODELDEF bindings; all four textures absent in native standalone probe.",
+      "decision": "Supply owned replacement impact frames while preserving state names/timing/model bindings; no damage or collision change.",
+      "affected_sources": [
+        "src/caelum/actors/CaelumActorProjectile.zs",
+        "src/caelum/equipment/CaelumPlayableWeapons.zs",
+        "src/MODELDEF"
+      ],
+      "resolution_issue": 467,
+      "resolution": "Implemented by independent bootstrap/resources/voice configuration or filtered build_release.py; native and static evidence in assets/validation_v5_18_1. Original baseline evidence above is retained."
+    },
+    {
+      "id": "CA466-BLOOD",
+      "resources": [
+        "BLUD A-C",
+        "FAXE F-K"
+      ],
+      "evidence": "Native CaelumPlayer/CaelumCombatActor defaults are Blood/BloodSplatter/AxeBlood. Engine Blood/BloodSplatter use BLUD; AxeBlood uses FAXE. BLUD textures absent in native probe. AxeBlood availability is a static inherited-state finding, not an observed gameplay call.",
+      "decision": "Retain blood behavior with owned frames; no dependency on commercial blood sprites. Verify native default and active effects in #467.",
+      "affected_sources": [
+        "src/caelum/player/CaelumPlayer.zs",
+        "src/caelum/actors/CaelumCombatActor.zs"
+      ],
+      "resolution_issue": 467,
+      "resolution": "Implemented by independent bootstrap/resources/voice configuration or filtered build_release.py; native and static evidence in assets/validation_v5_18_1. Original baseline evidence above is retained."
+    },
+    {
+      "id": "CA466-SKY",
+      "resources": [
+        "F_SKY1"
+      ],
+      "evidence": "Authored map ceilings reference the engine sky marker; TexMan cannot resolve a texture in the diagnostic bootstrap.",
+      "decision": "Provide a project-owned sky-marker flat and verify actual sky rendering; the lookup alone does not establish a visible defect.",
+      "affected_sources": [
+        "src/MAPINFO"
+      ],
+      "resolution_issue": 467,
+      "resolution": "Implemented by independent bootstrap/resources/voice configuration or filtered build_release.py; native and static evidence in assets/validation_v5_18_1. Original baseline evidence above is retained."
+    },
+    {
+      "id": "CA466-SWITCH",
+      "resources": [
+        "SW1EXIT"
+      ],
+      "evidence": "Only MAP01's TEXTMAP references it; native texture lookup fails without Doom. Own two-state lever atlas exists.",
+      "decision": "Reuse the retained lever artwork for compatible switch names, preserving map bytes/geometry and normal switch operation.",
+      "affected_sources": [
+        "src/maps/MAP01.wad",
+        "src/TEXTURES",
+        "src/ANIMDEFS"
+      ],
+      "resolution_issue": 467,
+      "resolution": "Implemented by independent bootstrap/resources/voice configuration or filtered build_release.py; native and static evidence in assets/validation_v5_18_1. Original baseline evidence above is retained."
+    },
+    {
+      "id": "CA466-MENUS",
+      "resources": [
+        "M_EPISOD",
+        "M_NEWG",
+        "M_SKILL"
+      ],
+      "evidence": "Installed gzdoom.pk3 base-menu parsing reports three unknown textures; the native probe confirms them absent. These messages are nonfatal warnings.",
+      "decision": "Use project typography/native menu text and own compatibility resources; retain controls and localization.",
+      "affected_sources": [
+        "src/MENUDEF",
+        "src/FONTDEFS"
+      ],
+      "resolution_issue": 467,
+      "resolution": "Implemented by independent bootstrap/resources/voice configuration or filtered build_release.py; native and static evidence in assets/validation_v5_18_1. Original baseline evidence above is retained."
+    },
+    {
+      "id": "CA466-VOICE",
+      "resources": [
+        "inherited player sound aliases"
+      ],
+      "evidence": "CaelumPlayer inherits DoomPlayer and calls A_PlayerScream; no project $playersound/$playeralias override. Engine Doom filter maps default male/female death, grunt, land, usefail and pain to commercial lumps. Existing project pain recordings are separately credited.",
+      "decision": "Resolve inherited aliases using retained project recordings/native handling in #467; preserve Rulo's silent combat-pain contract and voice selection. Verify actual events, not just alias declarations.",
+      "affected_sources": [
+        "src/SNDINFO",
+        "src/caelum/player/CaelumPlayer.zs"
+      ],
+      "resolution_issue": 467,
+      "resolution": "Implemented by independent bootstrap/resources/voice configuration or filtered build_release.py; native and static evidence in assets/validation_v5_18_1. Original baseline evidence above is retained."
+    },
+    {
+      "id": "CA466-DEV-MAPS",
+      "resources": [
+        "TACTORS",
+        "THAZARD",
+        "TMAINT",
+        "TRESERV",
+        "TTAROT"
+      ],
+      "evidence": "The authoritative map catalogue marks these five retained maps as kind=test.",
+      "decision": "Exclude their WAD members from the independent distribution, retain source files and development packages; no file deletion.",
+      "affected_sources": [
+        "src/maps/TACTORS.wad",
+        "src/maps/THAZARD.wad",
+        "src/maps/TMAINT.wad",
+        "src/maps/TRESERV.wad",
+        "src/maps/TTAROT.wad"
+      ],
+      "resolution_issue": 467,
+      "resolution": "Implemented by independent bootstrap/resources/voice configuration or filtered build_release.py; native and static evidence in assets/validation_v5_18_1. Original baseline evidence above is retained."
+    },
+    {
+      "id": "CA466-OPL",
+      "resources": [
+        "GENMIDI"
+      ],
+      "evidence": "Native bootstrap reports optional OPL playback unavailable. All 131 project recordings are OGG, MP3 or WAV; no MIDI runtime music.",
+      "decision": "Do not include Doom GENMIDI. Document unused optional OPL capability; verify retained streamed audio under #467/#468.",
+      "affected_sources": [],
+      "resolution_issue": 467,
+      "resolution": "Unused optional OPL remains excluded; streamed project recordings retain their original bytes."
+    }
   ],
   "rights_qualifications": [
     "Preserve source-specific CC0, CC BY, DejaVu/Bitstream Vera, Pixabay Content License and recorded author/creator permissions; root project rights never override them.",
