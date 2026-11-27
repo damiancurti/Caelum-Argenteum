@@ -4,7 +4,7 @@ Documentation version: **5.18.4** - 2026-11-27.
 
 ## 5.18.4 - Repository audit integration (#899)
 
-Issue #899 covers the twenty audit findings. It also restores export of the current 238-map playtest. Cooperative starts in the mansion and Barracas interior, eight-player mansion placement, restored positions and disconnected hunt roles were tested with native GZDoom 4.14.2 peers. Repeatable regression checks and their platform coverage are recorded in assets/validation_v5_17_124.
+Issue #899 covers the twenty audit findings. It also restores export of the current 238-map playtest. Cooperative starts in the mansion and Barracas interior, eight-player mansion placement, restored positions and disconnected hunt roles were tested with native GZDoom 4.14.2 peers. Repeatable regression checks and their platform coverage are recorded in assets/validation_v5_17_124. The integrated independent package passed all six Windows native scenarios, including eight-client travel and 72 localized strings per language. All eleven audit regressions, the accepted beta session reload, extracted ZIP checks and project validation passed. See assets/validation_v5_18_4/windows.json.
 
 ## 5.18.3 - Independent beta delivery and author handoff (#469, 2026-11-26)
 

@@ -1,0 +1,258 @@
+{
+  "issue": 899,
+  "version": "5.18.4",
+  "platform": "Windows 11, GZDoom 4.14.2, independent prologue IPK3",
+  "native": {
+    "free-departure": {
+      "departed_slot": 1,
+      "slots_to_processes": {
+        "0": 0,
+        "1": 1,
+        "2": 2
+      },
+      "markers": {
+        "0": [
+          "CA899_READY slot=0 members=7",
+          "CA899_DEPART slot=0 left=1 active=5 seekers=5 ghost=0",
+          "CA899_WIN slot=0 active=5 captive=5 finished=1 winner=-1",
+          "CA899_VOTES slot=0 active=5 votes=5 restarting=1",
+          "CA899_NEW slot=0 active=5 members=5 finished=0 votes=0"
+        ],
+        "2": [
+          "CA899_READY slot=2 members=7",
+          "CA899_DEPART slot=2 left=1 active=5 seekers=5 ghost=0",
+          "CA899_WIN slot=2 active=5 captive=5 finished=1 winner=-1",
+          "CA899_VOTES slot=2 active=5 votes=5 restarting=1",
+          "CA899_NEW slot=2 active=5 members=5 finished=0 votes=0"
+        ]
+      }
+    },
+    "votes-before-departure": {
+      "departed_slot": 2,
+      "slots_to_processes": {
+        "0": 0,
+        "1": 1,
+        "2": 2
+      },
+      "markers": {
+        "0": [
+          "CA899_READY slot=0 members=7",
+          "CA899_WAIT slot=0 votes=3 restarting=0",
+          "CA899_NEW slot=0 active=3 members=3 finished=0 votes=0"
+        ],
+        "1": [
+          "CA899_READY slot=1 members=7",
+          "CA899_WAIT slot=1 votes=3 restarting=0",
+          "CA899_NEW slot=1 active=3 members=3 finished=0 votes=0"
+        ]
+      }
+    },
+    "captive-departure": {
+      "departed_slot": 2,
+      "slots_to_processes": {
+        "0": 0,
+        "1": 1,
+        "2": 2
+      },
+      "markers": {
+        "0": [
+          "CA899_READY slot=0 members=7",
+          "CA899_CAPTURED slot=0 target=2 held=1",
+          "CA899_DEPART slot=0 left=2 active=3 seekers=3 ghost=0",
+          "CA899_WIN slot=0 active=3 captive=3 finished=1 winner=-1",
+          "CA899_VOTES slot=0 active=3 votes=3 restarting=1",
+          "CA899_NEW slot=0 active=3 members=3 finished=0 votes=0"
+        ],
+        "1": [
+          "CA899_READY slot=1 members=7",
+          "CA899_CAPTURED slot=1 target=2 held=1",
+          "CA899_DEPART slot=1 left=2 active=3 seekers=3 ghost=0",
+          "CA899_WIN slot=1 active=3 captive=3 finished=1 winner=-1",
+          "CA899_VOTES slot=1 active=3 votes=3 restarting=1",
+          "CA899_NEW slot=1 active=3 members=3 finished=0 votes=0"
+        ]
+      }
+    },
+    "eight-arrivals": {
+      "MAP01": {
+        "peers": {
+          "0": "CA899_ARRIVALS peer=0 map=MAP01 count=8 pairs=28 overlaps=0",
+          "1": "CA899_ARRIVALS peer=1 map=MAP01 count=8 pairs=28 overlaps=0",
+          "2": "CA899_ARRIVALS peer=2 map=MAP01 count=8 pairs=28 overlaps=0",
+          "3": "CA899_ARRIVALS peer=3 map=MAP01 count=8 pairs=28 overlaps=0",
+          "4": "CA899_ARRIVALS peer=4 map=MAP01 count=8 pairs=28 overlaps=0",
+          "5": "CA899_ARRIVALS peer=5 map=MAP01 count=8 pairs=28 overlaps=0",
+          "6": "CA899_ARRIVALS peer=6 map=MAP01 count=8 pairs=28 overlaps=0",
+          "7": "CA899_ARRIVALS peer=7 map=MAP01 count=8 pairs=28 overlaps=0"
+        },
+        "position_and_radius_by_slot": {
+          "0": [
+            -1600.0,
+            0.0,
+            -0.0,
+            16.0
+          ],
+          "1": [
+            -1567.0,
+            0.0,
+            -0.0,
+            16.0
+          ],
+          "2": [
+            -1600.0,
+            33.0,
+            -0.0,
+            16.0
+          ],
+          "3": [
+            -1633.0,
+            0.0,
+            -0.0,
+            16.0
+          ],
+          "4": [
+            -1600.0,
+            -33.0,
+            -0.0,
+            16.0
+          ],
+          "5": [
+            -1666.0,
+            0.0,
+            -0.0,
+            16.0
+          ],
+          "6": [
+            -1646.66904676,
+            -46.66904676,
+            -0.0,
+            16.0
+          ],
+          "7": [
+            -1600.0,
+            -66.0,
+            -0.0,
+            16.0
+          ]
+        },
+        "pairs_per_peer": 28
+      },
+      "CAH000": {
+        "peers": {
+          "0": "CA899_ARRIVALS peer=0 map=CAH000 count=8 pairs=28 overlaps=0",
+          "1": "CA899_ARRIVALS peer=1 map=CAH000 count=8 pairs=28 overlaps=0",
+          "2": "CA899_ARRIVALS peer=2 map=CAH000 count=8 pairs=28 overlaps=0",
+          "3": "CA899_ARRIVALS peer=3 map=CAH000 count=8 pairs=28 overlaps=0",
+          "4": "CA899_ARRIVALS peer=4 map=CAH000 count=8 pairs=28 overlaps=0",
+          "5": "CA899_ARRIVALS peer=5 map=CAH000 count=8 pairs=28 overlaps=0",
+          "6": "CA899_ARRIVALS peer=6 map=CAH000 count=8 pairs=28 overlaps=0",
+          "7": "CA899_ARRIVALS peer=7 map=CAH000 count=8 pairs=28 overlaps=0"
+        },
+        "position_and_radius_by_slot": {
+          "0": [
+            -21088.0,
+            -12416.0,
+            0.0,
+            16.0
+          ],
+          "1": [
+            -21121.0,
+            -12416.0,
+            0.0,
+            16.0
+          ],
+          "2": [
+            -21088.0,
+            -12449.0,
+            0.0,
+            16.0
+          ],
+          "3": [
+            -21055.0,
+            -12416.0,
+            0.0,
+            16.0
+          ],
+          "4": [
+            -21088.0,
+            -12383.0,
+            0.0,
+            16.0
+          ],
+          "5": [
+            -21022.0,
+            -12416.0,
+            0.0,
+            16.0
+          ],
+          "6": [
+            -21041.33095324,
+            -12369.33095324,
+            0.0,
+            16.0
+          ],
+          "7": [
+            -21088.0,
+            -12350.0,
+            0.0,
+            16.0
+          ]
+        },
+        "pairs_per_peer": 28
+      }
+    },
+    "es": {
+      "language": "es",
+      "matched": 72
+    },
+    "enu": {
+      "language": "enu",
+      "matched": 72
+    }
+  },
+  "runtime_sha256": "64b223ef42589d9fac9637a127bbeea50fd1d2422a545c299f334d6a311633a2",
+  "python_passed": 11,
+  "two_player_source": "Unmodified two-player CaelumPlayer save from issue 443 (20261109-000143-914370, peer 0).",
+  "legacy_session": "The accepted 5.18.3 independent-resources fixture loaded its original terminal-smoke.zds with pinned package and engine.",
+  "export_commit": "0c47aedd88fefc1febf5c7e86e2b28941c36d4a0",
+  "export_runtime_files": 19060,
+  "author_acceptance": false,
+  "project_validation": {
+    "version": "5.18.4",
+    "documents": 11,
+    "audio_files": 131,
+    "station_models": 14,
+    "spanish_caella_keys": 25,
+    "premise_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "context_words": 2489,
+    "errors": []
+  },
+  "extracted_release": {
+    "archive_sha256": "e23df68a36f7c9e806dc40093f6202df71d9203a0fb92db858c3c16eb7208826",
+    "delivered_files": 21,
+    "runtime_members": 19055,
+    "profile_menu_exit": 0,
+    "delivered_files_unchanged_after_use": true
+  }
+}
