@@ -1,0 +1,31 @@
+﻿id,nombre,materiales,base,uso
+LI,Limbo y mansión,CXSILVIO / CXMOSGRA / CXREVOQU / CXPIRROS,Mansión,Piedra violácea y mosaico de los umbrales. El patio orienta desde las dos plantas.
+AL,Alcantarillas,CXLADHUM / CXREJHIE / CXTABMUE / CXHOJANE,Alcantarillas y franja de agua,"Ladrillo húmedo, canal y rejilla. La rejilla pintada sirve para una tapa opaca."
+BA,Buenos Aires y Barracas,CXADOQUI / CXREVOQU / CXCHAFAB / CXTABMUE,Ciudad y puerto,"Adoquín, revoque, chapa y madera. Reservar la chapa para talleres y depósitos."
+PA,Pampa bonaerense,CXPASOLI / CXHUECAR / CXREVOQU / CXTABMUE,Pampa,Pasto corto en la loma y tierra apisonada en huellas de carro.
+EP,Espinal y bosque de ñandubay,CXQUEBAR / CXPASOLI / CXHUECAR / CXPAJSEC,Extensión del Espinal,"Corteza agrietada, pastizal abierto y huella de posta entre montes bajos."
+CO,Córdoba y sierras,CXGRASER / CXPIRROS / CXADOQUI / CXHUECAR,Ampliación serrana,"Granito de intemperie, pirca y patio de piedra para distinguir campo y ciudad."
+DE,"Delta, Litoral y esteros",CXLIMCAN / CXHOJANE / CXTABMUE / CXPASOLI,Litoral,"Limo de canal, hojarasca inundable y tablas para los pasos secos."
+CM,Campos y malezales de Corrientes,CXPASOLI / CXHOJANE / CXLIMCAN / CXPAJSEC,Extensión mesopotámica,"Pastizal húmedo y suelo de lomada entre bañados, palmas y pasos de carros."
+TE,Termas de Entre Ríos,CXCOSTER / CXLIMCAN / CXGRASER / CXTABMUE,Litoral,Costra clara al nivel del agua y roca oscura por encima de las surgencias.
+CU,Cuyo y cordillera,CXGRAALU / CXADOBEC / CXGRASER / CXMANTHO,Cuyo,"Grava de abanico, adobe y canales de riego que cortan los oasis."
+NO,Quebradas y desierto del NOA,CXESTROJ / CXADOBEC / CXGRAALU / CXSALPUN,NOA,Estratos rojos en paredes y fondo pedregoso. Dejar la sal en las cuencas.
+PU,Puna y salares,CXSALPUN / CXGRAALU / CXESTROJ / CXROCTAL,NOA,"Costra pálida, islas de grava y piedra cincelada en los refugios."
+TR,Tren del Cielo,CXCHAFAB / CXTABMUE / CXPLAHIE / CXESTROJ,Extensión ferroviaria,"Chapa, durmientes y placas mecánicas a la vista contra la quebrada."
+MI,Minas de la Pachamama,CXVETAMI / CXROCTAL / CXTABMUE / CXGRAALU,Ampliación minera,Veta mineral como referencia visual. La roca tallada identifica el recorrido explotado.
+YU,Yungas y selva de montaña,CXMANTHO / CXRAILIA / CXGRASER / CXESTROJ,Extensión de Yungas,"Selva nublada de ladera con troncos húmedos, roca serrana y quebradas bajo el dosel."
+CH,"Chaco, monte y bañados",CXARCCHA / CXPAJSEC / CXQUEBAR / CXLIMCAN,Ampliación chaqueña,"Suelos agrietados, pastos pálidos y corteza gruesa de quebracho."
+SE,Selva misionera,CXLATERI / CXMANTHO / CXRAILIA / CXPIRSEL,Selva,"Laterita para claros pisados, mantillo para monte cerrado y piedra rojiza en galerías."
+IN,Infierno y dominios sobrenaturales,CXESCORI / CXMURBRA / CXBASRIT / CXPLAHIE,Ampliación infernal,"Escoria, piedra tallada y juntas discretas para separar suelo transitable de paredes."
+ES,Estepa patagónica,CXCOIRON / CXLAJSUR / CXHUECAR / CXGRAALU,Patagonia,Grava y coirón por encima de los cañadones. Usar la laja para sus paredes.
+AN,Andes patagónicos y Nahuel Huapi,CXHOJLEN / CXLAJSUR / CXCOIRON / CXROCMAR,Patagonia,"Mantillo de lenga y piedra húmeda para diferenciar bosque, playa y mallín."
+TU,Tundra austral,CXTURFUE / CXTUSSOC / CXLAJSUR / CXGUIMAR,Ampliación austral,"Turba de tierras bajas, hierba de loma y piedra en los pasos firmes."
+TF,Tierra del Fuego,CXTURFUE / CXHOJLEN / CXLAJSUR / CXGUIMAR,Ampliación fueguina,"Turbera, bosque y canto rodado para reconocer por dónde desembarcar."
+MA,Islas Malvinas,CXTUSSOC / CXGUIMAR / CXTURFUE / CXLAJSUR,Ampliación isleña,"Tussock, turba y laja en lengua de bloques. La grava marca la orilla."
+AT,Costa y Mar Argentino,CXGUIMAR / CXLAJSUR / CXTABMUE / CXCHAFAB,Playa y puerto,Guijarros y estratos de acantilado en tierra. Tablas y chapa sobre el barco.
+GL,Antártida y glaciares,CXNIEPOL / CXHIEAZU / CXLAJSUR / CXBASRIT,Ampliación polar,"Nieve compacta en superficie, azul en hielo expuesto y roca en los refugios."
+AB,Mar profundo,CXLIMABI / CXROCMAR / CXGUIMAR / CXPLAHIE,Ampliación abisal,Limo poco contrastado en el fondo y roca colonizada en cornisas y bocas.
+SU,Ciudad Caelith submarina,CXPLASUB / CXLIMABI / CXROCMAR / CXPLAHIE,Ampliación Caelith submarina,"Placas verdeazuladas y juntas oscuras en esclusas, barrios y dársenas."
+AE,Ciudad y rutas Caelith aéreas,CXCERAER / CXPLAHIE / CXTABMUE / CXBASRIT,Ampliación Caelith aérea,"Cerámica clara y metal mate para reconocer puentes, huertos y plataformas."
+LU,"Luna, cráter y mar basáltico",CXREGLUN / CXANORTO / CXMALLUN / CXLAMSEL,Ampliación lunar,Contrastar el regolito basáltico con las tierras altas claras. El santuario introduce la plata.
+SL,"Luna, palacio de Selene",CXMALLUN / CXLAMSEL / CXANORTO / CXCERAER,Ampliación palaciega,"Pavimento malva, piedra laminada y plata velada para el umbral de la audiencia."

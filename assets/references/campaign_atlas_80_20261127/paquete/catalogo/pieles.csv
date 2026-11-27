@@ -1,0 +1,18 @@
+﻿ruta_pk3,uso,acabado,ancho_px,alto_px
+models/caelum/bull/bull_skin.png,Toro,"Pelo, piel, cuernos y pezuñas",2048,2048
+models/caelum/characters/domingo/domingo_skin.png,Domingo,Piel sobre el atlas original,1254,1254
+models/caelum/domingo/domingo_skin.png,Domingo,Piel sobre el atlas original,1254,1254
+models/caelum/folklore/cuero660/materials.png,Cuero Uñudo,"Atlas 2 × 2 de lomo, vientre, cuerno y ojo",512,512
+models/caelum/folklore/nahuelito662/skin.png,Nahuelito,Banda de color y escama,384,384
+models/caelum/folklore/pombero461/face.png,Pombero,Rostro pintado,460,460
+models/caelum/folklore/pombero461/materials.png,Pombero,Atlas 2 × 4 de materiales no faciales,512,512
+models/caelum/props/stash/ca_stash_inside.png,Cofres y otros consumidores,Interior oscuro,256,256
+models/caelum/props/stash/ca_stash_lock.png,Cofres y otros consumidores,Latón,256,256
+models/caelum/props/stash/ca_stash_metal.png,Cofres y otros consumidores,Hierro,256,256
+models/caelum/props/stash/ca_stash_wood.png,Cofres y otros consumidores,Tablón con juntas,256,256
+models/caelum/props/stations/ca_station_brass.png,Estaciones y utilería,Latón,256,256
+models/caelum/props/stations/ca_station_cloth.png,Estaciones y utilería,Tela,256,256
+models/caelum/props/stations/ca_station_iron.png,Estaciones y utilería,Hierro,256,256
+models/caelum/props/stations/ca_station_leather.png,Estaciones y utilería,Cuero,256,256
+models/caelum/props/stations/ca_station_stone.png,Estaciones y utilería,Piedra,256,256
+models/caelum/props/stations/ca_station_wood.png,Estaciones y utilería,Madera,256,256
