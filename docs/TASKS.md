@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.125** - 2026-11-26.
+Documentation version: **5.17.126** - 2026-11-26.
+
+## 5.17.126 - Native credits and presentation coverage (#465)
+
+Implemented #465's concrete presentation gaps without replacing accepted
+interfaces: native credits, six missing glyphs across twelve fonts, general
+Spanish aliases for 67 retained regional translations and five physics labels.
+Static audit covers unchanged old glyphs, generated outputs, authored character
+coverage, project ES/EN keys and literal UI graphics. Native matrix and final
+package evidence are retained under assets/validation_v5_17_126. CA465-UI-01
+joins the existing author queue; no earlier manual check is accepted or removed.
+Continue the independent prologue beta with #466 dependency/provenance audit,
+#467 external-engine startup, #468 integrated validation and #469 delivery.
 
 ## 5.17.125 - Verify retained prologue audio (#464)
 

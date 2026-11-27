@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.125** - 2026-11-26.
+Documentation version: **5.17.126** - 2026-11-26.
+
+## 5.17.126 - Native credits and presentation coverage (#465)
+
+#465 adds an accessible Credits menu using native controls, existing fonts,
+background and presentation transforms. It reads the 29 retained notices and
+caches wrapping on selection changes. Six missing codepoints extend twelve
+font folders without altering any of the 2,268 existing glyphs or twelve font
+metric files. Recovered DejaVu renderer/source hashes remain reproducible.
+The native general Spanish selector had fallen back to English for 67 strings
+stored only in regional sections; copied es entries preserve their exact
+Spanish text. Five physics labels were in the wrong locale section and now
+have ES/EN coverage. No saved state or gameplay logic changes.
+
+Static and native evidence: assets/validation_v5_17_126. Early probes exposed
+duplicate root ZSCRIPT loading, immutable synthetic UIEvent fields, atomic
+font-folder replacement and native window-size clamps. Failed or superseded
+runs remain identified separately; they do not count as visual evidence.
+The final 19,053-file package passes 814 native checks across eleven ES/EN,
+resolution and UI-scale cases. Actual client sizes and correct credit/main-menu
+captures are retained. Full project validation passes with no errors; generated
+outputs and original font-file identity pass the static audit. Manual review
+remains CA465-UI-01 and 110 earlier outstanding checks.
 
 ## 5.17.125 - Verify retained prologue audio (#464)
 

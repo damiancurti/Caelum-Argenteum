@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-280 - Preserve complete font folders in diagnostic overlays
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #465 / 5.17.126,
+2026-11-26, Windows 11 / GZDoom 4.14.2. Evidence:
+assets/validation_v5_17_126; author visual acceptance remains pending.
+
+Folder fonts are selected as complete definitions. An overlay containing only
+new Unicode PNGs can replace the original letters and font.inf. Native menu
+commands and line-width assertions may still pass while the screen lacks most
+text. Include the complete font folder in an isolated overlay, or test the
+complete final package. Verify retained glyph metrics and inspect captures;
+successful command dispatch is not proof of readable presentation. A root
+ZSCRIPT overlay must include only new classes: loading the full project's root
+again produces duplicate class/default errors.
+
+Record actual Screen.GetWidth/GetHeight in native resolution tests. This
+Windows environment clamps decorated 640x360 clients to 640x400 and oversized
+1920x1080 windows to the work area. Native full-screen provides the latter
+resolution. Requested command-line dimensions alone are not evidence of the
+rendered size. Preserve the engine's UI-scale policy and test its pointer
+transform at the actual dimensions.
+
 ## CA-KP-279 - Verify complete author launch chains and actual native menus
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #889 /5.17.123,2026-11-21,

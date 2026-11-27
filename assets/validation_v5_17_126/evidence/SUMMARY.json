@@ -1,0 +1,153 @@
+{
+  "issue": 465,
+  "version": "5.17.126",
+  "native": {
+    "issue": 465,
+    "runtime_sha256": "88fdc1987a6d0d4c9a6fbd1e22200637bcad768d97a9c9e006591ec6f6eaf96c",
+    "phases": [
+      {
+        "name": "640x400-en-scale0",
+        "exit": 0,
+        "counts": [
+          [
+            "74",
+            "0"
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "name": "640x400-es-scale0",
+        "exit": 0,
+        "counts": [
+          [
+            "74",
+            "0"
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "name": "1280x720-en-scale0",
+        "exit": 0,
+        "counts": [
+          [
+            "74",
+            "0"
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "name": "1280x720-es-scale0",
+        "exit": 0,
+        "counts": [
+          [
+            "74",
+            "0"
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "name": "1520x825-en-scale0",
+        "exit": 0,
+        "counts": [
+          [
+            "74",
+            "0"
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "name": "1520x825-es-scale0",
+        "exit": 0,
+        "counts": [
+          [
+            "74",
+            "0"
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "name": "1920x1080-en-scale0",
+        "exit": 0,
+        "counts": [
+          [
+            "74",
+            "0"
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "name": "1920x1080-es-scale0",
+        "exit": 0,
+        "counts": [
+          [
+            "74",
+            "0"
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "name": "640x400-es-scale4",
+        "exit": 0,
+        "counts": [
+          [
+            "74",
+            "0"
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "name": "1280x720-es-scale2",
+        "exit": 0,
+        "counts": [
+          [
+            "74",
+            "0"
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "name": "1920x1080-en-scale3",
+        "exit": 0,
+        "counts": [
+          [
+            "74",
+            "0"
+          ]
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "native_checks": 814,
+  "static": "static.json",
+  "full_project_validation": "project-validation.json",
+  "build": "build.json",
+  "attempts": {
+    "issue465-native01": "Full root ZSCRIPT overlay loaded duplicate classes; rejected.",
+    "issue465-native02": "Synthetic UIEvent.Type is read-only; rejected fixture.",
+    "issue465-native03": "Partial font-folder overlay omitted original glyphs; command checks were not visual evidence.",
+    "issue465-native04": "Superseded partial-font matrix; stopped after visual inspection.",
+    "issue465-native05": "Complete font folders restored; reading body subsequently enlarged to CaelumText.",
+    "issue465-native06": "Bounded single-case verification before locale repairs and final matrix.",
+    "issue465-native07": "Requested 640x360 was clamped to 640x400; resolution assertion rejected it.",
+    "issue465-native08": "Oversized decorated 1920x1080 window was clamped; resolution assertion rejected it.",
+    "issue465-native09": "Native general Spanish fallback confirmed before copied es aliases.",
+    "issue465-native10": "All 814 command assertions passed; screenshot was queued until after the following menu switch. Final package rerun inserts a frame wait and retains correct images."
+  },
+  "author_acceptance": "Pending CA465-UI-01; earlier 110 checks retained",
+  "limits": [
+    "Scripted controller event paths are tested; physical controller and wheel review remain pending.",
+    "Legal notices retain original language; no translation or new rights grant is asserted.",
+    "No gameplay/save code changed; existing inventory/model validation remains in the full validator."
+  ]
+}

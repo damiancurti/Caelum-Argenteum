@@ -1,6 +1,34 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.125** - 2026-11-26.
+Documentation version: **5.17.126** - 2026-11-26.
+
+## 5.17.126 - Native credits and presentation coverage (#465)
+
+The six missing authored codepoints U+0129, U+2013, U+2014, U+2019,
+U+201C and U+201D now exist in all twelve existing font folders (72 new PNGs).
+All 2,268 original glyphs and twelve font.inf files are byte-identical to
+7923b0d1. The recovered DejaVu Bold renderer matches the original A/i pixels,
+baseline, white fill and dark outline exactly. Source TTF hashes and upstream
+locations are retained in assets/source/ui/typography_465/PROVENANCE.json;
+the DejaVu notice remains applicable. Regular source fonts are retained but
+are not used or packaged. The deterministic generator verifies the retained
+renderer and produces only the missing glyphs plus the notice catalogue.
+
+The native Credits menu reads 29 original notices, including an exact LF copy
+of LICENSE.md. It does not paraphrase third-party licenses or grant new rights.
+Final provenance and replacement decisions remain #466 and author review.
+The audit resolves all authored LANGUAGE characters against all twelve fonts,
+all project keys against ES/EN, and 50 literal UI graphic references. Dynamic
+inventory icons/models retain their existing per-issue validators; no icon or
+accepted visual asset is replaced. Native OptionMenu font selection remains
+engine-owned; aliases alone do not prove that engine font was substituted.
+
+Evidence and reproducible probes: assets/validation_v5_17_126. Windows clamps
+a requested 640x360 decorated client to 640x400 and oversized decorated
+1920x1080 windows to the monitor work area; record actual client dimensions.
+The final matrix uses 640x400, 1280x720 and 1520x825 windows and native
+1920x1080 full-screen, ES/EN, plus explicit UI-scale cases. Physical wheel and
+controller usability, legibility and final attribution remain CA465-UI-01.
 
 ## 5.17.125 - Verify retained prologue audio (#464)
 

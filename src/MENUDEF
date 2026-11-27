@@ -19,7 +19,13 @@ ListMenu "MainMenu"
     TextItem "$CA_MENU_SINGLE_PLAYER", "u", "CaelumSinglePlayerMenu"
     TextItem "$CA_MENU_MULTIPLAYER", "m", "CaelumMultiplayerMenu"
     TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
+    TextItem "$CA_CREDITS_TITLE", "c", "CaelumCreditsMenu"
     TextItem "$CA_MENU_QUIT", "s", "CaelumExitMenu"
+}
+
+ListMenu "CaelumCreditsMenu"
+{
+    Class "CaelumCreditsMenu"
 }
 
 ListMenu "CaelumSinglePlayerMenu"

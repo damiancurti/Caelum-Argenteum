@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.125** - 2026-11-26.
+Documentation version: **5.17.126** - 2026-11-26.
+
+## 5.17.126 - Native credits and presentation coverage (#465)
+
+The #465 presentation audit retains accepted interfaces and fixes concrete
+coverage gaps: a native Credits entry exposes the 29 retained rights/source
+notices; six already-used characters extend the existing bitmap fonts; 67
+regional Spanish strings also resolve through the general Spanish selector;
+five physics labels receive correct ES/EN sections. No character art, icon,
+balance, story, equipment or save schema is replaced. The author's final visual
+and attribution review remains CA465-UI-01; standalone rights and dependencies
+continue in #466 before packaging #467-469.
 
 ## 5.17.125 - Verify retained prologue audio (#464)
 
