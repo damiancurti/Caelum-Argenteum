@@ -17,7 +17,12 @@ def manifest(root):
 
 def runtime_digest(source, path, original):
     """Honor a replacement only for the exact original export it was drawn for."""
-    if path not in source["source_files"]:
+    binding = source["surface_binding"]
+    if path==binding["mesh"]:
+        if original!=binding["original"]:
+            raise ValueError("Unexpected original mesh: "+path)
+        return binding["painted"]
+    if path in source["destinations"] or path not in source["source_files"]:
         return original
     if original!=source["original_runtime_sha256"][path]:
         raise ValueError("Original export digest mismatch: "+path)
@@ -25,9 +30,30 @@ def runtime_digest(source, path, original):
 
 
 def validate(root):
-    files = manifest(root)["source_files"]
-    return ["Painted atlas is stale: "+p for p,expected in files.items()
+    source = manifest(root)
+    files = {source["destinations"].get(p,p):digest for p,digest in source["source_files"].items()}
+    binding = source["surface_binding"]
+    files[binding["mesh"]] = binding["painted"]
+    files[binding["from"]] = source["original_runtime_sha256"][binding["from"]]
+    return ["Painted model dependency differs: "+p for p,expected in files.items()
             if not (root/"src"/p).is_file() or hashlib.sha256((root/"src"/p).read_bytes()).hexdigest()!=expected]
+
+
+def bind_painted_surfaces(source):
+    binding=source["surface_binding"]
+    path=ROOT/"src"/binding["mesh"]
+    data=path.read_bytes()
+    current=hashlib.sha256(data).hexdigest()
+    if current==binding["painted"]:
+        return
+    old=binding["from"].encode().ljust(64,b"\0")
+    new=binding["to"].encode().ljust(64,b"\0")
+    if current!=binding["original"] or data.count(old)!=binding["surfaces"]:
+        raise ValueError("Unexpected source mesh or number of material slots.")
+    revised=data.replace(old,new)
+    if hashlib.sha256(revised).hexdigest()!=binding["painted"]:
+        raise ValueError("Unexpected painted mesh.")
+    path.write_bytes(revised)
 
 
 def main():
@@ -48,7 +74,9 @@ def main():
         if any(hashlib.sha256(data).hexdigest()!=files[p] for p,data in assets.items()):
             raise ValueError("A reference atlas differs from its recorded digest.")
         for p,data in assets.items():
-            (ROOT/"src"/p).write_bytes(data)
+            target=source["destinations"].get(p,p)
+            (ROOT/"src"/target).write_bytes(data)
+        bind_painted_surfaces(source)
     errors = validate(ROOT)
     if errors:
         raise ValueError("\n".join(errors))

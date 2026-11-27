@@ -39,7 +39,7 @@ def validate(root=ROOT, kind='pombero', issue=461, original_textures=None):
             path=model_path/name
             key=path.relative_to(root/'src').as_posix()
             original_bytes=(design_path.parent/original_name).read_bytes()
-            if key in paint['source_files']:
+            if key in paint['source_files'] and key not in paint['destinations']:
                 if hashlib.sha256(original_bytes).hexdigest()!=paint['original_runtime_sha256'][key]:errors.append('Original source texture changed: '+name)
             elif path.read_bytes()!=original_bytes:errors.append('Original texture changed: '+name)
         modeldef=(root/'src/caelum/data'/(kind+'_combat.modeldef')).read_text()

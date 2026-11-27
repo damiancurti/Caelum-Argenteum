@@ -1,6 +1,10 @@
 """Check the isolated native gallery's actual exports and approved associations."""
 from pathlib import Path
 import hashlib,json,math,re
+try:
+    from .import_painted_skins import manifest as painted_manifest, runtime_digest
+except ImportError:
+    from import_painted_skins import manifest as painted_manifest, runtime_digest
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -16,6 +20,7 @@ def validate(root=ROOT):
         assert gallery['map']=='CA709G' and gallery['status']=='isolated_visual_inspection_not_campaign'
         assert gallery['model_exports']==list(dict.fromkeys(b['export'] for b in gallery['model_bindings']))
         actors={};radii={};exports=[]
+        paint = painted_manifest(root)
         for binding in gallery['model_bindings']:
             report=json.loads((root/binding['export']).read_text())
             profile=report['species'][binding['kind']]['native_profile'] if 'species' in report else report['inherited_defaults']
@@ -24,6 +29,7 @@ def validate(root=ROOT):
             definitions=[];native=[]
             for name,want in report['sha256'].items():
                 if not name.startswith(('models/','caelum/')):continue
+                want=runtime_digest(paint,name,want)
                 path=root/'src'/name
                 assert hashlib.sha256(path.read_bytes()).hexdigest()==want,'Stale native source: '+name
                 native.append(name)

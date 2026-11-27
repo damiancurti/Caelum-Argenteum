@@ -4,7 +4,7 @@ Documentation version: **5.18.9** - 2026-11-27.
 
 ## 5.18.9 - Character presentation (#909)
 
-Seven painted atlas replacements from the author's campaign reference now appear on Domingo, the bull, Pombero, Cuero Unudo and Nahuelito. All seven match the pinned PR #908 bytes. The importer can reapply them after an original art export. Their UVs and the regional allocation are preserved. The independent IPK3 contained all seven exact images. Native inspection recorded both Domingo configurations and the four creatures.
+Seven painted atlas replacements from the author's campaign reference now appear on Domingo, the bull, Pombero, Cuero Unudo and Nahuelito. All seven match the pinned PR #908 bytes. The importer can reapply them after an original art export. Their UVs and the regional allocation are preserved. The independent IPK3 contained all seven exact images. Native inspection recorded both Domingo configurations and the four creatures. The inventory cloth keeps the original shared atlas. Only two material pointers in the Pombero mesh changed. The wardrobe source check resolves the original embedded image from the art directory.
 
 ## 5.18.8 - Character presentation (#905)
 
