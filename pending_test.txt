@@ -1,0 +1,4 @@
+CA902-MODELS-01 | Origin: 5.18.5 / #902
+Prerequisites: native 5.18.5+ build and hardware model rendering.
+Steps: view Mandinga, Zupay and the giant rat from the front, side and rear, then watch each walk, attack, react to damage and die in a test encounter.
+Expected: recognizable 3D silhouettes and materials, intact action timing, no missing model or return to a billboard. Report the actor and pose for any correction.

@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.18.4** - 2026-11-27.
+Documentation version: **5.18.5** - 2026-11-27.
+
+#902 visual models ready for author inspection.
 
 **5.18.4/#899:** audit fixes integrated with independent beta.
 All 115 author checks passed 2026-11-27 (#892-898).

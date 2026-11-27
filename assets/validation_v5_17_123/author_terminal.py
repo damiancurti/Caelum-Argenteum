@@ -9,6 +9,9 @@ def catalog(config=None):
     text=(ROOT/'pending_test.txt').read_text(encoding='utf-8')
     if not text.strip():
         return dict(data, checks=[], status_es='No hay comprobaciones pendientes. El historial conserva los resultados confirmados.')
+    pending_ids={line.partition(' | Origin:')[0] for line in text.splitlines() if ' | Origin:' in line}
+    if pending_ids and not pending_ids.intersection(row['id'] for row in data['checks']):
+        return dict(data, checks=[], status_es='Las comprobaciones de esta entrega ya fueron revisadas. Las nuevas figuran en pending_test.txt.')
     assert data['pending_sha256']==sha(ROOT/'pending_test.txt'),'El catálogo quedó desactualizado; regenerar antes de revisar.'
     for row in data['checks']:assert row['instructions'] in text
     return data

@@ -4830,3 +4830,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/wardrobe_candidate.modeldef"
 
 #include "caelum/data/rest_motion.modeldef"
+#include "caelum/data/native_creatures.modeldef"

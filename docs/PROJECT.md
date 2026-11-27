@@ -1,6 +1,10 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.18.4** - 2026-11-27.
+Documentation version: **5.18.5** - 2026-11-27.
+
+## 5.18.5 - Character presentation (#902)
+
+Mandinga, Zupay and the giant rat use 70 textured 3D poses derived from their own artwork for idle, movement, attacks, pain, death and sleep. GZDoom 4.14.2 rendered the three in the inspection room. Author visual review is pending.
 
 ## 5.18.4 - Repository audit integration (#899)
 

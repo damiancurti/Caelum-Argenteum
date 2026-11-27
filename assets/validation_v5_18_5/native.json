@@ -1,0 +1,28 @@
+{
+  "issue": 902,
+  "release": "5.18.5",
+  "engine": "GZDoom 4.14.2 on Windows 11",
+  "native_states": [
+    "CA902 state=Spawn class=CaelumMandinga angle=0",
+    "CA902 state=Spawn class=CaelumZupayColossus angle=0",
+    "CA902 state=Spawn class=CaelumGiantRat angle=0",
+    "CA902 state=See class=CaelumMandinga angle=45",
+    "CA902 state=See class=CaelumZupayColossus angle=45",
+    "CA902 state=See class=CaelumGiantRat angle=45",
+    "CA902 state=Melee class=CaelumMandinga angle=90",
+    "CA902 state=Melee class=CaelumZupayColossus angle=90",
+    "CA902 state=Melee class=CaelumGiantRat angle=90",
+    "CA902 state=Pain class=CaelumMandinga angle=135",
+    "CA902 state=Pain class=CaelumZupayColossus angle=135",
+    "CA902 state=Pain class=CaelumGiantRat angle=135",
+    "CA902 state=Death class=CaelumMandinga angle=180",
+    "CA902 state=Death class=CaelumZupayColossus angle=180",
+    "CA902 state=Death class=CaelumGiantRat angle=180",
+    "CA902 state=Spawn class=CaelumMandinga angle=225",
+    "CA902 state=Spawn class=CaelumZupayColossus angle=225",
+    "CA902 state=Spawn class=CaelumGiantRat angle=225"
+  ],
+  "binding_count": 70,
+  "author_acceptance": false,
+  "native_scope": "Independent 5.18.4 IPK3 plus all issue runtime models and their bindings. Three frozen player-camera captures and live actor state transitions."
+}
