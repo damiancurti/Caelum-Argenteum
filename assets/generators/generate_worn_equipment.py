@@ -8,7 +8,7 @@ import math
 import numpy as np
 from PIL import Image
 
-from character_mesh_frames import ROOT, Surface, animate, encode, read_model, rigid_track, subset
+from character_mesh_frames import ROOT, Surface, animate, animate_boot, encode, read_model, rigid_track, subset
 from wearable_helmet_fit import fit_helmet
 
 SRC = ROOT / "src"
@@ -103,17 +103,31 @@ def build(name, path, category, index, label, helmet_family=0):
         if axis[1]<0: axis=-axis
         forward = flat @ axis
         lateral = flat @ [axis[1],-axis[0]]
+        foot = category=="armor" and index==3
+        if foot:
+            center = (5, side*12.5, 16)
+            dimensions = (29,15,32)
+            shoe = fit(data,a,b,center,dimensions)
+            cuff = shoe[shoe[:, 2] > 31]
+            cuff_center = (cuff.min(0)[:2] + cuff.max(0)[:2])/2
+            cuff_scale = (18.5,17.5)/np.ptp(cuff[:, :2],axis=0)
         for s in pieces:
             # The tabletop artists use split vertices at every face. Weld only vertices
             # whose position AND UV agree before duplicating geometry across poses.
             unique, ids = np.unique(np.column_stack((s.positions[0],s.uv)),axis=0,return_inverse=True)
             p,uv = unique[:,:3],unique[:,3:]
             if pair:
-                foot = category=="armor" and index==3
-                center = (5,side*(15 if foot else 28),16 if foot else 83)
-                dimensions = (34,20,32) if foot else (19,16,26)
-                pose = fit(p,a,b,center,dimensions)
-                frames = animate(pose,("clothing",)) if foot else rigid_track(pose,"left_hand" if side>0 else "right_hand")
+                if foot:
+                    pose = fit(p,a,b,center,dimensions)
+                    # Inventory boots are splayed on display. Align the shaft
+                    # to the shin separately from the toe so trousers fit inside.
+                    blend = np.clip((pose[:, 2:3]-7)/14,0,1)
+                    upper = (pose[:, :2]-cuff_center)*cuff_scale + [-0.75,side*12.8]
+                    pose[:, :2] += blend*(upper-pose[:, :2])
+                    frames = animate_boot(pose,("clothing",))
+                else:
+                    pose = fit(p,a,b,(5,side*28,83),(19,16,26))
+                    frames = rigid_track(pose,"left_hand" if side>0 else "right_hand")
             elif category=="armor":
                 helmet = index==0
                 if helmet:

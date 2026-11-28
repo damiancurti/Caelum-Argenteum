@@ -6,7 +6,7 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The independent beta uses GZDoom installed separately; it requires no Doom IWAD.
 
-**Current release: 5.18.15.** The 59 wearable weapon, shield and armor modules fit the modular characters. Each family uses its own helmet shell. On Windows you can switch pieces and characters in the [silent fitting room](assets/validation_v5_18_15/Probador.cmd).
+**Current release: 5.18.16.** The seated sole follows its planted foot and the cuff follows the lower leg. Equipping foot armor replaces the visible base boot. Open the [silent fitting room](assets/validation_v5_18_15/Probador.cmd) to review the equipment.
 
 On Windows, run [the silent model inspection room](assets/validation_v5_18_14/Revisar.cmd) from the source checkout. F6 opens the stationary gallery, F7 the death roster, and F8 Zupay's ground slam. Use Page Up and Page Down to select a figure and R to replay its fall.
 
@@ -4535,7 +4535,7 @@ Long-term encounter/provision balance and unfinished 4.36 systems are developmen
 work in PROJECT/TASKS, not additional author checks for this patch.
 
 <!-- independent-player-guide:start -->
-## Caelum Argenteum 5.18.15 - independent review beta
+## Caelum Argenteum 5.18.16 - independent review beta
 
 This author-review beta contains the current MAP01-MAP03 prologue and existing
 campaign, cooperative, competitive and Trucazo systems. Later campaign locations,

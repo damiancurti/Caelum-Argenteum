@@ -124,3 +124,25 @@ def rigid_track(points,module):
             u[:,-1]*=-1
         result.append((points-center)@(u@vt)+target)
     return np.asarray(result,dtype='f')
+
+
+@lru_cache(maxsize=2)
+def seat_anchors(side):
+    samples, _ = reference(("underbody",))
+    rest, seated = samples[0], samples[SAMPLES.index(122)]
+    leg = rest[:, 1] * side > 0
+    # Median displacement at two bone landmarks ignores the duplicate UV seams.
+    def displacement(lo, hi):
+        take = leg & (rest[:, 2] >= lo) & (rest[:, 2] <= hi)
+        return np.median((seated - rest)[take], axis=0)
+    return displacement(0, 8), displacement(27, 34)
+
+
+def animate_boot(points, modules=("clothing", "underbody", "left_hand", "right_hand")):
+    poses = animate(points, modules)
+    sole, cuff = seat_anchors(1 if points[:, 1].mean() > 0 else -1)
+    # A horizontal slice of the shaft moves as a unit. The sole and welt
+    # stay rigid below the ankle while the upper meets the trouser leg.
+    weight = np.clip((points[:, 2:3] - 10) / 21, 0, 1)
+    poses[SAMPLES.index(122)] = points + sole + weight * (cuff - sole)
+    return poses

@@ -9,7 +9,7 @@ import re
 import numpy as np
 from PIL import Image
 
-from character_mesh_frames import ROOT, Surface, animate, encode, rigid_track
+from character_mesh_frames import ROOT, Surface, animate, animate_boot, encode, rigid_track
 from sculpted_character_art import Sculpt, paint, surfaces
 from sculpted_humanoid import figure, head, skull_profile
 
@@ -437,7 +437,7 @@ def main():
             coords = fit(part)
             if part.joint.startswith("hand"):
                 return follow(coords, "left_hand" if part.joint == "hand1" else "right_hand")
-            return animate(coords)
+            return animate_boot(coords) if slot == "boots" else animate(coords)
 
         def head_motion(part):
             return follow(fit(part), "face")

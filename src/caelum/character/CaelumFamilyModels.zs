@@ -15,6 +15,9 @@ class CaelumFamilyModels : Object play
         int hair=id<6?Clamp(profile.HairStyle,0,3):0;
         int color=id<6?Clamp(profile.HairColor,0,5):0;
         int key=(((((id*3+tone)*4+face)*4+hair)*6+color)*2+int(gloves))+1;
+        bool boots=body.health<=0 && body.WornVisualKeys[5]!=0 ? body.WornVisualKeys[5]>0 :
+            body.ArmorModel!=null && body.ArmorModel.ArmorType[CaelumConstants.ARMOR_SLOT_FEET]!=CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
+        key=key*2+int(boots);
         if(body.FamilyVisualKey==key)return;
         body.FamilyVisualKey=key;
         // El mismo casco necesita otro ajuste cuando se vuelve a enlazar el cuerpo vivo.
@@ -24,7 +27,7 @@ class CaelumFamilyModels : Object play
         BindSlot(body,0,base.."_shirt.md3",cloth);
         BindSlot(body,1,base.."_trousers.md3",cloth);
         BindSlot(body,2,base.."_belt.md3",cloth);
-        BindSlot(body,3,base.."_boots.md3",cloth);
+        BindSlot(body,3,base.."_boots.md3",cloth,!boots);
         int skin=id>=6?6+((id-6)/2)*3+tone:id>=2 && id<=3?3+tone:tone;
         BindSlot(body,4,base..(gloves?"_gloves.md3":"_hands.md3"),
             gloves?cloth:String.Format("hskin%d.png",skin));

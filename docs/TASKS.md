@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.18.15** - 2026-11-28.
+Documentation version: **5.18.16** - 2026-11-28.
+
+## 5.18.16 - Seated modular footwear (#926)
+
+Author review remains open. Press B to cycle the four footwear designs, S to sit or stand, and rotate to the side. Use 0 to inspect base boots.
 
 ## 5.18.15 - Modular equipment fit (#924)
 
