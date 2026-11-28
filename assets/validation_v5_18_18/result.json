@@ -28,5 +28,15 @@
   },
   "camera_in_map01": true,
   "audio": "-nosound",
-  "author_acceptance": "pending CA928-FIT-01"
+  "author_acceptance": "pending CA928-FIT-01",
+  "project_validation": {
+    "version": "5.18.18",
+    "errors": []
+  },
+  "deterministic_export": {
+    "byte_identical_meshes": 233,
+    "same_family_skins": 285,
+    "equipment_catalogue_rows": 12
+  },
+  "verified_player_meshes_in_standalone_package": 280
 }
