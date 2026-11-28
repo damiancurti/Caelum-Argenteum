@@ -9,6 +9,7 @@ import numpy as np
 from PIL import Image
 
 from character_mesh_frames import ROOT, Surface, animate, encode, read_model, rigid_track, subset
+from wearable_helmet_fit import fit_helmet
 
 SRC = ROOT / "src"
 DEST = SRC / "models/caelum/players/gear"
@@ -49,25 +50,28 @@ def load_obj(path):
     return result
 
 
-def atlas(name, surfaces):
+def atlas(name, surfaces, write_image=True):
     skins = sorted({s.shader for s in surfaces})
     side = math.ceil(math.sqrt(len(skins)))
     tile = 256
-    img = Image.new("RGBA",(tile*side,tile*side))
+    img = Image.new("RGBA",(tile*side,tile*side)) if write_image else None
     for index, skin in enumerate(skins):
+        x,y = (index%side)*tile,(index//side)*tile
+        for surface in surfaces:
+            if surface.shader == skin:
+                surface.uv = (np.clip(surface.uv,0,1)*(tile-4)+[x+2,y+2])/(tile*side)
+        if img is None:
+            continue
         with Image.open(SRC/skin) as page:
             page = page.convert("RGBA").resize((tile-4,tile-4),Image.Resampling.LANCZOS)
-        x,y = (index%side)*tile,(index//side)*tile
         img.paste(page,(x+2,y+2))
         # Extend border texels so mipmaps do not introduce black seams.
         img.paste(page.crop((0,0,1,tile-4)).resize((2,tile-4)),(x,y+2))
         img.paste(page.crop((tile-5,0,tile-4,tile-4)).resize((2,tile-4)),(x+tile-2,y+2))
         img.paste(img.crop((x,y+2,x+tile,y+3)).resize((tile,2)),(x,y))
         img.paste(img.crop((x,y+tile-3,x+tile,y+tile-2)).resize((tile,2)),(x,y+tile-2))
-        for s in surfaces:
-            if s.shader == skin:
-                s.uv = (np.clip(s.uv,0,1)*(tile-4)+[x+2,y+2])/(tile*side)
-    img.save(DEST/(name+".png"),optimize=False)
+    if img is not None:
+        img.save(DEST/(name+".png"),optimize=False)
 
 
 def bounds(surfaces):
@@ -79,9 +83,10 @@ def fit(points, low, high, center, dimensions):
     return p[:,[1,0,2]] * [-dimensions[0],dimensions[1],dimensions[2]] + center
 
 
-def build(name, path, category, index, label):
+def build(name, path, category, index, label, helmet_family=0):
     raw = load_obj(path) if path.suffix == ".obj" else read_model(path.read_bytes())
-    atlas(name,raw)
+    skin_name = name.split("_f")[0]
+    atlas(skin_name,raw,write_image=helmet_family==0)
     all_points = bounds(raw)
     low, high = all_points.min(0), all_points.max(0)
     surfaces = []
@@ -111,8 +116,10 @@ def build(name, path, category, index, label):
                 frames = animate(pose,("clothing",)) if foot else rigid_track(pose,"left_hand" if side>0 else "right_hand")
             elif category=="armor":
                 helmet = index==0
-                pose = fit(p,a,b,(2,0,159) if helmet else (2,0,117),
-                           (30,30,26) if helmet else (40,61,60))
+                if helmet:
+                    pose = fit_helmet(p, helmet_family, path.stem, s.shader)
+                else:
+                    pose = fit(p,a,b,(2,0,117),(40,61,60))
                 frames = rigid_track(pose,"face") if helmet else animate(pose,("clothing","underbody"))
             elif category=="shield":
                 dimensions = ((9,45,45),(12,57,90),(13,70,112),(10,55,65))[index]
@@ -127,11 +134,25 @@ def build(name, path, category, index, label):
                 depth = (p[:,1]-(a[1]+b[1])/2)*scale
                 pose = np.column_stack((span,-depth,-across)) if horizontal else np.column_stack((across,-depth,span))
                 frames = rigid_track(pose+[7,-31,82],"right_hand")
-            surfaces.append(Surface(frames,ids[s.faces],uv,"models/caelum/players/gear/"+name+".png"))
+            surfaces.append(Surface(frames,ids[s.faces],uv,"models/caelum/players/gear/"+skin_name+".png"))
     blob = encode(name,surfaces)
     (DEST/(name+".md3")).write_bytes(blob)
     return {"module":name,"category":category,"item":label,"source":path.relative_to(SRC).as_posix(),
             "frames":len(surfaces[0].positions),"surfaces":len(surfaces),"sha256":hashlib.sha256(blob).hexdigest()}
+
+
+def armor_module(index, material, name):
+    kind = ARMOR[index]
+    key = f"a{index}_{material}"
+    path = SRC/"models/caelum/inventory"/("armor_"+kind)/(name+".md3")
+    record = build(key, path, "armor", index, kind+"_"+name)
+    if index == 0:
+        fits = [record["sha256"]]
+        for family in range(1,7):
+            mesh = build(f"{key}_f{family}", path, "armor", index, kind+"_"+name, family)
+            fits.append(mesh["sha256"])
+        record["family_sha256"] = fits
+    return record
 
 
 def main():
@@ -151,7 +172,7 @@ def main():
         report.append(build(f"s{index}",inventory/"shields"/(name+".md3"),"shield",index,name))
     for index,kind in enumerate(ARMOR):
         for material,name in enumerate(MATERIALS):
-            report.append(build(f"a{index}_{material}",inventory/("armor_"+kind)/(name+".md3"),"armor",index,kind+"_"+name))
+            report.append(armor_module(index, material, name))
     (ART/"MODULES.json").write_bytes((json.dumps(report,indent=2)+"\n").encode())
     print(f"{len(report)} modules fitted to the existing 33 poses")
 

@@ -1,0 +1,61 @@
+{
+  "issue": 924,
+  "release": "5.18.15",
+  "engine": "GZDoom 4.14.2 on Windows 11, Vulkan",
+  "audio": "-nosound before engine initialization",
+  "ipk3_sha256": "82ec47b78385f2cfb2860b8d48c7de4be24be30a41832baef1486583df974cc1",
+  "equipment": {
+    "weapon_types": 27,
+    "weapon_models_including_tiers": 39,
+    "shields": 4,
+    "armor_designs": 16,
+    "reused_designs": 59,
+    "new_family_fits_for_helmets": 28
+  },
+  "native": {
+    "player_bodies": 14,
+    "equipped_vs_empty_comparisons": 826,
+    "captures_including_empty": 840,
+    "minimum_changed_pixels": 313,
+    "constant_item_family_switch": {
+      "compared_player_helmets": 56,
+      "different_from_human_control": 48,
+      "minimum_nonhuman_control_changed_pixels": 4055
+    },
+    "map01": {
+      "map": "MAP01",
+      "independent_game": true,
+      "save_reload": true,
+      "imported_5_18_10_save": true,
+      "last_sample": [
+        "CaelumPlayer",
+        "13",
+        "7490",
+        "56",
+        "3",
+        "4"
+      ]
+    }
+  },
+  "static_crown_clearance": {
+    "surface": "hollow_crown, matched by the inventory OBJ and source MD3 face indices",
+    "body_material_pairs": 56,
+    "upper_skull_rays": 11556,
+    "minimum_roof_clearance_model_units": 2.462
+  },
+  "deterministic_export": {
+    "md3": 83,
+    "png": 59,
+    "catalogue_matches": true
+  },
+  "artist_acceptance": "pending CA924-FIT-01",
+  "project_validation": {
+    "version": "5.18.15",
+    "errors": []
+  },
+  "distribution": {
+    "runtime_files": 19809,
+    "errors": [],
+    "unresolved_explicit_sprites": {}
+  }
+}

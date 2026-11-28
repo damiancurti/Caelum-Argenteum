@@ -1,6 +1,10 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.18.14** - 2026-11-27.
+Documentation version: **5.18.15** - 2026-11-28.
+
+## 5.18.15 - Modular equipment fit (#924)
+
+The independent review beta includes family-fitted helmet models and a silent fitting room for all modular equipment. Artist review is pending under #924.
 
 ## 5.18.14 - Character presentation (#921)
 

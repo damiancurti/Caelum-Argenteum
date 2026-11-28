@@ -1,13 +1,14 @@
 // Cada pieza toma su tipo del equipo real. Las ranuras sólo afectan al modelo.
 class CaelumWornEquipment : Object play
 {
-    static void UpdateSlot(CaelumPlayer body, int part, int key, String mesh)
+    static void UpdateSlot(CaelumPlayer body, int part, int key, String mesh, String skin = "")
     {
         if(body.WornVisualKeys[part] == key) return;
+        if(skin == "") skin=mesh;
         body.WornVisualKeys[part] = key;
         int slot = 7 + part;
         body.A_ChangeModel('None', slot, "models/caelum/players/gear", Name(mesh..".md3"),
-            slot, "models/caelum/players/gear", Name(mesh..".png"), key < 0 ? CMDL_HIDEMODEL : 0);
+            slot, "models/caelum/players/gear", Name(skin..".png"), key < 0 ? CMDL_HIDEMODEL : 0);
     }
 
     static void Sync(CaelumPlayer body)
@@ -34,7 +35,17 @@ class CaelumWornEquipment : Object play
             kind = armor!=null ? armor.ArmorType[i] : CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
             key = kind == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING ? -1 : kind+1;
             if(body.WornVisualKeys[i+2]!=key)
-                UpdateSlot(body,i+2,key,String.Format("a%d_%d",i,Max(0,key-1)));
+            {
+                String skin=String.Format("a%d_%d",i,Max(0,key-1));
+                String mesh=skin;
+                if(i==CaelumConstants.ARMOR_SLOT_HEAD && key>=0)
+                {
+                    let look=body.health<=0 && body.AppearanceDeathProfile!=null?body.AppearanceDeathProfile:body.CharacterProfile;
+                    int family=CaelumAppearance.Identity(look.Race,look.Sex,look.BeastForm)/2;
+                    if(family>0)mesh=mesh..String.Format("_f%d",family);
+                }
+                UpdateSlot(body,i+2,key,mesh,skin);
+            }
         }
     }
 }
