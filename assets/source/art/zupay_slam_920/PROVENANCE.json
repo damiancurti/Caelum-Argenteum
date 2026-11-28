@@ -1,0 +1,133 @@
+{
+  "animation": "MOTION.json",
+  "sha256": {
+    "src/models/caelum/creatures/zupay/slam.md3": "7640a7be8738efb738aea5799140290bb4d2636769522826fe53f688f8db6abf"
+  },
+  "samples": [
+    {
+      "tic": 0,
+      "grip": 0.0,
+      "knuckle_floor_gap": 156.676
+    },
+    {
+      "tic": 3,
+      "grip": 0.325,
+      "knuckle_floor_gap": 160.573
+    },
+    {
+      "tic": 6,
+      "grip": 0.584,
+      "knuckle_floor_gap": 166.121
+    },
+    {
+      "tic": 9,
+      "grip": 0.772,
+      "knuckle_floor_gap": 175.338
+    },
+    {
+      "tic": 12,
+      "grip": 0.931,
+      "knuckle_floor_gap": 194.428
+    },
+    {
+      "tic": 15,
+      "grip": 1.0,
+      "knuckle_floor_gap": 219.51
+    },
+    {
+      "tic": 19,
+      "grip": 1.0,
+      "knuckle_floor_gap": 273.151
+    },
+    {
+      "tic": 23,
+      "grip": 1.0,
+      "knuckle_floor_gap": 317.678
+    },
+    {
+      "tic": 27,
+      "grip": 1.0,
+      "knuckle_floor_gap": 331.931
+    },
+    {
+      "tic": 32,
+      "grip": 1.0,
+      "knuckle_floor_gap": 341.636
+    },
+    {
+      "tic": 37,
+      "grip": 1.0,
+      "knuckle_floor_gap": 341.356
+    },
+    {
+      "tic": 40,
+      "grip": 1.0,
+      "knuckle_floor_gap": 336.67
+    },
+    {
+      "tic": 42,
+      "grip": 1.0,
+      "knuckle_floor_gap": 321.308
+    },
+    {
+      "tic": 44,
+      "grip": 1.0,
+      "knuckle_floor_gap": 250.821
+    },
+    {
+      "tic": 46,
+      "grip": 1.0,
+      "knuckle_floor_gap": 118.826
+    },
+    {
+      "tic": 47,
+      "grip": 1.0,
+      "knuckle_floor_gap": 44.237
+    },
+    {
+      "tic": 48,
+      "grip": 1.0,
+      "knuckle_floor_gap": 0.0
+    },
+    {
+      "tic": 50,
+      "grip": 1.0,
+      "knuckle_floor_gap": 0.0
+    },
+    {
+      "tic": 53,
+      "grip": 1.0,
+      "knuckle_floor_gap": 0.0
+    },
+    {
+      "tic": 56,
+      "grip": 0.982,
+      "knuckle_floor_gap": 7.212
+    },
+    {
+      "tic": 60,
+      "grip": 0.92,
+      "knuckle_floor_gap": 56.06
+    },
+    {
+      "tic": 64,
+      "grip": 0.755,
+      "knuckle_floor_gap": 102.036
+    },
+    {
+      "tic": 69,
+      "grip": 0.482,
+      "knuckle_floor_gap": 143.509
+    },
+    {
+      "tic": 74,
+      "grip": 0.24,
+      "knuckle_floor_gap": 159.75
+    },
+    {
+      "tic": 79,
+      "grip": -0.0,
+      "knuckle_floor_gap": 156.676
+    }
+  ]
+}

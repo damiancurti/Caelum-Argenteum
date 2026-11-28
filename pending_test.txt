@@ -27,3 +27,8 @@ CA913-ROOM-01 | Origin: 5.18.10 / #913
 Prerequisites: the model inspection terminal and GZDoom 4.14.2.
 Steps: use 1 through 6, Page Up and Page Down, and walk around several exhibits. Close the game and use the open terminal to re-enter.
 Expected: one enclosed room, a single stationary row with a readable name at each station, and working navigation and relaunch.
+
+CA920-SLAM-01 | Origin: 5.18.13 / #920
+Prerequisites: hardware model rendering and the Zupay motion stage.
+Steps: watch both hands during the lift, strike and recovery from the front and side.
+Expected: fingers and thumbs close before the downswing, both fists reach the ground at impact and reopen as Zupay stands.

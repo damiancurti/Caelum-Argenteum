@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "issue": 466,
-  "runtime_files": 19737,
-  "metadata_documents": 702,
+  "runtime_files": 19741,
+  "metadata_documents": 704,
   "origin_decisions": "assets/distribution/ORIGINS.json",
   "dependency_findings": "assets/distribution/DEPENDENCIES.json",
   "provenance_resolution": "Union of the decision references and per-file additional_provenance; exact_metadata is traceability, not a license grant.",
@@ -15,14 +15,14 @@
     "maps/TTAROT.wad"
   ],
   "origin_counts": {
-    "project-source": 1062,
+    "project-source": 1065,
     "dejavu-font": 2352,
-    "project-art": 15847,
+    "project-art": 15848,
     "retained-notice": 30,
     "human-mesh": 315,
     "source-specific-audio": 131
   },
-  "exact_metadata_files": 14336,
+  "exact_metadata_files": 14337,
   "files": [
     {
       "path": "ANIMDEFS",
@@ -256,8 +256,8 @@
     },
     {
       "path": "caelum/actors/CaelumFolkloreCharacters.zs",
-      "sha256": "80c5a00ef221395a6688125d8871c3f84ccf21e2aeb63b5c0bd4adb99dd2e420",
-      "bytes": 31866,
+      "sha256": "8cd94ec0e23c6b3894acd71011fb071df7308b4995709e6290cfba50b1436f54",
+      "bytes": 32608,
       "decision": "project-source",
       "additional_provenance": [
         "assets/bestiary/BEHAVIOR.json",
@@ -2377,6 +2377,16 @@
       "dependency_ids": []
     },
     {
+      "path": "caelum/data/CaelumSlamFrames.zs",
+      "sha256": "93eb1e9d7031313f1313c61031ee5f969a632743b831afb060e635118a6a3484",
+      "bytes": 362,
+      "decision": "project-source",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "caelum/data/CaelumSofaData.zs",
       "sha256": "67c240b12b4e2fc80abf8c1081796b7b57cf47d3c1d4c75b895d46ca3dbcbe5e",
       "bytes": 1127,
@@ -4235,6 +4245,26 @@
       "exact_metadata": [
         "assets/source/art/witch_figures_817/EXPORT.json"
       ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "caelum/data/zupay_slam.modeldef",
+      "sha256": "f2439201541840974a2a24b8028072f6b62db871ab1f96736817a979668cb5a2",
+      "bytes": 848,
+      "decision": "project-source",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "caelum/data/zupay_slam.textures",
+      "sha256": "a65eaa589cdbdc598d12af6121f3c1221ee2e31f7a86a6f1e95e63f6e870f5fc",
+      "bytes": 21600,
+      "decision": "project-source",
+      "additional_provenance": [],
+      "exact_metadata": [],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
     },
@@ -8079,7 +8109,7 @@
     },
     {
       "path": "caelum/world/CaelumPhysicalHazards.zs",
-      "sha256": "9756fe6a8a1a9ba78ea134ea4000b1db3b38218f9a0446941f6909c43e6273c5",
+      "sha256": "dd4bd1be015ac4e34f3b3217cb6a5d07a4cd1e859ec7ebaa669ac11608cafff4",
       "bytes": 20721,
       "decision": "project-source",
       "additional_provenance": [
@@ -8407,7 +8437,7 @@
     },
     {
       "path": "caelum/world/CaelumSewerMaze.zs",
-      "sha256": "c2daf94516ec99cc375ac72297c664d5e8f0668783f0420e9fea130251103324",
+      "sha256": "63fe81b52ef57a04e7edbeb17954f8c73346490853a224b3c533341a9da18761",
       "bytes": 15766,
       "decision": "project-source",
       "additional_provenance": [],
@@ -204852,8 +204882,8 @@
     },
     {
       "path": "MODELDEF",
-      "sha256": "46f2fa9e80af0d1034886ecc35529866c4a01dd5f1f66c68672e8529fbd12cc5",
-      "bytes": 106516,
+      "sha256": "df3f68b0e37e4ba4e4ce9850d65d372d42fd6856211428423d2573bdaa1293be",
+      "bytes": 106560,
       "decision": "project-source",
       "additional_provenance": [
         "assets/source/art/inventory_models_647/furniture/DESIGN.json"
@@ -210484,6 +210514,20 @@
       ],
       "exact_metadata": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/creatures/zupay/slam.md3",
+      "sha256": "7640a7be8738efb738aea5799140290bb4d2636769522826fe53f688f8db6abf",
+      "bytes": 1340468,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/zupay_slam_920/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/zupay_slam_920/PROVENANCE.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -267694,8 +267738,8 @@
     },
     {
       "path": "TEXTURES",
-      "sha256": "3958df53c3bed45aa802252f0f7a15d14b4260370609d290826a8faf3207aa21",
-      "bytes": 315693,
+      "sha256": "3baaeb5400bcf24b9a81b3e9197a4224e37824de7eeb8b26455e17c7349311b0",
+      "bytes": 315737,
       "decision": "project-source",
       "additional_provenance": [
         "assets/first_person_v4/VALIDATION.json",
@@ -269639,7 +269683,7 @@
       "maps/MAP01.wad"
     ]
   },
-  "explicit_sprite_prefixes": 3864,
+  "explicit_sprite_prefixes": 3865,
   "unresolved_explicit_sprites": {},
   "errors": [],
   "limits": [

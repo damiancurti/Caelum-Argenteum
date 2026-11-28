@@ -1662,3 +1662,7 @@ assets/validation_v5_18_11/*.json text eol=lf
 
 assets/validation_v5_18_12/*.py text eol=lf
 assets/validation_v5_18_12/*.json text eol=lf
+
+src/caelum/data/zupay_slam.* text eol=lf
+src/caelum/data/CaelumSlamFrames.zs text eol=lf
+assets/validation_v5_18_13/*.py text eol=lf

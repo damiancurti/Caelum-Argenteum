@@ -1,0 +1,34 @@
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "slam.md3"
+    Skin 0 "zuida.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    NoInterpolation
+    FrameIndex ZSLM A 0 0
+    FrameIndex ZSLM B 0 1
+    FrameIndex ZSLM C 0 2
+    FrameIndex ZSLM D 0 3
+    FrameIndex ZSLM E 0 4
+    FrameIndex ZSLM F 0 5
+    FrameIndex ZSLM G 0 6
+    FrameIndex ZSLM H 0 7
+    FrameIndex ZSLM I 0 8
+    FrameIndex ZSLM J 0 9
+    FrameIndex ZSLM K 0 10
+    FrameIndex ZSLM L 0 11
+    FrameIndex ZSLM M 0 12
+    FrameIndex ZSLM N 0 13
+    FrameIndex ZSLM O 0 14
+    FrameIndex ZSLM P 0 15
+    FrameIndex ZSLM Q 0 16
+    FrameIndex ZSLM R 0 17
+    FrameIndex ZSLM S 0 18
+    FrameIndex ZSLM T 0 19
+    FrameIndex ZSLM U 0 20
+    FrameIndex ZSLM V 0 21
+    FrameIndex ZSLM W 0 22
+    FrameIndex ZSLM X 0 23
+    FrameIndex ZSLM Y 0 24
+}

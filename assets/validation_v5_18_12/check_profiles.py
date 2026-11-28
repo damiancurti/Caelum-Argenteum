@@ -45,14 +45,14 @@ class CA903Test : StaticEventHandler {
     package.writestr("MAPINFO", 'gameinfo { PlayerClasses = "CaelumPlayer" EventHandlers = "CA903Test" }\n')
 cfg = out / "test.cfg"
 cfg.write_text(
-    "i_pauseinbackground false\nvid_activeinbackground true\nvid_lowerinbackground false\nsnd_mastervolume 0.05\nwait 145; quit\n"
+    "i_pauseinbackground false\nvid_activeinbackground true\nvid_lowerinbackground false\nsnd_mastervolume 0\nwait 145; quit\n"
 )
 log = out / "motor.log"
 with (out / "process.log").open("wb") as f:
     subprocess.run(
         [
             str(args.engine),
-            "-noautoload",
+            "-nosound", "-noautoload",
             "-iwad",
             str(game),
             "-file",

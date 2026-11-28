@@ -1,6 +1,10 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.18.12** - 2026-11-27.
+Documentation version: **5.18.13** - 2026-11-27.
+
+## 5.18.13 - Character presentation (#920)
+
+Zupay closes both hands as he raises his arms, strikes the ground with his knuckles and opens his hands during recovery. The source keys are in `assets/source/art/zupay_slam_920/MOTION.json` and the captured motion is in `assets/validation_v5_18_13/zupay.webp`.
 
 ## 5.18.12 - Character presentation (#917)
 
