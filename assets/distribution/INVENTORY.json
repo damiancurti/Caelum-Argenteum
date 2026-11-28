@@ -568,8 +568,8 @@
     },
     {
       "path": "caelum/character/CaelumAppearance.zs",
-      "sha256": "5c0a8c169987fe1ed4a6384e0a555ff29b5c6fa9e5cf7713e0a63ed0303fdcdf",
-      "bytes": 6033,
+      "sha256": "61c92461290a3a2b0151fe8b18ff5c4cb37ba4f604b3a84ad39c1a19c5d83c79",
+      "bytes": 6035,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -5646,8 +5646,8 @@
     },
     {
       "path": "caelum/player/CaelumPlayer.zs",
-      "sha256": "5fb247b59a971a662bcb07a7803003a507421947542605204d0b4dfe47837e1a",
-      "bytes": 462195,
+      "sha256": "e55e24138b9c46bff4e6a31aa7d150e4f6748de69a5f0f3ea7730589066a6e09",
+      "bytes": 462196,
       "decision": "project-source",
       "additional_provenance": [
         "assets/first_person_v6/VALIDATION.json"
@@ -8083,8 +8083,8 @@
     },
     {
       "path": "caelum/world/CaelumPhysicalHazards.zs",
-      "sha256": "22281bceee5969556869aa86a5fcc44daa2eae6cdc4ffa90af471c905cedcbbe",
-      "bytes": 20720,
+      "sha256": "c01957a1a4eb4b3655efe37957cc7be9fa4436bc63d8425b1556161b964b8052",
+      "bytes": 20721,
       "decision": "project-source",
       "additional_provenance": [
         "assets/first_person_v4/VALIDATION.json",
@@ -8411,8 +8411,8 @@
     },
     {
       "path": "caelum/world/CaelumSewerMaze.zs",
-      "sha256": "0b75269b69fb2c6d02f547a12938756398941df244c7de2476a02b77de8d422a",
-      "bytes": 15765,
+      "sha256": "ebea3a12966bb9d5b3e50f5e5761e00acb0a0ab9ac8f663664fe59d1970d0619",
+      "bytes": 15766,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],

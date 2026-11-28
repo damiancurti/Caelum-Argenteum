@@ -22,3 +22,8 @@ CA909-PAINT-01 | Origin: 5.18.9 / #909, source #906 / PR #908
 Prerequisites: gallery with the painted texture package integrated.
 Steps: view Domingo, the bull, Pombero, Cuero Unudo and Nahuelito from the front and both sides under the same light.
 Expected: the supplied materials follow the original UVs across body, head and face. Identify the station and angle for any further paint correction.
+
+CA913-ROOM-01 | Origin: 5.18.10 / #913
+Prerequisites: the model inspection terminal and GZDoom 4.14.2.
+Steps: use 1 through 6, Page Up and Page Down, and walk around several exhibits. Close the game and use the open terminal to re-enter.
+Expected: one enclosed room, a single stationary row with a readable name at each station, and working navigation and relaunch.

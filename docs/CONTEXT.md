@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.18.9** - 2026-11-27.
+Documentation version: **5.18.10** - 2026-11-27.
+
+#913 visual models ready for author inspection.
 
 #902-905/#909 await visual review. Seven #736 families approved.
 5.18.4/#899 integrated. 115 checks accepted (#892-898).
