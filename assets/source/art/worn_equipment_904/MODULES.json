@@ -1,0 +1,533 @@
+[
+  {
+    "module": "w0_1",
+    "category": "weapon",
+    "item": "sword",
+    "source": "models/caelum/inventory/bladed_weapons/sword.md3",
+    "frames": 33,
+    "surfaces": 3,
+    "sha256": "cefa56bfdd38984a04edd5d76386c703b4915cea4222f2cb115baa9216f6012a"
+  },
+  {
+    "module": "w1_1",
+    "category": "weapon",
+    "item": "staff",
+    "source": "models/caelum/inventory/magic_bases/staff.md3",
+    "frames": 33,
+    "surfaces": 5,
+    "sha256": "33d9d75a0779951a7c0b456b7ebdee16569efcd84624757c98414217010da12b"
+  },
+  {
+    "module": "w2_1",
+    "category": "weapon",
+    "item": "carbine",
+    "source": "models/caelum/inventory/ranged_weapons/carbine.md3",
+    "frames": 33,
+    "surfaces": 6,
+    "sha256": "c2691f0501e7c1c65e6613d33c2bd755054af6683209fcd5d9e2aefb13cda9fe"
+  },
+  {
+    "module": "w3_1",
+    "category": "weapon",
+    "item": "dagger",
+    "source": "models/caelum/inventory/bladed_weapons/dagger.md3",
+    "frames": 33,
+    "surfaces": 3,
+    "sha256": "8805da73dc22ff55af370bfec65c53df9c8645c5ccec7a4aa9018e9774028579"
+  },
+  {
+    "module": "w4_1",
+    "category": "weapon",
+    "item": "hatchet",
+    "source": "models/caelum/inventory/axes/hatchet.md3",
+    "frames": 33,
+    "surfaces": 5,
+    "sha256": "519fef207c3665e40ba061d068463831b198e9608182b0b501fa236ed6c97025"
+  },
+  {
+    "module": "w5_1",
+    "category": "weapon",
+    "item": "machete",
+    "source": "models/caelum/inventory/bladed_weapons/machete.md3",
+    "frames": 33,
+    "surfaces": 3,
+    "sha256": "78f06a788a2f650e33b822e0563133e5ce25ce44ee9d4a8bc1420a3c8854f605"
+  },
+  {
+    "module": "w6_1",
+    "category": "weapon",
+    "item": "javelin",
+    "source": "models/caelum/inventory/polearms/javelin.md3",
+    "frames": 33,
+    "surfaces": 4,
+    "sha256": "67a4096424c0916e30fd10acd2430751526b9f2db498861d853268d439cdc24a"
+  },
+  {
+    "module": "w7_1",
+    "category": "weapon",
+    "item": "axe",
+    "source": "models/caelum/inventory/axes/axe.md3",
+    "frames": 33,
+    "surfaces": 3,
+    "sha256": "49629e0f77296d7a2afc444b8e6f0a61ff5208707357ea0d2c68d65b614af7ad"
+  },
+  {
+    "module": "w8_1",
+    "category": "weapon",
+    "item": "flail",
+    "source": "models/caelum/inventory/articulated_weapons/flail.md3",
+    "frames": 33,
+    "surfaces": 6,
+    "sha256": "5f223d8795b184a5fd619c5a6405272ff0878b7c8416d23da28452b364188f4e"
+  },
+  {
+    "module": "w9_1",
+    "category": "weapon",
+    "item": "spear",
+    "source": "models/caelum/inventory/polearms/spear.md3",
+    "frames": 33,
+    "surfaces": 4,
+    "sha256": "d057ce3edbd62f22cda9bcddf94dadf3c6dacd7d66e50bc3aae5850359dac586"
+  },
+  {
+    "module": "w10_1",
+    "category": "weapon",
+    "item": "greatsword",
+    "source": "models/caelum/inventory/bladed_weapons/greatsword.md3",
+    "frames": 33,
+    "surfaces": 3,
+    "sha256": "e8e23c073f9c7989ad3842098bfce43a3bb9062364f3f7924172c14068cc90fd"
+  },
+  {
+    "module": "w11_1",
+    "category": "weapon",
+    "item": "war_axe",
+    "source": "models/caelum/inventory/axes/war_axe.md3",
+    "frames": 33,
+    "surfaces": 5,
+    "sha256": "63d64e810a4fa1c9643187e4e7170daa6119d409b708f83105480c089cfebfd0"
+  },
+  {
+    "module": "w12_1",
+    "category": "weapon",
+    "item": "halberd",
+    "source": "models/caelum/inventory/polearms/halberd.md3",
+    "frames": 33,
+    "surfaces": 6,
+    "sha256": "cf8600c921cc6e3dcf754345fd71a1cf2a36065a3111a5bedb07e89ff9235f19"
+  },
+  {
+    "module": "w13_1",
+    "category": "weapon",
+    "item": "giant_gauntlets",
+    "source": "models/caelum/inventory/articulated_weapons/giant_gauntlets.md3",
+    "frames": 33,
+    "surfaces": 8,
+    "sha256": "879dbe1eb905d3274df1bf546d68b15b7d8b0209b132db58a32b54e6c1ad9c0e"
+  },
+  {
+    "module": "w14_1",
+    "category": "weapon",
+    "item": "shotgun",
+    "source": "models/caelum/inventory/ranged_weapons/shotgun.md3",
+    "frames": 33,
+    "surfaces": 3,
+    "sha256": "c7606d9a78e68bbed0e93c51d4b7839ca47fdeb3463f68ce927bcb807ff59cc5"
+  },
+  {
+    "module": "w15_1",
+    "category": "weapon",
+    "item": "longbow",
+    "source": "models/caelum/inventory/ranged_weapons/longbow.md3",
+    "frames": 33,
+    "surfaces": 6,
+    "sha256": "98bcc27520d1bf1118d11cc161b8501f94aaca27f01fb43b4e2b986938d3954f"
+  },
+  {
+    "module": "w16_1",
+    "category": "weapon",
+    "item": "crossbow",
+    "source": "models/caelum/inventory/ranged_weapons/crossbow.md3",
+    "frames": 33,
+    "surfaces": 5,
+    "sha256": "ff99379eb398e26221e515dcabba6088e4968a94a7fd421cb69e4de181a41333"
+  },
+  {
+    "module": "w17_1",
+    "category": "weapon",
+    "item": "bell",
+    "source": "models/caelum/inventory/magic_bases/bell.md3",
+    "frames": 33,
+    "surfaces": 4,
+    "sha256": "0f0408d66529f711f14ee742bffffb187416a6b8634294fc6af588631bd3f850"
+  },
+  {
+    "module": "w18_1",
+    "category": "weapon",
+    "item": "scepter",
+    "source": "models/caelum/equipment/support_implements/scepter_t1.obj",
+    "frames": 33,
+    "surfaces": 9,
+    "sha256": "a02c314b17a8a28e0b161e23a13156357c44d12583dd50875513c8b8f1a993bd"
+  },
+  {
+    "module": "w18_2",
+    "category": "weapon",
+    "item": "scepter",
+    "source": "models/caelum/equipment/support_implements/scepter_t2.obj",
+    "frames": 33,
+    "surfaces": 13,
+    "sha256": "50400479214b549b8ec2f0f3dd2eedf734033c6c5a288cf3f7c7fe8ad6f8f05d"
+  },
+  {
+    "module": "w18_3",
+    "category": "weapon",
+    "item": "scepter",
+    "source": "models/caelum/equipment/support_implements/scepter_t3.obj",
+    "frames": 33,
+    "surfaces": 18,
+    "sha256": "12f6d932ffb70d1d3bac70a911d3f2ea9b6ec3f828252df0c06272e02900adca"
+  },
+  {
+    "module": "w19_1",
+    "category": "weapon",
+    "item": "orb",
+    "source": "models/caelum/equipment/support_implements/orb_t1.obj",
+    "frames": 33,
+    "surfaces": 5,
+    "sha256": "0f7713829e547022cf500de59c7ae06d0c62cdfead915b1dae12df9f2b1246ca"
+  },
+  {
+    "module": "w19_2",
+    "category": "weapon",
+    "item": "orb",
+    "source": "models/caelum/equipment/support_implements/orb_t2.obj",
+    "frames": 33,
+    "surfaces": 9,
+    "sha256": "96eed77a95904a9218a6defcf1af86f1e54cac46e266845053cfb74dbc0165ef"
+  },
+  {
+    "module": "w19_3",
+    "category": "weapon",
+    "item": "orb",
+    "source": "models/caelum/equipment/support_implements/orb_t3.obj",
+    "frames": 33,
+    "surfaces": 13,
+    "sha256": "09a72666512a2b032a2733cf32840711bd0ca44ab7b31985044acb063b3b02d7"
+  },
+  {
+    "module": "w20_1",
+    "category": "weapon",
+    "item": "pickaxe",
+    "source": "models/caelum/inventory/axes/pickaxe.md3",
+    "frames": 33,
+    "surfaces": 4,
+    "sha256": "65781bec59996a35ae01e9115d80019b4409e4525e5a353978e122bd5e7d6352"
+  },
+  {
+    "module": "w21_1",
+    "category": "weapon",
+    "item": "utility_staff",
+    "source": "models/caelum/inventory/polearms/utility_staff.md3",
+    "frames": 33,
+    "surfaces": 4,
+    "sha256": "3f8da2dedde6e3b133b58eb289502bbe8a8ca4f4c1e8f0a1f33790081ce72f88"
+  },
+  {
+    "module": "w22_1",
+    "category": "weapon",
+    "item": "bolas",
+    "source": "models/caelum/inventory/articulated_weapons/bolas.md3",
+    "frames": 33,
+    "surfaces": 3,
+    "sha256": "19116af103880d8024ef9ab911c6854c3a3eb1e95271e8e8afd1747f874193ef"
+  },
+  {
+    "module": "w23_1",
+    "category": "weapon",
+    "item": "book",
+    "source": "models/caelum/equipment/support_implements/book_t1.obj",
+    "frames": 33,
+    "surfaces": 11,
+    "sha256": "1fd5d55daf1ad7422807dc3ac2f937c86b9096d6cabf07d1e2736cc389e829f2"
+  },
+  {
+    "module": "w23_2",
+    "category": "weapon",
+    "item": "book",
+    "source": "models/caelum/equipment/support_implements/book_t2.obj",
+    "frames": 33,
+    "surfaces": 14,
+    "sha256": "607ca73824e146480634b0382cb1edae3d1aae1bf76e7bab0dfff5c9e173c98f"
+  },
+  {
+    "module": "w23_3",
+    "category": "weapon",
+    "item": "book",
+    "source": "models/caelum/equipment/support_implements/book_t3.obj",
+    "frames": 33,
+    "surfaces": 19,
+    "sha256": "e4ac51c8784347183c17cd7085f52e02c4ba9542b5ce4737b191fe9ec3509822"
+  },
+  {
+    "module": "w24_1",
+    "category": "weapon",
+    "item": "censer",
+    "source": "models/caelum/equipment/support_implements/censer_t1.obj",
+    "frames": 33,
+    "surfaces": 10,
+    "sha256": "73d7118a3c3498185169cc74d09fe28e02e8c920bbf5a17de5e84227ed5bae33"
+  },
+  {
+    "module": "w24_2",
+    "category": "weapon",
+    "item": "censer",
+    "source": "models/caelum/equipment/support_implements/censer_t2.obj",
+    "frames": 33,
+    "surfaces": 14,
+    "sha256": "a947a667fc7bae5ea34e9b58d73ef82627d71b03a3d51dcd35a5c96a76aece95"
+  },
+  {
+    "module": "w24_3",
+    "category": "weapon",
+    "item": "censer",
+    "source": "models/caelum/equipment/support_implements/censer_t3.obj",
+    "frames": 33,
+    "surfaces": 19,
+    "sha256": "d3c01107111afef3d712329348d16fab65950a497e3f514bf614f5e1ce741e52"
+  },
+  {
+    "module": "w25_1",
+    "category": "weapon",
+    "item": "statuette",
+    "source": "models/caelum/equipment/support_implements/statuette_t1.obj",
+    "frames": 33,
+    "surfaces": 5,
+    "sha256": "4df37ef3604944270755b5d8dda0807e1d63cb5fb2b3bb876dbe5edafc38d5c1"
+  },
+  {
+    "module": "w25_2",
+    "category": "weapon",
+    "item": "statuette",
+    "source": "models/caelum/equipment/support_implements/statuette_t2.obj",
+    "frames": 33,
+    "surfaces": 9,
+    "sha256": "c810155d28352f501dc48e655f23580ea8355e97ebf5fbdc6cc78374c930c59c"
+  },
+  {
+    "module": "w25_3",
+    "category": "weapon",
+    "item": "statuette",
+    "source": "models/caelum/equipment/support_implements/statuette_t3.obj",
+    "frames": 33,
+    "surfaces": 14,
+    "sha256": "b98c7d65fd5cfdeeeb808390f1252bbb7ff6d3c1b6e7419011de050ef25a7b56"
+  },
+  {
+    "module": "w26_1",
+    "category": "weapon",
+    "item": "effigy",
+    "source": "models/caelum/equipment/support_implements/effigy_t1.obj",
+    "frames": 33,
+    "surfaces": 9,
+    "sha256": "e6725a472c3aa6d2a96392394824e0a28616ca139a80625f413320c7fbf6b057"
+  },
+  {
+    "module": "w26_2",
+    "category": "weapon",
+    "item": "effigy",
+    "source": "models/caelum/equipment/support_implements/effigy_t2.obj",
+    "frames": 33,
+    "surfaces": 13,
+    "sha256": "3522dbd1c3001024d0c4fe73b396b8663b1fdd6ffddf86a8993248b15e464ac6"
+  },
+  {
+    "module": "w26_3",
+    "category": "weapon",
+    "item": "effigy",
+    "source": "models/caelum/equipment/support_implements/effigy_t3.obj",
+    "frames": 33,
+    "surfaces": 18,
+    "sha256": "818701eb7dba946475e1114f8f03cd414bca5c6995f0c0154379a0ac6cf116d5"
+  },
+  {
+    "module": "s0",
+    "category": "shield",
+    "item": "buckler",
+    "source": "models/caelum/inventory/shields/buckler.md3",
+    "frames": 33,
+    "surfaces": 4,
+    "sha256": "7c9463022365862e759ef887462b22b65fa5690215b55d989dd1279aea888727"
+  },
+  {
+    "module": "s1",
+    "category": "shield",
+    "item": "kite",
+    "source": "models/caelum/inventory/shields/kite.md3",
+    "frames": 33,
+    "surfaces": 4,
+    "sha256": "bdfb950911c8d08e3d65f84dff52fa88d3b555682f553f0d1cad67135d33a6ec"
+  },
+  {
+    "module": "s2",
+    "category": "shield",
+    "item": "tower",
+    "source": "models/caelum/inventory/shields/tower.md3",
+    "frames": 33,
+    "surfaces": 4,
+    "sha256": "b8ab0cad44a4cae71f8c461916577258ac612359937ea05892fbd01e6a897bb4"
+  },
+  {
+    "module": "s3",
+    "category": "shield",
+    "item": "magic",
+    "source": "models/caelum/inventory/shields/magic.md3",
+    "frames": 33,
+    "surfaces": 3,
+    "sha256": "3855c8f293035b13a5c486365981250e7c16425ddd67acede3a65d0a10e2814f"
+  },
+  {
+    "module": "a0_0",
+    "category": "armor",
+    "item": "helmets_magic",
+    "source": "models/caelum/inventory/armor_helmets/magic.md3",
+    "frames": 33,
+    "surfaces": 6,
+    "sha256": "96b175d3ea18d58b3901bad5fa49b8049f27117fe9650ac2a568031b0f4c8127"
+  },
+  {
+    "module": "a0_1",
+    "category": "armor",
+    "item": "helmets_light",
+    "source": "models/caelum/inventory/armor_helmets/light.md3",
+    "frames": 33,
+    "surfaces": 5,
+    "sha256": "d5f110852f46c07faac8c7b64f47ff4e8120e2bde85cf8889eedf3f6a65f3170"
+  },
+  {
+    "module": "a0_2",
+    "category": "armor",
+    "item": "helmets_medium",
+    "source": "models/caelum/inventory/armor_helmets/medium.md3",
+    "frames": 33,
+    "surfaces": 5,
+    "sha256": "53e6fee7be679179d080d92566f4efaa66a1757b7c2049b23deda0c9df60426a"
+  },
+  {
+    "module": "a0_3",
+    "category": "armor",
+    "item": "helmets_heavy",
+    "source": "models/caelum/inventory/armor_helmets/heavy.md3",
+    "frames": 33,
+    "surfaces": 6,
+    "sha256": "5f436d38e6af9e02c97924e1b6659e41518583b3e2f0f11e503333ecd44d7f45"
+  },
+  {
+    "module": "a1_0",
+    "category": "armor",
+    "item": "torso_magic",
+    "source": "models/caelum/inventory/armor_torso/magic.md3",
+    "frames": 33,
+    "surfaces": 10,
+    "sha256": "8990ac3e22f8a699ab5aaebbfdb44c5a4051103bc13463ca0d85bcdf82e0ac3b"
+  },
+  {
+    "module": "a1_1",
+    "category": "armor",
+    "item": "torso_light",
+    "source": "models/caelum/inventory/armor_torso/light.md3",
+    "frames": 33,
+    "surfaces": 10,
+    "sha256": "54cc3a826e562832f309df4c98c260309f743c4870f97e546996fec44b7251f6"
+  },
+  {
+    "module": "a1_2",
+    "category": "armor",
+    "item": "torso_medium",
+    "source": "models/caelum/inventory/armor_torso/medium.md3",
+    "frames": 33,
+    "surfaces": 11,
+    "sha256": "7a31e6077c3ff8eefd6b92384526b9f5b35982212770b3d9080b5b4fb3dea8af"
+  },
+  {
+    "module": "a1_3",
+    "category": "armor",
+    "item": "torso_heavy",
+    "source": "models/caelum/inventory/armor_torso/heavy.md3",
+    "frames": 33,
+    "surfaces": 12,
+    "sha256": "ef478eccafbda3e3f832bccd764e95596865b64af1d1cc8e671142e75fa86cd5"
+  },
+  {
+    "module": "a2_0",
+    "category": "armor",
+    "item": "hands_magic",
+    "source": "models/caelum/inventory/armor_hands/magic.md3",
+    "frames": 33,
+    "surfaces": 6,
+    "sha256": "a49c33e86404a3f408d68947c28780e03c671ee5287186cc43c91a055136c36d"
+  },
+  {
+    "module": "a2_1",
+    "category": "armor",
+    "item": "hands_light",
+    "source": "models/caelum/inventory/armor_hands/light.md3",
+    "frames": 33,
+    "surfaces": 6,
+    "sha256": "65639b8a7f2edc6ea9019d5bdccd51bae5f6c11e49e791017a137de733f2dc64"
+  },
+  {
+    "module": "a2_2",
+    "category": "armor",
+    "item": "hands_medium",
+    "source": "models/caelum/inventory/armor_hands/medium.md3",
+    "frames": 33,
+    "surfaces": 8,
+    "sha256": "72a04e163f1d7c85fabce8e6ca0c7048c0d0c2703117fe340ef920f8047bbe3d"
+  },
+  {
+    "module": "a2_3",
+    "category": "armor",
+    "item": "hands_heavy",
+    "source": "models/caelum/inventory/armor_hands/heavy.md3",
+    "frames": 33,
+    "surfaces": 10,
+    "sha256": "8716adea8a5c1dfda2dd4cdf1d86962898f55af33166aa740541eba2b3ff1abf"
+  },
+  {
+    "module": "a3_0",
+    "category": "armor",
+    "item": "feet_magic",
+    "source": "models/caelum/inventory/armor_feet/magic.md3",
+    "frames": 33,
+    "surfaces": 13,
+    "sha256": "12dacd4a20376f55b4851e205904c70a95a23e59aff5efb26d0f507d90874cbd"
+  },
+  {
+    "module": "a3_1",
+    "category": "armor",
+    "item": "feet_light",
+    "source": "models/caelum/inventory/armor_feet/light.md3",
+    "frames": 33,
+    "surfaces": 14,
+    "sha256": "ebe02fb1c82adb822f4aa5e03b5ec947518b9e71049236df5b67383b43ffc5e0"
+  },
+  {
+    "module": "a3_2",
+    "category": "armor",
+    "item": "feet_medium",
+    "source": "models/caelum/inventory/armor_feet/medium.md3",
+    "frames": 33,
+    "surfaces": 14,
+    "sha256": "af18305dc87b85589e94a54c42be478e0f8cc0137a3c77dac7bff1be9041db49"
+  },
+  {
+    "module": "a3_3",
+    "category": "armor",
+    "item": "feet_heavy",
+    "source": "models/caelum/inventory/armor_feet/heavy.md3",
+    "frames": 33,
+    "surfaces": 15,
+    "sha256": "c33ec57389d9e6a54c1898749d5489cd624ac801622f2c4b6b8d7900f7375126"
+  }
+]

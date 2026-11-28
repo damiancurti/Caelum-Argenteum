@@ -1,6 +1,10 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.18.6** - 2026-11-27.
+Documentation version: **5.18.7** - 2026-11-27.
+
+## 5.18.7 - Character presentation (#904)
+
+Third-person equipment follows six independent sockets across the 33 player poses. The 59 fitted modules cover 27 weapons, the authored support tiers, four shields and sixteen armor designs. GZDoom 4.14.2 exercised 81 loadouts and removal of all six pieces. Author fit and material review is pending.
 
 ## 5.18.6 - Character presentation (#903)
 

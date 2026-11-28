@@ -112,6 +112,7 @@ class CaelumAppearance : Object play
         if(authoredCrouch)user.crouchsprite=user.sprite;
         user.bNoSkin=true;
         CaelumFamilyModels.Bind(user,profile,user.AppearanceHasGloves);
+        CaelumWornEquipment.Sync(user);
         if(user.AppearanceHead==null)
         {
             user.AppearanceHead=CaelumAppearanceHead(Actor.Spawn("CaelumAppearanceHead",user.Pos,NO_REPLACE));
@@ -122,3 +123,4 @@ class CaelumAppearance : Object play
 }
 
 #include "caelum/character/CaelumFamilyModels.zs"
+#include "caelum/character/CaelumWornEquipment.zs"

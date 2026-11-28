@@ -84,6 +84,7 @@ class CaelumPlayer : DoomPlayer
     CaelumAppearanceHead AppearanceHead;
     int AppearancePose;
     transient int FamilyVisualKey;
+    transient int WornVisualKeys[6];
     bool AppearanceHasGloves,AppearanceDeathGloves;
     // #861: referencias de presentación reconstruidas tras cargar o cambiar inventario.
     transient bool AppearanceHandStateReady;
