@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.18.14** - 2026-11-27.
+Documentation version: **5.18.15** - 2026-11-28.
+
+## 5.18.15 - Modular equipment fit (#924)
+
+The author requested a complete check of wearable weapons and armor on the sculpted bodies. All 59 equipment modules were already packaged. In the earlier build the plume reduced the scale of two helmet bowls and hair showed through their tops. The fitted bowls use the current head proportions and preserve the owned inventory designs. A silent GZDoom 4.14.2 run compared each of the 59 pieces with the same unequipped body on all 14 profiles (826 visible equipment comparisons). All 56 body/helmet combinations matched the explicit family mesh in the native renderer. The upper-scalp audit measured 11,556 intersections against the exported metal bowls. MAP01 restored the equipped player after saving and loading, including the older 5.18.10 save. Author acceptance remains pending.
 
 ## 5.18.14 - Character presentation (#921)
 

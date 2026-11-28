@@ -149,7 +149,8 @@ for seq,item in enumerate(gear):
         part,kind=map(int,module[1:].split("_"))
         label=("Casco","Coraza","Guantes","Botas")[part]+" / "+("magia","ligera","media","pesada")[kind]
     name=f"GalleryGear{seq}"
-    defs[name]=block+f'\nModel {slot} "gear/{module}.md3"\nSkin {slot} "gear/{module}.png"\nFrameIndex D300 A {slot} 0'
+    mesh=f"{module}_f{family//2}" if item.get("family_sha256") and family//2 else module
+    defs[name]=block+f'\nModel {slot} "gear/{mesh}.md3"\nSkin {slot} "gear/{module}.png"\nFrameIndex D300 A {slot} 0'
     add(name,label,human,category="Equipo",identity=family)
 
 n=len(exhibits)

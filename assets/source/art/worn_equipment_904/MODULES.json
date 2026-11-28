@@ -393,7 +393,16 @@
     "source": "models/caelum/inventory/armor_helmets/magic.md3",
     "frames": 33,
     "surfaces": 6,
-    "sha256": "96b175d3ea18d58b3901bad5fa49b8049f27117fe9650ac2a568031b0f4c8127"
+    "sha256": "31d9b1a36b5a78e1b1e5eaf0fe9649935d3bc954c68057a18aa6be83846cac88",
+    "family_sha256": [
+      "31d9b1a36b5a78e1b1e5eaf0fe9649935d3bc954c68057a18aa6be83846cac88",
+      "87501b9cc0469ba9953232e1a26ef0b23d9110ce36de859800469a68d6e45f9e",
+      "a209f80644fa4d0ab403e7b462119c6899621d2c71ddc55b8077bd167048d625",
+      "60be1a170814ae2d1c993566f2e67a6848a6d073fe13bde826a15f4ffe5ee3b5",
+      "90b82cf1d0f3ad35a9143f413bb16250da7894bc3a6fee670607c66529206cfa",
+      "a55001ebe389a4d5507da20c4d7ba894c797716302ced15e1f5c2de937414c38",
+      "5406d580f70f8e3da13efa4c0a8ccb9169abefed383918a6faa72f9c849ac4cd"
+    ]
   },
   {
     "module": "a0_1",
@@ -402,7 +411,16 @@
     "source": "models/caelum/inventory/armor_helmets/light.md3",
     "frames": 33,
     "surfaces": 5,
-    "sha256": "d5f110852f46c07faac8c7b64f47ff4e8120e2bde85cf8889eedf3f6a65f3170"
+    "sha256": "0e144d78645671012c0c5fb2b7993797f2239bea1eabaeae8f95955669f02e4c",
+    "family_sha256": [
+      "0e144d78645671012c0c5fb2b7993797f2239bea1eabaeae8f95955669f02e4c",
+      "5eff69f11031ab3197f0ba49a2be474380cc7f8f7393a4f7a2a8455c5a25690e",
+      "703d8a8aa0f743961368b294d6efabd0bca35461c60ba1c0197f087ba2f46495",
+      "183a33c0997672f42baae7e878c590b39f1560d72dc0c31c92f64695d593cd04",
+      "014c193e8581d556af2222822dfecedb729b582263ca2bcf57aa90f97d3aeb7b",
+      "4c3b885a3442c9529123fe4ec306a8582569301bcc5698a4fc76e9fe731fbe32",
+      "000475ce6b8a33ef6c9e7ca5f9adadba1edf0f072fc3e680986b640e79d7a312"
+    ]
   },
   {
     "module": "a0_2",
@@ -411,7 +429,16 @@
     "source": "models/caelum/inventory/armor_helmets/medium.md3",
     "frames": 33,
     "surfaces": 5,
-    "sha256": "53e6fee7be679179d080d92566f4efaa66a1757b7c2049b23deda0c9df60426a"
+    "sha256": "38db4d27ecb54c0dbca6ab36f738b2abd29fd88f1e9012121b5cfd5143cee490",
+    "family_sha256": [
+      "38db4d27ecb54c0dbca6ab36f738b2abd29fd88f1e9012121b5cfd5143cee490",
+      "5fd767e29110c2313f0bb550ddc9d09f5656e7a3c3bd1f58bc958f71d9d8a9ad",
+      "196d108a356d746008cbefb292ca989f1a221184b4d8c93444219bad35d7d142",
+      "cda6239099c4743f86e4f611ac228ca684738e8b5c726bd148d6418791a741bf",
+      "9637de6a34877b741701de631b8990eba10fdfde30169309c26a3b92295e369c",
+      "80ef50babf6d3f750b04634e4c77acfd12485c4896423aa7a1b5baad6f75fbd7",
+      "78e1bf620a01595acd8d847bc1e8744a803a0ceec91a9366227535c060ff0d2a"
+    ]
   },
   {
     "module": "a0_3",
@@ -420,7 +447,16 @@
     "source": "models/caelum/inventory/armor_helmets/heavy.md3",
     "frames": 33,
     "surfaces": 6,
-    "sha256": "5f436d38e6af9e02c97924e1b6659e41518583b3e2f0f11e503333ecd44d7f45"
+    "sha256": "0a7a39c05061b3c37dd62f519a2dfd41a4992d782bd83720182b23d2a0d42aec",
+    "family_sha256": [
+      "0a7a39c05061b3c37dd62f519a2dfd41a4992d782bd83720182b23d2a0d42aec",
+      "ca456988fe9c103591f8fe520b09767627157016bfda1bfeadf17574f5d5da10",
+      "11d163eb3f1d629931bf8dad5d2339f259c34f1c78ccf960e0a61b304c6afd68",
+      "e99f2871fc5dd50b8cee7f7ef618345ea4ec0978733de8497e9b6aae49ec74c1",
+      "5544d697d62273b7d5ba722194b9ece48f051a0444464f5908299b70976e488b",
+      "522320934d116e436fe50dc22ced75e76190e20f14f06763b90300fe46e3fa52",
+      "b9a2ec8b5348cea80ce3474cd33da8b0c452d1178c586da7322c4ed250423612"
+    ]
   },
   {
     "module": "a1_0",

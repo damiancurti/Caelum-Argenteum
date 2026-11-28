@@ -17,6 +17,8 @@ class CaelumFamilyModels : Object play
         int key=(((((id*3+tone)*4+face)*4+hair)*6+color)*2+int(gloves))+1;
         if(body.FamilyVisualKey==key)return;
         body.FamilyVisualKey=key;
+        // El mismo casco necesita otro ajuste cuando se vuelve a enlazar el cuerpo vivo.
+        if(body.health>0)body.WornVisualKeys[2+CaelumConstants.ARMOR_SLOT_HEAD]=0;
         String base=String.Format("b%d",id);
         String cloth=base..".png";
         BindSlot(body,0,base.."_shirt.md3",cloth);

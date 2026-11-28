@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.18.14** - 2026-11-27.
+Documentation version: **5.18.15** - 2026-11-28.
+
+## 5.18.15 - Modular equipment fit (#924)
+
+Use CA924-FIT-01 to review grip, shield placement and the four armor slots on the sculpted bodies. Page Up and Page Down select a piece, F2 and F3 change the body, and the arrow keys turn the figure.
 
 ## 5.18.14 - Character presentation (#921)
 

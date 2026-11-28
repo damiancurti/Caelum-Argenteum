@@ -1,6 +1,10 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.18.14** - 2026-11-27.
+Documentation version: **5.18.15** - 2026-11-28.
+
+## 5.18.15 - Modular equipment fit (#924)
+
+The four wearable helmets follow the heads of the seven families in both sexes. The exporter fits the visor and the inside of the bowl against the current head and upper hair meshes, then carries the crest and plume with the bowl. All 28 fits reuse the four owned helmet skins and the existing 33 face-socket poses. The fitting room displays all 39 weapon variants, four shields and sixteen armor pieces individually or as a set on the chosen player. The native reference images and checks are in [the 5.18.15 validation directory](../assets/validation_v5_18_15/).
 
 ## 5.18.14 - Character presentation (#921)
 
