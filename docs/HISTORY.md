@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.18.11** - 2026-11-27.
+Documentation version: **5.18.12** - 2026-11-27.
+
+## 5.18.12 - Character presentation (#917)
+
+All fourteen player forms now use original modular sculpts. Witches and warlocks guide humanoid anatomy, and the Pombero guides the goblins. The four beast families have species-specific skulls, muzzles and ears. The bodies support the existing customization and equipment slots. In GZDoom 4.14.2 the standalone release resolved all fourteen identities on the MAP01 player. The gallery recorded 76 comparison views and visited all 205 stationary exhibits. A new save and a 5.18.10 save restored the female jaguar with the same scepter, tower shield and heavy helmet. The author rejected the earlier sprite-derived designs. The author reported angular female arms, pointed busts and visible scalp. The review revision corrects the sleeves, chest and all 24 hairstyles. Review of the replacement remains pending under CA903-FAMILIES-01.
 
 ## 5.18.11 - Character presentation (#916)
 

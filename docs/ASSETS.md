@@ -1,6 +1,10 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.18.11** - 2026-11-27.
+Documentation version: **5.18.12** - 2026-11-27.
+
+## 5.18.12 - Character presentation (#917)
+
+All fourteen player forms now use original modular sculpts. Witches and warlocks guide humanoid anatomy, and the Pombero guides the goblins. The four beast families have species-specific skulls, muzzles and ears. The bodies support the existing customization and equipment slots. The seven female shirt modules use continuous shoulder-to-wrist axes and a smooth interpolated chest profile. A continuous hair cap fitted to the widest skull follows all four haircuts on each humanoid body. The player generator bakes the 33 existing poses for each of 140 visible modules. The player palette contains 272 materials for clothing, heads, hair and hands. Profile and gallery evidence is in [the 5.18.12 validation directory](../assets/validation_v5_18_12/).
 
 ## 5.18.11 - Character presentation (#916)
 

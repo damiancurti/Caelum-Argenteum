@@ -79,6 +79,12 @@ def paint(palette, pattern=None):
             for x, y in [(5, 8), (23, 4), (38, 16), (16, 27), (40, 39), (3, 42)]:
                 draw.arc((x - 4, y - 3, x + 4, y + 3), 10, 285, fill=color(0.42), width=2)
                 draw.point((x, y), fill=color(0.65))
+        if material == "hair" and pattern == "combed":
+            # Each patch of highlight is carried along the UV flow of a lock.
+            for x in range(tile):
+                phase = 2 * pi * x / (tile - 1)
+                value = 1 + 0.115 * cos(12 * phase + 0.55 * sin(3 * phase)) + 0.047 * cos(7 * phase - 0.4)
+                draw.line((x, 0, x, tile - 1), fill=color(value))
         # The native sector light can be uniform. Paint broad form shadows into
         # each material ramp so cheeks, ribs and folded cloth still read there.
         values = np.linspace(1.23, 0.43, tile)[:, None, None]

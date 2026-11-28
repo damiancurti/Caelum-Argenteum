@@ -1659,3 +1659,6 @@ src/caelum/character/CaelumFamilyModels.zs text eol=lf
 
 assets/validation_v5_18_11/*.py text eol=lf
 assets/validation_v5_18_11/*.json text eol=lf
+
+assets/validation_v5_18_12/*.py text eol=lf
+assets/validation_v5_18_12/*.json text eol=lf

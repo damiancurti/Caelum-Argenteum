@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.18.11** - 2026-11-27.
+Documentation version: **5.18.12** - 2026-11-27.
+
+## 5.18.12 - Character presentation (#917)
+
+All fourteen player forms now use original modular sculpts. Witches and warlocks guide humanoid anatomy, and the Pombero guides the goblins. The four beast families have species-specific skulls, muzzles and ears. The bodies support the existing customization and equipment slots.
 
 ## 5.18.11 - Character presentation (#916)
 

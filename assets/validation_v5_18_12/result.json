@@ -1,0 +1,145 @@
+{
+  "issue": 917,
+  "release": "5.18.12",
+  "platform": "Windows 11, GZDoom 4.14.2, Vulkan",
+  "ipk3_sha256": "24a3f4565919f93e5782959ca3697c7eabe5f4f5a5966db32fa2fec7bdd16d52",
+  "archive_crc": "passed",
+  "visible_player_meshes": 140,
+  "poses_per_visible_player_mesh": 33,
+  "visible_player_materials": 272,
+  "capture_count": 76,
+  "reference_stations": {
+    "witches": 24,
+    "Salamanca warlock": 25,
+    "Pombero (goblins only)": 29
+  },
+  "gallery": {
+    "station_count": 205,
+    "stationary_census": [
+      {
+        "tic": 4,
+        "stationary": 205,
+        "total": 205
+      },
+      {
+        "tic": 109,
+        "stationary": 205,
+        "total": 205
+      }
+    ],
+    "all_stations_visited": true
+  },
+  "real_player_MAP01_profile_samples": [
+    [
+      0,
+      0,
+      14
+    ],
+    [
+      1,
+      1,
+      844
+    ],
+    [
+      2,
+      2,
+      1674
+    ],
+    [
+      3,
+      3,
+      1880
+    ],
+    [
+      4,
+      4,
+      2518
+    ],
+    [
+      5,
+      5,
+      3348
+    ],
+    [
+      6,
+      6,
+      3458
+    ],
+    [
+      7,
+      7,
+      4226
+    ],
+    [
+      8,
+      8,
+      4994
+    ],
+    [
+      9,
+      9,
+      5186
+    ],
+    [
+      10,
+      10,
+      5954
+    ],
+    [
+      11,
+      11,
+      6722
+    ],
+    [
+      12,
+      12,
+      6914
+    ],
+    [
+      13,
+      13,
+      7682
+    ]
+  ],
+  "MAP01_persistence": {
+    "map": "MAP01",
+    "independent_game": true,
+    "save_reload": true,
+    "imported_5_18_10_save": true,
+    "last_sample": [
+      "CaelumPlayer",
+      "13",
+      "7490",
+      "56",
+      "3",
+      "4"
+    ]
+  },
+  "manual_art_acceptance": "Pending CA903-FAMILIES-01.",
+  "project_validation": {
+    "command": "python -X utf8 validate_project.py",
+    "errors": []
+  },
+  "grip_alignment": {
+    "poses_per_form": 33,
+    "forms": 14,
+    "hand_modules_per_form": 2,
+    "maximum_nearest_vertex_distance_native_mesh_units": 1.45
+  },
+  "byte_identical_reexport_of_visible_models_and_materials": true,
+  "hidden_renderer_bridge": {
+    "mesh": "conceal.md3",
+    "material": "invisible.png",
+    "matches_source_issue_903": true
+  },
+  "author_corrections": {
+    "gallery_capture_count": 76,
+    "hairstyle_capture_count": 48,
+    "face_hairstyle_combinations_checked": 96,
+    "comparison_sheets": [
+      "heads.jpg",
+      "figures.jpg"
+    ],
+    "visual_approval": "pending"
+  }
+}
