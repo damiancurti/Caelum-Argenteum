@@ -1,5 +1,6 @@
 """Sculpt the three creature bodies and bake their existing native action poses."""
 
+from dataclasses import replace
 from math import cos, sin, pi
 import hashlib
 import json
@@ -31,12 +32,196 @@ DESIGN = {
 }
 
 
+def demon_clothing(kind):
+    """Cloth is skinned to the same torso, arms and legs used by each action."""
+    king = kind == "zupay"
+    m = Sculpt()
+    width = 1.23 if king else 1.0
+
+    def coat(rows, material, joint="torso", folds=0.45):
+        def fabric(x, y, z, t):
+            pleat = folds * (0.58 * sin(8 * t + 0.04 * z) + 0.42 * cos(5 * t - 0.05 * z))
+            return x + pleat * cos(t), y + pleat * sin(t), z
+
+        m.loft(
+            joint,
+            material,
+            [(z, x, 0, rx, ry * width) for z, x, rx, ry in rows],
+            32,
+            power=0.86,
+            sculpt=fabric,
+        )
+
+    # Cut to fit the chest and the back. The bottom edge projects beyond
+    # the hips so the coat reads as fabric when the legs take a step.
+    torso = np.array(
+        [
+            (82, -1, 15, 21),
+            (85, -1, 14.8, 20.5),
+            (96, -0.4, 13.7, 18.7),
+            (104, -0.3, 12.7, 17.0),
+            (116, -0.2, 14.0, 19.4),
+            (126, 0.1, 18.4, 22.9),
+            (133, -0.8, 16.3, 23),
+            (137, -0.8, 13.4, 19.1),
+            (141, -0.8, 8.4, 9.3),
+        ]
+    )
+    coat(torso if king else torso[2:], "cloth")
+    if not king:
+        m.loft(
+            "pelvis",
+            "pants",
+            [(83, -0.2, 0, 12.9, 16.8), (90, -0.5, 0, 14, 19.7), (100, -0.3, 0, 13.4, 18.8)],
+            24,
+            power=0.88,
+        )
+    for sign in (-1, 1):
+        m.loft(
+            "arm" + str(sign),
+            "skin",
+            [
+                (87.4, 5.2, sign * 28.1, 3.5, 3.3),
+                (94, 4.5, sign * 27.9, 4.1, 3.9),
+                (99, 4.0, sign * 27.8, 4.8, 4.4),
+            ],
+            16,
+        )
+        sy = 19.4 * width
+        m.loft(
+            "arm" + str(sign),
+            "cloth",
+            [
+                (95, 4.5, sign * 27.9, 4.8, 4.6),
+                (102, 3.1, sign * 27.9, 6.7, 6.3),
+                (110, 0.2, sign * 27.5, 6.6, 6.5),
+                (116, 0.3, sign * 26.4, 8, 7.6),
+                (125, -0.2, sign * (sy + 2.2), 9.9, 10.1),
+                (130, -1.0, sign * sy, 10, 10.1),
+                (134, -1.25, sign * (sy - 0.6), 8.3, 8.1),
+                (136, -1.6, sign * (sy - 1.9), 4.3, 4.6),
+            ],
+            20,
+        )
+        m.loft(
+            "arm" + str(sign),
+            "trim",
+            [
+                (94.5, 4.6, sign * 27.9, 5.2, 4.9),
+                (96.2, 4.35, sign * 27.9, 5.3, 5.1),
+                (98.8, 4.0, sign * 27.8, 5.7, 5.55),
+            ],
+            16,
+        )
+        # Gathered trousers end above the split hooves.
+        c = 12.4
+        lower = [
+            (19, -0.7, sign * c, 5.2, 5.0),
+            (24, -0.8, sign * c, 5.5, 5.1),
+            (33, -2, sign * c, 8.9, 7.9),
+            (44, 0.1, sign * c, 10.2, 9.05),
+            (55, 2.2, sign * c, 10, 8.9),
+        ]
+        # Under the tunic the breeches end inside the hem. Hidden upper
+        # trousers would otherwise poke through the front during a long stride.
+        upper = (
+            [(66, 0.4, sign * 11.6, 9.1, 8.4)]
+            if king
+            else [
+                (71, 0.1, sign * 11.0, 12.6, 10.1),
+                (86, -0.5, sign * 9.7, 13.8, 10.7),
+                (96, -0.3, sign * 8.9, 12.5, 10),
+            ]
+        )
+        m.loft("leg" + str(sign), "pants", lower + upper, 18, power=0.9)
+    if not king:
+        # Cut the opening out of the actual waistcoat surface. Both the
+        # outer leather and its thin lining follow the shirt underneath.
+        def vest_point(z, t, lift):
+            cx, rx, ry = [np.interp(z, torso[:, 0], torso[:, k]) for k in (1, 2, 3)]
+            c, s = cos(t), sin(t)
+            return (
+                cx + (rx + lift) * np.sign(c) * abs(c) ** 0.86,
+                (ry + lift) * np.sign(s) * abs(s) ** 0.86,
+                z,
+            )
+
+        vest = []
+        welt = [[], []]
+        for z in np.linspace(96, 140, 25):
+            gap = np.interp(z, [96, 112, 122, 132, 140], [0.085, 0.07, 0.16, 0.42, 0.73])
+            angles = np.linspace(gap, 2 * pi - gap, 46)
+            outer = []
+            inner = []
+            for t in angles:
+                down = max(0, (z - 129) / 11) ** 2 * 4.7 * sin(t) ** 2
+                outer.append(vest_point(z - down, t, 1.72))
+                inner.append(vest_point(z - down, t, 1.02))
+            vest.append([*outer, *reversed(inner)])
+            for i, pt in enumerate((outer[0], outer[-1])):
+                welt[i].append((*pt, 0.42, 0.39))
+        m.rings("torso", "leather", vest)
+        for line in welt:
+            m.sweep("torso", "trim", line, 7)
+        for z in (107, 114, 121):
+            for sign in (-1, 1):
+                x, y, zz = vest_point(z, sign * 0.245, 1.95)
+                m.oval("torso", "brass", (x, y, zz), (0.65, 0.89, 0.89), 10, 6)
+        coat([(140, -0.4, 8.4, 8.2), (142, -0.5, 7.8, 7.8), (144, -0.5, 7.8, 7.5)], "sash")
+    else:
+        # Layered knee-length tunic with a flared hem and embroidered borders.
+        coat(
+            [
+                (59, -1, 20.4, 25.5),
+                (62, -1, 20.15, 25.3),
+                (71, -1, 20.2, 24.3),
+                (83, -0.8, 18.4, 22.2),
+                (97, -0.5, 14.6, 19.9),
+            ],
+            "cloth",
+            "skirt",
+            1.2,
+        )
+        coat([(59, -1, 20.8, 25.9), (60.4, -1, 20.65, 25.7), (62.0, -1, 20.56, 25.7)], "trim", "skirt", 1.2)
+
+        # The mantle drapes behind the shoulders with a shorter front. A
+        # raised collar and contrasting woven hem are visible from both sides.
+        def mantle(t, q):
+            c, s = cos(t), sin(t)
+            front = max(0.0, c)
+            bottom = 76 + 42 * front**1.15 + 12 * abs(s)
+            z = 145 + (bottom - 145) * q
+            rx = np.interp(q, [0, 0.14, 0.36, 0.65, 1], [8.7, 15.8, 20.6, 22.7, 24.8])
+            ry = np.interp(q, [0, 0.14, 0.36, 0.65, 1], [9.7, 24.9, 32.8, 33.8, 35.2])
+            fold = q * (1.28 * cos(10 * t + 0.3 * q) + 0.42 * sin(5 * t))
+            return -1.6 + (rx + fold) * c, (ry + fold) * s, z
+
+        angles = np.arange(48) * 2 * pi / 48
+
+        def mantle_band(mat, levels, lift):
+            rings = []
+            for q in levels:
+                ring = []
+                for t in angles:
+                    x, y, z = mantle(t, q)
+                    ring.append((x + lift * cos(t), y + lift * sin(t), z))
+                rings.append(ring)
+            m.rings("torso", mat, rings[::-1])
+
+        mantle_band("seam", [0, 0.14, 0.28, 0.40, 0.58, 0.80, 1], 0)
+        mantle_band("trim", [0.885, 0.911], 0.32)
+        mantle_band("brass", [0.940, 0.956], 0.34)
+        coat([(139, -1, 9.3, 8.3), (141, -1, 9.1, 8.2), (145, -1, 8.7, 8.0)], "trim")
+        m.oval("torso", "brass", (14.5, 0, 140), (1.6, 2.45, 2.8), 12, 8)
+    coat([(95.8, -0.45, 15.8, 20.4), (98, -0.4, 16, 20.5), (103, -0.3, 15.2, 19.4)], "sash", "pelvis", 0.30)
+    m.oval("pelvis", "brass", (15.45, 0, 99.5), (1.2, 3.4, 2.45), 12, 7)
+    return m.parts
+
+
 def demon(kind):
     king = kind == "zupay"
     sections = figure(kind, False, monster=True)
-    pieces = [
-        p for section in ("shirt", "trousers", "boots", "belt", "hands") for p in sections[section].parts
-    ]
+    pieces = [p for section in ("boots", "hands") for p in sections[section].parts]
     mask = head(kind, False, 2 if king else 1)
     m = Sculpt()
     # A swept scalp breaks the uninterrupted brow-to-cranium surface while
@@ -143,23 +328,6 @@ def demon(kind):
         [(7, 0, 147.3, 3.45, 2.3), (7.5, 0, 144.8, 2.85, 2.25), (7.7, 0, 140.5, 0.22, 0.38)],
         10,
     )
-    m.patch(
-        "pelvis",
-        "leather",
-        [(12, -7, 98), (12, 7, 98), (14.5, 6, 85), (14.8, 2.4, 69), (14.8, -5, 78)],
-        (15.4, 0, 86),
-    )
-    for s in (-1, 1):
-        m.sweep(
-            "pelvis",
-            "brass",
-            [
-                (10.1, s * 9.1, 98.6, 0.85, 1.0),
-                (5.5, s * 16.5, 96.2, 0.9, 0.9),
-                (0.2, s * 18.3, 97.2, 0.79, 0.88),
-            ],
-            8,
-        )
     m.sweep(
         "tail",
         "skin",
@@ -198,7 +366,7 @@ def demon(kind):
             [(11, -29.6, 88), (16, -30, 87), (40, -31, 109), (44, -31, 116), (33, -31, 111)],
             (25, -32.1, 101),
         )
-    return pieces + mask.parts + m.parts
+    return pieces + demon_clothing(kind) + mask.parts + m.parts
 
 
 def rodent():
@@ -358,13 +526,20 @@ def posed(piece, key, frame):
     attack = prefix in ("mndg", "zupy") and (idx in (3, 4) or idx >= 12) or prefix == "ratg" and idx == 3
     pain = prefix in ("mndg", "zupy") and idx == 5 or prefix == "ratg" and idx == 4
     phase = [0.82, -0.82, 0.42, -0.42][idx % 4] if walk else 0
+    if j == "skirt":
+        # Cloth near each knee shares part of that thigh's stride. The belt stays anchored.
+        center = posed(replace(piece, joint="pelvis"), key, frame)
+        left = posed(replace(piece, joint="thigh1"), key, frame)
+        right = posed(replace(piece, joint="thigh-1"), key, frame)
+        across = np.clip(0.5 + p[:, 1:2] / 16, 0, 1)
+        sway = np.clip((95 - p[:, 2:3]) / 38, 0, 1) * 0.80
+        return center * (1 - sway) + (left * across + right * (1 - across)) * sway
     if not rat and j.startswith(("arm", "leg")):
         # Continuous limbs bend across a short elbow/knee transition.
         lower = j.startswith("leg")
         z = p[:, 2].copy()
         upper = "thigh" if lower else "upper"
         distal = "shin" if lower else "fore"
-        from dataclasses import replace
 
         a = posed(replace(piece, joint=upper + str(sign)), key, frame)
         b = posed(replace(piece, joint=distal + str(sign)), key, frame)
@@ -443,7 +618,11 @@ def main():
                 "hooftip": (62, 50, 43),
                 "iris": (187, 132, 59),
                 "leather": (78, 58, 48),
-                "sash": (106, 52, 43),
+                "sash": (132, 55, 46) if key == "mandinga" else (154, 99, 51),
+                "cloth": (195, 174, 134) if key == "mandinga" else (119, 52, 66),
+                "trim": (163, 132, 87) if key == "mandinga" else (191, 155, 91),
+                "seam": (109, 88, 62) if key == "mandinga" else (57, 62, 86),
+                "pants": (64, 73, 78) if key == "mandinga" else (61, 54, 64),
             }
         )
         texture = paint(palette)
@@ -471,6 +650,10 @@ def main():
         "method": "Original articulated three-dimensional ring and sweep sculptures. No sprite or projected concept pixels.",
         "anatomy_reference": "assets/source/art/witch_figures_817",
         "demon_design_references": ["CA-FOLK-018", "CA-FOLK-019"],
+        "clothing": {
+            "mandinga": "Long-sleeved shirt, open leather waistcoat, sash and gathered trousers.",
+            "zupay": "Knee-length tunic, bordered mantle, sash and trousers.",
+        },
         "rat_anatomy": "Arched axial body, articulated jaw, concave pinnae, incisors, whiskers, four sets of toes and a tapering tail.",
         "actions": {k: v[2].split() for k, v in DESIGN.items()},
         "sha256": inventory,
