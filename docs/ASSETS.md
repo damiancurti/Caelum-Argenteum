@@ -1,6 +1,10 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.18.7** - 2026-11-27.
+Documentation version: **5.18.8** - 2026-11-27.
+
+## 5.18.8 - Character presentation (#905)
+
+The bull has broader withers, brisket and muzzle, a lower dewlap, more outward horn sweep and weight-bearing hooves. Blender 4.5.3 produced two identical 136-frame exports with the original triangles, UVs and timings. Native front, profile and moving-pose views are recorded for author review.
 
 ## 5.18.7 - Character presentation (#904)
 
