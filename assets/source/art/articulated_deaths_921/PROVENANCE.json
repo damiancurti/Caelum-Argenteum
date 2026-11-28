@@ -1,0 +1,132 @@
+{
+  "CaelumBestiary027": {
+    "source": "assets/source/art/distinct_forms_822",
+    "model": "src/models/caelum/folklore/distinctforms/luzmala_fall.md3",
+    "sha256": "73c019b8d83dd2408073f09997c0316f86b01afd0ed1cb05433d1d5bb7278c6b",
+    "heights": [
+      100.551,
+      88.809,
+      65.566,
+      24.677,
+      6.922,
+      8.0
+    ]
+  },
+  "CaelumBestiary028": {
+    "source": "assets/source/art/heads_803",
+    "model": "src/models/caelum/folklore/heads/umita_fall.md3",
+    "sha256": "2ec5660757c9e20e7476830d3a82595c79582684dfde21b966fe777ce7075b75",
+    "heights": [
+      101.502,
+      99.14,
+      98.179,
+      81.463,
+      72.889,
+      74.801
+    ]
+  },
+  "CaelumBestiary029": {
+    "source": "assets/source/art/apparitions_797",
+    "model": "src/models/caelum/folklore/apparitions/mulanima_fall.md3",
+    "sha256": "15e63e1d8b167eed2bdb8a83092f399e81cb6dda164ed17cb0a8b3cf79d74210",
+    "heights": [
+      99.698,
+      94.081,
+      76.63,
+      46.315,
+      32.525,
+      33.977
+    ]
+  },
+  "CaelumBestiary030": {
+    "source": "assets/source/art/apparitions_797",
+    "model": "src/models/caelum/folklore/apparitions/chancho_lata_fall.md3",
+    "sha256": "ba8f79f80bd007a21f8e76e5412bec5e19a9ebee6f4a0b0f4c5852756d546caa",
+    "heights": [
+      100.317,
+      104.501,
+      102.14,
+      78.939,
+      68.791,
+      64.179
+    ]
+  },
+  "CaelumBestiary043": {
+    "source": "assets/source/art/quadrupeds_787",
+    "model": "src/models/caelum/folklore/quadrupeds/familiar_fall.md3",
+    "sha256": "cda1f922e7379e3223d75852b26c2d8c7c46114bce6a96e926475a483f514665",
+    "heights": [
+      99.549,
+      96.494,
+      84.739,
+      59.657,
+      45.114,
+      44.683
+    ]
+  },
+  "CaelumBestiary047": {
+    "source": "assets/source/art/teju_791",
+    "model": "src/models/caelum/folklore/teju/teju_jagua_fall.md3",
+    "sha256": "ac8d5cbb2e5da53d92623b497ec91c605c3d367f08743bfa425cd0d9f480b476",
+    "heights": [
+      100.037,
+      103.52,
+      102.212,
+      91.67,
+      75.577,
+      68.492
+    ]
+  },
+  "CaelumBestiary050": {
+    "source": "assets/source/art/quadrupeds_787",
+    "model": "src/models/caelum/folklore/quadrupeds/ao_ao_fall.md3",
+    "sha256": "09a403f933a2a6c3ed5c37d8c94c57d9eafbc4e88398187c3d75c25a4e891975",
+    "heights": [
+      99.923,
+      100.73,
+      96.404,
+      73.333,
+      59.45,
+      59.569
+    ]
+  },
+  "CaelumBestiary055": {
+    "source": "assets/source/art/nahuelito_662",
+    "model": "src/models/caelum/folklore/nahuelito662/nahuelito_fall.md3",
+    "sha256": "da32fb1772c4f0d909e2288da8f7e64e3457e3cc03218a51502414d0bab2c181",
+    "heights": [
+      222.705,
+      193.91,
+      163.375,
+      113.754,
+      112.62,
+      107.019
+    ]
+  },
+  "CaelumBestiary056": {
+    "source": "assets/source/art/distinct_forms_822",
+    "model": "src/models/caelum/folklore/distinctforms/huayrapuca_fall.md3",
+    "sha256": "5c0533299d626ec9fe97a04e8abd1fea6bf58403344d7118e579905af622f5ae",
+    "heights": [
+      100.375,
+      104.72,
+      107.666,
+      80.639,
+      53.557,
+      43.575
+    ]
+  },
+  "CaelumBestiary057": {
+    "source": "assets/source/art/kasogonaga_795",
+    "model": "src/models/caelum/folklore/kasogonaga/kasogonaga_fall.md3",
+    "sha256": "dc266430737c58d88e8a8f9c2c46562f9e8e3175eb4de71d88a568d70cc44d54",
+    "heights": [
+      100.193,
+      108.02,
+      106.315,
+      80.877,
+      67.004,
+      56.344
+    ]
+  }
+}

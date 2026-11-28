@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.18.13** - 2026-11-27.
+Documentation version: **5.18.14** - 2026-11-27.
+
+## 5.18.14 - Character presentation (#921)
+
+Creature, resident, summoned and player death presentations have been reviewed for joint movement and a resting pose.
+
+The 14 player identities retain the Domingo fall with their own head, clothing and equipment. The bull uses its 15-frame 3D sequence. Mandinga, Zupay and the giant rat have new local joint motion. Ten numbered bestiary creatures use a dedicated six-frame death take built from their original rig and materials. Luz Mala contracts its flame, Umita rolls as its hair settles, Teju's heads drop separately and Huayrapuca folds its wings. The source keys and origins are in `assets/source/art/articulated_deaths_921/`.
+
+Palomo's eight directions move through bent knees, a seated lean and a curled resting pose. The Tarot automaton uses the three original fallen frames. A defeated Moon clone or summoned Zupay completes the motion in a temporary visual actor while its tactical binding releases immediately. Natural expiry still ends the effect at the original time.
+
 
 ## 5.18.13 - Character presentation (#920)
 

@@ -1,0 +1,226 @@
+{
+  "issue": 921,
+  "phases_order": [
+    "recoil",
+    "leg_fold",
+    "fall",
+    "settle"
+  ],
+  "phases": [
+    [
+      0.15,
+      0.03,
+      0,
+      0
+    ],
+    [
+      1,
+      0.39,
+      0.08,
+      0.01
+    ],
+    [
+      0.55,
+      0.89,
+      0.34,
+      0.11
+    ],
+    [
+      0.04,
+      1,
+      0.79,
+      0.41
+    ],
+    [
+      0,
+      0.99,
+      1,
+      0.79
+    ],
+    [
+      0,
+      0.92,
+      0.98,
+      1
+    ]
+  ],
+  "rat_phases": [
+    [
+      0.15,
+      0.02,
+      0,
+      0
+    ],
+    [
+      1,
+      0.28,
+      0.06,
+      0
+    ],
+    [
+      0.86,
+      0.55,
+      0.16,
+      0.04
+    ],
+    [
+      0.63,
+      0.9,
+      0.34,
+      0.11
+    ],
+    [
+      0.25,
+      1,
+      0.65,
+      0.28
+    ],
+    [
+      0.05,
+      1,
+      0.96,
+      0.63
+    ],
+    [
+      0,
+      0.94,
+      1,
+      0.89
+    ],
+    [
+      0,
+      0.91,
+      0.99,
+      1
+    ]
+  ],
+  "angles_order": [
+    "forelimb",
+    "hindlimb",
+    "body_roll",
+    "head_pitch",
+    "tail_sweep"
+  ],
+  "species": [
+    {
+      "id": "027",
+      "name": "luzmala",
+      "generator": "distinct_form_models",
+      "angles": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "028",
+      "name": "umita",
+      "generator": "head_apparition_models",
+      "angles": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "029",
+      "name": "mulanima",
+      "generator": "apparition_models",
+      "angles": [
+        -73,
+        57,
+        85,
+        51,
+        35
+      ]
+    },
+    {
+      "id": "030",
+      "name": "chancho_lata",
+      "generator": "apparition_models",
+      "angles": [
+        -58,
+        73,
+        -79,
+        24,
+        29
+      ]
+    },
+    {
+      "id": "043",
+      "name": "familiar",
+      "generator": "quadruped_models",
+      "angles": [
+        -69,
+        49,
+        87,
+        42,
+        53
+      ]
+    },
+    {
+      "id": "047",
+      "name": "teju_jagua",
+      "generator": "teju_model",
+      "angles": [
+        -48,
+        56,
+        -76,
+        14,
+        -37
+      ]
+    },
+    {
+      "id": "050",
+      "name": "ao_ao",
+      "generator": "quadruped_models",
+      "angles": [
+        -72,
+        63,
+        -82,
+        38,
+        -27
+      ]
+    },
+    {
+      "id": "055",
+      "name": "nahuelito",
+      "generator": "nahuelito_combat_model",
+      "angles": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "056",
+      "name": "huayrapuca",
+      "generator": "distinct_form_models",
+      "angles": [
+        -70,
+        54,
+        86,
+        51,
+        40
+      ]
+    },
+    {
+      "id": "057",
+      "name": "kasogonaga",
+      "generator": "kasogonaga_model",
+      "angles": [
+        -54,
+        56,
+        80,
+        45,
+        32
+      ]
+    }
+  ]
+}

@@ -18,20 +18,46 @@ class CaelumMoonHead : Actor
     void UpdateVisual()
     {
         let body=CaelumTarotClone(master);
-        if(body==null || body.Look==null){Destroy();return;}
-        let look=body.Look;
+        let fading=CaelumMoonDeathImage(master);
+        if(body!=null && body.Look!=null) PoseHead(body,body.Look,body.Gloves,body.VisualPose);
+        else if(fading!=null && fading.Look!=null) PoseHead(fading,fading.Look,fading.Gloves,fading.VisualPose);
+        else Destroy();
+    }
+    void PoseHead(Actor body,CaelumCharacterProfile look,bool gloves,int pose)
+    {
         bInvisible=body.bInvisible || look.Race==CaelumConstants.RACE_BEAST_MAN;
         if(bInvisible)return;
         SetOrigin(body.Pos,true);Prev=body.Prev;Angle=body.Angle;Scale=body.Scale;
         WorldOffset=body.WorldOffset;FloorClip=body.FloorClip;
         sprite=CaelumAppearance.HeadSprite(look.Race,look.Sex,look.SkinTone,look.Face,look.HairStyle,look.HairColor);
         int group;vector2 offset;
-        [group,offset]=CaelumAppearanceDetailsRegistry.Anchor(look.Sex,body.Gloves,body.VisualPose);
+        [group,offset]=CaelumAppearanceDetailsRegistry.Anchor(look.Sex,gloves,pose);
         frame=group;SpriteOffset=(offset.X*Scale.X,offset.Y*Scale.Y);
     }
     override void Tick(){Super.Tick();UpdateVisual();}
     Default {+NOBLOCKMAP +NOINTERACTION +NOGRAVITY}
     States {Spawn:TNT1 A -1;Stop;}
+}
+
+// La imagen termina el gesto mientras el clon libera su vínculo y equipo al morir.
+class CaelumMoonDeathImage : Actor
+{
+    CaelumCharacterProfile Look;
+    CaelumMoonHead Head;
+    bool Gloves;
+    int VisualPose;
+    void PoseBody()
+    {
+        if(Look==null)return;
+        VisualPose=CaelumAppearance.PoseFor(CurState.Sprite,CurState.Frame);
+        Sprite=CaelumAppearance.SpriteFor(Look.Race,Look.Sex,Look.BeastForm,Look.SkinTone,VisualPose,Gloves);
+        Frame=VisualPose%26;
+        if(Head!=null)Head.UpdateVisual();
+    }
+    override void Tick(){Super.Tick();if(!bDestroyed)PoseBody();}
+    override void OnDestroy(){if(Head!=null)Head.Destroy();Super.OnDestroy();}
+    Default {+NOINTERACTION +NOBLOCKMAP}
+    States {Spawn:DOMI STUV 4;DOMI WXYZ 5;Stop;}
 }
 
 class CaelumMoonState : Inventory
@@ -225,7 +251,21 @@ class CaelumTarotClone : CaelumFolkloreCombatActor
             'Melee',"CaelumSilentDetectionPuff",LAF_ISMELEEATTACK,hit);
         if(hit.linetarget!=null)CaelumNoise.Emit(body,CaelumNoiseData.IMPACT);
     }
-    override void Die(Actor source,Actor inflictor,int flags,Name mod){Destroy();}
+    override void Die(Actor source,Actor inflictor,int flags,Name mod)
+    {
+        if(Look!=null)
+        {
+            let image=CaelumMoonDeathImage(Spawn('CaelumMoonDeathImage',Pos,NO_REPLACE));
+            if(image!=null)
+            {
+                image.Look=Look;image.Gloves=Gloves;image.Angle=Angle;image.Scale=Scale;
+                image.bInvisible=bInvisible;image.Head=Head;Head=null;
+                if(image.Head!=null)image.Head.master=image;
+                image.PoseBody();
+            }
+        }
+        Destroy();
+    }
     override void OnDestroy()
     {
         if(Binding!=null)for(int i=0;i<2;i++)if(Binding.Bodies[i]==self)Binding.Bodies[i]=null;

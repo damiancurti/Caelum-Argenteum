@@ -11,6 +11,7 @@ class CaelumSummonedZupay : CaelumZupayColossus
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
+        A_ChangeModel('CaelumZupayColossus');
         // La inicialización nativa ocurre antes del primer Tick. La potencia
         // se captura al lanzar, no se recalcula al guardar o cambiar de mapa.
         InitializeUniformFolkloreProfile(int(CaelumConstants.ZUPAY_ATTRIBUTE_LEVEL*SummonPower+0.5));
@@ -35,7 +36,16 @@ class CaelumSummonedZupay : CaelumZupayColossus
 
     override void Die(Actor source,Actor inflictor,int flags,Name mod)
     {
-        // No emitir muerte narrativa, botín ni recompensa de aliado caído.
+        // La invocación libera el vínculo al morir; la figura sólo completa la caída.
+        if(!bInvisible && !AwaitingPlacement)
+        {
+            let image=Spawn('CaelumSummonDeathImage',Pos,NO_REPLACE);
+            if(image!=null)
+            {
+                image.Angle=Angle;image.Scale=Scale;
+                image.A_ChangeModel('CaelumZupayColossus');
+            }
+        }
         Destroy();
     }
 
@@ -88,6 +98,12 @@ class CaelumSummonedZupay : CaelumZupayColossus
     }
 
     Default { Tag "$CA_SUMMON_ZUPAY_NAME"; +FRIENDLY -COUNTKILL }
+}
+
+class CaelumSummonDeathImage : Actor
+{
+    Default {+NOINTERACTION +NOBLOCKMAP}
+    States {Spawn:ZUPY GHIJKL 5;Stop;}
 }
 
 // Un inventario del lanzador conserva identidad y reloj. El cuerpo y sus

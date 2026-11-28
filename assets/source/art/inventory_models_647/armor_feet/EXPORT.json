@@ -476,11 +476,11 @@
     }
   },
   "source_sha256": {
-    "DESIGN.json": "7d1dce866d967bc63ff0419e9299ad9c959360dbee125b2dc50540dafea2d229",
+    "DESIGN.json": "0ed30aaa986f4204c2573dcb96af8ac64976d8d2d2955dd7efdb970ea247dff9",
     "PROVENANCE.json": "8c747f22fad84f0a68a5adf9e922572237fac6b48c260c66e9e1d0ca8455557d"
   },
   "external_source_sha256": {
-    "src/TEXTURES": "3958df53c3bed45aa802252f0f7a15d14b4260370609d290826a8faf3207aa21",
+    "src/TEXTURES": "9c1fefdfd3975c8199dfd48086c41e7f7232420c8e436ce2ec8d60f8766e9ced",
     "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
     "assets/source/art/inventory_models_647/footwear/DESIGN.json": "8f633b76227e446cd4b4fbc34fb98ae76107c69b815c09f39f2ffd5693a99113",
     "assets/generators/generate_inventory_articulated_weapons_models.py": "2dd9f7ddc4cf1ad708ee07b1e45d2d749934a1980125383b4e221f18a0a66efd",

@@ -18,7 +18,8 @@ defs, exhibits, models, actors, resources = {}, [], [], [], {}
 pattern = re.compile(r"(?im)^model\s+(\w+)\s*\{([^}]+)\}")
 for path in [SRC/"MODELDEF", *sorted((SRC/"caelum/data").glob("*.modeldef"))]:
     for name, block in pattern.findall(path.read_text(encoding="utf8")):
-        defs.setdefault(name, block)
+        if path.name != "bestiary_deaths.modeldef":
+            defs.setdefault(name, block)
 iqm = ROOT/"assets/source/art/iqm_assessment_834/export"
 defs.update(pattern.findall((iqm/"MODELDEF").read_text()))
 for path in (iqm/"models").rglob("*.iqm"):
@@ -206,6 +207,7 @@ class GalleryExhibit : Actor {{
 class GalleryGuide : StaticEventHandler {{
     static clearscope int StationAt(double x) {{return Clamp(int(round((x-({base}))/ {step}.0)),0,{n-1});}}
     override void WorldTick() {{
+        if(level.MapName!="GALERIA")return;
         if(level.time==3 && players[0].mo!=null) Focus(players[0].mo,0);
         if(level.time!=4 && level.time!=109) return;
         int ok=0;
@@ -228,6 +230,7 @@ class GalleryGuide : StaticEventHandler {{
         Console.Printf("GALERIA puesto=%d",i+1);
     }}
     override void NetworkProcess(ConsoleEvent e) {{
+        if(level.MapName!="GALERIA")return;
         int change=0;
         if(e.Name=="fila_siguiente")change=1;
         else if(e.Name=="fila_anterior")change=-1;
@@ -239,6 +242,7 @@ class GalleryGuide : StaticEventHandler {{
         Focus(a,i);
     }}
     override void RenderOverlay(RenderEvent e) {{
+        if(level.MapName!="GALERIA")return;
         let a=players[consoleplayer].mo;if(!a)return;
         static const String labels[]={{{labels}}};
         int i=StationAt(a.Pos.X);

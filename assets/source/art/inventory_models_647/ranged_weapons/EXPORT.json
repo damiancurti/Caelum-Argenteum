@@ -327,7 +327,7 @@
     }
   },
   "source_sha256": {
-    "DESIGN.json": "dd2869ab4f24316201a7aa0b6cb02ac42b023fc2b56783330218f2438e88268f",
+    "DESIGN.json": "25b93aa8f3f0f2aeb88a4159416e9979b69a75ba84994991c61f958cb31ff7d8",
     "PROVENANCE.json": "fe26bd9c30abd124214c376f65245de3583958ec7563cb4c15b8f1697466f799",
     "CANVAS_PROMPT.json": "71215e684bbabdcddb1d9ae7d41ee2d3b27f3649cbaa40442b8384d43b4bc274"
   },
@@ -341,7 +341,7 @@
     "src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
     "src/models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df",
     "src/models/caelum/inventory/ranged_weapons/canvas.png": "ceeffb856bf899c087753f86164dfea1b84dfc084fd9c33fe6c1c91fda94b042",
-    "src/TEXTURES": "3958df53c3bed45aa802252f0f7a15d14b4260370609d290826a8faf3207aa21",
+    "src/TEXTURES": "9c1fefdfd3975c8199dfd48086c41e7f7232420c8e436ce2ec8d60f8766e9ced",
     "src/graphics/caelum/shotgun.textures": "7b6208f1712678234bfffecb405d5d12ffaaec7cd2a6b272c5422f6b1393d04e",
     "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
     "src/caelum/equipment/CaelumWeaponModel.zs": "f1f3365b4286f384c8f017b1ac1dde41bdaac7cf005b88d6f10bc142ec1cad13",

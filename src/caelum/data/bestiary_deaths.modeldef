@@ -1,0 +1,140 @@
+Model CaelumBestiary027
+{
+    Path "models/caelum/folklore/distinctforms"
+    Scale 1.652622208 1.652622208 1.652622208
+    CorrectPixelStretch
+    Model 0 "luzmala_fall.md3"
+    FrameIndex MNDG G 0 0
+    FrameIndex MNDG H 0 1
+    FrameIndex MNDG I 0 2
+    FrameIndex MNDG J 0 3
+    FrameIndex MNDG K 0 4
+    FrameIndex MNDG L 0 5
+}
+
+Model CaelumBestiary028
+{
+    Path "models/caelum/folklore/heads"
+    Scale 1.652622208 1.652622208 1.652622208
+    CorrectPixelStretch
+    Model 0 "umita_fall.md3"
+    FrameIndex MNDG G 0 0
+    FrameIndex MNDG H 0 1
+    FrameIndex MNDG I 0 2
+    FrameIndex MNDG J 0 3
+    FrameIndex MNDG K 0 4
+    FrameIndex MNDG L 0 5
+}
+
+Model CaelumBestiary029
+{
+    Path "models/caelum/folklore/apparitions"
+    Scale 1.652622208 1.652622208 1.652622208
+    CorrectPixelStretch
+    Model 0 "mulanima_fall.md3"
+    FrameIndex MNDG G 0 0
+    FrameIndex MNDG H 0 1
+    FrameIndex MNDG I 0 2
+    FrameIndex MNDG J 0 3
+    FrameIndex MNDG K 0 4
+    FrameIndex MNDG L 0 5
+}
+
+Model CaelumBestiary030
+{
+    Path "models/caelum/folklore/apparitions"
+    Scale 1.652622208 1.652622208 1.652622208
+    CorrectPixelStretch
+    Model 0 "chancho_lata_fall.md3"
+    FrameIndex MNDG G 0 0
+    FrameIndex MNDG H 0 1
+    FrameIndex MNDG I 0 2
+    FrameIndex MNDG J 0 3
+    FrameIndex MNDG K 0 4
+    FrameIndex MNDG L 0 5
+}
+
+Model CaelumBestiary043
+{
+    Path "models/caelum/folklore/quadrupeds"
+    Scale 1.652622208 1.652622208 1.652622208
+    CorrectPixelStretch
+    Model 0 "familiar_fall.md3"
+    FrameIndex MNDG G 0 0
+    FrameIndex MNDG H 0 1
+    FrameIndex MNDG I 0 2
+    FrameIndex MNDG J 0 3
+    FrameIndex MNDG K 0 4
+    FrameIndex MNDG L 0 5
+}
+
+Model CaelumBestiary047
+{
+    Path "models/caelum/folklore/teju"
+    Scale 1.652622208 1.652622208 1.652622208
+    CorrectPixelStretch
+    Model 0 "teju_jagua_fall.md3"
+    FrameIndex MNDG G 0 0
+    FrameIndex MNDG H 0 1
+    FrameIndex MNDG I 0 2
+    FrameIndex MNDG J 0 3
+    FrameIndex MNDG K 0 4
+    FrameIndex MNDG L 0 5
+}
+
+Model CaelumBestiary050
+{
+    Path "models/caelum/folklore/quadrupeds"
+    Scale 1.652622208 1.652622208 1.652622208
+    CorrectPixelStretch
+    Model 0 "ao_ao_fall.md3"
+    FrameIndex MNDG G 0 0
+    FrameIndex MNDG H 0 1
+    FrameIndex MNDG I 0 2
+    FrameIndex MNDG J 0 3
+    FrameIndex MNDG K 0 4
+    FrameIndex MNDG L 0 5
+}
+
+Model CaelumBestiary055
+{
+    Path "models/caelum/folklore/nahuelito662"
+    Scale 0.183305235047 0.183305235047 0.183305235047
+    CorrectPixelStretch
+    Model 0 "nahuelito_fall.md3"
+    FrameIndex MNDG G 0 0
+    FrameIndex MNDG H 0 1
+    FrameIndex MNDG I 0 2
+    FrameIndex MNDG J 0 3
+    FrameIndex MNDG K 0 4
+    FrameIndex MNDG L 0 5
+}
+
+Model CaelumBestiary056
+{
+    Path "models/caelum/folklore/distinctforms"
+    Scale 1.652622208 1.652622208 1.652622208
+    CorrectPixelStretch
+    Model 0 "huayrapuca_fall.md3"
+    FrameIndex MNDG G 0 0
+    FrameIndex MNDG H 0 1
+    FrameIndex MNDG I 0 2
+    FrameIndex MNDG J 0 3
+    FrameIndex MNDG K 0 4
+    FrameIndex MNDG L 0 5
+}
+
+Model CaelumBestiary057
+{
+    Path "models/caelum/folklore/kasogonaga"
+    Scale 1.652622208 1.652622208 1.652622208
+    CorrectPixelStretch
+    Model 0 "kasogonaga_fall.md3"
+    FrameIndex MNDG G 0 0
+    FrameIndex MNDG H 0 1
+    FrameIndex MNDG I 0 2
+    FrameIndex MNDG J 0 3
+    FrameIndex MNDG K 0 4
+    FrameIndex MNDG L 0 5
+}
+

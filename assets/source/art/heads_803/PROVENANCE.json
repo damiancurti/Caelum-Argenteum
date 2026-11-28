@@ -15,7 +15,7 @@
   "reused": {
     "assets/source/art/peuchen_708/peuchen.json": "921f3e3695b4ead286ad3ef82974c6c11a684631cdeb3f3e057a97e7596c66a6",
     "assets/source/art/peuchen_708/CONTACTS.json": "b970a9cd0940d32aa704481fe16cffefeba0c13712232cfba7ad1bea997fa383",
-    "assets/source/art/apparitions_797/ANIMATION.json": "da2a24652b292335362decee3d398e72f8ed6bf71dab291fd8218f6c6e9629f6"
+    "assets/source/art/apparitions_797/ANIMATION.json": "222341a796b723e5883d766b9bd1c3c94380c02c6df3f02c1be8134a12d34613"
   },
   "limits": "Distinct full-volume human heads, source-led face textures, closed hair volumes and membrane ear-wings. Render offset and flaps do not add flight or other powers. Conceptual metre scales remain unauthorised."
 }

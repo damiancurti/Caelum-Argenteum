@@ -12291,7 +12291,7 @@
     }
   ],
   "source_sha256": {
-    "src/TEXTURES": "fe101bef213d375ca30330deb1f01a3c595caf63d753ed9e5ba505318fc3c6ad",
+    "src/TEXTURES": "9c1fefdfd3975c8199dfd48086c41e7f7232420c8e436ce2ec8d60f8766e9ced",
     "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
     "assets/source/art/inventory_models_647/footwear/DESIGN.json": "8f633b76227e446cd4b4fbc34fb98ae76107c69b815c09f39f2ffd5693a99113",
     "assets/generators/generate_inventory_articulated_weapons_models.py": "2dd9f7ddc4cf1ad708ee07b1e45d2d749934a1980125383b4e221f18a0a66efd",

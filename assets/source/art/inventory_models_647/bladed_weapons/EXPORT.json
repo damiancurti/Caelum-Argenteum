@@ -253,7 +253,7 @@
     }
   },
   "source_sha256": {
-    "DESIGN.json": "c2481294d3eae68e765c9a70c7f669dcc296d4ba3b8046a0e508190465b4f463",
+    "DESIGN.json": "38c6df582e586d39b708173c8b8afac458c6fc50be313378939dc35b3680e6ce",
     "PROVENANCE.json": "b5ebea0a46cdb02d4f39e0beec0c6cd30060e284fba95c58266605bc9d95969a"
   },
   "external_source_sha256": {
@@ -274,7 +274,7 @@
     "src/graphics/caelum/icons/ca_dagger.png": "30ac5bf3f2f4d0b30910cd2f3cbe23b4a168ba34cbcc496539c25bc6f0e02c82",
     "src/graphics/caelum/icons/ca_machete.png": "58b2cbf5d8aad9a1201b9050ecd8cb4f9758be756d452b544eea72dd1da91a5c",
     "src/graphics/caelum/first_person/v5/greatsword_icon_t1_source.png": "6f435da5cdb388a78095a7c0609086b679e7c629294ae0935e4fcca5b7fca996",
-    "src/TEXTURES": "3958df53c3bed45aa802252f0f7a15d14b4260370609d290826a8faf3207aa21"
+    "src/TEXTURES": "9c1fefdfd3975c8199dfd48086c41e7f7232420c8e436ce2ec8d60f8766e9ced"
   },
   "generator_sha256": {
     "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",

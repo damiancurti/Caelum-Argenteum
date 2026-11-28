@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.18.13** - 2026-11-27.
+Documentation version: **5.18.14** - 2026-11-27.
+
+## 5.18.14 - Character presentation (#921)
+
+Creature, resident, summoned and player death presentations have been reviewed for joint movement and a resting pose. The silent Windows Vulkan inspection recorded motion and three captures at each of 94 stations. All 14 real player profiles also reached the four bound death poses with their original identity. The stationary room visited all 205 exhibits. MAP01 saved and reloaded the equipped player, including a character saved in 5.18.10. An already-dead Palomo loaded from 5.18.12 now rests on the ground. Author visual acceptance is pending.
 
 ## 5.18.13 - Character presentation (#920)
 

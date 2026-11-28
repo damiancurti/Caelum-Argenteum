@@ -4834,3 +4834,5 @@ Model CaelumBarricadeVisual
 #include "caelum/data/player_families.modeldef"
 
 #include "caelum/data/zupay_slam.modeldef"
+
+#include "caelum/data/bestiary_deaths.modeldef"

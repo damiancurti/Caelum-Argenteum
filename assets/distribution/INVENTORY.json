@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "issue": 466,
-  "runtime_files": 19741,
-  "metadata_documents": 704,
+  "runtime_files": 19785,
+  "metadata_documents": 707,
   "origin_decisions": "assets/distribution/ORIGINS.json",
   "dependency_findings": "assets/distribution/DEPENDENCIES.json",
   "provenance_resolution": "Union of the decision references and per-file additional_provenance; exact_metadata is traceability, not a license grant.",
@@ -15,14 +15,14 @@
     "maps/TTAROT.wad"
   ],
   "origin_counts": {
-    "project-source": 1065,
+    "project-source": 1067,
     "dejavu-font": 2352,
-    "project-art": 15848,
+    "project-art": 15890,
     "retained-notice": 30,
     "human-mesh": 315,
     "source-specific-audio": 131
   },
-  "exact_metadata_files": 14337,
+  "exact_metadata_files": 14379,
   "files": [
     {
       "path": "ANIMDEFS",
@@ -256,8 +256,8 @@
     },
     {
       "path": "caelum/actors/CaelumFolkloreCharacters.zs",
-      "sha256": "8cd94ec0e23c6b3894acd71011fb071df7308b4995709e6290cfba50b1436f54",
-      "bytes": 32608,
+      "sha256": "8d6db46e2c5162512fc00d66d1a7e7eae08004d87c826d4b5841a1f160759375",
+      "bytes": 32981,
       "decision": "project-source",
       "additional_provenance": [
         "assets/bestiary/BEHAVIOR.json",
@@ -902,8 +902,8 @@
     },
     {
       "path": "caelum/core/CaelumTarotAutomaton.zs",
-      "sha256": "806bea1bcf17f1a1f44114d2791e254e7a0436959df26e779ad744f7b40d15d7",
-      "bytes": 11771,
+      "sha256": "276d9afd20599c2cce9b9bc6308b89f30c988c307e03b009bf22f77e483bcf60",
+      "bytes": 11774,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -1022,8 +1022,8 @@
     },
     {
       "path": "caelum/core/CaelumTarotMoon.zs",
-      "sha256": "b25dee372e6f30794aa7372404e0ca7188df774a3e64d31fe40fb273f499964c",
-      "bytes": 17827,
+      "sha256": "569f80698c27cc41affeece850a1592304de42876f6bf2445faa05b5842c105c",
+      "bytes": 19374,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -1501,6 +1501,16 @@
       "exact_metadata": [
         "assets/source/art/beast_men_680/EXPORT.json"
       ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "caelum/data/bestiary_deaths.modeldef",
+      "sha256": "de5a517cedb80b31cc0e4131dc0efdf88d042b20a390a920fb96d07c0c45c62f",
+      "bytes": 3332,
+      "decision": "project-source",
+      "additional_provenance": [],
+      "exact_metadata": [],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
     },
@@ -3807,6 +3817,16 @@
       "dependency_ids": []
     },
     {
+      "path": "caelum/data/palomo_fall.textures",
+      "sha256": "5e52ff14aee05b636fed8d2ae30b3a1e047cb1b506b3c959a6a0bdbe014e2010",
+      "bytes": 3360,
+      "decision": "project-source",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "caelum/data/period_apparition_combat.modeldef",
       "sha256": "ee4dfe8135de04fb942a82c920feae73036743bbbfb4fb0616e9e10a41a2a1f3",
       "bytes": 2359,
@@ -3990,8 +4010,8 @@
     },
     {
       "path": "caelum/data/standalone.mapinfo",
-      "sha256": "d11c19885649a3c79bc78a85ead03f05d636d2a480899513dbb80615bbe1b9a1",
-      "bytes": 374,
+      "sha256": "ce3a73ead08c54fe9a59b234ce86478eadf70baff63e7e2d4ff0cbfa2345909e",
+      "bytes": 370,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -8109,7 +8129,7 @@
     },
     {
       "path": "caelum/world/CaelumPhysicalHazards.zs",
-      "sha256": "dd4bd1be015ac4e34f3b3217cb6a5d07a4cd1e859ec7ebaa669ac11608cafff4",
+      "sha256": "491584fec1e4b397be25715ffbe6dd2c02b05ef2f738e3a467ebd4e9035692e0",
       "bytes": 20721,
       "decision": "project-source",
       "additional_provenance": [
@@ -8437,7 +8457,7 @@
     },
     {
       "path": "caelum/world/CaelumSewerMaze.zs",
-      "sha256": "63fe81b52ef57a04e7edbeb17954f8c73346490853a224b3c533341a9da18761",
+      "sha256": "56109963b4a3c154eccedb11af1357ddcd50e8347f419908d2397ec68e8137f3",
       "bytes": 15766,
       "decision": "project-source",
       "additional_provenance": [],
@@ -8587,8 +8607,8 @@
     },
     {
       "path": "caelum/world/CaelumSummoning.zs",
-      "sha256": "1e12caeae9623adf136f2a1cb8618b43f81960b456688f1311f561c30e3f2495",
-      "bytes": 11812,
+      "sha256": "ccc861aaa7b9c0b97be8503848b85f15e6582bacfeb3995ca1121a3ebdeac257",
+      "bytes": 12314,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -204882,8 +204902,8 @@
     },
     {
       "path": "MODELDEF",
-      "sha256": "df3f68b0e37e4ba4e4ce9850d65d372d42fd6856211428423d2573bdaa1293be",
-      "bytes": 106560,
+      "sha256": "bfed6b0fdc0746bd8460915ddf9a1931f039bcad0ab1e8d71a05cdef46ea1257",
+      "bytes": 106609,
       "decision": "project-source",
       "additional_provenance": [
         "assets/source/art/inventory_models_647/furniture/DESIGN.json"
@@ -209932,7 +209952,7 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgg.md3",
-      "sha256": "caf66244c69a0ec334727e146c9efbc20908216bfeb0c0da03901795fb36261e",
+      "sha256": "bc1f96529400277537f1d85d691a11600e3ee3fa295804e4f7d998ae17aa62d6",
       "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
@@ -209960,7 +209980,7 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgh.md3",
-      "sha256": "7fb7ce7abd34c4cc364f1ab87d68d852dde0bf55e4d6c0411a898a7b28e884cd",
+      "sha256": "da6ba3a0d093995a1c81501d8a8e3c491bb21ab7b47b313d078d484755175750",
       "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
@@ -209988,7 +210008,7 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgi.md3",
-      "sha256": "b46662b707c84284b0693da6d9ed24a376b2a052472d24fc83b7211db3b77b53",
+      "sha256": "f847e622631283100f4d7756fee9887671425d9506c2c2a0e11cbb53dc460aeb",
       "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
@@ -210016,7 +210036,7 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgj.md3",
-      "sha256": "0d77c038e32a83293f791f725c9e1c0a30fa2c8846ee0d49b42da340ea141156",
+      "sha256": "c223afc616b89c2954f025a46cfdfbc45e7f907dcac223ef2ea9e9fe96b4ca05",
       "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
@@ -210044,7 +210064,7 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgk.md3",
-      "sha256": "65701f70a5619368775c84172b0de41ec5def2bf67ab8152ef6689b171bdd055",
+      "sha256": "9c3d46f08f5fd31df13dbaab05d2d672cd7f890eb405f1fb71607c5dbef23d87",
       "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
@@ -210072,7 +210092,7 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgl.md3",
-      "sha256": "b99ec2bef601a7bcdbb878846d146628de06dc7ada5245b3d55e0114a08f4d0b",
+      "sha256": "2699e4b0870bd162d82588a582f9e88d54697b237f0e480bc0300547cc934a27",
       "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
@@ -210268,7 +210288,7 @@
     },
     {
       "path": "models/caelum/creatures/rat/ratgf.md3",
-      "sha256": "7ba6056e81491331f25f7fb8d25e9f6fefb7339d48dfd6fe098fc87c874b7fbb",
+      "sha256": "b718f912a2ab8634a0f9623fe5fb78a1ca1a3cd0c80154104eaf8b5685c67418",
       "bytes": 100884,
       "decision": "project-art",
       "additional_provenance": [
@@ -210296,7 +210316,7 @@
     },
     {
       "path": "models/caelum/creatures/rat/ratgg.md3",
-      "sha256": "f94a187b5b204a2ba58ff02d1b2712cda0d219db3fca4e9110d9e71ff3d33e84",
+      "sha256": "a3dbb48b5baa80ece3295e3c381dc482be0412cc5353142a07da03810d76be28",
       "bytes": 100884,
       "decision": "project-art",
       "additional_provenance": [
@@ -210324,7 +210344,7 @@
     },
     {
       "path": "models/caelum/creatures/rat/ratgh.md3",
-      "sha256": "9e072f552a8a68e1477b83e169b6be8429886d932b12b4733afd0ddbc874271f",
+      "sha256": "675c4d503517945147cf3dd39e9e57862bd7ae419ec81d3072e3efde6dcca8a4",
       "bytes": 100884,
       "decision": "project-art",
       "additional_provenance": [
@@ -210352,7 +210372,7 @@
     },
     {
       "path": "models/caelum/creatures/rat/ratgi.md3",
-      "sha256": "8b5231de3dd9b2cbe7f75e6bd419516237778311315b1b9ec19d1e480abea314",
+      "sha256": "1674092e41a9e2ce230e4fb3aacecd712ef44807012d24f288aea59ac6724f5e",
       "bytes": 100884,
       "decision": "project-art",
       "additional_provenance": [
@@ -210380,7 +210400,7 @@
     },
     {
       "path": "models/caelum/creatures/rat/ratgj.md3",
-      "sha256": "32b5daa124c1e2e99d89ba5664d7c5e744d91f7e8b3f8f1754146a19856eb92f",
+      "sha256": "db38312afc25ac14b48f97d357af6cd5dec73e282bbb68a8163a9980612921b4",
       "bytes": 100884,
       "decision": "project-art",
       "additional_provenance": [
@@ -210408,7 +210428,7 @@
     },
     {
       "path": "models/caelum/creatures/rat/ratgk.md3",
-      "sha256": "9eabd33d796b3e6266f21ef9d990ea0e87efbd4371bdee9f24de06021d06784a",
+      "sha256": "96d4cbd28fe7d53dbd2d9551a6f7339ad364a9016c7affadd55ab15ba8f4118d",
       "bytes": 100884,
       "decision": "project-art",
       "additional_provenance": [
@@ -210436,7 +210456,7 @@
     },
     {
       "path": "models/caelum/creatures/rat/ratgl.md3",
-      "sha256": "ccf43c55d0802fa0a043b2bf08e01c3c0d7dacf605794f46708d1334e89db1f8",
+      "sha256": "0141b4971e37eec573d0f3d319afc719d2b242017253dd8c8eccfb3405bcae52",
       "bytes": 100884,
       "decision": "project-art",
       "additional_provenance": [
@@ -210464,7 +210484,7 @@
     },
     {
       "path": "models/caelum/creatures/rat/ratgm.md3",
-      "sha256": "13245ba5287c04c35561bb77d3c2d6f21fe709da998783cb82ec4e3a8db8eca2",
+      "sha256": "602fde836bfa3c5110a6d17d403fe64696ba901f84e1236fdbe287bedd5e77f4",
       "bytes": 100884,
       "decision": "project-art",
       "additional_provenance": [
@@ -210898,7 +210918,7 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyg.md3",
-      "sha256": "924e0eb3f00dc79baf731003f317d4c085869f66ec8acfba8e50ca652e2d37ca",
+      "sha256": "dac20a94ef53c03d17fb605c835af9fd4fc250e08cad6fb50bf3a569b7232c69",
       "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
@@ -210926,7 +210946,7 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyh.md3",
-      "sha256": "310cbb67f542015fb382030923f716204f4788b4e36de8874a01ee9dc14839e3",
+      "sha256": "fc5665c7e32cff7f0b079d5b7c5ce83f27f9ed94cbe8754e9daf2f9e542d2c72",
       "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
@@ -210954,7 +210974,7 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyi.md3",
-      "sha256": "242c2e581e71cada3acfa72756599bc16d7212b71ebf36bb6456d24f4daf6fcb",
+      "sha256": "90cc47e75e765284c99e279551a5b61a181307bc1d2085559240af5c6d67d644",
       "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
@@ -210982,7 +211002,7 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyj.md3",
-      "sha256": "64e9534b1ff358bd116cbc9078b74750d6bf2159338b9a67706962a4a57f1676",
+      "sha256": "9fc0b6e04d7acbf59674c6f32ec9f591c58d4518cdf8e7e236336088c0deafc6",
       "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
@@ -211010,7 +211030,7 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyk.md3",
-      "sha256": "c9de25dfb24705045e62eede3002756700e41ff5b55e28d651afd4d5a95e97ca",
+      "sha256": "4f2c0d4213dc730eb6fd034dd2035b00022f14f0014a80226385cd33425ab7b6",
       "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
@@ -211038,7 +211058,7 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyl.md3",
-      "sha256": "c3e9a845dc07f8f47121aa944c10178a5cb12d4d7d5d07eb235f2ce99f8a7500",
+      "sha256": "74c05ab20b62c0d0a1dbdc04613d9a3d80ece199a4b170895ad6407d5ea8a640",
       "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
@@ -212199,6 +212219,20 @@
       "dependency_ids": []
     },
     {
+      "path": "models/caelum/folklore/apparitions/chancho_lata_fall.md3",
+      "sha256": "ba8f79f80bd007a21f8e76e5412bec5e19a9ebee6f4a0b0f4c5852756d546caa",
+      "bytes": 1531348,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "models/caelum/folklore/apparitions/dark.png",
       "sha256": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
       "bytes": 15125,
@@ -212378,6 +212412,20 @@
       ],
       "exact_metadata": [
         "assets/source/art/apparitions_797/EXPORT.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/folklore/apparitions/mulanima_fall.md3",
+      "sha256": "15e63e1d8b167eed2bdb8a83092f399e81cb6dda164ed17cb0a8b3cf79d74210",
+      "bytes": 923300,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -213141,6 +213189,20 @@
       "dependency_ids": []
     },
     {
+      "path": "models/caelum/folklore/distinctforms/huayrapuca_fall.md3",
+      "sha256": "5c0533299d626ec9fe97a04e8abd1fea6bf58403344d7118e579905af622f5ae",
+      "bytes": 888060,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "models/caelum/folklore/distinctforms/luzmala.md3",
       "sha256": "309d5f2afd22dd2187e36e8ff1c190a73e638981149e7a3876a29152dc6742bf",
       "bytes": 609156,
@@ -213150,6 +213212,20 @@
       ],
       "exact_metadata": [
         "assets/source/art/distinct_forms_822/EXPORT.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/folklore/distinctforms/luzmala_fall.md3",
+      "sha256": "73c019b8d83dd2408073f09997c0316f86b01afd0ed1cb05433d1d5bb7278c6b",
+      "bytes": 223052,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -213494,6 +213570,20 @@
       ],
       "exact_metadata": [
         "assets/source/art/heads_803/EXPORT.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/folklore/heads/umita_fall.md3",
+      "sha256": "2ec5660757c9e20e7476830d3a82595c79582684dfde21b966fe777ce7075b75",
+      "bytes": 1200668,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -213863,6 +213953,20 @@
       "dependency_ids": []
     },
     {
+      "path": "models/caelum/folklore/kasogonaga/kasogonaga_fall.md3",
+      "sha256": "dc266430737c58d88e8a8f9c2c46562f9e8e3175eb4de71d88a568d70cc44d54",
+      "bytes": 1310548,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "models/caelum/folklore/kasogonaga/materials.png",
       "sha256": "c4b9a4c7c72d9ae69177314580e2e6cdba1c861317e2e13ddd7c55bbe8afaac0",
       "bytes": 2642539,
@@ -214130,6 +214234,20 @@
       ],
       "exact_metadata": [
         "assets/source/art/nahuelito_662/EXPORT.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/folklore/nahuelito662/nahuelito_fall.md3",
+      "sha256": "da32fb1772c4f0d909e2288da8f7e64e3457e3cc03218a51502414d0bab2c181",
+      "bytes": 401980,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -214597,6 +214715,20 @@
       "dependency_ids": []
     },
     {
+      "path": "models/caelum/folklore/quadrupeds/ao_ao_fall.md3",
+      "sha256": "09a403f933a2a6c3ed5c37d8c94c57d9eafbc4e88398187c3d75c25a4e891975",
+      "bytes": 1632228,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "models/caelum/folklore/quadrupeds/dark.png",
       "sha256": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
       "bytes": 15125,
@@ -214688,6 +214820,20 @@
       ],
       "exact_metadata": [
         "assets/source/art/quadrupeds_787/EXPORT.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/folklore/quadrupeds/familiar_fall.md3",
+      "sha256": "cda1f922e7379e3223d75852b26c2d8c7c46114bce6a96e926475a483f514665",
+      "bytes": 1013676,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -215194,6 +215340,20 @@
       ],
       "exact_metadata": [
         "assets/source/art/teju_791/EXPORT.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/folklore/teju/teju_jagua_fall.md3",
+      "sha256": "ac8d5cbb2e5da53d92623b497ec91c605c3d367f08743bfa425cd0d9f480b476",
+      "bytes": 2697580,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PROVENANCE.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -239352,10 +239512,12 @@
       "bytes": 46530,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -239366,10 +239528,12 @@
       "bytes": 45158,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -239380,10 +239544,12 @@
       "bytes": 37010,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -239394,10 +239560,12 @@
       "bytes": 43144,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -239408,10 +239576,12 @@
       "bytes": 45891,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -239422,10 +239592,12 @@
       "bytes": 42652,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -239436,10 +239608,12 @@
       "bytes": 37535,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -239450,10 +239624,12 @@
       "bytes": 44209,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -242351,6 +242527,454 @@
       "decision": "project-art",
       "additional_provenance": [],
       "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFA1.png",
+      "sha256": "01187ef02ae5fe9177a4156e5ee0059d069a3c32838baf27a743898f417cdaef",
+      "bytes": 44446,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFA2.png",
+      "sha256": "790407c1ccc82c1066690b9f141e8f3e72f0f989f7bfdf796d914d96dec4a331",
+      "bytes": 43217,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFA3.png",
+      "sha256": "0a6b23aa4cd7611fe5f60b0c73b4c5dad6d5db84e48a0b890fdc31bf37493384",
+      "bytes": 35996,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFA4.png",
+      "sha256": "00d11102b214ca03e6d971bbf2348e2399291ff994ff5a32b4237430179bd374",
+      "bytes": 41592,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFA5.png",
+      "sha256": "e3db9edac44dffa04259ea88c40c7254dff5755465aae50d40e313da0e9eb95c",
+      "bytes": 44121,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFA6.png",
+      "sha256": "649570707489f2d0b45fc141cd606a36fe46f7daf7b513b1e6e2ef33f45c03fb",
+      "bytes": 41173,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFA7.png",
+      "sha256": "45d96d0dd9c1213feeb1277bd213cd8cccff75b72d81fc9d0698b927ce15d655",
+      "bytes": 36398,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFA8.png",
+      "sha256": "6bf16c875d6bd12ca74129e2e0f4884337a92aab2e35874fccad473e0fd7eb56",
+      "bytes": 42553,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFB1.png",
+      "sha256": "7be83501968a6d45bdd15f0327ba6e3a8d35c0330ddcd594248e958372f93d04",
+      "bytes": 32297,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFB2.png",
+      "sha256": "8017e0ac504825ed657c9cb30a35c89e40e3afb34fe15d440eec0245e34d6960",
+      "bytes": 33646,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFB3.png",
+      "sha256": "ad7fdbe6c704bd0fbe55ef1f1faab4fd015190380d04e9e6a144bd9e0c72e10d",
+      "bytes": 31217,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFB4.png",
+      "sha256": "9ab992be55fee4d140fb821e47350c0e825238484bb23965f09cddf390cfae1b",
+      "bytes": 31685,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFB5.png",
+      "sha256": "7c06a0fd70d5f01914835cb9319d4a64d58a8ec1faa4a8d15dd802710ce4680d",
+      "bytes": 31751,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFB6.png",
+      "sha256": "4c376caf0f93cde8975ca6be149d1bc587031520cf4d1be32a2f6f692ab25077",
+      "bytes": 30827,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFB7.png",
+      "sha256": "7f4fc90955483b9529d5b762a2c5a4ce4a0ebe9f97d2db3e393927671dce15c9",
+      "bytes": 30944,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFB8.png",
+      "sha256": "33e3a5544fed0763c2d28aeee65da70f3385d4e0512e8545e79050606cb5a072",
+      "bytes": 32014,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFC1.png",
+      "sha256": "f1a5b3c76176c7c1f033ba3590915bb1485e0c098ded421e874bc861f5d20788",
+      "bytes": 30169,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFC2.png",
+      "sha256": "99a9ace3c0afcf4b088e861d2c0edf22cd916b4f2af674fec3d65ee3515418e4",
+      "bytes": 31275,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFC3.png",
+      "sha256": "ac7c989cdd7a2529f873f23a0b76704cedbbf28382d4e2f9671100d998eaa09e",
+      "bytes": 28927,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFC4.png",
+      "sha256": "e95411418302b7481c603ebecb61c156121d4b41f9e1a1d53f57f1e55ccd12ab",
+      "bytes": 29655,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFC5.png",
+      "sha256": "c917babf347325b2b49f40c739564f539c26f0c1451a1273f0e78e1f84fb0db4",
+      "bytes": 29745,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFC6.png",
+      "sha256": "4e69b6bd4ff69ad8b8fa4cf86d78509a730900091139d4324b0d3948fa2e5c29",
+      "bytes": 28762,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFC7.png",
+      "sha256": "919423a4f3869e0a96fc34b66ca955a86e27cfbfc3a94ccb6c7f1997e20d6da7",
+      "bytes": 28783,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFC8.png",
+      "sha256": "84462458a69de80068d2e4739a5070ca4f2d97be7a0ccb0fd87ae60b8422d071",
+      "bytes": 29995,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFD1.png",
+      "sha256": "567e554683d414655a8981de20cd916d55bad97dd8994afae7bebda4f2e5a2b0",
+      "bytes": 25286,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFD2.png",
+      "sha256": "2556bd1ee20c2467d9e7e009ef0096321db0ee1f9c4edc7415ef2ee84af3b5b4",
+      "bytes": 26433,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFD3.png",
+      "sha256": "e3c0bcff046cdc73891efe4d2c4e2c9658a3f9facfb9be19c2f6cff4352178d3",
+      "bytes": 24341,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFD4.png",
+      "sha256": "7393936df3fd55c5555f64ac220e1f35d36fd5c5111ffdcfaeabd8f93ac2fc7c",
+      "bytes": 25319,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFD5.png",
+      "sha256": "4eb0d9abad04cf690d7384b2ffceffdd7c24478117b843409d5ec7d70593bea4",
+      "bytes": 25067,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFD6.png",
+      "sha256": "71c447e436b5b0ae203ca831466735c485d73ebcda3d63250e1b34cacab19b5f",
+      "bytes": 24316,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFD7.png",
+      "sha256": "fd42ca268290615754e6b5835faf1acd4ce121e00649f1add139b73afa36ca95",
+      "bytes": 24212,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "sprites/caelum/actors/palomo_fall/PLDFD8.png",
+      "sha256": "01e6cc6d2980fa31b7cd48cf87481e1702a75cf53a4f9ddc116300dbc327c38c",
+      "bytes": 25383,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
+      ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
     },
@@ -261182,10 +261806,12 @@
       "bytes": 32261,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261196,10 +261822,12 @@
       "bytes": 33502,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261210,10 +261838,12 @@
       "bytes": 31035,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261224,10 +261854,12 @@
       "bytes": 31157,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261238,10 +261870,12 @@
       "bytes": 31214,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261252,10 +261886,12 @@
       "bytes": 30468,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261266,10 +261902,12 @@
       "bytes": 30774,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261280,10 +261918,12 @@
       "bytes": 31924,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261294,10 +261934,12 @@
       "bytes": 47075,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261308,10 +261950,12 @@
       "bytes": 49904,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261322,10 +261966,12 @@
       "bytes": 50422,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261336,10 +261982,12 @@
       "bytes": 50968,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261350,10 +261998,12 @@
       "bytes": 51759,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261364,10 +262014,12 @@
       "bytes": 54062,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261378,10 +262030,12 @@
       "bytes": 49800,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -261392,10 +262046,12 @@
       "bytes": 47942,
       "decision": "project-art",
       "additional_provenance": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "exact_metadata": [
-        "assets/manifests/sprites_v4.json"
+        "assets/manifests/sprites_v4.json",
+        "assets/source/art/articulated_deaths_921/PALOMO.json"
       ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
@@ -267738,8 +268394,8 @@
     },
     {
       "path": "TEXTURES",
-      "sha256": "3baaeb5400bcf24b9a81b3e9197a4224e37824de7eeb8b26455e17c7349311b0",
-      "bytes": 315737,
+      "sha256": "9c1fefdfd3975c8199dfd48086c41e7f7232420c8e436ce2ec8d60f8766e9ced",
+      "bytes": 315782,
       "decision": "project-source",
       "additional_provenance": [
         "assets/first_person_v4/VALIDATION.json",
@@ -269683,7 +270339,7 @@
       "maps/MAP01.wad"
     ]
   },
-  "explicit_sprite_prefixes": 3865,
+  "explicit_sprite_prefixes": 3866,
   "unresolved_explicit_sprites": {},
   "errors": [],
   "limits": [

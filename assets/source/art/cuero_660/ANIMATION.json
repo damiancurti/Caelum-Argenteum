@@ -16,7 +16,7 @@
     "assets/generators/generate_cuero_model.py": "4d02f514cccfeacf51f53b500ff01772acba1e61daabde38cec794fa0352f819",
     "assets/generators/generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
     "assets/generators/generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
-    "src/caelum/actors/CaelumFolkloreCharacters.zs": "80c5a00ef221395a6688125d8871c3f84ccf21e2aeb63b5c0bd4adb99dd2e420",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "8d6db46e2c5162512fc00d66d1a7e7eae08004d87c826d4b5841a1f160759375",
     "assets/bestiary/BEHAVIOR.json": "a017c151836f6df1934be6762e708e0759101c0daa8e2b77bb61bbfcb77e7576"
   },
   "scale_policy": "Fit neutral maximum horizontal extent to the unchanged provisional body diameter (2*Radius), divided by Actor.Scale with CorrectPixelStretch. This temporary combat fitting is not approval of final species dimensions. The original 96MU/3m preview stays unchanged.",

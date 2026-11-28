@@ -133,7 +133,7 @@ class CaelumTarotAutomaton : CaelumFolkloreCombatActor
                 case 16:Look.SetStateLabel("F16");break;
                 case 17:Look.SetStateLabel("F17");break;
                 case 18:Look.SetStateLabel("F18");break;
-                case 19:Look.SetStateLabel("F19");break;
+                case 19:Look.SetStateLabel("Fallen");break;
             }
         }
     }
