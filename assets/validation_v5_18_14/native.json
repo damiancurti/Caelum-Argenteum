@@ -3,7 +3,7 @@
   "release": "5.18.14",
   "platform": "Windows 11, GZDoom 4.14.2, Vulkan",
   "audio": "-nosound before initialization",
-  "tested_full_roster_ipk3": "10c43856acddbe2c6f117a7417898e73c236a9e640f571219490056b36567bee",
+  "tested_full_roster_ipk3": "064d0db0da04a1c8bb3f4066ea03fa0afc3f2246a83ff9acfac961c0a4120e75",
   "stage": {
     "distinct_stations": 94,
     "captures": 282,
@@ -24,7 +24,7 @@
       "FallFamily13": 4,
       "CaelumMandinga": 6,
       "CaelumZupayColossus": 6,
-      "CaelumGiantRat": 7,
+      "CaelumGiantRat": 8,
       "CaelumPalomo": 5,
       "CaelumHuntPalomo": 5,
       "CaelumTarotAutomaton": 3,
@@ -237,5 +237,27 @@
     ".json": 4,
     ".png": 102
   },
-  "author_visual_acceptance": "pending"
+  "author_visual_acceptance": "pending",
+  "zupay_ground_slam": {
+    "poses": 25,
+    "captures": 40
+  },
+  "project_validation": {
+    "version": "5.18.14",
+    "errors": []
+  },
+  "distribution": {
+    "runtime_files": 19785,
+    "unresolved_explicit_sprites": {},
+    "errors": []
+  },
+  "death_stage_navigation": {
+    "selection_and_replay_order": [
+      15,
+      94,
+      1,
+      94,
+      94
+    ]
+  }
 }
