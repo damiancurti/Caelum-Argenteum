@@ -131,5 +131,15 @@
     "mesh": "conceal.md3",
     "material": "invisible.png",
     "matches_source_issue_903": true
+  },
+  "author_corrections": {
+    "gallery_capture_count": 76,
+    "hairstyle_capture_count": 48,
+    "face_hairstyle_combinations_checked": 96,
+    "comparison_sheets": [
+      "heads.jpg",
+      "figures.jpg"
+    ],
+    "visual_approval": "pending"
   }
 }
