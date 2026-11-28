@@ -4,31 +4,31 @@ Documentation version: **5.18.20** - 2026-11-28.
 
 ## 5.18.20 - Matching helmet pickups (#933)
 
-Author review remains open. Select a helmet with H, change its tier with T, and press G to compare the worn and floor views. In play, drop a helmet and pick it up again.
+The author approved the final presentation on 2026-11-28. Select a helmet with H, change its tier with T, and press G to compare the worn and floor views. In play, drop a helmet and pick it up again.
 
 ## 5.18.19 - Distinct helmet silhouettes and tier finishes (#932)
 
-Author review remains open. Press H to change helmet type and T to cycle tiers. Rotate with the arrow keys. Use F2/F3 to change family and 0 to remove the helmet.
+The author approved the final presentation on 2026-11-28. Press H to change helmet type and T to cycle tiers. Rotate with the arrow keys. Use F2/F3 to change family and 0 to remove the helmet.
 
 ## 5.18.18 - Compact helmets and tucked heads (#928)
 
-Author review remains open. Press H to cycle the four helmets, F2/F3 to switch bodies, and 0 to uncover the head. Turn to inspect the ears and crown.
+The author approved the final presentation on 2026-11-28. Press H to cycle the four helmets, F2/F3 to switch bodies, and 0 to uncover the head. Turn to inspect the ears and crown.
 
 ## 5.18.17 - Carried shield relief (#927)
 
-Author review remains open. Press E to cycle the four shields. Turn from the face to the edge and back.
+The author approved the final presentation on 2026-11-28. Press E to cycle the four shields. Turn from the face to the edge and back.
 
 ## 5.18.16 - Seated modular footwear (#926)
 
-Author review remains open. Press B to cycle the four footwear designs, S to sit or stand, and rotate to the side. Use 0 to inspect base boots.
+The author approved the final presentation on 2026-11-28. Press B to cycle the four footwear designs, S to sit or stand, and rotate to the side. Use 0 to inspect base boots.
 
 ## 5.18.15 - Modular equipment fit (#924)
 
-Use CA924-FIT-01 to review grip, shield placement and the four armor slots on the sculpted bodies. Page Up and Page Down select a piece, F2 and F3 change the body, and the arrow keys turn the figure.
+The author approved grip, shield placement and the four armor slots in CA924-FIT-01. Page Up and Page Down select a piece, F2 and F3 change the body, and the arrow keys turn the figure.
 
 ## 5.18.14 - Character presentation (#921)
 
-Creature, resident, summoned and player death presentations have been reviewed for joint movement and a resting pose. Review CA921-FALLS-01 using the F7 stage in the silent inspection launcher. Use R to replay any station from a different angle.
+Creature, resident, summoned and player death presentations have been reviewed for joint movement and a resting pose. The author approved CA921-FALLS-01. F7 opens the motion stage in the silent inspection launcher. Use R to replay any station from a different angle.
 
 ## 5.18.13 - Character presentation (#920)
 
@@ -56,15 +56,15 @@ The bull has broader withers, brisket and muzzle, a lower dewlap, more outward h
 
 ## 5.18.7 - Character presentation (#904)
 
-Third-person equipment follows six independent sockets across the 33 player poses. The 59 fitted modules cover 27 weapons, the authored support tiers, four shields and sixteen armor designs. GZDoom 4.14.2 exercised 81 loadouts and removal of all six pieces. Author fit and material review is pending.
+Third-person equipment follows six independent sockets across the 33 player poses. The 59 fitted modules cover 27 weapons, the authored support tiers, four shields and sixteen armor designs. GZDoom 4.14.2 exercised 81 loadouts and removal of all six pieces.
 
 ## 5.18.6 - Character presentation (#903)
 
-All seven approved families and both sexes have modular world models, fitted hands and feet, separate face and hair meshes, and 33 pose bindings. Faces use a reduced painted palette. The original player profiles select the meshes and colors. Native visual review is pending.
+All seven approved families and both sexes have modular world models, fitted hands and feet, separate face and hair meshes, and 33 pose bindings. Faces use a reduced painted palette. The original player profiles select the meshes and colors.
 
 ## 5.18.5 - Character presentation (#902)
 
-Mandinga, Zupay and the giant rat use 70 textured 3D poses derived from their own artwork for idle, movement, attacks, pain, death and sleep. GZDoom 4.14.2 rendered the three in the inspection room. Author visual review is pending.
+Mandinga, Zupay and the giant rat use 70 textured 3D poses derived from their own artwork for idle, movement, attacks, pain, death and sleep. GZDoom 4.14.2 rendered the three in the inspection room.
 
 ## 5.18.4 - Repository audit integration (#899)
 

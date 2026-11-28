@@ -63,15 +63,15 @@ The bull has broader withers, brisket and muzzle, a lower dewlap, more outward h
 
 ## 5.18.7 - Character presentation (#904)
 
-Third-person equipment follows six independent sockets across the 33 player poses. The 59 fitted modules cover 27 weapons, the authored support tiers, four shields and sixteen armor designs. GZDoom 4.14.2 exercised 81 loadouts and removal of all six pieces. Author fit and material review is pending.
+Third-person equipment follows six independent sockets across the 33 player poses. The 59 fitted modules cover 27 weapons, the authored support tiers, four shields and sixteen armor designs. GZDoom 4.14.2 exercised 81 loadouts and removal of all six pieces.
 
 ## 5.18.6 - Character presentation (#903)
 
-All seven approved families and both sexes have modular world models, fitted hands and feet, separate face and hair meshes, and 33 pose bindings. Faces use a reduced painted palette. The original player profiles select the meshes and colors. Native visual review is pending.
+All seven approved families and both sexes have modular world models, fitted hands and feet, separate face and hair meshes, and 33 pose bindings. Faces use a reduced painted palette. The original player profiles select the meshes and colors.
 
 ## 5.18.5 - Character presentation (#902)
 
-Mandinga, Zupay and the giant rat use 70 textured 3D poses derived from their own artwork for idle, movement, attacks, pain, death and sleep. GZDoom 4.14.2 rendered the three in the inspection room. Author visual review is pending.
+Mandinga, Zupay and the giant rat use 70 textured 3D poses derived from their own artwork for idle, movement, attacks, pain, death and sleep. GZDoom 4.14.2 rendered the three in the inspection room.
 
 ## 5.18.4 - Repository audit integration (#899)
 

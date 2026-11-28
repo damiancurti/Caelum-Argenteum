@@ -28,7 +28,7 @@
   },
   "camera_in_map01": true,
   "audio": "-nosound",
-  "author_acceptance": "pending CA928-FIT-01",
+  "author_acceptance": "passed CA928-FIT-01 on 2026-11-28 in the final review",
   "project_validation": {
     "version": "5.18.18",
     "errors": []

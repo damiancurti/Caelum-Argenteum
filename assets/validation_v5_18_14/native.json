@@ -237,7 +237,7 @@
     ".json": 4,
     ".png": 102
   },
-  "author_visual_acceptance": "pending",
+  "author_visual_acceptance": "passed CA921-FALLS-01 on 2026-11-28 in the final review",
   "zupay_ground_slam": {
     "poses": 25,
     "captures": 40

@@ -4,69 +4,97 @@ Documentation version: **5.18.20** - 2026-11-28.
 
 ## 5.18.20 - Matching helmet pickups (#933)
 
-Dropped helmets use the same geometry and tier finishes as the worn head slot. GZDoom 4.14.2 completed twelve pickup, equip, drop, recollection and re-equip cycles. Each item kept its type, tier, size, durability and inventory identity. On MAP01, a dropped medium tier 3 helmet from 5.18.19 showed its new finish after loading and after saving and loading again on 5.18.20. See the [native checks](../assets/validation_v5_18_20/result.json). Visual acceptance is pending.
+Dropped helmets use the same geometry and tier finishes as the worn head slot. GZDoom 4.14.2 completed twelve pickup, equip, drop, recollection and re-equip cycles. Each item kept its type, tier, size, durability and inventory identity. On MAP01, a dropped medium tier 3 helmet from 5.18.19 showed its new finish after loading and after saving and loading again on 5.18.20. See the [native checks](../assets/validation_v5_18_20/result.json).
+
+On 2026-11-28 the author confirmed that CA933-FIT-01 passed for all twelve matching floor and worn designs, including retention of type and tier after dropping and collecting a helmet.
 
 ## 5.18.19 - Distinct helmet silhouettes and tier finishes (#932)
 
-The magic felt hat, light skullcap, open-faced medium helmet and enclosed heavy helmet have three finishes. Tier 2 has bright silver inlay. Tier 3 adds wider silver work and polished gold accents. GZDoom 4.14.2 selected all 168 body/type/tier combinations in the fitting room. The medium helmet left the front open and covered both sides and the nape in all seven family fits. A tier-three medium helmet persisted through a MAP01 save and reload. Visual acceptance is pending.
+The magic felt hat, light skullcap, open-faced medium helmet and enclosed heavy helmet have three finishes. Tier 2 has bright silver inlay. Tier 3 adds wider silver work and polished gold accents. GZDoom 4.14.2 selected all 168 body/type/tier combinations in the fitting room. The medium helmet left the front open and covered both sides and the nape in all seven family fits. A tier-three medium helmet persisted through a MAP01 save and reload.
+
+On 2026-11-28 the author confirmed that CA932-FIT-01 passed for coverage and tier-specific silver and gold details across the four equipped helmet types.
 
 ## 5.18.18 - Compact helmets and tucked heads (#928)
 
-The four helmets keep a common silhouette across families, scaled by stature. Covered head and hair variants tuck inside the shell and the original appearance returns on removal. All 56 body/material combinations passed the roof clearance check. On GZDoom 4.14.2 all fourteen covered heads matched the explicit model binding, and all fourteen uncovered appearances returned after removal. A nondefault face and haircut also survived a helmet round trip. MAP01 ran in chase view and loaded both a new save and one from 5.18.10. [Native captures and results](../assets/validation_v5_18_18/) accompany the pending author review.
+The four helmets keep a common silhouette across families, scaled by stature. Covered head and hair variants tuck inside the shell and the original appearance returns on removal. All 56 body/material combinations passed the roof clearance check. On GZDoom 4.14.2 all fourteen covered heads matched the explicit model binding, and all fourteen uncovered appearances returned after removal. A nondefault face and haircut also survived a helmet round trip. MAP01 ran in chase view and loaded both a new save and one from 5.18.10. [Native captures and results](../assets/validation_v5_18_18/) record the engine checks.
+
+On 2026-11-28 the author confirmed that CA928-FIT-01 passed for compact helmet fit, tucked ears and hair, and restoration of the uncovered appearance.
 
 ## 5.18.17 - Carried shield relief (#927)
 
-Four carried shields use sculpted faces, armored rims and grips on the left palm. The fitting room and third person use the same meshes. GZDoom 4.14.2 rendered each shield from three angles. Across 1,848 shield/body/pose combinations, the closest grip-to-hand vertex distance stayed below 0.48 model units. Visual acceptance is pending.
+Four carried shields use sculpted faces, armored rims and grips on the left palm. The fitting room and third person use the same meshes. GZDoom 4.14.2 rendered each shield from three angles. Across 1,848 shield/body/pose combinations, the closest grip-to-hand vertex distance stayed below 0.48 model units.
+
+On 2026-11-28 the author confirmed that CA927-FIT-01 passed for the four carried shields, their rims and hand grips.
 
 ## 5.18.16 - Seated modular footwear (#926)
 
-The seated sole follows its planted foot and the cuff follows the lower leg. Equipping foot armor replaces the visible base boot. All 18 boot pairs retained rigid soles in the seated pose. GZDoom 4.14.2 rendered the real player standing, seated in heavy boots, seated in base boots and standing again. Visual acceptance is pending.
+The seated sole follows its planted foot and the cuff follows the lower leg. Equipping foot armor replaces the visible base boot. All 18 boot pairs retained rigid soles in the seated pose. GZDoom 4.14.2 rendered the real player standing, seated in heavy boots, seated in base boots and standing again.
+
+On 2026-11-28 the author confirmed that CA926-FIT-01 passed for boot soles and cuffs in the seated and standing poses.
 
 ## 5.18.15 - Modular equipment fit (#924)
 
-The author requested a complete check of wearable weapons and armor on the sculpted bodies. All 59 equipment modules were already packaged. In the earlier build the plume reduced the scale of two helmet bowls and hair showed through their tops. The fitted bowls use the current head proportions and preserve the owned inventory designs. A silent GZDoom 4.14.2 run compared each of the 59 pieces with the same unequipped body on all 14 profiles (826 visible equipment comparisons). All 56 body/helmet combinations matched the explicit family mesh in the native renderer. The upper-scalp audit measured 11,556 intersections against the exported metal bowls. MAP01 restored the equipped player after saving and loading, including the older 5.18.10 save. Author acceptance remains pending.
+The author requested a complete check of wearable weapons and armor on the sculpted bodies. All 59 equipment modules were already packaged. In the earlier build the plume reduced the scale of two helmet bowls and hair showed through their tops. The fitted bowls use the current head proportions and preserve the owned inventory designs. A silent GZDoom 4.14.2 run compared each of the 59 pieces with the same unequipped body on all 14 profiles (826 visible equipment comparisons). All 56 body/helmet combinations matched the explicit family mesh in the native renderer. The upper-scalp audit measured 11,556 intersections against the exported metal bowls. MAP01 restored the equipped player after saving and loading, including the older 5.18.10 save.
+
+On 2026-11-28 the author confirmed that CA924-FIT-01 passed for equipment placement and helmet crown coverage on the modular characters.
 
 ## 5.18.14 - Character presentation (#921)
 
-Creature, resident, summoned and player death presentations have been reviewed for joint movement and a resting pose. The silent Windows Vulkan inspection recorded motion and three captures at each of 94 stations. All 14 real player profiles also reached the four bound death poses with their original identity. The stationary room visited all 205 exhibits. MAP01 saved and reloaded the equipped player, including a character saved in 5.18.10. An already-dead Palomo loaded from 5.18.12 now rests on the ground. Author visual acceptance is pending.
+Creature, resident, summoned and player death presentations have been reviewed for joint movement and a resting pose. The silent Windows Vulkan inspection recorded motion and three captures at each of 94 stations. All 14 real player profiles also reached the four bound death poses with their original identity. The stationary room visited all 205 exhibits. MAP01 saved and reloaded the equipped player, including a character saved in 5.18.10. An already-dead Palomo loaded from 5.18.12 now rests on the ground.
+
+On 2026-11-28 the author confirmed that CA921-FALLS-01 passed for articulated death falls and resting poses across the roster, including Palomo and the Tarot summons.
 
 ## 5.18.13 - Character presentation (#920)
 
-Zupay closes both hands as he raises his arms, strikes the ground with his knuckles and opens his hands during recovery. An isolated, silent GZDoom 4.14.2 session recorded 25 poses across the existing 48-tic preparation and 32-tic recovery, including both fists at ground contact. Visual acceptance remains pending.
+Zupay closes both hands as he raises his arms, strikes the ground with his knuckles and opens his hands during recovery. An isolated, silent GZDoom 4.14.2 session recorded 25 poses across the existing 48-tic preparation and 32-tic recovery, including both fists at ground contact.
+
+On 2026-11-28 the author confirmed that CA920-SLAM-01 passed for Zupay closing both fists for impact and reopening them during recovery.
 
 ## 5.18.12 - Character presentation (#917)
 
-All fourteen player forms now use original modular sculpts. Witches and warlocks guide humanoid anatomy, and the Pombero guides the goblins. The four beast families have species-specific skulls, muzzles and ears. The bodies support the existing customization and equipment slots. In GZDoom 4.14.2 the standalone release resolved all fourteen identities on the MAP01 player. The gallery recorded 76 comparison views and visited all 205 stationary exhibits. A new save and a 5.18.10 save restored the female jaguar with the same scepter, tower shield and heavy helmet. The author rejected the earlier sprite-derived designs. The author reported angular female arms, pointed busts and visible scalp. The review revision corrects the sleeves, chest and all 24 hairstyles. Review of the replacement remains pending under CA903-FAMILIES-01.
+All fourteen player forms now use original modular sculpts. Witches and warlocks guide humanoid anatomy, and the Pombero guides the goblins. The four beast families have species-specific skulls, muzzles and ears. The bodies support the existing customization and equipment slots. In GZDoom 4.14.2 the standalone release resolved all fourteen identities on the MAP01 player. The gallery recorded 76 comparison views and visited all 205 stationary exhibits. A new save and a 5.18.10 save restored the female jaguar with the same scepter, tower shield and heavy helmet. The author rejected the earlier sprite-derived designs. The author reported angular female arms, pointed busts and visible scalp. The review revision corrects the sleeves, chest and all 24 hairstyles. The author approved the revised forms under CA903-FAMILIES-01 on 2026-11-28.
 
 ## 5.18.11 - Character presentation (#916)
 
 Mandinga, Zupay and the giant rat have original articulated meshes for all 70 existing action poses. The demons follow the humanoid anatomy of the witches and warlocks. Their faces, horns, hooves and the rat muzzle are modeled in relief. The author requested full clothing. Mandinga wears a shirt, leather waistcoat and gathered trousers. Zupay wears a tunic and bordered mantle. The garments follow the existing action poses.
 
-GZDoom 4.14.2 recorded four views per creature and confirmed 18 actor-state selections. A second export matched every model and material digest. The author rejected the previous sprite-derived character presentation. The replacement is pending visual acceptance under CA902-MODELS-01. The Pombero reference is reserved for playable goblins.
+GZDoom 4.14.2 recorded four views per creature and confirmed 18 actor-state selections. A second export matched every model and material digest. The author rejected the previous sprite-derived character presentation. The author approved the replacement under CA902-MODELS-01 on 2026-11-28. The Pombero reference is reserved for playable goblins.
 
 ## 5.18.10 - Character presentation (#913)
 
 The Windows inspection terminal opens a closed room with 205 individually labeled, stationary exhibits. It includes all fourteen player forms, Mandinga, Zupay, the giant rat, the modeled bestiary, bull, character rigs, wardrobe configurations and every fitted equipment module. Hardware inspection and author review are tracked separately. Native checks counted 205 exhibits in their original positions at tics 4 and 109. All 205 stations were visited in sequence, including previous/next navigation at the end. Twelve representative views were captured. The camera frames each idle mesh at its own size. The launcher holds a temporary Windows sleep request while the engine runs. The final standalone archive passed its CRC check. A fresh MAP01 save reloaded the female jaguar with its tier-two scepter, tower shield and heavy helmet.
 
+On 2026-11-28 the author confirmed that CA913-ROOM-01 passed for the stationary inspection room, its navigation and terminal relaunch.
+
 ## 5.18.9 - Character presentation (#909)
 
 Seven painted atlas replacements from the author's campaign reference now appear on Domingo, the bull, Pombero, Cuero Unudo and Nahuelito. All seven match the pinned PR #908 bytes. The importer can reapply them after an original art export. Their UVs and the regional allocation are preserved. The independent IPK3 contained all seven exact images. Native inspection recorded both Domingo configurations and the four creatures. The inventory cloth keeps the original shared atlas. Only two material pointers in the Pombero mesh changed. The wardrobe source check resolves the original embedded image from the art directory.
+
+On 2026-11-28 the author confirmed that CA909-PAINT-01 passed for the seven painted skins for Domingo, the bull, Pombero, Cuero Unudo and Nahuelito, sourced from the atlas under #906.
 
 ## 5.18.8 - Character presentation (#905)
 
 The bull has broader withers, brisket and muzzle, a lower dewlap, more outward horn sweep and weight-bearing hooves. Blender 4.5.3 produced two identical 136-frame exports with the original triangles, UVs and timings. Native front, profile and moving-pose views are recorded for author review.
 
+On 2026-11-28 the author confirmed that CA905-BULL-01 passed for the bull silhouette, walk and charge.
+
 ## 5.18.7 - Character presentation (#904)
 
-Third-person equipment follows six independent sockets across the 33 player poses. The 59 fitted modules cover 27 weapons, the authored support tiers, four shields and sixteen armor designs. GZDoom 4.14.2 exercised 81 loadouts and removal of all six pieces. Author fit and material review is pending.
+Third-person equipment follows six independent sockets across the 33 player poses. The 59 fitted modules cover 27 weapons, the authored support tiers, four shields and sixteen armor designs. GZDoom 4.14.2 exercised 81 loadouts and removal of all six pieces.
+
+On 2026-11-28 the author confirmed that CA904-EQUIPMENT-01 passed for held and worn equipment through equip and removal in third person.
 
 ## 5.18.6 - Character presentation (#903)
 
-All seven approved families and both sexes have modular world models, fitted hands and feet, separate face and hair meshes, and 33 pose bindings. Faces use a reduced painted palette. The original player profiles select the meshes and colors. Native visual review is pending.
+All seven approved families and both sexes have modular world models, fitted hands and feet, separate face and hair meshes, and 33 pose bindings. Faces use a reduced painted palette. The original player profiles select the meshes and colors.
+
+On 2026-11-28 the author confirmed that CA903-FAMILIES-01 passed for the fourteen replacement player forms from 5.18.12 (#917), including the revised arms, busts, hairstyles and saved appearance.
 
 ## 5.18.5 - Character presentation (#902)
 
-Mandinga, Zupay and the giant rat use 70 textured 3D poses derived from their own artwork for idle, movement, attacks, pain, death and sleep. GZDoom 4.14.2 rendered the three in the inspection room. Author visual review is pending.
+Mandinga, Zupay and the giant rat use 70 textured 3D poses derived from their own artwork for idle, movement, attacks, pain, death and sleep. GZDoom 4.14.2 rendered the three in the inspection room.
+
+On 2026-11-28 the author confirmed that CA902-MODELS-01 passed for Mandinga, Zupay and the giant rat in their replacement sculpts from 5.18.11 (#916), including the demons' final clothing and the creatures' action poses.
 
 ## 5.18.4 - Repository audit integration (#899)
 

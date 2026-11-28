@@ -50,14 +50,14 @@
       "s025-022-1.png"
     ]
   },
-  "author_review": "pending CA902-MODELS-01",
+  "author_review": "passed CA902-MODELS-01 on 2026-11-28 in the final review",
   "clothing_revision": {
     "approved_direction": {
       "mandinga": "shirt, open waistcoat and trousers",
       "zupay": "tunic and mantle"
     },
     "engine": "GZDoom 4.14.2",
-    "art_acceptance": "pending",
+    "art_acceptance": "passed CA902-MODELS-01 on 2026-11-28 in the final review",
     "action_views": [
       "s015-020-0.png",
       "s015-132-0.png",
