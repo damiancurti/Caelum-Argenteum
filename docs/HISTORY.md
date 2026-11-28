@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.18.15** - 2026-11-28.
+Documentation version: **5.18.16** - 2026-11-28.
+
+## 5.18.16 - Seated modular footwear (#926)
+
+The seated sole follows its planted foot and the cuff follows the lower leg. Equipping foot armor replaces the visible base boot. All 18 boot pairs retained rigid soles in the seated pose. GZDoom 4.14.2 rendered the real player standing, seated in heavy boots, seated in base boots and standing again. Visual acceptance is pending.
 
 ## 5.18.15 - Modular equipment fit (#924)
 

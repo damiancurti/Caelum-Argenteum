@@ -732,8 +732,8 @@
     },
     {
       "path": "caelum/character/CaelumFamilyModels.zs",
-      "sha256": "4ef9adacae441d1f56288e1f0f06451d6f04a8031cf184ead12b418af4a61dd9",
-      "bytes": 1860,
+      "sha256": "0ec4b20e8504c235d0cbc43f29ba6d34594c9c6da3f7eb0543ef60ec4043e131",
+      "bytes": 2128,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -8129,7 +8129,7 @@
     },
     {
       "path": "caelum/world/CaelumPhysicalHazards.zs",
-      "sha256": "14c077c507c713dcc8e070344a47f28d79e3512ce6bf883dab7d1c5672a332cf",
+      "sha256": "a26920a6814438f4c3e211b1414d15ad616cce96d050b28039fd1c506ed76fa0",
       "bytes": 20721,
       "decision": "project-source",
       "additional_provenance": [
@@ -8457,7 +8457,7 @@
     },
     {
       "path": "caelum/world/CaelumSewerMaze.zs",
-      "sha256": "469053b4bf9c64df8c30af50f7dc19012d16cff0e52ae452517018d5dca29693",
+      "sha256": "13d3f704e7e2645be8d8cf7504061ee5ab82d91891059e1d71e7971f42607805",
       "bytes": 15766,
       "decision": "project-source",
       "additional_provenance": [],
@@ -220444,7 +220444,7 @@
     },
     {
       "path": "models/caelum/players/b0_boots.md3",
-      "sha256": "a202fd763cfd3c9c2cc685bd829c4f95f311e9dec9ca50bb045b357542edf7c2",
+      "sha256": "1cfd3e75493b2c6012d4e9c10f0b5ceaca86c1d15787465de8b7bfd18d85e51b",
       "bytes": 130132,
       "decision": "project-art",
       "additional_provenance": [
@@ -220556,7 +220556,7 @@
     },
     {
       "path": "models/caelum/players/b10_boots.md3",
-      "sha256": "1a49622d47e6ab82b18be42d085b617f4d573afd01b4fe85fe14192885dc3152",
+      "sha256": "fc56d1fe9a73be99baa06fff498ad97a3cffe1ebf2b45cf886461a7745235b41",
       "bytes": 130132,
       "decision": "project-art",
       "additional_provenance": [
@@ -220654,7 +220654,7 @@
     },
     {
       "path": "models/caelum/players/b11_boots.md3",
-      "sha256": "80c79a871b7eebf8c538941f987ba6658802382640a6a979d5986f76274a004f",
+      "sha256": "e5eaeed0b63019e08cfbd71c3d791effe81f0d2db9c56f857b37b4a0f951409a",
       "bytes": 130132,
       "decision": "project-art",
       "additional_provenance": [
@@ -220752,7 +220752,7 @@
     },
     {
       "path": "models/caelum/players/b12_boots.md3",
-      "sha256": "dcca4177bc26bc2fa05d067c1336f78092869681a15e4a952da851c1ac46ccbe",
+      "sha256": "e4320f8e18fa2083bbc2b1677f9be7db29524c9f39065a6a107655fe97e56362",
       "bytes": 130132,
       "decision": "project-art",
       "additional_provenance": [
@@ -220850,7 +220850,7 @@
     },
     {
       "path": "models/caelum/players/b13_boots.md3",
-      "sha256": "81e702783f54b490750c993efb35483805895cf6034a3faed353e21fb5dbfea2",
+      "sha256": "07107220f5272079b13d7894f40e08dc0a763c4241ff81c5f9d7c1e10a820d5f",
       "bytes": 130132,
       "decision": "project-art",
       "additional_provenance": [
@@ -220934,7 +220934,7 @@
     },
     {
       "path": "models/caelum/players/b1_boots.md3",
-      "sha256": "c7fa5e66ae19272023b46083577aa2a106d6c0470bf7c22dcd53506a934f6799",
+      "sha256": "11b30a08cdc01113b5c80c4ae4f909f4d3f64efad5c059c59cde9c9fb26d6296",
       "bytes": 130132,
       "decision": "project-art",
       "additional_provenance": [
@@ -221032,7 +221032,7 @@
     },
     {
       "path": "models/caelum/players/b2_boots.md3",
-      "sha256": "bae45d36b6e11fbc8e02e42f1b2382afdffa0a0c41fb23dc298c5fa05b118782",
+      "sha256": "8128afb208c8b712839d8dbf53525ded4b7d2c720e18aa62934fd0f624e4586f",
       "bytes": 130132,
       "decision": "project-art",
       "additional_provenance": [
@@ -221130,7 +221130,7 @@
     },
     {
       "path": "models/caelum/players/b3_boots.md3",
-      "sha256": "bdb3850e4871d900d3843794df6b093101569a4c545fa28aa2cfb50645be1003",
+      "sha256": "c773705637e5a2f8e57c8cba1dfb6d46ed6243b20312d4f8c800e88db32e4991",
       "bytes": 130132,
       "decision": "project-art",
       "additional_provenance": [
@@ -221228,7 +221228,7 @@
     },
     {
       "path": "models/caelum/players/b4_boots.md3",
-      "sha256": "63ee8e28da92dc8f6757688e7150851edbacf7deca30259a2677539a26e6a673",
+      "sha256": "b83a76f3b0e86eea86478ed6f0d19a035ae8000870a0b401038b980a10768a7b",
       "bytes": 130132,
       "decision": "project-art",
       "additional_provenance": [
@@ -221326,7 +221326,7 @@
     },
     {
       "path": "models/caelum/players/b5_boots.md3",
-      "sha256": "584b2994879e883d7ed30e8b76c73b9ee98637a5fc62cf6ad40ab65486c08e2d",
+      "sha256": "fda9c5688087068883c8b916ebc6c7849d33fa25541754742741b1bdb790a66c",
       "bytes": 130132,
       "decision": "project-art",
       "additional_provenance": [
@@ -221424,7 +221424,7 @@
     },
     {
       "path": "models/caelum/players/b6_boots.md3",
-      "sha256": "3fa9cf39e978c2713a4bad3ff8dba28612f2007b30eb84a90c49b8230ed84cdb",
+      "sha256": "e7682ff56f83be292c266342dbc5742f54f9f6928dba9580d6c8c8812f5ddbc6",
       "bytes": 130132,
       "decision": "project-art",
       "additional_provenance": [
@@ -221522,7 +221522,7 @@
     },
     {
       "path": "models/caelum/players/b7_boots.md3",
-      "sha256": "9635b774880e0c215531caad187186782c7bf44e5b13fec51d9cb7fc4cf0441e",
+      "sha256": "50087e7d1677bb82d8d9ce7775779d69457d9e1d37514a82a2fa259176bb4823",
       "bytes": 130132,
       "decision": "project-art",
       "additional_provenance": [
@@ -221620,7 +221620,7 @@
     },
     {
       "path": "models/caelum/players/b8_boots.md3",
-      "sha256": "264fdd40f528429e04562e9cd794a50088fa5b3f234942c19aa0478cc7ff51b4",
+      "sha256": "6d7b25ddbca955b39a6ffa37a4d33074269a634bc6270902f351f8bea2311853",
       "bytes": 130132,
       "decision": "project-art",
       "additional_provenance": [
@@ -221718,7 +221718,7 @@
     },
     {
       "path": "models/caelum/players/b9_boots.md3",
-      "sha256": "8fdf4358434f6a80ad846a3b207107de0d31754d90acecee44904eb0853f3e7e",
+      "sha256": "d87e7a363faa2ca5a82caa868a6db3f66e63831476b682a9627e62c61d631063",
       "bytes": 130132,
       "decision": "project-art",
       "additional_provenance": [
@@ -222426,7 +222426,7 @@
     },
     {
       "path": "models/caelum/players/gear/a3_0.md3",
-      "sha256": "12dacd4a20376f55b4851e205904c70a95a23e59aff5efb26d0f507d90874cbd",
+      "sha256": "9f8bda9a05dfb0a3d7f641c38d764dddc9ca57ded12d4369abbc40b6da3b09f4",
       "bytes": 2270724,
       "decision": "project-art",
       "additional_provenance": [
@@ -222450,7 +222450,7 @@
     },
     {
       "path": "models/caelum/players/gear/a3_1.md3",
-      "sha256": "ebe02fb1c82adb822f4aa5e03b5ec947518b9e71049236df5b67383b43ffc5e0",
+      "sha256": "8697b05300c52dbaae5123247d38a3f71480ad8fae59ca04dda4ec764e5bd5d3",
       "bytes": 3030804,
       "decision": "project-art",
       "additional_provenance": [
@@ -222474,7 +222474,7 @@
     },
     {
       "path": "models/caelum/players/gear/a3_2.md3",
-      "sha256": "af18305dc87b85589e94a54c42be478e0f8cc0137a3c77dac7bff1be9041db49",
+      "sha256": "733fdfba7dc50724f17827f2f4f2450c6a4be9f39d8e5fc7faae872d62b34b6d",
       "bytes": 2697748,
       "decision": "project-art",
       "additional_provenance": [
@@ -222498,7 +222498,7 @@
     },
     {
       "path": "models/caelum/players/gear/a3_3.md3",
-      "sha256": "c33ec57389d9e6a54c1898749d5489cd624ac801622f2c4b6b8d7900f7375126",
+      "sha256": "4d046857c36d9d90b6fcc892c18497cf37c2065fd34030b712be11d537c67413",
       "bytes": 2872916,
       "decision": "project-art",
       "additional_provenance": [

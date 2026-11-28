@@ -1,6 +1,10 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.18.15** - 2026-11-28.
+Documentation version: **5.18.16** - 2026-11-28.
+
+## 5.18.16 - Seated modular footwear (#926)
+
+Seated modular footwear is available for review in the silent fitting room.
 
 ## 5.18.15 - Modular equipment fit (#924)
 

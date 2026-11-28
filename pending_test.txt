@@ -42,3 +42,8 @@ CA924-FIT-01 | Origin: 5.18.15 / #924
 Prerequisites: open assets/validation_v5_18_15/Probador.cmd with GZDoom 4.14.2 in hardware rendering mode.
 Steps: cycle pieces with Page Up and Page Down, bodies with F2/F3 and angles with the arrow keys. Toggle the other equipped pieces with C. Inspect the plumed helmets and compare the unarmored head.
 Expected: equipment occupies the corresponding hand, head, torso or feet. The crown covers the scalp and the plume sits above it. Selecting no equipment with the other pieces switched off restores the usual appearance.
+
+CA926-FIT-01 | Origin: 5.18.16 / #926
+Prerequisites: current silent fitting room on GZDoom 4.14.2.
+Steps: Press B to cycle the four footwear designs, S to sit or stand, and rotate to the side. Use 0 to inspect base boots.
+Expected: Each foot keeps one sole, points forward, and joins the shin through the ankle.

@@ -9,7 +9,7 @@ class FittingRoom : StaticEventHandler
     Actor eye;
     CaelumShieldPickup testShield;
     int form, item, rotation;
-    bool combination, report;
+    bool combination, report, seated;
     int reference;
     override void NetworkProcess(ConsoleEvent e)
     {
@@ -22,9 +22,18 @@ class FittingRoom : StaticEventHandler
         else if(e.Name=='outfit_item')item=(ITEM_COUNT+1+item+e.Args[0])%(ITEM_COUNT+1);
         else if(e.Name=='outfit_form')form=(14+form+e.Args[0])%14;
         else if(e.Name=='outfit_turn')rotation+=e.Args[0];
+        else if(e.Name=='outfit_seat')seated=!seated;
+        else if(e.Name=='outfit_empty'){item=0;combination=false;}
+        else if(e.Name=='outfit_boots')cycleSlot(5);
         else if(e.Name=='outfit_set')combination=!combination;
         else return;
         report=true;
+    }
+    void cycleSlot(int wanted)
+    {
+        static const int slots[]={SLOTS};
+        do {item=(item+1)%(ITEM_COUNT+1);} while(slots[item]!=wanted);
+        combination=false;
     }
     override void WorldTick()
     {
@@ -66,6 +75,8 @@ class FittingRoom : StaticEventHandler
         for(int i=0;i<CaelumConstants.ARMOR_SLOT_COUNT;i++)
             p.ArmorModel.ArmorType[i]=chosen==i+2?kinds[item]:combination?material:CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
         p.Angle=270;p.Vel=(0,0,0);
+        if(seated)p.SetState(p.FindState('RestSeated'));
+        else if(p.CurState==p.FindState('RestSeated'))p.SetState(p.SpawnState);
         p.UpdateWorldCarbineVisual();
         if(reference && chosen==2)
         {
@@ -84,6 +95,7 @@ class FittingRoom : StaticEventHandler
         if(report)
         {
             Console.Printf("FITTING form=%d resolved=%d item=%d slots=%d,%d,%d,%d,%d,%d",form,CaelumAppearance.Identity(look.Race,look.Sex,look.BeastForm),item,p.WornVisualKeys[0],p.WornVisualKeys[1],p.WornVisualKeys[2],p.WornVisualKeys[3],p.WornVisualKeys[4],p.WornVisualKeys[5]);
+            Console.Printf("FITPOSE pose=%d seated=%d",p.AppearancePose,seated);
             if(reference)Console.Printf("REFERENCE form=%d item=%d mode=%d",form,item,reference);
             report=false;
         }

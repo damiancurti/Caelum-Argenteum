@@ -537,7 +537,7 @@
     "source": "models/caelum/inventory/armor_feet/magic.md3",
     "frames": 33,
     "surfaces": 13,
-    "sha256": "12dacd4a20376f55b4851e205904c70a95a23e59aff5efb26d0f507d90874cbd"
+    "sha256": "9f8bda9a05dfb0a3d7f641c38d764dddc9ca57ded12d4369abbc40b6da3b09f4"
   },
   {
     "module": "a3_1",
@@ -546,7 +546,7 @@
     "source": "models/caelum/inventory/armor_feet/light.md3",
     "frames": 33,
     "surfaces": 14,
-    "sha256": "ebe02fb1c82adb822f4aa5e03b5ec947518b9e71049236df5b67383b43ffc5e0"
+    "sha256": "8697b05300c52dbaae5123247d38a3f71480ad8fae59ca04dda4ec764e5bd5d3"
   },
   {
     "module": "a3_2",
@@ -555,7 +555,7 @@
     "source": "models/caelum/inventory/armor_feet/medium.md3",
     "frames": 33,
     "surfaces": 14,
-    "sha256": "af18305dc87b85589e94a54c42be478e0f8cc0137a3c77dac7bff1be9041db49"
+    "sha256": "733fdfba7dc50724f17827f2f4f2450c6a4be9f39d8e5fc7faae872d62b34b6d"
   },
   {
     "module": "a3_3",
@@ -564,6 +564,6 @@
     "source": "models/caelum/inventory/armor_feet/heavy.md3",
     "frames": 33,
     "surfaces": 15,
-    "sha256": "c33ec57389d9e6a54c1898749d5489cd624ac801622f2c4b6b8d7900f7375126"
+    "sha256": "4d046857c36d9d90b6fcc892c18497cf37c2065fd34030b712be11d537c67413"
   }
 ]
