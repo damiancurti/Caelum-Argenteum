@@ -2,7 +2,7 @@
   "schema": 1,
   "issue": 466,
   "runtime_files": 19918,
-  "metadata_documents": 708,
+  "metadata_documents": 709,
   "origin_decisions": "assets/distribution/ORIGINS.json",
   "dependency_findings": "assets/distribution/DEPENDENCIES.json",
   "provenance_resolution": "Union of the decision references and per-file additional_provenance; exact_metadata is traceability, not a license grant.",
