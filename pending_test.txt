@@ -1,7 +1,7 @@
 CA902-MODELS-01 | Origin: 5.18.5 / #902
-Prerequisites: native 5.18.5+ build and hardware model rendering.
-Steps: view Mandinga, Zupay and the giant rat from the front, side and rear, then watch each walk, attack, react to damage and die in a test encounter.
-Expected: recognizable 3D silhouettes and materials, intact action timing, no missing model or return to a billboard. Report the actor and pose for any correction.
+Prerequisites: replacement sculpts from 5.18.11 / #916 and hardware model rendering.
+Steps: view Mandinga, Zupay and the giant rat from the front, side and rear, inspect Mandinga's shirt, waistcoat and trousers and Zupay's tunic and mantle, then watch each walk, attack, react to damage and die in a test encounter.
+Expected: modeled faces, distinct horns and hooves on the demons, and a recognizable rodent muzzle, paws and tail, intact action timing, no missing model or return to a billboard. Report the actor and pose for any correction.
 
 CA903-FAMILIES-01 | Origin: 5.18.6 / #903
 Prerequisites: hardware model renderer and the character inspection room or a third-person game.

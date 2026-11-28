@@ -1,0 +1,89 @@
+{
+  "engine": "GZDoom 4.14.2",
+  "mode": "isolated overlay with final #916 models and materials on 5.18.10 standalone",
+  "static": {
+    "states": 70,
+    "textures": 70,
+    "byte_identical_second_export": true
+  },
+  "native": {
+    "state_samples": [
+      "Spawn class=CaelumMandinga angle=0",
+      "Spawn class=CaelumZupayColossus angle=0",
+      "Spawn class=CaelumGiantRat angle=0",
+      "See class=CaelumMandinga angle=45",
+      "See class=CaelumZupayColossus angle=45",
+      "See class=CaelumGiantRat angle=45",
+      "Melee class=CaelumMandinga angle=90",
+      "Melee class=CaelumZupayColossus angle=90",
+      "Melee class=CaelumGiantRat angle=90",
+      "Pain class=CaelumMandinga angle=135",
+      "Pain class=CaelumZupayColossus angle=135",
+      "Pain class=CaelumGiantRat angle=135",
+      "Death class=CaelumMandinga angle=180",
+      "Death class=CaelumZupayColossus angle=180",
+      "Death class=CaelumGiantRat angle=180",
+      "Spawn class=CaelumMandinga angle=225",
+      "Spawn class=CaelumZupayColossus angle=225",
+      "Spawn class=CaelumGiantRat angle=225"
+    ],
+    "captured_views": [
+      "s015-000-0.png",
+      "s015-065-0.png",
+      "s015-165-0.png",
+      "s015-022-1.png",
+      "s016-000-0.png",
+      "s016-065-0.png",
+      "s016-165-0.png",
+      "s016-022-1.png",
+      "s017-000-0.png",
+      "s017-065-0.png",
+      "s017-165-0.png",
+      "s017-022-1.png",
+      "s024-000-0.png",
+      "s024-065-0.png",
+      "s024-165-0.png",
+      "s024-022-1.png",
+      "s025-000-0.png",
+      "s025-065-0.png",
+      "s025-165-0.png",
+      "s025-022-1.png"
+    ]
+  },
+  "author_review": "pending CA902-MODELS-01",
+  "clothing_revision": {
+    "approved_direction": {
+      "mandinga": "shirt, open waistcoat and trousers",
+      "zupay": "tunic and mantle"
+    },
+    "engine": "GZDoom 4.14.2",
+    "art_acceptance": "pending",
+    "action_views": [
+      "s015-020-0.png",
+      "s015-132-0.png",
+      "s015-020-1.png",
+      "s015-132-1.png",
+      "s015-020-2.png",
+      "s015-132-2.png",
+      "s015-020-3.png",
+      "s015-132-3.png",
+      "s015-020-4.png",
+      "s015-132-4.png",
+      "s015-020-5.png",
+      "s015-132-5.png",
+      "s016-020-0.png",
+      "s016-132-0.png",
+      "s016-020-1.png",
+      "s016-132-1.png",
+      "s016-020-2.png",
+      "s016-132-2.png",
+      "s016-020-3.png",
+      "s016-132-3.png",
+      "s016-020-4.png",
+      "s016-132-4.png",
+      "s016-020-5.png",
+      "s016-132-5.png"
+    ],
+    "native_state_samples": 18
+  }
+}

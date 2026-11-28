@@ -1656,3 +1656,6 @@ assets/validation_v5_18_10/Galeria.cmd text eol=crlf
 # Reproduce model-review runtime bytes in a clean Windows checkout.
 src/caelum/character/CaelumAppearance.zs text eol=crlf
 src/caelum/character/CaelumFamilyModels.zs text eol=lf
+
+assets/validation_v5_18_11/*.py text eol=lf
+assets/validation_v5_18_11/*.json text eol=lf
