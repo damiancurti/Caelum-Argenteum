@@ -209398,8 +209398,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mdbra.md3",
-      "sha256": "31c6c855d3e7c9e117fe4fa96413ca78d56a81a3ff8ab08ecee102b79973676a",
-      "bytes": 184628,
+      "sha256": "35baa467960b6b28f66ff0ca4c1df1dd98cb35be8322590df62cbb28c20c1942",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209412,8 +209412,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mdbra.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209426,8 +209426,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mdbrb.md3",
-      "sha256": "d3d3f46cfe20e7eb75131a33facc0b91e576b4ad44b5b13bb25fc74eae25d6a5",
-      "bytes": 184628,
+      "sha256": "8104e79c7309155e2ea5ff930795884e26f52c206e75579775d1afe5f78e7b49",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209440,8 +209440,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mdbrb.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209454,8 +209454,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mdbrc.md3",
-      "sha256": "cf6e446f143b47551f949792b5fdd923e9f7e72df1948c337f513caba4be66f4",
-      "bytes": 184628,
+      "sha256": "6015a64ddd4e16afc992f1609d9ff913611bc34e69e1ebd183c8bd30b1dbb0c8",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209468,8 +209468,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mdbrc.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209482,8 +209482,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mdbrd.md3",
-      "sha256": "d12eb1e497b4bcbcde45cc3a285dfe97a87348a45ad9ad1e5cc629672066c5c7",
-      "bytes": 184628,
+      "sha256": "2eebd55c453fe9d49bdcd5340de6516b93c2ffd6cd4257387cff0fea7f0b132c",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209496,8 +209496,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mdbrd.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209510,8 +209510,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/miida.md3",
-      "sha256": "7fbdd58ad72ffdaffd2d6956d86c5ff3b188ce8c62fe4749ab9f316a1788b022",
-      "bytes": 184628,
+      "sha256": "b7ea7b595e0495228d4bbc00506b0662db79cc4cfb92b305bfc93498f6a1ac33",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209524,8 +209524,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/miida.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209538,8 +209538,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/miidb.md3",
-      "sha256": "0f2cf4093cc5f11a76920b69254680c33ddb5328b2e77d1d73b73df11e078047",
-      "bytes": 184628,
+      "sha256": "ffc711d97ab69b31b2d669bb155b0a1d2940ab1f6c107218a204cb53fb1b6980",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209552,8 +209552,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/miidb.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209566,8 +209566,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mirna.md3",
-      "sha256": "ef7cc44a56a74d0bf1a9ce7efdfebebe5c2d80a2534705bc89f9937239e0afbd",
-      "bytes": 184628,
+      "sha256": "451bd3ddcae89bda1ff34481a085eb4a85fb07a0169d95c6e551beb2f78b9508",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209580,8 +209580,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mirna.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209594,8 +209594,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mirnb.md3",
-      "sha256": "e81478ec007c2890fcf5c73957fcbbdbcb992566be88aa3ea1db97a6bd458f00",
-      "bytes": 184628,
+      "sha256": "816b148a4373af2456a565f70a321f877b0dfda7058021a636d133f6fe9275b7",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209608,8 +209608,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mirnb.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209622,8 +209622,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mirnc.md3",
-      "sha256": "ab36cde23c7c6b314e9662a1a1057c01429667b35e1a2a7039ca49bb3ab3da8c",
-      "bytes": 184628,
+      "sha256": "bad8820083a773ce18c8de726e066d0c9d05905ece7684996c6296c117d3acb0",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209636,8 +209636,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mirnc.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209650,8 +209650,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mirnd.md3",
-      "sha256": "83d6bf0b395706673d28a9018cacbd0051b068785078b16f50f9d096afff5a0f",
-      "bytes": 184628,
+      "sha256": "9d11c4fa2a23c92def93a85e16490b6eb4e7bb987902d209196417256365c8f1",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209664,8 +209664,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mirnd.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209678,8 +209678,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/miwka.md3",
-      "sha256": "15c12cccb0bd11658801217cf27c7e97e36a8d9f3fca18b1d8163d579517af72",
-      "bytes": 184628,
+      "sha256": "2e51faebd3e419e3839c57f4beaa89b06b07e24bbd9c36660ac6e817c08d6a9b",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209692,8 +209692,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/miwka.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209706,8 +209706,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/miwkb.md3",
-      "sha256": "73d67e7cb77688ea3228a7149b5bc9429ffa2b27b8723f2343657ba4fb6f0a8a",
-      "bytes": 184628,
+      "sha256": "e431731a130af05c429befb301523014b878b5f49e969feee723b2a8ac02b035",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209720,8 +209720,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/miwkb.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209734,8 +209734,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndga.md3",
-      "sha256": "66fc5f812fdb8b54255040d47d119f0a0e833f50b938b00d209d26a4f884fa55",
-      "bytes": 184628,
+      "sha256": "13ac57efcde96a7d15d2d4acb6f429d6fbb75aae1359fea28ae060608b1b45d1",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209748,8 +209748,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndga.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209762,8 +209762,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgb.md3",
-      "sha256": "5e2f5e85273b734f03b1a2790136669ca2a587945b063913732bc83c6dadcccb",
-      "bytes": 184628,
+      "sha256": "84bedf6499f6727051ae428f393edf8812471854c84d423d8c999106f5f9e67f",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209776,8 +209776,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgb.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209790,8 +209790,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgc.md3",
-      "sha256": "0c6617ab7870784c29fea74827332de19c97b7849c3c791aab080027baf813ac",
-      "bytes": 184628,
+      "sha256": "66dbf076f24272c9a672a5cf5a77d301d1453bf41923d43acc39fc4338026b18",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209804,8 +209804,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgc.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209818,8 +209818,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgd.md3",
-      "sha256": "cf110beecd305ab6ea790c106df5ee188baab8aa968c759e2c23e48c60a44aeb",
-      "bytes": 184628,
+      "sha256": "04ab85c591234a5c8d36211af84201d880bd8cf5b384f4329dfc26ad8d54ec0b",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209832,8 +209832,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgd.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209846,8 +209846,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndge.md3",
-      "sha256": "fe3d84ac0472a37bebd987a4f1276845f11d3a580e0152ced8de93af166cb14e",
-      "bytes": 184628,
+      "sha256": "8413b94c1240a4a1b66985b0f087ac33d9d57f6cc050767d878960ce65eb0da2",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209860,8 +209860,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndge.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209874,8 +209874,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgf.md3",
-      "sha256": "15caf38e154910e63a72a4ddf9b9a22790dba341c00fdc437c6c5301d7db319a",
-      "bytes": 184628,
+      "sha256": "cdd11c2c5160ea27537b46d9798b1b317f4b3c9f4cce97f63edd351eeeb0587e",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209888,8 +209888,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgf.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209902,8 +209902,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgg.md3",
-      "sha256": "40ecb2e26683046e2591cd13d394afa4f10ed83bc6be77f1a0b7f7ce38f68c2f",
-      "bytes": 184628,
+      "sha256": "caf66244c69a0ec334727e146c9efbc20908216bfeb0c0da03901795fb36261e",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209916,8 +209916,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgg.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209930,8 +209930,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgh.md3",
-      "sha256": "00c0270b5bc174ad66730fdda73589c7ab548d58577f8fe4518a4d44455bcdd4",
-      "bytes": 184628,
+      "sha256": "7fb7ce7abd34c4cc364f1ab87d68d852dde0bf55e4d6c0411a898a7b28e884cd",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209944,8 +209944,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgh.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209958,8 +209958,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgi.md3",
-      "sha256": "1ee529987c3c5068fdc862154a391cc29d1579a4916a51e2fbe17f6d12c44a42",
-      "bytes": 184628,
+      "sha256": "b46662b707c84284b0693da6d9ed24a376b2a052472d24fc83b7211db3b77b53",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209972,8 +209972,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgi.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -209986,8 +209986,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgj.md3",
-      "sha256": "cced0f949c1e05f6322f94895a3a818705974bac5eb39eb7c7a04e8ac5164386",
-      "bytes": 184628,
+      "sha256": "0d77c038e32a83293f791f725c9e1c0a30fa2c8846ee0d49b42da340ea141156",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210000,8 +210000,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgj.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210014,8 +210014,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgk.md3",
-      "sha256": "7548c75e3ce6f15139b63b899d79850f1d0492ac69a5e4fa044c5142245dc65b",
-      "bytes": 184628,
+      "sha256": "65701f70a5619368775c84172b0de41ec5def2bf67ab8152ef6689b171bdd055",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210028,8 +210028,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgk.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210042,8 +210042,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgl.md3",
-      "sha256": "5410b02252f96a0850b48735346d355dcfefe475c72f17817a89a17ff81bfbd3",
-      "bytes": 184628,
+      "sha256": "b99ec2bef601a7bcdbb878846d146628de06dc7ada5245b3d55e0114a08f4d0b",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210056,8 +210056,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/mndgl.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210070,8 +210070,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/slmda.md3",
-      "sha256": "d27ef559e22c4ee9ce07f2d30c493aeb0d107aa9b2abf3c92e9c5a3b56b5859e",
-      "bytes": 184628,
+      "sha256": "a78baf3c8ddd49ed66d14a9afa9e985eca3557e812bc24315daa3927b92063a4",
+      "bytes": 301500,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210084,8 +210084,8 @@
     },
     {
       "path": "models/caelum/creatures/mandinga/slmda.png",
-      "sha256": "504eb29d4a8af0a3805b129c2f8db1b9ce08c88f0d9ba4281b0ab37824c822b1",
-      "bytes": 27929,
+      "sha256": "1703cbd14661acea5f8b113be349f2369299f2dd3f1e42649556c2bf5740de73",
+      "bytes": 27874,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210490,8 +210490,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/slzua.md3",
-      "sha256": "55c89801db1a9609724de2f198fa81c6fe5255365c00e9f2d966a56420f7da14",
-      "bytes": 194556,
+      "sha256": "7063b9bf720ce134957b88f997035961de8323155633a38a26ae44cb9824bf7c",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210504,8 +210504,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/slzua.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210518,8 +210518,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zubra.md3",
-      "sha256": "bf8e21e333f912cfd6dbf033ce1ce6417d273f26893c319abfe921ec2e1c5d0d",
-      "bytes": 194556,
+      "sha256": "f7e70d0e5f67401fd6c2dba4cffec62c80ef4e350a357172a56e03754b77715e",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210532,8 +210532,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zubra.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210546,8 +210546,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zubrb.md3",
-      "sha256": "b9c16a9e1dff4feb05cfcdae10c4183f1f08e728c73bd076bb9c0de908759dfe",
-      "bytes": 194556,
+      "sha256": "619c535837dcbf846e6bcc1852d98f7c9603c5d743363b91f812316608f60eca",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210560,8 +210560,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zubrb.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210574,8 +210574,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zubrc.md3",
-      "sha256": "7163b35252c91306aca0e99413a70f3138f8f307f752bdc9191e2afbeb74c379",
-      "bytes": 194556,
+      "sha256": "6a7bc43f91d2d75be9837ac87438bae9c2fe57c3315a46114ae109dc08ee8d8d",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210588,8 +210588,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zubrc.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210602,8 +210602,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zubrd.md3",
-      "sha256": "70aa6fb41edd0e7c594d72a846ced06ae1df212e3929f439844a16be9a691031",
-      "bytes": 194556,
+      "sha256": "355180d2bfdab58a8da27fd2c88a613a93bacdc086eb3b7382ef7f4a99b8f305",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210616,8 +210616,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zubrd.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210630,8 +210630,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zuida.md3",
-      "sha256": "323eb160daf2db1c081b844e6aa5cea1751da1c45ad79f08d4aa3b7d46a245ab",
-      "bytes": 194556,
+      "sha256": "74196f457816afd19c93731bc5658223c19f84377b3648ee8fa8aa1c6db198f3",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210644,8 +210644,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zuida.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210658,8 +210658,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zuidb.md3",
-      "sha256": "9432b5147b450bdefd6a1aeaa9420bed81be3507ed040ad60dafd2fbd2fda16b",
-      "bytes": 194556,
+      "sha256": "84429fd0a92965c3dca9d360cfecb87f1a36baa546656877e07e384218ad937a",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210672,8 +210672,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zuidb.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210686,8 +210686,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupya.md3",
-      "sha256": "500406f3483e2d6f41f8172c78cf5fef1d7503efd255500780eb606acd9daf40",
-      "bytes": 194556,
+      "sha256": "69a6fe2c1b1e52a4fbad35e7b2ea4daef7f3fd950c9a52639b0dbc0711158a66",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210700,8 +210700,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupya.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210714,8 +210714,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyb.md3",
-      "sha256": "0bdbd3fd12b260e9d017b70b8d39189e4c0e4c99d6a4eea8441714e8fa32d65f",
-      "bytes": 194556,
+      "sha256": "1f733fe667d89bffe9dad1a0d003c2c3fc8555e04082d1064f121898fe3c1b96",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210728,8 +210728,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyb.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210742,8 +210742,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyc.md3",
-      "sha256": "508beda38ae190e994e2532140e0f22cac140facb5ea78b8f94a13b6b58ab71c",
-      "bytes": 194556,
+      "sha256": "5abf99d98036799a82a395073b253583a3def6e5677876b0951c60db6ea86a4c",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210756,8 +210756,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyc.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210770,8 +210770,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyd.md3",
-      "sha256": "2812b4ded114905fd659c57e9bb519323db54d4a4787e0d39f0432dcdfaf7d70",
-      "bytes": 194556,
+      "sha256": "c6ff51c3afc8d4d7c40a67cd5fadcba9e6d09b7151bb33e5254715474de62170",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210784,8 +210784,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyd.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210798,8 +210798,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupye.md3",
-      "sha256": "382b74b612d24fbc45aa276de085b968b940fe66c203d6c5b7ac6ca95c13c5f3",
-      "bytes": 194556,
+      "sha256": "7a6bc718fee7c840f71846f4cdfb1150206ad951de44ab72683b7e2606acce63",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210812,8 +210812,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupye.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210826,8 +210826,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyf.md3",
-      "sha256": "ebbfdef88a924b0b8e1769a9cb0a2b823c20f1cde0cc6fa9c9d061a769c6cf91",
-      "bytes": 194556,
+      "sha256": "b5fcc56c64a46b26edf78685dd141a81e3d4d6684c849522b66e8ed5e03f059c",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210840,8 +210840,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyf.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210854,8 +210854,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyg.md3",
-      "sha256": "fb96fbaf25d5d2ed4402980c2472a18fa4d2384b30c2572f2d1ec3c579fb0e7f",
-      "bytes": 194556,
+      "sha256": "924e0eb3f00dc79baf731003f317d4c085869f66ec8acfba8e50ca652e2d37ca",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210868,8 +210868,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyg.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210882,8 +210882,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyh.md3",
-      "sha256": "e0a1fc30956346ac09e758838d57b9f67b651cc16a1883363940aa2ceb234284",
-      "bytes": 194556,
+      "sha256": "310cbb67f542015fb382030923f716204f4788b4e36de8874a01ee9dc14839e3",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210896,8 +210896,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyh.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210910,8 +210910,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyi.md3",
-      "sha256": "7053c2219fd7d1afad6f01bf61e7ba1c5c76a27930c3a2205526718c7aa15aec",
-      "bytes": 194556,
+      "sha256": "242c2e581e71cada3acfa72756599bc16d7212b71ebf36bb6456d24f4daf6fcb",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210924,8 +210924,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyi.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210938,8 +210938,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyj.md3",
-      "sha256": "362fa0e777611d0952b76d523b6a18298c0dd15d22a8ca73b34d44eab469a639",
-      "bytes": 194556,
+      "sha256": "64e9534b1ff358bd116cbc9078b74750d6bf2159338b9a67706962a4a57f1676",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210952,8 +210952,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyj.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210966,8 +210966,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyk.md3",
-      "sha256": "e9cfbf548f2be150d69d5b9b4855699dbf159ca93cd4c3ed027ceea37148d37e",
-      "bytes": 194556,
+      "sha256": "c9de25dfb24705045e62eede3002756700e41ff5b55e28d651afd4d5a95e97ca",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210980,8 +210980,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyk.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -210994,8 +210994,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyl.md3",
-      "sha256": "b734ed4b1dfb80f449dd9f54da5d8c3e6d49966093e4a1320aa43994a23c0360",
-      "bytes": 194556,
+      "sha256": "c3e9a845dc07f8f47121aa944c10178a5cb12d4d7d5d07eb235f2ce99f8a7500",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211008,8 +211008,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyl.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211022,8 +211022,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupym.md3",
-      "sha256": "0254f2a0cce4f75d3ad4d1d3c6ee58ebb94aee4ea0eaf1b52f94f9f886d084bf",
-      "bytes": 194556,
+      "sha256": "95d0ff929b3835d09e37a084fdb8daf16236618865f5b3183e4ac4ba38b6d5bc",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211036,8 +211036,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupym.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211050,8 +211050,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyn.md3",
-      "sha256": "782f152f359a66987ac9e8a3c1e6d4ae8fa015b61770fd316e4eb4be11dc7dc1",
-      "bytes": 194556,
+      "sha256": "00a27805388c098cf6f69233662dc2ab59a59d9ffd9952079b7c59a2035655fd",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211064,8 +211064,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyn.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211078,8 +211078,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyo.md3",
-      "sha256": "e9d20d7b8b97db95f3ef08117d1d1ad748db1181ce41acef42e75c4df1c24ed0",
-      "bytes": 194556,
+      "sha256": "791ce5d076af75f60c030a05e22caefa582a5ee6889753c42c5fdba6db1b3da0",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211092,8 +211092,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyo.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211106,8 +211106,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyp.md3",
-      "sha256": "53b1dde3351dbc3593fe172047a718c962da1978c8fc5a26835acc4110bbceb7",
-      "bytes": 194556,
+      "sha256": "490a4fe0110ca0317d4fed1a0d976df6faa10599baab37e0b38c1c1dd3127c20",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211120,8 +211120,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyp.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211134,8 +211134,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyq.md3",
-      "sha256": "a3683cac68413a925cf16ec068c0675b84e7ae12dedb967426d2e3234ec4a944",
-      "bytes": 194556,
+      "sha256": "ab34faea1a99e0151fe73284348279df140e72fd639f8f4535f89bc6f3299505",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211148,8 +211148,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyq.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211162,8 +211162,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyr.md3",
-      "sha256": "6eef6893258eeaab553da9514adbdf788350aa5be972effe68acfbef6cdd9fad",
-      "bytes": 194556,
+      "sha256": "ac81ea49d7ee0a36fbf613db3aef8f25e9c209b9006543c325439b7c02aace3b",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211176,8 +211176,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zupyr.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211190,8 +211190,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zurna.md3",
-      "sha256": "e30d1a1f525d569e4879a9590eeed3005fb9aa3701ac28547f12be97cfecca7e",
-      "bytes": 194556,
+      "sha256": "be4849f44892ca10da41a41e04a870a77eb68a1956b9a0c20902c7e9bb2fef92",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211204,8 +211204,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zurna.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211218,8 +211218,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zurnb.md3",
-      "sha256": "1f17e6d3feb75bda0525ae082d5ea68df6d6ae1021451d68f23cd623db3b8995",
-      "bytes": 194556,
+      "sha256": "837500c0e36caf36a06db393e212a662bf3758e726c06de6dba1e65847de2d3a",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211232,8 +211232,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zurnb.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211246,8 +211246,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zurnc.md3",
-      "sha256": "07a4af9b4a49af434c0d3a7edf052b4a101d46dc6fcf3551a8acee9401b88344",
-      "bytes": 194556,
+      "sha256": "aca86624fc271c601f4b27630b5b65486e645ebdb7d0a1a48834557bdc5ddcb0",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211260,8 +211260,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zurnc.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211274,8 +211274,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zurnd.md3",
-      "sha256": "ddf76d4f5ddc0f3d6684adad9f3a761b5e2e88411921f90d9526219e6682c963",
-      "bytes": 194556,
+      "sha256": "119d175c03f065cb8fb5d9217eb48d532ffe8ba44bc112543e100932230aeb4f",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211288,8 +211288,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zurnd.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211302,8 +211302,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zuwka.md3",
-      "sha256": "16294b011a7828ad3f41ebab1ec89f36d827e526c5415a80d2fccb43f5b30a01",
-      "bytes": 194556,
+      "sha256": "5b227d1571a39517d85c72b01d16a721191530aef0d07168e2496b28279070ce",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211316,8 +211316,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zuwka.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211330,8 +211330,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zuwkb.md3",
-      "sha256": "df7badf6d0f39db2d88636a970f17c102d2cd7b276cf8dfbc07af415a16dba75",
-      "bytes": 194556,
+      "sha256": "6a2799945fb09c6c7c20aac9b40b79e2fd9dfd5aec1b7a43dd418f461fad2d9d",
+      "bytes": 221300,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"
@@ -211344,8 +211344,8 @@
     },
     {
       "path": "models/caelum/creatures/zupay/zuwkb.png",
-      "sha256": "49ad1edd494ac294ebea9aeee06d78e2dcfbef0bab6da956c8cc508d0f970408",
-      "bytes": 27826,
+      "sha256": "57a3fbd83b5b5f9724f9a08f075100215a165c2190fb3e8bc5acb77836bd2702",
+      "bytes": 27350,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/native_creatures_902/PROVENANCE.json"

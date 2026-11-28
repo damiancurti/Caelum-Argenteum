@@ -8,7 +8,7 @@ All fourteen player forms now use original modular sculpts. Witches and warlocks
 
 ## 5.18.11 - Character presentation (#916)
 
-Mandinga, Zupay and the giant rat have original articulated meshes for all 70 existing action poses. The demons follow the humanoid anatomy of the witches and warlocks. Their faces, horns, hooves and the rat muzzle are modeled in relief.
+Mandinga, Zupay and the giant rat have original articulated meshes for all 70 existing action poses. The demons follow the humanoid anatomy of the witches and warlocks. Their faces, horns, hooves and the rat muzzle are modeled in relief. The author requested full clothing. Mandinga wears a shirt, leather waistcoat and gathered trousers. Zupay wears a tunic and bordered mantle. The garments follow the existing action poses.
 
 ## 5.18.10 - Character presentation (#913)
 

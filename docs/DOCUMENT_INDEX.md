@@ -29,9 +29,9 @@ Read a selected inclusive line range from the original:
 python build_document_index.py read SYSTEMS.md 3643 3676
 ```
 
-## [ASSETS.md](ASSETS.md) - 94425 words
+## [ASSETS.md](ASSETS.md) - 94453 words
 
-SHA-256: `fa187f2fd0ef533d8f3a3e91f27542d1d02498bd07e4109f40c0aa79f93047f7`
+SHA-256: `6eb4223cbb4c1c3c50aac63720e7bdc00b993d9b80ca8bd74cec5a68f42587f3`
 
 - Lines 1-4 - [Caelum Argenteum — Audio and art](ASSETS.md#caelum-argenteum--audio-and-art) - context: -
 - Lines 5-8 - `5.18.12 - Character presentation (#917)` - context: Caelum Argenteum — Audio and art
@@ -497,9 +497,9 @@ SHA-256: `56e479e3893e27831a42d1dfe6ac0d5fcc80b556d6235ac8b9a076bb118376bb`
 - Lines 471-475 - [Sources and limitations](GZDOOM_DEVELOPMENT.md#sources-and-limitations) - context: GZDoom development guide — Caelum Argenteum
 - Lines 476-541 - [Private 4.14.2 native candidate and presentation capture (#435)](GZDOOM_DEVELOPMENT.md#private-4142-native-candidate-and-presentation-capture-435) - context: GZDoom development guide — Caelum Argenteum
 
-## [HISTORY.md](HISTORY.md) - 318532 words
+## [HISTORY.md](HISTORY.md) - 318560 words
 
-SHA-256: `0f9d1c48911e28a171f1f316c5f6ecd9283703a7487230134eb91e56d9221174`
+SHA-256: `11b4a95f8d613c6ab056c8c540412cb6008fdc0ce7152de887620fae89123f1d`
 
 - Lines 1-4 - [Caelum Argenteum — Consolidated history](HISTORY.md#caelum-argenteum--consolidated-history) - context: -
 - Lines 5-8 - `5.18.12 - Character presentation (#917)` - context: Caelum Argenteum — Consolidated history
@@ -3171,6 +3171,6 @@ SHA-256: `eff2cc148446116a048253e99c510b019d1964f590ae9624b60c42b9ae5633f2`
 - Lines 6581-6593 - [Integration and closing of 4.36](TASKS.md#integration-and-closing-of-436) - context: TASKS.md — Active tasks
 
 <!-- DOCUMENT_INDEX_META
-{"documents": [{"path": "ASSETS.md", "sha256": "fa187f2fd0ef533d8f3a3e91f27542d1d02498bd07e4109f40c0aa79f93047f7", "words": 94425}, {"path": "GZDOOM_DEVELOPMENT.md", "sha256": "56e479e3893e27831a42d1dfe6ac0d5fcc80b556d6235ac8b9a076bb118376bb", "words": 5089}, {"path": "HISTORY.md", "sha256": "0f9d1c48911e28a171f1f316c5f6ecd9283703a7487230134eb91e56d9221174", "words": 318532}, {"path": "KNOWN_PITFALLS.md", "sha256": "c431f2f83419f8978b2f8b748f596b886e8d690487dd16783a73a44b70007bee", "words": 70288}, {"path": "MAP01.txt", "sha256": "046e8cc229f4a94cd94f06393aad47627b8adba9c8095c8adee7de1277999e28", "words": 43317}, {"path": "PROJECT.md", "sha256": "ae2782b72740633588e0e6d709e46623e96d6ee0c55e62f966e4b5ae82677b7f", "words": 89498}, {"path": "SYSTEMS.md", "sha256": "af074cfebc0ea41e867c519458668e5fb9fb8762f8a2410c4099916b850ed08b", "words": 176478}, {"path": "TASKS.md", "sha256": "eff2cc148446116a048253e99c510b019d1964f590ae9624b60c42b9ae5633f2", "words": 53652}], "generated_by": "build_document_index.py", "threshold_words": 5000}
+{"documents": [{"path": "ASSETS.md", "sha256": "6eb4223cbb4c1c3c50aac63720e7bdc00b993d9b80ca8bd74cec5a68f42587f3", "words": 94453}, {"path": "GZDOOM_DEVELOPMENT.md", "sha256": "56e479e3893e27831a42d1dfe6ac0d5fcc80b556d6235ac8b9a076bb118376bb", "words": 5089}, {"path": "HISTORY.md", "sha256": "11b4a95f8d613c6ab056c8c540412cb6008fdc0ce7152de887620fae89123f1d", "words": 318560}, {"path": "KNOWN_PITFALLS.md", "sha256": "c431f2f83419f8978b2f8b748f596b886e8d690487dd16783a73a44b70007bee", "words": 70288}, {"path": "MAP01.txt", "sha256": "046e8cc229f4a94cd94f06393aad47627b8adba9c8095c8adee7de1277999e28", "words": 43317}, {"path": "PROJECT.md", "sha256": "ae2782b72740633588e0e6d709e46623e96d6ee0c55e62f966e4b5ae82677b7f", "words": 89498}, {"path": "SYSTEMS.md", "sha256": "af074cfebc0ea41e867c519458668e5fb9fb8762f8a2410c4099916b850ed08b", "words": 176478}, {"path": "TASKS.md", "sha256": "eff2cc148446116a048253e99c510b019d1964f590ae9624b60c42b9ae5633f2", "words": 53652}], "generated_by": "build_document_index.py", "threshold_words": 5000}
 DOCUMENT_INDEX_META -->
 

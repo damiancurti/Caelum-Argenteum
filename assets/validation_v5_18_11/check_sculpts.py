@@ -16,6 +16,11 @@ parser.add_argument(
     "--hair", action="store_true", help="Inspect four hairstyles on the widest head for each humanoid."
 )
 parser.add_argument("--development-assets", action="store_true")
+parser.add_argument(
+    "--demon-actions",
+    action="store_true",
+    help="Inspect the bound clothing on walking, attacking and fallen figures.",
+)
 args = parser.parse_args()
 out = args.output.resolve()
 out.mkdir(parents=True, exist_ok=True)
@@ -26,7 +31,7 @@ subprocess.run(
 source = """version "4.14.2"
 class SculptCamera : StaticEventHandler {
     override void NetworkProcess(ConsoleEvent e) {
-        if(e.Name!="sculpt_view" && e.Name!="sculpt_hair")return;
+        if(e.Name!="sculpt_view" && e.Name!="sculpt_hair" && e.Name!="sculpt_action")return;
         int id=e.Args[0];double angle=e.Args[1]-90.0;bool close=e.Args[2]>0;
         let it=ActorIterator.Create(999+id);
         let model=GalleryExhibit(it.Next());let eye=GalleryVisitor(players[e.Player].mo);
@@ -46,6 +51,15 @@ class SculptCamera : StaticEventHandler {
             eye.Vel=(0,0,0);eye.Angle=angle+180;eye.Pitch=above?42:4;
             eye.ViewHeight=height;eye.player.ViewHeight=height;
             Console.Printf("SCULPT id=%d angle=%d style=%d",id,e.Args[1],e.Args[2]);return;
+        }
+        if(e.Name=="sculpt_action"){
+            static const String mandinga[]={"miida","miwka","mirnb","mndgd","mndge","mndgl"};
+            static const String zupay[]={"zuida","zuwka","zurna","zupyd","zupyr","zupyl"};
+            int pose=clamp(e.Args[2],0,5);
+            String stem=id==15?mandinga[pose]:zupay[pose];
+            String folder=id==15?"models/caelum/creatures/mandinga":"models/caelum/creatures/zupay";
+            model.A_ChangeModel('None',0,folder,Name(stem..".md3"),0,folder,Name(stem..".png"),0);
+            close=false;
         }
         double distance=Max(12,model.CameraDistance*(close?.52:1.0));
         Vector3 target=model.Pos;
@@ -69,6 +83,8 @@ with zipfile.ZipFile(qa, "w", zipfile.ZIP_DEFLATED) as z:
 stations = [*range(1, 15), 24, 25, 29, 147, 205] if args.players else [15, 16, 17, 24, 25]
 if args.hair:
     stations = list(range(1, 7))
+if args.demon_actions:
+    stations = [15, 16]
 controls = [
     "screenblocks 12",
     "r_drawplayersprites false",
@@ -87,9 +103,11 @@ for k, station in enumerate(stations):
     views = (
         [(angle, style) for style in range(4) for angle in (32, 146)]
         if args.hair
+        else [(angle, i) for i in range(6) for angle in (20, 132)]
+        if args.demon_actions
         else [(0, 0), (65, 0), (165, 0), (22, 1)]
     )
-    event = "sculpt_hair" if args.hair else "sculpt_view"
+    event = "sculpt_hair" if args.hair else "sculpt_action" if args.demon_actions else "sculpt_view"
     for angle, close in views:
         name = f"s{station:03}-{angle:03}-{close}"
         expected.append(name)
