@@ -35,7 +35,7 @@
   ],
   "source_sha256": {
     "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
-    "assets/source/art/guardians_698/EXPORT.json": "1975566e73f64f735f5907c2bcd2b95a40b9bdb7ec1b77acb64d28a52a354e23",
+    "assets/source/art/guardians_698/EXPORT.json": "23858aa6e7d5fc4171bac1b6139975fa76b7d6adf0b8c4bd15f21c374c1818cd",
     "assets/source/art/regional_gallery_682/GALLERY.json": "65485227785466d786943a70de0e5901f5071c42d27d4958ce7a886e29195fa5",
     "assets/generators/generate_cuyo_regional_materials.py": "15a7571564ff5fd556adc6b72027baa3df2bcef5410a93cce0ac6b28af3bc56e"
   },
