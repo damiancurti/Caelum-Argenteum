@@ -2754,7 +2754,7 @@
     "src/graphics/caelum/icons/ca_hatchet.png": "8112f0cf14112dafd2097c4033a30fc2d67f5f3a2417feefcb8cc4b65a78dbb5",
     "src/graphics/caelum/icons/ca_axe.png": "d3a1c36b2506b4b0bdc1d85e4e849040b54b4fa38749b668baa612911b20890c",
     "src/graphics/caelum/icons/ca_war_axe.png": "d814932f5439709600ebd06b2a666ce053b06e04c621f1bc6bcc1c97a51dab53",
-    "src/TEXTURES": "fe101bef213d375ca30330deb1f01a3c595caf63d753ed9e5ba505318fc3c6ad"
+    "src/TEXTURES": "3baaeb5400bcf24b9a81b3e9197a4224e37824de7eeb8b26455e17c7349311b0"
   },
   "dimensions_note": "Corrected under #769: effective TEXTURES aliases override the legacy physical sprite lumps used by the first candidate. World envelopes now follow current icon alpha and native sprite scale; greatsword RGB desaturation/blend leaves that alpha envelope unchanged. Original shared quality state, collision and actor scale remain unchanged. Simplified fittings, static tassels, plain steel without painted blade stains, omitted fine ornament/axe chain and hidden surfaces still require author review.",
   "correction_issue": 769

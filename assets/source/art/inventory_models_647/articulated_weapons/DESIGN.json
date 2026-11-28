@@ -4695,7 +4695,7 @@
     "src/models/caelum/inventory/effigies/wood.png": "c186cefb3af13d75886ff2fb201687465665f6d4e1b05052b90bf053423a2fc1",
     "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
     "src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
-    "src/TEXTURES": "fe101bef213d375ca30330deb1f01a3c595caf63d753ed9e5ba505318fc3c6ad",
+    "src/TEXTURES": "3baaeb5400bcf24b9a81b3e9197a4224e37824de7eeb8b26455e17c7349311b0",
     "src/graphics/caelum/bolas/bolas.textures": "1d49d551002a883feff4fc741986c0d139a8435e76f3617cbfab7fa14f8f1642",
     "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
     "src/caelum/equipment/CaelumWeaponModel.zs": "f1f3365b4286f384c8f017b1ac1dde41bdaac7cf005b88d6f10bc142ec1cad13",

@@ -3059,7 +3059,7 @@
     "src/graphics/caelum/icons/ca_javelin.png": "a23d7bb4b2009ed4f50c53ff8134024f4b23ef521d4510d6664b88758acf64ee",
     "src/graphics/caelum/icons/ca_spear.png": "08eeb5a3e771be59e12bd3523358bf97ee18d2817daf091305d6527d3512b93b",
     "src/graphics/caelum/icons/ca_halberd.png": "c0481b3025dd4602f8ddca445c588d15421618f4cdefafa83f822814408fa41e",
-    "src/TEXTURES": "fe101bef213d375ca30330deb1f01a3c595caf63d753ed9e5ba505318fc3c6ad"
+    "src/TEXTURES": "3baaeb5400bcf24b9a81b3e9197a4224e37824de7eeb8b26455e17c7349311b0"
   },
   "dimensions_note": "Effective TEXTURES world aliases override older physical sprite lumps. Current owned javelin/red tassels, spear/blue tassels and halberd/red tassels guide these assemblies. Utility staff uses its accepted ready atlas crop and sprite scale. Opaque display envelopes are verified after those transforms; hidden surfaces and simplified ornament remain author-review proposals.",
   "world_reference_resolution": {
