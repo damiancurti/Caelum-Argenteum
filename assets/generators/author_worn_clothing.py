@@ -427,6 +427,7 @@ def fit_scene(config,out):
     for image in bpy.data.images:
         if image.source!='FILE' or image.users==0:continue
         path=Path(bpy.path.abspath(image.filepath))
+        if path.name=='domingo_skin.png':path=known[path.name]
         if not path.is_file():path=known.get(Path(image.filepath).name,path)
         assert path.is_file(),'Missing editable image: '+image.filepath
         image.filepath=str(path);image.reload();image.pack()

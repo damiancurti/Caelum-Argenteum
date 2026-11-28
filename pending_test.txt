@@ -17,3 +17,8 @@ CA905-BULL-01 | Origin: 5.18.8 / #905
 Prerequisites: model gallery or a map containing a bull with the 3D model enabled.
 Steps: inspect the forehead, horn spread, muzzle, brisket, withers and hooves from front and side. Watch the walk and charge in play.
 Expected: a recognizable bull in every view with the original gait and attack timings.
+
+CA909-PAINT-01 | Origin: 5.18.9 / #909, source #906 / PR #908
+Prerequisites: gallery with the painted texture package integrated.
+Steps: view Domingo, the bull, Pombero, Cuero Unudo and Nahuelito from the front and both sides under the same light.
+Expected: the supplied materials follow the original UVs across body, head and face. Identify the station and angle for any further paint correction.
