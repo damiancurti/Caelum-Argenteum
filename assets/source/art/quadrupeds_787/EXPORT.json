@@ -1174,7 +1174,7 @@
     }
   },
   "source_sha256": {
-    "src/caelum/actors/CaelumFolkloreCharacters.zs": "80c5a00ef221395a6688125d8871c3f84ccf21e2aeb63b5c0bd4adb99dd2e420",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "8cd94ec0e23c6b3894acd71011fb071df7308b4995709e6290cfba50b1436f54",
     "assets/source/bestiary_453/imagenes/05_Bestias_magicas/43_familiar.png": "8d051140b6e03ea69da2e08efa626fbdd5d2130d49c0671abfc79122b2c3b8e1",
     "assets/source/bestiary_453/imagenes/05_Bestias_magicas/50_ao_ao.png": "dbd5d81273e6970420b92da45db5d6bd3fa00f0461164b944d328681d0d30308",
     "assets/source/art/quadrupeds_787/materials.png": "b63c9fa16efda5e0ffb4f30dde62eb3dc1ff4d76be178c30c3c024a578c3bb5c",
@@ -1182,7 +1182,7 @@
     "assets/source/art/quadrupeds_787/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
     "assets/source/art/quadrupeds_787/MATERIALS_PROMPT.json": "3f1a71e019d0e02d5858f25be8c9adb614072383588e8aa67194162b54254e8e",
     "assets/source/art/quadrupeds_787/CONTACTS.json": "e4a04e53a5d10b3116d8db120f3c3f74b23df8725469fa4aeb2c3238ad3a7ef1",
-    "assets/source/art/quadrupeds_787/ANIMATION.json": "54001962cf4ce865d07311b6b9451f9336a78eea9c8f1bf65d245efca261e067",
+    "assets/source/art/quadrupeds_787/ANIMATION.json": "0c21187182b2f23e8111470d41605148fbd4c96adff15ce4ade4a5af50aaccad",
     "assets/source/art/quadrupeds_787/PROVENANCE.json": "714188e9a1c2bf7d4fa9b43bf39f4107ff497180671a3c88dfb0ee8f65178dd1",
     "assets/source/art/quadrupeds_787/familiar.json": "461db1cddb707866dafbd22ea54f865e4059f384a0450572f656e83872ee7435",
     "assets/source/art/quadrupeds_787/ao_ao.json": "db88aaecee482cf6548cfb4bc232d6ff2f528b87de9a856ecce604133ecda6f9",

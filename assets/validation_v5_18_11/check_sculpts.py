@@ -93,7 +93,7 @@ controls = [
     "i_pauseinbackground false",
     "vid_activeinbackground true",
     "vid_lowerinbackground false",
-    "snd_mastervolume 0.05",
+    "snd_mastervolume 0",
     "wait 135; exec sample0.cfg",
 ]
 (out / "check.cfg").write_text("\n".join(controls) + "\n")
@@ -125,7 +125,7 @@ with (out / "console.log").open("wb") as console:
     result = subprocess.run(
         [
             r"C:\Program Files (x86)\GZDoom\gzdoom.exe",
-            "-noautoload",
+            "-nosound", "-noautoload",
             "-iwad",
             str(args.game.resolve()),
             "-file",

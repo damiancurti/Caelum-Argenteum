@@ -294,7 +294,7 @@
     }
   },
   "source_sha256": {
-    "DESIGN.json": "74167bbe4e173aa5955bc239f29e2e9690dd6a1c80f50151caf344c7a57b0aa0",
+    "DESIGN.json": "d6bb1a67a4cae6876f1604d6f31b42a5050ecd90bcd0d4b2f757346902e5e0c6",
     "PROVENANCE.json": "ab5f44ff3f0f05c320c95704aa87a358df851ffa617790890739a3ada752294e"
   },
   "external_source_sha256": {
@@ -315,7 +315,7 @@
     "src/graphics/caelum/icons/ca_hatchet.png": "8112f0cf14112dafd2097c4033a30fc2d67f5f3a2417feefcb8cc4b65a78dbb5",
     "src/graphics/caelum/icons/ca_axe.png": "d3a1c36b2506b4b0bdc1d85e4e849040b54b4fa38749b668baa612911b20890c",
     "src/graphics/caelum/icons/ca_war_axe.png": "d814932f5439709600ebd06b2a666ce053b06e04c621f1bc6bcc1c97a51dab53",
-    "src/TEXTURES": "3958df53c3bed45aa802252f0f7a15d14b4260370609d290826a8faf3207aa21"
+    "src/TEXTURES": "3baaeb5400bcf24b9a81b3e9197a4224e37824de7eeb8b26455e17c7349311b0"
   },
   "generator_sha256": {
     "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",

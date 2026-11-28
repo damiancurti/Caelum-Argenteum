@@ -639,6 +639,8 @@ class CaelumMandinga : CaelumFolkloreCombatActor
     }
 }
 
+#include "caelum/data/CaelumSlamFrames.zs"
+
 class CaelumZupayColossus : CaelumFolkloreCombatActor
 {
     override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
@@ -729,6 +731,16 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
             if (!InStateSequence(CurState, FindState("SewerEscape"))) SetStateLabel("SewerEscape");
         }
         Super.Tick();
+        // El gesto sigue la fase del ataque y su velocidad térmica.
+        if (CurState == FindState("AbsentMeleePrepare") || CurState == FindState("AbsentMeleeRecovery"))
+        {
+            let art = FindState("SlamArt");
+            int remaining = Clamp(int(Ceil(Tics * CaelumThermalEffects.Speed(self))), 0, CurState.Tics);
+            int elapsed = CurState == FindState("AbsentMeleePrepare")
+                ? CurState.Tics - remaining : FindState("AbsentMeleePrepare").Tics + CurState.Tics - remaining;
+            Sprite = art.Sprite;
+            Frame = CaelumSlamFrames.Sample(elapsed);
+        }
         if (SewerFleeing && health > 0)
             Speed = CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER * CaelumSupportMagic.Factor(self);
     }
@@ -888,6 +900,9 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         Loop;
     RestLying:
         SLZU A -1;
+        Stop;
+    SlamArt:
+        ZSLM ABCDEFGHIJKLMNOPQRSTUVWXY -1;
         Stop;
     }
 }

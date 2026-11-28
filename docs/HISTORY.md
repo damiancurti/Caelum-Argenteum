@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.18.12** - 2026-11-27.
+Documentation version: **5.18.13** - 2026-11-27.
+
+## 5.18.13 - Character presentation (#920)
+
+Zupay closes both hands as he raises his arms, strikes the ground with his knuckles and opens his hands during recovery. An isolated, silent GZDoom 4.14.2 session recorded 25 poses across the existing 48-tic preparation and 32-tic recovery, including both fists at ground contact. Visual acceptance remains pending.
 
 ## 5.18.12 - Character presentation (#917)
 

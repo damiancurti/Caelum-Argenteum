@@ -59,7 +59,7 @@ binds = ["bind w +forward","bind s +back","bind a +moveleft","bind d +moveright"
          'bind pgup "netevent fila_anterior"','bind pgdn "netevent fila_siguiente"',
          "bind escape menu_main","freelook true","r_drawplayersprites false","vid_rendermode 4",
          "screenblocks 12","crosshair 0","show_messages false","vid_maxfps 60","cl_capfps false",
-         "i_pauseinbackground false","vid_activeinbackground true","vid_lowerinbackground false","snd_mastervolume 0.05"]
+         "i_pauseinbackground false","vid_activeinbackground true","vid_lowerinbackground false","snd_mastervolume 0"]
 binds.extend(f'bind {key} "netevent fila_puesto {slot}"' for key,slot in enumerate(shortcuts,1))
 samples = dict(familia=1,mandinga=15,zupay=16,rata=17,domingo=18,domingo_original=19,toro=by_label["Toro"],
                pombero=by_label["Pombero"],cuero=next(row["station"] for row in roster if "Cuero /" in row["label"]),
@@ -86,7 +86,7 @@ print("Galería 3D de Caelum Argenteum\nWASD para caminar. Ratón para mirar. Re
       "1 Jugadores   2 Mandinga, Zupay y rata   3 Toro   4 Bestiario   5 Vestuario   6 Equipo",flush=True)
 log = run/"motor.log"
 with keep_awake(), (run/"proceso.log").open("wb") as output:
-    proc = subprocess.run([str(engine),"-noautoload","-iwad",str(game),"-file",str(out/"galeria.pk3"),
+    proc = subprocess.run([str(engine),"-nosound", "-noautoload","-iwad",str(game),"-file",str(out/"galeria.pk3"),
                            "-config",str(run/"gzdoom.ini"),"-savedir",str(run),"-window","+logfile",str(log),
                            "+map","GALERIA","+exec",str(cfg),"+language","es"],
                           cwd=run,stdout=output,stderr=output,timeout=160 if args.check else None)

@@ -3,7 +3,7 @@
   "issue": 700,
   "status": "regional_art_candidate",
   "source_sha256": {
-    "INVENTORY.json": "31ff96243ae5aa3a87a67d0b6da5e70c8b0fe8a55b6d537d16b4ba3dab9bf518",
+    "INVENTORY.json": "0bfa468cc642819a2335b40121f2f37087e5121a1e63a1fc22771d8569aceab8",
     "PROVENANCE.json": "0afccfc7bf3210f32d67d3fbb7c4cb66cee99b95aa3df240dbe2bab74aadf1c6",
     "cuyo_ground-v1.prompt.txt": "80515688b722735270f56950cd2b9395d68b866df426070728be5a872787c9f4"
   },

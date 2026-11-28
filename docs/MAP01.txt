@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.18.12** - 2026-11-27.
+Documentation version: **5.18.13** - 2026-11-27.
 
 ## 5.17.125 - Verify retained prologue audio (#464)
 

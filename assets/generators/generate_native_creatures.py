@@ -218,9 +218,9 @@ def demon_clothing(kind):
     return m.parts
 
 
-def demon(kind):
+def demon(kind, closed_hands=False):
     king = kind == "zupay"
-    sections = figure(kind, False, monster=True)
+    sections = figure(kind, False, monster=True, closed_hands=closed_hands)
     pieces = [p for section in ("boots", "hands") for p in sections[section].parts]
     mask = head(kind, False, 2 if king else 1)
     m = Sculpt()
@@ -508,8 +508,8 @@ def rotation(points, pivot, axis, degrees):
     q = p.copy()
     c = cos(degrees * pi / 180)
     s = sin(degrees * pi / 180)
-    q[:, a] = p[:, a] * c - p[:, b] * s
-    q[:, b] = p[:, a] * s + p[:, b] * c
+    q[..., a] = p[..., a] * c - p[..., b] * s
+    q[..., b] = p[..., a] * s + p[..., b] * c
     return q + np.asarray(pivot)
 
 

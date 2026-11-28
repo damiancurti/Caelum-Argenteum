@@ -10,7 +10,7 @@ from scipy.interpolate import PchipInterpolator
 from sculpted_character_art import Sculpt
 
 
-def hand(m, side, x, y, z, size=1.0, material="skin"):
+def hand(m, side, x, y, z, size=1.0, material="skin", closed=False):
     joint = "hand" + str(side)
 
     def pt(a, b, c):
@@ -24,21 +24,28 @@ def hand(m, side, x, y, z, size=1.0, material="skin"):
             (*pt(a + 0.45, -0.7, -length - 0.8), 0.83 * size, 0.82 * size),
             (*pt(a + 0.65, -1.40, -length - 1.4), 0.43 * size, 0.62 * size),
         ]
+        if closed:
+            nodes = [
+                (*pt(a, 0.15, -1.25), 1.18 * size, 1.15 * size),
+                (*pt(a + 0.10, -0.18, -3.5), 1.27 * size, 1.29 * size),
+                (*pt(a + 0.18, -2.40, -4.28), 1.16 * size, 1.19 * size),
+                (*pt(a + 0.10, -2.95, -1.12), 0.58 * size, 0.66 * size),
+            ]
         m.sweep(joint, material, nodes, 8)
     m.sweep(
         joint,
         material,
         [
             (*pt(2.1, -0.2, 2.5), 1.6 * size, 1.6 * size),
-            (*pt(3.9, -0.9, 0.15), 1.35 * size, 1.35 * size),
-            (*pt(4.5, -1.7, -2.3), 0.95 * size, 1.0 * size),
-            (*pt(4.15, -2.15, -3.25), 0.55 * size, 0.65 * size),
+            (*pt(*((3.45, -2.15, 0.8) if closed else (3.9, -0.9, 0.15))), 1.35 * size, 1.35 * size),
+            (*pt(*((2.45, -3.65, -0.5) if closed else (4.5, -1.7, -2.3))), 0.95 * size, 1.0 * size),
+            (*pt(*((0.15, -3.8, -1.7) if closed else (4.15, -2.15, -3.25))), 0.55 * size, 0.65 * size),
         ],
         9,
     )
 
 
-def figure(family, female, monster=False):
+def figure(family, female, monster=False, closed_hands=False):
     pieces = {n: Sculpt() for n in ("shirt", "trousers", "belt", "boots", "gloves", "hands")}
     shirt = pieces["shirt"]
     legs = pieces["trousers"]
@@ -188,7 +195,7 @@ def figure(family, female, monster=False):
                 ],
                 12,
             )
-        hand(pieces["hands"], side, 5.25, side * wy, 83.8, 1 if not female else 0.92)
+        hand(pieces["hands"], side, 5.25, side * wy, 83.8, 1 if not female else 0.92, closed=closed_hands)
         hand(pieces["gloves"], side, 5.25, side * wy, 83.8, 1.05 if not female else 0.97, "leather")
         pieces["gloves"].loft(
             "hand" + str(side),

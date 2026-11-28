@@ -435,11 +435,11 @@
     }
   },
   "source_sha256": {
-    "DESIGN.json": "7aecc2033ee5940b666d473cbf078f102810ac5d61d1c06d5c956f091ba61a00",
+    "DESIGN.json": "ddd021666c2d460b8f29c20029f6252b359d1ffedf72648bc356ab55e803f1f8",
     "PROVENANCE.json": "3cb700aded4431e12a470246f24b2b576cc61a92af782bf7a781312132e3a07f"
   },
   "external_source_sha256": {
-    "src/TEXTURES": "3958df53c3bed45aa802252f0f7a15d14b4260370609d290826a8faf3207aa21",
+    "src/TEXTURES": "3baaeb5400bcf24b9a81b3e9197a4224e37824de7eeb8b26455e17c7349311b0",
     "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
     "assets/generators/generate_inventory_articulated_weapons_models.py": "2dd9f7ddc4cf1ad708ee07b1e45d2d749934a1980125383b4e221f18a0a66efd",
     "assets/source/art/inventory_models_647/gloves/DESIGN.json": "4ce950958e5206041fc1e51d8557399ee412ca074d740ac47bc9a5e59ebe42ff",

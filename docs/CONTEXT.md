@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.18.12** - 2026-11-27.
+Documentation version: **5.18.13** - 2026-11-27.
 
-#916/917 original creature/player sculpts await review in #913 gallery.
+#916/917 sculpts and #920 slam await review.
 
 #902-905/#909 await visual review. Seven #736 families approved.
 5.18.4/#899 integrated. 115 checks accepted (#892-898).

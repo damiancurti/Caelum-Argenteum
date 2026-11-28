@@ -1,6 +1,10 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.18.12** - 2026-11-27.
+Documentation version: **5.18.13** - 2026-11-27.
+
+## 5.18.13 - Character presentation (#920)
+
+Zupay closes both hands as he raises his arms, strikes the ground with his knuckles and opens his hands during recovery.
 
 ## 5.18.12 - Character presentation (#917)
 

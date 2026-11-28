@@ -1588,7 +1588,7 @@
     }
   },
   "source_sha256": {
-    "src/caelum/actors/CaelumFolkloreCharacters.zs": "80c5a00ef221395a6688125d8871c3f84ccf21e2aeb63b5c0bd4adb99dd2e420",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "8cd94ec0e23c6b3894acd71011fb071df7308b4995709e6290cfba50b1436f54",
     "assets/source/bestiary_453/imagenes/05_Bestias_magicas/45_cachiru.png": "a4ffc47561bbf59ae27f9475df049c637f4d42b8cc472718adc3ab4c5a000932",
     "assets/source/bestiary_453/imagenes/05_Bestias_magicas/46_kakuy.png": "fbda2ce6d5b436375b731acd720aba64b97b8b3361c202260549e6109dd89c10",
     "assets/source/bestiary_453/imagenes/05_Bestias_magicas/58_kelenken.png": "98a879aa33fc48c044abf7fe00bf5d33ca9311aa774e032d8db881413fe59da2",
@@ -1603,7 +1603,7 @@
     "assets/source/art/peuchen_708/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
     "assets/source/art/avian_711/coverts-v2.png": "df14c045b10e9dcde48fdf6cfdd0bf289c8c83c66861b6fccd8c9931a088c116",
     "assets/source/art/avian_711/COVERTS_V2_PROMPT.json": "933815130d1719536375de422487e598a8c25fc8cc6ff43d2f4c4e206f6e63b3",
-    "assets/source/art/avian_711/ANIMATION.json": "178096829628466851f33d87e6b3d589b9df06a559aa5d9f370e1f1ace8cbfab",
+    "assets/source/art/avian_711/ANIMATION.json": "7149aec822f6080666108b83b308c3ed8002c3123c6e84e6a4cee159a3a26fd0",
     "assets/source/art/avian_711/PROVENANCE.json": "3e787893c252065abfc5e442fc70265203ad974c486ecd17ea215401c1a41bb0",
     "assets/source/art/avian_711/cachiru.json": "bb5914e8ede9d4c950d8e19b3436eeb6519117a3f54159a3af6f830cdae4bf09",
     "assets/source/art/avian_711/kakuy.json": "7d3f846109573aadde017961ae4880d27e75b4e5814537a5a9b5089cad51e7f1",
