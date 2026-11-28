@@ -6,7 +6,7 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The independent beta uses GZDoom installed separately; it requires no Doom IWAD.
 
-**Current release: 5.18.11.** Mandinga, Zupay and the giant rat have original articulated meshes for all 70 existing action poses. The demons follow the humanoid anatomy of the witches and warlocks. Their faces, horns, hooves and the rat muzzle are modeled in relief.
+**Current release: 5.18.12.** All fourteen player forms now use original modular sculpts. Witches and warlocks guide humanoid anatomy, and the Pombero guides the goblins. The four beast families have species-specific skulls, muzzles and ears. The bodies support the existing customization and equipment slots.
 
 Open the [model inspection terminal](assets/validation_v5_18_10/Galeria.cmd) on Windows with Python, Pillow and GZDoom 4.14.2 installed. It builds the current independent game if needed. WASD and the mouse move around the room. Page Up and Page Down step through the roster. Keys 1 through 6 jump to players, new creatures, the bull, the bestiary, clothing and equipment. The numbered catalogue is generated in `build/model-gallery/catalogo.txt`.
 
@@ -4533,7 +4533,7 @@ Long-term encounter/provision balance and unfinished 4.36 systems are developmen
 work in PROJECT/TASKS, not additional author checks for this patch.
 
 <!-- independent-player-guide:start -->
-## Caelum Argenteum 5.18.11 - independent review beta
+## Caelum Argenteum 5.18.12 - independent review beta
 
 This author-review beta contains the current MAP01-MAP03 prologue and existing
 campaign, cooperative, competitive and Trucazo systems. Later campaign locations,

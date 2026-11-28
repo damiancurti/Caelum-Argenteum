@@ -49,6 +49,10 @@ def figure(family, female, monster=False):
     waist = (12.4 if female else 15.7) * {"bear": 1.19, "goblin": 1.14, "zupay": 1.21}.get(family, 1)
     hip = (19.4 if female else 16.8) * {"bear": 1.10, "goblin": 1.06, "zupay": 1.17}.get(family, 1)
     pec = (12.5 if female else 13.4) * ({"bear": 1.13, "zupay": 1.23}.get(family, 1))
+    if not monster:
+        shoulder *= 1.015 if female else 1.09
+        hip *= 1.075 if female else 1.03
+        pec *= 1.07 if female else 1.06
     cloth = "skin" if monster else "cloth"
     torso_rows = [
         (92, 0, 0, 9.7, hip * 0.92),
@@ -75,7 +79,14 @@ def figure(family, female, monster=False):
             + 1.10 * exp(-(((abs(y) - 3.6) / 3.8) ** 2)) * sum(ridge(h, 2.6) for h in (109, 115, 121))
             - 0.8 * exp(-(((abs(y) - 8) / 3.0) ** 2)) * ridge(113, 9)
         )
-        return x + front * relief * (1 if monster else 0.45), y, z
+        if not monster:
+            relief *= 0.65
+            if female:
+                relief += 5.5 * ridge(124.2, 5.6) * exp(-(((abs(y) - 7.6) / 6.0) ** 2))
+                relief -= 0.85 * ridge(117, 2.1) * exp(-(((abs(y) - 7.0) / 7.0) ** 2))
+            # Oblique folds gather where the shirt enters the sash.
+            relief += 0.85 * cos(0.92 * y + 0.29 * z) * ridge(105, 5.7)
+        return x + front * relief, y, z
 
     dense = []
     for a, b in zip(torso_rows, torso_rows[1:]):
@@ -116,7 +127,6 @@ def figure(family, female, monster=False):
             7,
         )
     for side in (-1, 1):
-        upper = "upper" + str(side)
         fore = "fore" + str(side)
         thigh = "thigh" + str(side)
         shin = "shin" + str(side)
@@ -124,48 +134,23 @@ def figure(family, female, monster=False):
         ey = 26 if female else 27.4
         wy = 28.1
         radius = (6.6 if female else 8.2) * ({"bear": 1.18, "zupay": 1.32}.get(family, 1))
-        if monster:
-            shirt.loft(
-                "arm" + str(side),
-                cloth,
-                [
-                    (88, 5, side * wy, 3.5, 3.2),
-                    (94, 4.5, side * wy, 3.8, 3.5),
-                    (100, 3.6, side * wy, radius * 0.62, radius * 0.57),
-                    (106, 2, side * ey, radius * 0.74, radius * 0.64),
-                    (111, -0.5, side * ey, radius * 0.59, radius * 0.56),
-                    (116, 0.5, side * (ey - 0.5), radius * 0.72, radius * 0.68),
-                    (123, 1.4, side * (sy + 3), radius * 0.90, radius * 0.81),
-                    (128, -0.6, side * (sy + 2), radius * 0.95, radius * 0.98),
-                    (132, -1.8, side * sy, radius * 0.88, radius * 0.9),
-                    (135, -1.8, side * (sy - 1), radius * 0.4, radius * 0.55),
-                ],
-                16,
-            )
-        else:
-            shirt.sweep(
-                upper,
-                cloth,
-                [
-                    (-1, side * sy, 133, radius * 0.68, radius * 0.70),
-                    (0, side * (sy + 1.7), 129, radius, radius * 1.08),
-                    (1.4, side * (sy + 4), 121, radius * 0.88, radius * 0.93),
-                    (1.2, side * ey, 113, radius * 0.68, radius * 0.77),
-                    (0.5, side * ey, 109, radius * 0.62, radius * 0.68),
-                ],
-                14,
-            )
-            shirt.sweep(
-                fore,
-                cloth,
-                [
-                    (0.8, side * ey, 112, radius * 0.64, radius * 0.70),
-                    (1.7, side * (ey + 0.4), 107, radius * 0.79, radius * 0.84),
-                    (3.7, side * wy, 98, radius * 0.62, radius * 0.66),
-                    (5.0, side * wy, 88.4, 3.3, 3.8),
-                ],
-                14,
-            )
+        shirt.loft(
+            "arm" + str(side),
+            cloth,
+            [
+                (88, 5, side * wy, 3.5, 3.2),
+                (94, 4.5, side * wy, 3.8, 3.5),
+                (100, 3.6, side * wy, radius * 0.62, radius * 0.57),
+                (106, 2, side * ey, radius * 0.74, radius * 0.64),
+                (111, -0.5, side * ey, radius * 0.59, radius * 0.56),
+                (116, 0.5, side * (ey - 0.5), radius * 0.72, radius * 0.68),
+                (123, 1.4, side * (sy + 3), radius * 0.90, radius * 0.81),
+                (128, -0.6, side * (sy + 2), radius * 0.95, radius * 0.98),
+                (132, -1.8, side * sy, radius * 0.88, radius * 0.9),
+                (135, -1.8, side * (sy - 1), radius * 0.4, radius * 0.55),
+            ],
+            16,
+        )
         if not monster:
             shirt.loft(
                 fore,
@@ -316,6 +301,10 @@ def head(family, female, variant=0):
     demon = family in ("mandinga", "zupay")
     width = (9.15 if not female else 8.55) * (1.14 if goblin else 1) * [1, 0.94, 1.06, 0.985][variant]
     jaw = (0.77 if not female else 0.65) * [1, 0.89, 1.07, 0.94][variant]
+    if goblin:
+        jaw *= 1.12
+    elif female:
+        jaw *= 0.95
     m.loft(
         j,
         "skin",
@@ -341,7 +330,7 @@ def head(family, female, variant=0):
     ]
 
     def feature(y, z):
-        return (
+        return (1.55 if goblin else 1.15 if female else 1.0) * (
             1.25 * exp(-(((abs(y) - 5.7) / 2.8) ** 2) - ((z - 154.9) / 2.15) ** 2)
             - 1.05 * exp(-(((abs(y) - 4.5) / 2.5) ** 2) - ((z - 158) / 1.25) ** 2)
             + 0.62 * exp(-(((abs(y) - 4.3) / 3.1) ** 2) - ((z - 160.2) / 1.4) ** 2)
@@ -424,6 +413,36 @@ def head(family, female, variant=0):
             ],
             7,
         )
+        if goblin:
+            # Wider nasal wings, heavy orbital ridge and terraced cheek planes.
+            m.sweep(
+                j,
+                "skin",
+                [
+                    (*on(-2.38, 1.51, 1.03), 0.72, 0.83),
+                    (*on(0.1, 2.36, 1.13), 1.03, 0.92),
+                    (*on(2.83, 1.94, 0.72), 0.55, 0.64),
+                ],
+                9,
+            )
+            cheek = [
+                on(-1.4, -2.0, 0.30),
+                on(1.5, -1.7, 0.55),
+                on(3.1, -1.6, 0.34),
+                on(2.2, -4.6, 0.30),
+                on(0.1, -5.5, 0.26),
+            ]
+            m.patch(j, "cheek", cheek, on(0.8, -3.15, 1.04))
+            m.sweep(
+                j,
+                "cheek",
+                [
+                    (12.9, s * 2.5, 153.1, 0.48, 0.55),
+                    (10.9, s * 3.3, 151.8, 0.49, 0.50),
+                    (9.7, s * 3.7, 150.25, 0.22, 0.22),
+                ],
+                8,
+            )
         if goblin or demon:
             m.patch(
                 j,
@@ -447,7 +466,7 @@ def head(family, female, variant=0):
                 ],
                 (0.9, s * (width + 2.2), 158),
             )
-        else:
+        elif family != "caelith":
             m.oval(j, "skin", (-0.4, s * width, 155.5), (2.3, 1.72, 3.35), 11, 7)
             m.oval(j, "ear", (0, s * (width + 1.38), 155.65), (1.04, 0.43, 1.9), 9, 6)
     breadth = (3.45 if goblin else 2.25) * [1, 0.86, 1.13, 0.99][variant]
