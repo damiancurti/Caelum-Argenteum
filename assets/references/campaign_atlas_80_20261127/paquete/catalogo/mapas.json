@@ -1,0 +1,2327 @@
+{
+  "estado": "Propuesta de diseño",
+  "base": "5.17.123",
+  "lumps": "Solo las tres primeras fichas declaran el lump actual. Los otros números son índices del atlas.",
+  "mapas": [
+    {
+      "numero": 1,
+      "ficha": "01",
+      "lump_vigente": "MAP01",
+      "base_existente_para_revisar": "",
+      "capitulo": 0,
+      "region_id": "LI",
+      "region": "Limbo y mansión",
+      "titulo": "La mansión del Limbo",
+      "forma": "patio",
+      "tipo_de_trazado": "Patios comunicados",
+      "hitos": [
+        "Vestíbulo",
+        "Patio de las pruebas",
+        "Pasadizo de Caella",
+        "Umbral de Palomo"
+      ],
+      "trazado": "Las alas de los cuatro residentes vuelven al patio. El pasadizo enlaza dos plantas y el jardín deja ver el balcón desde abajo.",
+      "objetivo": "Reunir las cuatro pruebas en una sola misión, recibir la Caja y capturar El Loco.",
+      "tipo": "Existente",
+      "carta_id": 0,
+      "carta": "El Loco",
+      "materiales": [
+        "CXSILVIO",
+        "CXMOSGRA",
+        "CXREVOQU",
+        "CXPIRROS"
+      ]
+    },
+    {
+      "numero": 2,
+      "ficha": "02",
+      "lump_vigente": "MAP02",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "AL",
+      "region": "Alcantarillas",
+      "titulo": "Las cuatro aguas",
+      "forma": "red",
+      "tipo_de_trazado": "Red de galerías",
+      "hitos": [
+        "Despertar",
+        "Refugio de reparación",
+        "Extracción de los cuatro",
+        "Cámara de Zupay"
+      ],
+      "trazado": "Cuatro sectores, tres circuitos por sector y cuatro atajos de mantenimiento. Galerías de unos 3 m de alto, puertas laterales y un nivel inferior inundado.",
+      "objetivo": "Rescatar a los cuatro y sacarlos antes de Zupay. Conservar el As de Copas y la retirada del demonio.",
+      "tipo": "Existente",
+      "carta_id": 36,
+      "carta": "As de Copas",
+      "materiales": [
+        "CXLADHUM",
+        "CXREJHIE",
+        "CXTABMUE",
+        "CXHOJANE"
+      ]
+    },
+    {
+      "numero": 3,
+      "ficha": "03",
+      "lump_vigente": "MAP03",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "BA",
+      "region": "Buenos Aires y Barracas",
+      "titulo": "Barracas al Sud",
+      "forma": "villa",
+      "tipo_de_trazado": "Barrios y plazas",
+      "hitos": [
+        "Salida del taller",
+        "Plaza Alsina",
+        "Dársenas y fábricas",
+        "Camino de posta"
+      ],
+      "trazado": "Mitre y Pavón ordenan barrios que se abren al Riachuelo. El comercio se concentra en el centro y llega a las plazas menores. El ayuntamiento da a la plaza. Cuatro portones.",
+      "objetivo": "Sostener el asedio y conservar en el puerto la adquisición vigente del Caballero de Bastos.",
+      "tipo": "Existente",
+      "carta_id": 60,
+      "carta": "Caballero de Bastos",
+      "materiales": [
+        "CXADOQUI",
+        "CXREVOQU",
+        "CXCHAFAB",
+        "CXTABMUE"
+      ]
+    },
+    {
+      "numero": 4,
+      "ficha": "04",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "CABAIRES",
+      "capitulo": 1,
+      "region_id": "BA",
+      "region": "Buenos Aires y Barracas",
+      "titulo": "La ciudad al otro lado del puente",
+      "forma": "villa",
+      "tipo_de_trazado": "Barrios y plazas",
+      "hitos": [
+        "Cabecera del puente",
+        "Patio de correo",
+        "Pasaje de imprentas",
+        "Parada de carretas"
+      ],
+      "trazado": "Dos calles de pendiente desigual suben desde la ribera. Las galerías de una imprenta permiten cruzar por dentro de la manzana.",
+      "objetivo": "Reconstruir el trayecto de una carta censurada comparando sellos de tres despachos.",
+      "tipo": "Secundaria",
+      "carta_id": 22,
+      "carta": "As de Espadas",
+      "materiales": [
+        "CXADOQUI",
+        "CXREVOQU",
+        "CXCHAFAB",
+        "CXTABMUE"
+      ]
+    },
+    {
+      "numero": 5,
+      "ficha": "05",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "BA",
+      "region": "Buenos Aires y Barracas",
+      "titulo": "Mercado de los patios",
+      "forma": "patio",
+      "tipo_de_trazado": "Patios comunicados",
+      "hitos": [
+        "Calle del abasto",
+        "Patio de balanzas",
+        "Hielera del sótano",
+        "Portón de carros"
+      ],
+      "trazado": "Los puestos rodean dos patios comunicados por el aljibe. Bajo el mayor corre el pasillo angosto de los repartidores.",
+      "objetivo": "Cotejar pesas adulteradas con las del depósito y devolver el libro a los puesteros.",
+      "tipo": "Secundaria",
+      "carta_id": 65,
+      "carta": "Dos de Oros",
+      "materiales": [
+        "CXADOQUI",
+        "CXREVOQU",
+        "CXCHAFAB",
+        "CXTABMUE"
+      ]
+    },
+    {
+      "numero": 6,
+      "ficha": "06",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "BA",
+      "region": "Buenos Aires y Barracas",
+      "titulo": "Los varaderos de la vuelta",
+      "forma": "ribera",
+      "tipo_de_trazado": "Doble orilla",
+      "hitos": [
+        "Orilla de sirga",
+        "Grada de carena",
+        "Galpón de calafates",
+        "Muelle de botes"
+      ],
+      "trazado": "La costa curva es la calle principal. Con bajante se pasa bajo las gradas. Una pasarela por encima de los cascos sigue disponible.",
+      "objetivo": "Localizar una embarcación por las iniciales de la quilla y reconstruir su carga.",
+      "tipo": "Secundaria",
+      "carta_id": 37,
+      "carta": "Dos de Copas",
+      "materiales": [
+        "CXADOQUI",
+        "CXREVOQU",
+        "CXCHAFAB",
+        "CXTABMUE"
+      ]
+    },
+    {
+      "numero": 7,
+      "ficha": "07",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "PA",
+      "region": "Pampa bonaerense",
+      "titulo": "Posta de las dos huellas",
+      "forma": "bifurca",
+      "tipo_de_trazado": "Dos pasos",
+      "hitos": [
+        "Tranqueras",
+        "Pozo de posta",
+        "Puente de durmientes",
+        "Corral de relevo"
+      ],
+      "trazado": "Una huella de carros atraviesa el bajo y otra bordea la loma. El molino del pozo se ve desde las dos.",
+      "objetivo": "Seguir dos rastros de rueda y restituir el relevo a su dueño.",
+      "tipo": "Secundaria",
+      "carta_id": 51,
+      "carta": "Dos de Bastos",
+      "materiales": [
+        "CXPASOLI",
+        "CXHUECAR",
+        "CXREVOQU",
+        "CXTABMUE"
+      ]
+    },
+    {
+      "numero": 8,
+      "ficha": "08",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "PA",
+      "region": "Pampa bonaerense",
+      "titulo": "El corral de las mangas",
+      "forma": "anillo",
+      "tipo_de_trazado": "Anillo con atajo",
+      "hitos": [
+        "Bebedero",
+        "Manga de apartes",
+        "Palenque de Rulo",
+        "Tranquera del fondo"
+      ],
+      "trazado": "Los bretes forman un lazo irregular. Desde el cerco exterior se entiende qué tranqueras unen las mangas.",
+      "objetivo": "Situar aquí el primer encuentro con el cuerpo de Rulo y el ancla de La Fuerza.",
+      "tipo": "Mayor",
+      "carta_id": 11,
+      "carta": "La Fuerza",
+      "materiales": [
+        "CXPASOLI",
+        "CXHUECAR",
+        "CXREVOQU",
+        "CXTABMUE"
+      ]
+    },
+    {
+      "numero": 9,
+      "ficha": "09",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "PA",
+      "region": "Pampa bonaerense",
+      "titulo": "Tambo de la cañada",
+      "forma": "ribera",
+      "tipo_de_trazado": "Doble orilla",
+      "hitos": [
+        "Casa del tambero",
+        "Sala de ordeñe",
+        "Vado de piedras",
+        "Tapera alta"
+      ],
+      "trazado": "El arroyo corta la estancia en diagonal. El vado acorta el regreso y el paso alto rodea los corrales.",
+      "objetivo": "Recuperar un remito en la tapera usando las marcas de creciente como guía.",
+      "tipo": "Secundaria",
+      "carta_id": 64,
+      "carta": "As de Oros",
+      "materiales": [
+        "CXPASOLI",
+        "CXHUECAR",
+        "CXREVOQU",
+        "CXTABMUE"
+      ]
+    },
+    {
+      "numero": 10,
+      "ficha": "10",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "PA",
+      "region": "Pampa bonaerense",
+      "titulo": "La pulpería del ombú",
+      "forma": "patio",
+      "tipo_de_trazado": "Patios comunicados",
+      "hitos": [
+        "Poste de leguas",
+        "Salón de pulpería",
+        "Patio de bochas",
+        "Galería trasera"
+      ],
+      "trazado": "Tres caminos entran al patio por aberturas distintas. Desde el mostrador se ven el palenque y la galería.",
+      "objetivo": "Contrastar el relato del pulpero con una marca en la carreta que quedó detrás del patio.",
+      "tipo": "Secundaria",
+      "carta_id": 38,
+      "carta": "Tres de Copas",
+      "materiales": [
+        "CXPASOLI",
+        "CXHUECAR",
+        "CXREVOQU",
+        "CXTABMUE"
+      ]
+    },
+    {
+      "numero": 11,
+      "ficha": "11",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "PA",
+      "region": "Pampa bonaerense",
+      "titulo": "Los caminos de la sal",
+      "forma": "trenza",
+      "tipo_de_trazado": "Sendas trenzadas",
+      "hitos": [
+        "Borde del salitral",
+        "Lengua seca",
+        "Horno calero",
+        "Barranca firme"
+      ],
+      "trazado": "Dos lenguas de tierra se entrecruzan entre costras ciegas. El humo del horno ubica la costa firme en la neblina.",
+      "objetivo": "Leer las marcas de los carros y señalar un paso firme para la próxima partida.",
+      "tipo": "Secundaria",
+      "carta_id": 66,
+      "carta": "Tres de Oros",
+      "materiales": [
+        "CXPASOLI",
+        "CXHUECAR",
+        "CXREVOQU",
+        "CXTABMUE"
+      ]
+    },
+    {
+      "numero": 12,
+      "ficha": "12",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "PA",
+      "region": "Pampa bonaerense",
+      "titulo": "El molino de Ronnie",
+      "forma": "vertical",
+      "tipo_de_trazado": "Recorrido en altura",
+      "hitos": [
+        "Vado del caz",
+        "Rueda hidráulica",
+        "Taller de Ronnie",
+        "Puente del canal"
+      ],
+      "trazado": "Una escalera sube junto a los engranajes. Una compuerta desvía el agua y abre el camino de regreso por el caz.",
+      "objetivo": "Situar el encuentro de Ronnie en el taller y vincularlo con El Ermitaño.",
+      "tipo": "Mayor",
+      "carta_id": 9,
+      "carta": "El Ermitaño",
+      "materiales": [
+        "CXPASOLI",
+        "CXHUECAR",
+        "CXREVOQU",
+        "CXTABMUE"
+      ]
+    },
+    {
+      "numero": 13,
+      "ficha": "13",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "EP",
+      "region": "Espinal y bosque de ñandubay",
+      "titulo": "Guardia del espinal",
+      "forma": "bastion",
+      "tipo_de_trazado": "Recinto y postigo",
+      "hitos": [
+        "Rastrillo torcido",
+        "Patio de remonta",
+        "Archivo del fortín",
+        "Postigo del terraplén"
+      ],
+      "trazado": "Las caballerizas abrazan el patio en un claro de ñandubay. El postigo detrás del archivo sale al terraplén visible desde la entrada.",
+      "objetivo": "Identificar una orden apócrifa cotejando el sello y el parte anotado por la guardia.",
+      "tipo": "Secundaria",
+      "carta_id": 23,
+      "carta": "Dos de Espadas",
+      "materiales": [
+        "CXQUEBAR",
+        "CXPASOLI",
+        "CXHUECAR",
+        "CXPAJSEC"
+      ]
+    },
+    {
+      "numero": 14,
+      "ficha": "14",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "CO",
+      "region": "Córdoba y sierras",
+      "titulo": "El camino de las sierras",
+      "forma": "trenza",
+      "tipo_de_trazado": "Sendas trenzadas",
+      "hitos": [
+        "Pie de cuesta",
+        "Abra del viento",
+        "Pirca caída",
+        "Posta serrana"
+      ],
+      "trazado": "El camino de mulas gana altura en curvas. El lecho seco corta dos vueltas y obliga a volver a la huella principal.",
+      "objetivo": "Hallar una campana de posta por su eco y llevar la noticia al arriero.",
+      "tipo": "Secundaria",
+      "carta_id": 50,
+      "carta": "As de Bastos",
+      "materiales": [
+        "CXGRASER",
+        "CXPIRROS",
+        "CXADOQUI",
+        "CXHUECAR"
+      ]
+    },
+    {
+      "numero": 15,
+      "ficha": "15",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "CO",
+      "region": "Córdoba y sierras",
+      "titulo": "Córdoba de los patios",
+      "forma": "villa",
+      "tipo_de_trazado": "Barrios y plazas",
+      "hitos": [
+        "Vado de La Cañada",
+        "Recova del mercado",
+        "Patio de campanas",
+        "Puente de salida"
+      ],
+      "trazado": "Las fachadas siguen el arroyo. Zaguán, claustro y patio forman una ruta interior entre el mercado y el puente.",
+      "objetivo": "Seguir anotaciones de dos campaneros hasta dar con un testimonio del paso del protagonista.",
+      "tipo": "Secundaria",
+      "carta_id": 24,
+      "carta": "Tres de Espadas",
+      "materiales": [
+        "CXGRASER",
+        "CXPIRROS",
+        "CXADOQUI",
+        "CXHUECAR"
+      ]
+    },
+    {
+      "numero": 16,
+      "ficha": "16",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "CO",
+      "region": "Córdoba y sierras",
+      "titulo": "La quebrada del arroyo",
+      "forma": "garganta",
+      "tipo_de_trazado": "Quebrada y cornisa",
+      "hitos": [
+        "Mirador serrano",
+        "Cornisa del arroyo",
+        "Abrigo de piedra",
+        "Paso de la cuesta"
+      ],
+      "trazado": "La quebrada se ve entera desde arriba. El sendero desciende, cruza por rocas y vuelve por una cornisa más alta.",
+      "objetivo": "Restituir las señales del camino después de una crecida y ubicar el refugio.",
+      "tipo": "Secundaria",
+      "carta_id": 52,
+      "carta": "Tres de Bastos",
+      "materiales": [
+        "CXGRASER",
+        "CXPIRROS",
+        "CXADOQUI",
+        "CXHUECAR"
+      ]
+    },
+    {
+      "numero": 17,
+      "ficha": "17",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "CO",
+      "region": "Córdoba y sierras",
+      "titulo": "La cantera de Argento",
+      "forma": "terrazas",
+      "tipo_de_trazado": "Terrazas escalonadas",
+      "hitos": [
+        "Desvío de carretas",
+        "Bancos de granito",
+        "Grúa de Argento",
+        "Camino de cornisa"
+      ],
+      "trazado": "Tres bancos de extracción envuelven la grúa. La rampa larga admite escolta y un torno abre una escalera corta.",
+      "objetivo": "Dar al encuentro de Argento el control de la cantera y el ancla de El Emperador.",
+      "tipo": "Mayor",
+      "carta_id": 4,
+      "carta": "El Emperador",
+      "materiales": [
+        "CXGRASER",
+        "CXPIRROS",
+        "CXADOQUI",
+        "CXHUECAR"
+      ]
+    },
+    {
+      "numero": 18,
+      "ficha": "18",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "CO",
+      "region": "Córdoba y sierras",
+      "titulo": "La capilla de la cuesta",
+      "forma": "anillo",
+      "tipo_de_trazado": "Anillo con atajo",
+      "hitos": [
+        "Atrio de pirca",
+        "Campanario",
+        "Osario de la roca",
+        "Sendero de faldón"
+      ],
+      "trazado": "La capilla ocupa una roca hueca. Se baja tras el ábside y se regresa al atrio por la cuesta exterior.",
+      "objetivo": "Reconstruir una inscripción con la luz que entra por tres aberturas del campanario.",
+      "tipo": "Secundaria",
+      "carta_id": 39,
+      "carta": "Cuatro de Copas",
+      "materiales": [
+        "CXGRASER",
+        "CXPIRROS",
+        "CXADOQUI",
+        "CXHUECAR"
+      ]
+    },
+    {
+      "numero": 19,
+      "ficha": "19",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "DE",
+      "region": "Delta, Litoral y esteros",
+      "titulo": "Las islas del Paraná",
+      "forma": "delta",
+      "tipo_de_trazado": "Islas y canales",
+      "hitos": [
+        "Embarcadero",
+        "Albardón del sauce",
+        "Rancho de redes",
+        "Canal de salida"
+      ],
+      "trazado": "Tres islas largas se separan por brazos desiguales. Los juncos ocultan pasos cortos y el techo del rancho orienta desde el agua.",
+      "objetivo": "Encontrar una red marcada y seguir sus boyas hasta la canoa perdida.",
+      "tipo": "Secundaria",
+      "carta_id": 40,
+      "carta": "Cinco de Copas",
+      "materiales": [
+        "CXLIMCAN",
+        "CXHOJANE",
+        "CXTABMUE",
+        "CXPASOLI"
+      ]
+    },
+    {
+      "numero": 20,
+      "ficha": "20",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "DE",
+      "region": "Delta, Litoral y esteros",
+      "titulo": "El terraplén anegado",
+      "forma": "presa",
+      "tipo_de_trazado": "Canales y compuertas",
+      "hitos": [
+        "Casilla de señales",
+        "Alcantarilla de alivio",
+        "Tramo anegado",
+        "Andén de tierra"
+      ],
+      "trazado": "El terraplén divide la laguna del bañado. Dos pasos de drenaje permiten cambiar de lado y volver por la vía alta.",
+      "objetivo": "Devolver al señalero sus tablillas y marcar el tramo que resiste el peso del carro.",
+      "tipo": "Secundaria",
+      "carta_id": 67,
+      "carta": "Cuatro de Oros",
+      "materiales": [
+        "CXLIMCAN",
+        "CXHOJANE",
+        "CXTABMUE",
+        "CXPASOLI"
+      ]
+    },
+    {
+      "numero": 21,
+      "ficha": "21",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "TE",
+      "region": "Termas de Entre Ríos",
+      "titulo": "Los ojos de agua de Caella",
+      "forma": "cuencas",
+      "tipo_de_trazado": "Cuencas sucesivas",
+      "hitos": [
+        "Vertiente fría",
+        "Piletón mineral",
+        "Cámara de Caella",
+        "Barranca de salida"
+      ],
+      "trazado": "Las surgencias se escalonan en tres terrazas. El vapor descubre por momentos un alero que comunica la cámara con el piletón.",
+      "objetivo": "Situar aquí el encuentro de Caella y la adquisición de La Sacerdotisa.",
+      "tipo": "Mayor",
+      "carta_id": 2,
+      "carta": "La Sacerdotisa",
+      "materiales": [
+        "CXCOSTER",
+        "CXLIMCAN",
+        "CXGRASER",
+        "CXTABMUE"
+      ]
+    },
+    {
+      "numero": 22,
+      "ficha": "22",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "CM",
+      "region": "Campos y malezales de Corrientes",
+      "titulo": "Las cuchillas de los malezales",
+      "forma": "trenza",
+      "tipo_de_trazado": "Sendas trenzadas",
+      "hitos": [
+        "Guardaganado",
+        "Cuchilla de palmeras",
+        "Arroyo en sombra",
+        "Campamento isleño"
+      ],
+      "trazado": "Dos lomadas de palmeras se separan al borde del arroyo. Un paso en sombra enlaza sus cabeceras.",
+      "objetivo": "Seguir muescas en las palmeras para reunir a dos partidas que eligieron lomadas distintas.",
+      "tipo": "Secundaria",
+      "carta_id": 53,
+      "carta": "Cuatro de Bastos",
+      "materiales": [
+        "CXPASOLI",
+        "CXHOJANE",
+        "CXLIMCAN",
+        "CXPAJSEC"
+      ]
+    },
+    {
+      "numero": 23,
+      "ficha": "23",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "DE",
+      "region": "Delta, Litoral y esteros",
+      "titulo": "El taller de las compuertas",
+      "forma": "presa",
+      "tipo_de_trazado": "Canales y compuertas",
+      "hitos": [
+        "Muelle de cigüeñas",
+        "Galería de cables",
+        "Torre de contrapesos",
+        "Puente giratorio"
+      ],
+      "trazado": "Las compuertas unen dos brazos del río. Una pasarela superior deja ver el efecto del mecanismo sobre el canal inferior.",
+      "objetivo": "Interpretar el montaje del taller y abrir el paso de servicio. Propuesta para El Mago.",
+      "tipo": "Mayor",
+      "carta_id": 1,
+      "carta": "El Mago",
+      "materiales": [
+        "CXLIMCAN",
+        "CXHOJANE",
+        "CXTABMUE",
+        "CXPASOLI"
+      ]
+    },
+    {
+      "numero": 24,
+      "ficha": "24",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "DE",
+      "region": "Delta, Litoral y esteros",
+      "titulo": "Los juncales del Iberá",
+      "forma": "delta",
+      "tipo_de_trazado": "Islas y canales",
+      "hitos": [
+        "Rancho sobre pilotes",
+        "Isla flotante",
+        "Torre de avistaje",
+        "Paso del carpincho"
+      ],
+      "trazado": "La torre sirve de referencia entre espejos de agua muy parecidos. Los tablones ofrecen una ruta seca de regreso.",
+      "objetivo": "Reconstruir la ruta del baqueano mediante las cintas atadas por encima de la creciente.",
+      "tipo": "Secundaria",
+      "carta_id": 41,
+      "carta": "Seis de Copas",
+      "materiales": [
+        "CXLIMCAN",
+        "CXHOJANE",
+        "CXTABMUE",
+        "CXPASOLI"
+      ]
+    },
+    {
+      "numero": 25,
+      "ficha": "25",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "DE",
+      "region": "Delta, Litoral y esteros",
+      "titulo": "La capilla del albardón",
+      "forma": "patio",
+      "tipo_de_trazado": "Patios comunicados",
+      "hitos": [
+        "Desembarcadero",
+        "Claustro de tierra alta",
+        "Archivo del coro",
+        "Portillo de canoas"
+      ],
+      "trazado": "Tres patios están a distintas cotas de inundación. Se entra al archivo desde el coro o por la galería trasera.",
+      "objetivo": "Contrastar los registros del culto con los de los vecinos. Propuesta para El Sumo Sacerdote.",
+      "tipo": "Mayor",
+      "carta_id": 5,
+      "carta": "El Sumo Sacerdote",
+      "materiales": [
+        "CXLIMCAN",
+        "CXHOJANE",
+        "CXTABMUE",
+        "CXPASOLI"
+      ]
+    },
+    {
+      "numero": 26,
+      "ficha": "26",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 1,
+      "region_id": "DE",
+      "region": "Delta, Litoral y esteros",
+      "titulo": "El cruce de las tres banderas",
+      "forma": "converge",
+      "tipo_de_trazado": "Rutas convergentes",
+      "hitos": [
+        "Posta de delegaciones",
+        "Depósito de bastos",
+        "Torre de señales",
+        "Rampa del transbordo"
+      ],
+      "trazado": "Las rutas de carreta, a pie y en bote convergen ante una rampa que se reconoce por tres mástiles.",
+      "objetivo": "Cruzar las versiones de las facciones y sacar el convoy por el paso que eligió el jugador. Propuesta para El Carro.",
+      "tipo": "Mayor",
+      "carta_id": 7,
+      "carta": "El Carro",
+      "materiales": [
+        "CXLIMCAN",
+        "CXHOJANE",
+        "CXTABMUE",
+        "CXPASOLI"
+      ]
+    },
+    {
+      "numero": 27,
+      "ficha": "27",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "CU",
+      "region": "Cuyo y cordillera",
+      "titulo": "Mendoza de las acequias",
+      "forma": "villa",
+      "tipo_de_trazado": "Barrios y plazas",
+      "hitos": [
+        "Acequia madre",
+        "Plaza arbolada",
+        "Patio del cabildo",
+        "Camino de viñas"
+      ],
+      "trazado": "Las acequias guían por barrios de adobe. Los puentes de piedra aparecen en plazas o en las entradas a las quintas.",
+      "objetivo": "Seguir una derivación de agua y devolver al barrio su turno de riego.",
+      "tipo": "Secundaria",
+      "carta_id": 42,
+      "carta": "Siete de Copas",
+      "materiales": [
+        "CXGRAALU",
+        "CXADOBEC",
+        "CXGRASER",
+        "CXMANTHO"
+      ]
+    },
+    {
+      "numero": 28,
+      "ficha": "28",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "CU",
+      "region": "Cuyo y cordillera",
+      "titulo": "El viñedo de los turnos",
+      "forma": "presa",
+      "tipo_de_trazado": "Canales y compuertas",
+      "hitos": [
+        "Portón de viña",
+        "Partidor de agua",
+        "Bodega semienterrada",
+        "Callejón de álamos"
+      ],
+      "trazado": "Las hileras desembocan en diagonales a la acequia. El canal seco lleva a la bodega por abajo.",
+      "objetivo": "Comparar el libro de turnos con el caudal de dos lotes y resolver la disputa.",
+      "tipo": "Secundaria",
+      "carta_id": 68,
+      "carta": "Cinco de Oros",
+      "materiales": [
+        "CXGRAALU",
+        "CXADOBEC",
+        "CXGRASER",
+        "CXMANTHO"
+      ]
+    },
+    {
+      "numero": 29,
+      "ficha": "29",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "CU",
+      "region": "Cuyo y cordillera",
+      "titulo": "El monte de las jarillas",
+      "forma": "anillo",
+      "tipo_de_trazado": "Anillo con atajo",
+      "hitos": [
+        "Jagüel seco",
+        "Médano fijo",
+        "Vivero protegido",
+        "Abra de piedra"
+      ],
+      "trazado": "Un anillo de suelo firme rodea el médano. Al encontrar el jagüel se descubre un paso entre reparos vegetales.",
+      "objetivo": "Restablecer el agua de un vivero oculto. Propuesta para La Emperatriz.",
+      "tipo": "Mayor",
+      "carta_id": 3,
+      "carta": "La Emperatriz",
+      "materiales": [
+        "CXGRAALU",
+        "CXADOBEC",
+        "CXGRASER",
+        "CXMANTHO"
+      ]
+    },
+    {
+      "numero": 30,
+      "ficha": "30",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "CU",
+      "region": "Cuyo y cordillera",
+      "titulo": "Las galerías del deshielo",
+      "forma": "cuencas",
+      "tipo_de_trazado": "Cuencas sucesivas",
+      "hitos": [
+        "Boca de toma",
+        "Cámara del sifón",
+        "Laguna de roca",
+        "Canal del valle"
+      ],
+      "trazado": "El agua cae por dos desniveles. La galería lateral permite recorrer el sistema y observar ambas cámaras desde arriba.",
+      "objetivo": "Seguir una cinta de sedimento para descubrir qué toma alimenta realmente el valle.",
+      "tipo": "Secundaria",
+      "carta_id": 43,
+      "carta": "Ocho de Copas",
+      "materiales": [
+        "CXGRAALU",
+        "CXADOBEC",
+        "CXGRASER",
+        "CXMANTHO"
+      ]
+    },
+    {
+      "numero": 31,
+      "ficha": "31",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "CU",
+      "region": "Cuyo y cordillera",
+      "titulo": "Las dos postas de arrieros",
+      "forma": "bifurca",
+      "tipo_de_trazado": "Dos pasos",
+      "hitos": [
+        "Horqueta de caminos",
+        "Posta del este",
+        "Posta del oeste",
+        "Abra común"
+      ],
+      "trazado": "Cada falda guarda una mitad de la ruta y las fogatas se ven entre sí. Una cornisa reúne a las dos caravanas.",
+      "objetivo": "Hacer llegar ambos testimonios al abra, conservando la decisión de cada posta. Propuesta para Los Enamorados.",
+      "tipo": "Mayor",
+      "carta_id": 6,
+      "carta": "Los Enamorados",
+      "materiales": [
+        "CXGRAALU",
+        "CXADOBEC",
+        "CXGRASER",
+        "CXMANTHO"
+      ]
+    },
+    {
+      "numero": 32,
+      "ficha": "32",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "CU",
+      "region": "Cuyo y cordillera",
+      "titulo": "El paso del cordón blanco",
+      "forma": "garganta",
+      "tipo_de_trazado": "Quebrada y cornisa",
+      "hitos": [
+        "Refugio de piedra",
+        "Zetas de ascenso",
+        "Portillo nevado",
+        "Corral a sotavento"
+      ],
+      "trazado": "El muro del cordón oculta el tramo final hasta el último giro. Una cuerda de servicio acorta la bajada al refugio.",
+      "objetivo": "Localizar un cargamento por las piedras de señal que sobreviven a la nieve.",
+      "tipo": "Secundaria",
+      "carta_id": 25,
+      "carta": "Cuatro de Espadas",
+      "materiales": [
+        "CXGRAALU",
+        "CXADOBEC",
+        "CXGRASER",
+        "CXMANTHO"
+      ]
+    },
+    {
+      "numero": 33,
+      "ficha": "33",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "NO",
+      "region": "Quebradas y desierto del NOA",
+      "titulo": "El pueblo de la quebrada",
+      "forma": "villa",
+      "tipo_de_trazado": "Barrios y plazas",
+      "hitos": [
+        "Vado colorado",
+        "Calle de adobe",
+        "Patio de tejedores",
+        "Cuesta de salida"
+      ],
+      "trazado": "Las casas se apoyan contra la ladera y las calles siguen los canales de lluvia. Una sucesión de patios evita la calle mayor.",
+      "objetivo": "Armar el itinerario de un viajero comparando los diseños que encargó en los telares.",
+      "tipo": "Secundaria",
+      "carta_id": 54,
+      "carta": "Cinco de Bastos",
+      "materiales": [
+        "CXESTROJ",
+        "CXADOBEC",
+        "CXGRAALU",
+        "CXSALPUN"
+      ]
+    },
+    {
+      "numero": 34,
+      "ficha": "34",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "NO",
+      "region": "Quebradas y desierto del NOA",
+      "titulo": "Los abanicos del desierto",
+      "forma": "trenza",
+      "tipo_de_trazado": "Sendas trenzadas",
+      "hitos": [
+        "Hito del arenal",
+        "Cauce del oeste",
+        "Columna roja",
+        "Garganta de salida"
+      ],
+      "trazado": "Tres cauces secos se separan alrededor de una columna visible desde todos. Los bordes de grava marcan los vados.",
+      "objetivo": "Reconstruir una ruta de arriería a partir de los túmulos que aún siguen en pie.",
+      "tipo": "Secundaria",
+      "carta_id": 26,
+      "carta": "Cinco de Espadas",
+      "materiales": [
+        "CXESTROJ",
+        "CXADOBEC",
+        "CXGRAALU",
+        "CXSALPUN"
+      ]
+    },
+    {
+      "numero": 35,
+      "ficha": "35",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "PU",
+      "region": "Puna y salares",
+      "titulo": "El espejo del salar",
+      "forma": "anillo",
+      "tipo_de_trazado": "Anillo con atajo",
+      "hitos": [
+        "Casilla del borde",
+        "Isla de roca",
+        "Costra quebrada",
+        "Desfiladero salino"
+      ],
+      "trazado": "El borde pedregoso da una vuelta larga segura. La isla intermedia permite cortar el salar leyendo los cambios de costra.",
+      "objetivo": "Encontrar un mojón invertido y completar el deslinde de una comunidad.",
+      "tipo": "Secundaria",
+      "carta_id": 69,
+      "carta": "Seis de Oros",
+      "materiales": [
+        "CXSALPUN",
+        "CXGRAALU",
+        "CXESTROJ",
+        "CXROCTAL"
+      ]
+    },
+    {
+      "numero": 36,
+      "ficha": "36",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "TR",
+      "region": "Tren del Cielo",
+      "titulo": "El Tren del Cielo",
+      "forma": "convoy",
+      "tipo_de_trazado": "Recorrido de transporte",
+      "hitos": [
+        "Furgón de cola",
+        "Vagón de carga",
+        "Coche de freno",
+        "Andén del viaducto"
+      ],
+      "trazado": "Una parada a mitad de viaje permite rodear los vagones por el terraplén. El regreso al techo revela el mecanismo del puente.",
+      "objetivo": "Coordinar el giro de la plataforma y detener el tren en el desvío. Propuesta para La Rueda de la Fortuna.",
+      "tipo": "Mayor",
+      "carta_id": 10,
+      "carta": "La Rueda de la Fortuna",
+      "materiales": [
+        "CXCHAFAB",
+        "CXTABMUE",
+        "CXPLAHIE",
+        "CXESTROJ"
+      ]
+    },
+    {
+      "numero": 37,
+      "ficha": "37",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "MI",
+      "region": "Minas de la Pachamama",
+      "titulo": "Las minas de la Pachamama",
+      "forma": "vertical",
+      "tipo_de_trazado": "Recorrido en altura",
+      "hitos": [
+        "Bocamina",
+        "Malacate central",
+        "Cámara de ofrendas",
+        "Socavón de descarga"
+      ],
+      "trazado": "Tres cotas rodean un único malacate. Una galería de desagüe enlaza la más baja con el valle sin repetir el descenso.",
+      "objetivo": "Escuchar a los mineros, identificar la galería clausurada y recuperar su acta de cierre.",
+      "tipo": "Secundaria",
+      "carta_id": 70,
+      "carta": "Siete de Oros",
+      "materiales": [
+        "CXVETAMI",
+        "CXROCTAL",
+        "CXTABMUE",
+        "CXGRAALU"
+      ]
+    },
+    {
+      "numero": 38,
+      "ficha": "38",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "MI",
+      "region": "Minas de la Pachamama",
+      "titulo": "El nivel de las vetas ciegas",
+      "forma": "red",
+      "tipo_de_trazado": "Red de galerías",
+      "hitos": [
+        "Pique de cuerda",
+        "Galería de cuarzo",
+        "Cámara de balanzas",
+        "Rampa de vagonetas"
+      ],
+      "trazado": "Las galerías siguen vetas que se cruzan a distinta altura. Las balanzas permiten identificar en qué nivel está la salida.",
+      "objetivo": "Cotejar las pesadas y establecer de dónde salió una partida de mineral. Propuesta para La Justicia.",
+      "tipo": "Mayor",
+      "carta_id": 8,
+      "carta": "La Justicia",
+      "materiales": [
+        "CXVETAMI",
+        "CXROCTAL",
+        "CXTABMUE",
+        "CXGRAALU"
+      ]
+    },
+    {
+      "numero": 39,
+      "ficha": "39",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "YU",
+      "region": "Yungas y selva de montaña",
+      "titulo": "El anfiteatro de las Yungas",
+      "forma": "terrazas",
+      "tipo_de_trazado": "Terrazas escalonadas",
+      "hitos": [
+        "Umbral del bosque",
+        "Gradas del eco",
+        "Refugio de helechos",
+        "Paso de las nubes"
+      ],
+      "trazado": "En la selva nublada del NOA, dos sendas a distinta altura siguen una cascada. La niebla oculta el refugio, pero la pared húmeda devuelve su eco.",
+      "objetivo": "Reconstruir con ecos la señal de auxilio de un puesto aislado.",
+      "tipo": "Secundaria",
+      "carta_id": 27,
+      "carta": "Seis de Espadas",
+      "materiales": [
+        "CXMANTHO",
+        "CXRAILIA",
+        "CXGRASER",
+        "CXESTROJ"
+      ]
+    },
+    {
+      "numero": 40,
+      "ficha": "40",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "NO",
+      "region": "Quebradas y desierto del NOA",
+      "titulo": "La Salamanca de las dos bocas",
+      "forma": "anillo",
+      "tipo_de_trazado": "Anillo con atajo",
+      "hitos": [
+        "Quebrada oscura",
+        "Sala del eco",
+        "Galería de respiración",
+        "Segunda boca"
+      ],
+      "trazado": "Dos entradas a la misma caverna se alcanzan por quebradas distintas. Un respiradero deja ver el cielo desde el centro.",
+      "objetivo": "Identificar la voz repetida por la roca y hallar el testimonio que quedó junto a la otra boca.",
+      "tipo": "Secundaria",
+      "carta_id": 28,
+      "carta": "Siete de Espadas",
+      "materiales": [
+        "CXESTROJ",
+        "CXADOBEC",
+        "CXGRAALU",
+        "CXSALPUN"
+      ]
+    },
+    {
+      "numero": 41,
+      "ficha": "41",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "CH",
+      "region": "Chaco, monte y bañados",
+      "titulo": "El quebrachal de las marcas",
+      "forma": "trenza",
+      "tipo_de_trazado": "Sendas trenzadas",
+      "hitos": [
+        "Tranqueras viejas",
+        "Claro del hachero",
+        "Pozo de lluvia",
+        "Sendero de regreso"
+      ],
+      "trazado": "Los troncos abren corredores discontinuos alrededor de un claro. Las marcas de corte orientan aun entre ramas bajas.",
+      "objetivo": "Determinar qué lindero se desplazó leyendo el corte antiguo de tres árboles.",
+      "tipo": "Secundaria",
+      "carta_id": 55,
+      "carta": "Seis de Bastos",
+      "materiales": [
+        "CXARCCHA",
+        "CXPAJSEC",
+        "CXQUEBAR",
+        "CXLIMCAN"
+      ]
+    },
+    {
+      "numero": 42,
+      "ficha": "42",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "CH",
+      "region": "Chaco, monte y bañados",
+      "titulo": "La laguna de la media luna",
+      "forma": "delta",
+      "tipo_de_trazado": "Islas y canales",
+      "hitos": [
+        "Playa de barro",
+        "Madre vieja",
+        "Mirador del monte",
+        "Brazo de salida"
+      ],
+      "trazado": "Un cauce abandonado forma una herradura. Entre sus puntas hay un paso por barro seco y otro por monte firme.",
+      "objetivo": "Localizar las pertenencias de un baqueano sin perder la referencia del río principal.",
+      "tipo": "Secundaria",
+      "carta_id": 44,
+      "carta": "Nueve de Copas",
+      "materiales": [
+        "CXARCCHA",
+        "CXPAJSEC",
+        "CXQUEBAR",
+        "CXLIMCAN"
+      ]
+    },
+    {
+      "numero": 43,
+      "ficha": "43",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "CH",
+      "region": "Chaco, monte y bañados",
+      "titulo": "Los hornos del obraje",
+      "forma": "patio",
+      "tipo_de_trazado": "Patios comunicados",
+      "hitos": [
+        "Balanza del obraje",
+        "Hornos de carbón",
+        "Tinglado de secado",
+        "Playa de carros"
+      ],
+      "trazado": "Los hornos no están alineados. Sus bocas miran al reparo del viento y los patios de carga enlazan sus fondos.",
+      "objetivo": "Identificar un cargamento sustituido por las diferencias de hollín y humedad.",
+      "tipo": "Secundaria",
+      "carta_id": 71,
+      "carta": "Ocho de Oros",
+      "materiales": [
+        "CXARCCHA",
+        "CXPAJSEC",
+        "CXQUEBAR",
+        "CXLIMCAN"
+      ]
+    },
+    {
+      "numero": 44,
+      "ficha": "44",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "CH",
+      "region": "Chaco, monte y bañados",
+      "titulo": "Las pasarelas del bañado",
+      "forma": "vertical",
+      "tipo_de_trazado": "Recorrido en altura",
+      "hitos": [
+        "Poste de amarre",
+        "Pasarela baja",
+        "Plataforma suspendida",
+        "Bajada del monte"
+      ],
+      "trazado": "Tramos suspendidos forman dos alturas sobre el agua. Desde abajo se ve en qué horqueta se engancha el puente corto.",
+      "objetivo": "Alcanzar el puesto suspendido y soltar desde allí la senda de retorno. Propuesta para El Colgado.",
+      "tipo": "Mayor",
+      "carta_id": 12,
+      "carta": "El Colgado",
+      "materiales": [
+        "CXARCCHA",
+        "CXPAJSEC",
+        "CXQUEBAR",
+        "CXLIMCAN"
+      ]
+    },
+    {
+      "numero": 45,
+      "ficha": "45",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "SE",
+      "region": "Selva misionera",
+      "titulo": "La picada de tierra colorada",
+      "forma": "trenza",
+      "tipo_de_trazado": "Sendas trenzadas",
+      "hitos": [
+        "Posta de borde",
+        "Picada del arroyo",
+        "Lapacho entre lianas",
+        "Claro de salida"
+      ],
+      "trazado": "Dos picadas se pierden entre raíces y reaparecen al borde del arroyo. Un claro rojo y luminoso distingue el regreso.",
+      "objetivo": "Conectar las marcas borradas de dos cuadrillas que abrieron la picada desde extremos opuestos.",
+      "tipo": "Secundaria",
+      "carta_id": 56,
+      "carta": "Siete de Bastos",
+      "materiales": [
+        "CXLATERI",
+        "CXMANTHO",
+        "CXRAILIA",
+        "CXPIRSEL"
+      ]
+    },
+    {
+      "numero": 46,
+      "ficha": "46",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "SE",
+      "region": "Selva misionera",
+      "titulo": "Los saltos de la bruma",
+      "forma": "vertical",
+      "tipo_de_trazado": "Recorrido en altura",
+      "hitos": [
+        "Playón de basalto",
+        "Cornisa del salto",
+        "Cueva tras la cortina",
+        "Escalera de orilla"
+      ],
+      "trazado": "Se ve la cascada desde el comienzo. Una senda seca sube por las paredes y otra alcanza el mismo punto por detrás del agua.",
+      "objetivo": "Recuperar la libreta de quien midió el salto y reconstruir el nivel del último temporal.",
+      "tipo": "Secundaria",
+      "carta_id": 45,
+      "carta": "Diez de Copas",
+      "materiales": [
+        "CXLATERI",
+        "CXMANTHO",
+        "CXRAILIA",
+        "CXPIRSEL"
+      ]
+    },
+    {
+      "numero": 47,
+      "ficha": "47",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "SE",
+      "region": "Selva misionera",
+      "titulo": "El yerbal de la sombra",
+      "forma": "anillo",
+      "tipo_de_trazado": "Anillo con atajo",
+      "hitos": [
+        "Campamento de corte",
+        "Canchadora",
+        "Sendero de carga",
+        "Muelle del arroyo"
+      ],
+      "trazado": "Los senderos unen pequeños claros de yerba con un solo punto de secado. Se vuelve por una senda de carros más ancha.",
+      "objetivo": "Seguir las marcas de tres fardos hasta identificar el que cambió de mano.",
+      "tipo": "Secundaria",
+      "carta_id": 72,
+      "carta": "Nueve de Oros",
+      "materiales": [
+        "CXLATERI",
+        "CXMANTHO",
+        "CXRAILIA",
+        "CXPIRSEL"
+      ]
+    },
+    {
+      "numero": 48,
+      "ficha": "48",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "SE",
+      "region": "Selva misionera",
+      "titulo": "Los patios de piedra roja",
+      "forma": "patio",
+      "tipo_de_trazado": "Patios comunicados",
+      "hitos": [
+        "Portada caída",
+        "Patio de hierbas",
+        "Galería cubierta",
+        "Escalones del monte"
+      ],
+      "trazado": "Las raíces separan las naves de una antigua reducción. Las galerías aún techadas crean un circuito a media altura.",
+      "objetivo": "Leer tres fragmentos de un mismo registro y devolver una copia a quienes conservan el lugar.",
+      "tipo": "Secundaria",
+      "carta_id": 29,
+      "carta": "Ocho de Espadas",
+      "materiales": [
+        "CXLATERI",
+        "CXMANTHO",
+        "CXRAILIA",
+        "CXPIRSEL"
+      ]
+    },
+    {
+      "numero": 49,
+      "ficha": "49",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "SE",
+      "region": "Selva misionera",
+      "titulo": "La barranca de la triple raíz",
+      "forma": "garganta",
+      "tipo_de_trazado": "Quebrada y cornisa",
+      "hitos": [
+        "Canal angosto",
+        "Raíz pasarela",
+        "Cornisa de arcilla",
+        "Boca oscura"
+      ],
+      "trazado": "Un árbol caído une ambos lados de la barranca. Las crecientes dejaron un sendero superior y otro húmedo bajo las raíces.",
+      "objetivo": "Reconstruir el itinerario de la última barca y descubrir el desvío hacia el dominio sobrenatural.",
+      "tipo": "Secundaria",
+      "carta_id": 57,
+      "carta": "Ocho de Bastos",
+      "materiales": [
+        "CXLATERI",
+        "CXMANTHO",
+        "CXRAILIA",
+        "CXPIRSEL"
+      ]
+    },
+    {
+      "numero": 50,
+      "ficha": "50",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "IN",
+      "region": "Infierno y dominios sobrenaturales",
+      "titulo": "El umbral de las costras",
+      "forma": "cuencas",
+      "tipo_de_trazado": "Cuencas sucesivas",
+      "hitos": [
+        "Ladera de ceniza",
+        "Cuenca de escoria",
+        "Galería de basalto",
+        "Puerta del horno"
+      ],
+      "trazado": "La escoria divide el fondo en islas secas. Un balcón recorre el perímetro y revela los pasos antes de bajar.",
+      "objetivo": "Reunir las tres partes del testimonio de entrada al dominio infernal.",
+      "tipo": "Secundaria",
+      "carta_id": 73,
+      "carta": "Diez de Oros",
+      "materiales": [
+        "CXESCORI",
+        "CXMURBRA",
+        "CXBASRIT",
+        "CXPLAHIE"
+      ]
+    },
+    {
+      "numero": 51,
+      "ficha": "51",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "IN",
+      "region": "Infierno y dominios sobrenaturales",
+      "titulo": "La caldera de Zupay",
+      "forma": "arena",
+      "tipo_de_trazado": "Cámara y perímetro",
+      "hitos": [
+        "Puerta de ceniza",
+        "Anillo de basalto",
+        "Lecho de la caldera",
+        "Escalera de retorno"
+      ],
+      "trazado": "El jugador reconoce la cámara del primer encuentro en la forma del anillo. Dos gradas y tres salidas de respiro ordenan el espacio.",
+      "objetivo": "Resolver el encuentro definitivo con Zupay en el capítulo II. Su ancla aprobada es La Muerte.",
+      "tipo": "Mayor",
+      "carta_id": 13,
+      "carta": "La Muerte",
+      "materiales": [
+        "CXESCORI",
+        "CXMURBRA",
+        "CXBASRIT",
+        "CXPLAHIE"
+      ]
+    },
+    {
+      "numero": 52,
+      "ficha": "52",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 2,
+      "region_id": "IN",
+      "region": "Infierno y dominios sobrenaturales",
+      "titulo": "El tribunal de las brasas",
+      "forma": "converge",
+      "tipo_de_trazado": "Rutas convergentes",
+      "hitos": [
+        "Puente de escoria",
+        "Galería de testimonios",
+        "Estrado del príncipe",
+        "Umbral de regreso"
+      ],
+      "trazado": "Dos galerías convergen en el estrado y dejan una vista clara del lugar del destierro. El regreso se abre tras el estrado.",
+      "objetivo": "Escenificar el destierro del príncipe infernal y la revelación de su intervención lunar. Ancla de El Diablo.",
+      "tipo": "Mayor",
+      "carta_id": 15,
+      "carta": "El Diablo",
+      "materiales": [
+        "CXESCORI",
+        "CXMURBRA",
+        "CXBASRIT",
+        "CXPLAHIE"
+      ]
+    },
+    {
+      "numero": 53,
+      "ficha": "53",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "ES",
+      "region": "Estepa patagónica",
+      "titulo": "El cañadón del viento",
+      "forma": "garganta",
+      "tipo_de_trazado": "Quebrada y cornisa",
+      "hitos": [
+        "Posta de la estepa",
+        "Reparo de coirón",
+        "Pared de nidos",
+        "Boca del cañadón"
+      ],
+      "trazado": "El cañadón corta la meseta. Balcones naturales dejan cambiar de orilla por encima del fondo y reconocer el refugio por su molino.",
+      "objetivo": "Trazar una ruta de relevo donde cada tramo termine a reparo del viento.",
+      "tipo": "Secundaria",
+      "carta_id": 46,
+      "carta": "Caballero de Copas",
+      "materiales": [
+        "CXCOIRON",
+        "CXLAJSUR",
+        "CXHUECAR",
+        "CXGRAALU"
+      ]
+    },
+    {
+      "numero": 54,
+      "ficha": "54",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "ES",
+      "region": "Estepa patagónica",
+      "titulo": "El telégrafo de la meseta",
+      "forma": "trenza",
+      "tipo_de_trazado": "Sendas trenzadas",
+      "hitos": [
+        "Casilla de alambre",
+        "Meseta partida",
+        "Bajada del mensajero",
+        "Posta de llegada"
+      ],
+      "trazado": "La línea recorre la cresta mientras la senda de servicio baja a los reparos. Ambas se ven a través de la hendidura.",
+      "objetivo": "Reconstruir un mensaje incompleto comparando las copias guardadas en las dos postas.",
+      "tipo": "Secundaria",
+      "carta_id": 58,
+      "carta": "Nueve de Bastos",
+      "materiales": [
+        "CXCOIRON",
+        "CXLAJSUR",
+        "CXHUECAR",
+        "CXGRAALU"
+      ]
+    },
+    {
+      "numero": 55,
+      "ficha": "55",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "AN",
+      "region": "Andes patagónicos y Nahuel Huapi",
+      "titulo": "El paraje del Nahuel Huapi",
+      "forma": "ribera",
+      "tipo_de_trazado": "Doble orilla",
+      "hitos": [
+        "Playa del lago",
+        "Arroyo de entrada",
+        "Paraje del bosque",
+        "Punta de embarque"
+      ],
+      "trazado": "En el entorno que hoy asociamos a Bariloche, la costa sirve de eje. Una senda entre lengas dobla la punta y regresa por un muelle corto.",
+      "objetivo": "Localizar una canoa por su marca y averiguar qué llevó de una orilla a la otra.",
+      "tipo": "Secundaria",
+      "carta_id": 30,
+      "carta": "Nueve de Espadas",
+      "materiales": [
+        "CXHOJLEN",
+        "CXLAJSUR",
+        "CXCOIRON",
+        "CXROCMAR"
+      ]
+    },
+    {
+      "numero": 56,
+      "ficha": "56",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "AN",
+      "region": "Andes patagónicos y Nahuel Huapi",
+      "titulo": "Los mallines de la cordillera",
+      "forma": "cuencas",
+      "tipo_de_trazado": "Cuencas sucesivas",
+      "hitos": [
+        "Borde del mallín",
+        "Vertiente fría",
+        "Laguna colgada",
+        "Sendero de lengas"
+      ],
+      "trazado": "Dos humedales de altura se vuelcan uno en otro. Piedra seca y pasarela guardan siempre una ruta al reparo.",
+      "objetivo": "Reunir dos muestras de agua y estabilizar el paso entre cuencas. Propuesta para La Templanza.",
+      "tipo": "Mayor",
+      "carta_id": 14,
+      "carta": "La Templanza",
+      "materiales": [
+        "CXHOJLEN",
+        "CXLAJSUR",
+        "CXCOIRON",
+        "CXROCMAR"
+      ]
+    },
+    {
+      "numero": 57,
+      "ficha": "57",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "TU",
+      "region": "Tundra austral",
+      "titulo": "El llano de la turba",
+      "forma": "delta",
+      "tipo_de_trazado": "Islas y canales",
+      "hitos": [
+        "Faja de grava",
+        "Isleta de musgo",
+        "Reparo de turba",
+        "Loma firme"
+      ],
+      "trazado": "La tundra austral parece llana hasta que se distinguen los canales oscuros. Las lomas bajas forman un camino legible desde el reparo.",
+      "objetivo": "Recuperar las estacas del campamento y señalar un corredor transitado antes de la crecida.",
+      "tipo": "Secundaria",
+      "carta_id": 74,
+      "carta": "Caballero de Oros",
+      "materiales": [
+        "CXTURFUE",
+        "CXTUSSOC",
+        "CXLAJSUR",
+        "CXGUIMAR"
+      ]
+    },
+    {
+      "numero": 58,
+      "ficha": "58",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "TF",
+      "region": "Tierra del Fuego",
+      "titulo": "Los canales de Tierra del Fuego",
+      "forma": "ribera",
+      "tipo_de_trazado": "Doble orilla",
+      "hitos": [
+        "Caleta de resguardo",
+        "Ensenada del bosque",
+        "Islote del paso",
+        "Muelle fueguino"
+      ],
+      "trazado": "La costa quebrada se recorre en bote o por una senda elevada. El islote separa el canal principal de un atajo abrigado.",
+      "objetivo": "Seguir desde tierra la ruta de un piloto y encontrar dónde dejó su cuaderno de navegación.",
+      "tipo": "Secundaria",
+      "carta_id": 47,
+      "carta": "Sota de Copas",
+      "materiales": [
+        "CXTURFUE",
+        "CXHOJLEN",
+        "CXLAJSUR",
+        "CXGUIMAR"
+      ]
+    },
+    {
+      "numero": 59,
+      "ficha": "59",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "TF",
+      "region": "Tierra del Fuego",
+      "titulo": "El bosque de los castillos de viento",
+      "forma": "anillo",
+      "tipo_de_trazado": "Anillo con atajo",
+      "hitos": [
+        "Boca de bosque",
+        "Claro de lengas",
+        "Farallón tallado",
+        "Playa de regreso"
+      ],
+      "trazado": "Los troncos inclinados señalan la dirección del mar. El bucle alto rodea una pared de roca y devuelve a una playa visible desde el claro.",
+      "objetivo": "Identificar la señal de una expedición entre las marcas naturales que dejó el viento.",
+      "tipo": "Secundaria",
+      "carta_id": 59,
+      "carta": "Diez de Bastos",
+      "materiales": [
+        "CXTURFUE",
+        "CXHOJLEN",
+        "CXLAJSUR",
+        "CXGUIMAR"
+      ]
+    },
+    {
+      "numero": 60,
+      "ficha": "60",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "MA",
+      "region": "Islas Malvinas",
+      "titulo": "Malvinas, la bahía de dos puntas",
+      "forma": "bifurca",
+      "tipo_de_trazado": "Dos pasos",
+      "hitos": [
+        "Caseta de costa",
+        "Punta de tussock",
+        "Varadero de piedra",
+        "Ensenada de abrigo"
+      ],
+      "trazado": "Dos puntas protegen la bahía. Se cruzan a pie por el istmo o se bordean por agua cuando sube la marea.",
+      "objetivo": "Reconstruir en el varadero la última derrota de una lancha y devolver su bitácora.",
+      "tipo": "Secundaria",
+      "carta_id": 31,
+      "carta": "Diez de Espadas",
+      "materiales": [
+        "CXTUSSOC",
+        "CXGUIMAR",
+        "CXTURFUE",
+        "CXLAJSUR"
+      ]
+    },
+    {
+      "numero": 61,
+      "ficha": "61",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "MA",
+      "region": "Islas Malvinas",
+      "titulo": "Los ríos de piedra",
+      "forma": "trenza",
+      "tipo_de_trazado": "Sendas trenzadas",
+      "hitos": [
+        "Puesto isleño",
+        "Lengua de bloques",
+        "Mirador de turba",
+        "Paso entre lomadas"
+      ],
+      "trazado": "Dos lenguas de bloques se interceptan entre lomadas de turba. El mirador permite escoger el cruce de menor desnivel.",
+      "objetivo": "Recuperar un instrumento de marcación y reconciliar dos lecturas del mismo rumbo.",
+      "tipo": "Secundaria",
+      "carta_id": 75,
+      "carta": "Sota de Oros",
+      "materiales": [
+        "CXTUSSOC",
+        "CXGUIMAR",
+        "CXTURFUE",
+        "CXLAJSUR"
+      ]
+    },
+    {
+      "numero": 62,
+      "ficha": "62",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "AT",
+      "region": "Costa y Mar Argentino",
+      "titulo": "Los acantilados de la costa",
+      "forma": "vertical",
+      "tipo_de_trazado": "Recorrido en altura",
+      "hitos": [
+        "Playa de guijarros",
+        "Repisa del faro",
+        "Sala de linterna",
+        "Rampa de pescadores"
+      ],
+      "trazado": "Una senda en zetas trepa la cara del acantilado. La torre y la rampa se ven entre sí incluso con la marea alta.",
+      "objetivo": "Reabrir la comunicación entre playa y faro desde dos cotas. Propuesta para La Torre.",
+      "tipo": "Mayor",
+      "carta_id": 16,
+      "carta": "La Torre",
+      "materiales": [
+        "CXGUIMAR",
+        "CXLAJSUR",
+        "CXTABMUE",
+        "CXCHAFAB"
+      ]
+    },
+    {
+      "numero": 63,
+      "ficha": "63",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "AT",
+      "region": "Costa y Mar Argentino",
+      "titulo": "La travesía del Mar Argentino",
+      "forma": "convoy",
+      "tipo_de_trazado": "Recorrido de transporte",
+      "hitos": [
+        "Cubierta de popa",
+        "Bodega escorada",
+        "Pasarela de proa",
+        "Caleta de recalada"
+      ],
+      "trazado": "El nivel alterna la cubierta con los pasos bajo ella. En la recalada se descubre por fuera la vía de agua vista desde la bodega.",
+      "objetivo": "Cruzar el registro de mareas con la posición del cargamento y guiar la embarcación a la caleta.",
+      "tipo": "Secundaria",
+      "carta_id": 48,
+      "carta": "Reina de Copas",
+      "materiales": [
+        "CXGUIMAR",
+        "CXLAJSUR",
+        "CXTABMUE",
+        "CXCHAFAB"
+      ]
+    },
+    {
+      "numero": 64,
+      "ficha": "64",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "GL",
+      "region": "Antártida y glaciares",
+      "titulo": "La bahía de los témpanos",
+      "forma": "delta",
+      "tipo_de_trazado": "Islas y canales",
+      "hitos": [
+        "Borde de banquisa",
+        "Canal azul",
+        "Isla de roca",
+        "Refugio antártico"
+      ],
+      "trazado": "Las grietas y los témpanos recortan dos trazas entre la roca y el refugio. Los hitos fijos orientan cuando el hielo oculta el canal.",
+      "objetivo": "Recobrar tres marcas de sondeo y dibujar el canal navegable en el cuaderno de la expedición.",
+      "tipo": "Secundaria",
+      "carta_id": 61,
+      "carta": "Sota de Bastos",
+      "materiales": [
+        "CXNIEPOL",
+        "CXHIEAZU",
+        "CXLAJSUR",
+        "CXBASRIT"
+      ]
+    },
+    {
+      "numero": 65,
+      "ficha": "65",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "GL",
+      "region": "Antártida y glaciares",
+      "titulo": "La grieta de las sombras azules",
+      "forma": "vertical",
+      "tipo_de_trazado": "Recorrido en altura",
+      "hitos": [
+        "Cuerda de descenso",
+        "Balcón de hielo",
+        "Cámara de aire",
+        "Escalón de roca"
+      ],
+      "trazado": "La grieta se ensancha bajo una boca pequeña. Puentes de hielo cruzan a dos alturas y la salida aprovecha un espolón rocoso.",
+      "objetivo": "Localizar a una expedición por sus marcas y abrir una subida de retorno independiente.",
+      "tipo": "Secundaria",
+      "carta_id": 32,
+      "carta": "Caballero de Espadas",
+      "materiales": [
+        "CXNIEPOL",
+        "CXHIEAZU",
+        "CXLAJSUR",
+        "CXBASRIT"
+      ]
+    },
+    {
+      "numero": 66,
+      "ficha": "66",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "GL",
+      "region": "Antártida y glaciares",
+      "titulo": "El observatorio bajo la escarcha",
+      "forma": "patio",
+      "tipo_de_trazado": "Patios comunicados",
+      "hitos": [
+        "Reparo de rocas",
+        "Cúpula de deriva",
+        "Gabinete de cartas",
+        "Terraza polar"
+      ],
+      "trazado": "Los edificios bajos de una expedición ficticia comparten un patio a resguardo. Dos corredores cubiertos conectan el gabinete con la terraza.",
+      "objetivo": "Alinear los dibujos del cielo de dos turnos de observación. Propuesta para La Estrella.",
+      "tipo": "Mayor",
+      "carta_id": 17,
+      "carta": "La Estrella",
+      "materiales": [
+        "CXNIEPOL",
+        "CXHIEAZU",
+        "CXLAJSUR",
+        "CXBASRIT"
+      ]
+    },
+    {
+      "numero": 67,
+      "ficha": "67",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "GL",
+      "region": "Antártida y glaciares",
+      "titulo": "La boca bajo el hielo",
+      "forma": "cuencas",
+      "tipo_de_trazado": "Cuencas sucesivas",
+      "hitos": [
+        "Borde del glaciar",
+        "Cámara tibia",
+        "Basalto de la grieta",
+        "Cornisa exterior"
+      ],
+      "trazado": "Al pie del glaciar, una grieta expone la frontera entre hielo y roca infernal. Un balcón permite examinar ambas cotas.",
+      "objetivo": "Documentar las huellas del dominio infernal sin volver a abrir el desenlace del segundo capítulo.",
+      "tipo": "Secundaria",
+      "carta_id": 76,
+      "carta": "Reina de Oros",
+      "materiales": [
+        "CXNIEPOL",
+        "CXHIEAZU",
+        "CXLAJSUR",
+        "CXBASRIT"
+      ]
+    },
+    {
+      "numero": 68,
+      "ficha": "68",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "AB",
+      "region": "Mar profundo",
+      "titulo": "El talud de las sondas",
+      "forma": "vertical",
+      "tipo_de_trazado": "Recorrido en altura",
+      "hitos": [
+        "Campana de inmersión",
+        "Baliza de media agua",
+        "Cornisa de coral frío",
+        "Esclusa del fondo"
+      ],
+      "trazado": "Una cadena guía el descenso. Balizas y cámaras de aire separan los tramos, con retorno identificable desde cada cota.",
+      "objetivo": "Restablecer las marcas de profundidad y recuperar el registro de la última inmersión.",
+      "tipo": "Secundaria",
+      "carta_id": 49,
+      "carta": "Rey de Copas",
+      "materiales": [
+        "CXLIMABI",
+        "CXROCMAR",
+        "CXGUIMAR",
+        "CXPLAHIE"
+      ]
+    },
+    {
+      "numero": 69,
+      "ficha": "69",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "AB",
+      "region": "Mar profundo",
+      "titulo": "La fosa de las campanas",
+      "forma": "garganta",
+      "tipo_de_trazado": "Quebrada y cornisa",
+      "hitos": [
+        "Esclusa de borde",
+        "Carcasa hundida",
+        "Campana intacta",
+        "Respiradero de salida"
+      ],
+      "trazado": "La fosa se estrecha en una garganta lateral. El metal de las campanas se reconoce a distancia contra el sedimento oscuro.",
+      "objetivo": "Triangular por sonido una campana de rescate y devolver sus anotaciones a la superficie.",
+      "tipo": "Secundaria",
+      "carta_id": 62,
+      "carta": "Reina de Bastos",
+      "materiales": [
+        "CXLIMABI",
+        "CXROCMAR",
+        "CXGUIMAR",
+        "CXPLAHIE"
+      ]
+    },
+    {
+      "numero": 70,
+      "ficha": "70",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "SU",
+      "region": "Ciudad Caelith submarina",
+      "titulo": "La ciudad Caelith sumergida",
+      "forma": "villa",
+      "tipo_de_trazado": "Barrios y plazas",
+      "hitos": [
+        "Esclusa de llegada",
+        "Plaza de cúpulas",
+        "Archivo inundado",
+        "Andén de burbujas"
+      ],
+      "trazado": "Los barrios forman cúpulas estancas alrededor de una plaza inundada. Las ventanas enfrentadas muestran qué nivel del agua tiene cada galería.",
+      "objetivo": "Seguir un mismo testimonio por reflejos y marcas auténticas. Propuesta para La Luna.",
+      "tipo": "Mayor",
+      "carta_id": 18,
+      "carta": "La Luna",
+      "materiales": [
+        "CXPLASUB",
+        "CXLIMABI",
+        "CXROCMAR",
+        "CXPLAHIE"
+      ]
+    },
+    {
+      "numero": 71,
+      "ficha": "71",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "SU",
+      "region": "Ciudad Caelith submarina",
+      "titulo": "El jardín de las mareas cautivas",
+      "forma": "presa",
+      "tipo_de_trazado": "Canales y compuertas",
+      "hitos": [
+        "Cúpula de vivero",
+        "Canal de nutrientes",
+        "Válvula de retorno",
+        "Jardín de salida"
+      ],
+      "trazado": "Las terrazas abren vistas a la misma corriente. Un canal de servicio ofrece un recorrido más corto con pausas de aire.",
+      "objetivo": "Restituir el sentido de una corriente y averiguar qué vivienda dependía del vivero.",
+      "tipo": "Secundaria",
+      "carta_id": 33,
+      "carta": "Sota de Espadas",
+      "materiales": [
+        "CXPLASUB",
+        "CXLIMABI",
+        "CXROCMAR",
+        "CXPLAHIE"
+      ]
+    },
+    {
+      "numero": 72,
+      "ficha": "72",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "SU",
+      "region": "Ciudad Caelith submarina",
+      "titulo": "Los astilleros de profundidad",
+      "forma": "patio",
+      "tipo_de_trazado": "Patios comunicados",
+      "hitos": [
+        "Dársena seca",
+        "Quilla suspendida",
+        "Taller de bombas",
+        "Esclusa de ascenso"
+      ],
+      "trazado": "Una quilla suspendida une dos talleres a distinta altura. Las pasarelas de inspección forman un circuito alrededor del dique.",
+      "objetivo": "Reconstruir el traslado de una nave a partir de las marcas de quilla y del libro de bombas.",
+      "tipo": "Secundaria",
+      "carta_id": 77,
+      "carta": "Rey de Oros",
+      "materiales": [
+        "CXPLASUB",
+        "CXLIMABI",
+        "CXROCMAR",
+        "CXPLAHIE"
+      ]
+    },
+    {
+      "numero": 73,
+      "ficha": "73",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "AE",
+      "region": "Ciudad y rutas Caelith aéreas",
+      "titulo": "La escala de los dirigibles",
+      "forma": "vertical",
+      "tipo_de_trazado": "Recorrido en altura",
+      "hitos": [
+        "Plataforma inferior",
+        "Pasarela de amarras",
+        "Cabrestante de viento",
+        "Terraza de atraque"
+      ],
+      "trazado": "Cuatro plataformas escalonadas permiten mirar el atraque desde abajo. Al liberar el cabrestante queda un atajo de vuelta al pie.",
+      "objetivo": "Ajustar el orden de las amarras y reencontrar un aeróstato registrado con otro nombre.",
+      "tipo": "Secundaria",
+      "carta_id": 63,
+      "carta": "Rey de Bastos",
+      "materiales": [
+        "CXCERAER",
+        "CXPLAHIE",
+        "CXTABMUE",
+        "CXBASRIT"
+      ]
+    },
+    {
+      "numero": 74,
+      "ficha": "74",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "AE",
+      "region": "Ciudad y rutas Caelith aéreas",
+      "titulo": "La ciudad Caelith en el aire",
+      "forma": "villa",
+      "tipo_de_trazado": "Barrios y plazas",
+      "hitos": [
+        "Terraza de amarre",
+        "Plaza suspendida",
+        "Patio de colectores",
+        "Puente del levante"
+      ],
+      "trazado": "Los barrios siguen anillos a distinta cota en torno a un vacío visible. Cada uno tiene una plaza pequeña y dos puentes al siguiente.",
+      "objetivo": "Descubrir quién controla el reparto de luz y contrastar su versión con los barrios. Propuesta para El Sol.",
+      "tipo": "Mayor",
+      "carta_id": 19,
+      "carta": "El Sol",
+      "materiales": [
+        "CXCERAER",
+        "CXPLAHIE",
+        "CXTABMUE",
+        "CXBASRIT"
+      ]
+    },
+    {
+      "numero": 75,
+      "ficha": "75",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "AE",
+      "region": "Ciudad y rutas Caelith aéreas",
+      "titulo": "Los huertos suspendidos",
+      "forma": "trenza",
+      "tipo_de_trazado": "Sendas trenzadas",
+      "hitos": [
+        "Dársena menor",
+        "Jardines de sotavento",
+        "Canal colgante",
+        "Mirador de retorno"
+      ],
+      "trazado": "Los huertos se ramifican en plataformas bajas. El agua del canal señala el camino de regreso hasta con niebla.",
+      "objetivo": "Encontrar el origen de una pérdida de agua siguiendo el goteo entre islas.",
+      "tipo": "Secundaria",
+      "carta_id": 34,
+      "carta": "Reina de Espadas",
+      "materiales": [
+        "CXCERAER",
+        "CXPLAHIE",
+        "CXTABMUE",
+        "CXBASRIT"
+      ]
+    },
+    {
+      "numero": 76,
+      "ficha": "76",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "AE",
+      "region": "Ciudad y rutas Caelith aéreas",
+      "titulo": "El archivo de la Dispersión",
+      "forma": "converge",
+      "tipo_de_trazado": "Rutas convergentes",
+      "hitos": [
+        "Galería de ingreso",
+        "Archivo civil",
+        "Depósito de órdenes",
+        "Sala de testimonios"
+      ],
+      "trazado": "Dos archivos ofrecen versiones enfrentadas del mismo hecho. Una pasarela final permite ver físicamente cómo encajan las piezas.",
+      "objetivo": "Reunir testimonios sobre la Dispersión y sostener una interpretación frente a los registros. Propuesta para El Juicio.",
+      "tipo": "Mayor",
+      "carta_id": 20,
+      "carta": "El Juicio",
+      "materiales": [
+        "CXCERAER",
+        "CXPLAHIE",
+        "CXTABMUE",
+        "CXBASRIT"
+      ]
+    },
+    {
+      "numero": 77,
+      "ficha": "77",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "AE",
+      "region": "Ciudad y rutas Caelith aéreas",
+      "titulo": "La dársena de la última nave",
+      "forma": "patio",
+      "tipo_de_trazado": "Patios comunicados",
+      "hitos": [
+        "Rampa del astillero",
+        "Taller de casco",
+        "Corona de amarre",
+        "Plataforma de entrega"
+      ],
+      "trazado": "El casco tapa parte de la plaza al entrar. Subir a la grúa permite leer su silueta y revisar desde arriba tres puntos de montaje.",
+      "objetivo": "Seguir las marcas del último viaje de prueba y localizar la pieza que se guardó al desembarcar.",
+      "tipo": "Secundaria",
+      "carta_id": 35,
+      "carta": "Rey de Espadas",
+      "materiales": [
+        "CXCERAER",
+        "CXPLAHIE",
+        "CXTABMUE",
+        "CXBASRIT"
+      ]
+    },
+    {
+      "numero": 78,
+      "ficha": "78",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "AE",
+      "region": "Ciudad y rutas Caelith aéreas",
+      "titulo": "El embarcadero del cielo nocturno",
+      "forma": "converge",
+      "tipo_de_trazado": "Rutas convergentes",
+      "hitos": [
+        "Casa de viaje",
+        "Sala de navegación",
+        "Muelle de retorno",
+        "Puente de embarque"
+      ],
+      "trazado": "Un vestíbulo reúne el muelle de llegada, la nave lunar y el regreso a la campaña. La Tierra queda visible al embarcar.",
+      "objetivo": "Obtener el medio de viaje. El embarque admite ida y vuelta aunque aún falten esencias. Mapa de tránsito.",
+      "tipo": "Tránsito",
+      "carta_id": null,
+      "carta": "",
+      "materiales": [
+        "CXCERAER",
+        "CXPLAHIE",
+        "CXTABMUE",
+        "CXBASRIT"
+      ]
+    },
+    {
+      "numero": 79,
+      "ficha": "79",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "LU",
+      "region": "Luna, cráter y mar basáltico",
+      "titulo": "La Luna, el cráter de El Mundo",
+      "forma": "anillo",
+      "tipo_de_trazado": "Anillo con atajo",
+      "hitos": [
+        "Esclusa de descenso",
+        "Tubo de lava",
+        "Santuario del cráter",
+        "Muelle de retorno"
+      ],
+      "trazado": "El borde claro rodea el mar basáltico oscuro. Un tubo de lava conecta el aterrizaje con el santuario. El muelle siempre queda accesible.",
+      "objetivo": "Realizar la captura de El Mundo cuando ya se tengan las otras 77 esencias. Antes se puede explorar y volver.",
+      "tipo": "Mayor",
+      "carta_id": 21,
+      "carta": "El Mundo",
+      "materiales": [
+        "CXREGLUN",
+        "CXANORTO",
+        "CXMALLUN",
+        "CXLAMSEL"
+      ]
+    },
+    {
+      "numero": 80,
+      "ficha": "80",
+      "lump_vigente": "",
+      "base_existente_para_revisar": "",
+      "capitulo": 3,
+      "region_id": "SL",
+      "region": "Luna, palacio de Selene",
+      "titulo": "La Luna, el palacio de Selene",
+      "forma": "arena",
+      "tipo_de_trazado": "Cámara y perímetro",
+      "hitos": [
+        "Atrio de audiencia",
+        "Galería del terminador",
+        "Cámara de Selene",
+        "Balcón del regreso"
+      ],
+      "trazado": "El tránsito desemboca en un atrio revisitable. Dos galerías asimétricas ciñen la cámara y el balcón devuelve a la ruta de exploración.",
+      "objetivo": "Comprobar ante el combate las 78 esencias y +250 con una facción válida. Resolver el encuentro y conservar Tarot y exploración.",
+      "tipo": "Encuentro final",
+      "carta_id": null,
+      "carta": "",
+      "materiales": [
+        "CXMALLUN",
+        "CXLAMSEL",
+        "CXANORTO",
+        "CXCERAER"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+CAELUM ARGENTEUM
+Del Riachuelo a la Luna • Materiales de campaña
+Versión de referencia 5.17.123 • GZDoom 4.14.2 • 27 de noviembre de 2026
+
+CONTENIDO
+
+Atlas_Caelum_80_mapas.pdf reúne 80 fichas, rutas dibujadas, referencias de paisaje, muestrarios y los planos originales aprobados de la alcantarilla y Barracas. catalogo/mapas.csv y mapas.json permiten filtrar fichas por capítulo, región y esencia. Los identificadores editoriales 04 a 80 sirven para planificar. Para la ficha 04, revisar la ciudad de Buenos Aires que ya existe con el nombre CABAIRES. Antes de crear un nuevo lump, consultar el registro del juego, que también incluye viajes y mapas técnicos.
+
+La cuenta antes de la Luna es 1 de prólogo, 25 del capítulo I, 26 del II y 26 del III. Las fichas 79 y 80 son los dos mapas lunares del III. La distribución territorial 25/26/26 y las ubicaciones nuevas son propuestas de esta edición. La apertura y los Mayores por capítulo conservan la base aprobada. Hay 78 asignaciones de carta sin repeticiones. Las fichas 78 (embarque) y 80 (desenlace) no asignan cartas. Las 18, 19 y 19 misiones secundarias de cada capítulo reúnen los 56 Menores. Cada misión formal entrega una esencia y las interrupciones conservan la posibilidad de recuperarla.
+
+CÓMO CARGAR LOS PAQUETES
+
+1. Descomprimir este ZIP en una carpeta de trabajo.
+2. Para disponer de todos los biomas, cargar entornos/Caelum_48_materiales.pk3 después del PK3 base del juego. En Ultimate Doom Builder, añadir este PK3 a los recursos de la configuración GZDoom UDMF y buscar uno de los nombres CX de catalogo/texturas.csv en el selector de pisos o de paredes. Por ejemplo, CXESTROJ pinta una pared de quebrada y CXREGLUN pinta el fondo del cráter.
+3. Para trabajar en una sola región, usar entornos/selecciones/CODIGO.pk3. catalogo/regiones.csv relaciona cada código con su región y sus cuatro materiales. Estas selecciones contienen exactamente los recursos que comparten con el paquete de 48. Para cargar varios biomas juntos alcanza con el completo.
+4. Para cambiar la apariencia de los modelos, cargar modelos/Caelum_pieles_pintadas.pk3 después de Caelum. La selección actúa sobre los recursos originales cuando el juego dibuja esos modelos. Quitar el complemento restaura sus materiales de base.
+5. Para un nuevo modelo, abrir modelos/Muestras_16_materiales_UV.zip. Son imágenes independientes de madera, hierro, latón, cuero, tela, pelaje, cuerno, escamas, piel, piedra y fieltro que se pueden colocar sobre sus islas UV. La tabla catalogo/pieles.csv enumera las rutas efectivas del complemento ya preparado.
+
+MATERIALES DEL ENTORNO
+
+Cada superficie contiene un PNG RGB de 256 × 256 y dos declaraciones de TEXTURES, una para pared y otra para plano. Los nombres CX tienen hasta ocho caracteres. La repetición prevista es de 64 o 128 MU según la superficie, a dos o cuatro píxeles por MU. La densidad exacta y el uso recomendado están en los CSV.
+
+La base ya aporta los 18 archivos de ciudad, puerto y playa del paquete de costa, arte de mansión y alcantarilla y seis estudios regionales. En las fichas el color nuevo se puede alternar con esos recursos. La rejilla opaca ilustra una tapa, las galerías jugables usan la geometría de reja del juego. Pie de costa, limo y hielo son materiales ópticos. Agua nadable, respiración, marea, hielo transitable, bloqueos y emisividad se configuran en el nivel cuando se programe.
+
+MODELOS
+
+El complemento incluye los atlas de Domingo (las dos rutas usadas en el proyecto), el toro, el Pombero, el Cuero Uñudo y Nahuelito. Conserva las coordenadas UV del juego y la transparencia original de Domingo. El Pombero conserva su atlas de ocho zonas. El Cuero diferencia lomo, vientre, cuerno e iris. Nahuelito mantiene la banda oscura del lomo. Diez materiales compartidos afectan también a los objetos que hagan referencia a esas rutas, entre ellos cofres, estaciones, muelles y ranchos.
+
+Las caras y los materiales tienen áreas de color amplias. El brillo del hierro y el cuerno se concentra en pocos planos. La tela y el pelo se leen a distancia mediante agrupaciones de valor. La malla, las poses y las colisiones provienen del juego. El detalle de las costuras y el aspecto en animación deben revisarse en los mapas finales.
+
+COMPROBACIONES
+
+Recuento de 80 fichas consecutivas y 78 cartas distintas. Las 48 superficies se cargaron en GZDoom 4.14.2 como pared, piso y techo en una escena de control. Las 30 selecciones regionales se compararon con el archivo completo. Las siete parejas JPG en referencias/comparativas_en_GZDoom muestran las mallas del proyecto con la piel original y la alternativa. Se usó una pose fija por modelo, Freedoom como IWAD de la sala de prueba y el mismo encuadre en ambas capturas. Los planos de campaña son una propuesta para construir los niveles en UDB.
+
+PROCEDENCIA
+
+Diseño espacial y arte alternativo elaborados para este proyecto. Texturas nuevas pintadas por generación de imagen, acondicionadas para repetición y empaquetadas en PNG. Materiales de los modelos preparados a partir de referencias y atlas propios del proyecto, con transferencia de color registrada donde las coordenadas lo requerían. Los diagramas aprobados de las tres láminas finales proceden del issue 454.
+
+Progresión, anclas narrativas y control previo a Selene
+https://github.com/damiancurti/Caelum-Argenteum/blob/0953a15e056d02ea65e24b62c7b3be4909b1451c/assets/campaign/PROGRESSION.json
+Reparto canónico de cartas y ubicaciones ya existentes
+https://github.com/damiancurti/Caelum-Argenteum/blob/0953a15e056d02ea65e24b62c7b3be4909b1451c/assets/campaign/ESSENCE_COVERAGE.json
+Galerías de materiales y exportaciones de arte del proyecto
+https://github.com/damiancurti/Caelum-Argenteum/tree/0953a15e056d02ea65e24b62c7b3be4909b1451c/assets/source/art
+Ciudad, puerto y playa
+https://github.com/damiancurti/Caelum-Argenteum/blob/0953a15e056d02ea65e24b62c7b3be4909b1451c/assets/coastal_textures/integration.json
+Referencias aprobadas de MAP02 y MAP03
+https://github.com/damiancurti/Caelum-Argenteum/tree/0953a15e056d02ea65e24b62c7b3be4909b1451c/assets/references/issue_454_maps_20261112
+Administración de Parques Nacionales, ecorregiones
+https://sib.gob.ar/index.php/ecorregiones
+NASA, composición y geología lunar
+https://science.nasa.gov/moon/composition/

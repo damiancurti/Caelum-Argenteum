@@ -1,0 +1,49 @@
+﻿alias,nombre,repeticion_MU,pixeles
+CXSILVIO,Sillar del Limbo,64,256
+CXMOSGRA,Mosaico granate,64,256
+CXLADHUM,Ladrillo de galería,64,256
+CXREJHIE,Rejilla de fundición,64,256
+CXADOQUI,Adoquín ribereño,64,256
+CXREVOQU,Revoque a la cal,128,256
+CXCHAFAB,Chapa de galpón,64,256
+CXTABMUE,Tablón de muelle,64,256
+CXPASOLI,Pastura pampeana,128,256
+CXHUECAR,Huella de carros,128,256
+CXGRASER,Granito serrano,128,256
+CXPIRROS,Piedra de patio,64,256
+CXLIMCAN,Limo con juncos,128,256
+CXHOJANE,Hojarasca de bañado,128,256
+CXCOSTER,Costra termal,64,256
+CXQUEBAR,Corteza de quebracho,64,256
+CXGRAALU,Grava aluvial,128,256
+CXADOBEC,Adobe cuyano,64,256
+CXESTROJ,Estrato rojo,128,256
+CXSALPUN,Costra de salar,128,256
+CXVETAMI,Veta de mineral,64,256
+CXROCTAL,Roca de socavón,128,256
+CXARCCHA,Arcilla chaqueña,128,256
+CXPAJSEC,Paja seca,128,256
+CXLATERI,Laterita colorada,128,256
+CXMANTHO,Mantillo de selva,128,256
+CXRAILIA,Raíz y liana,64,256
+CXPIRSEL,Piedra de reducción,64,256
+CXESCORI,Escoria con brasas,128,256
+CXMURBRA,Mampuesto infernal,64,256
+CXBASRIT,Basalto labrado,64,256
+CXPLAHIE,Placa de hierro,64,256
+CXCOIRON,Ripio con coirón,128,256
+CXHOJLEN,Mantillo de lenga,128,256
+CXTURFUE,Turba fueguina,128,256
+CXLAJSUR,Laja del sur,128,256
+CXTUSSOC,Pasto de tussock,128,256
+CXGUIMAR,Guijarro de marea,128,256
+CXNIEPOL,Nieve de viento,128,256
+CXHIEAZU,Hielo glaciar,128,256
+CXLIMABI,Limo abisal,128,256
+CXROCMAR,Roca colonizada,128,256
+CXPLASUB,Placa Caelith submarina,64,256
+CXCERAER,Cerámica Caelith aérea,64,256
+CXREGLUN,Regolito basáltico,128,256
+CXANORTO,Anortosita fracturada,128,256
+CXMALLUN,Mosaico lunar,64,256
+CXLAMSEL,Piedra del palacio,64,256
