@@ -6,7 +6,7 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The independent beta uses GZDoom installed separately; it requires no Doom IWAD.
 
-**Current release: 5.18.20.** Dropped helmets use the same geometry and tier finishes as the worn head slot. Floor models use the neutral pose and sit on the lowest point of each design. Open the [silent fitting room](assets/validation_v5_18_15/Probador.cmd) to review the equipment.
+**Current release: 5.18.20.** Dropped helmets use the same geometry and tier finishes as the worn head slot. Floor models use the neutral pose and sit on the lowest point of each design. The author approved all 14 model, animation, gallery and equipment checks on 2026-11-28. Open the [silent fitting room](assets/validation_v5_18_15/Probador.cmd) to inspect the equipment.
 
 On Windows, run [the silent model inspection room](assets/validation_v5_18_14/Revisar.cmd) from the source checkout. F6 opens the stationary gallery, F7 the death roster, and F8 Zupay's ground slam. Use Page Up and Page Down to select a figure and R to replay its fall.
 

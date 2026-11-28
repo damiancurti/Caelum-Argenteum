@@ -115,7 +115,7 @@
       "4"
     ]
   },
-  "manual_art_acceptance": "Pending CA903-FAMILIES-01.",
+  "manual_art_acceptance": "passed CA903-FAMILIES-01 on 2026-11-28 in the final review",
   "project_validation": {
     "command": "python -X utf8 validate_project.py",
     "errors": []
@@ -140,6 +140,6 @@
       "heads.jpg",
       "figures.jpg"
     ],
-    "visual_approval": "pending"
+    "visual_approval": "passed CA903-FAMILIES-01 on 2026-11-28 in the final review"
   }
 }

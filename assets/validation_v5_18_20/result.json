@@ -22,7 +22,7 @@
     "size": 2,
     "durability": 540
   },
-  "author_visual_acceptance": "pending",
+  "author_visual_acceptance": "passed CA933-FIT-01 on 2026-11-28 in the final review",
   "tested_package_sha256": "1129ac0b17eeb7d0ffea495c5b3fbadb52459d9d191eb92e52c1d5a09491b28f",
   "capture_sheet": "helmets.jpg"
 }

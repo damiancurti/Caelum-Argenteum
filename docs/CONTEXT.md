@@ -2,9 +2,7 @@
 
 Documentation version: **5.18.20** - 2026-11-28.
 
-#916/917/920/921 sculpts and #924/926/927/928/932/933 equipment await visual review.
-
-#902-905/#909 await visual review. Seven #736 families approved.
+5.18.20: author approved all 14 model, animation, gallery and equipment checks on 2026-11-28. HISTORY records each result. The #906 atlas is available for future maps.
 5.18.4/#899 integrated. 115 checks accepted (#892-898).
 2026-11-26:130PRs/132issues; validation_v5_17_123/integration-decision.json.
 Siege fluency pending; LegacyMap02Revision5 retained.

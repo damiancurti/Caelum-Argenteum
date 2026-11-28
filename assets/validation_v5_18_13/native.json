@@ -8,5 +8,5 @@
   "captures": 40,
   "ground_contact_tic": 48,
   "model_sha256": "7640a7be8738efb738aea5799140290bb4d2636769522826fe53f688f8db6abf",
-  "author_acceptance": "pending"
+  "author_acceptance": "passed CA920-SLAM-01 on 2026-11-28 in the final review"
 }
