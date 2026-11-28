@@ -6,7 +6,7 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The independent beta uses GZDoom installed separately; it requires no Doom IWAD.
 
-**Current release: 5.18.4.** #899 adds campaign custody, multiplayer arrival and hunt fixes, plus Windows launcher and export repairs.
+**Current release: 5.18.5.** Mandinga, Zupay and the giant rat use 70 textured 3D poses derived from their own artwork for idle, movement, attacks, pain, death and sleep. GZDoom 4.14.2 rendered the three in the inspection room. Author visual review is pending.
 
 In 5.18.3, #469 supplies the independent MAP01-MAP03 review
 beta, player guide, optional mode/profile tools and consolidated author terminal.
@@ -4531,7 +4531,7 @@ Long-term encounter/provision balance and unfinished 4.36 systems are developmen
 work in PROJECT/TASKS, not additional author checks for this patch.
 
 <!-- independent-player-guide:start -->
-## Caelum Argenteum 5.18.4 - independent review beta
+## Caelum Argenteum 5.18.5 - independent review beta
 
 This author-review beta contains the current MAP01-MAP03 prologue and existing
 campaign, cooperative, competitive and Trucazo systems. Later campaign locations,

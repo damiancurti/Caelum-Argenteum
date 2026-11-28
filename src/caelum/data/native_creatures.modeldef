@@ -1,0 +1,699 @@
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "miida.md3"
+    Skin 0 "miida.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MIID A 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mdbra.md3"
+    Skin 0 "mdbra.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MDBR A 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mdbrb.md3"
+    Skin 0 "mdbrb.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MDBR B 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mdbrc.md3"
+    Skin 0 "mdbrc.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MDBR C 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mdbrd.md3"
+    Skin 0 "mdbrd.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MDBR D 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "miidb.md3"
+    Skin 0 "miidb.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MIID B 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mirna.md3"
+    Skin 0 "mirna.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MIRN A 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mirnb.md3"
+    Skin 0 "mirnb.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MIRN B 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mirnc.md3"
+    Skin 0 "mirnc.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MIRN C 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mirnd.md3"
+    Skin 0 "mirnd.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MIRN D 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "miwka.md3"
+    Skin 0 "miwka.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MIWK A 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "miwkb.md3"
+    Skin 0 "miwkb.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MIWK B 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mndga.md3"
+    Skin 0 "mndga.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MNDG A 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mndgb.md3"
+    Skin 0 "mndgb.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MNDG B 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mndgc.md3"
+    Skin 0 "mndgc.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MNDG C 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mndgd.md3"
+    Skin 0 "mndgd.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MNDG D 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mndge.md3"
+    Skin 0 "mndge.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MNDG E 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mndgf.md3"
+    Skin 0 "mndgf.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MNDG F 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mndgg.md3"
+    Skin 0 "mndgg.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MNDG G 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mndgh.md3"
+    Skin 0 "mndgh.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MNDG H 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mndgi.md3"
+    Skin 0 "mndgi.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MNDG I 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mndgj.md3"
+    Skin 0 "mndgj.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MNDG J 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mndgk.md3"
+    Skin 0 "mndgk.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MNDG K 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "mndgl.md3"
+    Skin 0 "mndgl.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex MNDG L 0 0
+}
+
+Model CaelumMandinga
+{
+    Path "models/caelum/creatures/mandinga"
+    Model 0 "slmda.md3"
+    Skin 0 "slmda.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex SLMD A 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zuida.md3"
+    Skin 0 "zuida.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUID A 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "slzua.md3"
+    Skin 0 "slzua.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex SLZU A 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zubra.md3"
+    Skin 0 "zubra.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUBR A 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zubrb.md3"
+    Skin 0 "zubrb.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUBR B 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zubrc.md3"
+    Skin 0 "zubrc.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUBR C 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zubrd.md3"
+    Skin 0 "zubrd.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUBR D 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zuidb.md3"
+    Skin 0 "zuidb.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUID B 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupya.md3"
+    Skin 0 "zupya.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY A 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyb.md3"
+    Skin 0 "zupyb.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY B 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyc.md3"
+    Skin 0 "zupyc.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY C 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyd.md3"
+    Skin 0 "zupyd.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY D 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupye.md3"
+    Skin 0 "zupye.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY E 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyf.md3"
+    Skin 0 "zupyf.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY F 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyg.md3"
+    Skin 0 "zupyg.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY G 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyh.md3"
+    Skin 0 "zupyh.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY H 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyi.md3"
+    Skin 0 "zupyi.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY I 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyj.md3"
+    Skin 0 "zupyj.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY J 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyk.md3"
+    Skin 0 "zupyk.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY K 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyl.md3"
+    Skin 0 "zupyl.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY L 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupym.md3"
+    Skin 0 "zupym.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY M 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyn.md3"
+    Skin 0 "zupyn.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY N 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyo.md3"
+    Skin 0 "zupyo.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY O 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyp.md3"
+    Skin 0 "zupyp.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY P 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyq.md3"
+    Skin 0 "zupyq.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY Q 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zupyr.md3"
+    Skin 0 "zupyr.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUPY R 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zurna.md3"
+    Skin 0 "zurna.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZURN A 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zurnb.md3"
+    Skin 0 "zurnb.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZURN B 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zurnc.md3"
+    Skin 0 "zurnc.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZURN C 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zurnd.md3"
+    Skin 0 "zurnd.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZURN D 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zuwka.md3"
+    Skin 0 "zuwka.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUWK A 0 0
+}
+
+Model CaelumZupayColossus
+{
+    Path "models/caelum/creatures/zupay"
+    Model 0 "zuwkb.md3"
+    Skin 0 "zuwkb.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex ZUWK B 0 0
+}
+
+Model CaelumGiantRat
+{
+    Path "models/caelum/creatures/rat"
+    Model 0 "ratga.md3"
+    Skin 0 "ratga.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex RATG A 0 0
+}
+
+Model CaelumGiantRat
+{
+    Path "models/caelum/creatures/rat"
+    Model 0 "ratgb.md3"
+    Skin 0 "ratgb.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex RATG B 0 0
+}
+
+Model CaelumGiantRat
+{
+    Path "models/caelum/creatures/rat"
+    Model 0 "ratgc.md3"
+    Skin 0 "ratgc.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex RATG C 0 0
+}
+
+Model CaelumGiantRat
+{
+    Path "models/caelum/creatures/rat"
+    Model 0 "ratgd.md3"
+    Skin 0 "ratgd.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex RATG D 0 0
+}
+
+Model CaelumGiantRat
+{
+    Path "models/caelum/creatures/rat"
+    Model 0 "ratge.md3"
+    Skin 0 "ratge.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex RATG E 0 0
+}
+
+Model CaelumGiantRat
+{
+    Path "models/caelum/creatures/rat"
+    Model 0 "ratgf.md3"
+    Skin 0 "ratgf.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex RATG F 0 0
+}
+
+Model CaelumGiantRat
+{
+    Path "models/caelum/creatures/rat"
+    Model 0 "ratgg.md3"
+    Skin 0 "ratgg.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex RATG G 0 0
+}
+
+Model CaelumGiantRat
+{
+    Path "models/caelum/creatures/rat"
+    Model 0 "ratgh.md3"
+    Skin 0 "ratgh.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex RATG H 0 0
+}
+
+Model CaelumGiantRat
+{
+    Path "models/caelum/creatures/rat"
+    Model 0 "ratgi.md3"
+    Skin 0 "ratgi.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex RATG I 0 0
+}
+
+Model CaelumGiantRat
+{
+    Path "models/caelum/creatures/rat"
+    Model 0 "ratgj.md3"
+    Skin 0 "ratgj.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex RATG J 0 0
+}
+
+Model CaelumGiantRat
+{
+    Path "models/caelum/creatures/rat"
+    Model 0 "ratgk.md3"
+    Skin 0 "ratgk.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex RATG K 0 0
+}
+
+Model CaelumGiantRat
+{
+    Path "models/caelum/creatures/rat"
+    Model 0 "ratgl.md3"
+    Skin 0 "ratgl.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex RATG L 0 0
+}
+
+Model CaelumGiantRat
+{
+    Path "models/caelum/creatures/rat"
+    Model 0 "ratgm.md3"
+    Skin 0 "ratgm.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex RATG M 0 0
+}
+
+Model CaelumGiantRat
+{
+    Path "models/caelum/creatures/rat"
+    Model 0 "slrta.md3"
+    Skin 0 "slrta.png"
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex SLRT A 0 0
+}
