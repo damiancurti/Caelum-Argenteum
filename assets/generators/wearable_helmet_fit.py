@@ -62,3 +62,18 @@ def tuck(points, family):
     covered = np.clip((z-141)/7,0,1)
     local[:,:2] *= (1+covered*(factor-1))[:,None]
     return local*size
+
+
+def open_face(points, family):
+    """Tuck the crown and ears while keeping the forward cheek and muzzle visible."""
+    covered = tuck(points, family)
+    local = points / stature()[family]
+    front = np.clip((local[:,0]-2)/6,0,1)
+    if family<3:
+        # Hair and skin formerly met at exactly the same compressed ellipse.
+        # Seat the side and rear scalp under the existing hair shell so the
+        # exposed temples under a hat do not flicker between the two skins.
+        temple = (1-front)*np.clip((local[:,2]-144)/7,0,1)
+        covered[:,:2] *= (1-.075*temple)[:,None]
+    below = np.clip((BRIM-local[:,2])/3.5,0,1)
+    return covered + (points-covered)*(front*below)[:,None]

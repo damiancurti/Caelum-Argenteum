@@ -1,6 +1,11 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.18.18** - 2026-11-28.
+Documentation version: **5.18.19** - 2026-11-28.
+
+## Worn helmet appearance (#932)
+
+Worn head equipment uses its armor type for coverage and its existing equipped tier for the finish. Magic uses a felt hat, light protects the crown, medium protects the sides and nape around an open face, and heavy encloses the face. Tier 2 introduces silver fittings. Tier 3 extends the silver and adds polished gold accents.
+
 
 ## 5.18.4 - Repository audit integration (#899)
 

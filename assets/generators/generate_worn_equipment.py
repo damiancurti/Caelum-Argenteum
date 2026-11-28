@@ -9,7 +9,8 @@ import numpy as np
 from PIL import Image
 
 from character_mesh_frames import ROOT, Surface, animate, animate_boot, encode, read_model, rigid_track, subset
-from wearable_helmet_fit import fit_helmet
+from wearable_helmet_fit import fit_helmet, stature
+import wearable_helmet_styles as helmet_styles
 from carried_shields import sculpt as sculpt_shield
 from sculpted_character_art import surfaces as sculpt_surfaces
 
@@ -173,14 +174,41 @@ def armor_module(index, material, name):
     kind = ARMOR[index]
     key = f"a{index}_{material}"
     path = SRC/"models/caelum/inventory"/("armor_"+kind)/(name+".md3")
-    record = build(key, path, "armor", index, kind+"_"+name)
-    if index == 0:
-        fits = [record["sha256"]]
-        for family in range(1,7):
-            mesh = build(f"{key}_f{family}", path, "armor", index, kind+"_"+name, family)
-            fits.append(mesh["sha256"])
-        record["family_sha256"] = fits
-    return record
+    if index != 0:
+        return build(key, path, "armor", index, kind+"_"+name)
+
+    hashes = []
+    shaders = []
+    if name == "heavy":
+        for family in range(7):
+            module = key+(f"_f{family}" if family else "")
+            record = build(module, path, "armor", index, kind+"_"+name, family)
+            hashes.append(record["sha256"])
+        shaders = [s.shader for s in read_model(path.read_bytes())]
+    else:
+        shader = "models/caelum/players/gear/"+key+".png"
+        sculpt = helmet_styles.sculpt(name)
+        raw = sculpt_surfaces(sculpt.parts, shader, lambda part: part.vertices[None])
+        (DEST/(key+".png")).write_bytes(helmet_styles.base_skin(name))
+        for family, scale in enumerate(stature()):
+            module = key+(f"_f{family}" if family else "")
+            meshes = [Surface(rigid_track(s.positions[0]*scale,"face"),s.faces,s.uv,shader) for s in raw]
+            blob = encode(module,meshes)
+            (DEST/(module+".md3")).write_bytes(blob)
+            hashes.append(hashlib.sha256(blob).hexdigest())
+        record = {"frames":len(meshes[0].positions),"surfaces":len(meshes)}
+    base = (DEST/(key+".png")).read_bytes()
+    skins = [hashlib.sha256(base).hexdigest()]
+    for tier in (2,3):
+        image, spec = helmet_styles.finishes(name,tier,base,shaders)
+        skin = DEST/f"{key}_t{tier}.png"
+        image.save(skin)
+        spec.save(DEST/f"{key}_t{tier}_spec.png")
+        skins.append(hashlib.sha256(skin.read_bytes()).hexdigest())
+    return {"module":key, "category":"armor", "item":kind+"_"+name,
+            "source":path.relative_to(SRC).as_posix() if name=="heavy" else "assets/generators/wearable_helmet_styles.py",
+            "frames":record["frames"], "surfaces":record["surfaces"], "sha256":hashes[0],
+            "family_sha256":hashes,"tier_skin_sha256":skins}
 
 
 def main():

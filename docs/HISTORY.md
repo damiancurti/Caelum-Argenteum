@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.18.18** - 2026-11-28.
+Documentation version: **5.18.19** - 2026-11-28.
+
+## 5.18.19 - Distinct helmet silhouettes and tier finishes (#932)
+
+The magic felt hat, light skullcap, open-faced medium helmet and enclosed heavy helmet have three finishes. Tier 2 has bright silver inlay. Tier 3 adds wider silver work and polished gold accents. GZDoom 4.14.2 selected all 168 body/type/tier combinations in the fitting room. The medium helmet left the front open and covered both sides and the nape in all seven family fits. A tier-three medium helmet persisted through a MAP01 save and reload. Visual acceptance is pending.
 
 ## 5.18.18 - Compact helmets and tucked heads (#928)
 

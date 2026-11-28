@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.18.18** - 2026-11-28.
+Documentation version: **5.18.19** - 2026-11-28.
+
+## 5.18.19 - Distinct helmet silhouettes and tier finishes (#932)
+
+Author review remains open. Press H to change helmet type and T to cycle tiers. Rotate with the arrow keys. Use F2/F3 to change family and 0 to remove the helmet.
 
 ## 5.18.18 - Compact helmets and tucked heads (#928)
 

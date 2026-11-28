@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "issue": 466,
-  "runtime_files": 19865,
+  "runtime_files": 19913,
   "metadata_documents": 707,
   "origin_decisions": "assets/distribution/ORIGINS.json",
   "dependency_findings": "assets/distribution/DEPENDENCIES.json",
@@ -17,12 +17,12 @@
   "origin_counts": {
     "project-source": 1067,
     "dejavu-font": 2352,
-    "project-art": 15970,
+    "project-art": 16018,
     "retained-notice": 30,
     "human-mesh": 315,
     "source-specific-audio": 131
   },
-  "exact_metadata_files": 14459,
+  "exact_metadata_files": 14503,
   "files": [
     {
       "path": "ANIMDEFS",
@@ -732,8 +732,8 @@
     },
     {
       "path": "caelum/character/CaelumFamilyModels.zs",
-      "sha256": "221efea798c1f202a9f58bf396b82026c739910ff9de0704cdd26f24ff7dc942",
-      "bytes": 2376,
+      "sha256": "1997765d5133b98e674c28a79dc6db16eadb0826a182707a4c9371c660bf4489",
+      "bytes": 2884,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -772,8 +772,8 @@
     },
     {
       "path": "caelum/character/CaelumWornEquipment.zs",
-      "sha256": "03c8862541b4226a41308af54c6f39aa848fb86b92fd722e664be9eff937e93a",
-      "bytes": 2629,
+      "sha256": "18587f896c3dd4f9f8e4d79c3cbde46ffd98a8f4f5435fd4127864d10de82d88",
+      "bytes": 2871,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -8129,7 +8129,7 @@
     },
     {
       "path": "caelum/world/CaelumPhysicalHazards.zs",
-      "sha256": "f3840e97cabf72021518bad68291d497fb6ddf956911700dd311ca2544ce8097",
+      "sha256": "19a12fd79c62014f6e6e831d79aa10990a3ceff8876d368e0eb3e65a95059f7d",
       "bytes": 20721,
       "decision": "project-source",
       "additional_provenance": [
@@ -8457,7 +8457,7 @@
     },
     {
       "path": "caelum/world/CaelumSewerMaze.zs",
-      "sha256": "c92b5209236055f084ec7ab7651cb451b360c6c0c729cf384541c38b077f6a53",
+      "sha256": "fec35ac99aa5962b77ef520667b3f8e306896f57cc6488164102fcb913f5a72b",
       "bytes": 15766,
       "decision": "project-source",
       "additional_provenance": [],
@@ -32719,8 +32719,8 @@
     },
     {
       "path": "GLDEFS",
-      "sha256": "19a725f713bfd4d77961aab09bd45b126024a52b7e096b6f46716c13bf6685fe",
-      "bytes": 183,
+      "sha256": "0c755c00c03cb454cf336589f65d4b0ff186bc67adf258cfeb0b89e6b724125b",
+      "bytes": 1479,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -221802,8 +221802,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_0.md3",
-      "sha256": "627c96d7be68edfc462dfe9419a2a25e2d98a7b0a9bd1108e2fffb766034e47e",
-      "bytes": 1830980,
+      "sha256": "fc6c9a392f9ff98cd124c475c35cd69dd0339d87f4399774a7996b6382a6f284",
+      "bytes": 498340,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -221816,18 +221816,22 @@
     },
     {
       "path": "models/caelum/players/gear/a0_0.png",
-      "sha256": "3547fac72782333d6dfa5d8a067b661ced48970ad0865bf4e41564d85b1da123",
-      "bytes": 428542,
+      "sha256": "220e0f75e4971bad8c3dc4af2862b36046ca11a4bf9ce36433b89db39df35345",
+      "bytes": 27556,
       "decision": "project-art",
-      "additional_provenance": [],
-      "exact_metadata": [],
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
     },
     {
       "path": "models/caelum/players/gear/a0_0_f1.md3",
-      "sha256": "e1d812e8c5603a024969cc697d48348c7510b977857858a784b1d18d2151c8d5",
-      "bytes": 1830980,
+      "sha256": "3f902a19511c7ed0296ff36f032228ec671d18b52183f1f4ce7bd55a661b0e23",
+      "bytes": 498340,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -221840,8 +221844,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_0_f2.md3",
-      "sha256": "23afbc574f4d84975bd2ac6e1da5c0bd44ae9e650030e0e429f39b7e6a0b3253",
-      "bytes": 1830980,
+      "sha256": "144d669fd7deeccb692c2fcdc190d6ab1cc64a10bc76321322b48628bc6f000c",
+      "bytes": 498340,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -221854,8 +221858,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_0_f3.md3",
-      "sha256": "0ced2efea550e1ca75a339fb5998bab0729f39dddcc3910f6a165521000b403a",
-      "bytes": 1830980,
+      "sha256": "33fc3140047aaa315f991e681fe00c3aefdc3a460299c6d42bc17d92c5575b1e",
+      "bytes": 498340,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -221868,8 +221872,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_0_f4.md3",
-      "sha256": "6c835a5ea7e989f6e5cf81bff4c1e15dd00580a8c7a808360e7be39b163b0f32",
-      "bytes": 1830980,
+      "sha256": "754161a080210eeb999eaf5962625fd0d74dbe99abeda2705128e4067b2689a9",
+      "bytes": 498340,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -221882,8 +221886,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_0_f5.md3",
-      "sha256": "3b01550bcf1a6a871995014b1ce613e077f3192a5fabbf4ad99c92fd1172131e",
-      "bytes": 1830980,
+      "sha256": "02b10a5061c755aee5a0790175e6838b4a9fc965ddf19dd130fd260020a43575",
+      "bytes": 498340,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -221896,8 +221900,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_0_f6.md3",
-      "sha256": "4bb7d6ddc94c09892d4b55d815f2a366a8a300eed37977b5316af06138b7e712",
-      "bytes": 1830980,
+      "sha256": "8bbb52dc2bdd32956bff39f98e6344b2107bb041ece166e0949cfce6182e850b",
+      "bytes": 498340,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -221909,9 +221913,57 @@
       "dependency_ids": []
     },
     {
+      "path": "models/caelum/players/gear/a0_0_t2.png",
+      "sha256": "747e282079cf30478378e77658936b1d788d452187f76ae438c883a058de4fb6",
+      "bytes": 29159,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_0_t2_spec.png",
+      "sha256": "f782f4d5adb3523a88173d863d0c5837adaf95dccc6a5440c448261ecee90332",
+      "bytes": 255,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_0_t3.png",
+      "sha256": "84959609a4c16bfd5de37469304d14842e5f3943777943d3a01587ffb637d918",
+      "bytes": 29642,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_0_t3_spec.png",
+      "sha256": "d7edb8eba69c01a4a4508a43a4350ef226e3b9cb5a3074300f2baed35a876074",
+      "bytes": 348,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "models/caelum/players/gear/a0_1.md3",
-      "sha256": "a98fcaccd77f365e5ab6d0baa3c285787701f1202183e9e1ae0b4d7445d17d6d",
-      "bytes": 960036,
+      "sha256": "bb2645426122f8a46de3c5d21a320d51d79a68c1f54657a8e19e2b06f17a4241",
+      "bytes": 549060,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -221924,18 +221976,22 @@
     },
     {
       "path": "models/caelum/players/gear/a0_1.png",
-      "sha256": "01b2bb0155630e42ecd8bd34ac81e425a5860303d3b5f2992d2ddc7ff9f80047",
-      "bytes": 355195,
+      "sha256": "a7a1e29e7d2cf889316eeb7a1955f43410e9ccdc64709d5d5e18adc4887a22fd",
+      "bytes": 27450,
       "decision": "project-art",
-      "additional_provenance": [],
-      "exact_metadata": [],
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
     },
     {
       "path": "models/caelum/players/gear/a0_1_f1.md3",
-      "sha256": "d35078339a4629a1a9157a9371ca1ce5f954fb0ec1fd6c5ca0fe36f0d49eadf3",
-      "bytes": 960036,
+      "sha256": "185067fe9f910d862dcadd31a1afccb4b7abedd6fa10999cd944b3476594dd98",
+      "bytes": 549060,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -221948,8 +222004,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_1_f2.md3",
-      "sha256": "b0f5a3f2c38e1312c4c55510e3b89d83f213842140fc31afc98456f0da841924",
-      "bytes": 960036,
+      "sha256": "6ed4be4f752d796fafc818b2a19c067a0ff77cc364068fc315325024335f1609",
+      "bytes": 549060,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -221962,8 +222018,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_1_f3.md3",
-      "sha256": "104140502dd7a0aac678a2670540098bcee47f80ae8ab2980fc6df2d7dbd8883",
-      "bytes": 960036,
+      "sha256": "d55ae8240f87fc4137afb031f4dacc91a49372f05aa3689c6aba7c74170e6dc2",
+      "bytes": 549060,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -221976,8 +222032,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_1_f4.md3",
-      "sha256": "248aad88bb715cdd900a1867bec259869776714b5297a53f65d21836ca00a41a",
-      "bytes": 960036,
+      "sha256": "095cfa3c759a53290e2e6a4cc494f3f6d05ed4d1c96df956d6a0a430b1a9ac6d",
+      "bytes": 549060,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -221990,8 +222046,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_1_f5.md3",
-      "sha256": "74ff2a390d4fca6c1d2f9dec84586f9bbb78a356ac2ed9d9894a682562585835",
-      "bytes": 960036,
+      "sha256": "4156b4c857a9754b3077c78d682a4923861621a3d222474829c9e95f558f138e",
+      "bytes": 549060,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -222004,8 +222060,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_1_f6.md3",
-      "sha256": "f51883381c80f192a2a62526e7caaa8c24125082026359052a5585d2e86af689",
-      "bytes": 960036,
+      "sha256": "714a41aeba3235ddc11850ca98c6390da3e110774a2365d129a45fe2dc18bbfa",
+      "bytes": 549060,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -222017,9 +222073,57 @@
       "dependency_ids": []
     },
     {
+      "path": "models/caelum/players/gear/a0_1_t2.png",
+      "sha256": "86eaada56cd21c6a4d28c06ee0dd48f595bd94ba65980bd71a791d845c396bd8",
+      "bytes": 29043,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_1_t2_spec.png",
+      "sha256": "f782f4d5adb3523a88173d863d0c5837adaf95dccc6a5440c448261ecee90332",
+      "bytes": 255,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_1_t3.png",
+      "sha256": "be0293c918a34bae9f844d3a3b0e4c7b9e8ca5113f6b2edb22e376ed28efe3a1",
+      "bytes": 29651,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_1_t3_spec.png",
+      "sha256": "d7edb8eba69c01a4a4508a43a4350ef226e3b9cb5a3074300f2baed35a876074",
+      "bytes": 348,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "models/caelum/players/gear/a0_2.md3",
-      "sha256": "a1ab93f2928ccaca21c88c51e60ef98d65442a069ae5b2f369f7c86c9e1cb1f4",
-      "bytes": 1812516,
+      "sha256": "278e8dc93484c528aed8699100ce999ff0ccf4050831bf8c7d5dfa647f7c20ca",
+      "bytes": 1151892,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -222032,18 +222136,22 @@
     },
     {
       "path": "models/caelum/players/gear/a0_2.png",
-      "sha256": "f6371bdbb259369d755e99108f12934a7bbc3103b844bb78271b7b6d283b2188",
-      "bytes": 247571,
+      "sha256": "a7a1e29e7d2cf889316eeb7a1955f43410e9ccdc64709d5d5e18adc4887a22fd",
+      "bytes": 27450,
       "decision": "project-art",
-      "additional_provenance": [],
-      "exact_metadata": [],
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
     },
     {
       "path": "models/caelum/players/gear/a0_2_f1.md3",
-      "sha256": "fac4810e957cf2e2d20ecbb66aa8e507f7e8f8c58b6599cbb2f173b7cf8e470e",
-      "bytes": 1812516,
+      "sha256": "b3a87950259dfe1308bb7f53d854045fd9bab495bc4d7d3e7a8d3b1207e22649",
+      "bytes": 1151892,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -222056,8 +222164,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_2_f2.md3",
-      "sha256": "1d22ab9e878482c79e67e801abddf233d5edfdccd073caa5da33d7d72baeb80b",
-      "bytes": 1812516,
+      "sha256": "20fb4cad598012a28d6191877c68c9db8937b8c4fddb38003601fce25c96d7fb",
+      "bytes": 1151892,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -222070,8 +222178,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_2_f3.md3",
-      "sha256": "30df9358576206c58293b7d408f3da4cf2291fb9552bc2d8f75749fc0cf3a8b3",
-      "bytes": 1812516,
+      "sha256": "d0c839ae7e49a17352538d7831da005aeba8af3870d389f02d387de5eb0a800e",
+      "bytes": 1151892,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -222084,8 +222192,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_2_f4.md3",
-      "sha256": "cfbad62bea67ef4f8e5f164165ba42d7fac963d6eeb8c285a1ce9df777e9ccdc",
-      "bytes": 1812516,
+      "sha256": "c45c9bed6e6a0c7bd9cbe13b06a863cd5fe8e1d3e41800a0e9f300e40e35bdbe",
+      "bytes": 1151892,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -222098,8 +222206,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_2_f5.md3",
-      "sha256": "b89b3645d5865d4623498c6d9d1631c4e011b74ca147bc374cfc95fa14195dfd",
-      "bytes": 1812516,
+      "sha256": "2ddc409cf8c680ca7abe97036e1ec6e0d5314bd8c9eed2529cf9d54b1e92016a",
+      "bytes": 1151892,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -222112,8 +222220,8 @@
     },
     {
       "path": "models/caelum/players/gear/a0_2_f6.md3",
-      "sha256": "6e11731d6e45e48a2fe695f8e656d5a80edc34ce1a929eb3b0ae2a604b032934",
-      "bytes": 1812516,
+      "sha256": "3f55f6079057a83a8e23bb3ba90c9cf11d0e3e304ecd9bd59cb387e1173db7c3",
+      "bytes": 1151892,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -222121,6 +222229,54 @@
       "exact_metadata": [
         "assets/source/art/worn_equipment_904/MODULES.json"
       ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_2_t2.png",
+      "sha256": "86eaada56cd21c6a4d28c06ee0dd48f595bd94ba65980bd71a791d845c396bd8",
+      "bytes": 29043,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_2_t2_spec.png",
+      "sha256": "f782f4d5adb3523a88173d863d0c5837adaf95dccc6a5440c448261ecee90332",
+      "bytes": 255,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_2_t3.png",
+      "sha256": "be0293c918a34bae9f844d3a3b0e4c7b9e8ca5113f6b2edb22e376ed28efe3a1",
+      "bytes": 29651,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_2_t3_spec.png",
+      "sha256": "d7edb8eba69c01a4a4508a43a4350ef226e3b9cb5a3074300f2baed35a876074",
+      "bytes": 348,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
     },
@@ -222143,8 +222299,12 @@
       "sha256": "6ca230a47ad6fd49dfd1f5f282a4c0d747053d4f12bc7069b5c9df0c90b710c1",
       "bytes": 557777,
       "decision": "project-art",
-      "additional_provenance": [],
-      "exact_metadata": [],
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
     },
@@ -222229,6 +222389,54 @@
       "exact_metadata": [
         "assets/source/art/worn_equipment_904/MODULES.json"
       ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_3_t2.png",
+      "sha256": "9aa766b4fa33ee2c883060b327b8ec5ae1aeb191e38809798e67a62a22144e31",
+      "bytes": 606286,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_3_t2_spec.png",
+      "sha256": "f5c49adec30cc62faf9642d17d5fbe79a02733c67696d7f18f0ff4ad9b96acf2",
+      "bytes": 1147,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_3_t3.png",
+      "sha256": "aaed993e3823da676d1d06df4ddf8666cdf03a9463ba3c1c678dbc0655da51f4",
+      "bytes": 616950,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/MODULES.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/a0_3_t3_spec.png",
+      "sha256": "ba00ed5b3535cfc5302f54732a1202cb4019af5317f8d14f0497386e148fc98d",
+      "bytes": 1628,
+      "decision": "project-art",
+      "additional_provenance": [],
+      "exact_metadata": [],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
     },
@@ -227952,6 +228160,454 @@
       "path": "models/caelum/players/invisible.png",
       "sha256": "980055f32603462384baae4a3dbfa580f0579627bb98c190f84443a047126613",
       "bytes": 68,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head0_0.md3",
+      "sha256": "5aa0f19e4de0f803f935f4ee108b2305e28aa223afbd307f4cbbe256897398fb",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head0_1.md3",
+      "sha256": "fc139bab1d2c55c55db16762c7719e3a78e3d7064eb382dde40228e3f4a814fa",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head0_2.md3",
+      "sha256": "d7b6e41e834baa1d307f9a04d1dc87004d99d6e9dddb47c87399f5e57b6150b7",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head0_3.md3",
+      "sha256": "fb56c1526a89a6207ab4db4152a1c51ff6df5bd27bbbc7eb48f3039a9b265488",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head10_0.md3",
+      "sha256": "c95a20c27c16d62ec82a4eb407eee39ea56694e4b9207a5bbca11351c489afae",
+      "bytes": 370924,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head11_0.md3",
+      "sha256": "d4cf7361bca951fe0a2497eb9cadd880ace77d63e3a94d231e592cc4f0414fb4",
+      "bytes": 370924,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head12_0.md3",
+      "sha256": "7a67d6fd7e83001787c69863994bc10f8506913e9c716b6510f388231dc427a8",
+      "bytes": 1298524,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head13_0.md3",
+      "sha256": "582f1576d2a5804531ddabe92487f3dd26b061838b682772fadb9e08b542042a",
+      "bytes": 1298524,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head1_0.md3",
+      "sha256": "a50979ea0734ffc53396da7d1c396c7fa4d507b900332d7e7b7ac385eacfb42d",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head1_1.md3",
+      "sha256": "0f0427416212d8e3afd425cd577f158e14736ed04e279380d2ea39981b19abfc",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head1_2.md3",
+      "sha256": "efcfdbae4690e54dfc152ab33e3aad32b80b3cb55c7d80e799412b1e1bd083b0",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head1_3.md3",
+      "sha256": "355bcadaf57595447da0493f8f26b75460b47d97647576746f4704e74b548aa6",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head2_0.md3",
+      "sha256": "36517f4f242db7aec2fc9621d65bf2fd343a30a15737d1650298c6f58d38ac3a",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head2_1.md3",
+      "sha256": "85a77bbdb333fed28e57832e6bf39afa82c91814388744693870905b3484aace",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head2_2.md3",
+      "sha256": "23f8a8aa66e4e9b71b0a8b1abe32d39337147289d889ac5e7a9e07a8e77c467e",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head2_3.md3",
+      "sha256": "76417c247121c23abde3952582ed2b71b616bb37c4ba0f1baeff53274e3c9bc8",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head3_0.md3",
+      "sha256": "bc310ca9fb9c7d8d02c6b9d3db8b491850dcdcb75de701b0483fdee0bec60c26",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head3_1.md3",
+      "sha256": "4bcd4d873ff674a4764a9250c4aa113d1ad74da6ad7810a2f58ca0ec527410dc",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head3_2.md3",
+      "sha256": "efd7b0229e16b13377a0bc83967a9bb8178fd67fd0a3be931188fddd84b2dc07",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head3_3.md3",
+      "sha256": "e802b18713c1ca377cd6fe23ea052685b36cab076505e2c42049b91abc9b4472",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head4_0.md3",
+      "sha256": "54dc838c6264b1c643bd56c9f8fef422608b79439dd70a5e0e8d3627b20a0942",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head4_1.md3",
+      "sha256": "bbabc2e4d11b76010107b0ec27120dd1187496b36ac827b12f99c74cc48d09ff",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head4_2.md3",
+      "sha256": "d7124483aac55ff3a08188ef0989e9079620b8bb35017e97bfa92f72c757b7fa",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head4_3.md3",
+      "sha256": "2e0f1d1f0a43d56ce1002f9c6c83c00a0a41f288e748ef22ac046c2bfe914d4e",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head5_0.md3",
+      "sha256": "0d6ce509a5e3fcf377784fb5d5bf1ac59f01b2534916a6d1628d4bf559eea560",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head5_1.md3",
+      "sha256": "c60ce5d4f00aae4771f50f3cfbc0cb08b2c30958109bbf53a042900fe1f68c6a",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head5_2.md3",
+      "sha256": "7c786b59f91c881a017ccaddd8111d7f6b808ddfb72e32de468581bd2433bab7",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head5_3.md3",
+      "sha256": "e7882fea2a13ef60091ad43365f10f00d1b0bde274704f32f2f8957aa33f77e6",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head6_0.md3",
+      "sha256": "4d3fcee4b59cda52720895040d93c9cbc60f80d0d938b23fa410323b685ecd73",
+      "bytes": 323612,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head7_0.md3",
+      "sha256": "198e77cc2e324e7c6fa157d0284de0b4f19bc4d7caf0401c5cc8b1d2dd8950e5",
+      "bytes": 323612,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head8_0.md3",
+      "sha256": "10112e0dde840328cc1ef9a2f625f28099579b81dbbfdc363a3b918ec52545dd",
+      "bytes": 321772,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/open/head9_0.md3",
+      "sha256": "38edf016c3691f97cf9a079b59872ca419f4603efe79b726ae8091ef59718f69",
+      "bytes": 321772,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"

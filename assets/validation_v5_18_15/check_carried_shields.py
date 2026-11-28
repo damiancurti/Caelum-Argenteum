@@ -43,7 +43,7 @@ def photograph(game,out):
     out.mkdir(parents=True,exist_ok=True)
     overlay,sockets=fixture(out,game)
     config=controls(out,[])
-    commands=["wait 140","netevent outfit_zoom","wait 10"]
+    commands=["wait 140","netevent outfit_detail 1","wait 10"]
     for item,(slot,kind,_) in enumerate(sockets):
         if slot!=1:
             continue

@@ -11,7 +11,7 @@ from PIL import Image
 
 from character_mesh_frames import ROOT, Surface, animate, animate_boot, encode, rigid_track
 from sculpted_character_art import Sculpt, paint, surfaces
-from wearable_helmet_fit import tuck
+from wearable_helmet_fit import open_face, tuck
 from sculpted_humanoid import figure, head, skull_profile
 
 SRC = ROOT / "src"
@@ -395,6 +395,7 @@ def follow(points, joint):
 def main():
     output = {}
     (OUT/"tuck").mkdir(exist_ok=True)
+    (OUT/"open").mkdir(exist_ok=True)
 
     def emit(name, blob):
         path = OUT / name
@@ -450,6 +451,10 @@ def main():
             def covered(part):
                 return follow(tuck(fit(part), i//2), "face")
             emit("tuck/"+key+".md3", encode(key, surfaces(model.parts, texture, covered)))
+            if key.startswith("head"):
+                def uncovered_face(part):
+                    return follow(open_face(fit(part), i//2), "face")
+                emit("open/"+key+".md3", encode(key, surfaces(model.parts, texture, uncovered_face)))
 
         parts = figure(family, female)
         cloth = {

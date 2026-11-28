@@ -66,6 +66,9 @@ def fixture(out, game):
                 mesh = package.read(stem + (f"_f{family}" if family else "") + ".md3")
                 assert hashlib.sha256(mesh).hexdigest() == checksum, (key, family)
                 assert mesh[:4] == b"IDP3" and struct.unpack_from("<I", mesh, 76)[0] == 33, key
+            for tier,digest in enumerate(module.get("tier_skin_sha256",[]),1):
+                skin=stem+(f"_t{tier}" if tier>1 else "")+".png"
+                assert hashlib.sha256(package.read(skin)).hexdigest()==digest, skin
             assert package.read(stem + ".png").startswith(b"\x89PNG\r\n\x1a\n"), key
     assert set(sockets[1:]) == expected_sockets() and len(set(sockets)) == len(sockets)
     source = (HERE / "fitting_room.zs").read_text("utf8")
@@ -91,7 +94,7 @@ def controls(out, pairs):
         "snd_mastervolume 0", "i_pauseinbackground false", "vid_activeinbackground true",
         "vid_lowerinbackground false", "show_messages false", "crosshair 0", "screenblocks 12",
         'bind z "netevent outfit_zoom"', 'bind e "netevent outfit_shield"', 'bind h "netevent outfit_helm"',
-        'bind f4 "netevent outfit_face"', 'bind f5 "netevent outfit_hair"',
+        'bind t "netevent outfit_next_tier"', 'bind f4 "netevent outfit_face"', 'bind f5 "netevent outfit_hair"',
         'bind s "netevent outfit_seat"', 'bind b "netevent outfit_boots"', 'bind 0 "netevent outfit_empty"',
         "r_drawplayersprites false", "vid_maxfps 60", 'bind pgup "netevent outfit_item -1"',
         'bind pgdn "netevent outfit_item 1"', 'bind f2 "netevent outfit_form -1"',
@@ -176,7 +179,7 @@ def main():
     items = list(dict.fromkeys([0, *args.items])) if args.items else range(len(sockets))
     pairs = [(f, i) for f in (args.forms or []) for i in items]
     print("AvPág/RePág cambia de pieza. F2/F3 cambia de personaje. Las flechas giran la figura.\n"
-          "H: cascos. F4/F5: cara y peinado. Z: acercar. E: escudos. B: botas. S: sentarse o levantarse. 0: quitar equipo. C: conjunto. Sonido desactivado.", flush=True)
+          "H: tipo de casco. T: tier. F4/F5: cara y peinado. Z: acercar. E: escudos. B: botas. S: sentarse o levantarse. 0: quitar equipo. C: conjunto. Sonido desactivado.", flush=True)
     awake = ctypes.windll.kernel32.SetThreadExecutionState
     awake.argtypes = [ctypes.c_uint]
     awake.restype = ctypes.c_uint

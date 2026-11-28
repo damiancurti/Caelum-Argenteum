@@ -23,8 +23,13 @@ class CaelumFamilyModels : Object play
         int color=id<6?Clamp(profile.HairColor,0,5):0;
         int key=(((((id*3+tone)*4+face)*4+hair)*6+color)*2+int(gloves))+1;
         bool boots=WearsArmor(body,CaelumConstants.ARMOR_SLOT_FEET);
-        bool helmet=WearsArmor(body,CaelumConstants.ARMOR_SLOT_HEAD);
-        key=key*4+int(boots)*2+int(helmet);
+        int headType=body.ArmorModel!=null?body.ArmorModel.ArmorType[CaelumConstants.ARMOR_SLOT_HEAD]:CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
+        int savedHead=body.WornVisualKeys[2+CaelumConstants.ARMOR_SLOT_HEAD];
+        if(body.health<=0 && savedHead!=0)
+            headType=savedHead<0?CaelumConstants.ARMOR_TYPE_BASE_CLOTHING:(savedHead-1)%(CaelumConstants.ARMOR_TYPE_HEAVY+1);
+        bool helmet=headType!=CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
+        bool enclosed=headType==CaelumConstants.ARMOR_TYPE_HEAVY;
+        key=key*8+int(boots)*4+int(helmet)*2+int(enclosed);
         if(body.FamilyVisualKey==key)return;
         body.FamilyVisualKey=key;
         // El mismo casco necesita otro ajuste cuando se vuelve a enlazar el cuerpo vivo.
@@ -39,9 +44,9 @@ class CaelumFamilyModels : Object play
         BindSlot(body,4,base..(gloves?"_gloves.md3":"_hands.md3"),
             gloves?cloth:String.Format("hskin%d.png",skin));
         String head=String.Format("head%d_%d",id,face);
-        String cut=helmet?"tuck/":"";
+        String cut=enclosed?"tuck/":helmet?"open/":"";
         BindSlot(body,5,cut..head..".md3",String.Format("%s_%d.png",head,tone));
         String style=String.Format("hair%d_%d",id<6?id:0,hair);
-        BindSlot(body,6,cut..style..".md3",String.Format("%s_%d.png",style,color),id<6);
+        BindSlot(body,6,(helmet?"tuck/":"")..style..".md3",String.Format("%s_%d.png",style,color),id<6);
     }
 }
