@@ -7,6 +7,8 @@ class FittingEye : Actor
 class FittingRoom : StaticEventHandler
 {
     Actor eye;
+    CaelumArmorPickup groundHelmet;
+    bool onFloor;
     CaelumShieldPickup testShield;
     int form, item, rotation, face, hair, helmetTier;
     bool still;
@@ -28,6 +30,13 @@ class FittingRoom : StaticEventHandler
         else if(e.Name=='outfit_empty'){item=0;combination=false;}
         else if(e.Name=='outfit_next_tier')helmetTier=1+helmetTier%3;
         else if(e.Name=='outfit_tier')helmetTier=Clamp(e.Args[0],1,3);
+        else if(e.Name=='outfit_ground')
+        {
+            static const int slots[]={SLOTS};
+            if(slots[item]==2)onFloor=!onFloor;
+            else {cycleSlot(2);onFloor=true;}
+        }
+        else if(e.Name=='outfit_floor')onFloor=e.Args[0]!=0;
         else if(e.Name=='outfit_helm')cycleSlot(2);
         else if(e.Name=='outfit_face')face=(face+1)%4;
         else if(e.Name=='outfit_hair')hair=(hair+1)%4;
@@ -127,8 +136,29 @@ class FittingRoom : StaticEventHandler
         double direction=292+rotation*30;
         double dist=height*(detail?(chosen==2?.55:.79):1.35);
         double eyeHeight=height*(detail && chosen==2?.62:detail && chosen==5?.10:.40);
-        eye.SetOrigin((cos(direction)*dist,sin(direction)*dist,eyeHeight),false);
-        eye.Angle=direction+180;eye.Pitch=0;
+        Vector3 eyePos=(cos(direction)*dist,sin(direction)*dist,eyeHeight);
+        double pitch=0;
+        if(groundHelmet)groundHelmet.bInvisible=!(onFloor && chosen==2);
+        if(onFloor && chosen==2)
+        {
+            if(!groundHelmet)
+                groundHelmet=CaelumArmorPickup(Actor.Spawn('CaelumArmorPickup',(100,0,p.FloorZ),NO_REPLACE));
+            if(groundHelmet)
+            {
+                groundHelmet.args[0]=CaelumConstants.ARMOR_SLOT_HEAD;
+                groundHelmet.args[1]=kinds[item];groundHelmet.args[2]=helmetTier;
+                groundHelmet.Angle=p.Angle;
+                groundHelmet.UpdateWorldSprite();
+                double radius=detail?18:33;
+                eyePos=groundHelmet.Pos+(cos(direction)*radius,sin(direction)*radius,radius*.28+1);
+                // El penacho del pesado debe quedar por debajo de los controles.
+                pitch=kinds[item]==CaelumConstants.ARMOR_TYPE_HEAVY?24:32;
+                if(report)Console.Printf("FLOOR kind=%d tier=%d frame=%d",groundHelmet.PreviewItemType(),
+                    groundHelmet.PreviewTier(),groundHelmet.frame);
+            }
+        }
+        eye.SetOrigin(eyePos,false);
+        eye.Angle=direction+180;eye.Pitch=pitch;
         if(report)
         {
             Console.Printf("FITTING form=%d resolved=%d item=%d slots=%d,%d,%d,%d,%d,%d",form,CaelumAppearance.Identity(look.Race,look.Sex,look.BeastForm),item,p.WornVisualKeys[0],p.WornVisualKeys[1],p.WornVisualKeys[2],p.WornVisualKeys[3],p.WornVisualKeys[4],p.WornVisualKeys[5]);
@@ -148,9 +178,10 @@ class FittingRoom : StaticEventHandler
         if(slots[item]==2 || combination)title=title..String.Format("   |   Tier %d",helmetTier);
         Screen.DrawText(SmallFont,Font.CR_WHITE,320-SmallFont.StringWidth(title)/2,7,title,DTA_VirtualWidth,640,DTA_VirtualHeight,360,DTA_KeepRatio,true);
         String mode=combination?"Conjunto equipado":"Pieza sola";
-        if(seated)mode=mode.."  |  Sentado";
+        if(onFloor && slots[item]==2)mode="En el suelo";
+        else if(seated)mode=mode.."  |  Sentado";
         Screen.DrawText(SmallFont,Font.CR_GRAY,320-SmallFont.StringWidth(mode)/2,19,mode,DTA_VirtualWidth,640,DTA_VirtualHeight,360,DTA_KeepRatio,true);
-        String keys="B Botas   S Postura   E Escudos   H Cascos   T Tier   0 Quitar   Z Zoom";
+        String keys="B Botas   S Postura   E Escudos   H Cascos   T Tier   G Suelo   0 Quitar   Z Zoom";
         Screen.DrawText(SmallFont,Font.CR_GRAY,320-SmallFont.StringWidth(keys)/2,31,keys,DTA_VirtualWidth,640,DTA_VirtualHeight,360,DTA_KeepRatio,true);
     }
 }

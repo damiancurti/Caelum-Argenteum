@@ -1,6 +1,10 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.18.19** - 2026-11-28.
+Documentation version: **5.18.20** - 2026-11-28.
+
+## 5.18.20 - Matching helmet pickups (#933)
+
+Dropped helmets use the same geometry and tier finishes as the worn head slot. Floor models use the neutral pose and sit on the lowest point of each design. The actual pickup selects its finish from the equipment tier. The art uses the same UV layout, colour texture and specular maps in both views. [Compare the twelve helmets](../assets/validation_v5_18_20/helmets.jpg).
 
 ## 5.18.19 - Distinct helmet silhouettes and tier finishes (#932)
 

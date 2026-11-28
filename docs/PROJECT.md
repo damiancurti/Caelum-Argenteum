@@ -1,6 +1,10 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.18.19** - 2026-11-28.
+Documentation version: **5.18.20** - 2026-11-28.
+
+## 5.18.20 - Matching helmet pickups (#933)
+
+The silent fitting room displays each helmet both on the character and on the floor.
 
 ## 5.18.19 - Distinct helmet silhouettes and tier finishes (#932)
 

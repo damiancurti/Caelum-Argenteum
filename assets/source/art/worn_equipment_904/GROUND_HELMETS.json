@@ -1,0 +1,12 @@
+{
+  "issue": 933,
+  "source": "frame 0 of the four human worn helmets",
+  "generator": "assets/generators/generate_helmet_drops.py",
+  "sha256": {
+    "src/models/caelum/players/gear/ground/a0_0.md3": "9160c6efd832437c795a1570a22b9f8c17a87bac01cbc2661d84fb1713f30392",
+    "src/models/caelum/players/gear/ground/a0_1.md3": "12f3ac806267c8e5f4563081f8df8a7568cd3a21e6159029c586ddf3cfd50211",
+    "src/models/caelum/players/gear/ground/a0_2.md3": "8e962ebdf2dbcba2d3164fb5a446573f9cc9b29f29ae7a7e308bfa7cd4eff6c9",
+    "src/models/caelum/players/gear/ground/a0_3.md3": "c4a8cd1078b9ae87ea5c2735058d9cd883c2654ac4c3f14066ffc0b2f4929ecc",
+    "src/caelum/data/ground_helmet_tiers.modeldef": "1e6ad84af66a0b700c50e0b3bc270721f6a9f5ed1ecfd3c0cfa9eb325c914057"
+  }
+}

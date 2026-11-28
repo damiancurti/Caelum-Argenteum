@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.18.19** - 2026-11-28.
+Documentation version: **5.18.20** - 2026-11-28.
+
+## 5.18.20 - Matching helmet pickups (#933)
+
+Dropped helmets use the same geometry and tier finishes as the worn head slot. GZDoom 4.14.2 completed twelve pickup, equip, drop, recollection and re-equip cycles. Each item kept its type, tier, size, durability and inventory identity. On MAP01, a dropped medium tier 3 helmet from 5.18.19 showed its new finish after loading and after saving and loading again on 5.18.20. See the [native checks](../assets/validation_v5_18_20/result.json). Visual acceptance is pending.
 
 ## 5.18.19 - Distinct helmet silhouettes and tier finishes (#932)
 

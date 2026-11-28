@@ -1,0 +1,12 @@
+Model CaelumArmorPickup { Path "models/caelum/players/gear" Model 0 "ground/a0_0.md3" Skin 0 "a0_0.png" Scale 1.31764706 1.31764706 1.31764706 CorrectPixelStretch DontCullBackFaces FrameIndex CHMG B 0 0 }
+Model CaelumArmorPickup { Path "models/caelum/players/gear" Model 0 "ground/a0_0.md3" Skin 0 "a0_0_t2.png" Scale 1.31764706 1.31764706 1.31764706 CorrectPixelStretch DontCullBackFaces FrameIndex CHMG C 0 0 }
+Model CaelumArmorPickup { Path "models/caelum/players/gear" Model 0 "ground/a0_0.md3" Skin 0 "a0_0_t3.png" Scale 1.31764706 1.31764706 1.31764706 CorrectPixelStretch DontCullBackFaces FrameIndex CHMG D 0 0 }
+Model CaelumArmorPickup { Path "models/caelum/players/gear" Model 0 "ground/a0_1.md3" Skin 0 "a0_1.png" Scale 1.31764706 1.31764706 1.31764706 CorrectPixelStretch DontCullBackFaces FrameIndex CHLT B 0 0 }
+Model CaelumArmorPickup { Path "models/caelum/players/gear" Model 0 "ground/a0_1.md3" Skin 0 "a0_1_t2.png" Scale 1.31764706 1.31764706 1.31764706 CorrectPixelStretch DontCullBackFaces FrameIndex CHLT C 0 0 }
+Model CaelumArmorPickup { Path "models/caelum/players/gear" Model 0 "ground/a0_1.md3" Skin 0 "a0_1_t3.png" Scale 1.31764706 1.31764706 1.31764706 CorrectPixelStretch DontCullBackFaces FrameIndex CHLT D 0 0 }
+Model CaelumArmorPickup { Path "models/caelum/players/gear" Model 0 "ground/a0_2.md3" Skin 0 "a0_2.png" Scale 1.31764706 1.31764706 1.31764706 CorrectPixelStretch DontCullBackFaces FrameIndex CHMD B 0 0 }
+Model CaelumArmorPickup { Path "models/caelum/players/gear" Model 0 "ground/a0_2.md3" Skin 0 "a0_2_t2.png" Scale 1.31764706 1.31764706 1.31764706 CorrectPixelStretch DontCullBackFaces FrameIndex CHMD C 0 0 }
+Model CaelumArmorPickup { Path "models/caelum/players/gear" Model 0 "ground/a0_2.md3" Skin 0 "a0_2_t3.png" Scale 1.31764706 1.31764706 1.31764706 CorrectPixelStretch DontCullBackFaces FrameIndex CHMD D 0 0 }
+Model CaelumArmorPickup { Path "models/caelum/players/gear" Model 0 "ground/a0_3.md3" Skin 0 "a0_3.png" Scale 1.31764706 1.31764706 1.31764706 CorrectPixelStretch DontCullBackFaces FrameIndex CHEH B 0 0 }
+Model CaelumArmorPickup { Path "models/caelum/players/gear" Model 0 "ground/a0_3.md3" Skin 0 "a0_3_t2.png" Scale 1.31764706 1.31764706 1.31764706 CorrectPixelStretch DontCullBackFaces FrameIndex CHEH C 0 0 }
+Model CaelumArmorPickup { Path "models/caelum/players/gear" Model 0 "ground/a0_3.md3" Skin 0 "a0_3_t3.png" Scale 1.31764706 1.31764706 1.31764706 CorrectPixelStretch DontCullBackFaces FrameIndex CHEH D 0 0 }

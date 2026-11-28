@@ -152,7 +152,7 @@
     "assets/art_source/support_sprites/ORB_EDIT.json": "d1927441607103b86eeed4ae5e075b9efb7aadf1e37e5f4cfaf79c7e9e4f3ffa",
     "assets/art_source/support_sprites/MANIFEST.json": "78b6dc20c1426ea759fb1484696795f18d2c7174bec0e9643e7b68a720bfa6f3",
     "src/caelum/equipment/CaelumSupportArt.zs": "5933f0ea55b94e5d30894501d7e1ac590a03ef35844a3677370328d79d474762",
-    "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "a11d23c3106bbcfa01ee93feed2c058eb06081023aeeffda60061875b2322275",
     "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04",
     "src/caelum/data/CaelumSupportImplementData.zs": "a4b0381a2bf2f7ada432c44d81d6c987307a89172c5ce7b240486e8bbe406ad6"
   },
