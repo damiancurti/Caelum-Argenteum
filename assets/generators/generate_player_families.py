@@ -11,6 +11,7 @@ from PIL import Image
 
 from character_mesh_frames import ROOT, Surface, animate, animate_boot, encode, rigid_track
 from sculpted_character_art import Sculpt, paint, surfaces
+from wearable_helmet_fit import tuck
 from sculpted_humanoid import figure, head, skull_profile
 
 SRC = ROOT / "src"
@@ -393,6 +394,7 @@ def follow(points, joint):
 
 def main():
     output = {}
+    (OUT/"tuck").mkdir(exist_ok=True)
 
     def emit(name, blob):
         path = OUT / name
@@ -442,6 +444,13 @@ def main():
         def head_motion(part):
             return follow(fit(part), "face")
 
+        def emit_head(key, model):
+            texture = REL + key + "_0.png"
+            emit(key+".md3", encode(key, surfaces(model.parts, texture, head_motion)))
+            def covered(part):
+                return follow(tuck(fit(part), i//2), "face")
+            emit("tuck/"+key+".md3", encode(key, surfaces(model.parts, texture, covered)))
+
         parts = figure(family, female)
         cloth = {
             "human": (165, 149, 119),
@@ -489,7 +498,7 @@ def main():
             else:
                 m = animal_head(family, female)
             key = f"head{i}_{variant}"
-            emit(key + ".md3", encode(key, surfaces(m.parts, REL + key + "_0.png", head_motion)))
+            emit_head(key, m)
             for tone in range(3):
                 if i >= 6:
                     col = shade(CAT["world_fur_hand_tones"][(i - 6) // 2], CAT["fur_multipliers"][tone])
@@ -507,10 +516,7 @@ def main():
         if i < 6:
             for style in range(4):
                 key = f"hair{i}_{style}"
-                emit(
-                    key + ".md3",
-                    encode(key, surfaces(hair(i, style).parts, REL + key + "_0.png", head_motion)),
-                )
+                emit_head(key, hair(i, style))
                 for number, color in enumerate(CAT["hair_colors"]):
                     col = color["rgb"]
                     emit(

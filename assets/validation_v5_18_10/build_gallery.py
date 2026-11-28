@@ -149,6 +149,8 @@ for seq,item in enumerate(gear):
         part,kind=map(int,module[1:].split("_"))
         label=("Casco","Coraza","Guantes","Botas")[part]+" / "+("magia","ligera","media","pesada")[kind]
     name=f"GalleryGear{seq}"
+    if module.startswith("a0_"):
+        block=block.replace('Model 5 "head','Model 5 "tuck/head').replace('Model 6 "hair','Model 6 "tuck/hair')
     if module.startswith("a3_"):
         block=block.replace(f'Model 3 "b{family}_boots.md3"', 'Model 3 "conceal.md3"')
     mesh=f"{module}_f{family//2}" if item.get("family_sha256") and family//2 else module
