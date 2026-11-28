@@ -115,5 +115,21 @@
       "4"
     ]
   },
-  "manual_art_acceptance": "Pending CA903-FAMILIES-01."
+  "manual_art_acceptance": "Pending CA903-FAMILIES-01.",
+  "project_validation": {
+    "command": "python -X utf8 validate_project.py",
+    "errors": []
+  },
+  "grip_alignment": {
+    "poses_per_form": 33,
+    "forms": 14,
+    "hand_modules_per_form": 2,
+    "maximum_nearest_vertex_distance_native_mesh_units": 1.45
+  },
+  "byte_identical_reexport_of_visible_models_and_materials": true,
+  "hidden_renderer_bridge": {
+    "mesh": "conceal.md3",
+    "material": "invisible.png",
+    "matches_source_issue_903": true
+  }
 }
