@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.18.16** - 2026-11-28.
+Documentation version: **5.18.17** - 2026-11-28.
 
-#926 seated modular footwear awaits review.
+#927 carried shield relief awaits review.
 
 #902-905/#909 await visual review. Seven #736 families approved.
 5.18.4/#899 integrated. 115 checks accepted (#892-898).

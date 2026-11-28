@@ -8129,7 +8129,7 @@
     },
     {
       "path": "caelum/world/CaelumPhysicalHazards.zs",
-      "sha256": "a26920a6814438f4c3e211b1414d15ad616cce96d050b28039fd1c506ed76fa0",
+      "sha256": "f755bb1425a210c446383737ef1644a39a20644de82536b4f5e8a24119113f66",
       "bytes": 20721,
       "decision": "project-source",
       "additional_provenance": [
@@ -8457,7 +8457,7 @@
     },
     {
       "path": "caelum/world/CaelumSewerMaze.zs",
-      "sha256": "13d3f704e7e2645be8d8cf7504061ee5ab82d91891059e1d71e7971f42607805",
+      "sha256": "80f5dee88b6f725a7f0392a3554d85334af279f347afe5f51d55873d612989b1",
       "bytes": 15766,
       "decision": "project-source",
       "additional_provenance": [],
@@ -222522,8 +222522,8 @@
     },
     {
       "path": "models/caelum/players/gear/s0.md3",
-      "sha256": "7c9463022365862e759ef887462b22b65fa5690215b55d989dd1279aea888727",
-      "bytes": 633588,
+      "sha256": "d64cba5ca500d2806a7d5184f00efc45385098ea782af7ba51c14159e6aebdd6",
+      "bytes": 1166388,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -222536,8 +222536,8 @@
     },
     {
       "path": "models/caelum/players/gear/s0.png",
-      "sha256": "17585219cd28fe3f7274ce227776c5885fc236d07da95141cd7d2b5c83e438fb",
-      "bytes": 305209,
+      "sha256": "7fc85bc07fa6657638c04770d9ff6af466c843f6d03b43bfee51cedae692e596",
+      "bytes": 28318,
       "decision": "project-art",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -222546,8 +222546,8 @@
     },
     {
       "path": "models/caelum/players/gear/s1.md3",
-      "sha256": "bdfb950911c8d08e3d65f84dff52fa88d3b555682f553f0d1cad67135d33a6ec",
-      "bytes": 509220,
+      "sha256": "b14a9a49ca40b7fc0a064edb7215a94095448455ad30fabd2cb685d4c44117bd",
+      "bytes": 596132,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -222560,8 +222560,8 @@
     },
     {
       "path": "models/caelum/players/gear/s1.png",
-      "sha256": "9eb5eb182b54d7249c07a9af90e43d77fa9f55d1c49ca8aa88d56697dacf00e5",
-      "bytes": 283154,
+      "sha256": "7fc85bc07fa6657638c04770d9ff6af466c843f6d03b43bfee51cedae692e596",
+      "bytes": 28318,
       "decision": "project-art",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -222570,8 +222570,8 @@
     },
     {
       "path": "models/caelum/players/gear/s2.md3",
-      "sha256": "b8ab0cad44a4cae71f8c461916577258ac612359937ea05892fbd01e6a897bb4",
-      "bytes": 309124,
+      "sha256": "eaf800f68e4976a62babf0f71d7c68ed3061da3ce7bad89f093c8e057d7e6f26",
+      "bytes": 465876,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -222584,8 +222584,8 @@
     },
     {
       "path": "models/caelum/players/gear/s2.png",
-      "sha256": "f7f18d665c307e62b294010e701b7c1b2a02cc309c637bb6a3e7dc2049d5308e",
-      "bytes": 284288,
+      "sha256": "7fc85bc07fa6657638c04770d9ff6af466c843f6d03b43bfee51cedae692e596",
+      "bytes": 28318,
       "decision": "project-art",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -222594,8 +222594,8 @@
     },
     {
       "path": "models/caelum/players/gear/s3.md3",
-      "sha256": "3855c8f293035b13a5c486365981250e7c16425ddd67acede3a65d0a10e2814f",
-      "bytes": 432084,
+      "sha256": "b5a85779190fc15733ed6a4f0b40836eceb583f87a304eaff2d97b3269324252",
+      "bytes": 1234452,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/worn_equipment_904/MODULES.json"
@@ -222608,8 +222608,8 @@
     },
     {
       "path": "models/caelum/players/gear/s3.png",
-      "sha256": "b40343fa09ffd670ac075cca427d309778db50430289a19e336cf9a7796d6877",
-      "bytes": 245409,
+      "sha256": "7fc85bc07fa6657638c04770d9ff6af466c843f6d03b43bfee51cedae692e596",
+      "bytes": 28318,
       "decision": "project-art",
       "additional_provenance": [],
       "exact_metadata": [],

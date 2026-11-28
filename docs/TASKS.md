@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.18.16** - 2026-11-28.
+Documentation version: **5.18.17** - 2026-11-28.
+
+## 5.18.17 - Carried shield relief (#927)
+
+Author review remains open. Press E to cycle the four shields. Turn from the face to the edge and back.
 
 ## 5.18.16 - Seated modular footwear (#926)
 
