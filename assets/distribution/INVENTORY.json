@@ -3990,8 +3990,8 @@
     },
     {
       "path": "caelum/data/standalone.mapinfo",
-      "sha256": "d11c19885649a3c79bc78a85ead03f05d636d2a480899513dbb80615bbe1b9a1",
-      "bytes": 374,
+      "sha256": "ce3a73ead08c54fe9a59b234ce86478eadf70baff63e7e2d4ff0cbfa2345909e",
+      "bytes": 370,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
