@@ -4831,3 +4831,4 @@ Model CaelumBarricadeVisual
 
 #include "caelum/data/rest_motion.modeldef"
 #include "caelum/data/native_creatures.modeldef"
+#include "caelum/data/player_families.modeldef"
