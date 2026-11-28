@@ -6,6 +6,7 @@ Player wrists and soles use the shared animation and equipment attachment space.
 
 from math import cos, sin, pi, exp, sqrt
 import numpy as np
+from scipy.interpolate import PchipInterpolator
 from sculpted_character_art import Sculpt
 
 
@@ -82,16 +83,24 @@ def figure(family, female, monster=False):
         if not monster:
             relief *= 0.65
             if female:
-                relief += 5.5 * ridge(124.2, 5.6) * exp(-(((abs(y) - 7.6) / 6.0) ** 2))
-                relief -= 0.85 * ridge(117, 2.1) * exp(-(((abs(y) - 7.0) / 7.0) ** 2))
+                # The shirt bridges the bust instead of tracing two narrow peaks.
+                drape = 0.54 + 0.46 * exp(-(((y * y - 43) / 88) ** 2))
+                relief = 2.15 * ridge(123.7, 8.4) * drape
             # Oblique folds gather where the shirt enters the sash.
             relief += 0.85 * cos(0.92 * y + 0.29 * z) * ridge(105, 5.7)
         return x + front * relief, y, z
 
-    dense = []
-    for a, b in zip(torso_rows, torso_rows[1:]):
-        dense.extend([a, tuple((v + w) / 2 for v, w in zip(a, b))])
-    shirt.loft("torso", cloth, [*dense, torso_rows[-1]], 32, power=0.85, sculpt=torso_plane)
+    if female:
+        outline = np.array(torso_rows)
+        profile = PchipInterpolator(outline[:, 0], outline[:, 1:], axis=0)
+        levels = np.linspace(outline[0, 0], outline[-1, 0], 36)
+        dense = np.column_stack((levels, profile(levels)))
+        shirt.loft("torso", cloth, dense, 48, power=0.91, sculpt=torso_plane)
+    else:
+        dense = []
+        for a, b in zip(torso_rows, torso_rows[1:]):
+            dense.extend([a, tuple((v + w) / 2 for v, w in zip(a, b))])
+        shirt.loft("torso", cloth, [*dense, torso_rows[-1]], 32, power=0.85, sculpt=torso_plane)
     if not monster:
         for sign in (-1, 1):
             shirt.patch(
@@ -134,10 +143,28 @@ def figure(family, female, monster=False):
         ey = 26 if female else 27.4
         wy = 28.1
         radius = (6.6 if female else 8.2) * ({"bear": 1.18, "zupay": 1.32}.get(family, 1))
-        shirt.loft(
-            "arm" + str(side),
-            cloth,
-            [
+        if female:
+            # Relaxed shoulder-to-wrist axis. The elbow stays on this curve;
+            # sleeve thickness supplies the deltoid and forearm silhouettes.
+            levels = np.array([88, 91, 96, 102, 108, 113, 118, 124, 129, 133, 136])
+            radius_x = np.array([3.5, 3.7, 3.9, 4.35, 4.65, 4.5, 4.9, 5.5, 5.85, 4.65, 2.25])
+            radius_y = np.array([3.25, 3.45, 3.6, 4.10, 4.3, 4.2, 4.55, 5.15, 5.55, 4.3, 2.1])
+            bulk = (radius / 6.6) ** 0.6
+            shoulder_y = shoulder * 0.91
+            u = (levels - 88) / 48
+            sleeve_y = wy + (shoulder_y - wy) * u
+            sleeve_x = 5.0 - 7.1 * u + 1.15 * np.sin(2 * np.pi * u)
+            rows = np.column_stack(
+                (
+                    levels,
+                    sleeve_x,
+                    side * sleeve_y,
+                    radius_x * (1 + (bulk - 1) * u),
+                    radius_y * (1 + (bulk - 1) * u),
+                )
+            )
+        else:
+            rows = [
                 (88, 5, side * wy, 3.5, 3.2),
                 (94, 4.5, side * wy, 3.8, 3.5),
                 (100, 3.6, side * wy, radius * 0.62, radius * 0.57),
@@ -148,9 +175,8 @@ def figure(family, female, monster=False):
                 (128, -0.6, side * (sy + 2), radius * 0.95, radius * 0.98),
                 (132, -1.8, side * sy, radius * 0.88, radius * 0.9),
                 (135, -1.8, side * (sy - 1), radius * 0.4, radius * 0.55),
-            ],
-            16,
-        )
+            ]
+        shirt.loft("arm" + str(side), cloth, rows, 20 if female else 16)
         if not monster:
             shirt.loft(
                 fore,
@@ -294,6 +320,21 @@ def figure(family, female, monster=False):
     return pieces
 
 
+def skull_profile(width, jaw):
+    return [
+        (145, 4, 0, 3.9, width * 0.42),
+        (147, 2.4, 0, 7.2, width * jaw),
+        (150, 1, 0, 8.8, width * 0.90),
+        (153, 0.6, 0, 9.6, width),
+        (155.7, 0.35, 0, 10.1, width * 1.04),
+        (158.3, -0.5, 0, 9.7, width * 1.015),
+        (161.1, -0.45, 0, 10.3, width),
+        (165, -1.15, 0, 10.0, width * 0.98),
+        (168, -1.75, 0, 8.0, width * 0.8),
+        (170.1, -2, 0, 3.0, width * 0.33),
+    ]
+
+
 def head(family, female, variant=0):
     m = Sculpt()
     j = "head"
@@ -316,18 +357,7 @@ def head(family, female, variant=0):
         ],
         16,
     )
-    rows = [
-        (145, 4, 0, 3.9, width * 0.42),
-        (147, 2.4, 0, 7.2, width * jaw),
-        (150, 1, 0, 8.8, width * 0.90),
-        (153, 0.6, 0, 9.6, width),
-        (155.7, 0.35, 0, 10.1, width * 1.04),
-        (158.3, -0.5, 0, 9.7, width * 1.015),
-        (161.1, -0.45, 0, 10.3, width),
-        (165, -1.15, 0, 10.0, width * 0.98),
-        (168, -1.75, 0, 8.0, width * 0.8),
-        (170.1, -2, 0, 3.0, width * 0.33),
-    ]
+    rows = skull_profile(width, jaw)
 
     def feature(y, z):
         return (1.55 if goblin else 1.15 if female else 1.0) * (

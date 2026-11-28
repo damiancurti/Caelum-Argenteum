@@ -12,6 +12,9 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--game", type=Path, required=True)
 parser.add_argument("--output", type=Path, required=True)
 parser.add_argument("--players", action="store_true")
+parser.add_argument(
+    "--hair", action="store_true", help="Inspect four hairstyles on the widest head for each humanoid."
+)
 parser.add_argument("--development-assets", action="store_true")
 args = parser.parse_args()
 out = args.output.resolve()
@@ -23,11 +26,27 @@ subprocess.run(
 source = """version "4.14.2"
 class SculptCamera : StaticEventHandler {
     override void NetworkProcess(ConsoleEvent e) {
-        if(e.Name!="sculpt_view")return;
+        if(e.Name!="sculpt_view" && e.Name!="sculpt_hair")return;
         int id=e.Args[0];double angle=e.Args[1]-90.0;bool close=e.Args[2]>0;
         let it=ActorIterator.Create(999+id);
         let model=GalleryExhibit(it.Next());let eye=GalleryVisitor(players[e.Player].mo);
         if(!model || !eye)return;
+        if(e.Name=="sculpt_hair"){
+            int identity=id-1;
+            String face=String.Format("head%d_2",identity);
+            String hair=String.Format("hair%d_%d",identity,e.Args[2]);
+            model.A_ChangeModel('None',5,"models/caelum/players",Name(face..".md3"),5,
+                                "models/caelum/players",Name(face.."_0.png"),0);
+            model.A_ChangeModel('None',6,"models/caelum/players",Name(hair..".md3"),6,
+                                "models/caelum/players",Name(hair.."_1.png"),0);
+            bool above=e.Args[1]>90;
+            double offset=model.CameraDistance*(above?.33:.46);
+            double height=model.EyeHeight*(above?2.65:1.85);
+            eye.SetOrigin(model.Pos+(cos(angle)*offset,sin(angle)*offset,0),false);
+            eye.Vel=(0,0,0);eye.Angle=angle+180;eye.Pitch=above?42:4;
+            eye.ViewHeight=height;eye.player.ViewHeight=height;
+            Console.Printf("SCULPT id=%d angle=%d style=%d",id,e.Args[1],e.Args[2]);return;
+        }
         double distance=Max(12,model.CameraDistance*(close?.52:1.0));
         Vector3 target=model.Pos;
         if(id==17){target.Y-=close?10:1;distance=close?24:43;}
@@ -43,11 +62,13 @@ with zipfile.ZipFile(qa, "w", zipfile.ZIP_DEFLATED) as z:
     z.writestr("ZSCRIPT", source)
     z.writestr("MAPINFO", 'gameinfo { AddEventHandlers = "SculptCamera" }\n')
     if args.development_assets:
-        for folder in ("creatures", "players") if args.players else ("creatures",):
+        for folder in ("creatures", "players") if args.players or args.hair else ("creatures",):
             for p in (ROOT / "src/models/caelum" / folder).glob("**/*" if folder == "creatures" else "*"):
                 if p.is_file():
                     z.write(p, p.relative_to(ROOT / "src").as_posix())
 stations = [*range(1, 15), 24, 25, 29, 147, 205] if args.players else [15, 16, 17, 24, 25]
+if args.hair:
+    stations = list(range(1, 7))
 controls = [
     "screenblocks 12",
     "r_drawplayersprites false",
@@ -63,12 +84,18 @@ controls = [
 expected = []
 for k, station in enumerate(stations):
     commands = []
-    for angle, close in ((0, 0), (65, 0), (165, 0), (22, 1)):
+    views = (
+        [(angle, style) for style in range(4) for angle in (32, 146)]
+        if args.hair
+        else [(0, 0), (65, 0), (165, 0), (22, 1)]
+    )
+    event = "sculpt_hair" if args.hair else "sculpt_view"
+    for angle, close in views:
         name = f"s{station:03}-{angle:03}-{close}"
         expected.append(name)
         commands.extend(
             [
-                f"netevent sculpt_view {station} {angle} {close}",
+                f"netevent {event} {station} {angle} {close}",
                 "wait 6",
                 f"screenshot {name}.png",
                 "wait 2",

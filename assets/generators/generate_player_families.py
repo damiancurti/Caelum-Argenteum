@@ -11,7 +11,7 @@ from PIL import Image
 
 from character_mesh_frames import ROOT, Surface, animate, encode, rigid_track
 from sculpted_character_art import Sculpt, paint, surfaces
-from sculpted_humanoid import figure, head
+from sculpted_humanoid import figure, head, skull_profile
 
 SRC = ROOT / "src"
 OUT = SRC / "models/caelum/players"
@@ -274,89 +274,107 @@ def animal_head(family, female):
 
 def hair(index, style):
     m = Sculpt()
-    j = "head"
     female = bool(index % 2)
     goblin = index // 2 == 2
-    width = (9.15 if not female else 8.55) * (1.14 if goblin else 1)
+    width = (8.55 if female else 9.15) * (1.14 if goblin else 1.0)
+    # Hair is shared by four interchangeable heads. Fit the cap to the
+    # widest selectable skull at each level, including the rear of the crown.
+    skull = np.array(skull_profile(width * 1.06, 0.8))
+
+    crown = (1.75, 2.6, 2.1, 1.95)[style]
+
+    def hairline(t):
+        degrees = abs((t + pi) % (2 * pi) - pi) * 180 / pi
+        front = np.interp(
+            degrees,
+            [0, 29, 48, 69, 87, 100, 122, 151, 180],
+            [161.9, 161.7, 159.6, 155.7, 158.1, 156.6, 152.8, 151.4, 151.0],
+        )
+        fringe = (0.85 + 0.30 * (style == 1)) * sin(t * 3 + 0.4) * max(0, cos(t))
+        return front + fringe + (0.55, 0.72, 0.45, 0.38)[style] * cos(7 * t + style) * max(0, cos(t))
+
+    long = (11 if female else 2, 4 if female else 1, 17 if female else 9, 5)[style]
+
+    def shell(t, z):
+        # The cap extends down the nape; the combed highlights follow its surface.
+        ref = np.clip(z, 155, 170.1)
+        cx, rx, ry = [np.interp(ref, skull[:, 0], skull[:, k]) for k in (1, 3, 4)]
+        if z < 155:
+            drop = min(1, (155 - z) / 15)
+            cx -= 1.05 * drop
+            rx += 0.58 * drop
+            ry += 0.45 * drop
+        c, s = cos(t), sin(t)
+        curl = (0.13 * cos(12 * t + (z - 157) * 0.13) + 0.08 * sin(6 * t)) * min(1, max(0, (170.1 - z) / 3))
+        thickness = 1.05 + curl + 0.4 * max(0, -c)
+        rx += thickness
+        ry += thickness
+        if z >= 165:
+            # A single elliptical dome bridges the flat top of the skull.
+            u = (z - 159.0) / (170.1 + crown - 159.0)
+            dome = max(0, 1 - u * u) ** 0.5
+            envelope_x = 12.3 * dome
+            envelope_y = (width * 1.06 + 2.05) * dome
+            if z <= 170.1:
+                rx = max(rx, envelope_x)
+                ry = max(ry, envelope_y)
+            else:
+                rx, ry = envelope_x, envelope_y
+            cx -= 0.32 * max(0, u - 0.5)
+        return (cx + rx * np.sign(c) * abs(c) ** 0.86, ry * np.sign(s) * abs(s) ** 0.86, z)
+
+    def hem(t):
+        side = np.clip((0.48 - cos(t)) / 0.92, 0, 1)
+        return hairline(t) - long * side + side * 0.65 * cos(9 * t + 0.8 * style)
+
+    angles = np.arange(48) * 2 * pi / 48
     rings = []
-    # The scalp follows the cranium; the swept hairline opens around the face
-    # and drops behind the ears before rising into an asymmetrical crown.
-    for k, (rx, ry, top) in enumerate(
-        [
-            (9.8, width * 1.07, 0),
-            (10.5, width * 1.09, 0.26),
-            (9.8, width * 1.01, 0.59),
-            (7.0, width * 0.77, 0.86),
-            (2.2, width * 0.30, 1),
-        ]
+    # Edge, scalp and crown all follow the same envelope. Absolute levels
+    # keep the shell outside the steep turn where the forehead meets the crown.
+    for zlevel in (
+        None,
+        151.5,
+        154,
+        156,
+        158,
+        160,
+        161.1,
+        163,
+        165,
+        166.5,
+        168,
+        169,
+        170.1,
+        170.1 + 0.48 * crown,
+        170.1 + 0.82 * crown,
+        170.1 + 0.995 * crown,
     ):
         ring = []
-        for t in np.arange(24) * 2 * pi / 24:
-            line = 157.8 + 5.0 * cos(t) + 0.8 * sin(2 * t + style)
-            z = line * (1 - top) + (171.2 + (1.4 if style == 1 else 0)) * top
-            ring.append((-1.15 + rx * cos(t) - top * 0.85, ry * sin(t) + sin(style) * top * 0.65, z))
+        for t in angles:
+            base = hem(t)
+            z = base if zlevel is None else max(base + 0.015 * (len(rings)), zlevel)
+            ring.append(shell(t, z))
         rings.append(ring)
-    m.rings(j, "hair", rings)
-    for n in range(6):
-        t = n * pi / 3 + 0.24
-        end = 158 + 4.7 * cos(t)
-        m.sweep(
-            j,
-            "hairlight",
-            [
-                (-2 + 4.9 * cos(t - 0.38), width * 0.52 * sin(t - 0.38), 170.3, 0.5, 0.61),
-                (-1 + 8.6 * cos(t - 0.19), width * 0.9 * sin(t - 0.19), 167.6, 0.71, 0.72),
-                (-1.0 + 9.85 * cos(t), width * 1.05 * sin(t), end + 1, 0.18, 0.3),
-            ],
-            7,
-        )
-    if female and style in (0, 2):
-        # Temple locks frame the cheek in front view, then turn over the shoulders.
-        for side in (-1, 1):
-            m.sweep(
-                j,
-                "hair",
-                [
-                    (3.0, side * (width - 0.6), 165.2, 2.2, 1.9),
-                    (4.0, side * (width + 0.15), 160.9, 2.6, 1.85),
-                    (4.35, side * (width + 0.5), 155, 2.1, 1.75),
-                    (3.4, side * (width + 1.05), 150, 2.2, 1.76),
-                    (2.15, side * (width + 1.3), 144.3, 1.68, 1.56),
-                    (3.65, side * (width + 0.18), 140.8, 0.4, 0.5),
-                ],
-                10,
-            )
-    if style in (1, 2, 3) or female:
-        length = 13 if style == 0 else 12 if style == 1 else 21 if style == 2 else 10
-        if not female:
-            length *= 0.62
-        for k in range(7):
-            t = pi * 0.52 + k * pi * 0.96 / 6
-            x = -1 + 9.8 * cos(t)
-            y = width * 1.0 * sin(t)
-            off = abs(sin(t))
-            m.sweep(
-                j,
-                "hairlight" if k % 3 == 0 else "hair",
-                [
-                    (x * 0.86, y * 0.91, 164.3, 2.55, 2.35),
-                    (x, y, 158.3, 2.6, 2.7),
-                    (x - 0.5, y * (1 + 0.07 * off), 155 - length * 0.32, 2.2, 2.35),
-                    (x - 1.5, y * 0.9, 156 - length, 1.12, 0.86),
-                    (x - 0.6, y * 0.88, 154.5 - length, 0.22, 0.20),
-                ],
-                9,
-            )
+    m.rings("head", "hair", rings)
+    # Sweep the painted locks towards the part on the continuous surface.
+    # The pattern wraps at the seam and follows the same cap through all poses.
+    cap = m.parts[-1]
+    cap_vertices = (len(angles) + 1) * len(rings)
+    u = np.tile(np.arange(len(angles) + 1) / len(angles), len(rings))
+    level = np.clip((cap.vertices[:cap_vertices, 2] - 150) / 23, 0, 1)
+    turn = (0.095 + 0.025 * style) * np.sin(2 * pi * u + 0.45) * level
+    # Keep the 0/1 seam outside the tile margins after twisting.
+    turn -= turn.reshape(len(rings), -1)[:, 0].repeat(len(angles) + 1)
+    cap.uv[:cap_vertices, 0] += 0.93 / 8 * turn
     if style == 3:
-        m.oval(j, "hair", (-12, 0, 154.8), (4.2, 4.7, 5.1), 12, 8)
-        for k in range(5):
+        for k in range(7):
             m.oval(
-                j,
-                "hairlight" if k % 2 else "hair",
-                (-13 + 0.45 * k, (-1) ** k * 1.05, 151.9 - k * 2.7),
-                (2.35 - k * 0.20, 2.8 - k * 0.22, 2.7 - k * 0.18),
-                10,
-                6,
+                "head",
+                "hairlight" if k % 3 == 0 else "hair",
+                (-11.4 - 0.34 * k, (-1) ** k * 1.1, 153.3 - k * 2.55),
+                (3.45 - k * 0.23, 3.6 - k * 0.25, 3.15 - k * 0.16),
+                12,
+                7,
             )
     return m
 
@@ -495,7 +513,9 @@ def main():
                 )
                 for number, color in enumerate(CAT["hair_colors"]):
                     col = color["rgb"]
-                    emit(f"{key}_{number}.png", paint({"hair": col, "hairlight": shade(col, 1.13)}))
+                    emit(
+                        f"{key}_{number}.png", paint({"hair": col, "hairlight": shade(col, 1.13)}, "combed")
+                    )
         print(i, family, flush=True)
     tones = (
         CAT["skin_tones"]

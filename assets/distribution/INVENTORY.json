@@ -220492,8 +220492,8 @@
     },
     {
       "path": "models/caelum/players/b11_shirt.md3",
-      "sha256": "f6632225e1050073cec7c88387f79f43d449182afb148207af6bf981959967a3",
-      "bytes": 391956,
+      "sha256": "36dc56e29f6c63c1438109132052dfeedd0a9994862504cef64c7eed28ccb0ad",
+      "bytes": 764164,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -220688,8 +220688,8 @@
     },
     {
       "path": "models/caelum/players/b13_shirt.md3",
-      "sha256": "82240564b30aca6ca24c9c6c8d2ce4137389298f247a85600010fc6d1c9c2045",
-      "bytes": 391956,
+      "sha256": "38cc6e75e07400a6276cbe7e31329e82bf6fdd25de83cf65a8269258de884e08",
+      "bytes": 764164,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -220772,8 +220772,8 @@
     },
     {
       "path": "models/caelum/players/b1_shirt.md3",
-      "sha256": "59c29e0c802a6b7c9e8152e801c44432fe35037b3a9efd590f891362d6cf34f0",
-      "bytes": 391956,
+      "sha256": "ebbced3807e1c8adac52d285d5e7499c4252872d7d7d1a599db015770e9099f4",
+      "bytes": 764164,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -220968,8 +220968,8 @@
     },
     {
       "path": "models/caelum/players/b3_shirt.md3",
-      "sha256": "cc925ae874b134a004ebaf8604f4adb78662cbb52655e3ed01acde60ddef3b17",
-      "bytes": 391956,
+      "sha256": "614bc93f010ad60f4eab64cebc267c02b5d06d3172bf0a3694f8ce0c858d32eb",
+      "bytes": 764164,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -221164,8 +221164,8 @@
     },
     {
       "path": "models/caelum/players/b5_shirt.md3",
-      "sha256": "6b6455040ffc03f5b53b58b820bc079436dc52bbcefade40beaad8e8ad76441f",
-      "bytes": 391956,
+      "sha256": "4e24a7d7e2c4b2b3632312a36e3bc218f2e07a91ebd309c8a9a2de59cb17cbf6",
+      "bytes": 764164,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -221360,8 +221360,8 @@
     },
     {
       "path": "models/caelum/players/b7_shirt.md3",
-      "sha256": "3870baa3deb325535aa2fa0ca04f02d720f5ad9a0de9c881f58752d37b52f572",
-      "bytes": 391956,
+      "sha256": "6c6dac486472457efc5de3ec10c0aea084a101bbc848bc65d37c08a687d5c99e",
+      "bytes": 764164,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -221556,8 +221556,8 @@
     },
     {
       "path": "models/caelum/players/b9_shirt.md3",
-      "sha256": "b37ac0df96f29e1563274beb86e14cb692beead0ff03533c9b943655148358b6",
-      "bytes": 391956,
+      "sha256": "ea636e3ec7b10688d53c7227bf3141901d9859c8eba304472200d05d82b66162",
+      "bytes": 764164,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223014,8 +223014,8 @@
     },
     {
       "path": "models/caelum/players/hair0_0.md3",
-      "sha256": "6c10da7f8e0f27979615f0f03259bba33efaf6950f7fd54b82f8a1a51b216719",
-      "bytes": 85012,
+      "sha256": "faf2a4cc7d2264db02bdca7d7f7a29b90c71a78964c5c737bf43c716f1da8bb2",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223028,8 +223028,8 @@
     },
     {
       "path": "models/caelum/players/hair0_0_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223042,8 +223042,8 @@
     },
     {
       "path": "models/caelum/players/hair0_0_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223056,8 +223056,8 @@
     },
     {
       "path": "models/caelum/players/hair0_0_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223070,8 +223070,8 @@
     },
     {
       "path": "models/caelum/players/hair0_0_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223084,8 +223084,8 @@
     },
     {
       "path": "models/caelum/players/hair0_0_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223098,8 +223098,8 @@
     },
     {
       "path": "models/caelum/players/hair0_0_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223112,8 +223112,8 @@
     },
     {
       "path": "models/caelum/players/hair0_1.md3",
-      "sha256": "618c6d175256cd8510a77458b26e2d895868681746dad1c1951d755acdec3ed7",
-      "bytes": 191580,
+      "sha256": "58e74c91bf8d53689871ac0ef0677ef8a393fb6cd38d3b904dc1f8e45f4fad18",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223126,8 +223126,8 @@
     },
     {
       "path": "models/caelum/players/hair0_1_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223140,8 +223140,8 @@
     },
     {
       "path": "models/caelum/players/hair0_1_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223154,8 +223154,8 @@
     },
     {
       "path": "models/caelum/players/hair0_1_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223168,8 +223168,8 @@
     },
     {
       "path": "models/caelum/players/hair0_1_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223182,8 +223182,8 @@
     },
     {
       "path": "models/caelum/players/hair0_1_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223196,8 +223196,8 @@
     },
     {
       "path": "models/caelum/players/hair0_1_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223210,8 +223210,8 @@
     },
     {
       "path": "models/caelum/players/hair0_2.md3",
-      "sha256": "dcef8e5c55644c924246d7148f9f55163807c56898158e925cb599fb0796b6b7",
-      "bytes": 191580,
+      "sha256": "fbb248f7d141a2cd0e7dad9b81870b5dc13915f18a7913b1a00e8570a7177787",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223224,8 +223224,8 @@
     },
     {
       "path": "models/caelum/players/hair0_2_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223238,8 +223238,8 @@
     },
     {
       "path": "models/caelum/players/hair0_2_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223252,8 +223252,8 @@
     },
     {
       "path": "models/caelum/players/hair0_2_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223266,8 +223266,8 @@
     },
     {
       "path": "models/caelum/players/hair0_2_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223280,8 +223280,8 @@
     },
     {
       "path": "models/caelum/players/hair0_2_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223294,8 +223294,8 @@
     },
     {
       "path": "models/caelum/players/hair0_2_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223308,8 +223308,8 @@
     },
     {
       "path": "models/caelum/players/hair0_3.md3",
-      "sha256": "9632851d62c58a13639766cdc3f11c51786a0d4a39e0fdfd1b712086392511bb",
-      "bytes": 322396,
+      "sha256": "4dbf1c0ed7907bd740b6594689f33b594c85744e6c1876b90f63432e5c50ad18",
+      "bytes": 425540,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223322,8 +223322,8 @@
     },
     {
       "path": "models/caelum/players/hair0_3_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223336,8 +223336,8 @@
     },
     {
       "path": "models/caelum/players/hair0_3_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223350,8 +223350,8 @@
     },
     {
       "path": "models/caelum/players/hair0_3_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223364,8 +223364,8 @@
     },
     {
       "path": "models/caelum/players/hair0_3_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223378,8 +223378,8 @@
     },
     {
       "path": "models/caelum/players/hair0_3_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223392,8 +223392,8 @@
     },
     {
       "path": "models/caelum/players/hair0_3_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223406,8 +223406,8 @@
     },
     {
       "path": "models/caelum/players/hair1_0.md3",
-      "sha256": "d74f138523ceb0067dd8f84bec1639c374caf20cc514305741b7387ed9b975df",
-      "bytes": 231452,
+      "sha256": "6147d4b215c76ea2d15eaac07af337c010d1e6ee6522f39e60c265e347f5c967",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223420,8 +223420,8 @@
     },
     {
       "path": "models/caelum/players/hair1_0_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223434,8 +223434,8 @@
     },
     {
       "path": "models/caelum/players/hair1_0_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223448,8 +223448,8 @@
     },
     {
       "path": "models/caelum/players/hair1_0_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223462,8 +223462,8 @@
     },
     {
       "path": "models/caelum/players/hair1_0_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223476,8 +223476,8 @@
     },
     {
       "path": "models/caelum/players/hair1_0_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223490,8 +223490,8 @@
     },
     {
       "path": "models/caelum/players/hair1_0_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223504,8 +223504,8 @@
     },
     {
       "path": "models/caelum/players/hair1_1.md3",
-      "sha256": "60f7188077287e48667a7383abec8eb823e1750247b5c1ce4a8e3bdffb34bc5e",
-      "bytes": 191580,
+      "sha256": "a2635b43e1c28e82a443e93b4ed35328edde5cdc059debc26c5735b7cc5a6a7b",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223518,8 +223518,8 @@
     },
     {
       "path": "models/caelum/players/hair1_1_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223532,8 +223532,8 @@
     },
     {
       "path": "models/caelum/players/hair1_1_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223546,8 +223546,8 @@
     },
     {
       "path": "models/caelum/players/hair1_1_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223560,8 +223560,8 @@
     },
     {
       "path": "models/caelum/players/hair1_1_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223574,8 +223574,8 @@
     },
     {
       "path": "models/caelum/players/hair1_1_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223588,8 +223588,8 @@
     },
     {
       "path": "models/caelum/players/hair1_1_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223602,8 +223602,8 @@
     },
     {
       "path": "models/caelum/players/hair1_2.md3",
-      "sha256": "536e9e577de39dc081ce36c456b1b960eb67dffe87a6a446be70142fc86dec43",
-      "bytes": 231452,
+      "sha256": "b3c5c168e7993f2b5148362158f2e9d6433050b063bec794c4cf8b40948255cf",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223616,8 +223616,8 @@
     },
     {
       "path": "models/caelum/players/hair1_2_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223630,8 +223630,8 @@
     },
     {
       "path": "models/caelum/players/hair1_2_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223644,8 +223644,8 @@
     },
     {
       "path": "models/caelum/players/hair1_2_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223658,8 +223658,8 @@
     },
     {
       "path": "models/caelum/players/hair1_2_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223672,8 +223672,8 @@
     },
     {
       "path": "models/caelum/players/hair1_2_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223686,8 +223686,8 @@
     },
     {
       "path": "models/caelum/players/hair1_2_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223700,8 +223700,8 @@
     },
     {
       "path": "models/caelum/players/hair1_3.md3",
-      "sha256": "06da709af6d33c372dac237d95b81dda67822ed9cc1bda47427bebf4b1a08719",
-      "bytes": 322396,
+      "sha256": "55a6454df9c2dc69f84f8b96ece9266188995b407daeb7cba0ff43d5b6788148",
+      "bytes": 425540,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223714,8 +223714,8 @@
     },
     {
       "path": "models/caelum/players/hair1_3_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223728,8 +223728,8 @@
     },
     {
       "path": "models/caelum/players/hair1_3_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223742,8 +223742,8 @@
     },
     {
       "path": "models/caelum/players/hair1_3_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223756,8 +223756,8 @@
     },
     {
       "path": "models/caelum/players/hair1_3_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223770,8 +223770,8 @@
     },
     {
       "path": "models/caelum/players/hair1_3_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223784,8 +223784,8 @@
     },
     {
       "path": "models/caelum/players/hair1_3_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223798,8 +223798,8 @@
     },
     {
       "path": "models/caelum/players/hair2_0.md3",
-      "sha256": "62beb7e9b874afb63a4168f1f1584a2d07a847b8961e835b32b711d35a90d2c1",
-      "bytes": 85012,
+      "sha256": "082b8cea4fc7e6e9944bbd9ee6f272244597789b86a197d2fa0c9767e074f6fc",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223812,8 +223812,8 @@
     },
     {
       "path": "models/caelum/players/hair2_0_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223826,8 +223826,8 @@
     },
     {
       "path": "models/caelum/players/hair2_0_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223840,8 +223840,8 @@
     },
     {
       "path": "models/caelum/players/hair2_0_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223854,8 +223854,8 @@
     },
     {
       "path": "models/caelum/players/hair2_0_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223868,8 +223868,8 @@
     },
     {
       "path": "models/caelum/players/hair2_0_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223882,8 +223882,8 @@
     },
     {
       "path": "models/caelum/players/hair2_0_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223896,8 +223896,8 @@
     },
     {
       "path": "models/caelum/players/hair2_1.md3",
-      "sha256": "54e58e511358a42a0631da6e659274d74c8a0ac9c169c34fb8b5f165dd8d1e68",
-      "bytes": 191580,
+      "sha256": "ba8ae0266dfb6381679ec30b1f8457c3b5b1538ef31555bd4eb5c383a4bf2f8d",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223910,8 +223910,8 @@
     },
     {
       "path": "models/caelum/players/hair2_1_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223924,8 +223924,8 @@
     },
     {
       "path": "models/caelum/players/hair2_1_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223938,8 +223938,8 @@
     },
     {
       "path": "models/caelum/players/hair2_1_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223952,8 +223952,8 @@
     },
     {
       "path": "models/caelum/players/hair2_1_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223966,8 +223966,8 @@
     },
     {
       "path": "models/caelum/players/hair2_1_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223980,8 +223980,8 @@
     },
     {
       "path": "models/caelum/players/hair2_1_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -223994,8 +223994,8 @@
     },
     {
       "path": "models/caelum/players/hair2_2.md3",
-      "sha256": "3a150d341df03a1e57b79f7de21b2a9ed0998b55e03082b36c6268088ff3b649",
-      "bytes": 191580,
+      "sha256": "7725a0e8647164dfcf8ca4e380b02cb9bfe62d24b3c1fd99d633a3a5254e5052",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224008,8 +224008,8 @@
     },
     {
       "path": "models/caelum/players/hair2_2_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224022,8 +224022,8 @@
     },
     {
       "path": "models/caelum/players/hair2_2_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224036,8 +224036,8 @@
     },
     {
       "path": "models/caelum/players/hair2_2_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224050,8 +224050,8 @@
     },
     {
       "path": "models/caelum/players/hair2_2_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224064,8 +224064,8 @@
     },
     {
       "path": "models/caelum/players/hair2_2_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224078,8 +224078,8 @@
     },
     {
       "path": "models/caelum/players/hair2_2_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224092,8 +224092,8 @@
     },
     {
       "path": "models/caelum/players/hair2_3.md3",
-      "sha256": "71b69a356fb7fe07fc2558289c7ff5a0b7c7751233736a3dbd210d3173bf450b",
-      "bytes": 322396,
+      "sha256": "352dcb52caae621d46e34c6cf27d5dc747fa02b849a3a5b164d87fafe7a06d2e",
+      "bytes": 425540,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224106,8 +224106,8 @@
     },
     {
       "path": "models/caelum/players/hair2_3_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224120,8 +224120,8 @@
     },
     {
       "path": "models/caelum/players/hair2_3_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224134,8 +224134,8 @@
     },
     {
       "path": "models/caelum/players/hair2_3_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224148,8 +224148,8 @@
     },
     {
       "path": "models/caelum/players/hair2_3_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224162,8 +224162,8 @@
     },
     {
       "path": "models/caelum/players/hair2_3_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224176,8 +224176,8 @@
     },
     {
       "path": "models/caelum/players/hair2_3_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224190,8 +224190,8 @@
     },
     {
       "path": "models/caelum/players/hair3_0.md3",
-      "sha256": "63657c76df5a35f00867524e0aad695ac5f5991d58ff400579234ef8e2cf5572",
-      "bytes": 231452,
+      "sha256": "dabdc291d6d68cd400f56ed656bd2c7673fa6839b59a996226576ad647168387",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224204,8 +224204,8 @@
     },
     {
       "path": "models/caelum/players/hair3_0_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224218,8 +224218,8 @@
     },
     {
       "path": "models/caelum/players/hair3_0_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224232,8 +224232,8 @@
     },
     {
       "path": "models/caelum/players/hair3_0_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224246,8 +224246,8 @@
     },
     {
       "path": "models/caelum/players/hair3_0_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224260,8 +224260,8 @@
     },
     {
       "path": "models/caelum/players/hair3_0_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224274,8 +224274,8 @@
     },
     {
       "path": "models/caelum/players/hair3_0_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224288,8 +224288,8 @@
     },
     {
       "path": "models/caelum/players/hair3_1.md3",
-      "sha256": "d91f103627e635357690c6ab004e8256d5b0a8081fb2fdeeefdf431812db62c0",
-      "bytes": 191580,
+      "sha256": "5010c10fd206e5a5a464071199b235f0474d18bdfdbeefefc4a0061bd2d1dce6",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224302,8 +224302,8 @@
     },
     {
       "path": "models/caelum/players/hair3_1_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224316,8 +224316,8 @@
     },
     {
       "path": "models/caelum/players/hair3_1_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224330,8 +224330,8 @@
     },
     {
       "path": "models/caelum/players/hair3_1_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224344,8 +224344,8 @@
     },
     {
       "path": "models/caelum/players/hair3_1_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224358,8 +224358,8 @@
     },
     {
       "path": "models/caelum/players/hair3_1_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224372,8 +224372,8 @@
     },
     {
       "path": "models/caelum/players/hair3_1_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224386,8 +224386,8 @@
     },
     {
       "path": "models/caelum/players/hair3_2.md3",
-      "sha256": "3046bbd8bbb92b7600f83cc792dfa35e9292b02d512ff4ee42deeb4e9731d01a",
-      "bytes": 231452,
+      "sha256": "3a04572426578c49a680ff39ee813f7c6fb60ac96a3095141d7cf4a7f367cebf",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224400,8 +224400,8 @@
     },
     {
       "path": "models/caelum/players/hair3_2_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224414,8 +224414,8 @@
     },
     {
       "path": "models/caelum/players/hair3_2_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224428,8 +224428,8 @@
     },
     {
       "path": "models/caelum/players/hair3_2_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224442,8 +224442,8 @@
     },
     {
       "path": "models/caelum/players/hair3_2_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224456,8 +224456,8 @@
     },
     {
       "path": "models/caelum/players/hair3_2_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224470,8 +224470,8 @@
     },
     {
       "path": "models/caelum/players/hair3_2_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224484,8 +224484,8 @@
     },
     {
       "path": "models/caelum/players/hair3_3.md3",
-      "sha256": "e9141e96b6718266969b8c5c32047f59e63917a7ce7281a19055c290d8411bea",
-      "bytes": 322396,
+      "sha256": "eda7b7c69c04937b2354cffc18a55abb97e8d21703144178ab8f5dde909034af",
+      "bytes": 425540,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224498,8 +224498,8 @@
     },
     {
       "path": "models/caelum/players/hair3_3_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224512,8 +224512,8 @@
     },
     {
       "path": "models/caelum/players/hair3_3_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224526,8 +224526,8 @@
     },
     {
       "path": "models/caelum/players/hair3_3_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224540,8 +224540,8 @@
     },
     {
       "path": "models/caelum/players/hair3_3_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224554,8 +224554,8 @@
     },
     {
       "path": "models/caelum/players/hair3_3_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224568,8 +224568,8 @@
     },
     {
       "path": "models/caelum/players/hair3_3_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224582,8 +224582,8 @@
     },
     {
       "path": "models/caelum/players/hair4_0.md3",
-      "sha256": "3091aeda9c180954ad55c1d30847055887d456979ed30ea6564486717d904f4c",
-      "bytes": 85012,
+      "sha256": "b3cb23cd5e7be75d11329a034dd6b9d7f97a13cbfbbf4e0f335dc64bf3e5a043",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224596,8 +224596,8 @@
     },
     {
       "path": "models/caelum/players/hair4_0_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224610,8 +224610,8 @@
     },
     {
       "path": "models/caelum/players/hair4_0_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224624,8 +224624,8 @@
     },
     {
       "path": "models/caelum/players/hair4_0_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224638,8 +224638,8 @@
     },
     {
       "path": "models/caelum/players/hair4_0_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224652,8 +224652,8 @@
     },
     {
       "path": "models/caelum/players/hair4_0_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224666,8 +224666,8 @@
     },
     {
       "path": "models/caelum/players/hair4_0_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224680,8 +224680,8 @@
     },
     {
       "path": "models/caelum/players/hair4_1.md3",
-      "sha256": "95c127a14eaf126f3877d9303adbf5812403784dd8b0a8118db50a02757c88be",
-      "bytes": 191580,
+      "sha256": "087d474d63c5c932be05cb414f60f1b3702d1f1eb549e077f17bef6c72cc93dc",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224694,8 +224694,8 @@
     },
     {
       "path": "models/caelum/players/hair4_1_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224708,8 +224708,8 @@
     },
     {
       "path": "models/caelum/players/hair4_1_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224722,8 +224722,8 @@
     },
     {
       "path": "models/caelum/players/hair4_1_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224736,8 +224736,8 @@
     },
     {
       "path": "models/caelum/players/hair4_1_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224750,8 +224750,8 @@
     },
     {
       "path": "models/caelum/players/hair4_1_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224764,8 +224764,8 @@
     },
     {
       "path": "models/caelum/players/hair4_1_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224778,8 +224778,8 @@
     },
     {
       "path": "models/caelum/players/hair4_2.md3",
-      "sha256": "dd52a5e21f25e729da8817de5efcb80e04a19888f834ba629c778ce80de58d3b",
-      "bytes": 191580,
+      "sha256": "be57442bd7de7c0a73a26977430d430fda0dbcc145908c65147b7a66434dda38",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224792,8 +224792,8 @@
     },
     {
       "path": "models/caelum/players/hair4_2_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224806,8 +224806,8 @@
     },
     {
       "path": "models/caelum/players/hair4_2_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224820,8 +224820,8 @@
     },
     {
       "path": "models/caelum/players/hair4_2_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224834,8 +224834,8 @@
     },
     {
       "path": "models/caelum/players/hair4_2_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224848,8 +224848,8 @@
     },
     {
       "path": "models/caelum/players/hair4_2_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224862,8 +224862,8 @@
     },
     {
       "path": "models/caelum/players/hair4_2_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224876,8 +224876,8 @@
     },
     {
       "path": "models/caelum/players/hair4_3.md3",
-      "sha256": "f0e37f3ad25193da38b66e3844de7787eb612df565c5b3c5bc87e5983a47b422",
-      "bytes": 322396,
+      "sha256": "6462e5fb5980220a9dc51f780c445af86cc81f26b7f4cece51ea664bf7744555",
+      "bytes": 425540,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224890,8 +224890,8 @@
     },
     {
       "path": "models/caelum/players/hair4_3_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224904,8 +224904,8 @@
     },
     {
       "path": "models/caelum/players/hair4_3_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224918,8 +224918,8 @@
     },
     {
       "path": "models/caelum/players/hair4_3_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224932,8 +224932,8 @@
     },
     {
       "path": "models/caelum/players/hair4_3_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224946,8 +224946,8 @@
     },
     {
       "path": "models/caelum/players/hair4_3_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224960,8 +224960,8 @@
     },
     {
       "path": "models/caelum/players/hair4_3_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224974,8 +224974,8 @@
     },
     {
       "path": "models/caelum/players/hair5_0.md3",
-      "sha256": "68928ab47bcde6af0374f3f8ec1e7c3ea311cb3607ab9faad919576851935c86",
-      "bytes": 231452,
+      "sha256": "efb7f003c87c2b6088d111e959901c923ba8ee99ad79e670a3e3fc0fe79e2a57",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -224988,8 +224988,8 @@
     },
     {
       "path": "models/caelum/players/hair5_0_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225002,8 +225002,8 @@
     },
     {
       "path": "models/caelum/players/hair5_0_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225016,8 +225016,8 @@
     },
     {
       "path": "models/caelum/players/hair5_0_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225030,8 +225030,8 @@
     },
     {
       "path": "models/caelum/players/hair5_0_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225044,8 +225044,8 @@
     },
     {
       "path": "models/caelum/players/hair5_0_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225058,8 +225058,8 @@
     },
     {
       "path": "models/caelum/players/hair5_0_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225072,8 +225072,8 @@
     },
     {
       "path": "models/caelum/players/hair5_1.md3",
-      "sha256": "557c9fbfaae9e11ab963e067602bfdb32d15002feff361022b637289d6b92e2b",
-      "bytes": 191580,
+      "sha256": "30daba55eba417749992e6c46f8d302c8a31fee779d90fcb481e95f8766ef9ae",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225086,8 +225086,8 @@
     },
     {
       "path": "models/caelum/players/hair5_1_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225100,8 +225100,8 @@
     },
     {
       "path": "models/caelum/players/hair5_1_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225114,8 +225114,8 @@
     },
     {
       "path": "models/caelum/players/hair5_1_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225128,8 +225128,8 @@
     },
     {
       "path": "models/caelum/players/hair5_1_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225142,8 +225142,8 @@
     },
     {
       "path": "models/caelum/players/hair5_1_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225156,8 +225156,8 @@
     },
     {
       "path": "models/caelum/players/hair5_1_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225170,8 +225170,8 @@
     },
     {
       "path": "models/caelum/players/hair5_2.md3",
-      "sha256": "95ad69655ae97a678462bae769c0a22375354f77f273837e354be9be1db7a90e",
-      "bytes": 231452,
+      "sha256": "e67874270619f46fb12cd4336285ce19bf8839413486dfc1e4c90bd69660ad43",
+      "bytes": 234356,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225184,8 +225184,8 @@
     },
     {
       "path": "models/caelum/players/hair5_2_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225198,8 +225198,8 @@
     },
     {
       "path": "models/caelum/players/hair5_2_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225212,8 +225212,8 @@
     },
     {
       "path": "models/caelum/players/hair5_2_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225226,8 +225226,8 @@
     },
     {
       "path": "models/caelum/players/hair5_2_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225240,8 +225240,8 @@
     },
     {
       "path": "models/caelum/players/hair5_2_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225254,8 +225254,8 @@
     },
     {
       "path": "models/caelum/players/hair5_2_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225268,8 +225268,8 @@
     },
     {
       "path": "models/caelum/players/hair5_3.md3",
-      "sha256": "ce4bf142b9b014eb69f4dcfb4a20aa5990997e6788aa88a240ab5f62b1c7fe68",
-      "bytes": 322396,
+      "sha256": "ac58c0d11a959876d36b429517094c9b4dfd6ad519f564af43a883917bea98e4",
+      "bytes": 425540,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225282,8 +225282,8 @@
     },
     {
       "path": "models/caelum/players/hair5_3_0.png",
-      "sha256": "9550db63e599287360ee142922539c647d9b7fce679d83d7572fa324ac773452",
-      "bytes": 27958,
+      "sha256": "0eda4016eda08602f16b0852ceecb1fd888fda5d88ad7ef6136169575bb27ab2",
+      "bytes": 28306,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225296,8 +225296,8 @@
     },
     {
       "path": "models/caelum/players/hair5_3_1.png",
-      "sha256": "b9497486ea4a5503417b4637968a131a35c8ec1bbca92949fc7403379c8f521a",
-      "bytes": 28224,
+      "sha256": "e3441f5e5232d7ae8b5a2d09bc5f03d1acd24776520852b796bb8ce775966706",
+      "bytes": 28813,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225310,8 +225310,8 @@
     },
     {
       "path": "models/caelum/players/hair5_3_2.png",
-      "sha256": "e686722d6781313a069f15b50cd720567f330f183e7cc1141a9d8df513af40c7",
-      "bytes": 28582,
+      "sha256": "fc1dc3eead7c3e36607e58f36b9dc2bfc1d5c76b761bde5629eda4ecd040b5da",
+      "bytes": 29414,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225324,8 +225324,8 @@
     },
     {
       "path": "models/caelum/players/hair5_3_3.png",
-      "sha256": "77c90eea0437d667835310b4f7cc06c6fd309dec7ce90f869a5d72214fc81426",
-      "bytes": 28584,
+      "sha256": "10e3fca179203ae4f49e0550aa076cdf4f2cc8edafefdc7b18d3714700afb3f2",
+      "bytes": 29216,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225338,8 +225338,8 @@
     },
     {
       "path": "models/caelum/players/hair5_3_4.png",
-      "sha256": "bd759cc9c84409ad155b8dd14bec354d77a29754e06bfeab050817ae667fd055",
-      "bytes": 28554,
+      "sha256": "49cd28af486567eb3e0d83c0b581ac60ec16e72f83f4929a5b0b0e12da470cc2",
+      "bytes": 29137,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
@@ -225352,8 +225352,8 @@
     },
     {
       "path": "models/caelum/players/hair5_3_5.png",
-      "sha256": "c9cdee457f44dee4a635f9344e89a52ae2f5c681d61afcc6f9119acd2eb0fcbb",
-      "bytes": 28158,
+      "sha256": "08ddfe10a16838109c1f3ac265181a34d270b060d1755c7bf2ac4130fc7a9b7d",
+      "bytes": 28856,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"

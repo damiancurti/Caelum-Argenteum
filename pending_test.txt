@@ -5,7 +5,7 @@ Expected: modeled faces, distinct horns and hooves on the demons, and a recogniz
 
 CA903-FAMILIES-01 | Origin: 5.18.6 / #903
 Prerequisites: 5.18.12 / #917 with hardware model rendering, in the inspection room or a third-person game.
-Steps: inspect both sexes in all seven families, including front, profile and back. Compare humanoids with the witch/warlock references and goblins with Pombero. Change skin or fur tone, humanoid face, hair style and color. Walk, crouch, attack and reload a save.
+Steps: inspect both sexes in all seven families, including front, profile and back. For each female form inspect the elbow and bust from the side. On humanoids check the crown, temples and nape as you cycle the four hairstyles and face shapes. Compare humanoids with the witch/warlock references and goblins with Pombero. Change skin or fur tone, humanoid face, hair style and color. Walk, crouch, attack and reload a save.
 Expected: distinct family anatomy, robust male and curvier female silhouettes, proportional hands and feet, rustic facial detail and persistence of the selected appearance. Report a station and viewing angle for any correction.
 
 CA904-EQUIPMENT-01 | Origin: 5.18.7 / #904
