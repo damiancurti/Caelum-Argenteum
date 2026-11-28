@@ -1,0 +1,263 @@
+{
+  "issue": 921,
+  "release": "5.18.14",
+  "platform": "Windows 11, GZDoom 4.14.2, Vulkan",
+  "audio": "-nosound before initialization",
+  "tested_full_roster_ipk3": "064d0db0da04a1c8bb3f4066ea03fa0afc3f2246a83ff9acfac961c0a4120e75",
+  "stage": {
+    "distinct_stations": 94,
+    "captures": 282,
+    "observed_changes_by_station": {
+      "FallFamily0": 4,
+      "FallFamily1": 4,
+      "FallFamily2": 4,
+      "FallFamily3": 4,
+      "FallFamily4": 4,
+      "FallFamily5": 4,
+      "FallFamily6": 4,
+      "FallFamily7": 4,
+      "FallFamily8": 4,
+      "FallFamily9": 4,
+      "FallFamily10": 4,
+      "FallFamily11": 4,
+      "FallFamily12": 4,
+      "FallFamily13": 4,
+      "CaelumMandinga": 6,
+      "CaelumZupayColossus": 6,
+      "CaelumGiantRat": 8,
+      "CaelumPalomo": 5,
+      "CaelumHuntPalomo": 5,
+      "CaelumTarotAutomaton": 3,
+      "CaelumBull": 15,
+      "CaelumCaella": 6,
+      "CaelumRonnie": 6,
+      "CaelumRulo": 6,
+      "CaelumArgento": 6,
+      "CaelumPrisonerUnitario": 6,
+      "CaelumPrisonerFederal": 6,
+      "CaelumPrisonerBestia": 6,
+      "CaelumPrisonerTarot": 6,
+      "CaelumPortDefender": 3,
+      "CaelumCompanionSubcaptain": 8,
+      "CaelumTravelBandit": 8,
+      "CaelumTravelCarbineBandit": 8,
+      "CaelumTarotExampleSpirit": 3,
+      "CaelumHuntInformativeSpirit": 3,
+      "CaelumTarotClone": 4,
+      "CaelumSummonedZupay": 6,
+      "CaelumHuntGuardian": 6,
+      "CaelumBestiary001": 6,
+      "CaelumBestiary002": 6,
+      "CaelumBestiary003": 6,
+      "CaelumBestiary004": 6,
+      "CaelumBestiary005": 6,
+      "CaelumBestiary006": 6,
+      "CaelumBestiary007": 6,
+      "CaelumBestiary008": 6,
+      "CaelumBestiary009": 6,
+      "CaelumBestiary010": 6,
+      "CaelumBestiary011": 6,
+      "CaelumBestiary012": 6,
+      "CaelumBestiary013": 6,
+      "CaelumBestiary014": 6,
+      "CaelumBestiary015": 6,
+      "CaelumBestiary016": 6,
+      "CaelumBestiary017": 6,
+      "CaelumBestiary020": 6,
+      "CaelumBestiary021": 6,
+      "CaelumBestiary022": 6,
+      "CaelumBestiary023": 6,
+      "CaelumBestiary024": 6,
+      "CaelumBestiary025": 6,
+      "CaelumBestiary026": 6,
+      "CaelumBestiary027": 6,
+      "CaelumBestiary028": 6,
+      "CaelumBestiary029": 6,
+      "CaelumBestiary030": 6,
+      "CaelumBestiary031": 6,
+      "CaelumBestiary032": 6,
+      "CaelumBestiary033": 6,
+      "CaelumBestiary034": 6,
+      "CaelumBestiary035": 6,
+      "CaelumBestiary036": 6,
+      "CaelumBestiary037": 6,
+      "CaelumBestiary038": 6,
+      "CaelumBestiary039": 6,
+      "CaelumBestiary040": 6,
+      "CaelumBestiary041": 6,
+      "CaelumBestiary042": 6,
+      "CaelumBestiary043": 6,
+      "CaelumBestiary044": 6,
+      "CaelumBestiary045": 6,
+      "CaelumBestiary046": 6,
+      "CaelumBestiary047": 6,
+      "CaelumBestiary048": 6,
+      "CaelumBestiary049": 6,
+      "CaelumBestiary050": 6,
+      "CaelumBestiary051": 6,
+      "CaelumBestiary052": 6,
+      "CaelumBestiary053": 6,
+      "CaelumBestiary054": 6,
+      "CaelumBestiary055": 6,
+      "CaelumBestiary056": 6,
+      "CaelumBestiary057": 6,
+      "CaelumBestiary058": 6
+    }
+  },
+  "saved_player_deaths": {
+    "identities": 14,
+    "resolved_poses": {
+      "0": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "1": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "2": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "3": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "4": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "5": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "6": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "7": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "8": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "9": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "10": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "11": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "12": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "13": [
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  },
+  "original_bestiary_actors": 56,
+  "new_bestiary_takes": 10,
+  "new_dedicated_sculpt_takes": 3,
+  "stationary_gallery": {
+    "stations": 205,
+    "visited": 205,
+    "stationary_at_tics": [
+      4,
+      109
+    ]
+  },
+  "map_switches": [
+    "GALERIA",
+    "CAIDAS",
+    "MOTION",
+    "GALERIA"
+  ],
+  "map01": {
+    "map": "MAP01",
+    "independent_game": true,
+    "save_reload": true,
+    "imported_5_18_10_save": true,
+    "last_sample": [
+      "CaelumPlayer",
+      "13",
+      "7490",
+      "56",
+      "3",
+      "4"
+    ]
+  },
+  "palomo_saved_body": {
+    "saved_with": "5.18.12",
+    "standing_before": true,
+    "curled_after": true
+  },
+  "deterministic_reexports": {
+    ".md3": 81,
+    ".modeldef": 2,
+    ".textures": 2,
+    ".zs": 1,
+    ".json": 4,
+    ".png": 102
+  },
+  "author_visual_acceptance": "pending",
+  "zupay_ground_slam": {
+    "poses": 25,
+    "captures": 40
+  },
+  "project_validation": {
+    "version": "5.18.14",
+    "errors": []
+  },
+  "distribution": {
+    "runtime_files": 19785,
+    "unresolved_explicit_sprites": {},
+    "errors": []
+  },
+  "death_stage_navigation": {
+    "selection_and_replay_order": [
+      15,
+      94,
+      1,
+      94,
+      94
+    ]
+  }
+}

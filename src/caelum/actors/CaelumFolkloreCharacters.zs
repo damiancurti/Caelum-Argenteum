@@ -289,6 +289,9 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
     {
         if(CaelumRedemption.Pending(self))return;
         Super.Tick();
+        // Al cargar un cuerpo antiguo, el sprite guardado puede seguir de pie.
+        if(health<=0 && Tics<0 && CurState!=null && Sprite!=CurState.Sprite && CurState==FindState("DeathRest"))
+        {Sprite=CurState.Sprite;Frame=CurState.Frame;}
         UpdateLocomotionVisual();
         if (!NarrativeRevealInitialized) { InitializeNarrativeReveal(); }
         // El diálogo no queda unido permanentemente a la clase. Tras cerrar la
@@ -434,9 +437,10 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
         Goto Walk;
     Death:
         PALM A 0 A_StopPalomoWander;
-        PALM A 5 A_Scream;
-        PALM A 0 A_CaelumNoBlocking;
-        PALM A -1;
+        PLDF A 5 A_Scream;
+        PLDF B 0 { A_CaelumNoBlocking(); SetStateLabel("DeathFall"); }
+    DeathRest:
+        RSPA B -1;
         Stop;
     DepartureRun:
         PARN AB 4;
@@ -460,6 +464,10 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
         Stop;
     RestLying:
         RSPA B -1 A_StopPalomoWander;
+        Stop;
+    DeathFall:
+        PLDF BCD 4;
+        RSPA B -1;
         Stop;
     }
 }

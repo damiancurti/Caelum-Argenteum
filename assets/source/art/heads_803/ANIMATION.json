@@ -619,7 +619,7 @@
     "assets/source/bestiary_453/imagenes/04_Apariciones/35_chonchon.png": "f28cdc5af4c27783de753cac1bfe4ef438f57f51dd2fcbe101b98987681dbeb1",
     "assets/source/art/heads_803/materials.png": "81fc522b7c804e56c00df8661cd3da66cdcd1bb27fa3c6de95e94355dbab5a30",
     "assets/source/art/heads_803/MATERIALS_PROMPT.json": "3b44598313f9cec040902834b8375f716a7d43b389852e24cb8d9f07d6172ca6",
-    "src/caelum/actors/CaelumFolkloreCharacters.zs": "8cd94ec0e23c6b3894acd71011fb071df7308b4995709e6290cfba50b1436f54",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "8d6db46e2c5162512fc00d66d1a7e7eae08004d87c826d4b5841a1f160759375",
     "assets/source/art/heads_803/CONTACTS.json": "1a53fdd7ec48d65e489dcdd0d3e19f8ea3e30e22662ee0478886933ac1248c7d"
   },
   "scale_policy": "Match neutral standing art height to the unchanged provisional native Height, divide out Actor.Scale, and report every posed bound. Moving arms and nonblocking horizontal death poses may exceed native Radius, as original biped art does; no collision or gameplay reach changes. Catalogue reference heights remain unauthorised.",

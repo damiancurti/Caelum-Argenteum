@@ -16,7 +16,7 @@
     "assets/source/art/nahuelito_455/iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
     "assets/source/art/nahuelito_455/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
     "assets/generators/generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
-    "src/caelum/actors/CaelumFolkloreCharacters.zs": "8cd94ec0e23c6b3894acd71011fb071df7308b4995709e6290cfba50b1436f54",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "8d6db46e2c5162512fc00d66d1a7e7eae08004d87c826d4b5841a1f160759375",
     "assets/bestiary/BEHAVIOR.json": "a017c151836f6df1934be6762e708e0759101c0daa8e2b77bb61bbfcb77e7576"
   },
   "scale_policy": "Uniformly fit all authored poses within the unchanged provisional Mandinga Radius/Height, accounting for Actor.Scale and CorrectPixelStretch. This temporary combat presentation is not final species-size or hitbox approval. Original 384-MU/12m preview remains unchanged.",

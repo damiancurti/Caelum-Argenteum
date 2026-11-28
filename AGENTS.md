@@ -1,6 +1,6 @@
 # AGENTS.md — Caelum Argenteum
 
-Documentation version: **5.18.13** - 2026-11-27.
+Documentation version: **5.18.14** - 2026-11-27.
 
 Startup guide for AI agents and human contributors. This file describes **how
 to work** on the project, not what balance or design it contains. Balance
@@ -147,7 +147,8 @@ diagnostic prototypes remain useful evidence; they are not a completed
 production delivery. Apply each optimization to the subsystem it supports;
 do not invent faction, civilian, targeting or combat rules for unrelated AI.
 Retain individual combat/resources/collision unless the author explicitly
-changes that policy. Native tests run unpaused in the background at 5% audio;
+changes that policy. Native visual tests run unpaused in the background with `-nosound` from startup.
+For a test that requires audio, set the master volume to at most 5% before the engine starts;
 temporary keep-awake requests must be released afterward.
 
 On 2026-10-17, under #318, the author rejected the 6,000-simultaneous-attacker

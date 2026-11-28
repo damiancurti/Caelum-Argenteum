@@ -789,7 +789,7 @@
     }
   },
   "source_sha256": {
-    "src/caelum/actors/CaelumFolkloreCharacters.zs": "8cd94ec0e23c6b3894acd71011fb071df7308b4995709e6290cfba50b1436f54",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "8d6db46e2c5162512fc00d66d1a7e7eae08004d87c826d4b5841a1f160759375",
     "assets/source/bestiary_453/imagenes/05_Bestias_magicas/45_cachiru.png": "a4ffc47561bbf59ae27f9475df049c637f4d42b8cc472718adc3ab4c5a000932",
     "assets/source/bestiary_453/imagenes/05_Bestias_magicas/46_kakuy.png": "fbda2ce6d5b436375b731acd720aba64b97b8b3361c202260549e6109dd89c10",
     "assets/source/bestiary_453/imagenes/05_Bestias_magicas/58_kelenken.png": "98a879aa33fc48c044abf7fe00bf5d33ca9311aa774e032d8db881413fe59da2",

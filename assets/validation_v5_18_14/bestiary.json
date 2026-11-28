@@ -1,0 +1,846 @@
+{
+  "issue": 921,
+  "method": "All mesh vertices at the six authored MNDG death frames, in model space. Each H-L pose is independently aligned to G with a proper rigid least-squares transform, then RMS residuals and all distances are divided by the vertical extent of G. Smaller residuals indicate more rigid movement. Ground contact, artistic intent, visibility, and rendered interpolation require separate inspection.",
+  "actors": [
+    {
+      "actor": "CaelumBestiary001",
+      "take": "witch",
+      "changed": false,
+      "prior_residual": 0.053068,
+      "residual": 0.053068,
+      "heights": [
+        1.0,
+        0.872401,
+        0.769755,
+        0.6548,
+        0.35984,
+        0.359508
+      ]
+    },
+    {
+      "actor": "CaelumBestiary002",
+      "take": "salamanca",
+      "changed": false,
+      "prior_residual": 0.060789,
+      "residual": 0.060789,
+      "heights": [
+        1.0,
+        0.872401,
+        0.764432,
+        0.589752,
+        0.262685,
+        0.263683
+      ]
+    },
+    {
+      "actor": "CaelumBestiary003",
+      "take": "lobizon",
+      "changed": false,
+      "prior_residual": 0.06697,
+      "residual": 0.06697,
+      "heights": [
+        1.0,
+        0.894644,
+        0.801229,
+        0.657419,
+        0.317998,
+        0.317998
+      ]
+    },
+    {
+      "actor": "CaelumBestiary004",
+      "take": "uturunco",
+      "changed": false,
+      "prior_residual": 0.069435,
+      "residual": 0.069435,
+      "heights": [
+        1.0,
+        0.903617,
+        0.88787,
+        0.834054,
+        0.491261,
+        0.491261
+      ]
+    },
+    {
+      "actor": "CaelumBestiary005",
+      "take": "ucumar",
+      "changed": false,
+      "prior_residual": 0.070491,
+      "residual": 0.070491,
+      "heights": [
+        1.0,
+        0.911031,
+        0.82377,
+        0.668204,
+        0.317281,
+        0.317281
+      ]
+    },
+    {
+      "actor": "CaelumBestiary006",
+      "take": "pombero",
+      "changed": false,
+      "prior_residual": 0.066249,
+      "residual": 0.066249,
+      "heights": [
+        1.0,
+        0.90156,
+        0.728886,
+        0.643895,
+        0.364174,
+        0.364174
+      ]
+    },
+    {
+      "actor": "CaelumBestiary007",
+      "take": "yasi",
+      "changed": false,
+      "prior_residual": 0.074129,
+      "residual": 0.074129,
+      "heights": [
+        1.0,
+        1.037031,
+        1.103314,
+        0.984444,
+        0.216266,
+        0.216266
+      ]
+    },
+    {
+      "actor": "CaelumBestiary008",
+      "take": "curupi",
+      "changed": false,
+      "prior_residual": 0.052102,
+      "residual": 0.052102,
+      "heights": [
+        1.0,
+        0.899506,
+        0.781384,
+        0.617298,
+        0.302801,
+        0.310873
+      ]
+    },
+    {
+      "actor": "CaelumBestiary009",
+      "take": "mikilo",
+      "changed": false,
+      "prior_residual": 0.056604,
+      "residual": 0.056604,
+      "heights": [
+        1.0,
+        0.872817,
+        0.708414,
+        0.627271,
+        0.357559,
+        0.357559
+      ]
+    },
+    {
+      "actor": "CaelumBestiary010",
+      "take": "coquena",
+      "changed": false,
+      "prior_residual": 0.056427,
+      "residual": 0.056427,
+      "heights": [
+        1.0,
+        0.836105,
+        0.72973,
+        0.5965,
+        0.281705,
+        0.281705
+      ]
+    },
+    {
+      "actor": "CaelumBestiary011",
+      "take": "yastay",
+      "changed": false,
+      "prior_residual": 0.055864,
+      "residual": 0.055864,
+      "heights": [
+        1.0,
+        0.879825,
+        0.823867,
+        0.637789,
+        0.208158,
+        0.208158
+      ]
+    },
+    {
+      "actor": "CaelumBestiary012",
+      "take": "sachayoj",
+      "changed": false,
+      "prior_residual": 0.056238,
+      "residual": 0.056238,
+      "heights": [
+        1.0,
+        0.881378,
+        0.775348,
+        0.602717,
+        0.274023,
+        0.281643
+      ]
+    },
+    {
+      "actor": "CaelumBestiary013",
+      "take": "caapora",
+      "changed": false,
+      "prior_residual": 0.063105,
+      "residual": 0.063105,
+      "heights": [
+        1.0,
+        0.890262,
+        0.791728,
+        0.625638,
+        0.319328,
+        0.326083
+      ]
+    },
+    {
+      "actor": "CaelumBestiary014",
+      "take": "caayari",
+      "changed": false,
+      "prior_residual": 0.057916,
+      "residual": 0.057916,
+      "heights": [
+        1.0,
+        0.887075,
+        0.818621,
+        0.66489,
+        0.314957,
+        0.30946
+      ]
+    },
+    {
+      "actor": "CaelumBestiary015",
+      "take": "zapamzucum",
+      "changed": false,
+      "prior_residual": 0.054855,
+      "residual": 0.054855,
+      "heights": [
+        1.0,
+        0.875808,
+        0.782457,
+        0.675344,
+        0.40524,
+        0.404908
+      ]
+    },
+    {
+      "actor": "CaelumBestiary016",
+      "take": "pericana",
+      "changed": false,
+      "prior_residual": 0.068668,
+      "residual": 0.068668,
+      "heights": [
+        1.0,
+        0.901415,
+        0.819395,
+        0.705854,
+        0.374236,
+        0.366517
+      ]
+    },
+    {
+      "actor": "CaelumBestiary017",
+      "take": "solapa",
+      "changed": false,
+      "prior_residual": 0.049806,
+      "residual": 0.049806,
+      "heights": [
+        1.0,
+        0.933322,
+        0.762078,
+        0.637657,
+        0.462608,
+        0.458471
+      ]
+    },
+    {
+      "actor": "CaelumBestiary020",
+      "take": "noshtex",
+      "changed": false,
+      "prior_residual": 0.055158,
+      "residual": 0.055158,
+      "heights": [
+        1.0,
+        0.884774,
+        0.777484,
+        0.612498,
+        0.349479,
+        0.360225
+      ]
+    },
+    {
+      "actor": "CaelumBestiary021",
+      "take": "xalpen",
+      "changed": false,
+      "prior_residual": 0.055947,
+      "residual": 0.055947,
+      "heights": [
+        1.0,
+        0.95007,
+        0.740989,
+        0.542986,
+        0.441254,
+        0.441098
+      ]
+    },
+    {
+      "actor": "CaelumBestiary022",
+      "take": "shoort",
+      "changed": false,
+      "prior_residual": 0.065148,
+      "residual": 0.065148,
+      "heights": [
+        1.0,
+        0.828002,
+        0.715657,
+        0.621001,
+        0.277569,
+        0.256116
+      ]
+    },
+    {
+      "actor": "CaelumBestiary023",
+      "take": "tanu",
+      "changed": false,
+      "prior_residual": 0.063101,
+      "residual": 0.063101,
+      "heights": [
+        1.0,
+        0.885503,
+        0.784812,
+        0.624179,
+        0.428355,
+        0.432564
+      ]
+    },
+    {
+      "actor": "CaelumBestiary024",
+      "take": "halahaches",
+      "changed": false,
+      "prior_residual": 0.056996,
+      "residual": 0.056996,
+      "heights": [
+        1.0,
+        0.819048,
+        0.675132,
+        0.529277,
+        0.254497,
+        0.262787
+      ]
+    },
+    {
+      "actor": "CaelumBestiary025",
+      "take": "matan",
+      "changed": false,
+      "prior_residual": 0.064103,
+      "residual": 0.064103,
+      "heights": [
+        1.0,
+        0.863262,
+        0.764153,
+        0.592978,
+        0.18898,
+        0.19318
+      ]
+    },
+    {
+      "actor": "CaelumBestiary026",
+      "take": "ulen",
+      "changed": false,
+      "prior_residual": 0.07041,
+      "residual": 0.07041,
+      "heights": [
+        1.0,
+        0.864956,
+        0.769166,
+        0.596712,
+        0.268076,
+        0.266063
+      ]
+    },
+    {
+      "actor": "CaelumBestiary027",
+      "take": "luzmala_fall",
+      "changed": true,
+      "prior_residual": 0.00011,
+      "residual": 0.178721,
+      "heights": [
+        1.0,
+        0.883294,
+        0.652059,
+        0.245377,
+        0.068842,
+        0.079565
+      ]
+    },
+    {
+      "actor": "CaelumBestiary028",
+      "take": "umita_fall",
+      "changed": true,
+      "prior_residual": 0.000111,
+      "residual": 0.18593,
+      "heights": [
+        1.0,
+        0.976755,
+        0.967211,
+        0.802648,
+        0.718134,
+        0.737069
+      ]
+    },
+    {
+      "actor": "CaelumBestiary029",
+      "take": "mulanima_fall",
+      "changed": true,
+      "prior_residual": 0.012744,
+      "residual": 0.091576,
+      "heights": [
+        1.0,
+        0.943583,
+        0.768532,
+        0.464504,
+        0.326281,
+        0.340856
+      ]
+    },
+    {
+      "actor": "CaelumBestiary030",
+      "take": "chancho_lata_fall",
+      "changed": true,
+      "prior_residual": 0.015091,
+      "residual": 0.100562,
+      "heights": [
+        1.0,
+        1.041745,
+        1.018224,
+        0.786916,
+        0.685826,
+        0.63972
+      ]
+    },
+    {
+      "actor": "CaelumBestiary031",
+      "take": "viuda",
+      "changed": false,
+      "prior_residual": 0.061084,
+      "residual": 0.061084,
+      "heights": [
+        1.0,
+        0.891199,
+        0.824322,
+        0.674597,
+        0.35984,
+        0.373815
+      ]
+    },
+    {
+      "actor": "CaelumBestiary032",
+      "take": "llorona",
+      "changed": false,
+      "prior_residual": 0.062184,
+      "residual": 0.062184,
+      "heights": [
+        1.0,
+        0.891199,
+        0.824322,
+        0.674597,
+        0.35984,
+        0.359508
+      ]
+    },
+    {
+      "actor": "CaelumBestiary033",
+      "take": "futre",
+      "changed": false,
+      "prior_residual": 0.082815,
+      "residual": 0.082815,
+      "heights": [
+        1.0,
+        0.929209,
+        0.863452,
+        0.66618,
+        0.308329,
+        0.308329
+      ]
+    },
+    {
+      "actor": "CaelumBestiary034",
+      "take": "anchimallen",
+      "changed": false,
+      "prior_residual": 0.058856,
+      "residual": 0.058856,
+      "heights": [
+        1.0,
+        0.872337,
+        0.679261,
+        0.530126,
+        0.313415,
+        0.313415
+      ]
+    },
+    {
+      "actor": "CaelumBestiary035",
+      "take": "chonchon",
+      "changed": false,
+      "prior_residual": 0.21249,
+      "residual": 0.21249,
+      "heights": [
+        1.0,
+        1.28922,
+        1.422087,
+        1.137089,
+        0.868056,
+        0.773057
+      ]
+    },
+    {
+      "actor": "CaelumBestiary036",
+      "take": "gualicho",
+      "changed": false,
+      "prior_residual": 0.072216,
+      "residual": 0.072216,
+      "heights": [
+        1.0,
+        0.845232,
+        0.809797,
+        0.650686,
+        0.165711,
+        0.152163
+      ]
+    },
+    {
+      "actor": "CaelumBestiary037",
+      "take": "pampayoj",
+      "changed": false,
+      "prior_residual": 0.059343,
+      "residual": 0.059343,
+      "heights": [
+        1.0,
+        0.871641,
+        0.761642,
+        0.589718,
+        0.315807,
+        0.325989
+      ]
+    },
+    {
+      "actor": "CaelumBestiary038",
+      "take": "mayumaman",
+      "changed": false,
+      "prior_residual": 0.053224,
+      "residual": 0.053224,
+      "heights": [
+        1.0,
+        0.88672,
+        0.815816,
+        0.661995,
+        0.344178,
+        0.364865
+      ]
+    },
+    {
+      "actor": "CaelumBestiary039",
+      "take": "orkomaman",
+      "changed": false,
+      "prior_residual": 0.056257,
+      "residual": 0.056257,
+      "heights": [
+        1.0,
+        0.900765,
+        0.834275,
+        0.683843,
+        0.389461,
+        0.400266
+      ]
+    },
+    {
+      "actor": "CaelumBestiary040",
+      "take": "urituorko",
+      "changed": false,
+      "prior_residual": 0.085782,
+      "residual": 0.085782,
+      "heights": [
+        1.0,
+        0.919563,
+        0.845038,
+        0.727517,
+        0.327302,
+        0.285561
+      ]
+    },
+    {
+      "actor": "CaelumBestiary041",
+      "take": "nowet",
+      "changed": false,
+      "prior_residual": 0.053707,
+      "residual": 0.053707,
+      "heights": [
+        1.0,
+        0.880392,
+        0.773889,
+        0.607167,
+        0.318182,
+        0.329131
+      ]
+    },
+    {
+      "actor": "CaelumBestiary042",
+      "take": "maip",
+      "changed": false,
+      "prior_residual": 0.071327,
+      "residual": 0.071327,
+      "heights": [
+        1.0,
+        0.917075,
+        0.897315,
+        0.739402,
+        0.237798,
+        0.25114
+      ]
+    },
+    {
+      "actor": "CaelumBestiary043",
+      "take": "familiar_fall",
+      "changed": true,
+      "prior_residual": 0.016057,
+      "residual": 0.118124,
+      "heights": [
+        1.0,
+        0.969393,
+        0.851201,
+        0.599278,
+        0.453147,
+        0.448909
+      ]
+    },
+    {
+      "actor": "CaelumBestiary044",
+      "take": "basilisco",
+      "changed": false,
+      "prior_residual": 0.065384,
+      "residual": 0.065384,
+      "heights": [
+        1.0,
+        0.954954,
+        0.792879,
+        0.533282,
+        0.347059,
+        0.359907
+      ]
+    },
+    {
+      "actor": "CaelumBestiary045",
+      "take": "cachiru",
+      "changed": false,
+      "prior_residual": 0.134334,
+      "residual": 0.134334,
+      "heights": [
+        1.0,
+        0.997272,
+        0.875417,
+        0.692634,
+        0.521522,
+        0.490452
+      ]
+    },
+    {
+      "actor": "CaelumBestiary046",
+      "take": "kakuy",
+      "changed": false,
+      "prior_residual": 0.143165,
+      "residual": 0.143165,
+      "heights": [
+        1.0,
+        0.969271,
+        0.852224,
+        0.661056,
+        0.508802,
+        0.510346
+      ]
+    },
+    {
+      "actor": "CaelumBestiary047",
+      "take": "teju_jagua_fall",
+      "changed": true,
+      "prior_residual": 0.016432,
+      "residual": 0.068494,
+      "heights": [
+        1.0,
+        1.034833,
+        1.021868,
+        0.916432,
+        0.755545,
+        0.684786
+      ]
+    },
+    {
+      "actor": "CaelumBestiary048",
+      "take": "mboi_tui",
+      "changed": false,
+      "prior_residual": 0.11536,
+      "residual": 0.11536,
+      "heights": [
+        1.0,
+        0.862629,
+        0.74723,
+        0.698486,
+        0.673929,
+        0.703471
+      ]
+    },
+    {
+      "actor": "CaelumBestiary049",
+      "take": "monai",
+      "changed": false,
+      "prior_residual": 0.117333,
+      "residual": 0.117333,
+      "heights": [
+        1.0,
+        0.867397,
+        0.733403,
+        0.597671,
+        0.460202,
+        0.441606
+      ]
+    },
+    {
+      "actor": "CaelumBestiary050",
+      "take": "ao_ao_fall",
+      "changed": true,
+      "prior_residual": 0.011007,
+      "residual": 0.082365,
+      "heights": [
+        1.0,
+        1.008131,
+        0.964816,
+        0.733855,
+        0.594996,
+        0.596091
+      ]
+    },
+    {
+      "actor": "CaelumBestiary051",
+      "take": "mboi_tata",
+      "changed": false,
+      "prior_residual": 0.119743,
+      "residual": 0.119743,
+      "heights": [
+        1.0,
+        0.870929,
+        0.740471,
+        0.608801,
+        0.480942,
+        0.502772
+      ]
+    },
+    {
+      "actor": "CaelumBestiary052",
+      "take": "mboi_yagua",
+      "changed": false,
+      "prior_residual": 0.103144,
+      "residual": 0.103144,
+      "heights": [
+        1.0,
+        0.869434,
+        0.737355,
+        0.635691,
+        0.613342,
+        0.650479
+      ]
+    },
+    {
+      "actor": "CaelumBestiary053",
+      "take": "cuero",
+      "changed": false,
+      "prior_residual": 0.171616,
+      "residual": 0.171616,
+      "heights": [
+        1.0,
+        0.747449,
+        0.489796,
+        0.319728,
+        0.238095,
+        0.238095
+      ]
+    },
+    {
+      "actor": "CaelumBestiary054",
+      "take": "peuchen",
+      "changed": false,
+      "prior_residual": 0.149954,
+      "residual": 0.149954,
+      "heights": [
+        1.0,
+        1.054301,
+        0.972697,
+        0.684411,
+        0.55842,
+        0.508389
+      ]
+    },
+    {
+      "actor": "CaelumBestiary055",
+      "take": "nahuelito_fall",
+      "changed": true,
+      "prior_residual": 0.065957,
+      "residual": 0.168003,
+      "heights": [
+        1.0,
+        0.870694,
+        0.7336,
+        0.51077,
+        0.505718,
+        0.48053
+      ]
+    },
+    {
+      "actor": "CaelumBestiary056",
+      "take": "huayrapuca_fall",
+      "changed": true,
+      "prior_residual": 0.009156,
+      "residual": 0.171741,
+      "heights": [
+        1.0,
+        1.043275,
+        1.072696,
+        0.803394,
+        0.533624,
+        0.434153
+      ]
+    },
+    {
+      "actor": "CaelumBestiary057",
+      "take": "kasogonaga_fall",
+      "changed": true,
+      "prior_residual": 0.020837,
+      "residual": 0.150369,
+      "heights": [
+        1.0,
+        1.078135,
+        1.061135,
+        0.807236,
+        0.668746,
+        0.562383
+      ]
+    },
+    {
+      "actor": "CaelumBestiary058",
+      "take": "kelenken",
+      "changed": false,
+      "prior_residual": 0.135202,
+      "residual": 0.135202,
+      "heights": [
+        1.0,
+        0.961259,
+        0.815404,
+        0.620775,
+        0.476308,
+        0.477852
+      ]
+    }
+  ]
+}

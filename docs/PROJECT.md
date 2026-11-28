@@ -1,6 +1,10 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.18.13** - 2026-11-27.
+Documentation version: **5.18.14** - 2026-11-27.
+
+## 5.18.14 - Character presentation (#921)
+
+Creature, resident, summoned and player death presentations have been reviewed for joint movement and a resting pose.
 
 ## 5.18.13 - Character presentation (#920)
 

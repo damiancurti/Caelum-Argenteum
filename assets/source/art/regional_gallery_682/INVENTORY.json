@@ -49,10 +49,10 @@
   ],
   "source_sha256": {
     "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
-    "assets/source/art/beast_men_680/EXPORT.json": "e044d3edd17b6ce58c8fc6a95a0d29182f46c9ee9eb242cbb7122fc411ee49f7",
+    "assets/source/art/beast_men_680/EXPORT.json": "09bce6e8ca7067f3e968f2855f1ddbfece763a2f5ddbadf09580a58ab2071cff",
     "assets/generators/generate_beast_regional_materials.py": "2f76d6647aa627da78009b191f8f55d190032c29e34ae7c1a34bc20b5752e1a9",
     "assets/source/art/regional_gallery_463/INVENTORY.json": "1dd6460200ef58d80534b10a44bc8b27010abf036b64f83a8eed15f4cf280d7f",
-    "assets/source/art/regional_gallery_700/EXPORT.json": "763865cb138ec4d1c202f505bc4e85812b9f2f3ac8dfda1c8b1ddf67383276f3"
+    "assets/source/art/regional_gallery_700/EXPORT.json": "b88459320f04f7cc249350145cc307d534075b0172fa6ab6e1381e4a9dbd7c5c"
   },
   "exclusions": [
     "No campaign geometry, encounters, body/balance/AI rules or final biome approval.",

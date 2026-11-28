@@ -32,3 +32,8 @@ CA920-SLAM-01 | Origin: 5.18.13 / #920
 Prerequisites: hardware model rendering and the Zupay motion stage.
 Steps: watch both hands during the lift, strike and recovery from the front and side.
 Expected: fingers and thumbs close before the downswing, both fists reach the ground at impact and reopen as Zupay stands.
+
+CA921-FALLS-01 | Origin: 5.18.14 / #921
+Prerequisites: the silent Windows motion stage or a third-person game in hardware rendering mode.
+Steps: cycle the death roster; replay a fall and walk around the resting figure. Watch hips, shoulders, knees and hands on bipeds, necks, tails, wings and feet on other bodies. Check Palomo and the Tarot summons.
+Expected: the body loses support before landing, the grounded pose fits its anatomy and both costume and face follow the fall. Report a station and phase for any correction.

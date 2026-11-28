@@ -5828,3 +5828,5 @@ Graphic "CA518_DOMIZ0_1", 142, 88 { Patch "graphics/caelum/death_repair/domingo-
 #include "caelum/data/rest_motion.textures"
 
 #include "caelum/data/zupay_slam.textures"
+
+#include "caelum/data/palomo_fall.textures"

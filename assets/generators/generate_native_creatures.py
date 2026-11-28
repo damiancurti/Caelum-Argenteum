@@ -7,6 +7,7 @@ import json
 import numpy as np
 
 from character_mesh_frames import ROOT, encode
+from creature_death_motion import fall
 from sculpted_character_art import Sculpt, paint, surfaces
 from sculpted_humanoid import figure, head
 
@@ -522,6 +523,8 @@ def posed(piece, key, frame):
     prefix = frame[:-1]
     walk = prefix in ("miwk", "zuwk", "mirn", "zurn") or prefix == "ratg" and idx in (1, 2)
     death = prefix in ("mndg", "zupy") and 6 <= idx <= 11 or prefix == "ratg" and idx >= 5
+    if death:
+        return fall(p, j, key, idx - (5 if rat else 6), rotation)
     sleep = frame.startswith("sl")
     attack = prefix in ("mndg", "zupy") and (idx in (3, 4) or idx >= 12) or prefix == "ratg" and idx == 3
     pain = prefix in ("mndg", "zupy") and idx == 5 or prefix == "ratg" and idx == 4
@@ -556,8 +559,8 @@ def posed(piece, key, frame):
         if j == "tail":
             weight = np.clip((-p[:, 0] - 5) / 70, 0, 1)
             p[:, 1] += weight * 12 * (phase if walk else 0.25 * cos(idx))
-            if sleep or death:
-                p = rotation(p, (-7, 0, 23), "z", 56 if sleep else 24)
+            if sleep:
+                p = rotation(p, (-7, 0, 23), "z", 56)
     else:
         knee = (2, sign * 12.5, 52)
         hip = (0, sign * 10, 94)
@@ -586,14 +589,13 @@ def posed(piece, key, frame):
             )
         if j == "tail":
             p = rotation(p, (-8, 0, 92), "z", 10 * sin(idx * 1.7) + (22 if sleep else 0))
-    if death or sleep:
-        f = 1 if sleep else ((idx - (5 if rat else 6)) / (7 if rat else 5))
+    if sleep:
         pivot = (12, 0, 20) if rat else (0, 0, 86)
         if not rat and j.startswith(("thigh", "shin", "foot")):
-            p = rotation(p, (0, sign * 10, 94), "y", f * (25 if sleep else -13))
-        p = rotation(p, pivot, "x", (82 if sleep else 91) * f)
+            p = rotation(p, (0, sign * 10, 94), "y", 25)
+        p = rotation(p, pivot, "x", 82)
         if not rat:
-            p = rotation(p, pivot, "y", f * (19 if sleep else -8))
+            p = rotation(p, pivot, "y", 19)
     return p
 
 
@@ -655,6 +657,7 @@ def main():
             "zupay": "Knee-length tunic, bordered mantle, sash and trousers.",
         },
         "rat_anatomy": "Arched axial body, articulated jaw, concave pinnae, incisors, whiskers, four sets of toes and a tapering tail.",
+        "death_motion": "assets/source/art/articulated_deaths_921/MOTION.json",
         "actions": {k: v[2].split() for k, v in DESIGN.items()},
         "sha256": inventory,
     }

@@ -963,11 +963,11 @@
   "source_sha256": {
     "assets/source/bestiary_453/imagenes/03_Duendes_demonios/07_yasi_yatere.png": "55aae2de72a91d55d946661ef249883a25fd05e548305a1ae80b50b1ec957845",
     "assets/source/bestiary_453/imagenes/03_Duendes_demonios/11_yastay.png": "0be77caebce561fff1b6a11ab22d19b28195330cfe7672b77c23a6d8bd04bb45",
-    "src/caelum/actors/CaelumFolkloreCharacters.zs": "8cd94ec0e23c6b3894acd71011fb071df7308b4995709e6290cfba50b1436f54",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "8d6db46e2c5162512fc00d66d1a7e7eae08004d87c826d4b5841a1f160759375",
     "assets/bestiary/BEHAVIOR.json": "a017c151836f6df1934be6762e708e0759101c0daa8e2b77bb61bbfcb77e7576",
     "assets/bestiary/CATALOGUE.json": "120c48b6d21fbcd2c9cb9e6395d16006ec4de7026908256e83e2dc47ea0f1677",
     "assets/source/art/duendes_690/mikilo.json": "ae5a5c3b54c8774d1388d825c3b2c10eddeda87398d505a39a557a6feafbc890",
-    "assets/source/art/duendes_690/ANIMATION.json": "28c71c587e906b361c9fa29091d1cf4fcbe80a69021dece1bb5afeefb5db7104",
+    "assets/source/art/duendes_690/ANIMATION.json": "e2258a05fd6448fa2c07ce76b68b4629b3991136719b2918bbd09369ca35b976",
     "assets/generators/generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
     "assets/generators/generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
     "assets/source/art/guardians_698/materials-PROMPT.json": "62a633f54a156e486d6a5a989d9d6ef14441384188b60342bc4d8d7c5296b8e1",

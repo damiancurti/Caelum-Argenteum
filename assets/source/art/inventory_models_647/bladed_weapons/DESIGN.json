@@ -1890,7 +1890,7 @@
     "src/graphics/caelum/icons/ca_dagger.png": "30ac5bf3f2f4d0b30910cd2f3cbe23b4a168ba34cbcc496539c25bc6f0e02c82",
     "src/graphics/caelum/icons/ca_machete.png": "58b2cbf5d8aad9a1201b9050ecd8cb4f9758be756d452b544eea72dd1da91a5c",
     "src/graphics/caelum/first_person/v5/greatsword_icon_t1_source.png": "6f435da5cdb388a78095a7c0609086b679e7c629294ae0935e4fcca5b7fca996",
-    "src/TEXTURES": "3baaeb5400bcf24b9a81b3e9197a4224e37824de7eeb8b26455e17c7349311b0"
+    "src/TEXTURES": "9c1fefdfd3975c8199dfd48086c41e7f7232420c8e436ce2ec8d60f8766e9ced"
   },
   "dimensions_note": "Corrected under #769: effective TEXTURES aliases override the legacy physical sprite lumps used by the first candidate. World envelopes now follow current icon alpha and native sprite scale; greatsword RGB desaturation/blend leaves that alpha envelope unchanged. Original shared quality state, collision and actor scale remain unchanged. Simplified fittings, static tassels, plain steel without painted blade stains, omitted fine ornament/axe chain and hidden surfaces still require author review.",
   "correction_issue": 769

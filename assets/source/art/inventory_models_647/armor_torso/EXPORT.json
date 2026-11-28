@@ -500,13 +500,13 @@
     }
   },
   "source_sha256": {
-    "DESIGN.json": "eab2f4dd716afe2dc97c1fc140d746281cabb497e247a7a2a84c1014d39add41",
+    "DESIGN.json": "48e97832c807b9f379297692c3a3d2d6accc2eaa7e5d7461d4758c479fd1ebb4",
     "PROVENANCE.json": "77b162e8521807f200df5dd918e9fb89577ec271b13383b4b4f23593461035eb",
     "FUR_BRIEF.json": "26dfda87bc214c6852a8a0bc4fb18d1f992552706a39fffc0878f543823d7abf",
     "FUR_PROMPT.json": "0f698203005b43f4732f51a840eff6260b65f3aba024a29aa55416b684325cc5"
   },
   "external_source_sha256": {
-    "src/TEXTURES": "3baaeb5400bcf24b9a81b3e9197a4224e37824de7eeb8b26455e17c7349311b0",
+    "src/TEXTURES": "9c1fefdfd3975c8199dfd48086c41e7f7232420c8e436ce2ec8d60f8766e9ced",
     "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
     "assets/generators/generate_inventory_articulated_weapons_models.py": "2dd9f7ddc4cf1ad708ee07b1e45d2d749934a1980125383b4e221f18a0a66efd",
     "assets/generators/generate_inventory_armor_helmets_models.py": "3492b7a039b9bd8e6820795865b2b2028440e8620fc0a968c7f907c873c9a02d",
