@@ -52,3 +52,8 @@ CA927-FIT-01 | Origin: 5.18.17 / #927
 Prerequisites: current silent fitting room on GZDoom 4.14.2.
 Steps: Press E to cycle the four shields. Turn from the face to the edge and back.
 Expected: The board, raised front fittings, grip and rear structure remain legible around the figure.
+
+CA928-FIT-01 | Origin: 5.18.18 / #928
+Prerequisites: current silent fitting room on GZDoom 4.14.2.
+Steps: Press H to cycle the four helmets, F2/F3 to switch bodies, and 0 to uncover the head. Turn to inspect the ears and crown.
+Expected: The shell keeps its profile. Ears and upper hair stay inside; removing the helmet restores the selected head and hair.

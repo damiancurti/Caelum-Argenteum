@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.18.17** - 2026-11-28.
+Documentation version: **5.18.18** - 2026-11-28.
 
 ## 5.18.4 - Repository audit integration (#899)
 

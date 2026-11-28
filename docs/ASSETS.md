@@ -1,6 +1,10 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.18.17** - 2026-11-28.
+Documentation version: **5.18.18** - 2026-11-28.
+
+## 5.18.18 - Compact helmets and tucked heads (#928)
+
+The four helmets keep a common silhouette across families, scaled by stature. Covered head and hair variants tuck inside the shell and the original appearance returns on removal.
 
 ## 5.18.17 - Carried shield relief (#927)
 

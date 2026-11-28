@@ -7,6 +7,13 @@ class CaelumFamilyModels : Object play
             "models/caelum/players",Name(skin),visible?0:CMDL_HIDEMODEL);
     }
 
+    static bool WearsArmor(CaelumPlayer body,int slot)
+    {
+        int key=body.WornVisualKeys[2+slot];
+        if(body.health<=0 && key!=0)return key>0;
+        return body.ArmorModel!=null && body.ArmorModel.ArmorType[slot]!=CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
+    }
+
     static void Bind(CaelumPlayer body,CaelumCharacterProfile profile,bool gloves)
     {
         int id=CaelumAppearance.Identity(profile.Race,profile.Sex,profile.BeastForm);
@@ -15,9 +22,9 @@ class CaelumFamilyModels : Object play
         int hair=id<6?Clamp(profile.HairStyle,0,3):0;
         int color=id<6?Clamp(profile.HairColor,0,5):0;
         int key=(((((id*3+tone)*4+face)*4+hair)*6+color)*2+int(gloves))+1;
-        bool boots=body.health<=0 && body.WornVisualKeys[5]!=0 ? body.WornVisualKeys[5]>0 :
-            body.ArmorModel!=null && body.ArmorModel.ArmorType[CaelumConstants.ARMOR_SLOT_FEET]!=CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
-        key=key*2+int(boots);
+        bool boots=WearsArmor(body,CaelumConstants.ARMOR_SLOT_FEET);
+        bool helmet=WearsArmor(body,CaelumConstants.ARMOR_SLOT_HEAD);
+        key=key*4+int(boots)*2+int(helmet);
         if(body.FamilyVisualKey==key)return;
         body.FamilyVisualKey=key;
         // El mismo casco necesita otro ajuste cuando se vuelve a enlazar el cuerpo vivo.
@@ -32,8 +39,9 @@ class CaelumFamilyModels : Object play
         BindSlot(body,4,base..(gloves?"_gloves.md3":"_hands.md3"),
             gloves?cloth:String.Format("hskin%d.png",skin));
         String head=String.Format("head%d_%d",id,face);
-        BindSlot(body,5,head..".md3",String.Format("%s_%d.png",head,tone));
+        String cut=helmet?"tuck/":"";
+        BindSlot(body,5,cut..head..".md3",String.Format("%s_%d.png",head,tone));
         String style=String.Format("hair%d_%d",id<6?id:0,hair);
-        BindSlot(body,6,style..".md3",String.Format("%s_%d.png",style,color),id<6);
+        BindSlot(body,6,cut..style..".md3",String.Format("%s_%d.png",style,color),id<6);
     }
 }

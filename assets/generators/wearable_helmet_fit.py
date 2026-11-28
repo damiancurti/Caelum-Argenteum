@@ -1,98 +1,64 @@
-"""Fit the inventory helmet shell, visor and plume around the current player sculpts."""
+"""Wearable helmet geometry and the covered head that fits inside its metal shell."""
 from functools import lru_cache
 import json
+import re
 
 import numpy as np
-from scipy.spatial import ConvexHull
-from scipy.ndimage import gaussian_filter, maximum_filter
 
-from character_mesh_frames import ROOT, read_model
+from character_mesh_frames import ROOT
 
-
-PLAYERS = ROOT / "src/models/caelum/players"
 SOURCE = ROOT / "assets/source/art/inventory_models_647/armor_helmets"
+REGISTRY = ROOT / "src/caelum/character/CaelumAppearanceRegistry.zs"
+# Player-model units measured on the neutral human skull. The shell is a
+# continuous ellipse. Accessories and uncovered ears never size the metal.
+INNER_DEPTH = 13.65
+INNER_WIDTH = 11.7
+BRIM = 159.25
+RISE = 0.47
 
 
-def vertices(path):
-    return np.vstack([surface.positions[0] for surface in read_model(path.read_bytes())])
+@lru_cache(maxsize=1)
+def stature():
+    values = re.search(r"heights\[\] = \{([^}]+)", REGISTRY.read_text("utf8"))[1]
+    heights = np.array([float(n) for n in values.split(",")])
+    return heights[::4] / heights[0]
 
 
-@lru_cache(maxsize=7)
-def profile(family):
-    # Use the same shell for the two sexes. Loose hair below the brow hangs out
-    # of the helmet; only the scalp and the upper hair belong inside the bowl.
-    heads = [vertices(path) for i in (2*family, 2*family+1)
-             for path in sorted(PLAYERS.glob(f"head{i}_*.md3"))]
-    points = np.vstack(heads)
-    brow = (points[:, 2].min() + 0.68 * (np.quantile(points[:, 2], 0.99) - points[:, 2].min()))
-    hair = [vertices(path) for i in (2*family, 2*family+1)
-            for path in sorted(PLAYERS.glob(f"hair{i}_*.md3"))]
-    if hair:
-        cap = np.vstack(hair)
-        points = np.vstack((points, cap[cap[:, 2] >= brow]))
-    top = points[:, 2].max() + 4
-    return brow, top, ConvexHull(np.unique(points, axis=0)).equations
-
-
-@lru_cache(maxsize=28)
-def shell(family, material):
+@lru_cache(maxsize=4)
+def crown(material):
     design = json.loads((SOURCE/"DESIGN.json").read_bytes())
     export = json.loads((SOURCE/"EXPORT.json").read_bytes())
-    parts = {part["part"]: part for part in design["families"][material]["parts"]}
-    crown = parts["hollow_crown"]
-    crown_top = crown["offset"][2]
-    brim = max(row[0] for row in parts["brow"]["rows"])
-    # The return side of the crown loft is its inner wall, from rim to tip.
-    rows = np.array(crown["rows"])
+    bowl = next(p for p in design["families"][material]["parts"] if p["part"]=="hollow_crown")
+    rows = np.array(bowl["rows"])
     inside = rows[len(rows)//2:]
-    inner_z = crown_top - inside[:, 0]
-    brow, top, planes = profile(family)
-    levels = np.linspace(5, crown_top, 72)
-    height = np.interp(levels, [levels[0], brim, crown_top], [brow-15, brow, top])
-    radial = np.interp(levels, inner_z, inside[:, 3]) * abs(crown["rotation"][0][0])
-    # Horizontal rays from the skull axis intersect the convex envelope of
-    # every supported face. Fit the visor as well, particularly on muzzles.
-    theta = np.arange(96)*2*np.pi/96
-    directions = np.stack((np.cos(theta), np.sin(theta)))
-    facing = planes[:, :2] @ directions
-    scales = []
-    for z, radius in zip(height, radial):
-        distance = np.full(facing.shape, np.inf)
-        np.divide(-(planes[:, 2:3]*z + planes[:, 3:4]), facing, out=distance, where=facing>1e-7)
-        reach = np.min(distance, axis=0)
-        # A slight shell clearance also accounts for the polygonal visor and
-        # angular interpolation between rays. The apex and ornament stay round.
-        scale = np.maximum(0.42, (np.maximum(reach, 0)+1.8)/max(radius, 4))
-        scales.append(scale)
-    source = export["variants"][material]["source_to_native"]
-    # A sheet-metal bowl bridges local features. Dilating before smoothing
-    # retains clearance between the sparse rings of the original inventory loft.
-    raw = np.asarray(scales)
-    wide = maximum_filter(raw, size=(11, 11), mode=("nearest", "wrap"))
-    smooth = gaussian_filter(wide, sigma=(2.0, 2.5), mode=("nearest", "wrap"))
-    plume_skins = {design["materials"][part["material"]]["texture"] for part in parts.values()
-                   if part["part"].startswith("plume_") and part["part"] != "plume_mount"}
-    return source, brim, crown_top, brow, top, levels, np.maximum(raw, smooth), plume_skins
+    z = bowl["offset"][2] - inside[:,0]
+    return (export["variants"][material]["source_to_native"], abs(bowl["rotation"][0][0]),
+            z, inside[:,3])
 
 
-def fit_helmet(points, family, material, shader):
-    source, brim, peak, brow, top, levels, scales, plume_skins = shell(family, material)
-    original = points / source["factor"]
-    z = original[:, 2] + source["floor"]
-    forward, left = -original[:, 1], original[:, 0]
-    if shader in plume_skins:
-        # Feathers hang outside the bowl and keep their original sweep.
-        rise = (top-brow)/(peak-brim)
-        return np.column_stack((forward*rise, left*rise, top+(z-peak)*rise))
-    direction = (np.arctan2(left, forward) % (2*np.pi)) * scales.shape[1]/(2*np.pi)
-    level = np.interp(z, levels, np.arange(len(levels)))
-    lo = level.astype(int)
-    hi = np.minimum(lo+1, len(scales)-1)
-    angle = direction.astype(int) % scales.shape[1]
-    next_angle = (angle+1) % scales.shape[1]
-    u, t = direction-np.floor(direction), level-lo
-    scale = (1-t)*((1-u)*scales[lo, angle]+u*scales[lo, next_angle])
-    scale += t*((1-u)*scales[hi, angle]+u*scales[hi, next_angle])
-    fitted_z = np.interp(z, [levels[0], brim, peak], [brow-15, brow, top])
-    fitted_z += np.maximum(0, z-peak)*(top-brow)/(peak-brim)
-    return np.column_stack((forward*scale, left*scale, fitted_z))
+def fit_helmet(points, family, material):
+    source, width_factor, z, radii = crown(material)
+    local = points / source["factor"]
+    scale = width_factor * radii[0]
+    return np.column_stack((-local[:,1]*INNER_DEPTH/scale, local[:,0]*INNER_WIDTH/scale,
+                            BRIM + (local[:,2]+source["floor"]-z[0])*RISE)) * stature()[family]
+
+
+def tuck(points, family):
+    # Compress free tips smoothly in height, leaving the lower face and neck
+    # intact. Nest the crown, ears and upper hair inside the actual inner loft.
+    size = stature()[family]
+    local = points.copy()/size
+    z = local[:,2].copy()
+    above = np.maximum(z-163,0)
+    local[:,2] = np.minimum(z,163) + 8*(1-np.exp(-above/8))
+    _,_,levels,radii = crown("heavy")
+    heights = BRIM + (levels-levels[0])*RISE
+    clearance = np.interp(local[:,2]+.55,heights,radii)/radii[0]
+    ellipse = np.hypot(local[:,0]/INNER_DEPTH,local[:,1]/INNER_WIDTH)
+    factor = np.minimum(1, .94*clearance/np.maximum(ellipse,1e-6))
+    # The lower skirt of the visor is open at the throat. Blend into the
+    # cheek and the nape, keeping points below it in their original position.
+    covered = np.clip((z-141)/7,0,1)
+    local[:,:2] *= (1+covered*(factor-1))[:,None]
+    return local*size

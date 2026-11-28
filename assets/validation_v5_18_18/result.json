@@ -1,0 +1,42 @@
+{
+  "body_material_pairs": 56,
+  "upper_skull_rays": 10328,
+  "minimum_roof_clearance_model_units": 2.369,
+  "covered_head_and_hair_meshes": 56,
+  "maximum_normalized_shell_coordinate_difference": 0.0154,
+  "engine": "4.14.2",
+  "worn_helmet_captures": 56,
+  "explicit_covered_matches": 14,
+  "unequip_restoration_matches": 14,
+  "issue": 928,
+  "version": "5.18.18",
+  "ipk3_sha256": "78f4f7241ad04629c6daab935295d2c86c40450461fde1794a2a1863fe4cbea7",
+  "nondefault_face_and_hair_restored": true,
+  "map01": {
+    "map": "MAP01",
+    "independent_game": true,
+    "save_reload": true,
+    "imported_5_18_10_save": true,
+    "last_sample": [
+      "CaelumPlayer",
+      "13",
+      "29961",
+      "56",
+      "3",
+      "4"
+    ]
+  },
+  "camera_in_map01": true,
+  "audio": "-nosound",
+  "author_acceptance": "pending CA928-FIT-01",
+  "project_validation": {
+    "version": "5.18.18",
+    "errors": []
+  },
+  "deterministic_export": {
+    "byte_identical_meshes": 233,
+    "same_family_skins": 285,
+    "equipment_catalogue_rows": 12
+  },
+  "verified_player_meshes_in_standalone_package": 280
+}

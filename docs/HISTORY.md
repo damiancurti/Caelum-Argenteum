@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.18.17** - 2026-11-28.
+Documentation version: **5.18.18** - 2026-11-28.
+
+## 5.18.18 - Compact helmets and tucked heads (#928)
+
+The four helmets keep a common silhouette across families, scaled by stature. Covered head and hair variants tuck inside the shell and the original appearance returns on removal. All 56 body/material combinations passed the roof clearance check. On GZDoom 4.14.2 all fourteen covered heads matched the explicit model binding, and all fourteen uncovered appearances returned after removal. A nondefault face and haircut also survived a helmet round trip. MAP01 ran in chase view and loaded both a new save and one from 5.18.10. [Native captures and results](../assets/validation_v5_18_18/) accompany the pending author review.
 
 ## 5.18.17 - Carried shield relief (#927)
 

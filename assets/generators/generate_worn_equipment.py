@@ -133,7 +133,7 @@ def build(name, path, category, index, label, helmet_family=0):
             elif category=="armor":
                 helmet = index==0
                 if helmet:
-                    pose = fit_helmet(p, helmet_family, path.stem, s.shader)
+                    pose = fit_helmet(p, helmet_family, path.stem)
                 else:
                     pose = fit(p,a,b,(2,0,117),(40,61,60))
                 frames = rigid_track(pose,"face") if helmet else animate(pose,("clothing","underbody"))

@@ -63,6 +63,7 @@ def roof(path, xy, masks=None):
 
 def check():
     players = ROOT / "src/models/caelum/players"
+    covered = players/"tuck" if (players/"tuck").is_dir() else players
     axis = np.arange(-25, 26, 1.5)
     xy = np.stack(np.meshgrid(axis+0.17, axis+0.29), axis=-1).reshape(-1, 2)
     minimum = float("inf")
@@ -74,8 +75,8 @@ def check():
         for identity in (family*2, family*2+1):
             # Include all faces and all haircuts; the highest visible surface
             # at each ray bounds every possible face and hairstyle pairing.
-            faces = sorted(players.glob(f"head{identity}_*.md3"))
-            hair = sorted(players.glob(f"hair{identity}_*.md3"))
+            faces = sorted(covered.glob(f"head{identity}_*.md3"))
+            hair = sorted(covered.glob(f"hair{identity}_*.md3"))
             scalp = np.max([roof(path, xy) for path in faces+hair], axis=0)
             # The check covers the upper skull. Faces, lower hair and the visor
             # openings are intentionally visible below this transverse plane.

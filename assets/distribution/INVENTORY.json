@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "issue": 466,
-  "runtime_files": 19809,
+  "runtime_files": 19865,
   "metadata_documents": 707,
   "origin_decisions": "assets/distribution/ORIGINS.json",
   "dependency_findings": "assets/distribution/DEPENDENCIES.json",
@@ -17,12 +17,12 @@
   "origin_counts": {
     "project-source": 1067,
     "dejavu-font": 2352,
-    "project-art": 15914,
+    "project-art": 15970,
     "retained-notice": 30,
     "human-mesh": 315,
     "source-specific-audio": 131
   },
-  "exact_metadata_files": 14403,
+  "exact_metadata_files": 14459,
   "files": [
     {
       "path": "ANIMDEFS",
@@ -732,8 +732,8 @@
     },
     {
       "path": "caelum/character/CaelumFamilyModels.zs",
-      "sha256": "0ec4b20e8504c235d0cbc43f29ba6d34594c9c6da3f7eb0543ef60ec4043e131",
-      "bytes": 2128,
+      "sha256": "221efea798c1f202a9f58bf396b82026c739910ff9de0704cdd26f24ff7dc942",
+      "bytes": 2376,
       "decision": "project-source",
       "additional_provenance": [],
       "exact_metadata": [],
@@ -8129,7 +8129,7 @@
     },
     {
       "path": "caelum/world/CaelumPhysicalHazards.zs",
-      "sha256": "f755bb1425a210c446383737ef1644a39a20644de82536b4f5e8a24119113f66",
+      "sha256": "f3840e97cabf72021518bad68291d497fb6ddf956911700dd311ca2544ce8097",
       "bytes": 20721,
       "decision": "project-source",
       "additional_provenance": [
@@ -8457,7 +8457,7 @@
     },
     {
       "path": "caelum/world/CaelumSewerMaze.zs",
-      "sha256": "80f5dee88b6f725a7f0392a3554d85334af279f347afe5f51d55873d612989b1",
+      "sha256": "c92b5209236055f084ec7ab7651cb451b360c6c0c729cf384541c38b077f6a53",
       "bytes": 15766,
       "decision": "project-source",
       "additional_provenance": [],
@@ -221802,7 +221802,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_0.md3",
-      "sha256": "31d9b1a36b5a78e1b1e5eaf0fe9649935d3bc954c68057a18aa6be83846cac88",
+      "sha256": "627c96d7be68edfc462dfe9419a2a25e2d98a7b0a9bd1108e2fffb766034e47e",
       "bytes": 1830980,
       "decision": "project-art",
       "additional_provenance": [
@@ -221826,7 +221826,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_0_f1.md3",
-      "sha256": "87501b9cc0469ba9953232e1a26ef0b23d9110ce36de859800469a68d6e45f9e",
+      "sha256": "e1d812e8c5603a024969cc697d48348c7510b977857858a784b1d18d2151c8d5",
       "bytes": 1830980,
       "decision": "project-art",
       "additional_provenance": [
@@ -221840,7 +221840,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_0_f2.md3",
-      "sha256": "a209f80644fa4d0ab403e7b462119c6899621d2c71ddc55b8077bd167048d625",
+      "sha256": "23afbc574f4d84975bd2ac6e1da5c0bd44ae9e650030e0e429f39b7e6a0b3253",
       "bytes": 1830980,
       "decision": "project-art",
       "additional_provenance": [
@@ -221854,7 +221854,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_0_f3.md3",
-      "sha256": "60be1a170814ae2d1c993566f2e67a6848a6d073fe13bde826a15f4ffe5ee3b5",
+      "sha256": "0ced2efea550e1ca75a339fb5998bab0729f39dddcc3910f6a165521000b403a",
       "bytes": 1830980,
       "decision": "project-art",
       "additional_provenance": [
@@ -221868,7 +221868,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_0_f4.md3",
-      "sha256": "90b82cf1d0f3ad35a9143f413bb16250da7894bc3a6fee670607c66529206cfa",
+      "sha256": "6c835a5ea7e989f6e5cf81bff4c1e15dd00580a8c7a808360e7be39b163b0f32",
       "bytes": 1830980,
       "decision": "project-art",
       "additional_provenance": [
@@ -221882,7 +221882,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_0_f5.md3",
-      "sha256": "a55001ebe389a4d5507da20c4d7ba894c797716302ced15e1f5c2de937414c38",
+      "sha256": "3b01550bcf1a6a871995014b1ce613e077f3192a5fabbf4ad99c92fd1172131e",
       "bytes": 1830980,
       "decision": "project-art",
       "additional_provenance": [
@@ -221896,7 +221896,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_0_f6.md3",
-      "sha256": "5406d580f70f8e3da13efa4c0a8ccb9169abefed383918a6faa72f9c849ac4cd",
+      "sha256": "4bb7d6ddc94c09892d4b55d815f2a366a8a300eed37977b5316af06138b7e712",
       "bytes": 1830980,
       "decision": "project-art",
       "additional_provenance": [
@@ -221910,7 +221910,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_1.md3",
-      "sha256": "0e144d78645671012c0c5fb2b7993797f2239bea1eabaeae8f95955669f02e4c",
+      "sha256": "a98fcaccd77f365e5ab6d0baa3c285787701f1202183e9e1ae0b4d7445d17d6d",
       "bytes": 960036,
       "decision": "project-art",
       "additional_provenance": [
@@ -221934,7 +221934,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_1_f1.md3",
-      "sha256": "5eff69f11031ab3197f0ba49a2be474380cc7f8f7393a4f7a2a8455c5a25690e",
+      "sha256": "d35078339a4629a1a9157a9371ca1ce5f954fb0ec1fd6c5ca0fe36f0d49eadf3",
       "bytes": 960036,
       "decision": "project-art",
       "additional_provenance": [
@@ -221948,7 +221948,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_1_f2.md3",
-      "sha256": "703d8a8aa0f743961368b294d6efabd0bca35461c60ba1c0197f087ba2f46495",
+      "sha256": "b0f5a3f2c38e1312c4c55510e3b89d83f213842140fc31afc98456f0da841924",
       "bytes": 960036,
       "decision": "project-art",
       "additional_provenance": [
@@ -221962,7 +221962,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_1_f3.md3",
-      "sha256": "183a33c0997672f42baae7e878c590b39f1560d72dc0c31c92f64695d593cd04",
+      "sha256": "104140502dd7a0aac678a2670540098bcee47f80ae8ab2980fc6df2d7dbd8883",
       "bytes": 960036,
       "decision": "project-art",
       "additional_provenance": [
@@ -221976,7 +221976,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_1_f4.md3",
-      "sha256": "014c193e8581d556af2222822dfecedb729b582263ca2bcf57aa90f97d3aeb7b",
+      "sha256": "248aad88bb715cdd900a1867bec259869776714b5297a53f65d21836ca00a41a",
       "bytes": 960036,
       "decision": "project-art",
       "additional_provenance": [
@@ -221990,7 +221990,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_1_f5.md3",
-      "sha256": "4c3b885a3442c9529123fe4ec306a8582569301bcc5698a4fc76e9fe731fbe32",
+      "sha256": "74ff2a390d4fca6c1d2f9dec84586f9bbb78a356ac2ed9d9894a682562585835",
       "bytes": 960036,
       "decision": "project-art",
       "additional_provenance": [
@@ -222004,7 +222004,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_1_f6.md3",
-      "sha256": "000475ce6b8a33ef6c9e7ca5f9adadba1edf0f072fc3e680986b640e79d7a312",
+      "sha256": "f51883381c80f192a2a62526e7caaa8c24125082026359052a5585d2e86af689",
       "bytes": 960036,
       "decision": "project-art",
       "additional_provenance": [
@@ -222018,7 +222018,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_2.md3",
-      "sha256": "38db4d27ecb54c0dbca6ab36f738b2abd29fd88f1e9012121b5cfd5143cee490",
+      "sha256": "a1ab93f2928ccaca21c88c51e60ef98d65442a069ae5b2f369f7c86c9e1cb1f4",
       "bytes": 1812516,
       "decision": "project-art",
       "additional_provenance": [
@@ -222042,7 +222042,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_2_f1.md3",
-      "sha256": "5fd767e29110c2313f0bb550ddc9d09f5656e7a3c3bd1f58bc958f71d9d8a9ad",
+      "sha256": "fac4810e957cf2e2d20ecbb66aa8e507f7e8f8c58b6599cbb2f173b7cf8e470e",
       "bytes": 1812516,
       "decision": "project-art",
       "additional_provenance": [
@@ -222056,7 +222056,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_2_f2.md3",
-      "sha256": "196d108a356d746008cbefb292ca989f1a221184b4d8c93444219bad35d7d142",
+      "sha256": "1d22ab9e878482c79e67e801abddf233d5edfdccd073caa5da33d7d72baeb80b",
       "bytes": 1812516,
       "decision": "project-art",
       "additional_provenance": [
@@ -222070,7 +222070,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_2_f3.md3",
-      "sha256": "cda6239099c4743f86e4f611ac228ca684738e8b5c726bd148d6418791a741bf",
+      "sha256": "30df9358576206c58293b7d408f3da4cf2291fb9552bc2d8f75749fc0cf3a8b3",
       "bytes": 1812516,
       "decision": "project-art",
       "additional_provenance": [
@@ -222084,7 +222084,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_2_f4.md3",
-      "sha256": "9637de6a34877b741701de631b8990eba10fdfde30169309c26a3b92295e369c",
+      "sha256": "cfbad62bea67ef4f8e5f164165ba42d7fac963d6eeb8c285a1ce9df777e9ccdc",
       "bytes": 1812516,
       "decision": "project-art",
       "additional_provenance": [
@@ -222098,7 +222098,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_2_f5.md3",
-      "sha256": "80ef50babf6d3f750b04634e4c77acfd12485c4896423aa7a1b5baad6f75fbd7",
+      "sha256": "b89b3645d5865d4623498c6d9d1631c4e011b74ca147bc374cfc95fa14195dfd",
       "bytes": 1812516,
       "decision": "project-art",
       "additional_provenance": [
@@ -222112,7 +222112,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_2_f6.md3",
-      "sha256": "78e1bf620a01595acd8d847bc1e8744a803a0ceec91a9366227535c060ff0d2a",
+      "sha256": "6e11731d6e45e48a2fe695f8e656d5a80edc34ce1a929eb3b0ae2a604b032934",
       "bytes": 1812516,
       "decision": "project-art",
       "additional_provenance": [
@@ -222126,7 +222126,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_3.md3",
-      "sha256": "0a7a39c05061b3c37dd62f519a2dfd41a4992d782bd83720182b23d2a0d42aec",
+      "sha256": "ae9d883c7f7bc7d307478dae9a4f70028ef04c7ee573f04616129c20cb992b88",
       "bytes": 1829348,
       "decision": "project-art",
       "additional_provenance": [
@@ -222150,7 +222150,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_3_f1.md3",
-      "sha256": "ca456988fe9c103591f8fe520b09767627157016bfda1bfeadf17574f5d5da10",
+      "sha256": "39a4e3f58dbb5b87a7f2c728fe67617380916c716f9cebe0a21b898ccbb2f66e",
       "bytes": 1829348,
       "decision": "project-art",
       "additional_provenance": [
@@ -222164,7 +222164,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_3_f2.md3",
-      "sha256": "11d163eb3f1d629931bf8dad5d2339f259c34f1c78ccf960e0a61b304c6afd68",
+      "sha256": "b18f31e63302ac23fcb61b2e668a8faece49257fcec5aede66b37288be270a6d",
       "bytes": 1829348,
       "decision": "project-art",
       "additional_provenance": [
@@ -222178,7 +222178,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_3_f3.md3",
-      "sha256": "e99f2871fc5dd50b8cee7f7ef618345ea4ec0978733de8497e9b6aae49ec74c1",
+      "sha256": "daf50344c1f264c2088b053f4effdd4ee92dac1ff461906cb593a62fdae93184",
       "bytes": 1829348,
       "decision": "project-art",
       "additional_provenance": [
@@ -222192,7 +222192,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_3_f4.md3",
-      "sha256": "5544d697d62273b7d5ba722194b9ece48f051a0444464f5908299b70976e488b",
+      "sha256": "4cd3ce6f430164e44853b2d84a505634f69d2a65b2a463762e0bb98316aae816",
       "bytes": 1829348,
       "decision": "project-art",
       "additional_provenance": [
@@ -222206,7 +222206,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_3_f5.md3",
-      "sha256": "522320934d116e436fe50dc22ced75e76190e20f14f06763b90300fe46e3fa52",
+      "sha256": "893b0382590def729ee6aaf742fe10ee739501a0067331c79f7ca7a79ed2e914",
       "bytes": 1829348,
       "decision": "project-art",
       "additional_provenance": [
@@ -222220,7 +222220,7 @@
     },
     {
       "path": "models/caelum/players/gear/a0_3_f6.md3",
-      "sha256": "b9a2ec8b5348cea80ce3474cd33da8b0c452d1178c586da7322c4ed250423612",
+      "sha256": "959c14f25fdaf19f5e715796fe0695ec8ca77fc686b4cad4be9fe41002a0bc2c",
       "bytes": 1829348,
       "decision": "project-art",
       "additional_provenance": [
@@ -227952,6 +227952,790 @@
       "path": "models/caelum/players/invisible.png",
       "sha256": "980055f32603462384baae4a3dbfa580f0579627bb98c190f84443a047126613",
       "bytes": 68,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair0_0.md3",
+      "sha256": "884fbff68641aef6353fcad3fd654921b52e9cf456b7f2ab5b2723d32f21c287",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair0_1.md3",
+      "sha256": "749e7b5e1b4d6a34ccc163659ba24ab365db190202155ccc029331d8f8f89a93",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair0_2.md3",
+      "sha256": "b60c95dc895f3afce7b7e3fdc208f025ada214dc289ecbbd8744ba3babf7fc68",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair0_3.md3",
+      "sha256": "a7294f863cd8abf5719ac0b3ac87849694880022ed04a217e69735656bfd23a6",
+      "bytes": 425540,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair1_0.md3",
+      "sha256": "9bd41fc6074c12c1c39644acf22251dd2a3b6216a76edba75505d4879a202765",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair1_1.md3",
+      "sha256": "b67114d3bad8b4790d1163417a887b359541debd084152898378a91348a41ab9",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair1_2.md3",
+      "sha256": "5a48e93b5230a9b6e1ba259452aca81811fa717fcc6f09d7199e80b989215d15",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair1_3.md3",
+      "sha256": "a7ae35e50294492ab886506b92daee6cf3c19e40ff266b9c905ba3489ace6ed0",
+      "bytes": 425540,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair2_0.md3",
+      "sha256": "b38f367bbffd344db17376b16521248db3683b1b1c44cd7ae29d973c6bc172eb",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair2_1.md3",
+      "sha256": "5a1e20c9439a9d964d09fbe4bede61a7a366cffa902deed6a7419a512aac87db",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair2_2.md3",
+      "sha256": "682ec07d379ecec26137b5b1f7a26850f9d67afb53525e8ea51a03e4b7c41ceb",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair2_3.md3",
+      "sha256": "1ba48f46d52c0704909259f5fc75d17e27f3f3a70762fab55da27f42985e296b",
+      "bytes": 425540,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair3_0.md3",
+      "sha256": "81fb02332e67a0f4096af4b1c3feee6229245931e67e33b6d437320ce7dd71aa",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair3_1.md3",
+      "sha256": "ff63504d1e83654e47349467639b947afe8e377ebbf105b2e5c1d66912c1abeb",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair3_2.md3",
+      "sha256": "3a3b4006c4ac754a1d639087f9e5a1a2930b88f0c5823e61d3caec965a30198d",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair3_3.md3",
+      "sha256": "6dd93342fa08dbe7e1d125f0376892a8491f439eacb13be19d529075bfcb1d0b",
+      "bytes": 425540,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair4_0.md3",
+      "sha256": "a7b06dc398e138c2a0c30f765f3ddf1b7213c51aff099fdb52e32c7f050d9fd8",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair4_1.md3",
+      "sha256": "d085f338fe874e2bd13df9293b308526eda706e4d6ca73fdf5b0833d29392ab7",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair4_2.md3",
+      "sha256": "5db0505b339812f4fd206769aced9fbdeaa6bc59a69de6e0a10353576e318d41",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair4_3.md3",
+      "sha256": "a98fde716a483bf24f25ed037fc0177316665081b782b16bae80117fbcb04e43",
+      "bytes": 425540,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair5_0.md3",
+      "sha256": "8eb8468c77fb25e534e34ad7e5d3b5a9d0560cb091e9d0e57263a728bff7032c",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair5_1.md3",
+      "sha256": "db082eecd0fd1287fdd116790cb6f8b2308cebffe6172fbd30d6403ff3a3c635",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair5_2.md3",
+      "sha256": "6dd9c95574cf91c6d6740f9f97520ba6542601d3e9f3facd3f1765db6b7db4b6",
+      "bytes": 234356,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/hair5_3.md3",
+      "sha256": "0104aee579c04d71f1b43af3843242099b38f43d32eefe5b024b3fd48974ce41",
+      "bytes": 425540,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head0_0.md3",
+      "sha256": "62c6e10986819d00b17c997e60a6f559042cf0c118f8658fef6c5b3bf8f45390",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head0_1.md3",
+      "sha256": "150796c93bda4040214a2faeee684967f11f3b1b39af0c73c87040ba48e0d79d",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head0_2.md3",
+      "sha256": "46bb9df6d381a103bb9352af2e90ef3a2e2adb92325fead406ce6c47b8996c77",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head0_3.md3",
+      "sha256": "caca8ae073979dbe38fe38bf1c6a7c9ccc84191c828aaad0c9eb68e0e4538e4f",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head10_0.md3",
+      "sha256": "6031c9a53463bae980c288ffd26a7075c52ddebb613462aed6c71b115a508739",
+      "bytes": 370924,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head11_0.md3",
+      "sha256": "c6eaa9a9ed818ea6cc3ef99e83bc8e9d08dee098696e1ed3887560b816932972",
+      "bytes": 370924,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head12_0.md3",
+      "sha256": "56ca2a78eadde2a97eb6460116e8fa2818847fe36c3e36dbd2ec0a5a1993fa22",
+      "bytes": 1298524,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head13_0.md3",
+      "sha256": "72abce3077fea970d213547564edaa8688bfbb428fe4c6ec4c4b48e8a9e6b6fb",
+      "bytes": 1298524,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head1_0.md3",
+      "sha256": "91ccb2e5234d06b3733a3761387c6c3e866d075c3d55b278be2610c6718cfedf",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head1_1.md3",
+      "sha256": "efda2b7d748975127d1d512469b03a344b3d078ec425e2fc3c03f0bd1a5d7cfa",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head1_2.md3",
+      "sha256": "b240d7a6f158b8156c0c25ffcd9b53d7fac1ab147e9996ab524f2176c300fe94",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head1_3.md3",
+      "sha256": "4cf8cfa94f4d543b490f4b2011321edc594cf4fb16a99e5c6e65280f74c4def0",
+      "bytes": 484036,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head2_0.md3",
+      "sha256": "1aed2e4ba3bb83c0e11e04f5a3aefe55fd4dd12840244c74debf4d68e6f17356",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head2_1.md3",
+      "sha256": "bf2bfbc96873915cbb06bd38fb5f643526520c9e12005ceec1766bd1f20143a3",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head2_2.md3",
+      "sha256": "e344005f19638a9bd44d872f1614f4d6e10227491a1fe75195c58a1ca46342fd",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head2_3.md3",
+      "sha256": "8edeb5b1374d3193d254ea25907a6ad72f14621969edb2685cd758916af43436",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head3_0.md3",
+      "sha256": "5fa590b683c57a9755b01d82aee0c2ec69621d86c86ce007b62d71e9a03792ac",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head3_1.md3",
+      "sha256": "3d14b322817e622797227dce7c9831a48b0f3cdb91023922bfb59a4b74ac8b74",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head3_2.md3",
+      "sha256": "b2a2f742c96c1d7d0b596c1dc821792c302830f7652b2720cda9120a437f8f79",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head3_3.md3",
+      "sha256": "675bd192e6c3d703e373544eb279f805d3e092e9f61d2a492d76ae6baa8e92e9",
+      "bytes": 404148,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head4_0.md3",
+      "sha256": "d324058c2d721f3924f65d4e81e90515c4c761fb427759c2a11a817a31e5ebd3",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head4_1.md3",
+      "sha256": "544857d03430e314fce3b57be4ade8946b92b1e4c141bb6b7e5ec7d35e921d82",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head4_2.md3",
+      "sha256": "b74bf37470a8cca541c794db39d081613dfbb9b7211c7c396475d19aa00d0737",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head4_3.md3",
+      "sha256": "ade013e62d10ad40f894806f743cc52abdb8286832bcf76bcdf9cc3f2ea8f56f",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head5_0.md3",
+      "sha256": "8b5cd0f0cd0236ae0d0899bf9e3a73f99497da8f5b266ba7d959cf2791326e36",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head5_1.md3",
+      "sha256": "0a48b9f584c23b5f6a54212d59716302d5806dbb28a19a9a0199eb7e3d21d668",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head5_2.md3",
+      "sha256": "f688df089980589521da7442bfb872fec8625f56673a8235f062b4d3b73ea25b",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head5_3.md3",
+      "sha256": "52c99d755cd388134f62cb14e862a26d07bfcef82f2a962d6f2b23858e107081",
+      "bytes": 443828,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head6_0.md3",
+      "sha256": "7a6ba6c90b05c561b974c1917060cfacd692469cd66a004c9f3f5962f65f6099",
+      "bytes": 323612,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head7_0.md3",
+      "sha256": "6f4aff4a603f746f9ef3d364785cde173ca774feb0d6d9efda9800516eee75ad",
+      "bytes": 323612,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head8_0.md3",
+      "sha256": "a7d0150f4fb284788fd69754827ab0ac497c3e499f537080f8a9bfd34dee4247",
+      "bytes": 321772,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/player_families_903/PROVENANCE.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/tuck/head9_0.md3",
+      "sha256": "44e819dedab1b948eb9574a938f53088fb771022cc3e7f3bdde7207b342bca55",
+      "bytes": 321772,
       "decision": "project-art",
       "additional_provenance": [
         "assets/source/art/player_families_903/PROVENANCE.json"
