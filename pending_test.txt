@@ -47,3 +47,8 @@ CA926-FIT-01 | Origin: 5.18.16 / #926
 Prerequisites: current silent fitting room on GZDoom 4.14.2.
 Steps: Press B to cycle the four footwear designs, S to sit or stand, and rotate to the side. Use 0 to inspect base boots.
 Expected: Each foot keeps one sole, points forward, and joins the shin through the ankle.
+
+CA927-FIT-01 | Origin: 5.18.17 / #927
+Prerequisites: current silent fitting room on GZDoom 4.14.2.
+Steps: Press E to cycle the four shields. Turn from the face to the edge and back.
+Expected: The board, raised front fittings, grip and rear structure remain legible around the figure.

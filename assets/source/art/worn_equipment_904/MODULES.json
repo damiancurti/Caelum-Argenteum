@@ -355,36 +355,40 @@
     "category": "shield",
     "item": "buckler",
     "source": "models/caelum/inventory/shields/buckler.md3",
+    "sculpt": "assets/generators/carried_shields.py",
     "frames": 33,
-    "surfaces": 4,
-    "sha256": "7c9463022365862e759ef887462b22b65fa5690215b55d989dd1279aea888727"
+    "surfaces": 2,
+    "sha256": "d64cba5ca500d2806a7d5184f00efc45385098ea782af7ba51c14159e6aebdd6"
   },
   {
     "module": "s1",
     "category": "shield",
     "item": "kite",
     "source": "models/caelum/inventory/shields/kite.md3",
+    "sculpt": "assets/generators/carried_shields.py",
     "frames": 33,
-    "surfaces": 4,
-    "sha256": "bdfb950911c8d08e3d65f84dff52fa88d3b555682f553f0d1cad67135d33a6ec"
+    "surfaces": 1,
+    "sha256": "b14a9a49ca40b7fc0a064edb7215a94095448455ad30fabd2cb685d4c44117bd"
   },
   {
     "module": "s2",
     "category": "shield",
     "item": "tower",
     "source": "models/caelum/inventory/shields/tower.md3",
+    "sculpt": "assets/generators/carried_shields.py",
     "frames": 33,
-    "surfaces": 4,
-    "sha256": "b8ab0cad44a4cae71f8c461916577258ac612359937ea05892fbd01e6a897bb4"
+    "surfaces": 1,
+    "sha256": "eaf800f68e4976a62babf0f71d7c68ed3061da3ce7bad89f093c8e057d7e6f26"
   },
   {
     "module": "s3",
     "category": "shield",
     "item": "magic",
     "source": "models/caelum/inventory/shields/magic.md3",
+    "sculpt": "assets/generators/carried_shields.py",
     "frames": 33,
-    "surfaces": 3,
-    "sha256": "3855c8f293035b13a5c486365981250e7c16425ddd67acede3a65d0a10e2814f"
+    "surfaces": 2,
+    "sha256": "b5a85779190fc15733ed6a4f0b40836eceb583f87a304eaff2d97b3269324252"
   },
   {
     "module": "a0_0",

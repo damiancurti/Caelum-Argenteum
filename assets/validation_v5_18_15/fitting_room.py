@@ -90,6 +90,7 @@ def controls(out, pairs):
     commands = [
         "snd_mastervolume 0", "i_pauseinbackground false", "vid_activeinbackground true",
         "vid_lowerinbackground false", "show_messages false", "crosshair 0", "screenblocks 12",
+        'bind z "netevent outfit_zoom"', 'bind e "netevent outfit_shield"',
         'bind s "netevent outfit_seat"', 'bind b "netevent outfit_boots"', 'bind 0 "netevent outfit_empty"',
         "r_drawplayersprites false", "vid_maxfps 60", 'bind pgup "netevent outfit_item -1"',
         'bind pgdn "netevent outfit_item 1"', 'bind f2 "netevent outfit_form -1"',
@@ -174,7 +175,7 @@ def main():
     items = list(dict.fromkeys([0, *args.items])) if args.items else range(len(sockets))
     pairs = [(f, i) for f in (args.forms or []) for i in items]
     print("AvPág/RePág cambia de pieza. F2/F3 cambia de personaje. Las flechas giran la figura.\n"
-          "B: botas. S: sentarse o levantarse. 0: quitar equipo. C: conjunto. Sonido desactivado.", flush=True)
+          "Z: acercar. E: escudos. B: botas. S: sentarse o levantarse. 0: quitar equipo. C: conjunto. Sonido desactivado.", flush=True)
     awake = ctypes.windll.kernel32.SetThreadExecutionState
     awake.argtypes = [ctypes.c_uint]
     awake.restype = ctypes.c_uint

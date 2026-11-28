@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.18.16** - 2026-11-28.
+Documentation version: **5.18.17** - 2026-11-28.
+
+## 5.18.17 - Carried shield relief (#927)
+
+Four carried shields use sculpted faces, armored rims and grips on the left palm. The fitting room and third person use the same meshes. GZDoom 4.14.2 rendered each shield from three angles. Across 1,848 shield/body/pose combinations, the closest grip-to-hand vertex distance stayed below 0.48 model units. Visual acceptance is pending.
 
 ## 5.18.16 - Seated modular footwear (#926)
 

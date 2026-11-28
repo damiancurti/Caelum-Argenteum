@@ -10,6 +10,8 @@ from PIL import Image
 
 from character_mesh_frames import ROOT, Surface, animate, animate_boot, encode, read_model, rigid_track, subset
 from wearable_helmet_fit import fit_helmet
+from carried_shields import sculpt as sculpt_shield
+from sculpted_character_art import surfaces as sculpt_surfaces
 
 SRC = ROOT / "src"
 DEST = SRC / "models/caelum/players/gear"
@@ -135,10 +137,6 @@ def build(name, path, category, index, label, helmet_family=0):
                 else:
                     pose = fit(p,a,b,(2,0,117),(40,61,60))
                 frames = rigid_track(pose,"face") if helmet else animate(pose,("clothing","underbody"))
-            elif category=="shield":
-                dimensions = ((9,45,45),(12,57,90),(13,70,112),(10,55,65))[index]
-                pose = fit(p,a,b,(7,37,91),dimensions)
-                frames = rigid_track(pose,"left_hand")
             else:
                 horizontal = label in ("carbine","shotgun","crossbow")
                 grip = 0.24 if horizontal else 0.49 if label in ("spear","javelin","staff","utility_staff","halberd","longbow","bolas") else 0.16
@@ -153,6 +151,22 @@ def build(name, path, category, index, label, helmet_family=0):
     (DEST/(name+".md3")).write_bytes(blob)
     return {"module":name,"category":category,"item":label,"source":path.relative_to(SRC).as_posix(),
             "frames":len(surfaces[0].positions),"surfaces":len(surfaces),"sha256":hashlib.sha256(blob).hexdigest()}
+
+
+def shield_module(index, label):
+    name = f"s{index}"
+    sculpt, bitmap = sculpt_shield(index)
+    skin = "models/caelum/players/gear/"+name+".png"
+    meshes = sculpt_surfaces(sculpt.parts, skin, lambda part: part.vertices[None])
+    for mesh in meshes:
+        mesh.positions = rigid_track(mesh.positions[0],"left_hand")
+    blob = encode(name, meshes)
+    (DEST/(name+".md3")).write_bytes(blob)
+    (DEST/(name+".png")).write_bytes(bitmap)
+    return {"module":name, "category":"shield", "item":label,
+            "source":f"models/caelum/inventory/shields/{label}.md3",
+            "sculpt":"assets/generators/carried_shields.py", "frames":len(meshes[0].positions),
+            "surfaces":len(meshes), "sha256":hashlib.sha256(blob).hexdigest()}
 
 
 def armor_module(index, material, name):
@@ -183,7 +197,7 @@ def main():
             path, = (p for p in inventory.glob("*/"+name+".md3") if p.parent.name not in ("ammunition","documents"))
             report.append(build(f"w{index}_1",path,"weapon",index,name))
     for index,name in enumerate(SHIELDS):
-        report.append(build(f"s{index}",inventory/"shields"/(name+".md3"),"shield",index,name))
+        report.append(shield_module(index,name))
     for index,kind in enumerate(ARMOR):
         for material,name in enumerate(MATERIALS):
             report.append(armor_module(index, material, name))

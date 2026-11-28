@@ -1,6 +1,10 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.18.16** - 2026-11-28.
+Documentation version: **5.18.17** - 2026-11-28.
+
+## 5.18.17 - Carried shield relief (#927)
+
+Carried shield relief is available for review in the silent fitting room.
 
 ## 5.18.16 - Seated modular footwear (#926)
 

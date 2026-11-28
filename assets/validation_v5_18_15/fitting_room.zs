@@ -9,7 +9,7 @@ class FittingRoom : StaticEventHandler
     Actor eye;
     CaelumShieldPickup testShield;
     int form, item, rotation;
-    bool combination, report, seated;
+    bool combination, report, seated, detail;
     int reference;
     override void NetworkProcess(ConsoleEvent e)
     {
@@ -24,6 +24,9 @@ class FittingRoom : StaticEventHandler
         else if(e.Name=='outfit_turn')rotation+=e.Args[0];
         else if(e.Name=='outfit_seat')seated=!seated;
         else if(e.Name=='outfit_empty'){item=0;combination=false;}
+        else if(e.Name=='outfit_shield')cycleSlot(1);
+        else if(e.Name=='outfit_zoom')detail=!detail;
+        else if(e.Name=='outfit_angle')rotation=e.Args[0];
         else if(e.Name=='outfit_boots')cycleSlot(5);
         else if(e.Name=='outfit_set')combination=!combination;
         else return;
@@ -49,7 +52,7 @@ class FittingRoom : StaticEventHandler
             testShield.EquipmentSize=p.ShieldModel.Size;testShield.Tier=1;testShield.ArmorSlot=-1;
             testShield.PickupDataInitialized=true;testShield.AcquisitionResolved=true;testShield.ItemId=904001;
             testShield.AttachToOwner(p);testShield.InMagicBox=false;
-            item=1;combination=true;report=true;
+            item=0;cycleSlot(1);report=true;
             p.SetOrigin((0,0,0),false);
             players[0].Camera=eye;
         }
@@ -89,8 +92,9 @@ class FittingRoom : StaticEventHandler
         }
         double height=CaelumAppearanceRegistry.StandingHeight(form,false)*p.Scale.Y;
         double direction=292+rotation*30;
-        double dist=height*1.35;
-        eye.SetOrigin((cos(direction)*dist,sin(direction)*dist,height*0.40),false);
+        double dist=height*(detail?.79:1.35);
+        double eyeHeight=height*(detail && chosen==2?.86:detail && chosen==5?.22:.40);
+        eye.SetOrigin((cos(direction)*dist,sin(direction)*dist,eyeHeight),false);
         eye.Angle=direction+180;eye.Pitch=0;
         if(report)
         {
