@@ -67,7 +67,7 @@ def photograph(game,out):
     helmets=[i for i,(slot,_,_) in enumerate(sockets) if slot==2]
     config=controls(out,[])
     with config.open("a",encoding="utf8") as stream:
-        stream.write("wait 145; netevent outfit_still; netevent outfit_zoom; wait 12; exec fit0.cfg\n")
+        stream.write("wait 145; netevent outfit_still; netevent outfit_detail 1; wait 12; exec fit0.cfg\n")
     for form in range(14):
         commands=[]
         def shot(event,label):

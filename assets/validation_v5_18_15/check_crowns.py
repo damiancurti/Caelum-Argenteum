@@ -8,6 +8,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "assets/generators"))
 from character_mesh_frames import read_model
+from wearable_helmet_fit import BRIM, stature
 
 
 def crown_masks(material):
@@ -68,21 +69,30 @@ def check():
     xy = np.stack(np.meshgrid(axis+0.17, axis+0.29), axis=-1).reshape(-1, 2)
     minimum = float("inf")
     count = 0
-    masks = [crown_masks(name) for name in ("magic", "light", "medium", "heavy")]
+    # The three newly sculpted silhouettes have their own topology. Their
+    # first piece is the brim or bowl; the enclosed inventory mesh retains
+    # its original OBJ-to-MD3 face correspondence.
+    masks = [None,None,None,crown_masks("heavy")]
     for family in range(7):
         roofs = [roof(players/"gear"/(f"a0_{material}"+(f"_f{family}" if family else "")+".md3"), xy, masks[material])
                  for material in range(4)]
         for identity in (family*2, family*2+1):
             # Include all faces and all haircuts; the highest visible surface
             # at each ray bounds every possible face and hairstyle pairing.
-            faces = sorted(covered.glob(f"head{identity}_*.md3"))
             hair = sorted(covered.glob(f"hair{identity}_*.md3"))
-            scalp = np.max([roof(path, xy) for path in faces+hair], axis=0)
-            # The check covers the upper skull. Faces, lower hair and the visor
-            # openings are intentionally visible below this transverse plane.
-            crown = scalp >= (np.max(scalp) - 11)
-            for material, surface in enumerate(roofs):
-                clearance = (surface[crown] - scalp[crown]).min()
+            hair_roofs = [roof(path,xy) for path in hair]
+            def scalp_for(directory):
+                faces = sorted(directory.glob(f"head{identity}_*.md3"))
+                return np.max(hair_roofs+[roof(path,xy) for path in faces],axis=0)
+            open_scalp=scalp_for(players/"open")
+            closed_scalp=scalp_for(covered)
+            for material,surface in enumerate(roofs):
+                scalp=closed_scalp if material==3 else open_scalp
+                # The muzzle and lower cheek stay visible under open headwear.
+                # Evaluate points above the physical rim, in player-model space.
+                crown=scalp>=BRIM*stature()[family]
+                assert crown.any()
+                clearance=(surface[crown]-scalp[crown]).min()
                 if clearance <= 0:
                     raise ValueError(f"Helmet intersects crown: body {identity}, material {material}, {clearance:.3f}")
                 minimum = min(minimum, clearance)

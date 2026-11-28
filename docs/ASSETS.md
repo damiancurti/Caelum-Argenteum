@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.18.18** - 2026-11-28.
+Documentation version: **5.18.19** - 2026-11-28.
+
+## 5.18.19 - Distinct helmet silhouettes and tier finishes (#932)
+
+The magic felt hat, light skullcap, open-faced medium helmet and enclosed heavy helmet have three finishes. Tier 2 has bright silver inlay. Tier 3 adds wider silver work and polished gold accents.
+
+The worn models read the equipped head-slot tier. The hat has a swept felt brim, the light cap ends at the brow, and the medium shell wraps around the temples and nape. Open styles use a fitted head with the natural cheek and muzzle visible. The heavy base mesh and tier-one skin retain their 5.18.18 hashes. Tier skins share mesh geometry and use metal-specific specular maps. [In-engine comparison of all twelve](../assets/validation_v5_18_19/helmets.jpg).
 
 ## 5.18.18 - Compact helmets and tucked heads (#928)
 

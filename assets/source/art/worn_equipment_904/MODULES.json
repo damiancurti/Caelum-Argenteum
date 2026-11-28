@@ -394,54 +394,69 @@
     "module": "a0_0",
     "category": "armor",
     "item": "helmets_magic",
-    "source": "models/caelum/inventory/armor_helmets/magic.md3",
+    "source": "assets/generators/wearable_helmet_styles.py",
     "frames": 33,
-    "surfaces": 6,
-    "sha256": "627c96d7be68edfc462dfe9419a2a25e2d98a7b0a9bd1108e2fffb766034e47e",
+    "surfaces": 1,
+    "sha256": "fc6c9a392f9ff98cd124c475c35cd69dd0339d87f4399774a7996b6382a6f284",
     "family_sha256": [
-      "627c96d7be68edfc462dfe9419a2a25e2d98a7b0a9bd1108e2fffb766034e47e",
-      "e1d812e8c5603a024969cc697d48348c7510b977857858a784b1d18d2151c8d5",
-      "23afbc574f4d84975bd2ac6e1da5c0bd44ae9e650030e0e429f39b7e6a0b3253",
-      "0ced2efea550e1ca75a339fb5998bab0729f39dddcc3910f6a165521000b403a",
-      "6c835a5ea7e989f6e5cf81bff4c1e15dd00580a8c7a808360e7be39b163b0f32",
-      "3b01550bcf1a6a871995014b1ce613e077f3192a5fabbf4ad99c92fd1172131e",
-      "4bb7d6ddc94c09892d4b55d815f2a366a8a300eed37977b5316af06138b7e712"
+      "fc6c9a392f9ff98cd124c475c35cd69dd0339d87f4399774a7996b6382a6f284",
+      "3f902a19511c7ed0296ff36f032228ec671d18b52183f1f4ce7bd55a661b0e23",
+      "144d669fd7deeccb692c2fcdc190d6ab1cc64a10bc76321322b48628bc6f000c",
+      "33fc3140047aaa315f991e681fe00c3aefdc3a460299c6d42bc17d92c5575b1e",
+      "754161a080210eeb999eaf5962625fd0d74dbe99abeda2705128e4067b2689a9",
+      "02b10a5061c755aee5a0790175e6838b4a9fc965ddf19dd130fd260020a43575",
+      "8bbb52dc2bdd32956bff39f98e6344b2107bb041ece166e0949cfce6182e850b"
+    ],
+    "tier_skin_sha256": [
+      "220e0f75e4971bad8c3dc4af2862b36046ca11a4bf9ce36433b89db39df35345",
+      "747e282079cf30478378e77658936b1d788d452187f76ae438c883a058de4fb6",
+      "84959609a4c16bfd5de37469304d14842e5f3943777943d3a01587ffb637d918"
     ]
   },
   {
     "module": "a0_1",
     "category": "armor",
     "item": "helmets_light",
-    "source": "models/caelum/inventory/armor_helmets/light.md3",
+    "source": "assets/generators/wearable_helmet_styles.py",
     "frames": 33,
-    "surfaces": 5,
-    "sha256": "a98fcaccd77f365e5ab6d0baa3c285787701f1202183e9e1ae0b4d7445d17d6d",
+    "surfaces": 1,
+    "sha256": "bb2645426122f8a46de3c5d21a320d51d79a68c1f54657a8e19e2b06f17a4241",
     "family_sha256": [
-      "a98fcaccd77f365e5ab6d0baa3c285787701f1202183e9e1ae0b4d7445d17d6d",
-      "d35078339a4629a1a9157a9371ca1ce5f954fb0ec1fd6c5ca0fe36f0d49eadf3",
-      "b0f5a3f2c38e1312c4c55510e3b89d83f213842140fc31afc98456f0da841924",
-      "104140502dd7a0aac678a2670540098bcee47f80ae8ab2980fc6df2d7dbd8883",
-      "248aad88bb715cdd900a1867bec259869776714b5297a53f65d21836ca00a41a",
-      "74ff2a390d4fca6c1d2f9dec84586f9bbb78a356ac2ed9d9894a682562585835",
-      "f51883381c80f192a2a62526e7caaa8c24125082026359052a5585d2e86af689"
+      "bb2645426122f8a46de3c5d21a320d51d79a68c1f54657a8e19e2b06f17a4241",
+      "185067fe9f910d862dcadd31a1afccb4b7abedd6fa10999cd944b3476594dd98",
+      "6ed4be4f752d796fafc818b2a19c067a0ff77cc364068fc315325024335f1609",
+      "d55ae8240f87fc4137afb031f4dacc91a49372f05aa3689c6aba7c74170e6dc2",
+      "095cfa3c759a53290e2e6a4cc494f3f6d05ed4d1c96df956d6a0a430b1a9ac6d",
+      "4156b4c857a9754b3077c78d682a4923861621a3d222474829c9e95f558f138e",
+      "714a41aeba3235ddc11850ca98c6390da3e110774a2365d129a45fe2dc18bbfa"
+    ],
+    "tier_skin_sha256": [
+      "a7a1e29e7d2cf889316eeb7a1955f43410e9ccdc64709d5d5e18adc4887a22fd",
+      "86eaada56cd21c6a4d28c06ee0dd48f595bd94ba65980bd71a791d845c396bd8",
+      "be0293c918a34bae9f844d3a3b0e4c7b9e8ca5113f6b2edb22e376ed28efe3a1"
     ]
   },
   {
     "module": "a0_2",
     "category": "armor",
     "item": "helmets_medium",
-    "source": "models/caelum/inventory/armor_helmets/medium.md3",
+    "source": "assets/generators/wearable_helmet_styles.py",
     "frames": 33,
-    "surfaces": 5,
-    "sha256": "a1ab93f2928ccaca21c88c51e60ef98d65442a069ae5b2f369f7c86c9e1cb1f4",
+    "surfaces": 2,
+    "sha256": "278e8dc93484c528aed8699100ce999ff0ccf4050831bf8c7d5dfa647f7c20ca",
     "family_sha256": [
-      "a1ab93f2928ccaca21c88c51e60ef98d65442a069ae5b2f369f7c86c9e1cb1f4",
-      "fac4810e957cf2e2d20ecbb66aa8e507f7e8f8c58b6599cbb2f173b7cf8e470e",
-      "1d22ab9e878482c79e67e801abddf233d5edfdccd073caa5da33d7d72baeb80b",
-      "30df9358576206c58293b7d408f3da4cf2291fb9552bc2d8f75749fc0cf3a8b3",
-      "cfbad62bea67ef4f8e5f164165ba42d7fac963d6eeb8c285a1ce9df777e9ccdc",
-      "b89b3645d5865d4623498c6d9d1631c4e011b74ca147bc374cfc95fa14195dfd",
-      "6e11731d6e45e48a2fe695f8e656d5a80edc34ce1a929eb3b0ae2a604b032934"
+      "278e8dc93484c528aed8699100ce999ff0ccf4050831bf8c7d5dfa647f7c20ca",
+      "b3a87950259dfe1308bb7f53d854045fd9bab495bc4d7d3e7a8d3b1207e22649",
+      "20fb4cad598012a28d6191877c68c9db8937b8c4fddb38003601fce25c96d7fb",
+      "d0c839ae7e49a17352538d7831da005aeba8af3870d389f02d387de5eb0a800e",
+      "c45c9bed6e6a0c7bd9cbe13b06a863cd5fe8e1d3e41800a0e9f300e40e35bdbe",
+      "2ddc409cf8c680ca7abe97036e1ec6e0d5314bd8c9eed2529cf9d54b1e92016a",
+      "3f55f6079057a83a8e23bb3ba90c9cf11d0e3e304ecd9bd59cb387e1173db7c3"
+    ],
+    "tier_skin_sha256": [
+      "a7a1e29e7d2cf889316eeb7a1955f43410e9ccdc64709d5d5e18adc4887a22fd",
+      "86eaada56cd21c6a4d28c06ee0dd48f595bd94ba65980bd71a791d845c396bd8",
+      "be0293c918a34bae9f844d3a3b0e4c7b9e8ca5113f6b2edb22e376ed28efe3a1"
     ]
   },
   {
@@ -460,6 +475,11 @@
       "4cd3ce6f430164e44853b2d84a505634f69d2a65b2a463762e0bb98316aae816",
       "893b0382590def729ee6aaf742fe10ee739501a0067331c79f7ca7a79ed2e914",
       "959c14f25fdaf19f5e715796fe0695ec8ca77fc686b4cad4be9fe41002a0bc2c"
+    ],
+    "tier_skin_sha256": [
+      "6ca230a47ad6fd49dfd1f5f282a4c0d747053d4f12bc7069b5c9df0c90b710c1",
+      "9aa766b4fa33ee2c883060b327b8ec5ae1aeb191e38809798e67a62a22144e31",
+      "aaed993e3823da676d1d06df4ddf8666cdf03a9463ba3c1c678dbc0655da51f4"
     ]
   },
   {

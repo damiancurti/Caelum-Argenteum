@@ -34,15 +34,19 @@ class CaelumWornEquipment : Object play
         {
             kind = armor!=null ? armor.ArmorType[i] : CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
             key = kind == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING ? -1 : kind+1;
+            bool helmet=i==CaelumConstants.ARMOR_SLOT_HEAD && key>0;
+            int quality=helmet?Clamp(armor.Tier[i],1,3):1;
+            if(helmet)key+=(quality-1)*(CaelumConstants.ARMOR_TYPE_HEAVY+1);
             if(body.WornVisualKeys[i+2]!=key)
             {
-                String skin=String.Format("a%d_%d",i,Max(0,key-1));
+                String skin=String.Format("a%d_%d",i,key<0?0:kind);
                 String mesh=skin;
-                if(i==CaelumConstants.ARMOR_SLOT_HEAD && key>=0)
+                if(helmet)
                 {
                     let look=body.health<=0 && body.AppearanceDeathProfile!=null?body.AppearanceDeathProfile:body.CharacterProfile;
                     int family=CaelumAppearance.Identity(look.Race,look.Sex,look.BeastForm)/2;
                     if(family>0)mesh=mesh..String.Format("_f%d",family);
+                    if(quality>1)skin=skin..String.Format("_t%d",quality);
                 }
                 UpdateSlot(body,i+2,key,mesh,skin);
             }

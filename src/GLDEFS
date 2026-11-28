@@ -3,3 +3,59 @@ material texture "models/caelum/weather/rain_cloud_palette.png"
 {
     shader "shaders/caelum/rain_cloud.fp"
 }
+
+material texture "models/caelum/players/gear/a0_0_t2.png"
+{
+    specular "models/caelum/players/gear/a0_0_t2_spec.png"
+    glossiness 32
+    specularlevel 1.2
+}
+
+material texture "models/caelum/players/gear/a0_0_t3.png"
+{
+    specular "models/caelum/players/gear/a0_0_t3_spec.png"
+    glossiness 32
+    specularlevel 1.2
+}
+
+material texture "models/caelum/players/gear/a0_1_t2.png"
+{
+    specular "models/caelum/players/gear/a0_1_t2_spec.png"
+    glossiness 32
+    specularlevel 1.2
+}
+
+material texture "models/caelum/players/gear/a0_1_t3.png"
+{
+    specular "models/caelum/players/gear/a0_1_t3_spec.png"
+    glossiness 32
+    specularlevel 1.2
+}
+
+material texture "models/caelum/players/gear/a0_2_t2.png"
+{
+    specular "models/caelum/players/gear/a0_2_t2_spec.png"
+    glossiness 32
+    specularlevel 1.2
+}
+
+material texture "models/caelum/players/gear/a0_2_t3.png"
+{
+    specular "models/caelum/players/gear/a0_2_t3_spec.png"
+    glossiness 32
+    specularlevel 1.2
+}
+
+material texture "models/caelum/players/gear/a0_3_t2.png"
+{
+    specular "models/caelum/players/gear/a0_3_t2_spec.png"
+    glossiness 32
+    specularlevel 1.2
+}
+
+material texture "models/caelum/players/gear/a0_3_t3.png"
+{
+    specular "models/caelum/players/gear/a0_3_t3_spec.png"
+    glossiness 32
+    specularlevel 1.2
+}

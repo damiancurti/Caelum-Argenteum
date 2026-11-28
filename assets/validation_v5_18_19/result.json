@@ -1,0 +1,37 @@
+{
+  "issue": 932,
+  "release": "5.18.19",
+  "ipk3_sha256": "43359f058032b3454999b916e34d3431778420e6e78e4b81ab73fadb7d69aca9",
+  "audio": "-nosound",
+  "engine": "GZDoom 4.14.2 / Windows 11 (Vulkan)",
+  "presentation": {
+    "families": 7,
+    "medium_face_side_and_nape_rays": 126,
+    "forms": [
+      0,
+      7
+    ],
+    "native_bindings": 24,
+    "visible_tier_changes": 16,
+    "minimum_pixels_changed_between_successive_tiers": 1974
+  },
+  "all_bodies": 168,
+  "scalp_clearance": {
+    "body_material_pairs": 56,
+    "upper_skull_rays": 10064,
+    "minimum_roof_clearance_model_units": 2.369
+  },
+  "original_heavy_meshes": 7,
+  "original_heavy_tier_1_skin": true,
+  "map01": {
+    "new_medium_tier_3_save_reload": true,
+    "imported_5_18_10_save": true
+  },
+  "repeat": {
+    "byte_identical_meshes": 265,
+    "same_family_skins": 301,
+    "equipment_catalogue_rows": 12
+  },
+  "project_validation_errors": [],
+  "author_acceptance": "pending CA932-FIT-01"
+}

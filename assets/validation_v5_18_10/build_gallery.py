@@ -135,6 +135,7 @@ for body, code in enumerate(body_codes):
 
 gear=json.loads((ROOT/"assets/source/art/worn_equipment_904/MODULES.json").read_text())
 translations="Espada|Bastón|Carabina|Daga|Hachuela|Machete|Jabalina|Hacha|Mangual|Lanza|Mandoble|Hacha de guerra|Alabarda|Guanteletes gigantes|Escopeta|Arco largo|Ballesta|Campana|Cetro|Orbe|Pico|Bastón utilitario|Boleadoras|Libro|Incensario|Estatuilla|Efigie".split("|")
+tier_exhibits=[]
 for seq,item in enumerate(gear):
     module=item["module"]
     family=seq%14
@@ -150,12 +151,20 @@ for seq,item in enumerate(gear):
         label=("Casco","Coraza","Guantes","Botas")[part]+" / "+("magia","ligera","media","pesada")[kind]
     name=f"GalleryGear{seq}"
     if module.startswith("a0_"):
-        block=block.replace('Model 5 "head','Model 5 "tuck/head').replace('Model 6 "hair','Model 6 "tuck/hair')
+        cut="tuck" if kind==3 else "open"
+        block=block.replace('Model 5 "head',f'Model 5 "{cut}/head').replace('Model 6 "hair','Model 6 "tuck/hair')
     if module.startswith("a3_"):
         block=block.replace(f'Model 3 "b{family}_boots.md3"', 'Model 3 "conceal.md3"')
     mesh=f"{module}_f{family//2}" if item.get("family_sha256") and family//2 else module
     defs[name]=block+f'\nModel {slot} "gear/{mesh}.md3"\nSkin {slot} "gear/{module}.png"\nFrameIndex D300 A {slot} 0'
     add(name,label,human,category="Equipo",identity=family)
+    if item.get("tier_skin_sha256"):
+        for tier in (2,3):
+            styled=f"{name}Tier{tier}"
+            defs[styled]=defs[name].replace(f'"gear/{module}.png"',f'"gear/{module}_t{tier}.png"')
+            tier_exhibits.append((styled,f"{label} (T{tier})",family))
+for name,label,family in tier_exhibits:
+    add(name,label,human,category="Cascos por tier",identity=family)
 
 n=len(exhibits)
 step=140
