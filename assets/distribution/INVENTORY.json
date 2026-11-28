@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "issue": 466,
-  "runtime_files": 19913,
-  "metadata_documents": 707,
+  "runtime_files": 19918,
+  "metadata_documents": 708,
   "origin_decisions": "assets/distribution/ORIGINS.json",
   "dependency_findings": "assets/distribution/DEPENDENCIES.json",
   "provenance_resolution": "Union of the decision references and per-file additional_provenance; exact_metadata is traceability, not a license grant.",
@@ -15,14 +15,14 @@
     "maps/TTAROT.wad"
   ],
   "origin_counts": {
-    "project-source": 1067,
+    "project-source": 1068,
     "dejavu-font": 2352,
-    "project-art": 16018,
+    "project-art": 16022,
     "retained-notice": 30,
     "human-mesh": 315,
     "source-specific-audio": 131
   },
-  "exact_metadata_files": 14503,
+  "exact_metadata_files": 14508,
   "files": [
     {
       "path": "ANIMDEFS",
@@ -2831,6 +2831,20 @@
       "dependency_ids": []
     },
     {
+      "path": "caelum/data/ground_helmet_tiers.modeldef",
+      "sha256": "1e6ad84af66a0b700c50e0b3bc270721f6a9f5ed1ecfd3c0cfa9eb325c914057",
+      "bytes": 2484,
+      "decision": "project-source",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/GROUND_HELMETS.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/GROUND_HELMETS.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
       "path": "caelum/data/guardian_combat.modeldef",
       "sha256": "41d493a94435aa9d848577fbf982df984d917e3febd60be5d4df3ef2b25230a6",
       "bytes": 1567,
@@ -4720,8 +4734,8 @@
     },
     {
       "path": "caelum/equipment/CaelumEquipmentPickups.zs",
-      "sha256": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
-      "bytes": 43574,
+      "sha256": "a11d23c3106bbcfa01ee93feed2c058eb06081023aeeffda60061875b2322275",
+      "bytes": 43877,
       "decision": "project-source",
       "additional_provenance": [
         "assets/source/art/inventory_models_647/armor_feet/DESIGN.json",
@@ -8129,7 +8143,7 @@
     },
     {
       "path": "caelum/world/CaelumPhysicalHazards.zs",
-      "sha256": "19a12fd79c62014f6e6e831d79aa10990a3ceff8876d368e0eb3e65a95059f7d",
+      "sha256": "51ac1dff06799fbdfe2b4d82e2618b64a538db0a238b3a4a57625651f89e6f0b",
       "bytes": 20721,
       "decision": "project-source",
       "additional_provenance": [
@@ -8457,7 +8471,7 @@
     },
     {
       "path": "caelum/world/CaelumSewerMaze.zs",
-      "sha256": "fec35ac99aa5962b77ef520667b3f8e306896f57cc6488164102fcb913f5a72b",
+      "sha256": "b9cbf2e517bc5de4d881a3d51970a5b78308faa7d7a53e9f385933ecdddb414c",
       "bytes": 15766,
       "decision": "project-source",
       "additional_provenance": [],
@@ -204902,8 +204916,8 @@
     },
     {
       "path": "MODELDEF",
-      "sha256": "bfed6b0fdc0746bd8460915ddf9a1931f039bcad0ab1e8d71a05cdef46ea1257",
-      "bytes": 106609,
+      "sha256": "4ea2d131b4703192a5eaee947fbec369d23cb28dadb97a81cc69d71d9e4b2810",
+      "bytes": 106661,
       "decision": "project-source",
       "additional_provenance": [
         "assets/source/art/inventory_models_647/furniture/DESIGN.json"
@@ -222725,6 +222739,62 @@
       "decision": "project-art",
       "additional_provenance": [],
       "exact_metadata": [],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/ground/a0_0.md3",
+      "sha256": "9160c6efd832437c795a1570a22b9f8c17a87bac01cbc2661d84fb1713f30392",
+      "bytes": 60068,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/GROUND_HELMETS.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/GROUND_HELMETS.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/ground/a0_1.md3",
+      "sha256": "12f3ac806267c8e5f4563081f8df8a7568cd3a21e6159029c586ddf3cfd50211",
+      "bytes": 68292,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/GROUND_HELMETS.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/GROUND_HELMETS.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/ground/a0_2.md3",
+      "sha256": "8e962ebdf2dbcba2d3164fb5a446573f9cc9b29f29ae7a7e308bfa7cd4eff6c9",
+      "bytes": 143764,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/GROUND_HELMETS.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/GROUND_HELMETS.json"
+      ],
+      "distribution": "retain-with-source-terms",
+      "dependency_ids": []
+    },
+    {
+      "path": "models/caelum/players/gear/ground/a0_3.md3",
+      "sha256": "c4a8cd1078b9ae87ea5c2735058d9cd883c2654ac4c3f14066ffc0b2f4929ecc",
+      "bytes": 212196,
+      "decision": "project-art",
+      "additional_provenance": [
+        "assets/source/art/worn_equipment_904/GROUND_HELMETS.json"
+      ],
+      "exact_metadata": [
+        "assets/source/art/worn_equipment_904/GROUND_HELMETS.json"
+      ],
       "distribution": "retain-with-source-terms",
       "dependency_ids": []
     },
@@ -270170,8 +270240,8 @@
     },
     {
       "path": "TEXTURES",
-      "sha256": "9c1fefdfd3975c8199dfd48086c41e7f7232420c8e436ce2ec8d60f8766e9ced",
-      "bytes": 315782,
+      "sha256": "6427615fa9bf5e49990feb56257f7a249f0502bbb49e252f22746158737fcf6a",
+      "bytes": 316979,
       "decision": "project-source",
       "additional_provenance": [
         "assets/first_person_v4/VALIDATION.json",

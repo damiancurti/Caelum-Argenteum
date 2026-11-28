@@ -314,7 +314,7 @@
     "assets/source/art/inventory_models_647/documents/DESIGN.json": "fd1dda4b1e9dbeafa19a546daa22819b09d367555fa01a02030bfce10ccf3869",
     "src/caelum/core/CaelumConstants.zs": "08f5510cbf0dd058f9e45b3a46cc9fc0438c63dcdcc9769dbb60ef0a46d65dd4",
     "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04",
-    "src/TEXTURES": "9c1fefdfd3975c8199dfd48086c41e7f7232420c8e436ce2ec8d60f8766e9ced"
+    "src/TEXTURES": "6427615fa9bf5e49990feb56257f7a249f0502bbb49e252f22746158737fcf6a"
   },
   "generator_sha256": {
     "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",

@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.18.19** - 2026-11-28.
+Documentation version: **5.18.20** - 2026-11-28.
+
+## 5.18.20 - Matching helmet pickups (#933)
+
+Author review remains open. Select a helmet with H, change its tier with T, and press G to compare the worn and floor views. In play, drop a helmet and pick it up again.
 
 ## 5.18.19 - Distinct helmet silhouettes and tier finishes (#932)
 

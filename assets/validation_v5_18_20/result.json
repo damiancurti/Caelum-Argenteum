@@ -1,0 +1,28 @@
+{
+  "issue": 933,
+  "release": "5.18.20",
+  "engine": "GZDoom 4.14.2 / Windows 11 / Vulkan",
+  "audio": "-nosound",
+  "tests": {
+    "identical_neutral_meshes_and_uvs": 4,
+    "registered_tier_finishes": 12,
+    "real_pickup_equip_drop_recollect_reequip_cycles": 12,
+    "floor_captures": 12,
+    "equipped_captures": 12,
+    "minimum_pixels_changed_at_a_tier_switch": 2459,
+    "identical_regenerated_files": 6
+  },
+  "floor_save": {
+    "map": "MAP01",
+    "previous_floor_frame": 0,
+    "imported_floor_frame": 3,
+    "reloaded_floor_frame": 3,
+    "item_id": 5,
+    "tier": 3,
+    "size": 2,
+    "durability": 540
+  },
+  "author_visual_acceptance": "pending",
+  "tested_package_sha256": "1129ac0b17eeb7d0ffea495c5b3fbadb52459d9d191eb92e52c1d5a09491b28f",
+  "capture_sheet": "helmets.jpg"
+}

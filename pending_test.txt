@@ -62,3 +62,8 @@ CA932-FIT-01 | Origin: 5.18.19 / #932
 Prerequisites: current silent fitting room on GZDoom 4.14.2.
 Steps: Press H to change helmet type and T to cycle tiers. Rotate with the arrow keys. Use F2/F3 to change family and 0 to remove the helmet.
 Expected: Coverage identifies each type. Tier 2 has silver detailing and tier 3 shows more silver plus bright gold. Removing the helmet restores the original head and hair.
+
+CA933-FIT-01 | Origin: 5.18.20 / #933
+Prerequisites: current silent fitting room on GZDoom 4.14.2.
+Steps: Select a helmet with H, change its tier with T, and press G to compare the worn and floor views. In play, drop a helmet and pick it up again.
+Expected: The dropped piece shows the selected silhouette and finish. Pickup and re-equipping retain the type and tier.

@@ -33,10 +33,10 @@ class CaelumWorldSpriteRegistry : Actor
         CALI A 1;
         CAMD A 1;
         CAHV A 1;
-        CHMG A 1;
-        CHMD A 1;
-        CHEH A 1;
-        CHLT A 1;
+        CHMG ABCD 1;
+        CHMD ABCD 1;
+        CHEH ABCD 1;
+        CHLT ABCD 1;
         CGMM A 1;
         CGMD A 1;
         CGHV A 1;
@@ -658,7 +658,10 @@ class CaelumArmorPickup : CaelumEquipmentItem
             else visual = "CAHV";
         }
         sprite = GetSpriteIndex(visual);
-        frame = 0;
+        // B/C/D eligen el acabado del casco en el suelo; PreviewTier respeta
+        // los args del mapa y la identidad de una pieza que vuelve del inventario.
+        frame = slot==CaelumConstants.ARMOR_SLOT_HEAD && armorType<=CaelumConstants.ARMOR_TYPE_HEAVY
+            ? Clamp(PreviewTier(),1,3) : 0;
     }
 
     States

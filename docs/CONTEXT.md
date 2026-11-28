@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.18.19** - 2026-11-28.
+Documentation version: **5.18.20** - 2026-11-28.
 
-#916/917/920/921 sculpts and #924/926/927/928/932 equipment await visual review.
+#916/917/920/921 sculpts and #924/926/927/928/932/933 equipment await visual review.
 
 #902-905/#909 await visual review. Seven #736 families approved.
 5.18.4/#899 integrated. 115 checks accepted (#892-898).
